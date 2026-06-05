@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CcImageRegistryCredentialsConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies what permissions the credentials will have.
-@immutable final class CcImageRegistryPermissions {const CcImageRegistryPermissions._(this.value);
+sealed class CcImageRegistryPermissions {const CcImageRegistryPermissions();
 
 factory CcImageRegistryPermissions.fromJson(String json) { return switch (json) {
   'pull' => pull,
   'push' => push,
-  _ => CcImageRegistryPermissions._(json),
+  _ => CcImageRegistryPermissions$Unknown(json),
 }; }
 
-static const CcImageRegistryPermissions pull = CcImageRegistryPermissions._('pull');
+static const CcImageRegistryPermissions pull = CcImageRegistryPermissions$pull._();
 
-static const CcImageRegistryPermissions push = CcImageRegistryPermissions._('push');
+static const CcImageRegistryPermissions push = CcImageRegistryPermissions$push._();
 
 static const List<CcImageRegistryPermissions> values = [pull, push];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CcImageRegistryPermissions$Unknown; } 
+@override String toString() => 'CcImageRegistryPermissions($value)';
+
+ }
+@immutable final class CcImageRegistryPermissions$pull extends CcImageRegistryPermissions {const CcImageRegistryPermissions$pull._();
+
+@override String get value => 'pull';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CcImageRegistryPermissions$pull;
+
+@override int get hashCode => 'pull'.hashCode;
+
+ }
+@immutable final class CcImageRegistryPermissions$push extends CcImageRegistryPermissions {const CcImageRegistryPermissions$push._();
+
+@override String get value => 'push';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CcImageRegistryPermissions$push;
+
+@override int get hashCode => 'push'.hashCode;
+
+ }
+@immutable final class CcImageRegistryPermissions$Unknown extends CcImageRegistryPermissions {const CcImageRegistryPermissions$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CcImageRegistryPermissions && other.value == value;
+    other is CcImageRegistryPermissions$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CcImageRegistryPermissions($value)';
 
  }
 /// Specifies the configuration for the image registry credential to create.

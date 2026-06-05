@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RubySorbetTShadowTest (inline: Borders)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class L {const L._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class L {const L();
 
 factory L.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
   'invisible' => invisible,
   'visible' => visible,
-  _ => L._(json),
+  _ => L$Unknown(json),
 }; }
 
-static const L unknown = L._('unknown');
+static const L unknown = L$unknown._();
 
-static const L invisible = L._('invisible');
+static const L invisible = L$invisible._();
 
-static const L visible = L._('visible');
+static const L visible = L$visible._();
 
 static const List<L> values = [unknown, invisible, visible];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,34 +28,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is L && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is L$Unknown; } 
 @override String toString() => 'L($value)';
 
  }
-@immutable final class T {const T._(this.value);
+@immutable final class L$unknown extends L {const L$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is L$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class L$invisible extends L {const L$invisible._();
+
+@override String get value => 'invisible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is L$invisible;
+
+@override int get hashCode => 'invisible'.hashCode;
+
+ }
+@immutable final class L$visible extends L {const L$visible._();
+
+@override String get value => 'visible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is L$visible;
+
+@override int get hashCode => 'visible'.hashCode;
+
+ }
+@immutable final class L$Unknown extends L {const L$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is L$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class T {const T();
 
 factory T.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
   'invisible' => invisible,
   'visible' => visible,
-  _ => T._(json),
+  _ => T$Unknown(json),
 }; }
 
-static const T unknown = T._('unknown');
+static const T unknown = T$unknown._();
 
-static const T invisible = T._('invisible');
+static const T invisible = T$invisible._();
 
-static const T visible = T._('visible');
+static const T visible = T$visible._();
 
 static const List<T> values = [unknown, invisible, visible];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -66,34 +96,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is T && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is T$Unknown; } 
 @override String toString() => 'T($value)';
 
  }
-@immutable final class R {const R._(this.value);
+@immutable final class T$unknown extends T {const T$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is T$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class T$invisible extends T {const T$invisible._();
+
+@override String get value => 'invisible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is T$invisible;
+
+@override int get hashCode => 'invisible'.hashCode;
+
+ }
+@immutable final class T$visible extends T {const T$visible._();
+
+@override String get value => 'visible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is T$visible;
+
+@override int get hashCode => 'visible'.hashCode;
+
+ }
+@immutable final class T$Unknown extends T {const T$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is T$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class R {const R();
 
 factory R.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
   'invisible' => invisible,
   'visible' => visible,
-  _ => R._(json),
+  _ => R$Unknown(json),
 }; }
 
-static const R unknown = R._('unknown');
+static const R unknown = R$unknown._();
 
-static const R invisible = R._('invisible');
+static const R invisible = R$invisible._();
 
-static const R visible = R._('visible');
+static const R visible = R$visible._();
 
 static const List<R> values = [unknown, invisible, visible];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -103,34 +164,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is R && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is R$Unknown; } 
 @override String toString() => 'R($value)';
 
  }
-@immutable final class B {const B._(this.value);
+@immutable final class R$unknown extends R {const R$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is R$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class R$invisible extends R {const R$invisible._();
+
+@override String get value => 'invisible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is R$invisible;
+
+@override int get hashCode => 'invisible'.hashCode;
+
+ }
+@immutable final class R$visible extends R {const R$visible._();
+
+@override String get value => 'visible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is R$visible;
+
+@override int get hashCode => 'visible'.hashCode;
+
+ }
+@immutable final class R$Unknown extends R {const R$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is R$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class B {const B();
 
 factory B.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
   'invisible' => invisible,
   'visible' => visible,
-  _ => B._(json),
+  _ => B$Unknown(json),
 }; }
 
-static const B unknown = B._('unknown');
+static const B unknown = B$unknown._();
 
-static const B invisible = B._('invisible');
+static const B invisible = B$invisible._();
 
-static const B visible = B._('visible');
+static const B visible = B$visible._();
 
 static const List<B> values = [unknown, invisible, visible];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -140,13 +232,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is B$Unknown; } 
+@override String toString() => 'B($value)';
+
+ }
+@immutable final class B$unknown extends B {const B$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is B$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class B$invisible extends B {const B$invisible._();
+
+@override String get value => 'invisible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is B$invisible;
+
+@override int get hashCode => 'invisible'.hashCode;
+
+ }
+@immutable final class B$visible extends B {const B$visible._();
+
+@override String get value => 'visible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is B$visible;
+
+@override int get hashCode => 'visible'.hashCode;
+
+ }
+@immutable final class B$Unknown extends B {const B$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is B && other.value == value;
+    other is B$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'B($value)';
 
  }
 @immutable final class Borders {const Borders({this.l, this.t, this.r, this.b, });

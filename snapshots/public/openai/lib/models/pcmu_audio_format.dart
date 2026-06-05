@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PcmuAudioFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The audio format. Always `audio/pcmu`.
-@immutable final class PcmuAudioFormatType {const PcmuAudioFormatType._(this.value);
+sealed class PcmuAudioFormatType {const PcmuAudioFormatType();
 
 factory PcmuAudioFormatType.fromJson(String json) { return switch (json) {
   'audio/pcmu' => audioPcmu,
-  _ => PcmuAudioFormatType._(json),
+  _ => PcmuAudioFormatType$Unknown(json),
 }; }
 
-static const PcmuAudioFormatType audioPcmu = PcmuAudioFormatType._('audio/pcmu');
+static const PcmuAudioFormatType audioPcmu = PcmuAudioFormatType$audioPcmu._();
 
 static const List<PcmuAudioFormatType> values = [audioPcmu];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PcmuAudioFormatType$Unknown; } 
+@override String toString() => 'PcmuAudioFormatType($value)';
+
+ }
+@immutable final class PcmuAudioFormatType$audioPcmu extends PcmuAudioFormatType {const PcmuAudioFormatType$audioPcmu._();
+
+@override String get value => 'audio/pcmu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PcmuAudioFormatType$audioPcmu;
+
+@override int get hashCode => 'audio/pcmu'.hashCode;
+
+ }
+@immutable final class PcmuAudioFormatType$Unknown extends PcmuAudioFormatType {const PcmuAudioFormatType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PcmuAudioFormatType && other.value == value;
+    other is PcmuAudioFormatType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PcmuAudioFormatType($value)';
 
  }
 /// The G.711 μ-law format.

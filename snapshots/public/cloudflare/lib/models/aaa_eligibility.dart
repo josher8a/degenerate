@@ -16,25 +16,24 @@ bool toJson() => value;
 
 }
 /// Determines type of delivery mechanism.
-@immutable final class AaaSchemasType {const AaaSchemasType._(this.value);
+sealed class AaaSchemasType {const AaaSchemasType();
 
 factory AaaSchemasType.fromJson(String json) { return switch (json) {
   'email' => email,
   'pagerduty' => pagerduty,
   'webhook' => webhook,
-  _ => AaaSchemasType._(json),
+  _ => AaaSchemasType$Unknown(json),
 }; }
 
-static const AaaSchemasType email = AaaSchemasType._('email');
+static const AaaSchemasType email = AaaSchemasType$email._();
 
-static const AaaSchemasType pagerduty = AaaSchemasType._('pagerduty');
+static const AaaSchemasType pagerduty = AaaSchemasType$pagerduty._();
 
-static const AaaSchemasType webhook = AaaSchemasType._('webhook');
+static const AaaSchemasType webhook = AaaSchemasType$webhook._();
 
 static const List<AaaSchemasType> values = [email, pagerduty, webhook];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -44,13 +43,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AaaSchemasType$Unknown; } 
+@override String toString() => 'AaaSchemasType($value)';
+
+ }
+@immutable final class AaaSchemasType$email extends AaaSchemasType {const AaaSchemasType$email._();
+
+@override String get value => 'email';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaSchemasType$email;
+
+@override int get hashCode => 'email'.hashCode;
+
+ }
+@immutable final class AaaSchemasType$pagerduty extends AaaSchemasType {const AaaSchemasType$pagerduty._();
+
+@override String get value => 'pagerduty';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaSchemasType$pagerduty;
+
+@override int get hashCode => 'pagerduty'.hashCode;
+
+ }
+@immutable final class AaaSchemasType$webhook extends AaaSchemasType {const AaaSchemasType$webhook._();
+
+@override String get value => 'webhook';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaSchemasType$webhook;
+
+@override int get hashCode => 'webhook'.hashCode;
+
+ }
+@immutable final class AaaSchemasType$Unknown extends AaaSchemasType {const AaaSchemasType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AaaSchemasType && other.value == value;
+    other is AaaSchemasType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AaaSchemasType($value)';
 
  }
 @immutable final class AaaEligibility {const AaaEligibility({this.eligible, this.ready, this.type, });

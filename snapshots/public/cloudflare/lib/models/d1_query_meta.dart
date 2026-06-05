@@ -9,7 +9,7 @@ String toJson() => value;
 
 }
 /// Region location hint of the database instance that handled the query.
-@immutable final class D1ServedByRegion {const D1ServedByRegion._(this.value);
+sealed class D1ServedByRegion {const D1ServedByRegion();
 
 factory D1ServedByRegion.fromJson(String json) { return switch (json) {
   'WNAM' => wnam,
@@ -18,25 +18,24 @@ factory D1ServedByRegion.fromJson(String json) { return switch (json) {
   'EEUR' => eeur,
   'APAC' => apac,
   'OC' => oc,
-  _ => D1ServedByRegion._(json),
+  _ => D1ServedByRegion$Unknown(json),
 }; }
 
-static const D1ServedByRegion wnam = D1ServedByRegion._('WNAM');
+static const D1ServedByRegion wnam = D1ServedByRegion$wnam._();
 
-static const D1ServedByRegion enam = D1ServedByRegion._('ENAM');
+static const D1ServedByRegion enam = D1ServedByRegion$enam._();
 
-static const D1ServedByRegion weur = D1ServedByRegion._('WEUR');
+static const D1ServedByRegion weur = D1ServedByRegion$weur._();
 
-static const D1ServedByRegion eeur = D1ServedByRegion._('EEUR');
+static const D1ServedByRegion eeur = D1ServedByRegion$eeur._();
 
-static const D1ServedByRegion apac = D1ServedByRegion._('APAC');
+static const D1ServedByRegion apac = D1ServedByRegion$apac._();
 
-static const D1ServedByRegion oc = D1ServedByRegion._('OC');
+static const D1ServedByRegion oc = D1ServedByRegion$oc._();
 
 static const List<D1ServedByRegion> values = [wnam, enam, weur, eeur, apac, oc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -49,13 +48,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is D1ServedByRegion$Unknown; } 
+@override String toString() => 'D1ServedByRegion($value)';
+
+ }
+@immutable final class D1ServedByRegion$wnam extends D1ServedByRegion {const D1ServedByRegion$wnam._();
+
+@override String get value => 'WNAM';
+
+@override bool operator ==(Object other) => identical(this, other) || other is D1ServedByRegion$wnam;
+
+@override int get hashCode => 'WNAM'.hashCode;
+
+ }
+@immutable final class D1ServedByRegion$enam extends D1ServedByRegion {const D1ServedByRegion$enam._();
+
+@override String get value => 'ENAM';
+
+@override bool operator ==(Object other) => identical(this, other) || other is D1ServedByRegion$enam;
+
+@override int get hashCode => 'ENAM'.hashCode;
+
+ }
+@immutable final class D1ServedByRegion$weur extends D1ServedByRegion {const D1ServedByRegion$weur._();
+
+@override String get value => 'WEUR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is D1ServedByRegion$weur;
+
+@override int get hashCode => 'WEUR'.hashCode;
+
+ }
+@immutable final class D1ServedByRegion$eeur extends D1ServedByRegion {const D1ServedByRegion$eeur._();
+
+@override String get value => 'EEUR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is D1ServedByRegion$eeur;
+
+@override int get hashCode => 'EEUR'.hashCode;
+
+ }
+@immutable final class D1ServedByRegion$apac extends D1ServedByRegion {const D1ServedByRegion$apac._();
+
+@override String get value => 'APAC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is D1ServedByRegion$apac;
+
+@override int get hashCode => 'APAC'.hashCode;
+
+ }
+@immutable final class D1ServedByRegion$oc extends D1ServedByRegion {const D1ServedByRegion$oc._();
+
+@override String get value => 'OC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is D1ServedByRegion$oc;
+
+@override int get hashCode => 'OC'.hashCode;
+
+ }
+@immutable final class D1ServedByRegion$Unknown extends D1ServedByRegion {const D1ServedByRegion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is D1ServedByRegion && other.value == value;
+    other is D1ServedByRegion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'D1ServedByRegion($value)';
 
  }
 @immutable final class D1QueryMeta {const D1QueryMeta({this.changedDb, this.changes, this.duration, this.lastRowId, this.rowsRead, this.rowsWritten, this.servedByColo, this.servedByPrimary, this.servedByRegion, this.sizeAfter, this.timings, });

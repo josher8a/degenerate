@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetAttacksLayer7SummaryByVerticalFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetAttacksLayer7SummaryByVerticalFormat {const RadarGetAttacksLayer7SummaryByVerticalFormat._(this.value);
+sealed class RadarGetAttacksLayer7SummaryByVerticalFormat {const RadarGetAttacksLayer7SummaryByVerticalFormat();
 
 factory RadarGetAttacksLayer7SummaryByVerticalFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetAttacksLayer7SummaryByVerticalFormat._(json),
+  _ => RadarGetAttacksLayer7SummaryByVerticalFormat$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer7SummaryByVerticalFormat $json = RadarGetAttacksLayer7SummaryByVerticalFormat._('JSON');
+static const RadarGetAttacksLayer7SummaryByVerticalFormat $json = RadarGetAttacksLayer7SummaryByVerticalFormat$$json._();
 
-static const RadarGetAttacksLayer7SummaryByVerticalFormat csv = RadarGetAttacksLayer7SummaryByVerticalFormat._('CSV');
+static const RadarGetAttacksLayer7SummaryByVerticalFormat csv = RadarGetAttacksLayer7SummaryByVerticalFormat$csv._();
 
 static const List<RadarGetAttacksLayer7SummaryByVerticalFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer7SummaryByVerticalFormat$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer7SummaryByVerticalFormat($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByVerticalFormat$$json extends RadarGetAttacksLayer7SummaryByVerticalFormat {const RadarGetAttacksLayer7SummaryByVerticalFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByVerticalFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByVerticalFormat$csv extends RadarGetAttacksLayer7SummaryByVerticalFormat {const RadarGetAttacksLayer7SummaryByVerticalFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByVerticalFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByVerticalFormat$Unknown extends RadarGetAttacksLayer7SummaryByVerticalFormat {const RadarGetAttacksLayer7SummaryByVerticalFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer7SummaryByVerticalFormat && other.value == value;
+    other is RadarGetAttacksLayer7SummaryByVerticalFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer7SummaryByVerticalFormat($value)';
 
  }

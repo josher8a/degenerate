@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/R2EnableSippyAws (inline: Source)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2EnableSippyAwsSourceProvider {const R2EnableSippyAwsSourceProvider._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class R2EnableSippyAwsSourceProvider {const R2EnableSippyAwsSourceProvider();
 
 factory R2EnableSippyAwsSourceProvider.fromJson(String json) { return switch (json) {
   'aws' => aws,
-  _ => R2EnableSippyAwsSourceProvider._(json),
+  _ => R2EnableSippyAwsSourceProvider$Unknown(json),
 }; }
 
-static const R2EnableSippyAwsSourceProvider aws = R2EnableSippyAwsSourceProvider._('aws');
+static const R2EnableSippyAwsSourceProvider aws = R2EnableSippyAwsSourceProvider$aws._();
 
 static const List<R2EnableSippyAwsSourceProvider> values = [aws];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is R2EnableSippyAwsSourceProvider$Unknown; } 
+@override String toString() => 'R2EnableSippyAwsSourceProvider($value)';
+
+ }
+@immutable final class R2EnableSippyAwsSourceProvider$aws extends R2EnableSippyAwsSourceProvider {const R2EnableSippyAwsSourceProvider$aws._();
+
+@override String get value => 'aws';
+
+@override bool operator ==(Object other) => identical(this, other) || other is R2EnableSippyAwsSourceProvider$aws;
+
+@override int get hashCode => 'aws'.hashCode;
+
+ }
+@immutable final class R2EnableSippyAwsSourceProvider$Unknown extends R2EnableSippyAwsSourceProvider {const R2EnableSippyAwsSourceProvider$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is R2EnableSippyAwsSourceProvider && other.value == value;
+    other is R2EnableSippyAwsSourceProvider$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'R2EnableSippyAwsSourceProvider($value)';
 
  }
 /// AWS S3 bucket to copy objects from.

@@ -2,7 +2,7 @@
 // Source: #/components/schemas/R2GetCustomDomainResponse (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Ownership status of the domain.
-@immutable final class Ownership {const Ownership._(this.value);
+sealed class Ownership {const Ownership();
 
 factory Ownership.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -11,25 +11,24 @@ factory Ownership.fromJson(String json) { return switch (json) {
   'blocked' => blocked,
   'error' => error,
   'unknown' => unknown,
-  _ => Ownership._(json),
+  _ => Ownership$Unknown(json),
 }; }
 
-static const Ownership pending = Ownership._('pending');
+static const Ownership pending = Ownership$pending._();
 
-static const Ownership active = Ownership._('active');
+static const Ownership active = Ownership$active._();
 
-static const Ownership deactivated = Ownership._('deactivated');
+static const Ownership deactivated = Ownership$deactivated._();
 
-static const Ownership blocked = Ownership._('blocked');
+static const Ownership blocked = Ownership$blocked._();
 
-static const Ownership error = Ownership._('error');
+static const Ownership error = Ownership$error._();
 
-static const Ownership unknown = Ownership._('unknown');
+static const Ownership unknown = Ownership$unknown._();
 
 static const List<Ownership> values = [pending, active, deactivated, blocked, error, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,17 +41,76 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Ownership && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Ownership$Unknown; } 
 @override String toString() => 'Ownership($value)';
 
  }
+@immutable final class Ownership$pending extends Ownership {const Ownership$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ownership$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class Ownership$active extends Ownership {const Ownership$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ownership$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class Ownership$deactivated extends Ownership {const Ownership$deactivated._();
+
+@override String get value => 'deactivated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ownership$deactivated;
+
+@override int get hashCode => 'deactivated'.hashCode;
+
+ }
+@immutable final class Ownership$blocked extends Ownership {const Ownership$blocked._();
+
+@override String get value => 'blocked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ownership$blocked;
+
+@override int get hashCode => 'blocked'.hashCode;
+
+ }
+@immutable final class Ownership$error extends Ownership {const Ownership$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ownership$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class Ownership$unknown extends Ownership {const Ownership$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ownership$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class Ownership$Unknown extends Ownership {const Ownership$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Ownership$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// SSL certificate status.
-@immutable final class StatusSsl {const StatusSsl._(this.value);
+sealed class StatusSsl {const StatusSsl();
 
 factory StatusSsl.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -61,25 +119,24 @@ factory StatusSsl.fromJson(String json) { return switch (json) {
   'deactivated' => deactivated,
   'error' => error,
   'unknown' => unknown,
-  _ => StatusSsl._(json),
+  _ => StatusSsl$Unknown(json),
 }; }
 
-static const StatusSsl initializing = StatusSsl._('initializing');
+static const StatusSsl initializing = StatusSsl$initializing._();
 
-static const StatusSsl pending = StatusSsl._('pending');
+static const StatusSsl pending = StatusSsl$pending._();
 
-static const StatusSsl active = StatusSsl._('active');
+static const StatusSsl active = StatusSsl$active._();
 
-static const StatusSsl deactivated = StatusSsl._('deactivated');
+static const StatusSsl deactivated = StatusSsl$deactivated._();
 
-static const StatusSsl error = StatusSsl._('error');
+static const StatusSsl error = StatusSsl$error._();
 
-static const StatusSsl unknown = StatusSsl._('unknown');
+static const StatusSsl unknown = StatusSsl$unknown._();
 
 static const List<StatusSsl> values = [initializing, pending, active, deactivated, error, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -92,13 +149,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StatusSsl$Unknown; } 
+@override String toString() => 'StatusSsl($value)';
+
+ }
+@immutable final class StatusSsl$initializing extends StatusSsl {const StatusSsl$initializing._();
+
+@override String get value => 'initializing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusSsl$initializing;
+
+@override int get hashCode => 'initializing'.hashCode;
+
+ }
+@immutable final class StatusSsl$pending extends StatusSsl {const StatusSsl$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusSsl$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class StatusSsl$active extends StatusSsl {const StatusSsl$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusSsl$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class StatusSsl$deactivated extends StatusSsl {const StatusSsl$deactivated._();
+
+@override String get value => 'deactivated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusSsl$deactivated;
+
+@override int get hashCode => 'deactivated'.hashCode;
+
+ }
+@immutable final class StatusSsl$error extends StatusSsl {const StatusSsl$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusSsl$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class StatusSsl$unknown extends StatusSsl {const StatusSsl$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusSsl$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class StatusSsl$Unknown extends StatusSsl {const StatusSsl$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StatusSsl && other.value == value;
+    other is StatusSsl$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StatusSsl($value)';
 
  }
 @immutable final class R2GetCustomDomainResponseStatus {const R2GetCustomDomainResponseStatus({required this.ownership, required this.ssl, });

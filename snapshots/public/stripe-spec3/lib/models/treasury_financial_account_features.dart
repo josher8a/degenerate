@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TreasuryFinancialAccountFeatures
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_financial_addresses_features.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_inbound_transfers.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_outbound_payments.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_outbound_transfers.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_toggle_settings.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TreasuryFinancialAccountFeaturesObject {const TreasuryFinancialAccountFeaturesObject._(this.value);
+sealed class TreasuryFinancialAccountFeaturesObject {const TreasuryFinancialAccountFeaturesObject();
 
 factory TreasuryFinancialAccountFeaturesObject.fromJson(String json) { return switch (json) {
   'treasury.financial_account_features' => treasuryFinancialAccountFeatures,
-  _ => TreasuryFinancialAccountFeaturesObject._(json),
+  _ => TreasuryFinancialAccountFeaturesObject$Unknown(json),
 }; }
 
-static const TreasuryFinancialAccountFeaturesObject treasuryFinancialAccountFeatures = TreasuryFinancialAccountFeaturesObject._('treasury.financial_account_features');
+static const TreasuryFinancialAccountFeaturesObject treasuryFinancialAccountFeatures = TreasuryFinancialAccountFeaturesObject$treasuryFinancialAccountFeatures._();
 
 static const List<TreasuryFinancialAccountFeaturesObject> values = [treasuryFinancialAccountFeatures];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TreasuryFinancialAccountFeaturesObject$Unknown; } 
+@override String toString() => 'TreasuryFinancialAccountFeaturesObject($value)';
+
+ }
+@immutable final class TreasuryFinancialAccountFeaturesObject$treasuryFinancialAccountFeatures extends TreasuryFinancialAccountFeaturesObject {const TreasuryFinancialAccountFeaturesObject$treasuryFinancialAccountFeatures._();
+
+@override String get value => 'treasury.financial_account_features';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountFeaturesObject$treasuryFinancialAccountFeatures;
+
+@override int get hashCode => 'treasury.financial_account_features'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountFeaturesObject$Unknown extends TreasuryFinancialAccountFeaturesObject {const TreasuryFinancialAccountFeaturesObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryFinancialAccountFeaturesObject && other.value == value;
+    other is TreasuryFinancialAccountFeaturesObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TreasuryFinancialAccountFeaturesObject($value)';
 
  }
 /// Encodes whether a FinancialAccount has access to a particular Feature, with a `status` enum and associated `status_details`.

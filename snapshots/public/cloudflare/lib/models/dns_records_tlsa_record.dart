@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DnsRecordsTlsaRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_smimea_record/dns_records_smimea_record_data.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';/// Record type.
-@immutable final class DnsRecordsTlsaRecordType {const DnsRecordsTlsaRecordType._(this.value);
+sealed class DnsRecordsTlsaRecordType {const DnsRecordsTlsaRecordType();
 
 factory DnsRecordsTlsaRecordType.fromJson(String json) { return switch (json) {
   'TLSA' => tlsa,
-  _ => DnsRecordsTlsaRecordType._(json),
+  _ => DnsRecordsTlsaRecordType$Unknown(json),
 }; }
 
-static const DnsRecordsTlsaRecordType tlsa = DnsRecordsTlsaRecordType._('TLSA');
+static const DnsRecordsTlsaRecordType tlsa = DnsRecordsTlsaRecordType$tlsa._();
 
 static const List<DnsRecordsTlsaRecordType> values = [tlsa];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DnsRecordsTlsaRecordType$Unknown; } 
+@override String toString() => 'DnsRecordsTlsaRecordType($value)';
+
+ }
+@immutable final class DnsRecordsTlsaRecordType$tlsa extends DnsRecordsTlsaRecordType {const DnsRecordsTlsaRecordType$tlsa._();
+
+@override String get value => 'TLSA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsTlsaRecordType$tlsa;
+
+@override int get hashCode => 'TLSA'.hashCode;
+
+ }
+@immutable final class DnsRecordsTlsaRecordType$Unknown extends DnsRecordsTlsaRecordType {const DnsRecordsTlsaRecordType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsTlsaRecordType && other.value == value;
+    other is DnsRecordsTlsaRecordType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DnsRecordsTlsaRecordType($value)';
 
  }
 @immutable final class DnsRecordsTlsaRecord {const DnsRecordsTlsaRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });

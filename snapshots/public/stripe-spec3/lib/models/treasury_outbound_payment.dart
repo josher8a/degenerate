@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TreasuryOutboundPayment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/outbound_payments_payment_method_details.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment/treasury_outbound_payment_status.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_end_user_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_outbound_payment_resource_tracking_details.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payments_resource_returned_status.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TreasuryOutboundPaymentObject {const TreasuryOutboundPaymentObject._(this.value);
+sealed class TreasuryOutboundPaymentObject {const TreasuryOutboundPaymentObject();
 
 factory TreasuryOutboundPaymentObject.fromJson(String json) { return switch (json) {
   'treasury.outbound_payment' => treasuryOutboundPayment,
-  _ => TreasuryOutboundPaymentObject._(json),
+  _ => TreasuryOutboundPaymentObject$Unknown(json),
 }; }
 
-static const TreasuryOutboundPaymentObject treasuryOutboundPayment = TreasuryOutboundPaymentObject._('treasury.outbound_payment');
+static const TreasuryOutboundPaymentObject treasuryOutboundPayment = TreasuryOutboundPaymentObject$treasuryOutboundPayment._();
 
 static const List<TreasuryOutboundPaymentObject> values = [treasuryOutboundPayment];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TreasuryOutboundPaymentObject$Unknown; } 
+@override String toString() => 'TreasuryOutboundPaymentObject($value)';
+
+ }
+@immutable final class TreasuryOutboundPaymentObject$treasuryOutboundPayment extends TreasuryOutboundPaymentObject {const TreasuryOutboundPaymentObject$treasuryOutboundPayment._();
+
+@override String get value => 'treasury.outbound_payment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryOutboundPaymentObject$treasuryOutboundPayment;
+
+@override int get hashCode => 'treasury.outbound_payment'.hashCode;
+
+ }
+@immutable final class TreasuryOutboundPaymentObject$Unknown extends TreasuryOutboundPaymentObject {const TreasuryOutboundPaymentObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryOutboundPaymentObject && other.value == value;
+    other is TreasuryOutboundPaymentObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TreasuryOutboundPaymentObject($value)';
 
  }
 /// Use [OutboundPayments](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/out-of/outbound-payments) to send funds to another party's external bank account or [FinancialAccount](https://api.stripe.com#financial_accounts). To send money to an account belonging to the same user, use an [OutboundTransfer](https://api.stripe.com#outbound_transfers).

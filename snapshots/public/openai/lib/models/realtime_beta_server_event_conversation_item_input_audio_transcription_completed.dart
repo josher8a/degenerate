@@ -4,19 +4,18 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_transcription_response_json/create_transcription_response_json_usage.dart';import 'package:pub_openai/models/log_prob_properties.dart';import 'package:pub_openai/models/transcript_text_usage_duration.dart';import 'package:pub_openai/models/transcript_text_usage_tokens.dart';/// The event type, must be
 /// `conversation.item.input_audio_transcription.completed`.
 /// 
-@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType._(this.value);
+sealed class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType();
 
 factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType.fromJson(String json) { return switch (json) {
   'conversation.item.input_audio_transcription.completed' => conversationItemInputAudioTranscriptionCompleted,
-  _ => RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType._(json),
+  _ => RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType conversationItemInputAudioTranscriptionCompleted = RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType._('conversation.item.input_audio_transcription.completed');
+static const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType conversationItemInputAudioTranscriptionCompleted = RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType$conversationItemInputAudioTranscriptionCompleted._();
 
 static const List<RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType> values = [conversationItemInputAudioTranscriptionCompleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -24,13 +23,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType$conversationItemInputAudioTranscriptionCompleted extends RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType$conversationItemInputAudioTranscriptionCompleted._();
+
+@override String get value => 'conversation.item.input_audio_transcription.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType$conversationItemInputAudioTranscriptionCompleted;
+
+@override int get hashCode => 'conversation.item.input_audio_transcription.completed'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType$Unknown extends RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType && other.value == value;
+    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionCompletedType($value)';
 
  }
 /// This event is the output of audio transcription for user audio written to the

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DeletedSubscriptionItem (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class DeletedSubscriptionItemObject {const DeletedSubscriptionItemObject._(this.value);
+sealed class DeletedSubscriptionItemObject {const DeletedSubscriptionItemObject();
 
 factory DeletedSubscriptionItemObject.fromJson(String json) { return switch (json) {
   'subscription_item' => subscriptionItem,
-  _ => DeletedSubscriptionItemObject._(json),
+  _ => DeletedSubscriptionItemObject$Unknown(json),
 }; }
 
-static const DeletedSubscriptionItemObject subscriptionItem = DeletedSubscriptionItemObject._('subscription_item');
+static const DeletedSubscriptionItemObject subscriptionItem = DeletedSubscriptionItemObject$subscriptionItem._();
 
 static const List<DeletedSubscriptionItemObject> values = [subscriptionItem];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeletedSubscriptionItemObject$Unknown; } 
+@override String toString() => 'DeletedSubscriptionItemObject($value)';
+
+ }
+@immutable final class DeletedSubscriptionItemObject$subscriptionItem extends DeletedSubscriptionItemObject {const DeletedSubscriptionItemObject$subscriptionItem._();
+
+@override String get value => 'subscription_item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeletedSubscriptionItemObject$subscriptionItem;
+
+@override int get hashCode => 'subscription_item'.hashCode;
+
+ }
+@immutable final class DeletedSubscriptionItemObject$Unknown extends DeletedSubscriptionItemObject {const DeletedSubscriptionItemObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeletedSubscriptionItemObject && other.value == value;
+    other is DeletedSubscriptionItemObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeletedSubscriptionItemObject($value)';
 
  }

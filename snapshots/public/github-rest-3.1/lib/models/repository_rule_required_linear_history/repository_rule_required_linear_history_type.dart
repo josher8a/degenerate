@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleRequiredLinearHistory (inline: Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleRequiredLinearHistoryType {const RepositoryRuleRequiredLinearHistoryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RepositoryRuleRequiredLinearHistoryType {const RepositoryRuleRequiredLinearHistoryType();
 
 factory RepositoryRuleRequiredLinearHistoryType.fromJson(String json) { return switch (json) {
   'required_linear_history' => requiredLinearHistory,
-  _ => RepositoryRuleRequiredLinearHistoryType._(json),
+  _ => RepositoryRuleRequiredLinearHistoryType$Unknown(json),
 }; }
 
-static const RepositoryRuleRequiredLinearHistoryType requiredLinearHistory = RepositoryRuleRequiredLinearHistoryType._('required_linear_history');
+static const RepositoryRuleRequiredLinearHistoryType requiredLinearHistory = RepositoryRuleRequiredLinearHistoryType$requiredLinearHistory._();
 
 static const List<RepositoryRuleRequiredLinearHistoryType> values = [requiredLinearHistory];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RepositoryRuleRequiredLinearHistoryType$Unknown; } 
+@override String toString() => 'RepositoryRuleRequiredLinearHistoryType($value)';
+
+ }
+@immutable final class RepositoryRuleRequiredLinearHistoryType$requiredLinearHistory extends RepositoryRuleRequiredLinearHistoryType {const RepositoryRuleRequiredLinearHistoryType$requiredLinearHistory._();
+
+@override String get value => 'required_linear_history';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryRuleRequiredLinearHistoryType$requiredLinearHistory;
+
+@override int get hashCode => 'required_linear_history'.hashCode;
+
+ }
+@immutable final class RepositoryRuleRequiredLinearHistoryType$Unknown extends RepositoryRuleRequiredLinearHistoryType {const RepositoryRuleRequiredLinearHistoryType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleRequiredLinearHistoryType && other.value == value;
+    other is RepositoryRuleRequiredLinearHistoryType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleRequiredLinearHistoryType($value)';
 
  }

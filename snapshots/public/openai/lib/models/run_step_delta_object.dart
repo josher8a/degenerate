@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RunStepDeltaObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_delta_object/run_step_delta_object_delta.dart';/// The object type, which is always `thread.run.step.delta`.
-@immutable final class RunStepDeltaObjectObject {const RunStepDeltaObjectObject._(this.value);
+sealed class RunStepDeltaObjectObject {const RunStepDeltaObjectObject();
 
 factory RunStepDeltaObjectObject.fromJson(String json) { return switch (json) {
   'thread.run.step.delta' => threadRunStepDelta,
-  _ => RunStepDeltaObjectObject._(json),
+  _ => RunStepDeltaObjectObject$Unknown(json),
 }; }
 
-static const RunStepDeltaObjectObject threadRunStepDelta = RunStepDeltaObjectObject._('thread.run.step.delta');
+static const RunStepDeltaObjectObject threadRunStepDelta = RunStepDeltaObjectObject$threadRunStepDelta._();
 
 static const List<RunStepDeltaObjectObject> values = [threadRunStepDelta];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RunStepDeltaObjectObject$Unknown; } 
+@override String toString() => 'RunStepDeltaObjectObject($value)';
+
+ }
+@immutable final class RunStepDeltaObjectObject$threadRunStepDelta extends RunStepDeltaObjectObject {const RunStepDeltaObjectObject$threadRunStepDelta._();
+
+@override String get value => 'thread.run.step.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunStepDeltaObjectObject$threadRunStepDelta;
+
+@override int get hashCode => 'thread.run.step.delta'.hashCode;
+
+ }
+@immutable final class RunStepDeltaObjectObject$Unknown extends RunStepDeltaObjectObject {const RunStepDeltaObjectObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RunStepDeltaObjectObject && other.value == value;
+    other is RunStepDeltaObjectObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RunStepDeltaObjectObject($value)';
 
  }
 /// Represents a run step delta i.e. any changed fields on a run step during streaming.

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AiSearchCreateInstancesRequest (inline: CustomMetadata)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DataType {const DataType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DataType {const DataType();
 
 factory DataType.fromJson(String json) { return switch (json) {
   'text' => text,
   'number' => number,
   'boolean' => boolean,
-  _ => DataType._(json),
+  _ => DataType$Unknown(json),
 }; }
 
-static const DataType text = DataType._('text');
+static const DataType text = DataType$text._();
 
-static const DataType number = DataType._('number');
+static const DataType number = DataType$number._();
 
-static const DataType boolean = DataType._('boolean');
+static const DataType boolean = DataType$boolean._();
 
 static const List<DataType> values = [text, number, boolean];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DataType$Unknown; } 
+@override String toString() => 'DataType($value)';
+
+ }
+@immutable final class DataType$text extends DataType {const DataType$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataType$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class DataType$number extends DataType {const DataType$number._();
+
+@override String get value => 'number';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataType$number;
+
+@override int get hashCode => 'number'.hashCode;
+
+ }
+@immutable final class DataType$boolean extends DataType {const DataType$boolean._();
+
+@override String get value => 'boolean';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataType$boolean;
+
+@override int get hashCode => 'boolean'.hashCode;
+
+ }
+@immutable final class DataType$Unknown extends DataType {const DataType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DataType && other.value == value;
+    other is DataType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DataType($value)';
 
  }
 @immutable final class CustomMetadata {const CustomMetadata({required this.dataType, required this.fieldName, });

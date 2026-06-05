@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EmailSecurityInvestigateMessageAction
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityInvestigateMessageAction {const EmailSecurityInvestigateMessageAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EmailSecurityInvestigateMessageAction {const EmailSecurityInvestigateMessageAction();
 
 factory EmailSecurityInvestigateMessageAction.fromJson(String json) { return switch (json) {
   'PREVIEW' => preview,
   'QUARANTINE_RELEASED' => quarantineReleased,
   'MOVED' => moved,
-  _ => EmailSecurityInvestigateMessageAction._(json),
+  _ => EmailSecurityInvestigateMessageAction$Unknown(json),
 }; }
 
-static const EmailSecurityInvestigateMessageAction preview = EmailSecurityInvestigateMessageAction._('PREVIEW');
+static const EmailSecurityInvestigateMessageAction preview = EmailSecurityInvestigateMessageAction$preview._();
 
-static const EmailSecurityInvestigateMessageAction quarantineReleased = EmailSecurityInvestigateMessageAction._('QUARANTINE_RELEASED');
+static const EmailSecurityInvestigateMessageAction quarantineReleased = EmailSecurityInvestigateMessageAction$quarantineReleased._();
 
-static const EmailSecurityInvestigateMessageAction moved = EmailSecurityInvestigateMessageAction._('MOVED');
+static const EmailSecurityInvestigateMessageAction moved = EmailSecurityInvestigateMessageAction$moved._();
 
 static const List<EmailSecurityInvestigateMessageAction> values = [preview, quarantineReleased, moved];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EmailSecurityInvestigateMessageAction$Unknown; } 
+@override String toString() => 'EmailSecurityInvestigateMessageAction($value)';
+
+ }
+@immutable final class EmailSecurityInvestigateMessageAction$preview extends EmailSecurityInvestigateMessageAction {const EmailSecurityInvestigateMessageAction$preview._();
+
+@override String get value => 'PREVIEW';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityInvestigateMessageAction$preview;
+
+@override int get hashCode => 'PREVIEW'.hashCode;
+
+ }
+@immutable final class EmailSecurityInvestigateMessageAction$quarantineReleased extends EmailSecurityInvestigateMessageAction {const EmailSecurityInvestigateMessageAction$quarantineReleased._();
+
+@override String get value => 'QUARANTINE_RELEASED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityInvestigateMessageAction$quarantineReleased;
+
+@override int get hashCode => 'QUARANTINE_RELEASED'.hashCode;
+
+ }
+@immutable final class EmailSecurityInvestigateMessageAction$moved extends EmailSecurityInvestigateMessageAction {const EmailSecurityInvestigateMessageAction$moved._();
+
+@override String get value => 'MOVED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityInvestigateMessageAction$moved;
+
+@override int get hashCode => 'MOVED'.hashCode;
+
+ }
+@immutable final class EmailSecurityInvestigateMessageAction$Unknown extends EmailSecurityInvestigateMessageAction {const EmailSecurityInvestigateMessageAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EmailSecurityInvestigateMessageAction && other.value == value;
+    other is EmailSecurityInvestigateMessageAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EmailSecurityInvestigateMessageAction($value)';
 
  }

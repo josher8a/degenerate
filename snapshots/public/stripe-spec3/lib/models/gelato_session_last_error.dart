@@ -2,7 +2,7 @@
 // Source: #/components/schemas/GelatoSessionLastError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification or user-session failure.
-@immutable final class GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode._(this.value);
+sealed class GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode();
 
 factory GelatoSessionLastErrorCode.fromJson(String json) { return switch (json) {
   'abandoned' => abandoned,
@@ -24,51 +24,50 @@ factory GelatoSessionLastErrorCode.fromJson(String json) { return switch (json) 
   'selfie_manipulated' => selfieManipulated,
   'selfie_unverified_other' => selfieUnverifiedOther,
   'under_supported_age' => underSupportedAge,
-  _ => GelatoSessionLastErrorCode._(json),
+  _ => GelatoSessionLastErrorCode$Unknown(json),
 }; }
 
-static const GelatoSessionLastErrorCode abandoned = GelatoSessionLastErrorCode._('abandoned');
+static const GelatoSessionLastErrorCode abandoned = GelatoSessionLastErrorCode$abandoned._();
 
-static const GelatoSessionLastErrorCode consentDeclined = GelatoSessionLastErrorCode._('consent_declined');
+static const GelatoSessionLastErrorCode consentDeclined = GelatoSessionLastErrorCode$consentDeclined._();
 
-static const GelatoSessionLastErrorCode countryNotSupported = GelatoSessionLastErrorCode._('country_not_supported');
+static const GelatoSessionLastErrorCode countryNotSupported = GelatoSessionLastErrorCode$countryNotSupported._();
 
-static const GelatoSessionLastErrorCode deviceNotSupported = GelatoSessionLastErrorCode._('device_not_supported');
+static const GelatoSessionLastErrorCode deviceNotSupported = GelatoSessionLastErrorCode$deviceNotSupported._();
 
-static const GelatoSessionLastErrorCode documentExpired = GelatoSessionLastErrorCode._('document_expired');
+static const GelatoSessionLastErrorCode documentExpired = GelatoSessionLastErrorCode$documentExpired._();
 
-static const GelatoSessionLastErrorCode documentTypeNotSupported = GelatoSessionLastErrorCode._('document_type_not_supported');
+static const GelatoSessionLastErrorCode documentTypeNotSupported = GelatoSessionLastErrorCode$documentTypeNotSupported._();
 
-static const GelatoSessionLastErrorCode documentUnverifiedOther = GelatoSessionLastErrorCode._('document_unverified_other');
+static const GelatoSessionLastErrorCode documentUnverifiedOther = GelatoSessionLastErrorCode$documentUnverifiedOther._();
 
-static const GelatoSessionLastErrorCode emailUnverifiedOther = GelatoSessionLastErrorCode._('email_unverified_other');
+static const GelatoSessionLastErrorCode emailUnverifiedOther = GelatoSessionLastErrorCode$emailUnverifiedOther._();
 
-static const GelatoSessionLastErrorCode emailVerificationDeclined = GelatoSessionLastErrorCode._('email_verification_declined');
+static const GelatoSessionLastErrorCode emailVerificationDeclined = GelatoSessionLastErrorCode$emailVerificationDeclined._();
 
-static const GelatoSessionLastErrorCode idNumberInsufficientDocumentData = GelatoSessionLastErrorCode._('id_number_insufficient_document_data');
+static const GelatoSessionLastErrorCode idNumberInsufficientDocumentData = GelatoSessionLastErrorCode$idNumberInsufficientDocumentData._();
 
-static const GelatoSessionLastErrorCode idNumberMismatch = GelatoSessionLastErrorCode._('id_number_mismatch');
+static const GelatoSessionLastErrorCode idNumberMismatch = GelatoSessionLastErrorCode$idNumberMismatch._();
 
-static const GelatoSessionLastErrorCode idNumberUnverifiedOther = GelatoSessionLastErrorCode._('id_number_unverified_other');
+static const GelatoSessionLastErrorCode idNumberUnverifiedOther = GelatoSessionLastErrorCode$idNumberUnverifiedOther._();
 
-static const GelatoSessionLastErrorCode phoneUnverifiedOther = GelatoSessionLastErrorCode._('phone_unverified_other');
+static const GelatoSessionLastErrorCode phoneUnverifiedOther = GelatoSessionLastErrorCode$phoneUnverifiedOther._();
 
-static const GelatoSessionLastErrorCode phoneVerificationDeclined = GelatoSessionLastErrorCode._('phone_verification_declined');
+static const GelatoSessionLastErrorCode phoneVerificationDeclined = GelatoSessionLastErrorCode$phoneVerificationDeclined._();
 
-static const GelatoSessionLastErrorCode selfieDocumentMissingPhoto = GelatoSessionLastErrorCode._('selfie_document_missing_photo');
+static const GelatoSessionLastErrorCode selfieDocumentMissingPhoto = GelatoSessionLastErrorCode$selfieDocumentMissingPhoto._();
 
-static const GelatoSessionLastErrorCode selfieFaceMismatch = GelatoSessionLastErrorCode._('selfie_face_mismatch');
+static const GelatoSessionLastErrorCode selfieFaceMismatch = GelatoSessionLastErrorCode$selfieFaceMismatch._();
 
-static const GelatoSessionLastErrorCode selfieManipulated = GelatoSessionLastErrorCode._('selfie_manipulated');
+static const GelatoSessionLastErrorCode selfieManipulated = GelatoSessionLastErrorCode$selfieManipulated._();
 
-static const GelatoSessionLastErrorCode selfieUnverifiedOther = GelatoSessionLastErrorCode._('selfie_unverified_other');
+static const GelatoSessionLastErrorCode selfieUnverifiedOther = GelatoSessionLastErrorCode$selfieUnverifiedOther._();
 
-static const GelatoSessionLastErrorCode underSupportedAge = GelatoSessionLastErrorCode._('under_supported_age');
+static const GelatoSessionLastErrorCode underSupportedAge = GelatoSessionLastErrorCode$underSupportedAge._();
 
 static const List<GelatoSessionLastErrorCode> values = [abandoned, consentDeclined, countryNotSupported, deviceNotSupported, documentExpired, documentTypeNotSupported, documentUnverifiedOther, emailUnverifiedOther, emailVerificationDeclined, idNumberInsufficientDocumentData, idNumberMismatch, idNumberUnverifiedOther, phoneUnverifiedOther, phoneVerificationDeclined, selfieDocumentMissingPhoto, selfieFaceMismatch, selfieManipulated, selfieUnverifiedOther, underSupportedAge];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -94,13 +93,189 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GelatoSessionLastErrorCode$Unknown; } 
+@override String toString() => 'GelatoSessionLastErrorCode($value)';
+
+ }
+@immutable final class GelatoSessionLastErrorCode$abandoned extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$abandoned._();
+
+@override String get value => 'abandoned';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$abandoned;
+
+@override int get hashCode => 'abandoned'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$consentDeclined extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$consentDeclined._();
+
+@override String get value => 'consent_declined';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$consentDeclined;
+
+@override int get hashCode => 'consent_declined'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$countryNotSupported extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$countryNotSupported._();
+
+@override String get value => 'country_not_supported';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$countryNotSupported;
+
+@override int get hashCode => 'country_not_supported'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$deviceNotSupported extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$deviceNotSupported._();
+
+@override String get value => 'device_not_supported';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$deviceNotSupported;
+
+@override int get hashCode => 'device_not_supported'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$documentExpired extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$documentExpired._();
+
+@override String get value => 'document_expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$documentExpired;
+
+@override int get hashCode => 'document_expired'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$documentTypeNotSupported extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$documentTypeNotSupported._();
+
+@override String get value => 'document_type_not_supported';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$documentTypeNotSupported;
+
+@override int get hashCode => 'document_type_not_supported'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$documentUnverifiedOther extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$documentUnverifiedOther._();
+
+@override String get value => 'document_unverified_other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$documentUnverifiedOther;
+
+@override int get hashCode => 'document_unverified_other'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$emailUnverifiedOther extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$emailUnverifiedOther._();
+
+@override String get value => 'email_unverified_other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$emailUnverifiedOther;
+
+@override int get hashCode => 'email_unverified_other'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$emailVerificationDeclined extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$emailVerificationDeclined._();
+
+@override String get value => 'email_verification_declined';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$emailVerificationDeclined;
+
+@override int get hashCode => 'email_verification_declined'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$idNumberInsufficientDocumentData extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$idNumberInsufficientDocumentData._();
+
+@override String get value => 'id_number_insufficient_document_data';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$idNumberInsufficientDocumentData;
+
+@override int get hashCode => 'id_number_insufficient_document_data'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$idNumberMismatch extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$idNumberMismatch._();
+
+@override String get value => 'id_number_mismatch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$idNumberMismatch;
+
+@override int get hashCode => 'id_number_mismatch'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$idNumberUnverifiedOther extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$idNumberUnverifiedOther._();
+
+@override String get value => 'id_number_unverified_other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$idNumberUnverifiedOther;
+
+@override int get hashCode => 'id_number_unverified_other'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$phoneUnverifiedOther extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$phoneUnverifiedOther._();
+
+@override String get value => 'phone_unverified_other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$phoneUnverifiedOther;
+
+@override int get hashCode => 'phone_unverified_other'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$phoneVerificationDeclined extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$phoneVerificationDeclined._();
+
+@override String get value => 'phone_verification_declined';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$phoneVerificationDeclined;
+
+@override int get hashCode => 'phone_verification_declined'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$selfieDocumentMissingPhoto extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$selfieDocumentMissingPhoto._();
+
+@override String get value => 'selfie_document_missing_photo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$selfieDocumentMissingPhoto;
+
+@override int get hashCode => 'selfie_document_missing_photo'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$selfieFaceMismatch extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$selfieFaceMismatch._();
+
+@override String get value => 'selfie_face_mismatch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$selfieFaceMismatch;
+
+@override int get hashCode => 'selfie_face_mismatch'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$selfieManipulated extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$selfieManipulated._();
+
+@override String get value => 'selfie_manipulated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$selfieManipulated;
+
+@override int get hashCode => 'selfie_manipulated'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$selfieUnverifiedOther extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$selfieUnverifiedOther._();
+
+@override String get value => 'selfie_unverified_other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$selfieUnverifiedOther;
+
+@override int get hashCode => 'selfie_unverified_other'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$underSupportedAge extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$underSupportedAge._();
+
+@override String get value => 'under_supported_age';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoSessionLastErrorCode$underSupportedAge;
+
+@override int get hashCode => 'under_supported_age'.hashCode;
+
+ }
+@immutable final class GelatoSessionLastErrorCode$Unknown extends GelatoSessionLastErrorCode {const GelatoSessionLastErrorCode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GelatoSessionLastErrorCode && other.value == value;
+    other is GelatoSessionLastErrorCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GelatoSessionLastErrorCode($value)';
 
  }
 /// Shows last VerificationSession error

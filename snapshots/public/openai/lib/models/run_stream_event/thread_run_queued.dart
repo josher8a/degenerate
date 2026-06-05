@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStreamEvent (inline: ThreadRunQueued)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';@immutable final class ThreadRunQueuedEvent {const ThreadRunQueuedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';sealed class ThreadRunQueuedEvent {const ThreadRunQueuedEvent();
 
 factory ThreadRunQueuedEvent.fromJson(String json) { return switch (json) {
   'thread.run.queued' => threadRunQueued,
-  _ => ThreadRunQueuedEvent._(json),
+  _ => ThreadRunQueuedEvent$Unknown(json),
 }; }
 
-static const ThreadRunQueuedEvent threadRunQueued = ThreadRunQueuedEvent._('thread.run.queued');
+static const ThreadRunQueuedEvent threadRunQueued = ThreadRunQueuedEvent$threadRunQueued._();
 
 static const List<ThreadRunQueuedEvent> values = [threadRunQueued];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunQueuedEvent$Unknown; } 
+@override String toString() => 'ThreadRunQueuedEvent($value)';
+
+ }
+@immutable final class ThreadRunQueuedEvent$threadRunQueued extends ThreadRunQueuedEvent {const ThreadRunQueuedEvent$threadRunQueued._();
+
+@override String get value => 'thread.run.queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunQueuedEvent$threadRunQueued;
+
+@override int get hashCode => 'thread.run.queued'.hashCode;
+
+ }
+@immutable final class ThreadRunQueuedEvent$Unknown extends ThreadRunQueuedEvent {const ThreadRunQueuedEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunQueuedEvent && other.value == value;
+    other is ThreadRunQueuedEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunQueuedEvent($value)';
 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `queued` status.

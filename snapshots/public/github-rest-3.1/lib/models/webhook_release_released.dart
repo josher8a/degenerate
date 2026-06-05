@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookReleaseReleased
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_release.dart';@immutable final class WebhookReleaseReleasedAction {const WebhookReleaseReleasedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_release.dart';sealed class WebhookReleaseReleasedAction {const WebhookReleaseReleasedAction();
 
 factory WebhookReleaseReleasedAction.fromJson(String json) { return switch (json) {
   'released' => released,
-  _ => WebhookReleaseReleasedAction._(json),
+  _ => WebhookReleaseReleasedAction$Unknown(json),
 }; }
 
-static const WebhookReleaseReleasedAction released = WebhookReleaseReleasedAction._('released');
+static const WebhookReleaseReleasedAction released = WebhookReleaseReleasedAction$released._();
 
 static const List<WebhookReleaseReleasedAction> values = [released];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookReleaseReleasedAction$Unknown; } 
+@override String toString() => 'WebhookReleaseReleasedAction($value)';
+
+ }
+@immutable final class WebhookReleaseReleasedAction$released extends WebhookReleaseReleasedAction {const WebhookReleaseReleasedAction$released._();
+
+@override String get value => 'released';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookReleaseReleasedAction$released;
+
+@override int get hashCode => 'released'.hashCode;
+
+ }
+@immutable final class WebhookReleaseReleasedAction$Unknown extends WebhookReleaseReleasedAction {const WebhookReleaseReleasedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookReleaseReleasedAction && other.value == value;
+    other is WebhookReleaseReleasedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookReleaseReleasedAction($value)';
 
  }
 @immutable final class WebhookReleaseReleased {const WebhookReleaseReleased({required this.action, required this.release, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });

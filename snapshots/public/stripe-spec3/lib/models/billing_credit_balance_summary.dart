@@ -2,19 +2,18 @@
 // Source: #/components/schemas/BillingCreditBalanceSummary
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/credit_balance.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class BillingCreditBalanceSummaryObject {const BillingCreditBalanceSummaryObject._(this.value);
+sealed class BillingCreditBalanceSummaryObject {const BillingCreditBalanceSummaryObject();
 
 factory BillingCreditBalanceSummaryObject.fromJson(String json) { return switch (json) {
   'billing.credit_balance_summary' => billingCreditBalanceSummary,
-  _ => BillingCreditBalanceSummaryObject._(json),
+  _ => BillingCreditBalanceSummaryObject$Unknown(json),
 }; }
 
-static const BillingCreditBalanceSummaryObject billingCreditBalanceSummary = BillingCreditBalanceSummaryObject._('billing.credit_balance_summary');
+static const BillingCreditBalanceSummaryObject billingCreditBalanceSummary = BillingCreditBalanceSummaryObject$billingCreditBalanceSummary._();
 
 static const List<BillingCreditBalanceSummaryObject> values = [billingCreditBalanceSummary];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingCreditBalanceSummaryObject$Unknown; } 
+@override String toString() => 'BillingCreditBalanceSummaryObject($value)';
+
+ }
+@immutable final class BillingCreditBalanceSummaryObject$billingCreditBalanceSummary extends BillingCreditBalanceSummaryObject {const BillingCreditBalanceSummaryObject$billingCreditBalanceSummary._();
+
+@override String get value => 'billing.credit_balance_summary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingCreditBalanceSummaryObject$billingCreditBalanceSummary;
+
+@override int get hashCode => 'billing.credit_balance_summary'.hashCode;
+
+ }
+@immutable final class BillingCreditBalanceSummaryObject$Unknown extends BillingCreditBalanceSummaryObject {const BillingCreditBalanceSummaryObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingCreditBalanceSummaryObject && other.value == value;
+    other is BillingCreditBalanceSummaryObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingCreditBalanceSummaryObject($value)';
 
  }
 /// Indicates the billing credit balance for billing credits granted to a customer.

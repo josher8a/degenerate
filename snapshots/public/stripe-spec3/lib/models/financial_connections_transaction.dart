@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FinancialConnectionsTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_transaction_resource_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class FinancialConnectionsTransactionObject {const FinancialConnectionsTransactionObject._(this.value);
+sealed class FinancialConnectionsTransactionObject {const FinancialConnectionsTransactionObject();
 
 factory FinancialConnectionsTransactionObject.fromJson(String json) { return switch (json) {
   'financial_connections.transaction' => financialConnectionsTransaction,
-  _ => FinancialConnectionsTransactionObject._(json),
+  _ => FinancialConnectionsTransactionObject$Unknown(json),
 }; }
 
-static const FinancialConnectionsTransactionObject financialConnectionsTransaction = FinancialConnectionsTransactionObject._('financial_connections.transaction');
+static const FinancialConnectionsTransactionObject financialConnectionsTransaction = FinancialConnectionsTransactionObject$financialConnectionsTransaction._();
 
 static const List<FinancialConnectionsTransactionObject> values = [financialConnectionsTransaction];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,35 +21,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is FinancialConnectionsTransactionObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is FinancialConnectionsTransactionObject$Unknown; } 
 @override String toString() => 'FinancialConnectionsTransactionObject($value)';
 
  }
+@immutable final class FinancialConnectionsTransactionObject$financialConnectionsTransaction extends FinancialConnectionsTransactionObject {const FinancialConnectionsTransactionObject$financialConnectionsTransaction._();
+
+@override String get value => 'financial_connections.transaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsTransactionObject$financialConnectionsTransaction;
+
+@override int get hashCode => 'financial_connections.transaction'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsTransactionObject$Unknown extends FinancialConnectionsTransactionObject {const FinancialConnectionsTransactionObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FinancialConnectionsTransactionObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of the transaction.
-@immutable final class FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus._(this.value);
+sealed class FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus();
 
 factory FinancialConnectionsTransactionStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'posted' => posted,
   'void' => $void,
-  _ => FinancialConnectionsTransactionStatus._(json),
+  _ => FinancialConnectionsTransactionStatus$Unknown(json),
 }; }
 
-static const FinancialConnectionsTransactionStatus pending = FinancialConnectionsTransactionStatus._('pending');
+static const FinancialConnectionsTransactionStatus pending = FinancialConnectionsTransactionStatus$pending._();
 
-static const FinancialConnectionsTransactionStatus posted = FinancialConnectionsTransactionStatus._('posted');
+static const FinancialConnectionsTransactionStatus posted = FinancialConnectionsTransactionStatus$posted._();
 
-static const FinancialConnectionsTransactionStatus $void = FinancialConnectionsTransactionStatus._('void');
+static const FinancialConnectionsTransactionStatus $void = FinancialConnectionsTransactionStatus$$void._();
 
 static const List<FinancialConnectionsTransactionStatus> values = [pending, posted, $void];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,13 +72,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FinancialConnectionsTransactionStatus$Unknown; } 
+@override String toString() => 'FinancialConnectionsTransactionStatus($value)';
+
+ }
+@immutable final class FinancialConnectionsTransactionStatus$pending extends FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsTransactionStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsTransactionStatus$posted extends FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus$posted._();
+
+@override String get value => 'posted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsTransactionStatus$posted;
+
+@override int get hashCode => 'posted'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsTransactionStatus$$void extends FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus$$void._();
+
+@override String get value => 'void';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsTransactionStatus$$void;
+
+@override int get hashCode => 'void'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsTransactionStatus$Unknown extends FinancialConnectionsTransactionStatus {const FinancialConnectionsTransactionStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FinancialConnectionsTransactionStatus && other.value == value;
+    other is FinancialConnectionsTransactionStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FinancialConnectionsTransactionStatus($value)';
 
  }
 /// A Transaction represents a real transaction that affects a Financial Connections Account balance.

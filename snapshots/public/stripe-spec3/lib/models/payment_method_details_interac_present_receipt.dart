@@ -2,25 +2,24 @@
 // Source: #/components/schemas/PaymentMethodDetailsInteracPresentReceipt
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of account being debited or credited
-@immutable final class PaymentMethodDetailsInteracPresentReceiptAccountType {const PaymentMethodDetailsInteracPresentReceiptAccountType._(this.value);
+sealed class PaymentMethodDetailsInteracPresentReceiptAccountType {const PaymentMethodDetailsInteracPresentReceiptAccountType();
 
 factory PaymentMethodDetailsInteracPresentReceiptAccountType.fromJson(String json) { return switch (json) {
   'checking' => checking,
   'savings' => savings,
   'unknown' => unknown,
-  _ => PaymentMethodDetailsInteracPresentReceiptAccountType._(json),
+  _ => PaymentMethodDetailsInteracPresentReceiptAccountType$Unknown(json),
 }; }
 
-static const PaymentMethodDetailsInteracPresentReceiptAccountType checking = PaymentMethodDetailsInteracPresentReceiptAccountType._('checking');
+static const PaymentMethodDetailsInteracPresentReceiptAccountType checking = PaymentMethodDetailsInteracPresentReceiptAccountType$checking._();
 
-static const PaymentMethodDetailsInteracPresentReceiptAccountType savings = PaymentMethodDetailsInteracPresentReceiptAccountType._('savings');
+static const PaymentMethodDetailsInteracPresentReceiptAccountType savings = PaymentMethodDetailsInteracPresentReceiptAccountType$savings._();
 
-static const PaymentMethodDetailsInteracPresentReceiptAccountType unknown = PaymentMethodDetailsInteracPresentReceiptAccountType._('unknown');
+static const PaymentMethodDetailsInteracPresentReceiptAccountType unknown = PaymentMethodDetailsInteracPresentReceiptAccountType$unknown._();
 
 static const List<PaymentMethodDetailsInteracPresentReceiptAccountType> values = [checking, savings, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentMethodDetailsInteracPresentReceiptAccountType$Unknown; } 
+@override String toString() => 'PaymentMethodDetailsInteracPresentReceiptAccountType($value)';
+
+ }
+@immutable final class PaymentMethodDetailsInteracPresentReceiptAccountType$checking extends PaymentMethodDetailsInteracPresentReceiptAccountType {const PaymentMethodDetailsInteracPresentReceiptAccountType$checking._();
+
+@override String get value => 'checking';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsInteracPresentReceiptAccountType$checking;
+
+@override int get hashCode => 'checking'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsInteracPresentReceiptAccountType$savings extends PaymentMethodDetailsInteracPresentReceiptAccountType {const PaymentMethodDetailsInteracPresentReceiptAccountType$savings._();
+
+@override String get value => 'savings';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsInteracPresentReceiptAccountType$savings;
+
+@override int get hashCode => 'savings'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsInteracPresentReceiptAccountType$unknown extends PaymentMethodDetailsInteracPresentReceiptAccountType {const PaymentMethodDetailsInteracPresentReceiptAccountType$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsInteracPresentReceiptAccountType$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsInteracPresentReceiptAccountType$Unknown extends PaymentMethodDetailsInteracPresentReceiptAccountType {const PaymentMethodDetailsInteracPresentReceiptAccountType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentMethodDetailsInteracPresentReceiptAccountType && other.value == value;
+    other is PaymentMethodDetailsInteracPresentReceiptAccountType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentMethodDetailsInteracPresentReceiptAccountType($value)';
 
  }
 /// 

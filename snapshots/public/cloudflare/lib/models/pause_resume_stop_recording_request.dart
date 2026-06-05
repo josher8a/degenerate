@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PauseResumeStopRecordingRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PauseResumeStopRecordingRequestAction {const PauseResumeStopRecordingRequestAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PauseResumeStopRecordingRequestAction {const PauseResumeStopRecordingRequestAction();
 
 factory PauseResumeStopRecordingRequestAction.fromJson(String json) { return switch (json) {
   'stop' => stop,
   'pause' => pause,
   'resume' => resume,
-  _ => PauseResumeStopRecordingRequestAction._(json),
+  _ => PauseResumeStopRecordingRequestAction$Unknown(json),
 }; }
 
-static const PauseResumeStopRecordingRequestAction stop = PauseResumeStopRecordingRequestAction._('stop');
+static const PauseResumeStopRecordingRequestAction stop = PauseResumeStopRecordingRequestAction$stop._();
 
-static const PauseResumeStopRecordingRequestAction pause = PauseResumeStopRecordingRequestAction._('pause');
+static const PauseResumeStopRecordingRequestAction pause = PauseResumeStopRecordingRequestAction$pause._();
 
-static const PauseResumeStopRecordingRequestAction resume = PauseResumeStopRecordingRequestAction._('resume');
+static const PauseResumeStopRecordingRequestAction resume = PauseResumeStopRecordingRequestAction$resume._();
 
 static const List<PauseResumeStopRecordingRequestAction> values = [stop, pause, resume];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PauseResumeStopRecordingRequestAction$Unknown; } 
+@override String toString() => 'PauseResumeStopRecordingRequestAction($value)';
+
+ }
+@immutable final class PauseResumeStopRecordingRequestAction$stop extends PauseResumeStopRecordingRequestAction {const PauseResumeStopRecordingRequestAction$stop._();
+
+@override String get value => 'stop';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PauseResumeStopRecordingRequestAction$stop;
+
+@override int get hashCode => 'stop'.hashCode;
+
+ }
+@immutable final class PauseResumeStopRecordingRequestAction$pause extends PauseResumeStopRecordingRequestAction {const PauseResumeStopRecordingRequestAction$pause._();
+
+@override String get value => 'pause';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PauseResumeStopRecordingRequestAction$pause;
+
+@override int get hashCode => 'pause'.hashCode;
+
+ }
+@immutable final class PauseResumeStopRecordingRequestAction$resume extends PauseResumeStopRecordingRequestAction {const PauseResumeStopRecordingRequestAction$resume._();
+
+@override String get value => 'resume';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PauseResumeStopRecordingRequestAction$resume;
+
+@override int get hashCode => 'resume'.hashCode;
+
+ }
+@immutable final class PauseResumeStopRecordingRequestAction$Unknown extends PauseResumeStopRecordingRequestAction {const PauseResumeStopRecordingRequestAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PauseResumeStopRecordingRequestAction && other.value == value;
+    other is PauseResumeStopRecordingRequestAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PauseResumeStopRecordingRequestAction($value)';
 
  }
 @immutable final class PauseResumeStopRecordingRequest {const PauseResumeStopRecordingRequest({required this.action});

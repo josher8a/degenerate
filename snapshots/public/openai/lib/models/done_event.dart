@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DoneEvent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DoneEventEvent {const DoneEventEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DoneEventEvent {const DoneEventEvent();
 
 factory DoneEventEvent.fromJson(String json) { return switch (json) {
   'done' => done,
-  _ => DoneEventEvent._(json),
+  _ => DoneEventEvent$Unknown(json),
 }; }
 
-static const DoneEventEvent done = DoneEventEvent._('done');
+static const DoneEventEvent done = DoneEventEvent$done._();
 
 static const List<DoneEventEvent> values = [done];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,28 +20,41 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DoneEventEvent && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is DoneEventEvent$Unknown; } 
 @override String toString() => 'DoneEventEvent($value)';
 
  }
-@immutable final class DoneEventData {const DoneEventData._(this.value);
+@immutable final class DoneEventEvent$done extends DoneEventEvent {const DoneEventEvent$done._();
+
+@override String get value => 'done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DoneEventEvent$done;
+
+@override int get hashCode => 'done'.hashCode;
+
+ }
+@immutable final class DoneEventEvent$Unknown extends DoneEventEvent {const DoneEventEvent$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DoneEventEvent$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class DoneEventData {const DoneEventData();
 
 factory DoneEventData.fromJson(String json) { return switch (json) {
   '[DONE]' => done,
-  _ => DoneEventData._(json),
+  _ => DoneEventData$Unknown(json),
 }; }
 
-static const DoneEventData done = DoneEventData._('[DONE]');
+static const DoneEventData done = DoneEventData$done._();
 
 static const List<DoneEventData> values = [done];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,13 +62,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DoneEventData$Unknown; } 
+@override String toString() => 'DoneEventData($value)';
+
+ }
+@immutable final class DoneEventData$done extends DoneEventData {const DoneEventData$done._();
+
+@override String get value => '[DONE]';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DoneEventData$done;
+
+@override int get hashCode => '[DONE]'.hashCode;
+
+ }
+@immutable final class DoneEventData$Unknown extends DoneEventData {const DoneEventData$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DoneEventData && other.value == value;
+    other is DoneEventData$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DoneEventData($value)';
 
  }
 /// Occurs when a stream ends.

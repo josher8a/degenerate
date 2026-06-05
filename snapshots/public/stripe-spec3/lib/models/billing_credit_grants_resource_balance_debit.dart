@@ -2,25 +2,24 @@
 // Source: #/components/schemas/BillingCreditGrantsResourceBalanceDebit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_amount.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_applied.dart';/// The type of debit transaction.
-@immutable final class BillingCreditGrantsResourceBalanceDebitType {const BillingCreditGrantsResourceBalanceDebitType._(this.value);
+sealed class BillingCreditGrantsResourceBalanceDebitType {const BillingCreditGrantsResourceBalanceDebitType();
 
 factory BillingCreditGrantsResourceBalanceDebitType.fromJson(String json) { return switch (json) {
   'credits_applied' => creditsApplied,
   'credits_expired' => creditsExpired,
   'credits_voided' => creditsVoided,
-  _ => BillingCreditGrantsResourceBalanceDebitType._(json),
+  _ => BillingCreditGrantsResourceBalanceDebitType$Unknown(json),
 }; }
 
-static const BillingCreditGrantsResourceBalanceDebitType creditsApplied = BillingCreditGrantsResourceBalanceDebitType._('credits_applied');
+static const BillingCreditGrantsResourceBalanceDebitType creditsApplied = BillingCreditGrantsResourceBalanceDebitType$creditsApplied._();
 
-static const BillingCreditGrantsResourceBalanceDebitType creditsExpired = BillingCreditGrantsResourceBalanceDebitType._('credits_expired');
+static const BillingCreditGrantsResourceBalanceDebitType creditsExpired = BillingCreditGrantsResourceBalanceDebitType$creditsExpired._();
 
-static const BillingCreditGrantsResourceBalanceDebitType creditsVoided = BillingCreditGrantsResourceBalanceDebitType._('credits_voided');
+static const BillingCreditGrantsResourceBalanceDebitType creditsVoided = BillingCreditGrantsResourceBalanceDebitType$creditsVoided._();
 
 static const List<BillingCreditGrantsResourceBalanceDebitType> values = [creditsApplied, creditsExpired, creditsVoided];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingCreditGrantsResourceBalanceDebitType$Unknown; } 
+@override String toString() => 'BillingCreditGrantsResourceBalanceDebitType($value)';
+
+ }
+@immutable final class BillingCreditGrantsResourceBalanceDebitType$creditsApplied extends BillingCreditGrantsResourceBalanceDebitType {const BillingCreditGrantsResourceBalanceDebitType$creditsApplied._();
+
+@override String get value => 'credits_applied';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingCreditGrantsResourceBalanceDebitType$creditsApplied;
+
+@override int get hashCode => 'credits_applied'.hashCode;
+
+ }
+@immutable final class BillingCreditGrantsResourceBalanceDebitType$creditsExpired extends BillingCreditGrantsResourceBalanceDebitType {const BillingCreditGrantsResourceBalanceDebitType$creditsExpired._();
+
+@override String get value => 'credits_expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingCreditGrantsResourceBalanceDebitType$creditsExpired;
+
+@override int get hashCode => 'credits_expired'.hashCode;
+
+ }
+@immutable final class BillingCreditGrantsResourceBalanceDebitType$creditsVoided extends BillingCreditGrantsResourceBalanceDebitType {const BillingCreditGrantsResourceBalanceDebitType$creditsVoided._();
+
+@override String get value => 'credits_voided';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingCreditGrantsResourceBalanceDebitType$creditsVoided;
+
+@override int get hashCode => 'credits_voided'.hashCode;
+
+ }
+@immutable final class BillingCreditGrantsResourceBalanceDebitType$Unknown extends BillingCreditGrantsResourceBalanceDebitType {const BillingCreditGrantsResourceBalanceDebitType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingCreditGrantsResourceBalanceDebitType && other.value == value;
+    other is BillingCreditGrantsResourceBalanceDebitType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingCreditGrantsResourceBalanceDebitType($value)';
 
  }
 /// 

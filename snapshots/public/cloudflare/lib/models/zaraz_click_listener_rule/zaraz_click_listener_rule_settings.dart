@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZarazClickListenerRule (inline: Settings)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SettingsType {const SettingsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SettingsType {const SettingsType();
 
 factory SettingsType.fromJson(String json) { return switch (json) {
   'xpath' => xpath,
   'css' => css,
-  _ => SettingsType._(json),
+  _ => SettingsType$Unknown(json),
 }; }
 
-static const SettingsType xpath = SettingsType._('xpath');
+static const SettingsType xpath = SettingsType$xpath._();
 
-static const SettingsType css = SettingsType._('css');
+static const SettingsType css = SettingsType$css._();
 
 static const List<SettingsType> values = [xpath, css];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SettingsType$Unknown; } 
+@override String toString() => 'SettingsType($value)';
+
+ }
+@immutable final class SettingsType$xpath extends SettingsType {const SettingsType$xpath._();
+
+@override String get value => 'xpath';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SettingsType$xpath;
+
+@override int get hashCode => 'xpath'.hashCode;
+
+ }
+@immutable final class SettingsType$css extends SettingsType {const SettingsType$css._();
+
+@override String get value => 'css';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SettingsType$css;
+
+@override int get hashCode => 'css'.hashCode;
+
+ }
+@immutable final class SettingsType$Unknown extends SettingsType {const SettingsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SettingsType && other.value == value;
+    other is SettingsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SettingsType($value)';
 
  }
 @immutable final class ZarazClickListenerRuleSettings {const ZarazClickListenerRuleSettings({required this.selector, required this.type, required this.waitForTags, });

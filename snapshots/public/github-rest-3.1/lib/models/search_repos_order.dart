@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SearchReposOrder
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SearchReposOrder {const SearchReposOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SearchReposOrder {const SearchReposOrder();
 
 factory SearchReposOrder.fromJson(String json) { return switch (json) {
   'desc' => desc,
   'asc' => asc,
-  _ => SearchReposOrder._(json),
+  _ => SearchReposOrder$Unknown(json),
 }; }
 
-static const SearchReposOrder desc = SearchReposOrder._('desc');
+static const SearchReposOrder desc = SearchReposOrder$desc._();
 
-static const SearchReposOrder asc = SearchReposOrder._('asc');
+static const SearchReposOrder asc = SearchReposOrder$asc._();
 
 static const List<SearchReposOrder> values = [desc, asc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SearchReposOrder$Unknown; } 
+@override String toString() => 'SearchReposOrder($value)';
+
+ }
+@immutable final class SearchReposOrder$desc extends SearchReposOrder {const SearchReposOrder$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SearchReposOrder$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class SearchReposOrder$asc extends SearchReposOrder {const SearchReposOrder$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SearchReposOrder$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class SearchReposOrder$Unknown extends SearchReposOrder {const SearchReposOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SearchReposOrder && other.value == value;
+    other is SearchReposOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SearchReposOrder($value)';
 
  }

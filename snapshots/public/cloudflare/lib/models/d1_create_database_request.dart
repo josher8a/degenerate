@@ -2,22 +2,21 @@
 // Source: #/components/schemas/D1CreateDatabaseRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_database_name.dart';/// Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.
-@immutable final class D1Jurisdiction {const D1Jurisdiction._(this.value);
+sealed class D1Jurisdiction {const D1Jurisdiction();
 
 factory D1Jurisdiction.fromJson(String json) { return switch (json) {
   'eu' => eu,
   'fedramp' => fedramp,
-  _ => D1Jurisdiction._(json),
+  _ => D1Jurisdiction$Unknown(json),
 }; }
 
-static const D1Jurisdiction eu = D1Jurisdiction._('eu');
+static const D1Jurisdiction eu = D1Jurisdiction$eu._();
 
-static const D1Jurisdiction fedramp = D1Jurisdiction._('fedramp');
+static const D1Jurisdiction fedramp = D1Jurisdiction$fedramp._();
 
 static const List<D1Jurisdiction> values = [eu, fedramp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,17 +25,40 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is D1Jurisdiction && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is D1Jurisdiction$Unknown; } 
 @override String toString() => 'D1Jurisdiction($value)';
 
  }
+@immutable final class D1Jurisdiction$eu extends D1Jurisdiction {const D1Jurisdiction$eu._();
+
+@override String get value => 'eu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is D1Jurisdiction$eu;
+
+@override int get hashCode => 'eu'.hashCode;
+
+ }
+@immutable final class D1Jurisdiction$fedramp extends D1Jurisdiction {const D1Jurisdiction$fedramp._();
+
+@override String get value => 'fedramp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is D1Jurisdiction$fedramp;
+
+@override int get hashCode => 'fedramp'.hashCode;
+
+ }
+@immutable final class D1Jurisdiction$Unknown extends D1Jurisdiction {const D1Jurisdiction$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is D1Jurisdiction$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Specify the region to create the D1 primary, if available. If this option is omitted, the D1 will be created as close as possible to the current user.
-@immutable final class D1PrimaryLocationHint {const D1PrimaryLocationHint._(this.value);
+sealed class D1PrimaryLocationHint {const D1PrimaryLocationHint();
 
 factory D1PrimaryLocationHint.fromJson(String json) { return switch (json) {
   'wnam' => wnam,
@@ -45,25 +67,24 @@ factory D1PrimaryLocationHint.fromJson(String json) { return switch (json) {
   'eeur' => eeur,
   'apac' => apac,
   'oc' => oc,
-  _ => D1PrimaryLocationHint._(json),
+  _ => D1PrimaryLocationHint$Unknown(json),
 }; }
 
-static const D1PrimaryLocationHint wnam = D1PrimaryLocationHint._('wnam');
+static const D1PrimaryLocationHint wnam = D1PrimaryLocationHint$wnam._();
 
-static const D1PrimaryLocationHint enam = D1PrimaryLocationHint._('enam');
+static const D1PrimaryLocationHint enam = D1PrimaryLocationHint$enam._();
 
-static const D1PrimaryLocationHint weur = D1PrimaryLocationHint._('weur');
+static const D1PrimaryLocationHint weur = D1PrimaryLocationHint$weur._();
 
-static const D1PrimaryLocationHint eeur = D1PrimaryLocationHint._('eeur');
+static const D1PrimaryLocationHint eeur = D1PrimaryLocationHint$eeur._();
 
-static const D1PrimaryLocationHint apac = D1PrimaryLocationHint._('apac');
+static const D1PrimaryLocationHint apac = D1PrimaryLocationHint$apac._();
 
-static const D1PrimaryLocationHint oc = D1PrimaryLocationHint._('oc');
+static const D1PrimaryLocationHint oc = D1PrimaryLocationHint$oc._();
 
 static const List<D1PrimaryLocationHint> values = [wnam, enam, weur, eeur, apac, oc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -76,13 +97,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is D1PrimaryLocationHint$Unknown; } 
+@override String toString() => 'D1PrimaryLocationHint($value)';
+
+ }
+@immutable final class D1PrimaryLocationHint$wnam extends D1PrimaryLocationHint {const D1PrimaryLocationHint$wnam._();
+
+@override String get value => 'wnam';
+
+@override bool operator ==(Object other) => identical(this, other) || other is D1PrimaryLocationHint$wnam;
+
+@override int get hashCode => 'wnam'.hashCode;
+
+ }
+@immutable final class D1PrimaryLocationHint$enam extends D1PrimaryLocationHint {const D1PrimaryLocationHint$enam._();
+
+@override String get value => 'enam';
+
+@override bool operator ==(Object other) => identical(this, other) || other is D1PrimaryLocationHint$enam;
+
+@override int get hashCode => 'enam'.hashCode;
+
+ }
+@immutable final class D1PrimaryLocationHint$weur extends D1PrimaryLocationHint {const D1PrimaryLocationHint$weur._();
+
+@override String get value => 'weur';
+
+@override bool operator ==(Object other) => identical(this, other) || other is D1PrimaryLocationHint$weur;
+
+@override int get hashCode => 'weur'.hashCode;
+
+ }
+@immutable final class D1PrimaryLocationHint$eeur extends D1PrimaryLocationHint {const D1PrimaryLocationHint$eeur._();
+
+@override String get value => 'eeur';
+
+@override bool operator ==(Object other) => identical(this, other) || other is D1PrimaryLocationHint$eeur;
+
+@override int get hashCode => 'eeur'.hashCode;
+
+ }
+@immutable final class D1PrimaryLocationHint$apac extends D1PrimaryLocationHint {const D1PrimaryLocationHint$apac._();
+
+@override String get value => 'apac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is D1PrimaryLocationHint$apac;
+
+@override int get hashCode => 'apac'.hashCode;
+
+ }
+@immutable final class D1PrimaryLocationHint$oc extends D1PrimaryLocationHint {const D1PrimaryLocationHint$oc._();
+
+@override String get value => 'oc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is D1PrimaryLocationHint$oc;
+
+@override int get hashCode => 'oc'.hashCode;
+
+ }
+@immutable final class D1PrimaryLocationHint$Unknown extends D1PrimaryLocationHint {const D1PrimaryLocationHint$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is D1PrimaryLocationHint && other.value == value;
+    other is D1PrimaryLocationHint$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'D1PrimaryLocationHint($value)';
 
  }
 @immutable final class D1CreateDatabaseRequest {const D1CreateDatabaseRequest({required this.name, this.jurisdiction, this.primaryLocationHint, });

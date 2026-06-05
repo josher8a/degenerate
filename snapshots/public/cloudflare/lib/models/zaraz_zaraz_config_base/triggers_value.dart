@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZarazZarazConfigBase (inline: Triggers > Value)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_click_listener_rule.dart';import 'package:pub_cloudflare/models/zaraz_element_visibility_rule.dart';import 'package:pub_cloudflare/models/zaraz_form_submission_rule.dart';import 'package:pub_cloudflare/models/zaraz_load_rule.dart';import 'package:pub_cloudflare/models/zaraz_scroll_depth_rule.dart';import 'package:pub_cloudflare/models/zaraz_timer_rule.dart';import 'package:pub_cloudflare/models/zaraz_variable_match_rule.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/exclude_rules.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/load_rules.dart';@immutable final class ValueSystem {const ValueSystem._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_click_listener_rule.dart';import 'package:pub_cloudflare/models/zaraz_element_visibility_rule.dart';import 'package:pub_cloudflare/models/zaraz_form_submission_rule.dart';import 'package:pub_cloudflare/models/zaraz_load_rule.dart';import 'package:pub_cloudflare/models/zaraz_scroll_depth_rule.dart';import 'package:pub_cloudflare/models/zaraz_timer_rule.dart';import 'package:pub_cloudflare/models/zaraz_variable_match_rule.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/exclude_rules.dart';import 'package:pub_cloudflare/models/zaraz_zaraz_config_base/load_rules.dart';sealed class ValueSystem {const ValueSystem();
 
 factory ValueSystem.fromJson(String json) { return switch (json) {
   'pageload' => pageload,
-  _ => ValueSystem._(json),
+  _ => ValueSystem$Unknown(json),
 }; }
 
-static const ValueSystem pageload = ValueSystem._('pageload');
+static const ValueSystem pageload = ValueSystem$pageload._();
 
 static const List<ValueSystem> values = [pageload];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ValueSystem$Unknown; } 
+@override String toString() => 'ValueSystem($value)';
+
+ }
+@immutable final class ValueSystem$pageload extends ValueSystem {const ValueSystem$pageload._();
+
+@override String get value => 'pageload';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValueSystem$pageload;
+
+@override int get hashCode => 'pageload'.hashCode;
+
+ }
+@immutable final class ValueSystem$Unknown extends ValueSystem {const ValueSystem$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ValueSystem && other.value == value;
+    other is ValueSystem$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ValueSystem($value)';
 
  }
 @immutable final class TriggersValue {const TriggersValue({required this.excludeRules, required this.loadRules, required this.name, this.description, this.system, });

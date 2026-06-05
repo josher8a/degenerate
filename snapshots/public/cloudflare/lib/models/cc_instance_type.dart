@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CcInstanceType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CcInstanceTypeVariant1 {const CcInstanceTypeVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CcInstanceTypeVariant1 {const CcInstanceTypeVariant1();
 
 factory CcInstanceTypeVariant1.fromJson(String json) { return switch (json) {
   'lite' => lite,
@@ -10,25 +10,24 @@ factory CcInstanceTypeVariant1.fromJson(String json) { return switch (json) {
   'standard-2' => standard2,
   'standard-3' => standard3,
   'standard-4' => standard4,
-  _ => CcInstanceTypeVariant1._(json),
+  _ => CcInstanceTypeVariant1$Unknown(json),
 }; }
 
-static const CcInstanceTypeVariant1 lite = CcInstanceTypeVariant1._('lite');
+static const CcInstanceTypeVariant1 lite = CcInstanceTypeVariant1$lite._();
 
-static const CcInstanceTypeVariant1 basic = CcInstanceTypeVariant1._('basic');
+static const CcInstanceTypeVariant1 basic = CcInstanceTypeVariant1$basic._();
 
-static const CcInstanceTypeVariant1 standard1 = CcInstanceTypeVariant1._('standard-1');
+static const CcInstanceTypeVariant1 standard1 = CcInstanceTypeVariant1$standard1._();
 
-static const CcInstanceTypeVariant1 standard2 = CcInstanceTypeVariant1._('standard-2');
+static const CcInstanceTypeVariant1 standard2 = CcInstanceTypeVariant1$standard2._();
 
-static const CcInstanceTypeVariant1 standard3 = CcInstanceTypeVariant1._('standard-3');
+static const CcInstanceTypeVariant1 standard3 = CcInstanceTypeVariant1$standard3._();
 
-static const CcInstanceTypeVariant1 standard4 = CcInstanceTypeVariant1._('standard-4');
+static const CcInstanceTypeVariant1 standard4 = CcInstanceTypeVariant1$standard4._();
 
 static const List<CcInstanceTypeVariant1> values = [lite, basic, standard1, standard2, standard3, standard4];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,13 +40,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CcInstanceTypeVariant1$Unknown; } 
+@override String toString() => 'CcInstanceTypeVariant1($value)';
+
+ }
+@immutable final class CcInstanceTypeVariant1$lite extends CcInstanceTypeVariant1 {const CcInstanceTypeVariant1$lite._();
+
+@override String get value => 'lite';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CcInstanceTypeVariant1$lite;
+
+@override int get hashCode => 'lite'.hashCode;
+
+ }
+@immutable final class CcInstanceTypeVariant1$basic extends CcInstanceTypeVariant1 {const CcInstanceTypeVariant1$basic._();
+
+@override String get value => 'basic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CcInstanceTypeVariant1$basic;
+
+@override int get hashCode => 'basic'.hashCode;
+
+ }
+@immutable final class CcInstanceTypeVariant1$standard1 extends CcInstanceTypeVariant1 {const CcInstanceTypeVariant1$standard1._();
+
+@override String get value => 'standard-1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CcInstanceTypeVariant1$standard1;
+
+@override int get hashCode => 'standard-1'.hashCode;
+
+ }
+@immutable final class CcInstanceTypeVariant1$standard2 extends CcInstanceTypeVariant1 {const CcInstanceTypeVariant1$standard2._();
+
+@override String get value => 'standard-2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CcInstanceTypeVariant1$standard2;
+
+@override int get hashCode => 'standard-2'.hashCode;
+
+ }
+@immutable final class CcInstanceTypeVariant1$standard3 extends CcInstanceTypeVariant1 {const CcInstanceTypeVariant1$standard3._();
+
+@override String get value => 'standard-3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CcInstanceTypeVariant1$standard3;
+
+@override int get hashCode => 'standard-3'.hashCode;
+
+ }
+@immutable final class CcInstanceTypeVariant1$standard4 extends CcInstanceTypeVariant1 {const CcInstanceTypeVariant1$standard4._();
+
+@override String get value => 'standard-4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CcInstanceTypeVariant1$standard4;
+
+@override int get hashCode => 'standard-4'.hashCode;
+
+ }
+@immutable final class CcInstanceTypeVariant1$Unknown extends CcInstanceTypeVariant1 {const CcInstanceTypeVariant1$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CcInstanceTypeVariant1 && other.value == value;
+    other is CcInstanceTypeVariant1$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CcInstanceTypeVariant1($value)';
 
  }
 /// The instance type will be used to configure vCPU, memory, and disk.

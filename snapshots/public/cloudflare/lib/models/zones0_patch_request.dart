@@ -6,28 +6,27 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// parameter is only available to Enterprise customers or if it has
 /// been explicitly enabled on a zone.
 /// 
-@immutable final class Zones0PatchRequestType {const Zones0PatchRequestType._(this.value);
+sealed class Zones0PatchRequestType {const Zones0PatchRequestType();
 
 factory Zones0PatchRequestType.fromJson(String json) { return switch (json) {
   'full' => full,
   'partial' => partial,
   'secondary' => secondary,
   'internal' => internal,
-  _ => Zones0PatchRequestType._(json),
+  _ => Zones0PatchRequestType$Unknown(json),
 }; }
 
-static const Zones0PatchRequestType full = Zones0PatchRequestType._('full');
+static const Zones0PatchRequestType full = Zones0PatchRequestType$full._();
 
-static const Zones0PatchRequestType partial = Zones0PatchRequestType._('partial');
+static const Zones0PatchRequestType partial = Zones0PatchRequestType$partial._();
 
-static const Zones0PatchRequestType secondary = Zones0PatchRequestType._('secondary');
+static const Zones0PatchRequestType secondary = Zones0PatchRequestType$secondary._();
 
-static const Zones0PatchRequestType internal = Zones0PatchRequestType._('internal');
+static const Zones0PatchRequestType internal = Zones0PatchRequestType$internal._();
 
 static const List<Zones0PatchRequestType> values = [full, partial, secondary, internal];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Zones0PatchRequestType$Unknown; } 
+@override String toString() => 'Zones0PatchRequestType($value)';
+
+ }
+@immutable final class Zones0PatchRequestType$full extends Zones0PatchRequestType {const Zones0PatchRequestType$full._();
+
+@override String get value => 'full';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Zones0PatchRequestType$full;
+
+@override int get hashCode => 'full'.hashCode;
+
+ }
+@immutable final class Zones0PatchRequestType$partial extends Zones0PatchRequestType {const Zones0PatchRequestType$partial._();
+
+@override String get value => 'partial';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Zones0PatchRequestType$partial;
+
+@override int get hashCode => 'partial'.hashCode;
+
+ }
+@immutable final class Zones0PatchRequestType$secondary extends Zones0PatchRequestType {const Zones0PatchRequestType$secondary._();
+
+@override String get value => 'secondary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Zones0PatchRequestType$secondary;
+
+@override int get hashCode => 'secondary'.hashCode;
+
+ }
+@immutable final class Zones0PatchRequestType$internal extends Zones0PatchRequestType {const Zones0PatchRequestType$internal._();
+
+@override String get value => 'internal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Zones0PatchRequestType$internal;
+
+@override int get hashCode => 'internal'.hashCode;
+
+ }
+@immutable final class Zones0PatchRequestType$Unknown extends Zones0PatchRequestType {const Zones0PatchRequestType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Zones0PatchRequestType && other.value == value;
+    other is Zones0PatchRequestType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Zones0PatchRequestType($value)';
 
  }
 /// Example:

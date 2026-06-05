@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DigitalExperienceMonitoringTracerouteTestResultNetworkPathResponse (inline: Hops)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_result_network_path_response/hops_location.dart';@immutable final class Mile {const Mile._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_traceroute_test_result_network_path_response/hops_location.dart';sealed class Mile {const Mile();
 
 factory Mile.fromJson(String json) { return switch (json) {
   'client-to-app' => clientToApp,
   'client-to-cf-egress' => clientToCfEgress,
   'client-to-cf-ingress' => clientToCfIngress,
   'client-to-isp' => clientToIsp,
-  _ => Mile._(json),
+  _ => Mile$Unknown(json),
 }; }
 
-static const Mile clientToApp = Mile._('client-to-app');
+static const Mile clientToApp = Mile$clientToApp._();
 
-static const Mile clientToCfEgress = Mile._('client-to-cf-egress');
+static const Mile clientToCfEgress = Mile$clientToCfEgress._();
 
-static const Mile clientToCfIngress = Mile._('client-to-cf-ingress');
+static const Mile clientToCfIngress = Mile$clientToCfIngress._();
 
-static const Mile clientToIsp = Mile._('client-to-isp');
+static const Mile clientToIsp = Mile$clientToIsp._();
 
 static const List<Mile> values = [clientToApp, clientToCfEgress, clientToCfIngress, clientToIsp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Mile$Unknown; } 
+@override String toString() => 'Mile($value)';
+
+ }
+@immutable final class Mile$clientToApp extends Mile {const Mile$clientToApp._();
+
+@override String get value => 'client-to-app';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Mile$clientToApp;
+
+@override int get hashCode => 'client-to-app'.hashCode;
+
+ }
+@immutable final class Mile$clientToCfEgress extends Mile {const Mile$clientToCfEgress._();
+
+@override String get value => 'client-to-cf-egress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Mile$clientToCfEgress;
+
+@override int get hashCode => 'client-to-cf-egress'.hashCode;
+
+ }
+@immutable final class Mile$clientToCfIngress extends Mile {const Mile$clientToCfIngress._();
+
+@override String get value => 'client-to-cf-ingress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Mile$clientToCfIngress;
+
+@override int get hashCode => 'client-to-cf-ingress'.hashCode;
+
+ }
+@immutable final class Mile$clientToIsp extends Mile {const Mile$clientToIsp._();
+
+@override String get value => 'client-to-isp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Mile$clientToIsp;
+
+@override int get hashCode => 'client-to-isp'.hashCode;
+
+ }
+@immutable final class Mile$Unknown extends Mile {const Mile$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Mile && other.value == value;
+    other is Mile$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Mile($value)';
 
  }
 @immutable final class Hops {const Hops({required this.ttl, this.asn, this.aso, this.ipAddress, this.location, this.mile, this.name, this.packetLossPct, this.rttMs, });

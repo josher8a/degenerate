@@ -2,28 +2,27 @@
 // Source: #/components/schemas/RadarGetCtTimeseriesGroupAggInterval
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-@immutable final class RadarGetCtTimeseriesGroupAggInterval {const RadarGetCtTimeseriesGroupAggInterval._(this.value);
+sealed class RadarGetCtTimeseriesGroupAggInterval {const RadarGetCtTimeseriesGroupAggInterval();
 
 factory RadarGetCtTimeseriesGroupAggInterval.fromJson(String json) { return switch (json) {
   '15m' => $15m,
   '1h' => $1h,
   '1d' => $1d,
   '1w' => $1w,
-  _ => RadarGetCtTimeseriesGroupAggInterval._(json),
+  _ => RadarGetCtTimeseriesGroupAggInterval$Unknown(json),
 }; }
 
-static const RadarGetCtTimeseriesGroupAggInterval $15m = RadarGetCtTimeseriesGroupAggInterval._('15m');
+static const RadarGetCtTimeseriesGroupAggInterval $15m = RadarGetCtTimeseriesGroupAggInterval$$15m._();
 
-static const RadarGetCtTimeseriesGroupAggInterval $1h = RadarGetCtTimeseriesGroupAggInterval._('1h');
+static const RadarGetCtTimeseriesGroupAggInterval $1h = RadarGetCtTimeseriesGroupAggInterval$$1h._();
 
-static const RadarGetCtTimeseriesGroupAggInterval $1d = RadarGetCtTimeseriesGroupAggInterval._('1d');
+static const RadarGetCtTimeseriesGroupAggInterval $1d = RadarGetCtTimeseriesGroupAggInterval$$1d._();
 
-static const RadarGetCtTimeseriesGroupAggInterval $1w = RadarGetCtTimeseriesGroupAggInterval._('1w');
+static const RadarGetCtTimeseriesGroupAggInterval $1w = RadarGetCtTimeseriesGroupAggInterval$$1w._();
 
 static const List<RadarGetCtTimeseriesGroupAggInterval> values = [$15m, $1h, $1d, $1w];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetCtTimeseriesGroupAggInterval$Unknown; } 
+@override String toString() => 'RadarGetCtTimeseriesGroupAggInterval($value)';
+
+ }
+@immutable final class RadarGetCtTimeseriesGroupAggInterval$$15m extends RadarGetCtTimeseriesGroupAggInterval {const RadarGetCtTimeseriesGroupAggInterval$$15m._();
+
+@override String get value => '15m';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetCtTimeseriesGroupAggInterval$$15m;
+
+@override int get hashCode => '15m'.hashCode;
+
+ }
+@immutable final class RadarGetCtTimeseriesGroupAggInterval$$1h extends RadarGetCtTimeseriesGroupAggInterval {const RadarGetCtTimeseriesGroupAggInterval$$1h._();
+
+@override String get value => '1h';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetCtTimeseriesGroupAggInterval$$1h;
+
+@override int get hashCode => '1h'.hashCode;
+
+ }
+@immutable final class RadarGetCtTimeseriesGroupAggInterval$$1d extends RadarGetCtTimeseriesGroupAggInterval {const RadarGetCtTimeseriesGroupAggInterval$$1d._();
+
+@override String get value => '1d';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetCtTimeseriesGroupAggInterval$$1d;
+
+@override int get hashCode => '1d'.hashCode;
+
+ }
+@immutable final class RadarGetCtTimeseriesGroupAggInterval$$1w extends RadarGetCtTimeseriesGroupAggInterval {const RadarGetCtTimeseriesGroupAggInterval$$1w._();
+
+@override String get value => '1w';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetCtTimeseriesGroupAggInterval$$1w;
+
+@override int get hashCode => '1w'.hashCode;
+
+ }
+@immutable final class RadarGetCtTimeseriesGroupAggInterval$Unknown extends RadarGetCtTimeseriesGroupAggInterval {const RadarGetCtTimeseriesGroupAggInterval$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetCtTimeseriesGroupAggInterval && other.value == value;
+    other is RadarGetCtTimeseriesGroupAggInterval$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetCtTimeseriesGroupAggInterval($value)';
 
  }

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountLinksRequest (inline: CollectionOptions)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Fields {const Fields._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Fields {const Fields();
 
 factory Fields.fromJson(String json) { return switch (json) {
   'currently_due' => currentlyDue,
   'eventually_due' => eventuallyDue,
-  _ => Fields._(json),
+  _ => Fields$Unknown(json),
 }; }
 
-static const Fields currentlyDue = Fields._('currently_due');
+static const Fields currentlyDue = Fields$currentlyDue._();
 
-static const Fields eventuallyDue = Fields._('eventually_due');
+static const Fields eventuallyDue = Fields$eventuallyDue._();
 
 static const List<Fields> values = [currentlyDue, eventuallyDue];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,31 +24,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Fields && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Fields$Unknown; } 
 @override String toString() => 'Fields($value)';
 
  }
-@immutable final class FutureRequirements {const FutureRequirements._(this.value);
+@immutable final class Fields$currentlyDue extends Fields {const Fields$currentlyDue._();
+
+@override String get value => 'currently_due';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Fields$currentlyDue;
+
+@override int get hashCode => 'currently_due'.hashCode;
+
+ }
+@immutable final class Fields$eventuallyDue extends Fields {const Fields$eventuallyDue._();
+
+@override String get value => 'eventually_due';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Fields$eventuallyDue;
+
+@override int get hashCode => 'eventually_due'.hashCode;
+
+ }
+@immutable final class Fields$Unknown extends Fields {const Fields$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Fields$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class FutureRequirements {const FutureRequirements();
 
 factory FutureRequirements.fromJson(String json) { return switch (json) {
   'include' => include,
   'omit' => omit,
-  _ => FutureRequirements._(json),
+  _ => FutureRequirements$Unknown(json),
 }; }
 
-static const FutureRequirements include = FutureRequirements._('include');
+static const FutureRequirements include = FutureRequirements$include._();
 
-static const FutureRequirements omit = FutureRequirements._('omit');
+static const FutureRequirements omit = FutureRequirements$omit._();
 
 static const List<FutureRequirements> values = [include, omit];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -58,13 +79,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FutureRequirements$Unknown; } 
+@override String toString() => 'FutureRequirements($value)';
+
+ }
+@immutable final class FutureRequirements$include extends FutureRequirements {const FutureRequirements$include._();
+
+@override String get value => 'include';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FutureRequirements$include;
+
+@override int get hashCode => 'include'.hashCode;
+
+ }
+@immutable final class FutureRequirements$omit extends FutureRequirements {const FutureRequirements$omit._();
+
+@override String get value => 'omit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FutureRequirements$omit;
+
+@override int get hashCode => 'omit'.hashCode;
+
+ }
+@immutable final class FutureRequirements$Unknown extends FutureRequirements {const FutureRequirements$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FutureRequirements && other.value == value;
+    other is FutureRequirements$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FutureRequirements($value)';
 
  }
 /// Specifies the requirements that Stripe collects from connected accounts in the Connect Onboarding flow.

@@ -14,25 +14,24 @@ String toJson() => value;
 
 }
 /// Infrastructure type of this ASN.
-@immutable final class IntelAsnType {const IntelAsnType._(this.value);
+sealed class IntelAsnType {const IntelAsnType();
 
 factory IntelAsnType.fromJson(String json) { return switch (json) {
   'hosting_provider' => hostingProvider,
   'isp' => isp,
   'organization' => organization,
-  _ => IntelAsnType._(json),
+  _ => IntelAsnType$Unknown(json),
 }; }
 
-static const IntelAsnType hostingProvider = IntelAsnType._('hosting_provider');
+static const IntelAsnType hostingProvider = IntelAsnType$hostingProvider._();
 
-static const IntelAsnType isp = IntelAsnType._('isp');
+static const IntelAsnType isp = IntelAsnType$isp._();
 
-static const IntelAsnType organization = IntelAsnType._('organization');
+static const IntelAsnType organization = IntelAsnType$organization._();
 
 static const List<IntelAsnType> values = [hostingProvider, isp, organization];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,13 +41,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IntelAsnType$Unknown; } 
+@override String toString() => 'IntelAsnType($value)';
+
+ }
+@immutable final class IntelAsnType$hostingProvider extends IntelAsnType {const IntelAsnType$hostingProvider._();
+
+@override String get value => 'hosting_provider';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IntelAsnType$hostingProvider;
+
+@override int get hashCode => 'hosting_provider'.hashCode;
+
+ }
+@immutable final class IntelAsnType$isp extends IntelAsnType {const IntelAsnType$isp._();
+
+@override String get value => 'isp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IntelAsnType$isp;
+
+@override int get hashCode => 'isp'.hashCode;
+
+ }
+@immutable final class IntelAsnType$organization extends IntelAsnType {const IntelAsnType$organization._();
+
+@override String get value => 'organization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IntelAsnType$organization;
+
+@override int get hashCode => 'organization'.hashCode;
+
+ }
+@immutable final class IntelAsnType$Unknown extends IntelAsnType {const IntelAsnType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IntelAsnType && other.value == value;
+    other is IntelAsnType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IntelAsnType($value)';
 
  }
 @immutable final class IntelSchemasAsn {const IntelSchemasAsn({this.asn, this.country, this.description, this.domainCount, this.topDomains, this.type, });

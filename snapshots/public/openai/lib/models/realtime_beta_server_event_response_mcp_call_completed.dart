@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventResponseMcpCallCompleted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call.completed`.
-@immutable final class RealtimeBetaServerEventResponseMcpCallCompletedType {const RealtimeBetaServerEventResponseMcpCallCompletedType._(this.value);
+sealed class RealtimeBetaServerEventResponseMcpCallCompletedType {const RealtimeBetaServerEventResponseMcpCallCompletedType();
 
 factory RealtimeBetaServerEventResponseMcpCallCompletedType.fromJson(String json) { return switch (json) {
   'response.mcp_call.completed' => responseMcpCallCompleted,
-  _ => RealtimeBetaServerEventResponseMcpCallCompletedType._(json),
+  _ => RealtimeBetaServerEventResponseMcpCallCompletedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventResponseMcpCallCompletedType responseMcpCallCompleted = RealtimeBetaServerEventResponseMcpCallCompletedType._('response.mcp_call.completed');
+static const RealtimeBetaServerEventResponseMcpCallCompletedType responseMcpCallCompleted = RealtimeBetaServerEventResponseMcpCallCompletedType$responseMcpCallCompleted._();
 
 static const List<RealtimeBetaServerEventResponseMcpCallCompletedType> values = [responseMcpCallCompleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseMcpCallCompletedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventResponseMcpCallCompletedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventResponseMcpCallCompletedType$responseMcpCallCompleted extends RealtimeBetaServerEventResponseMcpCallCompletedType {const RealtimeBetaServerEventResponseMcpCallCompletedType$responseMcpCallCompleted._();
+
+@override String get value => 'response.mcp_call.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseMcpCallCompletedType$responseMcpCallCompleted;
+
+@override int get hashCode => 'response.mcp_call.completed'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventResponseMcpCallCompletedType$Unknown extends RealtimeBetaServerEventResponseMcpCallCompletedType {const RealtimeBetaServerEventResponseMcpCallCompletedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventResponseMcpCallCompletedType && other.value == value;
+    other is RealtimeBetaServerEventResponseMcpCallCompletedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventResponseMcpCallCompletedType($value)';
 
  }
 /// Returned when an MCP tool call has completed successfully.

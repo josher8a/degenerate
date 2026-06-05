@@ -2,25 +2,24 @@
 // Source: #/components/schemas/RefundDestinationDetailsCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of refund. This can be `refund`, `reversal`, or `pending`.
-@immutable final class RefundDestinationDetailsCardType {const RefundDestinationDetailsCardType._(this.value);
+sealed class RefundDestinationDetailsCardType {const RefundDestinationDetailsCardType();
 
 factory RefundDestinationDetailsCardType.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'refund' => refund,
   'reversal' => reversal,
-  _ => RefundDestinationDetailsCardType._(json),
+  _ => RefundDestinationDetailsCardType$Unknown(json),
 }; }
 
-static const RefundDestinationDetailsCardType pending = RefundDestinationDetailsCardType._('pending');
+static const RefundDestinationDetailsCardType pending = RefundDestinationDetailsCardType$pending._();
 
-static const RefundDestinationDetailsCardType refund = RefundDestinationDetailsCardType._('refund');
+static const RefundDestinationDetailsCardType refund = RefundDestinationDetailsCardType$refund._();
 
-static const RefundDestinationDetailsCardType reversal = RefundDestinationDetailsCardType._('reversal');
+static const RefundDestinationDetailsCardType reversal = RefundDestinationDetailsCardType$reversal._();
 
 static const List<RefundDestinationDetailsCardType> values = [pending, refund, reversal];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RefundDestinationDetailsCardType$Unknown; } 
+@override String toString() => 'RefundDestinationDetailsCardType($value)';
+
+ }
+@immutable final class RefundDestinationDetailsCardType$pending extends RefundDestinationDetailsCardType {const RefundDestinationDetailsCardType$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RefundDestinationDetailsCardType$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class RefundDestinationDetailsCardType$refund extends RefundDestinationDetailsCardType {const RefundDestinationDetailsCardType$refund._();
+
+@override String get value => 'refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RefundDestinationDetailsCardType$refund;
+
+@override int get hashCode => 'refund'.hashCode;
+
+ }
+@immutable final class RefundDestinationDetailsCardType$reversal extends RefundDestinationDetailsCardType {const RefundDestinationDetailsCardType$reversal._();
+
+@override String get value => 'reversal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RefundDestinationDetailsCardType$reversal;
+
+@override int get hashCode => 'reversal'.hashCode;
+
+ }
+@immutable final class RefundDestinationDetailsCardType$Unknown extends RefundDestinationDetailsCardType {const RefundDestinationDetailsCardType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RefundDestinationDetailsCardType && other.value == value;
+    other is RefundDestinationDetailsCardType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RefundDestinationDetailsCardType($value)';
 
  }
 /// 

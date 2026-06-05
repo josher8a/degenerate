@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookCheckSuiteRequested (inline: CheckSuite > App > Permissions)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/app_permissions/actions.dart';import 'package:pub_github_rest_3_1/models/app_permissions/administration.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_attestations.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_checks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_deployments.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_environments.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_metadata.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_organization_projects.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_packages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_pages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_pull_requests.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_repository_projects.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_statuses.dart';import 'package:pub_github_rest_3_1/models/app_permissions/artifact_metadata.dart';import 'package:pub_github_rest_3_1/models/app_permissions/contents.dart';import 'package:pub_github_rest_3_1/models/app_permissions/discussions.dart';import 'package:pub_github_rest_3_1/models/app_permissions/issues.dart';import 'package:pub_github_rest_3_1/models/app_permissions/members.dart';import 'package:pub_github_rest_3_1/models/app_permissions/merge_queues.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_administration.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_hooks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_packages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_secrets.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_self_hosted_runners.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_user_blocking.dart';import 'package:pub_github_rest_3_1/models/app_permissions/repository_hooks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/secret_scanning_alerts.dart';import 'package:pub_github_rest_3_1/models/app_permissions/secrets.dart';import 'package:pub_github_rest_3_1/models/app_permissions/security_events.dart';import 'package:pub_github_rest_3_1/models/app_permissions/single_file.dart';import 'package:pub_github_rest_3_1/models/app_permissions/vulnerability_alerts.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/content_references.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/keys.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_emails.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_organization_plan.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_workflows.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/security_scanning_alert.dart';@immutable final class CopilotRequests {const CopilotRequests._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/app_permissions/actions.dart';import 'package:pub_github_rest_3_1/models/app_permissions/administration.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_attestations.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_checks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_deployments.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_environments.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_metadata.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_organization_projects.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_packages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_pages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_pull_requests.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_repository_projects.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_statuses.dart';import 'package:pub_github_rest_3_1/models/app_permissions/artifact_metadata.dart';import 'package:pub_github_rest_3_1/models/app_permissions/contents.dart';import 'package:pub_github_rest_3_1/models/app_permissions/discussions.dart';import 'package:pub_github_rest_3_1/models/app_permissions/issues.dart';import 'package:pub_github_rest_3_1/models/app_permissions/members.dart';import 'package:pub_github_rest_3_1/models/app_permissions/merge_queues.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_administration.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_hooks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_packages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_secrets.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_self_hosted_runners.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_user_blocking.dart';import 'package:pub_github_rest_3_1/models/app_permissions/repository_hooks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/secret_scanning_alerts.dart';import 'package:pub_github_rest_3_1/models/app_permissions/secrets.dart';import 'package:pub_github_rest_3_1/models/app_permissions/security_events.dart';import 'package:pub_github_rest_3_1/models/app_permissions/single_file.dart';import 'package:pub_github_rest_3_1/models/app_permissions/vulnerability_alerts.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/content_references.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/keys.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_emails.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_organization_plan.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_workflows.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/security_scanning_alert.dart';sealed class CopilotRequests {const CopilotRequests();
 
 factory CopilotRequests.fromJson(String json) { return switch (json) {
   'write' => write,
-  _ => CopilotRequests._(json),
+  _ => CopilotRequests$Unknown(json),
 }; }
 
-static const CopilotRequests write = CopilotRequests._('write');
+static const CopilotRequests write = CopilotRequests$write._();
 
 static const List<CopilotRequests> values = [write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,31 +20,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CopilotRequests && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CopilotRequests$Unknown; } 
 @override String toString() => 'CopilotRequests($value)';
 
  }
-@immutable final class PermissionsModels {const PermissionsModels._(this.value);
+@immutable final class CopilotRequests$write extends CopilotRequests {const CopilotRequests$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CopilotRequests$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class CopilotRequests$Unknown extends CopilotRequests {const CopilotRequests$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CopilotRequests$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class PermissionsModels {const PermissionsModels();
 
 factory PermissionsModels.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => PermissionsModels._(json),
+  _ => PermissionsModels$Unknown(json),
 }; }
 
-static const PermissionsModels read = PermissionsModels._('read');
+static const PermissionsModels read = PermissionsModels$read._();
 
-static const PermissionsModels write = PermissionsModels._('write');
+static const PermissionsModels write = PermissionsModels$write._();
 
 static const List<PermissionsModels> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -54,13 +66,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PermissionsModels$Unknown; } 
+@override String toString() => 'PermissionsModels($value)';
+
+ }
+@immutable final class PermissionsModels$read extends PermissionsModels {const PermissionsModels$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PermissionsModels$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class PermissionsModels$write extends PermissionsModels {const PermissionsModels$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PermissionsModels$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class PermissionsModels$Unknown extends PermissionsModels {const PermissionsModels$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PermissionsModels && other.value == value;
+    other is PermissionsModels$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PermissionsModels($value)';
 
  }
 /// The set of permissions for the GitHub app

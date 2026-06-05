@@ -2,25 +2,24 @@
 // Source: #/components/schemas/RepositoryRuleset
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repos_create_org_ruleset_request/repos_create_org_ruleset_request_target.dart';import 'package:pub_github_rest_3_1/models/repository_id_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_name_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_property_and_ref_name.dart';import 'package:pub_github_rest_3_1/models/repository_rule.dart';import 'package:pub_github_rest_3_1/models/repository_rule_enforcement.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_conditions2.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset/repository_ruleset_links.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_bypass_actor.dart';import 'package:pub_github_rest_3_1/models/repository_ruleset_conditions.dart';/// The type of the source of the ruleset
-@immutable final class RepositoryRulesetSourceType {const RepositoryRulesetSourceType._(this.value);
+sealed class RepositoryRulesetSourceType {const RepositoryRulesetSourceType();
 
 factory RepositoryRulesetSourceType.fromJson(String json) { return switch (json) {
   'Repository' => repository,
   'Organization' => organization,
   'Enterprise' => enterprise,
-  _ => RepositoryRulesetSourceType._(json),
+  _ => RepositoryRulesetSourceType$Unknown(json),
 }; }
 
-static const RepositoryRulesetSourceType repository = RepositoryRulesetSourceType._('Repository');
+static const RepositoryRulesetSourceType repository = RepositoryRulesetSourceType$repository._();
 
-static const RepositoryRulesetSourceType organization = RepositoryRulesetSourceType._('Organization');
+static const RepositoryRulesetSourceType organization = RepositoryRulesetSourceType$organization._();
 
-static const RepositoryRulesetSourceType enterprise = RepositoryRulesetSourceType._('Enterprise');
+static const RepositoryRulesetSourceType enterprise = RepositoryRulesetSourceType$enterprise._();
 
 static const List<RepositoryRulesetSourceType> values = [repository, organization, enterprise];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,39 +29,70 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RepositoryRulesetSourceType$Unknown; } 
+@override String toString() => 'RepositoryRulesetSourceType($value)';
+
+ }
+@immutable final class RepositoryRulesetSourceType$repository extends RepositoryRulesetSourceType {const RepositoryRulesetSourceType$repository._();
+
+@override String get value => 'Repository';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryRulesetSourceType$repository;
+
+@override int get hashCode => 'Repository'.hashCode;
+
+ }
+@immutable final class RepositoryRulesetSourceType$organization extends RepositoryRulesetSourceType {const RepositoryRulesetSourceType$organization._();
+
+@override String get value => 'Organization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryRulesetSourceType$organization;
+
+@override int get hashCode => 'Organization'.hashCode;
+
+ }
+@immutable final class RepositoryRulesetSourceType$enterprise extends RepositoryRulesetSourceType {const RepositoryRulesetSourceType$enterprise._();
+
+@override String get value => 'Enterprise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryRulesetSourceType$enterprise;
+
+@override int get hashCode => 'Enterprise'.hashCode;
+
+ }
+@immutable final class RepositoryRulesetSourceType$Unknown extends RepositoryRulesetSourceType {const RepositoryRulesetSourceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRulesetSourceType && other.value == value;
+    other is RepositoryRulesetSourceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRulesetSourceType($value)';
 
  }
 /// The bypass type of the user making the API request for this ruleset. This field is only returned when
 /// querying the repository-level endpoint.
-@immutable final class CurrentUserCanBypass {const CurrentUserCanBypass._(this.value);
+sealed class CurrentUserCanBypass {const CurrentUserCanBypass();
 
 factory CurrentUserCanBypass.fromJson(String json) { return switch (json) {
   'always' => always,
   'pull_requests_only' => pullRequestsOnly,
   'never' => never,
   'exempt' => exempt,
-  _ => CurrentUserCanBypass._(json),
+  _ => CurrentUserCanBypass$Unknown(json),
 }; }
 
-static const CurrentUserCanBypass always = CurrentUserCanBypass._('always');
+static const CurrentUserCanBypass always = CurrentUserCanBypass$always._();
 
-static const CurrentUserCanBypass pullRequestsOnly = CurrentUserCanBypass._('pull_requests_only');
+static const CurrentUserCanBypass pullRequestsOnly = CurrentUserCanBypass$pullRequestsOnly._();
 
-static const CurrentUserCanBypass never = CurrentUserCanBypass._('never');
+static const CurrentUserCanBypass never = CurrentUserCanBypass$never._();
 
-static const CurrentUserCanBypass exempt = CurrentUserCanBypass._('exempt');
+static const CurrentUserCanBypass exempt = CurrentUserCanBypass$exempt._();
 
 static const List<CurrentUserCanBypass> values = [always, pullRequestsOnly, never, exempt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -73,13 +103,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CurrentUserCanBypass$Unknown; } 
+@override String toString() => 'CurrentUserCanBypass($value)';
+
+ }
+@immutable final class CurrentUserCanBypass$always extends CurrentUserCanBypass {const CurrentUserCanBypass$always._();
+
+@override String get value => 'always';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CurrentUserCanBypass$always;
+
+@override int get hashCode => 'always'.hashCode;
+
+ }
+@immutable final class CurrentUserCanBypass$pullRequestsOnly extends CurrentUserCanBypass {const CurrentUserCanBypass$pullRequestsOnly._();
+
+@override String get value => 'pull_requests_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CurrentUserCanBypass$pullRequestsOnly;
+
+@override int get hashCode => 'pull_requests_only'.hashCode;
+
+ }
+@immutable final class CurrentUserCanBypass$never extends CurrentUserCanBypass {const CurrentUserCanBypass$never._();
+
+@override String get value => 'never';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CurrentUserCanBypass$never;
+
+@override int get hashCode => 'never'.hashCode;
+
+ }
+@immutable final class CurrentUserCanBypass$exempt extends CurrentUserCanBypass {const CurrentUserCanBypass$exempt._();
+
+@override String get value => 'exempt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CurrentUserCanBypass$exempt;
+
+@override int get hashCode => 'exempt'.hashCode;
+
+ }
+@immutable final class CurrentUserCanBypass$Unknown extends CurrentUserCanBypass {const CurrentUserCanBypass$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CurrentUserCanBypass && other.value == value;
+    other is CurrentUserCanBypass$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CurrentUserCanBypass($value)';
 
  }
 /// A set of rules to apply when specified conditions are met.

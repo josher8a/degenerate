@@ -2,22 +2,21 @@
 // Source: #/components/schemas/WorkersAiPostRunCfDeepgramNova3Request
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_deepgram_nova3_request/workers_ai_post_run_cf_deepgram_nova3_request_audio.dart';/// Sets how the model will interpret intents submitted to the custom_intent param. When strict, the model will only return intents submitted using the custom_intent param. When extended, the model will return its own detected intents in addition those submitted using the custom_intents param
-@immutable final class CustomIntentMode {const CustomIntentMode._(this.value);
+sealed class CustomIntentMode {const CustomIntentMode();
 
 factory CustomIntentMode.fromJson(String json) { return switch (json) {
   'extended' => extended,
   'strict' => strict,
-  _ => CustomIntentMode._(json),
+  _ => CustomIntentMode$Unknown(json),
 }; }
 
-static const CustomIntentMode extended = CustomIntentMode._('extended');
+static const CustomIntentMode extended = CustomIntentMode$extended._();
 
-static const CustomIntentMode strict = CustomIntentMode._('strict');
+static const CustomIntentMode strict = CustomIntentMode$strict._();
 
 static const List<CustomIntentMode> values = [extended, strict];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,32 +25,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomIntentMode && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CustomIntentMode$Unknown; } 
 @override String toString() => 'CustomIntentMode($value)';
 
  }
+@immutable final class CustomIntentMode$extended extends CustomIntentMode {const CustomIntentMode$extended._();
+
+@override String get value => 'extended';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomIntentMode$extended;
+
+@override int get hashCode => 'extended'.hashCode;
+
+ }
+@immutable final class CustomIntentMode$strict extends CustomIntentMode {const CustomIntentMode$strict._();
+
+@override String get value => 'strict';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomIntentMode$strict;
+
+@override int get hashCode => 'strict'.hashCode;
+
+ }
+@immutable final class CustomIntentMode$Unknown extends CustomIntentMode {const CustomIntentMode$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomIntentMode$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Sets how the model will interpret strings submitted to the custom_topic param. When strict, the model will only return topics submitted using the custom_topic param. When extended, the model will return its own detected topics in addition to those submitted using the custom_topic param.
-@immutable final class CustomTopicMode {const CustomTopicMode._(this.value);
+sealed class CustomTopicMode {const CustomTopicMode();
 
 factory CustomTopicMode.fromJson(String json) { return switch (json) {
   'extended' => extended,
   'strict' => strict,
-  _ => CustomTopicMode._(json),
+  _ => CustomTopicMode$Unknown(json),
 }; }
 
-static const CustomTopicMode extended = CustomTopicMode._('extended');
+static const CustomTopicMode extended = CustomTopicMode$extended._();
 
-static const CustomTopicMode strict = CustomTopicMode._('strict');
+static const CustomTopicMode strict = CustomTopicMode$strict._();
 
 static const List<CustomTopicMode> values = [extended, strict];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,17 +81,40 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomTopicMode && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CustomTopicMode$Unknown; } 
 @override String toString() => 'CustomTopicMode($value)';
 
  }
+@immutable final class CustomTopicMode$extended extends CustomTopicMode {const CustomTopicMode$extended._();
+
+@override String get value => 'extended';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomTopicMode$extended;
+
+@override int get hashCode => 'extended'.hashCode;
+
+ }
+@immutable final class CustomTopicMode$strict extends CustomTopicMode {const CustomTopicMode$strict._();
+
+@override String get value => 'strict';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomTopicMode$strict;
+
+@override int get hashCode => 'strict'.hashCode;
+
+ }
+@immutable final class CustomTopicMode$Unknown extends CustomTopicMode {const CustomTopicMode$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomTopicMode$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Specify the expected encoding of your submitted audio
-@immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding._(this.value);
+sealed class WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding();
 
 factory WorkersAiPostRunCfDeepgramNova3RequestEncoding.fromJson(String json) { return switch (json) {
   'linear16' => linear16,
@@ -81,29 +125,28 @@ factory WorkersAiPostRunCfDeepgramNova3RequestEncoding.fromJson(String json) { r
   'opus' => opus,
   'speex' => speex,
   'g729' => g729,
-  _ => WorkersAiPostRunCfDeepgramNova3RequestEncoding._(json),
+  _ => WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown(json),
 }; }
 
-static const WorkersAiPostRunCfDeepgramNova3RequestEncoding linear16 = WorkersAiPostRunCfDeepgramNova3RequestEncoding._('linear16');
+static const WorkersAiPostRunCfDeepgramNova3RequestEncoding linear16 = WorkersAiPostRunCfDeepgramNova3RequestEncoding$linear16._();
 
-static const WorkersAiPostRunCfDeepgramNova3RequestEncoding flac = WorkersAiPostRunCfDeepgramNova3RequestEncoding._('flac');
+static const WorkersAiPostRunCfDeepgramNova3RequestEncoding flac = WorkersAiPostRunCfDeepgramNova3RequestEncoding$flac._();
 
-static const WorkersAiPostRunCfDeepgramNova3RequestEncoding mulaw = WorkersAiPostRunCfDeepgramNova3RequestEncoding._('mulaw');
+static const WorkersAiPostRunCfDeepgramNova3RequestEncoding mulaw = WorkersAiPostRunCfDeepgramNova3RequestEncoding$mulaw._();
 
-static const WorkersAiPostRunCfDeepgramNova3RequestEncoding amrNb = WorkersAiPostRunCfDeepgramNova3RequestEncoding._('amr-nb');
+static const WorkersAiPostRunCfDeepgramNova3RequestEncoding amrNb = WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrNb._();
 
-static const WorkersAiPostRunCfDeepgramNova3RequestEncoding amrWb = WorkersAiPostRunCfDeepgramNova3RequestEncoding._('amr-wb');
+static const WorkersAiPostRunCfDeepgramNova3RequestEncoding amrWb = WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrWb._();
 
-static const WorkersAiPostRunCfDeepgramNova3RequestEncoding opus = WorkersAiPostRunCfDeepgramNova3RequestEncoding._('opus');
+static const WorkersAiPostRunCfDeepgramNova3RequestEncoding opus = WorkersAiPostRunCfDeepgramNova3RequestEncoding$opus._();
 
-static const WorkersAiPostRunCfDeepgramNova3RequestEncoding speex = WorkersAiPostRunCfDeepgramNova3RequestEncoding._('speex');
+static const WorkersAiPostRunCfDeepgramNova3RequestEncoding speex = WorkersAiPostRunCfDeepgramNova3RequestEncoding$speex._();
 
-static const WorkersAiPostRunCfDeepgramNova3RequestEncoding g729 = WorkersAiPostRunCfDeepgramNova3RequestEncoding._('g729');
+static const WorkersAiPostRunCfDeepgramNova3RequestEncoding g729 = WorkersAiPostRunCfDeepgramNova3RequestEncoding$g729._();
 
 static const List<WorkersAiPostRunCfDeepgramNova3RequestEncoding> values = [linear16, flac, mulaw, amrNb, amrWb, opus, speex, g729];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -118,35 +161,111 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramNova3RequestEncoding && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown; } 
 @override String toString() => 'WorkersAiPostRunCfDeepgramNova3RequestEncoding($value)';
 
  }
+@immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$linear16 extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$linear16._();
+
+@override String get value => 'linear16';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramNova3RequestEncoding$linear16;
+
+@override int get hashCode => 'linear16'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$flac extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$flac._();
+
+@override String get value => 'flac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramNova3RequestEncoding$flac;
+
+@override int get hashCode => 'flac'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$mulaw extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$mulaw._();
+
+@override String get value => 'mulaw';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramNova3RequestEncoding$mulaw;
+
+@override int get hashCode => 'mulaw'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrNb extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrNb._();
+
+@override String get value => 'amr-nb';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrNb;
+
+@override int get hashCode => 'amr-nb'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrWb extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrWb._();
+
+@override String get value => 'amr-wb';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramNova3RequestEncoding$amrWb;
+
+@override int get hashCode => 'amr-wb'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$opus extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$opus._();
+
+@override String get value => 'opus';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramNova3RequestEncoding$opus;
+
+@override int get hashCode => 'opus'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$speex extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$speex._();
+
+@override String get value => 'speex';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramNova3RequestEncoding$speex;
+
+@override int get hashCode => 'speex'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$g729 extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$g729._();
+
+@override String get value => 'g729';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramNova3RequestEncoding$g729;
+
+@override int get hashCode => 'g729'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown extends WorkersAiPostRunCfDeepgramNova3RequestEncoding {const WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkersAiPostRunCfDeepgramNova3RequestEncoding$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Mode of operation for the model representing broad area of topic that will be talked about in the supplied audio
-@immutable final class WorkersAiPostRunCfDeepgramNova3RequestMode {const WorkersAiPostRunCfDeepgramNova3RequestMode._(this.value);
+sealed class WorkersAiPostRunCfDeepgramNova3RequestMode {const WorkersAiPostRunCfDeepgramNova3RequestMode();
 
 factory WorkersAiPostRunCfDeepgramNova3RequestMode.fromJson(String json) { return switch (json) {
   'general' => general,
   'medical' => medical,
   'finance' => finance,
-  _ => WorkersAiPostRunCfDeepgramNova3RequestMode._(json),
+  _ => WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown(json),
 }; }
 
-static const WorkersAiPostRunCfDeepgramNova3RequestMode general = WorkersAiPostRunCfDeepgramNova3RequestMode._('general');
+static const WorkersAiPostRunCfDeepgramNova3RequestMode general = WorkersAiPostRunCfDeepgramNova3RequestMode$general._();
 
-static const WorkersAiPostRunCfDeepgramNova3RequestMode medical = WorkersAiPostRunCfDeepgramNova3RequestMode._('medical');
+static const WorkersAiPostRunCfDeepgramNova3RequestMode medical = WorkersAiPostRunCfDeepgramNova3RequestMode$medical._();
 
-static const WorkersAiPostRunCfDeepgramNova3RequestMode finance = WorkersAiPostRunCfDeepgramNova3RequestMode._('finance');
+static const WorkersAiPostRunCfDeepgramNova3RequestMode finance = WorkersAiPostRunCfDeepgramNova3RequestMode$finance._();
 
 static const List<WorkersAiPostRunCfDeepgramNova3RequestMode> values = [general, medical, finance];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -156,13 +275,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown; } 
+@override String toString() => 'WorkersAiPostRunCfDeepgramNova3RequestMode($value)';
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramNova3RequestMode$general extends WorkersAiPostRunCfDeepgramNova3RequestMode {const WorkersAiPostRunCfDeepgramNova3RequestMode$general._();
+
+@override String get value => 'general';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramNova3RequestMode$general;
+
+@override int get hashCode => 'general'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramNova3RequestMode$medical extends WorkersAiPostRunCfDeepgramNova3RequestMode {const WorkersAiPostRunCfDeepgramNova3RequestMode$medical._();
+
+@override String get value => 'medical';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramNova3RequestMode$medical;
+
+@override int get hashCode => 'medical'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramNova3RequestMode$finance extends WorkersAiPostRunCfDeepgramNova3RequestMode {const WorkersAiPostRunCfDeepgramNova3RequestMode$finance._();
+
+@override String get value => 'finance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramNova3RequestMode$finance;
+
+@override int get hashCode => 'finance'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown extends WorkersAiPostRunCfDeepgramNova3RequestMode {const WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramNova3RequestMode && other.value == value;
+    other is WorkersAiPostRunCfDeepgramNova3RequestMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersAiPostRunCfDeepgramNova3RequestMode($value)';
 
  }
 @immutable final class WorkersAiPostRunCfDeepgramNova3Request {const WorkersAiPostRunCfDeepgramNova3Request({required this.audio, this.endpointing, this.customIntent, this.customIntentMode, this.customTopic, this.customTopicMode, this.detectEntities, this.detectLanguage, this.diarize, this.dictation, this.encoding, this.channels, this.extra, this.fillerWords, this.interimResults, this.keyterm, this.keywords, this.language, this.measurements, this.mipOptOut, this.mode, this.multichannel, this.numerals, this.vadEvents, this.profanityFilter, this.punctuate, this.redact, this.replace, this.search, this.sentiment, this.smartFormat, this.topics, this.uttSplit, this.utteranceEndMs, this.utterances, this.paragraphs, });

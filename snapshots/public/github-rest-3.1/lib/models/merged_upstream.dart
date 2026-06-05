@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MergedUpstream
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MergeType {const MergeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class MergeType {const MergeType();
 
 factory MergeType.fromJson(String json) { return switch (json) {
   'merge' => merge,
   'fast-forward' => fastForward,
   'none' => none,
-  _ => MergeType._(json),
+  _ => MergeType$Unknown(json),
 }; }
 
-static const MergeType merge = MergeType._('merge');
+static const MergeType merge = MergeType$merge._();
 
-static const MergeType fastForward = MergeType._('fast-forward');
+static const MergeType fastForward = MergeType$fastForward._();
 
-static const MergeType none = MergeType._('none');
+static const MergeType none = MergeType$none._();
 
 static const List<MergeType> values = [merge, fastForward, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MergeType$Unknown; } 
+@override String toString() => 'MergeType($value)';
+
+ }
+@immutable final class MergeType$merge extends MergeType {const MergeType$merge._();
+
+@override String get value => 'merge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MergeType$merge;
+
+@override int get hashCode => 'merge'.hashCode;
+
+ }
+@immutable final class MergeType$fastForward extends MergeType {const MergeType$fastForward._();
+
+@override String get value => 'fast-forward';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MergeType$fastForward;
+
+@override int get hashCode => 'fast-forward'.hashCode;
+
+ }
+@immutable final class MergeType$none extends MergeType {const MergeType$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MergeType$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class MergeType$Unknown extends MergeType {const MergeType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MergeType && other.value == value;
+    other is MergeType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MergeType($value)';
 
  }
 /// Results of a successful merge upstream request

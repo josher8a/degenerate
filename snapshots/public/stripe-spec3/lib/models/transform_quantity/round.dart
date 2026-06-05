@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TransformQuantity (inline: Round)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// After division, either round the result `up` or `down`.
-@immutable final class Round {const Round._(this.value);
+sealed class Round {const Round();
 
 factory Round.fromJson(String json) { return switch (json) {
   'down' => down,
   'up' => up,
-  _ => Round._(json),
+  _ => Round$Unknown(json),
 }; }
 
-static const Round down = Round._('down');
+static const Round down = Round$down._();
 
-static const Round up = Round._('up');
+static const Round up = Round$up._();
 
 static const List<Round> values = [down, up];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Round$Unknown; } 
+@override String toString() => 'Round($value)';
+
+ }
+@immutable final class Round$down extends Round {const Round$down._();
+
+@override String get value => 'down';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Round$down;
+
+@override int get hashCode => 'down'.hashCode;
+
+ }
+@immutable final class Round$up extends Round {const Round$up._();
+
+@override String get value => 'up';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Round$up;
+
+@override int get hashCode => 'up'.hashCode;
+
+ }
+@immutable final class Round$Unknown extends Round {const Round$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Round && other.value == value;
+    other is Round$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Round($value)';
 
  }

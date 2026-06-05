@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCheckoutSessionsRequest (inline: BrandingSettings)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/background_color.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/branding_settings_icon.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/branding_settings_logo.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/button_color.dart';@immutable final class BrandingSettingsBorderStyle {const BrandingSettingsBorderStyle._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/background_color.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/branding_settings_icon.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/branding_settings_logo.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/button_color.dart';sealed class BrandingSettingsBorderStyle {const BrandingSettingsBorderStyle();
 
 factory BrandingSettingsBorderStyle.fromJson(String json) { return switch (json) {
   '' => $empty,
   'pill' => pill,
   'rectangular' => rectangular,
   'rounded' => rounded,
-  _ => BrandingSettingsBorderStyle._(json),
+  _ => BrandingSettingsBorderStyle$Unknown(json),
 }; }
 
-static const BrandingSettingsBorderStyle $empty = BrandingSettingsBorderStyle._('');
+static const BrandingSettingsBorderStyle $empty = BrandingSettingsBorderStyle$$empty._();
 
-static const BrandingSettingsBorderStyle pill = BrandingSettingsBorderStyle._('pill');
+static const BrandingSettingsBorderStyle pill = BrandingSettingsBorderStyle$pill._();
 
-static const BrandingSettingsBorderStyle rectangular = BrandingSettingsBorderStyle._('rectangular');
+static const BrandingSettingsBorderStyle rectangular = BrandingSettingsBorderStyle$rectangular._();
 
-static const BrandingSettingsBorderStyle rounded = BrandingSettingsBorderStyle._('rounded');
+static const BrandingSettingsBorderStyle rounded = BrandingSettingsBorderStyle$rounded._();
 
 static const List<BrandingSettingsBorderStyle> values = [$empty, pill, rectangular, rounded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,16 +32,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BrandingSettingsBorderStyle && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is BrandingSettingsBorderStyle$Unknown; } 
 @override String toString() => 'BrandingSettingsBorderStyle($value)';
 
  }
-@immutable final class FontFamily {const FontFamily._(this.value);
+@immutable final class BrandingSettingsBorderStyle$$empty extends BrandingSettingsBorderStyle {const BrandingSettingsBorderStyle$$empty._();
+
+@override String get value => '';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BrandingSettingsBorderStyle$$empty;
+
+@override int get hashCode => ''.hashCode;
+
+ }
+@immutable final class BrandingSettingsBorderStyle$pill extends BrandingSettingsBorderStyle {const BrandingSettingsBorderStyle$pill._();
+
+@override String get value => 'pill';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BrandingSettingsBorderStyle$pill;
+
+@override int get hashCode => 'pill'.hashCode;
+
+ }
+@immutable final class BrandingSettingsBorderStyle$rectangular extends BrandingSettingsBorderStyle {const BrandingSettingsBorderStyle$rectangular._();
+
+@override String get value => 'rectangular';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BrandingSettingsBorderStyle$rectangular;
+
+@override int get hashCode => 'rectangular'.hashCode;
+
+ }
+@immutable final class BrandingSettingsBorderStyle$rounded extends BrandingSettingsBorderStyle {const BrandingSettingsBorderStyle$rounded._();
+
+@override String get value => 'rounded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BrandingSettingsBorderStyle$rounded;
+
+@override int get hashCode => 'rounded'.hashCode;
+
+ }
+@immutable final class BrandingSettingsBorderStyle$Unknown extends BrandingSettingsBorderStyle {const BrandingSettingsBorderStyle$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BrandingSettingsBorderStyle$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class FontFamily {const FontFamily();
 
 factory FontFamily.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -72,67 +112,66 @@ factory FontFamily.fromJson(String json) { return switch (json) {
   'titillium_web' => titilliumWeb,
   'ubuntu_mono' => ubuntuMono,
   'zen_maru_gothic' => zenMaruGothic,
-  _ => FontFamily._(json),
+  _ => FontFamily$Unknown(json),
 }; }
 
-static const FontFamily $empty = FontFamily._('');
+static const FontFamily $empty = FontFamily$$empty._();
 
-static const FontFamily beVietnamPro = FontFamily._('be_vietnam_pro');
+static const FontFamily beVietnamPro = FontFamily$beVietnamPro._();
 
-static const FontFamily bitter = FontFamily._('bitter');
+static const FontFamily bitter = FontFamily$bitter._();
 
-static const FontFamily chakraPetch = FontFamily._('chakra_petch');
+static const FontFamily chakraPetch = FontFamily$chakraPetch._();
 
-static const FontFamily $default = FontFamily._('default');
+static const FontFamily $default = FontFamily$$default._();
 
-static const FontFamily hahmlet = FontFamily._('hahmlet');
+static const FontFamily hahmlet = FontFamily$hahmlet._();
 
-static const FontFamily inconsolata = FontFamily._('inconsolata');
+static const FontFamily inconsolata = FontFamily$inconsolata._();
 
-static const FontFamily inter = FontFamily._('inter');
+static const FontFamily inter = FontFamily$inter._();
 
-static const FontFamily lato = FontFamily._('lato');
+static const FontFamily lato = FontFamily$lato._();
 
-static const FontFamily lora = FontFamily._('lora');
+static const FontFamily lora = FontFamily$lora._();
 
-static const FontFamily mPlus1Code = FontFamily._('m_plus_1_code');
+static const FontFamily mPlus1Code = FontFamily$mPlus1Code._();
 
-static const FontFamily montserrat = FontFamily._('montserrat');
+static const FontFamily montserrat = FontFamily$montserrat._();
 
-static const FontFamily notoSans = FontFamily._('noto_sans');
+static const FontFamily notoSans = FontFamily$notoSans._();
 
-static const FontFamily notoSansJp = FontFamily._('noto_sans_jp');
+static const FontFamily notoSansJp = FontFamily$notoSansJp._();
 
-static const FontFamily notoSerif = FontFamily._('noto_serif');
+static const FontFamily notoSerif = FontFamily$notoSerif._();
 
-static const FontFamily nunito = FontFamily._('nunito');
+static const FontFamily nunito = FontFamily$nunito._();
 
-static const FontFamily openSans = FontFamily._('open_sans');
+static const FontFamily openSans = FontFamily$openSans._();
 
-static const FontFamily pridi = FontFamily._('pridi');
+static const FontFamily pridi = FontFamily$pridi._();
 
-static const FontFamily ptSans = FontFamily._('pt_sans');
+static const FontFamily ptSans = FontFamily$ptSans._();
 
-static const FontFamily ptSerif = FontFamily._('pt_serif');
+static const FontFamily ptSerif = FontFamily$ptSerif._();
 
-static const FontFamily raleway = FontFamily._('raleway');
+static const FontFamily raleway = FontFamily$raleway._();
 
-static const FontFamily roboto = FontFamily._('roboto');
+static const FontFamily roboto = FontFamily$roboto._();
 
-static const FontFamily robotoSlab = FontFamily._('roboto_slab');
+static const FontFamily robotoSlab = FontFamily$robotoSlab._();
 
-static const FontFamily sourceSansPro = FontFamily._('source_sans_pro');
+static const FontFamily sourceSansPro = FontFamily$sourceSansPro._();
 
-static const FontFamily titilliumWeb = FontFamily._('titillium_web');
+static const FontFamily titilliumWeb = FontFamily$titilliumWeb._();
 
-static const FontFamily ubuntuMono = FontFamily._('ubuntu_mono');
+static const FontFamily ubuntuMono = FontFamily$ubuntuMono._();
 
-static const FontFamily zenMaruGothic = FontFamily._('zen_maru_gothic');
+static const FontFamily zenMaruGothic = FontFamily$zenMaruGothic._();
 
 static const List<FontFamily> values = [$empty, beVietnamPro, bitter, chakraPetch, $default, hahmlet, inconsolata, inter, lato, lora, mPlus1Code, montserrat, notoSans, notoSansJp, notoSerif, nunito, openSans, pridi, ptSans, ptSerif, raleway, roboto, robotoSlab, sourceSansPro, titilliumWeb, ubuntuMono, zenMaruGothic];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -166,13 +205,261 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FontFamily$Unknown; } 
+@override String toString() => 'FontFamily($value)';
+
+ }
+@immutable final class FontFamily$$empty extends FontFamily {const FontFamily$$empty._();
+
+@override String get value => '';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$$empty;
+
+@override int get hashCode => ''.hashCode;
+
+ }
+@immutable final class FontFamily$beVietnamPro extends FontFamily {const FontFamily$beVietnamPro._();
+
+@override String get value => 'be_vietnam_pro';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$beVietnamPro;
+
+@override int get hashCode => 'be_vietnam_pro'.hashCode;
+
+ }
+@immutable final class FontFamily$bitter extends FontFamily {const FontFamily$bitter._();
+
+@override String get value => 'bitter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$bitter;
+
+@override int get hashCode => 'bitter'.hashCode;
+
+ }
+@immutable final class FontFamily$chakraPetch extends FontFamily {const FontFamily$chakraPetch._();
+
+@override String get value => 'chakra_petch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$chakraPetch;
+
+@override int get hashCode => 'chakra_petch'.hashCode;
+
+ }
+@immutable final class FontFamily$$default extends FontFamily {const FontFamily$$default._();
+
+@override String get value => 'default';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$$default;
+
+@override int get hashCode => 'default'.hashCode;
+
+ }
+@immutable final class FontFamily$hahmlet extends FontFamily {const FontFamily$hahmlet._();
+
+@override String get value => 'hahmlet';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$hahmlet;
+
+@override int get hashCode => 'hahmlet'.hashCode;
+
+ }
+@immutable final class FontFamily$inconsolata extends FontFamily {const FontFamily$inconsolata._();
+
+@override String get value => 'inconsolata';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$inconsolata;
+
+@override int get hashCode => 'inconsolata'.hashCode;
+
+ }
+@immutable final class FontFamily$inter extends FontFamily {const FontFamily$inter._();
+
+@override String get value => 'inter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$inter;
+
+@override int get hashCode => 'inter'.hashCode;
+
+ }
+@immutable final class FontFamily$lato extends FontFamily {const FontFamily$lato._();
+
+@override String get value => 'lato';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$lato;
+
+@override int get hashCode => 'lato'.hashCode;
+
+ }
+@immutable final class FontFamily$lora extends FontFamily {const FontFamily$lora._();
+
+@override String get value => 'lora';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$lora;
+
+@override int get hashCode => 'lora'.hashCode;
+
+ }
+@immutable final class FontFamily$mPlus1Code extends FontFamily {const FontFamily$mPlus1Code._();
+
+@override String get value => 'm_plus_1_code';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$mPlus1Code;
+
+@override int get hashCode => 'm_plus_1_code'.hashCode;
+
+ }
+@immutable final class FontFamily$montserrat extends FontFamily {const FontFamily$montserrat._();
+
+@override String get value => 'montserrat';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$montserrat;
+
+@override int get hashCode => 'montserrat'.hashCode;
+
+ }
+@immutable final class FontFamily$notoSans extends FontFamily {const FontFamily$notoSans._();
+
+@override String get value => 'noto_sans';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$notoSans;
+
+@override int get hashCode => 'noto_sans'.hashCode;
+
+ }
+@immutable final class FontFamily$notoSansJp extends FontFamily {const FontFamily$notoSansJp._();
+
+@override String get value => 'noto_sans_jp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$notoSansJp;
+
+@override int get hashCode => 'noto_sans_jp'.hashCode;
+
+ }
+@immutable final class FontFamily$notoSerif extends FontFamily {const FontFamily$notoSerif._();
+
+@override String get value => 'noto_serif';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$notoSerif;
+
+@override int get hashCode => 'noto_serif'.hashCode;
+
+ }
+@immutable final class FontFamily$nunito extends FontFamily {const FontFamily$nunito._();
+
+@override String get value => 'nunito';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$nunito;
+
+@override int get hashCode => 'nunito'.hashCode;
+
+ }
+@immutable final class FontFamily$openSans extends FontFamily {const FontFamily$openSans._();
+
+@override String get value => 'open_sans';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$openSans;
+
+@override int get hashCode => 'open_sans'.hashCode;
+
+ }
+@immutable final class FontFamily$pridi extends FontFamily {const FontFamily$pridi._();
+
+@override String get value => 'pridi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$pridi;
+
+@override int get hashCode => 'pridi'.hashCode;
+
+ }
+@immutable final class FontFamily$ptSans extends FontFamily {const FontFamily$ptSans._();
+
+@override String get value => 'pt_sans';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$ptSans;
+
+@override int get hashCode => 'pt_sans'.hashCode;
+
+ }
+@immutable final class FontFamily$ptSerif extends FontFamily {const FontFamily$ptSerif._();
+
+@override String get value => 'pt_serif';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$ptSerif;
+
+@override int get hashCode => 'pt_serif'.hashCode;
+
+ }
+@immutable final class FontFamily$raleway extends FontFamily {const FontFamily$raleway._();
+
+@override String get value => 'raleway';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$raleway;
+
+@override int get hashCode => 'raleway'.hashCode;
+
+ }
+@immutable final class FontFamily$roboto extends FontFamily {const FontFamily$roboto._();
+
+@override String get value => 'roboto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$roboto;
+
+@override int get hashCode => 'roboto'.hashCode;
+
+ }
+@immutable final class FontFamily$robotoSlab extends FontFamily {const FontFamily$robotoSlab._();
+
+@override String get value => 'roboto_slab';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$robotoSlab;
+
+@override int get hashCode => 'roboto_slab'.hashCode;
+
+ }
+@immutable final class FontFamily$sourceSansPro extends FontFamily {const FontFamily$sourceSansPro._();
+
+@override String get value => 'source_sans_pro';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$sourceSansPro;
+
+@override int get hashCode => 'source_sans_pro'.hashCode;
+
+ }
+@immutable final class FontFamily$titilliumWeb extends FontFamily {const FontFamily$titilliumWeb._();
+
+@override String get value => 'titillium_web';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$titilliumWeb;
+
+@override int get hashCode => 'titillium_web'.hashCode;
+
+ }
+@immutable final class FontFamily$ubuntuMono extends FontFamily {const FontFamily$ubuntuMono._();
+
+@override String get value => 'ubuntu_mono';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$ubuntuMono;
+
+@override int get hashCode => 'ubuntu_mono'.hashCode;
+
+ }
+@immutable final class FontFamily$zenMaruGothic extends FontFamily {const FontFamily$zenMaruGothic._();
+
+@override String get value => 'zen_maru_gothic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FontFamily$zenMaruGothic;
+
+@override int get hashCode => 'zen_maru_gothic'.hashCode;
+
+ }
+@immutable final class FontFamily$Unknown extends FontFamily {const FontFamily$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FontFamily && other.value == value;
+    other is FontFamily$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FontFamily($value)';
 
  }
 /// The branding settings for the Checkout Session. This parameter is not allowed if ui_mode is `custom`.

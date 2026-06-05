@@ -2,25 +2,24 @@
 // Source: #/components/schemas/RealtimekitPreset (inline: Config > ViewType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the meeting
-@immutable final class ViewType {const ViewType._(this.value);
+sealed class ViewType {const ViewType();
 
 factory ViewType.fromJson(String json) { return switch (json) {
   'GROUP_CALL' => groupCall,
   'WEBINAR' => webinar,
   'AUDIO_ROOM' => audioRoom,
-  _ => ViewType._(json),
+  _ => ViewType$Unknown(json),
 }; }
 
-static const ViewType groupCall = ViewType._('GROUP_CALL');
+static const ViewType groupCall = ViewType$groupCall._();
 
-static const ViewType webinar = ViewType._('WEBINAR');
+static const ViewType webinar = ViewType$webinar._();
 
-static const ViewType audioRoom = ViewType._('AUDIO_ROOM');
+static const ViewType audioRoom = ViewType$audioRoom._();
 
 static const List<ViewType> values = [groupCall, webinar, audioRoom];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ViewType$Unknown; } 
+@override String toString() => 'ViewType($value)';
+
+ }
+@immutable final class ViewType$groupCall extends ViewType {const ViewType$groupCall._();
+
+@override String get value => 'GROUP_CALL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ViewType$groupCall;
+
+@override int get hashCode => 'GROUP_CALL'.hashCode;
+
+ }
+@immutable final class ViewType$webinar extends ViewType {const ViewType$webinar._();
+
+@override String get value => 'WEBINAR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ViewType$webinar;
+
+@override int get hashCode => 'WEBINAR'.hashCode;
+
+ }
+@immutable final class ViewType$audioRoom extends ViewType {const ViewType$audioRoom._();
+
+@override String get value => 'AUDIO_ROOM';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ViewType$audioRoom;
+
+@override int get hashCode => 'AUDIO_ROOM'.hashCode;
+
+ }
+@immutable final class ViewType$Unknown extends ViewType {const ViewType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ViewType && other.value == value;
+    other is ViewType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ViewType($value)';
 
  }

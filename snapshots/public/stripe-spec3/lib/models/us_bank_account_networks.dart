@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UsBankAccountNetworks
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Supported {const Supported._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Supported {const Supported();
 
 factory Supported.fromJson(String json) { return switch (json) {
   'ach' => ach,
   'us_domestic_wire' => usDomesticWire,
-  _ => Supported._(json),
+  _ => Supported$Unknown(json),
 }; }
 
-static const Supported ach = Supported._('ach');
+static const Supported ach = Supported$ach._();
 
-static const Supported usDomesticWire = Supported._('us_domestic_wire');
+static const Supported usDomesticWire = Supported$usDomesticWire._();
 
 static const List<Supported> values = [ach, usDomesticWire];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Supported$Unknown; } 
+@override String toString() => 'Supported($value)';
+
+ }
+@immutable final class Supported$ach extends Supported {const Supported$ach._();
+
+@override String get value => 'ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Supported$ach;
+
+@override int get hashCode => 'ach'.hashCode;
+
+ }
+@immutable final class Supported$usDomesticWire extends Supported {const Supported$usDomesticWire._();
+
+@override String get value => 'us_domestic_wire';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Supported$usDomesticWire;
+
+@override int get hashCode => 'us_domestic_wire'.hashCode;
+
+ }
+@immutable final class Supported$Unknown extends Supported {const Supported$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Supported && other.value == value;
+    other is Supported$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Supported($value)';
 
  }
 /// 

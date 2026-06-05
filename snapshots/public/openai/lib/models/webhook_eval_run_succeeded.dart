@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `eval.run.succeeded`.
 /// 
-@immutable final class WebhookEvalRunSucceededType {const WebhookEvalRunSucceededType._(this.value);
+sealed class WebhookEvalRunSucceededType {const WebhookEvalRunSucceededType();
 
 factory WebhookEvalRunSucceededType.fromJson(String json) { return switch (json) {
   'eval.run.succeeded' => evalRunSucceeded,
-  _ => WebhookEvalRunSucceededType._(json),
+  _ => WebhookEvalRunSucceededType$Unknown(json),
 }; }
 
-static const WebhookEvalRunSucceededType evalRunSucceeded = WebhookEvalRunSucceededType._('eval.run.succeeded');
+static const WebhookEvalRunSucceededType evalRunSucceeded = WebhookEvalRunSucceededType$evalRunSucceeded._();
 
 static const List<WebhookEvalRunSucceededType> values = [evalRunSucceeded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookEvalRunSucceededType$Unknown; } 
+@override String toString() => 'WebhookEvalRunSucceededType($value)';
+
+ }
+@immutable final class WebhookEvalRunSucceededType$evalRunSucceeded extends WebhookEvalRunSucceededType {const WebhookEvalRunSucceededType$evalRunSucceeded._();
+
+@override String get value => 'eval.run.succeeded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookEvalRunSucceededType$evalRunSucceeded;
+
+@override int get hashCode => 'eval.run.succeeded'.hashCode;
+
+ }
+@immutable final class WebhookEvalRunSucceededType$Unknown extends WebhookEvalRunSucceededType {const WebhookEvalRunSucceededType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookEvalRunSucceededType && other.value == value;
+    other is WebhookEvalRunSucceededType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookEvalRunSucceededType($value)';
 
  }
 /// Sent when an eval run has succeeded.

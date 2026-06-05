@@ -2,28 +2,27 @@
 // Source: #/components/schemas/TaxIdVerification
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Verification status, one of `pending`, `verified`, `unverified`, or `unavailable`.
-@immutable final class TaxIdVerificationStatus {const TaxIdVerificationStatus._(this.value);
+sealed class TaxIdVerificationStatus {const TaxIdVerificationStatus();
 
 factory TaxIdVerificationStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'unavailable' => unavailable,
   'unverified' => unverified,
   'verified' => verified,
-  _ => TaxIdVerificationStatus._(json),
+  _ => TaxIdVerificationStatus$Unknown(json),
 }; }
 
-static const TaxIdVerificationStatus pending = TaxIdVerificationStatus._('pending');
+static const TaxIdVerificationStatus pending = TaxIdVerificationStatus$pending._();
 
-static const TaxIdVerificationStatus unavailable = TaxIdVerificationStatus._('unavailable');
+static const TaxIdVerificationStatus unavailable = TaxIdVerificationStatus$unavailable._();
 
-static const TaxIdVerificationStatus unverified = TaxIdVerificationStatus._('unverified');
+static const TaxIdVerificationStatus unverified = TaxIdVerificationStatus$unverified._();
 
-static const TaxIdVerificationStatus verified = TaxIdVerificationStatus._('verified');
+static const TaxIdVerificationStatus verified = TaxIdVerificationStatus$verified._();
 
 static const List<TaxIdVerificationStatus> values = [pending, unavailable, unverified, verified];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TaxIdVerificationStatus$Unknown; } 
+@override String toString() => 'TaxIdVerificationStatus($value)';
+
+ }
+@immutable final class TaxIdVerificationStatus$pending extends TaxIdVerificationStatus {const TaxIdVerificationStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxIdVerificationStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class TaxIdVerificationStatus$unavailable extends TaxIdVerificationStatus {const TaxIdVerificationStatus$unavailable._();
+
+@override String get value => 'unavailable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxIdVerificationStatus$unavailable;
+
+@override int get hashCode => 'unavailable'.hashCode;
+
+ }
+@immutable final class TaxIdVerificationStatus$unverified extends TaxIdVerificationStatus {const TaxIdVerificationStatus$unverified._();
+
+@override String get value => 'unverified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxIdVerificationStatus$unverified;
+
+@override int get hashCode => 'unverified'.hashCode;
+
+ }
+@immutable final class TaxIdVerificationStatus$verified extends TaxIdVerificationStatus {const TaxIdVerificationStatus$verified._();
+
+@override String get value => 'verified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxIdVerificationStatus$verified;
+
+@override int get hashCode => 'verified'.hashCode;
+
+ }
+@immutable final class TaxIdVerificationStatus$Unknown extends TaxIdVerificationStatus {const TaxIdVerificationStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxIdVerificationStatus && other.value == value;
+    other is TaxIdVerificationStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TaxIdVerificationStatus($value)';
 
  }
 /// 

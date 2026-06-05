@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DexEndpointsTracerouteTestDetailsInterval
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DexEndpointsTracerouteTestDetailsInterval {const DexEndpointsTracerouteTestDetailsInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DexEndpointsTracerouteTestDetailsInterval {const DexEndpointsTracerouteTestDetailsInterval();
 
 factory DexEndpointsTracerouteTestDetailsInterval.fromJson(String json) { return switch (json) {
   'minute' => minute,
   'hour' => hour,
-  _ => DexEndpointsTracerouteTestDetailsInterval._(json),
+  _ => DexEndpointsTracerouteTestDetailsInterval$Unknown(json),
 }; }
 
-static const DexEndpointsTracerouteTestDetailsInterval minute = DexEndpointsTracerouteTestDetailsInterval._('minute');
+static const DexEndpointsTracerouteTestDetailsInterval minute = DexEndpointsTracerouteTestDetailsInterval$minute._();
 
-static const DexEndpointsTracerouteTestDetailsInterval hour = DexEndpointsTracerouteTestDetailsInterval._('hour');
+static const DexEndpointsTracerouteTestDetailsInterval hour = DexEndpointsTracerouteTestDetailsInterval$hour._();
 
 static const List<DexEndpointsTracerouteTestDetailsInterval> values = [minute, hour];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DexEndpointsTracerouteTestDetailsInterval$Unknown; } 
+@override String toString() => 'DexEndpointsTracerouteTestDetailsInterval($value)';
+
+ }
+@immutable final class DexEndpointsTracerouteTestDetailsInterval$minute extends DexEndpointsTracerouteTestDetailsInterval {const DexEndpointsTracerouteTestDetailsInterval$minute._();
+
+@override String get value => 'minute';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DexEndpointsTracerouteTestDetailsInterval$minute;
+
+@override int get hashCode => 'minute'.hashCode;
+
+ }
+@immutable final class DexEndpointsTracerouteTestDetailsInterval$hour extends DexEndpointsTracerouteTestDetailsInterval {const DexEndpointsTracerouteTestDetailsInterval$hour._();
+
+@override String get value => 'hour';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DexEndpointsTracerouteTestDetailsInterval$hour;
+
+@override int get hashCode => 'hour'.hashCode;
+
+ }
+@immutable final class DexEndpointsTracerouteTestDetailsInterval$Unknown extends DexEndpointsTracerouteTestDetailsInterval {const DexEndpointsTracerouteTestDetailsInterval$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DexEndpointsTracerouteTestDetailsInterval && other.value == value;
+    other is DexEndpointsTracerouteTestDetailsInterval$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DexEndpointsTracerouteTestDetailsInterval($value)';
 
  }

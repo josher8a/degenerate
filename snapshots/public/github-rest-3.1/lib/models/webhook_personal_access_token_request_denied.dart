@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookPersonalAccessTokenRequestDenied
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/personal_access_token_request.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookPersonalAccessTokenRequestDeniedAction {const WebhookPersonalAccessTokenRequestDeniedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/personal_access_token_request.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookPersonalAccessTokenRequestDeniedAction {const WebhookPersonalAccessTokenRequestDeniedAction();
 
 factory WebhookPersonalAccessTokenRequestDeniedAction.fromJson(String json) { return switch (json) {
   'denied' => denied,
-  _ => WebhookPersonalAccessTokenRequestDeniedAction._(json),
+  _ => WebhookPersonalAccessTokenRequestDeniedAction$Unknown(json),
 }; }
 
-static const WebhookPersonalAccessTokenRequestDeniedAction denied = WebhookPersonalAccessTokenRequestDeniedAction._('denied');
+static const WebhookPersonalAccessTokenRequestDeniedAction denied = WebhookPersonalAccessTokenRequestDeniedAction$denied._();
 
 static const List<WebhookPersonalAccessTokenRequestDeniedAction> values = [denied];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookPersonalAccessTokenRequestDeniedAction$Unknown; } 
+@override String toString() => 'WebhookPersonalAccessTokenRequestDeniedAction($value)';
+
+ }
+@immutable final class WebhookPersonalAccessTokenRequestDeniedAction$denied extends WebhookPersonalAccessTokenRequestDeniedAction {const WebhookPersonalAccessTokenRequestDeniedAction$denied._();
+
+@override String get value => 'denied';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPersonalAccessTokenRequestDeniedAction$denied;
+
+@override int get hashCode => 'denied'.hashCode;
+
+ }
+@immutable final class WebhookPersonalAccessTokenRequestDeniedAction$Unknown extends WebhookPersonalAccessTokenRequestDeniedAction {const WebhookPersonalAccessTokenRequestDeniedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookPersonalAccessTokenRequestDeniedAction && other.value == value;
+    other is WebhookPersonalAccessTokenRequestDeniedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookPersonalAccessTokenRequestDeniedAction($value)';
 
  }
 @immutable final class WebhookPersonalAccessTokenRequestDenied {const WebhookPersonalAccessTokenRequestDenied({required this.action, required this.personalAccessTokenRequest, required this.organization, required this.sender, required this.installation, this.enterprise, });

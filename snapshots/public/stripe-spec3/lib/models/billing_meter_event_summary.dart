@@ -2,19 +2,18 @@
 // Source: #/components/schemas/BillingMeterEventSummary
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class BillingMeterEventSummaryObject {const BillingMeterEventSummaryObject._(this.value);
+sealed class BillingMeterEventSummaryObject {const BillingMeterEventSummaryObject();
 
 factory BillingMeterEventSummaryObject.fromJson(String json) { return switch (json) {
   'billing.meter_event_summary' => billingMeterEventSummary,
-  _ => BillingMeterEventSummaryObject._(json),
+  _ => BillingMeterEventSummaryObject$Unknown(json),
 }; }
 
-static const BillingMeterEventSummaryObject billingMeterEventSummary = BillingMeterEventSummaryObject._('billing.meter_event_summary');
+static const BillingMeterEventSummaryObject billingMeterEventSummary = BillingMeterEventSummaryObject$billingMeterEventSummary._();
 
 static const List<BillingMeterEventSummaryObject> values = [billingMeterEventSummary];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingMeterEventSummaryObject$Unknown; } 
+@override String toString() => 'BillingMeterEventSummaryObject($value)';
+
+ }
+@immutable final class BillingMeterEventSummaryObject$billingMeterEventSummary extends BillingMeterEventSummaryObject {const BillingMeterEventSummaryObject$billingMeterEventSummary._();
+
+@override String get value => 'billing.meter_event_summary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingMeterEventSummaryObject$billingMeterEventSummary;
+
+@override int get hashCode => 'billing.meter_event_summary'.hashCode;
+
+ }
+@immutable final class BillingMeterEventSummaryObject$Unknown extends BillingMeterEventSummaryObject {const BillingMeterEventSummaryObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingMeterEventSummaryObject && other.value == value;
+    other is BillingMeterEventSummaryObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingMeterEventSummaryObject($value)';
 
  }
 /// A billing meter event summary represents an aggregated view of a customer's billing meter events within a specified timeframe. It indicates how much

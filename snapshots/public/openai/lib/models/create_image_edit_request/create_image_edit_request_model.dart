@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateImageEditRequest (inline: Model)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateImageEditRequestModelVariant2 {const CreateImageEditRequestModelVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CreateImageEditRequestModelVariant2 {const CreateImageEditRequestModelVariant2();
 
 factory CreateImageEditRequestModelVariant2.fromJson(String json) { return switch (json) {
   'gpt-image-1.5' => gptImage15,
@@ -9,23 +9,22 @@ factory CreateImageEditRequestModelVariant2.fromJson(String json) { return switc
   'gpt-image-1' => gptImage1,
   'gpt-image-1-mini' => gptImage1Mini,
   'chatgpt-image-latest' => chatgptImageLatest,
-  _ => CreateImageEditRequestModelVariant2._(json),
+  _ => CreateImageEditRequestModelVariant2$Unknown(json),
 }; }
 
-static const CreateImageEditRequestModelVariant2 gptImage15 = CreateImageEditRequestModelVariant2._('gpt-image-1.5');
+static const CreateImageEditRequestModelVariant2 gptImage15 = CreateImageEditRequestModelVariant2$gptImage15._();
 
-static const CreateImageEditRequestModelVariant2 dallE2 = CreateImageEditRequestModelVariant2._('dall-e-2');
+static const CreateImageEditRequestModelVariant2 dallE2 = CreateImageEditRequestModelVariant2$dallE2._();
 
-static const CreateImageEditRequestModelVariant2 gptImage1 = CreateImageEditRequestModelVariant2._('gpt-image-1');
+static const CreateImageEditRequestModelVariant2 gptImage1 = CreateImageEditRequestModelVariant2$gptImage1._();
 
-static const CreateImageEditRequestModelVariant2 gptImage1Mini = CreateImageEditRequestModelVariant2._('gpt-image-1-mini');
+static const CreateImageEditRequestModelVariant2 gptImage1Mini = CreateImageEditRequestModelVariant2$gptImage1Mini._();
 
-static const CreateImageEditRequestModelVariant2 chatgptImageLatest = CreateImageEditRequestModelVariant2._('chatgpt-image-latest');
+static const CreateImageEditRequestModelVariant2 chatgptImageLatest = CreateImageEditRequestModelVariant2$chatgptImageLatest._();
 
 static const List<CreateImageEditRequestModelVariant2> values = [gptImage15, dallE2, gptImage1, gptImage1Mini, chatgptImageLatest];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateImageEditRequestModelVariant2$Unknown; } 
+@override String toString() => 'CreateImageEditRequestModelVariant2($value)';
+
+ }
+@immutable final class CreateImageEditRequestModelVariant2$gptImage15 extends CreateImageEditRequestModelVariant2 {const CreateImageEditRequestModelVariant2$gptImage15._();
+
+@override String get value => 'gpt-image-1.5';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestModelVariant2$gptImage15;
+
+@override int get hashCode => 'gpt-image-1.5'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestModelVariant2$dallE2 extends CreateImageEditRequestModelVariant2 {const CreateImageEditRequestModelVariant2$dallE2._();
+
+@override String get value => 'dall-e-2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestModelVariant2$dallE2;
+
+@override int get hashCode => 'dall-e-2'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestModelVariant2$gptImage1 extends CreateImageEditRequestModelVariant2 {const CreateImageEditRequestModelVariant2$gptImage1._();
+
+@override String get value => 'gpt-image-1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestModelVariant2$gptImage1;
+
+@override int get hashCode => 'gpt-image-1'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestModelVariant2$gptImage1Mini extends CreateImageEditRequestModelVariant2 {const CreateImageEditRequestModelVariant2$gptImage1Mini._();
+
+@override String get value => 'gpt-image-1-mini';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestModelVariant2$gptImage1Mini;
+
+@override int get hashCode => 'gpt-image-1-mini'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestModelVariant2$chatgptImageLatest extends CreateImageEditRequestModelVariant2 {const CreateImageEditRequestModelVariant2$chatgptImageLatest._();
+
+@override String get value => 'chatgpt-image-latest';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestModelVariant2$chatgptImageLatest;
+
+@override int get hashCode => 'chatgpt-image-latest'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestModelVariant2$Unknown extends CreateImageEditRequestModelVariant2 {const CreateImageEditRequestModelVariant2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateImageEditRequestModelVariant2 && other.value == value;
+    other is CreateImageEditRequestModelVariant2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateImageEditRequestModelVariant2($value)';
 
  }
 /// The model to use for image generation. Defaults to `gpt-image-1.5`.

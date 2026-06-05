@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TreasuryReceivedCredit (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the ReceivedCredit. ReceivedCredits are created either `succeeded` (approved) or `failed` (declined). If a ReceivedCredit is declined, the failure reason can be found in the `failure_code` field.
-@immutable final class TreasuryReceivedCreditStatus {const TreasuryReceivedCreditStatus._(this.value);
+sealed class TreasuryReceivedCreditStatus {const TreasuryReceivedCreditStatus();
 
 factory TreasuryReceivedCreditStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,
   'succeeded' => succeeded,
-  _ => TreasuryReceivedCreditStatus._(json),
+  _ => TreasuryReceivedCreditStatus$Unknown(json),
 }; }
 
-static const TreasuryReceivedCreditStatus failed = TreasuryReceivedCreditStatus._('failed');
+static const TreasuryReceivedCreditStatus failed = TreasuryReceivedCreditStatus$failed._();
 
-static const TreasuryReceivedCreditStatus succeeded = TreasuryReceivedCreditStatus._('succeeded');
+static const TreasuryReceivedCreditStatus succeeded = TreasuryReceivedCreditStatus$succeeded._();
 
 static const List<TreasuryReceivedCreditStatus> values = [failed, succeeded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TreasuryReceivedCreditStatus$Unknown; } 
+@override String toString() => 'TreasuryReceivedCreditStatus($value)';
+
+ }
+@immutable final class TreasuryReceivedCreditStatus$failed extends TreasuryReceivedCreditStatus {const TreasuryReceivedCreditStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditStatus$succeeded extends TreasuryReceivedCreditStatus {const TreasuryReceivedCreditStatus$succeeded._();
+
+@override String get value => 'succeeded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditStatus$succeeded;
+
+@override int get hashCode => 'succeeded'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditStatus$Unknown extends TreasuryReceivedCreditStatus {const TreasuryReceivedCreditStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryReceivedCreditStatus && other.value == value;
+    other is TreasuryReceivedCreditStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TreasuryReceivedCreditStatus($value)';
 
  }

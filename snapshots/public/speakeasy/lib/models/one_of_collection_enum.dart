@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/OneOfCollectionEnum
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/simple_object2.dart';@immutable final class OneOfCollectionEnumVariant3 {const OneOfCollectionEnumVariant3._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/simple_object2.dart';sealed class OneOfCollectionEnumVariant3 {const OneOfCollectionEnumVariant3();
 
 factory OneOfCollectionEnumVariant3.fromJson(String json) { return switch (json) {
   'abc' => abc,
   'def' => def,
-  _ => OneOfCollectionEnumVariant3._(json),
+  _ => OneOfCollectionEnumVariant3$Unknown(json),
 }; }
 
-static const OneOfCollectionEnumVariant3 abc = OneOfCollectionEnumVariant3._('abc');
+static const OneOfCollectionEnumVariant3 abc = OneOfCollectionEnumVariant3$abc._();
 
-static const OneOfCollectionEnumVariant3 def = OneOfCollectionEnumVariant3._('def');
+static const OneOfCollectionEnumVariant3 def = OneOfCollectionEnumVariant3$def._();
 
 static const List<OneOfCollectionEnumVariant3> values = [abc, def];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OneOfCollectionEnumVariant3$Unknown; } 
+@override String toString() => 'OneOfCollectionEnumVariant3($value)';
+
+ }
+@immutable final class OneOfCollectionEnumVariant3$abc extends OneOfCollectionEnumVariant3 {const OneOfCollectionEnumVariant3$abc._();
+
+@override String get value => 'abc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OneOfCollectionEnumVariant3$abc;
+
+@override int get hashCode => 'abc'.hashCode;
+
+ }
+@immutable final class OneOfCollectionEnumVariant3$def extends OneOfCollectionEnumVariant3 {const OneOfCollectionEnumVariant3$def._();
+
+@override String get value => 'def';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OneOfCollectionEnumVariant3$def;
+
+@override int get hashCode => 'def'.hashCode;
+
+ }
+@immutable final class OneOfCollectionEnumVariant3$Unknown extends OneOfCollectionEnumVariant3 {const OneOfCollectionEnumVariant3$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OneOfCollectionEnumVariant3 && other.value == value;
+    other is OneOfCollectionEnumVariant3$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OneOfCollectionEnumVariant3($value)';
 
  }
 /// Variants:

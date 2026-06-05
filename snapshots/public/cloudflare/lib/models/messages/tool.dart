@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > Tool)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';import 'package:pub_cloudflare/models/messages/developer_content_variant2.dart';@immutable final class ToolRole {const ToolRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';import 'package:pub_cloudflare/models/messages/developer_content_variant2.dart';sealed class ToolRole {const ToolRole();
 
 factory ToolRole.fromJson(String json) { return switch (json) {
   'tool' => tool,
-  _ => ToolRole._(json),
+  _ => ToolRole$Unknown(json),
 }; }
 
-static const ToolRole tool = ToolRole._('tool');
+static const ToolRole tool = ToolRole$tool._();
 
 static const List<ToolRole> values = [tool];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ToolRole$Unknown; } 
+@override String toString() => 'ToolRole($value)';
+
+ }
+@immutable final class ToolRole$tool extends ToolRole {const ToolRole$tool._();
+
+@override String get value => 'tool';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolRole$tool;
+
+@override int get hashCode => 'tool'.hashCode;
+
+ }
+@immutable final class ToolRole$Unknown extends ToolRole {const ToolRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ToolRole && other.value == value;
+    other is ToolRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ToolRole($value)';
 
  }
 @immutable final class Tool {const Tool({required this.content, required this.role, required this.toolCallId, });

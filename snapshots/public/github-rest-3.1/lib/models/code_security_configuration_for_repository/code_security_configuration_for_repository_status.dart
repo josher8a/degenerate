@@ -2,7 +2,7 @@
 // Source: #/components/schemas/CodeSecurityConfigurationForRepository (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The attachment status of the code security configuration on the repository.
-@immutable final class CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus._(this.value);
+sealed class CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus();
 
 factory CodeSecurityConfigurationForRepositoryStatus.fromJson(String json) { return switch (json) {
   'attached' => attached,
@@ -13,29 +13,28 @@ factory CodeSecurityConfigurationForRepositoryStatus.fromJson(String json) { ret
   'failed' => failed,
   'updating' => updating,
   'removed_by_enterprise' => removedByEnterprise,
-  _ => CodeSecurityConfigurationForRepositoryStatus._(json),
+  _ => CodeSecurityConfigurationForRepositoryStatus$Unknown(json),
 }; }
 
-static const CodeSecurityConfigurationForRepositoryStatus attached = CodeSecurityConfigurationForRepositoryStatus._('attached');
+static const CodeSecurityConfigurationForRepositoryStatus attached = CodeSecurityConfigurationForRepositoryStatus$attached._();
 
-static const CodeSecurityConfigurationForRepositoryStatus attaching = CodeSecurityConfigurationForRepositoryStatus._('attaching');
+static const CodeSecurityConfigurationForRepositoryStatus attaching = CodeSecurityConfigurationForRepositoryStatus$attaching._();
 
-static const CodeSecurityConfigurationForRepositoryStatus detached = CodeSecurityConfigurationForRepositoryStatus._('detached');
+static const CodeSecurityConfigurationForRepositoryStatus detached = CodeSecurityConfigurationForRepositoryStatus$detached._();
 
-static const CodeSecurityConfigurationForRepositoryStatus removed = CodeSecurityConfigurationForRepositoryStatus._('removed');
+static const CodeSecurityConfigurationForRepositoryStatus removed = CodeSecurityConfigurationForRepositoryStatus$removed._();
 
-static const CodeSecurityConfigurationForRepositoryStatus enforced = CodeSecurityConfigurationForRepositoryStatus._('enforced');
+static const CodeSecurityConfigurationForRepositoryStatus enforced = CodeSecurityConfigurationForRepositoryStatus$enforced._();
 
-static const CodeSecurityConfigurationForRepositoryStatus failed = CodeSecurityConfigurationForRepositoryStatus._('failed');
+static const CodeSecurityConfigurationForRepositoryStatus failed = CodeSecurityConfigurationForRepositoryStatus$failed._();
 
-static const CodeSecurityConfigurationForRepositoryStatus updating = CodeSecurityConfigurationForRepositoryStatus._('updating');
+static const CodeSecurityConfigurationForRepositoryStatus updating = CodeSecurityConfigurationForRepositoryStatus$updating._();
 
-static const CodeSecurityConfigurationForRepositoryStatus removedByEnterprise = CodeSecurityConfigurationForRepositoryStatus._('removed_by_enterprise');
+static const CodeSecurityConfigurationForRepositoryStatus removedByEnterprise = CodeSecurityConfigurationForRepositoryStatus$removedByEnterprise._();
 
 static const List<CodeSecurityConfigurationForRepositoryStatus> values = [attached, attaching, detached, removed, enforced, failed, updating, removedByEnterprise];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,12 +49,89 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeSecurityConfigurationForRepositoryStatus$Unknown; } 
+@override String toString() => 'CodeSecurityConfigurationForRepositoryStatus($value)';
+
+ }
+@immutable final class CodeSecurityConfigurationForRepositoryStatus$attached extends CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus$attached._();
+
+@override String get value => 'attached';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationForRepositoryStatus$attached;
+
+@override int get hashCode => 'attached'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationForRepositoryStatus$attaching extends CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus$attaching._();
+
+@override String get value => 'attaching';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationForRepositoryStatus$attaching;
+
+@override int get hashCode => 'attaching'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationForRepositoryStatus$detached extends CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus$detached._();
+
+@override String get value => 'detached';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationForRepositoryStatus$detached;
+
+@override int get hashCode => 'detached'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationForRepositoryStatus$removed extends CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus$removed._();
+
+@override String get value => 'removed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationForRepositoryStatus$removed;
+
+@override int get hashCode => 'removed'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationForRepositoryStatus$enforced extends CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus$enforced._();
+
+@override String get value => 'enforced';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationForRepositoryStatus$enforced;
+
+@override int get hashCode => 'enforced'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationForRepositoryStatus$failed extends CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationForRepositoryStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationForRepositoryStatus$updating extends CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus$updating._();
+
+@override String get value => 'updating';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationForRepositoryStatus$updating;
+
+@override int get hashCode => 'updating'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationForRepositoryStatus$removedByEnterprise extends CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus$removedByEnterprise._();
+
+@override String get value => 'removed_by_enterprise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationForRepositoryStatus$removedByEnterprise;
+
+@override int get hashCode => 'removed_by_enterprise'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationForRepositoryStatus$Unknown extends CodeSecurityConfigurationForRepositoryStatus {const CodeSecurityConfigurationForRepositoryStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeSecurityConfigurationForRepositoryStatus && other.value == value;
+    other is CodeSecurityConfigurationForRepositoryStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeSecurityConfigurationForRepositoryStatus($value)';
 
  }

@@ -2,7 +2,7 @@
 // Source: #/components/schemas/RadarGetOriginsTimeseriesGroupMetric
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the metric to retrieve.
-@immutable final class RadarGetOriginsTimeseriesGroupMetric {const RadarGetOriginsTimeseriesGroupMetric._(this.value);
+sealed class RadarGetOriginsTimeseriesGroupMetric {const RadarGetOriginsTimeseriesGroupMetric();
 
 factory RadarGetOriginsTimeseriesGroupMetric.fromJson(String json) { return switch (json) {
   'CONNECTION_FAILURES' => connectionFailures,
@@ -11,25 +11,24 @@ factory RadarGetOriginsTimeseriesGroupMetric.fromJson(String json) { return swit
   'TCP_HANDSHAKE_DURATION' => tcpHandshakeDuration,
   'TCP_RTT' => tcpRtt,
   'TLS_HANDSHAKE_DURATION' => tlsHandshakeDuration,
-  _ => RadarGetOriginsTimeseriesGroupMetric._(json),
+  _ => RadarGetOriginsTimeseriesGroupMetric$Unknown(json),
 }; }
 
-static const RadarGetOriginsTimeseriesGroupMetric connectionFailures = RadarGetOriginsTimeseriesGroupMetric._('CONNECTION_FAILURES');
+static const RadarGetOriginsTimeseriesGroupMetric connectionFailures = RadarGetOriginsTimeseriesGroupMetric$connectionFailures._();
 
-static const RadarGetOriginsTimeseriesGroupMetric requests = RadarGetOriginsTimeseriesGroupMetric._('REQUESTS');
+static const RadarGetOriginsTimeseriesGroupMetric requests = RadarGetOriginsTimeseriesGroupMetric$requests._();
 
-static const RadarGetOriginsTimeseriesGroupMetric responseHeaderReceiveDuration = RadarGetOriginsTimeseriesGroupMetric._('RESPONSE_HEADER_RECEIVE_DURATION');
+static const RadarGetOriginsTimeseriesGroupMetric responseHeaderReceiveDuration = RadarGetOriginsTimeseriesGroupMetric$responseHeaderReceiveDuration._();
 
-static const RadarGetOriginsTimeseriesGroupMetric tcpHandshakeDuration = RadarGetOriginsTimeseriesGroupMetric._('TCP_HANDSHAKE_DURATION');
+static const RadarGetOriginsTimeseriesGroupMetric tcpHandshakeDuration = RadarGetOriginsTimeseriesGroupMetric$tcpHandshakeDuration._();
 
-static const RadarGetOriginsTimeseriesGroupMetric tcpRtt = RadarGetOriginsTimeseriesGroupMetric._('TCP_RTT');
+static const RadarGetOriginsTimeseriesGroupMetric tcpRtt = RadarGetOriginsTimeseriesGroupMetric$tcpRtt._();
 
-static const RadarGetOriginsTimeseriesGroupMetric tlsHandshakeDuration = RadarGetOriginsTimeseriesGroupMetric._('TLS_HANDSHAKE_DURATION');
+static const RadarGetOriginsTimeseriesGroupMetric tlsHandshakeDuration = RadarGetOriginsTimeseriesGroupMetric$tlsHandshakeDuration._();
 
 static const List<RadarGetOriginsTimeseriesGroupMetric> values = [connectionFailures, requests, responseHeaderReceiveDuration, tcpHandshakeDuration, tcpRtt, tlsHandshakeDuration];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,12 +41,71 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetOriginsTimeseriesGroupMetric$Unknown; } 
+@override String toString() => 'RadarGetOriginsTimeseriesGroupMetric($value)';
+
+ }
+@immutable final class RadarGetOriginsTimeseriesGroupMetric$connectionFailures extends RadarGetOriginsTimeseriesGroupMetric {const RadarGetOriginsTimeseriesGroupMetric$connectionFailures._();
+
+@override String get value => 'CONNECTION_FAILURES';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetOriginsTimeseriesGroupMetric$connectionFailures;
+
+@override int get hashCode => 'CONNECTION_FAILURES'.hashCode;
+
+ }
+@immutable final class RadarGetOriginsTimeseriesGroupMetric$requests extends RadarGetOriginsTimeseriesGroupMetric {const RadarGetOriginsTimeseriesGroupMetric$requests._();
+
+@override String get value => 'REQUESTS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetOriginsTimeseriesGroupMetric$requests;
+
+@override int get hashCode => 'REQUESTS'.hashCode;
+
+ }
+@immutable final class RadarGetOriginsTimeseriesGroupMetric$responseHeaderReceiveDuration extends RadarGetOriginsTimeseriesGroupMetric {const RadarGetOriginsTimeseriesGroupMetric$responseHeaderReceiveDuration._();
+
+@override String get value => 'RESPONSE_HEADER_RECEIVE_DURATION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetOriginsTimeseriesGroupMetric$responseHeaderReceiveDuration;
+
+@override int get hashCode => 'RESPONSE_HEADER_RECEIVE_DURATION'.hashCode;
+
+ }
+@immutable final class RadarGetOriginsTimeseriesGroupMetric$tcpHandshakeDuration extends RadarGetOriginsTimeseriesGroupMetric {const RadarGetOriginsTimeseriesGroupMetric$tcpHandshakeDuration._();
+
+@override String get value => 'TCP_HANDSHAKE_DURATION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetOriginsTimeseriesGroupMetric$tcpHandshakeDuration;
+
+@override int get hashCode => 'TCP_HANDSHAKE_DURATION'.hashCode;
+
+ }
+@immutable final class RadarGetOriginsTimeseriesGroupMetric$tcpRtt extends RadarGetOriginsTimeseriesGroupMetric {const RadarGetOriginsTimeseriesGroupMetric$tcpRtt._();
+
+@override String get value => 'TCP_RTT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetOriginsTimeseriesGroupMetric$tcpRtt;
+
+@override int get hashCode => 'TCP_RTT'.hashCode;
+
+ }
+@immutable final class RadarGetOriginsTimeseriesGroupMetric$tlsHandshakeDuration extends RadarGetOriginsTimeseriesGroupMetric {const RadarGetOriginsTimeseriesGroupMetric$tlsHandshakeDuration._();
+
+@override String get value => 'TLS_HANDSHAKE_DURATION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetOriginsTimeseriesGroupMetric$tlsHandshakeDuration;
+
+@override int get hashCode => 'TLS_HANDSHAKE_DURATION'.hashCode;
+
+ }
+@immutable final class RadarGetOriginsTimeseriesGroupMetric$Unknown extends RadarGetOriginsTimeseriesGroupMetric {const RadarGetOriginsTimeseriesGroupMetric$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetOriginsTimeseriesGroupMetric && other.value == value;
+    other is RadarGetOriginsTimeseriesGroupMetric$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetOriginsTimeseriesGroupMetric($value)';
 
  }

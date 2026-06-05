@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ForwardRefDiagSection (inline: Priority)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PriorityVariant1 {const PriorityVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PriorityVariant1 {const PriorityVariant1();
 
 factory PriorityVariant1.fromJson(String json) { return switch (json) {
   'high' => high,
   'medium' => medium,
   'low' => low,
-  _ => PriorityVariant1._(json),
+  _ => PriorityVariant1$Unknown(json),
 }; }
 
-static const PriorityVariant1 high = PriorityVariant1._('high');
+static const PriorityVariant1 high = PriorityVariant1$high._();
 
-static const PriorityVariant1 medium = PriorityVariant1._('medium');
+static const PriorityVariant1 medium = PriorityVariant1$medium._();
 
-static const PriorityVariant1 low = PriorityVariant1._('low');
+static const PriorityVariant1 low = PriorityVariant1$low._();
 
 static const List<PriorityVariant1> values = [high, medium, low];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PriorityVariant1$Unknown; } 
+@override String toString() => 'PriorityVariant1($value)';
+
+ }
+@immutable final class PriorityVariant1$high extends PriorityVariant1 {const PriorityVariant1$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PriorityVariant1$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class PriorityVariant1$medium extends PriorityVariant1 {const PriorityVariant1$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PriorityVariant1$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class PriorityVariant1$low extends PriorityVariant1 {const PriorityVariant1$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PriorityVariant1$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class PriorityVariant1$Unknown extends PriorityVariant1 {const PriorityVariant1$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PriorityVariant1 && other.value == value;
+    other is PriorityVariant1$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PriorityVariant1($value)';
 
  }
 /// Variants:

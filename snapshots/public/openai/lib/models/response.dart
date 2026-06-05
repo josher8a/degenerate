@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/conversation2.dart';import 'package:pub_openai/models/create_response/truncation.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/model_ids_responses.dart';import 'package:pub_openai/models/model_ids_shared.dart';import 'package:pub_openai/models/model_response_properties/prompt_cache_retention.dart';import 'package:pub_openai/models/output_item.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/reasoning.dart';import 'package:pub_openai/models/response/instructions.dart';import 'package:pub_openai/models/response/response_incomplete_details.dart';import 'package:pub_openai/models/response_error.dart';import 'package:pub_openai/models/response_text_param.dart';import 'package:pub_openai/models/response_usage.dart';import 'package:pub_openai/models/service_tier.dart';import 'package:pub_openai/models/specific_apply_patch_param.dart';import 'package:pub_openai/models/specific_function_shell_param.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_choice_allowed.dart';import 'package:pub_openai/models/tool_choice_custom.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/tool_choice_param.dart';import 'package:pub_openai/models/tool_choice_types.dart';/// The object type of this resource - always set to `response`.
 /// 
-@immutable final class ResponseObject {const ResponseObject._(this.value);
+sealed class ResponseObject {const ResponseObject();
 
 factory ResponseObject.fromJson(String json) { return switch (json) {
   'response' => response,
-  _ => ResponseObject._(json),
+  _ => ResponseObject$Unknown(json),
 }; }
 
-static const ResponseObject response = ResponseObject._('response');
+static const ResponseObject response = ResponseObject$response._();
 
 static const List<ResponseObject> values = [response];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,19 +22,33 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ResponseObject$Unknown; } 
+@override String toString() => 'ResponseObject($value)';
+
+ }
+@immutable final class ResponseObject$response extends ResponseObject {const ResponseObject$response._();
+
+@override String get value => 'response';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseObject$response;
+
+@override int get hashCode => 'response'.hashCode;
+
+ }
+@immutable final class ResponseObject$Unknown extends ResponseObject {const ResponseObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ResponseObject && other.value == value;
+    other is ResponseObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ResponseObject($value)';
 
  }
 /// The status of the response generation. One of `completed`, `failed`,
 /// `in_progress`, `cancelled`, `queued`, or `incomplete`.
 /// 
-@immutable final class ResponseStatus {const ResponseStatus._(this.value);
+sealed class ResponseStatus {const ResponseStatus();
 
 factory ResponseStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -44,25 +57,24 @@ factory ResponseStatus.fromJson(String json) { return switch (json) {
   'cancelled' => cancelled,
   'queued' => queued,
   'incomplete' => incomplete,
-  _ => ResponseStatus._(json),
+  _ => ResponseStatus$Unknown(json),
 }; }
 
-static const ResponseStatus completed = ResponseStatus._('completed');
+static const ResponseStatus completed = ResponseStatus$completed._();
 
-static const ResponseStatus failed = ResponseStatus._('failed');
+static const ResponseStatus failed = ResponseStatus$failed._();
 
-static const ResponseStatus inProgress = ResponseStatus._('in_progress');
+static const ResponseStatus inProgress = ResponseStatus$inProgress._();
 
-static const ResponseStatus cancelled = ResponseStatus._('cancelled');
+static const ResponseStatus cancelled = ResponseStatus$cancelled._();
 
-static const ResponseStatus queued = ResponseStatus._('queued');
+static const ResponseStatus queued = ResponseStatus$queued._();
 
-static const ResponseStatus incomplete = ResponseStatus._('incomplete');
+static const ResponseStatus incomplete = ResponseStatus$incomplete._();
 
 static const List<ResponseStatus> values = [completed, failed, inProgress, cancelled, queued, incomplete];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -75,13 +87,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ResponseStatus$Unknown; } 
+@override String toString() => 'ResponseStatus($value)';
+
+ }
+@immutable final class ResponseStatus$completed extends ResponseStatus {const ResponseStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class ResponseStatus$failed extends ResponseStatus {const ResponseStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class ResponseStatus$inProgress extends ResponseStatus {const ResponseStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class ResponseStatus$cancelled extends ResponseStatus {const ResponseStatus$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStatus$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class ResponseStatus$queued extends ResponseStatus {const ResponseStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class ResponseStatus$incomplete extends ResponseStatus {const ResponseStatus$incomplete._();
+
+@override String get value => 'incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStatus$incomplete;
+
+@override int get hashCode => 'incomplete'.hashCode;
+
+ }
+@immutable final class ResponseStatus$Unknown extends ResponseStatus {const ResponseStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ResponseStatus && other.value == value;
+    other is ResponseStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ResponseStatus($value)';
 
  }
 /// Example:

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/BillingCreditBalanceTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/credit_grant.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credit.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_debit.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class BillingCreditBalanceTransactionObject {const BillingCreditBalanceTransactionObject._(this.value);
+sealed class BillingCreditBalanceTransactionObject {const BillingCreditBalanceTransactionObject();
 
 factory BillingCreditBalanceTransactionObject.fromJson(String json) { return switch (json) {
   'billing.credit_balance_transaction' => billingCreditBalanceTransaction,
-  _ => BillingCreditBalanceTransactionObject._(json),
+  _ => BillingCreditBalanceTransactionObject$Unknown(json),
 }; }
 
-static const BillingCreditBalanceTransactionObject billingCreditBalanceTransaction = BillingCreditBalanceTransactionObject._('billing.credit_balance_transaction');
+static const BillingCreditBalanceTransactionObject billingCreditBalanceTransaction = BillingCreditBalanceTransactionObject$billingCreditBalanceTransaction._();
 
 static const List<BillingCreditBalanceTransactionObject> values = [billingCreditBalanceTransaction];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,32 +21,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingCreditBalanceTransactionObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is BillingCreditBalanceTransactionObject$Unknown; } 
 @override String toString() => 'BillingCreditBalanceTransactionObject($value)';
 
  }
+@immutable final class BillingCreditBalanceTransactionObject$billingCreditBalanceTransaction extends BillingCreditBalanceTransactionObject {const BillingCreditBalanceTransactionObject$billingCreditBalanceTransaction._();
+
+@override String get value => 'billing.credit_balance_transaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingCreditBalanceTransactionObject$billingCreditBalanceTransaction;
+
+@override int get hashCode => 'billing.credit_balance_transaction'.hashCode;
+
+ }
+@immutable final class BillingCreditBalanceTransactionObject$Unknown extends BillingCreditBalanceTransactionObject {const BillingCreditBalanceTransactionObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingCreditBalanceTransactionObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The type of credit balance transaction (credit or debit).
-@immutable final class BillingCreditBalanceTransactionType {const BillingCreditBalanceTransactionType._(this.value);
+sealed class BillingCreditBalanceTransactionType {const BillingCreditBalanceTransactionType();
 
 factory BillingCreditBalanceTransactionType.fromJson(String json) { return switch (json) {
   'credit' => credit,
   'debit' => debit,
-  _ => BillingCreditBalanceTransactionType._(json),
+  _ => BillingCreditBalanceTransactionType$Unknown(json),
 }; }
 
-static const BillingCreditBalanceTransactionType credit = BillingCreditBalanceTransactionType._('credit');
+static const BillingCreditBalanceTransactionType credit = BillingCreditBalanceTransactionType$credit._();
 
-static const BillingCreditBalanceTransactionType debit = BillingCreditBalanceTransactionType._('debit');
+static const BillingCreditBalanceTransactionType debit = BillingCreditBalanceTransactionType$debit._();
 
 static const List<BillingCreditBalanceTransactionType> values = [credit, debit];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -56,13 +68,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingCreditBalanceTransactionType$Unknown; } 
+@override String toString() => 'BillingCreditBalanceTransactionType($value)';
+
+ }
+@immutable final class BillingCreditBalanceTransactionType$credit extends BillingCreditBalanceTransactionType {const BillingCreditBalanceTransactionType$credit._();
+
+@override String get value => 'credit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingCreditBalanceTransactionType$credit;
+
+@override int get hashCode => 'credit'.hashCode;
+
+ }
+@immutable final class BillingCreditBalanceTransactionType$debit extends BillingCreditBalanceTransactionType {const BillingCreditBalanceTransactionType$debit._();
+
+@override String get value => 'debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingCreditBalanceTransactionType$debit;
+
+@override int get hashCode => 'debit'.hashCode;
+
+ }
+@immutable final class BillingCreditBalanceTransactionType$Unknown extends BillingCreditBalanceTransactionType {const BillingCreditBalanceTransactionType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingCreditBalanceTransactionType && other.value == value;
+    other is BillingCreditBalanceTransactionType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingCreditBalanceTransactionType($value)';
 
  }
 /// A credit balance transaction is a resource representing a transaction (either a credit or a debit) against an existing credit grant.

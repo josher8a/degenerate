@@ -3,28 +3,27 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used only for `semantic_vad` mode. The eagerness of the model to respond. `low` will wait longer for the user to continue speaking, `high` will respond more quickly. `auto` is the default and is equivalent to `medium`. `low`, `medium`, and `high` have max timeouts of 8s, 4s, and 2s respectively.
 /// 
-@immutable final class Eagerness {const Eagerness._(this.value);
+sealed class Eagerness {const Eagerness();
 
 factory Eagerness.fromJson(String json) { return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   'auto' => auto,
-  _ => Eagerness._(json),
+  _ => Eagerness$Unknown(json),
 }; }
 
-static const Eagerness low = Eagerness._('low');
+static const Eagerness low = Eagerness$low._();
 
-static const Eagerness medium = Eagerness._('medium');
+static const Eagerness medium = Eagerness$medium._();
 
-static const Eagerness high = Eagerness._('high');
+static const Eagerness high = Eagerness$high._();
 
-static const Eagerness auto = Eagerness._('auto');
+static const Eagerness auto = Eagerness$auto._();
 
 static const List<Eagerness> values = [low, medium, high, auto];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -35,13 +34,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Eagerness$Unknown; } 
+@override String toString() => 'Eagerness($value)';
+
+ }
+@immutable final class Eagerness$low extends Eagerness {const Eagerness$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Eagerness$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class Eagerness$medium extends Eagerness {const Eagerness$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Eagerness$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class Eagerness$high extends Eagerness {const Eagerness$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Eagerness$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class Eagerness$auto extends Eagerness {const Eagerness$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Eagerness$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class Eagerness$Unknown extends Eagerness {const Eagerness$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Eagerness && other.value == value;
+    other is Eagerness$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Eagerness($value)';
 
  }
 /// Server-side semantic turn detection which uses a model to determine when the user has finished speaking.

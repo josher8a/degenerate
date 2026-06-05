@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SearchCodeOrder
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SearchCodeOrder {const SearchCodeOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SearchCodeOrder {const SearchCodeOrder();
 
 factory SearchCodeOrder.fromJson(String json) { return switch (json) {
   'desc' => desc,
   'asc' => asc,
-  _ => SearchCodeOrder._(json),
+  _ => SearchCodeOrder$Unknown(json),
 }; }
 
-static const SearchCodeOrder desc = SearchCodeOrder._('desc');
+static const SearchCodeOrder desc = SearchCodeOrder$desc._();
 
-static const SearchCodeOrder asc = SearchCodeOrder._('asc');
+static const SearchCodeOrder asc = SearchCodeOrder$asc._();
 
 static const List<SearchCodeOrder> values = [desc, asc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SearchCodeOrder$Unknown; } 
+@override String toString() => 'SearchCodeOrder($value)';
+
+ }
+@immutable final class SearchCodeOrder$desc extends SearchCodeOrder {const SearchCodeOrder$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SearchCodeOrder$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class SearchCodeOrder$asc extends SearchCodeOrder {const SearchCodeOrder$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SearchCodeOrder$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class SearchCodeOrder$Unknown extends SearchCodeOrder {const SearchCodeOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SearchCodeOrder && other.value == value;
+    other is SearchCodeOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SearchCodeOrder($value)';
 
  }

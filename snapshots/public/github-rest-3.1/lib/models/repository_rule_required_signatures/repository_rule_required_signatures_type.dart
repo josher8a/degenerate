@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleRequiredSignatures (inline: Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleRequiredSignaturesType {const RepositoryRuleRequiredSignaturesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RepositoryRuleRequiredSignaturesType {const RepositoryRuleRequiredSignaturesType();
 
 factory RepositoryRuleRequiredSignaturesType.fromJson(String json) { return switch (json) {
   'required_signatures' => requiredSignatures,
-  _ => RepositoryRuleRequiredSignaturesType._(json),
+  _ => RepositoryRuleRequiredSignaturesType$Unknown(json),
 }; }
 
-static const RepositoryRuleRequiredSignaturesType requiredSignatures = RepositoryRuleRequiredSignaturesType._('required_signatures');
+static const RepositoryRuleRequiredSignaturesType requiredSignatures = RepositoryRuleRequiredSignaturesType$requiredSignatures._();
 
 static const List<RepositoryRuleRequiredSignaturesType> values = [requiredSignatures];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RepositoryRuleRequiredSignaturesType$Unknown; } 
+@override String toString() => 'RepositoryRuleRequiredSignaturesType($value)';
+
+ }
+@immutable final class RepositoryRuleRequiredSignaturesType$requiredSignatures extends RepositoryRuleRequiredSignaturesType {const RepositoryRuleRequiredSignaturesType$requiredSignatures._();
+
+@override String get value => 'required_signatures';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryRuleRequiredSignaturesType$requiredSignatures;
+
+@override int get hashCode => 'required_signatures'.hashCode;
+
+ }
+@immutable final class RepositoryRuleRequiredSignaturesType$Unknown extends RepositoryRuleRequiredSignaturesType {const RepositoryRuleRequiredSignaturesType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleRequiredSignaturesType && other.value == value;
+    other is RepositoryRuleRequiredSignaturesType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleRequiredSignaturesType($value)';
 
  }

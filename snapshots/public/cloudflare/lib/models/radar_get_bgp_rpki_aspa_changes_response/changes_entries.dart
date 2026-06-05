@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetBgpRpkiAspaChangesResponse (inline: Result > Changes > Entries)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EntriesType {const EntriesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EntriesType {const EntriesType();
 
 factory EntriesType.fromJson(String json) { return switch (json) {
   'CustomerAdded' => customerAdded,
   'CustomerRemoved' => customerRemoved,
   'ProvidersAdded' => providersAdded,
   'ProvidersRemoved' => providersRemoved,
-  _ => EntriesType._(json),
+  _ => EntriesType$Unknown(json),
 }; }
 
-static const EntriesType customerAdded = EntriesType._('CustomerAdded');
+static const EntriesType customerAdded = EntriesType$customerAdded._();
 
-static const EntriesType customerRemoved = EntriesType._('CustomerRemoved');
+static const EntriesType customerRemoved = EntriesType$customerRemoved._();
 
-static const EntriesType providersAdded = EntriesType._('ProvidersAdded');
+static const EntriesType providersAdded = EntriesType$providersAdded._();
 
-static const EntriesType providersRemoved = EntriesType._('ProvidersRemoved');
+static const EntriesType providersRemoved = EntriesType$providersRemoved._();
 
 static const List<EntriesType> values = [customerAdded, customerRemoved, providersAdded, providersRemoved];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EntriesType$Unknown; } 
+@override String toString() => 'EntriesType($value)';
+
+ }
+@immutable final class EntriesType$customerAdded extends EntriesType {const EntriesType$customerAdded._();
+
+@override String get value => 'CustomerAdded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EntriesType$customerAdded;
+
+@override int get hashCode => 'CustomerAdded'.hashCode;
+
+ }
+@immutable final class EntriesType$customerRemoved extends EntriesType {const EntriesType$customerRemoved._();
+
+@override String get value => 'CustomerRemoved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EntriesType$customerRemoved;
+
+@override int get hashCode => 'CustomerRemoved'.hashCode;
+
+ }
+@immutable final class EntriesType$providersAdded extends EntriesType {const EntriesType$providersAdded._();
+
+@override String get value => 'ProvidersAdded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EntriesType$providersAdded;
+
+@override int get hashCode => 'ProvidersAdded'.hashCode;
+
+ }
+@immutable final class EntriesType$providersRemoved extends EntriesType {const EntriesType$providersRemoved._();
+
+@override String get value => 'ProvidersRemoved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EntriesType$providersRemoved;
+
+@override int get hashCode => 'ProvidersRemoved'.hashCode;
+
+ }
+@immutable final class EntriesType$Unknown extends EntriesType {const EntriesType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EntriesType && other.value == value;
+    other is EntriesType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EntriesType($value)';
 
  }
 @immutable final class ChangesEntries {const ChangesEntries({required this.customerAsn, required this.providers, required this.type, });

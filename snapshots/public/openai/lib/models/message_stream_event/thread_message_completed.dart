@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MessageStreamEvent (inline: ThreadMessageCompleted)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_object.dart';@immutable final class ThreadMessageCompletedEvent {const ThreadMessageCompletedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_object.dart';sealed class ThreadMessageCompletedEvent {const ThreadMessageCompletedEvent();
 
 factory ThreadMessageCompletedEvent.fromJson(String json) { return switch (json) {
   'thread.message.completed' => threadMessageCompleted,
-  _ => ThreadMessageCompletedEvent._(json),
+  _ => ThreadMessageCompletedEvent$Unknown(json),
 }; }
 
-static const ThreadMessageCompletedEvent threadMessageCompleted = ThreadMessageCompletedEvent._('thread.message.completed');
+static const ThreadMessageCompletedEvent threadMessageCompleted = ThreadMessageCompletedEvent$threadMessageCompleted._();
 
 static const List<ThreadMessageCompletedEvent> values = [threadMessageCompleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadMessageCompletedEvent$Unknown; } 
+@override String toString() => 'ThreadMessageCompletedEvent($value)';
+
+ }
+@immutable final class ThreadMessageCompletedEvent$threadMessageCompleted extends ThreadMessageCompletedEvent {const ThreadMessageCompletedEvent$threadMessageCompleted._();
+
+@override String get value => 'thread.message.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadMessageCompletedEvent$threadMessageCompleted;
+
+@override int get hashCode => 'thread.message.completed'.hashCode;
+
+ }
+@immutable final class ThreadMessageCompletedEvent$Unknown extends ThreadMessageCompletedEvent {const ThreadMessageCompletedEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadMessageCompletedEvent && other.value == value;
+    other is ThreadMessageCompletedEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadMessageCompletedEvent($value)';
 
  }
 /// Occurs when a [message](/docs/api-reference/messages/object) is completed.

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/WorListWorkflowInstancesDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// should only be used when `cursor` is used, defines a new direction for the cursor
-@immutable final class WorListWorkflowInstancesDirection {const WorListWorkflowInstancesDirection._(this.value);
+sealed class WorListWorkflowInstancesDirection {const WorListWorkflowInstancesDirection();
 
 factory WorListWorkflowInstancesDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => WorListWorkflowInstancesDirection._(json),
+  _ => WorListWorkflowInstancesDirection$Unknown(json),
 }; }
 
-static const WorListWorkflowInstancesDirection asc = WorListWorkflowInstancesDirection._('asc');
+static const WorListWorkflowInstancesDirection asc = WorListWorkflowInstancesDirection$asc._();
 
-static const WorListWorkflowInstancesDirection desc = WorListWorkflowInstancesDirection._('desc');
+static const WorListWorkflowInstancesDirection desc = WorListWorkflowInstancesDirection$desc._();
 
 static const List<WorListWorkflowInstancesDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorListWorkflowInstancesDirection$Unknown; } 
+@override String toString() => 'WorListWorkflowInstancesDirection($value)';
+
+ }
+@immutable final class WorListWorkflowInstancesDirection$asc extends WorListWorkflowInstancesDirection {const WorListWorkflowInstancesDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorListWorkflowInstancesDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class WorListWorkflowInstancesDirection$desc extends WorListWorkflowInstancesDirection {const WorListWorkflowInstancesDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorListWorkflowInstancesDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class WorListWorkflowInstancesDirection$Unknown extends WorListWorkflowInstancesDirection {const WorListWorkflowInstancesDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorListWorkflowInstancesDirection && other.value == value;
+    other is WorListWorkflowInstancesDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorListWorkflowInstancesDirection($value)';
 
  }

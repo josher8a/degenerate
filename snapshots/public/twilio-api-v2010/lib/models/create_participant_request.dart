@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CreateParticipantRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_recording_request/recording_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_participant_request/wait_method.dart';/// The HTTP method we should use to call `conference_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-@immutable final class ConferenceStatusCallbackMethod {const ConferenceStatusCallbackMethod._(this.value);
+sealed class ConferenceStatusCallbackMethod {const ConferenceStatusCallbackMethod();
 
 factory ConferenceStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => ConferenceStatusCallbackMethod._(json),
+  _ => ConferenceStatusCallbackMethod$Unknown(json),
 }; }
 
-static const ConferenceStatusCallbackMethod $get = ConferenceStatusCallbackMethod._('GET');
+static const ConferenceStatusCallbackMethod $get = ConferenceStatusCallbackMethod$$get._();
 
-static const ConferenceStatusCallbackMethod post = ConferenceStatusCallbackMethod._('POST');
+static const ConferenceStatusCallbackMethod post = ConferenceStatusCallbackMethod$post._();
 
 static const List<ConferenceStatusCallbackMethod> values = [$get, post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,32 +25,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ConferenceStatusCallbackMethod && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ConferenceStatusCallbackMethod$Unknown; } 
 @override String toString() => 'ConferenceStatusCallbackMethod($value)';
 
  }
+@immutable final class ConferenceStatusCallbackMethod$$get extends ConferenceStatusCallbackMethod {const ConferenceStatusCallbackMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConferenceStatusCallbackMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class ConferenceStatusCallbackMethod$post extends ConferenceStatusCallbackMethod {const ConferenceStatusCallbackMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConferenceStatusCallbackMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class ConferenceStatusCallbackMethod$Unknown extends ConferenceStatusCallbackMethod {const ConferenceStatusCallbackMethod$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConferenceStatusCallbackMethod$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The HTTP method we should use to call `conference_recording_status_callback`. Can be: `GET` or `POST` and defaults to `POST`.
-@immutable final class ConferenceRecordingStatusCallbackMethod {const ConferenceRecordingStatusCallbackMethod._(this.value);
+sealed class ConferenceRecordingStatusCallbackMethod {const ConferenceRecordingStatusCallbackMethod();
 
 factory ConferenceRecordingStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => ConferenceRecordingStatusCallbackMethod._(json),
+  _ => ConferenceRecordingStatusCallbackMethod$Unknown(json),
 }; }
 
-static const ConferenceRecordingStatusCallbackMethod $get = ConferenceRecordingStatusCallbackMethod._('GET');
+static const ConferenceRecordingStatusCallbackMethod $get = ConferenceRecordingStatusCallbackMethod$$get._();
 
-static const ConferenceRecordingStatusCallbackMethod post = ConferenceRecordingStatusCallbackMethod._('POST');
+static const ConferenceRecordingStatusCallbackMethod post = ConferenceRecordingStatusCallbackMethod$post._();
 
 static const List<ConferenceRecordingStatusCallbackMethod> values = [$get, post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,32 +81,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ConferenceRecordingStatusCallbackMethod && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ConferenceRecordingStatusCallbackMethod$Unknown; } 
 @override String toString() => 'ConferenceRecordingStatusCallbackMethod($value)';
 
  }
+@immutable final class ConferenceRecordingStatusCallbackMethod$$get extends ConferenceRecordingStatusCallbackMethod {const ConferenceRecordingStatusCallbackMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConferenceRecordingStatusCallbackMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class ConferenceRecordingStatusCallbackMethod$post extends ConferenceRecordingStatusCallbackMethod {const ConferenceRecordingStatusCallbackMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConferenceRecordingStatusCallbackMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class ConferenceRecordingStatusCallbackMethod$Unknown extends ConferenceRecordingStatusCallbackMethod {const ConferenceRecordingStatusCallbackMethod$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConferenceRecordingStatusCallbackMethod$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The HTTP method we should use when calling the `amd_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
-@immutable final class AmdStatusCallbackMethod {const AmdStatusCallbackMethod._(this.value);
+sealed class AmdStatusCallbackMethod {const AmdStatusCallbackMethod();
 
 factory AmdStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => AmdStatusCallbackMethod._(json),
+  _ => AmdStatusCallbackMethod$Unknown(json),
 }; }
 
-static const AmdStatusCallbackMethod $get = AmdStatusCallbackMethod._('GET');
+static const AmdStatusCallbackMethod $get = AmdStatusCallbackMethod$$get._();
 
-static const AmdStatusCallbackMethod post = AmdStatusCallbackMethod._('POST');
+static const AmdStatusCallbackMethod post = AmdStatusCallbackMethod$post._();
 
 static const List<AmdStatusCallbackMethod> values = [$get, post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -94,13 +137,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AmdStatusCallbackMethod$Unknown; } 
+@override String toString() => 'AmdStatusCallbackMethod($value)';
+
+ }
+@immutable final class AmdStatusCallbackMethod$$get extends AmdStatusCallbackMethod {const AmdStatusCallbackMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AmdStatusCallbackMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class AmdStatusCallbackMethod$post extends AmdStatusCallbackMethod {const AmdStatusCallbackMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AmdStatusCallbackMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class AmdStatusCallbackMethod$Unknown extends AmdStatusCallbackMethod {const AmdStatusCallbackMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AmdStatusCallbackMethod && other.value == value;
+    other is AmdStatusCallbackMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AmdStatusCallbackMethod($value)';
 
  }
 @immutable final class CreateParticipantRequest {const CreateParticipantRequest({required this.from, required this.to, this.conferenceRecord, this.statusCallbackMethod, this.statusCallbackEvent, this.label, this.timeout, this.record, this.muted, this.beep, this.startConferenceOnEnter, this.endConferenceOnExit, this.waitUrl, this.waitMethod, this.earlyMedia, this.maxParticipants, this.statusCallback, this.conferenceTrim, this.conferenceStatusCallback, this.conferenceStatusCallbackMethod, this.conferenceStatusCallbackEvent, this.recordingChannels, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.sipAuthUsername, this.sipAuthPassword, this.region, this.conferenceRecordingStatusCallback, this.conferenceRecordingStatusCallbackMethod, this.recordingStatusCallbackEvent, this.conferenceRecordingStatusCallbackEvent, this.coaching, this.callerDisplayName, this.jitterBufferSize, this.byoc, this.callerId, this.callReason, this.recordingTrack, this.timeLimit, this.machineDetection, this.machineDetectionTimeout, this.machineDetectionSpeechThreshold, this.machineDetectionSpeechEndThreshold, this.machineDetectionSilenceTimeout, this.amdStatusCallback, this.amdStatusCallbackMethod, this.trim, this.callToken, this.clientNotificationUrl, this.callSidToCoach, });

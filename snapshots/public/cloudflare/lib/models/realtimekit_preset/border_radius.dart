@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimekitPreset (inline: Ui > DesignTokens > BorderRadius)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BorderRadius {const BorderRadius._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class BorderRadius {const BorderRadius();
 
 factory BorderRadius.fromJson(String json) { return switch (json) {
   'rounded' => rounded,
-  _ => BorderRadius._(json),
+  _ => BorderRadius$Unknown(json),
 }; }
 
-static const BorderRadius rounded = BorderRadius._('rounded');
+static const BorderRadius rounded = BorderRadius$rounded._();
 
 static const List<BorderRadius> values = [rounded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BorderRadius$Unknown; } 
+@override String toString() => 'BorderRadius($value)';
+
+ }
+@immutable final class BorderRadius$rounded extends BorderRadius {const BorderRadius$rounded._();
+
+@override String get value => 'rounded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BorderRadius$rounded;
+
+@override int get hashCode => 'rounded'.hashCode;
+
+ }
+@immutable final class BorderRadius$Unknown extends BorderRadius {const BorderRadius$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BorderRadius && other.value == value;
+    other is BorderRadius$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BorderRadius($value)';
 
  }

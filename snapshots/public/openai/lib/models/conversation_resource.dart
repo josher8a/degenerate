@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ConversationResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `conversation`.
-@immutable final class ConversationResourceObject {const ConversationResourceObject._(this.value);
+sealed class ConversationResourceObject {const ConversationResourceObject();
 
 factory ConversationResourceObject.fromJson(String json) { return switch (json) {
   'conversation' => conversation,
-  _ => ConversationResourceObject._(json),
+  _ => ConversationResourceObject$Unknown(json),
 }; }
 
-static const ConversationResourceObject conversation = ConversationResourceObject._('conversation');
+static const ConversationResourceObject conversation = ConversationResourceObject$conversation._();
 
 static const List<ConversationResourceObject> values = [conversation];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConversationResourceObject$Unknown; } 
+@override String toString() => 'ConversationResourceObject($value)';
+
+ }
+@immutable final class ConversationResourceObject$conversation extends ConversationResourceObject {const ConversationResourceObject$conversation._();
+
+@override String get value => 'conversation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConversationResourceObject$conversation;
+
+@override int get hashCode => 'conversation'.hashCode;
+
+ }
+@immutable final class ConversationResourceObject$Unknown extends ConversationResourceObject {const ConversationResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConversationResourceObject && other.value == value;
+    other is ConversationResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConversationResourceObject($value)';
 
  }
 @immutable final class ConversationResource {const ConversationResource({required this.id, required this.metadata, required this.createdAt, this.object = ConversationResourceObject.conversation, });

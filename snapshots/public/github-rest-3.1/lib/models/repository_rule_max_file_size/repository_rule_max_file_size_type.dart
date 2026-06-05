@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleMaxFileSize (inline: Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleMaxFileSizeType {const RepositoryRuleMaxFileSizeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RepositoryRuleMaxFileSizeType {const RepositoryRuleMaxFileSizeType();
 
 factory RepositoryRuleMaxFileSizeType.fromJson(String json) { return switch (json) {
   'max_file_size' => maxFileSize,
-  _ => RepositoryRuleMaxFileSizeType._(json),
+  _ => RepositoryRuleMaxFileSizeType$Unknown(json),
 }; }
 
-static const RepositoryRuleMaxFileSizeType maxFileSize = RepositoryRuleMaxFileSizeType._('max_file_size');
+static const RepositoryRuleMaxFileSizeType maxFileSize = RepositoryRuleMaxFileSizeType$maxFileSize._();
 
 static const List<RepositoryRuleMaxFileSizeType> values = [maxFileSize];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RepositoryRuleMaxFileSizeType$Unknown; } 
+@override String toString() => 'RepositoryRuleMaxFileSizeType($value)';
+
+ }
+@immutable final class RepositoryRuleMaxFileSizeType$maxFileSize extends RepositoryRuleMaxFileSizeType {const RepositoryRuleMaxFileSizeType$maxFileSize._();
+
+@override String get value => 'max_file_size';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryRuleMaxFileSizeType$maxFileSize;
+
+@override int get hashCode => 'max_file_size'.hashCode;
+
+ }
+@immutable final class RepositoryRuleMaxFileSizeType$Unknown extends RepositoryRuleMaxFileSizeType {const RepositoryRuleMaxFileSizeType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleMaxFileSizeType && other.value == value;
+    other is RepositoryRuleMaxFileSizeType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleMaxFileSizeType($value)';
 
  }

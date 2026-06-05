@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/discussion/answer_chosen_by.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_category.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_reactions.dart';import 'package:pub_github_rest_3_1/models/discussion/discussion_user.dart';import 'package:pub_github_rest_3_1/models/label.dart';/// The current state of the discussion.
 /// `converting` means that the discussion is being converted from an issue.
 /// `transferring` means that the discussion is being transferred from another repository.
-@immutable final class DiscussionState {const DiscussionState._(this.value);
+sealed class DiscussionState {const DiscussionState();
 
 factory DiscussionState.fromJson(String json) { return switch (json) {
   'open' => open,
@@ -12,23 +12,22 @@ factory DiscussionState.fromJson(String json) { return switch (json) {
   'locked' => locked,
   'converting' => converting,
   'transferring' => transferring,
-  _ => DiscussionState._(json),
+  _ => DiscussionState$Unknown(json),
 }; }
 
-static const DiscussionState open = DiscussionState._('open');
+static const DiscussionState open = DiscussionState$open._();
 
-static const DiscussionState closed = DiscussionState._('closed');
+static const DiscussionState closed = DiscussionState$closed._();
 
-static const DiscussionState locked = DiscussionState._('locked');
+static const DiscussionState locked = DiscussionState$locked._();
 
-static const DiscussionState converting = DiscussionState._('converting');
+static const DiscussionState converting = DiscussionState$converting._();
 
-static const DiscussionState transferring = DiscussionState._('transferring');
+static const DiscussionState transferring = DiscussionState$transferring._();
 
 static const List<DiscussionState> values = [open, closed, locked, converting, transferring];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -40,17 +39,67 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DiscussionState && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is DiscussionState$Unknown; } 
 @override String toString() => 'DiscussionState($value)';
 
  }
+@immutable final class DiscussionState$open extends DiscussionState {const DiscussionState$open._();
+
+@override String get value => 'open';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscussionState$open;
+
+@override int get hashCode => 'open'.hashCode;
+
+ }
+@immutable final class DiscussionState$closed extends DiscussionState {const DiscussionState$closed._();
+
+@override String get value => 'closed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscussionState$closed;
+
+@override int get hashCode => 'closed'.hashCode;
+
+ }
+@immutable final class DiscussionState$locked extends DiscussionState {const DiscussionState$locked._();
+
+@override String get value => 'locked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscussionState$locked;
+
+@override int get hashCode => 'locked'.hashCode;
+
+ }
+@immutable final class DiscussionState$converting extends DiscussionState {const DiscussionState$converting._();
+
+@override String get value => 'converting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscussionState$converting;
+
+@override int get hashCode => 'converting'.hashCode;
+
+ }
+@immutable final class DiscussionState$transferring extends DiscussionState {const DiscussionState$transferring._();
+
+@override String get value => 'transferring';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscussionState$transferring;
+
+@override int get hashCode => 'transferring'.hashCode;
+
+ }
+@immutable final class DiscussionState$Unknown extends DiscussionState {const DiscussionState$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DiscussionState$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The reason for the current state
-@immutable final class DiscussionStateReason {const DiscussionStateReason._(this.value);
+sealed class DiscussionStateReason {const DiscussionStateReason();
 
 factory DiscussionStateReason.fromJson(String json) { return switch (json) {
   'resolved' => resolved,
@@ -58,23 +107,22 @@ factory DiscussionStateReason.fromJson(String json) { return switch (json) {
   'duplicate' => duplicate,
   'reopened' => reopened,
   'null' => $null,
-  _ => DiscussionStateReason._(json),
+  _ => DiscussionStateReason$Unknown(json),
 }; }
 
-static const DiscussionStateReason resolved = DiscussionStateReason._('resolved');
+static const DiscussionStateReason resolved = DiscussionStateReason$resolved._();
 
-static const DiscussionStateReason outdated = DiscussionStateReason._('outdated');
+static const DiscussionStateReason outdated = DiscussionStateReason$outdated._();
 
-static const DiscussionStateReason duplicate = DiscussionStateReason._('duplicate');
+static const DiscussionStateReason duplicate = DiscussionStateReason$duplicate._();
 
-static const DiscussionStateReason reopened = DiscussionStateReason._('reopened');
+static const DiscussionStateReason reopened = DiscussionStateReason$reopened._();
 
-static const DiscussionStateReason $null = DiscussionStateReason._('null');
+static const DiscussionStateReason $null = DiscussionStateReason$$null._();
 
 static const List<DiscussionStateReason> values = [resolved, outdated, duplicate, reopened, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -86,13 +134,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DiscussionStateReason$Unknown; } 
+@override String toString() => 'DiscussionStateReason($value)';
+
+ }
+@immutable final class DiscussionStateReason$resolved extends DiscussionStateReason {const DiscussionStateReason$resolved._();
+
+@override String get value => 'resolved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscussionStateReason$resolved;
+
+@override int get hashCode => 'resolved'.hashCode;
+
+ }
+@immutable final class DiscussionStateReason$outdated extends DiscussionStateReason {const DiscussionStateReason$outdated._();
+
+@override String get value => 'outdated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscussionStateReason$outdated;
+
+@override int get hashCode => 'outdated'.hashCode;
+
+ }
+@immutable final class DiscussionStateReason$duplicate extends DiscussionStateReason {const DiscussionStateReason$duplicate._();
+
+@override String get value => 'duplicate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscussionStateReason$duplicate;
+
+@override int get hashCode => 'duplicate'.hashCode;
+
+ }
+@immutable final class DiscussionStateReason$reopened extends DiscussionStateReason {const DiscussionStateReason$reopened._();
+
+@override String get value => 'reopened';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscussionStateReason$reopened;
+
+@override int get hashCode => 'reopened'.hashCode;
+
+ }
+@immutable final class DiscussionStateReason$$null extends DiscussionStateReason {const DiscussionStateReason$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscussionStateReason$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class DiscussionStateReason$Unknown extends DiscussionStateReason {const DiscussionStateReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DiscussionStateReason && other.value == value;
+    other is DiscussionStateReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DiscussionStateReason($value)';
 
  }
 /// A Discussion in a repository.

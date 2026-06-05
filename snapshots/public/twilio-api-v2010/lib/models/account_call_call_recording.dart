@@ -2,7 +2,7 @@
 // Source: #/components/schemas/AccountCallCallRecording
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/call_recording_enum_status.dart';/// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, and `StartConferenceRecordingAPI`.
-@immutable final class CallRecordingEnumSource {const CallRecordingEnumSource._(this.value);
+sealed class CallRecordingEnumSource {const CallRecordingEnumSource();
 
 factory CallRecordingEnumSource.fromJson(String json) { return switch (json) {
   'DialVerb' => dialVerb,
@@ -12,27 +12,26 @@ factory CallRecordingEnumSource.fromJson(String json) { return switch (json) {
   'RecordVerb' => recordVerb,
   'StartCallRecordingAPI' => startCallRecordingApi,
   'StartConferenceRecordingAPI' => startConferenceRecordingApi,
-  _ => CallRecordingEnumSource._(json),
+  _ => CallRecordingEnumSource$Unknown(json),
 }; }
 
-static const CallRecordingEnumSource dialVerb = CallRecordingEnumSource._('DialVerb');
+static const CallRecordingEnumSource dialVerb = CallRecordingEnumSource$dialVerb._();
 
-static const CallRecordingEnumSource conference = CallRecordingEnumSource._('Conference');
+static const CallRecordingEnumSource conference = CallRecordingEnumSource$conference._();
 
-static const CallRecordingEnumSource outboundApi = CallRecordingEnumSource._('OutboundAPI');
+static const CallRecordingEnumSource outboundApi = CallRecordingEnumSource$outboundApi._();
 
-static const CallRecordingEnumSource trunking = CallRecordingEnumSource._('Trunking');
+static const CallRecordingEnumSource trunking = CallRecordingEnumSource$trunking._();
 
-static const CallRecordingEnumSource recordVerb = CallRecordingEnumSource._('RecordVerb');
+static const CallRecordingEnumSource recordVerb = CallRecordingEnumSource$recordVerb._();
 
-static const CallRecordingEnumSource startCallRecordingApi = CallRecordingEnumSource._('StartCallRecordingAPI');
+static const CallRecordingEnumSource startCallRecordingApi = CallRecordingEnumSource$startCallRecordingApi._();
 
-static const CallRecordingEnumSource startConferenceRecordingApi = CallRecordingEnumSource._('StartConferenceRecordingAPI');
+static const CallRecordingEnumSource startConferenceRecordingApi = CallRecordingEnumSource$startConferenceRecordingApi._();
 
 static const List<CallRecordingEnumSource> values = [dialVerb, conference, outboundApi, trunking, recordVerb, startCallRecordingApi, startConferenceRecordingApi];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -46,13 +45,81 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CallRecordingEnumSource$Unknown; } 
+@override String toString() => 'CallRecordingEnumSource($value)';
+
+ }
+@immutable final class CallRecordingEnumSource$dialVerb extends CallRecordingEnumSource {const CallRecordingEnumSource$dialVerb._();
+
+@override String get value => 'DialVerb';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CallRecordingEnumSource$dialVerb;
+
+@override int get hashCode => 'DialVerb'.hashCode;
+
+ }
+@immutable final class CallRecordingEnumSource$conference extends CallRecordingEnumSource {const CallRecordingEnumSource$conference._();
+
+@override String get value => 'Conference';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CallRecordingEnumSource$conference;
+
+@override int get hashCode => 'Conference'.hashCode;
+
+ }
+@immutable final class CallRecordingEnumSource$outboundApi extends CallRecordingEnumSource {const CallRecordingEnumSource$outboundApi._();
+
+@override String get value => 'OutboundAPI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CallRecordingEnumSource$outboundApi;
+
+@override int get hashCode => 'OutboundAPI'.hashCode;
+
+ }
+@immutable final class CallRecordingEnumSource$trunking extends CallRecordingEnumSource {const CallRecordingEnumSource$trunking._();
+
+@override String get value => 'Trunking';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CallRecordingEnumSource$trunking;
+
+@override int get hashCode => 'Trunking'.hashCode;
+
+ }
+@immutable final class CallRecordingEnumSource$recordVerb extends CallRecordingEnumSource {const CallRecordingEnumSource$recordVerb._();
+
+@override String get value => 'RecordVerb';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CallRecordingEnumSource$recordVerb;
+
+@override int get hashCode => 'RecordVerb'.hashCode;
+
+ }
+@immutable final class CallRecordingEnumSource$startCallRecordingApi extends CallRecordingEnumSource {const CallRecordingEnumSource$startCallRecordingApi._();
+
+@override String get value => 'StartCallRecordingAPI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CallRecordingEnumSource$startCallRecordingApi;
+
+@override int get hashCode => 'StartCallRecordingAPI'.hashCode;
+
+ }
+@immutable final class CallRecordingEnumSource$startConferenceRecordingApi extends CallRecordingEnumSource {const CallRecordingEnumSource$startConferenceRecordingApi._();
+
+@override String get value => 'StartConferenceRecordingAPI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CallRecordingEnumSource$startConferenceRecordingApi;
+
+@override int get hashCode => 'StartConferenceRecordingAPI'.hashCode;
+
+ }
+@immutable final class CallRecordingEnumSource$Unknown extends CallRecordingEnumSource {const CallRecordingEnumSource$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CallRecordingEnumSource && other.value == value;
+    other is CallRecordingEnumSource$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CallRecordingEnumSource($value)';
 
  }
 @immutable final class AccountCallCallRecording {const AccountCallCallRecording({this.accountSid, this.apiVersion, this.callSid, this.conferenceSid, this.dateCreated, this.dateUpdated, this.startTime, this.duration, this.sid, this.price, this.uri, this.encryptionDetails, this.priceUnit, this.status, this.channels = 0, this.source, this.errorCode, this.track, });

@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ContentDirectory
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';@immutable final class ContentDirectoryType {const ContentDirectoryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';sealed class ContentDirectoryType {const ContentDirectoryType();
 
 factory ContentDirectoryType.fromJson(String json) { return switch (json) {
   'dir' => dir,
   'file' => file,
   'submodule' => submodule,
   'symlink' => symlink,
-  _ => ContentDirectoryType._(json),
+  _ => ContentDirectoryType$Unknown(json),
 }; }
 
-static const ContentDirectoryType dir = ContentDirectoryType._('dir');
+static const ContentDirectoryType dir = ContentDirectoryType$dir._();
 
-static const ContentDirectoryType file = ContentDirectoryType._('file');
+static const ContentDirectoryType file = ContentDirectoryType$file._();
 
-static const ContentDirectoryType submodule = ContentDirectoryType._('submodule');
+static const ContentDirectoryType submodule = ContentDirectoryType$submodule._();
 
-static const ContentDirectoryType symlink = ContentDirectoryType._('symlink');
+static const ContentDirectoryType symlink = ContentDirectoryType$symlink._();
 
 static const List<ContentDirectoryType> values = [dir, file, submodule, symlink];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ContentDirectoryType$Unknown; } 
+@override String toString() => 'ContentDirectoryType($value)';
+
+ }
+@immutable final class ContentDirectoryType$dir extends ContentDirectoryType {const ContentDirectoryType$dir._();
+
+@override String get value => 'dir';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ContentDirectoryType$dir;
+
+@override int get hashCode => 'dir'.hashCode;
+
+ }
+@immutable final class ContentDirectoryType$file extends ContentDirectoryType {const ContentDirectoryType$file._();
+
+@override String get value => 'file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ContentDirectoryType$file;
+
+@override int get hashCode => 'file'.hashCode;
+
+ }
+@immutable final class ContentDirectoryType$submodule extends ContentDirectoryType {const ContentDirectoryType$submodule._();
+
+@override String get value => 'submodule';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ContentDirectoryType$submodule;
+
+@override int get hashCode => 'submodule'.hashCode;
+
+ }
+@immutable final class ContentDirectoryType$symlink extends ContentDirectoryType {const ContentDirectoryType$symlink._();
+
+@override String get value => 'symlink';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ContentDirectoryType$symlink;
+
+@override int get hashCode => 'symlink'.hashCode;
+
+ }
+@immutable final class ContentDirectoryType$Unknown extends ContentDirectoryType {const ContentDirectoryType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ContentDirectoryType && other.value == value;
+    other is ContentDirectoryType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ContentDirectoryType($value)';
 
  }
 @immutable final class ContentDirectory2 {const ContentDirectory2({required this.type, required this.size, required this.name, required this.path, required this.sha, required this.url, required this.gitUrl, required this.htmlUrl, required this.downloadUrl, required this.links, this.content, });

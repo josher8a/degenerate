@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZarazVariableMatchRule
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_variable_match_rule/zaraz_variable_match_rule_settings.dart';@immutable final class ZarazVariableMatchRuleAction {const ZarazVariableMatchRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_variable_match_rule/zaraz_variable_match_rule_settings.dart';sealed class ZarazVariableMatchRuleAction {const ZarazVariableMatchRuleAction();
 
 factory ZarazVariableMatchRuleAction.fromJson(String json) { return switch (json) {
   'variableMatch' => variableMatch,
-  _ => ZarazVariableMatchRuleAction._(json),
+  _ => ZarazVariableMatchRuleAction$Unknown(json),
 }; }
 
-static const ZarazVariableMatchRuleAction variableMatch = ZarazVariableMatchRuleAction._('variableMatch');
+static const ZarazVariableMatchRuleAction variableMatch = ZarazVariableMatchRuleAction$variableMatch._();
 
 static const List<ZarazVariableMatchRuleAction> values = [variableMatch];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZarazVariableMatchRuleAction$Unknown; } 
+@override String toString() => 'ZarazVariableMatchRuleAction($value)';
+
+ }
+@immutable final class ZarazVariableMatchRuleAction$variableMatch extends ZarazVariableMatchRuleAction {const ZarazVariableMatchRuleAction$variableMatch._();
+
+@override String get value => 'variableMatch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazVariableMatchRuleAction$variableMatch;
+
+@override int get hashCode => 'variableMatch'.hashCode;
+
+ }
+@immutable final class ZarazVariableMatchRuleAction$Unknown extends ZarazVariableMatchRuleAction {const ZarazVariableMatchRuleAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZarazVariableMatchRuleAction && other.value == value;
+    other is ZarazVariableMatchRuleAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZarazVariableMatchRuleAction($value)';
 
  }
 @immutable final class ZarazVariableMatchRule {const ZarazVariableMatchRule({required this.action, required this.id, required this.settings, });

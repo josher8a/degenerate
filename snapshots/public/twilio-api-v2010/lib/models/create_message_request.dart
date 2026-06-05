@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CreateMessageRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines if the message content can be stored or redacted based on privacy settings
-@immutable final class MessageEnumContentRetention {const MessageEnumContentRetention._(this.value);
+sealed class MessageEnumContentRetention {const MessageEnumContentRetention();
 
 factory MessageEnumContentRetention.fromJson(String json) { return switch (json) {
   'retain' => retain,
   'discard' => discard,
-  _ => MessageEnumContentRetention._(json),
+  _ => MessageEnumContentRetention$Unknown(json),
 }; }
 
-static const MessageEnumContentRetention retain = MessageEnumContentRetention._('retain');
+static const MessageEnumContentRetention retain = MessageEnumContentRetention$retain._();
 
-static const MessageEnumContentRetention discard = MessageEnumContentRetention._('discard');
+static const MessageEnumContentRetention discard = MessageEnumContentRetention$discard._();
 
 static const List<MessageEnumContentRetention> values = [retain, discard];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,32 +25,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageEnumContentRetention && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MessageEnumContentRetention$Unknown; } 
 @override String toString() => 'MessageEnumContentRetention($value)';
 
  }
+@immutable final class MessageEnumContentRetention$retain extends MessageEnumContentRetention {const MessageEnumContentRetention$retain._();
+
+@override String get value => 'retain';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumContentRetention$retain;
+
+@override int get hashCode => 'retain'.hashCode;
+
+ }
+@immutable final class MessageEnumContentRetention$discard extends MessageEnumContentRetention {const MessageEnumContentRetention$discard._();
+
+@override String get value => 'discard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumContentRetention$discard;
+
+@override int get hashCode => 'discard'.hashCode;
+
+ }
+@immutable final class MessageEnumContentRetention$Unknown extends MessageEnumContentRetention {const MessageEnumContentRetention$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageEnumContentRetention$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Determines if the address can be stored or obfuscated based on privacy settings
-@immutable final class MessageEnumAddressRetention {const MessageEnumAddressRetention._(this.value);
+sealed class MessageEnumAddressRetention {const MessageEnumAddressRetention();
 
 factory MessageEnumAddressRetention.fromJson(String json) { return switch (json) {
   'retain' => retain,
   'obfuscate' => obfuscate,
-  _ => MessageEnumAddressRetention._(json),
+  _ => MessageEnumAddressRetention$Unknown(json),
 }; }
 
-static const MessageEnumAddressRetention retain = MessageEnumAddressRetention._('retain');
+static const MessageEnumAddressRetention retain = MessageEnumAddressRetention$retain._();
 
-static const MessageEnumAddressRetention obfuscate = MessageEnumAddressRetention._('obfuscate');
+static const MessageEnumAddressRetention obfuscate = MessageEnumAddressRetention$obfuscate._();
 
 static const List<MessageEnumAddressRetention> values = [retain, obfuscate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,28 +81,50 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageEnumAddressRetention && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MessageEnumAddressRetention$Unknown; } 
 @override String toString() => 'MessageEnumAddressRetention($value)';
 
  }
-@immutable final class MessageEnumTrafficType {const MessageEnumTrafficType._(this.value);
+@immutable final class MessageEnumAddressRetention$retain extends MessageEnumAddressRetention {const MessageEnumAddressRetention$retain._();
+
+@override String get value => 'retain';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumAddressRetention$retain;
+
+@override int get hashCode => 'retain'.hashCode;
+
+ }
+@immutable final class MessageEnumAddressRetention$obfuscate extends MessageEnumAddressRetention {const MessageEnumAddressRetention$obfuscate._();
+
+@override String get value => 'obfuscate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumAddressRetention$obfuscate;
+
+@override int get hashCode => 'obfuscate'.hashCode;
+
+ }
+@immutable final class MessageEnumAddressRetention$Unknown extends MessageEnumAddressRetention {const MessageEnumAddressRetention$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageEnumAddressRetention$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class MessageEnumTrafficType {const MessageEnumTrafficType();
 
 factory MessageEnumTrafficType.fromJson(String json) { return switch (json) {
   'free' => free,
-  _ => MessageEnumTrafficType._(json),
+  _ => MessageEnumTrafficType$Unknown(json),
 }; }
 
-static const MessageEnumTrafficType free = MessageEnumTrafficType._('free');
+static const MessageEnumTrafficType free = MessageEnumTrafficType$free._();
 
 static const List<MessageEnumTrafficType> values = [free];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -89,29 +132,42 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageEnumTrafficType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MessageEnumTrafficType$Unknown; } 
 @override String toString() => 'MessageEnumTrafficType($value)';
 
  }
+@immutable final class MessageEnumTrafficType$free extends MessageEnumTrafficType {const MessageEnumTrafficType$free._();
+
+@override String get value => 'free';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumTrafficType$free;
+
+@override int get hashCode => 'free'.hashCode;
+
+ }
+@immutable final class MessageEnumTrafficType$Unknown extends MessageEnumTrafficType {const MessageEnumTrafficType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageEnumTrafficType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// For Messaging Services only: Include this parameter with a value of `fixed` in conjuction with the `send_time` parameter in order to [schedule a Message](https://www.twilio.com/docs/messaging/features/message-scheduling).
-@immutable final class MessageEnumScheduleType {const MessageEnumScheduleType._(this.value);
+sealed class MessageEnumScheduleType {const MessageEnumScheduleType();
 
 factory MessageEnumScheduleType.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
-  _ => MessageEnumScheduleType._(json),
+  _ => MessageEnumScheduleType$Unknown(json),
 }; }
 
-static const MessageEnumScheduleType fixed = MessageEnumScheduleType._('fixed');
+static const MessageEnumScheduleType fixed = MessageEnumScheduleType$fixed._();
 
 static const List<MessageEnumScheduleType> values = [fixed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -119,32 +175,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageEnumScheduleType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MessageEnumScheduleType$Unknown; } 
 @override String toString() => 'MessageEnumScheduleType($value)';
 
  }
+@immutable final class MessageEnumScheduleType$fixed extends MessageEnumScheduleType {const MessageEnumScheduleType$fixed._();
+
+@override String get value => 'fixed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumScheduleType$fixed;
+
+@override int get hashCode => 'fixed'.hashCode;
+
+ }
+@immutable final class MessageEnumScheduleType$Unknown extends MessageEnumScheduleType {const MessageEnumScheduleType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageEnumScheduleType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Include this parameter with a value of `disable` to skip any kind of risk check on the respective message request.
-@immutable final class MessageEnumRiskCheck {const MessageEnumRiskCheck._(this.value);
+sealed class MessageEnumRiskCheck {const MessageEnumRiskCheck();
 
 factory MessageEnumRiskCheck.fromJson(String json) { return switch (json) {
   'enable' => enable,
   'disable' => disable,
-  _ => MessageEnumRiskCheck._(json),
+  _ => MessageEnumRiskCheck$Unknown(json),
 }; }
 
-static const MessageEnumRiskCheck enable = MessageEnumRiskCheck._('enable');
+static const MessageEnumRiskCheck enable = MessageEnumRiskCheck$enable._();
 
-static const MessageEnumRiskCheck disable = MessageEnumRiskCheck._('disable');
+static const MessageEnumRiskCheck disable = MessageEnumRiskCheck$disable._();
 
 static const List<MessageEnumRiskCheck> values = [enable, disable];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -153,13 +222,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MessageEnumRiskCheck$Unknown; } 
+@override String toString() => 'MessageEnumRiskCheck($value)';
+
+ }
+@immutable final class MessageEnumRiskCheck$enable extends MessageEnumRiskCheck {const MessageEnumRiskCheck$enable._();
+
+@override String get value => 'enable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumRiskCheck$enable;
+
+@override int get hashCode => 'enable'.hashCode;
+
+ }
+@immutable final class MessageEnumRiskCheck$disable extends MessageEnumRiskCheck {const MessageEnumRiskCheck$disable._();
+
+@override String get value => 'disable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumRiskCheck$disable;
+
+@override int get hashCode => 'disable'.hashCode;
+
+ }
+@immutable final class MessageEnumRiskCheck$Unknown extends MessageEnumRiskCheck {const MessageEnumRiskCheck$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageEnumRiskCheck && other.value == value;
+    other is MessageEnumRiskCheck$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MessageEnumRiskCheck($value)';
 
  }
 @immutable final class CreateMessageRequest {const CreateMessageRequest({required this.to, this.statusCallback, this.applicationSid, this.maxPrice, this.provideFeedback, this.attempt, this.validityPeriod, this.forceDelivery, this.contentRetention, this.addressRetention, this.smartEncoded, this.persistentAction, this.trafficType, this.shortenUrls, this.scheduleType, this.sendAt, this.sendAsMms, this.contentVariables, this.riskCheck, this.from, this.messagingServiceSid, this.body, this.mediaUrl, this.contentSid, });

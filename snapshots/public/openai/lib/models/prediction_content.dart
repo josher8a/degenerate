@@ -4,19 +4,18 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_developer_message/chat_completion_request_developer_message_content.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_text.dart';/// The type of the predicted content you want to provide. This type is
 /// currently always `content`.
 /// 
-@immutable final class PredictionContentType {const PredictionContentType._(this.value);
+sealed class PredictionContentType {const PredictionContentType();
 
 factory PredictionContentType.fromJson(String json) { return switch (json) {
   'content' => content,
-  _ => PredictionContentType._(json),
+  _ => PredictionContentType$Unknown(json),
 }; }
 
-static const PredictionContentType content = PredictionContentType._('content');
+static const PredictionContentType content = PredictionContentType$content._();
 
 static const List<PredictionContentType> values = [content];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -24,13 +23,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PredictionContentType$Unknown; } 
+@override String toString() => 'PredictionContentType($value)';
+
+ }
+@immutable final class PredictionContentType$content extends PredictionContentType {const PredictionContentType$content._();
+
+@override String get value => 'content';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PredictionContentType$content;
+
+@override int get hashCode => 'content'.hashCode;
+
+ }
+@immutable final class PredictionContentType$Unknown extends PredictionContentType {const PredictionContentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PredictionContentType && other.value == value;
+    other is PredictionContentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PredictionContentType($value)';
 
  }
 /// Static predicted output content, such as the content of a text file that is

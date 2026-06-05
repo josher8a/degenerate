@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DeletedRadarValueListItem (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class DeletedRadarValueListItemObject {const DeletedRadarValueListItemObject._(this.value);
+sealed class DeletedRadarValueListItemObject {const DeletedRadarValueListItemObject();
 
 factory DeletedRadarValueListItemObject.fromJson(String json) { return switch (json) {
   'radar.value_list_item' => radarValueListItem,
-  _ => DeletedRadarValueListItemObject._(json),
+  _ => DeletedRadarValueListItemObject$Unknown(json),
 }; }
 
-static const DeletedRadarValueListItemObject radarValueListItem = DeletedRadarValueListItemObject._('radar.value_list_item');
+static const DeletedRadarValueListItemObject radarValueListItem = DeletedRadarValueListItemObject$radarValueListItem._();
 
 static const List<DeletedRadarValueListItemObject> values = [radarValueListItem];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeletedRadarValueListItemObject$Unknown; } 
+@override String toString() => 'DeletedRadarValueListItemObject($value)';
+
+ }
+@immutable final class DeletedRadarValueListItemObject$radarValueListItem extends DeletedRadarValueListItemObject {const DeletedRadarValueListItemObject$radarValueListItem._();
+
+@override String get value => 'radar.value_list_item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeletedRadarValueListItemObject$radarValueListItem;
+
+@override int get hashCode => 'radar.value_list_item'.hashCode;
+
+ }
+@immutable final class DeletedRadarValueListItemObject$Unknown extends DeletedRadarValueListItemObject {const DeletedRadarValueListItemObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeletedRadarValueListItemObject && other.value == value;
+    other is DeletedRadarValueListItemObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeletedRadarValueListItemObject($value)';
 
  }

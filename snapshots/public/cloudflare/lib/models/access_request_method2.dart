@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AccessRequestMethod
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AccessRequestMethod2 {const AccessRequestMethod2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AccessRequestMethod2 {const AccessRequestMethod2();
 
 factory AccessRequestMethod2.fromJson(String json) { return switch (json) {
   'DELETE' => delete,
   'PATCH' => patch,
   'POST' => post,
   'PUT' => put,
-  _ => AccessRequestMethod2._(json),
+  _ => AccessRequestMethod2$Unknown(json),
 }; }
 
-static const AccessRequestMethod2 delete = AccessRequestMethod2._('DELETE');
+static const AccessRequestMethod2 delete = AccessRequestMethod2$delete._();
 
-static const AccessRequestMethod2 patch = AccessRequestMethod2._('PATCH');
+static const AccessRequestMethod2 patch = AccessRequestMethod2$patch._();
 
-static const AccessRequestMethod2 post = AccessRequestMethod2._('POST');
+static const AccessRequestMethod2 post = AccessRequestMethod2$post._();
 
-static const AccessRequestMethod2 put = AccessRequestMethod2._('PUT');
+static const AccessRequestMethod2 put = AccessRequestMethod2$put._();
 
 static const List<AccessRequestMethod2> values = [delete, patch, post, put];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccessRequestMethod2$Unknown; } 
+@override String toString() => 'AccessRequestMethod2($value)';
+
+ }
+@immutable final class AccessRequestMethod2$delete extends AccessRequestMethod2 {const AccessRequestMethod2$delete._();
+
+@override String get value => 'DELETE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessRequestMethod2$delete;
+
+@override int get hashCode => 'DELETE'.hashCode;
+
+ }
+@immutable final class AccessRequestMethod2$patch extends AccessRequestMethod2 {const AccessRequestMethod2$patch._();
+
+@override String get value => 'PATCH';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessRequestMethod2$patch;
+
+@override int get hashCode => 'PATCH'.hashCode;
+
+ }
+@immutable final class AccessRequestMethod2$post extends AccessRequestMethod2 {const AccessRequestMethod2$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessRequestMethod2$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class AccessRequestMethod2$put extends AccessRequestMethod2 {const AccessRequestMethod2$put._();
+
+@override String get value => 'PUT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessRequestMethod2$put;
+
+@override int get hashCode => 'PUT'.hashCode;
+
+ }
+@immutable final class AccessRequestMethod2$Unknown extends AccessRequestMethod2 {const AccessRequestMethod2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccessRequestMethod2 && other.value == value;
+    other is AccessRequestMethod2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccessRequestMethod2($value)';
 
  }

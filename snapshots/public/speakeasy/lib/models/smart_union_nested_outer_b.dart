@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SmartUnionNestedOuterB
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmartUnionNestedOuterBKind {const SmartUnionNestedOuterBKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SmartUnionNestedOuterBKind {const SmartUnionNestedOuterBKind();
 
 factory SmartUnionNestedOuterBKind.fromJson(String json) { return switch (json) {
   'x' => x,
-  _ => SmartUnionNestedOuterBKind._(json),
+  _ => SmartUnionNestedOuterBKind$Unknown(json),
 }; }
 
-static const SmartUnionNestedOuterBKind x = SmartUnionNestedOuterBKind._('x');
+static const SmartUnionNestedOuterBKind x = SmartUnionNestedOuterBKind$x._();
 
 static const List<SmartUnionNestedOuterBKind> values = [x];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,28 +20,41 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SmartUnionNestedOuterBKind && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SmartUnionNestedOuterBKind$Unknown; } 
 @override String toString() => 'SmartUnionNestedOuterBKind($value)';
 
  }
-@immutable final class Name {const Name._(this.value);
+@immutable final class SmartUnionNestedOuterBKind$x extends SmartUnionNestedOuterBKind {const SmartUnionNestedOuterBKind$x._();
+
+@override String get value => 'x';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SmartUnionNestedOuterBKind$x;
+
+@override int get hashCode => 'x'.hashCode;
+
+ }
+@immutable final class SmartUnionNestedOuterBKind$Unknown extends SmartUnionNestedOuterBKind {const SmartUnionNestedOuterBKind$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SmartUnionNestedOuterBKind$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class Name {const Name();
 
 factory Name.fromJson(String json) { return switch (json) {
   'y' => y,
-  _ => Name._(json),
+  _ => Name$Unknown(json),
 }; }
 
-static const Name y = Name._('y');
+static const Name y = Name$y._();
 
 static const List<Name> values = [y];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,13 +62,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Name$Unknown; } 
+@override String toString() => 'Name($value)';
+
+ }
+@immutable final class Name$y extends Name {const Name$y._();
+
+@override String get value => 'y';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Name$y;
+
+@override int get hashCode => 'y'.hashCode;
+
+ }
+@immutable final class Name$Unknown extends Name {const Name$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Name && other.value == value;
+    other is Name$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Name($value)';
 
  }
 /// Option B for outer union - has 2 open enum fields.

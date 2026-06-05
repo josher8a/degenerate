@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetEmailSecurityTopTldsByMessagesTldCategory
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by TLD category.
-@immutable final class RadarGetEmailSecurityTopTldsByMessagesTldCategory {const RadarGetEmailSecurityTopTldsByMessagesTldCategory._(this.value);
+sealed class RadarGetEmailSecurityTopTldsByMessagesTldCategory {const RadarGetEmailSecurityTopTldsByMessagesTldCategory();
 
 factory RadarGetEmailSecurityTopTldsByMessagesTldCategory.fromJson(String json) { return switch (json) {
   'CLASSIC' => classic,
   'COUNTRY' => country,
-  _ => RadarGetEmailSecurityTopTldsByMessagesTldCategory._(json),
+  _ => RadarGetEmailSecurityTopTldsByMessagesTldCategory$Unknown(json),
 }; }
 
-static const RadarGetEmailSecurityTopTldsByMessagesTldCategory classic = RadarGetEmailSecurityTopTldsByMessagesTldCategory._('CLASSIC');
+static const RadarGetEmailSecurityTopTldsByMessagesTldCategory classic = RadarGetEmailSecurityTopTldsByMessagesTldCategory$classic._();
 
-static const RadarGetEmailSecurityTopTldsByMessagesTldCategory country = RadarGetEmailSecurityTopTldsByMessagesTldCategory._('COUNTRY');
+static const RadarGetEmailSecurityTopTldsByMessagesTldCategory country = RadarGetEmailSecurityTopTldsByMessagesTldCategory$country._();
 
 static const List<RadarGetEmailSecurityTopTldsByMessagesTldCategory> values = [classic, country];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecurityTopTldsByMessagesTldCategory$Unknown; } 
+@override String toString() => 'RadarGetEmailSecurityTopTldsByMessagesTldCategory($value)';
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsByMessagesTldCategory$classic extends RadarGetEmailSecurityTopTldsByMessagesTldCategory {const RadarGetEmailSecurityTopTldsByMessagesTldCategory$classic._();
+
+@override String get value => 'CLASSIC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTopTldsByMessagesTldCategory$classic;
+
+@override int get hashCode => 'CLASSIC'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsByMessagesTldCategory$country extends RadarGetEmailSecurityTopTldsByMessagesTldCategory {const RadarGetEmailSecurityTopTldsByMessagesTldCategory$country._();
+
+@override String get value => 'COUNTRY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTopTldsByMessagesTldCategory$country;
+
+@override int get hashCode => 'COUNTRY'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsByMessagesTldCategory$Unknown extends RadarGetEmailSecurityTopTldsByMessagesTldCategory {const RadarGetEmailSecurityTopTldsByMessagesTldCategory$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecurityTopTldsByMessagesTldCategory && other.value == value;
+    other is RadarGetEmailSecurityTopTldsByMessagesTldCategory$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecurityTopTldsByMessagesTldCategory($value)';
 
  }

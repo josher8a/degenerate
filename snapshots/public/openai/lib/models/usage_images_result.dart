@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UsageImagesResult
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageImagesResultObject {const UsageImagesResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageImagesResultObject {const UsageImagesResultObject();
 
 factory UsageImagesResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.images.result' => organizationUsageImagesResult,
-  _ => UsageImagesResultObject._(json),
+  _ => UsageImagesResultObject$Unknown(json),
 }; }
 
-static const UsageImagesResultObject organizationUsageImagesResult = UsageImagesResultObject._('organization.usage.images.result');
+static const UsageImagesResultObject organizationUsageImagesResult = UsageImagesResultObject$organizationUsageImagesResult._();
 
 static const List<UsageImagesResultObject> values = [organizationUsageImagesResult];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UsageImagesResultObject$Unknown; } 
+@override String toString() => 'UsageImagesResultObject($value)';
+
+ }
+@immutable final class UsageImagesResultObject$organizationUsageImagesResult extends UsageImagesResultObject {const UsageImagesResultObject$organizationUsageImagesResult._();
+
+@override String get value => 'organization.usage.images.result';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageImagesResultObject$organizationUsageImagesResult;
+
+@override int get hashCode => 'organization.usage.images.result'.hashCode;
+
+ }
+@immutable final class UsageImagesResultObject$Unknown extends UsageImagesResultObject {const UsageImagesResultObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UsageImagesResultObject && other.value == value;
+    other is UsageImagesResultObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UsageImagesResultObject($value)';
 
  }
 /// The aggregated images usage details of the specific time bucket.

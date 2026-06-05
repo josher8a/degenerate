@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AccountSipSipDomain
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_method.dart';/// The HTTP method we use to call `voice_status_callback_url`. Either `GET` or `POST`.
-@immutable final class AccountSipSipDomainVoiceStatusCallbackMethod {const AccountSipSipDomainVoiceStatusCallbackMethod._(this.value);
+sealed class AccountSipSipDomainVoiceStatusCallbackMethod {const AccountSipSipDomainVoiceStatusCallbackMethod();
 
 factory AccountSipSipDomainVoiceStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => AccountSipSipDomainVoiceStatusCallbackMethod._(json),
+  _ => AccountSipSipDomainVoiceStatusCallbackMethod$Unknown(json),
 }; }
 
-static const AccountSipSipDomainVoiceStatusCallbackMethod $get = AccountSipSipDomainVoiceStatusCallbackMethod._('GET');
+static const AccountSipSipDomainVoiceStatusCallbackMethod $get = AccountSipSipDomainVoiceStatusCallbackMethod$$get._();
 
-static const AccountSipSipDomainVoiceStatusCallbackMethod post = AccountSipSipDomainVoiceStatusCallbackMethod._('POST');
+static const AccountSipSipDomainVoiceStatusCallbackMethod post = AccountSipSipDomainVoiceStatusCallbackMethod$post._();
 
 static const List<AccountSipSipDomainVoiceStatusCallbackMethod> values = [$get, post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountSipSipDomainVoiceStatusCallbackMethod$Unknown; } 
+@override String toString() => 'AccountSipSipDomainVoiceStatusCallbackMethod($value)';
+
+ }
+@immutable final class AccountSipSipDomainVoiceStatusCallbackMethod$$get extends AccountSipSipDomainVoiceStatusCallbackMethod {const AccountSipSipDomainVoiceStatusCallbackMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountSipSipDomainVoiceStatusCallbackMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class AccountSipSipDomainVoiceStatusCallbackMethod$post extends AccountSipSipDomainVoiceStatusCallbackMethod {const AccountSipSipDomainVoiceStatusCallbackMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountSipSipDomainVoiceStatusCallbackMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class AccountSipSipDomainVoiceStatusCallbackMethod$Unknown extends AccountSipSipDomainVoiceStatusCallbackMethod {const AccountSipSipDomainVoiceStatusCallbackMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountSipSipDomainVoiceStatusCallbackMethod && other.value == value;
+    other is AccountSipSipDomainVoiceStatusCallbackMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountSipSipDomainVoiceStatusCallbackMethod($value)';
 
  }
 @immutable final class AccountSipSipDomain {const AccountSipSipDomain({this.accountSid, this.apiVersion, this.authType, this.dateCreated, this.dateUpdated, this.domainName, this.friendlyName, this.sid, this.uri, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceStatusCallbackMethod, this.voiceStatusCallbackUrl, this.voiceUrl, this.subresourceUris, this.sipRegistration, this.emergencyCallingEnabled, this.secure, this.byocTrunkSid, this.emergencyCallerSid, });

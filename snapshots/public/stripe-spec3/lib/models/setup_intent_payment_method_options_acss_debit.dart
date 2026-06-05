@@ -2,22 +2,21 @@
 // Source: #/components/schemas/SetupIntentPaymentMethodOptionsAcssDebit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options_mandate_options_acss_debit.dart';/// Currency supported by the bank account
-@immutable final class SetupIntentPaymentMethodOptionsAcssDebitCurrency {const SetupIntentPaymentMethodOptionsAcssDebitCurrency._(this.value);
+sealed class SetupIntentPaymentMethodOptionsAcssDebitCurrency {const SetupIntentPaymentMethodOptionsAcssDebitCurrency();
 
 factory SetupIntentPaymentMethodOptionsAcssDebitCurrency.fromJson(String json) { return switch (json) {
   'cad' => cad,
   'usd' => usd,
-  _ => SetupIntentPaymentMethodOptionsAcssDebitCurrency._(json),
+  _ => SetupIntentPaymentMethodOptionsAcssDebitCurrency$Unknown(json),
 }; }
 
-static const SetupIntentPaymentMethodOptionsAcssDebitCurrency cad = SetupIntentPaymentMethodOptionsAcssDebitCurrency._('cad');
+static const SetupIntentPaymentMethodOptionsAcssDebitCurrency cad = SetupIntentPaymentMethodOptionsAcssDebitCurrency$cad._();
 
-static const SetupIntentPaymentMethodOptionsAcssDebitCurrency usd = SetupIntentPaymentMethodOptionsAcssDebitCurrency._('usd');
+static const SetupIntentPaymentMethodOptionsAcssDebitCurrency usd = SetupIntentPaymentMethodOptionsAcssDebitCurrency$usd._();
 
 static const List<SetupIntentPaymentMethodOptionsAcssDebitCurrency> values = [cad, usd];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SetupIntentPaymentMethodOptionsAcssDebitCurrency$Unknown; } 
+@override String toString() => 'SetupIntentPaymentMethodOptionsAcssDebitCurrency($value)';
+
+ }
+@immutable final class SetupIntentPaymentMethodOptionsAcssDebitCurrency$cad extends SetupIntentPaymentMethodOptionsAcssDebitCurrency {const SetupIntentPaymentMethodOptionsAcssDebitCurrency$cad._();
+
+@override String get value => 'cad';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupIntentPaymentMethodOptionsAcssDebitCurrency$cad;
+
+@override int get hashCode => 'cad'.hashCode;
+
+ }
+@immutable final class SetupIntentPaymentMethodOptionsAcssDebitCurrency$usd extends SetupIntentPaymentMethodOptionsAcssDebitCurrency {const SetupIntentPaymentMethodOptionsAcssDebitCurrency$usd._();
+
+@override String get value => 'usd';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupIntentPaymentMethodOptionsAcssDebitCurrency$usd;
+
+@override int get hashCode => 'usd'.hashCode;
+
+ }
+@immutable final class SetupIntentPaymentMethodOptionsAcssDebitCurrency$Unknown extends SetupIntentPaymentMethodOptionsAcssDebitCurrency {const SetupIntentPaymentMethodOptionsAcssDebitCurrency$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SetupIntentPaymentMethodOptionsAcssDebitCurrency && other.value == value;
+    other is SetupIntentPaymentMethodOptionsAcssDebitCurrency$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SetupIntentPaymentMethodOptionsAcssDebitCurrency($value)';
 
  }
 /// 

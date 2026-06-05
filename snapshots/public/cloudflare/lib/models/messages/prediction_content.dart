@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Prediction > Content)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';import 'package:pub_cloudflare/models/messages/developer_content_variant2.dart';@immutable final class ContentType {const ContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';import 'package:pub_cloudflare/models/messages/developer_content_variant2.dart';sealed class ContentType {const ContentType();
 
 factory ContentType.fromJson(String json) { return switch (json) {
   'content' => content,
-  _ => ContentType._(json),
+  _ => ContentType$Unknown(json),
 }; }
 
-static const ContentType content = ContentType._('content');
+static const ContentType content = ContentType$content._();
 
 static const List<ContentType> values = [content];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ContentType$Unknown; } 
+@override String toString() => 'ContentType($value)';
+
+ }
+@immutable final class ContentType$content extends ContentType {const ContentType$content._();
+
+@override String get value => 'content';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ContentType$content;
+
+@override int get hashCode => 'content'.hashCode;
+
+ }
+@immutable final class ContentType$Unknown extends ContentType {const ContentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ContentType && other.value == value;
+    other is ContentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ContentType($value)';
 
  }
 @immutable final class PredictionContent {const PredictionContent({required this.content, required this.type, });

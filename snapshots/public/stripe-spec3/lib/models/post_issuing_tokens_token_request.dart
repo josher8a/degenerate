@@ -2,25 +2,24 @@
 // Source: #/components/schemas/PostIssuingTokensTokenRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies which status the token should be updated to.
-@immutable final class PostIssuingTokensTokenRequestStatus {const PostIssuingTokensTokenRequestStatus._(this.value);
+sealed class PostIssuingTokensTokenRequestStatus {const PostIssuingTokensTokenRequestStatus();
 
 factory PostIssuingTokensTokenRequestStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'deleted' => deleted,
   'suspended' => suspended,
-  _ => PostIssuingTokensTokenRequestStatus._(json),
+  _ => PostIssuingTokensTokenRequestStatus$Unknown(json),
 }; }
 
-static const PostIssuingTokensTokenRequestStatus active = PostIssuingTokensTokenRequestStatus._('active');
+static const PostIssuingTokensTokenRequestStatus active = PostIssuingTokensTokenRequestStatus$active._();
 
-static const PostIssuingTokensTokenRequestStatus deleted = PostIssuingTokensTokenRequestStatus._('deleted');
+static const PostIssuingTokensTokenRequestStatus deleted = PostIssuingTokensTokenRequestStatus$deleted._();
 
-static const PostIssuingTokensTokenRequestStatus suspended = PostIssuingTokensTokenRequestStatus._('suspended');
+static const PostIssuingTokensTokenRequestStatus suspended = PostIssuingTokensTokenRequestStatus$suspended._();
 
 static const List<PostIssuingTokensTokenRequestStatus> values = [active, deleted, suspended];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostIssuingTokensTokenRequestStatus$Unknown; } 
+@override String toString() => 'PostIssuingTokensTokenRequestStatus($value)';
+
+ }
+@immutable final class PostIssuingTokensTokenRequestStatus$active extends PostIssuingTokensTokenRequestStatus {const PostIssuingTokensTokenRequestStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostIssuingTokensTokenRequestStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class PostIssuingTokensTokenRequestStatus$deleted extends PostIssuingTokensTokenRequestStatus {const PostIssuingTokensTokenRequestStatus$deleted._();
+
+@override String get value => 'deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostIssuingTokensTokenRequestStatus$deleted;
+
+@override int get hashCode => 'deleted'.hashCode;
+
+ }
+@immutable final class PostIssuingTokensTokenRequestStatus$suspended extends PostIssuingTokensTokenRequestStatus {const PostIssuingTokensTokenRequestStatus$suspended._();
+
+@override String get value => 'suspended';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostIssuingTokensTokenRequestStatus$suspended;
+
+@override int get hashCode => 'suspended'.hashCode;
+
+ }
+@immutable final class PostIssuingTokensTokenRequestStatus$Unknown extends PostIssuingTokensTokenRequestStatus {const PostIssuingTokensTokenRequestStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostIssuingTokensTokenRequestStatus && other.value == value;
+    other is PostIssuingTokensTokenRequestStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostIssuingTokensTokenRequestStatus($value)';
 
  }
 @immutable final class PostIssuingTokensTokenRequest {const PostIssuingTokensTokenRequest({required this.status, this.expand, });

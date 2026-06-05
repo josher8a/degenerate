@@ -2,7 +2,7 @@
 // Source: #/components/schemas/WebhookCheckSuiteCompleted (inline: CheckSuite)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_suite/check_suite_conclusion.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_head_commit.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_pull_requests.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/webhook_check_suite_completed_check_suite_app.dart';/// The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.
-@immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus._(this.value);
+sealed class WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus();
 
 factory WebhookCheckSuiteCompletedCheckSuiteStatus.fromJson(String json) { return switch (json) {
   'requested' => requested,
@@ -11,25 +11,24 @@ factory WebhookCheckSuiteCompletedCheckSuiteStatus.fromJson(String json) { retur
   'queued' => queued,
   'null' => $null,
   'pending' => pending,
-  _ => WebhookCheckSuiteCompletedCheckSuiteStatus._(json),
+  _ => WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown(json),
 }; }
 
-static const WebhookCheckSuiteCompletedCheckSuiteStatus requested = WebhookCheckSuiteCompletedCheckSuiteStatus._('requested');
+static const WebhookCheckSuiteCompletedCheckSuiteStatus requested = WebhookCheckSuiteCompletedCheckSuiteStatus$requested._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteStatus inProgress = WebhookCheckSuiteCompletedCheckSuiteStatus._('in_progress');
+static const WebhookCheckSuiteCompletedCheckSuiteStatus inProgress = WebhookCheckSuiteCompletedCheckSuiteStatus$inProgress._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteStatus completed = WebhookCheckSuiteCompletedCheckSuiteStatus._('completed');
+static const WebhookCheckSuiteCompletedCheckSuiteStatus completed = WebhookCheckSuiteCompletedCheckSuiteStatus$completed._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteStatus queued = WebhookCheckSuiteCompletedCheckSuiteStatus._('queued');
+static const WebhookCheckSuiteCompletedCheckSuiteStatus queued = WebhookCheckSuiteCompletedCheckSuiteStatus$queued._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteStatus $null = WebhookCheckSuiteCompletedCheckSuiteStatus._('null');
+static const WebhookCheckSuiteCompletedCheckSuiteStatus $null = WebhookCheckSuiteCompletedCheckSuiteStatus$$null._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteStatus pending = WebhookCheckSuiteCompletedCheckSuiteStatus._('pending');
+static const WebhookCheckSuiteCompletedCheckSuiteStatus pending = WebhookCheckSuiteCompletedCheckSuiteStatus$pending._();
 
 static const List<WebhookCheckSuiteCompletedCheckSuiteStatus> values = [requested, inProgress, completed, queued, $null, pending];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,13 +41,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown; } 
+@override String toString() => 'WebhookCheckSuiteCompletedCheckSuiteStatus($value)';
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus$requested extends WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus$requested._();
+
+@override String get value => 'requested';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteStatus$requested;
+
+@override int get hashCode => 'requested'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus$inProgress extends WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus$completed extends WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus$queued extends WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus$$null extends WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteStatus$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus$pending extends WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown extends WebhookCheckSuiteCompletedCheckSuiteStatus {const WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookCheckSuiteCompletedCheckSuiteStatus && other.value == value;
+    other is WebhookCheckSuiteCompletedCheckSuiteStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookCheckSuiteCompletedCheckSuiteStatus($value)';
 
  }
 /// The [check_suite](https://docs.github.com/rest/checks/suites#get-a-check-suite).

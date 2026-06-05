@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventSessionUpdated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_session.dart';/// The event type, must be `session.updated`.
-@immutable final class RealtimeBetaServerEventSessionUpdatedType {const RealtimeBetaServerEventSessionUpdatedType._(this.value);
+sealed class RealtimeBetaServerEventSessionUpdatedType {const RealtimeBetaServerEventSessionUpdatedType();
 
 factory RealtimeBetaServerEventSessionUpdatedType.fromJson(String json) { return switch (json) {
   'session.updated' => sessionUpdated,
-  _ => RealtimeBetaServerEventSessionUpdatedType._(json),
+  _ => RealtimeBetaServerEventSessionUpdatedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventSessionUpdatedType sessionUpdated = RealtimeBetaServerEventSessionUpdatedType._('session.updated');
+static const RealtimeBetaServerEventSessionUpdatedType sessionUpdated = RealtimeBetaServerEventSessionUpdatedType$sessionUpdated._();
 
 static const List<RealtimeBetaServerEventSessionUpdatedType> values = [sessionUpdated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventSessionUpdatedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventSessionUpdatedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventSessionUpdatedType$sessionUpdated extends RealtimeBetaServerEventSessionUpdatedType {const RealtimeBetaServerEventSessionUpdatedType$sessionUpdated._();
+
+@override String get value => 'session.updated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventSessionUpdatedType$sessionUpdated;
+
+@override int get hashCode => 'session.updated'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventSessionUpdatedType$Unknown extends RealtimeBetaServerEventSessionUpdatedType {const RealtimeBetaServerEventSessionUpdatedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventSessionUpdatedType && other.value == value;
+    other is RealtimeBetaServerEventSessionUpdatedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventSessionUpdatedType($value)';
 
  }
 /// Returned when a session is updated with a `session.update` event, unless

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/IssuingNetworkTokenNetworkData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_device.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_mastercard.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_visa.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_wallet_provider.dart';/// The network that the token is associated with. An additional hash is included with a name matching this value, containing tokenization data specific to the card network.
-@immutable final class IssuingNetworkTokenNetworkDataType {const IssuingNetworkTokenNetworkDataType._(this.value);
+sealed class IssuingNetworkTokenNetworkDataType {const IssuingNetworkTokenNetworkDataType();
 
 factory IssuingNetworkTokenNetworkDataType.fromJson(String json) { return switch (json) {
   'mastercard' => mastercard,
   'visa' => visa,
-  _ => IssuingNetworkTokenNetworkDataType._(json),
+  _ => IssuingNetworkTokenNetworkDataType$Unknown(json),
 }; }
 
-static const IssuingNetworkTokenNetworkDataType mastercard = IssuingNetworkTokenNetworkDataType._('mastercard');
+static const IssuingNetworkTokenNetworkDataType mastercard = IssuingNetworkTokenNetworkDataType$mastercard._();
 
-static const IssuingNetworkTokenNetworkDataType visa = IssuingNetworkTokenNetworkDataType._('visa');
+static const IssuingNetworkTokenNetworkDataType visa = IssuingNetworkTokenNetworkDataType$visa._();
 
 static const List<IssuingNetworkTokenNetworkDataType> values = [mastercard, visa];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingNetworkTokenNetworkDataType$Unknown; } 
+@override String toString() => 'IssuingNetworkTokenNetworkDataType($value)';
+
+ }
+@immutable final class IssuingNetworkTokenNetworkDataType$mastercard extends IssuingNetworkTokenNetworkDataType {const IssuingNetworkTokenNetworkDataType$mastercard._();
+
+@override String get value => 'mastercard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingNetworkTokenNetworkDataType$mastercard;
+
+@override int get hashCode => 'mastercard'.hashCode;
+
+ }
+@immutable final class IssuingNetworkTokenNetworkDataType$visa extends IssuingNetworkTokenNetworkDataType {const IssuingNetworkTokenNetworkDataType$visa._();
+
+@override String get value => 'visa';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingNetworkTokenNetworkDataType$visa;
+
+@override int get hashCode => 'visa'.hashCode;
+
+ }
+@immutable final class IssuingNetworkTokenNetworkDataType$Unknown extends IssuingNetworkTokenNetworkDataType {const IssuingNetworkTokenNetworkDataType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingNetworkTokenNetworkDataType && other.value == value;
+    other is IssuingNetworkTokenNetworkDataType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingNetworkTokenNetworkDataType($value)';
 
  }
 /// 

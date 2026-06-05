@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ListsBulkOperationCompleted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_completed.dart';import 'package:pub_cloudflare/models/lists_operation_id.dart';/// The current status of the asynchronous operation.
-@immutable final class ListsBulkOperationCompletedStatus {const ListsBulkOperationCompletedStatus._(this.value);
+sealed class ListsBulkOperationCompletedStatus {const ListsBulkOperationCompletedStatus();
 
 factory ListsBulkOperationCompletedStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
-  _ => ListsBulkOperationCompletedStatus._(json),
+  _ => ListsBulkOperationCompletedStatus$Unknown(json),
 }; }
 
-static const ListsBulkOperationCompletedStatus completed = ListsBulkOperationCompletedStatus._('completed');
+static const ListsBulkOperationCompletedStatus completed = ListsBulkOperationCompletedStatus$completed._();
 
 static const List<ListsBulkOperationCompletedStatus> values = [completed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ListsBulkOperationCompletedStatus$Unknown; } 
+@override String toString() => 'ListsBulkOperationCompletedStatus($value)';
+
+ }
+@immutable final class ListsBulkOperationCompletedStatus$completed extends ListsBulkOperationCompletedStatus {const ListsBulkOperationCompletedStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListsBulkOperationCompletedStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class ListsBulkOperationCompletedStatus$Unknown extends ListsBulkOperationCompletedStatus {const ListsBulkOperationCompletedStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ListsBulkOperationCompletedStatus && other.value == value;
+    other is ListsBulkOperationCompletedStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ListsBulkOperationCompletedStatus($value)';
 
  }
 @immutable final class ListsBulkOperationCompleted {const ListsBulkOperationCompleted({required this.completed, required this.id, required this.status, });

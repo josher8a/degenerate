@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EmailSecurityListAllowPoliciesOrder
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityListAllowPoliciesOrder {const EmailSecurityListAllowPoliciesOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EmailSecurityListAllowPoliciesOrder {const EmailSecurityListAllowPoliciesOrder();
 
 factory EmailSecurityListAllowPoliciesOrder.fromJson(String json) { return switch (json) {
   'pattern' => pattern,
   'created_at' => createdAt,
-  _ => EmailSecurityListAllowPoliciesOrder._(json),
+  _ => EmailSecurityListAllowPoliciesOrder$Unknown(json),
 }; }
 
-static const EmailSecurityListAllowPoliciesOrder pattern = EmailSecurityListAllowPoliciesOrder._('pattern');
+static const EmailSecurityListAllowPoliciesOrder pattern = EmailSecurityListAllowPoliciesOrder$pattern._();
 
-static const EmailSecurityListAllowPoliciesOrder createdAt = EmailSecurityListAllowPoliciesOrder._('created_at');
+static const EmailSecurityListAllowPoliciesOrder createdAt = EmailSecurityListAllowPoliciesOrder$createdAt._();
 
 static const List<EmailSecurityListAllowPoliciesOrder> values = [pattern, createdAt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EmailSecurityListAllowPoliciesOrder$Unknown; } 
+@override String toString() => 'EmailSecurityListAllowPoliciesOrder($value)';
+
+ }
+@immutable final class EmailSecurityListAllowPoliciesOrder$pattern extends EmailSecurityListAllowPoliciesOrder {const EmailSecurityListAllowPoliciesOrder$pattern._();
+
+@override String get value => 'pattern';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityListAllowPoliciesOrder$pattern;
+
+@override int get hashCode => 'pattern'.hashCode;
+
+ }
+@immutable final class EmailSecurityListAllowPoliciesOrder$createdAt extends EmailSecurityListAllowPoliciesOrder {const EmailSecurityListAllowPoliciesOrder$createdAt._();
+
+@override String get value => 'created_at';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityListAllowPoliciesOrder$createdAt;
+
+@override int get hashCode => 'created_at'.hashCode;
+
+ }
+@immutable final class EmailSecurityListAllowPoliciesOrder$Unknown extends EmailSecurityListAllowPoliciesOrder {const EmailSecurityListAllowPoliciesOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EmailSecurityListAllowPoliciesOrder && other.value == value;
+    other is EmailSecurityListAllowPoliciesOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EmailSecurityListAllowPoliciesOrder($value)';
 
  }

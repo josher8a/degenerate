@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetAttacksLayer7SummaryByHttpVersionIpVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7SummaryByHttpVersionIpVersion {const RadarGetAttacksLayer7SummaryByHttpVersionIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer7SummaryByHttpVersionIpVersion {const RadarGetAttacksLayer7SummaryByHttpVersionIpVersion();
 
 factory RadarGetAttacksLayer7SummaryByHttpVersionIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,
   'IPv6' => iPv6,
-  _ => RadarGetAttacksLayer7SummaryByHttpVersionIpVersion._(json),
+  _ => RadarGetAttacksLayer7SummaryByHttpVersionIpVersion$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer7SummaryByHttpVersionIpVersion iPv4 = RadarGetAttacksLayer7SummaryByHttpVersionIpVersion._('IPv4');
+static const RadarGetAttacksLayer7SummaryByHttpVersionIpVersion iPv4 = RadarGetAttacksLayer7SummaryByHttpVersionIpVersion$iPv4._();
 
-static const RadarGetAttacksLayer7SummaryByHttpVersionIpVersion iPv6 = RadarGetAttacksLayer7SummaryByHttpVersionIpVersion._('IPv6');
+static const RadarGetAttacksLayer7SummaryByHttpVersionIpVersion iPv6 = RadarGetAttacksLayer7SummaryByHttpVersionIpVersion$iPv6._();
 
 static const List<RadarGetAttacksLayer7SummaryByHttpVersionIpVersion> values = [iPv4, iPv6];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer7SummaryByHttpVersionIpVersion$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer7SummaryByHttpVersionIpVersion($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByHttpVersionIpVersion$iPv4 extends RadarGetAttacksLayer7SummaryByHttpVersionIpVersion {const RadarGetAttacksLayer7SummaryByHttpVersionIpVersion$iPv4._();
+
+@override String get value => 'IPv4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByHttpVersionIpVersion$iPv4;
+
+@override int get hashCode => 'IPv4'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByHttpVersionIpVersion$iPv6 extends RadarGetAttacksLayer7SummaryByHttpVersionIpVersion {const RadarGetAttacksLayer7SummaryByHttpVersionIpVersion$iPv6._();
+
+@override String get value => 'IPv6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByHttpVersionIpVersion$iPv6;
+
+@override int get hashCode => 'IPv6'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByHttpVersionIpVersion$Unknown extends RadarGetAttacksLayer7SummaryByHttpVersionIpVersion {const RadarGetAttacksLayer7SummaryByHttpVersionIpVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer7SummaryByHttpVersionIpVersion && other.value == value;
+    other is RadarGetAttacksLayer7SummaryByHttpVersionIpVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer7SummaryByHttpVersionIpVersion($value)';
 
  }

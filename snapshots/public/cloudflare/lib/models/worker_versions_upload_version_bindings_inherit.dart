@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkerVersionsUploadVersionBindingsInherit
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkerVersionsUploadVersionBindingsInherit {const WorkerVersionsUploadVersionBindingsInherit._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class WorkerVersionsUploadVersionBindingsInherit {const WorkerVersionsUploadVersionBindingsInherit();
 
 factory WorkerVersionsUploadVersionBindingsInherit.fromJson(String json) { return switch (json) {
   'strict' => strict,
-  _ => WorkerVersionsUploadVersionBindingsInherit._(json),
+  _ => WorkerVersionsUploadVersionBindingsInherit$Unknown(json),
 }; }
 
-static const WorkerVersionsUploadVersionBindingsInherit strict = WorkerVersionsUploadVersionBindingsInherit._('strict');
+static const WorkerVersionsUploadVersionBindingsInherit strict = WorkerVersionsUploadVersionBindingsInherit$strict._();
 
 static const List<WorkerVersionsUploadVersionBindingsInherit> values = [strict];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkerVersionsUploadVersionBindingsInherit$Unknown; } 
+@override String toString() => 'WorkerVersionsUploadVersionBindingsInherit($value)';
+
+ }
+@immutable final class WorkerVersionsUploadVersionBindingsInherit$strict extends WorkerVersionsUploadVersionBindingsInherit {const WorkerVersionsUploadVersionBindingsInherit$strict._();
+
+@override String get value => 'strict';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkerVersionsUploadVersionBindingsInherit$strict;
+
+@override int get hashCode => 'strict'.hashCode;
+
+ }
+@immutable final class WorkerVersionsUploadVersionBindingsInherit$Unknown extends WorkerVersionsUploadVersionBindingsInherit {const WorkerVersionsUploadVersionBindingsInherit$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkerVersionsUploadVersionBindingsInherit && other.value == value;
+    other is WorkerVersionsUploadVersionBindingsInherit$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkerVersionsUploadVersionBindingsInherit($value)';
 
  }

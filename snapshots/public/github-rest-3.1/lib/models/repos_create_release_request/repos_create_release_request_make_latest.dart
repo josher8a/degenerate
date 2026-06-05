@@ -2,25 +2,24 @@
 // Source: #/components/schemas/ReposCreateReleaseRequest (inline: MakeLatest)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.
-@immutable final class ReposCreateReleaseRequestMakeLatest {const ReposCreateReleaseRequestMakeLatest._(this.value);
+sealed class ReposCreateReleaseRequestMakeLatest {const ReposCreateReleaseRequestMakeLatest();
 
 factory ReposCreateReleaseRequestMakeLatest.fromJson(String json) { return switch (json) {
   'true' => $true,
   'false' => $false,
   'legacy' => legacy,
-  _ => ReposCreateReleaseRequestMakeLatest._(json),
+  _ => ReposCreateReleaseRequestMakeLatest$Unknown(json),
 }; }
 
-static const ReposCreateReleaseRequestMakeLatest $true = ReposCreateReleaseRequestMakeLatest._('true');
+static const ReposCreateReleaseRequestMakeLatest $true = ReposCreateReleaseRequestMakeLatest$$true._();
 
-static const ReposCreateReleaseRequestMakeLatest $false = ReposCreateReleaseRequestMakeLatest._('false');
+static const ReposCreateReleaseRequestMakeLatest $false = ReposCreateReleaseRequestMakeLatest$$false._();
 
-static const ReposCreateReleaseRequestMakeLatest legacy = ReposCreateReleaseRequestMakeLatest._('legacy');
+static const ReposCreateReleaseRequestMakeLatest legacy = ReposCreateReleaseRequestMakeLatest$legacy._();
 
 static const List<ReposCreateReleaseRequestMakeLatest> values = [$true, $false, legacy];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ReposCreateReleaseRequestMakeLatest$Unknown; } 
+@override String toString() => 'ReposCreateReleaseRequestMakeLatest($value)';
+
+ }
+@immutable final class ReposCreateReleaseRequestMakeLatest$$true extends ReposCreateReleaseRequestMakeLatest {const ReposCreateReleaseRequestMakeLatest$$true._();
+
+@override String get value => 'true';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposCreateReleaseRequestMakeLatest$$true;
+
+@override int get hashCode => 'true'.hashCode;
+
+ }
+@immutable final class ReposCreateReleaseRequestMakeLatest$$false extends ReposCreateReleaseRequestMakeLatest {const ReposCreateReleaseRequestMakeLatest$$false._();
+
+@override String get value => 'false';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposCreateReleaseRequestMakeLatest$$false;
+
+@override int get hashCode => 'false'.hashCode;
+
+ }
+@immutable final class ReposCreateReleaseRequestMakeLatest$legacy extends ReposCreateReleaseRequestMakeLatest {const ReposCreateReleaseRequestMakeLatest$legacy._();
+
+@override String get value => 'legacy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposCreateReleaseRequestMakeLatest$legacy;
+
+@override int get hashCode => 'legacy'.hashCode;
+
+ }
+@immutable final class ReposCreateReleaseRequestMakeLatest$Unknown extends ReposCreateReleaseRequestMakeLatest {const ReposCreateReleaseRequestMakeLatest$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ReposCreateReleaseRequestMakeLatest && other.value == value;
+    other is ReposCreateReleaseRequestMakeLatest$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ReposCreateReleaseRequestMakeLatest($value)';
 
  }

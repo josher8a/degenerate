@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventTranscriptionSessionCreated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_transcription_session_create_response.dart';/// The event type, must be `transcription_session.created`.
-@immutable final class RealtimeBetaServerEventTranscriptionSessionCreatedType {const RealtimeBetaServerEventTranscriptionSessionCreatedType._(this.value);
+sealed class RealtimeBetaServerEventTranscriptionSessionCreatedType {const RealtimeBetaServerEventTranscriptionSessionCreatedType();
 
 factory RealtimeBetaServerEventTranscriptionSessionCreatedType.fromJson(String json) { return switch (json) {
   'transcription_session.created' => transcriptionSessionCreated,
-  _ => RealtimeBetaServerEventTranscriptionSessionCreatedType._(json),
+  _ => RealtimeBetaServerEventTranscriptionSessionCreatedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventTranscriptionSessionCreatedType transcriptionSessionCreated = RealtimeBetaServerEventTranscriptionSessionCreatedType._('transcription_session.created');
+static const RealtimeBetaServerEventTranscriptionSessionCreatedType transcriptionSessionCreated = RealtimeBetaServerEventTranscriptionSessionCreatedType$transcriptionSessionCreated._();
 
 static const List<RealtimeBetaServerEventTranscriptionSessionCreatedType> values = [transcriptionSessionCreated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventTranscriptionSessionCreatedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventTranscriptionSessionCreatedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventTranscriptionSessionCreatedType$transcriptionSessionCreated extends RealtimeBetaServerEventTranscriptionSessionCreatedType {const RealtimeBetaServerEventTranscriptionSessionCreatedType$transcriptionSessionCreated._();
+
+@override String get value => 'transcription_session.created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventTranscriptionSessionCreatedType$transcriptionSessionCreated;
+
+@override int get hashCode => 'transcription_session.created'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventTranscriptionSessionCreatedType$Unknown extends RealtimeBetaServerEventTranscriptionSessionCreatedType {const RealtimeBetaServerEventTranscriptionSessionCreatedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventTranscriptionSessionCreatedType && other.value == value;
+    other is RealtimeBetaServerEventTranscriptionSessionCreatedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventTranscriptionSessionCreatedType($value)';
 
  }
 /// Returned when a transcription session is created.

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FirewallAsnConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `asn` when specifying an Autonomous System Number (ASN) in the rule.
-@immutable final class FirewallAsnConfigurationTarget {const FirewallAsnConfigurationTarget._(this.value);
+sealed class FirewallAsnConfigurationTarget {const FirewallAsnConfigurationTarget();
 
 factory FirewallAsnConfigurationTarget.fromJson(String json) { return switch (json) {
   'asn' => asn,
-  _ => FirewallAsnConfigurationTarget._(json),
+  _ => FirewallAsnConfigurationTarget$Unknown(json),
 }; }
 
-static const FirewallAsnConfigurationTarget asn = FirewallAsnConfigurationTarget._('asn');
+static const FirewallAsnConfigurationTarget asn = FirewallAsnConfigurationTarget$asn._();
 
 static const List<FirewallAsnConfigurationTarget> values = [asn];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FirewallAsnConfigurationTarget$Unknown; } 
+@override String toString() => 'FirewallAsnConfigurationTarget($value)';
+
+ }
+@immutable final class FirewallAsnConfigurationTarget$asn extends FirewallAsnConfigurationTarget {const FirewallAsnConfigurationTarget$asn._();
+
+@override String get value => 'asn';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallAsnConfigurationTarget$asn;
+
+@override int get hashCode => 'asn'.hashCode;
+
+ }
+@immutable final class FirewallAsnConfigurationTarget$Unknown extends FirewallAsnConfigurationTarget {const FirewallAsnConfigurationTarget$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FirewallAsnConfigurationTarget && other.value == value;
+    other is FirewallAsnConfigurationTarget$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FirewallAsnConfigurationTarget($value)';
 
  }
 @immutable final class FirewallAsnConfiguration {const FirewallAsnConfiguration({this.target, this.value, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DiscountSource (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source type of the discount.
-@immutable final class DiscountSourceType {const DiscountSourceType._(this.value);
+sealed class DiscountSourceType {const DiscountSourceType();
 
 factory DiscountSourceType.fromJson(String json) { return switch (json) {
   'coupon' => coupon,
-  _ => DiscountSourceType._(json),
+  _ => DiscountSourceType$Unknown(json),
 }; }
 
-static const DiscountSourceType coupon = DiscountSourceType._('coupon');
+static const DiscountSourceType coupon = DiscountSourceType$coupon._();
 
 static const List<DiscountSourceType> values = [coupon];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DiscountSourceType$Unknown; } 
+@override String toString() => 'DiscountSourceType($value)';
+
+ }
+@immutable final class DiscountSourceType$coupon extends DiscountSourceType {const DiscountSourceType$coupon._();
+
+@override String get value => 'coupon';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscountSourceType$coupon;
+
+@override int get hashCode => 'coupon'.hashCode;
+
+ }
+@immutable final class DiscountSourceType$Unknown extends DiscountSourceType {const DiscountSourceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DiscountSourceType && other.value == value;
+    other is DiscountSourceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DiscountSourceType($value)';
 
  }

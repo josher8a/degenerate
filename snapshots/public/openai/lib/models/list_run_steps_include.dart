@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ListRunStepsInclude[]
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListRunStepsInclude {const ListRunStepsInclude._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ListRunStepsInclude {const ListRunStepsInclude();
 
 factory ListRunStepsInclude.fromJson(String json) { return switch (json) {
   'step_details.tool_calls[*].file_search.results[*].content' => stepDetailsToolCallsFileSearchResultsContent,
-  _ => ListRunStepsInclude._(json),
+  _ => ListRunStepsInclude$Unknown(json),
 }; }
 
-static const ListRunStepsInclude stepDetailsToolCallsFileSearchResultsContent = ListRunStepsInclude._('step_details.tool_calls[*].file_search.results[*].content');
+static const ListRunStepsInclude stepDetailsToolCallsFileSearchResultsContent = ListRunStepsInclude$stepDetailsToolCallsFileSearchResultsContent._();
 
 static const List<ListRunStepsInclude> values = [stepDetailsToolCallsFileSearchResultsContent];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ListRunStepsInclude$Unknown; } 
+@override String toString() => 'ListRunStepsInclude($value)';
+
+ }
+@immutable final class ListRunStepsInclude$stepDetailsToolCallsFileSearchResultsContent extends ListRunStepsInclude {const ListRunStepsInclude$stepDetailsToolCallsFileSearchResultsContent._();
+
+@override String get value => 'step_details.tool_calls[*].file_search.results[*].content';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListRunStepsInclude$stepDetailsToolCallsFileSearchResultsContent;
+
+@override int get hashCode => 'step_details.tool_calls[*].file_search.results[*].content'.hashCode;
+
+ }
+@immutable final class ListRunStepsInclude$Unknown extends ListRunStepsInclude {const ListRunStepsInclude$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ListRunStepsInclude && other.value == value;
+    other is ListRunStepsInclude$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ListRunStepsInclude($value)';
 
  }

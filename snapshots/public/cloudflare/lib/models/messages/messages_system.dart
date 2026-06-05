@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > System)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';import 'package:pub_cloudflare/models/messages/developer_content_variant2.dart';@immutable final class SystemRole {const SystemRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';import 'package:pub_cloudflare/models/messages/developer_content_variant2.dart';sealed class SystemRole {const SystemRole();
 
 factory SystemRole.fromJson(String json) { return switch (json) {
   'system' => system,
-  _ => SystemRole._(json),
+  _ => SystemRole$Unknown(json),
 }; }
 
-static const SystemRole system = SystemRole._('system');
+static const SystemRole system = SystemRole$system._();
 
 static const List<SystemRole> values = [system];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SystemRole$Unknown; } 
+@override String toString() => 'SystemRole($value)';
+
+ }
+@immutable final class SystemRole$system extends SystemRole {const SystemRole$system._();
+
+@override String get value => 'system';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SystemRole$system;
+
+@override int get hashCode => 'system'.hashCode;
+
+ }
+@immutable final class SystemRole$Unknown extends SystemRole {const SystemRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SystemRole && other.value == value;
+    other is SystemRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SystemRole($value)';
 
  }
 @immutable final class MessagesSystem {const MessagesSystem({required this.content, required this.role, this.name, });

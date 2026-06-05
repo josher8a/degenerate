@@ -2,25 +2,24 @@
 // Source: #/components/schemas/StreamCaptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_language.dart';/// The status of a generated caption.
-@immutable final class StreamCaptionStatus {const StreamCaptionStatus._(this.value);
+sealed class StreamCaptionStatus {const StreamCaptionStatus();
 
 factory StreamCaptionStatus.fromJson(String json) { return switch (json) {
   'ready' => ready,
   'inprogress' => inprogress,
   'error' => error,
-  _ => StreamCaptionStatus._(json),
+  _ => StreamCaptionStatus$Unknown(json),
 }; }
 
-static const StreamCaptionStatus ready = StreamCaptionStatus._('ready');
+static const StreamCaptionStatus ready = StreamCaptionStatus$ready._();
 
-static const StreamCaptionStatus inprogress = StreamCaptionStatus._('inprogress');
+static const StreamCaptionStatus inprogress = StreamCaptionStatus$inprogress._();
 
-static const StreamCaptionStatus error = StreamCaptionStatus._('error');
+static const StreamCaptionStatus error = StreamCaptionStatus$error._();
 
 static const List<StreamCaptionStatus> values = [ready, inprogress, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StreamCaptionStatus$Unknown; } 
+@override String toString() => 'StreamCaptionStatus($value)';
+
+ }
+@immutable final class StreamCaptionStatus$ready extends StreamCaptionStatus {const StreamCaptionStatus$ready._();
+
+@override String get value => 'ready';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamCaptionStatus$ready;
+
+@override int get hashCode => 'ready'.hashCode;
+
+ }
+@immutable final class StreamCaptionStatus$inprogress extends StreamCaptionStatus {const StreamCaptionStatus$inprogress._();
+
+@override String get value => 'inprogress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamCaptionStatus$inprogress;
+
+@override int get hashCode => 'inprogress'.hashCode;
+
+ }
+@immutable final class StreamCaptionStatus$error extends StreamCaptionStatus {const StreamCaptionStatus$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamCaptionStatus$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class StreamCaptionStatus$Unknown extends StreamCaptionStatus {const StreamCaptionStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StreamCaptionStatus && other.value == value;
+    other is StreamCaptionStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StreamCaptionStatus($value)';
 
  }
 /// Whether the caption was generated via AI.

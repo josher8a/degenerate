@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostSourcesRequest (inline: Mandate)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/amount_details_shipping_param/amount_details_shipping_param_amount.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_sources_request/acceptance.dart';@immutable final class MandateInterval {const MandateInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/amount_details_shipping_param/amount_details_shipping_param_amount.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_sources_request/acceptance.dart';sealed class MandateInterval {const MandateInterval();
 
 factory MandateInterval.fromJson(String json) { return switch (json) {
   'one_time' => oneTime,
   'scheduled' => scheduled,
   'variable' => variable,
-  _ => MandateInterval._(json),
+  _ => MandateInterval$Unknown(json),
 }; }
 
-static const MandateInterval oneTime = MandateInterval._('one_time');
+static const MandateInterval oneTime = MandateInterval$oneTime._();
 
-static const MandateInterval scheduled = MandateInterval._('scheduled');
+static const MandateInterval scheduled = MandateInterval$scheduled._();
 
-static const MandateInterval variable = MandateInterval._('variable');
+static const MandateInterval variable = MandateInterval$variable._();
 
 static const List<MandateInterval> values = [oneTime, scheduled, variable];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,16 +28,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MandateInterval && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MandateInterval$Unknown; } 
 @override String toString() => 'MandateInterval($value)';
 
  }
-@immutable final class NotificationMethod {const NotificationMethod._(this.value);
+@immutable final class MandateInterval$oneTime extends MandateInterval {const MandateInterval$oneTime._();
+
+@override String get value => 'one_time';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandateInterval$oneTime;
+
+@override int get hashCode => 'one_time'.hashCode;
+
+ }
+@immutable final class MandateInterval$scheduled extends MandateInterval {const MandateInterval$scheduled._();
+
+@override String get value => 'scheduled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandateInterval$scheduled;
+
+@override int get hashCode => 'scheduled'.hashCode;
+
+ }
+@immutable final class MandateInterval$variable extends MandateInterval {const MandateInterval$variable._();
+
+@override String get value => 'variable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandateInterval$variable;
+
+@override int get hashCode => 'variable'.hashCode;
+
+ }
+@immutable final class MandateInterval$Unknown extends MandateInterval {const MandateInterval$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MandateInterval$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class NotificationMethod {const NotificationMethod();
 
 factory NotificationMethod.fromJson(String json) { return switch (json) {
   'deprecated_none' => deprecatedNone,
@@ -46,23 +77,22 @@ factory NotificationMethod.fromJson(String json) { return switch (json) {
   'manual' => manual,
   'none' => none,
   'stripe_email' => stripeEmail,
-  _ => NotificationMethod._(json),
+  _ => NotificationMethod$Unknown(json),
 }; }
 
-static const NotificationMethod deprecatedNone = NotificationMethod._('deprecated_none');
+static const NotificationMethod deprecatedNone = NotificationMethod$deprecatedNone._();
 
-static const NotificationMethod email = NotificationMethod._('email');
+static const NotificationMethod email = NotificationMethod$email._();
 
-static const NotificationMethod manual = NotificationMethod._('manual');
+static const NotificationMethod manual = NotificationMethod$manual._();
 
-static const NotificationMethod none = NotificationMethod._('none');
+static const NotificationMethod none = NotificationMethod$none._();
 
-static const NotificationMethod stripeEmail = NotificationMethod._('stripe_email');
+static const NotificationMethod stripeEmail = NotificationMethod$stripeEmail._();
 
 static const List<NotificationMethod> values = [deprecatedNone, email, manual, none, stripeEmail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -74,13 +104,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is NotificationMethod$Unknown; } 
+@override String toString() => 'NotificationMethod($value)';
+
+ }
+@immutable final class NotificationMethod$deprecatedNone extends NotificationMethod {const NotificationMethod$deprecatedNone._();
+
+@override String get value => 'deprecated_none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NotificationMethod$deprecatedNone;
+
+@override int get hashCode => 'deprecated_none'.hashCode;
+
+ }
+@immutable final class NotificationMethod$email extends NotificationMethod {const NotificationMethod$email._();
+
+@override String get value => 'email';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NotificationMethod$email;
+
+@override int get hashCode => 'email'.hashCode;
+
+ }
+@immutable final class NotificationMethod$manual extends NotificationMethod {const NotificationMethod$manual._();
+
+@override String get value => 'manual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NotificationMethod$manual;
+
+@override int get hashCode => 'manual'.hashCode;
+
+ }
+@immutable final class NotificationMethod$none extends NotificationMethod {const NotificationMethod$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NotificationMethod$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class NotificationMethod$stripeEmail extends NotificationMethod {const NotificationMethod$stripeEmail._();
+
+@override String get value => 'stripe_email';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NotificationMethod$stripeEmail;
+
+@override int get hashCode => 'stripe_email'.hashCode;
+
+ }
+@immutable final class NotificationMethod$Unknown extends NotificationMethod {const NotificationMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is NotificationMethod && other.value == value;
+    other is NotificationMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'NotificationMethod($value)';
 
  }
 /// Information about a mandate possibility attached to a source object (generally for bank debits) as well as its acceptance status.

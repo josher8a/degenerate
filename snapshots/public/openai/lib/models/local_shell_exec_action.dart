@@ -2,19 +2,18 @@
 // Source: #/components/schemas/LocalShellExecAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the local shell action. Always `exec`.
-@immutable final class LocalShellExecActionType {const LocalShellExecActionType._(this.value);
+sealed class LocalShellExecActionType {const LocalShellExecActionType();
 
 factory LocalShellExecActionType.fromJson(String json) { return switch (json) {
   'exec' => exec,
-  _ => LocalShellExecActionType._(json),
+  _ => LocalShellExecActionType$Unknown(json),
 }; }
 
-static const LocalShellExecActionType exec = LocalShellExecActionType._('exec');
+static const LocalShellExecActionType exec = LocalShellExecActionType$exec._();
 
 static const List<LocalShellExecActionType> values = [exec];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LocalShellExecActionType$Unknown; } 
+@override String toString() => 'LocalShellExecActionType($value)';
+
+ }
+@immutable final class LocalShellExecActionType$exec extends LocalShellExecActionType {const LocalShellExecActionType$exec._();
+
+@override String get value => 'exec';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LocalShellExecActionType$exec;
+
+@override int get hashCode => 'exec'.hashCode;
+
+ }
+@immutable final class LocalShellExecActionType$Unknown extends LocalShellExecActionType {const LocalShellExecActionType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LocalShellExecActionType && other.value == value;
+    other is LocalShellExecActionType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LocalShellExecActionType($value)';
 
  }
 /// Execute a shell command on the server.

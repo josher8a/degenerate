@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TypedObject12 (inline: Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TypedObject12Type {const TypedObject12Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class TypedObject12Type {const TypedObject12Type();
 
 factory TypedObject12Type.fromJson(String json) { return switch (json) {
   'obj1' => obj1,
-  _ => TypedObject12Type._(json),
+  _ => TypedObject12Type$Unknown(json),
 }; }
 
-static const TypedObject12Type obj1 = TypedObject12Type._('obj1');
+static const TypedObject12Type obj1 = TypedObject12Type$obj1._();
 
 static const List<TypedObject12Type> values = [obj1];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TypedObject12Type$Unknown; } 
+@override String toString() => 'TypedObject12Type($value)';
+
+ }
+@immutable final class TypedObject12Type$obj1 extends TypedObject12Type {const TypedObject12Type$obj1._();
+
+@override String get value => 'obj1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TypedObject12Type$obj1;
+
+@override int get hashCode => 'obj1'.hashCode;
+
+ }
+@immutable final class TypedObject12Type$Unknown extends TypedObject12Type {const TypedObject12Type$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TypedObject12Type && other.value == value;
+    other is TypedObject12Type$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TypedObject12Type($value)';
 
  }

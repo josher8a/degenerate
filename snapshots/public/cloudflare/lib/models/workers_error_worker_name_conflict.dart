@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WorkersErrorWorkerNameConflict
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that a Worker with this name already exists.
-@immutable final class WorkersErrorWorkerNameConflictCode {const WorkersErrorWorkerNameConflictCode._(this.value);
+sealed class WorkersErrorWorkerNameConflictCode {const WorkersErrorWorkerNameConflictCode();
 
 factory WorkersErrorWorkerNameConflictCode.fromJson(int json) { return switch (json) {
   10040 => $10040,
-  _ => WorkersErrorWorkerNameConflictCode._(json),
+  _ => WorkersErrorWorkerNameConflictCode$Unknown(json),
 }; }
 
-static const WorkersErrorWorkerNameConflictCode $10040 = WorkersErrorWorkerNameConflictCode._(10040);
+static const WorkersErrorWorkerNameConflictCode $10040 = WorkersErrorWorkerNameConflictCode$$10040._();
 
 static const List<WorkersErrorWorkerNameConflictCode> values = [$10040];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersErrorWorkerNameConflictCode$Unknown; } 
+@override String toString() => 'WorkersErrorWorkerNameConflictCode($value)';
+
+ }
+@immutable final class WorkersErrorWorkerNameConflictCode$$10040 extends WorkersErrorWorkerNameConflictCode {const WorkersErrorWorkerNameConflictCode$$10040._();
+
+@override int get value => 10040;
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersErrorWorkerNameConflictCode$$10040;
+
+@override int get hashCode => 10040.hashCode;
+
+ }
+@immutable final class WorkersErrorWorkerNameConflictCode$Unknown extends WorkersErrorWorkerNameConflictCode {const WorkersErrorWorkerNameConflictCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersErrorWorkerNameConflictCode && other.value == value;
+    other is WorkersErrorWorkerNameConflictCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersErrorWorkerNameConflictCode($value)';
 
  }
 @immutable final class WorkersErrorWorkerNameConflict {const WorkersErrorWorkerNameConflict({required this.code, required this.message, });

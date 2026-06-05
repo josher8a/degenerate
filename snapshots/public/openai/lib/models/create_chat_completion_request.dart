@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateChatCompletionRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_allowed_tools_choice.dart';import 'package:pub_openai/models/chat_completion_function_call_option.dart';import 'package:pub_openai/models/chat_completion_functions.dart';import 'package:pub_openai/models/chat_completion_named_tool_choice.dart';import 'package:pub_openai/models/chat_completion_named_tool_choice_custom.dart';import 'package:pub_openai/models/chat_completion_request_message.dart';import 'package:pub_openai/models/chat_completion_stream_options.dart';import 'package:pub_openai/models/chat_completion_tool.dart';import 'package:pub_openai/models/chat_completion_tool_choice_option.dart';import 'package:pub_openai/models/create_chat_completion_request/create_chat_completion_request_audio.dart';import 'package:pub_openai/models/create_chat_completion_request/create_chat_completion_request_function_call.dart';import 'package:pub_openai/models/create_chat_completion_request/create_chat_completion_request_response_format.dart';import 'package:pub_openai/models/create_chat_completion_request/create_chat_completion_request_tools.dart';import 'package:pub_openai/models/create_chat_completion_request/web_search_options.dart';import 'package:pub_openai/models/custom_tool_chat_completions.dart';import 'package:pub_openai/models/model_ids_shared.dart';import 'package:pub_openai/models/parallel_tool_calls.dart';import 'package:pub_openai/models/prediction_content.dart';import 'package:pub_openai/models/reasoning_effort.dart';import 'package:pub_openai/models/stop_configuration.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/verbosity.dart';@immutable final class ResponseModalities2 {const ResponseModalities2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_allowed_tools_choice.dart';import 'package:pub_openai/models/chat_completion_function_call_option.dart';import 'package:pub_openai/models/chat_completion_functions.dart';import 'package:pub_openai/models/chat_completion_named_tool_choice.dart';import 'package:pub_openai/models/chat_completion_named_tool_choice_custom.dart';import 'package:pub_openai/models/chat_completion_request_message.dart';import 'package:pub_openai/models/chat_completion_stream_options.dart';import 'package:pub_openai/models/chat_completion_tool.dart';import 'package:pub_openai/models/chat_completion_tool_choice_option.dart';import 'package:pub_openai/models/create_chat_completion_request/create_chat_completion_request_audio.dart';import 'package:pub_openai/models/create_chat_completion_request/create_chat_completion_request_function_call.dart';import 'package:pub_openai/models/create_chat_completion_request/create_chat_completion_request_response_format.dart';import 'package:pub_openai/models/create_chat_completion_request/create_chat_completion_request_tools.dart';import 'package:pub_openai/models/create_chat_completion_request/web_search_options.dart';import 'package:pub_openai/models/custom_tool_chat_completions.dart';import 'package:pub_openai/models/model_ids_shared.dart';import 'package:pub_openai/models/parallel_tool_calls.dart';import 'package:pub_openai/models/prediction_content.dart';import 'package:pub_openai/models/reasoning_effort.dart';import 'package:pub_openai/models/stop_configuration.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/verbosity.dart';sealed class ResponseModalities2 {const ResponseModalities2();
 
 factory ResponseModalities2.fromJson(String json) { return switch (json) {
   'text' => text,
   'audio' => audio,
-  _ => ResponseModalities2._(json),
+  _ => ResponseModalities2$Unknown(json),
 }; }
 
-static const ResponseModalities2 text = ResponseModalities2._('text');
+static const ResponseModalities2 text = ResponseModalities2$text._();
 
-static const ResponseModalities2 audio = ResponseModalities2._('audio');
+static const ResponseModalities2 audio = ResponseModalities2$audio._();
 
 static const List<ResponseModalities2> values = [text, audio];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ResponseModalities2$Unknown; } 
+@override String toString() => 'ResponseModalities2($value)';
+
+ }
+@immutable final class ResponseModalities2$text extends ResponseModalities2 {const ResponseModalities2$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseModalities2$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class ResponseModalities2$audio extends ResponseModalities2 {const ResponseModalities2$audio._();
+
+@override String get value => 'audio';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseModalities2$audio;
+
+@override int get hashCode => 'audio'.hashCode;
+
+ }
+@immutable final class ResponseModalities2$Unknown extends ResponseModalities2 {const ResponseModalities2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ResponseModalities2 && other.value == value;
+    other is ResponseModalities2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ResponseModalities2($value)';
 
  }
 @immutable final class CreateChatCompletionRequest {const CreateChatCompletionRequest({required this.messages, required this.model, this.modalities, this.verbosity, this.reasoningEffort, this.maxCompletionTokens, this.frequencyPenalty = 0.0, this.presencePenalty = 0.0, this.webSearchOptions, this.topLogprobs, this.responseFormat, this.audio, this.store = false, this.stream = false, this.stop, this.logitBias, this.logprobs = false, this.maxTokens, this.n = 1, this.prediction, this.seed, this.streamOptions, this.tools, this.toolChoice, this.parallelToolCalls, this.functionCall, this.functions, });

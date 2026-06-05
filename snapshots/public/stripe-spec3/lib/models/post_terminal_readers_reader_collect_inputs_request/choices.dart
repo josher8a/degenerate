@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostTerminalReadersReaderCollectInputsRequest (inline: Inputs > Selection > Choices)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChoicesStyle {const ChoicesStyle._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ChoicesStyle {const ChoicesStyle();
 
 factory ChoicesStyle.fromJson(String json) { return switch (json) {
   'primary' => primary,
   'secondary' => secondary,
-  _ => ChoicesStyle._(json),
+  _ => ChoicesStyle$Unknown(json),
 }; }
 
-static const ChoicesStyle primary = ChoicesStyle._('primary');
+static const ChoicesStyle primary = ChoicesStyle$primary._();
 
-static const ChoicesStyle secondary = ChoicesStyle._('secondary');
+static const ChoicesStyle secondary = ChoicesStyle$secondary._();
 
 static const List<ChoicesStyle> values = [primary, secondary];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ChoicesStyle$Unknown; } 
+@override String toString() => 'ChoicesStyle($value)';
+
+ }
+@immutable final class ChoicesStyle$primary extends ChoicesStyle {const ChoicesStyle$primary._();
+
+@override String get value => 'primary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChoicesStyle$primary;
+
+@override int get hashCode => 'primary'.hashCode;
+
+ }
+@immutable final class ChoicesStyle$secondary extends ChoicesStyle {const ChoicesStyle$secondary._();
+
+@override String get value => 'secondary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChoicesStyle$secondary;
+
+@override int get hashCode => 'secondary'.hashCode;
+
+ }
+@immutable final class ChoicesStyle$Unknown extends ChoicesStyle {const ChoicesStyle$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ChoicesStyle && other.value == value;
+    other is ChoicesStyle$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ChoicesStyle($value)';
 
  }
 @immutable final class Choices {const Choices({required this.id, required this.text, this.style, });

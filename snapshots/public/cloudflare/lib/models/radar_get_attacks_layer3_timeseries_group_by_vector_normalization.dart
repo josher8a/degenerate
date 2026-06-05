@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization {const RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization._(this.value);
+sealed class RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization {const RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization();
 
 factory RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
-  _ => RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization._(json),
+  _ => RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization percentage = RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization._('PERCENTAGE');
+static const RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization percentage = RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization$percentage._();
 
-static const RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization min0Max = RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization._('MIN0_MAX');
+static const RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization min0Max = RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization$min0Max._();
 
 static const List<RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization> values = [percentage, min0Max];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization$percentage extends RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization {const RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization$percentage._();
+
+@override String get value => 'PERCENTAGE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization$percentage;
+
+@override int get hashCode => 'PERCENTAGE'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization$min0Max extends RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization {const RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization$min0Max._();
+
+@override String get value => 'MIN0_MAX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization$min0Max;
+
+@override int get hashCode => 'MIN0_MAX'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization$Unknown extends RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization {const RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization && other.value == value;
+    other is RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByVectorNormalization($value)';
 
  }

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Message
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message/message_content.dart';@immutable final class MessageStatus {const MessageStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message/message_content.dart';sealed class MessageStatus {const MessageStatus();
 
 factory MessageStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
-  _ => MessageStatus._(json),
+  _ => MessageStatus$Unknown(json),
 }; }
 
-static const MessageStatus inProgress = MessageStatus._('in_progress');
+static const MessageStatus inProgress = MessageStatus$inProgress._();
 
-static const MessageStatus completed = MessageStatus._('completed');
+static const MessageStatus completed = MessageStatus$completed._();
 
-static const MessageStatus incomplete = MessageStatus._('incomplete');
+static const MessageStatus incomplete = MessageStatus$incomplete._();
 
 static const List<MessageStatus> values = [inProgress, completed, incomplete];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,16 +28,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MessageStatus$Unknown; } 
 @override String toString() => 'MessageStatus($value)';
 
  }
-@immutable final class MessageRole {const MessageRole._(this.value);
+@immutable final class MessageStatus$inProgress extends MessageStatus {const MessageStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class MessageStatus$completed extends MessageStatus {const MessageStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class MessageStatus$incomplete extends MessageStatus {const MessageStatus$incomplete._();
+
+@override String get value => 'incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageStatus$incomplete;
+
+@override int get hashCode => 'incomplete'.hashCode;
+
+ }
+@immutable final class MessageStatus$Unknown extends MessageStatus {const MessageStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class MessageRole {const MessageRole();
 
 factory MessageRole.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
@@ -49,29 +80,28 @@ factory MessageRole.fromJson(String json) { return switch (json) {
   'discriminator' => discriminator,
   'developer' => developer,
   'tool' => tool,
-  _ => MessageRole._(json),
+  _ => MessageRole$Unknown(json),
 }; }
 
-static const MessageRole unknown = MessageRole._('unknown');
+static const MessageRole unknown = MessageRole$unknown._();
 
-static const MessageRole user = MessageRole._('user');
+static const MessageRole user = MessageRole$user._();
 
-static const MessageRole assistant = MessageRole._('assistant');
+static const MessageRole assistant = MessageRole$assistant._();
 
-static const MessageRole system = MessageRole._('system');
+static const MessageRole system = MessageRole$system._();
 
-static const MessageRole critic = MessageRole._('critic');
+static const MessageRole critic = MessageRole$critic._();
 
-static const MessageRole discriminator = MessageRole._('discriminator');
+static const MessageRole discriminator = MessageRole$discriminator._();
 
-static const MessageRole developer = MessageRole._('developer');
+static const MessageRole developer = MessageRole$developer._();
 
-static const MessageRole tool = MessageRole._('tool');
+static const MessageRole tool = MessageRole$tool._();
 
 static const List<MessageRole> values = [unknown, user, assistant, system, critic, discriminator, developer, tool];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -86,13 +116,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MessageRole$Unknown; } 
+@override String toString() => 'MessageRole($value)';
+
+ }
+@immutable final class MessageRole$unknown extends MessageRole {const MessageRole$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageRole$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class MessageRole$user extends MessageRole {const MessageRole$user._();
+
+@override String get value => 'user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageRole$user;
+
+@override int get hashCode => 'user'.hashCode;
+
+ }
+@immutable final class MessageRole$assistant extends MessageRole {const MessageRole$assistant._();
+
+@override String get value => 'assistant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageRole$assistant;
+
+@override int get hashCode => 'assistant'.hashCode;
+
+ }
+@immutable final class MessageRole$system extends MessageRole {const MessageRole$system._();
+
+@override String get value => 'system';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageRole$system;
+
+@override int get hashCode => 'system'.hashCode;
+
+ }
+@immutable final class MessageRole$critic extends MessageRole {const MessageRole$critic._();
+
+@override String get value => 'critic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageRole$critic;
+
+@override int get hashCode => 'critic'.hashCode;
+
+ }
+@immutable final class MessageRole$discriminator extends MessageRole {const MessageRole$discriminator._();
+
+@override String get value => 'discriminator';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageRole$discriminator;
+
+@override int get hashCode => 'discriminator'.hashCode;
+
+ }
+@immutable final class MessageRole$developer extends MessageRole {const MessageRole$developer._();
+
+@override String get value => 'developer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageRole$developer;
+
+@override int get hashCode => 'developer'.hashCode;
+
+ }
+@immutable final class MessageRole$tool extends MessageRole {const MessageRole$tool._();
+
+@override String get value => 'tool';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageRole$tool;
+
+@override int get hashCode => 'tool'.hashCode;
+
+ }
+@immutable final class MessageRole$Unknown extends MessageRole {const MessageRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageRole && other.value == value;
+    other is MessageRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MessageRole($value)';
 
  }
 /// A message to or from the model.

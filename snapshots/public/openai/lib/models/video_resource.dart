@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/VideoResource
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/error2.dart';import 'package:pub_openai/models/video_model.dart';import 'package:pub_openai/models/video_size.dart';@immutable final class VideoStatus {const VideoStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/error2.dart';import 'package:pub_openai/models/video_model.dart';import 'package:pub_openai/models/video_size.dart';sealed class VideoStatus {const VideoStatus();
 
 factory VideoStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
   'in_progress' => inProgress,
   'completed' => completed,
   'failed' => failed,
-  _ => VideoStatus._(json),
+  _ => VideoStatus$Unknown(json),
 }; }
 
-static const VideoStatus queued = VideoStatus._('queued');
+static const VideoStatus queued = VideoStatus$queued._();
 
-static const VideoStatus inProgress = VideoStatus._('in_progress');
+static const VideoStatus inProgress = VideoStatus$inProgress._();
 
-static const VideoStatus completed = VideoStatus._('completed');
+static const VideoStatus completed = VideoStatus$completed._();
 
-static const VideoStatus failed = VideoStatus._('failed');
+static const VideoStatus failed = VideoStatus$failed._();
 
 static const List<VideoStatus> values = [queued, inProgress, completed, failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,29 +32,69 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is VideoStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is VideoStatus$Unknown; } 
 @override String toString() => 'VideoStatus($value)';
 
  }
+@immutable final class VideoStatus$queued extends VideoStatus {const VideoStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VideoStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class VideoStatus$inProgress extends VideoStatus {const VideoStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VideoStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class VideoStatus$completed extends VideoStatus {const VideoStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VideoStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class VideoStatus$failed extends VideoStatus {const VideoStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VideoStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class VideoStatus$Unknown extends VideoStatus {const VideoStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VideoStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The object type, which is always `video`.
-@immutable final class VideoResourceObject {const VideoResourceObject._(this.value);
+sealed class VideoResourceObject {const VideoResourceObject();
 
 factory VideoResourceObject.fromJson(String json) { return switch (json) {
   'video' => video,
-  _ => VideoResourceObject._(json),
+  _ => VideoResourceObject$Unknown(json),
 }; }
 
-static const VideoResourceObject video = VideoResourceObject._('video');
+static const VideoResourceObject video = VideoResourceObject$video._();
 
 static const List<VideoResourceObject> values = [video];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -63,13 +102,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is VideoResourceObject$Unknown; } 
+@override String toString() => 'VideoResourceObject($value)';
+
+ }
+@immutable final class VideoResourceObject$video extends VideoResourceObject {const VideoResourceObject$video._();
+
+@override String get value => 'video';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VideoResourceObject$video;
+
+@override int get hashCode => 'video'.hashCode;
+
+ }
+@immutable final class VideoResourceObject$Unknown extends VideoResourceObject {const VideoResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is VideoResourceObject && other.value == value;
+    other is VideoResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'VideoResourceObject($value)';
 
  }
 /// Structured information describing a generated video job.

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhooksIssue2 (inline: ActiveLockReason)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActiveLockReason {const ActiveLockReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ActiveLockReason {const ActiveLockReason();
 
 factory ActiveLockReason.fromJson(String json) { return switch (json) {
   'resolved' => resolved,
@@ -9,23 +9,22 @@ factory ActiveLockReason.fromJson(String json) { return switch (json) {
   'too heated' => tooHeated,
   'spam' => spam,
   'null' => $null,
-  _ => ActiveLockReason._(json),
+  _ => ActiveLockReason$Unknown(json),
 }; }
 
-static const ActiveLockReason resolved = ActiveLockReason._('resolved');
+static const ActiveLockReason resolved = ActiveLockReason$resolved._();
 
-static const ActiveLockReason offTopic = ActiveLockReason._('off-topic');
+static const ActiveLockReason offTopic = ActiveLockReason$offTopic._();
 
-static const ActiveLockReason tooHeated = ActiveLockReason._('too heated');
+static const ActiveLockReason tooHeated = ActiveLockReason$tooHeated._();
 
-static const ActiveLockReason spam = ActiveLockReason._('spam');
+static const ActiveLockReason spam = ActiveLockReason$spam._();
 
-static const ActiveLockReason $null = ActiveLockReason._('null');
+static const ActiveLockReason $null = ActiveLockReason$$null._();
 
 static const List<ActiveLockReason> values = [resolved, offTopic, tooHeated, spam, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,12 +36,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ActiveLockReason$Unknown; } 
+@override String toString() => 'ActiveLockReason($value)';
+
+ }
+@immutable final class ActiveLockReason$resolved extends ActiveLockReason {const ActiveLockReason$resolved._();
+
+@override String get value => 'resolved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveLockReason$resolved;
+
+@override int get hashCode => 'resolved'.hashCode;
+
+ }
+@immutable final class ActiveLockReason$offTopic extends ActiveLockReason {const ActiveLockReason$offTopic._();
+
+@override String get value => 'off-topic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveLockReason$offTopic;
+
+@override int get hashCode => 'off-topic'.hashCode;
+
+ }
+@immutable final class ActiveLockReason$tooHeated extends ActiveLockReason {const ActiveLockReason$tooHeated._();
+
+@override String get value => 'too heated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveLockReason$tooHeated;
+
+@override int get hashCode => 'too heated'.hashCode;
+
+ }
+@immutable final class ActiveLockReason$spam extends ActiveLockReason {const ActiveLockReason$spam._();
+
+@override String get value => 'spam';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveLockReason$spam;
+
+@override int get hashCode => 'spam'.hashCode;
+
+ }
+@immutable final class ActiveLockReason$$null extends ActiveLockReason {const ActiveLockReason$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveLockReason$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class ActiveLockReason$Unknown extends ActiveLockReason {const ActiveLockReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ActiveLockReason && other.value == value;
+    other is ActiveLockReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ActiveLockReason($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TaxCalculationLineItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax/billing_bill_resource_invoicing_taxes_tax_tax_behavior.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_line_item_tax_breakdown.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TaxCalculationLineItemObject {const TaxCalculationLineItemObject._(this.value);
+sealed class TaxCalculationLineItemObject {const TaxCalculationLineItemObject();
 
 factory TaxCalculationLineItemObject.fromJson(String json) { return switch (json) {
   'tax.calculation_line_item' => taxCalculationLineItem,
-  _ => TaxCalculationLineItemObject._(json),
+  _ => TaxCalculationLineItemObject$Unknown(json),
 }; }
 
-static const TaxCalculationLineItemObject taxCalculationLineItem = TaxCalculationLineItemObject._('tax.calculation_line_item');
+static const TaxCalculationLineItemObject taxCalculationLineItem = TaxCalculationLineItemObject$taxCalculationLineItem._();
 
 static const List<TaxCalculationLineItemObject> values = [taxCalculationLineItem];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TaxCalculationLineItemObject$Unknown; } 
+@override String toString() => 'TaxCalculationLineItemObject($value)';
+
+ }
+@immutable final class TaxCalculationLineItemObject$taxCalculationLineItem extends TaxCalculationLineItemObject {const TaxCalculationLineItemObject$taxCalculationLineItem._();
+
+@override String get value => 'tax.calculation_line_item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxCalculationLineItemObject$taxCalculationLineItem;
+
+@override int get hashCode => 'tax.calculation_line_item'.hashCode;
+
+ }
+@immutable final class TaxCalculationLineItemObject$Unknown extends TaxCalculationLineItemObject {const TaxCalculationLineItemObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxCalculationLineItemObject && other.value == value;
+    other is TaxCalculationLineItemObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TaxCalculationLineItemObject($value)';
 
  }
 /// 

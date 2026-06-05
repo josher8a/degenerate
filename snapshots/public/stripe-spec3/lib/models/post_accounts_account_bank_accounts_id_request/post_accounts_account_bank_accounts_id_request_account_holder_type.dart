@@ -2,25 +2,24 @@
 // Source: #/components/schemas/PostAccountsAccountBankAccountsIdRequest (inline: AccountHolderType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of entity that holds the account. This can be either `individual` or `company`.
-@immutable final class PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType._(this.value);
+sealed class PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType();
 
 factory PostAccountsAccountBankAccountsIdRequestAccountHolderType.fromJson(String json) { return switch (json) {
   '' => $empty,
   'company' => company,
   'individual' => individual,
-  _ => PostAccountsAccountBankAccountsIdRequestAccountHolderType._(json),
+  _ => PostAccountsAccountBankAccountsIdRequestAccountHolderType$Unknown(json),
 }; }
 
-static const PostAccountsAccountBankAccountsIdRequestAccountHolderType $empty = PostAccountsAccountBankAccountsIdRequestAccountHolderType._('');
+static const PostAccountsAccountBankAccountsIdRequestAccountHolderType $empty = PostAccountsAccountBankAccountsIdRequestAccountHolderType$$empty._();
 
-static const PostAccountsAccountBankAccountsIdRequestAccountHolderType company = PostAccountsAccountBankAccountsIdRequestAccountHolderType._('company');
+static const PostAccountsAccountBankAccountsIdRequestAccountHolderType company = PostAccountsAccountBankAccountsIdRequestAccountHolderType$company._();
 
-static const PostAccountsAccountBankAccountsIdRequestAccountHolderType individual = PostAccountsAccountBankAccountsIdRequestAccountHolderType._('individual');
+static const PostAccountsAccountBankAccountsIdRequestAccountHolderType individual = PostAccountsAccountBankAccountsIdRequestAccountHolderType$individual._();
 
 static const List<PostAccountsAccountBankAccountsIdRequestAccountHolderType> values = [$empty, company, individual];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostAccountsAccountBankAccountsIdRequestAccountHolderType$Unknown; } 
+@override String toString() => 'PostAccountsAccountBankAccountsIdRequestAccountHolderType($value)';
+
+ }
+@immutable final class PostAccountsAccountBankAccountsIdRequestAccountHolderType$$empty extends PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType$$empty._();
+
+@override String get value => '';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostAccountsAccountBankAccountsIdRequestAccountHolderType$$empty;
+
+@override int get hashCode => ''.hashCode;
+
+ }
+@immutable final class PostAccountsAccountBankAccountsIdRequestAccountHolderType$company extends PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType$company._();
+
+@override String get value => 'company';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostAccountsAccountBankAccountsIdRequestAccountHolderType$company;
+
+@override int get hashCode => 'company'.hashCode;
+
+ }
+@immutable final class PostAccountsAccountBankAccountsIdRequestAccountHolderType$individual extends PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType$individual._();
+
+@override String get value => 'individual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostAccountsAccountBankAccountsIdRequestAccountHolderType$individual;
+
+@override int get hashCode => 'individual'.hashCode;
+
+ }
+@immutable final class PostAccountsAccountBankAccountsIdRequestAccountHolderType$Unknown extends PostAccountsAccountBankAccountsIdRequestAccountHolderType {const PostAccountsAccountBankAccountsIdRequestAccountHolderType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostAccountsAccountBankAccountsIdRequestAccountHolderType && other.value == value;
+    other is PostAccountsAccountBankAccountsIdRequestAccountHolderType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostAccountsAccountBankAccountsIdRequestAccountHolderType($value)';
 
  }

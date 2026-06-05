@@ -6,22 +6,21 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///   - `"none"` - skip running schema validation entirely for the request
 ///   - `null` - clears any existing override
 /// 
-@immutable final class ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction {const ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction._(this.value);
+sealed class ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction {const ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction();
 
 factory ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction.fromJson(String json) { return switch (json) {
   'none' => none,
   'null' => $null,
-  _ => ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction._(json),
+  _ => ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction$Unknown(json),
 }; }
 
-static const ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction none = ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction._('none');
+static const ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction none = ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction$none._();
 
-static const ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction $null = ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction._('null');
+static const ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction $null = ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction$$null._();
 
 static const List<ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction> values = [none, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction$Unknown; } 
+@override String toString() => 'ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction($value)';
+
+ }
+@immutable final class ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction$none extends ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction {const ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction$$null extends ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction {const ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction$Unknown extends ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction {const ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction && other.value == value;
+    other is ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShieldGlobalSettingChangeBaseValidationOverrideMitigationAction($value)';
 
  }
 @immutable final class ShieldGlobalSettingChangeBase {const ShieldGlobalSettingChangeBase({this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });

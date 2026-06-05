@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ProjectServiceAccountCreateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/key4.dart';import 'package:pub_openai/models/project_service_account_create_response/project_service_account_create_response_object.dart';/// Service accounts can only have one role of type `member`
-@immutable final class ProjectServiceAccountCreateResponseRole {const ProjectServiceAccountCreateResponseRole._(this.value);
+sealed class ProjectServiceAccountCreateResponseRole {const ProjectServiceAccountCreateResponseRole();
 
 factory ProjectServiceAccountCreateResponseRole.fromJson(String json) { return switch (json) {
   'member' => member,
-  _ => ProjectServiceAccountCreateResponseRole._(json),
+  _ => ProjectServiceAccountCreateResponseRole$Unknown(json),
 }; }
 
-static const ProjectServiceAccountCreateResponseRole member = ProjectServiceAccountCreateResponseRole._('member');
+static const ProjectServiceAccountCreateResponseRole member = ProjectServiceAccountCreateResponseRole$member._();
 
 static const List<ProjectServiceAccountCreateResponseRole> values = [member];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ProjectServiceAccountCreateResponseRole$Unknown; } 
+@override String toString() => 'ProjectServiceAccountCreateResponseRole($value)';
+
+ }
+@immutable final class ProjectServiceAccountCreateResponseRole$member extends ProjectServiceAccountCreateResponseRole {const ProjectServiceAccountCreateResponseRole$member._();
+
+@override String get value => 'member';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ProjectServiceAccountCreateResponseRole$member;
+
+@override int get hashCode => 'member'.hashCode;
+
+ }
+@immutable final class ProjectServiceAccountCreateResponseRole$Unknown extends ProjectServiceAccountCreateResponseRole {const ProjectServiceAccountCreateResponseRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ProjectServiceAccountCreateResponseRole && other.value == value;
+    other is ProjectServiceAccountCreateResponseRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ProjectServiceAccountCreateResponseRole($value)';
 
  }
 @immutable final class ProjectServiceAccountCreateResponse {const ProjectServiceAccountCreateResponse({required this.object, required this.id, required this.name, required this.role, required this.createdAt, required this.apiKey, });

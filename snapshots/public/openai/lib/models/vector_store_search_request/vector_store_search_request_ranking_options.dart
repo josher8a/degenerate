@@ -2,25 +2,24 @@
 // Source: #/components/schemas/VectorStoreSearchRequest (inline: RankingOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable re-ranking; set to `none` to disable, which can help reduce latency.
-@immutable final class Ranker {const Ranker._(this.value);
+sealed class Ranker {const Ranker();
 
 factory Ranker.fromJson(String json) { return switch (json) {
   'none' => none,
   'auto' => auto,
   'default-2024-11-15' => default20241115,
-  _ => Ranker._(json),
+  _ => Ranker$Unknown(json),
 }; }
 
-static const Ranker none = Ranker._('none');
+static const Ranker none = Ranker$none._();
 
-static const Ranker auto = Ranker._('auto');
+static const Ranker auto = Ranker$auto._();
 
-static const Ranker default20241115 = Ranker._('default-2024-11-15');
+static const Ranker default20241115 = Ranker$default20241115._();
 
 static const List<Ranker> values = [none, auto, default20241115];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Ranker$Unknown; } 
+@override String toString() => 'Ranker($value)';
+
+ }
+@immutable final class Ranker$none extends Ranker {const Ranker$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ranker$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class Ranker$auto extends Ranker {const Ranker$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ranker$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class Ranker$default20241115 extends Ranker {const Ranker$default20241115._();
+
+@override String get value => 'default-2024-11-15';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ranker$default20241115;
+
+@override int get hashCode => 'default-2024-11-15'.hashCode;
+
+ }
+@immutable final class Ranker$Unknown extends Ranker {const Ranker$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Ranker && other.value == value;
+    other is Ranker$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Ranker($value)';
 
  }
 /// Ranking options for search.

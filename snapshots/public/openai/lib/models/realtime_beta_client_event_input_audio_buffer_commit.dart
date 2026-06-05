@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaClientEventInputAudioBufferCommit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.commit`.
-@immutable final class RealtimeBetaClientEventInputAudioBufferCommitType {const RealtimeBetaClientEventInputAudioBufferCommitType._(this.value);
+sealed class RealtimeBetaClientEventInputAudioBufferCommitType {const RealtimeBetaClientEventInputAudioBufferCommitType();
 
 factory RealtimeBetaClientEventInputAudioBufferCommitType.fromJson(String json) { return switch (json) {
   'input_audio_buffer.commit' => inputAudioBufferCommit,
-  _ => RealtimeBetaClientEventInputAudioBufferCommitType._(json),
+  _ => RealtimeBetaClientEventInputAudioBufferCommitType$Unknown(json),
 }; }
 
-static const RealtimeBetaClientEventInputAudioBufferCommitType inputAudioBufferCommit = RealtimeBetaClientEventInputAudioBufferCommitType._('input_audio_buffer.commit');
+static const RealtimeBetaClientEventInputAudioBufferCommitType inputAudioBufferCommit = RealtimeBetaClientEventInputAudioBufferCommitType$inputAudioBufferCommit._();
 
 static const List<RealtimeBetaClientEventInputAudioBufferCommitType> values = [inputAudioBufferCommit];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaClientEventInputAudioBufferCommitType$Unknown; } 
+@override String toString() => 'RealtimeBetaClientEventInputAudioBufferCommitType($value)';
+
+ }
+@immutable final class RealtimeBetaClientEventInputAudioBufferCommitType$inputAudioBufferCommit extends RealtimeBetaClientEventInputAudioBufferCommitType {const RealtimeBetaClientEventInputAudioBufferCommitType$inputAudioBufferCommit._();
+
+@override String get value => 'input_audio_buffer.commit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaClientEventInputAudioBufferCommitType$inputAudioBufferCommit;
+
+@override int get hashCode => 'input_audio_buffer.commit'.hashCode;
+
+ }
+@immutable final class RealtimeBetaClientEventInputAudioBufferCommitType$Unknown extends RealtimeBetaClientEventInputAudioBufferCommitType {const RealtimeBetaClientEventInputAudioBufferCommitType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaClientEventInputAudioBufferCommitType && other.value == value;
+    other is RealtimeBetaClientEventInputAudioBufferCommitType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaClientEventInputAudioBufferCommitType($value)';
 
  }
 /// Send this event to commit the user input audio buffer, which will create a

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookInstallationSuspend
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/installation.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_repositories2.dart';@immutable final class WebhookInstallationSuspendAction {const WebhookInstallationSuspendAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/installation.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_repositories2.dart';sealed class WebhookInstallationSuspendAction {const WebhookInstallationSuspendAction();
 
 factory WebhookInstallationSuspendAction.fromJson(String json) { return switch (json) {
   'suspend' => suspend,
-  _ => WebhookInstallationSuspendAction._(json),
+  _ => WebhookInstallationSuspendAction$Unknown(json),
 }; }
 
-static const WebhookInstallationSuspendAction suspend = WebhookInstallationSuspendAction._('suspend');
+static const WebhookInstallationSuspendAction suspend = WebhookInstallationSuspendAction$suspend._();
 
 static const List<WebhookInstallationSuspendAction> values = [suspend];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookInstallationSuspendAction$Unknown; } 
+@override String toString() => 'WebhookInstallationSuspendAction($value)';
+
+ }
+@immutable final class WebhookInstallationSuspendAction$suspend extends WebhookInstallationSuspendAction {const WebhookInstallationSuspendAction$suspend._();
+
+@override String get value => 'suspend';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookInstallationSuspendAction$suspend;
+
+@override int get hashCode => 'suspend'.hashCode;
+
+ }
+@immutable final class WebhookInstallationSuspendAction$Unknown extends WebhookInstallationSuspendAction {const WebhookInstallationSuspendAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookInstallationSuspendAction && other.value == value;
+    other is WebhookInstallationSuspendAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookInstallationSuspendAction($value)';
 
  }
 @immutable final class WebhookInstallationSuspend {const WebhookInstallationSuspend({required this.action, required this.installation, required this.sender, this.enterprise, this.organization, this.repositories, this.repository, this.requester, });

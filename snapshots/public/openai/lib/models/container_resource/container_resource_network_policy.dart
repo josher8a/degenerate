@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ContainerResource (inline: NetworkPolicy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The network policy mode.
-@immutable final class NetworkPolicyType {const NetworkPolicyType._(this.value);
+sealed class NetworkPolicyType {const NetworkPolicyType();
 
 factory NetworkPolicyType.fromJson(String json) { return switch (json) {
   'allowlist' => allowlist,
   'disabled' => disabled,
-  _ => NetworkPolicyType._(json),
+  _ => NetworkPolicyType$Unknown(json),
 }; }
 
-static const NetworkPolicyType allowlist = NetworkPolicyType._('allowlist');
+static const NetworkPolicyType allowlist = NetworkPolicyType$allowlist._();
 
-static const NetworkPolicyType disabled = NetworkPolicyType._('disabled');
+static const NetworkPolicyType disabled = NetworkPolicyType$disabled._();
 
 static const List<NetworkPolicyType> values = [allowlist, disabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is NetworkPolicyType$Unknown; } 
+@override String toString() => 'NetworkPolicyType($value)';
+
+ }
+@immutable final class NetworkPolicyType$allowlist extends NetworkPolicyType {const NetworkPolicyType$allowlist._();
+
+@override String get value => 'allowlist';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkPolicyType$allowlist;
+
+@override int get hashCode => 'allowlist'.hashCode;
+
+ }
+@immutable final class NetworkPolicyType$disabled extends NetworkPolicyType {const NetworkPolicyType$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkPolicyType$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class NetworkPolicyType$Unknown extends NetworkPolicyType {const NetworkPolicyType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is NetworkPolicyType && other.value == value;
+    other is NetworkPolicyType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'NetworkPolicyType($value)';
 
  }
 /// Network access policy for the container.

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/IpAccessRulesForAnAccountListIpAccessRulesOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the field used to sort returned rules.
-@immutable final class IpAccessRulesForAnAccountListIpAccessRulesOrder {const IpAccessRulesForAnAccountListIpAccessRulesOrder._(this.value);
+sealed class IpAccessRulesForAnAccountListIpAccessRulesOrder {const IpAccessRulesForAnAccountListIpAccessRulesOrder();
 
 factory IpAccessRulesForAnAccountListIpAccessRulesOrder.fromJson(String json) { return switch (json) {
   'configuration.target' => configurationTarget,
   'configuration.value' => configurationValue,
   'mode' => mode,
-  _ => IpAccessRulesForAnAccountListIpAccessRulesOrder._(json),
+  _ => IpAccessRulesForAnAccountListIpAccessRulesOrder$Unknown(json),
 }; }
 
-static const IpAccessRulesForAnAccountListIpAccessRulesOrder configurationTarget = IpAccessRulesForAnAccountListIpAccessRulesOrder._('configuration.target');
+static const IpAccessRulesForAnAccountListIpAccessRulesOrder configurationTarget = IpAccessRulesForAnAccountListIpAccessRulesOrder$configurationTarget._();
 
-static const IpAccessRulesForAnAccountListIpAccessRulesOrder configurationValue = IpAccessRulesForAnAccountListIpAccessRulesOrder._('configuration.value');
+static const IpAccessRulesForAnAccountListIpAccessRulesOrder configurationValue = IpAccessRulesForAnAccountListIpAccessRulesOrder$configurationValue._();
 
-static const IpAccessRulesForAnAccountListIpAccessRulesOrder mode = IpAccessRulesForAnAccountListIpAccessRulesOrder._('mode');
+static const IpAccessRulesForAnAccountListIpAccessRulesOrder mode = IpAccessRulesForAnAccountListIpAccessRulesOrder$mode._();
 
 static const List<IpAccessRulesForAnAccountListIpAccessRulesOrder> values = [configurationTarget, configurationValue, mode];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IpAccessRulesForAnAccountListIpAccessRulesOrder$Unknown; } 
+@override String toString() => 'IpAccessRulesForAnAccountListIpAccessRulesOrder($value)';
+
+ }
+@immutable final class IpAccessRulesForAnAccountListIpAccessRulesOrder$configurationTarget extends IpAccessRulesForAnAccountListIpAccessRulesOrder {const IpAccessRulesForAnAccountListIpAccessRulesOrder$configurationTarget._();
+
+@override String get value => 'configuration.target';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IpAccessRulesForAnAccountListIpAccessRulesOrder$configurationTarget;
+
+@override int get hashCode => 'configuration.target'.hashCode;
+
+ }
+@immutable final class IpAccessRulesForAnAccountListIpAccessRulesOrder$configurationValue extends IpAccessRulesForAnAccountListIpAccessRulesOrder {const IpAccessRulesForAnAccountListIpAccessRulesOrder$configurationValue._();
+
+@override String get value => 'configuration.value';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IpAccessRulesForAnAccountListIpAccessRulesOrder$configurationValue;
+
+@override int get hashCode => 'configuration.value'.hashCode;
+
+ }
+@immutable final class IpAccessRulesForAnAccountListIpAccessRulesOrder$mode extends IpAccessRulesForAnAccountListIpAccessRulesOrder {const IpAccessRulesForAnAccountListIpAccessRulesOrder$mode._();
+
+@override String get value => 'mode';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IpAccessRulesForAnAccountListIpAccessRulesOrder$mode;
+
+@override int get hashCode => 'mode'.hashCode;
+
+ }
+@immutable final class IpAccessRulesForAnAccountListIpAccessRulesOrder$Unknown extends IpAccessRulesForAnAccountListIpAccessRulesOrder {const IpAccessRulesForAnAccountListIpAccessRulesOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IpAccessRulesForAnAccountListIpAccessRulesOrder && other.value == value;
+    other is IpAccessRulesForAnAccountListIpAccessRulesOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IpAccessRulesForAnAccountListIpAccessRulesOrder($value)';
 
  }

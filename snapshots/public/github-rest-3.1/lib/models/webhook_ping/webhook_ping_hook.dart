@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WebhookPing (inline: Hook)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/hook_response.dart';import 'package:pub_github_rest_3_1/models/repos_create_webhook_request/repos_create_webhook_request_config.dart';/// The type of webhook. The only valid value is 'web'.
-@immutable final class HookName {const HookName._(this.value);
+sealed class HookName {const HookName();
 
 factory HookName.fromJson(String json) { return switch (json) {
   'web' => web,
-  _ => HookName._(json),
+  _ => HookName$Unknown(json),
 }; }
 
-static const HookName web = HookName._('web');
+static const HookName web = HookName$web._();
 
 static const List<HookName> values = [web];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is HookName$Unknown; } 
+@override String toString() => 'HookName($value)';
+
+ }
+@immutable final class HookName$web extends HookName {const HookName$web._();
+
+@override String get value => 'web';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HookName$web;
+
+@override int get hashCode => 'web'.hashCode;
+
+ }
+@immutable final class HookName$Unknown extends HookName {const HookName$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is HookName && other.value == value;
+    other is HookName$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'HookName($value)';
 
  }
 /// The webhook that is being pinged

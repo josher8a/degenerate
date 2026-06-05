@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AppPermissions (inline: Administration)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation.
-@immutable final class Administration {const Administration._(this.value);
+sealed class Administration {const Administration();
 
 factory Administration.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => Administration._(json),
+  _ => Administration$Unknown(json),
 }; }
 
-static const Administration read = Administration._('read');
+static const Administration read = Administration$read._();
 
-static const Administration write = Administration._('write');
+static const Administration write = Administration$write._();
 
 static const List<Administration> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Administration$Unknown; } 
+@override String toString() => 'Administration($value)';
+
+ }
+@immutable final class Administration$read extends Administration {const Administration$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Administration$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class Administration$write extends Administration {const Administration$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Administration$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class Administration$Unknown extends Administration {const Administration$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Administration && other.value == value;
+    other is Administration$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Administration($value)';
 
  }

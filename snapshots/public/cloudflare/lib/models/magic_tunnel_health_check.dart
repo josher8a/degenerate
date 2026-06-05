@@ -2,22 +2,21 @@
 // Source: #/components/schemas/MagicTunnelHealthCheck
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_health_check_base/magic_health_check_base_rate.dart';import 'package:pub_cloudflare/models/magic_health_check_base/magic_health_check_base_target.dart';import 'package:pub_cloudflare/models/magic_health_check_base/magic_health_check_base_type.dart';import 'package:pub_cloudflare/models/magic_health_check_target.dart';/// The direction of the flow of the healthcheck. Either unidirectional, where the probe comes to you via the tunnel and the result comes back to Cloudflare via the open Internet, or bidirectional where both the probe and result come and go via the tunnel.
-@immutable final class MagicTunnelHealthCheckDirection {const MagicTunnelHealthCheckDirection._(this.value);
+sealed class MagicTunnelHealthCheckDirection {const MagicTunnelHealthCheckDirection();
 
 factory MagicTunnelHealthCheckDirection.fromJson(String json) { return switch (json) {
   'unidirectional' => unidirectional,
   'bidirectional' => bidirectional,
-  _ => MagicTunnelHealthCheckDirection._(json),
+  _ => MagicTunnelHealthCheckDirection$Unknown(json),
 }; }
 
-static const MagicTunnelHealthCheckDirection unidirectional = MagicTunnelHealthCheckDirection._('unidirectional');
+static const MagicTunnelHealthCheckDirection unidirectional = MagicTunnelHealthCheckDirection$unidirectional._();
 
-static const MagicTunnelHealthCheckDirection bidirectional = MagicTunnelHealthCheckDirection._('bidirectional');
+static const MagicTunnelHealthCheckDirection bidirectional = MagicTunnelHealthCheckDirection$bidirectional._();
 
 static const List<MagicTunnelHealthCheckDirection> values = [unidirectional, bidirectional];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MagicTunnelHealthCheckDirection$Unknown; } 
+@override String toString() => 'MagicTunnelHealthCheckDirection($value)';
+
+ }
+@immutable final class MagicTunnelHealthCheckDirection$unidirectional extends MagicTunnelHealthCheckDirection {const MagicTunnelHealthCheckDirection$unidirectional._();
+
+@override String get value => 'unidirectional';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicTunnelHealthCheckDirection$unidirectional;
+
+@override int get hashCode => 'unidirectional'.hashCode;
+
+ }
+@immutable final class MagicTunnelHealthCheckDirection$bidirectional extends MagicTunnelHealthCheckDirection {const MagicTunnelHealthCheckDirection$bidirectional._();
+
+@override String get value => 'bidirectional';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicTunnelHealthCheckDirection$bidirectional;
+
+@override int get hashCode => 'bidirectional'.hashCode;
+
+ }
+@immutable final class MagicTunnelHealthCheckDirection$Unknown extends MagicTunnelHealthCheckDirection {const MagicTunnelHealthCheckDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MagicTunnelHealthCheckDirection && other.value == value;
+    other is MagicTunnelHealthCheckDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MagicTunnelHealthCheckDirection($value)';
 
  }
 @immutable final class MagicTunnelHealthCheck {const MagicTunnelHealthCheck({this.enabled = true, this.rate = MagicHealthCheckBaseRate.mid, this.target, this.type = MagicHealthCheckBaseType.reply, this.direction = MagicTunnelHealthCheckDirection.unidirectional, });

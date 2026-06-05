@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FunctionShellCallOutput
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_call_output_content.dart';@immutable final class LocalShellCallOutputStatusEnum {const LocalShellCallOutputStatusEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_call_output_content.dart';sealed class LocalShellCallOutputStatusEnum {const LocalShellCallOutputStatusEnum();
 
 factory LocalShellCallOutputStatusEnum.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
-  _ => LocalShellCallOutputStatusEnum._(json),
+  _ => LocalShellCallOutputStatusEnum$Unknown(json),
 }; }
 
-static const LocalShellCallOutputStatusEnum inProgress = LocalShellCallOutputStatusEnum._('in_progress');
+static const LocalShellCallOutputStatusEnum inProgress = LocalShellCallOutputStatusEnum$inProgress._();
 
-static const LocalShellCallOutputStatusEnum completed = LocalShellCallOutputStatusEnum._('completed');
+static const LocalShellCallOutputStatusEnum completed = LocalShellCallOutputStatusEnum$completed._();
 
-static const LocalShellCallOutputStatusEnum incomplete = LocalShellCallOutputStatusEnum._('incomplete');
+static const LocalShellCallOutputStatusEnum incomplete = LocalShellCallOutputStatusEnum$incomplete._();
 
 static const List<LocalShellCallOutputStatusEnum> values = [inProgress, completed, incomplete];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LocalShellCallOutputStatusEnum$Unknown; } 
+@override String toString() => 'LocalShellCallOutputStatusEnum($value)';
+
+ }
+@immutable final class LocalShellCallOutputStatusEnum$inProgress extends LocalShellCallOutputStatusEnum {const LocalShellCallOutputStatusEnum$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LocalShellCallOutputStatusEnum$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class LocalShellCallOutputStatusEnum$completed extends LocalShellCallOutputStatusEnum {const LocalShellCallOutputStatusEnum$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LocalShellCallOutputStatusEnum$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class LocalShellCallOutputStatusEnum$incomplete extends LocalShellCallOutputStatusEnum {const LocalShellCallOutputStatusEnum$incomplete._();
+
+@override String get value => 'incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LocalShellCallOutputStatusEnum$incomplete;
+
+@override int get hashCode => 'incomplete'.hashCode;
+
+ }
+@immutable final class LocalShellCallOutputStatusEnum$Unknown extends LocalShellCallOutputStatusEnum {const LocalShellCallOutputStatusEnum$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LocalShellCallOutputStatusEnum && other.value == value;
+    other is LocalShellCallOutputStatusEnum$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LocalShellCallOutputStatusEnum($value)';
 
  }
 /// The output of a shell tool call that was emitted.

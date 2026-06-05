@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice/voice_ids_or_custom_voice_variant2.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,
 /// `opus`, or `pcm16`.
 /// 
-@immutable final class AudioFormat {const AudioFormat._(this.value);
+sealed class AudioFormat {const AudioFormat();
 
 factory AudioFormat.fromJson(String json) { return switch (json) {
   'wav' => wav,
@@ -13,25 +13,24 @@ factory AudioFormat.fromJson(String json) { return switch (json) {
   'flac' => flac,
   'opus' => opus,
   'pcm16' => pcm16,
-  _ => AudioFormat._(json),
+  _ => AudioFormat$Unknown(json),
 }; }
 
-static const AudioFormat wav = AudioFormat._('wav');
+static const AudioFormat wav = AudioFormat$wav._();
 
-static const AudioFormat aac = AudioFormat._('aac');
+static const AudioFormat aac = AudioFormat$aac._();
 
-static const AudioFormat mp3 = AudioFormat._('mp3');
+static const AudioFormat mp3 = AudioFormat$mp3._();
 
-static const AudioFormat flac = AudioFormat._('flac');
+static const AudioFormat flac = AudioFormat$flac._();
 
-static const AudioFormat opus = AudioFormat._('opus');
+static const AudioFormat opus = AudioFormat$opus._();
 
-static const AudioFormat pcm16 = AudioFormat._('pcm16');
+static const AudioFormat pcm16 = AudioFormat$pcm16._();
 
 static const List<AudioFormat> values = [wav, aac, mp3, flac, opus, pcm16];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -44,13 +43,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AudioFormat$Unknown; } 
+@override String toString() => 'AudioFormat($value)';
+
+ }
+@immutable final class AudioFormat$wav extends AudioFormat {const AudioFormat$wav._();
+
+@override String get value => 'wav';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AudioFormat$wav;
+
+@override int get hashCode => 'wav'.hashCode;
+
+ }
+@immutable final class AudioFormat$aac extends AudioFormat {const AudioFormat$aac._();
+
+@override String get value => 'aac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AudioFormat$aac;
+
+@override int get hashCode => 'aac'.hashCode;
+
+ }
+@immutable final class AudioFormat$mp3 extends AudioFormat {const AudioFormat$mp3._();
+
+@override String get value => 'mp3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AudioFormat$mp3;
+
+@override int get hashCode => 'mp3'.hashCode;
+
+ }
+@immutable final class AudioFormat$flac extends AudioFormat {const AudioFormat$flac._();
+
+@override String get value => 'flac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AudioFormat$flac;
+
+@override int get hashCode => 'flac'.hashCode;
+
+ }
+@immutable final class AudioFormat$opus extends AudioFormat {const AudioFormat$opus._();
+
+@override String get value => 'opus';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AudioFormat$opus;
+
+@override int get hashCode => 'opus'.hashCode;
+
+ }
+@immutable final class AudioFormat$pcm16 extends AudioFormat {const AudioFormat$pcm16._();
+
+@override String get value => 'pcm16';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AudioFormat$pcm16;
+
+@override int get hashCode => 'pcm16'.hashCode;
+
+ }
+@immutable final class AudioFormat$Unknown extends AudioFormat {const AudioFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AudioFormat && other.value == value;
+    other is AudioFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AudioFormat($value)';
 
  }
 /// Parameters for audio output. Required when audio output is requested with

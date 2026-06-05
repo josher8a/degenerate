@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DexEndpointsListColosSortBy
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DexEndpointsListColosSortBy {const DexEndpointsListColosSortBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DexEndpointsListColosSortBy {const DexEndpointsListColosSortBy();
 
 factory DexEndpointsListColosSortBy.fromJson(String json) { return switch (json) {
   'fleet-status-usage' => fleetStatusUsage,
   'application-tests-usage' => applicationTestsUsage,
-  _ => DexEndpointsListColosSortBy._(json),
+  _ => DexEndpointsListColosSortBy$Unknown(json),
 }; }
 
-static const DexEndpointsListColosSortBy fleetStatusUsage = DexEndpointsListColosSortBy._('fleet-status-usage');
+static const DexEndpointsListColosSortBy fleetStatusUsage = DexEndpointsListColosSortBy$fleetStatusUsage._();
 
-static const DexEndpointsListColosSortBy applicationTestsUsage = DexEndpointsListColosSortBy._('application-tests-usage');
+static const DexEndpointsListColosSortBy applicationTestsUsage = DexEndpointsListColosSortBy$applicationTestsUsage._();
 
 static const List<DexEndpointsListColosSortBy> values = [fleetStatusUsage, applicationTestsUsage];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DexEndpointsListColosSortBy$Unknown; } 
+@override String toString() => 'DexEndpointsListColosSortBy($value)';
+
+ }
+@immutable final class DexEndpointsListColosSortBy$fleetStatusUsage extends DexEndpointsListColosSortBy {const DexEndpointsListColosSortBy$fleetStatusUsage._();
+
+@override String get value => 'fleet-status-usage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DexEndpointsListColosSortBy$fleetStatusUsage;
+
+@override int get hashCode => 'fleet-status-usage'.hashCode;
+
+ }
+@immutable final class DexEndpointsListColosSortBy$applicationTestsUsage extends DexEndpointsListColosSortBy {const DexEndpointsListColosSortBy$applicationTestsUsage._();
+
+@override String get value => 'application-tests-usage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DexEndpointsListColosSortBy$applicationTestsUsage;
+
+@override int get hashCode => 'application-tests-usage'.hashCode;
+
+ }
+@immutable final class DexEndpointsListColosSortBy$Unknown extends DexEndpointsListColosSortBy {const DexEndpointsListColosSortBy$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DexEndpointsListColosSortBy && other.value == value;
+    other is DexEndpointsListColosSortBy$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DexEndpointsListColosSortBy($value)';
 
  }

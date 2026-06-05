@@ -23,22 +23,21 @@ String toJson() => value;
 
 }
 /// Status of the Keyless SSL.
-@immutable final class TlsCertificatesAndHostnamesSchemasStatus {const TlsCertificatesAndHostnamesSchemasStatus._(this.value);
+sealed class TlsCertificatesAndHostnamesSchemasStatus {const TlsCertificatesAndHostnamesSchemasStatus();
 
 factory TlsCertificatesAndHostnamesSchemasStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'deleted' => deleted,
-  _ => TlsCertificatesAndHostnamesSchemasStatus._(json),
+  _ => TlsCertificatesAndHostnamesSchemasStatus$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesSchemasStatus active = TlsCertificatesAndHostnamesSchemasStatus._('active');
+static const TlsCertificatesAndHostnamesSchemasStatus active = TlsCertificatesAndHostnamesSchemasStatus$active._();
 
-static const TlsCertificatesAndHostnamesSchemasStatus deleted = TlsCertificatesAndHostnamesSchemasStatus._('deleted');
+static const TlsCertificatesAndHostnamesSchemasStatus deleted = TlsCertificatesAndHostnamesSchemasStatus$deleted._();
 
 static const List<TlsCertificatesAndHostnamesSchemasStatus> values = [active, deleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -47,13 +46,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesSchemasStatus$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesSchemasStatus($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasStatus$active extends TlsCertificatesAndHostnamesSchemasStatus {const TlsCertificatesAndHostnamesSchemasStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasStatus$deleted extends TlsCertificatesAndHostnamesSchemasStatus {const TlsCertificatesAndHostnamesSchemasStatus$deleted._();
+
+@override String get value => 'deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasStatus$deleted;
+
+@override int get hashCode => 'deleted'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasStatus$Unknown extends TlsCertificatesAndHostnamesSchemasStatus {const TlsCertificatesAndHostnamesSchemasStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSchemasStatus && other.value == value;
+    other is TlsCertificatesAndHostnamesSchemasStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesSchemasStatus($value)';
 
  }
 @immutable final class TlsCertificatesAndHostnamesBase {const TlsCertificatesAndHostnamesBase({required this.createdOn, required this.enabled, required this.host, required this.id, required this.modifiedOn, required this.name, required this.permissions, required this.port, required this.status, this.tunnel, });

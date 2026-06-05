@@ -2,19 +2,18 @@
 // Source: #/components/schemas/InlineSkillSourceParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the inline skill source. Must be `base64`.
-@immutable final class InlineSkillSourceParamType {const InlineSkillSourceParamType._(this.value);
+sealed class InlineSkillSourceParamType {const InlineSkillSourceParamType();
 
 factory InlineSkillSourceParamType.fromJson(String json) { return switch (json) {
   'base64' => base64,
-  _ => InlineSkillSourceParamType._(json),
+  _ => InlineSkillSourceParamType$Unknown(json),
 }; }
 
-static const InlineSkillSourceParamType base64 = InlineSkillSourceParamType._('base64');
+static const InlineSkillSourceParamType base64 = InlineSkillSourceParamType$base64._();
 
 static const List<InlineSkillSourceParamType> values = [base64];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,29 +21,42 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is InlineSkillSourceParamType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is InlineSkillSourceParamType$Unknown; } 
 @override String toString() => 'InlineSkillSourceParamType($value)';
 
  }
+@immutable final class InlineSkillSourceParamType$base64 extends InlineSkillSourceParamType {const InlineSkillSourceParamType$base64._();
+
+@override String get value => 'base64';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InlineSkillSourceParamType$base64;
+
+@override int get hashCode => 'base64'.hashCode;
+
+ }
+@immutable final class InlineSkillSourceParamType$Unknown extends InlineSkillSourceParamType {const InlineSkillSourceParamType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InlineSkillSourceParamType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The media type of the inline skill payload. Must be `application/zip`.
-@immutable final class MediaType {const MediaType._(this.value);
+sealed class MediaType {const MediaType();
 
 factory MediaType.fromJson(String json) { return switch (json) {
   'application/zip' => applicationZip,
-  _ => MediaType._(json),
+  _ => MediaType$Unknown(json),
 }; }
 
-static const MediaType applicationZip = MediaType._('application/zip');
+static const MediaType applicationZip = MediaType$applicationZip._();
 
 static const List<MediaType> values = [applicationZip];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -52,13 +64,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MediaType$Unknown; } 
+@override String toString() => 'MediaType($value)';
+
+ }
+@immutable final class MediaType$applicationZip extends MediaType {const MediaType$applicationZip._();
+
+@override String get value => 'application/zip';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MediaType$applicationZip;
+
+@override int get hashCode => 'application/zip'.hashCode;
+
+ }
+@immutable final class MediaType$Unknown extends MediaType {const MediaType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MediaType && other.value == value;
+    other is MediaType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MediaType($value)';
 
  }
 /// Inline skill payload

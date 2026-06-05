@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Order
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_12_unions/models/address.dart';import 'package:spec_12_unions/models/nullability_combos.dart';import 'package:spec_12_unions/models/order_item.dart';@immutable final class Status {const Status._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:spec_12_unions/models/address.dart';import 'package:spec_12_unions/models/nullability_combos.dart';import 'package:spec_12_unions/models/order_item.dart';sealed class Status {const Status();
 
 factory Status.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'confirmed' => confirmed,
   'shipped' => shipped,
   'delivered' => delivered,
-  _ => Status._(json),
+  _ => Status$Unknown(json),
 }; }
 
-static const Status pending = Status._('pending');
+static const Status pending = Status$pending._();
 
-static const Status confirmed = Status._('confirmed');
+static const Status confirmed = Status$confirmed._();
 
-static const Status shipped = Status._('shipped');
+static const Status shipped = Status$shipped._();
 
-static const Status delivered = Status._('delivered');
+static const Status delivered = Status$delivered._();
 
 static const List<Status> values = [pending, confirmed, shipped, delivered];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Status$Unknown; } 
+@override String toString() => 'Status($value)';
+
+ }
+@immutable final class Status$pending extends Status {const Status$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Status$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class Status$confirmed extends Status {const Status$confirmed._();
+
+@override String get value => 'confirmed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Status$confirmed;
+
+@override int get hashCode => 'confirmed'.hashCode;
+
+ }
+@immutable final class Status$shipped extends Status {const Status$shipped._();
+
+@override String get value => 'shipped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Status$shipped;
+
+@override int get hashCode => 'shipped'.hashCode;
+
+ }
+@immutable final class Status$delivered extends Status {const Status$delivered._();
+
+@override String get value => 'delivered';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Status$delivered;
+
+@override int get hashCode => 'delivered'.hashCode;
+
+ }
+@immutable final class Status$Unknown extends Status {const Status$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Status && other.value == value;
+    other is Status$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Status($value)';
 
  }
 @immutable final class Order {const Order({required this.id, required this.items, this.status, this.shippingAddress, this.metadata, this.nullabilitySample, });

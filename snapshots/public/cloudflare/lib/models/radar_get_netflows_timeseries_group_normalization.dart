@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetNetflowsTimeseriesGroupNormalization
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-@immutable final class RadarGetNetflowsTimeseriesGroupNormalization {const RadarGetNetflowsTimeseriesGroupNormalization._(this.value);
+sealed class RadarGetNetflowsTimeseriesGroupNormalization {const RadarGetNetflowsTimeseriesGroupNormalization();
 
 factory RadarGetNetflowsTimeseriesGroupNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
-  _ => RadarGetNetflowsTimeseriesGroupNormalization._(json),
+  _ => RadarGetNetflowsTimeseriesGroupNormalization$Unknown(json),
 }; }
 
-static const RadarGetNetflowsTimeseriesGroupNormalization percentage = RadarGetNetflowsTimeseriesGroupNormalization._('PERCENTAGE');
+static const RadarGetNetflowsTimeseriesGroupNormalization percentage = RadarGetNetflowsTimeseriesGroupNormalization$percentage._();
 
-static const RadarGetNetflowsTimeseriesGroupNormalization min0Max = RadarGetNetflowsTimeseriesGroupNormalization._('MIN0_MAX');
+static const RadarGetNetflowsTimeseriesGroupNormalization min0Max = RadarGetNetflowsTimeseriesGroupNormalization$min0Max._();
 
 static const List<RadarGetNetflowsTimeseriesGroupNormalization> values = [percentage, min0Max];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetNetflowsTimeseriesGroupNormalization$Unknown; } 
+@override String toString() => 'RadarGetNetflowsTimeseriesGroupNormalization($value)';
+
+ }
+@immutable final class RadarGetNetflowsTimeseriesGroupNormalization$percentage extends RadarGetNetflowsTimeseriesGroupNormalization {const RadarGetNetflowsTimeseriesGroupNormalization$percentage._();
+
+@override String get value => 'PERCENTAGE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetNetflowsTimeseriesGroupNormalization$percentage;
+
+@override int get hashCode => 'PERCENTAGE'.hashCode;
+
+ }
+@immutable final class RadarGetNetflowsTimeseriesGroupNormalization$min0Max extends RadarGetNetflowsTimeseriesGroupNormalization {const RadarGetNetflowsTimeseriesGroupNormalization$min0Max._();
+
+@override String get value => 'MIN0_MAX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetNetflowsTimeseriesGroupNormalization$min0Max;
+
+@override int get hashCode => 'MIN0_MAX'.hashCode;
+
+ }
+@immutable final class RadarGetNetflowsTimeseriesGroupNormalization$Unknown extends RadarGetNetflowsTimeseriesGroupNormalization {const RadarGetNetflowsTimeseriesGroupNormalization$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetNetflowsTimeseriesGroupNormalization && other.value == value;
+    other is RadarGetNetflowsTimeseriesGroupNormalization$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetNetflowsTimeseriesGroupNormalization($value)';
 
  }

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TaxProductResourceLineItemTaxBreakdown
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_jurisdiction.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_line_item_tax_breakdown/tax_product_resource_line_item_tax_breakdown_taxability_reason.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_line_item_tax_rate_details.dart';/// Indicates whether the jurisdiction was determined by the origin (merchant's address) or destination (customer's address).
-@immutable final class Sourcing {const Sourcing._(this.value);
+sealed class Sourcing {const Sourcing();
 
 factory Sourcing.fromJson(String json) { return switch (json) {
   'destination' => destination,
   'origin' => origin,
-  _ => Sourcing._(json),
+  _ => Sourcing$Unknown(json),
 }; }
 
-static const Sourcing destination = Sourcing._('destination');
+static const Sourcing destination = Sourcing$destination._();
 
-static const Sourcing origin = Sourcing._('origin');
+static const Sourcing origin = Sourcing$origin._();
 
 static const List<Sourcing> values = [destination, origin];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Sourcing$Unknown; } 
+@override String toString() => 'Sourcing($value)';
+
+ }
+@immutable final class Sourcing$destination extends Sourcing {const Sourcing$destination._();
+
+@override String get value => 'destination';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Sourcing$destination;
+
+@override int get hashCode => 'destination'.hashCode;
+
+ }
+@immutable final class Sourcing$origin extends Sourcing {const Sourcing$origin._();
+
+@override String get value => 'origin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Sourcing$origin;
+
+@override int get hashCode => 'origin'.hashCode;
+
+ }
+@immutable final class Sourcing$Unknown extends Sourcing {const Sourcing$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Sourcing && other.value == value;
+    other is Sourcing$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Sourcing($value)';
 
  }
 /// 

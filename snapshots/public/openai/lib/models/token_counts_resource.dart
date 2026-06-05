@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TokenCountsResource
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TokenCountsResourceObject {const TokenCountsResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class TokenCountsResourceObject {const TokenCountsResourceObject();
 
 factory TokenCountsResourceObject.fromJson(String json) { return switch (json) {
   'response.input_tokens' => responseInputTokens,
-  _ => TokenCountsResourceObject._(json),
+  _ => TokenCountsResourceObject$Unknown(json),
 }; }
 
-static const TokenCountsResourceObject responseInputTokens = TokenCountsResourceObject._('response.input_tokens');
+static const TokenCountsResourceObject responseInputTokens = TokenCountsResourceObject$responseInputTokens._();
 
 static const List<TokenCountsResourceObject> values = [responseInputTokens];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TokenCountsResourceObject$Unknown; } 
+@override String toString() => 'TokenCountsResourceObject($value)';
+
+ }
+@immutable final class TokenCountsResourceObject$responseInputTokens extends TokenCountsResourceObject {const TokenCountsResourceObject$responseInputTokens._();
+
+@override String get value => 'response.input_tokens';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TokenCountsResourceObject$responseInputTokens;
+
+@override int get hashCode => 'response.input_tokens'.hashCode;
+
+ }
+@immutable final class TokenCountsResourceObject$Unknown extends TokenCountsResourceObject {const TokenCountsResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TokenCountsResourceObject && other.value == value;
+    other is TokenCountsResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TokenCountsResourceObject($value)';
 
  }
 /// Example:

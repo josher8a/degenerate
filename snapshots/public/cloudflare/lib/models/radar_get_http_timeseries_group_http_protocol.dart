@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTimeseriesGroupHttpProtocol
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupHttpProtocol {const RadarGetHttpTimeseriesGroupHttpProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTimeseriesGroupHttpProtocol {const RadarGetHttpTimeseriesGroupHttpProtocol();
 
 factory RadarGetHttpTimeseriesGroupHttpProtocol.fromJson(String json) { return switch (json) {
   'HTTP' => http,
   'HTTPS' => https,
-  _ => RadarGetHttpTimeseriesGroupHttpProtocol._(json),
+  _ => RadarGetHttpTimeseriesGroupHttpProtocol$Unknown(json),
 }; }
 
-static const RadarGetHttpTimeseriesGroupHttpProtocol http = RadarGetHttpTimeseriesGroupHttpProtocol._('HTTP');
+static const RadarGetHttpTimeseriesGroupHttpProtocol http = RadarGetHttpTimeseriesGroupHttpProtocol$http._();
 
-static const RadarGetHttpTimeseriesGroupHttpProtocol https = RadarGetHttpTimeseriesGroupHttpProtocol._('HTTPS');
+static const RadarGetHttpTimeseriesGroupHttpProtocol https = RadarGetHttpTimeseriesGroupHttpProtocol$https._();
 
 static const List<RadarGetHttpTimeseriesGroupHttpProtocol> values = [http, https];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTimeseriesGroupHttpProtocol$Unknown; } 
+@override String toString() => 'RadarGetHttpTimeseriesGroupHttpProtocol($value)';
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupHttpProtocol$http extends RadarGetHttpTimeseriesGroupHttpProtocol {const RadarGetHttpTimeseriesGroupHttpProtocol$http._();
+
+@override String get value => 'HTTP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupHttpProtocol$http;
+
+@override int get hashCode => 'HTTP'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupHttpProtocol$https extends RadarGetHttpTimeseriesGroupHttpProtocol {const RadarGetHttpTimeseriesGroupHttpProtocol$https._();
+
+@override String get value => 'HTTPS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupHttpProtocol$https;
+
+@override int get hashCode => 'HTTPS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupHttpProtocol$Unknown extends RadarGetHttpTimeseriesGroupHttpProtocol {const RadarGetHttpTimeseriesGroupHttpProtocol$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupHttpProtocol && other.value == value;
+    other is RadarGetHttpTimeseriesGroupHttpProtocol$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTimeseriesGroupHttpProtocol($value)';
 
  }

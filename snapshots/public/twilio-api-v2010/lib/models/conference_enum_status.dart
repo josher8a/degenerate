@@ -2,25 +2,24 @@
 // Source: #/components/schemas/ConferenceEnumStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of this conference. Can be: `init`, `in-progress`, or `completed`.
-@immutable final class ConferenceEnumStatus {const ConferenceEnumStatus._(this.value);
+sealed class ConferenceEnumStatus {const ConferenceEnumStatus();
 
 factory ConferenceEnumStatus.fromJson(String json) { return switch (json) {
   'init' => init,
   'in-progress' => inProgress,
   'completed' => completed,
-  _ => ConferenceEnumStatus._(json),
+  _ => ConferenceEnumStatus$Unknown(json),
 }; }
 
-static const ConferenceEnumStatus init = ConferenceEnumStatus._('init');
+static const ConferenceEnumStatus init = ConferenceEnumStatus$init._();
 
-static const ConferenceEnumStatus inProgress = ConferenceEnumStatus._('in-progress');
+static const ConferenceEnumStatus inProgress = ConferenceEnumStatus$inProgress._();
 
-static const ConferenceEnumStatus completed = ConferenceEnumStatus._('completed');
+static const ConferenceEnumStatus completed = ConferenceEnumStatus$completed._();
 
 static const List<ConferenceEnumStatus> values = [init, inProgress, completed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConferenceEnumStatus$Unknown; } 
+@override String toString() => 'ConferenceEnumStatus($value)';
+
+ }
+@immutable final class ConferenceEnumStatus$init extends ConferenceEnumStatus {const ConferenceEnumStatus$init._();
+
+@override String get value => 'init';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConferenceEnumStatus$init;
+
+@override int get hashCode => 'init'.hashCode;
+
+ }
+@immutable final class ConferenceEnumStatus$inProgress extends ConferenceEnumStatus {const ConferenceEnumStatus$inProgress._();
+
+@override String get value => 'in-progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConferenceEnumStatus$inProgress;
+
+@override int get hashCode => 'in-progress'.hashCode;
+
+ }
+@immutable final class ConferenceEnumStatus$completed extends ConferenceEnumStatus {const ConferenceEnumStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConferenceEnumStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class ConferenceEnumStatus$Unknown extends ConferenceEnumStatus {const ConferenceEnumStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConferenceEnumStatus && other.value == value;
+    other is ConferenceEnumStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConferenceEnumStatus($value)';
 
  }

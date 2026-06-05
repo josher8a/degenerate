@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookRepositoryAdvisoryReported
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_advisory.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookRepositoryAdvisoryReportedAction {const WebhookRepositoryAdvisoryReportedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_advisory.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookRepositoryAdvisoryReportedAction {const WebhookRepositoryAdvisoryReportedAction();
 
 factory WebhookRepositoryAdvisoryReportedAction.fromJson(String json) { return switch (json) {
   'reported' => reported,
-  _ => WebhookRepositoryAdvisoryReportedAction._(json),
+  _ => WebhookRepositoryAdvisoryReportedAction$Unknown(json),
 }; }
 
-static const WebhookRepositoryAdvisoryReportedAction reported = WebhookRepositoryAdvisoryReportedAction._('reported');
+static const WebhookRepositoryAdvisoryReportedAction reported = WebhookRepositoryAdvisoryReportedAction$reported._();
 
 static const List<WebhookRepositoryAdvisoryReportedAction> values = [reported];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookRepositoryAdvisoryReportedAction$Unknown; } 
+@override String toString() => 'WebhookRepositoryAdvisoryReportedAction($value)';
+
+ }
+@immutable final class WebhookRepositoryAdvisoryReportedAction$reported extends WebhookRepositoryAdvisoryReportedAction {const WebhookRepositoryAdvisoryReportedAction$reported._();
+
+@override String get value => 'reported';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookRepositoryAdvisoryReportedAction$reported;
+
+@override int get hashCode => 'reported'.hashCode;
+
+ }
+@immutable final class WebhookRepositoryAdvisoryReportedAction$Unknown extends WebhookRepositoryAdvisoryReportedAction {const WebhookRepositoryAdvisoryReportedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookRepositoryAdvisoryReportedAction && other.value == value;
+    other is WebhookRepositoryAdvisoryReportedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookRepositoryAdvisoryReportedAction($value)';
 
  }
 @immutable final class WebhookRepositoryAdvisoryReported {const WebhookRepositoryAdvisoryReported({required this.action, required this.repository, required this.repositoryAdvisory, this.enterprise, this.installation, this.organization, this.sender, });

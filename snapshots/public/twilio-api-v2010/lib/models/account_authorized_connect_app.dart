@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AccountAuthorizedConnectApp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The set of permissions that you authorized for the Connect App.  Can be: `get-all` or `post-all`.
-@immutable final class AuthorizedConnectAppEnumPermission {const AuthorizedConnectAppEnumPermission._(this.value);
+sealed class AuthorizedConnectAppEnumPermission {const AuthorizedConnectAppEnumPermission();
 
 factory AuthorizedConnectAppEnumPermission.fromJson(String json) { return switch (json) {
   'get-all' => getAll,
   'post-all' => postAll,
-  _ => AuthorizedConnectAppEnumPermission._(json),
+  _ => AuthorizedConnectAppEnumPermission$Unknown(json),
 }; }
 
-static const AuthorizedConnectAppEnumPermission getAll = AuthorizedConnectAppEnumPermission._('get-all');
+static const AuthorizedConnectAppEnumPermission getAll = AuthorizedConnectAppEnumPermission$getAll._();
 
-static const AuthorizedConnectAppEnumPermission postAll = AuthorizedConnectAppEnumPermission._('post-all');
+static const AuthorizedConnectAppEnumPermission postAll = AuthorizedConnectAppEnumPermission$postAll._();
 
 static const List<AuthorizedConnectAppEnumPermission> values = [getAll, postAll];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AuthorizedConnectAppEnumPermission$Unknown; } 
+@override String toString() => 'AuthorizedConnectAppEnumPermission($value)';
+
+ }
+@immutable final class AuthorizedConnectAppEnumPermission$getAll extends AuthorizedConnectAppEnumPermission {const AuthorizedConnectAppEnumPermission$getAll._();
+
+@override String get value => 'get-all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AuthorizedConnectAppEnumPermission$getAll;
+
+@override int get hashCode => 'get-all'.hashCode;
+
+ }
+@immutable final class AuthorizedConnectAppEnumPermission$postAll extends AuthorizedConnectAppEnumPermission {const AuthorizedConnectAppEnumPermission$postAll._();
+
+@override String get value => 'post-all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AuthorizedConnectAppEnumPermission$postAll;
+
+@override int get hashCode => 'post-all'.hashCode;
+
+ }
+@immutable final class AuthorizedConnectAppEnumPermission$Unknown extends AuthorizedConnectAppEnumPermission {const AuthorizedConnectAppEnumPermission$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AuthorizedConnectAppEnumPermission && other.value == value;
+    other is AuthorizedConnectAppEnumPermission$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AuthorizedConnectAppEnumPermission($value)';
 
  }
 @immutable final class AccountAuthorizedConnectApp {const AccountAuthorizedConnectApp({this.accountSid, this.connectAppCompanyName, this.connectAppDescription, this.connectAppFriendlyName, this.connectAppHomepageUrl, this.connectAppSid, this.permissions, this.uri, });

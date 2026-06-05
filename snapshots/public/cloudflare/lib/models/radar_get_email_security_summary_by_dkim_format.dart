@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetEmailSecuritySummaryByDkimFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetEmailSecuritySummaryByDkimFormat {const RadarGetEmailSecuritySummaryByDkimFormat._(this.value);
+sealed class RadarGetEmailSecuritySummaryByDkimFormat {const RadarGetEmailSecuritySummaryByDkimFormat();
 
 factory RadarGetEmailSecuritySummaryByDkimFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetEmailSecuritySummaryByDkimFormat._(json),
+  _ => RadarGetEmailSecuritySummaryByDkimFormat$Unknown(json),
 }; }
 
-static const RadarGetEmailSecuritySummaryByDkimFormat $json = RadarGetEmailSecuritySummaryByDkimFormat._('JSON');
+static const RadarGetEmailSecuritySummaryByDkimFormat $json = RadarGetEmailSecuritySummaryByDkimFormat$$json._();
 
-static const RadarGetEmailSecuritySummaryByDkimFormat csv = RadarGetEmailSecuritySummaryByDkimFormat._('CSV');
+static const RadarGetEmailSecuritySummaryByDkimFormat csv = RadarGetEmailSecuritySummaryByDkimFormat$csv._();
 
 static const List<RadarGetEmailSecuritySummaryByDkimFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecuritySummaryByDkimFormat$Unknown; } 
+@override String toString() => 'RadarGetEmailSecuritySummaryByDkimFormat($value)';
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryByDkimFormat$$json extends RadarGetEmailSecuritySummaryByDkimFormat {const RadarGetEmailSecuritySummaryByDkimFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryByDkimFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryByDkimFormat$csv extends RadarGetEmailSecuritySummaryByDkimFormat {const RadarGetEmailSecuritySummaryByDkimFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryByDkimFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryByDkimFormat$Unknown extends RadarGetEmailSecuritySummaryByDkimFormat {const RadarGetEmailSecuritySummaryByDkimFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecuritySummaryByDkimFormat && other.value == value;
+    other is RadarGetEmailSecuritySummaryByDkimFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecuritySummaryByDkimFormat($value)';
 
  }

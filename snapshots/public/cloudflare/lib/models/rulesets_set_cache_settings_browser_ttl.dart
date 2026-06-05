@@ -2,28 +2,27 @@
 // Source: #/components/schemas/RulesetsSetCacheSettingsBrowserTtl
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The browser TTL mode.
-@immutable final class RulesetsSetCacheSettingsBrowserTtlMode {const RulesetsSetCacheSettingsBrowserTtlMode._(this.value);
+sealed class RulesetsSetCacheSettingsBrowserTtlMode {const RulesetsSetCacheSettingsBrowserTtlMode();
 
 factory RulesetsSetCacheSettingsBrowserTtlMode.fromJson(String json) { return switch (json) {
   'respect_origin' => respectOrigin,
   'bypass_by_default' => bypassByDefault,
   'override_origin' => overrideOrigin,
   'bypass' => bypass,
-  _ => RulesetsSetCacheSettingsBrowserTtlMode._(json),
+  _ => RulesetsSetCacheSettingsBrowserTtlMode$Unknown(json),
 }; }
 
-static const RulesetsSetCacheSettingsBrowserTtlMode respectOrigin = RulesetsSetCacheSettingsBrowserTtlMode._('respect_origin');
+static const RulesetsSetCacheSettingsBrowserTtlMode respectOrigin = RulesetsSetCacheSettingsBrowserTtlMode$respectOrigin._();
 
-static const RulesetsSetCacheSettingsBrowserTtlMode bypassByDefault = RulesetsSetCacheSettingsBrowserTtlMode._('bypass_by_default');
+static const RulesetsSetCacheSettingsBrowserTtlMode bypassByDefault = RulesetsSetCacheSettingsBrowserTtlMode$bypassByDefault._();
 
-static const RulesetsSetCacheSettingsBrowserTtlMode overrideOrigin = RulesetsSetCacheSettingsBrowserTtlMode._('override_origin');
+static const RulesetsSetCacheSettingsBrowserTtlMode overrideOrigin = RulesetsSetCacheSettingsBrowserTtlMode$overrideOrigin._();
 
-static const RulesetsSetCacheSettingsBrowserTtlMode bypass = RulesetsSetCacheSettingsBrowserTtlMode._('bypass');
+static const RulesetsSetCacheSettingsBrowserTtlMode bypass = RulesetsSetCacheSettingsBrowserTtlMode$bypass._();
 
 static const List<RulesetsSetCacheSettingsBrowserTtlMode> values = [respectOrigin, bypassByDefault, overrideOrigin, bypass];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RulesetsSetCacheSettingsBrowserTtlMode$Unknown; } 
+@override String toString() => 'RulesetsSetCacheSettingsBrowserTtlMode($value)';
+
+ }
+@immutable final class RulesetsSetCacheSettingsBrowserTtlMode$respectOrigin extends RulesetsSetCacheSettingsBrowserTtlMode {const RulesetsSetCacheSettingsBrowserTtlMode$respectOrigin._();
+
+@override String get value => 'respect_origin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RulesetsSetCacheSettingsBrowserTtlMode$respectOrigin;
+
+@override int get hashCode => 'respect_origin'.hashCode;
+
+ }
+@immutable final class RulesetsSetCacheSettingsBrowserTtlMode$bypassByDefault extends RulesetsSetCacheSettingsBrowserTtlMode {const RulesetsSetCacheSettingsBrowserTtlMode$bypassByDefault._();
+
+@override String get value => 'bypass_by_default';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RulesetsSetCacheSettingsBrowserTtlMode$bypassByDefault;
+
+@override int get hashCode => 'bypass_by_default'.hashCode;
+
+ }
+@immutable final class RulesetsSetCacheSettingsBrowserTtlMode$overrideOrigin extends RulesetsSetCacheSettingsBrowserTtlMode {const RulesetsSetCacheSettingsBrowserTtlMode$overrideOrigin._();
+
+@override String get value => 'override_origin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RulesetsSetCacheSettingsBrowserTtlMode$overrideOrigin;
+
+@override int get hashCode => 'override_origin'.hashCode;
+
+ }
+@immutable final class RulesetsSetCacheSettingsBrowserTtlMode$bypass extends RulesetsSetCacheSettingsBrowserTtlMode {const RulesetsSetCacheSettingsBrowserTtlMode$bypass._();
+
+@override String get value => 'bypass';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RulesetsSetCacheSettingsBrowserTtlMode$bypass;
+
+@override int get hashCode => 'bypass'.hashCode;
+
+ }
+@immutable final class RulesetsSetCacheSettingsBrowserTtlMode$Unknown extends RulesetsSetCacheSettingsBrowserTtlMode {const RulesetsSetCacheSettingsBrowserTtlMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RulesetsSetCacheSettingsBrowserTtlMode && other.value == value;
+    other is RulesetsSetCacheSettingsBrowserTtlMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RulesetsSetCacheSettingsBrowserTtlMode($value)';
 
  }
 /// How long client browsers should cache the response. Cloudflare cache purge will not purge content cached on client browsers, so high browser TTLs may lead to stale content.

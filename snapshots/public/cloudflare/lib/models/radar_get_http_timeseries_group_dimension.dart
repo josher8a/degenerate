@@ -2,7 +2,7 @@
 // Source: #/components/schemas/RadarGetHttpTimeseriesGroupDimension
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the HTTP attribute by which to group the results.
-@immutable final class RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension._(this.value);
+sealed class RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension();
 
 factory RadarGetHttpTimeseriesGroupDimension.fromJson(String json) { return switch (json) {
   'ADM1' => adm1,
@@ -18,39 +18,38 @@ factory RadarGetHttpTimeseriesGroupDimension.fromJson(String json) { return swit
   'OS' => os,
   'POST_QUANTUM' => postQuantum,
   'TLS_VERSION' => tlsVersion,
-  _ => RadarGetHttpTimeseriesGroupDimension._(json),
+  _ => RadarGetHttpTimeseriesGroupDimension$Unknown(json),
 }; }
 
-static const RadarGetHttpTimeseriesGroupDimension adm1 = RadarGetHttpTimeseriesGroupDimension._('ADM1');
+static const RadarGetHttpTimeseriesGroupDimension adm1 = RadarGetHttpTimeseriesGroupDimension$adm1._();
 
-static const RadarGetHttpTimeseriesGroupDimension $as = RadarGetHttpTimeseriesGroupDimension._('AS');
+static const RadarGetHttpTimeseriesGroupDimension $as = RadarGetHttpTimeseriesGroupDimension$$as._();
 
-static const RadarGetHttpTimeseriesGroupDimension botClass = RadarGetHttpTimeseriesGroupDimension._('BOT_CLASS');
+static const RadarGetHttpTimeseriesGroupDimension botClass = RadarGetHttpTimeseriesGroupDimension$botClass._();
 
-static const RadarGetHttpTimeseriesGroupDimension browser = RadarGetHttpTimeseriesGroupDimension._('BROWSER');
+static const RadarGetHttpTimeseriesGroupDimension browser = RadarGetHttpTimeseriesGroupDimension$browser._();
 
-static const RadarGetHttpTimeseriesGroupDimension browserFamily = RadarGetHttpTimeseriesGroupDimension._('BROWSER_FAMILY');
+static const RadarGetHttpTimeseriesGroupDimension browserFamily = RadarGetHttpTimeseriesGroupDimension$browserFamily._();
 
-static const RadarGetHttpTimeseriesGroupDimension deviceType = RadarGetHttpTimeseriesGroupDimension._('DEVICE_TYPE');
+static const RadarGetHttpTimeseriesGroupDimension deviceType = RadarGetHttpTimeseriesGroupDimension$deviceType._();
 
-static const RadarGetHttpTimeseriesGroupDimension httpProtocol = RadarGetHttpTimeseriesGroupDimension._('HTTP_PROTOCOL');
+static const RadarGetHttpTimeseriesGroupDimension httpProtocol = RadarGetHttpTimeseriesGroupDimension$httpProtocol._();
 
-static const RadarGetHttpTimeseriesGroupDimension httpVersion = RadarGetHttpTimeseriesGroupDimension._('HTTP_VERSION');
+static const RadarGetHttpTimeseriesGroupDimension httpVersion = RadarGetHttpTimeseriesGroupDimension$httpVersion._();
 
-static const RadarGetHttpTimeseriesGroupDimension ipVersion = RadarGetHttpTimeseriesGroupDimension._('IP_VERSION');
+static const RadarGetHttpTimeseriesGroupDimension ipVersion = RadarGetHttpTimeseriesGroupDimension$ipVersion._();
 
-static const RadarGetHttpTimeseriesGroupDimension location = RadarGetHttpTimeseriesGroupDimension._('LOCATION');
+static const RadarGetHttpTimeseriesGroupDimension location = RadarGetHttpTimeseriesGroupDimension$location._();
 
-static const RadarGetHttpTimeseriesGroupDimension os = RadarGetHttpTimeseriesGroupDimension._('OS');
+static const RadarGetHttpTimeseriesGroupDimension os = RadarGetHttpTimeseriesGroupDimension$os._();
 
-static const RadarGetHttpTimeseriesGroupDimension postQuantum = RadarGetHttpTimeseriesGroupDimension._('POST_QUANTUM');
+static const RadarGetHttpTimeseriesGroupDimension postQuantum = RadarGetHttpTimeseriesGroupDimension$postQuantum._();
 
-static const RadarGetHttpTimeseriesGroupDimension tlsVersion = RadarGetHttpTimeseriesGroupDimension._('TLS_VERSION');
+static const RadarGetHttpTimeseriesGroupDimension tlsVersion = RadarGetHttpTimeseriesGroupDimension$tlsVersion._();
 
 static const List<RadarGetHttpTimeseriesGroupDimension> values = [adm1, $as, botClass, browser, browserFamily, deviceType, httpProtocol, httpVersion, ipVersion, location, os, postQuantum, tlsVersion];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -70,12 +69,134 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTimeseriesGroupDimension$Unknown; } 
+@override String toString() => 'RadarGetHttpTimeseriesGroupDimension($value)';
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupDimension$adm1 extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$adm1._();
+
+@override String get value => 'ADM1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupDimension$adm1;
+
+@override int get hashCode => 'ADM1'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupDimension$$as extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$$as._();
+
+@override String get value => 'AS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupDimension$$as;
+
+@override int get hashCode => 'AS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupDimension$botClass extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$botClass._();
+
+@override String get value => 'BOT_CLASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupDimension$botClass;
+
+@override int get hashCode => 'BOT_CLASS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupDimension$browser extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$browser._();
+
+@override String get value => 'BROWSER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupDimension$browser;
+
+@override int get hashCode => 'BROWSER'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupDimension$browserFamily extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$browserFamily._();
+
+@override String get value => 'BROWSER_FAMILY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupDimension$browserFamily;
+
+@override int get hashCode => 'BROWSER_FAMILY'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupDimension$deviceType extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$deviceType._();
+
+@override String get value => 'DEVICE_TYPE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupDimension$deviceType;
+
+@override int get hashCode => 'DEVICE_TYPE'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupDimension$httpProtocol extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$httpProtocol._();
+
+@override String get value => 'HTTP_PROTOCOL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupDimension$httpProtocol;
+
+@override int get hashCode => 'HTTP_PROTOCOL'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupDimension$httpVersion extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$httpVersion._();
+
+@override String get value => 'HTTP_VERSION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupDimension$httpVersion;
+
+@override int get hashCode => 'HTTP_VERSION'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupDimension$ipVersion extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$ipVersion._();
+
+@override String get value => 'IP_VERSION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupDimension$ipVersion;
+
+@override int get hashCode => 'IP_VERSION'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupDimension$location extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$location._();
+
+@override String get value => 'LOCATION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupDimension$location;
+
+@override int get hashCode => 'LOCATION'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupDimension$os extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$os._();
+
+@override String get value => 'OS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupDimension$os;
+
+@override int get hashCode => 'OS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupDimension$postQuantum extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$postQuantum._();
+
+@override String get value => 'POST_QUANTUM';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupDimension$postQuantum;
+
+@override int get hashCode => 'POST_QUANTUM'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupDimension$tlsVersion extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$tlsVersion._();
+
+@override String get value => 'TLS_VERSION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupDimension$tlsVersion;
+
+@override int get hashCode => 'TLS_VERSION'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupDimension$Unknown extends RadarGetHttpTimeseriesGroupDimension {const RadarGetHttpTimeseriesGroupDimension$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupDimension && other.value == value;
+    other is RadarGetHttpTimeseriesGroupDimension$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTimeseriesGroupDimension($value)';
 
  }

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorDescribeWorkflowInstanceResponse (inline: Result > Steps > Termination)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/termination_trigger.dart';@immutable final class TerminationType {const TerminationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/termination_trigger.dart';sealed class TerminationType {const TerminationType();
 
 factory TerminationType.fromJson(String json) { return switch (json) {
   'termination' => termination,
-  _ => TerminationType._(json),
+  _ => TerminationType$Unknown(json),
 }; }
 
-static const TerminationType termination = TerminationType._('termination');
+static const TerminationType termination = TerminationType$termination._();
 
 static const List<TerminationType> values = [termination];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TerminationType$Unknown; } 
+@override String toString() => 'TerminationType($value)';
+
+ }
+@immutable final class TerminationType$termination extends TerminationType {const TerminationType$termination._();
+
+@override String get value => 'termination';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminationType$termination;
+
+@override int get hashCode => 'termination'.hashCode;
+
+ }
+@immutable final class TerminationType$Unknown extends TerminationType {const TerminationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TerminationType && other.value == value;
+    other is TerminationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TerminationType($value)';
 
  }
 @immutable final class Termination {const Termination({required this.trigger, required this.type, });

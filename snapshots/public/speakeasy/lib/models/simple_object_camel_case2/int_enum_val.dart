@@ -2,25 +2,24 @@
 // Source: #/components/schemas/SimpleObjectCamelCase2 (inline: IntEnumVal)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An integer enum property.
-@immutable final class IntEnumVal {const IntEnumVal._(this.value);
+sealed class IntEnumVal {const IntEnumVal();
 
 factory IntEnumVal.fromJson(int json) { return switch (json) {
   1 => $1,
   2 => $2,
   3 => $3,
-  _ => IntEnumVal._(json),
+  _ => IntEnumVal$Unknown(json),
 }; }
 
-static const IntEnumVal $1 = IntEnumVal._(1);
+static const IntEnumVal $1 = IntEnumVal$$1._();
 
-static const IntEnumVal $2 = IntEnumVal._(2);
+static const IntEnumVal $2 = IntEnumVal$$2._();
 
-static const IntEnumVal $3 = IntEnumVal._(3);
+static const IntEnumVal $3 = IntEnumVal$$3._();
 
 static const List<IntEnumVal> values = [$1, $2, $3];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IntEnumVal$Unknown; } 
+@override String toString() => 'IntEnumVal($value)';
+
+ }
+@immutable final class IntEnumVal$$1 extends IntEnumVal {const IntEnumVal$$1._();
+
+@override int get value => 1;
+
+@override bool operator ==(Object other) => identical(this, other) || other is IntEnumVal$$1;
+
+@override int get hashCode => 1.hashCode;
+
+ }
+@immutable final class IntEnumVal$$2 extends IntEnumVal {const IntEnumVal$$2._();
+
+@override int get value => 2;
+
+@override bool operator ==(Object other) => identical(this, other) || other is IntEnumVal$$2;
+
+@override int get hashCode => 2.hashCode;
+
+ }
+@immutable final class IntEnumVal$$3 extends IntEnumVal {const IntEnumVal$$3._();
+
+@override int get value => 3;
+
+@override bool operator ==(Object other) => identical(this, other) || other is IntEnumVal$$3;
+
+@override int get hashCode => 3.hashCode;
+
+ }
+@immutable final class IntEnumVal$Unknown extends IntEnumVal {const IntEnumVal$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IntEnumVal && other.value == value;
+    other is IntEnumVal$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IntEnumVal($value)';
 
  }

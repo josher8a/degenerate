@@ -2,22 +2,21 @@
 // Source: #/components/schemas/DisputeEnhancedEligibilityVisaCompliance
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Visa compliance eligibility status.
-@immutable final class DisputeEnhancedEligibilityVisaComplianceStatus {const DisputeEnhancedEligibilityVisaComplianceStatus._(this.value);
+sealed class DisputeEnhancedEligibilityVisaComplianceStatus {const DisputeEnhancedEligibilityVisaComplianceStatus();
 
 factory DisputeEnhancedEligibilityVisaComplianceStatus.fromJson(String json) { return switch (json) {
   'fee_acknowledged' => feeAcknowledged,
   'requires_fee_acknowledgement' => requiresFeeAcknowledgement,
-  _ => DisputeEnhancedEligibilityVisaComplianceStatus._(json),
+  _ => DisputeEnhancedEligibilityVisaComplianceStatus$Unknown(json),
 }; }
 
-static const DisputeEnhancedEligibilityVisaComplianceStatus feeAcknowledged = DisputeEnhancedEligibilityVisaComplianceStatus._('fee_acknowledged');
+static const DisputeEnhancedEligibilityVisaComplianceStatus feeAcknowledged = DisputeEnhancedEligibilityVisaComplianceStatus$feeAcknowledged._();
 
-static const DisputeEnhancedEligibilityVisaComplianceStatus requiresFeeAcknowledgement = DisputeEnhancedEligibilityVisaComplianceStatus._('requires_fee_acknowledgement');
+static const DisputeEnhancedEligibilityVisaComplianceStatus requiresFeeAcknowledgement = DisputeEnhancedEligibilityVisaComplianceStatus$requiresFeeAcknowledgement._();
 
 static const List<DisputeEnhancedEligibilityVisaComplianceStatus> values = [feeAcknowledged, requiresFeeAcknowledgement];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DisputeEnhancedEligibilityVisaComplianceStatus$Unknown; } 
+@override String toString() => 'DisputeEnhancedEligibilityVisaComplianceStatus($value)';
+
+ }
+@immutable final class DisputeEnhancedEligibilityVisaComplianceStatus$feeAcknowledged extends DisputeEnhancedEligibilityVisaComplianceStatus {const DisputeEnhancedEligibilityVisaComplianceStatus$feeAcknowledged._();
+
+@override String get value => 'fee_acknowledged';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeEnhancedEligibilityVisaComplianceStatus$feeAcknowledged;
+
+@override int get hashCode => 'fee_acknowledged'.hashCode;
+
+ }
+@immutable final class DisputeEnhancedEligibilityVisaComplianceStatus$requiresFeeAcknowledgement extends DisputeEnhancedEligibilityVisaComplianceStatus {const DisputeEnhancedEligibilityVisaComplianceStatus$requiresFeeAcknowledgement._();
+
+@override String get value => 'requires_fee_acknowledgement';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeEnhancedEligibilityVisaComplianceStatus$requiresFeeAcknowledgement;
+
+@override int get hashCode => 'requires_fee_acknowledgement'.hashCode;
+
+ }
+@immutable final class DisputeEnhancedEligibilityVisaComplianceStatus$Unknown extends DisputeEnhancedEligibilityVisaComplianceStatus {const DisputeEnhancedEligibilityVisaComplianceStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DisputeEnhancedEligibilityVisaComplianceStatus && other.value == value;
+    other is DisputeEnhancedEligibilityVisaComplianceStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DisputeEnhancedEligibilityVisaComplianceStatus($value)';
 
  }
 /// 

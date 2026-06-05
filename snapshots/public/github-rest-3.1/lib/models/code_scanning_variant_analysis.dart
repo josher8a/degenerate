@@ -2,7 +2,7 @@
 // Source: #/components/schemas/CodeScanningVariantAnalysis
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis/scanned_repositories.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis/skipped_repositories.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis_status.dart';import 'package:pub_github_rest_3_1/models/simple_repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The language targeted by the CodeQL query
-@immutable final class CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage._(this.value);
+sealed class CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage();
 
 factory CodeScanningVariantAnalysisLanguage.fromJson(String json) { return switch (json) {
   'actions' => actions,
@@ -15,33 +15,32 @@ factory CodeScanningVariantAnalysisLanguage.fromJson(String json) { return switc
   'ruby' => ruby,
   'rust' => rust,
   'swift' => swift,
-  _ => CodeScanningVariantAnalysisLanguage._(json),
+  _ => CodeScanningVariantAnalysisLanguage$Unknown(json),
 }; }
 
-static const CodeScanningVariantAnalysisLanguage actions = CodeScanningVariantAnalysisLanguage._('actions');
+static const CodeScanningVariantAnalysisLanguage actions = CodeScanningVariantAnalysisLanguage$actions._();
 
-static const CodeScanningVariantAnalysisLanguage cpp = CodeScanningVariantAnalysisLanguage._('cpp');
+static const CodeScanningVariantAnalysisLanguage cpp = CodeScanningVariantAnalysisLanguage$cpp._();
 
-static const CodeScanningVariantAnalysisLanguage csharp = CodeScanningVariantAnalysisLanguage._('csharp');
+static const CodeScanningVariantAnalysisLanguage csharp = CodeScanningVariantAnalysisLanguage$csharp._();
 
-static const CodeScanningVariantAnalysisLanguage go = CodeScanningVariantAnalysisLanguage._('go');
+static const CodeScanningVariantAnalysisLanguage go = CodeScanningVariantAnalysisLanguage$go._();
 
-static const CodeScanningVariantAnalysisLanguage java = CodeScanningVariantAnalysisLanguage._('java');
+static const CodeScanningVariantAnalysisLanguage java = CodeScanningVariantAnalysisLanguage$java._();
 
-static const CodeScanningVariantAnalysisLanguage javascript = CodeScanningVariantAnalysisLanguage._('javascript');
+static const CodeScanningVariantAnalysisLanguage javascript = CodeScanningVariantAnalysisLanguage$javascript._();
 
-static const CodeScanningVariantAnalysisLanguage python = CodeScanningVariantAnalysisLanguage._('python');
+static const CodeScanningVariantAnalysisLanguage python = CodeScanningVariantAnalysisLanguage$python._();
 
-static const CodeScanningVariantAnalysisLanguage ruby = CodeScanningVariantAnalysisLanguage._('ruby');
+static const CodeScanningVariantAnalysisLanguage ruby = CodeScanningVariantAnalysisLanguage$ruby._();
 
-static const CodeScanningVariantAnalysisLanguage rust = CodeScanningVariantAnalysisLanguage._('rust');
+static const CodeScanningVariantAnalysisLanguage rust = CodeScanningVariantAnalysisLanguage$rust._();
 
-static const CodeScanningVariantAnalysisLanguage swift = CodeScanningVariantAnalysisLanguage._('swift');
+static const CodeScanningVariantAnalysisLanguage swift = CodeScanningVariantAnalysisLanguage$swift._();
 
 static const List<CodeScanningVariantAnalysisLanguage> values = [actions, cpp, csharp, go, java, javascript, python, ruby, rust, swift];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -58,35 +57,129 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeScanningVariantAnalysisLanguage && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CodeScanningVariantAnalysisLanguage$Unknown; } 
 @override String toString() => 'CodeScanningVariantAnalysisLanguage($value)';
 
  }
+@immutable final class CodeScanningVariantAnalysisLanguage$actions extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$actions._();
+
+@override String get value => 'actions';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningVariantAnalysisLanguage$actions;
+
+@override int get hashCode => 'actions'.hashCode;
+
+ }
+@immutable final class CodeScanningVariantAnalysisLanguage$cpp extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$cpp._();
+
+@override String get value => 'cpp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningVariantAnalysisLanguage$cpp;
+
+@override int get hashCode => 'cpp'.hashCode;
+
+ }
+@immutable final class CodeScanningVariantAnalysisLanguage$csharp extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$csharp._();
+
+@override String get value => 'csharp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningVariantAnalysisLanguage$csharp;
+
+@override int get hashCode => 'csharp'.hashCode;
+
+ }
+@immutable final class CodeScanningVariantAnalysisLanguage$go extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$go._();
+
+@override String get value => 'go';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningVariantAnalysisLanguage$go;
+
+@override int get hashCode => 'go'.hashCode;
+
+ }
+@immutable final class CodeScanningVariantAnalysisLanguage$java extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$java._();
+
+@override String get value => 'java';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningVariantAnalysisLanguage$java;
+
+@override int get hashCode => 'java'.hashCode;
+
+ }
+@immutable final class CodeScanningVariantAnalysisLanguage$javascript extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$javascript._();
+
+@override String get value => 'javascript';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningVariantAnalysisLanguage$javascript;
+
+@override int get hashCode => 'javascript'.hashCode;
+
+ }
+@immutable final class CodeScanningVariantAnalysisLanguage$python extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$python._();
+
+@override String get value => 'python';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningVariantAnalysisLanguage$python;
+
+@override int get hashCode => 'python'.hashCode;
+
+ }
+@immutable final class CodeScanningVariantAnalysisLanguage$ruby extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$ruby._();
+
+@override String get value => 'ruby';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningVariantAnalysisLanguage$ruby;
+
+@override int get hashCode => 'ruby'.hashCode;
+
+ }
+@immutable final class CodeScanningVariantAnalysisLanguage$rust extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$rust._();
+
+@override String get value => 'rust';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningVariantAnalysisLanguage$rust;
+
+@override int get hashCode => 'rust'.hashCode;
+
+ }
+@immutable final class CodeScanningVariantAnalysisLanguage$swift extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$swift._();
+
+@override String get value => 'swift';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningVariantAnalysisLanguage$swift;
+
+@override int get hashCode => 'swift'.hashCode;
+
+ }
+@immutable final class CodeScanningVariantAnalysisLanguage$Unknown extends CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeScanningVariantAnalysisLanguage$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
-@immutable final class FailureReason {const FailureReason._(this.value);
+sealed class FailureReason {const FailureReason();
 
 factory FailureReason.fromJson(String json) { return switch (json) {
   'no_repos_queried' => noReposQueried,
   'actions_workflow_run_failed' => actionsWorkflowRunFailed,
   'internal_error' => internalError,
-  _ => FailureReason._(json),
+  _ => FailureReason$Unknown(json),
 }; }
 
-static const FailureReason noReposQueried = FailureReason._('no_repos_queried');
+static const FailureReason noReposQueried = FailureReason$noReposQueried._();
 
-static const FailureReason actionsWorkflowRunFailed = FailureReason._('actions_workflow_run_failed');
+static const FailureReason actionsWorkflowRunFailed = FailureReason$actionsWorkflowRunFailed._();
 
-static const FailureReason internalError = FailureReason._('internal_error');
+static const FailureReason internalError = FailureReason$internalError._();
 
 static const List<FailureReason> values = [noReposQueried, actionsWorkflowRunFailed, internalError];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -96,13 +189,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FailureReason$Unknown; } 
+@override String toString() => 'FailureReason($value)';
+
+ }
+@immutable final class FailureReason$noReposQueried extends FailureReason {const FailureReason$noReposQueried._();
+
+@override String get value => 'no_repos_queried';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FailureReason$noReposQueried;
+
+@override int get hashCode => 'no_repos_queried'.hashCode;
+
+ }
+@immutable final class FailureReason$actionsWorkflowRunFailed extends FailureReason {const FailureReason$actionsWorkflowRunFailed._();
+
+@override String get value => 'actions_workflow_run_failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FailureReason$actionsWorkflowRunFailed;
+
+@override int get hashCode => 'actions_workflow_run_failed'.hashCode;
+
+ }
+@immutable final class FailureReason$internalError extends FailureReason {const FailureReason$internalError._();
+
+@override String get value => 'internal_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FailureReason$internalError;
+
+@override int get hashCode => 'internal_error'.hashCode;
+
+ }
+@immutable final class FailureReason$Unknown extends FailureReason {const FailureReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FailureReason && other.value == value;
+    other is FailureReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FailureReason($value)';
 
  }
 /// A run of a CodeQL query against one or more repositories.

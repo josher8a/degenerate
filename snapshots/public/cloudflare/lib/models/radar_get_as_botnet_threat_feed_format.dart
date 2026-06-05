@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetAsBotnetThreatFeedFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetAsBotnetThreatFeedFormat {const RadarGetAsBotnetThreatFeedFormat._(this.value);
+sealed class RadarGetAsBotnetThreatFeedFormat {const RadarGetAsBotnetThreatFeedFormat();
 
 factory RadarGetAsBotnetThreatFeedFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetAsBotnetThreatFeedFormat._(json),
+  _ => RadarGetAsBotnetThreatFeedFormat$Unknown(json),
 }; }
 
-static const RadarGetAsBotnetThreatFeedFormat $json = RadarGetAsBotnetThreatFeedFormat._('JSON');
+static const RadarGetAsBotnetThreatFeedFormat $json = RadarGetAsBotnetThreatFeedFormat$$json._();
 
-static const RadarGetAsBotnetThreatFeedFormat csv = RadarGetAsBotnetThreatFeedFormat._('CSV');
+static const RadarGetAsBotnetThreatFeedFormat csv = RadarGetAsBotnetThreatFeedFormat$csv._();
 
 static const List<RadarGetAsBotnetThreatFeedFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAsBotnetThreatFeedFormat$Unknown; } 
+@override String toString() => 'RadarGetAsBotnetThreatFeedFormat($value)';
+
+ }
+@immutable final class RadarGetAsBotnetThreatFeedFormat$$json extends RadarGetAsBotnetThreatFeedFormat {const RadarGetAsBotnetThreatFeedFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAsBotnetThreatFeedFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetAsBotnetThreatFeedFormat$csv extends RadarGetAsBotnetThreatFeedFormat {const RadarGetAsBotnetThreatFeedFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAsBotnetThreatFeedFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetAsBotnetThreatFeedFormat$Unknown extends RadarGetAsBotnetThreatFeedFormat {const RadarGetAsBotnetThreatFeedFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAsBotnetThreatFeedFormat && other.value == value;
+    other is RadarGetAsBotnetThreatFeedFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAsBotnetThreatFeedFormat($value)';
 
  }

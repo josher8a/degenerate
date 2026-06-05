@@ -2,19 +2,18 @@
 // Source: #/components/schemas/File
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file/links.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class FileObject {const FileObject._(this.value);
+sealed class FileObject {const FileObject();
 
 factory FileObject.fromJson(String json) { return switch (json) {
   'file' => file,
-  _ => FileObject._(json),
+  _ => FileObject$Unknown(json),
 }; }
 
-static const FileObject file = FileObject._('file');
+static const FileObject file = FileObject$file._();
 
 static const List<FileObject> values = [file];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,17 +21,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is FileObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is FileObject$Unknown; } 
 @override String toString() => 'FileObject($value)';
 
  }
+@immutable final class FileObject$file extends FileObject {const FileObject$file._();
+
+@override String get value => 'file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileObject$file;
+
+@override int get hashCode => 'file'.hashCode;
+
+ }
+@immutable final class FileObject$Unknown extends FileObject {const FileObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FileObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The [purpose](https://docs.stripe.com/file-upload#uploading-a-file) of the uploaded file.
-@immutable final class FilePurpose {const FilePurpose._(this.value);
+sealed class FilePurpose {const FilePurpose();
 
 factory FilePurpose.fromJson(String json) { return switch (json) {
   'account_requirement' => accountRequirement,
@@ -56,55 +69,54 @@ factory FilePurpose.fromJson(String json) { return switch (json) {
   'terminal_reader_splashscreen' => terminalReaderSplashscreen,
   'terminal_wifi_certificate' => terminalWifiCertificate,
   'terminal_wifi_private_key' => terminalWifiPrivateKey,
-  _ => FilePurpose._(json),
+  _ => FilePurpose$Unknown(json),
 }; }
 
-static const FilePurpose accountRequirement = FilePurpose._('account_requirement');
+static const FilePurpose accountRequirement = FilePurpose$accountRequirement._();
 
-static const FilePurpose additionalVerification = FilePurpose._('additional_verification');
+static const FilePurpose additionalVerification = FilePurpose$additionalVerification._();
 
-static const FilePurpose businessIcon = FilePurpose._('business_icon');
+static const FilePurpose businessIcon = FilePurpose$businessIcon._();
 
-static const FilePurpose businessLogo = FilePurpose._('business_logo');
+static const FilePurpose businessLogo = FilePurpose$businessLogo._();
 
-static const FilePurpose customerSignature = FilePurpose._('customer_signature');
+static const FilePurpose customerSignature = FilePurpose$customerSignature._();
 
-static const FilePurpose disputeEvidence = FilePurpose._('dispute_evidence');
+static const FilePurpose disputeEvidence = FilePurpose$disputeEvidence._();
 
-static const FilePurpose documentProviderIdentityDocument = FilePurpose._('document_provider_identity_document');
+static const FilePurpose documentProviderIdentityDocument = FilePurpose$documentProviderIdentityDocument._();
 
-static const FilePurpose financeReportRun = FilePurpose._('finance_report_run');
+static const FilePurpose financeReportRun = FilePurpose$financeReportRun._();
 
-static const FilePurpose financialAccountStatement = FilePurpose._('financial_account_statement');
+static const FilePurpose financialAccountStatement = FilePurpose$financialAccountStatement._();
 
-static const FilePurpose identityDocument = FilePurpose._('identity_document');
+static const FilePurpose identityDocument = FilePurpose$identityDocument._();
 
-static const FilePurpose identityDocumentDownloadable = FilePurpose._('identity_document_downloadable');
+static const FilePurpose identityDocumentDownloadable = FilePurpose$identityDocumentDownloadable._();
 
-static const FilePurpose issuingRegulatoryReporting = FilePurpose._('issuing_regulatory_reporting');
+static const FilePurpose issuingRegulatoryReporting = FilePurpose$issuingRegulatoryReporting._();
 
-static const FilePurpose pciDocument = FilePurpose._('pci_document');
+static const FilePurpose pciDocument = FilePurpose$pciDocument._();
 
-static const FilePurpose platformTermsOfService = FilePurpose._('platform_terms_of_service');
+static const FilePurpose platformTermsOfService = FilePurpose$platformTermsOfService._();
 
-static const FilePurpose selfie = FilePurpose._('selfie');
+static const FilePurpose selfie = FilePurpose$selfie._();
 
-static const FilePurpose sigmaScheduledQuery = FilePurpose._('sigma_scheduled_query');
+static const FilePurpose sigmaScheduledQuery = FilePurpose$sigmaScheduledQuery._();
 
-static const FilePurpose taxDocumentUserUpload = FilePurpose._('tax_document_user_upload');
+static const FilePurpose taxDocumentUserUpload = FilePurpose$taxDocumentUserUpload._();
 
-static const FilePurpose terminalAndroidApk = FilePurpose._('terminal_android_apk');
+static const FilePurpose terminalAndroidApk = FilePurpose$terminalAndroidApk._();
 
-static const FilePurpose terminalReaderSplashscreen = FilePurpose._('terminal_reader_splashscreen');
+static const FilePurpose terminalReaderSplashscreen = FilePurpose$terminalReaderSplashscreen._();
 
-static const FilePurpose terminalWifiCertificate = FilePurpose._('terminal_wifi_certificate');
+static const FilePurpose terminalWifiCertificate = FilePurpose$terminalWifiCertificate._();
 
-static const FilePurpose terminalWifiPrivateKey = FilePurpose._('terminal_wifi_private_key');
+static const FilePurpose terminalWifiPrivateKey = FilePurpose$terminalWifiPrivateKey._();
 
 static const List<FilePurpose> values = [accountRequirement, additionalVerification, businessIcon, businessLogo, customerSignature, disputeEvidence, documentProviderIdentityDocument, financeReportRun, financialAccountStatement, identityDocument, identityDocumentDownloadable, issuingRegulatoryReporting, pciDocument, platformTermsOfService, selfie, sigmaScheduledQuery, taxDocumentUserUpload, terminalAndroidApk, terminalReaderSplashscreen, terminalWifiCertificate, terminalWifiPrivateKey];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -132,13 +144,207 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FilePurpose$Unknown; } 
+@override String toString() => 'FilePurpose($value)';
+
+ }
+@immutable final class FilePurpose$accountRequirement extends FilePurpose {const FilePurpose$accountRequirement._();
+
+@override String get value => 'account_requirement';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$accountRequirement;
+
+@override int get hashCode => 'account_requirement'.hashCode;
+
+ }
+@immutable final class FilePurpose$additionalVerification extends FilePurpose {const FilePurpose$additionalVerification._();
+
+@override String get value => 'additional_verification';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$additionalVerification;
+
+@override int get hashCode => 'additional_verification'.hashCode;
+
+ }
+@immutable final class FilePurpose$businessIcon extends FilePurpose {const FilePurpose$businessIcon._();
+
+@override String get value => 'business_icon';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$businessIcon;
+
+@override int get hashCode => 'business_icon'.hashCode;
+
+ }
+@immutable final class FilePurpose$businessLogo extends FilePurpose {const FilePurpose$businessLogo._();
+
+@override String get value => 'business_logo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$businessLogo;
+
+@override int get hashCode => 'business_logo'.hashCode;
+
+ }
+@immutable final class FilePurpose$customerSignature extends FilePurpose {const FilePurpose$customerSignature._();
+
+@override String get value => 'customer_signature';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$customerSignature;
+
+@override int get hashCode => 'customer_signature'.hashCode;
+
+ }
+@immutable final class FilePurpose$disputeEvidence extends FilePurpose {const FilePurpose$disputeEvidence._();
+
+@override String get value => 'dispute_evidence';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$disputeEvidence;
+
+@override int get hashCode => 'dispute_evidence'.hashCode;
+
+ }
+@immutable final class FilePurpose$documentProviderIdentityDocument extends FilePurpose {const FilePurpose$documentProviderIdentityDocument._();
+
+@override String get value => 'document_provider_identity_document';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$documentProviderIdentityDocument;
+
+@override int get hashCode => 'document_provider_identity_document'.hashCode;
+
+ }
+@immutable final class FilePurpose$financeReportRun extends FilePurpose {const FilePurpose$financeReportRun._();
+
+@override String get value => 'finance_report_run';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$financeReportRun;
+
+@override int get hashCode => 'finance_report_run'.hashCode;
+
+ }
+@immutable final class FilePurpose$financialAccountStatement extends FilePurpose {const FilePurpose$financialAccountStatement._();
+
+@override String get value => 'financial_account_statement';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$financialAccountStatement;
+
+@override int get hashCode => 'financial_account_statement'.hashCode;
+
+ }
+@immutable final class FilePurpose$identityDocument extends FilePurpose {const FilePurpose$identityDocument._();
+
+@override String get value => 'identity_document';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$identityDocument;
+
+@override int get hashCode => 'identity_document'.hashCode;
+
+ }
+@immutable final class FilePurpose$identityDocumentDownloadable extends FilePurpose {const FilePurpose$identityDocumentDownloadable._();
+
+@override String get value => 'identity_document_downloadable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$identityDocumentDownloadable;
+
+@override int get hashCode => 'identity_document_downloadable'.hashCode;
+
+ }
+@immutable final class FilePurpose$issuingRegulatoryReporting extends FilePurpose {const FilePurpose$issuingRegulatoryReporting._();
+
+@override String get value => 'issuing_regulatory_reporting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$issuingRegulatoryReporting;
+
+@override int get hashCode => 'issuing_regulatory_reporting'.hashCode;
+
+ }
+@immutable final class FilePurpose$pciDocument extends FilePurpose {const FilePurpose$pciDocument._();
+
+@override String get value => 'pci_document';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$pciDocument;
+
+@override int get hashCode => 'pci_document'.hashCode;
+
+ }
+@immutable final class FilePurpose$platformTermsOfService extends FilePurpose {const FilePurpose$platformTermsOfService._();
+
+@override String get value => 'platform_terms_of_service';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$platformTermsOfService;
+
+@override int get hashCode => 'platform_terms_of_service'.hashCode;
+
+ }
+@immutable final class FilePurpose$selfie extends FilePurpose {const FilePurpose$selfie._();
+
+@override String get value => 'selfie';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$selfie;
+
+@override int get hashCode => 'selfie'.hashCode;
+
+ }
+@immutable final class FilePurpose$sigmaScheduledQuery extends FilePurpose {const FilePurpose$sigmaScheduledQuery._();
+
+@override String get value => 'sigma_scheduled_query';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$sigmaScheduledQuery;
+
+@override int get hashCode => 'sigma_scheduled_query'.hashCode;
+
+ }
+@immutable final class FilePurpose$taxDocumentUserUpload extends FilePurpose {const FilePurpose$taxDocumentUserUpload._();
+
+@override String get value => 'tax_document_user_upload';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$taxDocumentUserUpload;
+
+@override int get hashCode => 'tax_document_user_upload'.hashCode;
+
+ }
+@immutable final class FilePurpose$terminalAndroidApk extends FilePurpose {const FilePurpose$terminalAndroidApk._();
+
+@override String get value => 'terminal_android_apk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$terminalAndroidApk;
+
+@override int get hashCode => 'terminal_android_apk'.hashCode;
+
+ }
+@immutable final class FilePurpose$terminalReaderSplashscreen extends FilePurpose {const FilePurpose$terminalReaderSplashscreen._();
+
+@override String get value => 'terminal_reader_splashscreen';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$terminalReaderSplashscreen;
+
+@override int get hashCode => 'terminal_reader_splashscreen'.hashCode;
+
+ }
+@immutable final class FilePurpose$terminalWifiCertificate extends FilePurpose {const FilePurpose$terminalWifiCertificate._();
+
+@override String get value => 'terminal_wifi_certificate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$terminalWifiCertificate;
+
+@override int get hashCode => 'terminal_wifi_certificate'.hashCode;
+
+ }
+@immutable final class FilePurpose$terminalWifiPrivateKey extends FilePurpose {const FilePurpose$terminalWifiPrivateKey._();
+
+@override String get value => 'terminal_wifi_private_key';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilePurpose$terminalWifiPrivateKey;
+
+@override int get hashCode => 'terminal_wifi_private_key'.hashCode;
+
+ }
+@immutable final class FilePurpose$Unknown extends FilePurpose {const FilePurpose$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FilePurpose && other.value == value;
+    other is FilePurpose$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FilePurpose($value)';
 
  }
 /// This object represents files hosted on Stripe's servers. You can upload

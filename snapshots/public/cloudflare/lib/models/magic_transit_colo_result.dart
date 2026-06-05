@@ -2,7 +2,7 @@
 // Source: #/components/schemas/MagicTransitColoResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_transit_colo.dart';import 'package:pub_cloudflare/models/magic_transit_hop_result.dart';/// Errors resulting from collecting traceroute from colo to target.
-@immutable final class MagicTransitError {const MagicTransitError._(this.value);
+sealed class MagicTransitError {const MagicTransitError();
 
 factory MagicTransitError.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -10,23 +10,22 @@ factory MagicTransitError.fromJson(String json) { return switch (json) {
   'Could not gather traceroute data: Code 2' => couldNotGatherTracerouteDataCode2,
   'Could not gather traceroute data: Code 3' => couldNotGatherTracerouteDataCode3,
   'Could not gather traceroute data: Code 4' => couldNotGatherTracerouteDataCode4,
-  _ => MagicTransitError._(json),
+  _ => MagicTransitError$Unknown(json),
 }; }
 
-static const MagicTransitError $empty = MagicTransitError._('');
+static const MagicTransitError $empty = MagicTransitError$$empty._();
 
-static const MagicTransitError couldNotGatherTracerouteDataCode1 = MagicTransitError._('Could not gather traceroute data: Code 1');
+static const MagicTransitError couldNotGatherTracerouteDataCode1 = MagicTransitError$couldNotGatherTracerouteDataCode1._();
 
-static const MagicTransitError couldNotGatherTracerouteDataCode2 = MagicTransitError._('Could not gather traceroute data: Code 2');
+static const MagicTransitError couldNotGatherTracerouteDataCode2 = MagicTransitError$couldNotGatherTracerouteDataCode2._();
 
-static const MagicTransitError couldNotGatherTracerouteDataCode3 = MagicTransitError._('Could not gather traceroute data: Code 3');
+static const MagicTransitError couldNotGatherTracerouteDataCode3 = MagicTransitError$couldNotGatherTracerouteDataCode3._();
 
-static const MagicTransitError couldNotGatherTracerouteDataCode4 = MagicTransitError._('Could not gather traceroute data: Code 4');
+static const MagicTransitError couldNotGatherTracerouteDataCode4 = MagicTransitError$couldNotGatherTracerouteDataCode4._();
 
 static const List<MagicTransitError> values = [$empty, couldNotGatherTracerouteDataCode1, couldNotGatherTracerouteDataCode2, couldNotGatherTracerouteDataCode3, couldNotGatherTracerouteDataCode4];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MagicTransitError$Unknown; } 
+@override String toString() => 'MagicTransitError($value)';
+
+ }
+@immutable final class MagicTransitError$$empty extends MagicTransitError {const MagicTransitError$$empty._();
+
+@override String get value => '';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicTransitError$$empty;
+
+@override int get hashCode => ''.hashCode;
+
+ }
+@immutable final class MagicTransitError$couldNotGatherTracerouteDataCode1 extends MagicTransitError {const MagicTransitError$couldNotGatherTracerouteDataCode1._();
+
+@override String get value => 'Could not gather traceroute data: Code 1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicTransitError$couldNotGatherTracerouteDataCode1;
+
+@override int get hashCode => 'Could not gather traceroute data: Code 1'.hashCode;
+
+ }
+@immutable final class MagicTransitError$couldNotGatherTracerouteDataCode2 extends MagicTransitError {const MagicTransitError$couldNotGatherTracerouteDataCode2._();
+
+@override String get value => 'Could not gather traceroute data: Code 2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicTransitError$couldNotGatherTracerouteDataCode2;
+
+@override int get hashCode => 'Could not gather traceroute data: Code 2'.hashCode;
+
+ }
+@immutable final class MagicTransitError$couldNotGatherTracerouteDataCode3 extends MagicTransitError {const MagicTransitError$couldNotGatherTracerouteDataCode3._();
+
+@override String get value => 'Could not gather traceroute data: Code 3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicTransitError$couldNotGatherTracerouteDataCode3;
+
+@override int get hashCode => 'Could not gather traceroute data: Code 3'.hashCode;
+
+ }
+@immutable final class MagicTransitError$couldNotGatherTracerouteDataCode4 extends MagicTransitError {const MagicTransitError$couldNotGatherTracerouteDataCode4._();
+
+@override String get value => 'Could not gather traceroute data: Code 4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicTransitError$couldNotGatherTracerouteDataCode4;
+
+@override int get hashCode => 'Could not gather traceroute data: Code 4'.hashCode;
+
+ }
+@immutable final class MagicTransitError$Unknown extends MagicTransitError {const MagicTransitError$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MagicTransitError && other.value == value;
+    other is MagicTransitError$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MagicTransitError($value)';
 
  }
 /// Total time of traceroute in ms.

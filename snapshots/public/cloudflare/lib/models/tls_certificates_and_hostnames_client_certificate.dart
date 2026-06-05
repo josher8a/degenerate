@@ -9,28 +9,27 @@ String toJson() => value;
 
 }
 /// Client Certificates may be active or revoked, and the pending_reactivation or pending_revocation represent in-progress asynchronous transitions
-@immutable final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus._(this.value);
+sealed class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus();
 
 factory TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'pending_reactivation' => pendingReactivation,
   'pending_revocation' => pendingRevocation,
   'revoked' => revoked,
-  _ => TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus._(json),
+  _ => TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus active = TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus._('active');
+static const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus active = TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$active._();
 
-static const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus pendingReactivation = TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus._('pending_reactivation');
+static const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus pendingReactivation = TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingReactivation._();
 
-static const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus pendingRevocation = TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus._('pending_revocation');
+static const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus pendingRevocation = TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingRevocation._();
 
-static const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus revoked = TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus._('revoked');
+static const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus revoked = TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$revoked._();
 
 static const List<TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus> values = [active, pendingReactivation, pendingRevocation, revoked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,13 +40,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$active extends TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingReactivation extends TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingReactivation._();
+
+@override String get value => 'pending_reactivation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingReactivation;
+
+@override int get hashCode => 'pending_reactivation'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingRevocation extends TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingRevocation._();
+
+@override String get value => 'pending_revocation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$pendingRevocation;
+
+@override int get hashCode => 'pending_revocation'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$revoked extends TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$revoked._();
+
+@override String get value => 'revoked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$revoked;
+
+@override int get hashCode => 'revoked'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown extends TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus {const TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus && other.value == value;
+    other is TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesClientCertificatesComponentsSchemasStatus($value)';
 
  }
 /// Common Name of the Client Certificate

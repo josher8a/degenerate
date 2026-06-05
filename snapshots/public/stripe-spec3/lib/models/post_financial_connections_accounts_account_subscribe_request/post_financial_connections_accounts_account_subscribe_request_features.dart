@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostFinancialConnectionsAccountsAccountSubscribeRequest (inline: Features)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures {const PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures {const PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures();
 
 factory PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures.fromJson(String json) { return switch (json) {
   'transactions' => transactions,
-  _ => PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures._(json),
+  _ => PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures$Unknown(json),
 }; }
 
-static const PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures transactions = PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures._('transactions');
+static const PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures transactions = PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures$transactions._();
 
 static const List<PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures> values = [transactions];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures$Unknown; } 
+@override String toString() => 'PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures($value)';
+
+ }
+@immutable final class PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures$transactions extends PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures {const PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures$transactions._();
+
+@override String get value => 'transactions';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures$transactions;
+
+@override int get hashCode => 'transactions'.hashCode;
+
+ }
+@immutable final class PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures$Unknown extends PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures {const PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures && other.value == value;
+    other is PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostFinancialConnectionsAccountsAccountSubscribeRequestFeatures($value)';
 
  }

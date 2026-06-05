@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TaxCalculation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_calculation/tax_calculation_line_items.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_ship_from_details.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_breakdown.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_calculation_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TaxCalculationObject {const TaxCalculationObject._(this.value);
+sealed class TaxCalculationObject {const TaxCalculationObject();
 
 factory TaxCalculationObject.fromJson(String json) { return switch (json) {
   'tax.calculation' => taxCalculation,
-  _ => TaxCalculationObject._(json),
+  _ => TaxCalculationObject$Unknown(json),
 }; }
 
-static const TaxCalculationObject taxCalculation = TaxCalculationObject._('tax.calculation');
+static const TaxCalculationObject taxCalculation = TaxCalculationObject$taxCalculation._();
 
 static const List<TaxCalculationObject> values = [taxCalculation];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TaxCalculationObject$Unknown; } 
+@override String toString() => 'TaxCalculationObject($value)';
+
+ }
+@immutable final class TaxCalculationObject$taxCalculation extends TaxCalculationObject {const TaxCalculationObject$taxCalculation._();
+
+@override String get value => 'tax.calculation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxCalculationObject$taxCalculation;
+
+@override int get hashCode => 'tax.calculation'.hashCode;
+
+ }
+@immutable final class TaxCalculationObject$Unknown extends TaxCalculationObject {const TaxCalculationObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxCalculationObject && other.value == value;
+    other is TaxCalculationObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TaxCalculationObject($value)';
 
  }
 /// A Tax Calculation allows you to calculate the tax to collect from your customer.

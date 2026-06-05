@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetTreasuryDebitReversalsResolution
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryDebitReversalsResolution {const GetTreasuryDebitReversalsResolution._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetTreasuryDebitReversalsResolution {const GetTreasuryDebitReversalsResolution();
 
 factory GetTreasuryDebitReversalsResolution.fromJson(String json) { return switch (json) {
   'lost' => lost,
   'won' => won,
-  _ => GetTreasuryDebitReversalsResolution._(json),
+  _ => GetTreasuryDebitReversalsResolution$Unknown(json),
 }; }
 
-static const GetTreasuryDebitReversalsResolution lost = GetTreasuryDebitReversalsResolution._('lost');
+static const GetTreasuryDebitReversalsResolution lost = GetTreasuryDebitReversalsResolution$lost._();
 
-static const GetTreasuryDebitReversalsResolution won = GetTreasuryDebitReversalsResolution._('won');
+static const GetTreasuryDebitReversalsResolution won = GetTreasuryDebitReversalsResolution$won._();
 
 static const List<GetTreasuryDebitReversalsResolution> values = [lost, won];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GetTreasuryDebitReversalsResolution$Unknown; } 
+@override String toString() => 'GetTreasuryDebitReversalsResolution($value)';
+
+ }
+@immutable final class GetTreasuryDebitReversalsResolution$lost extends GetTreasuryDebitReversalsResolution {const GetTreasuryDebitReversalsResolution$lost._();
+
+@override String get value => 'lost';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetTreasuryDebitReversalsResolution$lost;
+
+@override int get hashCode => 'lost'.hashCode;
+
+ }
+@immutable final class GetTreasuryDebitReversalsResolution$won extends GetTreasuryDebitReversalsResolution {const GetTreasuryDebitReversalsResolution$won._();
+
+@override String get value => 'won';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetTreasuryDebitReversalsResolution$won;
+
+@override int get hashCode => 'won'.hashCode;
+
+ }
+@immutable final class GetTreasuryDebitReversalsResolution$Unknown extends GetTreasuryDebitReversalsResolution {const GetTreasuryDebitReversalsResolution$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GetTreasuryDebitReversalsResolution && other.value == value;
+    other is GetTreasuryDebitReversalsResolution$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GetTreasuryDebitReversalsResolution($value)';
 
  }

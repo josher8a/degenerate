@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookPullRequestAutoMergeDisabled
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_auto_merge_disabled/webhook_pull_request_auto_merge_disabled_pull_request.dart';@immutable final class WebhookPullRequestAutoMergeDisabledAction {const WebhookPullRequestAutoMergeDisabledAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_auto_merge_disabled/webhook_pull_request_auto_merge_disabled_pull_request.dart';sealed class WebhookPullRequestAutoMergeDisabledAction {const WebhookPullRequestAutoMergeDisabledAction();
 
 factory WebhookPullRequestAutoMergeDisabledAction.fromJson(String json) { return switch (json) {
   'auto_merge_disabled' => autoMergeDisabled,
-  _ => WebhookPullRequestAutoMergeDisabledAction._(json),
+  _ => WebhookPullRequestAutoMergeDisabledAction$Unknown(json),
 }; }
 
-static const WebhookPullRequestAutoMergeDisabledAction autoMergeDisabled = WebhookPullRequestAutoMergeDisabledAction._('auto_merge_disabled');
+static const WebhookPullRequestAutoMergeDisabledAction autoMergeDisabled = WebhookPullRequestAutoMergeDisabledAction$autoMergeDisabled._();
 
 static const List<WebhookPullRequestAutoMergeDisabledAction> values = [autoMergeDisabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookPullRequestAutoMergeDisabledAction$Unknown; } 
+@override String toString() => 'WebhookPullRequestAutoMergeDisabledAction($value)';
+
+ }
+@immutable final class WebhookPullRequestAutoMergeDisabledAction$autoMergeDisabled extends WebhookPullRequestAutoMergeDisabledAction {const WebhookPullRequestAutoMergeDisabledAction$autoMergeDisabled._();
+
+@override String get value => 'auto_merge_disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestAutoMergeDisabledAction$autoMergeDisabled;
+
+@override int get hashCode => 'auto_merge_disabled'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestAutoMergeDisabledAction$Unknown extends WebhookPullRequestAutoMergeDisabledAction {const WebhookPullRequestAutoMergeDisabledAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookPullRequestAutoMergeDisabledAction && other.value == value;
+    other is WebhookPullRequestAutoMergeDisabledAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookPullRequestAutoMergeDisabledAction($value)';
 
  }
 @immutable final class WebhookPullRequestAutoMergeDisabled {const WebhookPullRequestAutoMergeDisabled({required this.action, required this.number, required this.pullRequest, required this.reason, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

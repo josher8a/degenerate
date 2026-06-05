@@ -2,28 +2,27 @@
 // Source: #/components/schemas/BalanceSettingsResourcePayoutSchedule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payout_schedule/weekly_payout_days.dart';/// How frequently funds will be paid out. One of `manual` (payouts only created via API call), `daily`, `weekly`, or `monthly`.
-@immutable final class BalanceSettingsResourcePayoutScheduleInterval {const BalanceSettingsResourcePayoutScheduleInterval._(this.value);
+sealed class BalanceSettingsResourcePayoutScheduleInterval {const BalanceSettingsResourcePayoutScheduleInterval();
 
 factory BalanceSettingsResourcePayoutScheduleInterval.fromJson(String json) { return switch (json) {
   'daily' => daily,
   'manual' => manual,
   'monthly' => monthly,
   'weekly' => weekly,
-  _ => BalanceSettingsResourcePayoutScheduleInterval._(json),
+  _ => BalanceSettingsResourcePayoutScheduleInterval$Unknown(json),
 }; }
 
-static const BalanceSettingsResourcePayoutScheduleInterval daily = BalanceSettingsResourcePayoutScheduleInterval._('daily');
+static const BalanceSettingsResourcePayoutScheduleInterval daily = BalanceSettingsResourcePayoutScheduleInterval$daily._();
 
-static const BalanceSettingsResourcePayoutScheduleInterval manual = BalanceSettingsResourcePayoutScheduleInterval._('manual');
+static const BalanceSettingsResourcePayoutScheduleInterval manual = BalanceSettingsResourcePayoutScheduleInterval$manual._();
 
-static const BalanceSettingsResourcePayoutScheduleInterval monthly = BalanceSettingsResourcePayoutScheduleInterval._('monthly');
+static const BalanceSettingsResourcePayoutScheduleInterval monthly = BalanceSettingsResourcePayoutScheduleInterval$monthly._();
 
-static const BalanceSettingsResourcePayoutScheduleInterval weekly = BalanceSettingsResourcePayoutScheduleInterval._('weekly');
+static const BalanceSettingsResourcePayoutScheduleInterval weekly = BalanceSettingsResourcePayoutScheduleInterval$weekly._();
 
 static const List<BalanceSettingsResourcePayoutScheduleInterval> values = [daily, manual, monthly, weekly];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BalanceSettingsResourcePayoutScheduleInterval$Unknown; } 
+@override String toString() => 'BalanceSettingsResourcePayoutScheduleInterval($value)';
+
+ }
+@immutable final class BalanceSettingsResourcePayoutScheduleInterval$daily extends BalanceSettingsResourcePayoutScheduleInterval {const BalanceSettingsResourcePayoutScheduleInterval$daily._();
+
+@override String get value => 'daily';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceSettingsResourcePayoutScheduleInterval$daily;
+
+@override int get hashCode => 'daily'.hashCode;
+
+ }
+@immutable final class BalanceSettingsResourcePayoutScheduleInterval$manual extends BalanceSettingsResourcePayoutScheduleInterval {const BalanceSettingsResourcePayoutScheduleInterval$manual._();
+
+@override String get value => 'manual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceSettingsResourcePayoutScheduleInterval$manual;
+
+@override int get hashCode => 'manual'.hashCode;
+
+ }
+@immutable final class BalanceSettingsResourcePayoutScheduleInterval$monthly extends BalanceSettingsResourcePayoutScheduleInterval {const BalanceSettingsResourcePayoutScheduleInterval$monthly._();
+
+@override String get value => 'monthly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceSettingsResourcePayoutScheduleInterval$monthly;
+
+@override int get hashCode => 'monthly'.hashCode;
+
+ }
+@immutable final class BalanceSettingsResourcePayoutScheduleInterval$weekly extends BalanceSettingsResourcePayoutScheduleInterval {const BalanceSettingsResourcePayoutScheduleInterval$weekly._();
+
+@override String get value => 'weekly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceSettingsResourcePayoutScheduleInterval$weekly;
+
+@override int get hashCode => 'weekly'.hashCode;
+
+ }
+@immutable final class BalanceSettingsResourcePayoutScheduleInterval$Unknown extends BalanceSettingsResourcePayoutScheduleInterval {const BalanceSettingsResourcePayoutScheduleInterval$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BalanceSettingsResourcePayoutScheduleInterval && other.value == value;
+    other is BalanceSettingsResourcePayoutScheduleInterval$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BalanceSettingsResourcePayoutScheduleInterval($value)';
 
  }
 /// 

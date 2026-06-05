@@ -2,19 +2,18 @@
 // Source: #/components/schemas/D1ExportDatabaseRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_export_database_request/dump_options.dart';/// Specifies that you will poll this endpoint until the export completes
-@immutable final class OutputFormat {const OutputFormat._(this.value);
+sealed class OutputFormat {const OutputFormat();
 
 factory OutputFormat.fromJson(String json) { return switch (json) {
   'polling' => polling,
-  _ => OutputFormat._(json),
+  _ => OutputFormat$Unknown(json),
 }; }
 
-static const OutputFormat polling = OutputFormat._('polling');
+static const OutputFormat polling = OutputFormat$polling._();
 
 static const List<OutputFormat> values = [polling];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OutputFormat$Unknown; } 
+@override String toString() => 'OutputFormat($value)';
+
+ }
+@immutable final class OutputFormat$polling extends OutputFormat {const OutputFormat$polling._();
+
+@override String get value => 'polling';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OutputFormat$polling;
+
+@override int get hashCode => 'polling'.hashCode;
+
+ }
+@immutable final class OutputFormat$Unknown extends OutputFormat {const OutputFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OutputFormat && other.value == value;
+    other is OutputFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OutputFormat($value)';
 
  }
 @immutable final class D1ExportDatabaseRequest {const D1ExportDatabaseRequest({required this.outputFormat, this.currentBookmark, this.dumpOptions, });

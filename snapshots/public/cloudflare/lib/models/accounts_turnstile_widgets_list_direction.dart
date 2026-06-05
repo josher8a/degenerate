@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AccountsTurnstileWidgetsListDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order widgets.
-@immutable final class AccountsTurnstileWidgetsListDirection {const AccountsTurnstileWidgetsListDirection._(this.value);
+sealed class AccountsTurnstileWidgetsListDirection {const AccountsTurnstileWidgetsListDirection();
 
 factory AccountsTurnstileWidgetsListDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => AccountsTurnstileWidgetsListDirection._(json),
+  _ => AccountsTurnstileWidgetsListDirection$Unknown(json),
 }; }
 
-static const AccountsTurnstileWidgetsListDirection asc = AccountsTurnstileWidgetsListDirection._('asc');
+static const AccountsTurnstileWidgetsListDirection asc = AccountsTurnstileWidgetsListDirection$asc._();
 
-static const AccountsTurnstileWidgetsListDirection desc = AccountsTurnstileWidgetsListDirection._('desc');
+static const AccountsTurnstileWidgetsListDirection desc = AccountsTurnstileWidgetsListDirection$desc._();
 
 static const List<AccountsTurnstileWidgetsListDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountsTurnstileWidgetsListDirection$Unknown; } 
+@override String toString() => 'AccountsTurnstileWidgetsListDirection($value)';
+
+ }
+@immutable final class AccountsTurnstileWidgetsListDirection$asc extends AccountsTurnstileWidgetsListDirection {const AccountsTurnstileWidgetsListDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountsTurnstileWidgetsListDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class AccountsTurnstileWidgetsListDirection$desc extends AccountsTurnstileWidgetsListDirection {const AccountsTurnstileWidgetsListDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountsTurnstileWidgetsListDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class AccountsTurnstileWidgetsListDirection$Unknown extends AccountsTurnstileWidgetsListDirection {const AccountsTurnstileWidgetsListDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountsTurnstileWidgetsListDirection && other.value == value;
+    other is AccountsTurnstileWidgetsListDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountsTurnstileWidgetsListDirection($value)';
 
  }

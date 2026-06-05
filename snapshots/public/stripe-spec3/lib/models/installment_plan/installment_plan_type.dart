@@ -2,25 +2,24 @@
 // Source: #/components/schemas/InstallmentPlan (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of installment plan, one of `fixed_count`, `bonus`, or `revolving`.
-@immutable final class InstallmentPlanType {const InstallmentPlanType._(this.value);
+sealed class InstallmentPlanType {const InstallmentPlanType();
 
 factory InstallmentPlanType.fromJson(String json) { return switch (json) {
   'bonus' => bonus,
   'fixed_count' => fixedCount,
   'revolving' => revolving,
-  _ => InstallmentPlanType._(json),
+  _ => InstallmentPlanType$Unknown(json),
 }; }
 
-static const InstallmentPlanType bonus = InstallmentPlanType._('bonus');
+static const InstallmentPlanType bonus = InstallmentPlanType$bonus._();
 
-static const InstallmentPlanType fixedCount = InstallmentPlanType._('fixed_count');
+static const InstallmentPlanType fixedCount = InstallmentPlanType$fixedCount._();
 
-static const InstallmentPlanType revolving = InstallmentPlanType._('revolving');
+static const InstallmentPlanType revolving = InstallmentPlanType$revolving._();
 
 static const List<InstallmentPlanType> values = [bonus, fixedCount, revolving];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InstallmentPlanType$Unknown; } 
+@override String toString() => 'InstallmentPlanType($value)';
+
+ }
+@immutable final class InstallmentPlanType$bonus extends InstallmentPlanType {const InstallmentPlanType$bonus._();
+
+@override String get value => 'bonus';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InstallmentPlanType$bonus;
+
+@override int get hashCode => 'bonus'.hashCode;
+
+ }
+@immutable final class InstallmentPlanType$fixedCount extends InstallmentPlanType {const InstallmentPlanType$fixedCount._();
+
+@override String get value => 'fixed_count';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InstallmentPlanType$fixedCount;
+
+@override int get hashCode => 'fixed_count'.hashCode;
+
+ }
+@immutable final class InstallmentPlanType$revolving extends InstallmentPlanType {const InstallmentPlanType$revolving._();
+
+@override String get value => 'revolving';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InstallmentPlanType$revolving;
+
+@override int get hashCode => 'revolving'.hashCode;
+
+ }
+@immutable final class InstallmentPlanType$Unknown extends InstallmentPlanType {const InstallmentPlanType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InstallmentPlanType && other.value == value;
+    other is InstallmentPlanType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InstallmentPlanType($value)';
 
  }

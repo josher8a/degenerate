@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TreasuryReceivedCreditsResourceSourceFlowsDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payout.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_payment.dart';import 'package:pub_stripe_spec3/models/treasury_outbound_transfer.dart';/// The type of the source flow that originated the ReceivedCredit.
-@immutable final class TreasuryReceivedCreditsResourceSourceFlowsDetailsType {const TreasuryReceivedCreditsResourceSourceFlowsDetailsType._(this.value);
+sealed class TreasuryReceivedCreditsResourceSourceFlowsDetailsType {const TreasuryReceivedCreditsResourceSourceFlowsDetailsType();
 
 factory TreasuryReceivedCreditsResourceSourceFlowsDetailsType.fromJson(String json) { return switch (json) {
   'credit_reversal' => creditReversal,
@@ -10,23 +10,22 @@ factory TreasuryReceivedCreditsResourceSourceFlowsDetailsType.fromJson(String js
   'outbound_payment' => outboundPayment,
   'outbound_transfer' => outboundTransfer,
   'payout' => payout,
-  _ => TreasuryReceivedCreditsResourceSourceFlowsDetailsType._(json),
+  _ => TreasuryReceivedCreditsResourceSourceFlowsDetailsType$Unknown(json),
 }; }
 
-static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType creditReversal = TreasuryReceivedCreditsResourceSourceFlowsDetailsType._('credit_reversal');
+static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType creditReversal = TreasuryReceivedCreditsResourceSourceFlowsDetailsType$creditReversal._();
 
-static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType $other = TreasuryReceivedCreditsResourceSourceFlowsDetailsType._('other');
+static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType $other = TreasuryReceivedCreditsResourceSourceFlowsDetailsType$$other._();
 
-static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType outboundPayment = TreasuryReceivedCreditsResourceSourceFlowsDetailsType._('outbound_payment');
+static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType outboundPayment = TreasuryReceivedCreditsResourceSourceFlowsDetailsType$outboundPayment._();
 
-static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType outboundTransfer = TreasuryReceivedCreditsResourceSourceFlowsDetailsType._('outbound_transfer');
+static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType outboundTransfer = TreasuryReceivedCreditsResourceSourceFlowsDetailsType$outboundTransfer._();
 
-static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType payout = TreasuryReceivedCreditsResourceSourceFlowsDetailsType._('payout');
+static const TreasuryReceivedCreditsResourceSourceFlowsDetailsType payout = TreasuryReceivedCreditsResourceSourceFlowsDetailsType$payout._();
 
 static const List<TreasuryReceivedCreditsResourceSourceFlowsDetailsType> values = [creditReversal, $other, outboundPayment, outboundTransfer, payout];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TreasuryReceivedCreditsResourceSourceFlowsDetailsType$Unknown; } 
+@override String toString() => 'TreasuryReceivedCreditsResourceSourceFlowsDetailsType($value)';
+
+ }
+@immutable final class TreasuryReceivedCreditsResourceSourceFlowsDetailsType$creditReversal extends TreasuryReceivedCreditsResourceSourceFlowsDetailsType {const TreasuryReceivedCreditsResourceSourceFlowsDetailsType$creditReversal._();
+
+@override String get value => 'credit_reversal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditsResourceSourceFlowsDetailsType$creditReversal;
+
+@override int get hashCode => 'credit_reversal'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditsResourceSourceFlowsDetailsType$$other extends TreasuryReceivedCreditsResourceSourceFlowsDetailsType {const TreasuryReceivedCreditsResourceSourceFlowsDetailsType$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditsResourceSourceFlowsDetailsType$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditsResourceSourceFlowsDetailsType$outboundPayment extends TreasuryReceivedCreditsResourceSourceFlowsDetailsType {const TreasuryReceivedCreditsResourceSourceFlowsDetailsType$outboundPayment._();
+
+@override String get value => 'outbound_payment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditsResourceSourceFlowsDetailsType$outboundPayment;
+
+@override int get hashCode => 'outbound_payment'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditsResourceSourceFlowsDetailsType$outboundTransfer extends TreasuryReceivedCreditsResourceSourceFlowsDetailsType {const TreasuryReceivedCreditsResourceSourceFlowsDetailsType$outboundTransfer._();
+
+@override String get value => 'outbound_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditsResourceSourceFlowsDetailsType$outboundTransfer;
+
+@override int get hashCode => 'outbound_transfer'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditsResourceSourceFlowsDetailsType$payout extends TreasuryReceivedCreditsResourceSourceFlowsDetailsType {const TreasuryReceivedCreditsResourceSourceFlowsDetailsType$payout._();
+
+@override String get value => 'payout';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditsResourceSourceFlowsDetailsType$payout;
+
+@override int get hashCode => 'payout'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditsResourceSourceFlowsDetailsType$Unknown extends TreasuryReceivedCreditsResourceSourceFlowsDetailsType {const TreasuryReceivedCreditsResourceSourceFlowsDetailsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryReceivedCreditsResourceSourceFlowsDetailsType && other.value == value;
+    other is TreasuryReceivedCreditsResourceSourceFlowsDetailsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TreasuryReceivedCreditsResourceSourceFlowsDetailsType($value)';
 
  }
 /// 

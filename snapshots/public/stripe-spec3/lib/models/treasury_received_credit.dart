@@ -2,28 +2,27 @@
 // Source: #/components/schemas/TreasuryReceivedCredit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_received_credit/treasury_received_credit_status.dart';import 'package:pub_stripe_spec3/models/treasury_received_credits_resource_linked_flows.dart';import 'package:pub_stripe_spec3/models/treasury_received_credits_resource_reversal_details.dart';import 'package:pub_stripe_spec3/models/treasury_shared_resource_initiating_payment_method_details_initiating_payment_method_details.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// Reason for the failure. A ReceivedCredit might fail because the receiving FinancialAccount is closed or frozen.
-@immutable final class TreasuryReceivedCreditFailureCode {const TreasuryReceivedCreditFailureCode._(this.value);
+sealed class TreasuryReceivedCreditFailureCode {const TreasuryReceivedCreditFailureCode();
 
 factory TreasuryReceivedCreditFailureCode.fromJson(String json) { return switch (json) {
   'account_closed' => accountClosed,
   'account_frozen' => accountFrozen,
   'international_transaction' => internationalTransaction,
   'other' => $other,
-  _ => TreasuryReceivedCreditFailureCode._(json),
+  _ => TreasuryReceivedCreditFailureCode$Unknown(json),
 }; }
 
-static const TreasuryReceivedCreditFailureCode accountClosed = TreasuryReceivedCreditFailureCode._('account_closed');
+static const TreasuryReceivedCreditFailureCode accountClosed = TreasuryReceivedCreditFailureCode$accountClosed._();
 
-static const TreasuryReceivedCreditFailureCode accountFrozen = TreasuryReceivedCreditFailureCode._('account_frozen');
+static const TreasuryReceivedCreditFailureCode accountFrozen = TreasuryReceivedCreditFailureCode$accountFrozen._();
 
-static const TreasuryReceivedCreditFailureCode internationalTransaction = TreasuryReceivedCreditFailureCode._('international_transaction');
+static const TreasuryReceivedCreditFailureCode internationalTransaction = TreasuryReceivedCreditFailureCode$internationalTransaction._();
 
-static const TreasuryReceivedCreditFailureCode $other = TreasuryReceivedCreditFailureCode._('other');
+static const TreasuryReceivedCreditFailureCode $other = TreasuryReceivedCreditFailureCode$$other._();
 
 static const List<TreasuryReceivedCreditFailureCode> values = [accountClosed, accountFrozen, internationalTransaction, $other];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,38 +33,78 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryReceivedCreditFailureCode && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TreasuryReceivedCreditFailureCode$Unknown; } 
 @override String toString() => 'TreasuryReceivedCreditFailureCode($value)';
 
  }
+@immutable final class TreasuryReceivedCreditFailureCode$accountClosed extends TreasuryReceivedCreditFailureCode {const TreasuryReceivedCreditFailureCode$accountClosed._();
+
+@override String get value => 'account_closed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditFailureCode$accountClosed;
+
+@override int get hashCode => 'account_closed'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditFailureCode$accountFrozen extends TreasuryReceivedCreditFailureCode {const TreasuryReceivedCreditFailureCode$accountFrozen._();
+
+@override String get value => 'account_frozen';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditFailureCode$accountFrozen;
+
+@override int get hashCode => 'account_frozen'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditFailureCode$internationalTransaction extends TreasuryReceivedCreditFailureCode {const TreasuryReceivedCreditFailureCode$internationalTransaction._();
+
+@override String get value => 'international_transaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditFailureCode$internationalTransaction;
+
+@override int get hashCode => 'international_transaction'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditFailureCode$$other extends TreasuryReceivedCreditFailureCode {const TreasuryReceivedCreditFailureCode$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditFailureCode$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditFailureCode$Unknown extends TreasuryReceivedCreditFailureCode {const TreasuryReceivedCreditFailureCode$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryReceivedCreditFailureCode$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The rails used to send the funds.
-@immutable final class TreasuryReceivedCreditNetwork {const TreasuryReceivedCreditNetwork._(this.value);
+sealed class TreasuryReceivedCreditNetwork {const TreasuryReceivedCreditNetwork();
 
 factory TreasuryReceivedCreditNetwork.fromJson(String json) { return switch (json) {
   'ach' => ach,
   'card' => card,
   'stripe' => stripe,
   'us_domestic_wire' => usDomesticWire,
-  _ => TreasuryReceivedCreditNetwork._(json),
+  _ => TreasuryReceivedCreditNetwork$Unknown(json),
 }; }
 
-static const TreasuryReceivedCreditNetwork ach = TreasuryReceivedCreditNetwork._('ach');
+static const TreasuryReceivedCreditNetwork ach = TreasuryReceivedCreditNetwork$ach._();
 
-static const TreasuryReceivedCreditNetwork card = TreasuryReceivedCreditNetwork._('card');
+static const TreasuryReceivedCreditNetwork card = TreasuryReceivedCreditNetwork$card._();
 
-static const TreasuryReceivedCreditNetwork stripe = TreasuryReceivedCreditNetwork._('stripe');
+static const TreasuryReceivedCreditNetwork stripe = TreasuryReceivedCreditNetwork$stripe._();
 
-static const TreasuryReceivedCreditNetwork usDomesticWire = TreasuryReceivedCreditNetwork._('us_domestic_wire');
+static const TreasuryReceivedCreditNetwork usDomesticWire = TreasuryReceivedCreditNetwork$usDomesticWire._();
 
 static const List<TreasuryReceivedCreditNetwork> values = [ach, card, stripe, usDomesticWire];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -76,29 +115,69 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryReceivedCreditNetwork && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TreasuryReceivedCreditNetwork$Unknown; } 
 @override String toString() => 'TreasuryReceivedCreditNetwork($value)';
 
  }
+@immutable final class TreasuryReceivedCreditNetwork$ach extends TreasuryReceivedCreditNetwork {const TreasuryReceivedCreditNetwork$ach._();
+
+@override String get value => 'ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditNetwork$ach;
+
+@override int get hashCode => 'ach'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditNetwork$card extends TreasuryReceivedCreditNetwork {const TreasuryReceivedCreditNetwork$card._();
+
+@override String get value => 'card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditNetwork$card;
+
+@override int get hashCode => 'card'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditNetwork$stripe extends TreasuryReceivedCreditNetwork {const TreasuryReceivedCreditNetwork$stripe._();
+
+@override String get value => 'stripe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditNetwork$stripe;
+
+@override int get hashCode => 'stripe'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditNetwork$usDomesticWire extends TreasuryReceivedCreditNetwork {const TreasuryReceivedCreditNetwork$usDomesticWire._();
+
+@override String get value => 'us_domestic_wire';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditNetwork$usDomesticWire;
+
+@override int get hashCode => 'us_domestic_wire'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditNetwork$Unknown extends TreasuryReceivedCreditNetwork {const TreasuryReceivedCreditNetwork$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryReceivedCreditNetwork$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TreasuryReceivedCreditObject {const TreasuryReceivedCreditObject._(this.value);
+sealed class TreasuryReceivedCreditObject {const TreasuryReceivedCreditObject();
 
 factory TreasuryReceivedCreditObject.fromJson(String json) { return switch (json) {
   'treasury.received_credit' => treasuryReceivedCredit,
-  _ => TreasuryReceivedCreditObject._(json),
+  _ => TreasuryReceivedCreditObject$Unknown(json),
 }; }
 
-static const TreasuryReceivedCreditObject treasuryReceivedCredit = TreasuryReceivedCreditObject._('treasury.received_credit');
+static const TreasuryReceivedCreditObject treasuryReceivedCredit = TreasuryReceivedCreditObject$treasuryReceivedCredit._();
 
 static const List<TreasuryReceivedCreditObject> values = [treasuryReceivedCredit];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -106,13 +185,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TreasuryReceivedCreditObject$Unknown; } 
+@override String toString() => 'TreasuryReceivedCreditObject($value)';
+
+ }
+@immutable final class TreasuryReceivedCreditObject$treasuryReceivedCredit extends TreasuryReceivedCreditObject {const TreasuryReceivedCreditObject$treasuryReceivedCredit._();
+
+@override String get value => 'treasury.received_credit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryReceivedCreditObject$treasuryReceivedCredit;
+
+@override int get hashCode => 'treasury.received_credit'.hashCode;
+
+ }
+@immutable final class TreasuryReceivedCreditObject$Unknown extends TreasuryReceivedCreditObject {const TreasuryReceivedCreditObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryReceivedCreditObject && other.value == value;
+    other is TreasuryReceivedCreditObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TreasuryReceivedCreditObject($value)';
 
  }
 /// ReceivedCredits represent funds sent to a [FinancialAccount](https://api.stripe.com#financial_accounts) (for example, via ACH or wire). These money movements are not initiated from the FinancialAccount.

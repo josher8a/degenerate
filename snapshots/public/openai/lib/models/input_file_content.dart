@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/InputFileContent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileInputDetail {const FileInputDetail._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class FileInputDetail {const FileInputDetail();
 
 factory FileInputDetail.fromJson(String json) { return switch (json) {
   'low' => low,
   'high' => high,
-  _ => FileInputDetail._(json),
+  _ => FileInputDetail$Unknown(json),
 }; }
 
-static const FileInputDetail low = FileInputDetail._('low');
+static const FileInputDetail low = FileInputDetail$low._();
 
-static const FileInputDetail high = FileInputDetail._('high');
+static const FileInputDetail high = FileInputDetail$high._();
 
 static const List<FileInputDetail> values = [low, high];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FileInputDetail$Unknown; } 
+@override String toString() => 'FileInputDetail($value)';
+
+ }
+@immutable final class FileInputDetail$low extends FileInputDetail {const FileInputDetail$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileInputDetail$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class FileInputDetail$high extends FileInputDetail {const FileInputDetail$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileInputDetail$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class FileInputDetail$Unknown extends FileInputDetail {const FileInputDetail$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FileInputDetail && other.value == value;
+    other is FileInputDetail$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FileInputDetail($value)';
 
  }
 /// A file input to the model.

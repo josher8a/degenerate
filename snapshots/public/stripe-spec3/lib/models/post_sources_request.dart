@@ -2,28 +2,27 @@
 // Source: #/components/schemas/PostSourcesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_bank_accounts_id_request/post_customers_customer_bank_accounts_id_request_owner.dart';import 'package:pub_stripe_spec3/models/post_sources_request/post_sources_request_mandate.dart';import 'package:pub_stripe_spec3/models/post_sources_request/post_sources_request_redirect.dart';import 'package:pub_stripe_spec3/models/post_sources_request/post_sources_request_source_order.dart';import 'package:pub_stripe_spec3/models/post_sources_request/receiver.dart';/// The authentication `flow` of the source to create. `flow` is one of `redirect`, `receiver`, `code_verification`, `none`. It is generally inferred unless a type supports multiple flows.
-@immutable final class Flow {const Flow._(this.value);
+sealed class Flow {const Flow();
 
 factory Flow.fromJson(String json) { return switch (json) {
   'code_verification' => codeVerification,
   'none' => none,
   'receiver' => receiver,
   'redirect' => redirect,
-  _ => Flow._(json),
+  _ => Flow$Unknown(json),
 }; }
 
-static const Flow codeVerification = Flow._('code_verification');
+static const Flow codeVerification = Flow$codeVerification._();
 
-static const Flow none = Flow._('none');
+static const Flow none = Flow$none._();
 
-static const Flow receiver = Flow._('receiver');
+static const Flow receiver = Flow$receiver._();
 
-static const Flow redirect = Flow._('redirect');
+static const Flow redirect = Flow$redirect._();
 
 static const List<Flow> values = [codeVerification, none, receiver, redirect];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,31 +33,71 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Flow && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Flow$Unknown; } 
 @override String toString() => 'Flow($value)';
 
  }
-@immutable final class PostSourcesRequestUsage {const PostSourcesRequestUsage._(this.value);
+@immutable final class Flow$codeVerification extends Flow {const Flow$codeVerification._();
+
+@override String get value => 'code_verification';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Flow$codeVerification;
+
+@override int get hashCode => 'code_verification'.hashCode;
+
+ }
+@immutable final class Flow$none extends Flow {const Flow$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Flow$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class Flow$receiver extends Flow {const Flow$receiver._();
+
+@override String get value => 'receiver';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Flow$receiver;
+
+@override int get hashCode => 'receiver'.hashCode;
+
+ }
+@immutable final class Flow$redirect extends Flow {const Flow$redirect._();
+
+@override String get value => 'redirect';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Flow$redirect;
+
+@override int get hashCode => 'redirect'.hashCode;
+
+ }
+@immutable final class Flow$Unknown extends Flow {const Flow$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Flow$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class PostSourcesRequestUsage {const PostSourcesRequestUsage();
 
 factory PostSourcesRequestUsage.fromJson(String json) { return switch (json) {
   'reusable' => reusable,
   'single_use' => singleUse,
-  _ => PostSourcesRequestUsage._(json),
+  _ => PostSourcesRequestUsage$Unknown(json),
 }; }
 
-static const PostSourcesRequestUsage reusable = PostSourcesRequestUsage._('reusable');
+static const PostSourcesRequestUsage reusable = PostSourcesRequestUsage$reusable._();
 
-static const PostSourcesRequestUsage singleUse = PostSourcesRequestUsage._('single_use');
+static const PostSourcesRequestUsage singleUse = PostSourcesRequestUsage$singleUse._();
 
 static const List<PostSourcesRequestUsage> values = [reusable, singleUse];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -67,13 +106,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostSourcesRequestUsage$Unknown; } 
+@override String toString() => 'PostSourcesRequestUsage($value)';
+
+ }
+@immutable final class PostSourcesRequestUsage$reusable extends PostSourcesRequestUsage {const PostSourcesRequestUsage$reusable._();
+
+@override String get value => 'reusable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostSourcesRequestUsage$reusable;
+
+@override int get hashCode => 'reusable'.hashCode;
+
+ }
+@immutable final class PostSourcesRequestUsage$singleUse extends PostSourcesRequestUsage {const PostSourcesRequestUsage$singleUse._();
+
+@override String get value => 'single_use';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostSourcesRequestUsage$singleUse;
+
+@override int get hashCode => 'single_use'.hashCode;
+
+ }
+@immutable final class PostSourcesRequestUsage$Unknown extends PostSourcesRequestUsage {const PostSourcesRequestUsage$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostSourcesRequestUsage && other.value == value;
+    other is PostSourcesRequestUsage$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostSourcesRequestUsage($value)';
 
  }
 @immutable final class PostSourcesRequest {const PostSourcesRequest({this.amount, this.currency, this.customer, this.expand, this.flow, this.mandate, this.metadata, this.originalSource, this.owner, this.receiver, this.redirect, this.sourceOrder, this.statementDescriptor, this.token, this.type, this.usage, });

@@ -2,28 +2,27 @@
 // Source: #/components/schemas/Account
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account/account_object.dart';import 'package:pub_stripe_spec3/models/account/external_accounts.dart';import 'package:pub_stripe_spec3/models/account_business_profile.dart';import 'package:pub_stripe_spec3/models/account_capabilities.dart';import 'package:pub_stripe_spec3/models/account_future_requirements.dart';import 'package:pub_stripe_spec3/models/account_group_membership.dart';import 'package:pub_stripe_spec3/models/account_requirements.dart';import 'package:pub_stripe_spec3/models/account_settings.dart';import 'package:pub_stripe_spec3/models/account_tos_acceptance.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller.dart';import 'package:pub_stripe_spec3/models/legal_entity_company.dart';import 'package:pub_stripe_spec3/models/person.dart';/// The business type.
-@immutable final class AccountBusinessType {const AccountBusinessType._(this.value);
+sealed class AccountBusinessType {const AccountBusinessType();
 
 factory AccountBusinessType.fromJson(String json) { return switch (json) {
   'company' => company,
   'government_entity' => governmentEntity,
   'individual' => individual,
   'non_profit' => nonProfit,
-  _ => AccountBusinessType._(json),
+  _ => AccountBusinessType$Unknown(json),
 }; }
 
-static const AccountBusinessType company = AccountBusinessType._('company');
+static const AccountBusinessType company = AccountBusinessType$company._();
 
-static const AccountBusinessType governmentEntity = AccountBusinessType._('government_entity');
+static const AccountBusinessType governmentEntity = AccountBusinessType$governmentEntity._();
 
-static const AccountBusinessType individual = AccountBusinessType._('individual');
+static const AccountBusinessType individual = AccountBusinessType$individual._();
 
-static const AccountBusinessType nonProfit = AccountBusinessType._('non_profit');
+static const AccountBusinessType nonProfit = AccountBusinessType$nonProfit._();
 
 static const List<AccountBusinessType> values = [company, governmentEntity, individual, nonProfit];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,38 +33,78 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountBusinessType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is AccountBusinessType$Unknown; } 
 @override String toString() => 'AccountBusinessType($value)';
 
  }
+@immutable final class AccountBusinessType$company extends AccountBusinessType {const AccountBusinessType$company._();
+
+@override String get value => 'company';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountBusinessType$company;
+
+@override int get hashCode => 'company'.hashCode;
+
+ }
+@immutable final class AccountBusinessType$governmentEntity extends AccountBusinessType {const AccountBusinessType$governmentEntity._();
+
+@override String get value => 'government_entity';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountBusinessType$governmentEntity;
+
+@override int get hashCode => 'government_entity'.hashCode;
+
+ }
+@immutable final class AccountBusinessType$individual extends AccountBusinessType {const AccountBusinessType$individual._();
+
+@override String get value => 'individual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountBusinessType$individual;
+
+@override int get hashCode => 'individual'.hashCode;
+
+ }
+@immutable final class AccountBusinessType$nonProfit extends AccountBusinessType {const AccountBusinessType$nonProfit._();
+
+@override String get value => 'non_profit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountBusinessType$nonProfit;
+
+@override int get hashCode => 'non_profit'.hashCode;
+
+ }
+@immutable final class AccountBusinessType$Unknown extends AccountBusinessType {const AccountBusinessType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AccountBusinessType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The Stripe account type. Can be `standard`, `express`, `custom`, or `none`.
-@immutable final class AccountType {const AccountType._(this.value);
+sealed class AccountType {const AccountType();
 
 factory AccountType.fromJson(String json) { return switch (json) {
   'custom' => custom,
   'express' => express,
   'none' => none,
   'standard' => standard,
-  _ => AccountType._(json),
+  _ => AccountType$Unknown(json),
 }; }
 
-static const AccountType custom = AccountType._('custom');
+static const AccountType custom = AccountType$custom._();
 
-static const AccountType express = AccountType._('express');
+static const AccountType express = AccountType$express._();
 
-static const AccountType none = AccountType._('none');
+static const AccountType none = AccountType$none._();
 
-static const AccountType standard = AccountType._('standard');
+static const AccountType standard = AccountType$standard._();
 
 static const List<AccountType> values = [custom, express, none, standard];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -76,13 +115,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountType$Unknown; } 
+@override String toString() => 'AccountType($value)';
+
+ }
+@immutable final class AccountType$custom extends AccountType {const AccountType$custom._();
+
+@override String get value => 'custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountType$custom;
+
+@override int get hashCode => 'custom'.hashCode;
+
+ }
+@immutable final class AccountType$express extends AccountType {const AccountType$express._();
+
+@override String get value => 'express';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountType$express;
+
+@override int get hashCode => 'express'.hashCode;
+
+ }
+@immutable final class AccountType$none extends AccountType {const AccountType$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountType$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class AccountType$standard extends AccountType {const AccountType$standard._();
+
+@override String get value => 'standard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountType$standard;
+
+@override int get hashCode => 'standard'.hashCode;
+
+ }
+@immutable final class AccountType$Unknown extends AccountType {const AccountType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountType && other.value == value;
+    other is AccountType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountType($value)';
 
  }
 /// This is an object representing a Stripe account. You can retrieve it to see

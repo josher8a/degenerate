@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ResponseFormatJsonObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of response format being defined. Always `json_object`.
-@immutable final class ResponseFormatJsonObjectType {const ResponseFormatJsonObjectType._(this.value);
+sealed class ResponseFormatJsonObjectType {const ResponseFormatJsonObjectType();
 
 factory ResponseFormatJsonObjectType.fromJson(String json) { return switch (json) {
   'json_object' => jsonObject,
-  _ => ResponseFormatJsonObjectType._(json),
+  _ => ResponseFormatJsonObjectType$Unknown(json),
 }; }
 
-static const ResponseFormatJsonObjectType jsonObject = ResponseFormatJsonObjectType._('json_object');
+static const ResponseFormatJsonObjectType jsonObject = ResponseFormatJsonObjectType$jsonObject._();
 
 static const List<ResponseFormatJsonObjectType> values = [jsonObject];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ResponseFormatJsonObjectType$Unknown; } 
+@override String toString() => 'ResponseFormatJsonObjectType($value)';
+
+ }
+@immutable final class ResponseFormatJsonObjectType$jsonObject extends ResponseFormatJsonObjectType {const ResponseFormatJsonObjectType$jsonObject._();
+
+@override String get value => 'json_object';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseFormatJsonObjectType$jsonObject;
+
+@override int get hashCode => 'json_object'.hashCode;
+
+ }
+@immutable final class ResponseFormatJsonObjectType$Unknown extends ResponseFormatJsonObjectType {const ResponseFormatJsonObjectType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ResponseFormatJsonObjectType && other.value == value;
+    other is ResponseFormatJsonObjectType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ResponseFormatJsonObjectType($value)';
 
  }
 /// JSON object response format. An older method of generating JSON responses.

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/WafManagedRulesTraditionalAllowRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/waf_managed_rules_base/waf_managed_rules_base_group.dart';import 'package:pub_cloudflare/models/waf_managed_rules_identifier.dart';import 'package:pub_cloudflare/models/waf_managed_rules_priority.dart';import 'package:pub_cloudflare/models/waf_managed_rules_rule_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/waf_managed_rules_schemas_description.dart';/// When set to `on`, the current rule will be used when evaluating the request. Applies to traditional (allow) WAF rules.
-@immutable final class WafManagedRulesModeAllowTraditional {const WafManagedRulesModeAllowTraditional._(this.value);
+sealed class WafManagedRulesModeAllowTraditional {const WafManagedRulesModeAllowTraditional();
 
 factory WafManagedRulesModeAllowTraditional.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => WafManagedRulesModeAllowTraditional._(json),
+  _ => WafManagedRulesModeAllowTraditional$Unknown(json),
 }; }
 
-static const WafManagedRulesModeAllowTraditional $on = WafManagedRulesModeAllowTraditional._('on');
+static const WafManagedRulesModeAllowTraditional $on = WafManagedRulesModeAllowTraditional$$on._();
 
-static const WafManagedRulesModeAllowTraditional off = WafManagedRulesModeAllowTraditional._('off');
+static const WafManagedRulesModeAllowTraditional off = WafManagedRulesModeAllowTraditional$off._();
 
 static const List<WafManagedRulesModeAllowTraditional> values = [$on, off];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WafManagedRulesModeAllowTraditional$Unknown; } 
+@override String toString() => 'WafManagedRulesModeAllowTraditional($value)';
+
+ }
+@immutable final class WafManagedRulesModeAllowTraditional$$on extends WafManagedRulesModeAllowTraditional {const WafManagedRulesModeAllowTraditional$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WafManagedRulesModeAllowTraditional$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class WafManagedRulesModeAllowTraditional$off extends WafManagedRulesModeAllowTraditional {const WafManagedRulesModeAllowTraditional$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WafManagedRulesModeAllowTraditional$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class WafManagedRulesModeAllowTraditional$Unknown extends WafManagedRulesModeAllowTraditional {const WafManagedRulesModeAllowTraditional$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WafManagedRulesModeAllowTraditional && other.value == value;
+    other is WafManagedRulesModeAllowTraditional$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WafManagedRulesModeAllowTraditional($value)';
 
  }
 /// When triggered, traditional WAF rules cause the firewall to immediately act on the request based on the rule configuration. An 'allow' rule will immediately allow the request and no other rules will be processed.

@@ -16,7 +16,7 @@ String toJson() => value;
 
 }
 /// Status of the latest snapshot uploaded
-@immutable final class LatestUploadStatus {const LatestUploadStatus._(this.value);
+sealed class LatestUploadStatus {const LatestUploadStatus();
 
 factory LatestUploadStatus.fromJson(String json) { return switch (json) {
   'Mirroring' => mirroring,
@@ -25,25 +25,24 @@ factory LatestUploadStatus.fromJson(String json) { return switch (json) {
   'Provisioning' => provisioning,
   'Complete' => complete,
   'Error' => error,
-  _ => LatestUploadStatus._(json),
+  _ => LatestUploadStatus$Unknown(json),
 }; }
 
-static const LatestUploadStatus mirroring = LatestUploadStatus._('Mirroring');
+static const LatestUploadStatus mirroring = LatestUploadStatus$mirroring._();
 
-static const LatestUploadStatus unifying = LatestUploadStatus._('Unifying');
+static const LatestUploadStatus unifying = LatestUploadStatus$unifying._();
 
-static const LatestUploadStatus loading = LatestUploadStatus._('Loading');
+static const LatestUploadStatus loading = LatestUploadStatus$loading._();
 
-static const LatestUploadStatus provisioning = LatestUploadStatus._('Provisioning');
+static const LatestUploadStatus provisioning = LatestUploadStatus$provisioning._();
 
-static const LatestUploadStatus complete = LatestUploadStatus._('Complete');
+static const LatestUploadStatus complete = LatestUploadStatus$complete._();
 
-static const LatestUploadStatus error = LatestUploadStatus._('Error');
+static const LatestUploadStatus error = LatestUploadStatus$error._();
 
 static const List<LatestUploadStatus> values = [mirroring, unifying, loading, provisioning, complete, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -56,13 +55,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LatestUploadStatus$Unknown; } 
+@override String toString() => 'LatestUploadStatus($value)';
+
+ }
+@immutable final class LatestUploadStatus$mirroring extends LatestUploadStatus {const LatestUploadStatus$mirroring._();
+
+@override String get value => 'Mirroring';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LatestUploadStatus$mirroring;
+
+@override int get hashCode => 'Mirroring'.hashCode;
+
+ }
+@immutable final class LatestUploadStatus$unifying extends LatestUploadStatus {const LatestUploadStatus$unifying._();
+
+@override String get value => 'Unifying';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LatestUploadStatus$unifying;
+
+@override int get hashCode => 'Unifying'.hashCode;
+
+ }
+@immutable final class LatestUploadStatus$loading extends LatestUploadStatus {const LatestUploadStatus$loading._();
+
+@override String get value => 'Loading';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LatestUploadStatus$loading;
+
+@override int get hashCode => 'Loading'.hashCode;
+
+ }
+@immutable final class LatestUploadStatus$provisioning extends LatestUploadStatus {const LatestUploadStatus$provisioning._();
+
+@override String get value => 'Provisioning';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LatestUploadStatus$provisioning;
+
+@override int get hashCode => 'Provisioning'.hashCode;
+
+ }
+@immutable final class LatestUploadStatus$complete extends LatestUploadStatus {const LatestUploadStatus$complete._();
+
+@override String get value => 'Complete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LatestUploadStatus$complete;
+
+@override int get hashCode => 'Complete'.hashCode;
+
+ }
+@immutable final class LatestUploadStatus$error extends LatestUploadStatus {const LatestUploadStatus$error._();
+
+@override String get value => 'Error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LatestUploadStatus$error;
+
+@override int get hashCode => 'Error'.hashCode;
+
+ }
+@immutable final class LatestUploadStatus$Unknown extends LatestUploadStatus {const LatestUploadStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LatestUploadStatus && other.value == value;
+    other is LatestUploadStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LatestUploadStatus($value)';
 
  }
 /// Example:

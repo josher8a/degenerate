@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MapTest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Value {const Value._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Value {const Value();
 
 factory Value.fromJson(String json) { return switch (json) {
   'UPPER' => upper,
   'lower' => lower,
-  _ => Value._(json),
+  _ => Value$Unknown(json),
 }; }
 
-static const Value upper = Value._('UPPER');
+static const Value upper = Value$upper._();
 
-static const Value lower = Value._('lower');
+static const Value lower = Value$lower._();
 
 static const List<Value> values = [upper, lower];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Value$Unknown; } 
+@override String toString() => 'Value($value)';
+
+ }
+@immutable final class Value$upper extends Value {const Value$upper._();
+
+@override String get value => 'UPPER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Value$upper;
+
+@override int get hashCode => 'UPPER'.hashCode;
+
+ }
+@immutable final class Value$lower extends Value {const Value$lower._();
+
+@override String get value => 'lower';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Value$lower;
+
+@override int get hashCode => 'lower'.hashCode;
+
+ }
+@immutable final class Value$Unknown extends Value {const Value$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Value && other.value == value;
+    other is Value$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Value($value)';
 
  }
 @immutable final class MapTest {const MapTest({this.mapMapOfString, this.mapOfEnumString, this.directMap, this.indirectMap, });

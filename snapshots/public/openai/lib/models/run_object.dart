@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RunObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tools.dart';import 'package:pub_openai/models/assistant_tools_code.dart';import 'package:pub_openai/models/assistant_tools_file_search.dart';import 'package:pub_openai/models/assistant_tools_function.dart';import 'package:pub_openai/models/assistants_named_tool_choice.dart';import 'package:pub_openai/models/parallel_tool_calls.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_option.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/response_format_text.dart';import 'package:pub_openai/models/run_completion_usage.dart';import 'package:pub_openai/models/run_object/required_action.dart';import 'package:pub_openai/models/run_object/run_object_incomplete_details.dart';import 'package:pub_openai/models/run_object/run_object_last_error.dart';import 'package:pub_openai/models/tool_choice_option.dart';import 'package:pub_openai/models/truncation_object.dart';/// The object type, which is always `thread.run`.
-@immutable final class RunObjectObject {const RunObjectObject._(this.value);
+sealed class RunObjectObject {const RunObjectObject();
 
 factory RunObjectObject.fromJson(String json) { return switch (json) {
   'thread.run' => threadRun,
-  _ => RunObjectObject._(json),
+  _ => RunObjectObject$Unknown(json),
 }; }
 
-static const RunObjectObject threadRun = RunObjectObject._('thread.run');
+static const RunObjectObject threadRun = RunObjectObject$threadRun._();
 
 static const List<RunObjectObject> values = [threadRun];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,17 +21,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RunObjectObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is RunObjectObject$Unknown; } 
 @override String toString() => 'RunObjectObject($value)';
 
  }
+@immutable final class RunObjectObject$threadRun extends RunObjectObject {const RunObjectObject$threadRun._();
+
+@override String get value => 'thread.run';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectObject$threadRun;
+
+@override int get hashCode => 'thread.run'.hashCode;
+
+ }
+@immutable final class RunObjectObject$Unknown extends RunObjectObject {const RunObjectObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunObjectObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.
-@immutable final class RunObjectStatus {const RunObjectStatus._(this.value);
+sealed class RunObjectStatus {const RunObjectStatus();
 
 factory RunObjectStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -44,31 +57,30 @@ factory RunObjectStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
   'incomplete' => incomplete,
   'expired' => expired,
-  _ => RunObjectStatus._(json),
+  _ => RunObjectStatus$Unknown(json),
 }; }
 
-static const RunObjectStatus queued = RunObjectStatus._('queued');
+static const RunObjectStatus queued = RunObjectStatus$queued._();
 
-static const RunObjectStatus inProgress = RunObjectStatus._('in_progress');
+static const RunObjectStatus inProgress = RunObjectStatus$inProgress._();
 
-static const RunObjectStatus requiresAction = RunObjectStatus._('requires_action');
+static const RunObjectStatus requiresAction = RunObjectStatus$requiresAction._();
 
-static const RunObjectStatus cancelling = RunObjectStatus._('cancelling');
+static const RunObjectStatus cancelling = RunObjectStatus$cancelling._();
 
-static const RunObjectStatus cancelled = RunObjectStatus._('cancelled');
+static const RunObjectStatus cancelled = RunObjectStatus$cancelled._();
 
-static const RunObjectStatus failed = RunObjectStatus._('failed');
+static const RunObjectStatus failed = RunObjectStatus$failed._();
 
-static const RunObjectStatus completed = RunObjectStatus._('completed');
+static const RunObjectStatus completed = RunObjectStatus$completed._();
 
-static const RunObjectStatus incomplete = RunObjectStatus._('incomplete');
+static const RunObjectStatus incomplete = RunObjectStatus$incomplete._();
 
-static const RunObjectStatus expired = RunObjectStatus._('expired');
+static const RunObjectStatus expired = RunObjectStatus$expired._();
 
 static const List<RunObjectStatus> values = [queued, inProgress, requiresAction, cancelling, cancelled, failed, completed, incomplete, expired];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -84,13 +96,99 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RunObjectStatus$Unknown; } 
+@override String toString() => 'RunObjectStatus($value)';
+
+ }
+@immutable final class RunObjectStatus$queued extends RunObjectStatus {const RunObjectStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class RunObjectStatus$inProgress extends RunObjectStatus {const RunObjectStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class RunObjectStatus$requiresAction extends RunObjectStatus {const RunObjectStatus$requiresAction._();
+
+@override String get value => 'requires_action';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectStatus$requiresAction;
+
+@override int get hashCode => 'requires_action'.hashCode;
+
+ }
+@immutable final class RunObjectStatus$cancelling extends RunObjectStatus {const RunObjectStatus$cancelling._();
+
+@override String get value => 'cancelling';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectStatus$cancelling;
+
+@override int get hashCode => 'cancelling'.hashCode;
+
+ }
+@immutable final class RunObjectStatus$cancelled extends RunObjectStatus {const RunObjectStatus$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectStatus$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class RunObjectStatus$failed extends RunObjectStatus {const RunObjectStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class RunObjectStatus$completed extends RunObjectStatus {const RunObjectStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class RunObjectStatus$incomplete extends RunObjectStatus {const RunObjectStatus$incomplete._();
+
+@override String get value => 'incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectStatus$incomplete;
+
+@override int get hashCode => 'incomplete'.hashCode;
+
+ }
+@immutable final class RunObjectStatus$expired extends RunObjectStatus {const RunObjectStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class RunObjectStatus$Unknown extends RunObjectStatus {const RunObjectStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RunObjectStatus && other.value == value;
+    other is RunObjectStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RunObjectStatus($value)';
 
  }
 /// Represents an execution run on a [thread](/docs/api-reference/threads).

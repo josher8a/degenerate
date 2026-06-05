@@ -2,25 +2,24 @@
 // Source: #/components/schemas/RepositoryAdvisoryCredit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/security_advisory_credit_types.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The state of the user's acceptance of the credit.
-@immutable final class RepositoryAdvisoryCreditState {const RepositoryAdvisoryCreditState._(this.value);
+sealed class RepositoryAdvisoryCreditState {const RepositoryAdvisoryCreditState();
 
 factory RepositoryAdvisoryCreditState.fromJson(String json) { return switch (json) {
   'accepted' => accepted,
   'declined' => declined,
   'pending' => pending,
-  _ => RepositoryAdvisoryCreditState._(json),
+  _ => RepositoryAdvisoryCreditState$Unknown(json),
 }; }
 
-static const RepositoryAdvisoryCreditState accepted = RepositoryAdvisoryCreditState._('accepted');
+static const RepositoryAdvisoryCreditState accepted = RepositoryAdvisoryCreditState$accepted._();
 
-static const RepositoryAdvisoryCreditState declined = RepositoryAdvisoryCreditState._('declined');
+static const RepositoryAdvisoryCreditState declined = RepositoryAdvisoryCreditState$declined._();
 
-static const RepositoryAdvisoryCreditState pending = RepositoryAdvisoryCreditState._('pending');
+static const RepositoryAdvisoryCreditState pending = RepositoryAdvisoryCreditState$pending._();
 
 static const List<RepositoryAdvisoryCreditState> values = [accepted, declined, pending];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RepositoryAdvisoryCreditState$Unknown; } 
+@override String toString() => 'RepositoryAdvisoryCreditState($value)';
+
+ }
+@immutable final class RepositoryAdvisoryCreditState$accepted extends RepositoryAdvisoryCreditState {const RepositoryAdvisoryCreditState$accepted._();
+
+@override String get value => 'accepted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryAdvisoryCreditState$accepted;
+
+@override int get hashCode => 'accepted'.hashCode;
+
+ }
+@immutable final class RepositoryAdvisoryCreditState$declined extends RepositoryAdvisoryCreditState {const RepositoryAdvisoryCreditState$declined._();
+
+@override String get value => 'declined';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryAdvisoryCreditState$declined;
+
+@override int get hashCode => 'declined'.hashCode;
+
+ }
+@immutable final class RepositoryAdvisoryCreditState$pending extends RepositoryAdvisoryCreditState {const RepositoryAdvisoryCreditState$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryAdvisoryCreditState$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class RepositoryAdvisoryCreditState$Unknown extends RepositoryAdvisoryCreditState {const RepositoryAdvisoryCreditState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryAdvisoryCreditState && other.value == value;
+    other is RepositoryAdvisoryCreditState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryAdvisoryCreditState($value)';
 
  }
 /// A credit given to a user for a repository security advisory.

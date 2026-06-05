@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostTerminalReadersReaderCollectInputsRequest (inline: Inputs > Toggles)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TogglesDefaultValue {const TogglesDefaultValue._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class TogglesDefaultValue {const TogglesDefaultValue();
 
 factory TogglesDefaultValue.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
-  _ => TogglesDefaultValue._(json),
+  _ => TogglesDefaultValue$Unknown(json),
 }; }
 
-static const TogglesDefaultValue disabled = TogglesDefaultValue._('disabled');
+static const TogglesDefaultValue disabled = TogglesDefaultValue$disabled._();
 
-static const TogglesDefaultValue enabled = TogglesDefaultValue._('enabled');
+static const TogglesDefaultValue enabled = TogglesDefaultValue$enabled._();
 
 static const List<TogglesDefaultValue> values = [disabled, enabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TogglesDefaultValue$Unknown; } 
+@override String toString() => 'TogglesDefaultValue($value)';
+
+ }
+@immutable final class TogglesDefaultValue$disabled extends TogglesDefaultValue {const TogglesDefaultValue$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TogglesDefaultValue$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class TogglesDefaultValue$enabled extends TogglesDefaultValue {const TogglesDefaultValue$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TogglesDefaultValue$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class TogglesDefaultValue$Unknown extends TogglesDefaultValue {const TogglesDefaultValue$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TogglesDefaultValue && other.value == value;
+    other is TogglesDefaultValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TogglesDefaultValue($value)';
 
  }
 @immutable final class Toggles {const Toggles({this.defaultValue, this.description, this.title, });

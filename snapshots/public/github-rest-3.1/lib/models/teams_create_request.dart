@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TeamsCreateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_notification_setting.dart';import 'package:pub_github_rest_3_1/models/team_full/team_full_privacy.dart';/// **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
-@immutable final class TeamsCreateRequestPermission {const TeamsCreateRequestPermission._(this.value);
+sealed class TeamsCreateRequestPermission {const TeamsCreateRequestPermission();
 
 factory TeamsCreateRequestPermission.fromJson(String json) { return switch (json) {
   'pull' => pull,
   'push' => push,
-  _ => TeamsCreateRequestPermission._(json),
+  _ => TeamsCreateRequestPermission$Unknown(json),
 }; }
 
-static const TeamsCreateRequestPermission pull = TeamsCreateRequestPermission._('pull');
+static const TeamsCreateRequestPermission pull = TeamsCreateRequestPermission$pull._();
 
-static const TeamsCreateRequestPermission push = TeamsCreateRequestPermission._('push');
+static const TeamsCreateRequestPermission push = TeamsCreateRequestPermission$push._();
 
 static const List<TeamsCreateRequestPermission> values = [pull, push];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TeamsCreateRequestPermission$Unknown; } 
+@override String toString() => 'TeamsCreateRequestPermission($value)';
+
+ }
+@immutable final class TeamsCreateRequestPermission$pull extends TeamsCreateRequestPermission {const TeamsCreateRequestPermission$pull._();
+
+@override String get value => 'pull';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsCreateRequestPermission$pull;
+
+@override int get hashCode => 'pull'.hashCode;
+
+ }
+@immutable final class TeamsCreateRequestPermission$push extends TeamsCreateRequestPermission {const TeamsCreateRequestPermission$push._();
+
+@override String get value => 'push';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsCreateRequestPermission$push;
+
+@override int get hashCode => 'push'.hashCode;
+
+ }
+@immutable final class TeamsCreateRequestPermission$Unknown extends TeamsCreateRequestPermission {const TeamsCreateRequestPermission$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TeamsCreateRequestPermission && other.value == value;
+    other is TeamsCreateRequestPermission$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TeamsCreateRequestPermission($value)';
 
  }
 @immutable final class TeamsCreateRequest {const TeamsCreateRequest({required this.name, this.description, this.maintainers, this.repoNames, this.privacy, this.notificationSetting, this.permission = TeamsCreateRequestPermission.pull, this.parentTeamId, });

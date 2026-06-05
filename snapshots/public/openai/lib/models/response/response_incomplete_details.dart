@@ -2,22 +2,21 @@
 // Source: #/components/schemas/Response (inline: IncompleteDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason why the response is incomplete.
-@immutable final class ResponseIncompleteDetailsReason {const ResponseIncompleteDetailsReason._(this.value);
+sealed class ResponseIncompleteDetailsReason {const ResponseIncompleteDetailsReason();
 
 factory ResponseIncompleteDetailsReason.fromJson(String json) { return switch (json) {
   'max_output_tokens' => maxOutputTokens,
   'content_filter' => contentFilter,
-  _ => ResponseIncompleteDetailsReason._(json),
+  _ => ResponseIncompleteDetailsReason$Unknown(json),
 }; }
 
-static const ResponseIncompleteDetailsReason maxOutputTokens = ResponseIncompleteDetailsReason._('max_output_tokens');
+static const ResponseIncompleteDetailsReason maxOutputTokens = ResponseIncompleteDetailsReason$maxOutputTokens._();
 
-static const ResponseIncompleteDetailsReason contentFilter = ResponseIncompleteDetailsReason._('content_filter');
+static const ResponseIncompleteDetailsReason contentFilter = ResponseIncompleteDetailsReason$contentFilter._();
 
 static const List<ResponseIncompleteDetailsReason> values = [maxOutputTokens, contentFilter];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ResponseIncompleteDetailsReason$Unknown; } 
+@override String toString() => 'ResponseIncompleteDetailsReason($value)';
+
+ }
+@immutable final class ResponseIncompleteDetailsReason$maxOutputTokens extends ResponseIncompleteDetailsReason {const ResponseIncompleteDetailsReason$maxOutputTokens._();
+
+@override String get value => 'max_output_tokens';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseIncompleteDetailsReason$maxOutputTokens;
+
+@override int get hashCode => 'max_output_tokens'.hashCode;
+
+ }
+@immutable final class ResponseIncompleteDetailsReason$contentFilter extends ResponseIncompleteDetailsReason {const ResponseIncompleteDetailsReason$contentFilter._();
+
+@override String get value => 'content_filter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseIncompleteDetailsReason$contentFilter;
+
+@override int get hashCode => 'content_filter'.hashCode;
+
+ }
+@immutable final class ResponseIncompleteDetailsReason$Unknown extends ResponseIncompleteDetailsReason {const ResponseIncompleteDetailsReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ResponseIncompleteDetailsReason && other.value == value;
+    other is ResponseIncompleteDetailsReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ResponseIncompleteDetailsReason($value)';
 
  }
 /// Details about why the response is incomplete.

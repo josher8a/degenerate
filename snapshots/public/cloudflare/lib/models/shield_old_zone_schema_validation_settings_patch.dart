@@ -11,28 +11,27 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default miti
 /// 
 /// `null` will have no effect.
 /// 
-@immutable final class ShieldOldValidationDefaultMitigationActionPatch {const ShieldOldValidationDefaultMitigationActionPatch._(this.value);
+sealed class ShieldOldValidationDefaultMitigationActionPatch {const ShieldOldValidationDefaultMitigationActionPatch();
 
 factory ShieldOldValidationDefaultMitigationActionPatch.fromJson(String json) { return switch (json) {
   'none' => none,
   'log' => log,
   'block' => block,
   'null' => $null,
-  _ => ShieldOldValidationDefaultMitigationActionPatch._(json),
+  _ => ShieldOldValidationDefaultMitigationActionPatch$Unknown(json),
 }; }
 
-static const ShieldOldValidationDefaultMitigationActionPatch none = ShieldOldValidationDefaultMitigationActionPatch._('none');
+static const ShieldOldValidationDefaultMitigationActionPatch none = ShieldOldValidationDefaultMitigationActionPatch$none._();
 
-static const ShieldOldValidationDefaultMitigationActionPatch log = ShieldOldValidationDefaultMitigationActionPatch._('log');
+static const ShieldOldValidationDefaultMitigationActionPatch log = ShieldOldValidationDefaultMitigationActionPatch$log._();
 
-static const ShieldOldValidationDefaultMitigationActionPatch block = ShieldOldValidationDefaultMitigationActionPatch._('block');
+static const ShieldOldValidationDefaultMitigationActionPatch block = ShieldOldValidationDefaultMitigationActionPatch$block._();
 
-static const ShieldOldValidationDefaultMitigationActionPatch $null = ShieldOldValidationDefaultMitigationActionPatch._('null');
+static const ShieldOldValidationDefaultMitigationActionPatch $null = ShieldOldValidationDefaultMitigationActionPatch$$null._();
 
 static const List<ShieldOldValidationDefaultMitigationActionPatch> values = [none, log, block, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -43,13 +42,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShieldOldValidationDefaultMitigationActionPatch$Unknown; } 
+@override String toString() => 'ShieldOldValidationDefaultMitigationActionPatch($value)';
+
+ }
+@immutable final class ShieldOldValidationDefaultMitigationActionPatch$none extends ShieldOldValidationDefaultMitigationActionPatch {const ShieldOldValidationDefaultMitigationActionPatch$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldOldValidationDefaultMitigationActionPatch$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class ShieldOldValidationDefaultMitigationActionPatch$log extends ShieldOldValidationDefaultMitigationActionPatch {const ShieldOldValidationDefaultMitigationActionPatch$log._();
+
+@override String get value => 'log';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldOldValidationDefaultMitigationActionPatch$log;
+
+@override int get hashCode => 'log'.hashCode;
+
+ }
+@immutable final class ShieldOldValidationDefaultMitigationActionPatch$block extends ShieldOldValidationDefaultMitigationActionPatch {const ShieldOldValidationDefaultMitigationActionPatch$block._();
+
+@override String get value => 'block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldOldValidationDefaultMitigationActionPatch$block;
+
+@override int get hashCode => 'block'.hashCode;
+
+ }
+@immutable final class ShieldOldValidationDefaultMitigationActionPatch$$null extends ShieldOldValidationDefaultMitigationActionPatch {const ShieldOldValidationDefaultMitigationActionPatch$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldOldValidationDefaultMitigationActionPatch$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class ShieldOldValidationDefaultMitigationActionPatch$Unknown extends ShieldOldValidationDefaultMitigationActionPatch {const ShieldOldValidationDefaultMitigationActionPatch$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldOldValidationDefaultMitigationActionPatch && other.value == value;
+    other is ShieldOldValidationDefaultMitigationActionPatch$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShieldOldValidationDefaultMitigationActionPatch($value)';
 
  }
 /// When set, this overrides both zone level and operation level mitigation actions.
@@ -60,25 +100,24 @@ bool get isUnknown { return !values.contains(this); }
 /// 
 /// `null` will have no effect.
 /// 
-@immutable final class ShieldOldValidationOverrideMitigationActionPatch {const ShieldOldValidationOverrideMitigationActionPatch._(this.value);
+sealed class ShieldOldValidationOverrideMitigationActionPatch {const ShieldOldValidationOverrideMitigationActionPatch();
 
 factory ShieldOldValidationOverrideMitigationActionPatch.fromJson(String json) { return switch (json) {
   'none' => none,
   'disable_override' => disableOverride,
   'null' => $null,
-  _ => ShieldOldValidationOverrideMitigationActionPatch._(json),
+  _ => ShieldOldValidationOverrideMitigationActionPatch$Unknown(json),
 }; }
 
-static const ShieldOldValidationOverrideMitigationActionPatch none = ShieldOldValidationOverrideMitigationActionPatch._('none');
+static const ShieldOldValidationOverrideMitigationActionPatch none = ShieldOldValidationOverrideMitigationActionPatch$none._();
 
-static const ShieldOldValidationOverrideMitigationActionPatch disableOverride = ShieldOldValidationOverrideMitigationActionPatch._('disable_override');
+static const ShieldOldValidationOverrideMitigationActionPatch disableOverride = ShieldOldValidationOverrideMitigationActionPatch$disableOverride._();
 
-static const ShieldOldValidationOverrideMitigationActionPatch $null = ShieldOldValidationOverrideMitigationActionPatch._('null');
+static const ShieldOldValidationOverrideMitigationActionPatch $null = ShieldOldValidationOverrideMitigationActionPatch$$null._();
 
 static const List<ShieldOldValidationOverrideMitigationActionPatch> values = [none, disableOverride, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -88,13 +127,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShieldOldValidationOverrideMitigationActionPatch$Unknown; } 
+@override String toString() => 'ShieldOldValidationOverrideMitigationActionPatch($value)';
+
+ }
+@immutable final class ShieldOldValidationOverrideMitigationActionPatch$none extends ShieldOldValidationOverrideMitigationActionPatch {const ShieldOldValidationOverrideMitigationActionPatch$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldOldValidationOverrideMitigationActionPatch$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class ShieldOldValidationOverrideMitigationActionPatch$disableOverride extends ShieldOldValidationOverrideMitigationActionPatch {const ShieldOldValidationOverrideMitigationActionPatch$disableOverride._();
+
+@override String get value => 'disable_override';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldOldValidationOverrideMitigationActionPatch$disableOverride;
+
+@override int get hashCode => 'disable_override'.hashCode;
+
+ }
+@immutable final class ShieldOldValidationOverrideMitigationActionPatch$$null extends ShieldOldValidationOverrideMitigationActionPatch {const ShieldOldValidationOverrideMitigationActionPatch$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldOldValidationOverrideMitigationActionPatch$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class ShieldOldValidationOverrideMitigationActionPatch$Unknown extends ShieldOldValidationOverrideMitigationActionPatch {const ShieldOldValidationOverrideMitigationActionPatch$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldOldValidationOverrideMitigationActionPatch && other.value == value;
+    other is ShieldOldValidationOverrideMitigationActionPatch$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShieldOldValidationOverrideMitigationActionPatch($value)';
 
  }
 @immutable final class ShieldOldZoneSchemaValidationSettingsPatch {const ShieldOldZoneSchemaValidationSettingsPatch({this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });

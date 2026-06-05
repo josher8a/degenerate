@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ShieldSchemaValidationPostSchemaRequest
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_old_kind.dart';/// Flag whether schema is enabled for validation.
-@immutable final class ValidationEnabled {const ValidationEnabled._(this.value);
+sealed class ValidationEnabled {const ValidationEnabled();
 
 factory ValidationEnabled.fromJson(String json) { return switch (json) {
   'true' => $true,
   'false' => $false,
-  _ => ValidationEnabled._(json),
+  _ => ValidationEnabled$Unknown(json),
 }; }
 
-static const ValidationEnabled $true = ValidationEnabled._('true');
+static const ValidationEnabled $true = ValidationEnabled$$true._();
 
-static const ValidationEnabled $false = ValidationEnabled._('false');
+static const ValidationEnabled $false = ValidationEnabled$$false._();
 
 static const List<ValidationEnabled> values = [$true, $false];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ValidationEnabled$Unknown; } 
+@override String toString() => 'ValidationEnabled($value)';
+
+ }
+@immutable final class ValidationEnabled$$true extends ValidationEnabled {const ValidationEnabled$$true._();
+
+@override String get value => 'true';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValidationEnabled$$true;
+
+@override int get hashCode => 'true'.hashCode;
+
+ }
+@immutable final class ValidationEnabled$$false extends ValidationEnabled {const ValidationEnabled$$false._();
+
+@override String get value => 'false';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValidationEnabled$$false;
+
+@override int get hashCode => 'false'.hashCode;
+
+ }
+@immutable final class ValidationEnabled$Unknown extends ValidationEnabled {const ValidationEnabled$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ValidationEnabled && other.value == value;
+    other is ValidationEnabled$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ValidationEnabled($value)';
 
  }
 @immutable final class ShieldSchemaValidationPostSchemaRequest {const ShieldSchemaValidationPostSchemaRequest({required this.file, required this.kind, this.name, this.validationEnabled, });

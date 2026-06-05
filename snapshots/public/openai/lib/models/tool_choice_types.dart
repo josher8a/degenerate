@@ -13,7 +13,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of host
 /// - `code_interpreter`
 /// - `image_generation`
 /// 
-@immutable final class ToolChoiceTypesType {const ToolChoiceTypesType._(this.value);
+sealed class ToolChoiceTypesType {const ToolChoiceTypesType();
 
 factory ToolChoiceTypesType.fromJson(String json) { return switch (json) {
   'file_search' => fileSearch,
@@ -24,29 +24,28 @@ factory ToolChoiceTypesType.fromJson(String json) { return switch (json) {
   'web_search_preview_2025_03_11' => webSearchPreview20250311,
   'image_generation' => imageGeneration,
   'code_interpreter' => codeInterpreter,
-  _ => ToolChoiceTypesType._(json),
+  _ => ToolChoiceTypesType$Unknown(json),
 }; }
 
-static const ToolChoiceTypesType fileSearch = ToolChoiceTypesType._('file_search');
+static const ToolChoiceTypesType fileSearch = ToolChoiceTypesType$fileSearch._();
 
-static const ToolChoiceTypesType webSearchPreview = ToolChoiceTypesType._('web_search_preview');
+static const ToolChoiceTypesType webSearchPreview = ToolChoiceTypesType$webSearchPreview._();
 
-static const ToolChoiceTypesType computer = ToolChoiceTypesType._('computer');
+static const ToolChoiceTypesType computer = ToolChoiceTypesType$computer._();
 
-static const ToolChoiceTypesType computerUsePreview = ToolChoiceTypesType._('computer_use_preview');
+static const ToolChoiceTypesType computerUsePreview = ToolChoiceTypesType$computerUsePreview._();
 
-static const ToolChoiceTypesType computerUse = ToolChoiceTypesType._('computer_use');
+static const ToolChoiceTypesType computerUse = ToolChoiceTypesType$computerUse._();
 
-static const ToolChoiceTypesType webSearchPreview20250311 = ToolChoiceTypesType._('web_search_preview_2025_03_11');
+static const ToolChoiceTypesType webSearchPreview20250311 = ToolChoiceTypesType$webSearchPreview20250311._();
 
-static const ToolChoiceTypesType imageGeneration = ToolChoiceTypesType._('image_generation');
+static const ToolChoiceTypesType imageGeneration = ToolChoiceTypesType$imageGeneration._();
 
-static const ToolChoiceTypesType codeInterpreter = ToolChoiceTypesType._('code_interpreter');
+static const ToolChoiceTypesType codeInterpreter = ToolChoiceTypesType$codeInterpreter._();
 
 static const List<ToolChoiceTypesType> values = [fileSearch, webSearchPreview, computer, computerUsePreview, computerUse, webSearchPreview20250311, imageGeneration, codeInterpreter];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -61,13 +60,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ToolChoiceTypesType$Unknown; } 
+@override String toString() => 'ToolChoiceTypesType($value)';
+
+ }
+@immutable final class ToolChoiceTypesType$fileSearch extends ToolChoiceTypesType {const ToolChoiceTypesType$fileSearch._();
+
+@override String get value => 'file_search';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolChoiceTypesType$fileSearch;
+
+@override int get hashCode => 'file_search'.hashCode;
+
+ }
+@immutable final class ToolChoiceTypesType$webSearchPreview extends ToolChoiceTypesType {const ToolChoiceTypesType$webSearchPreview._();
+
+@override String get value => 'web_search_preview';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolChoiceTypesType$webSearchPreview;
+
+@override int get hashCode => 'web_search_preview'.hashCode;
+
+ }
+@immutable final class ToolChoiceTypesType$computer extends ToolChoiceTypesType {const ToolChoiceTypesType$computer._();
+
+@override String get value => 'computer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolChoiceTypesType$computer;
+
+@override int get hashCode => 'computer'.hashCode;
+
+ }
+@immutable final class ToolChoiceTypesType$computerUsePreview extends ToolChoiceTypesType {const ToolChoiceTypesType$computerUsePreview._();
+
+@override String get value => 'computer_use_preview';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolChoiceTypesType$computerUsePreview;
+
+@override int get hashCode => 'computer_use_preview'.hashCode;
+
+ }
+@immutable final class ToolChoiceTypesType$computerUse extends ToolChoiceTypesType {const ToolChoiceTypesType$computerUse._();
+
+@override String get value => 'computer_use';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolChoiceTypesType$computerUse;
+
+@override int get hashCode => 'computer_use'.hashCode;
+
+ }
+@immutable final class ToolChoiceTypesType$webSearchPreview20250311 extends ToolChoiceTypesType {const ToolChoiceTypesType$webSearchPreview20250311._();
+
+@override String get value => 'web_search_preview_2025_03_11';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolChoiceTypesType$webSearchPreview20250311;
+
+@override int get hashCode => 'web_search_preview_2025_03_11'.hashCode;
+
+ }
+@immutable final class ToolChoiceTypesType$imageGeneration extends ToolChoiceTypesType {const ToolChoiceTypesType$imageGeneration._();
+
+@override String get value => 'image_generation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolChoiceTypesType$imageGeneration;
+
+@override int get hashCode => 'image_generation'.hashCode;
+
+ }
+@immutable final class ToolChoiceTypesType$codeInterpreter extends ToolChoiceTypesType {const ToolChoiceTypesType$codeInterpreter._();
+
+@override String get value => 'code_interpreter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolChoiceTypesType$codeInterpreter;
+
+@override int get hashCode => 'code_interpreter'.hashCode;
+
+ }
+@immutable final class ToolChoiceTypesType$Unknown extends ToolChoiceTypesType {const ToolChoiceTypesType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ToolChoiceTypesType && other.value == value;
+    other is ToolChoiceTypesType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ToolChoiceTypesType($value)';
 
  }
 /// Indicates that the model should use a built-in tool to generate a response.

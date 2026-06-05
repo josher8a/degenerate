@@ -2,7 +2,7 @@
 // Source: #/components/schemas/IssuingDispute
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/issuing_dispute/issuing_dispute_transaction.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_evidence.dart';import 'package:pub_stripe_spec3/models/issuing_dispute_treasury.dart';import 'package:pub_stripe_spec3/models/issuing_transaction.dart';/// The enum that describes the dispute loss outcome. If the dispute is not lost, this field will be absent. New enum values may be added in the future, so be sure to handle unknown values.
-@immutable final class LossReason {const LossReason._(this.value);
+sealed class LossReason {const LossReason();
 
 factory LossReason.fromJson(String json) { return switch (json) {
   'cardholder_authentication_issuer_liability' => cardholderAuthenticationIssuerLiability,
@@ -25,53 +25,52 @@ factory LossReason.fromJson(String json) { return switch (json) {
   'transaction_electronically_read' => transactionElectronicallyRead,
   'transaction_qualifies_for_visa_easy_payment_service' => transactionQualifiesForVisaEasyPaymentService,
   'transaction_unattended' => transactionUnattended,
-  _ => LossReason._(json),
+  _ => LossReason$Unknown(json),
 }; }
 
-static const LossReason cardholderAuthenticationIssuerLiability = LossReason._('cardholder_authentication_issuer_liability');
+static const LossReason cardholderAuthenticationIssuerLiability = LossReason$cardholderAuthenticationIssuerLiability._();
 
-static const LossReason eci5TokenTransactionWithTavv = LossReason._('eci5_token_transaction_with_tavv');
+static const LossReason eci5TokenTransactionWithTavv = LossReason$eci5TokenTransactionWithTavv._();
 
-static const LossReason excessDisputesInTimeframe = LossReason._('excess_disputes_in_timeframe');
+static const LossReason excessDisputesInTimeframe = LossReason$excessDisputesInTimeframe._();
 
-static const LossReason hasNotMetTheMinimumDisputeAmountRequirements = LossReason._('has_not_met_the_minimum_dispute_amount_requirements');
+static const LossReason hasNotMetTheMinimumDisputeAmountRequirements = LossReason$hasNotMetTheMinimumDisputeAmountRequirements._();
 
-static const LossReason invalidDuplicateDispute = LossReason._('invalid_duplicate_dispute');
+static const LossReason invalidDuplicateDispute = LossReason$invalidDuplicateDispute._();
 
-static const LossReason invalidIncorrectAmountDispute = LossReason._('invalid_incorrect_amount_dispute');
+static const LossReason invalidIncorrectAmountDispute = LossReason$invalidIncorrectAmountDispute._();
 
-static const LossReason invalidNoAuthorization = LossReason._('invalid_no_authorization');
+static const LossReason invalidNoAuthorization = LossReason$invalidNoAuthorization._();
 
-static const LossReason invalidUseOfDisputes = LossReason._('invalid_use_of_disputes');
+static const LossReason invalidUseOfDisputes = LossReason$invalidUseOfDisputes._();
 
-static const LossReason merchandiseDeliveredOrShipped = LossReason._('merchandise_delivered_or_shipped');
+static const LossReason merchandiseDeliveredOrShipped = LossReason$merchandiseDeliveredOrShipped._();
 
-static const LossReason merchandiseOrServiceAsDescribed = LossReason._('merchandise_or_service_as_described');
+static const LossReason merchandiseOrServiceAsDescribed = LossReason$merchandiseOrServiceAsDescribed._();
 
-static const LossReason notCancelled = LossReason._('not_cancelled');
+static const LossReason notCancelled = LossReason$notCancelled._();
 
-static const LossReason $other = LossReason._('other');
+static const LossReason $other = LossReason$$other._();
 
-static const LossReason refundIssued = LossReason._('refund_issued');
+static const LossReason refundIssued = LossReason$refundIssued._();
 
-static const LossReason submittedBeyondAllowableTimeLimit = LossReason._('submitted_beyond_allowable_time_limit');
+static const LossReason submittedBeyondAllowableTimeLimit = LossReason$submittedBeyondAllowableTimeLimit._();
 
-static const LossReason transaction3dsRequired = LossReason._('transaction_3ds_required');
+static const LossReason transaction3dsRequired = LossReason$transaction3dsRequired._();
 
-static const LossReason transactionApprovedAfterPriorFraudDispute = LossReason._('transaction_approved_after_prior_fraud_dispute');
+static const LossReason transactionApprovedAfterPriorFraudDispute = LossReason$transactionApprovedAfterPriorFraudDispute._();
 
-static const LossReason transactionAuthorized = LossReason._('transaction_authorized');
+static const LossReason transactionAuthorized = LossReason$transactionAuthorized._();
 
-static const LossReason transactionElectronicallyRead = LossReason._('transaction_electronically_read');
+static const LossReason transactionElectronicallyRead = LossReason$transactionElectronicallyRead._();
 
-static const LossReason transactionQualifiesForVisaEasyPaymentService = LossReason._('transaction_qualifies_for_visa_easy_payment_service');
+static const LossReason transactionQualifiesForVisaEasyPaymentService = LossReason$transactionQualifiesForVisaEasyPaymentService._();
 
-static const LossReason transactionUnattended = LossReason._('transaction_unattended');
+static const LossReason transactionUnattended = LossReason$transactionUnattended._();
 
 static const List<LossReason> values = [cardholderAuthenticationIssuerLiability, eci5TokenTransactionWithTavv, excessDisputesInTimeframe, hasNotMetTheMinimumDisputeAmountRequirements, invalidDuplicateDispute, invalidIncorrectAmountDispute, invalidNoAuthorization, invalidUseOfDisputes, merchandiseDeliveredOrShipped, merchandiseOrServiceAsDescribed, notCancelled, $other, refundIssued, submittedBeyondAllowableTimeLimit, transaction3dsRequired, transactionApprovedAfterPriorFraudDispute, transactionAuthorized, transactionElectronicallyRead, transactionQualifiesForVisaEasyPaymentService, transactionUnattended];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -98,29 +97,213 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is LossReason && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is LossReason$Unknown; } 
 @override String toString() => 'LossReason($value)';
 
  }
+@immutable final class LossReason$cardholderAuthenticationIssuerLiability extends LossReason {const LossReason$cardholderAuthenticationIssuerLiability._();
+
+@override String get value => 'cardholder_authentication_issuer_liability';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$cardholderAuthenticationIssuerLiability;
+
+@override int get hashCode => 'cardholder_authentication_issuer_liability'.hashCode;
+
+ }
+@immutable final class LossReason$eci5TokenTransactionWithTavv extends LossReason {const LossReason$eci5TokenTransactionWithTavv._();
+
+@override String get value => 'eci5_token_transaction_with_tavv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$eci5TokenTransactionWithTavv;
+
+@override int get hashCode => 'eci5_token_transaction_with_tavv'.hashCode;
+
+ }
+@immutable final class LossReason$excessDisputesInTimeframe extends LossReason {const LossReason$excessDisputesInTimeframe._();
+
+@override String get value => 'excess_disputes_in_timeframe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$excessDisputesInTimeframe;
+
+@override int get hashCode => 'excess_disputes_in_timeframe'.hashCode;
+
+ }
+@immutable final class LossReason$hasNotMetTheMinimumDisputeAmountRequirements extends LossReason {const LossReason$hasNotMetTheMinimumDisputeAmountRequirements._();
+
+@override String get value => 'has_not_met_the_minimum_dispute_amount_requirements';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$hasNotMetTheMinimumDisputeAmountRequirements;
+
+@override int get hashCode => 'has_not_met_the_minimum_dispute_amount_requirements'.hashCode;
+
+ }
+@immutable final class LossReason$invalidDuplicateDispute extends LossReason {const LossReason$invalidDuplicateDispute._();
+
+@override String get value => 'invalid_duplicate_dispute';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$invalidDuplicateDispute;
+
+@override int get hashCode => 'invalid_duplicate_dispute'.hashCode;
+
+ }
+@immutable final class LossReason$invalidIncorrectAmountDispute extends LossReason {const LossReason$invalidIncorrectAmountDispute._();
+
+@override String get value => 'invalid_incorrect_amount_dispute';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$invalidIncorrectAmountDispute;
+
+@override int get hashCode => 'invalid_incorrect_amount_dispute'.hashCode;
+
+ }
+@immutable final class LossReason$invalidNoAuthorization extends LossReason {const LossReason$invalidNoAuthorization._();
+
+@override String get value => 'invalid_no_authorization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$invalidNoAuthorization;
+
+@override int get hashCode => 'invalid_no_authorization'.hashCode;
+
+ }
+@immutable final class LossReason$invalidUseOfDisputes extends LossReason {const LossReason$invalidUseOfDisputes._();
+
+@override String get value => 'invalid_use_of_disputes';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$invalidUseOfDisputes;
+
+@override int get hashCode => 'invalid_use_of_disputes'.hashCode;
+
+ }
+@immutable final class LossReason$merchandiseDeliveredOrShipped extends LossReason {const LossReason$merchandiseDeliveredOrShipped._();
+
+@override String get value => 'merchandise_delivered_or_shipped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$merchandiseDeliveredOrShipped;
+
+@override int get hashCode => 'merchandise_delivered_or_shipped'.hashCode;
+
+ }
+@immutable final class LossReason$merchandiseOrServiceAsDescribed extends LossReason {const LossReason$merchandiseOrServiceAsDescribed._();
+
+@override String get value => 'merchandise_or_service_as_described';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$merchandiseOrServiceAsDescribed;
+
+@override int get hashCode => 'merchandise_or_service_as_described'.hashCode;
+
+ }
+@immutable final class LossReason$notCancelled extends LossReason {const LossReason$notCancelled._();
+
+@override String get value => 'not_cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$notCancelled;
+
+@override int get hashCode => 'not_cancelled'.hashCode;
+
+ }
+@immutable final class LossReason$$other extends LossReason {const LossReason$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class LossReason$refundIssued extends LossReason {const LossReason$refundIssued._();
+
+@override String get value => 'refund_issued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$refundIssued;
+
+@override int get hashCode => 'refund_issued'.hashCode;
+
+ }
+@immutable final class LossReason$submittedBeyondAllowableTimeLimit extends LossReason {const LossReason$submittedBeyondAllowableTimeLimit._();
+
+@override String get value => 'submitted_beyond_allowable_time_limit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$submittedBeyondAllowableTimeLimit;
+
+@override int get hashCode => 'submitted_beyond_allowable_time_limit'.hashCode;
+
+ }
+@immutable final class LossReason$transaction3dsRequired extends LossReason {const LossReason$transaction3dsRequired._();
+
+@override String get value => 'transaction_3ds_required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$transaction3dsRequired;
+
+@override int get hashCode => 'transaction_3ds_required'.hashCode;
+
+ }
+@immutable final class LossReason$transactionApprovedAfterPriorFraudDispute extends LossReason {const LossReason$transactionApprovedAfterPriorFraudDispute._();
+
+@override String get value => 'transaction_approved_after_prior_fraud_dispute';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$transactionApprovedAfterPriorFraudDispute;
+
+@override int get hashCode => 'transaction_approved_after_prior_fraud_dispute'.hashCode;
+
+ }
+@immutable final class LossReason$transactionAuthorized extends LossReason {const LossReason$transactionAuthorized._();
+
+@override String get value => 'transaction_authorized';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$transactionAuthorized;
+
+@override int get hashCode => 'transaction_authorized'.hashCode;
+
+ }
+@immutable final class LossReason$transactionElectronicallyRead extends LossReason {const LossReason$transactionElectronicallyRead._();
+
+@override String get value => 'transaction_electronically_read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$transactionElectronicallyRead;
+
+@override int get hashCode => 'transaction_electronically_read'.hashCode;
+
+ }
+@immutable final class LossReason$transactionQualifiesForVisaEasyPaymentService extends LossReason {const LossReason$transactionQualifiesForVisaEasyPaymentService._();
+
+@override String get value => 'transaction_qualifies_for_visa_easy_payment_service';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$transactionQualifiesForVisaEasyPaymentService;
+
+@override int get hashCode => 'transaction_qualifies_for_visa_easy_payment_service'.hashCode;
+
+ }
+@immutable final class LossReason$transactionUnattended extends LossReason {const LossReason$transactionUnattended._();
+
+@override String get value => 'transaction_unattended';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LossReason$transactionUnattended;
+
+@override int get hashCode => 'transaction_unattended'.hashCode;
+
+ }
+@immutable final class LossReason$Unknown extends LossReason {const LossReason$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LossReason$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class IssuingDisputeObject {const IssuingDisputeObject._(this.value);
+sealed class IssuingDisputeObject {const IssuingDisputeObject();
 
 factory IssuingDisputeObject.fromJson(String json) { return switch (json) {
   'issuing.dispute' => issuingDispute,
-  _ => IssuingDisputeObject._(json),
+  _ => IssuingDisputeObject$Unknown(json),
 }; }
 
-static const IssuingDisputeObject issuingDispute = IssuingDisputeObject._('issuing.dispute');
+static const IssuingDisputeObject issuingDispute = IssuingDisputeObject$issuingDispute._();
 
 static const List<IssuingDisputeObject> values = [issuingDispute];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -128,17 +311,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingDisputeObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingDisputeObject$Unknown; } 
 @override String toString() => 'IssuingDisputeObject($value)';
 
  }
+@immutable final class IssuingDisputeObject$issuingDispute extends IssuingDisputeObject {const IssuingDisputeObject$issuingDispute._();
+
+@override String get value => 'issuing.dispute';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingDisputeObject$issuingDispute;
+
+@override int get hashCode => 'issuing.dispute'.hashCode;
+
+ }
+@immutable final class IssuingDisputeObject$Unknown extends IssuingDisputeObject {const IssuingDisputeObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingDisputeObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Current status of the dispute.
-@immutable final class IssuingDisputeStatus {const IssuingDisputeStatus._(this.value);
+sealed class IssuingDisputeStatus {const IssuingDisputeStatus();
 
 factory IssuingDisputeStatus.fromJson(String json) { return switch (json) {
   'expired' => expired,
@@ -146,23 +343,22 @@ factory IssuingDisputeStatus.fromJson(String json) { return switch (json) {
   'submitted' => submitted,
   'unsubmitted' => unsubmitted,
   'won' => won,
-  _ => IssuingDisputeStatus._(json),
+  _ => IssuingDisputeStatus$Unknown(json),
 }; }
 
-static const IssuingDisputeStatus expired = IssuingDisputeStatus._('expired');
+static const IssuingDisputeStatus expired = IssuingDisputeStatus$expired._();
 
-static const IssuingDisputeStatus lost = IssuingDisputeStatus._('lost');
+static const IssuingDisputeStatus lost = IssuingDisputeStatus$lost._();
 
-static const IssuingDisputeStatus submitted = IssuingDisputeStatus._('submitted');
+static const IssuingDisputeStatus submitted = IssuingDisputeStatus$submitted._();
 
-static const IssuingDisputeStatus unsubmitted = IssuingDisputeStatus._('unsubmitted');
+static const IssuingDisputeStatus unsubmitted = IssuingDisputeStatus$unsubmitted._();
 
-static const IssuingDisputeStatus won = IssuingDisputeStatus._('won');
+static const IssuingDisputeStatus won = IssuingDisputeStatus$won._();
 
 static const List<IssuingDisputeStatus> values = [expired, lost, submitted, unsubmitted, won];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -174,13 +370,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingDisputeStatus$Unknown; } 
+@override String toString() => 'IssuingDisputeStatus($value)';
+
+ }
+@immutable final class IssuingDisputeStatus$expired extends IssuingDisputeStatus {const IssuingDisputeStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingDisputeStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class IssuingDisputeStatus$lost extends IssuingDisputeStatus {const IssuingDisputeStatus$lost._();
+
+@override String get value => 'lost';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingDisputeStatus$lost;
+
+@override int get hashCode => 'lost'.hashCode;
+
+ }
+@immutable final class IssuingDisputeStatus$submitted extends IssuingDisputeStatus {const IssuingDisputeStatus$submitted._();
+
+@override String get value => 'submitted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingDisputeStatus$submitted;
+
+@override int get hashCode => 'submitted'.hashCode;
+
+ }
+@immutable final class IssuingDisputeStatus$unsubmitted extends IssuingDisputeStatus {const IssuingDisputeStatus$unsubmitted._();
+
+@override String get value => 'unsubmitted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingDisputeStatus$unsubmitted;
+
+@override int get hashCode => 'unsubmitted'.hashCode;
+
+ }
+@immutable final class IssuingDisputeStatus$won extends IssuingDisputeStatus {const IssuingDisputeStatus$won._();
+
+@override String get value => 'won';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingDisputeStatus$won;
+
+@override int get hashCode => 'won'.hashCode;
+
+ }
+@immutable final class IssuingDisputeStatus$Unknown extends IssuingDisputeStatus {const IssuingDisputeStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingDisputeStatus && other.value == value;
+    other is IssuingDisputeStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingDisputeStatus($value)';
 
  }
 /// As a [card issuer](https://docs.stripe.com/issuing), you can dispute transactions that the cardholder does not recognize, suspects to be fraudulent, or has other issues with.

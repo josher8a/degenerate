@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCustomerSessionsRequest (inline: Components > MobilePaymentElement > Features)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_customer_sheet_resource_features/payment_method_allow_redisplay_filters.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_redisplay.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_remove.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_save.dart';@immutable final class FeaturesPaymentMethodSaveAllowRedisplayOverride {const FeaturesPaymentMethodSaveAllowRedisplayOverride._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_customer_sheet_resource_features/payment_method_allow_redisplay_filters.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_redisplay.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_remove.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_save.dart';sealed class FeaturesPaymentMethodSaveAllowRedisplayOverride {const FeaturesPaymentMethodSaveAllowRedisplayOverride();
 
 factory FeaturesPaymentMethodSaveAllowRedisplayOverride.fromJson(String json) { return switch (json) {
   'always' => always,
   'limited' => limited,
   'unspecified' => unspecified,
-  _ => FeaturesPaymentMethodSaveAllowRedisplayOverride._(json),
+  _ => FeaturesPaymentMethodSaveAllowRedisplayOverride$Unknown(json),
 }; }
 
-static const FeaturesPaymentMethodSaveAllowRedisplayOverride always = FeaturesPaymentMethodSaveAllowRedisplayOverride._('always');
+static const FeaturesPaymentMethodSaveAllowRedisplayOverride always = FeaturesPaymentMethodSaveAllowRedisplayOverride$always._();
 
-static const FeaturesPaymentMethodSaveAllowRedisplayOverride limited = FeaturesPaymentMethodSaveAllowRedisplayOverride._('limited');
+static const FeaturesPaymentMethodSaveAllowRedisplayOverride limited = FeaturesPaymentMethodSaveAllowRedisplayOverride$limited._();
 
-static const FeaturesPaymentMethodSaveAllowRedisplayOverride unspecified = FeaturesPaymentMethodSaveAllowRedisplayOverride._('unspecified');
+static const FeaturesPaymentMethodSaveAllowRedisplayOverride unspecified = FeaturesPaymentMethodSaveAllowRedisplayOverride$unspecified._();
 
 static const List<FeaturesPaymentMethodSaveAllowRedisplayOverride> values = [always, limited, unspecified];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FeaturesPaymentMethodSaveAllowRedisplayOverride$Unknown; } 
+@override String toString() => 'FeaturesPaymentMethodSaveAllowRedisplayOverride($value)';
+
+ }
+@immutable final class FeaturesPaymentMethodSaveAllowRedisplayOverride$always extends FeaturesPaymentMethodSaveAllowRedisplayOverride {const FeaturesPaymentMethodSaveAllowRedisplayOverride$always._();
+
+@override String get value => 'always';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FeaturesPaymentMethodSaveAllowRedisplayOverride$always;
+
+@override int get hashCode => 'always'.hashCode;
+
+ }
+@immutable final class FeaturesPaymentMethodSaveAllowRedisplayOverride$limited extends FeaturesPaymentMethodSaveAllowRedisplayOverride {const FeaturesPaymentMethodSaveAllowRedisplayOverride$limited._();
+
+@override String get value => 'limited';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FeaturesPaymentMethodSaveAllowRedisplayOverride$limited;
+
+@override int get hashCode => 'limited'.hashCode;
+
+ }
+@immutable final class FeaturesPaymentMethodSaveAllowRedisplayOverride$unspecified extends FeaturesPaymentMethodSaveAllowRedisplayOverride {const FeaturesPaymentMethodSaveAllowRedisplayOverride$unspecified._();
+
+@override String get value => 'unspecified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FeaturesPaymentMethodSaveAllowRedisplayOverride$unspecified;
+
+@override int get hashCode => 'unspecified'.hashCode;
+
+ }
+@immutable final class FeaturesPaymentMethodSaveAllowRedisplayOverride$Unknown extends FeaturesPaymentMethodSaveAllowRedisplayOverride {const FeaturesPaymentMethodSaveAllowRedisplayOverride$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FeaturesPaymentMethodSaveAllowRedisplayOverride && other.value == value;
+    other is FeaturesPaymentMethodSaveAllowRedisplayOverride$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FeaturesPaymentMethodSaveAllowRedisplayOverride($value)';
 
  }
 @immutable final class MobilePaymentElementFeatures {const MobilePaymentElementFeatures({this.paymentMethodAllowRedisplayFilters, this.paymentMethodRedisplay, this.paymentMethodRemove, this.paymentMethodSave, this.paymentMethodSaveAllowRedisplayOverride, });

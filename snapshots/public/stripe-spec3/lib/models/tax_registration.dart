@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TaxRegistration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_registrations_resource_country_options.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TaxRegistrationObject {const TaxRegistrationObject._(this.value);
+sealed class TaxRegistrationObject {const TaxRegistrationObject();
 
 factory TaxRegistrationObject.fromJson(String json) { return switch (json) {
   'tax.registration' => taxRegistration,
-  _ => TaxRegistrationObject._(json),
+  _ => TaxRegistrationObject$Unknown(json),
 }; }
 
-static const TaxRegistrationObject taxRegistration = TaxRegistrationObject._('tax.registration');
+static const TaxRegistrationObject taxRegistration = TaxRegistrationObject$taxRegistration._();
 
 static const List<TaxRegistrationObject> values = [taxRegistration];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,35 +21,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxRegistrationObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TaxRegistrationObject$Unknown; } 
 @override String toString() => 'TaxRegistrationObject($value)';
 
  }
+@immutable final class TaxRegistrationObject$taxRegistration extends TaxRegistrationObject {const TaxRegistrationObject$taxRegistration._();
+
+@override String get value => 'tax.registration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxRegistrationObject$taxRegistration;
+
+@override int get hashCode => 'tax.registration'.hashCode;
+
+ }
+@immutable final class TaxRegistrationObject$Unknown extends TaxRegistrationObject {const TaxRegistrationObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxRegistrationObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of the registration. This field is present for convenience and can be deduced from `active_from` and `expires_at`.
-@immutable final class TaxRegistrationStatus {const TaxRegistrationStatus._(this.value);
+sealed class TaxRegistrationStatus {const TaxRegistrationStatus();
 
 factory TaxRegistrationStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'expired' => expired,
   'scheduled' => scheduled,
-  _ => TaxRegistrationStatus._(json),
+  _ => TaxRegistrationStatus$Unknown(json),
 }; }
 
-static const TaxRegistrationStatus active = TaxRegistrationStatus._('active');
+static const TaxRegistrationStatus active = TaxRegistrationStatus$active._();
 
-static const TaxRegistrationStatus expired = TaxRegistrationStatus._('expired');
+static const TaxRegistrationStatus expired = TaxRegistrationStatus$expired._();
 
-static const TaxRegistrationStatus scheduled = TaxRegistrationStatus._('scheduled');
+static const TaxRegistrationStatus scheduled = TaxRegistrationStatus$scheduled._();
 
 static const List<TaxRegistrationStatus> values = [active, expired, scheduled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,13 +72,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TaxRegistrationStatus$Unknown; } 
+@override String toString() => 'TaxRegistrationStatus($value)';
+
+ }
+@immutable final class TaxRegistrationStatus$active extends TaxRegistrationStatus {const TaxRegistrationStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxRegistrationStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class TaxRegistrationStatus$expired extends TaxRegistrationStatus {const TaxRegistrationStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxRegistrationStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class TaxRegistrationStatus$scheduled extends TaxRegistrationStatus {const TaxRegistrationStatus$scheduled._();
+
+@override String get value => 'scheduled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxRegistrationStatus$scheduled;
+
+@override int get hashCode => 'scheduled'.hashCode;
+
+ }
+@immutable final class TaxRegistrationStatus$Unknown extends TaxRegistrationStatus {const TaxRegistrationStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxRegistrationStatus && other.value == value;
+    other is TaxRegistrationStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TaxRegistrationStatus($value)';
 
  }
 /// A Tax `Registration` lets us know that your business is registered to collect tax on payments within a region, enabling you to [automatically collect tax](https://docs.stripe.com/tax).

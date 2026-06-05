@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Group
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `group`.
-@immutable final class GroupObject {const GroupObject._(this.value);
+sealed class GroupObject {const GroupObject();
 
 factory GroupObject.fromJson(String json) { return switch (json) {
   'group' => group,
-  _ => GroupObject._(json),
+  _ => GroupObject$Unknown(json),
 }; }
 
-static const GroupObject group = GroupObject._('group');
+static const GroupObject group = GroupObject$group._();
 
 static const List<GroupObject> values = [group];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GroupObject$Unknown; } 
+@override String toString() => 'GroupObject($value)';
+
+ }
+@immutable final class GroupObject$group extends GroupObject {const GroupObject$group._();
+
+@override String get value => 'group';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GroupObject$group;
+
+@override int get hashCode => 'group'.hashCode;
+
+ }
+@immutable final class GroupObject$Unknown extends GroupObject {const GroupObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GroupObject && other.value == value;
+    other is GroupObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GroupObject($value)';
 
  }
 /// Summary information about a group returned in role assignment responses.

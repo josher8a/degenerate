@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ReportingReportType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ReportingReportTypeObject {const ReportingReportTypeObject._(this.value);
+sealed class ReportingReportTypeObject {const ReportingReportTypeObject();
 
 factory ReportingReportTypeObject.fromJson(String json) { return switch (json) {
   'reporting.report_type' => reportingReportType,
-  _ => ReportingReportTypeObject._(json),
+  _ => ReportingReportTypeObject$Unknown(json),
 }; }
 
-static const ReportingReportTypeObject reportingReportType = ReportingReportTypeObject._('reporting.report_type');
+static const ReportingReportTypeObject reportingReportType = ReportingReportTypeObject$reportingReportType._();
 
 static const List<ReportingReportTypeObject> values = [reportingReportType];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ReportingReportTypeObject$Unknown; } 
+@override String toString() => 'ReportingReportTypeObject($value)';
+
+ }
+@immutable final class ReportingReportTypeObject$reportingReportType extends ReportingReportTypeObject {const ReportingReportTypeObject$reportingReportType._();
+
+@override String get value => 'reporting.report_type';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingReportTypeObject$reportingReportType;
+
+@override int get hashCode => 'reporting.report_type'.hashCode;
+
+ }
+@immutable final class ReportingReportTypeObject$Unknown extends ReportingReportTypeObject {const ReportingReportTypeObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ReportingReportTypeObject && other.value == value;
+    other is ReportingReportTypeObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ReportingReportTypeObject($value)';
 
  }
 /// The Report Type resource corresponds to a particular type of report, such as

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpSummaryByHttpVersionTlsVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByHttpVersionTlsVersion {const RadarGetHttpSummaryByHttpVersionTlsVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpSummaryByHttpVersionTlsVersion {const RadarGetHttpSummaryByHttpVersionTlsVersion();
 
 factory RadarGetHttpSummaryByHttpVersionTlsVersion.fromJson(String json) { return switch (json) {
   'TLSv1_0' => tlSv10,
@@ -9,23 +9,22 @@ factory RadarGetHttpSummaryByHttpVersionTlsVersion.fromJson(String json) { retur
   'TLSv1_2' => tlSv12,
   'TLSv1_3' => tlSv13,
   'TLSvQUIC' => tlSvQuic,
-  _ => RadarGetHttpSummaryByHttpVersionTlsVersion._(json),
+  _ => RadarGetHttpSummaryByHttpVersionTlsVersion$Unknown(json),
 }; }
 
-static const RadarGetHttpSummaryByHttpVersionTlsVersion tlSv10 = RadarGetHttpSummaryByHttpVersionTlsVersion._('TLSv1_0');
+static const RadarGetHttpSummaryByHttpVersionTlsVersion tlSv10 = RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv10._();
 
-static const RadarGetHttpSummaryByHttpVersionTlsVersion tlSv11 = RadarGetHttpSummaryByHttpVersionTlsVersion._('TLSv1_1');
+static const RadarGetHttpSummaryByHttpVersionTlsVersion tlSv11 = RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv11._();
 
-static const RadarGetHttpSummaryByHttpVersionTlsVersion tlSv12 = RadarGetHttpSummaryByHttpVersionTlsVersion._('TLSv1_2');
+static const RadarGetHttpSummaryByHttpVersionTlsVersion tlSv12 = RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv12._();
 
-static const RadarGetHttpSummaryByHttpVersionTlsVersion tlSv13 = RadarGetHttpSummaryByHttpVersionTlsVersion._('TLSv1_3');
+static const RadarGetHttpSummaryByHttpVersionTlsVersion tlSv13 = RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv13._();
 
-static const RadarGetHttpSummaryByHttpVersionTlsVersion tlSvQuic = RadarGetHttpSummaryByHttpVersionTlsVersion._('TLSvQUIC');
+static const RadarGetHttpSummaryByHttpVersionTlsVersion tlSvQuic = RadarGetHttpSummaryByHttpVersionTlsVersion$tlSvQuic._();
 
 static const List<RadarGetHttpSummaryByHttpVersionTlsVersion> values = [tlSv10, tlSv11, tlSv12, tlSv13, tlSvQuic];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,12 +36,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpSummaryByHttpVersionTlsVersion$Unknown; } 
+@override String toString() => 'RadarGetHttpSummaryByHttpVersionTlsVersion($value)';
+
+ }
+@immutable final class RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv10 extends RadarGetHttpSummaryByHttpVersionTlsVersion {const RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv10._();
+
+@override String get value => 'TLSv1_0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv10;
+
+@override int get hashCode => 'TLSv1_0'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv11 extends RadarGetHttpSummaryByHttpVersionTlsVersion {const RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv11._();
+
+@override String get value => 'TLSv1_1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv11;
+
+@override int get hashCode => 'TLSv1_1'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv12 extends RadarGetHttpSummaryByHttpVersionTlsVersion {const RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv12._();
+
+@override String get value => 'TLSv1_2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv12;
+
+@override int get hashCode => 'TLSv1_2'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv13 extends RadarGetHttpSummaryByHttpVersionTlsVersion {const RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv13._();
+
+@override String get value => 'TLSv1_3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByHttpVersionTlsVersion$tlSv13;
+
+@override int get hashCode => 'TLSv1_3'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByHttpVersionTlsVersion$tlSvQuic extends RadarGetHttpSummaryByHttpVersionTlsVersion {const RadarGetHttpSummaryByHttpVersionTlsVersion$tlSvQuic._();
+
+@override String get value => 'TLSvQUIC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByHttpVersionTlsVersion$tlSvQuic;
+
+@override int get hashCode => 'TLSvQUIC'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByHttpVersionTlsVersion$Unknown extends RadarGetHttpSummaryByHttpVersionTlsVersion {const RadarGetHttpSummaryByHttpVersionTlsVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpSummaryByHttpVersionTlsVersion && other.value == value;
+    other is RadarGetHttpSummaryByHttpVersionTlsVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpSummaryByHttpVersionTlsVersion($value)';
 
  }

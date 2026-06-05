@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CountrySpec
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/country_spec_verification_fields.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class CountrySpecObject {const CountrySpecObject._(this.value);
+sealed class CountrySpecObject {const CountrySpecObject();
 
 factory CountrySpecObject.fromJson(String json) { return switch (json) {
   'country_spec' => countrySpec,
-  _ => CountrySpecObject._(json),
+  _ => CountrySpecObject$Unknown(json),
 }; }
 
-static const CountrySpecObject countrySpec = CountrySpecObject._('country_spec');
+static const CountrySpecObject countrySpec = CountrySpecObject$countrySpec._();
 
 static const List<CountrySpecObject> values = [countrySpec];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CountrySpecObject$Unknown; } 
+@override String toString() => 'CountrySpecObject($value)';
+
+ }
+@immutable final class CountrySpecObject$countrySpec extends CountrySpecObject {const CountrySpecObject$countrySpec._();
+
+@override String get value => 'country_spec';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CountrySpecObject$countrySpec;
+
+@override int get hashCode => 'country_spec'.hashCode;
+
+ }
+@immutable final class CountrySpecObject$Unknown extends CountrySpecObject {const CountrySpecObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CountrySpecObject && other.value == value;
+    other is CountrySpecObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CountrySpecObject($value)';
 
  }
 /// Stripe needs to collect certain pieces of information about each account

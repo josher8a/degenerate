@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ListProjectCertificatesOrder
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListProjectCertificatesOrder {const ListProjectCertificatesOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ListProjectCertificatesOrder {const ListProjectCertificatesOrder();
 
 factory ListProjectCertificatesOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => ListProjectCertificatesOrder._(json),
+  _ => ListProjectCertificatesOrder$Unknown(json),
 }; }
 
-static const ListProjectCertificatesOrder asc = ListProjectCertificatesOrder._('asc');
+static const ListProjectCertificatesOrder asc = ListProjectCertificatesOrder$asc._();
 
-static const ListProjectCertificatesOrder desc = ListProjectCertificatesOrder._('desc');
+static const ListProjectCertificatesOrder desc = ListProjectCertificatesOrder$desc._();
 
 static const List<ListProjectCertificatesOrder> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ListProjectCertificatesOrder$Unknown; } 
+@override String toString() => 'ListProjectCertificatesOrder($value)';
+
+ }
+@immutable final class ListProjectCertificatesOrder$asc extends ListProjectCertificatesOrder {const ListProjectCertificatesOrder$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListProjectCertificatesOrder$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class ListProjectCertificatesOrder$desc extends ListProjectCertificatesOrder {const ListProjectCertificatesOrder$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListProjectCertificatesOrder$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class ListProjectCertificatesOrder$Unknown extends ListProjectCertificatesOrder {const ListProjectCertificatesOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ListProjectCertificatesOrder && other.value == value;
+    other is ListProjectCertificatesOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ListProjectCertificatesOrder($value)';
 
  }

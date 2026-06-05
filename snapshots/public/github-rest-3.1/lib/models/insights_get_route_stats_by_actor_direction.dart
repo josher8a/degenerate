@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/InsightsGetRouteStatsByActorDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InsightsGetRouteStatsByActorDirection {const InsightsGetRouteStatsByActorDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class InsightsGetRouteStatsByActorDirection {const InsightsGetRouteStatsByActorDirection();
 
 factory InsightsGetRouteStatsByActorDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => InsightsGetRouteStatsByActorDirection._(json),
+  _ => InsightsGetRouteStatsByActorDirection$Unknown(json),
 }; }
 
-static const InsightsGetRouteStatsByActorDirection asc = InsightsGetRouteStatsByActorDirection._('asc');
+static const InsightsGetRouteStatsByActorDirection asc = InsightsGetRouteStatsByActorDirection$asc._();
 
-static const InsightsGetRouteStatsByActorDirection desc = InsightsGetRouteStatsByActorDirection._('desc');
+static const InsightsGetRouteStatsByActorDirection desc = InsightsGetRouteStatsByActorDirection$desc._();
 
 static const List<InsightsGetRouteStatsByActorDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InsightsGetRouteStatsByActorDirection$Unknown; } 
+@override String toString() => 'InsightsGetRouteStatsByActorDirection($value)';
+
+ }
+@immutable final class InsightsGetRouteStatsByActorDirection$asc extends InsightsGetRouteStatsByActorDirection {const InsightsGetRouteStatsByActorDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsGetRouteStatsByActorDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class InsightsGetRouteStatsByActorDirection$desc extends InsightsGetRouteStatsByActorDirection {const InsightsGetRouteStatsByActorDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsGetRouteStatsByActorDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class InsightsGetRouteStatsByActorDirection$Unknown extends InsightsGetRouteStatsByActorDirection {const InsightsGetRouteStatsByActorDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InsightsGetRouteStatsByActorDirection && other.value == value;
+    other is InsightsGetRouteStatsByActorDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InsightsGetRouteStatsByActorDirection($value)';
 
  }

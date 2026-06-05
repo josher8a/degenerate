@@ -2,19 +2,18 @@
 // Source: #/components/schemas/EvalGraderScoreModel (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `score_model`.
-@immutable final class EvalGraderScoreModelType {const EvalGraderScoreModelType._(this.value);
+sealed class EvalGraderScoreModelType {const EvalGraderScoreModelType();
 
 factory EvalGraderScoreModelType.fromJson(String json) { return switch (json) {
   'score_model' => scoreModel,
-  _ => EvalGraderScoreModelType._(json),
+  _ => EvalGraderScoreModelType$Unknown(json),
 }; }
 
-static const EvalGraderScoreModelType scoreModel = EvalGraderScoreModelType._('score_model');
+static const EvalGraderScoreModelType scoreModel = EvalGraderScoreModelType$scoreModel._();
 
 static const List<EvalGraderScoreModelType> values = [scoreModel];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EvalGraderScoreModelType$Unknown; } 
+@override String toString() => 'EvalGraderScoreModelType($value)';
+
+ }
+@immutable final class EvalGraderScoreModelType$scoreModel extends EvalGraderScoreModelType {const EvalGraderScoreModelType$scoreModel._();
+
+@override String get value => 'score_model';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EvalGraderScoreModelType$scoreModel;
+
+@override int get hashCode => 'score_model'.hashCode;
+
+ }
+@immutable final class EvalGraderScoreModelType$Unknown extends EvalGraderScoreModelType {const EvalGraderScoreModelType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EvalGraderScoreModelType && other.value == value;
+    other is EvalGraderScoreModelType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EvalGraderScoreModelType($value)';
 
  }

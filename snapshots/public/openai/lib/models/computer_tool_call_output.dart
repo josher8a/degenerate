@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_screenshot_image.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';/// The type of the computer tool call output. Always `computer_call_output`.
 /// 
-@immutable final class ComputerToolCallOutputType {const ComputerToolCallOutputType._(this.value);
+sealed class ComputerToolCallOutputType {const ComputerToolCallOutputType();
 
 factory ComputerToolCallOutputType.fromJson(String json) { return switch (json) {
   'computer_call_output' => computerCallOutput,
-  _ => ComputerToolCallOutputType._(json),
+  _ => ComputerToolCallOutputType$Unknown(json),
 }; }
 
-static const ComputerToolCallOutputType computerCallOutput = ComputerToolCallOutputType._('computer_call_output');
+static const ComputerToolCallOutputType computerCallOutput = ComputerToolCallOutputType$computerCallOutput._();
 
 static const List<ComputerToolCallOutputType> values = [computerCallOutput];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ComputerToolCallOutputType$Unknown; } 
+@override String toString() => 'ComputerToolCallOutputType($value)';
+
+ }
+@immutable final class ComputerToolCallOutputType$computerCallOutput extends ComputerToolCallOutputType {const ComputerToolCallOutputType$computerCallOutput._();
+
+@override String get value => 'computer_call_output';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerToolCallOutputType$computerCallOutput;
+
+@override int get hashCode => 'computer_call_output'.hashCode;
+
+ }
+@immutable final class ComputerToolCallOutputType$Unknown extends ComputerToolCallOutputType {const ComputerToolCallOutputType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ComputerToolCallOutputType && other.value == value;
+    other is ComputerToolCallOutputType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ComputerToolCallOutputType($value)';
 
  }
 /// The output of a computer tool call.

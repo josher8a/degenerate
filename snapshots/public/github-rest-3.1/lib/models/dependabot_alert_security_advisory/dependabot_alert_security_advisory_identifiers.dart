@@ -2,22 +2,21 @@
 // Source: #/components/schemas/DependabotAlertSecurityAdvisory (inline: Identifiers)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of identifier.
-@immutable final class IdentifiersType {const IdentifiersType._(this.value);
+sealed class IdentifiersType {const IdentifiersType();
 
 factory IdentifiersType.fromJson(String json) { return switch (json) {
   'CVE' => cve,
   'GHSA' => ghsa,
-  _ => IdentifiersType._(json),
+  _ => IdentifiersType$Unknown(json),
 }; }
 
-static const IdentifiersType cve = IdentifiersType._('CVE');
+static const IdentifiersType cve = IdentifiersType$cve._();
 
-static const IdentifiersType ghsa = IdentifiersType._('GHSA');
+static const IdentifiersType ghsa = IdentifiersType$ghsa._();
 
 static const List<IdentifiersType> values = [cve, ghsa];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IdentifiersType$Unknown; } 
+@override String toString() => 'IdentifiersType($value)';
+
+ }
+@immutable final class IdentifiersType$cve extends IdentifiersType {const IdentifiersType$cve._();
+
+@override String get value => 'CVE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IdentifiersType$cve;
+
+@override int get hashCode => 'CVE'.hashCode;
+
+ }
+@immutable final class IdentifiersType$ghsa extends IdentifiersType {const IdentifiersType$ghsa._();
+
+@override String get value => 'GHSA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IdentifiersType$ghsa;
+
+@override int get hashCode => 'GHSA'.hashCode;
+
+ }
+@immutable final class IdentifiersType$Unknown extends IdentifiersType {const IdentifiersType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IdentifiersType && other.value == value;
+    other is IdentifiersType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IdentifiersType($value)';
 
  }
 @immutable final class DependabotAlertSecurityAdvisoryIdentifiers {const DependabotAlertSecurityAdvisoryIdentifiers({required this.type, required this.value, });

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CostsResult
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/costs_result/amount.dart';@immutable final class CostsResultObject {const CostsResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/costs_result/amount.dart';sealed class CostsResultObject {const CostsResultObject();
 
 factory CostsResultObject.fromJson(String json) { return switch (json) {
   'organization.costs.result' => organizationCostsResult,
-  _ => CostsResultObject._(json),
+  _ => CostsResultObject$Unknown(json),
 }; }
 
-static const CostsResultObject organizationCostsResult = CostsResultObject._('organization.costs.result');
+static const CostsResultObject organizationCostsResult = CostsResultObject$organizationCostsResult._();
 
 static const List<CostsResultObject> values = [organizationCostsResult];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CostsResultObject$Unknown; } 
+@override String toString() => 'CostsResultObject($value)';
+
+ }
+@immutable final class CostsResultObject$organizationCostsResult extends CostsResultObject {const CostsResultObject$organizationCostsResult._();
+
+@override String get value => 'organization.costs.result';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CostsResultObject$organizationCostsResult;
+
+@override int get hashCode => 'organization.costs.result'.hashCode;
+
+ }
+@immutable final class CostsResultObject$Unknown extends CostsResultObject {const CostsResultObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CostsResultObject && other.value == value;
+    other is CostsResultObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CostsResultObject($value)';
 
  }
 /// The aggregated costs details of the specific time bucket.

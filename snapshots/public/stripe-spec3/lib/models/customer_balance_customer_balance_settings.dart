@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CustomerBalanceCustomerBalanceSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration for how funds that land in the customer cash balance are reconciled.
-@immutable final class CustomerBalanceCustomerBalanceSettingsReconciliationMode {const CustomerBalanceCustomerBalanceSettingsReconciliationMode._(this.value);
+sealed class CustomerBalanceCustomerBalanceSettingsReconciliationMode {const CustomerBalanceCustomerBalanceSettingsReconciliationMode();
 
 factory CustomerBalanceCustomerBalanceSettingsReconciliationMode.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
   'manual' => manual,
-  _ => CustomerBalanceCustomerBalanceSettingsReconciliationMode._(json),
+  _ => CustomerBalanceCustomerBalanceSettingsReconciliationMode$Unknown(json),
 }; }
 
-static const CustomerBalanceCustomerBalanceSettingsReconciliationMode automatic = CustomerBalanceCustomerBalanceSettingsReconciliationMode._('automatic');
+static const CustomerBalanceCustomerBalanceSettingsReconciliationMode automatic = CustomerBalanceCustomerBalanceSettingsReconciliationMode$automatic._();
 
-static const CustomerBalanceCustomerBalanceSettingsReconciliationMode manual = CustomerBalanceCustomerBalanceSettingsReconciliationMode._('manual');
+static const CustomerBalanceCustomerBalanceSettingsReconciliationMode manual = CustomerBalanceCustomerBalanceSettingsReconciliationMode$manual._();
 
 static const List<CustomerBalanceCustomerBalanceSettingsReconciliationMode> values = [automatic, manual];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomerBalanceCustomerBalanceSettingsReconciliationMode$Unknown; } 
+@override String toString() => 'CustomerBalanceCustomerBalanceSettingsReconciliationMode($value)';
+
+ }
+@immutable final class CustomerBalanceCustomerBalanceSettingsReconciliationMode$automatic extends CustomerBalanceCustomerBalanceSettingsReconciliationMode {const CustomerBalanceCustomerBalanceSettingsReconciliationMode$automatic._();
+
+@override String get value => 'automatic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceCustomerBalanceSettingsReconciliationMode$automatic;
+
+@override int get hashCode => 'automatic'.hashCode;
+
+ }
+@immutable final class CustomerBalanceCustomerBalanceSettingsReconciliationMode$manual extends CustomerBalanceCustomerBalanceSettingsReconciliationMode {const CustomerBalanceCustomerBalanceSettingsReconciliationMode$manual._();
+
+@override String get value => 'manual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceCustomerBalanceSettingsReconciliationMode$manual;
+
+@override int get hashCode => 'manual'.hashCode;
+
+ }
+@immutable final class CustomerBalanceCustomerBalanceSettingsReconciliationMode$Unknown extends CustomerBalanceCustomerBalanceSettingsReconciliationMode {const CustomerBalanceCustomerBalanceSettingsReconciliationMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerBalanceCustomerBalanceSettingsReconciliationMode && other.value == value;
+    other is CustomerBalanceCustomerBalanceSettingsReconciliationMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomerBalanceCustomerBalanceSettingsReconciliationMode($value)';
 
  }
 /// 

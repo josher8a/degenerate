@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TelemetryQueryRequest (inline: Parameters > Havings)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class HavingsOperation {const HavingsOperation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class HavingsOperation {const HavingsOperation();
 
 factory HavingsOperation.fromJson(String json) { return switch (json) {
   'eq' => eq,
@@ -10,25 +10,24 @@ factory HavingsOperation.fromJson(String json) { return switch (json) {
   'gte' => gte,
   'lt' => lt,
   'lte' => lte,
-  _ => HavingsOperation._(json),
+  _ => HavingsOperation$Unknown(json),
 }; }
 
-static const HavingsOperation eq = HavingsOperation._('eq');
+static const HavingsOperation eq = HavingsOperation$eq._();
 
-static const HavingsOperation neq = HavingsOperation._('neq');
+static const HavingsOperation neq = HavingsOperation$neq._();
 
-static const HavingsOperation gt = HavingsOperation._('gt');
+static const HavingsOperation gt = HavingsOperation$gt._();
 
-static const HavingsOperation gte = HavingsOperation._('gte');
+static const HavingsOperation gte = HavingsOperation$gte._();
 
-static const HavingsOperation lt = HavingsOperation._('lt');
+static const HavingsOperation lt = HavingsOperation$lt._();
 
-static const HavingsOperation lte = HavingsOperation._('lte');
+static const HavingsOperation lte = HavingsOperation$lte._();
 
 static const List<HavingsOperation> values = [eq, neq, gt, gte, lt, lte];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,13 +40,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is HavingsOperation$Unknown; } 
+@override String toString() => 'HavingsOperation($value)';
+
+ }
+@immutable final class HavingsOperation$eq extends HavingsOperation {const HavingsOperation$eq._();
+
+@override String get value => 'eq';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HavingsOperation$eq;
+
+@override int get hashCode => 'eq'.hashCode;
+
+ }
+@immutable final class HavingsOperation$neq extends HavingsOperation {const HavingsOperation$neq._();
+
+@override String get value => 'neq';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HavingsOperation$neq;
+
+@override int get hashCode => 'neq'.hashCode;
+
+ }
+@immutable final class HavingsOperation$gt extends HavingsOperation {const HavingsOperation$gt._();
+
+@override String get value => 'gt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HavingsOperation$gt;
+
+@override int get hashCode => 'gt'.hashCode;
+
+ }
+@immutable final class HavingsOperation$gte extends HavingsOperation {const HavingsOperation$gte._();
+
+@override String get value => 'gte';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HavingsOperation$gte;
+
+@override int get hashCode => 'gte'.hashCode;
+
+ }
+@immutable final class HavingsOperation$lt extends HavingsOperation {const HavingsOperation$lt._();
+
+@override String get value => 'lt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HavingsOperation$lt;
+
+@override int get hashCode => 'lt'.hashCode;
+
+ }
+@immutable final class HavingsOperation$lte extends HavingsOperation {const HavingsOperation$lte._();
+
+@override String get value => 'lte';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HavingsOperation$lte;
+
+@override int get hashCode => 'lte'.hashCode;
+
+ }
+@immutable final class HavingsOperation$Unknown extends HavingsOperation {const HavingsOperation$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is HavingsOperation && other.value == value;
+    other is HavingsOperation$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'HavingsOperation($value)';
 
  }
 @immutable final class Havings {const Havings({required this.key, required this.operation, required this.value, });

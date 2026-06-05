@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookRequestUpdated
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/simple_object.dart';@immutable final class WebhookRequestUpdatedType {const WebhookRequestUpdatedType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/simple_object.dart';sealed class WebhookRequestUpdatedType {const WebhookRequestUpdatedType();
 
 factory WebhookRequestUpdatedType.fromJson(String json) { return switch (json) {
   'webhook.updated' => webhookUpdated,
-  _ => WebhookRequestUpdatedType._(json),
+  _ => WebhookRequestUpdatedType$Unknown(json),
 }; }
 
-static const WebhookRequestUpdatedType webhookUpdated = WebhookRequestUpdatedType._('webhook.updated');
+static const WebhookRequestUpdatedType webhookUpdated = WebhookRequestUpdatedType$webhookUpdated._();
 
 static const List<WebhookRequestUpdatedType> values = [webhookUpdated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookRequestUpdatedType$Unknown; } 
+@override String toString() => 'WebhookRequestUpdatedType($value)';
+
+ }
+@immutable final class WebhookRequestUpdatedType$webhookUpdated extends WebhookRequestUpdatedType {const WebhookRequestUpdatedType$webhookUpdated._();
+
+@override String get value => 'webhook.updated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookRequestUpdatedType$webhookUpdated;
+
+@override int get hashCode => 'webhook.updated'.hashCode;
+
+ }
+@immutable final class WebhookRequestUpdatedType$Unknown extends WebhookRequestUpdatedType {const WebhookRequestUpdatedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookRequestUpdatedType && other.value == value;
+    other is WebhookRequestUpdatedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookRequestUpdatedType($value)';
 
  }
 @immutable final class WebhookRequestUpdated {const WebhookRequestUpdated({required this.type, required this.data, });

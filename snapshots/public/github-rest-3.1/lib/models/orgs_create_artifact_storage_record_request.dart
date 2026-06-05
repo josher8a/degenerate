@@ -2,25 +2,24 @@
 // Source: #/components/schemas/OrgsCreateArtifactStorageRecordRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the artifact (e.g., active, inactive).
-@immutable final class OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus._(this.value);
+sealed class OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus();
 
 factory OrgsCreateArtifactStorageRecordRequestStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'eol' => eol,
   'deleted' => deleted,
-  _ => OrgsCreateArtifactStorageRecordRequestStatus._(json),
+  _ => OrgsCreateArtifactStorageRecordRequestStatus$Unknown(json),
 }; }
 
-static const OrgsCreateArtifactStorageRecordRequestStatus active = OrgsCreateArtifactStorageRecordRequestStatus._('active');
+static const OrgsCreateArtifactStorageRecordRequestStatus active = OrgsCreateArtifactStorageRecordRequestStatus$active._();
 
-static const OrgsCreateArtifactStorageRecordRequestStatus eol = OrgsCreateArtifactStorageRecordRequestStatus._('eol');
+static const OrgsCreateArtifactStorageRecordRequestStatus eol = OrgsCreateArtifactStorageRecordRequestStatus$eol._();
 
-static const OrgsCreateArtifactStorageRecordRequestStatus deleted = OrgsCreateArtifactStorageRecordRequestStatus._('deleted');
+static const OrgsCreateArtifactStorageRecordRequestStatus deleted = OrgsCreateArtifactStorageRecordRequestStatus$deleted._();
 
 static const List<OrgsCreateArtifactStorageRecordRequestStatus> values = [active, eol, deleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrgsCreateArtifactStorageRecordRequestStatus$Unknown; } 
+@override String toString() => 'OrgsCreateArtifactStorageRecordRequestStatus($value)';
+
+ }
+@immutable final class OrgsCreateArtifactStorageRecordRequestStatus$active extends OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsCreateArtifactStorageRecordRequestStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class OrgsCreateArtifactStorageRecordRequestStatus$eol extends OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus$eol._();
+
+@override String get value => 'eol';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsCreateArtifactStorageRecordRequestStatus$eol;
+
+@override int get hashCode => 'eol'.hashCode;
+
+ }
+@immutable final class OrgsCreateArtifactStorageRecordRequestStatus$deleted extends OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus$deleted._();
+
+@override String get value => 'deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsCreateArtifactStorageRecordRequestStatus$deleted;
+
+@override int get hashCode => 'deleted'.hashCode;
+
+ }
+@immutable final class OrgsCreateArtifactStorageRecordRequestStatus$Unknown extends OrgsCreateArtifactStorageRecordRequestStatus {const OrgsCreateArtifactStorageRecordRequestStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrgsCreateArtifactStorageRecordRequestStatus && other.value == value;
+    other is OrgsCreateArtifactStorageRecordRequestStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrgsCreateArtifactStorageRecordRequestStatus($value)';
 
  }
 @immutable final class OrgsCreateArtifactStorageRecordRequest {const OrgsCreateArtifactStorageRecordRequest({required this.name, required this.digest, required this.registryUrl, this.version, this.artifactUrl, this.path, this.repository, this.status = OrgsCreateArtifactStorageRecordRequestStatus.active, this.githubRepository, });

@@ -9,28 +9,27 @@ String toJson() => value;
 
 }
 /// The status of the verification code from the verification process.
-@immutable final class IamSsoConnectorVerificationInfoStatus {const IamSsoConnectorVerificationInfoStatus._(this.value);
+sealed class IamSsoConnectorVerificationInfoStatus {const IamSsoConnectorVerificationInfoStatus();
 
 factory IamSsoConnectorVerificationInfoStatus.fromJson(String json) { return switch (json) {
   'awaiting' => awaiting,
   'pending' => pending,
   'failed' => failed,
   'verified' => verified,
-  _ => IamSsoConnectorVerificationInfoStatus._(json),
+  _ => IamSsoConnectorVerificationInfoStatus$Unknown(json),
 }; }
 
-static const IamSsoConnectorVerificationInfoStatus awaiting = IamSsoConnectorVerificationInfoStatus._('awaiting');
+static const IamSsoConnectorVerificationInfoStatus awaiting = IamSsoConnectorVerificationInfoStatus$awaiting._();
 
-static const IamSsoConnectorVerificationInfoStatus pending = IamSsoConnectorVerificationInfoStatus._('pending');
+static const IamSsoConnectorVerificationInfoStatus pending = IamSsoConnectorVerificationInfoStatus$pending._();
 
-static const IamSsoConnectorVerificationInfoStatus failed = IamSsoConnectorVerificationInfoStatus._('failed');
+static const IamSsoConnectorVerificationInfoStatus failed = IamSsoConnectorVerificationInfoStatus$failed._();
 
-static const IamSsoConnectorVerificationInfoStatus verified = IamSsoConnectorVerificationInfoStatus._('verified');
+static const IamSsoConnectorVerificationInfoStatus verified = IamSsoConnectorVerificationInfoStatus$verified._();
 
 static const List<IamSsoConnectorVerificationInfoStatus> values = [awaiting, pending, failed, verified];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,13 +40,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IamSsoConnectorVerificationInfoStatus$Unknown; } 
+@override String toString() => 'IamSsoConnectorVerificationInfoStatus($value)';
+
+ }
+@immutable final class IamSsoConnectorVerificationInfoStatus$awaiting extends IamSsoConnectorVerificationInfoStatus {const IamSsoConnectorVerificationInfoStatus$awaiting._();
+
+@override String get value => 'awaiting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IamSsoConnectorVerificationInfoStatus$awaiting;
+
+@override int get hashCode => 'awaiting'.hashCode;
+
+ }
+@immutable final class IamSsoConnectorVerificationInfoStatus$pending extends IamSsoConnectorVerificationInfoStatus {const IamSsoConnectorVerificationInfoStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IamSsoConnectorVerificationInfoStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class IamSsoConnectorVerificationInfoStatus$failed extends IamSsoConnectorVerificationInfoStatus {const IamSsoConnectorVerificationInfoStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IamSsoConnectorVerificationInfoStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class IamSsoConnectorVerificationInfoStatus$verified extends IamSsoConnectorVerificationInfoStatus {const IamSsoConnectorVerificationInfoStatus$verified._();
+
+@override String get value => 'verified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IamSsoConnectorVerificationInfoStatus$verified;
+
+@override int get hashCode => 'verified'.hashCode;
+
+ }
+@immutable final class IamSsoConnectorVerificationInfoStatus$Unknown extends IamSsoConnectorVerificationInfoStatus {const IamSsoConnectorVerificationInfoStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IamSsoConnectorVerificationInfoStatus && other.value == value;
+    other is IamSsoConnectorVerificationInfoStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IamSsoConnectorVerificationInfoStatus($value)';
 
  }
 @immutable final class IamSsoConnectorVerificationInfo {const IamSsoConnectorVerificationInfo({this.code, this.status, });

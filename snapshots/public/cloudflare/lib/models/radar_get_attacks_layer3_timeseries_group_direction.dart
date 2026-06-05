@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetAttacksLayer3TimeseriesGroupDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether the `location` filter applies to the source or target location.
-@immutable final class RadarGetAttacksLayer3TimeseriesGroupDirection {const RadarGetAttacksLayer3TimeseriesGroupDirection._(this.value);
+sealed class RadarGetAttacksLayer3TimeseriesGroupDirection {const RadarGetAttacksLayer3TimeseriesGroupDirection();
 
 factory RadarGetAttacksLayer3TimeseriesGroupDirection.fromJson(String json) { return switch (json) {
   'ORIGIN' => origin,
   'TARGET' => target,
-  _ => RadarGetAttacksLayer3TimeseriesGroupDirection._(json),
+  _ => RadarGetAttacksLayer3TimeseriesGroupDirection$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer3TimeseriesGroupDirection origin = RadarGetAttacksLayer3TimeseriesGroupDirection._('ORIGIN');
+static const RadarGetAttacksLayer3TimeseriesGroupDirection origin = RadarGetAttacksLayer3TimeseriesGroupDirection$origin._();
 
-static const RadarGetAttacksLayer3TimeseriesGroupDirection target = RadarGetAttacksLayer3TimeseriesGroupDirection._('TARGET');
+static const RadarGetAttacksLayer3TimeseriesGroupDirection target = RadarGetAttacksLayer3TimeseriesGroupDirection$target._();
 
 static const List<RadarGetAttacksLayer3TimeseriesGroupDirection> values = [origin, target];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer3TimeseriesGroupDirection$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupDirection($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupDirection$origin extends RadarGetAttacksLayer3TimeseriesGroupDirection {const RadarGetAttacksLayer3TimeseriesGroupDirection$origin._();
+
+@override String get value => 'ORIGIN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TimeseriesGroupDirection$origin;
+
+@override int get hashCode => 'ORIGIN'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupDirection$target extends RadarGetAttacksLayer3TimeseriesGroupDirection {const RadarGetAttacksLayer3TimeseriesGroupDirection$target._();
+
+@override String get value => 'TARGET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TimeseriesGroupDirection$target;
+
+@override int get hashCode => 'TARGET'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupDirection$Unknown extends RadarGetAttacksLayer3TimeseriesGroupDirection {const RadarGetAttacksLayer3TimeseriesGroupDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesGroupDirection && other.value == value;
+    other is RadarGetAttacksLayer3TimeseriesGroupDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupDirection($value)';
 
  }

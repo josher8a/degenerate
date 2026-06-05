@@ -2,25 +2,24 @@
 // Source: #/components/schemas/Order
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Order Status
-@immutable final class OrderStatus {const OrderStatus._(this.value);
+sealed class OrderStatus {const OrderStatus();
 
 factory OrderStatus.fromJson(String json) { return switch (json) {
   'placed' => placed,
   'approved' => approved,
   'delivered' => delivered,
-  _ => OrderStatus._(json),
+  _ => OrderStatus$Unknown(json),
 }; }
 
-static const OrderStatus placed = OrderStatus._('placed');
+static const OrderStatus placed = OrderStatus$placed._();
 
-static const OrderStatus approved = OrderStatus._('approved');
+static const OrderStatus approved = OrderStatus$approved._();
 
-static const OrderStatus delivered = OrderStatus._('delivered');
+static const OrderStatus delivered = OrderStatus$delivered._();
 
 static const List<OrderStatus> values = [placed, approved, delivered];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrderStatus$Unknown; } 
+@override String toString() => 'OrderStatus($value)';
+
+ }
+@immutable final class OrderStatus$placed extends OrderStatus {const OrderStatus$placed._();
+
+@override String get value => 'placed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrderStatus$placed;
+
+@override int get hashCode => 'placed'.hashCode;
+
+ }
+@immutable final class OrderStatus$approved extends OrderStatus {const OrderStatus$approved._();
+
+@override String get value => 'approved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrderStatus$approved;
+
+@override int get hashCode => 'approved'.hashCode;
+
+ }
+@immutable final class OrderStatus$delivered extends OrderStatus {const OrderStatus$delivered._();
+
+@override String get value => 'delivered';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrderStatus$delivered;
+
+@override int get hashCode => 'delivered'.hashCode;
+
+ }
+@immutable final class OrderStatus$Unknown extends OrderStatus {const OrderStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrderStatus && other.value == value;
+    other is OrderStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrderStatus($value)';
 
  }
 @immutable final class Order {const Order({this.id, this.petId, this.quantity, this.shipDate, this.status, this.complete = false, });

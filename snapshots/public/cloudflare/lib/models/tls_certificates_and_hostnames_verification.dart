@@ -9,7 +9,7 @@ bool toJson() => value;
 
 }
 /// Current status of certificate.
-@immutable final class TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus._(this.value);
+sealed class TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus();
 
 factory TlsCertificatesAndHostnamesCertificateStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -19,27 +19,26 @@ factory TlsCertificatesAndHostnamesCertificateStatus.fromJson(String json) { ret
   'issuing' => issuing,
   'timing_out' => timingOut,
   'pending_deployment' => pendingDeployment,
-  _ => TlsCertificatesAndHostnamesCertificateStatus._(json),
+  _ => TlsCertificatesAndHostnamesCertificateStatus$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesCertificateStatus initializing = TlsCertificatesAndHostnamesCertificateStatus._('initializing');
+static const TlsCertificatesAndHostnamesCertificateStatus initializing = TlsCertificatesAndHostnamesCertificateStatus$initializing._();
 
-static const TlsCertificatesAndHostnamesCertificateStatus authorizing = TlsCertificatesAndHostnamesCertificateStatus._('authorizing');
+static const TlsCertificatesAndHostnamesCertificateStatus authorizing = TlsCertificatesAndHostnamesCertificateStatus$authorizing._();
 
-static const TlsCertificatesAndHostnamesCertificateStatus active = TlsCertificatesAndHostnamesCertificateStatus._('active');
+static const TlsCertificatesAndHostnamesCertificateStatus active = TlsCertificatesAndHostnamesCertificateStatus$active._();
 
-static const TlsCertificatesAndHostnamesCertificateStatus expired = TlsCertificatesAndHostnamesCertificateStatus._('expired');
+static const TlsCertificatesAndHostnamesCertificateStatus expired = TlsCertificatesAndHostnamesCertificateStatus$expired._();
 
-static const TlsCertificatesAndHostnamesCertificateStatus issuing = TlsCertificatesAndHostnamesCertificateStatus._('issuing');
+static const TlsCertificatesAndHostnamesCertificateStatus issuing = TlsCertificatesAndHostnamesCertificateStatus$issuing._();
 
-static const TlsCertificatesAndHostnamesCertificateStatus timingOut = TlsCertificatesAndHostnamesCertificateStatus._('timing_out');
+static const TlsCertificatesAndHostnamesCertificateStatus timingOut = TlsCertificatesAndHostnamesCertificateStatus$timingOut._();
 
-static const TlsCertificatesAndHostnamesCertificateStatus pendingDeployment = TlsCertificatesAndHostnamesCertificateStatus._('pending_deployment');
+static const TlsCertificatesAndHostnamesCertificateStatus pendingDeployment = TlsCertificatesAndHostnamesCertificateStatus$pendingDeployment._();
 
 static const List<TlsCertificatesAndHostnamesCertificateStatus> values = [initializing, authorizing, active, expired, issuing, timingOut, pendingDeployment];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -53,35 +52,102 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesCertificateStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TlsCertificatesAndHostnamesCertificateStatus$Unknown; } 
 @override String toString() => 'TlsCertificatesAndHostnamesCertificateStatus($value)';
 
  }
+@immutable final class TlsCertificatesAndHostnamesCertificateStatus$initializing extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$initializing._();
+
+@override String get value => 'initializing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificateStatus$initializing;
+
+@override int get hashCode => 'initializing'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificateStatus$authorizing extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$authorizing._();
+
+@override String get value => 'authorizing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificateStatus$authorizing;
+
+@override int get hashCode => 'authorizing'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificateStatus$active extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificateStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificateStatus$expired extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificateStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificateStatus$issuing extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$issuing._();
+
+@override String get value => 'issuing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificateStatus$issuing;
+
+@override int get hashCode => 'issuing'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificateStatus$timingOut extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$timingOut._();
+
+@override String get value => 'timing_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificateStatus$timingOut;
+
+@override int get hashCode => 'timing_out'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificateStatus$pendingDeployment extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$pendingDeployment._();
+
+@override String get value => 'pending_deployment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificateStatus$pendingDeployment;
+
+@override int get hashCode => 'pending_deployment'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificateStatus$Unknown extends TlsCertificatesAndHostnamesCertificateStatus {const TlsCertificatesAndHostnamesCertificateStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesCertificateStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Certificate's signature algorithm.
-@immutable final class TlsCertificatesAndHostnamesSchemasSignature {const TlsCertificatesAndHostnamesSchemasSignature._(this.value);
+sealed class TlsCertificatesAndHostnamesSchemasSignature {const TlsCertificatesAndHostnamesSchemasSignature();
 
 factory TlsCertificatesAndHostnamesSchemasSignature.fromJson(String json) { return switch (json) {
   'ECDSAWithSHA256' => ecdsaWithSha256,
   'SHA1WithRSA' => sha1WithRsa,
   'SHA256WithRSA' => sha256WithRsa,
-  _ => TlsCertificatesAndHostnamesSchemasSignature._(json),
+  _ => TlsCertificatesAndHostnamesSchemasSignature$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesSchemasSignature ecdsaWithSha256 = TlsCertificatesAndHostnamesSchemasSignature._('ECDSAWithSHA256');
+static const TlsCertificatesAndHostnamesSchemasSignature ecdsaWithSha256 = TlsCertificatesAndHostnamesSchemasSignature$ecdsaWithSha256._();
 
-static const TlsCertificatesAndHostnamesSchemasSignature sha1WithRsa = TlsCertificatesAndHostnamesSchemasSignature._('SHA1WithRSA');
+static const TlsCertificatesAndHostnamesSchemasSignature sha1WithRsa = TlsCertificatesAndHostnamesSchemasSignature$sha1WithRsa._();
 
-static const TlsCertificatesAndHostnamesSchemasSignature sha256WithRsa = TlsCertificatesAndHostnamesSchemasSignature._('SHA256WithRSA');
+static const TlsCertificatesAndHostnamesSchemasSignature sha256WithRsa = TlsCertificatesAndHostnamesSchemasSignature$sha256WithRsa._();
 
 static const List<TlsCertificatesAndHostnamesSchemasSignature> values = [ecdsaWithSha256, sha1WithRsa, sha256WithRsa];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -91,35 +157,66 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSchemasSignature && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TlsCertificatesAndHostnamesSchemasSignature$Unknown; } 
 @override String toString() => 'TlsCertificatesAndHostnamesSchemasSignature($value)';
 
  }
+@immutable final class TlsCertificatesAndHostnamesSchemasSignature$ecdsaWithSha256 extends TlsCertificatesAndHostnamesSchemasSignature {const TlsCertificatesAndHostnamesSchemasSignature$ecdsaWithSha256._();
+
+@override String get value => 'ECDSAWithSHA256';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasSignature$ecdsaWithSha256;
+
+@override int get hashCode => 'ECDSAWithSHA256'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasSignature$sha1WithRsa extends TlsCertificatesAndHostnamesSchemasSignature {const TlsCertificatesAndHostnamesSchemasSignature$sha1WithRsa._();
+
+@override String get value => 'SHA1WithRSA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasSignature$sha1WithRsa;
+
+@override int get hashCode => 'SHA1WithRSA'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasSignature$sha256WithRsa extends TlsCertificatesAndHostnamesSchemasSignature {const TlsCertificatesAndHostnamesSchemasSignature$sha256WithRsa._();
+
+@override String get value => 'SHA256WithRSA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasSignature$sha256WithRsa;
+
+@override int get hashCode => 'SHA256WithRSA'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasSignature$Unknown extends TlsCertificatesAndHostnamesSchemasSignature {const TlsCertificatesAndHostnamesSchemasSignature$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesSchemasSignature$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Validation method in use for a certificate pack order.
-@immutable final class TlsCertificatesAndHostnamesSchemasValidationMethod {const TlsCertificatesAndHostnamesSchemasValidationMethod._(this.value);
+sealed class TlsCertificatesAndHostnamesSchemasValidationMethod {const TlsCertificatesAndHostnamesSchemasValidationMethod();
 
 factory TlsCertificatesAndHostnamesSchemasValidationMethod.fromJson(String json) { return switch (json) {
   'http' => http,
   'cname' => cname,
   'txt' => txt,
-  _ => TlsCertificatesAndHostnamesSchemasValidationMethod._(json),
+  _ => TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesSchemasValidationMethod http = TlsCertificatesAndHostnamesSchemasValidationMethod._('http');
+static const TlsCertificatesAndHostnamesSchemasValidationMethod http = TlsCertificatesAndHostnamesSchemasValidationMethod$http._();
 
-static const TlsCertificatesAndHostnamesSchemasValidationMethod cname = TlsCertificatesAndHostnamesSchemasValidationMethod._('cname');
+static const TlsCertificatesAndHostnamesSchemasValidationMethod cname = TlsCertificatesAndHostnamesSchemasValidationMethod$cname._();
 
-static const TlsCertificatesAndHostnamesSchemasValidationMethod txt = TlsCertificatesAndHostnamesSchemasValidationMethod._('txt');
+static const TlsCertificatesAndHostnamesSchemasValidationMethod txt = TlsCertificatesAndHostnamesSchemasValidationMethod$txt._();
 
 static const List<TlsCertificatesAndHostnamesSchemasValidationMethod> values = [http, cname, txt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -129,13 +226,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesSchemasValidationMethod($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasValidationMethod$http extends TlsCertificatesAndHostnamesSchemasValidationMethod {const TlsCertificatesAndHostnamesSchemasValidationMethod$http._();
+
+@override String get value => 'http';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasValidationMethod$http;
+
+@override int get hashCode => 'http'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasValidationMethod$cname extends TlsCertificatesAndHostnamesSchemasValidationMethod {const TlsCertificatesAndHostnamesSchemasValidationMethod$cname._();
+
+@override String get value => 'cname';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasValidationMethod$cname;
+
+@override int get hashCode => 'cname'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasValidationMethod$txt extends TlsCertificatesAndHostnamesSchemasValidationMethod {const TlsCertificatesAndHostnamesSchemasValidationMethod$txt._();
+
+@override String get value => 'txt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasValidationMethod$txt;
+
+@override int get hashCode => 'txt'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown extends TlsCertificatesAndHostnamesSchemasValidationMethod {const TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSchemasValidationMethod && other.value == value;
+    other is TlsCertificatesAndHostnamesSchemasValidationMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesSchemasValidationMethod($value)';
 
  }
 /// Status of the required verification information, omitted if verification status is unknown.
@@ -146,22 +275,21 @@ bool toJson() => value;
 
 }
 /// Method of verification.
-@immutable final class TlsCertificatesAndHostnamesVerificationType {const TlsCertificatesAndHostnamesVerificationType._(this.value);
+sealed class TlsCertificatesAndHostnamesVerificationType {const TlsCertificatesAndHostnamesVerificationType();
 
 factory TlsCertificatesAndHostnamesVerificationType.fromJson(String json) { return switch (json) {
   'cname' => cname,
   'meta tag' => metaTag,
-  _ => TlsCertificatesAndHostnamesVerificationType._(json),
+  _ => TlsCertificatesAndHostnamesVerificationType$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesVerificationType cname = TlsCertificatesAndHostnamesVerificationType._('cname');
+static const TlsCertificatesAndHostnamesVerificationType cname = TlsCertificatesAndHostnamesVerificationType$cname._();
 
-static const TlsCertificatesAndHostnamesVerificationType metaTag = TlsCertificatesAndHostnamesVerificationType._('meta tag');
+static const TlsCertificatesAndHostnamesVerificationType metaTag = TlsCertificatesAndHostnamesVerificationType$metaTag._();
 
 static const List<TlsCertificatesAndHostnamesVerificationType> values = [cname, metaTag];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -170,13 +298,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesVerificationType$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesVerificationType($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesVerificationType$cname extends TlsCertificatesAndHostnamesVerificationType {const TlsCertificatesAndHostnamesVerificationType$cname._();
+
+@override String get value => 'cname';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesVerificationType$cname;
+
+@override int get hashCode => 'cname'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesVerificationType$metaTag extends TlsCertificatesAndHostnamesVerificationType {const TlsCertificatesAndHostnamesVerificationType$metaTag._();
+
+@override String get value => 'meta tag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesVerificationType$metaTag;
+
+@override int get hashCode => 'meta tag'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesVerificationType$Unknown extends TlsCertificatesAndHostnamesVerificationType {const TlsCertificatesAndHostnamesVerificationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesVerificationType && other.value == value;
+    other is TlsCertificatesAndHostnamesVerificationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesVerificationType($value)';
 
  }
 @immutable final class TlsCertificatesAndHostnamesVerification {const TlsCertificatesAndHostnamesVerification({required this.certificateStatus, this.brandCheck, this.certPackUuid, this.signature, this.validationMethod, this.verificationInfo, this.verificationStatus, this.verificationType, });

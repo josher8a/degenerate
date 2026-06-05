@@ -2,19 +2,18 @@
 // Source: #/components/schemas/BillingPortalConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/portal_business_profile.dart';import 'package:pub_stripe_spec3/models/portal_features.dart';import 'package:pub_stripe_spec3/models/portal_login_page.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class BillingPortalConfigurationObject {const BillingPortalConfigurationObject._(this.value);
+sealed class BillingPortalConfigurationObject {const BillingPortalConfigurationObject();
 
 factory BillingPortalConfigurationObject.fromJson(String json) { return switch (json) {
   'billing_portal.configuration' => billingPortalConfiguration,
-  _ => BillingPortalConfigurationObject._(json),
+  _ => BillingPortalConfigurationObject$Unknown(json),
 }; }
 
-static const BillingPortalConfigurationObject billingPortalConfiguration = BillingPortalConfigurationObject._('billing_portal.configuration');
+static const BillingPortalConfigurationObject billingPortalConfiguration = BillingPortalConfigurationObject$billingPortalConfiguration._();
 
 static const List<BillingPortalConfigurationObject> values = [billingPortalConfiguration];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingPortalConfigurationObject$Unknown; } 
+@override String toString() => 'BillingPortalConfigurationObject($value)';
+
+ }
+@immutable final class BillingPortalConfigurationObject$billingPortalConfiguration extends BillingPortalConfigurationObject {const BillingPortalConfigurationObject$billingPortalConfiguration._();
+
+@override String get value => 'billing_portal.configuration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalConfigurationObject$billingPortalConfiguration;
+
+@override int get hashCode => 'billing_portal.configuration'.hashCode;
+
+ }
+@immutable final class BillingPortalConfigurationObject$Unknown extends BillingPortalConfigurationObject {const BillingPortalConfigurationObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingPortalConfigurationObject && other.value == value;
+    other is BillingPortalConfigurationObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingPortalConfigurationObject($value)';
 
  }
 /// A portal configuration describes the functionality and behavior you embed in a portal session. Related guide: [Configure the customer portal](/customer-management/configure-portal).

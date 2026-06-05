@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetHttpTimeseriesGroupByBotClassFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetHttpTimeseriesGroupByBotClassFormat {const RadarGetHttpTimeseriesGroupByBotClassFormat._(this.value);
+sealed class RadarGetHttpTimeseriesGroupByBotClassFormat {const RadarGetHttpTimeseriesGroupByBotClassFormat();
 
 factory RadarGetHttpTimeseriesGroupByBotClassFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetHttpTimeseriesGroupByBotClassFormat._(json),
+  _ => RadarGetHttpTimeseriesGroupByBotClassFormat$Unknown(json),
 }; }
 
-static const RadarGetHttpTimeseriesGroupByBotClassFormat $json = RadarGetHttpTimeseriesGroupByBotClassFormat._('JSON');
+static const RadarGetHttpTimeseriesGroupByBotClassFormat $json = RadarGetHttpTimeseriesGroupByBotClassFormat$$json._();
 
-static const RadarGetHttpTimeseriesGroupByBotClassFormat csv = RadarGetHttpTimeseriesGroupByBotClassFormat._('CSV');
+static const RadarGetHttpTimeseriesGroupByBotClassFormat csv = RadarGetHttpTimeseriesGroupByBotClassFormat$csv._();
 
 static const List<RadarGetHttpTimeseriesGroupByBotClassFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByBotClassFormat$Unknown; } 
+@override String toString() => 'RadarGetHttpTimeseriesGroupByBotClassFormat($value)';
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByBotClassFormat$$json extends RadarGetHttpTimeseriesGroupByBotClassFormat {const RadarGetHttpTimeseriesGroupByBotClassFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByBotClassFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByBotClassFormat$csv extends RadarGetHttpTimeseriesGroupByBotClassFormat {const RadarGetHttpTimeseriesGroupByBotClassFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByBotClassFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByBotClassFormat$Unknown extends RadarGetHttpTimeseriesGroupByBotClassFormat {const RadarGetHttpTimeseriesGroupByBotClassFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupByBotClassFormat && other.value == value;
+    other is RadarGetHttpTimeseriesGroupByBotClassFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTimeseriesGroupByBotClassFormat($value)';
 
  }

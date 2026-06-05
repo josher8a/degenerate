@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetEmailSecurityTopTldsByMaliciousFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetEmailSecurityTopTldsByMaliciousFormat {const RadarGetEmailSecurityTopTldsByMaliciousFormat._(this.value);
+sealed class RadarGetEmailSecurityTopTldsByMaliciousFormat {const RadarGetEmailSecurityTopTldsByMaliciousFormat();
 
 factory RadarGetEmailSecurityTopTldsByMaliciousFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetEmailSecurityTopTldsByMaliciousFormat._(json),
+  _ => RadarGetEmailSecurityTopTldsByMaliciousFormat$Unknown(json),
 }; }
 
-static const RadarGetEmailSecurityTopTldsByMaliciousFormat $json = RadarGetEmailSecurityTopTldsByMaliciousFormat._('JSON');
+static const RadarGetEmailSecurityTopTldsByMaliciousFormat $json = RadarGetEmailSecurityTopTldsByMaliciousFormat$$json._();
 
-static const RadarGetEmailSecurityTopTldsByMaliciousFormat csv = RadarGetEmailSecurityTopTldsByMaliciousFormat._('CSV');
+static const RadarGetEmailSecurityTopTldsByMaliciousFormat csv = RadarGetEmailSecurityTopTldsByMaliciousFormat$csv._();
 
 static const List<RadarGetEmailSecurityTopTldsByMaliciousFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecurityTopTldsByMaliciousFormat$Unknown; } 
+@override String toString() => 'RadarGetEmailSecurityTopTldsByMaliciousFormat($value)';
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsByMaliciousFormat$$json extends RadarGetEmailSecurityTopTldsByMaliciousFormat {const RadarGetEmailSecurityTopTldsByMaliciousFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTopTldsByMaliciousFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsByMaliciousFormat$csv extends RadarGetEmailSecurityTopTldsByMaliciousFormat {const RadarGetEmailSecurityTopTldsByMaliciousFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTopTldsByMaliciousFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsByMaliciousFormat$Unknown extends RadarGetEmailSecurityTopTldsByMaliciousFormat {const RadarGetEmailSecurityTopTldsByMaliciousFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecurityTopTldsByMaliciousFormat && other.value == value;
+    other is RadarGetEmailSecurityTopTldsByMaliciousFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecurityTopTldsByMaliciousFormat($value)';
 
  }

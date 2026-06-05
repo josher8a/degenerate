@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily {const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily {const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily();
 
 factory RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily.fromJson(String json) { return switch (json) {
   'CHROME' => chrome,
   'EDGE' => edge,
   'FIREFOX' => firefox,
   'SAFARI' => safari,
-  _ => RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily._(json),
+  _ => RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$Unknown(json),
 }; }
 
-static const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily chrome = RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily._('CHROME');
+static const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily chrome = RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$chrome._();
 
-static const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily edge = RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily._('EDGE');
+static const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily edge = RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$edge._();
 
-static const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily firefox = RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily._('FIREFOX');
+static const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily firefox = RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$firefox._();
 
-static const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily safari = RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily._('SAFARI');
+static const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily safari = RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$safari._();
 
 static const List<RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily> values = [chrome, edge, firefox, safari];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$Unknown; } 
+@override String toString() => 'RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily($value)';
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$chrome extends RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily {const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$chrome._();
+
+@override String get value => 'CHROME';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$chrome;
+
+@override int get hashCode => 'CHROME'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$edge extends RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily {const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$edge._();
+
+@override String get value => 'EDGE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$edge;
+
+@override int get hashCode => 'EDGE'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$firefox extends RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily {const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$firefox._();
+
+@override String get value => 'FIREFOX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$firefox;
+
+@override int get hashCode => 'FIREFOX'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$safari extends RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily {const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$safari._();
+
+@override String get value => 'SAFARI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$safari;
+
+@override int get hashCode => 'SAFARI'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$Unknown extends RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily {const RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily && other.value == value;
+    other is RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTimeseriesGroupByPostQuantumBrowserFamily($value)';
 
  }

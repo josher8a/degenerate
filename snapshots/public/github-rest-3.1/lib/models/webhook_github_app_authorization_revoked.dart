@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookGithubAppAuthorizationRevoked
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookGithubAppAuthorizationRevokedAction {const WebhookGithubAppAuthorizationRevokedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookGithubAppAuthorizationRevokedAction {const WebhookGithubAppAuthorizationRevokedAction();
 
 factory WebhookGithubAppAuthorizationRevokedAction.fromJson(String json) { return switch (json) {
   'revoked' => revoked,
-  _ => WebhookGithubAppAuthorizationRevokedAction._(json),
+  _ => WebhookGithubAppAuthorizationRevokedAction$Unknown(json),
 }; }
 
-static const WebhookGithubAppAuthorizationRevokedAction revoked = WebhookGithubAppAuthorizationRevokedAction._('revoked');
+static const WebhookGithubAppAuthorizationRevokedAction revoked = WebhookGithubAppAuthorizationRevokedAction$revoked._();
 
 static const List<WebhookGithubAppAuthorizationRevokedAction> values = [revoked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookGithubAppAuthorizationRevokedAction$Unknown; } 
+@override String toString() => 'WebhookGithubAppAuthorizationRevokedAction($value)';
+
+ }
+@immutable final class WebhookGithubAppAuthorizationRevokedAction$revoked extends WebhookGithubAppAuthorizationRevokedAction {const WebhookGithubAppAuthorizationRevokedAction$revoked._();
+
+@override String get value => 'revoked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookGithubAppAuthorizationRevokedAction$revoked;
+
+@override int get hashCode => 'revoked'.hashCode;
+
+ }
+@immutable final class WebhookGithubAppAuthorizationRevokedAction$Unknown extends WebhookGithubAppAuthorizationRevokedAction {const WebhookGithubAppAuthorizationRevokedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookGithubAppAuthorizationRevokedAction && other.value == value;
+    other is WebhookGithubAppAuthorizationRevokedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookGithubAppAuthorizationRevokedAction($value)';
 
  }
 @immutable final class WebhookGithubAppAuthorizationRevoked {const WebhookGithubAppAuthorizationRevoked({required this.action, required this.sender, });

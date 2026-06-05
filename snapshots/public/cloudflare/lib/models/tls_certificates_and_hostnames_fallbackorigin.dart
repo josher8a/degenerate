@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TlsCertificatesAndHostnamesFallbackorigin
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_origin.dart';/// Status of the fallback origin's activation.
-@immutable final class TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus._(this.value);
+sealed class TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus();
 
 factory TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -11,25 +11,24 @@ factory TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemas
   'active' => active,
   'deployment_timed_out' => deploymentTimedOut,
   'deletion_timed_out' => deletionTimedOut,
-  _ => TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus._(json),
+  _ => TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus initializing = TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus._('initializing');
+static const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus initializing = TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$initializing._();
 
-static const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus pendingDeployment = TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus._('pending_deployment');
+static const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus pendingDeployment = TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$pendingDeployment._();
 
-static const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus pendingDeletion = TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus._('pending_deletion');
+static const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus pendingDeletion = TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$pendingDeletion._();
 
-static const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus active = TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus._('active');
+static const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus active = TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$active._();
 
-static const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus deploymentTimedOut = TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus._('deployment_timed_out');
+static const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus deploymentTimedOut = TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$deploymentTimedOut._();
 
-static const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus deletionTimedOut = TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus._('deletion_timed_out');
+static const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus deletionTimedOut = TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$deletionTimedOut._();
 
 static const List<TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus> values = [initializing, pendingDeployment, pendingDeletion, active, deploymentTimedOut, deletionTimedOut];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,13 +41,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$initializing extends TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$initializing._();
+
+@override String get value => 'initializing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$initializing;
+
+@override int get hashCode => 'initializing'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$pendingDeployment extends TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$pendingDeployment._();
+
+@override String get value => 'pending_deployment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$pendingDeployment;
+
+@override int get hashCode => 'pending_deployment'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$pendingDeletion extends TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$pendingDeletion._();
+
+@override String get value => 'pending_deletion';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$pendingDeletion;
+
+@override int get hashCode => 'pending_deletion'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$active extends TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$deploymentTimedOut extends TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$deploymentTimedOut._();
+
+@override String get value => 'deployment_timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$deploymentTimedOut;
+
+@override int get hashCode => 'deployment_timed_out'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$deletionTimedOut extends TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$deletionTimedOut._();
+
+@override String get value => 'deletion_timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$deletionTimedOut;
+
+@override int get hashCode => 'deletion_timed_out'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$Unknown extends TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus && other.value == value;
+    other is TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesCustomHostnameFallbackOriginComponentsSchemasStatus($value)';
 
  }
 /// This is the time the fallback origin was created.

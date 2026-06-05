@@ -2,28 +2,27 @@
 // Source: #/components/schemas/IssuingCardShipping
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping/issuing_card_shipping_type.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping/service.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping_address_validation.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping_customs.dart';/// The delivery company that shipped a card.
-@immutable final class Carrier {const Carrier._(this.value);
+sealed class Carrier {const Carrier();
 
 factory Carrier.fromJson(String json) { return switch (json) {
   'dhl' => dhl,
   'fedex' => fedex,
   'royal_mail' => royalMail,
   'usps' => usps,
-  _ => Carrier._(json),
+  _ => Carrier$Unknown(json),
 }; }
 
-static const Carrier dhl = Carrier._('dhl');
+static const Carrier dhl = Carrier$dhl._();
 
-static const Carrier fedex = Carrier._('fedex');
+static const Carrier fedex = Carrier$fedex._();
 
-static const Carrier royalMail = Carrier._('royal_mail');
+static const Carrier royalMail = Carrier$royalMail._();
 
-static const Carrier usps = Carrier._('usps');
+static const Carrier usps = Carrier$usps._();
 
 static const List<Carrier> values = [dhl, fedex, royalMail, usps];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,17 +33,58 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Carrier && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Carrier$Unknown; } 
 @override String toString() => 'Carrier($value)';
 
  }
+@immutable final class Carrier$dhl extends Carrier {const Carrier$dhl._();
+
+@override String get value => 'dhl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Carrier$dhl;
+
+@override int get hashCode => 'dhl'.hashCode;
+
+ }
+@immutable final class Carrier$fedex extends Carrier {const Carrier$fedex._();
+
+@override String get value => 'fedex';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Carrier$fedex;
+
+@override int get hashCode => 'fedex'.hashCode;
+
+ }
+@immutable final class Carrier$royalMail extends Carrier {const Carrier$royalMail._();
+
+@override String get value => 'royal_mail';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Carrier$royalMail;
+
+@override int get hashCode => 'royal_mail'.hashCode;
+
+ }
+@immutable final class Carrier$usps extends Carrier {const Carrier$usps._();
+
+@override String get value => 'usps';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Carrier$usps;
+
+@override int get hashCode => 'usps'.hashCode;
+
+ }
+@immutable final class Carrier$Unknown extends Carrier {const Carrier$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Carrier$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The delivery status of the card.
-@immutable final class IssuingCardShippingStatus {const IssuingCardShippingStatus._(this.value);
+sealed class IssuingCardShippingStatus {const IssuingCardShippingStatus();
 
 factory IssuingCardShippingStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -54,27 +94,26 @@ factory IssuingCardShippingStatus.fromJson(String json) { return switch (json) {
   'returned' => returned,
   'shipped' => shipped,
   'submitted' => submitted,
-  _ => IssuingCardShippingStatus._(json),
+  _ => IssuingCardShippingStatus$Unknown(json),
 }; }
 
-static const IssuingCardShippingStatus canceled = IssuingCardShippingStatus._('canceled');
+static const IssuingCardShippingStatus canceled = IssuingCardShippingStatus$canceled._();
 
-static const IssuingCardShippingStatus delivered = IssuingCardShippingStatus._('delivered');
+static const IssuingCardShippingStatus delivered = IssuingCardShippingStatus$delivered._();
 
-static const IssuingCardShippingStatus failure = IssuingCardShippingStatus._('failure');
+static const IssuingCardShippingStatus failure = IssuingCardShippingStatus$failure._();
 
-static const IssuingCardShippingStatus pending = IssuingCardShippingStatus._('pending');
+static const IssuingCardShippingStatus pending = IssuingCardShippingStatus$pending._();
 
-static const IssuingCardShippingStatus returned = IssuingCardShippingStatus._('returned');
+static const IssuingCardShippingStatus returned = IssuingCardShippingStatus$returned._();
 
-static const IssuingCardShippingStatus shipped = IssuingCardShippingStatus._('shipped');
+static const IssuingCardShippingStatus shipped = IssuingCardShippingStatus$shipped._();
 
-static const IssuingCardShippingStatus submitted = IssuingCardShippingStatus._('submitted');
+static const IssuingCardShippingStatus submitted = IssuingCardShippingStatus$submitted._();
 
 static const List<IssuingCardShippingStatus> values = [canceled, delivered, failure, pending, returned, shipped, submitted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -88,13 +127,81 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingCardShippingStatus$Unknown; } 
+@override String toString() => 'IssuingCardShippingStatus($value)';
+
+ }
+@immutable final class IssuingCardShippingStatus$canceled extends IssuingCardShippingStatus {const IssuingCardShippingStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardShippingStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class IssuingCardShippingStatus$delivered extends IssuingCardShippingStatus {const IssuingCardShippingStatus$delivered._();
+
+@override String get value => 'delivered';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardShippingStatus$delivered;
+
+@override int get hashCode => 'delivered'.hashCode;
+
+ }
+@immutable final class IssuingCardShippingStatus$failure extends IssuingCardShippingStatus {const IssuingCardShippingStatus$failure._();
+
+@override String get value => 'failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardShippingStatus$failure;
+
+@override int get hashCode => 'failure'.hashCode;
+
+ }
+@immutable final class IssuingCardShippingStatus$pending extends IssuingCardShippingStatus {const IssuingCardShippingStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardShippingStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class IssuingCardShippingStatus$returned extends IssuingCardShippingStatus {const IssuingCardShippingStatus$returned._();
+
+@override String get value => 'returned';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardShippingStatus$returned;
+
+@override int get hashCode => 'returned'.hashCode;
+
+ }
+@immutable final class IssuingCardShippingStatus$shipped extends IssuingCardShippingStatus {const IssuingCardShippingStatus$shipped._();
+
+@override String get value => 'shipped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardShippingStatus$shipped;
+
+@override int get hashCode => 'shipped'.hashCode;
+
+ }
+@immutable final class IssuingCardShippingStatus$submitted extends IssuingCardShippingStatus {const IssuingCardShippingStatus$submitted._();
+
+@override String get value => 'submitted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardShippingStatus$submitted;
+
+@override int get hashCode => 'submitted'.hashCode;
+
+ }
+@immutable final class IssuingCardShippingStatus$Unknown extends IssuingCardShippingStatus {const IssuingCardShippingStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingCardShippingStatus && other.value == value;
+    other is IssuingCardShippingStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingCardShippingStatus($value)';
 
  }
 /// 

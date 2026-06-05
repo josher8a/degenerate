@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Source
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card/card_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/source_code_verification_flow.dart';import 'package:pub_stripe_spec3/models/source_order.dart';import 'package:pub_stripe_spec3/models/source_owner.dart';import 'package:pub_stripe_spec3/models/source_receiver_flow.dart';import 'package:pub_stripe_spec3/models/source_redirect_flow.dart';import 'package:pub_stripe_spec3/models/source_type_ach_credit_transfer.dart';import 'package:pub_stripe_spec3/models/source_type_ach_debit.dart';import 'package:pub_stripe_spec3/models/source_type_acss_debit.dart';import 'package:pub_stripe_spec3/models/source_type_alipay.dart';import 'package:pub_stripe_spec3/models/source_type_au_becs_debit.dart';import 'package:pub_stripe_spec3/models/source_type_bancontact.dart';import 'package:pub_stripe_spec3/models/source_type_card.dart';import 'package:pub_stripe_spec3/models/source_type_card_present.dart';import 'package:pub_stripe_spec3/models/source_type_eps.dart';import 'package:pub_stripe_spec3/models/source_type_giropay.dart';import 'package:pub_stripe_spec3/models/source_type_ideal.dart';import 'package:pub_stripe_spec3/models/source_type_klarna.dart';import 'package:pub_stripe_spec3/models/source_type_multibanco.dart';import 'package:pub_stripe_spec3/models/source_type_p24.dart';import 'package:pub_stripe_spec3/models/source_type_sepa_debit.dart';import 'package:pub_stripe_spec3/models/source_type_sofort.dart';import 'package:pub_stripe_spec3/models/source_type_three_d_secure.dart';import 'package:pub_stripe_spec3/models/source_type_wechat.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class SourceObject {const SourceObject._(this.value);
+sealed class SourceObject {const SourceObject();
 
 factory SourceObject.fromJson(String json) { return switch (json) {
   'source' => source,
-  _ => SourceObject._(json),
+  _ => SourceObject$Unknown(json),
 }; }
 
-static const SourceObject source = SourceObject._('source');
+static const SourceObject source = SourceObject$source._();
 
 static const List<SourceObject> values = [source];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,17 +21,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SourceObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SourceObject$Unknown; } 
 @override String toString() => 'SourceObject($value)';
 
  }
+@immutable final class SourceObject$source extends SourceObject {const SourceObject$source._();
+
+@override String get value => 'source';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceObject$source;
+
+@override int get hashCode => 'source'.hashCode;
+
+ }
+@immutable final class SourceObject$Unknown extends SourceObject {const SourceObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SourceObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The `type` of the source. The `type` is a payment method, one of `ach_credit_transfer`, `ach_debit`, `alipay`, `bancontact`, `card`, `card_present`, `eps`, `giropay`, `ideal`, `multibanco`, `klarna`, `p24`, `sepa_debit`, `sofort`, `three_d_secure`, or `wechat`. An additional hash is included on the source with a name matching this value. It contains additional information specific to the [payment method](https://docs.stripe.com/sources) used.
-@immutable final class SourceType$1 {const SourceType$1._(this.value);
+sealed class SourceType$1 {const SourceType$1();
 
 factory SourceType$1.fromJson(String json) { return switch (json) {
   'ach_credit_transfer' => achCreditTransfer,
@@ -53,49 +66,48 @@ factory SourceType$1.fromJson(String json) { return switch (json) {
   'sofort' => sofort,
   'three_d_secure' => threeDSecure,
   'wechat' => wechat,
-  _ => SourceType$1._(json),
+  _ => SourceType$1$Unknown(json),
 }; }
 
-static const SourceType$1 achCreditTransfer = SourceType$1._('ach_credit_transfer');
+static const SourceType$1 achCreditTransfer = SourceType$1$achCreditTransfer._();
 
-static const SourceType$1 achDebit = SourceType$1._('ach_debit');
+static const SourceType$1 achDebit = SourceType$1$achDebit._();
 
-static const SourceType$1 acssDebit = SourceType$1._('acss_debit');
+static const SourceType$1 acssDebit = SourceType$1$acssDebit._();
 
-static const SourceType$1 alipay = SourceType$1._('alipay');
+static const SourceType$1 alipay = SourceType$1$alipay._();
 
-static const SourceType$1 auBecsDebit = SourceType$1._('au_becs_debit');
+static const SourceType$1 auBecsDebit = SourceType$1$auBecsDebit._();
 
-static const SourceType$1 bancontact = SourceType$1._('bancontact');
+static const SourceType$1 bancontact = SourceType$1$bancontact._();
 
-static const SourceType$1 card = SourceType$1._('card');
+static const SourceType$1 card = SourceType$1$card._();
 
-static const SourceType$1 cardPresent = SourceType$1._('card_present');
+static const SourceType$1 cardPresent = SourceType$1$cardPresent._();
 
-static const SourceType$1 eps = SourceType$1._('eps');
+static const SourceType$1 eps = SourceType$1$eps._();
 
-static const SourceType$1 giropay = SourceType$1._('giropay');
+static const SourceType$1 giropay = SourceType$1$giropay._();
 
-static const SourceType$1 ideal = SourceType$1._('ideal');
+static const SourceType$1 ideal = SourceType$1$ideal._();
 
-static const SourceType$1 klarna = SourceType$1._('klarna');
+static const SourceType$1 klarna = SourceType$1$klarna._();
 
-static const SourceType$1 multibanco = SourceType$1._('multibanco');
+static const SourceType$1 multibanco = SourceType$1$multibanco._();
 
-static const SourceType$1 p24 = SourceType$1._('p24');
+static const SourceType$1 p24 = SourceType$1$p24._();
 
-static const SourceType$1 sepaDebit = SourceType$1._('sepa_debit');
+static const SourceType$1 sepaDebit = SourceType$1$sepaDebit._();
 
-static const SourceType$1 sofort = SourceType$1._('sofort');
+static const SourceType$1 sofort = SourceType$1$sofort._();
 
-static const SourceType$1 threeDSecure = SourceType$1._('three_d_secure');
+static const SourceType$1 threeDSecure = SourceType$1$threeDSecure._();
 
-static const SourceType$1 wechat = SourceType$1._('wechat');
+static const SourceType$1 wechat = SourceType$1$wechat._();
 
 static const List<SourceType$1> values = [achCreditTransfer, achDebit, acssDebit, alipay, auBecsDebit, bancontact, card, cardPresent, eps, giropay, ideal, klarna, multibanco, p24, sepaDebit, sofort, threeDSecure, wechat];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -120,13 +132,180 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SourceType$1$Unknown; } 
+@override String toString() => 'SourceType\$1($value)';
+
+ }
+@immutable final class SourceType$1$achCreditTransfer extends SourceType$1 {const SourceType$1$achCreditTransfer._();
+
+@override String get value => 'ach_credit_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$achCreditTransfer;
+
+@override int get hashCode => 'ach_credit_transfer'.hashCode;
+
+ }
+@immutable final class SourceType$1$achDebit extends SourceType$1 {const SourceType$1$achDebit._();
+
+@override String get value => 'ach_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$achDebit;
+
+@override int get hashCode => 'ach_debit'.hashCode;
+
+ }
+@immutable final class SourceType$1$acssDebit extends SourceType$1 {const SourceType$1$acssDebit._();
+
+@override String get value => 'acss_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$acssDebit;
+
+@override int get hashCode => 'acss_debit'.hashCode;
+
+ }
+@immutable final class SourceType$1$alipay extends SourceType$1 {const SourceType$1$alipay._();
+
+@override String get value => 'alipay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$alipay;
+
+@override int get hashCode => 'alipay'.hashCode;
+
+ }
+@immutable final class SourceType$1$auBecsDebit extends SourceType$1 {const SourceType$1$auBecsDebit._();
+
+@override String get value => 'au_becs_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$auBecsDebit;
+
+@override int get hashCode => 'au_becs_debit'.hashCode;
+
+ }
+@immutable final class SourceType$1$bancontact extends SourceType$1 {const SourceType$1$bancontact._();
+
+@override String get value => 'bancontact';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$bancontact;
+
+@override int get hashCode => 'bancontact'.hashCode;
+
+ }
+@immutable final class SourceType$1$card extends SourceType$1 {const SourceType$1$card._();
+
+@override String get value => 'card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$card;
+
+@override int get hashCode => 'card'.hashCode;
+
+ }
+@immutable final class SourceType$1$cardPresent extends SourceType$1 {const SourceType$1$cardPresent._();
+
+@override String get value => 'card_present';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$cardPresent;
+
+@override int get hashCode => 'card_present'.hashCode;
+
+ }
+@immutable final class SourceType$1$eps extends SourceType$1 {const SourceType$1$eps._();
+
+@override String get value => 'eps';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$eps;
+
+@override int get hashCode => 'eps'.hashCode;
+
+ }
+@immutable final class SourceType$1$giropay extends SourceType$1 {const SourceType$1$giropay._();
+
+@override String get value => 'giropay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$giropay;
+
+@override int get hashCode => 'giropay'.hashCode;
+
+ }
+@immutable final class SourceType$1$ideal extends SourceType$1 {const SourceType$1$ideal._();
+
+@override String get value => 'ideal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$ideal;
+
+@override int get hashCode => 'ideal'.hashCode;
+
+ }
+@immutable final class SourceType$1$klarna extends SourceType$1 {const SourceType$1$klarna._();
+
+@override String get value => 'klarna';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$klarna;
+
+@override int get hashCode => 'klarna'.hashCode;
+
+ }
+@immutable final class SourceType$1$multibanco extends SourceType$1 {const SourceType$1$multibanco._();
+
+@override String get value => 'multibanco';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$multibanco;
+
+@override int get hashCode => 'multibanco'.hashCode;
+
+ }
+@immutable final class SourceType$1$p24 extends SourceType$1 {const SourceType$1$p24._();
+
+@override String get value => 'p24';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$p24;
+
+@override int get hashCode => 'p24'.hashCode;
+
+ }
+@immutable final class SourceType$1$sepaDebit extends SourceType$1 {const SourceType$1$sepaDebit._();
+
+@override String get value => 'sepa_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$sepaDebit;
+
+@override int get hashCode => 'sepa_debit'.hashCode;
+
+ }
+@immutable final class SourceType$1$sofort extends SourceType$1 {const SourceType$1$sofort._();
+
+@override String get value => 'sofort';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$sofort;
+
+@override int get hashCode => 'sofort'.hashCode;
+
+ }
+@immutable final class SourceType$1$threeDSecure extends SourceType$1 {const SourceType$1$threeDSecure._();
+
+@override String get value => 'three_d_secure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$threeDSecure;
+
+@override int get hashCode => 'three_d_secure'.hashCode;
+
+ }
+@immutable final class SourceType$1$wechat extends SourceType$1 {const SourceType$1$wechat._();
+
+@override String get value => 'wechat';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceType$1$wechat;
+
+@override int get hashCode => 'wechat'.hashCode;
+
+ }
+@immutable final class SourceType$1$Unknown extends SourceType$1 {const SourceType$1$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SourceType$1 && other.value == value;
+    other is SourceType$1$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SourceType\$1($value)';
 
  }
 /// `Source` objects allow you to accept a variety of payment methods. They

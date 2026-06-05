@@ -2,25 +2,24 @@
 // Source: #/components/schemas/InputRequest (inline: OperatingSystem)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating system.
-@immutable final class InputRequestOperatingSystem {const InputRequestOperatingSystem._(this.value);
+sealed class InputRequestOperatingSystem {const InputRequestOperatingSystem();
 
 factory InputRequestOperatingSystem.fromJson(String json) { return switch (json) {
   'windows' => windows,
   'linux' => linux,
   'mac' => mac,
-  _ => InputRequestOperatingSystem._(json),
+  _ => InputRequestOperatingSystem$Unknown(json),
 }; }
 
-static const InputRequestOperatingSystem windows = InputRequestOperatingSystem._('windows');
+static const InputRequestOperatingSystem windows = InputRequestOperatingSystem$windows._();
 
-static const InputRequestOperatingSystem linux = InputRequestOperatingSystem._('linux');
+static const InputRequestOperatingSystem linux = InputRequestOperatingSystem$linux._();
 
-static const InputRequestOperatingSystem mac = InputRequestOperatingSystem._('mac');
+static const InputRequestOperatingSystem mac = InputRequestOperatingSystem$mac._();
 
 static const List<InputRequestOperatingSystem> values = [windows, linux, mac];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InputRequestOperatingSystem$Unknown; } 
+@override String toString() => 'InputRequestOperatingSystem($value)';
+
+ }
+@immutable final class InputRequestOperatingSystem$windows extends InputRequestOperatingSystem {const InputRequestOperatingSystem$windows._();
+
+@override String get value => 'windows';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputRequestOperatingSystem$windows;
+
+@override int get hashCode => 'windows'.hashCode;
+
+ }
+@immutable final class InputRequestOperatingSystem$linux extends InputRequestOperatingSystem {const InputRequestOperatingSystem$linux._();
+
+@override String get value => 'linux';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputRequestOperatingSystem$linux;
+
+@override int get hashCode => 'linux'.hashCode;
+
+ }
+@immutable final class InputRequestOperatingSystem$mac extends InputRequestOperatingSystem {const InputRequestOperatingSystem$mac._();
+
+@override String get value => 'mac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputRequestOperatingSystem$mac;
+
+@override int get hashCode => 'mac'.hashCode;
+
+ }
+@immutable final class InputRequestOperatingSystem$Unknown extends InputRequestOperatingSystem {const InputRequestOperatingSystem$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InputRequestOperatingSystem && other.value == value;
+    other is InputRequestOperatingSystem$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InputRequestOperatingSystem($value)';
 
  }

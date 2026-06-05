@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailRoutingTimeseriesGroupDmarc
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupDmarc {const RadarGetEmailRoutingTimeseriesGroupDmarc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailRoutingTimeseriesGroupDmarc {const RadarGetEmailRoutingTimeseriesGroupDmarc();
 
 factory RadarGetEmailRoutingTimeseriesGroupDmarc.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailRoutingTimeseriesGroupDmarc._(json),
+  _ => RadarGetEmailRoutingTimeseriesGroupDmarc$Unknown(json),
 }; }
 
-static const RadarGetEmailRoutingTimeseriesGroupDmarc pass = RadarGetEmailRoutingTimeseriesGroupDmarc._('PASS');
+static const RadarGetEmailRoutingTimeseriesGroupDmarc pass = RadarGetEmailRoutingTimeseriesGroupDmarc$pass._();
 
-static const RadarGetEmailRoutingTimeseriesGroupDmarc none = RadarGetEmailRoutingTimeseriesGroupDmarc._('NONE');
+static const RadarGetEmailRoutingTimeseriesGroupDmarc none = RadarGetEmailRoutingTimeseriesGroupDmarc$none._();
 
-static const RadarGetEmailRoutingTimeseriesGroupDmarc fail = RadarGetEmailRoutingTimeseriesGroupDmarc._('FAIL');
+static const RadarGetEmailRoutingTimeseriesGroupDmarc fail = RadarGetEmailRoutingTimeseriesGroupDmarc$fail._();
 
 static const List<RadarGetEmailRoutingTimeseriesGroupDmarc> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupDmarc$Unknown; } 
+@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupDmarc($value)';
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupDmarc$pass extends RadarGetEmailRoutingTimeseriesGroupDmarc {const RadarGetEmailRoutingTimeseriesGroupDmarc$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupDmarc$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupDmarc$none extends RadarGetEmailRoutingTimeseriesGroupDmarc {const RadarGetEmailRoutingTimeseriesGroupDmarc$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupDmarc$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupDmarc$fail extends RadarGetEmailRoutingTimeseriesGroupDmarc {const RadarGetEmailRoutingTimeseriesGroupDmarc$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupDmarc$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupDmarc$Unknown extends RadarGetEmailRoutingTimeseriesGroupDmarc {const RadarGetEmailRoutingTimeseriesGroupDmarc$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailRoutingTimeseriesGroupDmarc && other.value == value;
+    other is RadarGetEmailRoutingTimeseriesGroupDmarc$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupDmarc($value)';
 
  }

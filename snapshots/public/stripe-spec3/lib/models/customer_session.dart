@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CustomerSession
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class CustomerSessionObject {const CustomerSessionObject._(this.value);
+sealed class CustomerSessionObject {const CustomerSessionObject();
 
 factory CustomerSessionObject.fromJson(String json) { return switch (json) {
   'customer_session' => customerSession,
-  _ => CustomerSessionObject._(json),
+  _ => CustomerSessionObject$Unknown(json),
 }; }
 
-static const CustomerSessionObject customerSession = CustomerSessionObject._('customer_session');
+static const CustomerSessionObject customerSession = CustomerSessionObject$customerSession._();
 
 static const List<CustomerSessionObject> values = [customerSession];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomerSessionObject$Unknown; } 
+@override String toString() => 'CustomerSessionObject($value)';
+
+ }
+@immutable final class CustomerSessionObject$customerSession extends CustomerSessionObject {const CustomerSessionObject$customerSession._();
+
+@override String get value => 'customer_session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerSessionObject$customerSession;
+
+@override int get hashCode => 'customer_session'.hashCode;
+
+ }
+@immutable final class CustomerSessionObject$Unknown extends CustomerSessionObject {const CustomerSessionObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerSessionObject && other.value == value;
+    other is CustomerSessionObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomerSessionObject($value)';
 
  }
 /// A Customer Session allows you to grant Stripe's frontend SDKs (like Stripe.js) client-side access

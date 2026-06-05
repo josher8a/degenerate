@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RunnerLabel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of label. Read-only labels are applied automatically when the runner is configured.
-@immutable final class RunnerLabelType {const RunnerLabelType._(this.value);
+sealed class RunnerLabelType {const RunnerLabelType();
 
 factory RunnerLabelType.fromJson(String json) { return switch (json) {
   'read-only' => readOnly,
   'custom' => custom,
-  _ => RunnerLabelType._(json),
+  _ => RunnerLabelType$Unknown(json),
 }; }
 
-static const RunnerLabelType readOnly = RunnerLabelType._('read-only');
+static const RunnerLabelType readOnly = RunnerLabelType$readOnly._();
 
-static const RunnerLabelType custom = RunnerLabelType._('custom');
+static const RunnerLabelType custom = RunnerLabelType$custom._();
 
 static const List<RunnerLabelType> values = [readOnly, custom];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RunnerLabelType$Unknown; } 
+@override String toString() => 'RunnerLabelType($value)';
+
+ }
+@immutable final class RunnerLabelType$readOnly extends RunnerLabelType {const RunnerLabelType$readOnly._();
+
+@override String get value => 'read-only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunnerLabelType$readOnly;
+
+@override int get hashCode => 'read-only'.hashCode;
+
+ }
+@immutable final class RunnerLabelType$custom extends RunnerLabelType {const RunnerLabelType$custom._();
+
+@override String get value => 'custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunnerLabelType$custom;
+
+@override int get hashCode => 'custom'.hashCode;
+
+ }
+@immutable final class RunnerLabelType$Unknown extends RunnerLabelType {const RunnerLabelType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RunnerLabelType && other.value == value;
+    other is RunnerLabelType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RunnerLabelType($value)';
 
  }
 /// A label for a self hosted runner

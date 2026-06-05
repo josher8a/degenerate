@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventResponseTextDelta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_text.delta`.
-@immutable final class RealtimeBetaServerEventResponseTextDeltaType {const RealtimeBetaServerEventResponseTextDeltaType._(this.value);
+sealed class RealtimeBetaServerEventResponseTextDeltaType {const RealtimeBetaServerEventResponseTextDeltaType();
 
 factory RealtimeBetaServerEventResponseTextDeltaType.fromJson(String json) { return switch (json) {
   'response.output_text.delta' => responseOutputTextDelta,
-  _ => RealtimeBetaServerEventResponseTextDeltaType._(json),
+  _ => RealtimeBetaServerEventResponseTextDeltaType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventResponseTextDeltaType responseOutputTextDelta = RealtimeBetaServerEventResponseTextDeltaType._('response.output_text.delta');
+static const RealtimeBetaServerEventResponseTextDeltaType responseOutputTextDelta = RealtimeBetaServerEventResponseTextDeltaType$responseOutputTextDelta._();
 
 static const List<RealtimeBetaServerEventResponseTextDeltaType> values = [responseOutputTextDelta];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseTextDeltaType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventResponseTextDeltaType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventResponseTextDeltaType$responseOutputTextDelta extends RealtimeBetaServerEventResponseTextDeltaType {const RealtimeBetaServerEventResponseTextDeltaType$responseOutputTextDelta._();
+
+@override String get value => 'response.output_text.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseTextDeltaType$responseOutputTextDelta;
+
+@override int get hashCode => 'response.output_text.delta'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventResponseTextDeltaType$Unknown extends RealtimeBetaServerEventResponseTextDeltaType {const RealtimeBetaServerEventResponseTextDeltaType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventResponseTextDeltaType && other.value == value;
+    other is RealtimeBetaServerEventResponseTextDeltaType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventResponseTextDeltaType($value)';
 
  }
 /// Returned when the text value of an "output_text" content part is updated.

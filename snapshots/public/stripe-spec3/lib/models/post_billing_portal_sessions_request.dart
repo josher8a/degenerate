@@ -2,7 +2,7 @@
 // Source: #/components/schemas/PostBillingPortalSessionsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_billing_portal_sessions_request/flow_data.dart';/// The IETF language tag of the locale customer portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
-@immutable final class PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale._(this.value);
+sealed class PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale();
 
 factory PostBillingPortalSessionsRequestLocale.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -52,107 +52,106 @@ factory PostBillingPortalSessionsRequestLocale.fromJson(String json) { return sw
   'zh' => zh,
   'zh-HK' => zhHk,
   'zh-TW' => zhTw,
-  _ => PostBillingPortalSessionsRequestLocale._(json),
+  _ => PostBillingPortalSessionsRequestLocale$Unknown(json),
 }; }
 
-static const PostBillingPortalSessionsRequestLocale auto = PostBillingPortalSessionsRequestLocale._('auto');
+static const PostBillingPortalSessionsRequestLocale auto = PostBillingPortalSessionsRequestLocale$auto._();
 
-static const PostBillingPortalSessionsRequestLocale bg = PostBillingPortalSessionsRequestLocale._('bg');
+static const PostBillingPortalSessionsRequestLocale bg = PostBillingPortalSessionsRequestLocale$bg._();
 
-static const PostBillingPortalSessionsRequestLocale cs = PostBillingPortalSessionsRequestLocale._('cs');
+static const PostBillingPortalSessionsRequestLocale cs = PostBillingPortalSessionsRequestLocale$cs._();
 
-static const PostBillingPortalSessionsRequestLocale da = PostBillingPortalSessionsRequestLocale._('da');
+static const PostBillingPortalSessionsRequestLocale da = PostBillingPortalSessionsRequestLocale$da._();
 
-static const PostBillingPortalSessionsRequestLocale de = PostBillingPortalSessionsRequestLocale._('de');
+static const PostBillingPortalSessionsRequestLocale de = PostBillingPortalSessionsRequestLocale$de._();
 
-static const PostBillingPortalSessionsRequestLocale el = PostBillingPortalSessionsRequestLocale._('el');
+static const PostBillingPortalSessionsRequestLocale el = PostBillingPortalSessionsRequestLocale$el._();
 
-static const PostBillingPortalSessionsRequestLocale en = PostBillingPortalSessionsRequestLocale._('en');
+static const PostBillingPortalSessionsRequestLocale en = PostBillingPortalSessionsRequestLocale$en._();
 
-static const PostBillingPortalSessionsRequestLocale enAu = PostBillingPortalSessionsRequestLocale._('en-AU');
+static const PostBillingPortalSessionsRequestLocale enAu = PostBillingPortalSessionsRequestLocale$enAu._();
 
-static const PostBillingPortalSessionsRequestLocale enCa = PostBillingPortalSessionsRequestLocale._('en-CA');
+static const PostBillingPortalSessionsRequestLocale enCa = PostBillingPortalSessionsRequestLocale$enCa._();
 
-static const PostBillingPortalSessionsRequestLocale enGb = PostBillingPortalSessionsRequestLocale._('en-GB');
+static const PostBillingPortalSessionsRequestLocale enGb = PostBillingPortalSessionsRequestLocale$enGb._();
 
-static const PostBillingPortalSessionsRequestLocale enIe = PostBillingPortalSessionsRequestLocale._('en-IE');
+static const PostBillingPortalSessionsRequestLocale enIe = PostBillingPortalSessionsRequestLocale$enIe._();
 
-static const PostBillingPortalSessionsRequestLocale enIn = PostBillingPortalSessionsRequestLocale._('en-IN');
+static const PostBillingPortalSessionsRequestLocale enIn = PostBillingPortalSessionsRequestLocale$enIn._();
 
-static const PostBillingPortalSessionsRequestLocale enNz = PostBillingPortalSessionsRequestLocale._('en-NZ');
+static const PostBillingPortalSessionsRequestLocale enNz = PostBillingPortalSessionsRequestLocale$enNz._();
 
-static const PostBillingPortalSessionsRequestLocale enSg = PostBillingPortalSessionsRequestLocale._('en-SG');
+static const PostBillingPortalSessionsRequestLocale enSg = PostBillingPortalSessionsRequestLocale$enSg._();
 
-static const PostBillingPortalSessionsRequestLocale es = PostBillingPortalSessionsRequestLocale._('es');
+static const PostBillingPortalSessionsRequestLocale es = PostBillingPortalSessionsRequestLocale$es._();
 
-static const PostBillingPortalSessionsRequestLocale es419 = PostBillingPortalSessionsRequestLocale._('es-419');
+static const PostBillingPortalSessionsRequestLocale es419 = PostBillingPortalSessionsRequestLocale$es419._();
 
-static const PostBillingPortalSessionsRequestLocale et = PostBillingPortalSessionsRequestLocale._('et');
+static const PostBillingPortalSessionsRequestLocale et = PostBillingPortalSessionsRequestLocale$et._();
 
-static const PostBillingPortalSessionsRequestLocale fi = PostBillingPortalSessionsRequestLocale._('fi');
+static const PostBillingPortalSessionsRequestLocale fi = PostBillingPortalSessionsRequestLocale$fi._();
 
-static const PostBillingPortalSessionsRequestLocale fil = PostBillingPortalSessionsRequestLocale._('fil');
+static const PostBillingPortalSessionsRequestLocale fil = PostBillingPortalSessionsRequestLocale$fil._();
 
-static const PostBillingPortalSessionsRequestLocale fr = PostBillingPortalSessionsRequestLocale._('fr');
+static const PostBillingPortalSessionsRequestLocale fr = PostBillingPortalSessionsRequestLocale$fr._();
 
-static const PostBillingPortalSessionsRequestLocale frCa = PostBillingPortalSessionsRequestLocale._('fr-CA');
+static const PostBillingPortalSessionsRequestLocale frCa = PostBillingPortalSessionsRequestLocale$frCa._();
 
-static const PostBillingPortalSessionsRequestLocale hr = PostBillingPortalSessionsRequestLocale._('hr');
+static const PostBillingPortalSessionsRequestLocale hr = PostBillingPortalSessionsRequestLocale$hr._();
 
-static const PostBillingPortalSessionsRequestLocale hu = PostBillingPortalSessionsRequestLocale._('hu');
+static const PostBillingPortalSessionsRequestLocale hu = PostBillingPortalSessionsRequestLocale$hu._();
 
-static const PostBillingPortalSessionsRequestLocale id = PostBillingPortalSessionsRequestLocale._('id');
+static const PostBillingPortalSessionsRequestLocale id = PostBillingPortalSessionsRequestLocale$id._();
 
-static const PostBillingPortalSessionsRequestLocale it = PostBillingPortalSessionsRequestLocale._('it');
+static const PostBillingPortalSessionsRequestLocale it = PostBillingPortalSessionsRequestLocale$it._();
 
-static const PostBillingPortalSessionsRequestLocale ja = PostBillingPortalSessionsRequestLocale._('ja');
+static const PostBillingPortalSessionsRequestLocale ja = PostBillingPortalSessionsRequestLocale$ja._();
 
-static const PostBillingPortalSessionsRequestLocale ko = PostBillingPortalSessionsRequestLocale._('ko');
+static const PostBillingPortalSessionsRequestLocale ko = PostBillingPortalSessionsRequestLocale$ko._();
 
-static const PostBillingPortalSessionsRequestLocale lt = PostBillingPortalSessionsRequestLocale._('lt');
+static const PostBillingPortalSessionsRequestLocale lt = PostBillingPortalSessionsRequestLocale$lt._();
 
-static const PostBillingPortalSessionsRequestLocale lv = PostBillingPortalSessionsRequestLocale._('lv');
+static const PostBillingPortalSessionsRequestLocale lv = PostBillingPortalSessionsRequestLocale$lv._();
 
-static const PostBillingPortalSessionsRequestLocale ms = PostBillingPortalSessionsRequestLocale._('ms');
+static const PostBillingPortalSessionsRequestLocale ms = PostBillingPortalSessionsRequestLocale$ms._();
 
-static const PostBillingPortalSessionsRequestLocale mt = PostBillingPortalSessionsRequestLocale._('mt');
+static const PostBillingPortalSessionsRequestLocale mt = PostBillingPortalSessionsRequestLocale$mt._();
 
-static const PostBillingPortalSessionsRequestLocale nb = PostBillingPortalSessionsRequestLocale._('nb');
+static const PostBillingPortalSessionsRequestLocale nb = PostBillingPortalSessionsRequestLocale$nb._();
 
-static const PostBillingPortalSessionsRequestLocale nl = PostBillingPortalSessionsRequestLocale._('nl');
+static const PostBillingPortalSessionsRequestLocale nl = PostBillingPortalSessionsRequestLocale$nl._();
 
-static const PostBillingPortalSessionsRequestLocale pl = PostBillingPortalSessionsRequestLocale._('pl');
+static const PostBillingPortalSessionsRequestLocale pl = PostBillingPortalSessionsRequestLocale$pl._();
 
-static const PostBillingPortalSessionsRequestLocale pt = PostBillingPortalSessionsRequestLocale._('pt');
+static const PostBillingPortalSessionsRequestLocale pt = PostBillingPortalSessionsRequestLocale$pt._();
 
-static const PostBillingPortalSessionsRequestLocale ptBr = PostBillingPortalSessionsRequestLocale._('pt-BR');
+static const PostBillingPortalSessionsRequestLocale ptBr = PostBillingPortalSessionsRequestLocale$ptBr._();
 
-static const PostBillingPortalSessionsRequestLocale ro = PostBillingPortalSessionsRequestLocale._('ro');
+static const PostBillingPortalSessionsRequestLocale ro = PostBillingPortalSessionsRequestLocale$ro._();
 
-static const PostBillingPortalSessionsRequestLocale ru = PostBillingPortalSessionsRequestLocale._('ru');
+static const PostBillingPortalSessionsRequestLocale ru = PostBillingPortalSessionsRequestLocale$ru._();
 
-static const PostBillingPortalSessionsRequestLocale sk = PostBillingPortalSessionsRequestLocale._('sk');
+static const PostBillingPortalSessionsRequestLocale sk = PostBillingPortalSessionsRequestLocale$sk._();
 
-static const PostBillingPortalSessionsRequestLocale sl = PostBillingPortalSessionsRequestLocale._('sl');
+static const PostBillingPortalSessionsRequestLocale sl = PostBillingPortalSessionsRequestLocale$sl._();
 
-static const PostBillingPortalSessionsRequestLocale sv = PostBillingPortalSessionsRequestLocale._('sv');
+static const PostBillingPortalSessionsRequestLocale sv = PostBillingPortalSessionsRequestLocale$sv._();
 
-static const PostBillingPortalSessionsRequestLocale th = PostBillingPortalSessionsRequestLocale._('th');
+static const PostBillingPortalSessionsRequestLocale th = PostBillingPortalSessionsRequestLocale$th._();
 
-static const PostBillingPortalSessionsRequestLocale tr = PostBillingPortalSessionsRequestLocale._('tr');
+static const PostBillingPortalSessionsRequestLocale tr = PostBillingPortalSessionsRequestLocale$tr._();
 
-static const PostBillingPortalSessionsRequestLocale vi = PostBillingPortalSessionsRequestLocale._('vi');
+static const PostBillingPortalSessionsRequestLocale vi = PostBillingPortalSessionsRequestLocale$vi._();
 
-static const PostBillingPortalSessionsRequestLocale zh = PostBillingPortalSessionsRequestLocale._('zh');
+static const PostBillingPortalSessionsRequestLocale zh = PostBillingPortalSessionsRequestLocale$zh._();
 
-static const PostBillingPortalSessionsRequestLocale zhHk = PostBillingPortalSessionsRequestLocale._('zh-HK');
+static const PostBillingPortalSessionsRequestLocale zhHk = PostBillingPortalSessionsRequestLocale$zhHk._();
 
-static const PostBillingPortalSessionsRequestLocale zhTw = PostBillingPortalSessionsRequestLocale._('zh-TW');
+static const PostBillingPortalSessionsRequestLocale zhTw = PostBillingPortalSessionsRequestLocale$zhTw._();
 
 static const List<PostBillingPortalSessionsRequestLocale> values = [auto, bg, cs, da, de, el, en, enAu, enCa, enGb, enIe, enIn, enNz, enSg, es, es419, et, fi, fil, fr, frCa, hr, hu, id, it, ja, ko, lt, lv, ms, mt, nb, nl, pl, pt, ptBr, ro, ru, sk, sl, sv, th, tr, vi, zh, zhHk, zhTw];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -206,13 +205,441 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostBillingPortalSessionsRequestLocale$Unknown; } 
+@override String toString() => 'PostBillingPortalSessionsRequestLocale($value)';
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$auto extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$bg extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$bg._();
+
+@override String get value => 'bg';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$bg;
+
+@override int get hashCode => 'bg'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$cs extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$cs._();
+
+@override String get value => 'cs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$cs;
+
+@override int get hashCode => 'cs'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$da extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$da._();
+
+@override String get value => 'da';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$da;
+
+@override int get hashCode => 'da'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$de extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$de._();
+
+@override String get value => 'de';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$de;
+
+@override int get hashCode => 'de'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$el extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$el._();
+
+@override String get value => 'el';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$el;
+
+@override int get hashCode => 'el'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$en extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$en._();
+
+@override String get value => 'en';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$en;
+
+@override int get hashCode => 'en'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$enAu extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$enAu._();
+
+@override String get value => 'en-AU';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$enAu;
+
+@override int get hashCode => 'en-AU'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$enCa extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$enCa._();
+
+@override String get value => 'en-CA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$enCa;
+
+@override int get hashCode => 'en-CA'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$enGb extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$enGb._();
+
+@override String get value => 'en-GB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$enGb;
+
+@override int get hashCode => 'en-GB'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$enIe extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$enIe._();
+
+@override String get value => 'en-IE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$enIe;
+
+@override int get hashCode => 'en-IE'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$enIn extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$enIn._();
+
+@override String get value => 'en-IN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$enIn;
+
+@override int get hashCode => 'en-IN'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$enNz extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$enNz._();
+
+@override String get value => 'en-NZ';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$enNz;
+
+@override int get hashCode => 'en-NZ'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$enSg extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$enSg._();
+
+@override String get value => 'en-SG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$enSg;
+
+@override int get hashCode => 'en-SG'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$es extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$es._();
+
+@override String get value => 'es';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$es;
+
+@override int get hashCode => 'es'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$es419 extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$es419._();
+
+@override String get value => 'es-419';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$es419;
+
+@override int get hashCode => 'es-419'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$et extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$et._();
+
+@override String get value => 'et';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$et;
+
+@override int get hashCode => 'et'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$fi extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$fi._();
+
+@override String get value => 'fi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$fi;
+
+@override int get hashCode => 'fi'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$fil extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$fil._();
+
+@override String get value => 'fil';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$fil;
+
+@override int get hashCode => 'fil'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$fr extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$fr._();
+
+@override String get value => 'fr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$fr;
+
+@override int get hashCode => 'fr'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$frCa extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$frCa._();
+
+@override String get value => 'fr-CA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$frCa;
+
+@override int get hashCode => 'fr-CA'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$hr extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$hr._();
+
+@override String get value => 'hr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$hr;
+
+@override int get hashCode => 'hr'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$hu extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$hu._();
+
+@override String get value => 'hu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$hu;
+
+@override int get hashCode => 'hu'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$id extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$id._();
+
+@override String get value => 'id';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$id;
+
+@override int get hashCode => 'id'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$it extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$it._();
+
+@override String get value => 'it';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$it;
+
+@override int get hashCode => 'it'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$ja extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$ja._();
+
+@override String get value => 'ja';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$ja;
+
+@override int get hashCode => 'ja'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$ko extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$ko._();
+
+@override String get value => 'ko';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$ko;
+
+@override int get hashCode => 'ko'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$lt extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$lt._();
+
+@override String get value => 'lt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$lt;
+
+@override int get hashCode => 'lt'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$lv extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$lv._();
+
+@override String get value => 'lv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$lv;
+
+@override int get hashCode => 'lv'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$ms extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$ms._();
+
+@override String get value => 'ms';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$ms;
+
+@override int get hashCode => 'ms'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$mt extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$mt._();
+
+@override String get value => 'mt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$mt;
+
+@override int get hashCode => 'mt'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$nb extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$nb._();
+
+@override String get value => 'nb';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$nb;
+
+@override int get hashCode => 'nb'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$nl extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$nl._();
+
+@override String get value => 'nl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$nl;
+
+@override int get hashCode => 'nl'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$pl extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$pl._();
+
+@override String get value => 'pl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$pl;
+
+@override int get hashCode => 'pl'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$pt extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$pt._();
+
+@override String get value => 'pt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$pt;
+
+@override int get hashCode => 'pt'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$ptBr extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$ptBr._();
+
+@override String get value => 'pt-BR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$ptBr;
+
+@override int get hashCode => 'pt-BR'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$ro extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$ro._();
+
+@override String get value => 'ro';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$ro;
+
+@override int get hashCode => 'ro'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$ru extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$ru._();
+
+@override String get value => 'ru';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$ru;
+
+@override int get hashCode => 'ru'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$sk extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$sk._();
+
+@override String get value => 'sk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$sk;
+
+@override int get hashCode => 'sk'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$sl extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$sl._();
+
+@override String get value => 'sl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$sl;
+
+@override int get hashCode => 'sl'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$sv extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$sv._();
+
+@override String get value => 'sv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$sv;
+
+@override int get hashCode => 'sv'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$th extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$th._();
+
+@override String get value => 'th';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$th;
+
+@override int get hashCode => 'th'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$tr extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$tr._();
+
+@override String get value => 'tr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$tr;
+
+@override int get hashCode => 'tr'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$vi extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$vi._();
+
+@override String get value => 'vi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$vi;
+
+@override int get hashCode => 'vi'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$zh extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$zh._();
+
+@override String get value => 'zh';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$zh;
+
+@override int get hashCode => 'zh'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$zhHk extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$zhHk._();
+
+@override String get value => 'zh-HK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$zhHk;
+
+@override int get hashCode => 'zh-HK'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$zhTw extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$zhTw._();
+
+@override String get value => 'zh-TW';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingPortalSessionsRequestLocale$zhTw;
+
+@override int get hashCode => 'zh-TW'.hashCode;
+
+ }
+@immutable final class PostBillingPortalSessionsRequestLocale$Unknown extends PostBillingPortalSessionsRequestLocale {const PostBillingPortalSessionsRequestLocale$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostBillingPortalSessionsRequestLocale && other.value == value;
+    other is PostBillingPortalSessionsRequestLocale$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostBillingPortalSessionsRequestLocale($value)';
 
  }
 @immutable final class PostBillingPortalSessionsRequest {const PostBillingPortalSessionsRequest({this.configuration, this.customer, this.customerAccount, this.expand, this.flowData, this.locale, this.onBehalfOf, this.returnUrl, });

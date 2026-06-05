@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookDiscussionAnswered
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_answer.dart';@immutable final class WebhookDiscussionAnsweredAction {const WebhookDiscussionAnsweredAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_answer.dart';sealed class WebhookDiscussionAnsweredAction {const WebhookDiscussionAnsweredAction();
 
 factory WebhookDiscussionAnsweredAction.fromJson(String json) { return switch (json) {
   'answered' => answered,
-  _ => WebhookDiscussionAnsweredAction._(json),
+  _ => WebhookDiscussionAnsweredAction$Unknown(json),
 }; }
 
-static const WebhookDiscussionAnsweredAction answered = WebhookDiscussionAnsweredAction._('answered');
+static const WebhookDiscussionAnsweredAction answered = WebhookDiscussionAnsweredAction$answered._();
 
 static const List<WebhookDiscussionAnsweredAction> values = [answered];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookDiscussionAnsweredAction$Unknown; } 
+@override String toString() => 'WebhookDiscussionAnsweredAction($value)';
+
+ }
+@immutable final class WebhookDiscussionAnsweredAction$answered extends WebhookDiscussionAnsweredAction {const WebhookDiscussionAnsweredAction$answered._();
+
+@override String get value => 'answered';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookDiscussionAnsweredAction$answered;
+
+@override int get hashCode => 'answered'.hashCode;
+
+ }
+@immutable final class WebhookDiscussionAnsweredAction$Unknown extends WebhookDiscussionAnsweredAction {const WebhookDiscussionAnsweredAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookDiscussionAnsweredAction && other.value == value;
+    other is WebhookDiscussionAnsweredAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookDiscussionAnsweredAction($value)';
 
  }
 @immutable final class WebhookDiscussionAnswered {const WebhookDiscussionAnswered({required this.action, required this.answer, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

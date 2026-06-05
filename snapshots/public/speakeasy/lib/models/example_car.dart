@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ExampleCar
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ExampleCarType {const ExampleCarType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ExampleCarType {const ExampleCarType();
 
 factory ExampleCarType.fromJson(String json) { return switch (json) {
   'car' => car,
-  _ => ExampleCarType._(json),
+  _ => ExampleCarType$Unknown(json),
 }; }
 
-static const ExampleCarType car = ExampleCarType._('car');
+static const ExampleCarType car = ExampleCarType$car._();
 
 static const List<ExampleCarType> values = [car];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ExampleCarType$Unknown; } 
+@override String toString() => 'ExampleCarType($value)';
+
+ }
+@immutable final class ExampleCarType$car extends ExampleCarType {const ExampleCarType$car._();
+
+@override String get value => 'car';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ExampleCarType$car;
+
+@override int get hashCode => 'car'.hashCode;
+
+ }
+@immutable final class ExampleCarType$Unknown extends ExampleCarType {const ExampleCarType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ExampleCarType && other.value == value;
+    other is ExampleCarType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ExampleCarType($value)';
 
  }
 @immutable final class ExampleCar {const ExampleCar({required this.type, required this.name, required this.make, required this.model, required this.year, this.createdAt, this.updatedAt, });

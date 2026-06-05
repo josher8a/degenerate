@@ -2,22 +2,21 @@
 // Source: #/components/schemas/MarkdownRenderRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The rendering mode.
-@immutable final class MarkdownRenderRequestMode {const MarkdownRenderRequestMode._(this.value);
+sealed class MarkdownRenderRequestMode {const MarkdownRenderRequestMode();
 
 factory MarkdownRenderRequestMode.fromJson(String json) { return switch (json) {
   'markdown' => markdown,
   'gfm' => gfm,
-  _ => MarkdownRenderRequestMode._(json),
+  _ => MarkdownRenderRequestMode$Unknown(json),
 }; }
 
-static const MarkdownRenderRequestMode markdown = MarkdownRenderRequestMode._('markdown');
+static const MarkdownRenderRequestMode markdown = MarkdownRenderRequestMode$markdown._();
 
-static const MarkdownRenderRequestMode gfm = MarkdownRenderRequestMode._('gfm');
+static const MarkdownRenderRequestMode gfm = MarkdownRenderRequestMode$gfm._();
 
 static const List<MarkdownRenderRequestMode> values = [markdown, gfm];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MarkdownRenderRequestMode$Unknown; } 
+@override String toString() => 'MarkdownRenderRequestMode($value)';
+
+ }
+@immutable final class MarkdownRenderRequestMode$markdown extends MarkdownRenderRequestMode {const MarkdownRenderRequestMode$markdown._();
+
+@override String get value => 'markdown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MarkdownRenderRequestMode$markdown;
+
+@override int get hashCode => 'markdown'.hashCode;
+
+ }
+@immutable final class MarkdownRenderRequestMode$gfm extends MarkdownRenderRequestMode {const MarkdownRenderRequestMode$gfm._();
+
+@override String get value => 'gfm';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MarkdownRenderRequestMode$gfm;
+
+@override int get hashCode => 'gfm'.hashCode;
+
+ }
+@immutable final class MarkdownRenderRequestMode$Unknown extends MarkdownRenderRequestMode {const MarkdownRenderRequestMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MarkdownRenderRequestMode && other.value == value;
+    other is MarkdownRenderRequestMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MarkdownRenderRequestMode($value)';
 
  }
 @immutable final class MarkdownRenderRequest {const MarkdownRenderRequest({required this.text, this.mode = MarkdownRenderRequestMode.markdown, this.context, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaClientEventConversationItemRetrieve
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.retrieve`.
-@immutable final class RealtimeBetaClientEventConversationItemRetrieveType {const RealtimeBetaClientEventConversationItemRetrieveType._(this.value);
+sealed class RealtimeBetaClientEventConversationItemRetrieveType {const RealtimeBetaClientEventConversationItemRetrieveType();
 
 factory RealtimeBetaClientEventConversationItemRetrieveType.fromJson(String json) { return switch (json) {
   'conversation.item.retrieve' => conversationItemRetrieve,
-  _ => RealtimeBetaClientEventConversationItemRetrieveType._(json),
+  _ => RealtimeBetaClientEventConversationItemRetrieveType$Unknown(json),
 }; }
 
-static const RealtimeBetaClientEventConversationItemRetrieveType conversationItemRetrieve = RealtimeBetaClientEventConversationItemRetrieveType._('conversation.item.retrieve');
+static const RealtimeBetaClientEventConversationItemRetrieveType conversationItemRetrieve = RealtimeBetaClientEventConversationItemRetrieveType$conversationItemRetrieve._();
 
 static const List<RealtimeBetaClientEventConversationItemRetrieveType> values = [conversationItemRetrieve];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaClientEventConversationItemRetrieveType$Unknown; } 
+@override String toString() => 'RealtimeBetaClientEventConversationItemRetrieveType($value)';
+
+ }
+@immutable final class RealtimeBetaClientEventConversationItemRetrieveType$conversationItemRetrieve extends RealtimeBetaClientEventConversationItemRetrieveType {const RealtimeBetaClientEventConversationItemRetrieveType$conversationItemRetrieve._();
+
+@override String get value => 'conversation.item.retrieve';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaClientEventConversationItemRetrieveType$conversationItemRetrieve;
+
+@override int get hashCode => 'conversation.item.retrieve'.hashCode;
+
+ }
+@immutable final class RealtimeBetaClientEventConversationItemRetrieveType$Unknown extends RealtimeBetaClientEventConversationItemRetrieveType {const RealtimeBetaClientEventConversationItemRetrieveType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaClientEventConversationItemRetrieveType && other.value == value;
+    other is RealtimeBetaClientEventConversationItemRetrieveType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaClientEventConversationItemRetrieveType($value)';
 
  }
 /// Send this event when you want to retrieve the server's representation of a specific item in the conversation history. This is useful, for example, to inspect user audio after noise cancellation and VAD.

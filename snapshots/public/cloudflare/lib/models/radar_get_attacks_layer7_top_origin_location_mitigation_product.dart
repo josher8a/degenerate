@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetAttacksLayer7TopOriginLocationMitigationProduct
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TopOriginLocationMitigationProduct {const RadarGetAttacksLayer7TopOriginLocationMitigationProduct._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer7TopOriginLocationMitigationProduct {const RadarGetAttacksLayer7TopOriginLocationMitigationProduct();
 
 factory RadarGetAttacksLayer7TopOriginLocationMitigationProduct.fromJson(String json) { return switch (json) {
   'DDOS' => ddos,
@@ -11,27 +11,26 @@ factory RadarGetAttacksLayer7TopOriginLocationMitigationProduct.fromJson(String 
   'IP_REPUTATION' => ipReputation,
   'API_SHIELD' => apiShield,
   'DATA_LOSS_PREVENTION' => dataLossPrevention,
-  _ => RadarGetAttacksLayer7TopOriginLocationMitigationProduct._(json),
+  _ => RadarGetAttacksLayer7TopOriginLocationMitigationProduct$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer7TopOriginLocationMitigationProduct ddos = RadarGetAttacksLayer7TopOriginLocationMitigationProduct._('DDOS');
+static const RadarGetAttacksLayer7TopOriginLocationMitigationProduct ddos = RadarGetAttacksLayer7TopOriginLocationMitigationProduct$ddos._();
 
-static const RadarGetAttacksLayer7TopOriginLocationMitigationProduct waf = RadarGetAttacksLayer7TopOriginLocationMitigationProduct._('WAF');
+static const RadarGetAttacksLayer7TopOriginLocationMitigationProduct waf = RadarGetAttacksLayer7TopOriginLocationMitigationProduct$waf._();
 
-static const RadarGetAttacksLayer7TopOriginLocationMitigationProduct botManagement = RadarGetAttacksLayer7TopOriginLocationMitigationProduct._('BOT_MANAGEMENT');
+static const RadarGetAttacksLayer7TopOriginLocationMitigationProduct botManagement = RadarGetAttacksLayer7TopOriginLocationMitigationProduct$botManagement._();
 
-static const RadarGetAttacksLayer7TopOriginLocationMitigationProduct accessRules = RadarGetAttacksLayer7TopOriginLocationMitigationProduct._('ACCESS_RULES');
+static const RadarGetAttacksLayer7TopOriginLocationMitigationProduct accessRules = RadarGetAttacksLayer7TopOriginLocationMitigationProduct$accessRules._();
 
-static const RadarGetAttacksLayer7TopOriginLocationMitigationProduct ipReputation = RadarGetAttacksLayer7TopOriginLocationMitigationProduct._('IP_REPUTATION');
+static const RadarGetAttacksLayer7TopOriginLocationMitigationProduct ipReputation = RadarGetAttacksLayer7TopOriginLocationMitigationProduct$ipReputation._();
 
-static const RadarGetAttacksLayer7TopOriginLocationMitigationProduct apiShield = RadarGetAttacksLayer7TopOriginLocationMitigationProduct._('API_SHIELD');
+static const RadarGetAttacksLayer7TopOriginLocationMitigationProduct apiShield = RadarGetAttacksLayer7TopOriginLocationMitigationProduct$apiShield._();
 
-static const RadarGetAttacksLayer7TopOriginLocationMitigationProduct dataLossPrevention = RadarGetAttacksLayer7TopOriginLocationMitigationProduct._('DATA_LOSS_PREVENTION');
+static const RadarGetAttacksLayer7TopOriginLocationMitigationProduct dataLossPrevention = RadarGetAttacksLayer7TopOriginLocationMitigationProduct$dataLossPrevention._();
 
 static const List<RadarGetAttacksLayer7TopOriginLocationMitigationProduct> values = [ddos, waf, botManagement, accessRules, ipReputation, apiShield, dataLossPrevention];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -45,12 +44,80 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer7TopOriginLocationMitigationProduct$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer7TopOriginLocationMitigationProduct($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer7TopOriginLocationMitigationProduct$ddos extends RadarGetAttacksLayer7TopOriginLocationMitigationProduct {const RadarGetAttacksLayer7TopOriginLocationMitigationProduct$ddos._();
+
+@override String get value => 'DDOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopOriginLocationMitigationProduct$ddos;
+
+@override int get hashCode => 'DDOS'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopOriginLocationMitigationProduct$waf extends RadarGetAttacksLayer7TopOriginLocationMitigationProduct {const RadarGetAttacksLayer7TopOriginLocationMitigationProduct$waf._();
+
+@override String get value => 'WAF';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopOriginLocationMitigationProduct$waf;
+
+@override int get hashCode => 'WAF'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopOriginLocationMitigationProduct$botManagement extends RadarGetAttacksLayer7TopOriginLocationMitigationProduct {const RadarGetAttacksLayer7TopOriginLocationMitigationProduct$botManagement._();
+
+@override String get value => 'BOT_MANAGEMENT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopOriginLocationMitigationProduct$botManagement;
+
+@override int get hashCode => 'BOT_MANAGEMENT'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopOriginLocationMitigationProduct$accessRules extends RadarGetAttacksLayer7TopOriginLocationMitigationProduct {const RadarGetAttacksLayer7TopOriginLocationMitigationProduct$accessRules._();
+
+@override String get value => 'ACCESS_RULES';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopOriginLocationMitigationProduct$accessRules;
+
+@override int get hashCode => 'ACCESS_RULES'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopOriginLocationMitigationProduct$ipReputation extends RadarGetAttacksLayer7TopOriginLocationMitigationProduct {const RadarGetAttacksLayer7TopOriginLocationMitigationProduct$ipReputation._();
+
+@override String get value => 'IP_REPUTATION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopOriginLocationMitigationProduct$ipReputation;
+
+@override int get hashCode => 'IP_REPUTATION'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopOriginLocationMitigationProduct$apiShield extends RadarGetAttacksLayer7TopOriginLocationMitigationProduct {const RadarGetAttacksLayer7TopOriginLocationMitigationProduct$apiShield._();
+
+@override String get value => 'API_SHIELD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopOriginLocationMitigationProduct$apiShield;
+
+@override int get hashCode => 'API_SHIELD'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopOriginLocationMitigationProduct$dataLossPrevention extends RadarGetAttacksLayer7TopOriginLocationMitigationProduct {const RadarGetAttacksLayer7TopOriginLocationMitigationProduct$dataLossPrevention._();
+
+@override String get value => 'DATA_LOSS_PREVENTION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopOriginLocationMitigationProduct$dataLossPrevention;
+
+@override int get hashCode => 'DATA_LOSS_PREVENTION'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopOriginLocationMitigationProduct$Unknown extends RadarGetAttacksLayer7TopOriginLocationMitigationProduct {const RadarGetAttacksLayer7TopOriginLocationMitigationProduct$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer7TopOriginLocationMitigationProduct && other.value == value;
+    other is RadarGetAttacksLayer7TopOriginLocationMitigationProduct$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer7TopOriginLocationMitigationProduct($value)';
 
  }

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TruncationObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The truncation strategy to use for the thread. The default is `auto`. If set to `last_messages`, the thread will be truncated to the n most recent messages in the thread. When set to `auto`, messages in the middle of the thread will be dropped to fit the context length of the model, `max_prompt_tokens`.
-@immutable final class TruncationObjectType {const TruncationObjectType._(this.value);
+sealed class TruncationObjectType {const TruncationObjectType();
 
 factory TruncationObjectType.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'last_messages' => lastMessages,
-  _ => TruncationObjectType._(json),
+  _ => TruncationObjectType$Unknown(json),
 }; }
 
-static const TruncationObjectType auto = TruncationObjectType._('auto');
+static const TruncationObjectType auto = TruncationObjectType$auto._();
 
-static const TruncationObjectType lastMessages = TruncationObjectType._('last_messages');
+static const TruncationObjectType lastMessages = TruncationObjectType$lastMessages._();
 
 static const List<TruncationObjectType> values = [auto, lastMessages];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TruncationObjectType$Unknown; } 
+@override String toString() => 'TruncationObjectType($value)';
+
+ }
+@immutable final class TruncationObjectType$auto extends TruncationObjectType {const TruncationObjectType$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TruncationObjectType$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class TruncationObjectType$lastMessages extends TruncationObjectType {const TruncationObjectType$lastMessages._();
+
+@override String get value => 'last_messages';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TruncationObjectType$lastMessages;
+
+@override int get hashCode => 'last_messages'.hashCode;
+
+ }
+@immutable final class TruncationObjectType$Unknown extends TruncationObjectType {const TruncationObjectType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TruncationObjectType && other.value == value;
+    other is TruncationObjectType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TruncationObjectType($value)';
 
  }
 /// Controls for how a thread will be truncated prior to the run. Use this to control the initial context window of the run.

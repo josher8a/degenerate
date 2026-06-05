@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ActionsHostedRunner
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/actions_hosted_runner_machine_spec.dart';import 'package:pub_github_rest_3_1/models/actions_hosted_runner_pool_image.dart';import 'package:pub_github_rest_3_1/models/public_ip.dart';/// The status of the runner.
-@immutable final class ActionsHostedRunnerStatus {const ActionsHostedRunnerStatus._(this.value);
+sealed class ActionsHostedRunnerStatus {const ActionsHostedRunnerStatus();
 
 factory ActionsHostedRunnerStatus.fromJson(String json) { return switch (json) {
   'Ready' => ready,
@@ -10,23 +10,22 @@ factory ActionsHostedRunnerStatus.fromJson(String json) { return switch (json) {
   'Shutdown' => shutdown,
   'Deleting' => deleting,
   'Stuck' => stuck,
-  _ => ActionsHostedRunnerStatus._(json),
+  _ => ActionsHostedRunnerStatus$Unknown(json),
 }; }
 
-static const ActionsHostedRunnerStatus ready = ActionsHostedRunnerStatus._('Ready');
+static const ActionsHostedRunnerStatus ready = ActionsHostedRunnerStatus$ready._();
 
-static const ActionsHostedRunnerStatus provisioning = ActionsHostedRunnerStatus._('Provisioning');
+static const ActionsHostedRunnerStatus provisioning = ActionsHostedRunnerStatus$provisioning._();
 
-static const ActionsHostedRunnerStatus shutdown = ActionsHostedRunnerStatus._('Shutdown');
+static const ActionsHostedRunnerStatus shutdown = ActionsHostedRunnerStatus$shutdown._();
 
-static const ActionsHostedRunnerStatus deleting = ActionsHostedRunnerStatus._('Deleting');
+static const ActionsHostedRunnerStatus deleting = ActionsHostedRunnerStatus$deleting._();
 
-static const ActionsHostedRunnerStatus stuck = ActionsHostedRunnerStatus._('Stuck');
+static const ActionsHostedRunnerStatus stuck = ActionsHostedRunnerStatus$stuck._();
 
 static const List<ActionsHostedRunnerStatus> values = [ready, provisioning, shutdown, deleting, stuck];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ActionsHostedRunnerStatus$Unknown; } 
+@override String toString() => 'ActionsHostedRunnerStatus($value)';
+
+ }
+@immutable final class ActionsHostedRunnerStatus$ready extends ActionsHostedRunnerStatus {const ActionsHostedRunnerStatus$ready._();
+
+@override String get value => 'Ready';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsHostedRunnerStatus$ready;
+
+@override int get hashCode => 'Ready'.hashCode;
+
+ }
+@immutable final class ActionsHostedRunnerStatus$provisioning extends ActionsHostedRunnerStatus {const ActionsHostedRunnerStatus$provisioning._();
+
+@override String get value => 'Provisioning';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsHostedRunnerStatus$provisioning;
+
+@override int get hashCode => 'Provisioning'.hashCode;
+
+ }
+@immutable final class ActionsHostedRunnerStatus$shutdown extends ActionsHostedRunnerStatus {const ActionsHostedRunnerStatus$shutdown._();
+
+@override String get value => 'Shutdown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsHostedRunnerStatus$shutdown;
+
+@override int get hashCode => 'Shutdown'.hashCode;
+
+ }
+@immutable final class ActionsHostedRunnerStatus$deleting extends ActionsHostedRunnerStatus {const ActionsHostedRunnerStatus$deleting._();
+
+@override String get value => 'Deleting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsHostedRunnerStatus$deleting;
+
+@override int get hashCode => 'Deleting'.hashCode;
+
+ }
+@immutable final class ActionsHostedRunnerStatus$stuck extends ActionsHostedRunnerStatus {const ActionsHostedRunnerStatus$stuck._();
+
+@override String get value => 'Stuck';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsHostedRunnerStatus$stuck;
+
+@override int get hashCode => 'Stuck'.hashCode;
+
+ }
+@immutable final class ActionsHostedRunnerStatus$Unknown extends ActionsHostedRunnerStatus {const ActionsHostedRunnerStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ActionsHostedRunnerStatus && other.value == value;
+    other is ActionsHostedRunnerStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ActionsHostedRunnerStatus($value)';
 
  }
 /// A Github-hosted hosted runner.

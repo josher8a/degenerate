@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCheckoutSessionsRequest (inline: SubscriptionData)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/subscription_data_invoice_settings.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_trial_settings.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_billing_mode.dart';@immutable final class SubscriptionDataProrationBehavior {const SubscriptionDataProrationBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/subscription_data_invoice_settings.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_trial_settings.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_billing_mode.dart';sealed class SubscriptionDataProrationBehavior {const SubscriptionDataProrationBehavior();
 
 factory SubscriptionDataProrationBehavior.fromJson(String json) { return switch (json) {
   'create_prorations' => createProrations,
   'none' => none,
-  _ => SubscriptionDataProrationBehavior._(json),
+  _ => SubscriptionDataProrationBehavior$Unknown(json),
 }; }
 
-static const SubscriptionDataProrationBehavior createProrations = SubscriptionDataProrationBehavior._('create_prorations');
+static const SubscriptionDataProrationBehavior createProrations = SubscriptionDataProrationBehavior$createProrations._();
 
-static const SubscriptionDataProrationBehavior none = SubscriptionDataProrationBehavior._('none');
+static const SubscriptionDataProrationBehavior none = SubscriptionDataProrationBehavior$none._();
 
 static const List<SubscriptionDataProrationBehavior> values = [createProrations, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SubscriptionDataProrationBehavior$Unknown; } 
+@override String toString() => 'SubscriptionDataProrationBehavior($value)';
+
+ }
+@immutable final class SubscriptionDataProrationBehavior$createProrations extends SubscriptionDataProrationBehavior {const SubscriptionDataProrationBehavior$createProrations._();
+
+@override String get value => 'create_prorations';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionDataProrationBehavior$createProrations;
+
+@override int get hashCode => 'create_prorations'.hashCode;
+
+ }
+@immutable final class SubscriptionDataProrationBehavior$none extends SubscriptionDataProrationBehavior {const SubscriptionDataProrationBehavior$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionDataProrationBehavior$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class SubscriptionDataProrationBehavior$Unknown extends SubscriptionDataProrationBehavior {const SubscriptionDataProrationBehavior$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SubscriptionDataProrationBehavior && other.value == value;
+    other is SubscriptionDataProrationBehavior$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SubscriptionDataProrationBehavior($value)';
 
  }
 /// A subset of parameters to be passed to subscription creation for Checkout Sessions in `subscription` mode.

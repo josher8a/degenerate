@@ -2,7 +2,7 @@
 // Source: #/components/schemas/DisputePaymentMethodDetailsCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of dispute opened. Different case types may have varying fees and financial impact.
-@immutable final class CaseType {const CaseType._(this.value);
+sealed class CaseType {const CaseType();
 
 factory CaseType.fromJson(String json) { return switch (json) {
   'block' => block,
@@ -10,23 +10,22 @@ factory CaseType.fromJson(String json) { return switch (json) {
   'compliance' => compliance,
   'inquiry' => inquiry,
   'resolution' => resolution,
-  _ => CaseType._(json),
+  _ => CaseType$Unknown(json),
 }; }
 
-static const CaseType block = CaseType._('block');
+static const CaseType block = CaseType$block._();
 
-static const CaseType chargeback = CaseType._('chargeback');
+static const CaseType chargeback = CaseType$chargeback._();
 
-static const CaseType compliance = CaseType._('compliance');
+static const CaseType compliance = CaseType$compliance._();
 
-static const CaseType inquiry = CaseType._('inquiry');
+static const CaseType inquiry = CaseType$inquiry._();
 
-static const CaseType resolution = CaseType._('resolution');
+static const CaseType resolution = CaseType$resolution._();
 
 static const List<CaseType> values = [block, chargeback, compliance, inquiry, resolution];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CaseType$Unknown; } 
+@override String toString() => 'CaseType($value)';
+
+ }
+@immutable final class CaseType$block extends CaseType {const CaseType$block._();
+
+@override String get value => 'block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CaseType$block;
+
+@override int get hashCode => 'block'.hashCode;
+
+ }
+@immutable final class CaseType$chargeback extends CaseType {const CaseType$chargeback._();
+
+@override String get value => 'chargeback';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CaseType$chargeback;
+
+@override int get hashCode => 'chargeback'.hashCode;
+
+ }
+@immutable final class CaseType$compliance extends CaseType {const CaseType$compliance._();
+
+@override String get value => 'compliance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CaseType$compliance;
+
+@override int get hashCode => 'compliance'.hashCode;
+
+ }
+@immutable final class CaseType$inquiry extends CaseType {const CaseType$inquiry._();
+
+@override String get value => 'inquiry';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CaseType$inquiry;
+
+@override int get hashCode => 'inquiry'.hashCode;
+
+ }
+@immutable final class CaseType$resolution extends CaseType {const CaseType$resolution._();
+
+@override String get value => 'resolution';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CaseType$resolution;
+
+@override int get hashCode => 'resolution'.hashCode;
+
+ }
+@immutable final class CaseType$Unknown extends CaseType {const CaseType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CaseType && other.value == value;
+    other is CaseType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CaseType($value)';
 
  }
 /// 

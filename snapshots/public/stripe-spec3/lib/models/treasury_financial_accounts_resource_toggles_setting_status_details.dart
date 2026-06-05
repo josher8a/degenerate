@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TreasuryFinancialAccountsResourceTogglesSettingStatusDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Represents the reason why the status is `pending` or `restricted`.
-@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._(this.value);
+sealed class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode();
 
 factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode.fromJson(String json) { return switch (json) {
   'activating' => activating,
@@ -14,31 +14,30 @@ factory TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode.fromJso
   'requirements_pending_verification' => requirementsPendingVerification,
   'restricted_by_platform' => restrictedByPlatform,
   'restricted_other' => restrictedOther,
-  _ => TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._(json),
+  _ => TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown(json),
 }; }
 
-static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode activating = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._('activating');
+static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode activating = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$activating._();
 
-static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode capabilityNotRequested = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._('capability_not_requested');
+static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode capabilityNotRequested = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$capabilityNotRequested._();
 
-static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode financialAccountClosed = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._('financial_account_closed');
+static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode financialAccountClosed = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$financialAccountClosed._();
 
-static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode rejectedOther = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._('rejected_other');
+static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode rejectedOther = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedOther._();
 
-static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode rejectedUnsupportedBusiness = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._('rejected_unsupported_business');
+static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode rejectedUnsupportedBusiness = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedUnsupportedBusiness._();
 
-static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode requirementsPastDue = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._('requirements_past_due');
+static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode requirementsPastDue = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPastDue._();
 
-static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode requirementsPendingVerification = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._('requirements_pending_verification');
+static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode requirementsPendingVerification = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPendingVerification._();
 
-static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode restrictedByPlatform = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._('restricted_by_platform');
+static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode restrictedByPlatform = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedByPlatform._();
 
-static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode restrictedOther = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode._('restricted_other');
+static const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode restrictedOther = TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedOther._();
 
 static const List<TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode> values = [activating, capabilityNotRequested, financialAccountClosed, rejectedOther, rejectedUnsupportedBusiness, requirementsPastDue, requirementsPendingVerification, restrictedByPlatform, restrictedOther];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -54,35 +53,120 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown; } 
 @override String toString() => 'TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode($value)';
 
  }
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$activating extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$activating._();
+
+@override String get value => 'activating';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$activating;
+
+@override int get hashCode => 'activating'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$capabilityNotRequested extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$capabilityNotRequested._();
+
+@override String get value => 'capability_not_requested';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$capabilityNotRequested;
+
+@override int get hashCode => 'capability_not_requested'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$financialAccountClosed extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$financialAccountClosed._();
+
+@override String get value => 'financial_account_closed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$financialAccountClosed;
+
+@override int get hashCode => 'financial_account_closed'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedOther extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedOther._();
+
+@override String get value => 'rejected_other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedOther;
+
+@override int get hashCode => 'rejected_other'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedUnsupportedBusiness extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedUnsupportedBusiness._();
+
+@override String get value => 'rejected_unsupported_business';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$rejectedUnsupportedBusiness;
+
+@override int get hashCode => 'rejected_unsupported_business'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPastDue extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPastDue._();
+
+@override String get value => 'requirements_past_due';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPastDue;
+
+@override int get hashCode => 'requirements_past_due'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPendingVerification extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPendingVerification._();
+
+@override String get value => 'requirements_pending_verification';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$requirementsPendingVerification;
+
+@override int get hashCode => 'requirements_pending_verification'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedByPlatform extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedByPlatform._();
+
+@override String get value => 'restricted_by_platform';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedByPlatform;
+
+@override int get hashCode => 'restricted_by_platform'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedOther extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedOther._();
+
+@override String get value => 'restricted_other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$restrictedOther;
+
+@override int get hashCode => 'restricted_other'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown extends TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode {const TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryFinancialAccountsResourceTogglesSettingStatusDetailsCode$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Represents what the user should do, if anything, to activate the Feature.
-@immutable final class Resolution {const Resolution._(this.value);
+sealed class Resolution {const Resolution();
 
 factory Resolution.fromJson(String json) { return switch (json) {
   'contact_stripe' => contactStripe,
   'provide_information' => provideInformation,
   'remove_restriction' => removeRestriction,
-  _ => Resolution._(json),
+  _ => Resolution$Unknown(json),
 }; }
 
-static const Resolution contactStripe = Resolution._('contact_stripe');
+static const Resolution contactStripe = Resolution$contactStripe._();
 
-static const Resolution provideInformation = Resolution._('provide_information');
+static const Resolution provideInformation = Resolution$provideInformation._();
 
-static const Resolution removeRestriction = Resolution._('remove_restriction');
+static const Resolution removeRestriction = Resolution$removeRestriction._();
 
 static const List<Resolution> values = [contactStripe, provideInformation, removeRestriction];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -92,32 +176,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Resolution && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Resolution$Unknown; } 
 @override String toString() => 'Resolution($value)';
 
  }
+@immutable final class Resolution$contactStripe extends Resolution {const Resolution$contactStripe._();
+
+@override String get value => 'contact_stripe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Resolution$contactStripe;
+
+@override int get hashCode => 'contact_stripe'.hashCode;
+
+ }
+@immutable final class Resolution$provideInformation extends Resolution {const Resolution$provideInformation._();
+
+@override String get value => 'provide_information';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Resolution$provideInformation;
+
+@override int get hashCode => 'provide_information'.hashCode;
+
+ }
+@immutable final class Resolution$removeRestriction extends Resolution {const Resolution$removeRestriction._();
+
+@override String get value => 'remove_restriction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Resolution$removeRestriction;
+
+@override int get hashCode => 'remove_restriction'.hashCode;
+
+ }
+@immutable final class Resolution$Unknown extends Resolution {const Resolution$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Resolution$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The `platform_restrictions` that are restricting this Feature.
-@immutable final class Restriction {const Restriction._(this.value);
+sealed class Restriction {const Restriction();
 
 factory Restriction.fromJson(String json) { return switch (json) {
   'inbound_flows' => inboundFlows,
   'outbound_flows' => outboundFlows,
-  _ => Restriction._(json),
+  _ => Restriction$Unknown(json),
 }; }
 
-static const Restriction inboundFlows = Restriction._('inbound_flows');
+static const Restriction inboundFlows = Restriction$inboundFlows._();
 
-static const Restriction outboundFlows = Restriction._('outbound_flows');
+static const Restriction outboundFlows = Restriction$outboundFlows._();
 
 static const List<Restriction> values = [inboundFlows, outboundFlows];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -126,13 +241,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Restriction$Unknown; } 
+@override String toString() => 'Restriction($value)';
+
+ }
+@immutable final class Restriction$inboundFlows extends Restriction {const Restriction$inboundFlows._();
+
+@override String get value => 'inbound_flows';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Restriction$inboundFlows;
+
+@override int get hashCode => 'inbound_flows'.hashCode;
+
+ }
+@immutable final class Restriction$outboundFlows extends Restriction {const Restriction$outboundFlows._();
+
+@override String get value => 'outbound_flows';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Restriction$outboundFlows;
+
+@override int get hashCode => 'outbound_flows'.hashCode;
+
+ }
+@immutable final class Restriction$Unknown extends Restriction {const Restriction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Restriction && other.value == value;
+    other is Restriction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Restriction($value)';
 
  }
 /// Additional details on the FinancialAccount Features information.

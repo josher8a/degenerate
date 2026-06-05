@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TreasuryFinancialAccountsResourceFinancialAddress
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_aba_record.dart';@immutable final class TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks {const TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_aba_record.dart';sealed class TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks {const TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks();
 
 factory TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks.fromJson(String json) { return switch (json) {
   'ach' => ach,
   'us_domestic_wire' => usDomesticWire,
-  _ => TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks._(json),
+  _ => TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$Unknown(json),
 }; }
 
-static const TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks ach = TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks._('ach');
+static const TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks ach = TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$ach._();
 
-static const TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks usDomesticWire = TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks._('us_domestic_wire');
+static const TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks usDomesticWire = TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$usDomesticWire._();
 
 static const List<TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks> values = [ach, usDomesticWire];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,29 +24,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$Unknown; } 
 @override String toString() => 'TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks($value)';
 
  }
+@immutable final class TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$ach extends TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks {const TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$ach._();
+
+@override String get value => 'ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$ach;
+
+@override int get hashCode => 'ach'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$usDomesticWire extends TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks {const TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$usDomesticWire._();
+
+@override String get value => 'us_domestic_wire';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$usDomesticWire;
+
+@override int get hashCode => 'us_domestic_wire'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$Unknown extends TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks {const TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryFinancialAccountsResourceFinancialAddressSupportedNetworks$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The type of financial address
-@immutable final class TreasuryFinancialAccountsResourceFinancialAddressType {const TreasuryFinancialAccountsResourceFinancialAddressType._(this.value);
+sealed class TreasuryFinancialAccountsResourceFinancialAddressType {const TreasuryFinancialAccountsResourceFinancialAddressType();
 
 factory TreasuryFinancialAccountsResourceFinancialAddressType.fromJson(String json) { return switch (json) {
   'aba' => aba,
-  _ => TreasuryFinancialAccountsResourceFinancialAddressType._(json),
+  _ => TreasuryFinancialAccountsResourceFinancialAddressType$Unknown(json),
 }; }
 
-static const TreasuryFinancialAccountsResourceFinancialAddressType aba = TreasuryFinancialAccountsResourceFinancialAddressType._('aba');
+static const TreasuryFinancialAccountsResourceFinancialAddressType aba = TreasuryFinancialAccountsResourceFinancialAddressType$aba._();
 
 static const List<TreasuryFinancialAccountsResourceFinancialAddressType> values = [aba];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -55,13 +76,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TreasuryFinancialAccountsResourceFinancialAddressType$Unknown; } 
+@override String toString() => 'TreasuryFinancialAccountsResourceFinancialAddressType($value)';
+
+ }
+@immutable final class TreasuryFinancialAccountsResourceFinancialAddressType$aba extends TreasuryFinancialAccountsResourceFinancialAddressType {const TreasuryFinancialAccountsResourceFinancialAddressType$aba._();
+
+@override String get value => 'aba';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourceFinancialAddressType$aba;
+
+@override int get hashCode => 'aba'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourceFinancialAddressType$Unknown extends TreasuryFinancialAccountsResourceFinancialAddressType {const TreasuryFinancialAccountsResourceFinancialAddressType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryFinancialAccountsResourceFinancialAddressType && other.value == value;
+    other is TreasuryFinancialAccountsResourceFinancialAddressType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TreasuryFinancialAccountsResourceFinancialAddressType($value)';
 
  }
 /// FinancialAddresses contain identifying information that resolves to a FinancialAccount.

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SecurityAdvisoriesListGlobalAdvisoriesDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityAdvisoriesListGlobalAdvisoriesDirection {const SecurityAdvisoriesListGlobalAdvisoriesDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SecurityAdvisoriesListGlobalAdvisoriesDirection {const SecurityAdvisoriesListGlobalAdvisoriesDirection();
 
 factory SecurityAdvisoriesListGlobalAdvisoriesDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => SecurityAdvisoriesListGlobalAdvisoriesDirection._(json),
+  _ => SecurityAdvisoriesListGlobalAdvisoriesDirection$Unknown(json),
 }; }
 
-static const SecurityAdvisoriesListGlobalAdvisoriesDirection asc = SecurityAdvisoriesListGlobalAdvisoriesDirection._('asc');
+static const SecurityAdvisoriesListGlobalAdvisoriesDirection asc = SecurityAdvisoriesListGlobalAdvisoriesDirection$asc._();
 
-static const SecurityAdvisoriesListGlobalAdvisoriesDirection desc = SecurityAdvisoriesListGlobalAdvisoriesDirection._('desc');
+static const SecurityAdvisoriesListGlobalAdvisoriesDirection desc = SecurityAdvisoriesListGlobalAdvisoriesDirection$desc._();
 
 static const List<SecurityAdvisoriesListGlobalAdvisoriesDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SecurityAdvisoriesListGlobalAdvisoriesDirection$Unknown; } 
+@override String toString() => 'SecurityAdvisoriesListGlobalAdvisoriesDirection($value)';
+
+ }
+@immutable final class SecurityAdvisoriesListGlobalAdvisoriesDirection$asc extends SecurityAdvisoriesListGlobalAdvisoriesDirection {const SecurityAdvisoriesListGlobalAdvisoriesDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecurityAdvisoriesListGlobalAdvisoriesDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class SecurityAdvisoriesListGlobalAdvisoriesDirection$desc extends SecurityAdvisoriesListGlobalAdvisoriesDirection {const SecurityAdvisoriesListGlobalAdvisoriesDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecurityAdvisoriesListGlobalAdvisoriesDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class SecurityAdvisoriesListGlobalAdvisoriesDirection$Unknown extends SecurityAdvisoriesListGlobalAdvisoriesDirection {const SecurityAdvisoriesListGlobalAdvisoriesDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SecurityAdvisoriesListGlobalAdvisoriesDirection && other.value == value;
+    other is SecurityAdvisoriesListGlobalAdvisoriesDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SecurityAdvisoriesListGlobalAdvisoriesDirection($value)';
 
  }

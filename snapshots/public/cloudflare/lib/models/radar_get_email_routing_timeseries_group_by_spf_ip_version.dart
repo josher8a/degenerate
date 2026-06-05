@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion {const RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion {const RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion();
 
 factory RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,
   'IPv6' => iPv6,
-  _ => RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion._(json),
+  _ => RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion$Unknown(json),
 }; }
 
-static const RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion iPv4 = RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion._('IPv4');
+static const RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion iPv4 = RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion$iPv4._();
 
-static const RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion iPv6 = RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion._('IPv6');
+static const RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion iPv6 = RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion$iPv6._();
 
 static const List<RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion> values = [iPv4, iPv6];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion$Unknown; } 
+@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion($value)';
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion$iPv4 extends RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion {const RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion$iPv4._();
+
+@override String get value => 'IPv4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion$iPv4;
+
+@override int get hashCode => 'IPv4'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion$iPv6 extends RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion {const RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion$iPv6._();
+
+@override String get value => 'IPv6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion$iPv6;
+
+@override int get hashCode => 'IPv6'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion$Unknown extends RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion {const RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion && other.value == value;
+    other is RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupBySpfIpVersion($value)';
 
  }

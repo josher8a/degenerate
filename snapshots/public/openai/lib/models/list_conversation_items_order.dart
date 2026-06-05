@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ListConversationItemsOrder
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListConversationItemsOrder {const ListConversationItemsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ListConversationItemsOrder {const ListConversationItemsOrder();
 
 factory ListConversationItemsOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => ListConversationItemsOrder._(json),
+  _ => ListConversationItemsOrder$Unknown(json),
 }; }
 
-static const ListConversationItemsOrder asc = ListConversationItemsOrder._('asc');
+static const ListConversationItemsOrder asc = ListConversationItemsOrder$asc._();
 
-static const ListConversationItemsOrder desc = ListConversationItemsOrder._('desc');
+static const ListConversationItemsOrder desc = ListConversationItemsOrder$desc._();
 
 static const List<ListConversationItemsOrder> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ListConversationItemsOrder$Unknown; } 
+@override String toString() => 'ListConversationItemsOrder($value)';
+
+ }
+@immutable final class ListConversationItemsOrder$asc extends ListConversationItemsOrder {const ListConversationItemsOrder$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListConversationItemsOrder$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class ListConversationItemsOrder$desc extends ListConversationItemsOrder {const ListConversationItemsOrder$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListConversationItemsOrder$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class ListConversationItemsOrder$Unknown extends ListConversationItemsOrder {const ListConversationItemsOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ListConversationItemsOrder && other.value == value;
+    other is ListConversationItemsOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ListConversationItemsOrder($value)';
 
  }

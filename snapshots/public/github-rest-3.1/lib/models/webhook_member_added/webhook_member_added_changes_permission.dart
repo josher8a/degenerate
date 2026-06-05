@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookMemberAdded (inline: Changes > Permission)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PermissionTo {const PermissionTo._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PermissionTo {const PermissionTo();
 
 factory PermissionTo.fromJson(String json) { return switch (json) {
   'write' => write,
   'admin' => admin,
   'read' => read,
-  _ => PermissionTo._(json),
+  _ => PermissionTo$Unknown(json),
 }; }
 
-static const PermissionTo write = PermissionTo._('write');
+static const PermissionTo write = PermissionTo$write._();
 
-static const PermissionTo admin = PermissionTo._('admin');
+static const PermissionTo admin = PermissionTo$admin._();
 
-static const PermissionTo read = PermissionTo._('read');
+static const PermissionTo read = PermissionTo$read._();
 
 static const List<PermissionTo> values = [write, admin, read];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PermissionTo$Unknown; } 
+@override String toString() => 'PermissionTo($value)';
+
+ }
+@immutable final class PermissionTo$write extends PermissionTo {const PermissionTo$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PermissionTo$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class PermissionTo$admin extends PermissionTo {const PermissionTo$admin._();
+
+@override String get value => 'admin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PermissionTo$admin;
+
+@override int get hashCode => 'admin'.hashCode;
+
+ }
+@immutable final class PermissionTo$read extends PermissionTo {const PermissionTo$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PermissionTo$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class PermissionTo$Unknown extends PermissionTo {const PermissionTo$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PermissionTo && other.value == value;
+    other is PermissionTo$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PermissionTo($value)';
 
  }
 /// This field is included for legacy purposes; use the `role_name` field instead. The `maintain`

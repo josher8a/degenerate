@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PaymentLink
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_line_items.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_billing_address_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_customer_creation.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_payment_method_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_payment_method_types.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_submit_type.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_after_completion.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_automatic_tax.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_consent_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_fields.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_custom_text.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_invoice_creation.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_name_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_optional_item.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_payment_intent_data.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_phone_number_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_restrictions.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_shipping_address_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_shipping_option.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_subscription_data.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_tax_id_collection.dart';import 'package:pub_stripe_spec3/models/payment_links_resource_transfer_data.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class PaymentLinkObject {const PaymentLinkObject._(this.value);
+sealed class PaymentLinkObject {const PaymentLinkObject();
 
 factory PaymentLinkObject.fromJson(String json) { return switch (json) {
   'payment_link' => paymentLink,
-  _ => PaymentLinkObject._(json),
+  _ => PaymentLinkObject$Unknown(json),
 }; }
 
-static const PaymentLinkObject paymentLink = PaymentLinkObject._('payment_link');
+static const PaymentLinkObject paymentLink = PaymentLinkObject$paymentLink._();
 
 static const List<PaymentLinkObject> values = [paymentLink];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentLinkObject$Unknown; } 
+@override String toString() => 'PaymentLinkObject($value)';
+
+ }
+@immutable final class PaymentLinkObject$paymentLink extends PaymentLinkObject {const PaymentLinkObject$paymentLink._();
+
+@override String get value => 'payment_link';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkObject$paymentLink;
+
+@override int get hashCode => 'payment_link'.hashCode;
+
+ }
+@immutable final class PaymentLinkObject$Unknown extends PaymentLinkObject {const PaymentLinkObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentLinkObject && other.value == value;
+    other is PaymentLinkObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentLinkObject($value)';
 
  }
 /// A payment link is a shareable URL that will take your customers to a hosted payment page. A payment link can be shared and used multiple times.

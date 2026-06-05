@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DependabotListAlertsForEnterpriseDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependabotListAlertsForEnterpriseDirection {const DependabotListAlertsForEnterpriseDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DependabotListAlertsForEnterpriseDirection {const DependabotListAlertsForEnterpriseDirection();
 
 factory DependabotListAlertsForEnterpriseDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => DependabotListAlertsForEnterpriseDirection._(json),
+  _ => DependabotListAlertsForEnterpriseDirection$Unknown(json),
 }; }
 
-static const DependabotListAlertsForEnterpriseDirection asc = DependabotListAlertsForEnterpriseDirection._('asc');
+static const DependabotListAlertsForEnterpriseDirection asc = DependabotListAlertsForEnterpriseDirection$asc._();
 
-static const DependabotListAlertsForEnterpriseDirection desc = DependabotListAlertsForEnterpriseDirection._('desc');
+static const DependabotListAlertsForEnterpriseDirection desc = DependabotListAlertsForEnterpriseDirection$desc._();
 
 static const List<DependabotListAlertsForEnterpriseDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DependabotListAlertsForEnterpriseDirection$Unknown; } 
+@override String toString() => 'DependabotListAlertsForEnterpriseDirection($value)';
+
+ }
+@immutable final class DependabotListAlertsForEnterpriseDirection$asc extends DependabotListAlertsForEnterpriseDirection {const DependabotListAlertsForEnterpriseDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotListAlertsForEnterpriseDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class DependabotListAlertsForEnterpriseDirection$desc extends DependabotListAlertsForEnterpriseDirection {const DependabotListAlertsForEnterpriseDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotListAlertsForEnterpriseDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class DependabotListAlertsForEnterpriseDirection$Unknown extends DependabotListAlertsForEnterpriseDirection {const DependabotListAlertsForEnterpriseDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DependabotListAlertsForEnterpriseDirection && other.value == value;
+    other is DependabotListAlertsForEnterpriseDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DependabotListAlertsForEnterpriseDirection($value)';
 
  }

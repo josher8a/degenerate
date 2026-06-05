@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PostCreditNotesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_request/post_credit_notes_request_lines.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_request/post_credit_notes_request_refunds.dart';import 'package:pub_stripe_spec3/models/post_credit_notes_request/post_credit_notes_request_shipping_cost.dart';/// Type of email to send to the customer, one of `credit_note` or `none` and the default is `credit_note`.
-@immutable final class EmailType {const EmailType._(this.value);
+sealed class EmailType {const EmailType();
 
 factory EmailType.fromJson(String json) { return switch (json) {
   'credit_note' => creditNote,
   'none' => none,
-  _ => EmailType._(json),
+  _ => EmailType$Unknown(json),
 }; }
 
-static const EmailType creditNote = EmailType._('credit_note');
+static const EmailType creditNote = EmailType$creditNote._();
 
-static const EmailType none = EmailType._('none');
+static const EmailType none = EmailType$none._();
 
 static const List<EmailType> values = [creditNote, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,38 +25,60 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is EmailType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is EmailType$Unknown; } 
 @override String toString() => 'EmailType($value)';
 
  }
+@immutable final class EmailType$creditNote extends EmailType {const EmailType$creditNote._();
+
+@override String get value => 'credit_note';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailType$creditNote;
+
+@override int get hashCode => 'credit_note'.hashCode;
+
+ }
+@immutable final class EmailType$none extends EmailType {const EmailType$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailType$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class EmailType$Unknown extends EmailType {const EmailType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EmailType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Reason for issuing this credit note, one of `duplicate`, `fraudulent`, `order_change`, or `product_unsatisfactory`
-@immutable final class PostCreditNotesRequestReason {const PostCreditNotesRequestReason._(this.value);
+sealed class PostCreditNotesRequestReason {const PostCreditNotesRequestReason();
 
 factory PostCreditNotesRequestReason.fromJson(String json) { return switch (json) {
   'duplicate' => duplicate,
   'fraudulent' => fraudulent,
   'order_change' => orderChange,
   'product_unsatisfactory' => productUnsatisfactory,
-  _ => PostCreditNotesRequestReason._(json),
+  _ => PostCreditNotesRequestReason$Unknown(json),
 }; }
 
-static const PostCreditNotesRequestReason duplicate = PostCreditNotesRequestReason._('duplicate');
+static const PostCreditNotesRequestReason duplicate = PostCreditNotesRequestReason$duplicate._();
 
-static const PostCreditNotesRequestReason fraudulent = PostCreditNotesRequestReason._('fraudulent');
+static const PostCreditNotesRequestReason fraudulent = PostCreditNotesRequestReason$fraudulent._();
 
-static const PostCreditNotesRequestReason orderChange = PostCreditNotesRequestReason._('order_change');
+static const PostCreditNotesRequestReason orderChange = PostCreditNotesRequestReason$orderChange._();
 
-static const PostCreditNotesRequestReason productUnsatisfactory = PostCreditNotesRequestReason._('product_unsatisfactory');
+static const PostCreditNotesRequestReason productUnsatisfactory = PostCreditNotesRequestReason$productUnsatisfactory._();
 
 static const List<PostCreditNotesRequestReason> values = [duplicate, fraudulent, orderChange, productUnsatisfactory];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,13 +89,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostCreditNotesRequestReason$Unknown; } 
+@override String toString() => 'PostCreditNotesRequestReason($value)';
+
+ }
+@immutable final class PostCreditNotesRequestReason$duplicate extends PostCreditNotesRequestReason {const PostCreditNotesRequestReason$duplicate._();
+
+@override String get value => 'duplicate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCreditNotesRequestReason$duplicate;
+
+@override int get hashCode => 'duplicate'.hashCode;
+
+ }
+@immutable final class PostCreditNotesRequestReason$fraudulent extends PostCreditNotesRequestReason {const PostCreditNotesRequestReason$fraudulent._();
+
+@override String get value => 'fraudulent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCreditNotesRequestReason$fraudulent;
+
+@override int get hashCode => 'fraudulent'.hashCode;
+
+ }
+@immutable final class PostCreditNotesRequestReason$orderChange extends PostCreditNotesRequestReason {const PostCreditNotesRequestReason$orderChange._();
+
+@override String get value => 'order_change';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCreditNotesRequestReason$orderChange;
+
+@override int get hashCode => 'order_change'.hashCode;
+
+ }
+@immutable final class PostCreditNotesRequestReason$productUnsatisfactory extends PostCreditNotesRequestReason {const PostCreditNotesRequestReason$productUnsatisfactory._();
+
+@override String get value => 'product_unsatisfactory';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCreditNotesRequestReason$productUnsatisfactory;
+
+@override int get hashCode => 'product_unsatisfactory'.hashCode;
+
+ }
+@immutable final class PostCreditNotesRequestReason$Unknown extends PostCreditNotesRequestReason {const PostCreditNotesRequestReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostCreditNotesRequestReason && other.value == value;
+    other is PostCreditNotesRequestReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostCreditNotesRequestReason($value)';
 
  }
 @immutable final class PostCreditNotesRequest {const PostCreditNotesRequest({required this.invoice, this.amount, this.creditAmount, this.effectiveAt, this.emailType, this.expand, this.lines, this.memo, this.metadata, this.outOfBandAmount, this.reason, this.refundAmount, this.refunds, this.shippingCost, });

@@ -2,7 +2,7 @@
 // Source: #/components/schemas/AbuseReportsMitigationType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of mitigation
-@immutable final class AbuseReportsMitigationType {const AbuseReportsMitigationType._(this.value);
+sealed class AbuseReportsMitigationType {const AbuseReportsMitigationType();
 
 factory AbuseReportsMitigationType.fromJson(String json) { return switch (json) {
   'legal_block' => legalBlock,
@@ -11,25 +11,24 @@ factory AbuseReportsMitigationType.fromJson(String json) { return switch (json) 
   'rate_limit_cache' => rateLimitCache,
   'account_suspend' => accountSuspend,
   'redirect_video_stream' => redirectVideoStream,
-  _ => AbuseReportsMitigationType._(json),
+  _ => AbuseReportsMitigationType$Unknown(json),
 }; }
 
-static const AbuseReportsMitigationType legalBlock = AbuseReportsMitigationType._('legal_block');
+static const AbuseReportsMitigationType legalBlock = AbuseReportsMitigationType$legalBlock._();
 
-static const AbuseReportsMitigationType phishingInterstitial = AbuseReportsMitigationType._('phishing_interstitial');
+static const AbuseReportsMitigationType phishingInterstitial = AbuseReportsMitigationType$phishingInterstitial._();
 
-static const AbuseReportsMitigationType networkBlock = AbuseReportsMitigationType._('network_block');
+static const AbuseReportsMitigationType networkBlock = AbuseReportsMitigationType$networkBlock._();
 
-static const AbuseReportsMitigationType rateLimitCache = AbuseReportsMitigationType._('rate_limit_cache');
+static const AbuseReportsMitigationType rateLimitCache = AbuseReportsMitigationType$rateLimitCache._();
 
-static const AbuseReportsMitigationType accountSuspend = AbuseReportsMitigationType._('account_suspend');
+static const AbuseReportsMitigationType accountSuspend = AbuseReportsMitigationType$accountSuspend._();
 
-static const AbuseReportsMitigationType redirectVideoStream = AbuseReportsMitigationType._('redirect_video_stream');
+static const AbuseReportsMitigationType redirectVideoStream = AbuseReportsMitigationType$redirectVideoStream._();
 
 static const List<AbuseReportsMitigationType> values = [legalBlock, phishingInterstitial, networkBlock, rateLimitCache, accountSuspend, redirectVideoStream];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,12 +41,71 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AbuseReportsMitigationType$Unknown; } 
+@override String toString() => 'AbuseReportsMitigationType($value)';
+
+ }
+@immutable final class AbuseReportsMitigationType$legalBlock extends AbuseReportsMitigationType {const AbuseReportsMitigationType$legalBlock._();
+
+@override String get value => 'legal_block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AbuseReportsMitigationType$legalBlock;
+
+@override int get hashCode => 'legal_block'.hashCode;
+
+ }
+@immutable final class AbuseReportsMitigationType$phishingInterstitial extends AbuseReportsMitigationType {const AbuseReportsMitigationType$phishingInterstitial._();
+
+@override String get value => 'phishing_interstitial';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AbuseReportsMitigationType$phishingInterstitial;
+
+@override int get hashCode => 'phishing_interstitial'.hashCode;
+
+ }
+@immutable final class AbuseReportsMitigationType$networkBlock extends AbuseReportsMitigationType {const AbuseReportsMitigationType$networkBlock._();
+
+@override String get value => 'network_block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AbuseReportsMitigationType$networkBlock;
+
+@override int get hashCode => 'network_block'.hashCode;
+
+ }
+@immutable final class AbuseReportsMitigationType$rateLimitCache extends AbuseReportsMitigationType {const AbuseReportsMitigationType$rateLimitCache._();
+
+@override String get value => 'rate_limit_cache';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AbuseReportsMitigationType$rateLimitCache;
+
+@override int get hashCode => 'rate_limit_cache'.hashCode;
+
+ }
+@immutable final class AbuseReportsMitigationType$accountSuspend extends AbuseReportsMitigationType {const AbuseReportsMitigationType$accountSuspend._();
+
+@override String get value => 'account_suspend';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AbuseReportsMitigationType$accountSuspend;
+
+@override int get hashCode => 'account_suspend'.hashCode;
+
+ }
+@immutable final class AbuseReportsMitigationType$redirectVideoStream extends AbuseReportsMitigationType {const AbuseReportsMitigationType$redirectVideoStream._();
+
+@override String get value => 'redirect_video_stream';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AbuseReportsMitigationType$redirectVideoStream;
+
+@override int get hashCode => 'redirect_video_stream'.hashCode;
+
+ }
+@immutable final class AbuseReportsMitigationType$Unknown extends AbuseReportsMitigationType {const AbuseReportsMitigationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AbuseReportsMitigationType && other.value == value;
+    other is AbuseReportsMitigationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AbuseReportsMitigationType($value)';
 
  }

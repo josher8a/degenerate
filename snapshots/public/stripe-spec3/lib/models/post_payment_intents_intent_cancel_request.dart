@@ -2,28 +2,27 @@
 // Source: #/components/schemas/PostPaymentIntentsIntentCancelRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason for canceling this PaymentIntent. Possible values are: `duplicate`, `fraudulent`, `requested_by_customer`, or `abandoned`
-@immutable final class PostPaymentIntentsIntentCancelRequestCancellationReason {const PostPaymentIntentsIntentCancelRequestCancellationReason._(this.value);
+sealed class PostPaymentIntentsIntentCancelRequestCancellationReason {const PostPaymentIntentsIntentCancelRequestCancellationReason();
 
 factory PostPaymentIntentsIntentCancelRequestCancellationReason.fromJson(String json) { return switch (json) {
   'abandoned' => abandoned,
   'duplicate' => duplicate,
   'fraudulent' => fraudulent,
   'requested_by_customer' => requestedByCustomer,
-  _ => PostPaymentIntentsIntentCancelRequestCancellationReason._(json),
+  _ => PostPaymentIntentsIntentCancelRequestCancellationReason$Unknown(json),
 }; }
 
-static const PostPaymentIntentsIntentCancelRequestCancellationReason abandoned = PostPaymentIntentsIntentCancelRequestCancellationReason._('abandoned');
+static const PostPaymentIntentsIntentCancelRequestCancellationReason abandoned = PostPaymentIntentsIntentCancelRequestCancellationReason$abandoned._();
 
-static const PostPaymentIntentsIntentCancelRequestCancellationReason duplicate = PostPaymentIntentsIntentCancelRequestCancellationReason._('duplicate');
+static const PostPaymentIntentsIntentCancelRequestCancellationReason duplicate = PostPaymentIntentsIntentCancelRequestCancellationReason$duplicate._();
 
-static const PostPaymentIntentsIntentCancelRequestCancellationReason fraudulent = PostPaymentIntentsIntentCancelRequestCancellationReason._('fraudulent');
+static const PostPaymentIntentsIntentCancelRequestCancellationReason fraudulent = PostPaymentIntentsIntentCancelRequestCancellationReason$fraudulent._();
 
-static const PostPaymentIntentsIntentCancelRequestCancellationReason requestedByCustomer = PostPaymentIntentsIntentCancelRequestCancellationReason._('requested_by_customer');
+static const PostPaymentIntentsIntentCancelRequestCancellationReason requestedByCustomer = PostPaymentIntentsIntentCancelRequestCancellationReason$requestedByCustomer._();
 
 static const List<PostPaymentIntentsIntentCancelRequestCancellationReason> values = [abandoned, duplicate, fraudulent, requestedByCustomer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostPaymentIntentsIntentCancelRequestCancellationReason$Unknown; } 
+@override String toString() => 'PostPaymentIntentsIntentCancelRequestCancellationReason($value)';
+
+ }
+@immutable final class PostPaymentIntentsIntentCancelRequestCancellationReason$abandoned extends PostPaymentIntentsIntentCancelRequestCancellationReason {const PostPaymentIntentsIntentCancelRequestCancellationReason$abandoned._();
+
+@override String get value => 'abandoned';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentIntentsIntentCancelRequestCancellationReason$abandoned;
+
+@override int get hashCode => 'abandoned'.hashCode;
+
+ }
+@immutable final class PostPaymentIntentsIntentCancelRequestCancellationReason$duplicate extends PostPaymentIntentsIntentCancelRequestCancellationReason {const PostPaymentIntentsIntentCancelRequestCancellationReason$duplicate._();
+
+@override String get value => 'duplicate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentIntentsIntentCancelRequestCancellationReason$duplicate;
+
+@override int get hashCode => 'duplicate'.hashCode;
+
+ }
+@immutable final class PostPaymentIntentsIntentCancelRequestCancellationReason$fraudulent extends PostPaymentIntentsIntentCancelRequestCancellationReason {const PostPaymentIntentsIntentCancelRequestCancellationReason$fraudulent._();
+
+@override String get value => 'fraudulent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentIntentsIntentCancelRequestCancellationReason$fraudulent;
+
+@override int get hashCode => 'fraudulent'.hashCode;
+
+ }
+@immutable final class PostPaymentIntentsIntentCancelRequestCancellationReason$requestedByCustomer extends PostPaymentIntentsIntentCancelRequestCancellationReason {const PostPaymentIntentsIntentCancelRequestCancellationReason$requestedByCustomer._();
+
+@override String get value => 'requested_by_customer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentIntentsIntentCancelRequestCancellationReason$requestedByCustomer;
+
+@override int get hashCode => 'requested_by_customer'.hashCode;
+
+ }
+@immutable final class PostPaymentIntentsIntentCancelRequestCancellationReason$Unknown extends PostPaymentIntentsIntentCancelRequestCancellationReason {const PostPaymentIntentsIntentCancelRequestCancellationReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostPaymentIntentsIntentCancelRequestCancellationReason && other.value == value;
+    other is PostPaymentIntentsIntentCancelRequestCancellationReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostPaymentIntentsIntentCancelRequestCancellationReason($value)';
 
  }
 @immutable final class PostPaymentIntentsIntentCancelRequest {const PostPaymentIntentsIntentCancelRequest({this.cancellationReason, this.expand, });

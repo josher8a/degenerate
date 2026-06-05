@@ -2,22 +2,21 @@
 // Source: #/components/schemas/IssuingCardShipping (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Packaging options.
-@immutable final class IssuingCardShippingType {const IssuingCardShippingType._(this.value);
+sealed class IssuingCardShippingType {const IssuingCardShippingType();
 
 factory IssuingCardShippingType.fromJson(String json) { return switch (json) {
   'bulk' => bulk,
   'individual' => individual,
-  _ => IssuingCardShippingType._(json),
+  _ => IssuingCardShippingType$Unknown(json),
 }; }
 
-static const IssuingCardShippingType bulk = IssuingCardShippingType._('bulk');
+static const IssuingCardShippingType bulk = IssuingCardShippingType$bulk._();
 
-static const IssuingCardShippingType individual = IssuingCardShippingType._('individual');
+static const IssuingCardShippingType individual = IssuingCardShippingType$individual._();
 
 static const List<IssuingCardShippingType> values = [bulk, individual];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingCardShippingType$Unknown; } 
+@override String toString() => 'IssuingCardShippingType($value)';
+
+ }
+@immutable final class IssuingCardShippingType$bulk extends IssuingCardShippingType {const IssuingCardShippingType$bulk._();
+
+@override String get value => 'bulk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardShippingType$bulk;
+
+@override int get hashCode => 'bulk'.hashCode;
+
+ }
+@immutable final class IssuingCardShippingType$individual extends IssuingCardShippingType {const IssuingCardShippingType$individual._();
+
+@override String get value => 'individual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardShippingType$individual;
+
+@override int get hashCode => 'individual'.hashCode;
+
+ }
+@immutable final class IssuingCardShippingType$Unknown extends IssuingCardShippingType {const IssuingCardShippingType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingCardShippingType && other.value == value;
+    other is IssuingCardShippingType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingCardShippingType($value)';
 
  }

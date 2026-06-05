@@ -2,7 +2,7 @@
 // Source: #/components/schemas/AccessSchemasFeatureAppProps
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_apps_components_schemas_session_duration.dart';import 'package:pub_cloudflare/models/access_components_schemas_domain.dart';import 'package:pub_cloudflare/models/access_schemas_auto_redirect_to_identity.dart';/// The application type.
-@immutable final class AccessComponentsSchemasType {const AccessComponentsSchemasType._(this.value);
+sealed class AccessComponentsSchemasType {const AccessComponentsSchemasType();
 
 factory AccessComponentsSchemasType.fromJson(String json) { return switch (json) {
   'self_hosted' => selfHosted,
@@ -14,31 +14,30 @@ factory AccessComponentsSchemasType.fromJson(String json) { return switch (json)
   'biso' => biso,
   'bookmark' => bookmark,
   'dash_sso' => dashSso,
-  _ => AccessComponentsSchemasType._(json),
+  _ => AccessComponentsSchemasType$Unknown(json),
 }; }
 
-static const AccessComponentsSchemasType selfHosted = AccessComponentsSchemasType._('self_hosted');
+static const AccessComponentsSchemasType selfHosted = AccessComponentsSchemasType$selfHosted._();
 
-static const AccessComponentsSchemasType saas = AccessComponentsSchemasType._('saas');
+static const AccessComponentsSchemasType saas = AccessComponentsSchemasType$saas._();
 
-static const AccessComponentsSchemasType ssh = AccessComponentsSchemasType._('ssh');
+static const AccessComponentsSchemasType ssh = AccessComponentsSchemasType$ssh._();
 
-static const AccessComponentsSchemasType vnc = AccessComponentsSchemasType._('vnc');
+static const AccessComponentsSchemasType vnc = AccessComponentsSchemasType$vnc._();
 
-static const AccessComponentsSchemasType appLauncher = AccessComponentsSchemasType._('app_launcher');
+static const AccessComponentsSchemasType appLauncher = AccessComponentsSchemasType$appLauncher._();
 
-static const AccessComponentsSchemasType warp = AccessComponentsSchemasType._('warp');
+static const AccessComponentsSchemasType warp = AccessComponentsSchemasType$warp._();
 
-static const AccessComponentsSchemasType biso = AccessComponentsSchemasType._('biso');
+static const AccessComponentsSchemasType biso = AccessComponentsSchemasType$biso._();
 
-static const AccessComponentsSchemasType bookmark = AccessComponentsSchemasType._('bookmark');
+static const AccessComponentsSchemasType bookmark = AccessComponentsSchemasType$bookmark._();
 
-static const AccessComponentsSchemasType dashSso = AccessComponentsSchemasType._('dash_sso');
+static const AccessComponentsSchemasType dashSso = AccessComponentsSchemasType$dashSso._();
 
 static const List<AccessComponentsSchemasType> values = [selfHosted, saas, ssh, vnc, appLauncher, warp, biso, bookmark, dashSso];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -54,13 +53,99 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccessComponentsSchemasType$Unknown; } 
+@override String toString() => 'AccessComponentsSchemasType($value)';
+
+ }
+@immutable final class AccessComponentsSchemasType$selfHosted extends AccessComponentsSchemasType {const AccessComponentsSchemasType$selfHosted._();
+
+@override String get value => 'self_hosted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessComponentsSchemasType$selfHosted;
+
+@override int get hashCode => 'self_hosted'.hashCode;
+
+ }
+@immutable final class AccessComponentsSchemasType$saas extends AccessComponentsSchemasType {const AccessComponentsSchemasType$saas._();
+
+@override String get value => 'saas';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessComponentsSchemasType$saas;
+
+@override int get hashCode => 'saas'.hashCode;
+
+ }
+@immutable final class AccessComponentsSchemasType$ssh extends AccessComponentsSchemasType {const AccessComponentsSchemasType$ssh._();
+
+@override String get value => 'ssh';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessComponentsSchemasType$ssh;
+
+@override int get hashCode => 'ssh'.hashCode;
+
+ }
+@immutable final class AccessComponentsSchemasType$vnc extends AccessComponentsSchemasType {const AccessComponentsSchemasType$vnc._();
+
+@override String get value => 'vnc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessComponentsSchemasType$vnc;
+
+@override int get hashCode => 'vnc'.hashCode;
+
+ }
+@immutable final class AccessComponentsSchemasType$appLauncher extends AccessComponentsSchemasType {const AccessComponentsSchemasType$appLauncher._();
+
+@override String get value => 'app_launcher';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessComponentsSchemasType$appLauncher;
+
+@override int get hashCode => 'app_launcher'.hashCode;
+
+ }
+@immutable final class AccessComponentsSchemasType$warp extends AccessComponentsSchemasType {const AccessComponentsSchemasType$warp._();
+
+@override String get value => 'warp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessComponentsSchemasType$warp;
+
+@override int get hashCode => 'warp'.hashCode;
+
+ }
+@immutable final class AccessComponentsSchemasType$biso extends AccessComponentsSchemasType {const AccessComponentsSchemasType$biso._();
+
+@override String get value => 'biso';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessComponentsSchemasType$biso;
+
+@override int get hashCode => 'biso'.hashCode;
+
+ }
+@immutable final class AccessComponentsSchemasType$bookmark extends AccessComponentsSchemasType {const AccessComponentsSchemasType$bookmark._();
+
+@override String get value => 'bookmark';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessComponentsSchemasType$bookmark;
+
+@override int get hashCode => 'bookmark'.hashCode;
+
+ }
+@immutable final class AccessComponentsSchemasType$dashSso extends AccessComponentsSchemasType {const AccessComponentsSchemasType$dashSso._();
+
+@override String get value => 'dash_sso';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessComponentsSchemasType$dashSso;
+
+@override int get hashCode => 'dash_sso'.hashCode;
+
+ }
+@immutable final class AccessComponentsSchemasType$Unknown extends AccessComponentsSchemasType {const AccessComponentsSchemasType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccessComponentsSchemasType && other.value == value;
+    other is AccessComponentsSchemasType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccessComponentsSchemasType($value)';
 
  }
 @immutable final class AccessSchemasFeatureAppProps {const AccessSchemasFeatureAppProps({required this.type, this.allowedIdps, this.autoRedirectToIdentity, this.domain, this.name, this.sessionDuration, });

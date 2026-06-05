@@ -2,28 +2,27 @@
 // Source: #/components/schemas/AiSearchCreateInstancesRequest (inline: RetrievalOptions > BoostBy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Boost direction. 'desc' = higher values rank higher (e.g. newer timestamps). 'asc' = lower values rank higher. 'exists' = boost chunks that have the field. 'not_exists' = boost chunks that lack the field. Optional ��� defaults to 'asc' for numeric fields, 'exists' for text/boolean fields.
-@immutable final class BoostByDirection {const BoostByDirection._(this.value);
+sealed class BoostByDirection {const BoostByDirection();
 
 factory BoostByDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
   'exists' => exists,
   'not_exists' => notExists,
-  _ => BoostByDirection._(json),
+  _ => BoostByDirection$Unknown(json),
 }; }
 
-static const BoostByDirection asc = BoostByDirection._('asc');
+static const BoostByDirection asc = BoostByDirection$asc._();
 
-static const BoostByDirection desc = BoostByDirection._('desc');
+static const BoostByDirection desc = BoostByDirection$desc._();
 
-static const BoostByDirection exists = BoostByDirection._('exists');
+static const BoostByDirection exists = BoostByDirection$exists._();
 
-static const BoostByDirection notExists = BoostByDirection._('not_exists');
+static const BoostByDirection notExists = BoostByDirection$notExists._();
 
 static const List<BoostByDirection> values = [asc, desc, exists, notExists];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BoostByDirection$Unknown; } 
+@override String toString() => 'BoostByDirection($value)';
+
+ }
+@immutable final class BoostByDirection$asc extends BoostByDirection {const BoostByDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BoostByDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class BoostByDirection$desc extends BoostByDirection {const BoostByDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BoostByDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class BoostByDirection$exists extends BoostByDirection {const BoostByDirection$exists._();
+
+@override String get value => 'exists';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BoostByDirection$exists;
+
+@override int get hashCode => 'exists'.hashCode;
+
+ }
+@immutable final class BoostByDirection$notExists extends BoostByDirection {const BoostByDirection$notExists._();
+
+@override String get value => 'not_exists';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BoostByDirection$notExists;
+
+@override int get hashCode => 'not_exists'.hashCode;
+
+ }
+@immutable final class BoostByDirection$Unknown extends BoostByDirection {const BoostByDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BoostByDirection && other.value == value;
+    other is BoostByDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BoostByDirection($value)';
 
  }
 @immutable final class BoostBy {const BoostBy({required this.field, this.direction, });

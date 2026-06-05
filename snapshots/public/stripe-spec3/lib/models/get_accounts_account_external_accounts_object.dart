@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetAccountsAccountExternalAccountsObject
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountsAccountExternalAccountsObject {const GetAccountsAccountExternalAccountsObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetAccountsAccountExternalAccountsObject {const GetAccountsAccountExternalAccountsObject();
 
 factory GetAccountsAccountExternalAccountsObject.fromJson(String json) { return switch (json) {
   'bank_account' => bankAccount,
   'card' => card,
-  _ => GetAccountsAccountExternalAccountsObject._(json),
+  _ => GetAccountsAccountExternalAccountsObject$Unknown(json),
 }; }
 
-static const GetAccountsAccountExternalAccountsObject bankAccount = GetAccountsAccountExternalAccountsObject._('bank_account');
+static const GetAccountsAccountExternalAccountsObject bankAccount = GetAccountsAccountExternalAccountsObject$bankAccount._();
 
-static const GetAccountsAccountExternalAccountsObject card = GetAccountsAccountExternalAccountsObject._('card');
+static const GetAccountsAccountExternalAccountsObject card = GetAccountsAccountExternalAccountsObject$card._();
 
 static const List<GetAccountsAccountExternalAccountsObject> values = [bankAccount, card];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GetAccountsAccountExternalAccountsObject$Unknown; } 
+@override String toString() => 'GetAccountsAccountExternalAccountsObject($value)';
+
+ }
+@immutable final class GetAccountsAccountExternalAccountsObject$bankAccount extends GetAccountsAccountExternalAccountsObject {const GetAccountsAccountExternalAccountsObject$bankAccount._();
+
+@override String get value => 'bank_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetAccountsAccountExternalAccountsObject$bankAccount;
+
+@override int get hashCode => 'bank_account'.hashCode;
+
+ }
+@immutable final class GetAccountsAccountExternalAccountsObject$card extends GetAccountsAccountExternalAccountsObject {const GetAccountsAccountExternalAccountsObject$card._();
+
+@override String get value => 'card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetAccountsAccountExternalAccountsObject$card;
+
+@override int get hashCode => 'card'.hashCode;
+
+ }
+@immutable final class GetAccountsAccountExternalAccountsObject$Unknown extends GetAccountsAccountExternalAccountsObject {const GetAccountsAccountExternalAccountsObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GetAccountsAccountExternalAccountsObject && other.value == value;
+    other is GetAccountsAccountExternalAccountsObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GetAccountsAccountExternalAccountsObject($value)';
 
  }

@@ -2,7 +2,7 @@
 // Source: #/components/schemas/RadarGetCertificateAuthorityDetailsResponse (inline: Result > CertificateAuthority)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_response/certificate_record_type.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authorities_response/revocation_status.dart';import 'package:pub_cloudflare/models/radar_get_certificate_authority_details_response/certificate_authority_related.dart';/// The inclusion status of a Certificate Authority (CA) in the trust store.
-@immutable final class AppleStatus {const AppleStatus._(this.value);
+sealed class AppleStatus {const AppleStatus();
 
 factory AppleStatus.fromJson(String json) { return switch (json) {
   'INCLUDED' => included,
@@ -12,27 +12,26 @@ factory AppleStatus.fromJson(String json) { return switch (json) {
   'REMOVED' => removed,
   'DISABLED' => disabled,
   'BLOCKED' => blocked,
-  _ => AppleStatus._(json),
+  _ => AppleStatus$Unknown(json),
 }; }
 
-static const AppleStatus included = AppleStatus._('INCLUDED');
+static const AppleStatus included = AppleStatus$included._();
 
-static const AppleStatus notYetIncluded = AppleStatus._('NOT_YET_INCLUDED');
+static const AppleStatus notYetIncluded = AppleStatus$notYetIncluded._();
 
-static const AppleStatus notIncluded = AppleStatus._('NOT_INCLUDED');
+static const AppleStatus notIncluded = AppleStatus$notIncluded._();
 
-static const AppleStatus notBefore = AppleStatus._('NOT_BEFORE');
+static const AppleStatus notBefore = AppleStatus$notBefore._();
 
-static const AppleStatus removed = AppleStatus._('REMOVED');
+static const AppleStatus removed = AppleStatus$removed._();
 
-static const AppleStatus disabled = AppleStatus._('DISABLED');
+static const AppleStatus disabled = AppleStatus$disabled._();
 
-static const AppleStatus blocked = AppleStatus._('BLOCKED');
+static const AppleStatus blocked = AppleStatus$blocked._();
 
 static const List<AppleStatus> values = [included, notYetIncluded, notIncluded, notBefore, removed, disabled, blocked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -46,17 +45,85 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is AppleStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is AppleStatus$Unknown; } 
 @override String toString() => 'AppleStatus($value)';
 
  }
+@immutable final class AppleStatus$included extends AppleStatus {const AppleStatus$included._();
+
+@override String get value => 'INCLUDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppleStatus$included;
+
+@override int get hashCode => 'INCLUDED'.hashCode;
+
+ }
+@immutable final class AppleStatus$notYetIncluded extends AppleStatus {const AppleStatus$notYetIncluded._();
+
+@override String get value => 'NOT_YET_INCLUDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppleStatus$notYetIncluded;
+
+@override int get hashCode => 'NOT_YET_INCLUDED'.hashCode;
+
+ }
+@immutable final class AppleStatus$notIncluded extends AppleStatus {const AppleStatus$notIncluded._();
+
+@override String get value => 'NOT_INCLUDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppleStatus$notIncluded;
+
+@override int get hashCode => 'NOT_INCLUDED'.hashCode;
+
+ }
+@immutable final class AppleStatus$notBefore extends AppleStatus {const AppleStatus$notBefore._();
+
+@override String get value => 'NOT_BEFORE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppleStatus$notBefore;
+
+@override int get hashCode => 'NOT_BEFORE'.hashCode;
+
+ }
+@immutable final class AppleStatus$removed extends AppleStatus {const AppleStatus$removed._();
+
+@override String get value => 'REMOVED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppleStatus$removed;
+
+@override int get hashCode => 'REMOVED'.hashCode;
+
+ }
+@immutable final class AppleStatus$disabled extends AppleStatus {const AppleStatus$disabled._();
+
+@override String get value => 'DISABLED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppleStatus$disabled;
+
+@override int get hashCode => 'DISABLED'.hashCode;
+
+ }
+@immutable final class AppleStatus$blocked extends AppleStatus {const AppleStatus$blocked._();
+
+@override String get value => 'BLOCKED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppleStatus$blocked;
+
+@override int get hashCode => 'BLOCKED'.hashCode;
+
+ }
+@immutable final class AppleStatus$Unknown extends AppleStatus {const AppleStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AppleStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The inclusion status of a Certificate Authority (CA) in the trust store.
-@immutable final class ChromeStatus {const ChromeStatus._(this.value);
+sealed class ChromeStatus {const ChromeStatus();
 
 factory ChromeStatus.fromJson(String json) { return switch (json) {
   'INCLUDED' => included,
@@ -66,27 +133,26 @@ factory ChromeStatus.fromJson(String json) { return switch (json) {
   'REMOVED' => removed,
   'DISABLED' => disabled,
   'BLOCKED' => blocked,
-  _ => ChromeStatus._(json),
+  _ => ChromeStatus$Unknown(json),
 }; }
 
-static const ChromeStatus included = ChromeStatus._('INCLUDED');
+static const ChromeStatus included = ChromeStatus$included._();
 
-static const ChromeStatus notYetIncluded = ChromeStatus._('NOT_YET_INCLUDED');
+static const ChromeStatus notYetIncluded = ChromeStatus$notYetIncluded._();
 
-static const ChromeStatus notIncluded = ChromeStatus._('NOT_INCLUDED');
+static const ChromeStatus notIncluded = ChromeStatus$notIncluded._();
 
-static const ChromeStatus notBefore = ChromeStatus._('NOT_BEFORE');
+static const ChromeStatus notBefore = ChromeStatus$notBefore._();
 
-static const ChromeStatus removed = ChromeStatus._('REMOVED');
+static const ChromeStatus removed = ChromeStatus$removed._();
 
-static const ChromeStatus disabled = ChromeStatus._('DISABLED');
+static const ChromeStatus disabled = ChromeStatus$disabled._();
 
-static const ChromeStatus blocked = ChromeStatus._('BLOCKED');
+static const ChromeStatus blocked = ChromeStatus$blocked._();
 
 static const List<ChromeStatus> values = [included, notYetIncluded, notIncluded, notBefore, removed, disabled, blocked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -100,17 +166,85 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ChromeStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ChromeStatus$Unknown; } 
 @override String toString() => 'ChromeStatus($value)';
 
  }
+@immutable final class ChromeStatus$included extends ChromeStatus {const ChromeStatus$included._();
+
+@override String get value => 'INCLUDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChromeStatus$included;
+
+@override int get hashCode => 'INCLUDED'.hashCode;
+
+ }
+@immutable final class ChromeStatus$notYetIncluded extends ChromeStatus {const ChromeStatus$notYetIncluded._();
+
+@override String get value => 'NOT_YET_INCLUDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChromeStatus$notYetIncluded;
+
+@override int get hashCode => 'NOT_YET_INCLUDED'.hashCode;
+
+ }
+@immutable final class ChromeStatus$notIncluded extends ChromeStatus {const ChromeStatus$notIncluded._();
+
+@override String get value => 'NOT_INCLUDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChromeStatus$notIncluded;
+
+@override int get hashCode => 'NOT_INCLUDED'.hashCode;
+
+ }
+@immutable final class ChromeStatus$notBefore extends ChromeStatus {const ChromeStatus$notBefore._();
+
+@override String get value => 'NOT_BEFORE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChromeStatus$notBefore;
+
+@override int get hashCode => 'NOT_BEFORE'.hashCode;
+
+ }
+@immutable final class ChromeStatus$removed extends ChromeStatus {const ChromeStatus$removed._();
+
+@override String get value => 'REMOVED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChromeStatus$removed;
+
+@override int get hashCode => 'REMOVED'.hashCode;
+
+ }
+@immutable final class ChromeStatus$disabled extends ChromeStatus {const ChromeStatus$disabled._();
+
+@override String get value => 'DISABLED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChromeStatus$disabled;
+
+@override int get hashCode => 'DISABLED'.hashCode;
+
+ }
+@immutable final class ChromeStatus$blocked extends ChromeStatus {const ChromeStatus$blocked._();
+
+@override String get value => 'BLOCKED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChromeStatus$blocked;
+
+@override int get hashCode => 'BLOCKED'.hashCode;
+
+ }
+@immutable final class ChromeStatus$Unknown extends ChromeStatus {const ChromeStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChromeStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The inclusion status of a Certificate Authority (CA) in the trust store.
-@immutable final class MicrosoftStatus {const MicrosoftStatus._(this.value);
+sealed class MicrosoftStatus {const MicrosoftStatus();
 
 factory MicrosoftStatus.fromJson(String json) { return switch (json) {
   'INCLUDED' => included,
@@ -120,27 +254,26 @@ factory MicrosoftStatus.fromJson(String json) { return switch (json) {
   'REMOVED' => removed,
   'DISABLED' => disabled,
   'BLOCKED' => blocked,
-  _ => MicrosoftStatus._(json),
+  _ => MicrosoftStatus$Unknown(json),
 }; }
 
-static const MicrosoftStatus included = MicrosoftStatus._('INCLUDED');
+static const MicrosoftStatus included = MicrosoftStatus$included._();
 
-static const MicrosoftStatus notYetIncluded = MicrosoftStatus._('NOT_YET_INCLUDED');
+static const MicrosoftStatus notYetIncluded = MicrosoftStatus$notYetIncluded._();
 
-static const MicrosoftStatus notIncluded = MicrosoftStatus._('NOT_INCLUDED');
+static const MicrosoftStatus notIncluded = MicrosoftStatus$notIncluded._();
 
-static const MicrosoftStatus notBefore = MicrosoftStatus._('NOT_BEFORE');
+static const MicrosoftStatus notBefore = MicrosoftStatus$notBefore._();
 
-static const MicrosoftStatus removed = MicrosoftStatus._('REMOVED');
+static const MicrosoftStatus removed = MicrosoftStatus$removed._();
 
-static const MicrosoftStatus disabled = MicrosoftStatus._('DISABLED');
+static const MicrosoftStatus disabled = MicrosoftStatus$disabled._();
 
-static const MicrosoftStatus blocked = MicrosoftStatus._('BLOCKED');
+static const MicrosoftStatus blocked = MicrosoftStatus$blocked._();
 
 static const List<MicrosoftStatus> values = [included, notYetIncluded, notIncluded, notBefore, removed, disabled, blocked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -154,17 +287,85 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MicrosoftStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MicrosoftStatus$Unknown; } 
 @override String toString() => 'MicrosoftStatus($value)';
 
  }
+@immutable final class MicrosoftStatus$included extends MicrosoftStatus {const MicrosoftStatus$included._();
+
+@override String get value => 'INCLUDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MicrosoftStatus$included;
+
+@override int get hashCode => 'INCLUDED'.hashCode;
+
+ }
+@immutable final class MicrosoftStatus$notYetIncluded extends MicrosoftStatus {const MicrosoftStatus$notYetIncluded._();
+
+@override String get value => 'NOT_YET_INCLUDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MicrosoftStatus$notYetIncluded;
+
+@override int get hashCode => 'NOT_YET_INCLUDED'.hashCode;
+
+ }
+@immutable final class MicrosoftStatus$notIncluded extends MicrosoftStatus {const MicrosoftStatus$notIncluded._();
+
+@override String get value => 'NOT_INCLUDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MicrosoftStatus$notIncluded;
+
+@override int get hashCode => 'NOT_INCLUDED'.hashCode;
+
+ }
+@immutable final class MicrosoftStatus$notBefore extends MicrosoftStatus {const MicrosoftStatus$notBefore._();
+
+@override String get value => 'NOT_BEFORE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MicrosoftStatus$notBefore;
+
+@override int get hashCode => 'NOT_BEFORE'.hashCode;
+
+ }
+@immutable final class MicrosoftStatus$removed extends MicrosoftStatus {const MicrosoftStatus$removed._();
+
+@override String get value => 'REMOVED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MicrosoftStatus$removed;
+
+@override int get hashCode => 'REMOVED'.hashCode;
+
+ }
+@immutable final class MicrosoftStatus$disabled extends MicrosoftStatus {const MicrosoftStatus$disabled._();
+
+@override String get value => 'DISABLED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MicrosoftStatus$disabled;
+
+@override int get hashCode => 'DISABLED'.hashCode;
+
+ }
+@immutable final class MicrosoftStatus$blocked extends MicrosoftStatus {const MicrosoftStatus$blocked._();
+
+@override String get value => 'BLOCKED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MicrosoftStatus$blocked;
+
+@override int get hashCode => 'BLOCKED'.hashCode;
+
+ }
+@immutable final class MicrosoftStatus$Unknown extends MicrosoftStatus {const MicrosoftStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MicrosoftStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The inclusion status of a Certificate Authority (CA) in the trust store.
-@immutable final class MozillaStatus {const MozillaStatus._(this.value);
+sealed class MozillaStatus {const MozillaStatus();
 
 factory MozillaStatus.fromJson(String json) { return switch (json) {
   'INCLUDED' => included,
@@ -174,27 +375,26 @@ factory MozillaStatus.fromJson(String json) { return switch (json) {
   'REMOVED' => removed,
   'DISABLED' => disabled,
   'BLOCKED' => blocked,
-  _ => MozillaStatus._(json),
+  _ => MozillaStatus$Unknown(json),
 }; }
 
-static const MozillaStatus included = MozillaStatus._('INCLUDED');
+static const MozillaStatus included = MozillaStatus$included._();
 
-static const MozillaStatus notYetIncluded = MozillaStatus._('NOT_YET_INCLUDED');
+static const MozillaStatus notYetIncluded = MozillaStatus$notYetIncluded._();
 
-static const MozillaStatus notIncluded = MozillaStatus._('NOT_INCLUDED');
+static const MozillaStatus notIncluded = MozillaStatus$notIncluded._();
 
-static const MozillaStatus notBefore = MozillaStatus._('NOT_BEFORE');
+static const MozillaStatus notBefore = MozillaStatus$notBefore._();
 
-static const MozillaStatus removed = MozillaStatus._('REMOVED');
+static const MozillaStatus removed = MozillaStatus$removed._();
 
-static const MozillaStatus disabled = MozillaStatus._('DISABLED');
+static const MozillaStatus disabled = MozillaStatus$disabled._();
 
-static const MozillaStatus blocked = MozillaStatus._('BLOCKED');
+static const MozillaStatus blocked = MozillaStatus$blocked._();
 
 static const List<MozillaStatus> values = [included, notYetIncluded, notIncluded, notBefore, removed, disabled, blocked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -208,13 +408,81 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MozillaStatus$Unknown; } 
+@override String toString() => 'MozillaStatus($value)';
+
+ }
+@immutable final class MozillaStatus$included extends MozillaStatus {const MozillaStatus$included._();
+
+@override String get value => 'INCLUDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MozillaStatus$included;
+
+@override int get hashCode => 'INCLUDED'.hashCode;
+
+ }
+@immutable final class MozillaStatus$notYetIncluded extends MozillaStatus {const MozillaStatus$notYetIncluded._();
+
+@override String get value => 'NOT_YET_INCLUDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MozillaStatus$notYetIncluded;
+
+@override int get hashCode => 'NOT_YET_INCLUDED'.hashCode;
+
+ }
+@immutable final class MozillaStatus$notIncluded extends MozillaStatus {const MozillaStatus$notIncluded._();
+
+@override String get value => 'NOT_INCLUDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MozillaStatus$notIncluded;
+
+@override int get hashCode => 'NOT_INCLUDED'.hashCode;
+
+ }
+@immutable final class MozillaStatus$notBefore extends MozillaStatus {const MozillaStatus$notBefore._();
+
+@override String get value => 'NOT_BEFORE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MozillaStatus$notBefore;
+
+@override int get hashCode => 'NOT_BEFORE'.hashCode;
+
+ }
+@immutable final class MozillaStatus$removed extends MozillaStatus {const MozillaStatus$removed._();
+
+@override String get value => 'REMOVED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MozillaStatus$removed;
+
+@override int get hashCode => 'REMOVED'.hashCode;
+
+ }
+@immutable final class MozillaStatus$disabled extends MozillaStatus {const MozillaStatus$disabled._();
+
+@override String get value => 'DISABLED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MozillaStatus$disabled;
+
+@override int get hashCode => 'DISABLED'.hashCode;
+
+ }
+@immutable final class MozillaStatus$blocked extends MozillaStatus {const MozillaStatus$blocked._();
+
+@override String get value => 'BLOCKED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MozillaStatus$blocked;
+
+@override int get hashCode => 'BLOCKED'.hashCode;
+
+ }
+@immutable final class MozillaStatus$Unknown extends MozillaStatus {const MozillaStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MozillaStatus && other.value == value;
+    other is MozillaStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MozillaStatus($value)';
 
  }
 @immutable final class ResultCertificateAuthority {const ResultCertificateAuthority({required this.appleStatus, required this.authorityKeyIdentifier, required this.certificateRecordType, required this.chromeStatus, required this.country, required this.countryName, required this.microsoftStatus, required this.mozillaStatus, required this.name, required this.owner, required this.parentName, required this.parentSha256Fingerprint, required this.related, required this.revocationStatus, required this.sha256Fingerprint, required this.subjectKeyIdentifier, required this.validFrom, required this.validTo, });

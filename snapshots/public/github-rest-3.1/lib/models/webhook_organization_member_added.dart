@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookOrganizationMemberAdded
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_membership.dart';@immutable final class WebhookOrganizationMemberAddedAction {const WebhookOrganizationMemberAddedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_membership.dart';sealed class WebhookOrganizationMemberAddedAction {const WebhookOrganizationMemberAddedAction();
 
 factory WebhookOrganizationMemberAddedAction.fromJson(String json) { return switch (json) {
   'member_added' => memberAdded,
-  _ => WebhookOrganizationMemberAddedAction._(json),
+  _ => WebhookOrganizationMemberAddedAction$Unknown(json),
 }; }
 
-static const WebhookOrganizationMemberAddedAction memberAdded = WebhookOrganizationMemberAddedAction._('member_added');
+static const WebhookOrganizationMemberAddedAction memberAdded = WebhookOrganizationMemberAddedAction$memberAdded._();
 
 static const List<WebhookOrganizationMemberAddedAction> values = [memberAdded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookOrganizationMemberAddedAction$Unknown; } 
+@override String toString() => 'WebhookOrganizationMemberAddedAction($value)';
+
+ }
+@immutable final class WebhookOrganizationMemberAddedAction$memberAdded extends WebhookOrganizationMemberAddedAction {const WebhookOrganizationMemberAddedAction$memberAdded._();
+
+@override String get value => 'member_added';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookOrganizationMemberAddedAction$memberAdded;
+
+@override int get hashCode => 'member_added'.hashCode;
+
+ }
+@immutable final class WebhookOrganizationMemberAddedAction$Unknown extends WebhookOrganizationMemberAddedAction {const WebhookOrganizationMemberAddedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookOrganizationMemberAddedAction && other.value == value;
+    other is WebhookOrganizationMemberAddedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookOrganizationMemberAddedAction($value)';
 
  }
 @immutable final class WebhookOrganizationMemberAdded {const WebhookOrganizationMemberAdded({required this.action, required this.membership, required this.organization, required this.sender, this.enterprise, this.installation, this.repository, });

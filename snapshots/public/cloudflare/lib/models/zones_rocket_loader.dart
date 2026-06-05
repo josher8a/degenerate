@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_rocket_loader_value.dart';/// Turn on or off Rocket Loader in the Cloudflare Speed app.
 /// 
-@immutable final class ZonesRocketLoaderId {const ZonesRocketLoaderId._(this.value);
+sealed class ZonesRocketLoaderId {const ZonesRocketLoaderId();
 
 factory ZonesRocketLoaderId.fromJson(String json) { return switch (json) {
   'rocket_loader' => rocketLoader,
-  _ => ZonesRocketLoaderId._(json),
+  _ => ZonesRocketLoaderId$Unknown(json),
 }; }
 
-static const ZonesRocketLoaderId rocketLoader = ZonesRocketLoaderId._('rocket_loader');
+static const ZonesRocketLoaderId rocketLoader = ZonesRocketLoaderId$rocketLoader._();
 
 static const List<ZonesRocketLoaderId> values = [rocketLoader];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesRocketLoaderId$Unknown; } 
+@override String toString() => 'ZonesRocketLoaderId($value)';
+
+ }
+@immutable final class ZonesRocketLoaderId$rocketLoader extends ZonesRocketLoaderId {const ZonesRocketLoaderId$rocketLoader._();
+
+@override String get value => 'rocket_loader';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesRocketLoaderId$rocketLoader;
+
+@override int get hashCode => 'rocket_loader'.hashCode;
+
+ }
+@immutable final class ZonesRocketLoaderId$Unknown extends ZonesRocketLoaderId {const ZonesRocketLoaderId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesRocketLoaderId && other.value == value;
+    other is ZonesRocketLoaderId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesRocketLoaderId($value)';
 
  }
 @immutable final class ZonesRocketLoader {const ZonesRocketLoader({this.id, this.value, });

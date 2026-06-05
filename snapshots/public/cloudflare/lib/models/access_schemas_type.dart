@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AccessSchemasType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Custom page type.
-@immutable final class AccessSchemasType {const AccessSchemasType._(this.value);
+sealed class AccessSchemasType {const AccessSchemasType();
 
 factory AccessSchemasType.fromJson(String json) { return switch (json) {
   'identity_denied' => identityDenied,
   'forbidden' => forbidden,
-  _ => AccessSchemasType._(json),
+  _ => AccessSchemasType$Unknown(json),
 }; }
 
-static const AccessSchemasType identityDenied = AccessSchemasType._('identity_denied');
+static const AccessSchemasType identityDenied = AccessSchemasType$identityDenied._();
 
-static const AccessSchemasType forbidden = AccessSchemasType._('forbidden');
+static const AccessSchemasType forbidden = AccessSchemasType$forbidden._();
 
 static const List<AccessSchemasType> values = [identityDenied, forbidden];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccessSchemasType$Unknown; } 
+@override String toString() => 'AccessSchemasType($value)';
+
+ }
+@immutable final class AccessSchemasType$identityDenied extends AccessSchemasType {const AccessSchemasType$identityDenied._();
+
+@override String get value => 'identity_denied';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessSchemasType$identityDenied;
+
+@override int get hashCode => 'identity_denied'.hashCode;
+
+ }
+@immutable final class AccessSchemasType$forbidden extends AccessSchemasType {const AccessSchemasType$forbidden._();
+
+@override String get value => 'forbidden';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessSchemasType$forbidden;
+
+@override int get hashCode => 'forbidden'.hashCode;
+
+ }
+@immutable final class AccessSchemasType$Unknown extends AccessSchemasType {const AccessSchemasType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccessSchemasType && other.value == value;
+    other is AccessSchemasType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccessSchemasType($value)';
 
  }

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SkillInfo
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SkillType {const SkillType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SkillType {const SkillType();
 
 factory SkillType.fromJson(String json) { return switch (json) {
   'skill' => skill,
   'capability' => capability,
   'workflow' => workflow,
-  _ => SkillType._(json),
+  _ => SkillType$Unknown(json),
 }; }
 
-static const SkillType skill = SkillType._('skill');
+static const SkillType skill = SkillType$skill._();
 
-static const SkillType capability = SkillType._('capability');
+static const SkillType capability = SkillType$capability._();
 
-static const SkillType workflow = SkillType._('workflow');
+static const SkillType workflow = SkillType$workflow._();
 
 static const List<SkillType> values = [skill, capability, workflow];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SkillType$Unknown; } 
+@override String toString() => 'SkillType($value)';
+
+ }
+@immutable final class SkillType$skill extends SkillType {const SkillType$skill._();
+
+@override String get value => 'skill';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SkillType$skill;
+
+@override int get hashCode => 'skill'.hashCode;
+
+ }
+@immutable final class SkillType$capability extends SkillType {const SkillType$capability._();
+
+@override String get value => 'capability';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SkillType$capability;
+
+@override int get hashCode => 'capability'.hashCode;
+
+ }
+@immutable final class SkillType$workflow extends SkillType {const SkillType$workflow._();
+
+@override String get value => 'workflow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SkillType$workflow;
+
+@override int get hashCode => 'workflow'.hashCode;
+
+ }
+@immutable final class SkillType$Unknown extends SkillType {const SkillType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SkillType && other.value == value;
+    other is SkillType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SkillType($value)';
 
  }
 @immutable final class SkillInfo {const SkillInfo({required this.id, this.type, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/HealthchecksTcpConfig (inline: Method)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The TCP connection method to use for the health check.
-@immutable final class HealthchecksTcpConfigMethod {const HealthchecksTcpConfigMethod._(this.value);
+sealed class HealthchecksTcpConfigMethod {const HealthchecksTcpConfigMethod();
 
 factory HealthchecksTcpConfigMethod.fromJson(String json) { return switch (json) {
   'connection_established' => connectionEstablished,
-  _ => HealthchecksTcpConfigMethod._(json),
+  _ => HealthchecksTcpConfigMethod$Unknown(json),
 }; }
 
-static const HealthchecksTcpConfigMethod connectionEstablished = HealthchecksTcpConfigMethod._('connection_established');
+static const HealthchecksTcpConfigMethod connectionEstablished = HealthchecksTcpConfigMethod$connectionEstablished._();
 
 static const List<HealthchecksTcpConfigMethod> values = [connectionEstablished];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is HealthchecksTcpConfigMethod$Unknown; } 
+@override String toString() => 'HealthchecksTcpConfigMethod($value)';
+
+ }
+@immutable final class HealthchecksTcpConfigMethod$connectionEstablished extends HealthchecksTcpConfigMethod {const HealthchecksTcpConfigMethod$connectionEstablished._();
+
+@override String get value => 'connection_established';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HealthchecksTcpConfigMethod$connectionEstablished;
+
+@override int get hashCode => 'connection_established'.hashCode;
+
+ }
+@immutable final class HealthchecksTcpConfigMethod$Unknown extends HealthchecksTcpConfigMethod {const HealthchecksTcpConfigMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is HealthchecksTcpConfigMethod && other.value == value;
+    other is HealthchecksTcpConfigMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'HealthchecksTcpConfigMethod($value)';
 
  }

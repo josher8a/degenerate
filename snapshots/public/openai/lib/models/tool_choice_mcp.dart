@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ToolChoiceMcp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// For MCP tools, the type is always `mcp`.
-@immutable final class ToolChoiceMcpType {const ToolChoiceMcpType._(this.value);
+sealed class ToolChoiceMcpType {const ToolChoiceMcpType();
 
 factory ToolChoiceMcpType.fromJson(String json) { return switch (json) {
   'mcp' => mcp,
-  _ => ToolChoiceMcpType._(json),
+  _ => ToolChoiceMcpType$Unknown(json),
 }; }
 
-static const ToolChoiceMcpType mcp = ToolChoiceMcpType._('mcp');
+static const ToolChoiceMcpType mcp = ToolChoiceMcpType$mcp._();
 
 static const List<ToolChoiceMcpType> values = [mcp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ToolChoiceMcpType$Unknown; } 
+@override String toString() => 'ToolChoiceMcpType($value)';
+
+ }
+@immutable final class ToolChoiceMcpType$mcp extends ToolChoiceMcpType {const ToolChoiceMcpType$mcp._();
+
+@override String get value => 'mcp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolChoiceMcpType$mcp;
+
+@override int get hashCode => 'mcp'.hashCode;
+
+ }
+@immutable final class ToolChoiceMcpType$Unknown extends ToolChoiceMcpType {const ToolChoiceMcpType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ToolChoiceMcpType && other.value == value;
+    other is ToolChoiceMcpType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ToolChoiceMcpType($value)';
 
  }
 /// Use this option to force the model to call a specific tool on a remote MCP server.

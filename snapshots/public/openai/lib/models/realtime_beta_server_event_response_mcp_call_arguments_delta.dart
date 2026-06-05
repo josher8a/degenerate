@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventResponseMcpCallArgumentsDelta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call_arguments.delta`.
-@immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType {const RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType._(this.value);
+sealed class RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType {const RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType();
 
 factory RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType.fromJson(String json) { return switch (json) {
   'response.mcp_call_arguments.delta' => responseMcpCallArgumentsDelta,
-  _ => RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType._(json),
+  _ => RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType responseMcpCallArgumentsDelta = RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType._('response.mcp_call_arguments.delta');
+static const RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType responseMcpCallArgumentsDelta = RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType$responseMcpCallArgumentsDelta._();
 
 static const List<RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType> values = [responseMcpCallArgumentsDelta];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType$responseMcpCallArgumentsDelta extends RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType {const RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType$responseMcpCallArgumentsDelta._();
+
+@override String get value => 'response.mcp_call_arguments.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType$responseMcpCallArgumentsDelta;
+
+@override int get hashCode => 'response.mcp_call_arguments.delta'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType$Unknown extends RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType {const RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType && other.value == value;
+    other is RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventResponseMcpCallArgumentsDeltaType($value)';
 
  }
 /// Returned when MCP tool call arguments are updated during response generation.

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTopAsesByTlsVersionDeviceType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByTlsVersionDeviceType {const RadarGetHttpTopAsesByTlsVersionDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopAsesByTlsVersionDeviceType {const RadarGetHttpTopAsesByTlsVersionDeviceType();
 
 factory RadarGetHttpTopAsesByTlsVersionDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
   'OTHER' => $other,
-  _ => RadarGetHttpTopAsesByTlsVersionDeviceType._(json),
+  _ => RadarGetHttpTopAsesByTlsVersionDeviceType$Unknown(json),
 }; }
 
-static const RadarGetHttpTopAsesByTlsVersionDeviceType desktop = RadarGetHttpTopAsesByTlsVersionDeviceType._('DESKTOP');
+static const RadarGetHttpTopAsesByTlsVersionDeviceType desktop = RadarGetHttpTopAsesByTlsVersionDeviceType$desktop._();
 
-static const RadarGetHttpTopAsesByTlsVersionDeviceType mobile = RadarGetHttpTopAsesByTlsVersionDeviceType._('MOBILE');
+static const RadarGetHttpTopAsesByTlsVersionDeviceType mobile = RadarGetHttpTopAsesByTlsVersionDeviceType$mobile._();
 
-static const RadarGetHttpTopAsesByTlsVersionDeviceType $other = RadarGetHttpTopAsesByTlsVersionDeviceType._('OTHER');
+static const RadarGetHttpTopAsesByTlsVersionDeviceType $other = RadarGetHttpTopAsesByTlsVersionDeviceType$$other._();
 
 static const List<RadarGetHttpTopAsesByTlsVersionDeviceType> values = [desktop, mobile, $other];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopAsesByTlsVersionDeviceType$Unknown; } 
+@override String toString() => 'RadarGetHttpTopAsesByTlsVersionDeviceType($value)';
+
+ }
+@immutable final class RadarGetHttpTopAsesByTlsVersionDeviceType$desktop extends RadarGetHttpTopAsesByTlsVersionDeviceType {const RadarGetHttpTopAsesByTlsVersionDeviceType$desktop._();
+
+@override String get value => 'DESKTOP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByTlsVersionDeviceType$desktop;
+
+@override int get hashCode => 'DESKTOP'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByTlsVersionDeviceType$mobile extends RadarGetHttpTopAsesByTlsVersionDeviceType {const RadarGetHttpTopAsesByTlsVersionDeviceType$mobile._();
+
+@override String get value => 'MOBILE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByTlsVersionDeviceType$mobile;
+
+@override int get hashCode => 'MOBILE'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByTlsVersionDeviceType$$other extends RadarGetHttpTopAsesByTlsVersionDeviceType {const RadarGetHttpTopAsesByTlsVersionDeviceType$$other._();
+
+@override String get value => 'OTHER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByTlsVersionDeviceType$$other;
+
+@override int get hashCode => 'OTHER'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByTlsVersionDeviceType$Unknown extends RadarGetHttpTopAsesByTlsVersionDeviceType {const RadarGetHttpTopAsesByTlsVersionDeviceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopAsesByTlsVersionDeviceType && other.value == value;
+    other is RadarGetHttpTopAsesByTlsVersionDeviceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopAsesByTlsVersionDeviceType($value)';
 
  }

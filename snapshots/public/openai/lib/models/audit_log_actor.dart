@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AuditLogActor
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audit_log_actor_session.dart';import 'package:pub_openai/models/key2.dart';/// The type of actor. Is either `session` or `api_key`.
-@immutable final class AuditLogActorType {const AuditLogActorType._(this.value);
+sealed class AuditLogActorType {const AuditLogActorType();
 
 factory AuditLogActorType.fromJson(String json) { return switch (json) {
   'session' => session,
   'api_key' => apiKey,
-  _ => AuditLogActorType._(json),
+  _ => AuditLogActorType$Unknown(json),
 }; }
 
-static const AuditLogActorType session = AuditLogActorType._('session');
+static const AuditLogActorType session = AuditLogActorType$session._();
 
-static const AuditLogActorType apiKey = AuditLogActorType._('api_key');
+static const AuditLogActorType apiKey = AuditLogActorType$apiKey._();
 
 static const List<AuditLogActorType> values = [session, apiKey];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AuditLogActorType$Unknown; } 
+@override String toString() => 'AuditLogActorType($value)';
+
+ }
+@immutable final class AuditLogActorType$session extends AuditLogActorType {const AuditLogActorType$session._();
+
+@override String get value => 'session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AuditLogActorType$session;
+
+@override int get hashCode => 'session'.hashCode;
+
+ }
+@immutable final class AuditLogActorType$apiKey extends AuditLogActorType {const AuditLogActorType$apiKey._();
+
+@override String get value => 'api_key';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AuditLogActorType$apiKey;
+
+@override int get hashCode => 'api_key'.hashCode;
+
+ }
+@immutable final class AuditLogActorType$Unknown extends AuditLogActorType {const AuditLogActorType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AuditLogActorType && other.value == value;
+    other is AuditLogActorType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AuditLogActorType($value)';
 
  }
 /// The actor who performed the audit logged action.

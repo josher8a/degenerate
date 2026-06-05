@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Query
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class QueryObject {const QueryObject._(this.value);
+sealed class QueryObject {const QueryObject();
 
 factory QueryObject.fromJson(String json) { return switch (json) {
   'sigma.sigma_api_query' => sigmaSigmaApiQuery,
-  _ => QueryObject._(json),
+  _ => QueryObject$Unknown(json),
 }; }
 
-static const QueryObject sigmaSigmaApiQuery = QueryObject._('sigma.sigma_api_query');
+static const QueryObject sigmaSigmaApiQuery = QueryObject$sigmaSigmaApiQuery._();
 
 static const List<QueryObject> values = [sigmaSigmaApiQuery];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is QueryObject$Unknown; } 
+@override String toString() => 'QueryObject($value)';
+
+ }
+@immutable final class QueryObject$sigmaSigmaApiQuery extends QueryObject {const QueryObject$sigmaSigmaApiQuery._();
+
+@override String get value => 'sigma.sigma_api_query';
+
+@override bool operator ==(Object other) => identical(this, other) || other is QueryObject$sigmaSigmaApiQuery;
+
+@override int get hashCode => 'sigma.sigma_api_query'.hashCode;
+
+ }
+@immutable final class QueryObject$Unknown extends QueryObject {const QueryObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is QueryObject && other.value == value;
+    other is QueryObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'QueryObject($value)';
 
  }
 /// A saved query object represents a query that can be executed for a run.

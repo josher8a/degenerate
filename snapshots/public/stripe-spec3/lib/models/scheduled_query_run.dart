@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ScheduledQueryRun
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/sigma_scheduled_query_run_error.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ScheduledQueryRunObject {const ScheduledQueryRunObject._(this.value);
+sealed class ScheduledQueryRunObject {const ScheduledQueryRunObject();
 
 factory ScheduledQueryRunObject.fromJson(String json) { return switch (json) {
   'scheduled_query_run' => scheduledQueryRun,
-  _ => ScheduledQueryRunObject._(json),
+  _ => ScheduledQueryRunObject$Unknown(json),
 }; }
 
-static const ScheduledQueryRunObject scheduledQueryRun = ScheduledQueryRunObject._('scheduled_query_run');
+static const ScheduledQueryRunObject scheduledQueryRun = ScheduledQueryRunObject$scheduledQueryRun._();
 
 static const List<ScheduledQueryRunObject> values = [scheduledQueryRun];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ScheduledQueryRunObject$Unknown; } 
+@override String toString() => 'ScheduledQueryRunObject($value)';
+
+ }
+@immutable final class ScheduledQueryRunObject$scheduledQueryRun extends ScheduledQueryRunObject {const ScheduledQueryRunObject$scheduledQueryRun._();
+
+@override String get value => 'scheduled_query_run';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScheduledQueryRunObject$scheduledQueryRun;
+
+@override int get hashCode => 'scheduled_query_run'.hashCode;
+
+ }
+@immutable final class ScheduledQueryRunObject$Unknown extends ScheduledQueryRunObject {const ScheduledQueryRunObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ScheduledQueryRunObject && other.value == value;
+    other is ScheduledQueryRunObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ScheduledQueryRunObject($value)';
 
  }
 /// If you have [scheduled a Sigma query](https://docs.stripe.com/sigma/scheduled-queries), you'll

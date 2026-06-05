@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetAttacksLayer3SummaryByVectorProtocol
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3SummaryByVectorProtocol {const RadarGetAttacksLayer3SummaryByVectorProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer3SummaryByVectorProtocol {const RadarGetAttacksLayer3SummaryByVectorProtocol();
 
 factory RadarGetAttacksLayer3SummaryByVectorProtocol.fromJson(String json) { return switch (json) {
   'UDP' => udp,
   'TCP' => tcp,
   'ICMP' => icmp,
   'GRE' => gre,
-  _ => RadarGetAttacksLayer3SummaryByVectorProtocol._(json),
+  _ => RadarGetAttacksLayer3SummaryByVectorProtocol$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer3SummaryByVectorProtocol udp = RadarGetAttacksLayer3SummaryByVectorProtocol._('UDP');
+static const RadarGetAttacksLayer3SummaryByVectorProtocol udp = RadarGetAttacksLayer3SummaryByVectorProtocol$udp._();
 
-static const RadarGetAttacksLayer3SummaryByVectorProtocol tcp = RadarGetAttacksLayer3SummaryByVectorProtocol._('TCP');
+static const RadarGetAttacksLayer3SummaryByVectorProtocol tcp = RadarGetAttacksLayer3SummaryByVectorProtocol$tcp._();
 
-static const RadarGetAttacksLayer3SummaryByVectorProtocol icmp = RadarGetAttacksLayer3SummaryByVectorProtocol._('ICMP');
+static const RadarGetAttacksLayer3SummaryByVectorProtocol icmp = RadarGetAttacksLayer3SummaryByVectorProtocol$icmp._();
 
-static const RadarGetAttacksLayer3SummaryByVectorProtocol gre = RadarGetAttacksLayer3SummaryByVectorProtocol._('GRE');
+static const RadarGetAttacksLayer3SummaryByVectorProtocol gre = RadarGetAttacksLayer3SummaryByVectorProtocol$gre._();
 
 static const List<RadarGetAttacksLayer3SummaryByVectorProtocol> values = [udp, tcp, icmp, gre];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer3SummaryByVectorProtocol$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer3SummaryByVectorProtocol($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer3SummaryByVectorProtocol$udp extends RadarGetAttacksLayer3SummaryByVectorProtocol {const RadarGetAttacksLayer3SummaryByVectorProtocol$udp._();
+
+@override String get value => 'UDP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3SummaryByVectorProtocol$udp;
+
+@override int get hashCode => 'UDP'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3SummaryByVectorProtocol$tcp extends RadarGetAttacksLayer3SummaryByVectorProtocol {const RadarGetAttacksLayer3SummaryByVectorProtocol$tcp._();
+
+@override String get value => 'TCP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3SummaryByVectorProtocol$tcp;
+
+@override int get hashCode => 'TCP'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3SummaryByVectorProtocol$icmp extends RadarGetAttacksLayer3SummaryByVectorProtocol {const RadarGetAttacksLayer3SummaryByVectorProtocol$icmp._();
+
+@override String get value => 'ICMP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3SummaryByVectorProtocol$icmp;
+
+@override int get hashCode => 'ICMP'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3SummaryByVectorProtocol$gre extends RadarGetAttacksLayer3SummaryByVectorProtocol {const RadarGetAttacksLayer3SummaryByVectorProtocol$gre._();
+
+@override String get value => 'GRE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3SummaryByVectorProtocol$gre;
+
+@override int get hashCode => 'GRE'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3SummaryByVectorProtocol$Unknown extends RadarGetAttacksLayer3SummaryByVectorProtocol {const RadarGetAttacksLayer3SummaryByVectorProtocol$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer3SummaryByVectorProtocol && other.value == value;
+    other is RadarGetAttacksLayer3SummaryByVectorProtocol$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer3SummaryByVectorProtocol($value)';
 
  }

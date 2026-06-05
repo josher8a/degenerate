@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentIntentParam (inline: ThreeDSecure > NetworkOptions > CartesBancaires)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CbAvalgo {const CbAvalgo._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CbAvalgo {const CbAvalgo();
 
 factory CbAvalgo.fromJson(String json) { return switch (json) {
   '0' => $0,
@@ -10,25 +10,24 @@ factory CbAvalgo.fromJson(String json) { return switch (json) {
   '3' => $3,
   '4' => $4,
   'A' => a,
-  _ => CbAvalgo._(json),
+  _ => CbAvalgo$Unknown(json),
 }; }
 
-static const CbAvalgo $0 = CbAvalgo._('0');
+static const CbAvalgo $0 = CbAvalgo$$0._();
 
-static const CbAvalgo $1 = CbAvalgo._('1');
+static const CbAvalgo $1 = CbAvalgo$$1._();
 
-static const CbAvalgo $2 = CbAvalgo._('2');
+static const CbAvalgo $2 = CbAvalgo$$2._();
 
-static const CbAvalgo $3 = CbAvalgo._('3');
+static const CbAvalgo $3 = CbAvalgo$$3._();
 
-static const CbAvalgo $4 = CbAvalgo._('4');
+static const CbAvalgo $4 = CbAvalgo$$4._();
 
-static const CbAvalgo a = CbAvalgo._('A');
+static const CbAvalgo a = CbAvalgo$a._();
 
 static const List<CbAvalgo> values = [$0, $1, $2, $3, $4, a];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,13 +40,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CbAvalgo$Unknown; } 
+@override String toString() => 'CbAvalgo($value)';
+
+ }
+@immutable final class CbAvalgo$$0 extends CbAvalgo {const CbAvalgo$$0._();
+
+@override String get value => '0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CbAvalgo$$0;
+
+@override int get hashCode => '0'.hashCode;
+
+ }
+@immutable final class CbAvalgo$$1 extends CbAvalgo {const CbAvalgo$$1._();
+
+@override String get value => '1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CbAvalgo$$1;
+
+@override int get hashCode => '1'.hashCode;
+
+ }
+@immutable final class CbAvalgo$$2 extends CbAvalgo {const CbAvalgo$$2._();
+
+@override String get value => '2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CbAvalgo$$2;
+
+@override int get hashCode => '2'.hashCode;
+
+ }
+@immutable final class CbAvalgo$$3 extends CbAvalgo {const CbAvalgo$$3._();
+
+@override String get value => '3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CbAvalgo$$3;
+
+@override int get hashCode => '3'.hashCode;
+
+ }
+@immutable final class CbAvalgo$$4 extends CbAvalgo {const CbAvalgo$$4._();
+
+@override String get value => '4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CbAvalgo$$4;
+
+@override int get hashCode => '4'.hashCode;
+
+ }
+@immutable final class CbAvalgo$a extends CbAvalgo {const CbAvalgo$a._();
+
+@override String get value => 'A';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CbAvalgo$a;
+
+@override int get hashCode => 'A'.hashCode;
+
+ }
+@immutable final class CbAvalgo$Unknown extends CbAvalgo {const CbAvalgo$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CbAvalgo && other.value == value;
+    other is CbAvalgo$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CbAvalgo($value)';
 
  }
 @immutable final class NetworkOptionsCartesBancaires {const NetworkOptionsCartesBancaires({required this.cbAvalgo, this.cbExemption, this.cbScore, });

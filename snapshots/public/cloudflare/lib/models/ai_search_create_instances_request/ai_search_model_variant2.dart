@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AiSearchCreateInstancesRequest (inline: AiSearchModel > Variant2)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchModelVariant2 {const AiSearchModelVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AiSearchModelVariant2 {const AiSearchModelVariant2();
 
 factory AiSearchModelVariant2.fromJson(String json) { return switch (json) {
   '' => $empty,
-  _ => AiSearchModelVariant2._(json),
+  _ => AiSearchModelVariant2$Unknown(json),
 }; }
 
-static const AiSearchModelVariant2 $empty = AiSearchModelVariant2._('');
+static const AiSearchModelVariant2 $empty = AiSearchModelVariant2$$empty._();
 
 static const List<AiSearchModelVariant2> values = [$empty];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AiSearchModelVariant2$Unknown; } 
+@override String toString() => 'AiSearchModelVariant2($value)';
+
+ }
+@immutable final class AiSearchModelVariant2$$empty extends AiSearchModelVariant2 {const AiSearchModelVariant2$$empty._();
+
+@override String get value => '';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AiSearchModelVariant2$$empty;
+
+@override int get hashCode => ''.hashCode;
+
+ }
+@immutable final class AiSearchModelVariant2$Unknown extends AiSearchModelVariant2 {const AiSearchModelVariant2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AiSearchModelVariant2 && other.value == value;
+    other is AiSearchModelVariant2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AiSearchModelVariant2($value)';
 
  }

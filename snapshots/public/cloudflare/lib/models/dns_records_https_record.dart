@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DnsRecordsHttpsRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_https_record/dns_records_https_record_data.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';/// Record type.
-@immutable final class DnsRecordsHttpsRecordType {const DnsRecordsHttpsRecordType._(this.value);
+sealed class DnsRecordsHttpsRecordType {const DnsRecordsHttpsRecordType();
 
 factory DnsRecordsHttpsRecordType.fromJson(String json) { return switch (json) {
   'HTTPS' => https,
-  _ => DnsRecordsHttpsRecordType._(json),
+  _ => DnsRecordsHttpsRecordType$Unknown(json),
 }; }
 
-static const DnsRecordsHttpsRecordType https = DnsRecordsHttpsRecordType._('HTTPS');
+static const DnsRecordsHttpsRecordType https = DnsRecordsHttpsRecordType$https._();
 
 static const List<DnsRecordsHttpsRecordType> values = [https];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DnsRecordsHttpsRecordType$Unknown; } 
+@override String toString() => 'DnsRecordsHttpsRecordType($value)';
+
+ }
+@immutable final class DnsRecordsHttpsRecordType$https extends DnsRecordsHttpsRecordType {const DnsRecordsHttpsRecordType$https._();
+
+@override String get value => 'HTTPS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsHttpsRecordType$https;
+
+@override int get hashCode => 'HTTPS'.hashCode;
+
+ }
+@immutable final class DnsRecordsHttpsRecordType$Unknown extends DnsRecordsHttpsRecordType {const DnsRecordsHttpsRecordType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsHttpsRecordType && other.value == value;
+    other is DnsRecordsHttpsRecordType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DnsRecordsHttpsRecordType($value)';
 
  }
 @immutable final class DnsRecordsHttpsRecord {const DnsRecordsHttpsRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });

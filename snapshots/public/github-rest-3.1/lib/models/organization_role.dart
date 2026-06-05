@@ -2,7 +2,7 @@
 // Source: #/components/schemas/OrganizationRole
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The system role from which this role inherits permissions.
-@immutable final class BaseRole {const BaseRole._(this.value);
+sealed class BaseRole {const BaseRole();
 
 factory BaseRole.fromJson(String json) { return switch (json) {
   'read' => read,
@@ -11,25 +11,24 @@ factory BaseRole.fromJson(String json) { return switch (json) {
   'maintain' => maintain,
   'admin' => admin,
   'null' => $null,
-  _ => BaseRole._(json),
+  _ => BaseRole$Unknown(json),
 }; }
 
-static const BaseRole read = BaseRole._('read');
+static const BaseRole read = BaseRole$read._();
 
-static const BaseRole triage = BaseRole._('triage');
+static const BaseRole triage = BaseRole$triage._();
 
-static const BaseRole write = BaseRole._('write');
+static const BaseRole write = BaseRole$write._();
 
-static const BaseRole maintain = BaseRole._('maintain');
+static const BaseRole maintain = BaseRole$maintain._();
 
-static const BaseRole admin = BaseRole._('admin');
+static const BaseRole admin = BaseRole$admin._();
 
-static const BaseRole $null = BaseRole._('null');
+static const BaseRole $null = BaseRole$$null._();
 
 static const List<BaseRole> values = [read, triage, write, maintain, admin, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,38 +41,96 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BaseRole && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is BaseRole$Unknown; } 
 @override String toString() => 'BaseRole($value)';
 
  }
+@immutable final class BaseRole$read extends BaseRole {const BaseRole$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BaseRole$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class BaseRole$triage extends BaseRole {const BaseRole$triage._();
+
+@override String get value => 'triage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BaseRole$triage;
+
+@override int get hashCode => 'triage'.hashCode;
+
+ }
+@immutable final class BaseRole$write extends BaseRole {const BaseRole$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BaseRole$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class BaseRole$maintain extends BaseRole {const BaseRole$maintain._();
+
+@override String get value => 'maintain';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BaseRole$maintain;
+
+@override int get hashCode => 'maintain'.hashCode;
+
+ }
+@immutable final class BaseRole$admin extends BaseRole {const BaseRole$admin._();
+
+@override String get value => 'admin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BaseRole$admin;
+
+@override int get hashCode => 'admin'.hashCode;
+
+ }
+@immutable final class BaseRole$$null extends BaseRole {const BaseRole$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BaseRole$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class BaseRole$Unknown extends BaseRole {const BaseRole$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BaseRole$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Source answers the question, "where did this role come from?"
-@immutable final class OrganizationRoleSource {const OrganizationRoleSource._(this.value);
+sealed class OrganizationRoleSource {const OrganizationRoleSource();
 
 factory OrganizationRoleSource.fromJson(String json) { return switch (json) {
   'Organization' => organization,
   'Enterprise' => enterprise,
   'Predefined' => predefined,
   'null' => $null,
-  _ => OrganizationRoleSource._(json),
+  _ => OrganizationRoleSource$Unknown(json),
 }; }
 
-static const OrganizationRoleSource organization = OrganizationRoleSource._('Organization');
+static const OrganizationRoleSource organization = OrganizationRoleSource$organization._();
 
-static const OrganizationRoleSource enterprise = OrganizationRoleSource._('Enterprise');
+static const OrganizationRoleSource enterprise = OrganizationRoleSource$enterprise._();
 
-static const OrganizationRoleSource predefined = OrganizationRoleSource._('Predefined');
+static const OrganizationRoleSource predefined = OrganizationRoleSource$predefined._();
 
-static const OrganizationRoleSource $null = OrganizationRoleSource._('null');
+static const OrganizationRoleSource $null = OrganizationRoleSource$$null._();
 
 static const List<OrganizationRoleSource> values = [organization, enterprise, predefined, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -84,13 +141,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrganizationRoleSource$Unknown; } 
+@override String toString() => 'OrganizationRoleSource($value)';
+
+ }
+@immutable final class OrganizationRoleSource$organization extends OrganizationRoleSource {const OrganizationRoleSource$organization._();
+
+@override String get value => 'Organization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationRoleSource$organization;
+
+@override int get hashCode => 'Organization'.hashCode;
+
+ }
+@immutable final class OrganizationRoleSource$enterprise extends OrganizationRoleSource {const OrganizationRoleSource$enterprise._();
+
+@override String get value => 'Enterprise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationRoleSource$enterprise;
+
+@override int get hashCode => 'Enterprise'.hashCode;
+
+ }
+@immutable final class OrganizationRoleSource$predefined extends OrganizationRoleSource {const OrganizationRoleSource$predefined._();
+
+@override String get value => 'Predefined';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationRoleSource$predefined;
+
+@override int get hashCode => 'Predefined'.hashCode;
+
+ }
+@immutable final class OrganizationRoleSource$$null extends OrganizationRoleSource {const OrganizationRoleSource$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationRoleSource$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class OrganizationRoleSource$Unknown extends OrganizationRoleSource {const OrganizationRoleSource$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrganizationRoleSource && other.value == value;
+    other is OrganizationRoleSource$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrganizationRoleSource($value)';
 
  }
 /// Organization roles

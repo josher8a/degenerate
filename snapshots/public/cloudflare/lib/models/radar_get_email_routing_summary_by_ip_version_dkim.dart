@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailRoutingSummaryByIpVersionDkim
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByIpVersionDkim {const RadarGetEmailRoutingSummaryByIpVersionDkim._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailRoutingSummaryByIpVersionDkim {const RadarGetEmailRoutingSummaryByIpVersionDkim();
 
 factory RadarGetEmailRoutingSummaryByIpVersionDkim.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailRoutingSummaryByIpVersionDkim._(json),
+  _ => RadarGetEmailRoutingSummaryByIpVersionDkim$Unknown(json),
 }; }
 
-static const RadarGetEmailRoutingSummaryByIpVersionDkim pass = RadarGetEmailRoutingSummaryByIpVersionDkim._('PASS');
+static const RadarGetEmailRoutingSummaryByIpVersionDkim pass = RadarGetEmailRoutingSummaryByIpVersionDkim$pass._();
 
-static const RadarGetEmailRoutingSummaryByIpVersionDkim none = RadarGetEmailRoutingSummaryByIpVersionDkim._('NONE');
+static const RadarGetEmailRoutingSummaryByIpVersionDkim none = RadarGetEmailRoutingSummaryByIpVersionDkim$none._();
 
-static const RadarGetEmailRoutingSummaryByIpVersionDkim fail = RadarGetEmailRoutingSummaryByIpVersionDkim._('FAIL');
+static const RadarGetEmailRoutingSummaryByIpVersionDkim fail = RadarGetEmailRoutingSummaryByIpVersionDkim$fail._();
 
 static const List<RadarGetEmailRoutingSummaryByIpVersionDkim> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailRoutingSummaryByIpVersionDkim$Unknown; } 
+@override String toString() => 'RadarGetEmailRoutingSummaryByIpVersionDkim($value)';
+
+ }
+@immutable final class RadarGetEmailRoutingSummaryByIpVersionDkim$pass extends RadarGetEmailRoutingSummaryByIpVersionDkim {const RadarGetEmailRoutingSummaryByIpVersionDkim$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingSummaryByIpVersionDkim$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingSummaryByIpVersionDkim$none extends RadarGetEmailRoutingSummaryByIpVersionDkim {const RadarGetEmailRoutingSummaryByIpVersionDkim$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingSummaryByIpVersionDkim$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingSummaryByIpVersionDkim$fail extends RadarGetEmailRoutingSummaryByIpVersionDkim {const RadarGetEmailRoutingSummaryByIpVersionDkim$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingSummaryByIpVersionDkim$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingSummaryByIpVersionDkim$Unknown extends RadarGetEmailRoutingSummaryByIpVersionDkim {const RadarGetEmailRoutingSummaryByIpVersionDkim$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailRoutingSummaryByIpVersionDkim && other.value == value;
+    other is RadarGetEmailRoutingSummaryByIpVersionDkim$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailRoutingSummaryByIpVersionDkim($value)';
 
  }

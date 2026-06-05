@@ -2,19 +2,18 @@
 // Source: #/components/schemas/BillingCreditGrant
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_credit_grant/billing_credit_grant_category.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_amount.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_applicability_config.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class BillingCreditGrantObject {const BillingCreditGrantObject._(this.value);
+sealed class BillingCreditGrantObject {const BillingCreditGrantObject();
 
 factory BillingCreditGrantObject.fromJson(String json) { return switch (json) {
   'billing.credit_grant' => billingCreditGrant,
-  _ => BillingCreditGrantObject._(json),
+  _ => BillingCreditGrantObject$Unknown(json),
 }; }
 
-static const BillingCreditGrantObject billingCreditGrant = BillingCreditGrantObject._('billing.credit_grant');
+static const BillingCreditGrantObject billingCreditGrant = BillingCreditGrantObject$billingCreditGrant._();
 
 static const List<BillingCreditGrantObject> values = [billingCreditGrant];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingCreditGrantObject$Unknown; } 
+@override String toString() => 'BillingCreditGrantObject($value)';
+
+ }
+@immutable final class BillingCreditGrantObject$billingCreditGrant extends BillingCreditGrantObject {const BillingCreditGrantObject$billingCreditGrant._();
+
+@override String get value => 'billing.credit_grant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingCreditGrantObject$billingCreditGrant;
+
+@override int get hashCode => 'billing.credit_grant'.hashCode;
+
+ }
+@immutable final class BillingCreditGrantObject$Unknown extends BillingCreditGrantObject {const BillingCreditGrantObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingCreditGrantObject && other.value == value;
+    other is BillingCreditGrantObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingCreditGrantObject($value)';
 
  }
 /// A credit grant is an API resource that documents the allocation of some billing credits to a customer.

@@ -2,28 +2,27 @@
 // Source: #/components/schemas/RadarGetDnsTimeseriesGroupByDnssecAggInterval
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-@immutable final class RadarGetDnsTimeseriesGroupByDnssecAggInterval {const RadarGetDnsTimeseriesGroupByDnssecAggInterval._(this.value);
+sealed class RadarGetDnsTimeseriesGroupByDnssecAggInterval {const RadarGetDnsTimeseriesGroupByDnssecAggInterval();
 
 factory RadarGetDnsTimeseriesGroupByDnssecAggInterval.fromJson(String json) { return switch (json) {
   '15m' => $15m,
   '1h' => $1h,
   '1d' => $1d,
   '1w' => $1w,
-  _ => RadarGetDnsTimeseriesGroupByDnssecAggInterval._(json),
+  _ => RadarGetDnsTimeseriesGroupByDnssecAggInterval$Unknown(json),
 }; }
 
-static const RadarGetDnsTimeseriesGroupByDnssecAggInterval $15m = RadarGetDnsTimeseriesGroupByDnssecAggInterval._('15m');
+static const RadarGetDnsTimeseriesGroupByDnssecAggInterval $15m = RadarGetDnsTimeseriesGroupByDnssecAggInterval$$15m._();
 
-static const RadarGetDnsTimeseriesGroupByDnssecAggInterval $1h = RadarGetDnsTimeseriesGroupByDnssecAggInterval._('1h');
+static const RadarGetDnsTimeseriesGroupByDnssecAggInterval $1h = RadarGetDnsTimeseriesGroupByDnssecAggInterval$$1h._();
 
-static const RadarGetDnsTimeseriesGroupByDnssecAggInterval $1d = RadarGetDnsTimeseriesGroupByDnssecAggInterval._('1d');
+static const RadarGetDnsTimeseriesGroupByDnssecAggInterval $1d = RadarGetDnsTimeseriesGroupByDnssecAggInterval$$1d._();
 
-static const RadarGetDnsTimeseriesGroupByDnssecAggInterval $1w = RadarGetDnsTimeseriesGroupByDnssecAggInterval._('1w');
+static const RadarGetDnsTimeseriesGroupByDnssecAggInterval $1w = RadarGetDnsTimeseriesGroupByDnssecAggInterval$$1w._();
 
 static const List<RadarGetDnsTimeseriesGroupByDnssecAggInterval> values = [$15m, $1h, $1d, $1w];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetDnsTimeseriesGroupByDnssecAggInterval$Unknown; } 
+@override String toString() => 'RadarGetDnsTimeseriesGroupByDnssecAggInterval($value)';
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByDnssecAggInterval$$15m extends RadarGetDnsTimeseriesGroupByDnssecAggInterval {const RadarGetDnsTimeseriesGroupByDnssecAggInterval$$15m._();
+
+@override String get value => '15m';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByDnssecAggInterval$$15m;
+
+@override int get hashCode => '15m'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByDnssecAggInterval$$1h extends RadarGetDnsTimeseriesGroupByDnssecAggInterval {const RadarGetDnsTimeseriesGroupByDnssecAggInterval$$1h._();
+
+@override String get value => '1h';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByDnssecAggInterval$$1h;
+
+@override int get hashCode => '1h'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByDnssecAggInterval$$1d extends RadarGetDnsTimeseriesGroupByDnssecAggInterval {const RadarGetDnsTimeseriesGroupByDnssecAggInterval$$1d._();
+
+@override String get value => '1d';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByDnssecAggInterval$$1d;
+
+@override int get hashCode => '1d'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByDnssecAggInterval$$1w extends RadarGetDnsTimeseriesGroupByDnssecAggInterval {const RadarGetDnsTimeseriesGroupByDnssecAggInterval$$1w._();
+
+@override String get value => '1w';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByDnssecAggInterval$$1w;
+
+@override int get hashCode => '1w'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByDnssecAggInterval$Unknown extends RadarGetDnsTimeseriesGroupByDnssecAggInterval {const RadarGetDnsTimeseriesGroupByDnssecAggInterval$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetDnsTimeseriesGroupByDnssecAggInterval && other.value == value;
+    other is RadarGetDnsTimeseriesGroupByDnssecAggInterval$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetDnsTimeseriesGroupByDnssecAggInterval($value)';
 
  }

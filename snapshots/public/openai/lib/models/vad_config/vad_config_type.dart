@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of turn detection. Only `server_vad` is currently supported for transcription sessions.
 /// 
-@immutable final class VadConfigType {const VadConfigType._(this.value);
+sealed class VadConfigType {const VadConfigType();
 
 factory VadConfigType.fromJson(String json) { return switch (json) {
   'server_vad' => serverVad,
-  _ => VadConfigType._(json),
+  _ => VadConfigType$Unknown(json),
 }; }
 
-static const VadConfigType serverVad = VadConfigType._('server_vad');
+static const VadConfigType serverVad = VadConfigType$serverVad._();
 
 static const List<VadConfigType> values = [serverVad];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,12 +22,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is VadConfigType$Unknown; } 
+@override String toString() => 'VadConfigType($value)';
+
+ }
+@immutable final class VadConfigType$serverVad extends VadConfigType {const VadConfigType$serverVad._();
+
+@override String get value => 'server_vad';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VadConfigType$serverVad;
+
+@override int get hashCode => 'server_vad'.hashCode;
+
+ }
+@immutable final class VadConfigType$Unknown extends VadConfigType {const VadConfigType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is VadConfigType && other.value == value;
+    other is VadConfigType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'VadConfigType($value)';
 
  }

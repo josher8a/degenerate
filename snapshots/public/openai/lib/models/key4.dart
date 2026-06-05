@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Key4
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.project.service_account.api_key`
-@immutable final class Key4Object {const Key4Object._(this.value);
+sealed class Key4Object {const Key4Object();
 
 factory Key4Object.fromJson(String json) { return switch (json) {
   'organization.project.service_account.api_key' => organizationProjectServiceAccountApiKey,
-  _ => Key4Object._(json),
+  _ => Key4Object$Unknown(json),
 }; }
 
-static const Key4Object organizationProjectServiceAccountApiKey = Key4Object._('organization.project.service_account.api_key');
+static const Key4Object organizationProjectServiceAccountApiKey = Key4Object$organizationProjectServiceAccountApiKey._();
 
 static const List<Key4Object> values = [organizationProjectServiceAccountApiKey];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Key4Object$Unknown; } 
+@override String toString() => 'Key4Object($value)';
+
+ }
+@immutable final class Key4Object$organizationProjectServiceAccountApiKey extends Key4Object {const Key4Object$organizationProjectServiceAccountApiKey._();
+
+@override String get value => 'organization.project.service_account.api_key';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Key4Object$organizationProjectServiceAccountApiKey;
+
+@override int get hashCode => 'organization.project.service_account.api_key'.hashCode;
+
+ }
+@immutable final class Key4Object$Unknown extends Key4Object {const Key4Object$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Key4Object && other.value == value;
+    other is Key4Object$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Key4Object($value)';
 
  }
 @immutable final class Key4 {const Key4({required this.object, required this.value, required this.name, required this.createdAt, required this.id, });

@@ -2,28 +2,27 @@
 // Source: #/components/schemas/FinancialConnectionsAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_account_number_details.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_balance.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_balance_refresh.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_ownership_refresh.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_transaction_refresh.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/financial_connections_account_permissions.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/ownership.dart';import 'package:pub_stripe_spec3/models/financial_connections_account_ownership.dart';/// The type of the account. Account category is further divided in `subcategory`.
-@immutable final class FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory._(this.value);
+sealed class FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory();
 
 factory FinancialConnectionsAccountCategory.fromJson(String json) { return switch (json) {
   'cash' => cash,
   'credit' => credit,
   'investment' => investment,
   'other' => $other,
-  _ => FinancialConnectionsAccountCategory._(json),
+  _ => FinancialConnectionsAccountCategory$Unknown(json),
 }; }
 
-static const FinancialConnectionsAccountCategory cash = FinancialConnectionsAccountCategory._('cash');
+static const FinancialConnectionsAccountCategory cash = FinancialConnectionsAccountCategory$cash._();
 
-static const FinancialConnectionsAccountCategory credit = FinancialConnectionsAccountCategory._('credit');
+static const FinancialConnectionsAccountCategory credit = FinancialConnectionsAccountCategory$credit._();
 
-static const FinancialConnectionsAccountCategory investment = FinancialConnectionsAccountCategory._('investment');
+static const FinancialConnectionsAccountCategory investment = FinancialConnectionsAccountCategory$investment._();
 
-static const FinancialConnectionsAccountCategory $other = FinancialConnectionsAccountCategory._('other');
+static const FinancialConnectionsAccountCategory $other = FinancialConnectionsAccountCategory$$other._();
 
 static const List<FinancialConnectionsAccountCategory> values = [cash, credit, investment, $other];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,29 +33,69 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is FinancialConnectionsAccountCategory && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is FinancialConnectionsAccountCategory$Unknown; } 
 @override String toString() => 'FinancialConnectionsAccountCategory($value)';
 
  }
+@immutable final class FinancialConnectionsAccountCategory$cash extends FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory$cash._();
+
+@override String get value => 'cash';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsAccountCategory$cash;
+
+@override int get hashCode => 'cash'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsAccountCategory$credit extends FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory$credit._();
+
+@override String get value => 'credit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsAccountCategory$credit;
+
+@override int get hashCode => 'credit'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsAccountCategory$investment extends FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory$investment._();
+
+@override String get value => 'investment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsAccountCategory$investment;
+
+@override int get hashCode => 'investment'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsAccountCategory$$other extends FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsAccountCategory$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsAccountCategory$Unknown extends FinancialConnectionsAccountCategory {const FinancialConnectionsAccountCategory$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FinancialConnectionsAccountCategory$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class FinancialConnectionsAccountObject {const FinancialConnectionsAccountObject._(this.value);
+sealed class FinancialConnectionsAccountObject {const FinancialConnectionsAccountObject();
 
 factory FinancialConnectionsAccountObject.fromJson(String json) { return switch (json) {
   'financial_connections.account' => financialConnectionsAccount,
-  _ => FinancialConnectionsAccountObject._(json),
+  _ => FinancialConnectionsAccountObject$Unknown(json),
 }; }
 
-static const FinancialConnectionsAccountObject financialConnectionsAccount = FinancialConnectionsAccountObject._('financial_connections.account');
+static const FinancialConnectionsAccountObject financialConnectionsAccount = FinancialConnectionsAccountObject$financialConnectionsAccount._();
 
 static const List<FinancialConnectionsAccountObject> values = [financialConnectionsAccount];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,35 +103,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is FinancialConnectionsAccountObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is FinancialConnectionsAccountObject$Unknown; } 
 @override String toString() => 'FinancialConnectionsAccountObject($value)';
 
  }
+@immutable final class FinancialConnectionsAccountObject$financialConnectionsAccount extends FinancialConnectionsAccountObject {const FinancialConnectionsAccountObject$financialConnectionsAccount._();
+
+@override String get value => 'financial_connections.account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsAccountObject$financialConnectionsAccount;
+
+@override int get hashCode => 'financial_connections.account'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsAccountObject$Unknown extends FinancialConnectionsAccountObject {const FinancialConnectionsAccountObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FinancialConnectionsAccountObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of the link to the account.
-@immutable final class FinancialConnectionsAccountStatus {const FinancialConnectionsAccountStatus._(this.value);
+sealed class FinancialConnectionsAccountStatus {const FinancialConnectionsAccountStatus();
 
 factory FinancialConnectionsAccountStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'disconnected' => disconnected,
   'inactive' => inactive,
-  _ => FinancialConnectionsAccountStatus._(json),
+  _ => FinancialConnectionsAccountStatus$Unknown(json),
 }; }
 
-static const FinancialConnectionsAccountStatus active = FinancialConnectionsAccountStatus._('active');
+static const FinancialConnectionsAccountStatus active = FinancialConnectionsAccountStatus$active._();
 
-static const FinancialConnectionsAccountStatus disconnected = FinancialConnectionsAccountStatus._('disconnected');
+static const FinancialConnectionsAccountStatus disconnected = FinancialConnectionsAccountStatus$disconnected._();
 
-static const FinancialConnectionsAccountStatus inactive = FinancialConnectionsAccountStatus._('inactive');
+static const FinancialConnectionsAccountStatus inactive = FinancialConnectionsAccountStatus$inactive._();
 
 static const List<FinancialConnectionsAccountStatus> values = [active, disconnected, inactive];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -102,13 +154,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FinancialConnectionsAccountStatus$Unknown; } 
+@override String toString() => 'FinancialConnectionsAccountStatus($value)';
+
+ }
+@immutable final class FinancialConnectionsAccountStatus$active extends FinancialConnectionsAccountStatus {const FinancialConnectionsAccountStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsAccountStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsAccountStatus$disconnected extends FinancialConnectionsAccountStatus {const FinancialConnectionsAccountStatus$disconnected._();
+
+@override String get value => 'disconnected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsAccountStatus$disconnected;
+
+@override int get hashCode => 'disconnected'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsAccountStatus$inactive extends FinancialConnectionsAccountStatus {const FinancialConnectionsAccountStatus$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsAccountStatus$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsAccountStatus$Unknown extends FinancialConnectionsAccountStatus {const FinancialConnectionsAccountStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FinancialConnectionsAccountStatus && other.value == value;
+    other is FinancialConnectionsAccountStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FinancialConnectionsAccountStatus($value)';
 
  }
 /// If `category` is `cash`, one of:
@@ -125,7 +209,7 @@ bool get isUnknown { return !values.contains(this); }
 ///  - `other`
 /// 
 /// If `category` is `investment` or `other`, this will be `other`.
-@immutable final class Subcategory {const Subcategory._(this.value);
+sealed class Subcategory {const Subcategory();
 
 factory Subcategory.fromJson(String json) { return switch (json) {
   'checking' => checking,
@@ -134,25 +218,24 @@ factory Subcategory.fromJson(String json) { return switch (json) {
   'mortgage' => mortgage,
   'other' => $other,
   'savings' => savings,
-  _ => Subcategory._(json),
+  _ => Subcategory$Unknown(json),
 }; }
 
-static const Subcategory checking = Subcategory._('checking');
+static const Subcategory checking = Subcategory$checking._();
 
-static const Subcategory creditCard = Subcategory._('credit_card');
+static const Subcategory creditCard = Subcategory$creditCard._();
 
-static const Subcategory lineOfCredit = Subcategory._('line_of_credit');
+static const Subcategory lineOfCredit = Subcategory$lineOfCredit._();
 
-static const Subcategory mortgage = Subcategory._('mortgage');
+static const Subcategory mortgage = Subcategory$mortgage._();
 
-static const Subcategory $other = Subcategory._('other');
+static const Subcategory $other = Subcategory$$other._();
 
-static const Subcategory savings = Subcategory._('savings');
+static const Subcategory savings = Subcategory$savings._();
 
 static const List<Subcategory> values = [checking, creditCard, lineOfCredit, mortgage, $other, savings];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -165,28 +248,86 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Subcategory && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Subcategory$Unknown; } 
 @override String toString() => 'Subcategory($value)';
 
  }
-@immutable final class FinancialConnectionsAccountSubscriptions {const FinancialConnectionsAccountSubscriptions._(this.value);
+@immutable final class Subcategory$checking extends Subcategory {const Subcategory$checking._();
+
+@override String get value => 'checking';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Subcategory$checking;
+
+@override int get hashCode => 'checking'.hashCode;
+
+ }
+@immutable final class Subcategory$creditCard extends Subcategory {const Subcategory$creditCard._();
+
+@override String get value => 'credit_card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Subcategory$creditCard;
+
+@override int get hashCode => 'credit_card'.hashCode;
+
+ }
+@immutable final class Subcategory$lineOfCredit extends Subcategory {const Subcategory$lineOfCredit._();
+
+@override String get value => 'line_of_credit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Subcategory$lineOfCredit;
+
+@override int get hashCode => 'line_of_credit'.hashCode;
+
+ }
+@immutable final class Subcategory$mortgage extends Subcategory {const Subcategory$mortgage._();
+
+@override String get value => 'mortgage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Subcategory$mortgage;
+
+@override int get hashCode => 'mortgage'.hashCode;
+
+ }
+@immutable final class Subcategory$$other extends Subcategory {const Subcategory$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Subcategory$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class Subcategory$savings extends Subcategory {const Subcategory$savings._();
+
+@override String get value => 'savings';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Subcategory$savings;
+
+@override int get hashCode => 'savings'.hashCode;
+
+ }
+@immutable final class Subcategory$Unknown extends Subcategory {const Subcategory$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Subcategory$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class FinancialConnectionsAccountSubscriptions {const FinancialConnectionsAccountSubscriptions();
 
 factory FinancialConnectionsAccountSubscriptions.fromJson(String json) { return switch (json) {
   'transactions' => transactions,
-  _ => FinancialConnectionsAccountSubscriptions._(json),
+  _ => FinancialConnectionsAccountSubscriptions$Unknown(json),
 }; }
 
-static const FinancialConnectionsAccountSubscriptions transactions = FinancialConnectionsAccountSubscriptions._('transactions');
+static const FinancialConnectionsAccountSubscriptions transactions = FinancialConnectionsAccountSubscriptions$transactions._();
 
 static const List<FinancialConnectionsAccountSubscriptions> values = [transactions];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -194,31 +335,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is FinancialConnectionsAccountSubscriptions && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is FinancialConnectionsAccountSubscriptions$Unknown; } 
 @override String toString() => 'FinancialConnectionsAccountSubscriptions($value)';
 
  }
-@immutable final class SupportedPaymentMethodTypes {const SupportedPaymentMethodTypes._(this.value);
+@immutable final class FinancialConnectionsAccountSubscriptions$transactions extends FinancialConnectionsAccountSubscriptions {const FinancialConnectionsAccountSubscriptions$transactions._();
+
+@override String get value => 'transactions';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsAccountSubscriptions$transactions;
+
+@override int get hashCode => 'transactions'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsAccountSubscriptions$Unknown extends FinancialConnectionsAccountSubscriptions {const FinancialConnectionsAccountSubscriptions$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FinancialConnectionsAccountSubscriptions$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class SupportedPaymentMethodTypes {const SupportedPaymentMethodTypes();
 
 factory SupportedPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'link' => link,
   'us_bank_account' => usBankAccount,
-  _ => SupportedPaymentMethodTypes._(json),
+  _ => SupportedPaymentMethodTypes$Unknown(json),
 }; }
 
-static const SupportedPaymentMethodTypes link = SupportedPaymentMethodTypes._('link');
+static const SupportedPaymentMethodTypes link = SupportedPaymentMethodTypes$link._();
 
-static const SupportedPaymentMethodTypes usBankAccount = SupportedPaymentMethodTypes._('us_bank_account');
+static const SupportedPaymentMethodTypes usBankAccount = SupportedPaymentMethodTypes$usBankAccount._();
 
 static const List<SupportedPaymentMethodTypes> values = [link, usBankAccount];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -227,13 +381,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SupportedPaymentMethodTypes$Unknown; } 
+@override String toString() => 'SupportedPaymentMethodTypes($value)';
+
+ }
+@immutable final class SupportedPaymentMethodTypes$link extends SupportedPaymentMethodTypes {const SupportedPaymentMethodTypes$link._();
+
+@override String get value => 'link';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SupportedPaymentMethodTypes$link;
+
+@override int get hashCode => 'link'.hashCode;
+
+ }
+@immutable final class SupportedPaymentMethodTypes$usBankAccount extends SupportedPaymentMethodTypes {const SupportedPaymentMethodTypes$usBankAccount._();
+
+@override String get value => 'us_bank_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SupportedPaymentMethodTypes$usBankAccount;
+
+@override int get hashCode => 'us_bank_account'.hashCode;
+
+ }
+@immutable final class SupportedPaymentMethodTypes$Unknown extends SupportedPaymentMethodTypes {const SupportedPaymentMethodTypes$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SupportedPaymentMethodTypes && other.value == value;
+    other is SupportedPaymentMethodTypes$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SupportedPaymentMethodTypes($value)';
 
  }
 /// A Financial Connections Account represents an account that exists outside of Stripe, to which you have been granted some degree of access.

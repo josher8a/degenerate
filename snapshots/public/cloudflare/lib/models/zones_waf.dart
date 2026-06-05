@@ -4,19 +4,18 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_waf_value.dart';/// Turn on or off [WAF managed rules (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-waf-managed-rules/).
 /// You cannot enable or disable individual WAF managed rules via Page Rules.
 /// 
-@immutable final class ZonesWafId {const ZonesWafId._(this.value);
+sealed class ZonesWafId {const ZonesWafId();
 
 factory ZonesWafId.fromJson(String json) { return switch (json) {
   'waf' => waf,
-  _ => ZonesWafId._(json),
+  _ => ZonesWafId$Unknown(json),
 }; }
 
-static const ZonesWafId waf = ZonesWafId._('waf');
+static const ZonesWafId waf = ZonesWafId$waf._();
 
 static const List<ZonesWafId> values = [waf];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -24,13 +23,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesWafId$Unknown; } 
+@override String toString() => 'ZonesWafId($value)';
+
+ }
+@immutable final class ZonesWafId$waf extends ZonesWafId {const ZonesWafId$waf._();
+
+@override String get value => 'waf';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesWafId$waf;
+
+@override int get hashCode => 'waf'.hashCode;
+
+ }
+@immutable final class ZonesWafId$Unknown extends ZonesWafId {const ZonesWafId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesWafId && other.value == value;
+    other is ZonesWafId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesWafId($value)';
 
  }
 @immutable final class ZonesWaf {const ZonesWaf({this.id, this.value, });

@@ -4,22 +4,21 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_customer_sheet_resource_features/payment_method_allow_redisplay_filters.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_redisplay.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_remove.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_save.dart';/// When using PaymentIntents and the customer checks the save checkbox, this field determines the [`setup_future_usage`](https://docs.stripe.com/api/payment_intents/object#payment_intent_object-setup_future_usage) value used to confirm the PaymentIntent.
 /// 
 /// When using SetupIntents, directly configure the [`usage`](https://docs.stripe.com/api/setup_intents/object#setup_intent_object-usage) value on SetupIntent creation.
-@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage._(this.value);
+sealed class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage();
 
 factory CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
-  _ => CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage._(json),
+  _ => CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$Unknown(json),
 }; }
 
-static const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage offSession = CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage._('off_session');
+static const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage offSession = CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$offSession._();
 
-static const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage onSession = CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage._('on_session');
+static const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage onSession = CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$onSession._();
 
 static const List<CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage> values = [offSession, onSession];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -28,13 +27,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$Unknown; } 
+@override String toString() => 'CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage($value)';
+
+ }
+@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$offSession extends CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$offSession._();
+
+@override String get value => 'off_session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$offSession;
+
+@override int get hashCode => 'off_session'.hashCode;
+
+ }
+@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$onSession extends CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$onSession._();
+
+@override String get value => 'on_session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$onSession;
+
+@override int get hashCode => 'on_session'.hashCode;
+
+ }
+@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$Unknown extends CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage && other.value == value;
+    other is CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodSaveUsage($value)';
 
  }
 /// This hash contains the features the Payment Element supports.

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CacheRulesCacheReserveValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Cache Reserve zone setting.
-@immutable final class CacheRulesCacheReserveValue {const CacheRulesCacheReserveValue._(this.value);
+sealed class CacheRulesCacheReserveValue {const CacheRulesCacheReserveValue();
 
 factory CacheRulesCacheReserveValue.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => CacheRulesCacheReserveValue._(json),
+  _ => CacheRulesCacheReserveValue$Unknown(json),
 }; }
 
-static const CacheRulesCacheReserveValue $on = CacheRulesCacheReserveValue._('on');
+static const CacheRulesCacheReserveValue $on = CacheRulesCacheReserveValue$$on._();
 
-static const CacheRulesCacheReserveValue off = CacheRulesCacheReserveValue._('off');
+static const CacheRulesCacheReserveValue off = CacheRulesCacheReserveValue$off._();
 
 static const List<CacheRulesCacheReserveValue> values = [$on, off];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CacheRulesCacheReserveValue$Unknown; } 
+@override String toString() => 'CacheRulesCacheReserveValue($value)';
+
+ }
+@immutable final class CacheRulesCacheReserveValue$$on extends CacheRulesCacheReserveValue {const CacheRulesCacheReserveValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CacheRulesCacheReserveValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class CacheRulesCacheReserveValue$off extends CacheRulesCacheReserveValue {const CacheRulesCacheReserveValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CacheRulesCacheReserveValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class CacheRulesCacheReserveValue$Unknown extends CacheRulesCacheReserveValue {const CacheRulesCacheReserveValue$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CacheRulesCacheReserveValue && other.value == value;
+    other is CacheRulesCacheReserveValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CacheRulesCacheReserveValue($value)';
 
  }

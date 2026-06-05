@@ -3,9 +3,8 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
-@immutable
-final class ReferralChoices {
-  const ReferralChoices._(this.value);
+sealed class ReferralChoices {
+  const ReferralChoices();
 
   factory ReferralChoices.fromJson(String json) {
     return switch (json) {
@@ -18,27 +17,27 @@ final class ReferralChoices {
       'newsletter' => newsletter,
       'dream' => dream,
       'other' => $other,
-      _ => ReferralChoices._(json),
+      _ => ReferralChoices$Unknown(json),
     };
   }
 
-  static const ReferralChoices $default = ReferralChoices._('default');
+  static const ReferralChoices $default = ReferralChoices$$default._();
 
-  static const ReferralChoices search = ReferralChoices._('search');
+  static const ReferralChoices search = ReferralChoices$search._();
 
-  static const ReferralChoices social = ReferralChoices._('social');
+  static const ReferralChoices social = ReferralChoices$social._();
 
-  static const ReferralChoices keeper = ReferralChoices._('keeper');
+  static const ReferralChoices keeper = ReferralChoices$keeper._();
 
-  static const ReferralChoices pamphlet = ReferralChoices._('pamphlet');
+  static const ReferralChoices pamphlet = ReferralChoices$pamphlet._();
 
-  static const ReferralChoices blog = ReferralChoices._('blog');
+  static const ReferralChoices blog = ReferralChoices$blog._();
 
-  static const ReferralChoices newsletter = ReferralChoices._('newsletter');
+  static const ReferralChoices newsletter = ReferralChoices$newsletter._();
 
-  static const ReferralChoices dream = ReferralChoices._('dream');
+  static const ReferralChoices dream = ReferralChoices$dream._();
 
-  static const ReferralChoices $other = ReferralChoices._('other');
+  static const ReferralChoices $other = ReferralChoices$$other._();
 
   static const List<ReferralChoices> values = [
     $default,
@@ -52,8 +51,7 @@ final class ReferralChoices {
     $other,
   ];
 
-  final String value;
-
+  String get value;
   String toJson() {
     return value;
   }
@@ -76,19 +74,162 @@ final class ReferralChoices {
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
-    return !values.contains(this);
+    return this is ReferralChoices$Unknown;
   }
+
+  @override
+  String toString() => 'ReferralChoices($value)';
+}
+
+@immutable
+final class ReferralChoices$$default extends ReferralChoices {
+  const ReferralChoices$$default._();
+
+  @override
+  String get value => 'default';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ReferralChoices$$default;
+
+  @override
+  int get hashCode => 'default'.hashCode;
+}
+
+@immutable
+final class ReferralChoices$search extends ReferralChoices {
+  const ReferralChoices$search._();
+
+  @override
+  String get value => 'search';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ReferralChoices$search;
+
+  @override
+  int get hashCode => 'search'.hashCode;
+}
+
+@immutable
+final class ReferralChoices$social extends ReferralChoices {
+  const ReferralChoices$social._();
+
+  @override
+  String get value => 'social';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ReferralChoices$social;
+
+  @override
+  int get hashCode => 'social'.hashCode;
+}
+
+@immutable
+final class ReferralChoices$keeper extends ReferralChoices {
+  const ReferralChoices$keeper._();
+
+  @override
+  String get value => 'keeper';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ReferralChoices$keeper;
+
+  @override
+  int get hashCode => 'keeper'.hashCode;
+}
+
+@immutable
+final class ReferralChoices$pamphlet extends ReferralChoices {
+  const ReferralChoices$pamphlet._();
+
+  @override
+  String get value => 'pamphlet';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ReferralChoices$pamphlet;
+
+  @override
+  int get hashCode => 'pamphlet'.hashCode;
+}
+
+@immutable
+final class ReferralChoices$blog extends ReferralChoices {
+  const ReferralChoices$blog._();
+
+  @override
+  String get value => 'blog';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ReferralChoices$blog;
+
+  @override
+  int get hashCode => 'blog'.hashCode;
+}
+
+@immutable
+final class ReferralChoices$newsletter extends ReferralChoices {
+  const ReferralChoices$newsletter._();
+
+  @override
+  String get value => 'newsletter';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ReferralChoices$newsletter;
+
+  @override
+  int get hashCode => 'newsletter'.hashCode;
+}
+
+@immutable
+final class ReferralChoices$dream extends ReferralChoices {
+  const ReferralChoices$dream._();
+
+  @override
+  String get value => 'dream';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ReferralChoices$dream;
+
+  @override
+  int get hashCode => 'dream'.hashCode;
+}
+
+@immutable
+final class ReferralChoices$$other extends ReferralChoices {
+  const ReferralChoices$$other._();
+
+  @override
+  String get value => 'other';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ReferralChoices$$other;
+
+  @override
+  int get hashCode => 'other'.hashCode;
+}
+
+@immutable
+final class ReferralChoices$Unknown extends ReferralChoices {
+  const ReferralChoices$Unknown(this.value);
+
+  @override
+  final String value;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ReferralChoices && other.value == value;
+      other is ReferralChoices$Unknown && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
-
-  @override
-  String toString() => 'ReferralChoices($value)';
 }
 
 @immutable

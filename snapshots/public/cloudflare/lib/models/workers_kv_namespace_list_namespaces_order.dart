@@ -2,22 +2,21 @@
 // Source: #/components/schemas/WorkersKvNamespaceListNamespacesOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order results by.
-@immutable final class WorkersKvNamespaceListNamespacesOrder {const WorkersKvNamespaceListNamespacesOrder._(this.value);
+sealed class WorkersKvNamespaceListNamespacesOrder {const WorkersKvNamespaceListNamespacesOrder();
 
 factory WorkersKvNamespaceListNamespacesOrder.fromJson(String json) { return switch (json) {
   'id' => id,
   'title' => title,
-  _ => WorkersKvNamespaceListNamespacesOrder._(json),
+  _ => WorkersKvNamespaceListNamespacesOrder$Unknown(json),
 }; }
 
-static const WorkersKvNamespaceListNamespacesOrder id = WorkersKvNamespaceListNamespacesOrder._('id');
+static const WorkersKvNamespaceListNamespacesOrder id = WorkersKvNamespaceListNamespacesOrder$id._();
 
-static const WorkersKvNamespaceListNamespacesOrder title = WorkersKvNamespaceListNamespacesOrder._('title');
+static const WorkersKvNamespaceListNamespacesOrder title = WorkersKvNamespaceListNamespacesOrder$title._();
 
 static const List<WorkersKvNamespaceListNamespacesOrder> values = [id, title];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersKvNamespaceListNamespacesOrder$Unknown; } 
+@override String toString() => 'WorkersKvNamespaceListNamespacesOrder($value)';
+
+ }
+@immutable final class WorkersKvNamespaceListNamespacesOrder$id extends WorkersKvNamespaceListNamespacesOrder {const WorkersKvNamespaceListNamespacesOrder$id._();
+
+@override String get value => 'id';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersKvNamespaceListNamespacesOrder$id;
+
+@override int get hashCode => 'id'.hashCode;
+
+ }
+@immutable final class WorkersKvNamespaceListNamespacesOrder$title extends WorkersKvNamespaceListNamespacesOrder {const WorkersKvNamespaceListNamespacesOrder$title._();
+
+@override String get value => 'title';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersKvNamespaceListNamespacesOrder$title;
+
+@override int get hashCode => 'title'.hashCode;
+
+ }
+@immutable final class WorkersKvNamespaceListNamespacesOrder$Unknown extends WorkersKvNamespaceListNamespacesOrder {const WorkersKvNamespaceListNamespacesOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersKvNamespaceListNamespacesOrder && other.value == value;
+    other is WorkersKvNamespaceListNamespacesOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersKvNamespaceListNamespacesOrder($value)';
 
  }

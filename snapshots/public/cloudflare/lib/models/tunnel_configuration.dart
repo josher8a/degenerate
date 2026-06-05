@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TunnelConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_config.dart';import 'package:pub_cloudflare/models/tunnel_identifier.dart';import 'package:pub_cloudflare/models/tunnel_schemas_tunnel_id.dart';/// Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel's configuration on the Zero Trust dashboard.
-@immutable final class TunnelSchemasConfigSrc {const TunnelSchemasConfigSrc._(this.value);
+sealed class TunnelSchemasConfigSrc {const TunnelSchemasConfigSrc();
 
 factory TunnelSchemasConfigSrc.fromJson(String json) { return switch (json) {
   'local' => local,
   'cloudflare' => cloudflare,
-  _ => TunnelSchemasConfigSrc._(json),
+  _ => TunnelSchemasConfigSrc$Unknown(json),
 }; }
 
-static const TunnelSchemasConfigSrc local = TunnelSchemasConfigSrc._('local');
+static const TunnelSchemasConfigSrc local = TunnelSchemasConfigSrc$local._();
 
-static const TunnelSchemasConfigSrc cloudflare = TunnelSchemasConfigSrc._('cloudflare');
+static const TunnelSchemasConfigSrc cloudflare = TunnelSchemasConfigSrc$cloudflare._();
 
 static const List<TunnelSchemasConfigSrc> values = [local, cloudflare];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TunnelSchemasConfigSrc$Unknown; } 
+@override String toString() => 'TunnelSchemasConfigSrc($value)';
+
+ }
+@immutable final class TunnelSchemasConfigSrc$local extends TunnelSchemasConfigSrc {const TunnelSchemasConfigSrc$local._();
+
+@override String get value => 'local';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TunnelSchemasConfigSrc$local;
+
+@override int get hashCode => 'local'.hashCode;
+
+ }
+@immutable final class TunnelSchemasConfigSrc$cloudflare extends TunnelSchemasConfigSrc {const TunnelSchemasConfigSrc$cloudflare._();
+
+@override String get value => 'cloudflare';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TunnelSchemasConfigSrc$cloudflare;
+
+@override int get hashCode => 'cloudflare'.hashCode;
+
+ }
+@immutable final class TunnelSchemasConfigSrc$Unknown extends TunnelSchemasConfigSrc {const TunnelSchemasConfigSrc$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TunnelSchemasConfigSrc && other.value == value;
+    other is TunnelSchemasConfigSrc$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TunnelSchemasConfigSrc($value)';
 
  }
 /// The version of the Tunnel Configuration.

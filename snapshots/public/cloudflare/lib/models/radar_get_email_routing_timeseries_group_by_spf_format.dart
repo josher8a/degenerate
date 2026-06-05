@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetEmailRoutingTimeseriesGroupBySpfFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfFormat {const RadarGetEmailRoutingTimeseriesGroupBySpfFormat._(this.value);
+sealed class RadarGetEmailRoutingTimeseriesGroupBySpfFormat {const RadarGetEmailRoutingTimeseriesGroupBySpfFormat();
 
 factory RadarGetEmailRoutingTimeseriesGroupBySpfFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetEmailRoutingTimeseriesGroupBySpfFormat._(json),
+  _ => RadarGetEmailRoutingTimeseriesGroupBySpfFormat$Unknown(json),
 }; }
 
-static const RadarGetEmailRoutingTimeseriesGroupBySpfFormat $json = RadarGetEmailRoutingTimeseriesGroupBySpfFormat._('JSON');
+static const RadarGetEmailRoutingTimeseriesGroupBySpfFormat $json = RadarGetEmailRoutingTimeseriesGroupBySpfFormat$$json._();
 
-static const RadarGetEmailRoutingTimeseriesGroupBySpfFormat csv = RadarGetEmailRoutingTimeseriesGroupBySpfFormat._('CSV');
+static const RadarGetEmailRoutingTimeseriesGroupBySpfFormat csv = RadarGetEmailRoutingTimeseriesGroupBySpfFormat$csv._();
 
 static const List<RadarGetEmailRoutingTimeseriesGroupBySpfFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupBySpfFormat$Unknown; } 
+@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupBySpfFormat($value)';
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfFormat$$json extends RadarGetEmailRoutingTimeseriesGroupBySpfFormat {const RadarGetEmailRoutingTimeseriesGroupBySpfFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupBySpfFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfFormat$csv extends RadarGetEmailRoutingTimeseriesGroupBySpfFormat {const RadarGetEmailRoutingTimeseriesGroupBySpfFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupBySpfFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfFormat$Unknown extends RadarGetEmailRoutingTimeseriesGroupBySpfFormat {const RadarGetEmailRoutingTimeseriesGroupBySpfFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailRoutingTimeseriesGroupBySpfFormat && other.value == value;
+    other is RadarGetEmailRoutingTimeseriesGroupBySpfFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupBySpfFormat($value)';
 
  }

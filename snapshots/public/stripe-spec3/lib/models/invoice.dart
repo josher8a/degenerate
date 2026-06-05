@@ -10,7 +10,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// * `subscription_threshold`: A subscription reached a billing threshold.
 /// * `subscription_update`: A subscription was updated.
 /// * `upcoming`: Reserved for upcoming invoices created through the Create Preview Invoice API or when an `invoice.upcoming` event is generated for an upcoming invoice on a subscription.
-@immutable final class BillingReason {const BillingReason._(this.value);
+sealed class BillingReason {const BillingReason();
 
 factory BillingReason.fromJson(String json) { return switch (json) {
   'automatic_pending_invoice_item_invoice' => automaticPendingInvoiceItemInvoice,
@@ -22,31 +22,30 @@ factory BillingReason.fromJson(String json) { return switch (json) {
   'subscription_threshold' => subscriptionThreshold,
   'subscription_update' => subscriptionUpdate,
   'upcoming' => upcoming,
-  _ => BillingReason._(json),
+  _ => BillingReason$Unknown(json),
 }; }
 
-static const BillingReason automaticPendingInvoiceItemInvoice = BillingReason._('automatic_pending_invoice_item_invoice');
+static const BillingReason automaticPendingInvoiceItemInvoice = BillingReason$automaticPendingInvoiceItemInvoice._();
 
-static const BillingReason manual = BillingReason._('manual');
+static const BillingReason manual = BillingReason$manual._();
 
-static const BillingReason quoteAccept = BillingReason._('quote_accept');
+static const BillingReason quoteAccept = BillingReason$quoteAccept._();
 
-static const BillingReason subscription = BillingReason._('subscription');
+static const BillingReason subscription = BillingReason$subscription._();
 
-static const BillingReason subscriptionCreate = BillingReason._('subscription_create');
+static const BillingReason subscriptionCreate = BillingReason$subscriptionCreate._();
 
-static const BillingReason subscriptionCycle = BillingReason._('subscription_cycle');
+static const BillingReason subscriptionCycle = BillingReason$subscriptionCycle._();
 
-static const BillingReason subscriptionThreshold = BillingReason._('subscription_threshold');
+static const BillingReason subscriptionThreshold = BillingReason$subscriptionThreshold._();
 
-static const BillingReason subscriptionUpdate = BillingReason._('subscription_update');
+static const BillingReason subscriptionUpdate = BillingReason$subscriptionUpdate._();
 
-static const BillingReason upcoming = BillingReason._('upcoming');
+static const BillingReason upcoming = BillingReason$upcoming._();
 
 static const List<BillingReason> values = [automaticPendingInvoiceItemInvoice, manual, quoteAccept, subscription, subscriptionCreate, subscriptionCycle, subscriptionThreshold, subscriptionUpdate, upcoming];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -62,35 +61,120 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingReason && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is BillingReason$Unknown; } 
 @override String toString() => 'BillingReason($value)';
 
  }
+@immutable final class BillingReason$automaticPendingInvoiceItemInvoice extends BillingReason {const BillingReason$automaticPendingInvoiceItemInvoice._();
+
+@override String get value => 'automatic_pending_invoice_item_invoice';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingReason$automaticPendingInvoiceItemInvoice;
+
+@override int get hashCode => 'automatic_pending_invoice_item_invoice'.hashCode;
+
+ }
+@immutable final class BillingReason$manual extends BillingReason {const BillingReason$manual._();
+
+@override String get value => 'manual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingReason$manual;
+
+@override int get hashCode => 'manual'.hashCode;
+
+ }
+@immutable final class BillingReason$quoteAccept extends BillingReason {const BillingReason$quoteAccept._();
+
+@override String get value => 'quote_accept';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingReason$quoteAccept;
+
+@override int get hashCode => 'quote_accept'.hashCode;
+
+ }
+@immutable final class BillingReason$subscription extends BillingReason {const BillingReason$subscription._();
+
+@override String get value => 'subscription';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingReason$subscription;
+
+@override int get hashCode => 'subscription'.hashCode;
+
+ }
+@immutable final class BillingReason$subscriptionCreate extends BillingReason {const BillingReason$subscriptionCreate._();
+
+@override String get value => 'subscription_create';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingReason$subscriptionCreate;
+
+@override int get hashCode => 'subscription_create'.hashCode;
+
+ }
+@immutable final class BillingReason$subscriptionCycle extends BillingReason {const BillingReason$subscriptionCycle._();
+
+@override String get value => 'subscription_cycle';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingReason$subscriptionCycle;
+
+@override int get hashCode => 'subscription_cycle'.hashCode;
+
+ }
+@immutable final class BillingReason$subscriptionThreshold extends BillingReason {const BillingReason$subscriptionThreshold._();
+
+@override String get value => 'subscription_threshold';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingReason$subscriptionThreshold;
+
+@override int get hashCode => 'subscription_threshold'.hashCode;
+
+ }
+@immutable final class BillingReason$subscriptionUpdate extends BillingReason {const BillingReason$subscriptionUpdate._();
+
+@override String get value => 'subscription_update';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingReason$subscriptionUpdate;
+
+@override int get hashCode => 'subscription_update'.hashCode;
+
+ }
+@immutable final class BillingReason$upcoming extends BillingReason {const BillingReason$upcoming._();
+
+@override String get value => 'upcoming';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingReason$upcoming;
+
+@override int get hashCode => 'upcoming'.hashCode;
+
+ }
+@immutable final class BillingReason$Unknown extends BillingReason {const BillingReason$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingReason$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The customer's tax exempt status. Until the invoice is finalized, this field will equal `customer.tax_exempt`. Once the invoice is finalized, this field will no longer be updated.
-@immutable final class InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt._(this.value);
+sealed class InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt();
 
 factory InvoiceCustomerTaxExempt.fromJson(String json) { return switch (json) {
   'exempt' => exempt,
   'none' => none,
   'reverse' => reverse,
-  _ => InvoiceCustomerTaxExempt._(json),
+  _ => InvoiceCustomerTaxExempt$Unknown(json),
 }; }
 
-static const InvoiceCustomerTaxExempt exempt = InvoiceCustomerTaxExempt._('exempt');
+static const InvoiceCustomerTaxExempt exempt = InvoiceCustomerTaxExempt$exempt._();
 
-static const InvoiceCustomerTaxExempt none = InvoiceCustomerTaxExempt._('none');
+static const InvoiceCustomerTaxExempt none = InvoiceCustomerTaxExempt$none._();
 
-static const InvoiceCustomerTaxExempt reverse = InvoiceCustomerTaxExempt._('reverse');
+static const InvoiceCustomerTaxExempt reverse = InvoiceCustomerTaxExempt$reverse._();
 
 static const List<InvoiceCustomerTaxExempt> values = [exempt, none, reverse];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -100,17 +184,49 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is InvoiceCustomerTaxExempt && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is InvoiceCustomerTaxExempt$Unknown; } 
 @override String toString() => 'InvoiceCustomerTaxExempt($value)';
 
  }
+@immutable final class InvoiceCustomerTaxExempt$exempt extends InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt$exempt._();
+
+@override String get value => 'exempt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceCustomerTaxExempt$exempt;
+
+@override int get hashCode => 'exempt'.hashCode;
+
+ }
+@immutable final class InvoiceCustomerTaxExempt$none extends InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceCustomerTaxExempt$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class InvoiceCustomerTaxExempt$reverse extends InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt$reverse._();
+
+@override String get value => 'reverse';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceCustomerTaxExempt$reverse;
+
+@override int get hashCode => 'reverse'.hashCode;
+
+ }
+@immutable final class InvoiceCustomerTaxExempt$Unknown extends InvoiceCustomerTaxExempt {const InvoiceCustomerTaxExempt$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InvoiceCustomerTaxExempt$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of the invoice, one of `draft`, `open`, `paid`, `uncollectible`, or `void`. [Learn more](https://docs.stripe.com/billing/invoices/workflow#workflow-overview)
-@immutable final class InvoiceStatus {const InvoiceStatus._(this.value);
+sealed class InvoiceStatus {const InvoiceStatus();
 
 factory InvoiceStatus.fromJson(String json) { return switch (json) {
   'draft' => draft,
@@ -118,23 +234,22 @@ factory InvoiceStatus.fromJson(String json) { return switch (json) {
   'paid' => paid,
   'uncollectible' => uncollectible,
   'void' => $void,
-  _ => InvoiceStatus._(json),
+  _ => InvoiceStatus$Unknown(json),
 }; }
 
-static const InvoiceStatus draft = InvoiceStatus._('draft');
+static const InvoiceStatus draft = InvoiceStatus$draft._();
 
-static const InvoiceStatus open = InvoiceStatus._('open');
+static const InvoiceStatus open = InvoiceStatus$open._();
 
-static const InvoiceStatus paid = InvoiceStatus._('paid');
+static const InvoiceStatus paid = InvoiceStatus$paid._();
 
-static const InvoiceStatus uncollectible = InvoiceStatus._('uncollectible');
+static const InvoiceStatus uncollectible = InvoiceStatus$uncollectible._();
 
-static const InvoiceStatus $void = InvoiceStatus._('void');
+static const InvoiceStatus $void = InvoiceStatus$$void._();
 
 static const List<InvoiceStatus> values = [draft, open, paid, uncollectible, $void];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -146,13 +261,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InvoiceStatus$Unknown; } 
+@override String toString() => 'InvoiceStatus($value)';
+
+ }
+@immutable final class InvoiceStatus$draft extends InvoiceStatus {const InvoiceStatus$draft._();
+
+@override String get value => 'draft';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceStatus$draft;
+
+@override int get hashCode => 'draft'.hashCode;
+
+ }
+@immutable final class InvoiceStatus$open extends InvoiceStatus {const InvoiceStatus$open._();
+
+@override String get value => 'open';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceStatus$open;
+
+@override int get hashCode => 'open'.hashCode;
+
+ }
+@immutable final class InvoiceStatus$paid extends InvoiceStatus {const InvoiceStatus$paid._();
+
+@override String get value => 'paid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceStatus$paid;
+
+@override int get hashCode => 'paid'.hashCode;
+
+ }
+@immutable final class InvoiceStatus$uncollectible extends InvoiceStatus {const InvoiceStatus$uncollectible._();
+
+@override String get value => 'uncollectible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceStatus$uncollectible;
+
+@override int get hashCode => 'uncollectible'.hashCode;
+
+ }
+@immutable final class InvoiceStatus$$void extends InvoiceStatus {const InvoiceStatus$$void._();
+
+@override String get value => 'void';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceStatus$$void;
+
+@override int get hashCode => 'void'.hashCode;
+
+ }
+@immutable final class InvoiceStatus$Unknown extends InvoiceStatus {const InvoiceStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InvoiceStatus && other.value == value;
+    other is InvoiceStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InvoiceStatus($value)';
 
  }
 /// Invoices are statements of amounts owed by a customer, and are either

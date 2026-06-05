@@ -2,22 +2,21 @@
 // Source: #/components/schemas/IpAccessRulesForAZoneListIpAccessRulesDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction used to sort returned rules.
-@immutable final class IpAccessRulesForAZoneListIpAccessRulesDirection {const IpAccessRulesForAZoneListIpAccessRulesDirection._(this.value);
+sealed class IpAccessRulesForAZoneListIpAccessRulesDirection {const IpAccessRulesForAZoneListIpAccessRulesDirection();
 
 factory IpAccessRulesForAZoneListIpAccessRulesDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => IpAccessRulesForAZoneListIpAccessRulesDirection._(json),
+  _ => IpAccessRulesForAZoneListIpAccessRulesDirection$Unknown(json),
 }; }
 
-static const IpAccessRulesForAZoneListIpAccessRulesDirection asc = IpAccessRulesForAZoneListIpAccessRulesDirection._('asc');
+static const IpAccessRulesForAZoneListIpAccessRulesDirection asc = IpAccessRulesForAZoneListIpAccessRulesDirection$asc._();
 
-static const IpAccessRulesForAZoneListIpAccessRulesDirection desc = IpAccessRulesForAZoneListIpAccessRulesDirection._('desc');
+static const IpAccessRulesForAZoneListIpAccessRulesDirection desc = IpAccessRulesForAZoneListIpAccessRulesDirection$desc._();
 
 static const List<IpAccessRulesForAZoneListIpAccessRulesDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IpAccessRulesForAZoneListIpAccessRulesDirection$Unknown; } 
+@override String toString() => 'IpAccessRulesForAZoneListIpAccessRulesDirection($value)';
+
+ }
+@immutable final class IpAccessRulesForAZoneListIpAccessRulesDirection$asc extends IpAccessRulesForAZoneListIpAccessRulesDirection {const IpAccessRulesForAZoneListIpAccessRulesDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IpAccessRulesForAZoneListIpAccessRulesDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class IpAccessRulesForAZoneListIpAccessRulesDirection$desc extends IpAccessRulesForAZoneListIpAccessRulesDirection {const IpAccessRulesForAZoneListIpAccessRulesDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IpAccessRulesForAZoneListIpAccessRulesDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class IpAccessRulesForAZoneListIpAccessRulesDirection$Unknown extends IpAccessRulesForAZoneListIpAccessRulesDirection {const IpAccessRulesForAZoneListIpAccessRulesDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IpAccessRulesForAZoneListIpAccessRulesDirection && other.value == value;
+    other is IpAccessRulesForAZoneListIpAccessRulesDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IpAccessRulesForAZoneListIpAccessRulesDirection($value)';
 
  }

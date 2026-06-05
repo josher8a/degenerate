@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PromotionCode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_promotion.dart';import 'package:pub_stripe_spec3/models/promotion_codes_resource_restrictions.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class PromotionCodeObject {const PromotionCodeObject._(this.value);
+sealed class PromotionCodeObject {const PromotionCodeObject();
 
 factory PromotionCodeObject.fromJson(String json) { return switch (json) {
   'promotion_code' => promotionCode,
-  _ => PromotionCodeObject._(json),
+  _ => PromotionCodeObject$Unknown(json),
 }; }
 
-static const PromotionCodeObject promotionCode = PromotionCodeObject._('promotion_code');
+static const PromotionCodeObject promotionCode = PromotionCodeObject$promotionCode._();
 
 static const List<PromotionCodeObject> values = [promotionCode];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PromotionCodeObject$Unknown; } 
+@override String toString() => 'PromotionCodeObject($value)';
+
+ }
+@immutable final class PromotionCodeObject$promotionCode extends PromotionCodeObject {const PromotionCodeObject$promotionCode._();
+
+@override String get value => 'promotion_code';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PromotionCodeObject$promotionCode;
+
+@override int get hashCode => 'promotion_code'.hashCode;
+
+ }
+@immutable final class PromotionCodeObject$Unknown extends PromotionCodeObject {const PromotionCodeObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PromotionCodeObject && other.value == value;
+    other is PromotionCodeObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PromotionCodeObject($value)';
 
  }
 /// A Promotion Code represents a customer-redeemable code for an underlying promotion.

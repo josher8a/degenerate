@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DeletedSkillVersionResource
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeletedSkillVersionResourceObject {const DeletedSkillVersionResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DeletedSkillVersionResourceObject {const DeletedSkillVersionResourceObject();
 
 factory DeletedSkillVersionResourceObject.fromJson(String json) { return switch (json) {
   'skill.version.deleted' => skillVersionDeleted,
-  _ => DeletedSkillVersionResourceObject._(json),
+  _ => DeletedSkillVersionResourceObject$Unknown(json),
 }; }
 
-static const DeletedSkillVersionResourceObject skillVersionDeleted = DeletedSkillVersionResourceObject._('skill.version.deleted');
+static const DeletedSkillVersionResourceObject skillVersionDeleted = DeletedSkillVersionResourceObject$skillVersionDeleted._();
 
 static const List<DeletedSkillVersionResourceObject> values = [skillVersionDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeletedSkillVersionResourceObject$Unknown; } 
+@override String toString() => 'DeletedSkillVersionResourceObject($value)';
+
+ }
+@immutable final class DeletedSkillVersionResourceObject$skillVersionDeleted extends DeletedSkillVersionResourceObject {const DeletedSkillVersionResourceObject$skillVersionDeleted._();
+
+@override String get value => 'skill.version.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeletedSkillVersionResourceObject$skillVersionDeleted;
+
+@override int get hashCode => 'skill.version.deleted'.hashCode;
+
+ }
+@immutable final class DeletedSkillVersionResourceObject$Unknown extends DeletedSkillVersionResourceObject {const DeletedSkillVersionResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeletedSkillVersionResourceObject && other.value == value;
+    other is DeletedSkillVersionResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeletedSkillVersionResourceObject($value)';
 
  }
 @immutable final class DeletedSkillVersionResource {const DeletedSkillVersionResource({required this.deleted, required this.id, required this.version, this.object = DeletedSkillVersionResourceObject.skillVersionDeleted, });

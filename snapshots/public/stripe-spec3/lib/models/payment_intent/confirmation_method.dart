@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PaymentIntent (inline: ConfirmationMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Describes whether we can confirm this PaymentIntent automatically, or if it requires customer action to confirm the payment.
-@immutable final class ConfirmationMethod {const ConfirmationMethod._(this.value);
+sealed class ConfirmationMethod {const ConfirmationMethod();
 
 factory ConfirmationMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
   'manual' => manual,
-  _ => ConfirmationMethod._(json),
+  _ => ConfirmationMethod$Unknown(json),
 }; }
 
-static const ConfirmationMethod automatic = ConfirmationMethod._('automatic');
+static const ConfirmationMethod automatic = ConfirmationMethod$automatic._();
 
-static const ConfirmationMethod manual = ConfirmationMethod._('manual');
+static const ConfirmationMethod manual = ConfirmationMethod$manual._();
 
 static const List<ConfirmationMethod> values = [automatic, manual];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConfirmationMethod$Unknown; } 
+@override String toString() => 'ConfirmationMethod($value)';
+
+ }
+@immutable final class ConfirmationMethod$automatic extends ConfirmationMethod {const ConfirmationMethod$automatic._();
+
+@override String get value => 'automatic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConfirmationMethod$automatic;
+
+@override int get hashCode => 'automatic'.hashCode;
+
+ }
+@immutable final class ConfirmationMethod$manual extends ConfirmationMethod {const ConfirmationMethod$manual._();
+
+@override String get value => 'manual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConfirmationMethod$manual;
+
+@override int get hashCode => 'manual'.hashCode;
+
+ }
+@immutable final class ConfirmationMethod$Unknown extends ConfirmationMethod {const ConfirmationMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConfirmationMethod && other.value == value;
+    other is ConfirmationMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConfirmationMethod($value)';
 
  }

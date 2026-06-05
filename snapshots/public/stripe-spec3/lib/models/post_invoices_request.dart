@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PostInvoicesRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/discounts_variant1.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/issuer.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_custom_fields.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_custom_fields_variant1.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/post_invoices_invoice_request_payment_settings.dart';import 'package:pub_stripe_spec3/models/post_invoices_invoice_request/rendering.dart';import 'package:pub_stripe_spec3/models/post_invoices_request/from_invoice.dart';import 'package:pub_stripe_spec3/models/post_invoices_request/post_invoices_request_shipping_details.dart';import 'package:pub_stripe_spec3/models/post_invoices_request/post_invoices_request_transfer_data.dart';import 'package:pub_stripe_spec3/models/shipping_cost.dart';/// How to handle pending invoice items on invoice creation. Defaults to `exclude` if the parameter is omitted.
-@immutable final class PendingInvoiceItemsBehavior {const PendingInvoiceItemsBehavior._(this.value);
+sealed class PendingInvoiceItemsBehavior {const PendingInvoiceItemsBehavior();
 
 factory PendingInvoiceItemsBehavior.fromJson(String json) { return switch (json) {
   'exclude' => exclude,
   'include' => include,
-  _ => PendingInvoiceItemsBehavior._(json),
+  _ => PendingInvoiceItemsBehavior$Unknown(json),
 }; }
 
-static const PendingInvoiceItemsBehavior exclude = PendingInvoiceItemsBehavior._('exclude');
+static const PendingInvoiceItemsBehavior exclude = PendingInvoiceItemsBehavior$exclude._();
 
-static const PendingInvoiceItemsBehavior include = PendingInvoiceItemsBehavior._('include');
+static const PendingInvoiceItemsBehavior include = PendingInvoiceItemsBehavior$include._();
 
 static const List<PendingInvoiceItemsBehavior> values = [exclude, include];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PendingInvoiceItemsBehavior$Unknown; } 
+@override String toString() => 'PendingInvoiceItemsBehavior($value)';
+
+ }
+@immutable final class PendingInvoiceItemsBehavior$exclude extends PendingInvoiceItemsBehavior {const PendingInvoiceItemsBehavior$exclude._();
+
+@override String get value => 'exclude';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingInvoiceItemsBehavior$exclude;
+
+@override int get hashCode => 'exclude'.hashCode;
+
+ }
+@immutable final class PendingInvoiceItemsBehavior$include extends PendingInvoiceItemsBehavior {const PendingInvoiceItemsBehavior$include._();
+
+@override String get value => 'include';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingInvoiceItemsBehavior$include;
+
+@override int get hashCode => 'include'.hashCode;
+
+ }
+@immutable final class PendingInvoiceItemsBehavior$Unknown extends PendingInvoiceItemsBehavior {const PendingInvoiceItemsBehavior$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PendingInvoiceItemsBehavior && other.value == value;
+    other is PendingInvoiceItemsBehavior$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PendingInvoiceItemsBehavior($value)';
 
  }
 @immutable final class PostInvoicesRequest {const PostInvoicesRequest({this.accountTaxIds, this.applicationFeeAmount, this.autoAdvance, this.automaticTax, this.automaticallyFinalizesAt, this.collectionMethod, this.currency, this.customFields, this.customer, this.customerAccount, this.daysUntilDue, this.defaultPaymentMethod, this.defaultSource, this.defaultTaxRates, this.description, this.discounts, this.dueDate, this.effectiveAt, this.expand, this.footer, this.fromInvoice, this.issuer, this.metadata, this.number, this.onBehalfOf, this.paymentSettings, this.pendingInvoiceItemsBehavior, this.rendering, this.shippingCost, this.shippingDetails, this.statementDescriptor, this.subscription, this.transferData, });

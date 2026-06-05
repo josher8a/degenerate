@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.function_call_arguments.delta`.
 /// 
-@immutable final class RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType {const RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType._(this.value);
+sealed class RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType {const RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType();
 
 factory RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType.fromJson(String json) { return switch (json) {
   'response.function_call_arguments.delta' => responseFunctionCallArgumentsDelta,
-  _ => RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType._(json),
+  _ => RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType responseFunctionCallArgumentsDelta = RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType._('response.function_call_arguments.delta');
+static const RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType responseFunctionCallArgumentsDelta = RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType$responseFunctionCallArgumentsDelta._();
 
 static const List<RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType> values = [responseFunctionCallArgumentsDelta];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType$responseFunctionCallArgumentsDelta extends RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType {const RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType$responseFunctionCallArgumentsDelta._();
+
+@override String get value => 'response.function_call_arguments.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType$responseFunctionCallArgumentsDelta;
+
+@override int get hashCode => 'response.function_call_arguments.delta'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType$Unknown extends RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType {const RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType && other.value == value;
+    other is RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType($value)';
 
  }
 /// Returned when the model-generated function call arguments are updated.

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DeletedSkillResource
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeletedSkillResourceObject {const DeletedSkillResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DeletedSkillResourceObject {const DeletedSkillResourceObject();
 
 factory DeletedSkillResourceObject.fromJson(String json) { return switch (json) {
   'skill.deleted' => skillDeleted,
-  _ => DeletedSkillResourceObject._(json),
+  _ => DeletedSkillResourceObject$Unknown(json),
 }; }
 
-static const DeletedSkillResourceObject skillDeleted = DeletedSkillResourceObject._('skill.deleted');
+static const DeletedSkillResourceObject skillDeleted = DeletedSkillResourceObject$skillDeleted._();
 
 static const List<DeletedSkillResourceObject> values = [skillDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeletedSkillResourceObject$Unknown; } 
+@override String toString() => 'DeletedSkillResourceObject($value)';
+
+ }
+@immutable final class DeletedSkillResourceObject$skillDeleted extends DeletedSkillResourceObject {const DeletedSkillResourceObject$skillDeleted._();
+
+@override String get value => 'skill.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeletedSkillResourceObject$skillDeleted;
+
+@override int get hashCode => 'skill.deleted'.hashCode;
+
+ }
+@immutable final class DeletedSkillResourceObject$Unknown extends DeletedSkillResourceObject {const DeletedSkillResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeletedSkillResourceObject && other.value == value;
+    other is DeletedSkillResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeletedSkillResourceObject($value)';
 
  }
 @immutable final class DeletedSkillResource {const DeletedSkillResource({required this.deleted, required this.id, this.object = DeletedSkillResourceObject.skillDeleted, });

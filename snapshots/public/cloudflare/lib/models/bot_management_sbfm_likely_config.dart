@@ -2,25 +2,24 @@
 // Source: #/components/schemas/BotManagementSbfmLikelyConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_optimize_wordpress.dart';import 'package:pub_cloudflare/models/bot_management_sbfm_definitely_automated.dart';import 'package:pub_cloudflare/models/bot_management_sbfm_likely_config/bot_management_sbfm_likely_config_stale_zone_configuration.dart';import 'package:pub_cloudflare/models/bot_management_sbfm_static_resource_protection.dart';import 'package:pub_cloudflare/models/bot_management_sbfm_verified_bots.dart';/// Super Bot Fight Mode (SBFM) action to take on likely automated requests.
-@immutable final class BotManagementSbfmLikelyAutomated {const BotManagementSbfmLikelyAutomated._(this.value);
+sealed class BotManagementSbfmLikelyAutomated {const BotManagementSbfmLikelyAutomated();
 
 factory BotManagementSbfmLikelyAutomated.fromJson(String json) { return switch (json) {
   'allow' => allow,
   'block' => block,
   'managed_challenge' => managedChallenge,
-  _ => BotManagementSbfmLikelyAutomated._(json),
+  _ => BotManagementSbfmLikelyAutomated$Unknown(json),
 }; }
 
-static const BotManagementSbfmLikelyAutomated allow = BotManagementSbfmLikelyAutomated._('allow');
+static const BotManagementSbfmLikelyAutomated allow = BotManagementSbfmLikelyAutomated$allow._();
 
-static const BotManagementSbfmLikelyAutomated block = BotManagementSbfmLikelyAutomated._('block');
+static const BotManagementSbfmLikelyAutomated block = BotManagementSbfmLikelyAutomated$block._();
 
-static const BotManagementSbfmLikelyAutomated managedChallenge = BotManagementSbfmLikelyAutomated._('managed_challenge');
+static const BotManagementSbfmLikelyAutomated managedChallenge = BotManagementSbfmLikelyAutomated$managedChallenge._();
 
 static const List<BotManagementSbfmLikelyAutomated> values = [allow, block, managedChallenge];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BotManagementSbfmLikelyAutomated$Unknown; } 
+@override String toString() => 'BotManagementSbfmLikelyAutomated($value)';
+
+ }
+@immutable final class BotManagementSbfmLikelyAutomated$allow extends BotManagementSbfmLikelyAutomated {const BotManagementSbfmLikelyAutomated$allow._();
+
+@override String get value => 'allow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BotManagementSbfmLikelyAutomated$allow;
+
+@override int get hashCode => 'allow'.hashCode;
+
+ }
+@immutable final class BotManagementSbfmLikelyAutomated$block extends BotManagementSbfmLikelyAutomated {const BotManagementSbfmLikelyAutomated$block._();
+
+@override String get value => 'block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BotManagementSbfmLikelyAutomated$block;
+
+@override int get hashCode => 'block'.hashCode;
+
+ }
+@immutable final class BotManagementSbfmLikelyAutomated$managedChallenge extends BotManagementSbfmLikelyAutomated {const BotManagementSbfmLikelyAutomated$managedChallenge._();
+
+@override String get value => 'managed_challenge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BotManagementSbfmLikelyAutomated$managedChallenge;
+
+@override int get hashCode => 'managed_challenge'.hashCode;
+
+ }
+@immutable final class BotManagementSbfmLikelyAutomated$Unknown extends BotManagementSbfmLikelyAutomated {const BotManagementSbfmLikelyAutomated$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BotManagementSbfmLikelyAutomated && other.value == value;
+    other is BotManagementSbfmLikelyAutomated$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BotManagementSbfmLikelyAutomated($value)';
 
  }
 @immutable final class BotManagementSbfmLikelyConfig {const BotManagementSbfmLikelyConfig({this.optimizeWordpress, this.sbfmDefinitelyAutomated, this.sbfmLikelyAutomated, this.sbfmStaticResourceProtection, this.sbfmVerifiedBots, this.staleZoneConfiguration, });

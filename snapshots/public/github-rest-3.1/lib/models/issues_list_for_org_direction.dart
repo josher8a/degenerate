@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/IssuesListForOrgDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesListForOrgDirection {const IssuesListForOrgDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class IssuesListForOrgDirection {const IssuesListForOrgDirection();
 
 factory IssuesListForOrgDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => IssuesListForOrgDirection._(json),
+  _ => IssuesListForOrgDirection$Unknown(json),
 }; }
 
-static const IssuesListForOrgDirection asc = IssuesListForOrgDirection._('asc');
+static const IssuesListForOrgDirection asc = IssuesListForOrgDirection$asc._();
 
-static const IssuesListForOrgDirection desc = IssuesListForOrgDirection._('desc');
+static const IssuesListForOrgDirection desc = IssuesListForOrgDirection$desc._();
 
 static const List<IssuesListForOrgDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuesListForOrgDirection$Unknown; } 
+@override String toString() => 'IssuesListForOrgDirection($value)';
+
+ }
+@immutable final class IssuesListForOrgDirection$asc extends IssuesListForOrgDirection {const IssuesListForOrgDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuesListForOrgDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class IssuesListForOrgDirection$desc extends IssuesListForOrgDirection {const IssuesListForOrgDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuesListForOrgDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class IssuesListForOrgDirection$Unknown extends IssuesListForOrgDirection {const IssuesListForOrgDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuesListForOrgDirection && other.value == value;
+    other is IssuesListForOrgDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuesListForOrgDirection($value)';
 
  }

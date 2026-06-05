@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object of the event. Always `event`.
 /// 
-@immutable final class WebhookBatchCancelledObject {const WebhookBatchCancelledObject._(this.value);
+sealed class WebhookBatchCancelledObject {const WebhookBatchCancelledObject();
 
 factory WebhookBatchCancelledObject.fromJson(String json) { return switch (json) {
   'event' => event,
-  _ => WebhookBatchCancelledObject._(json),
+  _ => WebhookBatchCancelledObject$Unknown(json),
 }; }
 
-static const WebhookBatchCancelledObject event = WebhookBatchCancelledObject._('event');
+static const WebhookBatchCancelledObject event = WebhookBatchCancelledObject$event._();
 
 static const List<WebhookBatchCancelledObject> values = [event];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,12 +22,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookBatchCancelledObject$Unknown; } 
+@override String toString() => 'WebhookBatchCancelledObject($value)';
+
+ }
+@immutable final class WebhookBatchCancelledObject$event extends WebhookBatchCancelledObject {const WebhookBatchCancelledObject$event._();
+
+@override String get value => 'event';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookBatchCancelledObject$event;
+
+@override int get hashCode => 'event'.hashCode;
+
+ }
+@immutable final class WebhookBatchCancelledObject$Unknown extends WebhookBatchCancelledObject {const WebhookBatchCancelledObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookBatchCancelledObject && other.value == value;
+    other is WebhookBatchCancelledObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookBatchCancelledObject($value)';
 
  }

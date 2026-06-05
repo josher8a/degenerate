@@ -2,7 +2,7 @@
 // Source: #/components/schemas/RadarGetAiBotsSummaryByUserAgentResponse (inline: Result > Meta > Normalization)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-@immutable final class Normalization {const Normalization._(this.value);
+sealed class Normalization {const Normalization();
 
 factory Normalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
@@ -13,29 +13,28 @@ factory Normalization.fromJson(String json) { return switch (json) {
   'ROLLING_AVERAGE' => rollingAverage,
   'OVERLAPPED_PERCENTAGE' => overlappedPercentage,
   'RATIO' => ratio,
-  _ => Normalization._(json),
+  _ => Normalization$Unknown(json),
 }; }
 
-static const Normalization percentage = Normalization._('PERCENTAGE');
+static const Normalization percentage = Normalization$percentage._();
 
-static const Normalization min0Max = Normalization._('MIN0_MAX');
+static const Normalization min0Max = Normalization$min0Max._();
 
-static const Normalization minMax = Normalization._('MIN_MAX');
+static const Normalization minMax = Normalization$minMax._();
 
-static const Normalization rawValues = Normalization._('RAW_VALUES');
+static const Normalization rawValues = Normalization$rawValues._();
 
-static const Normalization percentageChange = Normalization._('PERCENTAGE_CHANGE');
+static const Normalization percentageChange = Normalization$percentageChange._();
 
-static const Normalization rollingAverage = Normalization._('ROLLING_AVERAGE');
+static const Normalization rollingAverage = Normalization$rollingAverage._();
 
-static const Normalization overlappedPercentage = Normalization._('OVERLAPPED_PERCENTAGE');
+static const Normalization overlappedPercentage = Normalization$overlappedPercentage._();
 
-static const Normalization ratio = Normalization._('RATIO');
+static const Normalization ratio = Normalization$ratio._();
 
 static const List<Normalization> values = [percentage, min0Max, minMax, rawValues, percentageChange, rollingAverage, overlappedPercentage, ratio];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,12 +49,89 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Normalization$Unknown; } 
+@override String toString() => 'Normalization($value)';
+
+ }
+@immutable final class Normalization$percentage extends Normalization {const Normalization$percentage._();
+
+@override String get value => 'PERCENTAGE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Normalization$percentage;
+
+@override int get hashCode => 'PERCENTAGE'.hashCode;
+
+ }
+@immutable final class Normalization$min0Max extends Normalization {const Normalization$min0Max._();
+
+@override String get value => 'MIN0_MAX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Normalization$min0Max;
+
+@override int get hashCode => 'MIN0_MAX'.hashCode;
+
+ }
+@immutable final class Normalization$minMax extends Normalization {const Normalization$minMax._();
+
+@override String get value => 'MIN_MAX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Normalization$minMax;
+
+@override int get hashCode => 'MIN_MAX'.hashCode;
+
+ }
+@immutable final class Normalization$rawValues extends Normalization {const Normalization$rawValues._();
+
+@override String get value => 'RAW_VALUES';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Normalization$rawValues;
+
+@override int get hashCode => 'RAW_VALUES'.hashCode;
+
+ }
+@immutable final class Normalization$percentageChange extends Normalization {const Normalization$percentageChange._();
+
+@override String get value => 'PERCENTAGE_CHANGE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Normalization$percentageChange;
+
+@override int get hashCode => 'PERCENTAGE_CHANGE'.hashCode;
+
+ }
+@immutable final class Normalization$rollingAverage extends Normalization {const Normalization$rollingAverage._();
+
+@override String get value => 'ROLLING_AVERAGE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Normalization$rollingAverage;
+
+@override int get hashCode => 'ROLLING_AVERAGE'.hashCode;
+
+ }
+@immutable final class Normalization$overlappedPercentage extends Normalization {const Normalization$overlappedPercentage._();
+
+@override String get value => 'OVERLAPPED_PERCENTAGE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Normalization$overlappedPercentage;
+
+@override int get hashCode => 'OVERLAPPED_PERCENTAGE'.hashCode;
+
+ }
+@immutable final class Normalization$ratio extends Normalization {const Normalization$ratio._();
+
+@override String get value => 'RATIO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Normalization$ratio;
+
+@override int get hashCode => 'RATIO'.hashCode;
+
+ }
+@immutable final class Normalization$Unknown extends Normalization {const Normalization$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Normalization && other.value == value;
+    other is Normalization$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Normalization($value)';
 
  }

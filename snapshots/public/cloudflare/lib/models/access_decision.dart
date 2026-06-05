@@ -2,28 +2,27 @@
 // Source: #/components/schemas/AccessDecision
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action.
-@immutable final class AccessDecision {const AccessDecision._(this.value);
+sealed class AccessDecision {const AccessDecision();
 
 factory AccessDecision.fromJson(String json) { return switch (json) {
   'allow' => allow,
   'deny' => deny,
   'non_identity' => nonIdentity,
   'bypass' => bypass,
-  _ => AccessDecision._(json),
+  _ => AccessDecision$Unknown(json),
 }; }
 
-static const AccessDecision allow = AccessDecision._('allow');
+static const AccessDecision allow = AccessDecision$allow._();
 
-static const AccessDecision deny = AccessDecision._('deny');
+static const AccessDecision deny = AccessDecision$deny._();
 
-static const AccessDecision nonIdentity = AccessDecision._('non_identity');
+static const AccessDecision nonIdentity = AccessDecision$nonIdentity._();
 
-static const AccessDecision bypass = AccessDecision._('bypass');
+static const AccessDecision bypass = AccessDecision$bypass._();
 
 static const List<AccessDecision> values = [allow, deny, nonIdentity, bypass];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccessDecision$Unknown; } 
+@override String toString() => 'AccessDecision($value)';
+
+ }
+@immutable final class AccessDecision$allow extends AccessDecision {const AccessDecision$allow._();
+
+@override String get value => 'allow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessDecision$allow;
+
+@override int get hashCode => 'allow'.hashCode;
+
+ }
+@immutable final class AccessDecision$deny extends AccessDecision {const AccessDecision$deny._();
+
+@override String get value => 'deny';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessDecision$deny;
+
+@override int get hashCode => 'deny'.hashCode;
+
+ }
+@immutable final class AccessDecision$nonIdentity extends AccessDecision {const AccessDecision$nonIdentity._();
+
+@override String get value => 'non_identity';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessDecision$nonIdentity;
+
+@override int get hashCode => 'non_identity'.hashCode;
+
+ }
+@immutable final class AccessDecision$bypass extends AccessDecision {const AccessDecision$bypass._();
+
+@override String get value => 'bypass';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessDecision$bypass;
+
+@override int get hashCode => 'bypass'.hashCode;
+
+ }
+@immutable final class AccessDecision$Unknown extends AccessDecision {const AccessDecision$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccessDecision && other.value == value;
+    other is AccessDecision$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccessDecision($value)';
 
  }

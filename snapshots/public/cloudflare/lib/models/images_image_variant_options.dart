@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ImagesImageVariantOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The fit property describes how the width and height dimensions should be interpreted.
-@immutable final class ImagesImageVariantFit {const ImagesImageVariantFit._(this.value);
+sealed class ImagesImageVariantFit {const ImagesImageVariantFit();
 
 factory ImagesImageVariantFit.fromJson(String json) { return switch (json) {
   'scale-down' => scaleDown,
@@ -10,23 +10,22 @@ factory ImagesImageVariantFit.fromJson(String json) { return switch (json) {
   'cover' => cover,
   'crop' => crop,
   'pad' => pad,
-  _ => ImagesImageVariantFit._(json),
+  _ => ImagesImageVariantFit$Unknown(json),
 }; }
 
-static const ImagesImageVariantFit scaleDown = ImagesImageVariantFit._('scale-down');
+static const ImagesImageVariantFit scaleDown = ImagesImageVariantFit$scaleDown._();
 
-static const ImagesImageVariantFit contain = ImagesImageVariantFit._('contain');
+static const ImagesImageVariantFit contain = ImagesImageVariantFit$contain._();
 
-static const ImagesImageVariantFit cover = ImagesImageVariantFit._('cover');
+static const ImagesImageVariantFit cover = ImagesImageVariantFit$cover._();
 
-static const ImagesImageVariantFit crop = ImagesImageVariantFit._('crop');
+static const ImagesImageVariantFit crop = ImagesImageVariantFit$crop._();
 
-static const ImagesImageVariantFit pad = ImagesImageVariantFit._('pad');
+static const ImagesImageVariantFit pad = ImagesImageVariantFit$pad._();
 
 static const List<ImagesImageVariantFit> values = [scaleDown, contain, cover, crop, pad];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ImagesImageVariantFit$Unknown; } 
+@override String toString() => 'ImagesImageVariantFit($value)';
+
+ }
+@immutable final class ImagesImageVariantFit$scaleDown extends ImagesImageVariantFit {const ImagesImageVariantFit$scaleDown._();
+
+@override String get value => 'scale-down';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImagesImageVariantFit$scaleDown;
+
+@override int get hashCode => 'scale-down'.hashCode;
+
+ }
+@immutable final class ImagesImageVariantFit$contain extends ImagesImageVariantFit {const ImagesImageVariantFit$contain._();
+
+@override String get value => 'contain';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImagesImageVariantFit$contain;
+
+@override int get hashCode => 'contain'.hashCode;
+
+ }
+@immutable final class ImagesImageVariantFit$cover extends ImagesImageVariantFit {const ImagesImageVariantFit$cover._();
+
+@override String get value => 'cover';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImagesImageVariantFit$cover;
+
+@override int get hashCode => 'cover'.hashCode;
+
+ }
+@immutable final class ImagesImageVariantFit$crop extends ImagesImageVariantFit {const ImagesImageVariantFit$crop._();
+
+@override String get value => 'crop';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImagesImageVariantFit$crop;
+
+@override int get hashCode => 'crop'.hashCode;
+
+ }
+@immutable final class ImagesImageVariantFit$pad extends ImagesImageVariantFit {const ImagesImageVariantFit$pad._();
+
+@override String get value => 'pad';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImagesImageVariantFit$pad;
+
+@override int get hashCode => 'pad'.hashCode;
+
+ }
+@immutable final class ImagesImageVariantFit$Unknown extends ImagesImageVariantFit {const ImagesImageVariantFit$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ImagesImageVariantFit && other.value == value;
+    other is ImagesImageVariantFit$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ImagesImageVariantFit($value)';
 
  }
 /// Maximum height in image pixels.
@@ -55,25 +104,24 @@ num toJson() => value;
 
 }
 /// What EXIF data should be preserved in the output image.
-@immutable final class ImagesImageVariantSchemasMetadata {const ImagesImageVariantSchemasMetadata._(this.value);
+sealed class ImagesImageVariantSchemasMetadata {const ImagesImageVariantSchemasMetadata();
 
 factory ImagesImageVariantSchemasMetadata.fromJson(String json) { return switch (json) {
   'keep' => keep,
   'copyright' => copyright,
   'none' => none,
-  _ => ImagesImageVariantSchemasMetadata._(json),
+  _ => ImagesImageVariantSchemasMetadata$Unknown(json),
 }; }
 
-static const ImagesImageVariantSchemasMetadata keep = ImagesImageVariantSchemasMetadata._('keep');
+static const ImagesImageVariantSchemasMetadata keep = ImagesImageVariantSchemasMetadata$keep._();
 
-static const ImagesImageVariantSchemasMetadata copyright = ImagesImageVariantSchemasMetadata._('copyright');
+static const ImagesImageVariantSchemasMetadata copyright = ImagesImageVariantSchemasMetadata$copyright._();
 
-static const ImagesImageVariantSchemasMetadata none = ImagesImageVariantSchemasMetadata._('none');
+static const ImagesImageVariantSchemasMetadata none = ImagesImageVariantSchemasMetadata$none._();
 
 static const List<ImagesImageVariantSchemasMetadata> values = [keep, copyright, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -83,13 +131,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ImagesImageVariantSchemasMetadata$Unknown; } 
+@override String toString() => 'ImagesImageVariantSchemasMetadata($value)';
+
+ }
+@immutable final class ImagesImageVariantSchemasMetadata$keep extends ImagesImageVariantSchemasMetadata {const ImagesImageVariantSchemasMetadata$keep._();
+
+@override String get value => 'keep';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImagesImageVariantSchemasMetadata$keep;
+
+@override int get hashCode => 'keep'.hashCode;
+
+ }
+@immutable final class ImagesImageVariantSchemasMetadata$copyright extends ImagesImageVariantSchemasMetadata {const ImagesImageVariantSchemasMetadata$copyright._();
+
+@override String get value => 'copyright';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImagesImageVariantSchemasMetadata$copyright;
+
+@override int get hashCode => 'copyright'.hashCode;
+
+ }
+@immutable final class ImagesImageVariantSchemasMetadata$none extends ImagesImageVariantSchemasMetadata {const ImagesImageVariantSchemasMetadata$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImagesImageVariantSchemasMetadata$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class ImagesImageVariantSchemasMetadata$Unknown extends ImagesImageVariantSchemasMetadata {const ImagesImageVariantSchemasMetadata$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ImagesImageVariantSchemasMetadata && other.value == value;
+    other is ImagesImageVariantSchemasMetadata$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ImagesImageVariantSchemasMetadata($value)';
 
  }
 /// Maximum width in image pixels.

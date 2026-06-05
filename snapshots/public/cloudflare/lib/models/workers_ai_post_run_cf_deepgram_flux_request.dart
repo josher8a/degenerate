@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WorkersAiPostRunCfDeepgramFluxRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Encoding of the audio stream. Currently only supports raw signed little-endian 16-bit PCM.
-@immutable final class WorkersAiPostRunCfDeepgramFluxRequestEncoding {const WorkersAiPostRunCfDeepgramFluxRequestEncoding._(this.value);
+sealed class WorkersAiPostRunCfDeepgramFluxRequestEncoding {const WorkersAiPostRunCfDeepgramFluxRequestEncoding();
 
 factory WorkersAiPostRunCfDeepgramFluxRequestEncoding.fromJson(String json) { return switch (json) {
   'linear16' => linear16,
-  _ => WorkersAiPostRunCfDeepgramFluxRequestEncoding._(json),
+  _ => WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown(json),
 }; }
 
-static const WorkersAiPostRunCfDeepgramFluxRequestEncoding linear16 = WorkersAiPostRunCfDeepgramFluxRequestEncoding._('linear16');
+static const WorkersAiPostRunCfDeepgramFluxRequestEncoding linear16 = WorkersAiPostRunCfDeepgramFluxRequestEncoding$linear16._();
 
 static const List<WorkersAiPostRunCfDeepgramFluxRequestEncoding> values = [linear16];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,32 +21,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramFluxRequestEncoding && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown; } 
 @override String toString() => 'WorkersAiPostRunCfDeepgramFluxRequestEncoding($value)';
 
  }
+@immutable final class WorkersAiPostRunCfDeepgramFluxRequestEncoding$linear16 extends WorkersAiPostRunCfDeepgramFluxRequestEncoding {const WorkersAiPostRunCfDeepgramFluxRequestEncoding$linear16._();
+
+@override String get value => 'linear16';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramFluxRequestEncoding$linear16;
+
+@override int get hashCode => 'linear16'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown extends WorkersAiPostRunCfDeepgramFluxRequestEncoding {const WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WorkersAiPostRunCfDeepgramFluxRequestEncoding$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Opts out requests from the Deepgram Model Improvement Program. Refer to Deepgram Docs for pricing impacts before setting this to true. https://dpgr.am/deepgram-mip
-@immutable final class MipOptOut {const MipOptOut._(this.value);
+sealed class MipOptOut {const MipOptOut();
 
 factory MipOptOut.fromJson(String json) { return switch (json) {
   'true' => $true,
   'false' => $false,
-  _ => MipOptOut._(json),
+  _ => MipOptOut$Unknown(json),
 }; }
 
-static const MipOptOut $true = MipOptOut._('true');
+static const MipOptOut $true = MipOptOut$$true._();
 
-static const MipOptOut $false = MipOptOut._('false');
+static const MipOptOut $false = MipOptOut$$false._();
 
 static const List<MipOptOut> values = [$true, $false];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -56,13 +68,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MipOptOut$Unknown; } 
+@override String toString() => 'MipOptOut($value)';
+
+ }
+@immutable final class MipOptOut$$true extends MipOptOut {const MipOptOut$$true._();
+
+@override String get value => 'true';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MipOptOut$$true;
+
+@override int get hashCode => 'true'.hashCode;
+
+ }
+@immutable final class MipOptOut$$false extends MipOptOut {const MipOptOut$$false._();
+
+@override String get value => 'false';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MipOptOut$$false;
+
+@override int get hashCode => 'false'.hashCode;
+
+ }
+@immutable final class MipOptOut$Unknown extends MipOptOut {const MipOptOut$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MipOptOut && other.value == value;
+    other is MipOptOut$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MipOptOut($value)';
 
  }
 @immutable final class WorkersAiPostRunCfDeepgramFluxRequest {const WorkersAiPostRunCfDeepgramFluxRequest({required this.encoding, required this.sampleRate, this.eagerEotThreshold, this.eotThreshold = '0.7', this.eotTimeoutMs = '5000', this.keyterm, this.mipOptOut = MipOptOut.$false, this.tag, });

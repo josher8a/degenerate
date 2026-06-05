@@ -2,19 +2,18 @@
 // Source: #/components/schemas/EmailRuleCatchallMatcher
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of matcher. Default is 'all'.
-@immutable final class EmailRuleCatchallMatcherType {const EmailRuleCatchallMatcherType._(this.value);
+sealed class EmailRuleCatchallMatcherType {const EmailRuleCatchallMatcherType();
 
 factory EmailRuleCatchallMatcherType.fromJson(String json) { return switch (json) {
   'all' => all,
-  _ => EmailRuleCatchallMatcherType._(json),
+  _ => EmailRuleCatchallMatcherType$Unknown(json),
 }; }
 
-static const EmailRuleCatchallMatcherType all = EmailRuleCatchallMatcherType._('all');
+static const EmailRuleCatchallMatcherType all = EmailRuleCatchallMatcherType$all._();
 
 static const List<EmailRuleCatchallMatcherType> values = [all];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EmailRuleCatchallMatcherType$Unknown; } 
+@override String toString() => 'EmailRuleCatchallMatcherType($value)';
+
+ }
+@immutable final class EmailRuleCatchallMatcherType$all extends EmailRuleCatchallMatcherType {const EmailRuleCatchallMatcherType$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailRuleCatchallMatcherType$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class EmailRuleCatchallMatcherType$Unknown extends EmailRuleCatchallMatcherType {const EmailRuleCatchallMatcherType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EmailRuleCatchallMatcherType && other.value == value;
+    other is EmailRuleCatchallMatcherType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EmailRuleCatchallMatcherType($value)';
 
  }
 /// Matcher for catch-all routing rule.

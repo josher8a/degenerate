@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ProjectRateLimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `project.rate_limit`
-@immutable final class ProjectRateLimitObject {const ProjectRateLimitObject._(this.value);
+sealed class ProjectRateLimitObject {const ProjectRateLimitObject();
 
 factory ProjectRateLimitObject.fromJson(String json) { return switch (json) {
   'project.rate_limit' => projectRateLimit,
-  _ => ProjectRateLimitObject._(json),
+  _ => ProjectRateLimitObject$Unknown(json),
 }; }
 
-static const ProjectRateLimitObject projectRateLimit = ProjectRateLimitObject._('project.rate_limit');
+static const ProjectRateLimitObject projectRateLimit = ProjectRateLimitObject$projectRateLimit._();
 
 static const List<ProjectRateLimitObject> values = [projectRateLimit];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ProjectRateLimitObject$Unknown; } 
+@override String toString() => 'ProjectRateLimitObject($value)';
+
+ }
+@immutable final class ProjectRateLimitObject$projectRateLimit extends ProjectRateLimitObject {const ProjectRateLimitObject$projectRateLimit._();
+
+@override String get value => 'project.rate_limit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ProjectRateLimitObject$projectRateLimit;
+
+@override int get hashCode => 'project.rate_limit'.hashCode;
+
+ }
+@immutable final class ProjectRateLimitObject$Unknown extends ProjectRateLimitObject {const ProjectRateLimitObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ProjectRateLimitObject && other.value == value;
+    other is ProjectRateLimitObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ProjectRateLimitObject($value)';
 
  }
 /// Represents a project rate limit config.

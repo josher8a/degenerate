@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStepStreamEvent (inline: ThreadRunStepDelta)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_delta_object.dart';@immutable final class ThreadRunStepDeltaEvent {const ThreadRunStepDeltaEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_delta_object.dart';sealed class ThreadRunStepDeltaEvent {const ThreadRunStepDeltaEvent();
 
 factory ThreadRunStepDeltaEvent.fromJson(String json) { return switch (json) {
   'thread.run.step.delta' => threadRunStepDelta,
-  _ => ThreadRunStepDeltaEvent._(json),
+  _ => ThreadRunStepDeltaEvent$Unknown(json),
 }; }
 
-static const ThreadRunStepDeltaEvent threadRunStepDelta = ThreadRunStepDeltaEvent._('thread.run.step.delta');
+static const ThreadRunStepDeltaEvent threadRunStepDelta = ThreadRunStepDeltaEvent$threadRunStepDelta._();
 
 static const List<ThreadRunStepDeltaEvent> values = [threadRunStepDelta];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunStepDeltaEvent$Unknown; } 
+@override String toString() => 'ThreadRunStepDeltaEvent($value)';
+
+ }
+@immutable final class ThreadRunStepDeltaEvent$threadRunStepDelta extends ThreadRunStepDeltaEvent {const ThreadRunStepDeltaEvent$threadRunStepDelta._();
+
+@override String get value => 'thread.run.step.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunStepDeltaEvent$threadRunStepDelta;
+
+@override int get hashCode => 'thread.run.step.delta'.hashCode;
+
+ }
+@immutable final class ThreadRunStepDeltaEvent$Unknown extends ThreadRunStepDeltaEvent {const ThreadRunStepDeltaEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunStepDeltaEvent && other.value == value;
+    other is ThreadRunStepDeltaEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunStepDeltaEvent($value)';
 
  }
 /// Occurs when parts of a [run step](/docs/api-reference/run-steps/step-object) are being streamed.

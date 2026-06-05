@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Ingest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates you've finished uploading to tell the D1 to start consuming it
-@immutable final class IngestAction {const IngestAction._(this.value);
+sealed class IngestAction {const IngestAction();
 
 factory IngestAction.fromJson(String json) { return switch (json) {
   'ingest' => ingest,
-  _ => IngestAction._(json),
+  _ => IngestAction$Unknown(json),
 }; }
 
-static const IngestAction ingest = IngestAction._('ingest');
+static const IngestAction ingest = IngestAction$ingest._();
 
 static const List<IngestAction> values = [ingest];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IngestAction$Unknown; } 
+@override String toString() => 'IngestAction($value)';
+
+ }
+@immutable final class IngestAction$ingest extends IngestAction {const IngestAction$ingest._();
+
+@override String get value => 'ingest';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IngestAction$ingest;
+
+@override int get hashCode => 'ingest'.hashCode;
+
+ }
+@immutable final class IngestAction$Unknown extends IngestAction {const IngestAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IngestAction && other.value == value;
+    other is IngestAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IngestAction($value)';
 
  }
 @immutable final class Ingest {const Ingest({required this.action, required this.etag, required this.filename, });

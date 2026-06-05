@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TeamsDevicesIntuneInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Compliance Status.
-@immutable final class TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus._(this.value);
+sealed class TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus();
 
 factory TeamsDevicesIntuneInputRequestComplianceStatus.fromJson(String json) { return switch (json) {
   'compliant' => compliant,
@@ -11,25 +11,24 @@ factory TeamsDevicesIntuneInputRequestComplianceStatus.fromJson(String json) { r
   'notapplicable' => notapplicable,
   'ingraceperiod' => ingraceperiod,
   'error' => error,
-  _ => TeamsDevicesIntuneInputRequestComplianceStatus._(json),
+  _ => TeamsDevicesIntuneInputRequestComplianceStatus$Unknown(json),
 }; }
 
-static const TeamsDevicesIntuneInputRequestComplianceStatus compliant = TeamsDevicesIntuneInputRequestComplianceStatus._('compliant');
+static const TeamsDevicesIntuneInputRequestComplianceStatus compliant = TeamsDevicesIntuneInputRequestComplianceStatus$compliant._();
 
-static const TeamsDevicesIntuneInputRequestComplianceStatus noncompliant = TeamsDevicesIntuneInputRequestComplianceStatus._('noncompliant');
+static const TeamsDevicesIntuneInputRequestComplianceStatus noncompliant = TeamsDevicesIntuneInputRequestComplianceStatus$noncompliant._();
 
-static const TeamsDevicesIntuneInputRequestComplianceStatus unknown = TeamsDevicesIntuneInputRequestComplianceStatus._('unknown');
+static const TeamsDevicesIntuneInputRequestComplianceStatus unknown = TeamsDevicesIntuneInputRequestComplianceStatus$unknown._();
 
-static const TeamsDevicesIntuneInputRequestComplianceStatus notapplicable = TeamsDevicesIntuneInputRequestComplianceStatus._('notapplicable');
+static const TeamsDevicesIntuneInputRequestComplianceStatus notapplicable = TeamsDevicesIntuneInputRequestComplianceStatus$notapplicable._();
 
-static const TeamsDevicesIntuneInputRequestComplianceStatus ingraceperiod = TeamsDevicesIntuneInputRequestComplianceStatus._('ingraceperiod');
+static const TeamsDevicesIntuneInputRequestComplianceStatus ingraceperiod = TeamsDevicesIntuneInputRequestComplianceStatus$ingraceperiod._();
 
-static const TeamsDevicesIntuneInputRequestComplianceStatus error = TeamsDevicesIntuneInputRequestComplianceStatus._('error');
+static const TeamsDevicesIntuneInputRequestComplianceStatus error = TeamsDevicesIntuneInputRequestComplianceStatus$error._();
 
 static const List<TeamsDevicesIntuneInputRequestComplianceStatus> values = [compliant, noncompliant, unknown, notapplicable, ingraceperiod, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,13 +41,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TeamsDevicesIntuneInputRequestComplianceStatus$Unknown; } 
+@override String toString() => 'TeamsDevicesIntuneInputRequestComplianceStatus($value)';
+
+ }
+@immutable final class TeamsDevicesIntuneInputRequestComplianceStatus$compliant extends TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus$compliant._();
+
+@override String get value => 'compliant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesIntuneInputRequestComplianceStatus$compliant;
+
+@override int get hashCode => 'compliant'.hashCode;
+
+ }
+@immutable final class TeamsDevicesIntuneInputRequestComplianceStatus$noncompliant extends TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus$noncompliant._();
+
+@override String get value => 'noncompliant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesIntuneInputRequestComplianceStatus$noncompliant;
+
+@override int get hashCode => 'noncompliant'.hashCode;
+
+ }
+@immutable final class TeamsDevicesIntuneInputRequestComplianceStatus$unknown extends TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesIntuneInputRequestComplianceStatus$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class TeamsDevicesIntuneInputRequestComplianceStatus$notapplicable extends TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus$notapplicable._();
+
+@override String get value => 'notapplicable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesIntuneInputRequestComplianceStatus$notapplicable;
+
+@override int get hashCode => 'notapplicable'.hashCode;
+
+ }
+@immutable final class TeamsDevicesIntuneInputRequestComplianceStatus$ingraceperiod extends TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus$ingraceperiod._();
+
+@override String get value => 'ingraceperiod';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesIntuneInputRequestComplianceStatus$ingraceperiod;
+
+@override int get hashCode => 'ingraceperiod'.hashCode;
+
+ }
+@immutable final class TeamsDevicesIntuneInputRequestComplianceStatus$error extends TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesIntuneInputRequestComplianceStatus$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class TeamsDevicesIntuneInputRequestComplianceStatus$Unknown extends TeamsDevicesIntuneInputRequestComplianceStatus {const TeamsDevicesIntuneInputRequestComplianceStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TeamsDevicesIntuneInputRequestComplianceStatus && other.value == value;
+    other is TeamsDevicesIntuneInputRequestComplianceStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TeamsDevicesIntuneInputRequestComplianceStatus($value)';
 
  }
 @immutable final class TeamsDevicesIntuneInputRequest {const TeamsDevicesIntuneInputRequest({required this.complianceStatus, required this.connectionId, });

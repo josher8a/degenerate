@@ -2,28 +2,27 @@
 // Source: #/components/schemas/CloudflarePipelinesR2Table (inline: FileNaming)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filename generation strategy.
-@immutable final class FileNamingStrategy {const FileNamingStrategy._(this.value);
+sealed class FileNamingStrategy {const FileNamingStrategy();
 
 factory FileNamingStrategy.fromJson(String json) { return switch (json) {
   'serial' => serial,
   'uuid' => uuid,
   'uuid_v7' => uuidV7,
   'ulid' => ulid,
-  _ => FileNamingStrategy._(json),
+  _ => FileNamingStrategy$Unknown(json),
 }; }
 
-static const FileNamingStrategy serial = FileNamingStrategy._('serial');
+static const FileNamingStrategy serial = FileNamingStrategy$serial._();
 
-static const FileNamingStrategy uuid = FileNamingStrategy._('uuid');
+static const FileNamingStrategy uuid = FileNamingStrategy$uuid._();
 
-static const FileNamingStrategy uuidV7 = FileNamingStrategy._('uuid_v7');
+static const FileNamingStrategy uuidV7 = FileNamingStrategy$uuidV7._();
 
-static const FileNamingStrategy ulid = FileNamingStrategy._('ulid');
+static const FileNamingStrategy ulid = FileNamingStrategy$ulid._();
 
 static const List<FileNamingStrategy> values = [serial, uuid, uuidV7, ulid];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FileNamingStrategy$Unknown; } 
+@override String toString() => 'FileNamingStrategy($value)';
+
+ }
+@immutable final class FileNamingStrategy$serial extends FileNamingStrategy {const FileNamingStrategy$serial._();
+
+@override String get value => 'serial';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileNamingStrategy$serial;
+
+@override int get hashCode => 'serial'.hashCode;
+
+ }
+@immutable final class FileNamingStrategy$uuid extends FileNamingStrategy {const FileNamingStrategy$uuid._();
+
+@override String get value => 'uuid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileNamingStrategy$uuid;
+
+@override int get hashCode => 'uuid'.hashCode;
+
+ }
+@immutable final class FileNamingStrategy$uuidV7 extends FileNamingStrategy {const FileNamingStrategy$uuidV7._();
+
+@override String get value => 'uuid_v7';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileNamingStrategy$uuidV7;
+
+@override int get hashCode => 'uuid_v7'.hashCode;
+
+ }
+@immutable final class FileNamingStrategy$ulid extends FileNamingStrategy {const FileNamingStrategy$ulid._();
+
+@override String get value => 'ulid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileNamingStrategy$ulid;
+
+@override int get hashCode => 'ulid'.hashCode;
+
+ }
+@immutable final class FileNamingStrategy$Unknown extends FileNamingStrategy {const FileNamingStrategy$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FileNamingStrategy && other.value == value;
+    other is FileNamingStrategy$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FileNamingStrategy($value)';
 
  }
 /// Controls filename prefix/suffix and strategy.

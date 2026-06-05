@@ -2,7 +2,7 @@
 // Source: #/components/schemas/OpenAiFile
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/delete_file_response/delete_file_response_object.dart';/// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results`, `vision`, and `user_data`.
-@immutable final class OpenAiFilePurpose {const OpenAiFilePurpose._(this.value);
+sealed class OpenAiFilePurpose {const OpenAiFilePurpose();
 
 factory OpenAiFilePurpose.fromJson(String json) { return switch (json) {
   'assistants' => assistants,
@@ -13,29 +13,28 @@ factory OpenAiFilePurpose.fromJson(String json) { return switch (json) {
   'fine-tune-results' => fineTuneResults,
   'vision' => vision,
   'user_data' => userData,
-  _ => OpenAiFilePurpose._(json),
+  _ => OpenAiFilePurpose$Unknown(json),
 }; }
 
-static const OpenAiFilePurpose assistants = OpenAiFilePurpose._('assistants');
+static const OpenAiFilePurpose assistants = OpenAiFilePurpose$assistants._();
 
-static const OpenAiFilePurpose assistantsOutput = OpenAiFilePurpose._('assistants_output');
+static const OpenAiFilePurpose assistantsOutput = OpenAiFilePurpose$assistantsOutput._();
 
-static const OpenAiFilePurpose batch = OpenAiFilePurpose._('batch');
+static const OpenAiFilePurpose batch = OpenAiFilePurpose$batch._();
 
-static const OpenAiFilePurpose batchOutput = OpenAiFilePurpose._('batch_output');
+static const OpenAiFilePurpose batchOutput = OpenAiFilePurpose$batchOutput._();
 
-static const OpenAiFilePurpose fineTune = OpenAiFilePurpose._('fine-tune');
+static const OpenAiFilePurpose fineTune = OpenAiFilePurpose$fineTune._();
 
-static const OpenAiFilePurpose fineTuneResults = OpenAiFilePurpose._('fine-tune-results');
+static const OpenAiFilePurpose fineTuneResults = OpenAiFilePurpose$fineTuneResults._();
 
-static const OpenAiFilePurpose vision = OpenAiFilePurpose._('vision');
+static const OpenAiFilePurpose vision = OpenAiFilePurpose$vision._();
 
-static const OpenAiFilePurpose userData = OpenAiFilePurpose._('user_data');
+static const OpenAiFilePurpose userData = OpenAiFilePurpose$userData._();
 
 static const List<OpenAiFilePurpose> values = [assistants, assistantsOutput, batch, batchOutput, fineTune, fineTuneResults, vision, userData];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,35 +49,111 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is OpenAiFilePurpose && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is OpenAiFilePurpose$Unknown; } 
 @override String toString() => 'OpenAiFilePurpose($value)';
 
  }
+@immutable final class OpenAiFilePurpose$assistants extends OpenAiFilePurpose {const OpenAiFilePurpose$assistants._();
+
+@override String get value => 'assistants';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenAiFilePurpose$assistants;
+
+@override int get hashCode => 'assistants'.hashCode;
+
+ }
+@immutable final class OpenAiFilePurpose$assistantsOutput extends OpenAiFilePurpose {const OpenAiFilePurpose$assistantsOutput._();
+
+@override String get value => 'assistants_output';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenAiFilePurpose$assistantsOutput;
+
+@override int get hashCode => 'assistants_output'.hashCode;
+
+ }
+@immutable final class OpenAiFilePurpose$batch extends OpenAiFilePurpose {const OpenAiFilePurpose$batch._();
+
+@override String get value => 'batch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenAiFilePurpose$batch;
+
+@override int get hashCode => 'batch'.hashCode;
+
+ }
+@immutable final class OpenAiFilePurpose$batchOutput extends OpenAiFilePurpose {const OpenAiFilePurpose$batchOutput._();
+
+@override String get value => 'batch_output';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenAiFilePurpose$batchOutput;
+
+@override int get hashCode => 'batch_output'.hashCode;
+
+ }
+@immutable final class OpenAiFilePurpose$fineTune extends OpenAiFilePurpose {const OpenAiFilePurpose$fineTune._();
+
+@override String get value => 'fine-tune';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenAiFilePurpose$fineTune;
+
+@override int get hashCode => 'fine-tune'.hashCode;
+
+ }
+@immutable final class OpenAiFilePurpose$fineTuneResults extends OpenAiFilePurpose {const OpenAiFilePurpose$fineTuneResults._();
+
+@override String get value => 'fine-tune-results';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenAiFilePurpose$fineTuneResults;
+
+@override int get hashCode => 'fine-tune-results'.hashCode;
+
+ }
+@immutable final class OpenAiFilePurpose$vision extends OpenAiFilePurpose {const OpenAiFilePurpose$vision._();
+
+@override String get value => 'vision';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenAiFilePurpose$vision;
+
+@override int get hashCode => 'vision'.hashCode;
+
+ }
+@immutable final class OpenAiFilePurpose$userData extends OpenAiFilePurpose {const OpenAiFilePurpose$userData._();
+
+@override String get value => 'user_data';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenAiFilePurpose$userData;
+
+@override int get hashCode => 'user_data'.hashCode;
+
+ }
+@immutable final class OpenAiFilePurpose$Unknown extends OpenAiFilePurpose {const OpenAiFilePurpose$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OpenAiFilePurpose$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
-@immutable final class OpenAiFileStatus {const OpenAiFileStatus._(this.value);
+sealed class OpenAiFileStatus {const OpenAiFileStatus();
 
 factory OpenAiFileStatus.fromJson(String json) { return switch (json) {
   'uploaded' => uploaded,
   'processed' => processed,
   'error' => error,
-  _ => OpenAiFileStatus._(json),
+  _ => OpenAiFileStatus$Unknown(json),
 }; }
 
-static const OpenAiFileStatus uploaded = OpenAiFileStatus._('uploaded');
+static const OpenAiFileStatus uploaded = OpenAiFileStatus$uploaded._();
 
-static const OpenAiFileStatus processed = OpenAiFileStatus._('processed');
+static const OpenAiFileStatus processed = OpenAiFileStatus$processed._();
 
-static const OpenAiFileStatus error = OpenAiFileStatus._('error');
+static const OpenAiFileStatus error = OpenAiFileStatus$error._();
 
 static const List<OpenAiFileStatus> values = [uploaded, processed, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -88,13 +163,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OpenAiFileStatus$Unknown; } 
+@override String toString() => 'OpenAiFileStatus($value)';
+
+ }
+@immutable final class OpenAiFileStatus$uploaded extends OpenAiFileStatus {const OpenAiFileStatus$uploaded._();
+
+@override String get value => 'uploaded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenAiFileStatus$uploaded;
+
+@override int get hashCode => 'uploaded'.hashCode;
+
+ }
+@immutable final class OpenAiFileStatus$processed extends OpenAiFileStatus {const OpenAiFileStatus$processed._();
+
+@override String get value => 'processed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenAiFileStatus$processed;
+
+@override int get hashCode => 'processed'.hashCode;
+
+ }
+@immutable final class OpenAiFileStatus$error extends OpenAiFileStatus {const OpenAiFileStatus$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenAiFileStatus$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class OpenAiFileStatus$Unknown extends OpenAiFileStatus {const OpenAiFileStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OpenAiFileStatus && other.value == value;
+    other is OpenAiFileStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OpenAiFileStatus($value)';
 
  }
 /// The `File` object represents a document that has been uploaded to OpenAI.

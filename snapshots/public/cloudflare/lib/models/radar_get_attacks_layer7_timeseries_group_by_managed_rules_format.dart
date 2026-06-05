@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat {const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat._(this.value);
+sealed class RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat {const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat();
 
 factory RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat._(json),
+  _ => RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat $json = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat._('JSON');
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat $json = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat$$json._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat csv = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat._('CSV');
+static const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat csv = RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat$csv._();
 
 static const List<RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat$$json extends RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat {const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat$csv extends RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat {const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat$Unknown extends RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat {const RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat && other.value == value;
+    other is RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupByManagedRulesFormat($value)';
 
  }

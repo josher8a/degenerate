@@ -2,28 +2,27 @@
 // Source: #/components/schemas/IssuingNetworkTokenWalletProvider
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_address.dart';/// The method used for tokenizing a card.
-@immutable final class CardNumberSource {const CardNumberSource._(this.value);
+sealed class CardNumberSource {const CardNumberSource();
 
 factory CardNumberSource.fromJson(String json) { return switch (json) {
   'app' => app,
   'manual' => manual,
   'on_file' => onFile,
   'other' => $other,
-  _ => CardNumberSource._(json),
+  _ => CardNumberSource$Unknown(json),
 }; }
 
-static const CardNumberSource app = CardNumberSource._('app');
+static const CardNumberSource app = CardNumberSource$app._();
 
-static const CardNumberSource manual = CardNumberSource._('manual');
+static const CardNumberSource manual = CardNumberSource$manual._();
 
-static const CardNumberSource onFile = CardNumberSource._('on_file');
+static const CardNumberSource onFile = CardNumberSource$onFile._();
 
-static const CardNumberSource $other = CardNumberSource._('other');
+static const CardNumberSource $other = CardNumberSource$$other._();
 
 static const List<CardNumberSource> values = [app, manual, onFile, $other];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,16 +33,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CardNumberSource && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CardNumberSource$Unknown; } 
 @override String toString() => 'CardNumberSource($value)';
 
  }
-@immutable final class ReasonCodes {const ReasonCodes._(this.value);
+@immutable final class CardNumberSource$app extends CardNumberSource {const CardNumberSource$app._();
+
+@override String get value => 'app';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CardNumberSource$app;
+
+@override int get hashCode => 'app'.hashCode;
+
+ }
+@immutable final class CardNumberSource$manual extends CardNumberSource {const CardNumberSource$manual._();
+
+@override String get value => 'manual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CardNumberSource$manual;
+
+@override int get hashCode => 'manual'.hashCode;
+
+ }
+@immutable final class CardNumberSource$onFile extends CardNumberSource {const CardNumberSource$onFile._();
+
+@override String get value => 'on_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CardNumberSource$onFile;
+
+@override int get hashCode => 'on_file'.hashCode;
+
+ }
+@immutable final class CardNumberSource$$other extends CardNumberSource {const CardNumberSource$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CardNumberSource$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class CardNumberSource$Unknown extends CardNumberSource {const CardNumberSource$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CardNumberSource$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class ReasonCodes {const ReasonCodes();
 
 factory ReasonCodes.fromJson(String json) { return switch (json) {
   'account_card_too_new' => accountCardTooNew,
@@ -74,69 +114,68 @@ factory ReasonCodes.fromJson(String json) { return switch (json) {
   'too_many_different_cardholders' => tooManyDifferentCardholders,
   'too_many_recent_attempts' => tooManyRecentAttempts,
   'too_many_recent_tokens' => tooManyRecentTokens,
-  _ => ReasonCodes._(json),
+  _ => ReasonCodes$Unknown(json),
 }; }
 
-static const ReasonCodes accountCardTooNew = ReasonCodes._('account_card_too_new');
+static const ReasonCodes accountCardTooNew = ReasonCodes$accountCardTooNew._();
 
-static const ReasonCodes accountRecentlyChanged = ReasonCodes._('account_recently_changed');
+static const ReasonCodes accountRecentlyChanged = ReasonCodes$accountRecentlyChanged._();
 
-static const ReasonCodes accountTooNew = ReasonCodes._('account_too_new');
+static const ReasonCodes accountTooNew = ReasonCodes$accountTooNew._();
 
-static const ReasonCodes accountTooNewSinceLaunch = ReasonCodes._('account_too_new_since_launch');
+static const ReasonCodes accountTooNewSinceLaunch = ReasonCodes$accountTooNewSinceLaunch._();
 
-static const ReasonCodes additionalDevice = ReasonCodes._('additional_device');
+static const ReasonCodes additionalDevice = ReasonCodes$additionalDevice._();
 
-static const ReasonCodes dataExpired = ReasonCodes._('data_expired');
+static const ReasonCodes dataExpired = ReasonCodes$dataExpired._();
 
-static const ReasonCodes deferIdVDecision = ReasonCodes._('defer_id_v_decision');
+static const ReasonCodes deferIdVDecision = ReasonCodes$deferIdVDecision._();
 
-static const ReasonCodes deviceRecentlyLost = ReasonCodes._('device_recently_lost');
+static const ReasonCodes deviceRecentlyLost = ReasonCodes$deviceRecentlyLost._();
 
-static const ReasonCodes goodActivityHistory = ReasonCodes._('good_activity_history');
+static const ReasonCodes goodActivityHistory = ReasonCodes$goodActivityHistory._();
 
-static const ReasonCodes hasSuspendedTokens = ReasonCodes._('has_suspended_tokens');
+static const ReasonCodes hasSuspendedTokens = ReasonCodes$hasSuspendedTokens._();
 
-static const ReasonCodes highRisk = ReasonCodes._('high_risk');
+static const ReasonCodes highRisk = ReasonCodes$highRisk._();
 
-static const ReasonCodes inactiveAccount = ReasonCodes._('inactive_account');
+static const ReasonCodes inactiveAccount = ReasonCodes$inactiveAccount._();
 
-static const ReasonCodes longAccountTenure = ReasonCodes._('long_account_tenure');
+static const ReasonCodes longAccountTenure = ReasonCodes$longAccountTenure._();
 
-static const ReasonCodes lowAccountScore = ReasonCodes._('low_account_score');
+static const ReasonCodes lowAccountScore = ReasonCodes$lowAccountScore._();
 
-static const ReasonCodes lowDeviceScore = ReasonCodes._('low_device_score');
+static const ReasonCodes lowDeviceScore = ReasonCodes$lowDeviceScore._();
 
-static const ReasonCodes lowPhoneNumberScore = ReasonCodes._('low_phone_number_score');
+static const ReasonCodes lowPhoneNumberScore = ReasonCodes$lowPhoneNumberScore._();
 
-static const ReasonCodes networkServiceError = ReasonCodes._('network_service_error');
+static const ReasonCodes networkServiceError = ReasonCodes$networkServiceError._();
 
-static const ReasonCodes outsideHomeTerritory = ReasonCodes._('outside_home_territory');
+static const ReasonCodes outsideHomeTerritory = ReasonCodes$outsideHomeTerritory._();
 
-static const ReasonCodes provisioningCardholderMismatch = ReasonCodes._('provisioning_cardholder_mismatch');
+static const ReasonCodes provisioningCardholderMismatch = ReasonCodes$provisioningCardholderMismatch._();
 
-static const ReasonCodes provisioningDeviceAndCardholderMismatch = ReasonCodes._('provisioning_device_and_cardholder_mismatch');
+static const ReasonCodes provisioningDeviceAndCardholderMismatch = ReasonCodes$provisioningDeviceAndCardholderMismatch._();
 
-static const ReasonCodes provisioningDeviceMismatch = ReasonCodes._('provisioning_device_mismatch');
+static const ReasonCodes provisioningDeviceMismatch = ReasonCodes$provisioningDeviceMismatch._();
 
-static const ReasonCodes sameDeviceNoPriorAuthentication = ReasonCodes._('same_device_no_prior_authentication');
+static const ReasonCodes sameDeviceNoPriorAuthentication = ReasonCodes$sameDeviceNoPriorAuthentication._();
 
-static const ReasonCodes sameDeviceSuccessfulPriorAuthentication = ReasonCodes._('same_device_successful_prior_authentication');
+static const ReasonCodes sameDeviceSuccessfulPriorAuthentication = ReasonCodes$sameDeviceSuccessfulPriorAuthentication._();
 
-static const ReasonCodes softwareUpdate = ReasonCodes._('software_update');
+static const ReasonCodes softwareUpdate = ReasonCodes$softwareUpdate._();
 
-static const ReasonCodes suspiciousActivity = ReasonCodes._('suspicious_activity');
+static const ReasonCodes suspiciousActivity = ReasonCodes$suspiciousActivity._();
 
-static const ReasonCodes tooManyDifferentCardholders = ReasonCodes._('too_many_different_cardholders');
+static const ReasonCodes tooManyDifferentCardholders = ReasonCodes$tooManyDifferentCardholders._();
 
-static const ReasonCodes tooManyRecentAttempts = ReasonCodes._('too_many_recent_attempts');
+static const ReasonCodes tooManyRecentAttempts = ReasonCodes$tooManyRecentAttempts._();
 
-static const ReasonCodes tooManyRecentTokens = ReasonCodes._('too_many_recent_tokens');
+static const ReasonCodes tooManyRecentTokens = ReasonCodes$tooManyRecentTokens._();
 
 static const List<ReasonCodes> values = [accountCardTooNew, accountRecentlyChanged, accountTooNew, accountTooNewSinceLaunch, additionalDevice, dataExpired, deferIdVDecision, deviceRecentlyLost, goodActivityHistory, hasSuspendedTokens, highRisk, inactiveAccount, longAccountTenure, lowAccountScore, lowDeviceScore, lowPhoneNumberScore, networkServiceError, outsideHomeTerritory, provisioningCardholderMismatch, provisioningDeviceAndCardholderMismatch, provisioningDeviceMismatch, sameDeviceNoPriorAuthentication, sameDeviceSuccessfulPriorAuthentication, softwareUpdate, suspiciousActivity, tooManyDifferentCardholders, tooManyRecentAttempts, tooManyRecentTokens];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -171,35 +210,291 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ReasonCodes && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ReasonCodes$Unknown; } 
 @override String toString() => 'ReasonCodes($value)';
 
  }
+@immutable final class ReasonCodes$accountCardTooNew extends ReasonCodes {const ReasonCodes$accountCardTooNew._();
+
+@override String get value => 'account_card_too_new';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$accountCardTooNew;
+
+@override int get hashCode => 'account_card_too_new'.hashCode;
+
+ }
+@immutable final class ReasonCodes$accountRecentlyChanged extends ReasonCodes {const ReasonCodes$accountRecentlyChanged._();
+
+@override String get value => 'account_recently_changed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$accountRecentlyChanged;
+
+@override int get hashCode => 'account_recently_changed'.hashCode;
+
+ }
+@immutable final class ReasonCodes$accountTooNew extends ReasonCodes {const ReasonCodes$accountTooNew._();
+
+@override String get value => 'account_too_new';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$accountTooNew;
+
+@override int get hashCode => 'account_too_new'.hashCode;
+
+ }
+@immutable final class ReasonCodes$accountTooNewSinceLaunch extends ReasonCodes {const ReasonCodes$accountTooNewSinceLaunch._();
+
+@override String get value => 'account_too_new_since_launch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$accountTooNewSinceLaunch;
+
+@override int get hashCode => 'account_too_new_since_launch'.hashCode;
+
+ }
+@immutable final class ReasonCodes$additionalDevice extends ReasonCodes {const ReasonCodes$additionalDevice._();
+
+@override String get value => 'additional_device';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$additionalDevice;
+
+@override int get hashCode => 'additional_device'.hashCode;
+
+ }
+@immutable final class ReasonCodes$dataExpired extends ReasonCodes {const ReasonCodes$dataExpired._();
+
+@override String get value => 'data_expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$dataExpired;
+
+@override int get hashCode => 'data_expired'.hashCode;
+
+ }
+@immutable final class ReasonCodes$deferIdVDecision extends ReasonCodes {const ReasonCodes$deferIdVDecision._();
+
+@override String get value => 'defer_id_v_decision';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$deferIdVDecision;
+
+@override int get hashCode => 'defer_id_v_decision'.hashCode;
+
+ }
+@immutable final class ReasonCodes$deviceRecentlyLost extends ReasonCodes {const ReasonCodes$deviceRecentlyLost._();
+
+@override String get value => 'device_recently_lost';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$deviceRecentlyLost;
+
+@override int get hashCode => 'device_recently_lost'.hashCode;
+
+ }
+@immutable final class ReasonCodes$goodActivityHistory extends ReasonCodes {const ReasonCodes$goodActivityHistory._();
+
+@override String get value => 'good_activity_history';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$goodActivityHistory;
+
+@override int get hashCode => 'good_activity_history'.hashCode;
+
+ }
+@immutable final class ReasonCodes$hasSuspendedTokens extends ReasonCodes {const ReasonCodes$hasSuspendedTokens._();
+
+@override String get value => 'has_suspended_tokens';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$hasSuspendedTokens;
+
+@override int get hashCode => 'has_suspended_tokens'.hashCode;
+
+ }
+@immutable final class ReasonCodes$highRisk extends ReasonCodes {const ReasonCodes$highRisk._();
+
+@override String get value => 'high_risk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$highRisk;
+
+@override int get hashCode => 'high_risk'.hashCode;
+
+ }
+@immutable final class ReasonCodes$inactiveAccount extends ReasonCodes {const ReasonCodes$inactiveAccount._();
+
+@override String get value => 'inactive_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$inactiveAccount;
+
+@override int get hashCode => 'inactive_account'.hashCode;
+
+ }
+@immutable final class ReasonCodes$longAccountTenure extends ReasonCodes {const ReasonCodes$longAccountTenure._();
+
+@override String get value => 'long_account_tenure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$longAccountTenure;
+
+@override int get hashCode => 'long_account_tenure'.hashCode;
+
+ }
+@immutable final class ReasonCodes$lowAccountScore extends ReasonCodes {const ReasonCodes$lowAccountScore._();
+
+@override String get value => 'low_account_score';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$lowAccountScore;
+
+@override int get hashCode => 'low_account_score'.hashCode;
+
+ }
+@immutable final class ReasonCodes$lowDeviceScore extends ReasonCodes {const ReasonCodes$lowDeviceScore._();
+
+@override String get value => 'low_device_score';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$lowDeviceScore;
+
+@override int get hashCode => 'low_device_score'.hashCode;
+
+ }
+@immutable final class ReasonCodes$lowPhoneNumberScore extends ReasonCodes {const ReasonCodes$lowPhoneNumberScore._();
+
+@override String get value => 'low_phone_number_score';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$lowPhoneNumberScore;
+
+@override int get hashCode => 'low_phone_number_score'.hashCode;
+
+ }
+@immutable final class ReasonCodes$networkServiceError extends ReasonCodes {const ReasonCodes$networkServiceError._();
+
+@override String get value => 'network_service_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$networkServiceError;
+
+@override int get hashCode => 'network_service_error'.hashCode;
+
+ }
+@immutable final class ReasonCodes$outsideHomeTerritory extends ReasonCodes {const ReasonCodes$outsideHomeTerritory._();
+
+@override String get value => 'outside_home_territory';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$outsideHomeTerritory;
+
+@override int get hashCode => 'outside_home_territory'.hashCode;
+
+ }
+@immutable final class ReasonCodes$provisioningCardholderMismatch extends ReasonCodes {const ReasonCodes$provisioningCardholderMismatch._();
+
+@override String get value => 'provisioning_cardholder_mismatch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$provisioningCardholderMismatch;
+
+@override int get hashCode => 'provisioning_cardholder_mismatch'.hashCode;
+
+ }
+@immutable final class ReasonCodes$provisioningDeviceAndCardholderMismatch extends ReasonCodes {const ReasonCodes$provisioningDeviceAndCardholderMismatch._();
+
+@override String get value => 'provisioning_device_and_cardholder_mismatch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$provisioningDeviceAndCardholderMismatch;
+
+@override int get hashCode => 'provisioning_device_and_cardholder_mismatch'.hashCode;
+
+ }
+@immutable final class ReasonCodes$provisioningDeviceMismatch extends ReasonCodes {const ReasonCodes$provisioningDeviceMismatch._();
+
+@override String get value => 'provisioning_device_mismatch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$provisioningDeviceMismatch;
+
+@override int get hashCode => 'provisioning_device_mismatch'.hashCode;
+
+ }
+@immutable final class ReasonCodes$sameDeviceNoPriorAuthentication extends ReasonCodes {const ReasonCodes$sameDeviceNoPriorAuthentication._();
+
+@override String get value => 'same_device_no_prior_authentication';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$sameDeviceNoPriorAuthentication;
+
+@override int get hashCode => 'same_device_no_prior_authentication'.hashCode;
+
+ }
+@immutable final class ReasonCodes$sameDeviceSuccessfulPriorAuthentication extends ReasonCodes {const ReasonCodes$sameDeviceSuccessfulPriorAuthentication._();
+
+@override String get value => 'same_device_successful_prior_authentication';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$sameDeviceSuccessfulPriorAuthentication;
+
+@override int get hashCode => 'same_device_successful_prior_authentication'.hashCode;
+
+ }
+@immutable final class ReasonCodes$softwareUpdate extends ReasonCodes {const ReasonCodes$softwareUpdate._();
+
+@override String get value => 'software_update';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$softwareUpdate;
+
+@override int get hashCode => 'software_update'.hashCode;
+
+ }
+@immutable final class ReasonCodes$suspiciousActivity extends ReasonCodes {const ReasonCodes$suspiciousActivity._();
+
+@override String get value => 'suspicious_activity';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$suspiciousActivity;
+
+@override int get hashCode => 'suspicious_activity'.hashCode;
+
+ }
+@immutable final class ReasonCodes$tooManyDifferentCardholders extends ReasonCodes {const ReasonCodes$tooManyDifferentCardholders._();
+
+@override String get value => 'too_many_different_cardholders';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$tooManyDifferentCardholders;
+
+@override int get hashCode => 'too_many_different_cardholders'.hashCode;
+
+ }
+@immutable final class ReasonCodes$tooManyRecentAttempts extends ReasonCodes {const ReasonCodes$tooManyRecentAttempts._();
+
+@override String get value => 'too_many_recent_attempts';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$tooManyRecentAttempts;
+
+@override int get hashCode => 'too_many_recent_attempts'.hashCode;
+
+ }
+@immutable final class ReasonCodes$tooManyRecentTokens extends ReasonCodes {const ReasonCodes$tooManyRecentTokens._();
+
+@override String get value => 'too_many_recent_tokens';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReasonCodes$tooManyRecentTokens;
+
+@override int get hashCode => 'too_many_recent_tokens'.hashCode;
+
+ }
+@immutable final class ReasonCodes$Unknown extends ReasonCodes {const ReasonCodes$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReasonCodes$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The recommendation on responding to the tokenization request.
-@immutable final class SuggestedDecision {const SuggestedDecision._(this.value);
+sealed class SuggestedDecision {const SuggestedDecision();
 
 factory SuggestedDecision.fromJson(String json) { return switch (json) {
   'approve' => approve,
   'decline' => decline,
   'require_auth' => requireAuth,
-  _ => SuggestedDecision._(json),
+  _ => SuggestedDecision$Unknown(json),
 }; }
 
-static const SuggestedDecision approve = SuggestedDecision._('approve');
+static const SuggestedDecision approve = SuggestedDecision$approve._();
 
-static const SuggestedDecision decline = SuggestedDecision._('decline');
+static const SuggestedDecision decline = SuggestedDecision$decline._();
 
-static const SuggestedDecision requireAuth = SuggestedDecision._('require_auth');
+static const SuggestedDecision requireAuth = SuggestedDecision$requireAuth._();
 
 static const List<SuggestedDecision> values = [approve, decline, requireAuth];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -209,13 +504,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SuggestedDecision$Unknown; } 
+@override String toString() => 'SuggestedDecision($value)';
+
+ }
+@immutable final class SuggestedDecision$approve extends SuggestedDecision {const SuggestedDecision$approve._();
+
+@override String get value => 'approve';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SuggestedDecision$approve;
+
+@override int get hashCode => 'approve'.hashCode;
+
+ }
+@immutable final class SuggestedDecision$decline extends SuggestedDecision {const SuggestedDecision$decline._();
+
+@override String get value => 'decline';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SuggestedDecision$decline;
+
+@override int get hashCode => 'decline'.hashCode;
+
+ }
+@immutable final class SuggestedDecision$requireAuth extends SuggestedDecision {const SuggestedDecision$requireAuth._();
+
+@override String get value => 'require_auth';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SuggestedDecision$requireAuth;
+
+@override int get hashCode => 'require_auth'.hashCode;
+
+ }
+@immutable final class SuggestedDecision$Unknown extends SuggestedDecision {const SuggestedDecision$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SuggestedDecision && other.value == value;
+    other is SuggestedDecision$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SuggestedDecision($value)';
 
  }
 /// 

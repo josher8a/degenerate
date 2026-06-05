@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupByDkimArc
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByDkimArc {const RadarGetEmailSecurityTimeseriesGroupByDkimArc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailSecurityTimeseriesGroupByDkimArc {const RadarGetEmailSecurityTimeseriesGroupByDkimArc();
 
 factory RadarGetEmailSecurityTimeseriesGroupByDkimArc.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailSecurityTimeseriesGroupByDkimArc._(json),
+  _ => RadarGetEmailSecurityTimeseriesGroupByDkimArc$Unknown(json),
 }; }
 
-static const RadarGetEmailSecurityTimeseriesGroupByDkimArc pass = RadarGetEmailSecurityTimeseriesGroupByDkimArc._('PASS');
+static const RadarGetEmailSecurityTimeseriesGroupByDkimArc pass = RadarGetEmailSecurityTimeseriesGroupByDkimArc$pass._();
 
-static const RadarGetEmailSecurityTimeseriesGroupByDkimArc none = RadarGetEmailSecurityTimeseriesGroupByDkimArc._('NONE');
+static const RadarGetEmailSecurityTimeseriesGroupByDkimArc none = RadarGetEmailSecurityTimeseriesGroupByDkimArc$none._();
 
-static const RadarGetEmailSecurityTimeseriesGroupByDkimArc fail = RadarGetEmailSecurityTimeseriesGroupByDkimArc._('FAIL');
+static const RadarGetEmailSecurityTimeseriesGroupByDkimArc fail = RadarGetEmailSecurityTimeseriesGroupByDkimArc$fail._();
 
 static const List<RadarGetEmailSecurityTimeseriesGroupByDkimArc> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecurityTimeseriesGroupByDkimArc$Unknown; } 
+@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupByDkimArc($value)';
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDkimArc$pass extends RadarGetEmailSecurityTimeseriesGroupByDkimArc {const RadarGetEmailSecurityTimeseriesGroupByDkimArc$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupByDkimArc$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDkimArc$none extends RadarGetEmailSecurityTimeseriesGroupByDkimArc {const RadarGetEmailSecurityTimeseriesGroupByDkimArc$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupByDkimArc$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDkimArc$fail extends RadarGetEmailSecurityTimeseriesGroupByDkimArc {const RadarGetEmailSecurityTimeseriesGroupByDkimArc$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupByDkimArc$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDkimArc$Unknown extends RadarGetEmailSecurityTimeseriesGroupByDkimArc {const RadarGetEmailSecurityTimeseriesGroupByDkimArc$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecurityTimeseriesGroupByDkimArc && other.value == value;
+    other is RadarGetEmailSecurityTimeseriesGroupByDkimArc$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupByDkimArc($value)';
 
  }

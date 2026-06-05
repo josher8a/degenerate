@@ -2,19 +2,18 @@
 // Source: #/components/schemas/OrgsUpdateMembershipForAuthenticatedUserRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The state that the membership should be in. Only `"active"` will be accepted.
-@immutable final class OrgsUpdateMembershipForAuthenticatedUserRequestState {const OrgsUpdateMembershipForAuthenticatedUserRequestState._(this.value);
+sealed class OrgsUpdateMembershipForAuthenticatedUserRequestState {const OrgsUpdateMembershipForAuthenticatedUserRequestState();
 
 factory OrgsUpdateMembershipForAuthenticatedUserRequestState.fromJson(String json) { return switch (json) {
   'active' => active,
-  _ => OrgsUpdateMembershipForAuthenticatedUserRequestState._(json),
+  _ => OrgsUpdateMembershipForAuthenticatedUserRequestState$Unknown(json),
 }; }
 
-static const OrgsUpdateMembershipForAuthenticatedUserRequestState active = OrgsUpdateMembershipForAuthenticatedUserRequestState._('active');
+static const OrgsUpdateMembershipForAuthenticatedUserRequestState active = OrgsUpdateMembershipForAuthenticatedUserRequestState$active._();
 
 static const List<OrgsUpdateMembershipForAuthenticatedUserRequestState> values = [active];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrgsUpdateMembershipForAuthenticatedUserRequestState$Unknown; } 
+@override String toString() => 'OrgsUpdateMembershipForAuthenticatedUserRequestState($value)';
+
+ }
+@immutable final class OrgsUpdateMembershipForAuthenticatedUserRequestState$active extends OrgsUpdateMembershipForAuthenticatedUserRequestState {const OrgsUpdateMembershipForAuthenticatedUserRequestState$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsUpdateMembershipForAuthenticatedUserRequestState$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class OrgsUpdateMembershipForAuthenticatedUserRequestState$Unknown extends OrgsUpdateMembershipForAuthenticatedUserRequestState {const OrgsUpdateMembershipForAuthenticatedUserRequestState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrgsUpdateMembershipForAuthenticatedUserRequestState && other.value == value;
+    other is OrgsUpdateMembershipForAuthenticatedUserRequestState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrgsUpdateMembershipForAuthenticatedUserRequestState($value)';
 
  }
 @immutable final class OrgsUpdateMembershipForAuthenticatedUserRequest {const OrgsUpdateMembershipForAuthenticatedUserRequest({required this.state});

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailSecuritySummaryBySpoofDkim
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryBySpoofDkim {const RadarGetEmailSecuritySummaryBySpoofDkim._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailSecuritySummaryBySpoofDkim {const RadarGetEmailSecuritySummaryBySpoofDkim();
 
 factory RadarGetEmailSecuritySummaryBySpoofDkim.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailSecuritySummaryBySpoofDkim._(json),
+  _ => RadarGetEmailSecuritySummaryBySpoofDkim$Unknown(json),
 }; }
 
-static const RadarGetEmailSecuritySummaryBySpoofDkim pass = RadarGetEmailSecuritySummaryBySpoofDkim._('PASS');
+static const RadarGetEmailSecuritySummaryBySpoofDkim pass = RadarGetEmailSecuritySummaryBySpoofDkim$pass._();
 
-static const RadarGetEmailSecuritySummaryBySpoofDkim none = RadarGetEmailSecuritySummaryBySpoofDkim._('NONE');
+static const RadarGetEmailSecuritySummaryBySpoofDkim none = RadarGetEmailSecuritySummaryBySpoofDkim$none._();
 
-static const RadarGetEmailSecuritySummaryBySpoofDkim fail = RadarGetEmailSecuritySummaryBySpoofDkim._('FAIL');
+static const RadarGetEmailSecuritySummaryBySpoofDkim fail = RadarGetEmailSecuritySummaryBySpoofDkim$fail._();
 
 static const List<RadarGetEmailSecuritySummaryBySpoofDkim> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecuritySummaryBySpoofDkim$Unknown; } 
+@override String toString() => 'RadarGetEmailSecuritySummaryBySpoofDkim($value)';
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryBySpoofDkim$pass extends RadarGetEmailSecuritySummaryBySpoofDkim {const RadarGetEmailSecuritySummaryBySpoofDkim$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryBySpoofDkim$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryBySpoofDkim$none extends RadarGetEmailSecuritySummaryBySpoofDkim {const RadarGetEmailSecuritySummaryBySpoofDkim$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryBySpoofDkim$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryBySpoofDkim$fail extends RadarGetEmailSecuritySummaryBySpoofDkim {const RadarGetEmailSecuritySummaryBySpoofDkim$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryBySpoofDkim$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryBySpoofDkim$Unknown extends RadarGetEmailSecuritySummaryBySpoofDkim {const RadarGetEmailSecuritySummaryBySpoofDkim$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecuritySummaryBySpoofDkim && other.value == value;
+    other is RadarGetEmailSecuritySummaryBySpoofDkim$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecuritySummaryBySpoofDkim($value)';
 
  }

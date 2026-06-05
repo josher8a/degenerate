@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CompactResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/item_field.dart';import 'package:pub_openai/models/response_usage.dart';/// The object type. Always `response.compaction`.
-@immutable final class CompactResourceObject {const CompactResourceObject._(this.value);
+sealed class CompactResourceObject {const CompactResourceObject();
 
 factory CompactResourceObject.fromJson(String json) { return switch (json) {
   'response.compaction' => responseCompaction,
-  _ => CompactResourceObject._(json),
+  _ => CompactResourceObject$Unknown(json),
 }; }
 
-static const CompactResourceObject responseCompaction = CompactResourceObject._('response.compaction');
+static const CompactResourceObject responseCompaction = CompactResourceObject$responseCompaction._();
 
 static const List<CompactResourceObject> values = [responseCompaction];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CompactResourceObject$Unknown; } 
+@override String toString() => 'CompactResourceObject($value)';
+
+ }
+@immutable final class CompactResourceObject$responseCompaction extends CompactResourceObject {const CompactResourceObject$responseCompaction._();
+
+@override String get value => 'response.compaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CompactResourceObject$responseCompaction;
+
+@override int get hashCode => 'response.compaction'.hashCode;
+
+ }
+@immutable final class CompactResourceObject$Unknown extends CompactResourceObject {const CompactResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CompactResourceObject && other.value == value;
+    other is CompactResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CompactResourceObject($value)';
 
  }
 /// Example:

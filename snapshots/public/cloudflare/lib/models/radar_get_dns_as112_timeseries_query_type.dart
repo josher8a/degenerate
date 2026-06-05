@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetDnsAs112TimeseriesQueryType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType();
 
 factory RadarGetDnsAs112TimeseriesQueryType.fromJson(String json) { return switch (json) {
   'A' => a,
@@ -92,189 +92,188 @@ factory RadarGetDnsAs112TimeseriesQueryType.fromJson(String json) { return switc
   'WKS' => wks,
   'X25' => x25,
   'ZONEMD' => zonemd,
-  _ => RadarGetDnsAs112TimeseriesQueryType._(json),
+  _ => RadarGetDnsAs112TimeseriesQueryType$Unknown(json),
 }; }
 
-static const RadarGetDnsAs112TimeseriesQueryType a = RadarGetDnsAs112TimeseriesQueryType._('A');
+static const RadarGetDnsAs112TimeseriesQueryType a = RadarGetDnsAs112TimeseriesQueryType$a._();
 
-static const RadarGetDnsAs112TimeseriesQueryType aaaa = RadarGetDnsAs112TimeseriesQueryType._('AAAA');
+static const RadarGetDnsAs112TimeseriesQueryType aaaa = RadarGetDnsAs112TimeseriesQueryType$aaaa._();
 
-static const RadarGetDnsAs112TimeseriesQueryType a6 = RadarGetDnsAs112TimeseriesQueryType._('A6');
+static const RadarGetDnsAs112TimeseriesQueryType a6 = RadarGetDnsAs112TimeseriesQueryType$a6._();
 
-static const RadarGetDnsAs112TimeseriesQueryType afsdb = RadarGetDnsAs112TimeseriesQueryType._('AFSDB');
+static const RadarGetDnsAs112TimeseriesQueryType afsdb = RadarGetDnsAs112TimeseriesQueryType$afsdb._();
 
-static const RadarGetDnsAs112TimeseriesQueryType any = RadarGetDnsAs112TimeseriesQueryType._('ANY');
+static const RadarGetDnsAs112TimeseriesQueryType any = RadarGetDnsAs112TimeseriesQueryType$any._();
 
-static const RadarGetDnsAs112TimeseriesQueryType apl = RadarGetDnsAs112TimeseriesQueryType._('APL');
+static const RadarGetDnsAs112TimeseriesQueryType apl = RadarGetDnsAs112TimeseriesQueryType$apl._();
 
-static const RadarGetDnsAs112TimeseriesQueryType atma = RadarGetDnsAs112TimeseriesQueryType._('ATMA');
+static const RadarGetDnsAs112TimeseriesQueryType atma = RadarGetDnsAs112TimeseriesQueryType$atma._();
 
-static const RadarGetDnsAs112TimeseriesQueryType axfr = RadarGetDnsAs112TimeseriesQueryType._('AXFR');
+static const RadarGetDnsAs112TimeseriesQueryType axfr = RadarGetDnsAs112TimeseriesQueryType$axfr._();
 
-static const RadarGetDnsAs112TimeseriesQueryType caa = RadarGetDnsAs112TimeseriesQueryType._('CAA');
+static const RadarGetDnsAs112TimeseriesQueryType caa = RadarGetDnsAs112TimeseriesQueryType$caa._();
 
-static const RadarGetDnsAs112TimeseriesQueryType cdnskey = RadarGetDnsAs112TimeseriesQueryType._('CDNSKEY');
+static const RadarGetDnsAs112TimeseriesQueryType cdnskey = RadarGetDnsAs112TimeseriesQueryType$cdnskey._();
 
-static const RadarGetDnsAs112TimeseriesQueryType cds = RadarGetDnsAs112TimeseriesQueryType._('CDS');
+static const RadarGetDnsAs112TimeseriesQueryType cds = RadarGetDnsAs112TimeseriesQueryType$cds._();
 
-static const RadarGetDnsAs112TimeseriesQueryType cert = RadarGetDnsAs112TimeseriesQueryType._('CERT');
+static const RadarGetDnsAs112TimeseriesQueryType cert = RadarGetDnsAs112TimeseriesQueryType$cert._();
 
-static const RadarGetDnsAs112TimeseriesQueryType cname = RadarGetDnsAs112TimeseriesQueryType._('CNAME');
+static const RadarGetDnsAs112TimeseriesQueryType cname = RadarGetDnsAs112TimeseriesQueryType$cname._();
 
-static const RadarGetDnsAs112TimeseriesQueryType csync = RadarGetDnsAs112TimeseriesQueryType._('CSYNC');
+static const RadarGetDnsAs112TimeseriesQueryType csync = RadarGetDnsAs112TimeseriesQueryType$csync._();
 
-static const RadarGetDnsAs112TimeseriesQueryType dhcid = RadarGetDnsAs112TimeseriesQueryType._('DHCID');
+static const RadarGetDnsAs112TimeseriesQueryType dhcid = RadarGetDnsAs112TimeseriesQueryType$dhcid._();
 
-static const RadarGetDnsAs112TimeseriesQueryType dlv = RadarGetDnsAs112TimeseriesQueryType._('DLV');
+static const RadarGetDnsAs112TimeseriesQueryType dlv = RadarGetDnsAs112TimeseriesQueryType$dlv._();
 
-static const RadarGetDnsAs112TimeseriesQueryType dname = RadarGetDnsAs112TimeseriesQueryType._('DNAME');
+static const RadarGetDnsAs112TimeseriesQueryType dname = RadarGetDnsAs112TimeseriesQueryType$dname._();
 
-static const RadarGetDnsAs112TimeseriesQueryType dnskey = RadarGetDnsAs112TimeseriesQueryType._('DNSKEY');
+static const RadarGetDnsAs112TimeseriesQueryType dnskey = RadarGetDnsAs112TimeseriesQueryType$dnskey._();
 
-static const RadarGetDnsAs112TimeseriesQueryType doa = RadarGetDnsAs112TimeseriesQueryType._('DOA');
+static const RadarGetDnsAs112TimeseriesQueryType doa = RadarGetDnsAs112TimeseriesQueryType$doa._();
 
-static const RadarGetDnsAs112TimeseriesQueryType ds = RadarGetDnsAs112TimeseriesQueryType._('DS');
+static const RadarGetDnsAs112TimeseriesQueryType ds = RadarGetDnsAs112TimeseriesQueryType$ds._();
 
-static const RadarGetDnsAs112TimeseriesQueryType eid = RadarGetDnsAs112TimeseriesQueryType._('EID');
+static const RadarGetDnsAs112TimeseriesQueryType eid = RadarGetDnsAs112TimeseriesQueryType$eid._();
 
-static const RadarGetDnsAs112TimeseriesQueryType eui48 = RadarGetDnsAs112TimeseriesQueryType._('EUI48');
+static const RadarGetDnsAs112TimeseriesQueryType eui48 = RadarGetDnsAs112TimeseriesQueryType$eui48._();
 
-static const RadarGetDnsAs112TimeseriesQueryType eui64 = RadarGetDnsAs112TimeseriesQueryType._('EUI64');
+static const RadarGetDnsAs112TimeseriesQueryType eui64 = RadarGetDnsAs112TimeseriesQueryType$eui64._();
 
-static const RadarGetDnsAs112TimeseriesQueryType gpos = RadarGetDnsAs112TimeseriesQueryType._('GPOS');
+static const RadarGetDnsAs112TimeseriesQueryType gpos = RadarGetDnsAs112TimeseriesQueryType$gpos._();
 
-static const RadarGetDnsAs112TimeseriesQueryType gid = RadarGetDnsAs112TimeseriesQueryType._('GID');
+static const RadarGetDnsAs112TimeseriesQueryType gid = RadarGetDnsAs112TimeseriesQueryType$gid._();
 
-static const RadarGetDnsAs112TimeseriesQueryType hinfo = RadarGetDnsAs112TimeseriesQueryType._('HINFO');
+static const RadarGetDnsAs112TimeseriesQueryType hinfo = RadarGetDnsAs112TimeseriesQueryType$hinfo._();
 
-static const RadarGetDnsAs112TimeseriesQueryType hip = RadarGetDnsAs112TimeseriesQueryType._('HIP');
+static const RadarGetDnsAs112TimeseriesQueryType hip = RadarGetDnsAs112TimeseriesQueryType$hip._();
 
-static const RadarGetDnsAs112TimeseriesQueryType https = RadarGetDnsAs112TimeseriesQueryType._('HTTPS');
+static const RadarGetDnsAs112TimeseriesQueryType https = RadarGetDnsAs112TimeseriesQueryType$https._();
 
-static const RadarGetDnsAs112TimeseriesQueryType ipseckey = RadarGetDnsAs112TimeseriesQueryType._('IPSECKEY');
+static const RadarGetDnsAs112TimeseriesQueryType ipseckey = RadarGetDnsAs112TimeseriesQueryType$ipseckey._();
 
-static const RadarGetDnsAs112TimeseriesQueryType isdn = RadarGetDnsAs112TimeseriesQueryType._('ISDN');
+static const RadarGetDnsAs112TimeseriesQueryType isdn = RadarGetDnsAs112TimeseriesQueryType$isdn._();
 
-static const RadarGetDnsAs112TimeseriesQueryType ixfr = RadarGetDnsAs112TimeseriesQueryType._('IXFR');
+static const RadarGetDnsAs112TimeseriesQueryType ixfr = RadarGetDnsAs112TimeseriesQueryType$ixfr._();
 
-static const RadarGetDnsAs112TimeseriesQueryType key = RadarGetDnsAs112TimeseriesQueryType._('KEY');
+static const RadarGetDnsAs112TimeseriesQueryType key = RadarGetDnsAs112TimeseriesQueryType$key._();
 
-static const RadarGetDnsAs112TimeseriesQueryType kx = RadarGetDnsAs112TimeseriesQueryType._('KX');
+static const RadarGetDnsAs112TimeseriesQueryType kx = RadarGetDnsAs112TimeseriesQueryType$kx._();
 
-static const RadarGetDnsAs112TimeseriesQueryType l32 = RadarGetDnsAs112TimeseriesQueryType._('L32');
+static const RadarGetDnsAs112TimeseriesQueryType l32 = RadarGetDnsAs112TimeseriesQueryType$l32._();
 
-static const RadarGetDnsAs112TimeseriesQueryType l64 = RadarGetDnsAs112TimeseriesQueryType._('L64');
+static const RadarGetDnsAs112TimeseriesQueryType l64 = RadarGetDnsAs112TimeseriesQueryType$l64._();
 
-static const RadarGetDnsAs112TimeseriesQueryType loc = RadarGetDnsAs112TimeseriesQueryType._('LOC');
+static const RadarGetDnsAs112TimeseriesQueryType loc = RadarGetDnsAs112TimeseriesQueryType$loc._();
 
-static const RadarGetDnsAs112TimeseriesQueryType lp = RadarGetDnsAs112TimeseriesQueryType._('LP');
+static const RadarGetDnsAs112TimeseriesQueryType lp = RadarGetDnsAs112TimeseriesQueryType$lp._();
 
-static const RadarGetDnsAs112TimeseriesQueryType maila = RadarGetDnsAs112TimeseriesQueryType._('MAILA');
+static const RadarGetDnsAs112TimeseriesQueryType maila = RadarGetDnsAs112TimeseriesQueryType$maila._();
 
-static const RadarGetDnsAs112TimeseriesQueryType mailb = RadarGetDnsAs112TimeseriesQueryType._('MAILB');
+static const RadarGetDnsAs112TimeseriesQueryType mailb = RadarGetDnsAs112TimeseriesQueryType$mailb._();
 
-static const RadarGetDnsAs112TimeseriesQueryType mb = RadarGetDnsAs112TimeseriesQueryType._('MB');
+static const RadarGetDnsAs112TimeseriesQueryType mb = RadarGetDnsAs112TimeseriesQueryType$mb._();
 
-static const RadarGetDnsAs112TimeseriesQueryType md = RadarGetDnsAs112TimeseriesQueryType._('MD');
+static const RadarGetDnsAs112TimeseriesQueryType md = RadarGetDnsAs112TimeseriesQueryType$md._();
 
-static const RadarGetDnsAs112TimeseriesQueryType mf = RadarGetDnsAs112TimeseriesQueryType._('MF');
+static const RadarGetDnsAs112TimeseriesQueryType mf = RadarGetDnsAs112TimeseriesQueryType$mf._();
 
-static const RadarGetDnsAs112TimeseriesQueryType mg = RadarGetDnsAs112TimeseriesQueryType._('MG');
+static const RadarGetDnsAs112TimeseriesQueryType mg = RadarGetDnsAs112TimeseriesQueryType$mg._();
 
-static const RadarGetDnsAs112TimeseriesQueryType minfo = RadarGetDnsAs112TimeseriesQueryType._('MINFO');
+static const RadarGetDnsAs112TimeseriesQueryType minfo = RadarGetDnsAs112TimeseriesQueryType$minfo._();
 
-static const RadarGetDnsAs112TimeseriesQueryType mr = RadarGetDnsAs112TimeseriesQueryType._('MR');
+static const RadarGetDnsAs112TimeseriesQueryType mr = RadarGetDnsAs112TimeseriesQueryType$mr._();
 
-static const RadarGetDnsAs112TimeseriesQueryType mx = RadarGetDnsAs112TimeseriesQueryType._('MX');
+static const RadarGetDnsAs112TimeseriesQueryType mx = RadarGetDnsAs112TimeseriesQueryType$mx._();
 
-static const RadarGetDnsAs112TimeseriesQueryType naptr = RadarGetDnsAs112TimeseriesQueryType._('NAPTR');
+static const RadarGetDnsAs112TimeseriesQueryType naptr = RadarGetDnsAs112TimeseriesQueryType$naptr._();
 
-static const RadarGetDnsAs112TimeseriesQueryType nb = RadarGetDnsAs112TimeseriesQueryType._('NB');
+static const RadarGetDnsAs112TimeseriesQueryType nb = RadarGetDnsAs112TimeseriesQueryType$nb._();
 
-static const RadarGetDnsAs112TimeseriesQueryType nbstat = RadarGetDnsAs112TimeseriesQueryType._('NBSTAT');
+static const RadarGetDnsAs112TimeseriesQueryType nbstat = RadarGetDnsAs112TimeseriesQueryType$nbstat._();
 
-static const RadarGetDnsAs112TimeseriesQueryType nid = RadarGetDnsAs112TimeseriesQueryType._('NID');
+static const RadarGetDnsAs112TimeseriesQueryType nid = RadarGetDnsAs112TimeseriesQueryType$nid._();
 
-static const RadarGetDnsAs112TimeseriesQueryType nimloc = RadarGetDnsAs112TimeseriesQueryType._('NIMLOC');
+static const RadarGetDnsAs112TimeseriesQueryType nimloc = RadarGetDnsAs112TimeseriesQueryType$nimloc._();
 
-static const RadarGetDnsAs112TimeseriesQueryType ninfo = RadarGetDnsAs112TimeseriesQueryType._('NINFO');
+static const RadarGetDnsAs112TimeseriesQueryType ninfo = RadarGetDnsAs112TimeseriesQueryType$ninfo._();
 
-static const RadarGetDnsAs112TimeseriesQueryType ns = RadarGetDnsAs112TimeseriesQueryType._('NS');
+static const RadarGetDnsAs112TimeseriesQueryType ns = RadarGetDnsAs112TimeseriesQueryType$ns._();
 
-static const RadarGetDnsAs112TimeseriesQueryType nsap = RadarGetDnsAs112TimeseriesQueryType._('NSAP');
+static const RadarGetDnsAs112TimeseriesQueryType nsap = RadarGetDnsAs112TimeseriesQueryType$nsap._();
 
-static const RadarGetDnsAs112TimeseriesQueryType nsec = RadarGetDnsAs112TimeseriesQueryType._('NSEC');
+static const RadarGetDnsAs112TimeseriesQueryType nsec = RadarGetDnsAs112TimeseriesQueryType$nsec._();
 
-static const RadarGetDnsAs112TimeseriesQueryType nsec3 = RadarGetDnsAs112TimeseriesQueryType._('NSEC3');
+static const RadarGetDnsAs112TimeseriesQueryType nsec3 = RadarGetDnsAs112TimeseriesQueryType$nsec3._();
 
-static const RadarGetDnsAs112TimeseriesQueryType nsec3Param = RadarGetDnsAs112TimeseriesQueryType._('NSEC3PARAM');
+static const RadarGetDnsAs112TimeseriesQueryType nsec3Param = RadarGetDnsAs112TimeseriesQueryType$nsec3Param._();
 
-static const RadarGetDnsAs112TimeseriesQueryType $null = RadarGetDnsAs112TimeseriesQueryType._('NULL');
+static const RadarGetDnsAs112TimeseriesQueryType $null = RadarGetDnsAs112TimeseriesQueryType$$null._();
 
-static const RadarGetDnsAs112TimeseriesQueryType nxt = RadarGetDnsAs112TimeseriesQueryType._('NXT');
+static const RadarGetDnsAs112TimeseriesQueryType nxt = RadarGetDnsAs112TimeseriesQueryType$nxt._();
 
-static const RadarGetDnsAs112TimeseriesQueryType openpgpkey = RadarGetDnsAs112TimeseriesQueryType._('OPENPGPKEY');
+static const RadarGetDnsAs112TimeseriesQueryType openpgpkey = RadarGetDnsAs112TimeseriesQueryType$openpgpkey._();
 
-static const RadarGetDnsAs112TimeseriesQueryType opt = RadarGetDnsAs112TimeseriesQueryType._('OPT');
+static const RadarGetDnsAs112TimeseriesQueryType opt = RadarGetDnsAs112TimeseriesQueryType$opt._();
 
-static const RadarGetDnsAs112TimeseriesQueryType ptr = RadarGetDnsAs112TimeseriesQueryType._('PTR');
+static const RadarGetDnsAs112TimeseriesQueryType ptr = RadarGetDnsAs112TimeseriesQueryType$ptr._();
 
-static const RadarGetDnsAs112TimeseriesQueryType px = RadarGetDnsAs112TimeseriesQueryType._('PX');
+static const RadarGetDnsAs112TimeseriesQueryType px = RadarGetDnsAs112TimeseriesQueryType$px._();
 
-static const RadarGetDnsAs112TimeseriesQueryType rkey = RadarGetDnsAs112TimeseriesQueryType._('RKEY');
+static const RadarGetDnsAs112TimeseriesQueryType rkey = RadarGetDnsAs112TimeseriesQueryType$rkey._();
 
-static const RadarGetDnsAs112TimeseriesQueryType rp = RadarGetDnsAs112TimeseriesQueryType._('RP');
+static const RadarGetDnsAs112TimeseriesQueryType rp = RadarGetDnsAs112TimeseriesQueryType$rp._();
 
-static const RadarGetDnsAs112TimeseriesQueryType rrsig = RadarGetDnsAs112TimeseriesQueryType._('RRSIG');
+static const RadarGetDnsAs112TimeseriesQueryType rrsig = RadarGetDnsAs112TimeseriesQueryType$rrsig._();
 
-static const RadarGetDnsAs112TimeseriesQueryType rt = RadarGetDnsAs112TimeseriesQueryType._('RT');
+static const RadarGetDnsAs112TimeseriesQueryType rt = RadarGetDnsAs112TimeseriesQueryType$rt._();
 
-static const RadarGetDnsAs112TimeseriesQueryType sig = RadarGetDnsAs112TimeseriesQueryType._('SIG');
+static const RadarGetDnsAs112TimeseriesQueryType sig = RadarGetDnsAs112TimeseriesQueryType$sig._();
 
-static const RadarGetDnsAs112TimeseriesQueryType sink = RadarGetDnsAs112TimeseriesQueryType._('SINK');
+static const RadarGetDnsAs112TimeseriesQueryType sink = RadarGetDnsAs112TimeseriesQueryType$sink._();
 
-static const RadarGetDnsAs112TimeseriesQueryType smimea = RadarGetDnsAs112TimeseriesQueryType._('SMIMEA');
+static const RadarGetDnsAs112TimeseriesQueryType smimea = RadarGetDnsAs112TimeseriesQueryType$smimea._();
 
-static const RadarGetDnsAs112TimeseriesQueryType soa = RadarGetDnsAs112TimeseriesQueryType._('SOA');
+static const RadarGetDnsAs112TimeseriesQueryType soa = RadarGetDnsAs112TimeseriesQueryType$soa._();
 
-static const RadarGetDnsAs112TimeseriesQueryType spf = RadarGetDnsAs112TimeseriesQueryType._('SPF');
+static const RadarGetDnsAs112TimeseriesQueryType spf = RadarGetDnsAs112TimeseriesQueryType$spf._();
 
-static const RadarGetDnsAs112TimeseriesQueryType srv = RadarGetDnsAs112TimeseriesQueryType._('SRV');
+static const RadarGetDnsAs112TimeseriesQueryType srv = RadarGetDnsAs112TimeseriesQueryType$srv._();
 
-static const RadarGetDnsAs112TimeseriesQueryType sshfp = RadarGetDnsAs112TimeseriesQueryType._('SSHFP');
+static const RadarGetDnsAs112TimeseriesQueryType sshfp = RadarGetDnsAs112TimeseriesQueryType$sshfp._();
 
-static const RadarGetDnsAs112TimeseriesQueryType svcb = RadarGetDnsAs112TimeseriesQueryType._('SVCB');
+static const RadarGetDnsAs112TimeseriesQueryType svcb = RadarGetDnsAs112TimeseriesQueryType$svcb._();
 
-static const RadarGetDnsAs112TimeseriesQueryType ta = RadarGetDnsAs112TimeseriesQueryType._('TA');
+static const RadarGetDnsAs112TimeseriesQueryType ta = RadarGetDnsAs112TimeseriesQueryType$ta._();
 
-static const RadarGetDnsAs112TimeseriesQueryType talink = RadarGetDnsAs112TimeseriesQueryType._('TALINK');
+static const RadarGetDnsAs112TimeseriesQueryType talink = RadarGetDnsAs112TimeseriesQueryType$talink._();
 
-static const RadarGetDnsAs112TimeseriesQueryType tkey = RadarGetDnsAs112TimeseriesQueryType._('TKEY');
+static const RadarGetDnsAs112TimeseriesQueryType tkey = RadarGetDnsAs112TimeseriesQueryType$tkey._();
 
-static const RadarGetDnsAs112TimeseriesQueryType tlsa = RadarGetDnsAs112TimeseriesQueryType._('TLSA');
+static const RadarGetDnsAs112TimeseriesQueryType tlsa = RadarGetDnsAs112TimeseriesQueryType$tlsa._();
 
-static const RadarGetDnsAs112TimeseriesQueryType tsig = RadarGetDnsAs112TimeseriesQueryType._('TSIG');
+static const RadarGetDnsAs112TimeseriesQueryType tsig = RadarGetDnsAs112TimeseriesQueryType$tsig._();
 
-static const RadarGetDnsAs112TimeseriesQueryType txt = RadarGetDnsAs112TimeseriesQueryType._('TXT');
+static const RadarGetDnsAs112TimeseriesQueryType txt = RadarGetDnsAs112TimeseriesQueryType$txt._();
 
-static const RadarGetDnsAs112TimeseriesQueryType uinfo = RadarGetDnsAs112TimeseriesQueryType._('UINFO');
+static const RadarGetDnsAs112TimeseriesQueryType uinfo = RadarGetDnsAs112TimeseriesQueryType$uinfo._();
 
-static const RadarGetDnsAs112TimeseriesQueryType uid = RadarGetDnsAs112TimeseriesQueryType._('UID');
+static const RadarGetDnsAs112TimeseriesQueryType uid = RadarGetDnsAs112TimeseriesQueryType$uid._();
 
-static const RadarGetDnsAs112TimeseriesQueryType unspec = RadarGetDnsAs112TimeseriesQueryType._('UNSPEC');
+static const RadarGetDnsAs112TimeseriesQueryType unspec = RadarGetDnsAs112TimeseriesQueryType$unspec._();
 
-static const RadarGetDnsAs112TimeseriesQueryType uri = RadarGetDnsAs112TimeseriesQueryType._('URI');
+static const RadarGetDnsAs112TimeseriesQueryType uri = RadarGetDnsAs112TimeseriesQueryType$uri._();
 
-static const RadarGetDnsAs112TimeseriesQueryType wks = RadarGetDnsAs112TimeseriesQueryType._('WKS');
+static const RadarGetDnsAs112TimeseriesQueryType wks = RadarGetDnsAs112TimeseriesQueryType$wks._();
 
-static const RadarGetDnsAs112TimeseriesQueryType x25 = RadarGetDnsAs112TimeseriesQueryType._('X25');
+static const RadarGetDnsAs112TimeseriesQueryType x25 = RadarGetDnsAs112TimeseriesQueryType$x25._();
 
-static const RadarGetDnsAs112TimeseriesQueryType zonemd = RadarGetDnsAs112TimeseriesQueryType._('ZONEMD');
+static const RadarGetDnsAs112TimeseriesQueryType zonemd = RadarGetDnsAs112TimeseriesQueryType$zonemd._();
 
 static const List<RadarGetDnsAs112TimeseriesQueryType> values = [a, aaaa, a6, afsdb, any, apl, atma, axfr, caa, cdnskey, cds, cert, cname, csync, dhcid, dlv, dname, dnskey, doa, ds, eid, eui48, eui64, gpos, gid, hinfo, hip, https, ipseckey, isdn, ixfr, key, kx, l32, l64, loc, lp, maila, mailb, mb, md, mf, mg, minfo, mr, mx, naptr, nb, nbstat, nid, nimloc, ninfo, ns, nsap, nsec, nsec3, nsec3Param, $null, nxt, openpgpkey, opt, ptr, px, rkey, rp, rrsig, rt, sig, sink, smimea, soa, spf, srv, sshfp, svcb, ta, talink, tkey, tlsa, tsig, txt, uinfo, uid, unspec, uri, wks, x25, zonemd];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -369,12 +368,809 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetDnsAs112TimeseriesQueryType$Unknown; } 
+@override String toString() => 'RadarGetDnsAs112TimeseriesQueryType($value)';
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$a extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$a._();
+
+@override String get value => 'A';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$a;
+
+@override int get hashCode => 'A'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$aaaa extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$aaaa._();
+
+@override String get value => 'AAAA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$aaaa;
+
+@override int get hashCode => 'AAAA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$a6 extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$a6._();
+
+@override String get value => 'A6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$a6;
+
+@override int get hashCode => 'A6'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$afsdb extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$afsdb._();
+
+@override String get value => 'AFSDB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$afsdb;
+
+@override int get hashCode => 'AFSDB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$any extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$any._();
+
+@override String get value => 'ANY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$any;
+
+@override int get hashCode => 'ANY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$apl extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$apl._();
+
+@override String get value => 'APL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$apl;
+
+@override int get hashCode => 'APL'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$atma extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$atma._();
+
+@override String get value => 'ATMA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$atma;
+
+@override int get hashCode => 'ATMA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$axfr extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$axfr._();
+
+@override String get value => 'AXFR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$axfr;
+
+@override int get hashCode => 'AXFR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$caa extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$caa._();
+
+@override String get value => 'CAA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$caa;
+
+@override int get hashCode => 'CAA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$cdnskey extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$cdnskey._();
+
+@override String get value => 'CDNSKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$cdnskey;
+
+@override int get hashCode => 'CDNSKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$cds extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$cds._();
+
+@override String get value => 'CDS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$cds;
+
+@override int get hashCode => 'CDS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$cert extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$cert._();
+
+@override String get value => 'CERT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$cert;
+
+@override int get hashCode => 'CERT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$cname extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$cname._();
+
+@override String get value => 'CNAME';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$cname;
+
+@override int get hashCode => 'CNAME'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$csync extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$csync._();
+
+@override String get value => 'CSYNC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$csync;
+
+@override int get hashCode => 'CSYNC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$dhcid extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$dhcid._();
+
+@override String get value => 'DHCID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$dhcid;
+
+@override int get hashCode => 'DHCID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$dlv extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$dlv._();
+
+@override String get value => 'DLV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$dlv;
+
+@override int get hashCode => 'DLV'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$dname extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$dname._();
+
+@override String get value => 'DNAME';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$dname;
+
+@override int get hashCode => 'DNAME'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$dnskey extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$dnskey._();
+
+@override String get value => 'DNSKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$dnskey;
+
+@override int get hashCode => 'DNSKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$doa extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$doa._();
+
+@override String get value => 'DOA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$doa;
+
+@override int get hashCode => 'DOA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$ds extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$ds._();
+
+@override String get value => 'DS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$ds;
+
+@override int get hashCode => 'DS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$eid extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$eid._();
+
+@override String get value => 'EID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$eid;
+
+@override int get hashCode => 'EID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$eui48 extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$eui48._();
+
+@override String get value => 'EUI48';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$eui48;
+
+@override int get hashCode => 'EUI48'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$eui64 extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$eui64._();
+
+@override String get value => 'EUI64';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$eui64;
+
+@override int get hashCode => 'EUI64'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$gpos extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$gpos._();
+
+@override String get value => 'GPOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$gpos;
+
+@override int get hashCode => 'GPOS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$gid extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$gid._();
+
+@override String get value => 'GID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$gid;
+
+@override int get hashCode => 'GID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$hinfo extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$hinfo._();
+
+@override String get value => 'HINFO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$hinfo;
+
+@override int get hashCode => 'HINFO'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$hip extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$hip._();
+
+@override String get value => 'HIP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$hip;
+
+@override int get hashCode => 'HIP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$https extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$https._();
+
+@override String get value => 'HTTPS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$https;
+
+@override int get hashCode => 'HTTPS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$ipseckey extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$ipseckey._();
+
+@override String get value => 'IPSECKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$ipseckey;
+
+@override int get hashCode => 'IPSECKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$isdn extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$isdn._();
+
+@override String get value => 'ISDN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$isdn;
+
+@override int get hashCode => 'ISDN'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$ixfr extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$ixfr._();
+
+@override String get value => 'IXFR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$ixfr;
+
+@override int get hashCode => 'IXFR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$key extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$key._();
+
+@override String get value => 'KEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$key;
+
+@override int get hashCode => 'KEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$kx extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$kx._();
+
+@override String get value => 'KX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$kx;
+
+@override int get hashCode => 'KX'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$l32 extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$l32._();
+
+@override String get value => 'L32';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$l32;
+
+@override int get hashCode => 'L32'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$l64 extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$l64._();
+
+@override String get value => 'L64';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$l64;
+
+@override int get hashCode => 'L64'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$loc extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$loc._();
+
+@override String get value => 'LOC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$loc;
+
+@override int get hashCode => 'LOC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$lp extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$lp._();
+
+@override String get value => 'LP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$lp;
+
+@override int get hashCode => 'LP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$maila extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$maila._();
+
+@override String get value => 'MAILA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$maila;
+
+@override int get hashCode => 'MAILA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$mailb extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$mailb._();
+
+@override String get value => 'MAILB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$mailb;
+
+@override int get hashCode => 'MAILB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$mb extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$mb._();
+
+@override String get value => 'MB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$mb;
+
+@override int get hashCode => 'MB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$md extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$md._();
+
+@override String get value => 'MD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$md;
+
+@override int get hashCode => 'MD'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$mf extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$mf._();
+
+@override String get value => 'MF';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$mf;
+
+@override int get hashCode => 'MF'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$mg extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$mg._();
+
+@override String get value => 'MG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$mg;
+
+@override int get hashCode => 'MG'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$minfo extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$minfo._();
+
+@override String get value => 'MINFO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$minfo;
+
+@override int get hashCode => 'MINFO'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$mr extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$mr._();
+
+@override String get value => 'MR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$mr;
+
+@override int get hashCode => 'MR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$mx extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$mx._();
+
+@override String get value => 'MX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$mx;
+
+@override int get hashCode => 'MX'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$naptr extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$naptr._();
+
+@override String get value => 'NAPTR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$naptr;
+
+@override int get hashCode => 'NAPTR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$nb extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$nb._();
+
+@override String get value => 'NB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$nb;
+
+@override int get hashCode => 'NB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$nbstat extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$nbstat._();
+
+@override String get value => 'NBSTAT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$nbstat;
+
+@override int get hashCode => 'NBSTAT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$nid extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$nid._();
+
+@override String get value => 'NID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$nid;
+
+@override int get hashCode => 'NID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$nimloc extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$nimloc._();
+
+@override String get value => 'NIMLOC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$nimloc;
+
+@override int get hashCode => 'NIMLOC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$ninfo extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$ninfo._();
+
+@override String get value => 'NINFO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$ninfo;
+
+@override int get hashCode => 'NINFO'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$ns extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$ns._();
+
+@override String get value => 'NS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$ns;
+
+@override int get hashCode => 'NS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$nsap extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$nsap._();
+
+@override String get value => 'NSAP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$nsap;
+
+@override int get hashCode => 'NSAP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$nsec extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$nsec._();
+
+@override String get value => 'NSEC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$nsec;
+
+@override int get hashCode => 'NSEC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$nsec3 extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$nsec3._();
+
+@override String get value => 'NSEC3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$nsec3;
+
+@override int get hashCode => 'NSEC3'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$nsec3Param extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$nsec3Param._();
+
+@override String get value => 'NSEC3PARAM';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$nsec3Param;
+
+@override int get hashCode => 'NSEC3PARAM'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$$null extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$$null._();
+
+@override String get value => 'NULL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$$null;
+
+@override int get hashCode => 'NULL'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$nxt extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$nxt._();
+
+@override String get value => 'NXT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$nxt;
+
+@override int get hashCode => 'NXT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$openpgpkey extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$openpgpkey._();
+
+@override String get value => 'OPENPGPKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$openpgpkey;
+
+@override int get hashCode => 'OPENPGPKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$opt extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$opt._();
+
+@override String get value => 'OPT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$opt;
+
+@override int get hashCode => 'OPT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$ptr extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$ptr._();
+
+@override String get value => 'PTR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$ptr;
+
+@override int get hashCode => 'PTR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$px extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$px._();
+
+@override String get value => 'PX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$px;
+
+@override int get hashCode => 'PX'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$rkey extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$rkey._();
+
+@override String get value => 'RKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$rkey;
+
+@override int get hashCode => 'RKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$rp extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$rp._();
+
+@override String get value => 'RP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$rp;
+
+@override int get hashCode => 'RP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$rrsig extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$rrsig._();
+
+@override String get value => 'RRSIG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$rrsig;
+
+@override int get hashCode => 'RRSIG'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$rt extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$rt._();
+
+@override String get value => 'RT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$rt;
+
+@override int get hashCode => 'RT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$sig extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$sig._();
+
+@override String get value => 'SIG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$sig;
+
+@override int get hashCode => 'SIG'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$sink extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$sink._();
+
+@override String get value => 'SINK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$sink;
+
+@override int get hashCode => 'SINK'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$smimea extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$smimea._();
+
+@override String get value => 'SMIMEA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$smimea;
+
+@override int get hashCode => 'SMIMEA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$soa extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$soa._();
+
+@override String get value => 'SOA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$soa;
+
+@override int get hashCode => 'SOA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$spf extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$spf._();
+
+@override String get value => 'SPF';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$spf;
+
+@override int get hashCode => 'SPF'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$srv extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$srv._();
+
+@override String get value => 'SRV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$srv;
+
+@override int get hashCode => 'SRV'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$sshfp extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$sshfp._();
+
+@override String get value => 'SSHFP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$sshfp;
+
+@override int get hashCode => 'SSHFP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$svcb extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$svcb._();
+
+@override String get value => 'SVCB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$svcb;
+
+@override int get hashCode => 'SVCB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$ta extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$ta._();
+
+@override String get value => 'TA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$ta;
+
+@override int get hashCode => 'TA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$talink extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$talink._();
+
+@override String get value => 'TALINK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$talink;
+
+@override int get hashCode => 'TALINK'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$tkey extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$tkey._();
+
+@override String get value => 'TKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$tkey;
+
+@override int get hashCode => 'TKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$tlsa extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$tlsa._();
+
+@override String get value => 'TLSA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$tlsa;
+
+@override int get hashCode => 'TLSA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$tsig extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$tsig._();
+
+@override String get value => 'TSIG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$tsig;
+
+@override int get hashCode => 'TSIG'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$txt extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$txt._();
+
+@override String get value => 'TXT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$txt;
+
+@override int get hashCode => 'TXT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$uinfo extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$uinfo._();
+
+@override String get value => 'UINFO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$uinfo;
+
+@override int get hashCode => 'UINFO'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$uid extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$uid._();
+
+@override String get value => 'UID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$uid;
+
+@override int get hashCode => 'UID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$unspec extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$unspec._();
+
+@override String get value => 'UNSPEC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$unspec;
+
+@override int get hashCode => 'UNSPEC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$uri extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$uri._();
+
+@override String get value => 'URI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$uri;
+
+@override int get hashCode => 'URI'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$wks extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$wks._();
+
+@override String get value => 'WKS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$wks;
+
+@override int get hashCode => 'WKS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$x25 extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$x25._();
+
+@override String get value => 'X25';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$x25;
+
+@override int get hashCode => 'X25'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$zonemd extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$zonemd._();
+
+@override String get value => 'ZONEMD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesQueryType$zonemd;
+
+@override int get hashCode => 'ZONEMD'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesQueryType$Unknown extends RadarGetDnsAs112TimeseriesQueryType {const RadarGetDnsAs112TimeseriesQueryType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetDnsAs112TimeseriesQueryType && other.value == value;
+    other is RadarGetDnsAs112TimeseriesQueryType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetDnsAs112TimeseriesQueryType($value)';
 
  }

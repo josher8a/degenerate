@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpPredefinedEntryVariant (inline: PromptTopic)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpPromptTopicType {const DlpPromptTopicType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DlpPromptTopicType {const DlpPromptTopicType();
 
 factory DlpPromptTopicType.fromJson(String json) { return switch (json) {
   'Intent' => intent,
   'Content' => content,
-  _ => DlpPromptTopicType._(json),
+  _ => DlpPromptTopicType$Unknown(json),
 }; }
 
-static const DlpPromptTopicType intent = DlpPromptTopicType._('Intent');
+static const DlpPromptTopicType intent = DlpPromptTopicType$intent._();
 
-static const DlpPromptTopicType content = DlpPromptTopicType._('Content');
+static const DlpPromptTopicType content = DlpPromptTopicType$content._();
 
 static const List<DlpPromptTopicType> values = [intent, content];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,28 +24,50 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DlpPromptTopicType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is DlpPromptTopicType$Unknown; } 
 @override String toString() => 'DlpPromptTopicType($value)';
 
  }
-@immutable final class PromptTopicType {const PromptTopicType._(this.value);
+@immutable final class DlpPromptTopicType$intent extends DlpPromptTopicType {const DlpPromptTopicType$intent._();
+
+@override String get value => 'Intent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DlpPromptTopicType$intent;
+
+@override int get hashCode => 'Intent'.hashCode;
+
+ }
+@immutable final class DlpPromptTopicType$content extends DlpPromptTopicType {const DlpPromptTopicType$content._();
+
+@override String get value => 'Content';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DlpPromptTopicType$content;
+
+@override int get hashCode => 'Content'.hashCode;
+
+ }
+@immutable final class DlpPromptTopicType$Unknown extends DlpPromptTopicType {const DlpPromptTopicType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DlpPromptTopicType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class PromptTopicType {const PromptTopicType();
 
 factory PromptTopicType.fromJson(String json) { return switch (json) {
   'PromptTopic' => promptTopic,
-  _ => PromptTopicType._(json),
+  _ => PromptTopicType$Unknown(json),
 }; }
 
-static const PromptTopicType promptTopic = PromptTopicType._('PromptTopic');
+static const PromptTopicType promptTopic = PromptTopicType$promptTopic._();
 
 static const List<PromptTopicType> values = [promptTopic];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -54,13 +75,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PromptTopicType$Unknown; } 
+@override String toString() => 'PromptTopicType($value)';
+
+ }
+@immutable final class PromptTopicType$promptTopic extends PromptTopicType {const PromptTopicType$promptTopic._();
+
+@override String get value => 'PromptTopic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PromptTopicType$promptTopic;
+
+@override int get hashCode => 'PromptTopic'.hashCode;
+
+ }
+@immutable final class PromptTopicType$Unknown extends PromptTopicType {const PromptTopicType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PromptTopicType && other.value == value;
+    other is PromptTopicType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PromptTopicType($value)';
 
  }
 @immutable final class PromptTopic {const PromptTopic({required this.topicType, required this.type, this.description, });

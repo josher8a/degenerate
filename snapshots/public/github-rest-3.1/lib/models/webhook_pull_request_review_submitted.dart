@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookPullRequestReviewSubmitted
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_submitted/webhook_pull_request_review_submitted_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_review.dart';@immutable final class WebhookPullRequestReviewSubmittedAction {const WebhookPullRequestReviewSubmittedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_submitted/webhook_pull_request_review_submitted_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_review.dart';sealed class WebhookPullRequestReviewSubmittedAction {const WebhookPullRequestReviewSubmittedAction();
 
 factory WebhookPullRequestReviewSubmittedAction.fromJson(String json) { return switch (json) {
   'submitted' => submitted,
-  _ => WebhookPullRequestReviewSubmittedAction._(json),
+  _ => WebhookPullRequestReviewSubmittedAction$Unknown(json),
 }; }
 
-static const WebhookPullRequestReviewSubmittedAction submitted = WebhookPullRequestReviewSubmittedAction._('submitted');
+static const WebhookPullRequestReviewSubmittedAction submitted = WebhookPullRequestReviewSubmittedAction$submitted._();
 
 static const List<WebhookPullRequestReviewSubmittedAction> values = [submitted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookPullRequestReviewSubmittedAction$Unknown; } 
+@override String toString() => 'WebhookPullRequestReviewSubmittedAction($value)';
+
+ }
+@immutable final class WebhookPullRequestReviewSubmittedAction$submitted extends WebhookPullRequestReviewSubmittedAction {const WebhookPullRequestReviewSubmittedAction$submitted._();
+
+@override String get value => 'submitted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestReviewSubmittedAction$submitted;
+
+@override int get hashCode => 'submitted'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestReviewSubmittedAction$Unknown extends WebhookPullRequestReviewSubmittedAction {const WebhookPullRequestReviewSubmittedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookPullRequestReviewSubmittedAction && other.value == value;
+    other is WebhookPullRequestReviewSubmittedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookPullRequestReviewSubmittedAction($value)';
 
  }
 @immutable final class WebhookPullRequestReviewSubmitted {const WebhookPullRequestReviewSubmitted({required this.action, required this.pullRequest, required this.repository, required this.review, required this.sender, this.enterprise, this.installation, this.organization, });

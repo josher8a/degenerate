@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the segment. Always `transcript.text.segment`.
 /// 
-@immutable final class TranscriptionDiarizedSegmentType {const TranscriptionDiarizedSegmentType._(this.value);
+sealed class TranscriptionDiarizedSegmentType {const TranscriptionDiarizedSegmentType();
 
 factory TranscriptionDiarizedSegmentType.fromJson(String json) { return switch (json) {
   'transcript.text.segment' => transcriptTextSegment,
-  _ => TranscriptionDiarizedSegmentType._(json),
+  _ => TranscriptionDiarizedSegmentType$Unknown(json),
 }; }
 
-static const TranscriptionDiarizedSegmentType transcriptTextSegment = TranscriptionDiarizedSegmentType._('transcript.text.segment');
+static const TranscriptionDiarizedSegmentType transcriptTextSegment = TranscriptionDiarizedSegmentType$transcriptTextSegment._();
 
 static const List<TranscriptionDiarizedSegmentType> values = [transcriptTextSegment];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TranscriptionDiarizedSegmentType$Unknown; } 
+@override String toString() => 'TranscriptionDiarizedSegmentType($value)';
+
+ }
+@immutable final class TranscriptionDiarizedSegmentType$transcriptTextSegment extends TranscriptionDiarizedSegmentType {const TranscriptionDiarizedSegmentType$transcriptTextSegment._();
+
+@override String get value => 'transcript.text.segment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TranscriptionDiarizedSegmentType$transcriptTextSegment;
+
+@override int get hashCode => 'transcript.text.segment'.hashCode;
+
+ }
+@immutable final class TranscriptionDiarizedSegmentType$Unknown extends TranscriptionDiarizedSegmentType {const TranscriptionDiarizedSegmentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TranscriptionDiarizedSegmentType && other.value == value;
+    other is TranscriptionDiarizedSegmentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TranscriptionDiarizedSegmentType($value)';
 
  }
 /// A segment of diarized transcript text with speaker metadata.

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookInstallationRepositoriesAdded (inline: Action)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookInstallationRepositoriesAddedAction {const WebhookInstallationRepositoriesAddedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class WebhookInstallationRepositoriesAddedAction {const WebhookInstallationRepositoriesAddedAction();
 
 factory WebhookInstallationRepositoriesAddedAction.fromJson(String json) { return switch (json) {
   'added' => added,
-  _ => WebhookInstallationRepositoriesAddedAction._(json),
+  _ => WebhookInstallationRepositoriesAddedAction$Unknown(json),
 }; }
 
-static const WebhookInstallationRepositoriesAddedAction added = WebhookInstallationRepositoriesAddedAction._('added');
+static const WebhookInstallationRepositoriesAddedAction added = WebhookInstallationRepositoriesAddedAction$added._();
 
 static const List<WebhookInstallationRepositoriesAddedAction> values = [added];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookInstallationRepositoriesAddedAction$Unknown; } 
+@override String toString() => 'WebhookInstallationRepositoriesAddedAction($value)';
+
+ }
+@immutable final class WebhookInstallationRepositoriesAddedAction$added extends WebhookInstallationRepositoriesAddedAction {const WebhookInstallationRepositoriesAddedAction$added._();
+
+@override String get value => 'added';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookInstallationRepositoriesAddedAction$added;
+
+@override int get hashCode => 'added'.hashCode;
+
+ }
+@immutable final class WebhookInstallationRepositoriesAddedAction$Unknown extends WebhookInstallationRepositoriesAddedAction {const WebhookInstallationRepositoriesAddedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookInstallationRepositoriesAddedAction && other.value == value;
+    other is WebhookInstallationRepositoriesAddedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookInstallationRepositoriesAddedAction($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ApplicationFee
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_refunds.dart';import 'package:pub_stripe_spec3/models/application_fee/originating_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/platform_earning_fee_source.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ApplicationFeeObject {const ApplicationFeeObject._(this.value);
+sealed class ApplicationFeeObject {const ApplicationFeeObject();
 
 factory ApplicationFeeObject.fromJson(String json) { return switch (json) {
   'application_fee' => applicationFee,
-  _ => ApplicationFeeObject._(json),
+  _ => ApplicationFeeObject$Unknown(json),
 }; }
 
-static const ApplicationFeeObject applicationFee = ApplicationFeeObject._('application_fee');
+static const ApplicationFeeObject applicationFee = ApplicationFeeObject$applicationFee._();
 
 static const List<ApplicationFeeObject> values = [applicationFee];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ApplicationFeeObject$Unknown; } 
+@override String toString() => 'ApplicationFeeObject($value)';
+
+ }
+@immutable final class ApplicationFeeObject$applicationFee extends ApplicationFeeObject {const ApplicationFeeObject$applicationFee._();
+
+@override String get value => 'application_fee';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApplicationFeeObject$applicationFee;
+
+@override int get hashCode => 'application_fee'.hashCode;
+
+ }
+@immutable final class ApplicationFeeObject$Unknown extends ApplicationFeeObject {const ApplicationFeeObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ApplicationFeeObject && other.value == value;
+    other is ApplicationFeeObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ApplicationFeeObject($value)';
 
  }
 /// 

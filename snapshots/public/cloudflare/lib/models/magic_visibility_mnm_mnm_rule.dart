@@ -2,25 +2,24 @@
 // Source: #/components/schemas/MagicVisibilityMnmMnmRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_automatic_advertisement.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_bandwidth_threshold.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_duration.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_ip_prefix.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_name.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_mnm_rule_packet_threshold.dart';import 'package:pub_cloudflare/models/magic_visibility_mnm_rule_identifier.dart';/// Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule.
-@immutable final class MagicVisibilityMnmMnmRulePrefixMatch {const MagicVisibilityMnmMnmRulePrefixMatch._(this.value);
+sealed class MagicVisibilityMnmMnmRulePrefixMatch {const MagicVisibilityMnmMnmRulePrefixMatch();
 
 factory MagicVisibilityMnmMnmRulePrefixMatch.fromJson(String json) { return switch (json) {
   'exact' => exact,
   'subnet' => subnet,
   'supernet' => supernet,
-  _ => MagicVisibilityMnmMnmRulePrefixMatch._(json),
+  _ => MagicVisibilityMnmMnmRulePrefixMatch$Unknown(json),
 }; }
 
-static const MagicVisibilityMnmMnmRulePrefixMatch exact = MagicVisibilityMnmMnmRulePrefixMatch._('exact');
+static const MagicVisibilityMnmMnmRulePrefixMatch exact = MagicVisibilityMnmMnmRulePrefixMatch$exact._();
 
-static const MagicVisibilityMnmMnmRulePrefixMatch subnet = MagicVisibilityMnmMnmRulePrefixMatch._('subnet');
+static const MagicVisibilityMnmMnmRulePrefixMatch subnet = MagicVisibilityMnmMnmRulePrefixMatch$subnet._();
 
-static const MagicVisibilityMnmMnmRulePrefixMatch supernet = MagicVisibilityMnmMnmRulePrefixMatch._('supernet');
+static const MagicVisibilityMnmMnmRulePrefixMatch supernet = MagicVisibilityMnmMnmRulePrefixMatch$supernet._();
 
 static const List<MagicVisibilityMnmMnmRulePrefixMatch> values = [exact, subnet, supernet];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,35 +29,66 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MagicVisibilityMnmMnmRulePrefixMatch && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MagicVisibilityMnmMnmRulePrefixMatch$Unknown; } 
 @override String toString() => 'MagicVisibilityMnmMnmRulePrefixMatch($value)';
 
  }
+@immutable final class MagicVisibilityMnmMnmRulePrefixMatch$exact extends MagicVisibilityMnmMnmRulePrefixMatch {const MagicVisibilityMnmMnmRulePrefixMatch$exact._();
+
+@override String get value => 'exact';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicVisibilityMnmMnmRulePrefixMatch$exact;
+
+@override int get hashCode => 'exact'.hashCode;
+
+ }
+@immutable final class MagicVisibilityMnmMnmRulePrefixMatch$subnet extends MagicVisibilityMnmMnmRulePrefixMatch {const MagicVisibilityMnmMnmRulePrefixMatch$subnet._();
+
+@override String get value => 'subnet';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicVisibilityMnmMnmRulePrefixMatch$subnet;
+
+@override int get hashCode => 'subnet'.hashCode;
+
+ }
+@immutable final class MagicVisibilityMnmMnmRulePrefixMatch$supernet extends MagicVisibilityMnmMnmRulePrefixMatch {const MagicVisibilityMnmMnmRulePrefixMatch$supernet._();
+
+@override String get value => 'supernet';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicVisibilityMnmMnmRulePrefixMatch$supernet;
+
+@override int get hashCode => 'supernet'.hashCode;
+
+ }
+@immutable final class MagicVisibilityMnmMnmRulePrefixMatch$Unknown extends MagicVisibilityMnmMnmRulePrefixMatch {const MagicVisibilityMnmMnmRulePrefixMatch$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MagicVisibilityMnmMnmRulePrefixMatch$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// MNM rule type.
-@immutable final class MagicVisibilityMnmMnmRuleType {const MagicVisibilityMnmMnmRuleType._(this.value);
+sealed class MagicVisibilityMnmMnmRuleType {const MagicVisibilityMnmMnmRuleType();
 
 factory MagicVisibilityMnmMnmRuleType.fromJson(String json) { return switch (json) {
   'threshold' => threshold,
   'zscore' => zscore,
   'advanced_ddos' => advancedDdos,
-  _ => MagicVisibilityMnmMnmRuleType._(json),
+  _ => MagicVisibilityMnmMnmRuleType$Unknown(json),
 }; }
 
-static const MagicVisibilityMnmMnmRuleType threshold = MagicVisibilityMnmMnmRuleType._('threshold');
+static const MagicVisibilityMnmMnmRuleType threshold = MagicVisibilityMnmMnmRuleType$threshold._();
 
-static const MagicVisibilityMnmMnmRuleType zscore = MagicVisibilityMnmMnmRuleType._('zscore');
+static const MagicVisibilityMnmMnmRuleType zscore = MagicVisibilityMnmMnmRuleType$zscore._();
 
-static const MagicVisibilityMnmMnmRuleType advancedDdos = MagicVisibilityMnmMnmRuleType._('advanced_ddos');
+static const MagicVisibilityMnmMnmRuleType advancedDdos = MagicVisibilityMnmMnmRuleType$advancedDdos._();
 
 static const List<MagicVisibilityMnmMnmRuleType> values = [threshold, zscore, advancedDdos];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,35 +98,66 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MagicVisibilityMnmMnmRuleType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MagicVisibilityMnmMnmRuleType$Unknown; } 
 @override String toString() => 'MagicVisibilityMnmMnmRuleType($value)';
 
  }
+@immutable final class MagicVisibilityMnmMnmRuleType$threshold extends MagicVisibilityMnmMnmRuleType {const MagicVisibilityMnmMnmRuleType$threshold._();
+
+@override String get value => 'threshold';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicVisibilityMnmMnmRuleType$threshold;
+
+@override int get hashCode => 'threshold'.hashCode;
+
+ }
+@immutable final class MagicVisibilityMnmMnmRuleType$zscore extends MagicVisibilityMnmMnmRuleType {const MagicVisibilityMnmMnmRuleType$zscore._();
+
+@override String get value => 'zscore';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicVisibilityMnmMnmRuleType$zscore;
+
+@override int get hashCode => 'zscore'.hashCode;
+
+ }
+@immutable final class MagicVisibilityMnmMnmRuleType$advancedDdos extends MagicVisibilityMnmMnmRuleType {const MagicVisibilityMnmMnmRuleType$advancedDdos._();
+
+@override String get value => 'advanced_ddos';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicVisibilityMnmMnmRuleType$advancedDdos;
+
+@override int get hashCode => 'advanced_ddos'.hashCode;
+
+ }
+@immutable final class MagicVisibilityMnmMnmRuleType$Unknown extends MagicVisibilityMnmMnmRuleType {const MagicVisibilityMnmMnmRuleType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MagicVisibilityMnmMnmRuleType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Level of sensitivity set for zscore rules.
-@immutable final class MagicVisibilityMnmMnmRuleZscoreSensitivity {const MagicVisibilityMnmMnmRuleZscoreSensitivity._(this.value);
+sealed class MagicVisibilityMnmMnmRuleZscoreSensitivity {const MagicVisibilityMnmMnmRuleZscoreSensitivity();
 
 factory MagicVisibilityMnmMnmRuleZscoreSensitivity.fromJson(String json) { return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
-  _ => MagicVisibilityMnmMnmRuleZscoreSensitivity._(json),
+  _ => MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown(json),
 }; }
 
-static const MagicVisibilityMnmMnmRuleZscoreSensitivity low = MagicVisibilityMnmMnmRuleZscoreSensitivity._('low');
+static const MagicVisibilityMnmMnmRuleZscoreSensitivity low = MagicVisibilityMnmMnmRuleZscoreSensitivity$low._();
 
-static const MagicVisibilityMnmMnmRuleZscoreSensitivity medium = MagicVisibilityMnmMnmRuleZscoreSensitivity._('medium');
+static const MagicVisibilityMnmMnmRuleZscoreSensitivity medium = MagicVisibilityMnmMnmRuleZscoreSensitivity$medium._();
 
-static const MagicVisibilityMnmMnmRuleZscoreSensitivity high = MagicVisibilityMnmMnmRuleZscoreSensitivity._('high');
+static const MagicVisibilityMnmMnmRuleZscoreSensitivity high = MagicVisibilityMnmMnmRuleZscoreSensitivity$high._();
 
 static const List<MagicVisibilityMnmMnmRuleZscoreSensitivity> values = [low, medium, high];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -106,32 +167,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MagicVisibilityMnmMnmRuleZscoreSensitivity && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown; } 
 @override String toString() => 'MagicVisibilityMnmMnmRuleZscoreSensitivity($value)';
 
  }
+@immutable final class MagicVisibilityMnmMnmRuleZscoreSensitivity$low extends MagicVisibilityMnmMnmRuleZscoreSensitivity {const MagicVisibilityMnmMnmRuleZscoreSensitivity$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicVisibilityMnmMnmRuleZscoreSensitivity$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class MagicVisibilityMnmMnmRuleZscoreSensitivity$medium extends MagicVisibilityMnmMnmRuleZscoreSensitivity {const MagicVisibilityMnmMnmRuleZscoreSensitivity$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicVisibilityMnmMnmRuleZscoreSensitivity$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class MagicVisibilityMnmMnmRuleZscoreSensitivity$high extends MagicVisibilityMnmMnmRuleZscoreSensitivity {const MagicVisibilityMnmMnmRuleZscoreSensitivity$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicVisibilityMnmMnmRuleZscoreSensitivity$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown extends MagicVisibilityMnmMnmRuleZscoreSensitivity {const MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MagicVisibilityMnmMnmRuleZscoreSensitivity$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Target of the zscore rule analysis.
-@immutable final class MagicVisibilityMnmMnmRuleZscoreTarget {const MagicVisibilityMnmMnmRuleZscoreTarget._(this.value);
+sealed class MagicVisibilityMnmMnmRuleZscoreTarget {const MagicVisibilityMnmMnmRuleZscoreTarget();
 
 factory MagicVisibilityMnmMnmRuleZscoreTarget.fromJson(String json) { return switch (json) {
   'bits' => bits,
   'packets' => packets,
-  _ => MagicVisibilityMnmMnmRuleZscoreTarget._(json),
+  _ => MagicVisibilityMnmMnmRuleZscoreTarget$Unknown(json),
 }; }
 
-static const MagicVisibilityMnmMnmRuleZscoreTarget bits = MagicVisibilityMnmMnmRuleZscoreTarget._('bits');
+static const MagicVisibilityMnmMnmRuleZscoreTarget bits = MagicVisibilityMnmMnmRuleZscoreTarget$bits._();
 
-static const MagicVisibilityMnmMnmRuleZscoreTarget packets = MagicVisibilityMnmMnmRuleZscoreTarget._('packets');
+static const MagicVisibilityMnmMnmRuleZscoreTarget packets = MagicVisibilityMnmMnmRuleZscoreTarget$packets._();
 
 static const List<MagicVisibilityMnmMnmRuleZscoreTarget> values = [bits, packets];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -140,13 +232,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MagicVisibilityMnmMnmRuleZscoreTarget$Unknown; } 
+@override String toString() => 'MagicVisibilityMnmMnmRuleZscoreTarget($value)';
+
+ }
+@immutable final class MagicVisibilityMnmMnmRuleZscoreTarget$bits extends MagicVisibilityMnmMnmRuleZscoreTarget {const MagicVisibilityMnmMnmRuleZscoreTarget$bits._();
+
+@override String get value => 'bits';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicVisibilityMnmMnmRuleZscoreTarget$bits;
+
+@override int get hashCode => 'bits'.hashCode;
+
+ }
+@immutable final class MagicVisibilityMnmMnmRuleZscoreTarget$packets extends MagicVisibilityMnmMnmRuleZscoreTarget {const MagicVisibilityMnmMnmRuleZscoreTarget$packets._();
+
+@override String get value => 'packets';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicVisibilityMnmMnmRuleZscoreTarget$packets;
+
+@override int get hashCode => 'packets'.hashCode;
+
+ }
+@immutable final class MagicVisibilityMnmMnmRuleZscoreTarget$Unknown extends MagicVisibilityMnmMnmRuleZscoreTarget {const MagicVisibilityMnmMnmRuleZscoreTarget$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MagicVisibilityMnmMnmRuleZscoreTarget && other.value == value;
+    other is MagicVisibilityMnmMnmRuleZscoreTarget$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MagicVisibilityMnmMnmRuleZscoreTarget($value)';
 
  }
 @immutable final class MagicVisibilityMnmMnmRule {const MagicVisibilityMnmMnmRule({required this.automaticAdvertisement, required this.name, required this.prefixes, required this.type, this.bandwidthThreshold, this.duration, this.id, this.packetThreshold, this.prefixMatch, this.zscoreSensitivity, this.zscoreTarget, });

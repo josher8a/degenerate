@@ -3,28 +3,27 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/batch_size.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/learning_rate_multiplier.dart';import 'package:pub_openai/models/fine_tune_dpo_hyperparameters/n_epochs.dart';import 'package:pub_openai/models/fine_tune_reinforcement_hyperparameters/compute_multiplier.dart';import 'package:pub_openai/models/fine_tune_reinforcement_hyperparameters/eval_interval.dart';import 'package:pub_openai/models/fine_tune_reinforcement_hyperparameters/eval_samples.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';/// Level of reasoning effort.
 /// 
-@immutable final class FineTuneReinforcementHyperparametersReasoningEffort {const FineTuneReinforcementHyperparametersReasoningEffort._(this.value);
+sealed class FineTuneReinforcementHyperparametersReasoningEffort {const FineTuneReinforcementHyperparametersReasoningEffort();
 
 factory FineTuneReinforcementHyperparametersReasoningEffort.fromJson(String json) { return switch (json) {
   'default' => $default,
   'low' => low,
   'medium' => medium,
   'high' => high,
-  _ => FineTuneReinforcementHyperparametersReasoningEffort._(json),
+  _ => FineTuneReinforcementHyperparametersReasoningEffort$Unknown(json),
 }; }
 
-static const FineTuneReinforcementHyperparametersReasoningEffort $default = FineTuneReinforcementHyperparametersReasoningEffort._('default');
+static const FineTuneReinforcementHyperparametersReasoningEffort $default = FineTuneReinforcementHyperparametersReasoningEffort$$default._();
 
-static const FineTuneReinforcementHyperparametersReasoningEffort low = FineTuneReinforcementHyperparametersReasoningEffort._('low');
+static const FineTuneReinforcementHyperparametersReasoningEffort low = FineTuneReinforcementHyperparametersReasoningEffort$low._();
 
-static const FineTuneReinforcementHyperparametersReasoningEffort medium = FineTuneReinforcementHyperparametersReasoningEffort._('medium');
+static const FineTuneReinforcementHyperparametersReasoningEffort medium = FineTuneReinforcementHyperparametersReasoningEffort$medium._();
 
-static const FineTuneReinforcementHyperparametersReasoningEffort high = FineTuneReinforcementHyperparametersReasoningEffort._('high');
+static const FineTuneReinforcementHyperparametersReasoningEffort high = FineTuneReinforcementHyperparametersReasoningEffort$high._();
 
 static const List<FineTuneReinforcementHyperparametersReasoningEffort> values = [$default, low, medium, high];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -35,13 +34,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FineTuneReinforcementHyperparametersReasoningEffort$Unknown; } 
+@override String toString() => 'FineTuneReinforcementHyperparametersReasoningEffort($value)';
+
+ }
+@immutable final class FineTuneReinforcementHyperparametersReasoningEffort$$default extends FineTuneReinforcementHyperparametersReasoningEffort {const FineTuneReinforcementHyperparametersReasoningEffort$$default._();
+
+@override String get value => 'default';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuneReinforcementHyperparametersReasoningEffort$$default;
+
+@override int get hashCode => 'default'.hashCode;
+
+ }
+@immutable final class FineTuneReinforcementHyperparametersReasoningEffort$low extends FineTuneReinforcementHyperparametersReasoningEffort {const FineTuneReinforcementHyperparametersReasoningEffort$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuneReinforcementHyperparametersReasoningEffort$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class FineTuneReinforcementHyperparametersReasoningEffort$medium extends FineTuneReinforcementHyperparametersReasoningEffort {const FineTuneReinforcementHyperparametersReasoningEffort$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuneReinforcementHyperparametersReasoningEffort$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class FineTuneReinforcementHyperparametersReasoningEffort$high extends FineTuneReinforcementHyperparametersReasoningEffort {const FineTuneReinforcementHyperparametersReasoningEffort$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuneReinforcementHyperparametersReasoningEffort$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class FineTuneReinforcementHyperparametersReasoningEffort$Unknown extends FineTuneReinforcementHyperparametersReasoningEffort {const FineTuneReinforcementHyperparametersReasoningEffort$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FineTuneReinforcementHyperparametersReasoningEffort && other.value == value;
+    other is FineTuneReinforcementHyperparametersReasoningEffort$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FineTuneReinforcementHyperparametersReasoningEffort($value)';
 
  }
 /// The hyperparameters used for the reinforcement fine-tuning job.

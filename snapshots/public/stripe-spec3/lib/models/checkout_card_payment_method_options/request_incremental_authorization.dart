@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CheckoutCardPaymentMethodOptions (inline: RequestIncrementalAuthorization)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Request ability to [increment the authorization](/payments/incremental-authorization) for this CheckoutSession.
-@immutable final class RequestIncrementalAuthorization {const RequestIncrementalAuthorization._(this.value);
+sealed class RequestIncrementalAuthorization {const RequestIncrementalAuthorization();
 
 factory RequestIncrementalAuthorization.fromJson(String json) { return switch (json) {
   'if_available' => ifAvailable,
   'never' => never,
-  _ => RequestIncrementalAuthorization._(json),
+  _ => RequestIncrementalAuthorization$Unknown(json),
 }; }
 
-static const RequestIncrementalAuthorization ifAvailable = RequestIncrementalAuthorization._('if_available');
+static const RequestIncrementalAuthorization ifAvailable = RequestIncrementalAuthorization$ifAvailable._();
 
-static const RequestIncrementalAuthorization never = RequestIncrementalAuthorization._('never');
+static const RequestIncrementalAuthorization never = RequestIncrementalAuthorization$never._();
 
 static const List<RequestIncrementalAuthorization> values = [ifAvailable, never];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RequestIncrementalAuthorization$Unknown; } 
+@override String toString() => 'RequestIncrementalAuthorization($value)';
+
+ }
+@immutable final class RequestIncrementalAuthorization$ifAvailable extends RequestIncrementalAuthorization {const RequestIncrementalAuthorization$ifAvailable._();
+
+@override String get value => 'if_available';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RequestIncrementalAuthorization$ifAvailable;
+
+@override int get hashCode => 'if_available'.hashCode;
+
+ }
+@immutable final class RequestIncrementalAuthorization$never extends RequestIncrementalAuthorization {const RequestIncrementalAuthorization$never._();
+
+@override String get value => 'never';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RequestIncrementalAuthorization$never;
+
+@override int get hashCode => 'never'.hashCode;
+
+ }
+@immutable final class RequestIncrementalAuthorization$Unknown extends RequestIncrementalAuthorization {const RequestIncrementalAuthorization$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RequestIncrementalAuthorization && other.value == value;
+    other is RequestIncrementalAuthorization$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RequestIncrementalAuthorization($value)';
 
  }

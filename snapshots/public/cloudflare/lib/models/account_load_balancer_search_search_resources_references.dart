@@ -2,28 +2,27 @@
 // Source: #/components/schemas/AccountLoadBalancerSearchSearchResourcesReferences
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of references to include. "*" to include both referral and referrer references. "" to not include any reference information.
-@immutable final class AccountLoadBalancerSearchSearchResourcesReferences {const AccountLoadBalancerSearchSearchResourcesReferences._(this.value);
+sealed class AccountLoadBalancerSearchSearchResourcesReferences {const AccountLoadBalancerSearchSearchResourcesReferences();
 
 factory AccountLoadBalancerSearchSearchResourcesReferences.fromJson(String json) { return switch (json) {
   '' => $empty,
   '*' => $empty2,
   'referral' => referral,
   'referrer' => referrer,
-  _ => AccountLoadBalancerSearchSearchResourcesReferences._(json),
+  _ => AccountLoadBalancerSearchSearchResourcesReferences$Unknown(json),
 }; }
 
-static const AccountLoadBalancerSearchSearchResourcesReferences $empty = AccountLoadBalancerSearchSearchResourcesReferences._('');
+static const AccountLoadBalancerSearchSearchResourcesReferences $empty = AccountLoadBalancerSearchSearchResourcesReferences$$empty._();
 
-static const AccountLoadBalancerSearchSearchResourcesReferences $empty2 = AccountLoadBalancerSearchSearchResourcesReferences._('*');
+static const AccountLoadBalancerSearchSearchResourcesReferences $empty2 = AccountLoadBalancerSearchSearchResourcesReferences$$empty2._();
 
-static const AccountLoadBalancerSearchSearchResourcesReferences referral = AccountLoadBalancerSearchSearchResourcesReferences._('referral');
+static const AccountLoadBalancerSearchSearchResourcesReferences referral = AccountLoadBalancerSearchSearchResourcesReferences$referral._();
 
-static const AccountLoadBalancerSearchSearchResourcesReferences referrer = AccountLoadBalancerSearchSearchResourcesReferences._('referrer');
+static const AccountLoadBalancerSearchSearchResourcesReferences referrer = AccountLoadBalancerSearchSearchResourcesReferences$referrer._();
 
 static const List<AccountLoadBalancerSearchSearchResourcesReferences> values = [$empty, $empty2, referral, referrer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountLoadBalancerSearchSearchResourcesReferences$Unknown; } 
+@override String toString() => 'AccountLoadBalancerSearchSearchResourcesReferences($value)';
+
+ }
+@immutable final class AccountLoadBalancerSearchSearchResourcesReferences$$empty extends AccountLoadBalancerSearchSearchResourcesReferences {const AccountLoadBalancerSearchSearchResourcesReferences$$empty._();
+
+@override String get value => '';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountLoadBalancerSearchSearchResourcesReferences$$empty;
+
+@override int get hashCode => ''.hashCode;
+
+ }
+@immutable final class AccountLoadBalancerSearchSearchResourcesReferences$$empty2 extends AccountLoadBalancerSearchSearchResourcesReferences {const AccountLoadBalancerSearchSearchResourcesReferences$$empty2._();
+
+@override String get value => '*';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountLoadBalancerSearchSearchResourcesReferences$$empty2;
+
+@override int get hashCode => '*'.hashCode;
+
+ }
+@immutable final class AccountLoadBalancerSearchSearchResourcesReferences$referral extends AccountLoadBalancerSearchSearchResourcesReferences {const AccountLoadBalancerSearchSearchResourcesReferences$referral._();
+
+@override String get value => 'referral';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountLoadBalancerSearchSearchResourcesReferences$referral;
+
+@override int get hashCode => 'referral'.hashCode;
+
+ }
+@immutable final class AccountLoadBalancerSearchSearchResourcesReferences$referrer extends AccountLoadBalancerSearchSearchResourcesReferences {const AccountLoadBalancerSearchSearchResourcesReferences$referrer._();
+
+@override String get value => 'referrer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountLoadBalancerSearchSearchResourcesReferences$referrer;
+
+@override int get hashCode => 'referrer'.hashCode;
+
+ }
+@immutable final class AccountLoadBalancerSearchSearchResourcesReferences$Unknown extends AccountLoadBalancerSearchSearchResourcesReferences {const AccountLoadBalancerSearchSearchResourcesReferences$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountLoadBalancerSearchSearchResourcesReferences && other.value == value;
+    other is AccountLoadBalancerSearchSearchResourcesReferences$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountLoadBalancerSearchSearchResourcesReferences($value)';
 
  }

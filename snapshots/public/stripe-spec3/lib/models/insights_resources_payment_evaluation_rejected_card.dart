@@ -2,7 +2,7 @@
 // Source: #/components/schemas/InsightsResourcesPaymentEvaluationRejectedCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_rejected_card/insights_resources_payment_evaluation_rejected_card_address_line1_check.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_rejected_card/insights_resources_payment_evaluation_rejected_card_address_postal_code_check.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_rejected_card/insights_resources_payment_evaluation_rejected_card_cvc_check.dart';/// Card issuer's reason for the network decline.
-@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason._(this.value);
+sealed class InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason();
 
 factory InsightsResourcesPaymentEvaluationRejectedCardReason.fromJson(String json) { return switch (json) {
   'authentication_failed' => authenticationFailed,
@@ -18,39 +18,38 @@ factory InsightsResourcesPaymentEvaluationRejectedCardReason.fromJson(String jso
   'processing_error' => processingError,
   'reported_stolen' => reportedStolen,
   'try_again_later' => tryAgainLater,
-  _ => InsightsResourcesPaymentEvaluationRejectedCardReason._(json),
+  _ => InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown(json),
 }; }
 
-static const InsightsResourcesPaymentEvaluationRejectedCardReason authenticationFailed = InsightsResourcesPaymentEvaluationRejectedCardReason._('authentication_failed');
+static const InsightsResourcesPaymentEvaluationRejectedCardReason authenticationFailed = InsightsResourcesPaymentEvaluationRejectedCardReason$authenticationFailed._();
 
-static const InsightsResourcesPaymentEvaluationRejectedCardReason doNotHonor = InsightsResourcesPaymentEvaluationRejectedCardReason._('do_not_honor');
+static const InsightsResourcesPaymentEvaluationRejectedCardReason doNotHonor = InsightsResourcesPaymentEvaluationRejectedCardReason$doNotHonor._();
 
-static const InsightsResourcesPaymentEvaluationRejectedCardReason expired = InsightsResourcesPaymentEvaluationRejectedCardReason._('expired');
+static const InsightsResourcesPaymentEvaluationRejectedCardReason expired = InsightsResourcesPaymentEvaluationRejectedCardReason$expired._();
 
-static const InsightsResourcesPaymentEvaluationRejectedCardReason incorrectCvc = InsightsResourcesPaymentEvaluationRejectedCardReason._('incorrect_cvc');
+static const InsightsResourcesPaymentEvaluationRejectedCardReason incorrectCvc = InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectCvc._();
 
-static const InsightsResourcesPaymentEvaluationRejectedCardReason incorrectNumber = InsightsResourcesPaymentEvaluationRejectedCardReason._('incorrect_number');
+static const InsightsResourcesPaymentEvaluationRejectedCardReason incorrectNumber = InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectNumber._();
 
-static const InsightsResourcesPaymentEvaluationRejectedCardReason incorrectPostalCode = InsightsResourcesPaymentEvaluationRejectedCardReason._('incorrect_postal_code');
+static const InsightsResourcesPaymentEvaluationRejectedCardReason incorrectPostalCode = InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectPostalCode._();
 
-static const InsightsResourcesPaymentEvaluationRejectedCardReason insufficientFunds = InsightsResourcesPaymentEvaluationRejectedCardReason._('insufficient_funds');
+static const InsightsResourcesPaymentEvaluationRejectedCardReason insufficientFunds = InsightsResourcesPaymentEvaluationRejectedCardReason$insufficientFunds._();
 
-static const InsightsResourcesPaymentEvaluationRejectedCardReason invalidAccount = InsightsResourcesPaymentEvaluationRejectedCardReason._('invalid_account');
+static const InsightsResourcesPaymentEvaluationRejectedCardReason invalidAccount = InsightsResourcesPaymentEvaluationRejectedCardReason$invalidAccount._();
 
-static const InsightsResourcesPaymentEvaluationRejectedCardReason lostCard = InsightsResourcesPaymentEvaluationRejectedCardReason._('lost_card');
+static const InsightsResourcesPaymentEvaluationRejectedCardReason lostCard = InsightsResourcesPaymentEvaluationRejectedCardReason$lostCard._();
 
-static const InsightsResourcesPaymentEvaluationRejectedCardReason $other = InsightsResourcesPaymentEvaluationRejectedCardReason._('other');
+static const InsightsResourcesPaymentEvaluationRejectedCardReason $other = InsightsResourcesPaymentEvaluationRejectedCardReason$$other._();
 
-static const InsightsResourcesPaymentEvaluationRejectedCardReason processingError = InsightsResourcesPaymentEvaluationRejectedCardReason._('processing_error');
+static const InsightsResourcesPaymentEvaluationRejectedCardReason processingError = InsightsResourcesPaymentEvaluationRejectedCardReason$processingError._();
 
-static const InsightsResourcesPaymentEvaluationRejectedCardReason reportedStolen = InsightsResourcesPaymentEvaluationRejectedCardReason._('reported_stolen');
+static const InsightsResourcesPaymentEvaluationRejectedCardReason reportedStolen = InsightsResourcesPaymentEvaluationRejectedCardReason$reportedStolen._();
 
-static const InsightsResourcesPaymentEvaluationRejectedCardReason tryAgainLater = InsightsResourcesPaymentEvaluationRejectedCardReason._('try_again_later');
+static const InsightsResourcesPaymentEvaluationRejectedCardReason tryAgainLater = InsightsResourcesPaymentEvaluationRejectedCardReason$tryAgainLater._();
 
 static const List<InsightsResourcesPaymentEvaluationRejectedCardReason> values = [authenticationFailed, doNotHonor, expired, incorrectCvc, incorrectNumber, incorrectPostalCode, insufficientFunds, invalidAccount, lostCard, $other, processingError, reportedStolen, tryAgainLater];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -70,13 +69,135 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown; } 
+@override String toString() => 'InsightsResourcesPaymentEvaluationRejectedCardReason($value)';
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$authenticationFailed extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$authenticationFailed._();
+
+@override String get value => 'authentication_failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRejectedCardReason$authenticationFailed;
+
+@override int get hashCode => 'authentication_failed'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$doNotHonor extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$doNotHonor._();
+
+@override String get value => 'do_not_honor';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRejectedCardReason$doNotHonor;
+
+@override int get hashCode => 'do_not_honor'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$expired extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRejectedCardReason$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectCvc extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectCvc._();
+
+@override String get value => 'incorrect_cvc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectCvc;
+
+@override int get hashCode => 'incorrect_cvc'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectNumber extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectNumber._();
+
+@override String get value => 'incorrect_number';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectNumber;
+
+@override int get hashCode => 'incorrect_number'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectPostalCode extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectPostalCode._();
+
+@override String get value => 'incorrect_postal_code';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRejectedCardReason$incorrectPostalCode;
+
+@override int get hashCode => 'incorrect_postal_code'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$insufficientFunds extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$insufficientFunds._();
+
+@override String get value => 'insufficient_funds';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRejectedCardReason$insufficientFunds;
+
+@override int get hashCode => 'insufficient_funds'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$invalidAccount extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$invalidAccount._();
+
+@override String get value => 'invalid_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRejectedCardReason$invalidAccount;
+
+@override int get hashCode => 'invalid_account'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$lostCard extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$lostCard._();
+
+@override String get value => 'lost_card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRejectedCardReason$lostCard;
+
+@override int get hashCode => 'lost_card'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$$other extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRejectedCardReason$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$processingError extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$processingError._();
+
+@override String get value => 'processing_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRejectedCardReason$processingError;
+
+@override int get hashCode => 'processing_error'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$reportedStolen extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$reportedStolen._();
+
+@override String get value => 'reported_stolen';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRejectedCardReason$reportedStolen;
+
+@override int get hashCode => 'reported_stolen'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$tryAgainLater extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$tryAgainLater._();
+
+@override String get value => 'try_again_later';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRejectedCardReason$tryAgainLater;
+
+@override int get hashCode => 'try_again_later'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown extends InsightsResourcesPaymentEvaluationRejectedCardReason {const InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationRejectedCardReason && other.value == value;
+    other is InsightsResourcesPaymentEvaluationRejectedCardReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InsightsResourcesPaymentEvaluationRejectedCardReason($value)';
 
  }
 /// Details of an rejected card outcome attached to this payment evaluation.

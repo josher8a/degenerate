@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PageShieldListCookiesExport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Export the list of cookies as a file, limited to 50000 entries.
-@immutable final class PageShieldListCookiesExport {const PageShieldListCookiesExport._(this.value);
+sealed class PageShieldListCookiesExport {const PageShieldListCookiesExport();
 
 factory PageShieldListCookiesExport.fromJson(String json) { return switch (json) {
   'csv' => csv,
-  _ => PageShieldListCookiesExport._(json),
+  _ => PageShieldListCookiesExport$Unknown(json),
 }; }
 
-static const PageShieldListCookiesExport csv = PageShieldListCookiesExport._('csv');
+static const PageShieldListCookiesExport csv = PageShieldListCookiesExport$csv._();
 
 static const List<PageShieldListCookiesExport> values = [csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PageShieldListCookiesExport$Unknown; } 
+@override String toString() => 'PageShieldListCookiesExport($value)';
+
+ }
+@immutable final class PageShieldListCookiesExport$csv extends PageShieldListCookiesExport {const PageShieldListCookiesExport$csv._();
+
+@override String get value => 'csv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageShieldListCookiesExport$csv;
+
+@override int get hashCode => 'csv'.hashCode;
+
+ }
+@immutable final class PageShieldListCookiesExport$Unknown extends PageShieldListCookiesExport {const PageShieldListCookiesExport$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PageShieldListCookiesExport && other.value == value;
+    other is PageShieldListCookiesExport$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PageShieldListCookiesExport($value)';
 
  }

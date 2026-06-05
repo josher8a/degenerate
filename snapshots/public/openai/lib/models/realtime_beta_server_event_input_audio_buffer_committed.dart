@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventInputAudioBufferCommitted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.committed`.
-@immutable final class RealtimeBetaServerEventInputAudioBufferCommittedType {const RealtimeBetaServerEventInputAudioBufferCommittedType._(this.value);
+sealed class RealtimeBetaServerEventInputAudioBufferCommittedType {const RealtimeBetaServerEventInputAudioBufferCommittedType();
 
 factory RealtimeBetaServerEventInputAudioBufferCommittedType.fromJson(String json) { return switch (json) {
   'input_audio_buffer.committed' => inputAudioBufferCommitted,
-  _ => RealtimeBetaServerEventInputAudioBufferCommittedType._(json),
+  _ => RealtimeBetaServerEventInputAudioBufferCommittedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventInputAudioBufferCommittedType inputAudioBufferCommitted = RealtimeBetaServerEventInputAudioBufferCommittedType._('input_audio_buffer.committed');
+static const RealtimeBetaServerEventInputAudioBufferCommittedType inputAudioBufferCommitted = RealtimeBetaServerEventInputAudioBufferCommittedType$inputAudioBufferCommitted._();
 
 static const List<RealtimeBetaServerEventInputAudioBufferCommittedType> values = [inputAudioBufferCommitted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventInputAudioBufferCommittedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventInputAudioBufferCommittedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventInputAudioBufferCommittedType$inputAudioBufferCommitted extends RealtimeBetaServerEventInputAudioBufferCommittedType {const RealtimeBetaServerEventInputAudioBufferCommittedType$inputAudioBufferCommitted._();
+
+@override String get value => 'input_audio_buffer.committed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventInputAudioBufferCommittedType$inputAudioBufferCommitted;
+
+@override int get hashCode => 'input_audio_buffer.committed'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventInputAudioBufferCommittedType$Unknown extends RealtimeBetaServerEventInputAudioBufferCommittedType {const RealtimeBetaServerEventInputAudioBufferCommittedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventInputAudioBufferCommittedType && other.value == value;
+    other is RealtimeBetaServerEventInputAudioBufferCommittedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventInputAudioBufferCommittedType($value)';
 
  }
 /// Returned when an input audio buffer is committed, either by the client or

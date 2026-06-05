@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailSecuritySummaryTlsVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryTlsVersion {const RadarGetEmailSecuritySummaryTlsVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailSecuritySummaryTlsVersion {const RadarGetEmailSecuritySummaryTlsVersion();
 
 factory RadarGetEmailSecuritySummaryTlsVersion.fromJson(String json) { return switch (json) {
   'TLSv1_0' => tlSv10,
   'TLSv1_1' => tlSv11,
   'TLSv1_2' => tlSv12,
   'TLSv1_3' => tlSv13,
-  _ => RadarGetEmailSecuritySummaryTlsVersion._(json),
+  _ => RadarGetEmailSecuritySummaryTlsVersion$Unknown(json),
 }; }
 
-static const RadarGetEmailSecuritySummaryTlsVersion tlSv10 = RadarGetEmailSecuritySummaryTlsVersion._('TLSv1_0');
+static const RadarGetEmailSecuritySummaryTlsVersion tlSv10 = RadarGetEmailSecuritySummaryTlsVersion$tlSv10._();
 
-static const RadarGetEmailSecuritySummaryTlsVersion tlSv11 = RadarGetEmailSecuritySummaryTlsVersion._('TLSv1_1');
+static const RadarGetEmailSecuritySummaryTlsVersion tlSv11 = RadarGetEmailSecuritySummaryTlsVersion$tlSv11._();
 
-static const RadarGetEmailSecuritySummaryTlsVersion tlSv12 = RadarGetEmailSecuritySummaryTlsVersion._('TLSv1_2');
+static const RadarGetEmailSecuritySummaryTlsVersion tlSv12 = RadarGetEmailSecuritySummaryTlsVersion$tlSv12._();
 
-static const RadarGetEmailSecuritySummaryTlsVersion tlSv13 = RadarGetEmailSecuritySummaryTlsVersion._('TLSv1_3');
+static const RadarGetEmailSecuritySummaryTlsVersion tlSv13 = RadarGetEmailSecuritySummaryTlsVersion$tlSv13._();
 
 static const List<RadarGetEmailSecuritySummaryTlsVersion> values = [tlSv10, tlSv11, tlSv12, tlSv13];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecuritySummaryTlsVersion$Unknown; } 
+@override String toString() => 'RadarGetEmailSecuritySummaryTlsVersion($value)';
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryTlsVersion$tlSv10 extends RadarGetEmailSecuritySummaryTlsVersion {const RadarGetEmailSecuritySummaryTlsVersion$tlSv10._();
+
+@override String get value => 'TLSv1_0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryTlsVersion$tlSv10;
+
+@override int get hashCode => 'TLSv1_0'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryTlsVersion$tlSv11 extends RadarGetEmailSecuritySummaryTlsVersion {const RadarGetEmailSecuritySummaryTlsVersion$tlSv11._();
+
+@override String get value => 'TLSv1_1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryTlsVersion$tlSv11;
+
+@override int get hashCode => 'TLSv1_1'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryTlsVersion$tlSv12 extends RadarGetEmailSecuritySummaryTlsVersion {const RadarGetEmailSecuritySummaryTlsVersion$tlSv12._();
+
+@override String get value => 'TLSv1_2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryTlsVersion$tlSv12;
+
+@override int get hashCode => 'TLSv1_2'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryTlsVersion$tlSv13 extends RadarGetEmailSecuritySummaryTlsVersion {const RadarGetEmailSecuritySummaryTlsVersion$tlSv13._();
+
+@override String get value => 'TLSv1_3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryTlsVersion$tlSv13;
+
+@override int get hashCode => 'TLSv1_3'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryTlsVersion$Unknown extends RadarGetEmailSecuritySummaryTlsVersion {const RadarGetEmailSecuritySummaryTlsVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecuritySummaryTlsVersion && other.value == value;
+    other is RadarGetEmailSecuritySummaryTlsVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecuritySummaryTlsVersion($value)';
 
  }

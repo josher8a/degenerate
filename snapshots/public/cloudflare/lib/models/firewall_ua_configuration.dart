@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FirewallUaConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `ua` when specifying a user agent in the rule.
-@immutable final class FirewallUaConfigurationTarget {const FirewallUaConfigurationTarget._(this.value);
+sealed class FirewallUaConfigurationTarget {const FirewallUaConfigurationTarget();
 
 factory FirewallUaConfigurationTarget.fromJson(String json) { return switch (json) {
   'ua' => ua,
-  _ => FirewallUaConfigurationTarget._(json),
+  _ => FirewallUaConfigurationTarget$Unknown(json),
 }; }
 
-static const FirewallUaConfigurationTarget ua = FirewallUaConfigurationTarget._('ua');
+static const FirewallUaConfigurationTarget ua = FirewallUaConfigurationTarget$ua._();
 
 static const List<FirewallUaConfigurationTarget> values = [ua];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FirewallUaConfigurationTarget$Unknown; } 
+@override String toString() => 'FirewallUaConfigurationTarget($value)';
+
+ }
+@immutable final class FirewallUaConfigurationTarget$ua extends FirewallUaConfigurationTarget {const FirewallUaConfigurationTarget$ua._();
+
+@override String get value => 'ua';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallUaConfigurationTarget$ua;
+
+@override int get hashCode => 'ua'.hashCode;
+
+ }
+@immutable final class FirewallUaConfigurationTarget$Unknown extends FirewallUaConfigurationTarget {const FirewallUaConfigurationTarget$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FirewallUaConfigurationTarget && other.value == value;
+    other is FirewallUaConfigurationTarget$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FirewallUaConfigurationTarget($value)';
 
  }
 @immutable final class FirewallUaConfiguration {const FirewallUaConfiguration({this.target, this.value, });

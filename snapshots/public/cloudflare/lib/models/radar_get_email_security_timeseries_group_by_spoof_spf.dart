@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupBySpoofSpf
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpoofSpf {const RadarGetEmailSecurityTimeseriesGroupBySpoofSpf._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailSecurityTimeseriesGroupBySpoofSpf {const RadarGetEmailSecurityTimeseriesGroupBySpoofSpf();
 
 factory RadarGetEmailSecurityTimeseriesGroupBySpoofSpf.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailSecurityTimeseriesGroupBySpoofSpf._(json),
+  _ => RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$Unknown(json),
 }; }
 
-static const RadarGetEmailSecurityTimeseriesGroupBySpoofSpf pass = RadarGetEmailSecurityTimeseriesGroupBySpoofSpf._('PASS');
+static const RadarGetEmailSecurityTimeseriesGroupBySpoofSpf pass = RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$pass._();
 
-static const RadarGetEmailSecurityTimeseriesGroupBySpoofSpf none = RadarGetEmailSecurityTimeseriesGroupBySpoofSpf._('NONE');
+static const RadarGetEmailSecurityTimeseriesGroupBySpoofSpf none = RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$none._();
 
-static const RadarGetEmailSecurityTimeseriesGroupBySpoofSpf fail = RadarGetEmailSecurityTimeseriesGroupBySpoofSpf._('FAIL');
+static const RadarGetEmailSecurityTimeseriesGroupBySpoofSpf fail = RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$fail._();
 
 static const List<RadarGetEmailSecurityTimeseriesGroupBySpoofSpf> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$Unknown; } 
+@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupBySpoofSpf($value)';
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$pass extends RadarGetEmailSecurityTimeseriesGroupBySpoofSpf {const RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$none extends RadarGetEmailSecurityTimeseriesGroupBySpoofSpf {const RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$fail extends RadarGetEmailSecurityTimeseriesGroupBySpoofSpf {const RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$Unknown extends RadarGetEmailSecurityTimeseriesGroupBySpoofSpf {const RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecurityTimeseriesGroupBySpoofSpf && other.value == value;
+    other is RadarGetEmailSecurityTimeseriesGroupBySpoofSpf$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupBySpoofSpf($value)';
 
  }

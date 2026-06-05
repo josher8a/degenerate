@@ -2,25 +2,24 @@
 // Source: #/components/schemas/PaymentMethodOptionsWechatPay
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_affirm_payment_method_options/checkout_affirm_payment_method_options_setup_future_usage.dart';/// The client type that the end customer will pay from
-@immutable final class PaymentMethodOptionsWechatPayClient {const PaymentMethodOptionsWechatPayClient._(this.value);
+sealed class PaymentMethodOptionsWechatPayClient {const PaymentMethodOptionsWechatPayClient();
 
 factory PaymentMethodOptionsWechatPayClient.fromJson(String json) { return switch (json) {
   'android' => android,
   'ios' => ios,
   'web' => web,
-  _ => PaymentMethodOptionsWechatPayClient._(json),
+  _ => PaymentMethodOptionsWechatPayClient$Unknown(json),
 }; }
 
-static const PaymentMethodOptionsWechatPayClient android = PaymentMethodOptionsWechatPayClient._('android');
+static const PaymentMethodOptionsWechatPayClient android = PaymentMethodOptionsWechatPayClient$android._();
 
-static const PaymentMethodOptionsWechatPayClient ios = PaymentMethodOptionsWechatPayClient._('ios');
+static const PaymentMethodOptionsWechatPayClient ios = PaymentMethodOptionsWechatPayClient$ios._();
 
-static const PaymentMethodOptionsWechatPayClient web = PaymentMethodOptionsWechatPayClient._('web');
+static const PaymentMethodOptionsWechatPayClient web = PaymentMethodOptionsWechatPayClient$web._();
 
 static const List<PaymentMethodOptionsWechatPayClient> values = [android, ios, web];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentMethodOptionsWechatPayClient$Unknown; } 
+@override String toString() => 'PaymentMethodOptionsWechatPayClient($value)';
+
+ }
+@immutable final class PaymentMethodOptionsWechatPayClient$android extends PaymentMethodOptionsWechatPayClient {const PaymentMethodOptionsWechatPayClient$android._();
+
+@override String get value => 'android';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodOptionsWechatPayClient$android;
+
+@override int get hashCode => 'android'.hashCode;
+
+ }
+@immutable final class PaymentMethodOptionsWechatPayClient$ios extends PaymentMethodOptionsWechatPayClient {const PaymentMethodOptionsWechatPayClient$ios._();
+
+@override String get value => 'ios';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodOptionsWechatPayClient$ios;
+
+@override int get hashCode => 'ios'.hashCode;
+
+ }
+@immutable final class PaymentMethodOptionsWechatPayClient$web extends PaymentMethodOptionsWechatPayClient {const PaymentMethodOptionsWechatPayClient$web._();
+
+@override String get value => 'web';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodOptionsWechatPayClient$web;
+
+@override int get hashCode => 'web'.hashCode;
+
+ }
+@immutable final class PaymentMethodOptionsWechatPayClient$Unknown extends PaymentMethodOptionsWechatPayClient {const PaymentMethodOptionsWechatPayClient$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentMethodOptionsWechatPayClient && other.value == value;
+    other is PaymentMethodOptionsWechatPayClient$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentMethodOptionsWechatPayClient($value)';
 
  }
 /// 

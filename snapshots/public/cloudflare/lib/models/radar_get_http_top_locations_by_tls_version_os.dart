@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTopLocationsByTlsVersionOs
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopLocationsByTlsVersionOs {const RadarGetHttpTopLocationsByTlsVersionOs._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopLocationsByTlsVersionOs {const RadarGetHttpTopLocationsByTlsVersionOs();
 
 factory RadarGetHttpTopLocationsByTlsVersionOs.fromJson(String json) { return switch (json) {
   'WINDOWS' => windows,
@@ -11,27 +11,26 @@ factory RadarGetHttpTopLocationsByTlsVersionOs.fromJson(String json) { return sw
   'CHROMEOS' => chromeos,
   'LINUX' => linux,
   'SMART_TV' => smartTv,
-  _ => RadarGetHttpTopLocationsByTlsVersionOs._(json),
+  _ => RadarGetHttpTopLocationsByTlsVersionOs$Unknown(json),
 }; }
 
-static const RadarGetHttpTopLocationsByTlsVersionOs windows = RadarGetHttpTopLocationsByTlsVersionOs._('WINDOWS');
+static const RadarGetHttpTopLocationsByTlsVersionOs windows = RadarGetHttpTopLocationsByTlsVersionOs$windows._();
 
-static const RadarGetHttpTopLocationsByTlsVersionOs macosx = RadarGetHttpTopLocationsByTlsVersionOs._('MACOSX');
+static const RadarGetHttpTopLocationsByTlsVersionOs macosx = RadarGetHttpTopLocationsByTlsVersionOs$macosx._();
 
-static const RadarGetHttpTopLocationsByTlsVersionOs ios = RadarGetHttpTopLocationsByTlsVersionOs._('IOS');
+static const RadarGetHttpTopLocationsByTlsVersionOs ios = RadarGetHttpTopLocationsByTlsVersionOs$ios._();
 
-static const RadarGetHttpTopLocationsByTlsVersionOs android = RadarGetHttpTopLocationsByTlsVersionOs._('ANDROID');
+static const RadarGetHttpTopLocationsByTlsVersionOs android = RadarGetHttpTopLocationsByTlsVersionOs$android._();
 
-static const RadarGetHttpTopLocationsByTlsVersionOs chromeos = RadarGetHttpTopLocationsByTlsVersionOs._('CHROMEOS');
+static const RadarGetHttpTopLocationsByTlsVersionOs chromeos = RadarGetHttpTopLocationsByTlsVersionOs$chromeos._();
 
-static const RadarGetHttpTopLocationsByTlsVersionOs linux = RadarGetHttpTopLocationsByTlsVersionOs._('LINUX');
+static const RadarGetHttpTopLocationsByTlsVersionOs linux = RadarGetHttpTopLocationsByTlsVersionOs$linux._();
 
-static const RadarGetHttpTopLocationsByTlsVersionOs smartTv = RadarGetHttpTopLocationsByTlsVersionOs._('SMART_TV');
+static const RadarGetHttpTopLocationsByTlsVersionOs smartTv = RadarGetHttpTopLocationsByTlsVersionOs$smartTv._();
 
 static const List<RadarGetHttpTopLocationsByTlsVersionOs> values = [windows, macosx, ios, android, chromeos, linux, smartTv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -45,12 +44,80 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopLocationsByTlsVersionOs$Unknown; } 
+@override String toString() => 'RadarGetHttpTopLocationsByTlsVersionOs($value)';
+
+ }
+@immutable final class RadarGetHttpTopLocationsByTlsVersionOs$windows extends RadarGetHttpTopLocationsByTlsVersionOs {const RadarGetHttpTopLocationsByTlsVersionOs$windows._();
+
+@override String get value => 'WINDOWS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByTlsVersionOs$windows;
+
+@override int get hashCode => 'WINDOWS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByTlsVersionOs$macosx extends RadarGetHttpTopLocationsByTlsVersionOs {const RadarGetHttpTopLocationsByTlsVersionOs$macosx._();
+
+@override String get value => 'MACOSX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByTlsVersionOs$macosx;
+
+@override int get hashCode => 'MACOSX'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByTlsVersionOs$ios extends RadarGetHttpTopLocationsByTlsVersionOs {const RadarGetHttpTopLocationsByTlsVersionOs$ios._();
+
+@override String get value => 'IOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByTlsVersionOs$ios;
+
+@override int get hashCode => 'IOS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByTlsVersionOs$android extends RadarGetHttpTopLocationsByTlsVersionOs {const RadarGetHttpTopLocationsByTlsVersionOs$android._();
+
+@override String get value => 'ANDROID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByTlsVersionOs$android;
+
+@override int get hashCode => 'ANDROID'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByTlsVersionOs$chromeos extends RadarGetHttpTopLocationsByTlsVersionOs {const RadarGetHttpTopLocationsByTlsVersionOs$chromeos._();
+
+@override String get value => 'CHROMEOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByTlsVersionOs$chromeos;
+
+@override int get hashCode => 'CHROMEOS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByTlsVersionOs$linux extends RadarGetHttpTopLocationsByTlsVersionOs {const RadarGetHttpTopLocationsByTlsVersionOs$linux._();
+
+@override String get value => 'LINUX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByTlsVersionOs$linux;
+
+@override int get hashCode => 'LINUX'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByTlsVersionOs$smartTv extends RadarGetHttpTopLocationsByTlsVersionOs {const RadarGetHttpTopLocationsByTlsVersionOs$smartTv._();
+
+@override String get value => 'SMART_TV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByTlsVersionOs$smartTv;
+
+@override int get hashCode => 'SMART_TV'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByTlsVersionOs$Unknown extends RadarGetHttpTopLocationsByTlsVersionOs {const RadarGetHttpTopLocationsByTlsVersionOs$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopLocationsByTlsVersionOs && other.value == value;
+    other is RadarGetHttpTopLocationsByTlsVersionOs$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopLocationsByTlsVersionOs($value)';
 
  }

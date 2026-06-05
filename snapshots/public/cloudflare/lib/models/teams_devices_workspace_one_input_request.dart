@@ -2,25 +2,24 @@
 // Source: #/components/schemas/TeamsDevicesWorkspaceOneInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Compliance Status.
-@immutable final class TeamsDevicesWorkspaceOneInputRequestComplianceStatus {const TeamsDevicesWorkspaceOneInputRequestComplianceStatus._(this.value);
+sealed class TeamsDevicesWorkspaceOneInputRequestComplianceStatus {const TeamsDevicesWorkspaceOneInputRequestComplianceStatus();
 
 factory TeamsDevicesWorkspaceOneInputRequestComplianceStatus.fromJson(String json) { return switch (json) {
   'compliant' => compliant,
   'noncompliant' => noncompliant,
   'unknown' => unknown,
-  _ => TeamsDevicesWorkspaceOneInputRequestComplianceStatus._(json),
+  _ => TeamsDevicesWorkspaceOneInputRequestComplianceStatus$Unknown(json),
 }; }
 
-static const TeamsDevicesWorkspaceOneInputRequestComplianceStatus compliant = TeamsDevicesWorkspaceOneInputRequestComplianceStatus._('compliant');
+static const TeamsDevicesWorkspaceOneInputRequestComplianceStatus compliant = TeamsDevicesWorkspaceOneInputRequestComplianceStatus$compliant._();
 
-static const TeamsDevicesWorkspaceOneInputRequestComplianceStatus noncompliant = TeamsDevicesWorkspaceOneInputRequestComplianceStatus._('noncompliant');
+static const TeamsDevicesWorkspaceOneInputRequestComplianceStatus noncompliant = TeamsDevicesWorkspaceOneInputRequestComplianceStatus$noncompliant._();
 
-static const TeamsDevicesWorkspaceOneInputRequestComplianceStatus unknown = TeamsDevicesWorkspaceOneInputRequestComplianceStatus._('unknown');
+static const TeamsDevicesWorkspaceOneInputRequestComplianceStatus unknown = TeamsDevicesWorkspaceOneInputRequestComplianceStatus$unknown._();
 
 static const List<TeamsDevicesWorkspaceOneInputRequestComplianceStatus> values = [compliant, noncompliant, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TeamsDevicesWorkspaceOneInputRequestComplianceStatus$Unknown; } 
+@override String toString() => 'TeamsDevicesWorkspaceOneInputRequestComplianceStatus($value)';
+
+ }
+@immutable final class TeamsDevicesWorkspaceOneInputRequestComplianceStatus$compliant extends TeamsDevicesWorkspaceOneInputRequestComplianceStatus {const TeamsDevicesWorkspaceOneInputRequestComplianceStatus$compliant._();
+
+@override String get value => 'compliant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesWorkspaceOneInputRequestComplianceStatus$compliant;
+
+@override int get hashCode => 'compliant'.hashCode;
+
+ }
+@immutable final class TeamsDevicesWorkspaceOneInputRequestComplianceStatus$noncompliant extends TeamsDevicesWorkspaceOneInputRequestComplianceStatus {const TeamsDevicesWorkspaceOneInputRequestComplianceStatus$noncompliant._();
+
+@override String get value => 'noncompliant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesWorkspaceOneInputRequestComplianceStatus$noncompliant;
+
+@override int get hashCode => 'noncompliant'.hashCode;
+
+ }
+@immutable final class TeamsDevicesWorkspaceOneInputRequestComplianceStatus$unknown extends TeamsDevicesWorkspaceOneInputRequestComplianceStatus {const TeamsDevicesWorkspaceOneInputRequestComplianceStatus$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesWorkspaceOneInputRequestComplianceStatus$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class TeamsDevicesWorkspaceOneInputRequestComplianceStatus$Unknown extends TeamsDevicesWorkspaceOneInputRequestComplianceStatus {const TeamsDevicesWorkspaceOneInputRequestComplianceStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TeamsDevicesWorkspaceOneInputRequestComplianceStatus && other.value == value;
+    other is TeamsDevicesWorkspaceOneInputRequestComplianceStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TeamsDevicesWorkspaceOneInputRequestComplianceStatus($value)';
 
  }
 @immutable final class TeamsDevicesWorkspaceOneInputRequest {const TeamsDevicesWorkspaceOneInputRequest({required this.complianceStatus, required this.connectionId, });

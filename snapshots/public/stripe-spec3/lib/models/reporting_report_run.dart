@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ReportingReportRun
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/financial_reporting_finance_report_run_run_parameters.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ReportingReportRunObject {const ReportingReportRunObject._(this.value);
+sealed class ReportingReportRunObject {const ReportingReportRunObject();
 
 factory ReportingReportRunObject.fromJson(String json) { return switch (json) {
   'reporting.report_run' => reportingReportRun,
-  _ => ReportingReportRunObject._(json),
+  _ => ReportingReportRunObject$Unknown(json),
 }; }
 
-static const ReportingReportRunObject reportingReportRun = ReportingReportRunObject._('reporting.report_run');
+static const ReportingReportRunObject reportingReportRun = ReportingReportRunObject$reportingReportRun._();
 
 static const List<ReportingReportRunObject> values = [reportingReportRun];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ReportingReportRunObject$Unknown; } 
+@override String toString() => 'ReportingReportRunObject($value)';
+
+ }
+@immutable final class ReportingReportRunObject$reportingReportRun extends ReportingReportRunObject {const ReportingReportRunObject$reportingReportRun._();
+
+@override String get value => 'reporting.report_run';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingReportRunObject$reportingReportRun;
+
+@override int get hashCode => 'reporting.report_run'.hashCode;
+
+ }
+@immutable final class ReportingReportRunObject$Unknown extends ReportingReportRunObject {const ReportingReportRunObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ReportingReportRunObject && other.value == value;
+    other is ReportingReportRunObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ReportingReportRunObject($value)';
 
  }
 /// The Report Run object represents an instance of a report type generated with

@@ -2,28 +2,27 @@
 // Source: #/components/schemas/OrgsUpdateRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Default permission level members have for organization repositories.
-@immutable final class DefaultRepositoryPermission {const DefaultRepositoryPermission._(this.value);
+sealed class DefaultRepositoryPermission {const DefaultRepositoryPermission();
 
 factory DefaultRepositoryPermission.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
   'admin' => admin,
   'none' => none,
-  _ => DefaultRepositoryPermission._(json),
+  _ => DefaultRepositoryPermission$Unknown(json),
 }; }
 
-static const DefaultRepositoryPermission read = DefaultRepositoryPermission._('read');
+static const DefaultRepositoryPermission read = DefaultRepositoryPermission$read._();
 
-static const DefaultRepositoryPermission write = DefaultRepositoryPermission._('write');
+static const DefaultRepositoryPermission write = DefaultRepositoryPermission$write._();
 
-static const DefaultRepositoryPermission admin = DefaultRepositoryPermission._('admin');
+static const DefaultRepositoryPermission admin = DefaultRepositoryPermission$admin._();
 
-static const DefaultRepositoryPermission none = DefaultRepositoryPermission._('none');
+static const DefaultRepositoryPermission none = DefaultRepositoryPermission$none._();
 
 static const List<DefaultRepositoryPermission> values = [read, write, admin, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,36 +33,76 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DefaultRepositoryPermission$Unknown; } 
+@override String toString() => 'DefaultRepositoryPermission($value)';
+
+ }
+@immutable final class DefaultRepositoryPermission$read extends DefaultRepositoryPermission {const DefaultRepositoryPermission$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultRepositoryPermission$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class DefaultRepositoryPermission$write extends DefaultRepositoryPermission {const DefaultRepositoryPermission$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultRepositoryPermission$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class DefaultRepositoryPermission$admin extends DefaultRepositoryPermission {const DefaultRepositoryPermission$admin._();
+
+@override String get value => 'admin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultRepositoryPermission$admin;
+
+@override int get hashCode => 'admin'.hashCode;
+
+ }
+@immutable final class DefaultRepositoryPermission$none extends DefaultRepositoryPermission {const DefaultRepositoryPermission$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultRepositoryPermission$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class DefaultRepositoryPermission$Unknown extends DefaultRepositoryPermission {const DefaultRepositoryPermission$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DefaultRepositoryPermission && other.value == value;
+    other is DefaultRepositoryPermission$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DefaultRepositoryPermission($value)';
 
  }
 /// Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud.
 /// **Note:** This parameter is closing down and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
-@immutable final class MembersAllowedRepositoryCreationType {const MembersAllowedRepositoryCreationType._(this.value);
+sealed class MembersAllowedRepositoryCreationType {const MembersAllowedRepositoryCreationType();
 
 factory MembersAllowedRepositoryCreationType.fromJson(String json) { return switch (json) {
   'all' => all,
   'private' => private,
   'none' => none,
-  _ => MembersAllowedRepositoryCreationType._(json),
+  _ => MembersAllowedRepositoryCreationType$Unknown(json),
 }; }
 
-static const MembersAllowedRepositoryCreationType all = MembersAllowedRepositoryCreationType._('all');
+static const MembersAllowedRepositoryCreationType all = MembersAllowedRepositoryCreationType$all._();
 
-static const MembersAllowedRepositoryCreationType private = MembersAllowedRepositoryCreationType._('private');
+static const MembersAllowedRepositoryCreationType private = MembersAllowedRepositoryCreationType$private._();
 
-static const MembersAllowedRepositoryCreationType none = MembersAllowedRepositoryCreationType._('none');
+static const MembersAllowedRepositoryCreationType none = MembersAllowedRepositoryCreationType$none._();
 
 static const List<MembersAllowedRepositoryCreationType> values = [all, private, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -73,13 +112,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MembersAllowedRepositoryCreationType$Unknown; } 
+@override String toString() => 'MembersAllowedRepositoryCreationType($value)';
+
+ }
+@immutable final class MembersAllowedRepositoryCreationType$all extends MembersAllowedRepositoryCreationType {const MembersAllowedRepositoryCreationType$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MembersAllowedRepositoryCreationType$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class MembersAllowedRepositoryCreationType$private extends MembersAllowedRepositoryCreationType {const MembersAllowedRepositoryCreationType$private._();
+
+@override String get value => 'private';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MembersAllowedRepositoryCreationType$private;
+
+@override int get hashCode => 'private'.hashCode;
+
+ }
+@immutable final class MembersAllowedRepositoryCreationType$none extends MembersAllowedRepositoryCreationType {const MembersAllowedRepositoryCreationType$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MembersAllowedRepositoryCreationType$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class MembersAllowedRepositoryCreationType$Unknown extends MembersAllowedRepositoryCreationType {const MembersAllowedRepositoryCreationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MembersAllowedRepositoryCreationType && other.value == value;
+    other is MembersAllowedRepositoryCreationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MembersAllowedRepositoryCreationType($value)';
 
  }
 @immutable final class OrgsUpdateRequest {const OrgsUpdateRequest({this.billingEmail, this.company, this.email, this.twitterUsername, this.location, this.name, this.description, this.hasOrganizationProjects, this.hasRepositoryProjects, this.defaultRepositoryPermission = DefaultRepositoryPermission.read, this.membersCanCreateRepositories = true, this.membersCanCreateInternalRepositories, this.membersCanCreatePrivateRepositories, this.membersCanCreatePublicRepositories, this.membersAllowedRepositoryCreationType, this.membersCanCreatePages = true, this.membersCanCreatePublicPages = true, this.membersCanCreatePrivatePages = true, this.membersCanForkPrivateRepositories = false, this.webCommitSignoffRequired = false, this.blog, this.advancedSecurityEnabledForNewRepositories, this.dependabotAlertsEnabledForNewRepositories, this.dependabotSecurityUpdatesEnabledForNewRepositories, this.dependencyGraphEnabledForNewRepositories, this.secretScanningEnabledForNewRepositories, this.secretScanningPushProtectionEnabledForNewRepositories, this.secretScanningPushProtectionCustomLinkEnabled, this.secretScanningPushProtectionCustomLink, this.deployKeysEnabledForRepositories, });

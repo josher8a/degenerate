@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ProjectServiceAccountDeleteResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ProjectServiceAccountDeleteResponseObject {const ProjectServiceAccountDeleteResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ProjectServiceAccountDeleteResponseObject {const ProjectServiceAccountDeleteResponseObject();
 
 factory ProjectServiceAccountDeleteResponseObject.fromJson(String json) { return switch (json) {
   'organization.project.service_account.deleted' => organizationProjectServiceAccountDeleted,
-  _ => ProjectServiceAccountDeleteResponseObject._(json),
+  _ => ProjectServiceAccountDeleteResponseObject$Unknown(json),
 }; }
 
-static const ProjectServiceAccountDeleteResponseObject organizationProjectServiceAccountDeleted = ProjectServiceAccountDeleteResponseObject._('organization.project.service_account.deleted');
+static const ProjectServiceAccountDeleteResponseObject organizationProjectServiceAccountDeleted = ProjectServiceAccountDeleteResponseObject$organizationProjectServiceAccountDeleted._();
 
 static const List<ProjectServiceAccountDeleteResponseObject> values = [organizationProjectServiceAccountDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ProjectServiceAccountDeleteResponseObject$Unknown; } 
+@override String toString() => 'ProjectServiceAccountDeleteResponseObject($value)';
+
+ }
+@immutable final class ProjectServiceAccountDeleteResponseObject$organizationProjectServiceAccountDeleted extends ProjectServiceAccountDeleteResponseObject {const ProjectServiceAccountDeleteResponseObject$organizationProjectServiceAccountDeleted._();
+
+@override String get value => 'organization.project.service_account.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ProjectServiceAccountDeleteResponseObject$organizationProjectServiceAccountDeleted;
+
+@override int get hashCode => 'organization.project.service_account.deleted'.hashCode;
+
+ }
+@immutable final class ProjectServiceAccountDeleteResponseObject$Unknown extends ProjectServiceAccountDeleteResponseObject {const ProjectServiceAccountDeleteResponseObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ProjectServiceAccountDeleteResponseObject && other.value == value;
+    other is ProjectServiceAccountDeleteResponseObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ProjectServiceAccountDeleteResponseObject($value)';
 
  }
 @immutable final class ProjectServiceAccountDeleteResponse {const ProjectServiceAccountDeleteResponse({required this.object, required this.id, required this.deleted, });

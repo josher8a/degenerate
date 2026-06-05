@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PaymentMethodConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_config_resource_payment_method_properties.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class PaymentMethodConfigurationObject {const PaymentMethodConfigurationObject._(this.value);
+sealed class PaymentMethodConfigurationObject {const PaymentMethodConfigurationObject();
 
 factory PaymentMethodConfigurationObject.fromJson(String json) { return switch (json) {
   'payment_method_configuration' => paymentMethodConfiguration,
-  _ => PaymentMethodConfigurationObject._(json),
+  _ => PaymentMethodConfigurationObject$Unknown(json),
 }; }
 
-static const PaymentMethodConfigurationObject paymentMethodConfiguration = PaymentMethodConfigurationObject._('payment_method_configuration');
+static const PaymentMethodConfigurationObject paymentMethodConfiguration = PaymentMethodConfigurationObject$paymentMethodConfiguration._();
 
 static const List<PaymentMethodConfigurationObject> values = [paymentMethodConfiguration];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentMethodConfigurationObject$Unknown; } 
+@override String toString() => 'PaymentMethodConfigurationObject($value)';
+
+ }
+@immutable final class PaymentMethodConfigurationObject$paymentMethodConfiguration extends PaymentMethodConfigurationObject {const PaymentMethodConfigurationObject$paymentMethodConfiguration._();
+
+@override String get value => 'payment_method_configuration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodConfigurationObject$paymentMethodConfiguration;
+
+@override int get hashCode => 'payment_method_configuration'.hashCode;
+
+ }
+@immutable final class PaymentMethodConfigurationObject$Unknown extends PaymentMethodConfigurationObject {const PaymentMethodConfigurationObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentMethodConfigurationObject && other.value == value;
+    other is PaymentMethodConfigurationObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentMethodConfigurationObject($value)';
 
  }
 /// PaymentMethodConfigurations control which payment methods are displayed to your customers when you don't explicitly specify payment method types. You can have multiple configurations with different sets of payment methods for different scenarios.

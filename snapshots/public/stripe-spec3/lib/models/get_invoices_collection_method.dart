@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetInvoicesCollectionMethod
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetInvoicesCollectionMethod {const GetInvoicesCollectionMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetInvoicesCollectionMethod {const GetInvoicesCollectionMethod();
 
 factory GetInvoicesCollectionMethod.fromJson(String json) { return switch (json) {
   'charge_automatically' => chargeAutomatically,
   'send_invoice' => sendInvoice,
-  _ => GetInvoicesCollectionMethod._(json),
+  _ => GetInvoicesCollectionMethod$Unknown(json),
 }; }
 
-static const GetInvoicesCollectionMethod chargeAutomatically = GetInvoicesCollectionMethod._('charge_automatically');
+static const GetInvoicesCollectionMethod chargeAutomatically = GetInvoicesCollectionMethod$chargeAutomatically._();
 
-static const GetInvoicesCollectionMethod sendInvoice = GetInvoicesCollectionMethod._('send_invoice');
+static const GetInvoicesCollectionMethod sendInvoice = GetInvoicesCollectionMethod$sendInvoice._();
 
 static const List<GetInvoicesCollectionMethod> values = [chargeAutomatically, sendInvoice];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GetInvoicesCollectionMethod$Unknown; } 
+@override String toString() => 'GetInvoicesCollectionMethod($value)';
+
+ }
+@immutable final class GetInvoicesCollectionMethod$chargeAutomatically extends GetInvoicesCollectionMethod {const GetInvoicesCollectionMethod$chargeAutomatically._();
+
+@override String get value => 'charge_automatically';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetInvoicesCollectionMethod$chargeAutomatically;
+
+@override int get hashCode => 'charge_automatically'.hashCode;
+
+ }
+@immutable final class GetInvoicesCollectionMethod$sendInvoice extends GetInvoicesCollectionMethod {const GetInvoicesCollectionMethod$sendInvoice._();
+
+@override String get value => 'send_invoice';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetInvoicesCollectionMethod$sendInvoice;
+
+@override int get hashCode => 'send_invoice'.hashCode;
+
+ }
+@immutable final class GetInvoicesCollectionMethod$Unknown extends GetInvoicesCollectionMethod {const GetInvoicesCollectionMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GetInvoicesCollectionMethod && other.value == value;
+    other is GetInvoicesCollectionMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GetInvoicesCollectionMethod($value)';
 
  }

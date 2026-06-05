@@ -2,22 +2,21 @@
 // Source: #/components/schemas/OrgsCreateArtifactDeploymentRecordRequest (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the artifact. Can be either deployed or decommissioned.
-@immutable final class OrgsCreateArtifactDeploymentRecordRequestStatus {const OrgsCreateArtifactDeploymentRecordRequestStatus._(this.value);
+sealed class OrgsCreateArtifactDeploymentRecordRequestStatus {const OrgsCreateArtifactDeploymentRecordRequestStatus();
 
 factory OrgsCreateArtifactDeploymentRecordRequestStatus.fromJson(String json) { return switch (json) {
   'deployed' => deployed,
   'decommissioned' => decommissioned,
-  _ => OrgsCreateArtifactDeploymentRecordRequestStatus._(json),
+  _ => OrgsCreateArtifactDeploymentRecordRequestStatus$Unknown(json),
 }; }
 
-static const OrgsCreateArtifactDeploymentRecordRequestStatus deployed = OrgsCreateArtifactDeploymentRecordRequestStatus._('deployed');
+static const OrgsCreateArtifactDeploymentRecordRequestStatus deployed = OrgsCreateArtifactDeploymentRecordRequestStatus$deployed._();
 
-static const OrgsCreateArtifactDeploymentRecordRequestStatus decommissioned = OrgsCreateArtifactDeploymentRecordRequestStatus._('decommissioned');
+static const OrgsCreateArtifactDeploymentRecordRequestStatus decommissioned = OrgsCreateArtifactDeploymentRecordRequestStatus$decommissioned._();
 
 static const List<OrgsCreateArtifactDeploymentRecordRequestStatus> values = [deployed, decommissioned];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrgsCreateArtifactDeploymentRecordRequestStatus$Unknown; } 
+@override String toString() => 'OrgsCreateArtifactDeploymentRecordRequestStatus($value)';
+
+ }
+@immutable final class OrgsCreateArtifactDeploymentRecordRequestStatus$deployed extends OrgsCreateArtifactDeploymentRecordRequestStatus {const OrgsCreateArtifactDeploymentRecordRequestStatus$deployed._();
+
+@override String get value => 'deployed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsCreateArtifactDeploymentRecordRequestStatus$deployed;
+
+@override int get hashCode => 'deployed'.hashCode;
+
+ }
+@immutable final class OrgsCreateArtifactDeploymentRecordRequestStatus$decommissioned extends OrgsCreateArtifactDeploymentRecordRequestStatus {const OrgsCreateArtifactDeploymentRecordRequestStatus$decommissioned._();
+
+@override String get value => 'decommissioned';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsCreateArtifactDeploymentRecordRequestStatus$decommissioned;
+
+@override int get hashCode => 'decommissioned'.hashCode;
+
+ }
+@immutable final class OrgsCreateArtifactDeploymentRecordRequestStatus$Unknown extends OrgsCreateArtifactDeploymentRecordRequestStatus {const OrgsCreateArtifactDeploymentRecordRequestStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrgsCreateArtifactDeploymentRecordRequestStatus && other.value == value;
+    other is OrgsCreateArtifactDeploymentRecordRequestStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrgsCreateArtifactDeploymentRecordRequestStatus($value)';
 
  }

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ChecksListForSuiteFilter
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ChecksListForSuiteFilter {const ChecksListForSuiteFilter._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ChecksListForSuiteFilter {const ChecksListForSuiteFilter();
 
 factory ChecksListForSuiteFilter.fromJson(String json) { return switch (json) {
   'latest' => latest,
   'all' => all,
-  _ => ChecksListForSuiteFilter._(json),
+  _ => ChecksListForSuiteFilter$Unknown(json),
 }; }
 
-static const ChecksListForSuiteFilter latest = ChecksListForSuiteFilter._('latest');
+static const ChecksListForSuiteFilter latest = ChecksListForSuiteFilter$latest._();
 
-static const ChecksListForSuiteFilter all = ChecksListForSuiteFilter._('all');
+static const ChecksListForSuiteFilter all = ChecksListForSuiteFilter$all._();
 
 static const List<ChecksListForSuiteFilter> values = [latest, all];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ChecksListForSuiteFilter$Unknown; } 
+@override String toString() => 'ChecksListForSuiteFilter($value)';
+
+ }
+@immutable final class ChecksListForSuiteFilter$latest extends ChecksListForSuiteFilter {const ChecksListForSuiteFilter$latest._();
+
+@override String get value => 'latest';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChecksListForSuiteFilter$latest;
+
+@override int get hashCode => 'latest'.hashCode;
+
+ }
+@immutable final class ChecksListForSuiteFilter$all extends ChecksListForSuiteFilter {const ChecksListForSuiteFilter$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChecksListForSuiteFilter$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class ChecksListForSuiteFilter$Unknown extends ChecksListForSuiteFilter {const ChecksListForSuiteFilter$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ChecksListForSuiteFilter && other.value == value;
+    other is ChecksListForSuiteFilter$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ChecksListForSuiteFilter($value)';
 
  }

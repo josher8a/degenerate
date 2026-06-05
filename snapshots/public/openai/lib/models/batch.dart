@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Batch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/batch/batch_errors.dart';import 'package:pub_openai/models/batch/batch_usage.dart';import 'package:pub_openai/models/batch/request_counts.dart';/// The object type, which is always `batch`.
-@immutable final class BatchObject {const BatchObject._(this.value);
+sealed class BatchObject {const BatchObject();
 
 factory BatchObject.fromJson(String json) { return switch (json) {
   'batch' => batch,
-  _ => BatchObject._(json),
+  _ => BatchObject$Unknown(json),
 }; }
 
-static const BatchObject batch = BatchObject._('batch');
+static const BatchObject batch = BatchObject$batch._();
 
 static const List<BatchObject> values = [batch];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,17 +21,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BatchObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is BatchObject$Unknown; } 
 @override String toString() => 'BatchObject($value)';
 
  }
+@immutable final class BatchObject$batch extends BatchObject {const BatchObject$batch._();
+
+@override String get value => 'batch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BatchObject$batch;
+
+@override int get hashCode => 'batch'.hashCode;
+
+ }
+@immutable final class BatchObject$Unknown extends BatchObject {const BatchObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BatchObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The current status of the batch.
-@immutable final class BatchStatus {const BatchStatus._(this.value);
+sealed class BatchStatus {const BatchStatus();
 
 factory BatchStatus.fromJson(String json) { return switch (json) {
   'validating' => validating,
@@ -43,29 +56,28 @@ factory BatchStatus.fromJson(String json) { return switch (json) {
   'expired' => expired,
   'cancelling' => cancelling,
   'cancelled' => cancelled,
-  _ => BatchStatus._(json),
+  _ => BatchStatus$Unknown(json),
 }; }
 
-static const BatchStatus validating = BatchStatus._('validating');
+static const BatchStatus validating = BatchStatus$validating._();
 
-static const BatchStatus failed = BatchStatus._('failed');
+static const BatchStatus failed = BatchStatus$failed._();
 
-static const BatchStatus inProgress = BatchStatus._('in_progress');
+static const BatchStatus inProgress = BatchStatus$inProgress._();
 
-static const BatchStatus finalizing = BatchStatus._('finalizing');
+static const BatchStatus finalizing = BatchStatus$finalizing._();
 
-static const BatchStatus completed = BatchStatus._('completed');
+static const BatchStatus completed = BatchStatus$completed._();
 
-static const BatchStatus expired = BatchStatus._('expired');
+static const BatchStatus expired = BatchStatus$expired._();
 
-static const BatchStatus cancelling = BatchStatus._('cancelling');
+static const BatchStatus cancelling = BatchStatus$cancelling._();
 
-static const BatchStatus cancelled = BatchStatus._('cancelled');
+static const BatchStatus cancelled = BatchStatus$cancelled._();
 
 static const List<BatchStatus> values = [validating, failed, inProgress, finalizing, completed, expired, cancelling, cancelled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -80,13 +92,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BatchStatus$Unknown; } 
+@override String toString() => 'BatchStatus($value)';
+
+ }
+@immutable final class BatchStatus$validating extends BatchStatus {const BatchStatus$validating._();
+
+@override String get value => 'validating';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BatchStatus$validating;
+
+@override int get hashCode => 'validating'.hashCode;
+
+ }
+@immutable final class BatchStatus$failed extends BatchStatus {const BatchStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BatchStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class BatchStatus$inProgress extends BatchStatus {const BatchStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BatchStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class BatchStatus$finalizing extends BatchStatus {const BatchStatus$finalizing._();
+
+@override String get value => 'finalizing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BatchStatus$finalizing;
+
+@override int get hashCode => 'finalizing'.hashCode;
+
+ }
+@immutable final class BatchStatus$completed extends BatchStatus {const BatchStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BatchStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class BatchStatus$expired extends BatchStatus {const BatchStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BatchStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class BatchStatus$cancelling extends BatchStatus {const BatchStatus$cancelling._();
+
+@override String get value => 'cancelling';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BatchStatus$cancelling;
+
+@override int get hashCode => 'cancelling'.hashCode;
+
+ }
+@immutable final class BatchStatus$cancelled extends BatchStatus {const BatchStatus$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BatchStatus$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class BatchStatus$Unknown extends BatchStatus {const BatchStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BatchStatus && other.value == value;
+    other is BatchStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BatchStatus($value)';
 
  }
 @immutable final class Batch {const Batch({required this.id, required this.object, required this.endpoint, required this.inputFileId, required this.completionWindow, required this.status, required this.createdAt, this.model, this.errors, this.outputFileId, this.errorFileId, this.inProgressAt, this.expiresAt, this.finalizingAt, this.completedAt, this.failedAt, this.expiredAt, this.cancellingAt, this.cancelledAt, this.requestCounts, this.usage, this.metadata, });

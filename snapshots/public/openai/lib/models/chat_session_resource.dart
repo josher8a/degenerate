@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ChatSessionResource
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_session_chatkit_configuration.dart';import 'package:pub_openai/models/chat_session_rate_limits.dart';import 'package:pub_openai/models/chatkit_workflow.dart';@immutable final class ChatSessionStatus {const ChatSessionStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_session_chatkit_configuration.dart';import 'package:pub_openai/models/chat_session_rate_limits.dart';import 'package:pub_openai/models/chatkit_workflow.dart';sealed class ChatSessionStatus {const ChatSessionStatus();
 
 factory ChatSessionStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'expired' => expired,
   'cancelled' => cancelled,
-  _ => ChatSessionStatus._(json),
+  _ => ChatSessionStatus$Unknown(json),
 }; }
 
-static const ChatSessionStatus active = ChatSessionStatus._('active');
+static const ChatSessionStatus active = ChatSessionStatus$active._();
 
-static const ChatSessionStatus expired = ChatSessionStatus._('expired');
+static const ChatSessionStatus expired = ChatSessionStatus$expired._();
 
-static const ChatSessionStatus cancelled = ChatSessionStatus._('cancelled');
+static const ChatSessionStatus cancelled = ChatSessionStatus$cancelled._();
 
 static const List<ChatSessionStatus> values = [active, expired, cancelled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,29 +28,60 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ChatSessionStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ChatSessionStatus$Unknown; } 
 @override String toString() => 'ChatSessionStatus($value)';
 
  }
+@immutable final class ChatSessionStatus$active extends ChatSessionStatus {const ChatSessionStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatSessionStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class ChatSessionStatus$expired extends ChatSessionStatus {const ChatSessionStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatSessionStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class ChatSessionStatus$cancelled extends ChatSessionStatus {const ChatSessionStatus$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatSessionStatus$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class ChatSessionStatus$Unknown extends ChatSessionStatus {const ChatSessionStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChatSessionStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Type discriminator that is always `chatkit.session`.
-@immutable final class ChatSessionResourceObject {const ChatSessionResourceObject._(this.value);
+sealed class ChatSessionResourceObject {const ChatSessionResourceObject();
 
 factory ChatSessionResourceObject.fromJson(String json) { return switch (json) {
   'chatkit.session' => chatkitSession,
-  _ => ChatSessionResourceObject._(json),
+  _ => ChatSessionResourceObject$Unknown(json),
 }; }
 
-static const ChatSessionResourceObject chatkitSession = ChatSessionResourceObject._('chatkit.session');
+static const ChatSessionResourceObject chatkitSession = ChatSessionResourceObject$chatkitSession._();
 
 static const List<ChatSessionResourceObject> values = [chatkitSession];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -59,13 +89,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ChatSessionResourceObject$Unknown; } 
+@override String toString() => 'ChatSessionResourceObject($value)';
+
+ }
+@immutable final class ChatSessionResourceObject$chatkitSession extends ChatSessionResourceObject {const ChatSessionResourceObject$chatkitSession._();
+
+@override String get value => 'chatkit.session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatSessionResourceObject$chatkitSession;
+
+@override int get hashCode => 'chatkit.session'.hashCode;
+
+ }
+@immutable final class ChatSessionResourceObject$Unknown extends ChatSessionResourceObject {const ChatSessionResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ChatSessionResourceObject && other.value == value;
+    other is ChatSessionResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ChatSessionResourceObject($value)';
 
  }
 /// Represents a ChatKit session and its resolved configuration.

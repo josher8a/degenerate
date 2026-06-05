@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PaymentIntentProcessing
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_card_processing.dart';/// Type of the payment method for which payment is in `processing` state, one of `card`.
-@immutable final class PaymentIntentProcessingType {const PaymentIntentProcessingType._(this.value);
+sealed class PaymentIntentProcessingType {const PaymentIntentProcessingType();
 
 factory PaymentIntentProcessingType.fromJson(String json) { return switch (json) {
   'card' => card,
-  _ => PaymentIntentProcessingType._(json),
+  _ => PaymentIntentProcessingType$Unknown(json),
 }; }
 
-static const PaymentIntentProcessingType card = PaymentIntentProcessingType._('card');
+static const PaymentIntentProcessingType card = PaymentIntentProcessingType$card._();
 
 static const List<PaymentIntentProcessingType> values = [card];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentIntentProcessingType$Unknown; } 
+@override String toString() => 'PaymentIntentProcessingType($value)';
+
+ }
+@immutable final class PaymentIntentProcessingType$card extends PaymentIntentProcessingType {const PaymentIntentProcessingType$card._();
+
+@override String get value => 'card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentProcessingType$card;
+
+@override int get hashCode => 'card'.hashCode;
+
+ }
+@immutable final class PaymentIntentProcessingType$Unknown extends PaymentIntentProcessingType {const PaymentIntentProcessingType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentIntentProcessingType && other.value == value;
+    other is PaymentIntentProcessingType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentIntentProcessingType($value)';
 
  }
 /// 

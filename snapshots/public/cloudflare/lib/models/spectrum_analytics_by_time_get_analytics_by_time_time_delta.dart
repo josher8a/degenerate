@@ -2,7 +2,7 @@
 // Source: #/components/schemas/SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used to select time series resolution.
-@immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._(this.value);
+sealed class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta();
 
 factory SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta.fromJson(String json) { return switch (json) {
   'year' => year,
@@ -13,29 +13,28 @@ factory SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta.fromJson(String json)
   'hour' => hour,
   'dekaminute' => dekaminute,
   'minute' => minute,
-  _ => SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._(json),
+  _ => SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown(json),
 }; }
 
-static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta year = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._('year');
+static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta year = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$year._();
 
-static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta quarter = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._('quarter');
+static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta quarter = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$quarter._();
 
-static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta month = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._('month');
+static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta month = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$month._();
 
-static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta week = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._('week');
+static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta week = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$week._();
 
-static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta day = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._('day');
+static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta day = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$day._();
 
-static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta hour = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._('hour');
+static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta hour = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$hour._();
 
-static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta dekaminute = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._('dekaminute');
+static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta dekaminute = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$dekaminute._();
 
-static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta minute = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta._('minute');
+static const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta minute = SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$minute._();
 
 static const List<SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta> values = [year, quarter, month, week, day, hour, dekaminute, minute];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,12 +49,89 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown; } 
+@override String toString() => 'SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta($value)';
+
+ }
+@immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$year extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$year._();
+
+@override String get value => 'year';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$year;
+
+@override int get hashCode => 'year'.hashCode;
+
+ }
+@immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$quarter extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$quarter._();
+
+@override String get value => 'quarter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$quarter;
+
+@override int get hashCode => 'quarter'.hashCode;
+
+ }
+@immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$month extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$month._();
+
+@override String get value => 'month';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$month;
+
+@override int get hashCode => 'month'.hashCode;
+
+ }
+@immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$week extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$week._();
+
+@override String get value => 'week';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$week;
+
+@override int get hashCode => 'week'.hashCode;
+
+ }
+@immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$day extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$day._();
+
+@override String get value => 'day';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$day;
+
+@override int get hashCode => 'day'.hashCode;
+
+ }
+@immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$hour extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$hour._();
+
+@override String get value => 'hour';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$hour;
+
+@override int get hashCode => 'hour'.hashCode;
+
+ }
+@immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$dekaminute extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$dekaminute._();
+
+@override String get value => 'dekaminute';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$dekaminute;
+
+@override int get hashCode => 'dekaminute'.hashCode;
+
+ }
+@immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$minute extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$minute._();
+
+@override String get value => 'minute';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$minute;
+
+@override int get hashCode => 'minute'.hashCode;
+
+ }
+@immutable final class SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown extends SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta {const SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta && other.value == value;
+    other is SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta($value)';
 
  }

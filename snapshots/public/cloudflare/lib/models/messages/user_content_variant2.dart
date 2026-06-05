@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > User > Content > Variant2)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/file.dart';import 'package:pub_cloudflare/models/messages/input_audio.dart';import 'package:pub_cloudflare/models/messages/user_content_variant2_image_url.dart';@immutable final class UserContentVariant2Type {const UserContentVariant2Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/file.dart';import 'package:pub_cloudflare/models/messages/input_audio.dart';import 'package:pub_cloudflare/models/messages/user_content_variant2_image_url.dart';sealed class UserContentVariant2Type {const UserContentVariant2Type();
 
 factory UserContentVariant2Type.fromJson(String json) { return switch (json) {
   'text' => text,
   'image_url' => imageUrl,
   'input_audio' => inputAudio,
   'file' => file,
-  _ => UserContentVariant2Type._(json),
+  _ => UserContentVariant2Type$Unknown(json),
 }; }
 
-static const UserContentVariant2Type text = UserContentVariant2Type._('text');
+static const UserContentVariant2Type text = UserContentVariant2Type$text._();
 
-static const UserContentVariant2Type imageUrl = UserContentVariant2Type._('image_url');
+static const UserContentVariant2Type imageUrl = UserContentVariant2Type$imageUrl._();
 
-static const UserContentVariant2Type inputAudio = UserContentVariant2Type._('input_audio');
+static const UserContentVariant2Type inputAudio = UserContentVariant2Type$inputAudio._();
 
-static const UserContentVariant2Type file = UserContentVariant2Type._('file');
+static const UserContentVariant2Type file = UserContentVariant2Type$file._();
 
 static const List<UserContentVariant2Type> values = [text, imageUrl, inputAudio, file];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UserContentVariant2Type$Unknown; } 
+@override String toString() => 'UserContentVariant2Type($value)';
+
+ }
+@immutable final class UserContentVariant2Type$text extends UserContentVariant2Type {const UserContentVariant2Type$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserContentVariant2Type$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class UserContentVariant2Type$imageUrl extends UserContentVariant2Type {const UserContentVariant2Type$imageUrl._();
+
+@override String get value => 'image_url';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserContentVariant2Type$imageUrl;
+
+@override int get hashCode => 'image_url'.hashCode;
+
+ }
+@immutable final class UserContentVariant2Type$inputAudio extends UserContentVariant2Type {const UserContentVariant2Type$inputAudio._();
+
+@override String get value => 'input_audio';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserContentVariant2Type$inputAudio;
+
+@override int get hashCode => 'input_audio'.hashCode;
+
+ }
+@immutable final class UserContentVariant2Type$file extends UserContentVariant2Type {const UserContentVariant2Type$file._();
+
+@override String get value => 'file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserContentVariant2Type$file;
+
+@override int get hashCode => 'file'.hashCode;
+
+ }
+@immutable final class UserContentVariant2Type$Unknown extends UserContentVariant2Type {const UserContentVariant2Type$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UserContentVariant2Type && other.value == value;
+    other is UserContentVariant2Type$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UserContentVariant2Type($value)';
 
  }
 @immutable final class UserContentVariant2 {const UserContentVariant2({required this.type, this.file, this.imageUrl, this.inputAudio, this.text, });

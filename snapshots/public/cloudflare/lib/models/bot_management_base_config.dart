@@ -2,25 +2,24 @@
 // Source: #/components/schemas/BotManagementBaseConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable rule to block AI Scrapers and Crawlers. Please note the value `only_on_ad_pages` is currently not available for Enterprise customers.
-@immutable final class BotManagementAiBotsProtection {const BotManagementAiBotsProtection._(this.value);
+sealed class BotManagementAiBotsProtection {const BotManagementAiBotsProtection();
 
 factory BotManagementAiBotsProtection.fromJson(String json) { return switch (json) {
   'block' => block,
   'disabled' => disabled,
   'only_on_ad_pages' => onlyOnAdPages,
-  _ => BotManagementAiBotsProtection._(json),
+  _ => BotManagementAiBotsProtection$Unknown(json),
 }; }
 
-static const BotManagementAiBotsProtection block = BotManagementAiBotsProtection._('block');
+static const BotManagementAiBotsProtection block = BotManagementAiBotsProtection$block._();
 
-static const BotManagementAiBotsProtection disabled = BotManagementAiBotsProtection._('disabled');
+static const BotManagementAiBotsProtection disabled = BotManagementAiBotsProtection$disabled._();
 
-static const BotManagementAiBotsProtection onlyOnAdPages = BotManagementAiBotsProtection._('only_on_ad_pages');
+static const BotManagementAiBotsProtection onlyOnAdPages = BotManagementAiBotsProtection$onlyOnAdPages._();
 
 static const List<BotManagementAiBotsProtection> values = [block, disabled, onlyOnAdPages];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,32 +29,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BotManagementAiBotsProtection && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is BotManagementAiBotsProtection$Unknown; } 
 @override String toString() => 'BotManagementAiBotsProtection($value)';
 
  }
+@immutable final class BotManagementAiBotsProtection$block extends BotManagementAiBotsProtection {const BotManagementAiBotsProtection$block._();
+
+@override String get value => 'block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BotManagementAiBotsProtection$block;
+
+@override int get hashCode => 'block'.hashCode;
+
+ }
+@immutable final class BotManagementAiBotsProtection$disabled extends BotManagementAiBotsProtection {const BotManagementAiBotsProtection$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BotManagementAiBotsProtection$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class BotManagementAiBotsProtection$onlyOnAdPages extends BotManagementAiBotsProtection {const BotManagementAiBotsProtection$onlyOnAdPages._();
+
+@override String get value => 'only_on_ad_pages';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BotManagementAiBotsProtection$onlyOnAdPages;
+
+@override int get hashCode => 'only_on_ad_pages'.hashCode;
+
+ }
+@immutable final class BotManagementAiBotsProtection$Unknown extends BotManagementAiBotsProtection {const BotManagementAiBotsProtection$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BotManagementAiBotsProtection$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Specifies the Robots Access Control License variant to use.
-@immutable final class BotManagementCfRobotsVariant {const BotManagementCfRobotsVariant._(this.value);
+sealed class BotManagementCfRobotsVariant {const BotManagementCfRobotsVariant();
 
 factory BotManagementCfRobotsVariant.fromJson(String json) { return switch (json) {
   'off' => off,
   'policy_only' => policyOnly,
-  _ => BotManagementCfRobotsVariant._(json),
+  _ => BotManagementCfRobotsVariant$Unknown(json),
 }; }
 
-static const BotManagementCfRobotsVariant off = BotManagementCfRobotsVariant._('off');
+static const BotManagementCfRobotsVariant off = BotManagementCfRobotsVariant$off._();
 
-static const BotManagementCfRobotsVariant policyOnly = BotManagementCfRobotsVariant._('policy_only');
+static const BotManagementCfRobotsVariant policyOnly = BotManagementCfRobotsVariant$policyOnly._();
 
 static const List<BotManagementCfRobotsVariant> values = [off, policyOnly];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,32 +94,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BotManagementCfRobotsVariant && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is BotManagementCfRobotsVariant$Unknown; } 
 @override String toString() => 'BotManagementCfRobotsVariant($value)';
 
  }
+@immutable final class BotManagementCfRobotsVariant$off extends BotManagementCfRobotsVariant {const BotManagementCfRobotsVariant$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BotManagementCfRobotsVariant$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class BotManagementCfRobotsVariant$policyOnly extends BotManagementCfRobotsVariant {const BotManagementCfRobotsVariant$policyOnly._();
+
+@override String get value => 'policy_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BotManagementCfRobotsVariant$policyOnly;
+
+@override int get hashCode => 'policy_only'.hashCode;
+
+ }
+@immutable final class BotManagementCfRobotsVariant$Unknown extends BotManagementCfRobotsVariant {const BotManagementCfRobotsVariant$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BotManagementCfRobotsVariant$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Enable rule to punish AI Scrapers and Crawlers via a link maze.
-@immutable final class BotManagementCrawlerProtection {const BotManagementCrawlerProtection._(this.value);
+sealed class BotManagementCrawlerProtection {const BotManagementCrawlerProtection();
 
 factory BotManagementCrawlerProtection.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
-  _ => BotManagementCrawlerProtection._(json),
+  _ => BotManagementCrawlerProtection$Unknown(json),
 }; }
 
-static const BotManagementCrawlerProtection enabled = BotManagementCrawlerProtection._('enabled');
+static const BotManagementCrawlerProtection enabled = BotManagementCrawlerProtection$enabled._();
 
-static const BotManagementCrawlerProtection disabled = BotManagementCrawlerProtection._('disabled');
+static const BotManagementCrawlerProtection disabled = BotManagementCrawlerProtection$disabled._();
 
 static const List<BotManagementCrawlerProtection> values = [enabled, disabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -98,13 +150,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BotManagementCrawlerProtection$Unknown; } 
+@override String toString() => 'BotManagementCrawlerProtection($value)';
+
+ }
+@immutable final class BotManagementCrawlerProtection$enabled extends BotManagementCrawlerProtection {const BotManagementCrawlerProtection$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BotManagementCrawlerProtection$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class BotManagementCrawlerProtection$disabled extends BotManagementCrawlerProtection {const BotManagementCrawlerProtection$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BotManagementCrawlerProtection$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class BotManagementCrawlerProtection$Unknown extends BotManagementCrawlerProtection {const BotManagementCrawlerProtection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BotManagementCrawlerProtection && other.value == value;
+    other is BotManagementCrawlerProtection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BotManagementCrawlerProtection($value)';
 
  }
 /// Use lightweight, invisible JavaScript detections to improve Bot Management. [Learn more about JavaScript Detections](https://developers.cloudflare.com/bots/reference/javascript-detections/).

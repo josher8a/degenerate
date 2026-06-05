@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FinancialConnectionsSession
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_link_account_session_filters.dart';import 'package:pub_stripe_spec3/models/financial_connections_account/financial_connections_account_permissions.dart';import 'package:pub_stripe_spec3/models/financial_connections_session/accounts.dart';import 'package:pub_stripe_spec3/models/financial_connections_session/prefetch.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class FinancialConnectionsSessionObject {const FinancialConnectionsSessionObject._(this.value);
+sealed class FinancialConnectionsSessionObject {const FinancialConnectionsSessionObject();
 
 factory FinancialConnectionsSessionObject.fromJson(String json) { return switch (json) {
   'financial_connections.session' => financialConnectionsSession,
-  _ => FinancialConnectionsSessionObject._(json),
+  _ => FinancialConnectionsSessionObject$Unknown(json),
 }; }
 
-static const FinancialConnectionsSessionObject financialConnectionsSession = FinancialConnectionsSessionObject._('financial_connections.session');
+static const FinancialConnectionsSessionObject financialConnectionsSession = FinancialConnectionsSessionObject$financialConnectionsSession._();
 
 static const List<FinancialConnectionsSessionObject> values = [financialConnectionsSession];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FinancialConnectionsSessionObject$Unknown; } 
+@override String toString() => 'FinancialConnectionsSessionObject($value)';
+
+ }
+@immutable final class FinancialConnectionsSessionObject$financialConnectionsSession extends FinancialConnectionsSessionObject {const FinancialConnectionsSessionObject$financialConnectionsSession._();
+
+@override String get value => 'financial_connections.session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsSessionObject$financialConnectionsSession;
+
+@override int get hashCode => 'financial_connections.session'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsSessionObject$Unknown extends FinancialConnectionsSessionObject {const FinancialConnectionsSessionObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FinancialConnectionsSessionObject && other.value == value;
+    other is FinancialConnectionsSessionObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FinancialConnectionsSessionObject($value)';
 
  }
 /// A Financial Connections Session is the secure way to programmatically launch the client-side Stripe.js modal that lets your users link their accounts.

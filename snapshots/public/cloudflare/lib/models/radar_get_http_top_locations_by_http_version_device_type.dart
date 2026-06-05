@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTopLocationsByHttpVersionDeviceType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopLocationsByHttpVersionDeviceType {const RadarGetHttpTopLocationsByHttpVersionDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopLocationsByHttpVersionDeviceType {const RadarGetHttpTopLocationsByHttpVersionDeviceType();
 
 factory RadarGetHttpTopLocationsByHttpVersionDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
   'OTHER' => $other,
-  _ => RadarGetHttpTopLocationsByHttpVersionDeviceType._(json),
+  _ => RadarGetHttpTopLocationsByHttpVersionDeviceType$Unknown(json),
 }; }
 
-static const RadarGetHttpTopLocationsByHttpVersionDeviceType desktop = RadarGetHttpTopLocationsByHttpVersionDeviceType._('DESKTOP');
+static const RadarGetHttpTopLocationsByHttpVersionDeviceType desktop = RadarGetHttpTopLocationsByHttpVersionDeviceType$desktop._();
 
-static const RadarGetHttpTopLocationsByHttpVersionDeviceType mobile = RadarGetHttpTopLocationsByHttpVersionDeviceType._('MOBILE');
+static const RadarGetHttpTopLocationsByHttpVersionDeviceType mobile = RadarGetHttpTopLocationsByHttpVersionDeviceType$mobile._();
 
-static const RadarGetHttpTopLocationsByHttpVersionDeviceType $other = RadarGetHttpTopLocationsByHttpVersionDeviceType._('OTHER');
+static const RadarGetHttpTopLocationsByHttpVersionDeviceType $other = RadarGetHttpTopLocationsByHttpVersionDeviceType$$other._();
 
 static const List<RadarGetHttpTopLocationsByHttpVersionDeviceType> values = [desktop, mobile, $other];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopLocationsByHttpVersionDeviceType$Unknown; } 
+@override String toString() => 'RadarGetHttpTopLocationsByHttpVersionDeviceType($value)';
+
+ }
+@immutable final class RadarGetHttpTopLocationsByHttpVersionDeviceType$desktop extends RadarGetHttpTopLocationsByHttpVersionDeviceType {const RadarGetHttpTopLocationsByHttpVersionDeviceType$desktop._();
+
+@override String get value => 'DESKTOP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByHttpVersionDeviceType$desktop;
+
+@override int get hashCode => 'DESKTOP'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByHttpVersionDeviceType$mobile extends RadarGetHttpTopLocationsByHttpVersionDeviceType {const RadarGetHttpTopLocationsByHttpVersionDeviceType$mobile._();
+
+@override String get value => 'MOBILE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByHttpVersionDeviceType$mobile;
+
+@override int get hashCode => 'MOBILE'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByHttpVersionDeviceType$$other extends RadarGetHttpTopLocationsByHttpVersionDeviceType {const RadarGetHttpTopLocationsByHttpVersionDeviceType$$other._();
+
+@override String get value => 'OTHER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByHttpVersionDeviceType$$other;
+
+@override int get hashCode => 'OTHER'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByHttpVersionDeviceType$Unknown extends RadarGetHttpTopLocationsByHttpVersionDeviceType {const RadarGetHttpTopLocationsByHttpVersionDeviceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopLocationsByHttpVersionDeviceType && other.value == value;
+    other is RadarGetHttpTopLocationsByHttpVersionDeviceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopLocationsByHttpVersionDeviceType($value)';
 
  }

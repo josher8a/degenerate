@@ -11,7 +11,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// - `in`: in
 /// - `nin`: not in
 /// 
-@immutable final class ComparisonFilterType {const ComparisonFilterType._(this.value);
+sealed class ComparisonFilterType {const ComparisonFilterType();
 
 factory ComparisonFilterType.fromJson(String json) { return switch (json) {
   'eq' => eq,
@@ -20,25 +20,24 @@ factory ComparisonFilterType.fromJson(String json) { return switch (json) {
   'gte' => gte,
   'lt' => lt,
   'lte' => lte,
-  _ => ComparisonFilterType._(json),
+  _ => ComparisonFilterType$Unknown(json),
 }; }
 
-static const ComparisonFilterType eq = ComparisonFilterType._('eq');
+static const ComparisonFilterType eq = ComparisonFilterType$eq._();
 
-static const ComparisonFilterType ne = ComparisonFilterType._('ne');
+static const ComparisonFilterType ne = ComparisonFilterType$ne._();
 
-static const ComparisonFilterType gt = ComparisonFilterType._('gt');
+static const ComparisonFilterType gt = ComparisonFilterType$gt._();
 
-static const ComparisonFilterType gte = ComparisonFilterType._('gte');
+static const ComparisonFilterType gte = ComparisonFilterType$gte._();
 
-static const ComparisonFilterType lt = ComparisonFilterType._('lt');
+static const ComparisonFilterType lt = ComparisonFilterType$lt._();
 
-static const ComparisonFilterType lte = ComparisonFilterType._('lte');
+static const ComparisonFilterType lte = ComparisonFilterType$lte._();
 
 static const List<ComparisonFilterType> values = [eq, ne, gt, gte, lt, lte];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -51,13 +50,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ComparisonFilterType$Unknown; } 
+@override String toString() => 'ComparisonFilterType($value)';
+
+ }
+@immutable final class ComparisonFilterType$eq extends ComparisonFilterType {const ComparisonFilterType$eq._();
+
+@override String get value => 'eq';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComparisonFilterType$eq;
+
+@override int get hashCode => 'eq'.hashCode;
+
+ }
+@immutable final class ComparisonFilterType$ne extends ComparisonFilterType {const ComparisonFilterType$ne._();
+
+@override String get value => 'ne';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComparisonFilterType$ne;
+
+@override int get hashCode => 'ne'.hashCode;
+
+ }
+@immutable final class ComparisonFilterType$gt extends ComparisonFilterType {const ComparisonFilterType$gt._();
+
+@override String get value => 'gt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComparisonFilterType$gt;
+
+@override int get hashCode => 'gt'.hashCode;
+
+ }
+@immutable final class ComparisonFilterType$gte extends ComparisonFilterType {const ComparisonFilterType$gte._();
+
+@override String get value => 'gte';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComparisonFilterType$gte;
+
+@override int get hashCode => 'gte'.hashCode;
+
+ }
+@immutable final class ComparisonFilterType$lt extends ComparisonFilterType {const ComparisonFilterType$lt._();
+
+@override String get value => 'lt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComparisonFilterType$lt;
+
+@override int get hashCode => 'lt'.hashCode;
+
+ }
+@immutable final class ComparisonFilterType$lte extends ComparisonFilterType {const ComparisonFilterType$lte._();
+
+@override String get value => 'lte';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComparisonFilterType$lte;
+
+@override int get hashCode => 'lte'.hashCode;
+
+ }
+@immutable final class ComparisonFilterType$Unknown extends ComparisonFilterType {const ComparisonFilterType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ComparisonFilterType && other.value == value;
+    other is ComparisonFilterType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ComparisonFilterType($value)';
 
  }
 /// A filter used to compare a specified attribute key to a given value using a defined comparison operation.

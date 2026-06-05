@@ -2,22 +2,21 @@
 // Source: #/components/schemas/InsightsResourcesPaymentEvaluationScorer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Recommended action based on the risk score. Possible values are `block` and `continue`.
-@immutable final class RecommendedAction {const RecommendedAction._(this.value);
+sealed class RecommendedAction {const RecommendedAction();
 
 factory RecommendedAction.fromJson(String json) { return switch (json) {
   'block' => block,
   'continue' => $continue,
-  _ => RecommendedAction._(json),
+  _ => RecommendedAction$Unknown(json),
 }; }
 
-static const RecommendedAction block = RecommendedAction._('block');
+static const RecommendedAction block = RecommendedAction$block._();
 
-static const RecommendedAction $continue = RecommendedAction._('continue');
+static const RecommendedAction $continue = RecommendedAction$$continue._();
 
 static const List<RecommendedAction> values = [block, $continue];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RecommendedAction$Unknown; } 
+@override String toString() => 'RecommendedAction($value)';
+
+ }
+@immutable final class RecommendedAction$block extends RecommendedAction {const RecommendedAction$block._();
+
+@override String get value => 'block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecommendedAction$block;
+
+@override int get hashCode => 'block'.hashCode;
+
+ }
+@immutable final class RecommendedAction$$continue extends RecommendedAction {const RecommendedAction$$continue._();
+
+@override String get value => 'continue';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecommendedAction$$continue;
+
+@override int get hashCode => 'continue'.hashCode;
+
+ }
+@immutable final class RecommendedAction$Unknown extends RecommendedAction {const RecommendedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RecommendedAction && other.value == value;
+    other is RecommendedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RecommendedAction($value)';
 
  }
 /// Scores, insights and recommended action for one scorer for this PaymentEvaluation.

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AccountUsageUsageTrigger
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/usage_trigger_enum_recurring.dart';import 'package:pub_twilio_api_v2010/models/usage_trigger_enum_trigger_field.dart';/// The HTTP method we use to call `callback_url`. Can be: `GET` or `POST`.
-@immutable final class AccountUsageUsageTriggerCallbackMethod {const AccountUsageUsageTriggerCallbackMethod._(this.value);
+sealed class AccountUsageUsageTriggerCallbackMethod {const AccountUsageUsageTriggerCallbackMethod();
 
 factory AccountUsageUsageTriggerCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => AccountUsageUsageTriggerCallbackMethod._(json),
+  _ => AccountUsageUsageTriggerCallbackMethod$Unknown(json),
 }; }
 
-static const AccountUsageUsageTriggerCallbackMethod $get = AccountUsageUsageTriggerCallbackMethod._('GET');
+static const AccountUsageUsageTriggerCallbackMethod $get = AccountUsageUsageTriggerCallbackMethod$$get._();
 
-static const AccountUsageUsageTriggerCallbackMethod post = AccountUsageUsageTriggerCallbackMethod._('POST');
+static const AccountUsageUsageTriggerCallbackMethod post = AccountUsageUsageTriggerCallbackMethod$post._();
 
 static const List<AccountUsageUsageTriggerCallbackMethod> values = [$get, post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountUsageUsageTriggerCallbackMethod$Unknown; } 
+@override String toString() => 'AccountUsageUsageTriggerCallbackMethod($value)';
+
+ }
+@immutable final class AccountUsageUsageTriggerCallbackMethod$$get extends AccountUsageUsageTriggerCallbackMethod {const AccountUsageUsageTriggerCallbackMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountUsageUsageTriggerCallbackMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class AccountUsageUsageTriggerCallbackMethod$post extends AccountUsageUsageTriggerCallbackMethod {const AccountUsageUsageTriggerCallbackMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountUsageUsageTriggerCallbackMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class AccountUsageUsageTriggerCallbackMethod$Unknown extends AccountUsageUsageTriggerCallbackMethod {const AccountUsageUsageTriggerCallbackMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountUsageUsageTriggerCallbackMethod && other.value == value;
+    other is AccountUsageUsageTriggerCallbackMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountUsageUsageTriggerCallbackMethod($value)';
 
  }
 @immutable final class AccountUsageUsageTrigger {const AccountUsageUsageTrigger({this.accountSid, this.apiVersion, this.callbackMethod, this.callbackUrl, this.currentValue, this.dateCreated, this.dateFired, this.dateUpdated, this.friendlyName, this.recurring, this.sid, this.triggerBy, this.triggerValue, this.uri, this.usageCategory, this.usageRecordUri, });

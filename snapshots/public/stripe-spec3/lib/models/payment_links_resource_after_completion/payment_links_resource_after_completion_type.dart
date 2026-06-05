@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PaymentLinksResourceAfterCompletion (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The specified behavior after the purchase is complete.
-@immutable final class PaymentLinksResourceAfterCompletionType {const PaymentLinksResourceAfterCompletionType._(this.value);
+sealed class PaymentLinksResourceAfterCompletionType {const PaymentLinksResourceAfterCompletionType();
 
 factory PaymentLinksResourceAfterCompletionType.fromJson(String json) { return switch (json) {
   'hosted_confirmation' => hostedConfirmation,
   'redirect' => redirect,
-  _ => PaymentLinksResourceAfterCompletionType._(json),
+  _ => PaymentLinksResourceAfterCompletionType$Unknown(json),
 }; }
 
-static const PaymentLinksResourceAfterCompletionType hostedConfirmation = PaymentLinksResourceAfterCompletionType._('hosted_confirmation');
+static const PaymentLinksResourceAfterCompletionType hostedConfirmation = PaymentLinksResourceAfterCompletionType$hostedConfirmation._();
 
-static const PaymentLinksResourceAfterCompletionType redirect = PaymentLinksResourceAfterCompletionType._('redirect');
+static const PaymentLinksResourceAfterCompletionType redirect = PaymentLinksResourceAfterCompletionType$redirect._();
 
 static const List<PaymentLinksResourceAfterCompletionType> values = [hostedConfirmation, redirect];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentLinksResourceAfterCompletionType$Unknown; } 
+@override String toString() => 'PaymentLinksResourceAfterCompletionType($value)';
+
+ }
+@immutable final class PaymentLinksResourceAfterCompletionType$hostedConfirmation extends PaymentLinksResourceAfterCompletionType {const PaymentLinksResourceAfterCompletionType$hostedConfirmation._();
+
+@override String get value => 'hosted_confirmation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinksResourceAfterCompletionType$hostedConfirmation;
+
+@override int get hashCode => 'hosted_confirmation'.hashCode;
+
+ }
+@immutable final class PaymentLinksResourceAfterCompletionType$redirect extends PaymentLinksResourceAfterCompletionType {const PaymentLinksResourceAfterCompletionType$redirect._();
+
+@override String get value => 'redirect';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinksResourceAfterCompletionType$redirect;
+
+@override int get hashCode => 'redirect'.hashCode;
+
+ }
+@immutable final class PaymentLinksResourceAfterCompletionType$Unknown extends PaymentLinksResourceAfterCompletionType {const PaymentLinksResourceAfterCompletionType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentLinksResourceAfterCompletionType && other.value == value;
+    other is PaymentLinksResourceAfterCompletionType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentLinksResourceAfterCompletionType($value)';
 
  }

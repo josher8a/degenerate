@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ObservatoryLighthouseReport (inline: Error)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The error code of the Lighthouse result.
-@immutable final class ObservatoryLighthouseErrorCode {const ObservatoryLighthouseErrorCode._(this.value);
+sealed class ObservatoryLighthouseErrorCode {const ObservatoryLighthouseErrorCode();
 
 factory ObservatoryLighthouseErrorCode.fromJson(String json) { return switch (json) {
   'NOT_REACHABLE' => notReachable,
@@ -10,23 +10,22 @@ factory ObservatoryLighthouseErrorCode.fromJson(String json) { return switch (js
   'NOT_HTML' => notHtml,
   'LIGHTHOUSE_TIMEOUT' => lighthouseTimeout,
   'UNKNOWN' => unknown,
-  _ => ObservatoryLighthouseErrorCode._(json),
+  _ => ObservatoryLighthouseErrorCode$Unknown(json),
 }; }
 
-static const ObservatoryLighthouseErrorCode notReachable = ObservatoryLighthouseErrorCode._('NOT_REACHABLE');
+static const ObservatoryLighthouseErrorCode notReachable = ObservatoryLighthouseErrorCode$notReachable._();
 
-static const ObservatoryLighthouseErrorCode dnsFailure = ObservatoryLighthouseErrorCode._('DNS_FAILURE');
+static const ObservatoryLighthouseErrorCode dnsFailure = ObservatoryLighthouseErrorCode$dnsFailure._();
 
-static const ObservatoryLighthouseErrorCode notHtml = ObservatoryLighthouseErrorCode._('NOT_HTML');
+static const ObservatoryLighthouseErrorCode notHtml = ObservatoryLighthouseErrorCode$notHtml._();
 
-static const ObservatoryLighthouseErrorCode lighthouseTimeout = ObservatoryLighthouseErrorCode._('LIGHTHOUSE_TIMEOUT');
+static const ObservatoryLighthouseErrorCode lighthouseTimeout = ObservatoryLighthouseErrorCode$lighthouseTimeout._();
 
-static const ObservatoryLighthouseErrorCode unknown = ObservatoryLighthouseErrorCode._('UNKNOWN');
+static const ObservatoryLighthouseErrorCode unknown = ObservatoryLighthouseErrorCode$unknown._();
 
 static const List<ObservatoryLighthouseErrorCode> values = [notReachable, dnsFailure, notHtml, lighthouseTimeout, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ObservatoryLighthouseErrorCode$Unknown; } 
+@override String toString() => 'ObservatoryLighthouseErrorCode($value)';
+
+ }
+@immutable final class ObservatoryLighthouseErrorCode$notReachable extends ObservatoryLighthouseErrorCode {const ObservatoryLighthouseErrorCode$notReachable._();
+
+@override String get value => 'NOT_REACHABLE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ObservatoryLighthouseErrorCode$notReachable;
+
+@override int get hashCode => 'NOT_REACHABLE'.hashCode;
+
+ }
+@immutable final class ObservatoryLighthouseErrorCode$dnsFailure extends ObservatoryLighthouseErrorCode {const ObservatoryLighthouseErrorCode$dnsFailure._();
+
+@override String get value => 'DNS_FAILURE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ObservatoryLighthouseErrorCode$dnsFailure;
+
+@override int get hashCode => 'DNS_FAILURE'.hashCode;
+
+ }
+@immutable final class ObservatoryLighthouseErrorCode$notHtml extends ObservatoryLighthouseErrorCode {const ObservatoryLighthouseErrorCode$notHtml._();
+
+@override String get value => 'NOT_HTML';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ObservatoryLighthouseErrorCode$notHtml;
+
+@override int get hashCode => 'NOT_HTML'.hashCode;
+
+ }
+@immutable final class ObservatoryLighthouseErrorCode$lighthouseTimeout extends ObservatoryLighthouseErrorCode {const ObservatoryLighthouseErrorCode$lighthouseTimeout._();
+
+@override String get value => 'LIGHTHOUSE_TIMEOUT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ObservatoryLighthouseErrorCode$lighthouseTimeout;
+
+@override int get hashCode => 'LIGHTHOUSE_TIMEOUT'.hashCode;
+
+ }
+@immutable final class ObservatoryLighthouseErrorCode$unknown extends ObservatoryLighthouseErrorCode {const ObservatoryLighthouseErrorCode$unknown._();
+
+@override String get value => 'UNKNOWN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ObservatoryLighthouseErrorCode$unknown;
+
+@override int get hashCode => 'UNKNOWN'.hashCode;
+
+ }
+@immutable final class ObservatoryLighthouseErrorCode$Unknown extends ObservatoryLighthouseErrorCode {const ObservatoryLighthouseErrorCode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ObservatoryLighthouseErrorCode && other.value == value;
+    other is ObservatoryLighthouseErrorCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ObservatoryLighthouseErrorCode($value)';
 
  }
 @immutable final class ObservatoryLighthouseReportError {const ObservatoryLighthouseReportError({this.code, this.detail, this.finalDisplayedUrl, });

@@ -3,22 +3,21 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// `no-store` (equivalent to -1), `no-cache` (equivalent to 0)
 /// 
-@immutable final class ValueVariant1 {const ValueVariant1._(this.value);
+sealed class ValueVariant1 {const ValueVariant1();
 
 factory ValueVariant1.fromJson(String json) { return switch (json) {
   'no-cache' => noCache,
   'no-store' => noStore,
-  _ => ValueVariant1._(json),
+  _ => ValueVariant1$Unknown(json),
 }; }
 
-static const ValueVariant1 noCache = ValueVariant1._('no-cache');
+static const ValueVariant1 noCache = ValueVariant1$noCache._();
 
-static const ValueVariant1 noStore = ValueVariant1._('no-store');
+static const ValueVariant1 noStore = ValueVariant1$noStore._();
 
 static const List<ValueVariant1> values = [noCache, noStore];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -27,13 +26,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ValueVariant1$Unknown; } 
+@override String toString() => 'ValueVariant1($value)';
+
+ }
+@immutable final class ValueVariant1$noCache extends ValueVariant1 {const ValueVariant1$noCache._();
+
+@override String get value => 'no-cache';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValueVariant1$noCache;
+
+@override int get hashCode => 'no-cache'.hashCode;
+
+ }
+@immutable final class ValueVariant1$noStore extends ValueVariant1 {const ValueVariant1$noStore._();
+
+@override String get value => 'no-store';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValueVariant1$noStore;
+
+@override int get hashCode => 'no-store'.hashCode;
+
+ }
+@immutable final class ValueVariant1$Unknown extends ValueVariant1 {const ValueVariant1$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ValueVariant1 && other.value == value;
+    other is ValueVariant1$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ValueVariant1($value)';
 
  }
 /// Variants:

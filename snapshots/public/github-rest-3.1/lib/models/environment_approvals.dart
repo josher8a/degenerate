@@ -2,25 +2,24 @@
 // Source: #/components/schemas/EnvironmentApprovals
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/environment_approvals/environment_approvals_environments.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// Whether deployment to the environment(s) was approved or rejected or pending (with comments)
-@immutable final class EnvironmentApprovalsState {const EnvironmentApprovalsState._(this.value);
+sealed class EnvironmentApprovalsState {const EnvironmentApprovalsState();
 
 factory EnvironmentApprovalsState.fromJson(String json) { return switch (json) {
   'approved' => approved,
   'rejected' => rejected,
   'pending' => pending,
-  _ => EnvironmentApprovalsState._(json),
+  _ => EnvironmentApprovalsState$Unknown(json),
 }; }
 
-static const EnvironmentApprovalsState approved = EnvironmentApprovalsState._('approved');
+static const EnvironmentApprovalsState approved = EnvironmentApprovalsState$approved._();
 
-static const EnvironmentApprovalsState rejected = EnvironmentApprovalsState._('rejected');
+static const EnvironmentApprovalsState rejected = EnvironmentApprovalsState$rejected._();
 
-static const EnvironmentApprovalsState pending = EnvironmentApprovalsState._('pending');
+static const EnvironmentApprovalsState pending = EnvironmentApprovalsState$pending._();
 
 static const List<EnvironmentApprovalsState> values = [approved, rejected, pending];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EnvironmentApprovalsState$Unknown; } 
+@override String toString() => 'EnvironmentApprovalsState($value)';
+
+ }
+@immutable final class EnvironmentApprovalsState$approved extends EnvironmentApprovalsState {const EnvironmentApprovalsState$approved._();
+
+@override String get value => 'approved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnvironmentApprovalsState$approved;
+
+@override int get hashCode => 'approved'.hashCode;
+
+ }
+@immutable final class EnvironmentApprovalsState$rejected extends EnvironmentApprovalsState {const EnvironmentApprovalsState$rejected._();
+
+@override String get value => 'rejected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnvironmentApprovalsState$rejected;
+
+@override int get hashCode => 'rejected'.hashCode;
+
+ }
+@immutable final class EnvironmentApprovalsState$pending extends EnvironmentApprovalsState {const EnvironmentApprovalsState$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnvironmentApprovalsState$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class EnvironmentApprovalsState$Unknown extends EnvironmentApprovalsState {const EnvironmentApprovalsState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EnvironmentApprovalsState && other.value == value;
+    other is EnvironmentApprovalsState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EnvironmentApprovalsState($value)';
 
  }
 /// An entry in the reviews log for environment deployments

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/R2SlurperConnectivityResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ConnectivityStatus {const ConnectivityStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ConnectivityStatus {const ConnectivityStatus();
 
 factory ConnectivityStatus.fromJson(String json) { return switch (json) {
   'success' => success,
   'error' => error,
-  _ => ConnectivityStatus._(json),
+  _ => ConnectivityStatus$Unknown(json),
 }; }
 
-static const ConnectivityStatus success = ConnectivityStatus._('success');
+static const ConnectivityStatus success = ConnectivityStatus$success._();
 
-static const ConnectivityStatus error = ConnectivityStatus._('error');
+static const ConnectivityStatus error = ConnectivityStatus$error._();
 
 static const List<ConnectivityStatus> values = [success, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConnectivityStatus$Unknown; } 
+@override String toString() => 'ConnectivityStatus($value)';
+
+ }
+@immutable final class ConnectivityStatus$success extends ConnectivityStatus {const ConnectivityStatus$success._();
+
+@override String get value => 'success';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConnectivityStatus$success;
+
+@override int get hashCode => 'success'.hashCode;
+
+ }
+@immutable final class ConnectivityStatus$error extends ConnectivityStatus {const ConnectivityStatus$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConnectivityStatus$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class ConnectivityStatus$Unknown extends ConnectivityStatus {const ConnectivityStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConnectivityStatus && other.value == value;
+    other is ConnectivityStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConnectivityStatus($value)';
 
  }
 @immutable final class R2SlurperConnectivityResponse {const R2SlurperConnectivityResponse({this.connectivityStatus});

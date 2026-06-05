@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Change the origin address to the value specified in this setting.
 /// 
-@immutable final class ZonesResolveOverrideId {const ZonesResolveOverrideId._(this.value);
+sealed class ZonesResolveOverrideId {const ZonesResolveOverrideId();
 
 factory ZonesResolveOverrideId.fromJson(String json) { return switch (json) {
   'resolve_override' => resolveOverride,
-  _ => ZonesResolveOverrideId._(json),
+  _ => ZonesResolveOverrideId$Unknown(json),
 }; }
 
-static const ZonesResolveOverrideId resolveOverride = ZonesResolveOverrideId._('resolve_override');
+static const ZonesResolveOverrideId resolveOverride = ZonesResolveOverrideId$resolveOverride._();
 
 static const List<ZonesResolveOverrideId> values = [resolveOverride];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesResolveOverrideId$Unknown; } 
+@override String toString() => 'ZonesResolveOverrideId($value)';
+
+ }
+@immutable final class ZonesResolveOverrideId$resolveOverride extends ZonesResolveOverrideId {const ZonesResolveOverrideId$resolveOverride._();
+
+@override String get value => 'resolve_override';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesResolveOverrideId$resolveOverride;
+
+@override int get hashCode => 'resolve_override'.hashCode;
+
+ }
+@immutable final class ZonesResolveOverrideId$Unknown extends ZonesResolveOverrideId {const ZonesResolveOverrideId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesResolveOverrideId && other.value == value;
+    other is ZonesResolveOverrideId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesResolveOverrideId($value)';
 
  }
 @immutable final class ZonesResolveOverride {const ZonesResolveOverride({this.id, this.value, });

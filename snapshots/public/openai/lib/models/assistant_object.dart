@@ -2,19 +2,18 @@
 // Source: #/components/schemas/AssistantObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tool_resources.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tools.dart';import 'package:pub_openai/models/assistant_tools_code.dart';import 'package:pub_openai/models/assistant_tools_file_search.dart';import 'package:pub_openai/models/assistant_tools_function.dart';import 'package:pub_openai/models/response_format_json_object.dart';import 'package:pub_openai/models/response_format_json_schema.dart';import 'package:pub_openai/models/response_format_option.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/response_format_text.dart';/// The object type, which is always `assistant`.
-@immutable final class AssistantObjectObject {const AssistantObjectObject._(this.value);
+sealed class AssistantObjectObject {const AssistantObjectObject();
 
 factory AssistantObjectObject.fromJson(String json) { return switch (json) {
   'assistant' => assistant,
-  _ => AssistantObjectObject._(json),
+  _ => AssistantObjectObject$Unknown(json),
 }; }
 
-static const AssistantObjectObject assistant = AssistantObjectObject._('assistant');
+static const AssistantObjectObject assistant = AssistantObjectObject$assistant._();
 
 static const List<AssistantObjectObject> values = [assistant];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AssistantObjectObject$Unknown; } 
+@override String toString() => 'AssistantObjectObject($value)';
+
+ }
+@immutable final class AssistantObjectObject$assistant extends AssistantObjectObject {const AssistantObjectObject$assistant._();
+
+@override String get value => 'assistant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AssistantObjectObject$assistant;
+
+@override int get hashCode => 'assistant'.hashCode;
+
+ }
+@immutable final class AssistantObjectObject$Unknown extends AssistantObjectObject {const AssistantObjectObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AssistantObjectObject && other.value == value;
+    other is AssistantObjectObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AssistantObjectObject($value)';
 
  }
 /// Represents an `assistant` that can call the model and use tools.

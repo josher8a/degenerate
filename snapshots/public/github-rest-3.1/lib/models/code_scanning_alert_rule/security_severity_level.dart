@@ -2,7 +2,7 @@
 // Source: #/components/schemas/CodeScanningAlertRule (inline: SecuritySeverityLevel)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The security severity of the alert.
-@immutable final class SecuritySeverityLevel {const SecuritySeverityLevel._(this.value);
+sealed class SecuritySeverityLevel {const SecuritySeverityLevel();
 
 factory SecuritySeverityLevel.fromJson(String json) { return switch (json) {
   'low' => low,
@@ -10,23 +10,22 @@ factory SecuritySeverityLevel.fromJson(String json) { return switch (json) {
   'high' => high,
   'critical' => critical,
   'null' => $null,
-  _ => SecuritySeverityLevel._(json),
+  _ => SecuritySeverityLevel$Unknown(json),
 }; }
 
-static const SecuritySeverityLevel low = SecuritySeverityLevel._('low');
+static const SecuritySeverityLevel low = SecuritySeverityLevel$low._();
 
-static const SecuritySeverityLevel medium = SecuritySeverityLevel._('medium');
+static const SecuritySeverityLevel medium = SecuritySeverityLevel$medium._();
 
-static const SecuritySeverityLevel high = SecuritySeverityLevel._('high');
+static const SecuritySeverityLevel high = SecuritySeverityLevel$high._();
 
-static const SecuritySeverityLevel critical = SecuritySeverityLevel._('critical');
+static const SecuritySeverityLevel critical = SecuritySeverityLevel$critical._();
 
-static const SecuritySeverityLevel $null = SecuritySeverityLevel._('null');
+static const SecuritySeverityLevel $null = SecuritySeverityLevel$$null._();
 
 static const List<SecuritySeverityLevel> values = [low, medium, high, critical, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,12 +37,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SecuritySeverityLevel$Unknown; } 
+@override String toString() => 'SecuritySeverityLevel($value)';
+
+ }
+@immutable final class SecuritySeverityLevel$low extends SecuritySeverityLevel {const SecuritySeverityLevel$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecuritySeverityLevel$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class SecuritySeverityLevel$medium extends SecuritySeverityLevel {const SecuritySeverityLevel$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecuritySeverityLevel$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class SecuritySeverityLevel$high extends SecuritySeverityLevel {const SecuritySeverityLevel$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecuritySeverityLevel$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class SecuritySeverityLevel$critical extends SecuritySeverityLevel {const SecuritySeverityLevel$critical._();
+
+@override String get value => 'critical';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecuritySeverityLevel$critical;
+
+@override int get hashCode => 'critical'.hashCode;
+
+ }
+@immutable final class SecuritySeverityLevel$$null extends SecuritySeverityLevel {const SecuritySeverityLevel$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecuritySeverityLevel$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class SecuritySeverityLevel$Unknown extends SecuritySeverityLevel {const SecuritySeverityLevel$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SecuritySeverityLevel && other.value == value;
+    other is SecuritySeverityLevel$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SecuritySeverityLevel($value)';
 
  }

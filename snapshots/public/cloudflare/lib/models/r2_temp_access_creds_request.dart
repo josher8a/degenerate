@@ -2,28 +2,27 @@
 // Source: #/components/schemas/R2TempAccessCredsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Permissions allowed on the credentials.
-@immutable final class Permission {const Permission._(this.value);
+sealed class Permission {const Permission();
 
 factory Permission.fromJson(String json) { return switch (json) {
   'admin-read-write' => adminReadWrite,
   'admin-read-only' => adminReadOnly,
   'object-read-write' => objectReadWrite,
   'object-read-only' => objectReadOnly,
-  _ => Permission._(json),
+  _ => Permission$Unknown(json),
 }; }
 
-static const Permission adminReadWrite = Permission._('admin-read-write');
+static const Permission adminReadWrite = Permission$adminReadWrite._();
 
-static const Permission adminReadOnly = Permission._('admin-read-only');
+static const Permission adminReadOnly = Permission$adminReadOnly._();
 
-static const Permission objectReadWrite = Permission._('object-read-write');
+static const Permission objectReadWrite = Permission$objectReadWrite._();
 
-static const Permission objectReadOnly = Permission._('object-read-only');
+static const Permission objectReadOnly = Permission$objectReadOnly._();
 
 static const List<Permission> values = [adminReadWrite, adminReadOnly, objectReadWrite, objectReadOnly];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Permission$Unknown; } 
+@override String toString() => 'Permission($value)';
+
+ }
+@immutable final class Permission$adminReadWrite extends Permission {const Permission$adminReadWrite._();
+
+@override String get value => 'admin-read-write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Permission$adminReadWrite;
+
+@override int get hashCode => 'admin-read-write'.hashCode;
+
+ }
+@immutable final class Permission$adminReadOnly extends Permission {const Permission$adminReadOnly._();
+
+@override String get value => 'admin-read-only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Permission$adminReadOnly;
+
+@override int get hashCode => 'admin-read-only'.hashCode;
+
+ }
+@immutable final class Permission$objectReadWrite extends Permission {const Permission$objectReadWrite._();
+
+@override String get value => 'object-read-write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Permission$objectReadWrite;
+
+@override int get hashCode => 'object-read-write'.hashCode;
+
+ }
+@immutable final class Permission$objectReadOnly extends Permission {const Permission$objectReadOnly._();
+
+@override String get value => 'object-read-only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Permission$objectReadOnly;
+
+@override int get hashCode => 'object-read-only'.hashCode;
+
+ }
+@immutable final class Permission$Unknown extends Permission {const Permission$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Permission && other.value == value;
+    other is Permission$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Permission($value)';
 
  }
 /// Example:

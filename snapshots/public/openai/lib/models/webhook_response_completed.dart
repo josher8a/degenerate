@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `response.completed`.
 /// 
-@immutable final class WebhookResponseCompletedType {const WebhookResponseCompletedType._(this.value);
+sealed class WebhookResponseCompletedType {const WebhookResponseCompletedType();
 
 factory WebhookResponseCompletedType.fromJson(String json) { return switch (json) {
   'response.completed' => responseCompleted,
-  _ => WebhookResponseCompletedType._(json),
+  _ => WebhookResponseCompletedType$Unknown(json),
 }; }
 
-static const WebhookResponseCompletedType responseCompleted = WebhookResponseCompletedType._('response.completed');
+static const WebhookResponseCompletedType responseCompleted = WebhookResponseCompletedType$responseCompleted._();
 
 static const List<WebhookResponseCompletedType> values = [responseCompleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookResponseCompletedType$Unknown; } 
+@override String toString() => 'WebhookResponseCompletedType($value)';
+
+ }
+@immutable final class WebhookResponseCompletedType$responseCompleted extends WebhookResponseCompletedType {const WebhookResponseCompletedType$responseCompleted._();
+
+@override String get value => 'response.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookResponseCompletedType$responseCompleted;
+
+@override int get hashCode => 'response.completed'.hashCode;
+
+ }
+@immutable final class WebhookResponseCompletedType$Unknown extends WebhookResponseCompletedType {const WebhookResponseCompletedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookResponseCompletedType && other.value == value;
+    other is WebhookResponseCompletedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookResponseCompletedType($value)';
 
  }
 /// Sent when a background response has been completed.

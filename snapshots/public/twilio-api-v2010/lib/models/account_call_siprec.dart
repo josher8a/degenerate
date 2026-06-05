@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AccountCallSiprec
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status - one of `stopped`, `in-progress`
-@immutable final class SiprecEnumStatus {const SiprecEnumStatus._(this.value);
+sealed class SiprecEnumStatus {const SiprecEnumStatus();
 
 factory SiprecEnumStatus.fromJson(String json) { return switch (json) {
   'in-progress' => inProgress,
   'stopped' => stopped,
-  _ => SiprecEnumStatus._(json),
+  _ => SiprecEnumStatus$Unknown(json),
 }; }
 
-static const SiprecEnumStatus inProgress = SiprecEnumStatus._('in-progress');
+static const SiprecEnumStatus inProgress = SiprecEnumStatus$inProgress._();
 
-static const SiprecEnumStatus stopped = SiprecEnumStatus._('stopped');
+static const SiprecEnumStatus stopped = SiprecEnumStatus$stopped._();
 
 static const List<SiprecEnumStatus> values = [inProgress, stopped];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SiprecEnumStatus$Unknown; } 
+@override String toString() => 'SiprecEnumStatus($value)';
+
+ }
+@immutable final class SiprecEnumStatus$inProgress extends SiprecEnumStatus {const SiprecEnumStatus$inProgress._();
+
+@override String get value => 'in-progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SiprecEnumStatus$inProgress;
+
+@override int get hashCode => 'in-progress'.hashCode;
+
+ }
+@immutable final class SiprecEnumStatus$stopped extends SiprecEnumStatus {const SiprecEnumStatus$stopped._();
+
+@override String get value => 'stopped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SiprecEnumStatus$stopped;
+
+@override int get hashCode => 'stopped'.hashCode;
+
+ }
+@immutable final class SiprecEnumStatus$Unknown extends SiprecEnumStatus {const SiprecEnumStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SiprecEnumStatus && other.value == value;
+    other is SiprecEnumStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SiprecEnumStatus($value)';
 
  }
 @immutable final class AccountCallSiprec {const AccountCallSiprec({this.sid, this.accountSid, this.callSid, this.name, this.status, this.dateUpdated, this.uri, });

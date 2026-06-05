@@ -2,25 +2,24 @@
 // Source: #/components/schemas/CreateRealtimeTranscriptionRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';/// One of `inbound_track`, `outbound_track`, `both_tracks`.
-@immutable final class RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack._(this.value);
+sealed class RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack();
 
 factory RealtimeTranscriptionEnumTrack.fromJson(String json) { return switch (json) {
   'inbound_track' => inboundTrack,
   'outbound_track' => outboundTrack,
   'both_tracks' => bothTracks,
-  _ => RealtimeTranscriptionEnumTrack._(json),
+  _ => RealtimeTranscriptionEnumTrack$Unknown(json),
 }; }
 
-static const RealtimeTranscriptionEnumTrack inboundTrack = RealtimeTranscriptionEnumTrack._('inbound_track');
+static const RealtimeTranscriptionEnumTrack inboundTrack = RealtimeTranscriptionEnumTrack$inboundTrack._();
 
-static const RealtimeTranscriptionEnumTrack outboundTrack = RealtimeTranscriptionEnumTrack._('outbound_track');
+static const RealtimeTranscriptionEnumTrack outboundTrack = RealtimeTranscriptionEnumTrack$outboundTrack._();
 
-static const RealtimeTranscriptionEnumTrack bothTracks = RealtimeTranscriptionEnumTrack._('both_tracks');
+static const RealtimeTranscriptionEnumTrack bothTracks = RealtimeTranscriptionEnumTrack$bothTracks._();
 
 static const List<RealtimeTranscriptionEnumTrack> values = [inboundTrack, outboundTrack, bothTracks];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeTranscriptionEnumTrack$Unknown; } 
+@override String toString() => 'RealtimeTranscriptionEnumTrack($value)';
+
+ }
+@immutable final class RealtimeTranscriptionEnumTrack$inboundTrack extends RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack$inboundTrack._();
+
+@override String get value => 'inbound_track';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeTranscriptionEnumTrack$inboundTrack;
+
+@override int get hashCode => 'inbound_track'.hashCode;
+
+ }
+@immutable final class RealtimeTranscriptionEnumTrack$outboundTrack extends RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack$outboundTrack._();
+
+@override String get value => 'outbound_track';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeTranscriptionEnumTrack$outboundTrack;
+
+@override int get hashCode => 'outbound_track'.hashCode;
+
+ }
+@immutable final class RealtimeTranscriptionEnumTrack$bothTracks extends RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack$bothTracks._();
+
+@override String get value => 'both_tracks';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeTranscriptionEnumTrack$bothTracks;
+
+@override int get hashCode => 'both_tracks'.hashCode;
+
+ }
+@immutable final class RealtimeTranscriptionEnumTrack$Unknown extends RealtimeTranscriptionEnumTrack {const RealtimeTranscriptionEnumTrack$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeTranscriptionEnumTrack && other.value == value;
+    other is RealtimeTranscriptionEnumTrack$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeTranscriptionEnumTrack($value)';
 
  }
 @immutable final class CreateRealtimeTranscriptionRequest {const CreateRealtimeTranscriptionRequest({this.name, this.track, this.statusCallbackUrl, this.statusCallbackMethod, this.inboundTrackLabel, this.outboundTrackLabel, this.partialResults, this.languageCode, this.transcriptionEngine, this.profanityFilter, this.speechModel, this.hints, this.enableAutomaticPunctuation, this.intelligenceService, this.enableProviderData, });

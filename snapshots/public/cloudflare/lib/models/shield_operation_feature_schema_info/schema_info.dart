@@ -2,25 +2,24 @@
 // Source: #/components/schemas/ShieldOperationFeatureSchemaInfo (inline: SchemaInfo)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_operation_feature_schema_info/active_schema.dart';/// Action taken on requests failing validation.
-@immutable final class SchemaInfoMitigationAction {const SchemaInfoMitigationAction._(this.value);
+sealed class SchemaInfoMitigationAction {const SchemaInfoMitigationAction();
 
 factory SchemaInfoMitigationAction.fromJson(String json) { return switch (json) {
   'none' => none,
   'log' => log,
   'block' => block,
-  _ => SchemaInfoMitigationAction._(json),
+  _ => SchemaInfoMitigationAction$Unknown(json),
 }; }
 
-static const SchemaInfoMitigationAction none = SchemaInfoMitigationAction._('none');
+static const SchemaInfoMitigationAction none = SchemaInfoMitigationAction$none._();
 
-static const SchemaInfoMitigationAction log = SchemaInfoMitigationAction._('log');
+static const SchemaInfoMitigationAction log = SchemaInfoMitigationAction$log._();
 
-static const SchemaInfoMitigationAction block = SchemaInfoMitigationAction._('block');
+static const SchemaInfoMitigationAction block = SchemaInfoMitigationAction$block._();
 
 static const List<SchemaInfoMitigationAction> values = [none, log, block];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SchemaInfoMitigationAction$Unknown; } 
+@override String toString() => 'SchemaInfoMitigationAction($value)';
+
+ }
+@immutable final class SchemaInfoMitigationAction$none extends SchemaInfoMitigationAction {const SchemaInfoMitigationAction$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SchemaInfoMitigationAction$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class SchemaInfoMitigationAction$log extends SchemaInfoMitigationAction {const SchemaInfoMitigationAction$log._();
+
+@override String get value => 'log';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SchemaInfoMitigationAction$log;
+
+@override int get hashCode => 'log'.hashCode;
+
+ }
+@immutable final class SchemaInfoMitigationAction$block extends SchemaInfoMitigationAction {const SchemaInfoMitigationAction$block._();
+
+@override String get value => 'block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SchemaInfoMitigationAction$block;
+
+@override int get hashCode => 'block'.hashCode;
+
+ }
+@immutable final class SchemaInfoMitigationAction$Unknown extends SchemaInfoMitigationAction {const SchemaInfoMitigationAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SchemaInfoMitigationAction && other.value == value;
+    other is SchemaInfoMitigationAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SchemaInfoMitigationAction($value)';
 
  }
 @immutable final class SchemaInfo {const SchemaInfo({this.activeSchema, this.learnedAvailable, this.mitigationAction, });

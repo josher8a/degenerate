@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookCheckSuiteCompleted (inline: CheckSuite > App)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/webhook_check_suite_completed_check_suite_app_permissions.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/package_owner.dart';@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/webhook_check_suite_completed_check_suite_app_permissions.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/package_owner.dart';sealed class WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents();
 
 factory WebhookCheckSuiteCompletedCheckSuiteAppEvents.fromJson(String json) { return switch (json) {
   'branch_protection_rule' => branchProtectionRule,
@@ -56,117 +56,116 @@ factory WebhookCheckSuiteCompletedCheckSuiteAppEvents.fromJson(String json) { re
   'security_and_analysis' => securityAndAnalysis,
   'projects_v2_item' => projectsV2Item,
   'secret_scanning_alert_location' => secretScanningAlertLocation,
-  _ => WebhookCheckSuiteCompletedCheckSuiteAppEvents._(json),
+  _ => WebhookCheckSuiteCompletedCheckSuiteAppEvents$Unknown(json),
 }; }
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents branchProtectionRule = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('branch_protection_rule');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents branchProtectionRule = WebhookCheckSuiteCompletedCheckSuiteAppEvents$branchProtectionRule._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents checkRun = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('check_run');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents checkRun = WebhookCheckSuiteCompletedCheckSuiteAppEvents$checkRun._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents checkSuite = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('check_suite');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents checkSuite = WebhookCheckSuiteCompletedCheckSuiteAppEvents$checkSuite._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents codeScanningAlert = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('code_scanning_alert');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents codeScanningAlert = WebhookCheckSuiteCompletedCheckSuiteAppEvents$codeScanningAlert._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents commitComment = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('commit_comment');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents commitComment = WebhookCheckSuiteCompletedCheckSuiteAppEvents$commitComment._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents contentReference = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('content_reference');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents contentReference = WebhookCheckSuiteCompletedCheckSuiteAppEvents$contentReference._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents create = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('create');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents create = WebhookCheckSuiteCompletedCheckSuiteAppEvents$create._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents delete = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('delete');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents delete = WebhookCheckSuiteCompletedCheckSuiteAppEvents$delete._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents deployment = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('deployment');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents deployment = WebhookCheckSuiteCompletedCheckSuiteAppEvents$deployment._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents deploymentReview = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('deployment_review');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents deploymentReview = WebhookCheckSuiteCompletedCheckSuiteAppEvents$deploymentReview._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents deploymentStatus = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('deployment_status');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents deploymentStatus = WebhookCheckSuiteCompletedCheckSuiteAppEvents$deploymentStatus._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents deployKey = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('deploy_key');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents deployKey = WebhookCheckSuiteCompletedCheckSuiteAppEvents$deployKey._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents discussion = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('discussion');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents discussion = WebhookCheckSuiteCompletedCheckSuiteAppEvents$discussion._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents discussionComment = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('discussion_comment');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents discussionComment = WebhookCheckSuiteCompletedCheckSuiteAppEvents$discussionComment._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents fork = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('fork');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents fork = WebhookCheckSuiteCompletedCheckSuiteAppEvents$fork._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents gollum = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('gollum');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents gollum = WebhookCheckSuiteCompletedCheckSuiteAppEvents$gollum._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents issues = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('issues');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents issues = WebhookCheckSuiteCompletedCheckSuiteAppEvents$issues._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents issueComment = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('issue_comment');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents issueComment = WebhookCheckSuiteCompletedCheckSuiteAppEvents$issueComment._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents label = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('label');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents label = WebhookCheckSuiteCompletedCheckSuiteAppEvents$label._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents member = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('member');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents member = WebhookCheckSuiteCompletedCheckSuiteAppEvents$member._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents membership = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('membership');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents membership = WebhookCheckSuiteCompletedCheckSuiteAppEvents$membership._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents milestone = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('milestone');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents milestone = WebhookCheckSuiteCompletedCheckSuiteAppEvents$milestone._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents organization = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('organization');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents organization = WebhookCheckSuiteCompletedCheckSuiteAppEvents$organization._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents orgBlock = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('org_block');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents orgBlock = WebhookCheckSuiteCompletedCheckSuiteAppEvents$orgBlock._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents pageBuild = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('page_build');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents pageBuild = WebhookCheckSuiteCompletedCheckSuiteAppEvents$pageBuild._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents project = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('project');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents project = WebhookCheckSuiteCompletedCheckSuiteAppEvents$project._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents projectCard = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('project_card');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents projectCard = WebhookCheckSuiteCompletedCheckSuiteAppEvents$projectCard._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents projectColumn = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('project_column');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents projectColumn = WebhookCheckSuiteCompletedCheckSuiteAppEvents$projectColumn._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents public = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('public');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents public = WebhookCheckSuiteCompletedCheckSuiteAppEvents$public._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents pullRequest = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('pull_request');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents pullRequest = WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequest._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents pullRequestReview = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('pull_request_review');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents pullRequestReview = WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequestReview._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents pullRequestReviewComment = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('pull_request_review_comment');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents pullRequestReviewComment = WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequestReviewComment._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents push = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('push');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents push = WebhookCheckSuiteCompletedCheckSuiteAppEvents$push._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents registryPackage = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('registry_package');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents registryPackage = WebhookCheckSuiteCompletedCheckSuiteAppEvents$registryPackage._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents release = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('release');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents release = WebhookCheckSuiteCompletedCheckSuiteAppEvents$release._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents repository = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('repository');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents repository = WebhookCheckSuiteCompletedCheckSuiteAppEvents$repository._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents repositoryDispatch = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('repository_dispatch');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents repositoryDispatch = WebhookCheckSuiteCompletedCheckSuiteAppEvents$repositoryDispatch._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents secretScanningAlert = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('secret_scanning_alert');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents secretScanningAlert = WebhookCheckSuiteCompletedCheckSuiteAppEvents$secretScanningAlert._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents star = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('star');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents star = WebhookCheckSuiteCompletedCheckSuiteAppEvents$star._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents status = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('status');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents status = WebhookCheckSuiteCompletedCheckSuiteAppEvents$status._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents team = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('team');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents team = WebhookCheckSuiteCompletedCheckSuiteAppEvents$team._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents teamAdd = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('team_add');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents teamAdd = WebhookCheckSuiteCompletedCheckSuiteAppEvents$teamAdd._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents watch = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('watch');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents watch = WebhookCheckSuiteCompletedCheckSuiteAppEvents$watch._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents workflowDispatch = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('workflow_dispatch');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents workflowDispatch = WebhookCheckSuiteCompletedCheckSuiteAppEvents$workflowDispatch._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents workflowRun = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('workflow_run');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents workflowRun = WebhookCheckSuiteCompletedCheckSuiteAppEvents$workflowRun._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents mergeGroup = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('merge_group');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents mergeGroup = WebhookCheckSuiteCompletedCheckSuiteAppEvents$mergeGroup._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents pullRequestReviewThread = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('pull_request_review_thread');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents pullRequestReviewThread = WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequestReviewThread._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents workflowJob = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('workflow_job');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents workflowJob = WebhookCheckSuiteCompletedCheckSuiteAppEvents$workflowJob._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents mergeQueueEntry = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('merge_queue_entry');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents mergeQueueEntry = WebhookCheckSuiteCompletedCheckSuiteAppEvents$mergeQueueEntry._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents securityAndAnalysis = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('security_and_analysis');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents securityAndAnalysis = WebhookCheckSuiteCompletedCheckSuiteAppEvents$securityAndAnalysis._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents projectsV2Item = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('projects_v2_item');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents projectsV2Item = WebhookCheckSuiteCompletedCheckSuiteAppEvents$projectsV2Item._();
 
-static const WebhookCheckSuiteCompletedCheckSuiteAppEvents secretScanningAlertLocation = WebhookCheckSuiteCompletedCheckSuiteAppEvents._('secret_scanning_alert_location');
+static const WebhookCheckSuiteCompletedCheckSuiteAppEvents secretScanningAlertLocation = WebhookCheckSuiteCompletedCheckSuiteAppEvents$secretScanningAlertLocation._();
 
 static const List<WebhookCheckSuiteCompletedCheckSuiteAppEvents> values = [branchProtectionRule, checkRun, checkSuite, codeScanningAlert, commitComment, contentReference, create, delete, deployment, deploymentReview, deploymentStatus, deployKey, discussion, discussionComment, fork, gollum, issues, issueComment, label, member, membership, milestone, organization, orgBlock, pageBuild, project, projectCard, projectColumn, public, pullRequest, pullRequestReview, pullRequestReviewComment, push, registryPackage, release, repository, repositoryDispatch, secretScanningAlert, star, status, team, teamAdd, watch, workflowDispatch, workflowRun, mergeGroup, pullRequestReviewThread, workflowJob, mergeQueueEntry, securityAndAnalysis, projectsV2Item, secretScanningAlertLocation];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -225,13 +224,486 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookCheckSuiteCompletedCheckSuiteAppEvents$Unknown; } 
+@override String toString() => 'WebhookCheckSuiteCompletedCheckSuiteAppEvents($value)';
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$branchProtectionRule extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$branchProtectionRule._();
+
+@override String get value => 'branch_protection_rule';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$branchProtectionRule;
+
+@override int get hashCode => 'branch_protection_rule'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$checkRun extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$checkRun._();
+
+@override String get value => 'check_run';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$checkRun;
+
+@override int get hashCode => 'check_run'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$checkSuite extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$checkSuite._();
+
+@override String get value => 'check_suite';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$checkSuite;
+
+@override int get hashCode => 'check_suite'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$codeScanningAlert extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$codeScanningAlert._();
+
+@override String get value => 'code_scanning_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$codeScanningAlert;
+
+@override int get hashCode => 'code_scanning_alert'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$commitComment extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$commitComment._();
+
+@override String get value => 'commit_comment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$commitComment;
+
+@override int get hashCode => 'commit_comment'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$contentReference extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$contentReference._();
+
+@override String get value => 'content_reference';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$contentReference;
+
+@override int get hashCode => 'content_reference'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$create extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$create._();
+
+@override String get value => 'create';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$create;
+
+@override int get hashCode => 'create'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$delete extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$delete._();
+
+@override String get value => 'delete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$delete;
+
+@override int get hashCode => 'delete'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$deployment extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$deployment._();
+
+@override String get value => 'deployment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$deployment;
+
+@override int get hashCode => 'deployment'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$deploymentReview extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$deploymentReview._();
+
+@override String get value => 'deployment_review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$deploymentReview;
+
+@override int get hashCode => 'deployment_review'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$deploymentStatus extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$deploymentStatus._();
+
+@override String get value => 'deployment_status';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$deploymentStatus;
+
+@override int get hashCode => 'deployment_status'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$deployKey extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$deployKey._();
+
+@override String get value => 'deploy_key';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$deployKey;
+
+@override int get hashCode => 'deploy_key'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$discussion extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$discussion._();
+
+@override String get value => 'discussion';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$discussion;
+
+@override int get hashCode => 'discussion'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$discussionComment extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$discussionComment._();
+
+@override String get value => 'discussion_comment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$discussionComment;
+
+@override int get hashCode => 'discussion_comment'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$fork extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$fork._();
+
+@override String get value => 'fork';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$fork;
+
+@override int get hashCode => 'fork'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$gollum extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$gollum._();
+
+@override String get value => 'gollum';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$gollum;
+
+@override int get hashCode => 'gollum'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$issues extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$issues._();
+
+@override String get value => 'issues';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$issues;
+
+@override int get hashCode => 'issues'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$issueComment extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$issueComment._();
+
+@override String get value => 'issue_comment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$issueComment;
+
+@override int get hashCode => 'issue_comment'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$label extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$label._();
+
+@override String get value => 'label';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$label;
+
+@override int get hashCode => 'label'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$member extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$member._();
+
+@override String get value => 'member';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$member;
+
+@override int get hashCode => 'member'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$membership extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$membership._();
+
+@override String get value => 'membership';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$membership;
+
+@override int get hashCode => 'membership'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$milestone extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$milestone._();
+
+@override String get value => 'milestone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$milestone;
+
+@override int get hashCode => 'milestone'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$organization extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$organization._();
+
+@override String get value => 'organization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$organization;
+
+@override int get hashCode => 'organization'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$orgBlock extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$orgBlock._();
+
+@override String get value => 'org_block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$orgBlock;
+
+@override int get hashCode => 'org_block'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$pageBuild extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$pageBuild._();
+
+@override String get value => 'page_build';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$pageBuild;
+
+@override int get hashCode => 'page_build'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$project extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$project._();
+
+@override String get value => 'project';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$project;
+
+@override int get hashCode => 'project'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$projectCard extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$projectCard._();
+
+@override String get value => 'project_card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$projectCard;
+
+@override int get hashCode => 'project_card'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$projectColumn extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$projectColumn._();
+
+@override String get value => 'project_column';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$projectColumn;
+
+@override int get hashCode => 'project_column'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$public extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$public._();
+
+@override String get value => 'public';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$public;
+
+@override int get hashCode => 'public'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequest extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequest._();
+
+@override String get value => 'pull_request';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequest;
+
+@override int get hashCode => 'pull_request'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequestReview extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequestReview._();
+
+@override String get value => 'pull_request_review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequestReview;
+
+@override int get hashCode => 'pull_request_review'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequestReviewComment extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequestReviewComment._();
+
+@override String get value => 'pull_request_review_comment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequestReviewComment;
+
+@override int get hashCode => 'pull_request_review_comment'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$push extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$push._();
+
+@override String get value => 'push';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$push;
+
+@override int get hashCode => 'push'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$registryPackage extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$registryPackage._();
+
+@override String get value => 'registry_package';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$registryPackage;
+
+@override int get hashCode => 'registry_package'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$release extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$release._();
+
+@override String get value => 'release';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$release;
+
+@override int get hashCode => 'release'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$repository extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$repository._();
+
+@override String get value => 'repository';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$repository;
+
+@override int get hashCode => 'repository'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$repositoryDispatch extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$repositoryDispatch._();
+
+@override String get value => 'repository_dispatch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$repositoryDispatch;
+
+@override int get hashCode => 'repository_dispatch'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$secretScanningAlert extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$secretScanningAlert._();
+
+@override String get value => 'secret_scanning_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$secretScanningAlert;
+
+@override int get hashCode => 'secret_scanning_alert'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$star extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$star._();
+
+@override String get value => 'star';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$star;
+
+@override int get hashCode => 'star'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$status extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$status._();
+
+@override String get value => 'status';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$status;
+
+@override int get hashCode => 'status'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$team extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$team._();
+
+@override String get value => 'team';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$team;
+
+@override int get hashCode => 'team'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$teamAdd extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$teamAdd._();
+
+@override String get value => 'team_add';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$teamAdd;
+
+@override int get hashCode => 'team_add'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$watch extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$watch._();
+
+@override String get value => 'watch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$watch;
+
+@override int get hashCode => 'watch'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$workflowDispatch extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$workflowDispatch._();
+
+@override String get value => 'workflow_dispatch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$workflowDispatch;
+
+@override int get hashCode => 'workflow_dispatch'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$workflowRun extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$workflowRun._();
+
+@override String get value => 'workflow_run';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$workflowRun;
+
+@override int get hashCode => 'workflow_run'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$mergeGroup extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$mergeGroup._();
+
+@override String get value => 'merge_group';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$mergeGroup;
+
+@override int get hashCode => 'merge_group'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequestReviewThread extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequestReviewThread._();
+
+@override String get value => 'pull_request_review_thread';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$pullRequestReviewThread;
+
+@override int get hashCode => 'pull_request_review_thread'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$workflowJob extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$workflowJob._();
+
+@override String get value => 'workflow_job';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$workflowJob;
+
+@override int get hashCode => 'workflow_job'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$mergeQueueEntry extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$mergeQueueEntry._();
+
+@override String get value => 'merge_queue_entry';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$mergeQueueEntry;
+
+@override int get hashCode => 'merge_queue_entry'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$securityAndAnalysis extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$securityAndAnalysis._();
+
+@override String get value => 'security_and_analysis';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$securityAndAnalysis;
+
+@override int get hashCode => 'security_and_analysis'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$projectsV2Item extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$projectsV2Item._();
+
+@override String get value => 'projects_v2_item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$projectsV2Item;
+
+@override int get hashCode => 'projects_v2_item'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$secretScanningAlertLocation extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$secretScanningAlertLocation._();
+
+@override String get value => 'secret_scanning_alert_location';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$secretScanningAlertLocation;
+
+@override int get hashCode => 'secret_scanning_alert_location'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteCompletedCheckSuiteAppEvents$Unknown extends WebhookCheckSuiteCompletedCheckSuiteAppEvents {const WebhookCheckSuiteCompletedCheckSuiteAppEvents$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookCheckSuiteCompletedCheckSuiteAppEvents && other.value == value;
+    other is WebhookCheckSuiteCompletedCheckSuiteAppEvents$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookCheckSuiteCompletedCheckSuiteAppEvents($value)';
 
  }
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.

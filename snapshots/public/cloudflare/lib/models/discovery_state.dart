@@ -6,25 +6,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// State of operati
 ///   * `saved` - Operation is saved into API Shield Endpoint Management
 ///   * `ignored` - Operation is marked as ignored
 /// 
-@immutable final class DiscoveryState {const DiscoveryState._(this.value);
+sealed class DiscoveryState {const DiscoveryState();
 
 factory DiscoveryState.fromJson(String json) { return switch (json) {
   'review' => review,
   'saved' => saved,
   'ignored' => ignored,
-  _ => DiscoveryState._(json),
+  _ => DiscoveryState$Unknown(json),
 }; }
 
-static const DiscoveryState review = DiscoveryState._('review');
+static const DiscoveryState review = DiscoveryState$review._();
 
-static const DiscoveryState saved = DiscoveryState._('saved');
+static const DiscoveryState saved = DiscoveryState$saved._();
 
-static const DiscoveryState ignored = DiscoveryState._('ignored');
+static const DiscoveryState ignored = DiscoveryState$ignored._();
 
 static const List<DiscoveryState> values = [review, saved, ignored];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DiscoveryState$Unknown; } 
+@override String toString() => 'DiscoveryState($value)';
+
+ }
+@immutable final class DiscoveryState$review extends DiscoveryState {const DiscoveryState$review._();
+
+@override String get value => 'review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscoveryState$review;
+
+@override int get hashCode => 'review'.hashCode;
+
+ }
+@immutable final class DiscoveryState$saved extends DiscoveryState {const DiscoveryState$saved._();
+
+@override String get value => 'saved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscoveryState$saved;
+
+@override int get hashCode => 'saved'.hashCode;
+
+ }
+@immutable final class DiscoveryState$ignored extends DiscoveryState {const DiscoveryState$ignored._();
+
+@override String get value => 'ignored';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscoveryState$ignored;
+
+@override int get hashCode => 'ignored'.hashCode;
+
+ }
+@immutable final class DiscoveryState$Unknown extends DiscoveryState {const DiscoveryState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DiscoveryState && other.value == value;
+    other is DiscoveryState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DiscoveryState($value)';
 
  }

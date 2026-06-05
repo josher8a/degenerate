@@ -2,28 +2,27 @@
 // Source: #/components/schemas/DisputePaymentMethodDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details_amazon_pay.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details_card.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details_klarna.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details_paypal.dart';/// Payment method type.
-@immutable final class DisputePaymentMethodDetailsType {const DisputePaymentMethodDetailsType._(this.value);
+sealed class DisputePaymentMethodDetailsType {const DisputePaymentMethodDetailsType();
 
 factory DisputePaymentMethodDetailsType.fromJson(String json) { return switch (json) {
   'amazon_pay' => amazonPay,
   'card' => card,
   'klarna' => klarna,
   'paypal' => paypal,
-  _ => DisputePaymentMethodDetailsType._(json),
+  _ => DisputePaymentMethodDetailsType$Unknown(json),
 }; }
 
-static const DisputePaymentMethodDetailsType amazonPay = DisputePaymentMethodDetailsType._('amazon_pay');
+static const DisputePaymentMethodDetailsType amazonPay = DisputePaymentMethodDetailsType$amazonPay._();
 
-static const DisputePaymentMethodDetailsType card = DisputePaymentMethodDetailsType._('card');
+static const DisputePaymentMethodDetailsType card = DisputePaymentMethodDetailsType$card._();
 
-static const DisputePaymentMethodDetailsType klarna = DisputePaymentMethodDetailsType._('klarna');
+static const DisputePaymentMethodDetailsType klarna = DisputePaymentMethodDetailsType$klarna._();
 
-static const DisputePaymentMethodDetailsType paypal = DisputePaymentMethodDetailsType._('paypal');
+static const DisputePaymentMethodDetailsType paypal = DisputePaymentMethodDetailsType$paypal._();
 
 static const List<DisputePaymentMethodDetailsType> values = [amazonPay, card, klarna, paypal];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DisputePaymentMethodDetailsType$Unknown; } 
+@override String toString() => 'DisputePaymentMethodDetailsType($value)';
+
+ }
+@immutable final class DisputePaymentMethodDetailsType$amazonPay extends DisputePaymentMethodDetailsType {const DisputePaymentMethodDetailsType$amazonPay._();
+
+@override String get value => 'amazon_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputePaymentMethodDetailsType$amazonPay;
+
+@override int get hashCode => 'amazon_pay'.hashCode;
+
+ }
+@immutable final class DisputePaymentMethodDetailsType$card extends DisputePaymentMethodDetailsType {const DisputePaymentMethodDetailsType$card._();
+
+@override String get value => 'card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputePaymentMethodDetailsType$card;
+
+@override int get hashCode => 'card'.hashCode;
+
+ }
+@immutable final class DisputePaymentMethodDetailsType$klarna extends DisputePaymentMethodDetailsType {const DisputePaymentMethodDetailsType$klarna._();
+
+@override String get value => 'klarna';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputePaymentMethodDetailsType$klarna;
+
+@override int get hashCode => 'klarna'.hashCode;
+
+ }
+@immutable final class DisputePaymentMethodDetailsType$paypal extends DisputePaymentMethodDetailsType {const DisputePaymentMethodDetailsType$paypal._();
+
+@override String get value => 'paypal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputePaymentMethodDetailsType$paypal;
+
+@override int get hashCode => 'paypal'.hashCode;
+
+ }
+@immutable final class DisputePaymentMethodDetailsType$Unknown extends DisputePaymentMethodDetailsType {const DisputePaymentMethodDetailsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DisputePaymentMethodDetailsType && other.value == value;
+    other is DisputePaymentMethodDetailsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DisputePaymentMethodDetailsType($value)';
 
  }
 /// 

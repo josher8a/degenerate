@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: ResponseFormat > Variant1 > Text > Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TextType {const TextType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class TextType {const TextType();
 
 factory TextType.fromJson(String json) { return switch (json) {
   'text' => text,
-  _ => TextType._(json),
+  _ => TextType$Unknown(json),
 }; }
 
-static const TextType text = TextType._('text');
+static const TextType text = TextType$text._();
 
 static const List<TextType> values = [text];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TextType$Unknown; } 
+@override String toString() => 'TextType($value)';
+
+ }
+@immutable final class TextType$text extends TextType {const TextType$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TextType$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class TextType$Unknown extends TextType {const TextType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TextType && other.value == value;
+    other is TextType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TextType($value)';
 
  }

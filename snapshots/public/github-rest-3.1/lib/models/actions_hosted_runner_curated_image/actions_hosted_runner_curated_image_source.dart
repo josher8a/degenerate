@@ -2,25 +2,24 @@
 // Source: #/components/schemas/ActionsHostedRunnerCuratedImage (inline: Source)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The image provider.
-@immutable final class ActionsHostedRunnerCuratedImageSource {const ActionsHostedRunnerCuratedImageSource._(this.value);
+sealed class ActionsHostedRunnerCuratedImageSource {const ActionsHostedRunnerCuratedImageSource();
 
 factory ActionsHostedRunnerCuratedImageSource.fromJson(String json) { return switch (json) {
   'github' => github,
   'partner' => partner,
   'custom' => custom,
-  _ => ActionsHostedRunnerCuratedImageSource._(json),
+  _ => ActionsHostedRunnerCuratedImageSource$Unknown(json),
 }; }
 
-static const ActionsHostedRunnerCuratedImageSource github = ActionsHostedRunnerCuratedImageSource._('github');
+static const ActionsHostedRunnerCuratedImageSource github = ActionsHostedRunnerCuratedImageSource$github._();
 
-static const ActionsHostedRunnerCuratedImageSource partner = ActionsHostedRunnerCuratedImageSource._('partner');
+static const ActionsHostedRunnerCuratedImageSource partner = ActionsHostedRunnerCuratedImageSource$partner._();
 
-static const ActionsHostedRunnerCuratedImageSource custom = ActionsHostedRunnerCuratedImageSource._('custom');
+static const ActionsHostedRunnerCuratedImageSource custom = ActionsHostedRunnerCuratedImageSource$custom._();
 
 static const List<ActionsHostedRunnerCuratedImageSource> values = [github, partner, custom];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ActionsHostedRunnerCuratedImageSource$Unknown; } 
+@override String toString() => 'ActionsHostedRunnerCuratedImageSource($value)';
+
+ }
+@immutable final class ActionsHostedRunnerCuratedImageSource$github extends ActionsHostedRunnerCuratedImageSource {const ActionsHostedRunnerCuratedImageSource$github._();
+
+@override String get value => 'github';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsHostedRunnerCuratedImageSource$github;
+
+@override int get hashCode => 'github'.hashCode;
+
+ }
+@immutable final class ActionsHostedRunnerCuratedImageSource$partner extends ActionsHostedRunnerCuratedImageSource {const ActionsHostedRunnerCuratedImageSource$partner._();
+
+@override String get value => 'partner';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsHostedRunnerCuratedImageSource$partner;
+
+@override int get hashCode => 'partner'.hashCode;
+
+ }
+@immutable final class ActionsHostedRunnerCuratedImageSource$custom extends ActionsHostedRunnerCuratedImageSource {const ActionsHostedRunnerCuratedImageSource$custom._();
+
+@override String get value => 'custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsHostedRunnerCuratedImageSource$custom;
+
+@override int get hashCode => 'custom'.hashCode;
+
+ }
+@immutable final class ActionsHostedRunnerCuratedImageSource$Unknown extends ActionsHostedRunnerCuratedImageSource {const ActionsHostedRunnerCuratedImageSource$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ActionsHostedRunnerCuratedImageSource && other.value == value;
+    other is ActionsHostedRunnerCuratedImageSource$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ActionsHostedRunnerCuratedImageSource($value)';
 
  }

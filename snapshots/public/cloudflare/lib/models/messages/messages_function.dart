@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > Function)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FunctionRole {const FunctionRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class FunctionRole {const FunctionRole();
 
 factory FunctionRole.fromJson(String json) { return switch (json) {
   'function' => function,
-  _ => FunctionRole._(json),
+  _ => FunctionRole$Unknown(json),
 }; }
 
-static const FunctionRole function = FunctionRole._('function');
+static const FunctionRole function = FunctionRole$function._();
 
 static const List<FunctionRole> values = [function];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FunctionRole$Unknown; } 
+@override String toString() => 'FunctionRole($value)';
+
+ }
+@immutable final class FunctionRole$function extends FunctionRole {const FunctionRole$function._();
+
+@override String get value => 'function';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionRole$function;
+
+@override int get hashCode => 'function'.hashCode;
+
+ }
+@immutable final class FunctionRole$Unknown extends FunctionRole {const FunctionRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FunctionRole && other.value == value;
+    other is FunctionRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FunctionRole($value)';
 
  }
 @immutable final class MessagesFunction {const MessagesFunction({required this.content, required this.name, required this.role, });

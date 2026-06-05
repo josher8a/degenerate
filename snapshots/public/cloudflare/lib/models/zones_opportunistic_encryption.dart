@@ -4,19 +4,18 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_opportunistic_encryption_value.dart';/// Opportunistic Encryption allows browsers to access HTTP URIs over an encrypted TLS channel.
 /// It's not a substitute for HTTPS, but provides additional security for otherwise vulnerable requests.
 /// 
-@immutable final class ZonesOpportunisticEncryptionId {const ZonesOpportunisticEncryptionId._(this.value);
+sealed class ZonesOpportunisticEncryptionId {const ZonesOpportunisticEncryptionId();
 
 factory ZonesOpportunisticEncryptionId.fromJson(String json) { return switch (json) {
   'opportunistic_encryption' => opportunisticEncryption,
-  _ => ZonesOpportunisticEncryptionId._(json),
+  _ => ZonesOpportunisticEncryptionId$Unknown(json),
 }; }
 
-static const ZonesOpportunisticEncryptionId opportunisticEncryption = ZonesOpportunisticEncryptionId._('opportunistic_encryption');
+static const ZonesOpportunisticEncryptionId opportunisticEncryption = ZonesOpportunisticEncryptionId$opportunisticEncryption._();
 
 static const List<ZonesOpportunisticEncryptionId> values = [opportunisticEncryption];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -24,13 +23,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesOpportunisticEncryptionId$Unknown; } 
+@override String toString() => 'ZonesOpportunisticEncryptionId($value)';
+
+ }
+@immutable final class ZonesOpportunisticEncryptionId$opportunisticEncryption extends ZonesOpportunisticEncryptionId {const ZonesOpportunisticEncryptionId$opportunisticEncryption._();
+
+@override String get value => 'opportunistic_encryption';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesOpportunisticEncryptionId$opportunisticEncryption;
+
+@override int get hashCode => 'opportunistic_encryption'.hashCode;
+
+ }
+@immutable final class ZonesOpportunisticEncryptionId$Unknown extends ZonesOpportunisticEncryptionId {const ZonesOpportunisticEncryptionId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesOpportunisticEncryptionId && other.value == value;
+    other is ZonesOpportunisticEncryptionId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesOpportunisticEncryptionId($value)';
 
  }
 @immutable final class ZonesOpportunisticEncryption {const ZonesOpportunisticEncryption({this.id, this.value, });

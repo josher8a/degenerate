@@ -2,22 +2,21 @@
 // Source: #/components/schemas/BillingBillResourceInvoicingParentsInvoiceParent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_quote_parent.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_subscription_parent.dart';/// The type of parent that generated this invoice
-@immutable final class BillingBillResourceInvoicingParentsInvoiceParentType {const BillingBillResourceInvoicingParentsInvoiceParentType._(this.value);
+sealed class BillingBillResourceInvoicingParentsInvoiceParentType {const BillingBillResourceInvoicingParentsInvoiceParentType();
 
 factory BillingBillResourceInvoicingParentsInvoiceParentType.fromJson(String json) { return switch (json) {
   'quote_details' => quoteDetails,
   'subscription_details' => subscriptionDetails,
-  _ => BillingBillResourceInvoicingParentsInvoiceParentType._(json),
+  _ => BillingBillResourceInvoicingParentsInvoiceParentType$Unknown(json),
 }; }
 
-static const BillingBillResourceInvoicingParentsInvoiceParentType quoteDetails = BillingBillResourceInvoicingParentsInvoiceParentType._('quote_details');
+static const BillingBillResourceInvoicingParentsInvoiceParentType quoteDetails = BillingBillResourceInvoicingParentsInvoiceParentType$quoteDetails._();
 
-static const BillingBillResourceInvoicingParentsInvoiceParentType subscriptionDetails = BillingBillResourceInvoicingParentsInvoiceParentType._('subscription_details');
+static const BillingBillResourceInvoicingParentsInvoiceParentType subscriptionDetails = BillingBillResourceInvoicingParentsInvoiceParentType$subscriptionDetails._();
 
 static const List<BillingBillResourceInvoicingParentsInvoiceParentType> values = [quoteDetails, subscriptionDetails];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingBillResourceInvoicingParentsInvoiceParentType$Unknown; } 
+@override String toString() => 'BillingBillResourceInvoicingParentsInvoiceParentType($value)';
+
+ }
+@immutable final class BillingBillResourceInvoicingParentsInvoiceParentType$quoteDetails extends BillingBillResourceInvoicingParentsInvoiceParentType {const BillingBillResourceInvoicingParentsInvoiceParentType$quoteDetails._();
+
+@override String get value => 'quote_details';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingParentsInvoiceParentType$quoteDetails;
+
+@override int get hashCode => 'quote_details'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingParentsInvoiceParentType$subscriptionDetails extends BillingBillResourceInvoicingParentsInvoiceParentType {const BillingBillResourceInvoicingParentsInvoiceParentType$subscriptionDetails._();
+
+@override String get value => 'subscription_details';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingParentsInvoiceParentType$subscriptionDetails;
+
+@override int get hashCode => 'subscription_details'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingParentsInvoiceParentType$Unknown extends BillingBillResourceInvoicingParentsInvoiceParentType {const BillingBillResourceInvoicingParentsInvoiceParentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingBillResourceInvoicingParentsInvoiceParentType && other.value == value;
+    other is BillingBillResourceInvoicingParentsInvoiceParentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingBillResourceInvoicingParentsInvoiceParentType($value)';
 
  }
 /// 

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PageShieldCookie
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_id.dart';@immutable final class SameSiteAttribute {const SameSiteAttribute._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/page_shield_id.dart';sealed class SameSiteAttribute {const SameSiteAttribute();
 
 factory SameSiteAttribute.fromJson(String json) { return switch (json) {
   'lax' => lax,
   'strict' => strict,
   'none' => none,
-  _ => SameSiteAttribute._(json),
+  _ => SameSiteAttribute$Unknown(json),
 }; }
 
-static const SameSiteAttribute lax = SameSiteAttribute._('lax');
+static const SameSiteAttribute lax = SameSiteAttribute$lax._();
 
-static const SameSiteAttribute strict = SameSiteAttribute._('strict');
+static const SameSiteAttribute strict = SameSiteAttribute$strict._();
 
-static const SameSiteAttribute none = SameSiteAttribute._('none');
+static const SameSiteAttribute none = SameSiteAttribute$none._();
 
 static const List<SameSiteAttribute> values = [lax, strict, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,31 +28,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SameSiteAttribute && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SameSiteAttribute$Unknown; } 
 @override String toString() => 'SameSiteAttribute($value)';
 
  }
-@immutable final class PageShieldCookieType {const PageShieldCookieType._(this.value);
+@immutable final class SameSiteAttribute$lax extends SameSiteAttribute {const SameSiteAttribute$lax._();
+
+@override String get value => 'lax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SameSiteAttribute$lax;
+
+@override int get hashCode => 'lax'.hashCode;
+
+ }
+@immutable final class SameSiteAttribute$strict extends SameSiteAttribute {const SameSiteAttribute$strict._();
+
+@override String get value => 'strict';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SameSiteAttribute$strict;
+
+@override int get hashCode => 'strict'.hashCode;
+
+ }
+@immutable final class SameSiteAttribute$none extends SameSiteAttribute {const SameSiteAttribute$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SameSiteAttribute$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class SameSiteAttribute$Unknown extends SameSiteAttribute {const SameSiteAttribute$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SameSiteAttribute$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class PageShieldCookieType {const PageShieldCookieType();
 
 factory PageShieldCookieType.fromJson(String json) { return switch (json) {
   'first_party' => firstParty,
   'unknown' => unknown,
-  _ => PageShieldCookieType._(json),
+  _ => PageShieldCookieType$Unknown(json),
 }; }
 
-static const PageShieldCookieType firstParty = PageShieldCookieType._('first_party');
+static const PageShieldCookieType firstParty = PageShieldCookieType$firstParty._();
 
-static const PageShieldCookieType unknown = PageShieldCookieType._('unknown');
+static const PageShieldCookieType unknown = PageShieldCookieType$unknown._();
 
 static const List<PageShieldCookieType> values = [firstParty, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -62,13 +92,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PageShieldCookieType$Unknown; } 
+@override String toString() => 'PageShieldCookieType($value)';
+
+ }
+@immutable final class PageShieldCookieType$firstParty extends PageShieldCookieType {const PageShieldCookieType$firstParty._();
+
+@override String get value => 'first_party';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageShieldCookieType$firstParty;
+
+@override int get hashCode => 'first_party'.hashCode;
+
+ }
+@immutable final class PageShieldCookieType$unknown extends PageShieldCookieType {const PageShieldCookieType$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageShieldCookieType$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class PageShieldCookieType$Unknown extends PageShieldCookieType {const PageShieldCookieType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PageShieldCookieType && other.value == value;
+    other is PageShieldCookieType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PageShieldCookieType($value)';
 
  }
 @immutable final class PageShieldCookie {const PageShieldCookie({required this.firstSeenAt, required this.host, required this.id, required this.lastSeenAt, required this.name, required this.type, this.domainAttribute, this.expiresAttribute, this.httpOnlyAttribute, this.maxAgeAttribute, this.pageUrls, this.pathAttribute, this.sameSiteAttribute, this.secureAttribute, });

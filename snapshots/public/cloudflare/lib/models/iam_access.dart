@@ -2,22 +2,21 @@
 // Source: #/components/schemas/IamAccess
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allow or deny operations against the resources.
-@immutable final class IamAccess {const IamAccess._(this.value);
+sealed class IamAccess {const IamAccess();
 
 factory IamAccess.fromJson(String json) { return switch (json) {
   'allow' => allow,
   'deny' => deny,
-  _ => IamAccess._(json),
+  _ => IamAccess$Unknown(json),
 }; }
 
-static const IamAccess allow = IamAccess._('allow');
+static const IamAccess allow = IamAccess$allow._();
 
-static const IamAccess deny = IamAccess._('deny');
+static const IamAccess deny = IamAccess$deny._();
 
 static const List<IamAccess> values = [allow, deny];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IamAccess$Unknown; } 
+@override String toString() => 'IamAccess($value)';
+
+ }
+@immutable final class IamAccess$allow extends IamAccess {const IamAccess$allow._();
+
+@override String get value => 'allow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IamAccess$allow;
+
+@override int get hashCode => 'allow'.hashCode;
+
+ }
+@immutable final class IamAccess$deny extends IamAccess {const IamAccess$deny._();
+
+@override String get value => 'deny';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IamAccess$deny;
+
+@override int get hashCode => 'deny'.hashCode;
+
+ }
+@immutable final class IamAccess$Unknown extends IamAccess {const IamAccess$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IamAccess && other.value == value;
+    other is IamAccess$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IamAccess($value)';
 
  }

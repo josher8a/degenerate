@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AutoragConfigAiSearchRequest (inline: Filters > Variant2)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_request/variant2_filters.dart';@immutable final class FiltersVariant2Type {const FiltersVariant2Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/autorag_config_ai_search_request/variant2_filters.dart';sealed class FiltersVariant2Type {const FiltersVariant2Type();
 
 factory FiltersVariant2Type.fromJson(String json) { return switch (json) {
   'and' => and,
   'or' => or,
-  _ => FiltersVariant2Type._(json),
+  _ => FiltersVariant2Type$Unknown(json),
 }; }
 
-static const FiltersVariant2Type and = FiltersVariant2Type._('and');
+static const FiltersVariant2Type and = FiltersVariant2Type$and._();
 
-static const FiltersVariant2Type or = FiltersVariant2Type._('or');
+static const FiltersVariant2Type or = FiltersVariant2Type$or._();
 
 static const List<FiltersVariant2Type> values = [and, or];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FiltersVariant2Type$Unknown; } 
+@override String toString() => 'FiltersVariant2Type($value)';
+
+ }
+@immutable final class FiltersVariant2Type$and extends FiltersVariant2Type {const FiltersVariant2Type$and._();
+
+@override String get value => 'and';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersVariant2Type$and;
+
+@override int get hashCode => 'and'.hashCode;
+
+ }
+@immutable final class FiltersVariant2Type$or extends FiltersVariant2Type {const FiltersVariant2Type$or._();
+
+@override String get value => 'or';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersVariant2Type$or;
+
+@override int get hashCode => 'or'.hashCode;
+
+ }
+@immutable final class FiltersVariant2Type$Unknown extends FiltersVariant2Type {const FiltersVariant2Type$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FiltersVariant2Type && other.value == value;
+    other is FiltersVariant2Type$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FiltersVariant2Type($value)';
 
  }
 @immutable final class FiltersVariant2 {const FiltersVariant2({required this.filters, required this.type, });

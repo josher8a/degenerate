@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Event
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/notification_event_data.dart';import 'package:pub_stripe_spec3/models/notification_event_request.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class EventObject {const EventObject._(this.value);
+sealed class EventObject {const EventObject();
 
 factory EventObject.fromJson(String json) { return switch (json) {
   'event' => event,
-  _ => EventObject._(json),
+  _ => EventObject$Unknown(json),
 }; }
 
-static const EventObject event = EventObject._('event');
+static const EventObject event = EventObject$event._();
 
 static const List<EventObject> values = [event];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EventObject$Unknown; } 
+@override String toString() => 'EventObject($value)';
+
+ }
+@immutable final class EventObject$event extends EventObject {const EventObject$event._();
+
+@override String get value => 'event';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EventObject$event;
+
+@override int get hashCode => 'event'.hashCode;
+
+ }
+@immutable final class EventObject$Unknown extends EventObject {const EventObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EventObject && other.value == value;
+    other is EventObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EventObject($value)';
 
  }
 /// Snapshot events allow you to track and react to activity in your Stripe integration. When

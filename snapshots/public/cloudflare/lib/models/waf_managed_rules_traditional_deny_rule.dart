@@ -9,7 +9,7 @@ dynamic toJson() => value;
 
 }
 /// Defines the action that the current WAF rule will perform when triggered. Applies to traditional (deny) WAF rules.
-@immutable final class WafManagedRulesModeDenyTraditional {const WafManagedRulesModeDenyTraditional._(this.value);
+sealed class WafManagedRulesModeDenyTraditional {const WafManagedRulesModeDenyTraditional();
 
 factory WafManagedRulesModeDenyTraditional.fromJson(String json) { return switch (json) {
   'default' => $default,
@@ -17,23 +17,22 @@ factory WafManagedRulesModeDenyTraditional.fromJson(String json) { return switch
   'simulate' => simulate,
   'block' => block,
   'challenge' => challenge,
-  _ => WafManagedRulesModeDenyTraditional._(json),
+  _ => WafManagedRulesModeDenyTraditional$Unknown(json),
 }; }
 
-static const WafManagedRulesModeDenyTraditional $default = WafManagedRulesModeDenyTraditional._('default');
+static const WafManagedRulesModeDenyTraditional $default = WafManagedRulesModeDenyTraditional$$default._();
 
-static const WafManagedRulesModeDenyTraditional disable = WafManagedRulesModeDenyTraditional._('disable');
+static const WafManagedRulesModeDenyTraditional disable = WafManagedRulesModeDenyTraditional$disable._();
 
-static const WafManagedRulesModeDenyTraditional simulate = WafManagedRulesModeDenyTraditional._('simulate');
+static const WafManagedRulesModeDenyTraditional simulate = WafManagedRulesModeDenyTraditional$simulate._();
 
-static const WafManagedRulesModeDenyTraditional block = WafManagedRulesModeDenyTraditional._('block');
+static const WafManagedRulesModeDenyTraditional block = WafManagedRulesModeDenyTraditional$block._();
 
-static const WafManagedRulesModeDenyTraditional challenge = WafManagedRulesModeDenyTraditional._('challenge');
+static const WafManagedRulesModeDenyTraditional challenge = WafManagedRulesModeDenyTraditional$challenge._();
 
 static const List<WafManagedRulesModeDenyTraditional> values = [$default, disable, simulate, block, challenge];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -45,13 +44,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WafManagedRulesModeDenyTraditional$Unknown; } 
+@override String toString() => 'WafManagedRulesModeDenyTraditional($value)';
+
+ }
+@immutable final class WafManagedRulesModeDenyTraditional$$default extends WafManagedRulesModeDenyTraditional {const WafManagedRulesModeDenyTraditional$$default._();
+
+@override String get value => 'default';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WafManagedRulesModeDenyTraditional$$default;
+
+@override int get hashCode => 'default'.hashCode;
+
+ }
+@immutable final class WafManagedRulesModeDenyTraditional$disable extends WafManagedRulesModeDenyTraditional {const WafManagedRulesModeDenyTraditional$disable._();
+
+@override String get value => 'disable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WafManagedRulesModeDenyTraditional$disable;
+
+@override int get hashCode => 'disable'.hashCode;
+
+ }
+@immutable final class WafManagedRulesModeDenyTraditional$simulate extends WafManagedRulesModeDenyTraditional {const WafManagedRulesModeDenyTraditional$simulate._();
+
+@override String get value => 'simulate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WafManagedRulesModeDenyTraditional$simulate;
+
+@override int get hashCode => 'simulate'.hashCode;
+
+ }
+@immutable final class WafManagedRulesModeDenyTraditional$block extends WafManagedRulesModeDenyTraditional {const WafManagedRulesModeDenyTraditional$block._();
+
+@override String get value => 'block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WafManagedRulesModeDenyTraditional$block;
+
+@override int get hashCode => 'block'.hashCode;
+
+ }
+@immutable final class WafManagedRulesModeDenyTraditional$challenge extends WafManagedRulesModeDenyTraditional {const WafManagedRulesModeDenyTraditional$challenge._();
+
+@override String get value => 'challenge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WafManagedRulesModeDenyTraditional$challenge;
+
+@override int get hashCode => 'challenge'.hashCode;
+
+ }
+@immutable final class WafManagedRulesModeDenyTraditional$Unknown extends WafManagedRulesModeDenyTraditional {const WafManagedRulesModeDenyTraditional$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WafManagedRulesModeDenyTraditional && other.value == value;
+    other is WafManagedRulesModeDenyTraditional$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WafManagedRulesModeDenyTraditional($value)';
 
  }
 /// When triggered, traditional WAF rules cause the firewall to immediately act upon the request based on the configuration of the rule. A 'deny' rule will immediately respond to the request based on the configured rule action/mode (for example, 'block') and no other rules will be processed.

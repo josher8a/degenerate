@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DestinationCreateResponse400 (inline: Errors)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationCreateResponse400ErrorsMessage {const DestinationCreateResponse400ErrorsMessage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DestinationCreateResponse400ErrorsMessage {const DestinationCreateResponse400ErrorsMessage();
 
 factory DestinationCreateResponse400ErrorsMessage.fromJson(String json) { return switch (json) {
   'Bad Request' => badRequest,
-  _ => DestinationCreateResponse400ErrorsMessage._(json),
+  _ => DestinationCreateResponse400ErrorsMessage$Unknown(json),
 }; }
 
-static const DestinationCreateResponse400ErrorsMessage badRequest = DestinationCreateResponse400ErrorsMessage._('Bad Request');
+static const DestinationCreateResponse400ErrorsMessage badRequest = DestinationCreateResponse400ErrorsMessage$badRequest._();
 
 static const List<DestinationCreateResponse400ErrorsMessage> values = [badRequest];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DestinationCreateResponse400ErrorsMessage$Unknown; } 
+@override String toString() => 'DestinationCreateResponse400ErrorsMessage($value)';
+
+ }
+@immutable final class DestinationCreateResponse400ErrorsMessage$badRequest extends DestinationCreateResponse400ErrorsMessage {const DestinationCreateResponse400ErrorsMessage$badRequest._();
+
+@override String get value => 'Bad Request';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DestinationCreateResponse400ErrorsMessage$badRequest;
+
+@override int get hashCode => 'Bad Request'.hashCode;
+
+ }
+@immutable final class DestinationCreateResponse400ErrorsMessage$Unknown extends DestinationCreateResponse400ErrorsMessage {const DestinationCreateResponse400ErrorsMessage$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DestinationCreateResponse400ErrorsMessage && other.value == value;
+    other is DestinationCreateResponse400ErrorsMessage$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DestinationCreateResponse400ErrorsMessage($value)';
 
  }
 @immutable final class DestinationCreateResponse400Errors {const DestinationCreateResponse400Errors({required this.message, this.detail, });

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DependabotListAlertsForOrgHas
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DependabotListAlertsForOrgHasVariant2 {const DependabotListAlertsForOrgHasVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DependabotListAlertsForOrgHasVariant2 {const DependabotListAlertsForOrgHasVariant2();
 
 factory DependabotListAlertsForOrgHasVariant2.fromJson(String json) { return switch (json) {
   'patch' => patch,
   'deployment' => deployment,
-  _ => DependabotListAlertsForOrgHasVariant2._(json),
+  _ => DependabotListAlertsForOrgHasVariant2$Unknown(json),
 }; }
 
-static const DependabotListAlertsForOrgHasVariant2 patch = DependabotListAlertsForOrgHasVariant2._('patch');
+static const DependabotListAlertsForOrgHasVariant2 patch = DependabotListAlertsForOrgHasVariant2$patch._();
 
-static const DependabotListAlertsForOrgHasVariant2 deployment = DependabotListAlertsForOrgHasVariant2._('deployment');
+static const DependabotListAlertsForOrgHasVariant2 deployment = DependabotListAlertsForOrgHasVariant2$deployment._();
 
 static const List<DependabotListAlertsForOrgHasVariant2> values = [patch, deployment];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DependabotListAlertsForOrgHasVariant2$Unknown; } 
+@override String toString() => 'DependabotListAlertsForOrgHasVariant2($value)';
+
+ }
+@immutable final class DependabotListAlertsForOrgHasVariant2$patch extends DependabotListAlertsForOrgHasVariant2 {const DependabotListAlertsForOrgHasVariant2$patch._();
+
+@override String get value => 'patch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotListAlertsForOrgHasVariant2$patch;
+
+@override int get hashCode => 'patch'.hashCode;
+
+ }
+@immutable final class DependabotListAlertsForOrgHasVariant2$deployment extends DependabotListAlertsForOrgHasVariant2 {const DependabotListAlertsForOrgHasVariant2$deployment._();
+
+@override String get value => 'deployment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotListAlertsForOrgHasVariant2$deployment;
+
+@override int get hashCode => 'deployment'.hashCode;
+
+ }
+@immutable final class DependabotListAlertsForOrgHasVariant2$Unknown extends DependabotListAlertsForOrgHasVariant2 {const DependabotListAlertsForOrgHasVariant2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DependabotListAlertsForOrgHasVariant2 && other.value == value;
+    other is DependabotListAlertsForOrgHasVariant2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DependabotListAlertsForOrgHasVariant2($value)';
 
  }
 /// Variants:

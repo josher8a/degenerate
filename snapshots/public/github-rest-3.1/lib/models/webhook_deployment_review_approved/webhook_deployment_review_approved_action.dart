@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookDeploymentReviewApproved (inline: Action)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDeploymentReviewApprovedAction {const WebhookDeploymentReviewApprovedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class WebhookDeploymentReviewApprovedAction {const WebhookDeploymentReviewApprovedAction();
 
 factory WebhookDeploymentReviewApprovedAction.fromJson(String json) { return switch (json) {
   'approved' => approved,
-  _ => WebhookDeploymentReviewApprovedAction._(json),
+  _ => WebhookDeploymentReviewApprovedAction$Unknown(json),
 }; }
 
-static const WebhookDeploymentReviewApprovedAction approved = WebhookDeploymentReviewApprovedAction._('approved');
+static const WebhookDeploymentReviewApprovedAction approved = WebhookDeploymentReviewApprovedAction$approved._();
 
 static const List<WebhookDeploymentReviewApprovedAction> values = [approved];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookDeploymentReviewApprovedAction$Unknown; } 
+@override String toString() => 'WebhookDeploymentReviewApprovedAction($value)';
+
+ }
+@immutable final class WebhookDeploymentReviewApprovedAction$approved extends WebhookDeploymentReviewApprovedAction {const WebhookDeploymentReviewApprovedAction$approved._();
+
+@override String get value => 'approved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookDeploymentReviewApprovedAction$approved;
+
+@override int get hashCode => 'approved'.hashCode;
+
+ }
+@immutable final class WebhookDeploymentReviewApprovedAction$Unknown extends WebhookDeploymentReviewApprovedAction {const WebhookDeploymentReviewApprovedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookDeploymentReviewApprovedAction && other.value == value;
+    other is WebhookDeploymentReviewApprovedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookDeploymentReviewApprovedAction($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/AiSearchListInstancesOrderBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Order By Column Name
-@immutable final class AiSearchListInstancesOrderBy {const AiSearchListInstancesOrderBy._(this.value);
+sealed class AiSearchListInstancesOrderBy {const AiSearchListInstancesOrderBy();
 
 factory AiSearchListInstancesOrderBy.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,
-  _ => AiSearchListInstancesOrderBy._(json),
+  _ => AiSearchListInstancesOrderBy$Unknown(json),
 }; }
 
-static const AiSearchListInstancesOrderBy createdAt = AiSearchListInstancesOrderBy._('created_at');
+static const AiSearchListInstancesOrderBy createdAt = AiSearchListInstancesOrderBy$createdAt._();
 
 static const List<AiSearchListInstancesOrderBy> values = [createdAt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AiSearchListInstancesOrderBy$Unknown; } 
+@override String toString() => 'AiSearchListInstancesOrderBy($value)';
+
+ }
+@immutable final class AiSearchListInstancesOrderBy$createdAt extends AiSearchListInstancesOrderBy {const AiSearchListInstancesOrderBy$createdAt._();
+
+@override String get value => 'created_at';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AiSearchListInstancesOrderBy$createdAt;
+
+@override int get hashCode => 'created_at'.hashCode;
+
+ }
+@immutable final class AiSearchListInstancesOrderBy$Unknown extends AiSearchListInstancesOrderBy {const AiSearchListInstancesOrderBy$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AiSearchListInstancesOrderBy && other.value == value;
+    other is AiSearchListInstancesOrderBy$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AiSearchListInstancesOrderBy($value)';
 
  }

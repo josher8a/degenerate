@@ -6,22 +6,21 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines which
 /// Default is `client_only`. Stripe Checkout client will automatically update the shipping details. If set to `server_only`, only your server is allowed to update the shipping details.
 /// 
 /// When set to `server_only`, you must add the onShippingDetailsChange event handler when initializing the Stripe Checkout client and manually update the shipping details from your server using the Stripe API.
-@immutable final class PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails {const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails._(this.value);
+sealed class PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails {const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails();
 
 factory PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails.fromJson(String json) { return switch (json) {
   'client_only' => clientOnly,
   'server_only' => serverOnly,
-  _ => PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails._(json),
+  _ => PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$Unknown(json),
 }; }
 
-static const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails clientOnly = PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails._('client_only');
+static const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails clientOnly = PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$clientOnly._();
 
-static const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails serverOnly = PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails._('server_only');
+static const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails serverOnly = PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$serverOnly._();
 
 static const List<PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails> values = [clientOnly, serverOnly];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$Unknown; } 
+@override String toString() => 'PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails($value)';
+
+ }
+@immutable final class PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$clientOnly extends PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails {const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$clientOnly._();
+
+@override String get value => 'client_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$clientOnly;
+
+@override int get hashCode => 'client_only'.hashCode;
+
+ }
+@immutable final class PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$serverOnly extends PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails {const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$serverOnly._();
+
+@override String get value => 'server_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$serverOnly;
+
+@override int get hashCode => 'server_only'.hashCode;
+
+ }
+@immutable final class PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$Unknown extends PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails {const PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails && other.value == value;
+    other is PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentPagesCheckoutSessionPermissionsUpdateShippingDetails($value)';
 
  }
 /// 

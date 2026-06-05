@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UpdateConferenceRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/update_conference_request/announce_method.dart';@immutable final class ConferenceEnumUpdateStatus {const ConferenceEnumUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/update_conference_request/announce_method.dart';sealed class ConferenceEnumUpdateStatus {const ConferenceEnumUpdateStatus();
 
 factory ConferenceEnumUpdateStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
-  _ => ConferenceEnumUpdateStatus._(json),
+  _ => ConferenceEnumUpdateStatus$Unknown(json),
 }; }
 
-static const ConferenceEnumUpdateStatus completed = ConferenceEnumUpdateStatus._('completed');
+static const ConferenceEnumUpdateStatus completed = ConferenceEnumUpdateStatus$completed._();
 
 static const List<ConferenceEnumUpdateStatus> values = [completed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConferenceEnumUpdateStatus$Unknown; } 
+@override String toString() => 'ConferenceEnumUpdateStatus($value)';
+
+ }
+@immutable final class ConferenceEnumUpdateStatus$completed extends ConferenceEnumUpdateStatus {const ConferenceEnumUpdateStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConferenceEnumUpdateStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class ConferenceEnumUpdateStatus$Unknown extends ConferenceEnumUpdateStatus {const ConferenceEnumUpdateStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConferenceEnumUpdateStatus && other.value == value;
+    other is ConferenceEnumUpdateStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConferenceEnumUpdateStatus($value)';
 
  }
 @immutable final class UpdateConferenceRequest {const UpdateConferenceRequest({this.status, this.announceUrl, this.announceMethod, });

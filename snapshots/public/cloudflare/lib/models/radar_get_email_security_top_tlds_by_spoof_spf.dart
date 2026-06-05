@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailSecurityTopTldsBySpoofSpf
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTopTldsBySpoofSpf {const RadarGetEmailSecurityTopTldsBySpoofSpf._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailSecurityTopTldsBySpoofSpf {const RadarGetEmailSecurityTopTldsBySpoofSpf();
 
 factory RadarGetEmailSecurityTopTldsBySpoofSpf.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailSecurityTopTldsBySpoofSpf._(json),
+  _ => RadarGetEmailSecurityTopTldsBySpoofSpf$Unknown(json),
 }; }
 
-static const RadarGetEmailSecurityTopTldsBySpoofSpf pass = RadarGetEmailSecurityTopTldsBySpoofSpf._('PASS');
+static const RadarGetEmailSecurityTopTldsBySpoofSpf pass = RadarGetEmailSecurityTopTldsBySpoofSpf$pass._();
 
-static const RadarGetEmailSecurityTopTldsBySpoofSpf none = RadarGetEmailSecurityTopTldsBySpoofSpf._('NONE');
+static const RadarGetEmailSecurityTopTldsBySpoofSpf none = RadarGetEmailSecurityTopTldsBySpoofSpf$none._();
 
-static const RadarGetEmailSecurityTopTldsBySpoofSpf fail = RadarGetEmailSecurityTopTldsBySpoofSpf._('FAIL');
+static const RadarGetEmailSecurityTopTldsBySpoofSpf fail = RadarGetEmailSecurityTopTldsBySpoofSpf$fail._();
 
 static const List<RadarGetEmailSecurityTopTldsBySpoofSpf> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecurityTopTldsBySpoofSpf$Unknown; } 
+@override String toString() => 'RadarGetEmailSecurityTopTldsBySpoofSpf($value)';
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsBySpoofSpf$pass extends RadarGetEmailSecurityTopTldsBySpoofSpf {const RadarGetEmailSecurityTopTldsBySpoofSpf$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTopTldsBySpoofSpf$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsBySpoofSpf$none extends RadarGetEmailSecurityTopTldsBySpoofSpf {const RadarGetEmailSecurityTopTldsBySpoofSpf$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTopTldsBySpoofSpf$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsBySpoofSpf$fail extends RadarGetEmailSecurityTopTldsBySpoofSpf {const RadarGetEmailSecurityTopTldsBySpoofSpf$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTopTldsBySpoofSpf$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsBySpoofSpf$Unknown extends RadarGetEmailSecurityTopTldsBySpoofSpf {const RadarGetEmailSecurityTopTldsBySpoofSpf$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecurityTopTldsBySpoofSpf && other.value == value;
+    other is RadarGetEmailSecurityTopTldsBySpoofSpf$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecurityTopTldsBySpoofSpf($value)';
 
  }

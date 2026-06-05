@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CompoundFilter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/compound_filter/compound_filter_filters.dart';/// Type of operation: `and` or `or`.
-@immutable final class CompoundFilterType {const CompoundFilterType._(this.value);
+sealed class CompoundFilterType {const CompoundFilterType();
 
 factory CompoundFilterType.fromJson(String json) { return switch (json) {
   'and' => and,
   'or' => or,
-  _ => CompoundFilterType._(json),
+  _ => CompoundFilterType$Unknown(json),
 }; }
 
-static const CompoundFilterType and = CompoundFilterType._('and');
+static const CompoundFilterType and = CompoundFilterType$and._();
 
-static const CompoundFilterType or = CompoundFilterType._('or');
+static const CompoundFilterType or = CompoundFilterType$or._();
 
 static const List<CompoundFilterType> values = [and, or];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CompoundFilterType$Unknown; } 
+@override String toString() => 'CompoundFilterType($value)';
+
+ }
+@immutable final class CompoundFilterType$and extends CompoundFilterType {const CompoundFilterType$and._();
+
+@override String get value => 'and';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CompoundFilterType$and;
+
+@override int get hashCode => 'and'.hashCode;
+
+ }
+@immutable final class CompoundFilterType$or extends CompoundFilterType {const CompoundFilterType$or._();
+
+@override String get value => 'or';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CompoundFilterType$or;
+
+@override int get hashCode => 'or'.hashCode;
+
+ }
+@immutable final class CompoundFilterType$Unknown extends CompoundFilterType {const CompoundFilterType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CompoundFilterType && other.value == value;
+    other is CompoundFilterType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CompoundFilterType($value)';
 
  }
 /// Combine multiple filters using `and` or `or`.

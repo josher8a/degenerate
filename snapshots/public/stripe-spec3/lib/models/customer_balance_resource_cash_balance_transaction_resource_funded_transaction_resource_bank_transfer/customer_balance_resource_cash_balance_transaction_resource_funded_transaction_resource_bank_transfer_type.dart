@@ -2,7 +2,7 @@
 // Source: #/components/schemas/CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransfer (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The funding method type used to fund the customer balance. Permitted values include: `eu_bank_transfer`, `gb_bank_transfer`, `jp_bank_transfer`, `mx_bank_transfer`, or `us_bank_transfer`.
-@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType._(this.value);
+sealed class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType();
 
 factory CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType.fromJson(String json) { return switch (json) {
   'eu_bank_transfer' => euBankTransfer,
@@ -10,23 +10,22 @@ factory CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionRe
   'jp_bank_transfer' => jpBankTransfer,
   'mx_bank_transfer' => mxBankTransfer,
   'us_bank_transfer' => usBankTransfer,
-  _ => CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType._(json),
+  _ => CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$Unknown(json),
 }; }
 
-static const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType euBankTransfer = CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType._('eu_bank_transfer');
+static const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType euBankTransfer = CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$euBankTransfer._();
 
-static const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType gbBankTransfer = CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType._('gb_bank_transfer');
+static const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType gbBankTransfer = CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$gbBankTransfer._();
 
-static const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType jpBankTransfer = CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType._('jp_bank_transfer');
+static const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType jpBankTransfer = CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$jpBankTransfer._();
 
-static const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType mxBankTransfer = CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType._('mx_bank_transfer');
+static const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType mxBankTransfer = CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$mxBankTransfer._();
 
-static const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType usBankTransfer = CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType._('us_bank_transfer');
+static const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType usBankTransfer = CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$usBankTransfer._();
 
 static const List<CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType> values = [euBankTransfer, gbBankTransfer, jpBankTransfer, mxBankTransfer, usBankTransfer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,12 +37,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$Unknown; } 
+@override String toString() => 'CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType($value)';
+
+ }
+@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$euBankTransfer extends CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$euBankTransfer._();
+
+@override String get value => 'eu_bank_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$euBankTransfer;
+
+@override int get hashCode => 'eu_bank_transfer'.hashCode;
+
+ }
+@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$gbBankTransfer extends CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$gbBankTransfer._();
+
+@override String get value => 'gb_bank_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$gbBankTransfer;
+
+@override int get hashCode => 'gb_bank_transfer'.hashCode;
+
+ }
+@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$jpBankTransfer extends CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$jpBankTransfer._();
+
+@override String get value => 'jp_bank_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$jpBankTransfer;
+
+@override int get hashCode => 'jp_bank_transfer'.hashCode;
+
+ }
+@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$mxBankTransfer extends CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$mxBankTransfer._();
+
+@override String get value => 'mx_bank_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$mxBankTransfer;
+
+@override int get hashCode => 'mx_bank_transfer'.hashCode;
+
+ }
+@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$usBankTransfer extends CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$usBankTransfer._();
+
+@override String get value => 'us_bank_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$usBankTransfer;
+
+@override int get hashCode => 'us_bank_transfer'.hashCode;
+
+ }
+@immutable final class CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$Unknown extends CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType {const CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType && other.value == value;
+    other is CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomerBalanceResourceCashBalanceTransactionResourceFundedTransactionResourceBankTransferType($value)';
 
  }

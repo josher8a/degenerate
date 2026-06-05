@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetAttacksLayer7TopVerticalsMitigationProduct
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TopVerticalsMitigationProduct {const RadarGetAttacksLayer7TopVerticalsMitigationProduct._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer7TopVerticalsMitigationProduct {const RadarGetAttacksLayer7TopVerticalsMitigationProduct();
 
 factory RadarGetAttacksLayer7TopVerticalsMitigationProduct.fromJson(String json) { return switch (json) {
   'DDOS' => ddos,
@@ -11,27 +11,26 @@ factory RadarGetAttacksLayer7TopVerticalsMitigationProduct.fromJson(String json)
   'IP_REPUTATION' => ipReputation,
   'API_SHIELD' => apiShield,
   'DATA_LOSS_PREVENTION' => dataLossPrevention,
-  _ => RadarGetAttacksLayer7TopVerticalsMitigationProduct._(json),
+  _ => RadarGetAttacksLayer7TopVerticalsMitigationProduct$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer7TopVerticalsMitigationProduct ddos = RadarGetAttacksLayer7TopVerticalsMitigationProduct._('DDOS');
+static const RadarGetAttacksLayer7TopVerticalsMitigationProduct ddos = RadarGetAttacksLayer7TopVerticalsMitigationProduct$ddos._();
 
-static const RadarGetAttacksLayer7TopVerticalsMitigationProduct waf = RadarGetAttacksLayer7TopVerticalsMitigationProduct._('WAF');
+static const RadarGetAttacksLayer7TopVerticalsMitigationProduct waf = RadarGetAttacksLayer7TopVerticalsMitigationProduct$waf._();
 
-static const RadarGetAttacksLayer7TopVerticalsMitigationProduct botManagement = RadarGetAttacksLayer7TopVerticalsMitigationProduct._('BOT_MANAGEMENT');
+static const RadarGetAttacksLayer7TopVerticalsMitigationProduct botManagement = RadarGetAttacksLayer7TopVerticalsMitigationProduct$botManagement._();
 
-static const RadarGetAttacksLayer7TopVerticalsMitigationProduct accessRules = RadarGetAttacksLayer7TopVerticalsMitigationProduct._('ACCESS_RULES');
+static const RadarGetAttacksLayer7TopVerticalsMitigationProduct accessRules = RadarGetAttacksLayer7TopVerticalsMitigationProduct$accessRules._();
 
-static const RadarGetAttacksLayer7TopVerticalsMitigationProduct ipReputation = RadarGetAttacksLayer7TopVerticalsMitigationProduct._('IP_REPUTATION');
+static const RadarGetAttacksLayer7TopVerticalsMitigationProduct ipReputation = RadarGetAttacksLayer7TopVerticalsMitigationProduct$ipReputation._();
 
-static const RadarGetAttacksLayer7TopVerticalsMitigationProduct apiShield = RadarGetAttacksLayer7TopVerticalsMitigationProduct._('API_SHIELD');
+static const RadarGetAttacksLayer7TopVerticalsMitigationProduct apiShield = RadarGetAttacksLayer7TopVerticalsMitigationProduct$apiShield._();
 
-static const RadarGetAttacksLayer7TopVerticalsMitigationProduct dataLossPrevention = RadarGetAttacksLayer7TopVerticalsMitigationProduct._('DATA_LOSS_PREVENTION');
+static const RadarGetAttacksLayer7TopVerticalsMitigationProduct dataLossPrevention = RadarGetAttacksLayer7TopVerticalsMitigationProduct$dataLossPrevention._();
 
 static const List<RadarGetAttacksLayer7TopVerticalsMitigationProduct> values = [ddos, waf, botManagement, accessRules, ipReputation, apiShield, dataLossPrevention];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -45,12 +44,80 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer7TopVerticalsMitigationProduct$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer7TopVerticalsMitigationProduct($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer7TopVerticalsMitigationProduct$ddos extends RadarGetAttacksLayer7TopVerticalsMitigationProduct {const RadarGetAttacksLayer7TopVerticalsMitigationProduct$ddos._();
+
+@override String get value => 'DDOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopVerticalsMitigationProduct$ddos;
+
+@override int get hashCode => 'DDOS'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopVerticalsMitigationProduct$waf extends RadarGetAttacksLayer7TopVerticalsMitigationProduct {const RadarGetAttacksLayer7TopVerticalsMitigationProduct$waf._();
+
+@override String get value => 'WAF';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopVerticalsMitigationProduct$waf;
+
+@override int get hashCode => 'WAF'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopVerticalsMitigationProduct$botManagement extends RadarGetAttacksLayer7TopVerticalsMitigationProduct {const RadarGetAttacksLayer7TopVerticalsMitigationProduct$botManagement._();
+
+@override String get value => 'BOT_MANAGEMENT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopVerticalsMitigationProduct$botManagement;
+
+@override int get hashCode => 'BOT_MANAGEMENT'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopVerticalsMitigationProduct$accessRules extends RadarGetAttacksLayer7TopVerticalsMitigationProduct {const RadarGetAttacksLayer7TopVerticalsMitigationProduct$accessRules._();
+
+@override String get value => 'ACCESS_RULES';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopVerticalsMitigationProduct$accessRules;
+
+@override int get hashCode => 'ACCESS_RULES'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopVerticalsMitigationProduct$ipReputation extends RadarGetAttacksLayer7TopVerticalsMitigationProduct {const RadarGetAttacksLayer7TopVerticalsMitigationProduct$ipReputation._();
+
+@override String get value => 'IP_REPUTATION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopVerticalsMitigationProduct$ipReputation;
+
+@override int get hashCode => 'IP_REPUTATION'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopVerticalsMitigationProduct$apiShield extends RadarGetAttacksLayer7TopVerticalsMitigationProduct {const RadarGetAttacksLayer7TopVerticalsMitigationProduct$apiShield._();
+
+@override String get value => 'API_SHIELD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopVerticalsMitigationProduct$apiShield;
+
+@override int get hashCode => 'API_SHIELD'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopVerticalsMitigationProduct$dataLossPrevention extends RadarGetAttacksLayer7TopVerticalsMitigationProduct {const RadarGetAttacksLayer7TopVerticalsMitigationProduct$dataLossPrevention._();
+
+@override String get value => 'DATA_LOSS_PREVENTION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopVerticalsMitigationProduct$dataLossPrevention;
+
+@override int get hashCode => 'DATA_LOSS_PREVENTION'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopVerticalsMitigationProduct$Unknown extends RadarGetAttacksLayer7TopVerticalsMitigationProduct {const RadarGetAttacksLayer7TopVerticalsMitigationProduct$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer7TopVerticalsMitigationProduct && other.value == value;
+    other is RadarGetAttacksLayer7TopVerticalsMitigationProduct$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer7TopVerticalsMitigationProduct($value)';
 
  }

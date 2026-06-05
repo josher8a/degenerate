@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DnsRecordsSvcbRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_https_record/dns_records_https_record_data.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';/// Record type.
-@immutable final class DnsRecordsSvcbRecordType {const DnsRecordsSvcbRecordType._(this.value);
+sealed class DnsRecordsSvcbRecordType {const DnsRecordsSvcbRecordType();
 
 factory DnsRecordsSvcbRecordType.fromJson(String json) { return switch (json) {
   'SVCB' => svcb,
-  _ => DnsRecordsSvcbRecordType._(json),
+  _ => DnsRecordsSvcbRecordType$Unknown(json),
 }; }
 
-static const DnsRecordsSvcbRecordType svcb = DnsRecordsSvcbRecordType._('SVCB');
+static const DnsRecordsSvcbRecordType svcb = DnsRecordsSvcbRecordType$svcb._();
 
 static const List<DnsRecordsSvcbRecordType> values = [svcb];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DnsRecordsSvcbRecordType$Unknown; } 
+@override String toString() => 'DnsRecordsSvcbRecordType($value)';
+
+ }
+@immutable final class DnsRecordsSvcbRecordType$svcb extends DnsRecordsSvcbRecordType {const DnsRecordsSvcbRecordType$svcb._();
+
+@override String get value => 'SVCB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsSvcbRecordType$svcb;
+
+@override int get hashCode => 'SVCB'.hashCode;
+
+ }
+@immutable final class DnsRecordsSvcbRecordType$Unknown extends DnsRecordsSvcbRecordType {const DnsRecordsSvcbRecordType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsSvcbRecordType && other.value == value;
+    other is DnsRecordsSvcbRecordType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DnsRecordsSvcbRecordType($value)';
 
  }
 @immutable final class DnsRecordsSvcbRecord {const DnsRecordsSvcbRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });

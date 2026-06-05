@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpSummaryDeviceType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryDeviceType {const RadarGetHttpSummaryDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpSummaryDeviceType {const RadarGetHttpSummaryDeviceType();
 
 factory RadarGetHttpSummaryDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
   'OTHER' => $other,
-  _ => RadarGetHttpSummaryDeviceType._(json),
+  _ => RadarGetHttpSummaryDeviceType$Unknown(json),
 }; }
 
-static const RadarGetHttpSummaryDeviceType desktop = RadarGetHttpSummaryDeviceType._('DESKTOP');
+static const RadarGetHttpSummaryDeviceType desktop = RadarGetHttpSummaryDeviceType$desktop._();
 
-static const RadarGetHttpSummaryDeviceType mobile = RadarGetHttpSummaryDeviceType._('MOBILE');
+static const RadarGetHttpSummaryDeviceType mobile = RadarGetHttpSummaryDeviceType$mobile._();
 
-static const RadarGetHttpSummaryDeviceType $other = RadarGetHttpSummaryDeviceType._('OTHER');
+static const RadarGetHttpSummaryDeviceType $other = RadarGetHttpSummaryDeviceType$$other._();
 
 static const List<RadarGetHttpSummaryDeviceType> values = [desktop, mobile, $other];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpSummaryDeviceType$Unknown; } 
+@override String toString() => 'RadarGetHttpSummaryDeviceType($value)';
+
+ }
+@immutable final class RadarGetHttpSummaryDeviceType$desktop extends RadarGetHttpSummaryDeviceType {const RadarGetHttpSummaryDeviceType$desktop._();
+
+@override String get value => 'DESKTOP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryDeviceType$desktop;
+
+@override int get hashCode => 'DESKTOP'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryDeviceType$mobile extends RadarGetHttpSummaryDeviceType {const RadarGetHttpSummaryDeviceType$mobile._();
+
+@override String get value => 'MOBILE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryDeviceType$mobile;
+
+@override int get hashCode => 'MOBILE'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryDeviceType$$other extends RadarGetHttpSummaryDeviceType {const RadarGetHttpSummaryDeviceType$$other._();
+
+@override String get value => 'OTHER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryDeviceType$$other;
+
+@override int get hashCode => 'OTHER'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryDeviceType$Unknown extends RadarGetHttpSummaryDeviceType {const RadarGetHttpSummaryDeviceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpSummaryDeviceType && other.value == value;
+    other is RadarGetHttpSummaryDeviceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpSummaryDeviceType($value)';
 
  }

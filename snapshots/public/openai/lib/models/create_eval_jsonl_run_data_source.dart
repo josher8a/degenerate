@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CreateEvalJsonlRunDataSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_jsonl_run_data_source/create_eval_jsonl_run_data_source_source.dart';import 'package:pub_openai/models/eval_jsonl_file_content_source.dart';import 'package:pub_openai/models/eval_jsonl_file_id_source.dart';/// The type of data source. Always `jsonl`.
-@immutable final class CreateEvalJsonlRunDataSourceType {const CreateEvalJsonlRunDataSourceType._(this.value);
+sealed class CreateEvalJsonlRunDataSourceType {const CreateEvalJsonlRunDataSourceType();
 
 factory CreateEvalJsonlRunDataSourceType.fromJson(String json) { return switch (json) {
   'jsonl' => jsonl,
-  _ => CreateEvalJsonlRunDataSourceType._(json),
+  _ => CreateEvalJsonlRunDataSourceType$Unknown(json),
 }; }
 
-static const CreateEvalJsonlRunDataSourceType jsonl = CreateEvalJsonlRunDataSourceType._('jsonl');
+static const CreateEvalJsonlRunDataSourceType jsonl = CreateEvalJsonlRunDataSourceType$jsonl._();
 
 static const List<CreateEvalJsonlRunDataSourceType> values = [jsonl];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateEvalJsonlRunDataSourceType$Unknown; } 
+@override String toString() => 'CreateEvalJsonlRunDataSourceType($value)';
+
+ }
+@immutable final class CreateEvalJsonlRunDataSourceType$jsonl extends CreateEvalJsonlRunDataSourceType {const CreateEvalJsonlRunDataSourceType$jsonl._();
+
+@override String get value => 'jsonl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateEvalJsonlRunDataSourceType$jsonl;
+
+@override int get hashCode => 'jsonl'.hashCode;
+
+ }
+@immutable final class CreateEvalJsonlRunDataSourceType$Unknown extends CreateEvalJsonlRunDataSourceType {const CreateEvalJsonlRunDataSourceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateEvalJsonlRunDataSourceType && other.value == value;
+    other is CreateEvalJsonlRunDataSourceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateEvalJsonlRunDataSourceType($value)';
 
  }
 /// A JsonlRunDataSource object with that specifies a JSONL file that matches the eval

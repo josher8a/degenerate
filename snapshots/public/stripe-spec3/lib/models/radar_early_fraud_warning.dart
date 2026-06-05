@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RadarEarlyFraudWarning
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class RadarEarlyFraudWarningObject {const RadarEarlyFraudWarningObject._(this.value);
+sealed class RadarEarlyFraudWarningObject {const RadarEarlyFraudWarningObject();
 
 factory RadarEarlyFraudWarningObject.fromJson(String json) { return switch (json) {
   'radar.early_fraud_warning' => radarEarlyFraudWarning,
-  _ => RadarEarlyFraudWarningObject._(json),
+  _ => RadarEarlyFraudWarningObject$Unknown(json),
 }; }
 
-static const RadarEarlyFraudWarningObject radarEarlyFraudWarning = RadarEarlyFraudWarningObject._('radar.early_fraud_warning');
+static const RadarEarlyFraudWarningObject radarEarlyFraudWarning = RadarEarlyFraudWarningObject$radarEarlyFraudWarning._();
 
 static const List<RadarEarlyFraudWarningObject> values = [radarEarlyFraudWarning];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarEarlyFraudWarningObject$Unknown; } 
+@override String toString() => 'RadarEarlyFraudWarningObject($value)';
+
+ }
+@immutable final class RadarEarlyFraudWarningObject$radarEarlyFraudWarning extends RadarEarlyFraudWarningObject {const RadarEarlyFraudWarningObject$radarEarlyFraudWarning._();
+
+@override String get value => 'radar.early_fraud_warning';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarEarlyFraudWarningObject$radarEarlyFraudWarning;
+
+@override int get hashCode => 'radar.early_fraud_warning'.hashCode;
+
+ }
+@immutable final class RadarEarlyFraudWarningObject$Unknown extends RadarEarlyFraudWarningObject {const RadarEarlyFraudWarningObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarEarlyFraudWarningObject && other.value == value;
+    other is RadarEarlyFraudWarningObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarEarlyFraudWarningObject($value)';
 
  }
 /// An early fraud warning indicates that the card issuer has notified us that a

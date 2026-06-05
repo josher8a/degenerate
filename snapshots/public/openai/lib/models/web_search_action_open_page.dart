@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action type.
 /// 
-@immutable final class WebSearchActionOpenPageType {const WebSearchActionOpenPageType._(this.value);
+sealed class WebSearchActionOpenPageType {const WebSearchActionOpenPageType();
 
 factory WebSearchActionOpenPageType.fromJson(String json) { return switch (json) {
   'open_page' => openPage,
-  _ => WebSearchActionOpenPageType._(json),
+  _ => WebSearchActionOpenPageType$Unknown(json),
 }; }
 
-static const WebSearchActionOpenPageType openPage = WebSearchActionOpenPageType._('open_page');
+static const WebSearchActionOpenPageType openPage = WebSearchActionOpenPageType$openPage._();
 
 static const List<WebSearchActionOpenPageType> values = [openPage];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebSearchActionOpenPageType$Unknown; } 
+@override String toString() => 'WebSearchActionOpenPageType($value)';
+
+ }
+@immutable final class WebSearchActionOpenPageType$openPage extends WebSearchActionOpenPageType {const WebSearchActionOpenPageType$openPage._();
+
+@override String get value => 'open_page';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchActionOpenPageType$openPage;
+
+@override int get hashCode => 'open_page'.hashCode;
+
+ }
+@immutable final class WebSearchActionOpenPageType$Unknown extends WebSearchActionOpenPageType {const WebSearchActionOpenPageType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebSearchActionOpenPageType && other.value == value;
+    other is WebSearchActionOpenPageType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebSearchActionOpenPageType($value)';
 
  }
 /// Action type "open_page" - Opens a specific URL from search results.

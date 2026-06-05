@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Ignore all query string parameters.
 /// 
-@immutable final class ExcludeVariant1 {const ExcludeVariant1._(this.value);
+sealed class ExcludeVariant1 {const ExcludeVariant1();
 
 factory ExcludeVariant1.fromJson(String json) { return switch (json) {
   '*' => $empty,
-  _ => ExcludeVariant1._(json),
+  _ => ExcludeVariant1$Unknown(json),
 }; }
 
-static const ExcludeVariant1 $empty = ExcludeVariant1._('*');
+static const ExcludeVariant1 $empty = ExcludeVariant1$$empty._();
 
 static const List<ExcludeVariant1> values = [$empty];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,12 +22,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ExcludeVariant1$Unknown; } 
+@override String toString() => 'ExcludeVariant1($value)';
+
+ }
+@immutable final class ExcludeVariant1$$empty extends ExcludeVariant1 {const ExcludeVariant1$$empty._();
+
+@override String get value => '*';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ExcludeVariant1$$empty;
+
+@override int get hashCode => '*'.hashCode;
+
+ }
+@immutable final class ExcludeVariant1$Unknown extends ExcludeVariant1 {const ExcludeVariant1$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ExcludeVariant1 && other.value == value;
+    other is ExcludeVariant1$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ExcludeVariant1($value)';
 
  }

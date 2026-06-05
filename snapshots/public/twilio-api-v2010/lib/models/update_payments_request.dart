@@ -2,7 +2,7 @@
 // Source: #/components/schemas/UpdatePaymentsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The piece of payment information that you wish the caller to enter. Must be one of `payment-card-number`, `expiration-date`, `security-code`, `postal-code`, `bank-routing-number`, or `bank-account-number`.
-@immutable final class PaymentsEnumCapture {const PaymentsEnumCapture._(this.value);
+sealed class PaymentsEnumCapture {const PaymentsEnumCapture();
 
 factory PaymentsEnumCapture.fromJson(String json) { return switch (json) {
   'payment-card-number' => paymentCardNumber,
@@ -11,25 +11,24 @@ factory PaymentsEnumCapture.fromJson(String json) { return switch (json) {
   'postal-code' => postalCode,
   'bank-routing-number' => bankRoutingNumber,
   'bank-account-number' => bankAccountNumber,
-  _ => PaymentsEnumCapture._(json),
+  _ => PaymentsEnumCapture$Unknown(json),
 }; }
 
-static const PaymentsEnumCapture paymentCardNumber = PaymentsEnumCapture._('payment-card-number');
+static const PaymentsEnumCapture paymentCardNumber = PaymentsEnumCapture$paymentCardNumber._();
 
-static const PaymentsEnumCapture expirationDate = PaymentsEnumCapture._('expiration-date');
+static const PaymentsEnumCapture expirationDate = PaymentsEnumCapture$expirationDate._();
 
-static const PaymentsEnumCapture securityCode = PaymentsEnumCapture._('security-code');
+static const PaymentsEnumCapture securityCode = PaymentsEnumCapture$securityCode._();
 
-static const PaymentsEnumCapture postalCode = PaymentsEnumCapture._('postal-code');
+static const PaymentsEnumCapture postalCode = PaymentsEnumCapture$postalCode._();
 
-static const PaymentsEnumCapture bankRoutingNumber = PaymentsEnumCapture._('bank-routing-number');
+static const PaymentsEnumCapture bankRoutingNumber = PaymentsEnumCapture$bankRoutingNumber._();
 
-static const PaymentsEnumCapture bankAccountNumber = PaymentsEnumCapture._('bank-account-number');
+static const PaymentsEnumCapture bankAccountNumber = PaymentsEnumCapture$bankAccountNumber._();
 
 static const List<PaymentsEnumCapture> values = [paymentCardNumber, expirationDate, securityCode, postalCode, bankRoutingNumber, bankAccountNumber];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,32 +41,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentsEnumCapture && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PaymentsEnumCapture$Unknown; } 
 @override String toString() => 'PaymentsEnumCapture($value)';
 
  }
+@immutable final class PaymentsEnumCapture$paymentCardNumber extends PaymentsEnumCapture {const PaymentsEnumCapture$paymentCardNumber._();
+
+@override String get value => 'payment-card-number';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumCapture$paymentCardNumber;
+
+@override int get hashCode => 'payment-card-number'.hashCode;
+
+ }
+@immutable final class PaymentsEnumCapture$expirationDate extends PaymentsEnumCapture {const PaymentsEnumCapture$expirationDate._();
+
+@override String get value => 'expiration-date';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumCapture$expirationDate;
+
+@override int get hashCode => 'expiration-date'.hashCode;
+
+ }
+@immutable final class PaymentsEnumCapture$securityCode extends PaymentsEnumCapture {const PaymentsEnumCapture$securityCode._();
+
+@override String get value => 'security-code';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumCapture$securityCode;
+
+@override int get hashCode => 'security-code'.hashCode;
+
+ }
+@immutable final class PaymentsEnumCapture$postalCode extends PaymentsEnumCapture {const PaymentsEnumCapture$postalCode._();
+
+@override String get value => 'postal-code';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumCapture$postalCode;
+
+@override int get hashCode => 'postal-code'.hashCode;
+
+ }
+@immutable final class PaymentsEnumCapture$bankRoutingNumber extends PaymentsEnumCapture {const PaymentsEnumCapture$bankRoutingNumber._();
+
+@override String get value => 'bank-routing-number';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumCapture$bankRoutingNumber;
+
+@override int get hashCode => 'bank-routing-number'.hashCode;
+
+ }
+@immutable final class PaymentsEnumCapture$bankAccountNumber extends PaymentsEnumCapture {const PaymentsEnumCapture$bankAccountNumber._();
+
+@override String get value => 'bank-account-number';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumCapture$bankAccountNumber;
+
+@override int get hashCode => 'bank-account-number'.hashCode;
+
+ }
+@immutable final class PaymentsEnumCapture$Unknown extends PaymentsEnumCapture {const PaymentsEnumCapture$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentsEnumCapture$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Indicates whether the current payment session should be cancelled or completed. When `cancel` the payment session is cancelled. When `complete`, Twilio sends the payment information to the selected Pay Connector for processing.
-@immutable final class PaymentsEnumStatus {const PaymentsEnumStatus._(this.value);
+sealed class PaymentsEnumStatus {const PaymentsEnumStatus();
 
 factory PaymentsEnumStatus.fromJson(String json) { return switch (json) {
   'complete' => complete,
   'cancel' => cancel,
-  _ => PaymentsEnumStatus._(json),
+  _ => PaymentsEnumStatus$Unknown(json),
 }; }
 
-static const PaymentsEnumStatus complete = PaymentsEnumStatus._('complete');
+static const PaymentsEnumStatus complete = PaymentsEnumStatus$complete._();
 
-static const PaymentsEnumStatus cancel = PaymentsEnumStatus._('cancel');
+static const PaymentsEnumStatus cancel = PaymentsEnumStatus$cancel._();
 
 static const List<PaymentsEnumStatus> values = [complete, cancel];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -76,13 +133,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentsEnumStatus$Unknown; } 
+@override String toString() => 'PaymentsEnumStatus($value)';
+
+ }
+@immutable final class PaymentsEnumStatus$complete extends PaymentsEnumStatus {const PaymentsEnumStatus$complete._();
+
+@override String get value => 'complete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumStatus$complete;
+
+@override int get hashCode => 'complete'.hashCode;
+
+ }
+@immutable final class PaymentsEnumStatus$cancel extends PaymentsEnumStatus {const PaymentsEnumStatus$cancel._();
+
+@override String get value => 'cancel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumStatus$cancel;
+
+@override int get hashCode => 'cancel'.hashCode;
+
+ }
+@immutable final class PaymentsEnumStatus$Unknown extends PaymentsEnumStatus {const PaymentsEnumStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentsEnumStatus && other.value == value;
+    other is PaymentsEnumStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentsEnumStatus($value)';
 
  }
 @immutable final class UpdatePaymentsRequest {const UpdatePaymentsRequest({required this.idempotencyKey, required this.statusCallback, this.capture, this.status, });

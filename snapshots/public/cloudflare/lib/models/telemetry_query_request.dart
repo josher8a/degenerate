@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TelemetryQueryRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_query_request/telemetry_query_request_parameters.dart';import 'package:pub_cloudflare/models/telemetry_query_request/timeframe.dart';/// Type of pattern to search for when using pattern-based views
-@immutable final class PatternType {const PatternType._(this.value);
+sealed class PatternType {const PatternType();
 
 factory PatternType.fromJson(String json) { return switch (json) {
   'message' => message,
   'error' => error,
-  _ => PatternType._(json),
+  _ => PatternType$Unknown(json),
 }; }
 
-static const PatternType message = PatternType._('message');
+static const PatternType message = PatternType$message._();
 
-static const PatternType error = PatternType._('error');
+static const PatternType error = PatternType$error._();
 
 static const List<PatternType> values = [message, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,17 +25,40 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PatternType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PatternType$Unknown; } 
 @override String toString() => 'PatternType($value)';
 
  }
+@immutable final class PatternType$message extends PatternType {const PatternType$message._();
+
+@override String get value => 'message';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PatternType$message;
+
+@override int get hashCode => 'message'.hashCode;
+
+ }
+@immutable final class PatternType$error extends PatternType {const PatternType$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PatternType$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class PatternType$Unknown extends PatternType {const PatternType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PatternType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// View type for presenting the query results.
-@immutable final class View {const View._(this.value);
+sealed class View {const View();
 
 factory View.fromJson(String json) { return switch (json) {
   'traces' => traces,
@@ -45,25 +67,24 @@ factory View.fromJson(String json) { return switch (json) {
   'invocations' => invocations,
   'requests' => requests,
   'patterns' => patterns,
-  _ => View._(json),
+  _ => View$Unknown(json),
 }; }
 
-static const View traces = View._('traces');
+static const View traces = View$traces._();
 
-static const View events = View._('events');
+static const View events = View$events._();
 
-static const View calculations = View._('calculations');
+static const View calculations = View$calculations._();
 
-static const View invocations = View._('invocations');
+static const View invocations = View$invocations._();
 
-static const View requests = View._('requests');
+static const View requests = View$requests._();
 
-static const View patterns = View._('patterns');
+static const View patterns = View$patterns._();
 
 static const List<View> values = [traces, events, calculations, invocations, requests, patterns];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -76,13 +97,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is View$Unknown; } 
+@override String toString() => 'View($value)';
+
+ }
+@immutable final class View$traces extends View {const View$traces._();
+
+@override String get value => 'traces';
+
+@override bool operator ==(Object other) => identical(this, other) || other is View$traces;
+
+@override int get hashCode => 'traces'.hashCode;
+
+ }
+@immutable final class View$events extends View {const View$events._();
+
+@override String get value => 'events';
+
+@override bool operator ==(Object other) => identical(this, other) || other is View$events;
+
+@override int get hashCode => 'events'.hashCode;
+
+ }
+@immutable final class View$calculations extends View {const View$calculations._();
+
+@override String get value => 'calculations';
+
+@override bool operator ==(Object other) => identical(this, other) || other is View$calculations;
+
+@override int get hashCode => 'calculations'.hashCode;
+
+ }
+@immutable final class View$invocations extends View {const View$invocations._();
+
+@override String get value => 'invocations';
+
+@override bool operator ==(Object other) => identical(this, other) || other is View$invocations;
+
+@override int get hashCode => 'invocations'.hashCode;
+
+ }
+@immutable final class View$requests extends View {const View$requests._();
+
+@override String get value => 'requests';
+
+@override bool operator ==(Object other) => identical(this, other) || other is View$requests;
+
+@override int get hashCode => 'requests'.hashCode;
+
+ }
+@immutable final class View$patterns extends View {const View$patterns._();
+
+@override String get value => 'patterns';
+
+@override bool operator ==(Object other) => identical(this, other) || other is View$patterns;
+
+@override int get hashCode => 'patterns'.hashCode;
+
+ }
+@immutable final class View$Unknown extends View {const View$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is View && other.value == value;
+    other is View$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'View($value)';
 
  }
 @immutable final class TelemetryQueryRequest {const TelemetryQueryRequest({required this.queryId, required this.timeframe, this.chart, this.compare, this.dry = false, this.granularity, this.ignoreSeries = false, this.limit = 50.0, this.offset, this.offsetBy, this.offsetDirection, this.parameters, this.patternType, this.view = View.calculations, });

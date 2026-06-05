@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigPostGatewayDynamicRouteRequest (inline: Elements > Conditional)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/conditional_outputs.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/conditional_properties.dart';@immutable final class ConditionalType {const ConditionalType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/conditional_outputs.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/conditional_properties.dart';sealed class ConditionalType {const ConditionalType();
 
 factory ConditionalType.fromJson(String json) { return switch (json) {
   'conditional' => conditional,
-  _ => ConditionalType._(json),
+  _ => ConditionalType$Unknown(json),
 }; }
 
-static const ConditionalType conditional = ConditionalType._('conditional');
+static const ConditionalType conditional = ConditionalType$conditional._();
 
 static const List<ConditionalType> values = [conditional];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConditionalType$Unknown; } 
+@override String toString() => 'ConditionalType($value)';
+
+ }
+@immutable final class ConditionalType$conditional extends ConditionalType {const ConditionalType$conditional._();
+
+@override String get value => 'conditional';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConditionalType$conditional;
+
+@override int get hashCode => 'conditional'.hashCode;
+
+ }
+@immutable final class ConditionalType$Unknown extends ConditionalType {const ConditionalType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConditionalType && other.value == value;
+    other is ConditionalType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConditionalType($value)';
 
  }
 @immutable final class Conditional {const Conditional({required this.id, required this.outputs, required this.properties, required this.type, });

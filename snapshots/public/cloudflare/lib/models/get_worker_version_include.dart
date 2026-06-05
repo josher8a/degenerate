@@ -2,19 +2,18 @@
 // Source: #/components/schemas/GetWorkerVersionInclude
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to include the `modules` property of the version in the response, which contains code and sourcemap content and may add several megabytes to the response size.
-@immutable final class GetWorkerVersionInclude {const GetWorkerVersionInclude._(this.value);
+sealed class GetWorkerVersionInclude {const GetWorkerVersionInclude();
 
 factory GetWorkerVersionInclude.fromJson(String json) { return switch (json) {
   'modules' => modules,
-  _ => GetWorkerVersionInclude._(json),
+  _ => GetWorkerVersionInclude$Unknown(json),
 }; }
 
-static const GetWorkerVersionInclude modules = GetWorkerVersionInclude._('modules');
+static const GetWorkerVersionInclude modules = GetWorkerVersionInclude$modules._();
 
 static const List<GetWorkerVersionInclude> values = [modules];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GetWorkerVersionInclude$Unknown; } 
+@override String toString() => 'GetWorkerVersionInclude($value)';
+
+ }
+@immutable final class GetWorkerVersionInclude$modules extends GetWorkerVersionInclude {const GetWorkerVersionInclude$modules._();
+
+@override String get value => 'modules';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetWorkerVersionInclude$modules;
+
+@override int get hashCode => 'modules'.hashCode;
+
+ }
+@immutable final class GetWorkerVersionInclude$Unknown extends GetWorkerVersionInclude {const GetWorkerVersionInclude$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GetWorkerVersionInclude && other.value == value;
+    other is GetWorkerVersionInclude$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GetWorkerVersionInclude($value)';
 
  }

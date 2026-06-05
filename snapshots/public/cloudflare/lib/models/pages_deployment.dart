@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PagesDeployment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_build_config.dart';import 'package:pub_cloudflare/models/pages_deployment/deployment_trigger.dart';import 'package:pub_cloudflare/models/pages_env_vars/pages_env_vars_value.dart';import 'package:pub_cloudflare/models/pages_project_name.dart';import 'package:pub_cloudflare/models/pages_source.dart';import 'package:pub_cloudflare/models/pages_stage.dart';/// Type of deploy.
-@immutable final class Environment {const Environment._(this.value);
+sealed class Environment {const Environment();
 
 factory Environment.fromJson(String json) { return switch (json) {
   'preview' => preview,
   'production' => production,
-  _ => Environment._(json),
+  _ => Environment$Unknown(json),
 }; }
 
-static const Environment preview = Environment._('preview');
+static const Environment preview = Environment$preview._();
 
-static const Environment production = Environment._('production');
+static const Environment production = Environment$production._();
 
 static const List<Environment> values = [preview, production];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Environment$Unknown; } 
+@override String toString() => 'Environment($value)';
+
+ }
+@immutable final class Environment$preview extends Environment {const Environment$preview._();
+
+@override String get value => 'preview';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Environment$preview;
+
+@override int get hashCode => 'preview'.hashCode;
+
+ }
+@immutable final class Environment$production extends Environment {const Environment$production._();
+
+@override String get value => 'production';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Environment$production;
+
+@override int get hashCode => 'production'.hashCode;
+
+ }
+@immutable final class Environment$Unknown extends Environment {const Environment$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Environment && other.value == value;
+    other is Environment$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Environment($value)';
 
  }
 @immutable final class PagesDeployment {const PagesDeployment({required this.aliases, required this.buildConfig, required this.createdOn, required this.deploymentTrigger, required this.envVars, required this.environment, required this.id, required this.isSkipped, required this.latestStage, required this.modifiedOn, required this.projectId, required this.projectName, required this.shortId, required this.source, required this.stages, required this.url, this.usesFunctions, });

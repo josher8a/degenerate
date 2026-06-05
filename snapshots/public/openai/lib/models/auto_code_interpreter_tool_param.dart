@@ -2,19 +2,18 @@
 // Source: #/components/schemas/AutoCodeInterpreterToolParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/auto_code_interpreter_tool_param/auto_code_interpreter_tool_param_network_policy.dart';import 'package:pub_openai/models/container_memory_limit.dart';/// Always `auto`.
-@immutable final class AutoCodeInterpreterToolParamType {const AutoCodeInterpreterToolParamType._(this.value);
+sealed class AutoCodeInterpreterToolParamType {const AutoCodeInterpreterToolParamType();
 
 factory AutoCodeInterpreterToolParamType.fromJson(String json) { return switch (json) {
   'auto' => auto,
-  _ => AutoCodeInterpreterToolParamType._(json),
+  _ => AutoCodeInterpreterToolParamType$Unknown(json),
 }; }
 
-static const AutoCodeInterpreterToolParamType auto = AutoCodeInterpreterToolParamType._('auto');
+static const AutoCodeInterpreterToolParamType auto = AutoCodeInterpreterToolParamType$auto._();
 
 static const List<AutoCodeInterpreterToolParamType> values = [auto];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AutoCodeInterpreterToolParamType$Unknown; } 
+@override String toString() => 'AutoCodeInterpreterToolParamType($value)';
+
+ }
+@immutable final class AutoCodeInterpreterToolParamType$auto extends AutoCodeInterpreterToolParamType {const AutoCodeInterpreterToolParamType$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AutoCodeInterpreterToolParamType$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class AutoCodeInterpreterToolParamType$Unknown extends AutoCodeInterpreterToolParamType {const AutoCodeInterpreterToolParamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AutoCodeInterpreterToolParamType && other.value == value;
+    other is AutoCodeInterpreterToolParamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AutoCodeInterpreterToolParamType($value)';
 
  }
 /// Configuration for a code interpreter container. Optionally specify the IDs of the files to run the code on.

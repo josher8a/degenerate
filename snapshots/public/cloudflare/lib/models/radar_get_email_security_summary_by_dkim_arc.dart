@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailSecuritySummaryByDkimArc
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryByDkimArc {const RadarGetEmailSecuritySummaryByDkimArc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailSecuritySummaryByDkimArc {const RadarGetEmailSecuritySummaryByDkimArc();
 
 factory RadarGetEmailSecuritySummaryByDkimArc.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailSecuritySummaryByDkimArc._(json),
+  _ => RadarGetEmailSecuritySummaryByDkimArc$Unknown(json),
 }; }
 
-static const RadarGetEmailSecuritySummaryByDkimArc pass = RadarGetEmailSecuritySummaryByDkimArc._('PASS');
+static const RadarGetEmailSecuritySummaryByDkimArc pass = RadarGetEmailSecuritySummaryByDkimArc$pass._();
 
-static const RadarGetEmailSecuritySummaryByDkimArc none = RadarGetEmailSecuritySummaryByDkimArc._('NONE');
+static const RadarGetEmailSecuritySummaryByDkimArc none = RadarGetEmailSecuritySummaryByDkimArc$none._();
 
-static const RadarGetEmailSecuritySummaryByDkimArc fail = RadarGetEmailSecuritySummaryByDkimArc._('FAIL');
+static const RadarGetEmailSecuritySummaryByDkimArc fail = RadarGetEmailSecuritySummaryByDkimArc$fail._();
 
 static const List<RadarGetEmailSecuritySummaryByDkimArc> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecuritySummaryByDkimArc$Unknown; } 
+@override String toString() => 'RadarGetEmailSecuritySummaryByDkimArc($value)';
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryByDkimArc$pass extends RadarGetEmailSecuritySummaryByDkimArc {const RadarGetEmailSecuritySummaryByDkimArc$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryByDkimArc$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryByDkimArc$none extends RadarGetEmailSecuritySummaryByDkimArc {const RadarGetEmailSecuritySummaryByDkimArc$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryByDkimArc$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryByDkimArc$fail extends RadarGetEmailSecuritySummaryByDkimArc {const RadarGetEmailSecuritySummaryByDkimArc$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryByDkimArc$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryByDkimArc$Unknown extends RadarGetEmailSecuritySummaryByDkimArc {const RadarGetEmailSecuritySummaryByDkimArc$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecuritySummaryByDkimArc && other.value == value;
+    other is RadarGetEmailSecuritySummaryByDkimArc$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecuritySummaryByDkimArc($value)';
 
  }

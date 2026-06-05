@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AiSearchCreateInstancesRequest (inline: SourceParams > WebCrawler)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/crawl_options.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/parse_options.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/store_options.dart';@immutable final class ParseType {const ParseType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/crawl_options.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/parse_options.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/store_options.dart';sealed class ParseType {const ParseType();
 
 factory ParseType.fromJson(String json) { return switch (json) {
   'sitemap' => sitemap,
   'feed-rss' => feedRss,
   'crawl' => crawl,
-  _ => ParseType._(json),
+  _ => ParseType$Unknown(json),
 }; }
 
-static const ParseType sitemap = ParseType._('sitemap');
+static const ParseType sitemap = ParseType$sitemap._();
 
-static const ParseType feedRss = ParseType._('feed-rss');
+static const ParseType feedRss = ParseType$feedRss._();
 
-static const ParseType crawl = ParseType._('crawl');
+static const ParseType crawl = ParseType$crawl._();
 
 static const List<ParseType> values = [sitemap, feedRss, crawl];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ParseType$Unknown; } 
+@override String toString() => 'ParseType($value)';
+
+ }
+@immutable final class ParseType$sitemap extends ParseType {const ParseType$sitemap._();
+
+@override String get value => 'sitemap';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ParseType$sitemap;
+
+@override int get hashCode => 'sitemap'.hashCode;
+
+ }
+@immutable final class ParseType$feedRss extends ParseType {const ParseType$feedRss._();
+
+@override String get value => 'feed-rss';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ParseType$feedRss;
+
+@override int get hashCode => 'feed-rss'.hashCode;
+
+ }
+@immutable final class ParseType$crawl extends ParseType {const ParseType$crawl._();
+
+@override String get value => 'crawl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ParseType$crawl;
+
+@override int get hashCode => 'crawl'.hashCode;
+
+ }
+@immutable final class ParseType$Unknown extends ParseType {const ParseType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ParseType && other.value == value;
+    other is ParseType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ParseType($value)';
 
  }
 @immutable final class WebCrawler {const WebCrawler({this.crawlOptions, this.parseOptions, this.parseType = ParseType.sitemap, this.storeOptions, });

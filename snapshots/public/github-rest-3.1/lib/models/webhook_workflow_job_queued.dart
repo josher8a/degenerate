@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookWorkflowJobQueued
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_job_queued/webhook_workflow_job_queued_workflow_job.dart';@immutable final class WebhookWorkflowJobQueuedAction {const WebhookWorkflowJobQueuedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/deployment.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_job_queued/webhook_workflow_job_queued_workflow_job.dart';sealed class WebhookWorkflowJobQueuedAction {const WebhookWorkflowJobQueuedAction();
 
 factory WebhookWorkflowJobQueuedAction.fromJson(String json) { return switch (json) {
   'queued' => queued,
-  _ => WebhookWorkflowJobQueuedAction._(json),
+  _ => WebhookWorkflowJobQueuedAction$Unknown(json),
 }; }
 
-static const WebhookWorkflowJobQueuedAction queued = WebhookWorkflowJobQueuedAction._('queued');
+static const WebhookWorkflowJobQueuedAction queued = WebhookWorkflowJobQueuedAction$queued._();
 
 static const List<WebhookWorkflowJobQueuedAction> values = [queued];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookWorkflowJobQueuedAction$Unknown; } 
+@override String toString() => 'WebhookWorkflowJobQueuedAction($value)';
+
+ }
+@immutable final class WebhookWorkflowJobQueuedAction$queued extends WebhookWorkflowJobQueuedAction {const WebhookWorkflowJobQueuedAction$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookWorkflowJobQueuedAction$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class WebhookWorkflowJobQueuedAction$Unknown extends WebhookWorkflowJobQueuedAction {const WebhookWorkflowJobQueuedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookWorkflowJobQueuedAction && other.value == value;
+    other is WebhookWorkflowJobQueuedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookWorkflowJobQueuedAction($value)';
 
  }
 @immutable final class WebhookWorkflowJobQueued {const WebhookWorkflowJobQueued({required this.action, required this.repository, required this.sender, required this.workflowJob, this.enterprise, this.installation, this.organization, this.deployment, });

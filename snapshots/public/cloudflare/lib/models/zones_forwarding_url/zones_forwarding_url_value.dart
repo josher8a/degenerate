@@ -4,22 +4,21 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status code to use for the URL redirect. 301 is a permanent
 /// redirect. 302 is a temporary redirect.
 /// 
-@immutable final class ValueStatusCode {const ValueStatusCode._(this.value);
+sealed class ValueStatusCode {const ValueStatusCode();
 
 factory ValueStatusCode.fromJson(int json) { return switch (json) {
   301 => $301,
   302 => $302,
-  _ => ValueStatusCode._(json),
+  _ => ValueStatusCode$Unknown(json),
 }; }
 
-static const ValueStatusCode $301 = ValueStatusCode._(301);
+static const ValueStatusCode $301 = ValueStatusCode$$301._();
 
-static const ValueStatusCode $302 = ValueStatusCode._(302);
+static const ValueStatusCode $302 = ValueStatusCode$$302._();
 
 static const List<ValueStatusCode> values = [$301, $302];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -28,13 +27,36 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ValueStatusCode$Unknown; } 
+@override String toString() => 'ValueStatusCode($value)';
+
+ }
+@immutable final class ValueStatusCode$$301 extends ValueStatusCode {const ValueStatusCode$$301._();
+
+@override int get value => 301;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValueStatusCode$$301;
+
+@override int get hashCode => 301.hashCode;
+
+ }
+@immutable final class ValueStatusCode$$302 extends ValueStatusCode {const ValueStatusCode$$302._();
+
+@override int get value => 302;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValueStatusCode$$302;
+
+@override int get hashCode => 302.hashCode;
+
+ }
+@immutable final class ValueStatusCode$Unknown extends ValueStatusCode {const ValueStatusCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ValueStatusCode && other.value == value;
+    other is ValueStatusCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ValueStatusCode($value)';
 
  }
 @immutable final class ZonesForwardingUrlValue {const ZonesForwardingUrlValue({this.statusCode, this.url, });

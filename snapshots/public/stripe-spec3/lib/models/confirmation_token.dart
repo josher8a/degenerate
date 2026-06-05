@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ConfirmationToken
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_token/confirmation_token_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_mandate_data.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_options.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_shipping.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ConfirmationTokenObject {const ConfirmationTokenObject._(this.value);
+sealed class ConfirmationTokenObject {const ConfirmationTokenObject();
 
 factory ConfirmationTokenObject.fromJson(String json) { return switch (json) {
   'confirmation_token' => confirmationToken,
-  _ => ConfirmationTokenObject._(json),
+  _ => ConfirmationTokenObject$Unknown(json),
 }; }
 
-static const ConfirmationTokenObject confirmationToken = ConfirmationTokenObject._('confirmation_token');
+static const ConfirmationTokenObject confirmationToken = ConfirmationTokenObject$confirmationToken._();
 
 static const List<ConfirmationTokenObject> values = [confirmationToken];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConfirmationTokenObject$Unknown; } 
+@override String toString() => 'ConfirmationTokenObject($value)';
+
+ }
+@immutable final class ConfirmationTokenObject$confirmationToken extends ConfirmationTokenObject {const ConfirmationTokenObject$confirmationToken._();
+
+@override String get value => 'confirmation_token';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConfirmationTokenObject$confirmationToken;
+
+@override int get hashCode => 'confirmation_token'.hashCode;
+
+ }
+@immutable final class ConfirmationTokenObject$Unknown extends ConfirmationTokenObject {const ConfirmationTokenObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConfirmationTokenObject && other.value == value;
+    other is ConfirmationTokenObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConfirmationTokenObject($value)';
 
  }
 /// ConfirmationTokens help transport client side data collected by Stripe JS over

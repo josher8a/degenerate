@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MconnEvent (inline: Init)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Initialized process
-@immutable final class InitK {const InitK._(this.value);
+sealed class InitK {const InitK();
 
 factory InitK.fromJson(String json) { return switch (json) {
   'Init' => init,
-  _ => InitK._(json),
+  _ => InitK$Unknown(json),
 }; }
 
-static const InitK init = InitK._('Init');
+static const InitK init = InitK$init._();
 
 static const List<InitK> values = [init];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InitK$Unknown; } 
+@override String toString() => 'InitK($value)';
+
+ }
+@immutable final class InitK$init extends InitK {const InitK$init._();
+
+@override String get value => 'Init';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InitK$init;
+
+@override int get hashCode => 'Init'.hashCode;
+
+ }
+@immutable final class InitK$Unknown extends InitK {const InitK$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InitK && other.value == value;
+    other is InitK$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InitK($value)';
 
  }
 @immutable final class MconnEventInit {const MconnEventInit({required this.k});

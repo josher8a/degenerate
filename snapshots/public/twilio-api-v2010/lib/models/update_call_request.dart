@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UpdateCallRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_request/fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_request/method.dart';@immutable final class CallEnumUpdateStatus {const CallEnumUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_request/fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_request/method.dart';sealed class CallEnumUpdateStatus {const CallEnumUpdateStatus();
 
 factory CallEnumUpdateStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
   'completed' => completed,
-  _ => CallEnumUpdateStatus._(json),
+  _ => CallEnumUpdateStatus$Unknown(json),
 }; }
 
-static const CallEnumUpdateStatus canceled = CallEnumUpdateStatus._('canceled');
+static const CallEnumUpdateStatus canceled = CallEnumUpdateStatus$canceled._();
 
-static const CallEnumUpdateStatus completed = CallEnumUpdateStatus._('completed');
+static const CallEnumUpdateStatus completed = CallEnumUpdateStatus$completed._();
 
 static const List<CallEnumUpdateStatus> values = [canceled, completed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CallEnumUpdateStatus$Unknown; } 
+@override String toString() => 'CallEnumUpdateStatus($value)';
+
+ }
+@immutable final class CallEnumUpdateStatus$canceled extends CallEnumUpdateStatus {const CallEnumUpdateStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CallEnumUpdateStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class CallEnumUpdateStatus$completed extends CallEnumUpdateStatus {const CallEnumUpdateStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CallEnumUpdateStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class CallEnumUpdateStatus$Unknown extends CallEnumUpdateStatus {const CallEnumUpdateStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CallEnumUpdateStatus && other.value == value;
+    other is CallEnumUpdateStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CallEnumUpdateStatus($value)';
 
  }
 @immutable final class UpdateCallRequest {const UpdateCallRequest({this.url, this.method, this.status, this.fallbackUrl, this.fallbackMethod, this.statusCallback, this.statusCallbackMethod, this.twiml, this.timeLimit, });

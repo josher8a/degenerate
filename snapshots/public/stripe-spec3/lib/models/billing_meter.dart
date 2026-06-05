@@ -2,22 +2,21 @@
 // Source: #/components/schemas/BillingMeter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter/billing_meter_status.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_aggregation_settings.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_billing_meter_status_transitions.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_billing_meter_value.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_customer_mapping_settings.dart';/// The time window which meter events have been pre-aggregated for, if any.
-@immutable final class BillingMeterEventTimeWindow {const BillingMeterEventTimeWindow._(this.value);
+sealed class BillingMeterEventTimeWindow {const BillingMeterEventTimeWindow();
 
 factory BillingMeterEventTimeWindow.fromJson(String json) { return switch (json) {
   'day' => day,
   'hour' => hour,
-  _ => BillingMeterEventTimeWindow._(json),
+  _ => BillingMeterEventTimeWindow$Unknown(json),
 }; }
 
-static const BillingMeterEventTimeWindow day = BillingMeterEventTimeWindow._('day');
+static const BillingMeterEventTimeWindow day = BillingMeterEventTimeWindow$day._();
 
-static const BillingMeterEventTimeWindow hour = BillingMeterEventTimeWindow._('hour');
+static const BillingMeterEventTimeWindow hour = BillingMeterEventTimeWindow$hour._();
 
 static const List<BillingMeterEventTimeWindow> values = [day, hour];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,29 +25,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingMeterEventTimeWindow && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is BillingMeterEventTimeWindow$Unknown; } 
 @override String toString() => 'BillingMeterEventTimeWindow($value)';
 
  }
+@immutable final class BillingMeterEventTimeWindow$day extends BillingMeterEventTimeWindow {const BillingMeterEventTimeWindow$day._();
+
+@override String get value => 'day';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingMeterEventTimeWindow$day;
+
+@override int get hashCode => 'day'.hashCode;
+
+ }
+@immutable final class BillingMeterEventTimeWindow$hour extends BillingMeterEventTimeWindow {const BillingMeterEventTimeWindow$hour._();
+
+@override String get value => 'hour';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingMeterEventTimeWindow$hour;
+
+@override int get hashCode => 'hour'.hashCode;
+
+ }
+@immutable final class BillingMeterEventTimeWindow$Unknown extends BillingMeterEventTimeWindow {const BillingMeterEventTimeWindow$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingMeterEventTimeWindow$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class BillingMeterObject {const BillingMeterObject._(this.value);
+sealed class BillingMeterObject {const BillingMeterObject();
 
 factory BillingMeterObject.fromJson(String json) { return switch (json) {
   'billing.meter' => billingMeter,
-  _ => BillingMeterObject._(json),
+  _ => BillingMeterObject$Unknown(json),
 }; }
 
-static const BillingMeterObject billingMeter = BillingMeterObject._('billing.meter');
+static const BillingMeterObject billingMeter = BillingMeterObject$billingMeter._();
 
 static const List<BillingMeterObject> values = [billingMeter];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -56,13 +77,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingMeterObject$Unknown; } 
+@override String toString() => 'BillingMeterObject($value)';
+
+ }
+@immutable final class BillingMeterObject$billingMeter extends BillingMeterObject {const BillingMeterObject$billingMeter._();
+
+@override String get value => 'billing.meter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingMeterObject$billingMeter;
+
+@override int get hashCode => 'billing.meter'.hashCode;
+
+ }
+@immutable final class BillingMeterObject$Unknown extends BillingMeterObject {const BillingMeterObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingMeterObject && other.value == value;
+    other is BillingMeterObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingMeterObject($value)';
 
  }
 /// Meters specify how to aggregate meter events over a billing period. Meter events represent the actions that customers take in your system. Meters attach to prices and form the basis of the bill.

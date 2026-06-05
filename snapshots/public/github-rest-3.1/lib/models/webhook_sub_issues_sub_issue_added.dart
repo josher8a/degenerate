@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookSubIssuesSubIssueAdded
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookSubIssuesSubIssueAddedAction {const WebhookSubIssuesSubIssueAddedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookSubIssuesSubIssueAddedAction {const WebhookSubIssuesSubIssueAddedAction();
 
 factory WebhookSubIssuesSubIssueAddedAction.fromJson(String json) { return switch (json) {
   'sub_issue_added' => subIssueAdded,
-  _ => WebhookSubIssuesSubIssueAddedAction._(json),
+  _ => WebhookSubIssuesSubIssueAddedAction$Unknown(json),
 }; }
 
-static const WebhookSubIssuesSubIssueAddedAction subIssueAdded = WebhookSubIssuesSubIssueAddedAction._('sub_issue_added');
+static const WebhookSubIssuesSubIssueAddedAction subIssueAdded = WebhookSubIssuesSubIssueAddedAction$subIssueAdded._();
 
 static const List<WebhookSubIssuesSubIssueAddedAction> values = [subIssueAdded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookSubIssuesSubIssueAddedAction$Unknown; } 
+@override String toString() => 'WebhookSubIssuesSubIssueAddedAction($value)';
+
+ }
+@immutable final class WebhookSubIssuesSubIssueAddedAction$subIssueAdded extends WebhookSubIssuesSubIssueAddedAction {const WebhookSubIssuesSubIssueAddedAction$subIssueAdded._();
+
+@override String get value => 'sub_issue_added';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookSubIssuesSubIssueAddedAction$subIssueAdded;
+
+@override int get hashCode => 'sub_issue_added'.hashCode;
+
+ }
+@immutable final class WebhookSubIssuesSubIssueAddedAction$Unknown extends WebhookSubIssuesSubIssueAddedAction {const WebhookSubIssuesSubIssueAddedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookSubIssuesSubIssueAddedAction && other.value == value;
+    other is WebhookSubIssuesSubIssueAddedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookSubIssuesSubIssueAddedAction($value)';
 
  }
 @immutable final class WebhookSubIssuesSubIssueAdded {const WebhookSubIssuesSubIssueAdded({required this.action, required this.subIssueId, required this.subIssue, required this.subIssueRepo, required this.parentIssueId, required this.parentIssue, this.installation, this.organization, this.repository, this.sender, });

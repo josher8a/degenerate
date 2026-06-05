@@ -2,25 +2,24 @@
 // Source: #/components/schemas/ClimateOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/climate_order/climate_order_product.dart';import 'package:pub_stripe_spec3/models/climate_product.dart';import 'package:pub_stripe_spec3/models/climate_removals_beneficiary.dart';import 'package:pub_stripe_spec3/models/climate_removals_order_deliveries.dart';/// Reason for the cancellation of this order.
-@immutable final class ClimateOrderCancellationReason {const ClimateOrderCancellationReason._(this.value);
+sealed class ClimateOrderCancellationReason {const ClimateOrderCancellationReason();
 
 factory ClimateOrderCancellationReason.fromJson(String json) { return switch (json) {
   'expired' => expired,
   'product_unavailable' => productUnavailable,
   'requested' => requested,
-  _ => ClimateOrderCancellationReason._(json),
+  _ => ClimateOrderCancellationReason$Unknown(json),
 }; }
 
-static const ClimateOrderCancellationReason expired = ClimateOrderCancellationReason._('expired');
+static const ClimateOrderCancellationReason expired = ClimateOrderCancellationReason$expired._();
 
-static const ClimateOrderCancellationReason productUnavailable = ClimateOrderCancellationReason._('product_unavailable');
+static const ClimateOrderCancellationReason productUnavailable = ClimateOrderCancellationReason$productUnavailable._();
 
-static const ClimateOrderCancellationReason requested = ClimateOrderCancellationReason._('requested');
+static const ClimateOrderCancellationReason requested = ClimateOrderCancellationReason$requested._();
 
 static const List<ClimateOrderCancellationReason> values = [expired, productUnavailable, requested];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,29 +29,60 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ClimateOrderCancellationReason && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ClimateOrderCancellationReason$Unknown; } 
 @override String toString() => 'ClimateOrderCancellationReason($value)';
 
  }
+@immutable final class ClimateOrderCancellationReason$expired extends ClimateOrderCancellationReason {const ClimateOrderCancellationReason$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClimateOrderCancellationReason$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class ClimateOrderCancellationReason$productUnavailable extends ClimateOrderCancellationReason {const ClimateOrderCancellationReason$productUnavailable._();
+
+@override String get value => 'product_unavailable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClimateOrderCancellationReason$productUnavailable;
+
+@override int get hashCode => 'product_unavailable'.hashCode;
+
+ }
+@immutable final class ClimateOrderCancellationReason$requested extends ClimateOrderCancellationReason {const ClimateOrderCancellationReason$requested._();
+
+@override String get value => 'requested';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClimateOrderCancellationReason$requested;
+
+@override int get hashCode => 'requested'.hashCode;
+
+ }
+@immutable final class ClimateOrderCancellationReason$Unknown extends ClimateOrderCancellationReason {const ClimateOrderCancellationReason$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ClimateOrderCancellationReason$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ClimateOrderObject {const ClimateOrderObject._(this.value);
+sealed class ClimateOrderObject {const ClimateOrderObject();
 
 factory ClimateOrderObject.fromJson(String json) { return switch (json) {
   'climate.order' => climateOrder,
-  _ => ClimateOrderObject._(json),
+  _ => ClimateOrderObject$Unknown(json),
 }; }
 
-static const ClimateOrderObject climateOrder = ClimateOrderObject._('climate.order');
+static const ClimateOrderObject climateOrder = ClimateOrderObject$climateOrder._();
 
 static const List<ClimateOrderObject> values = [climateOrder];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,17 +90,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ClimateOrderObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ClimateOrderObject$Unknown; } 
 @override String toString() => 'ClimateOrderObject($value)';
 
  }
+@immutable final class ClimateOrderObject$climateOrder extends ClimateOrderObject {const ClimateOrderObject$climateOrder._();
+
+@override String get value => 'climate.order';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClimateOrderObject$climateOrder;
+
+@override int get hashCode => 'climate.order'.hashCode;
+
+ }
+@immutable final class ClimateOrderObject$Unknown extends ClimateOrderObject {const ClimateOrderObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ClimateOrderObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The current status of this order.
-@immutable final class ClimateOrderStatus {const ClimateOrderStatus._(this.value);
+sealed class ClimateOrderStatus {const ClimateOrderStatus();
 
 factory ClimateOrderStatus.fromJson(String json) { return switch (json) {
   'awaiting_funds' => awaitingFunds,
@@ -78,23 +122,22 @@ factory ClimateOrderStatus.fromJson(String json) { return switch (json) {
   'confirmed' => confirmed,
   'delivered' => delivered,
   'open' => open,
-  _ => ClimateOrderStatus._(json),
+  _ => ClimateOrderStatus$Unknown(json),
 }; }
 
-static const ClimateOrderStatus awaitingFunds = ClimateOrderStatus._('awaiting_funds');
+static const ClimateOrderStatus awaitingFunds = ClimateOrderStatus$awaitingFunds._();
 
-static const ClimateOrderStatus canceled = ClimateOrderStatus._('canceled');
+static const ClimateOrderStatus canceled = ClimateOrderStatus$canceled._();
 
-static const ClimateOrderStatus confirmed = ClimateOrderStatus._('confirmed');
+static const ClimateOrderStatus confirmed = ClimateOrderStatus$confirmed._();
 
-static const ClimateOrderStatus delivered = ClimateOrderStatus._('delivered');
+static const ClimateOrderStatus delivered = ClimateOrderStatus$delivered._();
 
-static const ClimateOrderStatus open = ClimateOrderStatus._('open');
+static const ClimateOrderStatus open = ClimateOrderStatus$open._();
 
 static const List<ClimateOrderStatus> values = [awaitingFunds, canceled, confirmed, delivered, open];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -106,13 +149,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ClimateOrderStatus$Unknown; } 
+@override String toString() => 'ClimateOrderStatus($value)';
+
+ }
+@immutable final class ClimateOrderStatus$awaitingFunds extends ClimateOrderStatus {const ClimateOrderStatus$awaitingFunds._();
+
+@override String get value => 'awaiting_funds';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClimateOrderStatus$awaitingFunds;
+
+@override int get hashCode => 'awaiting_funds'.hashCode;
+
+ }
+@immutable final class ClimateOrderStatus$canceled extends ClimateOrderStatus {const ClimateOrderStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClimateOrderStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class ClimateOrderStatus$confirmed extends ClimateOrderStatus {const ClimateOrderStatus$confirmed._();
+
+@override String get value => 'confirmed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClimateOrderStatus$confirmed;
+
+@override int get hashCode => 'confirmed'.hashCode;
+
+ }
+@immutable final class ClimateOrderStatus$delivered extends ClimateOrderStatus {const ClimateOrderStatus$delivered._();
+
+@override String get value => 'delivered';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClimateOrderStatus$delivered;
+
+@override int get hashCode => 'delivered'.hashCode;
+
+ }
+@immutable final class ClimateOrderStatus$open extends ClimateOrderStatus {const ClimateOrderStatus$open._();
+
+@override String get value => 'open';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClimateOrderStatus$open;
+
+@override int get hashCode => 'open'.hashCode;
+
+ }
+@immutable final class ClimateOrderStatus$Unknown extends ClimateOrderStatus {const ClimateOrderStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ClimateOrderStatus && other.value == value;
+    other is ClimateOrderStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ClimateOrderStatus($value)';
 
  }
 /// Orders represent your intent to purchase a particular Climate product. When you create an order, the

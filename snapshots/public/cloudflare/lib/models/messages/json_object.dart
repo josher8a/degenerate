@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: ResponseFormat > Variant1 > JsonObject)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class JsonObjectType {const JsonObjectType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class JsonObjectType {const JsonObjectType();
 
 factory JsonObjectType.fromJson(String json) { return switch (json) {
   'json_object' => jsonObject,
-  _ => JsonObjectType._(json),
+  _ => JsonObjectType$Unknown(json),
 }; }
 
-static const JsonObjectType jsonObject = JsonObjectType._('json_object');
+static const JsonObjectType jsonObject = JsonObjectType$jsonObject._();
 
 static const List<JsonObjectType> values = [jsonObject];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is JsonObjectType$Unknown; } 
+@override String toString() => 'JsonObjectType($value)';
+
+ }
+@immutable final class JsonObjectType$jsonObject extends JsonObjectType {const JsonObjectType$jsonObject._();
+
+@override String get value => 'json_object';
+
+@override bool operator ==(Object other) => identical(this, other) || other is JsonObjectType$jsonObject;
+
+@override int get hashCode => 'json_object'.hashCode;
+
+ }
+@immutable final class JsonObjectType$Unknown extends JsonObjectType {const JsonObjectType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is JsonObjectType && other.value == value;
+    other is JsonObjectType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'JsonObjectType($value)';
 
  }
 @immutable final class JsonObject {const JsonObject({required this.type});

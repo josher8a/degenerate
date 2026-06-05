@@ -2,22 +2,21 @@
 // Source: #/components/schemas/BillingBillResourceInvoicingLinesParentsInvoiceLineItemParent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_lines_parents_invoice_line_item_invoice_item_parent.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_lines_parents_invoice_line_item_subscription_item_parent.dart';/// The type of parent that generated this line item
-@immutable final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType._(this.value);
+sealed class BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType();
 
 factory BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType.fromJson(String json) { return switch (json) {
   'invoice_item_details' => invoiceItemDetails,
   'subscription_item_details' => subscriptionItemDetails,
-  _ => BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType._(json),
+  _ => BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType$Unknown(json),
 }; }
 
-static const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType invoiceItemDetails = BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType._('invoice_item_details');
+static const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType invoiceItemDetails = BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType$invoiceItemDetails._();
 
-static const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType subscriptionItemDetails = BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType._('subscription_item_details');
+static const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType subscriptionItemDetails = BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType$subscriptionItemDetails._();
 
 static const List<BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType> values = [invoiceItemDetails, subscriptionItemDetails];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType$Unknown; } 
+@override String toString() => 'BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType($value)';
+
+ }
+@immutable final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType$invoiceItemDetails extends BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType$invoiceItemDetails._();
+
+@override String get value => 'invoice_item_details';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType$invoiceItemDetails;
+
+@override int get hashCode => 'invoice_item_details'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType$subscriptionItemDetails extends BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType$subscriptionItemDetails._();
+
+@override String get value => 'subscription_item_details';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType$subscriptionItemDetails;
+
+@override int get hashCode => 'subscription_item_details'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType$Unknown extends BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType {const BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType && other.value == value;
+    other is BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingBillResourceInvoicingLinesParentsInvoiceLineItemParentType($value)';
 
  }
 /// 

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/BillingMeterEventAdjustment (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies whether to cancel a single event or a range of events for a time period. Time period cancellation is not supported yet.
-@immutable final class BillingMeterEventAdjustmentType {const BillingMeterEventAdjustmentType._(this.value);
+sealed class BillingMeterEventAdjustmentType {const BillingMeterEventAdjustmentType();
 
 factory BillingMeterEventAdjustmentType.fromJson(String json) { return switch (json) {
   'cancel' => cancel,
-  _ => BillingMeterEventAdjustmentType._(json),
+  _ => BillingMeterEventAdjustmentType$Unknown(json),
 }; }
 
-static const BillingMeterEventAdjustmentType cancel = BillingMeterEventAdjustmentType._('cancel');
+static const BillingMeterEventAdjustmentType cancel = BillingMeterEventAdjustmentType$cancel._();
 
 static const List<BillingMeterEventAdjustmentType> values = [cancel];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingMeterEventAdjustmentType$Unknown; } 
+@override String toString() => 'BillingMeterEventAdjustmentType($value)';
+
+ }
+@immutable final class BillingMeterEventAdjustmentType$cancel extends BillingMeterEventAdjustmentType {const BillingMeterEventAdjustmentType$cancel._();
+
+@override String get value => 'cancel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingMeterEventAdjustmentType$cancel;
+
+@override int get hashCode => 'cancel'.hashCode;
+
+ }
+@immutable final class BillingMeterEventAdjustmentType$Unknown extends BillingMeterEventAdjustmentType {const BillingMeterEventAdjustmentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingMeterEventAdjustmentType && other.value == value;
+    other is BillingMeterEventAdjustmentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingMeterEventAdjustmentType($value)';
 
  }

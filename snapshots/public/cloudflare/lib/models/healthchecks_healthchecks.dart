@@ -9,28 +9,27 @@ String toJson() => value;
 
 }
 /// The current status of the origin server according to the health check.
-@immutable final class HealthchecksStatus {const HealthchecksStatus._(this.value);
+sealed class HealthchecksStatus {const HealthchecksStatus();
 
 factory HealthchecksStatus.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
   'healthy' => healthy,
   'unhealthy' => unhealthy,
   'suspended' => suspended,
-  _ => HealthchecksStatus._(json),
+  _ => HealthchecksStatus$Unknown(json),
 }; }
 
-static const HealthchecksStatus unknown = HealthchecksStatus._('unknown');
+static const HealthchecksStatus unknown = HealthchecksStatus$unknown._();
 
-static const HealthchecksStatus healthy = HealthchecksStatus._('healthy');
+static const HealthchecksStatus healthy = HealthchecksStatus$healthy._();
 
-static const HealthchecksStatus unhealthy = HealthchecksStatus._('unhealthy');
+static const HealthchecksStatus unhealthy = HealthchecksStatus$unhealthy._();
 
-static const HealthchecksStatus suspended = HealthchecksStatus._('suspended');
+static const HealthchecksStatus suspended = HealthchecksStatus$suspended._();
 
 static const List<HealthchecksStatus> values = [unknown, healthy, unhealthy, suspended];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,13 +40,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is HealthchecksStatus$Unknown; } 
+@override String toString() => 'HealthchecksStatus($value)';
+
+ }
+@immutable final class HealthchecksStatus$unknown extends HealthchecksStatus {const HealthchecksStatus$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HealthchecksStatus$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class HealthchecksStatus$healthy extends HealthchecksStatus {const HealthchecksStatus$healthy._();
+
+@override String get value => 'healthy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HealthchecksStatus$healthy;
+
+@override int get hashCode => 'healthy'.hashCode;
+
+ }
+@immutable final class HealthchecksStatus$unhealthy extends HealthchecksStatus {const HealthchecksStatus$unhealthy._();
+
+@override String get value => 'unhealthy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HealthchecksStatus$unhealthy;
+
+@override int get hashCode => 'unhealthy'.hashCode;
+
+ }
+@immutable final class HealthchecksStatus$suspended extends HealthchecksStatus {const HealthchecksStatus$suspended._();
+
+@override String get value => 'suspended';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HealthchecksStatus$suspended;
+
+@override int get hashCode => 'suspended'.hashCode;
+
+ }
+@immutable final class HealthchecksStatus$Unknown extends HealthchecksStatus {const HealthchecksStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is HealthchecksStatus && other.value == value;
+    other is HealthchecksStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'HealthchecksStatus($value)';
 
  }
 extension type HealthchecksTimestamp(DateTime value) {

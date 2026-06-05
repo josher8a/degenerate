@@ -2,28 +2,27 @@
 // Source: #/components/schemas/ZeroTrustGatewayCertificates
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_read_only_timestamp.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_uuid.dart';/// Indicate the read-only deployment status of the certificate on Cloudflare's edge. Gateway TLS interception can use certificates in the 'available' (previously called 'active') state.
-@immutable final class ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus._(this.value);
+sealed class ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus();
 
 factory ZeroTrustGatewayBindingStatus.fromJson(String json) { return switch (json) {
   'pending_deployment' => pendingDeployment,
   'available' => available,
   'pending_deletion' => pendingDeletion,
   'inactive' => inactive,
-  _ => ZeroTrustGatewayBindingStatus._(json),
+  _ => ZeroTrustGatewayBindingStatus$Unknown(json),
 }; }
 
-static const ZeroTrustGatewayBindingStatus pendingDeployment = ZeroTrustGatewayBindingStatus._('pending_deployment');
+static const ZeroTrustGatewayBindingStatus pendingDeployment = ZeroTrustGatewayBindingStatus$pendingDeployment._();
 
-static const ZeroTrustGatewayBindingStatus available = ZeroTrustGatewayBindingStatus._('available');
+static const ZeroTrustGatewayBindingStatus available = ZeroTrustGatewayBindingStatus$available._();
 
-static const ZeroTrustGatewayBindingStatus pendingDeletion = ZeroTrustGatewayBindingStatus._('pending_deletion');
+static const ZeroTrustGatewayBindingStatus pendingDeletion = ZeroTrustGatewayBindingStatus$pendingDeletion._();
 
-static const ZeroTrustGatewayBindingStatus inactive = ZeroTrustGatewayBindingStatus._('inactive');
+static const ZeroTrustGatewayBindingStatus inactive = ZeroTrustGatewayBindingStatus$inactive._();
 
 static const List<ZeroTrustGatewayBindingStatus> values = [pendingDeployment, available, pendingDeletion, inactive];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,32 +33,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ZeroTrustGatewayBindingStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ZeroTrustGatewayBindingStatus$Unknown; } 
 @override String toString() => 'ZeroTrustGatewayBindingStatus($value)';
 
  }
+@immutable final class ZeroTrustGatewayBindingStatus$pendingDeployment extends ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus$pendingDeployment._();
+
+@override String get value => 'pending_deployment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZeroTrustGatewayBindingStatus$pendingDeployment;
+
+@override int get hashCode => 'pending_deployment'.hashCode;
+
+ }
+@immutable final class ZeroTrustGatewayBindingStatus$available extends ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus$available._();
+
+@override String get value => 'available';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZeroTrustGatewayBindingStatus$available;
+
+@override int get hashCode => 'available'.hashCode;
+
+ }
+@immutable final class ZeroTrustGatewayBindingStatus$pendingDeletion extends ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus$pendingDeletion._();
+
+@override String get value => 'pending_deletion';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZeroTrustGatewayBindingStatus$pendingDeletion;
+
+@override int get hashCode => 'pending_deletion'.hashCode;
+
+ }
+@immutable final class ZeroTrustGatewayBindingStatus$inactive extends ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZeroTrustGatewayBindingStatus$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+ }
+@immutable final class ZeroTrustGatewayBindingStatus$Unknown extends ZeroTrustGatewayBindingStatus {const ZeroTrustGatewayBindingStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZeroTrustGatewayBindingStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Indicate the read-only certificate type, BYO-PKI (custom) or Gateway-managed.
-@immutable final class ZeroTrustGatewayType {const ZeroTrustGatewayType._(this.value);
+sealed class ZeroTrustGatewayType {const ZeroTrustGatewayType();
 
 factory ZeroTrustGatewayType.fromJson(String json) { return switch (json) {
   'custom' => custom,
   'gateway_managed' => gatewayManaged,
-  _ => ZeroTrustGatewayType._(json),
+  _ => ZeroTrustGatewayType$Unknown(json),
 }; }
 
-static const ZeroTrustGatewayType custom = ZeroTrustGatewayType._('custom');
+static const ZeroTrustGatewayType custom = ZeroTrustGatewayType$custom._();
 
-static const ZeroTrustGatewayType gatewayManaged = ZeroTrustGatewayType._('gateway_managed');
+static const ZeroTrustGatewayType gatewayManaged = ZeroTrustGatewayType$gatewayManaged._();
 
 static const List<ZeroTrustGatewayType> values = [custom, gatewayManaged];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,13 +107,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZeroTrustGatewayType$Unknown; } 
+@override String toString() => 'ZeroTrustGatewayType($value)';
+
+ }
+@immutable final class ZeroTrustGatewayType$custom extends ZeroTrustGatewayType {const ZeroTrustGatewayType$custom._();
+
+@override String get value => 'custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZeroTrustGatewayType$custom;
+
+@override int get hashCode => 'custom'.hashCode;
+
+ }
+@immutable final class ZeroTrustGatewayType$gatewayManaged extends ZeroTrustGatewayType {const ZeroTrustGatewayType$gatewayManaged._();
+
+@override String get value => 'gateway_managed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZeroTrustGatewayType$gatewayManaged;
+
+@override int get hashCode => 'gateway_managed'.hashCode;
+
+ }
+@immutable final class ZeroTrustGatewayType$Unknown extends ZeroTrustGatewayType {const ZeroTrustGatewayType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZeroTrustGatewayType && other.value == value;
+    other is ZeroTrustGatewayType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZeroTrustGatewayType($value)';
 
  }
 @immutable final class ZeroTrustGatewayCertificates {const ZeroTrustGatewayCertificates({this.bindingStatus, this.certificate, this.createdAt, this.expiresOn, this.fingerprint, this.id, this.inUse, this.issuerOrg, this.issuerRaw, this.type, this.updatedAt, this.uploadedOn, });

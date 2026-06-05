@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhooksReviewers
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_reviewers/webhooks_reviewers_reviewer.dart';@immutable final class WebhooksReviewersType {const WebhooksReviewersType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_reviewers/webhooks_reviewers_reviewer.dart';sealed class WebhooksReviewersType {const WebhooksReviewersType();
 
 factory WebhooksReviewersType.fromJson(String json) { return switch (json) {
   'User' => user,
-  _ => WebhooksReviewersType._(json),
+  _ => WebhooksReviewersType$Unknown(json),
 }; }
 
-static const WebhooksReviewersType user = WebhooksReviewersType._('User');
+static const WebhooksReviewersType user = WebhooksReviewersType$user._();
 
 static const List<WebhooksReviewersType> values = [user];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhooksReviewersType$Unknown; } 
+@override String toString() => 'WebhooksReviewersType($value)';
+
+ }
+@immutable final class WebhooksReviewersType$user extends WebhooksReviewersType {const WebhooksReviewersType$user._();
+
+@override String get value => 'User';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksReviewersType$user;
+
+@override int get hashCode => 'User'.hashCode;
+
+ }
+@immutable final class WebhooksReviewersType$Unknown extends WebhooksReviewersType {const WebhooksReviewersType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhooksReviewersType && other.value == value;
+    other is WebhooksReviewersType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhooksReviewersType($value)';
 
  }
 @immutable final class WebhooksReviewers2 {const WebhooksReviewers2({this.reviewer, this.type, });

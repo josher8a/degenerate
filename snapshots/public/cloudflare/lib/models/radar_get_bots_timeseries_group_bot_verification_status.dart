@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RadarGetBotsTimeseriesGroupBotVerificationStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The category of the bot.
-@immutable final class RadarGetBotsTimeseriesGroupBotVerificationStatus {const RadarGetBotsTimeseriesGroupBotVerificationStatus._(this.value);
+sealed class RadarGetBotsTimeseriesGroupBotVerificationStatus {const RadarGetBotsTimeseriesGroupBotVerificationStatus();
 
 factory RadarGetBotsTimeseriesGroupBotVerificationStatus.fromJson(String json) { return switch (json) {
   'VERIFIED' => verified,
-  _ => RadarGetBotsTimeseriesGroupBotVerificationStatus._(json),
+  _ => RadarGetBotsTimeseriesGroupBotVerificationStatus$Unknown(json),
 }; }
 
-static const RadarGetBotsTimeseriesGroupBotVerificationStatus verified = RadarGetBotsTimeseriesGroupBotVerificationStatus._('VERIFIED');
+static const RadarGetBotsTimeseriesGroupBotVerificationStatus verified = RadarGetBotsTimeseriesGroupBotVerificationStatus$verified._();
 
 static const List<RadarGetBotsTimeseriesGroupBotVerificationStatus> values = [verified];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetBotsTimeseriesGroupBotVerificationStatus$Unknown; } 
+@override String toString() => 'RadarGetBotsTimeseriesGroupBotVerificationStatus($value)';
+
+ }
+@immutable final class RadarGetBotsTimeseriesGroupBotVerificationStatus$verified extends RadarGetBotsTimeseriesGroupBotVerificationStatus {const RadarGetBotsTimeseriesGroupBotVerificationStatus$verified._();
+
+@override String get value => 'VERIFIED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBotsTimeseriesGroupBotVerificationStatus$verified;
+
+@override int get hashCode => 'VERIFIED'.hashCode;
+
+ }
+@immutable final class RadarGetBotsTimeseriesGroupBotVerificationStatus$Unknown extends RadarGetBotsTimeseriesGroupBotVerificationStatus {const RadarGetBotsTimeseriesGroupBotVerificationStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetBotsTimeseriesGroupBotVerificationStatus && other.value == value;
+    other is RadarGetBotsTimeseriesGroupBotVerificationStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetBotsTimeseriesGroupBotVerificationStatus($value)';
 
  }

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookMarketplacePurchaseChanged
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_marketplace_purchase_changed/webhook_marketplace_purchase_changed_previous_marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/webhooks_marketplace_purchase.dart';@immutable final class WebhookMarketplacePurchaseChangedAction {const WebhookMarketplacePurchaseChangedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_marketplace_purchase_changed/webhook_marketplace_purchase_changed_previous_marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/webhooks_marketplace_purchase.dart';sealed class WebhookMarketplacePurchaseChangedAction {const WebhookMarketplacePurchaseChangedAction();
 
 factory WebhookMarketplacePurchaseChangedAction.fromJson(String json) { return switch (json) {
   'changed' => changed,
-  _ => WebhookMarketplacePurchaseChangedAction._(json),
+  _ => WebhookMarketplacePurchaseChangedAction$Unknown(json),
 }; }
 
-static const WebhookMarketplacePurchaseChangedAction changed = WebhookMarketplacePurchaseChangedAction._('changed');
+static const WebhookMarketplacePurchaseChangedAction changed = WebhookMarketplacePurchaseChangedAction$changed._();
 
 static const List<WebhookMarketplacePurchaseChangedAction> values = [changed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookMarketplacePurchaseChangedAction$Unknown; } 
+@override String toString() => 'WebhookMarketplacePurchaseChangedAction($value)';
+
+ }
+@immutable final class WebhookMarketplacePurchaseChangedAction$changed extends WebhookMarketplacePurchaseChangedAction {const WebhookMarketplacePurchaseChangedAction$changed._();
+
+@override String get value => 'changed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookMarketplacePurchaseChangedAction$changed;
+
+@override int get hashCode => 'changed'.hashCode;
+
+ }
+@immutable final class WebhookMarketplacePurchaseChangedAction$Unknown extends WebhookMarketplacePurchaseChangedAction {const WebhookMarketplacePurchaseChangedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookMarketplacePurchaseChangedAction && other.value == value;
+    other is WebhookMarketplacePurchaseChangedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookMarketplacePurchaseChangedAction($value)';
 
  }
 @immutable final class WebhookMarketplacePurchaseChanged {const WebhookMarketplacePurchaseChanged({required this.action, required this.effectiveDate, required this.marketplacePurchase, required this.sender, this.enterprise, this.installation, this.organization, this.previousMarketplacePurchase, this.repository, });

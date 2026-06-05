@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: ToolChoice > Variant1 > AllowedTools)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/allowed_tools_allowed_tools.dart';@immutable final class AllowedToolsType {const AllowedToolsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/allowed_tools_allowed_tools.dart';sealed class AllowedToolsType {const AllowedToolsType();
 
 factory AllowedToolsType.fromJson(String json) { return switch (json) {
   'allowed_tools' => allowedTools,
-  _ => AllowedToolsType._(json),
+  _ => AllowedToolsType$Unknown(json),
 }; }
 
-static const AllowedToolsType allowedTools = AllowedToolsType._('allowed_tools');
+static const AllowedToolsType allowedTools = AllowedToolsType$allowedTools._();
 
 static const List<AllowedToolsType> values = [allowedTools];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AllowedToolsType$Unknown; } 
+@override String toString() => 'AllowedToolsType($value)';
+
+ }
+@immutable final class AllowedToolsType$allowedTools extends AllowedToolsType {const AllowedToolsType$allowedTools._();
+
+@override String get value => 'allowed_tools';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowedToolsType$allowedTools;
+
+@override int get hashCode => 'allowed_tools'.hashCode;
+
+ }
+@immutable final class AllowedToolsType$Unknown extends AllowedToolsType {const AllowedToolsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AllowedToolsType && other.value == value;
+    other is AllowedToolsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AllowedToolsType($value)';
 
  }
 /// Constrain to an allowed subset of tools.

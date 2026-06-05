@@ -6,7 +6,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// `content_filter` if content was omitted due to a flag from our content filters,
 /// `tool_calls` if the model called a tool, or `function_call` (deprecated) if the model called a function.
 /// 
-@immutable final class CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason._(this.value);
+sealed class CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason();
 
 factory CreateChatCompletionResponseChoicesFinishReason.fromJson(String json) { return switch (json) {
   'stop' => stop,
@@ -14,23 +14,22 @@ factory CreateChatCompletionResponseChoicesFinishReason.fromJson(String json) { 
   'tool_calls' => toolCalls,
   'content_filter' => contentFilter,
   'function_call' => functionCall,
-  _ => CreateChatCompletionResponseChoicesFinishReason._(json),
+  _ => CreateChatCompletionResponseChoicesFinishReason$Unknown(json),
 }; }
 
-static const CreateChatCompletionResponseChoicesFinishReason stop = CreateChatCompletionResponseChoicesFinishReason._('stop');
+static const CreateChatCompletionResponseChoicesFinishReason stop = CreateChatCompletionResponseChoicesFinishReason$stop._();
 
-static const CreateChatCompletionResponseChoicesFinishReason length = CreateChatCompletionResponseChoicesFinishReason._('length');
+static const CreateChatCompletionResponseChoicesFinishReason length = CreateChatCompletionResponseChoicesFinishReason$length._();
 
-static const CreateChatCompletionResponseChoicesFinishReason toolCalls = CreateChatCompletionResponseChoicesFinishReason._('tool_calls');
+static const CreateChatCompletionResponseChoicesFinishReason toolCalls = CreateChatCompletionResponseChoicesFinishReason$toolCalls._();
 
-static const CreateChatCompletionResponseChoicesFinishReason contentFilter = CreateChatCompletionResponseChoicesFinishReason._('content_filter');
+static const CreateChatCompletionResponseChoicesFinishReason contentFilter = CreateChatCompletionResponseChoicesFinishReason$contentFilter._();
 
-static const CreateChatCompletionResponseChoicesFinishReason functionCall = CreateChatCompletionResponseChoicesFinishReason._('function_call');
+static const CreateChatCompletionResponseChoicesFinishReason functionCall = CreateChatCompletionResponseChoicesFinishReason$functionCall._();
 
 static const List<CreateChatCompletionResponseChoicesFinishReason> values = [stop, length, toolCalls, contentFilter, functionCall];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,13 +41,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateChatCompletionResponseChoicesFinishReason$Unknown; } 
+@override String toString() => 'CreateChatCompletionResponseChoicesFinishReason($value)';
+
+ }
+@immutable final class CreateChatCompletionResponseChoicesFinishReason$stop extends CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason$stop._();
+
+@override String get value => 'stop';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateChatCompletionResponseChoicesFinishReason$stop;
+
+@override int get hashCode => 'stop'.hashCode;
+
+ }
+@immutable final class CreateChatCompletionResponseChoicesFinishReason$length extends CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason$length._();
+
+@override String get value => 'length';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateChatCompletionResponseChoicesFinishReason$length;
+
+@override int get hashCode => 'length'.hashCode;
+
+ }
+@immutable final class CreateChatCompletionResponseChoicesFinishReason$toolCalls extends CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason$toolCalls._();
+
+@override String get value => 'tool_calls';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateChatCompletionResponseChoicesFinishReason$toolCalls;
+
+@override int get hashCode => 'tool_calls'.hashCode;
+
+ }
+@immutable final class CreateChatCompletionResponseChoicesFinishReason$contentFilter extends CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason$contentFilter._();
+
+@override String get value => 'content_filter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateChatCompletionResponseChoicesFinishReason$contentFilter;
+
+@override int get hashCode => 'content_filter'.hashCode;
+
+ }
+@immutable final class CreateChatCompletionResponseChoicesFinishReason$functionCall extends CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason$functionCall._();
+
+@override String get value => 'function_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateChatCompletionResponseChoicesFinishReason$functionCall;
+
+@override int get hashCode => 'function_call'.hashCode;
+
+ }
+@immutable final class CreateChatCompletionResponseChoicesFinishReason$Unknown extends CreateChatCompletionResponseChoicesFinishReason {const CreateChatCompletionResponseChoicesFinishReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateChatCompletionResponseChoicesFinishReason && other.value == value;
+    other is CreateChatCompletionResponseChoicesFinishReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateChatCompletionResponseChoicesFinishReason($value)';
 
  }
 @immutable final class CreateChatCompletionResponseChoices {const CreateChatCompletionResponseChoices({required this.finishReason, required this.index, required this.message, required this.logprobs, });

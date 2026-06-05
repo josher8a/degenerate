@@ -2,25 +2,24 @@
 // Source: #/components/schemas/UrlscannerGetScanScreenshotResolution2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Target device type.
-@immutable final class UrlscannerGetScanScreenshotResolution2 {const UrlscannerGetScanScreenshotResolution2._(this.value);
+sealed class UrlscannerGetScanScreenshotResolution2 {const UrlscannerGetScanScreenshotResolution2();
 
 factory UrlscannerGetScanScreenshotResolution2.fromJson(String json) { return switch (json) {
   'desktop' => desktop,
   'mobile' => mobile,
   'tablet' => tablet,
-  _ => UrlscannerGetScanScreenshotResolution2._(json),
+  _ => UrlscannerGetScanScreenshotResolution2$Unknown(json),
 }; }
 
-static const UrlscannerGetScanScreenshotResolution2 desktop = UrlscannerGetScanScreenshotResolution2._('desktop');
+static const UrlscannerGetScanScreenshotResolution2 desktop = UrlscannerGetScanScreenshotResolution2$desktop._();
 
-static const UrlscannerGetScanScreenshotResolution2 mobile = UrlscannerGetScanScreenshotResolution2._('mobile');
+static const UrlscannerGetScanScreenshotResolution2 mobile = UrlscannerGetScanScreenshotResolution2$mobile._();
 
-static const UrlscannerGetScanScreenshotResolution2 tablet = UrlscannerGetScanScreenshotResolution2._('tablet');
+static const UrlscannerGetScanScreenshotResolution2 tablet = UrlscannerGetScanScreenshotResolution2$tablet._();
 
 static const List<UrlscannerGetScanScreenshotResolution2> values = [desktop, mobile, tablet];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UrlscannerGetScanScreenshotResolution2$Unknown; } 
+@override String toString() => 'UrlscannerGetScanScreenshotResolution2($value)';
+
+ }
+@immutable final class UrlscannerGetScanScreenshotResolution2$desktop extends UrlscannerGetScanScreenshotResolution2 {const UrlscannerGetScanScreenshotResolution2$desktop._();
+
+@override String get value => 'desktop';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UrlscannerGetScanScreenshotResolution2$desktop;
+
+@override int get hashCode => 'desktop'.hashCode;
+
+ }
+@immutable final class UrlscannerGetScanScreenshotResolution2$mobile extends UrlscannerGetScanScreenshotResolution2 {const UrlscannerGetScanScreenshotResolution2$mobile._();
+
+@override String get value => 'mobile';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UrlscannerGetScanScreenshotResolution2$mobile;
+
+@override int get hashCode => 'mobile'.hashCode;
+
+ }
+@immutable final class UrlscannerGetScanScreenshotResolution2$tablet extends UrlscannerGetScanScreenshotResolution2 {const UrlscannerGetScanScreenshotResolution2$tablet._();
+
+@override String get value => 'tablet';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UrlscannerGetScanScreenshotResolution2$tablet;
+
+@override int get hashCode => 'tablet'.hashCode;
+
+ }
+@immutable final class UrlscannerGetScanScreenshotResolution2$Unknown extends UrlscannerGetScanScreenshotResolution2 {const UrlscannerGetScanScreenshotResolution2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UrlscannerGetScanScreenshotResolution2 && other.value == value;
+    other is UrlscannerGetScanScreenshotResolution2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UrlscannerGetScanScreenshotResolution2($value)';
 
  }

@@ -2,28 +2,27 @@
 // Source: #/components/schemas/PaymentFlowsPrivatePaymentMethodsCardPresentCommonWallet
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of mobile wallet, one of `apple_pay`, `google_pay`, `samsung_pay`, or `unknown`.
-@immutable final class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType._(this.value);
+sealed class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType();
 
 factory PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType.fromJson(String json) { return switch (json) {
   'apple_pay' => applePay,
   'google_pay' => googlePay,
   'samsung_pay' => samsungPay,
   'unknown' => unknown,
-  _ => PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType._(json),
+  _ => PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$Unknown(json),
 }; }
 
-static const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType applePay = PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType._('apple_pay');
+static const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType applePay = PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$applePay._();
 
-static const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType googlePay = PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType._('google_pay');
+static const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType googlePay = PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$googlePay._();
 
-static const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType samsungPay = PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType._('samsung_pay');
+static const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType samsungPay = PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$samsungPay._();
 
-static const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType unknown = PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType._('unknown');
+static const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType unknown = PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$unknown._();
 
 static const List<PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType> values = [applePay, googlePay, samsungPay, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$Unknown; } 
+@override String toString() => 'PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType($value)';
+
+ }
+@immutable final class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$applePay extends PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$applePay._();
+
+@override String get value => 'apple_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$applePay;
+
+@override int get hashCode => 'apple_pay'.hashCode;
+
+ }
+@immutable final class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$googlePay extends PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$googlePay._();
+
+@override String get value => 'google_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$googlePay;
+
+@override int get hashCode => 'google_pay'.hashCode;
+
+ }
+@immutable final class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$samsungPay extends PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$samsungPay._();
+
+@override String get value => 'samsung_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$samsungPay;
+
+@override int get hashCode => 'samsung_pay'.hashCode;
+
+ }
+@immutable final class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$unknown extends PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$Unknown extends PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType {const PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType && other.value == value;
+    other is PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentFlowsPrivatePaymentMethodsCardPresentCommonWalletType($value)';
 
  }
 /// 

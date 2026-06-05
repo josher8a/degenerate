@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `batch.failed`.
 /// 
-@immutable final class WebhookBatchFailedType {const WebhookBatchFailedType._(this.value);
+sealed class WebhookBatchFailedType {const WebhookBatchFailedType();
 
 factory WebhookBatchFailedType.fromJson(String json) { return switch (json) {
   'batch.failed' => batchFailed,
-  _ => WebhookBatchFailedType._(json),
+  _ => WebhookBatchFailedType$Unknown(json),
 }; }
 
-static const WebhookBatchFailedType batchFailed = WebhookBatchFailedType._('batch.failed');
+static const WebhookBatchFailedType batchFailed = WebhookBatchFailedType$batchFailed._();
 
 static const List<WebhookBatchFailedType> values = [batchFailed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookBatchFailedType$Unknown; } 
+@override String toString() => 'WebhookBatchFailedType($value)';
+
+ }
+@immutable final class WebhookBatchFailedType$batchFailed extends WebhookBatchFailedType {const WebhookBatchFailedType$batchFailed._();
+
+@override String get value => 'batch.failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookBatchFailedType$batchFailed;
+
+@override int get hashCode => 'batch.failed'.hashCode;
+
+ }
+@immutable final class WebhookBatchFailedType$Unknown extends WebhookBatchFailedType {const WebhookBatchFailedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookBatchFailedType && other.value == value;
+    other is WebhookBatchFailedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookBatchFailedType($value)';
 
  }
 /// Sent when a batch API request has failed.

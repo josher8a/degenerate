@@ -2,22 +2,21 @@
 // Source: #/components/schemas/FundingInstructionsBankTransfer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_financial_address.dart';/// The bank_transfer type
-@immutable final class FundingInstructionsBankTransferType {const FundingInstructionsBankTransferType._(this.value);
+sealed class FundingInstructionsBankTransferType {const FundingInstructionsBankTransferType();
 
 factory FundingInstructionsBankTransferType.fromJson(String json) { return switch (json) {
   'eu_bank_transfer' => euBankTransfer,
   'jp_bank_transfer' => jpBankTransfer,
-  _ => FundingInstructionsBankTransferType._(json),
+  _ => FundingInstructionsBankTransferType$Unknown(json),
 }; }
 
-static const FundingInstructionsBankTransferType euBankTransfer = FundingInstructionsBankTransferType._('eu_bank_transfer');
+static const FundingInstructionsBankTransferType euBankTransfer = FundingInstructionsBankTransferType$euBankTransfer._();
 
-static const FundingInstructionsBankTransferType jpBankTransfer = FundingInstructionsBankTransferType._('jp_bank_transfer');
+static const FundingInstructionsBankTransferType jpBankTransfer = FundingInstructionsBankTransferType$jpBankTransfer._();
 
 static const List<FundingInstructionsBankTransferType> values = [euBankTransfer, jpBankTransfer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FundingInstructionsBankTransferType$Unknown; } 
+@override String toString() => 'FundingInstructionsBankTransferType($value)';
+
+ }
+@immutable final class FundingInstructionsBankTransferType$euBankTransfer extends FundingInstructionsBankTransferType {const FundingInstructionsBankTransferType$euBankTransfer._();
+
+@override String get value => 'eu_bank_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferType$euBankTransfer;
+
+@override int get hashCode => 'eu_bank_transfer'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferType$jpBankTransfer extends FundingInstructionsBankTransferType {const FundingInstructionsBankTransferType$jpBankTransfer._();
+
+@override String get value => 'jp_bank_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferType$jpBankTransfer;
+
+@override int get hashCode => 'jp_bank_transfer'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferType$Unknown extends FundingInstructionsBankTransferType {const FundingInstructionsBankTransferType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FundingInstructionsBankTransferType && other.value == value;
+    other is FundingInstructionsBankTransferType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FundingInstructionsBankTransferType($value)';
 
  }
 /// 

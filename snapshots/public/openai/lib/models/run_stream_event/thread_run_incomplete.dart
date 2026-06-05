@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStreamEvent (inline: ThreadRunIncomplete)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';@immutable final class ThreadRunIncompleteEvent {const ThreadRunIncompleteEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';sealed class ThreadRunIncompleteEvent {const ThreadRunIncompleteEvent();
 
 factory ThreadRunIncompleteEvent.fromJson(String json) { return switch (json) {
   'thread.run.incomplete' => threadRunIncomplete,
-  _ => ThreadRunIncompleteEvent._(json),
+  _ => ThreadRunIncompleteEvent$Unknown(json),
 }; }
 
-static const ThreadRunIncompleteEvent threadRunIncomplete = ThreadRunIncompleteEvent._('thread.run.incomplete');
+static const ThreadRunIncompleteEvent threadRunIncomplete = ThreadRunIncompleteEvent$threadRunIncomplete._();
 
 static const List<ThreadRunIncompleteEvent> values = [threadRunIncomplete];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunIncompleteEvent$Unknown; } 
+@override String toString() => 'ThreadRunIncompleteEvent($value)';
+
+ }
+@immutable final class ThreadRunIncompleteEvent$threadRunIncomplete extends ThreadRunIncompleteEvent {const ThreadRunIncompleteEvent$threadRunIncomplete._();
+
+@override String get value => 'thread.run.incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunIncompleteEvent$threadRunIncomplete;
+
+@override int get hashCode => 'thread.run.incomplete'.hashCode;
+
+ }
+@immutable final class ThreadRunIncompleteEvent$Unknown extends ThreadRunIncompleteEvent {const ThreadRunIncompleteEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunIncompleteEvent && other.value == value;
+    other is ThreadRunIncompleteEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunIncompleteEvent($value)';
 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostTaxCalculationsRequest (inline: CustomerDetails)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/customer_details_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/post_tax_calculations_request_customer_details_address.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details/taxability_override.dart';@immutable final class CustomerDetailsAddressSource {const CustomerDetailsAddressSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/customer_details_tax_ids.dart';import 'package:pub_stripe_spec3/models/post_tax_calculations_request/post_tax_calculations_request_customer_details_address.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details/taxability_override.dart';sealed class CustomerDetailsAddressSource {const CustomerDetailsAddressSource();
 
 factory CustomerDetailsAddressSource.fromJson(String json) { return switch (json) {
   'billing' => billing,
   'shipping' => shipping,
-  _ => CustomerDetailsAddressSource._(json),
+  _ => CustomerDetailsAddressSource$Unknown(json),
 }; }
 
-static const CustomerDetailsAddressSource billing = CustomerDetailsAddressSource._('billing');
+static const CustomerDetailsAddressSource billing = CustomerDetailsAddressSource$billing._();
 
-static const CustomerDetailsAddressSource shipping = CustomerDetailsAddressSource._('shipping');
+static const CustomerDetailsAddressSource shipping = CustomerDetailsAddressSource$shipping._();
 
 static const List<CustomerDetailsAddressSource> values = [billing, shipping];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomerDetailsAddressSource$Unknown; } 
+@override String toString() => 'CustomerDetailsAddressSource($value)';
+
+ }
+@immutable final class CustomerDetailsAddressSource$billing extends CustomerDetailsAddressSource {const CustomerDetailsAddressSource$billing._();
+
+@override String get value => 'billing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerDetailsAddressSource$billing;
+
+@override int get hashCode => 'billing'.hashCode;
+
+ }
+@immutable final class CustomerDetailsAddressSource$shipping extends CustomerDetailsAddressSource {const CustomerDetailsAddressSource$shipping._();
+
+@override String get value => 'shipping';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerDetailsAddressSource$shipping;
+
+@override int get hashCode => 'shipping'.hashCode;
+
+ }
+@immutable final class CustomerDetailsAddressSource$Unknown extends CustomerDetailsAddressSource {const CustomerDetailsAddressSource$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerDetailsAddressSource && other.value == value;
+    other is CustomerDetailsAddressSource$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomerDetailsAddressSource($value)';
 
  }
 /// Details about the customer, including address and tax IDs.

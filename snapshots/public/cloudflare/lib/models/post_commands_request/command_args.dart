@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCommandsRequest (inline: Commands > CommandArgs)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Interfaces {const Interfaces._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Interfaces {const Interfaces();
 
 factory Interfaces.fromJson(String json) { return switch (json) {
   'default' => $default,
   'tunnel' => tunnel,
-  _ => Interfaces._(json),
+  _ => Interfaces$Unknown(json),
 }; }
 
-static const Interfaces $default = Interfaces._('default');
+static const Interfaces $default = Interfaces$$default._();
 
-static const Interfaces tunnel = Interfaces._('tunnel');
+static const Interfaces tunnel = Interfaces$tunnel._();
 
 static const List<Interfaces> values = [$default, tunnel];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Interfaces$Unknown; } 
+@override String toString() => 'Interfaces($value)';
+
+ }
+@immutable final class Interfaces$$default extends Interfaces {const Interfaces$$default._();
+
+@override String get value => 'default';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Interfaces$$default;
+
+@override int get hashCode => 'default'.hashCode;
+
+ }
+@immutable final class Interfaces$tunnel extends Interfaces {const Interfaces$tunnel._();
+
+@override String get value => 'tunnel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Interfaces$tunnel;
+
+@override int get hashCode => 'tunnel'.hashCode;
+
+ }
+@immutable final class Interfaces$Unknown extends Interfaces {const Interfaces$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Interfaces && other.value == value;
+    other is Interfaces$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Interfaces($value)';
 
  }
 @immutable final class CommandArgs {const CommandArgs({this.interfaces, this.maxFileSizeMb = 5.0, this.packetSizeBytes = 160.0, this.testAllRoutes = true, this.timeLimitMin = 5.0, });

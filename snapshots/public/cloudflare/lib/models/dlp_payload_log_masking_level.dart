@@ -7,28 +7,27 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Masking level fo
 /// - `partial`: Only partial payload content is masked.
 /// - `clear`: No masking is applied to the payload content.
 /// - `default`: DLP uses its default masking behavior.
-@immutable final class DlpPayloadLogMaskingLevel {const DlpPayloadLogMaskingLevel._(this.value);
+sealed class DlpPayloadLogMaskingLevel {const DlpPayloadLogMaskingLevel();
 
 factory DlpPayloadLogMaskingLevel.fromJson(String json) { return switch (json) {
   'full' => full,
   'partial' => partial,
   'clear' => clear,
   'default' => $default,
-  _ => DlpPayloadLogMaskingLevel._(json),
+  _ => DlpPayloadLogMaskingLevel$Unknown(json),
 }; }
 
-static const DlpPayloadLogMaskingLevel full = DlpPayloadLogMaskingLevel._('full');
+static const DlpPayloadLogMaskingLevel full = DlpPayloadLogMaskingLevel$full._();
 
-static const DlpPayloadLogMaskingLevel partial = DlpPayloadLogMaskingLevel._('partial');
+static const DlpPayloadLogMaskingLevel partial = DlpPayloadLogMaskingLevel$partial._();
 
-static const DlpPayloadLogMaskingLevel clear = DlpPayloadLogMaskingLevel._('clear');
+static const DlpPayloadLogMaskingLevel clear = DlpPayloadLogMaskingLevel$clear._();
 
-static const DlpPayloadLogMaskingLevel $default = DlpPayloadLogMaskingLevel._('default');
+static const DlpPayloadLogMaskingLevel $default = DlpPayloadLogMaskingLevel$$default._();
 
 static const List<DlpPayloadLogMaskingLevel> values = [full, partial, clear, $default];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -39,12 +38,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DlpPayloadLogMaskingLevel$Unknown; } 
+@override String toString() => 'DlpPayloadLogMaskingLevel($value)';
+
+ }
+@immutable final class DlpPayloadLogMaskingLevel$full extends DlpPayloadLogMaskingLevel {const DlpPayloadLogMaskingLevel$full._();
+
+@override String get value => 'full';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DlpPayloadLogMaskingLevel$full;
+
+@override int get hashCode => 'full'.hashCode;
+
+ }
+@immutable final class DlpPayloadLogMaskingLevel$partial extends DlpPayloadLogMaskingLevel {const DlpPayloadLogMaskingLevel$partial._();
+
+@override String get value => 'partial';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DlpPayloadLogMaskingLevel$partial;
+
+@override int get hashCode => 'partial'.hashCode;
+
+ }
+@immutable final class DlpPayloadLogMaskingLevel$clear extends DlpPayloadLogMaskingLevel {const DlpPayloadLogMaskingLevel$clear._();
+
+@override String get value => 'clear';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DlpPayloadLogMaskingLevel$clear;
+
+@override int get hashCode => 'clear'.hashCode;
+
+ }
+@immutable final class DlpPayloadLogMaskingLevel$$default extends DlpPayloadLogMaskingLevel {const DlpPayloadLogMaskingLevel$$default._();
+
+@override String get value => 'default';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DlpPayloadLogMaskingLevel$$default;
+
+@override int get hashCode => 'default'.hashCode;
+
+ }
+@immutable final class DlpPayloadLogMaskingLevel$Unknown extends DlpPayloadLogMaskingLevel {const DlpPayloadLogMaskingLevel$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DlpPayloadLogMaskingLevel && other.value == value;
+    other is DlpPayloadLogMaskingLevel$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DlpPayloadLogMaskingLevel($value)';
 
  }

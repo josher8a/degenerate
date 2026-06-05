@@ -3,9 +3,8 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
-@immutable
-final class NaN {
-  const NaN._(this.value);
+sealed class NaN {
+  const NaN();
 
   factory NaN.fromJson(String json) {
     return switch (json) {
@@ -14,24 +13,23 @@ final class NaN {
       'NAN' => nan2,
       '+NaN' => naN2,
       '-NaN' => naN3,
-      _ => NaN._(json),
+      _ => NaN$Unknown(json),
     };
   }
 
-  static const NaN naN = NaN._('NaN');
+  static const NaN naN = NaN$naN._();
 
-  static const NaN nan = NaN._('nan');
+  static const NaN nan = NaN$nan._();
 
-  static const NaN nan2 = NaN._('NAN');
+  static const NaN nan2 = NaN$nan2._();
 
-  static const NaN naN2 = NaN._('+NaN');
+  static const NaN naN2 = NaN$naN2._();
 
-  static const NaN naN3 = NaN._('-NaN');
+  static const NaN naN3 = NaN$naN3._();
 
   static const List<NaN> values = [naN, nan, nan2, naN2, naN3];
 
-  final String value;
-
+  String get value;
   String toJson() {
     return value;
   }
@@ -50,23 +48,100 @@ final class NaN {
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
-    return !values.contains(this);
+    return this is NaN$Unknown;
   }
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) || other is NaN && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
 
   @override
   String toString() => 'NaN($value)';
 }
 
 @immutable
-final class Infinity {
-  const Infinity._(this.value);
+final class NaN$naN extends NaN {
+  const NaN$naN._();
+
+  @override
+  String get value => 'NaN';
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is NaN$naN;
+
+  @override
+  int get hashCode => 'NaN'.hashCode;
+}
+
+@immutable
+final class NaN$nan extends NaN {
+  const NaN$nan._();
+
+  @override
+  String get value => 'nan';
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is NaN$nan;
+
+  @override
+  int get hashCode => 'nan'.hashCode;
+}
+
+@immutable
+final class NaN$nan2 extends NaN {
+  const NaN$nan2._();
+
+  @override
+  String get value => 'NAN';
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is NaN$nan2;
+
+  @override
+  int get hashCode => 'NAN'.hashCode;
+}
+
+@immutable
+final class NaN$naN2 extends NaN {
+  const NaN$naN2._();
+
+  @override
+  String get value => '+NaN';
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is NaN$naN2;
+
+  @override
+  int get hashCode => '+NaN'.hashCode;
+}
+
+@immutable
+final class NaN$naN3 extends NaN {
+  const NaN$naN3._();
+
+  @override
+  String get value => '-NaN';
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is NaN$naN3;
+
+  @override
+  int get hashCode => '-NaN'.hashCode;
+}
+
+@immutable
+final class NaN$Unknown extends NaN {
+  const NaN$Unknown(this.value);
+
+  @override
+  final String value;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is NaN$Unknown && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+sealed class Infinity {
+  const Infinity();
 
   factory Infinity.fromJson(double json) {
     return switch (json) {
@@ -75,21 +150,20 @@ final class Infinity {
       -1 => minus1,
       1.7976931348623157e+308 => $17976931348623157e308,
       5e-324 => $5e324,
-      _ => Infinity._(json),
+      _ => Infinity$Unknown(json),
     };
   }
 
-  static const Infinity $0 = Infinity._(0);
+  static const Infinity $0 = Infinity$$0._();
 
-  static const Infinity $1 = Infinity._(1);
+  static const Infinity $1 = Infinity$$1._();
 
-  static const Infinity minus1 = Infinity._(-1);
+  static const Infinity minus1 = Infinity$minus1._();
 
-  static const Infinity $17976931348623157e308 = Infinity._(
-    1.7976931348623157e+308,
-  );
+  static const Infinity $17976931348623157e308 =
+      Infinity$$17976931348623157e308._();
 
-  static const Infinity $5e324 = Infinity._(5e-324);
+  static const Infinity $5e324 = Infinity$$5e324._();
 
   static const List<Infinity> values = [
     $0,
@@ -99,8 +173,7 @@ final class Infinity {
     $5e324,
   ];
 
-  final double value;
-
+  double get value;
   double toJson() {
     return value;
   }
@@ -119,18 +192,102 @@ final class Infinity {
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
-    return !values.contains(this);
+    return this is Infinity$Unknown;
   }
 
   @override
+  String toString() => 'Infinity($value)';
+}
+
+@immutable
+final class Infinity$$0 extends Infinity {
+  const Infinity$$0._();
+
+  @override
+  double get value => 0;
+
+  @override
   bool operator ==(Object other) =>
-      identical(this, other) || other is Infinity && other.value == value;
+      identical(this, other) || other is Infinity$$0;
+
+  @override
+  int get hashCode => 0.hashCode;
+}
+
+@immutable
+final class Infinity$$1 extends Infinity {
+  const Infinity$$1._();
+
+  @override
+  double get value => 1;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is Infinity$$1;
+
+  @override
+  int get hashCode => 1.hashCode;
+}
+
+@immutable
+final class Infinity$minus1 extends Infinity {
+  const Infinity$minus1._();
+
+  @override
+  double get value => -1;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is Infinity$minus1;
+
+  @override
+  int get hashCode => -1.hashCode;
+}
+
+@immutable
+final class Infinity$$17976931348623157e308 extends Infinity {
+  const Infinity$$17976931348623157e308._();
+
+  @override
+  double get value => 1.7976931348623157e+308;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is Infinity$$17976931348623157e308;
+
+  @override
+  int get hashCode => 1.7976931348623157e+308.hashCode;
+}
+
+@immutable
+final class Infinity$$5e324 extends Infinity {
+  const Infinity$$5e324._();
+
+  @override
+  double get value => 5e-324;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is Infinity$$5e324;
+
+  @override
+  int get hashCode => 5e-324.hashCode;
+}
+
+@immutable
+final class Infinity$Unknown extends Infinity {
+  const Infinity$Unknown(this.value);
+
+  @override
+  final double value;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Infinity$Unknown && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
-
-  @override
-  String toString() => 'Infinity($value)';
 }
 
 @immutable

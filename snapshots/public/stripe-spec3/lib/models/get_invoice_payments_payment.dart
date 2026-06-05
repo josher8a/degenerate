@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetInvoicePaymentsPayment
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetInvoicePaymentsPaymentType {const GetInvoicePaymentsPaymentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetInvoicePaymentsPaymentType {const GetInvoicePaymentsPaymentType();
 
 factory GetInvoicePaymentsPaymentType.fromJson(String json) { return switch (json) {
   'payment_intent' => paymentIntent,
   'payment_record' => paymentRecord,
-  _ => GetInvoicePaymentsPaymentType._(json),
+  _ => GetInvoicePaymentsPaymentType$Unknown(json),
 }; }
 
-static const GetInvoicePaymentsPaymentType paymentIntent = GetInvoicePaymentsPaymentType._('payment_intent');
+static const GetInvoicePaymentsPaymentType paymentIntent = GetInvoicePaymentsPaymentType$paymentIntent._();
 
-static const GetInvoicePaymentsPaymentType paymentRecord = GetInvoicePaymentsPaymentType._('payment_record');
+static const GetInvoicePaymentsPaymentType paymentRecord = GetInvoicePaymentsPaymentType$paymentRecord._();
 
 static const List<GetInvoicePaymentsPaymentType> values = [paymentIntent, paymentRecord];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GetInvoicePaymentsPaymentType$Unknown; } 
+@override String toString() => 'GetInvoicePaymentsPaymentType($value)';
+
+ }
+@immutable final class GetInvoicePaymentsPaymentType$paymentIntent extends GetInvoicePaymentsPaymentType {const GetInvoicePaymentsPaymentType$paymentIntent._();
+
+@override String get value => 'payment_intent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetInvoicePaymentsPaymentType$paymentIntent;
+
+@override int get hashCode => 'payment_intent'.hashCode;
+
+ }
+@immutable final class GetInvoicePaymentsPaymentType$paymentRecord extends GetInvoicePaymentsPaymentType {const GetInvoicePaymentsPaymentType$paymentRecord._();
+
+@override String get value => 'payment_record';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetInvoicePaymentsPaymentType$paymentRecord;
+
+@override int get hashCode => 'payment_record'.hashCode;
+
+ }
+@immutable final class GetInvoicePaymentsPaymentType$Unknown extends GetInvoicePaymentsPaymentType {const GetInvoicePaymentsPaymentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GetInvoicePaymentsPaymentType && other.value == value;
+    other is GetInvoicePaymentsPaymentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GetInvoicePaymentsPaymentType($value)';
 
  }
 @immutable final class GetInvoicePaymentsPayment {const GetInvoicePaymentsPayment({required this.type, this.paymentIntent, this.paymentRecord, });

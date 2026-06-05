@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ItemReordered
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item.dart';import 'package:pub_github_rest_3_1/models/item_reordered/item_reordered_changes.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class ItemReorderedAction {const ItemReorderedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item.dart';import 'package:pub_github_rest_3_1/models/item_reordered/item_reordered_changes.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class ItemReorderedAction {const ItemReorderedAction();
 
 factory ItemReorderedAction.fromJson(String json) { return switch (json) {
   'reordered' => reordered,
-  _ => ItemReorderedAction._(json),
+  _ => ItemReorderedAction$Unknown(json),
 }; }
 
-static const ItemReorderedAction reordered = ItemReorderedAction._('reordered');
+static const ItemReorderedAction reordered = ItemReorderedAction$reordered._();
 
 static const List<ItemReorderedAction> values = [reordered];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ItemReorderedAction$Unknown; } 
+@override String toString() => 'ItemReorderedAction($value)';
+
+ }
+@immutable final class ItemReorderedAction$reordered extends ItemReorderedAction {const ItemReorderedAction$reordered._();
+
+@override String get value => 'reordered';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemReorderedAction$reordered;
+
+@override int get hashCode => 'reordered'.hashCode;
+
+ }
+@immutable final class ItemReorderedAction$Unknown extends ItemReorderedAction {const ItemReorderedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ItemReorderedAction && other.value == value;
+    other is ItemReorderedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ItemReorderedAction($value)';
 
  }
 @immutable final class ItemReordered {const ItemReordered({required this.action, required this.changes, required this.organization, required this.projectsV2Item, required this.sender, this.installation, });

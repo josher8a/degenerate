@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AiSearchCreateInstancesRequest (inline: SourceParams > WebCrawler > StoreOptions)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StorageType {const StorageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class StorageType {const StorageType();
 
 factory StorageType.fromJson(String json) { return switch (json) {
   'r2' => r2,
-  _ => StorageType._(json),
+  _ => StorageType$Unknown(json),
 }; }
 
-static const StorageType r2 = StorageType._('r2');
+static const StorageType r2 = StorageType$r2._();
 
 static const List<StorageType> values = [r2];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StorageType$Unknown; } 
+@override String toString() => 'StorageType($value)';
+
+ }
+@immutable final class StorageType$r2 extends StorageType {const StorageType$r2._();
+
+@override String get value => 'r2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StorageType$r2;
+
+@override int get hashCode => 'r2'.hashCode;
+
+ }
+@immutable final class StorageType$Unknown extends StorageType {const StorageType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StorageType && other.value == value;
+    other is StorageType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StorageType($value)';
 
  }
 @immutable final class StoreOptions {const StoreOptions({required this.storageId, this.r2Jurisdiction = 'default', this.storageType = StorageType.r2, });

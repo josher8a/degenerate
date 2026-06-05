@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentIntentPaymentMethodOptionsParam (inline: MandateOptions)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MandateOptionsCollectionMethod {const MandateOptionsCollectionMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class MandateOptionsCollectionMethod {const MandateOptionsCollectionMethod();
 
 factory MandateOptionsCollectionMethod.fromJson(String json) { return switch (json) {
   '' => $empty,
   'paper' => paper,
-  _ => MandateOptionsCollectionMethod._(json),
+  _ => MandateOptionsCollectionMethod$Unknown(json),
 }; }
 
-static const MandateOptionsCollectionMethod $empty = MandateOptionsCollectionMethod._('');
+static const MandateOptionsCollectionMethod $empty = MandateOptionsCollectionMethod$$empty._();
 
-static const MandateOptionsCollectionMethod paper = MandateOptionsCollectionMethod._('paper');
+static const MandateOptionsCollectionMethod paper = MandateOptionsCollectionMethod$paper._();
 
 static const List<MandateOptionsCollectionMethod> values = [$empty, paper];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MandateOptionsCollectionMethod$Unknown; } 
+@override String toString() => 'MandateOptionsCollectionMethod($value)';
+
+ }
+@immutable final class MandateOptionsCollectionMethod$$empty extends MandateOptionsCollectionMethod {const MandateOptionsCollectionMethod$$empty._();
+
+@override String get value => '';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandateOptionsCollectionMethod$$empty;
+
+@override int get hashCode => ''.hashCode;
+
+ }
+@immutable final class MandateOptionsCollectionMethod$paper extends MandateOptionsCollectionMethod {const MandateOptionsCollectionMethod$paper._();
+
+@override String get value => 'paper';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandateOptionsCollectionMethod$paper;
+
+@override int get hashCode => 'paper'.hashCode;
+
+ }
+@immutable final class MandateOptionsCollectionMethod$Unknown extends MandateOptionsCollectionMethod {const MandateOptionsCollectionMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MandateOptionsCollectionMethod && other.value == value;
+    other is MandateOptionsCollectionMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MandateOptionsCollectionMethod($value)';
 
  }
 @immutable final class PaymentIntentPaymentMethodOptionsParam14MandateOptions {const PaymentIntentPaymentMethodOptionsParam14MandateOptions({this.collectionMethod});

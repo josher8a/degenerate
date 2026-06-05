@@ -2,7 +2,7 @@
 // Source: #/components/schemas/PaymentMethodUsBankAccountBlocked
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ACH network code that resulted in this block.
-@immutable final class NetworkCode {const NetworkCode._(this.value);
+sealed class NetworkCode {const NetworkCode();
 
 factory NetworkCode.fromJson(String json) { return switch (json) {
   'R02' => r02,
@@ -17,37 +17,36 @@ factory NetworkCode.fromJson(String json) { return switch (json) {
   'R20' => r20,
   'R29' => r29,
   'R31' => r31,
-  _ => NetworkCode._(json),
+  _ => NetworkCode$Unknown(json),
 }; }
 
-static const NetworkCode r02 = NetworkCode._('R02');
+static const NetworkCode r02 = NetworkCode$r02._();
 
-static const NetworkCode r03 = NetworkCode._('R03');
+static const NetworkCode r03 = NetworkCode$r03._();
 
-static const NetworkCode r04 = NetworkCode._('R04');
+static const NetworkCode r04 = NetworkCode$r04._();
 
-static const NetworkCode r05 = NetworkCode._('R05');
+static const NetworkCode r05 = NetworkCode$r05._();
 
-static const NetworkCode r07 = NetworkCode._('R07');
+static const NetworkCode r07 = NetworkCode$r07._();
 
-static const NetworkCode r08 = NetworkCode._('R08');
+static const NetworkCode r08 = NetworkCode$r08._();
 
-static const NetworkCode r10 = NetworkCode._('R10');
+static const NetworkCode r10 = NetworkCode$r10._();
 
-static const NetworkCode r11 = NetworkCode._('R11');
+static const NetworkCode r11 = NetworkCode$r11._();
 
-static const NetworkCode r16 = NetworkCode._('R16');
+static const NetworkCode r16 = NetworkCode$r16._();
 
-static const NetworkCode r20 = NetworkCode._('R20');
+static const NetworkCode r20 = NetworkCode$r20._();
 
-static const NetworkCode r29 = NetworkCode._('R29');
+static const NetworkCode r29 = NetworkCode$r29._();
 
-static const NetworkCode r31 = NetworkCode._('R31');
+static const NetworkCode r31 = NetworkCode$r31._();
 
 static const List<NetworkCode> values = [r02, r03, r04, r05, r07, r08, r10, r11, r16, r20, r29, r31];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -66,17 +65,130 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is NetworkCode && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is NetworkCode$Unknown; } 
 @override String toString() => 'NetworkCode($value)';
 
  }
+@immutable final class NetworkCode$r02 extends NetworkCode {const NetworkCode$r02._();
+
+@override String get value => 'R02';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkCode$r02;
+
+@override int get hashCode => 'R02'.hashCode;
+
+ }
+@immutable final class NetworkCode$r03 extends NetworkCode {const NetworkCode$r03._();
+
+@override String get value => 'R03';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkCode$r03;
+
+@override int get hashCode => 'R03'.hashCode;
+
+ }
+@immutable final class NetworkCode$r04 extends NetworkCode {const NetworkCode$r04._();
+
+@override String get value => 'R04';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkCode$r04;
+
+@override int get hashCode => 'R04'.hashCode;
+
+ }
+@immutable final class NetworkCode$r05 extends NetworkCode {const NetworkCode$r05._();
+
+@override String get value => 'R05';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkCode$r05;
+
+@override int get hashCode => 'R05'.hashCode;
+
+ }
+@immutable final class NetworkCode$r07 extends NetworkCode {const NetworkCode$r07._();
+
+@override String get value => 'R07';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkCode$r07;
+
+@override int get hashCode => 'R07'.hashCode;
+
+ }
+@immutable final class NetworkCode$r08 extends NetworkCode {const NetworkCode$r08._();
+
+@override String get value => 'R08';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkCode$r08;
+
+@override int get hashCode => 'R08'.hashCode;
+
+ }
+@immutable final class NetworkCode$r10 extends NetworkCode {const NetworkCode$r10._();
+
+@override String get value => 'R10';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkCode$r10;
+
+@override int get hashCode => 'R10'.hashCode;
+
+ }
+@immutable final class NetworkCode$r11 extends NetworkCode {const NetworkCode$r11._();
+
+@override String get value => 'R11';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkCode$r11;
+
+@override int get hashCode => 'R11'.hashCode;
+
+ }
+@immutable final class NetworkCode$r16 extends NetworkCode {const NetworkCode$r16._();
+
+@override String get value => 'R16';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkCode$r16;
+
+@override int get hashCode => 'R16'.hashCode;
+
+ }
+@immutable final class NetworkCode$r20 extends NetworkCode {const NetworkCode$r20._();
+
+@override String get value => 'R20';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkCode$r20;
+
+@override int get hashCode => 'R20'.hashCode;
+
+ }
+@immutable final class NetworkCode$r29 extends NetworkCode {const NetworkCode$r29._();
+
+@override String get value => 'R29';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkCode$r29;
+
+@override int get hashCode => 'R29'.hashCode;
+
+ }
+@immutable final class NetworkCode$r31 extends NetworkCode {const NetworkCode$r31._();
+
+@override String get value => 'R31';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkCode$r31;
+
+@override int get hashCode => 'R31'.hashCode;
+
+ }
+@immutable final class NetworkCode$Unknown extends NetworkCode {const NetworkCode$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NetworkCode$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The reason why this PaymentMethod's fingerprint has been blocked
-@immutable final class PaymentMethodUsBankAccountBlockedReason {const PaymentMethodUsBankAccountBlockedReason._(this.value);
+sealed class PaymentMethodUsBankAccountBlockedReason {const PaymentMethodUsBankAccountBlockedReason();
 
 factory PaymentMethodUsBankAccountBlockedReason.fromJson(String json) { return switch (json) {
   'bank_account_closed' => bankAccountClosed,
@@ -86,27 +198,26 @@ factory PaymentMethodUsBankAccountBlockedReason.fromJson(String json) { return s
   'bank_account_unusable' => bankAccountUnusable,
   'debit_not_authorized' => debitNotAuthorized,
   'tokenized_account_number_deactivated' => tokenizedAccountNumberDeactivated,
-  _ => PaymentMethodUsBankAccountBlockedReason._(json),
+  _ => PaymentMethodUsBankAccountBlockedReason$Unknown(json),
 }; }
 
-static const PaymentMethodUsBankAccountBlockedReason bankAccountClosed = PaymentMethodUsBankAccountBlockedReason._('bank_account_closed');
+static const PaymentMethodUsBankAccountBlockedReason bankAccountClosed = PaymentMethodUsBankAccountBlockedReason$bankAccountClosed._();
 
-static const PaymentMethodUsBankAccountBlockedReason bankAccountFrozen = PaymentMethodUsBankAccountBlockedReason._('bank_account_frozen');
+static const PaymentMethodUsBankAccountBlockedReason bankAccountFrozen = PaymentMethodUsBankAccountBlockedReason$bankAccountFrozen._();
 
-static const PaymentMethodUsBankAccountBlockedReason bankAccountInvalidDetails = PaymentMethodUsBankAccountBlockedReason._('bank_account_invalid_details');
+static const PaymentMethodUsBankAccountBlockedReason bankAccountInvalidDetails = PaymentMethodUsBankAccountBlockedReason$bankAccountInvalidDetails._();
 
-static const PaymentMethodUsBankAccountBlockedReason bankAccountRestricted = PaymentMethodUsBankAccountBlockedReason._('bank_account_restricted');
+static const PaymentMethodUsBankAccountBlockedReason bankAccountRestricted = PaymentMethodUsBankAccountBlockedReason$bankAccountRestricted._();
 
-static const PaymentMethodUsBankAccountBlockedReason bankAccountUnusable = PaymentMethodUsBankAccountBlockedReason._('bank_account_unusable');
+static const PaymentMethodUsBankAccountBlockedReason bankAccountUnusable = PaymentMethodUsBankAccountBlockedReason$bankAccountUnusable._();
 
-static const PaymentMethodUsBankAccountBlockedReason debitNotAuthorized = PaymentMethodUsBankAccountBlockedReason._('debit_not_authorized');
+static const PaymentMethodUsBankAccountBlockedReason debitNotAuthorized = PaymentMethodUsBankAccountBlockedReason$debitNotAuthorized._();
 
-static const PaymentMethodUsBankAccountBlockedReason tokenizedAccountNumberDeactivated = PaymentMethodUsBankAccountBlockedReason._('tokenized_account_number_deactivated');
+static const PaymentMethodUsBankAccountBlockedReason tokenizedAccountNumberDeactivated = PaymentMethodUsBankAccountBlockedReason$tokenizedAccountNumberDeactivated._();
 
 static const List<PaymentMethodUsBankAccountBlockedReason> values = [bankAccountClosed, bankAccountFrozen, bankAccountInvalidDetails, bankAccountRestricted, bankAccountUnusable, debitNotAuthorized, tokenizedAccountNumberDeactivated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -120,13 +231,81 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentMethodUsBankAccountBlockedReason$Unknown; } 
+@override String toString() => 'PaymentMethodUsBankAccountBlockedReason($value)';
+
+ }
+@immutable final class PaymentMethodUsBankAccountBlockedReason$bankAccountClosed extends PaymentMethodUsBankAccountBlockedReason {const PaymentMethodUsBankAccountBlockedReason$bankAccountClosed._();
+
+@override String get value => 'bank_account_closed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodUsBankAccountBlockedReason$bankAccountClosed;
+
+@override int get hashCode => 'bank_account_closed'.hashCode;
+
+ }
+@immutable final class PaymentMethodUsBankAccountBlockedReason$bankAccountFrozen extends PaymentMethodUsBankAccountBlockedReason {const PaymentMethodUsBankAccountBlockedReason$bankAccountFrozen._();
+
+@override String get value => 'bank_account_frozen';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodUsBankAccountBlockedReason$bankAccountFrozen;
+
+@override int get hashCode => 'bank_account_frozen'.hashCode;
+
+ }
+@immutable final class PaymentMethodUsBankAccountBlockedReason$bankAccountInvalidDetails extends PaymentMethodUsBankAccountBlockedReason {const PaymentMethodUsBankAccountBlockedReason$bankAccountInvalidDetails._();
+
+@override String get value => 'bank_account_invalid_details';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodUsBankAccountBlockedReason$bankAccountInvalidDetails;
+
+@override int get hashCode => 'bank_account_invalid_details'.hashCode;
+
+ }
+@immutable final class PaymentMethodUsBankAccountBlockedReason$bankAccountRestricted extends PaymentMethodUsBankAccountBlockedReason {const PaymentMethodUsBankAccountBlockedReason$bankAccountRestricted._();
+
+@override String get value => 'bank_account_restricted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodUsBankAccountBlockedReason$bankAccountRestricted;
+
+@override int get hashCode => 'bank_account_restricted'.hashCode;
+
+ }
+@immutable final class PaymentMethodUsBankAccountBlockedReason$bankAccountUnusable extends PaymentMethodUsBankAccountBlockedReason {const PaymentMethodUsBankAccountBlockedReason$bankAccountUnusable._();
+
+@override String get value => 'bank_account_unusable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodUsBankAccountBlockedReason$bankAccountUnusable;
+
+@override int get hashCode => 'bank_account_unusable'.hashCode;
+
+ }
+@immutable final class PaymentMethodUsBankAccountBlockedReason$debitNotAuthorized extends PaymentMethodUsBankAccountBlockedReason {const PaymentMethodUsBankAccountBlockedReason$debitNotAuthorized._();
+
+@override String get value => 'debit_not_authorized';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodUsBankAccountBlockedReason$debitNotAuthorized;
+
+@override int get hashCode => 'debit_not_authorized'.hashCode;
+
+ }
+@immutable final class PaymentMethodUsBankAccountBlockedReason$tokenizedAccountNumberDeactivated extends PaymentMethodUsBankAccountBlockedReason {const PaymentMethodUsBankAccountBlockedReason$tokenizedAccountNumberDeactivated._();
+
+@override String get value => 'tokenized_account_number_deactivated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodUsBankAccountBlockedReason$tokenizedAccountNumberDeactivated;
+
+@override int get hashCode => 'tokenized_account_number_deactivated'.hashCode;
+
+ }
+@immutable final class PaymentMethodUsBankAccountBlockedReason$Unknown extends PaymentMethodUsBankAccountBlockedReason {const PaymentMethodUsBankAccountBlockedReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentMethodUsBankAccountBlockedReason && other.value == value;
+    other is PaymentMethodUsBankAccountBlockedReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentMethodUsBankAccountBlockedReason($value)';
 
  }
 /// 

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/SpecificApplyPatchParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The tool to call. Always `apply_patch`.
-@immutable final class SpecificApplyPatchParamType {const SpecificApplyPatchParamType._(this.value);
+sealed class SpecificApplyPatchParamType {const SpecificApplyPatchParamType();
 
 factory SpecificApplyPatchParamType.fromJson(String json) { return switch (json) {
   'apply_patch' => applyPatch,
-  _ => SpecificApplyPatchParamType._(json),
+  _ => SpecificApplyPatchParamType$Unknown(json),
 }; }
 
-static const SpecificApplyPatchParamType applyPatch = SpecificApplyPatchParamType._('apply_patch');
+static const SpecificApplyPatchParamType applyPatch = SpecificApplyPatchParamType$applyPatch._();
 
 static const List<SpecificApplyPatchParamType> values = [applyPatch];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SpecificApplyPatchParamType$Unknown; } 
+@override String toString() => 'SpecificApplyPatchParamType($value)';
+
+ }
+@immutable final class SpecificApplyPatchParamType$applyPatch extends SpecificApplyPatchParamType {const SpecificApplyPatchParamType$applyPatch._();
+
+@override String get value => 'apply_patch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpecificApplyPatchParamType$applyPatch;
+
+@override int get hashCode => 'apply_patch'.hashCode;
+
+ }
+@immutable final class SpecificApplyPatchParamType$Unknown extends SpecificApplyPatchParamType {const SpecificApplyPatchParamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SpecificApplyPatchParamType && other.value == value;
+    other is SpecificApplyPatchParamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SpecificApplyPatchParamType($value)';
 
  }
 /// Forces the model to call the apply_patch tool when executing a tool call.

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/UploadPart
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `upload.part`.
-@immutable final class UploadPartObject {const UploadPartObject._(this.value);
+sealed class UploadPartObject {const UploadPartObject();
 
 factory UploadPartObject.fromJson(String json) { return switch (json) {
   'upload.part' => uploadPart,
-  _ => UploadPartObject._(json),
+  _ => UploadPartObject$Unknown(json),
 }; }
 
-static const UploadPartObject uploadPart = UploadPartObject._('upload.part');
+static const UploadPartObject uploadPart = UploadPartObject$uploadPart._();
 
 static const List<UploadPartObject> values = [uploadPart];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UploadPartObject$Unknown; } 
+@override String toString() => 'UploadPartObject($value)';
+
+ }
+@immutable final class UploadPartObject$uploadPart extends UploadPartObject {const UploadPartObject$uploadPart._();
+
+@override String get value => 'upload.part';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UploadPartObject$uploadPart;
+
+@override int get hashCode => 'upload.part'.hashCode;
+
+ }
+@immutable final class UploadPartObject$Unknown extends UploadPartObject {const UploadPartObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UploadPartObject && other.value == value;
+    other is UploadPartObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UploadPartObject($value)';
 
  }
 /// The upload Part represents a chunk of bytes we can add to an Upload object.

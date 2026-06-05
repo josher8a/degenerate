@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigPostGatewayDynamicRouteRequest (inline: Elements > Rate)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/model_outputs.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/rate_properties.dart';@immutable final class RateType {const RateType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/model_outputs.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/rate_properties.dart';sealed class RateType {const RateType();
 
 factory RateType.fromJson(String json) { return switch (json) {
   'rate' => rate,
-  _ => RateType._(json),
+  _ => RateType$Unknown(json),
 }; }
 
-static const RateType rate = RateType._('rate');
+static const RateType rate = RateType$rate._();
 
 static const List<RateType> values = [rate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RateType$Unknown; } 
+@override String toString() => 'RateType($value)';
+
+ }
+@immutable final class RateType$rate extends RateType {const RateType$rate._();
+
+@override String get value => 'rate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RateType$rate;
+
+@override int get hashCode => 'rate'.hashCode;
+
+ }
+@immutable final class RateType$Unknown extends RateType {const RateType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RateType && other.value == value;
+    other is RateType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RateType($value)';
 
  }
 @immutable final class ElementsRate {const ElementsRate({required this.id, required this.outputs, required this.properties, required this.type, });

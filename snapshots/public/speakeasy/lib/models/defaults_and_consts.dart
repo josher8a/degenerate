@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DefaultsAndConsts
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ConstEnumStr {const ConstEnumStr._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ConstEnumStr {const ConstEnumStr();
 
 factory ConstEnumStr.fromJson(String json) { return switch (json) {
   'one' => one,
   'two' => two,
   'three' => three,
-  _ => ConstEnumStr._(json),
+  _ => ConstEnumStr$Unknown(json),
 }; }
 
-static const ConstEnumStr one = ConstEnumStr._('one');
+static const ConstEnumStr one = ConstEnumStr$one._();
 
-static const ConstEnumStr two = ConstEnumStr._('two');
+static const ConstEnumStr two = ConstEnumStr$two._();
 
-static const ConstEnumStr three = ConstEnumStr._('three');
+static const ConstEnumStr three = ConstEnumStr$three._();
 
 static const List<ConstEnumStr> values = [one, two, three];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,34 +28,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ConstEnumStr && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ConstEnumStr$Unknown; } 
 @override String toString() => 'ConstEnumStr($value)';
 
  }
-@immutable final class ConstEnumInt {const ConstEnumInt._(this.value);
+@immutable final class ConstEnumStr$one extends ConstEnumStr {const ConstEnumStr$one._();
+
+@override String get value => 'one';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConstEnumStr$one;
+
+@override int get hashCode => 'one'.hashCode;
+
+ }
+@immutable final class ConstEnumStr$two extends ConstEnumStr {const ConstEnumStr$two._();
+
+@override String get value => 'two';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConstEnumStr$two;
+
+@override int get hashCode => 'two'.hashCode;
+
+ }
+@immutable final class ConstEnumStr$three extends ConstEnumStr {const ConstEnumStr$three._();
+
+@override String get value => 'three';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConstEnumStr$three;
+
+@override int get hashCode => 'three'.hashCode;
+
+ }
+@immutable final class ConstEnumStr$Unknown extends ConstEnumStr {const ConstEnumStr$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConstEnumStr$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class ConstEnumInt {const ConstEnumInt();
 
 factory ConstEnumInt.fromJson(int json) { return switch (json) {
   1 => $1,
   2 => $2,
   3 => $3,
-  _ => ConstEnumInt._(json),
+  _ => ConstEnumInt$Unknown(json),
 }; }
 
-static const ConstEnumInt $1 = ConstEnumInt._(1);
+static const ConstEnumInt $1 = ConstEnumInt$$1._();
 
-static const ConstEnumInt $2 = ConstEnumInt._(2);
+static const ConstEnumInt $2 = ConstEnumInt$$2._();
 
-static const ConstEnumInt $3 = ConstEnumInt._(3);
+static const ConstEnumInt $3 = ConstEnumInt$$3._();
 
 static const List<ConstEnumInt> values = [$1, $2, $3];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -66,34 +96,65 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ConstEnumInt && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ConstEnumInt$Unknown; } 
 @override String toString() => 'ConstEnumInt($value)';
 
  }
-@immutable final class DefaultEnumStr {const DefaultEnumStr._(this.value);
+@immutable final class ConstEnumInt$$1 extends ConstEnumInt {const ConstEnumInt$$1._();
+
+@override int get value => 1;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConstEnumInt$$1;
+
+@override int get hashCode => 1.hashCode;
+
+ }
+@immutable final class ConstEnumInt$$2 extends ConstEnumInt {const ConstEnumInt$$2._();
+
+@override int get value => 2;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConstEnumInt$$2;
+
+@override int get hashCode => 2.hashCode;
+
+ }
+@immutable final class ConstEnumInt$$3 extends ConstEnumInt {const ConstEnumInt$$3._();
+
+@override int get value => 3;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConstEnumInt$$3;
+
+@override int get hashCode => 3.hashCode;
+
+ }
+@immutable final class ConstEnumInt$Unknown extends ConstEnumInt {const ConstEnumInt$Unknown(this.value);
+
+@override final int value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConstEnumInt$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class DefaultEnumStr {const DefaultEnumStr();
 
 factory DefaultEnumStr.fromJson(String json) { return switch (json) {
   'one' => one,
   'two' => two,
   'three' => three,
-  _ => DefaultEnumStr._(json),
+  _ => DefaultEnumStr$Unknown(json),
 }; }
 
-static const DefaultEnumStr one = DefaultEnumStr._('one');
+static const DefaultEnumStr one = DefaultEnumStr$one._();
 
-static const DefaultEnumStr two = DefaultEnumStr._('two');
+static const DefaultEnumStr two = DefaultEnumStr$two._();
 
-static const DefaultEnumStr three = DefaultEnumStr._('three');
+static const DefaultEnumStr three = DefaultEnumStr$three._();
 
 static const List<DefaultEnumStr> values = [one, two, three];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -103,34 +164,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DefaultEnumStr && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is DefaultEnumStr$Unknown; } 
 @override String toString() => 'DefaultEnumStr($value)';
 
  }
-@immutable final class DefaultEnumInt {const DefaultEnumInt._(this.value);
+@immutable final class DefaultEnumStr$one extends DefaultEnumStr {const DefaultEnumStr$one._();
+
+@override String get value => 'one';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultEnumStr$one;
+
+@override int get hashCode => 'one'.hashCode;
+
+ }
+@immutable final class DefaultEnumStr$two extends DefaultEnumStr {const DefaultEnumStr$two._();
+
+@override String get value => 'two';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultEnumStr$two;
+
+@override int get hashCode => 'two'.hashCode;
+
+ }
+@immutable final class DefaultEnumStr$three extends DefaultEnumStr {const DefaultEnumStr$three._();
+
+@override String get value => 'three';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultEnumStr$three;
+
+@override int get hashCode => 'three'.hashCode;
+
+ }
+@immutable final class DefaultEnumStr$Unknown extends DefaultEnumStr {const DefaultEnumStr$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DefaultEnumStr$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class DefaultEnumInt {const DefaultEnumInt();
 
 factory DefaultEnumInt.fromJson(int json) { return switch (json) {
   1 => $1,
   2 => $2,
   3 => $3,
-  _ => DefaultEnumInt._(json),
+  _ => DefaultEnumInt$Unknown(json),
 }; }
 
-static const DefaultEnumInt $1 = DefaultEnumInt._(1);
+static const DefaultEnumInt $1 = DefaultEnumInt$$1._();
 
-static const DefaultEnumInt $2 = DefaultEnumInt._(2);
+static const DefaultEnumInt $2 = DefaultEnumInt$$2._();
 
-static const DefaultEnumInt $3 = DefaultEnumInt._(3);
+static const DefaultEnumInt $3 = DefaultEnumInt$$3._();
 
 static const List<DefaultEnumInt> values = [$1, $2, $3];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -140,13 +232,45 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DefaultEnumInt$Unknown; } 
+@override String toString() => 'DefaultEnumInt($value)';
+
+ }
+@immutable final class DefaultEnumInt$$1 extends DefaultEnumInt {const DefaultEnumInt$$1._();
+
+@override int get value => 1;
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultEnumInt$$1;
+
+@override int get hashCode => 1.hashCode;
+
+ }
+@immutable final class DefaultEnumInt$$2 extends DefaultEnumInt {const DefaultEnumInt$$2._();
+
+@override int get value => 2;
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultEnumInt$$2;
+
+@override int get hashCode => 2.hashCode;
+
+ }
+@immutable final class DefaultEnumInt$$3 extends DefaultEnumInt {const DefaultEnumInt$$3._();
+
+@override int get value => 3;
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultEnumInt$$3;
+
+@override int get hashCode => 3.hashCode;
+
+ }
+@immutable final class DefaultEnumInt$Unknown extends DefaultEnumInt {const DefaultEnumInt$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DefaultEnumInt && other.value == value;
+    other is DefaultEnumInt$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DefaultEnumInt($value)';
 
  }
 @immutable final class DefaultsAndConsts {const DefaultsAndConsts({required this.constDateTime, required this.constStr, required this.constStrDQuotes, required this.constStrSQuotes, required this.constStrBackticks, required this.constStrBrackets, required this.constStrNull, required this.constInt, required this.constNum, required this.constBool, required this.constDate, required this.normalField, required this.constEnumStr, required this.constEnumInt, required this.constBigInt, required this.constBigIntStr, required this.constDecimal, required this.constDecimalStr, required this.defaultEnumInt, required this.defaultStrNullable, required this.defaultDateTime, this.defaultStrBackticks = 'default with `backticks`', this.defaultStrBrackets = r'default with ${<brackets>}', this.defaultDecimalStr = '3.141592653589793238462643383279', this.defaultStrOptional = 'default', this.defaultInt = 123, this.defaultNum = 123.456, this.defaultBool = true, this.defaultDate = '2020-01-01', this.defaultStrDQuotes = 'default with "double quotes"', this.defaultEnumStr = DefaultEnumStr.two, this.defaultStr = 'default', this.defaultBigInt = 9007199254740991, this.defaultBigIntStr = '9223372036854775807', this.defaultDecimal = 3.141592653589793, this.defaultStrSQuotes = "default with 'single quotes'", });

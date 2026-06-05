@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TeamsListTeamType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsListTeamType {const TeamsListTeamType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class TeamsListTeamType {const TeamsListTeamType();
 
 factory TeamsListTeamType.fromJson(String json) { return switch (json) {
   'all' => all,
   'enterprise' => enterprise,
   'organization' => organization,
-  _ => TeamsListTeamType._(json),
+  _ => TeamsListTeamType$Unknown(json),
 }; }
 
-static const TeamsListTeamType all = TeamsListTeamType._('all');
+static const TeamsListTeamType all = TeamsListTeamType$all._();
 
-static const TeamsListTeamType enterprise = TeamsListTeamType._('enterprise');
+static const TeamsListTeamType enterprise = TeamsListTeamType$enterprise._();
 
-static const TeamsListTeamType organization = TeamsListTeamType._('organization');
+static const TeamsListTeamType organization = TeamsListTeamType$organization._();
 
 static const List<TeamsListTeamType> values = [all, enterprise, organization];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TeamsListTeamType$Unknown; } 
+@override String toString() => 'TeamsListTeamType($value)';
+
+ }
+@immutable final class TeamsListTeamType$all extends TeamsListTeamType {const TeamsListTeamType$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsListTeamType$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class TeamsListTeamType$enterprise extends TeamsListTeamType {const TeamsListTeamType$enterprise._();
+
+@override String get value => 'enterprise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsListTeamType$enterprise;
+
+@override int get hashCode => 'enterprise'.hashCode;
+
+ }
+@immutable final class TeamsListTeamType$organization extends TeamsListTeamType {const TeamsListTeamType$organization._();
+
+@override String get value => 'organization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsListTeamType$organization;
+
+@override int get hashCode => 'organization'.hashCode;
+
+ }
+@immutable final class TeamsListTeamType$Unknown extends TeamsListTeamType {const TeamsListTeamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TeamsListTeamType && other.value == value;
+    other is TeamsListTeamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TeamsListTeamType($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PaymentAttemptRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_money_movement_card/insights_resources_payment_evaluation_money_movement_card_customer_presence.dart';import 'package:pub_stripe_spec3/models/payment_attempt_record/reported_by.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_amount.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_customer_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_processor_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_shipping_details.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class PaymentAttemptRecordObject {const PaymentAttemptRecordObject._(this.value);
+sealed class PaymentAttemptRecordObject {const PaymentAttemptRecordObject();
 
 factory PaymentAttemptRecordObject.fromJson(String json) { return switch (json) {
   'payment_attempt_record' => paymentAttemptRecord,
-  _ => PaymentAttemptRecordObject._(json),
+  _ => PaymentAttemptRecordObject$Unknown(json),
 }; }
 
-static const PaymentAttemptRecordObject paymentAttemptRecord = PaymentAttemptRecordObject._('payment_attempt_record');
+static const PaymentAttemptRecordObject paymentAttemptRecord = PaymentAttemptRecordObject$paymentAttemptRecord._();
 
 static const List<PaymentAttemptRecordObject> values = [paymentAttemptRecord];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentAttemptRecordObject$Unknown; } 
+@override String toString() => 'PaymentAttemptRecordObject($value)';
+
+ }
+@immutable final class PaymentAttemptRecordObject$paymentAttemptRecord extends PaymentAttemptRecordObject {const PaymentAttemptRecordObject$paymentAttemptRecord._();
+
+@override String get value => 'payment_attempt_record';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentAttemptRecordObject$paymentAttemptRecord;
+
+@override int get hashCode => 'payment_attempt_record'.hashCode;
+
+ }
+@immutable final class PaymentAttemptRecordObject$Unknown extends PaymentAttemptRecordObject {const PaymentAttemptRecordObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentAttemptRecordObject && other.value == value;
+    other is PaymentAttemptRecordObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentAttemptRecordObject($value)';
 
  }
 /// A Payment Attempt Record represents an individual attempt at making a payment, on or off Stripe.

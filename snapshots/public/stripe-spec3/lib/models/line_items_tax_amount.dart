@@ -2,7 +2,7 @@
 // Source: #/components/schemas/LineItemsTaxAmount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
-@immutable final class LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason._(this.value);
+sealed class LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason();
 
 factory LineItemsTaxAmountTaxabilityReason.fromJson(String json) { return switch (json) {
   'customer_exempt' => customerExempt,
@@ -20,43 +20,42 @@ factory LineItemsTaxAmountTaxabilityReason.fromJson(String json) { return switch
   'standard_rated' => standardRated,
   'taxable_basis_reduced' => taxableBasisReduced,
   'zero_rated' => zeroRated,
-  _ => LineItemsTaxAmountTaxabilityReason._(json),
+  _ => LineItemsTaxAmountTaxabilityReason$Unknown(json),
 }; }
 
-static const LineItemsTaxAmountTaxabilityReason customerExempt = LineItemsTaxAmountTaxabilityReason._('customer_exempt');
+static const LineItemsTaxAmountTaxabilityReason customerExempt = LineItemsTaxAmountTaxabilityReason$customerExempt._();
 
-static const LineItemsTaxAmountTaxabilityReason notCollecting = LineItemsTaxAmountTaxabilityReason._('not_collecting');
+static const LineItemsTaxAmountTaxabilityReason notCollecting = LineItemsTaxAmountTaxabilityReason$notCollecting._();
 
-static const LineItemsTaxAmountTaxabilityReason notSubjectToTax = LineItemsTaxAmountTaxabilityReason._('not_subject_to_tax');
+static const LineItemsTaxAmountTaxabilityReason notSubjectToTax = LineItemsTaxAmountTaxabilityReason$notSubjectToTax._();
 
-static const LineItemsTaxAmountTaxabilityReason notSupported = LineItemsTaxAmountTaxabilityReason._('not_supported');
+static const LineItemsTaxAmountTaxabilityReason notSupported = LineItemsTaxAmountTaxabilityReason$notSupported._();
 
-static const LineItemsTaxAmountTaxabilityReason portionProductExempt = LineItemsTaxAmountTaxabilityReason._('portion_product_exempt');
+static const LineItemsTaxAmountTaxabilityReason portionProductExempt = LineItemsTaxAmountTaxabilityReason$portionProductExempt._();
 
-static const LineItemsTaxAmountTaxabilityReason portionReducedRated = LineItemsTaxAmountTaxabilityReason._('portion_reduced_rated');
+static const LineItemsTaxAmountTaxabilityReason portionReducedRated = LineItemsTaxAmountTaxabilityReason$portionReducedRated._();
 
-static const LineItemsTaxAmountTaxabilityReason portionStandardRated = LineItemsTaxAmountTaxabilityReason._('portion_standard_rated');
+static const LineItemsTaxAmountTaxabilityReason portionStandardRated = LineItemsTaxAmountTaxabilityReason$portionStandardRated._();
 
-static const LineItemsTaxAmountTaxabilityReason productExempt = LineItemsTaxAmountTaxabilityReason._('product_exempt');
+static const LineItemsTaxAmountTaxabilityReason productExempt = LineItemsTaxAmountTaxabilityReason$productExempt._();
 
-static const LineItemsTaxAmountTaxabilityReason productExemptHoliday = LineItemsTaxAmountTaxabilityReason._('product_exempt_holiday');
+static const LineItemsTaxAmountTaxabilityReason productExemptHoliday = LineItemsTaxAmountTaxabilityReason$productExemptHoliday._();
 
-static const LineItemsTaxAmountTaxabilityReason proportionallyRated = LineItemsTaxAmountTaxabilityReason._('proportionally_rated');
+static const LineItemsTaxAmountTaxabilityReason proportionallyRated = LineItemsTaxAmountTaxabilityReason$proportionallyRated._();
 
-static const LineItemsTaxAmountTaxabilityReason reducedRated = LineItemsTaxAmountTaxabilityReason._('reduced_rated');
+static const LineItemsTaxAmountTaxabilityReason reducedRated = LineItemsTaxAmountTaxabilityReason$reducedRated._();
 
-static const LineItemsTaxAmountTaxabilityReason reverseCharge = LineItemsTaxAmountTaxabilityReason._('reverse_charge');
+static const LineItemsTaxAmountTaxabilityReason reverseCharge = LineItemsTaxAmountTaxabilityReason$reverseCharge._();
 
-static const LineItemsTaxAmountTaxabilityReason standardRated = LineItemsTaxAmountTaxabilityReason._('standard_rated');
+static const LineItemsTaxAmountTaxabilityReason standardRated = LineItemsTaxAmountTaxabilityReason$standardRated._();
 
-static const LineItemsTaxAmountTaxabilityReason taxableBasisReduced = LineItemsTaxAmountTaxabilityReason._('taxable_basis_reduced');
+static const LineItemsTaxAmountTaxabilityReason taxableBasisReduced = LineItemsTaxAmountTaxabilityReason$taxableBasisReduced._();
 
-static const LineItemsTaxAmountTaxabilityReason zeroRated = LineItemsTaxAmountTaxabilityReason._('zero_rated');
+static const LineItemsTaxAmountTaxabilityReason zeroRated = LineItemsTaxAmountTaxabilityReason$zeroRated._();
 
 static const List<LineItemsTaxAmountTaxabilityReason> values = [customerExempt, notCollecting, notSubjectToTax, notSupported, portionProductExempt, portionReducedRated, portionStandardRated, productExempt, productExemptHoliday, proportionallyRated, reducedRated, reverseCharge, standardRated, taxableBasisReduced, zeroRated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -78,13 +77,153 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LineItemsTaxAmountTaxabilityReason$Unknown; } 
+@override String toString() => 'LineItemsTaxAmountTaxabilityReason($value)';
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$customerExempt extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$customerExempt._();
+
+@override String get value => 'customer_exempt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$customerExempt;
+
+@override int get hashCode => 'customer_exempt'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$notCollecting extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$notCollecting._();
+
+@override String get value => 'not_collecting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$notCollecting;
+
+@override int get hashCode => 'not_collecting'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$notSubjectToTax extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$notSubjectToTax._();
+
+@override String get value => 'not_subject_to_tax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$notSubjectToTax;
+
+@override int get hashCode => 'not_subject_to_tax'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$notSupported extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$notSupported._();
+
+@override String get value => 'not_supported';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$notSupported;
+
+@override int get hashCode => 'not_supported'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$portionProductExempt extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$portionProductExempt._();
+
+@override String get value => 'portion_product_exempt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$portionProductExempt;
+
+@override int get hashCode => 'portion_product_exempt'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$portionReducedRated extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$portionReducedRated._();
+
+@override String get value => 'portion_reduced_rated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$portionReducedRated;
+
+@override int get hashCode => 'portion_reduced_rated'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$portionStandardRated extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$portionStandardRated._();
+
+@override String get value => 'portion_standard_rated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$portionStandardRated;
+
+@override int get hashCode => 'portion_standard_rated'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$productExempt extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$productExempt._();
+
+@override String get value => 'product_exempt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$productExempt;
+
+@override int get hashCode => 'product_exempt'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$productExemptHoliday extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$productExemptHoliday._();
+
+@override String get value => 'product_exempt_holiday';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$productExemptHoliday;
+
+@override int get hashCode => 'product_exempt_holiday'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$proportionallyRated extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$proportionallyRated._();
+
+@override String get value => 'proportionally_rated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$proportionallyRated;
+
+@override int get hashCode => 'proportionally_rated'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$reducedRated extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$reducedRated._();
+
+@override String get value => 'reduced_rated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$reducedRated;
+
+@override int get hashCode => 'reduced_rated'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$reverseCharge extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$reverseCharge._();
+
+@override String get value => 'reverse_charge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$reverseCharge;
+
+@override int get hashCode => 'reverse_charge'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$standardRated extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$standardRated._();
+
+@override String get value => 'standard_rated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$standardRated;
+
+@override int get hashCode => 'standard_rated'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$taxableBasisReduced extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$taxableBasisReduced._();
+
+@override String get value => 'taxable_basis_reduced';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$taxableBasisReduced;
+
+@override int get hashCode => 'taxable_basis_reduced'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$zeroRated extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$zeroRated._();
+
+@override String get value => 'zero_rated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemsTaxAmountTaxabilityReason$zeroRated;
+
+@override int get hashCode => 'zero_rated'.hashCode;
+
+ }
+@immutable final class LineItemsTaxAmountTaxabilityReason$Unknown extends LineItemsTaxAmountTaxabilityReason {const LineItemsTaxAmountTaxabilityReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LineItemsTaxAmountTaxabilityReason && other.value == value;
+    other is LineItemsTaxAmountTaxabilityReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LineItemsTaxAmountTaxabilityReason($value)';
 
  }
 /// 

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CampaignsListOrgCampaignsDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CampaignsListOrgCampaignsDirection {const CampaignsListOrgCampaignsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CampaignsListOrgCampaignsDirection {const CampaignsListOrgCampaignsDirection();
 
 factory CampaignsListOrgCampaignsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => CampaignsListOrgCampaignsDirection._(json),
+  _ => CampaignsListOrgCampaignsDirection$Unknown(json),
 }; }
 
-static const CampaignsListOrgCampaignsDirection asc = CampaignsListOrgCampaignsDirection._('asc');
+static const CampaignsListOrgCampaignsDirection asc = CampaignsListOrgCampaignsDirection$asc._();
 
-static const CampaignsListOrgCampaignsDirection desc = CampaignsListOrgCampaignsDirection._('desc');
+static const CampaignsListOrgCampaignsDirection desc = CampaignsListOrgCampaignsDirection$desc._();
 
 static const List<CampaignsListOrgCampaignsDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CampaignsListOrgCampaignsDirection$Unknown; } 
+@override String toString() => 'CampaignsListOrgCampaignsDirection($value)';
+
+ }
+@immutable final class CampaignsListOrgCampaignsDirection$asc extends CampaignsListOrgCampaignsDirection {const CampaignsListOrgCampaignsDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CampaignsListOrgCampaignsDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class CampaignsListOrgCampaignsDirection$desc extends CampaignsListOrgCampaignsDirection {const CampaignsListOrgCampaignsDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CampaignsListOrgCampaignsDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class CampaignsListOrgCampaignsDirection$Unknown extends CampaignsListOrgCampaignsDirection {const CampaignsListOrgCampaignsDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CampaignsListOrgCampaignsDirection && other.value == value;
+    other is CampaignsListOrgCampaignsDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CampaignsListOrgCampaignsDirection($value)';
 
  }

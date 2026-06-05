@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventResponseMcpCallInProgress
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call.in_progress`.
-@immutable final class RealtimeBetaServerEventResponseMcpCallInProgressType {const RealtimeBetaServerEventResponseMcpCallInProgressType._(this.value);
+sealed class RealtimeBetaServerEventResponseMcpCallInProgressType {const RealtimeBetaServerEventResponseMcpCallInProgressType();
 
 factory RealtimeBetaServerEventResponseMcpCallInProgressType.fromJson(String json) { return switch (json) {
   'response.mcp_call.in_progress' => responseMcpCallInProgress,
-  _ => RealtimeBetaServerEventResponseMcpCallInProgressType._(json),
+  _ => RealtimeBetaServerEventResponseMcpCallInProgressType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventResponseMcpCallInProgressType responseMcpCallInProgress = RealtimeBetaServerEventResponseMcpCallInProgressType._('response.mcp_call.in_progress');
+static const RealtimeBetaServerEventResponseMcpCallInProgressType responseMcpCallInProgress = RealtimeBetaServerEventResponseMcpCallInProgressType$responseMcpCallInProgress._();
 
 static const List<RealtimeBetaServerEventResponseMcpCallInProgressType> values = [responseMcpCallInProgress];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseMcpCallInProgressType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventResponseMcpCallInProgressType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventResponseMcpCallInProgressType$responseMcpCallInProgress extends RealtimeBetaServerEventResponseMcpCallInProgressType {const RealtimeBetaServerEventResponseMcpCallInProgressType$responseMcpCallInProgress._();
+
+@override String get value => 'response.mcp_call.in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseMcpCallInProgressType$responseMcpCallInProgress;
+
+@override int get hashCode => 'response.mcp_call.in_progress'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventResponseMcpCallInProgressType$Unknown extends RealtimeBetaServerEventResponseMcpCallInProgressType {const RealtimeBetaServerEventResponseMcpCallInProgressType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventResponseMcpCallInProgressType && other.value == value;
+    other is RealtimeBetaServerEventResponseMcpCallInProgressType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventResponseMcpCallInProgressType($value)';
 
  }
 /// Returned when an MCP tool call has started and is in progress.

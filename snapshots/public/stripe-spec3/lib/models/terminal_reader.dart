@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TerminalReader
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader/deleted_terminal_reader_object.dart';import 'package:pub_stripe_spec3/models/deleted_terminal_reader/device_type.dart';import 'package:pub_stripe_spec3/models/terminal_location.dart';import 'package:pub_stripe_spec3/models/terminal_reader/location.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_reader_action.dart';/// The networking status of the reader. We do not recommend using this field in flows that may block taking payments.
-@immutable final class TerminalReaderStatus {const TerminalReaderStatus._(this.value);
+sealed class TerminalReaderStatus {const TerminalReaderStatus();
 
 factory TerminalReaderStatus.fromJson(String json) { return switch (json) {
   'offline' => offline,
   'online' => online,
-  _ => TerminalReaderStatus._(json),
+  _ => TerminalReaderStatus$Unknown(json),
 }; }
 
-static const TerminalReaderStatus offline = TerminalReaderStatus._('offline');
+static const TerminalReaderStatus offline = TerminalReaderStatus$offline._();
 
-static const TerminalReaderStatus online = TerminalReaderStatus._('online');
+static const TerminalReaderStatus online = TerminalReaderStatus$online._();
 
 static const List<TerminalReaderStatus> values = [offline, online];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TerminalReaderStatus$Unknown; } 
+@override String toString() => 'TerminalReaderStatus($value)';
+
+ }
+@immutable final class TerminalReaderStatus$offline extends TerminalReaderStatus {const TerminalReaderStatus$offline._();
+
+@override String get value => 'offline';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderStatus$offline;
+
+@override int get hashCode => 'offline'.hashCode;
+
+ }
+@immutable final class TerminalReaderStatus$online extends TerminalReaderStatus {const TerminalReaderStatus$online._();
+
+@override String get value => 'online';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderStatus$online;
+
+@override int get hashCode => 'online'.hashCode;
+
+ }
+@immutable final class TerminalReaderStatus$Unknown extends TerminalReaderStatus {const TerminalReaderStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TerminalReaderStatus && other.value == value;
+    other is TerminalReaderStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TerminalReaderStatus($value)';
 
  }
 /// A Reader represents a physical device for accepting payment details.

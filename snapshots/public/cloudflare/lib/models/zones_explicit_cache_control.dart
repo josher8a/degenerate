@@ -4,19 +4,18 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Origin Cache Control is enabled by default for Free, Pro, and
 /// Business domains and disabled by default for Enterprise domains.
 /// 
-@immutable final class ZonesExplicitCacheControlId {const ZonesExplicitCacheControlId._(this.value);
+sealed class ZonesExplicitCacheControlId {const ZonesExplicitCacheControlId();
 
 factory ZonesExplicitCacheControlId.fromJson(String json) { return switch (json) {
   'explicit_cache_control' => explicitCacheControl,
-  _ => ZonesExplicitCacheControlId._(json),
+  _ => ZonesExplicitCacheControlId$Unknown(json),
 }; }
 
-static const ZonesExplicitCacheControlId explicitCacheControl = ZonesExplicitCacheControlId._('explicit_cache_control');
+static const ZonesExplicitCacheControlId explicitCacheControl = ZonesExplicitCacheControlId$explicitCacheControl._();
 
 static const List<ZonesExplicitCacheControlId> values = [explicitCacheControl];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -24,13 +23,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesExplicitCacheControlId$Unknown; } 
+@override String toString() => 'ZonesExplicitCacheControlId($value)';
+
+ }
+@immutable final class ZonesExplicitCacheControlId$explicitCacheControl extends ZonesExplicitCacheControlId {const ZonesExplicitCacheControlId$explicitCacheControl._();
+
+@override String get value => 'explicit_cache_control';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesExplicitCacheControlId$explicitCacheControl;
+
+@override int get hashCode => 'explicit_cache_control'.hashCode;
+
+ }
+@immutable final class ZonesExplicitCacheControlId$Unknown extends ZonesExplicitCacheControlId {const ZonesExplicitCacheControlId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesExplicitCacheControlId && other.value == value;
+    other is ZonesExplicitCacheControlId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesExplicitCacheControlId($value)';
 
  }
 @immutable final class ZonesExplicitCacheControl {const ZonesExplicitCacheControl({this.id, this.value, });

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ItemConverted (inline: Action)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ItemConvertedAction {const ItemConvertedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ItemConvertedAction {const ItemConvertedAction();
 
 factory ItemConvertedAction.fromJson(String json) { return switch (json) {
   'converted' => converted,
-  _ => ItemConvertedAction._(json),
+  _ => ItemConvertedAction$Unknown(json),
 }; }
 
-static const ItemConvertedAction converted = ItemConvertedAction._('converted');
+static const ItemConvertedAction converted = ItemConvertedAction$converted._();
 
 static const List<ItemConvertedAction> values = [converted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ItemConvertedAction$Unknown; } 
+@override String toString() => 'ItemConvertedAction($value)';
+
+ }
+@immutable final class ItemConvertedAction$converted extends ItemConvertedAction {const ItemConvertedAction$converted._();
+
+@override String get value => 'converted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemConvertedAction$converted;
+
+@override int get hashCode => 'converted'.hashCode;
+
+ }
+@immutable final class ItemConvertedAction$Unknown extends ItemConvertedAction {const ItemConvertedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ItemConvertedAction && other.value == value;
+    other is ItemConvertedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ItemConvertedAction($value)';
 
  }

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigPostGatewayDynamicRouteRequest (inline: Elements > End)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/outputs_value.dart';@immutable final class EndType {const EndType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/outputs_value.dart';sealed class EndType {const EndType();
 
 factory EndType.fromJson(String json) { return switch (json) {
   'end' => end,
-  _ => EndType._(json),
+  _ => EndType$Unknown(json),
 }; }
 
-static const EndType end = EndType._('end');
+static const EndType end = EndType$end._();
 
 static const List<EndType> values = [end];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EndType$Unknown; } 
+@override String toString() => 'EndType($value)';
+
+ }
+@immutable final class EndType$end extends EndType {const EndType$end._();
+
+@override String get value => 'end';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EndType$end;
+
+@override int get hashCode => 'end'.hashCode;
+
+ }
+@immutable final class EndType$Unknown extends EndType {const EndType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EndType && other.value == value;
+    other is EndType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EndType($value)';
 
  }
 @immutable final class End {const End({required this.id, required this.outputs, required this.type, });

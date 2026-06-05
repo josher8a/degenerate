@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DeletedTerminalReader (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class DeletedTerminalReaderObject {const DeletedTerminalReaderObject._(this.value);
+sealed class DeletedTerminalReaderObject {const DeletedTerminalReaderObject();
 
 factory DeletedTerminalReaderObject.fromJson(String json) { return switch (json) {
   'terminal.reader' => terminalReader,
-  _ => DeletedTerminalReaderObject._(json),
+  _ => DeletedTerminalReaderObject$Unknown(json),
 }; }
 
-static const DeletedTerminalReaderObject terminalReader = DeletedTerminalReaderObject._('terminal.reader');
+static const DeletedTerminalReaderObject terminalReader = DeletedTerminalReaderObject$terminalReader._();
 
 static const List<DeletedTerminalReaderObject> values = [terminalReader];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeletedTerminalReaderObject$Unknown; } 
+@override String toString() => 'DeletedTerminalReaderObject($value)';
+
+ }
+@immutable final class DeletedTerminalReaderObject$terminalReader extends DeletedTerminalReaderObject {const DeletedTerminalReaderObject$terminalReader._();
+
+@override String get value => 'terminal.reader';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeletedTerminalReaderObject$terminalReader;
+
+@override int get hashCode => 'terminal.reader'.hashCode;
+
+ }
+@immutable final class DeletedTerminalReaderObject$Unknown extends DeletedTerminalReaderObject {const DeletedTerminalReaderObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeletedTerminalReaderObject && other.value == value;
+    other is DeletedTerminalReaderObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeletedTerminalReaderObject($value)';
 
  }

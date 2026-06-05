@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MessageContentImageFileObject (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `image_file`.
-@immutable final class MessageContentImageFileObjectType {const MessageContentImageFileObjectType._(this.value);
+sealed class MessageContentImageFileObjectType {const MessageContentImageFileObjectType();
 
 factory MessageContentImageFileObjectType.fromJson(String json) { return switch (json) {
   'image_file' => imageFile,
-  _ => MessageContentImageFileObjectType._(json),
+  _ => MessageContentImageFileObjectType$Unknown(json),
 }; }
 
-static const MessageContentImageFileObjectType imageFile = MessageContentImageFileObjectType._('image_file');
+static const MessageContentImageFileObjectType imageFile = MessageContentImageFileObjectType$imageFile._();
 
 static const List<MessageContentImageFileObjectType> values = [imageFile];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MessageContentImageFileObjectType$Unknown; } 
+@override String toString() => 'MessageContentImageFileObjectType($value)';
+
+ }
+@immutable final class MessageContentImageFileObjectType$imageFile extends MessageContentImageFileObjectType {const MessageContentImageFileObjectType$imageFile._();
+
+@override String get value => 'image_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageContentImageFileObjectType$imageFile;
+
+@override int get hashCode => 'image_file'.hashCode;
+
+ }
+@immutable final class MessageContentImageFileObjectType$Unknown extends MessageContentImageFileObjectType {const MessageContentImageFileObjectType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageContentImageFileObjectType && other.value == value;
+    other is MessageContentImageFileObjectType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MessageContentImageFileObjectType($value)';
 
  }

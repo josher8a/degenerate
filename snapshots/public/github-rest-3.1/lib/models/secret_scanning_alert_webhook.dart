@@ -2,7 +2,7 @@
 // Source: #/components/schemas/SecretScanningAlertWebhook
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/alert_created_at.dart';import 'package:pub_github_rest_3_1/models/alert_html_url.dart';import 'package:pub_github_rest_3_1/models/alert_number.dart';import 'package:pub_github_rest_3_1/models/alert_updated_at.dart';import 'package:pub_github_rest_3_1/models/alert_url.dart';import 'package:pub_github_rest_3_1/models/organization_secret_scanning_alert/validity.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The reason for resolving the alert.
-@immutable final class SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook._(this.value);
+sealed class SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook();
 
 factory SecretScanningAlertResolutionWebhook.fromJson(String json) { return switch (json) {
   'false_positive' => falsePositive,
@@ -12,27 +12,26 @@ factory SecretScanningAlertResolutionWebhook.fromJson(String json) { return swit
   'pattern_deleted' => patternDeleted,
   'pattern_edited' => patternEdited,
   'null' => $null,
-  _ => SecretScanningAlertResolutionWebhook._(json),
+  _ => SecretScanningAlertResolutionWebhook$Unknown(json),
 }; }
 
-static const SecretScanningAlertResolutionWebhook falsePositive = SecretScanningAlertResolutionWebhook._('false_positive');
+static const SecretScanningAlertResolutionWebhook falsePositive = SecretScanningAlertResolutionWebhook$falsePositive._();
 
-static const SecretScanningAlertResolutionWebhook wontFix = SecretScanningAlertResolutionWebhook._('wont_fix');
+static const SecretScanningAlertResolutionWebhook wontFix = SecretScanningAlertResolutionWebhook$wontFix._();
 
-static const SecretScanningAlertResolutionWebhook revoked = SecretScanningAlertResolutionWebhook._('revoked');
+static const SecretScanningAlertResolutionWebhook revoked = SecretScanningAlertResolutionWebhook$revoked._();
 
-static const SecretScanningAlertResolutionWebhook usedInTests = SecretScanningAlertResolutionWebhook._('used_in_tests');
+static const SecretScanningAlertResolutionWebhook usedInTests = SecretScanningAlertResolutionWebhook$usedInTests._();
 
-static const SecretScanningAlertResolutionWebhook patternDeleted = SecretScanningAlertResolutionWebhook._('pattern_deleted');
+static const SecretScanningAlertResolutionWebhook patternDeleted = SecretScanningAlertResolutionWebhook$patternDeleted._();
 
-static const SecretScanningAlertResolutionWebhook patternEdited = SecretScanningAlertResolutionWebhook._('pattern_edited');
+static const SecretScanningAlertResolutionWebhook patternEdited = SecretScanningAlertResolutionWebhook$patternEdited._();
 
-static const SecretScanningAlertResolutionWebhook $null = SecretScanningAlertResolutionWebhook._('null');
+static const SecretScanningAlertResolutionWebhook $null = SecretScanningAlertResolutionWebhook$$null._();
 
 static const List<SecretScanningAlertResolutionWebhook> values = [falsePositive, wontFix, revoked, usedInTests, patternDeleted, patternEdited, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -46,13 +45,81 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SecretScanningAlertResolutionWebhook$Unknown; } 
+@override String toString() => 'SecretScanningAlertResolutionWebhook($value)';
+
+ }
+@immutable final class SecretScanningAlertResolutionWebhook$falsePositive extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$falsePositive._();
+
+@override String get value => 'false_positive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningAlertResolutionWebhook$falsePositive;
+
+@override int get hashCode => 'false_positive'.hashCode;
+
+ }
+@immutable final class SecretScanningAlertResolutionWebhook$wontFix extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$wontFix._();
+
+@override String get value => 'wont_fix';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningAlertResolutionWebhook$wontFix;
+
+@override int get hashCode => 'wont_fix'.hashCode;
+
+ }
+@immutable final class SecretScanningAlertResolutionWebhook$revoked extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$revoked._();
+
+@override String get value => 'revoked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningAlertResolutionWebhook$revoked;
+
+@override int get hashCode => 'revoked'.hashCode;
+
+ }
+@immutable final class SecretScanningAlertResolutionWebhook$usedInTests extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$usedInTests._();
+
+@override String get value => 'used_in_tests';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningAlertResolutionWebhook$usedInTests;
+
+@override int get hashCode => 'used_in_tests'.hashCode;
+
+ }
+@immutable final class SecretScanningAlertResolutionWebhook$patternDeleted extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$patternDeleted._();
+
+@override String get value => 'pattern_deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningAlertResolutionWebhook$patternDeleted;
+
+@override int get hashCode => 'pattern_deleted'.hashCode;
+
+ }
+@immutable final class SecretScanningAlertResolutionWebhook$patternEdited extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$patternEdited._();
+
+@override String get value => 'pattern_edited';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningAlertResolutionWebhook$patternEdited;
+
+@override int get hashCode => 'pattern_edited'.hashCode;
+
+ }
+@immutable final class SecretScanningAlertResolutionWebhook$$null extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningAlertResolutionWebhook$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class SecretScanningAlertResolutionWebhook$Unknown extends SecretScanningAlertResolutionWebhook {const SecretScanningAlertResolutionWebhook$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SecretScanningAlertResolutionWebhook && other.value == value;
+    other is SecretScanningAlertResolutionWebhook$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SecretScanningAlertResolutionWebhook($value)';
 
  }
 @immutable final class SecretScanningAlertWebhook {const SecretScanningAlertWebhook({this.number, this.createdAt, this.updatedAt, this.url, this.htmlUrl, this.locationsUrl, this.resolution, this.resolvedAt, this.resolvedBy, this.resolutionComment, this.secretType, this.secretTypeDisplayName, this.validity, this.pushProtectionBypassed, this.pushProtectionBypassedBy, this.pushProtectionBypassedAt, this.pushProtectionBypassRequestReviewer, this.pushProtectionBypassRequestReviewerComment, this.pushProtectionBypassRequestComment, this.pushProtectionBypassRequestHtmlUrl, this.publiclyLeaked, this.multiRepo, this.assignedTo, });

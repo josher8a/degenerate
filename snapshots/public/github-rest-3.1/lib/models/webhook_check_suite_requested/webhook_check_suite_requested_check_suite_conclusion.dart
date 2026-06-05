@@ -2,7 +2,7 @@
 // Source: #/components/schemas/WebhookCheckSuiteRequested (inline: CheckSuite > Conclusion)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The summary conclusion for all check runs that are part of the check suite. This value will be `null` until the check run has completed.
-@immutable final class WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion._(this.value);
+sealed class WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion();
 
 factory WebhookCheckSuiteRequestedCheckSuiteConclusion.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -14,31 +14,30 @@ factory WebhookCheckSuiteRequestedCheckSuiteConclusion.fromJson(String json) { r
   'stale' => stale,
   'null' => $null,
   'skipped' => skipped,
-  _ => WebhookCheckSuiteRequestedCheckSuiteConclusion._(json),
+  _ => WebhookCheckSuiteRequestedCheckSuiteConclusion$Unknown(json),
 }; }
 
-static const WebhookCheckSuiteRequestedCheckSuiteConclusion success = WebhookCheckSuiteRequestedCheckSuiteConclusion._('success');
+static const WebhookCheckSuiteRequestedCheckSuiteConclusion success = WebhookCheckSuiteRequestedCheckSuiteConclusion$success._();
 
-static const WebhookCheckSuiteRequestedCheckSuiteConclusion failure = WebhookCheckSuiteRequestedCheckSuiteConclusion._('failure');
+static const WebhookCheckSuiteRequestedCheckSuiteConclusion failure = WebhookCheckSuiteRequestedCheckSuiteConclusion$failure._();
 
-static const WebhookCheckSuiteRequestedCheckSuiteConclusion neutral = WebhookCheckSuiteRequestedCheckSuiteConclusion._('neutral');
+static const WebhookCheckSuiteRequestedCheckSuiteConclusion neutral = WebhookCheckSuiteRequestedCheckSuiteConclusion$neutral._();
 
-static const WebhookCheckSuiteRequestedCheckSuiteConclusion cancelled = WebhookCheckSuiteRequestedCheckSuiteConclusion._('cancelled');
+static const WebhookCheckSuiteRequestedCheckSuiteConclusion cancelled = WebhookCheckSuiteRequestedCheckSuiteConclusion$cancelled._();
 
-static const WebhookCheckSuiteRequestedCheckSuiteConclusion timedOut = WebhookCheckSuiteRequestedCheckSuiteConclusion._('timed_out');
+static const WebhookCheckSuiteRequestedCheckSuiteConclusion timedOut = WebhookCheckSuiteRequestedCheckSuiteConclusion$timedOut._();
 
-static const WebhookCheckSuiteRequestedCheckSuiteConclusion actionRequired = WebhookCheckSuiteRequestedCheckSuiteConclusion._('action_required');
+static const WebhookCheckSuiteRequestedCheckSuiteConclusion actionRequired = WebhookCheckSuiteRequestedCheckSuiteConclusion$actionRequired._();
 
-static const WebhookCheckSuiteRequestedCheckSuiteConclusion stale = WebhookCheckSuiteRequestedCheckSuiteConclusion._('stale');
+static const WebhookCheckSuiteRequestedCheckSuiteConclusion stale = WebhookCheckSuiteRequestedCheckSuiteConclusion$stale._();
 
-static const WebhookCheckSuiteRequestedCheckSuiteConclusion $null = WebhookCheckSuiteRequestedCheckSuiteConclusion._('null');
+static const WebhookCheckSuiteRequestedCheckSuiteConclusion $null = WebhookCheckSuiteRequestedCheckSuiteConclusion$$null._();
 
-static const WebhookCheckSuiteRequestedCheckSuiteConclusion skipped = WebhookCheckSuiteRequestedCheckSuiteConclusion._('skipped');
+static const WebhookCheckSuiteRequestedCheckSuiteConclusion skipped = WebhookCheckSuiteRequestedCheckSuiteConclusion$skipped._();
 
 static const List<WebhookCheckSuiteRequestedCheckSuiteConclusion> values = [success, failure, neutral, cancelled, timedOut, actionRequired, stale, $null, skipped];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -54,12 +53,98 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookCheckSuiteRequestedCheckSuiteConclusion$Unknown; } 
+@override String toString() => 'WebhookCheckSuiteRequestedCheckSuiteConclusion($value)';
+
+ }
+@immutable final class WebhookCheckSuiteRequestedCheckSuiteConclusion$success extends WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion$success._();
+
+@override String get value => 'success';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteRequestedCheckSuiteConclusion$success;
+
+@override int get hashCode => 'success'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteRequestedCheckSuiteConclusion$failure extends WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion$failure._();
+
+@override String get value => 'failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteRequestedCheckSuiteConclusion$failure;
+
+@override int get hashCode => 'failure'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteRequestedCheckSuiteConclusion$neutral extends WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion$neutral._();
+
+@override String get value => 'neutral';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteRequestedCheckSuiteConclusion$neutral;
+
+@override int get hashCode => 'neutral'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteRequestedCheckSuiteConclusion$cancelled extends WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteRequestedCheckSuiteConclusion$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteRequestedCheckSuiteConclusion$timedOut extends WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion$timedOut._();
+
+@override String get value => 'timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteRequestedCheckSuiteConclusion$timedOut;
+
+@override int get hashCode => 'timed_out'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteRequestedCheckSuiteConclusion$actionRequired extends WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion$actionRequired._();
+
+@override String get value => 'action_required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteRequestedCheckSuiteConclusion$actionRequired;
+
+@override int get hashCode => 'action_required'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteRequestedCheckSuiteConclusion$stale extends WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion$stale._();
+
+@override String get value => 'stale';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteRequestedCheckSuiteConclusion$stale;
+
+@override int get hashCode => 'stale'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteRequestedCheckSuiteConclusion$$null extends WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteRequestedCheckSuiteConclusion$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteRequestedCheckSuiteConclusion$skipped extends WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion$skipped._();
+
+@override String get value => 'skipped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckSuiteRequestedCheckSuiteConclusion$skipped;
+
+@override int get hashCode => 'skipped'.hashCode;
+
+ }
+@immutable final class WebhookCheckSuiteRequestedCheckSuiteConclusion$Unknown extends WebhookCheckSuiteRequestedCheckSuiteConclusion {const WebhookCheckSuiteRequestedCheckSuiteConclusion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookCheckSuiteRequestedCheckSuiteConclusion && other.value == value;
+    other is WebhookCheckSuiteRequestedCheckSuiteConclusion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookCheckSuiteRequestedCheckSuiteConclusion($value)';
 
  }

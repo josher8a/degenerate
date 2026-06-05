@@ -2,25 +2,24 @@
 // Source: #/components/schemas/WorkersBindingKindR2Bucket
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';/// The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.
-@immutable final class Jurisdiction {const Jurisdiction._(this.value);
+sealed class Jurisdiction {const Jurisdiction();
 
 factory Jurisdiction.fromJson(String json) { return switch (json) {
   'eu' => eu,
   'fedramp' => fedramp,
   'fedramp-high' => fedrampHigh,
-  _ => Jurisdiction._(json),
+  _ => Jurisdiction$Unknown(json),
 }; }
 
-static const Jurisdiction eu = Jurisdiction._('eu');
+static const Jurisdiction eu = Jurisdiction$eu._();
 
-static const Jurisdiction fedramp = Jurisdiction._('fedramp');
+static const Jurisdiction fedramp = Jurisdiction$fedramp._();
 
-static const Jurisdiction fedrampHigh = Jurisdiction._('fedramp-high');
+static const Jurisdiction fedrampHigh = Jurisdiction$fedrampHigh._();
 
 static const List<Jurisdiction> values = [eu, fedramp, fedrampHigh];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Jurisdiction$Unknown; } 
+@override String toString() => 'Jurisdiction($value)';
+
+ }
+@immutable final class Jurisdiction$eu extends Jurisdiction {const Jurisdiction$eu._();
+
+@override String get value => 'eu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Jurisdiction$eu;
+
+@override int get hashCode => 'eu'.hashCode;
+
+ }
+@immutable final class Jurisdiction$fedramp extends Jurisdiction {const Jurisdiction$fedramp._();
+
+@override String get value => 'fedramp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Jurisdiction$fedramp;
+
+@override int get hashCode => 'fedramp'.hashCode;
+
+ }
+@immutable final class Jurisdiction$fedrampHigh extends Jurisdiction {const Jurisdiction$fedrampHigh._();
+
+@override String get value => 'fedramp-high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Jurisdiction$fedrampHigh;
+
+@override int get hashCode => 'fedramp-high'.hashCode;
+
+ }
+@immutable final class Jurisdiction$Unknown extends Jurisdiction {const Jurisdiction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Jurisdiction && other.value == value;
+    other is Jurisdiction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Jurisdiction($value)';
 
  }
 @immutable final class WorkersBindingKindR2Bucket {const WorkersBindingKindR2Bucket({required this.bucketName, required this.name, required this.type, this.jurisdiction, });

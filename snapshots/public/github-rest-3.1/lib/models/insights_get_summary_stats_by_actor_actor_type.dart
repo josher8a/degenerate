@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/InsightsGetSummaryStatsByActorActorType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InsightsGetSummaryStatsByActorActorType {const InsightsGetSummaryStatsByActorActorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class InsightsGetSummaryStatsByActorActorType {const InsightsGetSummaryStatsByActorActorType();
 
 factory InsightsGetSummaryStatsByActorActorType.fromJson(String json) { return switch (json) {
   'installation' => installation,
@@ -9,23 +9,22 @@ factory InsightsGetSummaryStatsByActorActorType.fromJson(String json) { return s
   'fine_grained_pat' => fineGrainedPat,
   'oauth_app' => oauthApp,
   'github_app_user_to_server' => githubAppUserToServer,
-  _ => InsightsGetSummaryStatsByActorActorType._(json),
+  _ => InsightsGetSummaryStatsByActorActorType$Unknown(json),
 }; }
 
-static const InsightsGetSummaryStatsByActorActorType installation = InsightsGetSummaryStatsByActorActorType._('installation');
+static const InsightsGetSummaryStatsByActorActorType installation = InsightsGetSummaryStatsByActorActorType$installation._();
 
-static const InsightsGetSummaryStatsByActorActorType classicPat = InsightsGetSummaryStatsByActorActorType._('classic_pat');
+static const InsightsGetSummaryStatsByActorActorType classicPat = InsightsGetSummaryStatsByActorActorType$classicPat._();
 
-static const InsightsGetSummaryStatsByActorActorType fineGrainedPat = InsightsGetSummaryStatsByActorActorType._('fine_grained_pat');
+static const InsightsGetSummaryStatsByActorActorType fineGrainedPat = InsightsGetSummaryStatsByActorActorType$fineGrainedPat._();
 
-static const InsightsGetSummaryStatsByActorActorType oauthApp = InsightsGetSummaryStatsByActorActorType._('oauth_app');
+static const InsightsGetSummaryStatsByActorActorType oauthApp = InsightsGetSummaryStatsByActorActorType$oauthApp._();
 
-static const InsightsGetSummaryStatsByActorActorType githubAppUserToServer = InsightsGetSummaryStatsByActorActorType._('github_app_user_to_server');
+static const InsightsGetSummaryStatsByActorActorType githubAppUserToServer = InsightsGetSummaryStatsByActorActorType$githubAppUserToServer._();
 
 static const List<InsightsGetSummaryStatsByActorActorType> values = [installation, classicPat, fineGrainedPat, oauthApp, githubAppUserToServer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,12 +36,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InsightsGetSummaryStatsByActorActorType$Unknown; } 
+@override String toString() => 'InsightsGetSummaryStatsByActorActorType($value)';
+
+ }
+@immutable final class InsightsGetSummaryStatsByActorActorType$installation extends InsightsGetSummaryStatsByActorActorType {const InsightsGetSummaryStatsByActorActorType$installation._();
+
+@override String get value => 'installation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsGetSummaryStatsByActorActorType$installation;
+
+@override int get hashCode => 'installation'.hashCode;
+
+ }
+@immutable final class InsightsGetSummaryStatsByActorActorType$classicPat extends InsightsGetSummaryStatsByActorActorType {const InsightsGetSummaryStatsByActorActorType$classicPat._();
+
+@override String get value => 'classic_pat';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsGetSummaryStatsByActorActorType$classicPat;
+
+@override int get hashCode => 'classic_pat'.hashCode;
+
+ }
+@immutable final class InsightsGetSummaryStatsByActorActorType$fineGrainedPat extends InsightsGetSummaryStatsByActorActorType {const InsightsGetSummaryStatsByActorActorType$fineGrainedPat._();
+
+@override String get value => 'fine_grained_pat';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsGetSummaryStatsByActorActorType$fineGrainedPat;
+
+@override int get hashCode => 'fine_grained_pat'.hashCode;
+
+ }
+@immutable final class InsightsGetSummaryStatsByActorActorType$oauthApp extends InsightsGetSummaryStatsByActorActorType {const InsightsGetSummaryStatsByActorActorType$oauthApp._();
+
+@override String get value => 'oauth_app';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsGetSummaryStatsByActorActorType$oauthApp;
+
+@override int get hashCode => 'oauth_app'.hashCode;
+
+ }
+@immutable final class InsightsGetSummaryStatsByActorActorType$githubAppUserToServer extends InsightsGetSummaryStatsByActorActorType {const InsightsGetSummaryStatsByActorActorType$githubAppUserToServer._();
+
+@override String get value => 'github_app_user_to_server';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsGetSummaryStatsByActorActorType$githubAppUserToServer;
+
+@override int get hashCode => 'github_app_user_to_server'.hashCode;
+
+ }
+@immutable final class InsightsGetSummaryStatsByActorActorType$Unknown extends InsightsGetSummaryStatsByActorActorType {const InsightsGetSummaryStatsByActorActorType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InsightsGetSummaryStatsByActorActorType && other.value == value;
+    other is InsightsGetSummaryStatsByActorActorType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InsightsGetSummaryStatsByActorActorType($value)';
 
  }

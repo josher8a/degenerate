@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: WebSearchOptions > Variant1)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/user_location.dart';@immutable final class SearchContextSize {const SearchContextSize._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/user_location.dart';sealed class SearchContextSize {const SearchContextSize();
 
 factory SearchContextSize.fromJson(String json) { return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
-  _ => SearchContextSize._(json),
+  _ => SearchContextSize$Unknown(json),
 }; }
 
-static const SearchContextSize low = SearchContextSize._('low');
+static const SearchContextSize low = SearchContextSize$low._();
 
-static const SearchContextSize medium = SearchContextSize._('medium');
+static const SearchContextSize medium = SearchContextSize$medium._();
 
-static const SearchContextSize high = SearchContextSize._('high');
+static const SearchContextSize high = SearchContextSize$high._();
 
 static const List<SearchContextSize> values = [low, medium, high];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SearchContextSize$Unknown; } 
+@override String toString() => 'SearchContextSize($value)';
+
+ }
+@immutable final class SearchContextSize$low extends SearchContextSize {const SearchContextSize$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SearchContextSize$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class SearchContextSize$medium extends SearchContextSize {const SearchContextSize$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SearchContextSize$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class SearchContextSize$high extends SearchContextSize {const SearchContextSize$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SearchContextSize$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class SearchContextSize$Unknown extends SearchContextSize {const SearchContextSize$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SearchContextSize && other.value == value;
+    other is SearchContextSize$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SearchContextSize($value)';
 
  }
 /// Options for the web search tool (when using built-in web search).

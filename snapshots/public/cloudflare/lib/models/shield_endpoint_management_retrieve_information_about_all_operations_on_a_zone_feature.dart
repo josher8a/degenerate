@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature();
 
 factory ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature.fromJson(String json) { return switch (json) {
   'thresholds' => thresholds,
   'parameter_schemas' => parameterSchemas,
   'schema_info' => schemaInfo,
-  _ => ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature._(json),
+  _ => ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$Unknown(json),
 }; }
 
-static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature thresholds = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature._('thresholds');
+static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature thresholds = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$thresholds._();
 
-static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature parameterSchemas = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature._('parameter_schemas');
+static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature parameterSchemas = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$parameterSchemas._();
 
-static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature schemaInfo = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature._('schema_info');
+static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature schemaInfo = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$schemaInfo._();
 
 static const List<ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature> values = [thresholds, parameterSchemas, schemaInfo];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$Unknown; } 
+@override String toString() => 'ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature($value)';
+
+ }
+@immutable final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$thresholds extends ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$thresholds._();
+
+@override String get value => 'thresholds';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$thresholds;
+
+@override int get hashCode => 'thresholds'.hashCode;
+
+ }
+@immutable final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$parameterSchemas extends ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$parameterSchemas._();
+
+@override String get value => 'parameter_schemas';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$parameterSchemas;
+
+@override int get hashCode => 'parameter_schemas'.hashCode;
+
+ }
+@immutable final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$schemaInfo extends ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$schemaInfo._();
+
+@override String get value => 'schema_info';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$schemaInfo;
+
+@override int get hashCode => 'schema_info'.hashCode;
+
+ }
+@immutable final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$Unknown extends ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature && other.value == value;
+    other is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneFeature($value)';
 
  }

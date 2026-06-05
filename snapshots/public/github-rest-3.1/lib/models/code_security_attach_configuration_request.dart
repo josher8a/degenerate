@@ -2,7 +2,7 @@
 // Source: #/components/schemas/CodeSecurityAttachConfigurationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`
-@immutable final class CodeSecurityAttachConfigurationRequestScope {const CodeSecurityAttachConfigurationRequestScope._(this.value);
+sealed class CodeSecurityAttachConfigurationRequestScope {const CodeSecurityAttachConfigurationRequestScope();
 
 factory CodeSecurityAttachConfigurationRequestScope.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -10,23 +10,22 @@ factory CodeSecurityAttachConfigurationRequestScope.fromJson(String json) { retu
   'public' => public,
   'private_or_internal' => privateOrInternal,
   'selected' => selected,
-  _ => CodeSecurityAttachConfigurationRequestScope._(json),
+  _ => CodeSecurityAttachConfigurationRequestScope$Unknown(json),
 }; }
 
-static const CodeSecurityAttachConfigurationRequestScope all = CodeSecurityAttachConfigurationRequestScope._('all');
+static const CodeSecurityAttachConfigurationRequestScope all = CodeSecurityAttachConfigurationRequestScope$all._();
 
-static const CodeSecurityAttachConfigurationRequestScope allWithoutConfigurations = CodeSecurityAttachConfigurationRequestScope._('all_without_configurations');
+static const CodeSecurityAttachConfigurationRequestScope allWithoutConfigurations = CodeSecurityAttachConfigurationRequestScope$allWithoutConfigurations._();
 
-static const CodeSecurityAttachConfigurationRequestScope public = CodeSecurityAttachConfigurationRequestScope._('public');
+static const CodeSecurityAttachConfigurationRequestScope public = CodeSecurityAttachConfigurationRequestScope$public._();
 
-static const CodeSecurityAttachConfigurationRequestScope privateOrInternal = CodeSecurityAttachConfigurationRequestScope._('private_or_internal');
+static const CodeSecurityAttachConfigurationRequestScope privateOrInternal = CodeSecurityAttachConfigurationRequestScope$privateOrInternal._();
 
-static const CodeSecurityAttachConfigurationRequestScope selected = CodeSecurityAttachConfigurationRequestScope._('selected');
+static const CodeSecurityAttachConfigurationRequestScope selected = CodeSecurityAttachConfigurationRequestScope$selected._();
 
 static const List<CodeSecurityAttachConfigurationRequestScope> values = [all, allWithoutConfigurations, public, privateOrInternal, selected];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeSecurityAttachConfigurationRequestScope$Unknown; } 
+@override String toString() => 'CodeSecurityAttachConfigurationRequestScope($value)';
+
+ }
+@immutable final class CodeSecurityAttachConfigurationRequestScope$all extends CodeSecurityAttachConfigurationRequestScope {const CodeSecurityAttachConfigurationRequestScope$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityAttachConfigurationRequestScope$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class CodeSecurityAttachConfigurationRequestScope$allWithoutConfigurations extends CodeSecurityAttachConfigurationRequestScope {const CodeSecurityAttachConfigurationRequestScope$allWithoutConfigurations._();
+
+@override String get value => 'all_without_configurations';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityAttachConfigurationRequestScope$allWithoutConfigurations;
+
+@override int get hashCode => 'all_without_configurations'.hashCode;
+
+ }
+@immutable final class CodeSecurityAttachConfigurationRequestScope$public extends CodeSecurityAttachConfigurationRequestScope {const CodeSecurityAttachConfigurationRequestScope$public._();
+
+@override String get value => 'public';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityAttachConfigurationRequestScope$public;
+
+@override int get hashCode => 'public'.hashCode;
+
+ }
+@immutable final class CodeSecurityAttachConfigurationRequestScope$privateOrInternal extends CodeSecurityAttachConfigurationRequestScope {const CodeSecurityAttachConfigurationRequestScope$privateOrInternal._();
+
+@override String get value => 'private_or_internal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityAttachConfigurationRequestScope$privateOrInternal;
+
+@override int get hashCode => 'private_or_internal'.hashCode;
+
+ }
+@immutable final class CodeSecurityAttachConfigurationRequestScope$selected extends CodeSecurityAttachConfigurationRequestScope {const CodeSecurityAttachConfigurationRequestScope$selected._();
+
+@override String get value => 'selected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityAttachConfigurationRequestScope$selected;
+
+@override int get hashCode => 'selected'.hashCode;
+
+ }
+@immutable final class CodeSecurityAttachConfigurationRequestScope$Unknown extends CodeSecurityAttachConfigurationRequestScope {const CodeSecurityAttachConfigurationRequestScope$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeSecurityAttachConfigurationRequestScope && other.value == value;
+    other is CodeSecurityAttachConfigurationRequestScope$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeSecurityAttachConfigurationRequestScope($value)';
 
  }
 @immutable final class CodeSecurityAttachConfigurationRequest {const CodeSecurityAttachConfigurationRequest({required this.scope, this.selectedRepositoryIds, });

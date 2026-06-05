@@ -3,29 +3,27 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
-@immutable
-final class SessionStatus {
-  const SessionStatus._(this.value);
+sealed class SessionStatus {
+  const SessionStatus();
 
   factory SessionStatus.fromJson(String json) {
     return switch (json) {
       'waiting' => waiting,
       'started' => started,
       'ended' => ended,
-      _ => SessionStatus._(json),
+      _ => SessionStatus$Unknown(json),
     };
   }
 
-  static const SessionStatus waiting = SessionStatus._('waiting');
+  static const SessionStatus waiting = SessionStatus$waiting._();
 
-  static const SessionStatus started = SessionStatus._('started');
+  static const SessionStatus started = SessionStatus$started._();
 
-  static const SessionStatus ended = SessionStatus._('ended');
+  static const SessionStatus ended = SessionStatus$ended._();
 
   static const List<SessionStatus> values = [waiting, started, ended];
 
-  final String value;
-
+  String get value;
   String toJson() {
     return value;
   }
@@ -42,43 +40,95 @@ final class SessionStatus {
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
-    return !values.contains(this);
+    return this is SessionStatus$Unknown;
   }
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) || other is SessionStatus && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
 
   @override
   String toString() => 'SessionStatus($value)';
 }
 
 @immutable
-final class TotemStatus {
-  const TotemStatus._(this.value);
+final class SessionStatus$waiting extends SessionStatus {
+  const SessionStatus$waiting._();
+
+  @override
+  String get value => 'waiting';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is SessionStatus$waiting;
+
+  @override
+  int get hashCode => 'waiting'.hashCode;
+}
+
+@immutable
+final class SessionStatus$started extends SessionStatus {
+  const SessionStatus$started._();
+
+  @override
+  String get value => 'started';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is SessionStatus$started;
+
+  @override
+  int get hashCode => 'started'.hashCode;
+}
+
+@immutable
+final class SessionStatus$ended extends SessionStatus {
+  const SessionStatus$ended._();
+
+  @override
+  String get value => 'ended';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is SessionStatus$ended;
+
+  @override
+  int get hashCode => 'ended'.hashCode;
+}
+
+@immutable
+final class SessionStatus$Unknown extends SessionStatus {
+  const SessionStatus$Unknown(this.value);
+
+  @override
+  final String value;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is SessionStatus$Unknown && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+sealed class TotemStatus {
+  const TotemStatus();
 
   factory TotemStatus.fromJson(String json) {
     return switch (json) {
       'none' => none,
       'accepted' => accepted,
       'passing' => passing,
-      _ => TotemStatus._(json),
+      _ => TotemStatus$Unknown(json),
     };
   }
 
-  static const TotemStatus none = TotemStatus._('none');
+  static const TotemStatus none = TotemStatus$none._();
 
-  static const TotemStatus accepted = TotemStatus._('accepted');
+  static const TotemStatus accepted = TotemStatus$accepted._();
 
-  static const TotemStatus passing = TotemStatus._('passing');
+  static const TotemStatus passing = TotemStatus$passing._();
 
   static const List<TotemStatus> values = [none, accepted, passing];
 
-  final String value;
-
+  String get value;
   String toJson() {
     return value;
   }
@@ -95,18 +145,72 @@ final class TotemStatus {
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
-    return !values.contains(this);
+    return this is TotemStatus$Unknown;
   }
 
   @override
+  String toString() => 'TotemStatus($value)';
+}
+
+@immutable
+final class TotemStatus$none extends TotemStatus {
+  const TotemStatus$none._();
+
+  @override
+  String get value => 'none';
+
+  @override
   bool operator ==(Object other) =>
-      identical(this, other) || other is TotemStatus && other.value == value;
+      identical(this, other) || other is TotemStatus$none;
+
+  @override
+  int get hashCode => 'none'.hashCode;
+}
+
+@immutable
+final class TotemStatus$accepted extends TotemStatus {
+  const TotemStatus$accepted._();
+
+  @override
+  String get value => 'accepted';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is TotemStatus$accepted;
+
+  @override
+  int get hashCode => 'accepted'.hashCode;
+}
+
+@immutable
+final class TotemStatus$passing extends TotemStatus {
+  const TotemStatus$passing._();
+
+  @override
+  String get value => 'passing';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is TotemStatus$passing;
+
+  @override
+  int get hashCode => 'passing'.hashCode;
+}
+
+@immutable
+final class TotemStatus$Unknown extends TotemStatus {
+  const TotemStatus$Unknown(this.value);
+
+  @override
+  final String value;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TotemStatus$Unknown && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
-
-  @override
-  String toString() => 'TotemStatus($value)';
 }
 
 @immutable

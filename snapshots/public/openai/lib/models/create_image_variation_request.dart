@@ -2,25 +2,24 @@
 // Source: #/components/schemas/CreateImageVariationRequest
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_response_format.dart';import 'package:pub_openai/models/create_image_variation_request/create_image_variation_request_model.dart';/// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.
-@immutable final class CreateImageVariationRequestSize {const CreateImageVariationRequestSize._(this.value);
+sealed class CreateImageVariationRequestSize {const CreateImageVariationRequestSize();
 
 factory CreateImageVariationRequestSize.fromJson(String json) { return switch (json) {
   '256x256' => $256x256,
   '512x512' => $512x512,
   '1024x1024' => $1024x1024,
-  _ => CreateImageVariationRequestSize._(json),
+  _ => CreateImageVariationRequestSize$Unknown(json),
 }; }
 
-static const CreateImageVariationRequestSize $256x256 = CreateImageVariationRequestSize._('256x256');
+static const CreateImageVariationRequestSize $256x256 = CreateImageVariationRequestSize$$256x256._();
 
-static const CreateImageVariationRequestSize $512x512 = CreateImageVariationRequestSize._('512x512');
+static const CreateImageVariationRequestSize $512x512 = CreateImageVariationRequestSize$$512x512._();
 
-static const CreateImageVariationRequestSize $1024x1024 = CreateImageVariationRequestSize._('1024x1024');
+static const CreateImageVariationRequestSize $1024x1024 = CreateImageVariationRequestSize$$1024x1024._();
 
 static const List<CreateImageVariationRequestSize> values = [$256x256, $512x512, $1024x1024];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateImageVariationRequestSize$Unknown; } 
+@override String toString() => 'CreateImageVariationRequestSize($value)';
+
+ }
+@immutable final class CreateImageVariationRequestSize$$256x256 extends CreateImageVariationRequestSize {const CreateImageVariationRequestSize$$256x256._();
+
+@override String get value => '256x256';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageVariationRequestSize$$256x256;
+
+@override int get hashCode => '256x256'.hashCode;
+
+ }
+@immutable final class CreateImageVariationRequestSize$$512x512 extends CreateImageVariationRequestSize {const CreateImageVariationRequestSize$$512x512._();
+
+@override String get value => '512x512';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageVariationRequestSize$$512x512;
+
+@override int get hashCode => '512x512'.hashCode;
+
+ }
+@immutable final class CreateImageVariationRequestSize$$1024x1024 extends CreateImageVariationRequestSize {const CreateImageVariationRequestSize$$1024x1024._();
+
+@override String get value => '1024x1024';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageVariationRequestSize$$1024x1024;
+
+@override int get hashCode => '1024x1024'.hashCode;
+
+ }
+@immutable final class CreateImageVariationRequestSize$Unknown extends CreateImageVariationRequestSize {const CreateImageVariationRequestSize$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateImageVariationRequestSize && other.value == value;
+    other is CreateImageVariationRequestSize$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateImageVariationRequestSize($value)';
 
  }
 @immutable final class CreateImageVariationRequest {const CreateImageVariationRequest({required this.image, this.model, this.n = 1, this.responseFormat = CreateImageEditRequestResponseFormat.url, this.size = CreateImageVariationRequestSize.$1024x1024, this.user, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FineTuningJobEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "fine_tuning.job.event".
-@immutable final class FineTuningJobEventObject {const FineTuningJobEventObject._(this.value);
+sealed class FineTuningJobEventObject {const FineTuningJobEventObject();
 
 factory FineTuningJobEventObject.fromJson(String json) { return switch (json) {
   'fine_tuning.job.event' => fineTuningJobEvent,
-  _ => FineTuningJobEventObject._(json),
+  _ => FineTuningJobEventObject$Unknown(json),
 }; }
 
-static const FineTuningJobEventObject fineTuningJobEvent = FineTuningJobEventObject._('fine_tuning.job.event');
+static const FineTuningJobEventObject fineTuningJobEvent = FineTuningJobEventObject$fineTuningJobEvent._();
 
 static const List<FineTuningJobEventObject> values = [fineTuningJobEvent];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,35 +21,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is FineTuningJobEventObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is FineTuningJobEventObject$Unknown; } 
 @override String toString() => 'FineTuningJobEventObject($value)';
 
  }
+@immutable final class FineTuningJobEventObject$fineTuningJobEvent extends FineTuningJobEventObject {const FineTuningJobEventObject$fineTuningJobEvent._();
+
+@override String get value => 'fine_tuning.job.event';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuningJobEventObject$fineTuningJobEvent;
+
+@override int get hashCode => 'fine_tuning.job.event'.hashCode;
+
+ }
+@immutable final class FineTuningJobEventObject$Unknown extends FineTuningJobEventObject {const FineTuningJobEventObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FineTuningJobEventObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The log level of the event.
-@immutable final class Level {const Level._(this.value);
+sealed class Level {const Level();
 
 factory Level.fromJson(String json) { return switch (json) {
   'info' => info,
   'warn' => warn,
   'error' => error,
-  _ => Level._(json),
+  _ => Level$Unknown(json),
 }; }
 
-static const Level info = Level._('info');
+static const Level info = Level$info._();
 
-static const Level warn = Level._('warn');
+static const Level warn = Level$warn._();
 
-static const Level error = Level._('error');
+static const Level error = Level$error._();
 
 static const List<Level> values = [info, warn, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,32 +72,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Level && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Level$Unknown; } 
 @override String toString() => 'Level($value)';
 
  }
+@immutable final class Level$info extends Level {const Level$info._();
+
+@override String get value => 'info';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Level$info;
+
+@override int get hashCode => 'info'.hashCode;
+
+ }
+@immutable final class Level$warn extends Level {const Level$warn._();
+
+@override String get value => 'warn';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Level$warn;
+
+@override int get hashCode => 'warn'.hashCode;
+
+ }
+@immutable final class Level$error extends Level {const Level$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Level$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class Level$Unknown extends Level {const Level$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Level$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The type of event.
-@immutable final class FineTuningJobEventType {const FineTuningJobEventType._(this.value);
+sealed class FineTuningJobEventType {const FineTuningJobEventType();
 
 factory FineTuningJobEventType.fromJson(String json) { return switch (json) {
   'message' => message,
   'metrics' => metrics,
-  _ => FineTuningJobEventType._(json),
+  _ => FineTuningJobEventType$Unknown(json),
 }; }
 
-static const FineTuningJobEventType message = FineTuningJobEventType._('message');
+static const FineTuningJobEventType message = FineTuningJobEventType$message._();
 
-static const FineTuningJobEventType metrics = FineTuningJobEventType._('metrics');
+static const FineTuningJobEventType metrics = FineTuningJobEventType$metrics._();
 
 static const List<FineTuningJobEventType> values = [message, metrics];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -94,13 +137,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FineTuningJobEventType$Unknown; } 
+@override String toString() => 'FineTuningJobEventType($value)';
+
+ }
+@immutable final class FineTuningJobEventType$message extends FineTuningJobEventType {const FineTuningJobEventType$message._();
+
+@override String get value => 'message';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuningJobEventType$message;
+
+@override int get hashCode => 'message'.hashCode;
+
+ }
+@immutable final class FineTuningJobEventType$metrics extends FineTuningJobEventType {const FineTuningJobEventType$metrics._();
+
+@override String get value => 'metrics';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuningJobEventType$metrics;
+
+@override int get hashCode => 'metrics'.hashCode;
+
+ }
+@immutable final class FineTuningJobEventType$Unknown extends FineTuningJobEventType {const FineTuningJobEventType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FineTuningJobEventType && other.value == value;
+    other is FineTuningJobEventType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FineTuningJobEventType($value)';
 
  }
 /// Fine-tuning job event object

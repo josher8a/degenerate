@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AppPermissions (inline: Statuses)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token for commit statuses.
-@immutable final class AppPermissionsStatuses {const AppPermissionsStatuses._(this.value);
+sealed class AppPermissionsStatuses {const AppPermissionsStatuses();
 
 factory AppPermissionsStatuses.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => AppPermissionsStatuses._(json),
+  _ => AppPermissionsStatuses$Unknown(json),
 }; }
 
-static const AppPermissionsStatuses read = AppPermissionsStatuses._('read');
+static const AppPermissionsStatuses read = AppPermissionsStatuses$read._();
 
-static const AppPermissionsStatuses write = AppPermissionsStatuses._('write');
+static const AppPermissionsStatuses write = AppPermissionsStatuses$write._();
 
 static const List<AppPermissionsStatuses> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AppPermissionsStatuses$Unknown; } 
+@override String toString() => 'AppPermissionsStatuses($value)';
+
+ }
+@immutable final class AppPermissionsStatuses$read extends AppPermissionsStatuses {const AppPermissionsStatuses$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppPermissionsStatuses$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class AppPermissionsStatuses$write extends AppPermissionsStatuses {const AppPermissionsStatuses$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppPermissionsStatuses$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class AppPermissionsStatuses$Unknown extends AppPermissionsStatuses {const AppPermissionsStatuses$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AppPermissionsStatuses && other.value == value;
+    other is AppPermissionsStatuses$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AppPermissionsStatuses($value)';
 
  }

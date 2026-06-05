@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ThreeDSecureDetailsCharge
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure/authentication_flow.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure/payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure_result.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure/result_reason.dart';import 'package:pub_stripe_spec3/models/three_d_secure_details_charge/three_d_secure_details_charge_electronic_commerce_indicator.dart';import 'package:pub_stripe_spec3/models/three_d_secure_details_charge/three_d_secure_details_charge_version.dart';/// The exemption requested via 3DS and accepted by the issuer at authentication time.
-@immutable final class ThreeDSecureDetailsChargeExemptionIndicator {const ThreeDSecureDetailsChargeExemptionIndicator._(this.value);
+sealed class ThreeDSecureDetailsChargeExemptionIndicator {const ThreeDSecureDetailsChargeExemptionIndicator();
 
 factory ThreeDSecureDetailsChargeExemptionIndicator.fromJson(String json) { return switch (json) {
   'low_risk' => lowRisk,
   'none' => none,
-  _ => ThreeDSecureDetailsChargeExemptionIndicator._(json),
+  _ => ThreeDSecureDetailsChargeExemptionIndicator$Unknown(json),
 }; }
 
-static const ThreeDSecureDetailsChargeExemptionIndicator lowRisk = ThreeDSecureDetailsChargeExemptionIndicator._('low_risk');
+static const ThreeDSecureDetailsChargeExemptionIndicator lowRisk = ThreeDSecureDetailsChargeExemptionIndicator$lowRisk._();
 
-static const ThreeDSecureDetailsChargeExemptionIndicator none = ThreeDSecureDetailsChargeExemptionIndicator._('none');
+static const ThreeDSecureDetailsChargeExemptionIndicator none = ThreeDSecureDetailsChargeExemptionIndicator$none._();
 
 static const List<ThreeDSecureDetailsChargeExemptionIndicator> values = [lowRisk, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreeDSecureDetailsChargeExemptionIndicator$Unknown; } 
+@override String toString() => 'ThreeDSecureDetailsChargeExemptionIndicator($value)';
+
+ }
+@immutable final class ThreeDSecureDetailsChargeExemptionIndicator$lowRisk extends ThreeDSecureDetailsChargeExemptionIndicator {const ThreeDSecureDetailsChargeExemptionIndicator$lowRisk._();
+
+@override String get value => 'low_risk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreeDSecureDetailsChargeExemptionIndicator$lowRisk;
+
+@override int get hashCode => 'low_risk'.hashCode;
+
+ }
+@immutable final class ThreeDSecureDetailsChargeExemptionIndicator$none extends ThreeDSecureDetailsChargeExemptionIndicator {const ThreeDSecureDetailsChargeExemptionIndicator$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreeDSecureDetailsChargeExemptionIndicator$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class ThreeDSecureDetailsChargeExemptionIndicator$Unknown extends ThreeDSecureDetailsChargeExemptionIndicator {const ThreeDSecureDetailsChargeExemptionIndicator$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreeDSecureDetailsChargeExemptionIndicator && other.value == value;
+    other is ThreeDSecureDetailsChargeExemptionIndicator$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreeDSecureDetailsChargeExemptionIndicator($value)';
 
  }
 /// 

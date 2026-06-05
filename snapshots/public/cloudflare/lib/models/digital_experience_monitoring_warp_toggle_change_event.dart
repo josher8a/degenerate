@@ -2,22 +2,21 @@
 // Source: #/components/schemas/DigitalExperienceMonitoringWarpToggleChangeEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_timestamp.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';/// The state of the WARP toggle.
-@immutable final class Toggle {const Toggle._(this.value);
+sealed class Toggle {const Toggle();
 
 factory Toggle.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => Toggle._(json),
+  _ => Toggle$Unknown(json),
 }; }
 
-static const Toggle $on = Toggle._('on');
+static const Toggle $on = Toggle$$on._();
 
-static const Toggle off = Toggle._('off');
+static const Toggle off = Toggle$off._();
 
 static const List<Toggle> values = [$on, off];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Toggle$Unknown; } 
+@override String toString() => 'Toggle($value)';
+
+ }
+@immutable final class Toggle$$on extends Toggle {const Toggle$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Toggle$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class Toggle$off extends Toggle {const Toggle$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Toggle$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class Toggle$Unknown extends Toggle {const Toggle$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Toggle && other.value == value;
+    other is Toggle$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Toggle($value)';
 
  }
 @immutable final class DigitalExperienceMonitoringWarpToggleChangeEvent {const DigitalExperienceMonitoringWarpToggleChangeEvent({this.accountName, this.accountTag, this.deviceId, this.deviceRegistration, this.hostname, this.serialNumber, this.timestamp, this.toggle, this.userEmail, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/BillingMeterEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class BillingMeterEventObject {const BillingMeterEventObject._(this.value);
+sealed class BillingMeterEventObject {const BillingMeterEventObject();
 
 factory BillingMeterEventObject.fromJson(String json) { return switch (json) {
   'billing.meter_event' => billingMeterEvent,
-  _ => BillingMeterEventObject._(json),
+  _ => BillingMeterEventObject$Unknown(json),
 }; }
 
-static const BillingMeterEventObject billingMeterEvent = BillingMeterEventObject._('billing.meter_event');
+static const BillingMeterEventObject billingMeterEvent = BillingMeterEventObject$billingMeterEvent._();
 
 static const List<BillingMeterEventObject> values = [billingMeterEvent];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingMeterEventObject$Unknown; } 
+@override String toString() => 'BillingMeterEventObject($value)';
+
+ }
+@immutable final class BillingMeterEventObject$billingMeterEvent extends BillingMeterEventObject {const BillingMeterEventObject$billingMeterEvent._();
+
+@override String get value => 'billing.meter_event';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingMeterEventObject$billingMeterEvent;
+
+@override int get hashCode => 'billing.meter_event'.hashCode;
+
+ }
+@immutable final class BillingMeterEventObject$Unknown extends BillingMeterEventObject {const BillingMeterEventObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingMeterEventObject && other.value == value;
+    other is BillingMeterEventObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingMeterEventObject($value)';
 
  }
 /// Meter events represent actions that customers take in your system. You can use meter events to bill a customer based on their usage. Meter events are associated with billing meters, which define both the contents of the event’s payload and how to aggregate those events.

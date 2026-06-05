@@ -2,28 +2,27 @@
 // Source: #/components/schemas/CodespacesSetCodespacesAccessRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which users can access codespaces in the organization. `disabled` means that no users can access codespaces in the organization.
-@immutable final class CodespacesSetCodespacesAccessRequestVisibility {const CodespacesSetCodespacesAccessRequestVisibility._(this.value);
+sealed class CodespacesSetCodespacesAccessRequestVisibility {const CodespacesSetCodespacesAccessRequestVisibility();
 
 factory CodespacesSetCodespacesAccessRequestVisibility.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
   'selected_members' => selectedMembers,
   'all_members' => allMembers,
   'all_members_and_outside_collaborators' => allMembersAndOutsideCollaborators,
-  _ => CodespacesSetCodespacesAccessRequestVisibility._(json),
+  _ => CodespacesSetCodespacesAccessRequestVisibility$Unknown(json),
 }; }
 
-static const CodespacesSetCodespacesAccessRequestVisibility disabled = CodespacesSetCodespacesAccessRequestVisibility._('disabled');
+static const CodespacesSetCodespacesAccessRequestVisibility disabled = CodespacesSetCodespacesAccessRequestVisibility$disabled._();
 
-static const CodespacesSetCodespacesAccessRequestVisibility selectedMembers = CodespacesSetCodespacesAccessRequestVisibility._('selected_members');
+static const CodespacesSetCodespacesAccessRequestVisibility selectedMembers = CodespacesSetCodespacesAccessRequestVisibility$selectedMembers._();
 
-static const CodespacesSetCodespacesAccessRequestVisibility allMembers = CodespacesSetCodespacesAccessRequestVisibility._('all_members');
+static const CodespacesSetCodespacesAccessRequestVisibility allMembers = CodespacesSetCodespacesAccessRequestVisibility$allMembers._();
 
-static const CodespacesSetCodespacesAccessRequestVisibility allMembersAndOutsideCollaborators = CodespacesSetCodespacesAccessRequestVisibility._('all_members_and_outside_collaborators');
+static const CodespacesSetCodespacesAccessRequestVisibility allMembersAndOutsideCollaborators = CodespacesSetCodespacesAccessRequestVisibility$allMembersAndOutsideCollaborators._();
 
 static const List<CodespacesSetCodespacesAccessRequestVisibility> values = [disabled, selectedMembers, allMembers, allMembersAndOutsideCollaborators];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodespacesSetCodespacesAccessRequestVisibility$Unknown; } 
+@override String toString() => 'CodespacesSetCodespacesAccessRequestVisibility($value)';
+
+ }
+@immutable final class CodespacesSetCodespacesAccessRequestVisibility$disabled extends CodespacesSetCodespacesAccessRequestVisibility {const CodespacesSetCodespacesAccessRequestVisibility$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodespacesSetCodespacesAccessRequestVisibility$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class CodespacesSetCodespacesAccessRequestVisibility$selectedMembers extends CodespacesSetCodespacesAccessRequestVisibility {const CodespacesSetCodespacesAccessRequestVisibility$selectedMembers._();
+
+@override String get value => 'selected_members';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodespacesSetCodespacesAccessRequestVisibility$selectedMembers;
+
+@override int get hashCode => 'selected_members'.hashCode;
+
+ }
+@immutable final class CodespacesSetCodespacesAccessRequestVisibility$allMembers extends CodespacesSetCodespacesAccessRequestVisibility {const CodespacesSetCodespacesAccessRequestVisibility$allMembers._();
+
+@override String get value => 'all_members';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodespacesSetCodespacesAccessRequestVisibility$allMembers;
+
+@override int get hashCode => 'all_members'.hashCode;
+
+ }
+@immutable final class CodespacesSetCodespacesAccessRequestVisibility$allMembersAndOutsideCollaborators extends CodespacesSetCodespacesAccessRequestVisibility {const CodespacesSetCodespacesAccessRequestVisibility$allMembersAndOutsideCollaborators._();
+
+@override String get value => 'all_members_and_outside_collaborators';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodespacesSetCodespacesAccessRequestVisibility$allMembersAndOutsideCollaborators;
+
+@override int get hashCode => 'all_members_and_outside_collaborators'.hashCode;
+
+ }
+@immutable final class CodespacesSetCodespacesAccessRequestVisibility$Unknown extends CodespacesSetCodespacesAccessRequestVisibility {const CodespacesSetCodespacesAccessRequestVisibility$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodespacesSetCodespacesAccessRequestVisibility && other.value == value;
+    other is CodespacesSetCodespacesAccessRequestVisibility$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodespacesSetCodespacesAccessRequestVisibility($value)';
 
  }
 @immutable final class CodespacesSetCodespacesAccessRequest {const CodespacesSetCodespacesAccessRequest({required this.visibility, this.selectedUsernames, });

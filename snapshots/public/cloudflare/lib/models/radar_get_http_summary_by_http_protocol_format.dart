@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetHttpSummaryByHttpProtocolFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetHttpSummaryByHttpProtocolFormat {const RadarGetHttpSummaryByHttpProtocolFormat._(this.value);
+sealed class RadarGetHttpSummaryByHttpProtocolFormat {const RadarGetHttpSummaryByHttpProtocolFormat();
 
 factory RadarGetHttpSummaryByHttpProtocolFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetHttpSummaryByHttpProtocolFormat._(json),
+  _ => RadarGetHttpSummaryByHttpProtocolFormat$Unknown(json),
 }; }
 
-static const RadarGetHttpSummaryByHttpProtocolFormat $json = RadarGetHttpSummaryByHttpProtocolFormat._('JSON');
+static const RadarGetHttpSummaryByHttpProtocolFormat $json = RadarGetHttpSummaryByHttpProtocolFormat$$json._();
 
-static const RadarGetHttpSummaryByHttpProtocolFormat csv = RadarGetHttpSummaryByHttpProtocolFormat._('CSV');
+static const RadarGetHttpSummaryByHttpProtocolFormat csv = RadarGetHttpSummaryByHttpProtocolFormat$csv._();
 
 static const List<RadarGetHttpSummaryByHttpProtocolFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpSummaryByHttpProtocolFormat$Unknown; } 
+@override String toString() => 'RadarGetHttpSummaryByHttpProtocolFormat($value)';
+
+ }
+@immutable final class RadarGetHttpSummaryByHttpProtocolFormat$$json extends RadarGetHttpSummaryByHttpProtocolFormat {const RadarGetHttpSummaryByHttpProtocolFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByHttpProtocolFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByHttpProtocolFormat$csv extends RadarGetHttpSummaryByHttpProtocolFormat {const RadarGetHttpSummaryByHttpProtocolFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByHttpProtocolFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByHttpProtocolFormat$Unknown extends RadarGetHttpSummaryByHttpProtocolFormat {const RadarGetHttpSummaryByHttpProtocolFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpSummaryByHttpProtocolFormat && other.value == value;
+    other is RadarGetHttpSummaryByHttpProtocolFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpSummaryByHttpProtocolFormat($value)';
 
  }

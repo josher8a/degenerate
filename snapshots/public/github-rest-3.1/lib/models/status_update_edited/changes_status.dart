@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/StatusUpdateEdited (inline: Changes > Status)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StatusFrom {const StatusFrom._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class StatusFrom {const StatusFrom();
 
 factory StatusFrom.fromJson(String json) { return switch (json) {
   'INACTIVE' => inactive,
@@ -10,25 +10,24 @@ factory StatusFrom.fromJson(String json) { return switch (json) {
   'OFF_TRACK' => offTrack,
   'COMPLETE' => complete,
   'null' => $null,
-  _ => StatusFrom._(json),
+  _ => StatusFrom$Unknown(json),
 }; }
 
-static const StatusFrom inactive = StatusFrom._('INACTIVE');
+static const StatusFrom inactive = StatusFrom$inactive._();
 
-static const StatusFrom onTrack = StatusFrom._('ON_TRACK');
+static const StatusFrom onTrack = StatusFrom$onTrack._();
 
-static const StatusFrom atRisk = StatusFrom._('AT_RISK');
+static const StatusFrom atRisk = StatusFrom$atRisk._();
 
-static const StatusFrom offTrack = StatusFrom._('OFF_TRACK');
+static const StatusFrom offTrack = StatusFrom$offTrack._();
 
-static const StatusFrom complete = StatusFrom._('COMPLETE');
+static const StatusFrom complete = StatusFrom$complete._();
 
-static const StatusFrom $null = StatusFrom._('null');
+static const StatusFrom $null = StatusFrom$$null._();
 
 static const List<StatusFrom> values = [inactive, onTrack, atRisk, offTrack, complete, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,16 +40,75 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is StatusFrom && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is StatusFrom$Unknown; } 
 @override String toString() => 'StatusFrom($value)';
 
  }
-@immutable final class StatusTo {const StatusTo._(this.value);
+@immutable final class StatusFrom$inactive extends StatusFrom {const StatusFrom$inactive._();
+
+@override String get value => 'INACTIVE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusFrom$inactive;
+
+@override int get hashCode => 'INACTIVE'.hashCode;
+
+ }
+@immutable final class StatusFrom$onTrack extends StatusFrom {const StatusFrom$onTrack._();
+
+@override String get value => 'ON_TRACK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusFrom$onTrack;
+
+@override int get hashCode => 'ON_TRACK'.hashCode;
+
+ }
+@immutable final class StatusFrom$atRisk extends StatusFrom {const StatusFrom$atRisk._();
+
+@override String get value => 'AT_RISK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusFrom$atRisk;
+
+@override int get hashCode => 'AT_RISK'.hashCode;
+
+ }
+@immutable final class StatusFrom$offTrack extends StatusFrom {const StatusFrom$offTrack._();
+
+@override String get value => 'OFF_TRACK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusFrom$offTrack;
+
+@override int get hashCode => 'OFF_TRACK'.hashCode;
+
+ }
+@immutable final class StatusFrom$complete extends StatusFrom {const StatusFrom$complete._();
+
+@override String get value => 'COMPLETE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusFrom$complete;
+
+@override int get hashCode => 'COMPLETE'.hashCode;
+
+ }
+@immutable final class StatusFrom$$null extends StatusFrom {const StatusFrom$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusFrom$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class StatusFrom$Unknown extends StatusFrom {const StatusFrom$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StatusFrom$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class StatusTo {const StatusTo();
 
 factory StatusTo.fromJson(String json) { return switch (json) {
   'INACTIVE' => inactive,
@@ -59,25 +117,24 @@ factory StatusTo.fromJson(String json) { return switch (json) {
   'OFF_TRACK' => offTrack,
   'COMPLETE' => complete,
   'null' => $null,
-  _ => StatusTo._(json),
+  _ => StatusTo$Unknown(json),
 }; }
 
-static const StatusTo inactive = StatusTo._('INACTIVE');
+static const StatusTo inactive = StatusTo$inactive._();
 
-static const StatusTo onTrack = StatusTo._('ON_TRACK');
+static const StatusTo onTrack = StatusTo$onTrack._();
 
-static const StatusTo atRisk = StatusTo._('AT_RISK');
+static const StatusTo atRisk = StatusTo$atRisk._();
 
-static const StatusTo offTrack = StatusTo._('OFF_TRACK');
+static const StatusTo offTrack = StatusTo$offTrack._();
 
-static const StatusTo complete = StatusTo._('COMPLETE');
+static const StatusTo complete = StatusTo$complete._();
 
-static const StatusTo $null = StatusTo._('null');
+static const StatusTo $null = StatusTo$$null._();
 
 static const List<StatusTo> values = [inactive, onTrack, atRisk, offTrack, complete, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -90,13 +147,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StatusTo$Unknown; } 
+@override String toString() => 'StatusTo($value)';
+
+ }
+@immutable final class StatusTo$inactive extends StatusTo {const StatusTo$inactive._();
+
+@override String get value => 'INACTIVE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusTo$inactive;
+
+@override int get hashCode => 'INACTIVE'.hashCode;
+
+ }
+@immutable final class StatusTo$onTrack extends StatusTo {const StatusTo$onTrack._();
+
+@override String get value => 'ON_TRACK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusTo$onTrack;
+
+@override int get hashCode => 'ON_TRACK'.hashCode;
+
+ }
+@immutable final class StatusTo$atRisk extends StatusTo {const StatusTo$atRisk._();
+
+@override String get value => 'AT_RISK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusTo$atRisk;
+
+@override int get hashCode => 'AT_RISK'.hashCode;
+
+ }
+@immutable final class StatusTo$offTrack extends StatusTo {const StatusTo$offTrack._();
+
+@override String get value => 'OFF_TRACK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusTo$offTrack;
+
+@override int get hashCode => 'OFF_TRACK'.hashCode;
+
+ }
+@immutable final class StatusTo$complete extends StatusTo {const StatusTo$complete._();
+
+@override String get value => 'COMPLETE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusTo$complete;
+
+@override int get hashCode => 'COMPLETE'.hashCode;
+
+ }
+@immutable final class StatusTo$$null extends StatusTo {const StatusTo$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusTo$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class StatusTo$Unknown extends StatusTo {const StatusTo$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StatusTo && other.value == value;
+    other is StatusTo$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StatusTo($value)';
 
  }
 @immutable final class ChangesStatus {const ChangesStatus({this.from, this.to, });

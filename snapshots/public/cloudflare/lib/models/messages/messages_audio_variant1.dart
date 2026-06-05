@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Audio > Variant1)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/voice.dart';import 'package:pub_cloudflare/models/messages/voice_variant2.dart';@immutable final class Variant1Format {const Variant1Format._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/voice.dart';import 'package:pub_cloudflare/models/messages/voice_variant2.dart';sealed class Variant1Format {const Variant1Format();
 
 factory Variant1Format.fromJson(String json) { return switch (json) {
   'wav' => wav,
@@ -10,25 +10,24 @@ factory Variant1Format.fromJson(String json) { return switch (json) {
   'flac' => flac,
   'opus' => opus,
   'pcm16' => pcm16,
-  _ => Variant1Format._(json),
+  _ => Variant1Format$Unknown(json),
 }; }
 
-static const Variant1Format wav = Variant1Format._('wav');
+static const Variant1Format wav = Variant1Format$wav._();
 
-static const Variant1Format aac = Variant1Format._('aac');
+static const Variant1Format aac = Variant1Format$aac._();
 
-static const Variant1Format mp3 = Variant1Format._('mp3');
+static const Variant1Format mp3 = Variant1Format$mp3._();
 
-static const Variant1Format flac = Variant1Format._('flac');
+static const Variant1Format flac = Variant1Format$flac._();
 
-static const Variant1Format opus = Variant1Format._('opus');
+static const Variant1Format opus = Variant1Format$opus._();
 
-static const Variant1Format pcm16 = Variant1Format._('pcm16');
+static const Variant1Format pcm16 = Variant1Format$pcm16._();
 
 static const List<Variant1Format> values = [wav, aac, mp3, flac, opus, pcm16];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,13 +40,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Variant1Format$Unknown; } 
+@override String toString() => 'Variant1Format($value)';
+
+ }
+@immutable final class Variant1Format$wav extends Variant1Format {const Variant1Format$wav._();
+
+@override String get value => 'wav';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Variant1Format$wav;
+
+@override int get hashCode => 'wav'.hashCode;
+
+ }
+@immutable final class Variant1Format$aac extends Variant1Format {const Variant1Format$aac._();
+
+@override String get value => 'aac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Variant1Format$aac;
+
+@override int get hashCode => 'aac'.hashCode;
+
+ }
+@immutable final class Variant1Format$mp3 extends Variant1Format {const Variant1Format$mp3._();
+
+@override String get value => 'mp3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Variant1Format$mp3;
+
+@override int get hashCode => 'mp3'.hashCode;
+
+ }
+@immutable final class Variant1Format$flac extends Variant1Format {const Variant1Format$flac._();
+
+@override String get value => 'flac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Variant1Format$flac;
+
+@override int get hashCode => 'flac'.hashCode;
+
+ }
+@immutable final class Variant1Format$opus extends Variant1Format {const Variant1Format$opus._();
+
+@override String get value => 'opus';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Variant1Format$opus;
+
+@override int get hashCode => 'opus'.hashCode;
+
+ }
+@immutable final class Variant1Format$pcm16 extends Variant1Format {const Variant1Format$pcm16._();
+
+@override String get value => 'pcm16';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Variant1Format$pcm16;
+
+@override int get hashCode => 'pcm16'.hashCode;
+
+ }
+@immutable final class Variant1Format$Unknown extends Variant1Format {const Variant1Format$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Variant1Format && other.value == value;
+    other is Variant1Format$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Variant1Format($value)';
 
  }
 /// Parameters for audio output. Required when modalities includes 'audio'.

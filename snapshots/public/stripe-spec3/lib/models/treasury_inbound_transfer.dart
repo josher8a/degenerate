@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TreasuryInboundTransfer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/inbound_transfers.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfers_resource_failure_details.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfers_resource_inbound_transfer_resource_linked_flows.dart';import 'package:pub_stripe_spec3/models/treasury_inbound_transfers_resource_inbound_transfer_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TreasuryInboundTransferObject {const TreasuryInboundTransferObject._(this.value);
+sealed class TreasuryInboundTransferObject {const TreasuryInboundTransferObject();
 
 factory TreasuryInboundTransferObject.fromJson(String json) { return switch (json) {
   'treasury.inbound_transfer' => treasuryInboundTransfer,
-  _ => TreasuryInboundTransferObject._(json),
+  _ => TreasuryInboundTransferObject$Unknown(json),
 }; }
 
-static const TreasuryInboundTransferObject treasuryInboundTransfer = TreasuryInboundTransferObject._('treasury.inbound_transfer');
+static const TreasuryInboundTransferObject treasuryInboundTransfer = TreasuryInboundTransferObject$treasuryInboundTransfer._();
 
 static const List<TreasuryInboundTransferObject> values = [treasuryInboundTransfer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,38 +21,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryInboundTransferObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TreasuryInboundTransferObject$Unknown; } 
 @override String toString() => 'TreasuryInboundTransferObject($value)';
 
  }
+@immutable final class TreasuryInboundTransferObject$treasuryInboundTransfer extends TreasuryInboundTransferObject {const TreasuryInboundTransferObject$treasuryInboundTransfer._();
+
+@override String get value => 'treasury.inbound_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryInboundTransferObject$treasuryInboundTransfer;
+
+@override int get hashCode => 'treasury.inbound_transfer'.hashCode;
+
+ }
+@immutable final class TreasuryInboundTransferObject$Unknown extends TreasuryInboundTransferObject {const TreasuryInboundTransferObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryInboundTransferObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Status of the InboundTransfer: `processing`, `succeeded`, `failed`, and `canceled`. An InboundTransfer is `processing` if it is created and pending. The status changes to `succeeded` once the funds have been "confirmed" and a `transaction` is created and posted. The status changes to `failed` if the transfer fails.
-@immutable final class TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus._(this.value);
+sealed class TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus();
 
 factory TreasuryInboundTransferStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
   'failed' => failed,
   'processing' => processing,
   'succeeded' => succeeded,
-  _ => TreasuryInboundTransferStatus._(json),
+  _ => TreasuryInboundTransferStatus$Unknown(json),
 }; }
 
-static const TreasuryInboundTransferStatus canceled = TreasuryInboundTransferStatus._('canceled');
+static const TreasuryInboundTransferStatus canceled = TreasuryInboundTransferStatus$canceled._();
 
-static const TreasuryInboundTransferStatus failed = TreasuryInboundTransferStatus._('failed');
+static const TreasuryInboundTransferStatus failed = TreasuryInboundTransferStatus$failed._();
 
-static const TreasuryInboundTransferStatus processing = TreasuryInboundTransferStatus._('processing');
+static const TreasuryInboundTransferStatus processing = TreasuryInboundTransferStatus$processing._();
 
-static const TreasuryInboundTransferStatus succeeded = TreasuryInboundTransferStatus._('succeeded');
+static const TreasuryInboundTransferStatus succeeded = TreasuryInboundTransferStatus$succeeded._();
 
 static const List<TreasuryInboundTransferStatus> values = [canceled, failed, processing, succeeded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,13 +76,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TreasuryInboundTransferStatus$Unknown; } 
+@override String toString() => 'TreasuryInboundTransferStatus($value)';
+
+ }
+@immutable final class TreasuryInboundTransferStatus$canceled extends TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryInboundTransferStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class TreasuryInboundTransferStatus$failed extends TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryInboundTransferStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class TreasuryInboundTransferStatus$processing extends TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus$processing._();
+
+@override String get value => 'processing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryInboundTransferStatus$processing;
+
+@override int get hashCode => 'processing'.hashCode;
+
+ }
+@immutable final class TreasuryInboundTransferStatus$succeeded extends TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus$succeeded._();
+
+@override String get value => 'succeeded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryInboundTransferStatus$succeeded;
+
+@override int get hashCode => 'succeeded'.hashCode;
+
+ }
+@immutable final class TreasuryInboundTransferStatus$Unknown extends TreasuryInboundTransferStatus {const TreasuryInboundTransferStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryInboundTransferStatus && other.value == value;
+    other is TreasuryInboundTransferStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TreasuryInboundTransferStatus($value)';
 
  }
 /// Use [InboundTransfers](https://docs.stripe.com/docs/treasury/moving-money/financial-accounts/into/inbound-transfers) to add funds to your [FinancialAccount](https://api.stripe.com#financial_accounts) via a PaymentMethod that is owned by you. The funds will be transferred via an ACH debit.

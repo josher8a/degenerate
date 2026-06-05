@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of this object. It is always set to "list".
 /// 
-@immutable final class ChatCompletionListObject {const ChatCompletionListObject._(this.value);
+sealed class ChatCompletionListObject {const ChatCompletionListObject();
 
 factory ChatCompletionListObject.fromJson(String json) { return switch (json) {
   'list' => list,
-  _ => ChatCompletionListObject._(json),
+  _ => ChatCompletionListObject$Unknown(json),
 }; }
 
-static const ChatCompletionListObject list = ChatCompletionListObject._('list');
+static const ChatCompletionListObject list = ChatCompletionListObject$list._();
 
 static const List<ChatCompletionListObject> values = [list];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,12 +22,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ChatCompletionListObject$Unknown; } 
+@override String toString() => 'ChatCompletionListObject($value)';
+
+ }
+@immutable final class ChatCompletionListObject$list extends ChatCompletionListObject {const ChatCompletionListObject$list._();
+
+@override String get value => 'list';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionListObject$list;
+
+@override int get hashCode => 'list'.hashCode;
+
+ }
+@immutable final class ChatCompletionListObject$Unknown extends ChatCompletionListObject {const ChatCompletionListObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ChatCompletionListObject && other.value == value;
+    other is ChatCompletionListObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ChatCompletionListObject($value)';
 
  }

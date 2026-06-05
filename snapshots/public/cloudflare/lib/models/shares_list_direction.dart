@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SharesListDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SharesListDirection {const SharesListDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SharesListDirection {const SharesListDirection();
 
 factory SharesListDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => SharesListDirection._(json),
+  _ => SharesListDirection$Unknown(json),
 }; }
 
-static const SharesListDirection asc = SharesListDirection._('asc');
+static const SharesListDirection asc = SharesListDirection$asc._();
 
-static const SharesListDirection desc = SharesListDirection._('desc');
+static const SharesListDirection desc = SharesListDirection$desc._();
 
 static const List<SharesListDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SharesListDirection$Unknown; } 
+@override String toString() => 'SharesListDirection($value)';
+
+ }
+@immutable final class SharesListDirection$asc extends SharesListDirection {const SharesListDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SharesListDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class SharesListDirection$desc extends SharesListDirection {const SharesListDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SharesListDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class SharesListDirection$Unknown extends SharesListDirection {const SharesListDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SharesListDirection && other.value == value;
+    other is SharesListDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SharesListDirection($value)';
 
  }

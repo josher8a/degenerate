@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_file_output/code_interpreter_file_output_files.dart';/// The type of the code interpreter file output. Always `files`.
 /// 
-@immutable final class CodeInterpreterFileOutputType {const CodeInterpreterFileOutputType._(this.value);
+sealed class CodeInterpreterFileOutputType {const CodeInterpreterFileOutputType();
 
 factory CodeInterpreterFileOutputType.fromJson(String json) { return switch (json) {
   'files' => files,
-  _ => CodeInterpreterFileOutputType._(json),
+  _ => CodeInterpreterFileOutputType$Unknown(json),
 }; }
 
-static const CodeInterpreterFileOutputType files = CodeInterpreterFileOutputType._('files');
+static const CodeInterpreterFileOutputType files = CodeInterpreterFileOutputType$files._();
 
 static const List<CodeInterpreterFileOutputType> values = [files];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeInterpreterFileOutputType$Unknown; } 
+@override String toString() => 'CodeInterpreterFileOutputType($value)';
+
+ }
+@immutable final class CodeInterpreterFileOutputType$files extends CodeInterpreterFileOutputType {const CodeInterpreterFileOutputType$files._();
+
+@override String get value => 'files';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeInterpreterFileOutputType$files;
+
+@override int get hashCode => 'files'.hashCode;
+
+ }
+@immutable final class CodeInterpreterFileOutputType$Unknown extends CodeInterpreterFileOutputType {const CodeInterpreterFileOutputType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeInterpreterFileOutputType && other.value == value;
+    other is CodeInterpreterFileOutputType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeInterpreterFileOutputType($value)';
 
  }
 /// The output of a code interpreter tool call that is a file.

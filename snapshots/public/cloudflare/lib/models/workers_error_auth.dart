@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WorkersErrorAuth
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the user is not authorized to perform this action.
-@immutable final class WorkersErrorAuthCode {const WorkersErrorAuthCode._(this.value);
+sealed class WorkersErrorAuthCode {const WorkersErrorAuthCode();
 
 factory WorkersErrorAuthCode.fromJson(int json) { return switch (json) {
   10023 => $10023,
-  _ => WorkersErrorAuthCode._(json),
+  _ => WorkersErrorAuthCode$Unknown(json),
 }; }
 
-static const WorkersErrorAuthCode $10023 = WorkersErrorAuthCode._(10023);
+static const WorkersErrorAuthCode $10023 = WorkersErrorAuthCode$$10023._();
 
 static const List<WorkersErrorAuthCode> values = [$10023];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersErrorAuthCode$Unknown; } 
+@override String toString() => 'WorkersErrorAuthCode($value)';
+
+ }
+@immutable final class WorkersErrorAuthCode$$10023 extends WorkersErrorAuthCode {const WorkersErrorAuthCode$$10023._();
+
+@override int get value => 10023;
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersErrorAuthCode$$10023;
+
+@override int get hashCode => 10023.hashCode;
+
+ }
+@immutable final class WorkersErrorAuthCode$Unknown extends WorkersErrorAuthCode {const WorkersErrorAuthCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersErrorAuthCode && other.value == value;
+    other is WorkersErrorAuthCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersErrorAuthCode($value)';
 
  }
 @immutable final class WorkersErrorAuth {const WorkersErrorAuth({required this.code, required this.message, });

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookMarketplacePurchasePendingChange
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_marketplace_purchase_pending_change/webhook_marketplace_purchase_pending_change_previous_marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/webhooks_marketplace_purchase.dart';@immutable final class WebhookMarketplacePurchasePendingChangeAction {const WebhookMarketplacePurchasePendingChangeAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_marketplace_purchase_pending_change/webhook_marketplace_purchase_pending_change_previous_marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/webhooks_marketplace_purchase.dart';sealed class WebhookMarketplacePurchasePendingChangeAction {const WebhookMarketplacePurchasePendingChangeAction();
 
 factory WebhookMarketplacePurchasePendingChangeAction.fromJson(String json) { return switch (json) {
   'pending_change' => pendingChange,
-  _ => WebhookMarketplacePurchasePendingChangeAction._(json),
+  _ => WebhookMarketplacePurchasePendingChangeAction$Unknown(json),
 }; }
 
-static const WebhookMarketplacePurchasePendingChangeAction pendingChange = WebhookMarketplacePurchasePendingChangeAction._('pending_change');
+static const WebhookMarketplacePurchasePendingChangeAction pendingChange = WebhookMarketplacePurchasePendingChangeAction$pendingChange._();
 
 static const List<WebhookMarketplacePurchasePendingChangeAction> values = [pendingChange];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookMarketplacePurchasePendingChangeAction$Unknown; } 
+@override String toString() => 'WebhookMarketplacePurchasePendingChangeAction($value)';
+
+ }
+@immutable final class WebhookMarketplacePurchasePendingChangeAction$pendingChange extends WebhookMarketplacePurchasePendingChangeAction {const WebhookMarketplacePurchasePendingChangeAction$pendingChange._();
+
+@override String get value => 'pending_change';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookMarketplacePurchasePendingChangeAction$pendingChange;
+
+@override int get hashCode => 'pending_change'.hashCode;
+
+ }
+@immutable final class WebhookMarketplacePurchasePendingChangeAction$Unknown extends WebhookMarketplacePurchasePendingChangeAction {const WebhookMarketplacePurchasePendingChangeAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookMarketplacePurchasePendingChangeAction && other.value == value;
+    other is WebhookMarketplacePurchasePendingChangeAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookMarketplacePurchasePendingChangeAction($value)';
 
  }
 @immutable final class WebhookMarketplacePurchasePendingChange {const WebhookMarketplacePurchasePendingChange({required this.action, required this.effectiveDate, required this.marketplacePurchase, required this.sender, this.enterprise, this.installation, this.organization, this.previousMarketplacePurchase, this.repository, });

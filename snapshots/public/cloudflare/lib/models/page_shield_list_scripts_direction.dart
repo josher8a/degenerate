@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PageShieldListScriptsDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The direction used to sort returned scripts.
-@immutable final class PageShieldListScriptsDirection {const PageShieldListScriptsDirection._(this.value);
+sealed class PageShieldListScriptsDirection {const PageShieldListScriptsDirection();
 
 factory PageShieldListScriptsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => PageShieldListScriptsDirection._(json),
+  _ => PageShieldListScriptsDirection$Unknown(json),
 }; }
 
-static const PageShieldListScriptsDirection asc = PageShieldListScriptsDirection._('asc');
+static const PageShieldListScriptsDirection asc = PageShieldListScriptsDirection$asc._();
 
-static const PageShieldListScriptsDirection desc = PageShieldListScriptsDirection._('desc');
+static const PageShieldListScriptsDirection desc = PageShieldListScriptsDirection$desc._();
 
 static const List<PageShieldListScriptsDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PageShieldListScriptsDirection$Unknown; } 
+@override String toString() => 'PageShieldListScriptsDirection($value)';
+
+ }
+@immutable final class PageShieldListScriptsDirection$asc extends PageShieldListScriptsDirection {const PageShieldListScriptsDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageShieldListScriptsDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class PageShieldListScriptsDirection$desc extends PageShieldListScriptsDirection {const PageShieldListScriptsDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageShieldListScriptsDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class PageShieldListScriptsDirection$Unknown extends PageShieldListScriptsDirection {const PageShieldListScriptsDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PageShieldListScriptsDirection && other.value == value;
+    other is PageShieldListScriptsDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PageShieldListScriptsDirection($value)';
 
  }

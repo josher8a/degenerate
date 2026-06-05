@@ -2,25 +2,24 @@
 // Source: #/components/schemas/NetworkConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The hosted compute service the network configuration supports.
-@immutable final class NetworkConfigurationComputeService {const NetworkConfigurationComputeService._(this.value);
+sealed class NetworkConfigurationComputeService {const NetworkConfigurationComputeService();
 
 factory NetworkConfigurationComputeService.fromJson(String json) { return switch (json) {
   'none' => none,
   'actions' => actions,
   'codespaces' => codespaces,
-  _ => NetworkConfigurationComputeService._(json),
+  _ => NetworkConfigurationComputeService$Unknown(json),
 }; }
 
-static const NetworkConfigurationComputeService none = NetworkConfigurationComputeService._('none');
+static const NetworkConfigurationComputeService none = NetworkConfigurationComputeService$none._();
 
-static const NetworkConfigurationComputeService actions = NetworkConfigurationComputeService._('actions');
+static const NetworkConfigurationComputeService actions = NetworkConfigurationComputeService$actions._();
 
-static const NetworkConfigurationComputeService codespaces = NetworkConfigurationComputeService._('codespaces');
+static const NetworkConfigurationComputeService codespaces = NetworkConfigurationComputeService$codespaces._();
 
 static const List<NetworkConfigurationComputeService> values = [none, actions, codespaces];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is NetworkConfigurationComputeService$Unknown; } 
+@override String toString() => 'NetworkConfigurationComputeService($value)';
+
+ }
+@immutable final class NetworkConfigurationComputeService$none extends NetworkConfigurationComputeService {const NetworkConfigurationComputeService$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkConfigurationComputeService$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class NetworkConfigurationComputeService$actions extends NetworkConfigurationComputeService {const NetworkConfigurationComputeService$actions._();
+
+@override String get value => 'actions';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkConfigurationComputeService$actions;
+
+@override int get hashCode => 'actions'.hashCode;
+
+ }
+@immutable final class NetworkConfigurationComputeService$codespaces extends NetworkConfigurationComputeService {const NetworkConfigurationComputeService$codespaces._();
+
+@override String get value => 'codespaces';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkConfigurationComputeService$codespaces;
+
+@override int get hashCode => 'codespaces'.hashCode;
+
+ }
+@immutable final class NetworkConfigurationComputeService$Unknown extends NetworkConfigurationComputeService {const NetworkConfigurationComputeService$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is NetworkConfigurationComputeService && other.value == value;
+    other is NetworkConfigurationComputeService$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'NetworkConfigurationComputeService($value)';
 
  }
 /// A hosted compute network configuration.

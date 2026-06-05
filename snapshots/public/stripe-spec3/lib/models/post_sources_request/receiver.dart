@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostSourcesRequest (inline: Receiver)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RefundAttributesMethod {const RefundAttributesMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RefundAttributesMethod {const RefundAttributesMethod();
 
 factory RefundAttributesMethod.fromJson(String json) { return switch (json) {
   'email' => email,
   'manual' => manual,
   'none' => none,
-  _ => RefundAttributesMethod._(json),
+  _ => RefundAttributesMethod$Unknown(json),
 }; }
 
-static const RefundAttributesMethod email = RefundAttributesMethod._('email');
+static const RefundAttributesMethod email = RefundAttributesMethod$email._();
 
-static const RefundAttributesMethod manual = RefundAttributesMethod._('manual');
+static const RefundAttributesMethod manual = RefundAttributesMethod$manual._();
 
-static const RefundAttributesMethod none = RefundAttributesMethod._('none');
+static const RefundAttributesMethod none = RefundAttributesMethod$none._();
 
 static const List<RefundAttributesMethod> values = [email, manual, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RefundAttributesMethod$Unknown; } 
+@override String toString() => 'RefundAttributesMethod($value)';
+
+ }
+@immutable final class RefundAttributesMethod$email extends RefundAttributesMethod {const RefundAttributesMethod$email._();
+
+@override String get value => 'email';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RefundAttributesMethod$email;
+
+@override int get hashCode => 'email'.hashCode;
+
+ }
+@immutable final class RefundAttributesMethod$manual extends RefundAttributesMethod {const RefundAttributesMethod$manual._();
+
+@override String get value => 'manual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RefundAttributesMethod$manual;
+
+@override int get hashCode => 'manual'.hashCode;
+
+ }
+@immutable final class RefundAttributesMethod$none extends RefundAttributesMethod {const RefundAttributesMethod$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RefundAttributesMethod$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class RefundAttributesMethod$Unknown extends RefundAttributesMethod {const RefundAttributesMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RefundAttributesMethod && other.value == value;
+    other is RefundAttributesMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RefundAttributesMethod($value)';
 
  }
 /// Optional parameters for the receiver flow. Can be set only if the source is a receiver (`flow` is `receiver`).

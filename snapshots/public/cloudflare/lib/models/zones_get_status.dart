@@ -2,28 +2,27 @@
 // Source: #/components/schemas/ZonesGetStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify a zone status to filter by.
-@immutable final class ZonesGetStatus {const ZonesGetStatus._(this.value);
+sealed class ZonesGetStatus {const ZonesGetStatus();
 
 factory ZonesGetStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
   'pending' => pending,
   'active' => active,
   'moved' => moved,
-  _ => ZonesGetStatus._(json),
+  _ => ZonesGetStatus$Unknown(json),
 }; }
 
-static const ZonesGetStatus initializing = ZonesGetStatus._('initializing');
+static const ZonesGetStatus initializing = ZonesGetStatus$initializing._();
 
-static const ZonesGetStatus pending = ZonesGetStatus._('pending');
+static const ZonesGetStatus pending = ZonesGetStatus$pending._();
 
-static const ZonesGetStatus active = ZonesGetStatus._('active');
+static const ZonesGetStatus active = ZonesGetStatus$active._();
 
-static const ZonesGetStatus moved = ZonesGetStatus._('moved');
+static const ZonesGetStatus moved = ZonesGetStatus$moved._();
 
 static const List<ZonesGetStatus> values = [initializing, pending, active, moved];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesGetStatus$Unknown; } 
+@override String toString() => 'ZonesGetStatus($value)';
+
+ }
+@immutable final class ZonesGetStatus$initializing extends ZonesGetStatus {const ZonesGetStatus$initializing._();
+
+@override String get value => 'initializing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesGetStatus$initializing;
+
+@override int get hashCode => 'initializing'.hashCode;
+
+ }
+@immutable final class ZonesGetStatus$pending extends ZonesGetStatus {const ZonesGetStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesGetStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class ZonesGetStatus$active extends ZonesGetStatus {const ZonesGetStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesGetStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class ZonesGetStatus$moved extends ZonesGetStatus {const ZonesGetStatus$moved._();
+
+@override String get value => 'moved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesGetStatus$moved;
+
+@override int get hashCode => 'moved'.hashCode;
+
+ }
+@immutable final class ZonesGetStatus$Unknown extends ZonesGetStatus {const ZonesGetStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesGetStatus && other.value == value;
+    other is ZonesGetStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesGetStatus($value)';
 
  }

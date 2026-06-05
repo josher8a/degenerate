@@ -2,7 +2,7 @@
 // Source: #/components/schemas/CreateSpeechRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_speech_request/create_speech_request_model.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice.dart';import 'package:pub_openai/models/voice_ids_or_custom_voice/voice_ids_or_custom_voice_variant2.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.
-@immutable final class CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat._(this.value);
+sealed class CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat();
 
 factory CreateSpeechRequestResponseFormat.fromJson(String json) { return switch (json) {
   'mp3' => mp3,
@@ -11,25 +11,24 @@ factory CreateSpeechRequestResponseFormat.fromJson(String json) { return switch 
   'flac' => flac,
   'wav' => wav,
   'pcm' => pcm,
-  _ => CreateSpeechRequestResponseFormat._(json),
+  _ => CreateSpeechRequestResponseFormat$Unknown(json),
 }; }
 
-static const CreateSpeechRequestResponseFormat mp3 = CreateSpeechRequestResponseFormat._('mp3');
+static const CreateSpeechRequestResponseFormat mp3 = CreateSpeechRequestResponseFormat$mp3._();
 
-static const CreateSpeechRequestResponseFormat opus = CreateSpeechRequestResponseFormat._('opus');
+static const CreateSpeechRequestResponseFormat opus = CreateSpeechRequestResponseFormat$opus._();
 
-static const CreateSpeechRequestResponseFormat aac = CreateSpeechRequestResponseFormat._('aac');
+static const CreateSpeechRequestResponseFormat aac = CreateSpeechRequestResponseFormat$aac._();
 
-static const CreateSpeechRequestResponseFormat flac = CreateSpeechRequestResponseFormat._('flac');
+static const CreateSpeechRequestResponseFormat flac = CreateSpeechRequestResponseFormat$flac._();
 
-static const CreateSpeechRequestResponseFormat wav = CreateSpeechRequestResponseFormat._('wav');
+static const CreateSpeechRequestResponseFormat wav = CreateSpeechRequestResponseFormat$wav._();
 
-static const CreateSpeechRequestResponseFormat pcm = CreateSpeechRequestResponseFormat._('pcm');
+static const CreateSpeechRequestResponseFormat pcm = CreateSpeechRequestResponseFormat$pcm._();
 
 static const List<CreateSpeechRequestResponseFormat> values = [mp3, opus, aac, flac, wav, pcm];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,32 +41,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateSpeechRequestResponseFormat && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CreateSpeechRequestResponseFormat$Unknown; } 
 @override String toString() => 'CreateSpeechRequestResponseFormat($value)';
 
  }
+@immutable final class CreateSpeechRequestResponseFormat$mp3 extends CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat$mp3._();
+
+@override String get value => 'mp3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateSpeechRequestResponseFormat$mp3;
+
+@override int get hashCode => 'mp3'.hashCode;
+
+ }
+@immutable final class CreateSpeechRequestResponseFormat$opus extends CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat$opus._();
+
+@override String get value => 'opus';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateSpeechRequestResponseFormat$opus;
+
+@override int get hashCode => 'opus'.hashCode;
+
+ }
+@immutable final class CreateSpeechRequestResponseFormat$aac extends CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat$aac._();
+
+@override String get value => 'aac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateSpeechRequestResponseFormat$aac;
+
+@override int get hashCode => 'aac'.hashCode;
+
+ }
+@immutable final class CreateSpeechRequestResponseFormat$flac extends CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat$flac._();
+
+@override String get value => 'flac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateSpeechRequestResponseFormat$flac;
+
+@override int get hashCode => 'flac'.hashCode;
+
+ }
+@immutable final class CreateSpeechRequestResponseFormat$wav extends CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat$wav._();
+
+@override String get value => 'wav';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateSpeechRequestResponseFormat$wav;
+
+@override int get hashCode => 'wav'.hashCode;
+
+ }
+@immutable final class CreateSpeechRequestResponseFormat$pcm extends CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat$pcm._();
+
+@override String get value => 'pcm';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateSpeechRequestResponseFormat$pcm;
+
+@override int get hashCode => 'pcm'.hashCode;
+
+ }
+@immutable final class CreateSpeechRequestResponseFormat$Unknown extends CreateSpeechRequestResponseFormat {const CreateSpeechRequestResponseFormat$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateSpeechRequestResponseFormat$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.
-@immutable final class StreamFormat {const StreamFormat._(this.value);
+sealed class StreamFormat {const StreamFormat();
 
 factory StreamFormat.fromJson(String json) { return switch (json) {
   'sse' => sse,
   'audio' => audio,
-  _ => StreamFormat._(json),
+  _ => StreamFormat$Unknown(json),
 }; }
 
-static const StreamFormat sse = StreamFormat._('sse');
+static const StreamFormat sse = StreamFormat$sse._();
 
-static const StreamFormat audio = StreamFormat._('audio');
+static const StreamFormat audio = StreamFormat$audio._();
 
 static const List<StreamFormat> values = [sse, audio];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -76,13 +133,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StreamFormat$Unknown; } 
+@override String toString() => 'StreamFormat($value)';
+
+ }
+@immutable final class StreamFormat$sse extends StreamFormat {const StreamFormat$sse._();
+
+@override String get value => 'sse';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamFormat$sse;
+
+@override int get hashCode => 'sse'.hashCode;
+
+ }
+@immutable final class StreamFormat$audio extends StreamFormat {const StreamFormat$audio._();
+
+@override String get value => 'audio';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamFormat$audio;
+
+@override int get hashCode => 'audio'.hashCode;
+
+ }
+@immutable final class StreamFormat$Unknown extends StreamFormat {const StreamFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StreamFormat && other.value == value;
+    other is StreamFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StreamFormat($value)';
 
  }
 @immutable final class CreateSpeechRequest {const CreateSpeechRequest({required this.model, required this.input, required this.voice, this.instructions, this.responseFormat = CreateSpeechRequestResponseFormat.mp3, this.speed = 1.0, this.streamFormat = StreamFormat.audio, });

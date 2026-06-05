@@ -9,25 +9,24 @@ String toJson() => value;
 
 }
 /// Verification status of the nameserver.
-@immutable final class DnsCustomNameserversCustomNsStatus {const DnsCustomNameserversCustomNsStatus._(this.value);
+sealed class DnsCustomNameserversCustomNsStatus {const DnsCustomNameserversCustomNsStatus();
 
 factory DnsCustomNameserversCustomNsStatus.fromJson(String json) { return switch (json) {
   'moved' => moved,
   'pending' => pending,
   'verified' => verified,
-  _ => DnsCustomNameserversCustomNsStatus._(json),
+  _ => DnsCustomNameserversCustomNsStatus$Unknown(json),
 }; }
 
-static const DnsCustomNameserversCustomNsStatus moved = DnsCustomNameserversCustomNsStatus._('moved');
+static const DnsCustomNameserversCustomNsStatus moved = DnsCustomNameserversCustomNsStatus$moved._();
 
-static const DnsCustomNameserversCustomNsStatus pending = DnsCustomNameserversCustomNsStatus._('pending');
+static const DnsCustomNameserversCustomNsStatus pending = DnsCustomNameserversCustomNsStatus$pending._();
 
-static const DnsCustomNameserversCustomNsStatus verified = DnsCustomNameserversCustomNsStatus._('verified');
+static const DnsCustomNameserversCustomNsStatus verified = DnsCustomNameserversCustomNsStatus$verified._();
 
 static const List<DnsCustomNameserversCustomNsStatus> values = [moved, pending, verified];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DnsCustomNameserversCustomNsStatus$Unknown; } 
+@override String toString() => 'DnsCustomNameserversCustomNsStatus($value)';
+
+ }
+@immutable final class DnsCustomNameserversCustomNsStatus$moved extends DnsCustomNameserversCustomNsStatus {const DnsCustomNameserversCustomNsStatus$moved._();
+
+@override String get value => 'moved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsCustomNameserversCustomNsStatus$moved;
+
+@override int get hashCode => 'moved'.hashCode;
+
+ }
+@immutable final class DnsCustomNameserversCustomNsStatus$pending extends DnsCustomNameserversCustomNsStatus {const DnsCustomNameserversCustomNsStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsCustomNameserversCustomNsStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class DnsCustomNameserversCustomNsStatus$verified extends DnsCustomNameserversCustomNsStatus {const DnsCustomNameserversCustomNsStatus$verified._();
+
+@override String get value => 'verified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsCustomNameserversCustomNsStatus$verified;
+
+@override int get hashCode => 'verified'.hashCode;
+
+ }
+@immutable final class DnsCustomNameserversCustomNsStatus$Unknown extends DnsCustomNameserversCustomNsStatus {const DnsCustomNameserversCustomNsStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsCustomNameserversCustomNsStatus && other.value == value;
+    other is DnsCustomNameserversCustomNsStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DnsCustomNameserversCustomNsStatus($value)';
 
  }
 /// A single account custom nameserver.

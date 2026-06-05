@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCustomersCustomerCashBalanceRequest (inline: Settings)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SettingsReconciliationMode {const SettingsReconciliationMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SettingsReconciliationMode {const SettingsReconciliationMode();
 
 factory SettingsReconciliationMode.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
   'manual' => manual,
   'merchant_default' => merchantDefault,
-  _ => SettingsReconciliationMode._(json),
+  _ => SettingsReconciliationMode$Unknown(json),
 }; }
 
-static const SettingsReconciliationMode automatic = SettingsReconciliationMode._('automatic');
+static const SettingsReconciliationMode automatic = SettingsReconciliationMode$automatic._();
 
-static const SettingsReconciliationMode manual = SettingsReconciliationMode._('manual');
+static const SettingsReconciliationMode manual = SettingsReconciliationMode$manual._();
 
-static const SettingsReconciliationMode merchantDefault = SettingsReconciliationMode._('merchant_default');
+static const SettingsReconciliationMode merchantDefault = SettingsReconciliationMode$merchantDefault._();
 
 static const List<SettingsReconciliationMode> values = [automatic, manual, merchantDefault];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SettingsReconciliationMode$Unknown; } 
+@override String toString() => 'SettingsReconciliationMode($value)';
+
+ }
+@immutable final class SettingsReconciliationMode$automatic extends SettingsReconciliationMode {const SettingsReconciliationMode$automatic._();
+
+@override String get value => 'automatic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SettingsReconciliationMode$automatic;
+
+@override int get hashCode => 'automatic'.hashCode;
+
+ }
+@immutable final class SettingsReconciliationMode$manual extends SettingsReconciliationMode {const SettingsReconciliationMode$manual._();
+
+@override String get value => 'manual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SettingsReconciliationMode$manual;
+
+@override int get hashCode => 'manual'.hashCode;
+
+ }
+@immutable final class SettingsReconciliationMode$merchantDefault extends SettingsReconciliationMode {const SettingsReconciliationMode$merchantDefault._();
+
+@override String get value => 'merchant_default';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SettingsReconciliationMode$merchantDefault;
+
+@override int get hashCode => 'merchant_default'.hashCode;
+
+ }
+@immutable final class SettingsReconciliationMode$Unknown extends SettingsReconciliationMode {const SettingsReconciliationMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SettingsReconciliationMode && other.value == value;
+    other is SettingsReconciliationMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SettingsReconciliationMode($value)';
 
  }
 @immutable final class PostCustomersCustomerCashBalanceRequestSettings {const PostCustomersCustomerCashBalanceRequestSettings({this.reconciliationMode});

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/IssuingAuthorization
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/authorization_method.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/issuing_authorization_token.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_amount_details.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fleet_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fraud_challenge.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fuel_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_merchant_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_network_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_pending_request.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_request.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_treasury.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_verification_data.dart';import 'package:pub_stripe_spec3/models/issuing_card.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_token.dart';import 'package:pub_stripe_spec3/models/issuing_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class IssuingAuthorizationObject {const IssuingAuthorizationObject._(this.value);
+sealed class IssuingAuthorizationObject {const IssuingAuthorizationObject();
 
 factory IssuingAuthorizationObject.fromJson(String json) { return switch (json) {
   'issuing.authorization' => issuingAuthorization,
-  _ => IssuingAuthorizationObject._(json),
+  _ => IssuingAuthorizationObject$Unknown(json),
 }; }
 
-static const IssuingAuthorizationObject issuingAuthorization = IssuingAuthorizationObject._('issuing.authorization');
+static const IssuingAuthorizationObject issuingAuthorization = IssuingAuthorizationObject$issuingAuthorization._();
 
 static const List<IssuingAuthorizationObject> values = [issuingAuthorization];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,38 +21,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingAuthorizationObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingAuthorizationObject$Unknown; } 
 @override String toString() => 'IssuingAuthorizationObject($value)';
 
  }
+@immutable final class IssuingAuthorizationObject$issuingAuthorization extends IssuingAuthorizationObject {const IssuingAuthorizationObject$issuingAuthorization._();
+
+@override String get value => 'issuing.authorization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationObject$issuingAuthorization;
+
+@override int get hashCode => 'issuing.authorization'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationObject$Unknown extends IssuingAuthorizationObject {const IssuingAuthorizationObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingAuthorizationObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The current status of the authorization in its lifecycle.
-@immutable final class IssuingAuthorizationStatus {const IssuingAuthorizationStatus._(this.value);
+sealed class IssuingAuthorizationStatus {const IssuingAuthorizationStatus();
 
 factory IssuingAuthorizationStatus.fromJson(String json) { return switch (json) {
   'closed' => closed,
   'expired' => expired,
   'pending' => pending,
   'reversed' => reversed,
-  _ => IssuingAuthorizationStatus._(json),
+  _ => IssuingAuthorizationStatus$Unknown(json),
 }; }
 
-static const IssuingAuthorizationStatus closed = IssuingAuthorizationStatus._('closed');
+static const IssuingAuthorizationStatus closed = IssuingAuthorizationStatus$closed._();
 
-static const IssuingAuthorizationStatus expired = IssuingAuthorizationStatus._('expired');
+static const IssuingAuthorizationStatus expired = IssuingAuthorizationStatus$expired._();
 
-static const IssuingAuthorizationStatus pending = IssuingAuthorizationStatus._('pending');
+static const IssuingAuthorizationStatus pending = IssuingAuthorizationStatus$pending._();
 
-static const IssuingAuthorizationStatus reversed = IssuingAuthorizationStatus._('reversed');
+static const IssuingAuthorizationStatus reversed = IssuingAuthorizationStatus$reversed._();
 
 static const List<IssuingAuthorizationStatus> values = [closed, expired, pending, reversed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,13 +76,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingAuthorizationStatus$Unknown; } 
+@override String toString() => 'IssuingAuthorizationStatus($value)';
+
+ }
+@immutable final class IssuingAuthorizationStatus$closed extends IssuingAuthorizationStatus {const IssuingAuthorizationStatus$closed._();
+
+@override String get value => 'closed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationStatus$closed;
+
+@override int get hashCode => 'closed'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationStatus$expired extends IssuingAuthorizationStatus {const IssuingAuthorizationStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationStatus$pending extends IssuingAuthorizationStatus {const IssuingAuthorizationStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationStatus$reversed extends IssuingAuthorizationStatus {const IssuingAuthorizationStatus$reversed._();
+
+@override String get value => 'reversed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationStatus$reversed;
+
+@override int get hashCode => 'reversed'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationStatus$Unknown extends IssuingAuthorizationStatus {const IssuingAuthorizationStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingAuthorizationStatus && other.value == value;
+    other is IssuingAuthorizationStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingAuthorizationStatus($value)';
 
  }
 /// When an [issued card](https://docs.stripe.com/issuing) is used to make a purchase, an Issuing `Authorization`

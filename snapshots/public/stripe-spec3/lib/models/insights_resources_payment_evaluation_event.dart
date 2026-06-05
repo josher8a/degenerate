@@ -2,7 +2,7 @@
 // Source: #/components/schemas/InsightsResourcesPaymentEvaluationEvent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_dispute_opened.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_early_fraud_warning_received.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_refunded.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_user_intervention_raised.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_user_intervention_resolved.dart';/// Indicates the type of event attached to the payment evaluation.
-@immutable final class InsightsResourcesPaymentEvaluationEventType {const InsightsResourcesPaymentEvaluationEventType._(this.value);
+sealed class InsightsResourcesPaymentEvaluationEventType {const InsightsResourcesPaymentEvaluationEventType();
 
 factory InsightsResourcesPaymentEvaluationEventType.fromJson(String json) { return switch (json) {
   'dispute_opened' => disputeOpened,
@@ -10,23 +10,22 @@ factory InsightsResourcesPaymentEvaluationEventType.fromJson(String json) { retu
   'refunded' => refunded,
   'user_intervention_raised' => userInterventionRaised,
   'user_intervention_resolved' => userInterventionResolved,
-  _ => InsightsResourcesPaymentEvaluationEventType._(json),
+  _ => InsightsResourcesPaymentEvaluationEventType$Unknown(json),
 }; }
 
-static const InsightsResourcesPaymentEvaluationEventType disputeOpened = InsightsResourcesPaymentEvaluationEventType._('dispute_opened');
+static const InsightsResourcesPaymentEvaluationEventType disputeOpened = InsightsResourcesPaymentEvaluationEventType$disputeOpened._();
 
-static const InsightsResourcesPaymentEvaluationEventType earlyFraudWarningReceived = InsightsResourcesPaymentEvaluationEventType._('early_fraud_warning_received');
+static const InsightsResourcesPaymentEvaluationEventType earlyFraudWarningReceived = InsightsResourcesPaymentEvaluationEventType$earlyFraudWarningReceived._();
 
-static const InsightsResourcesPaymentEvaluationEventType refunded = InsightsResourcesPaymentEvaluationEventType._('refunded');
+static const InsightsResourcesPaymentEvaluationEventType refunded = InsightsResourcesPaymentEvaluationEventType$refunded._();
 
-static const InsightsResourcesPaymentEvaluationEventType userInterventionRaised = InsightsResourcesPaymentEvaluationEventType._('user_intervention_raised');
+static const InsightsResourcesPaymentEvaluationEventType userInterventionRaised = InsightsResourcesPaymentEvaluationEventType$userInterventionRaised._();
 
-static const InsightsResourcesPaymentEvaluationEventType userInterventionResolved = InsightsResourcesPaymentEvaluationEventType._('user_intervention_resolved');
+static const InsightsResourcesPaymentEvaluationEventType userInterventionResolved = InsightsResourcesPaymentEvaluationEventType$userInterventionResolved._();
 
 static const List<InsightsResourcesPaymentEvaluationEventType> values = [disputeOpened, earlyFraudWarningReceived, refunded, userInterventionRaised, userInterventionResolved];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InsightsResourcesPaymentEvaluationEventType$Unknown; } 
+@override String toString() => 'InsightsResourcesPaymentEvaluationEventType($value)';
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationEventType$disputeOpened extends InsightsResourcesPaymentEvaluationEventType {const InsightsResourcesPaymentEvaluationEventType$disputeOpened._();
+
+@override String get value => 'dispute_opened';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationEventType$disputeOpened;
+
+@override int get hashCode => 'dispute_opened'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationEventType$earlyFraudWarningReceived extends InsightsResourcesPaymentEvaluationEventType {const InsightsResourcesPaymentEvaluationEventType$earlyFraudWarningReceived._();
+
+@override String get value => 'early_fraud_warning_received';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationEventType$earlyFraudWarningReceived;
+
+@override int get hashCode => 'early_fraud_warning_received'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationEventType$refunded extends InsightsResourcesPaymentEvaluationEventType {const InsightsResourcesPaymentEvaluationEventType$refunded._();
+
+@override String get value => 'refunded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationEventType$refunded;
+
+@override int get hashCode => 'refunded'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationEventType$userInterventionRaised extends InsightsResourcesPaymentEvaluationEventType {const InsightsResourcesPaymentEvaluationEventType$userInterventionRaised._();
+
+@override String get value => 'user_intervention_raised';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationEventType$userInterventionRaised;
+
+@override int get hashCode => 'user_intervention_raised'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationEventType$userInterventionResolved extends InsightsResourcesPaymentEvaluationEventType {const InsightsResourcesPaymentEvaluationEventType$userInterventionResolved._();
+
+@override String get value => 'user_intervention_resolved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationEventType$userInterventionResolved;
+
+@override int get hashCode => 'user_intervention_resolved'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationEventType$Unknown extends InsightsResourcesPaymentEvaluationEventType {const InsightsResourcesPaymentEvaluationEventType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationEventType && other.value == value;
+    other is InsightsResourcesPaymentEvaluationEventType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InsightsResourcesPaymentEvaluationEventType($value)';
 
  }
 /// Event reported for this payment evaluation.

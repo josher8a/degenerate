@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MessageStreamEvent (inline: ThreadMessageCreated)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_object.dart';@immutable final class ThreadMessageCreatedEvent {const ThreadMessageCreatedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_object.dart';sealed class ThreadMessageCreatedEvent {const ThreadMessageCreatedEvent();
 
 factory ThreadMessageCreatedEvent.fromJson(String json) { return switch (json) {
   'thread.message.created' => threadMessageCreated,
-  _ => ThreadMessageCreatedEvent._(json),
+  _ => ThreadMessageCreatedEvent$Unknown(json),
 }; }
 
-static const ThreadMessageCreatedEvent threadMessageCreated = ThreadMessageCreatedEvent._('thread.message.created');
+static const ThreadMessageCreatedEvent threadMessageCreated = ThreadMessageCreatedEvent$threadMessageCreated._();
 
 static const List<ThreadMessageCreatedEvent> values = [threadMessageCreated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadMessageCreatedEvent$Unknown; } 
+@override String toString() => 'ThreadMessageCreatedEvent($value)';
+
+ }
+@immutable final class ThreadMessageCreatedEvent$threadMessageCreated extends ThreadMessageCreatedEvent {const ThreadMessageCreatedEvent$threadMessageCreated._();
+
+@override String get value => 'thread.message.created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadMessageCreatedEvent$threadMessageCreated;
+
+@override int get hashCode => 'thread.message.created'.hashCode;
+
+ }
+@immutable final class ThreadMessageCreatedEvent$Unknown extends ThreadMessageCreatedEvent {const ThreadMessageCreatedEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadMessageCreatedEvent && other.value == value;
+    other is ThreadMessageCreatedEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadMessageCreatedEvent($value)';
 
  }
 /// Occurs when a [message](/docs/api-reference/messages/object) is created.

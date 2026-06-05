@@ -2,22 +2,21 @@
 // Source: #/components/schemas/EmailRoutingDestinationAddressesListDestinationAddressesDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sorts results in an ascending or descending order.
-@immutable final class EmailRoutingDestinationAddressesListDestinationAddressesDirection {const EmailRoutingDestinationAddressesListDestinationAddressesDirection._(this.value);
+sealed class EmailRoutingDestinationAddressesListDestinationAddressesDirection {const EmailRoutingDestinationAddressesListDestinationAddressesDirection();
 
 factory EmailRoutingDestinationAddressesListDestinationAddressesDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => EmailRoutingDestinationAddressesListDestinationAddressesDirection._(json),
+  _ => EmailRoutingDestinationAddressesListDestinationAddressesDirection$Unknown(json),
 }; }
 
-static const EmailRoutingDestinationAddressesListDestinationAddressesDirection asc = EmailRoutingDestinationAddressesListDestinationAddressesDirection._('asc');
+static const EmailRoutingDestinationAddressesListDestinationAddressesDirection asc = EmailRoutingDestinationAddressesListDestinationAddressesDirection$asc._();
 
-static const EmailRoutingDestinationAddressesListDestinationAddressesDirection desc = EmailRoutingDestinationAddressesListDestinationAddressesDirection._('desc');
+static const EmailRoutingDestinationAddressesListDestinationAddressesDirection desc = EmailRoutingDestinationAddressesListDestinationAddressesDirection$desc._();
 
 static const List<EmailRoutingDestinationAddressesListDestinationAddressesDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EmailRoutingDestinationAddressesListDestinationAddressesDirection$Unknown; } 
+@override String toString() => 'EmailRoutingDestinationAddressesListDestinationAddressesDirection($value)';
+
+ }
+@immutable final class EmailRoutingDestinationAddressesListDestinationAddressesDirection$asc extends EmailRoutingDestinationAddressesListDestinationAddressesDirection {const EmailRoutingDestinationAddressesListDestinationAddressesDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailRoutingDestinationAddressesListDestinationAddressesDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class EmailRoutingDestinationAddressesListDestinationAddressesDirection$desc extends EmailRoutingDestinationAddressesListDestinationAddressesDirection {const EmailRoutingDestinationAddressesListDestinationAddressesDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailRoutingDestinationAddressesListDestinationAddressesDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class EmailRoutingDestinationAddressesListDestinationAddressesDirection$Unknown extends EmailRoutingDestinationAddressesListDestinationAddressesDirection {const EmailRoutingDestinationAddressesListDestinationAddressesDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EmailRoutingDestinationAddressesListDestinationAddressesDirection && other.value == value;
+    other is EmailRoutingDestinationAddressesListDestinationAddressesDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EmailRoutingDestinationAddressesListDestinationAddressesDirection($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/EmailRuleMatcher
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field for type matcher.
-@immutable final class Field {const Field._(this.value);
+sealed class Field {const Field();
 
 factory Field.fromJson(String json) { return switch (json) {
   'to' => to,
-  _ => Field._(json),
+  _ => Field$Unknown(json),
 }; }
 
-static const Field to = Field._('to');
+static const Field to = Field$to._();
 
 static const List<Field> values = [to];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,32 +21,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Field && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Field$Unknown; } 
 @override String toString() => 'Field($value)';
 
  }
+@immutable final class Field$to extends Field {const Field$to._();
+
+@override String get value => 'to';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Field$to;
+
+@override int get hashCode => 'to'.hashCode;
+
+ }
+@immutable final class Field$Unknown extends Field {const Field$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Field$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Type of matcher.
-@immutable final class EmailRuleMatcherType {const EmailRuleMatcherType._(this.value);
+sealed class EmailRuleMatcherType {const EmailRuleMatcherType();
 
 factory EmailRuleMatcherType.fromJson(String json) { return switch (json) {
   'all' => all,
   'literal' => literal,
-  _ => EmailRuleMatcherType._(json),
+  _ => EmailRuleMatcherType$Unknown(json),
 }; }
 
-static const EmailRuleMatcherType all = EmailRuleMatcherType._('all');
+static const EmailRuleMatcherType all = EmailRuleMatcherType$all._();
 
-static const EmailRuleMatcherType literal = EmailRuleMatcherType._('literal');
+static const EmailRuleMatcherType literal = EmailRuleMatcherType$literal._();
 
 static const List<EmailRuleMatcherType> values = [all, literal];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -56,13 +68,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EmailRuleMatcherType$Unknown; } 
+@override String toString() => 'EmailRuleMatcherType($value)';
+
+ }
+@immutable final class EmailRuleMatcherType$all extends EmailRuleMatcherType {const EmailRuleMatcherType$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailRuleMatcherType$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class EmailRuleMatcherType$literal extends EmailRuleMatcherType {const EmailRuleMatcherType$literal._();
+
+@override String get value => 'literal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailRuleMatcherType$literal;
+
+@override int get hashCode => 'literal'.hashCode;
+
+ }
+@immutable final class EmailRuleMatcherType$Unknown extends EmailRuleMatcherType {const EmailRuleMatcherType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EmailRuleMatcherType && other.value == value;
+    other is EmailRuleMatcherType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EmailRuleMatcherType($value)';
 
  }
 /// Matching pattern to forward your actions.

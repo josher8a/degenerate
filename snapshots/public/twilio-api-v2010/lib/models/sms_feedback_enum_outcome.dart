@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SmsFeedbackEnumOutcome
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmsFeedbackEnumOutcome {const SmsFeedbackEnumOutcome._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SmsFeedbackEnumOutcome {const SmsFeedbackEnumOutcome();
 
 factory SmsFeedbackEnumOutcome.fromJson(String json) { return switch (json) {
   'confirmed' => confirmed,
@@ -9,23 +9,22 @@ factory SmsFeedbackEnumOutcome.fromJson(String json) { return switch (json) {
   'received' => received,
   'not-received' => notReceived,
   'delayed' => delayed,
-  _ => SmsFeedbackEnumOutcome._(json),
+  _ => SmsFeedbackEnumOutcome$Unknown(json),
 }; }
 
-static const SmsFeedbackEnumOutcome confirmed = SmsFeedbackEnumOutcome._('confirmed');
+static const SmsFeedbackEnumOutcome confirmed = SmsFeedbackEnumOutcome$confirmed._();
 
-static const SmsFeedbackEnumOutcome unconfirmed = SmsFeedbackEnumOutcome._('unconfirmed');
+static const SmsFeedbackEnumOutcome unconfirmed = SmsFeedbackEnumOutcome$unconfirmed._();
 
-static const SmsFeedbackEnumOutcome received = SmsFeedbackEnumOutcome._('received');
+static const SmsFeedbackEnumOutcome received = SmsFeedbackEnumOutcome$received._();
 
-static const SmsFeedbackEnumOutcome notReceived = SmsFeedbackEnumOutcome._('not-received');
+static const SmsFeedbackEnumOutcome notReceived = SmsFeedbackEnumOutcome$notReceived._();
 
-static const SmsFeedbackEnumOutcome delayed = SmsFeedbackEnumOutcome._('delayed');
+static const SmsFeedbackEnumOutcome delayed = SmsFeedbackEnumOutcome$delayed._();
 
 static const List<SmsFeedbackEnumOutcome> values = [confirmed, unconfirmed, received, notReceived, delayed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,12 +36,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SmsFeedbackEnumOutcome$Unknown; } 
+@override String toString() => 'SmsFeedbackEnumOutcome($value)';
+
+ }
+@immutable final class SmsFeedbackEnumOutcome$confirmed extends SmsFeedbackEnumOutcome {const SmsFeedbackEnumOutcome$confirmed._();
+
+@override String get value => 'confirmed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SmsFeedbackEnumOutcome$confirmed;
+
+@override int get hashCode => 'confirmed'.hashCode;
+
+ }
+@immutable final class SmsFeedbackEnumOutcome$unconfirmed extends SmsFeedbackEnumOutcome {const SmsFeedbackEnumOutcome$unconfirmed._();
+
+@override String get value => 'unconfirmed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SmsFeedbackEnumOutcome$unconfirmed;
+
+@override int get hashCode => 'unconfirmed'.hashCode;
+
+ }
+@immutable final class SmsFeedbackEnumOutcome$received extends SmsFeedbackEnumOutcome {const SmsFeedbackEnumOutcome$received._();
+
+@override String get value => 'received';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SmsFeedbackEnumOutcome$received;
+
+@override int get hashCode => 'received'.hashCode;
+
+ }
+@immutable final class SmsFeedbackEnumOutcome$notReceived extends SmsFeedbackEnumOutcome {const SmsFeedbackEnumOutcome$notReceived._();
+
+@override String get value => 'not-received';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SmsFeedbackEnumOutcome$notReceived;
+
+@override int get hashCode => 'not-received'.hashCode;
+
+ }
+@immutable final class SmsFeedbackEnumOutcome$delayed extends SmsFeedbackEnumOutcome {const SmsFeedbackEnumOutcome$delayed._();
+
+@override String get value => 'delayed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SmsFeedbackEnumOutcome$delayed;
+
+@override int get hashCode => 'delayed'.hashCode;
+
+ }
+@immutable final class SmsFeedbackEnumOutcome$Unknown extends SmsFeedbackEnumOutcome {const SmsFeedbackEnumOutcome$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SmsFeedbackEnumOutcome && other.value == value;
+    other is SmsFeedbackEnumOutcome$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SmsFeedbackEnumOutcome($value)';
 
  }

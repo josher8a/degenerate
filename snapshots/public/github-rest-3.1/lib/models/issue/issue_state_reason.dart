@@ -2,7 +2,7 @@
 // Source: #/components/schemas/Issue (inline: StateReason)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason for the current state
-@immutable final class IssueStateReason {const IssueStateReason._(this.value);
+sealed class IssueStateReason {const IssueStateReason();
 
 factory IssueStateReason.fromJson(String json) { return switch (json) {
   'completed' => completed,
@@ -10,23 +10,22 @@ factory IssueStateReason.fromJson(String json) { return switch (json) {
   'not_planned' => notPlanned,
   'duplicate' => duplicate,
   'null' => $null,
-  _ => IssueStateReason._(json),
+  _ => IssueStateReason$Unknown(json),
 }; }
 
-static const IssueStateReason completed = IssueStateReason._('completed');
+static const IssueStateReason completed = IssueStateReason$completed._();
 
-static const IssueStateReason reopened = IssueStateReason._('reopened');
+static const IssueStateReason reopened = IssueStateReason$reopened._();
 
-static const IssueStateReason notPlanned = IssueStateReason._('not_planned');
+static const IssueStateReason notPlanned = IssueStateReason$notPlanned._();
 
-static const IssueStateReason duplicate = IssueStateReason._('duplicate');
+static const IssueStateReason duplicate = IssueStateReason$duplicate._();
 
-static const IssueStateReason $null = IssueStateReason._('null');
+static const IssueStateReason $null = IssueStateReason$$null._();
 
 static const List<IssueStateReason> values = [completed, reopened, notPlanned, duplicate, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,12 +37,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssueStateReason$Unknown; } 
+@override String toString() => 'IssueStateReason($value)';
+
+ }
+@immutable final class IssueStateReason$completed extends IssueStateReason {const IssueStateReason$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssueStateReason$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class IssueStateReason$reopened extends IssueStateReason {const IssueStateReason$reopened._();
+
+@override String get value => 'reopened';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssueStateReason$reopened;
+
+@override int get hashCode => 'reopened'.hashCode;
+
+ }
+@immutable final class IssueStateReason$notPlanned extends IssueStateReason {const IssueStateReason$notPlanned._();
+
+@override String get value => 'not_planned';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssueStateReason$notPlanned;
+
+@override int get hashCode => 'not_planned'.hashCode;
+
+ }
+@immutable final class IssueStateReason$duplicate extends IssueStateReason {const IssueStateReason$duplicate._();
+
+@override String get value => 'duplicate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssueStateReason$duplicate;
+
+@override int get hashCode => 'duplicate'.hashCode;
+
+ }
+@immutable final class IssueStateReason$$null extends IssueStateReason {const IssueStateReason$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssueStateReason$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class IssueStateReason$Unknown extends IssueStateReason {const IssueStateReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssueStateReason && other.value == value;
+    other is IssueStateReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssueStateReason($value)';
 
  }

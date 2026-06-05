@@ -4,29 +4,27 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:pub_totem_mobile/models/room_state/status_detail.dart';
 
-@immutable
-final class RoomStatus {
-  const RoomStatus._(this.value);
+sealed class RoomStatus {
+  const RoomStatus();
 
   factory RoomStatus.fromJson(String json) {
     return switch (json) {
       'waiting_room' => waitingRoom,
       'active' => active,
       'ended' => ended,
-      _ => RoomStatus._(json),
+      _ => RoomStatus$Unknown(json),
     };
   }
 
-  static const RoomStatus waitingRoom = RoomStatus._('waiting_room');
+  static const RoomStatus waitingRoom = RoomStatus$waitingRoom._();
 
-  static const RoomStatus active = RoomStatus._('active');
+  static const RoomStatus active = RoomStatus$active._();
 
-  static const RoomStatus ended = RoomStatus._('ended');
+  static const RoomStatus ended = RoomStatus$ended._();
 
   static const List<RoomStatus> values = [waitingRoom, active, ended];
 
-  final String value;
-
+  String get value;
   String toJson() {
     return value;
   }
@@ -43,43 +41,95 @@ final class RoomStatus {
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
-    return !values.contains(this);
+    return this is RoomStatus$Unknown;
   }
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) || other is RoomStatus && other.value == value;
-
-  @override
-  int get hashCode => value.hashCode;
 
   @override
   String toString() => 'RoomStatus($value)';
 }
 
 @immutable
-final class TurnState {
-  const TurnState._(this.value);
+final class RoomStatus$waitingRoom extends RoomStatus {
+  const RoomStatus$waitingRoom._();
+
+  @override
+  String get value => 'waiting_room';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is RoomStatus$waitingRoom;
+
+  @override
+  int get hashCode => 'waiting_room'.hashCode;
+}
+
+@immutable
+final class RoomStatus$active extends RoomStatus {
+  const RoomStatus$active._();
+
+  @override
+  String get value => 'active';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is RoomStatus$active;
+
+  @override
+  int get hashCode => 'active'.hashCode;
+}
+
+@immutable
+final class RoomStatus$ended extends RoomStatus {
+  const RoomStatus$ended._();
+
+  @override
+  String get value => 'ended';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is RoomStatus$ended;
+
+  @override
+  int get hashCode => 'ended'.hashCode;
+}
+
+@immutable
+final class RoomStatus$Unknown extends RoomStatus {
+  const RoomStatus$Unknown(this.value);
+
+  @override
+  final String value;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is RoomStatus$Unknown && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+}
+
+sealed class TurnState {
+  const TurnState();
 
   factory TurnState.fromJson(String json) {
     return switch (json) {
       'idle' => idle,
       'speaking' => speaking,
       'passing' => passing,
-      _ => TurnState._(json),
+      _ => TurnState$Unknown(json),
     };
   }
 
-  static const TurnState idle = TurnState._('idle');
+  static const TurnState idle = TurnState$idle._();
 
-  static const TurnState speaking = TurnState._('speaking');
+  static const TurnState speaking = TurnState$speaking._();
 
-  static const TurnState passing = TurnState._('passing');
+  static const TurnState passing = TurnState$passing._();
 
   static const List<TurnState> values = [idle, speaking, passing];
 
-  final String value;
-
+  String get value;
   String toJson() {
     return value;
   }
@@ -96,18 +146,72 @@ final class TurnState {
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
-    return !values.contains(this);
+    return this is TurnState$Unknown;
   }
 
   @override
+  String toString() => 'TurnState($value)';
+}
+
+@immutable
+final class TurnState$idle extends TurnState {
+  const TurnState$idle._();
+
+  @override
+  String get value => 'idle';
+
+  @override
   bool operator ==(Object other) =>
-      identical(this, other) || other is TurnState && other.value == value;
+      identical(this, other) || other is TurnState$idle;
+
+  @override
+  int get hashCode => 'idle'.hashCode;
+}
+
+@immutable
+final class TurnState$speaking extends TurnState {
+  const TurnState$speaking._();
+
+  @override
+  String get value => 'speaking';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is TurnState$speaking;
+
+  @override
+  int get hashCode => 'speaking'.hashCode;
+}
+
+@immutable
+final class TurnState$passing extends TurnState {
+  const TurnState$passing._();
+
+  @override
+  String get value => 'passing';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is TurnState$passing;
+
+  @override
+  int get hashCode => 'passing'.hashCode;
+}
+
+@immutable
+final class TurnState$Unknown extends TurnState {
+  const TurnState$Unknown(this.value);
+
+  @override
+  final String value;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is TurnState$Unknown && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
-
-  @override
-  String toString() => 'TurnState($value)';
 }
 
 /// The canonical state snapshot. This is what gets:

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/WebhookCodeScanningAlertAppearedInBranch (inline: Alert > MostRecentInstance)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_instance_list/message.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/most_recent_instance_location.dart';/// State of a code scanning alert.
-@immutable final class MostRecentInstanceState {const MostRecentInstanceState._(this.value);
+sealed class MostRecentInstanceState {const MostRecentInstanceState();
 
 factory MostRecentInstanceState.fromJson(String json) { return switch (json) {
   'open' => open,
   'dismissed' => dismissed,
   'fixed' => fixed,
-  _ => MostRecentInstanceState._(json),
+  _ => MostRecentInstanceState$Unknown(json),
 }; }
 
-static const MostRecentInstanceState open = MostRecentInstanceState._('open');
+static const MostRecentInstanceState open = MostRecentInstanceState$open._();
 
-static const MostRecentInstanceState dismissed = MostRecentInstanceState._('dismissed');
+static const MostRecentInstanceState dismissed = MostRecentInstanceState$dismissed._();
 
-static const MostRecentInstanceState fixed = MostRecentInstanceState._('fixed');
+static const MostRecentInstanceState fixed = MostRecentInstanceState$fixed._();
 
 static const List<MostRecentInstanceState> values = [open, dismissed, fixed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MostRecentInstanceState$Unknown; } 
+@override String toString() => 'MostRecentInstanceState($value)';
+
+ }
+@immutable final class MostRecentInstanceState$open extends MostRecentInstanceState {const MostRecentInstanceState$open._();
+
+@override String get value => 'open';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MostRecentInstanceState$open;
+
+@override int get hashCode => 'open'.hashCode;
+
+ }
+@immutable final class MostRecentInstanceState$dismissed extends MostRecentInstanceState {const MostRecentInstanceState$dismissed._();
+
+@override String get value => 'dismissed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MostRecentInstanceState$dismissed;
+
+@override int get hashCode => 'dismissed'.hashCode;
+
+ }
+@immutable final class MostRecentInstanceState$fixed extends MostRecentInstanceState {const MostRecentInstanceState$fixed._();
+
+@override String get value => 'fixed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MostRecentInstanceState$fixed;
+
+@override int get hashCode => 'fixed'.hashCode;
+
+ }
+@immutable final class MostRecentInstanceState$Unknown extends MostRecentInstanceState {const MostRecentInstanceState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MostRecentInstanceState && other.value == value;
+    other is MostRecentInstanceState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MostRecentInstanceState($value)';
 
  }
 @immutable final class MostRecentInstance {const MostRecentInstance({required this.analysisKey, required this.environment, required this.ref, required this.state, this.category, this.classifications, this.commitSha, this.location, this.message, });

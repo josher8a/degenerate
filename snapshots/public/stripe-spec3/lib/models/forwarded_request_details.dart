@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ForwardedRequestDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/forwarded_request_header.dart';/// The HTTP method used to call the destination endpoint.
-@immutable final class HttpMethod {const HttpMethod._(this.value);
+sealed class HttpMethod {const HttpMethod();
 
 factory HttpMethod.fromJson(String json) { return switch (json) {
   'POST' => post,
-  _ => HttpMethod._(json),
+  _ => HttpMethod$Unknown(json),
 }; }
 
-static const HttpMethod post = HttpMethod._('POST');
+static const HttpMethod post = HttpMethod$post._();
 
 static const List<HttpMethod> values = [post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is HttpMethod$Unknown; } 
+@override String toString() => 'HttpMethod($value)';
+
+ }
+@immutable final class HttpMethod$post extends HttpMethod {const HttpMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HttpMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class HttpMethod$Unknown extends HttpMethod {const HttpMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is HttpMethod && other.value == value;
+    other is HttpMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'HttpMethod($value)';
 
  }
 /// Details about the request forwarded to the destination endpoint.

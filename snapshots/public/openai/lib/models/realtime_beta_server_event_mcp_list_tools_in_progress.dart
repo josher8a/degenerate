@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventMcpListToolsInProgress
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `mcp_list_tools.in_progress`.
-@immutable final class RealtimeBetaServerEventMcpListToolsInProgressType {const RealtimeBetaServerEventMcpListToolsInProgressType._(this.value);
+sealed class RealtimeBetaServerEventMcpListToolsInProgressType {const RealtimeBetaServerEventMcpListToolsInProgressType();
 
 factory RealtimeBetaServerEventMcpListToolsInProgressType.fromJson(String json) { return switch (json) {
   'mcp_list_tools.in_progress' => mcpListToolsInProgress,
-  _ => RealtimeBetaServerEventMcpListToolsInProgressType._(json),
+  _ => RealtimeBetaServerEventMcpListToolsInProgressType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventMcpListToolsInProgressType mcpListToolsInProgress = RealtimeBetaServerEventMcpListToolsInProgressType._('mcp_list_tools.in_progress');
+static const RealtimeBetaServerEventMcpListToolsInProgressType mcpListToolsInProgress = RealtimeBetaServerEventMcpListToolsInProgressType$mcpListToolsInProgress._();
 
 static const List<RealtimeBetaServerEventMcpListToolsInProgressType> values = [mcpListToolsInProgress];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventMcpListToolsInProgressType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventMcpListToolsInProgressType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventMcpListToolsInProgressType$mcpListToolsInProgress extends RealtimeBetaServerEventMcpListToolsInProgressType {const RealtimeBetaServerEventMcpListToolsInProgressType$mcpListToolsInProgress._();
+
+@override String get value => 'mcp_list_tools.in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventMcpListToolsInProgressType$mcpListToolsInProgress;
+
+@override int get hashCode => 'mcp_list_tools.in_progress'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventMcpListToolsInProgressType$Unknown extends RealtimeBetaServerEventMcpListToolsInProgressType {const RealtimeBetaServerEventMcpListToolsInProgressType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventMcpListToolsInProgressType && other.value == value;
+    other is RealtimeBetaServerEventMcpListToolsInProgressType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventMcpListToolsInProgressType($value)';
 
  }
 /// Returned when listing MCP tools is in progress for an item.

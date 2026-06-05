@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ChatCompletionDeleted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of object being deleted.
-@immutable final class ChatCompletionDeletedObject {const ChatCompletionDeletedObject._(this.value);
+sealed class ChatCompletionDeletedObject {const ChatCompletionDeletedObject();
 
 factory ChatCompletionDeletedObject.fromJson(String json) { return switch (json) {
   'chat.completion.deleted' => chatCompletionDeleted,
-  _ => ChatCompletionDeletedObject._(json),
+  _ => ChatCompletionDeletedObject$Unknown(json),
 }; }
 
-static const ChatCompletionDeletedObject chatCompletionDeleted = ChatCompletionDeletedObject._('chat.completion.deleted');
+static const ChatCompletionDeletedObject chatCompletionDeleted = ChatCompletionDeletedObject$chatCompletionDeleted._();
 
 static const List<ChatCompletionDeletedObject> values = [chatCompletionDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ChatCompletionDeletedObject$Unknown; } 
+@override String toString() => 'ChatCompletionDeletedObject($value)';
+
+ }
+@immutable final class ChatCompletionDeletedObject$chatCompletionDeleted extends ChatCompletionDeletedObject {const ChatCompletionDeletedObject$chatCompletionDeleted._();
+
+@override String get value => 'chat.completion.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionDeletedObject$chatCompletionDeleted;
+
+@override int get hashCode => 'chat.completion.deleted'.hashCode;
+
+ }
+@immutable final class ChatCompletionDeletedObject$Unknown extends ChatCompletionDeletedObject {const ChatCompletionDeletedObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ChatCompletionDeletedObject && other.value == value;
+    other is ChatCompletionDeletedObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ChatCompletionDeletedObject($value)';
 
  }
 @immutable final class ChatCompletionDeleted {const ChatCompletionDeleted({required this.object, required this.id, required this.deleted, });

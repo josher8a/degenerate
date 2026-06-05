@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ChatCompletionAllowedToolsChoice (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allowed tool configuration type. Always `allowed_tools`.
-@immutable final class ChatCompletionAllowedToolsChoiceType {const ChatCompletionAllowedToolsChoiceType._(this.value);
+sealed class ChatCompletionAllowedToolsChoiceType {const ChatCompletionAllowedToolsChoiceType();
 
 factory ChatCompletionAllowedToolsChoiceType.fromJson(String json) { return switch (json) {
   'allowed_tools' => allowedTools,
-  _ => ChatCompletionAllowedToolsChoiceType._(json),
+  _ => ChatCompletionAllowedToolsChoiceType$Unknown(json),
 }; }
 
-static const ChatCompletionAllowedToolsChoiceType allowedTools = ChatCompletionAllowedToolsChoiceType._('allowed_tools');
+static const ChatCompletionAllowedToolsChoiceType allowedTools = ChatCompletionAllowedToolsChoiceType$allowedTools._();
 
 static const List<ChatCompletionAllowedToolsChoiceType> values = [allowedTools];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ChatCompletionAllowedToolsChoiceType$Unknown; } 
+@override String toString() => 'ChatCompletionAllowedToolsChoiceType($value)';
+
+ }
+@immutable final class ChatCompletionAllowedToolsChoiceType$allowedTools extends ChatCompletionAllowedToolsChoiceType {const ChatCompletionAllowedToolsChoiceType$allowedTools._();
+
+@override String get value => 'allowed_tools';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionAllowedToolsChoiceType$allowedTools;
+
+@override int get hashCode => 'allowed_tools'.hashCode;
+
+ }
+@immutable final class ChatCompletionAllowedToolsChoiceType$Unknown extends ChatCompletionAllowedToolsChoiceType {const ChatCompletionAllowedToolsChoiceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ChatCompletionAllowedToolsChoiceType && other.value == value;
+    other is ChatCompletionAllowedToolsChoiceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ChatCompletionAllowedToolsChoiceType($value)';
 
  }

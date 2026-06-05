@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/R2LockRuleIndefiniteCondition
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2LockRuleIndefiniteConditionType {const R2LockRuleIndefiniteConditionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class R2LockRuleIndefiniteConditionType {const R2LockRuleIndefiniteConditionType();
 
 factory R2LockRuleIndefiniteConditionType.fromJson(String json) { return switch (json) {
   'Indefinite' => indefinite,
-  _ => R2LockRuleIndefiniteConditionType._(json),
+  _ => R2LockRuleIndefiniteConditionType$Unknown(json),
 }; }
 
-static const R2LockRuleIndefiniteConditionType indefinite = R2LockRuleIndefiniteConditionType._('Indefinite');
+static const R2LockRuleIndefiniteConditionType indefinite = R2LockRuleIndefiniteConditionType$indefinite._();
 
 static const List<R2LockRuleIndefiniteConditionType> values = [indefinite];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is R2LockRuleIndefiniteConditionType$Unknown; } 
+@override String toString() => 'R2LockRuleIndefiniteConditionType($value)';
+
+ }
+@immutable final class R2LockRuleIndefiniteConditionType$indefinite extends R2LockRuleIndefiniteConditionType {const R2LockRuleIndefiniteConditionType$indefinite._();
+
+@override String get value => 'Indefinite';
+
+@override bool operator ==(Object other) => identical(this, other) || other is R2LockRuleIndefiniteConditionType$indefinite;
+
+@override int get hashCode => 'Indefinite'.hashCode;
+
+ }
+@immutable final class R2LockRuleIndefiniteConditionType$Unknown extends R2LockRuleIndefiniteConditionType {const R2LockRuleIndefiniteConditionType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is R2LockRuleIndefiniteConditionType && other.value == value;
+    other is R2LockRuleIndefiniteConditionType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'R2LockRuleIndefiniteConditionType($value)';
 
  }
 /// Condition to apply a lock rule indefinitely.

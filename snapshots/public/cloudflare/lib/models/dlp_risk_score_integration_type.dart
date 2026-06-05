@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpRiskScoreIntegrationType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpRiskScoreIntegrationType {const DlpRiskScoreIntegrationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DlpRiskScoreIntegrationType {const DlpRiskScoreIntegrationType();
 
 factory DlpRiskScoreIntegrationType.fromJson(String json) { return switch (json) {
   'Okta' => okta,
-  _ => DlpRiskScoreIntegrationType._(json),
+  _ => DlpRiskScoreIntegrationType$Unknown(json),
 }; }
 
-static const DlpRiskScoreIntegrationType okta = DlpRiskScoreIntegrationType._('Okta');
+static const DlpRiskScoreIntegrationType okta = DlpRiskScoreIntegrationType$okta._();
 
 static const List<DlpRiskScoreIntegrationType> values = [okta];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DlpRiskScoreIntegrationType$Unknown; } 
+@override String toString() => 'DlpRiskScoreIntegrationType($value)';
+
+ }
+@immutable final class DlpRiskScoreIntegrationType$okta extends DlpRiskScoreIntegrationType {const DlpRiskScoreIntegrationType$okta._();
+
+@override String get value => 'Okta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DlpRiskScoreIntegrationType$okta;
+
+@override int get hashCode => 'Okta'.hashCode;
+
+ }
+@immutable final class DlpRiskScoreIntegrationType$Unknown extends DlpRiskScoreIntegrationType {const DlpRiskScoreIntegrationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DlpRiskScoreIntegrationType && other.value == value;
+    other is DlpRiskScoreIntegrationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DlpRiskScoreIntegrationType($value)';
 
  }

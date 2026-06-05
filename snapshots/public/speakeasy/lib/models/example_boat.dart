@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ExampleBoat
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ExampleBoatType {const ExampleBoatType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ExampleBoatType {const ExampleBoatType();
 
 factory ExampleBoatType.fromJson(String json) { return switch (json) {
   'boat' => boat,
-  _ => ExampleBoatType._(json),
+  _ => ExampleBoatType$Unknown(json),
 }; }
 
-static const ExampleBoatType boat = ExampleBoatType._('boat');
+static const ExampleBoatType boat = ExampleBoatType$boat._();
 
 static const List<ExampleBoatType> values = [boat];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ExampleBoatType$Unknown; } 
+@override String toString() => 'ExampleBoatType($value)';
+
+ }
+@immutable final class ExampleBoatType$boat extends ExampleBoatType {const ExampleBoatType$boat._();
+
+@override String get value => 'boat';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ExampleBoatType$boat;
+
+@override int get hashCode => 'boat'.hashCode;
+
+ }
+@immutable final class ExampleBoatType$Unknown extends ExampleBoatType {const ExampleBoatType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ExampleBoatType && other.value == value;
+    other is ExampleBoatType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ExampleBoatType($value)';
 
  }
 @immutable final class ExampleBoat {const ExampleBoat({required this.type, required this.name, required this.length, this.createdAt, this.updatedAt, });

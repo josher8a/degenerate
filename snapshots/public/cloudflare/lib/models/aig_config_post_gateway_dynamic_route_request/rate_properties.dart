@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigPostGatewayDynamicRouteRequest (inline: Elements > Rate > Properties)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LimitType {const LimitType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class LimitType {const LimitType();
 
 factory LimitType.fromJson(String json) { return switch (json) {
   'count' => count,
   'cost' => cost,
-  _ => LimitType._(json),
+  _ => LimitType$Unknown(json),
 }; }
 
-static const LimitType count = LimitType._('count');
+static const LimitType count = LimitType$count._();
 
-static const LimitType cost = LimitType._('cost');
+static const LimitType cost = LimitType$cost._();
 
 static const List<LimitType> values = [count, cost];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LimitType$Unknown; } 
+@override String toString() => 'LimitType($value)';
+
+ }
+@immutable final class LimitType$count extends LimitType {const LimitType$count._();
+
+@override String get value => 'count';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LimitType$count;
+
+@override int get hashCode => 'count'.hashCode;
+
+ }
+@immutable final class LimitType$cost extends LimitType {const LimitType$cost._();
+
+@override String get value => 'cost';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LimitType$cost;
+
+@override int get hashCode => 'cost'.hashCode;
+
+ }
+@immutable final class LimitType$Unknown extends LimitType {const LimitType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LimitType && other.value == value;
+    other is LimitType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LimitType($value)';
 
  }
 @immutable final class RateProperties {const RateProperties({required this.key, required this.limit, required this.limitType, required this.window, });

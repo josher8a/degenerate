@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DeletedThreadResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type discriminator that is always `chatkit.thread.deleted`.
-@immutable final class DeletedThreadResourceObject {const DeletedThreadResourceObject._(this.value);
+sealed class DeletedThreadResourceObject {const DeletedThreadResourceObject();
 
 factory DeletedThreadResourceObject.fromJson(String json) { return switch (json) {
   'chatkit.thread.deleted' => chatkitThreadDeleted,
-  _ => DeletedThreadResourceObject._(json),
+  _ => DeletedThreadResourceObject$Unknown(json),
 }; }
 
-static const DeletedThreadResourceObject chatkitThreadDeleted = DeletedThreadResourceObject._('chatkit.thread.deleted');
+static const DeletedThreadResourceObject chatkitThreadDeleted = DeletedThreadResourceObject$chatkitThreadDeleted._();
 
 static const List<DeletedThreadResourceObject> values = [chatkitThreadDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeletedThreadResourceObject$Unknown; } 
+@override String toString() => 'DeletedThreadResourceObject($value)';
+
+ }
+@immutable final class DeletedThreadResourceObject$chatkitThreadDeleted extends DeletedThreadResourceObject {const DeletedThreadResourceObject$chatkitThreadDeleted._();
+
+@override String get value => 'chatkit.thread.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeletedThreadResourceObject$chatkitThreadDeleted;
+
+@override int get hashCode => 'chatkit.thread.deleted'.hashCode;
+
+ }
+@immutable final class DeletedThreadResourceObject$Unknown extends DeletedThreadResourceObject {const DeletedThreadResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeletedThreadResourceObject && other.value == value;
+    other is DeletedThreadResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeletedThreadResourceObject($value)';
 
  }
 /// Confirmation payload returned after deleting a thread.

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetHttpTopBrowsersFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetHttpTopBrowsersFormat {const RadarGetHttpTopBrowsersFormat._(this.value);
+sealed class RadarGetHttpTopBrowsersFormat {const RadarGetHttpTopBrowsersFormat();
 
 factory RadarGetHttpTopBrowsersFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetHttpTopBrowsersFormat._(json),
+  _ => RadarGetHttpTopBrowsersFormat$Unknown(json),
 }; }
 
-static const RadarGetHttpTopBrowsersFormat $json = RadarGetHttpTopBrowsersFormat._('JSON');
+static const RadarGetHttpTopBrowsersFormat $json = RadarGetHttpTopBrowsersFormat$$json._();
 
-static const RadarGetHttpTopBrowsersFormat csv = RadarGetHttpTopBrowsersFormat._('CSV');
+static const RadarGetHttpTopBrowsersFormat csv = RadarGetHttpTopBrowsersFormat$csv._();
 
 static const List<RadarGetHttpTopBrowsersFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopBrowsersFormat$Unknown; } 
+@override String toString() => 'RadarGetHttpTopBrowsersFormat($value)';
+
+ }
+@immutable final class RadarGetHttpTopBrowsersFormat$$json extends RadarGetHttpTopBrowsersFormat {const RadarGetHttpTopBrowsersFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopBrowsersFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopBrowsersFormat$csv extends RadarGetHttpTopBrowsersFormat {const RadarGetHttpTopBrowsersFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopBrowsersFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopBrowsersFormat$Unknown extends RadarGetHttpTopBrowsersFormat {const RadarGetHttpTopBrowsersFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopBrowsersFormat && other.value == value;
+    other is RadarGetHttpTopBrowsersFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopBrowsersFormat($value)';
 
  }

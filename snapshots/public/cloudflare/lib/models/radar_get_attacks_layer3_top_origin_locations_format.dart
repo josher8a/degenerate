@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetAttacksLayer3TopOriginLocationsFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetAttacksLayer3TopOriginLocationsFormat {const RadarGetAttacksLayer3TopOriginLocationsFormat._(this.value);
+sealed class RadarGetAttacksLayer3TopOriginLocationsFormat {const RadarGetAttacksLayer3TopOriginLocationsFormat();
 
 factory RadarGetAttacksLayer3TopOriginLocationsFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetAttacksLayer3TopOriginLocationsFormat._(json),
+  _ => RadarGetAttacksLayer3TopOriginLocationsFormat$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer3TopOriginLocationsFormat $json = RadarGetAttacksLayer3TopOriginLocationsFormat._('JSON');
+static const RadarGetAttacksLayer3TopOriginLocationsFormat $json = RadarGetAttacksLayer3TopOriginLocationsFormat$$json._();
 
-static const RadarGetAttacksLayer3TopOriginLocationsFormat csv = RadarGetAttacksLayer3TopOriginLocationsFormat._('CSV');
+static const RadarGetAttacksLayer3TopOriginLocationsFormat csv = RadarGetAttacksLayer3TopOriginLocationsFormat$csv._();
 
 static const List<RadarGetAttacksLayer3TopOriginLocationsFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer3TopOriginLocationsFormat$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer3TopOriginLocationsFormat($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer3TopOriginLocationsFormat$$json extends RadarGetAttacksLayer3TopOriginLocationsFormat {const RadarGetAttacksLayer3TopOriginLocationsFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TopOriginLocationsFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TopOriginLocationsFormat$csv extends RadarGetAttacksLayer3TopOriginLocationsFormat {const RadarGetAttacksLayer3TopOriginLocationsFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TopOriginLocationsFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TopOriginLocationsFormat$Unknown extends RadarGetAttacksLayer3TopOriginLocationsFormat {const RadarGetAttacksLayer3TopOriginLocationsFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer3TopOriginLocationsFormat && other.value == value;
+    other is RadarGetAttacksLayer3TopOriginLocationsFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer3TopOriginLocationsFormat($value)';
 
  }

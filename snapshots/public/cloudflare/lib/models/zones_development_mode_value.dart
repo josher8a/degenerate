@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ZonesDevelopmentModeValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
-@immutable final class ZonesDevelopmentModeValue {const ZonesDevelopmentModeValue._(this.value);
+sealed class ZonesDevelopmentModeValue {const ZonesDevelopmentModeValue();
 
 factory ZonesDevelopmentModeValue.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => ZonesDevelopmentModeValue._(json),
+  _ => ZonesDevelopmentModeValue$Unknown(json),
 }; }
 
-static const ZonesDevelopmentModeValue $on = ZonesDevelopmentModeValue._('on');
+static const ZonesDevelopmentModeValue $on = ZonesDevelopmentModeValue$$on._();
 
-static const ZonesDevelopmentModeValue off = ZonesDevelopmentModeValue._('off');
+static const ZonesDevelopmentModeValue off = ZonesDevelopmentModeValue$off._();
 
 static const List<ZonesDevelopmentModeValue> values = [$on, off];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesDevelopmentModeValue$Unknown; } 
+@override String toString() => 'ZonesDevelopmentModeValue($value)';
+
+ }
+@immutable final class ZonesDevelopmentModeValue$$on extends ZonesDevelopmentModeValue {const ZonesDevelopmentModeValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesDevelopmentModeValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ZonesDevelopmentModeValue$off extends ZonesDevelopmentModeValue {const ZonesDevelopmentModeValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesDevelopmentModeValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesDevelopmentModeValue$Unknown extends ZonesDevelopmentModeValue {const ZonesDevelopmentModeValue$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesDevelopmentModeValue && other.value == value;
+    other is ZonesDevelopmentModeValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesDevelopmentModeValue($value)';
 
  }

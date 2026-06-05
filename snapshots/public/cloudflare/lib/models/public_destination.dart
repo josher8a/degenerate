@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PublicDestination
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PublicDestinationType {const PublicDestinationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PublicDestinationType {const PublicDestinationType();
 
 factory PublicDestinationType.fromJson(String json) { return switch (json) {
   'public' => public,
-  _ => PublicDestinationType._(json),
+  _ => PublicDestinationType$Unknown(json),
 }; }
 
-static const PublicDestinationType public = PublicDestinationType._('public');
+static const PublicDestinationType public = PublicDestinationType$public._();
 
 static const List<PublicDestinationType> values = [public];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PublicDestinationType$Unknown; } 
+@override String toString() => 'PublicDestinationType($value)';
+
+ }
+@immutable final class PublicDestinationType$public extends PublicDestinationType {const PublicDestinationType$public._();
+
+@override String get value => 'public';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PublicDestinationType$public;
+
+@override int get hashCode => 'public'.hashCode;
+
+ }
+@immutable final class PublicDestinationType$Unknown extends PublicDestinationType {const PublicDestinationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PublicDestinationType && other.value == value;
+    other is PublicDestinationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PublicDestinationType($value)';
 
  }
 /// A public hostname that Access will secure. Public destinations support sub-domain and path. Wildcard '*' can be used in the definition.

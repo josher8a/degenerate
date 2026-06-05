@@ -2,28 +2,27 @@
 // Source: #/components/schemas/IssueFieldValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue_field_value/issue_field_value_single_select_option.dart';/// The data type of the issue field
-@immutable final class IssueFieldValueDataType {const IssueFieldValueDataType._(this.value);
+sealed class IssueFieldValueDataType {const IssueFieldValueDataType();
 
 factory IssueFieldValueDataType.fromJson(String json) { return switch (json) {
   'text' => text,
   'single_select' => singleSelect,
   'number' => number,
   'date' => date,
-  _ => IssueFieldValueDataType._(json),
+  _ => IssueFieldValueDataType$Unknown(json),
 }; }
 
-static const IssueFieldValueDataType text = IssueFieldValueDataType._('text');
+static const IssueFieldValueDataType text = IssueFieldValueDataType$text._();
 
-static const IssueFieldValueDataType singleSelect = IssueFieldValueDataType._('single_select');
+static const IssueFieldValueDataType singleSelect = IssueFieldValueDataType$singleSelect._();
 
-static const IssueFieldValueDataType number = IssueFieldValueDataType._('number');
+static const IssueFieldValueDataType number = IssueFieldValueDataType$number._();
 
-static const IssueFieldValueDataType date = IssueFieldValueDataType._('date');
+static const IssueFieldValueDataType date = IssueFieldValueDataType$date._();
 
 static const List<IssueFieldValueDataType> values = [text, singleSelect, number, date];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssueFieldValueDataType$Unknown; } 
+@override String toString() => 'IssueFieldValueDataType($value)';
+
+ }
+@immutable final class IssueFieldValueDataType$text extends IssueFieldValueDataType {const IssueFieldValueDataType$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssueFieldValueDataType$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class IssueFieldValueDataType$singleSelect extends IssueFieldValueDataType {const IssueFieldValueDataType$singleSelect._();
+
+@override String get value => 'single_select';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssueFieldValueDataType$singleSelect;
+
+@override int get hashCode => 'single_select'.hashCode;
+
+ }
+@immutable final class IssueFieldValueDataType$number extends IssueFieldValueDataType {const IssueFieldValueDataType$number._();
+
+@override String get value => 'number';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssueFieldValueDataType$number;
+
+@override int get hashCode => 'number'.hashCode;
+
+ }
+@immutable final class IssueFieldValueDataType$date extends IssueFieldValueDataType {const IssueFieldValueDataType$date._();
+
+@override String get value => 'date';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssueFieldValueDataType$date;
+
+@override int get hashCode => 'date'.hashCode;
+
+ }
+@immutable final class IssueFieldValueDataType$Unknown extends IssueFieldValueDataType {const IssueFieldValueDataType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssueFieldValueDataType && other.value == value;
+    other is IssueFieldValueDataType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssueFieldValueDataType($value)';
 
  }
 /// A value assigned to an issue field

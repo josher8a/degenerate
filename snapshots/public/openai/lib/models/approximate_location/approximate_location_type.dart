@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of location approximation. Always `approximate`.
 /// 
-@immutable final class ApproximateLocationType {const ApproximateLocationType._(this.value);
+sealed class ApproximateLocationType {const ApproximateLocationType();
 
 factory ApproximateLocationType.fromJson(String json) { return switch (json) {
   'approximate' => approximate,
-  _ => ApproximateLocationType._(json),
+  _ => ApproximateLocationType$Unknown(json),
 }; }
 
-static const ApproximateLocationType approximate = ApproximateLocationType._('approximate');
+static const ApproximateLocationType approximate = ApproximateLocationType$approximate._();
 
 static const List<ApproximateLocationType> values = [approximate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,12 +22,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ApproximateLocationType$Unknown; } 
+@override String toString() => 'ApproximateLocationType($value)';
+
+ }
+@immutable final class ApproximateLocationType$approximate extends ApproximateLocationType {const ApproximateLocationType$approximate._();
+
+@override String get value => 'approximate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApproximateLocationType$approximate;
+
+@override int get hashCode => 'approximate'.hashCode;
+
+ }
+@immutable final class ApproximateLocationType$Unknown extends ApproximateLocationType {const ApproximateLocationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ApproximateLocationType && other.value == value;
+    other is ApproximateLocationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ApproximateLocationType($value)';
 
  }

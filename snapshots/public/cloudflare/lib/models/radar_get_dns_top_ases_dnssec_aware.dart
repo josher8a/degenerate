@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetDnsTopAsesDnssecAware
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTopAsesDnssecAware {const RadarGetDnsTopAsesDnssecAware._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetDnsTopAsesDnssecAware {const RadarGetDnsTopAsesDnssecAware();
 
 factory RadarGetDnsTopAsesDnssecAware.fromJson(String json) { return switch (json) {
   'SUPPORTED' => supported,
   'NOT_SUPPORTED' => notSupported,
-  _ => RadarGetDnsTopAsesDnssecAware._(json),
+  _ => RadarGetDnsTopAsesDnssecAware$Unknown(json),
 }; }
 
-static const RadarGetDnsTopAsesDnssecAware supported = RadarGetDnsTopAsesDnssecAware._('SUPPORTED');
+static const RadarGetDnsTopAsesDnssecAware supported = RadarGetDnsTopAsesDnssecAware$supported._();
 
-static const RadarGetDnsTopAsesDnssecAware notSupported = RadarGetDnsTopAsesDnssecAware._('NOT_SUPPORTED');
+static const RadarGetDnsTopAsesDnssecAware notSupported = RadarGetDnsTopAsesDnssecAware$notSupported._();
 
 static const List<RadarGetDnsTopAsesDnssecAware> values = [supported, notSupported];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetDnsTopAsesDnssecAware$Unknown; } 
+@override String toString() => 'RadarGetDnsTopAsesDnssecAware($value)';
+
+ }
+@immutable final class RadarGetDnsTopAsesDnssecAware$supported extends RadarGetDnsTopAsesDnssecAware {const RadarGetDnsTopAsesDnssecAware$supported._();
+
+@override String get value => 'SUPPORTED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTopAsesDnssecAware$supported;
+
+@override int get hashCode => 'SUPPORTED'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTopAsesDnssecAware$notSupported extends RadarGetDnsTopAsesDnssecAware {const RadarGetDnsTopAsesDnssecAware$notSupported._();
+
+@override String get value => 'NOT_SUPPORTED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTopAsesDnssecAware$notSupported;
+
+@override int get hashCode => 'NOT_SUPPORTED'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTopAsesDnssecAware$Unknown extends RadarGetDnsTopAsesDnssecAware {const RadarGetDnsTopAsesDnssecAware$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetDnsTopAsesDnssecAware && other.value == value;
+    other is RadarGetDnsTopAsesDnssecAware$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetDnsTopAsesDnssecAware($value)';
 
  }

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/AssistantsNamedToolChoice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistants_named_tool_choice/assistants_named_tool_choice_function.dart';/// The type of the tool. If type is `function`, the function name must be set
-@immutable final class AssistantsNamedToolChoiceType {const AssistantsNamedToolChoiceType._(this.value);
+sealed class AssistantsNamedToolChoiceType {const AssistantsNamedToolChoiceType();
 
 factory AssistantsNamedToolChoiceType.fromJson(String json) { return switch (json) {
   'function' => function,
   'code_interpreter' => codeInterpreter,
   'file_search' => fileSearch,
-  _ => AssistantsNamedToolChoiceType._(json),
+  _ => AssistantsNamedToolChoiceType$Unknown(json),
 }; }
 
-static const AssistantsNamedToolChoiceType function = AssistantsNamedToolChoiceType._('function');
+static const AssistantsNamedToolChoiceType function = AssistantsNamedToolChoiceType$function._();
 
-static const AssistantsNamedToolChoiceType codeInterpreter = AssistantsNamedToolChoiceType._('code_interpreter');
+static const AssistantsNamedToolChoiceType codeInterpreter = AssistantsNamedToolChoiceType$codeInterpreter._();
 
-static const AssistantsNamedToolChoiceType fileSearch = AssistantsNamedToolChoiceType._('file_search');
+static const AssistantsNamedToolChoiceType fileSearch = AssistantsNamedToolChoiceType$fileSearch._();
 
 static const List<AssistantsNamedToolChoiceType> values = [function, codeInterpreter, fileSearch];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AssistantsNamedToolChoiceType$Unknown; } 
+@override String toString() => 'AssistantsNamedToolChoiceType($value)';
+
+ }
+@immutable final class AssistantsNamedToolChoiceType$function extends AssistantsNamedToolChoiceType {const AssistantsNamedToolChoiceType$function._();
+
+@override String get value => 'function';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AssistantsNamedToolChoiceType$function;
+
+@override int get hashCode => 'function'.hashCode;
+
+ }
+@immutable final class AssistantsNamedToolChoiceType$codeInterpreter extends AssistantsNamedToolChoiceType {const AssistantsNamedToolChoiceType$codeInterpreter._();
+
+@override String get value => 'code_interpreter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AssistantsNamedToolChoiceType$codeInterpreter;
+
+@override int get hashCode => 'code_interpreter'.hashCode;
+
+ }
+@immutable final class AssistantsNamedToolChoiceType$fileSearch extends AssistantsNamedToolChoiceType {const AssistantsNamedToolChoiceType$fileSearch._();
+
+@override String get value => 'file_search';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AssistantsNamedToolChoiceType$fileSearch;
+
+@override int get hashCode => 'file_search'.hashCode;
+
+ }
+@immutable final class AssistantsNamedToolChoiceType$Unknown extends AssistantsNamedToolChoiceType {const AssistantsNamedToolChoiceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AssistantsNamedToolChoiceType && other.value == value;
+    other is AssistantsNamedToolChoiceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AssistantsNamedToolChoiceType($value)';
 
  }
 /// Specifies a tool the model should use. Use to force the model to call a specific tool.

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostSubscriptionsSubscriptionMigrateRequest (inline: BillingMode)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/flexible.dart';@immutable final class BillingModeType {const BillingModeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/flexible.dart';sealed class BillingModeType {const BillingModeType();
 
 factory BillingModeType.fromJson(String json) { return switch (json) {
   'flexible' => flexible,
-  _ => BillingModeType._(json),
+  _ => BillingModeType$Unknown(json),
 }; }
 
-static const BillingModeType flexible = BillingModeType._('flexible');
+static const BillingModeType flexible = BillingModeType$flexible._();
 
 static const List<BillingModeType> values = [flexible];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingModeType$Unknown; } 
+@override String toString() => 'BillingModeType($value)';
+
+ }
+@immutable final class BillingModeType$flexible extends BillingModeType {const BillingModeType$flexible._();
+
+@override String get value => 'flexible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingModeType$flexible;
+
+@override int get hashCode => 'flexible'.hashCode;
+
+ }
+@immutable final class BillingModeType$Unknown extends BillingModeType {const BillingModeType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingModeType && other.value == value;
+    other is BillingModeType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingModeType($value)';
 
  }
 /// Controls how prorations and invoices for subscriptions are calculated and orchestrated.

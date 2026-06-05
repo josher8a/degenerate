@@ -5,22 +5,21 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// `never`. When set to `always`, all tools will require approval. When
 /// set to `never`, all tools will not require approval.
 /// 
-@immutable final class McpToolApprovalSetting {const McpToolApprovalSetting._(this.value);
+sealed class McpToolApprovalSetting {const McpToolApprovalSetting();
 
 factory McpToolApprovalSetting.fromJson(String json) { return switch (json) {
   'always' => always,
   'never' => never,
-  _ => McpToolApprovalSetting._(json),
+  _ => McpToolApprovalSetting$Unknown(json),
 }; }
 
-static const McpToolApprovalSetting always = McpToolApprovalSetting._('always');
+static const McpToolApprovalSetting always = McpToolApprovalSetting$always._();
 
-static const McpToolApprovalSetting never = McpToolApprovalSetting._('never');
+static const McpToolApprovalSetting never = McpToolApprovalSetting$never._();
 
 static const List<McpToolApprovalSetting> values = [always, never];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is McpToolApprovalSetting$Unknown; } 
+@override String toString() => 'McpToolApprovalSetting($value)';
+
+ }
+@immutable final class McpToolApprovalSetting$always extends McpToolApprovalSetting {const McpToolApprovalSetting$always._();
+
+@override String get value => 'always';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McpToolApprovalSetting$always;
+
+@override int get hashCode => 'always'.hashCode;
+
+ }
+@immutable final class McpToolApprovalSetting$never extends McpToolApprovalSetting {const McpToolApprovalSetting$never._();
+
+@override String get value => 'never';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McpToolApprovalSetting$never;
+
+@override int get hashCode => 'never'.hashCode;
+
+ }
+@immutable final class McpToolApprovalSetting$Unknown extends McpToolApprovalSetting {const McpToolApprovalSetting$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is McpToolApprovalSetting && other.value == value;
+    other is McpToolApprovalSetting$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'McpToolApprovalSetting($value)';
 
  }
 /// Specify which of the MCP server's tools require approval.

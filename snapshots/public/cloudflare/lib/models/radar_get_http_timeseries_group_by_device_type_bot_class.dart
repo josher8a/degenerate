@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTimeseriesGroupByDeviceTypeBotClass
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByDeviceTypeBotClass {const RadarGetHttpTimeseriesGroupByDeviceTypeBotClass._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTimeseriesGroupByDeviceTypeBotClass {const RadarGetHttpTimeseriesGroupByDeviceTypeBotClass();
 
 factory RadarGetHttpTimeseriesGroupByDeviceTypeBotClass.fromJson(String json) { return switch (json) {
   'LIKELY_AUTOMATED' => likelyAutomated,
   'LIKELY_HUMAN' => likelyHuman,
-  _ => RadarGetHttpTimeseriesGroupByDeviceTypeBotClass._(json),
+  _ => RadarGetHttpTimeseriesGroupByDeviceTypeBotClass$Unknown(json),
 }; }
 
-static const RadarGetHttpTimeseriesGroupByDeviceTypeBotClass likelyAutomated = RadarGetHttpTimeseriesGroupByDeviceTypeBotClass._('LIKELY_AUTOMATED');
+static const RadarGetHttpTimeseriesGroupByDeviceTypeBotClass likelyAutomated = RadarGetHttpTimeseriesGroupByDeviceTypeBotClass$likelyAutomated._();
 
-static const RadarGetHttpTimeseriesGroupByDeviceTypeBotClass likelyHuman = RadarGetHttpTimeseriesGroupByDeviceTypeBotClass._('LIKELY_HUMAN');
+static const RadarGetHttpTimeseriesGroupByDeviceTypeBotClass likelyHuman = RadarGetHttpTimeseriesGroupByDeviceTypeBotClass$likelyHuman._();
 
 static const List<RadarGetHttpTimeseriesGroupByDeviceTypeBotClass> values = [likelyAutomated, likelyHuman];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByDeviceTypeBotClass$Unknown; } 
+@override String toString() => 'RadarGetHttpTimeseriesGroupByDeviceTypeBotClass($value)';
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByDeviceTypeBotClass$likelyAutomated extends RadarGetHttpTimeseriesGroupByDeviceTypeBotClass {const RadarGetHttpTimeseriesGroupByDeviceTypeBotClass$likelyAutomated._();
+
+@override String get value => 'LIKELY_AUTOMATED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByDeviceTypeBotClass$likelyAutomated;
+
+@override int get hashCode => 'LIKELY_AUTOMATED'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByDeviceTypeBotClass$likelyHuman extends RadarGetHttpTimeseriesGroupByDeviceTypeBotClass {const RadarGetHttpTimeseriesGroupByDeviceTypeBotClass$likelyHuman._();
+
+@override String get value => 'LIKELY_HUMAN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByDeviceTypeBotClass$likelyHuman;
+
+@override int get hashCode => 'LIKELY_HUMAN'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByDeviceTypeBotClass$Unknown extends RadarGetHttpTimeseriesGroupByDeviceTypeBotClass {const RadarGetHttpTimeseriesGroupByDeviceTypeBotClass$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupByDeviceTypeBotClass && other.value == value;
+    other is RadarGetHttpTimeseriesGroupByDeviceTypeBotClass$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTimeseriesGroupByDeviceTypeBotClass($value)';
 
  }

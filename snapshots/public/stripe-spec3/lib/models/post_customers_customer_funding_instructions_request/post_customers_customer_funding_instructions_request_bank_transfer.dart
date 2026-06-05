@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCustomersCustomerFundingInstructionsRequest (inline: BankTransfer)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer/customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_type.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_param/eu_bank_transfer.dart';@immutable final class BankTransferRequestedAddressTypes {const BankTransferRequestedAddressTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer/customer_balance_resource_cash_balance_transaction_resource_funded_transaction_resource_bank_transfer_type.dart';import 'package:pub_stripe_spec3/models/invoice_payment_method_options_param/eu_bank_transfer.dart';sealed class BankTransferRequestedAddressTypes {const BankTransferRequestedAddressTypes();
 
 factory BankTransferRequestedAddressTypes.fromJson(String json) { return switch (json) {
   'iban' => iban,
   'sort_code' => sortCode,
   'spei' => spei,
   'zengin' => zengin,
-  _ => BankTransferRequestedAddressTypes._(json),
+  _ => BankTransferRequestedAddressTypes$Unknown(json),
 }; }
 
-static const BankTransferRequestedAddressTypes iban = BankTransferRequestedAddressTypes._('iban');
+static const BankTransferRequestedAddressTypes iban = BankTransferRequestedAddressTypes$iban._();
 
-static const BankTransferRequestedAddressTypes sortCode = BankTransferRequestedAddressTypes._('sort_code');
+static const BankTransferRequestedAddressTypes sortCode = BankTransferRequestedAddressTypes$sortCode._();
 
-static const BankTransferRequestedAddressTypes spei = BankTransferRequestedAddressTypes._('spei');
+static const BankTransferRequestedAddressTypes spei = BankTransferRequestedAddressTypes$spei._();
 
-static const BankTransferRequestedAddressTypes zengin = BankTransferRequestedAddressTypes._('zengin');
+static const BankTransferRequestedAddressTypes zengin = BankTransferRequestedAddressTypes$zengin._();
 
 static const List<BankTransferRequestedAddressTypes> values = [iban, sortCode, spei, zengin];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BankTransferRequestedAddressTypes$Unknown; } 
+@override String toString() => 'BankTransferRequestedAddressTypes($value)';
+
+ }
+@immutable final class BankTransferRequestedAddressTypes$iban extends BankTransferRequestedAddressTypes {const BankTransferRequestedAddressTypes$iban._();
+
+@override String get value => 'iban';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BankTransferRequestedAddressTypes$iban;
+
+@override int get hashCode => 'iban'.hashCode;
+
+ }
+@immutable final class BankTransferRequestedAddressTypes$sortCode extends BankTransferRequestedAddressTypes {const BankTransferRequestedAddressTypes$sortCode._();
+
+@override String get value => 'sort_code';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BankTransferRequestedAddressTypes$sortCode;
+
+@override int get hashCode => 'sort_code'.hashCode;
+
+ }
+@immutable final class BankTransferRequestedAddressTypes$spei extends BankTransferRequestedAddressTypes {const BankTransferRequestedAddressTypes$spei._();
+
+@override String get value => 'spei';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BankTransferRequestedAddressTypes$spei;
+
+@override int get hashCode => 'spei'.hashCode;
+
+ }
+@immutable final class BankTransferRequestedAddressTypes$zengin extends BankTransferRequestedAddressTypes {const BankTransferRequestedAddressTypes$zengin._();
+
+@override String get value => 'zengin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BankTransferRequestedAddressTypes$zengin;
+
+@override int get hashCode => 'zengin'.hashCode;
+
+ }
+@immutable final class BankTransferRequestedAddressTypes$Unknown extends BankTransferRequestedAddressTypes {const BankTransferRequestedAddressTypes$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BankTransferRequestedAddressTypes && other.value == value;
+    other is BankTransferRequestedAddressTypes$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BankTransferRequestedAddressTypes($value)';
 
  }
 /// Additional parameters for `bank_transfer` funding types

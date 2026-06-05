@@ -2,19 +2,18 @@
 // Source: #/components/schemas/AccessPolicyInitResp (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_policy_test_id.dart';/// The status of the policy test request.
-@immutable final class AccessStatus {const AccessStatus._(this.value);
+sealed class AccessStatus {const AccessStatus();
 
 factory AccessStatus.fromJson(String json) { return switch (json) {
   'success' => success,
-  _ => AccessStatus._(json),
+  _ => AccessStatus$Unknown(json),
 }; }
 
-static const AccessStatus success = AccessStatus._('success');
+static const AccessStatus success = AccessStatus$success._();
 
 static const List<AccessStatus> values = [success];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccessStatus$Unknown; } 
+@override String toString() => 'AccessStatus($value)';
+
+ }
+@immutable final class AccessStatus$success extends AccessStatus {const AccessStatus$success._();
+
+@override String get value => 'success';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessStatus$success;
+
+@override int get hashCode => 'success'.hashCode;
+
+ }
+@immutable final class AccessStatus$Unknown extends AccessStatus {const AccessStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccessStatus && other.value == value;
+    other is AccessStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccessStatus($value)';
 
  }
 @immutable final class AccessPolicyInitRespResult {const AccessPolicyInitRespResult({this.id, this.status, });

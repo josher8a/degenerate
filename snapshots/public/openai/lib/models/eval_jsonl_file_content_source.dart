@@ -2,19 +2,18 @@
 // Source: #/components/schemas/EvalJsonlFileContentSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_jsonl_file_content_source/eval_jsonl_file_content_source_content.dart';/// The type of jsonl source. Always `file_content`.
-@immutable final class EvalJsonlFileContentSourceType {const EvalJsonlFileContentSourceType._(this.value);
+sealed class EvalJsonlFileContentSourceType {const EvalJsonlFileContentSourceType();
 
 factory EvalJsonlFileContentSourceType.fromJson(String json) { return switch (json) {
   'file_content' => fileContent,
-  _ => EvalJsonlFileContentSourceType._(json),
+  _ => EvalJsonlFileContentSourceType$Unknown(json),
 }; }
 
-static const EvalJsonlFileContentSourceType fileContent = EvalJsonlFileContentSourceType._('file_content');
+static const EvalJsonlFileContentSourceType fileContent = EvalJsonlFileContentSourceType$fileContent._();
 
 static const List<EvalJsonlFileContentSourceType> values = [fileContent];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EvalJsonlFileContentSourceType$Unknown; } 
+@override String toString() => 'EvalJsonlFileContentSourceType($value)';
+
+ }
+@immutable final class EvalJsonlFileContentSourceType$fileContent extends EvalJsonlFileContentSourceType {const EvalJsonlFileContentSourceType$fileContent._();
+
+@override String get value => 'file_content';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EvalJsonlFileContentSourceType$fileContent;
+
+@override int get hashCode => 'file_content'.hashCode;
+
+ }
+@immutable final class EvalJsonlFileContentSourceType$Unknown extends EvalJsonlFileContentSourceType {const EvalJsonlFileContentSourceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EvalJsonlFileContentSourceType && other.value == value;
+    other is EvalJsonlFileContentSourceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EvalJsonlFileContentSourceType($value)';
 
  }
 @immutable final class EvalJsonlFileContentSource {const EvalJsonlFileContentSource({required this.content, this.type = EvalJsonlFileContentSourceType.fileContent, });

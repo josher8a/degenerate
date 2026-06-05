@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeSession
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens_variant2.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/output_audio_format.dart';import 'package:pub_openai/models/realtime_function_tool.dart';import 'package:pub_openai/models/realtime_session/input_audio_format.dart';import 'package:pub_openai/models/realtime_session/input_audio_noise_reduction.dart';import 'package:pub_openai/models/realtime_session_create_request/max_response_output_tokens.dart';import 'package:pub_openai/models/realtime_session_create_request/realtime_session_create_request_tracing.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/include.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_model.dart';import 'package:pub_openai/models/realtime_turn_detection.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/tracing_configuration.dart';import 'package:pub_openai/models/voice_ids_shared.dart';/// The object type. Always `realtime.session`.
-@immutable final class RealtimeSessionObject {const RealtimeSessionObject._(this.value);
+sealed class RealtimeSessionObject {const RealtimeSessionObject();
 
 factory RealtimeSessionObject.fromJson(String json) { return switch (json) {
   'realtime.session' => realtimeSession,
-  _ => RealtimeSessionObject._(json),
+  _ => RealtimeSessionObject$Unknown(json),
 }; }
 
-static const RealtimeSessionObject realtimeSession = RealtimeSessionObject._('realtime.session');
+static const RealtimeSessionObject realtimeSession = RealtimeSessionObject$realtimeSession._();
 
 static const List<RealtimeSessionObject> values = [realtimeSession];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeSessionObject$Unknown; } 
+@override String toString() => 'RealtimeSessionObject($value)';
+
+ }
+@immutable final class RealtimeSessionObject$realtimeSession extends RealtimeSessionObject {const RealtimeSessionObject$realtimeSession._();
+
+@override String get value => 'realtime.session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeSessionObject$realtimeSession;
+
+@override int get hashCode => 'realtime.session'.hashCode;
+
+ }
+@immutable final class RealtimeSessionObject$Unknown extends RealtimeSessionObject {const RealtimeSessionObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeSessionObject && other.value == value;
+    other is RealtimeSessionObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeSessionObject($value)';
 
  }
 /// Realtime session object for the beta interface.

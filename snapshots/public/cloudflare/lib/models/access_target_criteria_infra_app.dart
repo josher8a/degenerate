@@ -2,19 +2,18 @@
 // Source: #/components/schemas/AccessTargetCriteriaInfraApp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_port.dart';/// The communication protocol your application secures.
-@immutable final class AccessProtocolInfraApp {const AccessProtocolInfraApp._(this.value);
+sealed class AccessProtocolInfraApp {const AccessProtocolInfraApp();
 
 factory AccessProtocolInfraApp.fromJson(String json) { return switch (json) {
   'SSH' => ssh,
-  _ => AccessProtocolInfraApp._(json),
+  _ => AccessProtocolInfraApp$Unknown(json),
 }; }
 
-static const AccessProtocolInfraApp ssh = AccessProtocolInfraApp._('SSH');
+static const AccessProtocolInfraApp ssh = AccessProtocolInfraApp$ssh._();
 
 static const List<AccessProtocolInfraApp> values = [ssh];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccessProtocolInfraApp$Unknown; } 
+@override String toString() => 'AccessProtocolInfraApp($value)';
+
+ }
+@immutable final class AccessProtocolInfraApp$ssh extends AccessProtocolInfraApp {const AccessProtocolInfraApp$ssh._();
+
+@override String get value => 'SSH';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessProtocolInfraApp$ssh;
+
+@override int get hashCode => 'SSH'.hashCode;
+
+ }
+@immutable final class AccessProtocolInfraApp$Unknown extends AccessProtocolInfraApp {const AccessProtocolInfraApp$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccessProtocolInfraApp && other.value == value;
+    other is AccessProtocolInfraApp$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccessProtocolInfraApp($value)';
 
  }
 @immutable final class AccessTargetCriteriaInfraApp {const AccessTargetCriteriaInfraApp({required this.port, required this.targetAttributes, required this.protocol, });

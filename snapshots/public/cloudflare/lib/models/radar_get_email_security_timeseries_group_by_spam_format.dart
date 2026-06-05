@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupBySpamFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpamFormat {const RadarGetEmailSecurityTimeseriesGroupBySpamFormat._(this.value);
+sealed class RadarGetEmailSecurityTimeseriesGroupBySpamFormat {const RadarGetEmailSecurityTimeseriesGroupBySpamFormat();
 
 factory RadarGetEmailSecurityTimeseriesGroupBySpamFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetEmailSecurityTimeseriesGroupBySpamFormat._(json),
+  _ => RadarGetEmailSecurityTimeseriesGroupBySpamFormat$Unknown(json),
 }; }
 
-static const RadarGetEmailSecurityTimeseriesGroupBySpamFormat $json = RadarGetEmailSecurityTimeseriesGroupBySpamFormat._('JSON');
+static const RadarGetEmailSecurityTimeseriesGroupBySpamFormat $json = RadarGetEmailSecurityTimeseriesGroupBySpamFormat$$json._();
 
-static const RadarGetEmailSecurityTimeseriesGroupBySpamFormat csv = RadarGetEmailSecurityTimeseriesGroupBySpamFormat._('CSV');
+static const RadarGetEmailSecurityTimeseriesGroupBySpamFormat csv = RadarGetEmailSecurityTimeseriesGroupBySpamFormat$csv._();
 
 static const List<RadarGetEmailSecurityTimeseriesGroupBySpamFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecurityTimeseriesGroupBySpamFormat$Unknown; } 
+@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupBySpamFormat($value)';
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpamFormat$$json extends RadarGetEmailSecurityTimeseriesGroupBySpamFormat {const RadarGetEmailSecurityTimeseriesGroupBySpamFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupBySpamFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpamFormat$csv extends RadarGetEmailSecurityTimeseriesGroupBySpamFormat {const RadarGetEmailSecurityTimeseriesGroupBySpamFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupBySpamFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpamFormat$Unknown extends RadarGetEmailSecurityTimeseriesGroupBySpamFormat {const RadarGetEmailSecurityTimeseriesGroupBySpamFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecurityTimeseriesGroupBySpamFormat && other.value == value;
+    other is RadarGetEmailSecurityTimeseriesGroupBySpamFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupBySpamFormat($value)';
 
  }

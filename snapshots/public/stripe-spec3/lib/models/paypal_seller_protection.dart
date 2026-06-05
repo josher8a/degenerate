@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaypalSellerProtection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DisputeCategories {const DisputeCategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DisputeCategories {const DisputeCategories();
 
 factory DisputeCategories.fromJson(String json) { return switch (json) {
   'fraudulent' => fraudulent,
   'product_not_received' => productNotReceived,
-  _ => DisputeCategories._(json),
+  _ => DisputeCategories$Unknown(json),
 }; }
 
-static const DisputeCategories fraudulent = DisputeCategories._('fraudulent');
+static const DisputeCategories fraudulent = DisputeCategories$fraudulent._();
 
-static const DisputeCategories productNotReceived = DisputeCategories._('product_not_received');
+static const DisputeCategories productNotReceived = DisputeCategories$productNotReceived._();
 
 static const List<DisputeCategories> values = [fraudulent, productNotReceived];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,35 +24,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DisputeCategories && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is DisputeCategories$Unknown; } 
 @override String toString() => 'DisputeCategories($value)';
 
  }
+@immutable final class DisputeCategories$fraudulent extends DisputeCategories {const DisputeCategories$fraudulent._();
+
+@override String get value => 'fraudulent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeCategories$fraudulent;
+
+@override int get hashCode => 'fraudulent'.hashCode;
+
+ }
+@immutable final class DisputeCategories$productNotReceived extends DisputeCategories {const DisputeCategories$productNotReceived._();
+
+@override String get value => 'product_not_received';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeCategories$productNotReceived;
+
+@override int get hashCode => 'product_not_received'.hashCode;
+
+ }
+@immutable final class DisputeCategories$Unknown extends DisputeCategories {const DisputeCategories$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DisputeCategories$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Indicates whether the transaction is eligible for PayPal's seller protection.
-@immutable final class PaypalSellerProtectionStatus {const PaypalSellerProtectionStatus._(this.value);
+sealed class PaypalSellerProtectionStatus {const PaypalSellerProtectionStatus();
 
 factory PaypalSellerProtectionStatus.fromJson(String json) { return switch (json) {
   'eligible' => eligible,
   'not_eligible' => notEligible,
   'partially_eligible' => partiallyEligible,
-  _ => PaypalSellerProtectionStatus._(json),
+  _ => PaypalSellerProtectionStatus$Unknown(json),
 }; }
 
-static const PaypalSellerProtectionStatus eligible = PaypalSellerProtectionStatus._('eligible');
+static const PaypalSellerProtectionStatus eligible = PaypalSellerProtectionStatus$eligible._();
 
-static const PaypalSellerProtectionStatus notEligible = PaypalSellerProtectionStatus._('not_eligible');
+static const PaypalSellerProtectionStatus notEligible = PaypalSellerProtectionStatus$notEligible._();
 
-static const PaypalSellerProtectionStatus partiallyEligible = PaypalSellerProtectionStatus._('partially_eligible');
+static const PaypalSellerProtectionStatus partiallyEligible = PaypalSellerProtectionStatus$partiallyEligible._();
 
 static const List<PaypalSellerProtectionStatus> values = [eligible, notEligible, partiallyEligible];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -63,13 +84,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaypalSellerProtectionStatus$Unknown; } 
+@override String toString() => 'PaypalSellerProtectionStatus($value)';
+
+ }
+@immutable final class PaypalSellerProtectionStatus$eligible extends PaypalSellerProtectionStatus {const PaypalSellerProtectionStatus$eligible._();
+
+@override String get value => 'eligible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaypalSellerProtectionStatus$eligible;
+
+@override int get hashCode => 'eligible'.hashCode;
+
+ }
+@immutable final class PaypalSellerProtectionStatus$notEligible extends PaypalSellerProtectionStatus {const PaypalSellerProtectionStatus$notEligible._();
+
+@override String get value => 'not_eligible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaypalSellerProtectionStatus$notEligible;
+
+@override int get hashCode => 'not_eligible'.hashCode;
+
+ }
+@immutable final class PaypalSellerProtectionStatus$partiallyEligible extends PaypalSellerProtectionStatus {const PaypalSellerProtectionStatus$partiallyEligible._();
+
+@override String get value => 'partially_eligible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaypalSellerProtectionStatus$partiallyEligible;
+
+@override int get hashCode => 'partially_eligible'.hashCode;
+
+ }
+@immutable final class PaypalSellerProtectionStatus$Unknown extends PaypalSellerProtectionStatus {const PaypalSellerProtectionStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaypalSellerProtectionStatus && other.value == value;
+    other is PaypalSellerProtectionStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaypalSellerProtectionStatus($value)';
 
  }
 /// 

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhooksAlert
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_alert/webhooks_alert_dismisser.dart';@immutable final class WebhooksAlertState {const WebhooksAlertState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhooks_alert/webhooks_alert_dismisser.dart';sealed class WebhooksAlertState {const WebhooksAlertState();
 
 factory WebhooksAlertState.fromJson(String json) { return switch (json) {
   'auto_dismissed' => autoDismissed,
   'open' => open,
-  _ => WebhooksAlertState._(json),
+  _ => WebhooksAlertState$Unknown(json),
 }; }
 
-static const WebhooksAlertState autoDismissed = WebhooksAlertState._('auto_dismissed');
+static const WebhooksAlertState autoDismissed = WebhooksAlertState$autoDismissed._();
 
-static const WebhooksAlertState open = WebhooksAlertState._('open');
+static const WebhooksAlertState open = WebhooksAlertState$open._();
 
 static const List<WebhooksAlertState> values = [autoDismissed, open];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhooksAlertState$Unknown; } 
+@override String toString() => 'WebhooksAlertState($value)';
+
+ }
+@immutable final class WebhooksAlertState$autoDismissed extends WebhooksAlertState {const WebhooksAlertState$autoDismissed._();
+
+@override String get value => 'auto_dismissed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksAlertState$autoDismissed;
+
+@override int get hashCode => 'auto_dismissed'.hashCode;
+
+ }
+@immutable final class WebhooksAlertState$open extends WebhooksAlertState {const WebhooksAlertState$open._();
+
+@override String get value => 'open';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksAlertState$open;
+
+@override int get hashCode => 'open'.hashCode;
+
+ }
+@immutable final class WebhooksAlertState$Unknown extends WebhooksAlertState {const WebhooksAlertState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhooksAlertState && other.value == value;
+    other is WebhooksAlertState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhooksAlertState($value)';
 
  }
 /// The security alert of the vulnerable dependency.

@@ -5,28 +5,27 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// with the `status` field (`completed`, `cancelled`, `incomplete`,
 /// `failed`).
 /// 
-@immutable final class StatusDetailsType {const StatusDetailsType._(this.value);
+sealed class StatusDetailsType {const StatusDetailsType();
 
 factory StatusDetailsType.fromJson(String json) { return switch (json) {
   'completed' => completed,
   'cancelled' => cancelled,
   'failed' => failed,
   'incomplete' => incomplete,
-  _ => StatusDetailsType._(json),
+  _ => StatusDetailsType$Unknown(json),
 }; }
 
-static const StatusDetailsType completed = StatusDetailsType._('completed');
+static const StatusDetailsType completed = StatusDetailsType$completed._();
 
-static const StatusDetailsType cancelled = StatusDetailsType._('cancelled');
+static const StatusDetailsType cancelled = StatusDetailsType$cancelled._();
 
-static const StatusDetailsType failed = StatusDetailsType._('failed');
+static const StatusDetailsType failed = StatusDetailsType$failed._();
 
-static const StatusDetailsType incomplete = StatusDetailsType._('incomplete');
+static const StatusDetailsType incomplete = StatusDetailsType$incomplete._();
 
 static const List<StatusDetailsType> values = [completed, cancelled, failed, incomplete];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StatusDetailsType$Unknown; } 
+@override String toString() => 'StatusDetailsType($value)';
+
+ }
+@immutable final class StatusDetailsType$completed extends StatusDetailsType {const StatusDetailsType$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusDetailsType$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class StatusDetailsType$cancelled extends StatusDetailsType {const StatusDetailsType$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusDetailsType$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class StatusDetailsType$failed extends StatusDetailsType {const StatusDetailsType$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusDetailsType$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class StatusDetailsType$incomplete extends StatusDetailsType {const StatusDetailsType$incomplete._();
+
+@override String get value => 'incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusDetailsType$incomplete;
+
+@override int get hashCode => 'incomplete'.hashCode;
+
+ }
+@immutable final class StatusDetailsType$Unknown extends StatusDetailsType {const StatusDetailsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StatusDetailsType && other.value == value;
+    other is StatusDetailsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StatusDetailsType($value)';
 
  }
 /// The reason the Response did not complete. For a `cancelled` Response,
@@ -52,28 +92,27 @@ bool get isUnknown { return !values.contains(this); }
 /// `incomplete` Response, one of `max_output_tokens` or `content_filter`
 /// (the server-side safety filter activated and cut off the response).
 /// 
-@immutable final class StatusDetailsReason {const StatusDetailsReason._(this.value);
+sealed class StatusDetailsReason {const StatusDetailsReason();
 
 factory StatusDetailsReason.fromJson(String json) { return switch (json) {
   'turn_detected' => turnDetected,
   'client_cancelled' => clientCancelled,
   'max_output_tokens' => maxOutputTokens,
   'content_filter' => contentFilter,
-  _ => StatusDetailsReason._(json),
+  _ => StatusDetailsReason$Unknown(json),
 }; }
 
-static const StatusDetailsReason turnDetected = StatusDetailsReason._('turn_detected');
+static const StatusDetailsReason turnDetected = StatusDetailsReason$turnDetected._();
 
-static const StatusDetailsReason clientCancelled = StatusDetailsReason._('client_cancelled');
+static const StatusDetailsReason clientCancelled = StatusDetailsReason$clientCancelled._();
 
-static const StatusDetailsReason maxOutputTokens = StatusDetailsReason._('max_output_tokens');
+static const StatusDetailsReason maxOutputTokens = StatusDetailsReason$maxOutputTokens._();
 
-static const StatusDetailsReason contentFilter = StatusDetailsReason._('content_filter');
+static const StatusDetailsReason contentFilter = StatusDetailsReason$contentFilter._();
 
 static const List<StatusDetailsReason> values = [turnDetected, clientCancelled, maxOutputTokens, contentFilter];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -84,13 +123,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StatusDetailsReason$Unknown; } 
+@override String toString() => 'StatusDetailsReason($value)';
+
+ }
+@immutable final class StatusDetailsReason$turnDetected extends StatusDetailsReason {const StatusDetailsReason$turnDetected._();
+
+@override String get value => 'turn_detected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusDetailsReason$turnDetected;
+
+@override int get hashCode => 'turn_detected'.hashCode;
+
+ }
+@immutable final class StatusDetailsReason$clientCancelled extends StatusDetailsReason {const StatusDetailsReason$clientCancelled._();
+
+@override String get value => 'client_cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusDetailsReason$clientCancelled;
+
+@override int get hashCode => 'client_cancelled'.hashCode;
+
+ }
+@immutable final class StatusDetailsReason$maxOutputTokens extends StatusDetailsReason {const StatusDetailsReason$maxOutputTokens._();
+
+@override String get value => 'max_output_tokens';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusDetailsReason$maxOutputTokens;
+
+@override int get hashCode => 'max_output_tokens'.hashCode;
+
+ }
+@immutable final class StatusDetailsReason$contentFilter extends StatusDetailsReason {const StatusDetailsReason$contentFilter._();
+
+@override String get value => 'content_filter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusDetailsReason$contentFilter;
+
+@override int get hashCode => 'content_filter'.hashCode;
+
+ }
+@immutable final class StatusDetailsReason$Unknown extends StatusDetailsReason {const StatusDetailsReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StatusDetailsReason && other.value == value;
+    other is StatusDetailsReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StatusDetailsReason($value)';
 
  }
 /// Additional details about the status.

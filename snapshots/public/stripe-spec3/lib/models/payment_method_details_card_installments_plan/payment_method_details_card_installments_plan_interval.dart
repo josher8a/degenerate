@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// For `fixed_count` installment plans, this is the interval between installment payments your customer will make to their credit card.
 /// One of `month`.
-@immutable final class PaymentMethodDetailsCardInstallmentsPlanInterval {const PaymentMethodDetailsCardInstallmentsPlanInterval._(this.value);
+sealed class PaymentMethodDetailsCardInstallmentsPlanInterval {const PaymentMethodDetailsCardInstallmentsPlanInterval();
 
 factory PaymentMethodDetailsCardInstallmentsPlanInterval.fromJson(String json) { return switch (json) {
   'month' => month,
-  _ => PaymentMethodDetailsCardInstallmentsPlanInterval._(json),
+  _ => PaymentMethodDetailsCardInstallmentsPlanInterval$Unknown(json),
 }; }
 
-static const PaymentMethodDetailsCardInstallmentsPlanInterval month = PaymentMethodDetailsCardInstallmentsPlanInterval._('month');
+static const PaymentMethodDetailsCardInstallmentsPlanInterval month = PaymentMethodDetailsCardInstallmentsPlanInterval$month._();
 
 static const List<PaymentMethodDetailsCardInstallmentsPlanInterval> values = [month];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,12 +22,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentMethodDetailsCardInstallmentsPlanInterval$Unknown; } 
+@override String toString() => 'PaymentMethodDetailsCardInstallmentsPlanInterval($value)';
+
+ }
+@immutable final class PaymentMethodDetailsCardInstallmentsPlanInterval$month extends PaymentMethodDetailsCardInstallmentsPlanInterval {const PaymentMethodDetailsCardInstallmentsPlanInterval$month._();
+
+@override String get value => 'month';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsCardInstallmentsPlanInterval$month;
+
+@override int get hashCode => 'month'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsCardInstallmentsPlanInterval$Unknown extends PaymentMethodDetailsCardInstallmentsPlanInterval {const PaymentMethodDetailsCardInstallmentsPlanInterval$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentMethodDetailsCardInstallmentsPlanInterval && other.value == value;
+    other is PaymentMethodDetailsCardInstallmentsPlanInterval$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentMethodDetailsCardInstallmentsPlanInterval($value)';
 
  }

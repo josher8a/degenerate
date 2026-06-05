@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_error/realtime_beta_server_event_error_error.dart';/// The event type, must be `error`.
-@immutable final class RealtimeBetaServerEventErrorType {const RealtimeBetaServerEventErrorType._(this.value);
+sealed class RealtimeBetaServerEventErrorType {const RealtimeBetaServerEventErrorType();
 
 factory RealtimeBetaServerEventErrorType.fromJson(String json) { return switch (json) {
   'error' => error,
-  _ => RealtimeBetaServerEventErrorType._(json),
+  _ => RealtimeBetaServerEventErrorType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventErrorType error = RealtimeBetaServerEventErrorType._('error');
+static const RealtimeBetaServerEventErrorType error = RealtimeBetaServerEventErrorType$error._();
 
 static const List<RealtimeBetaServerEventErrorType> values = [error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventErrorType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventErrorType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventErrorType$error extends RealtimeBetaServerEventErrorType {const RealtimeBetaServerEventErrorType$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventErrorType$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventErrorType$Unknown extends RealtimeBetaServerEventErrorType {const RealtimeBetaServerEventErrorType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventErrorType && other.value == value;
+    other is RealtimeBetaServerEventErrorType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventErrorType($value)';
 
  }
 /// Returned when an error occurs, which could be a client problem or a server

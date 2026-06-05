@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ChatCompletionResponseMessage (inline: Annotations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_response_message/url_citation.dart';/// The type of the URL citation. Always `url_citation`.
-@immutable final class AnnotationsType {const AnnotationsType._(this.value);
+sealed class AnnotationsType {const AnnotationsType();
 
 factory AnnotationsType.fromJson(String json) { return switch (json) {
   'url_citation' => urlCitation,
-  _ => AnnotationsType._(json),
+  _ => AnnotationsType$Unknown(json),
 }; }
 
-static const AnnotationsType urlCitation = AnnotationsType._('url_citation');
+static const AnnotationsType urlCitation = AnnotationsType$urlCitation._();
 
 static const List<AnnotationsType> values = [urlCitation];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AnnotationsType$Unknown; } 
+@override String toString() => 'AnnotationsType($value)';
+
+ }
+@immutable final class AnnotationsType$urlCitation extends AnnotationsType {const AnnotationsType$urlCitation._();
+
+@override String get value => 'url_citation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AnnotationsType$urlCitation;
+
+@override int get hashCode => 'url_citation'.hashCode;
+
+ }
+@immutable final class AnnotationsType$Unknown extends AnnotationsType {const AnnotationsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AnnotationsType && other.value == value;
+    other is AnnotationsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AnnotationsType($value)';
 
  }
 /// A URL citation when using web search.

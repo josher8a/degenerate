@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookPullRequestDequeued
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_dequeued/webhook_pull_request_dequeued_pull_request.dart';@immutable final class WebhookPullRequestDequeuedAction {const WebhookPullRequestDequeuedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_dequeued/webhook_pull_request_dequeued_pull_request.dart';sealed class WebhookPullRequestDequeuedAction {const WebhookPullRequestDequeuedAction();
 
 factory WebhookPullRequestDequeuedAction.fromJson(String json) { return switch (json) {
   'dequeued' => dequeued,
-  _ => WebhookPullRequestDequeuedAction._(json),
+  _ => WebhookPullRequestDequeuedAction$Unknown(json),
 }; }
 
-static const WebhookPullRequestDequeuedAction dequeued = WebhookPullRequestDequeuedAction._('dequeued');
+static const WebhookPullRequestDequeuedAction dequeued = WebhookPullRequestDequeuedAction$dequeued._();
 
 static const List<WebhookPullRequestDequeuedAction> values = [dequeued];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,16 +20,30 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookPullRequestDequeuedAction && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is WebhookPullRequestDequeuedAction$Unknown; } 
 @override String toString() => 'WebhookPullRequestDequeuedAction($value)';
 
  }
-@immutable final class WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason._(this.value);
+@immutable final class WebhookPullRequestDequeuedAction$dequeued extends WebhookPullRequestDequeuedAction {const WebhookPullRequestDequeuedAction$dequeued._();
+
+@override String get value => 'dequeued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestDequeuedAction$dequeued;
+
+@override int get hashCode => 'dequeued'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestDequeuedAction$Unknown extends WebhookPullRequestDequeuedAction {const WebhookPullRequestDequeuedAction$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookPullRequestDequeuedAction$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason();
 
 factory WebhookPullRequestDequeuedReason.fromJson(String json) { return switch (json) {
   'UNKNOWN_REMOVAL_REASON' => unknownRemovalReason,
@@ -45,37 +58,36 @@ factory WebhookPullRequestDequeuedReason.fromJson(String json) { return switch (
   'BRANCH_PROTECTIONS' => branchProtections,
   'GIT_TREE_INVALID' => gitTreeInvalid,
   'INVALID_MERGE_COMMIT' => invalidMergeCommit,
-  _ => WebhookPullRequestDequeuedReason._(json),
+  _ => WebhookPullRequestDequeuedReason$Unknown(json),
 }; }
 
-static const WebhookPullRequestDequeuedReason unknownRemovalReason = WebhookPullRequestDequeuedReason._('UNKNOWN_REMOVAL_REASON');
+static const WebhookPullRequestDequeuedReason unknownRemovalReason = WebhookPullRequestDequeuedReason$unknownRemovalReason._();
 
-static const WebhookPullRequestDequeuedReason manual = WebhookPullRequestDequeuedReason._('MANUAL');
+static const WebhookPullRequestDequeuedReason manual = WebhookPullRequestDequeuedReason$manual._();
 
-static const WebhookPullRequestDequeuedReason merge = WebhookPullRequestDequeuedReason._('MERGE');
+static const WebhookPullRequestDequeuedReason merge = WebhookPullRequestDequeuedReason$merge._();
 
-static const WebhookPullRequestDequeuedReason mergeConflict = WebhookPullRequestDequeuedReason._('MERGE_CONFLICT');
+static const WebhookPullRequestDequeuedReason mergeConflict = WebhookPullRequestDequeuedReason$mergeConflict._();
 
-static const WebhookPullRequestDequeuedReason ciFailure = WebhookPullRequestDequeuedReason._('CI_FAILURE');
+static const WebhookPullRequestDequeuedReason ciFailure = WebhookPullRequestDequeuedReason$ciFailure._();
 
-static const WebhookPullRequestDequeuedReason ciTimeout = WebhookPullRequestDequeuedReason._('CI_TIMEOUT');
+static const WebhookPullRequestDequeuedReason ciTimeout = WebhookPullRequestDequeuedReason$ciTimeout._();
 
-static const WebhookPullRequestDequeuedReason alreadyMerged = WebhookPullRequestDequeuedReason._('ALREADY_MERGED');
+static const WebhookPullRequestDequeuedReason alreadyMerged = WebhookPullRequestDequeuedReason$alreadyMerged._();
 
-static const WebhookPullRequestDequeuedReason queueCleared = WebhookPullRequestDequeuedReason._('QUEUE_CLEARED');
+static const WebhookPullRequestDequeuedReason queueCleared = WebhookPullRequestDequeuedReason$queueCleared._();
 
-static const WebhookPullRequestDequeuedReason rollBack = WebhookPullRequestDequeuedReason._('ROLL_BACK');
+static const WebhookPullRequestDequeuedReason rollBack = WebhookPullRequestDequeuedReason$rollBack._();
 
-static const WebhookPullRequestDequeuedReason branchProtections = WebhookPullRequestDequeuedReason._('BRANCH_PROTECTIONS');
+static const WebhookPullRequestDequeuedReason branchProtections = WebhookPullRequestDequeuedReason$branchProtections._();
 
-static const WebhookPullRequestDequeuedReason gitTreeInvalid = WebhookPullRequestDequeuedReason._('GIT_TREE_INVALID');
+static const WebhookPullRequestDequeuedReason gitTreeInvalid = WebhookPullRequestDequeuedReason$gitTreeInvalid._();
 
-static const WebhookPullRequestDequeuedReason invalidMergeCommit = WebhookPullRequestDequeuedReason._('INVALID_MERGE_COMMIT');
+static const WebhookPullRequestDequeuedReason invalidMergeCommit = WebhookPullRequestDequeuedReason$invalidMergeCommit._();
 
 static const List<WebhookPullRequestDequeuedReason> values = [unknownRemovalReason, manual, merge, mergeConflict, ciFailure, ciTimeout, alreadyMerged, queueCleared, rollBack, branchProtections, gitTreeInvalid, invalidMergeCommit];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -94,13 +106,126 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookPullRequestDequeuedReason$Unknown; } 
+@override String toString() => 'WebhookPullRequestDequeuedReason($value)';
+
+ }
+@immutable final class WebhookPullRequestDequeuedReason$unknownRemovalReason extends WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason$unknownRemovalReason._();
+
+@override String get value => 'UNKNOWN_REMOVAL_REASON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestDequeuedReason$unknownRemovalReason;
+
+@override int get hashCode => 'UNKNOWN_REMOVAL_REASON'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestDequeuedReason$manual extends WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason$manual._();
+
+@override String get value => 'MANUAL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestDequeuedReason$manual;
+
+@override int get hashCode => 'MANUAL'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestDequeuedReason$merge extends WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason$merge._();
+
+@override String get value => 'MERGE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestDequeuedReason$merge;
+
+@override int get hashCode => 'MERGE'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestDequeuedReason$mergeConflict extends WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason$mergeConflict._();
+
+@override String get value => 'MERGE_CONFLICT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestDequeuedReason$mergeConflict;
+
+@override int get hashCode => 'MERGE_CONFLICT'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestDequeuedReason$ciFailure extends WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason$ciFailure._();
+
+@override String get value => 'CI_FAILURE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestDequeuedReason$ciFailure;
+
+@override int get hashCode => 'CI_FAILURE'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestDequeuedReason$ciTimeout extends WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason$ciTimeout._();
+
+@override String get value => 'CI_TIMEOUT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestDequeuedReason$ciTimeout;
+
+@override int get hashCode => 'CI_TIMEOUT'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestDequeuedReason$alreadyMerged extends WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason$alreadyMerged._();
+
+@override String get value => 'ALREADY_MERGED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestDequeuedReason$alreadyMerged;
+
+@override int get hashCode => 'ALREADY_MERGED'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestDequeuedReason$queueCleared extends WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason$queueCleared._();
+
+@override String get value => 'QUEUE_CLEARED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestDequeuedReason$queueCleared;
+
+@override int get hashCode => 'QUEUE_CLEARED'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestDequeuedReason$rollBack extends WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason$rollBack._();
+
+@override String get value => 'ROLL_BACK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestDequeuedReason$rollBack;
+
+@override int get hashCode => 'ROLL_BACK'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestDequeuedReason$branchProtections extends WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason$branchProtections._();
+
+@override String get value => 'BRANCH_PROTECTIONS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestDequeuedReason$branchProtections;
+
+@override int get hashCode => 'BRANCH_PROTECTIONS'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestDequeuedReason$gitTreeInvalid extends WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason$gitTreeInvalid._();
+
+@override String get value => 'GIT_TREE_INVALID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestDequeuedReason$gitTreeInvalid;
+
+@override int get hashCode => 'GIT_TREE_INVALID'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestDequeuedReason$invalidMergeCommit extends WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason$invalidMergeCommit._();
+
+@override String get value => 'INVALID_MERGE_COMMIT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestDequeuedReason$invalidMergeCommit;
+
+@override int get hashCode => 'INVALID_MERGE_COMMIT'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestDequeuedReason$Unknown extends WebhookPullRequestDequeuedReason {const WebhookPullRequestDequeuedReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookPullRequestDequeuedReason && other.value == value;
+    other is WebhookPullRequestDequeuedReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookPullRequestDequeuedReason($value)';
 
  }
 @immutable final class WebhookPullRequestDequeued {const WebhookPullRequestDequeued({required this.action, required this.number, required this.pullRequest, required this.reason, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

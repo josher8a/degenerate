@@ -2,22 +2,21 @@
 // Source: #/components/schemas/DependabotSetRepositoryAccessDefaultLevelRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default repository access level for Dependabot updates.
-@immutable final class DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel {const DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel._(this.value);
+sealed class DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel {const DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel();
 
 factory DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel.fromJson(String json) { return switch (json) {
   'public' => public,
   'internal' => internal,
-  _ => DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel._(json),
+  _ => DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel$Unknown(json),
 }; }
 
-static const DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel public = DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel._('public');
+static const DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel public = DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel$public._();
 
-static const DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel internal = DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel._('internal');
+static const DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel internal = DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel$internal._();
 
 static const List<DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel> values = [public, internal];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel$Unknown; } 
+@override String toString() => 'DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel($value)';
+
+ }
+@immutable final class DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel$public extends DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel {const DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel$public._();
+
+@override String get value => 'public';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel$public;
+
+@override int get hashCode => 'public'.hashCode;
+
+ }
+@immutable final class DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel$internal extends DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel {const DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel$internal._();
+
+@override String get value => 'internal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel$internal;
+
+@override int get hashCode => 'internal'.hashCode;
+
+ }
+@immutable final class DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel$Unknown extends DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel {const DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel && other.value == value;
+    other is DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DependabotSetRepositoryAccessDefaultLevelRequestDefaultLevel($value)';
 
  }
 @immutable final class DependabotSetRepositoryAccessDefaultLevelRequest {const DependabotSetRepositoryAccessDefaultLevelRequest({required this.defaultLevel});

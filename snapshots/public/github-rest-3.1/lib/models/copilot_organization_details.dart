@@ -2,25 +2,24 @@
 // Source: #/components/schemas/CopilotOrganizationDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_organization_seat_breakdown.dart';/// The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
-@immutable final class PublicCodeSuggestions {const PublicCodeSuggestions._(this.value);
+sealed class PublicCodeSuggestions {const PublicCodeSuggestions();
 
 factory PublicCodeSuggestions.fromJson(String json) { return switch (json) {
   'allow' => allow,
   'block' => block,
   'unconfigured' => unconfigured,
-  _ => PublicCodeSuggestions._(json),
+  _ => PublicCodeSuggestions$Unknown(json),
 }; }
 
-static const PublicCodeSuggestions allow = PublicCodeSuggestions._('allow');
+static const PublicCodeSuggestions allow = PublicCodeSuggestions$allow._();
 
-static const PublicCodeSuggestions block = PublicCodeSuggestions._('block');
+static const PublicCodeSuggestions block = PublicCodeSuggestions$block._();
 
-static const PublicCodeSuggestions unconfigured = PublicCodeSuggestions._('unconfigured');
+static const PublicCodeSuggestions unconfigured = PublicCodeSuggestions$unconfigured._();
 
 static const List<PublicCodeSuggestions> values = [allow, block, unconfigured];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,35 +29,66 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PublicCodeSuggestions && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PublicCodeSuggestions$Unknown; } 
 @override String toString() => 'PublicCodeSuggestions($value)';
 
  }
+@immutable final class PublicCodeSuggestions$allow extends PublicCodeSuggestions {const PublicCodeSuggestions$allow._();
+
+@override String get value => 'allow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PublicCodeSuggestions$allow;
+
+@override int get hashCode => 'allow'.hashCode;
+
+ }
+@immutable final class PublicCodeSuggestions$block extends PublicCodeSuggestions {const PublicCodeSuggestions$block._();
+
+@override String get value => 'block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PublicCodeSuggestions$block;
+
+@override int get hashCode => 'block'.hashCode;
+
+ }
+@immutable final class PublicCodeSuggestions$unconfigured extends PublicCodeSuggestions {const PublicCodeSuggestions$unconfigured._();
+
+@override String get value => 'unconfigured';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PublicCodeSuggestions$unconfigured;
+
+@override int get hashCode => 'unconfigured'.hashCode;
+
+ }
+@immutable final class PublicCodeSuggestions$Unknown extends PublicCodeSuggestions {const PublicCodeSuggestions$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PublicCodeSuggestions$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The organization policy for allowing or disallowing Copilot Chat in the IDE.
-@immutable final class IdeChat {const IdeChat._(this.value);
+sealed class IdeChat {const IdeChat();
 
 factory IdeChat.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'unconfigured' => unconfigured,
-  _ => IdeChat._(json),
+  _ => IdeChat$Unknown(json),
 }; }
 
-static const IdeChat enabled = IdeChat._('enabled');
+static const IdeChat enabled = IdeChat$enabled._();
 
-static const IdeChat disabled = IdeChat._('disabled');
+static const IdeChat disabled = IdeChat$disabled._();
 
-static const IdeChat unconfigured = IdeChat._('unconfigured');
+static const IdeChat unconfigured = IdeChat$unconfigured._();
 
 static const List<IdeChat> values = [enabled, disabled, unconfigured];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,35 +98,66 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IdeChat && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IdeChat$Unknown; } 
 @override String toString() => 'IdeChat($value)';
 
  }
+@immutable final class IdeChat$enabled extends IdeChat {const IdeChat$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IdeChat$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class IdeChat$disabled extends IdeChat {const IdeChat$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IdeChat$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class IdeChat$unconfigured extends IdeChat {const IdeChat$unconfigured._();
+
+@override String get value => 'unconfigured';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IdeChat$unconfigured;
+
+@override int get hashCode => 'unconfigured'.hashCode;
+
+ }
+@immutable final class IdeChat$Unknown extends IdeChat {const IdeChat$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IdeChat$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The organization policy for allowing or disallowing Copilot features on GitHub.com.
-@immutable final class PlatformChat {const PlatformChat._(this.value);
+sealed class PlatformChat {const PlatformChat();
 
 factory PlatformChat.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'unconfigured' => unconfigured,
-  _ => PlatformChat._(json),
+  _ => PlatformChat$Unknown(json),
 }; }
 
-static const PlatformChat enabled = PlatformChat._('enabled');
+static const PlatformChat enabled = PlatformChat$enabled._();
 
-static const PlatformChat disabled = PlatformChat._('disabled');
+static const PlatformChat disabled = PlatformChat$disabled._();
 
-static const PlatformChat unconfigured = PlatformChat._('unconfigured');
+static const PlatformChat unconfigured = PlatformChat$unconfigured._();
 
 static const List<PlatformChat> values = [enabled, disabled, unconfigured];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -106,35 +167,66 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PlatformChat && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PlatformChat$Unknown; } 
 @override String toString() => 'PlatformChat($value)';
 
  }
+@immutable final class PlatformChat$enabled extends PlatformChat {const PlatformChat$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PlatformChat$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class PlatformChat$disabled extends PlatformChat {const PlatformChat$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PlatformChat$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class PlatformChat$unconfigured extends PlatformChat {const PlatformChat$unconfigured._();
+
+@override String get value => 'unconfigured';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PlatformChat$unconfigured;
+
+@override int get hashCode => 'unconfigured'.hashCode;
+
+ }
+@immutable final class PlatformChat$Unknown extends PlatformChat {const PlatformChat$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PlatformChat$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The organization policy for allowing or disallowing Copilot CLI.
-@immutable final class Cli {const Cli._(this.value);
+sealed class Cli {const Cli();
 
 factory Cli.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'unconfigured' => unconfigured,
-  _ => Cli._(json),
+  _ => Cli$Unknown(json),
 }; }
 
-static const Cli enabled = Cli._('enabled');
+static const Cli enabled = Cli$enabled._();
 
-static const Cli disabled = Cli._('disabled');
+static const Cli disabled = Cli$disabled._();
 
-static const Cli unconfigured = Cli._('unconfigured');
+static const Cli unconfigured = Cli$unconfigured._();
 
 static const List<Cli> values = [enabled, disabled, unconfigured];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -144,38 +236,69 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Cli && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Cli$Unknown; } 
 @override String toString() => 'Cli($value)';
 
  }
+@immutable final class Cli$enabled extends Cli {const Cli$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Cli$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class Cli$disabled extends Cli {const Cli$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Cli$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class Cli$unconfigured extends Cli {const Cli$unconfigured._();
+
+@override String get value => 'unconfigured';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Cli$unconfigured;
+
+@override int get hashCode => 'unconfigured'.hashCode;
+
+ }
+@immutable final class Cli$Unknown extends Cli {const Cli$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Cli$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The mode of assigning new seats.
-@immutable final class SeatManagementSetting {const SeatManagementSetting._(this.value);
+sealed class SeatManagementSetting {const SeatManagementSetting();
 
 factory SeatManagementSetting.fromJson(String json) { return switch (json) {
   'assign_all' => assignAll,
   'assign_selected' => assignSelected,
   'disabled' => disabled,
   'unconfigured' => unconfigured,
-  _ => SeatManagementSetting._(json),
+  _ => SeatManagementSetting$Unknown(json),
 }; }
 
-static const SeatManagementSetting assignAll = SeatManagementSetting._('assign_all');
+static const SeatManagementSetting assignAll = SeatManagementSetting$assignAll._();
 
-static const SeatManagementSetting assignSelected = SeatManagementSetting._('assign_selected');
+static const SeatManagementSetting assignSelected = SeatManagementSetting$assignSelected._();
 
-static const SeatManagementSetting disabled = SeatManagementSetting._('disabled');
+static const SeatManagementSetting disabled = SeatManagementSetting$disabled._();
 
-static const SeatManagementSetting unconfigured = SeatManagementSetting._('unconfigured');
+static const SeatManagementSetting unconfigured = SeatManagementSetting$unconfigured._();
 
 static const List<SeatManagementSetting> values = [assignAll, assignSelected, disabled, unconfigured];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -186,32 +309,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SeatManagementSetting && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SeatManagementSetting$Unknown; } 
 @override String toString() => 'SeatManagementSetting($value)';
 
  }
+@immutable final class SeatManagementSetting$assignAll extends SeatManagementSetting {const SeatManagementSetting$assignAll._();
+
+@override String get value => 'assign_all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SeatManagementSetting$assignAll;
+
+@override int get hashCode => 'assign_all'.hashCode;
+
+ }
+@immutable final class SeatManagementSetting$assignSelected extends SeatManagementSetting {const SeatManagementSetting$assignSelected._();
+
+@override String get value => 'assign_selected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SeatManagementSetting$assignSelected;
+
+@override int get hashCode => 'assign_selected'.hashCode;
+
+ }
+@immutable final class SeatManagementSetting$disabled extends SeatManagementSetting {const SeatManagementSetting$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SeatManagementSetting$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class SeatManagementSetting$unconfigured extends SeatManagementSetting {const SeatManagementSetting$unconfigured._();
+
+@override String get value => 'unconfigured';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SeatManagementSetting$unconfigured;
+
+@override int get hashCode => 'unconfigured'.hashCode;
+
+ }
+@immutable final class SeatManagementSetting$Unknown extends SeatManagementSetting {const SeatManagementSetting$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SeatManagementSetting$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The Copilot plan of the organization, or the parent enterprise, when applicable.
-@immutable final class CopilotOrganizationDetailsPlanType {const CopilotOrganizationDetailsPlanType._(this.value);
+sealed class CopilotOrganizationDetailsPlanType {const CopilotOrganizationDetailsPlanType();
 
 factory CopilotOrganizationDetailsPlanType.fromJson(String json) { return switch (json) {
   'business' => business,
   'enterprise' => enterprise,
-  _ => CopilotOrganizationDetailsPlanType._(json),
+  _ => CopilotOrganizationDetailsPlanType$Unknown(json),
 }; }
 
-static const CopilotOrganizationDetailsPlanType business = CopilotOrganizationDetailsPlanType._('business');
+static const CopilotOrganizationDetailsPlanType business = CopilotOrganizationDetailsPlanType$business._();
 
-static const CopilotOrganizationDetailsPlanType enterprise = CopilotOrganizationDetailsPlanType._('enterprise');
+static const CopilotOrganizationDetailsPlanType enterprise = CopilotOrganizationDetailsPlanType$enterprise._();
 
 static const List<CopilotOrganizationDetailsPlanType> values = [business, enterprise];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -220,13 +383,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CopilotOrganizationDetailsPlanType$Unknown; } 
+@override String toString() => 'CopilotOrganizationDetailsPlanType($value)';
+
+ }
+@immutable final class CopilotOrganizationDetailsPlanType$business extends CopilotOrganizationDetailsPlanType {const CopilotOrganizationDetailsPlanType$business._();
+
+@override String get value => 'business';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CopilotOrganizationDetailsPlanType$business;
+
+@override int get hashCode => 'business'.hashCode;
+
+ }
+@immutable final class CopilotOrganizationDetailsPlanType$enterprise extends CopilotOrganizationDetailsPlanType {const CopilotOrganizationDetailsPlanType$enterprise._();
+
+@override String get value => 'enterprise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CopilotOrganizationDetailsPlanType$enterprise;
+
+@override int get hashCode => 'enterprise'.hashCode;
+
+ }
+@immutable final class CopilotOrganizationDetailsPlanType$Unknown extends CopilotOrganizationDetailsPlanType {const CopilotOrganizationDetailsPlanType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CopilotOrganizationDetailsPlanType && other.value == value;
+    other is CopilotOrganizationDetailsPlanType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CopilotOrganizationDetailsPlanType($value)';
 
  }
 /// Information about the seat breakdown and policies set for an organization with a Copilot Business or Copilot Enterprise subscription.

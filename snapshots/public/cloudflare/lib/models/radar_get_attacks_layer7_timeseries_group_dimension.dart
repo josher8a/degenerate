@@ -2,7 +2,7 @@
 // Source: #/components/schemas/RadarGetAttacksLayer7TimeseriesGroupDimension
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
-@immutable final class RadarGetAttacksLayer7TimeseriesGroupDimension {const RadarGetAttacksLayer7TimeseriesGroupDimension._(this.value);
+sealed class RadarGetAttacksLayer7TimeseriesGroupDimension {const RadarGetAttacksLayer7TimeseriesGroupDimension();
 
 factory RadarGetAttacksLayer7TimeseriesGroupDimension.fromJson(String json) { return switch (json) {
   'HTTP_METHOD' => httpMethod,
@@ -12,27 +12,26 @@ factory RadarGetAttacksLayer7TimeseriesGroupDimension.fromJson(String json) { re
   'MITIGATION_PRODUCT' => mitigationProduct,
   'VERTICAL' => vertical,
   'INDUSTRY' => industry,
-  _ => RadarGetAttacksLayer7TimeseriesGroupDimension._(json),
+  _ => RadarGetAttacksLayer7TimeseriesGroupDimension$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer7TimeseriesGroupDimension httpMethod = RadarGetAttacksLayer7TimeseriesGroupDimension._('HTTP_METHOD');
+static const RadarGetAttacksLayer7TimeseriesGroupDimension httpMethod = RadarGetAttacksLayer7TimeseriesGroupDimension$httpMethod._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupDimension httpVersion = RadarGetAttacksLayer7TimeseriesGroupDimension._('HTTP_VERSION');
+static const RadarGetAttacksLayer7TimeseriesGroupDimension httpVersion = RadarGetAttacksLayer7TimeseriesGroupDimension$httpVersion._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupDimension ipVersion = RadarGetAttacksLayer7TimeseriesGroupDimension._('IP_VERSION');
+static const RadarGetAttacksLayer7TimeseriesGroupDimension ipVersion = RadarGetAttacksLayer7TimeseriesGroupDimension$ipVersion._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupDimension managedRules = RadarGetAttacksLayer7TimeseriesGroupDimension._('MANAGED_RULES');
+static const RadarGetAttacksLayer7TimeseriesGroupDimension managedRules = RadarGetAttacksLayer7TimeseriesGroupDimension$managedRules._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupDimension mitigationProduct = RadarGetAttacksLayer7TimeseriesGroupDimension._('MITIGATION_PRODUCT');
+static const RadarGetAttacksLayer7TimeseriesGroupDimension mitigationProduct = RadarGetAttacksLayer7TimeseriesGroupDimension$mitigationProduct._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupDimension vertical = RadarGetAttacksLayer7TimeseriesGroupDimension._('VERTICAL');
+static const RadarGetAttacksLayer7TimeseriesGroupDimension vertical = RadarGetAttacksLayer7TimeseriesGroupDimension$vertical._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupDimension industry = RadarGetAttacksLayer7TimeseriesGroupDimension._('INDUSTRY');
+static const RadarGetAttacksLayer7TimeseriesGroupDimension industry = RadarGetAttacksLayer7TimeseriesGroupDimension$industry._();
 
 static const List<RadarGetAttacksLayer7TimeseriesGroupDimension> values = [httpMethod, httpVersion, ipVersion, managedRules, mitigationProduct, vertical, industry];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -46,12 +45,80 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer7TimeseriesGroupDimension$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupDimension($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupDimension$httpMethod extends RadarGetAttacksLayer7TimeseriesGroupDimension {const RadarGetAttacksLayer7TimeseriesGroupDimension$httpMethod._();
+
+@override String get value => 'HTTP_METHOD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupDimension$httpMethod;
+
+@override int get hashCode => 'HTTP_METHOD'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupDimension$httpVersion extends RadarGetAttacksLayer7TimeseriesGroupDimension {const RadarGetAttacksLayer7TimeseriesGroupDimension$httpVersion._();
+
+@override String get value => 'HTTP_VERSION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupDimension$httpVersion;
+
+@override int get hashCode => 'HTTP_VERSION'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupDimension$ipVersion extends RadarGetAttacksLayer7TimeseriesGroupDimension {const RadarGetAttacksLayer7TimeseriesGroupDimension$ipVersion._();
+
+@override String get value => 'IP_VERSION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupDimension$ipVersion;
+
+@override int get hashCode => 'IP_VERSION'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupDimension$managedRules extends RadarGetAttacksLayer7TimeseriesGroupDimension {const RadarGetAttacksLayer7TimeseriesGroupDimension$managedRules._();
+
+@override String get value => 'MANAGED_RULES';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupDimension$managedRules;
+
+@override int get hashCode => 'MANAGED_RULES'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupDimension$mitigationProduct extends RadarGetAttacksLayer7TimeseriesGroupDimension {const RadarGetAttacksLayer7TimeseriesGroupDimension$mitigationProduct._();
+
+@override String get value => 'MITIGATION_PRODUCT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupDimension$mitigationProduct;
+
+@override int get hashCode => 'MITIGATION_PRODUCT'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupDimension$vertical extends RadarGetAttacksLayer7TimeseriesGroupDimension {const RadarGetAttacksLayer7TimeseriesGroupDimension$vertical._();
+
+@override String get value => 'VERTICAL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupDimension$vertical;
+
+@override int get hashCode => 'VERTICAL'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupDimension$industry extends RadarGetAttacksLayer7TimeseriesGroupDimension {const RadarGetAttacksLayer7TimeseriesGroupDimension$industry._();
+
+@override String get value => 'INDUSTRY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupDimension$industry;
+
+@override int get hashCode => 'INDUSTRY'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupDimension$Unknown extends RadarGetAttacksLayer7TimeseriesGroupDimension {const RadarGetAttacksLayer7TimeseriesGroupDimension$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer7TimeseriesGroupDimension && other.value == value;
+    other is RadarGetAttacksLayer7TimeseriesGroupDimension$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupDimension($value)';
 
  }

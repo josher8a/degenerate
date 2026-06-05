@@ -2,28 +2,27 @@
 // Source: #/components/schemas/FirewallFilters
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_schemas_mode.dart';/// The target to search in existing rules.
-@immutable final class ConfigurationTarget {const ConfigurationTarget._(this.value);
+sealed class ConfigurationTarget {const ConfigurationTarget();
 
 factory ConfigurationTarget.fromJson(String json) { return switch (json) {
   'ip' => ip,
   'ip_range' => ipRange,
   'asn' => asn,
   'country' => country,
-  _ => ConfigurationTarget._(json),
+  _ => ConfigurationTarget$Unknown(json),
 }; }
 
-static const ConfigurationTarget ip = ConfigurationTarget._('ip');
+static const ConfigurationTarget ip = ConfigurationTarget$ip._();
 
-static const ConfigurationTarget ipRange = ConfigurationTarget._('ip_range');
+static const ConfigurationTarget ipRange = ConfigurationTarget$ipRange._();
 
-static const ConfigurationTarget asn = ConfigurationTarget._('asn');
+static const ConfigurationTarget asn = ConfigurationTarget$asn._();
 
-static const ConfigurationTarget country = ConfigurationTarget._('country');
+static const ConfigurationTarget country = ConfigurationTarget$country._();
 
 static const List<ConfigurationTarget> values = [ip, ipRange, asn, country];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,32 +33,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ConfigurationTarget && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ConfigurationTarget$Unknown; } 
 @override String toString() => 'ConfigurationTarget($value)';
 
  }
+@immutable final class ConfigurationTarget$ip extends ConfigurationTarget {const ConfigurationTarget$ip._();
+
+@override String get value => 'ip';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConfigurationTarget$ip;
+
+@override int get hashCode => 'ip'.hashCode;
+
+ }
+@immutable final class ConfigurationTarget$ipRange extends ConfigurationTarget {const ConfigurationTarget$ipRange._();
+
+@override String get value => 'ip_range';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConfigurationTarget$ipRange;
+
+@override int get hashCode => 'ip_range'.hashCode;
+
+ }
+@immutable final class ConfigurationTarget$asn extends ConfigurationTarget {const ConfigurationTarget$asn._();
+
+@override String get value => 'asn';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConfigurationTarget$asn;
+
+@override int get hashCode => 'asn'.hashCode;
+
+ }
+@immutable final class ConfigurationTarget$country extends ConfigurationTarget {const ConfigurationTarget$country._();
+
+@override String get value => 'country';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConfigurationTarget$country;
+
+@override int get hashCode => 'country'.hashCode;
+
+ }
+@immutable final class ConfigurationTarget$Unknown extends ConfigurationTarget {const ConfigurationTarget$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConfigurationTarget$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// When set to `all`, all the search requirements must match. When set to `any`, only one of the search requirements has to match.
-@immutable final class FirewallFiltersMatch {const FirewallFiltersMatch._(this.value);
+sealed class FirewallFiltersMatch {const FirewallFiltersMatch();
 
 factory FirewallFiltersMatch.fromJson(String json) { return switch (json) {
   'any' => any,
   'all' => all,
-  _ => FirewallFiltersMatch._(json),
+  _ => FirewallFiltersMatch$Unknown(json),
 }; }
 
-static const FirewallFiltersMatch any = FirewallFiltersMatch._('any');
+static const FirewallFiltersMatch any = FirewallFiltersMatch$any._();
 
-static const FirewallFiltersMatch all = FirewallFiltersMatch._('all');
+static const FirewallFiltersMatch all = FirewallFiltersMatch$all._();
 
 static const List<FirewallFiltersMatch> values = [any, all];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,13 +107,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FirewallFiltersMatch$Unknown; } 
+@override String toString() => 'FirewallFiltersMatch($value)';
+
+ }
+@immutable final class FirewallFiltersMatch$any extends FirewallFiltersMatch {const FirewallFiltersMatch$any._();
+
+@override String get value => 'any';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallFiltersMatch$any;
+
+@override int get hashCode => 'any'.hashCode;
+
+ }
+@immutable final class FirewallFiltersMatch$all extends FirewallFiltersMatch {const FirewallFiltersMatch$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallFiltersMatch$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class FirewallFiltersMatch$Unknown extends FirewallFiltersMatch {const FirewallFiltersMatch$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FirewallFiltersMatch && other.value == value;
+    other is FirewallFiltersMatch$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FirewallFiltersMatch($value)';
 
  }
 @immutable final class FirewallFilters {const FirewallFilters({this.configurationTarget, this.configurationValue, this.match = FirewallFiltersMatch.all, this.mode, this.notes, });

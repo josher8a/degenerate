@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeBetaResponseCreateParams (inline: MaxOutputTokens > Variant2)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MaxOutputTokensVariant2 {const MaxOutputTokensVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class MaxOutputTokensVariant2 {const MaxOutputTokensVariant2();
 
 factory MaxOutputTokensVariant2.fromJson(String json) { return switch (json) {
   'inf' => inf,
-  _ => MaxOutputTokensVariant2._(json),
+  _ => MaxOutputTokensVariant2$Unknown(json),
 }; }
 
-static const MaxOutputTokensVariant2 inf = MaxOutputTokensVariant2._('inf');
+static const MaxOutputTokensVariant2 inf = MaxOutputTokensVariant2$inf._();
 
 static const List<MaxOutputTokensVariant2> values = [inf];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MaxOutputTokensVariant2$Unknown; } 
+@override String toString() => 'MaxOutputTokensVariant2($value)';
+
+ }
+@immutable final class MaxOutputTokensVariant2$inf extends MaxOutputTokensVariant2 {const MaxOutputTokensVariant2$inf._();
+
+@override String get value => 'inf';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MaxOutputTokensVariant2$inf;
+
+@override int get hashCode => 'inf'.hashCode;
+
+ }
+@immutable final class MaxOutputTokensVariant2$Unknown extends MaxOutputTokensVariant2 {const MaxOutputTokensVariant2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MaxOutputTokensVariant2 && other.value == value;
+    other is MaxOutputTokensVariant2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MaxOutputTokensVariant2($value)';
 
  }

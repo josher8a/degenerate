@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RealtimekitVideoConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_video_config/watermark.dart';/// Codec using which the recording will be encoded.
-@immutable final class RealtimekitVideoConfigCodec {const RealtimekitVideoConfigCodec._(this.value);
+sealed class RealtimekitVideoConfigCodec {const RealtimekitVideoConfigCodec();
 
 factory RealtimekitVideoConfigCodec.fromJson(String json) { return switch (json) {
   'H264' => h264,
   'VP8' => vp8,
-  _ => RealtimekitVideoConfigCodec._(json),
+  _ => RealtimekitVideoConfigCodec$Unknown(json),
 }; }
 
-static const RealtimekitVideoConfigCodec h264 = RealtimekitVideoConfigCodec._('H264');
+static const RealtimekitVideoConfigCodec h264 = RealtimekitVideoConfigCodec$h264._();
 
-static const RealtimekitVideoConfigCodec vp8 = RealtimekitVideoConfigCodec._('VP8');
+static const RealtimekitVideoConfigCodec vp8 = RealtimekitVideoConfigCodec$vp8._();
 
 static const List<RealtimekitVideoConfigCodec> values = [h264, vp8];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimekitVideoConfigCodec$Unknown; } 
+@override String toString() => 'RealtimekitVideoConfigCodec($value)';
+
+ }
+@immutable final class RealtimekitVideoConfigCodec$h264 extends RealtimekitVideoConfigCodec {const RealtimekitVideoConfigCodec$h264._();
+
+@override String get value => 'H264';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitVideoConfigCodec$h264;
+
+@override int get hashCode => 'H264'.hashCode;
+
+ }
+@immutable final class RealtimekitVideoConfigCodec$vp8 extends RealtimekitVideoConfigCodec {const RealtimekitVideoConfigCodec$vp8._();
+
+@override String get value => 'VP8';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitVideoConfigCodec$vp8;
+
+@override int get hashCode => 'VP8'.hashCode;
+
+ }
+@immutable final class RealtimekitVideoConfigCodec$Unknown extends RealtimekitVideoConfigCodec {const RealtimekitVideoConfigCodec$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimekitVideoConfigCodec && other.value == value;
+    other is RealtimekitVideoConfigCodec$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimekitVideoConfigCodec($value)';
 
  }
 @immutable final class RealtimekitVideoConfig {const RealtimekitVideoConfig({this.codec = RealtimekitVideoConfigCodec.h264, this.exportFile = true, this.height = 720, this.watermark, this.width = 1280, });

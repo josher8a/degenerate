@@ -2,7 +2,7 @@
 // Source: #/components/schemas/CreateImageEditRequest
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_background.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_image.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_model.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_output_format.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_response_format.dart';import 'package:pub_openai/models/input_fidelity.dart';import 'package:pub_openai/models/partial_images.dart';/// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, and one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`.
-@immutable final class CreateImageEditRequestSize {const CreateImageEditRequestSize._(this.value);
+sealed class CreateImageEditRequestSize {const CreateImageEditRequestSize();
 
 factory CreateImageEditRequestSize.fromJson(String json) { return switch (json) {
   '256x256' => $256x256,
@@ -11,25 +11,24 @@ factory CreateImageEditRequestSize.fromJson(String json) { return switch (json) 
   '1536x1024' => $1536x1024,
   '1024x1536' => $1024x1536,
   'auto' => auto,
-  _ => CreateImageEditRequestSize._(json),
+  _ => CreateImageEditRequestSize$Unknown(json),
 }; }
 
-static const CreateImageEditRequestSize $256x256 = CreateImageEditRequestSize._('256x256');
+static const CreateImageEditRequestSize $256x256 = CreateImageEditRequestSize$$256x256._();
 
-static const CreateImageEditRequestSize $512x512 = CreateImageEditRequestSize._('512x512');
+static const CreateImageEditRequestSize $512x512 = CreateImageEditRequestSize$$512x512._();
 
-static const CreateImageEditRequestSize $1024x1024 = CreateImageEditRequestSize._('1024x1024');
+static const CreateImageEditRequestSize $1024x1024 = CreateImageEditRequestSize$$1024x1024._();
 
-static const CreateImageEditRequestSize $1536x1024 = CreateImageEditRequestSize._('1536x1024');
+static const CreateImageEditRequestSize $1536x1024 = CreateImageEditRequestSize$$1536x1024._();
 
-static const CreateImageEditRequestSize $1024x1536 = CreateImageEditRequestSize._('1024x1536');
+static const CreateImageEditRequestSize $1024x1536 = CreateImageEditRequestSize$$1024x1536._();
 
-static const CreateImageEditRequestSize auto = CreateImageEditRequestSize._('auto');
+static const CreateImageEditRequestSize auto = CreateImageEditRequestSize$auto._();
 
 static const List<CreateImageEditRequestSize> values = [$256x256, $512x512, $1024x1024, $1536x1024, $1024x1536, auto];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,18 +41,77 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateImageEditRequestSize$Unknown; } 
+@override String toString() => 'CreateImageEditRequestSize($value)';
+
+ }
+@immutable final class CreateImageEditRequestSize$$256x256 extends CreateImageEditRequestSize {const CreateImageEditRequestSize$$256x256._();
+
+@override String get value => '256x256';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestSize$$256x256;
+
+@override int get hashCode => '256x256'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestSize$$512x512 extends CreateImageEditRequestSize {const CreateImageEditRequestSize$$512x512._();
+
+@override String get value => '512x512';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestSize$$512x512;
+
+@override int get hashCode => '512x512'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestSize$$1024x1024 extends CreateImageEditRequestSize {const CreateImageEditRequestSize$$1024x1024._();
+
+@override String get value => '1024x1024';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestSize$$1024x1024;
+
+@override int get hashCode => '1024x1024'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestSize$$1536x1024 extends CreateImageEditRequestSize {const CreateImageEditRequestSize$$1536x1024._();
+
+@override String get value => '1536x1024';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestSize$$1536x1024;
+
+@override int get hashCode => '1536x1024'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestSize$$1024x1536 extends CreateImageEditRequestSize {const CreateImageEditRequestSize$$1024x1536._();
+
+@override String get value => '1024x1536';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestSize$$1024x1536;
+
+@override int get hashCode => '1024x1536'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestSize$auto extends CreateImageEditRequestSize {const CreateImageEditRequestSize$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestSize$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestSize$Unknown extends CreateImageEditRequestSize {const CreateImageEditRequestSize$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateImageEditRequestSize && other.value == value;
+    other is CreateImageEditRequestSize$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateImageEditRequestSize($value)';
 
  }
 /// The quality of the image that will be generated for GPT image models. Defaults to `auto`.
 /// 
-@immutable final class CreateImageEditRequestQuality {const CreateImageEditRequestQuality._(this.value);
+sealed class CreateImageEditRequestQuality {const CreateImageEditRequestQuality();
 
 factory CreateImageEditRequestQuality.fromJson(String json) { return switch (json) {
   'standard' => standard,
@@ -61,23 +119,22 @@ factory CreateImageEditRequestQuality.fromJson(String json) { return switch (jso
   'medium' => medium,
   'high' => high,
   'auto' => auto,
-  _ => CreateImageEditRequestQuality._(json),
+  _ => CreateImageEditRequestQuality$Unknown(json),
 }; }
 
-static const CreateImageEditRequestQuality standard = CreateImageEditRequestQuality._('standard');
+static const CreateImageEditRequestQuality standard = CreateImageEditRequestQuality$standard._();
 
-static const CreateImageEditRequestQuality low = CreateImageEditRequestQuality._('low');
+static const CreateImageEditRequestQuality low = CreateImageEditRequestQuality$low._();
 
-static const CreateImageEditRequestQuality medium = CreateImageEditRequestQuality._('medium');
+static const CreateImageEditRequestQuality medium = CreateImageEditRequestQuality$medium._();
 
-static const CreateImageEditRequestQuality high = CreateImageEditRequestQuality._('high');
+static const CreateImageEditRequestQuality high = CreateImageEditRequestQuality$high._();
 
-static const CreateImageEditRequestQuality auto = CreateImageEditRequestQuality._('auto');
+static const CreateImageEditRequestQuality auto = CreateImageEditRequestQuality$auto._();
 
 static const List<CreateImageEditRequestQuality> values = [standard, low, medium, high, auto];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -89,13 +146,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateImageEditRequestQuality$Unknown; } 
+@override String toString() => 'CreateImageEditRequestQuality($value)';
+
+ }
+@immutable final class CreateImageEditRequestQuality$standard extends CreateImageEditRequestQuality {const CreateImageEditRequestQuality$standard._();
+
+@override String get value => 'standard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestQuality$standard;
+
+@override int get hashCode => 'standard'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestQuality$low extends CreateImageEditRequestQuality {const CreateImageEditRequestQuality$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestQuality$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestQuality$medium extends CreateImageEditRequestQuality {const CreateImageEditRequestQuality$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestQuality$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestQuality$high extends CreateImageEditRequestQuality {const CreateImageEditRequestQuality$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestQuality$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestQuality$auto extends CreateImageEditRequestQuality {const CreateImageEditRequestQuality$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestQuality$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestQuality$Unknown extends CreateImageEditRequestQuality {const CreateImageEditRequestQuality$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateImageEditRequestQuality && other.value == value;
+    other is CreateImageEditRequestQuality$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateImageEditRequestQuality($value)';
 
  }
 @immutable final class CreateImageEditRequest {const CreateImageEditRequest({required this.image, required this.prompt, this.mask, this.background = CreateImageEditRequestBackground.auto, this.model, this.n = 1, this.size = CreateImageEditRequestSize.$1024x1024, this.responseFormat, this.outputFormat = CreateImageEditRequestOutputFormat.png, this.outputCompression = 100, this.user, this.inputFidelity, this.stream = false, this.partialImages, this.quality = CreateImageEditRequestQuality.auto, });

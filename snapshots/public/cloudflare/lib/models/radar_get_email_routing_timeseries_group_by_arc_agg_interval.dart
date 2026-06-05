@@ -2,28 +2,27 @@
 // Source: #/components/schemas/RadarGetEmailRoutingTimeseriesGroupByArcAggInterval
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-@immutable final class RadarGetEmailRoutingTimeseriesGroupByArcAggInterval {const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval._(this.value);
+sealed class RadarGetEmailRoutingTimeseriesGroupByArcAggInterval {const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval();
 
 factory RadarGetEmailRoutingTimeseriesGroupByArcAggInterval.fromJson(String json) { return switch (json) {
   '15m' => $15m,
   '1h' => $1h,
   '1d' => $1d,
   '1w' => $1w,
-  _ => RadarGetEmailRoutingTimeseriesGroupByArcAggInterval._(json),
+  _ => RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$Unknown(json),
 }; }
 
-static const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval $15m = RadarGetEmailRoutingTimeseriesGroupByArcAggInterval._('15m');
+static const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval $15m = RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$15m._();
 
-static const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval $1h = RadarGetEmailRoutingTimeseriesGroupByArcAggInterval._('1h');
+static const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval $1h = RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$1h._();
 
-static const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval $1d = RadarGetEmailRoutingTimeseriesGroupByArcAggInterval._('1d');
+static const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval $1d = RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$1d._();
 
-static const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval $1w = RadarGetEmailRoutingTimeseriesGroupByArcAggInterval._('1w');
+static const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval $1w = RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$1w._();
 
 static const List<RadarGetEmailRoutingTimeseriesGroupByArcAggInterval> values = [$15m, $1h, $1d, $1w];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$Unknown; } 
+@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByArcAggInterval($value)';
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$15m extends RadarGetEmailRoutingTimeseriesGroupByArcAggInterval {const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$15m._();
+
+@override String get value => '15m';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$15m;
+
+@override int get hashCode => '15m'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$1h extends RadarGetEmailRoutingTimeseriesGroupByArcAggInterval {const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$1h._();
+
+@override String get value => '1h';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$1h;
+
+@override int get hashCode => '1h'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$1d extends RadarGetEmailRoutingTimeseriesGroupByArcAggInterval {const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$1d._();
+
+@override String get value => '1d';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$1d;
+
+@override int get hashCode => '1d'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$1w extends RadarGetEmailRoutingTimeseriesGroupByArcAggInterval {const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$1w._();
+
+@override String get value => '1w';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$$1w;
+
+@override int get hashCode => '1w'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$Unknown extends RadarGetEmailRoutingTimeseriesGroupByArcAggInterval {const RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailRoutingTimeseriesGroupByArcAggInterval && other.value == value;
+    other is RadarGetEmailRoutingTimeseriesGroupByArcAggInterval$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByArcAggInterval($value)';
 
  }

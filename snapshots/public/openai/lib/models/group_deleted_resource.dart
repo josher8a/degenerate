@@ -2,19 +2,18 @@
 // Source: #/components/schemas/GroupDeletedResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `group.deleted`.
-@immutable final class GroupDeletedResourceObject {const GroupDeletedResourceObject._(this.value);
+sealed class GroupDeletedResourceObject {const GroupDeletedResourceObject();
 
 factory GroupDeletedResourceObject.fromJson(String json) { return switch (json) {
   'group.deleted' => groupDeleted,
-  _ => GroupDeletedResourceObject._(json),
+  _ => GroupDeletedResourceObject$Unknown(json),
 }; }
 
-static const GroupDeletedResourceObject groupDeleted = GroupDeletedResourceObject._('group.deleted');
+static const GroupDeletedResourceObject groupDeleted = GroupDeletedResourceObject$groupDeleted._();
 
 static const List<GroupDeletedResourceObject> values = [groupDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GroupDeletedResourceObject$Unknown; } 
+@override String toString() => 'GroupDeletedResourceObject($value)';
+
+ }
+@immutable final class GroupDeletedResourceObject$groupDeleted extends GroupDeletedResourceObject {const GroupDeletedResourceObject$groupDeleted._();
+
+@override String get value => 'group.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GroupDeletedResourceObject$groupDeleted;
+
+@override int get hashCode => 'group.deleted'.hashCode;
+
+ }
+@immutable final class GroupDeletedResourceObject$Unknown extends GroupDeletedResourceObject {const GroupDeletedResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GroupDeletedResourceObject && other.value == value;
+    other is GroupDeletedResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GroupDeletedResourceObject($value)';
 
  }
 /// Confirmation payload returned after deleting a group.

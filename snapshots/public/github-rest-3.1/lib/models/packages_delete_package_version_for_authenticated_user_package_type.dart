@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PackagesDeletePackageVersionForAuthenticatedUserPackageType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagesDeletePackageVersionForAuthenticatedUserPackageType {const PackagesDeletePackageVersionForAuthenticatedUserPackageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PackagesDeletePackageVersionForAuthenticatedUserPackageType {const PackagesDeletePackageVersionForAuthenticatedUserPackageType();
 
 factory PackagesDeletePackageVersionForAuthenticatedUserPackageType.fromJson(String json) { return switch (json) {
   'npm' => npm,
@@ -10,25 +10,24 @@ factory PackagesDeletePackageVersionForAuthenticatedUserPackageType.fromJson(Str
   'docker' => docker,
   'nuget' => nuget,
   'container' => container,
-  _ => PackagesDeletePackageVersionForAuthenticatedUserPackageType._(json),
+  _ => PackagesDeletePackageVersionForAuthenticatedUserPackageType$Unknown(json),
 }; }
 
-static const PackagesDeletePackageVersionForAuthenticatedUserPackageType npm = PackagesDeletePackageVersionForAuthenticatedUserPackageType._('npm');
+static const PackagesDeletePackageVersionForAuthenticatedUserPackageType npm = PackagesDeletePackageVersionForAuthenticatedUserPackageType$npm._();
 
-static const PackagesDeletePackageVersionForAuthenticatedUserPackageType maven = PackagesDeletePackageVersionForAuthenticatedUserPackageType._('maven');
+static const PackagesDeletePackageVersionForAuthenticatedUserPackageType maven = PackagesDeletePackageVersionForAuthenticatedUserPackageType$maven._();
 
-static const PackagesDeletePackageVersionForAuthenticatedUserPackageType rubygems = PackagesDeletePackageVersionForAuthenticatedUserPackageType._('rubygems');
+static const PackagesDeletePackageVersionForAuthenticatedUserPackageType rubygems = PackagesDeletePackageVersionForAuthenticatedUserPackageType$rubygems._();
 
-static const PackagesDeletePackageVersionForAuthenticatedUserPackageType docker = PackagesDeletePackageVersionForAuthenticatedUserPackageType._('docker');
+static const PackagesDeletePackageVersionForAuthenticatedUserPackageType docker = PackagesDeletePackageVersionForAuthenticatedUserPackageType$docker._();
 
-static const PackagesDeletePackageVersionForAuthenticatedUserPackageType nuget = PackagesDeletePackageVersionForAuthenticatedUserPackageType._('nuget');
+static const PackagesDeletePackageVersionForAuthenticatedUserPackageType nuget = PackagesDeletePackageVersionForAuthenticatedUserPackageType$nuget._();
 
-static const PackagesDeletePackageVersionForAuthenticatedUserPackageType container = PackagesDeletePackageVersionForAuthenticatedUserPackageType._('container');
+static const PackagesDeletePackageVersionForAuthenticatedUserPackageType container = PackagesDeletePackageVersionForAuthenticatedUserPackageType$container._();
 
 static const List<PackagesDeletePackageVersionForAuthenticatedUserPackageType> values = [npm, maven, rubygems, docker, nuget, container];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,12 +40,71 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PackagesDeletePackageVersionForAuthenticatedUserPackageType$Unknown; } 
+@override String toString() => 'PackagesDeletePackageVersionForAuthenticatedUserPackageType($value)';
+
+ }
+@immutable final class PackagesDeletePackageVersionForAuthenticatedUserPackageType$npm extends PackagesDeletePackageVersionForAuthenticatedUserPackageType {const PackagesDeletePackageVersionForAuthenticatedUserPackageType$npm._();
+
+@override String get value => 'npm';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesDeletePackageVersionForAuthenticatedUserPackageType$npm;
+
+@override int get hashCode => 'npm'.hashCode;
+
+ }
+@immutable final class PackagesDeletePackageVersionForAuthenticatedUserPackageType$maven extends PackagesDeletePackageVersionForAuthenticatedUserPackageType {const PackagesDeletePackageVersionForAuthenticatedUserPackageType$maven._();
+
+@override String get value => 'maven';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesDeletePackageVersionForAuthenticatedUserPackageType$maven;
+
+@override int get hashCode => 'maven'.hashCode;
+
+ }
+@immutable final class PackagesDeletePackageVersionForAuthenticatedUserPackageType$rubygems extends PackagesDeletePackageVersionForAuthenticatedUserPackageType {const PackagesDeletePackageVersionForAuthenticatedUserPackageType$rubygems._();
+
+@override String get value => 'rubygems';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesDeletePackageVersionForAuthenticatedUserPackageType$rubygems;
+
+@override int get hashCode => 'rubygems'.hashCode;
+
+ }
+@immutable final class PackagesDeletePackageVersionForAuthenticatedUserPackageType$docker extends PackagesDeletePackageVersionForAuthenticatedUserPackageType {const PackagesDeletePackageVersionForAuthenticatedUserPackageType$docker._();
+
+@override String get value => 'docker';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesDeletePackageVersionForAuthenticatedUserPackageType$docker;
+
+@override int get hashCode => 'docker'.hashCode;
+
+ }
+@immutable final class PackagesDeletePackageVersionForAuthenticatedUserPackageType$nuget extends PackagesDeletePackageVersionForAuthenticatedUserPackageType {const PackagesDeletePackageVersionForAuthenticatedUserPackageType$nuget._();
+
+@override String get value => 'nuget';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesDeletePackageVersionForAuthenticatedUserPackageType$nuget;
+
+@override int get hashCode => 'nuget'.hashCode;
+
+ }
+@immutable final class PackagesDeletePackageVersionForAuthenticatedUserPackageType$container extends PackagesDeletePackageVersionForAuthenticatedUserPackageType {const PackagesDeletePackageVersionForAuthenticatedUserPackageType$container._();
+
+@override String get value => 'container';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesDeletePackageVersionForAuthenticatedUserPackageType$container;
+
+@override int get hashCode => 'container'.hashCode;
+
+ }
+@immutable final class PackagesDeletePackageVersionForAuthenticatedUserPackageType$Unknown extends PackagesDeletePackageVersionForAuthenticatedUserPackageType {const PackagesDeletePackageVersionForAuthenticatedUserPackageType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PackagesDeletePackageVersionForAuthenticatedUserPackageType && other.value == value;
+    other is PackagesDeletePackageVersionForAuthenticatedUserPackageType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PackagesDeletePackageVersionForAuthenticatedUserPackageType($value)';
 
  }

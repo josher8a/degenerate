@@ -4,19 +4,18 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Apply the Cache Everything option (Cache Level setting) based on a
 /// regular expression match against a cookie name.
 /// 
-@immutable final class ZonesCacheOnCookieId {const ZonesCacheOnCookieId._(this.value);
+sealed class ZonesCacheOnCookieId {const ZonesCacheOnCookieId();
 
 factory ZonesCacheOnCookieId.fromJson(String json) { return switch (json) {
   'cache_on_cookie' => cacheOnCookie,
-  _ => ZonesCacheOnCookieId._(json),
+  _ => ZonesCacheOnCookieId$Unknown(json),
 }; }
 
-static const ZonesCacheOnCookieId cacheOnCookie = ZonesCacheOnCookieId._('cache_on_cookie');
+static const ZonesCacheOnCookieId cacheOnCookie = ZonesCacheOnCookieId$cacheOnCookie._();
 
 static const List<ZonesCacheOnCookieId> values = [cacheOnCookie];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -24,13 +23,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesCacheOnCookieId$Unknown; } 
+@override String toString() => 'ZonesCacheOnCookieId($value)';
+
+ }
+@immutable final class ZonesCacheOnCookieId$cacheOnCookie extends ZonesCacheOnCookieId {const ZonesCacheOnCookieId$cacheOnCookie._();
+
+@override String get value => 'cache_on_cookie';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesCacheOnCookieId$cacheOnCookie;
+
+@override int get hashCode => 'cache_on_cookie'.hashCode;
+
+ }
+@immutable final class ZonesCacheOnCookieId$Unknown extends ZonesCacheOnCookieId {const ZonesCacheOnCookieId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesCacheOnCookieId && other.value == value;
+    other is ZonesCacheOnCookieId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesCacheOnCookieId($value)';
 
  }
 @immutable final class ZonesCacheOnCookie {const ZonesCacheOnCookie({this.id, this.value, });

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The Certificate Authority that Total TLS certificates will be issued through.
-@immutable final class TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority {const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority._(this.value);
+sealed class TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority {const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority();
 
 factory TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority.fromJson(String json) { return switch (json) {
   'google' => google,
   'lets_encrypt' => letsEncrypt,
   'ssl_com' => sslCom,
-  _ => TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority._(json),
+  _ => TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority google = TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority._('google');
+static const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority google = TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$google._();
 
-static const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority letsEncrypt = TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority._('lets_encrypt');
+static const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority letsEncrypt = TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$letsEncrypt._();
 
-static const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority sslCom = TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority._('ssl_com');
+static const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority sslCom = TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$sslCom._();
 
 static const List<TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority> values = [google, letsEncrypt, sslCom];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$google extends TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority {const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$google._();
+
+@override String get value => 'google';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$google;
+
+@override int get hashCode => 'google'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$letsEncrypt extends TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority {const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$letsEncrypt._();
+
+@override String get value => 'lets_encrypt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$letsEncrypt;
+
+@override int get hashCode => 'lets_encrypt'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$sslCom extends TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority {const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$sslCom._();
+
+@override String get value => 'ssl_com';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$sslCom;
+
+@override int get hashCode => 'ssl_com'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$Unknown extends TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority {const TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority && other.value == value;
+    other is TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesComponentsSchemasCertificateAuthority($value)';
 
  }

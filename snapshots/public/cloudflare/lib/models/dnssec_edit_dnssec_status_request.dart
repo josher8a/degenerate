@@ -2,22 +2,21 @@
 // Source: #/components/schemas/DnssecEditDnssecStatusRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_multi_signer.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_presigned.dart';import 'package:pub_cloudflare/models/dnssec_dnssec_use_nsec3.dart';/// Status of DNSSEC, based on user-desired state and presence of necessary records.
-@immutable final class DnssecEditDnssecStatusRequestStatus {const DnssecEditDnssecStatusRequestStatus._(this.value);
+sealed class DnssecEditDnssecStatusRequestStatus {const DnssecEditDnssecStatusRequestStatus();
 
 factory DnssecEditDnssecStatusRequestStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'disabled' => disabled,
-  _ => DnssecEditDnssecStatusRequestStatus._(json),
+  _ => DnssecEditDnssecStatusRequestStatus$Unknown(json),
 }; }
 
-static const DnssecEditDnssecStatusRequestStatus active = DnssecEditDnssecStatusRequestStatus._('active');
+static const DnssecEditDnssecStatusRequestStatus active = DnssecEditDnssecStatusRequestStatus$active._();
 
-static const DnssecEditDnssecStatusRequestStatus disabled = DnssecEditDnssecStatusRequestStatus._('disabled');
+static const DnssecEditDnssecStatusRequestStatus disabled = DnssecEditDnssecStatusRequestStatus$disabled._();
 
 static const List<DnssecEditDnssecStatusRequestStatus> values = [active, disabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DnssecEditDnssecStatusRequestStatus$Unknown; } 
+@override String toString() => 'DnssecEditDnssecStatusRequestStatus($value)';
+
+ }
+@immutable final class DnssecEditDnssecStatusRequestStatus$active extends DnssecEditDnssecStatusRequestStatus {const DnssecEditDnssecStatusRequestStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnssecEditDnssecStatusRequestStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class DnssecEditDnssecStatusRequestStatus$disabled extends DnssecEditDnssecStatusRequestStatus {const DnssecEditDnssecStatusRequestStatus$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnssecEditDnssecStatusRequestStatus$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class DnssecEditDnssecStatusRequestStatus$Unknown extends DnssecEditDnssecStatusRequestStatus {const DnssecEditDnssecStatusRequestStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DnssecEditDnssecStatusRequestStatus && other.value == value;
+    other is DnssecEditDnssecStatusRequestStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DnssecEditDnssecStatusRequestStatus($value)';
 
  }
 @immutable final class DnssecEditDnssecStatusRequest {const DnssecEditDnssecStatusRequest({this.dnssecMultiSigner, this.dnssecPresigned, this.dnssecUseNsec3, this.status, });

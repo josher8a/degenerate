@@ -2,22 +2,21 @@
 // Source: #/components/schemas/WebhookCodeScanningAlertFixed (inline: Alert)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_dismissed_comment.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/alert_dismissed_reason.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/dismissed_by.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/most_recent_instance.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_closed_by_user/webhook_code_scanning_alert_closed_by_user_alert_rule.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_closed_by_user/webhook_code_scanning_alert_closed_by_user_alert_tool.dart';/// State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed.
-@immutable final class WebhookCodeScanningAlertFixedAlertState {const WebhookCodeScanningAlertFixedAlertState._(this.value);
+sealed class WebhookCodeScanningAlertFixedAlertState {const WebhookCodeScanningAlertFixedAlertState();
 
 factory WebhookCodeScanningAlertFixedAlertState.fromJson(String json) { return switch (json) {
   'fixed' => fixed,
   'null' => $null,
-  _ => WebhookCodeScanningAlertFixedAlertState._(json),
+  _ => WebhookCodeScanningAlertFixedAlertState$Unknown(json),
 }; }
 
-static const WebhookCodeScanningAlertFixedAlertState fixed = WebhookCodeScanningAlertFixedAlertState._('fixed');
+static const WebhookCodeScanningAlertFixedAlertState fixed = WebhookCodeScanningAlertFixedAlertState$fixed._();
 
-static const WebhookCodeScanningAlertFixedAlertState $null = WebhookCodeScanningAlertFixedAlertState._('null');
+static const WebhookCodeScanningAlertFixedAlertState $null = WebhookCodeScanningAlertFixedAlertState$$null._();
 
 static const List<WebhookCodeScanningAlertFixedAlertState> values = [fixed, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookCodeScanningAlertFixedAlertState$Unknown; } 
+@override String toString() => 'WebhookCodeScanningAlertFixedAlertState($value)';
+
+ }
+@immutable final class WebhookCodeScanningAlertFixedAlertState$fixed extends WebhookCodeScanningAlertFixedAlertState {const WebhookCodeScanningAlertFixedAlertState$fixed._();
+
+@override String get value => 'fixed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCodeScanningAlertFixedAlertState$fixed;
+
+@override int get hashCode => 'fixed'.hashCode;
+
+ }
+@immutable final class WebhookCodeScanningAlertFixedAlertState$$null extends WebhookCodeScanningAlertFixedAlertState {const WebhookCodeScanningAlertFixedAlertState$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCodeScanningAlertFixedAlertState$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class WebhookCodeScanningAlertFixedAlertState$Unknown extends WebhookCodeScanningAlertFixedAlertState {const WebhookCodeScanningAlertFixedAlertState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookCodeScanningAlertFixedAlertState && other.value == value;
+    other is WebhookCodeScanningAlertFixedAlertState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookCodeScanningAlertFixedAlertState($value)';
 
  }
 /// The code scanning alert involved in the event.

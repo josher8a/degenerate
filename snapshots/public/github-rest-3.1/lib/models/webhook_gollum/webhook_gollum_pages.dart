@@ -2,22 +2,21 @@
 // Source: #/components/schemas/WebhookGollum (inline: Pages)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action that was performed on the page. Can be `created` or `edited`.
-@immutable final class PagesAction {const PagesAction._(this.value);
+sealed class PagesAction {const PagesAction();
 
 factory PagesAction.fromJson(String json) { return switch (json) {
   'created' => created,
   'edited' => edited,
-  _ => PagesAction._(json),
+  _ => PagesAction$Unknown(json),
 }; }
 
-static const PagesAction created = PagesAction._('created');
+static const PagesAction created = PagesAction$created._();
 
-static const PagesAction edited = PagesAction._('edited');
+static const PagesAction edited = PagesAction$edited._();
 
 static const List<PagesAction> values = [created, edited];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PagesAction$Unknown; } 
+@override String toString() => 'PagesAction($value)';
+
+ }
+@immutable final class PagesAction$created extends PagesAction {const PagesAction$created._();
+
+@override String get value => 'created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesAction$created;
+
+@override int get hashCode => 'created'.hashCode;
+
+ }
+@immutable final class PagesAction$edited extends PagesAction {const PagesAction$edited._();
+
+@override String get value => 'edited';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesAction$edited;
+
+@override int get hashCode => 'edited'.hashCode;
+
+ }
+@immutable final class PagesAction$Unknown extends PagesAction {const PagesAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PagesAction && other.value == value;
+    other is PagesAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PagesAction($value)';
 
  }
 @immutable final class WebhookGollumPages {const WebhookGollumPages({required this.action, required this.htmlUrl, required this.pageName, required this.sha, required this.summary, required this.title, });

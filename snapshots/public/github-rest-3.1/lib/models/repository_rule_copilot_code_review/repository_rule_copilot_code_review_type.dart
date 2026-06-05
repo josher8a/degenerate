@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleCopilotCodeReview (inline: Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleCopilotCodeReviewType {const RepositoryRuleCopilotCodeReviewType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RepositoryRuleCopilotCodeReviewType {const RepositoryRuleCopilotCodeReviewType();
 
 factory RepositoryRuleCopilotCodeReviewType.fromJson(String json) { return switch (json) {
   'copilot_code_review' => copilotCodeReview,
-  _ => RepositoryRuleCopilotCodeReviewType._(json),
+  _ => RepositoryRuleCopilotCodeReviewType$Unknown(json),
 }; }
 
-static const RepositoryRuleCopilotCodeReviewType copilotCodeReview = RepositoryRuleCopilotCodeReviewType._('copilot_code_review');
+static const RepositoryRuleCopilotCodeReviewType copilotCodeReview = RepositoryRuleCopilotCodeReviewType$copilotCodeReview._();
 
 static const List<RepositoryRuleCopilotCodeReviewType> values = [copilotCodeReview];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RepositoryRuleCopilotCodeReviewType$Unknown; } 
+@override String toString() => 'RepositoryRuleCopilotCodeReviewType($value)';
+
+ }
+@immutable final class RepositoryRuleCopilotCodeReviewType$copilotCodeReview extends RepositoryRuleCopilotCodeReviewType {const RepositoryRuleCopilotCodeReviewType$copilotCodeReview._();
+
+@override String get value => 'copilot_code_review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryRuleCopilotCodeReviewType$copilotCodeReview;
+
+@override int get hashCode => 'copilot_code_review'.hashCode;
+
+ }
+@immutable final class RepositoryRuleCopilotCodeReviewType$Unknown extends RepositoryRuleCopilotCodeReviewType {const RepositoryRuleCopilotCodeReviewType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleCopilotCodeReviewType && other.value == value;
+    other is RepositoryRuleCopilotCodeReviewType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleCopilotCodeReviewType($value)';
 
  }

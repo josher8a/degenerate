@@ -2,7 +2,7 @@
 // Source: #/components/schemas/FirewallAction (inline: Variant1)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_custom_response.dart';/// The action to perform.
-@immutable final class FirewallMode {const FirewallMode._(this.value);
+sealed class FirewallMode {const FirewallMode();
 
 factory FirewallMode.fromJson(String json) { return switch (json) {
   'simulate' => simulate,
@@ -10,23 +10,22 @@ factory FirewallMode.fromJson(String json) { return switch (json) {
   'challenge' => challenge,
   'js_challenge' => jsChallenge,
   'managed_challenge' => managedChallenge,
-  _ => FirewallMode._(json),
+  _ => FirewallMode$Unknown(json),
 }; }
 
-static const FirewallMode simulate = FirewallMode._('simulate');
+static const FirewallMode simulate = FirewallMode$simulate._();
 
-static const FirewallMode ban = FirewallMode._('ban');
+static const FirewallMode ban = FirewallMode$ban._();
 
-static const FirewallMode challenge = FirewallMode._('challenge');
+static const FirewallMode challenge = FirewallMode$challenge._();
 
-static const FirewallMode jsChallenge = FirewallMode._('js_challenge');
+static const FirewallMode jsChallenge = FirewallMode$jsChallenge._();
 
-static const FirewallMode managedChallenge = FirewallMode._('managed_challenge');
+static const FirewallMode managedChallenge = FirewallMode$managedChallenge._();
 
 static const List<FirewallMode> values = [simulate, ban, challenge, jsChallenge, managedChallenge];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FirewallMode$Unknown; } 
+@override String toString() => 'FirewallMode($value)';
+
+ }
+@immutable final class FirewallMode$simulate extends FirewallMode {const FirewallMode$simulate._();
+
+@override String get value => 'simulate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallMode$simulate;
+
+@override int get hashCode => 'simulate'.hashCode;
+
+ }
+@immutable final class FirewallMode$ban extends FirewallMode {const FirewallMode$ban._();
+
+@override String get value => 'ban';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallMode$ban;
+
+@override int get hashCode => 'ban'.hashCode;
+
+ }
+@immutable final class FirewallMode$challenge extends FirewallMode {const FirewallMode$challenge._();
+
+@override String get value => 'challenge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallMode$challenge;
+
+@override int get hashCode => 'challenge'.hashCode;
+
+ }
+@immutable final class FirewallMode$jsChallenge extends FirewallMode {const FirewallMode$jsChallenge._();
+
+@override String get value => 'js_challenge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallMode$jsChallenge;
+
+@override int get hashCode => 'js_challenge'.hashCode;
+
+ }
+@immutable final class FirewallMode$managedChallenge extends FirewallMode {const FirewallMode$managedChallenge._();
+
+@override String get value => 'managed_challenge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallMode$managedChallenge;
+
+@override int get hashCode => 'managed_challenge'.hashCode;
+
+ }
+@immutable final class FirewallMode$Unknown extends FirewallMode {const FirewallMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FirewallMode && other.value == value;
+    other is FirewallMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FirewallMode($value)';
 
  }
 /// The time in seconds during which Cloudflare will perform the mitigation action. Must be an integer value greater than or equal to the period.

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/BillingUpdateBudgetOrgRequest (inline: BudgetType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of pricing for the budget
-@immutable final class BudgetType {const BudgetType._(this.value);
+sealed class BudgetType {const BudgetType();
 
 factory BudgetType.fromJson(String json) { return switch (json) {
   'SkuPricing' => skuPricing,
   'ProductPricing' => productPricing,
-  _ => BudgetType._(json),
+  _ => BudgetType$Unknown(json),
 }; }
 
-static const BudgetType skuPricing = BudgetType._('SkuPricing');
+static const BudgetType skuPricing = BudgetType$skuPricing._();
 
-static const BudgetType productPricing = BudgetType._('ProductPricing');
+static const BudgetType productPricing = BudgetType$productPricing._();
 
 static const List<BudgetType> values = [skuPricing, productPricing];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BudgetType$Unknown; } 
+@override String toString() => 'BudgetType($value)';
+
+ }
+@immutable final class BudgetType$skuPricing extends BudgetType {const BudgetType$skuPricing._();
+
+@override String get value => 'SkuPricing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BudgetType$skuPricing;
+
+@override int get hashCode => 'SkuPricing'.hashCode;
+
+ }
+@immutable final class BudgetType$productPricing extends BudgetType {const BudgetType$productPricing._();
+
+@override String get value => 'ProductPricing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BudgetType$productPricing;
+
+@override int get hashCode => 'ProductPricing'.hashCode;
+
+ }
+@immutable final class BudgetType$Unknown extends BudgetType {const BudgetType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BudgetType && other.value == value;
+    other is BudgetType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BudgetType($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Refund
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/charge/failure_balance_transaction.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_presentment_details.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/refund/refund_transfer_reversal.dart';import 'package:pub_stripe_spec3/models/refund/source_transfer_reversal.dart';import 'package:pub_stripe_spec3/models/refund_destination_details.dart';import 'package:pub_stripe_spec3/models/refund_next_action.dart';import 'package:pub_stripe_spec3/models/transfer_reversal.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class RefundObject {const RefundObject._(this.value);
+sealed class RefundObject {const RefundObject();
 
 factory RefundObject.fromJson(String json) { return switch (json) {
   'refund' => refund,
-  _ => RefundObject._(json),
+  _ => RefundObject$Unknown(json),
 }; }
 
-static const RefundObject refund = RefundObject._('refund');
+static const RefundObject refund = RefundObject$refund._();
 
 static const List<RefundObject> values = [refund];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,35 +21,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RefundObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is RefundObject$Unknown; } 
 @override String toString() => 'RefundObject($value)';
 
  }
+@immutable final class RefundObject$refund extends RefundObject {const RefundObject$refund._();
+
+@override String get value => 'refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RefundObject$refund;
+
+@override int get hashCode => 'refund'.hashCode;
+
+ }
+@immutable final class RefundObject$Unknown extends RefundObject {const RefundObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RefundObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Provides the reason for why the refund is pending. Possible values are: `processing`, `insufficient_funds`, or `charge_pending`.
-@immutable final class PendingReason {const PendingReason._(this.value);
+sealed class PendingReason {const PendingReason();
 
 factory PendingReason.fromJson(String json) { return switch (json) {
   'charge_pending' => chargePending,
   'insufficient_funds' => insufficientFunds,
   'processing' => processing,
-  _ => PendingReason._(json),
+  _ => PendingReason$Unknown(json),
 }; }
 
-static const PendingReason chargePending = PendingReason._('charge_pending');
+static const PendingReason chargePending = PendingReason$chargePending._();
 
-static const PendingReason insufficientFunds = PendingReason._('insufficient_funds');
+static const PendingReason insufficientFunds = PendingReason$insufficientFunds._();
 
-static const PendingReason processing = PendingReason._('processing');
+static const PendingReason processing = PendingReason$processing._();
 
 static const List<PendingReason> values = [chargePending, insufficientFunds, processing];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,38 +72,69 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PendingReason && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PendingReason$Unknown; } 
 @override String toString() => 'PendingReason($value)';
 
  }
+@immutable final class PendingReason$chargePending extends PendingReason {const PendingReason$chargePending._();
+
+@override String get value => 'charge_pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingReason$chargePending;
+
+@override int get hashCode => 'charge_pending'.hashCode;
+
+ }
+@immutable final class PendingReason$insufficientFunds extends PendingReason {const PendingReason$insufficientFunds._();
+
+@override String get value => 'insufficient_funds';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingReason$insufficientFunds;
+
+@override int get hashCode => 'insufficient_funds'.hashCode;
+
+ }
+@immutable final class PendingReason$processing extends PendingReason {const PendingReason$processing._();
+
+@override String get value => 'processing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingReason$processing;
+
+@override int get hashCode => 'processing'.hashCode;
+
+ }
+@immutable final class PendingReason$Unknown extends PendingReason {const PendingReason$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PendingReason$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Reason for the refund, which is either user-provided (`duplicate`, `fraudulent`, or `requested_by_customer`) or generated by Stripe internally (`expired_uncaptured_charge`).
-@immutable final class RefundReason {const RefundReason._(this.value);
+sealed class RefundReason {const RefundReason();
 
 factory RefundReason.fromJson(String json) { return switch (json) {
   'duplicate' => duplicate,
   'expired_uncaptured_charge' => expiredUncapturedCharge,
   'fraudulent' => fraudulent,
   'requested_by_customer' => requestedByCustomer,
-  _ => RefundReason._(json),
+  _ => RefundReason$Unknown(json),
 }; }
 
-static const RefundReason duplicate = RefundReason._('duplicate');
+static const RefundReason duplicate = RefundReason$duplicate._();
 
-static const RefundReason expiredUncapturedCharge = RefundReason._('expired_uncaptured_charge');
+static const RefundReason expiredUncapturedCharge = RefundReason$expiredUncapturedCharge._();
 
-static const RefundReason fraudulent = RefundReason._('fraudulent');
+static const RefundReason fraudulent = RefundReason$fraudulent._();
 
-static const RefundReason requestedByCustomer = RefundReason._('requested_by_customer');
+static const RefundReason requestedByCustomer = RefundReason$requestedByCustomer._();
 
 static const List<RefundReason> values = [duplicate, expiredUncapturedCharge, fraudulent, requestedByCustomer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -102,13 +145,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RefundReason$Unknown; } 
+@override String toString() => 'RefundReason($value)';
+
+ }
+@immutable final class RefundReason$duplicate extends RefundReason {const RefundReason$duplicate._();
+
+@override String get value => 'duplicate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RefundReason$duplicate;
+
+@override int get hashCode => 'duplicate'.hashCode;
+
+ }
+@immutable final class RefundReason$expiredUncapturedCharge extends RefundReason {const RefundReason$expiredUncapturedCharge._();
+
+@override String get value => 'expired_uncaptured_charge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RefundReason$expiredUncapturedCharge;
+
+@override int get hashCode => 'expired_uncaptured_charge'.hashCode;
+
+ }
+@immutable final class RefundReason$fraudulent extends RefundReason {const RefundReason$fraudulent._();
+
+@override String get value => 'fraudulent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RefundReason$fraudulent;
+
+@override int get hashCode => 'fraudulent'.hashCode;
+
+ }
+@immutable final class RefundReason$requestedByCustomer extends RefundReason {const RefundReason$requestedByCustomer._();
+
+@override String get value => 'requested_by_customer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RefundReason$requestedByCustomer;
+
+@override int get hashCode => 'requested_by_customer'.hashCode;
+
+ }
+@immutable final class RefundReason$Unknown extends RefundReason {const RefundReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RefundReason && other.value == value;
+    other is RefundReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RefundReason($value)';
 
  }
 /// Refund objects allow you to refund a previously created charge that isn't

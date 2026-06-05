@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Separate cached content based on the visitor's device type.
 /// 
-@immutable final class ZonesCacheByDeviceTypeId {const ZonesCacheByDeviceTypeId._(this.value);
+sealed class ZonesCacheByDeviceTypeId {const ZonesCacheByDeviceTypeId();
 
 factory ZonesCacheByDeviceTypeId.fromJson(String json) { return switch (json) {
   'cache_by_device_type' => cacheByDeviceType,
-  _ => ZonesCacheByDeviceTypeId._(json),
+  _ => ZonesCacheByDeviceTypeId$Unknown(json),
 }; }
 
-static const ZonesCacheByDeviceTypeId cacheByDeviceType = ZonesCacheByDeviceTypeId._('cache_by_device_type');
+static const ZonesCacheByDeviceTypeId cacheByDeviceType = ZonesCacheByDeviceTypeId$cacheByDeviceType._();
 
 static const List<ZonesCacheByDeviceTypeId> values = [cacheByDeviceType];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesCacheByDeviceTypeId$Unknown; } 
+@override String toString() => 'ZonesCacheByDeviceTypeId($value)';
+
+ }
+@immutable final class ZonesCacheByDeviceTypeId$cacheByDeviceType extends ZonesCacheByDeviceTypeId {const ZonesCacheByDeviceTypeId$cacheByDeviceType._();
+
+@override String get value => 'cache_by_device_type';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesCacheByDeviceTypeId$cacheByDeviceType;
+
+@override int get hashCode => 'cache_by_device_type'.hashCode;
+
+ }
+@immutable final class ZonesCacheByDeviceTypeId$Unknown extends ZonesCacheByDeviceTypeId {const ZonesCacheByDeviceTypeId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesCacheByDeviceTypeId && other.value == value;
+    other is ZonesCacheByDeviceTypeId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesCacheByDeviceTypeId($value)';
 
  }
 @immutable final class ZonesCacheByDeviceType {const ZonesCacheByDeviceType({this.id, this.value, });

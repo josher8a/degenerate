@@ -2,25 +2,24 @@
 // Source: #/components/schemas/TlsCertificatesAndHostnamesSsl (inline: Dv > BundleMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.
-@immutable final class BundleMethod {const BundleMethod._(this.value);
+sealed class BundleMethod {const BundleMethod();
 
 factory BundleMethod.fromJson(String json) { return switch (json) {
   'ubiquitous' => ubiquitous,
   'optimal' => optimal,
   'force' => force,
-  _ => BundleMethod._(json),
+  _ => BundleMethod$Unknown(json),
 }; }
 
-static const BundleMethod ubiquitous = BundleMethod._('ubiquitous');
+static const BundleMethod ubiquitous = BundleMethod$ubiquitous._();
 
-static const BundleMethod optimal = BundleMethod._('optimal');
+static const BundleMethod optimal = BundleMethod$optimal._();
 
-static const BundleMethod force = BundleMethod._('force');
+static const BundleMethod force = BundleMethod$force._();
 
 static const List<BundleMethod> values = [ubiquitous, optimal, force];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BundleMethod$Unknown; } 
+@override String toString() => 'BundleMethod($value)';
+
+ }
+@immutable final class BundleMethod$ubiquitous extends BundleMethod {const BundleMethod$ubiquitous._();
+
+@override String get value => 'ubiquitous';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BundleMethod$ubiquitous;
+
+@override int get hashCode => 'ubiquitous'.hashCode;
+
+ }
+@immutable final class BundleMethod$optimal extends BundleMethod {const BundleMethod$optimal._();
+
+@override String get value => 'optimal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BundleMethod$optimal;
+
+@override int get hashCode => 'optimal'.hashCode;
+
+ }
+@immutable final class BundleMethod$force extends BundleMethod {const BundleMethod$force._();
+
+@override String get value => 'force';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BundleMethod$force;
+
+@override int get hashCode => 'force'.hashCode;
+
+ }
+@immutable final class BundleMethod$Unknown extends BundleMethod {const BundleMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BundleMethod && other.value == value;
+    other is BundleMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BundleMethod($value)';
 
  }

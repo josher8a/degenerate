@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookDeploymentReviewRejected (inline: WorkflowRun)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_pull_requests.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_rerequested/webhook_check_suite_rerequested_check_suite_conclusion.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/referenced_workflows.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_actor.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_triggering_actor.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_approved/webhook_deployment_review_approved_workflow_run_head_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_approved/webhook_deployment_review_approved_workflow_run_repository.dart';@immutable final class WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_pull_requests.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_rerequested/webhook_check_suite_rerequested_check_suite_conclusion.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/referenced_workflows.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_actor.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_triggering_actor.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_approved/webhook_deployment_review_approved_workflow_run_head_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_approved/webhook_deployment_review_approved_workflow_run_repository.dart';sealed class WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus();
 
 factory WebhookDeploymentReviewRejectedWorkflowRunStatus.fromJson(String json) { return switch (json) {
   'requested' => requested,
@@ -9,23 +9,22 @@ factory WebhookDeploymentReviewRejectedWorkflowRunStatus.fromJson(String json) {
   'completed' => completed,
   'queued' => queued,
   'waiting' => waiting,
-  _ => WebhookDeploymentReviewRejectedWorkflowRunStatus._(json),
+  _ => WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown(json),
 }; }
 
-static const WebhookDeploymentReviewRejectedWorkflowRunStatus requested = WebhookDeploymentReviewRejectedWorkflowRunStatus._('requested');
+static const WebhookDeploymentReviewRejectedWorkflowRunStatus requested = WebhookDeploymentReviewRejectedWorkflowRunStatus$requested._();
 
-static const WebhookDeploymentReviewRejectedWorkflowRunStatus inProgress = WebhookDeploymentReviewRejectedWorkflowRunStatus._('in_progress');
+static const WebhookDeploymentReviewRejectedWorkflowRunStatus inProgress = WebhookDeploymentReviewRejectedWorkflowRunStatus$inProgress._();
 
-static const WebhookDeploymentReviewRejectedWorkflowRunStatus completed = WebhookDeploymentReviewRejectedWorkflowRunStatus._('completed');
+static const WebhookDeploymentReviewRejectedWorkflowRunStatus completed = WebhookDeploymentReviewRejectedWorkflowRunStatus$completed._();
 
-static const WebhookDeploymentReviewRejectedWorkflowRunStatus queued = WebhookDeploymentReviewRejectedWorkflowRunStatus._('queued');
+static const WebhookDeploymentReviewRejectedWorkflowRunStatus queued = WebhookDeploymentReviewRejectedWorkflowRunStatus$queued._();
 
-static const WebhookDeploymentReviewRejectedWorkflowRunStatus waiting = WebhookDeploymentReviewRejectedWorkflowRunStatus._('waiting');
+static const WebhookDeploymentReviewRejectedWorkflowRunStatus waiting = WebhookDeploymentReviewRejectedWorkflowRunStatus$waiting._();
 
 static const List<WebhookDeploymentReviewRejectedWorkflowRunStatus> values = [requested, inProgress, completed, queued, waiting];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown; } 
+@override String toString() => 'WebhookDeploymentReviewRejectedWorkflowRunStatus($value)';
+
+ }
+@immutable final class WebhookDeploymentReviewRejectedWorkflowRunStatus$requested extends WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus$requested._();
+
+@override String get value => 'requested';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookDeploymentReviewRejectedWorkflowRunStatus$requested;
+
+@override int get hashCode => 'requested'.hashCode;
+
+ }
+@immutable final class WebhookDeploymentReviewRejectedWorkflowRunStatus$inProgress extends WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookDeploymentReviewRejectedWorkflowRunStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class WebhookDeploymentReviewRejectedWorkflowRunStatus$completed extends WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookDeploymentReviewRejectedWorkflowRunStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class WebhookDeploymentReviewRejectedWorkflowRunStatus$queued extends WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookDeploymentReviewRejectedWorkflowRunStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class WebhookDeploymentReviewRejectedWorkflowRunStatus$waiting extends WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus$waiting._();
+
+@override String get value => 'waiting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookDeploymentReviewRejectedWorkflowRunStatus$waiting;
+
+@override int get hashCode => 'waiting'.hashCode;
+
+ }
+@immutable final class WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown extends WebhookDeploymentReviewRejectedWorkflowRunStatus {const WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookDeploymentReviewRejectedWorkflowRunStatus && other.value == value;
+    other is WebhookDeploymentReviewRejectedWorkflowRunStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookDeploymentReviewRejectedWorkflowRunStatus($value)';
 
  }
 @immutable final class WebhookDeploymentReviewRejectedWorkflowRun {const WebhookDeploymentReviewRejectedWorkflowRun({required this.name, required this.checkSuiteId, required this.checkSuiteNodeId, required this.headSha, required this.conclusion, required this.createdAt, required this.event, required this.headBranch, required this.actor, required this.htmlUrl, required this.id, required this.triggeringActor, required this.nodeId, required this.path, required this.pullRequests, required this.displayTitle, required this.runNumber, required this.status, required this.url, required this.workflowId, required this.runAttempt, required this.updatedAt, required this.runStartedAt, this.repository, this.rerunUrl, this.previousAttemptUrl, this.logsUrl, this.jobsUrl, this.headRepository, this.referencedWorkflows, this.headCommit, this.cancelUrl, this.artifactsUrl, this.workflowUrl, this.checkSuiteUrl, });

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > Developer)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';import 'package:pub_cloudflare/models/messages/developer_content_variant2.dart';@immutable final class DeveloperRole {const DeveloperRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/developer_content.dart';import 'package:pub_cloudflare/models/messages/developer_content_variant2.dart';sealed class DeveloperRole {const DeveloperRole();
 
 factory DeveloperRole.fromJson(String json) { return switch (json) {
   'developer' => developer,
-  _ => DeveloperRole._(json),
+  _ => DeveloperRole$Unknown(json),
 }; }
 
-static const DeveloperRole developer = DeveloperRole._('developer');
+static const DeveloperRole developer = DeveloperRole$developer._();
 
 static const List<DeveloperRole> values = [developer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeveloperRole$Unknown; } 
+@override String toString() => 'DeveloperRole($value)';
+
+ }
+@immutable final class DeveloperRole$developer extends DeveloperRole {const DeveloperRole$developer._();
+
+@override String get value => 'developer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeveloperRole$developer;
+
+@override int get hashCode => 'developer'.hashCode;
+
+ }
+@immutable final class DeveloperRole$Unknown extends DeveloperRole {const DeveloperRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeveloperRole && other.value == value;
+    other is DeveloperRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeveloperRole($value)';
 
  }
 @immutable final class Developer {const Developer({required this.content, required this.role, this.name, });

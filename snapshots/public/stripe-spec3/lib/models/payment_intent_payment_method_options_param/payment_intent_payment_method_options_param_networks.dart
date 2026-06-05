@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentIntentPaymentMethodOptionsParam (inline: Networks)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Requested {const Requested._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Requested {const Requested();
 
 factory Requested.fromJson(String json) { return switch (json) {
   'ach' => ach,
   'us_domestic_wire' => usDomesticWire,
-  _ => Requested._(json),
+  _ => Requested$Unknown(json),
 }; }
 
-static const Requested ach = Requested._('ach');
+static const Requested ach = Requested$ach._();
 
-static const Requested usDomesticWire = Requested._('us_domestic_wire');
+static const Requested usDomesticWire = Requested$usDomesticWire._();
 
 static const List<Requested> values = [ach, usDomesticWire];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Requested$Unknown; } 
+@override String toString() => 'Requested($value)';
+
+ }
+@immutable final class Requested$ach extends Requested {const Requested$ach._();
+
+@override String get value => 'ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Requested$ach;
+
+@override int get hashCode => 'ach'.hashCode;
+
+ }
+@immutable final class Requested$usDomesticWire extends Requested {const Requested$usDomesticWire._();
+
+@override String get value => 'us_domestic_wire';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Requested$usDomesticWire;
+
+@override int get hashCode => 'us_domestic_wire'.hashCode;
+
+ }
+@immutable final class Requested$Unknown extends Requested {const Requested$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Requested && other.value == value;
+    other is Requested$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Requested($value)';
 
  }
 @immutable final class PaymentIntentPaymentMethodOptionsParamNetworks {const PaymentIntentPaymentMethodOptionsParamNetworks({this.requested});

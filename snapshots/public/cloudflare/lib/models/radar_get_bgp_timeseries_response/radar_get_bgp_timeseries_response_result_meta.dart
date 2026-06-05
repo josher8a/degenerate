@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetBgpTimeseriesResponse (inline: Result > Meta)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/meta_date_range.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result_meta_confidence_info.dart';@immutable final class RadarGetBgpTimeseriesResponseResultMetaAggInterval {const RadarGetBgpTimeseriesResponseResultMetaAggInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/meta_date_range.dart';import 'package:pub_cloudflare/models/radar_get_ai_bots_summary_by_user_agent_response/radar_get_ai_bots_summary_by_user_agent_response_result_meta_confidence_info.dart';sealed class RadarGetBgpTimeseriesResponseResultMetaAggInterval {const RadarGetBgpTimeseriesResponseResultMetaAggInterval();
 
 factory RadarGetBgpTimeseriesResponseResultMetaAggInterval.fromJson(String json) { return switch (json) {
   '15m' => $15m,
   '1h' => $1h,
   '1d' => $1d,
   '1w' => $1w,
-  _ => RadarGetBgpTimeseriesResponseResultMetaAggInterval._(json),
+  _ => RadarGetBgpTimeseriesResponseResultMetaAggInterval$Unknown(json),
 }; }
 
-static const RadarGetBgpTimeseriesResponseResultMetaAggInterval $15m = RadarGetBgpTimeseriesResponseResultMetaAggInterval._('15m');
+static const RadarGetBgpTimeseriesResponseResultMetaAggInterval $15m = RadarGetBgpTimeseriesResponseResultMetaAggInterval$$15m._();
 
-static const RadarGetBgpTimeseriesResponseResultMetaAggInterval $1h = RadarGetBgpTimeseriesResponseResultMetaAggInterval._('1h');
+static const RadarGetBgpTimeseriesResponseResultMetaAggInterval $1h = RadarGetBgpTimeseriesResponseResultMetaAggInterval$$1h._();
 
-static const RadarGetBgpTimeseriesResponseResultMetaAggInterval $1d = RadarGetBgpTimeseriesResponseResultMetaAggInterval._('1d');
+static const RadarGetBgpTimeseriesResponseResultMetaAggInterval $1d = RadarGetBgpTimeseriesResponseResultMetaAggInterval$$1d._();
 
-static const RadarGetBgpTimeseriesResponseResultMetaAggInterval $1w = RadarGetBgpTimeseriesResponseResultMetaAggInterval._('1w');
+static const RadarGetBgpTimeseriesResponseResultMetaAggInterval $1w = RadarGetBgpTimeseriesResponseResultMetaAggInterval$$1w._();
 
 static const List<RadarGetBgpTimeseriesResponseResultMetaAggInterval> values = [$15m, $1h, $1d, $1w];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetBgpTimeseriesResponseResultMetaAggInterval$Unknown; } 
+@override String toString() => 'RadarGetBgpTimeseriesResponseResultMetaAggInterval($value)';
+
+ }
+@immutable final class RadarGetBgpTimeseriesResponseResultMetaAggInterval$$15m extends RadarGetBgpTimeseriesResponseResultMetaAggInterval {const RadarGetBgpTimeseriesResponseResultMetaAggInterval$$15m._();
+
+@override String get value => '15m';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpTimeseriesResponseResultMetaAggInterval$$15m;
+
+@override int get hashCode => '15m'.hashCode;
+
+ }
+@immutable final class RadarGetBgpTimeseriesResponseResultMetaAggInterval$$1h extends RadarGetBgpTimeseriesResponseResultMetaAggInterval {const RadarGetBgpTimeseriesResponseResultMetaAggInterval$$1h._();
+
+@override String get value => '1h';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpTimeseriesResponseResultMetaAggInterval$$1h;
+
+@override int get hashCode => '1h'.hashCode;
+
+ }
+@immutable final class RadarGetBgpTimeseriesResponseResultMetaAggInterval$$1d extends RadarGetBgpTimeseriesResponseResultMetaAggInterval {const RadarGetBgpTimeseriesResponseResultMetaAggInterval$$1d._();
+
+@override String get value => '1d';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpTimeseriesResponseResultMetaAggInterval$$1d;
+
+@override int get hashCode => '1d'.hashCode;
+
+ }
+@immutable final class RadarGetBgpTimeseriesResponseResultMetaAggInterval$$1w extends RadarGetBgpTimeseriesResponseResultMetaAggInterval {const RadarGetBgpTimeseriesResponseResultMetaAggInterval$$1w._();
+
+@override String get value => '1w';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpTimeseriesResponseResultMetaAggInterval$$1w;
+
+@override int get hashCode => '1w'.hashCode;
+
+ }
+@immutable final class RadarGetBgpTimeseriesResponseResultMetaAggInterval$Unknown extends RadarGetBgpTimeseriesResponseResultMetaAggInterval {const RadarGetBgpTimeseriesResponseResultMetaAggInterval$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetBgpTimeseriesResponseResultMetaAggInterval && other.value == value;
+    other is RadarGetBgpTimeseriesResponseResultMetaAggInterval$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetBgpTimeseriesResponseResultMetaAggInterval($value)';
 
  }
 @immutable final class RadarGetBgpTimeseriesResponseResultMeta {const RadarGetBgpTimeseriesResponseResultMeta({required this.aggInterval, required this.confidenceInfo, required this.dateRange, required this.lastUpdated, });

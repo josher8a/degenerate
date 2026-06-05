@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DeleteCertificateResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, must be `certificate.deleted`.
-@immutable final class DeleteCertificateResponseObject {const DeleteCertificateResponseObject._(this.value);
+sealed class DeleteCertificateResponseObject {const DeleteCertificateResponseObject();
 
 factory DeleteCertificateResponseObject.fromJson(String json) { return switch (json) {
   'certificate.deleted' => certificateDeleted,
-  _ => DeleteCertificateResponseObject._(json),
+  _ => DeleteCertificateResponseObject$Unknown(json),
 }; }
 
-static const DeleteCertificateResponseObject certificateDeleted = DeleteCertificateResponseObject._('certificate.deleted');
+static const DeleteCertificateResponseObject certificateDeleted = DeleteCertificateResponseObject$certificateDeleted._();
 
 static const List<DeleteCertificateResponseObject> values = [certificateDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeleteCertificateResponseObject$Unknown; } 
+@override String toString() => 'DeleteCertificateResponseObject($value)';
+
+ }
+@immutable final class DeleteCertificateResponseObject$certificateDeleted extends DeleteCertificateResponseObject {const DeleteCertificateResponseObject$certificateDeleted._();
+
+@override String get value => 'certificate.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeleteCertificateResponseObject$certificateDeleted;
+
+@override int get hashCode => 'certificate.deleted'.hashCode;
+
+ }
+@immutable final class DeleteCertificateResponseObject$Unknown extends DeleteCertificateResponseObject {const DeleteCertificateResponseObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeleteCertificateResponseObject && other.value == value;
+    other is DeleteCertificateResponseObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeleteCertificateResponseObject($value)';
 
  }
 @immutable final class DeleteCertificateResponse {const DeleteCertificateResponse({required this.object, required this.id, });

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UpdateStreamRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StreamEnumUpdateStatus {const StreamEnumUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class StreamEnumUpdateStatus {const StreamEnumUpdateStatus();
 
 factory StreamEnumUpdateStatus.fromJson(String json) { return switch (json) {
   'stopped' => stopped,
-  _ => StreamEnumUpdateStatus._(json),
+  _ => StreamEnumUpdateStatus$Unknown(json),
 }; }
 
-static const StreamEnumUpdateStatus stopped = StreamEnumUpdateStatus._('stopped');
+static const StreamEnumUpdateStatus stopped = StreamEnumUpdateStatus$stopped._();
 
 static const List<StreamEnumUpdateStatus> values = [stopped];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StreamEnumUpdateStatus$Unknown; } 
+@override String toString() => 'StreamEnumUpdateStatus($value)';
+
+ }
+@immutable final class StreamEnumUpdateStatus$stopped extends StreamEnumUpdateStatus {const StreamEnumUpdateStatus$stopped._();
+
+@override String get value => 'stopped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamEnumUpdateStatus$stopped;
+
+@override int get hashCode => 'stopped'.hashCode;
+
+ }
+@immutable final class StreamEnumUpdateStatus$Unknown extends StreamEnumUpdateStatus {const StreamEnumUpdateStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StreamEnumUpdateStatus && other.value == value;
+    other is StreamEnumUpdateStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StreamEnumUpdateStatus($value)';
 
  }
 @immutable final class UpdateStreamRequest {const UpdateStreamRequest({required this.status});

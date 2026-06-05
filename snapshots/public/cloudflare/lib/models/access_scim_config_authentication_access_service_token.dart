@@ -2,19 +2,18 @@
 // Source: #/components/schemas/AccessScimConfigAuthenticationAccessServiceToken
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The authentication scheme to use when making SCIM requests to this application.
-@immutable final class AccessScimConfigAuthenticationAccessServiceTokenScheme {const AccessScimConfigAuthenticationAccessServiceTokenScheme._(this.value);
+sealed class AccessScimConfigAuthenticationAccessServiceTokenScheme {const AccessScimConfigAuthenticationAccessServiceTokenScheme();
 
 factory AccessScimConfigAuthenticationAccessServiceTokenScheme.fromJson(String json) { return switch (json) {
   'access_service_token' => accessServiceToken,
-  _ => AccessScimConfigAuthenticationAccessServiceTokenScheme._(json),
+  _ => AccessScimConfigAuthenticationAccessServiceTokenScheme$Unknown(json),
 }; }
 
-static const AccessScimConfigAuthenticationAccessServiceTokenScheme accessServiceToken = AccessScimConfigAuthenticationAccessServiceTokenScheme._('access_service_token');
+static const AccessScimConfigAuthenticationAccessServiceTokenScheme accessServiceToken = AccessScimConfigAuthenticationAccessServiceTokenScheme$accessServiceToken._();
 
 static const List<AccessScimConfigAuthenticationAccessServiceTokenScheme> values = [accessServiceToken];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccessScimConfigAuthenticationAccessServiceTokenScheme$Unknown; } 
+@override String toString() => 'AccessScimConfigAuthenticationAccessServiceTokenScheme($value)';
+
+ }
+@immutable final class AccessScimConfigAuthenticationAccessServiceTokenScheme$accessServiceToken extends AccessScimConfigAuthenticationAccessServiceTokenScheme {const AccessScimConfigAuthenticationAccessServiceTokenScheme$accessServiceToken._();
+
+@override String get value => 'access_service_token';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessScimConfigAuthenticationAccessServiceTokenScheme$accessServiceToken;
+
+@override int get hashCode => 'access_service_token'.hashCode;
+
+ }
+@immutable final class AccessScimConfigAuthenticationAccessServiceTokenScheme$Unknown extends AccessScimConfigAuthenticationAccessServiceTokenScheme {const AccessScimConfigAuthenticationAccessServiceTokenScheme$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccessScimConfigAuthenticationAccessServiceTokenScheme && other.value == value;
+    other is AccessScimConfigAuthenticationAccessServiceTokenScheme$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccessScimConfigAuthenticationAccessServiceTokenScheme($value)';
 
  }
 /// Attributes for configuring Access Service Token authentication scheme for SCIM provisioning to an application.

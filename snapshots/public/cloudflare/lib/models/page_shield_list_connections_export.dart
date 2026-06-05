@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PageShieldListConnectionsExport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Export the list of connections as a file, limited to 50000 entries.
-@immutable final class PageShieldListConnectionsExport {const PageShieldListConnectionsExport._(this.value);
+sealed class PageShieldListConnectionsExport {const PageShieldListConnectionsExport();
 
 factory PageShieldListConnectionsExport.fromJson(String json) { return switch (json) {
   'csv' => csv,
-  _ => PageShieldListConnectionsExport._(json),
+  _ => PageShieldListConnectionsExport$Unknown(json),
 }; }
 
-static const PageShieldListConnectionsExport csv = PageShieldListConnectionsExport._('csv');
+static const PageShieldListConnectionsExport csv = PageShieldListConnectionsExport$csv._();
 
 static const List<PageShieldListConnectionsExport> values = [csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PageShieldListConnectionsExport$Unknown; } 
+@override String toString() => 'PageShieldListConnectionsExport($value)';
+
+ }
+@immutable final class PageShieldListConnectionsExport$csv extends PageShieldListConnectionsExport {const PageShieldListConnectionsExport$csv._();
+
+@override String get value => 'csv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageShieldListConnectionsExport$csv;
+
+@override int get hashCode => 'csv'.hashCode;
+
+ }
+@immutable final class PageShieldListConnectionsExport$Unknown extends PageShieldListConnectionsExport {const PageShieldListConnectionsExport$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PageShieldListConnectionsExport && other.value == value;
+    other is PageShieldListConnectionsExport$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PageShieldListConnectionsExport($value)';
 
  }

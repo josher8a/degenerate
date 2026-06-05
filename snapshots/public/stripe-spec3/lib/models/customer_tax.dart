@@ -2,28 +2,27 @@
 // Source: #/components/schemas/CustomerTax
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_tax/provider.dart';import 'package:pub_stripe_spec3/models/customer_tax_location.dart';/// Surfaces if automatic tax computation is possible given the current customer location information.
-@immutable final class CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax._(this.value);
+sealed class CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax();
 
 factory CustomerTaxAutomaticTax.fromJson(String json) { return switch (json) {
   'failed' => failed,
   'not_collecting' => notCollecting,
   'supported' => supported,
   'unrecognized_location' => unrecognizedLocation,
-  _ => CustomerTaxAutomaticTax._(json),
+  _ => CustomerTaxAutomaticTax$Unknown(json),
 }; }
 
-static const CustomerTaxAutomaticTax failed = CustomerTaxAutomaticTax._('failed');
+static const CustomerTaxAutomaticTax failed = CustomerTaxAutomaticTax$failed._();
 
-static const CustomerTaxAutomaticTax notCollecting = CustomerTaxAutomaticTax._('not_collecting');
+static const CustomerTaxAutomaticTax notCollecting = CustomerTaxAutomaticTax$notCollecting._();
 
-static const CustomerTaxAutomaticTax supported = CustomerTaxAutomaticTax._('supported');
+static const CustomerTaxAutomaticTax supported = CustomerTaxAutomaticTax$supported._();
 
-static const CustomerTaxAutomaticTax unrecognizedLocation = CustomerTaxAutomaticTax._('unrecognized_location');
+static const CustomerTaxAutomaticTax unrecognizedLocation = CustomerTaxAutomaticTax$unrecognizedLocation._();
 
 static const List<CustomerTaxAutomaticTax> values = [failed, notCollecting, supported, unrecognizedLocation];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomerTaxAutomaticTax$Unknown; } 
+@override String toString() => 'CustomerTaxAutomaticTax($value)';
+
+ }
+@immutable final class CustomerTaxAutomaticTax$failed extends CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerTaxAutomaticTax$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class CustomerTaxAutomaticTax$notCollecting extends CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax$notCollecting._();
+
+@override String get value => 'not_collecting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerTaxAutomaticTax$notCollecting;
+
+@override int get hashCode => 'not_collecting'.hashCode;
+
+ }
+@immutable final class CustomerTaxAutomaticTax$supported extends CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax$supported._();
+
+@override String get value => 'supported';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerTaxAutomaticTax$supported;
+
+@override int get hashCode => 'supported'.hashCode;
+
+ }
+@immutable final class CustomerTaxAutomaticTax$unrecognizedLocation extends CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax$unrecognizedLocation._();
+
+@override String get value => 'unrecognized_location';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerTaxAutomaticTax$unrecognizedLocation;
+
+@override int get hashCode => 'unrecognized_location'.hashCode;
+
+ }
+@immutable final class CustomerTaxAutomaticTax$Unknown extends CustomerTaxAutomaticTax {const CustomerTaxAutomaticTax$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerTaxAutomaticTax && other.value == value;
+    other is CustomerTaxAutomaticTax$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomerTaxAutomaticTax($value)';
 
  }
 /// 

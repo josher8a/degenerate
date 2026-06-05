@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CloudflarePipelinesTimestampField
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit();
 
 factory CloudflarePipelinesTimestampUnit.fromJson(String json) { return switch (json) {
   'second' => second,
   'millisecond' => millisecond,
   'microsecond' => microsecond,
   'nanosecond' => nanosecond,
-  _ => CloudflarePipelinesTimestampUnit._(json),
+  _ => CloudflarePipelinesTimestampUnit$Unknown(json),
 }; }
 
-static const CloudflarePipelinesTimestampUnit second = CloudflarePipelinesTimestampUnit._('second');
+static const CloudflarePipelinesTimestampUnit second = CloudflarePipelinesTimestampUnit$second._();
 
-static const CloudflarePipelinesTimestampUnit millisecond = CloudflarePipelinesTimestampUnit._('millisecond');
+static const CloudflarePipelinesTimestampUnit millisecond = CloudflarePipelinesTimestampUnit$millisecond._();
 
-static const CloudflarePipelinesTimestampUnit microsecond = CloudflarePipelinesTimestampUnit._('microsecond');
+static const CloudflarePipelinesTimestampUnit microsecond = CloudflarePipelinesTimestampUnit$microsecond._();
 
-static const CloudflarePipelinesTimestampUnit nanosecond = CloudflarePipelinesTimestampUnit._('nanosecond');
+static const CloudflarePipelinesTimestampUnit nanosecond = CloudflarePipelinesTimestampUnit$nanosecond._();
 
 static const List<CloudflarePipelinesTimestampUnit> values = [second, millisecond, microsecond, nanosecond];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CloudflarePipelinesTimestampUnit$Unknown; } 
+@override String toString() => 'CloudflarePipelinesTimestampUnit($value)';
+
+ }
+@immutable final class CloudflarePipelinesTimestampUnit$second extends CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit$second._();
+
+@override String get value => 'second';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudflarePipelinesTimestampUnit$second;
+
+@override int get hashCode => 'second'.hashCode;
+
+ }
+@immutable final class CloudflarePipelinesTimestampUnit$millisecond extends CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit$millisecond._();
+
+@override String get value => 'millisecond';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudflarePipelinesTimestampUnit$millisecond;
+
+@override int get hashCode => 'millisecond'.hashCode;
+
+ }
+@immutable final class CloudflarePipelinesTimestampUnit$microsecond extends CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit$microsecond._();
+
+@override String get value => 'microsecond';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudflarePipelinesTimestampUnit$microsecond;
+
+@override int get hashCode => 'microsecond'.hashCode;
+
+ }
+@immutable final class CloudflarePipelinesTimestampUnit$nanosecond extends CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit$nanosecond._();
+
+@override String get value => 'nanosecond';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudflarePipelinesTimestampUnit$nanosecond;
+
+@override int get hashCode => 'nanosecond'.hashCode;
+
+ }
+@immutable final class CloudflarePipelinesTimestampUnit$Unknown extends CloudflarePipelinesTimestampUnit {const CloudflarePipelinesTimestampUnit$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CloudflarePipelinesTimestampUnit && other.value == value;
+    other is CloudflarePipelinesTimestampUnit$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CloudflarePipelinesTimestampUnit($value)';
 
  }
 @immutable final class CloudflarePipelinesTimestampField {const CloudflarePipelinesTimestampField({this.unit});

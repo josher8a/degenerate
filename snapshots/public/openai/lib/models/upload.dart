@@ -2,28 +2,27 @@
 // Source: #/components/schemas/Upload
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/open_ai_file.dart';/// The status of the Upload.
-@immutable final class UploadStatus {const UploadStatus._(this.value);
+sealed class UploadStatus {const UploadStatus();
 
 factory UploadStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'completed' => completed,
   'cancelled' => cancelled,
   'expired' => expired,
-  _ => UploadStatus._(json),
+  _ => UploadStatus$Unknown(json),
 }; }
 
-static const UploadStatus pending = UploadStatus._('pending');
+static const UploadStatus pending = UploadStatus$pending._();
 
-static const UploadStatus completed = UploadStatus._('completed');
+static const UploadStatus completed = UploadStatus$completed._();
 
-static const UploadStatus cancelled = UploadStatus._('cancelled');
+static const UploadStatus cancelled = UploadStatus$cancelled._();
 
-static const UploadStatus expired = UploadStatus._('expired');
+static const UploadStatus expired = UploadStatus$expired._();
 
 static const List<UploadStatus> values = [pending, completed, cancelled, expired];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,29 +33,69 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is UploadStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is UploadStatus$Unknown; } 
 @override String toString() => 'UploadStatus($value)';
 
  }
+@immutable final class UploadStatus$pending extends UploadStatus {const UploadStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UploadStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class UploadStatus$completed extends UploadStatus {const UploadStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UploadStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class UploadStatus$cancelled extends UploadStatus {const UploadStatus$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UploadStatus$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class UploadStatus$expired extends UploadStatus {const UploadStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UploadStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class UploadStatus$Unknown extends UploadStatus {const UploadStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is UploadStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The object type, which is always "upload".
-@immutable final class UploadObject {const UploadObject._(this.value);
+sealed class UploadObject {const UploadObject();
 
 factory UploadObject.fromJson(String json) { return switch (json) {
   'upload' => upload,
-  _ => UploadObject._(json),
+  _ => UploadObject$Unknown(json),
 }; }
 
-static const UploadObject upload = UploadObject._('upload');
+static const UploadObject upload = UploadObject$upload._();
 
 static const List<UploadObject> values = [upload];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,13 +103,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UploadObject$Unknown; } 
+@override String toString() => 'UploadObject($value)';
+
+ }
+@immutable final class UploadObject$upload extends UploadObject {const UploadObject$upload._();
+
+@override String get value => 'upload';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UploadObject$upload;
+
+@override int get hashCode => 'upload'.hashCode;
+
+ }
+@immutable final class UploadObject$Unknown extends UploadObject {const UploadObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UploadObject && other.value == value;
+    other is UploadObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UploadObject($value)';
 
  }
 /// The Upload object can accept byte chunks in the form of Parts.

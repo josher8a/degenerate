@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Subscription
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/cancellation_details.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer/customer_default_source.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoice/default_payment_method.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/invoiceitem/invoiceitem_discounts.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';import 'package:pub_stripe_spec3/models/source.dart';import 'package:pub_stripe_spec3/models/subscription/latest_invoice.dart';import 'package:pub_stripe_spec3/models/subscription/pending_setup_intent.dart';import 'package:pub_stripe_spec3/models/subscription/subscription_items.dart';import 'package:pub_stripe_spec3/models/subscription/subscription_schedule2.dart';import 'package:pub_stripe_spec3/models/subscription_automatic_tax.dart';import 'package:pub_stripe_spec3/models/subscription_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/subscription_pending_invoice_item_interval.dart';import 'package:pub_stripe_spec3/models/subscription_schedule.dart';import 'package:pub_stripe_spec3/models/subscription_transfer_data.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_billing_cycle_anchor_config.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_billing_mode.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_pause_collection.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_payment_settings.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_pending_update.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_subscription_invoice_settings.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_trial_settings_trial_settings.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class SubscriptionObject {const SubscriptionObject._(this.value);
+sealed class SubscriptionObject {const SubscriptionObject();
 
 factory SubscriptionObject.fromJson(String json) { return switch (json) {
   'subscription' => subscription,
-  _ => SubscriptionObject._(json),
+  _ => SubscriptionObject$Unknown(json),
 }; }
 
-static const SubscriptionObject subscription = SubscriptionObject._('subscription');
+static const SubscriptionObject subscription = SubscriptionObject$subscription._();
 
 static const List<SubscriptionObject> values = [subscription];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SubscriptionObject$Unknown; } 
+@override String toString() => 'SubscriptionObject($value)';
+
+ }
+@immutable final class SubscriptionObject$subscription extends SubscriptionObject {const SubscriptionObject$subscription._();
+
+@override String get value => 'subscription';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionObject$subscription;
+
+@override int get hashCode => 'subscription'.hashCode;
+
+ }
+@immutable final class SubscriptionObject$Unknown extends SubscriptionObject {const SubscriptionObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SubscriptionObject && other.value == value;
+    other is SubscriptionObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SubscriptionObject($value)';
 
  }
 /// Possible values are `incomplete`, `incomplete_expired`, `trialing`, `active`, `past_due`, `canceled`, `unpaid`, or `paused`.
@@ -42,7 +55,7 @@ bool get isUnknown { return !values.contains(this); }
 /// If subscription `collection_method=charge_automatically`, it becomes `past_due` when payment is required but cannot be paid (due to failed payment or awaiting additional user actions). Once Stripe has exhausted all payment retry attempts, the subscription will become `canceled` or `unpaid` (depending on your subscriptions settings).
 /// 
 /// If subscription `collection_method=send_invoice` it becomes `past_due` when its invoice is not paid by the due date, and `canceled` or `unpaid` if it is still not paid by an additional deadline after that. Note that when a subscription has a status of `unpaid`, no subsequent invoices will be attempted (invoices will be created, but then immediately automatically closed). After receiving updated payment information from a customer, you may choose to reopen and pay their closed invoices.
-@immutable final class SubscriptionStatus {const SubscriptionStatus._(this.value);
+sealed class SubscriptionStatus {const SubscriptionStatus();
 
 factory SubscriptionStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -53,29 +66,28 @@ factory SubscriptionStatus.fromJson(String json) { return switch (json) {
   'paused' => paused,
   'trialing' => trialing,
   'unpaid' => unpaid,
-  _ => SubscriptionStatus._(json),
+  _ => SubscriptionStatus$Unknown(json),
 }; }
 
-static const SubscriptionStatus active = SubscriptionStatus._('active');
+static const SubscriptionStatus active = SubscriptionStatus$active._();
 
-static const SubscriptionStatus canceled = SubscriptionStatus._('canceled');
+static const SubscriptionStatus canceled = SubscriptionStatus$canceled._();
 
-static const SubscriptionStatus incomplete = SubscriptionStatus._('incomplete');
+static const SubscriptionStatus incomplete = SubscriptionStatus$incomplete._();
 
-static const SubscriptionStatus incompleteExpired = SubscriptionStatus._('incomplete_expired');
+static const SubscriptionStatus incompleteExpired = SubscriptionStatus$incompleteExpired._();
 
-static const SubscriptionStatus pastDue = SubscriptionStatus._('past_due');
+static const SubscriptionStatus pastDue = SubscriptionStatus$pastDue._();
 
-static const SubscriptionStatus paused = SubscriptionStatus._('paused');
+static const SubscriptionStatus paused = SubscriptionStatus$paused._();
 
-static const SubscriptionStatus trialing = SubscriptionStatus._('trialing');
+static const SubscriptionStatus trialing = SubscriptionStatus$trialing._();
 
-static const SubscriptionStatus unpaid = SubscriptionStatus._('unpaid');
+static const SubscriptionStatus unpaid = SubscriptionStatus$unpaid._();
 
 static const List<SubscriptionStatus> values = [active, canceled, incomplete, incompleteExpired, pastDue, paused, trialing, unpaid];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -90,13 +102,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SubscriptionStatus$Unknown; } 
+@override String toString() => 'SubscriptionStatus($value)';
+
+ }
+@immutable final class SubscriptionStatus$active extends SubscriptionStatus {const SubscriptionStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class SubscriptionStatus$canceled extends SubscriptionStatus {const SubscriptionStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class SubscriptionStatus$incomplete extends SubscriptionStatus {const SubscriptionStatus$incomplete._();
+
+@override String get value => 'incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionStatus$incomplete;
+
+@override int get hashCode => 'incomplete'.hashCode;
+
+ }
+@immutable final class SubscriptionStatus$incompleteExpired extends SubscriptionStatus {const SubscriptionStatus$incompleteExpired._();
+
+@override String get value => 'incomplete_expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionStatus$incompleteExpired;
+
+@override int get hashCode => 'incomplete_expired'.hashCode;
+
+ }
+@immutable final class SubscriptionStatus$pastDue extends SubscriptionStatus {const SubscriptionStatus$pastDue._();
+
+@override String get value => 'past_due';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionStatus$pastDue;
+
+@override int get hashCode => 'past_due'.hashCode;
+
+ }
+@immutable final class SubscriptionStatus$paused extends SubscriptionStatus {const SubscriptionStatus$paused._();
+
+@override String get value => 'paused';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionStatus$paused;
+
+@override int get hashCode => 'paused'.hashCode;
+
+ }
+@immutable final class SubscriptionStatus$trialing extends SubscriptionStatus {const SubscriptionStatus$trialing._();
+
+@override String get value => 'trialing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionStatus$trialing;
+
+@override int get hashCode => 'trialing'.hashCode;
+
+ }
+@immutable final class SubscriptionStatus$unpaid extends SubscriptionStatus {const SubscriptionStatus$unpaid._();
+
+@override String get value => 'unpaid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionStatus$unpaid;
+
+@override int get hashCode => 'unpaid'.hashCode;
+
+ }
+@immutable final class SubscriptionStatus$Unknown extends SubscriptionStatus {const SubscriptionStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SubscriptionStatus && other.value == value;
+    other is SubscriptionStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SubscriptionStatus($value)';
 
  }
 /// Subscriptions allow you to charge a customer on a recurring basis.

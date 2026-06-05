@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ShieldCredentialsJwtKeyRsa
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Algorithm
-@immutable final class ShieldCredentialsJwtKeyRsaAlg {const ShieldCredentialsJwtKeyRsaAlg._(this.value);
+sealed class ShieldCredentialsJwtKeyRsaAlg {const ShieldCredentialsJwtKeyRsaAlg();
 
 factory ShieldCredentialsJwtKeyRsaAlg.fromJson(String json) { return switch (json) {
   'RS256' => rs256,
@@ -11,25 +11,24 @@ factory ShieldCredentialsJwtKeyRsaAlg.fromJson(String json) { return switch (jso
   'PS256' => ps256,
   'PS384' => ps384,
   'PS512' => ps512,
-  _ => ShieldCredentialsJwtKeyRsaAlg._(json),
+  _ => ShieldCredentialsJwtKeyRsaAlg$Unknown(json),
 }; }
 
-static const ShieldCredentialsJwtKeyRsaAlg rs256 = ShieldCredentialsJwtKeyRsaAlg._('RS256');
+static const ShieldCredentialsJwtKeyRsaAlg rs256 = ShieldCredentialsJwtKeyRsaAlg$rs256._();
 
-static const ShieldCredentialsJwtKeyRsaAlg rs384 = ShieldCredentialsJwtKeyRsaAlg._('RS384');
+static const ShieldCredentialsJwtKeyRsaAlg rs384 = ShieldCredentialsJwtKeyRsaAlg$rs384._();
 
-static const ShieldCredentialsJwtKeyRsaAlg rs512 = ShieldCredentialsJwtKeyRsaAlg._('RS512');
+static const ShieldCredentialsJwtKeyRsaAlg rs512 = ShieldCredentialsJwtKeyRsaAlg$rs512._();
 
-static const ShieldCredentialsJwtKeyRsaAlg ps256 = ShieldCredentialsJwtKeyRsaAlg._('PS256');
+static const ShieldCredentialsJwtKeyRsaAlg ps256 = ShieldCredentialsJwtKeyRsaAlg$ps256._();
 
-static const ShieldCredentialsJwtKeyRsaAlg ps384 = ShieldCredentialsJwtKeyRsaAlg._('PS384');
+static const ShieldCredentialsJwtKeyRsaAlg ps384 = ShieldCredentialsJwtKeyRsaAlg$ps384._();
 
-static const ShieldCredentialsJwtKeyRsaAlg ps512 = ShieldCredentialsJwtKeyRsaAlg._('PS512');
+static const ShieldCredentialsJwtKeyRsaAlg ps512 = ShieldCredentialsJwtKeyRsaAlg$ps512._();
 
 static const List<ShieldCredentialsJwtKeyRsaAlg> values = [rs256, rs384, rs512, ps256, ps384, ps512];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,29 +41,87 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldCredentialsJwtKeyRsaAlg && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ShieldCredentialsJwtKeyRsaAlg$Unknown; } 
 @override String toString() => 'ShieldCredentialsJwtKeyRsaAlg($value)';
 
  }
+@immutable final class ShieldCredentialsJwtKeyRsaAlg$rs256 extends ShieldCredentialsJwtKeyRsaAlg {const ShieldCredentialsJwtKeyRsaAlg$rs256._();
+
+@override String get value => 'RS256';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldCredentialsJwtKeyRsaAlg$rs256;
+
+@override int get hashCode => 'RS256'.hashCode;
+
+ }
+@immutable final class ShieldCredentialsJwtKeyRsaAlg$rs384 extends ShieldCredentialsJwtKeyRsaAlg {const ShieldCredentialsJwtKeyRsaAlg$rs384._();
+
+@override String get value => 'RS384';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldCredentialsJwtKeyRsaAlg$rs384;
+
+@override int get hashCode => 'RS384'.hashCode;
+
+ }
+@immutable final class ShieldCredentialsJwtKeyRsaAlg$rs512 extends ShieldCredentialsJwtKeyRsaAlg {const ShieldCredentialsJwtKeyRsaAlg$rs512._();
+
+@override String get value => 'RS512';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldCredentialsJwtKeyRsaAlg$rs512;
+
+@override int get hashCode => 'RS512'.hashCode;
+
+ }
+@immutable final class ShieldCredentialsJwtKeyRsaAlg$ps256 extends ShieldCredentialsJwtKeyRsaAlg {const ShieldCredentialsJwtKeyRsaAlg$ps256._();
+
+@override String get value => 'PS256';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldCredentialsJwtKeyRsaAlg$ps256;
+
+@override int get hashCode => 'PS256'.hashCode;
+
+ }
+@immutable final class ShieldCredentialsJwtKeyRsaAlg$ps384 extends ShieldCredentialsJwtKeyRsaAlg {const ShieldCredentialsJwtKeyRsaAlg$ps384._();
+
+@override String get value => 'PS384';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldCredentialsJwtKeyRsaAlg$ps384;
+
+@override int get hashCode => 'PS384'.hashCode;
+
+ }
+@immutable final class ShieldCredentialsJwtKeyRsaAlg$ps512 extends ShieldCredentialsJwtKeyRsaAlg {const ShieldCredentialsJwtKeyRsaAlg$ps512._();
+
+@override String get value => 'PS512';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldCredentialsJwtKeyRsaAlg$ps512;
+
+@override int get hashCode => 'PS512'.hashCode;
+
+ }
+@immutable final class ShieldCredentialsJwtKeyRsaAlg$Unknown extends ShieldCredentialsJwtKeyRsaAlg {const ShieldCredentialsJwtKeyRsaAlg$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ShieldCredentialsJwtKeyRsaAlg$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Key Type
-@immutable final class ShieldCredentialsJwtKeyRsaKty {const ShieldCredentialsJwtKeyRsaKty._(this.value);
+sealed class ShieldCredentialsJwtKeyRsaKty {const ShieldCredentialsJwtKeyRsaKty();
 
 factory ShieldCredentialsJwtKeyRsaKty.fromJson(String json) { return switch (json) {
   'RSA' => rsa,
-  _ => ShieldCredentialsJwtKeyRsaKty._(json),
+  _ => ShieldCredentialsJwtKeyRsaKty$Unknown(json),
 }; }
 
-static const ShieldCredentialsJwtKeyRsaKty rsa = ShieldCredentialsJwtKeyRsaKty._('RSA');
+static const ShieldCredentialsJwtKeyRsaKty rsa = ShieldCredentialsJwtKeyRsaKty$rsa._();
 
 static const List<ShieldCredentialsJwtKeyRsaKty> values = [rsa];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -72,13 +129,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShieldCredentialsJwtKeyRsaKty$Unknown; } 
+@override String toString() => 'ShieldCredentialsJwtKeyRsaKty($value)';
+
+ }
+@immutable final class ShieldCredentialsJwtKeyRsaKty$rsa extends ShieldCredentialsJwtKeyRsaKty {const ShieldCredentialsJwtKeyRsaKty$rsa._();
+
+@override String get value => 'RSA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldCredentialsJwtKeyRsaKty$rsa;
+
+@override int get hashCode => 'RSA'.hashCode;
+
+ }
+@immutable final class ShieldCredentialsJwtKeyRsaKty$Unknown extends ShieldCredentialsJwtKeyRsaKty {const ShieldCredentialsJwtKeyRsaKty$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldCredentialsJwtKeyRsaKty && other.value == value;
+    other is ShieldCredentialsJwtKeyRsaKty$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShieldCredentialsJwtKeyRsaKty($value)';
 
  }
 /// JSON representation of an RSA key.

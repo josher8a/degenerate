@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FundingInstructions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/funding_instructions/funding_instructions_funding_type.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class FundingInstructionsObject {const FundingInstructionsObject._(this.value);
+sealed class FundingInstructionsObject {const FundingInstructionsObject();
 
 factory FundingInstructionsObject.fromJson(String json) { return switch (json) {
   'funding_instructions' => fundingInstructions,
-  _ => FundingInstructionsObject._(json),
+  _ => FundingInstructionsObject$Unknown(json),
 }; }
 
-static const FundingInstructionsObject fundingInstructions = FundingInstructionsObject._('funding_instructions');
+static const FundingInstructionsObject fundingInstructions = FundingInstructionsObject$fundingInstructions._();
 
 static const List<FundingInstructionsObject> values = [fundingInstructions];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FundingInstructionsObject$Unknown; } 
+@override String toString() => 'FundingInstructionsObject($value)';
+
+ }
+@immutable final class FundingInstructionsObject$fundingInstructions extends FundingInstructionsObject {const FundingInstructionsObject$fundingInstructions._();
+
+@override String get value => 'funding_instructions';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsObject$fundingInstructions;
+
+@override int get hashCode => 'funding_instructions'.hashCode;
+
+ }
+@immutable final class FundingInstructionsObject$Unknown extends FundingInstructionsObject {const FundingInstructionsObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FundingInstructionsObject && other.value == value;
+    other is FundingInstructionsObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FundingInstructionsObject($value)';
 
  }
 /// Each customer has a [`balance`](https://docs.stripe.com/api/customers/object#customer_object-balance) that is

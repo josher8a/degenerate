@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_search_tool_call/file_search_tool_call_results.dart';/// The status of the file search tool call. One of `in_progress`,
 /// `searching`, `incomplete` or `failed`,
 /// 
-@immutable final class FileSearchToolCallStatus {const FileSearchToolCallStatus._(this.value);
+sealed class FileSearchToolCallStatus {const FileSearchToolCallStatus();
 
 factory FileSearchToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -12,23 +12,22 @@ factory FileSearchToolCallStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
   'incomplete' => incomplete,
   'failed' => failed,
-  _ => FileSearchToolCallStatus._(json),
+  _ => FileSearchToolCallStatus$Unknown(json),
 }; }
 
-static const FileSearchToolCallStatus inProgress = FileSearchToolCallStatus._('in_progress');
+static const FileSearchToolCallStatus inProgress = FileSearchToolCallStatus$inProgress._();
 
-static const FileSearchToolCallStatus searching = FileSearchToolCallStatus._('searching');
+static const FileSearchToolCallStatus searching = FileSearchToolCallStatus$searching._();
 
-static const FileSearchToolCallStatus completed = FileSearchToolCallStatus._('completed');
+static const FileSearchToolCallStatus completed = FileSearchToolCallStatus$completed._();
 
-static const FileSearchToolCallStatus incomplete = FileSearchToolCallStatus._('incomplete');
+static const FileSearchToolCallStatus incomplete = FileSearchToolCallStatus$incomplete._();
 
-static const FileSearchToolCallStatus failed = FileSearchToolCallStatus._('failed');
+static const FileSearchToolCallStatus failed = FileSearchToolCallStatus$failed._();
 
 static const List<FileSearchToolCallStatus> values = [inProgress, searching, completed, incomplete, failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -40,13 +39,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FileSearchToolCallStatus$Unknown; } 
+@override String toString() => 'FileSearchToolCallStatus($value)';
+
+ }
+@immutable final class FileSearchToolCallStatus$inProgress extends FileSearchToolCallStatus {const FileSearchToolCallStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileSearchToolCallStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class FileSearchToolCallStatus$searching extends FileSearchToolCallStatus {const FileSearchToolCallStatus$searching._();
+
+@override String get value => 'searching';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileSearchToolCallStatus$searching;
+
+@override int get hashCode => 'searching'.hashCode;
+
+ }
+@immutable final class FileSearchToolCallStatus$completed extends FileSearchToolCallStatus {const FileSearchToolCallStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileSearchToolCallStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class FileSearchToolCallStatus$incomplete extends FileSearchToolCallStatus {const FileSearchToolCallStatus$incomplete._();
+
+@override String get value => 'incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileSearchToolCallStatus$incomplete;
+
+@override int get hashCode => 'incomplete'.hashCode;
+
+ }
+@immutable final class FileSearchToolCallStatus$failed extends FileSearchToolCallStatus {const FileSearchToolCallStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileSearchToolCallStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class FileSearchToolCallStatus$Unknown extends FileSearchToolCallStatus {const FileSearchToolCallStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FileSearchToolCallStatus && other.value == value;
+    other is FileSearchToolCallStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FileSearchToolCallStatus($value)';
 
  }
 /// The results of a file search tool call. See the

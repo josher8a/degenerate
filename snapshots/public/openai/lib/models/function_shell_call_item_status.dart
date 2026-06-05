@@ -2,25 +2,24 @@
 // Source: #/components/schemas/FunctionShellCallItemStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status values reported for shell tool calls.
-@immutable final class FunctionShellCallItemStatus {const FunctionShellCallItemStatus._(this.value);
+sealed class FunctionShellCallItemStatus {const FunctionShellCallItemStatus();
 
 factory FunctionShellCallItemStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
-  _ => FunctionShellCallItemStatus._(json),
+  _ => FunctionShellCallItemStatus$Unknown(json),
 }; }
 
-static const FunctionShellCallItemStatus inProgress = FunctionShellCallItemStatus._('in_progress');
+static const FunctionShellCallItemStatus inProgress = FunctionShellCallItemStatus$inProgress._();
 
-static const FunctionShellCallItemStatus completed = FunctionShellCallItemStatus._('completed');
+static const FunctionShellCallItemStatus completed = FunctionShellCallItemStatus$completed._();
 
-static const FunctionShellCallItemStatus incomplete = FunctionShellCallItemStatus._('incomplete');
+static const FunctionShellCallItemStatus incomplete = FunctionShellCallItemStatus$incomplete._();
 
 static const List<FunctionShellCallItemStatus> values = [inProgress, completed, incomplete];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FunctionShellCallItemStatus$Unknown; } 
+@override String toString() => 'FunctionShellCallItemStatus($value)';
+
+ }
+@immutable final class FunctionShellCallItemStatus$inProgress extends FunctionShellCallItemStatus {const FunctionShellCallItemStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionShellCallItemStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class FunctionShellCallItemStatus$completed extends FunctionShellCallItemStatus {const FunctionShellCallItemStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionShellCallItemStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class FunctionShellCallItemStatus$incomplete extends FunctionShellCallItemStatus {const FunctionShellCallItemStatus$incomplete._();
+
+@override String get value => 'incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionShellCallItemStatus$incomplete;
+
+@override int get hashCode => 'incomplete'.hashCode;
+
+ }
+@immutable final class FunctionShellCallItemStatus$Unknown extends FunctionShellCallItemStatus {const FunctionShellCallItemStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FunctionShellCallItemStatus && other.value == value;
+    other is FunctionShellCallItemStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FunctionShellCallItemStatus($value)';
 
  }

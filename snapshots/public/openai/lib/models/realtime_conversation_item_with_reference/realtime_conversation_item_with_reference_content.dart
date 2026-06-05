@@ -3,28 +3,27 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type (`input_text`, `input_audio`, `item_reference`, `text`).
 /// 
-@immutable final class RealtimeConversationItemWithReferenceContentType {const RealtimeConversationItemWithReferenceContentType._(this.value);
+sealed class RealtimeConversationItemWithReferenceContentType {const RealtimeConversationItemWithReferenceContentType();
 
 factory RealtimeConversationItemWithReferenceContentType.fromJson(String json) { return switch (json) {
   'input_audio' => inputAudio,
   'input_text' => inputText,
   'item_reference' => itemReference,
   'text' => text,
-  _ => RealtimeConversationItemWithReferenceContentType._(json),
+  _ => RealtimeConversationItemWithReferenceContentType$Unknown(json),
 }; }
 
-static const RealtimeConversationItemWithReferenceContentType inputAudio = RealtimeConversationItemWithReferenceContentType._('input_audio');
+static const RealtimeConversationItemWithReferenceContentType inputAudio = RealtimeConversationItemWithReferenceContentType$inputAudio._();
 
-static const RealtimeConversationItemWithReferenceContentType inputText = RealtimeConversationItemWithReferenceContentType._('input_text');
+static const RealtimeConversationItemWithReferenceContentType inputText = RealtimeConversationItemWithReferenceContentType$inputText._();
 
-static const RealtimeConversationItemWithReferenceContentType itemReference = RealtimeConversationItemWithReferenceContentType._('item_reference');
+static const RealtimeConversationItemWithReferenceContentType itemReference = RealtimeConversationItemWithReferenceContentType$itemReference._();
 
-static const RealtimeConversationItemWithReferenceContentType text = RealtimeConversationItemWithReferenceContentType._('text');
+static const RealtimeConversationItemWithReferenceContentType text = RealtimeConversationItemWithReferenceContentType$text._();
 
 static const List<RealtimeConversationItemWithReferenceContentType> values = [inputAudio, inputText, itemReference, text];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -35,13 +34,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeConversationItemWithReferenceContentType$Unknown; } 
+@override String toString() => 'RealtimeConversationItemWithReferenceContentType($value)';
+
+ }
+@immutable final class RealtimeConversationItemWithReferenceContentType$inputAudio extends RealtimeConversationItemWithReferenceContentType {const RealtimeConversationItemWithReferenceContentType$inputAudio._();
+
+@override String get value => 'input_audio';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemWithReferenceContentType$inputAudio;
+
+@override int get hashCode => 'input_audio'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemWithReferenceContentType$inputText extends RealtimeConversationItemWithReferenceContentType {const RealtimeConversationItemWithReferenceContentType$inputText._();
+
+@override String get value => 'input_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemWithReferenceContentType$inputText;
+
+@override int get hashCode => 'input_text'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemWithReferenceContentType$itemReference extends RealtimeConversationItemWithReferenceContentType {const RealtimeConversationItemWithReferenceContentType$itemReference._();
+
+@override String get value => 'item_reference';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemWithReferenceContentType$itemReference;
+
+@override int get hashCode => 'item_reference'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemWithReferenceContentType$text extends RealtimeConversationItemWithReferenceContentType {const RealtimeConversationItemWithReferenceContentType$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemWithReferenceContentType$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemWithReferenceContentType$Unknown extends RealtimeConversationItemWithReferenceContentType {const RealtimeConversationItemWithReferenceContentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeConversationItemWithReferenceContentType && other.value == value;
+    other is RealtimeConversationItemWithReferenceContentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeConversationItemWithReferenceContentType($value)';
 
  }
 @immutable final class RealtimeConversationItemWithReferenceContent {const RealtimeConversationItemWithReferenceContent({this.type, this.text, this.id, this.audio, this.transcript, });

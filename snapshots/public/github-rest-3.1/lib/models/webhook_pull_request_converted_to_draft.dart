@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookPullRequestConvertedToDraft
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/pull_request_webhook.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';@immutable final class WebhookPullRequestConvertedToDraftAction {const WebhookPullRequestConvertedToDraftAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/pull_request_webhook.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';sealed class WebhookPullRequestConvertedToDraftAction {const WebhookPullRequestConvertedToDraftAction();
 
 factory WebhookPullRequestConvertedToDraftAction.fromJson(String json) { return switch (json) {
   'converted_to_draft' => convertedToDraft,
-  _ => WebhookPullRequestConvertedToDraftAction._(json),
+  _ => WebhookPullRequestConvertedToDraftAction$Unknown(json),
 }; }
 
-static const WebhookPullRequestConvertedToDraftAction convertedToDraft = WebhookPullRequestConvertedToDraftAction._('converted_to_draft');
+static const WebhookPullRequestConvertedToDraftAction convertedToDraft = WebhookPullRequestConvertedToDraftAction$convertedToDraft._();
 
 static const List<WebhookPullRequestConvertedToDraftAction> values = [convertedToDraft];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookPullRequestConvertedToDraftAction$Unknown; } 
+@override String toString() => 'WebhookPullRequestConvertedToDraftAction($value)';
+
+ }
+@immutable final class WebhookPullRequestConvertedToDraftAction$convertedToDraft extends WebhookPullRequestConvertedToDraftAction {const WebhookPullRequestConvertedToDraftAction$convertedToDraft._();
+
+@override String get value => 'converted_to_draft';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestConvertedToDraftAction$convertedToDraft;
+
+@override int get hashCode => 'converted_to_draft'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestConvertedToDraftAction$Unknown extends WebhookPullRequestConvertedToDraftAction {const WebhookPullRequestConvertedToDraftAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookPullRequestConvertedToDraftAction && other.value == value;
+    other is WebhookPullRequestConvertedToDraftAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookPullRequestConvertedToDraftAction($value)';
 
  }
 @immutable final class WebhookPullRequestConvertedToDraft {const WebhookPullRequestConvertedToDraft({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

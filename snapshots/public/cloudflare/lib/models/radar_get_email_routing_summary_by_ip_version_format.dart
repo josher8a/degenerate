@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetEmailRoutingSummaryByIpVersionFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetEmailRoutingSummaryByIpVersionFormat {const RadarGetEmailRoutingSummaryByIpVersionFormat._(this.value);
+sealed class RadarGetEmailRoutingSummaryByIpVersionFormat {const RadarGetEmailRoutingSummaryByIpVersionFormat();
 
 factory RadarGetEmailRoutingSummaryByIpVersionFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetEmailRoutingSummaryByIpVersionFormat._(json),
+  _ => RadarGetEmailRoutingSummaryByIpVersionFormat$Unknown(json),
 }; }
 
-static const RadarGetEmailRoutingSummaryByIpVersionFormat $json = RadarGetEmailRoutingSummaryByIpVersionFormat._('JSON');
+static const RadarGetEmailRoutingSummaryByIpVersionFormat $json = RadarGetEmailRoutingSummaryByIpVersionFormat$$json._();
 
-static const RadarGetEmailRoutingSummaryByIpVersionFormat csv = RadarGetEmailRoutingSummaryByIpVersionFormat._('CSV');
+static const RadarGetEmailRoutingSummaryByIpVersionFormat csv = RadarGetEmailRoutingSummaryByIpVersionFormat$csv._();
 
 static const List<RadarGetEmailRoutingSummaryByIpVersionFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailRoutingSummaryByIpVersionFormat$Unknown; } 
+@override String toString() => 'RadarGetEmailRoutingSummaryByIpVersionFormat($value)';
+
+ }
+@immutable final class RadarGetEmailRoutingSummaryByIpVersionFormat$$json extends RadarGetEmailRoutingSummaryByIpVersionFormat {const RadarGetEmailRoutingSummaryByIpVersionFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingSummaryByIpVersionFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingSummaryByIpVersionFormat$csv extends RadarGetEmailRoutingSummaryByIpVersionFormat {const RadarGetEmailRoutingSummaryByIpVersionFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingSummaryByIpVersionFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingSummaryByIpVersionFormat$Unknown extends RadarGetEmailRoutingSummaryByIpVersionFormat {const RadarGetEmailRoutingSummaryByIpVersionFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailRoutingSummaryByIpVersionFormat && other.value == value;
+    other is RadarGetEmailRoutingSummaryByIpVersionFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailRoutingSummaryByIpVersionFormat($value)';
 
  }

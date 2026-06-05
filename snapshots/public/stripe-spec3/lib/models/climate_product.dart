@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ClimateProduct
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/climate_removals_products_price.dart';import 'package:pub_stripe_spec3/models/climate_supplier.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ClimateProductObject {const ClimateProductObject._(this.value);
+sealed class ClimateProductObject {const ClimateProductObject();
 
 factory ClimateProductObject.fromJson(String json) { return switch (json) {
   'climate.product' => climateProduct,
-  _ => ClimateProductObject._(json),
+  _ => ClimateProductObject$Unknown(json),
 }; }
 
-static const ClimateProductObject climateProduct = ClimateProductObject._('climate.product');
+static const ClimateProductObject climateProduct = ClimateProductObject$climateProduct._();
 
 static const List<ClimateProductObject> values = [climateProduct];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ClimateProductObject$Unknown; } 
+@override String toString() => 'ClimateProductObject($value)';
+
+ }
+@immutable final class ClimateProductObject$climateProduct extends ClimateProductObject {const ClimateProductObject$climateProduct._();
+
+@override String get value => 'climate.product';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClimateProductObject$climateProduct;
+
+@override int get hashCode => 'climate.product'.hashCode;
+
+ }
+@immutable final class ClimateProductObject$Unknown extends ClimateProductObject {const ClimateProductObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ClimateProductObject && other.value == value;
+    other is ClimateProductObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ClimateProductObject($value)';
 
  }
 /// A Climate product represents a type of carbon removal unit available for reservation.

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SmartUnionNestedInnerBird
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmartUnionNestedInnerBirdKind {const SmartUnionNestedInnerBirdKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SmartUnionNestedInnerBirdKind {const SmartUnionNestedInnerBirdKind();
 
 factory SmartUnionNestedInnerBirdKind.fromJson(String json) { return switch (json) {
   'bird' => bird,
-  _ => SmartUnionNestedInnerBirdKind._(json),
+  _ => SmartUnionNestedInnerBirdKind$Unknown(json),
 }; }
 
-static const SmartUnionNestedInnerBirdKind bird = SmartUnionNestedInnerBirdKind._('bird');
+static const SmartUnionNestedInnerBirdKind bird = SmartUnionNestedInnerBirdKind$bird._();
 
 static const List<SmartUnionNestedInnerBirdKind> values = [bird];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SmartUnionNestedInnerBirdKind$Unknown; } 
+@override String toString() => 'SmartUnionNestedInnerBirdKind($value)';
+
+ }
+@immutable final class SmartUnionNestedInnerBirdKind$bird extends SmartUnionNestedInnerBirdKind {const SmartUnionNestedInnerBirdKind$bird._();
+
+@override String get value => 'bird';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SmartUnionNestedInnerBirdKind$bird;
+
+@override int get hashCode => 'bird'.hashCode;
+
+ }
+@immutable final class SmartUnionNestedInnerBirdKind$Unknown extends SmartUnionNestedInnerBirdKind {const SmartUnionNestedInnerBirdKind$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SmartUnionNestedInnerBirdKind && other.value == value;
+    other is SmartUnionNestedInnerBirdKind$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SmartUnionNestedInnerBirdKind($value)';
 
  }
 @immutable final class SmartUnionNestedInnerBird {const SmartUnionNestedInnerBird({required this.kind});

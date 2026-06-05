@@ -2,25 +2,24 @@
 // Source: #/components/schemas/RuleSuites
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/rule_suite/rule_suite_result.dart';/// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
-@immutable final class RuleSuitesEvaluationResult {const RuleSuitesEvaluationResult._(this.value);
+sealed class RuleSuitesEvaluationResult {const RuleSuitesEvaluationResult();
 
 factory RuleSuitesEvaluationResult.fromJson(String json) { return switch (json) {
   'pass' => pass,
   'fail' => fail,
   'bypass' => bypass,
-  _ => RuleSuitesEvaluationResult._(json),
+  _ => RuleSuitesEvaluationResult$Unknown(json),
 }; }
 
-static const RuleSuitesEvaluationResult pass = RuleSuitesEvaluationResult._('pass');
+static const RuleSuitesEvaluationResult pass = RuleSuitesEvaluationResult$pass._();
 
-static const RuleSuitesEvaluationResult fail = RuleSuitesEvaluationResult._('fail');
+static const RuleSuitesEvaluationResult fail = RuleSuitesEvaluationResult$fail._();
 
-static const RuleSuitesEvaluationResult bypass = RuleSuitesEvaluationResult._('bypass');
+static const RuleSuitesEvaluationResult bypass = RuleSuitesEvaluationResult$bypass._();
 
 static const List<RuleSuitesEvaluationResult> values = [pass, fail, bypass];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RuleSuitesEvaluationResult$Unknown; } 
+@override String toString() => 'RuleSuitesEvaluationResult($value)';
+
+ }
+@immutable final class RuleSuitesEvaluationResult$pass extends RuleSuitesEvaluationResult {const RuleSuitesEvaluationResult$pass._();
+
+@override String get value => 'pass';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RuleSuitesEvaluationResult$pass;
+
+@override int get hashCode => 'pass'.hashCode;
+
+ }
+@immutable final class RuleSuitesEvaluationResult$fail extends RuleSuitesEvaluationResult {const RuleSuitesEvaluationResult$fail._();
+
+@override String get value => 'fail';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RuleSuitesEvaluationResult$fail;
+
+@override int get hashCode => 'fail'.hashCode;
+
+ }
+@immutable final class RuleSuitesEvaluationResult$bypass extends RuleSuitesEvaluationResult {const RuleSuitesEvaluationResult$bypass._();
+
+@override String get value => 'bypass';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RuleSuitesEvaluationResult$bypass;
+
+@override int get hashCode => 'bypass'.hashCode;
+
+ }
+@immutable final class RuleSuitesEvaluationResult$Unknown extends RuleSuitesEvaluationResult {const RuleSuitesEvaluationResult$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RuleSuitesEvaluationResult && other.value == value;
+    other is RuleSuitesEvaluationResult$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RuleSuitesEvaluationResult($value)';
 
  }
 @immutable final class RuleSuites2 {const RuleSuites2({this.id, this.actorId, this.actorName, this.beforeSha, this.afterSha, this.ref, this.repositoryId, this.repositoryName, this.pushedAt, this.result, this.evaluationResult, });

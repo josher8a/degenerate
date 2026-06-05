@@ -2,7 +2,7 @@
 // Source: #/components/schemas/StreamLiveInput
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_input_rtmps.dart';import 'package:pub_cloudflare/models/stream_input_srt.dart';import 'package:pub_cloudflare/models/stream_input_webrtc.dart';import 'package:pub_cloudflare/models/stream_live_input_created.dart';import 'package:pub_cloudflare/models/stream_live_input_enabled.dart';import 'package:pub_cloudflare/models/stream_live_input_identifier.dart';import 'package:pub_cloudflare/models/stream_live_input_modified.dart';import 'package:pub_cloudflare/models/stream_live_input_recording_deletion.dart';import 'package:pub_cloudflare/models/stream_live_input_recording_settings.dart';import 'package:pub_cloudflare/models/stream_playback_rtmps.dart';import 'package:pub_cloudflare/models/stream_playback_srt.dart';import 'package:pub_cloudflare/models/stream_playback_webrtc.dart';/// The connection status of a live input.
-@immutable final class StreamLiveInputStatus {const StreamLiveInputStatus._(this.value);
+sealed class StreamLiveInputStatus {const StreamLiveInputStatus();
 
 factory StreamLiveInputStatus.fromJson(String json) { return switch (json) {
   'null' => $null,
@@ -14,31 +14,30 @@ factory StreamLiveInputStatus.fromJson(String json) { return switch (json) {
   'failed_to_connect' => failedToConnect,
   'failed_to_reconnect' => failedToReconnect,
   'new_configuration_accepted' => newConfigurationAccepted,
-  _ => StreamLiveInputStatus._(json),
+  _ => StreamLiveInputStatus$Unknown(json),
 }; }
 
-static const StreamLiveInputStatus $null = StreamLiveInputStatus._('null');
+static const StreamLiveInputStatus $null = StreamLiveInputStatus$$null._();
 
-static const StreamLiveInputStatus connected = StreamLiveInputStatus._('connected');
+static const StreamLiveInputStatus connected = StreamLiveInputStatus$connected._();
 
-static const StreamLiveInputStatus reconnected = StreamLiveInputStatus._('reconnected');
+static const StreamLiveInputStatus reconnected = StreamLiveInputStatus$reconnected._();
 
-static const StreamLiveInputStatus reconnecting = StreamLiveInputStatus._('reconnecting');
+static const StreamLiveInputStatus reconnecting = StreamLiveInputStatus$reconnecting._();
 
-static const StreamLiveInputStatus clientDisconnect = StreamLiveInputStatus._('client_disconnect');
+static const StreamLiveInputStatus clientDisconnect = StreamLiveInputStatus$clientDisconnect._();
 
-static const StreamLiveInputStatus ttlExceeded = StreamLiveInputStatus._('ttl_exceeded');
+static const StreamLiveInputStatus ttlExceeded = StreamLiveInputStatus$ttlExceeded._();
 
-static const StreamLiveInputStatus failedToConnect = StreamLiveInputStatus._('failed_to_connect');
+static const StreamLiveInputStatus failedToConnect = StreamLiveInputStatus$failedToConnect._();
 
-static const StreamLiveInputStatus failedToReconnect = StreamLiveInputStatus._('failed_to_reconnect');
+static const StreamLiveInputStatus failedToReconnect = StreamLiveInputStatus$failedToReconnect._();
 
-static const StreamLiveInputStatus newConfigurationAccepted = StreamLiveInputStatus._('new_configuration_accepted');
+static const StreamLiveInputStatus newConfigurationAccepted = StreamLiveInputStatus$newConfigurationAccepted._();
 
 static const List<StreamLiveInputStatus> values = [$null, connected, reconnected, reconnecting, clientDisconnect, ttlExceeded, failedToConnect, failedToReconnect, newConfigurationAccepted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -54,13 +53,99 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StreamLiveInputStatus$Unknown; } 
+@override String toString() => 'StreamLiveInputStatus($value)';
+
+ }
+@immutable final class StreamLiveInputStatus$$null extends StreamLiveInputStatus {const StreamLiveInputStatus$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamLiveInputStatus$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class StreamLiveInputStatus$connected extends StreamLiveInputStatus {const StreamLiveInputStatus$connected._();
+
+@override String get value => 'connected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamLiveInputStatus$connected;
+
+@override int get hashCode => 'connected'.hashCode;
+
+ }
+@immutable final class StreamLiveInputStatus$reconnected extends StreamLiveInputStatus {const StreamLiveInputStatus$reconnected._();
+
+@override String get value => 'reconnected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamLiveInputStatus$reconnected;
+
+@override int get hashCode => 'reconnected'.hashCode;
+
+ }
+@immutable final class StreamLiveInputStatus$reconnecting extends StreamLiveInputStatus {const StreamLiveInputStatus$reconnecting._();
+
+@override String get value => 'reconnecting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamLiveInputStatus$reconnecting;
+
+@override int get hashCode => 'reconnecting'.hashCode;
+
+ }
+@immutable final class StreamLiveInputStatus$clientDisconnect extends StreamLiveInputStatus {const StreamLiveInputStatus$clientDisconnect._();
+
+@override String get value => 'client_disconnect';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamLiveInputStatus$clientDisconnect;
+
+@override int get hashCode => 'client_disconnect'.hashCode;
+
+ }
+@immutable final class StreamLiveInputStatus$ttlExceeded extends StreamLiveInputStatus {const StreamLiveInputStatus$ttlExceeded._();
+
+@override String get value => 'ttl_exceeded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamLiveInputStatus$ttlExceeded;
+
+@override int get hashCode => 'ttl_exceeded'.hashCode;
+
+ }
+@immutable final class StreamLiveInputStatus$failedToConnect extends StreamLiveInputStatus {const StreamLiveInputStatus$failedToConnect._();
+
+@override String get value => 'failed_to_connect';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamLiveInputStatus$failedToConnect;
+
+@override int get hashCode => 'failed_to_connect'.hashCode;
+
+ }
+@immutable final class StreamLiveInputStatus$failedToReconnect extends StreamLiveInputStatus {const StreamLiveInputStatus$failedToReconnect._();
+
+@override String get value => 'failed_to_reconnect';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamLiveInputStatus$failedToReconnect;
+
+@override int get hashCode => 'failed_to_reconnect'.hashCode;
+
+ }
+@immutable final class StreamLiveInputStatus$newConfigurationAccepted extends StreamLiveInputStatus {const StreamLiveInputStatus$newConfigurationAccepted._();
+
+@override String get value => 'new_configuration_accepted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamLiveInputStatus$newConfigurationAccepted;
+
+@override int get hashCode => 'new_configuration_accepted'.hashCode;
+
+ }
+@immutable final class StreamLiveInputStatus$Unknown extends StreamLiveInputStatus {const StreamLiveInputStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StreamLiveInputStatus && other.value == value;
+    other is StreamLiveInputStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StreamLiveInputStatus($value)';
 
  }
 /// Details about a live input.

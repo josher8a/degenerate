@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CreditNote
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/credit_note/credit_note_customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/credit_note/credit_note_lines.dart';import 'package:pub_stripe_spec3/models/credit_note_refund.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoices_resource_shipping_cost.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class CreditNoteObject {const CreditNoteObject._(this.value);
+sealed class CreditNoteObject {const CreditNoteObject();
 
 factory CreditNoteObject.fromJson(String json) { return switch (json) {
   'credit_note' => creditNote,
-  _ => CreditNoteObject._(json),
+  _ => CreditNoteObject$Unknown(json),
 }; }
 
-static const CreditNoteObject creditNote = CreditNoteObject._('credit_note');
+static const CreditNoteObject creditNote = CreditNoteObject$creditNote._();
 
 static const List<CreditNoteObject> values = [creditNote];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,38 +21,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CreditNoteObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CreditNoteObject$Unknown; } 
 @override String toString() => 'CreditNoteObject($value)';
 
  }
+@immutable final class CreditNoteObject$creditNote extends CreditNoteObject {const CreditNoteObject$creditNote._();
+
+@override String get value => 'credit_note';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreditNoteObject$creditNote;
+
+@override int get hashCode => 'credit_note'.hashCode;
+
+ }
+@immutable final class CreditNoteObject$Unknown extends CreditNoteObject {const CreditNoteObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreditNoteObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Reason for issuing this credit note, one of `duplicate`, `fraudulent`, `order_change`, or `product_unsatisfactory`
-@immutable final class CreditNoteReason {const CreditNoteReason._(this.value);
+sealed class CreditNoteReason {const CreditNoteReason();
 
 factory CreditNoteReason.fromJson(String json) { return switch (json) {
   'duplicate' => duplicate,
   'fraudulent' => fraudulent,
   'order_change' => orderChange,
   'product_unsatisfactory' => productUnsatisfactory,
-  _ => CreditNoteReason._(json),
+  _ => CreditNoteReason$Unknown(json),
 }; }
 
-static const CreditNoteReason duplicate = CreditNoteReason._('duplicate');
+static const CreditNoteReason duplicate = CreditNoteReason$duplicate._();
 
-static const CreditNoteReason fraudulent = CreditNoteReason._('fraudulent');
+static const CreditNoteReason fraudulent = CreditNoteReason$fraudulent._();
 
-static const CreditNoteReason orderChange = CreditNoteReason._('order_change');
+static const CreditNoteReason orderChange = CreditNoteReason$orderChange._();
 
-static const CreditNoteReason productUnsatisfactory = CreditNoteReason._('product_unsatisfactory');
+static const CreditNoteReason productUnsatisfactory = CreditNoteReason$productUnsatisfactory._();
 
 static const List<CreditNoteReason> values = [duplicate, fraudulent, orderChange, productUnsatisfactory];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,32 +76,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CreditNoteReason && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CreditNoteReason$Unknown; } 
 @override String toString() => 'CreditNoteReason($value)';
 
  }
+@immutable final class CreditNoteReason$duplicate extends CreditNoteReason {const CreditNoteReason$duplicate._();
+
+@override String get value => 'duplicate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreditNoteReason$duplicate;
+
+@override int get hashCode => 'duplicate'.hashCode;
+
+ }
+@immutable final class CreditNoteReason$fraudulent extends CreditNoteReason {const CreditNoteReason$fraudulent._();
+
+@override String get value => 'fraudulent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreditNoteReason$fraudulent;
+
+@override int get hashCode => 'fraudulent'.hashCode;
+
+ }
+@immutable final class CreditNoteReason$orderChange extends CreditNoteReason {const CreditNoteReason$orderChange._();
+
+@override String get value => 'order_change';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreditNoteReason$orderChange;
+
+@override int get hashCode => 'order_change'.hashCode;
+
+ }
+@immutable final class CreditNoteReason$productUnsatisfactory extends CreditNoteReason {const CreditNoteReason$productUnsatisfactory._();
+
+@override String get value => 'product_unsatisfactory';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreditNoteReason$productUnsatisfactory;
+
+@override int get hashCode => 'product_unsatisfactory'.hashCode;
+
+ }
+@immutable final class CreditNoteReason$Unknown extends CreditNoteReason {const CreditNoteReason$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreditNoteReason$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Status of this credit note, one of `issued` or `void`. Learn more about [voiding credit notes](https://docs.stripe.com/billing/invoices/credit-notes#voiding).
-@immutable final class CreditNoteStatus {const CreditNoteStatus._(this.value);
+sealed class CreditNoteStatus {const CreditNoteStatus();
 
 factory CreditNoteStatus.fromJson(String json) { return switch (json) {
   'issued' => issued,
   'void' => $void,
-  _ => CreditNoteStatus._(json),
+  _ => CreditNoteStatus$Unknown(json),
 }; }
 
-static const CreditNoteStatus issued = CreditNoteStatus._('issued');
+static const CreditNoteStatus issued = CreditNoteStatus$issued._();
 
-static const CreditNoteStatus $void = CreditNoteStatus._('void');
+static const CreditNoteStatus $void = CreditNoteStatus$$void._();
 
 static const List<CreditNoteStatus> values = [issued, $void];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -98,35 +150,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CreditNoteStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CreditNoteStatus$Unknown; } 
 @override String toString() => 'CreditNoteStatus($value)';
 
  }
+@immutable final class CreditNoteStatus$issued extends CreditNoteStatus {const CreditNoteStatus$issued._();
+
+@override String get value => 'issued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreditNoteStatus$issued;
+
+@override int get hashCode => 'issued'.hashCode;
+
+ }
+@immutable final class CreditNoteStatus$$void extends CreditNoteStatus {const CreditNoteStatus$$void._();
+
+@override String get value => 'void';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreditNoteStatus$$void;
+
+@override int get hashCode => 'void'.hashCode;
+
+ }
+@immutable final class CreditNoteStatus$Unknown extends CreditNoteStatus {const CreditNoteStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreditNoteStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Type of this credit note, one of `pre_payment` or `post_payment`. A `pre_payment` credit note means it was issued when the invoice was open. A `post_payment` credit note means it was issued when the invoice was paid.
-@immutable final class CreditNoteType {const CreditNoteType._(this.value);
+sealed class CreditNoteType {const CreditNoteType();
 
 factory CreditNoteType.fromJson(String json) { return switch (json) {
   'mixed' => mixed,
   'post_payment' => postPayment,
   'pre_payment' => prePayment,
-  _ => CreditNoteType._(json),
+  _ => CreditNoteType$Unknown(json),
 }; }
 
-static const CreditNoteType mixed = CreditNoteType._('mixed');
+static const CreditNoteType mixed = CreditNoteType$mixed._();
 
-static const CreditNoteType postPayment = CreditNoteType._('post_payment');
+static const CreditNoteType postPayment = CreditNoteType$postPayment._();
 
-static const CreditNoteType prePayment = CreditNoteType._('pre_payment');
+static const CreditNoteType prePayment = CreditNoteType$prePayment._();
 
 static const List<CreditNoteType> values = [mixed, postPayment, prePayment];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -136,13 +210,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreditNoteType$Unknown; } 
+@override String toString() => 'CreditNoteType($value)';
+
+ }
+@immutable final class CreditNoteType$mixed extends CreditNoteType {const CreditNoteType$mixed._();
+
+@override String get value => 'mixed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreditNoteType$mixed;
+
+@override int get hashCode => 'mixed'.hashCode;
+
+ }
+@immutable final class CreditNoteType$postPayment extends CreditNoteType {const CreditNoteType$postPayment._();
+
+@override String get value => 'post_payment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreditNoteType$postPayment;
+
+@override int get hashCode => 'post_payment'.hashCode;
+
+ }
+@immutable final class CreditNoteType$prePayment extends CreditNoteType {const CreditNoteType$prePayment._();
+
+@override String get value => 'pre_payment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreditNoteType$prePayment;
+
+@override int get hashCode => 'pre_payment'.hashCode;
+
+ }
+@immutable final class CreditNoteType$Unknown extends CreditNoteType {const CreditNoteType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreditNoteType && other.value == value;
+    other is CreditNoteType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreditNoteType($value)';
 
  }
 /// Issue a credit note to adjust an invoice's amount after the invoice is finalized.

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorDescribeWorkflowInstanceResponse (inline: Result > Steps > Sleep)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_error.dart';@immutable final class SleepType {const SleepType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_error.dart';sealed class SleepType {const SleepType();
 
 factory SleepType.fromJson(String json) { return switch (json) {
   'sleep' => sleep,
-  _ => SleepType._(json),
+  _ => SleepType$Unknown(json),
 }; }
 
-static const SleepType sleep = SleepType._('sleep');
+static const SleepType sleep = SleepType$sleep._();
 
 static const List<SleepType> values = [sleep];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SleepType$Unknown; } 
+@override String toString() => 'SleepType($value)';
+
+ }
+@immutable final class SleepType$sleep extends SleepType {const SleepType$sleep._();
+
+@override String get value => 'sleep';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SleepType$sleep;
+
+@override int get hashCode => 'sleep'.hashCode;
+
+ }
+@immutable final class SleepType$Unknown extends SleepType {const SleepType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SleepType && other.value == value;
+    other is SleepType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SleepType($value)';
 
  }
 @immutable final class Sleep {const Sleep({required this.end, required this.error, required this.finished, required this.name, required this.start, required this.type, });

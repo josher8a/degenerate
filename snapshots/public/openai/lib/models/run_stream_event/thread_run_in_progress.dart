@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStreamEvent (inline: ThreadRunInProgress)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';@immutable final class ThreadRunInProgressEvent {const ThreadRunInProgressEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';sealed class ThreadRunInProgressEvent {const ThreadRunInProgressEvent();
 
 factory ThreadRunInProgressEvent.fromJson(String json) { return switch (json) {
   'thread.run.in_progress' => threadRunInProgress,
-  _ => ThreadRunInProgressEvent._(json),
+  _ => ThreadRunInProgressEvent$Unknown(json),
 }; }
 
-static const ThreadRunInProgressEvent threadRunInProgress = ThreadRunInProgressEvent._('thread.run.in_progress');
+static const ThreadRunInProgressEvent threadRunInProgress = ThreadRunInProgressEvent$threadRunInProgress._();
 
 static const List<ThreadRunInProgressEvent> values = [threadRunInProgress];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunInProgressEvent$Unknown; } 
+@override String toString() => 'ThreadRunInProgressEvent($value)';
+
+ }
+@immutable final class ThreadRunInProgressEvent$threadRunInProgress extends ThreadRunInProgressEvent {const ThreadRunInProgressEvent$threadRunInProgress._();
+
+@override String get value => 'thread.run.in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunInProgressEvent$threadRunInProgress;
+
+@override int get hashCode => 'thread.run.in_progress'.hashCode;
+
+ }
+@immutable final class ThreadRunInProgressEvent$Unknown extends ThreadRunInProgressEvent {const ThreadRunInProgressEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunInProgressEvent && other.value == value;
+    other is ThreadRunInProgressEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunInProgressEvent($value)';
 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) moves to an `in_progress` status.

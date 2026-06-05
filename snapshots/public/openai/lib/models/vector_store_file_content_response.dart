@@ -2,19 +2,18 @@
 // Source: #/components/schemas/VectorStoreFileContentResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_file_content_response/vector_store_file_content_response_data.dart';/// The object type, which is always `vector_store.file_content.page`
-@immutable final class VectorStoreFileContentResponseObject {const VectorStoreFileContentResponseObject._(this.value);
+sealed class VectorStoreFileContentResponseObject {const VectorStoreFileContentResponseObject();
 
 factory VectorStoreFileContentResponseObject.fromJson(String json) { return switch (json) {
   'vector_store.file_content.page' => vectorStoreFileContentPage,
-  _ => VectorStoreFileContentResponseObject._(json),
+  _ => VectorStoreFileContentResponseObject$Unknown(json),
 }; }
 
-static const VectorStoreFileContentResponseObject vectorStoreFileContentPage = VectorStoreFileContentResponseObject._('vector_store.file_content.page');
+static const VectorStoreFileContentResponseObject vectorStoreFileContentPage = VectorStoreFileContentResponseObject$vectorStoreFileContentPage._();
 
 static const List<VectorStoreFileContentResponseObject> values = [vectorStoreFileContentPage];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is VectorStoreFileContentResponseObject$Unknown; } 
+@override String toString() => 'VectorStoreFileContentResponseObject($value)';
+
+ }
+@immutable final class VectorStoreFileContentResponseObject$vectorStoreFileContentPage extends VectorStoreFileContentResponseObject {const VectorStoreFileContentResponseObject$vectorStoreFileContentPage._();
+
+@override String get value => 'vector_store.file_content.page';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorStoreFileContentResponseObject$vectorStoreFileContentPage;
+
+@override int get hashCode => 'vector_store.file_content.page'.hashCode;
+
+ }
+@immutable final class VectorStoreFileContentResponseObject$Unknown extends VectorStoreFileContentResponseObject {const VectorStoreFileContentResponseObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is VectorStoreFileContentResponseObject && other.value == value;
+    other is VectorStoreFileContentResponseObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'VectorStoreFileContentResponseObject($value)';
 
  }
 /// Represents the parsed content of a vector store file.

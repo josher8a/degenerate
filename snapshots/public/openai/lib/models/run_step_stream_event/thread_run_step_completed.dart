@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStepStreamEvent (inline: ThreadRunStepCompleted)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';@immutable final class ThreadRunStepCompletedEvent {const ThreadRunStepCompletedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';sealed class ThreadRunStepCompletedEvent {const ThreadRunStepCompletedEvent();
 
 factory ThreadRunStepCompletedEvent.fromJson(String json) { return switch (json) {
   'thread.run.step.completed' => threadRunStepCompleted,
-  _ => ThreadRunStepCompletedEvent._(json),
+  _ => ThreadRunStepCompletedEvent$Unknown(json),
 }; }
 
-static const ThreadRunStepCompletedEvent threadRunStepCompleted = ThreadRunStepCompletedEvent._('thread.run.step.completed');
+static const ThreadRunStepCompletedEvent threadRunStepCompleted = ThreadRunStepCompletedEvent$threadRunStepCompleted._();
 
 static const List<ThreadRunStepCompletedEvent> values = [threadRunStepCompleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunStepCompletedEvent$Unknown; } 
+@override String toString() => 'ThreadRunStepCompletedEvent($value)';
+
+ }
+@immutable final class ThreadRunStepCompletedEvent$threadRunStepCompleted extends ThreadRunStepCompletedEvent {const ThreadRunStepCompletedEvent$threadRunStepCompleted._();
+
+@override String get value => 'thread.run.step.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunStepCompletedEvent$threadRunStepCompleted;
+
+@override int get hashCode => 'thread.run.step.completed'.hashCode;
+
+ }
+@immutable final class ThreadRunStepCompletedEvent$Unknown extends ThreadRunStepCompletedEvent {const ThreadRunStepCompletedEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunStepCompletedEvent && other.value == value;
+    other is ThreadRunStepCompletedEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunStepCompletedEvent($value)';
 
  }
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is completed.

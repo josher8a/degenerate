@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ZonesHostHeaderOverride
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Apply a specific host header.
-@immutable final class ZonesHostHeaderOverrideId {const ZonesHostHeaderOverrideId._(this.value);
+sealed class ZonesHostHeaderOverrideId {const ZonesHostHeaderOverrideId();
 
 factory ZonesHostHeaderOverrideId.fromJson(String json) { return switch (json) {
   'host_header_override' => hostHeaderOverride,
-  _ => ZonesHostHeaderOverrideId._(json),
+  _ => ZonesHostHeaderOverrideId$Unknown(json),
 }; }
 
-static const ZonesHostHeaderOverrideId hostHeaderOverride = ZonesHostHeaderOverrideId._('host_header_override');
+static const ZonesHostHeaderOverrideId hostHeaderOverride = ZonesHostHeaderOverrideId$hostHeaderOverride._();
 
 static const List<ZonesHostHeaderOverrideId> values = [hostHeaderOverride];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesHostHeaderOverrideId$Unknown; } 
+@override String toString() => 'ZonesHostHeaderOverrideId($value)';
+
+ }
+@immutable final class ZonesHostHeaderOverrideId$hostHeaderOverride extends ZonesHostHeaderOverrideId {const ZonesHostHeaderOverrideId$hostHeaderOverride._();
+
+@override String get value => 'host_header_override';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesHostHeaderOverrideId$hostHeaderOverride;
+
+@override int get hashCode => 'host_header_override'.hashCode;
+
+ }
+@immutable final class ZonesHostHeaderOverrideId$Unknown extends ZonesHostHeaderOverrideId {const ZonesHostHeaderOverrideId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesHostHeaderOverrideId && other.value == value;
+    other is ZonesHostHeaderOverrideId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesHostHeaderOverrideId($value)';
 
  }
 @immutable final class ZonesHostHeaderOverride {const ZonesHostHeaderOverride({this.id, this.value, });

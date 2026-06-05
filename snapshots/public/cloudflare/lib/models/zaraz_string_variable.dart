@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZarazStringVariable
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazStringVariableType {const ZarazStringVariableType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ZarazStringVariableType {const ZarazStringVariableType();
 
 factory ZarazStringVariableType.fromJson(String json) { return switch (json) {
   'string' => string,
-  _ => ZarazStringVariableType._(json),
+  _ => ZarazStringVariableType$Unknown(json),
 }; }
 
-static const ZarazStringVariableType string = ZarazStringVariableType._('string');
+static const ZarazStringVariableType string = ZarazStringVariableType$string._();
 
 static const List<ZarazStringVariableType> values = [string];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZarazStringVariableType$Unknown; } 
+@override String toString() => 'ZarazStringVariableType($value)';
+
+ }
+@immutable final class ZarazStringVariableType$string extends ZarazStringVariableType {const ZarazStringVariableType$string._();
+
+@override String get value => 'string';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazStringVariableType$string;
+
+@override int get hashCode => 'string'.hashCode;
+
+ }
+@immutable final class ZarazStringVariableType$Unknown extends ZarazStringVariableType {const ZarazStringVariableType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZarazStringVariableType && other.value == value;
+    other is ZarazStringVariableType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZarazStringVariableType($value)';
 
  }
 @immutable final class ZarazStringVariable {const ZarazStringVariable({required this.name, required this.type, required this.value, });

@@ -2,28 +2,27 @@
 // Source: #/components/schemas/InsightsResourcesPaymentEvaluationMoneyMovementCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_money_movement_card/insights_resources_payment_evaluation_money_movement_card_customer_presence.dart';/// Describes the type of payment.
-@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType {const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType._(this.value);
+sealed class InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType {const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType();
 
 factory InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType.fromJson(String json) { return switch (json) {
   'one_off' => oneOff,
   'recurring' => recurring,
   'setup_one_off' => setupOneOff,
   'setup_recurring' => setupRecurring,
-  _ => InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType._(json),
+  _ => InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$Unknown(json),
 }; }
 
-static const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType oneOff = InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType._('one_off');
+static const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType oneOff = InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$oneOff._();
 
-static const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType recurring = InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType._('recurring');
+static const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType recurring = InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$recurring._();
 
-static const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType setupOneOff = InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType._('setup_one_off');
+static const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType setupOneOff = InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$setupOneOff._();
 
-static const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType setupRecurring = InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType._('setup_recurring');
+static const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType setupRecurring = InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$setupRecurring._();
 
 static const List<InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType> values = [oneOff, recurring, setupOneOff, setupRecurring];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$Unknown; } 
+@override String toString() => 'InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType($value)';
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$oneOff extends InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType {const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$oneOff._();
+
+@override String get value => 'one_off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$oneOff;
+
+@override int get hashCode => 'one_off'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$recurring extends InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType {const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$recurring._();
+
+@override String get value => 'recurring';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$recurring;
+
+@override int get hashCode => 'recurring'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$setupOneOff extends InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType {const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$setupOneOff._();
+
+@override String get value => 'setup_one_off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$setupOneOff;
+
+@override int get hashCode => 'setup_one_off'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$setupRecurring extends InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType {const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$setupRecurring._();
+
+@override String get value => 'setup_recurring';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$setupRecurring;
+
+@override int get hashCode => 'setup_recurring'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$Unknown extends InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType {const InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType && other.value == value;
+    other is InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InsightsResourcesPaymentEvaluationMoneyMovementCardPaymentType($value)';
 
  }
 /// Money Movement card details attached to this payment.

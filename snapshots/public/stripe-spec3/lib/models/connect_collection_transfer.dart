@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ConnectCollectionTransfer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data/charge_transfer_data_destination.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ConnectCollectionTransferObject {const ConnectCollectionTransferObject._(this.value);
+sealed class ConnectCollectionTransferObject {const ConnectCollectionTransferObject();
 
 factory ConnectCollectionTransferObject.fromJson(String json) { return switch (json) {
   'connect_collection_transfer' => connectCollectionTransfer,
-  _ => ConnectCollectionTransferObject._(json),
+  _ => ConnectCollectionTransferObject$Unknown(json),
 }; }
 
-static const ConnectCollectionTransferObject connectCollectionTransfer = ConnectCollectionTransferObject._('connect_collection_transfer');
+static const ConnectCollectionTransferObject connectCollectionTransfer = ConnectCollectionTransferObject$connectCollectionTransfer._();
 
 static const List<ConnectCollectionTransferObject> values = [connectCollectionTransfer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConnectCollectionTransferObject$Unknown; } 
+@override String toString() => 'ConnectCollectionTransferObject($value)';
+
+ }
+@immutable final class ConnectCollectionTransferObject$connectCollectionTransfer extends ConnectCollectionTransferObject {const ConnectCollectionTransferObject$connectCollectionTransfer._();
+
+@override String get value => 'connect_collection_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConnectCollectionTransferObject$connectCollectionTransfer;
+
+@override int get hashCode => 'connect_collection_transfer'.hashCode;
+
+ }
+@immutable final class ConnectCollectionTransferObject$Unknown extends ConnectCollectionTransferObject {const ConnectCollectionTransferObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConnectCollectionTransferObject && other.value == value;
+    other is ConnectCollectionTransferObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConnectCollectionTransferObject($value)';
 
  }
 /// 

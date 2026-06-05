@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RetentionRatioTruncation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/retention_ratio_truncation/token_limits.dart';/// Use retention ratio truncation.
-@immutable final class RetentionRatioTruncationType {const RetentionRatioTruncationType._(this.value);
+sealed class RetentionRatioTruncationType {const RetentionRatioTruncationType();
 
 factory RetentionRatioTruncationType.fromJson(String json) { return switch (json) {
   'retention_ratio' => retentionRatio,
-  _ => RetentionRatioTruncationType._(json),
+  _ => RetentionRatioTruncationType$Unknown(json),
 }; }
 
-static const RetentionRatioTruncationType retentionRatio = RetentionRatioTruncationType._('retention_ratio');
+static const RetentionRatioTruncationType retentionRatio = RetentionRatioTruncationType$retentionRatio._();
 
 static const List<RetentionRatioTruncationType> values = [retentionRatio];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RetentionRatioTruncationType$Unknown; } 
+@override String toString() => 'RetentionRatioTruncationType($value)';
+
+ }
+@immutable final class RetentionRatioTruncationType$retentionRatio extends RetentionRatioTruncationType {const RetentionRatioTruncationType$retentionRatio._();
+
+@override String get value => 'retention_ratio';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RetentionRatioTruncationType$retentionRatio;
+
+@override int get hashCode => 'retention_ratio'.hashCode;
+
+ }
+@immutable final class RetentionRatioTruncationType$Unknown extends RetentionRatioTruncationType {const RetentionRatioTruncationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RetentionRatioTruncationType && other.value == value;
+    other is RetentionRatioTruncationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RetentionRatioTruncationType($value)';
 
  }
 /// Retain a fraction of the conversation tokens when the conversation exceeds the input token limit. This allows you to amortize truncations across multiple turns, which can help improve cached token usage.

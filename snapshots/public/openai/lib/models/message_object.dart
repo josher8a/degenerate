@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MessageObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/create_message_request/attachments.dart';import 'package:pub_openai/models/create_message_request/create_message_request_role.dart';import 'package:pub_openai/models/message_content_image_file_object.dart';import 'package:pub_openai/models/message_content_image_url_object.dart';import 'package:pub_openai/models/message_content_refusal_object.dart';import 'package:pub_openai/models/message_content_text_object.dart';import 'package:pub_openai/models/message_object/message_object_content.dart';import 'package:pub_openai/models/message_object/message_object_incomplete_details.dart';/// The object type, which is always `thread.message`.
-@immutable final class MessageObjectObject {const MessageObjectObject._(this.value);
+sealed class MessageObjectObject {const MessageObjectObject();
 
 factory MessageObjectObject.fromJson(String json) { return switch (json) {
   'thread.message' => threadMessage,
-  _ => MessageObjectObject._(json),
+  _ => MessageObjectObject$Unknown(json),
 }; }
 
-static const MessageObjectObject threadMessage = MessageObjectObject._('thread.message');
+static const MessageObjectObject threadMessage = MessageObjectObject$threadMessage._();
 
 static const List<MessageObjectObject> values = [threadMessage];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MessageObjectObject$Unknown; } 
+@override String toString() => 'MessageObjectObject($value)';
+
+ }
+@immutable final class MessageObjectObject$threadMessage extends MessageObjectObject {const MessageObjectObject$threadMessage._();
+
+@override String get value => 'thread.message';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageObjectObject$threadMessage;
+
+@override int get hashCode => 'thread.message'.hashCode;
+
+ }
+@immutable final class MessageObjectObject$Unknown extends MessageObjectObject {const MessageObjectObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageObjectObject && other.value == value;
+    other is MessageObjectObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MessageObjectObject($value)';
 
  }
 /// Represents a message within a [thread](/docs/api-reference/threads).

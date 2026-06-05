@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MigrationsListForOrgExclude
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allowed values that can be passed to the exclude param.
-@immutable final class MigrationsListForOrgExclude {const MigrationsListForOrgExclude._(this.value);
+sealed class MigrationsListForOrgExclude {const MigrationsListForOrgExclude();
 
 factory MigrationsListForOrgExclude.fromJson(String json) { return switch (json) {
   'repositories' => repositories,
-  _ => MigrationsListForOrgExclude._(json),
+  _ => MigrationsListForOrgExclude$Unknown(json),
 }; }
 
-static const MigrationsListForOrgExclude repositories = MigrationsListForOrgExclude._('repositories');
+static const MigrationsListForOrgExclude repositories = MigrationsListForOrgExclude$repositories._();
 
 static const List<MigrationsListForOrgExclude> values = [repositories];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MigrationsListForOrgExclude$Unknown; } 
+@override String toString() => 'MigrationsListForOrgExclude($value)';
+
+ }
+@immutable final class MigrationsListForOrgExclude$repositories extends MigrationsListForOrgExclude {const MigrationsListForOrgExclude$repositories._();
+
+@override String get value => 'repositories';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MigrationsListForOrgExclude$repositories;
+
+@override int get hashCode => 'repositories'.hashCode;
+
+ }
+@immutable final class MigrationsListForOrgExclude$Unknown extends MigrationsListForOrgExclude {const MigrationsListForOrgExclude$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MigrationsListForOrgExclude && other.value == value;
+    other is MigrationsListForOrgExclude$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MigrationsListForOrgExclude($value)';
 
  }

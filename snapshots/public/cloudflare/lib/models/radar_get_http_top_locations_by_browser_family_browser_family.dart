@@ -2,28 +2,27 @@
 // Source: #/components/schemas/RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Browser family.
-@immutable final class RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily {const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily._(this.value);
+sealed class RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily {const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily();
 
 factory RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily.fromJson(String json) { return switch (json) {
   'CHROME' => chrome,
   'EDGE' => edge,
   'FIREFOX' => firefox,
   'SAFARI' => safari,
-  _ => RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily._(json),
+  _ => RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$Unknown(json),
 }; }
 
-static const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily chrome = RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily._('CHROME');
+static const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily chrome = RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$chrome._();
 
-static const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily edge = RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily._('EDGE');
+static const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily edge = RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$edge._();
 
-static const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily firefox = RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily._('FIREFOX');
+static const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily firefox = RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$firefox._();
 
-static const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily safari = RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily._('SAFARI');
+static const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily safari = RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$safari._();
 
 static const List<RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily> values = [chrome, edge, firefox, safari];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$Unknown; } 
+@override String toString() => 'RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily($value)';
+
+ }
+@immutable final class RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$chrome extends RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily {const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$chrome._();
+
+@override String get value => 'CHROME';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$chrome;
+
+@override int get hashCode => 'CHROME'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$edge extends RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily {const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$edge._();
+
+@override String get value => 'EDGE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$edge;
+
+@override int get hashCode => 'EDGE'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$firefox extends RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily {const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$firefox._();
+
+@override String get value => 'FIREFOX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$firefox;
+
+@override int get hashCode => 'FIREFOX'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$safari extends RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily {const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$safari._();
+
+@override String get value => 'SAFARI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$safari;
+
+@override int get hashCode => 'SAFARI'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$Unknown extends RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily {const RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily && other.value == value;
+    other is RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopLocationsByBrowserFamilyBrowserFamily($value)';
 
  }

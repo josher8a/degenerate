@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStepStreamEvent (inline: ThreadRunStepInProgress)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';@immutable final class ThreadRunStepInProgressEvent {const ThreadRunStepInProgressEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';sealed class ThreadRunStepInProgressEvent {const ThreadRunStepInProgressEvent();
 
 factory ThreadRunStepInProgressEvent.fromJson(String json) { return switch (json) {
   'thread.run.step.in_progress' => threadRunStepInProgress,
-  _ => ThreadRunStepInProgressEvent._(json),
+  _ => ThreadRunStepInProgressEvent$Unknown(json),
 }; }
 
-static const ThreadRunStepInProgressEvent threadRunStepInProgress = ThreadRunStepInProgressEvent._('thread.run.step.in_progress');
+static const ThreadRunStepInProgressEvent threadRunStepInProgress = ThreadRunStepInProgressEvent$threadRunStepInProgress._();
 
 static const List<ThreadRunStepInProgressEvent> values = [threadRunStepInProgress];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunStepInProgressEvent$Unknown; } 
+@override String toString() => 'ThreadRunStepInProgressEvent($value)';
+
+ }
+@immutable final class ThreadRunStepInProgressEvent$threadRunStepInProgress extends ThreadRunStepInProgressEvent {const ThreadRunStepInProgressEvent$threadRunStepInProgress._();
+
+@override String get value => 'thread.run.step.in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunStepInProgressEvent$threadRunStepInProgress;
+
+@override int get hashCode => 'thread.run.step.in_progress'.hashCode;
+
+ }
+@immutable final class ThreadRunStepInProgressEvent$Unknown extends ThreadRunStepInProgressEvent {const ThreadRunStepInProgressEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunStepInProgressEvent && other.value == value;
+    other is ThreadRunStepInProgressEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunStepInProgressEvent($value)';
 
  }
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CheckoutCustomerBalancePaymentMethodOptions (inline: FundingType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The funding method type to be used when there are not enough funds in the customer balance. Permitted values include: `bank_transfer`.
-@immutable final class CheckoutCustomerBalancePaymentMethodOptionsFundingType {const CheckoutCustomerBalancePaymentMethodOptionsFundingType._(this.value);
+sealed class CheckoutCustomerBalancePaymentMethodOptionsFundingType {const CheckoutCustomerBalancePaymentMethodOptionsFundingType();
 
 factory CheckoutCustomerBalancePaymentMethodOptionsFundingType.fromJson(String json) { return switch (json) {
   'bank_transfer' => bankTransfer,
-  _ => CheckoutCustomerBalancePaymentMethodOptionsFundingType._(json),
+  _ => CheckoutCustomerBalancePaymentMethodOptionsFundingType$Unknown(json),
 }; }
 
-static const CheckoutCustomerBalancePaymentMethodOptionsFundingType bankTransfer = CheckoutCustomerBalancePaymentMethodOptionsFundingType._('bank_transfer');
+static const CheckoutCustomerBalancePaymentMethodOptionsFundingType bankTransfer = CheckoutCustomerBalancePaymentMethodOptionsFundingType$bankTransfer._();
 
 static const List<CheckoutCustomerBalancePaymentMethodOptionsFundingType> values = [bankTransfer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CheckoutCustomerBalancePaymentMethodOptionsFundingType$Unknown; } 
+@override String toString() => 'CheckoutCustomerBalancePaymentMethodOptionsFundingType($value)';
+
+ }
+@immutable final class CheckoutCustomerBalancePaymentMethodOptionsFundingType$bankTransfer extends CheckoutCustomerBalancePaymentMethodOptionsFundingType {const CheckoutCustomerBalancePaymentMethodOptionsFundingType$bankTransfer._();
+
+@override String get value => 'bank_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutCustomerBalancePaymentMethodOptionsFundingType$bankTransfer;
+
+@override int get hashCode => 'bank_transfer'.hashCode;
+
+ }
+@immutable final class CheckoutCustomerBalancePaymentMethodOptionsFundingType$Unknown extends CheckoutCustomerBalancePaymentMethodOptionsFundingType {const CheckoutCustomerBalancePaymentMethodOptionsFundingType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CheckoutCustomerBalancePaymentMethodOptionsFundingType && other.value == value;
+    other is CheckoutCustomerBalancePaymentMethodOptionsFundingType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CheckoutCustomerBalancePaymentMethodOptionsFundingType($value)';
 
  }

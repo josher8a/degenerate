@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookSponsorshipTierChanged
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_changes8.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship.dart';@immutable final class WebhookSponsorshipTierChangedAction {const WebhookSponsorshipTierChangedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_changes8.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship.dart';sealed class WebhookSponsorshipTierChangedAction {const WebhookSponsorshipTierChangedAction();
 
 factory WebhookSponsorshipTierChangedAction.fromJson(String json) { return switch (json) {
   'tier_changed' => tierChanged,
-  _ => WebhookSponsorshipTierChangedAction._(json),
+  _ => WebhookSponsorshipTierChangedAction$Unknown(json),
 }; }
 
-static const WebhookSponsorshipTierChangedAction tierChanged = WebhookSponsorshipTierChangedAction._('tier_changed');
+static const WebhookSponsorshipTierChangedAction tierChanged = WebhookSponsorshipTierChangedAction$tierChanged._();
 
 static const List<WebhookSponsorshipTierChangedAction> values = [tierChanged];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookSponsorshipTierChangedAction$Unknown; } 
+@override String toString() => 'WebhookSponsorshipTierChangedAction($value)';
+
+ }
+@immutable final class WebhookSponsorshipTierChangedAction$tierChanged extends WebhookSponsorshipTierChangedAction {const WebhookSponsorshipTierChangedAction$tierChanged._();
+
+@override String get value => 'tier_changed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookSponsorshipTierChangedAction$tierChanged;
+
+@override int get hashCode => 'tier_changed'.hashCode;
+
+ }
+@immutable final class WebhookSponsorshipTierChangedAction$Unknown extends WebhookSponsorshipTierChangedAction {const WebhookSponsorshipTierChangedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookSponsorshipTierChangedAction && other.value == value;
+    other is WebhookSponsorshipTierChangedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookSponsorshipTierChangedAction($value)';
 
  }
 @immutable final class WebhookSponsorshipTierChanged {const WebhookSponsorshipTierChanged({required this.action, required this.changes, required this.sender, required this.sponsorship, this.enterprise, this.installation, this.organization, this.repository, });

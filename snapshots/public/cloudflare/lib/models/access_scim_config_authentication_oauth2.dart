@@ -2,19 +2,18 @@
 // Source: #/components/schemas/AccessScimConfigAuthenticationOauth2
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The authentication scheme to use when making SCIM requests to this application.
-@immutable final class AccessScimConfigAuthenticationOauth2Scheme {const AccessScimConfigAuthenticationOauth2Scheme._(this.value);
+sealed class AccessScimConfigAuthenticationOauth2Scheme {const AccessScimConfigAuthenticationOauth2Scheme();
 
 factory AccessScimConfigAuthenticationOauth2Scheme.fromJson(String json) { return switch (json) {
   'oauth2' => oauth2,
-  _ => AccessScimConfigAuthenticationOauth2Scheme._(json),
+  _ => AccessScimConfigAuthenticationOauth2Scheme$Unknown(json),
 }; }
 
-static const AccessScimConfigAuthenticationOauth2Scheme oauth2 = AccessScimConfigAuthenticationOauth2Scheme._('oauth2');
+static const AccessScimConfigAuthenticationOauth2Scheme oauth2 = AccessScimConfigAuthenticationOauth2Scheme$oauth2._();
 
 static const List<AccessScimConfigAuthenticationOauth2Scheme> values = [oauth2];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccessScimConfigAuthenticationOauth2Scheme$Unknown; } 
+@override String toString() => 'AccessScimConfigAuthenticationOauth2Scheme($value)';
+
+ }
+@immutable final class AccessScimConfigAuthenticationOauth2Scheme$oauth2 extends AccessScimConfigAuthenticationOauth2Scheme {const AccessScimConfigAuthenticationOauth2Scheme$oauth2._();
+
+@override String get value => 'oauth2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessScimConfigAuthenticationOauth2Scheme$oauth2;
+
+@override int get hashCode => 'oauth2'.hashCode;
+
+ }
+@immutable final class AccessScimConfigAuthenticationOauth2Scheme$Unknown extends AccessScimConfigAuthenticationOauth2Scheme {const AccessScimConfigAuthenticationOauth2Scheme$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccessScimConfigAuthenticationOauth2Scheme && other.value == value;
+    other is AccessScimConfigAuthenticationOauth2Scheme$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccessScimConfigAuthenticationOauth2Scheme($value)';
 
  }
 /// Attributes for configuring OAuth 2 authentication scheme for SCIM provisioning to an application.

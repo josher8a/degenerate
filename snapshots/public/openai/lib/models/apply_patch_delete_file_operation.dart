@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ApplyPatchDeleteFileOperation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Delete the specified file.
-@immutable final class ApplyPatchDeleteFileOperationType {const ApplyPatchDeleteFileOperationType._(this.value);
+sealed class ApplyPatchDeleteFileOperationType {const ApplyPatchDeleteFileOperationType();
 
 factory ApplyPatchDeleteFileOperationType.fromJson(String json) { return switch (json) {
   'delete_file' => deleteFile,
-  _ => ApplyPatchDeleteFileOperationType._(json),
+  _ => ApplyPatchDeleteFileOperationType$Unknown(json),
 }; }
 
-static const ApplyPatchDeleteFileOperationType deleteFile = ApplyPatchDeleteFileOperationType._('delete_file');
+static const ApplyPatchDeleteFileOperationType deleteFile = ApplyPatchDeleteFileOperationType$deleteFile._();
 
 static const List<ApplyPatchDeleteFileOperationType> values = [deleteFile];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ApplyPatchDeleteFileOperationType$Unknown; } 
+@override String toString() => 'ApplyPatchDeleteFileOperationType($value)';
+
+ }
+@immutable final class ApplyPatchDeleteFileOperationType$deleteFile extends ApplyPatchDeleteFileOperationType {const ApplyPatchDeleteFileOperationType$deleteFile._();
+
+@override String get value => 'delete_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApplyPatchDeleteFileOperationType$deleteFile;
+
+@override int get hashCode => 'delete_file'.hashCode;
+
+ }
+@immutable final class ApplyPatchDeleteFileOperationType$Unknown extends ApplyPatchDeleteFileOperationType {const ApplyPatchDeleteFileOperationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ApplyPatchDeleteFileOperationType && other.value == value;
+    other is ApplyPatchDeleteFileOperationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ApplyPatchDeleteFileOperationType($value)';
 
  }
 /// Instruction describing how to delete a file via the apply_patch tool.

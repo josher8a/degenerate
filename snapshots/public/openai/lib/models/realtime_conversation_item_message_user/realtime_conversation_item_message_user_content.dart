@@ -2,25 +2,24 @@
 // Source: #/components/schemas/RealtimeConversationItemMessageUser (inline: Content)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_image/detail.dart';/// The content type (`input_text`, `input_audio`, or `input_image`).
-@immutable final class RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType._(this.value);
+sealed class RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType();
 
 factory RealtimeConversationItemMessageUserContentType.fromJson(String json) { return switch (json) {
   'input_text' => inputText,
   'input_audio' => inputAudio,
   'input_image' => inputImage,
-  _ => RealtimeConversationItemMessageUserContentType._(json),
+  _ => RealtimeConversationItemMessageUserContentType$Unknown(json),
 }; }
 
-static const RealtimeConversationItemMessageUserContentType inputText = RealtimeConversationItemMessageUserContentType._('input_text');
+static const RealtimeConversationItemMessageUserContentType inputText = RealtimeConversationItemMessageUserContentType$inputText._();
 
-static const RealtimeConversationItemMessageUserContentType inputAudio = RealtimeConversationItemMessageUserContentType._('input_audio');
+static const RealtimeConversationItemMessageUserContentType inputAudio = RealtimeConversationItemMessageUserContentType$inputAudio._();
 
-static const RealtimeConversationItemMessageUserContentType inputImage = RealtimeConversationItemMessageUserContentType._('input_image');
+static const RealtimeConversationItemMessageUserContentType inputImage = RealtimeConversationItemMessageUserContentType$inputImage._();
 
 static const List<RealtimeConversationItemMessageUserContentType> values = [inputText, inputAudio, inputImage];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeConversationItemMessageUserContentType$Unknown; } 
+@override String toString() => 'RealtimeConversationItemMessageUserContentType($value)';
+
+ }
+@immutable final class RealtimeConversationItemMessageUserContentType$inputText extends RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType$inputText._();
+
+@override String get value => 'input_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemMessageUserContentType$inputText;
+
+@override int get hashCode => 'input_text'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemMessageUserContentType$inputAudio extends RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType$inputAudio._();
+
+@override String get value => 'input_audio';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemMessageUserContentType$inputAudio;
+
+@override int get hashCode => 'input_audio'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemMessageUserContentType$inputImage extends RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType$inputImage._();
+
+@override String get value => 'input_image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemMessageUserContentType$inputImage;
+
+@override int get hashCode => 'input_image'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemMessageUserContentType$Unknown extends RealtimeConversationItemMessageUserContentType {const RealtimeConversationItemMessageUserContentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeConversationItemMessageUserContentType && other.value == value;
+    other is RealtimeConversationItemMessageUserContentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeConversationItemMessageUserContentType($value)';
 
  }
 @immutable final class RealtimeConversationItemMessageUserContent {const RealtimeConversationItemMessageUserContent({this.type, this.text, this.audio, this.imageUrl, this.detail = Detail.auto, this.transcript, });

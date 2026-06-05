@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostTaxSettingsRequest (inline: Defaults)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DefaultsTaxBehavior {const DefaultsTaxBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DefaultsTaxBehavior {const DefaultsTaxBehavior();
 
 factory DefaultsTaxBehavior.fromJson(String json) { return switch (json) {
   'exclusive' => exclusive,
   'inclusive' => inclusive,
   'inferred_by_currency' => inferredByCurrency,
-  _ => DefaultsTaxBehavior._(json),
+  _ => DefaultsTaxBehavior$Unknown(json),
 }; }
 
-static const DefaultsTaxBehavior exclusive = DefaultsTaxBehavior._('exclusive');
+static const DefaultsTaxBehavior exclusive = DefaultsTaxBehavior$exclusive._();
 
-static const DefaultsTaxBehavior inclusive = DefaultsTaxBehavior._('inclusive');
+static const DefaultsTaxBehavior inclusive = DefaultsTaxBehavior$inclusive._();
 
-static const DefaultsTaxBehavior inferredByCurrency = DefaultsTaxBehavior._('inferred_by_currency');
+static const DefaultsTaxBehavior inferredByCurrency = DefaultsTaxBehavior$inferredByCurrency._();
 
 static const List<DefaultsTaxBehavior> values = [exclusive, inclusive, inferredByCurrency];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DefaultsTaxBehavior$Unknown; } 
+@override String toString() => 'DefaultsTaxBehavior($value)';
+
+ }
+@immutable final class DefaultsTaxBehavior$exclusive extends DefaultsTaxBehavior {const DefaultsTaxBehavior$exclusive._();
+
+@override String get value => 'exclusive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultsTaxBehavior$exclusive;
+
+@override int get hashCode => 'exclusive'.hashCode;
+
+ }
+@immutable final class DefaultsTaxBehavior$inclusive extends DefaultsTaxBehavior {const DefaultsTaxBehavior$inclusive._();
+
+@override String get value => 'inclusive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultsTaxBehavior$inclusive;
+
+@override int get hashCode => 'inclusive'.hashCode;
+
+ }
+@immutable final class DefaultsTaxBehavior$inferredByCurrency extends DefaultsTaxBehavior {const DefaultsTaxBehavior$inferredByCurrency._();
+
+@override String get value => 'inferred_by_currency';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultsTaxBehavior$inferredByCurrency;
+
+@override int get hashCode => 'inferred_by_currency'.hashCode;
+
+ }
+@immutable final class DefaultsTaxBehavior$Unknown extends DefaultsTaxBehavior {const DefaultsTaxBehavior$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DefaultsTaxBehavior && other.value == value;
+    other is DefaultsTaxBehavior$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DefaultsTaxBehavior($value)';
 
  }
 /// Default configuration to be used on Stripe Tax calculations.

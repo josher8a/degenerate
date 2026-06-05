@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpAddinAuth (inline: Org)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgType {const OrgType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class OrgType {const OrgType();
 
 factory OrgType.fromJson(String json) { return switch (json) {
   'Org' => org,
-  _ => OrgType._(json),
+  _ => OrgType$Unknown(json),
 }; }
 
-static const OrgType org = OrgType._('Org');
+static const OrgType org = OrgType$org._();
 
 static const List<OrgType> values = [org];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrgType$Unknown; } 
+@override String toString() => 'OrgType($value)';
+
+ }
+@immutable final class OrgType$org extends OrgType {const OrgType$org._();
+
+@override String get value => 'Org';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgType$org;
+
+@override int get hashCode => 'Org'.hashCode;
+
+ }
+@immutable final class OrgType$Unknown extends OrgType {const OrgType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrgType && other.value == value;
+    other is OrgType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrgType($value)';
 
  }
 @immutable final class Org {const Org({required this.allowedMicrosoftOrganizations, required this.type, });

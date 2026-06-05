@@ -2,7 +2,7 @@
 // Source: #/components/schemas/AccountConference
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/conference_enum_status.dart';/// The reason why a conference ended. When a conference is in progress, will be `null`. When conference is completed, can be: `conference-ended-via-api`, `participant-with-end-conference-on-exit-left`, `participant-with-end-conference-on-exit-kicked`, `last-participant-kicked`, or `last-participant-left`.
-@immutable final class ConferenceEnumReasonConferenceEnded {const ConferenceEnumReasonConferenceEnded._(this.value);
+sealed class ConferenceEnumReasonConferenceEnded {const ConferenceEnumReasonConferenceEnded();
 
 factory ConferenceEnumReasonConferenceEnded.fromJson(String json) { return switch (json) {
   'conference-ended-via-api' => conferenceEndedViaApi,
@@ -10,23 +10,22 @@ factory ConferenceEnumReasonConferenceEnded.fromJson(String json) { return switc
   'participant-with-end-conference-on-exit-kicked' => participantWithEndConferenceOnExitKicked,
   'last-participant-kicked' => lastParticipantKicked,
   'last-participant-left' => lastParticipantLeft,
-  _ => ConferenceEnumReasonConferenceEnded._(json),
+  _ => ConferenceEnumReasonConferenceEnded$Unknown(json),
 }; }
 
-static const ConferenceEnumReasonConferenceEnded conferenceEndedViaApi = ConferenceEnumReasonConferenceEnded._('conference-ended-via-api');
+static const ConferenceEnumReasonConferenceEnded conferenceEndedViaApi = ConferenceEnumReasonConferenceEnded$conferenceEndedViaApi._();
 
-static const ConferenceEnumReasonConferenceEnded participantWithEndConferenceOnExitLeft = ConferenceEnumReasonConferenceEnded._('participant-with-end-conference-on-exit-left');
+static const ConferenceEnumReasonConferenceEnded participantWithEndConferenceOnExitLeft = ConferenceEnumReasonConferenceEnded$participantWithEndConferenceOnExitLeft._();
 
-static const ConferenceEnumReasonConferenceEnded participantWithEndConferenceOnExitKicked = ConferenceEnumReasonConferenceEnded._('participant-with-end-conference-on-exit-kicked');
+static const ConferenceEnumReasonConferenceEnded participantWithEndConferenceOnExitKicked = ConferenceEnumReasonConferenceEnded$participantWithEndConferenceOnExitKicked._();
 
-static const ConferenceEnumReasonConferenceEnded lastParticipantKicked = ConferenceEnumReasonConferenceEnded._('last-participant-kicked');
+static const ConferenceEnumReasonConferenceEnded lastParticipantKicked = ConferenceEnumReasonConferenceEnded$lastParticipantKicked._();
 
-static const ConferenceEnumReasonConferenceEnded lastParticipantLeft = ConferenceEnumReasonConferenceEnded._('last-participant-left');
+static const ConferenceEnumReasonConferenceEnded lastParticipantLeft = ConferenceEnumReasonConferenceEnded$lastParticipantLeft._();
 
 static const List<ConferenceEnumReasonConferenceEnded> values = [conferenceEndedViaApi, participantWithEndConferenceOnExitLeft, participantWithEndConferenceOnExitKicked, lastParticipantKicked, lastParticipantLeft];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConferenceEnumReasonConferenceEnded$Unknown; } 
+@override String toString() => 'ConferenceEnumReasonConferenceEnded($value)';
+
+ }
+@immutable final class ConferenceEnumReasonConferenceEnded$conferenceEndedViaApi extends ConferenceEnumReasonConferenceEnded {const ConferenceEnumReasonConferenceEnded$conferenceEndedViaApi._();
+
+@override String get value => 'conference-ended-via-api';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConferenceEnumReasonConferenceEnded$conferenceEndedViaApi;
+
+@override int get hashCode => 'conference-ended-via-api'.hashCode;
+
+ }
+@immutable final class ConferenceEnumReasonConferenceEnded$participantWithEndConferenceOnExitLeft extends ConferenceEnumReasonConferenceEnded {const ConferenceEnumReasonConferenceEnded$participantWithEndConferenceOnExitLeft._();
+
+@override String get value => 'participant-with-end-conference-on-exit-left';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConferenceEnumReasonConferenceEnded$participantWithEndConferenceOnExitLeft;
+
+@override int get hashCode => 'participant-with-end-conference-on-exit-left'.hashCode;
+
+ }
+@immutable final class ConferenceEnumReasonConferenceEnded$participantWithEndConferenceOnExitKicked extends ConferenceEnumReasonConferenceEnded {const ConferenceEnumReasonConferenceEnded$participantWithEndConferenceOnExitKicked._();
+
+@override String get value => 'participant-with-end-conference-on-exit-kicked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConferenceEnumReasonConferenceEnded$participantWithEndConferenceOnExitKicked;
+
+@override int get hashCode => 'participant-with-end-conference-on-exit-kicked'.hashCode;
+
+ }
+@immutable final class ConferenceEnumReasonConferenceEnded$lastParticipantKicked extends ConferenceEnumReasonConferenceEnded {const ConferenceEnumReasonConferenceEnded$lastParticipantKicked._();
+
+@override String get value => 'last-participant-kicked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConferenceEnumReasonConferenceEnded$lastParticipantKicked;
+
+@override int get hashCode => 'last-participant-kicked'.hashCode;
+
+ }
+@immutable final class ConferenceEnumReasonConferenceEnded$lastParticipantLeft extends ConferenceEnumReasonConferenceEnded {const ConferenceEnumReasonConferenceEnded$lastParticipantLeft._();
+
+@override String get value => 'last-participant-left';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConferenceEnumReasonConferenceEnded$lastParticipantLeft;
+
+@override int get hashCode => 'last-participant-left'.hashCode;
+
+ }
+@immutable final class ConferenceEnumReasonConferenceEnded$Unknown extends ConferenceEnumReasonConferenceEnded {const ConferenceEnumReasonConferenceEnded$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConferenceEnumReasonConferenceEnded && other.value == value;
+    other is ConferenceEnumReasonConferenceEnded$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConferenceEnumReasonConferenceEnded($value)';
 
  }
 @immutable final class AccountConference {const AccountConference({this.accountSid, this.dateCreated, this.dateUpdated, this.apiVersion, this.friendlyName, this.region, this.sid, this.status, this.uri, this.subresourceUris, this.reasonConferenceEnded, this.callSidEndingConference, });

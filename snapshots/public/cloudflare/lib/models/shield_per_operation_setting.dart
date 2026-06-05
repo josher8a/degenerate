@@ -7,25 +7,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 ///   - `"block"` - deny access to the site when request does not conform to schema for this operation
 ///   - `"none"` - will skip mitigation for this operation
 /// 
-@immutable final class ShieldPerOperationSettingMitigationAction {const ShieldPerOperationSettingMitigationAction._(this.value);
+sealed class ShieldPerOperationSettingMitigationAction {const ShieldPerOperationSettingMitigationAction();
 
 factory ShieldPerOperationSettingMitigationAction.fromJson(String json) { return switch (json) {
   'log' => log,
   'block' => block,
   'none' => none,
-  _ => ShieldPerOperationSettingMitigationAction._(json),
+  _ => ShieldPerOperationSettingMitigationAction$Unknown(json),
 }; }
 
-static const ShieldPerOperationSettingMitigationAction log = ShieldPerOperationSettingMitigationAction._('log');
+static const ShieldPerOperationSettingMitigationAction log = ShieldPerOperationSettingMitigationAction$log._();
 
-static const ShieldPerOperationSettingMitigationAction block = ShieldPerOperationSettingMitigationAction._('block');
+static const ShieldPerOperationSettingMitigationAction block = ShieldPerOperationSettingMitigationAction$block._();
 
-static const ShieldPerOperationSettingMitigationAction none = ShieldPerOperationSettingMitigationAction._('none');
+static const ShieldPerOperationSettingMitigationAction none = ShieldPerOperationSettingMitigationAction$none._();
 
 static const List<ShieldPerOperationSettingMitigationAction> values = [log, block, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -35,13 +34,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShieldPerOperationSettingMitigationAction$Unknown; } 
+@override String toString() => 'ShieldPerOperationSettingMitigationAction($value)';
+
+ }
+@immutable final class ShieldPerOperationSettingMitigationAction$log extends ShieldPerOperationSettingMitigationAction {const ShieldPerOperationSettingMitigationAction$log._();
+
+@override String get value => 'log';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldPerOperationSettingMitigationAction$log;
+
+@override int get hashCode => 'log'.hashCode;
+
+ }
+@immutable final class ShieldPerOperationSettingMitigationAction$block extends ShieldPerOperationSettingMitigationAction {const ShieldPerOperationSettingMitigationAction$block._();
+
+@override String get value => 'block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldPerOperationSettingMitigationAction$block;
+
+@override int get hashCode => 'block'.hashCode;
+
+ }
+@immutable final class ShieldPerOperationSettingMitigationAction$none extends ShieldPerOperationSettingMitigationAction {const ShieldPerOperationSettingMitigationAction$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldPerOperationSettingMitigationAction$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class ShieldPerOperationSettingMitigationAction$Unknown extends ShieldPerOperationSettingMitigationAction {const ShieldPerOperationSettingMitigationAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldPerOperationSettingMitigationAction && other.value == value;
+    other is ShieldPerOperationSettingMitigationAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShieldPerOperationSettingMitigationAction($value)';
 
  }
 @immutable final class ShieldPerOperationSetting {const ShieldPerOperationSetting({required this.mitigationAction, required this.operationId, });

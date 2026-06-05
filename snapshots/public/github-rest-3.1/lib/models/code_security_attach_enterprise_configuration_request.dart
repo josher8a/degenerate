@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CodeSecurityAttachEnterpriseConfigurationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of repositories to attach the configuration to.
-@immutable final class CodeSecurityAttachEnterpriseConfigurationRequestScope {const CodeSecurityAttachEnterpriseConfigurationRequestScope._(this.value);
+sealed class CodeSecurityAttachEnterpriseConfigurationRequestScope {const CodeSecurityAttachEnterpriseConfigurationRequestScope();
 
 factory CodeSecurityAttachEnterpriseConfigurationRequestScope.fromJson(String json) { return switch (json) {
   'all' => all,
   'all_without_configurations' => allWithoutConfigurations,
-  _ => CodeSecurityAttachEnterpriseConfigurationRequestScope._(json),
+  _ => CodeSecurityAttachEnterpriseConfigurationRequestScope$Unknown(json),
 }; }
 
-static const CodeSecurityAttachEnterpriseConfigurationRequestScope all = CodeSecurityAttachEnterpriseConfigurationRequestScope._('all');
+static const CodeSecurityAttachEnterpriseConfigurationRequestScope all = CodeSecurityAttachEnterpriseConfigurationRequestScope$all._();
 
-static const CodeSecurityAttachEnterpriseConfigurationRequestScope allWithoutConfigurations = CodeSecurityAttachEnterpriseConfigurationRequestScope._('all_without_configurations');
+static const CodeSecurityAttachEnterpriseConfigurationRequestScope allWithoutConfigurations = CodeSecurityAttachEnterpriseConfigurationRequestScope$allWithoutConfigurations._();
 
 static const List<CodeSecurityAttachEnterpriseConfigurationRequestScope> values = [all, allWithoutConfigurations];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeSecurityAttachEnterpriseConfigurationRequestScope$Unknown; } 
+@override String toString() => 'CodeSecurityAttachEnterpriseConfigurationRequestScope($value)';
+
+ }
+@immutable final class CodeSecurityAttachEnterpriseConfigurationRequestScope$all extends CodeSecurityAttachEnterpriseConfigurationRequestScope {const CodeSecurityAttachEnterpriseConfigurationRequestScope$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityAttachEnterpriseConfigurationRequestScope$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class CodeSecurityAttachEnterpriseConfigurationRequestScope$allWithoutConfigurations extends CodeSecurityAttachEnterpriseConfigurationRequestScope {const CodeSecurityAttachEnterpriseConfigurationRequestScope$allWithoutConfigurations._();
+
+@override String get value => 'all_without_configurations';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityAttachEnterpriseConfigurationRequestScope$allWithoutConfigurations;
+
+@override int get hashCode => 'all_without_configurations'.hashCode;
+
+ }
+@immutable final class CodeSecurityAttachEnterpriseConfigurationRequestScope$Unknown extends CodeSecurityAttachEnterpriseConfigurationRequestScope {const CodeSecurityAttachEnterpriseConfigurationRequestScope$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeSecurityAttachEnterpriseConfigurationRequestScope && other.value == value;
+    other is CodeSecurityAttachEnterpriseConfigurationRequestScope$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeSecurityAttachEnterpriseConfigurationRequestScope($value)';
 
  }
 @immutable final class CodeSecurityAttachEnterpriseConfigurationRequest {const CodeSecurityAttachEnterpriseConfigurationRequest({required this.scope});

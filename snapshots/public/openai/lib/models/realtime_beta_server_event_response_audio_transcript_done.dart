@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventResponseAudioTranscriptDone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_audio_transcript.done`.
-@immutable final class RealtimeBetaServerEventResponseAudioTranscriptDoneType {const RealtimeBetaServerEventResponseAudioTranscriptDoneType._(this.value);
+sealed class RealtimeBetaServerEventResponseAudioTranscriptDoneType {const RealtimeBetaServerEventResponseAudioTranscriptDoneType();
 
 factory RealtimeBetaServerEventResponseAudioTranscriptDoneType.fromJson(String json) { return switch (json) {
   'response.output_audio_transcript.done' => responseOutputAudioTranscriptDone,
-  _ => RealtimeBetaServerEventResponseAudioTranscriptDoneType._(json),
+  _ => RealtimeBetaServerEventResponseAudioTranscriptDoneType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventResponseAudioTranscriptDoneType responseOutputAudioTranscriptDone = RealtimeBetaServerEventResponseAudioTranscriptDoneType._('response.output_audio_transcript.done');
+static const RealtimeBetaServerEventResponseAudioTranscriptDoneType responseOutputAudioTranscriptDone = RealtimeBetaServerEventResponseAudioTranscriptDoneType$responseOutputAudioTranscriptDone._();
 
 static const List<RealtimeBetaServerEventResponseAudioTranscriptDoneType> values = [responseOutputAudioTranscriptDone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseAudioTranscriptDoneType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventResponseAudioTranscriptDoneType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventResponseAudioTranscriptDoneType$responseOutputAudioTranscriptDone extends RealtimeBetaServerEventResponseAudioTranscriptDoneType {const RealtimeBetaServerEventResponseAudioTranscriptDoneType$responseOutputAudioTranscriptDone._();
+
+@override String get value => 'response.output_audio_transcript.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseAudioTranscriptDoneType$responseOutputAudioTranscriptDone;
+
+@override int get hashCode => 'response.output_audio_transcript.done'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventResponseAudioTranscriptDoneType$Unknown extends RealtimeBetaServerEventResponseAudioTranscriptDoneType {const RealtimeBetaServerEventResponseAudioTranscriptDoneType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventResponseAudioTranscriptDoneType && other.value == value;
+    other is RealtimeBetaServerEventResponseAudioTranscriptDoneType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventResponseAudioTranscriptDoneType($value)';
 
  }
 /// Returned when the model-generated transcription of audio output is done

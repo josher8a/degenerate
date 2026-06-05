@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DestinationCreateRequest (inline: Configuration > LogpushDataset)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ConfigurationLogpushDataset {const ConfigurationLogpushDataset._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ConfigurationLogpushDataset {const ConfigurationLogpushDataset();
 
 factory ConfigurationLogpushDataset.fromJson(String json) { return switch (json) {
   'opentelemetry-traces' => opentelemetryTraces,
   'opentelemetry-logs' => opentelemetryLogs,
-  _ => ConfigurationLogpushDataset._(json),
+  _ => ConfigurationLogpushDataset$Unknown(json),
 }; }
 
-static const ConfigurationLogpushDataset opentelemetryTraces = ConfigurationLogpushDataset._('opentelemetry-traces');
+static const ConfigurationLogpushDataset opentelemetryTraces = ConfigurationLogpushDataset$opentelemetryTraces._();
 
-static const ConfigurationLogpushDataset opentelemetryLogs = ConfigurationLogpushDataset._('opentelemetry-logs');
+static const ConfigurationLogpushDataset opentelemetryLogs = ConfigurationLogpushDataset$opentelemetryLogs._();
 
 static const List<ConfigurationLogpushDataset> values = [opentelemetryTraces, opentelemetryLogs];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConfigurationLogpushDataset$Unknown; } 
+@override String toString() => 'ConfigurationLogpushDataset($value)';
+
+ }
+@immutable final class ConfigurationLogpushDataset$opentelemetryTraces extends ConfigurationLogpushDataset {const ConfigurationLogpushDataset$opentelemetryTraces._();
+
+@override String get value => 'opentelemetry-traces';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConfigurationLogpushDataset$opentelemetryTraces;
+
+@override int get hashCode => 'opentelemetry-traces'.hashCode;
+
+ }
+@immutable final class ConfigurationLogpushDataset$opentelemetryLogs extends ConfigurationLogpushDataset {const ConfigurationLogpushDataset$opentelemetryLogs._();
+
+@override String get value => 'opentelemetry-logs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConfigurationLogpushDataset$opentelemetryLogs;
+
+@override int get hashCode => 'opentelemetry-logs'.hashCode;
+
+ }
+@immutable final class ConfigurationLogpushDataset$Unknown extends ConfigurationLogpushDataset {const ConfigurationLogpushDataset$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConfigurationLogpushDataset && other.value == value;
+    other is ConfigurationLogpushDataset$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConfigurationLogpushDataset($value)';
 
  }

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ActionsGetActionsCacheListDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsGetActionsCacheListDirection {const ActionsGetActionsCacheListDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ActionsGetActionsCacheListDirection {const ActionsGetActionsCacheListDirection();
 
 factory ActionsGetActionsCacheListDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => ActionsGetActionsCacheListDirection._(json),
+  _ => ActionsGetActionsCacheListDirection$Unknown(json),
 }; }
 
-static const ActionsGetActionsCacheListDirection asc = ActionsGetActionsCacheListDirection._('asc');
+static const ActionsGetActionsCacheListDirection asc = ActionsGetActionsCacheListDirection$asc._();
 
-static const ActionsGetActionsCacheListDirection desc = ActionsGetActionsCacheListDirection._('desc');
+static const ActionsGetActionsCacheListDirection desc = ActionsGetActionsCacheListDirection$desc._();
 
 static const List<ActionsGetActionsCacheListDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ActionsGetActionsCacheListDirection$Unknown; } 
+@override String toString() => 'ActionsGetActionsCacheListDirection($value)';
+
+ }
+@immutable final class ActionsGetActionsCacheListDirection$asc extends ActionsGetActionsCacheListDirection {const ActionsGetActionsCacheListDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsGetActionsCacheListDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class ActionsGetActionsCacheListDirection$desc extends ActionsGetActionsCacheListDirection {const ActionsGetActionsCacheListDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsGetActionsCacheListDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class ActionsGetActionsCacheListDirection$Unknown extends ActionsGetActionsCacheListDirection {const ActionsGetActionsCacheListDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ActionsGetActionsCacheListDirection && other.value == value;
+    other is ActionsGetActionsCacheListDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ActionsGetActionsCacheListDirection($value)';
 
  }

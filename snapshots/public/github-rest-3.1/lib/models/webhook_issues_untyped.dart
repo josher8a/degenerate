@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookIssuesUntyped
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/issue_type.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue.dart';@immutable final class WebhookIssuesUntypedAction {const WebhookIssuesUntypedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/issue_type.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue.dart';sealed class WebhookIssuesUntypedAction {const WebhookIssuesUntypedAction();
 
 factory WebhookIssuesUntypedAction.fromJson(String json) { return switch (json) {
   'untyped' => untyped,
-  _ => WebhookIssuesUntypedAction._(json),
+  _ => WebhookIssuesUntypedAction$Unknown(json),
 }; }
 
-static const WebhookIssuesUntypedAction untyped = WebhookIssuesUntypedAction._('untyped');
+static const WebhookIssuesUntypedAction untyped = WebhookIssuesUntypedAction$untyped._();
 
 static const List<WebhookIssuesUntypedAction> values = [untyped];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookIssuesUntypedAction$Unknown; } 
+@override String toString() => 'WebhookIssuesUntypedAction($value)';
+
+ }
+@immutable final class WebhookIssuesUntypedAction$untyped extends WebhookIssuesUntypedAction {const WebhookIssuesUntypedAction$untyped._();
+
+@override String get value => 'untyped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesUntypedAction$untyped;
+
+@override int get hashCode => 'untyped'.hashCode;
+
+ }
+@immutable final class WebhookIssuesUntypedAction$Unknown extends WebhookIssuesUntypedAction {const WebhookIssuesUntypedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookIssuesUntypedAction && other.value == value;
+    other is WebhookIssuesUntypedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookIssuesUntypedAction($value)';
 
  }
 @immutable final class WebhookIssuesUntyped {const WebhookIssuesUntyped({required this.action, required this.issue, required this.type, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

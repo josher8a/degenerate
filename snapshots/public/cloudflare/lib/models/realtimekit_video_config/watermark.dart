@@ -2,28 +2,27 @@
 // Source: #/components/schemas/RealtimekitVideoConfig (inline: Watermark)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_video_config/watermark_size.dart';/// Position of the watermark
-@immutable final class WatermarkPosition {const WatermarkPosition._(this.value);
+sealed class WatermarkPosition {const WatermarkPosition();
 
 factory WatermarkPosition.fromJson(String json) { return switch (json) {
   'left top' => leftTop,
   'right top' => rightTop,
   'left bottom' => leftBottom,
   'right bottom' => rightBottom,
-  _ => WatermarkPosition._(json),
+  _ => WatermarkPosition$Unknown(json),
 }; }
 
-static const WatermarkPosition leftTop = WatermarkPosition._('left top');
+static const WatermarkPosition leftTop = WatermarkPosition$leftTop._();
 
-static const WatermarkPosition rightTop = WatermarkPosition._('right top');
+static const WatermarkPosition rightTop = WatermarkPosition$rightTop._();
 
-static const WatermarkPosition leftBottom = WatermarkPosition._('left bottom');
+static const WatermarkPosition leftBottom = WatermarkPosition$leftBottom._();
 
-static const WatermarkPosition rightBottom = WatermarkPosition._('right bottom');
+static const WatermarkPosition rightBottom = WatermarkPosition$rightBottom._();
 
 static const List<WatermarkPosition> values = [leftTop, rightTop, leftBottom, rightBottom];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WatermarkPosition$Unknown; } 
+@override String toString() => 'WatermarkPosition($value)';
+
+ }
+@immutable final class WatermarkPosition$leftTop extends WatermarkPosition {const WatermarkPosition$leftTop._();
+
+@override String get value => 'left top';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WatermarkPosition$leftTop;
+
+@override int get hashCode => 'left top'.hashCode;
+
+ }
+@immutable final class WatermarkPosition$rightTop extends WatermarkPosition {const WatermarkPosition$rightTop._();
+
+@override String get value => 'right top';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WatermarkPosition$rightTop;
+
+@override int get hashCode => 'right top'.hashCode;
+
+ }
+@immutable final class WatermarkPosition$leftBottom extends WatermarkPosition {const WatermarkPosition$leftBottom._();
+
+@override String get value => 'left bottom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WatermarkPosition$leftBottom;
+
+@override int get hashCode => 'left bottom'.hashCode;
+
+ }
+@immutable final class WatermarkPosition$rightBottom extends WatermarkPosition {const WatermarkPosition$rightBottom._();
+
+@override String get value => 'right bottom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WatermarkPosition$rightBottom;
+
+@override int get hashCode => 'right bottom'.hashCode;
+
+ }
+@immutable final class WatermarkPosition$Unknown extends WatermarkPosition {const WatermarkPosition$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WatermarkPosition && other.value == value;
+    other is WatermarkPosition$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WatermarkPosition($value)';
 
  }
 /// Watermark to be added to the recording

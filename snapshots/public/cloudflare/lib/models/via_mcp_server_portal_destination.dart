@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ViaMcpServerPortalDestination
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ViaMcpServerPortalDestinationType {const ViaMcpServerPortalDestinationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ViaMcpServerPortalDestinationType {const ViaMcpServerPortalDestinationType();
 
 factory ViaMcpServerPortalDestinationType.fromJson(String json) { return switch (json) {
   'via_mcp_server_portal' => viaMcpServerPortal,
-  _ => ViaMcpServerPortalDestinationType._(json),
+  _ => ViaMcpServerPortalDestinationType$Unknown(json),
 }; }
 
-static const ViaMcpServerPortalDestinationType viaMcpServerPortal = ViaMcpServerPortalDestinationType._('via_mcp_server_portal');
+static const ViaMcpServerPortalDestinationType viaMcpServerPortal = ViaMcpServerPortalDestinationType$viaMcpServerPortal._();
 
 static const List<ViaMcpServerPortalDestinationType> values = [viaMcpServerPortal];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ViaMcpServerPortalDestinationType$Unknown; } 
+@override String toString() => 'ViaMcpServerPortalDestinationType($value)';
+
+ }
+@immutable final class ViaMcpServerPortalDestinationType$viaMcpServerPortal extends ViaMcpServerPortalDestinationType {const ViaMcpServerPortalDestinationType$viaMcpServerPortal._();
+
+@override String get value => 'via_mcp_server_portal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ViaMcpServerPortalDestinationType$viaMcpServerPortal;
+
+@override int get hashCode => 'via_mcp_server_portal'.hashCode;
+
+ }
+@immutable final class ViaMcpServerPortalDestinationType$Unknown extends ViaMcpServerPortalDestinationType {const ViaMcpServerPortalDestinationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ViaMcpServerPortalDestinationType && other.value == value;
+    other is ViaMcpServerPortalDestinationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ViaMcpServerPortalDestinationType($value)';
 
  }
 /// A MCP server id configured in ai-controls. Access will secure the MCP server if accessed through a MCP portal.

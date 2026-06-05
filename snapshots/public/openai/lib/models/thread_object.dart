@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ThreadObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_object/assistant_object_tool_resources.dart';/// The object type, which is always `thread`.
-@immutable final class ThreadObjectObject {const ThreadObjectObject._(this.value);
+sealed class ThreadObjectObject {const ThreadObjectObject();
 
 factory ThreadObjectObject.fromJson(String json) { return switch (json) {
   'thread' => thread,
-  _ => ThreadObjectObject._(json),
+  _ => ThreadObjectObject$Unknown(json),
 }; }
 
-static const ThreadObjectObject thread = ThreadObjectObject._('thread');
+static const ThreadObjectObject thread = ThreadObjectObject$thread._();
 
 static const List<ThreadObjectObject> values = [thread];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadObjectObject$Unknown; } 
+@override String toString() => 'ThreadObjectObject($value)';
+
+ }
+@immutable final class ThreadObjectObject$thread extends ThreadObjectObject {const ThreadObjectObject$thread._();
+
+@override String get value => 'thread';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadObjectObject$thread;
+
+@override int get hashCode => 'thread'.hashCode;
+
+ }
+@immutable final class ThreadObjectObject$Unknown extends ThreadObjectObject {const ThreadObjectObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadObjectObject && other.value == value;
+    other is ThreadObjectObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadObjectObject($value)';
 
  }
 /// Represents a thread that contains [messages](/docs/api-reference/messages).

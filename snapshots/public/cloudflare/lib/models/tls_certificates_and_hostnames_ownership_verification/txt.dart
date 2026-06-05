@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TlsCertificatesAndHostnamesOwnershipVerification (inline: Txt)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// DNS Record type.
-@immutable final class TxtType {const TxtType._(this.value);
+sealed class TxtType {const TxtType();
 
 factory TxtType.fromJson(String json) { return switch (json) {
   'txt' => txt,
-  _ => TxtType._(json),
+  _ => TxtType$Unknown(json),
 }; }
 
-static const TxtType txt = TxtType._('txt');
+static const TxtType txt = TxtType$txt._();
 
 static const List<TxtType> values = [txt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TxtType$Unknown; } 
+@override String toString() => 'TxtType($value)';
+
+ }
+@immutable final class TxtType$txt extends TxtType {const TxtType$txt._();
+
+@override String get value => 'txt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TxtType$txt;
+
+@override int get hashCode => 'txt'.hashCode;
+
+ }
+@immutable final class TxtType$Unknown extends TxtType {const TxtType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TxtType && other.value == value;
+    other is TxtType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TxtType($value)';
 
  }
 @immutable final class Txt {const Txt({this.name, this.type, this.value, });

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/AaaAuditLogs (inline: Actor)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of actor, whether a User, Cloudflare Admin, or an Automated System.
-@immutable final class AaaAuditLogsActorType {const AaaAuditLogsActorType._(this.value);
+sealed class AaaAuditLogsActorType {const AaaAuditLogsActorType();
 
 factory AaaAuditLogsActorType.fromJson(String json) { return switch (json) {
   'user' => user,
   'admin' => admin,
   'Cloudflare' => cloudflare,
-  _ => AaaAuditLogsActorType._(json),
+  _ => AaaAuditLogsActorType$Unknown(json),
 }; }
 
-static const AaaAuditLogsActorType user = AaaAuditLogsActorType._('user');
+static const AaaAuditLogsActorType user = AaaAuditLogsActorType$user._();
 
-static const AaaAuditLogsActorType admin = AaaAuditLogsActorType._('admin');
+static const AaaAuditLogsActorType admin = AaaAuditLogsActorType$admin._();
 
-static const AaaAuditLogsActorType cloudflare = AaaAuditLogsActorType._('Cloudflare');
+static const AaaAuditLogsActorType cloudflare = AaaAuditLogsActorType$cloudflare._();
 
 static const List<AaaAuditLogsActorType> values = [user, admin, cloudflare];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AaaAuditLogsActorType$Unknown; } 
+@override String toString() => 'AaaAuditLogsActorType($value)';
+
+ }
+@immutable final class AaaAuditLogsActorType$user extends AaaAuditLogsActorType {const AaaAuditLogsActorType$user._();
+
+@override String get value => 'user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAuditLogsActorType$user;
+
+@override int get hashCode => 'user'.hashCode;
+
+ }
+@immutable final class AaaAuditLogsActorType$admin extends AaaAuditLogsActorType {const AaaAuditLogsActorType$admin._();
+
+@override String get value => 'admin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAuditLogsActorType$admin;
+
+@override int get hashCode => 'admin'.hashCode;
+
+ }
+@immutable final class AaaAuditLogsActorType$cloudflare extends AaaAuditLogsActorType {const AaaAuditLogsActorType$cloudflare._();
+
+@override String get value => 'Cloudflare';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAuditLogsActorType$cloudflare;
+
+@override int get hashCode => 'Cloudflare'.hashCode;
+
+ }
+@immutable final class AaaAuditLogsActorType$Unknown extends AaaAuditLogsActorType {const AaaAuditLogsActorType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AaaAuditLogsActorType && other.value == value;
+    other is AaaAuditLogsActorType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AaaAuditLogsActorType($value)';
 
  }
 @immutable final class AaaAuditLogsActor {const AaaAuditLogsActor({this.email, this.id, this.ip, this.type, });

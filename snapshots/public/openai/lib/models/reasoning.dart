@@ -7,25 +7,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 /// `concise` is supported for `computer-use-preview` models and all reasoning models after `gpt-5`.
 /// 
-@immutable final class Summary {const Summary._(this.value);
+sealed class Summary {const Summary();
 
 factory Summary.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'concise' => concise,
   'detailed' => detailed,
-  _ => Summary._(json),
+  _ => Summary$Unknown(json),
 }; }
 
-static const Summary auto = Summary._('auto');
+static const Summary auto = Summary$auto._();
 
-static const Summary concise = Summary._('concise');
+static const Summary concise = Summary$concise._();
 
-static const Summary detailed = Summary._('detailed');
+static const Summary detailed = Summary$detailed._();
 
 static const List<Summary> values = [auto, concise, detailed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -35,13 +34,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Summary$Unknown; } 
+@override String toString() => 'Summary($value)';
+
+ }
+@immutable final class Summary$auto extends Summary {const Summary$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Summary$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class Summary$concise extends Summary {const Summary$concise._();
+
+@override String get value => 'concise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Summary$concise;
+
+@override int get hashCode => 'concise'.hashCode;
+
+ }
+@immutable final class Summary$detailed extends Summary {const Summary$detailed._();
+
+@override String get value => 'detailed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Summary$detailed;
+
+@override int get hashCode => 'detailed'.hashCode;
+
+ }
+@immutable final class Summary$Unknown extends Summary {const Summary$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Summary && other.value == value;
+    other is Summary$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Summary($value)';
 
  }
 /// **Deprecated:** use `summary` instead.
@@ -50,25 +81,24 @@ bool get isUnknown { return !values.contains(this); }
 /// useful for debugging and understanding the model's reasoning process.
 /// One of `auto`, `concise`, or `detailed`.
 /// 
-@immutable final class GenerateSummary {const GenerateSummary._(this.value);
+sealed class GenerateSummary {const GenerateSummary();
 
 factory GenerateSummary.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'concise' => concise,
   'detailed' => detailed,
-  _ => GenerateSummary._(json),
+  _ => GenerateSummary$Unknown(json),
 }; }
 
-static const GenerateSummary auto = GenerateSummary._('auto');
+static const GenerateSummary auto = GenerateSummary$auto._();
 
-static const GenerateSummary concise = GenerateSummary._('concise');
+static const GenerateSummary concise = GenerateSummary$concise._();
 
-static const GenerateSummary detailed = GenerateSummary._('detailed');
+static const GenerateSummary detailed = GenerateSummary$detailed._();
 
 static const List<GenerateSummary> values = [auto, concise, detailed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -78,13 +108,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GenerateSummary$Unknown; } 
+@override String toString() => 'GenerateSummary($value)';
+
+ }
+@immutable final class GenerateSummary$auto extends GenerateSummary {const GenerateSummary$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GenerateSummary$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class GenerateSummary$concise extends GenerateSummary {const GenerateSummary$concise._();
+
+@override String get value => 'concise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GenerateSummary$concise;
+
+@override int get hashCode => 'concise'.hashCode;
+
+ }
+@immutable final class GenerateSummary$detailed extends GenerateSummary {const GenerateSummary$detailed._();
+
+@override String get value => 'detailed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GenerateSummary$detailed;
+
+@override int get hashCode => 'detailed'.hashCode;
+
+ }
+@immutable final class GenerateSummary$Unknown extends GenerateSummary {const GenerateSummary$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GenerateSummary && other.value == value;
+    other is GenerateSummary$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GenerateSummary($value)';
 
  }
 /// **gpt-5 and o-series models only**

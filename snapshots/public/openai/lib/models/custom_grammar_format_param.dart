@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CustomGrammarFormatParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_grammar_format_param/custom_grammar_format_param_type.dart';@immutable final class GrammarSyntax1 {const GrammarSyntax1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_grammar_format_param/custom_grammar_format_param_type.dart';sealed class GrammarSyntax1 {const GrammarSyntax1();
 
 factory GrammarSyntax1.fromJson(String json) { return switch (json) {
   'lark' => lark,
   'regex' => regex,
-  _ => GrammarSyntax1._(json),
+  _ => GrammarSyntax1$Unknown(json),
 }; }
 
-static const GrammarSyntax1 lark = GrammarSyntax1._('lark');
+static const GrammarSyntax1 lark = GrammarSyntax1$lark._();
 
-static const GrammarSyntax1 regex = GrammarSyntax1._('regex');
+static const GrammarSyntax1 regex = GrammarSyntax1$regex._();
 
 static const List<GrammarSyntax1> values = [lark, regex];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GrammarSyntax1$Unknown; } 
+@override String toString() => 'GrammarSyntax1($value)';
+
+ }
+@immutable final class GrammarSyntax1$lark extends GrammarSyntax1 {const GrammarSyntax1$lark._();
+
+@override String get value => 'lark';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GrammarSyntax1$lark;
+
+@override int get hashCode => 'lark'.hashCode;
+
+ }
+@immutable final class GrammarSyntax1$regex extends GrammarSyntax1 {const GrammarSyntax1$regex._();
+
+@override String get value => 'regex';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GrammarSyntax1$regex;
+
+@override int get hashCode => 'regex'.hashCode;
+
+ }
+@immutable final class GrammarSyntax1$Unknown extends GrammarSyntax1 {const GrammarSyntax1$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GrammarSyntax1 && other.value == value;
+    other is GrammarSyntax1$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GrammarSyntax1($value)';
 
  }
 /// A grammar defined by the user.

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeConversationItemMessageSystem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_message_system/realtime_conversation_item_message_system_content.dart';/// The role of the message sender. Always `system`.
-@immutable final class RealtimeConversationItemMessageSystemRole {const RealtimeConversationItemMessageSystemRole._(this.value);
+sealed class RealtimeConversationItemMessageSystemRole {const RealtimeConversationItemMessageSystemRole();
 
 factory RealtimeConversationItemMessageSystemRole.fromJson(String json) { return switch (json) {
   'system' => system,
-  _ => RealtimeConversationItemMessageSystemRole._(json),
+  _ => RealtimeConversationItemMessageSystemRole$Unknown(json),
 }; }
 
-static const RealtimeConversationItemMessageSystemRole system = RealtimeConversationItemMessageSystemRole._('system');
+static const RealtimeConversationItemMessageSystemRole system = RealtimeConversationItemMessageSystemRole$system._();
 
 static const List<RealtimeConversationItemMessageSystemRole> values = [system];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeConversationItemMessageSystemRole$Unknown; } 
+@override String toString() => 'RealtimeConversationItemMessageSystemRole($value)';
+
+ }
+@immutable final class RealtimeConversationItemMessageSystemRole$system extends RealtimeConversationItemMessageSystemRole {const RealtimeConversationItemMessageSystemRole$system._();
+
+@override String get value => 'system';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemMessageSystemRole$system;
+
+@override int get hashCode => 'system'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemMessageSystemRole$Unknown extends RealtimeConversationItemMessageSystemRole {const RealtimeConversationItemMessageSystemRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeConversationItemMessageSystemRole && other.value == value;
+    other is RealtimeConversationItemMessageSystemRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeConversationItemMessageSystemRole($value)';
 
  }
 /// A system message in a Realtime conversation can be used to provide additional context or instructions to the model. This is similar but distinct from the instruction prompt provided at the start of a conversation, as system messages can be added at any point in the conversation. For major changes to the conversation's behavior, use instructions, but for smaller updates (e.g. "the user is now asking about a different topic"), use system messages.

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/IssuingAuthorizationFraudChallenge
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The method by which the fraud challenge was delivered to the cardholder.
-@immutable final class Channel {const Channel._(this.value);
+sealed class Channel {const Channel();
 
 factory Channel.fromJson(String json) { return switch (json) {
   'sms' => sms,
-  _ => Channel._(json),
+  _ => Channel$Unknown(json),
 }; }
 
-static const Channel sms = Channel._('sms');
+static const Channel sms = Channel$sms._();
 
 static const List<Channel> values = [sms];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,17 +21,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Channel && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Channel$Unknown; } 
 @override String toString() => 'Channel($value)';
 
  }
+@immutable final class Channel$sms extends Channel {const Channel$sms._();
+
+@override String get value => 'sms';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Channel$sms;
+
+@override int get hashCode => 'sms'.hashCode;
+
+ }
+@immutable final class Channel$Unknown extends Channel {const Channel$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Channel$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of the fraud challenge.
-@immutable final class IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus._(this.value);
+sealed class IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus();
 
 factory IssuingAuthorizationFraudChallengeStatus.fromJson(String json) { return switch (json) {
   'expired' => expired,
@@ -40,23 +53,22 @@ factory IssuingAuthorizationFraudChallengeStatus.fromJson(String json) { return 
   'rejected' => rejected,
   'undeliverable' => undeliverable,
   'verified' => verified,
-  _ => IssuingAuthorizationFraudChallengeStatus._(json),
+  _ => IssuingAuthorizationFraudChallengeStatus$Unknown(json),
 }; }
 
-static const IssuingAuthorizationFraudChallengeStatus expired = IssuingAuthorizationFraudChallengeStatus._('expired');
+static const IssuingAuthorizationFraudChallengeStatus expired = IssuingAuthorizationFraudChallengeStatus$expired._();
 
-static const IssuingAuthorizationFraudChallengeStatus pending = IssuingAuthorizationFraudChallengeStatus._('pending');
+static const IssuingAuthorizationFraudChallengeStatus pending = IssuingAuthorizationFraudChallengeStatus$pending._();
 
-static const IssuingAuthorizationFraudChallengeStatus rejected = IssuingAuthorizationFraudChallengeStatus._('rejected');
+static const IssuingAuthorizationFraudChallengeStatus rejected = IssuingAuthorizationFraudChallengeStatus$rejected._();
 
-static const IssuingAuthorizationFraudChallengeStatus undeliverable = IssuingAuthorizationFraudChallengeStatus._('undeliverable');
+static const IssuingAuthorizationFraudChallengeStatus undeliverable = IssuingAuthorizationFraudChallengeStatus$undeliverable._();
 
-static const IssuingAuthorizationFraudChallengeStatus verified = IssuingAuthorizationFraudChallengeStatus._('verified');
+static const IssuingAuthorizationFraudChallengeStatus verified = IssuingAuthorizationFraudChallengeStatus$verified._();
 
 static const List<IssuingAuthorizationFraudChallengeStatus> values = [expired, pending, rejected, undeliverable, verified];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,32 +80,81 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingAuthorizationFraudChallengeStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingAuthorizationFraudChallengeStatus$Unknown; } 
 @override String toString() => 'IssuingAuthorizationFraudChallengeStatus($value)';
 
  }
+@immutable final class IssuingAuthorizationFraudChallengeStatus$expired extends IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFraudChallengeStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFraudChallengeStatus$pending extends IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFraudChallengeStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFraudChallengeStatus$rejected extends IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus$rejected._();
+
+@override String get value => 'rejected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFraudChallengeStatus$rejected;
+
+@override int get hashCode => 'rejected'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFraudChallengeStatus$undeliverable extends IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus$undeliverable._();
+
+@override String get value => 'undeliverable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFraudChallengeStatus$undeliverable;
+
+@override int get hashCode => 'undeliverable'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFraudChallengeStatus$verified extends IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus$verified._();
+
+@override String get value => 'verified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFraudChallengeStatus$verified;
+
+@override int get hashCode => 'verified'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFraudChallengeStatus$Unknown extends IssuingAuthorizationFraudChallengeStatus {const IssuingAuthorizationFraudChallengeStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingAuthorizationFraudChallengeStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// If the challenge is not deliverable, the reason why.
-@immutable final class UndeliverableReason {const UndeliverableReason._(this.value);
+sealed class UndeliverableReason {const UndeliverableReason();
 
 factory UndeliverableReason.fromJson(String json) { return switch (json) {
   'no_phone_number' => noPhoneNumber,
   'unsupported_phone_number' => unsupportedPhoneNumber,
-  _ => UndeliverableReason._(json),
+  _ => UndeliverableReason$Unknown(json),
 }; }
 
-static const UndeliverableReason noPhoneNumber = UndeliverableReason._('no_phone_number');
+static const UndeliverableReason noPhoneNumber = UndeliverableReason$noPhoneNumber._();
 
-static const UndeliverableReason unsupportedPhoneNumber = UndeliverableReason._('unsupported_phone_number');
+static const UndeliverableReason unsupportedPhoneNumber = UndeliverableReason$unsupportedPhoneNumber._();
 
 static const List<UndeliverableReason> values = [noPhoneNumber, unsupportedPhoneNumber];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -102,13 +163,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UndeliverableReason$Unknown; } 
+@override String toString() => 'UndeliverableReason($value)';
+
+ }
+@immutable final class UndeliverableReason$noPhoneNumber extends UndeliverableReason {const UndeliverableReason$noPhoneNumber._();
+
+@override String get value => 'no_phone_number';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UndeliverableReason$noPhoneNumber;
+
+@override int get hashCode => 'no_phone_number'.hashCode;
+
+ }
+@immutable final class UndeliverableReason$unsupportedPhoneNumber extends UndeliverableReason {const UndeliverableReason$unsupportedPhoneNumber._();
+
+@override String get value => 'unsupported_phone_number';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UndeliverableReason$unsupportedPhoneNumber;
+
+@override int get hashCode => 'unsupported_phone_number'.hashCode;
+
+ }
+@immutable final class UndeliverableReason$Unknown extends UndeliverableReason {const UndeliverableReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UndeliverableReason && other.value == value;
+    other is UndeliverableReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UndeliverableReason($value)';
 
  }
 /// 

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MigrationsGetStatusForOrgExclude
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allowed values that can be passed to the exclude param.
-@immutable final class MigrationsGetStatusForOrgExclude {const MigrationsGetStatusForOrgExclude._(this.value);
+sealed class MigrationsGetStatusForOrgExclude {const MigrationsGetStatusForOrgExclude();
 
 factory MigrationsGetStatusForOrgExclude.fromJson(String json) { return switch (json) {
   'repositories' => repositories,
-  _ => MigrationsGetStatusForOrgExclude._(json),
+  _ => MigrationsGetStatusForOrgExclude$Unknown(json),
 }; }
 
-static const MigrationsGetStatusForOrgExclude repositories = MigrationsGetStatusForOrgExclude._('repositories');
+static const MigrationsGetStatusForOrgExclude repositories = MigrationsGetStatusForOrgExclude$repositories._();
 
 static const List<MigrationsGetStatusForOrgExclude> values = [repositories];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MigrationsGetStatusForOrgExclude$Unknown; } 
+@override String toString() => 'MigrationsGetStatusForOrgExclude($value)';
+
+ }
+@immutable final class MigrationsGetStatusForOrgExclude$repositories extends MigrationsGetStatusForOrgExclude {const MigrationsGetStatusForOrgExclude$repositories._();
+
+@override String get value => 'repositories';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MigrationsGetStatusForOrgExclude$repositories;
+
+@override int get hashCode => 'repositories'.hashCode;
+
+ }
+@immutable final class MigrationsGetStatusForOrgExclude$Unknown extends MigrationsGetStatusForOrgExclude {const MigrationsGetStatusForOrgExclude$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MigrationsGetStatusForOrgExclude && other.value == value;
+    other is MigrationsGetStatusForOrgExclude$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MigrationsGetStatusForOrgExclude($value)';
 
  }

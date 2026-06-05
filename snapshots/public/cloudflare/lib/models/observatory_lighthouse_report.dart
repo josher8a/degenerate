@@ -2,25 +2,24 @@
 // Source: #/components/schemas/ObservatoryLighthouseReport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/observatory_device_type.dart';import 'package:pub_cloudflare/models/observatory_lighthouse_report/observatory_lighthouse_report_error.dart';/// The state of the Lighthouse report.
-@immutable final class ObservatoryLighthouseState {const ObservatoryLighthouseState._(this.value);
+sealed class ObservatoryLighthouseState {const ObservatoryLighthouseState();
 
 factory ObservatoryLighthouseState.fromJson(String json) { return switch (json) {
   'RUNNING' => running,
   'COMPLETE' => complete,
   'FAILED' => failed,
-  _ => ObservatoryLighthouseState._(json),
+  _ => ObservatoryLighthouseState$Unknown(json),
 }; }
 
-static const ObservatoryLighthouseState running = ObservatoryLighthouseState._('RUNNING');
+static const ObservatoryLighthouseState running = ObservatoryLighthouseState$running._();
 
-static const ObservatoryLighthouseState complete = ObservatoryLighthouseState._('COMPLETE');
+static const ObservatoryLighthouseState complete = ObservatoryLighthouseState$complete._();
 
-static const ObservatoryLighthouseState failed = ObservatoryLighthouseState._('FAILED');
+static const ObservatoryLighthouseState failed = ObservatoryLighthouseState$failed._();
 
 static const List<ObservatoryLighthouseState> values = [running, complete, failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ObservatoryLighthouseState$Unknown; } 
+@override String toString() => 'ObservatoryLighthouseState($value)';
+
+ }
+@immutable final class ObservatoryLighthouseState$running extends ObservatoryLighthouseState {const ObservatoryLighthouseState$running._();
+
+@override String get value => 'RUNNING';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ObservatoryLighthouseState$running;
+
+@override int get hashCode => 'RUNNING'.hashCode;
+
+ }
+@immutable final class ObservatoryLighthouseState$complete extends ObservatoryLighthouseState {const ObservatoryLighthouseState$complete._();
+
+@override String get value => 'COMPLETE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ObservatoryLighthouseState$complete;
+
+@override int get hashCode => 'COMPLETE'.hashCode;
+
+ }
+@immutable final class ObservatoryLighthouseState$failed extends ObservatoryLighthouseState {const ObservatoryLighthouseState$failed._();
+
+@override String get value => 'FAILED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ObservatoryLighthouseState$failed;
+
+@override int get hashCode => 'FAILED'.hashCode;
+
+ }
+@immutable final class ObservatoryLighthouseState$Unknown extends ObservatoryLighthouseState {const ObservatoryLighthouseState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ObservatoryLighthouseState && other.value == value;
+    other is ObservatoryLighthouseState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ObservatoryLighthouseState($value)';
 
  }
 /// The Lighthouse report.

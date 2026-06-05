@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WebhookMembershipAdded
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_repositories_added/webhook_installation_repositories_added_action.dart';import 'package:pub_github_rest_3_1/models/webhook_membership_added/sender.dart';import 'package:pub_github_rest_3_1/models/webhooks_team.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';/// The scope of the membership. Currently, can only be `team`.
-@immutable final class WebhookMembershipAddedScope {const WebhookMembershipAddedScope._(this.value);
+sealed class WebhookMembershipAddedScope {const WebhookMembershipAddedScope();
 
 factory WebhookMembershipAddedScope.fromJson(String json) { return switch (json) {
   'team' => team,
-  _ => WebhookMembershipAddedScope._(json),
+  _ => WebhookMembershipAddedScope$Unknown(json),
 }; }
 
-static const WebhookMembershipAddedScope team = WebhookMembershipAddedScope._('team');
+static const WebhookMembershipAddedScope team = WebhookMembershipAddedScope$team._();
 
 static const List<WebhookMembershipAddedScope> values = [team];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookMembershipAddedScope$Unknown; } 
+@override String toString() => 'WebhookMembershipAddedScope($value)';
+
+ }
+@immutable final class WebhookMembershipAddedScope$team extends WebhookMembershipAddedScope {const WebhookMembershipAddedScope$team._();
+
+@override String get value => 'team';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookMembershipAddedScope$team;
+
+@override int get hashCode => 'team'.hashCode;
+
+ }
+@immutable final class WebhookMembershipAddedScope$Unknown extends WebhookMembershipAddedScope {const WebhookMembershipAddedScope$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookMembershipAddedScope && other.value == value;
+    other is WebhookMembershipAddedScope$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookMembershipAddedScope($value)';
 
  }
 @immutable final class WebhookMembershipAdded {const WebhookMembershipAdded({required this.action, required this.member, required this.organization, required this.scope, required this.sender, required this.team, this.enterprise, this.installation, this.repository, });

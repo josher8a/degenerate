@@ -2,25 +2,24 @@
 // Source: #/components/schemas/RulesetsSetCacheSettingsEdgeTtl
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_set_cache_settings_status_code_ttl2.dart';/// The edge TTL mode.
-@immutable final class RulesetsSetCacheSettingsEdgeTtlMode {const RulesetsSetCacheSettingsEdgeTtlMode._(this.value);
+sealed class RulesetsSetCacheSettingsEdgeTtlMode {const RulesetsSetCacheSettingsEdgeTtlMode();
 
 factory RulesetsSetCacheSettingsEdgeTtlMode.fromJson(String json) { return switch (json) {
   'respect_origin' => respectOrigin,
   'bypass_by_default' => bypassByDefault,
   'override_origin' => overrideOrigin,
-  _ => RulesetsSetCacheSettingsEdgeTtlMode._(json),
+  _ => RulesetsSetCacheSettingsEdgeTtlMode$Unknown(json),
 }; }
 
-static const RulesetsSetCacheSettingsEdgeTtlMode respectOrigin = RulesetsSetCacheSettingsEdgeTtlMode._('respect_origin');
+static const RulesetsSetCacheSettingsEdgeTtlMode respectOrigin = RulesetsSetCacheSettingsEdgeTtlMode$respectOrigin._();
 
-static const RulesetsSetCacheSettingsEdgeTtlMode bypassByDefault = RulesetsSetCacheSettingsEdgeTtlMode._('bypass_by_default');
+static const RulesetsSetCacheSettingsEdgeTtlMode bypassByDefault = RulesetsSetCacheSettingsEdgeTtlMode$bypassByDefault._();
 
-static const RulesetsSetCacheSettingsEdgeTtlMode overrideOrigin = RulesetsSetCacheSettingsEdgeTtlMode._('override_origin');
+static const RulesetsSetCacheSettingsEdgeTtlMode overrideOrigin = RulesetsSetCacheSettingsEdgeTtlMode$overrideOrigin._();
 
 static const List<RulesetsSetCacheSettingsEdgeTtlMode> values = [respectOrigin, bypassByDefault, overrideOrigin];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RulesetsSetCacheSettingsEdgeTtlMode$Unknown; } 
+@override String toString() => 'RulesetsSetCacheSettingsEdgeTtlMode($value)';
+
+ }
+@immutable final class RulesetsSetCacheSettingsEdgeTtlMode$respectOrigin extends RulesetsSetCacheSettingsEdgeTtlMode {const RulesetsSetCacheSettingsEdgeTtlMode$respectOrigin._();
+
+@override String get value => 'respect_origin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RulesetsSetCacheSettingsEdgeTtlMode$respectOrigin;
+
+@override int get hashCode => 'respect_origin'.hashCode;
+
+ }
+@immutable final class RulesetsSetCacheSettingsEdgeTtlMode$bypassByDefault extends RulesetsSetCacheSettingsEdgeTtlMode {const RulesetsSetCacheSettingsEdgeTtlMode$bypassByDefault._();
+
+@override String get value => 'bypass_by_default';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RulesetsSetCacheSettingsEdgeTtlMode$bypassByDefault;
+
+@override int get hashCode => 'bypass_by_default'.hashCode;
+
+ }
+@immutable final class RulesetsSetCacheSettingsEdgeTtlMode$overrideOrigin extends RulesetsSetCacheSettingsEdgeTtlMode {const RulesetsSetCacheSettingsEdgeTtlMode$overrideOrigin._();
+
+@override String get value => 'override_origin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RulesetsSetCacheSettingsEdgeTtlMode$overrideOrigin;
+
+@override int get hashCode => 'override_origin'.hashCode;
+
+ }
+@immutable final class RulesetsSetCacheSettingsEdgeTtlMode$Unknown extends RulesetsSetCacheSettingsEdgeTtlMode {const RulesetsSetCacheSettingsEdgeTtlMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RulesetsSetCacheSettingsEdgeTtlMode && other.value == value;
+    other is RulesetsSetCacheSettingsEdgeTtlMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RulesetsSetCacheSettingsEdgeTtlMode($value)';
 
  }
 /// How long the Cloudflare edge network should cache the response.

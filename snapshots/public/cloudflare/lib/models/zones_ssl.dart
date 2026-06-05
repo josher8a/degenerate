@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_ssl_value.dart';/// Control options for the SSL feature of the Edge Certificates tab in the Cloudflare SSL/TLS app.
 /// 
-@immutable final class ZonesSslId {const ZonesSslId._(this.value);
+sealed class ZonesSslId {const ZonesSslId();
 
 factory ZonesSslId.fromJson(String json) { return switch (json) {
   'ssl' => ssl,
-  _ => ZonesSslId._(json),
+  _ => ZonesSslId$Unknown(json),
 }; }
 
-static const ZonesSslId ssl = ZonesSslId._('ssl');
+static const ZonesSslId ssl = ZonesSslId$ssl._();
 
 static const List<ZonesSslId> values = [ssl];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesSslId$Unknown; } 
+@override String toString() => 'ZonesSslId($value)';
+
+ }
+@immutable final class ZonesSslId$ssl extends ZonesSslId {const ZonesSslId$ssl._();
+
+@override String get value => 'ssl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesSslId$ssl;
+
+@override int get hashCode => 'ssl'.hashCode;
+
+ }
+@immutable final class ZonesSslId$Unknown extends ZonesSslId {const ZonesSslId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesSslId && other.value == value;
+    other is ZonesSslId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesSslId($value)';
 
  }
 @immutable final class ZonesSsl {const ZonesSsl({this.id, this.value, });

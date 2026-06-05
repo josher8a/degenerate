@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/R2SlurperR2SourceSchema (inline: Vendor)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SlurperR2SourceSchemaVendor {const R2SlurperR2SourceSchemaVendor._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class R2SlurperR2SourceSchemaVendor {const R2SlurperR2SourceSchemaVendor();
 
 factory R2SlurperR2SourceSchemaVendor.fromJson(String json) { return switch (json) {
   'r2' => r2,
-  _ => R2SlurperR2SourceSchemaVendor._(json),
+  _ => R2SlurperR2SourceSchemaVendor$Unknown(json),
 }; }
 
-static const R2SlurperR2SourceSchemaVendor r2 = R2SlurperR2SourceSchemaVendor._('r2');
+static const R2SlurperR2SourceSchemaVendor r2 = R2SlurperR2SourceSchemaVendor$r2._();
 
 static const List<R2SlurperR2SourceSchemaVendor> values = [r2];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is R2SlurperR2SourceSchemaVendor$Unknown; } 
+@override String toString() => 'R2SlurperR2SourceSchemaVendor($value)';
+
+ }
+@immutable final class R2SlurperR2SourceSchemaVendor$r2 extends R2SlurperR2SourceSchemaVendor {const R2SlurperR2SourceSchemaVendor$r2._();
+
+@override String get value => 'r2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is R2SlurperR2SourceSchemaVendor$r2;
+
+@override int get hashCode => 'r2'.hashCode;
+
+ }
+@immutable final class R2SlurperR2SourceSchemaVendor$Unknown extends R2SlurperR2SourceSchemaVendor {const R2SlurperR2SourceSchemaVendor$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is R2SlurperR2SourceSchemaVendor && other.value == value;
+    other is R2SlurperR2SourceSchemaVendor$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'R2SlurperR2SourceSchemaVendor($value)';
 
  }

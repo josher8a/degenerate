@@ -2,19 +2,18 @@
 // Source: #/components/schemas/BalanceSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_settings_resource_payments.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class BalanceSettingsObject {const BalanceSettingsObject._(this.value);
+sealed class BalanceSettingsObject {const BalanceSettingsObject();
 
 factory BalanceSettingsObject.fromJson(String json) { return switch (json) {
   'balance_settings' => balanceSettings,
-  _ => BalanceSettingsObject._(json),
+  _ => BalanceSettingsObject$Unknown(json),
 }; }
 
-static const BalanceSettingsObject balanceSettings = BalanceSettingsObject._('balance_settings');
+static const BalanceSettingsObject balanceSettings = BalanceSettingsObject$balanceSettings._();
 
 static const List<BalanceSettingsObject> values = [balanceSettings];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BalanceSettingsObject$Unknown; } 
+@override String toString() => 'BalanceSettingsObject($value)';
+
+ }
+@immutable final class BalanceSettingsObject$balanceSettings extends BalanceSettingsObject {const BalanceSettingsObject$balanceSettings._();
+
+@override String get value => 'balance_settings';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceSettingsObject$balanceSettings;
+
+@override int get hashCode => 'balance_settings'.hashCode;
+
+ }
+@immutable final class BalanceSettingsObject$Unknown extends BalanceSettingsObject {const BalanceSettingsObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BalanceSettingsObject && other.value == value;
+    other is BalanceSettingsObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BalanceSettingsObject($value)';
 
  }
 /// Options for customizing account balances and payout settings for a Stripe platform’s connected accounts.

@@ -2,7 +2,7 @@
 // Source: #/components/schemas/Activity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The type of the activity that was performed.
-@immutable final class ActivityType {const ActivityType._(this.value);
+sealed class ActivityType {const ActivityType();
 
 factory ActivityType.fromJson(String json) { return switch (json) {
   'push' => push,
@@ -11,25 +11,24 @@ factory ActivityType.fromJson(String json) { return switch (json) {
   'branch_creation' => branchCreation,
   'pr_merge' => prMerge,
   'merge_queue_merge' => mergeQueueMerge,
-  _ => ActivityType._(json),
+  _ => ActivityType$Unknown(json),
 }; }
 
-static const ActivityType push = ActivityType._('push');
+static const ActivityType push = ActivityType$push._();
 
-static const ActivityType forcePush = ActivityType._('force_push');
+static const ActivityType forcePush = ActivityType$forcePush._();
 
-static const ActivityType branchDeletion = ActivityType._('branch_deletion');
+static const ActivityType branchDeletion = ActivityType$branchDeletion._();
 
-static const ActivityType branchCreation = ActivityType._('branch_creation');
+static const ActivityType branchCreation = ActivityType$branchCreation._();
 
-static const ActivityType prMerge = ActivityType._('pr_merge');
+static const ActivityType prMerge = ActivityType$prMerge._();
 
-static const ActivityType mergeQueueMerge = ActivityType._('merge_queue_merge');
+static const ActivityType mergeQueueMerge = ActivityType$mergeQueueMerge._();
 
 static const List<ActivityType> values = [push, forcePush, branchDeletion, branchCreation, prMerge, mergeQueueMerge];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,13 +41,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ActivityType$Unknown; } 
+@override String toString() => 'ActivityType($value)';
+
+ }
+@immutable final class ActivityType$push extends ActivityType {const ActivityType$push._();
+
+@override String get value => 'push';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActivityType$push;
+
+@override int get hashCode => 'push'.hashCode;
+
+ }
+@immutable final class ActivityType$forcePush extends ActivityType {const ActivityType$forcePush._();
+
+@override String get value => 'force_push';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActivityType$forcePush;
+
+@override int get hashCode => 'force_push'.hashCode;
+
+ }
+@immutable final class ActivityType$branchDeletion extends ActivityType {const ActivityType$branchDeletion._();
+
+@override String get value => 'branch_deletion';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActivityType$branchDeletion;
+
+@override int get hashCode => 'branch_deletion'.hashCode;
+
+ }
+@immutable final class ActivityType$branchCreation extends ActivityType {const ActivityType$branchCreation._();
+
+@override String get value => 'branch_creation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActivityType$branchCreation;
+
+@override int get hashCode => 'branch_creation'.hashCode;
+
+ }
+@immutable final class ActivityType$prMerge extends ActivityType {const ActivityType$prMerge._();
+
+@override String get value => 'pr_merge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActivityType$prMerge;
+
+@override int get hashCode => 'pr_merge'.hashCode;
+
+ }
+@immutable final class ActivityType$mergeQueueMerge extends ActivityType {const ActivityType$mergeQueueMerge._();
+
+@override String get value => 'merge_queue_merge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActivityType$mergeQueueMerge;
+
+@override int get hashCode => 'merge_queue_merge'.hashCode;
+
+ }
+@immutable final class ActivityType$Unknown extends ActivityType {const ActivityType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ActivityType && other.value == value;
+    other is ActivityType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ActivityType($value)';
 
  }
 /// Activity

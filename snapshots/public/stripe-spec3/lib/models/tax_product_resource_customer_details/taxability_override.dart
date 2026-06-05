@@ -2,25 +2,24 @@
 // Source: #/components/schemas/TaxProductResourceCustomerDetails (inline: TaxabilityOverride)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The taxability override used for taxation.
-@immutable final class TaxabilityOverride {const TaxabilityOverride._(this.value);
+sealed class TaxabilityOverride {const TaxabilityOverride();
 
 factory TaxabilityOverride.fromJson(String json) { return switch (json) {
   'customer_exempt' => customerExempt,
   'none' => none,
   'reverse_charge' => reverseCharge,
-  _ => TaxabilityOverride._(json),
+  _ => TaxabilityOverride$Unknown(json),
 }; }
 
-static const TaxabilityOverride customerExempt = TaxabilityOverride._('customer_exempt');
+static const TaxabilityOverride customerExempt = TaxabilityOverride$customerExempt._();
 
-static const TaxabilityOverride none = TaxabilityOverride._('none');
+static const TaxabilityOverride none = TaxabilityOverride$none._();
 
-static const TaxabilityOverride reverseCharge = TaxabilityOverride._('reverse_charge');
+static const TaxabilityOverride reverseCharge = TaxabilityOverride$reverseCharge._();
 
 static const List<TaxabilityOverride> values = [customerExempt, none, reverseCharge];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TaxabilityOverride$Unknown; } 
+@override String toString() => 'TaxabilityOverride($value)';
+
+ }
+@immutable final class TaxabilityOverride$customerExempt extends TaxabilityOverride {const TaxabilityOverride$customerExempt._();
+
+@override String get value => 'customer_exempt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxabilityOverride$customerExempt;
+
+@override int get hashCode => 'customer_exempt'.hashCode;
+
+ }
+@immutable final class TaxabilityOverride$none extends TaxabilityOverride {const TaxabilityOverride$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxabilityOverride$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class TaxabilityOverride$reverseCharge extends TaxabilityOverride {const TaxabilityOverride$reverseCharge._();
+
+@override String get value => 'reverse_charge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxabilityOverride$reverseCharge;
+
+@override int get hashCode => 'reverse_charge'.hashCode;
+
+ }
+@immutable final class TaxabilityOverride$Unknown extends TaxabilityOverride {const TaxabilityOverride$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxabilityOverride && other.value == value;
+    other is TaxabilityOverride$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TaxabilityOverride($value)';
 
  }

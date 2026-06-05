@@ -2,22 +2,21 @@
 // Source: #/components/schemas/DnsRecordsDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order DNS records in.
-@immutable final class DnsRecordsDirection {const DnsRecordsDirection._(this.value);
+sealed class DnsRecordsDirection {const DnsRecordsDirection();
 
 factory DnsRecordsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => DnsRecordsDirection._(json),
+  _ => DnsRecordsDirection$Unknown(json),
 }; }
 
-static const DnsRecordsDirection asc = DnsRecordsDirection._('asc');
+static const DnsRecordsDirection asc = DnsRecordsDirection$asc._();
 
-static const DnsRecordsDirection desc = DnsRecordsDirection._('desc');
+static const DnsRecordsDirection desc = DnsRecordsDirection$desc._();
 
 static const List<DnsRecordsDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DnsRecordsDirection$Unknown; } 
+@override String toString() => 'DnsRecordsDirection($value)';
+
+ }
+@immutable final class DnsRecordsDirection$asc extends DnsRecordsDirection {const DnsRecordsDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class DnsRecordsDirection$desc extends DnsRecordsDirection {const DnsRecordsDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class DnsRecordsDirection$Unknown extends DnsRecordsDirection {const DnsRecordsDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsDirection && other.value == value;
+    other is DnsRecordsDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DnsRecordsDirection($value)';
 
  }

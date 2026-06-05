@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PipelinesByPipelineIdResponse (inline: Result > Tables)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of the connection.
-@immutable final class TablesType {const TablesType._(this.value);
+sealed class TablesType {const TablesType();
 
 factory TablesType.fromJson(String json) { return switch (json) {
   'stream' => stream,
   'sink' => sink,
-  _ => TablesType._(json),
+  _ => TablesType$Unknown(json),
 }; }
 
-static const TablesType stream = TablesType._('stream');
+static const TablesType stream = TablesType$stream._();
 
-static const TablesType sink = TablesType._('sink');
+static const TablesType sink = TablesType$sink._();
 
 static const List<TablesType> values = [stream, sink];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TablesType$Unknown; } 
+@override String toString() => 'TablesType($value)';
+
+ }
+@immutable final class TablesType$stream extends TablesType {const TablesType$stream._();
+
+@override String get value => 'stream';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TablesType$stream;
+
+@override int get hashCode => 'stream'.hashCode;
+
+ }
+@immutable final class TablesType$sink extends TablesType {const TablesType$sink._();
+
+@override String get value => 'sink';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TablesType$sink;
+
+@override int get hashCode => 'sink'.hashCode;
+
+ }
+@immutable final class TablesType$Unknown extends TablesType {const TablesType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TablesType && other.value == value;
+    other is TablesType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TablesType($value)';
 
  }
 @immutable final class Tables {const Tables({required this.id, required this.latest, required this.name, required this.type, required this.version, });

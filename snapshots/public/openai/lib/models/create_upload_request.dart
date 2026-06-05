@@ -6,28 +6,27 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// See the [documentation on File
 /// purposes](/docs/api-reference/files/create#files-create-purpose).
 /// 
-@immutable final class CreateUploadRequestPurpose {const CreateUploadRequestPurpose._(this.value);
+sealed class CreateUploadRequestPurpose {const CreateUploadRequestPurpose();
 
 factory CreateUploadRequestPurpose.fromJson(String json) { return switch (json) {
   'assistants' => assistants,
   'batch' => batch,
   'fine-tune' => fineTune,
   'vision' => vision,
-  _ => CreateUploadRequestPurpose._(json),
+  _ => CreateUploadRequestPurpose$Unknown(json),
 }; }
 
-static const CreateUploadRequestPurpose assistants = CreateUploadRequestPurpose._('assistants');
+static const CreateUploadRequestPurpose assistants = CreateUploadRequestPurpose$assistants._();
 
-static const CreateUploadRequestPurpose batch = CreateUploadRequestPurpose._('batch');
+static const CreateUploadRequestPurpose batch = CreateUploadRequestPurpose$batch._();
 
-static const CreateUploadRequestPurpose fineTune = CreateUploadRequestPurpose._('fine-tune');
+static const CreateUploadRequestPurpose fineTune = CreateUploadRequestPurpose$fineTune._();
 
-static const CreateUploadRequestPurpose vision = CreateUploadRequestPurpose._('vision');
+static const CreateUploadRequestPurpose vision = CreateUploadRequestPurpose$vision._();
 
 static const List<CreateUploadRequestPurpose> values = [assistants, batch, fineTune, vision];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateUploadRequestPurpose$Unknown; } 
+@override String toString() => 'CreateUploadRequestPurpose($value)';
+
+ }
+@immutable final class CreateUploadRequestPurpose$assistants extends CreateUploadRequestPurpose {const CreateUploadRequestPurpose$assistants._();
+
+@override String get value => 'assistants';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateUploadRequestPurpose$assistants;
+
+@override int get hashCode => 'assistants'.hashCode;
+
+ }
+@immutable final class CreateUploadRequestPurpose$batch extends CreateUploadRequestPurpose {const CreateUploadRequestPurpose$batch._();
+
+@override String get value => 'batch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateUploadRequestPurpose$batch;
+
+@override int get hashCode => 'batch'.hashCode;
+
+ }
+@immutable final class CreateUploadRequestPurpose$fineTune extends CreateUploadRequestPurpose {const CreateUploadRequestPurpose$fineTune._();
+
+@override String get value => 'fine-tune';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateUploadRequestPurpose$fineTune;
+
+@override int get hashCode => 'fine-tune'.hashCode;
+
+ }
+@immutable final class CreateUploadRequestPurpose$vision extends CreateUploadRequestPurpose {const CreateUploadRequestPurpose$vision._();
+
+@override String get value => 'vision';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateUploadRequestPurpose$vision;
+
+@override int get hashCode => 'vision'.hashCode;
+
+ }
+@immutable final class CreateUploadRequestPurpose$Unknown extends CreateUploadRequestPurpose {const CreateUploadRequestPurpose$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateUploadRequestPurpose && other.value == value;
+    other is CreateUploadRequestPurpose$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateUploadRequestPurpose($value)';
 
  }
 @immutable final class CreateUploadRequest {const CreateUploadRequest({required this.filename, required this.purpose, required this.bytes, required this.mimeType, this.expiresAfter, });

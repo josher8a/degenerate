@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ClosedStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status discriminator that is always `closed`.
-@immutable final class ClosedStatusType {const ClosedStatusType._(this.value);
+sealed class ClosedStatusType {const ClosedStatusType();
 
 factory ClosedStatusType.fromJson(String json) { return switch (json) {
   'closed' => closed,
-  _ => ClosedStatusType._(json),
+  _ => ClosedStatusType$Unknown(json),
 }; }
 
-static const ClosedStatusType closed = ClosedStatusType._('closed');
+static const ClosedStatusType closed = ClosedStatusType$closed._();
 
 static const List<ClosedStatusType> values = [closed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ClosedStatusType$Unknown; } 
+@override String toString() => 'ClosedStatusType($value)';
+
+ }
+@immutable final class ClosedStatusType$closed extends ClosedStatusType {const ClosedStatusType$closed._();
+
+@override String get value => 'closed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClosedStatusType$closed;
+
+@override int get hashCode => 'closed'.hashCode;
+
+ }
+@immutable final class ClosedStatusType$Unknown extends ClosedStatusType {const ClosedStatusType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ClosedStatusType && other.value == value;
+    other is ClosedStatusType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ClosedStatusType($value)';
 
  }
 /// Indicates that a thread has been closed.

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/IdentityVerificationSession
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_provided_details.dart';import 'package:pub_stripe_spec3/models/gelato_related_person.dart';import 'package:pub_stripe_spec3/models/gelato_session_last_error.dart';import 'package:pub_stripe_spec3/models/gelato_verification_session_options.dart';import 'package:pub_stripe_spec3/models/gelato_verified_outputs.dart';import 'package:pub_stripe_spec3/models/identity_verification_report.dart';import 'package:pub_stripe_spec3/models/identity_verification_report/identity_verification_report_type.dart';import 'package:pub_stripe_spec3/models/identity_verification_session/last_verification_report.dart';import 'package:pub_stripe_spec3/models/verification_session_redaction.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class IdentityVerificationSessionObject {const IdentityVerificationSessionObject._(this.value);
+sealed class IdentityVerificationSessionObject {const IdentityVerificationSessionObject();
 
 factory IdentityVerificationSessionObject.fromJson(String json) { return switch (json) {
   'identity.verification_session' => identityVerificationSession,
-  _ => IdentityVerificationSessionObject._(json),
+  _ => IdentityVerificationSessionObject$Unknown(json),
 }; }
 
-static const IdentityVerificationSessionObject identityVerificationSession = IdentityVerificationSessionObject._('identity.verification_session');
+static const IdentityVerificationSessionObject identityVerificationSession = IdentityVerificationSessionObject$identityVerificationSession._();
 
 static const List<IdentityVerificationSessionObject> values = [identityVerificationSession];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,38 +21,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IdentityVerificationSessionObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IdentityVerificationSessionObject$Unknown; } 
 @override String toString() => 'IdentityVerificationSessionObject($value)';
 
  }
+@immutable final class IdentityVerificationSessionObject$identityVerificationSession extends IdentityVerificationSessionObject {const IdentityVerificationSessionObject$identityVerificationSession._();
+
+@override String get value => 'identity.verification_session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IdentityVerificationSessionObject$identityVerificationSession;
+
+@override int get hashCode => 'identity.verification_session'.hashCode;
+
+ }
+@immutable final class IdentityVerificationSessionObject$Unknown extends IdentityVerificationSessionObject {const IdentityVerificationSessionObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IdentityVerificationSessionObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Status of this VerificationSession. [Learn more about the lifecycle of sessions](https://docs.stripe.com/identity/how-sessions-work).
-@immutable final class IdentityVerificationSessionStatus {const IdentityVerificationSessionStatus._(this.value);
+sealed class IdentityVerificationSessionStatus {const IdentityVerificationSessionStatus();
 
 factory IdentityVerificationSessionStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
   'processing' => processing,
   'requires_input' => requiresInput,
   'verified' => verified,
-  _ => IdentityVerificationSessionStatus._(json),
+  _ => IdentityVerificationSessionStatus$Unknown(json),
 }; }
 
-static const IdentityVerificationSessionStatus canceled = IdentityVerificationSessionStatus._('canceled');
+static const IdentityVerificationSessionStatus canceled = IdentityVerificationSessionStatus$canceled._();
 
-static const IdentityVerificationSessionStatus processing = IdentityVerificationSessionStatus._('processing');
+static const IdentityVerificationSessionStatus processing = IdentityVerificationSessionStatus$processing._();
 
-static const IdentityVerificationSessionStatus requiresInput = IdentityVerificationSessionStatus._('requires_input');
+static const IdentityVerificationSessionStatus requiresInput = IdentityVerificationSessionStatus$requiresInput._();
 
-static const IdentityVerificationSessionStatus verified = IdentityVerificationSessionStatus._('verified');
+static const IdentityVerificationSessionStatus verified = IdentityVerificationSessionStatus$verified._();
 
 static const List<IdentityVerificationSessionStatus> values = [canceled, processing, requiresInput, verified];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,13 +76,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IdentityVerificationSessionStatus$Unknown; } 
+@override String toString() => 'IdentityVerificationSessionStatus($value)';
+
+ }
+@immutable final class IdentityVerificationSessionStatus$canceled extends IdentityVerificationSessionStatus {const IdentityVerificationSessionStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IdentityVerificationSessionStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class IdentityVerificationSessionStatus$processing extends IdentityVerificationSessionStatus {const IdentityVerificationSessionStatus$processing._();
+
+@override String get value => 'processing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IdentityVerificationSessionStatus$processing;
+
+@override int get hashCode => 'processing'.hashCode;
+
+ }
+@immutable final class IdentityVerificationSessionStatus$requiresInput extends IdentityVerificationSessionStatus {const IdentityVerificationSessionStatus$requiresInput._();
+
+@override String get value => 'requires_input';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IdentityVerificationSessionStatus$requiresInput;
+
+@override int get hashCode => 'requires_input'.hashCode;
+
+ }
+@immutable final class IdentityVerificationSessionStatus$verified extends IdentityVerificationSessionStatus {const IdentityVerificationSessionStatus$verified._();
+
+@override String get value => 'verified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IdentityVerificationSessionStatus$verified;
+
+@override int get hashCode => 'verified'.hashCode;
+
+ }
+@immutable final class IdentityVerificationSessionStatus$Unknown extends IdentityVerificationSessionStatus {const IdentityVerificationSessionStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IdentityVerificationSessionStatus && other.value == value;
+    other is IdentityVerificationSessionStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IdentityVerificationSessionStatus($value)';
 
  }
 /// A VerificationSession guides you through the process of collecting and verifying the identities

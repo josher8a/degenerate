@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UpdateRealtimeTranscriptionRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimeTranscriptionEnumUpdateStatus {const RealtimeTranscriptionEnumUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RealtimeTranscriptionEnumUpdateStatus {const RealtimeTranscriptionEnumUpdateStatus();
 
 factory RealtimeTranscriptionEnumUpdateStatus.fromJson(String json) { return switch (json) {
   'stopped' => stopped,
-  _ => RealtimeTranscriptionEnumUpdateStatus._(json),
+  _ => RealtimeTranscriptionEnumUpdateStatus$Unknown(json),
 }; }
 
-static const RealtimeTranscriptionEnumUpdateStatus stopped = RealtimeTranscriptionEnumUpdateStatus._('stopped');
+static const RealtimeTranscriptionEnumUpdateStatus stopped = RealtimeTranscriptionEnumUpdateStatus$stopped._();
 
 static const List<RealtimeTranscriptionEnumUpdateStatus> values = [stopped];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeTranscriptionEnumUpdateStatus$Unknown; } 
+@override String toString() => 'RealtimeTranscriptionEnumUpdateStatus($value)';
+
+ }
+@immutable final class RealtimeTranscriptionEnumUpdateStatus$stopped extends RealtimeTranscriptionEnumUpdateStatus {const RealtimeTranscriptionEnumUpdateStatus$stopped._();
+
+@override String get value => 'stopped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeTranscriptionEnumUpdateStatus$stopped;
+
+@override int get hashCode => 'stopped'.hashCode;
+
+ }
+@immutable final class RealtimeTranscriptionEnumUpdateStatus$Unknown extends RealtimeTranscriptionEnumUpdateStatus {const RealtimeTranscriptionEnumUpdateStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeTranscriptionEnumUpdateStatus && other.value == value;
+    other is RealtimeTranscriptionEnumUpdateStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeTranscriptionEnumUpdateStatus($value)';
 
  }
 @immutable final class UpdateRealtimeTranscriptionRequest {const UpdateRealtimeTranscriptionRequest({required this.status});

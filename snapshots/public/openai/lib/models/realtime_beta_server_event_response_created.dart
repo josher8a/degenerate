@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventResponseCreated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_response.dart';/// The event type, must be `response.created`.
-@immutable final class RealtimeBetaServerEventResponseCreatedType {const RealtimeBetaServerEventResponseCreatedType._(this.value);
+sealed class RealtimeBetaServerEventResponseCreatedType {const RealtimeBetaServerEventResponseCreatedType();
 
 factory RealtimeBetaServerEventResponseCreatedType.fromJson(String json) { return switch (json) {
   'response.created' => responseCreated,
-  _ => RealtimeBetaServerEventResponseCreatedType._(json),
+  _ => RealtimeBetaServerEventResponseCreatedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventResponseCreatedType responseCreated = RealtimeBetaServerEventResponseCreatedType._('response.created');
+static const RealtimeBetaServerEventResponseCreatedType responseCreated = RealtimeBetaServerEventResponseCreatedType$responseCreated._();
 
 static const List<RealtimeBetaServerEventResponseCreatedType> values = [responseCreated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseCreatedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventResponseCreatedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventResponseCreatedType$responseCreated extends RealtimeBetaServerEventResponseCreatedType {const RealtimeBetaServerEventResponseCreatedType$responseCreated._();
+
+@override String get value => 'response.created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseCreatedType$responseCreated;
+
+@override int get hashCode => 'response.created'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventResponseCreatedType$Unknown extends RealtimeBetaServerEventResponseCreatedType {const RealtimeBetaServerEventResponseCreatedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventResponseCreatedType && other.value == value;
+    other is RealtimeBetaServerEventResponseCreatedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventResponseCreatedType($value)';
 
  }
 /// Returned when a new Response is created. The first event of response creation,

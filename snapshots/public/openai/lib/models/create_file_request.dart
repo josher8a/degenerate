@@ -9,7 +9,7 @@ import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtim
 /// - `user_data`: Flexible file type for any purpose
 /// - `evals`: Used for eval data sets
 /// 
-@immutable final class CreateFileRequestPurpose {const CreateFileRequestPurpose._(this.value);
+sealed class CreateFileRequestPurpose {const CreateFileRequestPurpose();
 
 factory CreateFileRequestPurpose.fromJson(String json) { return switch (json) {
   'assistants' => assistants,
@@ -18,25 +18,24 @@ factory CreateFileRequestPurpose.fromJson(String json) { return switch (json) {
   'vision' => vision,
   'user_data' => userData,
   'evals' => evals,
-  _ => CreateFileRequestPurpose._(json),
+  _ => CreateFileRequestPurpose$Unknown(json),
 }; }
 
-static const CreateFileRequestPurpose assistants = CreateFileRequestPurpose._('assistants');
+static const CreateFileRequestPurpose assistants = CreateFileRequestPurpose$assistants._();
 
-static const CreateFileRequestPurpose batch = CreateFileRequestPurpose._('batch');
+static const CreateFileRequestPurpose batch = CreateFileRequestPurpose$batch._();
 
-static const CreateFileRequestPurpose fineTune = CreateFileRequestPurpose._('fine-tune');
+static const CreateFileRequestPurpose fineTune = CreateFileRequestPurpose$fineTune._();
 
-static const CreateFileRequestPurpose vision = CreateFileRequestPurpose._('vision');
+static const CreateFileRequestPurpose vision = CreateFileRequestPurpose$vision._();
 
-static const CreateFileRequestPurpose userData = CreateFileRequestPurpose._('user_data');
+static const CreateFileRequestPurpose userData = CreateFileRequestPurpose$userData._();
 
-static const CreateFileRequestPurpose evals = CreateFileRequestPurpose._('evals');
+static const CreateFileRequestPurpose evals = CreateFileRequestPurpose$evals._();
 
 static const List<CreateFileRequestPurpose> values = [assistants, batch, fineTune, vision, userData, evals];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -49,13 +48,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateFileRequestPurpose$Unknown; } 
+@override String toString() => 'CreateFileRequestPurpose($value)';
+
+ }
+@immutable final class CreateFileRequestPurpose$assistants extends CreateFileRequestPurpose {const CreateFileRequestPurpose$assistants._();
+
+@override String get value => 'assistants';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateFileRequestPurpose$assistants;
+
+@override int get hashCode => 'assistants'.hashCode;
+
+ }
+@immutable final class CreateFileRequestPurpose$batch extends CreateFileRequestPurpose {const CreateFileRequestPurpose$batch._();
+
+@override String get value => 'batch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateFileRequestPurpose$batch;
+
+@override int get hashCode => 'batch'.hashCode;
+
+ }
+@immutable final class CreateFileRequestPurpose$fineTune extends CreateFileRequestPurpose {const CreateFileRequestPurpose$fineTune._();
+
+@override String get value => 'fine-tune';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateFileRequestPurpose$fineTune;
+
+@override int get hashCode => 'fine-tune'.hashCode;
+
+ }
+@immutable final class CreateFileRequestPurpose$vision extends CreateFileRequestPurpose {const CreateFileRequestPurpose$vision._();
+
+@override String get value => 'vision';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateFileRequestPurpose$vision;
+
+@override int get hashCode => 'vision'.hashCode;
+
+ }
+@immutable final class CreateFileRequestPurpose$userData extends CreateFileRequestPurpose {const CreateFileRequestPurpose$userData._();
+
+@override String get value => 'user_data';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateFileRequestPurpose$userData;
+
+@override int get hashCode => 'user_data'.hashCode;
+
+ }
+@immutable final class CreateFileRequestPurpose$evals extends CreateFileRequestPurpose {const CreateFileRequestPurpose$evals._();
+
+@override String get value => 'evals';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateFileRequestPurpose$evals;
+
+@override int get hashCode => 'evals'.hashCode;
+
+ }
+@immutable final class CreateFileRequestPurpose$Unknown extends CreateFileRequestPurpose {const CreateFileRequestPurpose$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateFileRequestPurpose && other.value == value;
+    other is CreateFileRequestPurpose$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateFileRequestPurpose($value)';
 
  }
 @immutable final class CreateFileRequest {const CreateFileRequest({required this.file, required this.purpose, this.expiresAfter, });

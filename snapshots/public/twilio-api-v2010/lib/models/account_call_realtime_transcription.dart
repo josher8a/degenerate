@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AccountCallRealtimeTranscription
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status - one of `stopped`, `in-flight`
-@immutable final class RealtimeTranscriptionEnumStatus {const RealtimeTranscriptionEnumStatus._(this.value);
+sealed class RealtimeTranscriptionEnumStatus {const RealtimeTranscriptionEnumStatus();
 
 factory RealtimeTranscriptionEnumStatus.fromJson(String json) { return switch (json) {
   'in-progress' => inProgress,
   'stopped' => stopped,
-  _ => RealtimeTranscriptionEnumStatus._(json),
+  _ => RealtimeTranscriptionEnumStatus$Unknown(json),
 }; }
 
-static const RealtimeTranscriptionEnumStatus inProgress = RealtimeTranscriptionEnumStatus._('in-progress');
+static const RealtimeTranscriptionEnumStatus inProgress = RealtimeTranscriptionEnumStatus$inProgress._();
 
-static const RealtimeTranscriptionEnumStatus stopped = RealtimeTranscriptionEnumStatus._('stopped');
+static const RealtimeTranscriptionEnumStatus stopped = RealtimeTranscriptionEnumStatus$stopped._();
 
 static const List<RealtimeTranscriptionEnumStatus> values = [inProgress, stopped];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeTranscriptionEnumStatus$Unknown; } 
+@override String toString() => 'RealtimeTranscriptionEnumStatus($value)';
+
+ }
+@immutable final class RealtimeTranscriptionEnumStatus$inProgress extends RealtimeTranscriptionEnumStatus {const RealtimeTranscriptionEnumStatus$inProgress._();
+
+@override String get value => 'in-progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeTranscriptionEnumStatus$inProgress;
+
+@override int get hashCode => 'in-progress'.hashCode;
+
+ }
+@immutable final class RealtimeTranscriptionEnumStatus$stopped extends RealtimeTranscriptionEnumStatus {const RealtimeTranscriptionEnumStatus$stopped._();
+
+@override String get value => 'stopped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeTranscriptionEnumStatus$stopped;
+
+@override int get hashCode => 'stopped'.hashCode;
+
+ }
+@immutable final class RealtimeTranscriptionEnumStatus$Unknown extends RealtimeTranscriptionEnumStatus {const RealtimeTranscriptionEnumStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeTranscriptionEnumStatus && other.value == value;
+    other is RealtimeTranscriptionEnumStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeTranscriptionEnumStatus($value)';
 
  }
 @immutable final class AccountCallRealtimeTranscription {const AccountCallRealtimeTranscription({this.sid, this.accountSid, this.callSid, this.name, this.status, this.dateUpdated, this.uri, });

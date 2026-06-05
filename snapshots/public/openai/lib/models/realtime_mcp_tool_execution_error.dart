@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeMcpToolExecutionError
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimeMcpToolExecutionErrorType {const RealtimeMcpToolExecutionErrorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RealtimeMcpToolExecutionErrorType {const RealtimeMcpToolExecutionErrorType();
 
 factory RealtimeMcpToolExecutionErrorType.fromJson(String json) { return switch (json) {
   'tool_execution_error' => toolExecutionError,
-  _ => RealtimeMcpToolExecutionErrorType._(json),
+  _ => RealtimeMcpToolExecutionErrorType$Unknown(json),
 }; }
 
-static const RealtimeMcpToolExecutionErrorType toolExecutionError = RealtimeMcpToolExecutionErrorType._('tool_execution_error');
+static const RealtimeMcpToolExecutionErrorType toolExecutionError = RealtimeMcpToolExecutionErrorType$toolExecutionError._();
 
 static const List<RealtimeMcpToolExecutionErrorType> values = [toolExecutionError];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeMcpToolExecutionErrorType$Unknown; } 
+@override String toString() => 'RealtimeMcpToolExecutionErrorType($value)';
+
+ }
+@immutable final class RealtimeMcpToolExecutionErrorType$toolExecutionError extends RealtimeMcpToolExecutionErrorType {const RealtimeMcpToolExecutionErrorType$toolExecutionError._();
+
+@override String get value => 'tool_execution_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeMcpToolExecutionErrorType$toolExecutionError;
+
+@override int get hashCode => 'tool_execution_error'.hashCode;
+
+ }
+@immutable final class RealtimeMcpToolExecutionErrorType$Unknown extends RealtimeMcpToolExecutionErrorType {const RealtimeMcpToolExecutionErrorType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeMcpToolExecutionErrorType && other.value == value;
+    other is RealtimeMcpToolExecutionErrorType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeMcpToolExecutionErrorType($value)';
 
  }
 @immutable final class RealtimeMcpToolExecutionError {const RealtimeMcpToolExecutionError({required this.type, required this.message, });

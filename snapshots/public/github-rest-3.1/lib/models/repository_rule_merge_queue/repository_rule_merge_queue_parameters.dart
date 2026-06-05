@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RepositoryRuleMergeQueue (inline: Parameters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When set to ALLGREEN, the merge commit created by merge queue for each PR in the group must pass all required checks to merge. When set to HEADGREEN, only the commit at the head of the merge group, i.e. the commit containing changes from all of the PRs in the group, must pass its required checks to merge.
-@immutable final class GroupingStrategy {const GroupingStrategy._(this.value);
+sealed class GroupingStrategy {const GroupingStrategy();
 
 factory GroupingStrategy.fromJson(String json) { return switch (json) {
   'ALLGREEN' => allgreen,
   'HEADGREEN' => headgreen,
-  _ => GroupingStrategy._(json),
+  _ => GroupingStrategy$Unknown(json),
 }; }
 
-static const GroupingStrategy allgreen = GroupingStrategy._('ALLGREEN');
+static const GroupingStrategy allgreen = GroupingStrategy$allgreen._();
 
-static const GroupingStrategy headgreen = GroupingStrategy._('HEADGREEN');
+static const GroupingStrategy headgreen = GroupingStrategy$headgreen._();
 
 static const List<GroupingStrategy> values = [allgreen, headgreen];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,35 +25,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is GroupingStrategy && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is GroupingStrategy$Unknown; } 
 @override String toString() => 'GroupingStrategy($value)';
 
  }
+@immutable final class GroupingStrategy$allgreen extends GroupingStrategy {const GroupingStrategy$allgreen._();
+
+@override String get value => 'ALLGREEN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GroupingStrategy$allgreen;
+
+@override int get hashCode => 'ALLGREEN'.hashCode;
+
+ }
+@immutable final class GroupingStrategy$headgreen extends GroupingStrategy {const GroupingStrategy$headgreen._();
+
+@override String get value => 'HEADGREEN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GroupingStrategy$headgreen;
+
+@override int get hashCode => 'HEADGREEN'.hashCode;
+
+ }
+@immutable final class GroupingStrategy$Unknown extends GroupingStrategy {const GroupingStrategy$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GroupingStrategy$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Method to use when merging changes from queued pull requests.
-@immutable final class ParametersMergeMethod {const ParametersMergeMethod._(this.value);
+sealed class ParametersMergeMethod {const ParametersMergeMethod();
 
 factory ParametersMergeMethod.fromJson(String json) { return switch (json) {
   'MERGE' => merge,
   'SQUASH' => squash,
   'REBASE' => rebase,
-  _ => ParametersMergeMethod._(json),
+  _ => ParametersMergeMethod$Unknown(json),
 }; }
 
-static const ParametersMergeMethod merge = ParametersMergeMethod._('MERGE');
+static const ParametersMergeMethod merge = ParametersMergeMethod$merge._();
 
-static const ParametersMergeMethod squash = ParametersMergeMethod._('SQUASH');
+static const ParametersMergeMethod squash = ParametersMergeMethod$squash._();
 
-static const ParametersMergeMethod rebase = ParametersMergeMethod._('REBASE');
+static const ParametersMergeMethod rebase = ParametersMergeMethod$rebase._();
 
 static const List<ParametersMergeMethod> values = [merge, squash, rebase];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,13 +85,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ParametersMergeMethod$Unknown; } 
+@override String toString() => 'ParametersMergeMethod($value)';
+
+ }
+@immutable final class ParametersMergeMethod$merge extends ParametersMergeMethod {const ParametersMergeMethod$merge._();
+
+@override String get value => 'MERGE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ParametersMergeMethod$merge;
+
+@override int get hashCode => 'MERGE'.hashCode;
+
+ }
+@immutable final class ParametersMergeMethod$squash extends ParametersMergeMethod {const ParametersMergeMethod$squash._();
+
+@override String get value => 'SQUASH';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ParametersMergeMethod$squash;
+
+@override int get hashCode => 'SQUASH'.hashCode;
+
+ }
+@immutable final class ParametersMergeMethod$rebase extends ParametersMergeMethod {const ParametersMergeMethod$rebase._();
+
+@override String get value => 'REBASE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ParametersMergeMethod$rebase;
+
+@override int get hashCode => 'REBASE'.hashCode;
+
+ }
+@immutable final class ParametersMergeMethod$Unknown extends ParametersMergeMethod {const ParametersMergeMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ParametersMergeMethod && other.value == value;
+    other is ParametersMergeMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ParametersMergeMethod($value)';
 
  }
 @immutable final class RepositoryRuleMergeQueueParameters {const RepositoryRuleMergeQueueParameters({required this.checkResponseTimeoutMinutes, required this.groupingStrategy, required this.maxEntriesToBuild, required this.maxEntriesToMerge, required this.mergeMethod, required this.minEntriesToMerge, required this.minEntriesToMergeWaitMinutes, });

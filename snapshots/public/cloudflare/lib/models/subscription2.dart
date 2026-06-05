@@ -16,28 +16,27 @@ String toJson() => value.toIso8601String();
 
 }
 /// How often the subscription is renewed automatically.
-@immutable final class Frequency {const Frequency._(this.value);
+sealed class Frequency {const Frequency();
 
 factory Frequency.fromJson(String json) { return switch (json) {
   'weekly' => weekly,
   'monthly' => monthly,
   'quarterly' => quarterly,
   'yearly' => yearly,
-  _ => Frequency._(json),
+  _ => Frequency$Unknown(json),
 }; }
 
-static const Frequency weekly = Frequency._('weekly');
+static const Frequency weekly = Frequency$weekly._();
 
-static const Frequency monthly = Frequency._('monthly');
+static const Frequency monthly = Frequency$monthly._();
 
-static const Frequency quarterly = Frequency._('quarterly');
+static const Frequency quarterly = Frequency$quarterly._();
 
-static const Frequency yearly = Frequency._('yearly');
+static const Frequency yearly = Frequency$yearly._();
 
 static const List<Frequency> values = [weekly, monthly, quarterly, yearly];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -48,13 +47,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Frequency$Unknown; } 
+@override String toString() => 'Frequency($value)';
+
+ }
+@immutable final class Frequency$weekly extends Frequency {const Frequency$weekly._();
+
+@override String get value => 'weekly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Frequency$weekly;
+
+@override int get hashCode => 'weekly'.hashCode;
+
+ }
+@immutable final class Frequency$monthly extends Frequency {const Frequency$monthly._();
+
+@override String get value => 'monthly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Frequency$monthly;
+
+@override int get hashCode => 'monthly'.hashCode;
+
+ }
+@immutable final class Frequency$quarterly extends Frequency {const Frequency$quarterly._();
+
+@override String get value => 'quarterly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Frequency$quarterly;
+
+@override int get hashCode => 'quarterly'.hashCode;
+
+ }
+@immutable final class Frequency$yearly extends Frequency {const Frequency$yearly._();
+
+@override String get value => 'yearly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Frequency$yearly;
+
+@override int get hashCode => 'yearly'.hashCode;
+
+ }
+@immutable final class Frequency$Unknown extends Frequency {const Frequency$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Frequency && other.value == value;
+    other is Frequency$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Frequency($value)';
 
  }
 /// The price of the subscription that will be billed, in US dollars.
@@ -65,7 +105,7 @@ num toJson() => value;
 
 }
 /// The state that the subscription is in.
-@immutable final class State {const State._(this.value);
+sealed class State {const State();
 
 factory State.fromJson(String json) { return switch (json) {
   'Trial' => trial,
@@ -75,27 +115,26 @@ factory State.fromJson(String json) { return switch (json) {
   'Cancelled' => cancelled,
   'Failed' => failed,
   'Expired' => expired,
-  _ => State._(json),
+  _ => State$Unknown(json),
 }; }
 
-static const State trial = State._('Trial');
+static const State trial = State$trial._();
 
-static const State provisioned = State._('Provisioned');
+static const State provisioned = State$provisioned._();
 
-static const State paid = State._('Paid');
+static const State paid = State$paid._();
 
-static const State awaitingPayment = State._('AwaitingPayment');
+static const State awaitingPayment = State$awaitingPayment._();
 
-static const State cancelled = State._('Cancelled');
+static const State cancelled = State$cancelled._();
 
-static const State failed = State._('Failed');
+static const State failed = State$failed._();
 
-static const State expired = State._('Expired');
+static const State expired = State$expired._();
 
 static const List<State> values = [trial, provisioned, paid, awaitingPayment, cancelled, failed, expired];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -109,13 +148,81 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is State$Unknown; } 
+@override String toString() => 'State($value)';
+
+ }
+@immutable final class State$trial extends State {const State$trial._();
+
+@override String get value => 'Trial';
+
+@override bool operator ==(Object other) => identical(this, other) || other is State$trial;
+
+@override int get hashCode => 'Trial'.hashCode;
+
+ }
+@immutable final class State$provisioned extends State {const State$provisioned._();
+
+@override String get value => 'Provisioned';
+
+@override bool operator ==(Object other) => identical(this, other) || other is State$provisioned;
+
+@override int get hashCode => 'Provisioned'.hashCode;
+
+ }
+@immutable final class State$paid extends State {const State$paid._();
+
+@override String get value => 'Paid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is State$paid;
+
+@override int get hashCode => 'Paid'.hashCode;
+
+ }
+@immutable final class State$awaitingPayment extends State {const State$awaitingPayment._();
+
+@override String get value => 'AwaitingPayment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is State$awaitingPayment;
+
+@override int get hashCode => 'AwaitingPayment'.hashCode;
+
+ }
+@immutable final class State$cancelled extends State {const State$cancelled._();
+
+@override String get value => 'Cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is State$cancelled;
+
+@override int get hashCode => 'Cancelled'.hashCode;
+
+ }
+@immutable final class State$failed extends State {const State$failed._();
+
+@override String get value => 'Failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is State$failed;
+
+@override int get hashCode => 'Failed'.hashCode;
+
+ }
+@immutable final class State$expired extends State {const State$expired._();
+
+@override String get value => 'Expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is State$expired;
+
+@override int get hashCode => 'Expired'.hashCode;
+
+ }
+@immutable final class State$Unknown extends State {const State$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is State && other.value == value;
+    other is State$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'State($value)';
 
  }
 @immutable final class Subscription2 {const Subscription2({this.app, this.componentValues, this.currency, this.currentPeriodEnd, this.currentPeriodStart, this.frequency, this.id, this.price, this.ratePlan, this.state, this.zone, });

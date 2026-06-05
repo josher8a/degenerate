@@ -2,25 +2,24 @@
 // Source: #/components/schemas/StreamAdditionalAudio
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_audio_default.dart';import 'package:pub_cloudflare/models/stream_audio_label.dart';import 'package:pub_cloudflare/models/stream_identifier.dart';/// Specifies the processing status of the video.
-@immutable final class StreamAudioState {const StreamAudioState._(this.value);
+sealed class StreamAudioState {const StreamAudioState();
 
 factory StreamAudioState.fromJson(String json) { return switch (json) {
   'queued' => queued,
   'ready' => ready,
   'error' => error,
-  _ => StreamAudioState._(json),
+  _ => StreamAudioState$Unknown(json),
 }; }
 
-static const StreamAudioState queued = StreamAudioState._('queued');
+static const StreamAudioState queued = StreamAudioState$queued._();
 
-static const StreamAudioState ready = StreamAudioState._('ready');
+static const StreamAudioState ready = StreamAudioState$ready._();
 
-static const StreamAudioState error = StreamAudioState._('error');
+static const StreamAudioState error = StreamAudioState$error._();
 
 static const List<StreamAudioState> values = [queued, ready, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StreamAudioState$Unknown; } 
+@override String toString() => 'StreamAudioState($value)';
+
+ }
+@immutable final class StreamAudioState$queued extends StreamAudioState {const StreamAudioState$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamAudioState$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class StreamAudioState$ready extends StreamAudioState {const StreamAudioState$ready._();
+
+@override String get value => 'ready';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamAudioState$ready;
+
+@override int get hashCode => 'ready'.hashCode;
+
+ }
+@immutable final class StreamAudioState$error extends StreamAudioState {const StreamAudioState$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamAudioState$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class StreamAudioState$Unknown extends StreamAudioState {const StreamAudioState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StreamAudioState && other.value == value;
+    other is StreamAudioState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StreamAudioState($value)';
 
  }
 @immutable final class StreamAdditionalAudio {const StreamAdditionalAudio({this.$default, this.label, this.status, this.uid, });

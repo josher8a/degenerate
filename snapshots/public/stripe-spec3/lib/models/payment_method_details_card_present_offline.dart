@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PaymentMethodDetailsCardPresentOffline
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The method used to process this payment method offline. Only deferred is allowed.
-@immutable final class PaymentMethodDetailsCardPresentOfflineType {const PaymentMethodDetailsCardPresentOfflineType._(this.value);
+sealed class PaymentMethodDetailsCardPresentOfflineType {const PaymentMethodDetailsCardPresentOfflineType();
 
 factory PaymentMethodDetailsCardPresentOfflineType.fromJson(String json) { return switch (json) {
   'deferred' => $deferred,
-  _ => PaymentMethodDetailsCardPresentOfflineType._(json),
+  _ => PaymentMethodDetailsCardPresentOfflineType$Unknown(json),
 }; }
 
-static const PaymentMethodDetailsCardPresentOfflineType $deferred = PaymentMethodDetailsCardPresentOfflineType._('deferred');
+static const PaymentMethodDetailsCardPresentOfflineType $deferred = PaymentMethodDetailsCardPresentOfflineType$$deferred._();
 
 static const List<PaymentMethodDetailsCardPresentOfflineType> values = [$deferred];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentMethodDetailsCardPresentOfflineType$Unknown; } 
+@override String toString() => 'PaymentMethodDetailsCardPresentOfflineType($value)';
+
+ }
+@immutable final class PaymentMethodDetailsCardPresentOfflineType$$deferred extends PaymentMethodDetailsCardPresentOfflineType {const PaymentMethodDetailsCardPresentOfflineType$$deferred._();
+
+@override String get value => 'deferred';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsCardPresentOfflineType$$deferred;
+
+@override int get hashCode => 'deferred'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsCardPresentOfflineType$Unknown extends PaymentMethodDetailsCardPresentOfflineType {const PaymentMethodDetailsCardPresentOfflineType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentMethodDetailsCardPresentOfflineType && other.value == value;
+    other is PaymentMethodDetailsCardPresentOfflineType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentMethodDetailsCardPresentOfflineType($value)';
 
  }
 /// 

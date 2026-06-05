@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/OrgsListPatGrantRequestsDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsListPatGrantRequestsDirection {const OrgsListPatGrantRequestsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class OrgsListPatGrantRequestsDirection {const OrgsListPatGrantRequestsDirection();
 
 factory OrgsListPatGrantRequestsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => OrgsListPatGrantRequestsDirection._(json),
+  _ => OrgsListPatGrantRequestsDirection$Unknown(json),
 }; }
 
-static const OrgsListPatGrantRequestsDirection asc = OrgsListPatGrantRequestsDirection._('asc');
+static const OrgsListPatGrantRequestsDirection asc = OrgsListPatGrantRequestsDirection$asc._();
 
-static const OrgsListPatGrantRequestsDirection desc = OrgsListPatGrantRequestsDirection._('desc');
+static const OrgsListPatGrantRequestsDirection desc = OrgsListPatGrantRequestsDirection$desc._();
 
 static const List<OrgsListPatGrantRequestsDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrgsListPatGrantRequestsDirection$Unknown; } 
+@override String toString() => 'OrgsListPatGrantRequestsDirection($value)';
+
+ }
+@immutable final class OrgsListPatGrantRequestsDirection$asc extends OrgsListPatGrantRequestsDirection {const OrgsListPatGrantRequestsDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsListPatGrantRequestsDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class OrgsListPatGrantRequestsDirection$desc extends OrgsListPatGrantRequestsDirection {const OrgsListPatGrantRequestsDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsListPatGrantRequestsDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class OrgsListPatGrantRequestsDirection$Unknown extends OrgsListPatGrantRequestsDirection {const OrgsListPatGrantRequestsDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrgsListPatGrantRequestsDirection && other.value == value;
+    other is OrgsListPatGrantRequestsDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrgsListPatGrantRequestsDirection($value)';
 
  }

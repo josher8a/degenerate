@@ -3,26 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
-@immutable
-final class SessionFeedbackOptions {
-  const SessionFeedbackOptions._(this.value);
+sealed class SessionFeedbackOptions {
+  const SessionFeedbackOptions();
 
   factory SessionFeedbackOptions.fromJson(String json) {
     return switch (json) {
       'up' => up,
       'down' => down,
-      _ => SessionFeedbackOptions._(json),
+      _ => SessionFeedbackOptions$Unknown(json),
     };
   }
 
-  static const SessionFeedbackOptions up = SessionFeedbackOptions._('up');
+  static const SessionFeedbackOptions up = SessionFeedbackOptions$up._();
 
-  static const SessionFeedbackOptions down = SessionFeedbackOptions._('down');
+  static const SessionFeedbackOptions down = SessionFeedbackOptions$down._();
 
   static const List<SessionFeedbackOptions> values = [up, down];
 
-  final String value;
-
+  String get value;
   String toJson() {
     return value;
   }
@@ -38,19 +36,57 @@ final class SessionFeedbackOptions {
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
-    return !values.contains(this);
+    return this is SessionFeedbackOptions$Unknown;
   }
+
+  @override
+  String toString() => 'SessionFeedbackOptions($value)';
+}
+
+@immutable
+final class SessionFeedbackOptions$up extends SessionFeedbackOptions {
+  const SessionFeedbackOptions$up._();
+
+  @override
+  String get value => 'up';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is SessionFeedbackOptions$up;
+
+  @override
+  int get hashCode => 'up'.hashCode;
+}
+
+@immutable
+final class SessionFeedbackOptions$down extends SessionFeedbackOptions {
+  const SessionFeedbackOptions$down._();
+
+  @override
+  String get value => 'down';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is SessionFeedbackOptions$down;
+
+  @override
+  int get hashCode => 'down'.hashCode;
+}
+
+@immutable
+final class SessionFeedbackOptions$Unknown extends SessionFeedbackOptions {
+  const SessionFeedbackOptions$Unknown(this.value);
+
+  @override
+  final String value;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is SessionFeedbackOptions && other.value == value;
+      other is SessionFeedbackOptions$Unknown && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
-
-  @override
-  String toString() => 'SessionFeedbackOptions($value)';
 }
 
 @immutable

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ClimateSupplier
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/climate_removals_location.dart';/// String representing the object’s type. Objects of the same type share the same value.
-@immutable final class ClimateSupplierObject {const ClimateSupplierObject._(this.value);
+sealed class ClimateSupplierObject {const ClimateSupplierObject();
 
 factory ClimateSupplierObject.fromJson(String json) { return switch (json) {
   'climate.supplier' => climateSupplier,
-  _ => ClimateSupplierObject._(json),
+  _ => ClimateSupplierObject$Unknown(json),
 }; }
 
-static const ClimateSupplierObject climateSupplier = ClimateSupplierObject._('climate.supplier');
+static const ClimateSupplierObject climateSupplier = ClimateSupplierObject$climateSupplier._();
 
 static const List<ClimateSupplierObject> values = [climateSupplier];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,35 +21,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ClimateSupplierObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ClimateSupplierObject$Unknown; } 
 @override String toString() => 'ClimateSupplierObject($value)';
 
  }
+@immutable final class ClimateSupplierObject$climateSupplier extends ClimateSupplierObject {const ClimateSupplierObject$climateSupplier._();
+
+@override String get value => 'climate.supplier';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClimateSupplierObject$climateSupplier;
+
+@override int get hashCode => 'climate.supplier'.hashCode;
+
+ }
+@immutable final class ClimateSupplierObject$Unknown extends ClimateSupplierObject {const ClimateSupplierObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ClimateSupplierObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The scientific pathway used for carbon removal.
-@immutable final class RemovalPathway {const RemovalPathway._(this.value);
+sealed class RemovalPathway {const RemovalPathway();
 
 factory RemovalPathway.fromJson(String json) { return switch (json) {
   'biomass_carbon_removal_and_storage' => biomassCarbonRemovalAndStorage,
   'direct_air_capture' => directAirCapture,
   'enhanced_weathering' => enhancedWeathering,
-  _ => RemovalPathway._(json),
+  _ => RemovalPathway$Unknown(json),
 }; }
 
-static const RemovalPathway biomassCarbonRemovalAndStorage = RemovalPathway._('biomass_carbon_removal_and_storage');
+static const RemovalPathway biomassCarbonRemovalAndStorage = RemovalPathway$biomassCarbonRemovalAndStorage._();
 
-static const RemovalPathway directAirCapture = RemovalPathway._('direct_air_capture');
+static const RemovalPathway directAirCapture = RemovalPathway$directAirCapture._();
 
-static const RemovalPathway enhancedWeathering = RemovalPathway._('enhanced_weathering');
+static const RemovalPathway enhancedWeathering = RemovalPathway$enhancedWeathering._();
 
 static const List<RemovalPathway> values = [biomassCarbonRemovalAndStorage, directAirCapture, enhancedWeathering];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,13 +72,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RemovalPathway$Unknown; } 
+@override String toString() => 'RemovalPathway($value)';
+
+ }
+@immutable final class RemovalPathway$biomassCarbonRemovalAndStorage extends RemovalPathway {const RemovalPathway$biomassCarbonRemovalAndStorage._();
+
+@override String get value => 'biomass_carbon_removal_and_storage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RemovalPathway$biomassCarbonRemovalAndStorage;
+
+@override int get hashCode => 'biomass_carbon_removal_and_storage'.hashCode;
+
+ }
+@immutable final class RemovalPathway$directAirCapture extends RemovalPathway {const RemovalPathway$directAirCapture._();
+
+@override String get value => 'direct_air_capture';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RemovalPathway$directAirCapture;
+
+@override int get hashCode => 'direct_air_capture'.hashCode;
+
+ }
+@immutable final class RemovalPathway$enhancedWeathering extends RemovalPathway {const RemovalPathway$enhancedWeathering._();
+
+@override String get value => 'enhanced_weathering';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RemovalPathway$enhancedWeathering;
+
+@override int get hashCode => 'enhanced_weathering'.hashCode;
+
+ }
+@immutable final class RemovalPathway$Unknown extends RemovalPathway {const RemovalPathway$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RemovalPathway && other.value == value;
+    other is RemovalPathway$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RemovalPathway($value)';
 
  }
 /// A supplier of carbon removal.

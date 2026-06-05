@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.function_call_arguments.done`.
 /// 
-@immutable final class RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType {const RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType._(this.value);
+sealed class RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType {const RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType();
 
 factory RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType.fromJson(String json) { return switch (json) {
   'response.function_call_arguments.done' => responseFunctionCallArgumentsDone,
-  _ => RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType._(json),
+  _ => RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType responseFunctionCallArgumentsDone = RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType._('response.function_call_arguments.done');
+static const RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType responseFunctionCallArgumentsDone = RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$responseFunctionCallArgumentsDone._();
 
 static const List<RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType> values = [responseFunctionCallArgumentsDone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$responseFunctionCallArgumentsDone extends RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType {const RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$responseFunctionCallArgumentsDone._();
+
+@override String get value => 'response.function_call_arguments.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$responseFunctionCallArgumentsDone;
+
+@override int get hashCode => 'response.function_call_arguments.done'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$Unknown extends RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType {const RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType && other.value == value;
+    other is RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventResponseFunctionCallArgumentsDoneType($value)';
 
  }
 /// Returned when the model-generated function call arguments are done streaming.

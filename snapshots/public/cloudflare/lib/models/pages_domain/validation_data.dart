@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PagesDomain (inline: ValidationData)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ValidationDataMethod {const ValidationDataMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ValidationDataMethod {const ValidationDataMethod();
 
 factory ValidationDataMethod.fromJson(String json) { return switch (json) {
   'http' => http,
   'txt' => txt,
-  _ => ValidationDataMethod._(json),
+  _ => ValidationDataMethod$Unknown(json),
 }; }
 
-static const ValidationDataMethod http = ValidationDataMethod._('http');
+static const ValidationDataMethod http = ValidationDataMethod$http._();
 
-static const ValidationDataMethod txt = ValidationDataMethod._('txt');
+static const ValidationDataMethod txt = ValidationDataMethod$txt._();
 
 static const List<ValidationDataMethod> values = [http, txt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,16 +24,39 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ValidationDataMethod && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ValidationDataMethod$Unknown; } 
 @override String toString() => 'ValidationDataMethod($value)';
 
  }
-@immutable final class ValidationDataStatus {const ValidationDataStatus._(this.value);
+@immutable final class ValidationDataMethod$http extends ValidationDataMethod {const ValidationDataMethod$http._();
+
+@override String get value => 'http';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValidationDataMethod$http;
+
+@override int get hashCode => 'http'.hashCode;
+
+ }
+@immutable final class ValidationDataMethod$txt extends ValidationDataMethod {const ValidationDataMethod$txt._();
+
+@override String get value => 'txt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValidationDataMethod$txt;
+
+@override int get hashCode => 'txt'.hashCode;
+
+ }
+@immutable final class ValidationDataMethod$Unknown extends ValidationDataMethod {const ValidationDataMethod$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ValidationDataMethod$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class ValidationDataStatus {const ValidationDataStatus();
 
 factory ValidationDataStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -42,23 +64,22 @@ factory ValidationDataStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'deactivated' => deactivated,
   'error' => error,
-  _ => ValidationDataStatus._(json),
+  _ => ValidationDataStatus$Unknown(json),
 }; }
 
-static const ValidationDataStatus initializing = ValidationDataStatus._('initializing');
+static const ValidationDataStatus initializing = ValidationDataStatus$initializing._();
 
-static const ValidationDataStatus pending = ValidationDataStatus._('pending');
+static const ValidationDataStatus pending = ValidationDataStatus$pending._();
 
-static const ValidationDataStatus active = ValidationDataStatus._('active');
+static const ValidationDataStatus active = ValidationDataStatus$active._();
 
-static const ValidationDataStatus deactivated = ValidationDataStatus._('deactivated');
+static const ValidationDataStatus deactivated = ValidationDataStatus$deactivated._();
 
-static const ValidationDataStatus error = ValidationDataStatus._('error');
+static const ValidationDataStatus error = ValidationDataStatus$error._();
 
 static const List<ValidationDataStatus> values = [initializing, pending, active, deactivated, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -70,13 +91,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ValidationDataStatus$Unknown; } 
+@override String toString() => 'ValidationDataStatus($value)';
+
+ }
+@immutable final class ValidationDataStatus$initializing extends ValidationDataStatus {const ValidationDataStatus$initializing._();
+
+@override String get value => 'initializing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValidationDataStatus$initializing;
+
+@override int get hashCode => 'initializing'.hashCode;
+
+ }
+@immutable final class ValidationDataStatus$pending extends ValidationDataStatus {const ValidationDataStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValidationDataStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class ValidationDataStatus$active extends ValidationDataStatus {const ValidationDataStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValidationDataStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class ValidationDataStatus$deactivated extends ValidationDataStatus {const ValidationDataStatus$deactivated._();
+
+@override String get value => 'deactivated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValidationDataStatus$deactivated;
+
+@override int get hashCode => 'deactivated'.hashCode;
+
+ }
+@immutable final class ValidationDataStatus$error extends ValidationDataStatus {const ValidationDataStatus$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValidationDataStatus$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class ValidationDataStatus$Unknown extends ValidationDataStatus {const ValidationDataStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ValidationDataStatus && other.value == value;
+    other is ValidationDataStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ValidationDataStatus($value)';
 
  }
 @immutable final class ValidationData {const ValidationData({required this.method, required this.status, this.errorMessage, this.txtName, this.txtValue, });

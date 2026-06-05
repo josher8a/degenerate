@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/R2EnableSippyAws (inline: Destination > Provider)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationProvider {const DestinationProvider._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DestinationProvider {const DestinationProvider();
 
 factory DestinationProvider.fromJson(String json) { return switch (json) {
   'r2' => r2,
-  _ => DestinationProvider._(json),
+  _ => DestinationProvider$Unknown(json),
 }; }
 
-static const DestinationProvider r2 = DestinationProvider._('r2');
+static const DestinationProvider r2 = DestinationProvider$r2._();
 
 static const List<DestinationProvider> values = [r2];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DestinationProvider$Unknown; } 
+@override String toString() => 'DestinationProvider($value)';
+
+ }
+@immutable final class DestinationProvider$r2 extends DestinationProvider {const DestinationProvider$r2._();
+
+@override String get value => 'r2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DestinationProvider$r2;
+
+@override int get hashCode => 'r2'.hashCode;
+
+ }
+@immutable final class DestinationProvider$Unknown extends DestinationProvider {const DestinationProvider$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DestinationProvider && other.value == value;
+    other is DestinationProvider$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DestinationProvider($value)';
 
  }

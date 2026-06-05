@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCustomersCustomerSubscriptionsRequest (inline: PaymentSettings)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/payment_settings_payment_method_types.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_payment_settings_payment_method_options.dart';@immutable final class PaymentSettingsSaveDefaultPaymentMethod {const PaymentSettingsSaveDefaultPaymentMethod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/payment_settings_payment_method_types.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_payment_settings_payment_method_options.dart';sealed class PaymentSettingsSaveDefaultPaymentMethod {const PaymentSettingsSaveDefaultPaymentMethod();
 
 factory PaymentSettingsSaveDefaultPaymentMethod.fromJson(String json) { return switch (json) {
   'off' => off,
   'on_subscription' => onSubscription,
-  _ => PaymentSettingsSaveDefaultPaymentMethod._(json),
+  _ => PaymentSettingsSaveDefaultPaymentMethod$Unknown(json),
 }; }
 
-static const PaymentSettingsSaveDefaultPaymentMethod off = PaymentSettingsSaveDefaultPaymentMethod._('off');
+static const PaymentSettingsSaveDefaultPaymentMethod off = PaymentSettingsSaveDefaultPaymentMethod$off._();
 
-static const PaymentSettingsSaveDefaultPaymentMethod onSubscription = PaymentSettingsSaveDefaultPaymentMethod._('on_subscription');
+static const PaymentSettingsSaveDefaultPaymentMethod onSubscription = PaymentSettingsSaveDefaultPaymentMethod$onSubscription._();
 
 static const List<PaymentSettingsSaveDefaultPaymentMethod> values = [off, onSubscription];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentSettingsSaveDefaultPaymentMethod$Unknown; } 
+@override String toString() => 'PaymentSettingsSaveDefaultPaymentMethod($value)';
+
+ }
+@immutable final class PaymentSettingsSaveDefaultPaymentMethod$off extends PaymentSettingsSaveDefaultPaymentMethod {const PaymentSettingsSaveDefaultPaymentMethod$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentSettingsSaveDefaultPaymentMethod$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class PaymentSettingsSaveDefaultPaymentMethod$onSubscription extends PaymentSettingsSaveDefaultPaymentMethod {const PaymentSettingsSaveDefaultPaymentMethod$onSubscription._();
+
+@override String get value => 'on_subscription';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentSettingsSaveDefaultPaymentMethod$onSubscription;
+
+@override int get hashCode => 'on_subscription'.hashCode;
+
+ }
+@immutable final class PaymentSettingsSaveDefaultPaymentMethod$Unknown extends PaymentSettingsSaveDefaultPaymentMethod {const PaymentSettingsSaveDefaultPaymentMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentSettingsSaveDefaultPaymentMethod && other.value == value;
+    other is PaymentSettingsSaveDefaultPaymentMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentSettingsSaveDefaultPaymentMethod($value)';
 
  }
 /// Payment settings to pass to invoices created by the subscription.

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TlsCertificatesAndHostnamesTotalTlsSettingsResponse (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_components_schemas_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_components_schemas_enabled.dart';/// The validity period in days for the certificates ordered via Total TLS.
-@immutable final class TlsCertificatesAndHostnamesValidityPeriod {const TlsCertificatesAndHostnamesValidityPeriod._(this.value);
+sealed class TlsCertificatesAndHostnamesValidityPeriod {const TlsCertificatesAndHostnamesValidityPeriod();
 
 factory TlsCertificatesAndHostnamesValidityPeriod.fromJson(int json) { return switch (json) {
   90 => $90,
-  _ => TlsCertificatesAndHostnamesValidityPeriod._(json),
+  _ => TlsCertificatesAndHostnamesValidityPeriod$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesValidityPeriod $90 = TlsCertificatesAndHostnamesValidityPeriod._(90);
+static const TlsCertificatesAndHostnamesValidityPeriod $90 = TlsCertificatesAndHostnamesValidityPeriod$$90._();
 
 static const List<TlsCertificatesAndHostnamesValidityPeriod> values = [$90];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesValidityPeriod$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesValidityPeriod($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesValidityPeriod$$90 extends TlsCertificatesAndHostnamesValidityPeriod {const TlsCertificatesAndHostnamesValidityPeriod$$90._();
+
+@override int get value => 90;
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesValidityPeriod$$90;
+
+@override int get hashCode => 90.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesValidityPeriod$Unknown extends TlsCertificatesAndHostnamesValidityPeriod {const TlsCertificatesAndHostnamesValidityPeriod$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesValidityPeriod && other.value == value;
+    other is TlsCertificatesAndHostnamesValidityPeriod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesValidityPeriod($value)';
 
  }
 @immutable final class TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult {const TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult({this.certificateAuthority, this.enabled, this.validityPeriod, });

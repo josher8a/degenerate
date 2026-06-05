@@ -2,19 +2,18 @@
 // Source: #/components/schemas/VectorStoreFileBatchObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_file_batch_object/file_counts.dart';import 'package:pub_openai/models/vector_store_file_batch_object/vector_store_file_batch_object_status.dart';/// The object type, which is always `vector_store.file_batch`.
-@immutable final class VectorStoreFileBatchObjectObject {const VectorStoreFileBatchObjectObject._(this.value);
+sealed class VectorStoreFileBatchObjectObject {const VectorStoreFileBatchObjectObject();
 
 factory VectorStoreFileBatchObjectObject.fromJson(String json) { return switch (json) {
   'vector_store.files_batch' => vectorStoreFilesBatch,
-  _ => VectorStoreFileBatchObjectObject._(json),
+  _ => VectorStoreFileBatchObjectObject$Unknown(json),
 }; }
 
-static const VectorStoreFileBatchObjectObject vectorStoreFilesBatch = VectorStoreFileBatchObjectObject._('vector_store.files_batch');
+static const VectorStoreFileBatchObjectObject vectorStoreFilesBatch = VectorStoreFileBatchObjectObject$vectorStoreFilesBatch._();
 
 static const List<VectorStoreFileBatchObjectObject> values = [vectorStoreFilesBatch];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is VectorStoreFileBatchObjectObject$Unknown; } 
+@override String toString() => 'VectorStoreFileBatchObjectObject($value)';
+
+ }
+@immutable final class VectorStoreFileBatchObjectObject$vectorStoreFilesBatch extends VectorStoreFileBatchObjectObject {const VectorStoreFileBatchObjectObject$vectorStoreFilesBatch._();
+
+@override String get value => 'vector_store.files_batch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorStoreFileBatchObjectObject$vectorStoreFilesBatch;
+
+@override int get hashCode => 'vector_store.files_batch'.hashCode;
+
+ }
+@immutable final class VectorStoreFileBatchObjectObject$Unknown extends VectorStoreFileBatchObjectObject {const VectorStoreFileBatchObjectObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is VectorStoreFileBatchObjectObject && other.value == value;
+    other is VectorStoreFileBatchObjectObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'VectorStoreFileBatchObjectObject($value)';
 
  }
 /// A batch of files attached to a vector store.

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/CodeScanningSarifsStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// `pending` files have not yet been processed, while `complete` means results from the SARIF have been stored. `failed` files have either not been processed at all, or could only be partially processed.
-@immutable final class ProcessingStatus {const ProcessingStatus._(this.value);
+sealed class ProcessingStatus {const ProcessingStatus();
 
 factory ProcessingStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'complete' => complete,
   'failed' => failed,
-  _ => ProcessingStatus._(json),
+  _ => ProcessingStatus$Unknown(json),
 }; }
 
-static const ProcessingStatus pending = ProcessingStatus._('pending');
+static const ProcessingStatus pending = ProcessingStatus$pending._();
 
-static const ProcessingStatus complete = ProcessingStatus._('complete');
+static const ProcessingStatus complete = ProcessingStatus$complete._();
 
-static const ProcessingStatus failed = ProcessingStatus._('failed');
+static const ProcessingStatus failed = ProcessingStatus$failed._();
 
 static const List<ProcessingStatus> values = [pending, complete, failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ProcessingStatus$Unknown; } 
+@override String toString() => 'ProcessingStatus($value)';
+
+ }
+@immutable final class ProcessingStatus$pending extends ProcessingStatus {const ProcessingStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ProcessingStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class ProcessingStatus$complete extends ProcessingStatus {const ProcessingStatus$complete._();
+
+@override String get value => 'complete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ProcessingStatus$complete;
+
+@override int get hashCode => 'complete'.hashCode;
+
+ }
+@immutable final class ProcessingStatus$failed extends ProcessingStatus {const ProcessingStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ProcessingStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class ProcessingStatus$Unknown extends ProcessingStatus {const ProcessingStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ProcessingStatus && other.value == value;
+    other is ProcessingStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ProcessingStatus($value)';
 
  }
 @immutable final class CodeScanningSarifsStatus {const CodeScanningSarifsStatus({this.processingStatus, this.analysesUrl, this.errors, });

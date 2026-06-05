@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStepStreamEvent (inline: ThreadRunStepExpired)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';@immutable final class ThreadRunStepExpiredEvent {const ThreadRunStepExpiredEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';sealed class ThreadRunStepExpiredEvent {const ThreadRunStepExpiredEvent();
 
 factory ThreadRunStepExpiredEvent.fromJson(String json) { return switch (json) {
   'thread.run.step.expired' => threadRunStepExpired,
-  _ => ThreadRunStepExpiredEvent._(json),
+  _ => ThreadRunStepExpiredEvent$Unknown(json),
 }; }
 
-static const ThreadRunStepExpiredEvent threadRunStepExpired = ThreadRunStepExpiredEvent._('thread.run.step.expired');
+static const ThreadRunStepExpiredEvent threadRunStepExpired = ThreadRunStepExpiredEvent$threadRunStepExpired._();
 
 static const List<ThreadRunStepExpiredEvent> values = [threadRunStepExpired];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunStepExpiredEvent$Unknown; } 
+@override String toString() => 'ThreadRunStepExpiredEvent($value)';
+
+ }
+@immutable final class ThreadRunStepExpiredEvent$threadRunStepExpired extends ThreadRunStepExpiredEvent {const ThreadRunStepExpiredEvent$threadRunStepExpired._();
+
+@override String get value => 'thread.run.step.expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunStepExpiredEvent$threadRunStepExpired;
+
+@override int get hashCode => 'thread.run.step.expired'.hashCode;
+
+ }
+@immutable final class ThreadRunStepExpiredEvent$Unknown extends ThreadRunStepExpiredEvent {const ThreadRunStepExpiredEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunStepExpiredEvent && other.value == value;
+    other is ThreadRunStepExpiredEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunStepExpiredEvent($value)';
 
  }
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) expires.

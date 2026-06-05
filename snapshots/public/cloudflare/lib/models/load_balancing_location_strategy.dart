@@ -4,22 +4,21 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Determines the authoritative location when ECS is not preferred, does not exist in the request, or its GeoIP lookup is unsuccessful.
 /// - `"pop"`: Use the Cloudflare PoP location.
 /// - `"resolver_ip"`: Use the DNS resolver GeoIP location. If the GeoIP lookup is unsuccessful, use the Cloudflare PoP location.
-@immutable final class LoadBalancingLocationStrategyMode {const LoadBalancingLocationStrategyMode._(this.value);
+sealed class LoadBalancingLocationStrategyMode {const LoadBalancingLocationStrategyMode();
 
 factory LoadBalancingLocationStrategyMode.fromJson(String json) { return switch (json) {
   'pop' => pop,
   'resolver_ip' => resolverIp,
-  _ => LoadBalancingLocationStrategyMode._(json),
+  _ => LoadBalancingLocationStrategyMode$Unknown(json),
 }; }
 
-static const LoadBalancingLocationStrategyMode pop = LoadBalancingLocationStrategyMode._('pop');
+static const LoadBalancingLocationStrategyMode pop = LoadBalancingLocationStrategyMode$pop._();
 
-static const LoadBalancingLocationStrategyMode resolverIp = LoadBalancingLocationStrategyMode._('resolver_ip');
+static const LoadBalancingLocationStrategyMode resolverIp = LoadBalancingLocationStrategyMode$resolverIp._();
 
 static const List<LoadBalancingLocationStrategyMode> values = [pop, resolverIp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -28,13 +27,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LoadBalancingLocationStrategyMode$Unknown; } 
+@override String toString() => 'LoadBalancingLocationStrategyMode($value)';
+
+ }
+@immutable final class LoadBalancingLocationStrategyMode$pop extends LoadBalancingLocationStrategyMode {const LoadBalancingLocationStrategyMode$pop._();
+
+@override String get value => 'pop';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoadBalancingLocationStrategyMode$pop;
+
+@override int get hashCode => 'pop'.hashCode;
+
+ }
+@immutable final class LoadBalancingLocationStrategyMode$resolverIp extends LoadBalancingLocationStrategyMode {const LoadBalancingLocationStrategyMode$resolverIp._();
+
+@override String get value => 'resolver_ip';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoadBalancingLocationStrategyMode$resolverIp;
+
+@override int get hashCode => 'resolver_ip'.hashCode;
+
+ }
+@immutable final class LoadBalancingLocationStrategyMode$Unknown extends LoadBalancingLocationStrategyMode {const LoadBalancingLocationStrategyMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LoadBalancingLocationStrategyMode && other.value == value;
+    other is LoadBalancingLocationStrategyMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LoadBalancingLocationStrategyMode($value)';
 
  }
 /// Whether the EDNS Client Subnet (ECS) GeoIP should be preferred as the authoritative location.
@@ -42,28 +64,27 @@ bool get isUnknown { return !values.contains(this); }
 /// - `"never"`: Never prefer ECS.
 /// - `"proximity"`: Prefer ECS only when `steering_policy="proximity"`.
 /// - `"geo"`: Prefer ECS only when `steering_policy="geo"`.
-@immutable final class PreferEcs {const PreferEcs._(this.value);
+sealed class PreferEcs {const PreferEcs();
 
 factory PreferEcs.fromJson(String json) { return switch (json) {
   'always' => always,
   'never' => never,
   'proximity' => proximity,
   'geo' => geo,
-  _ => PreferEcs._(json),
+  _ => PreferEcs$Unknown(json),
 }; }
 
-static const PreferEcs always = PreferEcs._('always');
+static const PreferEcs always = PreferEcs$always._();
 
-static const PreferEcs never = PreferEcs._('never');
+static const PreferEcs never = PreferEcs$never._();
 
-static const PreferEcs proximity = PreferEcs._('proximity');
+static const PreferEcs proximity = PreferEcs$proximity._();
 
-static const PreferEcs geo = PreferEcs._('geo');
+static const PreferEcs geo = PreferEcs$geo._();
 
 static const List<PreferEcs> values = [always, never, proximity, geo];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -74,13 +95,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PreferEcs$Unknown; } 
+@override String toString() => 'PreferEcs($value)';
+
+ }
+@immutable final class PreferEcs$always extends PreferEcs {const PreferEcs$always._();
+
+@override String get value => 'always';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PreferEcs$always;
+
+@override int get hashCode => 'always'.hashCode;
+
+ }
+@immutable final class PreferEcs$never extends PreferEcs {const PreferEcs$never._();
+
+@override String get value => 'never';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PreferEcs$never;
+
+@override int get hashCode => 'never'.hashCode;
+
+ }
+@immutable final class PreferEcs$proximity extends PreferEcs {const PreferEcs$proximity._();
+
+@override String get value => 'proximity';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PreferEcs$proximity;
+
+@override int get hashCode => 'proximity'.hashCode;
+
+ }
+@immutable final class PreferEcs$geo extends PreferEcs {const PreferEcs$geo._();
+
+@override String get value => 'geo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PreferEcs$geo;
+
+@override int get hashCode => 'geo'.hashCode;
+
+ }
+@immutable final class PreferEcs$Unknown extends PreferEcs {const PreferEcs$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PreferEcs && other.value == value;
+    other is PreferEcs$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PreferEcs($value)';
 
  }
 /// Controls location-based steering for non-proxied requests. See `steering_policy` to learn how steering is affected.

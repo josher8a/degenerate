@@ -2,19 +2,18 @@
 // Source: #/components/schemas/AccountLink
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class AccountLinkObject {const AccountLinkObject._(this.value);
+sealed class AccountLinkObject {const AccountLinkObject();
 
 factory AccountLinkObject.fromJson(String json) { return switch (json) {
   'account_link' => accountLink,
-  _ => AccountLinkObject._(json),
+  _ => AccountLinkObject$Unknown(json),
 }; }
 
-static const AccountLinkObject accountLink = AccountLinkObject._('account_link');
+static const AccountLinkObject accountLink = AccountLinkObject$accountLink._();
 
 static const List<AccountLinkObject> values = [accountLink];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountLinkObject$Unknown; } 
+@override String toString() => 'AccountLinkObject($value)';
+
+ }
+@immutable final class AccountLinkObject$accountLink extends AccountLinkObject {const AccountLinkObject$accountLink._();
+
+@override String get value => 'account_link';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountLinkObject$accountLink;
+
+@override int get hashCode => 'account_link'.hashCode;
+
+ }
+@immutable final class AccountLinkObject$Unknown extends AccountLinkObject {const AccountLinkObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountLinkObject && other.value == value;
+    other is AccountLinkObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountLinkObject($value)';
 
  }
 /// Account Links are the means by which a Connect platform grants a connected account permission to access

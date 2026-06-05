@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventResponseAudioDone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_audio.done`.
-@immutable final class RealtimeBetaServerEventResponseAudioDoneType {const RealtimeBetaServerEventResponseAudioDoneType._(this.value);
+sealed class RealtimeBetaServerEventResponseAudioDoneType {const RealtimeBetaServerEventResponseAudioDoneType();
 
 factory RealtimeBetaServerEventResponseAudioDoneType.fromJson(String json) { return switch (json) {
   'response.output_audio.done' => responseOutputAudioDone,
-  _ => RealtimeBetaServerEventResponseAudioDoneType._(json),
+  _ => RealtimeBetaServerEventResponseAudioDoneType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventResponseAudioDoneType responseOutputAudioDone = RealtimeBetaServerEventResponseAudioDoneType._('response.output_audio.done');
+static const RealtimeBetaServerEventResponseAudioDoneType responseOutputAudioDone = RealtimeBetaServerEventResponseAudioDoneType$responseOutputAudioDone._();
 
 static const List<RealtimeBetaServerEventResponseAudioDoneType> values = [responseOutputAudioDone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseAudioDoneType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventResponseAudioDoneType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventResponseAudioDoneType$responseOutputAudioDone extends RealtimeBetaServerEventResponseAudioDoneType {const RealtimeBetaServerEventResponseAudioDoneType$responseOutputAudioDone._();
+
+@override String get value => 'response.output_audio.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseAudioDoneType$responseOutputAudioDone;
+
+@override int get hashCode => 'response.output_audio.done'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventResponseAudioDoneType$Unknown extends RealtimeBetaServerEventResponseAudioDoneType {const RealtimeBetaServerEventResponseAudioDoneType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventResponseAudioDoneType && other.value == value;
+    other is RealtimeBetaServerEventResponseAudioDoneType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventResponseAudioDoneType($value)';
 
  }
 /// Returned when the model-generated audio is done. Also emitted when a Response

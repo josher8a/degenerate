@@ -2,25 +2,24 @@
 // Source: #/components/schemas/Request
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to return no metadata, indexed metadata or all metadata associated with the closest vectors.
-@immutable final class ReturnMetadata {const ReturnMetadata._(this.value);
+sealed class ReturnMetadata {const ReturnMetadata();
 
 factory ReturnMetadata.fromJson(String json) { return switch (json) {
   'none' => none,
   'indexed' => indexed,
   'all' => all,
-  _ => ReturnMetadata._(json),
+  _ => ReturnMetadata$Unknown(json),
 }; }
 
-static const ReturnMetadata none = ReturnMetadata._('none');
+static const ReturnMetadata none = ReturnMetadata$none._();
 
-static const ReturnMetadata indexed = ReturnMetadata._('indexed');
+static const ReturnMetadata indexed = ReturnMetadata$indexed._();
 
-static const ReturnMetadata all = ReturnMetadata._('all');
+static const ReturnMetadata all = ReturnMetadata$all._();
 
 static const List<ReturnMetadata> values = [none, indexed, all];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ReturnMetadata$Unknown; } 
+@override String toString() => 'ReturnMetadata($value)';
+
+ }
+@immutable final class ReturnMetadata$none extends ReturnMetadata {const ReturnMetadata$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReturnMetadata$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class ReturnMetadata$indexed extends ReturnMetadata {const ReturnMetadata$indexed._();
+
+@override String get value => 'indexed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReturnMetadata$indexed;
+
+@override int get hashCode => 'indexed'.hashCode;
+
+ }
+@immutable final class ReturnMetadata$all extends ReturnMetadata {const ReturnMetadata$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReturnMetadata$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class ReturnMetadata$Unknown extends ReturnMetadata {const ReturnMetadata$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ReturnMetadata && other.value == value;
+    other is ReturnMetadata$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ReturnMetadata($value)';
 
  }
 @immutable final class Request {const Request({required this.vector, this.filter, this.returnMetadata = ReturnMetadata.none, this.returnValues = false, this.topK = 5.0, });

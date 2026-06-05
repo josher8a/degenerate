@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TaxProductResourceCustomerDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details/taxability_override.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_customer_details_resource_tax_id.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_postal_address.dart';/// The type of customer address provided.
-@immutable final class TaxProductResourceCustomerDetailsAddressSource {const TaxProductResourceCustomerDetailsAddressSource._(this.value);
+sealed class TaxProductResourceCustomerDetailsAddressSource {const TaxProductResourceCustomerDetailsAddressSource();
 
 factory TaxProductResourceCustomerDetailsAddressSource.fromJson(String json) { return switch (json) {
   'billing' => billing,
   'shipping' => shipping,
-  _ => TaxProductResourceCustomerDetailsAddressSource._(json),
+  _ => TaxProductResourceCustomerDetailsAddressSource$Unknown(json),
 }; }
 
-static const TaxProductResourceCustomerDetailsAddressSource billing = TaxProductResourceCustomerDetailsAddressSource._('billing');
+static const TaxProductResourceCustomerDetailsAddressSource billing = TaxProductResourceCustomerDetailsAddressSource$billing._();
 
-static const TaxProductResourceCustomerDetailsAddressSource shipping = TaxProductResourceCustomerDetailsAddressSource._('shipping');
+static const TaxProductResourceCustomerDetailsAddressSource shipping = TaxProductResourceCustomerDetailsAddressSource$shipping._();
 
 static const List<TaxProductResourceCustomerDetailsAddressSource> values = [billing, shipping];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TaxProductResourceCustomerDetailsAddressSource$Unknown; } 
+@override String toString() => 'TaxProductResourceCustomerDetailsAddressSource($value)';
+
+ }
+@immutable final class TaxProductResourceCustomerDetailsAddressSource$billing extends TaxProductResourceCustomerDetailsAddressSource {const TaxProductResourceCustomerDetailsAddressSource$billing._();
+
+@override String get value => 'billing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceCustomerDetailsAddressSource$billing;
+
+@override int get hashCode => 'billing'.hashCode;
+
+ }
+@immutable final class TaxProductResourceCustomerDetailsAddressSource$shipping extends TaxProductResourceCustomerDetailsAddressSource {const TaxProductResourceCustomerDetailsAddressSource$shipping._();
+
+@override String get value => 'shipping';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceCustomerDetailsAddressSource$shipping;
+
+@override int get hashCode => 'shipping'.hashCode;
+
+ }
+@immutable final class TaxProductResourceCustomerDetailsAddressSource$Unknown extends TaxProductResourceCustomerDetailsAddressSource {const TaxProductResourceCustomerDetailsAddressSource$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxProductResourceCustomerDetailsAddressSource && other.value == value;
+    other is TaxProductResourceCustomerDetailsAddressSource$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TaxProductResourceCustomerDetailsAddressSource($value)';
 
  }
 /// 

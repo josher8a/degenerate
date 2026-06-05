@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupByMaliciousArc
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByMaliciousArc {const RadarGetEmailSecurityTimeseriesGroupByMaliciousArc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailSecurityTimeseriesGroupByMaliciousArc {const RadarGetEmailSecurityTimeseriesGroupByMaliciousArc();
 
 factory RadarGetEmailSecurityTimeseriesGroupByMaliciousArc.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailSecurityTimeseriesGroupByMaliciousArc._(json),
+  _ => RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$Unknown(json),
 }; }
 
-static const RadarGetEmailSecurityTimeseriesGroupByMaliciousArc pass = RadarGetEmailSecurityTimeseriesGroupByMaliciousArc._('PASS');
+static const RadarGetEmailSecurityTimeseriesGroupByMaliciousArc pass = RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$pass._();
 
-static const RadarGetEmailSecurityTimeseriesGroupByMaliciousArc none = RadarGetEmailSecurityTimeseriesGroupByMaliciousArc._('NONE');
+static const RadarGetEmailSecurityTimeseriesGroupByMaliciousArc none = RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$none._();
 
-static const RadarGetEmailSecurityTimeseriesGroupByMaliciousArc fail = RadarGetEmailSecurityTimeseriesGroupByMaliciousArc._('FAIL');
+static const RadarGetEmailSecurityTimeseriesGroupByMaliciousArc fail = RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$fail._();
 
 static const List<RadarGetEmailSecurityTimeseriesGroupByMaliciousArc> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$Unknown; } 
+@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupByMaliciousArc($value)';
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$pass extends RadarGetEmailSecurityTimeseriesGroupByMaliciousArc {const RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$none extends RadarGetEmailSecurityTimeseriesGroupByMaliciousArc {const RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$fail extends RadarGetEmailSecurityTimeseriesGroupByMaliciousArc {const RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$Unknown extends RadarGetEmailSecurityTimeseriesGroupByMaliciousArc {const RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecurityTimeseriesGroupByMaliciousArc && other.value == value;
+    other is RadarGetEmailSecurityTimeseriesGroupByMaliciousArc$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupByMaliciousArc($value)';
 
  }

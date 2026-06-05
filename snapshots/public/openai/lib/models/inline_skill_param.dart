@@ -2,19 +2,18 @@
 // Source: #/components/schemas/InlineSkillParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/inline_skill_source_param.dart';/// Defines an inline skill for this request.
-@immutable final class InlineSkillParamType {const InlineSkillParamType._(this.value);
+sealed class InlineSkillParamType {const InlineSkillParamType();
 
 factory InlineSkillParamType.fromJson(String json) { return switch (json) {
   'inline' => inline,
-  _ => InlineSkillParamType._(json),
+  _ => InlineSkillParamType$Unknown(json),
 }; }
 
-static const InlineSkillParamType inline = InlineSkillParamType._('inline');
+static const InlineSkillParamType inline = InlineSkillParamType$inline._();
 
 static const List<InlineSkillParamType> values = [inline];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InlineSkillParamType$Unknown; } 
+@override String toString() => 'InlineSkillParamType($value)';
+
+ }
+@immutable final class InlineSkillParamType$inline extends InlineSkillParamType {const InlineSkillParamType$inline._();
+
+@override String get value => 'inline';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InlineSkillParamType$inline;
+
+@override int get hashCode => 'inline'.hashCode;
+
+ }
+@immutable final class InlineSkillParamType$Unknown extends InlineSkillParamType {const InlineSkillParamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InlineSkillParamType && other.value == value;
+    other is InlineSkillParamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InlineSkillParamType($value)';
 
  }
 @immutable final class InlineSkillParam {const InlineSkillParam({required this.name, required this.description, required this.source, this.type = InlineSkillParamType.inline, });

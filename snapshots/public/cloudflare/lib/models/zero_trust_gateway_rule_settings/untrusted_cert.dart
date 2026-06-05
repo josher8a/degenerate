@@ -2,25 +2,24 @@
 // Source: #/components/schemas/ZeroTrustGatewayRuleSettings (inline: UntrustedCert)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the action performed when an untrusted certificate seen. The default action an error with HTTP code 526.
-@immutable final class UntrustedCertAction {const UntrustedCertAction._(this.value);
+sealed class UntrustedCertAction {const UntrustedCertAction();
 
 factory UntrustedCertAction.fromJson(String json) { return switch (json) {
   'pass_through' => passThrough,
   'block' => block,
   'error' => error,
-  _ => UntrustedCertAction._(json),
+  _ => UntrustedCertAction$Unknown(json),
 }; }
 
-static const UntrustedCertAction passThrough = UntrustedCertAction._('pass_through');
+static const UntrustedCertAction passThrough = UntrustedCertAction$passThrough._();
 
-static const UntrustedCertAction block = UntrustedCertAction._('block');
+static const UntrustedCertAction block = UntrustedCertAction$block._();
 
-static const UntrustedCertAction error = UntrustedCertAction._('error');
+static const UntrustedCertAction error = UntrustedCertAction$error._();
 
 static const List<UntrustedCertAction> values = [passThrough, block, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UntrustedCertAction$Unknown; } 
+@override String toString() => 'UntrustedCertAction($value)';
+
+ }
+@immutable final class UntrustedCertAction$passThrough extends UntrustedCertAction {const UntrustedCertAction$passThrough._();
+
+@override String get value => 'pass_through';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UntrustedCertAction$passThrough;
+
+@override int get hashCode => 'pass_through'.hashCode;
+
+ }
+@immutable final class UntrustedCertAction$block extends UntrustedCertAction {const UntrustedCertAction$block._();
+
+@override String get value => 'block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UntrustedCertAction$block;
+
+@override int get hashCode => 'block'.hashCode;
+
+ }
+@immutable final class UntrustedCertAction$error extends UntrustedCertAction {const UntrustedCertAction$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UntrustedCertAction$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class UntrustedCertAction$Unknown extends UntrustedCertAction {const UntrustedCertAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UntrustedCertAction && other.value == value;
+    other is UntrustedCertAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UntrustedCertAction($value)';
 
  }
 /// Configure behavior when an upstream certificate is invalid or an SSL error occurs. Settable only for `http` rules with the action set to `allow`.

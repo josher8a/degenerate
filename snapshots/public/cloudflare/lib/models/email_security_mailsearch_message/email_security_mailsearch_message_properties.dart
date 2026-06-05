@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EmailSecurityMailsearchMessage (inline: Properties)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AllowlistedPatternType {const AllowlistedPatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AllowlistedPatternType {const AllowlistedPatternType();
 
 factory AllowlistedPatternType.fromJson(String json) { return switch (json) {
   'quarantine_release' => quarantineRelease,
@@ -12,29 +12,28 @@ factory AllowlistedPatternType.fromJson(String json) { return switch (json) {
   'domain_recency' => domainRecency,
   'managed_acceptable_sender' => managedAcceptableSender,
   'outbound_ndr' => outboundNdr,
-  _ => AllowlistedPatternType._(json),
+  _ => AllowlistedPatternType$Unknown(json),
 }; }
 
-static const AllowlistedPatternType quarantineRelease = AllowlistedPatternType._('quarantine_release');
+static const AllowlistedPatternType quarantineRelease = AllowlistedPatternType$quarantineRelease._();
 
-static const AllowlistedPatternType acceptableSender = AllowlistedPatternType._('acceptable_sender');
+static const AllowlistedPatternType acceptableSender = AllowlistedPatternType$acceptableSender._();
 
-static const AllowlistedPatternType allowedSender = AllowlistedPatternType._('allowed_sender');
+static const AllowlistedPatternType allowedSender = AllowlistedPatternType$allowedSender._();
 
-static const AllowlistedPatternType allowedRecipient = AllowlistedPatternType._('allowed_recipient');
+static const AllowlistedPatternType allowedRecipient = AllowlistedPatternType$allowedRecipient._();
 
-static const AllowlistedPatternType domainSimilarity = AllowlistedPatternType._('domain_similarity');
+static const AllowlistedPatternType domainSimilarity = AllowlistedPatternType$domainSimilarity._();
 
-static const AllowlistedPatternType domainRecency = AllowlistedPatternType._('domain_recency');
+static const AllowlistedPatternType domainRecency = AllowlistedPatternType$domainRecency._();
 
-static const AllowlistedPatternType managedAcceptableSender = AllowlistedPatternType._('managed_acceptable_sender');
+static const AllowlistedPatternType managedAcceptableSender = AllowlistedPatternType$managedAcceptableSender._();
 
-static const AllowlistedPatternType outboundNdr = AllowlistedPatternType._('outbound_ndr');
+static const AllowlistedPatternType outboundNdr = AllowlistedPatternType$outboundNdr._();
 
 static const List<AllowlistedPatternType> values = [quarantineRelease, acceptableSender, allowedSender, allowedRecipient, domainSimilarity, domainRecency, managedAcceptableSender, outboundNdr];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -49,16 +48,93 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is AllowlistedPatternType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is AllowlistedPatternType$Unknown; } 
 @override String toString() => 'AllowlistedPatternType($value)';
 
  }
-@immutable final class WhitelistedPatternType {const WhitelistedPatternType._(this.value);
+@immutable final class AllowlistedPatternType$quarantineRelease extends AllowlistedPatternType {const AllowlistedPatternType$quarantineRelease._();
+
+@override String get value => 'quarantine_release';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowlistedPatternType$quarantineRelease;
+
+@override int get hashCode => 'quarantine_release'.hashCode;
+
+ }
+@immutable final class AllowlistedPatternType$acceptableSender extends AllowlistedPatternType {const AllowlistedPatternType$acceptableSender._();
+
+@override String get value => 'acceptable_sender';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowlistedPatternType$acceptableSender;
+
+@override int get hashCode => 'acceptable_sender'.hashCode;
+
+ }
+@immutable final class AllowlistedPatternType$allowedSender extends AllowlistedPatternType {const AllowlistedPatternType$allowedSender._();
+
+@override String get value => 'allowed_sender';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowlistedPatternType$allowedSender;
+
+@override int get hashCode => 'allowed_sender'.hashCode;
+
+ }
+@immutable final class AllowlistedPatternType$allowedRecipient extends AllowlistedPatternType {const AllowlistedPatternType$allowedRecipient._();
+
+@override String get value => 'allowed_recipient';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowlistedPatternType$allowedRecipient;
+
+@override int get hashCode => 'allowed_recipient'.hashCode;
+
+ }
+@immutable final class AllowlistedPatternType$domainSimilarity extends AllowlistedPatternType {const AllowlistedPatternType$domainSimilarity._();
+
+@override String get value => 'domain_similarity';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowlistedPatternType$domainSimilarity;
+
+@override int get hashCode => 'domain_similarity'.hashCode;
+
+ }
+@immutable final class AllowlistedPatternType$domainRecency extends AllowlistedPatternType {const AllowlistedPatternType$domainRecency._();
+
+@override String get value => 'domain_recency';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowlistedPatternType$domainRecency;
+
+@override int get hashCode => 'domain_recency'.hashCode;
+
+ }
+@immutable final class AllowlistedPatternType$managedAcceptableSender extends AllowlistedPatternType {const AllowlistedPatternType$managedAcceptableSender._();
+
+@override String get value => 'managed_acceptable_sender';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowlistedPatternType$managedAcceptableSender;
+
+@override int get hashCode => 'managed_acceptable_sender'.hashCode;
+
+ }
+@immutable final class AllowlistedPatternType$outboundNdr extends AllowlistedPatternType {const AllowlistedPatternType$outboundNdr._();
+
+@override String get value => 'outbound_ndr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowlistedPatternType$outboundNdr;
+
+@override int get hashCode => 'outbound_ndr'.hashCode;
+
+ }
+@immutable final class AllowlistedPatternType$Unknown extends AllowlistedPatternType {const AllowlistedPatternType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AllowlistedPatternType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class WhitelistedPatternType {const WhitelistedPatternType();
 
 factory WhitelistedPatternType.fromJson(String json) { return switch (json) {
   'quarantine_release' => quarantineRelease,
@@ -69,29 +145,28 @@ factory WhitelistedPatternType.fromJson(String json) { return switch (json) {
   'domain_recency' => domainRecency,
   'managed_acceptable_sender' => managedAcceptableSender,
   'outbound_ndr' => outboundNdr,
-  _ => WhitelistedPatternType._(json),
+  _ => WhitelistedPatternType$Unknown(json),
 }; }
 
-static const WhitelistedPatternType quarantineRelease = WhitelistedPatternType._('quarantine_release');
+static const WhitelistedPatternType quarantineRelease = WhitelistedPatternType$quarantineRelease._();
 
-static const WhitelistedPatternType acceptableSender = WhitelistedPatternType._('acceptable_sender');
+static const WhitelistedPatternType acceptableSender = WhitelistedPatternType$acceptableSender._();
 
-static const WhitelistedPatternType allowedSender = WhitelistedPatternType._('allowed_sender');
+static const WhitelistedPatternType allowedSender = WhitelistedPatternType$allowedSender._();
 
-static const WhitelistedPatternType allowedRecipient = WhitelistedPatternType._('allowed_recipient');
+static const WhitelistedPatternType allowedRecipient = WhitelistedPatternType$allowedRecipient._();
 
-static const WhitelistedPatternType domainSimilarity = WhitelistedPatternType._('domain_similarity');
+static const WhitelistedPatternType domainSimilarity = WhitelistedPatternType$domainSimilarity._();
 
-static const WhitelistedPatternType domainRecency = WhitelistedPatternType._('domain_recency');
+static const WhitelistedPatternType domainRecency = WhitelistedPatternType$domainRecency._();
 
-static const WhitelistedPatternType managedAcceptableSender = WhitelistedPatternType._('managed_acceptable_sender');
+static const WhitelistedPatternType managedAcceptableSender = WhitelistedPatternType$managedAcceptableSender._();
 
-static const WhitelistedPatternType outboundNdr = WhitelistedPatternType._('outbound_ndr');
+static const WhitelistedPatternType outboundNdr = WhitelistedPatternType$outboundNdr._();
 
 static const List<WhitelistedPatternType> values = [quarantineRelease, acceptableSender, allowedSender, allowedRecipient, domainSimilarity, domainRecency, managedAcceptableSender, outboundNdr];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -106,13 +181,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WhitelistedPatternType$Unknown; } 
+@override String toString() => 'WhitelistedPatternType($value)';
+
+ }
+@immutable final class WhitelistedPatternType$quarantineRelease extends WhitelistedPatternType {const WhitelistedPatternType$quarantineRelease._();
+
+@override String get value => 'quarantine_release';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WhitelistedPatternType$quarantineRelease;
+
+@override int get hashCode => 'quarantine_release'.hashCode;
+
+ }
+@immutable final class WhitelistedPatternType$acceptableSender extends WhitelistedPatternType {const WhitelistedPatternType$acceptableSender._();
+
+@override String get value => 'acceptable_sender';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WhitelistedPatternType$acceptableSender;
+
+@override int get hashCode => 'acceptable_sender'.hashCode;
+
+ }
+@immutable final class WhitelistedPatternType$allowedSender extends WhitelistedPatternType {const WhitelistedPatternType$allowedSender._();
+
+@override String get value => 'allowed_sender';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WhitelistedPatternType$allowedSender;
+
+@override int get hashCode => 'allowed_sender'.hashCode;
+
+ }
+@immutable final class WhitelistedPatternType$allowedRecipient extends WhitelistedPatternType {const WhitelistedPatternType$allowedRecipient._();
+
+@override String get value => 'allowed_recipient';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WhitelistedPatternType$allowedRecipient;
+
+@override int get hashCode => 'allowed_recipient'.hashCode;
+
+ }
+@immutable final class WhitelistedPatternType$domainSimilarity extends WhitelistedPatternType {const WhitelistedPatternType$domainSimilarity._();
+
+@override String get value => 'domain_similarity';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WhitelistedPatternType$domainSimilarity;
+
+@override int get hashCode => 'domain_similarity'.hashCode;
+
+ }
+@immutable final class WhitelistedPatternType$domainRecency extends WhitelistedPatternType {const WhitelistedPatternType$domainRecency._();
+
+@override String get value => 'domain_recency';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WhitelistedPatternType$domainRecency;
+
+@override int get hashCode => 'domain_recency'.hashCode;
+
+ }
+@immutable final class WhitelistedPatternType$managedAcceptableSender extends WhitelistedPatternType {const WhitelistedPatternType$managedAcceptableSender._();
+
+@override String get value => 'managed_acceptable_sender';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WhitelistedPatternType$managedAcceptableSender;
+
+@override int get hashCode => 'managed_acceptable_sender'.hashCode;
+
+ }
+@immutable final class WhitelistedPatternType$outboundNdr extends WhitelistedPatternType {const WhitelistedPatternType$outboundNdr._();
+
+@override String get value => 'outbound_ndr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WhitelistedPatternType$outboundNdr;
+
+@override int get hashCode => 'outbound_ndr'.hashCode;
+
+ }
+@immutable final class WhitelistedPatternType$Unknown extends WhitelistedPatternType {const WhitelistedPatternType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WhitelistedPatternType && other.value == value;
+    other is WhitelistedPatternType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WhitelistedPatternType($value)';
 
  }
 @immutable final class EmailSecurityMailsearchMessageProperties {const EmailSecurityMailsearchMessageProperties({this.allowlistedPattern, this.allowlistedPatternType, this.blocklistedMessage, this.blocklistedPattern, this.whitelistedPatternType, });

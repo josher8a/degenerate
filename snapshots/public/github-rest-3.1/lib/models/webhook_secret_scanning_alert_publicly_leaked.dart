@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookSecretScanningAlertPubliclyLeaked
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_alert_webhook.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookSecretScanningAlertPubliclyLeakedAction {const WebhookSecretScanningAlertPubliclyLeakedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_alert_webhook.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookSecretScanningAlertPubliclyLeakedAction {const WebhookSecretScanningAlertPubliclyLeakedAction();
 
 factory WebhookSecretScanningAlertPubliclyLeakedAction.fromJson(String json) { return switch (json) {
   'publicly_leaked' => publiclyLeaked,
-  _ => WebhookSecretScanningAlertPubliclyLeakedAction._(json),
+  _ => WebhookSecretScanningAlertPubliclyLeakedAction$Unknown(json),
 }; }
 
-static const WebhookSecretScanningAlertPubliclyLeakedAction publiclyLeaked = WebhookSecretScanningAlertPubliclyLeakedAction._('publicly_leaked');
+static const WebhookSecretScanningAlertPubliclyLeakedAction publiclyLeaked = WebhookSecretScanningAlertPubliclyLeakedAction$publiclyLeaked._();
 
 static const List<WebhookSecretScanningAlertPubliclyLeakedAction> values = [publiclyLeaked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookSecretScanningAlertPubliclyLeakedAction$Unknown; } 
+@override String toString() => 'WebhookSecretScanningAlertPubliclyLeakedAction($value)';
+
+ }
+@immutable final class WebhookSecretScanningAlertPubliclyLeakedAction$publiclyLeaked extends WebhookSecretScanningAlertPubliclyLeakedAction {const WebhookSecretScanningAlertPubliclyLeakedAction$publiclyLeaked._();
+
+@override String get value => 'publicly_leaked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookSecretScanningAlertPubliclyLeakedAction$publiclyLeaked;
+
+@override int get hashCode => 'publicly_leaked'.hashCode;
+
+ }
+@immutable final class WebhookSecretScanningAlertPubliclyLeakedAction$Unknown extends WebhookSecretScanningAlertPubliclyLeakedAction {const WebhookSecretScanningAlertPubliclyLeakedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookSecretScanningAlertPubliclyLeakedAction && other.value == value;
+    other is WebhookSecretScanningAlertPubliclyLeakedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookSecretScanningAlertPubliclyLeakedAction($value)';
 
  }
 @immutable final class WebhookSecretScanningAlertPubliclyLeaked {const WebhookSecretScanningAlertPubliclyLeaked({required this.action, required this.alert, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });

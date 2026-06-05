@@ -2,7 +2,7 @@
 // Source: #/components/schemas/StatusUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The current status.
-@immutable final class StatusUpdateStatus {const StatusUpdateStatus._(this.value);
+sealed class StatusUpdateStatus {const StatusUpdateStatus();
 
 factory StatusUpdateStatus.fromJson(String json) { return switch (json) {
   'INACTIVE' => inactive,
@@ -11,25 +11,24 @@ factory StatusUpdateStatus.fromJson(String json) { return switch (json) {
   'OFF_TRACK' => offTrack,
   'COMPLETE' => complete,
   'null' => $null,
-  _ => StatusUpdateStatus._(json),
+  _ => StatusUpdateStatus$Unknown(json),
 }; }
 
-static const StatusUpdateStatus inactive = StatusUpdateStatus._('INACTIVE');
+static const StatusUpdateStatus inactive = StatusUpdateStatus$inactive._();
 
-static const StatusUpdateStatus onTrack = StatusUpdateStatus._('ON_TRACK');
+static const StatusUpdateStatus onTrack = StatusUpdateStatus$onTrack._();
 
-static const StatusUpdateStatus atRisk = StatusUpdateStatus._('AT_RISK');
+static const StatusUpdateStatus atRisk = StatusUpdateStatus$atRisk._();
 
-static const StatusUpdateStatus offTrack = StatusUpdateStatus._('OFF_TRACK');
+static const StatusUpdateStatus offTrack = StatusUpdateStatus$offTrack._();
 
-static const StatusUpdateStatus complete = StatusUpdateStatus._('COMPLETE');
+static const StatusUpdateStatus complete = StatusUpdateStatus$complete._();
 
-static const StatusUpdateStatus $null = StatusUpdateStatus._('null');
+static const StatusUpdateStatus $null = StatusUpdateStatus$$null._();
 
 static const List<StatusUpdateStatus> values = [inactive, onTrack, atRisk, offTrack, complete, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,13 +41,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StatusUpdateStatus$Unknown; } 
+@override String toString() => 'StatusUpdateStatus($value)';
+
+ }
+@immutable final class StatusUpdateStatus$inactive extends StatusUpdateStatus {const StatusUpdateStatus$inactive._();
+
+@override String get value => 'INACTIVE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusUpdateStatus$inactive;
+
+@override int get hashCode => 'INACTIVE'.hashCode;
+
+ }
+@immutable final class StatusUpdateStatus$onTrack extends StatusUpdateStatus {const StatusUpdateStatus$onTrack._();
+
+@override String get value => 'ON_TRACK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusUpdateStatus$onTrack;
+
+@override int get hashCode => 'ON_TRACK'.hashCode;
+
+ }
+@immutable final class StatusUpdateStatus$atRisk extends StatusUpdateStatus {const StatusUpdateStatus$atRisk._();
+
+@override String get value => 'AT_RISK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusUpdateStatus$atRisk;
+
+@override int get hashCode => 'AT_RISK'.hashCode;
+
+ }
+@immutable final class StatusUpdateStatus$offTrack extends StatusUpdateStatus {const StatusUpdateStatus$offTrack._();
+
+@override String get value => 'OFF_TRACK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusUpdateStatus$offTrack;
+
+@override int get hashCode => 'OFF_TRACK'.hashCode;
+
+ }
+@immutable final class StatusUpdateStatus$complete extends StatusUpdateStatus {const StatusUpdateStatus$complete._();
+
+@override String get value => 'COMPLETE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusUpdateStatus$complete;
+
+@override int get hashCode => 'COMPLETE'.hashCode;
+
+ }
+@immutable final class StatusUpdateStatus$$null extends StatusUpdateStatus {const StatusUpdateStatus$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StatusUpdateStatus$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class StatusUpdateStatus$Unknown extends StatusUpdateStatus {const StatusUpdateStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StatusUpdateStatus && other.value == value;
+    other is StatusUpdateStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StatusUpdateStatus($value)';
 
  }
 /// An status update belonging to a project

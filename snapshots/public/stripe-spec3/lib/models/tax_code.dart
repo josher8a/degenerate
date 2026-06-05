@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TaxCode
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TaxCodeObject {const TaxCodeObject._(this.value);
+sealed class TaxCodeObject {const TaxCodeObject();
 
 factory TaxCodeObject.fromJson(String json) { return switch (json) {
   'tax_code' => taxCode,
-  _ => TaxCodeObject._(json),
+  _ => TaxCodeObject$Unknown(json),
 }; }
 
-static const TaxCodeObject taxCode = TaxCodeObject._('tax_code');
+static const TaxCodeObject taxCode = TaxCodeObject$taxCode._();
 
 static const List<TaxCodeObject> values = [taxCode];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TaxCodeObject$Unknown; } 
+@override String toString() => 'TaxCodeObject($value)';
+
+ }
+@immutable final class TaxCodeObject$taxCode extends TaxCodeObject {const TaxCodeObject$taxCode._();
+
+@override String get value => 'tax_code';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxCodeObject$taxCode;
+
+@override int get hashCode => 'tax_code'.hashCode;
+
+ }
+@immutable final class TaxCodeObject$Unknown extends TaxCodeObject {const TaxCodeObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxCodeObject && other.value == value;
+    other is TaxCodeObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TaxCodeObject($value)';
 
  }
 /// [Tax codes](https://stripe.com/docs/tax/tax-categories) classify goods and services for tax purposes.

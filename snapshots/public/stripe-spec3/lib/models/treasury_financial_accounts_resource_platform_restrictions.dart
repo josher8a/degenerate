@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TreasuryFinancialAccountsResourcePlatformRestrictions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Restricts all inbound money movement.
-@immutable final class TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows._(this.value);
+sealed class TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows();
 
 factory TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows.fromJson(String json) { return switch (json) {
   'restricted' => restricted,
   'unrestricted' => unrestricted,
-  _ => TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows._(json),
+  _ => TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows$Unknown(json),
 }; }
 
-static const TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows restricted = TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows._('restricted');
+static const TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows restricted = TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows$restricted._();
 
-static const TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows unrestricted = TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows._('unrestricted');
+static const TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows unrestricted = TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows$unrestricted._();
 
 static const List<TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows> values = [restricted, unrestricted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,32 +25,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows$Unknown; } 
 @override String toString() => 'TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows($value)';
 
  }
+@immutable final class TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows$restricted extends TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows$restricted._();
+
+@override String get value => 'restricted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows$restricted;
+
+@override int get hashCode => 'restricted'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows$unrestricted extends TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows$unrestricted._();
+
+@override String get value => 'unrestricted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows$unrestricted;
+
+@override int get hashCode => 'unrestricted'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows$Unknown extends TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryFinancialAccountsResourcePlatformRestrictionsInboundFlows$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Restricts all outbound money movement.
-@immutable final class TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows._(this.value);
+sealed class TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows();
 
 factory TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows.fromJson(String json) { return switch (json) {
   'restricted' => restricted,
   'unrestricted' => unrestricted,
-  _ => TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows._(json),
+  _ => TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows$Unknown(json),
 }; }
 
-static const TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows restricted = TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows._('restricted');
+static const TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows restricted = TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows$restricted._();
 
-static const TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows unrestricted = TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows._('unrestricted');
+static const TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows unrestricted = TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows$unrestricted._();
 
 static const List<TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows> values = [restricted, unrestricted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,13 +81,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows$Unknown; } 
+@override String toString() => 'TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows($value)';
+
+ }
+@immutable final class TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows$restricted extends TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows$restricted._();
+
+@override String get value => 'restricted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows$restricted;
+
+@override int get hashCode => 'restricted'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows$unrestricted extends TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows$unrestricted._();
+
+@override String get value => 'unrestricted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows$unrestricted;
+
+@override int get hashCode => 'unrestricted'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows$Unknown extends TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows {const TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows && other.value == value;
+    other is TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TreasuryFinancialAccountsResourcePlatformRestrictionsOutboundFlows($value)';
 
  }
 /// Restrictions that a Connect Platform has placed on this FinancialAccount.

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentLink (inline: PaymentMethodTypes)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes();
 
 factory PaymentLinkPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'affirm' => affirm,
@@ -43,91 +43,90 @@ factory PaymentLinkPaymentMethodTypes.fromJson(String json) { return switch (jso
   'us_bank_account' => usBankAccount,
   'wechat_pay' => wechatPay,
   'zip' => zip,
-  _ => PaymentLinkPaymentMethodTypes._(json),
+  _ => PaymentLinkPaymentMethodTypes$Unknown(json),
 }; }
 
-static const PaymentLinkPaymentMethodTypes affirm = PaymentLinkPaymentMethodTypes._('affirm');
+static const PaymentLinkPaymentMethodTypes affirm = PaymentLinkPaymentMethodTypes$affirm._();
 
-static const PaymentLinkPaymentMethodTypes afterpayClearpay = PaymentLinkPaymentMethodTypes._('afterpay_clearpay');
+static const PaymentLinkPaymentMethodTypes afterpayClearpay = PaymentLinkPaymentMethodTypes$afterpayClearpay._();
 
-static const PaymentLinkPaymentMethodTypes alipay = PaymentLinkPaymentMethodTypes._('alipay');
+static const PaymentLinkPaymentMethodTypes alipay = PaymentLinkPaymentMethodTypes$alipay._();
 
-static const PaymentLinkPaymentMethodTypes alma = PaymentLinkPaymentMethodTypes._('alma');
+static const PaymentLinkPaymentMethodTypes alma = PaymentLinkPaymentMethodTypes$alma._();
 
-static const PaymentLinkPaymentMethodTypes auBecsDebit = PaymentLinkPaymentMethodTypes._('au_becs_debit');
+static const PaymentLinkPaymentMethodTypes auBecsDebit = PaymentLinkPaymentMethodTypes$auBecsDebit._();
 
-static const PaymentLinkPaymentMethodTypes bacsDebit = PaymentLinkPaymentMethodTypes._('bacs_debit');
+static const PaymentLinkPaymentMethodTypes bacsDebit = PaymentLinkPaymentMethodTypes$bacsDebit._();
 
-static const PaymentLinkPaymentMethodTypes bancontact = PaymentLinkPaymentMethodTypes._('bancontact');
+static const PaymentLinkPaymentMethodTypes bancontact = PaymentLinkPaymentMethodTypes$bancontact._();
 
-static const PaymentLinkPaymentMethodTypes billie = PaymentLinkPaymentMethodTypes._('billie');
+static const PaymentLinkPaymentMethodTypes billie = PaymentLinkPaymentMethodTypes$billie._();
 
-static const PaymentLinkPaymentMethodTypes blik = PaymentLinkPaymentMethodTypes._('blik');
+static const PaymentLinkPaymentMethodTypes blik = PaymentLinkPaymentMethodTypes$blik._();
 
-static const PaymentLinkPaymentMethodTypes boleto = PaymentLinkPaymentMethodTypes._('boleto');
+static const PaymentLinkPaymentMethodTypes boleto = PaymentLinkPaymentMethodTypes$boleto._();
 
-static const PaymentLinkPaymentMethodTypes card = PaymentLinkPaymentMethodTypes._('card');
+static const PaymentLinkPaymentMethodTypes card = PaymentLinkPaymentMethodTypes$card._();
 
-static const PaymentLinkPaymentMethodTypes cashapp = PaymentLinkPaymentMethodTypes._('cashapp');
+static const PaymentLinkPaymentMethodTypes cashapp = PaymentLinkPaymentMethodTypes$cashapp._();
 
-static const PaymentLinkPaymentMethodTypes eps = PaymentLinkPaymentMethodTypes._('eps');
+static const PaymentLinkPaymentMethodTypes eps = PaymentLinkPaymentMethodTypes$eps._();
 
-static const PaymentLinkPaymentMethodTypes fpx = PaymentLinkPaymentMethodTypes._('fpx');
+static const PaymentLinkPaymentMethodTypes fpx = PaymentLinkPaymentMethodTypes$fpx._();
 
-static const PaymentLinkPaymentMethodTypes giropay = PaymentLinkPaymentMethodTypes._('giropay');
+static const PaymentLinkPaymentMethodTypes giropay = PaymentLinkPaymentMethodTypes$giropay._();
 
-static const PaymentLinkPaymentMethodTypes grabpay = PaymentLinkPaymentMethodTypes._('grabpay');
+static const PaymentLinkPaymentMethodTypes grabpay = PaymentLinkPaymentMethodTypes$grabpay._();
 
-static const PaymentLinkPaymentMethodTypes ideal = PaymentLinkPaymentMethodTypes._('ideal');
+static const PaymentLinkPaymentMethodTypes ideal = PaymentLinkPaymentMethodTypes$ideal._();
 
-static const PaymentLinkPaymentMethodTypes klarna = PaymentLinkPaymentMethodTypes._('klarna');
+static const PaymentLinkPaymentMethodTypes klarna = PaymentLinkPaymentMethodTypes$klarna._();
 
-static const PaymentLinkPaymentMethodTypes konbini = PaymentLinkPaymentMethodTypes._('konbini');
+static const PaymentLinkPaymentMethodTypes konbini = PaymentLinkPaymentMethodTypes$konbini._();
 
-static const PaymentLinkPaymentMethodTypes link = PaymentLinkPaymentMethodTypes._('link');
+static const PaymentLinkPaymentMethodTypes link = PaymentLinkPaymentMethodTypes$link._();
 
-static const PaymentLinkPaymentMethodTypes mbWay = PaymentLinkPaymentMethodTypes._('mb_way');
+static const PaymentLinkPaymentMethodTypes mbWay = PaymentLinkPaymentMethodTypes$mbWay._();
 
-static const PaymentLinkPaymentMethodTypes mobilepay = PaymentLinkPaymentMethodTypes._('mobilepay');
+static const PaymentLinkPaymentMethodTypes mobilepay = PaymentLinkPaymentMethodTypes$mobilepay._();
 
-static const PaymentLinkPaymentMethodTypes multibanco = PaymentLinkPaymentMethodTypes._('multibanco');
+static const PaymentLinkPaymentMethodTypes multibanco = PaymentLinkPaymentMethodTypes$multibanco._();
 
-static const PaymentLinkPaymentMethodTypes oxxo = PaymentLinkPaymentMethodTypes._('oxxo');
+static const PaymentLinkPaymentMethodTypes oxxo = PaymentLinkPaymentMethodTypes$oxxo._();
 
-static const PaymentLinkPaymentMethodTypes p24 = PaymentLinkPaymentMethodTypes._('p24');
+static const PaymentLinkPaymentMethodTypes p24 = PaymentLinkPaymentMethodTypes$p24._();
 
-static const PaymentLinkPaymentMethodTypes payByBank = PaymentLinkPaymentMethodTypes._('pay_by_bank');
+static const PaymentLinkPaymentMethodTypes payByBank = PaymentLinkPaymentMethodTypes$payByBank._();
 
-static const PaymentLinkPaymentMethodTypes paynow = PaymentLinkPaymentMethodTypes._('paynow');
+static const PaymentLinkPaymentMethodTypes paynow = PaymentLinkPaymentMethodTypes$paynow._();
 
-static const PaymentLinkPaymentMethodTypes paypal = PaymentLinkPaymentMethodTypes._('paypal');
+static const PaymentLinkPaymentMethodTypes paypal = PaymentLinkPaymentMethodTypes$paypal._();
 
-static const PaymentLinkPaymentMethodTypes payto = PaymentLinkPaymentMethodTypes._('payto');
+static const PaymentLinkPaymentMethodTypes payto = PaymentLinkPaymentMethodTypes$payto._();
 
-static const PaymentLinkPaymentMethodTypes pix = PaymentLinkPaymentMethodTypes._('pix');
+static const PaymentLinkPaymentMethodTypes pix = PaymentLinkPaymentMethodTypes$pix._();
 
-static const PaymentLinkPaymentMethodTypes promptpay = PaymentLinkPaymentMethodTypes._('promptpay');
+static const PaymentLinkPaymentMethodTypes promptpay = PaymentLinkPaymentMethodTypes$promptpay._();
 
-static const PaymentLinkPaymentMethodTypes satispay = PaymentLinkPaymentMethodTypes._('satispay');
+static const PaymentLinkPaymentMethodTypes satispay = PaymentLinkPaymentMethodTypes$satispay._();
 
-static const PaymentLinkPaymentMethodTypes sepaDebit = PaymentLinkPaymentMethodTypes._('sepa_debit');
+static const PaymentLinkPaymentMethodTypes sepaDebit = PaymentLinkPaymentMethodTypes$sepaDebit._();
 
-static const PaymentLinkPaymentMethodTypes sofort = PaymentLinkPaymentMethodTypes._('sofort');
+static const PaymentLinkPaymentMethodTypes sofort = PaymentLinkPaymentMethodTypes$sofort._();
 
-static const PaymentLinkPaymentMethodTypes swish = PaymentLinkPaymentMethodTypes._('swish');
+static const PaymentLinkPaymentMethodTypes swish = PaymentLinkPaymentMethodTypes$swish._();
 
-static const PaymentLinkPaymentMethodTypes twint = PaymentLinkPaymentMethodTypes._('twint');
+static const PaymentLinkPaymentMethodTypes twint = PaymentLinkPaymentMethodTypes$twint._();
 
-static const PaymentLinkPaymentMethodTypes usBankAccount = PaymentLinkPaymentMethodTypes._('us_bank_account');
+static const PaymentLinkPaymentMethodTypes usBankAccount = PaymentLinkPaymentMethodTypes$usBankAccount._();
 
-static const PaymentLinkPaymentMethodTypes wechatPay = PaymentLinkPaymentMethodTypes._('wechat_pay');
+static const PaymentLinkPaymentMethodTypes wechatPay = PaymentLinkPaymentMethodTypes$wechatPay._();
 
-static const PaymentLinkPaymentMethodTypes zip = PaymentLinkPaymentMethodTypes._('zip');
+static const PaymentLinkPaymentMethodTypes zip = PaymentLinkPaymentMethodTypes$zip._();
 
 static const List<PaymentLinkPaymentMethodTypes> values = [affirm, afterpayClearpay, alipay, alma, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cashapp, eps, fpx, giropay, grabpay, ideal, klarna, konbini, link, mbWay, mobilepay, multibanco, oxxo, p24, payByBank, paynow, paypal, payto, pix, promptpay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -173,12 +172,368 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentLinkPaymentMethodTypes$Unknown; } 
+@override String toString() => 'PaymentLinkPaymentMethodTypes($value)';
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$affirm extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$affirm._();
+
+@override String get value => 'affirm';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$affirm;
+
+@override int get hashCode => 'affirm'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$afterpayClearpay extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$afterpayClearpay._();
+
+@override String get value => 'afterpay_clearpay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$afterpayClearpay;
+
+@override int get hashCode => 'afterpay_clearpay'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$alipay extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$alipay._();
+
+@override String get value => 'alipay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$alipay;
+
+@override int get hashCode => 'alipay'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$alma extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$alma._();
+
+@override String get value => 'alma';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$alma;
+
+@override int get hashCode => 'alma'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$auBecsDebit extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$auBecsDebit._();
+
+@override String get value => 'au_becs_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$auBecsDebit;
+
+@override int get hashCode => 'au_becs_debit'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$bacsDebit extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$bacsDebit._();
+
+@override String get value => 'bacs_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$bacsDebit;
+
+@override int get hashCode => 'bacs_debit'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$bancontact extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$bancontact._();
+
+@override String get value => 'bancontact';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$bancontact;
+
+@override int get hashCode => 'bancontact'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$billie extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$billie._();
+
+@override String get value => 'billie';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$billie;
+
+@override int get hashCode => 'billie'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$blik extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$blik._();
+
+@override String get value => 'blik';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$blik;
+
+@override int get hashCode => 'blik'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$boleto extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$boleto._();
+
+@override String get value => 'boleto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$boleto;
+
+@override int get hashCode => 'boleto'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$card extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$card._();
+
+@override String get value => 'card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$card;
+
+@override int get hashCode => 'card'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$cashapp extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$cashapp._();
+
+@override String get value => 'cashapp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$cashapp;
+
+@override int get hashCode => 'cashapp'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$eps extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$eps._();
+
+@override String get value => 'eps';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$eps;
+
+@override int get hashCode => 'eps'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$fpx extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$fpx._();
+
+@override String get value => 'fpx';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$fpx;
+
+@override int get hashCode => 'fpx'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$giropay extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$giropay._();
+
+@override String get value => 'giropay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$giropay;
+
+@override int get hashCode => 'giropay'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$grabpay extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$grabpay._();
+
+@override String get value => 'grabpay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$grabpay;
+
+@override int get hashCode => 'grabpay'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$ideal extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$ideal._();
+
+@override String get value => 'ideal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$ideal;
+
+@override int get hashCode => 'ideal'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$klarna extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$klarna._();
+
+@override String get value => 'klarna';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$klarna;
+
+@override int get hashCode => 'klarna'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$konbini extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$konbini._();
+
+@override String get value => 'konbini';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$konbini;
+
+@override int get hashCode => 'konbini'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$link extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$link._();
+
+@override String get value => 'link';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$link;
+
+@override int get hashCode => 'link'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$mbWay extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$mbWay._();
+
+@override String get value => 'mb_way';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$mbWay;
+
+@override int get hashCode => 'mb_way'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$mobilepay extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$mobilepay._();
+
+@override String get value => 'mobilepay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$mobilepay;
+
+@override int get hashCode => 'mobilepay'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$multibanco extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$multibanco._();
+
+@override String get value => 'multibanco';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$multibanco;
+
+@override int get hashCode => 'multibanco'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$oxxo extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$oxxo._();
+
+@override String get value => 'oxxo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$oxxo;
+
+@override int get hashCode => 'oxxo'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$p24 extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$p24._();
+
+@override String get value => 'p24';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$p24;
+
+@override int get hashCode => 'p24'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$payByBank extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$payByBank._();
+
+@override String get value => 'pay_by_bank';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$payByBank;
+
+@override int get hashCode => 'pay_by_bank'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$paynow extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$paynow._();
+
+@override String get value => 'paynow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$paynow;
+
+@override int get hashCode => 'paynow'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$paypal extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$paypal._();
+
+@override String get value => 'paypal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$paypal;
+
+@override int get hashCode => 'paypal'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$payto extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$payto._();
+
+@override String get value => 'payto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$payto;
+
+@override int get hashCode => 'payto'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$pix extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$pix._();
+
+@override String get value => 'pix';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$pix;
+
+@override int get hashCode => 'pix'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$promptpay extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$promptpay._();
+
+@override String get value => 'promptpay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$promptpay;
+
+@override int get hashCode => 'promptpay'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$satispay extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$satispay._();
+
+@override String get value => 'satispay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$satispay;
+
+@override int get hashCode => 'satispay'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$sepaDebit extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$sepaDebit._();
+
+@override String get value => 'sepa_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$sepaDebit;
+
+@override int get hashCode => 'sepa_debit'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$sofort extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$sofort._();
+
+@override String get value => 'sofort';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$sofort;
+
+@override int get hashCode => 'sofort'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$swish extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$swish._();
+
+@override String get value => 'swish';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$swish;
+
+@override int get hashCode => 'swish'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$twint extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$twint._();
+
+@override String get value => 'twint';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$twint;
+
+@override int get hashCode => 'twint'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$usBankAccount extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$usBankAccount._();
+
+@override String get value => 'us_bank_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$usBankAccount;
+
+@override int get hashCode => 'us_bank_account'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$wechatPay extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$wechatPay._();
+
+@override String get value => 'wechat_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$wechatPay;
+
+@override int get hashCode => 'wechat_pay'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$zip extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$zip._();
+
+@override String get value => 'zip';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinkPaymentMethodTypes$zip;
+
+@override int get hashCode => 'zip'.hashCode;
+
+ }
+@immutable final class PaymentLinkPaymentMethodTypes$Unknown extends PaymentLinkPaymentMethodTypes {const PaymentLinkPaymentMethodTypes$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentLinkPaymentMethodTypes && other.value == value;
+    other is PaymentLinkPaymentMethodTypes$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentLinkPaymentMethodTypes($value)';
 
  }

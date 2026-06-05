@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CustomProperty
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/custom_property/default_value.dart';import 'package:pub_github_rest_3_1/models/custom_property_set_payload/value_type.dart';import 'package:pub_github_rest_3_1/models/custom_property_set_payload/values_editable_by.dart';/// The source type of the property
-@immutable final class CustomPropertySourceType {const CustomPropertySourceType._(this.value);
+sealed class CustomPropertySourceType {const CustomPropertySourceType();
 
 factory CustomPropertySourceType.fromJson(String json) { return switch (json) {
   'organization' => organization,
   'enterprise' => enterprise,
-  _ => CustomPropertySourceType._(json),
+  _ => CustomPropertySourceType$Unknown(json),
 }; }
 
-static const CustomPropertySourceType organization = CustomPropertySourceType._('organization');
+static const CustomPropertySourceType organization = CustomPropertySourceType$organization._();
 
-static const CustomPropertySourceType enterprise = CustomPropertySourceType._('enterprise');
+static const CustomPropertySourceType enterprise = CustomPropertySourceType$enterprise._();
 
 static const List<CustomPropertySourceType> values = [organization, enterprise];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomPropertySourceType$Unknown; } 
+@override String toString() => 'CustomPropertySourceType($value)';
+
+ }
+@immutable final class CustomPropertySourceType$organization extends CustomPropertySourceType {const CustomPropertySourceType$organization._();
+
+@override String get value => 'organization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomPropertySourceType$organization;
+
+@override int get hashCode => 'organization'.hashCode;
+
+ }
+@immutable final class CustomPropertySourceType$enterprise extends CustomPropertySourceType {const CustomPropertySourceType$enterprise._();
+
+@override String get value => 'enterprise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomPropertySourceType$enterprise;
+
+@override int get hashCode => 'enterprise'.hashCode;
+
+ }
+@immutable final class CustomPropertySourceType$Unknown extends CustomPropertySourceType {const CustomPropertySourceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomPropertySourceType && other.value == value;
+    other is CustomPropertySourceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomPropertySourceType($value)';
 
  }
 /// Custom property defined on an organization

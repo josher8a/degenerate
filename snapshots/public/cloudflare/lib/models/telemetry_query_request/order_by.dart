@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TelemetryQueryRequest (inline: Parameters > OrderBy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Set the order of the results
-@immutable final class Order {const Order._(this.value);
+sealed class Order {const Order();
 
 factory Order.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => Order._(json),
+  _ => Order$Unknown(json),
 }; }
 
-static const Order asc = Order._('asc');
+static const Order asc = Order$asc._();
 
-static const Order desc = Order._('desc');
+static const Order desc = Order$desc._();
 
 static const List<Order> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Order$Unknown; } 
+@override String toString() => 'Order($value)';
+
+ }
+@immutable final class Order$asc extends Order {const Order$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Order$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class Order$desc extends Order {const Order$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Order$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class Order$Unknown extends Order {const Order$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Order && other.value == value;
+    other is Order$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Order($value)';
 
  }
 /// Configure the order of the results returned by the query.

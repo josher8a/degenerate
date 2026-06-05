@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetAnnotationsOutagesTopFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetAnnotationsOutagesTopFormat {const RadarGetAnnotationsOutagesTopFormat._(this.value);
+sealed class RadarGetAnnotationsOutagesTopFormat {const RadarGetAnnotationsOutagesTopFormat();
 
 factory RadarGetAnnotationsOutagesTopFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetAnnotationsOutagesTopFormat._(json),
+  _ => RadarGetAnnotationsOutagesTopFormat$Unknown(json),
 }; }
 
-static const RadarGetAnnotationsOutagesTopFormat $json = RadarGetAnnotationsOutagesTopFormat._('JSON');
+static const RadarGetAnnotationsOutagesTopFormat $json = RadarGetAnnotationsOutagesTopFormat$$json._();
 
-static const RadarGetAnnotationsOutagesTopFormat csv = RadarGetAnnotationsOutagesTopFormat._('CSV');
+static const RadarGetAnnotationsOutagesTopFormat csv = RadarGetAnnotationsOutagesTopFormat$csv._();
 
 static const List<RadarGetAnnotationsOutagesTopFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAnnotationsOutagesTopFormat$Unknown; } 
+@override String toString() => 'RadarGetAnnotationsOutagesTopFormat($value)';
+
+ }
+@immutable final class RadarGetAnnotationsOutagesTopFormat$$json extends RadarGetAnnotationsOutagesTopFormat {const RadarGetAnnotationsOutagesTopFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAnnotationsOutagesTopFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetAnnotationsOutagesTopFormat$csv extends RadarGetAnnotationsOutagesTopFormat {const RadarGetAnnotationsOutagesTopFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAnnotationsOutagesTopFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetAnnotationsOutagesTopFormat$Unknown extends RadarGetAnnotationsOutagesTopFormat {const RadarGetAnnotationsOutagesTopFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAnnotationsOutagesTopFormat && other.value == value;
+    other is RadarGetAnnotationsOutagesTopFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAnnotationsOutagesTopFormat($value)';
 
  }

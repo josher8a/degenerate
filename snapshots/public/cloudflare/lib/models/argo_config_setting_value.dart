@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ArgoConfigSettingValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the enablement value of Argo Smart Routing.
-@immutable final class ArgoConfigSettingValue {const ArgoConfigSettingValue._(this.value);
+sealed class ArgoConfigSettingValue {const ArgoConfigSettingValue();
 
 factory ArgoConfigSettingValue.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => ArgoConfigSettingValue._(json),
+  _ => ArgoConfigSettingValue$Unknown(json),
 }; }
 
-static const ArgoConfigSettingValue $on = ArgoConfigSettingValue._('on');
+static const ArgoConfigSettingValue $on = ArgoConfigSettingValue$$on._();
 
-static const ArgoConfigSettingValue off = ArgoConfigSettingValue._('off');
+static const ArgoConfigSettingValue off = ArgoConfigSettingValue$off._();
 
 static const List<ArgoConfigSettingValue> values = [$on, off];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ArgoConfigSettingValue$Unknown; } 
+@override String toString() => 'ArgoConfigSettingValue($value)';
+
+ }
+@immutable final class ArgoConfigSettingValue$$on extends ArgoConfigSettingValue {const ArgoConfigSettingValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ArgoConfigSettingValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ArgoConfigSettingValue$off extends ArgoConfigSettingValue {const ArgoConfigSettingValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ArgoConfigSettingValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ArgoConfigSettingValue$Unknown extends ArgoConfigSettingValue {const ArgoConfigSettingValue$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ArgoConfigSettingValue && other.value == value;
+    other is ArgoConfigSettingValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ArgoConfigSettingValue($value)';
 
  }

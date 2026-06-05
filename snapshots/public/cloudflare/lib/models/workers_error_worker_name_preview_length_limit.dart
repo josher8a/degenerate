@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WorkersErrorWorkerNamePreviewLengthLimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker name is too long to be used with previews enabled.
-@immutable final class WorkersErrorWorkerNamePreviewLengthLimitCode {const WorkersErrorWorkerNamePreviewLengthLimitCode._(this.value);
+sealed class WorkersErrorWorkerNamePreviewLengthLimitCode {const WorkersErrorWorkerNamePreviewLengthLimitCode();
 
 factory WorkersErrorWorkerNamePreviewLengthLimitCode.fromJson(int json) { return switch (json) {
   100315 => $100315,
-  _ => WorkersErrorWorkerNamePreviewLengthLimitCode._(json),
+  _ => WorkersErrorWorkerNamePreviewLengthLimitCode$Unknown(json),
 }; }
 
-static const WorkersErrorWorkerNamePreviewLengthLimitCode $100315 = WorkersErrorWorkerNamePreviewLengthLimitCode._(100315);
+static const WorkersErrorWorkerNamePreviewLengthLimitCode $100315 = WorkersErrorWorkerNamePreviewLengthLimitCode$$100315._();
 
 static const List<WorkersErrorWorkerNamePreviewLengthLimitCode> values = [$100315];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersErrorWorkerNamePreviewLengthLimitCode$Unknown; } 
+@override String toString() => 'WorkersErrorWorkerNamePreviewLengthLimitCode($value)';
+
+ }
+@immutable final class WorkersErrorWorkerNamePreviewLengthLimitCode$$100315 extends WorkersErrorWorkerNamePreviewLengthLimitCode {const WorkersErrorWorkerNamePreviewLengthLimitCode$$100315._();
+
+@override int get value => 100315;
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersErrorWorkerNamePreviewLengthLimitCode$$100315;
+
+@override int get hashCode => 100315.hashCode;
+
+ }
+@immutable final class WorkersErrorWorkerNamePreviewLengthLimitCode$Unknown extends WorkersErrorWorkerNamePreviewLengthLimitCode {const WorkersErrorWorkerNamePreviewLengthLimitCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersErrorWorkerNamePreviewLengthLimitCode && other.value == value;
+    other is WorkersErrorWorkerNamePreviewLengthLimitCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersErrorWorkerNamePreviewLengthLimitCode($value)';
 
  }
 @immutable final class WorkersErrorWorkerNamePreviewLengthLimit {const WorkersErrorWorkerNamePreviewLengthLimit({required this.code, required this.message, });

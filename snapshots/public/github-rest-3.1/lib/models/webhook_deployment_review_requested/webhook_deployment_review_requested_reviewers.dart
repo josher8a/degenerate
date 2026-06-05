@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookDeploymentReviewRequested (inline: Reviewers)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_requested/webhook_deployment_review_requested_reviewers_reviewer.dart';@immutable final class ReviewersType {const ReviewersType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_requested/webhook_deployment_review_requested_reviewers_reviewer.dart';sealed class ReviewersType {const ReviewersType();
 
 factory ReviewersType.fromJson(String json) { return switch (json) {
   'User' => user,
   'Team' => team,
-  _ => ReviewersType._(json),
+  _ => ReviewersType$Unknown(json),
 }; }
 
-static const ReviewersType user = ReviewersType._('User');
+static const ReviewersType user = ReviewersType$user._();
 
-static const ReviewersType team = ReviewersType._('Team');
+static const ReviewersType team = ReviewersType$team._();
 
 static const List<ReviewersType> values = [user, team];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ReviewersType$Unknown; } 
+@override String toString() => 'ReviewersType($value)';
+
+ }
+@immutable final class ReviewersType$user extends ReviewersType {const ReviewersType$user._();
+
+@override String get value => 'User';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReviewersType$user;
+
+@override int get hashCode => 'User'.hashCode;
+
+ }
+@immutable final class ReviewersType$team extends ReviewersType {const ReviewersType$team._();
+
+@override String get value => 'Team';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReviewersType$team;
+
+@override int get hashCode => 'Team'.hashCode;
+
+ }
+@immutable final class ReviewersType$Unknown extends ReviewersType {const ReviewersType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ReviewersType && other.value == value;
+    other is ReviewersType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ReviewersType($value)';
 
  }
 @immutable final class WebhookDeploymentReviewRequestedReviewers {const WebhookDeploymentReviewRequestedReviewers({this.reviewer, this.type, });

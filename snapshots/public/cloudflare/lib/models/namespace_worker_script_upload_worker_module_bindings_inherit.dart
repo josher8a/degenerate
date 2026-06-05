@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/NamespaceWorkerScriptUploadWorkerModuleBindingsInherit
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NamespaceWorkerScriptUploadWorkerModuleBindingsInherit {const NamespaceWorkerScriptUploadWorkerModuleBindingsInherit._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class NamespaceWorkerScriptUploadWorkerModuleBindingsInherit {const NamespaceWorkerScriptUploadWorkerModuleBindingsInherit();
 
 factory NamespaceWorkerScriptUploadWorkerModuleBindingsInherit.fromJson(String json) { return switch (json) {
   'strict' => strict,
-  _ => NamespaceWorkerScriptUploadWorkerModuleBindingsInherit._(json),
+  _ => NamespaceWorkerScriptUploadWorkerModuleBindingsInherit$Unknown(json),
 }; }
 
-static const NamespaceWorkerScriptUploadWorkerModuleBindingsInherit strict = NamespaceWorkerScriptUploadWorkerModuleBindingsInherit._('strict');
+static const NamespaceWorkerScriptUploadWorkerModuleBindingsInherit strict = NamespaceWorkerScriptUploadWorkerModuleBindingsInherit$strict._();
 
 static const List<NamespaceWorkerScriptUploadWorkerModuleBindingsInherit> values = [strict];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is NamespaceWorkerScriptUploadWorkerModuleBindingsInherit$Unknown; } 
+@override String toString() => 'NamespaceWorkerScriptUploadWorkerModuleBindingsInherit($value)';
+
+ }
+@immutable final class NamespaceWorkerScriptUploadWorkerModuleBindingsInherit$strict extends NamespaceWorkerScriptUploadWorkerModuleBindingsInherit {const NamespaceWorkerScriptUploadWorkerModuleBindingsInherit$strict._();
+
+@override String get value => 'strict';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NamespaceWorkerScriptUploadWorkerModuleBindingsInherit$strict;
+
+@override int get hashCode => 'strict'.hashCode;
+
+ }
+@immutable final class NamespaceWorkerScriptUploadWorkerModuleBindingsInherit$Unknown extends NamespaceWorkerScriptUploadWorkerModuleBindingsInherit {const NamespaceWorkerScriptUploadWorkerModuleBindingsInherit$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is NamespaceWorkerScriptUploadWorkerModuleBindingsInherit && other.value == value;
+    other is NamespaceWorkerScriptUploadWorkerModuleBindingsInherit$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'NamespaceWorkerScriptUploadWorkerModuleBindingsInherit($value)';
 
  }

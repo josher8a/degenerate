@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PagesDomain
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_domain/validation_data.dart';import 'package:pub_cloudflare/models/pages_domain/verification_data.dart';import 'package:pub_cloudflare/models/pages_domain_name.dart';@immutable final class PagesDomainCertificateAuthority {const PagesDomainCertificateAuthority._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_domain/validation_data.dart';import 'package:pub_cloudflare/models/pages_domain/verification_data.dart';import 'package:pub_cloudflare/models/pages_domain_name.dart';sealed class PagesDomainCertificateAuthority {const PagesDomainCertificateAuthority();
 
 factory PagesDomainCertificateAuthority.fromJson(String json) { return switch (json) {
   'google' => google,
   'lets_encrypt' => letsEncrypt,
-  _ => PagesDomainCertificateAuthority._(json),
+  _ => PagesDomainCertificateAuthority$Unknown(json),
 }; }
 
-static const PagesDomainCertificateAuthority google = PagesDomainCertificateAuthority._('google');
+static const PagesDomainCertificateAuthority google = PagesDomainCertificateAuthority$google._();
 
-static const PagesDomainCertificateAuthority letsEncrypt = PagesDomainCertificateAuthority._('lets_encrypt');
+static const PagesDomainCertificateAuthority letsEncrypt = PagesDomainCertificateAuthority$letsEncrypt._();
 
 static const List<PagesDomainCertificateAuthority> values = [google, letsEncrypt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,16 +24,39 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PagesDomainCertificateAuthority && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PagesDomainCertificateAuthority$Unknown; } 
 @override String toString() => 'PagesDomainCertificateAuthority($value)';
 
  }
-@immutable final class PagesDomainStatus {const PagesDomainStatus._(this.value);
+@immutable final class PagesDomainCertificateAuthority$google extends PagesDomainCertificateAuthority {const PagesDomainCertificateAuthority$google._();
+
+@override String get value => 'google';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDomainCertificateAuthority$google;
+
+@override int get hashCode => 'google'.hashCode;
+
+ }
+@immutable final class PagesDomainCertificateAuthority$letsEncrypt extends PagesDomainCertificateAuthority {const PagesDomainCertificateAuthority$letsEncrypt._();
+
+@override String get value => 'lets_encrypt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDomainCertificateAuthority$letsEncrypt;
+
+@override int get hashCode => 'lets_encrypt'.hashCode;
+
+ }
+@immutable final class PagesDomainCertificateAuthority$Unknown extends PagesDomainCertificateAuthority {const PagesDomainCertificateAuthority$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PagesDomainCertificateAuthority$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class PagesDomainStatus {const PagesDomainStatus();
 
 factory PagesDomainStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -43,25 +65,24 @@ factory PagesDomainStatus.fromJson(String json) { return switch (json) {
   'deactivated' => deactivated,
   'blocked' => blocked,
   'error' => error,
-  _ => PagesDomainStatus._(json),
+  _ => PagesDomainStatus$Unknown(json),
 }; }
 
-static const PagesDomainStatus initializing = PagesDomainStatus._('initializing');
+static const PagesDomainStatus initializing = PagesDomainStatus$initializing._();
 
-static const PagesDomainStatus pending = PagesDomainStatus._('pending');
+static const PagesDomainStatus pending = PagesDomainStatus$pending._();
 
-static const PagesDomainStatus active = PagesDomainStatus._('active');
+static const PagesDomainStatus active = PagesDomainStatus$active._();
 
-static const PagesDomainStatus deactivated = PagesDomainStatus._('deactivated');
+static const PagesDomainStatus deactivated = PagesDomainStatus$deactivated._();
 
-static const PagesDomainStatus blocked = PagesDomainStatus._('blocked');
+static const PagesDomainStatus blocked = PagesDomainStatus$blocked._();
 
-static const PagesDomainStatus error = PagesDomainStatus._('error');
+static const PagesDomainStatus error = PagesDomainStatus$error._();
 
 static const List<PagesDomainStatus> values = [initializing, pending, active, deactivated, blocked, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -74,13 +95,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PagesDomainStatus$Unknown; } 
+@override String toString() => 'PagesDomainStatus($value)';
+
+ }
+@immutable final class PagesDomainStatus$initializing extends PagesDomainStatus {const PagesDomainStatus$initializing._();
+
+@override String get value => 'initializing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDomainStatus$initializing;
+
+@override int get hashCode => 'initializing'.hashCode;
+
+ }
+@immutable final class PagesDomainStatus$pending extends PagesDomainStatus {const PagesDomainStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDomainStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class PagesDomainStatus$active extends PagesDomainStatus {const PagesDomainStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDomainStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class PagesDomainStatus$deactivated extends PagesDomainStatus {const PagesDomainStatus$deactivated._();
+
+@override String get value => 'deactivated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDomainStatus$deactivated;
+
+@override int get hashCode => 'deactivated'.hashCode;
+
+ }
+@immutable final class PagesDomainStatus$blocked extends PagesDomainStatus {const PagesDomainStatus$blocked._();
+
+@override String get value => 'blocked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDomainStatus$blocked;
+
+@override int get hashCode => 'blocked'.hashCode;
+
+ }
+@immutable final class PagesDomainStatus$error extends PagesDomainStatus {const PagesDomainStatus$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDomainStatus$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class PagesDomainStatus$Unknown extends PagesDomainStatus {const PagesDomainStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PagesDomainStatus && other.value == value;
+    other is PagesDomainStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PagesDomainStatus($value)';
 
  }
 @immutable final class PagesDomain {const PagesDomain({required this.certificateAuthority, required this.createdOn, required this.domainId, required this.id, required this.name, required this.status, required this.validationData, required this.verificationData, required this.zoneTag, });

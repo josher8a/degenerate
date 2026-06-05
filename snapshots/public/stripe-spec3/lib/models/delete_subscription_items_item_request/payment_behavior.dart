@@ -12,28 +12,27 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Only applies to 
 /// `pending_if_incomplete` is only used with updates and cannot be passed when creating a Subscription.
 /// 
 /// Subscriptions with `collection_method=send_invoice` are automatically activated regardless of the first Invoice status.
-@immutable final class PaymentBehavior {const PaymentBehavior._(this.value);
+sealed class PaymentBehavior {const PaymentBehavior();
 
 factory PaymentBehavior.fromJson(String json) { return switch (json) {
   'allow_incomplete' => allowIncomplete,
   'default_incomplete' => defaultIncomplete,
   'error_if_incomplete' => errorIfIncomplete,
   'pending_if_incomplete' => pendingIfIncomplete,
-  _ => PaymentBehavior._(json),
+  _ => PaymentBehavior$Unknown(json),
 }; }
 
-static const PaymentBehavior allowIncomplete = PaymentBehavior._('allow_incomplete');
+static const PaymentBehavior allowIncomplete = PaymentBehavior$allowIncomplete._();
 
-static const PaymentBehavior defaultIncomplete = PaymentBehavior._('default_incomplete');
+static const PaymentBehavior defaultIncomplete = PaymentBehavior$defaultIncomplete._();
 
-static const PaymentBehavior errorIfIncomplete = PaymentBehavior._('error_if_incomplete');
+static const PaymentBehavior errorIfIncomplete = PaymentBehavior$errorIfIncomplete._();
 
-static const PaymentBehavior pendingIfIncomplete = PaymentBehavior._('pending_if_incomplete');
+static const PaymentBehavior pendingIfIncomplete = PaymentBehavior$pendingIfIncomplete._();
 
 static const List<PaymentBehavior> values = [allowIncomplete, defaultIncomplete, errorIfIncomplete, pendingIfIncomplete];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -44,12 +43,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentBehavior$Unknown; } 
+@override String toString() => 'PaymentBehavior($value)';
+
+ }
+@immutable final class PaymentBehavior$allowIncomplete extends PaymentBehavior {const PaymentBehavior$allowIncomplete._();
+
+@override String get value => 'allow_incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentBehavior$allowIncomplete;
+
+@override int get hashCode => 'allow_incomplete'.hashCode;
+
+ }
+@immutable final class PaymentBehavior$defaultIncomplete extends PaymentBehavior {const PaymentBehavior$defaultIncomplete._();
+
+@override String get value => 'default_incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentBehavior$defaultIncomplete;
+
+@override int get hashCode => 'default_incomplete'.hashCode;
+
+ }
+@immutable final class PaymentBehavior$errorIfIncomplete extends PaymentBehavior {const PaymentBehavior$errorIfIncomplete._();
+
+@override String get value => 'error_if_incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentBehavior$errorIfIncomplete;
+
+@override int get hashCode => 'error_if_incomplete'.hashCode;
+
+ }
+@immutable final class PaymentBehavior$pendingIfIncomplete extends PaymentBehavior {const PaymentBehavior$pendingIfIncomplete._();
+
+@override String get value => 'pending_if_incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentBehavior$pendingIfIncomplete;
+
+@override int get hashCode => 'pending_if_incomplete'.hashCode;
+
+ }
+@immutable final class PaymentBehavior$Unknown extends PaymentBehavior {const PaymentBehavior$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentBehavior && other.value == value;
+    other is PaymentBehavior$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentBehavior($value)';
 
  }

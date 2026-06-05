@@ -2,28 +2,27 @@
 // Source: #/components/schemas/ResourceSharingShareRecipientObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_sharing_account_id.dart';import 'package:pub_cloudflare/models/resource_sharing_created.dart';import 'package:pub_cloudflare/models/resource_sharing_modified.dart';import 'package:pub_cloudflare/models/resource_sharing_recipient_id.dart';import 'package:pub_cloudflare/models/resource_sharing_share_recipient_resource_object.dart';/// Share Recipient association status.
-@immutable final class ResourceSharingRecipientAssociationStatus {const ResourceSharingRecipientAssociationStatus._(this.value);
+sealed class ResourceSharingRecipientAssociationStatus {const ResourceSharingRecipientAssociationStatus();
 
 factory ResourceSharingRecipientAssociationStatus.fromJson(String json) { return switch (json) {
   'associating' => associating,
   'associated' => associated,
   'disassociating' => disassociating,
   'disassociated' => disassociated,
-  _ => ResourceSharingRecipientAssociationStatus._(json),
+  _ => ResourceSharingRecipientAssociationStatus$Unknown(json),
 }; }
 
-static const ResourceSharingRecipientAssociationStatus associating = ResourceSharingRecipientAssociationStatus._('associating');
+static const ResourceSharingRecipientAssociationStatus associating = ResourceSharingRecipientAssociationStatus$associating._();
 
-static const ResourceSharingRecipientAssociationStatus associated = ResourceSharingRecipientAssociationStatus._('associated');
+static const ResourceSharingRecipientAssociationStatus associated = ResourceSharingRecipientAssociationStatus$associated._();
 
-static const ResourceSharingRecipientAssociationStatus disassociating = ResourceSharingRecipientAssociationStatus._('disassociating');
+static const ResourceSharingRecipientAssociationStatus disassociating = ResourceSharingRecipientAssociationStatus$disassociating._();
 
-static const ResourceSharingRecipientAssociationStatus disassociated = ResourceSharingRecipientAssociationStatus._('disassociated');
+static const ResourceSharingRecipientAssociationStatus disassociated = ResourceSharingRecipientAssociationStatus$disassociated._();
 
 static const List<ResourceSharingRecipientAssociationStatus> values = [associating, associated, disassociating, disassociated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ResourceSharingRecipientAssociationStatus$Unknown; } 
+@override String toString() => 'ResourceSharingRecipientAssociationStatus($value)';
+
+ }
+@immutable final class ResourceSharingRecipientAssociationStatus$associating extends ResourceSharingRecipientAssociationStatus {const ResourceSharingRecipientAssociationStatus$associating._();
+
+@override String get value => 'associating';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceSharingRecipientAssociationStatus$associating;
+
+@override int get hashCode => 'associating'.hashCode;
+
+ }
+@immutable final class ResourceSharingRecipientAssociationStatus$associated extends ResourceSharingRecipientAssociationStatus {const ResourceSharingRecipientAssociationStatus$associated._();
+
+@override String get value => 'associated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceSharingRecipientAssociationStatus$associated;
+
+@override int get hashCode => 'associated'.hashCode;
+
+ }
+@immutable final class ResourceSharingRecipientAssociationStatus$disassociating extends ResourceSharingRecipientAssociationStatus {const ResourceSharingRecipientAssociationStatus$disassociating._();
+
+@override String get value => 'disassociating';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceSharingRecipientAssociationStatus$disassociating;
+
+@override int get hashCode => 'disassociating'.hashCode;
+
+ }
+@immutable final class ResourceSharingRecipientAssociationStatus$disassociated extends ResourceSharingRecipientAssociationStatus {const ResourceSharingRecipientAssociationStatus$disassociated._();
+
+@override String get value => 'disassociated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceSharingRecipientAssociationStatus$disassociated;
+
+@override int get hashCode => 'disassociated'.hashCode;
+
+ }
+@immutable final class ResourceSharingRecipientAssociationStatus$Unknown extends ResourceSharingRecipientAssociationStatus {const ResourceSharingRecipientAssociationStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ResourceSharingRecipientAssociationStatus && other.value == value;
+    other is ResourceSharingRecipientAssociationStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ResourceSharingRecipientAssociationStatus($value)';
 
  }
 @immutable final class ResourceSharingShareRecipientObject {const ResourceSharingShareRecipientObject({required this.accountId, required this.associationStatus, required this.created, required this.id, required this.modified, this.resources, });

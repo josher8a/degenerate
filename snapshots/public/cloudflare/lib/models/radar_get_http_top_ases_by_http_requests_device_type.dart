@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTopAsesByHttpRequestsDeviceType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByHttpRequestsDeviceType {const RadarGetHttpTopAsesByHttpRequestsDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopAsesByHttpRequestsDeviceType {const RadarGetHttpTopAsesByHttpRequestsDeviceType();
 
 factory RadarGetHttpTopAsesByHttpRequestsDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
   'OTHER' => $other,
-  _ => RadarGetHttpTopAsesByHttpRequestsDeviceType._(json),
+  _ => RadarGetHttpTopAsesByHttpRequestsDeviceType$Unknown(json),
 }; }
 
-static const RadarGetHttpTopAsesByHttpRequestsDeviceType desktop = RadarGetHttpTopAsesByHttpRequestsDeviceType._('DESKTOP');
+static const RadarGetHttpTopAsesByHttpRequestsDeviceType desktop = RadarGetHttpTopAsesByHttpRequestsDeviceType$desktop._();
 
-static const RadarGetHttpTopAsesByHttpRequestsDeviceType mobile = RadarGetHttpTopAsesByHttpRequestsDeviceType._('MOBILE');
+static const RadarGetHttpTopAsesByHttpRequestsDeviceType mobile = RadarGetHttpTopAsesByHttpRequestsDeviceType$mobile._();
 
-static const RadarGetHttpTopAsesByHttpRequestsDeviceType $other = RadarGetHttpTopAsesByHttpRequestsDeviceType._('OTHER');
+static const RadarGetHttpTopAsesByHttpRequestsDeviceType $other = RadarGetHttpTopAsesByHttpRequestsDeviceType$$other._();
 
 static const List<RadarGetHttpTopAsesByHttpRequestsDeviceType> values = [desktop, mobile, $other];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopAsesByHttpRequestsDeviceType$Unknown; } 
+@override String toString() => 'RadarGetHttpTopAsesByHttpRequestsDeviceType($value)';
+
+ }
+@immutable final class RadarGetHttpTopAsesByHttpRequestsDeviceType$desktop extends RadarGetHttpTopAsesByHttpRequestsDeviceType {const RadarGetHttpTopAsesByHttpRequestsDeviceType$desktop._();
+
+@override String get value => 'DESKTOP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByHttpRequestsDeviceType$desktop;
+
+@override int get hashCode => 'DESKTOP'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByHttpRequestsDeviceType$mobile extends RadarGetHttpTopAsesByHttpRequestsDeviceType {const RadarGetHttpTopAsesByHttpRequestsDeviceType$mobile._();
+
+@override String get value => 'MOBILE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByHttpRequestsDeviceType$mobile;
+
+@override int get hashCode => 'MOBILE'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByHttpRequestsDeviceType$$other extends RadarGetHttpTopAsesByHttpRequestsDeviceType {const RadarGetHttpTopAsesByHttpRequestsDeviceType$$other._();
+
+@override String get value => 'OTHER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByHttpRequestsDeviceType$$other;
+
+@override int get hashCode => 'OTHER'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByHttpRequestsDeviceType$Unknown extends RadarGetHttpTopAsesByHttpRequestsDeviceType {const RadarGetHttpTopAsesByHttpRequestsDeviceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopAsesByHttpRequestsDeviceType && other.value == value;
+    other is RadarGetHttpTopAsesByHttpRequestsDeviceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopAsesByHttpRequestsDeviceType($value)';
 
  }

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookCodeScanningAlertUpdatedAssignment
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert.dart';@immutable final class WebhookCodeScanningAlertUpdatedAssignmentAction {const WebhookCodeScanningAlertUpdatedAssignmentAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert.dart';sealed class WebhookCodeScanningAlertUpdatedAssignmentAction {const WebhookCodeScanningAlertUpdatedAssignmentAction();
 
 factory WebhookCodeScanningAlertUpdatedAssignmentAction.fromJson(String json) { return switch (json) {
   'updated_assignment' => updatedAssignment,
-  _ => WebhookCodeScanningAlertUpdatedAssignmentAction._(json),
+  _ => WebhookCodeScanningAlertUpdatedAssignmentAction$Unknown(json),
 }; }
 
-static const WebhookCodeScanningAlertUpdatedAssignmentAction updatedAssignment = WebhookCodeScanningAlertUpdatedAssignmentAction._('updated_assignment');
+static const WebhookCodeScanningAlertUpdatedAssignmentAction updatedAssignment = WebhookCodeScanningAlertUpdatedAssignmentAction$updatedAssignment._();
 
 static const List<WebhookCodeScanningAlertUpdatedAssignmentAction> values = [updatedAssignment];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookCodeScanningAlertUpdatedAssignmentAction$Unknown; } 
+@override String toString() => 'WebhookCodeScanningAlertUpdatedAssignmentAction($value)';
+
+ }
+@immutable final class WebhookCodeScanningAlertUpdatedAssignmentAction$updatedAssignment extends WebhookCodeScanningAlertUpdatedAssignmentAction {const WebhookCodeScanningAlertUpdatedAssignmentAction$updatedAssignment._();
+
+@override String get value => 'updated_assignment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCodeScanningAlertUpdatedAssignmentAction$updatedAssignment;
+
+@override int get hashCode => 'updated_assignment'.hashCode;
+
+ }
+@immutable final class WebhookCodeScanningAlertUpdatedAssignmentAction$Unknown extends WebhookCodeScanningAlertUpdatedAssignmentAction {const WebhookCodeScanningAlertUpdatedAssignmentAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookCodeScanningAlertUpdatedAssignmentAction && other.value == value;
+    other is WebhookCodeScanningAlertUpdatedAssignmentAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookCodeScanningAlertUpdatedAssignmentAction($value)';
 
  }
 @immutable final class WebhookCodeScanningAlertUpdatedAssignment {const WebhookCodeScanningAlertUpdatedAssignment({required this.action, required this.alert, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

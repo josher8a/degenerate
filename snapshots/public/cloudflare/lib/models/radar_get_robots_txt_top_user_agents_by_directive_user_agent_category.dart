@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by user agent category.
-@immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory {const RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory._(this.value);
+sealed class RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory {const RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory();
 
 factory RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory.fromJson(String json) { return switch (json) {
   'AI' => ai,
-  _ => RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory._(json),
+  _ => RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory$Unknown(json),
 }; }
 
-static const RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory ai = RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory._('AI');
+static const RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory ai = RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory$ai._();
 
 static const List<RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory> values = [ai];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory$Unknown; } 
+@override String toString() => 'RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory($value)';
+
+ }
+@immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory$ai extends RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory {const RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory$ai._();
+
+@override String get value => 'AI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory$ai;
+
+@override int get hashCode => 'AI'.hashCode;
+
+ }
+@immutable final class RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory$Unknown extends RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory {const RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory && other.value == value;
+    other is RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetRobotsTxtTopUserAgentsByDirectiveUserAgentCategory($value)';
 
  }

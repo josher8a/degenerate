@@ -2,19 +2,18 @@
 // Source: #/components/schemas/AccountSession
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/connect_embedded_account_session_create_components.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class AccountSessionObject {const AccountSessionObject._(this.value);
+sealed class AccountSessionObject {const AccountSessionObject();
 
 factory AccountSessionObject.fromJson(String json) { return switch (json) {
   'account_session' => accountSession,
-  _ => AccountSessionObject._(json),
+  _ => AccountSessionObject$Unknown(json),
 }; }
 
-static const AccountSessionObject accountSession = AccountSessionObject._('account_session');
+static const AccountSessionObject accountSession = AccountSessionObject$accountSession._();
 
 static const List<AccountSessionObject> values = [accountSession];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountSessionObject$Unknown; } 
+@override String toString() => 'AccountSessionObject($value)';
+
+ }
+@immutable final class AccountSessionObject$accountSession extends AccountSessionObject {const AccountSessionObject$accountSession._();
+
+@override String get value => 'account_session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountSessionObject$accountSession;
+
+@override int get hashCode => 'account_session'.hashCode;
+
+ }
+@immutable final class AccountSessionObject$Unknown extends AccountSessionObject {const AccountSessionObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountSessionObject && other.value == value;
+    other is AccountSessionObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountSessionObject($value)';
 
  }
 /// An AccountSession allows a Connect platform to grant access to a connected account in Connect embedded components.

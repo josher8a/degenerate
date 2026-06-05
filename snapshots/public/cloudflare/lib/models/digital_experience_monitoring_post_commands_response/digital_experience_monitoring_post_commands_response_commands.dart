@@ -2,28 +2,27 @@
 // Source: #/components/schemas/DigitalExperienceMonitoringPostCommandsResponse (inline: Commands)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current status of the command
-@immutable final class CommandsStatus {const CommandsStatus._(this.value);
+sealed class CommandsStatus {const CommandsStatus();
 
 factory CommandsStatus.fromJson(String json) { return switch (json) {
   'PENDING_EXEC' => pendingExec,
   'PENDING_UPLOAD' => pendingUpload,
   'SUCCESS' => success,
   'FAILED' => failed,
-  _ => CommandsStatus._(json),
+  _ => CommandsStatus$Unknown(json),
 }; }
 
-static const CommandsStatus pendingExec = CommandsStatus._('PENDING_EXEC');
+static const CommandsStatus pendingExec = CommandsStatus$pendingExec._();
 
-static const CommandsStatus pendingUpload = CommandsStatus._('PENDING_UPLOAD');
+static const CommandsStatus pendingUpload = CommandsStatus$pendingUpload._();
 
-static const CommandsStatus success = CommandsStatus._('SUCCESS');
+static const CommandsStatus success = CommandsStatus$success._();
 
-static const CommandsStatus failed = CommandsStatus._('FAILED');
+static const CommandsStatus failed = CommandsStatus$failed._();
 
 static const List<CommandsStatus> values = [pendingExec, pendingUpload, success, failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CommandsStatus$Unknown; } 
+@override String toString() => 'CommandsStatus($value)';
+
+ }
+@immutable final class CommandsStatus$pendingExec extends CommandsStatus {const CommandsStatus$pendingExec._();
+
+@override String get value => 'PENDING_EXEC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CommandsStatus$pendingExec;
+
+@override int get hashCode => 'PENDING_EXEC'.hashCode;
+
+ }
+@immutable final class CommandsStatus$pendingUpload extends CommandsStatus {const CommandsStatus$pendingUpload._();
+
+@override String get value => 'PENDING_UPLOAD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CommandsStatus$pendingUpload;
+
+@override int get hashCode => 'PENDING_UPLOAD'.hashCode;
+
+ }
+@immutable final class CommandsStatus$success extends CommandsStatus {const CommandsStatus$success._();
+
+@override String get value => 'SUCCESS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CommandsStatus$success;
+
+@override int get hashCode => 'SUCCESS'.hashCode;
+
+ }
+@immutable final class CommandsStatus$failed extends CommandsStatus {const CommandsStatus$failed._();
+
+@override String get value => 'FAILED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CommandsStatus$failed;
+
+@override int get hashCode => 'FAILED'.hashCode;
+
+ }
+@immutable final class CommandsStatus$Unknown extends CommandsStatus {const CommandsStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CommandsStatus && other.value == value;
+    other is CommandsStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CommandsStatus($value)';
 
  }
 @immutable final class DigitalExperienceMonitoringPostCommandsResponseCommands {const DigitalExperienceMonitoringPostCommandsResponseCommands({this.args, this.deviceId, this.id, this.registrationId, this.status, this.type, });

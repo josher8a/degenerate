@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ActivityListReposStarredByAuthenticatedUserDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivityListReposStarredByAuthenticatedUserDirection {const ActivityListReposStarredByAuthenticatedUserDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ActivityListReposStarredByAuthenticatedUserDirection {const ActivityListReposStarredByAuthenticatedUserDirection();
 
 factory ActivityListReposStarredByAuthenticatedUserDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => ActivityListReposStarredByAuthenticatedUserDirection._(json),
+  _ => ActivityListReposStarredByAuthenticatedUserDirection$Unknown(json),
 }; }
 
-static const ActivityListReposStarredByAuthenticatedUserDirection asc = ActivityListReposStarredByAuthenticatedUserDirection._('asc');
+static const ActivityListReposStarredByAuthenticatedUserDirection asc = ActivityListReposStarredByAuthenticatedUserDirection$asc._();
 
-static const ActivityListReposStarredByAuthenticatedUserDirection desc = ActivityListReposStarredByAuthenticatedUserDirection._('desc');
+static const ActivityListReposStarredByAuthenticatedUserDirection desc = ActivityListReposStarredByAuthenticatedUserDirection$desc._();
 
 static const List<ActivityListReposStarredByAuthenticatedUserDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ActivityListReposStarredByAuthenticatedUserDirection$Unknown; } 
+@override String toString() => 'ActivityListReposStarredByAuthenticatedUserDirection($value)';
+
+ }
+@immutable final class ActivityListReposStarredByAuthenticatedUserDirection$asc extends ActivityListReposStarredByAuthenticatedUserDirection {const ActivityListReposStarredByAuthenticatedUserDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActivityListReposStarredByAuthenticatedUserDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class ActivityListReposStarredByAuthenticatedUserDirection$desc extends ActivityListReposStarredByAuthenticatedUserDirection {const ActivityListReposStarredByAuthenticatedUserDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActivityListReposStarredByAuthenticatedUserDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class ActivityListReposStarredByAuthenticatedUserDirection$Unknown extends ActivityListReposStarredByAuthenticatedUserDirection {const ActivityListReposStarredByAuthenticatedUserDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ActivityListReposStarredByAuthenticatedUserDirection && other.value == value;
+    other is ActivityListReposStarredByAuthenticatedUserDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ActivityListReposStarredByAuthenticatedUserDirection($value)';
 
  }

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/IamOrganization
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';/// Whether the user is a member of the organization or has an invitation pending.
-@immutable final class IamComponentsSchemasStatus {const IamComponentsSchemasStatus._(this.value);
+sealed class IamComponentsSchemasStatus {const IamComponentsSchemasStatus();
 
 factory IamComponentsSchemasStatus.fromJson(String json) { return switch (json) {
   'member' => member,
   'invited' => invited,
-  _ => IamComponentsSchemasStatus._(json),
+  _ => IamComponentsSchemasStatus$Unknown(json),
 }; }
 
-static const IamComponentsSchemasStatus member = IamComponentsSchemasStatus._('member');
+static const IamComponentsSchemasStatus member = IamComponentsSchemasStatus$member._();
 
-static const IamComponentsSchemasStatus invited = IamComponentsSchemasStatus._('invited');
+static const IamComponentsSchemasStatus invited = IamComponentsSchemasStatus$invited._();
 
 static const List<IamComponentsSchemasStatus> values = [member, invited];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IamComponentsSchemasStatus$Unknown; } 
+@override String toString() => 'IamComponentsSchemasStatus($value)';
+
+ }
+@immutable final class IamComponentsSchemasStatus$member extends IamComponentsSchemasStatus {const IamComponentsSchemasStatus$member._();
+
+@override String get value => 'member';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IamComponentsSchemasStatus$member;
+
+@override int get hashCode => 'member'.hashCode;
+
+ }
+@immutable final class IamComponentsSchemasStatus$invited extends IamComponentsSchemasStatus {const IamComponentsSchemasStatus$invited._();
+
+@override String get value => 'invited';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IamComponentsSchemasStatus$invited;
+
+@override int get hashCode => 'invited'.hashCode;
+
+ }
+@immutable final class IamComponentsSchemasStatus$Unknown extends IamComponentsSchemasStatus {const IamComponentsSchemasStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IamComponentsSchemasStatus && other.value == value;
+    other is IamComponentsSchemasStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IamComponentsSchemasStatus($value)';
 
  }
 /// Organization name.

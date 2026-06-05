@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetBotsTimeseriesGroupBotKind
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBotsTimeseriesGroupBotKind {const RadarGetBotsTimeseriesGroupBotKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetBotsTimeseriesGroupBotKind {const RadarGetBotsTimeseriesGroupBotKind();
 
 factory RadarGetBotsTimeseriesGroupBotKind.fromJson(String json) { return switch (json) {
   'AGENT' => agent,
   'BOT' => bot,
-  _ => RadarGetBotsTimeseriesGroupBotKind._(json),
+  _ => RadarGetBotsTimeseriesGroupBotKind$Unknown(json),
 }; }
 
-static const RadarGetBotsTimeseriesGroupBotKind agent = RadarGetBotsTimeseriesGroupBotKind._('AGENT');
+static const RadarGetBotsTimeseriesGroupBotKind agent = RadarGetBotsTimeseriesGroupBotKind$agent._();
 
-static const RadarGetBotsTimeseriesGroupBotKind bot = RadarGetBotsTimeseriesGroupBotKind._('BOT');
+static const RadarGetBotsTimeseriesGroupBotKind bot = RadarGetBotsTimeseriesGroupBotKind$bot._();
 
 static const List<RadarGetBotsTimeseriesGroupBotKind> values = [agent, bot];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetBotsTimeseriesGroupBotKind$Unknown; } 
+@override String toString() => 'RadarGetBotsTimeseriesGroupBotKind($value)';
+
+ }
+@immutable final class RadarGetBotsTimeseriesGroupBotKind$agent extends RadarGetBotsTimeseriesGroupBotKind {const RadarGetBotsTimeseriesGroupBotKind$agent._();
+
+@override String get value => 'AGENT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBotsTimeseriesGroupBotKind$agent;
+
+@override int get hashCode => 'AGENT'.hashCode;
+
+ }
+@immutable final class RadarGetBotsTimeseriesGroupBotKind$bot extends RadarGetBotsTimeseriesGroupBotKind {const RadarGetBotsTimeseriesGroupBotKind$bot._();
+
+@override String get value => 'BOT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBotsTimeseriesGroupBotKind$bot;
+
+@override int get hashCode => 'BOT'.hashCode;
+
+ }
+@immutable final class RadarGetBotsTimeseriesGroupBotKind$Unknown extends RadarGetBotsTimeseriesGroupBotKind {const RadarGetBotsTimeseriesGroupBotKind$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetBotsTimeseriesGroupBotKind && other.value == value;
+    other is RadarGetBotsTimeseriesGroupBotKind$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetBotsTimeseriesGroupBotKind($value)';
 
  }

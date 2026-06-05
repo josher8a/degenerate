@@ -2,7 +2,7 @@
 // Source: #/components/schemas/CodeScanningAlertClassification
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A classification of the file. For example to identify it as generated.
-@immutable final class CodeScanningAlertClassification {const CodeScanningAlertClassification._(this.value);
+sealed class CodeScanningAlertClassification {const CodeScanningAlertClassification();
 
 factory CodeScanningAlertClassification.fromJson(String json) { return switch (json) {
   'source' => source,
@@ -10,23 +10,22 @@ factory CodeScanningAlertClassification.fromJson(String json) { return switch (j
   'test' => test,
   'library' => $library,
   'null' => $null,
-  _ => CodeScanningAlertClassification._(json),
+  _ => CodeScanningAlertClassification$Unknown(json),
 }; }
 
-static const CodeScanningAlertClassification source = CodeScanningAlertClassification._('source');
+static const CodeScanningAlertClassification source = CodeScanningAlertClassification$source._();
 
-static const CodeScanningAlertClassification generated = CodeScanningAlertClassification._('generated');
+static const CodeScanningAlertClassification generated = CodeScanningAlertClassification$generated._();
 
-static const CodeScanningAlertClassification test = CodeScanningAlertClassification._('test');
+static const CodeScanningAlertClassification test = CodeScanningAlertClassification$test._();
 
-static const CodeScanningAlertClassification $library = CodeScanningAlertClassification._('library');
+static const CodeScanningAlertClassification $library = CodeScanningAlertClassification$$library._();
 
-static const CodeScanningAlertClassification $null = CodeScanningAlertClassification._('null');
+static const CodeScanningAlertClassification $null = CodeScanningAlertClassification$$null._();
 
 static const List<CodeScanningAlertClassification> values = [source, generated, test, $library, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,12 +37,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeScanningAlertClassification$Unknown; } 
+@override String toString() => 'CodeScanningAlertClassification($value)';
+
+ }
+@immutable final class CodeScanningAlertClassification$source extends CodeScanningAlertClassification {const CodeScanningAlertClassification$source._();
+
+@override String get value => 'source';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAlertClassification$source;
+
+@override int get hashCode => 'source'.hashCode;
+
+ }
+@immutable final class CodeScanningAlertClassification$generated extends CodeScanningAlertClassification {const CodeScanningAlertClassification$generated._();
+
+@override String get value => 'generated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAlertClassification$generated;
+
+@override int get hashCode => 'generated'.hashCode;
+
+ }
+@immutable final class CodeScanningAlertClassification$test extends CodeScanningAlertClassification {const CodeScanningAlertClassification$test._();
+
+@override String get value => 'test';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAlertClassification$test;
+
+@override int get hashCode => 'test'.hashCode;
+
+ }
+@immutable final class CodeScanningAlertClassification$$library extends CodeScanningAlertClassification {const CodeScanningAlertClassification$$library._();
+
+@override String get value => 'library';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAlertClassification$$library;
+
+@override int get hashCode => 'library'.hashCode;
+
+ }
+@immutable final class CodeScanningAlertClassification$$null extends CodeScanningAlertClassification {const CodeScanningAlertClassification$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAlertClassification$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class CodeScanningAlertClassification$Unknown extends CodeScanningAlertClassification {const CodeScanningAlertClassification$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeScanningAlertClassification && other.value == value;
+    other is CodeScanningAlertClassification$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeScanningAlertClassification($value)';
 
  }

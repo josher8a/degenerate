@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MagicBgpStatusWithState
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MagicBgpStatusWithStateState {const MagicBgpStatusWithStateState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class MagicBgpStatusWithStateState {const MagicBgpStatusWithStateState();
 
 factory MagicBgpStatusWithStateState.fromJson(String json) { return switch (json) {
   'BGP_DOWN' => bgpDown,
   'BGP_UP' => bgpUp,
   'BGP_ESTABLISHING' => bgpEstablishing,
-  _ => MagicBgpStatusWithStateState._(json),
+  _ => MagicBgpStatusWithStateState$Unknown(json),
 }; }
 
-static const MagicBgpStatusWithStateState bgpDown = MagicBgpStatusWithStateState._('BGP_DOWN');
+static const MagicBgpStatusWithStateState bgpDown = MagicBgpStatusWithStateState$bgpDown._();
 
-static const MagicBgpStatusWithStateState bgpUp = MagicBgpStatusWithStateState._('BGP_UP');
+static const MagicBgpStatusWithStateState bgpUp = MagicBgpStatusWithStateState$bgpUp._();
 
-static const MagicBgpStatusWithStateState bgpEstablishing = MagicBgpStatusWithStateState._('BGP_ESTABLISHING');
+static const MagicBgpStatusWithStateState bgpEstablishing = MagicBgpStatusWithStateState$bgpEstablishing._();
 
 static const List<MagicBgpStatusWithStateState> values = [bgpDown, bgpUp, bgpEstablishing];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MagicBgpStatusWithStateState$Unknown; } 
+@override String toString() => 'MagicBgpStatusWithStateState($value)';
+
+ }
+@immutable final class MagicBgpStatusWithStateState$bgpDown extends MagicBgpStatusWithStateState {const MagicBgpStatusWithStateState$bgpDown._();
+
+@override String get value => 'BGP_DOWN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicBgpStatusWithStateState$bgpDown;
+
+@override int get hashCode => 'BGP_DOWN'.hashCode;
+
+ }
+@immutable final class MagicBgpStatusWithStateState$bgpUp extends MagicBgpStatusWithStateState {const MagicBgpStatusWithStateState$bgpUp._();
+
+@override String get value => 'BGP_UP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicBgpStatusWithStateState$bgpUp;
+
+@override int get hashCode => 'BGP_UP'.hashCode;
+
+ }
+@immutable final class MagicBgpStatusWithStateState$bgpEstablishing extends MagicBgpStatusWithStateState {const MagicBgpStatusWithStateState$bgpEstablishing._();
+
+@override String get value => 'BGP_ESTABLISHING';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicBgpStatusWithStateState$bgpEstablishing;
+
+@override int get hashCode => 'BGP_ESTABLISHING'.hashCode;
+
+ }
+@immutable final class MagicBgpStatusWithStateState$Unknown extends MagicBgpStatusWithStateState {const MagicBgpStatusWithStateState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MagicBgpStatusWithStateState && other.value == value;
+    other is MagicBgpStatusWithStateState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MagicBgpStatusWithStateState($value)';
 
  }
 @immutable final class MagicBgpStatusWithState {const MagicBgpStatusWithState({required this.state, required this.tcpEstablished, required this.updatedAt, this.bgpState, this.cfSpeakerIp, this.cfSpeakerPort, this.customerSpeakerIp, this.customerSpeakerPort, });

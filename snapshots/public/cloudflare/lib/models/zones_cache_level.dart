@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_cache_level_value.dart';/// Apply custom caching based on the option selected.
 /// 
-@immutable final class ZonesCacheLevelId {const ZonesCacheLevelId._(this.value);
+sealed class ZonesCacheLevelId {const ZonesCacheLevelId();
 
 factory ZonesCacheLevelId.fromJson(String json) { return switch (json) {
   'cache_level' => cacheLevel,
-  _ => ZonesCacheLevelId._(json),
+  _ => ZonesCacheLevelId$Unknown(json),
 }; }
 
-static const ZonesCacheLevelId cacheLevel = ZonesCacheLevelId._('cache_level');
+static const ZonesCacheLevelId cacheLevel = ZonesCacheLevelId$cacheLevel._();
 
 static const List<ZonesCacheLevelId> values = [cacheLevel];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesCacheLevelId$Unknown; } 
+@override String toString() => 'ZonesCacheLevelId($value)';
+
+ }
+@immutable final class ZonesCacheLevelId$cacheLevel extends ZonesCacheLevelId {const ZonesCacheLevelId$cacheLevel._();
+
+@override String get value => 'cache_level';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesCacheLevelId$cacheLevel;
+
+@override int get hashCode => 'cache_level'.hashCode;
+
+ }
+@immutable final class ZonesCacheLevelId$Unknown extends ZonesCacheLevelId {const ZonesCacheLevelId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesCacheLevelId && other.value == value;
+    other is ZonesCacheLevelId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesCacheLevelId($value)';
 
  }
 @immutable final class ZonesCacheLevel {const ZonesCacheLevel({this.id, this.value, });

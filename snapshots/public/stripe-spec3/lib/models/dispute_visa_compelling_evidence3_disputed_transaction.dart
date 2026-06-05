@@ -2,22 +2,21 @@
 // Source: #/components/schemas/DisputeVisaCompellingEvidence3DisputedTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/dispute_transaction_shipping_address.dart';/// Categorization of disputed payment.
-@immutable final class DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices {const DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices._(this.value);
+sealed class DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices {const DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices();
 
 factory DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices.fromJson(String json) { return switch (json) {
   'merchandise' => merchandise,
   'services' => services,
-  _ => DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices._(json),
+  _ => DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices$Unknown(json),
 }; }
 
-static const DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices merchandise = DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices._('merchandise');
+static const DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices merchandise = DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices$merchandise._();
 
-static const DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices services = DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices._('services');
+static const DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices services = DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices$services._();
 
 static const List<DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices> values = [merchandise, services];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices$Unknown; } 
+@override String toString() => 'DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices($value)';
+
+ }
+@immutable final class DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices$merchandise extends DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices {const DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices$merchandise._();
+
+@override String get value => 'merchandise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices$merchandise;
+
+@override int get hashCode => 'merchandise'.hashCode;
+
+ }
+@immutable final class DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices$services extends DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices {const DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices$services._();
+
+@override String get value => 'services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices$services;
+
+@override int get hashCode => 'services'.hashCode;
+
+ }
+@immutable final class DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices$Unknown extends DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices {const DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices && other.value == value;
+    other is DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DisputeVisaCompellingEvidence3DisputedTransactionMerchandiseOrServices($value)';
 
  }
 /// 

@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DifferentDataSchemas
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/different_data_schemas/different_data_schemas_data.dart';import 'package:pub_speakeasy/models/message_event.dart';import 'package:pub_speakeasy/models/url_event.dart';@immutable final class DifferentDataSchemasEvent {const DifferentDataSchemasEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/different_data_schemas/different_data_schemas_data.dart';import 'package:pub_speakeasy/models/message_event.dart';import 'package:pub_speakeasy/models/url_event.dart';sealed class DifferentDataSchemasEvent {const DifferentDataSchemasEvent();
 
 factory DifferentDataSchemasEvent.fromJson(String json) { return switch (json) {
   'message' => message,
   'url' => url,
   'array' => array,
   'primitive' => primitive,
-  _ => DifferentDataSchemasEvent._(json),
+  _ => DifferentDataSchemasEvent$Unknown(json),
 }; }
 
-static const DifferentDataSchemasEvent message = DifferentDataSchemasEvent._('message');
+static const DifferentDataSchemasEvent message = DifferentDataSchemasEvent$message._();
 
-static const DifferentDataSchemasEvent url = DifferentDataSchemasEvent._('url');
+static const DifferentDataSchemasEvent url = DifferentDataSchemasEvent$url._();
 
-static const DifferentDataSchemasEvent array = DifferentDataSchemasEvent._('array');
+static const DifferentDataSchemasEvent array = DifferentDataSchemasEvent$array._();
 
-static const DifferentDataSchemasEvent primitive = DifferentDataSchemasEvent._('primitive');
+static const DifferentDataSchemasEvent primitive = DifferentDataSchemasEvent$primitive._();
 
 static const List<DifferentDataSchemasEvent> values = [message, url, array, primitive];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DifferentDataSchemasEvent$Unknown; } 
+@override String toString() => 'DifferentDataSchemasEvent($value)';
+
+ }
+@immutable final class DifferentDataSchemasEvent$message extends DifferentDataSchemasEvent {const DifferentDataSchemasEvent$message._();
+
+@override String get value => 'message';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DifferentDataSchemasEvent$message;
+
+@override int get hashCode => 'message'.hashCode;
+
+ }
+@immutable final class DifferentDataSchemasEvent$url extends DifferentDataSchemasEvent {const DifferentDataSchemasEvent$url._();
+
+@override String get value => 'url';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DifferentDataSchemasEvent$url;
+
+@override int get hashCode => 'url'.hashCode;
+
+ }
+@immutable final class DifferentDataSchemasEvent$array extends DifferentDataSchemasEvent {const DifferentDataSchemasEvent$array._();
+
+@override String get value => 'array';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DifferentDataSchemasEvent$array;
+
+@override int get hashCode => 'array'.hashCode;
+
+ }
+@immutable final class DifferentDataSchemasEvent$primitive extends DifferentDataSchemasEvent {const DifferentDataSchemasEvent$primitive._();
+
+@override String get value => 'primitive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DifferentDataSchemasEvent$primitive;
+
+@override int get hashCode => 'primitive'.hashCode;
+
+ }
+@immutable final class DifferentDataSchemasEvent$Unknown extends DifferentDataSchemasEvent {const DifferentDataSchemasEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DifferentDataSchemasEvent && other.value == value;
+    other is DifferentDataSchemasEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DifferentDataSchemasEvent($value)';
 
  }
 /// Represents an event with different schemas for the data property

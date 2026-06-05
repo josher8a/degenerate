@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PayPerCrawlDaricConfig
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PayPerCrawlBotAccessMode {const PayPerCrawlBotAccessMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PayPerCrawlBotAccessMode {const PayPerCrawlBotAccessMode();
 
 factory PayPerCrawlBotAccessMode.fromJson(String json) { return switch (json) {
   'charge' => charge,
   'bypass' => bypass,
-  _ => PayPerCrawlBotAccessMode._(json),
+  _ => PayPerCrawlBotAccessMode$Unknown(json),
 }; }
 
-static const PayPerCrawlBotAccessMode charge = PayPerCrawlBotAccessMode._('charge');
+static const PayPerCrawlBotAccessMode charge = PayPerCrawlBotAccessMode$charge._();
 
-static const PayPerCrawlBotAccessMode bypass = PayPerCrawlBotAccessMode._('bypass');
+static const PayPerCrawlBotAccessMode bypass = PayPerCrawlBotAccessMode$bypass._();
 
 static const List<PayPerCrawlBotAccessMode> values = [charge, bypass];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PayPerCrawlBotAccessMode$Unknown; } 
+@override String toString() => 'PayPerCrawlBotAccessMode($value)';
+
+ }
+@immutable final class PayPerCrawlBotAccessMode$charge extends PayPerCrawlBotAccessMode {const PayPerCrawlBotAccessMode$charge._();
+
+@override String get value => 'charge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PayPerCrawlBotAccessMode$charge;
+
+@override int get hashCode => 'charge'.hashCode;
+
+ }
+@immutable final class PayPerCrawlBotAccessMode$bypass extends PayPerCrawlBotAccessMode {const PayPerCrawlBotAccessMode$bypass._();
+
+@override String get value => 'bypass';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PayPerCrawlBotAccessMode$bypass;
+
+@override int get hashCode => 'bypass'.hashCode;
+
+ }
+@immutable final class PayPerCrawlBotAccessMode$Unknown extends PayPerCrawlBotAccessMode {const PayPerCrawlBotAccessMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PayPerCrawlBotAccessMode && other.value == value;
+    other is PayPerCrawlBotAccessMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PayPerCrawlBotAccessMode($value)';
 
  }
 @immutable final class PayPerCrawlDaricConfig {const PayPerCrawlDaricConfig({this.botOverrides, this.enabled, this.priceUsdMicrocents, });

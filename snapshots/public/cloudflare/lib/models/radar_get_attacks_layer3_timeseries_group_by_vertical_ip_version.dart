@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion {const RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion {const RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion();
 
 factory RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,
   'IPv6' => iPv6,
-  _ => RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion._(json),
+  _ => RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion iPv4 = RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion._('IPv4');
+static const RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion iPv4 = RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion$iPv4._();
 
-static const RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion iPv6 = RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion._('IPv6');
+static const RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion iPv6 = RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion$iPv6._();
 
 static const List<RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion> values = [iPv4, iPv6];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion$iPv4 extends RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion {const RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion$iPv4._();
+
+@override String get value => 'IPv4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion$iPv4;
+
+@override int get hashCode => 'IPv4'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion$iPv6 extends RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion {const RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion$iPv6._();
+
+@override String get value => 'IPv6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion$iPv6;
+
+@override int get hashCode => 'IPv6'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion$Unknown extends RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion {const RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion && other.value == value;
+    other is RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByVerticalIpVersion($value)';
 
  }

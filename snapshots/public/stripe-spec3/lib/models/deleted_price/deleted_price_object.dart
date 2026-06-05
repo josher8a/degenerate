@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DeletedPrice (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class DeletedPriceObject {const DeletedPriceObject._(this.value);
+sealed class DeletedPriceObject {const DeletedPriceObject();
 
 factory DeletedPriceObject.fromJson(String json) { return switch (json) {
   'price' => price,
-  _ => DeletedPriceObject._(json),
+  _ => DeletedPriceObject$Unknown(json),
 }; }
 
-static const DeletedPriceObject price = DeletedPriceObject._('price');
+static const DeletedPriceObject price = DeletedPriceObject$price._();
 
 static const List<DeletedPriceObject> values = [price];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeletedPriceObject$Unknown; } 
+@override String toString() => 'DeletedPriceObject($value)';
+
+ }
+@immutable final class DeletedPriceObject$price extends DeletedPriceObject {const DeletedPriceObject$price._();
+
+@override String get value => 'price';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeletedPriceObject$price;
+
+@override int get hashCode => 'price'.hashCode;
+
+ }
+@immutable final class DeletedPriceObject$Unknown extends DeletedPriceObject {const DeletedPriceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeletedPriceObject && other.value == value;
+    other is DeletedPriceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeletedPriceObject($value)';
 
  }

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PortalSubscriptionUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/portal_resource_schedule_update_at_period_end.dart';import 'package:pub_stripe_spec3/models/portal_subscription_update/trial_update_behavior.dart';import 'package:pub_stripe_spec3/models/portal_subscription_update_product.dart';/// Determines the value to use for the billing cycle anchor on subscription updates. Valid values are `now` or `unchanged`, and the default value is `unchanged`. Setting the value to `now` resets the subscription's billing cycle anchor to the current time (in UTC). For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
-@immutable final class PortalSubscriptionUpdateBillingCycleAnchor {const PortalSubscriptionUpdateBillingCycleAnchor._(this.value);
+sealed class PortalSubscriptionUpdateBillingCycleAnchor {const PortalSubscriptionUpdateBillingCycleAnchor();
 
 factory PortalSubscriptionUpdateBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'now' => now,
   'unchanged' => unchanged,
-  _ => PortalSubscriptionUpdateBillingCycleAnchor._(json),
+  _ => PortalSubscriptionUpdateBillingCycleAnchor$Unknown(json),
 }; }
 
-static const PortalSubscriptionUpdateBillingCycleAnchor now = PortalSubscriptionUpdateBillingCycleAnchor._('now');
+static const PortalSubscriptionUpdateBillingCycleAnchor now = PortalSubscriptionUpdateBillingCycleAnchor$now._();
 
-static const PortalSubscriptionUpdateBillingCycleAnchor unchanged = PortalSubscriptionUpdateBillingCycleAnchor._('unchanged');
+static const PortalSubscriptionUpdateBillingCycleAnchor unchanged = PortalSubscriptionUpdateBillingCycleAnchor$unchanged._();
 
 static const List<PortalSubscriptionUpdateBillingCycleAnchor> values = [now, unchanged];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,34 +25,56 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PortalSubscriptionUpdateBillingCycleAnchor && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PortalSubscriptionUpdateBillingCycleAnchor$Unknown; } 
 @override String toString() => 'PortalSubscriptionUpdateBillingCycleAnchor($value)';
 
  }
-@immutable final class PortalSubscriptionUpdateDefaultAllowedUpdates {const PortalSubscriptionUpdateDefaultAllowedUpdates._(this.value);
+@immutable final class PortalSubscriptionUpdateBillingCycleAnchor$now extends PortalSubscriptionUpdateBillingCycleAnchor {const PortalSubscriptionUpdateBillingCycleAnchor$now._();
+
+@override String get value => 'now';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalSubscriptionUpdateBillingCycleAnchor$now;
+
+@override int get hashCode => 'now'.hashCode;
+
+ }
+@immutable final class PortalSubscriptionUpdateBillingCycleAnchor$unchanged extends PortalSubscriptionUpdateBillingCycleAnchor {const PortalSubscriptionUpdateBillingCycleAnchor$unchanged._();
+
+@override String get value => 'unchanged';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalSubscriptionUpdateBillingCycleAnchor$unchanged;
+
+@override int get hashCode => 'unchanged'.hashCode;
+
+ }
+@immutable final class PortalSubscriptionUpdateBillingCycleAnchor$Unknown extends PortalSubscriptionUpdateBillingCycleAnchor {const PortalSubscriptionUpdateBillingCycleAnchor$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PortalSubscriptionUpdateBillingCycleAnchor$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class PortalSubscriptionUpdateDefaultAllowedUpdates {const PortalSubscriptionUpdateDefaultAllowedUpdates();
 
 factory PortalSubscriptionUpdateDefaultAllowedUpdates.fromJson(String json) { return switch (json) {
   'price' => price,
   'promotion_code' => promotionCode,
   'quantity' => quantity,
-  _ => PortalSubscriptionUpdateDefaultAllowedUpdates._(json),
+  _ => PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown(json),
 }; }
 
-static const PortalSubscriptionUpdateDefaultAllowedUpdates price = PortalSubscriptionUpdateDefaultAllowedUpdates._('price');
+static const PortalSubscriptionUpdateDefaultAllowedUpdates price = PortalSubscriptionUpdateDefaultAllowedUpdates$price._();
 
-static const PortalSubscriptionUpdateDefaultAllowedUpdates promotionCode = PortalSubscriptionUpdateDefaultAllowedUpdates._('promotion_code');
+static const PortalSubscriptionUpdateDefaultAllowedUpdates promotionCode = PortalSubscriptionUpdateDefaultAllowedUpdates$promotionCode._();
 
-static const PortalSubscriptionUpdateDefaultAllowedUpdates quantity = PortalSubscriptionUpdateDefaultAllowedUpdates._('quantity');
+static const PortalSubscriptionUpdateDefaultAllowedUpdates quantity = PortalSubscriptionUpdateDefaultAllowedUpdates$quantity._();
 
 static const List<PortalSubscriptionUpdateDefaultAllowedUpdates> values = [price, promotionCode, quantity];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -63,13 +84,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown; } 
+@override String toString() => 'PortalSubscriptionUpdateDefaultAllowedUpdates($value)';
+
+ }
+@immutable final class PortalSubscriptionUpdateDefaultAllowedUpdates$price extends PortalSubscriptionUpdateDefaultAllowedUpdates {const PortalSubscriptionUpdateDefaultAllowedUpdates$price._();
+
+@override String get value => 'price';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalSubscriptionUpdateDefaultAllowedUpdates$price;
+
+@override int get hashCode => 'price'.hashCode;
+
+ }
+@immutable final class PortalSubscriptionUpdateDefaultAllowedUpdates$promotionCode extends PortalSubscriptionUpdateDefaultAllowedUpdates {const PortalSubscriptionUpdateDefaultAllowedUpdates$promotionCode._();
+
+@override String get value => 'promotion_code';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalSubscriptionUpdateDefaultAllowedUpdates$promotionCode;
+
+@override int get hashCode => 'promotion_code'.hashCode;
+
+ }
+@immutable final class PortalSubscriptionUpdateDefaultAllowedUpdates$quantity extends PortalSubscriptionUpdateDefaultAllowedUpdates {const PortalSubscriptionUpdateDefaultAllowedUpdates$quantity._();
+
+@override String get value => 'quantity';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalSubscriptionUpdateDefaultAllowedUpdates$quantity;
+
+@override int get hashCode => 'quantity'.hashCode;
+
+ }
+@immutable final class PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown extends PortalSubscriptionUpdateDefaultAllowedUpdates {const PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PortalSubscriptionUpdateDefaultAllowedUpdates && other.value == value;
+    other is PortalSubscriptionUpdateDefaultAllowedUpdates$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PortalSubscriptionUpdateDefaultAllowedUpdates($value)';
 
  }
 /// 

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhooksIssue2 (inline: PerformedViaGithubApp > Permissions)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/app_permissions/actions.dart';import 'package:pub_github_rest_3_1/models/app_permissions/administration.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_checks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_deployments.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_environments.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_metadata.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_packages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_pages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_pull_requests.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_statuses.dart';import 'package:pub_github_rest_3_1/models/app_permissions/contents.dart';import 'package:pub_github_rest_3_1/models/app_permissions/discussions.dart';import 'package:pub_github_rest_3_1/models/app_permissions/issues.dart';import 'package:pub_github_rest_3_1/models/app_permissions/members.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_administration.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_hooks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_packages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_secrets.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_self_hosted_runners.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_user_blocking.dart';import 'package:pub_github_rest_3_1/models/app_permissions/repository_hooks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/secret_scanning_alerts.dart';import 'package:pub_github_rest_3_1/models/app_permissions/secrets.dart';import 'package:pub_github_rest_3_1/models/app_permissions/security_events.dart';import 'package:pub_github_rest_3_1/models/app_permissions/single_file.dart';import 'package:pub_github_rest_3_1/models/app_permissions/vulnerability_alerts.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/content_references.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/keys.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_emails.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_organization_plan.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_repository_projects.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_workflows.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/security_scanning_alert.dart';@immutable final class PermissionsOrganizationProjects {const PermissionsOrganizationProjects._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/app_permissions/actions.dart';import 'package:pub_github_rest_3_1/models/app_permissions/administration.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_checks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_deployments.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_environments.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_metadata.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_packages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_pages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_pull_requests.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_statuses.dart';import 'package:pub_github_rest_3_1/models/app_permissions/contents.dart';import 'package:pub_github_rest_3_1/models/app_permissions/discussions.dart';import 'package:pub_github_rest_3_1/models/app_permissions/issues.dart';import 'package:pub_github_rest_3_1/models/app_permissions/members.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_administration.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_hooks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_packages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_secrets.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_self_hosted_runners.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_user_blocking.dart';import 'package:pub_github_rest_3_1/models/app_permissions/repository_hooks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/secret_scanning_alerts.dart';import 'package:pub_github_rest_3_1/models/app_permissions/secrets.dart';import 'package:pub_github_rest_3_1/models/app_permissions/security_events.dart';import 'package:pub_github_rest_3_1/models/app_permissions/single_file.dart';import 'package:pub_github_rest_3_1/models/app_permissions/vulnerability_alerts.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/content_references.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/keys.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_emails.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_organization_plan.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_repository_projects.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/permissions_workflows.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue2/security_scanning_alert.dart';sealed class PermissionsOrganizationProjects {const PermissionsOrganizationProjects();
 
 factory PermissionsOrganizationProjects.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => PermissionsOrganizationProjects._(json),
+  _ => PermissionsOrganizationProjects$Unknown(json),
 }; }
 
-static const PermissionsOrganizationProjects read = PermissionsOrganizationProjects._('read');
+static const PermissionsOrganizationProjects read = PermissionsOrganizationProjects$read._();
 
-static const PermissionsOrganizationProjects write = PermissionsOrganizationProjects._('write');
+static const PermissionsOrganizationProjects write = PermissionsOrganizationProjects$write._();
 
 static const List<PermissionsOrganizationProjects> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PermissionsOrganizationProjects$Unknown; } 
+@override String toString() => 'PermissionsOrganizationProjects($value)';
+
+ }
+@immutable final class PermissionsOrganizationProjects$read extends PermissionsOrganizationProjects {const PermissionsOrganizationProjects$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PermissionsOrganizationProjects$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class PermissionsOrganizationProjects$write extends PermissionsOrganizationProjects {const PermissionsOrganizationProjects$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PermissionsOrganizationProjects$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class PermissionsOrganizationProjects$Unknown extends PermissionsOrganizationProjects {const PermissionsOrganizationProjects$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PermissionsOrganizationProjects && other.value == value;
+    other is PermissionsOrganizationProjects$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PermissionsOrganizationProjects($value)';
 
  }
 /// The set of permissions for the GitHub app

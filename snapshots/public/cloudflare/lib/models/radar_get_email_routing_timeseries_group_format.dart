@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetEmailRoutingTimeseriesGroupFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetEmailRoutingTimeseriesGroupFormat {const RadarGetEmailRoutingTimeseriesGroupFormat._(this.value);
+sealed class RadarGetEmailRoutingTimeseriesGroupFormat {const RadarGetEmailRoutingTimeseriesGroupFormat();
 
 factory RadarGetEmailRoutingTimeseriesGroupFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetEmailRoutingTimeseriesGroupFormat._(json),
+  _ => RadarGetEmailRoutingTimeseriesGroupFormat$Unknown(json),
 }; }
 
-static const RadarGetEmailRoutingTimeseriesGroupFormat $json = RadarGetEmailRoutingTimeseriesGroupFormat._('JSON');
+static const RadarGetEmailRoutingTimeseriesGroupFormat $json = RadarGetEmailRoutingTimeseriesGroupFormat$$json._();
 
-static const RadarGetEmailRoutingTimeseriesGroupFormat csv = RadarGetEmailRoutingTimeseriesGroupFormat._('CSV');
+static const RadarGetEmailRoutingTimeseriesGroupFormat csv = RadarGetEmailRoutingTimeseriesGroupFormat$csv._();
 
 static const List<RadarGetEmailRoutingTimeseriesGroupFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupFormat$Unknown; } 
+@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupFormat($value)';
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupFormat$$json extends RadarGetEmailRoutingTimeseriesGroupFormat {const RadarGetEmailRoutingTimeseriesGroupFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupFormat$csv extends RadarGetEmailRoutingTimeseriesGroupFormat {const RadarGetEmailRoutingTimeseriesGroupFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupFormat$Unknown extends RadarGetEmailRoutingTimeseriesGroupFormat {const RadarGetEmailRoutingTimeseriesGroupFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailRoutingTimeseriesGroupFormat && other.value == value;
+    other is RadarGetEmailRoutingTimeseriesGroupFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupFormat($value)';
 
  }

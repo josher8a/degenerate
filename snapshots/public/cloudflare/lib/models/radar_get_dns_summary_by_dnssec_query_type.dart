@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetDnsSummaryByDnssecQueryType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType();
 
 factory RadarGetDnsSummaryByDnssecQueryType.fromJson(String json) { return switch (json) {
   'A' => a,
@@ -92,189 +92,188 @@ factory RadarGetDnsSummaryByDnssecQueryType.fromJson(String json) { return switc
   'WKS' => wks,
   'X25' => x25,
   'ZONEMD' => zonemd,
-  _ => RadarGetDnsSummaryByDnssecQueryType._(json),
+  _ => RadarGetDnsSummaryByDnssecQueryType$Unknown(json),
 }; }
 
-static const RadarGetDnsSummaryByDnssecQueryType a = RadarGetDnsSummaryByDnssecQueryType._('A');
+static const RadarGetDnsSummaryByDnssecQueryType a = RadarGetDnsSummaryByDnssecQueryType$a._();
 
-static const RadarGetDnsSummaryByDnssecQueryType aaaa = RadarGetDnsSummaryByDnssecQueryType._('AAAA');
+static const RadarGetDnsSummaryByDnssecQueryType aaaa = RadarGetDnsSummaryByDnssecQueryType$aaaa._();
 
-static const RadarGetDnsSummaryByDnssecQueryType a6 = RadarGetDnsSummaryByDnssecQueryType._('A6');
+static const RadarGetDnsSummaryByDnssecQueryType a6 = RadarGetDnsSummaryByDnssecQueryType$a6._();
 
-static const RadarGetDnsSummaryByDnssecQueryType afsdb = RadarGetDnsSummaryByDnssecQueryType._('AFSDB');
+static const RadarGetDnsSummaryByDnssecQueryType afsdb = RadarGetDnsSummaryByDnssecQueryType$afsdb._();
 
-static const RadarGetDnsSummaryByDnssecQueryType any = RadarGetDnsSummaryByDnssecQueryType._('ANY');
+static const RadarGetDnsSummaryByDnssecQueryType any = RadarGetDnsSummaryByDnssecQueryType$any._();
 
-static const RadarGetDnsSummaryByDnssecQueryType apl = RadarGetDnsSummaryByDnssecQueryType._('APL');
+static const RadarGetDnsSummaryByDnssecQueryType apl = RadarGetDnsSummaryByDnssecQueryType$apl._();
 
-static const RadarGetDnsSummaryByDnssecQueryType atma = RadarGetDnsSummaryByDnssecQueryType._('ATMA');
+static const RadarGetDnsSummaryByDnssecQueryType atma = RadarGetDnsSummaryByDnssecQueryType$atma._();
 
-static const RadarGetDnsSummaryByDnssecQueryType axfr = RadarGetDnsSummaryByDnssecQueryType._('AXFR');
+static const RadarGetDnsSummaryByDnssecQueryType axfr = RadarGetDnsSummaryByDnssecQueryType$axfr._();
 
-static const RadarGetDnsSummaryByDnssecQueryType caa = RadarGetDnsSummaryByDnssecQueryType._('CAA');
+static const RadarGetDnsSummaryByDnssecQueryType caa = RadarGetDnsSummaryByDnssecQueryType$caa._();
 
-static const RadarGetDnsSummaryByDnssecQueryType cdnskey = RadarGetDnsSummaryByDnssecQueryType._('CDNSKEY');
+static const RadarGetDnsSummaryByDnssecQueryType cdnskey = RadarGetDnsSummaryByDnssecQueryType$cdnskey._();
 
-static const RadarGetDnsSummaryByDnssecQueryType cds = RadarGetDnsSummaryByDnssecQueryType._('CDS');
+static const RadarGetDnsSummaryByDnssecQueryType cds = RadarGetDnsSummaryByDnssecQueryType$cds._();
 
-static const RadarGetDnsSummaryByDnssecQueryType cert = RadarGetDnsSummaryByDnssecQueryType._('CERT');
+static const RadarGetDnsSummaryByDnssecQueryType cert = RadarGetDnsSummaryByDnssecQueryType$cert._();
 
-static const RadarGetDnsSummaryByDnssecQueryType cname = RadarGetDnsSummaryByDnssecQueryType._('CNAME');
+static const RadarGetDnsSummaryByDnssecQueryType cname = RadarGetDnsSummaryByDnssecQueryType$cname._();
 
-static const RadarGetDnsSummaryByDnssecQueryType csync = RadarGetDnsSummaryByDnssecQueryType._('CSYNC');
+static const RadarGetDnsSummaryByDnssecQueryType csync = RadarGetDnsSummaryByDnssecQueryType$csync._();
 
-static const RadarGetDnsSummaryByDnssecQueryType dhcid = RadarGetDnsSummaryByDnssecQueryType._('DHCID');
+static const RadarGetDnsSummaryByDnssecQueryType dhcid = RadarGetDnsSummaryByDnssecQueryType$dhcid._();
 
-static const RadarGetDnsSummaryByDnssecQueryType dlv = RadarGetDnsSummaryByDnssecQueryType._('DLV');
+static const RadarGetDnsSummaryByDnssecQueryType dlv = RadarGetDnsSummaryByDnssecQueryType$dlv._();
 
-static const RadarGetDnsSummaryByDnssecQueryType dname = RadarGetDnsSummaryByDnssecQueryType._('DNAME');
+static const RadarGetDnsSummaryByDnssecQueryType dname = RadarGetDnsSummaryByDnssecQueryType$dname._();
 
-static const RadarGetDnsSummaryByDnssecQueryType dnskey = RadarGetDnsSummaryByDnssecQueryType._('DNSKEY');
+static const RadarGetDnsSummaryByDnssecQueryType dnskey = RadarGetDnsSummaryByDnssecQueryType$dnskey._();
 
-static const RadarGetDnsSummaryByDnssecQueryType doa = RadarGetDnsSummaryByDnssecQueryType._('DOA');
+static const RadarGetDnsSummaryByDnssecQueryType doa = RadarGetDnsSummaryByDnssecQueryType$doa._();
 
-static const RadarGetDnsSummaryByDnssecQueryType ds = RadarGetDnsSummaryByDnssecQueryType._('DS');
+static const RadarGetDnsSummaryByDnssecQueryType ds = RadarGetDnsSummaryByDnssecQueryType$ds._();
 
-static const RadarGetDnsSummaryByDnssecQueryType eid = RadarGetDnsSummaryByDnssecQueryType._('EID');
+static const RadarGetDnsSummaryByDnssecQueryType eid = RadarGetDnsSummaryByDnssecQueryType$eid._();
 
-static const RadarGetDnsSummaryByDnssecQueryType eui48 = RadarGetDnsSummaryByDnssecQueryType._('EUI48');
+static const RadarGetDnsSummaryByDnssecQueryType eui48 = RadarGetDnsSummaryByDnssecQueryType$eui48._();
 
-static const RadarGetDnsSummaryByDnssecQueryType eui64 = RadarGetDnsSummaryByDnssecQueryType._('EUI64');
+static const RadarGetDnsSummaryByDnssecQueryType eui64 = RadarGetDnsSummaryByDnssecQueryType$eui64._();
 
-static const RadarGetDnsSummaryByDnssecQueryType gpos = RadarGetDnsSummaryByDnssecQueryType._('GPOS');
+static const RadarGetDnsSummaryByDnssecQueryType gpos = RadarGetDnsSummaryByDnssecQueryType$gpos._();
 
-static const RadarGetDnsSummaryByDnssecQueryType gid = RadarGetDnsSummaryByDnssecQueryType._('GID');
+static const RadarGetDnsSummaryByDnssecQueryType gid = RadarGetDnsSummaryByDnssecQueryType$gid._();
 
-static const RadarGetDnsSummaryByDnssecQueryType hinfo = RadarGetDnsSummaryByDnssecQueryType._('HINFO');
+static const RadarGetDnsSummaryByDnssecQueryType hinfo = RadarGetDnsSummaryByDnssecQueryType$hinfo._();
 
-static const RadarGetDnsSummaryByDnssecQueryType hip = RadarGetDnsSummaryByDnssecQueryType._('HIP');
+static const RadarGetDnsSummaryByDnssecQueryType hip = RadarGetDnsSummaryByDnssecQueryType$hip._();
 
-static const RadarGetDnsSummaryByDnssecQueryType https = RadarGetDnsSummaryByDnssecQueryType._('HTTPS');
+static const RadarGetDnsSummaryByDnssecQueryType https = RadarGetDnsSummaryByDnssecQueryType$https._();
 
-static const RadarGetDnsSummaryByDnssecQueryType ipseckey = RadarGetDnsSummaryByDnssecQueryType._('IPSECKEY');
+static const RadarGetDnsSummaryByDnssecQueryType ipseckey = RadarGetDnsSummaryByDnssecQueryType$ipseckey._();
 
-static const RadarGetDnsSummaryByDnssecQueryType isdn = RadarGetDnsSummaryByDnssecQueryType._('ISDN');
+static const RadarGetDnsSummaryByDnssecQueryType isdn = RadarGetDnsSummaryByDnssecQueryType$isdn._();
 
-static const RadarGetDnsSummaryByDnssecQueryType ixfr = RadarGetDnsSummaryByDnssecQueryType._('IXFR');
+static const RadarGetDnsSummaryByDnssecQueryType ixfr = RadarGetDnsSummaryByDnssecQueryType$ixfr._();
 
-static const RadarGetDnsSummaryByDnssecQueryType key = RadarGetDnsSummaryByDnssecQueryType._('KEY');
+static const RadarGetDnsSummaryByDnssecQueryType key = RadarGetDnsSummaryByDnssecQueryType$key._();
 
-static const RadarGetDnsSummaryByDnssecQueryType kx = RadarGetDnsSummaryByDnssecQueryType._('KX');
+static const RadarGetDnsSummaryByDnssecQueryType kx = RadarGetDnsSummaryByDnssecQueryType$kx._();
 
-static const RadarGetDnsSummaryByDnssecQueryType l32 = RadarGetDnsSummaryByDnssecQueryType._('L32');
+static const RadarGetDnsSummaryByDnssecQueryType l32 = RadarGetDnsSummaryByDnssecQueryType$l32._();
 
-static const RadarGetDnsSummaryByDnssecQueryType l64 = RadarGetDnsSummaryByDnssecQueryType._('L64');
+static const RadarGetDnsSummaryByDnssecQueryType l64 = RadarGetDnsSummaryByDnssecQueryType$l64._();
 
-static const RadarGetDnsSummaryByDnssecQueryType loc = RadarGetDnsSummaryByDnssecQueryType._('LOC');
+static const RadarGetDnsSummaryByDnssecQueryType loc = RadarGetDnsSummaryByDnssecQueryType$loc._();
 
-static const RadarGetDnsSummaryByDnssecQueryType lp = RadarGetDnsSummaryByDnssecQueryType._('LP');
+static const RadarGetDnsSummaryByDnssecQueryType lp = RadarGetDnsSummaryByDnssecQueryType$lp._();
 
-static const RadarGetDnsSummaryByDnssecQueryType maila = RadarGetDnsSummaryByDnssecQueryType._('MAILA');
+static const RadarGetDnsSummaryByDnssecQueryType maila = RadarGetDnsSummaryByDnssecQueryType$maila._();
 
-static const RadarGetDnsSummaryByDnssecQueryType mailb = RadarGetDnsSummaryByDnssecQueryType._('MAILB');
+static const RadarGetDnsSummaryByDnssecQueryType mailb = RadarGetDnsSummaryByDnssecQueryType$mailb._();
 
-static const RadarGetDnsSummaryByDnssecQueryType mb = RadarGetDnsSummaryByDnssecQueryType._('MB');
+static const RadarGetDnsSummaryByDnssecQueryType mb = RadarGetDnsSummaryByDnssecQueryType$mb._();
 
-static const RadarGetDnsSummaryByDnssecQueryType md = RadarGetDnsSummaryByDnssecQueryType._('MD');
+static const RadarGetDnsSummaryByDnssecQueryType md = RadarGetDnsSummaryByDnssecQueryType$md._();
 
-static const RadarGetDnsSummaryByDnssecQueryType mf = RadarGetDnsSummaryByDnssecQueryType._('MF');
+static const RadarGetDnsSummaryByDnssecQueryType mf = RadarGetDnsSummaryByDnssecQueryType$mf._();
 
-static const RadarGetDnsSummaryByDnssecQueryType mg = RadarGetDnsSummaryByDnssecQueryType._('MG');
+static const RadarGetDnsSummaryByDnssecQueryType mg = RadarGetDnsSummaryByDnssecQueryType$mg._();
 
-static const RadarGetDnsSummaryByDnssecQueryType minfo = RadarGetDnsSummaryByDnssecQueryType._('MINFO');
+static const RadarGetDnsSummaryByDnssecQueryType minfo = RadarGetDnsSummaryByDnssecQueryType$minfo._();
 
-static const RadarGetDnsSummaryByDnssecQueryType mr = RadarGetDnsSummaryByDnssecQueryType._('MR');
+static const RadarGetDnsSummaryByDnssecQueryType mr = RadarGetDnsSummaryByDnssecQueryType$mr._();
 
-static const RadarGetDnsSummaryByDnssecQueryType mx = RadarGetDnsSummaryByDnssecQueryType._('MX');
+static const RadarGetDnsSummaryByDnssecQueryType mx = RadarGetDnsSummaryByDnssecQueryType$mx._();
 
-static const RadarGetDnsSummaryByDnssecQueryType naptr = RadarGetDnsSummaryByDnssecQueryType._('NAPTR');
+static const RadarGetDnsSummaryByDnssecQueryType naptr = RadarGetDnsSummaryByDnssecQueryType$naptr._();
 
-static const RadarGetDnsSummaryByDnssecQueryType nb = RadarGetDnsSummaryByDnssecQueryType._('NB');
+static const RadarGetDnsSummaryByDnssecQueryType nb = RadarGetDnsSummaryByDnssecQueryType$nb._();
 
-static const RadarGetDnsSummaryByDnssecQueryType nbstat = RadarGetDnsSummaryByDnssecQueryType._('NBSTAT');
+static const RadarGetDnsSummaryByDnssecQueryType nbstat = RadarGetDnsSummaryByDnssecQueryType$nbstat._();
 
-static const RadarGetDnsSummaryByDnssecQueryType nid = RadarGetDnsSummaryByDnssecQueryType._('NID');
+static const RadarGetDnsSummaryByDnssecQueryType nid = RadarGetDnsSummaryByDnssecQueryType$nid._();
 
-static const RadarGetDnsSummaryByDnssecQueryType nimloc = RadarGetDnsSummaryByDnssecQueryType._('NIMLOC');
+static const RadarGetDnsSummaryByDnssecQueryType nimloc = RadarGetDnsSummaryByDnssecQueryType$nimloc._();
 
-static const RadarGetDnsSummaryByDnssecQueryType ninfo = RadarGetDnsSummaryByDnssecQueryType._('NINFO');
+static const RadarGetDnsSummaryByDnssecQueryType ninfo = RadarGetDnsSummaryByDnssecQueryType$ninfo._();
 
-static const RadarGetDnsSummaryByDnssecQueryType ns = RadarGetDnsSummaryByDnssecQueryType._('NS');
+static const RadarGetDnsSummaryByDnssecQueryType ns = RadarGetDnsSummaryByDnssecQueryType$ns._();
 
-static const RadarGetDnsSummaryByDnssecQueryType nsap = RadarGetDnsSummaryByDnssecQueryType._('NSAP');
+static const RadarGetDnsSummaryByDnssecQueryType nsap = RadarGetDnsSummaryByDnssecQueryType$nsap._();
 
-static const RadarGetDnsSummaryByDnssecQueryType nsec = RadarGetDnsSummaryByDnssecQueryType._('NSEC');
+static const RadarGetDnsSummaryByDnssecQueryType nsec = RadarGetDnsSummaryByDnssecQueryType$nsec._();
 
-static const RadarGetDnsSummaryByDnssecQueryType nsec3 = RadarGetDnsSummaryByDnssecQueryType._('NSEC3');
+static const RadarGetDnsSummaryByDnssecQueryType nsec3 = RadarGetDnsSummaryByDnssecQueryType$nsec3._();
 
-static const RadarGetDnsSummaryByDnssecQueryType nsec3Param = RadarGetDnsSummaryByDnssecQueryType._('NSEC3PARAM');
+static const RadarGetDnsSummaryByDnssecQueryType nsec3Param = RadarGetDnsSummaryByDnssecQueryType$nsec3Param._();
 
-static const RadarGetDnsSummaryByDnssecQueryType $null = RadarGetDnsSummaryByDnssecQueryType._('NULL');
+static const RadarGetDnsSummaryByDnssecQueryType $null = RadarGetDnsSummaryByDnssecQueryType$$null._();
 
-static const RadarGetDnsSummaryByDnssecQueryType nxt = RadarGetDnsSummaryByDnssecQueryType._('NXT');
+static const RadarGetDnsSummaryByDnssecQueryType nxt = RadarGetDnsSummaryByDnssecQueryType$nxt._();
 
-static const RadarGetDnsSummaryByDnssecQueryType openpgpkey = RadarGetDnsSummaryByDnssecQueryType._('OPENPGPKEY');
+static const RadarGetDnsSummaryByDnssecQueryType openpgpkey = RadarGetDnsSummaryByDnssecQueryType$openpgpkey._();
 
-static const RadarGetDnsSummaryByDnssecQueryType opt = RadarGetDnsSummaryByDnssecQueryType._('OPT');
+static const RadarGetDnsSummaryByDnssecQueryType opt = RadarGetDnsSummaryByDnssecQueryType$opt._();
 
-static const RadarGetDnsSummaryByDnssecQueryType ptr = RadarGetDnsSummaryByDnssecQueryType._('PTR');
+static const RadarGetDnsSummaryByDnssecQueryType ptr = RadarGetDnsSummaryByDnssecQueryType$ptr._();
 
-static const RadarGetDnsSummaryByDnssecQueryType px = RadarGetDnsSummaryByDnssecQueryType._('PX');
+static const RadarGetDnsSummaryByDnssecQueryType px = RadarGetDnsSummaryByDnssecQueryType$px._();
 
-static const RadarGetDnsSummaryByDnssecQueryType rkey = RadarGetDnsSummaryByDnssecQueryType._('RKEY');
+static const RadarGetDnsSummaryByDnssecQueryType rkey = RadarGetDnsSummaryByDnssecQueryType$rkey._();
 
-static const RadarGetDnsSummaryByDnssecQueryType rp = RadarGetDnsSummaryByDnssecQueryType._('RP');
+static const RadarGetDnsSummaryByDnssecQueryType rp = RadarGetDnsSummaryByDnssecQueryType$rp._();
 
-static const RadarGetDnsSummaryByDnssecQueryType rrsig = RadarGetDnsSummaryByDnssecQueryType._('RRSIG');
+static const RadarGetDnsSummaryByDnssecQueryType rrsig = RadarGetDnsSummaryByDnssecQueryType$rrsig._();
 
-static const RadarGetDnsSummaryByDnssecQueryType rt = RadarGetDnsSummaryByDnssecQueryType._('RT');
+static const RadarGetDnsSummaryByDnssecQueryType rt = RadarGetDnsSummaryByDnssecQueryType$rt._();
 
-static const RadarGetDnsSummaryByDnssecQueryType sig = RadarGetDnsSummaryByDnssecQueryType._('SIG');
+static const RadarGetDnsSummaryByDnssecQueryType sig = RadarGetDnsSummaryByDnssecQueryType$sig._();
 
-static const RadarGetDnsSummaryByDnssecQueryType sink = RadarGetDnsSummaryByDnssecQueryType._('SINK');
+static const RadarGetDnsSummaryByDnssecQueryType sink = RadarGetDnsSummaryByDnssecQueryType$sink._();
 
-static const RadarGetDnsSummaryByDnssecQueryType smimea = RadarGetDnsSummaryByDnssecQueryType._('SMIMEA');
+static const RadarGetDnsSummaryByDnssecQueryType smimea = RadarGetDnsSummaryByDnssecQueryType$smimea._();
 
-static const RadarGetDnsSummaryByDnssecQueryType soa = RadarGetDnsSummaryByDnssecQueryType._('SOA');
+static const RadarGetDnsSummaryByDnssecQueryType soa = RadarGetDnsSummaryByDnssecQueryType$soa._();
 
-static const RadarGetDnsSummaryByDnssecQueryType spf = RadarGetDnsSummaryByDnssecQueryType._('SPF');
+static const RadarGetDnsSummaryByDnssecQueryType spf = RadarGetDnsSummaryByDnssecQueryType$spf._();
 
-static const RadarGetDnsSummaryByDnssecQueryType srv = RadarGetDnsSummaryByDnssecQueryType._('SRV');
+static const RadarGetDnsSummaryByDnssecQueryType srv = RadarGetDnsSummaryByDnssecQueryType$srv._();
 
-static const RadarGetDnsSummaryByDnssecQueryType sshfp = RadarGetDnsSummaryByDnssecQueryType._('SSHFP');
+static const RadarGetDnsSummaryByDnssecQueryType sshfp = RadarGetDnsSummaryByDnssecQueryType$sshfp._();
 
-static const RadarGetDnsSummaryByDnssecQueryType svcb = RadarGetDnsSummaryByDnssecQueryType._('SVCB');
+static const RadarGetDnsSummaryByDnssecQueryType svcb = RadarGetDnsSummaryByDnssecQueryType$svcb._();
 
-static const RadarGetDnsSummaryByDnssecQueryType ta = RadarGetDnsSummaryByDnssecQueryType._('TA');
+static const RadarGetDnsSummaryByDnssecQueryType ta = RadarGetDnsSummaryByDnssecQueryType$ta._();
 
-static const RadarGetDnsSummaryByDnssecQueryType talink = RadarGetDnsSummaryByDnssecQueryType._('TALINK');
+static const RadarGetDnsSummaryByDnssecQueryType talink = RadarGetDnsSummaryByDnssecQueryType$talink._();
 
-static const RadarGetDnsSummaryByDnssecQueryType tkey = RadarGetDnsSummaryByDnssecQueryType._('TKEY');
+static const RadarGetDnsSummaryByDnssecQueryType tkey = RadarGetDnsSummaryByDnssecQueryType$tkey._();
 
-static const RadarGetDnsSummaryByDnssecQueryType tlsa = RadarGetDnsSummaryByDnssecQueryType._('TLSA');
+static const RadarGetDnsSummaryByDnssecQueryType tlsa = RadarGetDnsSummaryByDnssecQueryType$tlsa._();
 
-static const RadarGetDnsSummaryByDnssecQueryType tsig = RadarGetDnsSummaryByDnssecQueryType._('TSIG');
+static const RadarGetDnsSummaryByDnssecQueryType tsig = RadarGetDnsSummaryByDnssecQueryType$tsig._();
 
-static const RadarGetDnsSummaryByDnssecQueryType txt = RadarGetDnsSummaryByDnssecQueryType._('TXT');
+static const RadarGetDnsSummaryByDnssecQueryType txt = RadarGetDnsSummaryByDnssecQueryType$txt._();
 
-static const RadarGetDnsSummaryByDnssecQueryType uinfo = RadarGetDnsSummaryByDnssecQueryType._('UINFO');
+static const RadarGetDnsSummaryByDnssecQueryType uinfo = RadarGetDnsSummaryByDnssecQueryType$uinfo._();
 
-static const RadarGetDnsSummaryByDnssecQueryType uid = RadarGetDnsSummaryByDnssecQueryType._('UID');
+static const RadarGetDnsSummaryByDnssecQueryType uid = RadarGetDnsSummaryByDnssecQueryType$uid._();
 
-static const RadarGetDnsSummaryByDnssecQueryType unspec = RadarGetDnsSummaryByDnssecQueryType._('UNSPEC');
+static const RadarGetDnsSummaryByDnssecQueryType unspec = RadarGetDnsSummaryByDnssecQueryType$unspec._();
 
-static const RadarGetDnsSummaryByDnssecQueryType uri = RadarGetDnsSummaryByDnssecQueryType._('URI');
+static const RadarGetDnsSummaryByDnssecQueryType uri = RadarGetDnsSummaryByDnssecQueryType$uri._();
 
-static const RadarGetDnsSummaryByDnssecQueryType wks = RadarGetDnsSummaryByDnssecQueryType._('WKS');
+static const RadarGetDnsSummaryByDnssecQueryType wks = RadarGetDnsSummaryByDnssecQueryType$wks._();
 
-static const RadarGetDnsSummaryByDnssecQueryType x25 = RadarGetDnsSummaryByDnssecQueryType._('X25');
+static const RadarGetDnsSummaryByDnssecQueryType x25 = RadarGetDnsSummaryByDnssecQueryType$x25._();
 
-static const RadarGetDnsSummaryByDnssecQueryType zonemd = RadarGetDnsSummaryByDnssecQueryType._('ZONEMD');
+static const RadarGetDnsSummaryByDnssecQueryType zonemd = RadarGetDnsSummaryByDnssecQueryType$zonemd._();
 
 static const List<RadarGetDnsSummaryByDnssecQueryType> values = [a, aaaa, a6, afsdb, any, apl, atma, axfr, caa, cdnskey, cds, cert, cname, csync, dhcid, dlv, dname, dnskey, doa, ds, eid, eui48, eui64, gpos, gid, hinfo, hip, https, ipseckey, isdn, ixfr, key, kx, l32, l64, loc, lp, maila, mailb, mb, md, mf, mg, minfo, mr, mx, naptr, nb, nbstat, nid, nimloc, ninfo, ns, nsap, nsec, nsec3, nsec3Param, $null, nxt, openpgpkey, opt, ptr, px, rkey, rp, rrsig, rt, sig, sink, smimea, soa, spf, srv, sshfp, svcb, ta, talink, tkey, tlsa, tsig, txt, uinfo, uid, unspec, uri, wks, x25, zonemd];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -369,12 +368,809 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetDnsSummaryByDnssecQueryType$Unknown; } 
+@override String toString() => 'RadarGetDnsSummaryByDnssecQueryType($value)';
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$a extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$a._();
+
+@override String get value => 'A';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$a;
+
+@override int get hashCode => 'A'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$aaaa extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$aaaa._();
+
+@override String get value => 'AAAA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$aaaa;
+
+@override int get hashCode => 'AAAA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$a6 extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$a6._();
+
+@override String get value => 'A6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$a6;
+
+@override int get hashCode => 'A6'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$afsdb extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$afsdb._();
+
+@override String get value => 'AFSDB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$afsdb;
+
+@override int get hashCode => 'AFSDB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$any extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$any._();
+
+@override String get value => 'ANY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$any;
+
+@override int get hashCode => 'ANY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$apl extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$apl._();
+
+@override String get value => 'APL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$apl;
+
+@override int get hashCode => 'APL'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$atma extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$atma._();
+
+@override String get value => 'ATMA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$atma;
+
+@override int get hashCode => 'ATMA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$axfr extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$axfr._();
+
+@override String get value => 'AXFR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$axfr;
+
+@override int get hashCode => 'AXFR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$caa extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$caa._();
+
+@override String get value => 'CAA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$caa;
+
+@override int get hashCode => 'CAA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$cdnskey extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$cdnskey._();
+
+@override String get value => 'CDNSKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$cdnskey;
+
+@override int get hashCode => 'CDNSKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$cds extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$cds._();
+
+@override String get value => 'CDS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$cds;
+
+@override int get hashCode => 'CDS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$cert extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$cert._();
+
+@override String get value => 'CERT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$cert;
+
+@override int get hashCode => 'CERT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$cname extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$cname._();
+
+@override String get value => 'CNAME';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$cname;
+
+@override int get hashCode => 'CNAME'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$csync extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$csync._();
+
+@override String get value => 'CSYNC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$csync;
+
+@override int get hashCode => 'CSYNC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$dhcid extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$dhcid._();
+
+@override String get value => 'DHCID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$dhcid;
+
+@override int get hashCode => 'DHCID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$dlv extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$dlv._();
+
+@override String get value => 'DLV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$dlv;
+
+@override int get hashCode => 'DLV'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$dname extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$dname._();
+
+@override String get value => 'DNAME';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$dname;
+
+@override int get hashCode => 'DNAME'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$dnskey extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$dnskey._();
+
+@override String get value => 'DNSKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$dnskey;
+
+@override int get hashCode => 'DNSKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$doa extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$doa._();
+
+@override String get value => 'DOA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$doa;
+
+@override int get hashCode => 'DOA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$ds extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$ds._();
+
+@override String get value => 'DS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$ds;
+
+@override int get hashCode => 'DS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$eid extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$eid._();
+
+@override String get value => 'EID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$eid;
+
+@override int get hashCode => 'EID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$eui48 extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$eui48._();
+
+@override String get value => 'EUI48';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$eui48;
+
+@override int get hashCode => 'EUI48'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$eui64 extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$eui64._();
+
+@override String get value => 'EUI64';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$eui64;
+
+@override int get hashCode => 'EUI64'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$gpos extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$gpos._();
+
+@override String get value => 'GPOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$gpos;
+
+@override int get hashCode => 'GPOS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$gid extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$gid._();
+
+@override String get value => 'GID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$gid;
+
+@override int get hashCode => 'GID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$hinfo extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$hinfo._();
+
+@override String get value => 'HINFO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$hinfo;
+
+@override int get hashCode => 'HINFO'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$hip extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$hip._();
+
+@override String get value => 'HIP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$hip;
+
+@override int get hashCode => 'HIP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$https extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$https._();
+
+@override String get value => 'HTTPS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$https;
+
+@override int get hashCode => 'HTTPS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$ipseckey extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$ipseckey._();
+
+@override String get value => 'IPSECKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$ipseckey;
+
+@override int get hashCode => 'IPSECKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$isdn extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$isdn._();
+
+@override String get value => 'ISDN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$isdn;
+
+@override int get hashCode => 'ISDN'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$ixfr extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$ixfr._();
+
+@override String get value => 'IXFR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$ixfr;
+
+@override int get hashCode => 'IXFR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$key extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$key._();
+
+@override String get value => 'KEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$key;
+
+@override int get hashCode => 'KEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$kx extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$kx._();
+
+@override String get value => 'KX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$kx;
+
+@override int get hashCode => 'KX'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$l32 extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$l32._();
+
+@override String get value => 'L32';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$l32;
+
+@override int get hashCode => 'L32'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$l64 extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$l64._();
+
+@override String get value => 'L64';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$l64;
+
+@override int get hashCode => 'L64'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$loc extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$loc._();
+
+@override String get value => 'LOC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$loc;
+
+@override int get hashCode => 'LOC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$lp extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$lp._();
+
+@override String get value => 'LP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$lp;
+
+@override int get hashCode => 'LP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$maila extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$maila._();
+
+@override String get value => 'MAILA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$maila;
+
+@override int get hashCode => 'MAILA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$mailb extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$mailb._();
+
+@override String get value => 'MAILB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$mailb;
+
+@override int get hashCode => 'MAILB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$mb extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$mb._();
+
+@override String get value => 'MB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$mb;
+
+@override int get hashCode => 'MB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$md extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$md._();
+
+@override String get value => 'MD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$md;
+
+@override int get hashCode => 'MD'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$mf extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$mf._();
+
+@override String get value => 'MF';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$mf;
+
+@override int get hashCode => 'MF'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$mg extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$mg._();
+
+@override String get value => 'MG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$mg;
+
+@override int get hashCode => 'MG'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$minfo extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$minfo._();
+
+@override String get value => 'MINFO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$minfo;
+
+@override int get hashCode => 'MINFO'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$mr extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$mr._();
+
+@override String get value => 'MR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$mr;
+
+@override int get hashCode => 'MR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$mx extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$mx._();
+
+@override String get value => 'MX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$mx;
+
+@override int get hashCode => 'MX'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$naptr extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$naptr._();
+
+@override String get value => 'NAPTR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$naptr;
+
+@override int get hashCode => 'NAPTR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$nb extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$nb._();
+
+@override String get value => 'NB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$nb;
+
+@override int get hashCode => 'NB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$nbstat extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$nbstat._();
+
+@override String get value => 'NBSTAT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$nbstat;
+
+@override int get hashCode => 'NBSTAT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$nid extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$nid._();
+
+@override String get value => 'NID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$nid;
+
+@override int get hashCode => 'NID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$nimloc extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$nimloc._();
+
+@override String get value => 'NIMLOC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$nimloc;
+
+@override int get hashCode => 'NIMLOC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$ninfo extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$ninfo._();
+
+@override String get value => 'NINFO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$ninfo;
+
+@override int get hashCode => 'NINFO'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$ns extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$ns._();
+
+@override String get value => 'NS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$ns;
+
+@override int get hashCode => 'NS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$nsap extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$nsap._();
+
+@override String get value => 'NSAP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$nsap;
+
+@override int get hashCode => 'NSAP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$nsec extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$nsec._();
+
+@override String get value => 'NSEC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$nsec;
+
+@override int get hashCode => 'NSEC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$nsec3 extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$nsec3._();
+
+@override String get value => 'NSEC3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$nsec3;
+
+@override int get hashCode => 'NSEC3'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$nsec3Param extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$nsec3Param._();
+
+@override String get value => 'NSEC3PARAM';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$nsec3Param;
+
+@override int get hashCode => 'NSEC3PARAM'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$$null extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$$null._();
+
+@override String get value => 'NULL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$$null;
+
+@override int get hashCode => 'NULL'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$nxt extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$nxt._();
+
+@override String get value => 'NXT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$nxt;
+
+@override int get hashCode => 'NXT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$openpgpkey extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$openpgpkey._();
+
+@override String get value => 'OPENPGPKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$openpgpkey;
+
+@override int get hashCode => 'OPENPGPKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$opt extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$opt._();
+
+@override String get value => 'OPT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$opt;
+
+@override int get hashCode => 'OPT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$ptr extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$ptr._();
+
+@override String get value => 'PTR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$ptr;
+
+@override int get hashCode => 'PTR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$px extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$px._();
+
+@override String get value => 'PX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$px;
+
+@override int get hashCode => 'PX'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$rkey extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$rkey._();
+
+@override String get value => 'RKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$rkey;
+
+@override int get hashCode => 'RKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$rp extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$rp._();
+
+@override String get value => 'RP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$rp;
+
+@override int get hashCode => 'RP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$rrsig extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$rrsig._();
+
+@override String get value => 'RRSIG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$rrsig;
+
+@override int get hashCode => 'RRSIG'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$rt extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$rt._();
+
+@override String get value => 'RT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$rt;
+
+@override int get hashCode => 'RT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$sig extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$sig._();
+
+@override String get value => 'SIG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$sig;
+
+@override int get hashCode => 'SIG'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$sink extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$sink._();
+
+@override String get value => 'SINK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$sink;
+
+@override int get hashCode => 'SINK'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$smimea extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$smimea._();
+
+@override String get value => 'SMIMEA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$smimea;
+
+@override int get hashCode => 'SMIMEA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$soa extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$soa._();
+
+@override String get value => 'SOA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$soa;
+
+@override int get hashCode => 'SOA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$spf extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$spf._();
+
+@override String get value => 'SPF';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$spf;
+
+@override int get hashCode => 'SPF'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$srv extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$srv._();
+
+@override String get value => 'SRV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$srv;
+
+@override int get hashCode => 'SRV'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$sshfp extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$sshfp._();
+
+@override String get value => 'SSHFP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$sshfp;
+
+@override int get hashCode => 'SSHFP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$svcb extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$svcb._();
+
+@override String get value => 'SVCB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$svcb;
+
+@override int get hashCode => 'SVCB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$ta extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$ta._();
+
+@override String get value => 'TA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$ta;
+
+@override int get hashCode => 'TA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$talink extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$talink._();
+
+@override String get value => 'TALINK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$talink;
+
+@override int get hashCode => 'TALINK'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$tkey extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$tkey._();
+
+@override String get value => 'TKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$tkey;
+
+@override int get hashCode => 'TKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$tlsa extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$tlsa._();
+
+@override String get value => 'TLSA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$tlsa;
+
+@override int get hashCode => 'TLSA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$tsig extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$tsig._();
+
+@override String get value => 'TSIG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$tsig;
+
+@override int get hashCode => 'TSIG'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$txt extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$txt._();
+
+@override String get value => 'TXT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$txt;
+
+@override int get hashCode => 'TXT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$uinfo extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$uinfo._();
+
+@override String get value => 'UINFO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$uinfo;
+
+@override int get hashCode => 'UINFO'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$uid extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$uid._();
+
+@override String get value => 'UID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$uid;
+
+@override int get hashCode => 'UID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$unspec extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$unspec._();
+
+@override String get value => 'UNSPEC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$unspec;
+
+@override int get hashCode => 'UNSPEC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$uri extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$uri._();
+
+@override String get value => 'URI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$uri;
+
+@override int get hashCode => 'URI'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$wks extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$wks._();
+
+@override String get value => 'WKS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$wks;
+
+@override int get hashCode => 'WKS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$x25 extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$x25._();
+
+@override String get value => 'X25';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$x25;
+
+@override int get hashCode => 'X25'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$zonemd extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$zonemd._();
+
+@override String get value => 'ZONEMD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecQueryType$zonemd;
+
+@override int get hashCode => 'ZONEMD'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecQueryType$Unknown extends RadarGetDnsSummaryByDnssecQueryType {const RadarGetDnsSummaryByDnssecQueryType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetDnsSummaryByDnssecQueryType && other.value == value;
+    other is RadarGetDnsSummaryByDnssecQueryType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetDnsSummaryByDnssecQueryType($value)';
 
  }

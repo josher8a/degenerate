@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Import
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/import/project_choices.dart';@immutable final class ImportStatus {const ImportStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/import/project_choices.dart';sealed class ImportStatus {const ImportStatus();
 
 factory ImportStatus.fromJson(String json) { return switch (json) {
   'auth' => auth,
@@ -20,45 +20,44 @@ factory ImportStatus.fromJson(String json) { return switch (json) {
   'detection_found_multiple' => detectionFoundMultiple,
   'detection_found_nothing' => detectionFoundNothing,
   'detection_needs_auth' => detectionNeedsAuth,
-  _ => ImportStatus._(json),
+  _ => ImportStatus$Unknown(json),
 }; }
 
-static const ImportStatus auth = ImportStatus._('auth');
+static const ImportStatus auth = ImportStatus$auth._();
 
-static const ImportStatus error = ImportStatus._('error');
+static const ImportStatus error = ImportStatus$error._();
 
-static const ImportStatus none = ImportStatus._('none');
+static const ImportStatus none = ImportStatus$none._();
 
-static const ImportStatus detecting = ImportStatus._('detecting');
+static const ImportStatus detecting = ImportStatus$detecting._();
 
-static const ImportStatus choose = ImportStatus._('choose');
+static const ImportStatus choose = ImportStatus$choose._();
 
-static const ImportStatus authFailed = ImportStatus._('auth_failed');
+static const ImportStatus authFailed = ImportStatus$authFailed._();
 
-static const ImportStatus importing = ImportStatus._('importing');
+static const ImportStatus importing = ImportStatus$importing._();
 
-static const ImportStatus mapping = ImportStatus._('mapping');
+static const ImportStatus mapping = ImportStatus$mapping._();
 
-static const ImportStatus waitingToPush = ImportStatus._('waiting_to_push');
+static const ImportStatus waitingToPush = ImportStatus$waitingToPush._();
 
-static const ImportStatus pushing = ImportStatus._('pushing');
+static const ImportStatus pushing = ImportStatus$pushing._();
 
-static const ImportStatus complete = ImportStatus._('complete');
+static const ImportStatus complete = ImportStatus$complete._();
 
-static const ImportStatus setup = ImportStatus._('setup');
+static const ImportStatus setup = ImportStatus$setup._();
 
-static const ImportStatus unknown = ImportStatus._('unknown');
+static const ImportStatus unknown = ImportStatus$unknown._();
 
-static const ImportStatus detectionFoundMultiple = ImportStatus._('detection_found_multiple');
+static const ImportStatus detectionFoundMultiple = ImportStatus$detectionFoundMultiple._();
 
-static const ImportStatus detectionFoundNothing = ImportStatus._('detection_found_nothing');
+static const ImportStatus detectionFoundNothing = ImportStatus$detectionFoundNothing._();
 
-static const ImportStatus detectionNeedsAuth = ImportStatus._('detection_needs_auth');
+static const ImportStatus detectionNeedsAuth = ImportStatus$detectionNeedsAuth._();
 
 static const List<ImportStatus> values = [auth, error, none, detecting, choose, authFailed, importing, mapping, waitingToPush, pushing, complete, setup, unknown, detectionFoundMultiple, detectionFoundNothing, detectionNeedsAuth];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -81,13 +80,162 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ImportStatus$Unknown; } 
+@override String toString() => 'ImportStatus($value)';
+
+ }
+@immutable final class ImportStatus$auth extends ImportStatus {const ImportStatus$auth._();
+
+@override String get value => 'auth';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$auth;
+
+@override int get hashCode => 'auth'.hashCode;
+
+ }
+@immutable final class ImportStatus$error extends ImportStatus {const ImportStatus$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class ImportStatus$none extends ImportStatus {const ImportStatus$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class ImportStatus$detecting extends ImportStatus {const ImportStatus$detecting._();
+
+@override String get value => 'detecting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$detecting;
+
+@override int get hashCode => 'detecting'.hashCode;
+
+ }
+@immutable final class ImportStatus$choose extends ImportStatus {const ImportStatus$choose._();
+
+@override String get value => 'choose';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$choose;
+
+@override int get hashCode => 'choose'.hashCode;
+
+ }
+@immutable final class ImportStatus$authFailed extends ImportStatus {const ImportStatus$authFailed._();
+
+@override String get value => 'auth_failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$authFailed;
+
+@override int get hashCode => 'auth_failed'.hashCode;
+
+ }
+@immutable final class ImportStatus$importing extends ImportStatus {const ImportStatus$importing._();
+
+@override String get value => 'importing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$importing;
+
+@override int get hashCode => 'importing'.hashCode;
+
+ }
+@immutable final class ImportStatus$mapping extends ImportStatus {const ImportStatus$mapping._();
+
+@override String get value => 'mapping';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$mapping;
+
+@override int get hashCode => 'mapping'.hashCode;
+
+ }
+@immutable final class ImportStatus$waitingToPush extends ImportStatus {const ImportStatus$waitingToPush._();
+
+@override String get value => 'waiting_to_push';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$waitingToPush;
+
+@override int get hashCode => 'waiting_to_push'.hashCode;
+
+ }
+@immutable final class ImportStatus$pushing extends ImportStatus {const ImportStatus$pushing._();
+
+@override String get value => 'pushing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$pushing;
+
+@override int get hashCode => 'pushing'.hashCode;
+
+ }
+@immutable final class ImportStatus$complete extends ImportStatus {const ImportStatus$complete._();
+
+@override String get value => 'complete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$complete;
+
+@override int get hashCode => 'complete'.hashCode;
+
+ }
+@immutable final class ImportStatus$setup extends ImportStatus {const ImportStatus$setup._();
+
+@override String get value => 'setup';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$setup;
+
+@override int get hashCode => 'setup'.hashCode;
+
+ }
+@immutable final class ImportStatus$unknown extends ImportStatus {const ImportStatus$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class ImportStatus$detectionFoundMultiple extends ImportStatus {const ImportStatus$detectionFoundMultiple._();
+
+@override String get value => 'detection_found_multiple';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$detectionFoundMultiple;
+
+@override int get hashCode => 'detection_found_multiple'.hashCode;
+
+ }
+@immutable final class ImportStatus$detectionFoundNothing extends ImportStatus {const ImportStatus$detectionFoundNothing._();
+
+@override String get value => 'detection_found_nothing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$detectionFoundNothing;
+
+@override int get hashCode => 'detection_found_nothing'.hashCode;
+
+ }
+@immutable final class ImportStatus$detectionNeedsAuth extends ImportStatus {const ImportStatus$detectionNeedsAuth._();
+
+@override String get value => 'detection_needs_auth';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImportStatus$detectionNeedsAuth;
+
+@override int get hashCode => 'detection_needs_auth'.hashCode;
+
+ }
+@immutable final class ImportStatus$Unknown extends ImportStatus {const ImportStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ImportStatus && other.value == value;
+    other is ImportStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ImportStatus($value)';
 
  }
 /// A repository import from an external source.

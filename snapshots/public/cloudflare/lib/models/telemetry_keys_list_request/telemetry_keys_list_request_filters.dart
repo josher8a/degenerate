@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TelemetryKeysListRequest (inline: Filters)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_values_list_request/telemetry_values_list_request_type.dart';@immutable final class FiltersOperation {const FiltersOperation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_values_list_request/telemetry_values_list_request_type.dart';sealed class FiltersOperation {const FiltersOperation();
 
 factory FiltersOperation.fromJson(String json) { return switch (json) {
   'includes' => includes,
@@ -32,69 +32,68 @@ factory FiltersOperation.fromJson(String json) { return switch (json) {
   'IN' => $in2,
   'NOT_IN' => notIn2,
   'STARTS_WITH' => startsWith2,
-  _ => FiltersOperation._(json),
+  _ => FiltersOperation$Unknown(json),
 }; }
 
-static const FiltersOperation includes = FiltersOperation._('includes');
+static const FiltersOperation includes = FiltersOperation$includes._();
 
-static const FiltersOperation notIncludes = FiltersOperation._('not_includes');
+static const FiltersOperation notIncludes = FiltersOperation$notIncludes._();
 
-static const FiltersOperation startsWith = FiltersOperation._('starts_with');
+static const FiltersOperation startsWith = FiltersOperation$startsWith._();
 
-static const FiltersOperation regex = FiltersOperation._('regex');
+static const FiltersOperation regex = FiltersOperation$regex._();
 
-static const FiltersOperation exists = FiltersOperation._('exists');
+static const FiltersOperation exists = FiltersOperation$exists._();
 
-static const FiltersOperation isNull = FiltersOperation._('is_null');
+static const FiltersOperation isNull = FiltersOperation$isNull._();
 
-static const FiltersOperation $in = FiltersOperation._('in');
+static const FiltersOperation $in = FiltersOperation$$in._();
 
-static const FiltersOperation notIn = FiltersOperation._('not_in');
+static const FiltersOperation notIn = FiltersOperation$notIn._();
 
-static const FiltersOperation eq = FiltersOperation._('eq');
+static const FiltersOperation eq = FiltersOperation$eq._();
 
-static const FiltersOperation neq = FiltersOperation._('neq');
+static const FiltersOperation neq = FiltersOperation$neq._();
 
-static const FiltersOperation gt = FiltersOperation._('gt');
+static const FiltersOperation gt = FiltersOperation$gt._();
 
-static const FiltersOperation gte = FiltersOperation._('gte');
+static const FiltersOperation gte = FiltersOperation$gte._();
 
-static const FiltersOperation lt = FiltersOperation._('lt');
+static const FiltersOperation lt = FiltersOperation$lt._();
 
-static const FiltersOperation lte = FiltersOperation._('lte');
+static const FiltersOperation lte = FiltersOperation$lte._();
 
-static const FiltersOperation $empty = FiltersOperation._('=');
+static const FiltersOperation $empty = FiltersOperation$$empty._();
 
-static const FiltersOperation $empty2 = FiltersOperation._('!=');
+static const FiltersOperation $empty2 = FiltersOperation$$empty2._();
 
-static const FiltersOperation $empty3 = FiltersOperation._('>');
+static const FiltersOperation $empty3 = FiltersOperation$$empty3._();
 
-static const FiltersOperation $empty4 = FiltersOperation._('>=');
+static const FiltersOperation $empty4 = FiltersOperation$$empty4._();
 
-static const FiltersOperation $empty5 = FiltersOperation._('<');
+static const FiltersOperation $empty5 = FiltersOperation$$empty5._();
 
-static const FiltersOperation $empty6 = FiltersOperation._('<=');
+static const FiltersOperation $empty6 = FiltersOperation$$empty6._();
 
-static const FiltersOperation includes2 = FiltersOperation._('INCLUDES');
+static const FiltersOperation includes2 = FiltersOperation$includes2._();
 
-static const FiltersOperation doesNotInclude = FiltersOperation._('DOES_NOT_INCLUDE');
+static const FiltersOperation doesNotInclude = FiltersOperation$doesNotInclude._();
 
-static const FiltersOperation matchRegex = FiltersOperation._('MATCH_REGEX');
+static const FiltersOperation matchRegex = FiltersOperation$matchRegex._();
 
-static const FiltersOperation exists2 = FiltersOperation._('EXISTS');
+static const FiltersOperation exists2 = FiltersOperation$exists2._();
 
-static const FiltersOperation doesNotExist = FiltersOperation._('DOES_NOT_EXIST');
+static const FiltersOperation doesNotExist = FiltersOperation$doesNotExist._();
 
-static const FiltersOperation $in2 = FiltersOperation._('IN');
+static const FiltersOperation $in2 = FiltersOperation$$in2._();
 
-static const FiltersOperation notIn2 = FiltersOperation._('NOT_IN');
+static const FiltersOperation notIn2 = FiltersOperation$notIn2._();
 
-static const FiltersOperation startsWith2 = FiltersOperation._('STARTS_WITH');
+static const FiltersOperation startsWith2 = FiltersOperation$startsWith2._();
 
 static const List<FiltersOperation> values = [includes, notIncludes, startsWith, regex, exists, isNull, $in, notIn, eq, neq, gt, gte, lt, lte, $empty, $empty2, $empty3, $empty4, $empty5, $empty6, includes2, doesNotInclude, matchRegex, exists2, doesNotExist, $in2, notIn2, startsWith2];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -129,13 +128,270 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FiltersOperation$Unknown; } 
+@override String toString() => 'FiltersOperation($value)';
+
+ }
+@immutable final class FiltersOperation$includes extends FiltersOperation {const FiltersOperation$includes._();
+
+@override String get value => 'includes';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$includes;
+
+@override int get hashCode => 'includes'.hashCode;
+
+ }
+@immutable final class FiltersOperation$notIncludes extends FiltersOperation {const FiltersOperation$notIncludes._();
+
+@override String get value => 'not_includes';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$notIncludes;
+
+@override int get hashCode => 'not_includes'.hashCode;
+
+ }
+@immutable final class FiltersOperation$startsWith extends FiltersOperation {const FiltersOperation$startsWith._();
+
+@override String get value => 'starts_with';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$startsWith;
+
+@override int get hashCode => 'starts_with'.hashCode;
+
+ }
+@immutable final class FiltersOperation$regex extends FiltersOperation {const FiltersOperation$regex._();
+
+@override String get value => 'regex';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$regex;
+
+@override int get hashCode => 'regex'.hashCode;
+
+ }
+@immutable final class FiltersOperation$exists extends FiltersOperation {const FiltersOperation$exists._();
+
+@override String get value => 'exists';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$exists;
+
+@override int get hashCode => 'exists'.hashCode;
+
+ }
+@immutable final class FiltersOperation$isNull extends FiltersOperation {const FiltersOperation$isNull._();
+
+@override String get value => 'is_null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$isNull;
+
+@override int get hashCode => 'is_null'.hashCode;
+
+ }
+@immutable final class FiltersOperation$$in extends FiltersOperation {const FiltersOperation$$in._();
+
+@override String get value => 'in';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$$in;
+
+@override int get hashCode => 'in'.hashCode;
+
+ }
+@immutable final class FiltersOperation$notIn extends FiltersOperation {const FiltersOperation$notIn._();
+
+@override String get value => 'not_in';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$notIn;
+
+@override int get hashCode => 'not_in'.hashCode;
+
+ }
+@immutable final class FiltersOperation$eq extends FiltersOperation {const FiltersOperation$eq._();
+
+@override String get value => 'eq';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$eq;
+
+@override int get hashCode => 'eq'.hashCode;
+
+ }
+@immutable final class FiltersOperation$neq extends FiltersOperation {const FiltersOperation$neq._();
+
+@override String get value => 'neq';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$neq;
+
+@override int get hashCode => 'neq'.hashCode;
+
+ }
+@immutable final class FiltersOperation$gt extends FiltersOperation {const FiltersOperation$gt._();
+
+@override String get value => 'gt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$gt;
+
+@override int get hashCode => 'gt'.hashCode;
+
+ }
+@immutable final class FiltersOperation$gte extends FiltersOperation {const FiltersOperation$gte._();
+
+@override String get value => 'gte';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$gte;
+
+@override int get hashCode => 'gte'.hashCode;
+
+ }
+@immutable final class FiltersOperation$lt extends FiltersOperation {const FiltersOperation$lt._();
+
+@override String get value => 'lt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$lt;
+
+@override int get hashCode => 'lt'.hashCode;
+
+ }
+@immutable final class FiltersOperation$lte extends FiltersOperation {const FiltersOperation$lte._();
+
+@override String get value => 'lte';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$lte;
+
+@override int get hashCode => 'lte'.hashCode;
+
+ }
+@immutable final class FiltersOperation$$empty extends FiltersOperation {const FiltersOperation$$empty._();
+
+@override String get value => '=';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$$empty;
+
+@override int get hashCode => '='.hashCode;
+
+ }
+@immutable final class FiltersOperation$$empty2 extends FiltersOperation {const FiltersOperation$$empty2._();
+
+@override String get value => '!=';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$$empty2;
+
+@override int get hashCode => '!='.hashCode;
+
+ }
+@immutable final class FiltersOperation$$empty3 extends FiltersOperation {const FiltersOperation$$empty3._();
+
+@override String get value => '>';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$$empty3;
+
+@override int get hashCode => '>'.hashCode;
+
+ }
+@immutable final class FiltersOperation$$empty4 extends FiltersOperation {const FiltersOperation$$empty4._();
+
+@override String get value => '>=';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$$empty4;
+
+@override int get hashCode => '>='.hashCode;
+
+ }
+@immutable final class FiltersOperation$$empty5 extends FiltersOperation {const FiltersOperation$$empty5._();
+
+@override String get value => '<';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$$empty5;
+
+@override int get hashCode => '<'.hashCode;
+
+ }
+@immutable final class FiltersOperation$$empty6 extends FiltersOperation {const FiltersOperation$$empty6._();
+
+@override String get value => '<=';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$$empty6;
+
+@override int get hashCode => '<='.hashCode;
+
+ }
+@immutable final class FiltersOperation$includes2 extends FiltersOperation {const FiltersOperation$includes2._();
+
+@override String get value => 'INCLUDES';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$includes2;
+
+@override int get hashCode => 'INCLUDES'.hashCode;
+
+ }
+@immutable final class FiltersOperation$doesNotInclude extends FiltersOperation {const FiltersOperation$doesNotInclude._();
+
+@override String get value => 'DOES_NOT_INCLUDE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$doesNotInclude;
+
+@override int get hashCode => 'DOES_NOT_INCLUDE'.hashCode;
+
+ }
+@immutable final class FiltersOperation$matchRegex extends FiltersOperation {const FiltersOperation$matchRegex._();
+
+@override String get value => 'MATCH_REGEX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$matchRegex;
+
+@override int get hashCode => 'MATCH_REGEX'.hashCode;
+
+ }
+@immutable final class FiltersOperation$exists2 extends FiltersOperation {const FiltersOperation$exists2._();
+
+@override String get value => 'EXISTS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$exists2;
+
+@override int get hashCode => 'EXISTS'.hashCode;
+
+ }
+@immutable final class FiltersOperation$doesNotExist extends FiltersOperation {const FiltersOperation$doesNotExist._();
+
+@override String get value => 'DOES_NOT_EXIST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$doesNotExist;
+
+@override int get hashCode => 'DOES_NOT_EXIST'.hashCode;
+
+ }
+@immutable final class FiltersOperation$$in2 extends FiltersOperation {const FiltersOperation$$in2._();
+
+@override String get value => 'IN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$$in2;
+
+@override int get hashCode => 'IN'.hashCode;
+
+ }
+@immutable final class FiltersOperation$notIn2 extends FiltersOperation {const FiltersOperation$notIn2._();
+
+@override String get value => 'NOT_IN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$notIn2;
+
+@override int get hashCode => 'NOT_IN'.hashCode;
+
+ }
+@immutable final class FiltersOperation$startsWith2 extends FiltersOperation {const FiltersOperation$startsWith2._();
+
+@override String get value => 'STARTS_WITH';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FiltersOperation$startsWith2;
+
+@override int get hashCode => 'STARTS_WITH'.hashCode;
+
+ }
+@immutable final class FiltersOperation$Unknown extends FiltersOperation {const FiltersOperation$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FiltersOperation && other.value == value;
+    other is FiltersOperation$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FiltersOperation($value)';
 
  }
 @immutable final class TelemetryKeysListRequestFilters {const TelemetryKeysListRequestFilters({required this.key, required this.operation, required this.type, this.value, });

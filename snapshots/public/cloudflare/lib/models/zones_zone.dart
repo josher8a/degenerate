@@ -2,28 +2,27 @@
 // Source: #/components/schemas/ZonesZone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_identifier.dart';import 'package:pub_cloudflare/models/zones_paused.dart';import 'package:pub_cloudflare/models/zones_type.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_account.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_meta.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_owner.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_plan.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_tenant.dart';import 'package:pub_cloudflare/models/zones_zone/zones_zone_tenant_unit.dart';/// The zone status on Cloudflare.
-@immutable final class ZonesZoneStatus {const ZonesZoneStatus._(this.value);
+sealed class ZonesZoneStatus {const ZonesZoneStatus();
 
 factory ZonesZoneStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
   'pending' => pending,
   'active' => active,
   'moved' => moved,
-  _ => ZonesZoneStatus._(json),
+  _ => ZonesZoneStatus$Unknown(json),
 }; }
 
-static const ZonesZoneStatus initializing = ZonesZoneStatus._('initializing');
+static const ZonesZoneStatus initializing = ZonesZoneStatus$initializing._();
 
-static const ZonesZoneStatus pending = ZonesZoneStatus._('pending');
+static const ZonesZoneStatus pending = ZonesZoneStatus$pending._();
 
-static const ZonesZoneStatus active = ZonesZoneStatus._('active');
+static const ZonesZoneStatus active = ZonesZoneStatus$active._();
 
-static const ZonesZoneStatus moved = ZonesZoneStatus._('moved');
+static const ZonesZoneStatus moved = ZonesZoneStatus$moved._();
 
 static const List<ZonesZoneStatus> values = [initializing, pending, active, moved];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesZoneStatus$Unknown; } 
+@override String toString() => 'ZonesZoneStatus($value)';
+
+ }
+@immutable final class ZonesZoneStatus$initializing extends ZonesZoneStatus {const ZonesZoneStatus$initializing._();
+
+@override String get value => 'initializing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesZoneStatus$initializing;
+
+@override int get hashCode => 'initializing'.hashCode;
+
+ }
+@immutable final class ZonesZoneStatus$pending extends ZonesZoneStatus {const ZonesZoneStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesZoneStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class ZonesZoneStatus$active extends ZonesZoneStatus {const ZonesZoneStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesZoneStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class ZonesZoneStatus$moved extends ZonesZoneStatus {const ZonesZoneStatus$moved._();
+
+@override String get value => 'moved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesZoneStatus$moved;
+
+@override int get hashCode => 'moved'.hashCode;
+
+ }
+@immutable final class ZonesZoneStatus$Unknown extends ZonesZoneStatus {const ZonesZoneStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesZoneStatus && other.value == value;
+    other is ZonesZoneStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesZoneStatus($value)';
 
  }
 @immutable final class ZonesZone {const ZonesZone({required this.account, required this.activatedOn, required this.createdOn, required this.developmentMode, required this.id, required this.meta, required this.modifiedOn, required this.name, required this.nameServers, required this.originalDnshost, required this.originalNameServers, required this.originalRegistrar, required this.owner, required this.plan, this.cnameSuffix, this.paused, this.permissions, this.status, this.tenant, this.tenantUnit, this.type, this.vanityNameServers = const [], this.verificationKey, });

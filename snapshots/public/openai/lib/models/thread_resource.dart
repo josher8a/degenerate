@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ThreadResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/thread_resource/thread_resource_status.dart';/// Type discriminator that is always `chatkit.thread`.
-@immutable final class ThreadResourceObject {const ThreadResourceObject._(this.value);
+sealed class ThreadResourceObject {const ThreadResourceObject();
 
 factory ThreadResourceObject.fromJson(String json) { return switch (json) {
   'chatkit.thread' => chatkitThread,
-  _ => ThreadResourceObject._(json),
+  _ => ThreadResourceObject$Unknown(json),
 }; }
 
-static const ThreadResourceObject chatkitThread = ThreadResourceObject._('chatkit.thread');
+static const ThreadResourceObject chatkitThread = ThreadResourceObject$chatkitThread._();
 
 static const List<ThreadResourceObject> values = [chatkitThread];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadResourceObject$Unknown; } 
+@override String toString() => 'ThreadResourceObject($value)';
+
+ }
+@immutable final class ThreadResourceObject$chatkitThread extends ThreadResourceObject {const ThreadResourceObject$chatkitThread._();
+
+@override String get value => 'chatkit.thread';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadResourceObject$chatkitThread;
+
+@override int get hashCode => 'chatkit.thread'.hashCode;
+
+ }
+@immutable final class ThreadResourceObject$Unknown extends ThreadResourceObject {const ThreadResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadResourceObject && other.value == value;
+    other is ThreadResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadResourceObject($value)';
 
  }
 /// Represents a ChatKit thread and its current status.

@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BuildsBuildTriggerMetadataResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_branch.dart';import 'package:pub_cloudflare/models/builds_build_command.dart';import 'package:pub_cloudflare/models/builds_build_token_name.dart';import 'package:pub_cloudflare/models/builds_build_token_uuid.dart';import 'package:pub_cloudflare/models/builds_deploy_command.dart';import 'package:pub_cloudflare/models/builds_provider_account_name.dart';import 'package:pub_cloudflare/models/builds_repo_name.dart';import 'package:pub_cloudflare/models/builds_root_directory.dart';import 'package:pub_cloudflare/models/builds_scm_provider_type.dart';@immutable final class BuildsBuildTriggerSource {const BuildsBuildTriggerSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_branch.dart';import 'package:pub_cloudflare/models/builds_build_command.dart';import 'package:pub_cloudflare/models/builds_build_token_name.dart';import 'package:pub_cloudflare/models/builds_build_token_uuid.dart';import 'package:pub_cloudflare/models/builds_deploy_command.dart';import 'package:pub_cloudflare/models/builds_provider_account_name.dart';import 'package:pub_cloudflare/models/builds_repo_name.dart';import 'package:pub_cloudflare/models/builds_root_directory.dart';import 'package:pub_cloudflare/models/builds_scm_provider_type.dart';sealed class BuildsBuildTriggerSource {const BuildsBuildTriggerSource();
 
 factory BuildsBuildTriggerSource.fromJson(String json) { return switch (json) {
   'push' => push,
   'pull_request' => pullRequest,
   'manual' => manual,
   'api' => api,
-  _ => BuildsBuildTriggerSource._(json),
+  _ => BuildsBuildTriggerSource$Unknown(json),
 }; }
 
-static const BuildsBuildTriggerSource push = BuildsBuildTriggerSource._('push');
+static const BuildsBuildTriggerSource push = BuildsBuildTriggerSource$push._();
 
-static const BuildsBuildTriggerSource pullRequest = BuildsBuildTriggerSource._('pull_request');
+static const BuildsBuildTriggerSource pullRequest = BuildsBuildTriggerSource$pullRequest._();
 
-static const BuildsBuildTriggerSource manual = BuildsBuildTriggerSource._('manual');
+static const BuildsBuildTriggerSource manual = BuildsBuildTriggerSource$manual._();
 
-static const BuildsBuildTriggerSource api = BuildsBuildTriggerSource._('api');
+static const BuildsBuildTriggerSource api = BuildsBuildTriggerSource$api._();
 
 static const List<BuildsBuildTriggerSource> values = [push, pullRequest, manual, api];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BuildsBuildTriggerSource$Unknown; } 
+@override String toString() => 'BuildsBuildTriggerSource($value)';
+
+ }
+@immutable final class BuildsBuildTriggerSource$push extends BuildsBuildTriggerSource {const BuildsBuildTriggerSource$push._();
+
+@override String get value => 'push';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BuildsBuildTriggerSource$push;
+
+@override int get hashCode => 'push'.hashCode;
+
+ }
+@immutable final class BuildsBuildTriggerSource$pullRequest extends BuildsBuildTriggerSource {const BuildsBuildTriggerSource$pullRequest._();
+
+@override String get value => 'pull_request';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BuildsBuildTriggerSource$pullRequest;
+
+@override int get hashCode => 'pull_request'.hashCode;
+
+ }
+@immutable final class BuildsBuildTriggerSource$manual extends BuildsBuildTriggerSource {const BuildsBuildTriggerSource$manual._();
+
+@override String get value => 'manual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BuildsBuildTriggerSource$manual;
+
+@override int get hashCode => 'manual'.hashCode;
+
+ }
+@immutable final class BuildsBuildTriggerSource$api extends BuildsBuildTriggerSource {const BuildsBuildTriggerSource$api._();
+
+@override String get value => 'api';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BuildsBuildTriggerSource$api;
+
+@override int get hashCode => 'api'.hashCode;
+
+ }
+@immutable final class BuildsBuildTriggerSource$Unknown extends BuildsBuildTriggerSource {const BuildsBuildTriggerSource$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BuildsBuildTriggerSource && other.value == value;
+    other is BuildsBuildTriggerSource$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BuildsBuildTriggerSource($value)';
 
  }
 /// Git commit hash

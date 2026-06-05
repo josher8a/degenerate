@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookPullRequestAutoMergeEnabled
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_auto_merge_enabled/webhook_pull_request_auto_merge_enabled_pull_request.dart';@immutable final class WebhookPullRequestAutoMergeEnabledAction {const WebhookPullRequestAutoMergeEnabledAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_auto_merge_enabled/webhook_pull_request_auto_merge_enabled_pull_request.dart';sealed class WebhookPullRequestAutoMergeEnabledAction {const WebhookPullRequestAutoMergeEnabledAction();
 
 factory WebhookPullRequestAutoMergeEnabledAction.fromJson(String json) { return switch (json) {
   'auto_merge_enabled' => autoMergeEnabled,
-  _ => WebhookPullRequestAutoMergeEnabledAction._(json),
+  _ => WebhookPullRequestAutoMergeEnabledAction$Unknown(json),
 }; }
 
-static const WebhookPullRequestAutoMergeEnabledAction autoMergeEnabled = WebhookPullRequestAutoMergeEnabledAction._('auto_merge_enabled');
+static const WebhookPullRequestAutoMergeEnabledAction autoMergeEnabled = WebhookPullRequestAutoMergeEnabledAction$autoMergeEnabled._();
 
 static const List<WebhookPullRequestAutoMergeEnabledAction> values = [autoMergeEnabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookPullRequestAutoMergeEnabledAction$Unknown; } 
+@override String toString() => 'WebhookPullRequestAutoMergeEnabledAction($value)';
+
+ }
+@immutable final class WebhookPullRequestAutoMergeEnabledAction$autoMergeEnabled extends WebhookPullRequestAutoMergeEnabledAction {const WebhookPullRequestAutoMergeEnabledAction$autoMergeEnabled._();
+
+@override String get value => 'auto_merge_enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestAutoMergeEnabledAction$autoMergeEnabled;
+
+@override int get hashCode => 'auto_merge_enabled'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestAutoMergeEnabledAction$Unknown extends WebhookPullRequestAutoMergeEnabledAction {const WebhookPullRequestAutoMergeEnabledAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookPullRequestAutoMergeEnabledAction && other.value == value;
+    other is WebhookPullRequestAutoMergeEnabledAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookPullRequestAutoMergeEnabledAction($value)';
 
  }
 @immutable final class WebhookPullRequestAutoMergeEnabled {const WebhookPullRequestAutoMergeEnabled({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, this.reason, });

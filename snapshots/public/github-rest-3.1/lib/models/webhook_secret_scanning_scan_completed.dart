@@ -2,25 +2,24 @@
 // Source: #/components/schemas/WebhookSecretScanningScanCompleted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_check_run_completed/webhook_check_run_completed_action.dart';/// What type of scan was completed
-@immutable final class WebhookSecretScanningScanCompletedType {const WebhookSecretScanningScanCompletedType._(this.value);
+sealed class WebhookSecretScanningScanCompletedType {const WebhookSecretScanningScanCompletedType();
 
 factory WebhookSecretScanningScanCompletedType.fromJson(String json) { return switch (json) {
   'backfill' => backfill,
   'custom-pattern-backfill' => customPatternBackfill,
   'pattern-version-backfill' => patternVersionBackfill,
-  _ => WebhookSecretScanningScanCompletedType._(json),
+  _ => WebhookSecretScanningScanCompletedType$Unknown(json),
 }; }
 
-static const WebhookSecretScanningScanCompletedType backfill = WebhookSecretScanningScanCompletedType._('backfill');
+static const WebhookSecretScanningScanCompletedType backfill = WebhookSecretScanningScanCompletedType$backfill._();
 
-static const WebhookSecretScanningScanCompletedType customPatternBackfill = WebhookSecretScanningScanCompletedType._('custom-pattern-backfill');
+static const WebhookSecretScanningScanCompletedType customPatternBackfill = WebhookSecretScanningScanCompletedType$customPatternBackfill._();
 
-static const WebhookSecretScanningScanCompletedType patternVersionBackfill = WebhookSecretScanningScanCompletedType._('pattern-version-backfill');
+static const WebhookSecretScanningScanCompletedType patternVersionBackfill = WebhookSecretScanningScanCompletedType$patternVersionBackfill._();
 
 static const List<WebhookSecretScanningScanCompletedType> values = [backfill, customPatternBackfill, patternVersionBackfill];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,17 +29,49 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookSecretScanningScanCompletedType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is WebhookSecretScanningScanCompletedType$Unknown; } 
 @override String toString() => 'WebhookSecretScanningScanCompletedType($value)';
 
  }
+@immutable final class WebhookSecretScanningScanCompletedType$backfill extends WebhookSecretScanningScanCompletedType {const WebhookSecretScanningScanCompletedType$backfill._();
+
+@override String get value => 'backfill';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookSecretScanningScanCompletedType$backfill;
+
+@override int get hashCode => 'backfill'.hashCode;
+
+ }
+@immutable final class WebhookSecretScanningScanCompletedType$customPatternBackfill extends WebhookSecretScanningScanCompletedType {const WebhookSecretScanningScanCompletedType$customPatternBackfill._();
+
+@override String get value => 'custom-pattern-backfill';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookSecretScanningScanCompletedType$customPatternBackfill;
+
+@override int get hashCode => 'custom-pattern-backfill'.hashCode;
+
+ }
+@immutable final class WebhookSecretScanningScanCompletedType$patternVersionBackfill extends WebhookSecretScanningScanCompletedType {const WebhookSecretScanningScanCompletedType$patternVersionBackfill._();
+
+@override String get value => 'pattern-version-backfill';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookSecretScanningScanCompletedType$patternVersionBackfill;
+
+@override int get hashCode => 'pattern-version-backfill'.hashCode;
+
+ }
+@immutable final class WebhookSecretScanningScanCompletedType$Unknown extends WebhookSecretScanningScanCompletedType {const WebhookSecretScanningScanCompletedType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookSecretScanningScanCompletedType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// What type of content was scanned
-@immutable final class WebhookSecretScanningScanCompletedSource {const WebhookSecretScanningScanCompletedSource._(this.value);
+sealed class WebhookSecretScanningScanCompletedSource {const WebhookSecretScanningScanCompletedSource();
 
 factory WebhookSecretScanningScanCompletedSource.fromJson(String json) { return switch (json) {
   'git' => git,
@@ -48,23 +79,22 @@ factory WebhookSecretScanningScanCompletedSource.fromJson(String json) { return 
   'pull-requests' => pullRequests,
   'discussions' => discussions,
   'wiki' => wiki,
-  _ => WebhookSecretScanningScanCompletedSource._(json),
+  _ => WebhookSecretScanningScanCompletedSource$Unknown(json),
 }; }
 
-static const WebhookSecretScanningScanCompletedSource git = WebhookSecretScanningScanCompletedSource._('git');
+static const WebhookSecretScanningScanCompletedSource git = WebhookSecretScanningScanCompletedSource$git._();
 
-static const WebhookSecretScanningScanCompletedSource issues = WebhookSecretScanningScanCompletedSource._('issues');
+static const WebhookSecretScanningScanCompletedSource issues = WebhookSecretScanningScanCompletedSource$issues._();
 
-static const WebhookSecretScanningScanCompletedSource pullRequests = WebhookSecretScanningScanCompletedSource._('pull-requests');
+static const WebhookSecretScanningScanCompletedSource pullRequests = WebhookSecretScanningScanCompletedSource$pullRequests._();
 
-static const WebhookSecretScanningScanCompletedSource discussions = WebhookSecretScanningScanCompletedSource._('discussions');
+static const WebhookSecretScanningScanCompletedSource discussions = WebhookSecretScanningScanCompletedSource$discussions._();
 
-static const WebhookSecretScanningScanCompletedSource wiki = WebhookSecretScanningScanCompletedSource._('wiki');
+static const WebhookSecretScanningScanCompletedSource wiki = WebhookSecretScanningScanCompletedSource$wiki._();
 
 static const List<WebhookSecretScanningScanCompletedSource> values = [git, issues, pullRequests, discussions, wiki];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -76,38 +106,87 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookSecretScanningScanCompletedSource && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is WebhookSecretScanningScanCompletedSource$Unknown; } 
 @override String toString() => 'WebhookSecretScanningScanCompletedSource($value)';
 
  }
+@immutable final class WebhookSecretScanningScanCompletedSource$git extends WebhookSecretScanningScanCompletedSource {const WebhookSecretScanningScanCompletedSource$git._();
+
+@override String get value => 'git';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookSecretScanningScanCompletedSource$git;
+
+@override int get hashCode => 'git'.hashCode;
+
+ }
+@immutable final class WebhookSecretScanningScanCompletedSource$issues extends WebhookSecretScanningScanCompletedSource {const WebhookSecretScanningScanCompletedSource$issues._();
+
+@override String get value => 'issues';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookSecretScanningScanCompletedSource$issues;
+
+@override int get hashCode => 'issues'.hashCode;
+
+ }
+@immutable final class WebhookSecretScanningScanCompletedSource$pullRequests extends WebhookSecretScanningScanCompletedSource {const WebhookSecretScanningScanCompletedSource$pullRequests._();
+
+@override String get value => 'pull-requests';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookSecretScanningScanCompletedSource$pullRequests;
+
+@override int get hashCode => 'pull-requests'.hashCode;
+
+ }
+@immutable final class WebhookSecretScanningScanCompletedSource$discussions extends WebhookSecretScanningScanCompletedSource {const WebhookSecretScanningScanCompletedSource$discussions._();
+
+@override String get value => 'discussions';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookSecretScanningScanCompletedSource$discussions;
+
+@override int get hashCode => 'discussions'.hashCode;
+
+ }
+@immutable final class WebhookSecretScanningScanCompletedSource$wiki extends WebhookSecretScanningScanCompletedSource {const WebhookSecretScanningScanCompletedSource$wiki._();
+
+@override String get value => 'wiki';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookSecretScanningScanCompletedSource$wiki;
+
+@override int get hashCode => 'wiki'.hashCode;
+
+ }
+@immutable final class WebhookSecretScanningScanCompletedSource$Unknown extends WebhookSecretScanningScanCompletedSource {const WebhookSecretScanningScanCompletedSource$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookSecretScanningScanCompletedSource$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// If the scan was triggered by a custom pattern update, this will be the scope of the pattern that was updated
-@immutable final class CustomPatternScope {const CustomPatternScope._(this.value);
+sealed class CustomPatternScope {const CustomPatternScope();
 
 factory CustomPatternScope.fromJson(String json) { return switch (json) {
   'repository' => repository,
   'organization' => organization,
   'enterprise' => enterprise,
   'null' => $null,
-  _ => CustomPatternScope._(json),
+  _ => CustomPatternScope$Unknown(json),
 }; }
 
-static const CustomPatternScope repository = CustomPatternScope._('repository');
+static const CustomPatternScope repository = CustomPatternScope$repository._();
 
-static const CustomPatternScope organization = CustomPatternScope._('organization');
+static const CustomPatternScope organization = CustomPatternScope$organization._();
 
-static const CustomPatternScope enterprise = CustomPatternScope._('enterprise');
+static const CustomPatternScope enterprise = CustomPatternScope$enterprise._();
 
-static const CustomPatternScope $null = CustomPatternScope._('null');
+static const CustomPatternScope $null = CustomPatternScope$$null._();
 
 static const List<CustomPatternScope> values = [repository, organization, enterprise, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -118,13 +197,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomPatternScope$Unknown; } 
+@override String toString() => 'CustomPatternScope($value)';
+
+ }
+@immutable final class CustomPatternScope$repository extends CustomPatternScope {const CustomPatternScope$repository._();
+
+@override String get value => 'repository';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomPatternScope$repository;
+
+@override int get hashCode => 'repository'.hashCode;
+
+ }
+@immutable final class CustomPatternScope$organization extends CustomPatternScope {const CustomPatternScope$organization._();
+
+@override String get value => 'organization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomPatternScope$organization;
+
+@override int get hashCode => 'organization'.hashCode;
+
+ }
+@immutable final class CustomPatternScope$enterprise extends CustomPatternScope {const CustomPatternScope$enterprise._();
+
+@override String get value => 'enterprise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomPatternScope$enterprise;
+
+@override int get hashCode => 'enterprise'.hashCode;
+
+ }
+@immutable final class CustomPatternScope$$null extends CustomPatternScope {const CustomPatternScope$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomPatternScope$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class CustomPatternScope$Unknown extends CustomPatternScope {const CustomPatternScope$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomPatternScope && other.value == value;
+    other is CustomPatternScope$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomPatternScope($value)';
 
  }
 @immutable final class WebhookSecretScanningScanCompleted {const WebhookSecretScanningScanCompleted({required this.action, required this.type, required this.source, required this.startedAt, required this.completedAt, this.secretTypes, this.customPatternName, this.customPatternScope, this.repository, this.enterprise, this.installation, this.organization, this.sender, });

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookCheckRunRequestedAction
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run_with_simple_check_suite.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_check_run_requested_action/requested_action.dart';@immutable final class WebhookCheckRunRequestedActionAction {const WebhookCheckRunRequestedActionAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run_with_simple_check_suite.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_check_run_requested_action/requested_action.dart';sealed class WebhookCheckRunRequestedActionAction {const WebhookCheckRunRequestedActionAction();
 
 factory WebhookCheckRunRequestedActionAction.fromJson(String json) { return switch (json) {
   'requested_action' => requestedAction,
-  _ => WebhookCheckRunRequestedActionAction._(json),
+  _ => WebhookCheckRunRequestedActionAction$Unknown(json),
 }; }
 
-static const WebhookCheckRunRequestedActionAction requestedAction = WebhookCheckRunRequestedActionAction._('requested_action');
+static const WebhookCheckRunRequestedActionAction requestedAction = WebhookCheckRunRequestedActionAction$requestedAction._();
 
 static const List<WebhookCheckRunRequestedActionAction> values = [requestedAction];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookCheckRunRequestedActionAction$Unknown; } 
+@override String toString() => 'WebhookCheckRunRequestedActionAction($value)';
+
+ }
+@immutable final class WebhookCheckRunRequestedActionAction$requestedAction extends WebhookCheckRunRequestedActionAction {const WebhookCheckRunRequestedActionAction$requestedAction._();
+
+@override String get value => 'requested_action';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCheckRunRequestedActionAction$requestedAction;
+
+@override int get hashCode => 'requested_action'.hashCode;
+
+ }
+@immutable final class WebhookCheckRunRequestedActionAction$Unknown extends WebhookCheckRunRequestedActionAction {const WebhookCheckRunRequestedActionAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookCheckRunRequestedActionAction && other.value == value;
+    other is WebhookCheckRunRequestedActionAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookCheckRunRequestedActionAction($value)';
 
  }
 @immutable final class WebhookCheckRunRequestedAction {const WebhookCheckRunRequestedAction({required this.action, required this.checkRun, required this.repository, required this.sender, this.installation, this.enterprise, this.organization, this.requestedAction, });

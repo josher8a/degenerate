@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FunctionShellCallOutputTimeoutOutcome
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The outcome type. Always `timeout`.
-@immutable final class FunctionShellCallOutputTimeoutOutcomeType {const FunctionShellCallOutputTimeoutOutcomeType._(this.value);
+sealed class FunctionShellCallOutputTimeoutOutcomeType {const FunctionShellCallOutputTimeoutOutcomeType();
 
 factory FunctionShellCallOutputTimeoutOutcomeType.fromJson(String json) { return switch (json) {
   'timeout' => timeout,
-  _ => FunctionShellCallOutputTimeoutOutcomeType._(json),
+  _ => FunctionShellCallOutputTimeoutOutcomeType$Unknown(json),
 }; }
 
-static const FunctionShellCallOutputTimeoutOutcomeType timeout = FunctionShellCallOutputTimeoutOutcomeType._('timeout');
+static const FunctionShellCallOutputTimeoutOutcomeType timeout = FunctionShellCallOutputTimeoutOutcomeType$timeout._();
 
 static const List<FunctionShellCallOutputTimeoutOutcomeType> values = [timeout];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FunctionShellCallOutputTimeoutOutcomeType$Unknown; } 
+@override String toString() => 'FunctionShellCallOutputTimeoutOutcomeType($value)';
+
+ }
+@immutable final class FunctionShellCallOutputTimeoutOutcomeType$timeout extends FunctionShellCallOutputTimeoutOutcomeType {const FunctionShellCallOutputTimeoutOutcomeType$timeout._();
+
+@override String get value => 'timeout';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionShellCallOutputTimeoutOutcomeType$timeout;
+
+@override int get hashCode => 'timeout'.hashCode;
+
+ }
+@immutable final class FunctionShellCallOutputTimeoutOutcomeType$Unknown extends FunctionShellCallOutputTimeoutOutcomeType {const FunctionShellCallOutputTimeoutOutcomeType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FunctionShellCallOutputTimeoutOutcomeType && other.value == value;
+    other is FunctionShellCallOutputTimeoutOutcomeType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FunctionShellCallOutputTimeoutOutcomeType($value)';
 
  }
 /// Indicates that the shell call exceeded its configured time limit.

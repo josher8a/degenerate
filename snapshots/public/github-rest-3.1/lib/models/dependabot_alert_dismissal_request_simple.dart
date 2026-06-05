@@ -2,28 +2,27 @@
 // Source: #/components/schemas/DependabotAlertDismissalRequestSimple
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_dismissal_request_simple/requester.dart';/// The current status of the dismissal request.
-@immutable final class DependabotAlertDismissalRequestSimpleStatus {const DependabotAlertDismissalRequestSimpleStatus._(this.value);
+sealed class DependabotAlertDismissalRequestSimpleStatus {const DependabotAlertDismissalRequestSimpleStatus();
 
 factory DependabotAlertDismissalRequestSimpleStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'approved' => approved,
   'rejected' => rejected,
   'cancelled' => cancelled,
-  _ => DependabotAlertDismissalRequestSimpleStatus._(json),
+  _ => DependabotAlertDismissalRequestSimpleStatus$Unknown(json),
 }; }
 
-static const DependabotAlertDismissalRequestSimpleStatus pending = DependabotAlertDismissalRequestSimpleStatus._('pending');
+static const DependabotAlertDismissalRequestSimpleStatus pending = DependabotAlertDismissalRequestSimpleStatus$pending._();
 
-static const DependabotAlertDismissalRequestSimpleStatus approved = DependabotAlertDismissalRequestSimpleStatus._('approved');
+static const DependabotAlertDismissalRequestSimpleStatus approved = DependabotAlertDismissalRequestSimpleStatus$approved._();
 
-static const DependabotAlertDismissalRequestSimpleStatus rejected = DependabotAlertDismissalRequestSimpleStatus._('rejected');
+static const DependabotAlertDismissalRequestSimpleStatus rejected = DependabotAlertDismissalRequestSimpleStatus$rejected._();
 
-static const DependabotAlertDismissalRequestSimpleStatus cancelled = DependabotAlertDismissalRequestSimpleStatus._('cancelled');
+static const DependabotAlertDismissalRequestSimpleStatus cancelled = DependabotAlertDismissalRequestSimpleStatus$cancelled._();
 
 static const List<DependabotAlertDismissalRequestSimpleStatus> values = [pending, approved, rejected, cancelled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DependabotAlertDismissalRequestSimpleStatus$Unknown; } 
+@override String toString() => 'DependabotAlertDismissalRequestSimpleStatus($value)';
+
+ }
+@immutable final class DependabotAlertDismissalRequestSimpleStatus$pending extends DependabotAlertDismissalRequestSimpleStatus {const DependabotAlertDismissalRequestSimpleStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotAlertDismissalRequestSimpleStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class DependabotAlertDismissalRequestSimpleStatus$approved extends DependabotAlertDismissalRequestSimpleStatus {const DependabotAlertDismissalRequestSimpleStatus$approved._();
+
+@override String get value => 'approved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotAlertDismissalRequestSimpleStatus$approved;
+
+@override int get hashCode => 'approved'.hashCode;
+
+ }
+@immutable final class DependabotAlertDismissalRequestSimpleStatus$rejected extends DependabotAlertDismissalRequestSimpleStatus {const DependabotAlertDismissalRequestSimpleStatus$rejected._();
+
+@override String get value => 'rejected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotAlertDismissalRequestSimpleStatus$rejected;
+
+@override int get hashCode => 'rejected'.hashCode;
+
+ }
+@immutable final class DependabotAlertDismissalRequestSimpleStatus$cancelled extends DependabotAlertDismissalRequestSimpleStatus {const DependabotAlertDismissalRequestSimpleStatus$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotAlertDismissalRequestSimpleStatus$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class DependabotAlertDismissalRequestSimpleStatus$Unknown extends DependabotAlertDismissalRequestSimpleStatus {const DependabotAlertDismissalRequestSimpleStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DependabotAlertDismissalRequestSimpleStatus && other.value == value;
+    other is DependabotAlertDismissalRequestSimpleStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DependabotAlertDismissalRequestSimpleStatus($value)';
 
  }
 /// Information about an active dismissal request for this Dependabot alert.

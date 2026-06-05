@@ -2,7 +2,7 @@
 // Source: #/components/schemas/AccountConferenceParticipant
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the participant's call in a session. Can be: `queued`, `connecting`, `ringing`, `connected`, `complete`, or `failed`.
-@immutable final class ParticipantEnumStatus {const ParticipantEnumStatus._(this.value);
+sealed class ParticipantEnumStatus {const ParticipantEnumStatus();
 
 factory ParticipantEnumStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -11,25 +11,24 @@ factory ParticipantEnumStatus.fromJson(String json) { return switch (json) {
   'connected' => connected,
   'complete' => complete,
   'failed' => failed,
-  _ => ParticipantEnumStatus._(json),
+  _ => ParticipantEnumStatus$Unknown(json),
 }; }
 
-static const ParticipantEnumStatus queued = ParticipantEnumStatus._('queued');
+static const ParticipantEnumStatus queued = ParticipantEnumStatus$queued._();
 
-static const ParticipantEnumStatus connecting = ParticipantEnumStatus._('connecting');
+static const ParticipantEnumStatus connecting = ParticipantEnumStatus$connecting._();
 
-static const ParticipantEnumStatus ringing = ParticipantEnumStatus._('ringing');
+static const ParticipantEnumStatus ringing = ParticipantEnumStatus$ringing._();
 
-static const ParticipantEnumStatus connected = ParticipantEnumStatus._('connected');
+static const ParticipantEnumStatus connected = ParticipantEnumStatus$connected._();
 
-static const ParticipantEnumStatus complete = ParticipantEnumStatus._('complete');
+static const ParticipantEnumStatus complete = ParticipantEnumStatus$complete._();
 
-static const ParticipantEnumStatus failed = ParticipantEnumStatus._('failed');
+static const ParticipantEnumStatus failed = ParticipantEnumStatus$failed._();
 
 static const List<ParticipantEnumStatus> values = [queued, connecting, ringing, connected, complete, failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,13 +41,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ParticipantEnumStatus$Unknown; } 
+@override String toString() => 'ParticipantEnumStatus($value)';
+
+ }
+@immutable final class ParticipantEnumStatus$queued extends ParticipantEnumStatus {const ParticipantEnumStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ParticipantEnumStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class ParticipantEnumStatus$connecting extends ParticipantEnumStatus {const ParticipantEnumStatus$connecting._();
+
+@override String get value => 'connecting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ParticipantEnumStatus$connecting;
+
+@override int get hashCode => 'connecting'.hashCode;
+
+ }
+@immutable final class ParticipantEnumStatus$ringing extends ParticipantEnumStatus {const ParticipantEnumStatus$ringing._();
+
+@override String get value => 'ringing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ParticipantEnumStatus$ringing;
+
+@override int get hashCode => 'ringing'.hashCode;
+
+ }
+@immutable final class ParticipantEnumStatus$connected extends ParticipantEnumStatus {const ParticipantEnumStatus$connected._();
+
+@override String get value => 'connected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ParticipantEnumStatus$connected;
+
+@override int get hashCode => 'connected'.hashCode;
+
+ }
+@immutable final class ParticipantEnumStatus$complete extends ParticipantEnumStatus {const ParticipantEnumStatus$complete._();
+
+@override String get value => 'complete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ParticipantEnumStatus$complete;
+
+@override int get hashCode => 'complete'.hashCode;
+
+ }
+@immutable final class ParticipantEnumStatus$failed extends ParticipantEnumStatus {const ParticipantEnumStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ParticipantEnumStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class ParticipantEnumStatus$Unknown extends ParticipantEnumStatus {const ParticipantEnumStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ParticipantEnumStatus && other.value == value;
+    other is ParticipantEnumStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ParticipantEnumStatus($value)';
 
  }
 @immutable final class AccountConferenceParticipant {const AccountConferenceParticipant({this.accountSid, this.callSid, this.label, this.callSidToCoach, this.coaching, this.conferenceSid, this.dateCreated, this.dateUpdated, this.endConferenceOnExit, this.muted, this.hold, this.startConferenceOnEnter, this.status, this.queueTime, this.uri, });

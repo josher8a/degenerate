@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FunctionShellCall
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_action.dart';import 'package:pub_openai/models/function_shell_call/function_shell_call_environment.dart';@immutable final class LocalShellCallStatus {const LocalShellCallStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_action.dart';import 'package:pub_openai/models/function_shell_call/function_shell_call_environment.dart';sealed class LocalShellCallStatus {const LocalShellCallStatus();
 
 factory LocalShellCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
-  _ => LocalShellCallStatus._(json),
+  _ => LocalShellCallStatus$Unknown(json),
 }; }
 
-static const LocalShellCallStatus inProgress = LocalShellCallStatus._('in_progress');
+static const LocalShellCallStatus inProgress = LocalShellCallStatus$inProgress._();
 
-static const LocalShellCallStatus completed = LocalShellCallStatus._('completed');
+static const LocalShellCallStatus completed = LocalShellCallStatus$completed._();
 
-static const LocalShellCallStatus incomplete = LocalShellCallStatus._('incomplete');
+static const LocalShellCallStatus incomplete = LocalShellCallStatus$incomplete._();
 
 static const List<LocalShellCallStatus> values = [inProgress, completed, incomplete];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LocalShellCallStatus$Unknown; } 
+@override String toString() => 'LocalShellCallStatus($value)';
+
+ }
+@immutable final class LocalShellCallStatus$inProgress extends LocalShellCallStatus {const LocalShellCallStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LocalShellCallStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class LocalShellCallStatus$completed extends LocalShellCallStatus {const LocalShellCallStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LocalShellCallStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class LocalShellCallStatus$incomplete extends LocalShellCallStatus {const LocalShellCallStatus$incomplete._();
+
+@override String get value => 'incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LocalShellCallStatus$incomplete;
+
+@override int get hashCode => 'incomplete'.hashCode;
+
+ }
+@immutable final class LocalShellCallStatus$Unknown extends LocalShellCallStatus {const LocalShellCallStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LocalShellCallStatus && other.value == value;
+    other is LocalShellCallStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LocalShellCallStatus($value)';
 
  }
 /// A tool call that executes one or more shell commands in a managed environment.

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/PullsCreateReviewCommentRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/side.dart';import 'package:pub_github_rest_3_1/models/pull_request_review_comment/subject_type.dart';/// **Required when using multi-line comments unless using `in_reply_to`**. The `start_side` is the starting side of the diff that the comment applies to. Can be `LEFT` or `RIGHT`. To learn more about multi-line comments, see "[Commenting on a pull request](https://docs.github.com/articles/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)" in the GitHub Help documentation. See `side` in this table for additional context.
-@immutable final class PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide._(this.value);
+sealed class PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide();
 
 factory PullsCreateReviewCommentRequestStartSide.fromJson(String json) { return switch (json) {
   'LEFT' => left,
   'RIGHT' => right,
   'side' => side,
-  _ => PullsCreateReviewCommentRequestStartSide._(json),
+  _ => PullsCreateReviewCommentRequestStartSide$Unknown(json),
 }; }
 
-static const PullsCreateReviewCommentRequestStartSide left = PullsCreateReviewCommentRequestStartSide._('LEFT');
+static const PullsCreateReviewCommentRequestStartSide left = PullsCreateReviewCommentRequestStartSide$left._();
 
-static const PullsCreateReviewCommentRequestStartSide right = PullsCreateReviewCommentRequestStartSide._('RIGHT');
+static const PullsCreateReviewCommentRequestStartSide right = PullsCreateReviewCommentRequestStartSide$right._();
 
-static const PullsCreateReviewCommentRequestStartSide side = PullsCreateReviewCommentRequestStartSide._('side');
+static const PullsCreateReviewCommentRequestStartSide side = PullsCreateReviewCommentRequestStartSide$side._();
 
 static const List<PullsCreateReviewCommentRequestStartSide> values = [left, right, side];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PullsCreateReviewCommentRequestStartSide$Unknown; } 
+@override String toString() => 'PullsCreateReviewCommentRequestStartSide($value)';
+
+ }
+@immutable final class PullsCreateReviewCommentRequestStartSide$left extends PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide$left._();
+
+@override String get value => 'LEFT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PullsCreateReviewCommentRequestStartSide$left;
+
+@override int get hashCode => 'LEFT'.hashCode;
+
+ }
+@immutable final class PullsCreateReviewCommentRequestStartSide$right extends PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide$right._();
+
+@override String get value => 'RIGHT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PullsCreateReviewCommentRequestStartSide$right;
+
+@override int get hashCode => 'RIGHT'.hashCode;
+
+ }
+@immutable final class PullsCreateReviewCommentRequestStartSide$side extends PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide$side._();
+
+@override String get value => 'side';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PullsCreateReviewCommentRequestStartSide$side;
+
+@override int get hashCode => 'side'.hashCode;
+
+ }
+@immutable final class PullsCreateReviewCommentRequestStartSide$Unknown extends PullsCreateReviewCommentRequestStartSide {const PullsCreateReviewCommentRequestStartSide$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PullsCreateReviewCommentRequestStartSide && other.value == value;
+    other is PullsCreateReviewCommentRequestStartSide$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PullsCreateReviewCommentRequestStartSide($value)';
 
  }
 @immutable final class PullsCreateReviewCommentRequest {const PullsCreateReviewCommentRequest({required this.body, required this.commitId, required this.path, this.position, this.side, this.line, this.startLine, this.startSide, this.inReplyTo, this.subjectType, });

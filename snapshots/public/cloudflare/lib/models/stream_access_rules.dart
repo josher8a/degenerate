@@ -2,22 +2,21 @@
 // Source: #/components/schemas/StreamAccessRules
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to take when a request matches a rule. If the action is `block`, the signed token blocks views for viewers matching the rule.
-@immutable final class StreamAccessRulesAction {const StreamAccessRulesAction._(this.value);
+sealed class StreamAccessRulesAction {const StreamAccessRulesAction();
 
 factory StreamAccessRulesAction.fromJson(String json) { return switch (json) {
   'allow' => allow,
   'block' => block,
-  _ => StreamAccessRulesAction._(json),
+  _ => StreamAccessRulesAction$Unknown(json),
 }; }
 
-static const StreamAccessRulesAction allow = StreamAccessRulesAction._('allow');
+static const StreamAccessRulesAction allow = StreamAccessRulesAction$allow._();
 
-static const StreamAccessRulesAction block = StreamAccessRulesAction._('block');
+static const StreamAccessRulesAction block = StreamAccessRulesAction$block._();
 
 static const List<StreamAccessRulesAction> values = [allow, block];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,35 +25,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is StreamAccessRulesAction && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is StreamAccessRulesAction$Unknown; } 
 @override String toString() => 'StreamAccessRulesAction($value)';
 
  }
+@immutable final class StreamAccessRulesAction$allow extends StreamAccessRulesAction {const StreamAccessRulesAction$allow._();
+
+@override String get value => 'allow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamAccessRulesAction$allow;
+
+@override int get hashCode => 'allow'.hashCode;
+
+ }
+@immutable final class StreamAccessRulesAction$block extends StreamAccessRulesAction {const StreamAccessRulesAction$block._();
+
+@override String get value => 'block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamAccessRulesAction$block;
+
+@override int get hashCode => 'block'.hashCode;
+
+ }
+@immutable final class StreamAccessRulesAction$Unknown extends StreamAccessRulesAction {const StreamAccessRulesAction$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StreamAccessRulesAction$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Lists available rule types to match for requests. An `any` type matches all requests and can be used as a wildcard to apply default actions after other rules.
-@immutable final class StreamAccessRulesType {const StreamAccessRulesType._(this.value);
+sealed class StreamAccessRulesType {const StreamAccessRulesType();
 
 factory StreamAccessRulesType.fromJson(String json) { return switch (json) {
   'any' => any,
   'ip.src' => ipSrc,
   'ip.geoip.country' => ipGeoipCountry,
-  _ => StreamAccessRulesType._(json),
+  _ => StreamAccessRulesType$Unknown(json),
 }; }
 
-static const StreamAccessRulesType any = StreamAccessRulesType._('any');
+static const StreamAccessRulesType any = StreamAccessRulesType$any._();
 
-static const StreamAccessRulesType ipSrc = StreamAccessRulesType._('ip.src');
+static const StreamAccessRulesType ipSrc = StreamAccessRulesType$ipSrc._();
 
-static const StreamAccessRulesType ipGeoipCountry = StreamAccessRulesType._('ip.geoip.country');
+static const StreamAccessRulesType ipGeoipCountry = StreamAccessRulesType$ipGeoipCountry._();
 
 static const List<StreamAccessRulesType> values = [any, ipSrc, ipGeoipCountry];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,13 +85,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StreamAccessRulesType$Unknown; } 
+@override String toString() => 'StreamAccessRulesType($value)';
+
+ }
+@immutable final class StreamAccessRulesType$any extends StreamAccessRulesType {const StreamAccessRulesType$any._();
+
+@override String get value => 'any';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamAccessRulesType$any;
+
+@override int get hashCode => 'any'.hashCode;
+
+ }
+@immutable final class StreamAccessRulesType$ipSrc extends StreamAccessRulesType {const StreamAccessRulesType$ipSrc._();
+
+@override String get value => 'ip.src';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamAccessRulesType$ipSrc;
+
+@override int get hashCode => 'ip.src'.hashCode;
+
+ }
+@immutable final class StreamAccessRulesType$ipGeoipCountry extends StreamAccessRulesType {const StreamAccessRulesType$ipGeoipCountry._();
+
+@override String get value => 'ip.geoip.country';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamAccessRulesType$ipGeoipCountry;
+
+@override int get hashCode => 'ip.geoip.country'.hashCode;
+
+ }
+@immutable final class StreamAccessRulesType$Unknown extends StreamAccessRulesType {const StreamAccessRulesType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StreamAccessRulesType && other.value == value;
+    other is StreamAccessRulesType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StreamAccessRulesType($value)';
 
  }
 /// Defines rules for fine-grained control over content than signed URL tokens alone. Access rules primarily make tokens conditionally valid based on user information. Access Rules are specified on token payloads as the `accessRules` property containing an array of Rule objects.

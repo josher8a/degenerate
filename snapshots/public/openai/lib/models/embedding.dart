@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Embedding
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "embedding".
-@immutable final class EmbeddingObject {const EmbeddingObject._(this.value);
+sealed class EmbeddingObject {const EmbeddingObject();
 
 factory EmbeddingObject.fromJson(String json) { return switch (json) {
   'embedding' => embedding,
-  _ => EmbeddingObject._(json),
+  _ => EmbeddingObject$Unknown(json),
 }; }
 
-static const EmbeddingObject embedding = EmbeddingObject._('embedding');
+static const EmbeddingObject embedding = EmbeddingObject$embedding._();
 
 static const List<EmbeddingObject> values = [embedding];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EmbeddingObject$Unknown; } 
+@override String toString() => 'EmbeddingObject($value)';
+
+ }
+@immutable final class EmbeddingObject$embedding extends EmbeddingObject {const EmbeddingObject$embedding._();
+
+@override String get value => 'embedding';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmbeddingObject$embedding;
+
+@override int get hashCode => 'embedding'.hashCode;
+
+ }
+@immutable final class EmbeddingObject$Unknown extends EmbeddingObject {const EmbeddingObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EmbeddingObject && other.value == value;
+    other is EmbeddingObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EmbeddingObject($value)';
 
  }
 /// Represents an embedding vector returned by embedding endpoint.

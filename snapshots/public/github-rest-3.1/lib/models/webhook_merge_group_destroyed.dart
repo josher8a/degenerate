@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookMergeGroupDestroyed
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/merge_group.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookMergeGroupDestroyedAction {const WebhookMergeGroupDestroyedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/merge_group.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookMergeGroupDestroyedAction {const WebhookMergeGroupDestroyedAction();
 
 factory WebhookMergeGroupDestroyedAction.fromJson(String json) { return switch (json) {
   'destroyed' => destroyed,
-  _ => WebhookMergeGroupDestroyedAction._(json),
+  _ => WebhookMergeGroupDestroyedAction$Unknown(json),
 }; }
 
-static const WebhookMergeGroupDestroyedAction destroyed = WebhookMergeGroupDestroyedAction._('destroyed');
+static const WebhookMergeGroupDestroyedAction destroyed = WebhookMergeGroupDestroyedAction$destroyed._();
 
 static const List<WebhookMergeGroupDestroyedAction> values = [destroyed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,35 +20,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookMergeGroupDestroyedAction && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is WebhookMergeGroupDestroyedAction$Unknown; } 
 @override String toString() => 'WebhookMergeGroupDestroyedAction($value)';
 
  }
+@immutable final class WebhookMergeGroupDestroyedAction$destroyed extends WebhookMergeGroupDestroyedAction {const WebhookMergeGroupDestroyedAction$destroyed._();
+
+@override String get value => 'destroyed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookMergeGroupDestroyedAction$destroyed;
+
+@override int get hashCode => 'destroyed'.hashCode;
+
+ }
+@immutable final class WebhookMergeGroupDestroyedAction$Unknown extends WebhookMergeGroupDestroyedAction {const WebhookMergeGroupDestroyedAction$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhookMergeGroupDestroyedAction$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Explains why the merge group is being destroyed. The group could have been merged, removed from the queue (dequeued), or invalidated by an earlier queue entry being dequeued (invalidated).
-@immutable final class WebhookMergeGroupDestroyedReason {const WebhookMergeGroupDestroyedReason._(this.value);
+sealed class WebhookMergeGroupDestroyedReason {const WebhookMergeGroupDestroyedReason();
 
 factory WebhookMergeGroupDestroyedReason.fromJson(String json) { return switch (json) {
   'merged' => merged,
   'invalidated' => invalidated,
   'dequeued' => dequeued,
-  _ => WebhookMergeGroupDestroyedReason._(json),
+  _ => WebhookMergeGroupDestroyedReason$Unknown(json),
 }; }
 
-static const WebhookMergeGroupDestroyedReason merged = WebhookMergeGroupDestroyedReason._('merged');
+static const WebhookMergeGroupDestroyedReason merged = WebhookMergeGroupDestroyedReason$merged._();
 
-static const WebhookMergeGroupDestroyedReason invalidated = WebhookMergeGroupDestroyedReason._('invalidated');
+static const WebhookMergeGroupDestroyedReason invalidated = WebhookMergeGroupDestroyedReason$invalidated._();
 
-static const WebhookMergeGroupDestroyedReason dequeued = WebhookMergeGroupDestroyedReason._('dequeued');
+static const WebhookMergeGroupDestroyedReason dequeued = WebhookMergeGroupDestroyedReason$dequeued._();
 
 static const List<WebhookMergeGroupDestroyedReason> values = [merged, invalidated, dequeued];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -59,13 +71,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookMergeGroupDestroyedReason$Unknown; } 
+@override String toString() => 'WebhookMergeGroupDestroyedReason($value)';
+
+ }
+@immutable final class WebhookMergeGroupDestroyedReason$merged extends WebhookMergeGroupDestroyedReason {const WebhookMergeGroupDestroyedReason$merged._();
+
+@override String get value => 'merged';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookMergeGroupDestroyedReason$merged;
+
+@override int get hashCode => 'merged'.hashCode;
+
+ }
+@immutable final class WebhookMergeGroupDestroyedReason$invalidated extends WebhookMergeGroupDestroyedReason {const WebhookMergeGroupDestroyedReason$invalidated._();
+
+@override String get value => 'invalidated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookMergeGroupDestroyedReason$invalidated;
+
+@override int get hashCode => 'invalidated'.hashCode;
+
+ }
+@immutable final class WebhookMergeGroupDestroyedReason$dequeued extends WebhookMergeGroupDestroyedReason {const WebhookMergeGroupDestroyedReason$dequeued._();
+
+@override String get value => 'dequeued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookMergeGroupDestroyedReason$dequeued;
+
+@override int get hashCode => 'dequeued'.hashCode;
+
+ }
+@immutable final class WebhookMergeGroupDestroyedReason$Unknown extends WebhookMergeGroupDestroyedReason {const WebhookMergeGroupDestroyedReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookMergeGroupDestroyedReason && other.value == value;
+    other is WebhookMergeGroupDestroyedReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookMergeGroupDestroyedReason($value)';
 
  }
 @immutable final class WebhookMergeGroupDestroyed {const WebhookMergeGroupDestroyed({required this.action, required this.mergeGroup, this.reason, this.installation, this.organization, this.repository, this.sender, });

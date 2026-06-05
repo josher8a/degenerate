@@ -2,25 +2,24 @@
 // Source: #/components/schemas/IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level to attempt to delete similar rules defined for other zones with the same owner. The default value is `none`, which will only delete the current rule. Using `basic` will delete rules that match the same action (mode) and configuration, while using `aggressive` will delete rules that match the same configuration.
-@immutable final class Cascade {const Cascade._(this.value);
+sealed class Cascade {const Cascade();
 
 factory Cascade.fromJson(String json) { return switch (json) {
   'none' => none,
   'basic' => basic,
   'aggressive' => aggressive,
-  _ => Cascade._(json),
+  _ => Cascade$Unknown(json),
 }; }
 
-static const Cascade none = Cascade._('none');
+static const Cascade none = Cascade$none._();
 
-static const Cascade basic = Cascade._('basic');
+static const Cascade basic = Cascade$basic._();
 
-static const Cascade aggressive = Cascade._('aggressive');
+static const Cascade aggressive = Cascade$aggressive._();
 
 static const List<Cascade> values = [none, basic, aggressive];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Cascade$Unknown; } 
+@override String toString() => 'Cascade($value)';
+
+ }
+@immutable final class Cascade$none extends Cascade {const Cascade$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Cascade$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class Cascade$basic extends Cascade {const Cascade$basic._();
+
+@override String get value => 'basic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Cascade$basic;
+
+@override int get hashCode => 'basic'.hashCode;
+
+ }
+@immutable final class Cascade$aggressive extends Cascade {const Cascade$aggressive._();
+
+@override String get value => 'aggressive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Cascade$aggressive;
+
+@override int get hashCode => 'aggressive'.hashCode;
+
+ }
+@immutable final class Cascade$Unknown extends Cascade {const Cascade$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Cascade && other.value == value;
+    other is Cascade$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Cascade($value)';
 
  }
 @immutable final class IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest {const IpAccessRulesForAZoneDeleteAnIpAccessRuleRequest({this.cascade = Cascade.none});

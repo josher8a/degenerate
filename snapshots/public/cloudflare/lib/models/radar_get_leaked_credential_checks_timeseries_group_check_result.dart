@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult {const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult {const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult();
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult.fromJson(String json) { return switch (json) {
   'CLEAN' => clean,
@@ -9,23 +9,22 @@ factory RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult.fromJson(String
   'USERNAME_PASSWORD_SIMILAR' => usernamePasswordSimilar,
   'USERNAME_AND_PASSWORD_LEAKED' => usernameAndPasswordLeaked,
   'PASSWORD_LEAKED' => passwordLeaked,
-  _ => RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult._(json),
+  _ => RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$Unknown(json),
 }; }
 
-static const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult clean = RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult._('CLEAN');
+static const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult clean = RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$clean._();
 
-static const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult usernameLeaked = RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult._('USERNAME_LEAKED');
+static const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult usernameLeaked = RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernameLeaked._();
 
-static const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult usernamePasswordSimilar = RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult._('USERNAME_PASSWORD_SIMILAR');
+static const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult usernamePasswordSimilar = RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernamePasswordSimilar._();
 
-static const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult usernameAndPasswordLeaked = RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult._('USERNAME_AND_PASSWORD_LEAKED');
+static const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult usernameAndPasswordLeaked = RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernameAndPasswordLeaked._();
 
-static const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult passwordLeaked = RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult._('PASSWORD_LEAKED');
+static const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult passwordLeaked = RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$passwordLeaked._();
 
 static const List<RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult> values = [clean, usernameLeaked, usernamePasswordSimilar, usernameAndPasswordLeaked, passwordLeaked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,12 +36,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$Unknown; } 
+@override String toString() => 'RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult($value)';
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$clean extends RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult {const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$clean._();
+
+@override String get value => 'CLEAN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$clean;
+
+@override int get hashCode => 'CLEAN'.hashCode;
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernameLeaked extends RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult {const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernameLeaked._();
+
+@override String get value => 'USERNAME_LEAKED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernameLeaked;
+
+@override int get hashCode => 'USERNAME_LEAKED'.hashCode;
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernamePasswordSimilar extends RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult {const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernamePasswordSimilar._();
+
+@override String get value => 'USERNAME_PASSWORD_SIMILAR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernamePasswordSimilar;
+
+@override int get hashCode => 'USERNAME_PASSWORD_SIMILAR'.hashCode;
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernameAndPasswordLeaked extends RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult {const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernameAndPasswordLeaked._();
+
+@override String get value => 'USERNAME_AND_PASSWORD_LEAKED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$usernameAndPasswordLeaked;
+
+@override int get hashCode => 'USERNAME_AND_PASSWORD_LEAKED'.hashCode;
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$passwordLeaked extends RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult {const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$passwordLeaked._();
+
+@override String get value => 'PASSWORD_LEAKED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$passwordLeaked;
+
+@override int get hashCode => 'PASSWORD_LEAKED'.hashCode;
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$Unknown extends RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult {const RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult && other.value == value;
+    other is RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetLeakedCredentialChecksTimeseriesGroupCheckResult($value)';
 
  }

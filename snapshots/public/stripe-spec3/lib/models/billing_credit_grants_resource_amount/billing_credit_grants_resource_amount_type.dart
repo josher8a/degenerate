@@ -2,19 +2,18 @@
 // Source: #/components/schemas/BillingCreditGrantsResourceAmount (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of this amount. We currently only support `monetary` billing credits.
-@immutable final class BillingCreditGrantsResourceAmountType {const BillingCreditGrantsResourceAmountType._(this.value);
+sealed class BillingCreditGrantsResourceAmountType {const BillingCreditGrantsResourceAmountType();
 
 factory BillingCreditGrantsResourceAmountType.fromJson(String json) { return switch (json) {
   'monetary' => monetary,
-  _ => BillingCreditGrantsResourceAmountType._(json),
+  _ => BillingCreditGrantsResourceAmountType$Unknown(json),
 }; }
 
-static const BillingCreditGrantsResourceAmountType monetary = BillingCreditGrantsResourceAmountType._('monetary');
+static const BillingCreditGrantsResourceAmountType monetary = BillingCreditGrantsResourceAmountType$monetary._();
 
 static const List<BillingCreditGrantsResourceAmountType> values = [monetary];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingCreditGrantsResourceAmountType$Unknown; } 
+@override String toString() => 'BillingCreditGrantsResourceAmountType($value)';
+
+ }
+@immutable final class BillingCreditGrantsResourceAmountType$monetary extends BillingCreditGrantsResourceAmountType {const BillingCreditGrantsResourceAmountType$monetary._();
+
+@override String get value => 'monetary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingCreditGrantsResourceAmountType$monetary;
+
+@override int get hashCode => 'monetary'.hashCode;
+
+ }
+@immutable final class BillingCreditGrantsResourceAmountType$Unknown extends BillingCreditGrantsResourceAmountType {const BillingCreditGrantsResourceAmountType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingCreditGrantsResourceAmountType && other.value == value;
+    other is BillingCreditGrantsResourceAmountType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingCreditGrantsResourceAmountType($value)';
 
  }

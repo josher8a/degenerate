@@ -2,19 +2,18 @@
 // Source: #/components/schemas/EvalRunOutputItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_run_output_item/sample.dart';import 'package:pub_openai/models/eval_run_output_item_result.dart';/// The type of the object. Always "eval.run.output_item".
-@immutable final class EvalRunOutputItemObject {const EvalRunOutputItemObject._(this.value);
+sealed class EvalRunOutputItemObject {const EvalRunOutputItemObject();
 
 factory EvalRunOutputItemObject.fromJson(String json) { return switch (json) {
   'eval.run.output_item' => evalRunOutputItem,
-  _ => EvalRunOutputItemObject._(json),
+  _ => EvalRunOutputItemObject$Unknown(json),
 }; }
 
-static const EvalRunOutputItemObject evalRunOutputItem = EvalRunOutputItemObject._('eval.run.output_item');
+static const EvalRunOutputItemObject evalRunOutputItem = EvalRunOutputItemObject$evalRunOutputItem._();
 
 static const List<EvalRunOutputItemObject> values = [evalRunOutputItem];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EvalRunOutputItemObject$Unknown; } 
+@override String toString() => 'EvalRunOutputItemObject($value)';
+
+ }
+@immutable final class EvalRunOutputItemObject$evalRunOutputItem extends EvalRunOutputItemObject {const EvalRunOutputItemObject$evalRunOutputItem._();
+
+@override String get value => 'eval.run.output_item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EvalRunOutputItemObject$evalRunOutputItem;
+
+@override int get hashCode => 'eval.run.output_item'.hashCode;
+
+ }
+@immutable final class EvalRunOutputItemObject$Unknown extends EvalRunOutputItemObject {const EvalRunOutputItemObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EvalRunOutputItemObject && other.value == value;
+    other is EvalRunOutputItemObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EvalRunOutputItemObject($value)';
 
  }
 /// A schema representing an evaluation run output item.

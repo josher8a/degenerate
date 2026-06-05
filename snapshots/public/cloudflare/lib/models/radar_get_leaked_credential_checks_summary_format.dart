@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetLeakedCredentialChecksSummaryFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetLeakedCredentialChecksSummaryFormat {const RadarGetLeakedCredentialChecksSummaryFormat._(this.value);
+sealed class RadarGetLeakedCredentialChecksSummaryFormat {const RadarGetLeakedCredentialChecksSummaryFormat();
 
 factory RadarGetLeakedCredentialChecksSummaryFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetLeakedCredentialChecksSummaryFormat._(json),
+  _ => RadarGetLeakedCredentialChecksSummaryFormat$Unknown(json),
 }; }
 
-static const RadarGetLeakedCredentialChecksSummaryFormat $json = RadarGetLeakedCredentialChecksSummaryFormat._('JSON');
+static const RadarGetLeakedCredentialChecksSummaryFormat $json = RadarGetLeakedCredentialChecksSummaryFormat$$json._();
 
-static const RadarGetLeakedCredentialChecksSummaryFormat csv = RadarGetLeakedCredentialChecksSummaryFormat._('CSV');
+static const RadarGetLeakedCredentialChecksSummaryFormat csv = RadarGetLeakedCredentialChecksSummaryFormat$csv._();
 
 static const List<RadarGetLeakedCredentialChecksSummaryFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetLeakedCredentialChecksSummaryFormat$Unknown; } 
+@override String toString() => 'RadarGetLeakedCredentialChecksSummaryFormat($value)';
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksSummaryFormat$$json extends RadarGetLeakedCredentialChecksSummaryFormat {const RadarGetLeakedCredentialChecksSummaryFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetLeakedCredentialChecksSummaryFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksSummaryFormat$csv extends RadarGetLeakedCredentialChecksSummaryFormat {const RadarGetLeakedCredentialChecksSummaryFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetLeakedCredentialChecksSummaryFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksSummaryFormat$Unknown extends RadarGetLeakedCredentialChecksSummaryFormat {const RadarGetLeakedCredentialChecksSummaryFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetLeakedCredentialChecksSummaryFormat && other.value == value;
+    other is RadarGetLeakedCredentialChecksSummaryFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetLeakedCredentialChecksSummaryFormat($value)';
 
  }

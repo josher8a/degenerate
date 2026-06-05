@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AllOfWithSingleRef
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SingleRefType {const SingleRefType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SingleRefType {const SingleRefType();
 
 factory SingleRefType.fromJson(String json) { return switch (json) {
   'admin' => admin,
   'user' => user,
-  _ => SingleRefType._(json),
+  _ => SingleRefType$Unknown(json),
 }; }
 
-static const SingleRefType admin = SingleRefType._('admin');
+static const SingleRefType admin = SingleRefType$admin._();
 
-static const SingleRefType user = SingleRefType._('user');
+static const SingleRefType user = SingleRefType$user._();
 
 static const List<SingleRefType> values = [admin, user];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SingleRefType$Unknown; } 
+@override String toString() => 'SingleRefType($value)';
+
+ }
+@immutable final class SingleRefType$admin extends SingleRefType {const SingleRefType$admin._();
+
+@override String get value => 'admin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SingleRefType$admin;
+
+@override int get hashCode => 'admin'.hashCode;
+
+ }
+@immutable final class SingleRefType$user extends SingleRefType {const SingleRefType$user._();
+
+@override String get value => 'user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SingleRefType$user;
+
+@override int get hashCode => 'user'.hashCode;
+
+ }
+@immutable final class SingleRefType$Unknown extends SingleRefType {const SingleRefType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SingleRefType && other.value == value;
+    other is SingleRefType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SingleRefType($value)';
 
  }
 @immutable final class AllOfWithSingleRef {const AllOfWithSingleRef({this.username, this.singleRefType, });

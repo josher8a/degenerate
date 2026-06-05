@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Capability
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/account_capability_future_requirements.dart';import 'package:pub_stripe_spec3/models/account_capability_requirements.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_account.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class CapabilityObject {const CapabilityObject._(this.value);
+sealed class CapabilityObject {const CapabilityObject();
 
 factory CapabilityObject.fromJson(String json) { return switch (json) {
   'capability' => capability,
-  _ => CapabilityObject._(json),
+  _ => CapabilityObject$Unknown(json),
 }; }
 
-static const CapabilityObject capability = CapabilityObject._('capability');
+static const CapabilityObject capability = CapabilityObject$capability._();
 
 static const List<CapabilityObject> values = [capability];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,38 +21,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CapabilityObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CapabilityObject$Unknown; } 
 @override String toString() => 'CapabilityObject($value)';
 
  }
+@immutable final class CapabilityObject$capability extends CapabilityObject {const CapabilityObject$capability._();
+
+@override String get value => 'capability';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CapabilityObject$capability;
+
+@override int get hashCode => 'capability'.hashCode;
+
+ }
+@immutable final class CapabilityObject$Unknown extends CapabilityObject {const CapabilityObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CapabilityObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of the capability.
-@immutable final class CapabilityStatus {const CapabilityStatus._(this.value);
+sealed class CapabilityStatus {const CapabilityStatus();
 
 factory CapabilityStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
   'unrequested' => unrequested,
-  _ => CapabilityStatus._(json),
+  _ => CapabilityStatus$Unknown(json),
 }; }
 
-static const CapabilityStatus active = CapabilityStatus._('active');
+static const CapabilityStatus active = CapabilityStatus$active._();
 
-static const CapabilityStatus inactive = CapabilityStatus._('inactive');
+static const CapabilityStatus inactive = CapabilityStatus$inactive._();
 
-static const CapabilityStatus pending = CapabilityStatus._('pending');
+static const CapabilityStatus pending = CapabilityStatus$pending._();
 
-static const CapabilityStatus unrequested = CapabilityStatus._('unrequested');
+static const CapabilityStatus unrequested = CapabilityStatus$unrequested._();
 
 static const List<CapabilityStatus> values = [active, inactive, pending, unrequested];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,13 +76,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CapabilityStatus$Unknown; } 
+@override String toString() => 'CapabilityStatus($value)';
+
+ }
+@immutable final class CapabilityStatus$active extends CapabilityStatus {const CapabilityStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CapabilityStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class CapabilityStatus$inactive extends CapabilityStatus {const CapabilityStatus$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CapabilityStatus$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+ }
+@immutable final class CapabilityStatus$pending extends CapabilityStatus {const CapabilityStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CapabilityStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class CapabilityStatus$unrequested extends CapabilityStatus {const CapabilityStatus$unrequested._();
+
+@override String get value => 'unrequested';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CapabilityStatus$unrequested;
+
+@override int get hashCode => 'unrequested'.hashCode;
+
+ }
+@immutable final class CapabilityStatus$Unknown extends CapabilityStatus {const CapabilityStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CapabilityStatus && other.value == value;
+    other is CapabilityStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CapabilityStatus($value)';
 
  }
 /// This is an object representing a capability for a Stripe account.

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ListsBulkOperationPendingOrRunning
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_operation_id.dart';/// The current status of the asynchronous operation.
-@immutable final class ListsBulkOperationPendingOrRunningStatus {const ListsBulkOperationPendingOrRunningStatus._(this.value);
+sealed class ListsBulkOperationPendingOrRunningStatus {const ListsBulkOperationPendingOrRunningStatus();
 
 factory ListsBulkOperationPendingOrRunningStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'running' => running,
-  _ => ListsBulkOperationPendingOrRunningStatus._(json),
+  _ => ListsBulkOperationPendingOrRunningStatus$Unknown(json),
 }; }
 
-static const ListsBulkOperationPendingOrRunningStatus pending = ListsBulkOperationPendingOrRunningStatus._('pending');
+static const ListsBulkOperationPendingOrRunningStatus pending = ListsBulkOperationPendingOrRunningStatus$pending._();
 
-static const ListsBulkOperationPendingOrRunningStatus running = ListsBulkOperationPendingOrRunningStatus._('running');
+static const ListsBulkOperationPendingOrRunningStatus running = ListsBulkOperationPendingOrRunningStatus$running._();
 
 static const List<ListsBulkOperationPendingOrRunningStatus> values = [pending, running];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ListsBulkOperationPendingOrRunningStatus$Unknown; } 
+@override String toString() => 'ListsBulkOperationPendingOrRunningStatus($value)';
+
+ }
+@immutable final class ListsBulkOperationPendingOrRunningStatus$pending extends ListsBulkOperationPendingOrRunningStatus {const ListsBulkOperationPendingOrRunningStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListsBulkOperationPendingOrRunningStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class ListsBulkOperationPendingOrRunningStatus$running extends ListsBulkOperationPendingOrRunningStatus {const ListsBulkOperationPendingOrRunningStatus$running._();
+
+@override String get value => 'running';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListsBulkOperationPendingOrRunningStatus$running;
+
+@override int get hashCode => 'running'.hashCode;
+
+ }
+@immutable final class ListsBulkOperationPendingOrRunningStatus$Unknown extends ListsBulkOperationPendingOrRunningStatus {const ListsBulkOperationPendingOrRunningStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ListsBulkOperationPendingOrRunningStatus && other.value == value;
+    other is ListsBulkOperationPendingOrRunningStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ListsBulkOperationPendingOrRunningStatus($value)';
 
  }
 @immutable final class ListsBulkOperationPendingOrRunning {const ListsBulkOperationPendingOrRunning({required this.id, required this.status, });

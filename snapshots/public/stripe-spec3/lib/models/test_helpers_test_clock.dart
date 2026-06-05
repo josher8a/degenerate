@@ -2,25 +2,24 @@
 // Source: #/components/schemas/TestHelpersTestClock
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_clocks_resource_status_details_status_details.dart';import 'package:pub_stripe_spec3/models/deleted_test_helpers_test_clock/deleted_test_helpers_test_clock_object.dart';/// The status of the Test Clock.
-@immutable final class TestHelpersTestClockStatus {const TestHelpersTestClockStatus._(this.value);
+sealed class TestHelpersTestClockStatus {const TestHelpersTestClockStatus();
 
 factory TestHelpersTestClockStatus.fromJson(String json) { return switch (json) {
   'advancing' => advancing,
   'internal_failure' => internalFailure,
   'ready' => ready,
-  _ => TestHelpersTestClockStatus._(json),
+  _ => TestHelpersTestClockStatus$Unknown(json),
 }; }
 
-static const TestHelpersTestClockStatus advancing = TestHelpersTestClockStatus._('advancing');
+static const TestHelpersTestClockStatus advancing = TestHelpersTestClockStatus$advancing._();
 
-static const TestHelpersTestClockStatus internalFailure = TestHelpersTestClockStatus._('internal_failure');
+static const TestHelpersTestClockStatus internalFailure = TestHelpersTestClockStatus$internalFailure._();
 
-static const TestHelpersTestClockStatus ready = TestHelpersTestClockStatus._('ready');
+static const TestHelpersTestClockStatus ready = TestHelpersTestClockStatus$ready._();
 
 static const List<TestHelpersTestClockStatus> values = [advancing, internalFailure, ready];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TestHelpersTestClockStatus$Unknown; } 
+@override String toString() => 'TestHelpersTestClockStatus($value)';
+
+ }
+@immutable final class TestHelpersTestClockStatus$advancing extends TestHelpersTestClockStatus {const TestHelpersTestClockStatus$advancing._();
+
+@override String get value => 'advancing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TestHelpersTestClockStatus$advancing;
+
+@override int get hashCode => 'advancing'.hashCode;
+
+ }
+@immutable final class TestHelpersTestClockStatus$internalFailure extends TestHelpersTestClockStatus {const TestHelpersTestClockStatus$internalFailure._();
+
+@override String get value => 'internal_failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TestHelpersTestClockStatus$internalFailure;
+
+@override int get hashCode => 'internal_failure'.hashCode;
+
+ }
+@immutable final class TestHelpersTestClockStatus$ready extends TestHelpersTestClockStatus {const TestHelpersTestClockStatus$ready._();
+
+@override String get value => 'ready';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TestHelpersTestClockStatus$ready;
+
+@override int get hashCode => 'ready'.hashCode;
+
+ }
+@immutable final class TestHelpersTestClockStatus$Unknown extends TestHelpersTestClockStatus {const TestHelpersTestClockStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TestHelpersTestClockStatus && other.value == value;
+    other is TestHelpersTestClockStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TestHelpersTestClockStatus($value)';
 
  }
 /// A test clock enables deterministic control over objects in testmode. With a test clock, you can create

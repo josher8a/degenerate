@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ProjectGroupDeletedResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `project.group.deleted`.
-@immutable final class ProjectGroupDeletedResourceObject {const ProjectGroupDeletedResourceObject._(this.value);
+sealed class ProjectGroupDeletedResourceObject {const ProjectGroupDeletedResourceObject();
 
 factory ProjectGroupDeletedResourceObject.fromJson(String json) { return switch (json) {
   'project.group.deleted' => projectGroupDeleted,
-  _ => ProjectGroupDeletedResourceObject._(json),
+  _ => ProjectGroupDeletedResourceObject$Unknown(json),
 }; }
 
-static const ProjectGroupDeletedResourceObject projectGroupDeleted = ProjectGroupDeletedResourceObject._('project.group.deleted');
+static const ProjectGroupDeletedResourceObject projectGroupDeleted = ProjectGroupDeletedResourceObject$projectGroupDeleted._();
 
 static const List<ProjectGroupDeletedResourceObject> values = [projectGroupDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ProjectGroupDeletedResourceObject$Unknown; } 
+@override String toString() => 'ProjectGroupDeletedResourceObject($value)';
+
+ }
+@immutable final class ProjectGroupDeletedResourceObject$projectGroupDeleted extends ProjectGroupDeletedResourceObject {const ProjectGroupDeletedResourceObject$projectGroupDeleted._();
+
+@override String get value => 'project.group.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ProjectGroupDeletedResourceObject$projectGroupDeleted;
+
+@override int get hashCode => 'project.group.deleted'.hashCode;
+
+ }
+@immutable final class ProjectGroupDeletedResourceObject$Unknown extends ProjectGroupDeletedResourceObject {const ProjectGroupDeletedResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ProjectGroupDeletedResourceObject && other.value == value;
+    other is ProjectGroupDeletedResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ProjectGroupDeletedResourceObject($value)';
 
  }
 /// Confirmation payload returned after removing a group from a project.

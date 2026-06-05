@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PagesSecretTextEnvVar
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesSecretTextEnvVarType {const PagesSecretTextEnvVarType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PagesSecretTextEnvVarType {const PagesSecretTextEnvVarType();
 
 factory PagesSecretTextEnvVarType.fromJson(String json) { return switch (json) {
   'secret_text' => secretText,
-  _ => PagesSecretTextEnvVarType._(json),
+  _ => PagesSecretTextEnvVarType$Unknown(json),
 }; }
 
-static const PagesSecretTextEnvVarType secretText = PagesSecretTextEnvVarType._('secret_text');
+static const PagesSecretTextEnvVarType secretText = PagesSecretTextEnvVarType$secretText._();
 
 static const List<PagesSecretTextEnvVarType> values = [secretText];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PagesSecretTextEnvVarType$Unknown; } 
+@override String toString() => 'PagesSecretTextEnvVarType($value)';
+
+ }
+@immutable final class PagesSecretTextEnvVarType$secretText extends PagesSecretTextEnvVarType {const PagesSecretTextEnvVarType$secretText._();
+
+@override String get value => 'secret_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesSecretTextEnvVarType$secretText;
+
+@override int get hashCode => 'secret_text'.hashCode;
+
+ }
+@immutable final class PagesSecretTextEnvVarType$Unknown extends PagesSecretTextEnvVarType {const PagesSecretTextEnvVarType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PagesSecretTextEnvVarType && other.value == value;
+    other is PagesSecretTextEnvVarType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PagesSecretTextEnvVarType($value)';
 
  }
 /// An encrypted environment variable.

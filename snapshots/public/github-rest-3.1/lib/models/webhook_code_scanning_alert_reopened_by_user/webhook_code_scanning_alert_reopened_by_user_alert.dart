@@ -2,25 +2,24 @@
 // Source: #/components/schemas/WebhookCodeScanningAlertReopenedByUser (inline: Alert)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_dismissed_comment.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/most_recent_instance.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert_rule.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert_tool.dart';/// State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed.
-@immutable final class WebhookCodeScanningAlertReopenedByUserAlertState {const WebhookCodeScanningAlertReopenedByUserAlertState._(this.value);
+sealed class WebhookCodeScanningAlertReopenedByUserAlertState {const WebhookCodeScanningAlertReopenedByUserAlertState();
 
 factory WebhookCodeScanningAlertReopenedByUserAlertState.fromJson(String json) { return switch (json) {
   'open' => open,
   'fixed' => fixed,
   'null' => $null,
-  _ => WebhookCodeScanningAlertReopenedByUserAlertState._(json),
+  _ => WebhookCodeScanningAlertReopenedByUserAlertState$Unknown(json),
 }; }
 
-static const WebhookCodeScanningAlertReopenedByUserAlertState open = WebhookCodeScanningAlertReopenedByUserAlertState._('open');
+static const WebhookCodeScanningAlertReopenedByUserAlertState open = WebhookCodeScanningAlertReopenedByUserAlertState$open._();
 
-static const WebhookCodeScanningAlertReopenedByUserAlertState fixed = WebhookCodeScanningAlertReopenedByUserAlertState._('fixed');
+static const WebhookCodeScanningAlertReopenedByUserAlertState fixed = WebhookCodeScanningAlertReopenedByUserAlertState$fixed._();
 
-static const WebhookCodeScanningAlertReopenedByUserAlertState $null = WebhookCodeScanningAlertReopenedByUserAlertState._('null');
+static const WebhookCodeScanningAlertReopenedByUserAlertState $null = WebhookCodeScanningAlertReopenedByUserAlertState$$null._();
 
 static const List<WebhookCodeScanningAlertReopenedByUserAlertState> values = [open, fixed, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookCodeScanningAlertReopenedByUserAlertState$Unknown; } 
+@override String toString() => 'WebhookCodeScanningAlertReopenedByUserAlertState($value)';
+
+ }
+@immutable final class WebhookCodeScanningAlertReopenedByUserAlertState$open extends WebhookCodeScanningAlertReopenedByUserAlertState {const WebhookCodeScanningAlertReopenedByUserAlertState$open._();
+
+@override String get value => 'open';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCodeScanningAlertReopenedByUserAlertState$open;
+
+@override int get hashCode => 'open'.hashCode;
+
+ }
+@immutable final class WebhookCodeScanningAlertReopenedByUserAlertState$fixed extends WebhookCodeScanningAlertReopenedByUserAlertState {const WebhookCodeScanningAlertReopenedByUserAlertState$fixed._();
+
+@override String get value => 'fixed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCodeScanningAlertReopenedByUserAlertState$fixed;
+
+@override int get hashCode => 'fixed'.hashCode;
+
+ }
+@immutable final class WebhookCodeScanningAlertReopenedByUserAlertState$$null extends WebhookCodeScanningAlertReopenedByUserAlertState {const WebhookCodeScanningAlertReopenedByUserAlertState$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCodeScanningAlertReopenedByUserAlertState$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class WebhookCodeScanningAlertReopenedByUserAlertState$Unknown extends WebhookCodeScanningAlertReopenedByUserAlertState {const WebhookCodeScanningAlertReopenedByUserAlertState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookCodeScanningAlertReopenedByUserAlertState && other.value == value;
+    other is WebhookCodeScanningAlertReopenedByUserAlertState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookCodeScanningAlertReopenedByUserAlertState($value)';
 
  }
 /// The code scanning alert involved in the event.

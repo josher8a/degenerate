@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetCtSummaryEntryType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtSummaryEntryType {const RadarGetCtSummaryEntryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetCtSummaryEntryType {const RadarGetCtSummaryEntryType();
 
 factory RadarGetCtSummaryEntryType.fromJson(String json) { return switch (json) {
   'PRECERTIFICATE' => precertificate,
   'CERTIFICATE' => certificate,
-  _ => RadarGetCtSummaryEntryType._(json),
+  _ => RadarGetCtSummaryEntryType$Unknown(json),
 }; }
 
-static const RadarGetCtSummaryEntryType precertificate = RadarGetCtSummaryEntryType._('PRECERTIFICATE');
+static const RadarGetCtSummaryEntryType precertificate = RadarGetCtSummaryEntryType$precertificate._();
 
-static const RadarGetCtSummaryEntryType certificate = RadarGetCtSummaryEntryType._('CERTIFICATE');
+static const RadarGetCtSummaryEntryType certificate = RadarGetCtSummaryEntryType$certificate._();
 
 static const List<RadarGetCtSummaryEntryType> values = [precertificate, certificate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetCtSummaryEntryType$Unknown; } 
+@override String toString() => 'RadarGetCtSummaryEntryType($value)';
+
+ }
+@immutable final class RadarGetCtSummaryEntryType$precertificate extends RadarGetCtSummaryEntryType {const RadarGetCtSummaryEntryType$precertificate._();
+
+@override String get value => 'PRECERTIFICATE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetCtSummaryEntryType$precertificate;
+
+@override int get hashCode => 'PRECERTIFICATE'.hashCode;
+
+ }
+@immutable final class RadarGetCtSummaryEntryType$certificate extends RadarGetCtSummaryEntryType {const RadarGetCtSummaryEntryType$certificate._();
+
+@override String get value => 'CERTIFICATE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetCtSummaryEntryType$certificate;
+
+@override int get hashCode => 'CERTIFICATE'.hashCode;
+
+ }
+@immutable final class RadarGetCtSummaryEntryType$Unknown extends RadarGetCtSummaryEntryType {const RadarGetCtSummaryEntryType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetCtSummaryEntryType && other.value == value;
+    other is RadarGetCtSummaryEntryType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetCtSummaryEntryType($value)';
 
  }

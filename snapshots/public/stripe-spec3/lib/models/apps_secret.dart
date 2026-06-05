@@ -2,19 +2,18 @@
 // Source: #/components/schemas/AppsSecret
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/secret_service_resource_scope.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class AppsSecretObject {const AppsSecretObject._(this.value);
+sealed class AppsSecretObject {const AppsSecretObject();
 
 factory AppsSecretObject.fromJson(String json) { return switch (json) {
   'apps.secret' => appsSecret,
-  _ => AppsSecretObject._(json),
+  _ => AppsSecretObject$Unknown(json),
 }; }
 
-static const AppsSecretObject appsSecret = AppsSecretObject._('apps.secret');
+static const AppsSecretObject appsSecret = AppsSecretObject$appsSecret._();
 
 static const List<AppsSecretObject> values = [appsSecret];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AppsSecretObject$Unknown; } 
+@override String toString() => 'AppsSecretObject($value)';
+
+ }
+@immutable final class AppsSecretObject$appsSecret extends AppsSecretObject {const AppsSecretObject$appsSecret._();
+
+@override String get value => 'apps.secret';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppsSecretObject$appsSecret;
+
+@override int get hashCode => 'apps.secret'.hashCode;
+
+ }
+@immutable final class AppsSecretObject$Unknown extends AppsSecretObject {const AppsSecretObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AppsSecretObject && other.value == value;
+    other is AppsSecretObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AppsSecretObject($value)';
 
  }
 /// Secret Store is an API that allows Stripe Apps developers to securely persist secrets for use by UI Extensions and app backends.

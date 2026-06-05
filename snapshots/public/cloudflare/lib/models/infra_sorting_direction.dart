@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/InfraSortingDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InfraSortingDirection {const InfraSortingDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class InfraSortingDirection {const InfraSortingDirection();
 
 factory InfraSortingDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => InfraSortingDirection._(json),
+  _ => InfraSortingDirection$Unknown(json),
 }; }
 
-static const InfraSortingDirection asc = InfraSortingDirection._('asc');
+static const InfraSortingDirection asc = InfraSortingDirection$asc._();
 
-static const InfraSortingDirection desc = InfraSortingDirection._('desc');
+static const InfraSortingDirection desc = InfraSortingDirection$desc._();
 
 static const List<InfraSortingDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InfraSortingDirection$Unknown; } 
+@override String toString() => 'InfraSortingDirection($value)';
+
+ }
+@immutable final class InfraSortingDirection$asc extends InfraSortingDirection {const InfraSortingDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InfraSortingDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class InfraSortingDirection$desc extends InfraSortingDirection {const InfraSortingDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InfraSortingDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class InfraSortingDirection$Unknown extends InfraSortingDirection {const InfraSortingDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InfraSortingDirection && other.value == value;
+    other is InfraSortingDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InfraSortingDirection($value)';
 
  }

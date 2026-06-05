@@ -2,22 +2,21 @@
 // Source: #/components/schemas/GelatoPhoneReportError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification failure.
-@immutable final class GelatoPhoneReportErrorCode {const GelatoPhoneReportErrorCode._(this.value);
+sealed class GelatoPhoneReportErrorCode {const GelatoPhoneReportErrorCode();
 
 factory GelatoPhoneReportErrorCode.fromJson(String json) { return switch (json) {
   'phone_unverified_other' => phoneUnverifiedOther,
   'phone_verification_declined' => phoneVerificationDeclined,
-  _ => GelatoPhoneReportErrorCode._(json),
+  _ => GelatoPhoneReportErrorCode$Unknown(json),
 }; }
 
-static const GelatoPhoneReportErrorCode phoneUnverifiedOther = GelatoPhoneReportErrorCode._('phone_unverified_other');
+static const GelatoPhoneReportErrorCode phoneUnverifiedOther = GelatoPhoneReportErrorCode$phoneUnverifiedOther._();
 
-static const GelatoPhoneReportErrorCode phoneVerificationDeclined = GelatoPhoneReportErrorCode._('phone_verification_declined');
+static const GelatoPhoneReportErrorCode phoneVerificationDeclined = GelatoPhoneReportErrorCode$phoneVerificationDeclined._();
 
 static const List<GelatoPhoneReportErrorCode> values = [phoneUnverifiedOther, phoneVerificationDeclined];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GelatoPhoneReportErrorCode$Unknown; } 
+@override String toString() => 'GelatoPhoneReportErrorCode($value)';
+
+ }
+@immutable final class GelatoPhoneReportErrorCode$phoneUnverifiedOther extends GelatoPhoneReportErrorCode {const GelatoPhoneReportErrorCode$phoneUnverifiedOther._();
+
+@override String get value => 'phone_unverified_other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoPhoneReportErrorCode$phoneUnverifiedOther;
+
+@override int get hashCode => 'phone_unverified_other'.hashCode;
+
+ }
+@immutable final class GelatoPhoneReportErrorCode$phoneVerificationDeclined extends GelatoPhoneReportErrorCode {const GelatoPhoneReportErrorCode$phoneVerificationDeclined._();
+
+@override String get value => 'phone_verification_declined';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoPhoneReportErrorCode$phoneVerificationDeclined;
+
+@override int get hashCode => 'phone_verification_declined'.hashCode;
+
+ }
+@immutable final class GelatoPhoneReportErrorCode$Unknown extends GelatoPhoneReportErrorCode {const GelatoPhoneReportErrorCode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GelatoPhoneReportErrorCode && other.value == value;
+    other is GelatoPhoneReportErrorCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GelatoPhoneReportErrorCode($value)';
 
  }
 /// 

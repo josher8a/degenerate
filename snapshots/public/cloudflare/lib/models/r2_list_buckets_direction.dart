@@ -2,22 +2,21 @@
 // Source: #/components/schemas/R2ListBucketsDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order buckets.
-@immutable final class R2ListBucketsDirection {const R2ListBucketsDirection._(this.value);
+sealed class R2ListBucketsDirection {const R2ListBucketsDirection();
 
 factory R2ListBucketsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => R2ListBucketsDirection._(json),
+  _ => R2ListBucketsDirection$Unknown(json),
 }; }
 
-static const R2ListBucketsDirection asc = R2ListBucketsDirection._('asc');
+static const R2ListBucketsDirection asc = R2ListBucketsDirection$asc._();
 
-static const R2ListBucketsDirection desc = R2ListBucketsDirection._('desc');
+static const R2ListBucketsDirection desc = R2ListBucketsDirection$desc._();
 
 static const List<R2ListBucketsDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is R2ListBucketsDirection$Unknown; } 
+@override String toString() => 'R2ListBucketsDirection($value)';
+
+ }
+@immutable final class R2ListBucketsDirection$asc extends R2ListBucketsDirection {const R2ListBucketsDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is R2ListBucketsDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class R2ListBucketsDirection$desc extends R2ListBucketsDirection {const R2ListBucketsDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is R2ListBucketsDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class R2ListBucketsDirection$Unknown extends R2ListBucketsDirection {const R2ListBucketsDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is R2ListBucketsDirection && other.value == value;
+    other is R2ListBucketsDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'R2ListBucketsDirection($value)';
 
  }

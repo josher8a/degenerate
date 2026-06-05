@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ZonesIpGeolocationValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
-@immutable final class ZonesIpGeolocationValue {const ZonesIpGeolocationValue._(this.value);
+sealed class ZonesIpGeolocationValue {const ZonesIpGeolocationValue();
 
 factory ZonesIpGeolocationValue.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => ZonesIpGeolocationValue._(json),
+  _ => ZonesIpGeolocationValue$Unknown(json),
 }; }
 
-static const ZonesIpGeolocationValue $on = ZonesIpGeolocationValue._('on');
+static const ZonesIpGeolocationValue $on = ZonesIpGeolocationValue$$on._();
 
-static const ZonesIpGeolocationValue off = ZonesIpGeolocationValue._('off');
+static const ZonesIpGeolocationValue off = ZonesIpGeolocationValue$off._();
 
 static const List<ZonesIpGeolocationValue> values = [$on, off];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesIpGeolocationValue$Unknown; } 
+@override String toString() => 'ZonesIpGeolocationValue($value)';
+
+ }
+@immutable final class ZonesIpGeolocationValue$$on extends ZonesIpGeolocationValue {const ZonesIpGeolocationValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesIpGeolocationValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ZonesIpGeolocationValue$off extends ZonesIpGeolocationValue {const ZonesIpGeolocationValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesIpGeolocationValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesIpGeolocationValue$Unknown extends ZonesIpGeolocationValue {const ZonesIpGeolocationValue$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesIpGeolocationValue && other.value == value;
+    other is ZonesIpGeolocationValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesIpGeolocationValue($value)';
 
  }

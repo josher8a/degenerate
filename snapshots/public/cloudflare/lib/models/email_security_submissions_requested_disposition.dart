@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EmailSecuritySubmissionsRequestedDisposition
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecuritySubmissionsRequestedDisposition {const EmailSecuritySubmissionsRequestedDisposition._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EmailSecuritySubmissionsRequestedDisposition {const EmailSecuritySubmissionsRequestedDisposition();
 
 factory EmailSecuritySubmissionsRequestedDisposition.fromJson(String json) { return switch (json) {
   'MALICIOUS' => malicious,
@@ -10,25 +10,24 @@ factory EmailSecuritySubmissionsRequestedDisposition.fromJson(String json) { ret
   'SPAM' => spam,
   'BULK' => bulk,
   'NONE' => none,
-  _ => EmailSecuritySubmissionsRequestedDisposition._(json),
+  _ => EmailSecuritySubmissionsRequestedDisposition$Unknown(json),
 }; }
 
-static const EmailSecuritySubmissionsRequestedDisposition malicious = EmailSecuritySubmissionsRequestedDisposition._('MALICIOUS');
+static const EmailSecuritySubmissionsRequestedDisposition malicious = EmailSecuritySubmissionsRequestedDisposition$malicious._();
 
-static const EmailSecuritySubmissionsRequestedDisposition suspicious = EmailSecuritySubmissionsRequestedDisposition._('SUSPICIOUS');
+static const EmailSecuritySubmissionsRequestedDisposition suspicious = EmailSecuritySubmissionsRequestedDisposition$suspicious._();
 
-static const EmailSecuritySubmissionsRequestedDisposition spoof = EmailSecuritySubmissionsRequestedDisposition._('SPOOF');
+static const EmailSecuritySubmissionsRequestedDisposition spoof = EmailSecuritySubmissionsRequestedDisposition$spoof._();
 
-static const EmailSecuritySubmissionsRequestedDisposition spam = EmailSecuritySubmissionsRequestedDisposition._('SPAM');
+static const EmailSecuritySubmissionsRequestedDisposition spam = EmailSecuritySubmissionsRequestedDisposition$spam._();
 
-static const EmailSecuritySubmissionsRequestedDisposition bulk = EmailSecuritySubmissionsRequestedDisposition._('BULK');
+static const EmailSecuritySubmissionsRequestedDisposition bulk = EmailSecuritySubmissionsRequestedDisposition$bulk._();
 
-static const EmailSecuritySubmissionsRequestedDisposition none = EmailSecuritySubmissionsRequestedDisposition._('NONE');
+static const EmailSecuritySubmissionsRequestedDisposition none = EmailSecuritySubmissionsRequestedDisposition$none._();
 
 static const List<EmailSecuritySubmissionsRequestedDisposition> values = [malicious, suspicious, spoof, spam, bulk, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,12 +40,71 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EmailSecuritySubmissionsRequestedDisposition$Unknown; } 
+@override String toString() => 'EmailSecuritySubmissionsRequestedDisposition($value)';
+
+ }
+@immutable final class EmailSecuritySubmissionsRequestedDisposition$malicious extends EmailSecuritySubmissionsRequestedDisposition {const EmailSecuritySubmissionsRequestedDisposition$malicious._();
+
+@override String get value => 'MALICIOUS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecuritySubmissionsRequestedDisposition$malicious;
+
+@override int get hashCode => 'MALICIOUS'.hashCode;
+
+ }
+@immutable final class EmailSecuritySubmissionsRequestedDisposition$suspicious extends EmailSecuritySubmissionsRequestedDisposition {const EmailSecuritySubmissionsRequestedDisposition$suspicious._();
+
+@override String get value => 'SUSPICIOUS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecuritySubmissionsRequestedDisposition$suspicious;
+
+@override int get hashCode => 'SUSPICIOUS'.hashCode;
+
+ }
+@immutable final class EmailSecuritySubmissionsRequestedDisposition$spoof extends EmailSecuritySubmissionsRequestedDisposition {const EmailSecuritySubmissionsRequestedDisposition$spoof._();
+
+@override String get value => 'SPOOF';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecuritySubmissionsRequestedDisposition$spoof;
+
+@override int get hashCode => 'SPOOF'.hashCode;
+
+ }
+@immutable final class EmailSecuritySubmissionsRequestedDisposition$spam extends EmailSecuritySubmissionsRequestedDisposition {const EmailSecuritySubmissionsRequestedDisposition$spam._();
+
+@override String get value => 'SPAM';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecuritySubmissionsRequestedDisposition$spam;
+
+@override int get hashCode => 'SPAM'.hashCode;
+
+ }
+@immutable final class EmailSecuritySubmissionsRequestedDisposition$bulk extends EmailSecuritySubmissionsRequestedDisposition {const EmailSecuritySubmissionsRequestedDisposition$bulk._();
+
+@override String get value => 'BULK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecuritySubmissionsRequestedDisposition$bulk;
+
+@override int get hashCode => 'BULK'.hashCode;
+
+ }
+@immutable final class EmailSecuritySubmissionsRequestedDisposition$none extends EmailSecuritySubmissionsRequestedDisposition {const EmailSecuritySubmissionsRequestedDisposition$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecuritySubmissionsRequestedDisposition$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class EmailSecuritySubmissionsRequestedDisposition$Unknown extends EmailSecuritySubmissionsRequestedDisposition {const EmailSecuritySubmissionsRequestedDisposition$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EmailSecuritySubmissionsRequestedDisposition && other.value == value;
+    other is EmailSecuritySubmissionsRequestedDisposition$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EmailSecuritySubmissionsRequestedDisposition($value)';
 
  }

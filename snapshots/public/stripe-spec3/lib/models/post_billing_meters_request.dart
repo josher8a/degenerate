@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PostBillingMetersRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request/customer_mapping.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request/default_aggregation.dart';import 'package:pub_stripe_spec3/models/post_billing_meters_request/value_settings.dart';/// The time window which meter events have been pre-aggregated for, if any.
-@immutable final class PostBillingMetersRequestEventTimeWindow {const PostBillingMetersRequestEventTimeWindow._(this.value);
+sealed class PostBillingMetersRequestEventTimeWindow {const PostBillingMetersRequestEventTimeWindow();
 
 factory PostBillingMetersRequestEventTimeWindow.fromJson(String json) { return switch (json) {
   'day' => day,
   'hour' => hour,
-  _ => PostBillingMetersRequestEventTimeWindow._(json),
+  _ => PostBillingMetersRequestEventTimeWindow$Unknown(json),
 }; }
 
-static const PostBillingMetersRequestEventTimeWindow day = PostBillingMetersRequestEventTimeWindow._('day');
+static const PostBillingMetersRequestEventTimeWindow day = PostBillingMetersRequestEventTimeWindow$day._();
 
-static const PostBillingMetersRequestEventTimeWindow hour = PostBillingMetersRequestEventTimeWindow._('hour');
+static const PostBillingMetersRequestEventTimeWindow hour = PostBillingMetersRequestEventTimeWindow$hour._();
 
 static const List<PostBillingMetersRequestEventTimeWindow> values = [day, hour];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostBillingMetersRequestEventTimeWindow$Unknown; } 
+@override String toString() => 'PostBillingMetersRequestEventTimeWindow($value)';
+
+ }
+@immutable final class PostBillingMetersRequestEventTimeWindow$day extends PostBillingMetersRequestEventTimeWindow {const PostBillingMetersRequestEventTimeWindow$day._();
+
+@override String get value => 'day';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingMetersRequestEventTimeWindow$day;
+
+@override int get hashCode => 'day'.hashCode;
+
+ }
+@immutable final class PostBillingMetersRequestEventTimeWindow$hour extends PostBillingMetersRequestEventTimeWindow {const PostBillingMetersRequestEventTimeWindow$hour._();
+
+@override String get value => 'hour';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostBillingMetersRequestEventTimeWindow$hour;
+
+@override int get hashCode => 'hour'.hashCode;
+
+ }
+@immutable final class PostBillingMetersRequestEventTimeWindow$Unknown extends PostBillingMetersRequestEventTimeWindow {const PostBillingMetersRequestEventTimeWindow$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostBillingMetersRequestEventTimeWindow && other.value == value;
+    other is PostBillingMetersRequestEventTimeWindow$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostBillingMetersRequestEventTimeWindow($value)';
 
  }
 @immutable final class PostBillingMetersRequest {const PostBillingMetersRequest({required this.defaultAggregation, required this.displayName, required this.eventName, this.customerMapping, this.eventTimeWindow, this.expand, this.valueSettings, });

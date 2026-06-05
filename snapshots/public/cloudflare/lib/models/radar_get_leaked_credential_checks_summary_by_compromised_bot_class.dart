@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass {const RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass {const RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass();
 
 factory RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass.fromJson(String json) { return switch (json) {
   'LIKELY_AUTOMATED' => likelyAutomated,
   'LIKELY_HUMAN' => likelyHuman,
-  _ => RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass._(json),
+  _ => RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass$Unknown(json),
 }; }
 
-static const RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass likelyAutomated = RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass._('LIKELY_AUTOMATED');
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass likelyAutomated = RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass$likelyAutomated._();
 
-static const RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass likelyHuman = RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass._('LIKELY_HUMAN');
+static const RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass likelyHuman = RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass$likelyHuman._();
 
 static const List<RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass> values = [likelyAutomated, likelyHuman];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass$Unknown; } 
+@override String toString() => 'RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass($value)';
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass$likelyAutomated extends RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass {const RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass$likelyAutomated._();
+
+@override String get value => 'LIKELY_AUTOMATED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass$likelyAutomated;
+
+@override int get hashCode => 'LIKELY_AUTOMATED'.hashCode;
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass$likelyHuman extends RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass {const RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass$likelyHuman._();
+
+@override String get value => 'LIKELY_HUMAN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass$likelyHuman;
+
+@override int get hashCode => 'LIKELY_HUMAN'.hashCode;
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass$Unknown extends RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass {const RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass && other.value == value;
+    other is RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetLeakedCredentialChecksSummaryByCompromisedBotClass($value)';
 
  }

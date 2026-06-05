@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTopBrowserFamiliesHttpProtocol
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopBrowserFamiliesHttpProtocol {const RadarGetHttpTopBrowserFamiliesHttpProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopBrowserFamiliesHttpProtocol {const RadarGetHttpTopBrowserFamiliesHttpProtocol();
 
 factory RadarGetHttpTopBrowserFamiliesHttpProtocol.fromJson(String json) { return switch (json) {
   'HTTP' => http,
   'HTTPS' => https,
-  _ => RadarGetHttpTopBrowserFamiliesHttpProtocol._(json),
+  _ => RadarGetHttpTopBrowserFamiliesHttpProtocol$Unknown(json),
 }; }
 
-static const RadarGetHttpTopBrowserFamiliesHttpProtocol http = RadarGetHttpTopBrowserFamiliesHttpProtocol._('HTTP');
+static const RadarGetHttpTopBrowserFamiliesHttpProtocol http = RadarGetHttpTopBrowserFamiliesHttpProtocol$http._();
 
-static const RadarGetHttpTopBrowserFamiliesHttpProtocol https = RadarGetHttpTopBrowserFamiliesHttpProtocol._('HTTPS');
+static const RadarGetHttpTopBrowserFamiliesHttpProtocol https = RadarGetHttpTopBrowserFamiliesHttpProtocol$https._();
 
 static const List<RadarGetHttpTopBrowserFamiliesHttpProtocol> values = [http, https];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopBrowserFamiliesHttpProtocol$Unknown; } 
+@override String toString() => 'RadarGetHttpTopBrowserFamiliesHttpProtocol($value)';
+
+ }
+@immutable final class RadarGetHttpTopBrowserFamiliesHttpProtocol$http extends RadarGetHttpTopBrowserFamiliesHttpProtocol {const RadarGetHttpTopBrowserFamiliesHttpProtocol$http._();
+
+@override String get value => 'HTTP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopBrowserFamiliesHttpProtocol$http;
+
+@override int get hashCode => 'HTTP'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopBrowserFamiliesHttpProtocol$https extends RadarGetHttpTopBrowserFamiliesHttpProtocol {const RadarGetHttpTopBrowserFamiliesHttpProtocol$https._();
+
+@override String get value => 'HTTPS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopBrowserFamiliesHttpProtocol$https;
+
+@override int get hashCode => 'HTTPS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopBrowserFamiliesHttpProtocol$Unknown extends RadarGetHttpTopBrowserFamiliesHttpProtocol {const RadarGetHttpTopBrowserFamiliesHttpProtocol$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopBrowserFamiliesHttpProtocol && other.value == value;
+    other is RadarGetHttpTopBrowserFamiliesHttpProtocol$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopBrowserFamiliesHttpProtocol($value)';
 
  }

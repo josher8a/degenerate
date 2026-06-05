@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SecretsStoreSecretObject
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_comment.dart';import 'package:pub_cloudflare/models/secrets_store_created.dart';import 'package:pub_cloudflare/models/secrets_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_modified.dart';import 'package:pub_cloudflare/models/secrets_store_secret_name.dart';import 'package:pub_cloudflare/models/secrets_store_store_identifier.dart';@immutable final class SecretsStoreSecretStatus {const SecretsStoreSecretStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_comment.dart';import 'package:pub_cloudflare/models/secrets_store_created.dart';import 'package:pub_cloudflare/models/secrets_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_modified.dart';import 'package:pub_cloudflare/models/secrets_store_secret_name.dart';import 'package:pub_cloudflare/models/secrets_store_store_identifier.dart';sealed class SecretsStoreSecretStatus {const SecretsStoreSecretStatus();
 
 factory SecretsStoreSecretStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'active' => active,
   'deleted' => deleted,
-  _ => SecretsStoreSecretStatus._(json),
+  _ => SecretsStoreSecretStatus$Unknown(json),
 }; }
 
-static const SecretsStoreSecretStatus pending = SecretsStoreSecretStatus._('pending');
+static const SecretsStoreSecretStatus pending = SecretsStoreSecretStatus$pending._();
 
-static const SecretsStoreSecretStatus active = SecretsStoreSecretStatus._('active');
+static const SecretsStoreSecretStatus active = SecretsStoreSecretStatus$active._();
 
-static const SecretsStoreSecretStatus deleted = SecretsStoreSecretStatus._('deleted');
+static const SecretsStoreSecretStatus deleted = SecretsStoreSecretStatus$deleted._();
 
 static const List<SecretsStoreSecretStatus> values = [pending, active, deleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SecretsStoreSecretStatus$Unknown; } 
+@override String toString() => 'SecretsStoreSecretStatus($value)';
+
+ }
+@immutable final class SecretsStoreSecretStatus$pending extends SecretsStoreSecretStatus {const SecretsStoreSecretStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretsStoreSecretStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class SecretsStoreSecretStatus$active extends SecretsStoreSecretStatus {const SecretsStoreSecretStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretsStoreSecretStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class SecretsStoreSecretStatus$deleted extends SecretsStoreSecretStatus {const SecretsStoreSecretStatus$deleted._();
+
+@override String get value => 'deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretsStoreSecretStatus$deleted;
+
+@override int get hashCode => 'deleted'.hashCode;
+
+ }
+@immutable final class SecretsStoreSecretStatus$Unknown extends SecretsStoreSecretStatus {const SecretsStoreSecretStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SecretsStoreSecretStatus && other.value == value;
+    other is SecretsStoreSecretStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SecretsStoreSecretStatus($value)';
 
  }
 @immutable final class SecretsStoreSecretObject {const SecretsStoreSecretObject({required this.created, required this.id, required this.modified, required this.name, required this.status, required this.storeId, this.comment, });

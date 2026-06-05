@@ -2,28 +2,27 @@
 // Source: #/components/schemas/Errors
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/errors/errors_source.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';import 'package:pub_stripe_spec3/models/source.dart';/// The type of error returned. One of `api_error`, `card_error`, `idempotency_error`, or `invalid_request_error`
-@immutable final class ErrorsType {const ErrorsType._(this.value);
+sealed class ErrorsType {const ErrorsType();
 
 factory ErrorsType.fromJson(String json) { return switch (json) {
   'api_error' => apiError,
   'card_error' => cardError,
   'idempotency_error' => idempotencyError,
   'invalid_request_error' => invalidRequestError,
-  _ => ErrorsType._(json),
+  _ => ErrorsType$Unknown(json),
 }; }
 
-static const ErrorsType apiError = ErrorsType._('api_error');
+static const ErrorsType apiError = ErrorsType$apiError._();
 
-static const ErrorsType cardError = ErrorsType._('card_error');
+static const ErrorsType cardError = ErrorsType$cardError._();
 
-static const ErrorsType idempotencyError = ErrorsType._('idempotency_error');
+static const ErrorsType idempotencyError = ErrorsType$idempotencyError._();
 
-static const ErrorsType invalidRequestError = ErrorsType._('invalid_request_error');
+static const ErrorsType invalidRequestError = ErrorsType$invalidRequestError._();
 
 static const List<ErrorsType> values = [apiError, cardError, idempotencyError, invalidRequestError];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ErrorsType$Unknown; } 
+@override String toString() => 'ErrorsType($value)';
+
+ }
+@immutable final class ErrorsType$apiError extends ErrorsType {const ErrorsType$apiError._();
+
+@override String get value => 'api_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrorsType$apiError;
+
+@override int get hashCode => 'api_error'.hashCode;
+
+ }
+@immutable final class ErrorsType$cardError extends ErrorsType {const ErrorsType$cardError._();
+
+@override String get value => 'card_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrorsType$cardError;
+
+@override int get hashCode => 'card_error'.hashCode;
+
+ }
+@immutable final class ErrorsType$idempotencyError extends ErrorsType {const ErrorsType$idempotencyError._();
+
+@override String get value => 'idempotency_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrorsType$idempotencyError;
+
+@override int get hashCode => 'idempotency_error'.hashCode;
+
+ }
+@immutable final class ErrorsType$invalidRequestError extends ErrorsType {const ErrorsType$invalidRequestError._();
+
+@override String get value => 'invalid_request_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrorsType$invalidRequestError;
+
+@override int get hashCode => 'invalid_request_error'.hashCode;
+
+ }
+@immutable final class ErrorsType$Unknown extends ErrorsType {const ErrorsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ErrorsType && other.value == value;
+    other is ErrorsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ErrorsType($value)';
 
  }
 /// 

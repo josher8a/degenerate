@@ -2,19 +2,18 @@
 // Source: #/components/schemas/GroupUserAssignment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `group.user`.
-@immutable final class GroupUserAssignmentObject {const GroupUserAssignmentObject._(this.value);
+sealed class GroupUserAssignmentObject {const GroupUserAssignmentObject();
 
 factory GroupUserAssignmentObject.fromJson(String json) { return switch (json) {
   'group.user' => groupUser,
-  _ => GroupUserAssignmentObject._(json),
+  _ => GroupUserAssignmentObject$Unknown(json),
 }; }
 
-static const GroupUserAssignmentObject groupUser = GroupUserAssignmentObject._('group.user');
+static const GroupUserAssignmentObject groupUser = GroupUserAssignmentObject$groupUser._();
 
 static const List<GroupUserAssignmentObject> values = [groupUser];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GroupUserAssignmentObject$Unknown; } 
+@override String toString() => 'GroupUserAssignmentObject($value)';
+
+ }
+@immutable final class GroupUserAssignmentObject$groupUser extends GroupUserAssignmentObject {const GroupUserAssignmentObject$groupUser._();
+
+@override String get value => 'group.user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GroupUserAssignmentObject$groupUser;
+
+@override int get hashCode => 'group.user'.hashCode;
+
+ }
+@immutable final class GroupUserAssignmentObject$Unknown extends GroupUserAssignmentObject {const GroupUserAssignmentObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GroupUserAssignmentObject && other.value == value;
+    other is GroupUserAssignmentObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GroupUserAssignmentObject($value)';
 
  }
 /// Confirmation payload returned after adding a user to a group.

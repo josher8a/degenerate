@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Mandate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_acceptance.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_payment_method_details/insights_resources_payment_evaluation_payment_method_details_payment_method.dart';import 'package:pub_stripe_spec3/models/mandate_multi_use.dart';import 'package:pub_stripe_spec3/models/mandate_payment_method_details.dart';import 'package:pub_stripe_spec3/models/mandate_single_use.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class MandateObject {const MandateObject._(this.value);
+sealed class MandateObject {const MandateObject();
 
 factory MandateObject.fromJson(String json) { return switch (json) {
   'mandate' => mandate,
-  _ => MandateObject._(json),
+  _ => MandateObject$Unknown(json),
 }; }
 
-static const MandateObject mandate = MandateObject._('mandate');
+static const MandateObject mandate = MandateObject$mandate._();
 
 static const List<MandateObject> values = [mandate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,35 +21,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MandateObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MandateObject$Unknown; } 
 @override String toString() => 'MandateObject($value)';
 
  }
+@immutable final class MandateObject$mandate extends MandateObject {const MandateObject$mandate._();
+
+@override String get value => 'mandate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandateObject$mandate;
+
+@override int get hashCode => 'mandate'.hashCode;
+
+ }
+@immutable final class MandateObject$Unknown extends MandateObject {const MandateObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MandateObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The mandate status indicates whether or not you can use it to initiate a payment.
-@immutable final class MandateStatus {const MandateStatus._(this.value);
+sealed class MandateStatus {const MandateStatus();
 
 factory MandateStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
-  _ => MandateStatus._(json),
+  _ => MandateStatus$Unknown(json),
 }; }
 
-static const MandateStatus active = MandateStatus._('active');
+static const MandateStatus active = MandateStatus$active._();
 
-static const MandateStatus inactive = MandateStatus._('inactive');
+static const MandateStatus inactive = MandateStatus$inactive._();
 
-static const MandateStatus pending = MandateStatus._('pending');
+static const MandateStatus pending = MandateStatus$pending._();
 
 static const List<MandateStatus> values = [active, inactive, pending];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,32 +72,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MandateStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MandateStatus$Unknown; } 
 @override String toString() => 'MandateStatus($value)';
 
  }
+@immutable final class MandateStatus$active extends MandateStatus {const MandateStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandateStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class MandateStatus$inactive extends MandateStatus {const MandateStatus$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandateStatus$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+ }
+@immutable final class MandateStatus$pending extends MandateStatus {const MandateStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandateStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class MandateStatus$Unknown extends MandateStatus {const MandateStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MandateStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The type of the mandate.
-@immutable final class MandateType {const MandateType._(this.value);
+sealed class MandateType {const MandateType();
 
 factory MandateType.fromJson(String json) { return switch (json) {
   'multi_use' => multiUse,
   'single_use' => singleUse,
-  _ => MandateType._(json),
+  _ => MandateType$Unknown(json),
 }; }
 
-static const MandateType multiUse = MandateType._('multi_use');
+static const MandateType multiUse = MandateType$multiUse._();
 
-static const MandateType singleUse = MandateType._('single_use');
+static const MandateType singleUse = MandateType$singleUse._();
 
 static const List<MandateType> values = [multiUse, singleUse];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -94,13 +137,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MandateType$Unknown; } 
+@override String toString() => 'MandateType($value)';
+
+ }
+@immutable final class MandateType$multiUse extends MandateType {const MandateType$multiUse._();
+
+@override String get value => 'multi_use';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandateType$multiUse;
+
+@override int get hashCode => 'multi_use'.hashCode;
+
+ }
+@immutable final class MandateType$singleUse extends MandateType {const MandateType$singleUse._();
+
+@override String get value => 'single_use';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandateType$singleUse;
+
+@override int get hashCode => 'single_use'.hashCode;
+
+ }
+@immutable final class MandateType$Unknown extends MandateType {const MandateType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MandateType && other.value == value;
+    other is MandateType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MandateType($value)';
 
  }
 /// A Mandate is a record of the permission that your customer gives you to debit their payment method.

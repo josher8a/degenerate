@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ContainerNetworkPolicyAllowlistParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_network_policy_domain_secret_param.dart';/// Allow outbound network access only to specified domains. Always `allowlist`.
-@immutable final class ContainerNetworkPolicyAllowlistParamType {const ContainerNetworkPolicyAllowlistParamType._(this.value);
+sealed class ContainerNetworkPolicyAllowlistParamType {const ContainerNetworkPolicyAllowlistParamType();
 
 factory ContainerNetworkPolicyAllowlistParamType.fromJson(String json) { return switch (json) {
   'allowlist' => allowlist,
-  _ => ContainerNetworkPolicyAllowlistParamType._(json),
+  _ => ContainerNetworkPolicyAllowlistParamType$Unknown(json),
 }; }
 
-static const ContainerNetworkPolicyAllowlistParamType allowlist = ContainerNetworkPolicyAllowlistParamType._('allowlist');
+static const ContainerNetworkPolicyAllowlistParamType allowlist = ContainerNetworkPolicyAllowlistParamType$allowlist._();
 
 static const List<ContainerNetworkPolicyAllowlistParamType> values = [allowlist];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ContainerNetworkPolicyAllowlistParamType$Unknown; } 
+@override String toString() => 'ContainerNetworkPolicyAllowlistParamType($value)';
+
+ }
+@immutable final class ContainerNetworkPolicyAllowlistParamType$allowlist extends ContainerNetworkPolicyAllowlistParamType {const ContainerNetworkPolicyAllowlistParamType$allowlist._();
+
+@override String get value => 'allowlist';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ContainerNetworkPolicyAllowlistParamType$allowlist;
+
+@override int get hashCode => 'allowlist'.hashCode;
+
+ }
+@immutable final class ContainerNetworkPolicyAllowlistParamType$Unknown extends ContainerNetworkPolicyAllowlistParamType {const ContainerNetworkPolicyAllowlistParamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ContainerNetworkPolicyAllowlistParamType && other.value == value;
+    other is ContainerNetworkPolicyAllowlistParamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ContainerNetworkPolicyAllowlistParamType($value)';
 
  }
 @immutable final class ContainerNetworkPolicyAllowlistParam {const ContainerNetworkPolicyAllowlistParam({required this.allowedDomains, this.type = ContainerNetworkPolicyAllowlistParamType.allowlist, this.domainSecrets, });

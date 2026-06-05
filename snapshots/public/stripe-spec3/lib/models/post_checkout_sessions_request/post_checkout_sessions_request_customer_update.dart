@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCheckoutSessionsRequest (inline: CustomerUpdate)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CustomerUpdateAddress {const CustomerUpdateAddress._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CustomerUpdateAddress {const CustomerUpdateAddress();
 
 factory CustomerUpdateAddress.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'never' => never,
-  _ => CustomerUpdateAddress._(json),
+  _ => CustomerUpdateAddress$Unknown(json),
 }; }
 
-static const CustomerUpdateAddress auto = CustomerUpdateAddress._('auto');
+static const CustomerUpdateAddress auto = CustomerUpdateAddress$auto._();
 
-static const CustomerUpdateAddress never = CustomerUpdateAddress._('never');
+static const CustomerUpdateAddress never = CustomerUpdateAddress$never._();
 
 static const List<CustomerUpdateAddress> values = [auto, never];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,31 +24,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerUpdateAddress && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CustomerUpdateAddress$Unknown; } 
 @override String toString() => 'CustomerUpdateAddress($value)';
 
  }
-@immutable final class CustomerUpdateName {const CustomerUpdateName._(this.value);
+@immutable final class CustomerUpdateAddress$auto extends CustomerUpdateAddress {const CustomerUpdateAddress$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerUpdateAddress$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class CustomerUpdateAddress$never extends CustomerUpdateAddress {const CustomerUpdateAddress$never._();
+
+@override String get value => 'never';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerUpdateAddress$never;
+
+@override int get hashCode => 'never'.hashCode;
+
+ }
+@immutable final class CustomerUpdateAddress$Unknown extends CustomerUpdateAddress {const CustomerUpdateAddress$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerUpdateAddress$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class CustomerUpdateName {const CustomerUpdateName();
 
 factory CustomerUpdateName.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'never' => never,
-  _ => CustomerUpdateName._(json),
+  _ => CustomerUpdateName$Unknown(json),
 }; }
 
-static const CustomerUpdateName auto = CustomerUpdateName._('auto');
+static const CustomerUpdateName auto = CustomerUpdateName$auto._();
 
-static const CustomerUpdateName never = CustomerUpdateName._('never');
+static const CustomerUpdateName never = CustomerUpdateName$never._();
 
 static const List<CustomerUpdateName> values = [auto, never];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -58,31 +79,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerUpdateName && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CustomerUpdateName$Unknown; } 
 @override String toString() => 'CustomerUpdateName($value)';
 
  }
-@immutable final class CustomerUpdateShipping {const CustomerUpdateShipping._(this.value);
+@immutable final class CustomerUpdateName$auto extends CustomerUpdateName {const CustomerUpdateName$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerUpdateName$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class CustomerUpdateName$never extends CustomerUpdateName {const CustomerUpdateName$never._();
+
+@override String get value => 'never';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerUpdateName$never;
+
+@override int get hashCode => 'never'.hashCode;
+
+ }
+@immutable final class CustomerUpdateName$Unknown extends CustomerUpdateName {const CustomerUpdateName$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerUpdateName$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class CustomerUpdateShipping {const CustomerUpdateShipping();
 
 factory CustomerUpdateShipping.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'never' => never,
-  _ => CustomerUpdateShipping._(json),
+  _ => CustomerUpdateShipping$Unknown(json),
 }; }
 
-static const CustomerUpdateShipping auto = CustomerUpdateShipping._('auto');
+static const CustomerUpdateShipping auto = CustomerUpdateShipping$auto._();
 
-static const CustomerUpdateShipping never = CustomerUpdateShipping._('never');
+static const CustomerUpdateShipping never = CustomerUpdateShipping$never._();
 
 static const List<CustomerUpdateShipping> values = [auto, never];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -91,13 +134,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomerUpdateShipping$Unknown; } 
+@override String toString() => 'CustomerUpdateShipping($value)';
+
+ }
+@immutable final class CustomerUpdateShipping$auto extends CustomerUpdateShipping {const CustomerUpdateShipping$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerUpdateShipping$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class CustomerUpdateShipping$never extends CustomerUpdateShipping {const CustomerUpdateShipping$never._();
+
+@override String get value => 'never';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerUpdateShipping$never;
+
+@override int get hashCode => 'never'.hashCode;
+
+ }
+@immutable final class CustomerUpdateShipping$Unknown extends CustomerUpdateShipping {const CustomerUpdateShipping$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerUpdateShipping && other.value == value;
+    other is CustomerUpdateShipping$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomerUpdateShipping($value)';
 
  }
 /// Controls what fields on Customer can be updated by the Checkout Session. Can only be provided when `customer` is provided.

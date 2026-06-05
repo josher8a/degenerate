@@ -2,25 +2,24 @@
 // Source: #/components/schemas/GelatoDocumentReport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/gelato_data_document_report_date_of_birth.dart';import 'package:pub_stripe_spec3/models/gelato_data_document_report_expiration_date.dart';import 'package:pub_stripe_spec3/models/gelato_data_document_report_issued_date.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/gelato_document_report_status.dart';import 'package:pub_stripe_spec3/models/gelato_document_report/sex.dart';import 'package:pub_stripe_spec3/models/gelato_document_report_error.dart';/// Type of the document.
-@immutable final class GelatoDocumentReportType {const GelatoDocumentReportType._(this.value);
+sealed class GelatoDocumentReportType {const GelatoDocumentReportType();
 
 factory GelatoDocumentReportType.fromJson(String json) { return switch (json) {
   'driving_license' => drivingLicense,
   'id_card' => idCard,
   'passport' => passport,
-  _ => GelatoDocumentReportType._(json),
+  _ => GelatoDocumentReportType$Unknown(json),
 }; }
 
-static const GelatoDocumentReportType drivingLicense = GelatoDocumentReportType._('driving_license');
+static const GelatoDocumentReportType drivingLicense = GelatoDocumentReportType$drivingLicense._();
 
-static const GelatoDocumentReportType idCard = GelatoDocumentReportType._('id_card');
+static const GelatoDocumentReportType idCard = GelatoDocumentReportType$idCard._();
 
-static const GelatoDocumentReportType passport = GelatoDocumentReportType._('passport');
+static const GelatoDocumentReportType passport = GelatoDocumentReportType$passport._();
 
 static const List<GelatoDocumentReportType> values = [drivingLicense, idCard, passport];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GelatoDocumentReportType$Unknown; } 
+@override String toString() => 'GelatoDocumentReportType($value)';
+
+ }
+@immutable final class GelatoDocumentReportType$drivingLicense extends GelatoDocumentReportType {const GelatoDocumentReportType$drivingLicense._();
+
+@override String get value => 'driving_license';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoDocumentReportType$drivingLicense;
+
+@override int get hashCode => 'driving_license'.hashCode;
+
+ }
+@immutable final class GelatoDocumentReportType$idCard extends GelatoDocumentReportType {const GelatoDocumentReportType$idCard._();
+
+@override String get value => 'id_card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoDocumentReportType$idCard;
+
+@override int get hashCode => 'id_card'.hashCode;
+
+ }
+@immutable final class GelatoDocumentReportType$passport extends GelatoDocumentReportType {const GelatoDocumentReportType$passport._();
+
+@override String get value => 'passport';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoDocumentReportType$passport;
+
+@override int get hashCode => 'passport'.hashCode;
+
+ }
+@immutable final class GelatoDocumentReportType$Unknown extends GelatoDocumentReportType {const GelatoDocumentReportType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GelatoDocumentReportType && other.value == value;
+    other is GelatoDocumentReportType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GelatoDocumentReportType($value)';
 
  }
 /// Result from a document check

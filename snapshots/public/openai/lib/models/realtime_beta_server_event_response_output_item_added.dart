@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventResponseOutputItemAdded
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';/// The event type, must be `response.output_item.added`.
-@immutable final class RealtimeBetaServerEventResponseOutputItemAddedType {const RealtimeBetaServerEventResponseOutputItemAddedType._(this.value);
+sealed class RealtimeBetaServerEventResponseOutputItemAddedType {const RealtimeBetaServerEventResponseOutputItemAddedType();
 
 factory RealtimeBetaServerEventResponseOutputItemAddedType.fromJson(String json) { return switch (json) {
   'response.output_item.added' => responseOutputItemAdded,
-  _ => RealtimeBetaServerEventResponseOutputItemAddedType._(json),
+  _ => RealtimeBetaServerEventResponseOutputItemAddedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventResponseOutputItemAddedType responseOutputItemAdded = RealtimeBetaServerEventResponseOutputItemAddedType._('response.output_item.added');
+static const RealtimeBetaServerEventResponseOutputItemAddedType responseOutputItemAdded = RealtimeBetaServerEventResponseOutputItemAddedType$responseOutputItemAdded._();
 
 static const List<RealtimeBetaServerEventResponseOutputItemAddedType> values = [responseOutputItemAdded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseOutputItemAddedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventResponseOutputItemAddedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventResponseOutputItemAddedType$responseOutputItemAdded extends RealtimeBetaServerEventResponseOutputItemAddedType {const RealtimeBetaServerEventResponseOutputItemAddedType$responseOutputItemAdded._();
+
+@override String get value => 'response.output_item.added';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseOutputItemAddedType$responseOutputItemAdded;
+
+@override int get hashCode => 'response.output_item.added'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventResponseOutputItemAddedType$Unknown extends RealtimeBetaServerEventResponseOutputItemAddedType {const RealtimeBetaServerEventResponseOutputItemAddedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventResponseOutputItemAddedType && other.value == value;
+    other is RealtimeBetaServerEventResponseOutputItemAddedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventResponseOutputItemAddedType($value)';
 
  }
 /// Returned when a new Item is created during Response generation.

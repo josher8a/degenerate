@@ -2,7 +2,7 @@
 // Source: #/components/schemas/MessageObject (inline: IncompleteDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason the message is incomplete.
-@immutable final class MessageObjectIncompleteDetailsReason {const MessageObjectIncompleteDetailsReason._(this.value);
+sealed class MessageObjectIncompleteDetailsReason {const MessageObjectIncompleteDetailsReason();
 
 factory MessageObjectIncompleteDetailsReason.fromJson(String json) { return switch (json) {
   'content_filter' => contentFilter,
@@ -10,23 +10,22 @@ factory MessageObjectIncompleteDetailsReason.fromJson(String json) { return swit
   'run_cancelled' => runCancelled,
   'run_expired' => runExpired,
   'run_failed' => runFailed,
-  _ => MessageObjectIncompleteDetailsReason._(json),
+  _ => MessageObjectIncompleteDetailsReason$Unknown(json),
 }; }
 
-static const MessageObjectIncompleteDetailsReason contentFilter = MessageObjectIncompleteDetailsReason._('content_filter');
+static const MessageObjectIncompleteDetailsReason contentFilter = MessageObjectIncompleteDetailsReason$contentFilter._();
 
-static const MessageObjectIncompleteDetailsReason maxTokens = MessageObjectIncompleteDetailsReason._('max_tokens');
+static const MessageObjectIncompleteDetailsReason maxTokens = MessageObjectIncompleteDetailsReason$maxTokens._();
 
-static const MessageObjectIncompleteDetailsReason runCancelled = MessageObjectIncompleteDetailsReason._('run_cancelled');
+static const MessageObjectIncompleteDetailsReason runCancelled = MessageObjectIncompleteDetailsReason$runCancelled._();
 
-static const MessageObjectIncompleteDetailsReason runExpired = MessageObjectIncompleteDetailsReason._('run_expired');
+static const MessageObjectIncompleteDetailsReason runExpired = MessageObjectIncompleteDetailsReason$runExpired._();
 
-static const MessageObjectIncompleteDetailsReason runFailed = MessageObjectIncompleteDetailsReason._('run_failed');
+static const MessageObjectIncompleteDetailsReason runFailed = MessageObjectIncompleteDetailsReason$runFailed._();
 
 static const List<MessageObjectIncompleteDetailsReason> values = [contentFilter, maxTokens, runCancelled, runExpired, runFailed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MessageObjectIncompleteDetailsReason$Unknown; } 
+@override String toString() => 'MessageObjectIncompleteDetailsReason($value)';
+
+ }
+@immutable final class MessageObjectIncompleteDetailsReason$contentFilter extends MessageObjectIncompleteDetailsReason {const MessageObjectIncompleteDetailsReason$contentFilter._();
+
+@override String get value => 'content_filter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageObjectIncompleteDetailsReason$contentFilter;
+
+@override int get hashCode => 'content_filter'.hashCode;
+
+ }
+@immutable final class MessageObjectIncompleteDetailsReason$maxTokens extends MessageObjectIncompleteDetailsReason {const MessageObjectIncompleteDetailsReason$maxTokens._();
+
+@override String get value => 'max_tokens';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageObjectIncompleteDetailsReason$maxTokens;
+
+@override int get hashCode => 'max_tokens'.hashCode;
+
+ }
+@immutable final class MessageObjectIncompleteDetailsReason$runCancelled extends MessageObjectIncompleteDetailsReason {const MessageObjectIncompleteDetailsReason$runCancelled._();
+
+@override String get value => 'run_cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageObjectIncompleteDetailsReason$runCancelled;
+
+@override int get hashCode => 'run_cancelled'.hashCode;
+
+ }
+@immutable final class MessageObjectIncompleteDetailsReason$runExpired extends MessageObjectIncompleteDetailsReason {const MessageObjectIncompleteDetailsReason$runExpired._();
+
+@override String get value => 'run_expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageObjectIncompleteDetailsReason$runExpired;
+
+@override int get hashCode => 'run_expired'.hashCode;
+
+ }
+@immutable final class MessageObjectIncompleteDetailsReason$runFailed extends MessageObjectIncompleteDetailsReason {const MessageObjectIncompleteDetailsReason$runFailed._();
+
+@override String get value => 'run_failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageObjectIncompleteDetailsReason$runFailed;
+
+@override int get hashCode => 'run_failed'.hashCode;
+
+ }
+@immutable final class MessageObjectIncompleteDetailsReason$Unknown extends MessageObjectIncompleteDetailsReason {const MessageObjectIncompleteDetailsReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageObjectIncompleteDetailsReason && other.value == value;
+    other is MessageObjectIncompleteDetailsReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MessageObjectIncompleteDetailsReason($value)';
 
  }
 /// On an incomplete message, details about why the message is incomplete.

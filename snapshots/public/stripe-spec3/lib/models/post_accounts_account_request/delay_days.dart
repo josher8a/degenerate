@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountsAccountRequest (inline: Settings > Payouts > Schedule > DelayDays)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DelayDaysVariant1 {const DelayDaysVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DelayDaysVariant1 {const DelayDaysVariant1();
 
 factory DelayDaysVariant1.fromJson(String json) { return switch (json) {
   'minimum' => minimum,
-  _ => DelayDaysVariant1._(json),
+  _ => DelayDaysVariant1$Unknown(json),
 }; }
 
-static const DelayDaysVariant1 minimum = DelayDaysVariant1._('minimum');
+static const DelayDaysVariant1 minimum = DelayDaysVariant1$minimum._();
 
 static const List<DelayDaysVariant1> values = [minimum];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DelayDaysVariant1$Unknown; } 
+@override String toString() => 'DelayDaysVariant1($value)';
+
+ }
+@immutable final class DelayDaysVariant1$minimum extends DelayDaysVariant1 {const DelayDaysVariant1$minimum._();
+
+@override String get value => 'minimum';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DelayDaysVariant1$minimum;
+
+@override int get hashCode => 'minimum'.hashCode;
+
+ }
+@immutable final class DelayDaysVariant1$Unknown extends DelayDaysVariant1 {const DelayDaysVariant1$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DelayDaysVariant1 && other.value == value;
+    other is DelayDaysVariant1$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DelayDaysVariant1($value)';
 
  }
 /// Variants:

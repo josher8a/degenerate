@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ProjectsAddFieldForOrgRequest (inline: Iteration)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/field_iteration_configuration.dart';/// The field's data type.
-@immutable final class IterationDataType {const IterationDataType._(this.value);
+sealed class IterationDataType {const IterationDataType();
 
 factory IterationDataType.fromJson(String json) { return switch (json) {
   'iteration' => iteration,
-  _ => IterationDataType._(json),
+  _ => IterationDataType$Unknown(json),
 }; }
 
-static const IterationDataType iteration = IterationDataType._('iteration');
+static const IterationDataType iteration = IterationDataType$iteration._();
 
 static const List<IterationDataType> values = [iteration];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IterationDataType$Unknown; } 
+@override String toString() => 'IterationDataType($value)';
+
+ }
+@immutable final class IterationDataType$iteration extends IterationDataType {const IterationDataType$iteration._();
+
+@override String get value => 'iteration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IterationDataType$iteration;
+
+@override int get hashCode => 'iteration'.hashCode;
+
+ }
+@immutable final class IterationDataType$Unknown extends IterationDataType {const IterationDataType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IterationDataType && other.value == value;
+    other is IterationDataType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IterationDataType($value)';
 
  }
 @immutable final class Iteration {const Iteration({required this.name, required this.dataType, required this.iterationConfiguration, });

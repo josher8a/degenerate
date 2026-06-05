@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FineTuningJob
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_method.dart';import 'package:pub_openai/models/fine_tuning_integration.dart';import 'package:pub_openai/models/fine_tuning_job/fine_tuning_job_error.dart';import 'package:pub_openai/models/fine_tuning_job/fine_tuning_job_hyperparameters.dart';/// The object type, which is always "fine_tuning.job".
-@immutable final class FineTuningJobObject {const FineTuningJobObject._(this.value);
+sealed class FineTuningJobObject {const FineTuningJobObject();
 
 factory FineTuningJobObject.fromJson(String json) { return switch (json) {
   'fine_tuning.job' => fineTuningJob,
-  _ => FineTuningJobObject._(json),
+  _ => FineTuningJobObject$Unknown(json),
 }; }
 
-static const FineTuningJobObject fineTuningJob = FineTuningJobObject._('fine_tuning.job');
+static const FineTuningJobObject fineTuningJob = FineTuningJobObject$fineTuningJob._();
 
 static const List<FineTuningJobObject> values = [fineTuningJob];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,17 +21,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is FineTuningJobObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is FineTuningJobObject$Unknown; } 
 @override String toString() => 'FineTuningJobObject($value)';
 
  }
+@immutable final class FineTuningJobObject$fineTuningJob extends FineTuningJobObject {const FineTuningJobObject$fineTuningJob._();
+
+@override String get value => 'fine_tuning.job';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuningJobObject$fineTuningJob;
+
+@override int get hashCode => 'fine_tuning.job'.hashCode;
+
+ }
+@immutable final class FineTuningJobObject$Unknown extends FineTuningJobObject {const FineTuningJobObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FineTuningJobObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
-@immutable final class FineTuningJobStatus {const FineTuningJobStatus._(this.value);
+sealed class FineTuningJobStatus {const FineTuningJobStatus();
 
 factory FineTuningJobStatus.fromJson(String json) { return switch (json) {
   'validating_files' => validatingFiles,
@@ -41,25 +54,24 @@ factory FineTuningJobStatus.fromJson(String json) { return switch (json) {
   'succeeded' => succeeded,
   'failed' => failed,
   'cancelled' => cancelled,
-  _ => FineTuningJobStatus._(json),
+  _ => FineTuningJobStatus$Unknown(json),
 }; }
 
-static const FineTuningJobStatus validatingFiles = FineTuningJobStatus._('validating_files');
+static const FineTuningJobStatus validatingFiles = FineTuningJobStatus$validatingFiles._();
 
-static const FineTuningJobStatus queued = FineTuningJobStatus._('queued');
+static const FineTuningJobStatus queued = FineTuningJobStatus$queued._();
 
-static const FineTuningJobStatus running = FineTuningJobStatus._('running');
+static const FineTuningJobStatus running = FineTuningJobStatus$running._();
 
-static const FineTuningJobStatus succeeded = FineTuningJobStatus._('succeeded');
+static const FineTuningJobStatus succeeded = FineTuningJobStatus$succeeded._();
 
-static const FineTuningJobStatus failed = FineTuningJobStatus._('failed');
+static const FineTuningJobStatus failed = FineTuningJobStatus$failed._();
 
-static const FineTuningJobStatus cancelled = FineTuningJobStatus._('cancelled');
+static const FineTuningJobStatus cancelled = FineTuningJobStatus$cancelled._();
 
 static const List<FineTuningJobStatus> values = [validatingFiles, queued, running, succeeded, failed, cancelled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -72,13 +84,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FineTuningJobStatus$Unknown; } 
+@override String toString() => 'FineTuningJobStatus($value)';
+
+ }
+@immutable final class FineTuningJobStatus$validatingFiles extends FineTuningJobStatus {const FineTuningJobStatus$validatingFiles._();
+
+@override String get value => 'validating_files';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuningJobStatus$validatingFiles;
+
+@override int get hashCode => 'validating_files'.hashCode;
+
+ }
+@immutable final class FineTuningJobStatus$queued extends FineTuningJobStatus {const FineTuningJobStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuningJobStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class FineTuningJobStatus$running extends FineTuningJobStatus {const FineTuningJobStatus$running._();
+
+@override String get value => 'running';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuningJobStatus$running;
+
+@override int get hashCode => 'running'.hashCode;
+
+ }
+@immutable final class FineTuningJobStatus$succeeded extends FineTuningJobStatus {const FineTuningJobStatus$succeeded._();
+
+@override String get value => 'succeeded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuningJobStatus$succeeded;
+
+@override int get hashCode => 'succeeded'.hashCode;
+
+ }
+@immutable final class FineTuningJobStatus$failed extends FineTuningJobStatus {const FineTuningJobStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuningJobStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class FineTuningJobStatus$cancelled extends FineTuningJobStatus {const FineTuningJobStatus$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuningJobStatus$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class FineTuningJobStatus$Unknown extends FineTuningJobStatus {const FineTuningJobStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FineTuningJobStatus && other.value == value;
+    other is FineTuningJobStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FineTuningJobStatus($value)';
 
  }
 /// The `fine_tuning.job` object represents a fine-tuning job that has been created through the API.

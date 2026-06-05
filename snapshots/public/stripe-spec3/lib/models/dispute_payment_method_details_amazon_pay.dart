@@ -2,22 +2,21 @@
 // Source: #/components/schemas/DisputePaymentMethodDetailsAmazonPay
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The AmazonPay dispute type, chargeback or claim
-@immutable final class DisputeType {const DisputeType._(this.value);
+sealed class DisputeType {const DisputeType();
 
 factory DisputeType.fromJson(String json) { return switch (json) {
   'chargeback' => chargeback,
   'claim' => claim,
-  _ => DisputeType._(json),
+  _ => DisputeType$Unknown(json),
 }; }
 
-static const DisputeType chargeback = DisputeType._('chargeback');
+static const DisputeType chargeback = DisputeType$chargeback._();
 
-static const DisputeType claim = DisputeType._('claim');
+static const DisputeType claim = DisputeType$claim._();
 
 static const List<DisputeType> values = [chargeback, claim];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DisputeType$Unknown; } 
+@override String toString() => 'DisputeType($value)';
+
+ }
+@immutable final class DisputeType$chargeback extends DisputeType {const DisputeType$chargeback._();
+
+@override String get value => 'chargeback';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeType$chargeback;
+
+@override int get hashCode => 'chargeback'.hashCode;
+
+ }
+@immutable final class DisputeType$claim extends DisputeType {const DisputeType$claim._();
+
+@override String get value => 'claim';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeType$claim;
+
+@override int get hashCode => 'claim'.hashCode;
+
+ }
+@immutable final class DisputeType$Unknown extends DisputeType {const DisputeType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DisputeType && other.value == value;
+    other is DisputeType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DisputeType($value)';
 
  }
 /// 

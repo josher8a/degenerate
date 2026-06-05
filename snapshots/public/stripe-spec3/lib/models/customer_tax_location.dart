@@ -2,28 +2,27 @@
 // Source: #/components/schemas/CustomerTaxLocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The data source used to infer the customer's location.
-@immutable final class CustomerTaxLocationSource {const CustomerTaxLocationSource._(this.value);
+sealed class CustomerTaxLocationSource {const CustomerTaxLocationSource();
 
 factory CustomerTaxLocationSource.fromJson(String json) { return switch (json) {
   'billing_address' => billingAddress,
   'ip_address' => ipAddress,
   'payment_method' => paymentMethod,
   'shipping_destination' => shippingDestination,
-  _ => CustomerTaxLocationSource._(json),
+  _ => CustomerTaxLocationSource$Unknown(json),
 }; }
 
-static const CustomerTaxLocationSource billingAddress = CustomerTaxLocationSource._('billing_address');
+static const CustomerTaxLocationSource billingAddress = CustomerTaxLocationSource$billingAddress._();
 
-static const CustomerTaxLocationSource ipAddress = CustomerTaxLocationSource._('ip_address');
+static const CustomerTaxLocationSource ipAddress = CustomerTaxLocationSource$ipAddress._();
 
-static const CustomerTaxLocationSource paymentMethod = CustomerTaxLocationSource._('payment_method');
+static const CustomerTaxLocationSource paymentMethod = CustomerTaxLocationSource$paymentMethod._();
 
-static const CustomerTaxLocationSource shippingDestination = CustomerTaxLocationSource._('shipping_destination');
+static const CustomerTaxLocationSource shippingDestination = CustomerTaxLocationSource$shippingDestination._();
 
 static const List<CustomerTaxLocationSource> values = [billingAddress, ipAddress, paymentMethod, shippingDestination];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomerTaxLocationSource$Unknown; } 
+@override String toString() => 'CustomerTaxLocationSource($value)';
+
+ }
+@immutable final class CustomerTaxLocationSource$billingAddress extends CustomerTaxLocationSource {const CustomerTaxLocationSource$billingAddress._();
+
+@override String get value => 'billing_address';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerTaxLocationSource$billingAddress;
+
+@override int get hashCode => 'billing_address'.hashCode;
+
+ }
+@immutable final class CustomerTaxLocationSource$ipAddress extends CustomerTaxLocationSource {const CustomerTaxLocationSource$ipAddress._();
+
+@override String get value => 'ip_address';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerTaxLocationSource$ipAddress;
+
+@override int get hashCode => 'ip_address'.hashCode;
+
+ }
+@immutable final class CustomerTaxLocationSource$paymentMethod extends CustomerTaxLocationSource {const CustomerTaxLocationSource$paymentMethod._();
+
+@override String get value => 'payment_method';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerTaxLocationSource$paymentMethod;
+
+@override int get hashCode => 'payment_method'.hashCode;
+
+ }
+@immutable final class CustomerTaxLocationSource$shippingDestination extends CustomerTaxLocationSource {const CustomerTaxLocationSource$shippingDestination._();
+
+@override String get value => 'shipping_destination';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerTaxLocationSource$shippingDestination;
+
+@override int get hashCode => 'shipping_destination'.hashCode;
+
+ }
+@immutable final class CustomerTaxLocationSource$Unknown extends CustomerTaxLocationSource {const CustomerTaxLocationSource$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerTaxLocationSource && other.value == value;
+    other is CustomerTaxLocationSource$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomerTaxLocationSource($value)';
 
  }
 /// 

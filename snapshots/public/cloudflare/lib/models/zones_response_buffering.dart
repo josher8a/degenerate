@@ -6,19 +6,18 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// default, Cloudflare sends packets to the client as they arrive from
 /// the origin server.
 /// 
-@immutable final class ZonesResponseBufferingId {const ZonesResponseBufferingId._(this.value);
+sealed class ZonesResponseBufferingId {const ZonesResponseBufferingId();
 
 factory ZonesResponseBufferingId.fromJson(String json) { return switch (json) {
   'response_buffering' => responseBuffering,
-  _ => ZonesResponseBufferingId._(json),
+  _ => ZonesResponseBufferingId$Unknown(json),
 }; }
 
-static const ZonesResponseBufferingId responseBuffering = ZonesResponseBufferingId._('response_buffering');
+static const ZonesResponseBufferingId responseBuffering = ZonesResponseBufferingId$responseBuffering._();
 
 static const List<ZonesResponseBufferingId> values = [responseBuffering];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesResponseBufferingId$Unknown; } 
+@override String toString() => 'ZonesResponseBufferingId($value)';
+
+ }
+@immutable final class ZonesResponseBufferingId$responseBuffering extends ZonesResponseBufferingId {const ZonesResponseBufferingId$responseBuffering._();
+
+@override String get value => 'response_buffering';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesResponseBufferingId$responseBuffering;
+
+@override int get hashCode => 'response_buffering'.hashCode;
+
+ }
+@immutable final class ZonesResponseBufferingId$Unknown extends ZonesResponseBufferingId {const ZonesResponseBufferingId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesResponseBufferingId && other.value == value;
+    other is ZonesResponseBufferingId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesResponseBufferingId($value)';
 
  }
 @immutable final class ZonesResponseBuffering {const ZonesResponseBuffering({this.id, this.value, });

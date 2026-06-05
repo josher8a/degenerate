@@ -9,7 +9,7 @@ num toJson() => value;
 
 }
 /// Type of packet sent.
-@immutable final class MagicTransitPacketType {const MagicTransitPacketType._(this.value);
+sealed class MagicTransitPacketType {const MagicTransitPacketType();
 
 factory MagicTransitPacketType.fromJson(String json) { return switch (json) {
   'icmp' => icmp,
@@ -17,23 +17,22 @@ factory MagicTransitPacketType.fromJson(String json) { return switch (json) {
   'udp' => udp,
   'gre' => gre,
   'gre+icmp' => greicmp,
-  _ => MagicTransitPacketType._(json),
+  _ => MagicTransitPacketType$Unknown(json),
 }; }
 
-static const MagicTransitPacketType icmp = MagicTransitPacketType._('icmp');
+static const MagicTransitPacketType icmp = MagicTransitPacketType$icmp._();
 
-static const MagicTransitPacketType tcp = MagicTransitPacketType._('tcp');
+static const MagicTransitPacketType tcp = MagicTransitPacketType$tcp._();
 
-static const MagicTransitPacketType udp = MagicTransitPacketType._('udp');
+static const MagicTransitPacketType udp = MagicTransitPacketType$udp._();
 
-static const MagicTransitPacketType gre = MagicTransitPacketType._('gre');
+static const MagicTransitPacketType gre = MagicTransitPacketType$gre._();
 
-static const MagicTransitPacketType greicmp = MagicTransitPacketType._('gre+icmp');
+static const MagicTransitPacketType greicmp = MagicTransitPacketType$greicmp._();
 
 static const List<MagicTransitPacketType> values = [icmp, tcp, udp, gre, greicmp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -45,13 +44,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MagicTransitPacketType$Unknown; } 
+@override String toString() => 'MagicTransitPacketType($value)';
+
+ }
+@immutable final class MagicTransitPacketType$icmp extends MagicTransitPacketType {const MagicTransitPacketType$icmp._();
+
+@override String get value => 'icmp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicTransitPacketType$icmp;
+
+@override int get hashCode => 'icmp'.hashCode;
+
+ }
+@immutable final class MagicTransitPacketType$tcp extends MagicTransitPacketType {const MagicTransitPacketType$tcp._();
+
+@override String get value => 'tcp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicTransitPacketType$tcp;
+
+@override int get hashCode => 'tcp'.hashCode;
+
+ }
+@immutable final class MagicTransitPacketType$udp extends MagicTransitPacketType {const MagicTransitPacketType$udp._();
+
+@override String get value => 'udp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicTransitPacketType$udp;
+
+@override int get hashCode => 'udp'.hashCode;
+
+ }
+@immutable final class MagicTransitPacketType$gre extends MagicTransitPacketType {const MagicTransitPacketType$gre._();
+
+@override String get value => 'gre';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicTransitPacketType$gre;
+
+@override int get hashCode => 'gre'.hashCode;
+
+ }
+@immutable final class MagicTransitPacketType$greicmp extends MagicTransitPacketType {const MagicTransitPacketType$greicmp._();
+
+@override String get value => 'gre+icmp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicTransitPacketType$greicmp;
+
+@override int get hashCode => 'gre+icmp'.hashCode;
+
+ }
+@immutable final class MagicTransitPacketType$Unknown extends MagicTransitPacketType {const MagicTransitPacketType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MagicTransitPacketType && other.value == value;
+    other is MagicTransitPacketType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MagicTransitPacketType($value)';
 
  }
 /// Number of packets sent at each TTL.

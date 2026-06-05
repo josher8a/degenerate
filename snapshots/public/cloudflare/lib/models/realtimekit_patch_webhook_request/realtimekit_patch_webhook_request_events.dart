@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimekitPatchWebhookRequest (inline: Events)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents();
 
 factory RealtimekitPatchWebhookRequestEvents.fromJson(String json) { return switch (json) {
   'meeting.started' => meetingStarted,
@@ -13,31 +13,30 @@ factory RealtimekitPatchWebhookRequestEvents.fromJson(String json) { return swit
   'meeting.chatSynced' => meetingChatSynced,
   'meeting.transcript' => meetingTranscript,
   'meeting.summary' => meetingSummary,
-  _ => RealtimekitPatchWebhookRequestEvents._(json),
+  _ => RealtimekitPatchWebhookRequestEvents$Unknown(json),
 }; }
 
-static const RealtimekitPatchWebhookRequestEvents meetingStarted = RealtimekitPatchWebhookRequestEvents._('meeting.started');
+static const RealtimekitPatchWebhookRequestEvents meetingStarted = RealtimekitPatchWebhookRequestEvents$meetingStarted._();
 
-static const RealtimekitPatchWebhookRequestEvents meetingEnded = RealtimekitPatchWebhookRequestEvents._('meeting.ended');
+static const RealtimekitPatchWebhookRequestEvents meetingEnded = RealtimekitPatchWebhookRequestEvents$meetingEnded._();
 
-static const RealtimekitPatchWebhookRequestEvents meetingParticipantJoined = RealtimekitPatchWebhookRequestEvents._('meeting.participantJoined');
+static const RealtimekitPatchWebhookRequestEvents meetingParticipantJoined = RealtimekitPatchWebhookRequestEvents$meetingParticipantJoined._();
 
-static const RealtimekitPatchWebhookRequestEvents meetingParticipantLeft = RealtimekitPatchWebhookRequestEvents._('meeting.participantLeft');
+static const RealtimekitPatchWebhookRequestEvents meetingParticipantLeft = RealtimekitPatchWebhookRequestEvents$meetingParticipantLeft._();
 
-static const RealtimekitPatchWebhookRequestEvents recordingStatusUpdate = RealtimekitPatchWebhookRequestEvents._('recording.statusUpdate');
+static const RealtimekitPatchWebhookRequestEvents recordingStatusUpdate = RealtimekitPatchWebhookRequestEvents$recordingStatusUpdate._();
 
-static const RealtimekitPatchWebhookRequestEvents livestreamingStatusUpdate = RealtimekitPatchWebhookRequestEvents._('livestreaming.statusUpdate');
+static const RealtimekitPatchWebhookRequestEvents livestreamingStatusUpdate = RealtimekitPatchWebhookRequestEvents$livestreamingStatusUpdate._();
 
-static const RealtimekitPatchWebhookRequestEvents meetingChatSynced = RealtimekitPatchWebhookRequestEvents._('meeting.chatSynced');
+static const RealtimekitPatchWebhookRequestEvents meetingChatSynced = RealtimekitPatchWebhookRequestEvents$meetingChatSynced._();
 
-static const RealtimekitPatchWebhookRequestEvents meetingTranscript = RealtimekitPatchWebhookRequestEvents._('meeting.transcript');
+static const RealtimekitPatchWebhookRequestEvents meetingTranscript = RealtimekitPatchWebhookRequestEvents$meetingTranscript._();
 
-static const RealtimekitPatchWebhookRequestEvents meetingSummary = RealtimekitPatchWebhookRequestEvents._('meeting.summary');
+static const RealtimekitPatchWebhookRequestEvents meetingSummary = RealtimekitPatchWebhookRequestEvents$meetingSummary._();
 
 static const List<RealtimekitPatchWebhookRequestEvents> values = [meetingStarted, meetingEnded, meetingParticipantJoined, meetingParticipantLeft, recordingStatusUpdate, livestreamingStatusUpdate, meetingChatSynced, meetingTranscript, meetingSummary];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -53,12 +52,98 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimekitPatchWebhookRequestEvents$Unknown; } 
+@override String toString() => 'RealtimekitPatchWebhookRequestEvents($value)';
+
+ }
+@immutable final class RealtimekitPatchWebhookRequestEvents$meetingStarted extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$meetingStarted._();
+
+@override String get value => 'meeting.started';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitPatchWebhookRequestEvents$meetingStarted;
+
+@override int get hashCode => 'meeting.started'.hashCode;
+
+ }
+@immutable final class RealtimekitPatchWebhookRequestEvents$meetingEnded extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$meetingEnded._();
+
+@override String get value => 'meeting.ended';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitPatchWebhookRequestEvents$meetingEnded;
+
+@override int get hashCode => 'meeting.ended'.hashCode;
+
+ }
+@immutable final class RealtimekitPatchWebhookRequestEvents$meetingParticipantJoined extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$meetingParticipantJoined._();
+
+@override String get value => 'meeting.participantJoined';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitPatchWebhookRequestEvents$meetingParticipantJoined;
+
+@override int get hashCode => 'meeting.participantJoined'.hashCode;
+
+ }
+@immutable final class RealtimekitPatchWebhookRequestEvents$meetingParticipantLeft extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$meetingParticipantLeft._();
+
+@override String get value => 'meeting.participantLeft';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitPatchWebhookRequestEvents$meetingParticipantLeft;
+
+@override int get hashCode => 'meeting.participantLeft'.hashCode;
+
+ }
+@immutable final class RealtimekitPatchWebhookRequestEvents$recordingStatusUpdate extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$recordingStatusUpdate._();
+
+@override String get value => 'recording.statusUpdate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitPatchWebhookRequestEvents$recordingStatusUpdate;
+
+@override int get hashCode => 'recording.statusUpdate'.hashCode;
+
+ }
+@immutable final class RealtimekitPatchWebhookRequestEvents$livestreamingStatusUpdate extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$livestreamingStatusUpdate._();
+
+@override String get value => 'livestreaming.statusUpdate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitPatchWebhookRequestEvents$livestreamingStatusUpdate;
+
+@override int get hashCode => 'livestreaming.statusUpdate'.hashCode;
+
+ }
+@immutable final class RealtimekitPatchWebhookRequestEvents$meetingChatSynced extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$meetingChatSynced._();
+
+@override String get value => 'meeting.chatSynced';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitPatchWebhookRequestEvents$meetingChatSynced;
+
+@override int get hashCode => 'meeting.chatSynced'.hashCode;
+
+ }
+@immutable final class RealtimekitPatchWebhookRequestEvents$meetingTranscript extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$meetingTranscript._();
+
+@override String get value => 'meeting.transcript';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitPatchWebhookRequestEvents$meetingTranscript;
+
+@override int get hashCode => 'meeting.transcript'.hashCode;
+
+ }
+@immutable final class RealtimekitPatchWebhookRequestEvents$meetingSummary extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$meetingSummary._();
+
+@override String get value => 'meeting.summary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitPatchWebhookRequestEvents$meetingSummary;
+
+@override int get hashCode => 'meeting.summary'.hashCode;
+
+ }
+@immutable final class RealtimekitPatchWebhookRequestEvents$Unknown extends RealtimekitPatchWebhookRequestEvents {const RealtimekitPatchWebhookRequestEvents$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimekitPatchWebhookRequestEvents && other.value == value;
+    other is RealtimekitPatchWebhookRequestEvents$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimekitPatchWebhookRequestEvents($value)';
 
  }

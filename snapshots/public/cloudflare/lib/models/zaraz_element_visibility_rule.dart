@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZarazElementVisibilityRule
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_element_visibility_rule/zaraz_element_visibility_rule_settings.dart';@immutable final class ZarazElementVisibilityRuleAction {const ZarazElementVisibilityRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_element_visibility_rule/zaraz_element_visibility_rule_settings.dart';sealed class ZarazElementVisibilityRuleAction {const ZarazElementVisibilityRuleAction();
 
 factory ZarazElementVisibilityRuleAction.fromJson(String json) { return switch (json) {
   'elementVisibility' => elementVisibility,
-  _ => ZarazElementVisibilityRuleAction._(json),
+  _ => ZarazElementVisibilityRuleAction$Unknown(json),
 }; }
 
-static const ZarazElementVisibilityRuleAction elementVisibility = ZarazElementVisibilityRuleAction._('elementVisibility');
+static const ZarazElementVisibilityRuleAction elementVisibility = ZarazElementVisibilityRuleAction$elementVisibility._();
 
 static const List<ZarazElementVisibilityRuleAction> values = [elementVisibility];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZarazElementVisibilityRuleAction$Unknown; } 
+@override String toString() => 'ZarazElementVisibilityRuleAction($value)';
+
+ }
+@immutable final class ZarazElementVisibilityRuleAction$elementVisibility extends ZarazElementVisibilityRuleAction {const ZarazElementVisibilityRuleAction$elementVisibility._();
+
+@override String get value => 'elementVisibility';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazElementVisibilityRuleAction$elementVisibility;
+
+@override int get hashCode => 'elementVisibility'.hashCode;
+
+ }
+@immutable final class ZarazElementVisibilityRuleAction$Unknown extends ZarazElementVisibilityRuleAction {const ZarazElementVisibilityRuleAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZarazElementVisibilityRuleAction && other.value == value;
+    other is ZarazElementVisibilityRuleAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZarazElementVisibilityRuleAction($value)';
 
  }
 @immutable final class ZarazElementVisibilityRule {const ZarazElementVisibilityRule({required this.action, required this.id, required this.settings, });

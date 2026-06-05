@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BrapiPostContentRequest (inline: Variant1 > Cookies)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Priority {const Priority._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Priority {const Priority();
 
 factory Priority.fromJson(String json) { return switch (json) {
   'Low' => low,
   'Medium' => medium,
   'High' => high,
-  _ => Priority._(json),
+  _ => Priority$Unknown(json),
 }; }
 
-static const Priority low = Priority._('Low');
+static const Priority low = Priority$low._();
 
-static const Priority medium = Priority._('Medium');
+static const Priority medium = Priority$medium._();
 
-static const Priority high = Priority._('High');
+static const Priority high = Priority$high._();
 
 static const List<Priority> values = [low, medium, high];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,34 +28,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Priority && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Priority$Unknown; } 
 @override String toString() => 'Priority($value)';
 
  }
-@immutable final class SameSite {const SameSite._(this.value);
+@immutable final class Priority$low extends Priority {const Priority$low._();
+
+@override String get value => 'Low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Priority$low;
+
+@override int get hashCode => 'Low'.hashCode;
+
+ }
+@immutable final class Priority$medium extends Priority {const Priority$medium._();
+
+@override String get value => 'Medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Priority$medium;
+
+@override int get hashCode => 'Medium'.hashCode;
+
+ }
+@immutable final class Priority$high extends Priority {const Priority$high._();
+
+@override String get value => 'High';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Priority$high;
+
+@override int get hashCode => 'High'.hashCode;
+
+ }
+@immutable final class Priority$Unknown extends Priority {const Priority$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Priority$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class SameSite {const SameSite();
 
 factory SameSite.fromJson(String json) { return switch (json) {
   'Strict' => strict,
   'Lax' => lax,
   'None' => none,
-  _ => SameSite._(json),
+  _ => SameSite$Unknown(json),
 }; }
 
-static const SameSite strict = SameSite._('Strict');
+static const SameSite strict = SameSite$strict._();
 
-static const SameSite lax = SameSite._('Lax');
+static const SameSite lax = SameSite$lax._();
 
-static const SameSite none = SameSite._('None');
+static const SameSite none = SameSite$none._();
 
 static const List<SameSite> values = [strict, lax, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -66,34 +96,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SameSite && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SameSite$Unknown; } 
 @override String toString() => 'SameSite($value)';
 
  }
-@immutable final class SourceScheme {const SourceScheme._(this.value);
+@immutable final class SameSite$strict extends SameSite {const SameSite$strict._();
+
+@override String get value => 'Strict';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SameSite$strict;
+
+@override int get hashCode => 'Strict'.hashCode;
+
+ }
+@immutable final class SameSite$lax extends SameSite {const SameSite$lax._();
+
+@override String get value => 'Lax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SameSite$lax;
+
+@override int get hashCode => 'Lax'.hashCode;
+
+ }
+@immutable final class SameSite$none extends SameSite {const SameSite$none._();
+
+@override String get value => 'None';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SameSite$none;
+
+@override int get hashCode => 'None'.hashCode;
+
+ }
+@immutable final class SameSite$Unknown extends SameSite {const SameSite$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SameSite$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class SourceScheme {const SourceScheme();
 
 factory SourceScheme.fromJson(String json) { return switch (json) {
   'Unset' => unset,
   'NonSecure' => nonSecure,
   'Secure' => secure,
-  _ => SourceScheme._(json),
+  _ => SourceScheme$Unknown(json),
 }; }
 
-static const SourceScheme unset = SourceScheme._('Unset');
+static const SourceScheme unset = SourceScheme$unset._();
 
-static const SourceScheme nonSecure = SourceScheme._('NonSecure');
+static const SourceScheme nonSecure = SourceScheme$nonSecure._();
 
-static const SourceScheme secure = SourceScheme._('Secure');
+static const SourceScheme secure = SourceScheme$secure._();
 
 static const List<SourceScheme> values = [unset, nonSecure, secure];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -103,13 +164,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SourceScheme$Unknown; } 
+@override String toString() => 'SourceScheme($value)';
+
+ }
+@immutable final class SourceScheme$unset extends SourceScheme {const SourceScheme$unset._();
+
+@override String get value => 'Unset';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceScheme$unset;
+
+@override int get hashCode => 'Unset'.hashCode;
+
+ }
+@immutable final class SourceScheme$nonSecure extends SourceScheme {const SourceScheme$nonSecure._();
+
+@override String get value => 'NonSecure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceScheme$nonSecure;
+
+@override int get hashCode => 'NonSecure'.hashCode;
+
+ }
+@immutable final class SourceScheme$secure extends SourceScheme {const SourceScheme$secure._();
+
+@override String get value => 'Secure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceScheme$secure;
+
+@override int get hashCode => 'Secure'.hashCode;
+
+ }
+@immutable final class SourceScheme$Unknown extends SourceScheme {const SourceScheme$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SourceScheme && other.value == value;
+    other is SourceScheme$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SourceScheme($value)';
 
  }
 @immutable final class Variant1Cookies {const Variant1Cookies({required this.name, required this.value, this.domain, this.expires, this.httpOnly, this.partitionKey, this.path, this.priority, this.sameParty, this.sameSite, this.secure, this.sourcePort, this.sourceScheme, this.url, });

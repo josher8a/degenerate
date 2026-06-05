@@ -2,25 +2,24 @@
 // Source: #/components/schemas/PagesDeployment (inline: DeploymentTrigger)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_deployment/deployment_trigger_metadata.dart';/// What caused the deployment.
-@immutable final class DeploymentTriggerType {const DeploymentTriggerType._(this.value);
+sealed class DeploymentTriggerType {const DeploymentTriggerType();
 
 factory DeploymentTriggerType.fromJson(String json) { return switch (json) {
   'github:push' => githubpush,
   'ad_hoc' => adHoc,
   'deploy_hook' => deployHook,
-  _ => DeploymentTriggerType._(json),
+  _ => DeploymentTriggerType$Unknown(json),
 }; }
 
-static const DeploymentTriggerType githubpush = DeploymentTriggerType._('github:push');
+static const DeploymentTriggerType githubpush = DeploymentTriggerType$githubpush._();
 
-static const DeploymentTriggerType adHoc = DeploymentTriggerType._('ad_hoc');
+static const DeploymentTriggerType adHoc = DeploymentTriggerType$adHoc._();
 
-static const DeploymentTriggerType deployHook = DeploymentTriggerType._('deploy_hook');
+static const DeploymentTriggerType deployHook = DeploymentTriggerType$deployHook._();
 
 static const List<DeploymentTriggerType> values = [githubpush, adHoc, deployHook];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeploymentTriggerType$Unknown; } 
+@override String toString() => 'DeploymentTriggerType($value)';
+
+ }
+@immutable final class DeploymentTriggerType$githubpush extends DeploymentTriggerType {const DeploymentTriggerType$githubpush._();
+
+@override String get value => 'github:push';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeploymentTriggerType$githubpush;
+
+@override int get hashCode => 'github:push'.hashCode;
+
+ }
+@immutable final class DeploymentTriggerType$adHoc extends DeploymentTriggerType {const DeploymentTriggerType$adHoc._();
+
+@override String get value => 'ad_hoc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeploymentTriggerType$adHoc;
+
+@override int get hashCode => 'ad_hoc'.hashCode;
+
+ }
+@immutable final class DeploymentTriggerType$deployHook extends DeploymentTriggerType {const DeploymentTriggerType$deployHook._();
+
+@override String get value => 'deploy_hook';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeploymentTriggerType$deployHook;
+
+@override int get hashCode => 'deploy_hook'.hashCode;
+
+ }
+@immutable final class DeploymentTriggerType$Unknown extends DeploymentTriggerType {const DeploymentTriggerType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeploymentTriggerType && other.value == value;
+    other is DeploymentTriggerType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeploymentTriggerType($value)';
 
  }
 /// Info about what caused the deployment.

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PackagesGetPackageForOrganizationPackageType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagesGetPackageForOrganizationPackageType {const PackagesGetPackageForOrganizationPackageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PackagesGetPackageForOrganizationPackageType {const PackagesGetPackageForOrganizationPackageType();
 
 factory PackagesGetPackageForOrganizationPackageType.fromJson(String json) { return switch (json) {
   'npm' => npm,
@@ -10,25 +10,24 @@ factory PackagesGetPackageForOrganizationPackageType.fromJson(String json) { ret
   'docker' => docker,
   'nuget' => nuget,
   'container' => container,
-  _ => PackagesGetPackageForOrganizationPackageType._(json),
+  _ => PackagesGetPackageForOrganizationPackageType$Unknown(json),
 }; }
 
-static const PackagesGetPackageForOrganizationPackageType npm = PackagesGetPackageForOrganizationPackageType._('npm');
+static const PackagesGetPackageForOrganizationPackageType npm = PackagesGetPackageForOrganizationPackageType$npm._();
 
-static const PackagesGetPackageForOrganizationPackageType maven = PackagesGetPackageForOrganizationPackageType._('maven');
+static const PackagesGetPackageForOrganizationPackageType maven = PackagesGetPackageForOrganizationPackageType$maven._();
 
-static const PackagesGetPackageForOrganizationPackageType rubygems = PackagesGetPackageForOrganizationPackageType._('rubygems');
+static const PackagesGetPackageForOrganizationPackageType rubygems = PackagesGetPackageForOrganizationPackageType$rubygems._();
 
-static const PackagesGetPackageForOrganizationPackageType docker = PackagesGetPackageForOrganizationPackageType._('docker');
+static const PackagesGetPackageForOrganizationPackageType docker = PackagesGetPackageForOrganizationPackageType$docker._();
 
-static const PackagesGetPackageForOrganizationPackageType nuget = PackagesGetPackageForOrganizationPackageType._('nuget');
+static const PackagesGetPackageForOrganizationPackageType nuget = PackagesGetPackageForOrganizationPackageType$nuget._();
 
-static const PackagesGetPackageForOrganizationPackageType container = PackagesGetPackageForOrganizationPackageType._('container');
+static const PackagesGetPackageForOrganizationPackageType container = PackagesGetPackageForOrganizationPackageType$container._();
 
 static const List<PackagesGetPackageForOrganizationPackageType> values = [npm, maven, rubygems, docker, nuget, container];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,12 +40,71 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PackagesGetPackageForOrganizationPackageType$Unknown; } 
+@override String toString() => 'PackagesGetPackageForOrganizationPackageType($value)';
+
+ }
+@immutable final class PackagesGetPackageForOrganizationPackageType$npm extends PackagesGetPackageForOrganizationPackageType {const PackagesGetPackageForOrganizationPackageType$npm._();
+
+@override String get value => 'npm';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesGetPackageForOrganizationPackageType$npm;
+
+@override int get hashCode => 'npm'.hashCode;
+
+ }
+@immutable final class PackagesGetPackageForOrganizationPackageType$maven extends PackagesGetPackageForOrganizationPackageType {const PackagesGetPackageForOrganizationPackageType$maven._();
+
+@override String get value => 'maven';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesGetPackageForOrganizationPackageType$maven;
+
+@override int get hashCode => 'maven'.hashCode;
+
+ }
+@immutable final class PackagesGetPackageForOrganizationPackageType$rubygems extends PackagesGetPackageForOrganizationPackageType {const PackagesGetPackageForOrganizationPackageType$rubygems._();
+
+@override String get value => 'rubygems';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesGetPackageForOrganizationPackageType$rubygems;
+
+@override int get hashCode => 'rubygems'.hashCode;
+
+ }
+@immutable final class PackagesGetPackageForOrganizationPackageType$docker extends PackagesGetPackageForOrganizationPackageType {const PackagesGetPackageForOrganizationPackageType$docker._();
+
+@override String get value => 'docker';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesGetPackageForOrganizationPackageType$docker;
+
+@override int get hashCode => 'docker'.hashCode;
+
+ }
+@immutable final class PackagesGetPackageForOrganizationPackageType$nuget extends PackagesGetPackageForOrganizationPackageType {const PackagesGetPackageForOrganizationPackageType$nuget._();
+
+@override String get value => 'nuget';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesGetPackageForOrganizationPackageType$nuget;
+
+@override int get hashCode => 'nuget'.hashCode;
+
+ }
+@immutable final class PackagesGetPackageForOrganizationPackageType$container extends PackagesGetPackageForOrganizationPackageType {const PackagesGetPackageForOrganizationPackageType$container._();
+
+@override String get value => 'container';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesGetPackageForOrganizationPackageType$container;
+
+@override int get hashCode => 'container'.hashCode;
+
+ }
+@immutable final class PackagesGetPackageForOrganizationPackageType$Unknown extends PackagesGetPackageForOrganizationPackageType {const PackagesGetPackageForOrganizationPackageType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PackagesGetPackageForOrganizationPackageType && other.value == value;
+    other is PackagesGetPackageForOrganizationPackageType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PackagesGetPackageForOrganizationPackageType($value)';
 
  }

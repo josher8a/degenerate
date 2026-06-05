@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RepositoryRulesetConditionsRepositoryPropertySpec
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source of the repository property. Defaults to 'custom' if not specified.
-@immutable final class RepositoryRulesetConditionsRepositoryPropertySpecSource {const RepositoryRulesetConditionsRepositoryPropertySpecSource._(this.value);
+sealed class RepositoryRulesetConditionsRepositoryPropertySpecSource {const RepositoryRulesetConditionsRepositoryPropertySpecSource();
 
 factory RepositoryRulesetConditionsRepositoryPropertySpecSource.fromJson(String json) { return switch (json) {
   'custom' => custom,
   'system' => system,
-  _ => RepositoryRulesetConditionsRepositoryPropertySpecSource._(json),
+  _ => RepositoryRulesetConditionsRepositoryPropertySpecSource$Unknown(json),
 }; }
 
-static const RepositoryRulesetConditionsRepositoryPropertySpecSource custom = RepositoryRulesetConditionsRepositoryPropertySpecSource._('custom');
+static const RepositoryRulesetConditionsRepositoryPropertySpecSource custom = RepositoryRulesetConditionsRepositoryPropertySpecSource$custom._();
 
-static const RepositoryRulesetConditionsRepositoryPropertySpecSource system = RepositoryRulesetConditionsRepositoryPropertySpecSource._('system');
+static const RepositoryRulesetConditionsRepositoryPropertySpecSource system = RepositoryRulesetConditionsRepositoryPropertySpecSource$system._();
 
 static const List<RepositoryRulesetConditionsRepositoryPropertySpecSource> values = [custom, system];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RepositoryRulesetConditionsRepositoryPropertySpecSource$Unknown; } 
+@override String toString() => 'RepositoryRulesetConditionsRepositoryPropertySpecSource($value)';
+
+ }
+@immutable final class RepositoryRulesetConditionsRepositoryPropertySpecSource$custom extends RepositoryRulesetConditionsRepositoryPropertySpecSource {const RepositoryRulesetConditionsRepositoryPropertySpecSource$custom._();
+
+@override String get value => 'custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryRulesetConditionsRepositoryPropertySpecSource$custom;
+
+@override int get hashCode => 'custom'.hashCode;
+
+ }
+@immutable final class RepositoryRulesetConditionsRepositoryPropertySpecSource$system extends RepositoryRulesetConditionsRepositoryPropertySpecSource {const RepositoryRulesetConditionsRepositoryPropertySpecSource$system._();
+
+@override String get value => 'system';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryRulesetConditionsRepositoryPropertySpecSource$system;
+
+@override int get hashCode => 'system'.hashCode;
+
+ }
+@immutable final class RepositoryRulesetConditionsRepositoryPropertySpecSource$Unknown extends RepositoryRulesetConditionsRepositoryPropertySpecSource {const RepositoryRulesetConditionsRepositoryPropertySpecSource$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRulesetConditionsRepositoryPropertySpecSource && other.value == value;
+    other is RepositoryRulesetConditionsRepositoryPropertySpecSource$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRulesetConditionsRepositoryPropertySpecSource($value)';
 
  }
 /// Parameters for a targeting a repository property

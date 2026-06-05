@@ -2,7 +2,7 @@
 // Source: #/components/schemas/FieldSingleSelectOption
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The color associated with the option.
-@immutable final class FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor._(this.value);
+sealed class FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor();
 
 factory FieldSingleSelectOptionColor.fromJson(String json) { return switch (json) {
   'BLUE' => blue,
@@ -13,29 +13,28 @@ factory FieldSingleSelectOptionColor.fromJson(String json) { return switch (json
   'PURPLE' => purple,
   'RED' => red,
   'YELLOW' => yellow,
-  _ => FieldSingleSelectOptionColor._(json),
+  _ => FieldSingleSelectOptionColor$Unknown(json),
 }; }
 
-static const FieldSingleSelectOptionColor blue = FieldSingleSelectOptionColor._('BLUE');
+static const FieldSingleSelectOptionColor blue = FieldSingleSelectOptionColor$blue._();
 
-static const FieldSingleSelectOptionColor gray = FieldSingleSelectOptionColor._('GRAY');
+static const FieldSingleSelectOptionColor gray = FieldSingleSelectOptionColor$gray._();
 
-static const FieldSingleSelectOptionColor green = FieldSingleSelectOptionColor._('GREEN');
+static const FieldSingleSelectOptionColor green = FieldSingleSelectOptionColor$green._();
 
-static const FieldSingleSelectOptionColor orange = FieldSingleSelectOptionColor._('ORANGE');
+static const FieldSingleSelectOptionColor orange = FieldSingleSelectOptionColor$orange._();
 
-static const FieldSingleSelectOptionColor pink = FieldSingleSelectOptionColor._('PINK');
+static const FieldSingleSelectOptionColor pink = FieldSingleSelectOptionColor$pink._();
 
-static const FieldSingleSelectOptionColor purple = FieldSingleSelectOptionColor._('PURPLE');
+static const FieldSingleSelectOptionColor purple = FieldSingleSelectOptionColor$purple._();
 
-static const FieldSingleSelectOptionColor red = FieldSingleSelectOptionColor._('RED');
+static const FieldSingleSelectOptionColor red = FieldSingleSelectOptionColor$red._();
 
-static const FieldSingleSelectOptionColor yellow = FieldSingleSelectOptionColor._('YELLOW');
+static const FieldSingleSelectOptionColor yellow = FieldSingleSelectOptionColor$yellow._();
 
 static const List<FieldSingleSelectOptionColor> values = [blue, gray, green, orange, pink, purple, red, yellow];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,13 +49,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FieldSingleSelectOptionColor$Unknown; } 
+@override String toString() => 'FieldSingleSelectOptionColor($value)';
+
+ }
+@immutable final class FieldSingleSelectOptionColor$blue extends FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor$blue._();
+
+@override String get value => 'BLUE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldSingleSelectOptionColor$blue;
+
+@override int get hashCode => 'BLUE'.hashCode;
+
+ }
+@immutable final class FieldSingleSelectOptionColor$gray extends FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor$gray._();
+
+@override String get value => 'GRAY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldSingleSelectOptionColor$gray;
+
+@override int get hashCode => 'GRAY'.hashCode;
+
+ }
+@immutable final class FieldSingleSelectOptionColor$green extends FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor$green._();
+
+@override String get value => 'GREEN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldSingleSelectOptionColor$green;
+
+@override int get hashCode => 'GREEN'.hashCode;
+
+ }
+@immutable final class FieldSingleSelectOptionColor$orange extends FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor$orange._();
+
+@override String get value => 'ORANGE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldSingleSelectOptionColor$orange;
+
+@override int get hashCode => 'ORANGE'.hashCode;
+
+ }
+@immutable final class FieldSingleSelectOptionColor$pink extends FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor$pink._();
+
+@override String get value => 'PINK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldSingleSelectOptionColor$pink;
+
+@override int get hashCode => 'PINK'.hashCode;
+
+ }
+@immutable final class FieldSingleSelectOptionColor$purple extends FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor$purple._();
+
+@override String get value => 'PURPLE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldSingleSelectOptionColor$purple;
+
+@override int get hashCode => 'PURPLE'.hashCode;
+
+ }
+@immutable final class FieldSingleSelectOptionColor$red extends FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor$red._();
+
+@override String get value => 'RED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldSingleSelectOptionColor$red;
+
+@override int get hashCode => 'RED'.hashCode;
+
+ }
+@immutable final class FieldSingleSelectOptionColor$yellow extends FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor$yellow._();
+
+@override String get value => 'YELLOW';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldSingleSelectOptionColor$yellow;
+
+@override int get hashCode => 'YELLOW'.hashCode;
+
+ }
+@immutable final class FieldSingleSelectOptionColor$Unknown extends FieldSingleSelectOptionColor {const FieldSingleSelectOptionColor$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FieldSingleSelectOptionColor && other.value == value;
+    other is FieldSingleSelectOptionColor$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FieldSingleSelectOptionColor($value)';
 
  }
 @immutable final class FieldSingleSelectOption {const FieldSingleSelectOption({this.name, this.color, this.description, });

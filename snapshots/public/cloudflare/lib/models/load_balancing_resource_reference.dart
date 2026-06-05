@@ -2,22 +2,21 @@
 // Source: #/components/schemas/LoadBalancingResourceReference
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When listed as a reference, the type (direction) of the reference.
-@immutable final class LoadBalancingResourceReferenceReferenceType {const LoadBalancingResourceReferenceReferenceType._(this.value);
+sealed class LoadBalancingResourceReferenceReferenceType {const LoadBalancingResourceReferenceReferenceType();
 
 factory LoadBalancingResourceReferenceReferenceType.fromJson(String json) { return switch (json) {
   'referral' => referral,
   'referrer' => referrer,
-  _ => LoadBalancingResourceReferenceReferenceType._(json),
+  _ => LoadBalancingResourceReferenceReferenceType$Unknown(json),
 }; }
 
-static const LoadBalancingResourceReferenceReferenceType referral = LoadBalancingResourceReferenceReferenceType._('referral');
+static const LoadBalancingResourceReferenceReferenceType referral = LoadBalancingResourceReferenceReferenceType$referral._();
 
-static const LoadBalancingResourceReferenceReferenceType referrer = LoadBalancingResourceReferenceReferenceType._('referrer');
+static const LoadBalancingResourceReferenceReferenceType referrer = LoadBalancingResourceReferenceReferenceType$referrer._();
 
 static const List<LoadBalancingResourceReferenceReferenceType> values = [referral, referrer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,35 +25,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is LoadBalancingResourceReferenceReferenceType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is LoadBalancingResourceReferenceReferenceType$Unknown; } 
 @override String toString() => 'LoadBalancingResourceReferenceReferenceType($value)';
 
  }
+@immutable final class LoadBalancingResourceReferenceReferenceType$referral extends LoadBalancingResourceReferenceReferenceType {const LoadBalancingResourceReferenceReferenceType$referral._();
+
+@override String get value => 'referral';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoadBalancingResourceReferenceReferenceType$referral;
+
+@override int get hashCode => 'referral'.hashCode;
+
+ }
+@immutable final class LoadBalancingResourceReferenceReferenceType$referrer extends LoadBalancingResourceReferenceReferenceType {const LoadBalancingResourceReferenceReferenceType$referrer._();
+
+@override String get value => 'referrer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoadBalancingResourceReferenceReferenceType$referrer;
+
+@override int get hashCode => 'referrer'.hashCode;
+
+ }
+@immutable final class LoadBalancingResourceReferenceReferenceType$Unknown extends LoadBalancingResourceReferenceReferenceType {const LoadBalancingResourceReferenceReferenceType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LoadBalancingResourceReferenceReferenceType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The type of the resource.
-@immutable final class LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType._(this.value);
+sealed class LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType();
 
 factory LoadBalancingResourceReferenceResourceType.fromJson(String json) { return switch (json) {
   'load_balancer' => loadBalancer,
   'monitor' => monitor,
   'pool' => pool,
-  _ => LoadBalancingResourceReferenceResourceType._(json),
+  _ => LoadBalancingResourceReferenceResourceType$Unknown(json),
 }; }
 
-static const LoadBalancingResourceReferenceResourceType loadBalancer = LoadBalancingResourceReferenceResourceType._('load_balancer');
+static const LoadBalancingResourceReferenceResourceType loadBalancer = LoadBalancingResourceReferenceResourceType$loadBalancer._();
 
-static const LoadBalancingResourceReferenceResourceType monitor = LoadBalancingResourceReferenceResourceType._('monitor');
+static const LoadBalancingResourceReferenceResourceType monitor = LoadBalancingResourceReferenceResourceType$monitor._();
 
-static const LoadBalancingResourceReferenceResourceType pool = LoadBalancingResourceReferenceResourceType._('pool');
+static const LoadBalancingResourceReferenceResourceType pool = LoadBalancingResourceReferenceResourceType$pool._();
 
 static const List<LoadBalancingResourceReferenceResourceType> values = [loadBalancer, monitor, pool];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,13 +85,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LoadBalancingResourceReferenceResourceType$Unknown; } 
+@override String toString() => 'LoadBalancingResourceReferenceResourceType($value)';
+
+ }
+@immutable final class LoadBalancingResourceReferenceResourceType$loadBalancer extends LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType$loadBalancer._();
+
+@override String get value => 'load_balancer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoadBalancingResourceReferenceResourceType$loadBalancer;
+
+@override int get hashCode => 'load_balancer'.hashCode;
+
+ }
+@immutable final class LoadBalancingResourceReferenceResourceType$monitor extends LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType$monitor._();
+
+@override String get value => 'monitor';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoadBalancingResourceReferenceResourceType$monitor;
+
+@override int get hashCode => 'monitor'.hashCode;
+
+ }
+@immutable final class LoadBalancingResourceReferenceResourceType$pool extends LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType$pool._();
+
+@override String get value => 'pool';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoadBalancingResourceReferenceResourceType$pool;
+
+@override int get hashCode => 'pool'.hashCode;
+
+ }
+@immutable final class LoadBalancingResourceReferenceResourceType$Unknown extends LoadBalancingResourceReferenceResourceType {const LoadBalancingResourceReferenceResourceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LoadBalancingResourceReferenceResourceType && other.value == value;
+    other is LoadBalancingResourceReferenceResourceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LoadBalancingResourceReferenceResourceType($value)';
 
  }
 /// A reference to a load balancer resource.

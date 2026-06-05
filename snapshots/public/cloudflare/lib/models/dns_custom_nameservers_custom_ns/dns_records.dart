@@ -2,22 +2,21 @@
 // Source: #/components/schemas/DnsCustomNameserversCustomNs (inline: DnsRecords)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// DNS record type.
-@immutable final class DnsCustomNameserversCustomNsDnsRecordsType {const DnsCustomNameserversCustomNsDnsRecordsType._(this.value);
+sealed class DnsCustomNameserversCustomNsDnsRecordsType {const DnsCustomNameserversCustomNsDnsRecordsType();
 
 factory DnsCustomNameserversCustomNsDnsRecordsType.fromJson(String json) { return switch (json) {
   'A' => a,
   'AAAA' => aaaa,
-  _ => DnsCustomNameserversCustomNsDnsRecordsType._(json),
+  _ => DnsCustomNameserversCustomNsDnsRecordsType$Unknown(json),
 }; }
 
-static const DnsCustomNameserversCustomNsDnsRecordsType a = DnsCustomNameserversCustomNsDnsRecordsType._('A');
+static const DnsCustomNameserversCustomNsDnsRecordsType a = DnsCustomNameserversCustomNsDnsRecordsType$a._();
 
-static const DnsCustomNameserversCustomNsDnsRecordsType aaaa = DnsCustomNameserversCustomNsDnsRecordsType._('AAAA');
+static const DnsCustomNameserversCustomNsDnsRecordsType aaaa = DnsCustomNameserversCustomNsDnsRecordsType$aaaa._();
 
 static const List<DnsCustomNameserversCustomNsDnsRecordsType> values = [a, aaaa];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DnsCustomNameserversCustomNsDnsRecordsType$Unknown; } 
+@override String toString() => 'DnsCustomNameserversCustomNsDnsRecordsType($value)';
+
+ }
+@immutable final class DnsCustomNameserversCustomNsDnsRecordsType$a extends DnsCustomNameserversCustomNsDnsRecordsType {const DnsCustomNameserversCustomNsDnsRecordsType$a._();
+
+@override String get value => 'A';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsCustomNameserversCustomNsDnsRecordsType$a;
+
+@override int get hashCode => 'A'.hashCode;
+
+ }
+@immutable final class DnsCustomNameserversCustomNsDnsRecordsType$aaaa extends DnsCustomNameserversCustomNsDnsRecordsType {const DnsCustomNameserversCustomNsDnsRecordsType$aaaa._();
+
+@override String get value => 'AAAA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsCustomNameserversCustomNsDnsRecordsType$aaaa;
+
+@override int get hashCode => 'AAAA'.hashCode;
+
+ }
+@immutable final class DnsCustomNameserversCustomNsDnsRecordsType$Unknown extends DnsCustomNameserversCustomNsDnsRecordsType {const DnsCustomNameserversCustomNsDnsRecordsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsCustomNameserversCustomNsDnsRecordsType && other.value == value;
+    other is DnsCustomNameserversCustomNsDnsRecordsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DnsCustomNameserversCustomNsDnsRecordsType($value)';
 
  }
 @immutable final class DnsRecords {const DnsRecords({this.type, this.value, });

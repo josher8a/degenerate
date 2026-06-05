@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TlsCertificatesAndHostnamesCertificatePack
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack/validation_errors.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack_certificate.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_cloudflare_branding.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validation_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validation_record.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validity_days.dart';/// Status of certificate pack.
-@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._(this.value);
+sealed class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus();
 
 factory TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -26,55 +26,54 @@ factory TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus.fromJ
   'inactive' => inactive,
   'backup_issued' => backupIssued,
   'holding_deployment' => holdingDeployment,
-  _ => TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._(json),
+  _ => TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus initializing = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('initializing');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus initializing = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializing._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus pendingValidation = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('pending_validation');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus pendingValidation = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingValidation._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus deleted = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('deleted');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus deleted = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deleted._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus pendingIssuance = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('pending_issuance');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus pendingIssuance = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingIssuance._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus pendingDeployment = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('pending_deployment');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus pendingDeployment = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingDeployment._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus pendingDeletion = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('pending_deletion');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus pendingDeletion = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingDeletion._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus pendingExpiration = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('pending_expiration');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus pendingExpiration = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingExpiration._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus expired = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('expired');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus expired = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$expired._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus active = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('active');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus active = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$active._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus initializingTimedOut = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('initializing_timed_out');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus initializingTimedOut = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializingTimedOut._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus validationTimedOut = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('validation_timed_out');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus validationTimedOut = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$validationTimedOut._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus issuanceTimedOut = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('issuance_timed_out');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus issuanceTimedOut = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$issuanceTimedOut._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus deploymentTimedOut = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('deployment_timed_out');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus deploymentTimedOut = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deploymentTimedOut._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus deletionTimedOut = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('deletion_timed_out');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus deletionTimedOut = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deletionTimedOut._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus pendingCleanup = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('pending_cleanup');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus pendingCleanup = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingCleanup._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus stagingDeployment = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('staging_deployment');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus stagingDeployment = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$stagingDeployment._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus stagingActive = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('staging_active');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus stagingActive = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$stagingActive._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus deactivating = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('deactivating');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus deactivating = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deactivating._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus inactive = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('inactive');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus inactive = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$inactive._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus backupIssued = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('backup_issued');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus backupIssued = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$backupIssued._();
 
-static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus holdingDeployment = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus._('holding_deployment');
+static const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus holdingDeployment = TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$holdingDeployment._();
 
 static const List<TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus> values = [initializing, pendingValidation, deleted, pendingIssuance, pendingDeployment, pendingDeletion, pendingExpiration, expired, active, initializingTimedOut, validationTimedOut, issuanceTimedOut, deploymentTimedOut, deletionTimedOut, pendingCleanup, stagingDeployment, stagingActive, deactivating, inactive, backupIssued, holdingDeployment];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -102,13 +101,207 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializing extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializing._();
+
+@override String get value => 'initializing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializing;
+
+@override int get hashCode => 'initializing'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingValidation extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingValidation._();
+
+@override String get value => 'pending_validation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingValidation;
+
+@override int get hashCode => 'pending_validation'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deleted extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deleted._();
+
+@override String get value => 'deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deleted;
+
+@override int get hashCode => 'deleted'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingIssuance extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingIssuance._();
+
+@override String get value => 'pending_issuance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingIssuance;
+
+@override int get hashCode => 'pending_issuance'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingDeployment extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingDeployment._();
+
+@override String get value => 'pending_deployment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingDeployment;
+
+@override int get hashCode => 'pending_deployment'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingDeletion extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingDeletion._();
+
+@override String get value => 'pending_deletion';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingDeletion;
+
+@override int get hashCode => 'pending_deletion'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingExpiration extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingExpiration._();
+
+@override String get value => 'pending_expiration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingExpiration;
+
+@override int get hashCode => 'pending_expiration'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$expired extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$active extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializingTimedOut extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializingTimedOut._();
+
+@override String get value => 'initializing_timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$initializingTimedOut;
+
+@override int get hashCode => 'initializing_timed_out'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$validationTimedOut extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$validationTimedOut._();
+
+@override String get value => 'validation_timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$validationTimedOut;
+
+@override int get hashCode => 'validation_timed_out'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$issuanceTimedOut extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$issuanceTimedOut._();
+
+@override String get value => 'issuance_timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$issuanceTimedOut;
+
+@override int get hashCode => 'issuance_timed_out'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deploymentTimedOut extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deploymentTimedOut._();
+
+@override String get value => 'deployment_timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deploymentTimedOut;
+
+@override int get hashCode => 'deployment_timed_out'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deletionTimedOut extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deletionTimedOut._();
+
+@override String get value => 'deletion_timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deletionTimedOut;
+
+@override int get hashCode => 'deletion_timed_out'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingCleanup extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingCleanup._();
+
+@override String get value => 'pending_cleanup';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$pendingCleanup;
+
+@override int get hashCode => 'pending_cleanup'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$stagingDeployment extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$stagingDeployment._();
+
+@override String get value => 'staging_deployment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$stagingDeployment;
+
+@override int get hashCode => 'staging_deployment'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$stagingActive extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$stagingActive._();
+
+@override String get value => 'staging_active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$stagingActive;
+
+@override int get hashCode => 'staging_active'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deactivating extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deactivating._();
+
+@override String get value => 'deactivating';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$deactivating;
+
+@override int get hashCode => 'deactivating'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$inactive extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$backupIssued extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$backupIssued._();
+
+@override String get value => 'backup_issued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$backupIssued;
+
+@override int get hashCode => 'backup_issued'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$holdingDeployment extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$holdingDeployment._();
+
+@override String get value => 'holding_deployment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$holdingDeployment;
+
+@override int get hashCode => 'holding_deployment'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$Unknown extends TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus {const TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus && other.value == value;
+    other is TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesCertificatePacksComponentsSchemasStatus($value)';
 
  }
 /// Identifier of the primary certificate in a pack.
@@ -119,7 +312,7 @@ String toJson() => value;
 
 }
 /// Type of certificate pack.
-@immutable final class TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType._(this.value);
+sealed class TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType();
 
 factory TlsCertificatesAndHostnamesSchemasType.fromJson(String json) { return switch (json) {
   'mh_custom' => mhCustom,
@@ -130,29 +323,28 @@ factory TlsCertificatesAndHostnamesSchemasType.fromJson(String json) { return sw
   'total_tls' => totalTls,
   'keyless' => keyless,
   'legacy_custom' => legacyCustom,
-  _ => TlsCertificatesAndHostnamesSchemasType._(json),
+  _ => TlsCertificatesAndHostnamesSchemasType$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesSchemasType mhCustom = TlsCertificatesAndHostnamesSchemasType._('mh_custom');
+static const TlsCertificatesAndHostnamesSchemasType mhCustom = TlsCertificatesAndHostnamesSchemasType$mhCustom._();
 
-static const TlsCertificatesAndHostnamesSchemasType managedHostname = TlsCertificatesAndHostnamesSchemasType._('managed_hostname');
+static const TlsCertificatesAndHostnamesSchemasType managedHostname = TlsCertificatesAndHostnamesSchemasType$managedHostname._();
 
-static const TlsCertificatesAndHostnamesSchemasType sniCustom = TlsCertificatesAndHostnamesSchemasType._('sni_custom');
+static const TlsCertificatesAndHostnamesSchemasType sniCustom = TlsCertificatesAndHostnamesSchemasType$sniCustom._();
 
-static const TlsCertificatesAndHostnamesSchemasType universal = TlsCertificatesAndHostnamesSchemasType._('universal');
+static const TlsCertificatesAndHostnamesSchemasType universal = TlsCertificatesAndHostnamesSchemasType$universal._();
 
-static const TlsCertificatesAndHostnamesSchemasType advanced = TlsCertificatesAndHostnamesSchemasType._('advanced');
+static const TlsCertificatesAndHostnamesSchemasType advanced = TlsCertificatesAndHostnamesSchemasType$advanced._();
 
-static const TlsCertificatesAndHostnamesSchemasType totalTls = TlsCertificatesAndHostnamesSchemasType._('total_tls');
+static const TlsCertificatesAndHostnamesSchemasType totalTls = TlsCertificatesAndHostnamesSchemasType$totalTls._();
 
-static const TlsCertificatesAndHostnamesSchemasType keyless = TlsCertificatesAndHostnamesSchemasType._('keyless');
+static const TlsCertificatesAndHostnamesSchemasType keyless = TlsCertificatesAndHostnamesSchemasType$keyless._();
 
-static const TlsCertificatesAndHostnamesSchemasType legacyCustom = TlsCertificatesAndHostnamesSchemasType._('legacy_custom');
+static const TlsCertificatesAndHostnamesSchemasType legacyCustom = TlsCertificatesAndHostnamesSchemasType$legacyCustom._();
 
 static const List<TlsCertificatesAndHostnamesSchemasType> values = [mhCustom, managedHostname, sniCustom, universal, advanced, totalTls, keyless, legacyCustom];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -167,13 +359,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesSchemasType$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesSchemasType($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasType$mhCustom extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$mhCustom._();
+
+@override String get value => 'mh_custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasType$mhCustom;
+
+@override int get hashCode => 'mh_custom'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasType$managedHostname extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$managedHostname._();
+
+@override String get value => 'managed_hostname';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasType$managedHostname;
+
+@override int get hashCode => 'managed_hostname'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasType$sniCustom extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$sniCustom._();
+
+@override String get value => 'sni_custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasType$sniCustom;
+
+@override int get hashCode => 'sni_custom'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasType$universal extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$universal._();
+
+@override String get value => 'universal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasType$universal;
+
+@override int get hashCode => 'universal'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasType$advanced extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$advanced._();
+
+@override String get value => 'advanced';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasType$advanced;
+
+@override int get hashCode => 'advanced'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasType$totalTls extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$totalTls._();
+
+@override String get value => 'total_tls';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasType$totalTls;
+
+@override int get hashCode => 'total_tls'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasType$keyless extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$keyless._();
+
+@override String get value => 'keyless';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasType$keyless;
+
+@override int get hashCode => 'keyless'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasType$legacyCustom extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$legacyCustom._();
+
+@override String get value => 'legacy_custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesSchemasType$legacyCustom;
+
+@override int get hashCode => 'legacy_custom'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesSchemasType$Unknown extends TlsCertificatesAndHostnamesSchemasType {const TlsCertificatesAndHostnamesSchemasType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesSchemasType && other.value == value;
+    other is TlsCertificatesAndHostnamesSchemasType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesSchemasType($value)';
 
  }
 /// A certificate pack with all its properties.

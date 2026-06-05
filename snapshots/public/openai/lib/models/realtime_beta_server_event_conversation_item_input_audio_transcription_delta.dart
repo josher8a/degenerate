@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/log_prob_properties.dart';/// The event type, must be `conversation.item.input_audio_transcription.delta`.
-@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType._(this.value);
+sealed class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType();
 
 factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType.fromJson(String json) { return switch (json) {
   'conversation.item.input_audio_transcription.delta' => conversationItemInputAudioTranscriptionDelta,
-  _ => RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType._(json),
+  _ => RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType conversationItemInputAudioTranscriptionDelta = RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType._('conversation.item.input_audio_transcription.delta');
+static const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType conversationItemInputAudioTranscriptionDelta = RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType$conversationItemInputAudioTranscriptionDelta._();
 
 static const List<RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType> values = [conversationItemInputAudioTranscriptionDelta];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType$conversationItemInputAudioTranscriptionDelta extends RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType$conversationItemInputAudioTranscriptionDelta._();
+
+@override String get value => 'conversation.item.input_audio_transcription.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType$conversationItemInputAudioTranscriptionDelta;
+
+@override int get hashCode => 'conversation.item.input_audio_transcription.delta'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType$Unknown extends RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType && other.value == value;
+    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType($value)';
 
  }
 /// Returned when the text value of an input audio transcription content part is updated.

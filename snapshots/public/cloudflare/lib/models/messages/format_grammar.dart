@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Tools > Custom > Custom > Format > Grammar)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/grammar_grammar.dart';@immutable final class GrammarType {const GrammarType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/grammar_grammar.dart';sealed class GrammarType {const GrammarType();
 
 factory GrammarType.fromJson(String json) { return switch (json) {
   'grammar' => grammar,
-  _ => GrammarType._(json),
+  _ => GrammarType$Unknown(json),
 }; }
 
-static const GrammarType grammar = GrammarType._('grammar');
+static const GrammarType grammar = GrammarType$grammar._();
 
 static const List<GrammarType> values = [grammar];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GrammarType$Unknown; } 
+@override String toString() => 'GrammarType($value)';
+
+ }
+@immutable final class GrammarType$grammar extends GrammarType {const GrammarType$grammar._();
+
+@override String get value => 'grammar';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GrammarType$grammar;
+
+@override int get hashCode => 'grammar'.hashCode;
+
+ }
+@immutable final class GrammarType$Unknown extends GrammarType {const GrammarType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GrammarType && other.value == value;
+    other is GrammarType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GrammarType($value)';
 
  }
 @immutable final class FormatGrammar {const FormatGrammar({required this.grammar, required this.type, });

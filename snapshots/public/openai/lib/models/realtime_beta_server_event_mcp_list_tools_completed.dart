@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventMcpListToolsCompleted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `mcp_list_tools.completed`.
-@immutable final class RealtimeBetaServerEventMcpListToolsCompletedType {const RealtimeBetaServerEventMcpListToolsCompletedType._(this.value);
+sealed class RealtimeBetaServerEventMcpListToolsCompletedType {const RealtimeBetaServerEventMcpListToolsCompletedType();
 
 factory RealtimeBetaServerEventMcpListToolsCompletedType.fromJson(String json) { return switch (json) {
   'mcp_list_tools.completed' => mcpListToolsCompleted,
-  _ => RealtimeBetaServerEventMcpListToolsCompletedType._(json),
+  _ => RealtimeBetaServerEventMcpListToolsCompletedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventMcpListToolsCompletedType mcpListToolsCompleted = RealtimeBetaServerEventMcpListToolsCompletedType._('mcp_list_tools.completed');
+static const RealtimeBetaServerEventMcpListToolsCompletedType mcpListToolsCompleted = RealtimeBetaServerEventMcpListToolsCompletedType$mcpListToolsCompleted._();
 
 static const List<RealtimeBetaServerEventMcpListToolsCompletedType> values = [mcpListToolsCompleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventMcpListToolsCompletedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventMcpListToolsCompletedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventMcpListToolsCompletedType$mcpListToolsCompleted extends RealtimeBetaServerEventMcpListToolsCompletedType {const RealtimeBetaServerEventMcpListToolsCompletedType$mcpListToolsCompleted._();
+
+@override String get value => 'mcp_list_tools.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventMcpListToolsCompletedType$mcpListToolsCompleted;
+
+@override int get hashCode => 'mcp_list_tools.completed'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventMcpListToolsCompletedType$Unknown extends RealtimeBetaServerEventMcpListToolsCompletedType {const RealtimeBetaServerEventMcpListToolsCompletedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventMcpListToolsCompletedType && other.value == value;
+    other is RealtimeBetaServerEventMcpListToolsCompletedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventMcpListToolsCompletedType($value)';
 
  }
 /// Returned when listing MCP tools has completed for an item.

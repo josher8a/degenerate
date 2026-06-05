@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookBranchProtectionConfigurationDisabled
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookBranchProtectionConfigurationDisabledAction {const WebhookBranchProtectionConfigurationDisabledAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookBranchProtectionConfigurationDisabledAction {const WebhookBranchProtectionConfigurationDisabledAction();
 
 factory WebhookBranchProtectionConfigurationDisabledAction.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
-  _ => WebhookBranchProtectionConfigurationDisabledAction._(json),
+  _ => WebhookBranchProtectionConfigurationDisabledAction$Unknown(json),
 }; }
 
-static const WebhookBranchProtectionConfigurationDisabledAction disabled = WebhookBranchProtectionConfigurationDisabledAction._('disabled');
+static const WebhookBranchProtectionConfigurationDisabledAction disabled = WebhookBranchProtectionConfigurationDisabledAction$disabled._();
 
 static const List<WebhookBranchProtectionConfigurationDisabledAction> values = [disabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookBranchProtectionConfigurationDisabledAction$Unknown; } 
+@override String toString() => 'WebhookBranchProtectionConfigurationDisabledAction($value)';
+
+ }
+@immutable final class WebhookBranchProtectionConfigurationDisabledAction$disabled extends WebhookBranchProtectionConfigurationDisabledAction {const WebhookBranchProtectionConfigurationDisabledAction$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookBranchProtectionConfigurationDisabledAction$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class WebhookBranchProtectionConfigurationDisabledAction$Unknown extends WebhookBranchProtectionConfigurationDisabledAction {const WebhookBranchProtectionConfigurationDisabledAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookBranchProtectionConfigurationDisabledAction && other.value == value;
+    other is WebhookBranchProtectionConfigurationDisabledAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookBranchProtectionConfigurationDisabledAction($value)';
 
  }
 @immutable final class WebhookBranchProtectionConfigurationDisabled {const WebhookBranchProtectionConfigurationDisabled({required this.action, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

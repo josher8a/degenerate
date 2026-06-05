@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RepositoryRuleParamsReviewer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the reviewer
-@immutable final class RepositoryRuleParamsReviewerType {const RepositoryRuleParamsReviewerType._(this.value);
+sealed class RepositoryRuleParamsReviewerType {const RepositoryRuleParamsReviewerType();
 
 factory RepositoryRuleParamsReviewerType.fromJson(String json) { return switch (json) {
   'Team' => team,
-  _ => RepositoryRuleParamsReviewerType._(json),
+  _ => RepositoryRuleParamsReviewerType$Unknown(json),
 }; }
 
-static const RepositoryRuleParamsReviewerType team = RepositoryRuleParamsReviewerType._('Team');
+static const RepositoryRuleParamsReviewerType team = RepositoryRuleParamsReviewerType$team._();
 
 static const List<RepositoryRuleParamsReviewerType> values = [team];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RepositoryRuleParamsReviewerType$Unknown; } 
+@override String toString() => 'RepositoryRuleParamsReviewerType($value)';
+
+ }
+@immutable final class RepositoryRuleParamsReviewerType$team extends RepositoryRuleParamsReviewerType {const RepositoryRuleParamsReviewerType$team._();
+
+@override String get value => 'Team';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryRuleParamsReviewerType$team;
+
+@override int get hashCode => 'Team'.hashCode;
+
+ }
+@immutable final class RepositoryRuleParamsReviewerType$Unknown extends RepositoryRuleParamsReviewerType {const RepositoryRuleParamsReviewerType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleParamsReviewerType && other.value == value;
+    other is RepositoryRuleParamsReviewerType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleParamsReviewerType($value)';
 
  }
 /// A required reviewing team

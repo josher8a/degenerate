@@ -2,22 +2,21 @@
 // Source: #/components/schemas/IssuingToken
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card.dart';import 'package:pub_stripe_spec3/models/issuing_network_token_network_data.dart';import 'package:pub_stripe_spec3/models/issuing_token/issuing_token_card.dart';/// The token service provider / card network associated with the token.
-@immutable final class IssuingTokenNetwork {const IssuingTokenNetwork._(this.value);
+sealed class IssuingTokenNetwork {const IssuingTokenNetwork();
 
 factory IssuingTokenNetwork.fromJson(String json) { return switch (json) {
   'mastercard' => mastercard,
   'visa' => visa,
-  _ => IssuingTokenNetwork._(json),
+  _ => IssuingTokenNetwork$Unknown(json),
 }; }
 
-static const IssuingTokenNetwork mastercard = IssuingTokenNetwork._('mastercard');
+static const IssuingTokenNetwork mastercard = IssuingTokenNetwork$mastercard._();
 
-static const IssuingTokenNetwork visa = IssuingTokenNetwork._('visa');
+static const IssuingTokenNetwork visa = IssuingTokenNetwork$visa._();
 
 static const List<IssuingTokenNetwork> values = [mastercard, visa];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,29 +25,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingTokenNetwork && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingTokenNetwork$Unknown; } 
 @override String toString() => 'IssuingTokenNetwork($value)';
 
  }
+@immutable final class IssuingTokenNetwork$mastercard extends IssuingTokenNetwork {const IssuingTokenNetwork$mastercard._();
+
+@override String get value => 'mastercard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingTokenNetwork$mastercard;
+
+@override int get hashCode => 'mastercard'.hashCode;
+
+ }
+@immutable final class IssuingTokenNetwork$visa extends IssuingTokenNetwork {const IssuingTokenNetwork$visa._();
+
+@override String get value => 'visa';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingTokenNetwork$visa;
+
+@override int get hashCode => 'visa'.hashCode;
+
+ }
+@immutable final class IssuingTokenNetwork$Unknown extends IssuingTokenNetwork {const IssuingTokenNetwork$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingTokenNetwork$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class IssuingTokenObject {const IssuingTokenObject._(this.value);
+sealed class IssuingTokenObject {const IssuingTokenObject();
 
 factory IssuingTokenObject.fromJson(String json) { return switch (json) {
   'issuing.token' => issuingToken,
-  _ => IssuingTokenObject._(json),
+  _ => IssuingTokenObject$Unknown(json),
 }; }
 
-static const IssuingTokenObject issuingToken = IssuingTokenObject._('issuing.token');
+static const IssuingTokenObject issuingToken = IssuingTokenObject$issuingToken._();
 
 static const List<IssuingTokenObject> values = [issuingToken];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -56,38 +77,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingTokenObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingTokenObject$Unknown; } 
 @override String toString() => 'IssuingTokenObject($value)';
 
  }
+@immutable final class IssuingTokenObject$issuingToken extends IssuingTokenObject {const IssuingTokenObject$issuingToken._();
+
+@override String get value => 'issuing.token';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingTokenObject$issuingToken;
+
+@override int get hashCode => 'issuing.token'.hashCode;
+
+ }
+@immutable final class IssuingTokenObject$Unknown extends IssuingTokenObject {const IssuingTokenObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingTokenObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The usage state of the token.
-@immutable final class IssuingTokenStatus {const IssuingTokenStatus._(this.value);
+sealed class IssuingTokenStatus {const IssuingTokenStatus();
 
 factory IssuingTokenStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'deleted' => deleted,
   'requested' => requested,
   'suspended' => suspended,
-  _ => IssuingTokenStatus._(json),
+  _ => IssuingTokenStatus$Unknown(json),
 }; }
 
-static const IssuingTokenStatus active = IssuingTokenStatus._('active');
+static const IssuingTokenStatus active = IssuingTokenStatus$active._();
 
-static const IssuingTokenStatus deleted = IssuingTokenStatus._('deleted');
+static const IssuingTokenStatus deleted = IssuingTokenStatus$deleted._();
 
-static const IssuingTokenStatus requested = IssuingTokenStatus._('requested');
+static const IssuingTokenStatus requested = IssuingTokenStatus$requested._();
 
-static const IssuingTokenStatus suspended = IssuingTokenStatus._('suspended');
+static const IssuingTokenStatus suspended = IssuingTokenStatus$suspended._();
 
 static const List<IssuingTokenStatus> values = [active, deleted, requested, suspended];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -98,35 +132,75 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingTokenStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingTokenStatus$Unknown; } 
 @override String toString() => 'IssuingTokenStatus($value)';
 
  }
+@immutable final class IssuingTokenStatus$active extends IssuingTokenStatus {const IssuingTokenStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingTokenStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class IssuingTokenStatus$deleted extends IssuingTokenStatus {const IssuingTokenStatus$deleted._();
+
+@override String get value => 'deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingTokenStatus$deleted;
+
+@override int get hashCode => 'deleted'.hashCode;
+
+ }
+@immutable final class IssuingTokenStatus$requested extends IssuingTokenStatus {const IssuingTokenStatus$requested._();
+
+@override String get value => 'requested';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingTokenStatus$requested;
+
+@override int get hashCode => 'requested'.hashCode;
+
+ }
+@immutable final class IssuingTokenStatus$suspended extends IssuingTokenStatus {const IssuingTokenStatus$suspended._();
+
+@override String get value => 'suspended';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingTokenStatus$suspended;
+
+@override int get hashCode => 'suspended'.hashCode;
+
+ }
+@immutable final class IssuingTokenStatus$Unknown extends IssuingTokenStatus {const IssuingTokenStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingTokenStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The digital wallet for this token, if one was used.
-@immutable final class WalletProvider {const WalletProvider._(this.value);
+sealed class WalletProvider {const WalletProvider();
 
 factory WalletProvider.fromJson(String json) { return switch (json) {
   'apple_pay' => applePay,
   'google_pay' => googlePay,
   'samsung_pay' => samsungPay,
-  _ => WalletProvider._(json),
+  _ => WalletProvider$Unknown(json),
 }; }
 
-static const WalletProvider applePay = WalletProvider._('apple_pay');
+static const WalletProvider applePay = WalletProvider$applePay._();
 
-static const WalletProvider googlePay = WalletProvider._('google_pay');
+static const WalletProvider googlePay = WalletProvider$googlePay._();
 
-static const WalletProvider samsungPay = WalletProvider._('samsung_pay');
+static const WalletProvider samsungPay = WalletProvider$samsungPay._();
 
 static const List<WalletProvider> values = [applePay, googlePay, samsungPay];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -136,13 +210,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WalletProvider$Unknown; } 
+@override String toString() => 'WalletProvider($value)';
+
+ }
+@immutable final class WalletProvider$applePay extends WalletProvider {const WalletProvider$applePay._();
+
+@override String get value => 'apple_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WalletProvider$applePay;
+
+@override int get hashCode => 'apple_pay'.hashCode;
+
+ }
+@immutable final class WalletProvider$googlePay extends WalletProvider {const WalletProvider$googlePay._();
+
+@override String get value => 'google_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WalletProvider$googlePay;
+
+@override int get hashCode => 'google_pay'.hashCode;
+
+ }
+@immutable final class WalletProvider$samsungPay extends WalletProvider {const WalletProvider$samsungPay._();
+
+@override String get value => 'samsung_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WalletProvider$samsungPay;
+
+@override int get hashCode => 'samsung_pay'.hashCode;
+
+ }
+@immutable final class WalletProvider$Unknown extends WalletProvider {const WalletProvider$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WalletProvider && other.value == value;
+    other is WalletProvider$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WalletProvider($value)';
 
  }
 /// An issuing token object is created when an issued card is added to a digital wallet. As a [card issuer](https://docs.stripe.com/issuing), you can [view and manage these tokens](https://docs.stripe.com/issuing/controls/token-management) through Stripe.

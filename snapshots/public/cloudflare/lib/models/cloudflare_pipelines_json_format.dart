@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CloudflarePipelinesJsonFormat
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CloudflarePipelinesDecimalEncoding {const CloudflarePipelinesDecimalEncoding._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CloudflarePipelinesDecimalEncoding {const CloudflarePipelinesDecimalEncoding();
 
 factory CloudflarePipelinesDecimalEncoding.fromJson(String json) { return switch (json) {
   'number' => number,
   'string' => string,
   'bytes' => bytes,
-  _ => CloudflarePipelinesDecimalEncoding._(json),
+  _ => CloudflarePipelinesDecimalEncoding$Unknown(json),
 }; }
 
-static const CloudflarePipelinesDecimalEncoding number = CloudflarePipelinesDecimalEncoding._('number');
+static const CloudflarePipelinesDecimalEncoding number = CloudflarePipelinesDecimalEncoding$number._();
 
-static const CloudflarePipelinesDecimalEncoding string = CloudflarePipelinesDecimalEncoding._('string');
+static const CloudflarePipelinesDecimalEncoding string = CloudflarePipelinesDecimalEncoding$string._();
 
-static const CloudflarePipelinesDecimalEncoding bytes = CloudflarePipelinesDecimalEncoding._('bytes');
+static const CloudflarePipelinesDecimalEncoding bytes = CloudflarePipelinesDecimalEncoding$bytes._();
 
 static const List<CloudflarePipelinesDecimalEncoding> values = [number, string, bytes];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,31 +28,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CloudflarePipelinesDecimalEncoding && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CloudflarePipelinesDecimalEncoding$Unknown; } 
 @override String toString() => 'CloudflarePipelinesDecimalEncoding($value)';
 
  }
-@immutable final class CloudflarePipelinesTimestampFormat {const CloudflarePipelinesTimestampFormat._(this.value);
+@immutable final class CloudflarePipelinesDecimalEncoding$number extends CloudflarePipelinesDecimalEncoding {const CloudflarePipelinesDecimalEncoding$number._();
+
+@override String get value => 'number';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudflarePipelinesDecimalEncoding$number;
+
+@override int get hashCode => 'number'.hashCode;
+
+ }
+@immutable final class CloudflarePipelinesDecimalEncoding$string extends CloudflarePipelinesDecimalEncoding {const CloudflarePipelinesDecimalEncoding$string._();
+
+@override String get value => 'string';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudflarePipelinesDecimalEncoding$string;
+
+@override int get hashCode => 'string'.hashCode;
+
+ }
+@immutable final class CloudflarePipelinesDecimalEncoding$bytes extends CloudflarePipelinesDecimalEncoding {const CloudflarePipelinesDecimalEncoding$bytes._();
+
+@override String get value => 'bytes';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudflarePipelinesDecimalEncoding$bytes;
+
+@override int get hashCode => 'bytes'.hashCode;
+
+ }
+@immutable final class CloudflarePipelinesDecimalEncoding$Unknown extends CloudflarePipelinesDecimalEncoding {const CloudflarePipelinesDecimalEncoding$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CloudflarePipelinesDecimalEncoding$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class CloudflarePipelinesTimestampFormat {const CloudflarePipelinesTimestampFormat();
 
 factory CloudflarePipelinesTimestampFormat.fromJson(String json) { return switch (json) {
   'rfc3339' => rfc3339,
   'unix_millis' => unixMillis,
-  _ => CloudflarePipelinesTimestampFormat._(json),
+  _ => CloudflarePipelinesTimestampFormat$Unknown(json),
 }; }
 
-static const CloudflarePipelinesTimestampFormat rfc3339 = CloudflarePipelinesTimestampFormat._('rfc3339');
+static const CloudflarePipelinesTimestampFormat rfc3339 = CloudflarePipelinesTimestampFormat$rfc3339._();
 
-static const CloudflarePipelinesTimestampFormat unixMillis = CloudflarePipelinesTimestampFormat._('unix_millis');
+static const CloudflarePipelinesTimestampFormat unixMillis = CloudflarePipelinesTimestampFormat$unixMillis._();
 
 static const List<CloudflarePipelinesTimestampFormat> values = [rfc3339, unixMillis];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -62,13 +92,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CloudflarePipelinesTimestampFormat$Unknown; } 
+@override String toString() => 'CloudflarePipelinesTimestampFormat($value)';
+
+ }
+@immutable final class CloudflarePipelinesTimestampFormat$rfc3339 extends CloudflarePipelinesTimestampFormat {const CloudflarePipelinesTimestampFormat$rfc3339._();
+
+@override String get value => 'rfc3339';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudflarePipelinesTimestampFormat$rfc3339;
+
+@override int get hashCode => 'rfc3339'.hashCode;
+
+ }
+@immutable final class CloudflarePipelinesTimestampFormat$unixMillis extends CloudflarePipelinesTimestampFormat {const CloudflarePipelinesTimestampFormat$unixMillis._();
+
+@override String get value => 'unix_millis';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudflarePipelinesTimestampFormat$unixMillis;
+
+@override int get hashCode => 'unix_millis'.hashCode;
+
+ }
+@immutable final class CloudflarePipelinesTimestampFormat$Unknown extends CloudflarePipelinesTimestampFormat {const CloudflarePipelinesTimestampFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CloudflarePipelinesTimestampFormat && other.value == value;
+    other is CloudflarePipelinesTimestampFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CloudflarePipelinesTimestampFormat($value)';
 
  }
 @immutable final class CloudflarePipelinesJsonFormat {const CloudflarePipelinesJsonFormat({this.decimalEncoding, this.timestampFormat, this.unstructured, });

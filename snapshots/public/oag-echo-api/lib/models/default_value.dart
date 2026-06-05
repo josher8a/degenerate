@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DefaultValue
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_oag_echo_api/models/string_enum_ref.dart';@immutable final class ArrayStringEnumDefault {const ArrayStringEnumDefault._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_oag_echo_api/models/string_enum_ref.dart';sealed class ArrayStringEnumDefault {const ArrayStringEnumDefault();
 
 factory ArrayStringEnumDefault.fromJson(String json) { return switch (json) {
   'success' => success,
   'failure' => failure,
   'unclassified' => unclassified,
-  _ => ArrayStringEnumDefault._(json),
+  _ => ArrayStringEnumDefault$Unknown(json),
 }; }
 
-static const ArrayStringEnumDefault success = ArrayStringEnumDefault._('success');
+static const ArrayStringEnumDefault success = ArrayStringEnumDefault$success._();
 
-static const ArrayStringEnumDefault failure = ArrayStringEnumDefault._('failure');
+static const ArrayStringEnumDefault failure = ArrayStringEnumDefault$failure._();
 
-static const ArrayStringEnumDefault unclassified = ArrayStringEnumDefault._('unclassified');
+static const ArrayStringEnumDefault unclassified = ArrayStringEnumDefault$unclassified._();
 
 static const List<ArrayStringEnumDefault> values = [success, failure, unclassified];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ArrayStringEnumDefault$Unknown; } 
+@override String toString() => 'ArrayStringEnumDefault($value)';
+
+ }
+@immutable final class ArrayStringEnumDefault$success extends ArrayStringEnumDefault {const ArrayStringEnumDefault$success._();
+
+@override String get value => 'success';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ArrayStringEnumDefault$success;
+
+@override int get hashCode => 'success'.hashCode;
+
+ }
+@immutable final class ArrayStringEnumDefault$failure extends ArrayStringEnumDefault {const ArrayStringEnumDefault$failure._();
+
+@override String get value => 'failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ArrayStringEnumDefault$failure;
+
+@override int get hashCode => 'failure'.hashCode;
+
+ }
+@immutable final class ArrayStringEnumDefault$unclassified extends ArrayStringEnumDefault {const ArrayStringEnumDefault$unclassified._();
+
+@override String get value => 'unclassified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ArrayStringEnumDefault$unclassified;
+
+@override int get hashCode => 'unclassified'.hashCode;
+
+ }
+@immutable final class ArrayStringEnumDefault$Unknown extends ArrayStringEnumDefault {const ArrayStringEnumDefault$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ArrayStringEnumDefault && other.value == value;
+    other is ArrayStringEnumDefault$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ArrayStringEnumDefault($value)';
 
  }
 /// to test the default value of properties

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ToolSearchOutput
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';@immutable final class FunctionCallOutputStatusEnum {const FunctionCallOutputStatusEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';sealed class FunctionCallOutputStatusEnum {const FunctionCallOutputStatusEnum();
 
 factory FunctionCallOutputStatusEnum.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
-  _ => FunctionCallOutputStatusEnum._(json),
+  _ => FunctionCallOutputStatusEnum$Unknown(json),
 }; }
 
-static const FunctionCallOutputStatusEnum inProgress = FunctionCallOutputStatusEnum._('in_progress');
+static const FunctionCallOutputStatusEnum inProgress = FunctionCallOutputStatusEnum$inProgress._();
 
-static const FunctionCallOutputStatusEnum completed = FunctionCallOutputStatusEnum._('completed');
+static const FunctionCallOutputStatusEnum completed = FunctionCallOutputStatusEnum$completed._();
 
-static const FunctionCallOutputStatusEnum incomplete = FunctionCallOutputStatusEnum._('incomplete');
+static const FunctionCallOutputStatusEnum incomplete = FunctionCallOutputStatusEnum$incomplete._();
 
 static const List<FunctionCallOutputStatusEnum> values = [inProgress, completed, incomplete];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FunctionCallOutputStatusEnum$Unknown; } 
+@override String toString() => 'FunctionCallOutputStatusEnum($value)';
+
+ }
+@immutable final class FunctionCallOutputStatusEnum$inProgress extends FunctionCallOutputStatusEnum {const FunctionCallOutputStatusEnum$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionCallOutputStatusEnum$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class FunctionCallOutputStatusEnum$completed extends FunctionCallOutputStatusEnum {const FunctionCallOutputStatusEnum$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionCallOutputStatusEnum$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class FunctionCallOutputStatusEnum$incomplete extends FunctionCallOutputStatusEnum {const FunctionCallOutputStatusEnum$incomplete._();
+
+@override String get value => 'incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionCallOutputStatusEnum$incomplete;
+
+@override int get hashCode => 'incomplete'.hashCode;
+
+ }
+@immutable final class FunctionCallOutputStatusEnum$Unknown extends FunctionCallOutputStatusEnum {const FunctionCallOutputStatusEnum$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FunctionCallOutputStatusEnum && other.value == value;
+    other is FunctionCallOutputStatusEnum$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FunctionCallOutputStatusEnum($value)';
 
  }
 @immutable final class ToolSearchOutput {const ToolSearchOutput({required this.id, required this.callId, required this.execution, required this.tools, required this.status, this.type = 'tool_search_output', this.createdBy, });

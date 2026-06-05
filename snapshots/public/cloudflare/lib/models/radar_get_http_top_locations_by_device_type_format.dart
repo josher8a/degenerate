@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetHttpTopLocationsByDeviceTypeFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetHttpTopLocationsByDeviceTypeFormat {const RadarGetHttpTopLocationsByDeviceTypeFormat._(this.value);
+sealed class RadarGetHttpTopLocationsByDeviceTypeFormat {const RadarGetHttpTopLocationsByDeviceTypeFormat();
 
 factory RadarGetHttpTopLocationsByDeviceTypeFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetHttpTopLocationsByDeviceTypeFormat._(json),
+  _ => RadarGetHttpTopLocationsByDeviceTypeFormat$Unknown(json),
 }; }
 
-static const RadarGetHttpTopLocationsByDeviceTypeFormat $json = RadarGetHttpTopLocationsByDeviceTypeFormat._('JSON');
+static const RadarGetHttpTopLocationsByDeviceTypeFormat $json = RadarGetHttpTopLocationsByDeviceTypeFormat$$json._();
 
-static const RadarGetHttpTopLocationsByDeviceTypeFormat csv = RadarGetHttpTopLocationsByDeviceTypeFormat._('CSV');
+static const RadarGetHttpTopLocationsByDeviceTypeFormat csv = RadarGetHttpTopLocationsByDeviceTypeFormat$csv._();
 
 static const List<RadarGetHttpTopLocationsByDeviceTypeFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopLocationsByDeviceTypeFormat$Unknown; } 
+@override String toString() => 'RadarGetHttpTopLocationsByDeviceTypeFormat($value)';
+
+ }
+@immutable final class RadarGetHttpTopLocationsByDeviceTypeFormat$$json extends RadarGetHttpTopLocationsByDeviceTypeFormat {const RadarGetHttpTopLocationsByDeviceTypeFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByDeviceTypeFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByDeviceTypeFormat$csv extends RadarGetHttpTopLocationsByDeviceTypeFormat {const RadarGetHttpTopLocationsByDeviceTypeFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByDeviceTypeFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByDeviceTypeFormat$Unknown extends RadarGetHttpTopLocationsByDeviceTypeFormat {const RadarGetHttpTopLocationsByDeviceTypeFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopLocationsByDeviceTypeFormat && other.value == value;
+    other is RadarGetHttpTopLocationsByDeviceTypeFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopLocationsByDeviceTypeFormat($value)';
 
  }

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/VectorStoreFileObject (inline: LastError)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `server_error`, `unsupported_file`, or `invalid_file`.
-@immutable final class VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode._(this.value);
+sealed class VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode();
 
 factory VectorStoreFileObjectLastErrorCode.fromJson(String json) { return switch (json) {
   'server_error' => serverError,
   'unsupported_file' => unsupportedFile,
   'invalid_file' => invalidFile,
-  _ => VectorStoreFileObjectLastErrorCode._(json),
+  _ => VectorStoreFileObjectLastErrorCode$Unknown(json),
 }; }
 
-static const VectorStoreFileObjectLastErrorCode serverError = VectorStoreFileObjectLastErrorCode._('server_error');
+static const VectorStoreFileObjectLastErrorCode serverError = VectorStoreFileObjectLastErrorCode$serverError._();
 
-static const VectorStoreFileObjectLastErrorCode unsupportedFile = VectorStoreFileObjectLastErrorCode._('unsupported_file');
+static const VectorStoreFileObjectLastErrorCode unsupportedFile = VectorStoreFileObjectLastErrorCode$unsupportedFile._();
 
-static const VectorStoreFileObjectLastErrorCode invalidFile = VectorStoreFileObjectLastErrorCode._('invalid_file');
+static const VectorStoreFileObjectLastErrorCode invalidFile = VectorStoreFileObjectLastErrorCode$invalidFile._();
 
 static const List<VectorStoreFileObjectLastErrorCode> values = [serverError, unsupportedFile, invalidFile];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is VectorStoreFileObjectLastErrorCode$Unknown; } 
+@override String toString() => 'VectorStoreFileObjectLastErrorCode($value)';
+
+ }
+@immutable final class VectorStoreFileObjectLastErrorCode$serverError extends VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode$serverError._();
+
+@override String get value => 'server_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorStoreFileObjectLastErrorCode$serverError;
+
+@override int get hashCode => 'server_error'.hashCode;
+
+ }
+@immutable final class VectorStoreFileObjectLastErrorCode$unsupportedFile extends VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode$unsupportedFile._();
+
+@override String get value => 'unsupported_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorStoreFileObjectLastErrorCode$unsupportedFile;
+
+@override int get hashCode => 'unsupported_file'.hashCode;
+
+ }
+@immutable final class VectorStoreFileObjectLastErrorCode$invalidFile extends VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode$invalidFile._();
+
+@override String get value => 'invalid_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorStoreFileObjectLastErrorCode$invalidFile;
+
+@override int get hashCode => 'invalid_file'.hashCode;
+
+ }
+@immutable final class VectorStoreFileObjectLastErrorCode$Unknown extends VectorStoreFileObjectLastErrorCode {const VectorStoreFileObjectLastErrorCode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is VectorStoreFileObjectLastErrorCode && other.value == value;
+    other is VectorStoreFileObjectLastErrorCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'VectorStoreFileObjectLastErrorCode($value)';
 
  }
 /// The last error associated with this vector store file. Will be `null` if there are no errors.

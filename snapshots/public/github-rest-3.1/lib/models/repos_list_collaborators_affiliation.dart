@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ReposListCollaboratorsAffiliation
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposListCollaboratorsAffiliation {const ReposListCollaboratorsAffiliation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ReposListCollaboratorsAffiliation {const ReposListCollaboratorsAffiliation();
 
 factory ReposListCollaboratorsAffiliation.fromJson(String json) { return switch (json) {
   'outside' => outside,
   'direct' => direct,
   'all' => all,
-  _ => ReposListCollaboratorsAffiliation._(json),
+  _ => ReposListCollaboratorsAffiliation$Unknown(json),
 }; }
 
-static const ReposListCollaboratorsAffiliation outside = ReposListCollaboratorsAffiliation._('outside');
+static const ReposListCollaboratorsAffiliation outside = ReposListCollaboratorsAffiliation$outside._();
 
-static const ReposListCollaboratorsAffiliation direct = ReposListCollaboratorsAffiliation._('direct');
+static const ReposListCollaboratorsAffiliation direct = ReposListCollaboratorsAffiliation$direct._();
 
-static const ReposListCollaboratorsAffiliation all = ReposListCollaboratorsAffiliation._('all');
+static const ReposListCollaboratorsAffiliation all = ReposListCollaboratorsAffiliation$all._();
 
 static const List<ReposListCollaboratorsAffiliation> values = [outside, direct, all];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ReposListCollaboratorsAffiliation$Unknown; } 
+@override String toString() => 'ReposListCollaboratorsAffiliation($value)';
+
+ }
+@immutable final class ReposListCollaboratorsAffiliation$outside extends ReposListCollaboratorsAffiliation {const ReposListCollaboratorsAffiliation$outside._();
+
+@override String get value => 'outside';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposListCollaboratorsAffiliation$outside;
+
+@override int get hashCode => 'outside'.hashCode;
+
+ }
+@immutable final class ReposListCollaboratorsAffiliation$direct extends ReposListCollaboratorsAffiliation {const ReposListCollaboratorsAffiliation$direct._();
+
+@override String get value => 'direct';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposListCollaboratorsAffiliation$direct;
+
+@override int get hashCode => 'direct'.hashCode;
+
+ }
+@immutable final class ReposListCollaboratorsAffiliation$all extends ReposListCollaboratorsAffiliation {const ReposListCollaboratorsAffiliation$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposListCollaboratorsAffiliation$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class ReposListCollaboratorsAffiliation$Unknown extends ReposListCollaboratorsAffiliation {const ReposListCollaboratorsAffiliation$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ReposListCollaboratorsAffiliation && other.value == value;
+    other is ReposListCollaboratorsAffiliation$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ReposListCollaboratorsAffiliation($value)';
 
  }

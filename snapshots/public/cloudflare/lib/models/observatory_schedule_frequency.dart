@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ObservatoryScheduleFrequency
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The frequency of the test.
-@immutable final class ObservatoryScheduleFrequency {const ObservatoryScheduleFrequency._(this.value);
+sealed class ObservatoryScheduleFrequency {const ObservatoryScheduleFrequency();
 
 factory ObservatoryScheduleFrequency.fromJson(String json) { return switch (json) {
   'DAILY' => daily,
   'WEEKLY' => weekly,
-  _ => ObservatoryScheduleFrequency._(json),
+  _ => ObservatoryScheduleFrequency$Unknown(json),
 }; }
 
-static const ObservatoryScheduleFrequency daily = ObservatoryScheduleFrequency._('DAILY');
+static const ObservatoryScheduleFrequency daily = ObservatoryScheduleFrequency$daily._();
 
-static const ObservatoryScheduleFrequency weekly = ObservatoryScheduleFrequency._('WEEKLY');
+static const ObservatoryScheduleFrequency weekly = ObservatoryScheduleFrequency$weekly._();
 
 static const List<ObservatoryScheduleFrequency> values = [daily, weekly];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ObservatoryScheduleFrequency$Unknown; } 
+@override String toString() => 'ObservatoryScheduleFrequency($value)';
+
+ }
+@immutable final class ObservatoryScheduleFrequency$daily extends ObservatoryScheduleFrequency {const ObservatoryScheduleFrequency$daily._();
+
+@override String get value => 'DAILY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ObservatoryScheduleFrequency$daily;
+
+@override int get hashCode => 'DAILY'.hashCode;
+
+ }
+@immutable final class ObservatoryScheduleFrequency$weekly extends ObservatoryScheduleFrequency {const ObservatoryScheduleFrequency$weekly._();
+
+@override String get value => 'WEEKLY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ObservatoryScheduleFrequency$weekly;
+
+@override int get hashCode => 'WEEKLY'.hashCode;
+
+ }
+@immutable final class ObservatoryScheduleFrequency$Unknown extends ObservatoryScheduleFrequency {const ObservatoryScheduleFrequency$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ObservatoryScheduleFrequency && other.value == value;
+    other is ObservatoryScheduleFrequency$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ObservatoryScheduleFrequency($value)';
 
  }

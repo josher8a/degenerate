@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FileSystemNode
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Kind {const Kind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Kind {const Kind();
 
 factory Kind.fromJson(String json) { return switch (json) {
   'file' => file,
   'directory' => directory,
   'symlink' => symlink,
-  _ => Kind._(json),
+  _ => Kind$Unknown(json),
 }; }
 
-static const Kind file = Kind._('file');
+static const Kind file = Kind$file._();
 
-static const Kind directory = Kind._('directory');
+static const Kind directory = Kind$directory._();
 
-static const Kind symlink = Kind._('symlink');
+static const Kind symlink = Kind$symlink._();
 
 static const List<Kind> values = [file, directory, symlink];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Kind$Unknown; } 
+@override String toString() => 'Kind($value)';
+
+ }
+@immutable final class Kind$file extends Kind {const Kind$file._();
+
+@override String get value => 'file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Kind$file;
+
+@override int get hashCode => 'file'.hashCode;
+
+ }
+@immutable final class Kind$directory extends Kind {const Kind$directory._();
+
+@override String get value => 'directory';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Kind$directory;
+
+@override int get hashCode => 'directory'.hashCode;
+
+ }
+@immutable final class Kind$symlink extends Kind {const Kind$symlink._();
+
+@override String get value => 'symlink';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Kind$symlink;
+
+@override int get hashCode => 'symlink'.hashCode;
+
+ }
+@immutable final class Kind$Unknown extends Kind {const Kind$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Kind && other.value == value;
+    other is Kind$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Kind($value)';
 
  }
 @immutable final class FileSystemNode {const FileSystemNode({required this.name, required this.kind, this.sizeBytes, this.children, this.symlinkTarget, this.metadata, });

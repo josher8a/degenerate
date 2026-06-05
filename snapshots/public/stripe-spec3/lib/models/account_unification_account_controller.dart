@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AccountUnificationAccountController
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller/requirement_collection.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller_fees.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller_losses.dart';import 'package:pub_stripe_spec3/models/account_unification_account_controller_stripe_dashboard.dart';/// The controller type. Can be `application`, if a Connect application controls the account, or `account`, if the account controls itself.
-@immutable final class AccountUnificationAccountControllerType {const AccountUnificationAccountControllerType._(this.value);
+sealed class AccountUnificationAccountControllerType {const AccountUnificationAccountControllerType();
 
 factory AccountUnificationAccountControllerType.fromJson(String json) { return switch (json) {
   'account' => account,
   'application' => application,
-  _ => AccountUnificationAccountControllerType._(json),
+  _ => AccountUnificationAccountControllerType$Unknown(json),
 }; }
 
-static const AccountUnificationAccountControllerType account = AccountUnificationAccountControllerType._('account');
+static const AccountUnificationAccountControllerType account = AccountUnificationAccountControllerType$account._();
 
-static const AccountUnificationAccountControllerType application = AccountUnificationAccountControllerType._('application');
+static const AccountUnificationAccountControllerType application = AccountUnificationAccountControllerType$application._();
 
 static const List<AccountUnificationAccountControllerType> values = [account, application];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountUnificationAccountControllerType$Unknown; } 
+@override String toString() => 'AccountUnificationAccountControllerType($value)';
+
+ }
+@immutable final class AccountUnificationAccountControllerType$account extends AccountUnificationAccountControllerType {const AccountUnificationAccountControllerType$account._();
+
+@override String get value => 'account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountUnificationAccountControllerType$account;
+
+@override int get hashCode => 'account'.hashCode;
+
+ }
+@immutable final class AccountUnificationAccountControllerType$application extends AccountUnificationAccountControllerType {const AccountUnificationAccountControllerType$application._();
+
+@override String get value => 'application';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountUnificationAccountControllerType$application;
+
+@override int get hashCode => 'application'.hashCode;
+
+ }
+@immutable final class AccountUnificationAccountControllerType$Unknown extends AccountUnificationAccountControllerType {const AccountUnificationAccountControllerType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountUnificationAccountControllerType && other.value == value;
+    other is AccountUnificationAccountControllerType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountUnificationAccountControllerType($value)';
 
  }
 /// 

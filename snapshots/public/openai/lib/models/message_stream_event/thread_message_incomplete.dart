@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MessageStreamEvent (inline: ThreadMessageIncomplete)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_object.dart';@immutable final class ThreadMessageIncompleteEvent {const ThreadMessageIncompleteEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_object.dart';sealed class ThreadMessageIncompleteEvent {const ThreadMessageIncompleteEvent();
 
 factory ThreadMessageIncompleteEvent.fromJson(String json) { return switch (json) {
   'thread.message.incomplete' => threadMessageIncomplete,
-  _ => ThreadMessageIncompleteEvent._(json),
+  _ => ThreadMessageIncompleteEvent$Unknown(json),
 }; }
 
-static const ThreadMessageIncompleteEvent threadMessageIncomplete = ThreadMessageIncompleteEvent._('thread.message.incomplete');
+static const ThreadMessageIncompleteEvent threadMessageIncomplete = ThreadMessageIncompleteEvent$threadMessageIncomplete._();
 
 static const List<ThreadMessageIncompleteEvent> values = [threadMessageIncomplete];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadMessageIncompleteEvent$Unknown; } 
+@override String toString() => 'ThreadMessageIncompleteEvent($value)';
+
+ }
+@immutable final class ThreadMessageIncompleteEvent$threadMessageIncomplete extends ThreadMessageIncompleteEvent {const ThreadMessageIncompleteEvent$threadMessageIncomplete._();
+
+@override String get value => 'thread.message.incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadMessageIncompleteEvent$threadMessageIncomplete;
+
+@override int get hashCode => 'thread.message.incomplete'.hashCode;
+
+ }
+@immutable final class ThreadMessageIncompleteEvent$Unknown extends ThreadMessageIncompleteEvent {const ThreadMessageIncompleteEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadMessageIncompleteEvent && other.value == value;
+    other is ThreadMessageIncompleteEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadMessageIncompleteEvent($value)';
 
  }
 /// Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.

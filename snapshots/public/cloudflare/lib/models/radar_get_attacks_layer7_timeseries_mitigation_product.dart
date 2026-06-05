@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetAttacksLayer7TimeseriesMitigationProduct
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TimeseriesMitigationProduct {const RadarGetAttacksLayer7TimeseriesMitigationProduct._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer7TimeseriesMitigationProduct {const RadarGetAttacksLayer7TimeseriesMitigationProduct();
 
 factory RadarGetAttacksLayer7TimeseriesMitigationProduct.fromJson(String json) { return switch (json) {
   'DDOS' => ddos,
@@ -11,27 +11,26 @@ factory RadarGetAttacksLayer7TimeseriesMitigationProduct.fromJson(String json) {
   'IP_REPUTATION' => ipReputation,
   'API_SHIELD' => apiShield,
   'DATA_LOSS_PREVENTION' => dataLossPrevention,
-  _ => RadarGetAttacksLayer7TimeseriesMitigationProduct._(json),
+  _ => RadarGetAttacksLayer7TimeseriesMitigationProduct$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer7TimeseriesMitigationProduct ddos = RadarGetAttacksLayer7TimeseriesMitigationProduct._('DDOS');
+static const RadarGetAttacksLayer7TimeseriesMitigationProduct ddos = RadarGetAttacksLayer7TimeseriesMitigationProduct$ddos._();
 
-static const RadarGetAttacksLayer7TimeseriesMitigationProduct waf = RadarGetAttacksLayer7TimeseriesMitigationProduct._('WAF');
+static const RadarGetAttacksLayer7TimeseriesMitigationProduct waf = RadarGetAttacksLayer7TimeseriesMitigationProduct$waf._();
 
-static const RadarGetAttacksLayer7TimeseriesMitigationProduct botManagement = RadarGetAttacksLayer7TimeseriesMitigationProduct._('BOT_MANAGEMENT');
+static const RadarGetAttacksLayer7TimeseriesMitigationProduct botManagement = RadarGetAttacksLayer7TimeseriesMitigationProduct$botManagement._();
 
-static const RadarGetAttacksLayer7TimeseriesMitigationProduct accessRules = RadarGetAttacksLayer7TimeseriesMitigationProduct._('ACCESS_RULES');
+static const RadarGetAttacksLayer7TimeseriesMitigationProduct accessRules = RadarGetAttacksLayer7TimeseriesMitigationProduct$accessRules._();
 
-static const RadarGetAttacksLayer7TimeseriesMitigationProduct ipReputation = RadarGetAttacksLayer7TimeseriesMitigationProduct._('IP_REPUTATION');
+static const RadarGetAttacksLayer7TimeseriesMitigationProduct ipReputation = RadarGetAttacksLayer7TimeseriesMitigationProduct$ipReputation._();
 
-static const RadarGetAttacksLayer7TimeseriesMitigationProduct apiShield = RadarGetAttacksLayer7TimeseriesMitigationProduct._('API_SHIELD');
+static const RadarGetAttacksLayer7TimeseriesMitigationProduct apiShield = RadarGetAttacksLayer7TimeseriesMitigationProduct$apiShield._();
 
-static const RadarGetAttacksLayer7TimeseriesMitigationProduct dataLossPrevention = RadarGetAttacksLayer7TimeseriesMitigationProduct._('DATA_LOSS_PREVENTION');
+static const RadarGetAttacksLayer7TimeseriesMitigationProduct dataLossPrevention = RadarGetAttacksLayer7TimeseriesMitigationProduct$dataLossPrevention._();
 
 static const List<RadarGetAttacksLayer7TimeseriesMitigationProduct> values = [ddos, waf, botManagement, accessRules, ipReputation, apiShield, dataLossPrevention];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -45,12 +44,80 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer7TimeseriesMitigationProduct$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer7TimeseriesMitigationProduct($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesMitigationProduct$ddos extends RadarGetAttacksLayer7TimeseriesMitigationProduct {const RadarGetAttacksLayer7TimeseriesMitigationProduct$ddos._();
+
+@override String get value => 'DDOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesMitigationProduct$ddos;
+
+@override int get hashCode => 'DDOS'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesMitigationProduct$waf extends RadarGetAttacksLayer7TimeseriesMitigationProduct {const RadarGetAttacksLayer7TimeseriesMitigationProduct$waf._();
+
+@override String get value => 'WAF';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesMitigationProduct$waf;
+
+@override int get hashCode => 'WAF'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesMitigationProduct$botManagement extends RadarGetAttacksLayer7TimeseriesMitigationProduct {const RadarGetAttacksLayer7TimeseriesMitigationProduct$botManagement._();
+
+@override String get value => 'BOT_MANAGEMENT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesMitigationProduct$botManagement;
+
+@override int get hashCode => 'BOT_MANAGEMENT'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesMitigationProduct$accessRules extends RadarGetAttacksLayer7TimeseriesMitigationProduct {const RadarGetAttacksLayer7TimeseriesMitigationProduct$accessRules._();
+
+@override String get value => 'ACCESS_RULES';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesMitigationProduct$accessRules;
+
+@override int get hashCode => 'ACCESS_RULES'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesMitigationProduct$ipReputation extends RadarGetAttacksLayer7TimeseriesMitigationProduct {const RadarGetAttacksLayer7TimeseriesMitigationProduct$ipReputation._();
+
+@override String get value => 'IP_REPUTATION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesMitigationProduct$ipReputation;
+
+@override int get hashCode => 'IP_REPUTATION'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesMitigationProduct$apiShield extends RadarGetAttacksLayer7TimeseriesMitigationProduct {const RadarGetAttacksLayer7TimeseriesMitigationProduct$apiShield._();
+
+@override String get value => 'API_SHIELD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesMitigationProduct$apiShield;
+
+@override int get hashCode => 'API_SHIELD'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesMitigationProduct$dataLossPrevention extends RadarGetAttacksLayer7TimeseriesMitigationProduct {const RadarGetAttacksLayer7TimeseriesMitigationProduct$dataLossPrevention._();
+
+@override String get value => 'DATA_LOSS_PREVENTION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesMitigationProduct$dataLossPrevention;
+
+@override int get hashCode => 'DATA_LOSS_PREVENTION'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesMitigationProduct$Unknown extends RadarGetAttacksLayer7TimeseriesMitigationProduct {const RadarGetAttacksLayer7TimeseriesMitigationProduct$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer7TimeseriesMitigationProduct && other.value == value;
+    other is RadarGetAttacksLayer7TimeseriesMitigationProduct$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer7TimeseriesMitigationProduct($value)';
 
  }

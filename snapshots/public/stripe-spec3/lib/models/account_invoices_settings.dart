@@ -2,25 +2,24 @@
 // Source: #/components/schemas/AccountInvoicesSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account_invoices_settings/account_invoices_settings_default_account_tax_ids.dart';import 'package:pub_stripe_spec3/models/tax_id.dart';/// Whether to save the payment method after a payment is completed for a one-time invoice or a subscription invoice when the customer already has a default payment method on the hosted invoice page.
-@immutable final class AccountInvoicesSettingsHostedPaymentMethodSave {const AccountInvoicesSettingsHostedPaymentMethodSave._(this.value);
+sealed class AccountInvoicesSettingsHostedPaymentMethodSave {const AccountInvoicesSettingsHostedPaymentMethodSave();
 
 factory AccountInvoicesSettingsHostedPaymentMethodSave.fromJson(String json) { return switch (json) {
   'always' => always,
   'never' => never,
   'offer' => offer,
-  _ => AccountInvoicesSettingsHostedPaymentMethodSave._(json),
+  _ => AccountInvoicesSettingsHostedPaymentMethodSave$Unknown(json),
 }; }
 
-static const AccountInvoicesSettingsHostedPaymentMethodSave always = AccountInvoicesSettingsHostedPaymentMethodSave._('always');
+static const AccountInvoicesSettingsHostedPaymentMethodSave always = AccountInvoicesSettingsHostedPaymentMethodSave$always._();
 
-static const AccountInvoicesSettingsHostedPaymentMethodSave never = AccountInvoicesSettingsHostedPaymentMethodSave._('never');
+static const AccountInvoicesSettingsHostedPaymentMethodSave never = AccountInvoicesSettingsHostedPaymentMethodSave$never._();
 
-static const AccountInvoicesSettingsHostedPaymentMethodSave offer = AccountInvoicesSettingsHostedPaymentMethodSave._('offer');
+static const AccountInvoicesSettingsHostedPaymentMethodSave offer = AccountInvoicesSettingsHostedPaymentMethodSave$offer._();
 
 static const List<AccountInvoicesSettingsHostedPaymentMethodSave> values = [always, never, offer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountInvoicesSettingsHostedPaymentMethodSave$Unknown; } 
+@override String toString() => 'AccountInvoicesSettingsHostedPaymentMethodSave($value)';
+
+ }
+@immutable final class AccountInvoicesSettingsHostedPaymentMethodSave$always extends AccountInvoicesSettingsHostedPaymentMethodSave {const AccountInvoicesSettingsHostedPaymentMethodSave$always._();
+
+@override String get value => 'always';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountInvoicesSettingsHostedPaymentMethodSave$always;
+
+@override int get hashCode => 'always'.hashCode;
+
+ }
+@immutable final class AccountInvoicesSettingsHostedPaymentMethodSave$never extends AccountInvoicesSettingsHostedPaymentMethodSave {const AccountInvoicesSettingsHostedPaymentMethodSave$never._();
+
+@override String get value => 'never';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountInvoicesSettingsHostedPaymentMethodSave$never;
+
+@override int get hashCode => 'never'.hashCode;
+
+ }
+@immutable final class AccountInvoicesSettingsHostedPaymentMethodSave$offer extends AccountInvoicesSettingsHostedPaymentMethodSave {const AccountInvoicesSettingsHostedPaymentMethodSave$offer._();
+
+@override String get value => 'offer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountInvoicesSettingsHostedPaymentMethodSave$offer;
+
+@override int get hashCode => 'offer'.hashCode;
+
+ }
+@immutable final class AccountInvoicesSettingsHostedPaymentMethodSave$Unknown extends AccountInvoicesSettingsHostedPaymentMethodSave {const AccountInvoicesSettingsHostedPaymentMethodSave$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountInvoicesSettingsHostedPaymentMethodSave && other.value == value;
+    other is AccountInvoicesSettingsHostedPaymentMethodSave$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountInvoicesSettingsHostedPaymentMethodSave($value)';
 
  }
 /// 

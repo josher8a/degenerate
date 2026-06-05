@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateModerationResponse (inline: Results > CategoryAppliedInputTypes)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Hate {const Hate._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Hate {const Hate();
 
 factory Hate.fromJson(String json) { return switch (json) {
   'text' => text,
-  _ => Hate._(json),
+  _ => Hate$Unknown(json),
 }; }
 
-static const Hate text = Hate._('text');
+static const Hate text = Hate$text._();
 
 static const List<Hate> values = [text];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,28 +20,41 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Hate && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Hate$Unknown; } 
 @override String toString() => 'Hate($value)';
 
  }
-@immutable final class HateThreatening {const HateThreatening._(this.value);
+@immutable final class Hate$text extends Hate {const Hate$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Hate$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class Hate$Unknown extends Hate {const Hate$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Hate$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class HateThreatening {const HateThreatening();
 
 factory HateThreatening.fromJson(String json) { return switch (json) {
   'text' => text,
-  _ => HateThreatening._(json),
+  _ => HateThreatening$Unknown(json),
 }; }
 
-static const HateThreatening text = HateThreatening._('text');
+static const HateThreatening text = HateThreatening$text._();
 
 static const List<HateThreatening> values = [text];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,28 +62,41 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is HateThreatening && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is HateThreatening$Unknown; } 
 @override String toString() => 'HateThreatening($value)';
 
  }
-@immutable final class Harassment {const Harassment._(this.value);
+@immutable final class HateThreatening$text extends HateThreatening {const HateThreatening$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HateThreatening$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class HateThreatening$Unknown extends HateThreatening {const HateThreatening$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HateThreatening$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class Harassment {const Harassment();
 
 factory Harassment.fromJson(String json) { return switch (json) {
   'text' => text,
-  _ => Harassment._(json),
+  _ => Harassment$Unknown(json),
 }; }
 
-static const Harassment text = Harassment._('text');
+static const Harassment text = Harassment$text._();
 
 static const List<Harassment> values = [text];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -79,28 +104,41 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Harassment && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Harassment$Unknown; } 
 @override String toString() => 'Harassment($value)';
 
  }
-@immutable final class HarassmentThreatening {const HarassmentThreatening._(this.value);
+@immutable final class Harassment$text extends Harassment {const Harassment$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Harassment$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class Harassment$Unknown extends Harassment {const Harassment$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Harassment$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class HarassmentThreatening {const HarassmentThreatening();
 
 factory HarassmentThreatening.fromJson(String json) { return switch (json) {
   'text' => text,
-  _ => HarassmentThreatening._(json),
+  _ => HarassmentThreatening$Unknown(json),
 }; }
 
-static const HarassmentThreatening text = HarassmentThreatening._('text');
+static const HarassmentThreatening text = HarassmentThreatening$text._();
 
 static const List<HarassmentThreatening> values = [text];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -108,28 +146,41 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is HarassmentThreatening && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is HarassmentThreatening$Unknown; } 
 @override String toString() => 'HarassmentThreatening($value)';
 
  }
-@immutable final class Illicit {const Illicit._(this.value);
+@immutable final class HarassmentThreatening$text extends HarassmentThreatening {const HarassmentThreatening$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HarassmentThreatening$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class HarassmentThreatening$Unknown extends HarassmentThreatening {const HarassmentThreatening$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is HarassmentThreatening$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class Illicit {const Illicit();
 
 factory Illicit.fromJson(String json) { return switch (json) {
   'text' => text,
-  _ => Illicit._(json),
+  _ => Illicit$Unknown(json),
 }; }
 
-static const Illicit text = Illicit._('text');
+static const Illicit text = Illicit$text._();
 
 static const List<Illicit> values = [text];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -137,28 +188,41 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Illicit && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Illicit$Unknown; } 
 @override String toString() => 'Illicit($value)';
 
  }
-@immutable final class IllicitViolent {const IllicitViolent._(this.value);
+@immutable final class Illicit$text extends Illicit {const Illicit$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Illicit$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class Illicit$Unknown extends Illicit {const Illicit$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Illicit$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class IllicitViolent {const IllicitViolent();
 
 factory IllicitViolent.fromJson(String json) { return switch (json) {
   'text' => text,
-  _ => IllicitViolent._(json),
+  _ => IllicitViolent$Unknown(json),
 }; }
 
-static const IllicitViolent text = IllicitViolent._('text');
+static const IllicitViolent text = IllicitViolent$text._();
 
 static const List<IllicitViolent> values = [text];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -166,31 +230,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IllicitViolent && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IllicitViolent$Unknown; } 
 @override String toString() => 'IllicitViolent($value)';
 
  }
-@immutable final class SelfHarm {const SelfHarm._(this.value);
+@immutable final class IllicitViolent$text extends IllicitViolent {const IllicitViolent$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IllicitViolent$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class IllicitViolent$Unknown extends IllicitViolent {const IllicitViolent$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IllicitViolent$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class SelfHarm {const SelfHarm();
 
 factory SelfHarm.fromJson(String json) { return switch (json) {
   'text' => text,
   'image' => image,
-  _ => SelfHarm._(json),
+  _ => SelfHarm$Unknown(json),
 }; }
 
-static const SelfHarm text = SelfHarm._('text');
+static const SelfHarm text = SelfHarm$text._();
 
-static const SelfHarm image = SelfHarm._('image');
+static const SelfHarm image = SelfHarm$image._();
 
 static const List<SelfHarm> values = [text, image];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -199,31 +276,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SelfHarm && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SelfHarm$Unknown; } 
 @override String toString() => 'SelfHarm($value)';
 
  }
-@immutable final class SelfHarmIntent {const SelfHarmIntent._(this.value);
+@immutable final class SelfHarm$text extends SelfHarm {const SelfHarm$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SelfHarm$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class SelfHarm$image extends SelfHarm {const SelfHarm$image._();
+
+@override String get value => 'image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SelfHarm$image;
+
+@override int get hashCode => 'image'.hashCode;
+
+ }
+@immutable final class SelfHarm$Unknown extends SelfHarm {const SelfHarm$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SelfHarm$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class SelfHarmIntent {const SelfHarmIntent();
 
 factory SelfHarmIntent.fromJson(String json) { return switch (json) {
   'text' => text,
   'image' => image,
-  _ => SelfHarmIntent._(json),
+  _ => SelfHarmIntent$Unknown(json),
 }; }
 
-static const SelfHarmIntent text = SelfHarmIntent._('text');
+static const SelfHarmIntent text = SelfHarmIntent$text._();
 
-static const SelfHarmIntent image = SelfHarmIntent._('image');
+static const SelfHarmIntent image = SelfHarmIntent$image._();
 
 static const List<SelfHarmIntent> values = [text, image];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -232,31 +331,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SelfHarmIntent && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SelfHarmIntent$Unknown; } 
 @override String toString() => 'SelfHarmIntent($value)';
 
  }
-@immutable final class SelfHarmInstructions {const SelfHarmInstructions._(this.value);
+@immutable final class SelfHarmIntent$text extends SelfHarmIntent {const SelfHarmIntent$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SelfHarmIntent$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class SelfHarmIntent$image extends SelfHarmIntent {const SelfHarmIntent$image._();
+
+@override String get value => 'image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SelfHarmIntent$image;
+
+@override int get hashCode => 'image'.hashCode;
+
+ }
+@immutable final class SelfHarmIntent$Unknown extends SelfHarmIntent {const SelfHarmIntent$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SelfHarmIntent$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class SelfHarmInstructions {const SelfHarmInstructions();
 
 factory SelfHarmInstructions.fromJson(String json) { return switch (json) {
   'text' => text,
   'image' => image,
-  _ => SelfHarmInstructions._(json),
+  _ => SelfHarmInstructions$Unknown(json),
 }; }
 
-static const SelfHarmInstructions text = SelfHarmInstructions._('text');
+static const SelfHarmInstructions text = SelfHarmInstructions$text._();
 
-static const SelfHarmInstructions image = SelfHarmInstructions._('image');
+static const SelfHarmInstructions image = SelfHarmInstructions$image._();
 
 static const List<SelfHarmInstructions> values = [text, image];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -265,31 +386,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SelfHarmInstructions && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SelfHarmInstructions$Unknown; } 
 @override String toString() => 'SelfHarmInstructions($value)';
 
  }
-@immutable final class Sexual {const Sexual._(this.value);
+@immutable final class SelfHarmInstructions$text extends SelfHarmInstructions {const SelfHarmInstructions$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SelfHarmInstructions$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class SelfHarmInstructions$image extends SelfHarmInstructions {const SelfHarmInstructions$image._();
+
+@override String get value => 'image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SelfHarmInstructions$image;
+
+@override int get hashCode => 'image'.hashCode;
+
+ }
+@immutable final class SelfHarmInstructions$Unknown extends SelfHarmInstructions {const SelfHarmInstructions$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SelfHarmInstructions$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class Sexual {const Sexual();
 
 factory Sexual.fromJson(String json) { return switch (json) {
   'text' => text,
   'image' => image,
-  _ => Sexual._(json),
+  _ => Sexual$Unknown(json),
 }; }
 
-static const Sexual text = Sexual._('text');
+static const Sexual text = Sexual$text._();
 
-static const Sexual image = Sexual._('image');
+static const Sexual image = Sexual$image._();
 
 static const List<Sexual> values = [text, image];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -298,28 +441,50 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Sexual && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Sexual$Unknown; } 
 @override String toString() => 'Sexual($value)';
 
  }
-@immutable final class SexualMinors {const SexualMinors._(this.value);
+@immutable final class Sexual$text extends Sexual {const Sexual$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Sexual$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class Sexual$image extends Sexual {const Sexual$image._();
+
+@override String get value => 'image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Sexual$image;
+
+@override int get hashCode => 'image'.hashCode;
+
+ }
+@immutable final class Sexual$Unknown extends Sexual {const Sexual$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Sexual$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class SexualMinors {const SexualMinors();
 
 factory SexualMinors.fromJson(String json) { return switch (json) {
   'text' => text,
-  _ => SexualMinors._(json),
+  _ => SexualMinors$Unknown(json),
 }; }
 
-static const SexualMinors text = SexualMinors._('text');
+static const SexualMinors text = SexualMinors$text._();
 
 static const List<SexualMinors> values = [text];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -327,31 +492,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SexualMinors && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SexualMinors$Unknown; } 
 @override String toString() => 'SexualMinors($value)';
 
  }
-@immutable final class Violence {const Violence._(this.value);
+@immutable final class SexualMinors$text extends SexualMinors {const SexualMinors$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SexualMinors$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class SexualMinors$Unknown extends SexualMinors {const SexualMinors$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SexualMinors$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class Violence {const Violence();
 
 factory Violence.fromJson(String json) { return switch (json) {
   'text' => text,
   'image' => image,
-  _ => Violence._(json),
+  _ => Violence$Unknown(json),
 }; }
 
-static const Violence text = Violence._('text');
+static const Violence text = Violence$text._();
 
-static const Violence image = Violence._('image');
+static const Violence image = Violence$image._();
 
 static const List<Violence> values = [text, image];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -360,31 +538,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Violence && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Violence$Unknown; } 
 @override String toString() => 'Violence($value)';
 
  }
-@immutable final class ViolenceGraphic {const ViolenceGraphic._(this.value);
+@immutable final class Violence$text extends Violence {const Violence$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Violence$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class Violence$image extends Violence {const Violence$image._();
+
+@override String get value => 'image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Violence$image;
+
+@override int get hashCode => 'image'.hashCode;
+
+ }
+@immutable final class Violence$Unknown extends Violence {const Violence$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Violence$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class ViolenceGraphic {const ViolenceGraphic();
 
 factory ViolenceGraphic.fromJson(String json) { return switch (json) {
   'text' => text,
   'image' => image,
-  _ => ViolenceGraphic._(json),
+  _ => ViolenceGraphic$Unknown(json),
 }; }
 
-static const ViolenceGraphic text = ViolenceGraphic._('text');
+static const ViolenceGraphic text = ViolenceGraphic$text._();
 
-static const ViolenceGraphic image = ViolenceGraphic._('image');
+static const ViolenceGraphic image = ViolenceGraphic$image._();
 
 static const List<ViolenceGraphic> values = [text, image];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -393,13 +593,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ViolenceGraphic$Unknown; } 
+@override String toString() => 'ViolenceGraphic($value)';
+
+ }
+@immutable final class ViolenceGraphic$text extends ViolenceGraphic {const ViolenceGraphic$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ViolenceGraphic$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class ViolenceGraphic$image extends ViolenceGraphic {const ViolenceGraphic$image._();
+
+@override String get value => 'image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ViolenceGraphic$image;
+
+@override int get hashCode => 'image'.hashCode;
+
+ }
+@immutable final class ViolenceGraphic$Unknown extends ViolenceGraphic {const ViolenceGraphic$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ViolenceGraphic && other.value == value;
+    other is ViolenceGraphic$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ViolenceGraphic($value)';
 
  }
 /// A list of the categories along with the input type(s) that the score applies to.

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/FirewallPackageDefinition
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/firewall_identifier.dart';import 'package:pub_cloudflare/models/firewall_status.dart';/// The mode that defines how rules within the package are evaluated during the course of a request. When a package uses anomaly detection mode (`anomaly` value), each rule is given a score when triggered. If the total score of all triggered rules exceeds the sensitivity defined in the WAF package, the action configured in the package will be performed. Traditional detection mode (`traditional` value) will decide the action to take when it is triggered by the request. If multiple rules are triggered, the action providing the highest protection will be applied (for example, a 'block' action will win over a 'challenge' action).
-@immutable final class FirewallDetectionMode {const FirewallDetectionMode._(this.value);
+sealed class FirewallDetectionMode {const FirewallDetectionMode();
 
 factory FirewallDetectionMode.fromJson(String json) { return switch (json) {
   'anomaly' => anomaly,
   'traditional' => traditional,
-  _ => FirewallDetectionMode._(json),
+  _ => FirewallDetectionMode$Unknown(json),
 }; }
 
-static const FirewallDetectionMode anomaly = FirewallDetectionMode._('anomaly');
+static const FirewallDetectionMode anomaly = FirewallDetectionMode$anomaly._();
 
-static const FirewallDetectionMode traditional = FirewallDetectionMode._('traditional');
+static const FirewallDetectionMode traditional = FirewallDetectionMode$traditional._();
 
 static const List<FirewallDetectionMode> values = [anomaly, traditional];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FirewallDetectionMode$Unknown; } 
+@override String toString() => 'FirewallDetectionMode($value)';
+
+ }
+@immutable final class FirewallDetectionMode$anomaly extends FirewallDetectionMode {const FirewallDetectionMode$anomaly._();
+
+@override String get value => 'anomaly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallDetectionMode$anomaly;
+
+@override int get hashCode => 'anomaly'.hashCode;
+
+ }
+@immutable final class FirewallDetectionMode$traditional extends FirewallDetectionMode {const FirewallDetectionMode$traditional._();
+
+@override String get value => 'traditional';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallDetectionMode$traditional;
+
+@override int get hashCode => 'traditional'.hashCode;
+
+ }
+@immutable final class FirewallDetectionMode$Unknown extends FirewallDetectionMode {const FirewallDetectionMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FirewallDetectionMode && other.value == value;
+    other is FirewallDetectionMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FirewallDetectionMode($value)';
 
  }
 /// The name of the WAF package.

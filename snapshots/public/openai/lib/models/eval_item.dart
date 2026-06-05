@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/easy_input_message/easy_input_message_role.dart';import 'package:pub_openai/models/eval_item_content.dart';import 'package:pub_openai/models/eval_item_content_item.dart';import 'package:pub_openai/models/eval_item_content_output_text.dart';import 'package:pub_openai/models/eval_item_input_image.dart';import 'package:pub_openai/models/input_audio.dart';import 'package:pub_openai/models/input_text_content.dart';/// The type of the message input. Always `message`.
 /// 
-@immutable final class EvalItemType {const EvalItemType._(this.value);
+sealed class EvalItemType {const EvalItemType();
 
 factory EvalItemType.fromJson(String json) { return switch (json) {
   'message' => message,
-  _ => EvalItemType._(json),
+  _ => EvalItemType$Unknown(json),
 }; }
 
-static const EvalItemType message = EvalItemType._('message');
+static const EvalItemType message = EvalItemType$message._();
 
 static const List<EvalItemType> values = [message];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EvalItemType$Unknown; } 
+@override String toString() => 'EvalItemType($value)';
+
+ }
+@immutable final class EvalItemType$message extends EvalItemType {const EvalItemType$message._();
+
+@override String get value => 'message';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EvalItemType$message;
+
+@override int get hashCode => 'message'.hashCode;
+
+ }
+@immutable final class EvalItemType$Unknown extends EvalItemType {const EvalItemType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EvalItemType && other.value == value;
+    other is EvalItemType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EvalItemType($value)';
 
  }
 /// A message input to the model with a role indicating instruction following

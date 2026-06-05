@@ -8,7 +8,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// - `hd` and `standard` are supported for `dall-e-3`.
 /// - `standard` is the only option for `dall-e-2`.
 /// 
-@immutable final class CreateImageRequestQuality {const CreateImageRequestQuality._(this.value);
+sealed class CreateImageRequestQuality {const CreateImageRequestQuality();
 
 factory CreateImageRequestQuality.fromJson(String json) { return switch (json) {
   'standard' => standard,
@@ -17,25 +17,24 @@ factory CreateImageRequestQuality.fromJson(String json) { return switch (json) {
   'medium' => medium,
   'high' => high,
   'auto' => auto,
-  _ => CreateImageRequestQuality._(json),
+  _ => CreateImageRequestQuality$Unknown(json),
 }; }
 
-static const CreateImageRequestQuality standard = CreateImageRequestQuality._('standard');
+static const CreateImageRequestQuality standard = CreateImageRequestQuality$standard._();
 
-static const CreateImageRequestQuality hd = CreateImageRequestQuality._('hd');
+static const CreateImageRequestQuality hd = CreateImageRequestQuality$hd._();
 
-static const CreateImageRequestQuality low = CreateImageRequestQuality._('low');
+static const CreateImageRequestQuality low = CreateImageRequestQuality$low._();
 
-static const CreateImageRequestQuality medium = CreateImageRequestQuality._('medium');
+static const CreateImageRequestQuality medium = CreateImageRequestQuality$medium._();
 
-static const CreateImageRequestQuality high = CreateImageRequestQuality._('high');
+static const CreateImageRequestQuality high = CreateImageRequestQuality$high._();
 
-static const CreateImageRequestQuality auto = CreateImageRequestQuality._('auto');
+static const CreateImageRequestQuality auto = CreateImageRequestQuality$auto._();
 
 static const List<CreateImageRequestQuality> values = [standard, hd, low, medium, high, auto];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -48,17 +47,76 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateImageRequestQuality && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CreateImageRequestQuality$Unknown; } 
 @override String toString() => 'CreateImageRequestQuality($value)';
 
  }
+@immutable final class CreateImageRequestQuality$standard extends CreateImageRequestQuality {const CreateImageRequestQuality$standard._();
+
+@override String get value => 'standard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestQuality$standard;
+
+@override int get hashCode => 'standard'.hashCode;
+
+ }
+@immutable final class CreateImageRequestQuality$hd extends CreateImageRequestQuality {const CreateImageRequestQuality$hd._();
+
+@override String get value => 'hd';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestQuality$hd;
+
+@override int get hashCode => 'hd'.hashCode;
+
+ }
+@immutable final class CreateImageRequestQuality$low extends CreateImageRequestQuality {const CreateImageRequestQuality$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestQuality$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class CreateImageRequestQuality$medium extends CreateImageRequestQuality {const CreateImageRequestQuality$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestQuality$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class CreateImageRequestQuality$high extends CreateImageRequestQuality {const CreateImageRequestQuality$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestQuality$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class CreateImageRequestQuality$auto extends CreateImageRequestQuality {const CreateImageRequestQuality$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestQuality$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class CreateImageRequestQuality$Unknown extends CreateImageRequestQuality {const CreateImageRequestQuality$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateImageRequestQuality$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The size of the generated images. Must be one of `1024x1024`, `1536x1024` (landscape), `1024x1536` (portrait), or `auto` (default value) for the GPT image models, one of `256x256`, `512x512`, or `1024x1024` for `dall-e-2`, and one of `1024x1024`, `1792x1024`, or `1024x1792` for `dall-e-3`.
-@immutable final class CreateImageRequestSize {const CreateImageRequestSize._(this.value);
+sealed class CreateImageRequestSize {const CreateImageRequestSize();
 
 factory CreateImageRequestSize.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -69,29 +127,28 @@ factory CreateImageRequestSize.fromJson(String json) { return switch (json) {
   '512x512' => $512x512,
   '1792x1024' => $1792x1024,
   '1024x1792' => $1024x1792,
-  _ => CreateImageRequestSize._(json),
+  _ => CreateImageRequestSize$Unknown(json),
 }; }
 
-static const CreateImageRequestSize auto = CreateImageRequestSize._('auto');
+static const CreateImageRequestSize auto = CreateImageRequestSize$auto._();
 
-static const CreateImageRequestSize $1024x1024 = CreateImageRequestSize._('1024x1024');
+static const CreateImageRequestSize $1024x1024 = CreateImageRequestSize$$1024x1024._();
 
-static const CreateImageRequestSize $1536x1024 = CreateImageRequestSize._('1536x1024');
+static const CreateImageRequestSize $1536x1024 = CreateImageRequestSize$$1536x1024._();
 
-static const CreateImageRequestSize $1024x1536 = CreateImageRequestSize._('1024x1536');
+static const CreateImageRequestSize $1024x1536 = CreateImageRequestSize$$1024x1536._();
 
-static const CreateImageRequestSize $256x256 = CreateImageRequestSize._('256x256');
+static const CreateImageRequestSize $256x256 = CreateImageRequestSize$$256x256._();
 
-static const CreateImageRequestSize $512x512 = CreateImageRequestSize._('512x512');
+static const CreateImageRequestSize $512x512 = CreateImageRequestSize$$512x512._();
 
-static const CreateImageRequestSize $1792x1024 = CreateImageRequestSize._('1792x1024');
+static const CreateImageRequestSize $1792x1024 = CreateImageRequestSize$$1792x1024._();
 
-static const CreateImageRequestSize $1024x1792 = CreateImageRequestSize._('1024x1792');
+static const CreateImageRequestSize $1024x1792 = CreateImageRequestSize$$1024x1792._();
 
 static const List<CreateImageRequestSize> values = [auto, $1024x1024, $1536x1024, $1024x1536, $256x256, $512x512, $1792x1024, $1024x1792];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -106,32 +163,108 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateImageRequestSize && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CreateImageRequestSize$Unknown; } 
 @override String toString() => 'CreateImageRequestSize($value)';
 
  }
+@immutable final class CreateImageRequestSize$auto extends CreateImageRequestSize {const CreateImageRequestSize$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestSize$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class CreateImageRequestSize$$1024x1024 extends CreateImageRequestSize {const CreateImageRequestSize$$1024x1024._();
+
+@override String get value => '1024x1024';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestSize$$1024x1024;
+
+@override int get hashCode => '1024x1024'.hashCode;
+
+ }
+@immutable final class CreateImageRequestSize$$1536x1024 extends CreateImageRequestSize {const CreateImageRequestSize$$1536x1024._();
+
+@override String get value => '1536x1024';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestSize$$1536x1024;
+
+@override int get hashCode => '1536x1024'.hashCode;
+
+ }
+@immutable final class CreateImageRequestSize$$1024x1536 extends CreateImageRequestSize {const CreateImageRequestSize$$1024x1536._();
+
+@override String get value => '1024x1536';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestSize$$1024x1536;
+
+@override int get hashCode => '1024x1536'.hashCode;
+
+ }
+@immutable final class CreateImageRequestSize$$256x256 extends CreateImageRequestSize {const CreateImageRequestSize$$256x256._();
+
+@override String get value => '256x256';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestSize$$256x256;
+
+@override int get hashCode => '256x256'.hashCode;
+
+ }
+@immutable final class CreateImageRequestSize$$512x512 extends CreateImageRequestSize {const CreateImageRequestSize$$512x512._();
+
+@override String get value => '512x512';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestSize$$512x512;
+
+@override int get hashCode => '512x512'.hashCode;
+
+ }
+@immutable final class CreateImageRequestSize$$1792x1024 extends CreateImageRequestSize {const CreateImageRequestSize$$1792x1024._();
+
+@override String get value => '1792x1024';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestSize$$1792x1024;
+
+@override int get hashCode => '1792x1024'.hashCode;
+
+ }
+@immutable final class CreateImageRequestSize$$1024x1792 extends CreateImageRequestSize {const CreateImageRequestSize$$1024x1792._();
+
+@override String get value => '1024x1792';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestSize$$1024x1792;
+
+@override int get hashCode => '1024x1792'.hashCode;
+
+ }
+@immutable final class CreateImageRequestSize$Unknown extends CreateImageRequestSize {const CreateImageRequestSize$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CreateImageRequestSize$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The style of the generated images. This parameter is only supported for `dall-e-3`. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images.
-@immutable final class Style {const Style._(this.value);
+sealed class Style {const Style();
 
 factory Style.fromJson(String json) { return switch (json) {
   'vivid' => vivid,
   'natural' => natural,
-  _ => Style._(json),
+  _ => Style$Unknown(json),
 }; }
 
-static const Style vivid = Style._('vivid');
+static const Style vivid = Style$vivid._();
 
-static const Style natural = Style._('natural');
+static const Style natural = Style$natural._();
 
 static const List<Style> values = [vivid, natural];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -140,13 +273,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Style$Unknown; } 
+@override String toString() => 'Style($value)';
+
+ }
+@immutable final class Style$vivid extends Style {const Style$vivid._();
+
+@override String get value => 'vivid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Style$vivid;
+
+@override int get hashCode => 'vivid'.hashCode;
+
+ }
+@immutable final class Style$natural extends Style {const Style$natural._();
+
+@override String get value => 'natural';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Style$natural;
+
+@override int get hashCode => 'natural'.hashCode;
+
+ }
+@immutable final class Style$Unknown extends Style {const Style$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Style && other.value == value;
+    other is Style$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Style($value)';
 
  }
 @immutable final class CreateImageRequest {const CreateImageRequest({required this.prompt, this.model, this.n = 1, this.quality = CreateImageRequestQuality.auto, this.responseFormat = CreateImageEditRequestResponseFormat.url, this.outputFormat = CreateImageEditRequestOutputFormat.png, this.outputCompression = 100, this.stream = false, this.partialImages, this.size = CreateImageRequestSize.auto, this.moderation = CreateImageRequestModeration.auto, this.background = CreateImageEditRequestBackground.auto, this.style = Style.vivid, this.user, });

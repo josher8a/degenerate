@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ActionsGetActionsCacheListSort
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsGetActionsCacheListSort {const ActionsGetActionsCacheListSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ActionsGetActionsCacheListSort {const ActionsGetActionsCacheListSort();
 
 factory ActionsGetActionsCacheListSort.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,
   'last_accessed_at' => lastAccessedAt,
   'size_in_bytes' => sizeInBytes,
-  _ => ActionsGetActionsCacheListSort._(json),
+  _ => ActionsGetActionsCacheListSort$Unknown(json),
 }; }
 
-static const ActionsGetActionsCacheListSort createdAt = ActionsGetActionsCacheListSort._('created_at');
+static const ActionsGetActionsCacheListSort createdAt = ActionsGetActionsCacheListSort$createdAt._();
 
-static const ActionsGetActionsCacheListSort lastAccessedAt = ActionsGetActionsCacheListSort._('last_accessed_at');
+static const ActionsGetActionsCacheListSort lastAccessedAt = ActionsGetActionsCacheListSort$lastAccessedAt._();
 
-static const ActionsGetActionsCacheListSort sizeInBytes = ActionsGetActionsCacheListSort._('size_in_bytes');
+static const ActionsGetActionsCacheListSort sizeInBytes = ActionsGetActionsCacheListSort$sizeInBytes._();
 
 static const List<ActionsGetActionsCacheListSort> values = [createdAt, lastAccessedAt, sizeInBytes];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ActionsGetActionsCacheListSort$Unknown; } 
+@override String toString() => 'ActionsGetActionsCacheListSort($value)';
+
+ }
+@immutable final class ActionsGetActionsCacheListSort$createdAt extends ActionsGetActionsCacheListSort {const ActionsGetActionsCacheListSort$createdAt._();
+
+@override String get value => 'created_at';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsGetActionsCacheListSort$createdAt;
+
+@override int get hashCode => 'created_at'.hashCode;
+
+ }
+@immutable final class ActionsGetActionsCacheListSort$lastAccessedAt extends ActionsGetActionsCacheListSort {const ActionsGetActionsCacheListSort$lastAccessedAt._();
+
+@override String get value => 'last_accessed_at';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsGetActionsCacheListSort$lastAccessedAt;
+
+@override int get hashCode => 'last_accessed_at'.hashCode;
+
+ }
+@immutable final class ActionsGetActionsCacheListSort$sizeInBytes extends ActionsGetActionsCacheListSort {const ActionsGetActionsCacheListSort$sizeInBytes._();
+
+@override String get value => 'size_in_bytes';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsGetActionsCacheListSort$sizeInBytes;
+
+@override int get hashCode => 'size_in_bytes'.hashCode;
+
+ }
+@immutable final class ActionsGetActionsCacheListSort$Unknown extends ActionsGetActionsCacheListSort {const ActionsGetActionsCacheListSort$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ActionsGetActionsCacheListSort && other.value == value;
+    other is ActionsGetActionsCacheListSort$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ActionsGetActionsCacheListSort($value)';
 
  }

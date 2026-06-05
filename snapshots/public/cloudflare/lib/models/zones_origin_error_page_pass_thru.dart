@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_origin_error_page_pass_thru_value.dart';/// Turn on or off Cloudflare error pages generated from issues sent from the origin server. If enabled, this setting triggers error pages issued by the origin.
 /// 
-@immutable final class ZonesOriginErrorPagePassThruId {const ZonesOriginErrorPagePassThruId._(this.value);
+sealed class ZonesOriginErrorPagePassThruId {const ZonesOriginErrorPagePassThruId();
 
 factory ZonesOriginErrorPagePassThruId.fromJson(String json) { return switch (json) {
   'origin_error_page_pass_thru' => originErrorPagePassThru,
-  _ => ZonesOriginErrorPagePassThruId._(json),
+  _ => ZonesOriginErrorPagePassThruId$Unknown(json),
 }; }
 
-static const ZonesOriginErrorPagePassThruId originErrorPagePassThru = ZonesOriginErrorPagePassThruId._('origin_error_page_pass_thru');
+static const ZonesOriginErrorPagePassThruId originErrorPagePassThru = ZonesOriginErrorPagePassThruId$originErrorPagePassThru._();
 
 static const List<ZonesOriginErrorPagePassThruId> values = [originErrorPagePassThru];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesOriginErrorPagePassThruId$Unknown; } 
+@override String toString() => 'ZonesOriginErrorPagePassThruId($value)';
+
+ }
+@immutable final class ZonesOriginErrorPagePassThruId$originErrorPagePassThru extends ZonesOriginErrorPagePassThruId {const ZonesOriginErrorPagePassThruId$originErrorPagePassThru._();
+
+@override String get value => 'origin_error_page_pass_thru';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesOriginErrorPagePassThruId$originErrorPagePassThru;
+
+@override int get hashCode => 'origin_error_page_pass_thru'.hashCode;
+
+ }
+@immutable final class ZonesOriginErrorPagePassThruId$Unknown extends ZonesOriginErrorPagePassThruId {const ZonesOriginErrorPagePassThruId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesOriginErrorPagePassThruId && other.value == value;
+    other is ZonesOriginErrorPagePassThruId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesOriginErrorPagePassThruId($value)';
 
  }
 @immutable final class ZonesOriginErrorPagePassThru {const ZonesOriginErrorPagePassThru({this.id, this.value, });

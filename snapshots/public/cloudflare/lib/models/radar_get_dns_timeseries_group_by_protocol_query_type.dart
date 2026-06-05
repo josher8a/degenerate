@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetDnsTimeseriesGroupByProtocolQueryType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType();
 
 factory RadarGetDnsTimeseriesGroupByProtocolQueryType.fromJson(String json) { return switch (json) {
   'A' => a,
@@ -92,189 +92,188 @@ factory RadarGetDnsTimeseriesGroupByProtocolQueryType.fromJson(String json) { re
   'WKS' => wks,
   'X25' => x25,
   'ZONEMD' => zonemd,
-  _ => RadarGetDnsTimeseriesGroupByProtocolQueryType._(json),
+  _ => RadarGetDnsTimeseriesGroupByProtocolQueryType$Unknown(json),
 }; }
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType a = RadarGetDnsTimeseriesGroupByProtocolQueryType._('A');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType a = RadarGetDnsTimeseriesGroupByProtocolQueryType$a._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType aaaa = RadarGetDnsTimeseriesGroupByProtocolQueryType._('AAAA');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType aaaa = RadarGetDnsTimeseriesGroupByProtocolQueryType$aaaa._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType a6 = RadarGetDnsTimeseriesGroupByProtocolQueryType._('A6');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType a6 = RadarGetDnsTimeseriesGroupByProtocolQueryType$a6._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType afsdb = RadarGetDnsTimeseriesGroupByProtocolQueryType._('AFSDB');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType afsdb = RadarGetDnsTimeseriesGroupByProtocolQueryType$afsdb._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType any = RadarGetDnsTimeseriesGroupByProtocolQueryType._('ANY');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType any = RadarGetDnsTimeseriesGroupByProtocolQueryType$any._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType apl = RadarGetDnsTimeseriesGroupByProtocolQueryType._('APL');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType apl = RadarGetDnsTimeseriesGroupByProtocolQueryType$apl._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType atma = RadarGetDnsTimeseriesGroupByProtocolQueryType._('ATMA');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType atma = RadarGetDnsTimeseriesGroupByProtocolQueryType$atma._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType axfr = RadarGetDnsTimeseriesGroupByProtocolQueryType._('AXFR');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType axfr = RadarGetDnsTimeseriesGroupByProtocolQueryType$axfr._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType caa = RadarGetDnsTimeseriesGroupByProtocolQueryType._('CAA');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType caa = RadarGetDnsTimeseriesGroupByProtocolQueryType$caa._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType cdnskey = RadarGetDnsTimeseriesGroupByProtocolQueryType._('CDNSKEY');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType cdnskey = RadarGetDnsTimeseriesGroupByProtocolQueryType$cdnskey._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType cds = RadarGetDnsTimeseriesGroupByProtocolQueryType._('CDS');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType cds = RadarGetDnsTimeseriesGroupByProtocolQueryType$cds._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType cert = RadarGetDnsTimeseriesGroupByProtocolQueryType._('CERT');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType cert = RadarGetDnsTimeseriesGroupByProtocolQueryType$cert._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType cname = RadarGetDnsTimeseriesGroupByProtocolQueryType._('CNAME');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType cname = RadarGetDnsTimeseriesGroupByProtocolQueryType$cname._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType csync = RadarGetDnsTimeseriesGroupByProtocolQueryType._('CSYNC');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType csync = RadarGetDnsTimeseriesGroupByProtocolQueryType$csync._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType dhcid = RadarGetDnsTimeseriesGroupByProtocolQueryType._('DHCID');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType dhcid = RadarGetDnsTimeseriesGroupByProtocolQueryType$dhcid._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType dlv = RadarGetDnsTimeseriesGroupByProtocolQueryType._('DLV');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType dlv = RadarGetDnsTimeseriesGroupByProtocolQueryType$dlv._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType dname = RadarGetDnsTimeseriesGroupByProtocolQueryType._('DNAME');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType dname = RadarGetDnsTimeseriesGroupByProtocolQueryType$dname._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType dnskey = RadarGetDnsTimeseriesGroupByProtocolQueryType._('DNSKEY');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType dnskey = RadarGetDnsTimeseriesGroupByProtocolQueryType$dnskey._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType doa = RadarGetDnsTimeseriesGroupByProtocolQueryType._('DOA');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType doa = RadarGetDnsTimeseriesGroupByProtocolQueryType$doa._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType ds = RadarGetDnsTimeseriesGroupByProtocolQueryType._('DS');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType ds = RadarGetDnsTimeseriesGroupByProtocolQueryType$ds._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType eid = RadarGetDnsTimeseriesGroupByProtocolQueryType._('EID');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType eid = RadarGetDnsTimeseriesGroupByProtocolQueryType$eid._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType eui48 = RadarGetDnsTimeseriesGroupByProtocolQueryType._('EUI48');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType eui48 = RadarGetDnsTimeseriesGroupByProtocolQueryType$eui48._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType eui64 = RadarGetDnsTimeseriesGroupByProtocolQueryType._('EUI64');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType eui64 = RadarGetDnsTimeseriesGroupByProtocolQueryType$eui64._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType gpos = RadarGetDnsTimeseriesGroupByProtocolQueryType._('GPOS');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType gpos = RadarGetDnsTimeseriesGroupByProtocolQueryType$gpos._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType gid = RadarGetDnsTimeseriesGroupByProtocolQueryType._('GID');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType gid = RadarGetDnsTimeseriesGroupByProtocolQueryType$gid._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType hinfo = RadarGetDnsTimeseriesGroupByProtocolQueryType._('HINFO');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType hinfo = RadarGetDnsTimeseriesGroupByProtocolQueryType$hinfo._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType hip = RadarGetDnsTimeseriesGroupByProtocolQueryType._('HIP');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType hip = RadarGetDnsTimeseriesGroupByProtocolQueryType$hip._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType https = RadarGetDnsTimeseriesGroupByProtocolQueryType._('HTTPS');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType https = RadarGetDnsTimeseriesGroupByProtocolQueryType$https._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType ipseckey = RadarGetDnsTimeseriesGroupByProtocolQueryType._('IPSECKEY');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType ipseckey = RadarGetDnsTimeseriesGroupByProtocolQueryType$ipseckey._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType isdn = RadarGetDnsTimeseriesGroupByProtocolQueryType._('ISDN');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType isdn = RadarGetDnsTimeseriesGroupByProtocolQueryType$isdn._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType ixfr = RadarGetDnsTimeseriesGroupByProtocolQueryType._('IXFR');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType ixfr = RadarGetDnsTimeseriesGroupByProtocolQueryType$ixfr._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType key = RadarGetDnsTimeseriesGroupByProtocolQueryType._('KEY');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType key = RadarGetDnsTimeseriesGroupByProtocolQueryType$key._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType kx = RadarGetDnsTimeseriesGroupByProtocolQueryType._('KX');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType kx = RadarGetDnsTimeseriesGroupByProtocolQueryType$kx._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType l32 = RadarGetDnsTimeseriesGroupByProtocolQueryType._('L32');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType l32 = RadarGetDnsTimeseriesGroupByProtocolQueryType$l32._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType l64 = RadarGetDnsTimeseriesGroupByProtocolQueryType._('L64');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType l64 = RadarGetDnsTimeseriesGroupByProtocolQueryType$l64._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType loc = RadarGetDnsTimeseriesGroupByProtocolQueryType._('LOC');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType loc = RadarGetDnsTimeseriesGroupByProtocolQueryType$loc._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType lp = RadarGetDnsTimeseriesGroupByProtocolQueryType._('LP');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType lp = RadarGetDnsTimeseriesGroupByProtocolQueryType$lp._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType maila = RadarGetDnsTimeseriesGroupByProtocolQueryType._('MAILA');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType maila = RadarGetDnsTimeseriesGroupByProtocolQueryType$maila._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType mailb = RadarGetDnsTimeseriesGroupByProtocolQueryType._('MAILB');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType mailb = RadarGetDnsTimeseriesGroupByProtocolQueryType$mailb._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType mb = RadarGetDnsTimeseriesGroupByProtocolQueryType._('MB');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType mb = RadarGetDnsTimeseriesGroupByProtocolQueryType$mb._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType md = RadarGetDnsTimeseriesGroupByProtocolQueryType._('MD');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType md = RadarGetDnsTimeseriesGroupByProtocolQueryType$md._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType mf = RadarGetDnsTimeseriesGroupByProtocolQueryType._('MF');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType mf = RadarGetDnsTimeseriesGroupByProtocolQueryType$mf._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType mg = RadarGetDnsTimeseriesGroupByProtocolQueryType._('MG');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType mg = RadarGetDnsTimeseriesGroupByProtocolQueryType$mg._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType minfo = RadarGetDnsTimeseriesGroupByProtocolQueryType._('MINFO');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType minfo = RadarGetDnsTimeseriesGroupByProtocolQueryType$minfo._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType mr = RadarGetDnsTimeseriesGroupByProtocolQueryType._('MR');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType mr = RadarGetDnsTimeseriesGroupByProtocolQueryType$mr._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType mx = RadarGetDnsTimeseriesGroupByProtocolQueryType._('MX');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType mx = RadarGetDnsTimeseriesGroupByProtocolQueryType$mx._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType naptr = RadarGetDnsTimeseriesGroupByProtocolQueryType._('NAPTR');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType naptr = RadarGetDnsTimeseriesGroupByProtocolQueryType$naptr._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType nb = RadarGetDnsTimeseriesGroupByProtocolQueryType._('NB');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType nb = RadarGetDnsTimeseriesGroupByProtocolQueryType$nb._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType nbstat = RadarGetDnsTimeseriesGroupByProtocolQueryType._('NBSTAT');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType nbstat = RadarGetDnsTimeseriesGroupByProtocolQueryType$nbstat._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType nid = RadarGetDnsTimeseriesGroupByProtocolQueryType._('NID');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType nid = RadarGetDnsTimeseriesGroupByProtocolQueryType$nid._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType nimloc = RadarGetDnsTimeseriesGroupByProtocolQueryType._('NIMLOC');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType nimloc = RadarGetDnsTimeseriesGroupByProtocolQueryType$nimloc._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType ninfo = RadarGetDnsTimeseriesGroupByProtocolQueryType._('NINFO');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType ninfo = RadarGetDnsTimeseriesGroupByProtocolQueryType$ninfo._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType ns = RadarGetDnsTimeseriesGroupByProtocolQueryType._('NS');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType ns = RadarGetDnsTimeseriesGroupByProtocolQueryType$ns._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType nsap = RadarGetDnsTimeseriesGroupByProtocolQueryType._('NSAP');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType nsap = RadarGetDnsTimeseriesGroupByProtocolQueryType$nsap._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType nsec = RadarGetDnsTimeseriesGroupByProtocolQueryType._('NSEC');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType nsec = RadarGetDnsTimeseriesGroupByProtocolQueryType$nsec._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType nsec3 = RadarGetDnsTimeseriesGroupByProtocolQueryType._('NSEC3');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType nsec3 = RadarGetDnsTimeseriesGroupByProtocolQueryType$nsec3._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType nsec3Param = RadarGetDnsTimeseriesGroupByProtocolQueryType._('NSEC3PARAM');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType nsec3Param = RadarGetDnsTimeseriesGroupByProtocolQueryType$nsec3Param._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType $null = RadarGetDnsTimeseriesGroupByProtocolQueryType._('NULL');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType $null = RadarGetDnsTimeseriesGroupByProtocolQueryType$$null._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType nxt = RadarGetDnsTimeseriesGroupByProtocolQueryType._('NXT');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType nxt = RadarGetDnsTimeseriesGroupByProtocolQueryType$nxt._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType openpgpkey = RadarGetDnsTimeseriesGroupByProtocolQueryType._('OPENPGPKEY');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType openpgpkey = RadarGetDnsTimeseriesGroupByProtocolQueryType$openpgpkey._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType opt = RadarGetDnsTimeseriesGroupByProtocolQueryType._('OPT');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType opt = RadarGetDnsTimeseriesGroupByProtocolQueryType$opt._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType ptr = RadarGetDnsTimeseriesGroupByProtocolQueryType._('PTR');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType ptr = RadarGetDnsTimeseriesGroupByProtocolQueryType$ptr._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType px = RadarGetDnsTimeseriesGroupByProtocolQueryType._('PX');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType px = RadarGetDnsTimeseriesGroupByProtocolQueryType$px._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType rkey = RadarGetDnsTimeseriesGroupByProtocolQueryType._('RKEY');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType rkey = RadarGetDnsTimeseriesGroupByProtocolQueryType$rkey._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType rp = RadarGetDnsTimeseriesGroupByProtocolQueryType._('RP');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType rp = RadarGetDnsTimeseriesGroupByProtocolQueryType$rp._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType rrsig = RadarGetDnsTimeseriesGroupByProtocolQueryType._('RRSIG');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType rrsig = RadarGetDnsTimeseriesGroupByProtocolQueryType$rrsig._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType rt = RadarGetDnsTimeseriesGroupByProtocolQueryType._('RT');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType rt = RadarGetDnsTimeseriesGroupByProtocolQueryType$rt._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType sig = RadarGetDnsTimeseriesGroupByProtocolQueryType._('SIG');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType sig = RadarGetDnsTimeseriesGroupByProtocolQueryType$sig._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType sink = RadarGetDnsTimeseriesGroupByProtocolQueryType._('SINK');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType sink = RadarGetDnsTimeseriesGroupByProtocolQueryType$sink._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType smimea = RadarGetDnsTimeseriesGroupByProtocolQueryType._('SMIMEA');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType smimea = RadarGetDnsTimeseriesGroupByProtocolQueryType$smimea._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType soa = RadarGetDnsTimeseriesGroupByProtocolQueryType._('SOA');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType soa = RadarGetDnsTimeseriesGroupByProtocolQueryType$soa._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType spf = RadarGetDnsTimeseriesGroupByProtocolQueryType._('SPF');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType spf = RadarGetDnsTimeseriesGroupByProtocolQueryType$spf._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType srv = RadarGetDnsTimeseriesGroupByProtocolQueryType._('SRV');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType srv = RadarGetDnsTimeseriesGroupByProtocolQueryType$srv._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType sshfp = RadarGetDnsTimeseriesGroupByProtocolQueryType._('SSHFP');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType sshfp = RadarGetDnsTimeseriesGroupByProtocolQueryType$sshfp._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType svcb = RadarGetDnsTimeseriesGroupByProtocolQueryType._('SVCB');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType svcb = RadarGetDnsTimeseriesGroupByProtocolQueryType$svcb._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType ta = RadarGetDnsTimeseriesGroupByProtocolQueryType._('TA');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType ta = RadarGetDnsTimeseriesGroupByProtocolQueryType$ta._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType talink = RadarGetDnsTimeseriesGroupByProtocolQueryType._('TALINK');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType talink = RadarGetDnsTimeseriesGroupByProtocolQueryType$talink._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType tkey = RadarGetDnsTimeseriesGroupByProtocolQueryType._('TKEY');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType tkey = RadarGetDnsTimeseriesGroupByProtocolQueryType$tkey._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType tlsa = RadarGetDnsTimeseriesGroupByProtocolQueryType._('TLSA');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType tlsa = RadarGetDnsTimeseriesGroupByProtocolQueryType$tlsa._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType tsig = RadarGetDnsTimeseriesGroupByProtocolQueryType._('TSIG');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType tsig = RadarGetDnsTimeseriesGroupByProtocolQueryType$tsig._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType txt = RadarGetDnsTimeseriesGroupByProtocolQueryType._('TXT');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType txt = RadarGetDnsTimeseriesGroupByProtocolQueryType$txt._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType uinfo = RadarGetDnsTimeseriesGroupByProtocolQueryType._('UINFO');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType uinfo = RadarGetDnsTimeseriesGroupByProtocolQueryType$uinfo._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType uid = RadarGetDnsTimeseriesGroupByProtocolQueryType._('UID');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType uid = RadarGetDnsTimeseriesGroupByProtocolQueryType$uid._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType unspec = RadarGetDnsTimeseriesGroupByProtocolQueryType._('UNSPEC');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType unspec = RadarGetDnsTimeseriesGroupByProtocolQueryType$unspec._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType uri = RadarGetDnsTimeseriesGroupByProtocolQueryType._('URI');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType uri = RadarGetDnsTimeseriesGroupByProtocolQueryType$uri._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType wks = RadarGetDnsTimeseriesGroupByProtocolQueryType._('WKS');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType wks = RadarGetDnsTimeseriesGroupByProtocolQueryType$wks._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType x25 = RadarGetDnsTimeseriesGroupByProtocolQueryType._('X25');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType x25 = RadarGetDnsTimeseriesGroupByProtocolQueryType$x25._();
 
-static const RadarGetDnsTimeseriesGroupByProtocolQueryType zonemd = RadarGetDnsTimeseriesGroupByProtocolQueryType._('ZONEMD');
+static const RadarGetDnsTimeseriesGroupByProtocolQueryType zonemd = RadarGetDnsTimeseriesGroupByProtocolQueryType$zonemd._();
 
 static const List<RadarGetDnsTimeseriesGroupByProtocolQueryType> values = [a, aaaa, a6, afsdb, any, apl, atma, axfr, caa, cdnskey, cds, cert, cname, csync, dhcid, dlv, dname, dnskey, doa, ds, eid, eui48, eui64, gpos, gid, hinfo, hip, https, ipseckey, isdn, ixfr, key, kx, l32, l64, loc, lp, maila, mailb, mb, md, mf, mg, minfo, mr, mx, naptr, nb, nbstat, nid, nimloc, ninfo, ns, nsap, nsec, nsec3, nsec3Param, $null, nxt, openpgpkey, opt, ptr, px, rkey, rp, rrsig, rt, sig, sink, smimea, soa, spf, srv, sshfp, svcb, ta, talink, tkey, tlsa, tsig, txt, uinfo, uid, unspec, uri, wks, x25, zonemd];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -369,12 +368,809 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetDnsTimeseriesGroupByProtocolQueryType$Unknown; } 
+@override String toString() => 'RadarGetDnsTimeseriesGroupByProtocolQueryType($value)';
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$a extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$a._();
+
+@override String get value => 'A';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$a;
+
+@override int get hashCode => 'A'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$aaaa extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$aaaa._();
+
+@override String get value => 'AAAA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$aaaa;
+
+@override int get hashCode => 'AAAA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$a6 extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$a6._();
+
+@override String get value => 'A6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$a6;
+
+@override int get hashCode => 'A6'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$afsdb extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$afsdb._();
+
+@override String get value => 'AFSDB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$afsdb;
+
+@override int get hashCode => 'AFSDB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$any extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$any._();
+
+@override String get value => 'ANY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$any;
+
+@override int get hashCode => 'ANY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$apl extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$apl._();
+
+@override String get value => 'APL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$apl;
+
+@override int get hashCode => 'APL'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$atma extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$atma._();
+
+@override String get value => 'ATMA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$atma;
+
+@override int get hashCode => 'ATMA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$axfr extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$axfr._();
+
+@override String get value => 'AXFR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$axfr;
+
+@override int get hashCode => 'AXFR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$caa extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$caa._();
+
+@override String get value => 'CAA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$caa;
+
+@override int get hashCode => 'CAA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$cdnskey extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$cdnskey._();
+
+@override String get value => 'CDNSKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$cdnskey;
+
+@override int get hashCode => 'CDNSKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$cds extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$cds._();
+
+@override String get value => 'CDS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$cds;
+
+@override int get hashCode => 'CDS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$cert extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$cert._();
+
+@override String get value => 'CERT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$cert;
+
+@override int get hashCode => 'CERT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$cname extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$cname._();
+
+@override String get value => 'CNAME';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$cname;
+
+@override int get hashCode => 'CNAME'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$csync extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$csync._();
+
+@override String get value => 'CSYNC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$csync;
+
+@override int get hashCode => 'CSYNC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$dhcid extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$dhcid._();
+
+@override String get value => 'DHCID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$dhcid;
+
+@override int get hashCode => 'DHCID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$dlv extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$dlv._();
+
+@override String get value => 'DLV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$dlv;
+
+@override int get hashCode => 'DLV'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$dname extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$dname._();
+
+@override String get value => 'DNAME';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$dname;
+
+@override int get hashCode => 'DNAME'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$dnskey extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$dnskey._();
+
+@override String get value => 'DNSKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$dnskey;
+
+@override int get hashCode => 'DNSKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$doa extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$doa._();
+
+@override String get value => 'DOA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$doa;
+
+@override int get hashCode => 'DOA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$ds extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$ds._();
+
+@override String get value => 'DS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$ds;
+
+@override int get hashCode => 'DS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$eid extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$eid._();
+
+@override String get value => 'EID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$eid;
+
+@override int get hashCode => 'EID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$eui48 extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$eui48._();
+
+@override String get value => 'EUI48';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$eui48;
+
+@override int get hashCode => 'EUI48'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$eui64 extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$eui64._();
+
+@override String get value => 'EUI64';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$eui64;
+
+@override int get hashCode => 'EUI64'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$gpos extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$gpos._();
+
+@override String get value => 'GPOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$gpos;
+
+@override int get hashCode => 'GPOS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$gid extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$gid._();
+
+@override String get value => 'GID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$gid;
+
+@override int get hashCode => 'GID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$hinfo extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$hinfo._();
+
+@override String get value => 'HINFO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$hinfo;
+
+@override int get hashCode => 'HINFO'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$hip extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$hip._();
+
+@override String get value => 'HIP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$hip;
+
+@override int get hashCode => 'HIP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$https extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$https._();
+
+@override String get value => 'HTTPS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$https;
+
+@override int get hashCode => 'HTTPS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$ipseckey extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$ipseckey._();
+
+@override String get value => 'IPSECKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$ipseckey;
+
+@override int get hashCode => 'IPSECKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$isdn extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$isdn._();
+
+@override String get value => 'ISDN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$isdn;
+
+@override int get hashCode => 'ISDN'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$ixfr extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$ixfr._();
+
+@override String get value => 'IXFR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$ixfr;
+
+@override int get hashCode => 'IXFR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$key extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$key._();
+
+@override String get value => 'KEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$key;
+
+@override int get hashCode => 'KEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$kx extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$kx._();
+
+@override String get value => 'KX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$kx;
+
+@override int get hashCode => 'KX'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$l32 extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$l32._();
+
+@override String get value => 'L32';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$l32;
+
+@override int get hashCode => 'L32'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$l64 extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$l64._();
+
+@override String get value => 'L64';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$l64;
+
+@override int get hashCode => 'L64'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$loc extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$loc._();
+
+@override String get value => 'LOC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$loc;
+
+@override int get hashCode => 'LOC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$lp extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$lp._();
+
+@override String get value => 'LP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$lp;
+
+@override int get hashCode => 'LP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$maila extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$maila._();
+
+@override String get value => 'MAILA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$maila;
+
+@override int get hashCode => 'MAILA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$mailb extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$mailb._();
+
+@override String get value => 'MAILB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$mailb;
+
+@override int get hashCode => 'MAILB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$mb extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$mb._();
+
+@override String get value => 'MB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$mb;
+
+@override int get hashCode => 'MB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$md extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$md._();
+
+@override String get value => 'MD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$md;
+
+@override int get hashCode => 'MD'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$mf extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$mf._();
+
+@override String get value => 'MF';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$mf;
+
+@override int get hashCode => 'MF'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$mg extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$mg._();
+
+@override String get value => 'MG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$mg;
+
+@override int get hashCode => 'MG'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$minfo extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$minfo._();
+
+@override String get value => 'MINFO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$minfo;
+
+@override int get hashCode => 'MINFO'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$mr extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$mr._();
+
+@override String get value => 'MR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$mr;
+
+@override int get hashCode => 'MR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$mx extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$mx._();
+
+@override String get value => 'MX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$mx;
+
+@override int get hashCode => 'MX'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$naptr extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$naptr._();
+
+@override String get value => 'NAPTR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$naptr;
+
+@override int get hashCode => 'NAPTR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$nb extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$nb._();
+
+@override String get value => 'NB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$nb;
+
+@override int get hashCode => 'NB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$nbstat extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$nbstat._();
+
+@override String get value => 'NBSTAT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$nbstat;
+
+@override int get hashCode => 'NBSTAT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$nid extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$nid._();
+
+@override String get value => 'NID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$nid;
+
+@override int get hashCode => 'NID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$nimloc extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$nimloc._();
+
+@override String get value => 'NIMLOC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$nimloc;
+
+@override int get hashCode => 'NIMLOC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$ninfo extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$ninfo._();
+
+@override String get value => 'NINFO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$ninfo;
+
+@override int get hashCode => 'NINFO'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$ns extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$ns._();
+
+@override String get value => 'NS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$ns;
+
+@override int get hashCode => 'NS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$nsap extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$nsap._();
+
+@override String get value => 'NSAP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$nsap;
+
+@override int get hashCode => 'NSAP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$nsec extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$nsec._();
+
+@override String get value => 'NSEC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$nsec;
+
+@override int get hashCode => 'NSEC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$nsec3 extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$nsec3._();
+
+@override String get value => 'NSEC3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$nsec3;
+
+@override int get hashCode => 'NSEC3'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$nsec3Param extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$nsec3Param._();
+
+@override String get value => 'NSEC3PARAM';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$nsec3Param;
+
+@override int get hashCode => 'NSEC3PARAM'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$$null extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$$null._();
+
+@override String get value => 'NULL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$$null;
+
+@override int get hashCode => 'NULL'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$nxt extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$nxt._();
+
+@override String get value => 'NXT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$nxt;
+
+@override int get hashCode => 'NXT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$openpgpkey extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$openpgpkey._();
+
+@override String get value => 'OPENPGPKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$openpgpkey;
+
+@override int get hashCode => 'OPENPGPKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$opt extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$opt._();
+
+@override String get value => 'OPT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$opt;
+
+@override int get hashCode => 'OPT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$ptr extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$ptr._();
+
+@override String get value => 'PTR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$ptr;
+
+@override int get hashCode => 'PTR'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$px extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$px._();
+
+@override String get value => 'PX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$px;
+
+@override int get hashCode => 'PX'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$rkey extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$rkey._();
+
+@override String get value => 'RKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$rkey;
+
+@override int get hashCode => 'RKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$rp extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$rp._();
+
+@override String get value => 'RP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$rp;
+
+@override int get hashCode => 'RP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$rrsig extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$rrsig._();
+
+@override String get value => 'RRSIG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$rrsig;
+
+@override int get hashCode => 'RRSIG'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$rt extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$rt._();
+
+@override String get value => 'RT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$rt;
+
+@override int get hashCode => 'RT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$sig extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$sig._();
+
+@override String get value => 'SIG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$sig;
+
+@override int get hashCode => 'SIG'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$sink extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$sink._();
+
+@override String get value => 'SINK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$sink;
+
+@override int get hashCode => 'SINK'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$smimea extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$smimea._();
+
+@override String get value => 'SMIMEA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$smimea;
+
+@override int get hashCode => 'SMIMEA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$soa extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$soa._();
+
+@override String get value => 'SOA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$soa;
+
+@override int get hashCode => 'SOA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$spf extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$spf._();
+
+@override String get value => 'SPF';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$spf;
+
+@override int get hashCode => 'SPF'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$srv extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$srv._();
+
+@override String get value => 'SRV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$srv;
+
+@override int get hashCode => 'SRV'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$sshfp extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$sshfp._();
+
+@override String get value => 'SSHFP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$sshfp;
+
+@override int get hashCode => 'SSHFP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$svcb extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$svcb._();
+
+@override String get value => 'SVCB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$svcb;
+
+@override int get hashCode => 'SVCB'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$ta extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$ta._();
+
+@override String get value => 'TA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$ta;
+
+@override int get hashCode => 'TA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$talink extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$talink._();
+
+@override String get value => 'TALINK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$talink;
+
+@override int get hashCode => 'TALINK'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$tkey extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$tkey._();
+
+@override String get value => 'TKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$tkey;
+
+@override int get hashCode => 'TKEY'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$tlsa extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$tlsa._();
+
+@override String get value => 'TLSA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$tlsa;
+
+@override int get hashCode => 'TLSA'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$tsig extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$tsig._();
+
+@override String get value => 'TSIG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$tsig;
+
+@override int get hashCode => 'TSIG'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$txt extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$txt._();
+
+@override String get value => 'TXT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$txt;
+
+@override int get hashCode => 'TXT'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$uinfo extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$uinfo._();
+
+@override String get value => 'UINFO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$uinfo;
+
+@override int get hashCode => 'UINFO'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$uid extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$uid._();
+
+@override String get value => 'UID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$uid;
+
+@override int get hashCode => 'UID'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$unspec extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$unspec._();
+
+@override String get value => 'UNSPEC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$unspec;
+
+@override int get hashCode => 'UNSPEC'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$uri extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$uri._();
+
+@override String get value => 'URI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$uri;
+
+@override int get hashCode => 'URI'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$wks extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$wks._();
+
+@override String get value => 'WKS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$wks;
+
+@override int get hashCode => 'WKS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$x25 extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$x25._();
+
+@override String get value => 'X25';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$x25;
+
+@override int get hashCode => 'X25'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$zonemd extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$zonemd._();
+
+@override String get value => 'ZONEMD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByProtocolQueryType$zonemd;
+
+@override int get hashCode => 'ZONEMD'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByProtocolQueryType$Unknown extends RadarGetDnsTimeseriesGroupByProtocolQueryType {const RadarGetDnsTimeseriesGroupByProtocolQueryType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetDnsTimeseriesGroupByProtocolQueryType && other.value == value;
+    other is RadarGetDnsTimeseriesGroupByProtocolQueryType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetDnsTimeseriesGroupByProtocolQueryType($value)';
 
  }

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookMetaDeleted (inline: Hook > Config)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ConfigContentType {const ConfigContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ConfigContentType {const ConfigContentType();
 
 factory ConfigContentType.fromJson(String json) { return switch (json) {
   'json' => $json,
   'form' => form,
-  _ => ConfigContentType._(json),
+  _ => ConfigContentType$Unknown(json),
 }; }
 
-static const ConfigContentType $json = ConfigContentType._('json');
+static const ConfigContentType $json = ConfigContentType$$json._();
 
-static const ConfigContentType form = ConfigContentType._('form');
+static const ConfigContentType form = ConfigContentType$form._();
 
 static const List<ConfigContentType> values = [$json, form];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConfigContentType$Unknown; } 
+@override String toString() => 'ConfigContentType($value)';
+
+ }
+@immutable final class ConfigContentType$$json extends ConfigContentType {const ConfigContentType$$json._();
+
+@override String get value => 'json';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConfigContentType$$json;
+
+@override int get hashCode => 'json'.hashCode;
+
+ }
+@immutable final class ConfigContentType$form extends ConfigContentType {const ConfigContentType$form._();
+
+@override String get value => 'form';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConfigContentType$form;
+
+@override int get hashCode => 'form'.hashCode;
+
+ }
+@immutable final class ConfigContentType$Unknown extends ConfigContentType {const ConfigContentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConfigContentType && other.value == value;
+    other is ConfigContentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConfigContentType($value)';
 
  }
 @immutable final class HookConfig {const HookConfig({required this.contentType, required this.insecureSsl, required this.url, this.secret, });

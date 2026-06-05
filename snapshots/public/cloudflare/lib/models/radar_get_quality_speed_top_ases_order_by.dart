@@ -2,7 +2,7 @@
 // Source: #/components/schemas/RadarGetQualitySpeedTopAsesOrderBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the metric to order the results by.
-@immutable final class RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy._(this.value);
+sealed class RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy();
 
 factory RadarGetQualitySpeedTopAsesOrderBy.fromJson(String json) { return switch (json) {
   'BANDWIDTH_DOWNLOAD' => bandwidthDownload,
@@ -11,25 +11,24 @@ factory RadarGetQualitySpeedTopAsesOrderBy.fromJson(String json) { return switch
   'LATENCY_LOADED' => latencyLoaded,
   'JITTER_IDLE' => jitterIdle,
   'JITTER_LOADED' => jitterLoaded,
-  _ => RadarGetQualitySpeedTopAsesOrderBy._(json),
+  _ => RadarGetQualitySpeedTopAsesOrderBy$Unknown(json),
 }; }
 
-static const RadarGetQualitySpeedTopAsesOrderBy bandwidthDownload = RadarGetQualitySpeedTopAsesOrderBy._('BANDWIDTH_DOWNLOAD');
+static const RadarGetQualitySpeedTopAsesOrderBy bandwidthDownload = RadarGetQualitySpeedTopAsesOrderBy$bandwidthDownload._();
 
-static const RadarGetQualitySpeedTopAsesOrderBy bandwidthUpload = RadarGetQualitySpeedTopAsesOrderBy._('BANDWIDTH_UPLOAD');
+static const RadarGetQualitySpeedTopAsesOrderBy bandwidthUpload = RadarGetQualitySpeedTopAsesOrderBy$bandwidthUpload._();
 
-static const RadarGetQualitySpeedTopAsesOrderBy latencyIdle = RadarGetQualitySpeedTopAsesOrderBy._('LATENCY_IDLE');
+static const RadarGetQualitySpeedTopAsesOrderBy latencyIdle = RadarGetQualitySpeedTopAsesOrderBy$latencyIdle._();
 
-static const RadarGetQualitySpeedTopAsesOrderBy latencyLoaded = RadarGetQualitySpeedTopAsesOrderBy._('LATENCY_LOADED');
+static const RadarGetQualitySpeedTopAsesOrderBy latencyLoaded = RadarGetQualitySpeedTopAsesOrderBy$latencyLoaded._();
 
-static const RadarGetQualitySpeedTopAsesOrderBy jitterIdle = RadarGetQualitySpeedTopAsesOrderBy._('JITTER_IDLE');
+static const RadarGetQualitySpeedTopAsesOrderBy jitterIdle = RadarGetQualitySpeedTopAsesOrderBy$jitterIdle._();
 
-static const RadarGetQualitySpeedTopAsesOrderBy jitterLoaded = RadarGetQualitySpeedTopAsesOrderBy._('JITTER_LOADED');
+static const RadarGetQualitySpeedTopAsesOrderBy jitterLoaded = RadarGetQualitySpeedTopAsesOrderBy$jitterLoaded._();
 
 static const List<RadarGetQualitySpeedTopAsesOrderBy> values = [bandwidthDownload, bandwidthUpload, latencyIdle, latencyLoaded, jitterIdle, jitterLoaded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,12 +41,71 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetQualitySpeedTopAsesOrderBy$Unknown; } 
+@override String toString() => 'RadarGetQualitySpeedTopAsesOrderBy($value)';
+
+ }
+@immutable final class RadarGetQualitySpeedTopAsesOrderBy$bandwidthDownload extends RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy$bandwidthDownload._();
+
+@override String get value => 'BANDWIDTH_DOWNLOAD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetQualitySpeedTopAsesOrderBy$bandwidthDownload;
+
+@override int get hashCode => 'BANDWIDTH_DOWNLOAD'.hashCode;
+
+ }
+@immutable final class RadarGetQualitySpeedTopAsesOrderBy$bandwidthUpload extends RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy$bandwidthUpload._();
+
+@override String get value => 'BANDWIDTH_UPLOAD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetQualitySpeedTopAsesOrderBy$bandwidthUpload;
+
+@override int get hashCode => 'BANDWIDTH_UPLOAD'.hashCode;
+
+ }
+@immutable final class RadarGetQualitySpeedTopAsesOrderBy$latencyIdle extends RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy$latencyIdle._();
+
+@override String get value => 'LATENCY_IDLE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetQualitySpeedTopAsesOrderBy$latencyIdle;
+
+@override int get hashCode => 'LATENCY_IDLE'.hashCode;
+
+ }
+@immutable final class RadarGetQualitySpeedTopAsesOrderBy$latencyLoaded extends RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy$latencyLoaded._();
+
+@override String get value => 'LATENCY_LOADED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetQualitySpeedTopAsesOrderBy$latencyLoaded;
+
+@override int get hashCode => 'LATENCY_LOADED'.hashCode;
+
+ }
+@immutable final class RadarGetQualitySpeedTopAsesOrderBy$jitterIdle extends RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy$jitterIdle._();
+
+@override String get value => 'JITTER_IDLE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetQualitySpeedTopAsesOrderBy$jitterIdle;
+
+@override int get hashCode => 'JITTER_IDLE'.hashCode;
+
+ }
+@immutable final class RadarGetQualitySpeedTopAsesOrderBy$jitterLoaded extends RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy$jitterLoaded._();
+
+@override String get value => 'JITTER_LOADED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetQualitySpeedTopAsesOrderBy$jitterLoaded;
+
+@override int get hashCode => 'JITTER_LOADED'.hashCode;
+
+ }
+@immutable final class RadarGetQualitySpeedTopAsesOrderBy$Unknown extends RadarGetQualitySpeedTopAsesOrderBy {const RadarGetQualitySpeedTopAsesOrderBy$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetQualitySpeedTopAsesOrderBy && other.value == value;
+    other is RadarGetQualitySpeedTopAsesOrderBy$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetQualitySpeedTopAsesOrderBy($value)';
 
  }

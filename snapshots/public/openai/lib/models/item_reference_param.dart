@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ItemReferenceParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of item to reference. Always `item_reference`.
-@immutable final class ItemReferenceParamType {const ItemReferenceParamType._(this.value);
+sealed class ItemReferenceParamType {const ItemReferenceParamType();
 
 factory ItemReferenceParamType.fromJson(String json) { return switch (json) {
   'item_reference' => itemReference,
-  _ => ItemReferenceParamType._(json),
+  _ => ItemReferenceParamType$Unknown(json),
 }; }
 
-static const ItemReferenceParamType itemReference = ItemReferenceParamType._('item_reference');
+static const ItemReferenceParamType itemReference = ItemReferenceParamType$itemReference._();
 
 static const List<ItemReferenceParamType> values = [itemReference];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ItemReferenceParamType$Unknown; } 
+@override String toString() => 'ItemReferenceParamType($value)';
+
+ }
+@immutable final class ItemReferenceParamType$itemReference extends ItemReferenceParamType {const ItemReferenceParamType$itemReference._();
+
+@override String get value => 'item_reference';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemReferenceParamType$itemReference;
+
+@override int get hashCode => 'item_reference'.hashCode;
+
+ }
+@immutable final class ItemReferenceParamType$Unknown extends ItemReferenceParamType {const ItemReferenceParamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ItemReferenceParamType && other.value == value;
+    other is ItemReferenceParamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ItemReferenceParamType($value)';
 
  }
 /// An internal identifier for an item to reference.

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/UpdateParticipantRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_participant_request/wait_method.dart';import 'package:pub_twilio_api_v2010/models/update_conference_request/announce_method.dart';/// The HTTP method we should use to call `hold_url`. Can be: `GET` or `POST` and the default is `GET`.
-@immutable final class HoldMethod {const HoldMethod._(this.value);
+sealed class HoldMethod {const HoldMethod();
 
 factory HoldMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => HoldMethod._(json),
+  _ => HoldMethod$Unknown(json),
 }; }
 
-static const HoldMethod $get = HoldMethod._('GET');
+static const HoldMethod $get = HoldMethod$$get._();
 
-static const HoldMethod post = HoldMethod._('POST');
+static const HoldMethod post = HoldMethod$post._();
 
 static const List<HoldMethod> values = [$get, post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is HoldMethod$Unknown; } 
+@override String toString() => 'HoldMethod($value)';
+
+ }
+@immutable final class HoldMethod$$get extends HoldMethod {const HoldMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HoldMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class HoldMethod$post extends HoldMethod {const HoldMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HoldMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class HoldMethod$Unknown extends HoldMethod {const HoldMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is HoldMethod && other.value == value;
+    other is HoldMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'HoldMethod($value)';
 
  }
 @immutable final class UpdateParticipantRequest {const UpdateParticipantRequest({this.muted, this.hold, this.holdUrl, this.holdMethod, this.announceUrl, this.announceMethod, this.waitUrl, this.waitMethod, this.beepOnExit, this.endConferenceOnExit, this.coaching, this.callSidToCoach, });

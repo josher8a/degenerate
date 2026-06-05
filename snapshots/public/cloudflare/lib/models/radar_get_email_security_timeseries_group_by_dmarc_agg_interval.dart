@@ -2,28 +2,27 @@
 // Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-@immutable final class RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval {const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval._(this.value);
+sealed class RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval {const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval();
 
 factory RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval.fromJson(String json) { return switch (json) {
   '15m' => $15m,
   '1h' => $1h,
   '1d' => $1d,
   '1w' => $1w,
-  _ => RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval._(json),
+  _ => RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$Unknown(json),
 }; }
 
-static const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval $15m = RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval._('15m');
+static const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval $15m = RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$15m._();
 
-static const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval $1h = RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval._('1h');
+static const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval $1h = RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$1h._();
 
-static const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval $1d = RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval._('1d');
+static const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval $1d = RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$1d._();
 
-static const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval $1w = RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval._('1w');
+static const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval $1w = RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$1w._();
 
 static const List<RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval> values = [$15m, $1h, $1d, $1w];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$Unknown; } 
+@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval($value)';
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$15m extends RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval {const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$15m._();
+
+@override String get value => '15m';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$15m;
+
+@override int get hashCode => '15m'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$1h extends RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval {const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$1h._();
+
+@override String get value => '1h';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$1h;
+
+@override int get hashCode => '1h'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$1d extends RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval {const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$1d._();
+
+@override String get value => '1d';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$1d;
+
+@override int get hashCode => '1d'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$1w extends RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval {const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$1w._();
+
+@override String get value => '1w';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$$1w;
+
+@override int get hashCode => '1w'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$Unknown extends RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval {const RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval && other.value == value;
+    other is RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupByDmarcAggInterval($value)';
 
  }

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ExactDataEntry
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ExactDataEntryType {const ExactDataEntryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ExactDataEntryType {const ExactDataEntryType();
 
 factory ExactDataEntryType.fromJson(String json) { return switch (json) {
   'exact_data' => exactData,
-  _ => ExactDataEntryType._(json),
+  _ => ExactDataEntryType$Unknown(json),
 }; }
 
-static const ExactDataEntryType exactData = ExactDataEntryType._('exact_data');
+static const ExactDataEntryType exactData = ExactDataEntryType$exactData._();
 
 static const List<ExactDataEntryType> values = [exactData];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ExactDataEntryType$Unknown; } 
+@override String toString() => 'ExactDataEntryType($value)';
+
+ }
+@immutable final class ExactDataEntryType$exactData extends ExactDataEntryType {const ExactDataEntryType$exactData._();
+
+@override String get value => 'exact_data';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ExactDataEntryType$exactData;
+
+@override int get hashCode => 'exact_data'.hashCode;
+
+ }
+@immutable final class ExactDataEntryType$Unknown extends ExactDataEntryType {const ExactDataEntryType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ExactDataEntryType && other.value == value;
+    other is ExactDataEntryType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ExactDataEntryType($value)';
 
  }
 @immutable final class ExactDataEntry {const ExactDataEntry({required this.caseSensitive, required this.createdAt, required this.enabled, required this.id, required this.name, required this.secret, required this.updatedAt, required this.type, });

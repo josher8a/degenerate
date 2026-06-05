@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MconnEvent (inline: FinishAttestationFailure)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Failed attestation
-@immutable final class FinishAttestationFailureK {const FinishAttestationFailureK._(this.value);
+sealed class FinishAttestationFailureK {const FinishAttestationFailureK();
 
 factory FinishAttestationFailureK.fromJson(String json) { return switch (json) {
   'FinishAttestationFailure' => finishAttestationFailure,
-  _ => FinishAttestationFailureK._(json),
+  _ => FinishAttestationFailureK$Unknown(json),
 }; }
 
-static const FinishAttestationFailureK finishAttestationFailure = FinishAttestationFailureK._('FinishAttestationFailure');
+static const FinishAttestationFailureK finishAttestationFailure = FinishAttestationFailureK$finishAttestationFailure._();
 
 static const List<FinishAttestationFailureK> values = [finishAttestationFailure];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FinishAttestationFailureK$Unknown; } 
+@override String toString() => 'FinishAttestationFailureK($value)';
+
+ }
+@immutable final class FinishAttestationFailureK$finishAttestationFailure extends FinishAttestationFailureK {const FinishAttestationFailureK$finishAttestationFailure._();
+
+@override String get value => 'FinishAttestationFailure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinishAttestationFailureK$finishAttestationFailure;
+
+@override int get hashCode => 'FinishAttestationFailure'.hashCode;
+
+ }
+@immutable final class FinishAttestationFailureK$Unknown extends FinishAttestationFailureK {const FinishAttestationFailureK$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FinishAttestationFailureK && other.value == value;
+    other is FinishAttestationFailureK$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FinishAttestationFailureK($value)';
 
  }
 @immutable final class FinishAttestationFailure {const FinishAttestationFailure({required this.k});

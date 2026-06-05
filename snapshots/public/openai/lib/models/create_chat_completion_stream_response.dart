@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CreateChatCompletionStreamResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/completion_usage.dart';import 'package:pub_openai/models/create_chat_completion_stream_response/create_chat_completion_stream_response_choices.dart';import 'package:pub_openai/models/service_tier.dart';/// The object type, which is always `chat.completion.chunk`.
-@immutable final class CreateChatCompletionStreamResponseObject {const CreateChatCompletionStreamResponseObject._(this.value);
+sealed class CreateChatCompletionStreamResponseObject {const CreateChatCompletionStreamResponseObject();
 
 factory CreateChatCompletionStreamResponseObject.fromJson(String json) { return switch (json) {
   'chat.completion.chunk' => chatCompletionChunk,
-  _ => CreateChatCompletionStreamResponseObject._(json),
+  _ => CreateChatCompletionStreamResponseObject$Unknown(json),
 }; }
 
-static const CreateChatCompletionStreamResponseObject chatCompletionChunk = CreateChatCompletionStreamResponseObject._('chat.completion.chunk');
+static const CreateChatCompletionStreamResponseObject chatCompletionChunk = CreateChatCompletionStreamResponseObject$chatCompletionChunk._();
 
 static const List<CreateChatCompletionStreamResponseObject> values = [chatCompletionChunk];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateChatCompletionStreamResponseObject$Unknown; } 
+@override String toString() => 'CreateChatCompletionStreamResponseObject($value)';
+
+ }
+@immutable final class CreateChatCompletionStreamResponseObject$chatCompletionChunk extends CreateChatCompletionStreamResponseObject {const CreateChatCompletionStreamResponseObject$chatCompletionChunk._();
+
+@override String get value => 'chat.completion.chunk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateChatCompletionStreamResponseObject$chatCompletionChunk;
+
+@override int get hashCode => 'chat.completion.chunk'.hashCode;
+
+ }
+@immutable final class CreateChatCompletionStreamResponseObject$Unknown extends CreateChatCompletionStreamResponseObject {const CreateChatCompletionStreamResponseObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateChatCompletionStreamResponseObject && other.value == value;
+    other is CreateChatCompletionStreamResponseObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateChatCompletionStreamResponseObject($value)';
 
  }
 /// Represents a streamed chunk of a chat completion response returned

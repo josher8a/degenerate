@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStepStreamEvent (inline: ThreadRunStepFailed)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';@immutable final class ThreadRunStepFailedEvent {const ThreadRunStepFailedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';sealed class ThreadRunStepFailedEvent {const ThreadRunStepFailedEvent();
 
 factory ThreadRunStepFailedEvent.fromJson(String json) { return switch (json) {
   'thread.run.step.failed' => threadRunStepFailed,
-  _ => ThreadRunStepFailedEvent._(json),
+  _ => ThreadRunStepFailedEvent$Unknown(json),
 }; }
 
-static const ThreadRunStepFailedEvent threadRunStepFailed = ThreadRunStepFailedEvent._('thread.run.step.failed');
+static const ThreadRunStepFailedEvent threadRunStepFailed = ThreadRunStepFailedEvent$threadRunStepFailed._();
 
 static const List<ThreadRunStepFailedEvent> values = [threadRunStepFailed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunStepFailedEvent$Unknown; } 
+@override String toString() => 'ThreadRunStepFailedEvent($value)';
+
+ }
+@immutable final class ThreadRunStepFailedEvent$threadRunStepFailed extends ThreadRunStepFailedEvent {const ThreadRunStepFailedEvent$threadRunStepFailed._();
+
+@override String get value => 'thread.run.step.failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunStepFailedEvent$threadRunStepFailed;
+
+@override int get hashCode => 'thread.run.step.failed'.hashCode;
+
+ }
+@immutable final class ThreadRunStepFailedEvent$Unknown extends ThreadRunStepFailedEvent {const ThreadRunStepFailedEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunStepFailedEvent && other.value == value;
+    other is ThreadRunStepFailedEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunStepFailedEvent($value)';
 
  }
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) fails.

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStepStreamEvent (inline: ThreadRunStepCreated)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';@immutable final class ThreadRunStepCreatedEvent {const ThreadRunStepCreatedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';sealed class ThreadRunStepCreatedEvent {const ThreadRunStepCreatedEvent();
 
 factory ThreadRunStepCreatedEvent.fromJson(String json) { return switch (json) {
   'thread.run.step.created' => threadRunStepCreated,
-  _ => ThreadRunStepCreatedEvent._(json),
+  _ => ThreadRunStepCreatedEvent$Unknown(json),
 }; }
 
-static const ThreadRunStepCreatedEvent threadRunStepCreated = ThreadRunStepCreatedEvent._('thread.run.step.created');
+static const ThreadRunStepCreatedEvent threadRunStepCreated = ThreadRunStepCreatedEvent$threadRunStepCreated._();
 
 static const List<ThreadRunStepCreatedEvent> values = [threadRunStepCreated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunStepCreatedEvent$Unknown; } 
+@override String toString() => 'ThreadRunStepCreatedEvent($value)';
+
+ }
+@immutable final class ThreadRunStepCreatedEvent$threadRunStepCreated extends ThreadRunStepCreatedEvent {const ThreadRunStepCreatedEvent$threadRunStepCreated._();
+
+@override String get value => 'thread.run.step.created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunStepCreatedEvent$threadRunStepCreated;
+
+@override int get hashCode => 'thread.run.step.created'.hashCode;
+
+ }
+@immutable final class ThreadRunStepCreatedEvent$Unknown extends ThreadRunStepCreatedEvent {const ThreadRunStepCreatedEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunStepCreatedEvent && other.value == value;
+    other is ThreadRunStepCreatedEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunStepCreatedEvent($value)';
 
  }
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is created.

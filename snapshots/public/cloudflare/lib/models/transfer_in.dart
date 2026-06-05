@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TransferIn
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Form of authorization has been accepted by the registrant.
-@immutable final class AcceptFoa {const AcceptFoa._(this.value);
+sealed class AcceptFoa {const AcceptFoa();
 
 factory AcceptFoa.fromJson(String json) { return switch (json) {
   'needed' => needed,
   'ok' => ok,
-  _ => AcceptFoa._(json),
+  _ => AcceptFoa$Unknown(json),
 }; }
 
-static const AcceptFoa needed = AcceptFoa._('needed');
+static const AcceptFoa needed = AcceptFoa$needed._();
 
-static const AcceptFoa ok = AcceptFoa._('ok');
+static const AcceptFoa ok = AcceptFoa$ok._();
 
 static const List<AcceptFoa> values = [needed, ok];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,17 +25,40 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is AcceptFoa && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is AcceptFoa$Unknown; } 
 @override String toString() => 'AcceptFoa($value)';
 
  }
+@immutable final class AcceptFoa$needed extends AcceptFoa {const AcceptFoa$needed._();
+
+@override String get value => 'needed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AcceptFoa$needed;
+
+@override int get hashCode => 'needed'.hashCode;
+
+ }
+@immutable final class AcceptFoa$ok extends AcceptFoa {const AcceptFoa$ok._();
+
+@override String get value => 'ok';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AcceptFoa$ok;
+
+@override int get hashCode => 'ok'.hashCode;
+
+ }
+@immutable final class AcceptFoa$Unknown extends AcceptFoa {const AcceptFoa$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AcceptFoa$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Shows transfer status with the registry.
-@immutable final class ApproveTransfer {const ApproveTransfer._(this.value);
+sealed class ApproveTransfer {const ApproveTransfer();
 
 factory ApproveTransfer.fromJson(String json) { return switch (json) {
   'needed' => needed,
@@ -45,25 +67,24 @@ factory ApproveTransfer.fromJson(String json) { return switch (json) {
   'trying' => trying,
   'rejected' => rejected,
   'unknown' => unknown,
-  _ => ApproveTransfer._(json),
+  _ => ApproveTransfer$Unknown(json),
 }; }
 
-static const ApproveTransfer needed = ApproveTransfer._('needed');
+static const ApproveTransfer needed = ApproveTransfer$needed._();
 
-static const ApproveTransfer ok = ApproveTransfer._('ok');
+static const ApproveTransfer ok = ApproveTransfer$ok._();
 
-static const ApproveTransfer pending = ApproveTransfer._('pending');
+static const ApproveTransfer pending = ApproveTransfer$pending._();
 
-static const ApproveTransfer trying = ApproveTransfer._('trying');
+static const ApproveTransfer trying = ApproveTransfer$trying._();
 
-static const ApproveTransfer rejected = ApproveTransfer._('rejected');
+static const ApproveTransfer rejected = ApproveTransfer$rejected._();
 
-static const ApproveTransfer unknown = ApproveTransfer._('unknown');
+static const ApproveTransfer unknown = ApproveTransfer$unknown._();
 
 static const List<ApproveTransfer> values = [needed, ok, pending, trying, rejected, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -76,35 +97,93 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ApproveTransfer && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ApproveTransfer$Unknown; } 
 @override String toString() => 'ApproveTransfer($value)';
 
  }
+@immutable final class ApproveTransfer$needed extends ApproveTransfer {const ApproveTransfer$needed._();
+
+@override String get value => 'needed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApproveTransfer$needed;
+
+@override int get hashCode => 'needed'.hashCode;
+
+ }
+@immutable final class ApproveTransfer$ok extends ApproveTransfer {const ApproveTransfer$ok._();
+
+@override String get value => 'ok';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApproveTransfer$ok;
+
+@override int get hashCode => 'ok'.hashCode;
+
+ }
+@immutable final class ApproveTransfer$pending extends ApproveTransfer {const ApproveTransfer$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApproveTransfer$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class ApproveTransfer$trying extends ApproveTransfer {const ApproveTransfer$trying._();
+
+@override String get value => 'trying';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApproveTransfer$trying;
+
+@override int get hashCode => 'trying'.hashCode;
+
+ }
+@immutable final class ApproveTransfer$rejected extends ApproveTransfer {const ApproveTransfer$rejected._();
+
+@override String get value => 'rejected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApproveTransfer$rejected;
+
+@override int get hashCode => 'rejected'.hashCode;
+
+ }
+@immutable final class ApproveTransfer$unknown extends ApproveTransfer {const ApproveTransfer$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApproveTransfer$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class ApproveTransfer$Unknown extends ApproveTransfer {const ApproveTransfer$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ApproveTransfer$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Privacy guards are disabled at the foreign registrar.
-@immutable final class DisablePrivacy {const DisablePrivacy._(this.value);
+sealed class DisablePrivacy {const DisablePrivacy();
 
 factory DisablePrivacy.fromJson(String json) { return switch (json) {
   'needed' => needed,
   'ok' => ok,
   'unknown' => unknown,
-  _ => DisablePrivacy._(json),
+  _ => DisablePrivacy$Unknown(json),
 }; }
 
-static const DisablePrivacy needed = DisablePrivacy._('needed');
+static const DisablePrivacy needed = DisablePrivacy$needed._();
 
-static const DisablePrivacy ok = DisablePrivacy._('ok');
+static const DisablePrivacy ok = DisablePrivacy$ok._();
 
-static const DisablePrivacy unknown = DisablePrivacy._('unknown');
+static const DisablePrivacy unknown = DisablePrivacy$unknown._();
 
 static const List<DisablePrivacy> values = [needed, ok, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -114,17 +193,49 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DisablePrivacy && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is DisablePrivacy$Unknown; } 
 @override String toString() => 'DisablePrivacy($value)';
 
  }
+@immutable final class DisablePrivacy$needed extends DisablePrivacy {const DisablePrivacy$needed._();
+
+@override String get value => 'needed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisablePrivacy$needed;
+
+@override int get hashCode => 'needed'.hashCode;
+
+ }
+@immutable final class DisablePrivacy$ok extends DisablePrivacy {const DisablePrivacy$ok._();
+
+@override String get value => 'ok';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisablePrivacy$ok;
+
+@override int get hashCode => 'ok'.hashCode;
+
+ }
+@immutable final class DisablePrivacy$unknown extends DisablePrivacy {const DisablePrivacy$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisablePrivacy$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class DisablePrivacy$Unknown extends DisablePrivacy {const DisablePrivacy$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DisablePrivacy$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Auth code has been entered and verified.
-@immutable final class EnterAuthCode {const EnterAuthCode._(this.value);
+sealed class EnterAuthCode {const EnterAuthCode();
 
 factory EnterAuthCode.fromJson(String json) { return switch (json) {
   'needed' => needed,
@@ -132,23 +243,22 @@ factory EnterAuthCode.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'trying' => trying,
   'rejected' => rejected,
-  _ => EnterAuthCode._(json),
+  _ => EnterAuthCode$Unknown(json),
 }; }
 
-static const EnterAuthCode needed = EnterAuthCode._('needed');
+static const EnterAuthCode needed = EnterAuthCode$needed._();
 
-static const EnterAuthCode ok = EnterAuthCode._('ok');
+static const EnterAuthCode ok = EnterAuthCode$ok._();
 
-static const EnterAuthCode pending = EnterAuthCode._('pending');
+static const EnterAuthCode pending = EnterAuthCode$pending._();
 
-static const EnterAuthCode trying = EnterAuthCode._('trying');
+static const EnterAuthCode trying = EnterAuthCode$trying._();
 
-static const EnterAuthCode rejected = EnterAuthCode._('rejected');
+static const EnterAuthCode rejected = EnterAuthCode$rejected._();
 
 static const List<EnterAuthCode> values = [needed, ok, pending, trying, rejected];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -160,17 +270,67 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is EnterAuthCode && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is EnterAuthCode$Unknown; } 
 @override String toString() => 'EnterAuthCode($value)';
 
  }
+@immutable final class EnterAuthCode$needed extends EnterAuthCode {const EnterAuthCode$needed._();
+
+@override String get value => 'needed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnterAuthCode$needed;
+
+@override int get hashCode => 'needed'.hashCode;
+
+ }
+@immutable final class EnterAuthCode$ok extends EnterAuthCode {const EnterAuthCode$ok._();
+
+@override String get value => 'ok';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnterAuthCode$ok;
+
+@override int get hashCode => 'ok'.hashCode;
+
+ }
+@immutable final class EnterAuthCode$pending extends EnterAuthCode {const EnterAuthCode$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnterAuthCode$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class EnterAuthCode$trying extends EnterAuthCode {const EnterAuthCode$trying._();
+
+@override String get value => 'trying';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnterAuthCode$trying;
+
+@override int get hashCode => 'trying'.hashCode;
+
+ }
+@immutable final class EnterAuthCode$rejected extends EnterAuthCode {const EnterAuthCode$rejected._();
+
+@override String get value => 'rejected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnterAuthCode$rejected;
+
+@override int get hashCode => 'rejected'.hashCode;
+
+ }
+@immutable final class EnterAuthCode$Unknown extends EnterAuthCode {const EnterAuthCode$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EnterAuthCode$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Domain is unlocked at the foreign registrar.
-@immutable final class UnlockDomain {const UnlockDomain._(this.value);
+sealed class UnlockDomain {const UnlockDomain();
 
 factory UnlockDomain.fromJson(String json) { return switch (json) {
   'needed' => needed,
@@ -178,23 +338,22 @@ factory UnlockDomain.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'trying' => trying,
   'unknown' => unknown,
-  _ => UnlockDomain._(json),
+  _ => UnlockDomain$Unknown(json),
 }; }
 
-static const UnlockDomain needed = UnlockDomain._('needed');
+static const UnlockDomain needed = UnlockDomain$needed._();
 
-static const UnlockDomain ok = UnlockDomain._('ok');
+static const UnlockDomain ok = UnlockDomain$ok._();
 
-static const UnlockDomain pending = UnlockDomain._('pending');
+static const UnlockDomain pending = UnlockDomain$pending._();
 
-static const UnlockDomain trying = UnlockDomain._('trying');
+static const UnlockDomain trying = UnlockDomain$trying._();
 
-static const UnlockDomain unknown = UnlockDomain._('unknown');
+static const UnlockDomain unknown = UnlockDomain$unknown._();
 
 static const List<UnlockDomain> values = [needed, ok, pending, trying, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -206,13 +365,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UnlockDomain$Unknown; } 
+@override String toString() => 'UnlockDomain($value)';
+
+ }
+@immutable final class UnlockDomain$needed extends UnlockDomain {const UnlockDomain$needed._();
+
+@override String get value => 'needed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UnlockDomain$needed;
+
+@override int get hashCode => 'needed'.hashCode;
+
+ }
+@immutable final class UnlockDomain$ok extends UnlockDomain {const UnlockDomain$ok._();
+
+@override String get value => 'ok';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UnlockDomain$ok;
+
+@override int get hashCode => 'ok'.hashCode;
+
+ }
+@immutable final class UnlockDomain$pending extends UnlockDomain {const UnlockDomain$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UnlockDomain$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class UnlockDomain$trying extends UnlockDomain {const UnlockDomain$trying._();
+
+@override String get value => 'trying';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UnlockDomain$trying;
+
+@override int get hashCode => 'trying'.hashCode;
+
+ }
+@immutable final class UnlockDomain$unknown extends UnlockDomain {const UnlockDomain$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UnlockDomain$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class UnlockDomain$Unknown extends UnlockDomain {const UnlockDomain$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UnlockDomain && other.value == value;
+    other is UnlockDomain$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UnlockDomain($value)';
 
  }
 /// Statuses for domain transfers into Cloudflare Registrar.

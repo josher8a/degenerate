@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookPullRequestReviewThreadUnresolved
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_unresolved/webhook_pull_request_review_thread_unresolved_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_unresolved/webhook_pull_request_review_thread_unresolved_thread.dart';@immutable final class WebhookPullRequestReviewThreadUnresolvedAction {const WebhookPullRequestReviewThreadUnresolvedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_unresolved/webhook_pull_request_review_thread_unresolved_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_review_thread_unresolved/webhook_pull_request_review_thread_unresolved_thread.dart';sealed class WebhookPullRequestReviewThreadUnresolvedAction {const WebhookPullRequestReviewThreadUnresolvedAction();
 
 factory WebhookPullRequestReviewThreadUnresolvedAction.fromJson(String json) { return switch (json) {
   'unresolved' => unresolved,
-  _ => WebhookPullRequestReviewThreadUnresolvedAction._(json),
+  _ => WebhookPullRequestReviewThreadUnresolvedAction$Unknown(json),
 }; }
 
-static const WebhookPullRequestReviewThreadUnresolvedAction unresolved = WebhookPullRequestReviewThreadUnresolvedAction._('unresolved');
+static const WebhookPullRequestReviewThreadUnresolvedAction unresolved = WebhookPullRequestReviewThreadUnresolvedAction$unresolved._();
 
 static const List<WebhookPullRequestReviewThreadUnresolvedAction> values = [unresolved];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookPullRequestReviewThreadUnresolvedAction$Unknown; } 
+@override String toString() => 'WebhookPullRequestReviewThreadUnresolvedAction($value)';
+
+ }
+@immutable final class WebhookPullRequestReviewThreadUnresolvedAction$unresolved extends WebhookPullRequestReviewThreadUnresolvedAction {const WebhookPullRequestReviewThreadUnresolvedAction$unresolved._();
+
+@override String get value => 'unresolved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestReviewThreadUnresolvedAction$unresolved;
+
+@override int get hashCode => 'unresolved'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestReviewThreadUnresolvedAction$Unknown extends WebhookPullRequestReviewThreadUnresolvedAction {const WebhookPullRequestReviewThreadUnresolvedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookPullRequestReviewThreadUnresolvedAction && other.value == value;
+    other is WebhookPullRequestReviewThreadUnresolvedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookPullRequestReviewThreadUnresolvedAction($value)';
 
  }
 @immutable final class WebhookPullRequestReviewThreadUnresolved {const WebhookPullRequestReviewThreadUnresolved({required this.action, required this.pullRequest, required this.repository, required this.thread, this.enterprise, this.installation, this.organization, this.sender, this.updatedAt, });

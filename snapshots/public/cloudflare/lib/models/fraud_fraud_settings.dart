@@ -2,22 +2,21 @@
 // Source: #/components/schemas/FraudFraudSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether Fraud User Profiles is enabled for the zone.
-@immutable final class FraudUserProfilesStatus {const FraudUserProfilesStatus._(this.value);
+sealed class FraudUserProfilesStatus {const FraudUserProfilesStatus();
 
 factory FraudUserProfilesStatus.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
-  _ => FraudUserProfilesStatus._(json),
+  _ => FraudUserProfilesStatus$Unknown(json),
 }; }
 
-static const FraudUserProfilesStatus enabled = FraudUserProfilesStatus._('enabled');
+static const FraudUserProfilesStatus enabled = FraudUserProfilesStatus$enabled._();
 
-static const FraudUserProfilesStatus disabled = FraudUserProfilesStatus._('disabled');
+static const FraudUserProfilesStatus disabled = FraudUserProfilesStatus$disabled._();
 
 static const List<FraudUserProfilesStatus> values = [enabled, disabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FraudUserProfilesStatus$Unknown; } 
+@override String toString() => 'FraudUserProfilesStatus($value)';
+
+ }
+@immutable final class FraudUserProfilesStatus$enabled extends FraudUserProfilesStatus {const FraudUserProfilesStatus$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FraudUserProfilesStatus$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class FraudUserProfilesStatus$disabled extends FraudUserProfilesStatus {const FraudUserProfilesStatus$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FraudUserProfilesStatus$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class FraudUserProfilesStatus$Unknown extends FraudUserProfilesStatus {const FraudUserProfilesStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FraudUserProfilesStatus && other.value == value;
+    other is FraudUserProfilesStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FraudUserProfilesStatus($value)';
 
  }
 @immutable final class FraudFraudSettings {const FraudFraudSettings({this.userProfiles, this.usernameExpressions, });

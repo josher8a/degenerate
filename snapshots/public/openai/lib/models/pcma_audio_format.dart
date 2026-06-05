@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PcmaAudioFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The audio format. Always `audio/pcma`.
-@immutable final class PcmaAudioFormatType {const PcmaAudioFormatType._(this.value);
+sealed class PcmaAudioFormatType {const PcmaAudioFormatType();
 
 factory PcmaAudioFormatType.fromJson(String json) { return switch (json) {
   'audio/pcma' => audioPcma,
-  _ => PcmaAudioFormatType._(json),
+  _ => PcmaAudioFormatType$Unknown(json),
 }; }
 
-static const PcmaAudioFormatType audioPcma = PcmaAudioFormatType._('audio/pcma');
+static const PcmaAudioFormatType audioPcma = PcmaAudioFormatType$audioPcma._();
 
 static const List<PcmaAudioFormatType> values = [audioPcma];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PcmaAudioFormatType$Unknown; } 
+@override String toString() => 'PcmaAudioFormatType($value)';
+
+ }
+@immutable final class PcmaAudioFormatType$audioPcma extends PcmaAudioFormatType {const PcmaAudioFormatType$audioPcma._();
+
+@override String get value => 'audio/pcma';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PcmaAudioFormatType$audioPcma;
+
+@override int get hashCode => 'audio/pcma'.hashCode;
+
+ }
+@immutable final class PcmaAudioFormatType$Unknown extends PcmaAudioFormatType {const PcmaAudioFormatType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PcmaAudioFormatType && other.value == value;
+    other is PcmaAudioFormatType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PcmaAudioFormatType($value)';
 
  }
 /// The G.711 A-law format.

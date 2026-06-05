@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PrivateDestination
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The L4 protocol of the destination. When omitted, both UDP and TCP traffic will match.
-@immutable final class L4Protocol {const L4Protocol._(this.value);
+sealed class L4Protocol {const L4Protocol();
 
 factory L4Protocol.fromJson(String json) { return switch (json) {
   'tcp' => tcp,
   'udp' => udp,
-  _ => L4Protocol._(json),
+  _ => L4Protocol$Unknown(json),
 }; }
 
-static const L4Protocol tcp = L4Protocol._('tcp');
+static const L4Protocol tcp = L4Protocol$tcp._();
 
-static const L4Protocol udp = L4Protocol._('udp');
+static const L4Protocol udp = L4Protocol$udp._();
 
 static const List<L4Protocol> values = [tcp, udp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,28 +25,50 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is L4Protocol && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is L4Protocol$Unknown; } 
 @override String toString() => 'L4Protocol($value)';
 
  }
-@immutable final class PrivateDestinationType {const PrivateDestinationType._(this.value);
+@immutable final class L4Protocol$tcp extends L4Protocol {const L4Protocol$tcp._();
+
+@override String get value => 'tcp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is L4Protocol$tcp;
+
+@override int get hashCode => 'tcp'.hashCode;
+
+ }
+@immutable final class L4Protocol$udp extends L4Protocol {const L4Protocol$udp._();
+
+@override String get value => 'udp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is L4Protocol$udp;
+
+@override int get hashCode => 'udp'.hashCode;
+
+ }
+@immutable final class L4Protocol$Unknown extends L4Protocol {const L4Protocol$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is L4Protocol$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class PrivateDestinationType {const PrivateDestinationType();
 
 factory PrivateDestinationType.fromJson(String json) { return switch (json) {
   'private' => private,
-  _ => PrivateDestinationType._(json),
+  _ => PrivateDestinationType$Unknown(json),
 }; }
 
-static const PrivateDestinationType private = PrivateDestinationType._('private');
+static const PrivateDestinationType private = PrivateDestinationType$private._();
 
 static const List<PrivateDestinationType> values = [private];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -55,13 +76,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PrivateDestinationType$Unknown; } 
+@override String toString() => 'PrivateDestinationType($value)';
+
+ }
+@immutable final class PrivateDestinationType$private extends PrivateDestinationType {const PrivateDestinationType$private._();
+
+@override String get value => 'private';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PrivateDestinationType$private;
+
+@override int get hashCode => 'private'.hashCode;
+
+ }
+@immutable final class PrivateDestinationType$Unknown extends PrivateDestinationType {const PrivateDestinationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PrivateDestinationType && other.value == value;
+    other is PrivateDestinationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PrivateDestinationType($value)';
 
  }
 @immutable final class PrivateDestination {const PrivateDestination({this.cidr, this.hostname, this.l4Protocol, this.portRange, this.type, this.vnetId, });

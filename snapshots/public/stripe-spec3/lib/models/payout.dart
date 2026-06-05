@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Payout
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';import 'package:pub_stripe_spec3/models/charge/charge_application_fee.dart';import 'package:pub_stripe_spec3/models/charge/failure_balance_transaction.dart';import 'package:pub_stripe_spec3/models/deleted_bank_account.dart';import 'package:pub_stripe_spec3/models/deleted_card.dart';import 'package:pub_stripe_spec3/models/payout/original_payout.dart';import 'package:pub_stripe_spec3/models/payout/payout_destination.dart';import 'package:pub_stripe_spec3/models/payout/reversed_by.dart';import 'package:pub_stripe_spec3/models/payouts_trace_id.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class PayoutObject {const PayoutObject._(this.value);
+sealed class PayoutObject {const PayoutObject();
 
 factory PayoutObject.fromJson(String json) { return switch (json) {
   'payout' => payout,
-  _ => PayoutObject._(json),
+  _ => PayoutObject$Unknown(json),
 }; }
 
-static const PayoutObject payout = PayoutObject._('payout');
+static const PayoutObject payout = PayoutObject$payout._();
 
 static const List<PayoutObject> values = [payout];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,35 +21,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PayoutObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PayoutObject$Unknown; } 
 @override String toString() => 'PayoutObject($value)';
 
  }
+@immutable final class PayoutObject$payout extends PayoutObject {const PayoutObject$payout._();
+
+@override String get value => 'payout';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PayoutObject$payout;
+
+@override int get hashCode => 'payout'.hashCode;
+
+ }
+@immutable final class PayoutObject$Unknown extends PayoutObject {const PayoutObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PayoutObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// If `completed`, you can use the [Balance Transactions API](https://docs.stripe.com/api/balance_transactions/list#balance_transaction_list-payout) to list all balance transactions that are paid out in this payout.
-@immutable final class ReconciliationStatus {const ReconciliationStatus._(this.value);
+sealed class ReconciliationStatus {const ReconciliationStatus();
 
 factory ReconciliationStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
   'in_progress' => inProgress,
   'not_applicable' => notApplicable,
-  _ => ReconciliationStatus._(json),
+  _ => ReconciliationStatus$Unknown(json),
 }; }
 
-static const ReconciliationStatus completed = ReconciliationStatus._('completed');
+static const ReconciliationStatus completed = ReconciliationStatus$completed._();
 
-static const ReconciliationStatus inProgress = ReconciliationStatus._('in_progress');
+static const ReconciliationStatus inProgress = ReconciliationStatus$inProgress._();
 
-static const ReconciliationStatus notApplicable = ReconciliationStatus._('not_applicable');
+static const ReconciliationStatus notApplicable = ReconciliationStatus$notApplicable._();
 
 static const List<ReconciliationStatus> values = [completed, inProgress, notApplicable];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,32 +72,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ReconciliationStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ReconciliationStatus$Unknown; } 
 @override String toString() => 'ReconciliationStatus($value)';
 
  }
+@immutable final class ReconciliationStatus$completed extends ReconciliationStatus {const ReconciliationStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReconciliationStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class ReconciliationStatus$inProgress extends ReconciliationStatus {const ReconciliationStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReconciliationStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class ReconciliationStatus$notApplicable extends ReconciliationStatus {const ReconciliationStatus$notApplicable._();
+
+@override String get value => 'not_applicable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReconciliationStatus$notApplicable;
+
+@override int get hashCode => 'not_applicable'.hashCode;
+
+ }
+@immutable final class ReconciliationStatus$Unknown extends ReconciliationStatus {const ReconciliationStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReconciliationStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Can be `bank_account` or `card`.
-@immutable final class PayoutType {const PayoutType._(this.value);
+sealed class PayoutType {const PayoutType();
 
 factory PayoutType.fromJson(String json) { return switch (json) {
   'bank_account' => bankAccount,
   'card' => card,
-  _ => PayoutType._(json),
+  _ => PayoutType$Unknown(json),
 }; }
 
-static const PayoutType bankAccount = PayoutType._('bank_account');
+static const PayoutType bankAccount = PayoutType$bankAccount._();
 
-static const PayoutType card = PayoutType._('card');
+static const PayoutType card = PayoutType$card._();
 
 static const List<PayoutType> values = [bankAccount, card];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -94,13 +137,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PayoutType$Unknown; } 
+@override String toString() => 'PayoutType($value)';
+
+ }
+@immutable final class PayoutType$bankAccount extends PayoutType {const PayoutType$bankAccount._();
+
+@override String get value => 'bank_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PayoutType$bankAccount;
+
+@override int get hashCode => 'bank_account'.hashCode;
+
+ }
+@immutable final class PayoutType$card extends PayoutType {const PayoutType$card._();
+
+@override String get value => 'card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PayoutType$card;
+
+@override int get hashCode => 'card'.hashCode;
+
+ }
+@immutable final class PayoutType$Unknown extends PayoutType {const PayoutType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PayoutType && other.value == value;
+    other is PayoutType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PayoutType($value)';
 
  }
 /// A `Payout` object is created when you receive funds from Stripe, or when you

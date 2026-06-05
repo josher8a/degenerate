@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat._(this.value);
+sealed class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat();
 
 factory RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat._(json),
+  _ => RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat$Unknown(json),
 }; }
 
-static const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat $json = RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat._('JSON');
+static const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat $json = RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat$$json._();
 
-static const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat csv = RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat._('CSV');
+static const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat csv = RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat$csv._();
 
 static const List<RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat$Unknown; } 
+@override String toString() => 'RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat($value)';
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat$$json extends RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat$csv extends RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat$Unknown extends RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat {const RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat && other.value == value;
+    other is RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetLeakedCredentialChecksTimeseriesGroupByBotClassFormat($value)';
 
  }

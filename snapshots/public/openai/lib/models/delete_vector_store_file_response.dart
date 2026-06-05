@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DeleteVectorStoreFileResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteVectorStoreFileResponseObject {const DeleteVectorStoreFileResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DeleteVectorStoreFileResponseObject {const DeleteVectorStoreFileResponseObject();
 
 factory DeleteVectorStoreFileResponseObject.fromJson(String json) { return switch (json) {
   'vector_store.file.deleted' => vectorStoreFileDeleted,
-  _ => DeleteVectorStoreFileResponseObject._(json),
+  _ => DeleteVectorStoreFileResponseObject$Unknown(json),
 }; }
 
-static const DeleteVectorStoreFileResponseObject vectorStoreFileDeleted = DeleteVectorStoreFileResponseObject._('vector_store.file.deleted');
+static const DeleteVectorStoreFileResponseObject vectorStoreFileDeleted = DeleteVectorStoreFileResponseObject$vectorStoreFileDeleted._();
 
 static const List<DeleteVectorStoreFileResponseObject> values = [vectorStoreFileDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeleteVectorStoreFileResponseObject$Unknown; } 
+@override String toString() => 'DeleteVectorStoreFileResponseObject($value)';
+
+ }
+@immutable final class DeleteVectorStoreFileResponseObject$vectorStoreFileDeleted extends DeleteVectorStoreFileResponseObject {const DeleteVectorStoreFileResponseObject$vectorStoreFileDeleted._();
+
+@override String get value => 'vector_store.file.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeleteVectorStoreFileResponseObject$vectorStoreFileDeleted;
+
+@override int get hashCode => 'vector_store.file.deleted'.hashCode;
+
+ }
+@immutable final class DeleteVectorStoreFileResponseObject$Unknown extends DeleteVectorStoreFileResponseObject {const DeleteVectorStoreFileResponseObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeleteVectorStoreFileResponseObject && other.value == value;
+    other is DeleteVectorStoreFileResponseObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeleteVectorStoreFileResponseObject($value)';
 
  }
 @immutable final class DeleteVectorStoreFileResponse {const DeleteVectorStoreFileResponse({required this.id, required this.deleted, required this.object, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TreasuryTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_transaction/entries.dart';import 'package:pub_stripe_spec3/models/treasury_transaction_entry/flow_type.dart';import 'package:pub_stripe_spec3/models/treasury_transactions_resource_abstract_transaction_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_transactions_resource_balance_impact.dart';import 'package:pub_stripe_spec3/models/treasury_transactions_resource_flow_details.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TreasuryTransactionObject {const TreasuryTransactionObject._(this.value);
+sealed class TreasuryTransactionObject {const TreasuryTransactionObject();
 
 factory TreasuryTransactionObject.fromJson(String json) { return switch (json) {
   'treasury.transaction' => treasuryTransaction,
-  _ => TreasuryTransactionObject._(json),
+  _ => TreasuryTransactionObject$Unknown(json),
 }; }
 
-static const TreasuryTransactionObject treasuryTransaction = TreasuryTransactionObject._('treasury.transaction');
+static const TreasuryTransactionObject treasuryTransaction = TreasuryTransactionObject$treasuryTransaction._();
 
 static const List<TreasuryTransactionObject> values = [treasuryTransaction];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,35 +21,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryTransactionObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TreasuryTransactionObject$Unknown; } 
 @override String toString() => 'TreasuryTransactionObject($value)';
 
  }
+@immutable final class TreasuryTransactionObject$treasuryTransaction extends TreasuryTransactionObject {const TreasuryTransactionObject$treasuryTransaction._();
+
+@override String get value => 'treasury.transaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryTransactionObject$treasuryTransaction;
+
+@override int get hashCode => 'treasury.transaction'.hashCode;
+
+ }
+@immutable final class TreasuryTransactionObject$Unknown extends TreasuryTransactionObject {const TreasuryTransactionObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryTransactionObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Status of the Transaction.
-@immutable final class TreasuryTransactionStatus {const TreasuryTransactionStatus._(this.value);
+sealed class TreasuryTransactionStatus {const TreasuryTransactionStatus();
 
 factory TreasuryTransactionStatus.fromJson(String json) { return switch (json) {
   'open' => open,
   'posted' => posted,
   'void' => $void,
-  _ => TreasuryTransactionStatus._(json),
+  _ => TreasuryTransactionStatus$Unknown(json),
 }; }
 
-static const TreasuryTransactionStatus open = TreasuryTransactionStatus._('open');
+static const TreasuryTransactionStatus open = TreasuryTransactionStatus$open._();
 
-static const TreasuryTransactionStatus posted = TreasuryTransactionStatus._('posted');
+static const TreasuryTransactionStatus posted = TreasuryTransactionStatus$posted._();
 
-static const TreasuryTransactionStatus $void = TreasuryTransactionStatus._('void');
+static const TreasuryTransactionStatus $void = TreasuryTransactionStatus$$void._();
 
 static const List<TreasuryTransactionStatus> values = [open, posted, $void];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,13 +72,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TreasuryTransactionStatus$Unknown; } 
+@override String toString() => 'TreasuryTransactionStatus($value)';
+
+ }
+@immutable final class TreasuryTransactionStatus$open extends TreasuryTransactionStatus {const TreasuryTransactionStatus$open._();
+
+@override String get value => 'open';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryTransactionStatus$open;
+
+@override int get hashCode => 'open'.hashCode;
+
+ }
+@immutable final class TreasuryTransactionStatus$posted extends TreasuryTransactionStatus {const TreasuryTransactionStatus$posted._();
+
+@override String get value => 'posted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryTransactionStatus$posted;
+
+@override int get hashCode => 'posted'.hashCode;
+
+ }
+@immutable final class TreasuryTransactionStatus$$void extends TreasuryTransactionStatus {const TreasuryTransactionStatus$$void._();
+
+@override String get value => 'void';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryTransactionStatus$$void;
+
+@override int get hashCode => 'void'.hashCode;
+
+ }
+@immutable final class TreasuryTransactionStatus$Unknown extends TreasuryTransactionStatus {const TreasuryTransactionStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryTransactionStatus && other.value == value;
+    other is TreasuryTransactionStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TreasuryTransactionStatus($value)';
 
  }
 /// Transactions represent changes to a [FinancialAccount's](https://api.stripe.com#financial_accounts) balance.

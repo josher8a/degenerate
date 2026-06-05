@@ -2,25 +2,24 @@
 // Source: #/components/schemas/AccountRecordingRecordingTranscription
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the transcription. Can be: `in-progress`, `completed`, `failed`.
-@immutable final class RecordingTranscriptionEnumStatus {const RecordingTranscriptionEnumStatus._(this.value);
+sealed class RecordingTranscriptionEnumStatus {const RecordingTranscriptionEnumStatus();
 
 factory RecordingTranscriptionEnumStatus.fromJson(String json) { return switch (json) {
   'in-progress' => inProgress,
   'completed' => completed,
   'failed' => failed,
-  _ => RecordingTranscriptionEnumStatus._(json),
+  _ => RecordingTranscriptionEnumStatus$Unknown(json),
 }; }
 
-static const RecordingTranscriptionEnumStatus inProgress = RecordingTranscriptionEnumStatus._('in-progress');
+static const RecordingTranscriptionEnumStatus inProgress = RecordingTranscriptionEnumStatus$inProgress._();
 
-static const RecordingTranscriptionEnumStatus completed = RecordingTranscriptionEnumStatus._('completed');
+static const RecordingTranscriptionEnumStatus completed = RecordingTranscriptionEnumStatus$completed._();
 
-static const RecordingTranscriptionEnumStatus failed = RecordingTranscriptionEnumStatus._('failed');
+static const RecordingTranscriptionEnumStatus failed = RecordingTranscriptionEnumStatus$failed._();
 
 static const List<RecordingTranscriptionEnumStatus> values = [inProgress, completed, failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RecordingTranscriptionEnumStatus$Unknown; } 
+@override String toString() => 'RecordingTranscriptionEnumStatus($value)';
+
+ }
+@immutable final class RecordingTranscriptionEnumStatus$inProgress extends RecordingTranscriptionEnumStatus {const RecordingTranscriptionEnumStatus$inProgress._();
+
+@override String get value => 'in-progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingTranscriptionEnumStatus$inProgress;
+
+@override int get hashCode => 'in-progress'.hashCode;
+
+ }
+@immutable final class RecordingTranscriptionEnumStatus$completed extends RecordingTranscriptionEnumStatus {const RecordingTranscriptionEnumStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingTranscriptionEnumStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class RecordingTranscriptionEnumStatus$failed extends RecordingTranscriptionEnumStatus {const RecordingTranscriptionEnumStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingTranscriptionEnumStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class RecordingTranscriptionEnumStatus$Unknown extends RecordingTranscriptionEnumStatus {const RecordingTranscriptionEnumStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RecordingTranscriptionEnumStatus && other.value == value;
+    other is RecordingTranscriptionEnumStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RecordingTranscriptionEnumStatus($value)';
 
  }
 @immutable final class AccountRecordingRecordingTranscription {const AccountRecordingRecordingTranscription({this.accountSid, this.apiVersion, this.dateCreated, this.dateUpdated, this.duration, this.price, this.priceUnit, this.recordingSid, this.sid, this.status, this.transcriptionText, this.type, this.uri, });

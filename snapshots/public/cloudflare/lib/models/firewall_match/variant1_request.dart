@@ -9,7 +9,7 @@ String toJson() => value;
 
 }
 /// An HTTP method or `_ALL_` to indicate all methods.
-@immutable final class FirewallMethods2 {const FirewallMethods2._(this.value);
+sealed class FirewallMethods2 {const FirewallMethods2();
 
 factory FirewallMethods2.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -19,27 +19,26 @@ factory FirewallMethods2.fromJson(String json) { return switch (json) {
   'PATCH' => patch,
   'HEAD' => head,
   '_ALL_' => all,
-  _ => FirewallMethods2._(json),
+  _ => FirewallMethods2$Unknown(json),
 }; }
 
-static const FirewallMethods2 $get = FirewallMethods2._('GET');
+static const FirewallMethods2 $get = FirewallMethods2$$get._();
 
-static const FirewallMethods2 post = FirewallMethods2._('POST');
+static const FirewallMethods2 post = FirewallMethods2$post._();
 
-static const FirewallMethods2 put = FirewallMethods2._('PUT');
+static const FirewallMethods2 put = FirewallMethods2$put._();
 
-static const FirewallMethods2 delete = FirewallMethods2._('DELETE');
+static const FirewallMethods2 delete = FirewallMethods2$delete._();
 
-static const FirewallMethods2 patch = FirewallMethods2._('PATCH');
+static const FirewallMethods2 patch = FirewallMethods2$patch._();
 
-static const FirewallMethods2 head = FirewallMethods2._('HEAD');
+static const FirewallMethods2 head = FirewallMethods2$head._();
 
-static const FirewallMethods2 all = FirewallMethods2._('_ALL_');
+static const FirewallMethods2 all = FirewallMethods2$all._();
 
 static const List<FirewallMethods2> values = [$get, post, put, delete, patch, head, all];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -53,13 +52,81 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FirewallMethods2$Unknown; } 
+@override String toString() => 'FirewallMethods2($value)';
+
+ }
+@immutable final class FirewallMethods2$$get extends FirewallMethods2 {const FirewallMethods2$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallMethods2$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class FirewallMethods2$post extends FirewallMethods2 {const FirewallMethods2$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallMethods2$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class FirewallMethods2$put extends FirewallMethods2 {const FirewallMethods2$put._();
+
+@override String get value => 'PUT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallMethods2$put;
+
+@override int get hashCode => 'PUT'.hashCode;
+
+ }
+@immutable final class FirewallMethods2$delete extends FirewallMethods2 {const FirewallMethods2$delete._();
+
+@override String get value => 'DELETE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallMethods2$delete;
+
+@override int get hashCode => 'DELETE'.hashCode;
+
+ }
+@immutable final class FirewallMethods2$patch extends FirewallMethods2 {const FirewallMethods2$patch._();
+
+@override String get value => 'PATCH';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallMethods2$patch;
+
+@override int get hashCode => 'PATCH'.hashCode;
+
+ }
+@immutable final class FirewallMethods2$head extends FirewallMethods2 {const FirewallMethods2$head._();
+
+@override String get value => 'HEAD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallMethods2$head;
+
+@override int get hashCode => 'HEAD'.hashCode;
+
+ }
+@immutable final class FirewallMethods2$all extends FirewallMethods2 {const FirewallMethods2$all._();
+
+@override String get value => '_ALL_';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallMethods2$all;
+
+@override int get hashCode => '_ALL_'.hashCode;
+
+ }
+@immutable final class FirewallMethods2$Unknown extends FirewallMethods2 {const FirewallMethods2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FirewallMethods2 && other.value == value;
+    other is FirewallMethods2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FirewallMethods2($value)';
 
  }
 @immutable final class Variant1Request {const Variant1Request({this.methods, this.schemes, this.url, });

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BrapiPostScreenshotRequest (inline: Variant1 > ScreenshotOptions > Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ScreenshotOptionsType {const ScreenshotOptionsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ScreenshotOptionsType {const ScreenshotOptionsType();
 
 factory ScreenshotOptionsType.fromJson(String json) { return switch (json) {
   'png' => png,
   'jpeg' => jpeg,
   'webp' => webp,
-  _ => ScreenshotOptionsType._(json),
+  _ => ScreenshotOptionsType$Unknown(json),
 }; }
 
-static const ScreenshotOptionsType png = ScreenshotOptionsType._('png');
+static const ScreenshotOptionsType png = ScreenshotOptionsType$png._();
 
-static const ScreenshotOptionsType jpeg = ScreenshotOptionsType._('jpeg');
+static const ScreenshotOptionsType jpeg = ScreenshotOptionsType$jpeg._();
 
-static const ScreenshotOptionsType webp = ScreenshotOptionsType._('webp');
+static const ScreenshotOptionsType webp = ScreenshotOptionsType$webp._();
 
 static const List<ScreenshotOptionsType> values = [png, jpeg, webp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ScreenshotOptionsType$Unknown; } 
+@override String toString() => 'ScreenshotOptionsType($value)';
+
+ }
+@immutable final class ScreenshotOptionsType$png extends ScreenshotOptionsType {const ScreenshotOptionsType$png._();
+
+@override String get value => 'png';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScreenshotOptionsType$png;
+
+@override int get hashCode => 'png'.hashCode;
+
+ }
+@immutable final class ScreenshotOptionsType$jpeg extends ScreenshotOptionsType {const ScreenshotOptionsType$jpeg._();
+
+@override String get value => 'jpeg';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScreenshotOptionsType$jpeg;
+
+@override int get hashCode => 'jpeg'.hashCode;
+
+ }
+@immutable final class ScreenshotOptionsType$webp extends ScreenshotOptionsType {const ScreenshotOptionsType$webp._();
+
+@override String get value => 'webp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScreenshotOptionsType$webp;
+
+@override int get hashCode => 'webp'.hashCode;
+
+ }
+@immutable final class ScreenshotOptionsType$Unknown extends ScreenshotOptionsType {const ScreenshotOptionsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ScreenshotOptionsType && other.value == value;
+    other is ScreenshotOptionsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ScreenshotOptionsType($value)';
 
  }

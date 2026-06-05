@@ -2,25 +2,24 @@
 // Source: #/components/schemas/UsageExamplePostOptEnumParameter
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An enum type
-@immutable final class UsageExamplePostOptEnumParameter {const UsageExamplePostOptEnumParameter._(this.value);
+sealed class UsageExamplePostOptEnumParameter {const UsageExamplePostOptEnumParameter();
 
 factory UsageExamplePostOptEnumParameter.fromJson(String json) { return switch (json) {
   'value1' => value1,
   'value2' => value2,
   'value3' => value3,
-  _ => UsageExamplePostOptEnumParameter._(json),
+  _ => UsageExamplePostOptEnumParameter$Unknown(json),
 }; }
 
-static const UsageExamplePostOptEnumParameter value1 = UsageExamplePostOptEnumParameter._('value1');
+static const UsageExamplePostOptEnumParameter value1 = UsageExamplePostOptEnumParameter$value1._();
 
-static const UsageExamplePostOptEnumParameter value2 = UsageExamplePostOptEnumParameter._('value2');
+static const UsageExamplePostOptEnumParameter value2 = UsageExamplePostOptEnumParameter$value2._();
 
-static const UsageExamplePostOptEnumParameter value3 = UsageExamplePostOptEnumParameter._('value3');
+static const UsageExamplePostOptEnumParameter value3 = UsageExamplePostOptEnumParameter$value3._();
 
 static const List<UsageExamplePostOptEnumParameter> values = [value1, value2, value3];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UsageExamplePostOptEnumParameter$Unknown; } 
+@override String toString() => 'UsageExamplePostOptEnumParameter($value)';
+
+ }
+@immutable final class UsageExamplePostOptEnumParameter$value1 extends UsageExamplePostOptEnumParameter {const UsageExamplePostOptEnumParameter$value1._();
+
+@override String get value => 'value1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageExamplePostOptEnumParameter$value1;
+
+@override int get hashCode => 'value1'.hashCode;
+
+ }
+@immutable final class UsageExamplePostOptEnumParameter$value2 extends UsageExamplePostOptEnumParameter {const UsageExamplePostOptEnumParameter$value2._();
+
+@override String get value => 'value2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageExamplePostOptEnumParameter$value2;
+
+@override int get hashCode => 'value2'.hashCode;
+
+ }
+@immutable final class UsageExamplePostOptEnumParameter$value3 extends UsageExamplePostOptEnumParameter {const UsageExamplePostOptEnumParameter$value3._();
+
+@override String get value => 'value3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageExamplePostOptEnumParameter$value3;
+
+@override int get hashCode => 'value3'.hashCode;
+
+ }
+@immutable final class UsageExamplePostOptEnumParameter$Unknown extends UsageExamplePostOptEnumParameter {const UsageExamplePostOptEnumParameter$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UsageExamplePostOptEnumParameter && other.value == value;
+    other is UsageExamplePostOptEnumParameter$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UsageExamplePostOptEnumParameter($value)';
 
  }

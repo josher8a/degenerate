@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CustomSslForAZoneCreateSslConfigurationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_bundle_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_deploy.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_geo_restrictions.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_policy.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_private_key.dart';/// The type 'legacy_custom' enables support for legacy clients which do not include SNI in the TLS handshake.
-@immutable final class TlsCertificatesAndHostnamesType {const TlsCertificatesAndHostnamesType._(this.value);
+sealed class TlsCertificatesAndHostnamesType {const TlsCertificatesAndHostnamesType();
 
 factory TlsCertificatesAndHostnamesType.fromJson(String json) { return switch (json) {
   'legacy_custom' => legacyCustom,
   'sni_custom' => sniCustom,
-  _ => TlsCertificatesAndHostnamesType._(json),
+  _ => TlsCertificatesAndHostnamesType$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesType legacyCustom = TlsCertificatesAndHostnamesType._('legacy_custom');
+static const TlsCertificatesAndHostnamesType legacyCustom = TlsCertificatesAndHostnamesType$legacyCustom._();
 
-static const TlsCertificatesAndHostnamesType sniCustom = TlsCertificatesAndHostnamesType._('sni_custom');
+static const TlsCertificatesAndHostnamesType sniCustom = TlsCertificatesAndHostnamesType$sniCustom._();
 
 static const List<TlsCertificatesAndHostnamesType> values = [legacyCustom, sniCustom];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesType$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesType($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesType$legacyCustom extends TlsCertificatesAndHostnamesType {const TlsCertificatesAndHostnamesType$legacyCustom._();
+
+@override String get value => 'legacy_custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesType$legacyCustom;
+
+@override int get hashCode => 'legacy_custom'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesType$sniCustom extends TlsCertificatesAndHostnamesType {const TlsCertificatesAndHostnamesType$sniCustom._();
+
+@override String get value => 'sni_custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesType$sniCustom;
+
+@override int get hashCode => 'sni_custom'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesType$Unknown extends TlsCertificatesAndHostnamesType {const TlsCertificatesAndHostnamesType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesType && other.value == value;
+    other is TlsCertificatesAndHostnamesType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesType($value)';
 
  }
 @immutable final class CustomSslForAZoneCreateSslConfigurationRequest {const CustomSslForAZoneCreateSslConfigurationRequest({required this.certificate, required this.privateKey, this.bundleMethod, this.deploy, this.geoRestrictions, this.policy, this.type, });

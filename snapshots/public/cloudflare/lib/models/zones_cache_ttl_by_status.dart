@@ -13,19 +13,18 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// low TTL (using `max-age`/`s-maxage`) increases requests to origin
 /// web servers and decreases performance.
 /// 
-@immutable final class ZonesCacheTtlByStatusId {const ZonesCacheTtlByStatusId._(this.value);
+sealed class ZonesCacheTtlByStatusId {const ZonesCacheTtlByStatusId();
 
 factory ZonesCacheTtlByStatusId.fromJson(String json) { return switch (json) {
   'cache_ttl_by_status' => cacheTtlByStatus,
-  _ => ZonesCacheTtlByStatusId._(json),
+  _ => ZonesCacheTtlByStatusId$Unknown(json),
 }; }
 
-static const ZonesCacheTtlByStatusId cacheTtlByStatus = ZonesCacheTtlByStatusId._('cache_ttl_by_status');
+static const ZonesCacheTtlByStatusId cacheTtlByStatus = ZonesCacheTtlByStatusId$cacheTtlByStatus._();
 
 static const List<ZonesCacheTtlByStatusId> values = [cacheTtlByStatus];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesCacheTtlByStatusId$Unknown; } 
+@override String toString() => 'ZonesCacheTtlByStatusId($value)';
+
+ }
+@immutable final class ZonesCacheTtlByStatusId$cacheTtlByStatus extends ZonesCacheTtlByStatusId {const ZonesCacheTtlByStatusId$cacheTtlByStatus._();
+
+@override String get value => 'cache_ttl_by_status';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesCacheTtlByStatusId$cacheTtlByStatus;
+
+@override int get hashCode => 'cache_ttl_by_status'.hashCode;
+
+ }
+@immutable final class ZonesCacheTtlByStatusId$Unknown extends ZonesCacheTtlByStatusId {const ZonesCacheTtlByStatusId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesCacheTtlByStatusId && other.value == value;
+    other is ZonesCacheTtlByStatusId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesCacheTtlByStatusId($value)';
 
  }
 @immutable final class ZonesCacheTtlByStatus {const ZonesCacheTtlByStatus({this.id, this.value, });

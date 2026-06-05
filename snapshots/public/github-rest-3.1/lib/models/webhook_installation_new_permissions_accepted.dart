@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookInstallationNewPermissionsAccepted
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/installation.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_repositories2.dart';@immutable final class WebhookInstallationNewPermissionsAcceptedAction {const WebhookInstallationNewPermissionsAcceptedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/installation.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_repositories2.dart';sealed class WebhookInstallationNewPermissionsAcceptedAction {const WebhookInstallationNewPermissionsAcceptedAction();
 
 factory WebhookInstallationNewPermissionsAcceptedAction.fromJson(String json) { return switch (json) {
   'new_permissions_accepted' => newPermissionsAccepted,
-  _ => WebhookInstallationNewPermissionsAcceptedAction._(json),
+  _ => WebhookInstallationNewPermissionsAcceptedAction$Unknown(json),
 }; }
 
-static const WebhookInstallationNewPermissionsAcceptedAction newPermissionsAccepted = WebhookInstallationNewPermissionsAcceptedAction._('new_permissions_accepted');
+static const WebhookInstallationNewPermissionsAcceptedAction newPermissionsAccepted = WebhookInstallationNewPermissionsAcceptedAction$newPermissionsAccepted._();
 
 static const List<WebhookInstallationNewPermissionsAcceptedAction> values = [newPermissionsAccepted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookInstallationNewPermissionsAcceptedAction$Unknown; } 
+@override String toString() => 'WebhookInstallationNewPermissionsAcceptedAction($value)';
+
+ }
+@immutable final class WebhookInstallationNewPermissionsAcceptedAction$newPermissionsAccepted extends WebhookInstallationNewPermissionsAcceptedAction {const WebhookInstallationNewPermissionsAcceptedAction$newPermissionsAccepted._();
+
+@override String get value => 'new_permissions_accepted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookInstallationNewPermissionsAcceptedAction$newPermissionsAccepted;
+
+@override int get hashCode => 'new_permissions_accepted'.hashCode;
+
+ }
+@immutable final class WebhookInstallationNewPermissionsAcceptedAction$Unknown extends WebhookInstallationNewPermissionsAcceptedAction {const WebhookInstallationNewPermissionsAcceptedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookInstallationNewPermissionsAcceptedAction && other.value == value;
+    other is WebhookInstallationNewPermissionsAcceptedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookInstallationNewPermissionsAcceptedAction($value)';
 
  }
 @immutable final class WebhookInstallationNewPermissionsAccepted {const WebhookInstallationNewPermissionsAccepted({required this.action, required this.installation, required this.sender, this.enterprise, this.organization, this.repositories, this.repository, this.requester, });

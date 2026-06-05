@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CreditNoteLineItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax.dart';import 'package:pub_stripe_spec3/models/credit_note_line_item/credit_note_line_item_type.dart';import 'package:pub_stripe_spec3/models/credit_notes_pretax_credit_amount.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class CreditNoteLineItemObject {const CreditNoteLineItemObject._(this.value);
+sealed class CreditNoteLineItemObject {const CreditNoteLineItemObject();
 
 factory CreditNoteLineItemObject.fromJson(String json) { return switch (json) {
   'credit_note_line_item' => creditNoteLineItem,
-  _ => CreditNoteLineItemObject._(json),
+  _ => CreditNoteLineItemObject$Unknown(json),
 }; }
 
-static const CreditNoteLineItemObject creditNoteLineItem = CreditNoteLineItemObject._('credit_note_line_item');
+static const CreditNoteLineItemObject creditNoteLineItem = CreditNoteLineItemObject$creditNoteLineItem._();
 
 static const List<CreditNoteLineItemObject> values = [creditNoteLineItem];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreditNoteLineItemObject$Unknown; } 
+@override String toString() => 'CreditNoteLineItemObject($value)';
+
+ }
+@immutable final class CreditNoteLineItemObject$creditNoteLineItem extends CreditNoteLineItemObject {const CreditNoteLineItemObject$creditNoteLineItem._();
+
+@override String get value => 'credit_note_line_item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreditNoteLineItemObject$creditNoteLineItem;
+
+@override int get hashCode => 'credit_note_line_item'.hashCode;
+
+ }
+@immutable final class CreditNoteLineItemObject$Unknown extends CreditNoteLineItemObject {const CreditNoteLineItemObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreditNoteLineItemObject && other.value == value;
+    other is CreditNoteLineItemObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreditNoteLineItemObject($value)';
 
  }
 /// The credit note line item object

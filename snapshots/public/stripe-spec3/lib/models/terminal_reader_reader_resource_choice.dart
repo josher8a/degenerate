@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TerminalReaderReaderResourceChoice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The button style for the choice. Can be `primary` or `secondary`.
-@immutable final class TerminalReaderReaderResourceChoiceStyle {const TerminalReaderReaderResourceChoiceStyle._(this.value);
+sealed class TerminalReaderReaderResourceChoiceStyle {const TerminalReaderReaderResourceChoiceStyle();
 
 factory TerminalReaderReaderResourceChoiceStyle.fromJson(String json) { return switch (json) {
   'primary' => primary,
   'secondary' => secondary,
-  _ => TerminalReaderReaderResourceChoiceStyle._(json),
+  _ => TerminalReaderReaderResourceChoiceStyle$Unknown(json),
 }; }
 
-static const TerminalReaderReaderResourceChoiceStyle primary = TerminalReaderReaderResourceChoiceStyle._('primary');
+static const TerminalReaderReaderResourceChoiceStyle primary = TerminalReaderReaderResourceChoiceStyle$primary._();
 
-static const TerminalReaderReaderResourceChoiceStyle secondary = TerminalReaderReaderResourceChoiceStyle._('secondary');
+static const TerminalReaderReaderResourceChoiceStyle secondary = TerminalReaderReaderResourceChoiceStyle$secondary._();
 
 static const List<TerminalReaderReaderResourceChoiceStyle> values = [primary, secondary];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TerminalReaderReaderResourceChoiceStyle$Unknown; } 
+@override String toString() => 'TerminalReaderReaderResourceChoiceStyle($value)';
+
+ }
+@immutable final class TerminalReaderReaderResourceChoiceStyle$primary extends TerminalReaderReaderResourceChoiceStyle {const TerminalReaderReaderResourceChoiceStyle$primary._();
+
+@override String get value => 'primary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceChoiceStyle$primary;
+
+@override int get hashCode => 'primary'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceChoiceStyle$secondary extends TerminalReaderReaderResourceChoiceStyle {const TerminalReaderReaderResourceChoiceStyle$secondary._();
+
+@override String get value => 'secondary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceChoiceStyle$secondary;
+
+@override int get hashCode => 'secondary'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceChoiceStyle$Unknown extends TerminalReaderReaderResourceChoiceStyle {const TerminalReaderReaderResourceChoiceStyle$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TerminalReaderReaderResourceChoiceStyle && other.value == value;
+    other is TerminalReaderReaderResourceChoiceStyle$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TerminalReaderReaderResourceChoiceStyle($value)';
 
  }
 /// Choice to be selected on a Reader

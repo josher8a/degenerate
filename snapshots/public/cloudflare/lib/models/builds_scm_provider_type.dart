@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BuildsScmProviderType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsScmProviderType {const BuildsScmProviderType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class BuildsScmProviderType {const BuildsScmProviderType();
 
 factory BuildsScmProviderType.fromJson(String json) { return switch (json) {
   'github' => github,
-  _ => BuildsScmProviderType._(json),
+  _ => BuildsScmProviderType$Unknown(json),
 }; }
 
-static const BuildsScmProviderType github = BuildsScmProviderType._('github');
+static const BuildsScmProviderType github = BuildsScmProviderType$github._();
 
 static const List<BuildsScmProviderType> values = [github];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BuildsScmProviderType$Unknown; } 
+@override String toString() => 'BuildsScmProviderType($value)';
+
+ }
+@immutable final class BuildsScmProviderType$github extends BuildsScmProviderType {const BuildsScmProviderType$github._();
+
+@override String get value => 'github';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BuildsScmProviderType$github;
+
+@override int get hashCode => 'github'.hashCode;
+
+ }
+@immutable final class BuildsScmProviderType$Unknown extends BuildsScmProviderType {const BuildsScmProviderType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BuildsScmProviderType && other.value == value;
+    other is BuildsScmProviderType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BuildsScmProviderType($value)';
 
  }

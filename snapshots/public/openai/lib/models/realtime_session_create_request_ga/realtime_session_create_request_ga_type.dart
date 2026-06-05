@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of session to create. Always `realtime` for the Realtime API.
 /// 
-@immutable final class RealtimeSessionCreateRequestGaType {const RealtimeSessionCreateRequestGaType._(this.value);
+sealed class RealtimeSessionCreateRequestGaType {const RealtimeSessionCreateRequestGaType();
 
 factory RealtimeSessionCreateRequestGaType.fromJson(String json) { return switch (json) {
   'realtime' => realtime,
-  _ => RealtimeSessionCreateRequestGaType._(json),
+  _ => RealtimeSessionCreateRequestGaType$Unknown(json),
 }; }
 
-static const RealtimeSessionCreateRequestGaType realtime = RealtimeSessionCreateRequestGaType._('realtime');
+static const RealtimeSessionCreateRequestGaType realtime = RealtimeSessionCreateRequestGaType$realtime._();
 
 static const List<RealtimeSessionCreateRequestGaType> values = [realtime];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,12 +22,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeSessionCreateRequestGaType$Unknown; } 
+@override String toString() => 'RealtimeSessionCreateRequestGaType($value)';
+
+ }
+@immutable final class RealtimeSessionCreateRequestGaType$realtime extends RealtimeSessionCreateRequestGaType {const RealtimeSessionCreateRequestGaType$realtime._();
+
+@override String get value => 'realtime';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeSessionCreateRequestGaType$realtime;
+
+@override int get hashCode => 'realtime'.hashCode;
+
+ }
+@immutable final class RealtimeSessionCreateRequestGaType$Unknown extends RealtimeSessionCreateRequestGaType {const RealtimeSessionCreateRequestGaType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeSessionCreateRequestGaType && other.value == value;
+    other is RealtimeSessionCreateRequestGaType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeSessionCreateRequestGaType($value)';
 
  }

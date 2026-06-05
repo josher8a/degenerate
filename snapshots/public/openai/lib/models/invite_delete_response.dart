@@ -2,19 +2,18 @@
 // Source: #/components/schemas/InviteDeleteResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.invite.deleted`
-@immutable final class InviteDeleteResponseObject {const InviteDeleteResponseObject._(this.value);
+sealed class InviteDeleteResponseObject {const InviteDeleteResponseObject();
 
 factory InviteDeleteResponseObject.fromJson(String json) { return switch (json) {
   'organization.invite.deleted' => organizationInviteDeleted,
-  _ => InviteDeleteResponseObject._(json),
+  _ => InviteDeleteResponseObject$Unknown(json),
 }; }
 
-static const InviteDeleteResponseObject organizationInviteDeleted = InviteDeleteResponseObject._('organization.invite.deleted');
+static const InviteDeleteResponseObject organizationInviteDeleted = InviteDeleteResponseObject$organizationInviteDeleted._();
 
 static const List<InviteDeleteResponseObject> values = [organizationInviteDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InviteDeleteResponseObject$Unknown; } 
+@override String toString() => 'InviteDeleteResponseObject($value)';
+
+ }
+@immutable final class InviteDeleteResponseObject$organizationInviteDeleted extends InviteDeleteResponseObject {const InviteDeleteResponseObject$organizationInviteDeleted._();
+
+@override String get value => 'organization.invite.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InviteDeleteResponseObject$organizationInviteDeleted;
+
+@override int get hashCode => 'organization.invite.deleted'.hashCode;
+
+ }
+@immutable final class InviteDeleteResponseObject$Unknown extends InviteDeleteResponseObject {const InviteDeleteResponseObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InviteDeleteResponseObject && other.value == value;
+    other is InviteDeleteResponseObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InviteDeleteResponseObject($value)';
 
  }
 @immutable final class InviteDeleteResponse {const InviteDeleteResponse({required this.object, required this.id, required this.deleted, });

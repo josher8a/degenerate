@@ -2,7 +2,7 @@
 // Source: #/components/schemas/AaaWebhooks
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_components_schemas_name.dart';import 'package:pub_cloudflare/models/aaa_secret.dart';import 'package:pub_cloudflare/models/aaa_url.dart';import 'package:pub_cloudflare/models/aaa_webhook_id.dart';/// Type of webhook endpoint.
-@immutable final class AaaComponentsSchemasType {const AaaComponentsSchemasType._(this.value);
+sealed class AaaComponentsSchemasType {const AaaComponentsSchemasType();
 
 factory AaaComponentsSchemasType.fromJson(String json) { return switch (json) {
   'datadog' => datadog,
@@ -13,29 +13,28 @@ factory AaaComponentsSchemasType.fromJson(String json) { return switch (json) {
   'opsgenie' => opsgenie,
   'slack' => slack,
   'splunk' => splunk,
-  _ => AaaComponentsSchemasType._(json),
+  _ => AaaComponentsSchemasType$Unknown(json),
 }; }
 
-static const AaaComponentsSchemasType datadog = AaaComponentsSchemasType._('datadog');
+static const AaaComponentsSchemasType datadog = AaaComponentsSchemasType$datadog._();
 
-static const AaaComponentsSchemasType discord = AaaComponentsSchemasType._('discord');
+static const AaaComponentsSchemasType discord = AaaComponentsSchemasType$discord._();
 
-static const AaaComponentsSchemasType feishu = AaaComponentsSchemasType._('feishu');
+static const AaaComponentsSchemasType feishu = AaaComponentsSchemasType$feishu._();
 
-static const AaaComponentsSchemasType gchat = AaaComponentsSchemasType._('gchat');
+static const AaaComponentsSchemasType gchat = AaaComponentsSchemasType$gchat._();
 
-static const AaaComponentsSchemasType generic = AaaComponentsSchemasType._('generic');
+static const AaaComponentsSchemasType generic = AaaComponentsSchemasType$generic._();
 
-static const AaaComponentsSchemasType opsgenie = AaaComponentsSchemasType._('opsgenie');
+static const AaaComponentsSchemasType opsgenie = AaaComponentsSchemasType$opsgenie._();
 
-static const AaaComponentsSchemasType slack = AaaComponentsSchemasType._('slack');
+static const AaaComponentsSchemasType slack = AaaComponentsSchemasType$slack._();
 
-static const AaaComponentsSchemasType splunk = AaaComponentsSchemasType._('splunk');
+static const AaaComponentsSchemasType splunk = AaaComponentsSchemasType$splunk._();
 
 static const List<AaaComponentsSchemasType> values = [datadog, discord, feishu, gchat, generic, opsgenie, slack, splunk];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,13 +49,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AaaComponentsSchemasType$Unknown; } 
+@override String toString() => 'AaaComponentsSchemasType($value)';
+
+ }
+@immutable final class AaaComponentsSchemasType$datadog extends AaaComponentsSchemasType {const AaaComponentsSchemasType$datadog._();
+
+@override String get value => 'datadog';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaComponentsSchemasType$datadog;
+
+@override int get hashCode => 'datadog'.hashCode;
+
+ }
+@immutable final class AaaComponentsSchemasType$discord extends AaaComponentsSchemasType {const AaaComponentsSchemasType$discord._();
+
+@override String get value => 'discord';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaComponentsSchemasType$discord;
+
+@override int get hashCode => 'discord'.hashCode;
+
+ }
+@immutable final class AaaComponentsSchemasType$feishu extends AaaComponentsSchemasType {const AaaComponentsSchemasType$feishu._();
+
+@override String get value => 'feishu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaComponentsSchemasType$feishu;
+
+@override int get hashCode => 'feishu'.hashCode;
+
+ }
+@immutable final class AaaComponentsSchemasType$gchat extends AaaComponentsSchemasType {const AaaComponentsSchemasType$gchat._();
+
+@override String get value => 'gchat';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaComponentsSchemasType$gchat;
+
+@override int get hashCode => 'gchat'.hashCode;
+
+ }
+@immutable final class AaaComponentsSchemasType$generic extends AaaComponentsSchemasType {const AaaComponentsSchemasType$generic._();
+
+@override String get value => 'generic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaComponentsSchemasType$generic;
+
+@override int get hashCode => 'generic'.hashCode;
+
+ }
+@immutable final class AaaComponentsSchemasType$opsgenie extends AaaComponentsSchemasType {const AaaComponentsSchemasType$opsgenie._();
+
+@override String get value => 'opsgenie';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaComponentsSchemasType$opsgenie;
+
+@override int get hashCode => 'opsgenie'.hashCode;
+
+ }
+@immutable final class AaaComponentsSchemasType$slack extends AaaComponentsSchemasType {const AaaComponentsSchemasType$slack._();
+
+@override String get value => 'slack';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaComponentsSchemasType$slack;
+
+@override int get hashCode => 'slack'.hashCode;
+
+ }
+@immutable final class AaaComponentsSchemasType$splunk extends AaaComponentsSchemasType {const AaaComponentsSchemasType$splunk._();
+
+@override String get value => 'splunk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaComponentsSchemasType$splunk;
+
+@override int get hashCode => 'splunk'.hashCode;
+
+ }
+@immutable final class AaaComponentsSchemasType$Unknown extends AaaComponentsSchemasType {const AaaComponentsSchemasType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AaaComponentsSchemasType && other.value == value;
+    other is AaaComponentsSchemasType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AaaComponentsSchemasType($value)';
 
  }
 /// Timestamp of when the webhook destination was created.

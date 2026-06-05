@@ -2,22 +2,21 @@
 // Source: #/components/schemas/FineTuneChatCompletionRequestAssistantMessage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_tool_calls2.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_audio.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_content.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_function_call.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message_content_part.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_role.dart';/// Controls whether the assistant message is trained against (0 or 1)
-@immutable final class Weight {const Weight._(this.value);
+sealed class Weight {const Weight();
 
 factory Weight.fromJson(int json) { return switch (json) {
   0 => $0,
   1 => $1,
-  _ => Weight._(json),
+  _ => Weight$Unknown(json),
 }; }
 
-static const Weight $0 = Weight._(0);
+static const Weight $0 = Weight$$0._();
 
-static const Weight $1 = Weight._(1);
+static const Weight $1 = Weight$$1._();
 
 static const List<Weight> values = [$0, $1];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Weight$Unknown; } 
+@override String toString() => 'Weight($value)';
+
+ }
+@immutable final class Weight$$0 extends Weight {const Weight$$0._();
+
+@override int get value => 0;
+
+@override bool operator ==(Object other) => identical(this, other) || other is Weight$$0;
+
+@override int get hashCode => 0.hashCode;
+
+ }
+@immutable final class Weight$$1 extends Weight {const Weight$$1._();
+
+@override int get value => 1;
+
+@override bool operator ==(Object other) => identical(this, other) || other is Weight$$1;
+
+@override int get hashCode => 1.hashCode;
+
+ }
+@immutable final class Weight$Unknown extends Weight {const Weight$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Weight && other.value == value;
+    other is Weight$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Weight($value)';
 
  }
 @immutable final class FineTuneChatCompletionRequestAssistantMessage {const FineTuneChatCompletionRequestAssistantMessage({required this.role, this.content, this.refusal, this.name, this.audio, this.toolCalls, this.functionCall, this.weight, });

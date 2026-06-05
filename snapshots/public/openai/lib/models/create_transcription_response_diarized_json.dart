@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CreateTranscriptionResponseDiarizedJson
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_transcription_response_diarized_json/create_transcription_response_diarized_json_usage.dart';import 'package:pub_openai/models/transcription_diarized_segment.dart';/// The type of task that was run. Always `transcribe`.
-@immutable final class Task {const Task._(this.value);
+sealed class Task {const Task();
 
 factory Task.fromJson(String json) { return switch (json) {
   'transcribe' => transcribe,
-  _ => Task._(json),
+  _ => Task$Unknown(json),
 }; }
 
-static const Task transcribe = Task._('transcribe');
+static const Task transcribe = Task$transcribe._();
 
 static const List<Task> values = [transcribe];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Task$Unknown; } 
+@override String toString() => 'Task($value)';
+
+ }
+@immutable final class Task$transcribe extends Task {const Task$transcribe._();
+
+@override String get value => 'transcribe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Task$transcribe;
+
+@override int get hashCode => 'transcribe'.hashCode;
+
+ }
+@immutable final class Task$Unknown extends Task {const Task$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Task && other.value == value;
+    other is Task$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Task($value)';
 
  }
 /// Represents a diarized transcription response returned by the model, including the combined transcript and speaker-segment annotations.

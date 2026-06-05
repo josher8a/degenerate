@@ -7,22 +7,21 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which action to 
 /// bots to a false queueing state, where they will never reach your
 /// origin. `infinite_queue` requires Advanced Waiting Room.
 /// 
-@immutable final class WaitingroomTurnstileAction {const WaitingroomTurnstileAction._(this.value);
+sealed class WaitingroomTurnstileAction {const WaitingroomTurnstileAction();
 
 factory WaitingroomTurnstileAction.fromJson(String json) { return switch (json) {
   'log' => log,
   'infinite_queue' => infiniteQueue,
-  _ => WaitingroomTurnstileAction._(json),
+  _ => WaitingroomTurnstileAction$Unknown(json),
 }; }
 
-static const WaitingroomTurnstileAction log = WaitingroomTurnstileAction._('log');
+static const WaitingroomTurnstileAction log = WaitingroomTurnstileAction$log._();
 
-static const WaitingroomTurnstileAction infiniteQueue = WaitingroomTurnstileAction._('infinite_queue');
+static const WaitingroomTurnstileAction infiniteQueue = WaitingroomTurnstileAction$infiniteQueue._();
 
 static const List<WaitingroomTurnstileAction> values = [log, infiniteQueue];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -31,12 +30,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WaitingroomTurnstileAction$Unknown; } 
+@override String toString() => 'WaitingroomTurnstileAction($value)';
+
+ }
+@immutable final class WaitingroomTurnstileAction$log extends WaitingroomTurnstileAction {const WaitingroomTurnstileAction$log._();
+
+@override String get value => 'log';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomTurnstileAction$log;
+
+@override int get hashCode => 'log'.hashCode;
+
+ }
+@immutable final class WaitingroomTurnstileAction$infiniteQueue extends WaitingroomTurnstileAction {const WaitingroomTurnstileAction$infiniteQueue._();
+
+@override String get value => 'infinite_queue';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomTurnstileAction$infiniteQueue;
+
+@override int get hashCode => 'infinite_queue'.hashCode;
+
+ }
+@immutable final class WaitingroomTurnstileAction$Unknown extends WaitingroomTurnstileAction {const WaitingroomTurnstileAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WaitingroomTurnstileAction && other.value == value;
+    other is WaitingroomTurnstileAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WaitingroomTurnstileAction($value)';
 
  }

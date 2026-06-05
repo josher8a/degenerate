@@ -3,7 +3,7 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_translation_request/create_translation_request_model.dart';/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.
 /// 
-@immutable final class CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat._(this.value);
+sealed class CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat();
 
 factory CreateTranslationRequestResponseFormat.fromJson(String json) { return switch (json) {
   'json' => $json,
@@ -11,23 +11,22 @@ factory CreateTranslationRequestResponseFormat.fromJson(String json) { return sw
   'srt' => srt,
   'verbose_json' => verboseJson,
   'vtt' => vtt,
-  _ => CreateTranslationRequestResponseFormat._(json),
+  _ => CreateTranslationRequestResponseFormat$Unknown(json),
 }; }
 
-static const CreateTranslationRequestResponseFormat $json = CreateTranslationRequestResponseFormat._('json');
+static const CreateTranslationRequestResponseFormat $json = CreateTranslationRequestResponseFormat$$json._();
 
-static const CreateTranslationRequestResponseFormat text = CreateTranslationRequestResponseFormat._('text');
+static const CreateTranslationRequestResponseFormat text = CreateTranslationRequestResponseFormat$text._();
 
-static const CreateTranslationRequestResponseFormat srt = CreateTranslationRequestResponseFormat._('srt');
+static const CreateTranslationRequestResponseFormat srt = CreateTranslationRequestResponseFormat$srt._();
 
-static const CreateTranslationRequestResponseFormat verboseJson = CreateTranslationRequestResponseFormat._('verbose_json');
+static const CreateTranslationRequestResponseFormat verboseJson = CreateTranslationRequestResponseFormat$verboseJson._();
 
-static const CreateTranslationRequestResponseFormat vtt = CreateTranslationRequestResponseFormat._('vtt');
+static const CreateTranslationRequestResponseFormat vtt = CreateTranslationRequestResponseFormat$vtt._();
 
 static const List<CreateTranslationRequestResponseFormat> values = [$json, text, srt, verboseJson, vtt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -39,13 +38,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateTranslationRequestResponseFormat$Unknown; } 
+@override String toString() => 'CreateTranslationRequestResponseFormat($value)';
+
+ }
+@immutable final class CreateTranslationRequestResponseFormat$$json extends CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat$$json._();
+
+@override String get value => 'json';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateTranslationRequestResponseFormat$$json;
+
+@override int get hashCode => 'json'.hashCode;
+
+ }
+@immutable final class CreateTranslationRequestResponseFormat$text extends CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateTranslationRequestResponseFormat$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class CreateTranslationRequestResponseFormat$srt extends CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat$srt._();
+
+@override String get value => 'srt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateTranslationRequestResponseFormat$srt;
+
+@override int get hashCode => 'srt'.hashCode;
+
+ }
+@immutable final class CreateTranslationRequestResponseFormat$verboseJson extends CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat$verboseJson._();
+
+@override String get value => 'verbose_json';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateTranslationRequestResponseFormat$verboseJson;
+
+@override int get hashCode => 'verbose_json'.hashCode;
+
+ }
+@immutable final class CreateTranslationRequestResponseFormat$vtt extends CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat$vtt._();
+
+@override String get value => 'vtt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateTranslationRequestResponseFormat$vtt;
+
+@override int get hashCode => 'vtt'.hashCode;
+
+ }
+@immutable final class CreateTranslationRequestResponseFormat$Unknown extends CreateTranslationRequestResponseFormat {const CreateTranslationRequestResponseFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateTranslationRequestResponseFormat && other.value == value;
+    other is CreateTranslationRequestResponseFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateTranslationRequestResponseFormat($value)';
 
  }
 @immutable final class CreateTranslationRequest {const CreateTranslationRequest({required this.file, required this.model, this.prompt, this.responseFormat = CreateTranslationRequestResponseFormat.$json, this.temperature = 0.0, });

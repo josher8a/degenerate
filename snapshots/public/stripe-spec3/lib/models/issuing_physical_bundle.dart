@@ -2,19 +2,18 @@
 // Source: #/components/schemas/IssuingPhysicalBundle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_physical_bundle_features.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class IssuingPhysicalBundleObject {const IssuingPhysicalBundleObject._(this.value);
+sealed class IssuingPhysicalBundleObject {const IssuingPhysicalBundleObject();
 
 factory IssuingPhysicalBundleObject.fromJson(String json) { return switch (json) {
   'issuing.physical_bundle' => issuingPhysicalBundle,
-  _ => IssuingPhysicalBundleObject._(json),
+  _ => IssuingPhysicalBundleObject$Unknown(json),
 }; }
 
-static const IssuingPhysicalBundleObject issuingPhysicalBundle = IssuingPhysicalBundleObject._('issuing.physical_bundle');
+static const IssuingPhysicalBundleObject issuingPhysicalBundle = IssuingPhysicalBundleObject$issuingPhysicalBundle._();
 
 static const List<IssuingPhysicalBundleObject> values = [issuingPhysicalBundle];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,35 +21,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingPhysicalBundleObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingPhysicalBundleObject$Unknown; } 
 @override String toString() => 'IssuingPhysicalBundleObject($value)';
 
  }
+@immutable final class IssuingPhysicalBundleObject$issuingPhysicalBundle extends IssuingPhysicalBundleObject {const IssuingPhysicalBundleObject$issuingPhysicalBundle._();
+
+@override String get value => 'issuing.physical_bundle';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingPhysicalBundleObject$issuingPhysicalBundle;
+
+@override int get hashCode => 'issuing.physical_bundle'.hashCode;
+
+ }
+@immutable final class IssuingPhysicalBundleObject$Unknown extends IssuingPhysicalBundleObject {const IssuingPhysicalBundleObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingPhysicalBundleObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Whether this physical bundle can be used to create cards.
-@immutable final class IssuingPhysicalBundleStatus {const IssuingPhysicalBundleStatus._(this.value);
+sealed class IssuingPhysicalBundleStatus {const IssuingPhysicalBundleStatus();
 
 factory IssuingPhysicalBundleStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'review' => review,
-  _ => IssuingPhysicalBundleStatus._(json),
+  _ => IssuingPhysicalBundleStatus$Unknown(json),
 }; }
 
-static const IssuingPhysicalBundleStatus active = IssuingPhysicalBundleStatus._('active');
+static const IssuingPhysicalBundleStatus active = IssuingPhysicalBundleStatus$active._();
 
-static const IssuingPhysicalBundleStatus inactive = IssuingPhysicalBundleStatus._('inactive');
+static const IssuingPhysicalBundleStatus inactive = IssuingPhysicalBundleStatus$inactive._();
 
-static const IssuingPhysicalBundleStatus review = IssuingPhysicalBundleStatus._('review');
+static const IssuingPhysicalBundleStatus review = IssuingPhysicalBundleStatus$review._();
 
 static const List<IssuingPhysicalBundleStatus> values = [active, inactive, review];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,32 +72,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingPhysicalBundleStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingPhysicalBundleStatus$Unknown; } 
 @override String toString() => 'IssuingPhysicalBundleStatus($value)';
 
  }
+@immutable final class IssuingPhysicalBundleStatus$active extends IssuingPhysicalBundleStatus {const IssuingPhysicalBundleStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingPhysicalBundleStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class IssuingPhysicalBundleStatus$inactive extends IssuingPhysicalBundleStatus {const IssuingPhysicalBundleStatus$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingPhysicalBundleStatus$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+ }
+@immutable final class IssuingPhysicalBundleStatus$review extends IssuingPhysicalBundleStatus {const IssuingPhysicalBundleStatus$review._();
+
+@override String get value => 'review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingPhysicalBundleStatus$review;
+
+@override int get hashCode => 'review'.hashCode;
+
+ }
+@immutable final class IssuingPhysicalBundleStatus$Unknown extends IssuingPhysicalBundleStatus {const IssuingPhysicalBundleStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingPhysicalBundleStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Whether this physical bundle is a standard Stripe offering or custom-made for you.
-@immutable final class IssuingPhysicalBundleType {const IssuingPhysicalBundleType._(this.value);
+sealed class IssuingPhysicalBundleType {const IssuingPhysicalBundleType();
 
 factory IssuingPhysicalBundleType.fromJson(String json) { return switch (json) {
   'custom' => custom,
   'standard' => standard,
-  _ => IssuingPhysicalBundleType._(json),
+  _ => IssuingPhysicalBundleType$Unknown(json),
 }; }
 
-static const IssuingPhysicalBundleType custom = IssuingPhysicalBundleType._('custom');
+static const IssuingPhysicalBundleType custom = IssuingPhysicalBundleType$custom._();
 
-static const IssuingPhysicalBundleType standard = IssuingPhysicalBundleType._('standard');
+static const IssuingPhysicalBundleType standard = IssuingPhysicalBundleType$standard._();
 
 static const List<IssuingPhysicalBundleType> values = [custom, standard];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -94,13 +137,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingPhysicalBundleType$Unknown; } 
+@override String toString() => 'IssuingPhysicalBundleType($value)';
+
+ }
+@immutable final class IssuingPhysicalBundleType$custom extends IssuingPhysicalBundleType {const IssuingPhysicalBundleType$custom._();
+
+@override String get value => 'custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingPhysicalBundleType$custom;
+
+@override int get hashCode => 'custom'.hashCode;
+
+ }
+@immutable final class IssuingPhysicalBundleType$standard extends IssuingPhysicalBundleType {const IssuingPhysicalBundleType$standard._();
+
+@override String get value => 'standard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingPhysicalBundleType$standard;
+
+@override int get hashCode => 'standard'.hashCode;
+
+ }
+@immutable final class IssuingPhysicalBundleType$Unknown extends IssuingPhysicalBundleType {const IssuingPhysicalBundleType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingPhysicalBundleType && other.value == value;
+    other is IssuingPhysicalBundleType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingPhysicalBundleType($value)';
 
  }
 /// A Physical Bundle represents the bundle of physical items - card stock, carrier letter, and envelope - that is shipped to a cardholder when you create a physical card.

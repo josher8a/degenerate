@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SecurityCenterIssue
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/security_center_issue/payload.dart';import 'package:pub_cloudflare/models/security_center_issue_class.dart';import 'package:pub_cloudflare/models/security_center_issue_type.dart';import 'package:pub_cloudflare/models/security_center_subject.dart';@immutable final class Severity {const Severity._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/security_center_issue/payload.dart';import 'package:pub_cloudflare/models/security_center_issue_class.dart';import 'package:pub_cloudflare/models/security_center_issue_type.dart';import 'package:pub_cloudflare/models/security_center_subject.dart';sealed class Severity {const Severity();
 
 factory Severity.fromJson(String json) { return switch (json) {
   'Low' => low,
   'Moderate' => moderate,
   'Critical' => critical,
-  _ => Severity._(json),
+  _ => Severity$Unknown(json),
 }; }
 
-static const Severity low = Severity._('Low');
+static const Severity low = Severity$low._();
 
-static const Severity moderate = Severity._('Moderate');
+static const Severity moderate = Severity$moderate._();
 
-static const Severity critical = Severity._('Critical');
+static const Severity critical = Severity$critical._();
 
 static const List<Severity> values = [low, moderate, critical];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Severity$Unknown; } 
+@override String toString() => 'Severity($value)';
+
+ }
+@immutable final class Severity$low extends Severity {const Severity$low._();
+
+@override String get value => 'Low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Severity$low;
+
+@override int get hashCode => 'Low'.hashCode;
+
+ }
+@immutable final class Severity$moderate extends Severity {const Severity$moderate._();
+
+@override String get value => 'Moderate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Severity$moderate;
+
+@override int get hashCode => 'Moderate'.hashCode;
+
+ }
+@immutable final class Severity$critical extends Severity {const Severity$critical._();
+
+@override String get value => 'Critical';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Severity$critical;
+
+@override int get hashCode => 'Critical'.hashCode;
+
+ }
+@immutable final class Severity$Unknown extends Severity {const Severity$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Severity && other.value == value;
+    other is Severity$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Severity($value)';
 
  }
 @immutable final class SecurityCenterIssue {const SecurityCenterIssue({this.dismissed, this.id, this.issueClass, this.issueType, this.payload, this.resolveLink, this.resolveText, this.severity, this.since, this.subject, this.timestamp, });

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/Pet
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_oag_echo_api/models/category.dart';import 'package:pub_oag_echo_api/models/tag.dart';/// pet status in the store
-@immutable final class Status {const Status._(this.value);
+sealed class Status {const Status();
 
 factory Status.fromJson(String json) { return switch (json) {
   'available' => available,
   'pending' => pending,
   'sold' => sold,
-  _ => Status._(json),
+  _ => Status$Unknown(json),
 }; }
 
-static const Status available = Status._('available');
+static const Status available = Status$available._();
 
-static const Status pending = Status._('pending');
+static const Status pending = Status$pending._();
 
-static const Status sold = Status._('sold');
+static const Status sold = Status$sold._();
 
 static const List<Status> values = [available, pending, sold];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Status$Unknown; } 
+@override String toString() => 'Status($value)';
+
+ }
+@immutable final class Status$available extends Status {const Status$available._();
+
+@override String get value => 'available';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Status$available;
+
+@override int get hashCode => 'available'.hashCode;
+
+ }
+@immutable final class Status$pending extends Status {const Status$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Status$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class Status$sold extends Status {const Status$sold._();
+
+@override String get value => 'sold';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Status$sold;
+
+@override int get hashCode => 'sold'.hashCode;
+
+ }
+@immutable final class Status$Unknown extends Status {const Status$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Status && other.value == value;
+    other is Status$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Status($value)';
 
  }
 @immutable final class Pet {const Pet({required this.name, required this.photoUrls, this.id, this.category, this.tags, this.status, });

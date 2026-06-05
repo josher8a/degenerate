@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookDeploymentReviewRejected
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_rejected/webhook_deployment_review_rejected_workflow_job_runs.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_rejected/webhook_deployment_review_rejected_workflow_run.dart';import 'package:pub_github_rest_3_1/models/webhooks_approver.dart';import 'package:pub_github_rest_3_1/models/webhooks_reviewers2.dart';import 'package:pub_github_rest_3_1/models/webhooks_workflow_job_run.dart';@immutable final class WebhookDeploymentReviewRejectedAction {const WebhookDeploymentReviewRejectedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_rejected/webhook_deployment_review_rejected_workflow_job_runs.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_review_rejected/webhook_deployment_review_rejected_workflow_run.dart';import 'package:pub_github_rest_3_1/models/webhooks_approver.dart';import 'package:pub_github_rest_3_1/models/webhooks_reviewers2.dart';import 'package:pub_github_rest_3_1/models/webhooks_workflow_job_run.dart';sealed class WebhookDeploymentReviewRejectedAction {const WebhookDeploymentReviewRejectedAction();
 
 factory WebhookDeploymentReviewRejectedAction.fromJson(String json) { return switch (json) {
   'rejected' => rejected,
-  _ => WebhookDeploymentReviewRejectedAction._(json),
+  _ => WebhookDeploymentReviewRejectedAction$Unknown(json),
 }; }
 
-static const WebhookDeploymentReviewRejectedAction rejected = WebhookDeploymentReviewRejectedAction._('rejected');
+static const WebhookDeploymentReviewRejectedAction rejected = WebhookDeploymentReviewRejectedAction$rejected._();
 
 static const List<WebhookDeploymentReviewRejectedAction> values = [rejected];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookDeploymentReviewRejectedAction$Unknown; } 
+@override String toString() => 'WebhookDeploymentReviewRejectedAction($value)';
+
+ }
+@immutable final class WebhookDeploymentReviewRejectedAction$rejected extends WebhookDeploymentReviewRejectedAction {const WebhookDeploymentReviewRejectedAction$rejected._();
+
+@override String get value => 'rejected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookDeploymentReviewRejectedAction$rejected;
+
+@override int get hashCode => 'rejected'.hashCode;
+
+ }
+@immutable final class WebhookDeploymentReviewRejectedAction$Unknown extends WebhookDeploymentReviewRejectedAction {const WebhookDeploymentReviewRejectedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookDeploymentReviewRejectedAction && other.value == value;
+    other is WebhookDeploymentReviewRejectedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookDeploymentReviewRejectedAction($value)';
 
  }
 @immutable final class WebhookDeploymentReviewRejected {const WebhookDeploymentReviewRejected({required this.action, required this.organization, required this.repository, required this.sender, required this.since, required this.workflowRun, this.approver, this.comment, this.enterprise, this.installation, this.reviewers, this.workflowJobRun, this.workflowJobRuns, });

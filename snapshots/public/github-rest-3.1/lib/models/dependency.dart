@@ -2,22 +2,21 @@
 // Source: #/components/schemas/Dependency
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.
-@immutable final class DependencyRelationship {const DependencyRelationship._(this.value);
+sealed class DependencyRelationship {const DependencyRelationship();
 
 factory DependencyRelationship.fromJson(String json) { return switch (json) {
   'direct' => direct,
   'indirect' => indirect,
-  _ => DependencyRelationship._(json),
+  _ => DependencyRelationship$Unknown(json),
 }; }
 
-static const DependencyRelationship direct = DependencyRelationship._('direct');
+static const DependencyRelationship direct = DependencyRelationship$direct._();
 
-static const DependencyRelationship indirect = DependencyRelationship._('indirect');
+static const DependencyRelationship indirect = DependencyRelationship$indirect._();
 
 static const List<DependencyRelationship> values = [direct, indirect];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,32 +25,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DependencyRelationship && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is DependencyRelationship$Unknown; } 
 @override String toString() => 'DependencyRelationship($value)';
 
  }
+@immutable final class DependencyRelationship$direct extends DependencyRelationship {const DependencyRelationship$direct._();
+
+@override String get value => 'direct';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependencyRelationship$direct;
+
+@override int get hashCode => 'direct'.hashCode;
+
+ }
+@immutable final class DependencyRelationship$indirect extends DependencyRelationship {const DependencyRelationship$indirect._();
+
+@override String get value => 'indirect';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependencyRelationship$indirect;
+
+@override int get hashCode => 'indirect'.hashCode;
+
+ }
+@immutable final class DependencyRelationship$Unknown extends DependencyRelationship {const DependencyRelationship$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DependencyRelationship$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.
-@immutable final class DependencyScope {const DependencyScope._(this.value);
+sealed class DependencyScope {const DependencyScope();
 
 factory DependencyScope.fromJson(String json) { return switch (json) {
   'runtime' => runtime,
   'development' => development,
-  _ => DependencyScope._(json),
+  _ => DependencyScope$Unknown(json),
 }; }
 
-static const DependencyScope runtime = DependencyScope._('runtime');
+static const DependencyScope runtime = DependencyScope$runtime._();
 
-static const DependencyScope development = DependencyScope._('development');
+static const DependencyScope development = DependencyScope$development._();
 
 static const List<DependencyScope> values = [runtime, development];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,13 +81,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DependencyScope$Unknown; } 
+@override String toString() => 'DependencyScope($value)';
+
+ }
+@immutable final class DependencyScope$runtime extends DependencyScope {const DependencyScope$runtime._();
+
+@override String get value => 'runtime';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependencyScope$runtime;
+
+@override int get hashCode => 'runtime'.hashCode;
+
+ }
+@immutable final class DependencyScope$development extends DependencyScope {const DependencyScope$development._();
+
+@override String get value => 'development';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependencyScope$development;
+
+@override int get hashCode => 'development'.hashCode;
+
+ }
+@immutable final class DependencyScope$Unknown extends DependencyScope {const DependencyScope$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DependencyScope && other.value == value;
+    other is DependencyScope$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DependencyScope($value)';
 
  }
 @immutable final class Dependency {const Dependency({this.packageUrl, this.metadata, this.relationship, this.scope, this.dependencies, });

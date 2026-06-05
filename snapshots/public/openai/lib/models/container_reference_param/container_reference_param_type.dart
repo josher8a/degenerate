@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ContainerReferenceParam (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// References a container created with the /v1/containers endpoint
-@immutable final class ContainerReferenceParamType {const ContainerReferenceParamType._(this.value);
+sealed class ContainerReferenceParamType {const ContainerReferenceParamType();
 
 factory ContainerReferenceParamType.fromJson(String json) { return switch (json) {
   'container_reference' => containerReference,
-  _ => ContainerReferenceParamType._(json),
+  _ => ContainerReferenceParamType$Unknown(json),
 }; }
 
-static const ContainerReferenceParamType containerReference = ContainerReferenceParamType._('container_reference');
+static const ContainerReferenceParamType containerReference = ContainerReferenceParamType$containerReference._();
 
 static const List<ContainerReferenceParamType> values = [containerReference];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ContainerReferenceParamType$Unknown; } 
+@override String toString() => 'ContainerReferenceParamType($value)';
+
+ }
+@immutable final class ContainerReferenceParamType$containerReference extends ContainerReferenceParamType {const ContainerReferenceParamType$containerReference._();
+
+@override String get value => 'container_reference';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ContainerReferenceParamType$containerReference;
+
+@override int get hashCode => 'container_reference'.hashCode;
+
+ }
+@immutable final class ContainerReferenceParamType$Unknown extends ContainerReferenceParamType {const ContainerReferenceParamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ContainerReferenceParamType && other.value == value;
+    other is ContainerReferenceParamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ContainerReferenceParamType($value)';
 
  }

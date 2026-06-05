@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookDiscussionUnlabeled (inline: Action)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookDiscussionUnlabeledAction {const WebhookDiscussionUnlabeledAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class WebhookDiscussionUnlabeledAction {const WebhookDiscussionUnlabeledAction();
 
 factory WebhookDiscussionUnlabeledAction.fromJson(String json) { return switch (json) {
   'unlabeled' => unlabeled,
-  _ => WebhookDiscussionUnlabeledAction._(json),
+  _ => WebhookDiscussionUnlabeledAction$Unknown(json),
 }; }
 
-static const WebhookDiscussionUnlabeledAction unlabeled = WebhookDiscussionUnlabeledAction._('unlabeled');
+static const WebhookDiscussionUnlabeledAction unlabeled = WebhookDiscussionUnlabeledAction$unlabeled._();
 
 static const List<WebhookDiscussionUnlabeledAction> values = [unlabeled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookDiscussionUnlabeledAction$Unknown; } 
+@override String toString() => 'WebhookDiscussionUnlabeledAction($value)';
+
+ }
+@immutable final class WebhookDiscussionUnlabeledAction$unlabeled extends WebhookDiscussionUnlabeledAction {const WebhookDiscussionUnlabeledAction$unlabeled._();
+
+@override String get value => 'unlabeled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookDiscussionUnlabeledAction$unlabeled;
+
+@override int get hashCode => 'unlabeled'.hashCode;
+
+ }
+@immutable final class WebhookDiscussionUnlabeledAction$Unknown extends WebhookDiscussionUnlabeledAction {const WebhookDiscussionUnlabeledAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookDiscussionUnlabeledAction && other.value == value;
+    other is WebhookDiscussionUnlabeledAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookDiscussionUnlabeledAction($value)';
 
  }

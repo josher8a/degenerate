@@ -3,26 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
-@immutable
-final class RemoveReason {
-  const RemoveReason._(this.value);
+sealed class RemoveReason {
+  const RemoveReason();
 
   factory RemoveReason.fromJson(String json) {
     return switch (json) {
       'remove' => remove,
       'ban' => ban,
-      _ => RemoveReason._(json),
+      _ => RemoveReason$Unknown(json),
     };
   }
 
-  static const RemoveReason remove = RemoveReason._('remove');
+  static const RemoveReason remove = RemoveReason$remove._();
 
-  static const RemoveReason ban = RemoveReason._('ban');
+  static const RemoveReason ban = RemoveReason$ban._();
 
   static const List<RemoveReason> values = [remove, ban];
 
-  final String value;
-
+  String get value;
   String toJson() {
     return value;
   }
@@ -38,16 +36,55 @@ final class RemoveReason {
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
-    return !values.contains(this);
+    return this is RemoveReason$Unknown;
   }
 
   @override
+  String toString() => 'RemoveReason($value)';
+}
+
+@immutable
+final class RemoveReason$remove extends RemoveReason {
+  const RemoveReason$remove._();
+
+  @override
+  String get value => 'remove';
+
+  @override
   bool operator ==(Object other) =>
-      identical(this, other) || other is RemoveReason && other.value == value;
+      identical(this, other) || other is RemoveReason$remove;
+
+  @override
+  int get hashCode => 'remove'.hashCode;
+}
+
+@immutable
+final class RemoveReason$ban extends RemoveReason {
+  const RemoveReason$ban._();
+
+  @override
+  String get value => 'ban';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is RemoveReason$ban;
+
+  @override
+  int get hashCode => 'ban'.hashCode;
+}
+
+@immutable
+final class RemoveReason$Unknown extends RemoveReason {
+  const RemoveReason$Unknown(this.value);
+
+  @override
+  final String value;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is RemoveReason$Unknown && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
-
-  @override
-  String toString() => 'RemoveReason($value)';
 }

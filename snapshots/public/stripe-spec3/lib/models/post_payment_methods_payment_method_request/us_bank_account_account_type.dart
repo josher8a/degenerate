@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPaymentMethodsPaymentMethodRequest (inline: UsBankAccount > AccountType)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsBankAccountAccountType {const UsBankAccountAccountType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsBankAccountAccountType {const UsBankAccountAccountType();
 
 factory UsBankAccountAccountType.fromJson(String json) { return switch (json) {
   'checking' => checking,
   'savings' => savings,
-  _ => UsBankAccountAccountType._(json),
+  _ => UsBankAccountAccountType$Unknown(json),
 }; }
 
-static const UsBankAccountAccountType checking = UsBankAccountAccountType._('checking');
+static const UsBankAccountAccountType checking = UsBankAccountAccountType$checking._();
 
-static const UsBankAccountAccountType savings = UsBankAccountAccountType._('savings');
+static const UsBankAccountAccountType savings = UsBankAccountAccountType$savings._();
 
 static const List<UsBankAccountAccountType> values = [checking, savings];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UsBankAccountAccountType$Unknown; } 
+@override String toString() => 'UsBankAccountAccountType($value)';
+
+ }
+@immutable final class UsBankAccountAccountType$checking extends UsBankAccountAccountType {const UsBankAccountAccountType$checking._();
+
+@override String get value => 'checking';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsBankAccountAccountType$checking;
+
+@override int get hashCode => 'checking'.hashCode;
+
+ }
+@immutable final class UsBankAccountAccountType$savings extends UsBankAccountAccountType {const UsBankAccountAccountType$savings._();
+
+@override String get value => 'savings';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsBankAccountAccountType$savings;
+
+@override int get hashCode => 'savings'.hashCode;
+
+ }
+@immutable final class UsBankAccountAccountType$Unknown extends UsBankAccountAccountType {const UsBankAccountAccountType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UsBankAccountAccountType && other.value == value;
+    other is UsBankAccountAccountType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UsBankAccountAccountType($value)';
 
  }

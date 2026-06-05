@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ErrorEvent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/error_model.dart';@immutable final class ErrorEventEvent {const ErrorEventEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/error_model.dart';sealed class ErrorEventEvent {const ErrorEventEvent();
 
 factory ErrorEventEvent.fromJson(String json) { return switch (json) {
   'error' => error,
-  _ => ErrorEventEvent._(json),
+  _ => ErrorEventEvent$Unknown(json),
 }; }
 
-static const ErrorEventEvent error = ErrorEventEvent._('error');
+static const ErrorEventEvent error = ErrorEventEvent$error._();
 
 static const List<ErrorEventEvent> values = [error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ErrorEventEvent$Unknown; } 
+@override String toString() => 'ErrorEventEvent($value)';
+
+ }
+@immutable final class ErrorEventEvent$error extends ErrorEventEvent {const ErrorEventEvent$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrorEventEvent$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class ErrorEventEvent$Unknown extends ErrorEventEvent {const ErrorEventEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ErrorEventEvent && other.value == value;
+    other is ErrorEventEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ErrorEventEvent($value)';
 
  }
 /// Occurs when an [error](/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.

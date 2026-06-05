@@ -2,22 +2,21 @@
 // Source: #/components/schemas/Price
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/currency_option.dart';import 'package:pub_stripe_spec3/models/currency_option/currency_option_tax_behavior.dart';import 'package:pub_stripe_spec3/models/custom_unit_amount.dart';import 'package:pub_stripe_spec3/models/deleted_price/deleted_price_object.dart';import 'package:pub_stripe_spec3/models/deleted_product.dart';import 'package:pub_stripe_spec3/models/plan/billing_scheme.dart';import 'package:pub_stripe_spec3/models/plan/plan_product.dart';import 'package:pub_stripe_spec3/models/plan/plan_tiers_mode.dart';import 'package:pub_stripe_spec3/models/price_tier.dart';import 'package:pub_stripe_spec3/models/product.dart';import 'package:pub_stripe_spec3/models/recurring.dart';import 'package:pub_stripe_spec3/models/transform_quantity.dart';/// One of `one_time` or `recurring` depending on whether the price is for a one-time purchase or a recurring (subscription) purchase.
-@immutable final class PriceType$1 {const PriceType$1._(this.value);
+sealed class PriceType$1 {const PriceType$1();
 
 factory PriceType$1.fromJson(String json) { return switch (json) {
   'one_time' => oneTime,
   'recurring' => recurring,
-  _ => PriceType$1._(json),
+  _ => PriceType$1$Unknown(json),
 }; }
 
-static const PriceType$1 oneTime = PriceType$1._('one_time');
+static const PriceType$1 oneTime = PriceType$1$oneTime._();
 
-static const PriceType$1 recurring = PriceType$1._('recurring');
+static const PriceType$1 recurring = PriceType$1$recurring._();
 
 static const List<PriceType$1> values = [oneTime, recurring];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PriceType$1$Unknown; } 
+@override String toString() => 'PriceType\$1($value)';
+
+ }
+@immutable final class PriceType$1$oneTime extends PriceType$1 {const PriceType$1$oneTime._();
+
+@override String get value => 'one_time';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PriceType$1$oneTime;
+
+@override int get hashCode => 'one_time'.hashCode;
+
+ }
+@immutable final class PriceType$1$recurring extends PriceType$1 {const PriceType$1$recurring._();
+
+@override String get value => 'recurring';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PriceType$1$recurring;
+
+@override int get hashCode => 'recurring'.hashCode;
+
+ }
+@immutable final class PriceType$1$Unknown extends PriceType$1 {const PriceType$1$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PriceType$1 && other.value == value;
+    other is PriceType$1$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PriceType\$1($value)';
 
  }
 /// Prices define the unit cost, currency, and (optional) billing cycle for both recurring and one-time purchases of products.

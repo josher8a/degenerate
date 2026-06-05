@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FeeRefund
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/fee_refund/fee_refund_fee.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class FeeRefundObject {const FeeRefundObject._(this.value);
+sealed class FeeRefundObject {const FeeRefundObject();
 
 factory FeeRefundObject.fromJson(String json) { return switch (json) {
   'fee_refund' => feeRefund,
-  _ => FeeRefundObject._(json),
+  _ => FeeRefundObject$Unknown(json),
 }; }
 
-static const FeeRefundObject feeRefund = FeeRefundObject._('fee_refund');
+static const FeeRefundObject feeRefund = FeeRefundObject$feeRefund._();
 
 static const List<FeeRefundObject> values = [feeRefund];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FeeRefundObject$Unknown; } 
+@override String toString() => 'FeeRefundObject($value)';
+
+ }
+@immutable final class FeeRefundObject$feeRefund extends FeeRefundObject {const FeeRefundObject$feeRefund._();
+
+@override String get value => 'fee_refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FeeRefundObject$feeRefund;
+
+@override int get hashCode => 'fee_refund'.hashCode;
+
+ }
+@immutable final class FeeRefundObject$Unknown extends FeeRefundObject {const FeeRefundObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FeeRefundObject && other.value == value;
+    other is FeeRefundObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FeeRefundObject($value)';
 
  }
 /// `Application Fee Refund` objects allow you to refund an application fee that

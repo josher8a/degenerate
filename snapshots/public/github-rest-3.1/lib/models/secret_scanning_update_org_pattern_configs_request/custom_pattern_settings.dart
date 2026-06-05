@@ -2,22 +2,21 @@
 // Source: #/components/schemas/SecretScanningUpdateOrgPatternConfigsRequest (inline: CustomPatternSettings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_row_version.dart';/// Push protection setting to set for the pattern.
-@immutable final class CustomPatternSettingsPushProtectionSetting {const CustomPatternSettingsPushProtectionSetting._(this.value);
+sealed class CustomPatternSettingsPushProtectionSetting {const CustomPatternSettingsPushProtectionSetting();
 
 factory CustomPatternSettingsPushProtectionSetting.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
-  _ => CustomPatternSettingsPushProtectionSetting._(json),
+  _ => CustomPatternSettingsPushProtectionSetting$Unknown(json),
 }; }
 
-static const CustomPatternSettingsPushProtectionSetting disabled = CustomPatternSettingsPushProtectionSetting._('disabled');
+static const CustomPatternSettingsPushProtectionSetting disabled = CustomPatternSettingsPushProtectionSetting$disabled._();
 
-static const CustomPatternSettingsPushProtectionSetting enabled = CustomPatternSettingsPushProtectionSetting._('enabled');
+static const CustomPatternSettingsPushProtectionSetting enabled = CustomPatternSettingsPushProtectionSetting$enabled._();
 
 static const List<CustomPatternSettingsPushProtectionSetting> values = [disabled, enabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomPatternSettingsPushProtectionSetting$Unknown; } 
+@override String toString() => 'CustomPatternSettingsPushProtectionSetting($value)';
+
+ }
+@immutable final class CustomPatternSettingsPushProtectionSetting$disabled extends CustomPatternSettingsPushProtectionSetting {const CustomPatternSettingsPushProtectionSetting$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomPatternSettingsPushProtectionSetting$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class CustomPatternSettingsPushProtectionSetting$enabled extends CustomPatternSettingsPushProtectionSetting {const CustomPatternSettingsPushProtectionSetting$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomPatternSettingsPushProtectionSetting$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class CustomPatternSettingsPushProtectionSetting$Unknown extends CustomPatternSettingsPushProtectionSetting {const CustomPatternSettingsPushProtectionSetting$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomPatternSettingsPushProtectionSetting && other.value == value;
+    other is CustomPatternSettingsPushProtectionSetting$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomPatternSettingsPushProtectionSetting($value)';
 
  }
 @immutable final class CustomPatternSettings {const CustomPatternSettings({this.tokenType, this.customPatternVersion, this.pushProtectionSetting, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PostPaymentRecordsIdReportRefundRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/post_payment_records_id_report_refund_request_amount.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/post_payment_records_id_report_refund_request_processor_details.dart';import 'package:pub_stripe_spec3/models/post_payment_records_id_report_refund_request/refunded.dart';/// The outcome of the reported refund.
-@immutable final class PostPaymentRecordsIdReportRefundRequestOutcome {const PostPaymentRecordsIdReportRefundRequestOutcome._(this.value);
+sealed class PostPaymentRecordsIdReportRefundRequestOutcome {const PostPaymentRecordsIdReportRefundRequestOutcome();
 
 factory PostPaymentRecordsIdReportRefundRequestOutcome.fromJson(String json) { return switch (json) {
   'refunded' => refunded,
-  _ => PostPaymentRecordsIdReportRefundRequestOutcome._(json),
+  _ => PostPaymentRecordsIdReportRefundRequestOutcome$Unknown(json),
 }; }
 
-static const PostPaymentRecordsIdReportRefundRequestOutcome refunded = PostPaymentRecordsIdReportRefundRequestOutcome._('refunded');
+static const PostPaymentRecordsIdReportRefundRequestOutcome refunded = PostPaymentRecordsIdReportRefundRequestOutcome$refunded._();
 
 static const List<PostPaymentRecordsIdReportRefundRequestOutcome> values = [refunded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostPaymentRecordsIdReportRefundRequestOutcome$Unknown; } 
+@override String toString() => 'PostPaymentRecordsIdReportRefundRequestOutcome($value)';
+
+ }
+@immutable final class PostPaymentRecordsIdReportRefundRequestOutcome$refunded extends PostPaymentRecordsIdReportRefundRequestOutcome {const PostPaymentRecordsIdReportRefundRequestOutcome$refunded._();
+
+@override String get value => 'refunded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentRecordsIdReportRefundRequestOutcome$refunded;
+
+@override int get hashCode => 'refunded'.hashCode;
+
+ }
+@immutable final class PostPaymentRecordsIdReportRefundRequestOutcome$Unknown extends PostPaymentRecordsIdReportRefundRequestOutcome {const PostPaymentRecordsIdReportRefundRequestOutcome$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostPaymentRecordsIdReportRefundRequestOutcome && other.value == value;
+    other is PostPaymentRecordsIdReportRefundRequestOutcome$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostPaymentRecordsIdReportRefundRequestOutcome($value)';
 
  }
 @immutable final class PostPaymentRecordsIdReportRefundRequest {const PostPaymentRecordsIdReportRefundRequest({required this.outcome, required this.processorDetails, required this.refunded, this.amount, this.expand, this.initiatedAt, this.metadata, });

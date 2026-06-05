@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTopAsesByDeviceTypeOs
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByDeviceTypeOs {const RadarGetHttpTopAsesByDeviceTypeOs._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopAsesByDeviceTypeOs {const RadarGetHttpTopAsesByDeviceTypeOs();
 
 factory RadarGetHttpTopAsesByDeviceTypeOs.fromJson(String json) { return switch (json) {
   'WINDOWS' => windows,
@@ -11,27 +11,26 @@ factory RadarGetHttpTopAsesByDeviceTypeOs.fromJson(String json) { return switch 
   'CHROMEOS' => chromeos,
   'LINUX' => linux,
   'SMART_TV' => smartTv,
-  _ => RadarGetHttpTopAsesByDeviceTypeOs._(json),
+  _ => RadarGetHttpTopAsesByDeviceTypeOs$Unknown(json),
 }; }
 
-static const RadarGetHttpTopAsesByDeviceTypeOs windows = RadarGetHttpTopAsesByDeviceTypeOs._('WINDOWS');
+static const RadarGetHttpTopAsesByDeviceTypeOs windows = RadarGetHttpTopAsesByDeviceTypeOs$windows._();
 
-static const RadarGetHttpTopAsesByDeviceTypeOs macosx = RadarGetHttpTopAsesByDeviceTypeOs._('MACOSX');
+static const RadarGetHttpTopAsesByDeviceTypeOs macosx = RadarGetHttpTopAsesByDeviceTypeOs$macosx._();
 
-static const RadarGetHttpTopAsesByDeviceTypeOs ios = RadarGetHttpTopAsesByDeviceTypeOs._('IOS');
+static const RadarGetHttpTopAsesByDeviceTypeOs ios = RadarGetHttpTopAsesByDeviceTypeOs$ios._();
 
-static const RadarGetHttpTopAsesByDeviceTypeOs android = RadarGetHttpTopAsesByDeviceTypeOs._('ANDROID');
+static const RadarGetHttpTopAsesByDeviceTypeOs android = RadarGetHttpTopAsesByDeviceTypeOs$android._();
 
-static const RadarGetHttpTopAsesByDeviceTypeOs chromeos = RadarGetHttpTopAsesByDeviceTypeOs._('CHROMEOS');
+static const RadarGetHttpTopAsesByDeviceTypeOs chromeos = RadarGetHttpTopAsesByDeviceTypeOs$chromeos._();
 
-static const RadarGetHttpTopAsesByDeviceTypeOs linux = RadarGetHttpTopAsesByDeviceTypeOs._('LINUX');
+static const RadarGetHttpTopAsesByDeviceTypeOs linux = RadarGetHttpTopAsesByDeviceTypeOs$linux._();
 
-static const RadarGetHttpTopAsesByDeviceTypeOs smartTv = RadarGetHttpTopAsesByDeviceTypeOs._('SMART_TV');
+static const RadarGetHttpTopAsesByDeviceTypeOs smartTv = RadarGetHttpTopAsesByDeviceTypeOs$smartTv._();
 
 static const List<RadarGetHttpTopAsesByDeviceTypeOs> values = [windows, macosx, ios, android, chromeos, linux, smartTv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -45,12 +44,80 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopAsesByDeviceTypeOs$Unknown; } 
+@override String toString() => 'RadarGetHttpTopAsesByDeviceTypeOs($value)';
+
+ }
+@immutable final class RadarGetHttpTopAsesByDeviceTypeOs$windows extends RadarGetHttpTopAsesByDeviceTypeOs {const RadarGetHttpTopAsesByDeviceTypeOs$windows._();
+
+@override String get value => 'WINDOWS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByDeviceTypeOs$windows;
+
+@override int get hashCode => 'WINDOWS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByDeviceTypeOs$macosx extends RadarGetHttpTopAsesByDeviceTypeOs {const RadarGetHttpTopAsesByDeviceTypeOs$macosx._();
+
+@override String get value => 'MACOSX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByDeviceTypeOs$macosx;
+
+@override int get hashCode => 'MACOSX'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByDeviceTypeOs$ios extends RadarGetHttpTopAsesByDeviceTypeOs {const RadarGetHttpTopAsesByDeviceTypeOs$ios._();
+
+@override String get value => 'IOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByDeviceTypeOs$ios;
+
+@override int get hashCode => 'IOS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByDeviceTypeOs$android extends RadarGetHttpTopAsesByDeviceTypeOs {const RadarGetHttpTopAsesByDeviceTypeOs$android._();
+
+@override String get value => 'ANDROID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByDeviceTypeOs$android;
+
+@override int get hashCode => 'ANDROID'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByDeviceTypeOs$chromeos extends RadarGetHttpTopAsesByDeviceTypeOs {const RadarGetHttpTopAsesByDeviceTypeOs$chromeos._();
+
+@override String get value => 'CHROMEOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByDeviceTypeOs$chromeos;
+
+@override int get hashCode => 'CHROMEOS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByDeviceTypeOs$linux extends RadarGetHttpTopAsesByDeviceTypeOs {const RadarGetHttpTopAsesByDeviceTypeOs$linux._();
+
+@override String get value => 'LINUX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByDeviceTypeOs$linux;
+
+@override int get hashCode => 'LINUX'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByDeviceTypeOs$smartTv extends RadarGetHttpTopAsesByDeviceTypeOs {const RadarGetHttpTopAsesByDeviceTypeOs$smartTv._();
+
+@override String get value => 'SMART_TV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByDeviceTypeOs$smartTv;
+
+@override int get hashCode => 'SMART_TV'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByDeviceTypeOs$Unknown extends RadarGetHttpTopAsesByDeviceTypeOs {const RadarGetHttpTopAsesByDeviceTypeOs$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopAsesByDeviceTypeOs && other.value == value;
+    other is RadarGetHttpTopAsesByDeviceTypeOs$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopAsesByDeviceTypeOs($value)';
 
  }

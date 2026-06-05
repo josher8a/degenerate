@@ -2,25 +2,24 @@
 // Source: #/components/schemas/ChargeOutcome
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/charge_outcome/charge_outcome_rule.dart';import 'package:pub_stripe_spec3/models/rule.dart';/// An enumerated value providing a more detailed explanation on [how to proceed with an error](https://docs.stripe.com/declines#retrying-issuer-declines).
-@immutable final class AdviceCode {const AdviceCode._(this.value);
+sealed class AdviceCode {const AdviceCode();
 
 factory AdviceCode.fromJson(String json) { return switch (json) {
   'confirm_card_data' => confirmCardData,
   'do_not_try_again' => doNotTryAgain,
   'try_again_later' => tryAgainLater,
-  _ => AdviceCode._(json),
+  _ => AdviceCode$Unknown(json),
 }; }
 
-static const AdviceCode confirmCardData = AdviceCode._('confirm_card_data');
+static const AdviceCode confirmCardData = AdviceCode$confirmCardData._();
 
-static const AdviceCode doNotTryAgain = AdviceCode._('do_not_try_again');
+static const AdviceCode doNotTryAgain = AdviceCode$doNotTryAgain._();
 
-static const AdviceCode tryAgainLater = AdviceCode._('try_again_later');
+static const AdviceCode tryAgainLater = AdviceCode$tryAgainLater._();
 
 static const List<AdviceCode> values = [confirmCardData, doNotTryAgain, tryAgainLater];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AdviceCode$Unknown; } 
+@override String toString() => 'AdviceCode($value)';
+
+ }
+@immutable final class AdviceCode$confirmCardData extends AdviceCode {const AdviceCode$confirmCardData._();
+
+@override String get value => 'confirm_card_data';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AdviceCode$confirmCardData;
+
+@override int get hashCode => 'confirm_card_data'.hashCode;
+
+ }
+@immutable final class AdviceCode$doNotTryAgain extends AdviceCode {const AdviceCode$doNotTryAgain._();
+
+@override String get value => 'do_not_try_again';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AdviceCode$doNotTryAgain;
+
+@override int get hashCode => 'do_not_try_again'.hashCode;
+
+ }
+@immutable final class AdviceCode$tryAgainLater extends AdviceCode {const AdviceCode$tryAgainLater._();
+
+@override String get value => 'try_again_later';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AdviceCode$tryAgainLater;
+
+@override int get hashCode => 'try_again_later'.hashCode;
+
+ }
+@immutable final class AdviceCode$Unknown extends AdviceCode {const AdviceCode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AdviceCode && other.value == value;
+    other is AdviceCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AdviceCode($value)';
 
  }
 /// 

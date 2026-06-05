@@ -2,19 +2,18 @@
 // Source: #/components/schemas/LineItem
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_lines_parents_invoice_line_item_parent.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_subscription_parent/billing_bill_resource_invoicing_parents_invoice_subscription_parent_subscription.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_pricing_pricing.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/discounts_resource_discount_amount.dart';import 'package:pub_stripe_spec3/models/invoice_line_item_period.dart';import 'package:pub_stripe_spec3/models/invoiceitem/invoiceitem_discounts.dart';import 'package:pub_stripe_spec3/models/invoices_resource_pretax_credit_amount.dart';import 'package:pub_stripe_spec3/models/subscription.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class LineItemObject {const LineItemObject._(this.value);
+sealed class LineItemObject {const LineItemObject();
 
 factory LineItemObject.fromJson(String json) { return switch (json) {
   'line_item' => lineItem,
-  _ => LineItemObject._(json),
+  _ => LineItemObject$Unknown(json),
 }; }
 
-static const LineItemObject lineItem = LineItemObject._('line_item');
+static const LineItemObject lineItem = LineItemObject$lineItem._();
 
 static const List<LineItemObject> values = [lineItem];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LineItemObject$Unknown; } 
+@override String toString() => 'LineItemObject($value)';
+
+ }
+@immutable final class LineItemObject$lineItem extends LineItemObject {const LineItemObject$lineItem._();
+
+@override String get value => 'line_item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LineItemObject$lineItem;
+
+@override int get hashCode => 'line_item'.hashCode;
+
+ }
+@immutable final class LineItemObject$Unknown extends LineItemObject {const LineItemObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LineItemObject && other.value == value;
+    other is LineItemObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LineItemObject($value)';
 
  }
 /// Invoice Line Items represent the individual lines within an [invoice](https://docs.stripe.com/api/invoices) and only exist within the context of an invoice.

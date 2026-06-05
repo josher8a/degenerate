@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DiffEntry
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DiffEntryStatus {const DiffEntryStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DiffEntryStatus {const DiffEntryStatus();
 
 factory DiffEntryStatus.fromJson(String json) { return switch (json) {
   'added' => added,
@@ -11,27 +11,26 @@ factory DiffEntryStatus.fromJson(String json) { return switch (json) {
   'copied' => copied,
   'changed' => changed,
   'unchanged' => unchanged,
-  _ => DiffEntryStatus._(json),
+  _ => DiffEntryStatus$Unknown(json),
 }; }
 
-static const DiffEntryStatus added = DiffEntryStatus._('added');
+static const DiffEntryStatus added = DiffEntryStatus$added._();
 
-static const DiffEntryStatus removed = DiffEntryStatus._('removed');
+static const DiffEntryStatus removed = DiffEntryStatus$removed._();
 
-static const DiffEntryStatus modified = DiffEntryStatus._('modified');
+static const DiffEntryStatus modified = DiffEntryStatus$modified._();
 
-static const DiffEntryStatus renamed = DiffEntryStatus._('renamed');
+static const DiffEntryStatus renamed = DiffEntryStatus$renamed._();
 
-static const DiffEntryStatus copied = DiffEntryStatus._('copied');
+static const DiffEntryStatus copied = DiffEntryStatus$copied._();
 
-static const DiffEntryStatus changed = DiffEntryStatus._('changed');
+static const DiffEntryStatus changed = DiffEntryStatus$changed._();
 
-static const DiffEntryStatus unchanged = DiffEntryStatus._('unchanged');
+static const DiffEntryStatus unchanged = DiffEntryStatus$unchanged._();
 
 static const List<DiffEntryStatus> values = [added, removed, modified, renamed, copied, changed, unchanged];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -45,13 +44,81 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DiffEntryStatus$Unknown; } 
+@override String toString() => 'DiffEntryStatus($value)';
+
+ }
+@immutable final class DiffEntryStatus$added extends DiffEntryStatus {const DiffEntryStatus$added._();
+
+@override String get value => 'added';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiffEntryStatus$added;
+
+@override int get hashCode => 'added'.hashCode;
+
+ }
+@immutable final class DiffEntryStatus$removed extends DiffEntryStatus {const DiffEntryStatus$removed._();
+
+@override String get value => 'removed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiffEntryStatus$removed;
+
+@override int get hashCode => 'removed'.hashCode;
+
+ }
+@immutable final class DiffEntryStatus$modified extends DiffEntryStatus {const DiffEntryStatus$modified._();
+
+@override String get value => 'modified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiffEntryStatus$modified;
+
+@override int get hashCode => 'modified'.hashCode;
+
+ }
+@immutable final class DiffEntryStatus$renamed extends DiffEntryStatus {const DiffEntryStatus$renamed._();
+
+@override String get value => 'renamed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiffEntryStatus$renamed;
+
+@override int get hashCode => 'renamed'.hashCode;
+
+ }
+@immutable final class DiffEntryStatus$copied extends DiffEntryStatus {const DiffEntryStatus$copied._();
+
+@override String get value => 'copied';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiffEntryStatus$copied;
+
+@override int get hashCode => 'copied'.hashCode;
+
+ }
+@immutable final class DiffEntryStatus$changed extends DiffEntryStatus {const DiffEntryStatus$changed._();
+
+@override String get value => 'changed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiffEntryStatus$changed;
+
+@override int get hashCode => 'changed'.hashCode;
+
+ }
+@immutable final class DiffEntryStatus$unchanged extends DiffEntryStatus {const DiffEntryStatus$unchanged._();
+
+@override String get value => 'unchanged';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiffEntryStatus$unchanged;
+
+@override int get hashCode => 'unchanged'.hashCode;
+
+ }
+@immutable final class DiffEntryStatus$Unknown extends DiffEntryStatus {const DiffEntryStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DiffEntryStatus && other.value == value;
+    other is DiffEntryStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DiffEntryStatus($value)';
 
  }
 /// Diff Entry

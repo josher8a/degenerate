@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EmailSecurityDomain (inline: DmarcStatus)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DmarcStatus {const DmarcStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DmarcStatus {const DmarcStatus();
 
 factory DmarcStatus.fromJson(String json) { return switch (json) {
   'none' => none,
   'good' => good,
   'invalid' => invalid,
-  _ => DmarcStatus._(json),
+  _ => DmarcStatus$Unknown(json),
 }; }
 
-static const DmarcStatus none = DmarcStatus._('none');
+static const DmarcStatus none = DmarcStatus$none._();
 
-static const DmarcStatus good = DmarcStatus._('good');
+static const DmarcStatus good = DmarcStatus$good._();
 
-static const DmarcStatus invalid = DmarcStatus._('invalid');
+static const DmarcStatus invalid = DmarcStatus$invalid._();
 
 static const List<DmarcStatus> values = [none, good, invalid];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DmarcStatus$Unknown; } 
+@override String toString() => 'DmarcStatus($value)';
+
+ }
+@immutable final class DmarcStatus$none extends DmarcStatus {const DmarcStatus$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DmarcStatus$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class DmarcStatus$good extends DmarcStatus {const DmarcStatus$good._();
+
+@override String get value => 'good';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DmarcStatus$good;
+
+@override int get hashCode => 'good'.hashCode;
+
+ }
+@immutable final class DmarcStatus$invalid extends DmarcStatus {const DmarcStatus$invalid._();
+
+@override String get value => 'invalid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DmarcStatus$invalid;
+
+@override int get hashCode => 'invalid'.hashCode;
+
+ }
+@immutable final class DmarcStatus$Unknown extends DmarcStatus {const DmarcStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DmarcStatus && other.value == value;
+    other is DmarcStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DmarcStatus($value)';
 
  }

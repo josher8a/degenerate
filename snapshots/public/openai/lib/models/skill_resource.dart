@@ -2,19 +2,18 @@
 // Source: #/components/schemas/SkillResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is `skill`.
-@immutable final class SkillResourceObject {const SkillResourceObject._(this.value);
+sealed class SkillResourceObject {const SkillResourceObject();
 
 factory SkillResourceObject.fromJson(String json) { return switch (json) {
   'skill' => skill,
-  _ => SkillResourceObject._(json),
+  _ => SkillResourceObject$Unknown(json),
 }; }
 
-static const SkillResourceObject skill = SkillResourceObject._('skill');
+static const SkillResourceObject skill = SkillResourceObject$skill._();
 
 static const List<SkillResourceObject> values = [skill];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SkillResourceObject$Unknown; } 
+@override String toString() => 'SkillResourceObject($value)';
+
+ }
+@immutable final class SkillResourceObject$skill extends SkillResourceObject {const SkillResourceObject$skill._();
+
+@override String get value => 'skill';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SkillResourceObject$skill;
+
+@override int get hashCode => 'skill'.hashCode;
+
+ }
+@immutable final class SkillResourceObject$Unknown extends SkillResourceObject {const SkillResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SkillResourceObject && other.value == value;
+    other is SkillResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SkillResourceObject($value)';
 
  }
 @immutable final class SkillResource {const SkillResource({required this.id, required this.name, required this.description, required this.createdAt, required this.defaultVersion, required this.latestVersion, this.object = SkillResourceObject.skill, });

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/WafManagedRulesAnomalyRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the mode anomaly. When set to `on`, the current WAF rule will be used when evaluating the request. Applies to anomaly detection WAF rules.
-@immutable final class WafManagedRulesModeAnomaly {const WafManagedRulesModeAnomaly._(this.value);
+sealed class WafManagedRulesModeAnomaly {const WafManagedRulesModeAnomaly();
 
 factory WafManagedRulesModeAnomaly.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => WafManagedRulesModeAnomaly._(json),
+  _ => WafManagedRulesModeAnomaly$Unknown(json),
 }; }
 
-static const WafManagedRulesModeAnomaly $on = WafManagedRulesModeAnomaly._('on');
+static const WafManagedRulesModeAnomaly $on = WafManagedRulesModeAnomaly$$on._();
 
-static const WafManagedRulesModeAnomaly off = WafManagedRulesModeAnomaly._('off');
+static const WafManagedRulesModeAnomaly off = WafManagedRulesModeAnomaly$off._();
 
 static const List<WafManagedRulesModeAnomaly> values = [$on, off];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WafManagedRulesModeAnomaly$Unknown; } 
+@override String toString() => 'WafManagedRulesModeAnomaly($value)';
+
+ }
+@immutable final class WafManagedRulesModeAnomaly$$on extends WafManagedRulesModeAnomaly {const WafManagedRulesModeAnomaly$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WafManagedRulesModeAnomaly$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class WafManagedRulesModeAnomaly$off extends WafManagedRulesModeAnomaly {const WafManagedRulesModeAnomaly$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WafManagedRulesModeAnomaly$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class WafManagedRulesModeAnomaly$Unknown extends WafManagedRulesModeAnomaly {const WafManagedRulesModeAnomaly$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WafManagedRulesModeAnomaly && other.value == value;
+    other is WafManagedRulesModeAnomaly$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WafManagedRulesModeAnomaly($value)';
 
  }
 /// When triggered, anomaly detection WAF rules contribute to an overall threat score that will determine if a request is considered malicious. You can configure the total scoring threshold through the 'sensitivity' property of the WAF package.

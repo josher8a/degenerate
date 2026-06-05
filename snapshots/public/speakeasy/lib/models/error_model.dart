@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ErrorModel
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ErrorType {const ErrorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ErrorType {const ErrorType();
 
 factory ErrorType.fromJson(String json) { return switch (json) {
   'not_found' => notFound,
   'invalid' => invalid,
   'internal' => internal,
-  _ => ErrorType._(json),
+  _ => ErrorType$Unknown(json),
 }; }
 
-static const ErrorType notFound = ErrorType._('not_found');
+static const ErrorType notFound = ErrorType$notFound._();
 
-static const ErrorType invalid = ErrorType._('invalid');
+static const ErrorType invalid = ErrorType$invalid._();
 
-static const ErrorType internal = ErrorType._('internal');
+static const ErrorType internal = ErrorType$internal._();
 
 static const List<ErrorType> values = [notFound, invalid, internal];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ErrorType$Unknown; } 
+@override String toString() => 'ErrorType($value)';
+
+ }
+@immutable final class ErrorType$notFound extends ErrorType {const ErrorType$notFound._();
+
+@override String get value => 'not_found';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrorType$notFound;
+
+@override int get hashCode => 'not_found'.hashCode;
+
+ }
+@immutable final class ErrorType$invalid extends ErrorType {const ErrorType$invalid._();
+
+@override String get value => 'invalid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrorType$invalid;
+
+@override int get hashCode => 'invalid'.hashCode;
+
+ }
+@immutable final class ErrorType$internal extends ErrorType {const ErrorType$internal._();
+
+@override String get value => 'internal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrorType$internal;
+
+@override int get hashCode => 'internal'.hashCode;
+
+ }
+@immutable final class ErrorType$Unknown extends ErrorType {const ErrorType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ErrorType && other.value == value;
+    other is ErrorType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ErrorType($value)';
 
  }
 @immutable final class ErrorModel {const ErrorModel({this.code, this.message, this.type, this.additionalProperties = const {}, });

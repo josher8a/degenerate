@@ -9,25 +9,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Allows to set tr
 /// If `transparent`, the output format needs to support transparency, so it
 /// should be set to either `png` (default value) or `webp`.
 /// 
-@immutable final class CreateImageEditRequestBackground {const CreateImageEditRequestBackground._(this.value);
+sealed class CreateImageEditRequestBackground {const CreateImageEditRequestBackground();
 
 factory CreateImageEditRequestBackground.fromJson(String json) { return switch (json) {
   'transparent' => transparent,
   'opaque' => opaque,
   'auto' => auto,
-  _ => CreateImageEditRequestBackground._(json),
+  _ => CreateImageEditRequestBackground$Unknown(json),
 }; }
 
-static const CreateImageEditRequestBackground transparent = CreateImageEditRequestBackground._('transparent');
+static const CreateImageEditRequestBackground transparent = CreateImageEditRequestBackground$transparent._();
 
-static const CreateImageEditRequestBackground opaque = CreateImageEditRequestBackground._('opaque');
+static const CreateImageEditRequestBackground opaque = CreateImageEditRequestBackground$opaque._();
 
-static const CreateImageEditRequestBackground auto = CreateImageEditRequestBackground._('auto');
+static const CreateImageEditRequestBackground auto = CreateImageEditRequestBackground$auto._();
 
 static const List<CreateImageEditRequestBackground> values = [transparent, opaque, auto];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,12 +36,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateImageEditRequestBackground$Unknown; } 
+@override String toString() => 'CreateImageEditRequestBackground($value)';
+
+ }
+@immutable final class CreateImageEditRequestBackground$transparent extends CreateImageEditRequestBackground {const CreateImageEditRequestBackground$transparent._();
+
+@override String get value => 'transparent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestBackground$transparent;
+
+@override int get hashCode => 'transparent'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestBackground$opaque extends CreateImageEditRequestBackground {const CreateImageEditRequestBackground$opaque._();
+
+@override String get value => 'opaque';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestBackground$opaque;
+
+@override int get hashCode => 'opaque'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestBackground$auto extends CreateImageEditRequestBackground {const CreateImageEditRequestBackground$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestBackground$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestBackground$Unknown extends CreateImageEditRequestBackground {const CreateImageEditRequestBackground$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateImageEditRequestBackground && other.value == value;
+    other is CreateImageEditRequestBackground$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateImageEditRequestBackground($value)';
 
  }

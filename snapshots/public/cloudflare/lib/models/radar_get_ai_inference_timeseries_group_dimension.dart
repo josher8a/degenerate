@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetAiInferenceTimeseriesGroupDimension
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the attribute by which to group the results.
-@immutable final class RadarGetAiInferenceTimeseriesGroupDimension {const RadarGetAiInferenceTimeseriesGroupDimension._(this.value);
+sealed class RadarGetAiInferenceTimeseriesGroupDimension {const RadarGetAiInferenceTimeseriesGroupDimension();
 
 factory RadarGetAiInferenceTimeseriesGroupDimension.fromJson(String json) { return switch (json) {
   'MODEL' => model,
   'TASK' => task,
-  _ => RadarGetAiInferenceTimeseriesGroupDimension._(json),
+  _ => RadarGetAiInferenceTimeseriesGroupDimension$Unknown(json),
 }; }
 
-static const RadarGetAiInferenceTimeseriesGroupDimension model = RadarGetAiInferenceTimeseriesGroupDimension._('MODEL');
+static const RadarGetAiInferenceTimeseriesGroupDimension model = RadarGetAiInferenceTimeseriesGroupDimension$model._();
 
-static const RadarGetAiInferenceTimeseriesGroupDimension task = RadarGetAiInferenceTimeseriesGroupDimension._('TASK');
+static const RadarGetAiInferenceTimeseriesGroupDimension task = RadarGetAiInferenceTimeseriesGroupDimension$task._();
 
 static const List<RadarGetAiInferenceTimeseriesGroupDimension> values = [model, task];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAiInferenceTimeseriesGroupDimension$Unknown; } 
+@override String toString() => 'RadarGetAiInferenceTimeseriesGroupDimension($value)';
+
+ }
+@immutable final class RadarGetAiInferenceTimeseriesGroupDimension$model extends RadarGetAiInferenceTimeseriesGroupDimension {const RadarGetAiInferenceTimeseriesGroupDimension$model._();
+
+@override String get value => 'MODEL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiInferenceTimeseriesGroupDimension$model;
+
+@override int get hashCode => 'MODEL'.hashCode;
+
+ }
+@immutable final class RadarGetAiInferenceTimeseriesGroupDimension$task extends RadarGetAiInferenceTimeseriesGroupDimension {const RadarGetAiInferenceTimeseriesGroupDimension$task._();
+
+@override String get value => 'TASK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiInferenceTimeseriesGroupDimension$task;
+
+@override int get hashCode => 'TASK'.hashCode;
+
+ }
+@immutable final class RadarGetAiInferenceTimeseriesGroupDimension$Unknown extends RadarGetAiInferenceTimeseriesGroupDimension {const RadarGetAiInferenceTimeseriesGroupDimension$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAiInferenceTimeseriesGroupDimension && other.value == value;
+    other is RadarGetAiInferenceTimeseriesGroupDimension$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAiInferenceTimeseriesGroupDimension($value)';
 
  }

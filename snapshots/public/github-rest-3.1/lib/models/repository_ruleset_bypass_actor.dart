@@ -2,7 +2,7 @@
 // Source: #/components/schemas/RepositoryRulesetBypassActor
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of actor that can bypass a ruleset.
-@immutable final class ActorType {const ActorType._(this.value);
+sealed class ActorType {const ActorType();
 
 factory ActorType.fromJson(String json) { return switch (json) {
   'Integration' => integration,
@@ -10,23 +10,22 @@ factory ActorType.fromJson(String json) { return switch (json) {
   'RepositoryRole' => repositoryRole,
   'Team' => team,
   'DeployKey' => deployKey,
-  _ => ActorType._(json),
+  _ => ActorType$Unknown(json),
 }; }
 
-static const ActorType integration = ActorType._('Integration');
+static const ActorType integration = ActorType$integration._();
 
-static const ActorType organizationAdmin = ActorType._('OrganizationAdmin');
+static const ActorType organizationAdmin = ActorType$organizationAdmin._();
 
-static const ActorType repositoryRole = ActorType._('RepositoryRole');
+static const ActorType repositoryRole = ActorType$repositoryRole._();
 
-static const ActorType team = ActorType._('Team');
+static const ActorType team = ActorType$team._();
 
-static const ActorType deployKey = ActorType._('DeployKey');
+static const ActorType deployKey = ActorType$deployKey._();
 
 static const List<ActorType> values = [integration, organizationAdmin, repositoryRole, team, deployKey];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,35 +37,84 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ActorType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ActorType$Unknown; } 
 @override String toString() => 'ActorType($value)';
 
  }
+@immutable final class ActorType$integration extends ActorType {const ActorType$integration._();
+
+@override String get value => 'Integration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActorType$integration;
+
+@override int get hashCode => 'Integration'.hashCode;
+
+ }
+@immutable final class ActorType$organizationAdmin extends ActorType {const ActorType$organizationAdmin._();
+
+@override String get value => 'OrganizationAdmin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActorType$organizationAdmin;
+
+@override int get hashCode => 'OrganizationAdmin'.hashCode;
+
+ }
+@immutable final class ActorType$repositoryRole extends ActorType {const ActorType$repositoryRole._();
+
+@override String get value => 'RepositoryRole';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActorType$repositoryRole;
+
+@override int get hashCode => 'RepositoryRole'.hashCode;
+
+ }
+@immutable final class ActorType$team extends ActorType {const ActorType$team._();
+
+@override String get value => 'Team';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActorType$team;
+
+@override int get hashCode => 'Team'.hashCode;
+
+ }
+@immutable final class ActorType$deployKey extends ActorType {const ActorType$deployKey._();
+
+@override String get value => 'DeployKey';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActorType$deployKey;
+
+@override int get hashCode => 'DeployKey'.hashCode;
+
+ }
+@immutable final class ActorType$Unknown extends ActorType {const ActorType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ActorType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets. When `bypass_mode` is `exempt`, rules will not be run for that actor and a bypass audit entry will not be created.
-@immutable final class BypassMode {const BypassMode._(this.value);
+sealed class BypassMode {const BypassMode();
 
 factory BypassMode.fromJson(String json) { return switch (json) {
   'always' => always,
   'pull_request' => pullRequest,
   'exempt' => exempt,
-  _ => BypassMode._(json),
+  _ => BypassMode$Unknown(json),
 }; }
 
-static const BypassMode always = BypassMode._('always');
+static const BypassMode always = BypassMode$always._();
 
-static const BypassMode pullRequest = BypassMode._('pull_request');
+static const BypassMode pullRequest = BypassMode$pullRequest._();
 
-static const BypassMode exempt = BypassMode._('exempt');
+static const BypassMode exempt = BypassMode$exempt._();
 
 static const List<BypassMode> values = [always, pullRequest, exempt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -76,13 +124,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BypassMode$Unknown; } 
+@override String toString() => 'BypassMode($value)';
+
+ }
+@immutable final class BypassMode$always extends BypassMode {const BypassMode$always._();
+
+@override String get value => 'always';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BypassMode$always;
+
+@override int get hashCode => 'always'.hashCode;
+
+ }
+@immutable final class BypassMode$pullRequest extends BypassMode {const BypassMode$pullRequest._();
+
+@override String get value => 'pull_request';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BypassMode$pullRequest;
+
+@override int get hashCode => 'pull_request'.hashCode;
+
+ }
+@immutable final class BypassMode$exempt extends BypassMode {const BypassMode$exempt._();
+
+@override String get value => 'exempt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BypassMode$exempt;
+
+@override int get hashCode => 'exempt'.hashCode;
+
+ }
+@immutable final class BypassMode$Unknown extends BypassMode {const BypassMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BypassMode && other.value == value;
+    other is BypassMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BypassMode($value)';
 
  }
 /// An actor that can bypass rules in a ruleset

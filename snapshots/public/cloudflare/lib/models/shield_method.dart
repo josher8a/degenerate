@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ShieldMethod
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method used to access the endpoint.
-@immutable final class ShieldMethod {const ShieldMethod._(this.value);
+sealed class ShieldMethod {const ShieldMethod();
 
 factory ShieldMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -14,31 +14,30 @@ factory ShieldMethod.fromJson(String json) { return switch (json) {
   'CONNECT' => connect,
   'PATCH' => patch,
   'TRACE' => trace,
-  _ => ShieldMethod._(json),
+  _ => ShieldMethod$Unknown(json),
 }; }
 
-static const ShieldMethod $get = ShieldMethod._('GET');
+static const ShieldMethod $get = ShieldMethod$$get._();
 
-static const ShieldMethod post = ShieldMethod._('POST');
+static const ShieldMethod post = ShieldMethod$post._();
 
-static const ShieldMethod head = ShieldMethod._('HEAD');
+static const ShieldMethod head = ShieldMethod$head._();
 
-static const ShieldMethod options = ShieldMethod._('OPTIONS');
+static const ShieldMethod options = ShieldMethod$options._();
 
-static const ShieldMethod put = ShieldMethod._('PUT');
+static const ShieldMethod put = ShieldMethod$put._();
 
-static const ShieldMethod delete = ShieldMethod._('DELETE');
+static const ShieldMethod delete = ShieldMethod$delete._();
 
-static const ShieldMethod connect = ShieldMethod._('CONNECT');
+static const ShieldMethod connect = ShieldMethod$connect._();
 
-static const ShieldMethod patch = ShieldMethod._('PATCH');
+static const ShieldMethod patch = ShieldMethod$patch._();
 
-static const ShieldMethod trace = ShieldMethod._('TRACE');
+static const ShieldMethod trace = ShieldMethod$trace._();
 
 static const List<ShieldMethod> values = [$get, post, head, options, put, delete, connect, patch, trace];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -54,12 +53,98 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShieldMethod$Unknown; } 
+@override String toString() => 'ShieldMethod($value)';
+
+ }
+@immutable final class ShieldMethod$$get extends ShieldMethod {const ShieldMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class ShieldMethod$post extends ShieldMethod {const ShieldMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class ShieldMethod$head extends ShieldMethod {const ShieldMethod$head._();
+
+@override String get value => 'HEAD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldMethod$head;
+
+@override int get hashCode => 'HEAD'.hashCode;
+
+ }
+@immutable final class ShieldMethod$options extends ShieldMethod {const ShieldMethod$options._();
+
+@override String get value => 'OPTIONS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldMethod$options;
+
+@override int get hashCode => 'OPTIONS'.hashCode;
+
+ }
+@immutable final class ShieldMethod$put extends ShieldMethod {const ShieldMethod$put._();
+
+@override String get value => 'PUT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldMethod$put;
+
+@override int get hashCode => 'PUT'.hashCode;
+
+ }
+@immutable final class ShieldMethod$delete extends ShieldMethod {const ShieldMethod$delete._();
+
+@override String get value => 'DELETE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldMethod$delete;
+
+@override int get hashCode => 'DELETE'.hashCode;
+
+ }
+@immutable final class ShieldMethod$connect extends ShieldMethod {const ShieldMethod$connect._();
+
+@override String get value => 'CONNECT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldMethod$connect;
+
+@override int get hashCode => 'CONNECT'.hashCode;
+
+ }
+@immutable final class ShieldMethod$patch extends ShieldMethod {const ShieldMethod$patch._();
+
+@override String get value => 'PATCH';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldMethod$patch;
+
+@override int get hashCode => 'PATCH'.hashCode;
+
+ }
+@immutable final class ShieldMethod$trace extends ShieldMethod {const ShieldMethod$trace._();
+
+@override String get value => 'TRACE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldMethod$trace;
+
+@override int get hashCode => 'TRACE'.hashCode;
+
+ }
+@immutable final class ShieldMethod$Unknown extends ShieldMethod {const ShieldMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldMethod && other.value == value;
+    other is ShieldMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShieldMethod($value)';
 
  }

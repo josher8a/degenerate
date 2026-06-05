@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ZeroTrustGatewaySandbox
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the action to take when the system cannot scan the file.
-@immutable final class FallbackAction {const FallbackAction._(this.value);
+sealed class FallbackAction {const FallbackAction();
 
 factory FallbackAction.fromJson(String json) { return switch (json) {
   'allow' => allow,
   'block' => block,
-  _ => FallbackAction._(json),
+  _ => FallbackAction$Unknown(json),
 }; }
 
-static const FallbackAction allow = FallbackAction._('allow');
+static const FallbackAction allow = FallbackAction$allow._();
 
-static const FallbackAction block = FallbackAction._('block');
+static const FallbackAction block = FallbackAction$block._();
 
 static const List<FallbackAction> values = [allow, block];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FallbackAction$Unknown; } 
+@override String toString() => 'FallbackAction($value)';
+
+ }
+@immutable final class FallbackAction$allow extends FallbackAction {const FallbackAction$allow._();
+
+@override String get value => 'allow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FallbackAction$allow;
+
+@override int get hashCode => 'allow'.hashCode;
+
+ }
+@immutable final class FallbackAction$block extends FallbackAction {const FallbackAction$block._();
+
+@override String get value => 'block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FallbackAction$block;
+
+@override int get hashCode => 'block'.hashCode;
+
+ }
+@immutable final class FallbackAction$Unknown extends FallbackAction {const FallbackAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FallbackAction && other.value == value;
+    other is FallbackAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FallbackAction($value)';
 
  }
 /// Specify whether to enable the sandbox.

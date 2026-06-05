@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Init
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates you have a new SQL file to upload.
-@immutable final class InitAction {const InitAction._(this.value);
+sealed class InitAction {const InitAction();
 
 factory InitAction.fromJson(String json) { return switch (json) {
   'init' => init,
-  _ => InitAction._(json),
+  _ => InitAction$Unknown(json),
 }; }
 
-static const InitAction init = InitAction._('init');
+static const InitAction init = InitAction$init._();
 
 static const List<InitAction> values = [init];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InitAction$Unknown; } 
+@override String toString() => 'InitAction($value)';
+
+ }
+@immutable final class InitAction$init extends InitAction {const InitAction$init._();
+
+@override String get value => 'init';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InitAction$init;
+
+@override int get hashCode => 'init'.hashCode;
+
+ }
+@immutable final class InitAction$Unknown extends InitAction {const InitAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InitAction && other.value == value;
+    other is InitAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InitAction($value)';
 
  }
 @immutable final class Init {const Init({required this.action, required this.etag, });

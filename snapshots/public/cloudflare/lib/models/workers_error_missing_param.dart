@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WorkersErrorMissingParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that a required URL parameter is missing.
-@immutable final class WorkersErrorMissingParamCode {const WorkersErrorMissingParamCode._(this.value);
+sealed class WorkersErrorMissingParamCode {const WorkersErrorMissingParamCode();
 
 factory WorkersErrorMissingParamCode.fromJson(int json) { return switch (json) {
   10003 => $10003,
-  _ => WorkersErrorMissingParamCode._(json),
+  _ => WorkersErrorMissingParamCode$Unknown(json),
 }; }
 
-static const WorkersErrorMissingParamCode $10003 = WorkersErrorMissingParamCode._(10003);
+static const WorkersErrorMissingParamCode $10003 = WorkersErrorMissingParamCode$$10003._();
 
 static const List<WorkersErrorMissingParamCode> values = [$10003];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersErrorMissingParamCode$Unknown; } 
+@override String toString() => 'WorkersErrorMissingParamCode($value)';
+
+ }
+@immutable final class WorkersErrorMissingParamCode$$10003 extends WorkersErrorMissingParamCode {const WorkersErrorMissingParamCode$$10003._();
+
+@override int get value => 10003;
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersErrorMissingParamCode$$10003;
+
+@override int get hashCode => 10003.hashCode;
+
+ }
+@immutable final class WorkersErrorMissingParamCode$Unknown extends WorkersErrorMissingParamCode {const WorkersErrorMissingParamCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersErrorMissingParamCode && other.value == value;
+    other is WorkersErrorMissingParamCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersErrorMissingParamCode($value)';
 
  }
 @immutable final class WorkersErrorMissingParam {const WorkersErrorMissingParam({required this.code, required this.message, });

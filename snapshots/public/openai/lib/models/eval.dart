@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Eval
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval/eval_data_source_config.dart';import 'package:pub_openai/models/eval/eval_testing_criteria.dart';import 'package:pub_openai/models/eval_custom_data_source_config.dart';import 'package:pub_openai/models/eval_grader_python.dart';import 'package:pub_openai/models/eval_grader_score_model.dart';import 'package:pub_openai/models/eval_grader_text_similarity.dart';import 'package:pub_openai/models/eval_logs_data_source_config.dart';import 'package:pub_openai/models/eval_stored_completions_data_source_config.dart';import 'package:pub_openai/models/grader_label_model.dart';import 'package:pub_openai/models/grader_string_check.dart';/// The object type.
-@immutable final class EvalObject {const EvalObject._(this.value);
+sealed class EvalObject {const EvalObject();
 
 factory EvalObject.fromJson(String json) { return switch (json) {
   'eval' => eval,
-  _ => EvalObject._(json),
+  _ => EvalObject$Unknown(json),
 }; }
 
-static const EvalObject eval = EvalObject._('eval');
+static const EvalObject eval = EvalObject$eval._();
 
 static const List<EvalObject> values = [eval];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EvalObject$Unknown; } 
+@override String toString() => 'EvalObject($value)';
+
+ }
+@immutable final class EvalObject$eval extends EvalObject {const EvalObject$eval._();
+
+@override String get value => 'eval';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EvalObject$eval;
+
+@override int get hashCode => 'eval'.hashCode;
+
+ }
+@immutable final class EvalObject$Unknown extends EvalObject {const EvalObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EvalObject && other.value == value;
+    other is EvalObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EvalObject($value)';
 
  }
 /// An Eval object with a data source config and testing criteria.

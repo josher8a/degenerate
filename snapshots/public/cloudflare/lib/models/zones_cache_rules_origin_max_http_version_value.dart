@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ZonesCacheRulesOriginMaxHttpVersionValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the Origin Max HTTP Version Setting.
-@immutable final class ZonesCacheRulesOriginMaxHttpVersionValue {const ZonesCacheRulesOriginMaxHttpVersionValue._(this.value);
+sealed class ZonesCacheRulesOriginMaxHttpVersionValue {const ZonesCacheRulesOriginMaxHttpVersionValue();
 
 factory ZonesCacheRulesOriginMaxHttpVersionValue.fromJson(String json) { return switch (json) {
   '2' => $2,
   '1' => $1,
-  _ => ZonesCacheRulesOriginMaxHttpVersionValue._(json),
+  _ => ZonesCacheRulesOriginMaxHttpVersionValue$Unknown(json),
 }; }
 
-static const ZonesCacheRulesOriginMaxHttpVersionValue $2 = ZonesCacheRulesOriginMaxHttpVersionValue._('2');
+static const ZonesCacheRulesOriginMaxHttpVersionValue $2 = ZonesCacheRulesOriginMaxHttpVersionValue$$2._();
 
-static const ZonesCacheRulesOriginMaxHttpVersionValue $1 = ZonesCacheRulesOriginMaxHttpVersionValue._('1');
+static const ZonesCacheRulesOriginMaxHttpVersionValue $1 = ZonesCacheRulesOriginMaxHttpVersionValue$$1._();
 
 static const List<ZonesCacheRulesOriginMaxHttpVersionValue> values = [$2, $1];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesCacheRulesOriginMaxHttpVersionValue$Unknown; } 
+@override String toString() => 'ZonesCacheRulesOriginMaxHttpVersionValue($value)';
+
+ }
+@immutable final class ZonesCacheRulesOriginMaxHttpVersionValue$$2 extends ZonesCacheRulesOriginMaxHttpVersionValue {const ZonesCacheRulesOriginMaxHttpVersionValue$$2._();
+
+@override String get value => '2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesCacheRulesOriginMaxHttpVersionValue$$2;
+
+@override int get hashCode => '2'.hashCode;
+
+ }
+@immutable final class ZonesCacheRulesOriginMaxHttpVersionValue$$1 extends ZonesCacheRulesOriginMaxHttpVersionValue {const ZonesCacheRulesOriginMaxHttpVersionValue$$1._();
+
+@override String get value => '1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesCacheRulesOriginMaxHttpVersionValue$$1;
+
+@override int get hashCode => '1'.hashCode;
+
+ }
+@immutable final class ZonesCacheRulesOriginMaxHttpVersionValue$Unknown extends ZonesCacheRulesOriginMaxHttpVersionValue {const ZonesCacheRulesOriginMaxHttpVersionValue$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesCacheRulesOriginMaxHttpVersionValue && other.value == value;
+    other is ZonesCacheRulesOriginMaxHttpVersionValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesCacheRulesOriginMaxHttpVersionValue($value)';
 
  }

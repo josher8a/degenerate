@@ -5,9 +5,8 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';
 
 /// Machine-readable error codes. Clients switch on these, not on messages.
 /// Add new codes here as needed — the OpenAPI spec will update automatically.
-@immutable
-final class ErrorCode {
-  const ErrorCode._(this.value);
+sealed class ErrorCode {
+  const ErrorCode();
 
   factory ErrorCode.fromJson(String json) {
     return switch (json) {
@@ -25,39 +24,38 @@ final class ErrorCode {
       'not_joinable' => notJoinable,
       'livekit_error' => livekitError,
       'not_found' => notFound,
-      _ => ErrorCode._(json),
+      _ => ErrorCode$Unknown(json),
     };
   }
 
-  static const ErrorCode notInRoom = ErrorCode._('not_in_room');
+  static const ErrorCode notInRoom = ErrorCode$notInRoom._();
 
-  static const ErrorCode notKeeper = ErrorCode._('not_keeper');
+  static const ErrorCode notKeeper = ErrorCode$notKeeper._();
 
-  static const ErrorCode notCurrentSpeaker = ErrorCode._('not_current_speaker');
+  static const ErrorCode notCurrentSpeaker = ErrorCode$notCurrentSpeaker._();
 
-  static const ErrorCode notNextSpeaker = ErrorCode._('not_next_speaker');
+  static const ErrorCode notNextSpeaker = ErrorCode$notNextSpeaker._();
 
-  static const ErrorCode banned = ErrorCode._('banned');
+  static const ErrorCode banned = ErrorCode$banned._();
 
-  static const ErrorCode invalidTransition = ErrorCode._('invalid_transition');
+  static const ErrorCode invalidTransition = ErrorCode$invalidTransition._();
 
-  static const ErrorCode roomNotActive = ErrorCode._('room_not_active');
+  static const ErrorCode roomNotActive = ErrorCode$roomNotActive._();
 
-  static const ErrorCode roomNotWaiting = ErrorCode._('room_not_waiting');
+  static const ErrorCode roomNotWaiting = ErrorCode$roomNotWaiting._();
 
-  static const ErrorCode roomAlreadyEnded = ErrorCode._('room_already_ended');
+  static const ErrorCode roomAlreadyEnded = ErrorCode$roomAlreadyEnded._();
 
-  static const ErrorCode invalidParticipantOrder = ErrorCode._(
-    'invalid_participant_order',
-  );
+  static const ErrorCode invalidParticipantOrder =
+      ErrorCode$invalidParticipantOrder._();
 
-  static const ErrorCode staleVersion = ErrorCode._('stale_version');
+  static const ErrorCode staleVersion = ErrorCode$staleVersion._();
 
-  static const ErrorCode notJoinable = ErrorCode._('not_joinable');
+  static const ErrorCode notJoinable = ErrorCode$notJoinable._();
 
-  static const ErrorCode livekitError = ErrorCode._('livekit_error');
+  static const ErrorCode livekitError = ErrorCode$livekitError._();
 
-  static const ErrorCode notFound = ErrorCode._('not_found');
+  static const ErrorCode notFound = ErrorCode$notFound._();
 
   static const List<ErrorCode> values = [
     notInRoom,
@@ -76,8 +74,7 @@ final class ErrorCode {
     notFound,
   ];
 
-  final String value;
-
+  String get value;
   String toJson() {
     return value;
   }
@@ -105,18 +102,237 @@ final class ErrorCode {
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
-    return !values.contains(this);
+    return this is ErrorCode$Unknown;
   }
 
   @override
+  String toString() => 'ErrorCode($value)';
+}
+
+@immutable
+final class ErrorCode$notInRoom extends ErrorCode {
+  const ErrorCode$notInRoom._();
+
+  @override
+  String get value => 'not_in_room';
+
+  @override
   bool operator ==(Object other) =>
-      identical(this, other) || other is ErrorCode && other.value == value;
+      identical(this, other) || other is ErrorCode$notInRoom;
+
+  @override
+  int get hashCode => 'not_in_room'.hashCode;
+}
+
+@immutable
+final class ErrorCode$notKeeper extends ErrorCode {
+  const ErrorCode$notKeeper._();
+
+  @override
+  String get value => 'not_keeper';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorCode$notKeeper;
+
+  @override
+  int get hashCode => 'not_keeper'.hashCode;
+}
+
+@immutable
+final class ErrorCode$notCurrentSpeaker extends ErrorCode {
+  const ErrorCode$notCurrentSpeaker._();
+
+  @override
+  String get value => 'not_current_speaker';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorCode$notCurrentSpeaker;
+
+  @override
+  int get hashCode => 'not_current_speaker'.hashCode;
+}
+
+@immutable
+final class ErrorCode$notNextSpeaker extends ErrorCode {
+  const ErrorCode$notNextSpeaker._();
+
+  @override
+  String get value => 'not_next_speaker';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorCode$notNextSpeaker;
+
+  @override
+  int get hashCode => 'not_next_speaker'.hashCode;
+}
+
+@immutable
+final class ErrorCode$banned extends ErrorCode {
+  const ErrorCode$banned._();
+
+  @override
+  String get value => 'banned';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorCode$banned;
+
+  @override
+  int get hashCode => 'banned'.hashCode;
+}
+
+@immutable
+final class ErrorCode$invalidTransition extends ErrorCode {
+  const ErrorCode$invalidTransition._();
+
+  @override
+  String get value => 'invalid_transition';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorCode$invalidTransition;
+
+  @override
+  int get hashCode => 'invalid_transition'.hashCode;
+}
+
+@immutable
+final class ErrorCode$roomNotActive extends ErrorCode {
+  const ErrorCode$roomNotActive._();
+
+  @override
+  String get value => 'room_not_active';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorCode$roomNotActive;
+
+  @override
+  int get hashCode => 'room_not_active'.hashCode;
+}
+
+@immutable
+final class ErrorCode$roomNotWaiting extends ErrorCode {
+  const ErrorCode$roomNotWaiting._();
+
+  @override
+  String get value => 'room_not_waiting';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorCode$roomNotWaiting;
+
+  @override
+  int get hashCode => 'room_not_waiting'.hashCode;
+}
+
+@immutable
+final class ErrorCode$roomAlreadyEnded extends ErrorCode {
+  const ErrorCode$roomAlreadyEnded._();
+
+  @override
+  String get value => 'room_already_ended';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorCode$roomAlreadyEnded;
+
+  @override
+  int get hashCode => 'room_already_ended'.hashCode;
+}
+
+@immutable
+final class ErrorCode$invalidParticipantOrder extends ErrorCode {
+  const ErrorCode$invalidParticipantOrder._();
+
+  @override
+  String get value => 'invalid_participant_order';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorCode$invalidParticipantOrder;
+
+  @override
+  int get hashCode => 'invalid_participant_order'.hashCode;
+}
+
+@immutable
+final class ErrorCode$staleVersion extends ErrorCode {
+  const ErrorCode$staleVersion._();
+
+  @override
+  String get value => 'stale_version';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorCode$staleVersion;
+
+  @override
+  int get hashCode => 'stale_version'.hashCode;
+}
+
+@immutable
+final class ErrorCode$notJoinable extends ErrorCode {
+  const ErrorCode$notJoinable._();
+
+  @override
+  String get value => 'not_joinable';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorCode$notJoinable;
+
+  @override
+  int get hashCode => 'not_joinable'.hashCode;
+}
+
+@immutable
+final class ErrorCode$livekitError extends ErrorCode {
+  const ErrorCode$livekitError._();
+
+  @override
+  String get value => 'livekit_error';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorCode$livekitError;
+
+  @override
+  int get hashCode => 'livekit_error'.hashCode;
+}
+
+@immutable
+final class ErrorCode$notFound extends ErrorCode {
+  const ErrorCode$notFound._();
+
+  @override
+  String get value => 'not_found';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ErrorCode$notFound;
+
+  @override
+  int get hashCode => 'not_found'.hashCode;
+}
+
+@immutable
+final class ErrorCode$Unknown extends ErrorCode {
+  const ErrorCode$Unknown(this.value);
+
+  @override
+  final String value;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is ErrorCode$Unknown && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
-
-  @override
-  String toString() => 'ErrorCode($value)';
 }
 
 /// Structured error. Clients switch on `code`, display `message`.

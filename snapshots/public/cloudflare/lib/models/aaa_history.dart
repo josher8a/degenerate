@@ -23,25 +23,24 @@ String toJson() => value;
 
 }
 /// The type of mechanism to which the notification has been dispatched. This can be email/pagerduty/webhook based on the mechanism configured.
-@immutable final class AaaMechanismType {const AaaMechanismType._(this.value);
+sealed class AaaMechanismType {const AaaMechanismType();
 
 factory AaaMechanismType.fromJson(String json) { return switch (json) {
   'email' => email,
   'pagerduty' => pagerduty,
   'webhook' => webhook,
-  _ => AaaMechanismType._(json),
+  _ => AaaMechanismType$Unknown(json),
 }; }
 
-static const AaaMechanismType email = AaaMechanismType._('email');
+static const AaaMechanismType email = AaaMechanismType$email._();
 
-static const AaaMechanismType pagerduty = AaaMechanismType._('pagerduty');
+static const AaaMechanismType pagerduty = AaaMechanismType$pagerduty._();
 
-static const AaaMechanismType webhook = AaaMechanismType._('webhook');
+static const AaaMechanismType webhook = AaaMechanismType$webhook._();
 
 static const List<AaaMechanismType> values = [email, pagerduty, webhook];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -51,13 +50,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AaaMechanismType$Unknown; } 
+@override String toString() => 'AaaMechanismType($value)';
+
+ }
+@immutable final class AaaMechanismType$email extends AaaMechanismType {const AaaMechanismType$email._();
+
+@override String get value => 'email';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaMechanismType$email;
+
+@override int get hashCode => 'email'.hashCode;
+
+ }
+@immutable final class AaaMechanismType$pagerduty extends AaaMechanismType {const AaaMechanismType$pagerduty._();
+
+@override String get value => 'pagerduty';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaMechanismType$pagerduty;
+
+@override int get hashCode => 'pagerduty'.hashCode;
+
+ }
+@immutable final class AaaMechanismType$webhook extends AaaMechanismType {const AaaMechanismType$webhook._();
+
+@override String get value => 'webhook';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaMechanismType$webhook;
+
+@override int get hashCode => 'webhook'.hashCode;
+
+ }
+@immutable final class AaaMechanismType$Unknown extends AaaMechanismType {const AaaMechanismType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AaaMechanismType && other.value == value;
+    other is AaaMechanismType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AaaMechanismType($value)';
 
  }
 /// Type of notification that has been dispatched.

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/UpdateConferenceRequest (inline: AnnounceMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method used to call `announce_url`. Can be: `GET` or `POST` and the default is `POST`
-@immutable final class AnnounceMethod {const AnnounceMethod._(this.value);
+sealed class AnnounceMethod {const AnnounceMethod();
 
 factory AnnounceMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => AnnounceMethod._(json),
+  _ => AnnounceMethod$Unknown(json),
 }; }
 
-static const AnnounceMethod $get = AnnounceMethod._('GET');
+static const AnnounceMethod $get = AnnounceMethod$$get._();
 
-static const AnnounceMethod post = AnnounceMethod._('POST');
+static const AnnounceMethod post = AnnounceMethod$post._();
 
 static const List<AnnounceMethod> values = [$get, post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AnnounceMethod$Unknown; } 
+@override String toString() => 'AnnounceMethod($value)';
+
+ }
+@immutable final class AnnounceMethod$$get extends AnnounceMethod {const AnnounceMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AnnounceMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class AnnounceMethod$post extends AnnounceMethod {const AnnounceMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AnnounceMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class AnnounceMethod$Unknown extends AnnounceMethod {const AnnounceMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AnnounceMethod && other.value == value;
+    other is AnnounceMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AnnounceMethod($value)';
 
  }

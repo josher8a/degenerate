@@ -5,22 +5,21 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default valu
 /// 
 /// - `PR_TITLE` - default to the pull request's title.
 /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-@immutable final class SquashMergeCommitTitle {const SquashMergeCommitTitle._(this.value);
+sealed class SquashMergeCommitTitle {const SquashMergeCommitTitle();
 
 factory SquashMergeCommitTitle.fromJson(String json) { return switch (json) {
   'PR_TITLE' => prTitle,
   'COMMIT_OR_PR_TITLE' => commitOrPrTitle,
-  _ => SquashMergeCommitTitle._(json),
+  _ => SquashMergeCommitTitle$Unknown(json),
 }; }
 
-static const SquashMergeCommitTitle prTitle = SquashMergeCommitTitle._('PR_TITLE');
+static const SquashMergeCommitTitle prTitle = SquashMergeCommitTitle$prTitle._();
 
-static const SquashMergeCommitTitle commitOrPrTitle = SquashMergeCommitTitle._('COMMIT_OR_PR_TITLE');
+static const SquashMergeCommitTitle commitOrPrTitle = SquashMergeCommitTitle$commitOrPrTitle._();
 
 static const List<SquashMergeCommitTitle> values = [prTitle, commitOrPrTitle];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SquashMergeCommitTitle$Unknown; } 
+@override String toString() => 'SquashMergeCommitTitle($value)';
+
+ }
+@immutable final class SquashMergeCommitTitle$prTitle extends SquashMergeCommitTitle {const SquashMergeCommitTitle$prTitle._();
+
+@override String get value => 'PR_TITLE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SquashMergeCommitTitle$prTitle;
+
+@override int get hashCode => 'PR_TITLE'.hashCode;
+
+ }
+@immutable final class SquashMergeCommitTitle$commitOrPrTitle extends SquashMergeCommitTitle {const SquashMergeCommitTitle$commitOrPrTitle._();
+
+@override String get value => 'COMMIT_OR_PR_TITLE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SquashMergeCommitTitle$commitOrPrTitle;
+
+@override int get hashCode => 'COMMIT_OR_PR_TITLE'.hashCode;
+
+ }
+@immutable final class SquashMergeCommitTitle$Unknown extends SquashMergeCommitTitle {const SquashMergeCommitTitle$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SquashMergeCommitTitle && other.value == value;
+    other is SquashMergeCommitTitle$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SquashMergeCommitTitle($value)';
 
  }

@@ -2,7 +2,7 @@
 // Source: #/components/schemas/CodeScanningAlertRule (inline: Severity)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The severity of the alert.
-@immutable final class CodeScanningAlertRuleSeverity {const CodeScanningAlertRuleSeverity._(this.value);
+sealed class CodeScanningAlertRuleSeverity {const CodeScanningAlertRuleSeverity();
 
 factory CodeScanningAlertRuleSeverity.fromJson(String json) { return switch (json) {
   'none' => none,
@@ -10,23 +10,22 @@ factory CodeScanningAlertRuleSeverity.fromJson(String json) { return switch (jso
   'warning' => warning,
   'error' => error,
   'null' => $null,
-  _ => CodeScanningAlertRuleSeverity._(json),
+  _ => CodeScanningAlertRuleSeverity$Unknown(json),
 }; }
 
-static const CodeScanningAlertRuleSeverity none = CodeScanningAlertRuleSeverity._('none');
+static const CodeScanningAlertRuleSeverity none = CodeScanningAlertRuleSeverity$none._();
 
-static const CodeScanningAlertRuleSeverity note = CodeScanningAlertRuleSeverity._('note');
+static const CodeScanningAlertRuleSeverity note = CodeScanningAlertRuleSeverity$note._();
 
-static const CodeScanningAlertRuleSeverity warning = CodeScanningAlertRuleSeverity._('warning');
+static const CodeScanningAlertRuleSeverity warning = CodeScanningAlertRuleSeverity$warning._();
 
-static const CodeScanningAlertRuleSeverity error = CodeScanningAlertRuleSeverity._('error');
+static const CodeScanningAlertRuleSeverity error = CodeScanningAlertRuleSeverity$error._();
 
-static const CodeScanningAlertRuleSeverity $null = CodeScanningAlertRuleSeverity._('null');
+static const CodeScanningAlertRuleSeverity $null = CodeScanningAlertRuleSeverity$$null._();
 
 static const List<CodeScanningAlertRuleSeverity> values = [none, note, warning, error, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,12 +37,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeScanningAlertRuleSeverity$Unknown; } 
+@override String toString() => 'CodeScanningAlertRuleSeverity($value)';
+
+ }
+@immutable final class CodeScanningAlertRuleSeverity$none extends CodeScanningAlertRuleSeverity {const CodeScanningAlertRuleSeverity$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAlertRuleSeverity$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class CodeScanningAlertRuleSeverity$note extends CodeScanningAlertRuleSeverity {const CodeScanningAlertRuleSeverity$note._();
+
+@override String get value => 'note';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAlertRuleSeverity$note;
+
+@override int get hashCode => 'note'.hashCode;
+
+ }
+@immutable final class CodeScanningAlertRuleSeverity$warning extends CodeScanningAlertRuleSeverity {const CodeScanningAlertRuleSeverity$warning._();
+
+@override String get value => 'warning';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAlertRuleSeverity$warning;
+
+@override int get hashCode => 'warning'.hashCode;
+
+ }
+@immutable final class CodeScanningAlertRuleSeverity$error extends CodeScanningAlertRuleSeverity {const CodeScanningAlertRuleSeverity$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAlertRuleSeverity$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class CodeScanningAlertRuleSeverity$$null extends CodeScanningAlertRuleSeverity {const CodeScanningAlertRuleSeverity$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAlertRuleSeverity$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class CodeScanningAlertRuleSeverity$Unknown extends CodeScanningAlertRuleSeverity {const CodeScanningAlertRuleSeverity$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeScanningAlertRuleSeverity && other.value == value;
+    other is CodeScanningAlertRuleSeverity$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeScanningAlertRuleSeverity($value)';
 
  }

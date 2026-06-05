@@ -2,25 +2,24 @@
 // Source: #/components/schemas/TerminalReaderReaderResourceReaderAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_collect_inputs_action.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_collect_payment_method_action.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_confirm_payment_intent_action.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_process_payment_intent_action.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_process_setup_intent_action.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_refund_payment_action.dart';import 'package:pub_stripe_spec3/models/terminal_reader_reader_resource_set_reader_display_action.dart';/// Status of the action performed by the reader.
-@immutable final class TerminalReaderReaderResourceReaderActionStatus {const TerminalReaderReaderResourceReaderActionStatus._(this.value);
+sealed class TerminalReaderReaderResourceReaderActionStatus {const TerminalReaderReaderResourceReaderActionStatus();
 
 factory TerminalReaderReaderResourceReaderActionStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,
   'in_progress' => inProgress,
   'succeeded' => succeeded,
-  _ => TerminalReaderReaderResourceReaderActionStatus._(json),
+  _ => TerminalReaderReaderResourceReaderActionStatus$Unknown(json),
 }; }
 
-static const TerminalReaderReaderResourceReaderActionStatus failed = TerminalReaderReaderResourceReaderActionStatus._('failed');
+static const TerminalReaderReaderResourceReaderActionStatus failed = TerminalReaderReaderResourceReaderActionStatus$failed._();
 
-static const TerminalReaderReaderResourceReaderActionStatus inProgress = TerminalReaderReaderResourceReaderActionStatus._('in_progress');
+static const TerminalReaderReaderResourceReaderActionStatus inProgress = TerminalReaderReaderResourceReaderActionStatus$inProgress._();
 
-static const TerminalReaderReaderResourceReaderActionStatus succeeded = TerminalReaderReaderResourceReaderActionStatus._('succeeded');
+static const TerminalReaderReaderResourceReaderActionStatus succeeded = TerminalReaderReaderResourceReaderActionStatus$succeeded._();
 
 static const List<TerminalReaderReaderResourceReaderActionStatus> values = [failed, inProgress, succeeded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,17 +29,49 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TerminalReaderReaderResourceReaderActionStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TerminalReaderReaderResourceReaderActionStatus$Unknown; } 
 @override String toString() => 'TerminalReaderReaderResourceReaderActionStatus($value)';
 
  }
+@immutable final class TerminalReaderReaderResourceReaderActionStatus$failed extends TerminalReaderReaderResourceReaderActionStatus {const TerminalReaderReaderResourceReaderActionStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceReaderActionStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceReaderActionStatus$inProgress extends TerminalReaderReaderResourceReaderActionStatus {const TerminalReaderReaderResourceReaderActionStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceReaderActionStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceReaderActionStatus$succeeded extends TerminalReaderReaderResourceReaderActionStatus {const TerminalReaderReaderResourceReaderActionStatus$succeeded._();
+
+@override String get value => 'succeeded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceReaderActionStatus$succeeded;
+
+@override int get hashCode => 'succeeded'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceReaderActionStatus$Unknown extends TerminalReaderReaderResourceReaderActionStatus {const TerminalReaderReaderResourceReaderActionStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TerminalReaderReaderResourceReaderActionStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Type of action performed by the reader.
-@immutable final class TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType._(this.value);
+sealed class TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType();
 
 factory TerminalReaderReaderResourceReaderActionType.fromJson(String json) { return switch (json) {
   'collect_inputs' => collectInputs,
@@ -50,27 +81,26 @@ factory TerminalReaderReaderResourceReaderActionType.fromJson(String json) { ret
   'process_setup_intent' => processSetupIntent,
   'refund_payment' => refundPayment,
   'set_reader_display' => setReaderDisplay,
-  _ => TerminalReaderReaderResourceReaderActionType._(json),
+  _ => TerminalReaderReaderResourceReaderActionType$Unknown(json),
 }; }
 
-static const TerminalReaderReaderResourceReaderActionType collectInputs = TerminalReaderReaderResourceReaderActionType._('collect_inputs');
+static const TerminalReaderReaderResourceReaderActionType collectInputs = TerminalReaderReaderResourceReaderActionType$collectInputs._();
 
-static const TerminalReaderReaderResourceReaderActionType collectPaymentMethod = TerminalReaderReaderResourceReaderActionType._('collect_payment_method');
+static const TerminalReaderReaderResourceReaderActionType collectPaymentMethod = TerminalReaderReaderResourceReaderActionType$collectPaymentMethod._();
 
-static const TerminalReaderReaderResourceReaderActionType confirmPaymentIntent = TerminalReaderReaderResourceReaderActionType._('confirm_payment_intent');
+static const TerminalReaderReaderResourceReaderActionType confirmPaymentIntent = TerminalReaderReaderResourceReaderActionType$confirmPaymentIntent._();
 
-static const TerminalReaderReaderResourceReaderActionType processPaymentIntent = TerminalReaderReaderResourceReaderActionType._('process_payment_intent');
+static const TerminalReaderReaderResourceReaderActionType processPaymentIntent = TerminalReaderReaderResourceReaderActionType$processPaymentIntent._();
 
-static const TerminalReaderReaderResourceReaderActionType processSetupIntent = TerminalReaderReaderResourceReaderActionType._('process_setup_intent');
+static const TerminalReaderReaderResourceReaderActionType processSetupIntent = TerminalReaderReaderResourceReaderActionType$processSetupIntent._();
 
-static const TerminalReaderReaderResourceReaderActionType refundPayment = TerminalReaderReaderResourceReaderActionType._('refund_payment');
+static const TerminalReaderReaderResourceReaderActionType refundPayment = TerminalReaderReaderResourceReaderActionType$refundPayment._();
 
-static const TerminalReaderReaderResourceReaderActionType setReaderDisplay = TerminalReaderReaderResourceReaderActionType._('set_reader_display');
+static const TerminalReaderReaderResourceReaderActionType setReaderDisplay = TerminalReaderReaderResourceReaderActionType$setReaderDisplay._();
 
 static const List<TerminalReaderReaderResourceReaderActionType> values = [collectInputs, collectPaymentMethod, confirmPaymentIntent, processPaymentIntent, processSetupIntent, refundPayment, setReaderDisplay];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -84,13 +114,81 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TerminalReaderReaderResourceReaderActionType$Unknown; } 
+@override String toString() => 'TerminalReaderReaderResourceReaderActionType($value)';
+
+ }
+@immutable final class TerminalReaderReaderResourceReaderActionType$collectInputs extends TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType$collectInputs._();
+
+@override String get value => 'collect_inputs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceReaderActionType$collectInputs;
+
+@override int get hashCode => 'collect_inputs'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceReaderActionType$collectPaymentMethod extends TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType$collectPaymentMethod._();
+
+@override String get value => 'collect_payment_method';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceReaderActionType$collectPaymentMethod;
+
+@override int get hashCode => 'collect_payment_method'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceReaderActionType$confirmPaymentIntent extends TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType$confirmPaymentIntent._();
+
+@override String get value => 'confirm_payment_intent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceReaderActionType$confirmPaymentIntent;
+
+@override int get hashCode => 'confirm_payment_intent'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceReaderActionType$processPaymentIntent extends TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType$processPaymentIntent._();
+
+@override String get value => 'process_payment_intent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceReaderActionType$processPaymentIntent;
+
+@override int get hashCode => 'process_payment_intent'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceReaderActionType$processSetupIntent extends TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType$processSetupIntent._();
+
+@override String get value => 'process_setup_intent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceReaderActionType$processSetupIntent;
+
+@override int get hashCode => 'process_setup_intent'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceReaderActionType$refundPayment extends TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType$refundPayment._();
+
+@override String get value => 'refund_payment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceReaderActionType$refundPayment;
+
+@override int get hashCode => 'refund_payment'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceReaderActionType$setReaderDisplay extends TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType$setReaderDisplay._();
+
+@override String get value => 'set_reader_display';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceReaderActionType$setReaderDisplay;
+
+@override int get hashCode => 'set_reader_display'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceReaderActionType$Unknown extends TerminalReaderReaderResourceReaderActionType {const TerminalReaderReaderResourceReaderActionType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TerminalReaderReaderResourceReaderActionType && other.value == value;
+    other is TerminalReaderReaderResourceReaderActionType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TerminalReaderReaderResourceReaderActionType($value)';
 
  }
 /// Represents an action performed by the reader

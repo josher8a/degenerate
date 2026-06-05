@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Topup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/source.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TopupObject {const TopupObject._(this.value);
+sealed class TopupObject {const TopupObject();
 
 factory TopupObject.fromJson(String json) { return switch (json) {
   'topup' => topup,
-  _ => TopupObject._(json),
+  _ => TopupObject$Unknown(json),
 }; }
 
-static const TopupObject topup = TopupObject._('topup');
+static const TopupObject topup = TopupObject$topup._();
 
 static const List<TopupObject> values = [topup];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,17 +21,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TopupObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TopupObject$Unknown; } 
 @override String toString() => 'TopupObject($value)';
 
  }
+@immutable final class TopupObject$topup extends TopupObject {const TopupObject$topup._();
+
+@override String get value => 'topup';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TopupObject$topup;
+
+@override int get hashCode => 'topup'.hashCode;
+
+ }
+@immutable final class TopupObject$Unknown extends TopupObject {const TopupObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TopupObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of the top-up is either `canceled`, `failed`, `pending`, `reversed`, or `succeeded`.
-@immutable final class TopupStatus {const TopupStatus._(this.value);
+sealed class TopupStatus {const TopupStatus();
 
 factory TopupStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -40,23 +53,22 @@ factory TopupStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'reversed' => reversed,
   'succeeded' => succeeded,
-  _ => TopupStatus._(json),
+  _ => TopupStatus$Unknown(json),
 }; }
 
-static const TopupStatus canceled = TopupStatus._('canceled');
+static const TopupStatus canceled = TopupStatus$canceled._();
 
-static const TopupStatus failed = TopupStatus._('failed');
+static const TopupStatus failed = TopupStatus$failed._();
 
-static const TopupStatus pending = TopupStatus._('pending');
+static const TopupStatus pending = TopupStatus$pending._();
 
-static const TopupStatus reversed = TopupStatus._('reversed');
+static const TopupStatus reversed = TopupStatus$reversed._();
 
-static const TopupStatus succeeded = TopupStatus._('succeeded');
+static const TopupStatus succeeded = TopupStatus$succeeded._();
 
 static const List<TopupStatus> values = [canceled, failed, pending, reversed, succeeded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,13 +80,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TopupStatus$Unknown; } 
+@override String toString() => 'TopupStatus($value)';
+
+ }
+@immutable final class TopupStatus$canceled extends TopupStatus {const TopupStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TopupStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class TopupStatus$failed extends TopupStatus {const TopupStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TopupStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class TopupStatus$pending extends TopupStatus {const TopupStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TopupStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class TopupStatus$reversed extends TopupStatus {const TopupStatus$reversed._();
+
+@override String get value => 'reversed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TopupStatus$reversed;
+
+@override int get hashCode => 'reversed'.hashCode;
+
+ }
+@immutable final class TopupStatus$succeeded extends TopupStatus {const TopupStatus$succeeded._();
+
+@override String get value => 'succeeded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TopupStatus$succeeded;
+
+@override int get hashCode => 'succeeded'.hashCode;
+
+ }
+@immutable final class TopupStatus$Unknown extends TopupStatus {const TopupStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TopupStatus && other.value == value;
+    other is TopupStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TopupStatus($value)';
 
  }
 /// To top up your Stripe balance, you create a top-up object. You can retrieve

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorBatchTerminateWorkflowInstancesResponse (inline: Result)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorBatchTerminateWorkflowInstancesResponseResultStatus {const WorBatchTerminateWorkflowInstancesResponseResultStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class WorBatchTerminateWorkflowInstancesResponseResultStatus {const WorBatchTerminateWorkflowInstancesResponseResultStatus();
 
 factory WorBatchTerminateWorkflowInstancesResponseResultStatus.fromJson(String json) { return switch (json) {
   'ok' => ok,
   'already_running' => alreadyRunning,
-  _ => WorBatchTerminateWorkflowInstancesResponseResultStatus._(json),
+  _ => WorBatchTerminateWorkflowInstancesResponseResultStatus$Unknown(json),
 }; }
 
-static const WorBatchTerminateWorkflowInstancesResponseResultStatus ok = WorBatchTerminateWorkflowInstancesResponseResultStatus._('ok');
+static const WorBatchTerminateWorkflowInstancesResponseResultStatus ok = WorBatchTerminateWorkflowInstancesResponseResultStatus$ok._();
 
-static const WorBatchTerminateWorkflowInstancesResponseResultStatus alreadyRunning = WorBatchTerminateWorkflowInstancesResponseResultStatus._('already_running');
+static const WorBatchTerminateWorkflowInstancesResponseResultStatus alreadyRunning = WorBatchTerminateWorkflowInstancesResponseResultStatus$alreadyRunning._();
 
 static const List<WorBatchTerminateWorkflowInstancesResponseResultStatus> values = [ok, alreadyRunning];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorBatchTerminateWorkflowInstancesResponseResultStatus$Unknown; } 
+@override String toString() => 'WorBatchTerminateWorkflowInstancesResponseResultStatus($value)';
+
+ }
+@immutable final class WorBatchTerminateWorkflowInstancesResponseResultStatus$ok extends WorBatchTerminateWorkflowInstancesResponseResultStatus {const WorBatchTerminateWorkflowInstancesResponseResultStatus$ok._();
+
+@override String get value => 'ok';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorBatchTerminateWorkflowInstancesResponseResultStatus$ok;
+
+@override int get hashCode => 'ok'.hashCode;
+
+ }
+@immutable final class WorBatchTerminateWorkflowInstancesResponseResultStatus$alreadyRunning extends WorBatchTerminateWorkflowInstancesResponseResultStatus {const WorBatchTerminateWorkflowInstancesResponseResultStatus$alreadyRunning._();
+
+@override String get value => 'already_running';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorBatchTerminateWorkflowInstancesResponseResultStatus$alreadyRunning;
+
+@override int get hashCode => 'already_running'.hashCode;
+
+ }
+@immutable final class WorBatchTerminateWorkflowInstancesResponseResultStatus$Unknown extends WorBatchTerminateWorkflowInstancesResponseResultStatus {const WorBatchTerminateWorkflowInstancesResponseResultStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorBatchTerminateWorkflowInstancesResponseResultStatus && other.value == value;
+    other is WorBatchTerminateWorkflowInstancesResponseResultStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorBatchTerminateWorkflowInstancesResponseResultStatus($value)';
 
  }
 @immutable final class WorBatchTerminateWorkflowInstancesResponseResult {const WorBatchTerminateWorkflowInstancesResponseResult({required this.instancesTerminated, required this.status, });

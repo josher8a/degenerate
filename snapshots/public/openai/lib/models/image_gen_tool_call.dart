@@ -3,28 +3,27 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the image generation call.
 /// 
-@immutable final class ImageGenToolCallStatus {const ImageGenToolCallStatus._(this.value);
+sealed class ImageGenToolCallStatus {const ImageGenToolCallStatus();
 
 factory ImageGenToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'generating' => generating,
   'failed' => failed,
-  _ => ImageGenToolCallStatus._(json),
+  _ => ImageGenToolCallStatus$Unknown(json),
 }; }
 
-static const ImageGenToolCallStatus inProgress = ImageGenToolCallStatus._('in_progress');
+static const ImageGenToolCallStatus inProgress = ImageGenToolCallStatus$inProgress._();
 
-static const ImageGenToolCallStatus completed = ImageGenToolCallStatus._('completed');
+static const ImageGenToolCallStatus completed = ImageGenToolCallStatus$completed._();
 
-static const ImageGenToolCallStatus generating = ImageGenToolCallStatus._('generating');
+static const ImageGenToolCallStatus generating = ImageGenToolCallStatus$generating._();
 
-static const ImageGenToolCallStatus failed = ImageGenToolCallStatus._('failed');
+static const ImageGenToolCallStatus failed = ImageGenToolCallStatus$failed._();
 
 static const List<ImageGenToolCallStatus> values = [inProgress, completed, generating, failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -35,13 +34,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ImageGenToolCallStatus$Unknown; } 
+@override String toString() => 'ImageGenToolCallStatus($value)';
+
+ }
+@immutable final class ImageGenToolCallStatus$inProgress extends ImageGenToolCallStatus {const ImageGenToolCallStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolCallStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class ImageGenToolCallStatus$completed extends ImageGenToolCallStatus {const ImageGenToolCallStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolCallStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class ImageGenToolCallStatus$generating extends ImageGenToolCallStatus {const ImageGenToolCallStatus$generating._();
+
+@override String get value => 'generating';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolCallStatus$generating;
+
+@override int get hashCode => 'generating'.hashCode;
+
+ }
+@immutable final class ImageGenToolCallStatus$failed extends ImageGenToolCallStatus {const ImageGenToolCallStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolCallStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class ImageGenToolCallStatus$Unknown extends ImageGenToolCallStatus {const ImageGenToolCallStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ImageGenToolCallStatus && other.value == value;
+    other is ImageGenToolCallStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ImageGenToolCallStatus($value)';
 
  }
 /// An image generation request made by the model.

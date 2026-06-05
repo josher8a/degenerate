@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EditImageBodyJsonParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_background.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_output_format.dart';import 'package:pub_openai/models/create_image_request/create_image_request_moderation.dart';import 'package:pub_openai/models/edit_image_body_json_param/edit_image_body_json_param_model.dart';import 'package:pub_openai/models/image_ref_param.dart';import 'package:pub_openai/models/partial_images.dart';@immutable final class EditImageBodyJsonParamQuality {const EditImageBodyJsonParamQuality._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_background.dart';import 'package:pub_openai/models/create_image_edit_request/create_image_edit_request_output_format.dart';import 'package:pub_openai/models/create_image_request/create_image_request_moderation.dart';import 'package:pub_openai/models/edit_image_body_json_param/edit_image_body_json_param_model.dart';import 'package:pub_openai/models/image_ref_param.dart';import 'package:pub_openai/models/partial_images.dart';sealed class EditImageBodyJsonParamQuality {const EditImageBodyJsonParamQuality();
 
 factory EditImageBodyJsonParamQuality.fromJson(String json) { return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   'auto' => auto,
-  _ => EditImageBodyJsonParamQuality._(json),
+  _ => EditImageBodyJsonParamQuality$Unknown(json),
 }; }
 
-static const EditImageBodyJsonParamQuality low = EditImageBodyJsonParamQuality._('low');
+static const EditImageBodyJsonParamQuality low = EditImageBodyJsonParamQuality$low._();
 
-static const EditImageBodyJsonParamQuality medium = EditImageBodyJsonParamQuality._('medium');
+static const EditImageBodyJsonParamQuality medium = EditImageBodyJsonParamQuality$medium._();
 
-static const EditImageBodyJsonParamQuality high = EditImageBodyJsonParamQuality._('high');
+static const EditImageBodyJsonParamQuality high = EditImageBodyJsonParamQuality$high._();
 
-static const EditImageBodyJsonParamQuality auto = EditImageBodyJsonParamQuality._('auto');
+static const EditImageBodyJsonParamQuality auto = EditImageBodyJsonParamQuality$auto._();
 
 static const List<EditImageBodyJsonParamQuality> values = [low, medium, high, auto];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,31 +32,71 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is EditImageBodyJsonParamQuality && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is EditImageBodyJsonParamQuality$Unknown; } 
 @override String toString() => 'EditImageBodyJsonParamQuality($value)';
 
  }
-@immutable final class EditImageBodyJsonParamInputFidelity {const EditImageBodyJsonParamInputFidelity._(this.value);
+@immutable final class EditImageBodyJsonParamQuality$low extends EditImageBodyJsonParamQuality {const EditImageBodyJsonParamQuality$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamQuality$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamQuality$medium extends EditImageBodyJsonParamQuality {const EditImageBodyJsonParamQuality$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamQuality$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamQuality$high extends EditImageBodyJsonParamQuality {const EditImageBodyJsonParamQuality$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamQuality$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamQuality$auto extends EditImageBodyJsonParamQuality {const EditImageBodyJsonParamQuality$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamQuality$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamQuality$Unknown extends EditImageBodyJsonParamQuality {const EditImageBodyJsonParamQuality$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EditImageBodyJsonParamQuality$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class EditImageBodyJsonParamInputFidelity {const EditImageBodyJsonParamInputFidelity();
 
 factory EditImageBodyJsonParamInputFidelity.fromJson(String json) { return switch (json) {
   'high' => high,
   'low' => low,
-  _ => EditImageBodyJsonParamInputFidelity._(json),
+  _ => EditImageBodyJsonParamInputFidelity$Unknown(json),
 }; }
 
-static const EditImageBodyJsonParamInputFidelity high = EditImageBodyJsonParamInputFidelity._('high');
+static const EditImageBodyJsonParamInputFidelity high = EditImageBodyJsonParamInputFidelity$high._();
 
-static const EditImageBodyJsonParamInputFidelity low = EditImageBodyJsonParamInputFidelity._('low');
+static const EditImageBodyJsonParamInputFidelity low = EditImageBodyJsonParamInputFidelity$low._();
 
 static const List<EditImageBodyJsonParamInputFidelity> values = [high, low];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -66,37 +105,59 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is EditImageBodyJsonParamInputFidelity && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is EditImageBodyJsonParamInputFidelity$Unknown; } 
 @override String toString() => 'EditImageBodyJsonParamInputFidelity($value)';
 
  }
-@immutable final class EditImageBodyJsonParamSize {const EditImageBodyJsonParamSize._(this.value);
+@immutable final class EditImageBodyJsonParamInputFidelity$high extends EditImageBodyJsonParamInputFidelity {const EditImageBodyJsonParamInputFidelity$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamInputFidelity$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamInputFidelity$low extends EditImageBodyJsonParamInputFidelity {const EditImageBodyJsonParamInputFidelity$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamInputFidelity$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamInputFidelity$Unknown extends EditImageBodyJsonParamInputFidelity {const EditImageBodyJsonParamInputFidelity$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EditImageBodyJsonParamInputFidelity$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class EditImageBodyJsonParamSize {const EditImageBodyJsonParamSize();
 
 factory EditImageBodyJsonParamSize.fromJson(String json) { return switch (json) {
   'auto' => auto,
   '1024x1024' => $1024x1024,
   '1536x1024' => $1536x1024,
   '1024x1536' => $1024x1536,
-  _ => EditImageBodyJsonParamSize._(json),
+  _ => EditImageBodyJsonParamSize$Unknown(json),
 }; }
 
-static const EditImageBodyJsonParamSize auto = EditImageBodyJsonParamSize._('auto');
+static const EditImageBodyJsonParamSize auto = EditImageBodyJsonParamSize$auto._();
 
-static const EditImageBodyJsonParamSize $1024x1024 = EditImageBodyJsonParamSize._('1024x1024');
+static const EditImageBodyJsonParamSize $1024x1024 = EditImageBodyJsonParamSize$$1024x1024._();
 
-static const EditImageBodyJsonParamSize $1536x1024 = EditImageBodyJsonParamSize._('1536x1024');
+static const EditImageBodyJsonParamSize $1536x1024 = EditImageBodyJsonParamSize$$1536x1024._();
 
-static const EditImageBodyJsonParamSize $1024x1536 = EditImageBodyJsonParamSize._('1024x1536');
+static const EditImageBodyJsonParamSize $1024x1536 = EditImageBodyJsonParamSize$$1024x1536._();
 
 static const List<EditImageBodyJsonParamSize> values = [auto, $1024x1024, $1536x1024, $1024x1536];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -107,13 +168,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EditImageBodyJsonParamSize$Unknown; } 
+@override String toString() => 'EditImageBodyJsonParamSize($value)';
+
+ }
+@immutable final class EditImageBodyJsonParamSize$auto extends EditImageBodyJsonParamSize {const EditImageBodyJsonParamSize$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamSize$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamSize$$1024x1024 extends EditImageBodyJsonParamSize {const EditImageBodyJsonParamSize$$1024x1024._();
+
+@override String get value => '1024x1024';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamSize$$1024x1024;
+
+@override int get hashCode => '1024x1024'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamSize$$1536x1024 extends EditImageBodyJsonParamSize {const EditImageBodyJsonParamSize$$1536x1024._();
+
+@override String get value => '1536x1024';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamSize$$1536x1024;
+
+@override int get hashCode => '1536x1024'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamSize$$1024x1536 extends EditImageBodyJsonParamSize {const EditImageBodyJsonParamSize$$1024x1536._();
+
+@override String get value => '1024x1536';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EditImageBodyJsonParamSize$$1024x1536;
+
+@override int get hashCode => '1024x1536'.hashCode;
+
+ }
+@immutable final class EditImageBodyJsonParamSize$Unknown extends EditImageBodyJsonParamSize {const EditImageBodyJsonParamSize$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EditImageBodyJsonParamSize && other.value == value;
+    other is EditImageBodyJsonParamSize$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EditImageBodyJsonParamSize($value)';
 
  }
 /// JSON request body for image edits.

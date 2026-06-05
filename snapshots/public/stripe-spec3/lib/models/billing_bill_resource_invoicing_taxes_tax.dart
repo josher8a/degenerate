@@ -2,7 +2,7 @@
 // Source: #/components/schemas/BillingBillResourceInvoicingTaxesTax
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax/billing_bill_resource_invoicing_taxes_tax_tax_behavior.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_taxes_tax_rate_details.dart';/// The reasoning behind this tax, for example, if the product is tax exempt. The possible values for this field may be extended as new tax rules are supported.
-@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason._(this.value);
+sealed class BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason();
 
 factory BillingBillResourceInvoicingTaxesTaxTaxabilityReason.fromJson(String json) { return switch (json) {
   'customer_exempt' => customerExempt,
@@ -21,45 +21,44 @@ factory BillingBillResourceInvoicingTaxesTaxTaxabilityReason.fromJson(String jso
   'standard_rated' => standardRated,
   'taxable_basis_reduced' => taxableBasisReduced,
   'zero_rated' => zeroRated,
-  _ => BillingBillResourceInvoicingTaxesTaxTaxabilityReason._(json),
+  _ => BillingBillResourceInvoicingTaxesTaxTaxabilityReason$Unknown(json),
 }; }
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason customerExempt = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('customer_exempt');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason customerExempt = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$customerExempt._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason notAvailable = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('not_available');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason notAvailable = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notAvailable._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason notCollecting = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('not_collecting');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason notCollecting = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notCollecting._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason notSubjectToTax = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('not_subject_to_tax');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason notSubjectToTax = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notSubjectToTax._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason notSupported = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('not_supported');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason notSupported = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notSupported._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason portionProductExempt = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('portion_product_exempt');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason portionProductExempt = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionProductExempt._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason portionReducedRated = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('portion_reduced_rated');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason portionReducedRated = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionReducedRated._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason portionStandardRated = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('portion_standard_rated');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason portionStandardRated = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionStandardRated._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason productExempt = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('product_exempt');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason productExempt = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$productExempt._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason productExemptHoliday = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('product_exempt_holiday');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason productExemptHoliday = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$productExemptHoliday._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason proportionallyRated = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('proportionally_rated');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason proportionallyRated = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$proportionallyRated._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason reducedRated = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('reduced_rated');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason reducedRated = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$reducedRated._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason reverseCharge = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('reverse_charge');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason reverseCharge = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$reverseCharge._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason standardRated = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('standard_rated');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason standardRated = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$standardRated._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason taxableBasisReduced = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('taxable_basis_reduced');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason taxableBasisReduced = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$taxableBasisReduced._();
 
-static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason zeroRated = BillingBillResourceInvoicingTaxesTaxTaxabilityReason._('zero_rated');
+static const BillingBillResourceInvoicingTaxesTaxTaxabilityReason zeroRated = BillingBillResourceInvoicingTaxesTaxTaxabilityReason$zeroRated._();
 
 static const List<BillingBillResourceInvoicingTaxesTaxTaxabilityReason> values = [customerExempt, notAvailable, notCollecting, notSubjectToTax, notSupported, portionProductExempt, portionReducedRated, portionStandardRated, productExempt, productExemptHoliday, proportionallyRated, reducedRated, reverseCharge, standardRated, taxableBasisReduced, zeroRated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -82,29 +81,177 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$Unknown; } 
 @override String toString() => 'BillingBillResourceInvoicingTaxesTaxTaxabilityReason($value)';
 
  }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$customerExempt extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$customerExempt._();
+
+@override String get value => 'customer_exempt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$customerExempt;
+
+@override int get hashCode => 'customer_exempt'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notAvailable extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notAvailable._();
+
+@override String get value => 'not_available';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notAvailable;
+
+@override int get hashCode => 'not_available'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notCollecting extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notCollecting._();
+
+@override String get value => 'not_collecting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notCollecting;
+
+@override int get hashCode => 'not_collecting'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notSubjectToTax extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notSubjectToTax._();
+
+@override String get value => 'not_subject_to_tax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notSubjectToTax;
+
+@override int get hashCode => 'not_subject_to_tax'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notSupported extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notSupported._();
+
+@override String get value => 'not_supported';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$notSupported;
+
+@override int get hashCode => 'not_supported'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionProductExempt extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionProductExempt._();
+
+@override String get value => 'portion_product_exempt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionProductExempt;
+
+@override int get hashCode => 'portion_product_exempt'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionReducedRated extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionReducedRated._();
+
+@override String get value => 'portion_reduced_rated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionReducedRated;
+
+@override int get hashCode => 'portion_reduced_rated'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionStandardRated extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionStandardRated._();
+
+@override String get value => 'portion_standard_rated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$portionStandardRated;
+
+@override int get hashCode => 'portion_standard_rated'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$productExempt extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$productExempt._();
+
+@override String get value => 'product_exempt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$productExempt;
+
+@override int get hashCode => 'product_exempt'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$productExemptHoliday extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$productExemptHoliday._();
+
+@override String get value => 'product_exempt_holiday';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$productExemptHoliday;
+
+@override int get hashCode => 'product_exempt_holiday'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$proportionallyRated extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$proportionallyRated._();
+
+@override String get value => 'proportionally_rated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$proportionallyRated;
+
+@override int get hashCode => 'proportionally_rated'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$reducedRated extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$reducedRated._();
+
+@override String get value => 'reduced_rated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$reducedRated;
+
+@override int get hashCode => 'reduced_rated'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$reverseCharge extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$reverseCharge._();
+
+@override String get value => 'reverse_charge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$reverseCharge;
+
+@override int get hashCode => 'reverse_charge'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$standardRated extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$standardRated._();
+
+@override String get value => 'standard_rated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$standardRated;
+
+@override int get hashCode => 'standard_rated'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$taxableBasisReduced extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$taxableBasisReduced._();
+
+@override String get value => 'taxable_basis_reduced';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$taxableBasisReduced;
+
+@override int get hashCode => 'taxable_basis_reduced'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$zeroRated extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$zeroRated._();
+
+@override String get value => 'zero_rated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$zeroRated;
+
+@override int get hashCode => 'zero_rated'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxTaxabilityReason$Unknown extends BillingBillResourceInvoicingTaxesTaxTaxabilityReason {const BillingBillResourceInvoicingTaxesTaxTaxabilityReason$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingBillResourceInvoicingTaxesTaxTaxabilityReason$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The type of tax information.
-@immutable final class BillingBillResourceInvoicingTaxesTaxType {const BillingBillResourceInvoicingTaxesTaxType._(this.value);
+sealed class BillingBillResourceInvoicingTaxesTaxType {const BillingBillResourceInvoicingTaxesTaxType();
 
 factory BillingBillResourceInvoicingTaxesTaxType.fromJson(String json) { return switch (json) {
   'tax_rate_details' => taxRateDetails,
-  _ => BillingBillResourceInvoicingTaxesTaxType._(json),
+  _ => BillingBillResourceInvoicingTaxesTaxType$Unknown(json),
 }; }
 
-static const BillingBillResourceInvoicingTaxesTaxType taxRateDetails = BillingBillResourceInvoicingTaxesTaxType._('tax_rate_details');
+static const BillingBillResourceInvoicingTaxesTaxType taxRateDetails = BillingBillResourceInvoicingTaxesTaxType$taxRateDetails._();
 
 static const List<BillingBillResourceInvoicingTaxesTaxType> values = [taxRateDetails];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -112,13 +259,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingBillResourceInvoicingTaxesTaxType$Unknown; } 
+@override String toString() => 'BillingBillResourceInvoicingTaxesTaxType($value)';
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxType$taxRateDetails extends BillingBillResourceInvoicingTaxesTaxType {const BillingBillResourceInvoicingTaxesTaxType$taxRateDetails._();
+
+@override String get value => 'tax_rate_details';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingTaxesTaxType$taxRateDetails;
+
+@override int get hashCode => 'tax_rate_details'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingTaxesTaxType$Unknown extends BillingBillResourceInvoicingTaxesTaxType {const BillingBillResourceInvoicingTaxesTaxType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingBillResourceInvoicingTaxesTaxType && other.value == value;
+    other is BillingBillResourceInvoicingTaxesTaxType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingBillResourceInvoicingTaxesTaxType($value)';
 
  }
 /// 

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/InsightsResourcesPaymentEvaluationUserInterventionResolved
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Result of the intervention if it has been completed.
-@immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome._(this.value);
+sealed class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome();
 
 factory InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome.fromJson(String json) { return switch (json) {
   'abandoned' => abandoned,
   'failed' => failed,
   'passed' => passed,
-  _ => InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome._(json),
+  _ => InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown(json),
 }; }
 
-static const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome abandoned = InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome._('abandoned');
+static const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome abandoned = InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$abandoned._();
 
-static const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome failed = InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome._('failed');
+static const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome failed = InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$failed._();
 
-static const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome passed = InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome._('passed');
+static const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome passed = InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$passed._();
 
 static const List<InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome> values = [abandoned, failed, passed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown; } 
+@override String toString() => 'InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome($value)';
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$abandoned extends InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$abandoned._();
+
+@override String get value => 'abandoned';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$abandoned;
+
+@override int get hashCode => 'abandoned'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$failed extends InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$passed extends InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$passed._();
+
+@override String get value => 'passed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$passed;
+
+@override int get hashCode => 'passed'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown extends InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome {const InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome && other.value == value;
+    other is InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InsightsResourcesPaymentEvaluationUserInterventionResolvedOutcome($value)';
 
  }
 /// User Intervention Resolved Event details attached to this payment evaluation

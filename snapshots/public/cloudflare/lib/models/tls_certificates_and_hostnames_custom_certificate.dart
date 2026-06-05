@@ -30,7 +30,7 @@ String toJson() => value;
 
 }
 /// Status of the zone's custom SSL.
-@immutable final class TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus._(this.value);
+sealed class TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus();
 
 factory TlsCertificatesAndHostnamesStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -38,23 +38,22 @@ factory TlsCertificatesAndHostnamesStatus.fromJson(String json) { return switch 
   'deleted' => deleted,
   'pending' => pending,
   'initializing' => initializing,
-  _ => TlsCertificatesAndHostnamesStatus._(json),
+  _ => TlsCertificatesAndHostnamesStatus$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesStatus active = TlsCertificatesAndHostnamesStatus._('active');
+static const TlsCertificatesAndHostnamesStatus active = TlsCertificatesAndHostnamesStatus$active._();
 
-static const TlsCertificatesAndHostnamesStatus expired = TlsCertificatesAndHostnamesStatus._('expired');
+static const TlsCertificatesAndHostnamesStatus expired = TlsCertificatesAndHostnamesStatus$expired._();
 
-static const TlsCertificatesAndHostnamesStatus deleted = TlsCertificatesAndHostnamesStatus._('deleted');
+static const TlsCertificatesAndHostnamesStatus deleted = TlsCertificatesAndHostnamesStatus$deleted._();
 
-static const TlsCertificatesAndHostnamesStatus pending = TlsCertificatesAndHostnamesStatus._('pending');
+static const TlsCertificatesAndHostnamesStatus pending = TlsCertificatesAndHostnamesStatus$pending._();
 
-static const TlsCertificatesAndHostnamesStatus initializing = TlsCertificatesAndHostnamesStatus._('initializing');
+static const TlsCertificatesAndHostnamesStatus initializing = TlsCertificatesAndHostnamesStatus$initializing._();
 
 static const List<TlsCertificatesAndHostnamesStatus> values = [active, expired, deleted, pending, initializing];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -66,13 +65,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesStatus$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesStatus($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesStatus$active extends TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesStatus$expired extends TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesStatus$deleted extends TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus$deleted._();
+
+@override String get value => 'deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesStatus$deleted;
+
+@override int get hashCode => 'deleted'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesStatus$pending extends TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesStatus$initializing extends TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus$initializing._();
+
+@override String get value => 'initializing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesStatus$initializing;
+
+@override int get hashCode => 'initializing'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesStatus$Unknown extends TlsCertificatesAndHostnamesStatus {const TlsCertificatesAndHostnamesStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesStatus && other.value == value;
+    other is TlsCertificatesAndHostnamesStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesStatus($value)';
 
  }
 @immutable final class TlsCertificatesAndHostnamesCustomCertificate {const TlsCertificatesAndHostnamesCustomCertificate({required this.id, required this.zoneId, this.bundleMethod, this.expiresOn, this.geoRestrictions, this.hosts, this.issuer, this.keylessServer, this.modifiedOn, this.policyRestrictions, this.priority, this.signature, this.status, this.uploadedOn, });

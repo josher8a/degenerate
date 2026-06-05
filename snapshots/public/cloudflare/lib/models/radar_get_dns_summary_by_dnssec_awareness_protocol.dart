@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetDnsSummaryByDnssecAwarenessProtocol
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByDnssecAwarenessProtocol {const RadarGetDnsSummaryByDnssecAwarenessProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetDnsSummaryByDnssecAwarenessProtocol {const RadarGetDnsSummaryByDnssecAwarenessProtocol();
 
 factory RadarGetDnsSummaryByDnssecAwarenessProtocol.fromJson(String json) { return switch (json) {
   'UDP' => udp,
   'TCP' => tcp,
   'HTTPS' => https,
   'TLS' => tls,
-  _ => RadarGetDnsSummaryByDnssecAwarenessProtocol._(json),
+  _ => RadarGetDnsSummaryByDnssecAwarenessProtocol$Unknown(json),
 }; }
 
-static const RadarGetDnsSummaryByDnssecAwarenessProtocol udp = RadarGetDnsSummaryByDnssecAwarenessProtocol._('UDP');
+static const RadarGetDnsSummaryByDnssecAwarenessProtocol udp = RadarGetDnsSummaryByDnssecAwarenessProtocol$udp._();
 
-static const RadarGetDnsSummaryByDnssecAwarenessProtocol tcp = RadarGetDnsSummaryByDnssecAwarenessProtocol._('TCP');
+static const RadarGetDnsSummaryByDnssecAwarenessProtocol tcp = RadarGetDnsSummaryByDnssecAwarenessProtocol$tcp._();
 
-static const RadarGetDnsSummaryByDnssecAwarenessProtocol https = RadarGetDnsSummaryByDnssecAwarenessProtocol._('HTTPS');
+static const RadarGetDnsSummaryByDnssecAwarenessProtocol https = RadarGetDnsSummaryByDnssecAwarenessProtocol$https._();
 
-static const RadarGetDnsSummaryByDnssecAwarenessProtocol tls = RadarGetDnsSummaryByDnssecAwarenessProtocol._('TLS');
+static const RadarGetDnsSummaryByDnssecAwarenessProtocol tls = RadarGetDnsSummaryByDnssecAwarenessProtocol$tls._();
 
 static const List<RadarGetDnsSummaryByDnssecAwarenessProtocol> values = [udp, tcp, https, tls];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetDnsSummaryByDnssecAwarenessProtocol$Unknown; } 
+@override String toString() => 'RadarGetDnsSummaryByDnssecAwarenessProtocol($value)';
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecAwarenessProtocol$udp extends RadarGetDnsSummaryByDnssecAwarenessProtocol {const RadarGetDnsSummaryByDnssecAwarenessProtocol$udp._();
+
+@override String get value => 'UDP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecAwarenessProtocol$udp;
+
+@override int get hashCode => 'UDP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecAwarenessProtocol$tcp extends RadarGetDnsSummaryByDnssecAwarenessProtocol {const RadarGetDnsSummaryByDnssecAwarenessProtocol$tcp._();
+
+@override String get value => 'TCP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecAwarenessProtocol$tcp;
+
+@override int get hashCode => 'TCP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecAwarenessProtocol$https extends RadarGetDnsSummaryByDnssecAwarenessProtocol {const RadarGetDnsSummaryByDnssecAwarenessProtocol$https._();
+
+@override String get value => 'HTTPS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecAwarenessProtocol$https;
+
+@override int get hashCode => 'HTTPS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecAwarenessProtocol$tls extends RadarGetDnsSummaryByDnssecAwarenessProtocol {const RadarGetDnsSummaryByDnssecAwarenessProtocol$tls._();
+
+@override String get value => 'TLS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByDnssecAwarenessProtocol$tls;
+
+@override int get hashCode => 'TLS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByDnssecAwarenessProtocol$Unknown extends RadarGetDnsSummaryByDnssecAwarenessProtocol {const RadarGetDnsSummaryByDnssecAwarenessProtocol$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetDnsSummaryByDnssecAwarenessProtocol && other.value == value;
+    other is RadarGetDnsSummaryByDnssecAwarenessProtocol$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetDnsSummaryByDnssecAwarenessProtocol($value)';
 
  }

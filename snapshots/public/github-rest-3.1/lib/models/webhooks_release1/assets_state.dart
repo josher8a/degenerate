@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WebhooksRelease1 (inline: Assets > State)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// State of the release asset.
-@immutable final class AssetsState {const AssetsState._(this.value);
+sealed class AssetsState {const AssetsState();
 
 factory AssetsState.fromJson(String json) { return switch (json) {
   'uploaded' => uploaded,
-  _ => AssetsState._(json),
+  _ => AssetsState$Unknown(json),
 }; }
 
-static const AssetsState uploaded = AssetsState._('uploaded');
+static const AssetsState uploaded = AssetsState$uploaded._();
 
 static const List<AssetsState> values = [uploaded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AssetsState$Unknown; } 
+@override String toString() => 'AssetsState($value)';
+
+ }
+@immutable final class AssetsState$uploaded extends AssetsState {const AssetsState$uploaded._();
+
+@override String get value => 'uploaded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AssetsState$uploaded;
+
+@override int get hashCode => 'uploaded'.hashCode;
+
+ }
+@immutable final class AssetsState$Unknown extends AssetsState {const AssetsState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AssetsState && other.value == value;
+    other is AssetsState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AssetsState($value)';
 
  }

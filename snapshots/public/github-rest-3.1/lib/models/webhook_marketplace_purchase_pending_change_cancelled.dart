@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookMarketplacePurchasePendingChangeCancelled
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_marketplace_purchase_pending_change_cancelled/webhook_marketplace_purchase_pending_change_cancelled_marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/webhooks_previous_marketplace_purchase.dart';@immutable final class WebhookMarketplacePurchasePendingChangeCancelledAction {const WebhookMarketplacePurchasePendingChangeCancelledAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_marketplace_purchase_pending_change_cancelled/webhook_marketplace_purchase_pending_change_cancelled_marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/webhooks_previous_marketplace_purchase.dart';sealed class WebhookMarketplacePurchasePendingChangeCancelledAction {const WebhookMarketplacePurchasePendingChangeCancelledAction();
 
 factory WebhookMarketplacePurchasePendingChangeCancelledAction.fromJson(String json) { return switch (json) {
   'pending_change_cancelled' => pendingChangeCancelled,
-  _ => WebhookMarketplacePurchasePendingChangeCancelledAction._(json),
+  _ => WebhookMarketplacePurchasePendingChangeCancelledAction$Unknown(json),
 }; }
 
-static const WebhookMarketplacePurchasePendingChangeCancelledAction pendingChangeCancelled = WebhookMarketplacePurchasePendingChangeCancelledAction._('pending_change_cancelled');
+static const WebhookMarketplacePurchasePendingChangeCancelledAction pendingChangeCancelled = WebhookMarketplacePurchasePendingChangeCancelledAction$pendingChangeCancelled._();
 
 static const List<WebhookMarketplacePurchasePendingChangeCancelledAction> values = [pendingChangeCancelled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookMarketplacePurchasePendingChangeCancelledAction$Unknown; } 
+@override String toString() => 'WebhookMarketplacePurchasePendingChangeCancelledAction($value)';
+
+ }
+@immutable final class WebhookMarketplacePurchasePendingChangeCancelledAction$pendingChangeCancelled extends WebhookMarketplacePurchasePendingChangeCancelledAction {const WebhookMarketplacePurchasePendingChangeCancelledAction$pendingChangeCancelled._();
+
+@override String get value => 'pending_change_cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookMarketplacePurchasePendingChangeCancelledAction$pendingChangeCancelled;
+
+@override int get hashCode => 'pending_change_cancelled'.hashCode;
+
+ }
+@immutable final class WebhookMarketplacePurchasePendingChangeCancelledAction$Unknown extends WebhookMarketplacePurchasePendingChangeCancelledAction {const WebhookMarketplacePurchasePendingChangeCancelledAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookMarketplacePurchasePendingChangeCancelledAction && other.value == value;
+    other is WebhookMarketplacePurchasePendingChangeCancelledAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookMarketplacePurchasePendingChangeCancelledAction($value)';
 
  }
 @immutable final class WebhookMarketplacePurchasePendingChangeCancelled {const WebhookMarketplacePurchasePendingChangeCancelled({required this.action, required this.effectiveDate, required this.marketplacePurchase, required this.sender, this.enterprise, this.installation, this.organization, this.previousMarketplacePurchase, this.repository, });

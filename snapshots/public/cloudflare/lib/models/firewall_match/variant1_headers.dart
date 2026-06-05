@@ -9,22 +9,21 @@ String toJson() => value;
 
 }
 /// The operator used when matching: `eq` means "equal" and `ne` means "not equal".
-@immutable final class FirewallHeaderOp {const FirewallHeaderOp._(this.value);
+sealed class FirewallHeaderOp {const FirewallHeaderOp();
 
 factory FirewallHeaderOp.fromJson(String json) { return switch (json) {
   'eq' => eq,
   'ne' => ne,
-  _ => FirewallHeaderOp._(json),
+  _ => FirewallHeaderOp$Unknown(json),
 }; }
 
-static const FirewallHeaderOp eq = FirewallHeaderOp._('eq');
+static const FirewallHeaderOp eq = FirewallHeaderOp$eq._();
 
-static const FirewallHeaderOp ne = FirewallHeaderOp._('ne');
+static const FirewallHeaderOp ne = FirewallHeaderOp$ne._();
 
 static const List<FirewallHeaderOp> values = [eq, ne];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FirewallHeaderOp$Unknown; } 
+@override String toString() => 'FirewallHeaderOp($value)';
+
+ }
+@immutable final class FirewallHeaderOp$eq extends FirewallHeaderOp {const FirewallHeaderOp$eq._();
+
+@override String get value => 'eq';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallHeaderOp$eq;
+
+@override int get hashCode => 'eq'.hashCode;
+
+ }
+@immutable final class FirewallHeaderOp$ne extends FirewallHeaderOp {const FirewallHeaderOp$ne._();
+
+@override String get value => 'ne';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallHeaderOp$ne;
+
+@override int get hashCode => 'ne'.hashCode;
+
+ }
+@immutable final class FirewallHeaderOp$Unknown extends FirewallHeaderOp {const FirewallHeaderOp$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FirewallHeaderOp && other.value == value;
+    other is FirewallHeaderOp$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FirewallHeaderOp($value)';
 
  }
 /// The value of the response header, which must match exactly.

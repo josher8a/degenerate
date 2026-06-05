@@ -2,28 +2,27 @@
 // Source: #/components/schemas/MandateBacsDebit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the mandate on the Bacs network. Can be one of `pending`, `revoked`, `refused`, or `accepted`.
-@immutable final class NetworkStatus {const NetworkStatus._(this.value);
+sealed class NetworkStatus {const NetworkStatus();
 
 factory NetworkStatus.fromJson(String json) { return switch (json) {
   'accepted' => accepted,
   'pending' => pending,
   'refused' => refused,
   'revoked' => revoked,
-  _ => NetworkStatus._(json),
+  _ => NetworkStatus$Unknown(json),
 }; }
 
-static const NetworkStatus accepted = NetworkStatus._('accepted');
+static const NetworkStatus accepted = NetworkStatus$accepted._();
 
-static const NetworkStatus pending = NetworkStatus._('pending');
+static const NetworkStatus pending = NetworkStatus$pending._();
 
-static const NetworkStatus refused = NetworkStatus._('refused');
+static const NetworkStatus refused = NetworkStatus$refused._();
 
-static const NetworkStatus revoked = NetworkStatus._('revoked');
+static const NetworkStatus revoked = NetworkStatus$revoked._();
 
 static const List<NetworkStatus> values = [accepted, pending, refused, revoked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,17 +33,58 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is NetworkStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is NetworkStatus$Unknown; } 
 @override String toString() => 'NetworkStatus($value)';
 
  }
+@immutable final class NetworkStatus$accepted extends NetworkStatus {const NetworkStatus$accepted._();
+
+@override String get value => 'accepted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkStatus$accepted;
+
+@override int get hashCode => 'accepted'.hashCode;
+
+ }
+@immutable final class NetworkStatus$pending extends NetworkStatus {const NetworkStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class NetworkStatus$refused extends NetworkStatus {const NetworkStatus$refused._();
+
+@override String get value => 'refused';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkStatus$refused;
+
+@override int get hashCode => 'refused'.hashCode;
+
+ }
+@immutable final class NetworkStatus$revoked extends NetworkStatus {const NetworkStatus$revoked._();
+
+@override String get value => 'revoked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkStatus$revoked;
+
+@override int get hashCode => 'revoked'.hashCode;
+
+ }
+@immutable final class NetworkStatus$Unknown extends NetworkStatus {const NetworkStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NetworkStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// When the mandate is revoked on the Bacs network this field displays the reason for the revocation.
-@immutable final class RevocationReason {const RevocationReason._(this.value);
+sealed class RevocationReason {const RevocationReason();
 
 factory RevocationReason.fromJson(String json) { return switch (json) {
   'account_closed' => accountClosed,
@@ -52,23 +92,22 @@ factory RevocationReason.fromJson(String json) { return switch (json) {
   'bank_ownership_changed' => bankOwnershipChanged,
   'could_not_process' => couldNotProcess,
   'debit_not_authorized' => debitNotAuthorized,
-  _ => RevocationReason._(json),
+  _ => RevocationReason$Unknown(json),
 }; }
 
-static const RevocationReason accountClosed = RevocationReason._('account_closed');
+static const RevocationReason accountClosed = RevocationReason$accountClosed._();
 
-static const RevocationReason bankAccountRestricted = RevocationReason._('bank_account_restricted');
+static const RevocationReason bankAccountRestricted = RevocationReason$bankAccountRestricted._();
 
-static const RevocationReason bankOwnershipChanged = RevocationReason._('bank_ownership_changed');
+static const RevocationReason bankOwnershipChanged = RevocationReason$bankOwnershipChanged._();
 
-static const RevocationReason couldNotProcess = RevocationReason._('could_not_process');
+static const RevocationReason couldNotProcess = RevocationReason$couldNotProcess._();
 
-static const RevocationReason debitNotAuthorized = RevocationReason._('debit_not_authorized');
+static const RevocationReason debitNotAuthorized = RevocationReason$debitNotAuthorized._();
 
 static const List<RevocationReason> values = [accountClosed, bankAccountRestricted, bankOwnershipChanged, couldNotProcess, debitNotAuthorized];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -80,13 +119,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RevocationReason$Unknown; } 
+@override String toString() => 'RevocationReason($value)';
+
+ }
+@immutable final class RevocationReason$accountClosed extends RevocationReason {const RevocationReason$accountClosed._();
+
+@override String get value => 'account_closed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RevocationReason$accountClosed;
+
+@override int get hashCode => 'account_closed'.hashCode;
+
+ }
+@immutable final class RevocationReason$bankAccountRestricted extends RevocationReason {const RevocationReason$bankAccountRestricted._();
+
+@override String get value => 'bank_account_restricted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RevocationReason$bankAccountRestricted;
+
+@override int get hashCode => 'bank_account_restricted'.hashCode;
+
+ }
+@immutable final class RevocationReason$bankOwnershipChanged extends RevocationReason {const RevocationReason$bankOwnershipChanged._();
+
+@override String get value => 'bank_ownership_changed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RevocationReason$bankOwnershipChanged;
+
+@override int get hashCode => 'bank_ownership_changed'.hashCode;
+
+ }
+@immutable final class RevocationReason$couldNotProcess extends RevocationReason {const RevocationReason$couldNotProcess._();
+
+@override String get value => 'could_not_process';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RevocationReason$couldNotProcess;
+
+@override int get hashCode => 'could_not_process'.hashCode;
+
+ }
+@immutable final class RevocationReason$debitNotAuthorized extends RevocationReason {const RevocationReason$debitNotAuthorized._();
+
+@override String get value => 'debit_not_authorized';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RevocationReason$debitNotAuthorized;
+
+@override int get hashCode => 'debit_not_authorized'.hashCode;
+
+ }
+@immutable final class RevocationReason$Unknown extends RevocationReason {const RevocationReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RevocationReason && other.value == value;
+    other is RevocationReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RevocationReason($value)';
 
  }
 /// 

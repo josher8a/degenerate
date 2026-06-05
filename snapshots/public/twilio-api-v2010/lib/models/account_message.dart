@@ -2,7 +2,7 @@
 // Source: #/components/schemas/AccountMessage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the Message. Possible values: `accepted`, `scheduled`, `canceled`, `queued`, `sending`, `sent`, `failed`, `delivered`, `undelivered`, `receiving`, `received`, or `read` (WhatsApp only). For more information, See [detailed descriptions](https://www.twilio.com/docs/sms/api/message-resource#message-status-values).
-@immutable final class MessageEnumStatus {const MessageEnumStatus._(this.value);
+sealed class MessageEnumStatus {const MessageEnumStatus();
 
 factory MessageEnumStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -18,39 +18,38 @@ factory MessageEnumStatus.fromJson(String json) { return switch (json) {
   'read' => read,
   'partially_delivered' => partiallyDelivered,
   'canceled' => canceled,
-  _ => MessageEnumStatus._(json),
+  _ => MessageEnumStatus$Unknown(json),
 }; }
 
-static const MessageEnumStatus queued = MessageEnumStatus._('queued');
+static const MessageEnumStatus queued = MessageEnumStatus$queued._();
 
-static const MessageEnumStatus sending = MessageEnumStatus._('sending');
+static const MessageEnumStatus sending = MessageEnumStatus$sending._();
 
-static const MessageEnumStatus sent = MessageEnumStatus._('sent');
+static const MessageEnumStatus sent = MessageEnumStatus$sent._();
 
-static const MessageEnumStatus failed = MessageEnumStatus._('failed');
+static const MessageEnumStatus failed = MessageEnumStatus$failed._();
 
-static const MessageEnumStatus delivered = MessageEnumStatus._('delivered');
+static const MessageEnumStatus delivered = MessageEnumStatus$delivered._();
 
-static const MessageEnumStatus undelivered = MessageEnumStatus._('undelivered');
+static const MessageEnumStatus undelivered = MessageEnumStatus$undelivered._();
 
-static const MessageEnumStatus receiving = MessageEnumStatus._('receiving');
+static const MessageEnumStatus receiving = MessageEnumStatus$receiving._();
 
-static const MessageEnumStatus received = MessageEnumStatus._('received');
+static const MessageEnumStatus received = MessageEnumStatus$received._();
 
-static const MessageEnumStatus accepted = MessageEnumStatus._('accepted');
+static const MessageEnumStatus accepted = MessageEnumStatus$accepted._();
 
-static const MessageEnumStatus scheduled = MessageEnumStatus._('scheduled');
+static const MessageEnumStatus scheduled = MessageEnumStatus$scheduled._();
 
-static const MessageEnumStatus read = MessageEnumStatus._('read');
+static const MessageEnumStatus read = MessageEnumStatus$read._();
 
-static const MessageEnumStatus partiallyDelivered = MessageEnumStatus._('partially_delivered');
+static const MessageEnumStatus partiallyDelivered = MessageEnumStatus$partiallyDelivered._();
 
-static const MessageEnumStatus canceled = MessageEnumStatus._('canceled');
+static const MessageEnumStatus canceled = MessageEnumStatus$canceled._();
 
 static const List<MessageEnumStatus> values = [queued, sending, sent, failed, delivered, undelivered, receiving, received, accepted, scheduled, read, partiallyDelivered, canceled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -70,38 +69,159 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageEnumStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MessageEnumStatus$Unknown; } 
 @override String toString() => 'MessageEnumStatus($value)';
 
  }
+@immutable final class MessageEnumStatus$queued extends MessageEnumStatus {const MessageEnumStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class MessageEnumStatus$sending extends MessageEnumStatus {const MessageEnumStatus$sending._();
+
+@override String get value => 'sending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumStatus$sending;
+
+@override int get hashCode => 'sending'.hashCode;
+
+ }
+@immutable final class MessageEnumStatus$sent extends MessageEnumStatus {const MessageEnumStatus$sent._();
+
+@override String get value => 'sent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumStatus$sent;
+
+@override int get hashCode => 'sent'.hashCode;
+
+ }
+@immutable final class MessageEnumStatus$failed extends MessageEnumStatus {const MessageEnumStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class MessageEnumStatus$delivered extends MessageEnumStatus {const MessageEnumStatus$delivered._();
+
+@override String get value => 'delivered';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumStatus$delivered;
+
+@override int get hashCode => 'delivered'.hashCode;
+
+ }
+@immutable final class MessageEnumStatus$undelivered extends MessageEnumStatus {const MessageEnumStatus$undelivered._();
+
+@override String get value => 'undelivered';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumStatus$undelivered;
+
+@override int get hashCode => 'undelivered'.hashCode;
+
+ }
+@immutable final class MessageEnumStatus$receiving extends MessageEnumStatus {const MessageEnumStatus$receiving._();
+
+@override String get value => 'receiving';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumStatus$receiving;
+
+@override int get hashCode => 'receiving'.hashCode;
+
+ }
+@immutable final class MessageEnumStatus$received extends MessageEnumStatus {const MessageEnumStatus$received._();
+
+@override String get value => 'received';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumStatus$received;
+
+@override int get hashCode => 'received'.hashCode;
+
+ }
+@immutable final class MessageEnumStatus$accepted extends MessageEnumStatus {const MessageEnumStatus$accepted._();
+
+@override String get value => 'accepted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumStatus$accepted;
+
+@override int get hashCode => 'accepted'.hashCode;
+
+ }
+@immutable final class MessageEnumStatus$scheduled extends MessageEnumStatus {const MessageEnumStatus$scheduled._();
+
+@override String get value => 'scheduled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumStatus$scheduled;
+
+@override int get hashCode => 'scheduled'.hashCode;
+
+ }
+@immutable final class MessageEnumStatus$read extends MessageEnumStatus {const MessageEnumStatus$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumStatus$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class MessageEnumStatus$partiallyDelivered extends MessageEnumStatus {const MessageEnumStatus$partiallyDelivered._();
+
+@override String get value => 'partially_delivered';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumStatus$partiallyDelivered;
+
+@override int get hashCode => 'partially_delivered'.hashCode;
+
+ }
+@immutable final class MessageEnumStatus$canceled extends MessageEnumStatus {const MessageEnumStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class MessageEnumStatus$Unknown extends MessageEnumStatus {const MessageEnumStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MessageEnumStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The direction of the message. Can be: `inbound` for incoming messages, `outbound-api` for messages created by the REST API, `outbound-call` for messages created during a call, or `outbound-reply` for messages created in response to an incoming message.
-@immutable final class MessageEnumDirection {const MessageEnumDirection._(this.value);
+sealed class MessageEnumDirection {const MessageEnumDirection();
 
 factory MessageEnumDirection.fromJson(String json) { return switch (json) {
   'inbound' => inbound,
   'outbound-api' => outboundApi,
   'outbound-call' => outboundCall,
   'outbound-reply' => outboundReply,
-  _ => MessageEnumDirection._(json),
+  _ => MessageEnumDirection$Unknown(json),
 }; }
 
-static const MessageEnumDirection inbound = MessageEnumDirection._('inbound');
+static const MessageEnumDirection inbound = MessageEnumDirection$inbound._();
 
-static const MessageEnumDirection outboundApi = MessageEnumDirection._('outbound-api');
+static const MessageEnumDirection outboundApi = MessageEnumDirection$outboundApi._();
 
-static const MessageEnumDirection outboundCall = MessageEnumDirection._('outbound-call');
+static const MessageEnumDirection outboundCall = MessageEnumDirection$outboundCall._();
 
-static const MessageEnumDirection outboundReply = MessageEnumDirection._('outbound-reply');
+static const MessageEnumDirection outboundReply = MessageEnumDirection$outboundReply._();
 
 static const List<MessageEnumDirection> values = [inbound, outboundApi, outboundCall, outboundReply];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -112,13 +232,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MessageEnumDirection$Unknown; } 
+@override String toString() => 'MessageEnumDirection($value)';
+
+ }
+@immutable final class MessageEnumDirection$inbound extends MessageEnumDirection {const MessageEnumDirection$inbound._();
+
+@override String get value => 'inbound';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumDirection$inbound;
+
+@override int get hashCode => 'inbound'.hashCode;
+
+ }
+@immutable final class MessageEnumDirection$outboundApi extends MessageEnumDirection {const MessageEnumDirection$outboundApi._();
+
+@override String get value => 'outbound-api';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumDirection$outboundApi;
+
+@override int get hashCode => 'outbound-api'.hashCode;
+
+ }
+@immutable final class MessageEnumDirection$outboundCall extends MessageEnumDirection {const MessageEnumDirection$outboundCall._();
+
+@override String get value => 'outbound-call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumDirection$outboundCall;
+
+@override int get hashCode => 'outbound-call'.hashCode;
+
+ }
+@immutable final class MessageEnumDirection$outboundReply extends MessageEnumDirection {const MessageEnumDirection$outboundReply._();
+
+@override String get value => 'outbound-reply';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumDirection$outboundReply;
+
+@override int get hashCode => 'outbound-reply'.hashCode;
+
+ }
+@immutable final class MessageEnumDirection$Unknown extends MessageEnumDirection {const MessageEnumDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageEnumDirection && other.value == value;
+    other is MessageEnumDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MessageEnumDirection($value)';
 
  }
 @immutable final class AccountMessage {const AccountMessage({this.body, this.numSegments, this.direction, this.from, this.to, this.dateUpdated, this.price, this.errorMessage, this.uri, this.accountSid, this.numMedia, this.status, this.messagingServiceSid, this.sid, this.dateSent, this.dateCreated, this.errorCode, this.priceUnit, this.apiVersion, this.subresourceUris, });

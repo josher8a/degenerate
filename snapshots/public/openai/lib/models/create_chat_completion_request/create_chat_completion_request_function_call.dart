@@ -3,22 +3,21 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_function_call_option.dart';/// `none` means the model will not call a function and instead generates a message. `auto` means the model can pick between generating a message or calling a function.
 /// 
-@immutable final class FunctionCallVariant1 {const FunctionCallVariant1._(this.value);
+sealed class FunctionCallVariant1 {const FunctionCallVariant1();
 
 factory FunctionCallVariant1.fromJson(String json) { return switch (json) {
   'none' => none,
   'auto' => auto,
-  _ => FunctionCallVariant1._(json),
+  _ => FunctionCallVariant1$Unknown(json),
 }; }
 
-static const FunctionCallVariant1 none = FunctionCallVariant1._('none');
+static const FunctionCallVariant1 none = FunctionCallVariant1$none._();
 
-static const FunctionCallVariant1 auto = FunctionCallVariant1._('auto');
+static const FunctionCallVariant1 auto = FunctionCallVariant1$auto._();
 
 static const List<FunctionCallVariant1> values = [none, auto];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -27,13 +26,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FunctionCallVariant1$Unknown; } 
+@override String toString() => 'FunctionCallVariant1($value)';
+
+ }
+@immutable final class FunctionCallVariant1$none extends FunctionCallVariant1 {const FunctionCallVariant1$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionCallVariant1$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class FunctionCallVariant1$auto extends FunctionCallVariant1 {const FunctionCallVariant1$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionCallVariant1$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class FunctionCallVariant1$Unknown extends FunctionCallVariant1 {const FunctionCallVariant1$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FunctionCallVariant1 && other.value == value;
+    other is FunctionCallVariant1$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FunctionCallVariant1($value)';
 
  }
 /// Deprecated in favor of `tool_choice`.

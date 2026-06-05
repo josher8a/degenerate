@@ -2,22 +2,21 @@
 // Source: #/components/schemas/R2DataCatalogCatalog
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_data_catalog_catalog_maintenance_config.dart';import 'package:pub_cloudflare/models/r2_data_catalog_credential_status.dart';/// Indicates the status of the catalog.
-@immutable final class R2DataCatalogCatalogStatus {const R2DataCatalogCatalogStatus._(this.value);
+sealed class R2DataCatalogCatalogStatus {const R2DataCatalogCatalogStatus();
 
 factory R2DataCatalogCatalogStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'inactive' => inactive,
-  _ => R2DataCatalogCatalogStatus._(json),
+  _ => R2DataCatalogCatalogStatus$Unknown(json),
 }; }
 
-static const R2DataCatalogCatalogStatus active = R2DataCatalogCatalogStatus._('active');
+static const R2DataCatalogCatalogStatus active = R2DataCatalogCatalogStatus$active._();
 
-static const R2DataCatalogCatalogStatus inactive = R2DataCatalogCatalogStatus._('inactive');
+static const R2DataCatalogCatalogStatus inactive = R2DataCatalogCatalogStatus$inactive._();
 
 static const List<R2DataCatalogCatalogStatus> values = [active, inactive];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is R2DataCatalogCatalogStatus$Unknown; } 
+@override String toString() => 'R2DataCatalogCatalogStatus($value)';
+
+ }
+@immutable final class R2DataCatalogCatalogStatus$active extends R2DataCatalogCatalogStatus {const R2DataCatalogCatalogStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is R2DataCatalogCatalogStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class R2DataCatalogCatalogStatus$inactive extends R2DataCatalogCatalogStatus {const R2DataCatalogCatalogStatus$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is R2DataCatalogCatalogStatus$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+ }
+@immutable final class R2DataCatalogCatalogStatus$Unknown extends R2DataCatalogCatalogStatus {const R2DataCatalogCatalogStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is R2DataCatalogCatalogStatus && other.value == value;
+    other is R2DataCatalogCatalogStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'R2DataCatalogCatalogStatus($value)';
 
  }
 /// Contains R2 Data Catalog information.

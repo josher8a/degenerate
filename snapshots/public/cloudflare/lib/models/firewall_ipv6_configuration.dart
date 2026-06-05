@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FirewallIpv6Configuration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `ip6` when specifying an IPv6 address in the rule.
-@immutable final class FirewallIpv6ConfigurationTarget {const FirewallIpv6ConfigurationTarget._(this.value);
+sealed class FirewallIpv6ConfigurationTarget {const FirewallIpv6ConfigurationTarget();
 
 factory FirewallIpv6ConfigurationTarget.fromJson(String json) { return switch (json) {
   'ip6' => ip6,
-  _ => FirewallIpv6ConfigurationTarget._(json),
+  _ => FirewallIpv6ConfigurationTarget$Unknown(json),
 }; }
 
-static const FirewallIpv6ConfigurationTarget ip6 = FirewallIpv6ConfigurationTarget._('ip6');
+static const FirewallIpv6ConfigurationTarget ip6 = FirewallIpv6ConfigurationTarget$ip6._();
 
 static const List<FirewallIpv6ConfigurationTarget> values = [ip6];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FirewallIpv6ConfigurationTarget$Unknown; } 
+@override String toString() => 'FirewallIpv6ConfigurationTarget($value)';
+
+ }
+@immutable final class FirewallIpv6ConfigurationTarget$ip6 extends FirewallIpv6ConfigurationTarget {const FirewallIpv6ConfigurationTarget$ip6._();
+
+@override String get value => 'ip6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallIpv6ConfigurationTarget$ip6;
+
+@override int get hashCode => 'ip6'.hashCode;
+
+ }
+@immutable final class FirewallIpv6ConfigurationTarget$Unknown extends FirewallIpv6ConfigurationTarget {const FirewallIpv6ConfigurationTarget$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FirewallIpv6ConfigurationTarget && other.value == value;
+    other is FirewallIpv6ConfigurationTarget$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FirewallIpv6ConfigurationTarget($value)';
 
  }
 @immutable final class FirewallIpv6Configuration {const FirewallIpv6Configuration({this.target, this.value, });

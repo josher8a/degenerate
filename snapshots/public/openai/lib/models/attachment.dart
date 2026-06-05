@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Attachment
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AttachmentType {const AttachmentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AttachmentType {const AttachmentType();
 
 factory AttachmentType.fromJson(String json) { return switch (json) {
   'image' => image,
   'file' => file,
-  _ => AttachmentType._(json),
+  _ => AttachmentType$Unknown(json),
 }; }
 
-static const AttachmentType image = AttachmentType._('image');
+static const AttachmentType image = AttachmentType$image._();
 
-static const AttachmentType file = AttachmentType._('file');
+static const AttachmentType file = AttachmentType$file._();
 
 static const List<AttachmentType> values = [image, file];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AttachmentType$Unknown; } 
+@override String toString() => 'AttachmentType($value)';
+
+ }
+@immutable final class AttachmentType$image extends AttachmentType {const AttachmentType$image._();
+
+@override String get value => 'image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AttachmentType$image;
+
+@override int get hashCode => 'image'.hashCode;
+
+ }
+@immutable final class AttachmentType$file extends AttachmentType {const AttachmentType$file._();
+
+@override String get value => 'file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AttachmentType$file;
+
+@override int get hashCode => 'file'.hashCode;
+
+ }
+@immutable final class AttachmentType$Unknown extends AttachmentType {const AttachmentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AttachmentType && other.value == value;
+    other is AttachmentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AttachmentType($value)';
 
  }
 /// Attachment metadata included on thread items.

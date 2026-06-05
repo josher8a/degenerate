@@ -4,19 +4,18 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If enabled, any `http://`` URL is converted to `https://` through a`
 /// 301 redirect.
 /// 
-@immutable final class ZonesAlwaysUseHttpsId {const ZonesAlwaysUseHttpsId._(this.value);
+sealed class ZonesAlwaysUseHttpsId {const ZonesAlwaysUseHttpsId();
 
 factory ZonesAlwaysUseHttpsId.fromJson(String json) { return switch (json) {
   'always_use_https' => alwaysUseHttps,
-  _ => ZonesAlwaysUseHttpsId._(json),
+  _ => ZonesAlwaysUseHttpsId$Unknown(json),
 }; }
 
-static const ZonesAlwaysUseHttpsId alwaysUseHttps = ZonesAlwaysUseHttpsId._('always_use_https');
+static const ZonesAlwaysUseHttpsId alwaysUseHttps = ZonesAlwaysUseHttpsId$alwaysUseHttps._();
 
 static const List<ZonesAlwaysUseHttpsId> values = [alwaysUseHttps];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -24,13 +23,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesAlwaysUseHttpsId$Unknown; } 
+@override String toString() => 'ZonesAlwaysUseHttpsId($value)';
+
+ }
+@immutable final class ZonesAlwaysUseHttpsId$alwaysUseHttps extends ZonesAlwaysUseHttpsId {const ZonesAlwaysUseHttpsId$alwaysUseHttps._();
+
+@override String get value => 'always_use_https';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesAlwaysUseHttpsId$alwaysUseHttps;
+
+@override int get hashCode => 'always_use_https'.hashCode;
+
+ }
+@immutable final class ZonesAlwaysUseHttpsId$Unknown extends ZonesAlwaysUseHttpsId {const ZonesAlwaysUseHttpsId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesAlwaysUseHttpsId && other.value == value;
+    other is ZonesAlwaysUseHttpsId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesAlwaysUseHttpsId($value)';
 
  }
 @immutable final class ZonesAlwaysUseHttps {const ZonesAlwaysUseHttps({this.id});

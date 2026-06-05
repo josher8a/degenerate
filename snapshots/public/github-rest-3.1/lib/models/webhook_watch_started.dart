@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookWatchStarted
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookWatchStartedAction {const WebhookWatchStartedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookWatchStartedAction {const WebhookWatchStartedAction();
 
 factory WebhookWatchStartedAction.fromJson(String json) { return switch (json) {
   'started' => started,
-  _ => WebhookWatchStartedAction._(json),
+  _ => WebhookWatchStartedAction$Unknown(json),
 }; }
 
-static const WebhookWatchStartedAction started = WebhookWatchStartedAction._('started');
+static const WebhookWatchStartedAction started = WebhookWatchStartedAction$started._();
 
 static const List<WebhookWatchStartedAction> values = [started];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookWatchStartedAction$Unknown; } 
+@override String toString() => 'WebhookWatchStartedAction($value)';
+
+ }
+@immutable final class WebhookWatchStartedAction$started extends WebhookWatchStartedAction {const WebhookWatchStartedAction$started._();
+
+@override String get value => 'started';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookWatchStartedAction$started;
+
+@override int get hashCode => 'started'.hashCode;
+
+ }
+@immutable final class WebhookWatchStartedAction$Unknown extends WebhookWatchStartedAction {const WebhookWatchStartedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookWatchStartedAction && other.value == value;
+    other is WebhookWatchStartedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookWatchStartedAction($value)';
 
  }
 @immutable final class WebhookWatchStarted {const WebhookWatchStarted({required this.action, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UsageVectorStoresResult
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageVectorStoresResultObject {const UsageVectorStoresResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageVectorStoresResultObject {const UsageVectorStoresResultObject();
 
 factory UsageVectorStoresResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.vector_stores.result' => organizationUsageVectorStoresResult,
-  _ => UsageVectorStoresResultObject._(json),
+  _ => UsageVectorStoresResultObject$Unknown(json),
 }; }
 
-static const UsageVectorStoresResultObject organizationUsageVectorStoresResult = UsageVectorStoresResultObject._('organization.usage.vector_stores.result');
+static const UsageVectorStoresResultObject organizationUsageVectorStoresResult = UsageVectorStoresResultObject$organizationUsageVectorStoresResult._();
 
 static const List<UsageVectorStoresResultObject> values = [organizationUsageVectorStoresResult];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UsageVectorStoresResultObject$Unknown; } 
+@override String toString() => 'UsageVectorStoresResultObject($value)';
+
+ }
+@immutable final class UsageVectorStoresResultObject$organizationUsageVectorStoresResult extends UsageVectorStoresResultObject {const UsageVectorStoresResultObject$organizationUsageVectorStoresResult._();
+
+@override String get value => 'organization.usage.vector_stores.result';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageVectorStoresResultObject$organizationUsageVectorStoresResult;
+
+@override int get hashCode => 'organization.usage.vector_stores.result'.hashCode;
+
+ }
+@immutable final class UsageVectorStoresResultObject$Unknown extends UsageVectorStoresResultObject {const UsageVectorStoresResultObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UsageVectorStoresResultObject && other.value == value;
+    other is UsageVectorStoresResultObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UsageVectorStoresResultObject($value)';
 
  }
 /// The aggregated vector stores usage details of the specific time bucket.

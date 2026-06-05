@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CreateApplicationRequest (inline: VoiceFallbackMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `voice_fallback_url`. Can be: `GET` or `POST`.
-@immutable final class CreateApplicationRequestVoiceFallbackMethod {const CreateApplicationRequestVoiceFallbackMethod._(this.value);
+sealed class CreateApplicationRequestVoiceFallbackMethod {const CreateApplicationRequestVoiceFallbackMethod();
 
 factory CreateApplicationRequestVoiceFallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => CreateApplicationRequestVoiceFallbackMethod._(json),
+  _ => CreateApplicationRequestVoiceFallbackMethod$Unknown(json),
 }; }
 
-static const CreateApplicationRequestVoiceFallbackMethod $get = CreateApplicationRequestVoiceFallbackMethod._('GET');
+static const CreateApplicationRequestVoiceFallbackMethod $get = CreateApplicationRequestVoiceFallbackMethod$$get._();
 
-static const CreateApplicationRequestVoiceFallbackMethod post = CreateApplicationRequestVoiceFallbackMethod._('POST');
+static const CreateApplicationRequestVoiceFallbackMethod post = CreateApplicationRequestVoiceFallbackMethod$post._();
 
 static const List<CreateApplicationRequestVoiceFallbackMethod> values = [$get, post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateApplicationRequestVoiceFallbackMethod$Unknown; } 
+@override String toString() => 'CreateApplicationRequestVoiceFallbackMethod($value)';
+
+ }
+@immutable final class CreateApplicationRequestVoiceFallbackMethod$$get extends CreateApplicationRequestVoiceFallbackMethod {const CreateApplicationRequestVoiceFallbackMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateApplicationRequestVoiceFallbackMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class CreateApplicationRequestVoiceFallbackMethod$post extends CreateApplicationRequestVoiceFallbackMethod {const CreateApplicationRequestVoiceFallbackMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateApplicationRequestVoiceFallbackMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class CreateApplicationRequestVoiceFallbackMethod$Unknown extends CreateApplicationRequestVoiceFallbackMethod {const CreateApplicationRequestVoiceFallbackMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateApplicationRequestVoiceFallbackMethod && other.value == value;
+    other is CreateApplicationRequestVoiceFallbackMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateApplicationRequestVoiceFallbackMethod($value)';
 
  }

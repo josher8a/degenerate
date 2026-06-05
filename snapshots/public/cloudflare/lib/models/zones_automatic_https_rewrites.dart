@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ZonesAutomaticHttpsRewrites
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_automatic_https_rewrites_value.dart';/// Turn on or off Automatic HTTPS Rewrites.
-@immutable final class ZonesAutomaticHttpsRewritesId {const ZonesAutomaticHttpsRewritesId._(this.value);
+sealed class ZonesAutomaticHttpsRewritesId {const ZonesAutomaticHttpsRewritesId();
 
 factory ZonesAutomaticHttpsRewritesId.fromJson(String json) { return switch (json) {
   'automatic_https_rewrites' => automaticHttpsRewrites,
-  _ => ZonesAutomaticHttpsRewritesId._(json),
+  _ => ZonesAutomaticHttpsRewritesId$Unknown(json),
 }; }
 
-static const ZonesAutomaticHttpsRewritesId automaticHttpsRewrites = ZonesAutomaticHttpsRewritesId._('automatic_https_rewrites');
+static const ZonesAutomaticHttpsRewritesId automaticHttpsRewrites = ZonesAutomaticHttpsRewritesId$automaticHttpsRewrites._();
 
 static const List<ZonesAutomaticHttpsRewritesId> values = [automaticHttpsRewrites];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesAutomaticHttpsRewritesId$Unknown; } 
+@override String toString() => 'ZonesAutomaticHttpsRewritesId($value)';
+
+ }
+@immutable final class ZonesAutomaticHttpsRewritesId$automaticHttpsRewrites extends ZonesAutomaticHttpsRewritesId {const ZonesAutomaticHttpsRewritesId$automaticHttpsRewrites._();
+
+@override String get value => 'automatic_https_rewrites';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesAutomaticHttpsRewritesId$automaticHttpsRewrites;
+
+@override int get hashCode => 'automatic_https_rewrites'.hashCode;
+
+ }
+@immutable final class ZonesAutomaticHttpsRewritesId$Unknown extends ZonesAutomaticHttpsRewritesId {const ZonesAutomaticHttpsRewritesId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesAutomaticHttpsRewritesId && other.value == value;
+    other is ZonesAutomaticHttpsRewritesId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesAutomaticHttpsRewritesId($value)';
 
  }
 @immutable final class ZonesAutomaticHttpsRewrites {const ZonesAutomaticHttpsRewrites({this.id, this.value, });

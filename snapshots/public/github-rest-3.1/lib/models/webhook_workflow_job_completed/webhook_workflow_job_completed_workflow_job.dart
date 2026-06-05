@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookWorkflowJobCompleted (inline: WorkflowJob)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkflowJobConclusion {const WorkflowJobConclusion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class WorkflowJobConclusion {const WorkflowJobConclusion();
 
 factory WorkflowJobConclusion.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -11,27 +11,26 @@ factory WorkflowJobConclusion.fromJson(String json) { return switch (json) {
   'action_required' => actionRequired,
   'neutral' => neutral,
   'timed_out' => timedOut,
-  _ => WorkflowJobConclusion._(json),
+  _ => WorkflowJobConclusion$Unknown(json),
 }; }
 
-static const WorkflowJobConclusion success = WorkflowJobConclusion._('success');
+static const WorkflowJobConclusion success = WorkflowJobConclusion$success._();
 
-static const WorkflowJobConclusion failure = WorkflowJobConclusion._('failure');
+static const WorkflowJobConclusion failure = WorkflowJobConclusion$failure._();
 
-static const WorkflowJobConclusion skipped = WorkflowJobConclusion._('skipped');
+static const WorkflowJobConclusion skipped = WorkflowJobConclusion$skipped._();
 
-static const WorkflowJobConclusion cancelled = WorkflowJobConclusion._('cancelled');
+static const WorkflowJobConclusion cancelled = WorkflowJobConclusion$cancelled._();
 
-static const WorkflowJobConclusion actionRequired = WorkflowJobConclusion._('action_required');
+static const WorkflowJobConclusion actionRequired = WorkflowJobConclusion$actionRequired._();
 
-static const WorkflowJobConclusion neutral = WorkflowJobConclusion._('neutral');
+static const WorkflowJobConclusion neutral = WorkflowJobConclusion$neutral._();
 
-static const WorkflowJobConclusion timedOut = WorkflowJobConclusion._('timed_out');
+static const WorkflowJobConclusion timedOut = WorkflowJobConclusion$timedOut._();
 
 static const List<WorkflowJobConclusion> values = [success, failure, skipped, cancelled, actionRequired, neutral, timedOut];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -45,13 +44,81 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkflowJobConclusion$Unknown; } 
+@override String toString() => 'WorkflowJobConclusion($value)';
+
+ }
+@immutable final class WorkflowJobConclusion$success extends WorkflowJobConclusion {const WorkflowJobConclusion$success._();
+
+@override String get value => 'success';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowJobConclusion$success;
+
+@override int get hashCode => 'success'.hashCode;
+
+ }
+@immutable final class WorkflowJobConclusion$failure extends WorkflowJobConclusion {const WorkflowJobConclusion$failure._();
+
+@override String get value => 'failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowJobConclusion$failure;
+
+@override int get hashCode => 'failure'.hashCode;
+
+ }
+@immutable final class WorkflowJobConclusion$skipped extends WorkflowJobConclusion {const WorkflowJobConclusion$skipped._();
+
+@override String get value => 'skipped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowJobConclusion$skipped;
+
+@override int get hashCode => 'skipped'.hashCode;
+
+ }
+@immutable final class WorkflowJobConclusion$cancelled extends WorkflowJobConclusion {const WorkflowJobConclusion$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowJobConclusion$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class WorkflowJobConclusion$actionRequired extends WorkflowJobConclusion {const WorkflowJobConclusion$actionRequired._();
+
+@override String get value => 'action_required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowJobConclusion$actionRequired;
+
+@override int get hashCode => 'action_required'.hashCode;
+
+ }
+@immutable final class WorkflowJobConclusion$neutral extends WorkflowJobConclusion {const WorkflowJobConclusion$neutral._();
+
+@override String get value => 'neutral';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowJobConclusion$neutral;
+
+@override int get hashCode => 'neutral'.hashCode;
+
+ }
+@immutable final class WorkflowJobConclusion$timedOut extends WorkflowJobConclusion {const WorkflowJobConclusion$timedOut._();
+
+@override String get value => 'timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowJobConclusion$timedOut;
+
+@override int get hashCode => 'timed_out'.hashCode;
+
+ }
+@immutable final class WorkflowJobConclusion$Unknown extends WorkflowJobConclusion {const WorkflowJobConclusion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkflowJobConclusion && other.value == value;
+    other is WorkflowJobConclusion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkflowJobConclusion($value)';
 
  }
 /// The workflow job. Many `workflow_job` keys, such as `head_sha`, `conclusion`, and `started_at` are the same as those in a [`check_run`](#check_run) object.

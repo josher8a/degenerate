@@ -2,19 +2,18 @@
 // Source: #/components/schemas/BillingAlert
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_alert/alert_type.dart';import 'package:pub_stripe_spec3/models/thresholds_resource_usage_threshold_config.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class BillingAlertObject {const BillingAlertObject._(this.value);
+sealed class BillingAlertObject {const BillingAlertObject();
 
 factory BillingAlertObject.fromJson(String json) { return switch (json) {
   'billing.alert' => billingAlert,
-  _ => BillingAlertObject._(json),
+  _ => BillingAlertObject$Unknown(json),
 }; }
 
-static const BillingAlertObject billingAlert = BillingAlertObject._('billing.alert');
+static const BillingAlertObject billingAlert = BillingAlertObject$billingAlert._();
 
 static const List<BillingAlertObject> values = [billingAlert];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,35 +21,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingAlertObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is BillingAlertObject$Unknown; } 
 @override String toString() => 'BillingAlertObject($value)';
 
  }
+@immutable final class BillingAlertObject$billingAlert extends BillingAlertObject {const BillingAlertObject$billingAlert._();
+
+@override String get value => 'billing.alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingAlertObject$billingAlert;
+
+@override int get hashCode => 'billing.alert'.hashCode;
+
+ }
+@immutable final class BillingAlertObject$Unknown extends BillingAlertObject {const BillingAlertObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingAlertObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Status of the alert. This can be active, inactive or archived.
-@immutable final class BillingAlertStatus {const BillingAlertStatus._(this.value);
+sealed class BillingAlertStatus {const BillingAlertStatus();
 
 factory BillingAlertStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'archived' => archived,
   'inactive' => inactive,
-  _ => BillingAlertStatus._(json),
+  _ => BillingAlertStatus$Unknown(json),
 }; }
 
-static const BillingAlertStatus active = BillingAlertStatus._('active');
+static const BillingAlertStatus active = BillingAlertStatus$active._();
 
-static const BillingAlertStatus archived = BillingAlertStatus._('archived');
+static const BillingAlertStatus archived = BillingAlertStatus$archived._();
 
-static const BillingAlertStatus inactive = BillingAlertStatus._('inactive');
+static const BillingAlertStatus inactive = BillingAlertStatus$inactive._();
 
 static const List<BillingAlertStatus> values = [active, archived, inactive];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,13 +72,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingAlertStatus$Unknown; } 
+@override String toString() => 'BillingAlertStatus($value)';
+
+ }
+@immutable final class BillingAlertStatus$active extends BillingAlertStatus {const BillingAlertStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingAlertStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class BillingAlertStatus$archived extends BillingAlertStatus {const BillingAlertStatus$archived._();
+
+@override String get value => 'archived';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingAlertStatus$archived;
+
+@override int get hashCode => 'archived'.hashCode;
+
+ }
+@immutable final class BillingAlertStatus$inactive extends BillingAlertStatus {const BillingAlertStatus$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingAlertStatus$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+ }
+@immutable final class BillingAlertStatus$Unknown extends BillingAlertStatus {const BillingAlertStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingAlertStatus && other.value == value;
+    other is BillingAlertStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingAlertStatus($value)';
 
  }
 /// A billing alert is a resource that notifies you when a certain usage threshold on a meter is crossed. For example, you might create a billing alert to notify you when a certain user made 100 API requests.

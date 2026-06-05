@@ -2,19 +2,18 @@
 // Source: #/components/schemas/AmazonPayUnderlyingPaymentMethodFundingDetails (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// funding type of the underlying payment method.
-@immutable final class AmazonPayUnderlyingPaymentMethodFundingDetailsType {const AmazonPayUnderlyingPaymentMethodFundingDetailsType._(this.value);
+sealed class AmazonPayUnderlyingPaymentMethodFundingDetailsType {const AmazonPayUnderlyingPaymentMethodFundingDetailsType();
 
 factory AmazonPayUnderlyingPaymentMethodFundingDetailsType.fromJson(String json) { return switch (json) {
   'card' => card,
-  _ => AmazonPayUnderlyingPaymentMethodFundingDetailsType._(json),
+  _ => AmazonPayUnderlyingPaymentMethodFundingDetailsType$Unknown(json),
 }; }
 
-static const AmazonPayUnderlyingPaymentMethodFundingDetailsType card = AmazonPayUnderlyingPaymentMethodFundingDetailsType._('card');
+static const AmazonPayUnderlyingPaymentMethodFundingDetailsType card = AmazonPayUnderlyingPaymentMethodFundingDetailsType$card._();
 
 static const List<AmazonPayUnderlyingPaymentMethodFundingDetailsType> values = [card];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AmazonPayUnderlyingPaymentMethodFundingDetailsType$Unknown; } 
+@override String toString() => 'AmazonPayUnderlyingPaymentMethodFundingDetailsType($value)';
+
+ }
+@immutable final class AmazonPayUnderlyingPaymentMethodFundingDetailsType$card extends AmazonPayUnderlyingPaymentMethodFundingDetailsType {const AmazonPayUnderlyingPaymentMethodFundingDetailsType$card._();
+
+@override String get value => 'card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AmazonPayUnderlyingPaymentMethodFundingDetailsType$card;
+
+@override int get hashCode => 'card'.hashCode;
+
+ }
+@immutable final class AmazonPayUnderlyingPaymentMethodFundingDetailsType$Unknown extends AmazonPayUnderlyingPaymentMethodFundingDetailsType {const AmazonPayUnderlyingPaymentMethodFundingDetailsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AmazonPayUnderlyingPaymentMethodFundingDetailsType && other.value == value;
+    other is AmazonPayUnderlyingPaymentMethodFundingDetailsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AmazonPayUnderlyingPaymentMethodFundingDetailsType($value)';
 
  }

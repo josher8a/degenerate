@@ -2,25 +2,24 @@
 // Source: #/components/schemas/IssuingNetworkTokenDevice
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device used for tokenization.
-@immutable final class IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType._(this.value);
+sealed class IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType();
 
 factory IssuingNetworkTokenDeviceType.fromJson(String json) { return switch (json) {
   'other' => $other,
   'phone' => phone,
   'watch' => watch,
-  _ => IssuingNetworkTokenDeviceType._(json),
+  _ => IssuingNetworkTokenDeviceType$Unknown(json),
 }; }
 
-static const IssuingNetworkTokenDeviceType $other = IssuingNetworkTokenDeviceType._('other');
+static const IssuingNetworkTokenDeviceType $other = IssuingNetworkTokenDeviceType$$other._();
 
-static const IssuingNetworkTokenDeviceType phone = IssuingNetworkTokenDeviceType._('phone');
+static const IssuingNetworkTokenDeviceType phone = IssuingNetworkTokenDeviceType$phone._();
 
-static const IssuingNetworkTokenDeviceType watch = IssuingNetworkTokenDeviceType._('watch');
+static const IssuingNetworkTokenDeviceType watch = IssuingNetworkTokenDeviceType$watch._();
 
 static const List<IssuingNetworkTokenDeviceType> values = [$other, phone, watch];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingNetworkTokenDeviceType$Unknown; } 
+@override String toString() => 'IssuingNetworkTokenDeviceType($value)';
+
+ }
+@immutable final class IssuingNetworkTokenDeviceType$$other extends IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingNetworkTokenDeviceType$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class IssuingNetworkTokenDeviceType$phone extends IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType$phone._();
+
+@override String get value => 'phone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingNetworkTokenDeviceType$phone;
+
+@override int get hashCode => 'phone'.hashCode;
+
+ }
+@immutable final class IssuingNetworkTokenDeviceType$watch extends IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType$watch._();
+
+@override String get value => 'watch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingNetworkTokenDeviceType$watch;
+
+@override int get hashCode => 'watch'.hashCode;
+
+ }
+@immutable final class IssuingNetworkTokenDeviceType$Unknown extends IssuingNetworkTokenDeviceType {const IssuingNetworkTokenDeviceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingNetworkTokenDeviceType && other.value == value;
+    other is IssuingNetworkTokenDeviceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingNetworkTokenDeviceType($value)';
 
  }
 /// 

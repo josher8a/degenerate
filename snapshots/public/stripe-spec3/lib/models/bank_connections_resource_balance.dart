@@ -2,22 +2,21 @@
 // Source: #/components/schemas/BankConnectionsResourceBalance
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/resource_cash_balance.dart';import 'package:pub_stripe_spec3/models/resource_credit_balance.dart';/// The `type` of the balance. An additional hash is included on the balance with a name matching this value.
-@immutable final class BankConnectionsResourceBalanceType {const BankConnectionsResourceBalanceType._(this.value);
+sealed class BankConnectionsResourceBalanceType {const BankConnectionsResourceBalanceType();
 
 factory BankConnectionsResourceBalanceType.fromJson(String json) { return switch (json) {
   'cash' => cash,
   'credit' => credit,
-  _ => BankConnectionsResourceBalanceType._(json),
+  _ => BankConnectionsResourceBalanceType$Unknown(json),
 }; }
 
-static const BankConnectionsResourceBalanceType cash = BankConnectionsResourceBalanceType._('cash');
+static const BankConnectionsResourceBalanceType cash = BankConnectionsResourceBalanceType$cash._();
 
-static const BankConnectionsResourceBalanceType credit = BankConnectionsResourceBalanceType._('credit');
+static const BankConnectionsResourceBalanceType credit = BankConnectionsResourceBalanceType$credit._();
 
 static const List<BankConnectionsResourceBalanceType> values = [cash, credit];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BankConnectionsResourceBalanceType$Unknown; } 
+@override String toString() => 'BankConnectionsResourceBalanceType($value)';
+
+ }
+@immutable final class BankConnectionsResourceBalanceType$cash extends BankConnectionsResourceBalanceType {const BankConnectionsResourceBalanceType$cash._();
+
+@override String get value => 'cash';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BankConnectionsResourceBalanceType$cash;
+
+@override int get hashCode => 'cash'.hashCode;
+
+ }
+@immutable final class BankConnectionsResourceBalanceType$credit extends BankConnectionsResourceBalanceType {const BankConnectionsResourceBalanceType$credit._();
+
+@override String get value => 'credit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BankConnectionsResourceBalanceType$credit;
+
+@override int get hashCode => 'credit'.hashCode;
+
+ }
+@immutable final class BankConnectionsResourceBalanceType$Unknown extends BankConnectionsResourceBalanceType {const BankConnectionsResourceBalanceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BankConnectionsResourceBalanceType && other.value == value;
+    other is BankConnectionsResourceBalanceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BankConnectionsResourceBalanceType($value)';
 
  }
 /// 

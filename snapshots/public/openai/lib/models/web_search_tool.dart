@@ -2,25 +2,24 @@
 // Source: #/components/schemas/WebSearchTool
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/web_search_approximate_location.dart';import 'package:pub_openai/models/web_search_tool/web_search_tool_filters.dart';/// High level guidance for the amount of context window space to use for the search. One of `low`, `medium`, or `high`. `medium` is the default.
-@immutable final class WebSearchToolSearchContextSize {const WebSearchToolSearchContextSize._(this.value);
+sealed class WebSearchToolSearchContextSize {const WebSearchToolSearchContextSize();
 
 factory WebSearchToolSearchContextSize.fromJson(String json) { return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
-  _ => WebSearchToolSearchContextSize._(json),
+  _ => WebSearchToolSearchContextSize$Unknown(json),
 }; }
 
-static const WebSearchToolSearchContextSize low = WebSearchToolSearchContextSize._('low');
+static const WebSearchToolSearchContextSize low = WebSearchToolSearchContextSize$low._();
 
-static const WebSearchToolSearchContextSize medium = WebSearchToolSearchContextSize._('medium');
+static const WebSearchToolSearchContextSize medium = WebSearchToolSearchContextSize$medium._();
 
-static const WebSearchToolSearchContextSize high = WebSearchToolSearchContextSize._('high');
+static const WebSearchToolSearchContextSize high = WebSearchToolSearchContextSize$high._();
 
 static const List<WebSearchToolSearchContextSize> values = [low, medium, high];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebSearchToolSearchContextSize$Unknown; } 
+@override String toString() => 'WebSearchToolSearchContextSize($value)';
+
+ }
+@immutable final class WebSearchToolSearchContextSize$low extends WebSearchToolSearchContextSize {const WebSearchToolSearchContextSize$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchToolSearchContextSize$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class WebSearchToolSearchContextSize$medium extends WebSearchToolSearchContextSize {const WebSearchToolSearchContextSize$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchToolSearchContextSize$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class WebSearchToolSearchContextSize$high extends WebSearchToolSearchContextSize {const WebSearchToolSearchContextSize$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchToolSearchContextSize$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class WebSearchToolSearchContextSize$Unknown extends WebSearchToolSearchContextSize {const WebSearchToolSearchContextSize$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebSearchToolSearchContextSize && other.value == value;
+    other is WebSearchToolSearchContextSize$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebSearchToolSearchContextSize($value)';
 
  }
 /// Search the Internet for sources related to the prompt. Learn more about the

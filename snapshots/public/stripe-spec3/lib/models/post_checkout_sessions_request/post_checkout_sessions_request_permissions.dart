@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCheckoutSessionsRequest (inline: Permissions)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PermissionsUpdateShippingDetails {const PermissionsUpdateShippingDetails._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PermissionsUpdateShippingDetails {const PermissionsUpdateShippingDetails();
 
 factory PermissionsUpdateShippingDetails.fromJson(String json) { return switch (json) {
   'client_only' => clientOnly,
   'server_only' => serverOnly,
-  _ => PermissionsUpdateShippingDetails._(json),
+  _ => PermissionsUpdateShippingDetails$Unknown(json),
 }; }
 
-static const PermissionsUpdateShippingDetails clientOnly = PermissionsUpdateShippingDetails._('client_only');
+static const PermissionsUpdateShippingDetails clientOnly = PermissionsUpdateShippingDetails$clientOnly._();
 
-static const PermissionsUpdateShippingDetails serverOnly = PermissionsUpdateShippingDetails._('server_only');
+static const PermissionsUpdateShippingDetails serverOnly = PermissionsUpdateShippingDetails$serverOnly._();
 
 static const List<PermissionsUpdateShippingDetails> values = [clientOnly, serverOnly];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PermissionsUpdateShippingDetails$Unknown; } 
+@override String toString() => 'PermissionsUpdateShippingDetails($value)';
+
+ }
+@immutable final class PermissionsUpdateShippingDetails$clientOnly extends PermissionsUpdateShippingDetails {const PermissionsUpdateShippingDetails$clientOnly._();
+
+@override String get value => 'client_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PermissionsUpdateShippingDetails$clientOnly;
+
+@override int get hashCode => 'client_only'.hashCode;
+
+ }
+@immutable final class PermissionsUpdateShippingDetails$serverOnly extends PermissionsUpdateShippingDetails {const PermissionsUpdateShippingDetails$serverOnly._();
+
+@override String get value => 'server_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PermissionsUpdateShippingDetails$serverOnly;
+
+@override int get hashCode => 'server_only'.hashCode;
+
+ }
+@immutable final class PermissionsUpdateShippingDetails$Unknown extends PermissionsUpdateShippingDetails {const PermissionsUpdateShippingDetails$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PermissionsUpdateShippingDetails && other.value == value;
+    other is PermissionsUpdateShippingDetails$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PermissionsUpdateShippingDetails($value)';
 
  }
 /// This property is used to set up permissions for various actions (e.g., update) on the CheckoutSession object. Can only be set when creating `embedded` or `custom` sessions.

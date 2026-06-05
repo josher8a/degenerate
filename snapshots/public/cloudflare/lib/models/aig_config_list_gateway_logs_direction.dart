@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigListGatewayLogsDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListGatewayLogsDirection {const AigConfigListGatewayLogsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AigConfigListGatewayLogsDirection {const AigConfigListGatewayLogsDirection();
 
 factory AigConfigListGatewayLogsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => AigConfigListGatewayLogsDirection._(json),
+  _ => AigConfigListGatewayLogsDirection$Unknown(json),
 }; }
 
-static const AigConfigListGatewayLogsDirection asc = AigConfigListGatewayLogsDirection._('asc');
+static const AigConfigListGatewayLogsDirection asc = AigConfigListGatewayLogsDirection$asc._();
 
-static const AigConfigListGatewayLogsDirection desc = AigConfigListGatewayLogsDirection._('desc');
+static const AigConfigListGatewayLogsDirection desc = AigConfigListGatewayLogsDirection$desc._();
 
 static const List<AigConfigListGatewayLogsDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AigConfigListGatewayLogsDirection$Unknown; } 
+@override String toString() => 'AigConfigListGatewayLogsDirection($value)';
+
+ }
+@immutable final class AigConfigListGatewayLogsDirection$asc extends AigConfigListGatewayLogsDirection {const AigConfigListGatewayLogsDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AigConfigListGatewayLogsDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class AigConfigListGatewayLogsDirection$desc extends AigConfigListGatewayLogsDirection {const AigConfigListGatewayLogsDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AigConfigListGatewayLogsDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class AigConfigListGatewayLogsDirection$Unknown extends AigConfigListGatewayLogsDirection {const AigConfigListGatewayLogsDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AigConfigListGatewayLogsDirection && other.value == value;
+    other is AigConfigListGatewayLogsDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AigConfigListGatewayLogsDirection($value)';
 
  }

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetDnsSummaryByMatchingAnswerStatusFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetDnsSummaryByMatchingAnswerStatusFormat {const RadarGetDnsSummaryByMatchingAnswerStatusFormat._(this.value);
+sealed class RadarGetDnsSummaryByMatchingAnswerStatusFormat {const RadarGetDnsSummaryByMatchingAnswerStatusFormat();
 
 factory RadarGetDnsSummaryByMatchingAnswerStatusFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetDnsSummaryByMatchingAnswerStatusFormat._(json),
+  _ => RadarGetDnsSummaryByMatchingAnswerStatusFormat$Unknown(json),
 }; }
 
-static const RadarGetDnsSummaryByMatchingAnswerStatusFormat $json = RadarGetDnsSummaryByMatchingAnswerStatusFormat._('JSON');
+static const RadarGetDnsSummaryByMatchingAnswerStatusFormat $json = RadarGetDnsSummaryByMatchingAnswerStatusFormat$$json._();
 
-static const RadarGetDnsSummaryByMatchingAnswerStatusFormat csv = RadarGetDnsSummaryByMatchingAnswerStatusFormat._('CSV');
+static const RadarGetDnsSummaryByMatchingAnswerStatusFormat csv = RadarGetDnsSummaryByMatchingAnswerStatusFormat$csv._();
 
 static const List<RadarGetDnsSummaryByMatchingAnswerStatusFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetDnsSummaryByMatchingAnswerStatusFormat$Unknown; } 
+@override String toString() => 'RadarGetDnsSummaryByMatchingAnswerStatusFormat($value)';
+
+ }
+@immutable final class RadarGetDnsSummaryByMatchingAnswerStatusFormat$$json extends RadarGetDnsSummaryByMatchingAnswerStatusFormat {const RadarGetDnsSummaryByMatchingAnswerStatusFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByMatchingAnswerStatusFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByMatchingAnswerStatusFormat$csv extends RadarGetDnsSummaryByMatchingAnswerStatusFormat {const RadarGetDnsSummaryByMatchingAnswerStatusFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByMatchingAnswerStatusFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByMatchingAnswerStatusFormat$Unknown extends RadarGetDnsSummaryByMatchingAnswerStatusFormat {const RadarGetDnsSummaryByMatchingAnswerStatusFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetDnsSummaryByMatchingAnswerStatusFormat && other.value == value;
+    other is RadarGetDnsSummaryByMatchingAnswerStatusFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetDnsSummaryByMatchingAnswerStatusFormat($value)';
 
  }

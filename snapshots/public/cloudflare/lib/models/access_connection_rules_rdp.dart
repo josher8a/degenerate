@@ -2,19 +2,18 @@
 // Source: #/components/schemas/AccessConnectionRulesRdp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Clipboard format for RDP connections.
-@immutable final class AccessRdpClipboardFormat {const AccessRdpClipboardFormat._(this.value);
+sealed class AccessRdpClipboardFormat {const AccessRdpClipboardFormat();
 
 factory AccessRdpClipboardFormat.fromJson(String json) { return switch (json) {
   'text' => text,
-  _ => AccessRdpClipboardFormat._(json),
+  _ => AccessRdpClipboardFormat$Unknown(json),
 }; }
 
-static const AccessRdpClipboardFormat text = AccessRdpClipboardFormat._('text');
+static const AccessRdpClipboardFormat text = AccessRdpClipboardFormat$text._();
 
 static const List<AccessRdpClipboardFormat> values = [text];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccessRdpClipboardFormat$Unknown; } 
+@override String toString() => 'AccessRdpClipboardFormat($value)';
+
+ }
+@immutable final class AccessRdpClipboardFormat$text extends AccessRdpClipboardFormat {const AccessRdpClipboardFormat$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessRdpClipboardFormat$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class AccessRdpClipboardFormat$Unknown extends AccessRdpClipboardFormat {const AccessRdpClipboardFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccessRdpClipboardFormat && other.value == value;
+    other is AccessRdpClipboardFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccessRdpClipboardFormat($value)';
 
  }
 /// The RDP-specific rules that define clipboard behavior for RDP connections.

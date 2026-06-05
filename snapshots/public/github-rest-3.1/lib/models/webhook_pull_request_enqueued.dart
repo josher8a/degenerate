@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookPullRequestEnqueued
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_dequeued/webhook_pull_request_dequeued_pull_request.dart';@immutable final class WebhookPullRequestEnqueuedAction {const WebhookPullRequestEnqueuedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_dequeued/webhook_pull_request_dequeued_pull_request.dart';sealed class WebhookPullRequestEnqueuedAction {const WebhookPullRequestEnqueuedAction();
 
 factory WebhookPullRequestEnqueuedAction.fromJson(String json) { return switch (json) {
   'enqueued' => enqueued,
-  _ => WebhookPullRequestEnqueuedAction._(json),
+  _ => WebhookPullRequestEnqueuedAction$Unknown(json),
 }; }
 
-static const WebhookPullRequestEnqueuedAction enqueued = WebhookPullRequestEnqueuedAction._('enqueued');
+static const WebhookPullRequestEnqueuedAction enqueued = WebhookPullRequestEnqueuedAction$enqueued._();
 
 static const List<WebhookPullRequestEnqueuedAction> values = [enqueued];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookPullRequestEnqueuedAction$Unknown; } 
+@override String toString() => 'WebhookPullRequestEnqueuedAction($value)';
+
+ }
+@immutable final class WebhookPullRequestEnqueuedAction$enqueued extends WebhookPullRequestEnqueuedAction {const WebhookPullRequestEnqueuedAction$enqueued._();
+
+@override String get value => 'enqueued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestEnqueuedAction$enqueued;
+
+@override int get hashCode => 'enqueued'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestEnqueuedAction$Unknown extends WebhookPullRequestEnqueuedAction {const WebhookPullRequestEnqueuedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookPullRequestEnqueuedAction && other.value == value;
+    other is WebhookPullRequestEnqueuedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookPullRequestEnqueuedAction($value)';
 
  }
 @immutable final class WebhookPullRequestEnqueued {const WebhookPullRequestEnqueued({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

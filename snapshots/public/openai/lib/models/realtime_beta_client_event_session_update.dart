@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaClientEventSessionUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_session_create_request.dart';/// The event type, must be `session.update`.
-@immutable final class RealtimeBetaClientEventSessionUpdateType {const RealtimeBetaClientEventSessionUpdateType._(this.value);
+sealed class RealtimeBetaClientEventSessionUpdateType {const RealtimeBetaClientEventSessionUpdateType();
 
 factory RealtimeBetaClientEventSessionUpdateType.fromJson(String json) { return switch (json) {
   'session.update' => sessionUpdate,
-  _ => RealtimeBetaClientEventSessionUpdateType._(json),
+  _ => RealtimeBetaClientEventSessionUpdateType$Unknown(json),
 }; }
 
-static const RealtimeBetaClientEventSessionUpdateType sessionUpdate = RealtimeBetaClientEventSessionUpdateType._('session.update');
+static const RealtimeBetaClientEventSessionUpdateType sessionUpdate = RealtimeBetaClientEventSessionUpdateType$sessionUpdate._();
 
 static const List<RealtimeBetaClientEventSessionUpdateType> values = [sessionUpdate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaClientEventSessionUpdateType$Unknown; } 
+@override String toString() => 'RealtimeBetaClientEventSessionUpdateType($value)';
+
+ }
+@immutable final class RealtimeBetaClientEventSessionUpdateType$sessionUpdate extends RealtimeBetaClientEventSessionUpdateType {const RealtimeBetaClientEventSessionUpdateType$sessionUpdate._();
+
+@override String get value => 'session.update';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaClientEventSessionUpdateType$sessionUpdate;
+
+@override int get hashCode => 'session.update'.hashCode;
+
+ }
+@immutable final class RealtimeBetaClientEventSessionUpdateType$Unknown extends RealtimeBetaClientEventSessionUpdateType {const RealtimeBetaClientEventSessionUpdateType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaClientEventSessionUpdateType && other.value == value;
+    other is RealtimeBetaClientEventSessionUpdateType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaClientEventSessionUpdateType($value)';
 
  }
 /// Send this event to update the session’s default configuration.

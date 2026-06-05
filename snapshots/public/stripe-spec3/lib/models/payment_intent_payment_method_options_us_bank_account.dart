@@ -2,28 +2,27 @@
 // Source: #/components/schemas/PaymentIntentPaymentMethodOptionsUsBankAccount
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/linked_account_options_common.dart';import 'package:pub_stripe_spec3/models/payment_method_options_us_bank_account_mandate_options.dart';/// The purpose of the transaction.
-@immutable final class PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose {const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose._(this.value);
+sealed class PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose {const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose();
 
 factory PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose.fromJson(String json) { return switch (json) {
   'goods' => goods,
   'other' => $other,
   'services' => services,
   'unspecified' => unspecified,
-  _ => PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose._(json),
+  _ => PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$Unknown(json),
 }; }
 
-static const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose goods = PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose._('goods');
+static const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose goods = PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$goods._();
 
-static const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose $other = PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose._('other');
+static const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose $other = PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$$other._();
 
-static const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose services = PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose._('services');
+static const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose services = PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$services._();
 
-static const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose unspecified = PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose._('unspecified');
+static const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose unspecified = PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$unspecified._();
 
 static const List<PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose> values = [goods, $other, services, unspecified];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$Unknown; } 
+@override String toString() => 'PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose($value)';
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$goods extends PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose {const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$goods._();
+
+@override String get value => 'goods';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$goods;
+
+@override int get hashCode => 'goods'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$$other extends PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose {const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$services extends PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose {const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$services._();
+
+@override String get value => 'services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$services;
+
+@override int get hashCode => 'services'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$unspecified extends PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose {const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$unspecified._();
+
+@override String get value => 'unspecified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$unspecified;
+
+@override int get hashCode => 'unspecified'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$Unknown extends PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose {const PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose && other.value == value;
+    other is PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentIntentPaymentMethodOptionsUsBankAccountTransactionPurpose($value)';
 
  }
 /// 

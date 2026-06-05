@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookTeamRemovedFromRepository
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_team_added_to_repository/webhook_team_added_to_repository_repository.dart';import 'package:pub_github_rest_3_1/models/webhooks_team1.dart';@immutable final class WebhookTeamRemovedFromRepositoryAction {const WebhookTeamRemovedFromRepositoryAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_team_added_to_repository/webhook_team_added_to_repository_repository.dart';import 'package:pub_github_rest_3_1/models/webhooks_team1.dart';sealed class WebhookTeamRemovedFromRepositoryAction {const WebhookTeamRemovedFromRepositoryAction();
 
 factory WebhookTeamRemovedFromRepositoryAction.fromJson(String json) { return switch (json) {
   'removed_from_repository' => removedFromRepository,
-  _ => WebhookTeamRemovedFromRepositoryAction._(json),
+  _ => WebhookTeamRemovedFromRepositoryAction$Unknown(json),
 }; }
 
-static const WebhookTeamRemovedFromRepositoryAction removedFromRepository = WebhookTeamRemovedFromRepositoryAction._('removed_from_repository');
+static const WebhookTeamRemovedFromRepositoryAction removedFromRepository = WebhookTeamRemovedFromRepositoryAction$removedFromRepository._();
 
 static const List<WebhookTeamRemovedFromRepositoryAction> values = [removedFromRepository];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookTeamRemovedFromRepositoryAction$Unknown; } 
+@override String toString() => 'WebhookTeamRemovedFromRepositoryAction($value)';
+
+ }
+@immutable final class WebhookTeamRemovedFromRepositoryAction$removedFromRepository extends WebhookTeamRemovedFromRepositoryAction {const WebhookTeamRemovedFromRepositoryAction$removedFromRepository._();
+
+@override String get value => 'removed_from_repository';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookTeamRemovedFromRepositoryAction$removedFromRepository;
+
+@override int get hashCode => 'removed_from_repository'.hashCode;
+
+ }
+@immutable final class WebhookTeamRemovedFromRepositoryAction$Unknown extends WebhookTeamRemovedFromRepositoryAction {const WebhookTeamRemovedFromRepositoryAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookTeamRemovedFromRepositoryAction && other.value == value;
+    other is WebhookTeamRemovedFromRepositoryAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookTeamRemovedFromRepositoryAction($value)';
 
  }
 @immutable final class WebhookTeamRemovedFromRepository {const WebhookTeamRemovedFromRepository({required this.action, required this.organization, required this.sender, required this.team, this.enterprise, this.installation, this.repository, });

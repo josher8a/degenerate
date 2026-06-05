@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetEntitiesLocationByAlpha2Format
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetEntitiesLocationByAlpha2Format {const RadarGetEntitiesLocationByAlpha2Format._(this.value);
+sealed class RadarGetEntitiesLocationByAlpha2Format {const RadarGetEntitiesLocationByAlpha2Format();
 
 factory RadarGetEntitiesLocationByAlpha2Format.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetEntitiesLocationByAlpha2Format._(json),
+  _ => RadarGetEntitiesLocationByAlpha2Format$Unknown(json),
 }; }
 
-static const RadarGetEntitiesLocationByAlpha2Format $json = RadarGetEntitiesLocationByAlpha2Format._('JSON');
+static const RadarGetEntitiesLocationByAlpha2Format $json = RadarGetEntitiesLocationByAlpha2Format$$json._();
 
-static const RadarGetEntitiesLocationByAlpha2Format csv = RadarGetEntitiesLocationByAlpha2Format._('CSV');
+static const RadarGetEntitiesLocationByAlpha2Format csv = RadarGetEntitiesLocationByAlpha2Format$csv._();
 
 static const List<RadarGetEntitiesLocationByAlpha2Format> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEntitiesLocationByAlpha2Format$Unknown; } 
+@override String toString() => 'RadarGetEntitiesLocationByAlpha2Format($value)';
+
+ }
+@immutable final class RadarGetEntitiesLocationByAlpha2Format$$json extends RadarGetEntitiesLocationByAlpha2Format {const RadarGetEntitiesLocationByAlpha2Format$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEntitiesLocationByAlpha2Format$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetEntitiesLocationByAlpha2Format$csv extends RadarGetEntitiesLocationByAlpha2Format {const RadarGetEntitiesLocationByAlpha2Format$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEntitiesLocationByAlpha2Format$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetEntitiesLocationByAlpha2Format$Unknown extends RadarGetEntitiesLocationByAlpha2Format {const RadarGetEntitiesLocationByAlpha2Format$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEntitiesLocationByAlpha2Format && other.value == value;
+    other is RadarGetEntitiesLocationByAlpha2Format$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEntitiesLocationByAlpha2Format($value)';
 
  }

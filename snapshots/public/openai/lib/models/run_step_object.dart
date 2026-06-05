@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RunStepObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_completion_usage.dart';import 'package:pub_openai/models/run_step_details_message_creation_object.dart';import 'package:pub_openai/models/run_step_details_tool_calls_object.dart';import 'package:pub_openai/models/run_step_object/run_step_object_last_error.dart';import 'package:pub_openai/models/run_step_object/run_step_object_step_details.dart';/// The object type, which is always `thread.run.step`.
-@immutable final class RunStepObjectObject {const RunStepObjectObject._(this.value);
+sealed class RunStepObjectObject {const RunStepObjectObject();
 
 factory RunStepObjectObject.fromJson(String json) { return switch (json) {
   'thread.run.step' => threadRunStep,
-  _ => RunStepObjectObject._(json),
+  _ => RunStepObjectObject$Unknown(json),
 }; }
 
-static const RunStepObjectObject threadRunStep = RunStepObjectObject._('thread.run.step');
+static const RunStepObjectObject threadRunStep = RunStepObjectObject$threadRunStep._();
 
 static const List<RunStepObjectObject> values = [threadRunStep];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,32 +21,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RunStepObjectObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is RunStepObjectObject$Unknown; } 
 @override String toString() => 'RunStepObjectObject($value)';
 
  }
+@immutable final class RunStepObjectObject$threadRunStep extends RunStepObjectObject {const RunStepObjectObject$threadRunStep._();
+
+@override String get value => 'thread.run.step';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunStepObjectObject$threadRunStep;
+
+@override int get hashCode => 'thread.run.step'.hashCode;
+
+ }
+@immutable final class RunStepObjectObject$Unknown extends RunStepObjectObject {const RunStepObjectObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStepObjectObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The type of run step, which can be either `message_creation` or `tool_calls`.
-@immutable final class RunStepObjectType {const RunStepObjectType._(this.value);
+sealed class RunStepObjectType {const RunStepObjectType();
 
 factory RunStepObjectType.fromJson(String json) { return switch (json) {
   'message_creation' => messageCreation,
   'tool_calls' => toolCalls,
-  _ => RunStepObjectType._(json),
+  _ => RunStepObjectType$Unknown(json),
 }; }
 
-static const RunStepObjectType messageCreation = RunStepObjectType._('message_creation');
+static const RunStepObjectType messageCreation = RunStepObjectType$messageCreation._();
 
-static const RunStepObjectType toolCalls = RunStepObjectType._('tool_calls');
+static const RunStepObjectType toolCalls = RunStepObjectType$toolCalls._();
 
 static const List<RunStepObjectType> values = [messageCreation, toolCalls];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -56,17 +68,40 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RunStepObjectType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is RunStepObjectType$Unknown; } 
 @override String toString() => 'RunStepObjectType($value)';
 
  }
+@immutable final class RunStepObjectType$messageCreation extends RunStepObjectType {const RunStepObjectType$messageCreation._();
+
+@override String get value => 'message_creation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunStepObjectType$messageCreation;
+
+@override int get hashCode => 'message_creation'.hashCode;
+
+ }
+@immutable final class RunStepObjectType$toolCalls extends RunStepObjectType {const RunStepObjectType$toolCalls._();
+
+@override String get value => 'tool_calls';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunStepObjectType$toolCalls;
+
+@override int get hashCode => 'tool_calls'.hashCode;
+
+ }
+@immutable final class RunStepObjectType$Unknown extends RunStepObjectType {const RunStepObjectType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RunStepObjectType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of the run step, which can be either `in_progress`, `cancelled`, `failed`, `completed`, or `expired`.
-@immutable final class RunStepObjectStatus {const RunStepObjectStatus._(this.value);
+sealed class RunStepObjectStatus {const RunStepObjectStatus();
 
 factory RunStepObjectStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -74,23 +109,22 @@ factory RunStepObjectStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,
   'completed' => completed,
   'expired' => expired,
-  _ => RunStepObjectStatus._(json),
+  _ => RunStepObjectStatus$Unknown(json),
 }; }
 
-static const RunStepObjectStatus inProgress = RunStepObjectStatus._('in_progress');
+static const RunStepObjectStatus inProgress = RunStepObjectStatus$inProgress._();
 
-static const RunStepObjectStatus cancelled = RunStepObjectStatus._('cancelled');
+static const RunStepObjectStatus cancelled = RunStepObjectStatus$cancelled._();
 
-static const RunStepObjectStatus failed = RunStepObjectStatus._('failed');
+static const RunStepObjectStatus failed = RunStepObjectStatus$failed._();
 
-static const RunStepObjectStatus completed = RunStepObjectStatus._('completed');
+static const RunStepObjectStatus completed = RunStepObjectStatus$completed._();
 
-static const RunStepObjectStatus expired = RunStepObjectStatus._('expired');
+static const RunStepObjectStatus expired = RunStepObjectStatus$expired._();
 
 static const List<RunStepObjectStatus> values = [inProgress, cancelled, failed, completed, expired];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -102,13 +136,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RunStepObjectStatus$Unknown; } 
+@override String toString() => 'RunStepObjectStatus($value)';
+
+ }
+@immutable final class RunStepObjectStatus$inProgress extends RunStepObjectStatus {const RunStepObjectStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunStepObjectStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class RunStepObjectStatus$cancelled extends RunStepObjectStatus {const RunStepObjectStatus$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunStepObjectStatus$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class RunStepObjectStatus$failed extends RunStepObjectStatus {const RunStepObjectStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunStepObjectStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class RunStepObjectStatus$completed extends RunStepObjectStatus {const RunStepObjectStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunStepObjectStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class RunStepObjectStatus$expired extends RunStepObjectStatus {const RunStepObjectStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunStepObjectStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class RunStepObjectStatus$Unknown extends RunStepObjectStatus {const RunStepObjectStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RunStepObjectStatus && other.value == value;
+    other is RunStepObjectStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RunStepObjectStatus($value)';
 
  }
 /// Represents a step in execution of a run.

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZarazManagedComponent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazManagedComponentType {const ZarazManagedComponentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ZarazManagedComponentType {const ZarazManagedComponentType();
 
 factory ZarazManagedComponentType.fromJson(String json) { return switch (json) {
   'component' => component,
-  _ => ZarazManagedComponentType._(json),
+  _ => ZarazManagedComponentType$Unknown(json),
 }; }
 
-static const ZarazManagedComponentType component = ZarazManagedComponentType._('component');
+static const ZarazManagedComponentType component = ZarazManagedComponentType$component._();
 
 static const List<ZarazManagedComponentType> values = [component];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZarazManagedComponentType$Unknown; } 
+@override String toString() => 'ZarazManagedComponentType($value)';
+
+ }
+@immutable final class ZarazManagedComponentType$component extends ZarazManagedComponentType {const ZarazManagedComponentType$component._();
+
+@override String get value => 'component';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazManagedComponentType$component;
+
+@override int get hashCode => 'component'.hashCode;
+
+ }
+@immutable final class ZarazManagedComponentType$Unknown extends ZarazManagedComponentType {const ZarazManagedComponentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZarazManagedComponentType && other.value == value;
+    other is ZarazManagedComponentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZarazManagedComponentType($value)';
 
  }
 @immutable final class ZarazManagedComponent {const ZarazManagedComponent({required this.type});

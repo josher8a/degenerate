@@ -2,7 +2,7 @@
 // Source: #/components/schemas/PagesStage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The current build stage.
-@immutable final class PagesStageName {const PagesStageName._(this.value);
+sealed class PagesStageName {const PagesStageName();
 
 factory PagesStageName.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -10,23 +10,22 @@ factory PagesStageName.fromJson(String json) { return switch (json) {
   'clone_repo' => cloneRepo,
   'build' => build,
   'deploy' => deploy,
-  _ => PagesStageName._(json),
+  _ => PagesStageName$Unknown(json),
 }; }
 
-static const PagesStageName queued = PagesStageName._('queued');
+static const PagesStageName queued = PagesStageName$queued._();
 
-static const PagesStageName initialize = PagesStageName._('initialize');
+static const PagesStageName initialize = PagesStageName$initialize._();
 
-static const PagesStageName cloneRepo = PagesStageName._('clone_repo');
+static const PagesStageName cloneRepo = PagesStageName$cloneRepo._();
 
-static const PagesStageName build = PagesStageName._('build');
+static const PagesStageName build = PagesStageName$build._();
 
-static const PagesStageName deploy = PagesStageName._('deploy');
+static const PagesStageName deploy = PagesStageName$deploy._();
 
 static const List<PagesStageName> values = [queued, initialize, cloneRepo, build, deploy];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,17 +37,67 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PagesStageName && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PagesStageName$Unknown; } 
 @override String toString() => 'PagesStageName($value)';
 
  }
+@immutable final class PagesStageName$queued extends PagesStageName {const PagesStageName$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesStageName$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class PagesStageName$initialize extends PagesStageName {const PagesStageName$initialize._();
+
+@override String get value => 'initialize';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesStageName$initialize;
+
+@override int get hashCode => 'initialize'.hashCode;
+
+ }
+@immutable final class PagesStageName$cloneRepo extends PagesStageName {const PagesStageName$cloneRepo._();
+
+@override String get value => 'clone_repo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesStageName$cloneRepo;
+
+@override int get hashCode => 'clone_repo'.hashCode;
+
+ }
+@immutable final class PagesStageName$build extends PagesStageName {const PagesStageName$build._();
+
+@override String get value => 'build';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesStageName$build;
+
+@override int get hashCode => 'build'.hashCode;
+
+ }
+@immutable final class PagesStageName$deploy extends PagesStageName {const PagesStageName$deploy._();
+
+@override String get value => 'deploy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesStageName$deploy;
+
+@override int get hashCode => 'deploy'.hashCode;
+
+ }
+@immutable final class PagesStageName$Unknown extends PagesStageName {const PagesStageName$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PagesStageName$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// State of the current stage.
-@immutable final class PagesStageStatus {const PagesStageStatus._(this.value);
+sealed class PagesStageStatus {const PagesStageStatus();
 
 factory PagesStageStatus.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -56,23 +105,22 @@ factory PagesStageStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'failure' => failure,
   'canceled' => canceled,
-  _ => PagesStageStatus._(json),
+  _ => PagesStageStatus$Unknown(json),
 }; }
 
-static const PagesStageStatus success = PagesStageStatus._('success');
+static const PagesStageStatus success = PagesStageStatus$success._();
 
-static const PagesStageStatus idle = PagesStageStatus._('idle');
+static const PagesStageStatus idle = PagesStageStatus$idle._();
 
-static const PagesStageStatus active = PagesStageStatus._('active');
+static const PagesStageStatus active = PagesStageStatus$active._();
 
-static const PagesStageStatus failure = PagesStageStatus._('failure');
+static const PagesStageStatus failure = PagesStageStatus$failure._();
 
-static const PagesStageStatus canceled = PagesStageStatus._('canceled');
+static const PagesStageStatus canceled = PagesStageStatus$canceled._();
 
 static const List<PagesStageStatus> values = [success, idle, active, failure, canceled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -84,13 +132,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PagesStageStatus$Unknown; } 
+@override String toString() => 'PagesStageStatus($value)';
+
+ }
+@immutable final class PagesStageStatus$success extends PagesStageStatus {const PagesStageStatus$success._();
+
+@override String get value => 'success';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesStageStatus$success;
+
+@override int get hashCode => 'success'.hashCode;
+
+ }
+@immutable final class PagesStageStatus$idle extends PagesStageStatus {const PagesStageStatus$idle._();
+
+@override String get value => 'idle';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesStageStatus$idle;
+
+@override int get hashCode => 'idle'.hashCode;
+
+ }
+@immutable final class PagesStageStatus$active extends PagesStageStatus {const PagesStageStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesStageStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class PagesStageStatus$failure extends PagesStageStatus {const PagesStageStatus$failure._();
+
+@override String get value => 'failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesStageStatus$failure;
+
+@override int get hashCode => 'failure'.hashCode;
+
+ }
+@immutable final class PagesStageStatus$canceled extends PagesStageStatus {const PagesStageStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesStageStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class PagesStageStatus$Unknown extends PagesStageStatus {const PagesStageStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PagesStageStatus && other.value == value;
+    other is PagesStageStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PagesStageStatus($value)';
 
  }
 /// The status of the deployment.

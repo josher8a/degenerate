@@ -2,25 +2,24 @@
 // Source: #/components/schemas/UserSAccountMembershipsListMembershipsStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of this membership.
-@immutable final class UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus._(this.value);
+sealed class UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus();
 
 factory UserSAccountMembershipsListMembershipsStatus.fromJson(String json) { return switch (json) {
   'accepted' => accepted,
   'pending' => pending,
   'rejected' => rejected,
-  _ => UserSAccountMembershipsListMembershipsStatus._(json),
+  _ => UserSAccountMembershipsListMembershipsStatus$Unknown(json),
 }; }
 
-static const UserSAccountMembershipsListMembershipsStatus accepted = UserSAccountMembershipsListMembershipsStatus._('accepted');
+static const UserSAccountMembershipsListMembershipsStatus accepted = UserSAccountMembershipsListMembershipsStatus$accepted._();
 
-static const UserSAccountMembershipsListMembershipsStatus pending = UserSAccountMembershipsListMembershipsStatus._('pending');
+static const UserSAccountMembershipsListMembershipsStatus pending = UserSAccountMembershipsListMembershipsStatus$pending._();
 
-static const UserSAccountMembershipsListMembershipsStatus rejected = UserSAccountMembershipsListMembershipsStatus._('rejected');
+static const UserSAccountMembershipsListMembershipsStatus rejected = UserSAccountMembershipsListMembershipsStatus$rejected._();
 
 static const List<UserSAccountMembershipsListMembershipsStatus> values = [accepted, pending, rejected];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UserSAccountMembershipsListMembershipsStatus$Unknown; } 
+@override String toString() => 'UserSAccountMembershipsListMembershipsStatus($value)';
+
+ }
+@immutable final class UserSAccountMembershipsListMembershipsStatus$accepted extends UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus$accepted._();
+
+@override String get value => 'accepted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserSAccountMembershipsListMembershipsStatus$accepted;
+
+@override int get hashCode => 'accepted'.hashCode;
+
+ }
+@immutable final class UserSAccountMembershipsListMembershipsStatus$pending extends UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserSAccountMembershipsListMembershipsStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class UserSAccountMembershipsListMembershipsStatus$rejected extends UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus$rejected._();
+
+@override String get value => 'rejected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserSAccountMembershipsListMembershipsStatus$rejected;
+
+@override int get hashCode => 'rejected'.hashCode;
+
+ }
+@immutable final class UserSAccountMembershipsListMembershipsStatus$Unknown extends UserSAccountMembershipsListMembershipsStatus {const UserSAccountMembershipsListMembershipsStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UserSAccountMembershipsListMembershipsStatus && other.value == value;
+    other is UserSAccountMembershipsListMembershipsStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UserSAccountMembershipsListMembershipsStatus($value)';
 
  }

@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CommitComparison
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit.dart';import 'package:pub_github_rest_3_1/models/diff_entry.dart';@immutable final class CommitComparisonStatus {const CommitComparisonStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/commit.dart';import 'package:pub_github_rest_3_1/models/diff_entry.dart';sealed class CommitComparisonStatus {const CommitComparisonStatus();
 
 factory CommitComparisonStatus.fromJson(String json) { return switch (json) {
   'diverged' => diverged,
   'ahead' => ahead,
   'behind' => behind,
   'identical' => $identical,
-  _ => CommitComparisonStatus._(json),
+  _ => CommitComparisonStatus$Unknown(json),
 }; }
 
-static const CommitComparisonStatus diverged = CommitComparisonStatus._('diverged');
+static const CommitComparisonStatus diverged = CommitComparisonStatus$diverged._();
 
-static const CommitComparisonStatus ahead = CommitComparisonStatus._('ahead');
+static const CommitComparisonStatus ahead = CommitComparisonStatus$ahead._();
 
-static const CommitComparisonStatus behind = CommitComparisonStatus._('behind');
+static const CommitComparisonStatus behind = CommitComparisonStatus$behind._();
 
-static const CommitComparisonStatus $identical = CommitComparisonStatus._('identical');
+static const CommitComparisonStatus $identical = CommitComparisonStatus$$identical._();
 
 static const List<CommitComparisonStatus> values = [diverged, ahead, behind, $identical];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CommitComparisonStatus$Unknown; } 
+@override String toString() => 'CommitComparisonStatus($value)';
+
+ }
+@immutable final class CommitComparisonStatus$diverged extends CommitComparisonStatus {const CommitComparisonStatus$diverged._();
+
+@override String get value => 'diverged';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CommitComparisonStatus$diverged;
+
+@override int get hashCode => 'diverged'.hashCode;
+
+ }
+@immutable final class CommitComparisonStatus$ahead extends CommitComparisonStatus {const CommitComparisonStatus$ahead._();
+
+@override String get value => 'ahead';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CommitComparisonStatus$ahead;
+
+@override int get hashCode => 'ahead'.hashCode;
+
+ }
+@immutable final class CommitComparisonStatus$behind extends CommitComparisonStatus {const CommitComparisonStatus$behind._();
+
+@override String get value => 'behind';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CommitComparisonStatus$behind;
+
+@override int get hashCode => 'behind'.hashCode;
+
+ }
+@immutable final class CommitComparisonStatus$$identical extends CommitComparisonStatus {const CommitComparisonStatus$$identical._();
+
+@override String get value => 'identical';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CommitComparisonStatus$$identical;
+
+@override int get hashCode => 'identical'.hashCode;
+
+ }
+@immutable final class CommitComparisonStatus$Unknown extends CommitComparisonStatus {const CommitComparisonStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CommitComparisonStatus && other.value == value;
+    other is CommitComparisonStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CommitComparisonStatus($value)';
 
  }
 /// Commit Comparison

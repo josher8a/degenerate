@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PageShieldListScriptsExport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Export the list of scripts as a file, limited to 50000 entries.
-@immutable final class PageShieldListScriptsExport {const PageShieldListScriptsExport._(this.value);
+sealed class PageShieldListScriptsExport {const PageShieldListScriptsExport();
 
 factory PageShieldListScriptsExport.fromJson(String json) { return switch (json) {
   'csv' => csv,
-  _ => PageShieldListScriptsExport._(json),
+  _ => PageShieldListScriptsExport$Unknown(json),
 }; }
 
-static const PageShieldListScriptsExport csv = PageShieldListScriptsExport._('csv');
+static const PageShieldListScriptsExport csv = PageShieldListScriptsExport$csv._();
 
 static const List<PageShieldListScriptsExport> values = [csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PageShieldListScriptsExport$Unknown; } 
+@override String toString() => 'PageShieldListScriptsExport($value)';
+
+ }
+@immutable final class PageShieldListScriptsExport$csv extends PageShieldListScriptsExport {const PageShieldListScriptsExport$csv._();
+
+@override String get value => 'csv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageShieldListScriptsExport$csv;
+
+@override int get hashCode => 'csv'.hashCode;
+
+ }
+@immutable final class PageShieldListScriptsExport$Unknown extends PageShieldListScriptsExport {const PageShieldListScriptsExport$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PageShieldListScriptsExport && other.value == value;
+    other is PageShieldListScriptsExport$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PageShieldListScriptsExport($value)';
 
  }

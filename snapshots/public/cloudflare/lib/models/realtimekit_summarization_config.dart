@@ -2,7 +2,7 @@
 // Source: #/components/schemas/RealtimekitSummarizationConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the style of the summary, such as general, team meeting, or sales call.
-@immutable final class SummaryType {const SummaryType._(this.value);
+sealed class SummaryType {const SummaryType();
 
 factory SummaryType.fromJson(String json) { return switch (json) {
   'general' => general,
@@ -14,31 +14,30 @@ factory SummaryType.fromJson(String json) { return switch (json) {
   'one_on_one_meeting' => oneOnOneMeeting,
   'lecture' => lecture,
   'code_review' => codeReview,
-  _ => SummaryType._(json),
+  _ => SummaryType$Unknown(json),
 }; }
 
-static const SummaryType general = SummaryType._('general');
+static const SummaryType general = SummaryType$general._();
 
-static const SummaryType teamMeeting = SummaryType._('team_meeting');
+static const SummaryType teamMeeting = SummaryType$teamMeeting._();
 
-static const SummaryType salesCall = SummaryType._('sales_call');
+static const SummaryType salesCall = SummaryType$salesCall._();
 
-static const SummaryType clientCheckIn = SummaryType._('client_check_in');
+static const SummaryType clientCheckIn = SummaryType$clientCheckIn._();
 
-static const SummaryType interview = SummaryType._('interview');
+static const SummaryType interview = SummaryType$interview._();
 
-static const SummaryType dailyStandup = SummaryType._('daily_standup');
+static const SummaryType dailyStandup = SummaryType$dailyStandup._();
 
-static const SummaryType oneOnOneMeeting = SummaryType._('one_on_one_meeting');
+static const SummaryType oneOnOneMeeting = SummaryType$oneOnOneMeeting._();
 
-static const SummaryType lecture = SummaryType._('lecture');
+static const SummaryType lecture = SummaryType$lecture._();
 
-static const SummaryType codeReview = SummaryType._('code_review');
+static const SummaryType codeReview = SummaryType$codeReview._();
 
 static const List<SummaryType> values = [general, teamMeeting, salesCall, clientCheckIn, interview, dailyStandup, oneOnOneMeeting, lecture, codeReview];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -54,32 +53,117 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SummaryType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SummaryType$Unknown; } 
 @override String toString() => 'SummaryType($value)';
 
  }
+@immutable final class SummaryType$general extends SummaryType {const SummaryType$general._();
+
+@override String get value => 'general';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SummaryType$general;
+
+@override int get hashCode => 'general'.hashCode;
+
+ }
+@immutable final class SummaryType$teamMeeting extends SummaryType {const SummaryType$teamMeeting._();
+
+@override String get value => 'team_meeting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SummaryType$teamMeeting;
+
+@override int get hashCode => 'team_meeting'.hashCode;
+
+ }
+@immutable final class SummaryType$salesCall extends SummaryType {const SummaryType$salesCall._();
+
+@override String get value => 'sales_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SummaryType$salesCall;
+
+@override int get hashCode => 'sales_call'.hashCode;
+
+ }
+@immutable final class SummaryType$clientCheckIn extends SummaryType {const SummaryType$clientCheckIn._();
+
+@override String get value => 'client_check_in';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SummaryType$clientCheckIn;
+
+@override int get hashCode => 'client_check_in'.hashCode;
+
+ }
+@immutable final class SummaryType$interview extends SummaryType {const SummaryType$interview._();
+
+@override String get value => 'interview';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SummaryType$interview;
+
+@override int get hashCode => 'interview'.hashCode;
+
+ }
+@immutable final class SummaryType$dailyStandup extends SummaryType {const SummaryType$dailyStandup._();
+
+@override String get value => 'daily_standup';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SummaryType$dailyStandup;
+
+@override int get hashCode => 'daily_standup'.hashCode;
+
+ }
+@immutable final class SummaryType$oneOnOneMeeting extends SummaryType {const SummaryType$oneOnOneMeeting._();
+
+@override String get value => 'one_on_one_meeting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SummaryType$oneOnOneMeeting;
+
+@override int get hashCode => 'one_on_one_meeting'.hashCode;
+
+ }
+@immutable final class SummaryType$lecture extends SummaryType {const SummaryType$lecture._();
+
+@override String get value => 'lecture';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SummaryType$lecture;
+
+@override int get hashCode => 'lecture'.hashCode;
+
+ }
+@immutable final class SummaryType$codeReview extends SummaryType {const SummaryType$codeReview._();
+
+@override String get value => 'code_review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SummaryType$codeReview;
+
+@override int get hashCode => 'code_review'.hashCode;
+
+ }
+@immutable final class SummaryType$Unknown extends SummaryType {const SummaryType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SummaryType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Determines the text format of the summary, such as plain text or markdown.
-@immutable final class TextFormat {const TextFormat._(this.value);
+sealed class TextFormat {const TextFormat();
 
 factory TextFormat.fromJson(String json) { return switch (json) {
   'plain_text' => plainText,
   'markdown' => markdown,
-  _ => TextFormat._(json),
+  _ => TextFormat$Unknown(json),
 }; }
 
-static const TextFormat plainText = TextFormat._('plain_text');
+static const TextFormat plainText = TextFormat$plainText._();
 
-static const TextFormat markdown = TextFormat._('markdown');
+static const TextFormat markdown = TextFormat$markdown._();
 
 static const List<TextFormat> values = [plainText, markdown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -88,13 +172,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TextFormat$Unknown; } 
+@override String toString() => 'TextFormat($value)';
+
+ }
+@immutable final class TextFormat$plainText extends TextFormat {const TextFormat$plainText._();
+
+@override String get value => 'plain_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TextFormat$plainText;
+
+@override int get hashCode => 'plain_text'.hashCode;
+
+ }
+@immutable final class TextFormat$markdown extends TextFormat {const TextFormat$markdown._();
+
+@override String get value => 'markdown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TextFormat$markdown;
+
+@override int get hashCode => 'markdown'.hashCode;
+
+ }
+@immutable final class TextFormat$Unknown extends TextFormat {const TextFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TextFormat && other.value == value;
+    other is TextFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TextFormat($value)';
 
  }
 /// Summary Config

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PaymentMethodDomain
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_domain_resource_payment_method_status.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class PaymentMethodDomainObject {const PaymentMethodDomainObject._(this.value);
+sealed class PaymentMethodDomainObject {const PaymentMethodDomainObject();
 
 factory PaymentMethodDomainObject.fromJson(String json) { return switch (json) {
   'payment_method_domain' => paymentMethodDomain,
-  _ => PaymentMethodDomainObject._(json),
+  _ => PaymentMethodDomainObject$Unknown(json),
 }; }
 
-static const PaymentMethodDomainObject paymentMethodDomain = PaymentMethodDomainObject._('payment_method_domain');
+static const PaymentMethodDomainObject paymentMethodDomain = PaymentMethodDomainObject$paymentMethodDomain._();
 
 static const List<PaymentMethodDomainObject> values = [paymentMethodDomain];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentMethodDomainObject$Unknown; } 
+@override String toString() => 'PaymentMethodDomainObject($value)';
+
+ }
+@immutable final class PaymentMethodDomainObject$paymentMethodDomain extends PaymentMethodDomainObject {const PaymentMethodDomainObject$paymentMethodDomain._();
+
+@override String get value => 'payment_method_domain';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDomainObject$paymentMethodDomain;
+
+@override int get hashCode => 'payment_method_domain'.hashCode;
+
+ }
+@immutable final class PaymentMethodDomainObject$Unknown extends PaymentMethodDomainObject {const PaymentMethodDomainObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentMethodDomainObject && other.value == value;
+    other is PaymentMethodDomainObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentMethodDomainObject($value)';
 
  }
 /// A payment method domain represents a web domain that you have registered with Stripe.

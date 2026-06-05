@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UsageTimeBucket
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/costs_result.dart';import 'package:pub_openai/models/usage_audio_speeches_result.dart';import 'package:pub_openai/models/usage_audio_transcriptions_result.dart';import 'package:pub_openai/models/usage_code_interpreter_sessions_result.dart';import 'package:pub_openai/models/usage_completions_result.dart';import 'package:pub_openai/models/usage_embeddings_result.dart';import 'package:pub_openai/models/usage_images_result.dart';import 'package:pub_openai/models/usage_moderations_result.dart';import 'package:pub_openai/models/usage_time_bucket/result.dart';import 'package:pub_openai/models/usage_vector_stores_result.dart';@immutable final class UsageTimeBucketObject {const UsageTimeBucketObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/costs_result.dart';import 'package:pub_openai/models/usage_audio_speeches_result.dart';import 'package:pub_openai/models/usage_audio_transcriptions_result.dart';import 'package:pub_openai/models/usage_code_interpreter_sessions_result.dart';import 'package:pub_openai/models/usage_completions_result.dart';import 'package:pub_openai/models/usage_embeddings_result.dart';import 'package:pub_openai/models/usage_images_result.dart';import 'package:pub_openai/models/usage_moderations_result.dart';import 'package:pub_openai/models/usage_time_bucket/result.dart';import 'package:pub_openai/models/usage_vector_stores_result.dart';sealed class UsageTimeBucketObject {const UsageTimeBucketObject();
 
 factory UsageTimeBucketObject.fromJson(String json) { return switch (json) {
   'bucket' => bucket,
-  _ => UsageTimeBucketObject._(json),
+  _ => UsageTimeBucketObject$Unknown(json),
 }; }
 
-static const UsageTimeBucketObject bucket = UsageTimeBucketObject._('bucket');
+static const UsageTimeBucketObject bucket = UsageTimeBucketObject$bucket._();
 
 static const List<UsageTimeBucketObject> values = [bucket];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UsageTimeBucketObject$Unknown; } 
+@override String toString() => 'UsageTimeBucketObject($value)';
+
+ }
+@immutable final class UsageTimeBucketObject$bucket extends UsageTimeBucketObject {const UsageTimeBucketObject$bucket._();
+
+@override String get value => 'bucket';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageTimeBucketObject$bucket;
+
+@override int get hashCode => 'bucket'.hashCode;
+
+ }
+@immutable final class UsageTimeBucketObject$Unknown extends UsageTimeBucketObject {const UsageTimeBucketObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UsageTimeBucketObject && other.value == value;
+    other is UsageTimeBucketObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UsageTimeBucketObject($value)';
 
  }
 @immutable final class UsageTimeBucket {const UsageTimeBucket({required this.object, required this.startTime, required this.endTime, required this.result, });

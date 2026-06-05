@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PackagesGetPackageVersionForAuthenticatedUserPackageType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType();
 
 factory PackagesGetPackageVersionForAuthenticatedUserPackageType.fromJson(String json) { return switch (json) {
   'npm' => npm,
@@ -10,25 +10,24 @@ factory PackagesGetPackageVersionForAuthenticatedUserPackageType.fromJson(String
   'docker' => docker,
   'nuget' => nuget,
   'container' => container,
-  _ => PackagesGetPackageVersionForAuthenticatedUserPackageType._(json),
+  _ => PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown(json),
 }; }
 
-static const PackagesGetPackageVersionForAuthenticatedUserPackageType npm = PackagesGetPackageVersionForAuthenticatedUserPackageType._('npm');
+static const PackagesGetPackageVersionForAuthenticatedUserPackageType npm = PackagesGetPackageVersionForAuthenticatedUserPackageType$npm._();
 
-static const PackagesGetPackageVersionForAuthenticatedUserPackageType maven = PackagesGetPackageVersionForAuthenticatedUserPackageType._('maven');
+static const PackagesGetPackageVersionForAuthenticatedUserPackageType maven = PackagesGetPackageVersionForAuthenticatedUserPackageType$maven._();
 
-static const PackagesGetPackageVersionForAuthenticatedUserPackageType rubygems = PackagesGetPackageVersionForAuthenticatedUserPackageType._('rubygems');
+static const PackagesGetPackageVersionForAuthenticatedUserPackageType rubygems = PackagesGetPackageVersionForAuthenticatedUserPackageType$rubygems._();
 
-static const PackagesGetPackageVersionForAuthenticatedUserPackageType docker = PackagesGetPackageVersionForAuthenticatedUserPackageType._('docker');
+static const PackagesGetPackageVersionForAuthenticatedUserPackageType docker = PackagesGetPackageVersionForAuthenticatedUserPackageType$docker._();
 
-static const PackagesGetPackageVersionForAuthenticatedUserPackageType nuget = PackagesGetPackageVersionForAuthenticatedUserPackageType._('nuget');
+static const PackagesGetPackageVersionForAuthenticatedUserPackageType nuget = PackagesGetPackageVersionForAuthenticatedUserPackageType$nuget._();
 
-static const PackagesGetPackageVersionForAuthenticatedUserPackageType container = PackagesGetPackageVersionForAuthenticatedUserPackageType._('container');
+static const PackagesGetPackageVersionForAuthenticatedUserPackageType container = PackagesGetPackageVersionForAuthenticatedUserPackageType$container._();
 
 static const List<PackagesGetPackageVersionForAuthenticatedUserPackageType> values = [npm, maven, rubygems, docker, nuget, container];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,12 +40,71 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown; } 
+@override String toString() => 'PackagesGetPackageVersionForAuthenticatedUserPackageType($value)';
+
+ }
+@immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType$npm extends PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType$npm._();
+
+@override String get value => 'npm';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesGetPackageVersionForAuthenticatedUserPackageType$npm;
+
+@override int get hashCode => 'npm'.hashCode;
+
+ }
+@immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType$maven extends PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType$maven._();
+
+@override String get value => 'maven';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesGetPackageVersionForAuthenticatedUserPackageType$maven;
+
+@override int get hashCode => 'maven'.hashCode;
+
+ }
+@immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType$rubygems extends PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType$rubygems._();
+
+@override String get value => 'rubygems';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesGetPackageVersionForAuthenticatedUserPackageType$rubygems;
+
+@override int get hashCode => 'rubygems'.hashCode;
+
+ }
+@immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType$docker extends PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType$docker._();
+
+@override String get value => 'docker';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesGetPackageVersionForAuthenticatedUserPackageType$docker;
+
+@override int get hashCode => 'docker'.hashCode;
+
+ }
+@immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType$nuget extends PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType$nuget._();
+
+@override String get value => 'nuget';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesGetPackageVersionForAuthenticatedUserPackageType$nuget;
+
+@override int get hashCode => 'nuget'.hashCode;
+
+ }
+@immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType$container extends PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType$container._();
+
+@override String get value => 'container';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesGetPackageVersionForAuthenticatedUserPackageType$container;
+
+@override int get hashCode => 'container'.hashCode;
+
+ }
+@immutable final class PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown extends PackagesGetPackageVersionForAuthenticatedUserPackageType {const PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PackagesGetPackageVersionForAuthenticatedUserPackageType && other.value == value;
+    other is PackagesGetPackageVersionForAuthenticatedUserPackageType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PackagesGetPackageVersionForAuthenticatedUserPackageType($value)';
 
  }

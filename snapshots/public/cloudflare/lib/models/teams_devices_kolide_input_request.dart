@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TeamsDevicesKolideInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Count Operator.
-@immutable final class CountOperator {const CountOperator._(this.value);
+sealed class CountOperator {const CountOperator();
 
 factory CountOperator.fromJson(String json) { return switch (json) {
   '<' => $empty,
@@ -10,23 +10,22 @@ factory CountOperator.fromJson(String json) { return switch (json) {
   '>' => $empty3,
   '>=' => $empty4,
   '==' => $empty5,
-  _ => CountOperator._(json),
+  _ => CountOperator$Unknown(json),
 }; }
 
-static const CountOperator $empty = CountOperator._('<');
+static const CountOperator $empty = CountOperator$$empty._();
 
-static const CountOperator $empty2 = CountOperator._('<=');
+static const CountOperator $empty2 = CountOperator$$empty2._();
 
-static const CountOperator $empty3 = CountOperator._('>');
+static const CountOperator $empty3 = CountOperator$$empty3._();
 
-static const CountOperator $empty4 = CountOperator._('>=');
+static const CountOperator $empty4 = CountOperator$$empty4._();
 
-static const CountOperator $empty5 = CountOperator._('==');
+static const CountOperator $empty5 = CountOperator$$empty5._();
 
 static const List<CountOperator> values = [$empty, $empty2, $empty3, $empty4, $empty5];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CountOperator$Unknown; } 
+@override String toString() => 'CountOperator($value)';
+
+ }
+@immutable final class CountOperator$$empty extends CountOperator {const CountOperator$$empty._();
+
+@override String get value => '<';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CountOperator$$empty;
+
+@override int get hashCode => '<'.hashCode;
+
+ }
+@immutable final class CountOperator$$empty2 extends CountOperator {const CountOperator$$empty2._();
+
+@override String get value => '<=';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CountOperator$$empty2;
+
+@override int get hashCode => '<='.hashCode;
+
+ }
+@immutable final class CountOperator$$empty3 extends CountOperator {const CountOperator$$empty3._();
+
+@override String get value => '>';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CountOperator$$empty3;
+
+@override int get hashCode => '>'.hashCode;
+
+ }
+@immutable final class CountOperator$$empty4 extends CountOperator {const CountOperator$$empty4._();
+
+@override String get value => '>=';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CountOperator$$empty4;
+
+@override int get hashCode => '>='.hashCode;
+
+ }
+@immutable final class CountOperator$$empty5 extends CountOperator {const CountOperator$$empty5._();
+
+@override String get value => '==';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CountOperator$$empty5;
+
+@override int get hashCode => '=='.hashCode;
+
+ }
+@immutable final class CountOperator$Unknown extends CountOperator {const CountOperator$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CountOperator && other.value == value;
+    other is CountOperator$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CountOperator($value)';
 
  }
 @immutable final class TeamsDevicesKolideInputRequest {const TeamsDevicesKolideInputRequest({required this.connectionId, required this.countOperator, required this.issueCount, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MconnEvent (inline: StartRotatePki)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started PKI rotation
-@immutable final class StartRotatePkiK {const StartRotatePkiK._(this.value);
+sealed class StartRotatePkiK {const StartRotatePkiK();
 
 factory StartRotatePkiK.fromJson(String json) { return switch (json) {
   'StartRotatePki' => startRotatePki,
-  _ => StartRotatePkiK._(json),
+  _ => StartRotatePkiK$Unknown(json),
 }; }
 
-static const StartRotatePkiK startRotatePki = StartRotatePkiK._('StartRotatePki');
+static const StartRotatePkiK startRotatePki = StartRotatePkiK$startRotatePki._();
 
 static const List<StartRotatePkiK> values = [startRotatePki];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StartRotatePkiK$Unknown; } 
+@override String toString() => 'StartRotatePkiK($value)';
+
+ }
+@immutable final class StartRotatePkiK$startRotatePki extends StartRotatePkiK {const StartRotatePkiK$startRotatePki._();
+
+@override String get value => 'StartRotatePki';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StartRotatePkiK$startRotatePki;
+
+@override int get hashCode => 'StartRotatePki'.hashCode;
+
+ }
+@immutable final class StartRotatePkiK$Unknown extends StartRotatePkiK {const StartRotatePkiK$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StartRotatePkiK && other.value == value;
+    other is StartRotatePkiK$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StartRotatePkiK($value)';
 
  }
 @immutable final class StartRotatePki {const StartRotatePki({required this.k});

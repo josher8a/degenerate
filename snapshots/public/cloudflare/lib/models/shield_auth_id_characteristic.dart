@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ShieldAuthIdCharacteristic
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of characteristic.
-@immutable final class ShieldAuthIdCharacteristicType {const ShieldAuthIdCharacteristicType._(this.value);
+sealed class ShieldAuthIdCharacteristicType {const ShieldAuthIdCharacteristicType();
 
 factory ShieldAuthIdCharacteristicType.fromJson(String json) { return switch (json) {
   'header' => header,
   'cookie' => cookie,
-  _ => ShieldAuthIdCharacteristicType._(json),
+  _ => ShieldAuthIdCharacteristicType$Unknown(json),
 }; }
 
-static const ShieldAuthIdCharacteristicType header = ShieldAuthIdCharacteristicType._('header');
+static const ShieldAuthIdCharacteristicType header = ShieldAuthIdCharacteristicType$header._();
 
-static const ShieldAuthIdCharacteristicType cookie = ShieldAuthIdCharacteristicType._('cookie');
+static const ShieldAuthIdCharacteristicType cookie = ShieldAuthIdCharacteristicType$cookie._();
 
 static const List<ShieldAuthIdCharacteristicType> values = [header, cookie];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShieldAuthIdCharacteristicType$Unknown; } 
+@override String toString() => 'ShieldAuthIdCharacteristicType($value)';
+
+ }
+@immutable final class ShieldAuthIdCharacteristicType$header extends ShieldAuthIdCharacteristicType {const ShieldAuthIdCharacteristicType$header._();
+
+@override String get value => 'header';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldAuthIdCharacteristicType$header;
+
+@override int get hashCode => 'header'.hashCode;
+
+ }
+@immutable final class ShieldAuthIdCharacteristicType$cookie extends ShieldAuthIdCharacteristicType {const ShieldAuthIdCharacteristicType$cookie._();
+
+@override String get value => 'cookie';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldAuthIdCharacteristicType$cookie;
+
+@override int get hashCode => 'cookie'.hashCode;
+
+ }
+@immutable final class ShieldAuthIdCharacteristicType$Unknown extends ShieldAuthIdCharacteristicType {const ShieldAuthIdCharacteristicType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldAuthIdCharacteristicType && other.value == value;
+    other is ShieldAuthIdCharacteristicType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShieldAuthIdCharacteristicType($value)';
 
  }
 /// Auth ID Characteristic

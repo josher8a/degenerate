@@ -2,25 +2,24 @@
 // Source: #/components/schemas/GelatoDocumentReportError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification failure.
-@immutable final class GelatoDocumentReportErrorCode {const GelatoDocumentReportErrorCode._(this.value);
+sealed class GelatoDocumentReportErrorCode {const GelatoDocumentReportErrorCode();
 
 factory GelatoDocumentReportErrorCode.fromJson(String json) { return switch (json) {
   'document_expired' => documentExpired,
   'document_type_not_supported' => documentTypeNotSupported,
   'document_unverified_other' => documentUnverifiedOther,
-  _ => GelatoDocumentReportErrorCode._(json),
+  _ => GelatoDocumentReportErrorCode$Unknown(json),
 }; }
 
-static const GelatoDocumentReportErrorCode documentExpired = GelatoDocumentReportErrorCode._('document_expired');
+static const GelatoDocumentReportErrorCode documentExpired = GelatoDocumentReportErrorCode$documentExpired._();
 
-static const GelatoDocumentReportErrorCode documentTypeNotSupported = GelatoDocumentReportErrorCode._('document_type_not_supported');
+static const GelatoDocumentReportErrorCode documentTypeNotSupported = GelatoDocumentReportErrorCode$documentTypeNotSupported._();
 
-static const GelatoDocumentReportErrorCode documentUnverifiedOther = GelatoDocumentReportErrorCode._('document_unverified_other');
+static const GelatoDocumentReportErrorCode documentUnverifiedOther = GelatoDocumentReportErrorCode$documentUnverifiedOther._();
 
 static const List<GelatoDocumentReportErrorCode> values = [documentExpired, documentTypeNotSupported, documentUnverifiedOther];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GelatoDocumentReportErrorCode$Unknown; } 
+@override String toString() => 'GelatoDocumentReportErrorCode($value)';
+
+ }
+@immutable final class GelatoDocumentReportErrorCode$documentExpired extends GelatoDocumentReportErrorCode {const GelatoDocumentReportErrorCode$documentExpired._();
+
+@override String get value => 'document_expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoDocumentReportErrorCode$documentExpired;
+
+@override int get hashCode => 'document_expired'.hashCode;
+
+ }
+@immutable final class GelatoDocumentReportErrorCode$documentTypeNotSupported extends GelatoDocumentReportErrorCode {const GelatoDocumentReportErrorCode$documentTypeNotSupported._();
+
+@override String get value => 'document_type_not_supported';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoDocumentReportErrorCode$documentTypeNotSupported;
+
+@override int get hashCode => 'document_type_not_supported'.hashCode;
+
+ }
+@immutable final class GelatoDocumentReportErrorCode$documentUnverifiedOther extends GelatoDocumentReportErrorCode {const GelatoDocumentReportErrorCode$documentUnverifiedOther._();
+
+@override String get value => 'document_unverified_other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoDocumentReportErrorCode$documentUnverifiedOther;
+
+@override int get hashCode => 'document_unverified_other'.hashCode;
+
+ }
+@immutable final class GelatoDocumentReportErrorCode$Unknown extends GelatoDocumentReportErrorCode {const GelatoDocumentReportErrorCode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GelatoDocumentReportErrorCode && other.value == value;
+    other is GelatoDocumentReportErrorCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GelatoDocumentReportErrorCode($value)';
 
  }
 /// 

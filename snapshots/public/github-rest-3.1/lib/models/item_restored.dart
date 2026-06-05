@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ItemRestored
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_project_changes.dart';@immutable final class ItemRestoredAction {const ItemRestoredAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/item.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_project_changes.dart';sealed class ItemRestoredAction {const ItemRestoredAction();
 
 factory ItemRestoredAction.fromJson(String json) { return switch (json) {
   'restored' => restored,
-  _ => ItemRestoredAction._(json),
+  _ => ItemRestoredAction$Unknown(json),
 }; }
 
-static const ItemRestoredAction restored = ItemRestoredAction._('restored');
+static const ItemRestoredAction restored = ItemRestoredAction$restored._();
 
 static const List<ItemRestoredAction> values = [restored];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ItemRestoredAction$Unknown; } 
+@override String toString() => 'ItemRestoredAction($value)';
+
+ }
+@immutable final class ItemRestoredAction$restored extends ItemRestoredAction {const ItemRestoredAction$restored._();
+
+@override String get value => 'restored';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemRestoredAction$restored;
+
+@override int get hashCode => 'restored'.hashCode;
+
+ }
+@immutable final class ItemRestoredAction$Unknown extends ItemRestoredAction {const ItemRestoredAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ItemRestoredAction && other.value == value;
+    other is ItemRestoredAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ItemRestoredAction($value)';
 
  }
 @immutable final class ItemRestored {const ItemRestored({required this.action, required this.changes, required this.organization, required this.projectsV2Item, required this.sender, this.installation, });

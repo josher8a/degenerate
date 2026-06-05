@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SmartUnionNestedInnerCat (inline: Kind)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SmartUnionNestedInnerCatKind {const SmartUnionNestedInnerCatKind._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SmartUnionNestedInnerCatKind {const SmartUnionNestedInnerCatKind();
 
 factory SmartUnionNestedInnerCatKind.fromJson(String json) { return switch (json) {
   'cat' => cat,
-  _ => SmartUnionNestedInnerCatKind._(json),
+  _ => SmartUnionNestedInnerCatKind$Unknown(json),
 }; }
 
-static const SmartUnionNestedInnerCatKind cat = SmartUnionNestedInnerCatKind._('cat');
+static const SmartUnionNestedInnerCatKind cat = SmartUnionNestedInnerCatKind$cat._();
 
 static const List<SmartUnionNestedInnerCatKind> values = [cat];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SmartUnionNestedInnerCatKind$Unknown; } 
+@override String toString() => 'SmartUnionNestedInnerCatKind($value)';
+
+ }
+@immutable final class SmartUnionNestedInnerCatKind$cat extends SmartUnionNestedInnerCatKind {const SmartUnionNestedInnerCatKind$cat._();
+
+@override String get value => 'cat';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SmartUnionNestedInnerCatKind$cat;
+
+@override int get hashCode => 'cat'.hashCode;
+
+ }
+@immutable final class SmartUnionNestedInnerCatKind$Unknown extends SmartUnionNestedInnerCatKind {const SmartUnionNestedInnerCatKind$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SmartUnionNestedInnerCatKind && other.value == value;
+    other is SmartUnionNestedInnerCatKind$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SmartUnionNestedInnerCatKind($value)';
 
  }

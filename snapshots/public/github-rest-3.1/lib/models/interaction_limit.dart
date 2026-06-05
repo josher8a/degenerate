@@ -2,7 +2,7 @@
 // Source: #/components/schemas/InteractionLimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/interaction_group.dart';/// The duration of the interaction restriction. Default: `one_day`.
-@immutable final class InteractionExpiry {const InteractionExpiry._(this.value);
+sealed class InteractionExpiry {const InteractionExpiry();
 
 factory InteractionExpiry.fromJson(String json) { return switch (json) {
   'one_day' => oneDay,
@@ -10,23 +10,22 @@ factory InteractionExpiry.fromJson(String json) { return switch (json) {
   'one_week' => oneWeek,
   'one_month' => oneMonth,
   'six_months' => sixMonths,
-  _ => InteractionExpiry._(json),
+  _ => InteractionExpiry$Unknown(json),
 }; }
 
-static const InteractionExpiry oneDay = InteractionExpiry._('one_day');
+static const InteractionExpiry oneDay = InteractionExpiry$oneDay._();
 
-static const InteractionExpiry threeDays = InteractionExpiry._('three_days');
+static const InteractionExpiry threeDays = InteractionExpiry$threeDays._();
 
-static const InteractionExpiry oneWeek = InteractionExpiry._('one_week');
+static const InteractionExpiry oneWeek = InteractionExpiry$oneWeek._();
 
-static const InteractionExpiry oneMonth = InteractionExpiry._('one_month');
+static const InteractionExpiry oneMonth = InteractionExpiry$oneMonth._();
 
-static const InteractionExpiry sixMonths = InteractionExpiry._('six_months');
+static const InteractionExpiry sixMonths = InteractionExpiry$sixMonths._();
 
 static const List<InteractionExpiry> values = [oneDay, threeDays, oneWeek, oneMonth, sixMonths];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InteractionExpiry$Unknown; } 
+@override String toString() => 'InteractionExpiry($value)';
+
+ }
+@immutable final class InteractionExpiry$oneDay extends InteractionExpiry {const InteractionExpiry$oneDay._();
+
+@override String get value => 'one_day';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InteractionExpiry$oneDay;
+
+@override int get hashCode => 'one_day'.hashCode;
+
+ }
+@immutable final class InteractionExpiry$threeDays extends InteractionExpiry {const InteractionExpiry$threeDays._();
+
+@override String get value => 'three_days';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InteractionExpiry$threeDays;
+
+@override int get hashCode => 'three_days'.hashCode;
+
+ }
+@immutable final class InteractionExpiry$oneWeek extends InteractionExpiry {const InteractionExpiry$oneWeek._();
+
+@override String get value => 'one_week';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InteractionExpiry$oneWeek;
+
+@override int get hashCode => 'one_week'.hashCode;
+
+ }
+@immutable final class InteractionExpiry$oneMonth extends InteractionExpiry {const InteractionExpiry$oneMonth._();
+
+@override String get value => 'one_month';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InteractionExpiry$oneMonth;
+
+@override int get hashCode => 'one_month'.hashCode;
+
+ }
+@immutable final class InteractionExpiry$sixMonths extends InteractionExpiry {const InteractionExpiry$sixMonths._();
+
+@override String get value => 'six_months';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InteractionExpiry$sixMonths;
+
+@override int get hashCode => 'six_months'.hashCode;
+
+ }
+@immutable final class InteractionExpiry$Unknown extends InteractionExpiry {const InteractionExpiry$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InteractionExpiry && other.value == value;
+    other is InteractionExpiry$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InteractionExpiry($value)';
 
  }
 /// Limit interactions to a specific type of user for a specified duration

@@ -2,7 +2,7 @@
 // Source: #/components/schemas/Review
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/radar_review_resource_location.dart';import 'package:pub_stripe_spec3/models/radar_review_resource_session.dart';/// The reason the review was closed, or null if it has not yet been closed. One of `approved`, `refunded`, `refunded_as_fraud`, `disputed`, `redacted`, `canceled`, `payment_never_settled`, or `acknowledged`.
-@immutable final class ClosedReason {const ClosedReason._(this.value);
+sealed class ClosedReason {const ClosedReason();
 
 factory ClosedReason.fromJson(String json) { return switch (json) {
   'acknowledged' => acknowledged,
@@ -13,29 +13,28 @@ factory ClosedReason.fromJson(String json) { return switch (json) {
   'redacted' => redacted,
   'refunded' => refunded,
   'refunded_as_fraud' => refundedAsFraud,
-  _ => ClosedReason._(json),
+  _ => ClosedReason$Unknown(json),
 }; }
 
-static const ClosedReason acknowledged = ClosedReason._('acknowledged');
+static const ClosedReason acknowledged = ClosedReason$acknowledged._();
 
-static const ClosedReason approved = ClosedReason._('approved');
+static const ClosedReason approved = ClosedReason$approved._();
 
-static const ClosedReason canceled = ClosedReason._('canceled');
+static const ClosedReason canceled = ClosedReason$canceled._();
 
-static const ClosedReason disputed = ClosedReason._('disputed');
+static const ClosedReason disputed = ClosedReason$disputed._();
 
-static const ClosedReason paymentNeverSettled = ClosedReason._('payment_never_settled');
+static const ClosedReason paymentNeverSettled = ClosedReason$paymentNeverSettled._();
 
-static const ClosedReason redacted = ClosedReason._('redacted');
+static const ClosedReason redacted = ClosedReason$redacted._();
 
-static const ClosedReason refunded = ClosedReason._('refunded');
+static const ClosedReason refunded = ClosedReason$refunded._();
 
-static const ClosedReason refundedAsFraud = ClosedReason._('refunded_as_fraud');
+static const ClosedReason refundedAsFraud = ClosedReason$refundedAsFraud._();
 
 static const List<ClosedReason> values = [acknowledged, approved, canceled, disputed, paymentNeverSettled, redacted, refunded, refundedAsFraud];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,29 +49,105 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ClosedReason && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ClosedReason$Unknown; } 
 @override String toString() => 'ClosedReason($value)';
 
  }
+@immutable final class ClosedReason$acknowledged extends ClosedReason {const ClosedReason$acknowledged._();
+
+@override String get value => 'acknowledged';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClosedReason$acknowledged;
+
+@override int get hashCode => 'acknowledged'.hashCode;
+
+ }
+@immutable final class ClosedReason$approved extends ClosedReason {const ClosedReason$approved._();
+
+@override String get value => 'approved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClosedReason$approved;
+
+@override int get hashCode => 'approved'.hashCode;
+
+ }
+@immutable final class ClosedReason$canceled extends ClosedReason {const ClosedReason$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClosedReason$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class ClosedReason$disputed extends ClosedReason {const ClosedReason$disputed._();
+
+@override String get value => 'disputed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClosedReason$disputed;
+
+@override int get hashCode => 'disputed'.hashCode;
+
+ }
+@immutable final class ClosedReason$paymentNeverSettled extends ClosedReason {const ClosedReason$paymentNeverSettled._();
+
+@override String get value => 'payment_never_settled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClosedReason$paymentNeverSettled;
+
+@override int get hashCode => 'payment_never_settled'.hashCode;
+
+ }
+@immutable final class ClosedReason$redacted extends ClosedReason {const ClosedReason$redacted._();
+
+@override String get value => 'redacted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClosedReason$redacted;
+
+@override int get hashCode => 'redacted'.hashCode;
+
+ }
+@immutable final class ClosedReason$refunded extends ClosedReason {const ClosedReason$refunded._();
+
+@override String get value => 'refunded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClosedReason$refunded;
+
+@override int get hashCode => 'refunded'.hashCode;
+
+ }
+@immutable final class ClosedReason$refundedAsFraud extends ClosedReason {const ClosedReason$refundedAsFraud._();
+
+@override String get value => 'refunded_as_fraud';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClosedReason$refundedAsFraud;
+
+@override int get hashCode => 'refunded_as_fraud'.hashCode;
+
+ }
+@immutable final class ClosedReason$Unknown extends ClosedReason {const ClosedReason$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ClosedReason$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ReviewObject {const ReviewObject._(this.value);
+sealed class ReviewObject {const ReviewObject();
 
 factory ReviewObject.fromJson(String json) { return switch (json) {
   'review' => review,
-  _ => ReviewObject._(json),
+  _ => ReviewObject$Unknown(json),
 }; }
 
-static const ReviewObject review = ReviewObject._('review');
+static const ReviewObject review = ReviewObject$review._();
 
 static const List<ReviewObject> values = [review];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -80,32 +155,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ReviewObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ReviewObject$Unknown; } 
 @override String toString() => 'ReviewObject($value)';
 
  }
+@immutable final class ReviewObject$review extends ReviewObject {const ReviewObject$review._();
+
+@override String get value => 'review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReviewObject$review;
+
+@override int get hashCode => 'review'.hashCode;
+
+ }
+@immutable final class ReviewObject$Unknown extends ReviewObject {const ReviewObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReviewObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The reason the review was opened. One of `rule` or `manual`.
-@immutable final class OpenedReason {const OpenedReason._(this.value);
+sealed class OpenedReason {const OpenedReason();
 
 factory OpenedReason.fromJson(String json) { return switch (json) {
   'manual' => manual,
   'rule' => rule,
-  _ => OpenedReason._(json),
+  _ => OpenedReason$Unknown(json),
 }; }
 
-static const OpenedReason manual = OpenedReason._('manual');
+static const OpenedReason manual = OpenedReason$manual._();
 
-static const OpenedReason rule = OpenedReason._('rule');
+static const OpenedReason rule = OpenedReason$rule._();
 
 static const List<OpenedReason> values = [manual, rule];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -114,13 +202,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OpenedReason$Unknown; } 
+@override String toString() => 'OpenedReason($value)';
+
+ }
+@immutable final class OpenedReason$manual extends OpenedReason {const OpenedReason$manual._();
+
+@override String get value => 'manual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenedReason$manual;
+
+@override int get hashCode => 'manual'.hashCode;
+
+ }
+@immutable final class OpenedReason$rule extends OpenedReason {const OpenedReason$rule._();
+
+@override String get value => 'rule';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenedReason$rule;
+
+@override int get hashCode => 'rule'.hashCode;
+
+ }
+@immutable final class OpenedReason$Unknown extends OpenedReason {const OpenedReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OpenedReason && other.value == value;
+    other is OpenedReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OpenedReason($value)';
 
  }
 /// Reviews can be used to supplement automated fraud detection with human expertise.

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UpdateMessageRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MessageEnumUpdateStatus {const MessageEnumUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class MessageEnumUpdateStatus {const MessageEnumUpdateStatus();
 
 factory MessageEnumUpdateStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
-  _ => MessageEnumUpdateStatus._(json),
+  _ => MessageEnumUpdateStatus$Unknown(json),
 }; }
 
-static const MessageEnumUpdateStatus canceled = MessageEnumUpdateStatus._('canceled');
+static const MessageEnumUpdateStatus canceled = MessageEnumUpdateStatus$canceled._();
 
 static const List<MessageEnumUpdateStatus> values = [canceled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MessageEnumUpdateStatus$Unknown; } 
+@override String toString() => 'MessageEnumUpdateStatus($value)';
+
+ }
+@immutable final class MessageEnumUpdateStatus$canceled extends MessageEnumUpdateStatus {const MessageEnumUpdateStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageEnumUpdateStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class MessageEnumUpdateStatus$Unknown extends MessageEnumUpdateStatus {const MessageEnumUpdateStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageEnumUpdateStatus && other.value == value;
+    other is MessageEnumUpdateStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MessageEnumUpdateStatus($value)';
 
  }
 @immutable final class UpdateMessageRequest {const UpdateMessageRequest({this.body, this.status, });

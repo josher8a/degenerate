@@ -2,7 +2,7 @@
 // Source: #/components/schemas/PostPaymentMethodsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/card_details_params.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/post_charges_request/radar_options.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_billing_details.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_payto.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_acss_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_affirm.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_afterpay_clearpay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_alipay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_alma.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_amazon_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_au_becs_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_bacs_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_bancontact.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_billie.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_blik.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_boleto.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_card.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_cashapp.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_crypto.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_custom.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_customer_balance.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_eps.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_fpx.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_giropay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_grabpay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_ideal.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_interac_present.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_kakao_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_klarna.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_konbini.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_kr_card.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_link.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_mb_way.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_mobilepay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_multibanco.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_naver_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_nz_bank_account.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_oxxo.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_p24.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_pay_by_bank.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_payco.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_paynow.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_paypal.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_pix.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_promptpay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_revolut_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_samsung_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_satispay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_sepa_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_sofort.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_swish.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_twint.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_us_bank_account.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_wechat_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_zip.dart';import 'package:pub_stripe_spec3/models/token_params.dart';/// The type of the PaymentMethod. An additional hash is included on the PaymentMethod with a name matching this value. It contains additional information specific to the PaymentMethod type.
-@immutable final class PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType._(this.value);
+sealed class PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType();
 
 factory PostPaymentMethodsRequestType.fromJson(String json) { return switch (json) {
   'acss_debit' => acssDebit,
@@ -56,115 +56,114 @@ factory PostPaymentMethodsRequestType.fromJson(String json) { return switch (jso
   'us_bank_account' => usBankAccount,
   'wechat_pay' => wechatPay,
   'zip' => zip,
-  _ => PostPaymentMethodsRequestType._(json),
+  _ => PostPaymentMethodsRequestType$Unknown(json),
 }; }
 
-static const PostPaymentMethodsRequestType acssDebit = PostPaymentMethodsRequestType._('acss_debit');
+static const PostPaymentMethodsRequestType acssDebit = PostPaymentMethodsRequestType$acssDebit._();
 
-static const PostPaymentMethodsRequestType affirm = PostPaymentMethodsRequestType._('affirm');
+static const PostPaymentMethodsRequestType affirm = PostPaymentMethodsRequestType$affirm._();
 
-static const PostPaymentMethodsRequestType afterpayClearpay = PostPaymentMethodsRequestType._('afterpay_clearpay');
+static const PostPaymentMethodsRequestType afterpayClearpay = PostPaymentMethodsRequestType$afterpayClearpay._();
 
-static const PostPaymentMethodsRequestType alipay = PostPaymentMethodsRequestType._('alipay');
+static const PostPaymentMethodsRequestType alipay = PostPaymentMethodsRequestType$alipay._();
 
-static const PostPaymentMethodsRequestType alma = PostPaymentMethodsRequestType._('alma');
+static const PostPaymentMethodsRequestType alma = PostPaymentMethodsRequestType$alma._();
 
-static const PostPaymentMethodsRequestType amazonPay = PostPaymentMethodsRequestType._('amazon_pay');
+static const PostPaymentMethodsRequestType amazonPay = PostPaymentMethodsRequestType$amazonPay._();
 
-static const PostPaymentMethodsRequestType auBecsDebit = PostPaymentMethodsRequestType._('au_becs_debit');
+static const PostPaymentMethodsRequestType auBecsDebit = PostPaymentMethodsRequestType$auBecsDebit._();
 
-static const PostPaymentMethodsRequestType bacsDebit = PostPaymentMethodsRequestType._('bacs_debit');
+static const PostPaymentMethodsRequestType bacsDebit = PostPaymentMethodsRequestType$bacsDebit._();
 
-static const PostPaymentMethodsRequestType bancontact = PostPaymentMethodsRequestType._('bancontact');
+static const PostPaymentMethodsRequestType bancontact = PostPaymentMethodsRequestType$bancontact._();
 
-static const PostPaymentMethodsRequestType billie = PostPaymentMethodsRequestType._('billie');
+static const PostPaymentMethodsRequestType billie = PostPaymentMethodsRequestType$billie._();
 
-static const PostPaymentMethodsRequestType blik = PostPaymentMethodsRequestType._('blik');
+static const PostPaymentMethodsRequestType blik = PostPaymentMethodsRequestType$blik._();
 
-static const PostPaymentMethodsRequestType boleto = PostPaymentMethodsRequestType._('boleto');
+static const PostPaymentMethodsRequestType boleto = PostPaymentMethodsRequestType$boleto._();
 
-static const PostPaymentMethodsRequestType card = PostPaymentMethodsRequestType._('card');
+static const PostPaymentMethodsRequestType card = PostPaymentMethodsRequestType$card._();
 
-static const PostPaymentMethodsRequestType cashapp = PostPaymentMethodsRequestType._('cashapp');
+static const PostPaymentMethodsRequestType cashapp = PostPaymentMethodsRequestType$cashapp._();
 
-static const PostPaymentMethodsRequestType crypto = PostPaymentMethodsRequestType._('crypto');
+static const PostPaymentMethodsRequestType crypto = PostPaymentMethodsRequestType$crypto._();
 
-static const PostPaymentMethodsRequestType custom = PostPaymentMethodsRequestType._('custom');
+static const PostPaymentMethodsRequestType custom = PostPaymentMethodsRequestType$custom._();
 
-static const PostPaymentMethodsRequestType customerBalance = PostPaymentMethodsRequestType._('customer_balance');
+static const PostPaymentMethodsRequestType customerBalance = PostPaymentMethodsRequestType$customerBalance._();
 
-static const PostPaymentMethodsRequestType eps = PostPaymentMethodsRequestType._('eps');
+static const PostPaymentMethodsRequestType eps = PostPaymentMethodsRequestType$eps._();
 
-static const PostPaymentMethodsRequestType fpx = PostPaymentMethodsRequestType._('fpx');
+static const PostPaymentMethodsRequestType fpx = PostPaymentMethodsRequestType$fpx._();
 
-static const PostPaymentMethodsRequestType giropay = PostPaymentMethodsRequestType._('giropay');
+static const PostPaymentMethodsRequestType giropay = PostPaymentMethodsRequestType$giropay._();
 
-static const PostPaymentMethodsRequestType grabpay = PostPaymentMethodsRequestType._('grabpay');
+static const PostPaymentMethodsRequestType grabpay = PostPaymentMethodsRequestType$grabpay._();
 
-static const PostPaymentMethodsRequestType ideal = PostPaymentMethodsRequestType._('ideal');
+static const PostPaymentMethodsRequestType ideal = PostPaymentMethodsRequestType$ideal._();
 
-static const PostPaymentMethodsRequestType kakaoPay = PostPaymentMethodsRequestType._('kakao_pay');
+static const PostPaymentMethodsRequestType kakaoPay = PostPaymentMethodsRequestType$kakaoPay._();
 
-static const PostPaymentMethodsRequestType klarna = PostPaymentMethodsRequestType._('klarna');
+static const PostPaymentMethodsRequestType klarna = PostPaymentMethodsRequestType$klarna._();
 
-static const PostPaymentMethodsRequestType konbini = PostPaymentMethodsRequestType._('konbini');
+static const PostPaymentMethodsRequestType konbini = PostPaymentMethodsRequestType$konbini._();
 
-static const PostPaymentMethodsRequestType krCard = PostPaymentMethodsRequestType._('kr_card');
+static const PostPaymentMethodsRequestType krCard = PostPaymentMethodsRequestType$krCard._();
 
-static const PostPaymentMethodsRequestType link = PostPaymentMethodsRequestType._('link');
+static const PostPaymentMethodsRequestType link = PostPaymentMethodsRequestType$link._();
 
-static const PostPaymentMethodsRequestType mbWay = PostPaymentMethodsRequestType._('mb_way');
+static const PostPaymentMethodsRequestType mbWay = PostPaymentMethodsRequestType$mbWay._();
 
-static const PostPaymentMethodsRequestType mobilepay = PostPaymentMethodsRequestType._('mobilepay');
+static const PostPaymentMethodsRequestType mobilepay = PostPaymentMethodsRequestType$mobilepay._();
 
-static const PostPaymentMethodsRequestType multibanco = PostPaymentMethodsRequestType._('multibanco');
+static const PostPaymentMethodsRequestType multibanco = PostPaymentMethodsRequestType$multibanco._();
 
-static const PostPaymentMethodsRequestType naverPay = PostPaymentMethodsRequestType._('naver_pay');
+static const PostPaymentMethodsRequestType naverPay = PostPaymentMethodsRequestType$naverPay._();
 
-static const PostPaymentMethodsRequestType nzBankAccount = PostPaymentMethodsRequestType._('nz_bank_account');
+static const PostPaymentMethodsRequestType nzBankAccount = PostPaymentMethodsRequestType$nzBankAccount._();
 
-static const PostPaymentMethodsRequestType oxxo = PostPaymentMethodsRequestType._('oxxo');
+static const PostPaymentMethodsRequestType oxxo = PostPaymentMethodsRequestType$oxxo._();
 
-static const PostPaymentMethodsRequestType p24 = PostPaymentMethodsRequestType._('p24');
+static const PostPaymentMethodsRequestType p24 = PostPaymentMethodsRequestType$p24._();
 
-static const PostPaymentMethodsRequestType payByBank = PostPaymentMethodsRequestType._('pay_by_bank');
+static const PostPaymentMethodsRequestType payByBank = PostPaymentMethodsRequestType$payByBank._();
 
-static const PostPaymentMethodsRequestType payco = PostPaymentMethodsRequestType._('payco');
+static const PostPaymentMethodsRequestType payco = PostPaymentMethodsRequestType$payco._();
 
-static const PostPaymentMethodsRequestType paynow = PostPaymentMethodsRequestType._('paynow');
+static const PostPaymentMethodsRequestType paynow = PostPaymentMethodsRequestType$paynow._();
 
-static const PostPaymentMethodsRequestType paypal = PostPaymentMethodsRequestType._('paypal');
+static const PostPaymentMethodsRequestType paypal = PostPaymentMethodsRequestType$paypal._();
 
-static const PostPaymentMethodsRequestType payto = PostPaymentMethodsRequestType._('payto');
+static const PostPaymentMethodsRequestType payto = PostPaymentMethodsRequestType$payto._();
 
-static const PostPaymentMethodsRequestType pix = PostPaymentMethodsRequestType._('pix');
+static const PostPaymentMethodsRequestType pix = PostPaymentMethodsRequestType$pix._();
 
-static const PostPaymentMethodsRequestType promptpay = PostPaymentMethodsRequestType._('promptpay');
+static const PostPaymentMethodsRequestType promptpay = PostPaymentMethodsRequestType$promptpay._();
 
-static const PostPaymentMethodsRequestType revolutPay = PostPaymentMethodsRequestType._('revolut_pay');
+static const PostPaymentMethodsRequestType revolutPay = PostPaymentMethodsRequestType$revolutPay._();
 
-static const PostPaymentMethodsRequestType samsungPay = PostPaymentMethodsRequestType._('samsung_pay');
+static const PostPaymentMethodsRequestType samsungPay = PostPaymentMethodsRequestType$samsungPay._();
 
-static const PostPaymentMethodsRequestType satispay = PostPaymentMethodsRequestType._('satispay');
+static const PostPaymentMethodsRequestType satispay = PostPaymentMethodsRequestType$satispay._();
 
-static const PostPaymentMethodsRequestType sepaDebit = PostPaymentMethodsRequestType._('sepa_debit');
+static const PostPaymentMethodsRequestType sepaDebit = PostPaymentMethodsRequestType$sepaDebit._();
 
-static const PostPaymentMethodsRequestType sofort = PostPaymentMethodsRequestType._('sofort');
+static const PostPaymentMethodsRequestType sofort = PostPaymentMethodsRequestType$sofort._();
 
-static const PostPaymentMethodsRequestType swish = PostPaymentMethodsRequestType._('swish');
+static const PostPaymentMethodsRequestType swish = PostPaymentMethodsRequestType$swish._();
 
-static const PostPaymentMethodsRequestType twint = PostPaymentMethodsRequestType._('twint');
+static const PostPaymentMethodsRequestType twint = PostPaymentMethodsRequestType$twint._();
 
-static const PostPaymentMethodsRequestType usBankAccount = PostPaymentMethodsRequestType._('us_bank_account');
+static const PostPaymentMethodsRequestType usBankAccount = PostPaymentMethodsRequestType$usBankAccount._();
 
-static const PostPaymentMethodsRequestType wechatPay = PostPaymentMethodsRequestType._('wechat_pay');
+static const PostPaymentMethodsRequestType wechatPay = PostPaymentMethodsRequestType$wechatPay._();
 
-static const PostPaymentMethodsRequestType zip = PostPaymentMethodsRequestType._('zip');
+static const PostPaymentMethodsRequestType zip = PostPaymentMethodsRequestType$zip._();
 
 static const List<PostPaymentMethodsRequestType> values = [acssDebit, affirm, afterpayClearpay, alipay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cashapp, crypto, custom, customerBalance, eps, fpx, giropay, grabpay, ideal, kakaoPay, klarna, konbini, krCard, link, mbWay, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -222,13 +221,477 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostPaymentMethodsRequestType$Unknown; } 
+@override String toString() => 'PostPaymentMethodsRequestType($value)';
+
+ }
+@immutable final class PostPaymentMethodsRequestType$acssDebit extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$acssDebit._();
+
+@override String get value => 'acss_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$acssDebit;
+
+@override int get hashCode => 'acss_debit'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$affirm extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$affirm._();
+
+@override String get value => 'affirm';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$affirm;
+
+@override int get hashCode => 'affirm'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$afterpayClearpay extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$afterpayClearpay._();
+
+@override String get value => 'afterpay_clearpay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$afterpayClearpay;
+
+@override int get hashCode => 'afterpay_clearpay'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$alipay extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$alipay._();
+
+@override String get value => 'alipay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$alipay;
+
+@override int get hashCode => 'alipay'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$alma extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$alma._();
+
+@override String get value => 'alma';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$alma;
+
+@override int get hashCode => 'alma'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$amazonPay extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$amazonPay._();
+
+@override String get value => 'amazon_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$amazonPay;
+
+@override int get hashCode => 'amazon_pay'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$auBecsDebit extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$auBecsDebit._();
+
+@override String get value => 'au_becs_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$auBecsDebit;
+
+@override int get hashCode => 'au_becs_debit'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$bacsDebit extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$bacsDebit._();
+
+@override String get value => 'bacs_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$bacsDebit;
+
+@override int get hashCode => 'bacs_debit'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$bancontact extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$bancontact._();
+
+@override String get value => 'bancontact';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$bancontact;
+
+@override int get hashCode => 'bancontact'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$billie extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$billie._();
+
+@override String get value => 'billie';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$billie;
+
+@override int get hashCode => 'billie'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$blik extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$blik._();
+
+@override String get value => 'blik';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$blik;
+
+@override int get hashCode => 'blik'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$boleto extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$boleto._();
+
+@override String get value => 'boleto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$boleto;
+
+@override int get hashCode => 'boleto'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$card extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$card._();
+
+@override String get value => 'card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$card;
+
+@override int get hashCode => 'card'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$cashapp extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$cashapp._();
+
+@override String get value => 'cashapp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$cashapp;
+
+@override int get hashCode => 'cashapp'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$crypto extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$crypto._();
+
+@override String get value => 'crypto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$crypto;
+
+@override int get hashCode => 'crypto'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$custom extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$custom._();
+
+@override String get value => 'custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$custom;
+
+@override int get hashCode => 'custom'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$customerBalance extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$customerBalance._();
+
+@override String get value => 'customer_balance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$customerBalance;
+
+@override int get hashCode => 'customer_balance'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$eps extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$eps._();
+
+@override String get value => 'eps';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$eps;
+
+@override int get hashCode => 'eps'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$fpx extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$fpx._();
+
+@override String get value => 'fpx';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$fpx;
+
+@override int get hashCode => 'fpx'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$giropay extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$giropay._();
+
+@override String get value => 'giropay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$giropay;
+
+@override int get hashCode => 'giropay'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$grabpay extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$grabpay._();
+
+@override String get value => 'grabpay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$grabpay;
+
+@override int get hashCode => 'grabpay'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$ideal extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$ideal._();
+
+@override String get value => 'ideal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$ideal;
+
+@override int get hashCode => 'ideal'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$kakaoPay extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$kakaoPay._();
+
+@override String get value => 'kakao_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$kakaoPay;
+
+@override int get hashCode => 'kakao_pay'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$klarna extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$klarna._();
+
+@override String get value => 'klarna';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$klarna;
+
+@override int get hashCode => 'klarna'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$konbini extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$konbini._();
+
+@override String get value => 'konbini';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$konbini;
+
+@override int get hashCode => 'konbini'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$krCard extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$krCard._();
+
+@override String get value => 'kr_card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$krCard;
+
+@override int get hashCode => 'kr_card'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$link extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$link._();
+
+@override String get value => 'link';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$link;
+
+@override int get hashCode => 'link'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$mbWay extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$mbWay._();
+
+@override String get value => 'mb_way';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$mbWay;
+
+@override int get hashCode => 'mb_way'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$mobilepay extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$mobilepay._();
+
+@override String get value => 'mobilepay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$mobilepay;
+
+@override int get hashCode => 'mobilepay'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$multibanco extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$multibanco._();
+
+@override String get value => 'multibanco';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$multibanco;
+
+@override int get hashCode => 'multibanco'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$naverPay extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$naverPay._();
+
+@override String get value => 'naver_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$naverPay;
+
+@override int get hashCode => 'naver_pay'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$nzBankAccount extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$nzBankAccount._();
+
+@override String get value => 'nz_bank_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$nzBankAccount;
+
+@override int get hashCode => 'nz_bank_account'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$oxxo extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$oxxo._();
+
+@override String get value => 'oxxo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$oxxo;
+
+@override int get hashCode => 'oxxo'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$p24 extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$p24._();
+
+@override String get value => 'p24';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$p24;
+
+@override int get hashCode => 'p24'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$payByBank extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$payByBank._();
+
+@override String get value => 'pay_by_bank';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$payByBank;
+
+@override int get hashCode => 'pay_by_bank'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$payco extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$payco._();
+
+@override String get value => 'payco';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$payco;
+
+@override int get hashCode => 'payco'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$paynow extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$paynow._();
+
+@override String get value => 'paynow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$paynow;
+
+@override int get hashCode => 'paynow'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$paypal extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$paypal._();
+
+@override String get value => 'paypal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$paypal;
+
+@override int get hashCode => 'paypal'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$payto extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$payto._();
+
+@override String get value => 'payto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$payto;
+
+@override int get hashCode => 'payto'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$pix extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$pix._();
+
+@override String get value => 'pix';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$pix;
+
+@override int get hashCode => 'pix'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$promptpay extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$promptpay._();
+
+@override String get value => 'promptpay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$promptpay;
+
+@override int get hashCode => 'promptpay'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$revolutPay extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$revolutPay._();
+
+@override String get value => 'revolut_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$revolutPay;
+
+@override int get hashCode => 'revolut_pay'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$samsungPay extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$samsungPay._();
+
+@override String get value => 'samsung_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$samsungPay;
+
+@override int get hashCode => 'samsung_pay'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$satispay extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$satispay._();
+
+@override String get value => 'satispay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$satispay;
+
+@override int get hashCode => 'satispay'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$sepaDebit extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$sepaDebit._();
+
+@override String get value => 'sepa_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$sepaDebit;
+
+@override int get hashCode => 'sepa_debit'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$sofort extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$sofort._();
+
+@override String get value => 'sofort';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$sofort;
+
+@override int get hashCode => 'sofort'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$swish extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$swish._();
+
+@override String get value => 'swish';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$swish;
+
+@override int get hashCode => 'swish'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$twint extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$twint._();
+
+@override String get value => 'twint';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$twint;
+
+@override int get hashCode => 'twint'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$usBankAccount extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$usBankAccount._();
+
+@override String get value => 'us_bank_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$usBankAccount;
+
+@override int get hashCode => 'us_bank_account'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$wechatPay extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$wechatPay._();
+
+@override String get value => 'wechat_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$wechatPay;
+
+@override int get hashCode => 'wechat_pay'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$zip extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$zip._();
+
+@override String get value => 'zip';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostPaymentMethodsRequestType$zip;
+
+@override int get hashCode => 'zip'.hashCode;
+
+ }
+@immutable final class PostPaymentMethodsRequestType$Unknown extends PostPaymentMethodsRequestType {const PostPaymentMethodsRequestType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostPaymentMethodsRequestType && other.value == value;
+    other is PostPaymentMethodsRequestType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostPaymentMethodsRequestType($value)';
 
  }
 @immutable final class PostPaymentMethodsRequest {const PostPaymentMethodsRequest({this.customerBalance, this.affirm, this.afterpayClearpay, this.alipay, this.allowRedisplay, this.alma, this.amazonPay, this.auBecsDebit, this.bacsDebit, this.bancontact, this.billie, this.billingDetails, this.blik, this.boleto, this.card, this.cashapp, this.crypto, this.custom, this.customer, this.acssDebit, this.eps, this.expand, this.fpx, this.giropay, this.grabpay, this.ideal, this.interacPresent, this.kakaoPay, this.klarna, this.konbini, this.krCard, this.link, this.mbWay, this.metadata, this.mobilepay, this.multibanco, this.naverPay, this.nzBankAccount, this.oxxo, this.zip, this.payByBank, this.payco, this.paymentMethod, this.paynow, this.paypal, this.payto, this.pix, this.promptpay, this.radarOptions, this.revolutPay, this.samsungPay, this.satispay, this.sepaDebit, this.sofort, this.swish, this.twint, this.type, this.usBankAccount, this.wechatPay, this.p24, });

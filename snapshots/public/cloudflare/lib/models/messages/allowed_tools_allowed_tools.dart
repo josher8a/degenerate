@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: ToolChoice > Variant1 > AllowedTools > AllowedTools)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AllowedToolsMode {const AllowedToolsMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AllowedToolsMode {const AllowedToolsMode();
 
 factory AllowedToolsMode.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'required' => $required,
-  _ => AllowedToolsMode._(json),
+  _ => AllowedToolsMode$Unknown(json),
 }; }
 
-static const AllowedToolsMode auto = AllowedToolsMode._('auto');
+static const AllowedToolsMode auto = AllowedToolsMode$auto._();
 
-static const AllowedToolsMode $required = AllowedToolsMode._('required');
+static const AllowedToolsMode $required = AllowedToolsMode$$required._();
 
 static const List<AllowedToolsMode> values = [auto, $required];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AllowedToolsMode$Unknown; } 
+@override String toString() => 'AllowedToolsMode($value)';
+
+ }
+@immutable final class AllowedToolsMode$auto extends AllowedToolsMode {const AllowedToolsMode$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowedToolsMode$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class AllowedToolsMode$$required extends AllowedToolsMode {const AllowedToolsMode$$required._();
+
+@override String get value => 'required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowedToolsMode$$required;
+
+@override int get hashCode => 'required'.hashCode;
+
+ }
+@immutable final class AllowedToolsMode$Unknown extends AllowedToolsMode {const AllowedToolsMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AllowedToolsMode && other.value == value;
+    other is AllowedToolsMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AllowedToolsMode($value)';
 
  }
 @immutable final class AllowedToolsAllowedTools {const AllowedToolsAllowedTools({required this.mode, required this.tools, });

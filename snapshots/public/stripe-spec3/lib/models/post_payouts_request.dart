@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PostPayoutsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_payouts_request/source_type.dart';/// The method used to send this payout, which is `standard` or `instant`. We support `instant` for payouts to debit cards and bank accounts in certain countries. Learn more about [bank support for Instant Payouts](https://stripe.com/docs/payouts/instant-payouts-banks).
-@immutable final class Method {const Method._(this.value);
+sealed class Method {const Method();
 
 factory Method.fromJson(String json) { return switch (json) {
   'instant' => instant,
   'standard' => standard,
-  _ => Method._(json),
+  _ => Method$Unknown(json),
 }; }
 
-static const Method instant = Method._('instant');
+static const Method instant = Method$instant._();
 
-static const Method standard = Method._('standard');
+static const Method standard = Method$standard._();
 
 static const List<Method> values = [instant, standard];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Method$Unknown; } 
+@override String toString() => 'Method($value)';
+
+ }
+@immutable final class Method$instant extends Method {const Method$instant._();
+
+@override String get value => 'instant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Method$instant;
+
+@override int get hashCode => 'instant'.hashCode;
+
+ }
+@immutable final class Method$standard extends Method {const Method$standard._();
+
+@override String get value => 'standard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Method$standard;
+
+@override int get hashCode => 'standard'.hashCode;
+
+ }
+@immutable final class Method$Unknown extends Method {const Method$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Method && other.value == value;
+    other is Method$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Method($value)';
 
  }
 @immutable final class PostPayoutsRequest {const PostPayoutsRequest({required this.amount, required this.currency, this.description, this.destination, this.expand, this.metadata, this.method, this.payoutMethod, this.sourceType, this.statementDescriptor, });

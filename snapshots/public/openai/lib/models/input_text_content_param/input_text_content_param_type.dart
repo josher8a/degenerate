@@ -2,19 +2,18 @@
 // Source: #/components/schemas/InputTextContentParam (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type. Always `input_text` for system messages.
-@immutable final class InputTextContentParamType {const InputTextContentParamType._(this.value);
+sealed class InputTextContentParamType {const InputTextContentParamType();
 
 factory InputTextContentParamType.fromJson(String json) { return switch (json) {
   'input_text' => inputText,
-  _ => InputTextContentParamType._(json),
+  _ => InputTextContentParamType$Unknown(json),
 }; }
 
-static const InputTextContentParamType inputText = InputTextContentParamType._('input_text');
+static const InputTextContentParamType inputText = InputTextContentParamType$inputText._();
 
 static const List<InputTextContentParamType> values = [inputText];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InputTextContentParamType$Unknown; } 
+@override String toString() => 'InputTextContentParamType($value)';
+
+ }
+@immutable final class InputTextContentParamType$inputText extends InputTextContentParamType {const InputTextContentParamType$inputText._();
+
+@override String get value => 'input_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputTextContentParamType$inputText;
+
+@override int get hashCode => 'input_text'.hashCode;
+
+ }
+@immutable final class InputTextContentParamType$Unknown extends InputTextContentParamType {const InputTextContentParamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InputTextContentParamType && other.value == value;
+    other is InputTextContentParamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InputTextContentParamType($value)';
 
  }

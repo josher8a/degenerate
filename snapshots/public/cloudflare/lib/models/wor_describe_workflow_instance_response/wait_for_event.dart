@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorDescribeWorkflowInstanceResponse (inline: Result > Steps > WaitForEvent)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_error.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/wait_for_event_output.dart';@immutable final class WaitForEventType {const WaitForEventType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/result_error.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/wait_for_event_output.dart';sealed class WaitForEventType {const WaitForEventType();
 
 factory WaitForEventType.fromJson(String json) { return switch (json) {
   'waitForEvent' => waitForEvent,
-  _ => WaitForEventType._(json),
+  _ => WaitForEventType$Unknown(json),
 }; }
 
-static const WaitForEventType waitForEvent = WaitForEventType._('waitForEvent');
+static const WaitForEventType waitForEvent = WaitForEventType$waitForEvent._();
 
 static const List<WaitForEventType> values = [waitForEvent];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WaitForEventType$Unknown; } 
+@override String toString() => 'WaitForEventType($value)';
+
+ }
+@immutable final class WaitForEventType$waitForEvent extends WaitForEventType {const WaitForEventType$waitForEvent._();
+
+@override String get value => 'waitForEvent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitForEventType$waitForEvent;
+
+@override int get hashCode => 'waitForEvent'.hashCode;
+
+ }
+@immutable final class WaitForEventType$Unknown extends WaitForEventType {const WaitForEventType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WaitForEventType && other.value == value;
+    other is WaitForEventType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WaitForEventType($value)';
 
  }
 @immutable final class WaitForEvent {const WaitForEvent({required this.end, required this.error, required this.finished, required this.name, required this.output, required this.start, required this.type, });

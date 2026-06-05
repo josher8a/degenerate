@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookDependabotAlertAssigneesChanged
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookDependabotAlertAssigneesChangedAction {const WebhookDependabotAlertAssigneesChangedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookDependabotAlertAssigneesChangedAction {const WebhookDependabotAlertAssigneesChangedAction();
 
 factory WebhookDependabotAlertAssigneesChangedAction.fromJson(String json) { return switch (json) {
   'assignees_changed' => assigneesChanged,
-  _ => WebhookDependabotAlertAssigneesChangedAction._(json),
+  _ => WebhookDependabotAlertAssigneesChangedAction$Unknown(json),
 }; }
 
-static const WebhookDependabotAlertAssigneesChangedAction assigneesChanged = WebhookDependabotAlertAssigneesChangedAction._('assignees_changed');
+static const WebhookDependabotAlertAssigneesChangedAction assigneesChanged = WebhookDependabotAlertAssigneesChangedAction$assigneesChanged._();
 
 static const List<WebhookDependabotAlertAssigneesChangedAction> values = [assigneesChanged];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookDependabotAlertAssigneesChangedAction$Unknown; } 
+@override String toString() => 'WebhookDependabotAlertAssigneesChangedAction($value)';
+
+ }
+@immutable final class WebhookDependabotAlertAssigneesChangedAction$assigneesChanged extends WebhookDependabotAlertAssigneesChangedAction {const WebhookDependabotAlertAssigneesChangedAction$assigneesChanged._();
+
+@override String get value => 'assignees_changed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookDependabotAlertAssigneesChangedAction$assigneesChanged;
+
+@override int get hashCode => 'assignees_changed'.hashCode;
+
+ }
+@immutable final class WebhookDependabotAlertAssigneesChangedAction$Unknown extends WebhookDependabotAlertAssigneesChangedAction {const WebhookDependabotAlertAssigneesChangedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookDependabotAlertAssigneesChangedAction && other.value == value;
+    other is WebhookDependabotAlertAssigneesChangedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookDependabotAlertAssigneesChangedAction($value)';
 
  }
 @immutable final class WebhookDependabotAlertAssigneesChanged {const WebhookDependabotAlertAssigneesChanged({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });

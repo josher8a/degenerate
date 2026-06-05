@@ -2,19 +2,18 @@
 // Source: #/components/schemas/StaticChunkingStrategyResponseParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/static_chunking_strategy.dart';/// Always `static`.
-@immutable final class StaticChunkingStrategyResponseParamType {const StaticChunkingStrategyResponseParamType._(this.value);
+sealed class StaticChunkingStrategyResponseParamType {const StaticChunkingStrategyResponseParamType();
 
 factory StaticChunkingStrategyResponseParamType.fromJson(String json) { return switch (json) {
   'static' => $static,
-  _ => StaticChunkingStrategyResponseParamType._(json),
+  _ => StaticChunkingStrategyResponseParamType$Unknown(json),
 }; }
 
-static const StaticChunkingStrategyResponseParamType $static = StaticChunkingStrategyResponseParamType._('static');
+static const StaticChunkingStrategyResponseParamType $static = StaticChunkingStrategyResponseParamType$$static._();
 
 static const List<StaticChunkingStrategyResponseParamType> values = [$static];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StaticChunkingStrategyResponseParamType$Unknown; } 
+@override String toString() => 'StaticChunkingStrategyResponseParamType($value)';
+
+ }
+@immutable final class StaticChunkingStrategyResponseParamType$$static extends StaticChunkingStrategyResponseParamType {const StaticChunkingStrategyResponseParamType$$static._();
+
+@override String get value => 'static';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StaticChunkingStrategyResponseParamType$$static;
+
+@override int get hashCode => 'static'.hashCode;
+
+ }
+@immutable final class StaticChunkingStrategyResponseParamType$Unknown extends StaticChunkingStrategyResponseParamType {const StaticChunkingStrategyResponseParamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StaticChunkingStrategyResponseParamType && other.value == value;
+    other is StaticChunkingStrategyResponseParamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StaticChunkingStrategyResponseParamType($value)';
 
  }
 @immutable final class StaticChunkingStrategyResponseParam {const StaticChunkingStrategyResponseParam({required this.type, required this.$static, });

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/$5Request2 (inline: Variant1 > Pooling)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The pooling method used in the embedding process. `cls` pooling will generate more accurate embeddings on larger inputs - however, embeddings created with cls pooling are not compatible with embeddings generated with mean pooling. The default pooling method is `mean` in order for this to not be a breaking change, but we highly suggest using the new `cls` pooling for better accuracy.
-@immutable final class Pooling {const Pooling._(this.value);
+sealed class Pooling {const Pooling();
 
 factory Pooling.fromJson(String json) { return switch (json) {
   'mean' => mean,
   'cls' => cls,
-  _ => Pooling._(json),
+  _ => Pooling$Unknown(json),
 }; }
 
-static const Pooling mean = Pooling._('mean');
+static const Pooling mean = Pooling$mean._();
 
-static const Pooling cls = Pooling._('cls');
+static const Pooling cls = Pooling$cls._();
 
 static const List<Pooling> values = [mean, cls];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Pooling$Unknown; } 
+@override String toString() => 'Pooling($value)';
+
+ }
+@immutable final class Pooling$mean extends Pooling {const Pooling$mean._();
+
+@override String get value => 'mean';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Pooling$mean;
+
+@override int get hashCode => 'mean'.hashCode;
+
+ }
+@immutable final class Pooling$cls extends Pooling {const Pooling$cls._();
+
+@override String get value => 'cls';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Pooling$cls;
+
+@override int get hashCode => 'cls'.hashCode;
+
+ }
+@immutable final class Pooling$Unknown extends Pooling {const Pooling$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Pooling && other.value == value;
+    other is Pooling$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Pooling($value)';
 
  }

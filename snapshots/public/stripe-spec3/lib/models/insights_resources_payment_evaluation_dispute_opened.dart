@@ -2,7 +2,7 @@
 // Source: #/components/schemas/InsightsResourcesPaymentEvaluationDisputeOpened
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason given by cardholder for dispute.
-@immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason._(this.value);
+sealed class InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason();
 
 factory InsightsResourcesPaymentEvaluationDisputeOpenedReason.fromJson(String json) { return switch (json) {
   'account_not_available' => accountNotAvailable,
@@ -16,35 +16,34 @@ factory InsightsResourcesPaymentEvaluationDisputeOpenedReason.fromJson(String js
   'product_unacceptable' => productUnacceptable,
   'subscription_canceled' => subscriptionCanceled,
   'unrecognized' => unrecognized,
-  _ => InsightsResourcesPaymentEvaluationDisputeOpenedReason._(json),
+  _ => InsightsResourcesPaymentEvaluationDisputeOpenedReason$Unknown(json),
 }; }
 
-static const InsightsResourcesPaymentEvaluationDisputeOpenedReason accountNotAvailable = InsightsResourcesPaymentEvaluationDisputeOpenedReason._('account_not_available');
+static const InsightsResourcesPaymentEvaluationDisputeOpenedReason accountNotAvailable = InsightsResourcesPaymentEvaluationDisputeOpenedReason$accountNotAvailable._();
 
-static const InsightsResourcesPaymentEvaluationDisputeOpenedReason creditNotProcessed = InsightsResourcesPaymentEvaluationDisputeOpenedReason._('credit_not_processed');
+static const InsightsResourcesPaymentEvaluationDisputeOpenedReason creditNotProcessed = InsightsResourcesPaymentEvaluationDisputeOpenedReason$creditNotProcessed._();
 
-static const InsightsResourcesPaymentEvaluationDisputeOpenedReason customerInitiated = InsightsResourcesPaymentEvaluationDisputeOpenedReason._('customer_initiated');
+static const InsightsResourcesPaymentEvaluationDisputeOpenedReason customerInitiated = InsightsResourcesPaymentEvaluationDisputeOpenedReason$customerInitiated._();
 
-static const InsightsResourcesPaymentEvaluationDisputeOpenedReason duplicate = InsightsResourcesPaymentEvaluationDisputeOpenedReason._('duplicate');
+static const InsightsResourcesPaymentEvaluationDisputeOpenedReason duplicate = InsightsResourcesPaymentEvaluationDisputeOpenedReason$duplicate._();
 
-static const InsightsResourcesPaymentEvaluationDisputeOpenedReason fraudulent = InsightsResourcesPaymentEvaluationDisputeOpenedReason._('fraudulent');
+static const InsightsResourcesPaymentEvaluationDisputeOpenedReason fraudulent = InsightsResourcesPaymentEvaluationDisputeOpenedReason$fraudulent._();
 
-static const InsightsResourcesPaymentEvaluationDisputeOpenedReason general = InsightsResourcesPaymentEvaluationDisputeOpenedReason._('general');
+static const InsightsResourcesPaymentEvaluationDisputeOpenedReason general = InsightsResourcesPaymentEvaluationDisputeOpenedReason$general._();
 
-static const InsightsResourcesPaymentEvaluationDisputeOpenedReason noncompliant = InsightsResourcesPaymentEvaluationDisputeOpenedReason._('noncompliant');
+static const InsightsResourcesPaymentEvaluationDisputeOpenedReason noncompliant = InsightsResourcesPaymentEvaluationDisputeOpenedReason$noncompliant._();
 
-static const InsightsResourcesPaymentEvaluationDisputeOpenedReason productNotReceived = InsightsResourcesPaymentEvaluationDisputeOpenedReason._('product_not_received');
+static const InsightsResourcesPaymentEvaluationDisputeOpenedReason productNotReceived = InsightsResourcesPaymentEvaluationDisputeOpenedReason$productNotReceived._();
 
-static const InsightsResourcesPaymentEvaluationDisputeOpenedReason productUnacceptable = InsightsResourcesPaymentEvaluationDisputeOpenedReason._('product_unacceptable');
+static const InsightsResourcesPaymentEvaluationDisputeOpenedReason productUnacceptable = InsightsResourcesPaymentEvaluationDisputeOpenedReason$productUnacceptable._();
 
-static const InsightsResourcesPaymentEvaluationDisputeOpenedReason subscriptionCanceled = InsightsResourcesPaymentEvaluationDisputeOpenedReason._('subscription_canceled');
+static const InsightsResourcesPaymentEvaluationDisputeOpenedReason subscriptionCanceled = InsightsResourcesPaymentEvaluationDisputeOpenedReason$subscriptionCanceled._();
 
-static const InsightsResourcesPaymentEvaluationDisputeOpenedReason unrecognized = InsightsResourcesPaymentEvaluationDisputeOpenedReason._('unrecognized');
+static const InsightsResourcesPaymentEvaluationDisputeOpenedReason unrecognized = InsightsResourcesPaymentEvaluationDisputeOpenedReason$unrecognized._();
 
 static const List<InsightsResourcesPaymentEvaluationDisputeOpenedReason> values = [accountNotAvailable, creditNotProcessed, customerInitiated, duplicate, fraudulent, general, noncompliant, productNotReceived, productUnacceptable, subscriptionCanceled, unrecognized];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -62,13 +61,117 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InsightsResourcesPaymentEvaluationDisputeOpenedReason$Unknown; } 
+@override String toString() => 'InsightsResourcesPaymentEvaluationDisputeOpenedReason($value)';
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason$accountNotAvailable extends InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason$accountNotAvailable._();
+
+@override String get value => 'account_not_available';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationDisputeOpenedReason$accountNotAvailable;
+
+@override int get hashCode => 'account_not_available'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason$creditNotProcessed extends InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason$creditNotProcessed._();
+
+@override String get value => 'credit_not_processed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationDisputeOpenedReason$creditNotProcessed;
+
+@override int get hashCode => 'credit_not_processed'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason$customerInitiated extends InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason$customerInitiated._();
+
+@override String get value => 'customer_initiated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationDisputeOpenedReason$customerInitiated;
+
+@override int get hashCode => 'customer_initiated'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason$duplicate extends InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason$duplicate._();
+
+@override String get value => 'duplicate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationDisputeOpenedReason$duplicate;
+
+@override int get hashCode => 'duplicate'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason$fraudulent extends InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason$fraudulent._();
+
+@override String get value => 'fraudulent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationDisputeOpenedReason$fraudulent;
+
+@override int get hashCode => 'fraudulent'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason$general extends InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason$general._();
+
+@override String get value => 'general';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationDisputeOpenedReason$general;
+
+@override int get hashCode => 'general'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason$noncompliant extends InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason$noncompliant._();
+
+@override String get value => 'noncompliant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationDisputeOpenedReason$noncompliant;
+
+@override int get hashCode => 'noncompliant'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason$productNotReceived extends InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason$productNotReceived._();
+
+@override String get value => 'product_not_received';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationDisputeOpenedReason$productNotReceived;
+
+@override int get hashCode => 'product_not_received'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason$productUnacceptable extends InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason$productUnacceptable._();
+
+@override String get value => 'product_unacceptable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationDisputeOpenedReason$productUnacceptable;
+
+@override int get hashCode => 'product_unacceptable'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason$subscriptionCanceled extends InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason$subscriptionCanceled._();
+
+@override String get value => 'subscription_canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationDisputeOpenedReason$subscriptionCanceled;
+
+@override int get hashCode => 'subscription_canceled'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason$unrecognized extends InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason$unrecognized._();
+
+@override String get value => 'unrecognized';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationDisputeOpenedReason$unrecognized;
+
+@override int get hashCode => 'unrecognized'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationDisputeOpenedReason$Unknown extends InsightsResourcesPaymentEvaluationDisputeOpenedReason {const InsightsResourcesPaymentEvaluationDisputeOpenedReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationDisputeOpenedReason && other.value == value;
+    other is InsightsResourcesPaymentEvaluationDisputeOpenedReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InsightsResourcesPaymentEvaluationDisputeOpenedReason($value)';
 
  }
 /// Dispute opened event details attached to this payment evaluation.

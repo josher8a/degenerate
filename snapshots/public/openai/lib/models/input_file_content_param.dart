@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/InputFileContentParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FileDetailEnum {const FileDetailEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class FileDetailEnum {const FileDetailEnum();
 
 factory FileDetailEnum.fromJson(String json) { return switch (json) {
   'high' => high,
   'low' => low,
-  _ => FileDetailEnum._(json),
+  _ => FileDetailEnum$Unknown(json),
 }; }
 
-static const FileDetailEnum high = FileDetailEnum._('high');
+static const FileDetailEnum high = FileDetailEnum$high._();
 
-static const FileDetailEnum low = FileDetailEnum._('low');
+static const FileDetailEnum low = FileDetailEnum$low._();
 
 static const List<FileDetailEnum> values = [high, low];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,29 +24,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is FileDetailEnum && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is FileDetailEnum$Unknown; } 
 @override String toString() => 'FileDetailEnum($value)';
 
  }
+@immutable final class FileDetailEnum$high extends FileDetailEnum {const FileDetailEnum$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileDetailEnum$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class FileDetailEnum$low extends FileDetailEnum {const FileDetailEnum$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileDetailEnum$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class FileDetailEnum$Unknown extends FileDetailEnum {const FileDetailEnum$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FileDetailEnum$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The type of the input item. Always `input_file`.
-@immutable final class InputFileContentParamType {const InputFileContentParamType._(this.value);
+sealed class InputFileContentParamType {const InputFileContentParamType();
 
 factory InputFileContentParamType.fromJson(String json) { return switch (json) {
   'input_file' => inputFile,
-  _ => InputFileContentParamType._(json),
+  _ => InputFileContentParamType$Unknown(json),
 }; }
 
-static const InputFileContentParamType inputFile = InputFileContentParamType._('input_file');
+static const InputFileContentParamType inputFile = InputFileContentParamType$inputFile._();
 
 static const List<InputFileContentParamType> values = [inputFile];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -55,13 +76,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InputFileContentParamType$Unknown; } 
+@override String toString() => 'InputFileContentParamType($value)';
+
+ }
+@immutable final class InputFileContentParamType$inputFile extends InputFileContentParamType {const InputFileContentParamType$inputFile._();
+
+@override String get value => 'input_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputFileContentParamType$inputFile;
+
+@override int get hashCode => 'input_file'.hashCode;
+
+ }
+@immutable final class InputFileContentParamType$Unknown extends InputFileContentParamType {const InputFileContentParamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InputFileContentParamType && other.value == value;
+    other is InputFileContentParamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InputFileContentParamType($value)';
 
  }
 /// A file input to the model.

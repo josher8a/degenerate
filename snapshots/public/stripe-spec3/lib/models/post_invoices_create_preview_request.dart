@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PostInvoicesCreatePreviewRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/discounts_variant1.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_subscriptions_request/post_customers_customer_subscriptions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/invoice_items.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/issuer.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/post_invoices_create_preview_request_customer_details.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/post_invoices_create_preview_request_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/schedule_details.dart';import 'package:pub_stripe_spec3/models/post_invoices_create_preview_request/subscription_details.dart';/// Customizes the types of values to include when calculating the invoice. Defaults to `next` if unspecified.
-@immutable final class PreviewMode {const PreviewMode._(this.value);
+sealed class PreviewMode {const PreviewMode();
 
 factory PreviewMode.fromJson(String json) { return switch (json) {
   'next' => next,
   'recurring' => recurring,
-  _ => PreviewMode._(json),
+  _ => PreviewMode$Unknown(json),
 }; }
 
-static const PreviewMode next = PreviewMode._('next');
+static const PreviewMode next = PreviewMode$next._();
 
-static const PreviewMode recurring = PreviewMode._('recurring');
+static const PreviewMode recurring = PreviewMode$recurring._();
 
 static const List<PreviewMode> values = [next, recurring];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PreviewMode$Unknown; } 
+@override String toString() => 'PreviewMode($value)';
+
+ }
+@immutable final class PreviewMode$next extends PreviewMode {const PreviewMode$next._();
+
+@override String get value => 'next';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PreviewMode$next;
+
+@override int get hashCode => 'next'.hashCode;
+
+ }
+@immutable final class PreviewMode$recurring extends PreviewMode {const PreviewMode$recurring._();
+
+@override String get value => 'recurring';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PreviewMode$recurring;
+
+@override int get hashCode => 'recurring'.hashCode;
+
+ }
+@immutable final class PreviewMode$Unknown extends PreviewMode {const PreviewMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PreviewMode && other.value == value;
+    other is PreviewMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PreviewMode($value)';
 
  }
 @immutable final class PostInvoicesCreatePreviewRequest {const PostInvoicesCreatePreviewRequest({this.automaticTax, this.currency, this.customer, this.customerAccount, this.customerDetails, this.discounts, this.expand, this.invoiceItems, this.issuer, this.onBehalfOf, this.previewMode, this.schedule, this.scheduleDetails, this.subscription, this.subscriptionDetails, });

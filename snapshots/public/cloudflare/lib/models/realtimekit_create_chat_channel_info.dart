@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimekitCreateChatChannelInfo
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimekitCreateChatChannelInfoVisibility {const RealtimekitCreateChatChannelInfoVisibility._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RealtimekitCreateChatChannelInfoVisibility {const RealtimekitCreateChatChannelInfoVisibility();
 
 factory RealtimekitCreateChatChannelInfoVisibility.fromJson(String json) { return switch (json) {
   'public' => public,
   'private' => private,
-  _ => RealtimekitCreateChatChannelInfoVisibility._(json),
+  _ => RealtimekitCreateChatChannelInfoVisibility$Unknown(json),
 }; }
 
-static const RealtimekitCreateChatChannelInfoVisibility public = RealtimekitCreateChatChannelInfoVisibility._('public');
+static const RealtimekitCreateChatChannelInfoVisibility public = RealtimekitCreateChatChannelInfoVisibility$public._();
 
-static const RealtimekitCreateChatChannelInfoVisibility private = RealtimekitCreateChatChannelInfoVisibility._('private');
+static const RealtimekitCreateChatChannelInfoVisibility private = RealtimekitCreateChatChannelInfoVisibility$private._();
 
 static const List<RealtimekitCreateChatChannelInfoVisibility> values = [public, private];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimekitCreateChatChannelInfoVisibility$Unknown; } 
+@override String toString() => 'RealtimekitCreateChatChannelInfoVisibility($value)';
+
+ }
+@immutable final class RealtimekitCreateChatChannelInfoVisibility$public extends RealtimekitCreateChatChannelInfoVisibility {const RealtimekitCreateChatChannelInfoVisibility$public._();
+
+@override String get value => 'public';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitCreateChatChannelInfoVisibility$public;
+
+@override int get hashCode => 'public'.hashCode;
+
+ }
+@immutable final class RealtimekitCreateChatChannelInfoVisibility$private extends RealtimekitCreateChatChannelInfoVisibility {const RealtimekitCreateChatChannelInfoVisibility$private._();
+
+@override String get value => 'private';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitCreateChatChannelInfoVisibility$private;
+
+@override int get hashCode => 'private'.hashCode;
+
+ }
+@immutable final class RealtimekitCreateChatChannelInfoVisibility$Unknown extends RealtimekitCreateChatChannelInfoVisibility {const RealtimekitCreateChatChannelInfoVisibility$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimekitCreateChatChannelInfoVisibility && other.value == value;
+    other is RealtimekitCreateChatChannelInfoVisibility$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimekitCreateChatChannelInfoVisibility($value)';
 
  }
 @immutable final class RealtimekitCreateChatChannelInfo {const RealtimekitCreateChatChannelInfo({this.customParticipantIds, this.displayName, this.visibility, });

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZarazScrollDepthRule
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_scroll_depth_rule/zaraz_scroll_depth_rule_settings.dart';@immutable final class ZarazScrollDepthRuleAction {const ZarazScrollDepthRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_scroll_depth_rule/zaraz_scroll_depth_rule_settings.dart';sealed class ZarazScrollDepthRuleAction {const ZarazScrollDepthRuleAction();
 
 factory ZarazScrollDepthRuleAction.fromJson(String json) { return switch (json) {
   'scrollDepth' => scrollDepth,
-  _ => ZarazScrollDepthRuleAction._(json),
+  _ => ZarazScrollDepthRuleAction$Unknown(json),
 }; }
 
-static const ZarazScrollDepthRuleAction scrollDepth = ZarazScrollDepthRuleAction._('scrollDepth');
+static const ZarazScrollDepthRuleAction scrollDepth = ZarazScrollDepthRuleAction$scrollDepth._();
 
 static const List<ZarazScrollDepthRuleAction> values = [scrollDepth];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZarazScrollDepthRuleAction$Unknown; } 
+@override String toString() => 'ZarazScrollDepthRuleAction($value)';
+
+ }
+@immutable final class ZarazScrollDepthRuleAction$scrollDepth extends ZarazScrollDepthRuleAction {const ZarazScrollDepthRuleAction$scrollDepth._();
+
+@override String get value => 'scrollDepth';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazScrollDepthRuleAction$scrollDepth;
+
+@override int get hashCode => 'scrollDepth'.hashCode;
+
+ }
+@immutable final class ZarazScrollDepthRuleAction$Unknown extends ZarazScrollDepthRuleAction {const ZarazScrollDepthRuleAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZarazScrollDepthRuleAction && other.value == value;
+    other is ZarazScrollDepthRuleAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZarazScrollDepthRuleAction($value)';
 
  }
 @immutable final class ZarazScrollDepthRule {const ZarazScrollDepthRule({required this.action, required this.id, required this.settings, });

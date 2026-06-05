@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FinancialConnectionsAccountOwnership
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/financial_connections_account_ownership/owners.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class FinancialConnectionsAccountOwnershipObject {const FinancialConnectionsAccountOwnershipObject._(this.value);
+sealed class FinancialConnectionsAccountOwnershipObject {const FinancialConnectionsAccountOwnershipObject();
 
 factory FinancialConnectionsAccountOwnershipObject.fromJson(String json) { return switch (json) {
   'financial_connections.account_ownership' => financialConnectionsAccountOwnership,
-  _ => FinancialConnectionsAccountOwnershipObject._(json),
+  _ => FinancialConnectionsAccountOwnershipObject$Unknown(json),
 }; }
 
-static const FinancialConnectionsAccountOwnershipObject financialConnectionsAccountOwnership = FinancialConnectionsAccountOwnershipObject._('financial_connections.account_ownership');
+static const FinancialConnectionsAccountOwnershipObject financialConnectionsAccountOwnership = FinancialConnectionsAccountOwnershipObject$financialConnectionsAccountOwnership._();
 
 static const List<FinancialConnectionsAccountOwnershipObject> values = [financialConnectionsAccountOwnership];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FinancialConnectionsAccountOwnershipObject$Unknown; } 
+@override String toString() => 'FinancialConnectionsAccountOwnershipObject($value)';
+
+ }
+@immutable final class FinancialConnectionsAccountOwnershipObject$financialConnectionsAccountOwnership extends FinancialConnectionsAccountOwnershipObject {const FinancialConnectionsAccountOwnershipObject$financialConnectionsAccountOwnership._();
+
+@override String get value => 'financial_connections.account_ownership';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinancialConnectionsAccountOwnershipObject$financialConnectionsAccountOwnership;
+
+@override int get hashCode => 'financial_connections.account_ownership'.hashCode;
+
+ }
+@immutable final class FinancialConnectionsAccountOwnershipObject$Unknown extends FinancialConnectionsAccountOwnershipObject {const FinancialConnectionsAccountOwnershipObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FinancialConnectionsAccountOwnershipObject && other.value == value;
+    other is FinancialConnectionsAccountOwnershipObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FinancialConnectionsAccountOwnershipObject($value)';
 
  }
 /// Describes a snapshot of the owners of an account at a particular point in time.

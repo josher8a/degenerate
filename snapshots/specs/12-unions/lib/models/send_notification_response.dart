@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SendNotificationResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NotificationStatus {const NotificationStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class NotificationStatus {const NotificationStatus();
 
 factory NotificationStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
   'sent' => sent,
   'failed' => failed,
-  _ => NotificationStatus._(json),
+  _ => NotificationStatus$Unknown(json),
 }; }
 
-static const NotificationStatus queued = NotificationStatus._('queued');
+static const NotificationStatus queued = NotificationStatus$queued._();
 
-static const NotificationStatus sent = NotificationStatus._('sent');
+static const NotificationStatus sent = NotificationStatus$sent._();
 
-static const NotificationStatus failed = NotificationStatus._('failed');
+static const NotificationStatus failed = NotificationStatus$failed._();
 
 static const List<NotificationStatus> values = [queued, sent, failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is NotificationStatus$Unknown; } 
+@override String toString() => 'NotificationStatus($value)';
+
+ }
+@immutable final class NotificationStatus$queued extends NotificationStatus {const NotificationStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NotificationStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class NotificationStatus$sent extends NotificationStatus {const NotificationStatus$sent._();
+
+@override String get value => 'sent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NotificationStatus$sent;
+
+@override int get hashCode => 'sent'.hashCode;
+
+ }
+@immutable final class NotificationStatus$failed extends NotificationStatus {const NotificationStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NotificationStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class NotificationStatus$Unknown extends NotificationStatus {const NotificationStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is NotificationStatus && other.value == value;
+    other is NotificationStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'NotificationStatus($value)';
 
  }
 @immutable final class SendNotificationResponse {const SendNotificationResponse({this.id, this.status, });

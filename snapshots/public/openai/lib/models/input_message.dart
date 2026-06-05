@@ -3,25 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/input_content.dart';/// The role of the message input. One of `user`, `system`, or `developer`.
 /// 
-@immutable final class InputMessageRole {const InputMessageRole._(this.value);
+sealed class InputMessageRole {const InputMessageRole();
 
 factory InputMessageRole.fromJson(String json) { return switch (json) {
   'user' => user,
   'system' => system,
   'developer' => developer,
-  _ => InputMessageRole._(json),
+  _ => InputMessageRole$Unknown(json),
 }; }
 
-static const InputMessageRole user = InputMessageRole._('user');
+static const InputMessageRole user = InputMessageRole$user._();
 
-static const InputMessageRole system = InputMessageRole._('system');
+static const InputMessageRole system = InputMessageRole$system._();
 
-static const InputMessageRole developer = InputMessageRole._('developer');
+static const InputMessageRole developer = InputMessageRole$developer._();
 
 static const List<InputMessageRole> values = [user, system, developer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -31,13 +30,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InputMessageRole$Unknown; } 
+@override String toString() => 'InputMessageRole($value)';
+
+ }
+@immutable final class InputMessageRole$user extends InputMessageRole {const InputMessageRole$user._();
+
+@override String get value => 'user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputMessageRole$user;
+
+@override int get hashCode => 'user'.hashCode;
+
+ }
+@immutable final class InputMessageRole$system extends InputMessageRole {const InputMessageRole$system._();
+
+@override String get value => 'system';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputMessageRole$system;
+
+@override int get hashCode => 'system'.hashCode;
+
+ }
+@immutable final class InputMessageRole$developer extends InputMessageRole {const InputMessageRole$developer._();
+
+@override String get value => 'developer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputMessageRole$developer;
+
+@override int get hashCode => 'developer'.hashCode;
+
+ }
+@immutable final class InputMessageRole$Unknown extends InputMessageRole {const InputMessageRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InputMessageRole && other.value == value;
+    other is InputMessageRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InputMessageRole($value)';
 
  }
 /// A message input to the model with a role indicating instruction following

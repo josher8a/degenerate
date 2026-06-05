@@ -2,28 +2,27 @@
 // Source: #/components/schemas/RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-@immutable final class RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval {const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval._(this.value);
+sealed class RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval {const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval();
 
 factory RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval.fromJson(String json) { return switch (json) {
   '15m' => $15m,
   '1h' => $1h,
   '1d' => $1d,
   '1w' => $1w,
-  _ => RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval._(json),
+  _ => RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$Unknown(json),
 }; }
 
-static const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval $15m = RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval._('15m');
+static const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval $15m = RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$15m._();
 
-static const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval $1h = RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval._('1h');
+static const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval $1h = RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$1h._();
 
-static const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval $1d = RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval._('1d');
+static const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval $1d = RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$1d._();
 
-static const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval $1w = RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval._('1w');
+static const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval $1w = RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$1w._();
 
 static const List<RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval> values = [$15m, $1h, $1d, $1w];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$Unknown; } 
+@override String toString() => 'RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval($value)';
+
+ }
+@immutable final class RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$15m extends RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval {const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$15m._();
+
+@override String get value => '15m';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$15m;
+
+@override int get hashCode => '15m'.hashCode;
+
+ }
+@immutable final class RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$1h extends RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval {const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$1h._();
+
+@override String get value => '1h';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$1h;
+
+@override int get hashCode => '1h'.hashCode;
+
+ }
+@immutable final class RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$1d extends RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval {const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$1d._();
+
+@override String get value => '1d';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$1d;
+
+@override int get hashCode => '1d'.hashCode;
+
+ }
+@immutable final class RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$1w extends RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval {const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$1w._();
+
+@override String get value => '1w';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$$1w;
+
+@override int get hashCode => '1w'.hashCode;
+
+ }
+@immutable final class RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$Unknown extends RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval {const RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval && other.value == value;
+    other is RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetTcpResetsTimeoutsTimeseriesGroupAggInterval($value)';
 
  }

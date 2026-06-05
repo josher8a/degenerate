@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TlsCertificatesAndHostnamesSslsettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether or not Early Hints is enabled.
-@immutable final class EarlyHints {const EarlyHints._(this.value);
+sealed class EarlyHints {const EarlyHints();
 
 factory EarlyHints.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => EarlyHints._(json),
+  _ => EarlyHints$Unknown(json),
 }; }
 
-static const EarlyHints $on = EarlyHints._('on');
+static const EarlyHints $on = EarlyHints$$on._();
 
-static const EarlyHints off = EarlyHints._('off');
+static const EarlyHints off = EarlyHints$off._();
 
 static const List<EarlyHints> values = [$on, off];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,32 +25,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is EarlyHints && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is EarlyHints$Unknown; } 
 @override String toString() => 'EarlyHints($value)';
 
  }
+@immutable final class EarlyHints$$on extends EarlyHints {const EarlyHints$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EarlyHints$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class EarlyHints$off extends EarlyHints {const EarlyHints$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EarlyHints$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class EarlyHints$Unknown extends EarlyHints {const EarlyHints$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EarlyHints$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Whether or not HTTP2 is enabled.
-@immutable final class Http2 {const Http2._(this.value);
+sealed class Http2 {const Http2();
 
 factory Http2.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => Http2._(json),
+  _ => Http2$Unknown(json),
 }; }
 
-static const Http2 $on = Http2._('on');
+static const Http2 $on = Http2$$on._();
 
-static const Http2 off = Http2._('off');
+static const Http2 off = Http2$off._();
 
 static const List<Http2> values = [$on, off];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,38 +81,60 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Http2 && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Http2$Unknown; } 
 @override String toString() => 'Http2($value)';
 
  }
+@immutable final class Http2$$on extends Http2 {const Http2$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Http2$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class Http2$off extends Http2 {const Http2$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Http2$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class Http2$Unknown extends Http2 {const Http2$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Http2$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The minimum TLS version supported.
-@immutable final class MinTlsVersion {const MinTlsVersion._(this.value);
+sealed class MinTlsVersion {const MinTlsVersion();
 
 factory MinTlsVersion.fromJson(String json) { return switch (json) {
   '1.0' => $10,
   '1.1' => $11,
   '1.2' => $12,
   '1.3' => $13,
-  _ => MinTlsVersion._(json),
+  _ => MinTlsVersion$Unknown(json),
 }; }
 
-static const MinTlsVersion $10 = MinTlsVersion._('1.0');
+static const MinTlsVersion $10 = MinTlsVersion$$10._();
 
-static const MinTlsVersion $11 = MinTlsVersion._('1.1');
+static const MinTlsVersion $11 = MinTlsVersion$$11._();
 
-static const MinTlsVersion $12 = MinTlsVersion._('1.2');
+static const MinTlsVersion $12 = MinTlsVersion$$12._();
 
-static const MinTlsVersion $13 = MinTlsVersion._('1.3');
+static const MinTlsVersion $13 = MinTlsVersion$$13._();
 
 static const List<MinTlsVersion> values = [$10, $11, $12, $13];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -102,32 +145,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MinTlsVersion && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MinTlsVersion$Unknown; } 
 @override String toString() => 'MinTlsVersion($value)';
 
  }
+@immutable final class MinTlsVersion$$10 extends MinTlsVersion {const MinTlsVersion$$10._();
+
+@override String get value => '1.0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MinTlsVersion$$10;
+
+@override int get hashCode => '1.0'.hashCode;
+
+ }
+@immutable final class MinTlsVersion$$11 extends MinTlsVersion {const MinTlsVersion$$11._();
+
+@override String get value => '1.1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MinTlsVersion$$11;
+
+@override int get hashCode => '1.1'.hashCode;
+
+ }
+@immutable final class MinTlsVersion$$12 extends MinTlsVersion {const MinTlsVersion$$12._();
+
+@override String get value => '1.2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MinTlsVersion$$12;
+
+@override int get hashCode => '1.2'.hashCode;
+
+ }
+@immutable final class MinTlsVersion$$13 extends MinTlsVersion {const MinTlsVersion$$13._();
+
+@override String get value => '1.3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MinTlsVersion$$13;
+
+@override int get hashCode => '1.3'.hashCode;
+
+ }
+@immutable final class MinTlsVersion$Unknown extends MinTlsVersion {const MinTlsVersion$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MinTlsVersion$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Whether or not TLS 1.3 is enabled.
-@immutable final class Tls13 {const Tls13._(this.value);
+sealed class Tls13 {const Tls13();
 
 factory Tls13.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => Tls13._(json),
+  _ => Tls13$Unknown(json),
 }; }
 
-static const Tls13 $on = Tls13._('on');
+static const Tls13 $on = Tls13$$on._();
 
-static const Tls13 off = Tls13._('off');
+static const Tls13 off = Tls13$off._();
 
 static const List<Tls13> values = [$on, off];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -136,13 +219,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Tls13$Unknown; } 
+@override String toString() => 'Tls13($value)';
+
+ }
+@immutable final class Tls13$$on extends Tls13 {const Tls13$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Tls13$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class Tls13$off extends Tls13 {const Tls13$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Tls13$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class Tls13$Unknown extends Tls13 {const Tls13$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Tls13 && other.value == value;
+    other is Tls13$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Tls13($value)';
 
  }
 /// SSL specific settings.

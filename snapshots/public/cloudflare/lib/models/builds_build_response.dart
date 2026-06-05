@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BuildsBuildResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_outcome.dart';import 'package:pub_cloudflare/models/builds_build_response/builds_build_response_trigger.dart';import 'package:pub_cloudflare/models/builds_build_response/pull_request.dart';import 'package:pub_cloudflare/models/builds_build_trigger_metadata_response.dart';import 'package:pub_cloudflare/models/builds_build_uuid.dart';import 'package:pub_cloudflare/models/builds_created_on.dart';import 'package:pub_cloudflare/models/builds_modified_on.dart';import 'package:pub_cloudflare/models/builds_stopped_on.dart';@immutable final class BuildsBuildStatus {const BuildsBuildStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/builds_build_outcome.dart';import 'package:pub_cloudflare/models/builds_build_response/builds_build_response_trigger.dart';import 'package:pub_cloudflare/models/builds_build_response/pull_request.dart';import 'package:pub_cloudflare/models/builds_build_trigger_metadata_response.dart';import 'package:pub_cloudflare/models/builds_build_uuid.dart';import 'package:pub_cloudflare/models/builds_created_on.dart';import 'package:pub_cloudflare/models/builds_modified_on.dart';import 'package:pub_cloudflare/models/builds_stopped_on.dart';sealed class BuildsBuildStatus {const BuildsBuildStatus();
 
 factory BuildsBuildStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
   'initializing' => initializing,
   'running' => running,
   'stopped' => stopped,
-  _ => BuildsBuildStatus._(json),
+  _ => BuildsBuildStatus$Unknown(json),
 }; }
 
-static const BuildsBuildStatus queued = BuildsBuildStatus._('queued');
+static const BuildsBuildStatus queued = BuildsBuildStatus$queued._();
 
-static const BuildsBuildStatus initializing = BuildsBuildStatus._('initializing');
+static const BuildsBuildStatus initializing = BuildsBuildStatus$initializing._();
 
-static const BuildsBuildStatus running = BuildsBuildStatus._('running');
+static const BuildsBuildStatus running = BuildsBuildStatus$running._();
 
-static const BuildsBuildStatus stopped = BuildsBuildStatus._('stopped');
+static const BuildsBuildStatus stopped = BuildsBuildStatus$stopped._();
 
 static const List<BuildsBuildStatus> values = [queued, initializing, running, stopped];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BuildsBuildStatus$Unknown; } 
+@override String toString() => 'BuildsBuildStatus($value)';
+
+ }
+@immutable final class BuildsBuildStatus$queued extends BuildsBuildStatus {const BuildsBuildStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BuildsBuildStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class BuildsBuildStatus$initializing extends BuildsBuildStatus {const BuildsBuildStatus$initializing._();
+
+@override String get value => 'initializing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BuildsBuildStatus$initializing;
+
+@override int get hashCode => 'initializing'.hashCode;
+
+ }
+@immutable final class BuildsBuildStatus$running extends BuildsBuildStatus {const BuildsBuildStatus$running._();
+
+@override String get value => 'running';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BuildsBuildStatus$running;
+
+@override int get hashCode => 'running'.hashCode;
+
+ }
+@immutable final class BuildsBuildStatus$stopped extends BuildsBuildStatus {const BuildsBuildStatus$stopped._();
+
+@override String get value => 'stopped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BuildsBuildStatus$stopped;
+
+@override int get hashCode => 'stopped'.hashCode;
+
+ }
+@immutable final class BuildsBuildStatus$Unknown extends BuildsBuildStatus {const BuildsBuildStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BuildsBuildStatus && other.value == value;
+    other is BuildsBuildStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BuildsBuildStatus($value)';
 
  }
 @immutable final class BuildsBuildResponse {const BuildsBuildResponse({this.buildOutcome, this.buildTriggerMetadata, this.buildUuid, this.createdOn, this.initializingOn, this.modifiedOn, this.pullRequest, this.runningOn, this.status, this.stoppedOn, this.trigger, });

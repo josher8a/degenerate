@@ -2,22 +2,21 @@
 // Source: #/components/schemas/SubscriptionsResourcePaymentSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoices_payment_settings/invoices_payment_settings_payment_method_types.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_payment_method_options.dart';/// Configure whether Stripe updates `subscription.default_payment_method` when payment succeeds. Defaults to `off`.
-@immutable final class SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod {const SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod._(this.value);
+sealed class SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod {const SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod();
 
 factory SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod.fromJson(String json) { return switch (json) {
   'off' => off,
   'on_subscription' => onSubscription,
-  _ => SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod._(json),
+  _ => SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod$Unknown(json),
 }; }
 
-static const SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod off = SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod._('off');
+static const SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod off = SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod$off._();
 
-static const SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod onSubscription = SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod._('on_subscription');
+static const SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod onSubscription = SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod$onSubscription._();
 
 static const List<SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod> values = [off, onSubscription];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod$Unknown; } 
+@override String toString() => 'SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod($value)';
+
+ }
+@immutable final class SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod$off extends SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod {const SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod$onSubscription extends SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod {const SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod$onSubscription._();
+
+@override String get value => 'on_subscription';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod$onSubscription;
+
+@override int get hashCode => 'on_subscription'.hashCode;
+
+ }
+@immutable final class SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod$Unknown extends SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod {const SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod && other.value == value;
+    other is SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SubscriptionsResourcePaymentSettingsSaveDefaultPaymentMethod($value)';
 
  }
 /// 

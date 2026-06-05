@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > Assistant > Content > Variant2)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AssistantContentVariant2Type {const AssistantContentVariant2Type._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AssistantContentVariant2Type {const AssistantContentVariant2Type();
 
 factory AssistantContentVariant2Type.fromJson(String json) { return switch (json) {
   'text' => text,
   'refusal' => refusal,
-  _ => AssistantContentVariant2Type._(json),
+  _ => AssistantContentVariant2Type$Unknown(json),
 }; }
 
-static const AssistantContentVariant2Type text = AssistantContentVariant2Type._('text');
+static const AssistantContentVariant2Type text = AssistantContentVariant2Type$text._();
 
-static const AssistantContentVariant2Type refusal = AssistantContentVariant2Type._('refusal');
+static const AssistantContentVariant2Type refusal = AssistantContentVariant2Type$refusal._();
 
 static const List<AssistantContentVariant2Type> values = [text, refusal];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AssistantContentVariant2Type$Unknown; } 
+@override String toString() => 'AssistantContentVariant2Type($value)';
+
+ }
+@immutable final class AssistantContentVariant2Type$text extends AssistantContentVariant2Type {const AssistantContentVariant2Type$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AssistantContentVariant2Type$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class AssistantContentVariant2Type$refusal extends AssistantContentVariant2Type {const AssistantContentVariant2Type$refusal._();
+
+@override String get value => 'refusal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AssistantContentVariant2Type$refusal;
+
+@override int get hashCode => 'refusal'.hashCode;
+
+ }
+@immutable final class AssistantContentVariant2Type$Unknown extends AssistantContentVariant2Type {const AssistantContentVariant2Type$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AssistantContentVariant2Type && other.value == value;
+    other is AssistantContentVariant2Type$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AssistantContentVariant2Type($value)';
 
  }
 @immutable final class AssistantContentVariant2 {const AssistantContentVariant2({required this.type, this.refusal, this.text, });

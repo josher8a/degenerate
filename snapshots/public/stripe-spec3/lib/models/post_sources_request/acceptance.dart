@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostSourcesRequest (inline: Mandate > Acceptance)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_acceptance/customer_acceptance_type.dart';import 'package:pub_stripe_spec3/models/post_sources_request/acceptance_offline.dart';import 'package:pub_stripe_spec3/models/post_sources_request/acceptance_online.dart';@immutable final class AcceptanceStatus {const AcceptanceStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_acceptance/customer_acceptance_type.dart';import 'package:pub_stripe_spec3/models/post_sources_request/acceptance_offline.dart';import 'package:pub_stripe_spec3/models/post_sources_request/acceptance_online.dart';sealed class AcceptanceStatus {const AcceptanceStatus();
 
 factory AcceptanceStatus.fromJson(String json) { return switch (json) {
   'accepted' => accepted,
   'pending' => pending,
   'refused' => refused,
   'revoked' => revoked,
-  _ => AcceptanceStatus._(json),
+  _ => AcceptanceStatus$Unknown(json),
 }; }
 
-static const AcceptanceStatus accepted = AcceptanceStatus._('accepted');
+static const AcceptanceStatus accepted = AcceptanceStatus$accepted._();
 
-static const AcceptanceStatus pending = AcceptanceStatus._('pending');
+static const AcceptanceStatus pending = AcceptanceStatus$pending._();
 
-static const AcceptanceStatus refused = AcceptanceStatus._('refused');
+static const AcceptanceStatus refused = AcceptanceStatus$refused._();
 
-static const AcceptanceStatus revoked = AcceptanceStatus._('revoked');
+static const AcceptanceStatus revoked = AcceptanceStatus$revoked._();
 
 static const List<AcceptanceStatus> values = [accepted, pending, refused, revoked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AcceptanceStatus$Unknown; } 
+@override String toString() => 'AcceptanceStatus($value)';
+
+ }
+@immutable final class AcceptanceStatus$accepted extends AcceptanceStatus {const AcceptanceStatus$accepted._();
+
+@override String get value => 'accepted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AcceptanceStatus$accepted;
+
+@override int get hashCode => 'accepted'.hashCode;
+
+ }
+@immutable final class AcceptanceStatus$pending extends AcceptanceStatus {const AcceptanceStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AcceptanceStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class AcceptanceStatus$refused extends AcceptanceStatus {const AcceptanceStatus$refused._();
+
+@override String get value => 'refused';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AcceptanceStatus$refused;
+
+@override int get hashCode => 'refused'.hashCode;
+
+ }
+@immutable final class AcceptanceStatus$revoked extends AcceptanceStatus {const AcceptanceStatus$revoked._();
+
+@override String get value => 'revoked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AcceptanceStatus$revoked;
+
+@override int get hashCode => 'revoked'.hashCode;
+
+ }
+@immutable final class AcceptanceStatus$Unknown extends AcceptanceStatus {const AcceptanceStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AcceptanceStatus && other.value == value;
+    other is AcceptanceStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AcceptanceStatus($value)';
 
  }
 @immutable final class Acceptance {const Acceptance({required this.status, this.date, this.ip, this.offline, this.online, this.type, this.userAgent, });

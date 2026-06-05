@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/IntelMiscategorization
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IndicatorType {const IndicatorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class IndicatorType {const IndicatorType();
 
 factory IndicatorType.fromJson(String json) { return switch (json) {
   'domain' => domain,
   'ipv4' => ipv4,
   'ipv6' => ipv6,
   'url' => url,
-  _ => IndicatorType._(json),
+  _ => IndicatorType$Unknown(json),
 }; }
 
-static const IndicatorType domain = IndicatorType._('domain');
+static const IndicatorType domain = IndicatorType$domain._();
 
-static const IndicatorType ipv4 = IndicatorType._('ipv4');
+static const IndicatorType ipv4 = IndicatorType$ipv4._();
 
-static const IndicatorType ipv6 = IndicatorType._('ipv6');
+static const IndicatorType ipv6 = IndicatorType$ipv6._();
 
-static const IndicatorType url = IndicatorType._('url');
+static const IndicatorType url = IndicatorType$url._();
 
 static const List<IndicatorType> values = [domain, ipv4, ipv6, url];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IndicatorType$Unknown; } 
+@override String toString() => 'IndicatorType($value)';
+
+ }
+@immutable final class IndicatorType$domain extends IndicatorType {const IndicatorType$domain._();
+
+@override String get value => 'domain';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IndicatorType$domain;
+
+@override int get hashCode => 'domain'.hashCode;
+
+ }
+@immutable final class IndicatorType$ipv4 extends IndicatorType {const IndicatorType$ipv4._();
+
+@override String get value => 'ipv4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IndicatorType$ipv4;
+
+@override int get hashCode => 'ipv4'.hashCode;
+
+ }
+@immutable final class IndicatorType$ipv6 extends IndicatorType {const IndicatorType$ipv6._();
+
+@override String get value => 'ipv6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IndicatorType$ipv6;
+
+@override int get hashCode => 'ipv6'.hashCode;
+
+ }
+@immutable final class IndicatorType$url extends IndicatorType {const IndicatorType$url._();
+
+@override String get value => 'url';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IndicatorType$url;
+
+@override int get hashCode => 'url'.hashCode;
+
+ }
+@immutable final class IndicatorType$Unknown extends IndicatorType {const IndicatorType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IndicatorType && other.value == value;
+    other is IndicatorType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IndicatorType($value)';
 
  }
 @immutable final class IntelMiscategorization {const IntelMiscategorization({this.contentAdds, this.contentRemoves, this.indicatorType, this.ip, this.securityAdds, this.securityRemoves, this.url, });

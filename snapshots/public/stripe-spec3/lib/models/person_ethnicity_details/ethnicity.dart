@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PersonEthnicityDetails (inline: Ethnicity)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Ethnicity {const Ethnicity._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Ethnicity {const Ethnicity();
 
 factory Ethnicity.fromJson(String json) { return switch (json) {
   'cuban' => cuban,
@@ -11,27 +11,26 @@ factory Ethnicity.fromJson(String json) { return switch (json) {
   'other_hispanic_or_latino' => otherHispanicOrLatino,
   'prefer_not_to_answer' => preferNotToAnswer,
   'puerto_rican' => puertoRican,
-  _ => Ethnicity._(json),
+  _ => Ethnicity$Unknown(json),
 }; }
 
-static const Ethnicity cuban = Ethnicity._('cuban');
+static const Ethnicity cuban = Ethnicity$cuban._();
 
-static const Ethnicity hispanicOrLatino = Ethnicity._('hispanic_or_latino');
+static const Ethnicity hispanicOrLatino = Ethnicity$hispanicOrLatino._();
 
-static const Ethnicity mexican = Ethnicity._('mexican');
+static const Ethnicity mexican = Ethnicity$mexican._();
 
-static const Ethnicity notHispanicOrLatino = Ethnicity._('not_hispanic_or_latino');
+static const Ethnicity notHispanicOrLatino = Ethnicity$notHispanicOrLatino._();
 
-static const Ethnicity otherHispanicOrLatino = Ethnicity._('other_hispanic_or_latino');
+static const Ethnicity otherHispanicOrLatino = Ethnicity$otherHispanicOrLatino._();
 
-static const Ethnicity preferNotToAnswer = Ethnicity._('prefer_not_to_answer');
+static const Ethnicity preferNotToAnswer = Ethnicity$preferNotToAnswer._();
 
-static const Ethnicity puertoRican = Ethnicity._('puerto_rican');
+static const Ethnicity puertoRican = Ethnicity$puertoRican._();
 
 static const List<Ethnicity> values = [cuban, hispanicOrLatino, mexican, notHispanicOrLatino, otherHispanicOrLatino, preferNotToAnswer, puertoRican];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -45,12 +44,80 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Ethnicity$Unknown; } 
+@override String toString() => 'Ethnicity($value)';
+
+ }
+@immutable final class Ethnicity$cuban extends Ethnicity {const Ethnicity$cuban._();
+
+@override String get value => 'cuban';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ethnicity$cuban;
+
+@override int get hashCode => 'cuban'.hashCode;
+
+ }
+@immutable final class Ethnicity$hispanicOrLatino extends Ethnicity {const Ethnicity$hispanicOrLatino._();
+
+@override String get value => 'hispanic_or_latino';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ethnicity$hispanicOrLatino;
+
+@override int get hashCode => 'hispanic_or_latino'.hashCode;
+
+ }
+@immutable final class Ethnicity$mexican extends Ethnicity {const Ethnicity$mexican._();
+
+@override String get value => 'mexican';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ethnicity$mexican;
+
+@override int get hashCode => 'mexican'.hashCode;
+
+ }
+@immutable final class Ethnicity$notHispanicOrLatino extends Ethnicity {const Ethnicity$notHispanicOrLatino._();
+
+@override String get value => 'not_hispanic_or_latino';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ethnicity$notHispanicOrLatino;
+
+@override int get hashCode => 'not_hispanic_or_latino'.hashCode;
+
+ }
+@immutable final class Ethnicity$otherHispanicOrLatino extends Ethnicity {const Ethnicity$otherHispanicOrLatino._();
+
+@override String get value => 'other_hispanic_or_latino';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ethnicity$otherHispanicOrLatino;
+
+@override int get hashCode => 'other_hispanic_or_latino'.hashCode;
+
+ }
+@immutable final class Ethnicity$preferNotToAnswer extends Ethnicity {const Ethnicity$preferNotToAnswer._();
+
+@override String get value => 'prefer_not_to_answer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ethnicity$preferNotToAnswer;
+
+@override int get hashCode => 'prefer_not_to_answer'.hashCode;
+
+ }
+@immutable final class Ethnicity$puertoRican extends Ethnicity {const Ethnicity$puertoRican._();
+
+@override String get value => 'puerto_rican';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Ethnicity$puertoRican;
+
+@override int get hashCode => 'puerto_rican'.hashCode;
+
+ }
+@immutable final class Ethnicity$Unknown extends Ethnicity {const Ethnicity$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Ethnicity && other.value == value;
+    other is Ethnicity$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Ethnicity($value)';
 
  }

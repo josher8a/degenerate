@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpSummaryByHttpVersionBotClass
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByHttpVersionBotClass {const RadarGetHttpSummaryByHttpVersionBotClass._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpSummaryByHttpVersionBotClass {const RadarGetHttpSummaryByHttpVersionBotClass();
 
 factory RadarGetHttpSummaryByHttpVersionBotClass.fromJson(String json) { return switch (json) {
   'LIKELY_AUTOMATED' => likelyAutomated,
   'LIKELY_HUMAN' => likelyHuman,
-  _ => RadarGetHttpSummaryByHttpVersionBotClass._(json),
+  _ => RadarGetHttpSummaryByHttpVersionBotClass$Unknown(json),
 }; }
 
-static const RadarGetHttpSummaryByHttpVersionBotClass likelyAutomated = RadarGetHttpSummaryByHttpVersionBotClass._('LIKELY_AUTOMATED');
+static const RadarGetHttpSummaryByHttpVersionBotClass likelyAutomated = RadarGetHttpSummaryByHttpVersionBotClass$likelyAutomated._();
 
-static const RadarGetHttpSummaryByHttpVersionBotClass likelyHuman = RadarGetHttpSummaryByHttpVersionBotClass._('LIKELY_HUMAN');
+static const RadarGetHttpSummaryByHttpVersionBotClass likelyHuman = RadarGetHttpSummaryByHttpVersionBotClass$likelyHuman._();
 
 static const List<RadarGetHttpSummaryByHttpVersionBotClass> values = [likelyAutomated, likelyHuman];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpSummaryByHttpVersionBotClass$Unknown; } 
+@override String toString() => 'RadarGetHttpSummaryByHttpVersionBotClass($value)';
+
+ }
+@immutable final class RadarGetHttpSummaryByHttpVersionBotClass$likelyAutomated extends RadarGetHttpSummaryByHttpVersionBotClass {const RadarGetHttpSummaryByHttpVersionBotClass$likelyAutomated._();
+
+@override String get value => 'LIKELY_AUTOMATED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByHttpVersionBotClass$likelyAutomated;
+
+@override int get hashCode => 'LIKELY_AUTOMATED'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByHttpVersionBotClass$likelyHuman extends RadarGetHttpSummaryByHttpVersionBotClass {const RadarGetHttpSummaryByHttpVersionBotClass$likelyHuman._();
+
+@override String get value => 'LIKELY_HUMAN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByHttpVersionBotClass$likelyHuman;
+
+@override int get hashCode => 'LIKELY_HUMAN'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByHttpVersionBotClass$Unknown extends RadarGetHttpSummaryByHttpVersionBotClass {const RadarGetHttpSummaryByHttpVersionBotClass$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpSummaryByHttpVersionBotClass && other.value == value;
+    other is RadarGetHttpSummaryByHttpVersionBotClass$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpSummaryByHttpVersionBotClass($value)';
 
  }

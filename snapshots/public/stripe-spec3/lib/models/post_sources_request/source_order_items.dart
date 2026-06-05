@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostSourcesRequest (inline: SourceOrder > Items)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ItemsType {const ItemsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ItemsType {const ItemsType();
 
 factory ItemsType.fromJson(String json) { return switch (json) {
   'discount' => discount,
   'shipping' => shipping,
   'sku' => sku,
   'tax' => tax,
-  _ => ItemsType._(json),
+  _ => ItemsType$Unknown(json),
 }; }
 
-static const ItemsType discount = ItemsType._('discount');
+static const ItemsType discount = ItemsType$discount._();
 
-static const ItemsType shipping = ItemsType._('shipping');
+static const ItemsType shipping = ItemsType$shipping._();
 
-static const ItemsType sku = ItemsType._('sku');
+static const ItemsType sku = ItemsType$sku._();
 
-static const ItemsType tax = ItemsType._('tax');
+static const ItemsType tax = ItemsType$tax._();
 
 static const List<ItemsType> values = [discount, shipping, sku, tax];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ItemsType$Unknown; } 
+@override String toString() => 'ItemsType($value)';
+
+ }
+@immutable final class ItemsType$discount extends ItemsType {const ItemsType$discount._();
+
+@override String get value => 'discount';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemsType$discount;
+
+@override int get hashCode => 'discount'.hashCode;
+
+ }
+@immutable final class ItemsType$shipping extends ItemsType {const ItemsType$shipping._();
+
+@override String get value => 'shipping';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemsType$shipping;
+
+@override int get hashCode => 'shipping'.hashCode;
+
+ }
+@immutable final class ItemsType$sku extends ItemsType {const ItemsType$sku._();
+
+@override String get value => 'sku';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemsType$sku;
+
+@override int get hashCode => 'sku'.hashCode;
+
+ }
+@immutable final class ItemsType$tax extends ItemsType {const ItemsType$tax._();
+
+@override String get value => 'tax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemsType$tax;
+
+@override int get hashCode => 'tax'.hashCode;
+
+ }
+@immutable final class ItemsType$Unknown extends ItemsType {const ItemsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ItemsType && other.value == value;
+    other is ItemsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ItemsType($value)';
 
  }
 @immutable final class SourceOrderItems {const SourceOrderItems({this.amount, this.currency, this.description, this.parent, this.quantity, this.type, });

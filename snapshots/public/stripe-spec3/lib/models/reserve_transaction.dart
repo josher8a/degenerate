@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ReserveTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ReserveTransactionObject {const ReserveTransactionObject._(this.value);
+sealed class ReserveTransactionObject {const ReserveTransactionObject();
 
 factory ReserveTransactionObject.fromJson(String json) { return switch (json) {
   'reserve_transaction' => reserveTransaction,
-  _ => ReserveTransactionObject._(json),
+  _ => ReserveTransactionObject$Unknown(json),
 }; }
 
-static const ReserveTransactionObject reserveTransaction = ReserveTransactionObject._('reserve_transaction');
+static const ReserveTransactionObject reserveTransaction = ReserveTransactionObject$reserveTransaction._();
 
 static const List<ReserveTransactionObject> values = [reserveTransaction];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ReserveTransactionObject$Unknown; } 
+@override String toString() => 'ReserveTransactionObject($value)';
+
+ }
+@immutable final class ReserveTransactionObject$reserveTransaction extends ReserveTransactionObject {const ReserveTransactionObject$reserveTransaction._();
+
+@override String get value => 'reserve_transaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReserveTransactionObject$reserveTransaction;
+
+@override int get hashCode => 'reserve_transaction'.hashCode;
+
+ }
+@immutable final class ReserveTransactionObject$Unknown extends ReserveTransactionObject {const ReserveTransactionObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ReserveTransactionObject && other.value == value;
+    other is ReserveTransactionObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ReserveTransactionObject($value)';
 
  }
 /// 

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ZonesGetMatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to match all search requirements or at least one (any).
-@immutable final class ZonesGetMatch {const ZonesGetMatch._(this.value);
+sealed class ZonesGetMatch {const ZonesGetMatch();
 
 factory ZonesGetMatch.fromJson(String json) { return switch (json) {
   'any' => any,
   'all' => all,
-  _ => ZonesGetMatch._(json),
+  _ => ZonesGetMatch$Unknown(json),
 }; }
 
-static const ZonesGetMatch any = ZonesGetMatch._('any');
+static const ZonesGetMatch any = ZonesGetMatch$any._();
 
-static const ZonesGetMatch all = ZonesGetMatch._('all');
+static const ZonesGetMatch all = ZonesGetMatch$all._();
 
 static const List<ZonesGetMatch> values = [any, all];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesGetMatch$Unknown; } 
+@override String toString() => 'ZonesGetMatch($value)';
+
+ }
+@immutable final class ZonesGetMatch$any extends ZonesGetMatch {const ZonesGetMatch$any._();
+
+@override String get value => 'any';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesGetMatch$any;
+
+@override int get hashCode => 'any'.hashCode;
+
+ }
+@immutable final class ZonesGetMatch$all extends ZonesGetMatch {const ZonesGetMatch$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesGetMatch$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class ZonesGetMatch$Unknown extends ZonesGetMatch {const ZonesGetMatch$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesGetMatch && other.value == value;
+    other is ZonesGetMatch$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesGetMatch($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/SourceMandateNotification
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/source.dart';import 'package:pub_stripe_spec3/models/source_mandate_notification_acss_debit_data.dart';import 'package:pub_stripe_spec3/models/source_mandate_notification_bacs_debit_data.dart';import 'package:pub_stripe_spec3/models/source_mandate_notification_sepa_debit_data.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class SourceMandateNotificationObject {const SourceMandateNotificationObject._(this.value);
+sealed class SourceMandateNotificationObject {const SourceMandateNotificationObject();
 
 factory SourceMandateNotificationObject.fromJson(String json) { return switch (json) {
   'source_mandate_notification' => sourceMandateNotification,
-  _ => SourceMandateNotificationObject._(json),
+  _ => SourceMandateNotificationObject$Unknown(json),
 }; }
 
-static const SourceMandateNotificationObject sourceMandateNotification = SourceMandateNotificationObject._('source_mandate_notification');
+static const SourceMandateNotificationObject sourceMandateNotification = SourceMandateNotificationObject$sourceMandateNotification._();
 
 static const List<SourceMandateNotificationObject> values = [sourceMandateNotification];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SourceMandateNotificationObject$Unknown; } 
+@override String toString() => 'SourceMandateNotificationObject($value)';
+
+ }
+@immutable final class SourceMandateNotificationObject$sourceMandateNotification extends SourceMandateNotificationObject {const SourceMandateNotificationObject$sourceMandateNotification._();
+
+@override String get value => 'source_mandate_notification';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceMandateNotificationObject$sourceMandateNotification;
+
+@override int get hashCode => 'source_mandate_notification'.hashCode;
+
+ }
+@immutable final class SourceMandateNotificationObject$Unknown extends SourceMandateNotificationObject {const SourceMandateNotificationObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SourceMandateNotificationObject && other.value == value;
+    other is SourceMandateNotificationObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SourceMandateNotificationObject($value)';
 
  }
 /// Source mandate notifications should be created when a notification related to

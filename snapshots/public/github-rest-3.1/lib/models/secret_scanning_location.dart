@@ -2,7 +2,7 @@
 // Source: #/components/schemas/SecretScanningLocation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/secret_scanning_location/details.dart';/// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.
-@immutable final class SecretScanningLocationType {const SecretScanningLocationType._(this.value);
+sealed class SecretScanningLocationType {const SecretScanningLocationType();
 
 factory SecretScanningLocationType.fromJson(String json) { return switch (json) {
   'commit' => commit,
@@ -18,39 +18,38 @@ factory SecretScanningLocationType.fromJson(String json) { return switch (json) 
   'pull_request_comment' => pullRequestComment,
   'pull_request_review' => pullRequestReview,
   'pull_request_review_comment' => pullRequestReviewComment,
-  _ => SecretScanningLocationType._(json),
+  _ => SecretScanningLocationType$Unknown(json),
 }; }
 
-static const SecretScanningLocationType commit = SecretScanningLocationType._('commit');
+static const SecretScanningLocationType commit = SecretScanningLocationType$commit._();
 
-static const SecretScanningLocationType wikiCommit = SecretScanningLocationType._('wiki_commit');
+static const SecretScanningLocationType wikiCommit = SecretScanningLocationType$wikiCommit._();
 
-static const SecretScanningLocationType issueTitle = SecretScanningLocationType._('issue_title');
+static const SecretScanningLocationType issueTitle = SecretScanningLocationType$issueTitle._();
 
-static const SecretScanningLocationType issueBody = SecretScanningLocationType._('issue_body');
+static const SecretScanningLocationType issueBody = SecretScanningLocationType$issueBody._();
 
-static const SecretScanningLocationType issueComment = SecretScanningLocationType._('issue_comment');
+static const SecretScanningLocationType issueComment = SecretScanningLocationType$issueComment._();
 
-static const SecretScanningLocationType discussionTitle = SecretScanningLocationType._('discussion_title');
+static const SecretScanningLocationType discussionTitle = SecretScanningLocationType$discussionTitle._();
 
-static const SecretScanningLocationType discussionBody = SecretScanningLocationType._('discussion_body');
+static const SecretScanningLocationType discussionBody = SecretScanningLocationType$discussionBody._();
 
-static const SecretScanningLocationType discussionComment = SecretScanningLocationType._('discussion_comment');
+static const SecretScanningLocationType discussionComment = SecretScanningLocationType$discussionComment._();
 
-static const SecretScanningLocationType pullRequestTitle = SecretScanningLocationType._('pull_request_title');
+static const SecretScanningLocationType pullRequestTitle = SecretScanningLocationType$pullRequestTitle._();
 
-static const SecretScanningLocationType pullRequestBody = SecretScanningLocationType._('pull_request_body');
+static const SecretScanningLocationType pullRequestBody = SecretScanningLocationType$pullRequestBody._();
 
-static const SecretScanningLocationType pullRequestComment = SecretScanningLocationType._('pull_request_comment');
+static const SecretScanningLocationType pullRequestComment = SecretScanningLocationType$pullRequestComment._();
 
-static const SecretScanningLocationType pullRequestReview = SecretScanningLocationType._('pull_request_review');
+static const SecretScanningLocationType pullRequestReview = SecretScanningLocationType$pullRequestReview._();
 
-static const SecretScanningLocationType pullRequestReviewComment = SecretScanningLocationType._('pull_request_review_comment');
+static const SecretScanningLocationType pullRequestReviewComment = SecretScanningLocationType$pullRequestReviewComment._();
 
 static const List<SecretScanningLocationType> values = [commit, wikiCommit, issueTitle, issueBody, issueComment, discussionTitle, discussionBody, discussionComment, pullRequestTitle, pullRequestBody, pullRequestComment, pullRequestReview, pullRequestReviewComment];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -70,13 +69,135 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SecretScanningLocationType$Unknown; } 
+@override String toString() => 'SecretScanningLocationType($value)';
+
+ }
+@immutable final class SecretScanningLocationType$commit extends SecretScanningLocationType {const SecretScanningLocationType$commit._();
+
+@override String get value => 'commit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningLocationType$commit;
+
+@override int get hashCode => 'commit'.hashCode;
+
+ }
+@immutable final class SecretScanningLocationType$wikiCommit extends SecretScanningLocationType {const SecretScanningLocationType$wikiCommit._();
+
+@override String get value => 'wiki_commit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningLocationType$wikiCommit;
+
+@override int get hashCode => 'wiki_commit'.hashCode;
+
+ }
+@immutable final class SecretScanningLocationType$issueTitle extends SecretScanningLocationType {const SecretScanningLocationType$issueTitle._();
+
+@override String get value => 'issue_title';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningLocationType$issueTitle;
+
+@override int get hashCode => 'issue_title'.hashCode;
+
+ }
+@immutable final class SecretScanningLocationType$issueBody extends SecretScanningLocationType {const SecretScanningLocationType$issueBody._();
+
+@override String get value => 'issue_body';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningLocationType$issueBody;
+
+@override int get hashCode => 'issue_body'.hashCode;
+
+ }
+@immutable final class SecretScanningLocationType$issueComment extends SecretScanningLocationType {const SecretScanningLocationType$issueComment._();
+
+@override String get value => 'issue_comment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningLocationType$issueComment;
+
+@override int get hashCode => 'issue_comment'.hashCode;
+
+ }
+@immutable final class SecretScanningLocationType$discussionTitle extends SecretScanningLocationType {const SecretScanningLocationType$discussionTitle._();
+
+@override String get value => 'discussion_title';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningLocationType$discussionTitle;
+
+@override int get hashCode => 'discussion_title'.hashCode;
+
+ }
+@immutable final class SecretScanningLocationType$discussionBody extends SecretScanningLocationType {const SecretScanningLocationType$discussionBody._();
+
+@override String get value => 'discussion_body';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningLocationType$discussionBody;
+
+@override int get hashCode => 'discussion_body'.hashCode;
+
+ }
+@immutable final class SecretScanningLocationType$discussionComment extends SecretScanningLocationType {const SecretScanningLocationType$discussionComment._();
+
+@override String get value => 'discussion_comment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningLocationType$discussionComment;
+
+@override int get hashCode => 'discussion_comment'.hashCode;
+
+ }
+@immutable final class SecretScanningLocationType$pullRequestTitle extends SecretScanningLocationType {const SecretScanningLocationType$pullRequestTitle._();
+
+@override String get value => 'pull_request_title';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningLocationType$pullRequestTitle;
+
+@override int get hashCode => 'pull_request_title'.hashCode;
+
+ }
+@immutable final class SecretScanningLocationType$pullRequestBody extends SecretScanningLocationType {const SecretScanningLocationType$pullRequestBody._();
+
+@override String get value => 'pull_request_body';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningLocationType$pullRequestBody;
+
+@override int get hashCode => 'pull_request_body'.hashCode;
+
+ }
+@immutable final class SecretScanningLocationType$pullRequestComment extends SecretScanningLocationType {const SecretScanningLocationType$pullRequestComment._();
+
+@override String get value => 'pull_request_comment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningLocationType$pullRequestComment;
+
+@override int get hashCode => 'pull_request_comment'.hashCode;
+
+ }
+@immutable final class SecretScanningLocationType$pullRequestReview extends SecretScanningLocationType {const SecretScanningLocationType$pullRequestReview._();
+
+@override String get value => 'pull_request_review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningLocationType$pullRequestReview;
+
+@override int get hashCode => 'pull_request_review'.hashCode;
+
+ }
+@immutable final class SecretScanningLocationType$pullRequestReviewComment extends SecretScanningLocationType {const SecretScanningLocationType$pullRequestReviewComment._();
+
+@override String get value => 'pull_request_review_comment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningLocationType$pullRequestReviewComment;
+
+@override int get hashCode => 'pull_request_review_comment'.hashCode;
+
+ }
+@immutable final class SecretScanningLocationType$Unknown extends SecretScanningLocationType {const SecretScanningLocationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SecretScanningLocationType && other.value == value;
+    other is SecretScanningLocationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SecretScanningLocationType($value)';
 
  }
 @immutable final class SecretScanningLocation {const SecretScanningLocation({this.type, this.details, });

@@ -37,7 +37,7 @@ bool toJson() => value;
 
 }
 /// Show the state of your account, and the type or configuration error.
-@immutable final class EmailEmailSettingStatus {const EmailEmailSettingStatus._(this.value);
+sealed class EmailEmailSettingStatus {const EmailEmailSettingStatus();
 
 factory EmailEmailSettingStatus.fromJson(String json) { return switch (json) {
   'ready' => ready,
@@ -45,23 +45,22 @@ factory EmailEmailSettingStatus.fromJson(String json) { return switch (json) {
   'misconfigured' => misconfigured,
   'misconfigured/locked' => misconfiguredLocked,
   'unlocked' => unlocked,
-  _ => EmailEmailSettingStatus._(json),
+  _ => EmailEmailSettingStatus$Unknown(json),
 }; }
 
-static const EmailEmailSettingStatus ready = EmailEmailSettingStatus._('ready');
+static const EmailEmailSettingStatus ready = EmailEmailSettingStatus$ready._();
 
-static const EmailEmailSettingStatus unconfigured = EmailEmailSettingStatus._('unconfigured');
+static const EmailEmailSettingStatus unconfigured = EmailEmailSettingStatus$unconfigured._();
 
-static const EmailEmailSettingStatus misconfigured = EmailEmailSettingStatus._('misconfigured');
+static const EmailEmailSettingStatus misconfigured = EmailEmailSettingStatus$misconfigured._();
 
-static const EmailEmailSettingStatus misconfiguredLocked = EmailEmailSettingStatus._('misconfigured/locked');
+static const EmailEmailSettingStatus misconfiguredLocked = EmailEmailSettingStatus$misconfiguredLocked._();
 
-static const EmailEmailSettingStatus unlocked = EmailEmailSettingStatus._('unlocked');
+static const EmailEmailSettingStatus unlocked = EmailEmailSettingStatus$unlocked._();
 
 static const List<EmailEmailSettingStatus> values = [ready, unconfigured, misconfigured, misconfiguredLocked, unlocked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -73,13 +72,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EmailEmailSettingStatus$Unknown; } 
+@override String toString() => 'EmailEmailSettingStatus($value)';
+
+ }
+@immutable final class EmailEmailSettingStatus$ready extends EmailEmailSettingStatus {const EmailEmailSettingStatus$ready._();
+
+@override String get value => 'ready';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailEmailSettingStatus$ready;
+
+@override int get hashCode => 'ready'.hashCode;
+
+ }
+@immutable final class EmailEmailSettingStatus$unconfigured extends EmailEmailSettingStatus {const EmailEmailSettingStatus$unconfigured._();
+
+@override String get value => 'unconfigured';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailEmailSettingStatus$unconfigured;
+
+@override int get hashCode => 'unconfigured'.hashCode;
+
+ }
+@immutable final class EmailEmailSettingStatus$misconfigured extends EmailEmailSettingStatus {const EmailEmailSettingStatus$misconfigured._();
+
+@override String get value => 'misconfigured';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailEmailSettingStatus$misconfigured;
+
+@override int get hashCode => 'misconfigured'.hashCode;
+
+ }
+@immutable final class EmailEmailSettingStatus$misconfiguredLocked extends EmailEmailSettingStatus {const EmailEmailSettingStatus$misconfiguredLocked._();
+
+@override String get value => 'misconfigured/locked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailEmailSettingStatus$misconfiguredLocked;
+
+@override int get hashCode => 'misconfigured/locked'.hashCode;
+
+ }
+@immutable final class EmailEmailSettingStatus$unlocked extends EmailEmailSettingStatus {const EmailEmailSettingStatus$unlocked._();
+
+@override String get value => 'unlocked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailEmailSettingStatus$unlocked;
+
+@override int get hashCode => 'unlocked'.hashCode;
+
+ }
+@immutable final class EmailEmailSettingStatus$Unknown extends EmailEmailSettingStatus {const EmailEmailSettingStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EmailEmailSettingStatus && other.value == value;
+    other is EmailEmailSettingStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EmailEmailSettingStatus($value)';
 
  }
 /// Email Routing settings tag. (Deprecated, replaced by Email Routing settings identifier)

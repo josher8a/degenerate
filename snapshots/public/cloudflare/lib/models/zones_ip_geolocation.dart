@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_ip_geolocation_value.dart';/// Cloudflare adds a CF-IPCountry HTTP header containing the country code that corresponds to the visitor.
 /// 
-@immutable final class ZonesIpGeolocationId {const ZonesIpGeolocationId._(this.value);
+sealed class ZonesIpGeolocationId {const ZonesIpGeolocationId();
 
 factory ZonesIpGeolocationId.fromJson(String json) { return switch (json) {
   'ip_geolocation' => ipGeolocation,
-  _ => ZonesIpGeolocationId._(json),
+  _ => ZonesIpGeolocationId$Unknown(json),
 }; }
 
-static const ZonesIpGeolocationId ipGeolocation = ZonesIpGeolocationId._('ip_geolocation');
+static const ZonesIpGeolocationId ipGeolocation = ZonesIpGeolocationId$ipGeolocation._();
 
 static const List<ZonesIpGeolocationId> values = [ipGeolocation];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesIpGeolocationId$Unknown; } 
+@override String toString() => 'ZonesIpGeolocationId($value)';
+
+ }
+@immutable final class ZonesIpGeolocationId$ipGeolocation extends ZonesIpGeolocationId {const ZonesIpGeolocationId$ipGeolocation._();
+
+@override String get value => 'ip_geolocation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesIpGeolocationId$ipGeolocation;
+
+@override int get hashCode => 'ip_geolocation'.hashCode;
+
+ }
+@immutable final class ZonesIpGeolocationId$Unknown extends ZonesIpGeolocationId {const ZonesIpGeolocationId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesIpGeolocationId && other.value == value;
+    other is ZonesIpGeolocationId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesIpGeolocationId($value)';
 
  }
 @immutable final class ZonesIpGeolocation {const ZonesIpGeolocation({this.id, this.value, });

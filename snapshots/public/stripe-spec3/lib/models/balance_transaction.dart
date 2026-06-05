@@ -2,28 +2,27 @@
 // Source: #/components/schemas/BalanceTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_transaction/balance_transaction_source.dart';import 'package:pub_stripe_spec3/models/fee.dart';/// The balance that this transaction impacts.
-@immutable final class BalanceType {const BalanceType._(this.value);
+sealed class BalanceType {const BalanceType();
 
 factory BalanceType.fromJson(String json) { return switch (json) {
   'issuing' => issuing,
   'payments' => payments,
   'refund_and_dispute_prefunding' => refundAndDisputePrefunding,
   'risk_reserved' => riskReserved,
-  _ => BalanceType._(json),
+  _ => BalanceType$Unknown(json),
 }; }
 
-static const BalanceType issuing = BalanceType._('issuing');
+static const BalanceType issuing = BalanceType$issuing._();
 
-static const BalanceType payments = BalanceType._('payments');
+static const BalanceType payments = BalanceType$payments._();
 
-static const BalanceType refundAndDisputePrefunding = BalanceType._('refund_and_dispute_prefunding');
+static const BalanceType refundAndDisputePrefunding = BalanceType$refundAndDisputePrefunding._();
 
-static const BalanceType riskReserved = BalanceType._('risk_reserved');
+static const BalanceType riskReserved = BalanceType$riskReserved._();
 
 static const List<BalanceType> values = [issuing, payments, refundAndDisputePrefunding, riskReserved];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,29 +33,69 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BalanceType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is BalanceType$Unknown; } 
 @override String toString() => 'BalanceType($value)';
 
  }
+@immutable final class BalanceType$issuing extends BalanceType {const BalanceType$issuing._();
+
+@override String get value => 'issuing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceType$issuing;
+
+@override int get hashCode => 'issuing'.hashCode;
+
+ }
+@immutable final class BalanceType$payments extends BalanceType {const BalanceType$payments._();
+
+@override String get value => 'payments';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceType$payments;
+
+@override int get hashCode => 'payments'.hashCode;
+
+ }
+@immutable final class BalanceType$refundAndDisputePrefunding extends BalanceType {const BalanceType$refundAndDisputePrefunding._();
+
+@override String get value => 'refund_and_dispute_prefunding';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceType$refundAndDisputePrefunding;
+
+@override int get hashCode => 'refund_and_dispute_prefunding'.hashCode;
+
+ }
+@immutable final class BalanceType$riskReserved extends BalanceType {const BalanceType$riskReserved._();
+
+@override String get value => 'risk_reserved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceType$riskReserved;
+
+@override int get hashCode => 'risk_reserved'.hashCode;
+
+ }
+@immutable final class BalanceType$Unknown extends BalanceType {const BalanceType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BalanceType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class BalanceTransactionObject {const BalanceTransactionObject._(this.value);
+sealed class BalanceTransactionObject {const BalanceTransactionObject();
 
 factory BalanceTransactionObject.fromJson(String json) { return switch (json) {
   'balance_transaction' => balanceTransaction,
-  _ => BalanceTransactionObject._(json),
+  _ => BalanceTransactionObject$Unknown(json),
 }; }
 
-static const BalanceTransactionObject balanceTransaction = BalanceTransactionObject._('balance_transaction');
+static const BalanceTransactionObject balanceTransaction = BalanceTransactionObject$balanceTransaction._();
 
 static const List<BalanceTransactionObject> values = [balanceTransaction];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,17 +103,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BalanceTransactionObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is BalanceTransactionObject$Unknown; } 
 @override String toString() => 'BalanceTransactionObject($value)';
 
  }
+@immutable final class BalanceTransactionObject$balanceTransaction extends BalanceTransactionObject {const BalanceTransactionObject$balanceTransaction._();
+
+@override String get value => 'balance_transaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionObject$balanceTransaction;
+
+@override int get hashCode => 'balance_transaction'.hashCode;
+
+ }
+@immutable final class BalanceTransactionObject$Unknown extends BalanceTransactionObject {const BalanceTransactionObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BalanceTransactionObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Transaction type: `adjustment`, `advance`, `advance_funding`, `anticipation_repayment`, `application_fee`, `application_fee_refund`, `charge`, `climate_order_purchase`, `climate_order_refund`, `connect_collection_transfer`, `contribution`, `issuing_authorization_hold`, `issuing_authorization_release`, `issuing_dispute`, `issuing_transaction`, `obligation_outbound`, `obligation_reversal_inbound`, `payment`, `payment_failure_refund`, `payment_network_reserve_hold`, `payment_network_reserve_release`, `payment_refund`, `payment_reversal`, `payment_unreconciled`, `payout`, `payout_cancel`, `payout_failure`, `payout_minimum_balance_hold`, `payout_minimum_balance_release`, `refund`, `refund_failure`, `reserve_transaction`, `reserved_funds`, `reserve_hold`, `reserve_release`, `stripe_fee`, `stripe_fx_fee`, `stripe_balance_payment_debit`, `stripe_balance_payment_debit_reversal`, `tax_fee`, `topup`, `topup_reversal`, `transfer`, `transfer_cancel`, `transfer_failure`, or `transfer_refund`. Learn more about [balance transaction types and what they represent](https://stripe.com/docs/reports/balance-transaction-types). To classify transactions for accounting purposes, consider `reporting_category` instead.
-@immutable final class BalanceTransactionType {const BalanceTransactionType._(this.value);
+sealed class BalanceTransactionType {const BalanceTransactionType();
 
 factory BalanceTransactionType.fromJson(String json) { return switch (json) {
   'adjustment' => adjustment,
@@ -123,105 +176,104 @@ factory BalanceTransactionType.fromJson(String json) { return switch (json) {
   'transfer_cancel' => transferCancel,
   'transfer_failure' => transferFailure,
   'transfer_refund' => transferRefund,
-  _ => BalanceTransactionType._(json),
+  _ => BalanceTransactionType$Unknown(json),
 }; }
 
-static const BalanceTransactionType adjustment = BalanceTransactionType._('adjustment');
+static const BalanceTransactionType adjustment = BalanceTransactionType$adjustment._();
 
-static const BalanceTransactionType advance = BalanceTransactionType._('advance');
+static const BalanceTransactionType advance = BalanceTransactionType$advance._();
 
-static const BalanceTransactionType advanceFunding = BalanceTransactionType._('advance_funding');
+static const BalanceTransactionType advanceFunding = BalanceTransactionType$advanceFunding._();
 
-static const BalanceTransactionType anticipationRepayment = BalanceTransactionType._('anticipation_repayment');
+static const BalanceTransactionType anticipationRepayment = BalanceTransactionType$anticipationRepayment._();
 
-static const BalanceTransactionType applicationFee = BalanceTransactionType._('application_fee');
+static const BalanceTransactionType applicationFee = BalanceTransactionType$applicationFee._();
 
-static const BalanceTransactionType applicationFeeRefund = BalanceTransactionType._('application_fee_refund');
+static const BalanceTransactionType applicationFeeRefund = BalanceTransactionType$applicationFeeRefund._();
 
-static const BalanceTransactionType charge = BalanceTransactionType._('charge');
+static const BalanceTransactionType charge = BalanceTransactionType$charge._();
 
-static const BalanceTransactionType climateOrderPurchase = BalanceTransactionType._('climate_order_purchase');
+static const BalanceTransactionType climateOrderPurchase = BalanceTransactionType$climateOrderPurchase._();
 
-static const BalanceTransactionType climateOrderRefund = BalanceTransactionType._('climate_order_refund');
+static const BalanceTransactionType climateOrderRefund = BalanceTransactionType$climateOrderRefund._();
 
-static const BalanceTransactionType connectCollectionTransfer = BalanceTransactionType._('connect_collection_transfer');
+static const BalanceTransactionType connectCollectionTransfer = BalanceTransactionType$connectCollectionTransfer._();
 
-static const BalanceTransactionType contribution = BalanceTransactionType._('contribution');
+static const BalanceTransactionType contribution = BalanceTransactionType$contribution._();
 
-static const BalanceTransactionType issuingAuthorizationHold = BalanceTransactionType._('issuing_authorization_hold');
+static const BalanceTransactionType issuingAuthorizationHold = BalanceTransactionType$issuingAuthorizationHold._();
 
-static const BalanceTransactionType issuingAuthorizationRelease = BalanceTransactionType._('issuing_authorization_release');
+static const BalanceTransactionType issuingAuthorizationRelease = BalanceTransactionType$issuingAuthorizationRelease._();
 
-static const BalanceTransactionType issuingDispute = BalanceTransactionType._('issuing_dispute');
+static const BalanceTransactionType issuingDispute = BalanceTransactionType$issuingDispute._();
 
-static const BalanceTransactionType issuingTransaction = BalanceTransactionType._('issuing_transaction');
+static const BalanceTransactionType issuingTransaction = BalanceTransactionType$issuingTransaction._();
 
-static const BalanceTransactionType obligationOutbound = BalanceTransactionType._('obligation_outbound');
+static const BalanceTransactionType obligationOutbound = BalanceTransactionType$obligationOutbound._();
 
-static const BalanceTransactionType obligationReversalInbound = BalanceTransactionType._('obligation_reversal_inbound');
+static const BalanceTransactionType obligationReversalInbound = BalanceTransactionType$obligationReversalInbound._();
 
-static const BalanceTransactionType payment = BalanceTransactionType._('payment');
+static const BalanceTransactionType payment = BalanceTransactionType$payment._();
 
-static const BalanceTransactionType paymentFailureRefund = BalanceTransactionType._('payment_failure_refund');
+static const BalanceTransactionType paymentFailureRefund = BalanceTransactionType$paymentFailureRefund._();
 
-static const BalanceTransactionType paymentNetworkReserveHold = BalanceTransactionType._('payment_network_reserve_hold');
+static const BalanceTransactionType paymentNetworkReserveHold = BalanceTransactionType$paymentNetworkReserveHold._();
 
-static const BalanceTransactionType paymentNetworkReserveRelease = BalanceTransactionType._('payment_network_reserve_release');
+static const BalanceTransactionType paymentNetworkReserveRelease = BalanceTransactionType$paymentNetworkReserveRelease._();
 
-static const BalanceTransactionType paymentRefund = BalanceTransactionType._('payment_refund');
+static const BalanceTransactionType paymentRefund = BalanceTransactionType$paymentRefund._();
 
-static const BalanceTransactionType paymentReversal = BalanceTransactionType._('payment_reversal');
+static const BalanceTransactionType paymentReversal = BalanceTransactionType$paymentReversal._();
 
-static const BalanceTransactionType paymentUnreconciled = BalanceTransactionType._('payment_unreconciled');
+static const BalanceTransactionType paymentUnreconciled = BalanceTransactionType$paymentUnreconciled._();
 
-static const BalanceTransactionType payout = BalanceTransactionType._('payout');
+static const BalanceTransactionType payout = BalanceTransactionType$payout._();
 
-static const BalanceTransactionType payoutCancel = BalanceTransactionType._('payout_cancel');
+static const BalanceTransactionType payoutCancel = BalanceTransactionType$payoutCancel._();
 
-static const BalanceTransactionType payoutFailure = BalanceTransactionType._('payout_failure');
+static const BalanceTransactionType payoutFailure = BalanceTransactionType$payoutFailure._();
 
-static const BalanceTransactionType payoutMinimumBalanceHold = BalanceTransactionType._('payout_minimum_balance_hold');
+static const BalanceTransactionType payoutMinimumBalanceHold = BalanceTransactionType$payoutMinimumBalanceHold._();
 
-static const BalanceTransactionType payoutMinimumBalanceRelease = BalanceTransactionType._('payout_minimum_balance_release');
+static const BalanceTransactionType payoutMinimumBalanceRelease = BalanceTransactionType$payoutMinimumBalanceRelease._();
 
-static const BalanceTransactionType refund = BalanceTransactionType._('refund');
+static const BalanceTransactionType refund = BalanceTransactionType$refund._();
 
-static const BalanceTransactionType refundFailure = BalanceTransactionType._('refund_failure');
+static const BalanceTransactionType refundFailure = BalanceTransactionType$refundFailure._();
 
-static const BalanceTransactionType reserveHold = BalanceTransactionType._('reserve_hold');
+static const BalanceTransactionType reserveHold = BalanceTransactionType$reserveHold._();
 
-static const BalanceTransactionType reserveRelease = BalanceTransactionType._('reserve_release');
+static const BalanceTransactionType reserveRelease = BalanceTransactionType$reserveRelease._();
 
-static const BalanceTransactionType reserveTransaction = BalanceTransactionType._('reserve_transaction');
+static const BalanceTransactionType reserveTransaction = BalanceTransactionType$reserveTransaction._();
 
-static const BalanceTransactionType reservedFunds = BalanceTransactionType._('reserved_funds');
+static const BalanceTransactionType reservedFunds = BalanceTransactionType$reservedFunds._();
 
-static const BalanceTransactionType stripeBalancePaymentDebit = BalanceTransactionType._('stripe_balance_payment_debit');
+static const BalanceTransactionType stripeBalancePaymentDebit = BalanceTransactionType$stripeBalancePaymentDebit._();
 
-static const BalanceTransactionType stripeBalancePaymentDebitReversal = BalanceTransactionType._('stripe_balance_payment_debit_reversal');
+static const BalanceTransactionType stripeBalancePaymentDebitReversal = BalanceTransactionType$stripeBalancePaymentDebitReversal._();
 
-static const BalanceTransactionType stripeFee = BalanceTransactionType._('stripe_fee');
+static const BalanceTransactionType stripeFee = BalanceTransactionType$stripeFee._();
 
-static const BalanceTransactionType stripeFxFee = BalanceTransactionType._('stripe_fx_fee');
+static const BalanceTransactionType stripeFxFee = BalanceTransactionType$stripeFxFee._();
 
-static const BalanceTransactionType taxFee = BalanceTransactionType._('tax_fee');
+static const BalanceTransactionType taxFee = BalanceTransactionType$taxFee._();
 
-static const BalanceTransactionType topup = BalanceTransactionType._('topup');
+static const BalanceTransactionType topup = BalanceTransactionType$topup._();
 
-static const BalanceTransactionType topupReversal = BalanceTransactionType._('topup_reversal');
+static const BalanceTransactionType topupReversal = BalanceTransactionType$topupReversal._();
 
-static const BalanceTransactionType transfer = BalanceTransactionType._('transfer');
+static const BalanceTransactionType transfer = BalanceTransactionType$transfer._();
 
-static const BalanceTransactionType transferCancel = BalanceTransactionType._('transfer_cancel');
+static const BalanceTransactionType transferCancel = BalanceTransactionType$transferCancel._();
 
-static const BalanceTransactionType transferFailure = BalanceTransactionType._('transfer_failure');
+static const BalanceTransactionType transferFailure = BalanceTransactionType$transferFailure._();
 
-static const BalanceTransactionType transferRefund = BalanceTransactionType._('transfer_refund');
+static const BalanceTransactionType transferRefund = BalanceTransactionType$transferRefund._();
 
 static const List<BalanceTransactionType> values = [adjustment, advance, advanceFunding, anticipationRepayment, applicationFee, applicationFeeRefund, charge, climateOrderPurchase, climateOrderRefund, connectCollectionTransfer, contribution, issuingAuthorizationHold, issuingAuthorizationRelease, issuingDispute, issuingTransaction, obligationOutbound, obligationReversalInbound, payment, paymentFailureRefund, paymentNetworkReserveHold, paymentNetworkReserveRelease, paymentRefund, paymentReversal, paymentUnreconciled, payout, payoutCancel, payoutFailure, payoutMinimumBalanceHold, payoutMinimumBalanceRelease, refund, refundFailure, reserveHold, reserveRelease, reserveTransaction, reservedFunds, stripeBalancePaymentDebit, stripeBalancePaymentDebitReversal, stripeFee, stripeFxFee, taxFee, topup, topupReversal, transfer, transferCancel, transferFailure, transferRefund];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -274,13 +326,432 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BalanceTransactionType$Unknown; } 
+@override String toString() => 'BalanceTransactionType($value)';
+
+ }
+@immutable final class BalanceTransactionType$adjustment extends BalanceTransactionType {const BalanceTransactionType$adjustment._();
+
+@override String get value => 'adjustment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$adjustment;
+
+@override int get hashCode => 'adjustment'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$advance extends BalanceTransactionType {const BalanceTransactionType$advance._();
+
+@override String get value => 'advance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$advance;
+
+@override int get hashCode => 'advance'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$advanceFunding extends BalanceTransactionType {const BalanceTransactionType$advanceFunding._();
+
+@override String get value => 'advance_funding';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$advanceFunding;
+
+@override int get hashCode => 'advance_funding'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$anticipationRepayment extends BalanceTransactionType {const BalanceTransactionType$anticipationRepayment._();
+
+@override String get value => 'anticipation_repayment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$anticipationRepayment;
+
+@override int get hashCode => 'anticipation_repayment'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$applicationFee extends BalanceTransactionType {const BalanceTransactionType$applicationFee._();
+
+@override String get value => 'application_fee';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$applicationFee;
+
+@override int get hashCode => 'application_fee'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$applicationFeeRefund extends BalanceTransactionType {const BalanceTransactionType$applicationFeeRefund._();
+
+@override String get value => 'application_fee_refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$applicationFeeRefund;
+
+@override int get hashCode => 'application_fee_refund'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$charge extends BalanceTransactionType {const BalanceTransactionType$charge._();
+
+@override String get value => 'charge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$charge;
+
+@override int get hashCode => 'charge'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$climateOrderPurchase extends BalanceTransactionType {const BalanceTransactionType$climateOrderPurchase._();
+
+@override String get value => 'climate_order_purchase';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$climateOrderPurchase;
+
+@override int get hashCode => 'climate_order_purchase'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$climateOrderRefund extends BalanceTransactionType {const BalanceTransactionType$climateOrderRefund._();
+
+@override String get value => 'climate_order_refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$climateOrderRefund;
+
+@override int get hashCode => 'climate_order_refund'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$connectCollectionTransfer extends BalanceTransactionType {const BalanceTransactionType$connectCollectionTransfer._();
+
+@override String get value => 'connect_collection_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$connectCollectionTransfer;
+
+@override int get hashCode => 'connect_collection_transfer'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$contribution extends BalanceTransactionType {const BalanceTransactionType$contribution._();
+
+@override String get value => 'contribution';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$contribution;
+
+@override int get hashCode => 'contribution'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$issuingAuthorizationHold extends BalanceTransactionType {const BalanceTransactionType$issuingAuthorizationHold._();
+
+@override String get value => 'issuing_authorization_hold';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$issuingAuthorizationHold;
+
+@override int get hashCode => 'issuing_authorization_hold'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$issuingAuthorizationRelease extends BalanceTransactionType {const BalanceTransactionType$issuingAuthorizationRelease._();
+
+@override String get value => 'issuing_authorization_release';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$issuingAuthorizationRelease;
+
+@override int get hashCode => 'issuing_authorization_release'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$issuingDispute extends BalanceTransactionType {const BalanceTransactionType$issuingDispute._();
+
+@override String get value => 'issuing_dispute';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$issuingDispute;
+
+@override int get hashCode => 'issuing_dispute'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$issuingTransaction extends BalanceTransactionType {const BalanceTransactionType$issuingTransaction._();
+
+@override String get value => 'issuing_transaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$issuingTransaction;
+
+@override int get hashCode => 'issuing_transaction'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$obligationOutbound extends BalanceTransactionType {const BalanceTransactionType$obligationOutbound._();
+
+@override String get value => 'obligation_outbound';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$obligationOutbound;
+
+@override int get hashCode => 'obligation_outbound'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$obligationReversalInbound extends BalanceTransactionType {const BalanceTransactionType$obligationReversalInbound._();
+
+@override String get value => 'obligation_reversal_inbound';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$obligationReversalInbound;
+
+@override int get hashCode => 'obligation_reversal_inbound'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$payment extends BalanceTransactionType {const BalanceTransactionType$payment._();
+
+@override String get value => 'payment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$payment;
+
+@override int get hashCode => 'payment'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$paymentFailureRefund extends BalanceTransactionType {const BalanceTransactionType$paymentFailureRefund._();
+
+@override String get value => 'payment_failure_refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$paymentFailureRefund;
+
+@override int get hashCode => 'payment_failure_refund'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$paymentNetworkReserveHold extends BalanceTransactionType {const BalanceTransactionType$paymentNetworkReserveHold._();
+
+@override String get value => 'payment_network_reserve_hold';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$paymentNetworkReserveHold;
+
+@override int get hashCode => 'payment_network_reserve_hold'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$paymentNetworkReserveRelease extends BalanceTransactionType {const BalanceTransactionType$paymentNetworkReserveRelease._();
+
+@override String get value => 'payment_network_reserve_release';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$paymentNetworkReserveRelease;
+
+@override int get hashCode => 'payment_network_reserve_release'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$paymentRefund extends BalanceTransactionType {const BalanceTransactionType$paymentRefund._();
+
+@override String get value => 'payment_refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$paymentRefund;
+
+@override int get hashCode => 'payment_refund'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$paymentReversal extends BalanceTransactionType {const BalanceTransactionType$paymentReversal._();
+
+@override String get value => 'payment_reversal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$paymentReversal;
+
+@override int get hashCode => 'payment_reversal'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$paymentUnreconciled extends BalanceTransactionType {const BalanceTransactionType$paymentUnreconciled._();
+
+@override String get value => 'payment_unreconciled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$paymentUnreconciled;
+
+@override int get hashCode => 'payment_unreconciled'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$payout extends BalanceTransactionType {const BalanceTransactionType$payout._();
+
+@override String get value => 'payout';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$payout;
+
+@override int get hashCode => 'payout'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$payoutCancel extends BalanceTransactionType {const BalanceTransactionType$payoutCancel._();
+
+@override String get value => 'payout_cancel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$payoutCancel;
+
+@override int get hashCode => 'payout_cancel'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$payoutFailure extends BalanceTransactionType {const BalanceTransactionType$payoutFailure._();
+
+@override String get value => 'payout_failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$payoutFailure;
+
+@override int get hashCode => 'payout_failure'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$payoutMinimumBalanceHold extends BalanceTransactionType {const BalanceTransactionType$payoutMinimumBalanceHold._();
+
+@override String get value => 'payout_minimum_balance_hold';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$payoutMinimumBalanceHold;
+
+@override int get hashCode => 'payout_minimum_balance_hold'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$payoutMinimumBalanceRelease extends BalanceTransactionType {const BalanceTransactionType$payoutMinimumBalanceRelease._();
+
+@override String get value => 'payout_minimum_balance_release';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$payoutMinimumBalanceRelease;
+
+@override int get hashCode => 'payout_minimum_balance_release'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$refund extends BalanceTransactionType {const BalanceTransactionType$refund._();
+
+@override String get value => 'refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$refund;
+
+@override int get hashCode => 'refund'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$refundFailure extends BalanceTransactionType {const BalanceTransactionType$refundFailure._();
+
+@override String get value => 'refund_failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$refundFailure;
+
+@override int get hashCode => 'refund_failure'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$reserveHold extends BalanceTransactionType {const BalanceTransactionType$reserveHold._();
+
+@override String get value => 'reserve_hold';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$reserveHold;
+
+@override int get hashCode => 'reserve_hold'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$reserveRelease extends BalanceTransactionType {const BalanceTransactionType$reserveRelease._();
+
+@override String get value => 'reserve_release';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$reserveRelease;
+
+@override int get hashCode => 'reserve_release'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$reserveTransaction extends BalanceTransactionType {const BalanceTransactionType$reserveTransaction._();
+
+@override String get value => 'reserve_transaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$reserveTransaction;
+
+@override int get hashCode => 'reserve_transaction'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$reservedFunds extends BalanceTransactionType {const BalanceTransactionType$reservedFunds._();
+
+@override String get value => 'reserved_funds';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$reservedFunds;
+
+@override int get hashCode => 'reserved_funds'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$stripeBalancePaymentDebit extends BalanceTransactionType {const BalanceTransactionType$stripeBalancePaymentDebit._();
+
+@override String get value => 'stripe_balance_payment_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$stripeBalancePaymentDebit;
+
+@override int get hashCode => 'stripe_balance_payment_debit'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$stripeBalancePaymentDebitReversal extends BalanceTransactionType {const BalanceTransactionType$stripeBalancePaymentDebitReversal._();
+
+@override String get value => 'stripe_balance_payment_debit_reversal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$stripeBalancePaymentDebitReversal;
+
+@override int get hashCode => 'stripe_balance_payment_debit_reversal'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$stripeFee extends BalanceTransactionType {const BalanceTransactionType$stripeFee._();
+
+@override String get value => 'stripe_fee';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$stripeFee;
+
+@override int get hashCode => 'stripe_fee'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$stripeFxFee extends BalanceTransactionType {const BalanceTransactionType$stripeFxFee._();
+
+@override String get value => 'stripe_fx_fee';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$stripeFxFee;
+
+@override int get hashCode => 'stripe_fx_fee'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$taxFee extends BalanceTransactionType {const BalanceTransactionType$taxFee._();
+
+@override String get value => 'tax_fee';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$taxFee;
+
+@override int get hashCode => 'tax_fee'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$topup extends BalanceTransactionType {const BalanceTransactionType$topup._();
+
+@override String get value => 'topup';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$topup;
+
+@override int get hashCode => 'topup'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$topupReversal extends BalanceTransactionType {const BalanceTransactionType$topupReversal._();
+
+@override String get value => 'topup_reversal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$topupReversal;
+
+@override int get hashCode => 'topup_reversal'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$transfer extends BalanceTransactionType {const BalanceTransactionType$transfer._();
+
+@override String get value => 'transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$transfer;
+
+@override int get hashCode => 'transfer'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$transferCancel extends BalanceTransactionType {const BalanceTransactionType$transferCancel._();
+
+@override String get value => 'transfer_cancel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$transferCancel;
+
+@override int get hashCode => 'transfer_cancel'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$transferFailure extends BalanceTransactionType {const BalanceTransactionType$transferFailure._();
+
+@override String get value => 'transfer_failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$transferFailure;
+
+@override int get hashCode => 'transfer_failure'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$transferRefund extends BalanceTransactionType {const BalanceTransactionType$transferRefund._();
+
+@override String get value => 'transfer_refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceTransactionType$transferRefund;
+
+@override int get hashCode => 'transfer_refund'.hashCode;
+
+ }
+@immutable final class BalanceTransactionType$Unknown extends BalanceTransactionType {const BalanceTransactionType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BalanceTransactionType && other.value == value;
+    other is BalanceTransactionType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BalanceTransactionType($value)';
 
  }
 /// Balance transactions represent funds moving through your Stripe account.

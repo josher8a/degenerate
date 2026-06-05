@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CreateEmbeddingRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_embedding_request/create_embedding_request_input.dart';import 'package:pub_openai/models/create_embedding_request/create_embedding_request_model.dart';/// The format to return the embeddings in. Can be either `float` or [`base64`](https://pypi.org/project/pybase64/).
-@immutable final class EncodingFormat {const EncodingFormat._(this.value);
+sealed class EncodingFormat {const EncodingFormat();
 
 factory EncodingFormat.fromJson(String json) { return switch (json) {
   'float' => float,
   'base64' => base64,
-  _ => EncodingFormat._(json),
+  _ => EncodingFormat$Unknown(json),
 }; }
 
-static const EncodingFormat float = EncodingFormat._('float');
+static const EncodingFormat float = EncodingFormat$float._();
 
-static const EncodingFormat base64 = EncodingFormat._('base64');
+static const EncodingFormat base64 = EncodingFormat$base64._();
 
 static const List<EncodingFormat> values = [float, base64];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EncodingFormat$Unknown; } 
+@override String toString() => 'EncodingFormat($value)';
+
+ }
+@immutable final class EncodingFormat$float extends EncodingFormat {const EncodingFormat$float._();
+
+@override String get value => 'float';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EncodingFormat$float;
+
+@override int get hashCode => 'float'.hashCode;
+
+ }
+@immutable final class EncodingFormat$base64 extends EncodingFormat {const EncodingFormat$base64._();
+
+@override String get value => 'base64';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EncodingFormat$base64;
+
+@override int get hashCode => 'base64'.hashCode;
+
+ }
+@immutable final class EncodingFormat$Unknown extends EncodingFormat {const EncodingFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EncodingFormat && other.value == value;
+    other is EncodingFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EncodingFormat($value)';
 
  }
 @immutable final class CreateEmbeddingRequest {const CreateEmbeddingRequest({required this.input, required this.model, this.encodingFormat = EncodingFormat.float, this.dimensions, this.user, });

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CodeScanningDefaultSetup
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup/code_scanning_default_setup_state.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup/query_suite.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup/threat_model.dart';@immutable final class CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup/code_scanning_default_setup_state.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup/query_suite.dart';import 'package:pub_github_rest_3_1/models/code_scanning_default_setup/threat_model.dart';sealed class CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages();
 
 factory CodeScanningDefaultSetupLanguages.fromJson(String json) { return switch (json) {
   'actions' => actions,
@@ -15,35 +15,34 @@ factory CodeScanningDefaultSetupLanguages.fromJson(String json) { return switch 
   'ruby' => ruby,
   'typescript' => typescript,
   'swift' => swift,
-  _ => CodeScanningDefaultSetupLanguages._(json),
+  _ => CodeScanningDefaultSetupLanguages$Unknown(json),
 }; }
 
-static const CodeScanningDefaultSetupLanguages actions = CodeScanningDefaultSetupLanguages._('actions');
+static const CodeScanningDefaultSetupLanguages actions = CodeScanningDefaultSetupLanguages$actions._();
 
-static const CodeScanningDefaultSetupLanguages cCpp = CodeScanningDefaultSetupLanguages._('c-cpp');
+static const CodeScanningDefaultSetupLanguages cCpp = CodeScanningDefaultSetupLanguages$cCpp._();
 
-static const CodeScanningDefaultSetupLanguages csharp = CodeScanningDefaultSetupLanguages._('csharp');
+static const CodeScanningDefaultSetupLanguages csharp = CodeScanningDefaultSetupLanguages$csharp._();
 
-static const CodeScanningDefaultSetupLanguages go = CodeScanningDefaultSetupLanguages._('go');
+static const CodeScanningDefaultSetupLanguages go = CodeScanningDefaultSetupLanguages$go._();
 
-static const CodeScanningDefaultSetupLanguages javaKotlin = CodeScanningDefaultSetupLanguages._('java-kotlin');
+static const CodeScanningDefaultSetupLanguages javaKotlin = CodeScanningDefaultSetupLanguages$javaKotlin._();
 
-static const CodeScanningDefaultSetupLanguages javascriptTypescript = CodeScanningDefaultSetupLanguages._('javascript-typescript');
+static const CodeScanningDefaultSetupLanguages javascriptTypescript = CodeScanningDefaultSetupLanguages$javascriptTypescript._();
 
-static const CodeScanningDefaultSetupLanguages javascript = CodeScanningDefaultSetupLanguages._('javascript');
+static const CodeScanningDefaultSetupLanguages javascript = CodeScanningDefaultSetupLanguages$javascript._();
 
-static const CodeScanningDefaultSetupLanguages python = CodeScanningDefaultSetupLanguages._('python');
+static const CodeScanningDefaultSetupLanguages python = CodeScanningDefaultSetupLanguages$python._();
 
-static const CodeScanningDefaultSetupLanguages ruby = CodeScanningDefaultSetupLanguages._('ruby');
+static const CodeScanningDefaultSetupLanguages ruby = CodeScanningDefaultSetupLanguages$ruby._();
 
-static const CodeScanningDefaultSetupLanguages typescript = CodeScanningDefaultSetupLanguages._('typescript');
+static const CodeScanningDefaultSetupLanguages typescript = CodeScanningDefaultSetupLanguages$typescript._();
 
-static const CodeScanningDefaultSetupLanguages swift = CodeScanningDefaultSetupLanguages._('swift');
+static const CodeScanningDefaultSetupLanguages swift = CodeScanningDefaultSetupLanguages$swift._();
 
 static const List<CodeScanningDefaultSetupLanguages> values = [actions, cCpp, csharp, go, javaKotlin, javascriptTypescript, javascript, python, ruby, typescript, swift];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -61,35 +60,138 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeScanningDefaultSetupLanguages && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CodeScanningDefaultSetupLanguages$Unknown; } 
 @override String toString() => 'CodeScanningDefaultSetupLanguages($value)';
 
  }
+@immutable final class CodeScanningDefaultSetupLanguages$actions extends CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages$actions._();
+
+@override String get value => 'actions';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupLanguages$actions;
+
+@override int get hashCode => 'actions'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupLanguages$cCpp extends CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages$cCpp._();
+
+@override String get value => 'c-cpp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupLanguages$cCpp;
+
+@override int get hashCode => 'c-cpp'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupLanguages$csharp extends CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages$csharp._();
+
+@override String get value => 'csharp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupLanguages$csharp;
+
+@override int get hashCode => 'csharp'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupLanguages$go extends CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages$go._();
+
+@override String get value => 'go';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupLanguages$go;
+
+@override int get hashCode => 'go'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupLanguages$javaKotlin extends CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages$javaKotlin._();
+
+@override String get value => 'java-kotlin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupLanguages$javaKotlin;
+
+@override int get hashCode => 'java-kotlin'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupLanguages$javascriptTypescript extends CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages$javascriptTypescript._();
+
+@override String get value => 'javascript-typescript';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupLanguages$javascriptTypescript;
+
+@override int get hashCode => 'javascript-typescript'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupLanguages$javascript extends CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages$javascript._();
+
+@override String get value => 'javascript';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupLanguages$javascript;
+
+@override int get hashCode => 'javascript'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupLanguages$python extends CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages$python._();
+
+@override String get value => 'python';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupLanguages$python;
+
+@override int get hashCode => 'python'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupLanguages$ruby extends CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages$ruby._();
+
+@override String get value => 'ruby';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupLanguages$ruby;
+
+@override int get hashCode => 'ruby'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupLanguages$typescript extends CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages$typescript._();
+
+@override String get value => 'typescript';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupLanguages$typescript;
+
+@override int get hashCode => 'typescript'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupLanguages$swift extends CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages$swift._();
+
+@override String get value => 'swift';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupLanguages$swift;
+
+@override int get hashCode => 'swift'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupLanguages$Unknown extends CodeScanningDefaultSetupLanguages {const CodeScanningDefaultSetupLanguages$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeScanningDefaultSetupLanguages$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Runner type to be used.
-@immutable final class CodeScanningDefaultSetupRunnerType {const CodeScanningDefaultSetupRunnerType._(this.value);
+sealed class CodeScanningDefaultSetupRunnerType {const CodeScanningDefaultSetupRunnerType();
 
 factory CodeScanningDefaultSetupRunnerType.fromJson(String json) { return switch (json) {
   'standard' => standard,
   'labeled' => labeled,
   'null' => $null,
-  _ => CodeScanningDefaultSetupRunnerType._(json),
+  _ => CodeScanningDefaultSetupRunnerType$Unknown(json),
 }; }
 
-static const CodeScanningDefaultSetupRunnerType standard = CodeScanningDefaultSetupRunnerType._('standard');
+static const CodeScanningDefaultSetupRunnerType standard = CodeScanningDefaultSetupRunnerType$standard._();
 
-static const CodeScanningDefaultSetupRunnerType labeled = CodeScanningDefaultSetupRunnerType._('labeled');
+static const CodeScanningDefaultSetupRunnerType labeled = CodeScanningDefaultSetupRunnerType$labeled._();
 
-static const CodeScanningDefaultSetupRunnerType $null = CodeScanningDefaultSetupRunnerType._('null');
+static const CodeScanningDefaultSetupRunnerType $null = CodeScanningDefaultSetupRunnerType$$null._();
 
 static const List<CodeScanningDefaultSetupRunnerType> values = [standard, labeled, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -99,32 +201,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeScanningDefaultSetupRunnerType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CodeScanningDefaultSetupRunnerType$Unknown; } 
 @override String toString() => 'CodeScanningDefaultSetupRunnerType($value)';
 
  }
+@immutable final class CodeScanningDefaultSetupRunnerType$standard extends CodeScanningDefaultSetupRunnerType {const CodeScanningDefaultSetupRunnerType$standard._();
+
+@override String get value => 'standard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupRunnerType$standard;
+
+@override int get hashCode => 'standard'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupRunnerType$labeled extends CodeScanningDefaultSetupRunnerType {const CodeScanningDefaultSetupRunnerType$labeled._();
+
+@override String get value => 'labeled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupRunnerType$labeled;
+
+@override int get hashCode => 'labeled'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupRunnerType$$null extends CodeScanningDefaultSetupRunnerType {const CodeScanningDefaultSetupRunnerType$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupRunnerType$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupRunnerType$Unknown extends CodeScanningDefaultSetupRunnerType {const CodeScanningDefaultSetupRunnerType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeScanningDefaultSetupRunnerType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The frequency of the periodic analysis.
-@immutable final class Schedule {const Schedule._(this.value);
+sealed class Schedule {const Schedule();
 
 factory Schedule.fromJson(String json) { return switch (json) {
   'weekly' => weekly,
   'null' => $null,
-  _ => Schedule._(json),
+  _ => Schedule$Unknown(json),
 }; }
 
-static const Schedule weekly = Schedule._('weekly');
+static const Schedule weekly = Schedule$weekly._();
 
-static const Schedule $null = Schedule._('null');
+static const Schedule $null = Schedule$$null._();
 
 static const List<Schedule> values = [weekly, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -133,13 +266,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Schedule$Unknown; } 
+@override String toString() => 'Schedule($value)';
+
+ }
+@immutable final class Schedule$weekly extends Schedule {const Schedule$weekly._();
+
+@override String get value => 'weekly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Schedule$weekly;
+
+@override int get hashCode => 'weekly'.hashCode;
+
+ }
+@immutable final class Schedule$$null extends Schedule {const Schedule$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Schedule$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class Schedule$Unknown extends Schedule {const Schedule$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Schedule && other.value == value;
+    other is Schedule$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Schedule($value)';
 
  }
 /// Configuration for code scanning default setup.

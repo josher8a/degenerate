@@ -2,7 +2,7 @@
 // Source: #/components/schemas/InvoiceMandateOptionsPayto (inline: Purpose)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The purpose for which payments are made. Has a default value based on your merchant category code.
-@immutable final class InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose._(this.value);
+sealed class InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose();
 
 factory InvoiceMandateOptionsPaytoPurpose.fromJson(String json) { return switch (json) {
   'dependant_support' => dependantSupport,
@@ -16,35 +16,34 @@ factory InvoiceMandateOptionsPaytoPurpose.fromJson(String json) { return switch 
   'salary' => salary,
   'tax' => tax,
   'utility' => utility,
-  _ => InvoiceMandateOptionsPaytoPurpose._(json),
+  _ => InvoiceMandateOptionsPaytoPurpose$Unknown(json),
 }; }
 
-static const InvoiceMandateOptionsPaytoPurpose dependantSupport = InvoiceMandateOptionsPaytoPurpose._('dependant_support');
+static const InvoiceMandateOptionsPaytoPurpose dependantSupport = InvoiceMandateOptionsPaytoPurpose$dependantSupport._();
 
-static const InvoiceMandateOptionsPaytoPurpose government = InvoiceMandateOptionsPaytoPurpose._('government');
+static const InvoiceMandateOptionsPaytoPurpose government = InvoiceMandateOptionsPaytoPurpose$government._();
 
-static const InvoiceMandateOptionsPaytoPurpose loan = InvoiceMandateOptionsPaytoPurpose._('loan');
+static const InvoiceMandateOptionsPaytoPurpose loan = InvoiceMandateOptionsPaytoPurpose$loan._();
 
-static const InvoiceMandateOptionsPaytoPurpose mortgage = InvoiceMandateOptionsPaytoPurpose._('mortgage');
+static const InvoiceMandateOptionsPaytoPurpose mortgage = InvoiceMandateOptionsPaytoPurpose$mortgage._();
 
-static const InvoiceMandateOptionsPaytoPurpose $other = InvoiceMandateOptionsPaytoPurpose._('other');
+static const InvoiceMandateOptionsPaytoPurpose $other = InvoiceMandateOptionsPaytoPurpose$$other._();
 
-static const InvoiceMandateOptionsPaytoPurpose pension = InvoiceMandateOptionsPaytoPurpose._('pension');
+static const InvoiceMandateOptionsPaytoPurpose pension = InvoiceMandateOptionsPaytoPurpose$pension._();
 
-static const InvoiceMandateOptionsPaytoPurpose personal = InvoiceMandateOptionsPaytoPurpose._('personal');
+static const InvoiceMandateOptionsPaytoPurpose personal = InvoiceMandateOptionsPaytoPurpose$personal._();
 
-static const InvoiceMandateOptionsPaytoPurpose retail = InvoiceMandateOptionsPaytoPurpose._('retail');
+static const InvoiceMandateOptionsPaytoPurpose retail = InvoiceMandateOptionsPaytoPurpose$retail._();
 
-static const InvoiceMandateOptionsPaytoPurpose salary = InvoiceMandateOptionsPaytoPurpose._('salary');
+static const InvoiceMandateOptionsPaytoPurpose salary = InvoiceMandateOptionsPaytoPurpose$salary._();
 
-static const InvoiceMandateOptionsPaytoPurpose tax = InvoiceMandateOptionsPaytoPurpose._('tax');
+static const InvoiceMandateOptionsPaytoPurpose tax = InvoiceMandateOptionsPaytoPurpose$tax._();
 
-static const InvoiceMandateOptionsPaytoPurpose utility = InvoiceMandateOptionsPaytoPurpose._('utility');
+static const InvoiceMandateOptionsPaytoPurpose utility = InvoiceMandateOptionsPaytoPurpose$utility._();
 
 static const List<InvoiceMandateOptionsPaytoPurpose> values = [dependantSupport, government, loan, mortgage, $other, pension, personal, retail, salary, tax, utility];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -62,12 +61,116 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InvoiceMandateOptionsPaytoPurpose$Unknown; } 
+@override String toString() => 'InvoiceMandateOptionsPaytoPurpose($value)';
+
+ }
+@immutable final class InvoiceMandateOptionsPaytoPurpose$dependantSupport extends InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose$dependantSupport._();
+
+@override String get value => 'dependant_support';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceMandateOptionsPaytoPurpose$dependantSupport;
+
+@override int get hashCode => 'dependant_support'.hashCode;
+
+ }
+@immutable final class InvoiceMandateOptionsPaytoPurpose$government extends InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose$government._();
+
+@override String get value => 'government';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceMandateOptionsPaytoPurpose$government;
+
+@override int get hashCode => 'government'.hashCode;
+
+ }
+@immutable final class InvoiceMandateOptionsPaytoPurpose$loan extends InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose$loan._();
+
+@override String get value => 'loan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceMandateOptionsPaytoPurpose$loan;
+
+@override int get hashCode => 'loan'.hashCode;
+
+ }
+@immutable final class InvoiceMandateOptionsPaytoPurpose$mortgage extends InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose$mortgage._();
+
+@override String get value => 'mortgage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceMandateOptionsPaytoPurpose$mortgage;
+
+@override int get hashCode => 'mortgage'.hashCode;
+
+ }
+@immutable final class InvoiceMandateOptionsPaytoPurpose$$other extends InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceMandateOptionsPaytoPurpose$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class InvoiceMandateOptionsPaytoPurpose$pension extends InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose$pension._();
+
+@override String get value => 'pension';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceMandateOptionsPaytoPurpose$pension;
+
+@override int get hashCode => 'pension'.hashCode;
+
+ }
+@immutable final class InvoiceMandateOptionsPaytoPurpose$personal extends InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose$personal._();
+
+@override String get value => 'personal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceMandateOptionsPaytoPurpose$personal;
+
+@override int get hashCode => 'personal'.hashCode;
+
+ }
+@immutable final class InvoiceMandateOptionsPaytoPurpose$retail extends InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose$retail._();
+
+@override String get value => 'retail';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceMandateOptionsPaytoPurpose$retail;
+
+@override int get hashCode => 'retail'.hashCode;
+
+ }
+@immutable final class InvoiceMandateOptionsPaytoPurpose$salary extends InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose$salary._();
+
+@override String get value => 'salary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceMandateOptionsPaytoPurpose$salary;
+
+@override int get hashCode => 'salary'.hashCode;
+
+ }
+@immutable final class InvoiceMandateOptionsPaytoPurpose$tax extends InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose$tax._();
+
+@override String get value => 'tax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceMandateOptionsPaytoPurpose$tax;
+
+@override int get hashCode => 'tax'.hashCode;
+
+ }
+@immutable final class InvoiceMandateOptionsPaytoPurpose$utility extends InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose$utility._();
+
+@override String get value => 'utility';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceMandateOptionsPaytoPurpose$utility;
+
+@override int get hashCode => 'utility'.hashCode;
+
+ }
+@immutable final class InvoiceMandateOptionsPaytoPurpose$Unknown extends InvoiceMandateOptionsPaytoPurpose {const InvoiceMandateOptionsPaytoPurpose$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InvoiceMandateOptionsPaytoPurpose && other.value == value;
+    other is InvoiceMandateOptionsPaytoPurpose$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InvoiceMandateOptionsPaytoPurpose($value)';
 
  }

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeMcphttpError
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimeMcphttpErrorType {const RealtimeMcphttpErrorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RealtimeMcphttpErrorType {const RealtimeMcphttpErrorType();
 
 factory RealtimeMcphttpErrorType.fromJson(String json) { return switch (json) {
   'http_error' => httpError,
-  _ => RealtimeMcphttpErrorType._(json),
+  _ => RealtimeMcphttpErrorType$Unknown(json),
 }; }
 
-static const RealtimeMcphttpErrorType httpError = RealtimeMcphttpErrorType._('http_error');
+static const RealtimeMcphttpErrorType httpError = RealtimeMcphttpErrorType$httpError._();
 
 static const List<RealtimeMcphttpErrorType> values = [httpError];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeMcphttpErrorType$Unknown; } 
+@override String toString() => 'RealtimeMcphttpErrorType($value)';
+
+ }
+@immutable final class RealtimeMcphttpErrorType$httpError extends RealtimeMcphttpErrorType {const RealtimeMcphttpErrorType$httpError._();
+
+@override String get value => 'http_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeMcphttpErrorType$httpError;
+
+@override int get hashCode => 'http_error'.hashCode;
+
+ }
+@immutable final class RealtimeMcphttpErrorType$Unknown extends RealtimeMcphttpErrorType {const RealtimeMcphttpErrorType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeMcphttpErrorType && other.value == value;
+    other is RealtimeMcphttpErrorType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeMcphttpErrorType($value)';
 
  }
 @immutable final class RealtimeMcphttpError {const RealtimeMcphttpError({required this.type, required this.code, required this.message, });

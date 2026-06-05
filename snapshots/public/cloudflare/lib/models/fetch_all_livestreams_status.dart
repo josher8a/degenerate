@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FetchAllLivestreamsStatus
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FetchAllLivestreamsStatus {const FetchAllLivestreamsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class FetchAllLivestreamsStatus {const FetchAllLivestreamsStatus();
 
 factory FetchAllLivestreamsStatus.fromJson(String json) { return switch (json) {
   'LIVE' => live,
   'IDLE' => idle,
   'ERRORED' => errored,
   'INVOKED' => invoked,
-  _ => FetchAllLivestreamsStatus._(json),
+  _ => FetchAllLivestreamsStatus$Unknown(json),
 }; }
 
-static const FetchAllLivestreamsStatus live = FetchAllLivestreamsStatus._('LIVE');
+static const FetchAllLivestreamsStatus live = FetchAllLivestreamsStatus$live._();
 
-static const FetchAllLivestreamsStatus idle = FetchAllLivestreamsStatus._('IDLE');
+static const FetchAllLivestreamsStatus idle = FetchAllLivestreamsStatus$idle._();
 
-static const FetchAllLivestreamsStatus errored = FetchAllLivestreamsStatus._('ERRORED');
+static const FetchAllLivestreamsStatus errored = FetchAllLivestreamsStatus$errored._();
 
-static const FetchAllLivestreamsStatus invoked = FetchAllLivestreamsStatus._('INVOKED');
+static const FetchAllLivestreamsStatus invoked = FetchAllLivestreamsStatus$invoked._();
 
 static const List<FetchAllLivestreamsStatus> values = [live, idle, errored, invoked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FetchAllLivestreamsStatus$Unknown; } 
+@override String toString() => 'FetchAllLivestreamsStatus($value)';
+
+ }
+@immutable final class FetchAllLivestreamsStatus$live extends FetchAllLivestreamsStatus {const FetchAllLivestreamsStatus$live._();
+
+@override String get value => 'LIVE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FetchAllLivestreamsStatus$live;
+
+@override int get hashCode => 'LIVE'.hashCode;
+
+ }
+@immutable final class FetchAllLivestreamsStatus$idle extends FetchAllLivestreamsStatus {const FetchAllLivestreamsStatus$idle._();
+
+@override String get value => 'IDLE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FetchAllLivestreamsStatus$idle;
+
+@override int get hashCode => 'IDLE'.hashCode;
+
+ }
+@immutable final class FetchAllLivestreamsStatus$errored extends FetchAllLivestreamsStatus {const FetchAllLivestreamsStatus$errored._();
+
+@override String get value => 'ERRORED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FetchAllLivestreamsStatus$errored;
+
+@override int get hashCode => 'ERRORED'.hashCode;
+
+ }
+@immutable final class FetchAllLivestreamsStatus$invoked extends FetchAllLivestreamsStatus {const FetchAllLivestreamsStatus$invoked._();
+
+@override String get value => 'INVOKED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FetchAllLivestreamsStatus$invoked;
+
+@override int get hashCode => 'INVOKED'.hashCode;
+
+ }
+@immutable final class FetchAllLivestreamsStatus$Unknown extends FetchAllLivestreamsStatus {const FetchAllLivestreamsStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FetchAllLivestreamsStatus && other.value == value;
+    other is FetchAllLivestreamsStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FetchAllLivestreamsStatus($value)';
 
  }

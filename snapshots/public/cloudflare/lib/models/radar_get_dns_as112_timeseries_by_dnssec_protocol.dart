@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetDnsAs112TimeseriesByDnssecProtocol
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsAs112TimeseriesByDnssecProtocol {const RadarGetDnsAs112TimeseriesByDnssecProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetDnsAs112TimeseriesByDnssecProtocol {const RadarGetDnsAs112TimeseriesByDnssecProtocol();
 
 factory RadarGetDnsAs112TimeseriesByDnssecProtocol.fromJson(String json) { return switch (json) {
   'UDP' => udp,
   'TCP' => tcp,
   'HTTPS' => https,
   'TLS' => tls,
-  _ => RadarGetDnsAs112TimeseriesByDnssecProtocol._(json),
+  _ => RadarGetDnsAs112TimeseriesByDnssecProtocol$Unknown(json),
 }; }
 
-static const RadarGetDnsAs112TimeseriesByDnssecProtocol udp = RadarGetDnsAs112TimeseriesByDnssecProtocol._('UDP');
+static const RadarGetDnsAs112TimeseriesByDnssecProtocol udp = RadarGetDnsAs112TimeseriesByDnssecProtocol$udp._();
 
-static const RadarGetDnsAs112TimeseriesByDnssecProtocol tcp = RadarGetDnsAs112TimeseriesByDnssecProtocol._('TCP');
+static const RadarGetDnsAs112TimeseriesByDnssecProtocol tcp = RadarGetDnsAs112TimeseriesByDnssecProtocol$tcp._();
 
-static const RadarGetDnsAs112TimeseriesByDnssecProtocol https = RadarGetDnsAs112TimeseriesByDnssecProtocol._('HTTPS');
+static const RadarGetDnsAs112TimeseriesByDnssecProtocol https = RadarGetDnsAs112TimeseriesByDnssecProtocol$https._();
 
-static const RadarGetDnsAs112TimeseriesByDnssecProtocol tls = RadarGetDnsAs112TimeseriesByDnssecProtocol._('TLS');
+static const RadarGetDnsAs112TimeseriesByDnssecProtocol tls = RadarGetDnsAs112TimeseriesByDnssecProtocol$tls._();
 
 static const List<RadarGetDnsAs112TimeseriesByDnssecProtocol> values = [udp, tcp, https, tls];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetDnsAs112TimeseriesByDnssecProtocol$Unknown; } 
+@override String toString() => 'RadarGetDnsAs112TimeseriesByDnssecProtocol($value)';
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesByDnssecProtocol$udp extends RadarGetDnsAs112TimeseriesByDnssecProtocol {const RadarGetDnsAs112TimeseriesByDnssecProtocol$udp._();
+
+@override String get value => 'UDP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesByDnssecProtocol$udp;
+
+@override int get hashCode => 'UDP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesByDnssecProtocol$tcp extends RadarGetDnsAs112TimeseriesByDnssecProtocol {const RadarGetDnsAs112TimeseriesByDnssecProtocol$tcp._();
+
+@override String get value => 'TCP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesByDnssecProtocol$tcp;
+
+@override int get hashCode => 'TCP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesByDnssecProtocol$https extends RadarGetDnsAs112TimeseriesByDnssecProtocol {const RadarGetDnsAs112TimeseriesByDnssecProtocol$https._();
+
+@override String get value => 'HTTPS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesByDnssecProtocol$https;
+
+@override int get hashCode => 'HTTPS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesByDnssecProtocol$tls extends RadarGetDnsAs112TimeseriesByDnssecProtocol {const RadarGetDnsAs112TimeseriesByDnssecProtocol$tls._();
+
+@override String get value => 'TLS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesByDnssecProtocol$tls;
+
+@override int get hashCode => 'TLS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesByDnssecProtocol$Unknown extends RadarGetDnsAs112TimeseriesByDnssecProtocol {const RadarGetDnsAs112TimeseriesByDnssecProtocol$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetDnsAs112TimeseriesByDnssecProtocol && other.value == value;
+    other is RadarGetDnsAs112TimeseriesByDnssecProtocol$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetDnsAs112TimeseriesByDnssecProtocol($value)';
 
  }

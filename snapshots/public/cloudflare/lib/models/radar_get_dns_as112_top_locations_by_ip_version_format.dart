@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetDnsAs112TopLocationsByIpVersionFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetDnsAs112TopLocationsByIpVersionFormat {const RadarGetDnsAs112TopLocationsByIpVersionFormat._(this.value);
+sealed class RadarGetDnsAs112TopLocationsByIpVersionFormat {const RadarGetDnsAs112TopLocationsByIpVersionFormat();
 
 factory RadarGetDnsAs112TopLocationsByIpVersionFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetDnsAs112TopLocationsByIpVersionFormat._(json),
+  _ => RadarGetDnsAs112TopLocationsByIpVersionFormat$Unknown(json),
 }; }
 
-static const RadarGetDnsAs112TopLocationsByIpVersionFormat $json = RadarGetDnsAs112TopLocationsByIpVersionFormat._('JSON');
+static const RadarGetDnsAs112TopLocationsByIpVersionFormat $json = RadarGetDnsAs112TopLocationsByIpVersionFormat$$json._();
 
-static const RadarGetDnsAs112TopLocationsByIpVersionFormat csv = RadarGetDnsAs112TopLocationsByIpVersionFormat._('CSV');
+static const RadarGetDnsAs112TopLocationsByIpVersionFormat csv = RadarGetDnsAs112TopLocationsByIpVersionFormat$csv._();
 
 static const List<RadarGetDnsAs112TopLocationsByIpVersionFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetDnsAs112TopLocationsByIpVersionFormat$Unknown; } 
+@override String toString() => 'RadarGetDnsAs112TopLocationsByIpVersionFormat($value)';
+
+ }
+@immutable final class RadarGetDnsAs112TopLocationsByIpVersionFormat$$json extends RadarGetDnsAs112TopLocationsByIpVersionFormat {const RadarGetDnsAs112TopLocationsByIpVersionFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TopLocationsByIpVersionFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TopLocationsByIpVersionFormat$csv extends RadarGetDnsAs112TopLocationsByIpVersionFormat {const RadarGetDnsAs112TopLocationsByIpVersionFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TopLocationsByIpVersionFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TopLocationsByIpVersionFormat$Unknown extends RadarGetDnsAs112TopLocationsByIpVersionFormat {const RadarGetDnsAs112TopLocationsByIpVersionFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetDnsAs112TopLocationsByIpVersionFormat && other.value == value;
+    other is RadarGetDnsAs112TopLocationsByIpVersionFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetDnsAs112TopLocationsByIpVersionFormat($value)';
 
  }

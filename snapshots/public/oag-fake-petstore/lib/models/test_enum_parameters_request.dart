@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TestEnumParametersRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EnumFormStringArray {const EnumFormStringArray._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EnumFormStringArray {const EnumFormStringArray();
 
 factory EnumFormStringArray.fromJson(String json) { return switch (json) {
   '>' => $empty,
   r'$' => $empty2,
-  _ => EnumFormStringArray._(json),
+  _ => EnumFormStringArray$Unknown(json),
 }; }
 
-static const EnumFormStringArray $empty = EnumFormStringArray._('>');
+static const EnumFormStringArray $empty = EnumFormStringArray$$empty._();
 
-static const EnumFormStringArray $empty2 = EnumFormStringArray._(r'$');
+static const EnumFormStringArray $empty2 = EnumFormStringArray$$empty2._();
 
 static const List<EnumFormStringArray> values = [$empty, $empty2];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,35 +24,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is EnumFormStringArray && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is EnumFormStringArray$Unknown; } 
 @override String toString() => 'EnumFormStringArray($value)';
 
  }
+@immutable final class EnumFormStringArray$$empty extends EnumFormStringArray {const EnumFormStringArray$$empty._();
+
+@override String get value => '>';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumFormStringArray$$empty;
+
+@override int get hashCode => '>'.hashCode;
+
+ }
+@immutable final class EnumFormStringArray$$empty2 extends EnumFormStringArray {const EnumFormStringArray$$empty2._();
+
+@override String get value => r'$';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumFormStringArray$$empty2;
+
+@override int get hashCode => r'$'.hashCode;
+
+ }
+@immutable final class EnumFormStringArray$Unknown extends EnumFormStringArray {const EnumFormStringArray$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EnumFormStringArray$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Form parameter enum test (string)
-@immutable final class EnumFormString {const EnumFormString._(this.value);
+sealed class EnumFormString {const EnumFormString();
 
 factory EnumFormString.fromJson(String json) { return switch (json) {
   '_abc' => abc,
   '-efg' => efg,
   '(xyz)' => xyz,
-  _ => EnumFormString._(json),
+  _ => EnumFormString$Unknown(json),
 }; }
 
-static const EnumFormString abc = EnumFormString._('_abc');
+static const EnumFormString abc = EnumFormString$abc._();
 
-static const EnumFormString efg = EnumFormString._('-efg');
+static const EnumFormString efg = EnumFormString$efg._();
 
-static const EnumFormString xyz = EnumFormString._('(xyz)');
+static const EnumFormString xyz = EnumFormString$xyz._();
 
 static const List<EnumFormString> values = [abc, efg, xyz];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -63,13 +84,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EnumFormString$Unknown; } 
+@override String toString() => 'EnumFormString($value)';
+
+ }
+@immutable final class EnumFormString$abc extends EnumFormString {const EnumFormString$abc._();
+
+@override String get value => '_abc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumFormString$abc;
+
+@override int get hashCode => '_abc'.hashCode;
+
+ }
+@immutable final class EnumFormString$efg extends EnumFormString {const EnumFormString$efg._();
+
+@override String get value => '-efg';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumFormString$efg;
+
+@override int get hashCode => '-efg'.hashCode;
+
+ }
+@immutable final class EnumFormString$xyz extends EnumFormString {const EnumFormString$xyz._();
+
+@override String get value => '(xyz)';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumFormString$xyz;
+
+@override int get hashCode => '(xyz)'.hashCode;
+
+ }
+@immutable final class EnumFormString$Unknown extends EnumFormString {const EnumFormString$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EnumFormString && other.value == value;
+    other is EnumFormString$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EnumFormString($value)';
 
  }
 @immutable final class TestEnumParametersRequest {const TestEnumParametersRequest({this.enumFormStringArray, this.enumFormString = EnumFormString.efg, });

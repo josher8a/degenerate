@@ -4,22 +4,21 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_start_reason/caller.dart';/// Specifies if the recording was started using the "Start a Recording"API or using the parameter RECORD_ON_START in the "Create a meeting" API.
 /// 
 /// If the recording is initiated using the "RECORD_ON_START" parameter, the user details will not be populated.
-@immutable final class RealtimekitStartReasonReason {const RealtimekitStartReasonReason._(this.value);
+sealed class RealtimekitStartReasonReason {const RealtimekitStartReasonReason();
 
 factory RealtimekitStartReasonReason.fromJson(String json) { return switch (json) {
   'API_CALL' => apiCall,
   'RECORD_ON_START' => recordOnStart,
-  _ => RealtimekitStartReasonReason._(json),
+  _ => RealtimekitStartReasonReason$Unknown(json),
 }; }
 
-static const RealtimekitStartReasonReason apiCall = RealtimekitStartReasonReason._('API_CALL');
+static const RealtimekitStartReasonReason apiCall = RealtimekitStartReasonReason$apiCall._();
 
-static const RealtimekitStartReasonReason recordOnStart = RealtimekitStartReasonReason._('RECORD_ON_START');
+static const RealtimekitStartReasonReason recordOnStart = RealtimekitStartReasonReason$recordOnStart._();
 
 static const List<RealtimekitStartReasonReason> values = [apiCall, recordOnStart];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -28,13 +27,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimekitStartReasonReason$Unknown; } 
+@override String toString() => 'RealtimekitStartReasonReason($value)';
+
+ }
+@immutable final class RealtimekitStartReasonReason$apiCall extends RealtimekitStartReasonReason {const RealtimekitStartReasonReason$apiCall._();
+
+@override String get value => 'API_CALL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitStartReasonReason$apiCall;
+
+@override int get hashCode => 'API_CALL'.hashCode;
+
+ }
+@immutable final class RealtimekitStartReasonReason$recordOnStart extends RealtimekitStartReasonReason {const RealtimekitStartReasonReason$recordOnStart._();
+
+@override String get value => 'RECORD_ON_START';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitStartReasonReason$recordOnStart;
+
+@override int get hashCode => 'RECORD_ON_START'.hashCode;
+
+ }
+@immutable final class RealtimekitStartReasonReason$Unknown extends RealtimekitStartReasonReason {const RealtimekitStartReasonReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimekitStartReasonReason && other.value == value;
+    other is RealtimekitStartReasonReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimekitStartReasonReason($value)';
 
  }
 @immutable final class RealtimekitStartReason {const RealtimekitStartReason({this.caller, this.reason, });

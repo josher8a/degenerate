@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TeamsDevicesFirewallInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating System.
-@immutable final class TeamsDevicesFirewallInputRequestOperatingSystem {const TeamsDevicesFirewallInputRequestOperatingSystem._(this.value);
+sealed class TeamsDevicesFirewallInputRequestOperatingSystem {const TeamsDevicesFirewallInputRequestOperatingSystem();
 
 factory TeamsDevicesFirewallInputRequestOperatingSystem.fromJson(String json) { return switch (json) {
   'windows' => windows,
   'mac' => mac,
-  _ => TeamsDevicesFirewallInputRequestOperatingSystem._(json),
+  _ => TeamsDevicesFirewallInputRequestOperatingSystem$Unknown(json),
 }; }
 
-static const TeamsDevicesFirewallInputRequestOperatingSystem windows = TeamsDevicesFirewallInputRequestOperatingSystem._('windows');
+static const TeamsDevicesFirewallInputRequestOperatingSystem windows = TeamsDevicesFirewallInputRequestOperatingSystem$windows._();
 
-static const TeamsDevicesFirewallInputRequestOperatingSystem mac = TeamsDevicesFirewallInputRequestOperatingSystem._('mac');
+static const TeamsDevicesFirewallInputRequestOperatingSystem mac = TeamsDevicesFirewallInputRequestOperatingSystem$mac._();
 
 static const List<TeamsDevicesFirewallInputRequestOperatingSystem> values = [windows, mac];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TeamsDevicesFirewallInputRequestOperatingSystem$Unknown; } 
+@override String toString() => 'TeamsDevicesFirewallInputRequestOperatingSystem($value)';
+
+ }
+@immutable final class TeamsDevicesFirewallInputRequestOperatingSystem$windows extends TeamsDevicesFirewallInputRequestOperatingSystem {const TeamsDevicesFirewallInputRequestOperatingSystem$windows._();
+
+@override String get value => 'windows';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesFirewallInputRequestOperatingSystem$windows;
+
+@override int get hashCode => 'windows'.hashCode;
+
+ }
+@immutable final class TeamsDevicesFirewallInputRequestOperatingSystem$mac extends TeamsDevicesFirewallInputRequestOperatingSystem {const TeamsDevicesFirewallInputRequestOperatingSystem$mac._();
+
+@override String get value => 'mac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesFirewallInputRequestOperatingSystem$mac;
+
+@override int get hashCode => 'mac'.hashCode;
+
+ }
+@immutable final class TeamsDevicesFirewallInputRequestOperatingSystem$Unknown extends TeamsDevicesFirewallInputRequestOperatingSystem {const TeamsDevicesFirewallInputRequestOperatingSystem$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TeamsDevicesFirewallInputRequestOperatingSystem && other.value == value;
+    other is TeamsDevicesFirewallInputRequestOperatingSystem$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TeamsDevicesFirewallInputRequestOperatingSystem($value)';
 
  }
 @immutable final class TeamsDevicesFirewallInputRequest {const TeamsDevicesFirewallInputRequest({required this.enabled, required this.operatingSystem, });

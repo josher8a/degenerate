@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PaymentAttemptRecord (inline: ReportedBy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates who reported the payment.
-@immutable final class ReportedBy {const ReportedBy._(this.value);
+sealed class ReportedBy {const ReportedBy();
 
 factory ReportedBy.fromJson(String json) { return switch (json) {
   'self' => self,
   'stripe' => stripe,
-  _ => ReportedBy._(json),
+  _ => ReportedBy$Unknown(json),
 }; }
 
-static const ReportedBy self = ReportedBy._('self');
+static const ReportedBy self = ReportedBy$self._();
 
-static const ReportedBy stripe = ReportedBy._('stripe');
+static const ReportedBy stripe = ReportedBy$stripe._();
 
 static const List<ReportedBy> values = [self, stripe];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ReportedBy$Unknown; } 
+@override String toString() => 'ReportedBy($value)';
+
+ }
+@immutable final class ReportedBy$self extends ReportedBy {const ReportedBy$self._();
+
+@override String get value => 'self';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportedBy$self;
+
+@override int get hashCode => 'self'.hashCode;
+
+ }
+@immutable final class ReportedBy$stripe extends ReportedBy {const ReportedBy$stripe._();
+
+@override String get value => 'stripe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportedBy$stripe;
+
+@override int get hashCode => 'stripe'.hashCode;
+
+ }
+@immutable final class ReportedBy$Unknown extends ReportedBy {const ReportedBy$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ReportedBy && other.value == value;
+    other is ReportedBy$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ReportedBy($value)';
 
  }

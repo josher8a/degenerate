@@ -9,28 +9,27 @@ String toJson() => value;
 
 }
 /// The current status of the origin server according to the health check.
-@immutable final class SmartshieldStatus {const SmartshieldStatus._(this.value);
+sealed class SmartshieldStatus {const SmartshieldStatus();
 
 factory SmartshieldStatus.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
   'healthy' => healthy,
   'unhealthy' => unhealthy,
   'suspended' => suspended,
-  _ => SmartshieldStatus._(json),
+  _ => SmartshieldStatus$Unknown(json),
 }; }
 
-static const SmartshieldStatus unknown = SmartshieldStatus._('unknown');
+static const SmartshieldStatus unknown = SmartshieldStatus$unknown._();
 
-static const SmartshieldStatus healthy = SmartshieldStatus._('healthy');
+static const SmartshieldStatus healthy = SmartshieldStatus$healthy._();
 
-static const SmartshieldStatus unhealthy = SmartshieldStatus._('unhealthy');
+static const SmartshieldStatus unhealthy = SmartshieldStatus$unhealthy._();
 
-static const SmartshieldStatus suspended = SmartshieldStatus._('suspended');
+static const SmartshieldStatus suspended = SmartshieldStatus$suspended._();
 
 static const List<SmartshieldStatus> values = [unknown, healthy, unhealthy, suspended];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,13 +40,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SmartshieldStatus$Unknown; } 
+@override String toString() => 'SmartshieldStatus($value)';
+
+ }
+@immutable final class SmartshieldStatus$unknown extends SmartshieldStatus {const SmartshieldStatus$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SmartshieldStatus$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class SmartshieldStatus$healthy extends SmartshieldStatus {const SmartshieldStatus$healthy._();
+
+@override String get value => 'healthy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SmartshieldStatus$healthy;
+
+@override int get hashCode => 'healthy'.hashCode;
+
+ }
+@immutable final class SmartshieldStatus$unhealthy extends SmartshieldStatus {const SmartshieldStatus$unhealthy._();
+
+@override String get value => 'unhealthy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SmartshieldStatus$unhealthy;
+
+@override int get hashCode => 'unhealthy'.hashCode;
+
+ }
+@immutable final class SmartshieldStatus$suspended extends SmartshieldStatus {const SmartshieldStatus$suspended._();
+
+@override String get value => 'suspended';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SmartshieldStatus$suspended;
+
+@override int get hashCode => 'suspended'.hashCode;
+
+ }
+@immutable final class SmartshieldStatus$Unknown extends SmartshieldStatus {const SmartshieldStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SmartshieldStatus && other.value == value;
+    other is SmartshieldStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SmartshieldStatus($value)';
 
  }
 extension type SmartshieldTimestamp(DateTime value) {

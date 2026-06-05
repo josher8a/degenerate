@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MconnEvent (inline: StartRotateCryptKey)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started crypt key rotation
-@immutable final class StartRotateCryptKeyK {const StartRotateCryptKeyK._(this.value);
+sealed class StartRotateCryptKeyK {const StartRotateCryptKeyK();
 
 factory StartRotateCryptKeyK.fromJson(String json) { return switch (json) {
   'StartRotateCryptKey' => startRotateCryptKey,
-  _ => StartRotateCryptKeyK._(json),
+  _ => StartRotateCryptKeyK$Unknown(json),
 }; }
 
-static const StartRotateCryptKeyK startRotateCryptKey = StartRotateCryptKeyK._('StartRotateCryptKey');
+static const StartRotateCryptKeyK startRotateCryptKey = StartRotateCryptKeyK$startRotateCryptKey._();
 
 static const List<StartRotateCryptKeyK> values = [startRotateCryptKey];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StartRotateCryptKeyK$Unknown; } 
+@override String toString() => 'StartRotateCryptKeyK($value)';
+
+ }
+@immutable final class StartRotateCryptKeyK$startRotateCryptKey extends StartRotateCryptKeyK {const StartRotateCryptKeyK$startRotateCryptKey._();
+
+@override String get value => 'StartRotateCryptKey';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StartRotateCryptKeyK$startRotateCryptKey;
+
+@override int get hashCode => 'StartRotateCryptKey'.hashCode;
+
+ }
+@immutable final class StartRotateCryptKeyK$Unknown extends StartRotateCryptKeyK {const StartRotateCryptKeyK$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StartRotateCryptKeyK && other.value == value;
+    other is StartRotateCryptKeyK$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StartRotateCryptKeyK($value)';
 
  }
 @immutable final class StartRotateCryptKey {const StartRotateCryptKey({required this.k});

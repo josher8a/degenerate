@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UsageEmbeddingsResult
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageEmbeddingsResultObject {const UsageEmbeddingsResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageEmbeddingsResultObject {const UsageEmbeddingsResultObject();
 
 factory UsageEmbeddingsResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.embeddings.result' => organizationUsageEmbeddingsResult,
-  _ => UsageEmbeddingsResultObject._(json),
+  _ => UsageEmbeddingsResultObject$Unknown(json),
 }; }
 
-static const UsageEmbeddingsResultObject organizationUsageEmbeddingsResult = UsageEmbeddingsResultObject._('organization.usage.embeddings.result');
+static const UsageEmbeddingsResultObject organizationUsageEmbeddingsResult = UsageEmbeddingsResultObject$organizationUsageEmbeddingsResult._();
 
 static const List<UsageEmbeddingsResultObject> values = [organizationUsageEmbeddingsResult];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UsageEmbeddingsResultObject$Unknown; } 
+@override String toString() => 'UsageEmbeddingsResultObject($value)';
+
+ }
+@immutable final class UsageEmbeddingsResultObject$organizationUsageEmbeddingsResult extends UsageEmbeddingsResultObject {const UsageEmbeddingsResultObject$organizationUsageEmbeddingsResult._();
+
+@override String get value => 'organization.usage.embeddings.result';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageEmbeddingsResultObject$organizationUsageEmbeddingsResult;
+
+@override int get hashCode => 'organization.usage.embeddings.result'.hashCode;
+
+ }
+@immutable final class UsageEmbeddingsResultObject$Unknown extends UsageEmbeddingsResultObject {const UsageEmbeddingsResultObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UsageEmbeddingsResultObject && other.value == value;
+    other is UsageEmbeddingsResultObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UsageEmbeddingsResultObject($value)';
 
  }
 /// The aggregated embeddings usage details of the specific time bucket.

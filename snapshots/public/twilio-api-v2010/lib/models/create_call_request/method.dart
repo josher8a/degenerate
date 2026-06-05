@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CreateCallRequest (inline: Method)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use when calling the `url` parameter's value. Can be: `GET` or `POST` and the default is `POST`. If an `application_sid` parameter is present, this parameter is ignored.
-@immutable final class Method {const Method._(this.value);
+sealed class Method {const Method();
 
 factory Method.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => Method._(json),
+  _ => Method$Unknown(json),
 }; }
 
-static const Method $get = Method._('GET');
+static const Method $get = Method$$get._();
 
-static const Method post = Method._('POST');
+static const Method post = Method$post._();
 
 static const List<Method> values = [$get, post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Method$Unknown; } 
+@override String toString() => 'Method($value)';
+
+ }
+@immutable final class Method$$get extends Method {const Method$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Method$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class Method$post extends Method {const Method$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Method$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class Method$Unknown extends Method {const Method$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Method && other.value == value;
+    other is Method$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Method($value)';
 
  }

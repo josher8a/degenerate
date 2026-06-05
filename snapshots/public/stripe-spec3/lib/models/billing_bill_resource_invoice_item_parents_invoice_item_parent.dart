@@ -2,19 +2,18 @@
 // Source: #/components/schemas/BillingBillResourceInvoiceItemParentsInvoiceItemParent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoice_item_parents_invoice_item_subscription_parent.dart';/// The type of parent that generated this invoice item
-@immutable final class BillingBillResourceInvoiceItemParentsInvoiceItemParentType {const BillingBillResourceInvoiceItemParentsInvoiceItemParentType._(this.value);
+sealed class BillingBillResourceInvoiceItemParentsInvoiceItemParentType {const BillingBillResourceInvoiceItemParentsInvoiceItemParentType();
 
 factory BillingBillResourceInvoiceItemParentsInvoiceItemParentType.fromJson(String json) { return switch (json) {
   'subscription_details' => subscriptionDetails,
-  _ => BillingBillResourceInvoiceItemParentsInvoiceItemParentType._(json),
+  _ => BillingBillResourceInvoiceItemParentsInvoiceItemParentType$Unknown(json),
 }; }
 
-static const BillingBillResourceInvoiceItemParentsInvoiceItemParentType subscriptionDetails = BillingBillResourceInvoiceItemParentsInvoiceItemParentType._('subscription_details');
+static const BillingBillResourceInvoiceItemParentsInvoiceItemParentType subscriptionDetails = BillingBillResourceInvoiceItemParentsInvoiceItemParentType$subscriptionDetails._();
 
 static const List<BillingBillResourceInvoiceItemParentsInvoiceItemParentType> values = [subscriptionDetails];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingBillResourceInvoiceItemParentsInvoiceItemParentType$Unknown; } 
+@override String toString() => 'BillingBillResourceInvoiceItemParentsInvoiceItemParentType($value)';
+
+ }
+@immutable final class BillingBillResourceInvoiceItemParentsInvoiceItemParentType$subscriptionDetails extends BillingBillResourceInvoiceItemParentsInvoiceItemParentType {const BillingBillResourceInvoiceItemParentsInvoiceItemParentType$subscriptionDetails._();
+
+@override String get value => 'subscription_details';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoiceItemParentsInvoiceItemParentType$subscriptionDetails;
+
+@override int get hashCode => 'subscription_details'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoiceItemParentsInvoiceItemParentType$Unknown extends BillingBillResourceInvoiceItemParentsInvoiceItemParentType {const BillingBillResourceInvoiceItemParentsInvoiceItemParentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingBillResourceInvoiceItemParentsInvoiceItemParentType && other.value == value;
+    other is BillingBillResourceInvoiceItemParentsInvoiceItemParentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingBillResourceInvoiceItemParentsInvoiceItemParentType($value)';
 
  }
 /// 

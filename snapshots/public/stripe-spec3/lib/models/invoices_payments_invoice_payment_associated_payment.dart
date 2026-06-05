@@ -2,25 +2,24 @@
 // Source: #/components/schemas/InvoicesPaymentsInvoicePaymentAssociatedPayment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment/invoices_payments_invoice_payment_associated_payment_payment_record.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_record.dart';/// Type of payment object associated with this invoice payment.
-@immutable final class InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType._(this.value);
+sealed class InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType();
 
 factory InvoicesPaymentsInvoicePaymentAssociatedPaymentType.fromJson(String json) { return switch (json) {
   'charge' => charge,
   'payment_intent' => paymentIntent,
   'payment_record' => paymentRecord,
-  _ => InvoicesPaymentsInvoicePaymentAssociatedPaymentType._(json),
+  _ => InvoicesPaymentsInvoicePaymentAssociatedPaymentType$Unknown(json),
 }; }
 
-static const InvoicesPaymentsInvoicePaymentAssociatedPaymentType charge = InvoicesPaymentsInvoicePaymentAssociatedPaymentType._('charge');
+static const InvoicesPaymentsInvoicePaymentAssociatedPaymentType charge = InvoicesPaymentsInvoicePaymentAssociatedPaymentType$charge._();
 
-static const InvoicesPaymentsInvoicePaymentAssociatedPaymentType paymentIntent = InvoicesPaymentsInvoicePaymentAssociatedPaymentType._('payment_intent');
+static const InvoicesPaymentsInvoicePaymentAssociatedPaymentType paymentIntent = InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentIntent._();
 
-static const InvoicesPaymentsInvoicePaymentAssociatedPaymentType paymentRecord = InvoicesPaymentsInvoicePaymentAssociatedPaymentType._('payment_record');
+static const InvoicesPaymentsInvoicePaymentAssociatedPaymentType paymentRecord = InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentRecord._();
 
 static const List<InvoicesPaymentsInvoicePaymentAssociatedPaymentType> values = [charge, paymentIntent, paymentRecord];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InvoicesPaymentsInvoicePaymentAssociatedPaymentType$Unknown; } 
+@override String toString() => 'InvoicesPaymentsInvoicePaymentAssociatedPaymentType($value)';
+
+ }
+@immutable final class InvoicesPaymentsInvoicePaymentAssociatedPaymentType$charge extends InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType$charge._();
+
+@override String get value => 'charge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoicesPaymentsInvoicePaymentAssociatedPaymentType$charge;
+
+@override int get hashCode => 'charge'.hashCode;
+
+ }
+@immutable final class InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentIntent extends InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentIntent._();
+
+@override String get value => 'payment_intent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentIntent;
+
+@override int get hashCode => 'payment_intent'.hashCode;
+
+ }
+@immutable final class InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentRecord extends InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentRecord._();
+
+@override String get value => 'payment_record';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoicesPaymentsInvoicePaymentAssociatedPaymentType$paymentRecord;
+
+@override int get hashCode => 'payment_record'.hashCode;
+
+ }
+@immutable final class InvoicesPaymentsInvoicePaymentAssociatedPaymentType$Unknown extends InvoicesPaymentsInvoicePaymentAssociatedPaymentType {const InvoicesPaymentsInvoicePaymentAssociatedPaymentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InvoicesPaymentsInvoicePaymentAssociatedPaymentType && other.value == value;
+    other is InvoicesPaymentsInvoicePaymentAssociatedPaymentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InvoicesPaymentsInvoicePaymentAssociatedPaymentType($value)';
 
  }
 /// 

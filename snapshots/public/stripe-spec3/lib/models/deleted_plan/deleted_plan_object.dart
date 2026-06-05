@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DeletedPlan (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class DeletedPlanObject {const DeletedPlanObject._(this.value);
+sealed class DeletedPlanObject {const DeletedPlanObject();
 
 factory DeletedPlanObject.fromJson(String json) { return switch (json) {
   'plan' => plan,
-  _ => DeletedPlanObject._(json),
+  _ => DeletedPlanObject$Unknown(json),
 }; }
 
-static const DeletedPlanObject plan = DeletedPlanObject._('plan');
+static const DeletedPlanObject plan = DeletedPlanObject$plan._();
 
 static const List<DeletedPlanObject> values = [plan];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeletedPlanObject$Unknown; } 
+@override String toString() => 'DeletedPlanObject($value)';
+
+ }
+@immutable final class DeletedPlanObject$plan extends DeletedPlanObject {const DeletedPlanObject$plan._();
+
+@override String get value => 'plan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeletedPlanObject$plan;
+
+@override int get hashCode => 'plan'.hashCode;
+
+ }
+@immutable final class DeletedPlanObject$Unknown extends DeletedPlanObject {const DeletedPlanObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeletedPlanObject && other.value == value;
+    other is DeletedPlanObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeletedPlanObject($value)';
 
  }

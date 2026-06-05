@@ -9,22 +9,21 @@ String toJson() => value;
 
 }
 /// The type of DNS record associated with the application.
-@immutable final class SpectrumConfigDnsType {const SpectrumConfigDnsType._(this.value);
+sealed class SpectrumConfigDnsType {const SpectrumConfigDnsType();
 
 factory SpectrumConfigDnsType.fromJson(String json) { return switch (json) {
   'CNAME' => cname,
   'ADDRESS' => address,
-  _ => SpectrumConfigDnsType._(json),
+  _ => SpectrumConfigDnsType$Unknown(json),
 }; }
 
-static const SpectrumConfigDnsType cname = SpectrumConfigDnsType._('CNAME');
+static const SpectrumConfigDnsType cname = SpectrumConfigDnsType$cname._();
 
-static const SpectrumConfigDnsType address = SpectrumConfigDnsType._('ADDRESS');
+static const SpectrumConfigDnsType address = SpectrumConfigDnsType$address._();
 
 static const List<SpectrumConfigDnsType> values = [cname, address];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SpectrumConfigDnsType$Unknown; } 
+@override String toString() => 'SpectrumConfigDnsType($value)';
+
+ }
+@immutable final class SpectrumConfigDnsType$cname extends SpectrumConfigDnsType {const SpectrumConfigDnsType$cname._();
+
+@override String get value => 'CNAME';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigDnsType$cname;
+
+@override int get hashCode => 'CNAME'.hashCode;
+
+ }
+@immutable final class SpectrumConfigDnsType$address extends SpectrumConfigDnsType {const SpectrumConfigDnsType$address._();
+
+@override String get value => 'ADDRESS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigDnsType$address;
+
+@override int get hashCode => 'ADDRESS'.hashCode;
+
+ }
+@immutable final class SpectrumConfigDnsType$Unknown extends SpectrumConfigDnsType {const SpectrumConfigDnsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SpectrumConfigDnsType && other.value == value;
+    other is SpectrumConfigDnsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SpectrumConfigDnsType($value)';
 
  }
 /// The name and type of DNS record for the Spectrum application.

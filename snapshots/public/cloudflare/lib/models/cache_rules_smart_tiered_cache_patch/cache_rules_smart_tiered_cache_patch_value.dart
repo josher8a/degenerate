@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CacheRulesSmartTieredCachePatch (inline: Value)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enable or disable the Smart Tiered Cache.
-@immutable final class CacheRulesSmartTieredCachePatchValue {const CacheRulesSmartTieredCachePatchValue._(this.value);
+sealed class CacheRulesSmartTieredCachePatchValue {const CacheRulesSmartTieredCachePatchValue();
 
 factory CacheRulesSmartTieredCachePatchValue.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => CacheRulesSmartTieredCachePatchValue._(json),
+  _ => CacheRulesSmartTieredCachePatchValue$Unknown(json),
 }; }
 
-static const CacheRulesSmartTieredCachePatchValue $on = CacheRulesSmartTieredCachePatchValue._('on');
+static const CacheRulesSmartTieredCachePatchValue $on = CacheRulesSmartTieredCachePatchValue$$on._();
 
-static const CacheRulesSmartTieredCachePatchValue off = CacheRulesSmartTieredCachePatchValue._('off');
+static const CacheRulesSmartTieredCachePatchValue off = CacheRulesSmartTieredCachePatchValue$off._();
 
 static const List<CacheRulesSmartTieredCachePatchValue> values = [$on, off];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CacheRulesSmartTieredCachePatchValue$Unknown; } 
+@override String toString() => 'CacheRulesSmartTieredCachePatchValue($value)';
+
+ }
+@immutable final class CacheRulesSmartTieredCachePatchValue$$on extends CacheRulesSmartTieredCachePatchValue {const CacheRulesSmartTieredCachePatchValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CacheRulesSmartTieredCachePatchValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class CacheRulesSmartTieredCachePatchValue$off extends CacheRulesSmartTieredCachePatchValue {const CacheRulesSmartTieredCachePatchValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CacheRulesSmartTieredCachePatchValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class CacheRulesSmartTieredCachePatchValue$Unknown extends CacheRulesSmartTieredCachePatchValue {const CacheRulesSmartTieredCachePatchValue$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CacheRulesSmartTieredCachePatchValue && other.value == value;
+    other is CacheRulesSmartTieredCachePatchValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CacheRulesSmartTieredCachePatchValue($value)';
 
  }

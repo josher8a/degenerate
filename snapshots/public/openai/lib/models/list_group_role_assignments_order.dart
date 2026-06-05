@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ListGroupRoleAssignmentsOrder
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListGroupRoleAssignmentsOrder {const ListGroupRoleAssignmentsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ListGroupRoleAssignmentsOrder {const ListGroupRoleAssignmentsOrder();
 
 factory ListGroupRoleAssignmentsOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => ListGroupRoleAssignmentsOrder._(json),
+  _ => ListGroupRoleAssignmentsOrder$Unknown(json),
 }; }
 
-static const ListGroupRoleAssignmentsOrder asc = ListGroupRoleAssignmentsOrder._('asc');
+static const ListGroupRoleAssignmentsOrder asc = ListGroupRoleAssignmentsOrder$asc._();
 
-static const ListGroupRoleAssignmentsOrder desc = ListGroupRoleAssignmentsOrder._('desc');
+static const ListGroupRoleAssignmentsOrder desc = ListGroupRoleAssignmentsOrder$desc._();
 
 static const List<ListGroupRoleAssignmentsOrder> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ListGroupRoleAssignmentsOrder$Unknown; } 
+@override String toString() => 'ListGroupRoleAssignmentsOrder($value)';
+
+ }
+@immutable final class ListGroupRoleAssignmentsOrder$asc extends ListGroupRoleAssignmentsOrder {const ListGroupRoleAssignmentsOrder$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListGroupRoleAssignmentsOrder$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class ListGroupRoleAssignmentsOrder$desc extends ListGroupRoleAssignmentsOrder {const ListGroupRoleAssignmentsOrder$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListGroupRoleAssignmentsOrder$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class ListGroupRoleAssignmentsOrder$Unknown extends ListGroupRoleAssignmentsOrder {const ListGroupRoleAssignmentsOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ListGroupRoleAssignmentsOrder && other.value == value;
+    other is ListGroupRoleAssignmentsOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ListGroupRoleAssignmentsOrder($value)';
 
  }

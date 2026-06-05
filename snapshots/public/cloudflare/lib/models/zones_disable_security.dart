@@ -8,19 +8,18 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Turn off
 /// [URL (Zone) Lockdown](https://developers.cloudflare.com/waf/tools/zone-lockdown/), and
 /// [WAF managed rules (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-waf-managed-rules/).
 /// 
-@immutable final class ZonesDisableSecurityId {const ZonesDisableSecurityId._(this.value);
+sealed class ZonesDisableSecurityId {const ZonesDisableSecurityId();
 
 factory ZonesDisableSecurityId.fromJson(String json) { return switch (json) {
   'disable_security' => disableSecurity,
-  _ => ZonesDisableSecurityId._(json),
+  _ => ZonesDisableSecurityId$Unknown(json),
 }; }
 
-static const ZonesDisableSecurityId disableSecurity = ZonesDisableSecurityId._('disable_security');
+static const ZonesDisableSecurityId disableSecurity = ZonesDisableSecurityId$disableSecurity._();
 
 static const List<ZonesDisableSecurityId> values = [disableSecurity];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -28,13 +27,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesDisableSecurityId$Unknown; } 
+@override String toString() => 'ZonesDisableSecurityId($value)';
+
+ }
+@immutable final class ZonesDisableSecurityId$disableSecurity extends ZonesDisableSecurityId {const ZonesDisableSecurityId$disableSecurity._();
+
+@override String get value => 'disable_security';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesDisableSecurityId$disableSecurity;
+
+@override int get hashCode => 'disable_security'.hashCode;
+
+ }
+@immutable final class ZonesDisableSecurityId$Unknown extends ZonesDisableSecurityId {const ZonesDisableSecurityId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesDisableSecurityId && other.value == value;
+    other is ZonesDisableSecurityId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesDisableSecurityId($value)';
 
  }
 @immutable final class ZonesDisableSecurity {const ZonesDisableSecurity({this.id});

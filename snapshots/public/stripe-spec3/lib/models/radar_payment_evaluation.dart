@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RadarPaymentEvaluation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_client_device_metadata.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_customer_details.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_event.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_insights.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_outcome.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_payment_details.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class RadarPaymentEvaluationObject {const RadarPaymentEvaluationObject._(this.value);
+sealed class RadarPaymentEvaluationObject {const RadarPaymentEvaluationObject();
 
 factory RadarPaymentEvaluationObject.fromJson(String json) { return switch (json) {
   'radar.payment_evaluation' => radarPaymentEvaluation,
-  _ => RadarPaymentEvaluationObject._(json),
+  _ => RadarPaymentEvaluationObject$Unknown(json),
 }; }
 
-static const RadarPaymentEvaluationObject radarPaymentEvaluation = RadarPaymentEvaluationObject._('radar.payment_evaluation');
+static const RadarPaymentEvaluationObject radarPaymentEvaluation = RadarPaymentEvaluationObject$radarPaymentEvaluation._();
 
 static const List<RadarPaymentEvaluationObject> values = [radarPaymentEvaluation];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarPaymentEvaluationObject$Unknown; } 
+@override String toString() => 'RadarPaymentEvaluationObject($value)';
+
+ }
+@immutable final class RadarPaymentEvaluationObject$radarPaymentEvaluation extends RadarPaymentEvaluationObject {const RadarPaymentEvaluationObject$radarPaymentEvaluation._();
+
+@override String get value => 'radar.payment_evaluation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarPaymentEvaluationObject$radarPaymentEvaluation;
+
+@override int get hashCode => 'radar.payment_evaluation'.hashCode;
+
+ }
+@immutable final class RadarPaymentEvaluationObject$Unknown extends RadarPaymentEvaluationObject {const RadarPaymentEvaluationObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarPaymentEvaluationObject && other.value == value;
+    other is RadarPaymentEvaluationObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarPaymentEvaluationObject($value)';
 
  }
 /// Payment Evaluations represent the risk lifecycle of an externally processed payment. It includes the Radar risk score from Stripe, payment outcome taken by the merchant or processor, and any post transaction events, such as refunds or disputes. See the [Radar API guide](/radar/multiprocessor) for integration steps.

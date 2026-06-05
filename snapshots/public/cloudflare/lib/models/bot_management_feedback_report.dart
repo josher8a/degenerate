@@ -2,22 +2,21 @@
 // Source: #/components/schemas/BotManagementFeedbackReport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bot_management_metric_requests.dart';/// Type of feedback report.
-@immutable final class BotManagementFeedbackType {const BotManagementFeedbackType._(this.value);
+sealed class BotManagementFeedbackType {const BotManagementFeedbackType();
 
 factory BotManagementFeedbackType.fromJson(String json) { return switch (json) {
   'false_positive' => falsePositive,
   'false_negative' => falseNegative,
-  _ => BotManagementFeedbackType._(json),
+  _ => BotManagementFeedbackType$Unknown(json),
 }; }
 
-static const BotManagementFeedbackType falsePositive = BotManagementFeedbackType._('false_positive');
+static const BotManagementFeedbackType falsePositive = BotManagementFeedbackType$falsePositive._();
 
-static const BotManagementFeedbackType falseNegative = BotManagementFeedbackType._('false_negative');
+static const BotManagementFeedbackType falseNegative = BotManagementFeedbackType$falseNegative._();
 
 static const List<BotManagementFeedbackType> values = [falsePositive, falseNegative];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BotManagementFeedbackType$Unknown; } 
+@override String toString() => 'BotManagementFeedbackType($value)';
+
+ }
+@immutable final class BotManagementFeedbackType$falsePositive extends BotManagementFeedbackType {const BotManagementFeedbackType$falsePositive._();
+
+@override String get value => 'false_positive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BotManagementFeedbackType$falsePositive;
+
+@override int get hashCode => 'false_positive'.hashCode;
+
+ }
+@immutable final class BotManagementFeedbackType$falseNegative extends BotManagementFeedbackType {const BotManagementFeedbackType$falseNegative._();
+
+@override String get value => 'false_negative';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BotManagementFeedbackType$falseNegative;
+
+@override int get hashCode => 'false_negative'.hashCode;
+
+ }
+@immutable final class BotManagementFeedbackType$Unknown extends BotManagementFeedbackType {const BotManagementFeedbackType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BotManagementFeedbackType && other.value == value;
+    other is BotManagementFeedbackType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BotManagementFeedbackType($value)';
 
  }
 @immutable final class BotManagementFeedbackReport {const BotManagementFeedbackReport({required this.description, required this.expression, required this.firstRequestSeenAt, required this.lastRequestSeenAt, required this.requests, required this.requestsByAttribute, required this.requestsByScore, required this.requestsByScoreSrc, required this.type, this.createdAt, this.subtype, });

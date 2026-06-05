@@ -4,28 +4,27 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A full zone implies that DNS is hosted with Cloudflare. A partial zone is
 /// typically a partner-hosted zone or a CNAME setup.
 /// 
-@immutable final class ZonesType {const ZonesType._(this.value);
+sealed class ZonesType {const ZonesType();
 
 factory ZonesType.fromJson(String json) { return switch (json) {
   'full' => full,
   'partial' => partial,
   'secondary' => secondary,
   'internal' => internal,
-  _ => ZonesType._(json),
+  _ => ZonesType$Unknown(json),
 }; }
 
-static const ZonesType full = ZonesType._('full');
+static const ZonesType full = ZonesType$full._();
 
-static const ZonesType partial = ZonesType._('partial');
+static const ZonesType partial = ZonesType$partial._();
 
-static const ZonesType secondary = ZonesType._('secondary');
+static const ZonesType secondary = ZonesType$secondary._();
 
-static const ZonesType internal = ZonesType._('internal');
+static const ZonesType internal = ZonesType$internal._();
 
 static const List<ZonesType> values = [full, partial, secondary, internal];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -36,12 +35,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesType$Unknown; } 
+@override String toString() => 'ZonesType($value)';
+
+ }
+@immutable final class ZonesType$full extends ZonesType {const ZonesType$full._();
+
+@override String get value => 'full';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesType$full;
+
+@override int get hashCode => 'full'.hashCode;
+
+ }
+@immutable final class ZonesType$partial extends ZonesType {const ZonesType$partial._();
+
+@override String get value => 'partial';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesType$partial;
+
+@override int get hashCode => 'partial'.hashCode;
+
+ }
+@immutable final class ZonesType$secondary extends ZonesType {const ZonesType$secondary._();
+
+@override String get value => 'secondary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesType$secondary;
+
+@override int get hashCode => 'secondary'.hashCode;
+
+ }
+@immutable final class ZonesType$internal extends ZonesType {const ZonesType$internal._();
+
+@override String get value => 'internal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesType$internal;
+
+@override int get hashCode => 'internal'.hashCode;
+
+ }
+@immutable final class ZonesType$Unknown extends ZonesType {const ZonesType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesType && other.value == value;
+    other is ZonesType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesType($value)';
 
  }

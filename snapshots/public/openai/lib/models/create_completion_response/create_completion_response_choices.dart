@@ -5,25 +5,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// `length` if the maximum number of tokens specified in the request was reached,
 /// or `content_filter` if content was omitted due to a flag from our content filters.
 /// 
-@immutable final class CreateCompletionResponseChoicesFinishReason {const CreateCompletionResponseChoicesFinishReason._(this.value);
+sealed class CreateCompletionResponseChoicesFinishReason {const CreateCompletionResponseChoicesFinishReason();
 
 factory CreateCompletionResponseChoicesFinishReason.fromJson(String json) { return switch (json) {
   'stop' => stop,
   'length' => length,
   'content_filter' => contentFilter,
-  _ => CreateCompletionResponseChoicesFinishReason._(json),
+  _ => CreateCompletionResponseChoicesFinishReason$Unknown(json),
 }; }
 
-static const CreateCompletionResponseChoicesFinishReason stop = CreateCompletionResponseChoicesFinishReason._('stop');
+static const CreateCompletionResponseChoicesFinishReason stop = CreateCompletionResponseChoicesFinishReason$stop._();
 
-static const CreateCompletionResponseChoicesFinishReason length = CreateCompletionResponseChoicesFinishReason._('length');
+static const CreateCompletionResponseChoicesFinishReason length = CreateCompletionResponseChoicesFinishReason$length._();
 
-static const CreateCompletionResponseChoicesFinishReason contentFilter = CreateCompletionResponseChoicesFinishReason._('content_filter');
+static const CreateCompletionResponseChoicesFinishReason contentFilter = CreateCompletionResponseChoicesFinishReason$contentFilter._();
 
 static const List<CreateCompletionResponseChoicesFinishReason> values = [stop, length, contentFilter];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateCompletionResponseChoicesFinishReason$Unknown; } 
+@override String toString() => 'CreateCompletionResponseChoicesFinishReason($value)';
+
+ }
+@immutable final class CreateCompletionResponseChoicesFinishReason$stop extends CreateCompletionResponseChoicesFinishReason {const CreateCompletionResponseChoicesFinishReason$stop._();
+
+@override String get value => 'stop';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateCompletionResponseChoicesFinishReason$stop;
+
+@override int get hashCode => 'stop'.hashCode;
+
+ }
+@immutable final class CreateCompletionResponseChoicesFinishReason$length extends CreateCompletionResponseChoicesFinishReason {const CreateCompletionResponseChoicesFinishReason$length._();
+
+@override String get value => 'length';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateCompletionResponseChoicesFinishReason$length;
+
+@override int get hashCode => 'length'.hashCode;
+
+ }
+@immutable final class CreateCompletionResponseChoicesFinishReason$contentFilter extends CreateCompletionResponseChoicesFinishReason {const CreateCompletionResponseChoicesFinishReason$contentFilter._();
+
+@override String get value => 'content_filter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateCompletionResponseChoicesFinishReason$contentFilter;
+
+@override int get hashCode => 'content_filter'.hashCode;
+
+ }
+@immutable final class CreateCompletionResponseChoicesFinishReason$Unknown extends CreateCompletionResponseChoicesFinishReason {const CreateCompletionResponseChoicesFinishReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateCompletionResponseChoicesFinishReason && other.value == value;
+    other is CreateCompletionResponseChoicesFinishReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateCompletionResponseChoicesFinishReason($value)';
 
  }
 @immutable final class CreateCompletionResponseChoices {const CreateCompletionResponseChoices({required this.finishReason, required this.index, required this.logprobs, required this.text, });

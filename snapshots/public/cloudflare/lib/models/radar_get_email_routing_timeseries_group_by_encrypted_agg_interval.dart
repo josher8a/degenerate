@@ -2,28 +2,27 @@
 // Source: #/components/schemas/RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-@immutable final class RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval {const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval._(this.value);
+sealed class RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval {const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval();
 
 factory RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval.fromJson(String json) { return switch (json) {
   '15m' => $15m,
   '1h' => $1h,
   '1d' => $1d,
   '1w' => $1w,
-  _ => RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval._(json),
+  _ => RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$Unknown(json),
 }; }
 
-static const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval $15m = RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval._('15m');
+static const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval $15m = RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$15m._();
 
-static const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval $1h = RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval._('1h');
+static const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval $1h = RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$1h._();
 
-static const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval $1d = RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval._('1d');
+static const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval $1d = RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$1d._();
 
-static const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval $1w = RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval._('1w');
+static const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval $1w = RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$1w._();
 
 static const List<RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval> values = [$15m, $1h, $1d, $1w];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$Unknown; } 
+@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval($value)';
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$15m extends RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval {const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$15m._();
+
+@override String get value => '15m';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$15m;
+
+@override int get hashCode => '15m'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$1h extends RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval {const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$1h._();
+
+@override String get value => '1h';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$1h;
+
+@override int get hashCode => '1h'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$1d extends RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval {const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$1d._();
+
+@override String get value => '1d';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$1d;
+
+@override int get hashCode => '1d'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$1w extends RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval {const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$1w._();
+
+@override String get value => '1w';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$$1w;
+
+@override int get hashCode => '1w'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$Unknown extends RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval {const RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval && other.value == value;
+    other is RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByEncryptedAggInterval($value)';
 
  }

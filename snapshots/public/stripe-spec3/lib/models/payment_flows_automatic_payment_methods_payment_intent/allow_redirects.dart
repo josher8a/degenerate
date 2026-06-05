@@ -4,22 +4,21 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether this PaymentIntent will accept redirect-based payment methods.
 /// 
 /// Redirect-based payment methods may require your customer to be redirected to a payment method's app or site for authentication or additional steps. To [confirm](https://docs.stripe.com/api/payment_intents/confirm) this PaymentIntent, you may be required to provide a `return_url` to redirect customers back to your site after they authenticate or complete the payment.
-@immutable final class AllowRedirects {const AllowRedirects._(this.value);
+sealed class AllowRedirects {const AllowRedirects();
 
 factory AllowRedirects.fromJson(String json) { return switch (json) {
   'always' => always,
   'never' => never,
-  _ => AllowRedirects._(json),
+  _ => AllowRedirects$Unknown(json),
 }; }
 
-static const AllowRedirects always = AllowRedirects._('always');
+static const AllowRedirects always = AllowRedirects$always._();
 
-static const AllowRedirects never = AllowRedirects._('never');
+static const AllowRedirects never = AllowRedirects$never._();
 
 static const List<AllowRedirects> values = [always, never];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -28,12 +27,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AllowRedirects$Unknown; } 
+@override String toString() => 'AllowRedirects($value)';
+
+ }
+@immutable final class AllowRedirects$always extends AllowRedirects {const AllowRedirects$always._();
+
+@override String get value => 'always';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowRedirects$always;
+
+@override int get hashCode => 'always'.hashCode;
+
+ }
+@immutable final class AllowRedirects$never extends AllowRedirects {const AllowRedirects$never._();
+
+@override String get value => 'never';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowRedirects$never;
+
+@override int get hashCode => 'never'.hashCode;
+
+ }
+@immutable final class AllowRedirects$Unknown extends AllowRedirects {const AllowRedirects$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AllowRedirects && other.value == value;
+    other is AllowRedirects$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AllowRedirects($value)';
 
  }

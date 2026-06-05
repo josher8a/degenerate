@@ -2,22 +2,21 @@
 // Source: #/components/schemas/InputFidelity
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Control how much effort the model will exert to match the style and features, especially facial features, of input images. This parameter is only supported for `gpt-image-1` and `gpt-image-1.5` and later models, unsupported for `gpt-image-1-mini`. Supports `high` and `low`. Defaults to `low`.
-@immutable final class InputFidelity {const InputFidelity._(this.value);
+sealed class InputFidelity {const InputFidelity();
 
 factory InputFidelity.fromJson(String json) { return switch (json) {
   'high' => high,
   'low' => low,
-  _ => InputFidelity._(json),
+  _ => InputFidelity$Unknown(json),
 }; }
 
-static const InputFidelity high = InputFidelity._('high');
+static const InputFidelity high = InputFidelity$high._();
 
-static const InputFidelity low = InputFidelity._('low');
+static const InputFidelity low = InputFidelity$low._();
 
 static const List<InputFidelity> values = [high, low];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InputFidelity$Unknown; } 
+@override String toString() => 'InputFidelity($value)';
+
+ }
+@immutable final class InputFidelity$high extends InputFidelity {const InputFidelity$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputFidelity$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class InputFidelity$low extends InputFidelity {const InputFidelity$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputFidelity$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class InputFidelity$Unknown extends InputFidelity {const InputFidelity$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InputFidelity && other.value == value;
+    other is InputFidelity$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InputFidelity($value)';
 
  }

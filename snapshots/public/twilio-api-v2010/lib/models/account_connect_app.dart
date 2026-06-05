@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AccountConnectApp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/connect_app_enum_permission.dart';/// The HTTP method we use to call `deauthorize_callback_url`.
-@immutable final class AccountConnectAppDeauthorizeCallbackMethod {const AccountConnectAppDeauthorizeCallbackMethod._(this.value);
+sealed class AccountConnectAppDeauthorizeCallbackMethod {const AccountConnectAppDeauthorizeCallbackMethod();
 
 factory AccountConnectAppDeauthorizeCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => AccountConnectAppDeauthorizeCallbackMethod._(json),
+  _ => AccountConnectAppDeauthorizeCallbackMethod$Unknown(json),
 }; }
 
-static const AccountConnectAppDeauthorizeCallbackMethod $get = AccountConnectAppDeauthorizeCallbackMethod._('GET');
+static const AccountConnectAppDeauthorizeCallbackMethod $get = AccountConnectAppDeauthorizeCallbackMethod$$get._();
 
-static const AccountConnectAppDeauthorizeCallbackMethod post = AccountConnectAppDeauthorizeCallbackMethod._('POST');
+static const AccountConnectAppDeauthorizeCallbackMethod post = AccountConnectAppDeauthorizeCallbackMethod$post._();
 
 static const List<AccountConnectAppDeauthorizeCallbackMethod> values = [$get, post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountConnectAppDeauthorizeCallbackMethod$Unknown; } 
+@override String toString() => 'AccountConnectAppDeauthorizeCallbackMethod($value)';
+
+ }
+@immutable final class AccountConnectAppDeauthorizeCallbackMethod$$get extends AccountConnectAppDeauthorizeCallbackMethod {const AccountConnectAppDeauthorizeCallbackMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountConnectAppDeauthorizeCallbackMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class AccountConnectAppDeauthorizeCallbackMethod$post extends AccountConnectAppDeauthorizeCallbackMethod {const AccountConnectAppDeauthorizeCallbackMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountConnectAppDeauthorizeCallbackMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class AccountConnectAppDeauthorizeCallbackMethod$Unknown extends AccountConnectAppDeauthorizeCallbackMethod {const AccountConnectAppDeauthorizeCallbackMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountConnectAppDeauthorizeCallbackMethod && other.value == value;
+    other is AccountConnectAppDeauthorizeCallbackMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountConnectAppDeauthorizeCallbackMethod($value)';
 
  }
 @immutable final class AccountConnectApp {const AccountConnectApp({this.accountSid, this.authorizeRedirectUrl, this.companyName, this.deauthorizeCallbackMethod, this.deauthorizeCallbackUrl, this.description, this.friendlyName, this.homepageUrl, this.permissions, this.sid, this.uri, });

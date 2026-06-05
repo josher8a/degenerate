@@ -2,7 +2,7 @@
 // Source: #/components/schemas/PaymentMethodDetailsEps (inline: Bank)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The customer's bank. Should be one of `arzte_und_apotheker_bank`, `austrian_anadi_bank_ag`, `bank_austria`, `bankhaus_carl_spangler`, `bankhaus_schelhammer_und_schattera_ag`, `bawag_psk_ag`, `bks_bank_ag`, `brull_kallmus_bank_ag`, `btv_vier_lander_bank`, `capital_bank_grawe_gruppe_ag`, `deutsche_bank_ag`, `dolomitenbank`, `easybank_ag`, `erste_bank_und_sparkassen`, `hypo_alpeadriabank_international_ag`, `hypo_noe_lb_fur_niederosterreich_u_wien`, `hypo_oberosterreich_salzburg_steiermark`, `hypo_tirol_bank_ag`, `hypo_vorarlberg_bank_ag`, `hypo_bank_burgenland_aktiengesellschaft`, `marchfelder_bank`, `oberbank_ag`, `raiffeisen_bankengruppe_osterreich`, `schoellerbank_ag`, `sparda_bank_wien`, `volksbank_gruppe`, `volkskreditbank_ag`, or `vr_bank_braunau`.
-@immutable final class PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank._(this.value);
+sealed class PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank();
 
 factory PaymentMethodDetailsEpsBank.fromJson(String json) { return switch (json) {
   'arzte_und_apotheker_bank' => arzteUndApothekerBank,
@@ -33,69 +33,68 @@ factory PaymentMethodDetailsEpsBank.fromJson(String json) { return switch (json)
   'volksbank_gruppe' => volksbankGruppe,
   'volkskreditbank_ag' => volkskreditbankAg,
   'vr_bank_braunau' => vrBankBraunau,
-  _ => PaymentMethodDetailsEpsBank._(json),
+  _ => PaymentMethodDetailsEpsBank$Unknown(json),
 }; }
 
-static const PaymentMethodDetailsEpsBank arzteUndApothekerBank = PaymentMethodDetailsEpsBank._('arzte_und_apotheker_bank');
+static const PaymentMethodDetailsEpsBank arzteUndApothekerBank = PaymentMethodDetailsEpsBank$arzteUndApothekerBank._();
 
-static const PaymentMethodDetailsEpsBank austrianAnadiBankAg = PaymentMethodDetailsEpsBank._('austrian_anadi_bank_ag');
+static const PaymentMethodDetailsEpsBank austrianAnadiBankAg = PaymentMethodDetailsEpsBank$austrianAnadiBankAg._();
 
-static const PaymentMethodDetailsEpsBank bankAustria = PaymentMethodDetailsEpsBank._('bank_austria');
+static const PaymentMethodDetailsEpsBank bankAustria = PaymentMethodDetailsEpsBank$bankAustria._();
 
-static const PaymentMethodDetailsEpsBank bankhausCarlSpangler = PaymentMethodDetailsEpsBank._('bankhaus_carl_spangler');
+static const PaymentMethodDetailsEpsBank bankhausCarlSpangler = PaymentMethodDetailsEpsBank$bankhausCarlSpangler._();
 
-static const PaymentMethodDetailsEpsBank bankhausSchelhammerUndSchatteraAg = PaymentMethodDetailsEpsBank._('bankhaus_schelhammer_und_schattera_ag');
+static const PaymentMethodDetailsEpsBank bankhausSchelhammerUndSchatteraAg = PaymentMethodDetailsEpsBank$bankhausSchelhammerUndSchatteraAg._();
 
-static const PaymentMethodDetailsEpsBank bawagPskAg = PaymentMethodDetailsEpsBank._('bawag_psk_ag');
+static const PaymentMethodDetailsEpsBank bawagPskAg = PaymentMethodDetailsEpsBank$bawagPskAg._();
 
-static const PaymentMethodDetailsEpsBank bksBankAg = PaymentMethodDetailsEpsBank._('bks_bank_ag');
+static const PaymentMethodDetailsEpsBank bksBankAg = PaymentMethodDetailsEpsBank$bksBankAg._();
 
-static const PaymentMethodDetailsEpsBank brullKallmusBankAg = PaymentMethodDetailsEpsBank._('brull_kallmus_bank_ag');
+static const PaymentMethodDetailsEpsBank brullKallmusBankAg = PaymentMethodDetailsEpsBank$brullKallmusBankAg._();
 
-static const PaymentMethodDetailsEpsBank btvVierLanderBank = PaymentMethodDetailsEpsBank._('btv_vier_lander_bank');
+static const PaymentMethodDetailsEpsBank btvVierLanderBank = PaymentMethodDetailsEpsBank$btvVierLanderBank._();
 
-static const PaymentMethodDetailsEpsBank capitalBankGraweGruppeAg = PaymentMethodDetailsEpsBank._('capital_bank_grawe_gruppe_ag');
+static const PaymentMethodDetailsEpsBank capitalBankGraweGruppeAg = PaymentMethodDetailsEpsBank$capitalBankGraweGruppeAg._();
 
-static const PaymentMethodDetailsEpsBank deutscheBankAg = PaymentMethodDetailsEpsBank._('deutsche_bank_ag');
+static const PaymentMethodDetailsEpsBank deutscheBankAg = PaymentMethodDetailsEpsBank$deutscheBankAg._();
 
-static const PaymentMethodDetailsEpsBank dolomitenbank = PaymentMethodDetailsEpsBank._('dolomitenbank');
+static const PaymentMethodDetailsEpsBank dolomitenbank = PaymentMethodDetailsEpsBank$dolomitenbank._();
 
-static const PaymentMethodDetailsEpsBank easybankAg = PaymentMethodDetailsEpsBank._('easybank_ag');
+static const PaymentMethodDetailsEpsBank easybankAg = PaymentMethodDetailsEpsBank$easybankAg._();
 
-static const PaymentMethodDetailsEpsBank ersteBankUndSparkassen = PaymentMethodDetailsEpsBank._('erste_bank_und_sparkassen');
+static const PaymentMethodDetailsEpsBank ersteBankUndSparkassen = PaymentMethodDetailsEpsBank$ersteBankUndSparkassen._();
 
-static const PaymentMethodDetailsEpsBank hypoAlpeadriabankInternationalAg = PaymentMethodDetailsEpsBank._('hypo_alpeadriabank_international_ag');
+static const PaymentMethodDetailsEpsBank hypoAlpeadriabankInternationalAg = PaymentMethodDetailsEpsBank$hypoAlpeadriabankInternationalAg._();
 
-static const PaymentMethodDetailsEpsBank hypoBankBurgenlandAktiengesellschaft = PaymentMethodDetailsEpsBank._('hypo_bank_burgenland_aktiengesellschaft');
+static const PaymentMethodDetailsEpsBank hypoBankBurgenlandAktiengesellschaft = PaymentMethodDetailsEpsBank$hypoBankBurgenlandAktiengesellschaft._();
 
-static const PaymentMethodDetailsEpsBank hypoNoeLbFurNiederosterreichUWien = PaymentMethodDetailsEpsBank._('hypo_noe_lb_fur_niederosterreich_u_wien');
+static const PaymentMethodDetailsEpsBank hypoNoeLbFurNiederosterreichUWien = PaymentMethodDetailsEpsBank$hypoNoeLbFurNiederosterreichUWien._();
 
-static const PaymentMethodDetailsEpsBank hypoOberosterreichSalzburgSteiermark = PaymentMethodDetailsEpsBank._('hypo_oberosterreich_salzburg_steiermark');
+static const PaymentMethodDetailsEpsBank hypoOberosterreichSalzburgSteiermark = PaymentMethodDetailsEpsBank$hypoOberosterreichSalzburgSteiermark._();
 
-static const PaymentMethodDetailsEpsBank hypoTirolBankAg = PaymentMethodDetailsEpsBank._('hypo_tirol_bank_ag');
+static const PaymentMethodDetailsEpsBank hypoTirolBankAg = PaymentMethodDetailsEpsBank$hypoTirolBankAg._();
 
-static const PaymentMethodDetailsEpsBank hypoVorarlbergBankAg = PaymentMethodDetailsEpsBank._('hypo_vorarlberg_bank_ag');
+static const PaymentMethodDetailsEpsBank hypoVorarlbergBankAg = PaymentMethodDetailsEpsBank$hypoVorarlbergBankAg._();
 
-static const PaymentMethodDetailsEpsBank marchfelderBank = PaymentMethodDetailsEpsBank._('marchfelder_bank');
+static const PaymentMethodDetailsEpsBank marchfelderBank = PaymentMethodDetailsEpsBank$marchfelderBank._();
 
-static const PaymentMethodDetailsEpsBank oberbankAg = PaymentMethodDetailsEpsBank._('oberbank_ag');
+static const PaymentMethodDetailsEpsBank oberbankAg = PaymentMethodDetailsEpsBank$oberbankAg._();
 
-static const PaymentMethodDetailsEpsBank raiffeisenBankengruppeOsterreich = PaymentMethodDetailsEpsBank._('raiffeisen_bankengruppe_osterreich');
+static const PaymentMethodDetailsEpsBank raiffeisenBankengruppeOsterreich = PaymentMethodDetailsEpsBank$raiffeisenBankengruppeOsterreich._();
 
-static const PaymentMethodDetailsEpsBank schoellerbankAg = PaymentMethodDetailsEpsBank._('schoellerbank_ag');
+static const PaymentMethodDetailsEpsBank schoellerbankAg = PaymentMethodDetailsEpsBank$schoellerbankAg._();
 
-static const PaymentMethodDetailsEpsBank spardaBankWien = PaymentMethodDetailsEpsBank._('sparda_bank_wien');
+static const PaymentMethodDetailsEpsBank spardaBankWien = PaymentMethodDetailsEpsBank$spardaBankWien._();
 
-static const PaymentMethodDetailsEpsBank volksbankGruppe = PaymentMethodDetailsEpsBank._('volksbank_gruppe');
+static const PaymentMethodDetailsEpsBank volksbankGruppe = PaymentMethodDetailsEpsBank$volksbankGruppe._();
 
-static const PaymentMethodDetailsEpsBank volkskreditbankAg = PaymentMethodDetailsEpsBank._('volkskreditbank_ag');
+static const PaymentMethodDetailsEpsBank volkskreditbankAg = PaymentMethodDetailsEpsBank$volkskreditbankAg._();
 
-static const PaymentMethodDetailsEpsBank vrBankBraunau = PaymentMethodDetailsEpsBank._('vr_bank_braunau');
+static const PaymentMethodDetailsEpsBank vrBankBraunau = PaymentMethodDetailsEpsBank$vrBankBraunau._();
 
 static const List<PaymentMethodDetailsEpsBank> values = [arzteUndApothekerBank, austrianAnadiBankAg, bankAustria, bankhausCarlSpangler, bankhausSchelhammerUndSchatteraAg, bawagPskAg, bksBankAg, brullKallmusBankAg, btvVierLanderBank, capitalBankGraweGruppeAg, deutscheBankAg, dolomitenbank, easybankAg, ersteBankUndSparkassen, hypoAlpeadriabankInternationalAg, hypoBankBurgenlandAktiengesellschaft, hypoNoeLbFurNiederosterreichUWien, hypoOberosterreichSalzburgSteiermark, hypoTirolBankAg, hypoVorarlbergBankAg, marchfelderBank, oberbankAg, raiffeisenBankengruppeOsterreich, schoellerbankAg, spardaBankWien, volksbankGruppe, volkskreditbankAg, vrBankBraunau];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -130,12 +129,269 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentMethodDetailsEpsBank$Unknown; } 
+@override String toString() => 'PaymentMethodDetailsEpsBank($value)';
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$arzteUndApothekerBank extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$arzteUndApothekerBank._();
+
+@override String get value => 'arzte_und_apotheker_bank';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$arzteUndApothekerBank;
+
+@override int get hashCode => 'arzte_und_apotheker_bank'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$austrianAnadiBankAg extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$austrianAnadiBankAg._();
+
+@override String get value => 'austrian_anadi_bank_ag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$austrianAnadiBankAg;
+
+@override int get hashCode => 'austrian_anadi_bank_ag'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$bankAustria extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$bankAustria._();
+
+@override String get value => 'bank_austria';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$bankAustria;
+
+@override int get hashCode => 'bank_austria'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$bankhausCarlSpangler extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$bankhausCarlSpangler._();
+
+@override String get value => 'bankhaus_carl_spangler';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$bankhausCarlSpangler;
+
+@override int get hashCode => 'bankhaus_carl_spangler'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$bankhausSchelhammerUndSchatteraAg extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$bankhausSchelhammerUndSchatteraAg._();
+
+@override String get value => 'bankhaus_schelhammer_und_schattera_ag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$bankhausSchelhammerUndSchatteraAg;
+
+@override int get hashCode => 'bankhaus_schelhammer_und_schattera_ag'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$bawagPskAg extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$bawagPskAg._();
+
+@override String get value => 'bawag_psk_ag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$bawagPskAg;
+
+@override int get hashCode => 'bawag_psk_ag'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$bksBankAg extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$bksBankAg._();
+
+@override String get value => 'bks_bank_ag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$bksBankAg;
+
+@override int get hashCode => 'bks_bank_ag'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$brullKallmusBankAg extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$brullKallmusBankAg._();
+
+@override String get value => 'brull_kallmus_bank_ag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$brullKallmusBankAg;
+
+@override int get hashCode => 'brull_kallmus_bank_ag'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$btvVierLanderBank extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$btvVierLanderBank._();
+
+@override String get value => 'btv_vier_lander_bank';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$btvVierLanderBank;
+
+@override int get hashCode => 'btv_vier_lander_bank'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$capitalBankGraweGruppeAg extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$capitalBankGraweGruppeAg._();
+
+@override String get value => 'capital_bank_grawe_gruppe_ag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$capitalBankGraweGruppeAg;
+
+@override int get hashCode => 'capital_bank_grawe_gruppe_ag'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$deutscheBankAg extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$deutscheBankAg._();
+
+@override String get value => 'deutsche_bank_ag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$deutscheBankAg;
+
+@override int get hashCode => 'deutsche_bank_ag'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$dolomitenbank extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$dolomitenbank._();
+
+@override String get value => 'dolomitenbank';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$dolomitenbank;
+
+@override int get hashCode => 'dolomitenbank'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$easybankAg extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$easybankAg._();
+
+@override String get value => 'easybank_ag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$easybankAg;
+
+@override int get hashCode => 'easybank_ag'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$ersteBankUndSparkassen extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$ersteBankUndSparkassen._();
+
+@override String get value => 'erste_bank_und_sparkassen';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$ersteBankUndSparkassen;
+
+@override int get hashCode => 'erste_bank_und_sparkassen'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$hypoAlpeadriabankInternationalAg extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$hypoAlpeadriabankInternationalAg._();
+
+@override String get value => 'hypo_alpeadriabank_international_ag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$hypoAlpeadriabankInternationalAg;
+
+@override int get hashCode => 'hypo_alpeadriabank_international_ag'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$hypoBankBurgenlandAktiengesellschaft extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$hypoBankBurgenlandAktiengesellschaft._();
+
+@override String get value => 'hypo_bank_burgenland_aktiengesellschaft';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$hypoBankBurgenlandAktiengesellschaft;
+
+@override int get hashCode => 'hypo_bank_burgenland_aktiengesellschaft'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$hypoNoeLbFurNiederosterreichUWien extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$hypoNoeLbFurNiederosterreichUWien._();
+
+@override String get value => 'hypo_noe_lb_fur_niederosterreich_u_wien';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$hypoNoeLbFurNiederosterreichUWien;
+
+@override int get hashCode => 'hypo_noe_lb_fur_niederosterreich_u_wien'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$hypoOberosterreichSalzburgSteiermark extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$hypoOberosterreichSalzburgSteiermark._();
+
+@override String get value => 'hypo_oberosterreich_salzburg_steiermark';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$hypoOberosterreichSalzburgSteiermark;
+
+@override int get hashCode => 'hypo_oberosterreich_salzburg_steiermark'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$hypoTirolBankAg extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$hypoTirolBankAg._();
+
+@override String get value => 'hypo_tirol_bank_ag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$hypoTirolBankAg;
+
+@override int get hashCode => 'hypo_tirol_bank_ag'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$hypoVorarlbergBankAg extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$hypoVorarlbergBankAg._();
+
+@override String get value => 'hypo_vorarlberg_bank_ag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$hypoVorarlbergBankAg;
+
+@override int get hashCode => 'hypo_vorarlberg_bank_ag'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$marchfelderBank extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$marchfelderBank._();
+
+@override String get value => 'marchfelder_bank';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$marchfelderBank;
+
+@override int get hashCode => 'marchfelder_bank'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$oberbankAg extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$oberbankAg._();
+
+@override String get value => 'oberbank_ag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$oberbankAg;
+
+@override int get hashCode => 'oberbank_ag'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$raiffeisenBankengruppeOsterreich extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$raiffeisenBankengruppeOsterreich._();
+
+@override String get value => 'raiffeisen_bankengruppe_osterreich';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$raiffeisenBankengruppeOsterreich;
+
+@override int get hashCode => 'raiffeisen_bankengruppe_osterreich'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$schoellerbankAg extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$schoellerbankAg._();
+
+@override String get value => 'schoellerbank_ag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$schoellerbankAg;
+
+@override int get hashCode => 'schoellerbank_ag'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$spardaBankWien extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$spardaBankWien._();
+
+@override String get value => 'sparda_bank_wien';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$spardaBankWien;
+
+@override int get hashCode => 'sparda_bank_wien'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$volksbankGruppe extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$volksbankGruppe._();
+
+@override String get value => 'volksbank_gruppe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$volksbankGruppe;
+
+@override int get hashCode => 'volksbank_gruppe'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$volkskreditbankAg extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$volkskreditbankAg._();
+
+@override String get value => 'volkskreditbank_ag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$volkskreditbankAg;
+
+@override int get hashCode => 'volkskreditbank_ag'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$vrBankBraunau extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$vrBankBraunau._();
+
+@override String get value => 'vr_bank_braunau';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsEpsBank$vrBankBraunau;
+
+@override int get hashCode => 'vr_bank_braunau'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsEpsBank$Unknown extends PaymentMethodDetailsEpsBank {const PaymentMethodDetailsEpsBank$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentMethodDetailsEpsBank && other.value == value;
+    other is PaymentMethodDetailsEpsBank$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentMethodDetailsEpsBank($value)';
 
  }

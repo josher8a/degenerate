@@ -2,28 +2,27 @@
 // Source: #/components/schemas/RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-@immutable final class RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval {const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval._(this.value);
+sealed class RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval {const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval();
 
 factory RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval.fromJson(String json) { return switch (json) {
   '15m' => $15m,
   '1h' => $1h,
   '1d' => $1d,
   '1w' => $1w,
-  _ => RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval._(json),
+  _ => RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval $15m = RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval._('15m');
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval $15m = RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$15m._();
 
-static const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval $1h = RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval._('1h');
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval $1h = RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$1h._();
 
-static const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval $1d = RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval._('1d');
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval $1d = RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$1d._();
 
-static const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval $1w = RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval._('1w');
+static const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval $1w = RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$1w._();
 
 static const List<RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval> values = [$15m, $1h, $1d, $1w];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$15m extends RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval {const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$15m._();
+
+@override String get value => '15m';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$15m;
+
+@override int get hashCode => '15m'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$1h extends RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval {const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$1h._();
+
+@override String get value => '1h';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$1h;
+
+@override int get hashCode => '1h'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$1d extends RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval {const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$1d._();
+
+@override String get value => '1d';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$1d;
+
+@override int get hashCode => '1d'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$1w extends RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval {const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$1w._();
+
+@override String get value => '1w';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$$1w;
+
+@override int get hashCode => '1w'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$Unknown extends RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval {const RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval && other.value == value;
+    other is RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByIndustryAggInterval($value)';
 
  }

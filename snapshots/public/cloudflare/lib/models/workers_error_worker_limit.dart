@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WorkersErrorWorkerLimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the account has exceeded the maximum number of Workers allowed.
-@immutable final class WorkersErrorWorkerLimitCode {const WorkersErrorWorkerLimitCode._(this.value);
+sealed class WorkersErrorWorkerLimitCode {const WorkersErrorWorkerLimitCode();
 
 factory WorkersErrorWorkerLimitCode.fromJson(int json) { return switch (json) {
   10037 => $10037,
-  _ => WorkersErrorWorkerLimitCode._(json),
+  _ => WorkersErrorWorkerLimitCode$Unknown(json),
 }; }
 
-static const WorkersErrorWorkerLimitCode $10037 = WorkersErrorWorkerLimitCode._(10037);
+static const WorkersErrorWorkerLimitCode $10037 = WorkersErrorWorkerLimitCode$$10037._();
 
 static const List<WorkersErrorWorkerLimitCode> values = [$10037];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersErrorWorkerLimitCode$Unknown; } 
+@override String toString() => 'WorkersErrorWorkerLimitCode($value)';
+
+ }
+@immutable final class WorkersErrorWorkerLimitCode$$10037 extends WorkersErrorWorkerLimitCode {const WorkersErrorWorkerLimitCode$$10037._();
+
+@override int get value => 10037;
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersErrorWorkerLimitCode$$10037;
+
+@override int get hashCode => 10037.hashCode;
+
+ }
+@immutable final class WorkersErrorWorkerLimitCode$Unknown extends WorkersErrorWorkerLimitCode {const WorkersErrorWorkerLimitCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersErrorWorkerLimitCode && other.value == value;
+    other is WorkersErrorWorkerLimitCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersErrorWorkerLimitCode($value)';
 
  }
 @immutable final class WorkersErrorWorkerLimit {const WorkersErrorWorkerLimit({required this.code, required this.message, });

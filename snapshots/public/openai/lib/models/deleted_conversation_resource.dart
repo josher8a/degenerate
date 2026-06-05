@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DeletedConversationResource
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeletedConversationResourceObject {const DeletedConversationResourceObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DeletedConversationResourceObject {const DeletedConversationResourceObject();
 
 factory DeletedConversationResourceObject.fromJson(String json) { return switch (json) {
   'conversation.deleted' => conversationDeleted,
-  _ => DeletedConversationResourceObject._(json),
+  _ => DeletedConversationResourceObject$Unknown(json),
 }; }
 
-static const DeletedConversationResourceObject conversationDeleted = DeletedConversationResourceObject._('conversation.deleted');
+static const DeletedConversationResourceObject conversationDeleted = DeletedConversationResourceObject$conversationDeleted._();
 
 static const List<DeletedConversationResourceObject> values = [conversationDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeletedConversationResourceObject$Unknown; } 
+@override String toString() => 'DeletedConversationResourceObject($value)';
+
+ }
+@immutable final class DeletedConversationResourceObject$conversationDeleted extends DeletedConversationResourceObject {const DeletedConversationResourceObject$conversationDeleted._();
+
+@override String get value => 'conversation.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeletedConversationResourceObject$conversationDeleted;
+
+@override int get hashCode => 'conversation.deleted'.hashCode;
+
+ }
+@immutable final class DeletedConversationResourceObject$Unknown extends DeletedConversationResourceObject {const DeletedConversationResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeletedConversationResourceObject && other.value == value;
+    other is DeletedConversationResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeletedConversationResourceObject($value)';
 
  }
 @immutable final class DeletedConversationResource {const DeletedConversationResource({required this.deleted, required this.id, this.object = DeletedConversationResourceObject.conversationDeleted, });

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TreasuryCreditReversal
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_credit_reversal/treasury_credit_reversal_transaction.dart';import 'package:pub_stripe_spec3/models/treasury_received_credits_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/treasury_transaction.dart';/// The rails used to reverse the funds.
-@immutable final class TreasuryCreditReversalNetwork {const TreasuryCreditReversalNetwork._(this.value);
+sealed class TreasuryCreditReversalNetwork {const TreasuryCreditReversalNetwork();
 
 factory TreasuryCreditReversalNetwork.fromJson(String json) { return switch (json) {
   'ach' => ach,
   'stripe' => stripe,
-  _ => TreasuryCreditReversalNetwork._(json),
+  _ => TreasuryCreditReversalNetwork$Unknown(json),
 }; }
 
-static const TreasuryCreditReversalNetwork ach = TreasuryCreditReversalNetwork._('ach');
+static const TreasuryCreditReversalNetwork ach = TreasuryCreditReversalNetwork$ach._();
 
-static const TreasuryCreditReversalNetwork stripe = TreasuryCreditReversalNetwork._('stripe');
+static const TreasuryCreditReversalNetwork stripe = TreasuryCreditReversalNetwork$stripe._();
 
 static const List<TreasuryCreditReversalNetwork> values = [ach, stripe];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,29 +25,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryCreditReversalNetwork && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TreasuryCreditReversalNetwork$Unknown; } 
 @override String toString() => 'TreasuryCreditReversalNetwork($value)';
 
  }
+@immutable final class TreasuryCreditReversalNetwork$ach extends TreasuryCreditReversalNetwork {const TreasuryCreditReversalNetwork$ach._();
+
+@override String get value => 'ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryCreditReversalNetwork$ach;
+
+@override int get hashCode => 'ach'.hashCode;
+
+ }
+@immutable final class TreasuryCreditReversalNetwork$stripe extends TreasuryCreditReversalNetwork {const TreasuryCreditReversalNetwork$stripe._();
+
+@override String get value => 'stripe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryCreditReversalNetwork$stripe;
+
+@override int get hashCode => 'stripe'.hashCode;
+
+ }
+@immutable final class TreasuryCreditReversalNetwork$Unknown extends TreasuryCreditReversalNetwork {const TreasuryCreditReversalNetwork$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryCreditReversalNetwork$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TreasuryCreditReversalObject {const TreasuryCreditReversalObject._(this.value);
+sealed class TreasuryCreditReversalObject {const TreasuryCreditReversalObject();
 
 factory TreasuryCreditReversalObject.fromJson(String json) { return switch (json) {
   'treasury.credit_reversal' => treasuryCreditReversal,
-  _ => TreasuryCreditReversalObject._(json),
+  _ => TreasuryCreditReversalObject$Unknown(json),
 }; }
 
-static const TreasuryCreditReversalObject treasuryCreditReversal = TreasuryCreditReversalObject._('treasury.credit_reversal');
+static const TreasuryCreditReversalObject treasuryCreditReversal = TreasuryCreditReversalObject$treasuryCreditReversal._();
 
 static const List<TreasuryCreditReversalObject> values = [treasuryCreditReversal];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -56,35 +77,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryCreditReversalObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TreasuryCreditReversalObject$Unknown; } 
 @override String toString() => 'TreasuryCreditReversalObject($value)';
 
  }
+@immutable final class TreasuryCreditReversalObject$treasuryCreditReversal extends TreasuryCreditReversalObject {const TreasuryCreditReversalObject$treasuryCreditReversal._();
+
+@override String get value => 'treasury.credit_reversal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryCreditReversalObject$treasuryCreditReversal;
+
+@override int get hashCode => 'treasury.credit_reversal'.hashCode;
+
+ }
+@immutable final class TreasuryCreditReversalObject$Unknown extends TreasuryCreditReversalObject {const TreasuryCreditReversalObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryCreditReversalObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Status of the CreditReversal
-@immutable final class TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus._(this.value);
+sealed class TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus();
 
 factory TreasuryCreditReversalStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
   'posted' => posted,
   'processing' => processing,
-  _ => TreasuryCreditReversalStatus._(json),
+  _ => TreasuryCreditReversalStatus$Unknown(json),
 }; }
 
-static const TreasuryCreditReversalStatus canceled = TreasuryCreditReversalStatus._('canceled');
+static const TreasuryCreditReversalStatus canceled = TreasuryCreditReversalStatus$canceled._();
 
-static const TreasuryCreditReversalStatus posted = TreasuryCreditReversalStatus._('posted');
+static const TreasuryCreditReversalStatus posted = TreasuryCreditReversalStatus$posted._();
 
-static const TreasuryCreditReversalStatus processing = TreasuryCreditReversalStatus._('processing');
+static const TreasuryCreditReversalStatus processing = TreasuryCreditReversalStatus$processing._();
 
 static const List<TreasuryCreditReversalStatus> values = [canceled, posted, processing];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -94,13 +128,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TreasuryCreditReversalStatus$Unknown; } 
+@override String toString() => 'TreasuryCreditReversalStatus($value)';
+
+ }
+@immutable final class TreasuryCreditReversalStatus$canceled extends TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryCreditReversalStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class TreasuryCreditReversalStatus$posted extends TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus$posted._();
+
+@override String get value => 'posted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryCreditReversalStatus$posted;
+
+@override int get hashCode => 'posted'.hashCode;
+
+ }
+@immutable final class TreasuryCreditReversalStatus$processing extends TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus$processing._();
+
+@override String get value => 'processing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryCreditReversalStatus$processing;
+
+@override int get hashCode => 'processing'.hashCode;
+
+ }
+@immutable final class TreasuryCreditReversalStatus$Unknown extends TreasuryCreditReversalStatus {const TreasuryCreditReversalStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryCreditReversalStatus && other.value == value;
+    other is TreasuryCreditReversalStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TreasuryCreditReversalStatus($value)';
 
  }
 /// You can reverse some [ReceivedCredits](https://api.stripe.com#received_credits) depending on their network and source flow. Reversing a ReceivedCredit leads to the creation of a new object known as a CreditReversal.

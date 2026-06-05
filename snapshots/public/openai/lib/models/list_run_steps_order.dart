@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ListRunStepsOrder
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListRunStepsOrder {const ListRunStepsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ListRunStepsOrder {const ListRunStepsOrder();
 
 factory ListRunStepsOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => ListRunStepsOrder._(json),
+  _ => ListRunStepsOrder$Unknown(json),
 }; }
 
-static const ListRunStepsOrder asc = ListRunStepsOrder._('asc');
+static const ListRunStepsOrder asc = ListRunStepsOrder$asc._();
 
-static const ListRunStepsOrder desc = ListRunStepsOrder._('desc');
+static const ListRunStepsOrder desc = ListRunStepsOrder$desc._();
 
 static const List<ListRunStepsOrder> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ListRunStepsOrder$Unknown; } 
+@override String toString() => 'ListRunStepsOrder($value)';
+
+ }
+@immutable final class ListRunStepsOrder$asc extends ListRunStepsOrder {const ListRunStepsOrder$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListRunStepsOrder$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class ListRunStepsOrder$desc extends ListRunStepsOrder {const ListRunStepsOrder$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListRunStepsOrder$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class ListRunStepsOrder$Unknown extends ListRunStepsOrder {const ListRunStepsOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ListRunStepsOrder && other.value == value;
+    other is ListRunStepsOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ListRunStepsOrder($value)';
 
  }

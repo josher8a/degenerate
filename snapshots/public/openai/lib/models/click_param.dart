@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ClickParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ClickButtonType {const ClickButtonType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ClickButtonType {const ClickButtonType();
 
 factory ClickButtonType.fromJson(String json) { return switch (json) {
   'left' => left,
@@ -9,23 +9,22 @@ factory ClickButtonType.fromJson(String json) { return switch (json) {
   'wheel' => wheel,
   'back' => back,
   'forward' => forward,
-  _ => ClickButtonType._(json),
+  _ => ClickButtonType$Unknown(json),
 }; }
 
-static const ClickButtonType left = ClickButtonType._('left');
+static const ClickButtonType left = ClickButtonType$left._();
 
-static const ClickButtonType right = ClickButtonType._('right');
+static const ClickButtonType right = ClickButtonType$right._();
 
-static const ClickButtonType wheel = ClickButtonType._('wheel');
+static const ClickButtonType wheel = ClickButtonType$wheel._();
 
-static const ClickButtonType back = ClickButtonType._('back');
+static const ClickButtonType back = ClickButtonType$back._();
 
-static const ClickButtonType forward = ClickButtonType._('forward');
+static const ClickButtonType forward = ClickButtonType$forward._();
 
 static const List<ClickButtonType> values = [left, right, wheel, back, forward];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ClickButtonType$Unknown; } 
+@override String toString() => 'ClickButtonType($value)';
+
+ }
+@immutable final class ClickButtonType$left extends ClickButtonType {const ClickButtonType$left._();
+
+@override String get value => 'left';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClickButtonType$left;
+
+@override int get hashCode => 'left'.hashCode;
+
+ }
+@immutable final class ClickButtonType$right extends ClickButtonType {const ClickButtonType$right._();
+
+@override String get value => 'right';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClickButtonType$right;
+
+@override int get hashCode => 'right'.hashCode;
+
+ }
+@immutable final class ClickButtonType$wheel extends ClickButtonType {const ClickButtonType$wheel._();
+
+@override String get value => 'wheel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClickButtonType$wheel;
+
+@override int get hashCode => 'wheel'.hashCode;
+
+ }
+@immutable final class ClickButtonType$back extends ClickButtonType {const ClickButtonType$back._();
+
+@override String get value => 'back';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClickButtonType$back;
+
+@override int get hashCode => 'back'.hashCode;
+
+ }
+@immutable final class ClickButtonType$forward extends ClickButtonType {const ClickButtonType$forward._();
+
+@override String get value => 'forward';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClickButtonType$forward;
+
+@override int get hashCode => 'forward'.hashCode;
+
+ }
+@immutable final class ClickButtonType$Unknown extends ClickButtonType {const ClickButtonType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ClickButtonType && other.value == value;
+    other is ClickButtonType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ClickButtonType($value)';
 
  }
 /// A click action.

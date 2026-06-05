@@ -9,25 +9,24 @@ num toJson() => value;
 
 }
 /// The status of a generated download.
-@immutable final class StreamDownloadStatus {const StreamDownloadStatus._(this.value);
+sealed class StreamDownloadStatus {const StreamDownloadStatus();
 
 factory StreamDownloadStatus.fromJson(String json) { return switch (json) {
   'ready' => ready,
   'inprogress' => inprogress,
   'error' => error,
-  _ => StreamDownloadStatus._(json),
+  _ => StreamDownloadStatus$Unknown(json),
 }; }
 
-static const StreamDownloadStatus ready = StreamDownloadStatus._('ready');
+static const StreamDownloadStatus ready = StreamDownloadStatus$ready._();
 
-static const StreamDownloadStatus inprogress = StreamDownloadStatus._('inprogress');
+static const StreamDownloadStatus inprogress = StreamDownloadStatus$inprogress._();
 
-static const StreamDownloadStatus error = StreamDownloadStatus._('error');
+static const StreamDownloadStatus error = StreamDownloadStatus$error._();
 
 static const List<StreamDownloadStatus> values = [ready, inprogress, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StreamDownloadStatus$Unknown; } 
+@override String toString() => 'StreamDownloadStatus($value)';
+
+ }
+@immutable final class StreamDownloadStatus$ready extends StreamDownloadStatus {const StreamDownloadStatus$ready._();
+
+@override String get value => 'ready';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamDownloadStatus$ready;
+
+@override int get hashCode => 'ready'.hashCode;
+
+ }
+@immutable final class StreamDownloadStatus$inprogress extends StreamDownloadStatus {const StreamDownloadStatus$inprogress._();
+
+@override String get value => 'inprogress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamDownloadStatus$inprogress;
+
+@override int get hashCode => 'inprogress'.hashCode;
+
+ }
+@immutable final class StreamDownloadStatus$error extends StreamDownloadStatus {const StreamDownloadStatus$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamDownloadStatus$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class StreamDownloadStatus$Unknown extends StreamDownloadStatus {const StreamDownloadStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StreamDownloadStatus && other.value == value;
+    other is StreamDownloadStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StreamDownloadStatus($value)';
 
  }
 /// The URL to access the generated download.

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/IamPolicyWithPermissionGroupsAndResources
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_permission_group.dart';import 'package:pub_cloudflare/models/iam_policy_identifier.dart';import 'package:pub_cloudflare/models/iam_resources.dart';/// Allow or deny operations against the resources.
-@immutable final class IamEffect {const IamEffect._(this.value);
+sealed class IamEffect {const IamEffect();
 
 factory IamEffect.fromJson(String json) { return switch (json) {
   'allow' => allow,
   'deny' => deny,
-  _ => IamEffect._(json),
+  _ => IamEffect$Unknown(json),
 }; }
 
-static const IamEffect allow = IamEffect._('allow');
+static const IamEffect allow = IamEffect$allow._();
 
-static const IamEffect deny = IamEffect._('deny');
+static const IamEffect deny = IamEffect$deny._();
 
 static const List<IamEffect> values = [allow, deny];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IamEffect$Unknown; } 
+@override String toString() => 'IamEffect($value)';
+
+ }
+@immutable final class IamEffect$allow extends IamEffect {const IamEffect$allow._();
+
+@override String get value => 'allow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IamEffect$allow;
+
+@override int get hashCode => 'allow'.hashCode;
+
+ }
+@immutable final class IamEffect$deny extends IamEffect {const IamEffect$deny._();
+
+@override String get value => 'deny';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IamEffect$deny;
+
+@override int get hashCode => 'deny'.hashCode;
+
+ }
+@immutable final class IamEffect$Unknown extends IamEffect {const IamEffect$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IamEffect && other.value == value;
+    other is IamEffect$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IamEffect($value)';
 
  }
 @immutable final class IamPolicyWithPermissionGroupsAndResources {const IamPolicyWithPermissionGroupsAndResources({required this.effect, required this.id, required this.permissionGroups, required this.resources, });

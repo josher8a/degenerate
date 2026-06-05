@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CreateCallRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_recording_request/recording_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_request/fallback_method.dart';import 'package:pub_twilio_api_v2010/models/create_call_request/method.dart';/// The HTTP method we should use when calling the `async_amd_status_callback` URL. Can be: `GET` or `POST` and the default is `POST`.
-@immutable final class AsyncAmdStatusCallbackMethod {const AsyncAmdStatusCallbackMethod._(this.value);
+sealed class AsyncAmdStatusCallbackMethod {const AsyncAmdStatusCallbackMethod();
 
 factory AsyncAmdStatusCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => AsyncAmdStatusCallbackMethod._(json),
+  _ => AsyncAmdStatusCallbackMethod$Unknown(json),
 }; }
 
-static const AsyncAmdStatusCallbackMethod $get = AsyncAmdStatusCallbackMethod._('GET');
+static const AsyncAmdStatusCallbackMethod $get = AsyncAmdStatusCallbackMethod$$get._();
 
-static const AsyncAmdStatusCallbackMethod post = AsyncAmdStatusCallbackMethod._('POST');
+static const AsyncAmdStatusCallbackMethod post = AsyncAmdStatusCallbackMethod$post._();
 
 static const List<AsyncAmdStatusCallbackMethod> values = [$get, post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AsyncAmdStatusCallbackMethod$Unknown; } 
+@override String toString() => 'AsyncAmdStatusCallbackMethod($value)';
+
+ }
+@immutable final class AsyncAmdStatusCallbackMethod$$get extends AsyncAmdStatusCallbackMethod {const AsyncAmdStatusCallbackMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AsyncAmdStatusCallbackMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class AsyncAmdStatusCallbackMethod$post extends AsyncAmdStatusCallbackMethod {const AsyncAmdStatusCallbackMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AsyncAmdStatusCallbackMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class AsyncAmdStatusCallbackMethod$Unknown extends AsyncAmdStatusCallbackMethod {const AsyncAmdStatusCallbackMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AsyncAmdStatusCallbackMethod && other.value == value;
+    other is AsyncAmdStatusCallbackMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AsyncAmdStatusCallbackMethod($value)';
 
  }
 @immutable final class CreateCallRequest {const CreateCallRequest({required this.to, required this.from, this.recordingChannels, this.fallbackUrl, this.fallbackMethod, this.statusCallback, this.statusCallbackEvent, this.statusCallbackMethod, this.sendDigits, this.timeout, this.record, this.method, this.recordingStatusCallback, this.recordingStatusCallbackMethod, this.sipAuthUsername, this.sipAuthPassword, this.machineDetection, this.machineDetectionTimeout, this.recordingStatusCallbackEvent, this.trim, this.callerId, this.machineDetectionSpeechThreshold, this.machineDetectionSpeechEndThreshold, this.applicationSid, this.asyncAmd, this.asyncAmdStatusCallback, this.asyncAmdStatusCallbackMethod, this.byoc, this.callReason, this.callToken, this.recordingTrack, this.timeLimit, this.clientNotificationUrl, this.url, this.twiml, this.machineDetectionSilenceTimeout, });

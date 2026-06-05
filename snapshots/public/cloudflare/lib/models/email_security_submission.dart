@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EmailSecuritySubmission
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';@immutable final class CustomerStatus {const CustomerStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/email_security_disposition_label.dart';sealed class CustomerStatus {const CustomerStatus();
 
 factory CustomerStatus.fromJson(String json) { return switch (json) {
   'escalated' => escalated,
   'reviewed' => reviewed,
   'unreviewed' => unreviewed,
-  _ => CustomerStatus._(json),
+  _ => CustomerStatus$Unknown(json),
 }; }
 
-static const CustomerStatus escalated = CustomerStatus._('escalated');
+static const CustomerStatus escalated = CustomerStatus$escalated._();
 
-static const CustomerStatus reviewed = CustomerStatus._('reviewed');
+static const CustomerStatus reviewed = CustomerStatus$reviewed._();
 
-static const CustomerStatus unreviewed = CustomerStatus._('unreviewed');
+static const CustomerStatus unreviewed = CustomerStatus$unreviewed._();
 
 static const List<CustomerStatus> values = [escalated, reviewed, unreviewed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomerStatus$Unknown; } 
+@override String toString() => 'CustomerStatus($value)';
+
+ }
+@immutable final class CustomerStatus$escalated extends CustomerStatus {const CustomerStatus$escalated._();
+
+@override String get value => 'escalated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerStatus$escalated;
+
+@override int get hashCode => 'escalated'.hashCode;
+
+ }
+@immutable final class CustomerStatus$reviewed extends CustomerStatus {const CustomerStatus$reviewed._();
+
+@override String get value => 'reviewed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerStatus$reviewed;
+
+@override int get hashCode => 'reviewed'.hashCode;
+
+ }
+@immutable final class CustomerStatus$unreviewed extends CustomerStatus {const CustomerStatus$unreviewed._();
+
+@override String get value => 'unreviewed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerStatus$unreviewed;
+
+@override int get hashCode => 'unreviewed'.hashCode;
+
+ }
+@immutable final class CustomerStatus$Unknown extends CustomerStatus {const CustomerStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerStatus && other.value == value;
+    other is CustomerStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomerStatus($value)';
 
  }
 @immutable final class EmailSecuritySubmission {const EmailSecuritySubmission({required this.requestedTs, required this.submissionId, this.customerStatus, this.originalDisposition, this.originalEdfHash, this.outcome, this.outcomeDisposition, this.requestedBy, this.requestedDisposition, this.status, this.subject, this.type, });

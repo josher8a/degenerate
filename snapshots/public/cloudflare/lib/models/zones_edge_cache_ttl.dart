@@ -4,19 +4,18 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify how long to cache a resource in the Cloudflare global
 /// network. *Edge Cache TTL* is not visible in response headers.
 /// 
-@immutable final class ZonesEdgeCacheTtlId {const ZonesEdgeCacheTtlId._(this.value);
+sealed class ZonesEdgeCacheTtlId {const ZonesEdgeCacheTtlId();
 
 factory ZonesEdgeCacheTtlId.fromJson(String json) { return switch (json) {
   'edge_cache_ttl' => edgeCacheTtl,
-  _ => ZonesEdgeCacheTtlId._(json),
+  _ => ZonesEdgeCacheTtlId$Unknown(json),
 }; }
 
-static const ZonesEdgeCacheTtlId edgeCacheTtl = ZonesEdgeCacheTtlId._('edge_cache_ttl');
+static const ZonesEdgeCacheTtlId edgeCacheTtl = ZonesEdgeCacheTtlId$edgeCacheTtl._();
 
 static const List<ZonesEdgeCacheTtlId> values = [edgeCacheTtl];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -24,13 +23,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesEdgeCacheTtlId$Unknown; } 
+@override String toString() => 'ZonesEdgeCacheTtlId($value)';
+
+ }
+@immutable final class ZonesEdgeCacheTtlId$edgeCacheTtl extends ZonesEdgeCacheTtlId {const ZonesEdgeCacheTtlId$edgeCacheTtl._();
+
+@override String get value => 'edge_cache_ttl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesEdgeCacheTtlId$edgeCacheTtl;
+
+@override int get hashCode => 'edge_cache_ttl'.hashCode;
+
+ }
+@immutable final class ZonesEdgeCacheTtlId$Unknown extends ZonesEdgeCacheTtlId {const ZonesEdgeCacheTtlId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesEdgeCacheTtlId && other.value == value;
+    other is ZonesEdgeCacheTtlId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesEdgeCacheTtlId($value)';
 
  }
 @immutable final class ZonesEdgeCacheTtl {const ZonesEdgeCacheTtl({this.id, this.value, });

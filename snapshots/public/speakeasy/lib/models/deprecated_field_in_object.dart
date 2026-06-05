@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DeprecatedFieldInObject
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeprecatedEnum {const DeprecatedEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DeprecatedEnum {const DeprecatedEnum();
 
 factory DeprecatedEnum.fromJson(String json) { return switch (json) {
   'a' => a,
   'b' => b,
   'c' => c,
-  _ => DeprecatedEnum._(json),
+  _ => DeprecatedEnum$Unknown(json),
 }; }
 
-static const DeprecatedEnum a = DeprecatedEnum._('a');
+static const DeprecatedEnum a = DeprecatedEnum$a._();
 
-static const DeprecatedEnum b = DeprecatedEnum._('b');
+static const DeprecatedEnum b = DeprecatedEnum$b._();
 
-static const DeprecatedEnum c = DeprecatedEnum._('c');
+static const DeprecatedEnum c = DeprecatedEnum$c._();
 
 static const List<DeprecatedEnum> values = [a, b, c];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeprecatedEnum$Unknown; } 
+@override String toString() => 'DeprecatedEnum($value)';
+
+ }
+@immutable final class DeprecatedEnum$a extends DeprecatedEnum {const DeprecatedEnum$a._();
+
+@override String get value => 'a';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeprecatedEnum$a;
+
+@override int get hashCode => 'a'.hashCode;
+
+ }
+@immutable final class DeprecatedEnum$b extends DeprecatedEnum {const DeprecatedEnum$b._();
+
+@override String get value => 'b';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeprecatedEnum$b;
+
+@override int get hashCode => 'b'.hashCode;
+
+ }
+@immutable final class DeprecatedEnum$c extends DeprecatedEnum {const DeprecatedEnum$c._();
+
+@override String get value => 'c';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeprecatedEnum$c;
+
+@override int get hashCode => 'c'.hashCode;
+
+ }
+@immutable final class DeprecatedEnum$Unknown extends DeprecatedEnum {const DeprecatedEnum$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeprecatedEnum && other.value == value;
+    other is DeprecatedEnum$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeprecatedEnum($value)';
 
  }
 @immutable final class DeprecatedFieldInObject {const DeprecatedFieldInObject({this.deprecatedField, this.deprecatedEnum, this.newField, });

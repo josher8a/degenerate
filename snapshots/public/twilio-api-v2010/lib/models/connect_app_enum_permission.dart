@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ConnectAppEnumPermission
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The set of permissions that your ConnectApp requests.
-@immutable final class ConnectAppEnumPermission {const ConnectAppEnumPermission._(this.value);
+sealed class ConnectAppEnumPermission {const ConnectAppEnumPermission();
 
 factory ConnectAppEnumPermission.fromJson(String json) { return switch (json) {
   'get-all' => getAll,
   'post-all' => postAll,
-  _ => ConnectAppEnumPermission._(json),
+  _ => ConnectAppEnumPermission$Unknown(json),
 }; }
 
-static const ConnectAppEnumPermission getAll = ConnectAppEnumPermission._('get-all');
+static const ConnectAppEnumPermission getAll = ConnectAppEnumPermission$getAll._();
 
-static const ConnectAppEnumPermission postAll = ConnectAppEnumPermission._('post-all');
+static const ConnectAppEnumPermission postAll = ConnectAppEnumPermission$postAll._();
 
 static const List<ConnectAppEnumPermission> values = [getAll, postAll];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConnectAppEnumPermission$Unknown; } 
+@override String toString() => 'ConnectAppEnumPermission($value)';
+
+ }
+@immutable final class ConnectAppEnumPermission$getAll extends ConnectAppEnumPermission {const ConnectAppEnumPermission$getAll._();
+
+@override String get value => 'get-all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConnectAppEnumPermission$getAll;
+
+@override int get hashCode => 'get-all'.hashCode;
+
+ }
+@immutable final class ConnectAppEnumPermission$postAll extends ConnectAppEnumPermission {const ConnectAppEnumPermission$postAll._();
+
+@override String get value => 'post-all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConnectAppEnumPermission$postAll;
+
+@override int get hashCode => 'post-all'.hashCode;
+
+ }
+@immutable final class ConnectAppEnumPermission$Unknown extends ConnectAppEnumPermission {const ConnectAppEnumPermission$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConnectAppEnumPermission && other.value == value;
+    other is ConnectAppEnumPermission$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConnectAppEnumPermission($value)';
 
  }

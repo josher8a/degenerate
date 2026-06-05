@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TunnelSubnet
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tunnel_created_at.dart';import 'package:pub_cloudflare/models/tunnel_deleted_at.dart';import 'package:pub_cloudflare/models/tunnel_subnet_comment.dart';import 'package:pub_cloudflare/models/tunnel_subnet_id.dart';import 'package:pub_cloudflare/models/tunnel_subnet_ip_network.dart';import 'package:pub_cloudflare/models/tunnel_subnet_is_default_network.dart';import 'package:pub_cloudflare/models/tunnel_subnet_name.dart';/// The type of subnet.
-@immutable final class TunnelSubnetType {const TunnelSubnetType._(this.value);
+sealed class TunnelSubnetType {const TunnelSubnetType();
 
 factory TunnelSubnetType.fromJson(String json) { return switch (json) {
   'cloudflare_source' => cloudflareSource,
   'warp' => warp,
-  _ => TunnelSubnetType._(json),
+  _ => TunnelSubnetType$Unknown(json),
 }; }
 
-static const TunnelSubnetType cloudflareSource = TunnelSubnetType._('cloudflare_source');
+static const TunnelSubnetType cloudflareSource = TunnelSubnetType$cloudflareSource._();
 
-static const TunnelSubnetType warp = TunnelSubnetType._('warp');
+static const TunnelSubnetType warp = TunnelSubnetType$warp._();
 
 static const List<TunnelSubnetType> values = [cloudflareSource, warp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TunnelSubnetType$Unknown; } 
+@override String toString() => 'TunnelSubnetType($value)';
+
+ }
+@immutable final class TunnelSubnetType$cloudflareSource extends TunnelSubnetType {const TunnelSubnetType$cloudflareSource._();
+
+@override String get value => 'cloudflare_source';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TunnelSubnetType$cloudflareSource;
+
+@override int get hashCode => 'cloudflare_source'.hashCode;
+
+ }
+@immutable final class TunnelSubnetType$warp extends TunnelSubnetType {const TunnelSubnetType$warp._();
+
+@override String get value => 'warp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TunnelSubnetType$warp;
+
+@override int get hashCode => 'warp'.hashCode;
+
+ }
+@immutable final class TunnelSubnetType$Unknown extends TunnelSubnetType {const TunnelSubnetType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TunnelSubnetType && other.value == value;
+    other is TunnelSubnetType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TunnelSubnetType($value)';
 
  }
 @immutable final class TunnelSubnet {const TunnelSubnet({this.comment, this.createdAt, this.deletedAt, this.id, this.isDefaultNetwork, this.name, this.network, this.subnetType, });

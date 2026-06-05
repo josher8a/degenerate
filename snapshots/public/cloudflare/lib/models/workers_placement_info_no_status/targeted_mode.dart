@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WorkersPlacementInfoNoStatus (inline: Targeted > Mode)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Targeted placement mode.
-@immutable final class TargetedMode {const TargetedMode._(this.value);
+sealed class TargetedMode {const TargetedMode();
 
 factory TargetedMode.fromJson(String json) { return switch (json) {
   'targeted' => targeted,
-  _ => TargetedMode._(json),
+  _ => TargetedMode$Unknown(json),
 }; }
 
-static const TargetedMode targeted = TargetedMode._('targeted');
+static const TargetedMode targeted = TargetedMode$targeted._();
 
 static const List<TargetedMode> values = [targeted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TargetedMode$Unknown; } 
+@override String toString() => 'TargetedMode($value)';
+
+ }
+@immutable final class TargetedMode$targeted extends TargetedMode {const TargetedMode$targeted._();
+
+@override String get value => 'targeted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TargetedMode$targeted;
+
+@override int get hashCode => 'targeted'.hashCode;
+
+ }
+@immutable final class TargetedMode$Unknown extends TargetedMode {const TargetedMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TargetedMode && other.value == value;
+    other is TargetedMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TargetedMode($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaClientEventInputAudioBufferAppend
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.append`.
-@immutable final class RealtimeBetaClientEventInputAudioBufferAppendType {const RealtimeBetaClientEventInputAudioBufferAppendType._(this.value);
+sealed class RealtimeBetaClientEventInputAudioBufferAppendType {const RealtimeBetaClientEventInputAudioBufferAppendType();
 
 factory RealtimeBetaClientEventInputAudioBufferAppendType.fromJson(String json) { return switch (json) {
   'input_audio_buffer.append' => inputAudioBufferAppend,
-  _ => RealtimeBetaClientEventInputAudioBufferAppendType._(json),
+  _ => RealtimeBetaClientEventInputAudioBufferAppendType$Unknown(json),
 }; }
 
-static const RealtimeBetaClientEventInputAudioBufferAppendType inputAudioBufferAppend = RealtimeBetaClientEventInputAudioBufferAppendType._('input_audio_buffer.append');
+static const RealtimeBetaClientEventInputAudioBufferAppendType inputAudioBufferAppend = RealtimeBetaClientEventInputAudioBufferAppendType$inputAudioBufferAppend._();
 
 static const List<RealtimeBetaClientEventInputAudioBufferAppendType> values = [inputAudioBufferAppend];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaClientEventInputAudioBufferAppendType$Unknown; } 
+@override String toString() => 'RealtimeBetaClientEventInputAudioBufferAppendType($value)';
+
+ }
+@immutable final class RealtimeBetaClientEventInputAudioBufferAppendType$inputAudioBufferAppend extends RealtimeBetaClientEventInputAudioBufferAppendType {const RealtimeBetaClientEventInputAudioBufferAppendType$inputAudioBufferAppend._();
+
+@override String get value => 'input_audio_buffer.append';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaClientEventInputAudioBufferAppendType$inputAudioBufferAppend;
+
+@override int get hashCode => 'input_audio_buffer.append'.hashCode;
+
+ }
+@immutable final class RealtimeBetaClientEventInputAudioBufferAppendType$Unknown extends RealtimeBetaClientEventInputAudioBufferAppendType {const RealtimeBetaClientEventInputAudioBufferAppendType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaClientEventInputAudioBufferAppendType && other.value == value;
+    other is RealtimeBetaClientEventInputAudioBufferAppendType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaClientEventInputAudioBufferAppendType($value)';
 
  }
 /// Send this event to append audio bytes to the input audio buffer. The audio

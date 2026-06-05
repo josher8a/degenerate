@@ -2,7 +2,7 @@
 // Source: #/components/schemas/WorkersAiPostRunCfDeepgramAura2EsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_deepgram_aura1_request/workers_ai_post_run_cf_deepgram_aura1_request_container.dart';import 'package:pub_cloudflare/models/workers_ai_post_run_cf_deepgram_aura1_request/workers_ai_post_run_cf_deepgram_aura1_request_encoding.dart';/// Speaker used to produce the audio.
-@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._(this.value);
+sealed class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker();
 
 factory WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker.fromJson(String json) { return switch (json) {
   'sirio' => sirio,
@@ -15,33 +15,32 @@ factory WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker.fromJson(String json) { 
   'selena' => selena,
   'estrella' => estrella,
   'javier' => javier,
-  _ => WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._(json),
+  _ => WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$Unknown(json),
 }; }
 
-static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker sirio = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._('sirio');
+static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker sirio = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$sirio._();
 
-static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker nestor = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._('nestor');
+static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker nestor = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$nestor._();
 
-static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker carina = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._('carina');
+static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker carina = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$carina._();
 
-static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker celeste = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._('celeste');
+static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker celeste = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$celeste._();
 
-static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker alvaro = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._('alvaro');
+static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker alvaro = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$alvaro._();
 
-static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker diana = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._('diana');
+static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker diana = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$diana._();
 
-static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker aquila = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._('aquila');
+static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker aquila = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$aquila._();
 
-static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker selena = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._('selena');
+static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker selena = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$selena._();
 
-static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker estrella = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._('estrella');
+static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker estrella = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$estrella._();
 
-static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker javier = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker._('javier');
+static const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker javier = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$javier._();
 
 static const List<WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker> values = [sirio, nestor, carina, celeste, alvaro, diana, aquila, selena, estrella, javier];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -58,13 +57,108 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$Unknown; } 
+@override String toString() => 'WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker($value)';
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$sirio extends WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$sirio._();
+
+@override String get value => 'sirio';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$sirio;
+
+@override int get hashCode => 'sirio'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$nestor extends WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$nestor._();
+
+@override String get value => 'nestor';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$nestor;
+
+@override int get hashCode => 'nestor'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$carina extends WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$carina._();
+
+@override String get value => 'carina';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$carina;
+
+@override int get hashCode => 'carina'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$celeste extends WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$celeste._();
+
+@override String get value => 'celeste';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$celeste;
+
+@override int get hashCode => 'celeste'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$alvaro extends WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$alvaro._();
+
+@override String get value => 'alvaro';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$alvaro;
+
+@override int get hashCode => 'alvaro'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$diana extends WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$diana._();
+
+@override String get value => 'diana';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$diana;
+
+@override int get hashCode => 'diana'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$aquila extends WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$aquila._();
+
+@override String get value => 'aquila';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$aquila;
+
+@override int get hashCode => 'aquila'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$selena extends WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$selena._();
+
+@override String get value => 'selena';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$selena;
+
+@override int get hashCode => 'selena'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$estrella extends WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$estrella._();
+
+@override String get value => 'estrella';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$estrella;
+
+@override int get hashCode => 'estrella'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$javier extends WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$javier._();
+
+@override String get value => 'javier';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$javier;
+
+@override int get hashCode => 'javier'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$Unknown extends WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker {const WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker && other.value == value;
+    other is WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker($value)';
 
  }
 @immutable final class WorkersAiPostRunCfDeepgramAura2EsRequest {const WorkersAiPostRunCfDeepgramAura2EsRequest({required this.text, this.bitRate, this.container, this.encoding, this.sampleRate, this.speaker = WorkersAiPostRunCfDeepgramAura2EsRequestSpeaker.aquila, });

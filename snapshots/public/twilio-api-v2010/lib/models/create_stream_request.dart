@@ -2,25 +2,24 @@
 // Source: #/components/schemas/CreateStreamRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/create_application_request/create_application_request_status_callback_method.dart';/// The tracks to be included in the Stream. Possible values are `inbound_track`, `outbound_track`, `both_tracks`. Default value is `inbound_track`.
-@immutable final class StreamEnumTrack {const StreamEnumTrack._(this.value);
+sealed class StreamEnumTrack {const StreamEnumTrack();
 
 factory StreamEnumTrack.fromJson(String json) { return switch (json) {
   'inbound_track' => inboundTrack,
   'outbound_track' => outboundTrack,
   'both_tracks' => bothTracks,
-  _ => StreamEnumTrack._(json),
+  _ => StreamEnumTrack$Unknown(json),
 }; }
 
-static const StreamEnumTrack inboundTrack = StreamEnumTrack._('inbound_track');
+static const StreamEnumTrack inboundTrack = StreamEnumTrack$inboundTrack._();
 
-static const StreamEnumTrack outboundTrack = StreamEnumTrack._('outbound_track');
+static const StreamEnumTrack outboundTrack = StreamEnumTrack$outboundTrack._();
 
-static const StreamEnumTrack bothTracks = StreamEnumTrack._('both_tracks');
+static const StreamEnumTrack bothTracks = StreamEnumTrack$bothTracks._();
 
 static const List<StreamEnumTrack> values = [inboundTrack, outboundTrack, bothTracks];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StreamEnumTrack$Unknown; } 
+@override String toString() => 'StreamEnumTrack($value)';
+
+ }
+@immutable final class StreamEnumTrack$inboundTrack extends StreamEnumTrack {const StreamEnumTrack$inboundTrack._();
+
+@override String get value => 'inbound_track';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamEnumTrack$inboundTrack;
+
+@override int get hashCode => 'inbound_track'.hashCode;
+
+ }
+@immutable final class StreamEnumTrack$outboundTrack extends StreamEnumTrack {const StreamEnumTrack$outboundTrack._();
+
+@override String get value => 'outbound_track';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamEnumTrack$outboundTrack;
+
+@override int get hashCode => 'outbound_track'.hashCode;
+
+ }
+@immutable final class StreamEnumTrack$bothTracks extends StreamEnumTrack {const StreamEnumTrack$bothTracks._();
+
+@override String get value => 'both_tracks';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamEnumTrack$bothTracks;
+
+@override int get hashCode => 'both_tracks'.hashCode;
+
+ }
+@immutable final class StreamEnumTrack$Unknown extends StreamEnumTrack {const StreamEnumTrack$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StreamEnumTrack && other.value == value;
+    other is StreamEnumTrack$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StreamEnumTrack($value)';
 
  }
 @immutable final class CreateStreamRequest {const CreateStreamRequest({required this.url, this.parameter32Value, this.track, this.statusCallback, this.statusCallbackMethod, this.parameter1Name, this.parameter1Value, this.parameter2Name, this.parameter2Value, this.parameter3Name, this.parameter3Value, this.parameter4Name, this.parameter4Value, this.parameter5Name, this.parameter5Value, this.parameter6Name, this.parameter6Value, this.parameter7Name, this.parameter7Value, this.parameter8Name, this.parameter8Value, this.parameter9Name, this.parameter9Value, this.parameter10Name, this.parameter10Value, this.parameter11Name, this.parameter11Value, this.parameter12Name, this.parameter12Value, this.parameter13Name, this.parameter13Value, this.parameter14Name, this.parameter14Value, this.parameter15Name, this.parameter15Value, this.parameter16Name, this.parameter16Value, this.parameter17Name, this.parameter17Value, this.parameter18Name, this.parameter18Value, this.parameter19Name, this.parameter19Value, this.parameter20Name, this.parameter20Value, this.parameter21Name, this.parameter21Value, this.parameter22Name, this.parameter22Value, this.parameter23Name, this.parameter23Value, this.parameter24Name, this.parameter24Value, this.parameter25Name, this.parameter25Value, this.parameter26Name, this.parameter26Value, this.parameter27Name, this.parameter27Value, this.parameter28Name, this.parameter28Value, this.parameter29Name, this.parameter29Value, this.parameter30Name, this.parameter30Value, this.parameter31Name, this.parameter31Value, this.parameter32Name, this.name, this.parameter33Name, this.parameter33Value, this.parameter34Name, this.parameter34Value, this.parameter35Name, this.parameter35Value, this.parameter36Name, this.parameter36Value, this.parameter37Name, this.parameter37Value, this.parameter38Name, this.parameter38Value, this.parameter39Name, this.parameter39Value, this.parameter40Name, this.parameter40Value, this.parameter41Name, this.parameter41Value, this.parameter42Name, this.parameter42Value, this.parameter43Name, this.parameter43Value, this.parameter44Name, this.parameter44Value, this.parameter45Name, this.parameter45Value, this.parameter46Name, this.parameter46Value, this.parameter47Name, this.parameter47Value, this.parameter48Name, this.parameter48Value, this.parameter49Name, this.parameter49Value, this.parameter50Name, this.parameter50Value, this.parameter51Name, this.parameter51Value, this.parameter52Name, this.parameter52Value, this.parameter53Name, this.parameter53Value, this.parameter54Name, this.parameter54Value, this.parameter55Name, this.parameter55Value, this.parameter56Name, this.parameter56Value, this.parameter57Name, this.parameter57Value, this.parameter58Name, this.parameter58Value, this.parameter59Name, this.parameter59Value, this.parameter60Name, this.parameter60Value, this.parameter61Name, this.parameter61Value, this.parameter62Name, this.parameter62Value, this.parameter63Name, this.parameter63Value, this.parameter64Name, this.parameter64Value, this.parameter65Name, this.parameter99Value, this.parameter66Name, this.parameter66Value, this.parameter67Name, this.parameter67Value, this.parameter68Name, this.parameter68Value, this.parameter69Name, this.parameter69Value, this.parameter70Name, this.parameter70Value, this.parameter71Name, this.parameter71Value, this.parameter72Name, this.parameter72Value, this.parameter73Name, this.parameter73Value, this.parameter74Name, this.parameter74Value, this.parameter75Name, this.parameter75Value, this.parameter76Name, this.parameter76Value, this.parameter77Name, this.parameter77Value, this.parameter78Name, this.parameter78Value, this.parameter79Name, this.parameter79Value, this.parameter80Name, this.parameter80Value, this.parameter81Name, this.parameter81Value, this.parameter82Name, this.parameter82Value, this.parameter83Name, this.parameter83Value, this.parameter84Name, this.parameter84Value, this.parameter85Name, this.parameter85Value, this.parameter86Name, this.parameter86Value, this.parameter87Name, this.parameter87Value, this.parameter88Name, this.parameter88Value, this.parameter89Name, this.parameter89Value, this.parameter90Name, this.parameter90Value, this.parameter91Name, this.parameter91Value, this.parameter92Name, this.parameter92Value, this.parameter93Name, this.parameter93Value, this.parameter94Name, this.parameter94Value, this.parameter95Name, this.parameter95Value, this.parameter96Name, this.parameter96Value, this.parameter97Name, this.parameter97Value, this.parameter98Name, this.parameter98Value, this.parameter99Name, this.parameter65Value, });

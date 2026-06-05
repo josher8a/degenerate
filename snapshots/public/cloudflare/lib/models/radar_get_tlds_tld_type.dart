@@ -2,7 +2,7 @@
 // Source: #/components/schemas/RadarGetTldsTldType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by TLD type.
-@immutable final class RadarGetTldsTldType {const RadarGetTldsTldType._(this.value);
+sealed class RadarGetTldsTldType {const RadarGetTldsTldType();
 
 factory RadarGetTldsTldType.fromJson(String json) { return switch (json) {
   'GENERIC' => generic,
@@ -10,23 +10,22 @@ factory RadarGetTldsTldType.fromJson(String json) { return switch (json) {
   'GENERIC_RESTRICTED' => genericRestricted,
   'INFRASTRUCTURE' => infrastructure,
   'SPONSORED' => sponsored,
-  _ => RadarGetTldsTldType._(json),
+  _ => RadarGetTldsTldType$Unknown(json),
 }; }
 
-static const RadarGetTldsTldType generic = RadarGetTldsTldType._('GENERIC');
+static const RadarGetTldsTldType generic = RadarGetTldsTldType$generic._();
 
-static const RadarGetTldsTldType countryCode = RadarGetTldsTldType._('COUNTRY_CODE');
+static const RadarGetTldsTldType countryCode = RadarGetTldsTldType$countryCode._();
 
-static const RadarGetTldsTldType genericRestricted = RadarGetTldsTldType._('GENERIC_RESTRICTED');
+static const RadarGetTldsTldType genericRestricted = RadarGetTldsTldType$genericRestricted._();
 
-static const RadarGetTldsTldType infrastructure = RadarGetTldsTldType._('INFRASTRUCTURE');
+static const RadarGetTldsTldType infrastructure = RadarGetTldsTldType$infrastructure._();
 
-static const RadarGetTldsTldType sponsored = RadarGetTldsTldType._('SPONSORED');
+static const RadarGetTldsTldType sponsored = RadarGetTldsTldType$sponsored._();
 
 static const List<RadarGetTldsTldType> values = [generic, countryCode, genericRestricted, infrastructure, sponsored];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,12 +37,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetTldsTldType$Unknown; } 
+@override String toString() => 'RadarGetTldsTldType($value)';
+
+ }
+@immutable final class RadarGetTldsTldType$generic extends RadarGetTldsTldType {const RadarGetTldsTldType$generic._();
+
+@override String get value => 'GENERIC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetTldsTldType$generic;
+
+@override int get hashCode => 'GENERIC'.hashCode;
+
+ }
+@immutable final class RadarGetTldsTldType$countryCode extends RadarGetTldsTldType {const RadarGetTldsTldType$countryCode._();
+
+@override String get value => 'COUNTRY_CODE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetTldsTldType$countryCode;
+
+@override int get hashCode => 'COUNTRY_CODE'.hashCode;
+
+ }
+@immutable final class RadarGetTldsTldType$genericRestricted extends RadarGetTldsTldType {const RadarGetTldsTldType$genericRestricted._();
+
+@override String get value => 'GENERIC_RESTRICTED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetTldsTldType$genericRestricted;
+
+@override int get hashCode => 'GENERIC_RESTRICTED'.hashCode;
+
+ }
+@immutable final class RadarGetTldsTldType$infrastructure extends RadarGetTldsTldType {const RadarGetTldsTldType$infrastructure._();
+
+@override String get value => 'INFRASTRUCTURE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetTldsTldType$infrastructure;
+
+@override int get hashCode => 'INFRASTRUCTURE'.hashCode;
+
+ }
+@immutable final class RadarGetTldsTldType$sponsored extends RadarGetTldsTldType {const RadarGetTldsTldType$sponsored._();
+
+@override String get value => 'SPONSORED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetTldsTldType$sponsored;
+
+@override int get hashCode => 'SPONSORED'.hashCode;
+
+ }
+@immutable final class RadarGetTldsTldType$Unknown extends RadarGetTldsTldType {const RadarGetTldsTldType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetTldsTldType && other.value == value;
+    other is RadarGetTldsTldType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetTldsTldType($value)';
 
  }

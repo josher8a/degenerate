@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigPostGatewayDynamicRouteRequest (inline: Elements > Model)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/model_outputs.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/model_properties.dart';@immutable final class ModelType {const ModelType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/model_outputs.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/model_properties.dart';sealed class ModelType {const ModelType();
 
 factory ModelType.fromJson(String json) { return switch (json) {
   'model' => model,
-  _ => ModelType._(json),
+  _ => ModelType$Unknown(json),
 }; }
 
-static const ModelType model = ModelType._('model');
+static const ModelType model = ModelType$model._();
 
 static const List<ModelType> values = [model];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ModelType$Unknown; } 
+@override String toString() => 'ModelType($value)';
+
+ }
+@immutable final class ModelType$model extends ModelType {const ModelType$model._();
+
+@override String get value => 'model';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ModelType$model;
+
+@override int get hashCode => 'model'.hashCode;
+
+ }
+@immutable final class ModelType$Unknown extends ModelType {const ModelType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ModelType && other.value == value;
+    other is ModelType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ModelType($value)';
 
  }
 @immutable final class ElementsModel {const ElementsModel({required this.id, required this.outputs, required this.properties, required this.type, });

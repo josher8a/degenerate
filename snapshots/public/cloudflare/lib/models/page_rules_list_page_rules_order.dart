@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PageRulesListPageRulesOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned Page Rules.
-@immutable final class PageRulesListPageRulesOrder {const PageRulesListPageRulesOrder._(this.value);
+sealed class PageRulesListPageRulesOrder {const PageRulesListPageRulesOrder();
 
 factory PageRulesListPageRulesOrder.fromJson(String json) { return switch (json) {
   'status' => status,
   'priority' => priority,
-  _ => PageRulesListPageRulesOrder._(json),
+  _ => PageRulesListPageRulesOrder$Unknown(json),
 }; }
 
-static const PageRulesListPageRulesOrder status = PageRulesListPageRulesOrder._('status');
+static const PageRulesListPageRulesOrder status = PageRulesListPageRulesOrder$status._();
 
-static const PageRulesListPageRulesOrder priority = PageRulesListPageRulesOrder._('priority');
+static const PageRulesListPageRulesOrder priority = PageRulesListPageRulesOrder$priority._();
 
 static const List<PageRulesListPageRulesOrder> values = [status, priority];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PageRulesListPageRulesOrder$Unknown; } 
+@override String toString() => 'PageRulesListPageRulesOrder($value)';
+
+ }
+@immutable final class PageRulesListPageRulesOrder$status extends PageRulesListPageRulesOrder {const PageRulesListPageRulesOrder$status._();
+
+@override String get value => 'status';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageRulesListPageRulesOrder$status;
+
+@override int get hashCode => 'status'.hashCode;
+
+ }
+@immutable final class PageRulesListPageRulesOrder$priority extends PageRulesListPageRulesOrder {const PageRulesListPageRulesOrder$priority._();
+
+@override String get value => 'priority';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageRulesListPageRulesOrder$priority;
+
+@override int get hashCode => 'priority'.hashCode;
+
+ }
+@immutable final class PageRulesListPageRulesOrder$Unknown extends PageRulesListPageRulesOrder {const PageRulesListPageRulesOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PageRulesListPageRulesOrder && other.value == value;
+    other is PageRulesListPageRulesOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PageRulesListPageRulesOrder($value)';
 
  }

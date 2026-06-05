@@ -2,28 +2,27 @@
 // Source: #/components/schemas/PaymentMethodDetailsCrypto
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The blockchain network that the transaction was sent on.
-@immutable final class PaymentMethodDetailsCryptoNetwork {const PaymentMethodDetailsCryptoNetwork._(this.value);
+sealed class PaymentMethodDetailsCryptoNetwork {const PaymentMethodDetailsCryptoNetwork();
 
 factory PaymentMethodDetailsCryptoNetwork.fromJson(String json) { return switch (json) {
   'base' => base,
   'ethereum' => ethereum,
   'polygon' => polygon,
   'solana' => solana,
-  _ => PaymentMethodDetailsCryptoNetwork._(json),
+  _ => PaymentMethodDetailsCryptoNetwork$Unknown(json),
 }; }
 
-static const PaymentMethodDetailsCryptoNetwork base = PaymentMethodDetailsCryptoNetwork._('base');
+static const PaymentMethodDetailsCryptoNetwork base = PaymentMethodDetailsCryptoNetwork$base._();
 
-static const PaymentMethodDetailsCryptoNetwork ethereum = PaymentMethodDetailsCryptoNetwork._('ethereum');
+static const PaymentMethodDetailsCryptoNetwork ethereum = PaymentMethodDetailsCryptoNetwork$ethereum._();
 
-static const PaymentMethodDetailsCryptoNetwork polygon = PaymentMethodDetailsCryptoNetwork._('polygon');
+static const PaymentMethodDetailsCryptoNetwork polygon = PaymentMethodDetailsCryptoNetwork$polygon._();
 
-static const PaymentMethodDetailsCryptoNetwork solana = PaymentMethodDetailsCryptoNetwork._('solana');
+static const PaymentMethodDetailsCryptoNetwork solana = PaymentMethodDetailsCryptoNetwork$solana._();
 
 static const List<PaymentMethodDetailsCryptoNetwork> values = [base, ethereum, polygon, solana];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,35 +33,75 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentMethodDetailsCryptoNetwork && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PaymentMethodDetailsCryptoNetwork$Unknown; } 
 @override String toString() => 'PaymentMethodDetailsCryptoNetwork($value)';
 
  }
+@immutable final class PaymentMethodDetailsCryptoNetwork$base extends PaymentMethodDetailsCryptoNetwork {const PaymentMethodDetailsCryptoNetwork$base._();
+
+@override String get value => 'base';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsCryptoNetwork$base;
+
+@override int get hashCode => 'base'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsCryptoNetwork$ethereum extends PaymentMethodDetailsCryptoNetwork {const PaymentMethodDetailsCryptoNetwork$ethereum._();
+
+@override String get value => 'ethereum';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsCryptoNetwork$ethereum;
+
+@override int get hashCode => 'ethereum'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsCryptoNetwork$polygon extends PaymentMethodDetailsCryptoNetwork {const PaymentMethodDetailsCryptoNetwork$polygon._();
+
+@override String get value => 'polygon';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsCryptoNetwork$polygon;
+
+@override int get hashCode => 'polygon'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsCryptoNetwork$solana extends PaymentMethodDetailsCryptoNetwork {const PaymentMethodDetailsCryptoNetwork$solana._();
+
+@override String get value => 'solana';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsCryptoNetwork$solana;
+
+@override int get hashCode => 'solana'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsCryptoNetwork$Unknown extends PaymentMethodDetailsCryptoNetwork {const PaymentMethodDetailsCryptoNetwork$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentMethodDetailsCryptoNetwork$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The token currency that the transaction was sent with.
-@immutable final class TokenCurrency {const TokenCurrency._(this.value);
+sealed class TokenCurrency {const TokenCurrency();
 
 factory TokenCurrency.fromJson(String json) { return switch (json) {
   'usdc' => usdc,
   'usdg' => usdg,
   'usdp' => usdp,
-  _ => TokenCurrency._(json),
+  _ => TokenCurrency$Unknown(json),
 }; }
 
-static const TokenCurrency usdc = TokenCurrency._('usdc');
+static const TokenCurrency usdc = TokenCurrency$usdc._();
 
-static const TokenCurrency usdg = TokenCurrency._('usdg');
+static const TokenCurrency usdg = TokenCurrency$usdg._();
 
-static const TokenCurrency usdp = TokenCurrency._('usdp');
+static const TokenCurrency usdp = TokenCurrency$usdp._();
 
 static const List<TokenCurrency> values = [usdc, usdg, usdp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -72,13 +111,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TokenCurrency$Unknown; } 
+@override String toString() => 'TokenCurrency($value)';
+
+ }
+@immutable final class TokenCurrency$usdc extends TokenCurrency {const TokenCurrency$usdc._();
+
+@override String get value => 'usdc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TokenCurrency$usdc;
+
+@override int get hashCode => 'usdc'.hashCode;
+
+ }
+@immutable final class TokenCurrency$usdg extends TokenCurrency {const TokenCurrency$usdg._();
+
+@override String get value => 'usdg';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TokenCurrency$usdg;
+
+@override int get hashCode => 'usdg'.hashCode;
+
+ }
+@immutable final class TokenCurrency$usdp extends TokenCurrency {const TokenCurrency$usdp._();
+
+@override String get value => 'usdp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TokenCurrency$usdp;
+
+@override int get hashCode => 'usdp'.hashCode;
+
+ }
+@immutable final class TokenCurrency$Unknown extends TokenCurrency {const TokenCurrency$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TokenCurrency && other.value == value;
+    other is TokenCurrency$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TokenCurrency($value)';
 
  }
 /// 

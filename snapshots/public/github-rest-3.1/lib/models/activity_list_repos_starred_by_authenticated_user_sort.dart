@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ActivityListReposStarredByAuthenticatedUserSort
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActivityListReposStarredByAuthenticatedUserSort {const ActivityListReposStarredByAuthenticatedUserSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ActivityListReposStarredByAuthenticatedUserSort {const ActivityListReposStarredByAuthenticatedUserSort();
 
 factory ActivityListReposStarredByAuthenticatedUserSort.fromJson(String json) { return switch (json) {
   'created' => created,
   'updated' => updated,
-  _ => ActivityListReposStarredByAuthenticatedUserSort._(json),
+  _ => ActivityListReposStarredByAuthenticatedUserSort$Unknown(json),
 }; }
 
-static const ActivityListReposStarredByAuthenticatedUserSort created = ActivityListReposStarredByAuthenticatedUserSort._('created');
+static const ActivityListReposStarredByAuthenticatedUserSort created = ActivityListReposStarredByAuthenticatedUserSort$created._();
 
-static const ActivityListReposStarredByAuthenticatedUserSort updated = ActivityListReposStarredByAuthenticatedUserSort._('updated');
+static const ActivityListReposStarredByAuthenticatedUserSort updated = ActivityListReposStarredByAuthenticatedUserSort$updated._();
 
 static const List<ActivityListReposStarredByAuthenticatedUserSort> values = [created, updated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ActivityListReposStarredByAuthenticatedUserSort$Unknown; } 
+@override String toString() => 'ActivityListReposStarredByAuthenticatedUserSort($value)';
+
+ }
+@immutable final class ActivityListReposStarredByAuthenticatedUserSort$created extends ActivityListReposStarredByAuthenticatedUserSort {const ActivityListReposStarredByAuthenticatedUserSort$created._();
+
+@override String get value => 'created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActivityListReposStarredByAuthenticatedUserSort$created;
+
+@override int get hashCode => 'created'.hashCode;
+
+ }
+@immutable final class ActivityListReposStarredByAuthenticatedUserSort$updated extends ActivityListReposStarredByAuthenticatedUserSort {const ActivityListReposStarredByAuthenticatedUserSort$updated._();
+
+@override String get value => 'updated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActivityListReposStarredByAuthenticatedUserSort$updated;
+
+@override int get hashCode => 'updated'.hashCode;
+
+ }
+@immutable final class ActivityListReposStarredByAuthenticatedUserSort$Unknown extends ActivityListReposStarredByAuthenticatedUserSort {const ActivityListReposStarredByAuthenticatedUserSort$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ActivityListReposStarredByAuthenticatedUserSort && other.value == value;
+    other is ActivityListReposStarredByAuthenticatedUserSort$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ActivityListReposStarredByAuthenticatedUserSort($value)';
 
  }

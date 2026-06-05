@@ -2,25 +2,24 @@
 // Source: #/components/schemas/OrgMembership
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/org_membership/org_membership_permissions.dart';import 'package:pub_github_rest_3_1/models/org_membership/org_membership_state.dart';import 'package:pub_github_rest_3_1/models/organization_simple.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The user's membership type in the organization.
-@immutable final class OrgMembershipRole {const OrgMembershipRole._(this.value);
+sealed class OrgMembershipRole {const OrgMembershipRole();
 
 factory OrgMembershipRole.fromJson(String json) { return switch (json) {
   'admin' => admin,
   'member' => member,
   'billing_manager' => billingManager,
-  _ => OrgMembershipRole._(json),
+  _ => OrgMembershipRole$Unknown(json),
 }; }
 
-static const OrgMembershipRole admin = OrgMembershipRole._('admin');
+static const OrgMembershipRole admin = OrgMembershipRole$admin._();
 
-static const OrgMembershipRole member = OrgMembershipRole._('member');
+static const OrgMembershipRole member = OrgMembershipRole$member._();
 
-static const OrgMembershipRole billingManager = OrgMembershipRole._('billing_manager');
+static const OrgMembershipRole billingManager = OrgMembershipRole$billingManager._();
 
 static const List<OrgMembershipRole> values = [admin, member, billingManager];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrgMembershipRole$Unknown; } 
+@override String toString() => 'OrgMembershipRole($value)';
+
+ }
+@immutable final class OrgMembershipRole$admin extends OrgMembershipRole {const OrgMembershipRole$admin._();
+
+@override String get value => 'admin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgMembershipRole$admin;
+
+@override int get hashCode => 'admin'.hashCode;
+
+ }
+@immutable final class OrgMembershipRole$member extends OrgMembershipRole {const OrgMembershipRole$member._();
+
+@override String get value => 'member';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgMembershipRole$member;
+
+@override int get hashCode => 'member'.hashCode;
+
+ }
+@immutable final class OrgMembershipRole$billingManager extends OrgMembershipRole {const OrgMembershipRole$billingManager._();
+
+@override String get value => 'billing_manager';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgMembershipRole$billingManager;
+
+@override int get hashCode => 'billing_manager'.hashCode;
+
+ }
+@immutable final class OrgMembershipRole$Unknown extends OrgMembershipRole {const OrgMembershipRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrgMembershipRole && other.value == value;
+    other is OrgMembershipRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrgMembershipRole($value)';
 
  }
 /// Org Membership

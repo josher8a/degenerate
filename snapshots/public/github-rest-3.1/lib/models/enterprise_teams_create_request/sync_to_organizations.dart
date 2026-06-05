@@ -5,22 +5,21 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Retired: this fi
 /// Whether the enterprise team should be reflected in each organization.
 /// This value cannot be set.
 /// 
-@immutable final class SyncToOrganizations {const SyncToOrganizations._(this.value);
+sealed class SyncToOrganizations {const SyncToOrganizations();
 
 factory SyncToOrganizations.fromJson(String json) { return switch (json) {
   'all' => all,
   'disabled' => disabled,
-  _ => SyncToOrganizations._(json),
+  _ => SyncToOrganizations$Unknown(json),
 }; }
 
-static const SyncToOrganizations all = SyncToOrganizations._('all');
+static const SyncToOrganizations all = SyncToOrganizations$all._();
 
-static const SyncToOrganizations disabled = SyncToOrganizations._('disabled');
+static const SyncToOrganizations disabled = SyncToOrganizations$disabled._();
 
 static const List<SyncToOrganizations> values = [all, disabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SyncToOrganizations$Unknown; } 
+@override String toString() => 'SyncToOrganizations($value)';
+
+ }
+@immutable final class SyncToOrganizations$all extends SyncToOrganizations {const SyncToOrganizations$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SyncToOrganizations$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class SyncToOrganizations$disabled extends SyncToOrganizations {const SyncToOrganizations$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SyncToOrganizations$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class SyncToOrganizations$Unknown extends SyncToOrganizations {const SyncToOrganizations$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SyncToOrganizations && other.value == value;
+    other is SyncToOrganizations$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SyncToOrganizations($value)';
 
  }

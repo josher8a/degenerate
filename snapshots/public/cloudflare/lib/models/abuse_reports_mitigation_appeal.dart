@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AbuseReportsMitigationAppeal
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason why the customer is appealing.
-@immutable final class AbuseReportsAppealReason {const AbuseReportsAppealReason._(this.value);
+sealed class AbuseReportsAppealReason {const AbuseReportsAppealReason();
 
 factory AbuseReportsAppealReason.fromJson(String json) { return switch (json) {
   'removed' => removed,
   'misclassified' => misclassified,
-  _ => AbuseReportsAppealReason._(json),
+  _ => AbuseReportsAppealReason$Unknown(json),
 }; }
 
-static const AbuseReportsAppealReason removed = AbuseReportsAppealReason._('removed');
+static const AbuseReportsAppealReason removed = AbuseReportsAppealReason$removed._();
 
-static const AbuseReportsAppealReason misclassified = AbuseReportsAppealReason._('misclassified');
+static const AbuseReportsAppealReason misclassified = AbuseReportsAppealReason$misclassified._();
 
 static const List<AbuseReportsAppealReason> values = [removed, misclassified];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AbuseReportsAppealReason$Unknown; } 
+@override String toString() => 'AbuseReportsAppealReason($value)';
+
+ }
+@immutable final class AbuseReportsAppealReason$removed extends AbuseReportsAppealReason {const AbuseReportsAppealReason$removed._();
+
+@override String get value => 'removed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AbuseReportsAppealReason$removed;
+
+@override int get hashCode => 'removed'.hashCode;
+
+ }
+@immutable final class AbuseReportsAppealReason$misclassified extends AbuseReportsAppealReason {const AbuseReportsAppealReason$misclassified._();
+
+@override String get value => 'misclassified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AbuseReportsAppealReason$misclassified;
+
+@override int get hashCode => 'misclassified'.hashCode;
+
+ }
+@immutable final class AbuseReportsAppealReason$Unknown extends AbuseReportsAppealReason {const AbuseReportsAppealReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AbuseReportsAppealReason && other.value == value;
+    other is AbuseReportsAppealReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AbuseReportsAppealReason($value)';
 
  }
 @immutable final class AbuseReportsMitigationAppeal {const AbuseReportsMitigationAppeal({required this.id, required this.reason, });

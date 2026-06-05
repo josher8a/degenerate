@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ObservatoryDeviceType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device.
-@immutable final class ObservatoryDeviceType {const ObservatoryDeviceType._(this.value);
+sealed class ObservatoryDeviceType {const ObservatoryDeviceType();
 
 factory ObservatoryDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
-  _ => ObservatoryDeviceType._(json),
+  _ => ObservatoryDeviceType$Unknown(json),
 }; }
 
-static const ObservatoryDeviceType desktop = ObservatoryDeviceType._('DESKTOP');
+static const ObservatoryDeviceType desktop = ObservatoryDeviceType$desktop._();
 
-static const ObservatoryDeviceType mobile = ObservatoryDeviceType._('MOBILE');
+static const ObservatoryDeviceType mobile = ObservatoryDeviceType$mobile._();
 
 static const List<ObservatoryDeviceType> values = [desktop, mobile];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ObservatoryDeviceType$Unknown; } 
+@override String toString() => 'ObservatoryDeviceType($value)';
+
+ }
+@immutable final class ObservatoryDeviceType$desktop extends ObservatoryDeviceType {const ObservatoryDeviceType$desktop._();
+
+@override String get value => 'DESKTOP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ObservatoryDeviceType$desktop;
+
+@override int get hashCode => 'DESKTOP'.hashCode;
+
+ }
+@immutable final class ObservatoryDeviceType$mobile extends ObservatoryDeviceType {const ObservatoryDeviceType$mobile._();
+
+@override String get value => 'MOBILE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ObservatoryDeviceType$mobile;
+
+@override int get hashCode => 'MOBILE'.hashCode;
+
+ }
+@immutable final class ObservatoryDeviceType$Unknown extends ObservatoryDeviceType {const ObservatoryDeviceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ObservatoryDeviceType && other.value == value;
+    other is ObservatoryDeviceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ObservatoryDeviceType($value)';
 
  }

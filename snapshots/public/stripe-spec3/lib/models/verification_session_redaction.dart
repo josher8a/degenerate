@@ -2,22 +2,21 @@
 // Source: #/components/schemas/VerificationSessionRedaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates whether this object and its related objects have been redacted or not.
-@immutable final class VerificationSessionRedactionStatus {const VerificationSessionRedactionStatus._(this.value);
+sealed class VerificationSessionRedactionStatus {const VerificationSessionRedactionStatus();
 
 factory VerificationSessionRedactionStatus.fromJson(String json) { return switch (json) {
   'processing' => processing,
   'redacted' => redacted,
-  _ => VerificationSessionRedactionStatus._(json),
+  _ => VerificationSessionRedactionStatus$Unknown(json),
 }; }
 
-static const VerificationSessionRedactionStatus processing = VerificationSessionRedactionStatus._('processing');
+static const VerificationSessionRedactionStatus processing = VerificationSessionRedactionStatus$processing._();
 
-static const VerificationSessionRedactionStatus redacted = VerificationSessionRedactionStatus._('redacted');
+static const VerificationSessionRedactionStatus redacted = VerificationSessionRedactionStatus$redacted._();
 
 static const List<VerificationSessionRedactionStatus> values = [processing, redacted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is VerificationSessionRedactionStatus$Unknown; } 
+@override String toString() => 'VerificationSessionRedactionStatus($value)';
+
+ }
+@immutable final class VerificationSessionRedactionStatus$processing extends VerificationSessionRedactionStatus {const VerificationSessionRedactionStatus$processing._();
+
+@override String get value => 'processing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VerificationSessionRedactionStatus$processing;
+
+@override int get hashCode => 'processing'.hashCode;
+
+ }
+@immutable final class VerificationSessionRedactionStatus$redacted extends VerificationSessionRedactionStatus {const VerificationSessionRedactionStatus$redacted._();
+
+@override String get value => 'redacted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VerificationSessionRedactionStatus$redacted;
+
+@override int get hashCode => 'redacted'.hashCode;
+
+ }
+@immutable final class VerificationSessionRedactionStatus$Unknown extends VerificationSessionRedactionStatus {const VerificationSessionRedactionStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is VerificationSessionRedactionStatus && other.value == value;
+    other is VerificationSessionRedactionStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'VerificationSessionRedactionStatus($value)';
 
  }
 /// 

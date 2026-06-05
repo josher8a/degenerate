@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AiSearchCreateInstancesRequest (inline: SourceParams > WebCrawler > CrawlOptions)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CrawlOptionsSource {const CrawlOptionsSource._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CrawlOptionsSource {const CrawlOptionsSource();
 
 factory CrawlOptionsSource.fromJson(String json) { return switch (json) {
   'all' => all,
   'sitemaps' => sitemaps,
   'links' => links,
-  _ => CrawlOptionsSource._(json),
+  _ => CrawlOptionsSource$Unknown(json),
 }; }
 
-static const CrawlOptionsSource all = CrawlOptionsSource._('all');
+static const CrawlOptionsSource all = CrawlOptionsSource$all._();
 
-static const CrawlOptionsSource sitemaps = CrawlOptionsSource._('sitemaps');
+static const CrawlOptionsSource sitemaps = CrawlOptionsSource$sitemaps._();
 
-static const CrawlOptionsSource links = CrawlOptionsSource._('links');
+static const CrawlOptionsSource links = CrawlOptionsSource$links._();
 
 static const List<CrawlOptionsSource> values = [all, sitemaps, links];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CrawlOptionsSource$Unknown; } 
+@override String toString() => 'CrawlOptionsSource($value)';
+
+ }
+@immutable final class CrawlOptionsSource$all extends CrawlOptionsSource {const CrawlOptionsSource$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CrawlOptionsSource$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class CrawlOptionsSource$sitemaps extends CrawlOptionsSource {const CrawlOptionsSource$sitemaps._();
+
+@override String get value => 'sitemaps';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CrawlOptionsSource$sitemaps;
+
+@override int get hashCode => 'sitemaps'.hashCode;
+
+ }
+@immutable final class CrawlOptionsSource$links extends CrawlOptionsSource {const CrawlOptionsSource$links._();
+
+@override String get value => 'links';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CrawlOptionsSource$links;
+
+@override int get hashCode => 'links'.hashCode;
+
+ }
+@immutable final class CrawlOptionsSource$Unknown extends CrawlOptionsSource {const CrawlOptionsSource$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CrawlOptionsSource && other.value == value;
+    other is CrawlOptionsSource$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CrawlOptionsSource($value)';
 
  }
 @immutable final class CrawlOptions {const CrawlOptions({this.depth, this.includeExternalLinks = false, this.includeSubdomains = false, this.maxAge, this.source = CrawlOptionsSource.all, });

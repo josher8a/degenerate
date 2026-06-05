@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PaymentFlowsAmountDetailsResourceError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The code of the error that occurred when validating the current amount details.
-@immutable final class PaymentFlowsAmountDetailsResourceErrorCode {const PaymentFlowsAmountDetailsResourceErrorCode._(this.value);
+sealed class PaymentFlowsAmountDetailsResourceErrorCode {const PaymentFlowsAmountDetailsResourceErrorCode();
 
 factory PaymentFlowsAmountDetailsResourceErrorCode.fromJson(String json) { return switch (json) {
   'amount_details_amount_mismatch' => amountDetailsAmountMismatch,
   'amount_details_tax_shipping_discount_greater_than_amount' => amountDetailsTaxShippingDiscountGreaterThanAmount,
-  _ => PaymentFlowsAmountDetailsResourceErrorCode._(json),
+  _ => PaymentFlowsAmountDetailsResourceErrorCode$Unknown(json),
 }; }
 
-static const PaymentFlowsAmountDetailsResourceErrorCode amountDetailsAmountMismatch = PaymentFlowsAmountDetailsResourceErrorCode._('amount_details_amount_mismatch');
+static const PaymentFlowsAmountDetailsResourceErrorCode amountDetailsAmountMismatch = PaymentFlowsAmountDetailsResourceErrorCode$amountDetailsAmountMismatch._();
 
-static const PaymentFlowsAmountDetailsResourceErrorCode amountDetailsTaxShippingDiscountGreaterThanAmount = PaymentFlowsAmountDetailsResourceErrorCode._('amount_details_tax_shipping_discount_greater_than_amount');
+static const PaymentFlowsAmountDetailsResourceErrorCode amountDetailsTaxShippingDiscountGreaterThanAmount = PaymentFlowsAmountDetailsResourceErrorCode$amountDetailsTaxShippingDiscountGreaterThanAmount._();
 
 static const List<PaymentFlowsAmountDetailsResourceErrorCode> values = [amountDetailsAmountMismatch, amountDetailsTaxShippingDiscountGreaterThanAmount];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentFlowsAmountDetailsResourceErrorCode$Unknown; } 
+@override String toString() => 'PaymentFlowsAmountDetailsResourceErrorCode($value)';
+
+ }
+@immutable final class PaymentFlowsAmountDetailsResourceErrorCode$amountDetailsAmountMismatch extends PaymentFlowsAmountDetailsResourceErrorCode {const PaymentFlowsAmountDetailsResourceErrorCode$amountDetailsAmountMismatch._();
+
+@override String get value => 'amount_details_amount_mismatch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentFlowsAmountDetailsResourceErrorCode$amountDetailsAmountMismatch;
+
+@override int get hashCode => 'amount_details_amount_mismatch'.hashCode;
+
+ }
+@immutable final class PaymentFlowsAmountDetailsResourceErrorCode$amountDetailsTaxShippingDiscountGreaterThanAmount extends PaymentFlowsAmountDetailsResourceErrorCode {const PaymentFlowsAmountDetailsResourceErrorCode$amountDetailsTaxShippingDiscountGreaterThanAmount._();
+
+@override String get value => 'amount_details_tax_shipping_discount_greater_than_amount';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentFlowsAmountDetailsResourceErrorCode$amountDetailsTaxShippingDiscountGreaterThanAmount;
+
+@override int get hashCode => 'amount_details_tax_shipping_discount_greater_than_amount'.hashCode;
+
+ }
+@immutable final class PaymentFlowsAmountDetailsResourceErrorCode$Unknown extends PaymentFlowsAmountDetailsResourceErrorCode {const PaymentFlowsAmountDetailsResourceErrorCode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentFlowsAmountDetailsResourceErrorCode && other.value == value;
+    other is PaymentFlowsAmountDetailsResourceErrorCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentFlowsAmountDetailsResourceErrorCode($value)';
 
  }
 /// 

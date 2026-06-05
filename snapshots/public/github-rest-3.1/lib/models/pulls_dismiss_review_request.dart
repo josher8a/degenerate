@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PullsDismissReviewRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsDismissReviewRequestEvent {const PullsDismissReviewRequestEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PullsDismissReviewRequestEvent {const PullsDismissReviewRequestEvent();
 
 factory PullsDismissReviewRequestEvent.fromJson(String json) { return switch (json) {
   'DISMISS' => dismiss,
-  _ => PullsDismissReviewRequestEvent._(json),
+  _ => PullsDismissReviewRequestEvent$Unknown(json),
 }; }
 
-static const PullsDismissReviewRequestEvent dismiss = PullsDismissReviewRequestEvent._('DISMISS');
+static const PullsDismissReviewRequestEvent dismiss = PullsDismissReviewRequestEvent$dismiss._();
 
 static const List<PullsDismissReviewRequestEvent> values = [dismiss];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PullsDismissReviewRequestEvent$Unknown; } 
+@override String toString() => 'PullsDismissReviewRequestEvent($value)';
+
+ }
+@immutable final class PullsDismissReviewRequestEvent$dismiss extends PullsDismissReviewRequestEvent {const PullsDismissReviewRequestEvent$dismiss._();
+
+@override String get value => 'DISMISS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PullsDismissReviewRequestEvent$dismiss;
+
+@override int get hashCode => 'DISMISS'.hashCode;
+
+ }
+@immutable final class PullsDismissReviewRequestEvent$Unknown extends PullsDismissReviewRequestEvent {const PullsDismissReviewRequestEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PullsDismissReviewRequestEvent && other.value == value;
+    other is PullsDismissReviewRequestEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PullsDismissReviewRequestEvent($value)';
 
  }
 @immutable final class PullsDismissReviewRequest {const PullsDismissReviewRequest({required this.message, this.event, });

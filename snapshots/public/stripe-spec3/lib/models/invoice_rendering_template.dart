@@ -2,19 +2,18 @@
 // Source: #/components/schemas/InvoiceRenderingTemplate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class InvoiceRenderingTemplateObject {const InvoiceRenderingTemplateObject._(this.value);
+sealed class InvoiceRenderingTemplateObject {const InvoiceRenderingTemplateObject();
 
 factory InvoiceRenderingTemplateObject.fromJson(String json) { return switch (json) {
   'invoice_rendering_template' => invoiceRenderingTemplate,
-  _ => InvoiceRenderingTemplateObject._(json),
+  _ => InvoiceRenderingTemplateObject$Unknown(json),
 }; }
 
-static const InvoiceRenderingTemplateObject invoiceRenderingTemplate = InvoiceRenderingTemplateObject._('invoice_rendering_template');
+static const InvoiceRenderingTemplateObject invoiceRenderingTemplate = InvoiceRenderingTemplateObject$invoiceRenderingTemplate._();
 
 static const List<InvoiceRenderingTemplateObject> values = [invoiceRenderingTemplate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,32 +21,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is InvoiceRenderingTemplateObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is InvoiceRenderingTemplateObject$Unknown; } 
 @override String toString() => 'InvoiceRenderingTemplateObject($value)';
 
  }
+@immutable final class InvoiceRenderingTemplateObject$invoiceRenderingTemplate extends InvoiceRenderingTemplateObject {const InvoiceRenderingTemplateObject$invoiceRenderingTemplate._();
+
+@override String get value => 'invoice_rendering_template';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceRenderingTemplateObject$invoiceRenderingTemplate;
+
+@override int get hashCode => 'invoice_rendering_template'.hashCode;
+
+ }
+@immutable final class InvoiceRenderingTemplateObject$Unknown extends InvoiceRenderingTemplateObject {const InvoiceRenderingTemplateObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InvoiceRenderingTemplateObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of the template, one of `active` or `archived`.
-@immutable final class InvoiceRenderingTemplateStatus {const InvoiceRenderingTemplateStatus._(this.value);
+sealed class InvoiceRenderingTemplateStatus {const InvoiceRenderingTemplateStatus();
 
 factory InvoiceRenderingTemplateStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'archived' => archived,
-  _ => InvoiceRenderingTemplateStatus._(json),
+  _ => InvoiceRenderingTemplateStatus$Unknown(json),
 }; }
 
-static const InvoiceRenderingTemplateStatus active = InvoiceRenderingTemplateStatus._('active');
+static const InvoiceRenderingTemplateStatus active = InvoiceRenderingTemplateStatus$active._();
 
-static const InvoiceRenderingTemplateStatus archived = InvoiceRenderingTemplateStatus._('archived');
+static const InvoiceRenderingTemplateStatus archived = InvoiceRenderingTemplateStatus$archived._();
 
 static const List<InvoiceRenderingTemplateStatus> values = [active, archived];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -56,13 +68,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InvoiceRenderingTemplateStatus$Unknown; } 
+@override String toString() => 'InvoiceRenderingTemplateStatus($value)';
+
+ }
+@immutable final class InvoiceRenderingTemplateStatus$active extends InvoiceRenderingTemplateStatus {const InvoiceRenderingTemplateStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceRenderingTemplateStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class InvoiceRenderingTemplateStatus$archived extends InvoiceRenderingTemplateStatus {const InvoiceRenderingTemplateStatus$archived._();
+
+@override String get value => 'archived';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoiceRenderingTemplateStatus$archived;
+
+@override int get hashCode => 'archived'.hashCode;
+
+ }
+@immutable final class InvoiceRenderingTemplateStatus$Unknown extends InvoiceRenderingTemplateStatus {const InvoiceRenderingTemplateStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InvoiceRenderingTemplateStatus && other.value == value;
+    other is InvoiceRenderingTemplateStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InvoiceRenderingTemplateStatus($value)';
 
  }
 /// Invoice Rendering Templates are used to configure how invoices are rendered on surfaces like the PDF. Invoice Rendering Templates

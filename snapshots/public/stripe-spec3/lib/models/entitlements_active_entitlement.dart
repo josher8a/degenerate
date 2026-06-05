@@ -2,19 +2,18 @@
 // Source: #/components/schemas/EntitlementsActiveEntitlement
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/entitlements_active_entitlement/feature.dart';import 'package:pub_stripe_spec3/models/entitlements_feature.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class EntitlementsActiveEntitlementObject {const EntitlementsActiveEntitlementObject._(this.value);
+sealed class EntitlementsActiveEntitlementObject {const EntitlementsActiveEntitlementObject();
 
 factory EntitlementsActiveEntitlementObject.fromJson(String json) { return switch (json) {
   'entitlements.active_entitlement' => entitlementsActiveEntitlement,
-  _ => EntitlementsActiveEntitlementObject._(json),
+  _ => EntitlementsActiveEntitlementObject$Unknown(json),
 }; }
 
-static const EntitlementsActiveEntitlementObject entitlementsActiveEntitlement = EntitlementsActiveEntitlementObject._('entitlements.active_entitlement');
+static const EntitlementsActiveEntitlementObject entitlementsActiveEntitlement = EntitlementsActiveEntitlementObject$entitlementsActiveEntitlement._();
 
 static const List<EntitlementsActiveEntitlementObject> values = [entitlementsActiveEntitlement];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EntitlementsActiveEntitlementObject$Unknown; } 
+@override String toString() => 'EntitlementsActiveEntitlementObject($value)';
+
+ }
+@immutable final class EntitlementsActiveEntitlementObject$entitlementsActiveEntitlement extends EntitlementsActiveEntitlementObject {const EntitlementsActiveEntitlementObject$entitlementsActiveEntitlement._();
+
+@override String get value => 'entitlements.active_entitlement';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EntitlementsActiveEntitlementObject$entitlementsActiveEntitlement;
+
+@override int get hashCode => 'entitlements.active_entitlement'.hashCode;
+
+ }
+@immutable final class EntitlementsActiveEntitlementObject$Unknown extends EntitlementsActiveEntitlementObject {const EntitlementsActiveEntitlementObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EntitlementsActiveEntitlementObject && other.value == value;
+    other is EntitlementsActiveEntitlementObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EntitlementsActiveEntitlementObject($value)';
 
  }
 /// An active entitlement describes access to a feature for a customer.

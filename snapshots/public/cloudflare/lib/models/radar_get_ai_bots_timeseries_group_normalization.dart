@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetAiBotsTimeseriesGroupNormalization
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).
-@immutable final class RadarGetAiBotsTimeseriesGroupNormalization {const RadarGetAiBotsTimeseriesGroupNormalization._(this.value);
+sealed class RadarGetAiBotsTimeseriesGroupNormalization {const RadarGetAiBotsTimeseriesGroupNormalization();
 
 factory RadarGetAiBotsTimeseriesGroupNormalization.fromJson(String json) { return switch (json) {
   'PERCENTAGE' => percentage,
   'MIN0_MAX' => min0Max,
-  _ => RadarGetAiBotsTimeseriesGroupNormalization._(json),
+  _ => RadarGetAiBotsTimeseriesGroupNormalization$Unknown(json),
 }; }
 
-static const RadarGetAiBotsTimeseriesGroupNormalization percentage = RadarGetAiBotsTimeseriesGroupNormalization._('PERCENTAGE');
+static const RadarGetAiBotsTimeseriesGroupNormalization percentage = RadarGetAiBotsTimeseriesGroupNormalization$percentage._();
 
-static const RadarGetAiBotsTimeseriesGroupNormalization min0Max = RadarGetAiBotsTimeseriesGroupNormalization._('MIN0_MAX');
+static const RadarGetAiBotsTimeseriesGroupNormalization min0Max = RadarGetAiBotsTimeseriesGroupNormalization$min0Max._();
 
 static const List<RadarGetAiBotsTimeseriesGroupNormalization> values = [percentage, min0Max];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAiBotsTimeseriesGroupNormalization$Unknown; } 
+@override String toString() => 'RadarGetAiBotsTimeseriesGroupNormalization($value)';
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesGroupNormalization$percentage extends RadarGetAiBotsTimeseriesGroupNormalization {const RadarGetAiBotsTimeseriesGroupNormalization$percentage._();
+
+@override String get value => 'PERCENTAGE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesGroupNormalization$percentage;
+
+@override int get hashCode => 'PERCENTAGE'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesGroupNormalization$min0Max extends RadarGetAiBotsTimeseriesGroupNormalization {const RadarGetAiBotsTimeseriesGroupNormalization$min0Max._();
+
+@override String get value => 'MIN0_MAX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesGroupNormalization$min0Max;
+
+@override int get hashCode => 'MIN0_MAX'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesGroupNormalization$Unknown extends RadarGetAiBotsTimeseriesGroupNormalization {const RadarGetAiBotsTimeseriesGroupNormalization$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAiBotsTimeseriesGroupNormalization && other.value == value;
+    other is RadarGetAiBotsTimeseriesGroupNormalization$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAiBotsTimeseriesGroupNormalization($value)';
 
  }

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/CodeSecurityConfiguration (inline: SecretScanningDelegatedAlertDismissal)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of secret scanning delegated alert dismissal
-@immutable final class CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal {const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._(this.value);
+sealed class CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal {const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal();
 
 factory CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
-  _ => CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._(json),
+  _ => CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$Unknown(json),
 }; }
 
-static const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal enabled = CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._('enabled');
+static const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal enabled = CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$enabled._();
 
-static const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal disabled = CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._('disabled');
+static const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal disabled = CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$disabled._();
 
-static const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal notSet = CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal._('not_set');
+static const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal notSet = CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$notSet._();
 
 static const List<CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal> values = [enabled, disabled, notSet];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$Unknown; } 
+@override String toString() => 'CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal($value)';
+
+ }
+@immutable final class CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$enabled extends CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal {const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$disabled extends CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal {const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$notSet extends CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal {const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$notSet._();
+
+@override String get value => 'not_set';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$notSet;
+
+@override int get hashCode => 'not_set'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$Unknown extends CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal {const CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal && other.value == value;
+    other is CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeSecurityConfigurationSecretScanningDelegatedAlertDismissal($value)';
 
  }

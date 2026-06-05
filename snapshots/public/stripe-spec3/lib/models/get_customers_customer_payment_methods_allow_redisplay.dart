@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetCustomersCustomerPaymentMethodsAllowRedisplay
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetCustomersCustomerPaymentMethodsAllowRedisplay {const GetCustomersCustomerPaymentMethodsAllowRedisplay._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetCustomersCustomerPaymentMethodsAllowRedisplay {const GetCustomersCustomerPaymentMethodsAllowRedisplay();
 
 factory GetCustomersCustomerPaymentMethodsAllowRedisplay.fromJson(String json) { return switch (json) {
   'always' => always,
   'limited' => limited,
   'unspecified' => unspecified,
-  _ => GetCustomersCustomerPaymentMethodsAllowRedisplay._(json),
+  _ => GetCustomersCustomerPaymentMethodsAllowRedisplay$Unknown(json),
 }; }
 
-static const GetCustomersCustomerPaymentMethodsAllowRedisplay always = GetCustomersCustomerPaymentMethodsAllowRedisplay._('always');
+static const GetCustomersCustomerPaymentMethodsAllowRedisplay always = GetCustomersCustomerPaymentMethodsAllowRedisplay$always._();
 
-static const GetCustomersCustomerPaymentMethodsAllowRedisplay limited = GetCustomersCustomerPaymentMethodsAllowRedisplay._('limited');
+static const GetCustomersCustomerPaymentMethodsAllowRedisplay limited = GetCustomersCustomerPaymentMethodsAllowRedisplay$limited._();
 
-static const GetCustomersCustomerPaymentMethodsAllowRedisplay unspecified = GetCustomersCustomerPaymentMethodsAllowRedisplay._('unspecified');
+static const GetCustomersCustomerPaymentMethodsAllowRedisplay unspecified = GetCustomersCustomerPaymentMethodsAllowRedisplay$unspecified._();
 
 static const List<GetCustomersCustomerPaymentMethodsAllowRedisplay> values = [always, limited, unspecified];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GetCustomersCustomerPaymentMethodsAllowRedisplay$Unknown; } 
+@override String toString() => 'GetCustomersCustomerPaymentMethodsAllowRedisplay($value)';
+
+ }
+@immutable final class GetCustomersCustomerPaymentMethodsAllowRedisplay$always extends GetCustomersCustomerPaymentMethodsAllowRedisplay {const GetCustomersCustomerPaymentMethodsAllowRedisplay$always._();
+
+@override String get value => 'always';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetCustomersCustomerPaymentMethodsAllowRedisplay$always;
+
+@override int get hashCode => 'always'.hashCode;
+
+ }
+@immutable final class GetCustomersCustomerPaymentMethodsAllowRedisplay$limited extends GetCustomersCustomerPaymentMethodsAllowRedisplay {const GetCustomersCustomerPaymentMethodsAllowRedisplay$limited._();
+
+@override String get value => 'limited';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetCustomersCustomerPaymentMethodsAllowRedisplay$limited;
+
+@override int get hashCode => 'limited'.hashCode;
+
+ }
+@immutable final class GetCustomersCustomerPaymentMethodsAllowRedisplay$unspecified extends GetCustomersCustomerPaymentMethodsAllowRedisplay {const GetCustomersCustomerPaymentMethodsAllowRedisplay$unspecified._();
+
+@override String get value => 'unspecified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetCustomersCustomerPaymentMethodsAllowRedisplay$unspecified;
+
+@override int get hashCode => 'unspecified'.hashCode;
+
+ }
+@immutable final class GetCustomersCustomerPaymentMethodsAllowRedisplay$Unknown extends GetCustomersCustomerPaymentMethodsAllowRedisplay {const GetCustomersCustomerPaymentMethodsAllowRedisplay$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GetCustomersCustomerPaymentMethodsAllowRedisplay && other.value == value;
+    other is GetCustomersCustomerPaymentMethodsAllowRedisplay$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GetCustomersCustomerPaymentMethodsAllowRedisplay($value)';
 
  }

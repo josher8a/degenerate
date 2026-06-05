@@ -2,28 +2,27 @@
 // Source: #/components/schemas/AccountAddressDependentPhoneNumber
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_method.dart';/// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
-@immutable final class DependentPhoneNumberEnumAddressRequirement {const DependentPhoneNumberEnumAddressRequirement._(this.value);
+sealed class DependentPhoneNumberEnumAddressRequirement {const DependentPhoneNumberEnumAddressRequirement();
 
 factory DependentPhoneNumberEnumAddressRequirement.fromJson(String json) { return switch (json) {
   'none' => none,
   'any' => any,
   'local' => local,
   'foreign' => foreign,
-  _ => DependentPhoneNumberEnumAddressRequirement._(json),
+  _ => DependentPhoneNumberEnumAddressRequirement$Unknown(json),
 }; }
 
-static const DependentPhoneNumberEnumAddressRequirement none = DependentPhoneNumberEnumAddressRequirement._('none');
+static const DependentPhoneNumberEnumAddressRequirement none = DependentPhoneNumberEnumAddressRequirement$none._();
 
-static const DependentPhoneNumberEnumAddressRequirement any = DependentPhoneNumberEnumAddressRequirement._('any');
+static const DependentPhoneNumberEnumAddressRequirement any = DependentPhoneNumberEnumAddressRequirement$any._();
 
-static const DependentPhoneNumberEnumAddressRequirement local = DependentPhoneNumberEnumAddressRequirement._('local');
+static const DependentPhoneNumberEnumAddressRequirement local = DependentPhoneNumberEnumAddressRequirement$local._();
 
-static const DependentPhoneNumberEnumAddressRequirement foreign = DependentPhoneNumberEnumAddressRequirement._('foreign');
+static const DependentPhoneNumberEnumAddressRequirement foreign = DependentPhoneNumberEnumAddressRequirement$foreign._();
 
 static const List<DependentPhoneNumberEnumAddressRequirement> values = [none, any, local, foreign];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,32 +33,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DependentPhoneNumberEnumAddressRequirement && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is DependentPhoneNumberEnumAddressRequirement$Unknown; } 
 @override String toString() => 'DependentPhoneNumberEnumAddressRequirement($value)';
 
  }
+@immutable final class DependentPhoneNumberEnumAddressRequirement$none extends DependentPhoneNumberEnumAddressRequirement {const DependentPhoneNumberEnumAddressRequirement$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependentPhoneNumberEnumAddressRequirement$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class DependentPhoneNumberEnumAddressRequirement$any extends DependentPhoneNumberEnumAddressRequirement {const DependentPhoneNumberEnumAddressRequirement$any._();
+
+@override String get value => 'any';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependentPhoneNumberEnumAddressRequirement$any;
+
+@override int get hashCode => 'any'.hashCode;
+
+ }
+@immutable final class DependentPhoneNumberEnumAddressRequirement$local extends DependentPhoneNumberEnumAddressRequirement {const DependentPhoneNumberEnumAddressRequirement$local._();
+
+@override String get value => 'local';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependentPhoneNumberEnumAddressRequirement$local;
+
+@override int get hashCode => 'local'.hashCode;
+
+ }
+@immutable final class DependentPhoneNumberEnumAddressRequirement$foreign extends DependentPhoneNumberEnumAddressRequirement {const DependentPhoneNumberEnumAddressRequirement$foreign._();
+
+@override String get value => 'foreign';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependentPhoneNumberEnumAddressRequirement$foreign;
+
+@override int get hashCode => 'foreign'.hashCode;
+
+ }
+@immutable final class DependentPhoneNumberEnumAddressRequirement$Unknown extends DependentPhoneNumberEnumAddressRequirement {const DependentPhoneNumberEnumAddressRequirement$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DependentPhoneNumberEnumAddressRequirement$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Whether the phone number is enabled for emergency calling.
-@immutable final class DependentPhoneNumberEnumEmergencyStatus {const DependentPhoneNumberEnumEmergencyStatus._(this.value);
+sealed class DependentPhoneNumberEnumEmergencyStatus {const DependentPhoneNumberEnumEmergencyStatus();
 
 factory DependentPhoneNumberEnumEmergencyStatus.fromJson(String json) { return switch (json) {
   'Active' => active,
   'Inactive' => inactive,
-  _ => DependentPhoneNumberEnumEmergencyStatus._(json),
+  _ => DependentPhoneNumberEnumEmergencyStatus$Unknown(json),
 }; }
 
-static const DependentPhoneNumberEnumEmergencyStatus active = DependentPhoneNumberEnumEmergencyStatus._('Active');
+static const DependentPhoneNumberEnumEmergencyStatus active = DependentPhoneNumberEnumEmergencyStatus$active._();
 
-static const DependentPhoneNumberEnumEmergencyStatus inactive = DependentPhoneNumberEnumEmergencyStatus._('Inactive');
+static const DependentPhoneNumberEnumEmergencyStatus inactive = DependentPhoneNumberEnumEmergencyStatus$inactive._();
 
 static const List<DependentPhoneNumberEnumEmergencyStatus> values = [active, inactive];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,13 +107,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DependentPhoneNumberEnumEmergencyStatus$Unknown; } 
+@override String toString() => 'DependentPhoneNumberEnumEmergencyStatus($value)';
+
+ }
+@immutable final class DependentPhoneNumberEnumEmergencyStatus$active extends DependentPhoneNumberEnumEmergencyStatus {const DependentPhoneNumberEnumEmergencyStatus$active._();
+
+@override String get value => 'Active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependentPhoneNumberEnumEmergencyStatus$active;
+
+@override int get hashCode => 'Active'.hashCode;
+
+ }
+@immutable final class DependentPhoneNumberEnumEmergencyStatus$inactive extends DependentPhoneNumberEnumEmergencyStatus {const DependentPhoneNumberEnumEmergencyStatus$inactive._();
+
+@override String get value => 'Inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependentPhoneNumberEnumEmergencyStatus$inactive;
+
+@override int get hashCode => 'Inactive'.hashCode;
+
+ }
+@immutable final class DependentPhoneNumberEnumEmergencyStatus$Unknown extends DependentPhoneNumberEnumEmergencyStatus {const DependentPhoneNumberEnumEmergencyStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DependentPhoneNumberEnumEmergencyStatus && other.value == value;
+    other is DependentPhoneNumberEnumEmergencyStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DependentPhoneNumberEnumEmergencyStatus($value)';
 
  }
 @immutable final class AccountAddressDependentPhoneNumber {const AccountAddressDependentPhoneNumber({this.sid, this.accountSid, this.friendlyName, this.phoneNumber, this.voiceUrl, this.voiceMethod, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceCallerIdLookup, this.dateCreated, this.dateUpdated, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.addressRequirements, this.capabilities, this.statusCallback, this.statusCallbackMethod, this.apiVersion, this.smsApplicationSid, this.voiceApplicationSid, this.trunkSid, this.emergencyStatus, this.emergencyAddressSid, this.uri, });

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DependencyGraphDiff
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_diff/dependency_graph_diff_vulnerabilities.dart';@immutable final class ChangeType {const ChangeType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependency_graph_diff/dependency_graph_diff_vulnerabilities.dart';sealed class ChangeType {const ChangeType();
 
 factory ChangeType.fromJson(String json) { return switch (json) {
   'added' => added,
   'removed' => removed,
-  _ => ChangeType._(json),
+  _ => ChangeType$Unknown(json),
 }; }
 
-static const ChangeType added = ChangeType._('added');
+static const ChangeType added = ChangeType$added._();
 
-static const ChangeType removed = ChangeType._('removed');
+static const ChangeType removed = ChangeType$removed._();
 
 static const List<ChangeType> values = [added, removed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,35 +24,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ChangeType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ChangeType$Unknown; } 
 @override String toString() => 'ChangeType($value)';
 
  }
+@immutable final class ChangeType$added extends ChangeType {const ChangeType$added._();
+
+@override String get value => 'added';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChangeType$added;
+
+@override int get hashCode => 'added'.hashCode;
+
+ }
+@immutable final class ChangeType$removed extends ChangeType {const ChangeType$removed._();
+
+@override String get value => 'removed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChangeType$removed;
+
+@override int get hashCode => 'removed'.hashCode;
+
+ }
+@immutable final class ChangeType$Unknown extends ChangeType {const ChangeType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ChangeType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Where the dependency is utilized. `development` means that the dependency is only utilized in the development environment. `runtime` means that the dependency is utilized at runtime and in the development environment.
-@immutable final class DependencyGraphDiffScope {const DependencyGraphDiffScope._(this.value);
+sealed class DependencyGraphDiffScope {const DependencyGraphDiffScope();
 
 factory DependencyGraphDiffScope.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
   'runtime' => runtime,
   'development' => development,
-  _ => DependencyGraphDiffScope._(json),
+  _ => DependencyGraphDiffScope$Unknown(json),
 }; }
 
-static const DependencyGraphDiffScope unknown = DependencyGraphDiffScope._('unknown');
+static const DependencyGraphDiffScope unknown = DependencyGraphDiffScope$unknown._();
 
-static const DependencyGraphDiffScope runtime = DependencyGraphDiffScope._('runtime');
+static const DependencyGraphDiffScope runtime = DependencyGraphDiffScope$runtime._();
 
-static const DependencyGraphDiffScope development = DependencyGraphDiffScope._('development');
+static const DependencyGraphDiffScope development = DependencyGraphDiffScope$development._();
 
 static const List<DependencyGraphDiffScope> values = [unknown, runtime, development];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -63,13 +84,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DependencyGraphDiffScope$Unknown; } 
+@override String toString() => 'DependencyGraphDiffScope($value)';
+
+ }
+@immutable final class DependencyGraphDiffScope$unknown extends DependencyGraphDiffScope {const DependencyGraphDiffScope$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependencyGraphDiffScope$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class DependencyGraphDiffScope$runtime extends DependencyGraphDiffScope {const DependencyGraphDiffScope$runtime._();
+
+@override String get value => 'runtime';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependencyGraphDiffScope$runtime;
+
+@override int get hashCode => 'runtime'.hashCode;
+
+ }
+@immutable final class DependencyGraphDiffScope$development extends DependencyGraphDiffScope {const DependencyGraphDiffScope$development._();
+
+@override String get value => 'development';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependencyGraphDiffScope$development;
+
+@override int get hashCode => 'development'.hashCode;
+
+ }
+@immutable final class DependencyGraphDiffScope$Unknown extends DependencyGraphDiffScope {const DependencyGraphDiffScope$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DependencyGraphDiffScope && other.value == value;
+    other is DependencyGraphDiffScope$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DependencyGraphDiffScope($value)';
 
  }
 @immutable final class DependencyGraphDiff2 {const DependencyGraphDiff2({required this.changeType, required this.manifest, required this.ecosystem, required this.name, required this.version, required this.packageUrl, required this.license, required this.sourceRepositoryUrl, required this.vulnerabilities, required this.scope, });

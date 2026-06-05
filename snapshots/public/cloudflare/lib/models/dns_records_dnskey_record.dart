@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DnsRecordsDnskeyRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_dnskey_record/dns_records_dnskey_record_data.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';/// Record type.
-@immutable final class DnsRecordsDnskeyRecordType {const DnsRecordsDnskeyRecordType._(this.value);
+sealed class DnsRecordsDnskeyRecordType {const DnsRecordsDnskeyRecordType();
 
 factory DnsRecordsDnskeyRecordType.fromJson(String json) { return switch (json) {
   'DNSKEY' => dnskey,
-  _ => DnsRecordsDnskeyRecordType._(json),
+  _ => DnsRecordsDnskeyRecordType$Unknown(json),
 }; }
 
-static const DnsRecordsDnskeyRecordType dnskey = DnsRecordsDnskeyRecordType._('DNSKEY');
+static const DnsRecordsDnskeyRecordType dnskey = DnsRecordsDnskeyRecordType$dnskey._();
 
 static const List<DnsRecordsDnskeyRecordType> values = [dnskey];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DnsRecordsDnskeyRecordType$Unknown; } 
+@override String toString() => 'DnsRecordsDnskeyRecordType($value)';
+
+ }
+@immutable final class DnsRecordsDnskeyRecordType$dnskey extends DnsRecordsDnskeyRecordType {const DnsRecordsDnskeyRecordType$dnskey._();
+
+@override String get value => 'DNSKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsDnskeyRecordType$dnskey;
+
+@override int get hashCode => 'DNSKEY'.hashCode;
+
+ }
+@immutable final class DnsRecordsDnskeyRecordType$Unknown extends DnsRecordsDnskeyRecordType {const DnsRecordsDnskeyRecordType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsDnskeyRecordType && other.value == value;
+    other is DnsRecordsDnskeyRecordType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DnsRecordsDnskeyRecordType($value)';
 
  }
 @immutable final class DnsRecordsDnskeyRecord {const DnsRecordsDnskeyRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });

@@ -2,28 +2,27 @@
 // Source: #/components/schemas/TelemetryQueryRequest (inline: Parameters)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/needle.dart';import 'package:pub_cloudflare/models/telemetry_keys_list_request/telemetry_keys_list_request_filters.dart';import 'package:pub_cloudflare/models/telemetry_query_request/group_bys.dart';import 'package:pub_cloudflare/models/telemetry_query_request/havings.dart';import 'package:pub_cloudflare/models/telemetry_query_request/order_by.dart';import 'package:pub_cloudflare/models/telemetry_query_request/parameters_calculations.dart';/// Set a Flag to describe how to combine the filters on the query.
-@immutable final class FilterCombination {const FilterCombination._(this.value);
+sealed class FilterCombination {const FilterCombination();
 
 factory FilterCombination.fromJson(String json) { return switch (json) {
   'and' => and,
   'or' => or,
   'AND' => and2,
   'OR' => or2,
-  _ => FilterCombination._(json),
+  _ => FilterCombination$Unknown(json),
 }; }
 
-static const FilterCombination and = FilterCombination._('and');
+static const FilterCombination and = FilterCombination$and._();
 
-static const FilterCombination or = FilterCombination._('or');
+static const FilterCombination or = FilterCombination$or._();
 
-static const FilterCombination and2 = FilterCombination._('AND');
+static const FilterCombination and2 = FilterCombination$and2._();
 
-static const FilterCombination or2 = FilterCombination._('OR');
+static const FilterCombination or2 = FilterCombination$or2._();
 
 static const List<FilterCombination> values = [and, or, and2, or2];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FilterCombination$Unknown; } 
+@override String toString() => 'FilterCombination($value)';
+
+ }
+@immutable final class FilterCombination$and extends FilterCombination {const FilterCombination$and._();
+
+@override String get value => 'and';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilterCombination$and;
+
+@override int get hashCode => 'and'.hashCode;
+
+ }
+@immutable final class FilterCombination$or extends FilterCombination {const FilterCombination$or._();
+
+@override String get value => 'or';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilterCombination$or;
+
+@override int get hashCode => 'or'.hashCode;
+
+ }
+@immutable final class FilterCombination$and2 extends FilterCombination {const FilterCombination$and2._();
+
+@override String get value => 'AND';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilterCombination$and2;
+
+@override int get hashCode => 'AND'.hashCode;
+
+ }
+@immutable final class FilterCombination$or2 extends FilterCombination {const FilterCombination$or2._();
+
+@override String get value => 'OR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FilterCombination$or2;
+
+@override int get hashCode => 'OR'.hashCode;
+
+ }
+@immutable final class FilterCombination$Unknown extends FilterCombination {const FilterCombination$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FilterCombination && other.value == value;
+    other is FilterCombination$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FilterCombination($value)';
 
  }
 @immutable final class TelemetryQueryRequestParameters {const TelemetryQueryRequestParameters({this.calculations, this.datasets, this.filterCombination, this.filters, this.groupBys, this.havings, this.limit, this.needle, this.orderBy, });

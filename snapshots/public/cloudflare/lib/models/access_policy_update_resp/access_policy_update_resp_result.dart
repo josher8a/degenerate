@@ -37,28 +37,27 @@ num toJson() => value;
 
 }
 /// The status of the policy test.
-@immutable final class AccessUpdateStatus {const AccessUpdateStatus._(this.value);
+sealed class AccessUpdateStatus {const AccessUpdateStatus();
 
 factory AccessUpdateStatus.fromJson(String json) { return switch (json) {
   'blocked' => blocked,
   'processing' => processing,
   'exceeded time' => exceededTime,
   'complete' => complete,
-  _ => AccessUpdateStatus._(json),
+  _ => AccessUpdateStatus$Unknown(json),
 }; }
 
-static const AccessUpdateStatus blocked = AccessUpdateStatus._('blocked');
+static const AccessUpdateStatus blocked = AccessUpdateStatus$blocked._();
 
-static const AccessUpdateStatus processing = AccessUpdateStatus._('processing');
+static const AccessUpdateStatus processing = AccessUpdateStatus$processing._();
 
-static const AccessUpdateStatus exceededTime = AccessUpdateStatus._('exceeded time');
+static const AccessUpdateStatus exceededTime = AccessUpdateStatus$exceededTime._();
 
-static const AccessUpdateStatus complete = AccessUpdateStatus._('complete');
+static const AccessUpdateStatus complete = AccessUpdateStatus$complete._();
 
 static const List<AccessUpdateStatus> values = [blocked, processing, exceededTime, complete];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -69,13 +68,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccessUpdateStatus$Unknown; } 
+@override String toString() => 'AccessUpdateStatus($value)';
+
+ }
+@immutable final class AccessUpdateStatus$blocked extends AccessUpdateStatus {const AccessUpdateStatus$blocked._();
+
+@override String get value => 'blocked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessUpdateStatus$blocked;
+
+@override int get hashCode => 'blocked'.hashCode;
+
+ }
+@immutable final class AccessUpdateStatus$processing extends AccessUpdateStatus {const AccessUpdateStatus$processing._();
+
+@override String get value => 'processing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessUpdateStatus$processing;
+
+@override int get hashCode => 'processing'.hashCode;
+
+ }
+@immutable final class AccessUpdateStatus$exceededTime extends AccessUpdateStatus {const AccessUpdateStatus$exceededTime._();
+
+@override String get value => 'exceeded time';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessUpdateStatus$exceededTime;
+
+@override int get hashCode => 'exceeded time'.hashCode;
+
+ }
+@immutable final class AccessUpdateStatus$complete extends AccessUpdateStatus {const AccessUpdateStatus$complete._();
+
+@override String get value => 'complete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessUpdateStatus$complete;
+
+@override int get hashCode => 'complete'.hashCode;
+
+ }
+@immutable final class AccessUpdateStatus$Unknown extends AccessUpdateStatus {const AccessUpdateStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccessUpdateStatus && other.value == value;
+    other is AccessUpdateStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccessUpdateStatus($value)';
 
  }
 /// The number of (processed) users approved based on policy evaluation results.

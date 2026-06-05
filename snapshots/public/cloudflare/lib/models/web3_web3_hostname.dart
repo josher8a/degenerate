@@ -2,28 +2,27 @@
 // Source: #/components/schemas/Web3Web3Hostname
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/web3_description.dart';import 'package:pub_cloudflare/models/web3_dnslink.dart';import 'package:pub_cloudflare/models/web3_identifier.dart';import 'package:pub_cloudflare/models/web3_name.dart';import 'package:pub_cloudflare/models/web3_target.dart';import 'package:pub_cloudflare/models/web3_timestamp.dart';/// Specifies the status of the hostname's activation.
-@immutable final class Web3Status {const Web3Status._(this.value);
+sealed class Web3Status {const Web3Status();
 
 factory Web3Status.fromJson(String json) { return switch (json) {
   'active' => active,
   'pending' => pending,
   'deleting' => deleting,
   'error' => error,
-  _ => Web3Status._(json),
+  _ => Web3Status$Unknown(json),
 }; }
 
-static const Web3Status active = Web3Status._('active');
+static const Web3Status active = Web3Status$active._();
 
-static const Web3Status pending = Web3Status._('pending');
+static const Web3Status pending = Web3Status$pending._();
 
-static const Web3Status deleting = Web3Status._('deleting');
+static const Web3Status deleting = Web3Status$deleting._();
 
-static const Web3Status error = Web3Status._('error');
+static const Web3Status error = Web3Status$error._();
 
 static const List<Web3Status> values = [active, pending, deleting, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Web3Status$Unknown; } 
+@override String toString() => 'Web3Status($value)';
+
+ }
+@immutable final class Web3Status$active extends Web3Status {const Web3Status$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Web3Status$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class Web3Status$pending extends Web3Status {const Web3Status$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Web3Status$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class Web3Status$deleting extends Web3Status {const Web3Status$deleting._();
+
+@override String get value => 'deleting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Web3Status$deleting;
+
+@override int get hashCode => 'deleting'.hashCode;
+
+ }
+@immutable final class Web3Status$error extends Web3Status {const Web3Status$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Web3Status$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class Web3Status$Unknown extends Web3Status {const Web3Status$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Web3Status && other.value == value;
+    other is Web3Status$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Web3Status($value)';
 
  }
 @immutable final class Web3Web3Hostname {const Web3Web3Hostname({this.createdOn, this.description, this.dnslink, this.id, this.modifiedOn, this.name, this.status, this.target, });

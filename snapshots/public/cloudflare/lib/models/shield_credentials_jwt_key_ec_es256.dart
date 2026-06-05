@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ShieldCredentialsJwtKeyEcEs256
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_credentials_jwt_key_ec_common/shield_credentials_jwt_key_ec_common_kty.dart';/// Algorithm
-@immutable final class ShieldCredentialsJwtKeyEcEs256Alg {const ShieldCredentialsJwtKeyEcEs256Alg._(this.value);
+sealed class ShieldCredentialsJwtKeyEcEs256Alg {const ShieldCredentialsJwtKeyEcEs256Alg();
 
 factory ShieldCredentialsJwtKeyEcEs256Alg.fromJson(String json) { return switch (json) {
   'ES256' => es256,
-  _ => ShieldCredentialsJwtKeyEcEs256Alg._(json),
+  _ => ShieldCredentialsJwtKeyEcEs256Alg$Unknown(json),
 }; }
 
-static const ShieldCredentialsJwtKeyEcEs256Alg es256 = ShieldCredentialsJwtKeyEcEs256Alg._('ES256');
+static const ShieldCredentialsJwtKeyEcEs256Alg es256 = ShieldCredentialsJwtKeyEcEs256Alg$es256._();
 
 static const List<ShieldCredentialsJwtKeyEcEs256Alg> values = [es256];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,29 +21,42 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldCredentialsJwtKeyEcEs256Alg && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ShieldCredentialsJwtKeyEcEs256Alg$Unknown; } 
 @override String toString() => 'ShieldCredentialsJwtKeyEcEs256Alg($value)';
 
  }
+@immutable final class ShieldCredentialsJwtKeyEcEs256Alg$es256 extends ShieldCredentialsJwtKeyEcEs256Alg {const ShieldCredentialsJwtKeyEcEs256Alg$es256._();
+
+@override String get value => 'ES256';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldCredentialsJwtKeyEcEs256Alg$es256;
+
+@override int get hashCode => 'ES256'.hashCode;
+
+ }
+@immutable final class ShieldCredentialsJwtKeyEcEs256Alg$Unknown extends ShieldCredentialsJwtKeyEcEs256Alg {const ShieldCredentialsJwtKeyEcEs256Alg$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ShieldCredentialsJwtKeyEcEs256Alg$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Curve
-@immutable final class ShieldCredentialsJwtKeyEcEs256Crv {const ShieldCredentialsJwtKeyEcEs256Crv._(this.value);
+sealed class ShieldCredentialsJwtKeyEcEs256Crv {const ShieldCredentialsJwtKeyEcEs256Crv();
 
 factory ShieldCredentialsJwtKeyEcEs256Crv.fromJson(String json) { return switch (json) {
   'P-256' => p256,
-  _ => ShieldCredentialsJwtKeyEcEs256Crv._(json),
+  _ => ShieldCredentialsJwtKeyEcEs256Crv$Unknown(json),
 }; }
 
-static const ShieldCredentialsJwtKeyEcEs256Crv p256 = ShieldCredentialsJwtKeyEcEs256Crv._('P-256');
+static const ShieldCredentialsJwtKeyEcEs256Crv p256 = ShieldCredentialsJwtKeyEcEs256Crv$p256._();
 
 static const List<ShieldCredentialsJwtKeyEcEs256Crv> values = [p256];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -52,13 +64,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShieldCredentialsJwtKeyEcEs256Crv$Unknown; } 
+@override String toString() => 'ShieldCredentialsJwtKeyEcEs256Crv($value)';
+
+ }
+@immutable final class ShieldCredentialsJwtKeyEcEs256Crv$p256 extends ShieldCredentialsJwtKeyEcEs256Crv {const ShieldCredentialsJwtKeyEcEs256Crv$p256._();
+
+@override String get value => 'P-256';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldCredentialsJwtKeyEcEs256Crv$p256;
+
+@override int get hashCode => 'P-256'.hashCode;
+
+ }
+@immutable final class ShieldCredentialsJwtKeyEcEs256Crv$Unknown extends ShieldCredentialsJwtKeyEcEs256Crv {const ShieldCredentialsJwtKeyEcEs256Crv$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldCredentialsJwtKeyEcEs256Crv && other.value == value;
+    other is ShieldCredentialsJwtKeyEcEs256Crv$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShieldCredentialsJwtKeyEcEs256Crv($value)';
 
  }
 /// JSON representation of an ES256 key

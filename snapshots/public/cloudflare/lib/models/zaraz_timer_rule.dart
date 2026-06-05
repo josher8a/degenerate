@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZarazTimerRule
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_timer_rule/zaraz_timer_rule_settings.dart';@immutable final class ZarazTimerRuleAction {const ZarazTimerRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_timer_rule/zaraz_timer_rule_settings.dart';sealed class ZarazTimerRuleAction {const ZarazTimerRuleAction();
 
 factory ZarazTimerRuleAction.fromJson(String json) { return switch (json) {
   'timer' => timer,
-  _ => ZarazTimerRuleAction._(json),
+  _ => ZarazTimerRuleAction$Unknown(json),
 }; }
 
-static const ZarazTimerRuleAction timer = ZarazTimerRuleAction._('timer');
+static const ZarazTimerRuleAction timer = ZarazTimerRuleAction$timer._();
 
 static const List<ZarazTimerRuleAction> values = [timer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZarazTimerRuleAction$Unknown; } 
+@override String toString() => 'ZarazTimerRuleAction($value)';
+
+ }
+@immutable final class ZarazTimerRuleAction$timer extends ZarazTimerRuleAction {const ZarazTimerRuleAction$timer._();
+
+@override String get value => 'timer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazTimerRuleAction$timer;
+
+@override int get hashCode => 'timer'.hashCode;
+
+ }
+@immutable final class ZarazTimerRuleAction$Unknown extends ZarazTimerRuleAction {const ZarazTimerRuleAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZarazTimerRuleAction && other.value == value;
+    other is ZarazTimerRuleAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZarazTimerRuleAction($value)';
 
  }
 @immutable final class ZarazTimerRule {const ZarazTimerRule({required this.action, required this.id, required this.settings, });

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BankAccount (inline: AvailablePayoutMethods)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AvailablePayoutMethods {const AvailablePayoutMethods._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AvailablePayoutMethods {const AvailablePayoutMethods();
 
 factory AvailablePayoutMethods.fromJson(String json) { return switch (json) {
   'instant' => instant,
   'standard' => standard,
-  _ => AvailablePayoutMethods._(json),
+  _ => AvailablePayoutMethods$Unknown(json),
 }; }
 
-static const AvailablePayoutMethods instant = AvailablePayoutMethods._('instant');
+static const AvailablePayoutMethods instant = AvailablePayoutMethods$instant._();
 
-static const AvailablePayoutMethods standard = AvailablePayoutMethods._('standard');
+static const AvailablePayoutMethods standard = AvailablePayoutMethods$standard._();
 
 static const List<AvailablePayoutMethods> values = [instant, standard];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AvailablePayoutMethods$Unknown; } 
+@override String toString() => 'AvailablePayoutMethods($value)';
+
+ }
+@immutable final class AvailablePayoutMethods$instant extends AvailablePayoutMethods {const AvailablePayoutMethods$instant._();
+
+@override String get value => 'instant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AvailablePayoutMethods$instant;
+
+@override int get hashCode => 'instant'.hashCode;
+
+ }
+@immutable final class AvailablePayoutMethods$standard extends AvailablePayoutMethods {const AvailablePayoutMethods$standard._();
+
+@override String get value => 'standard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AvailablePayoutMethods$standard;
+
+@override int get hashCode => 'standard'.hashCode;
+
+ }
+@immutable final class AvailablePayoutMethods$Unknown extends AvailablePayoutMethods {const AvailablePayoutMethods$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AvailablePayoutMethods && other.value == value;
+    other is AvailablePayoutMethods$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AvailablePayoutMethods($value)';
 
  }

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AppPermissions (inline: OrganizationUserBlocking)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to view and manage users blocked by the organization.
-@immutable final class OrganizationUserBlocking {const OrganizationUserBlocking._(this.value);
+sealed class OrganizationUserBlocking {const OrganizationUserBlocking();
 
 factory OrganizationUserBlocking.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => OrganizationUserBlocking._(json),
+  _ => OrganizationUserBlocking$Unknown(json),
 }; }
 
-static const OrganizationUserBlocking read = OrganizationUserBlocking._('read');
+static const OrganizationUserBlocking read = OrganizationUserBlocking$read._();
 
-static const OrganizationUserBlocking write = OrganizationUserBlocking._('write');
+static const OrganizationUserBlocking write = OrganizationUserBlocking$write._();
 
 static const List<OrganizationUserBlocking> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrganizationUserBlocking$Unknown; } 
+@override String toString() => 'OrganizationUserBlocking($value)';
+
+ }
+@immutable final class OrganizationUserBlocking$read extends OrganizationUserBlocking {const OrganizationUserBlocking$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationUserBlocking$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class OrganizationUserBlocking$write extends OrganizationUserBlocking {const OrganizationUserBlocking$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationUserBlocking$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class OrganizationUserBlocking$Unknown extends OrganizationUserBlocking {const OrganizationUserBlocking$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrganizationUserBlocking && other.value == value;
+    other is OrganizationUserBlocking$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrganizationUserBlocking($value)';
 
  }

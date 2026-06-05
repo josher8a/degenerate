@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZarazCustomManagedComponent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_custom_managed_component/zaraz_custom_managed_component_worker.dart';@immutable final class ZarazCustomManagedComponentType {const ZarazCustomManagedComponentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_custom_managed_component/zaraz_custom_managed_component_worker.dart';sealed class ZarazCustomManagedComponentType {const ZarazCustomManagedComponentType();
 
 factory ZarazCustomManagedComponentType.fromJson(String json) { return switch (json) {
   'custom-mc' => customMc,
-  _ => ZarazCustomManagedComponentType._(json),
+  _ => ZarazCustomManagedComponentType$Unknown(json),
 }; }
 
-static const ZarazCustomManagedComponentType customMc = ZarazCustomManagedComponentType._('custom-mc');
+static const ZarazCustomManagedComponentType customMc = ZarazCustomManagedComponentType$customMc._();
 
 static const List<ZarazCustomManagedComponentType> values = [customMc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZarazCustomManagedComponentType$Unknown; } 
+@override String toString() => 'ZarazCustomManagedComponentType($value)';
+
+ }
+@immutable final class ZarazCustomManagedComponentType$customMc extends ZarazCustomManagedComponentType {const ZarazCustomManagedComponentType$customMc._();
+
+@override String get value => 'custom-mc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazCustomManagedComponentType$customMc;
+
+@override int get hashCode => 'custom-mc'.hashCode;
+
+ }
+@immutable final class ZarazCustomManagedComponentType$Unknown extends ZarazCustomManagedComponentType {const ZarazCustomManagedComponentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZarazCustomManagedComponentType && other.value == value;
+    other is ZarazCustomManagedComponentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZarazCustomManagedComponentType($value)';
 
  }
 @immutable final class ZarazCustomManagedComponent {const ZarazCustomManagedComponent({required this.type, required this.worker, });

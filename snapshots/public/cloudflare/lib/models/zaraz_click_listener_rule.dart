@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZarazClickListenerRule
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_click_listener_rule/zaraz_click_listener_rule_settings.dart';@immutable final class ZarazClickListenerRuleAction {const ZarazClickListenerRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_click_listener_rule/zaraz_click_listener_rule_settings.dart';sealed class ZarazClickListenerRuleAction {const ZarazClickListenerRuleAction();
 
 factory ZarazClickListenerRuleAction.fromJson(String json) { return switch (json) {
   'clickListener' => clickListener,
-  _ => ZarazClickListenerRuleAction._(json),
+  _ => ZarazClickListenerRuleAction$Unknown(json),
 }; }
 
-static const ZarazClickListenerRuleAction clickListener = ZarazClickListenerRuleAction._('clickListener');
+static const ZarazClickListenerRuleAction clickListener = ZarazClickListenerRuleAction$clickListener._();
 
 static const List<ZarazClickListenerRuleAction> values = [clickListener];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZarazClickListenerRuleAction$Unknown; } 
+@override String toString() => 'ZarazClickListenerRuleAction($value)';
+
+ }
+@immutable final class ZarazClickListenerRuleAction$clickListener extends ZarazClickListenerRuleAction {const ZarazClickListenerRuleAction$clickListener._();
+
+@override String get value => 'clickListener';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazClickListenerRuleAction$clickListener;
+
+@override int get hashCode => 'clickListener'.hashCode;
+
+ }
+@immutable final class ZarazClickListenerRuleAction$Unknown extends ZarazClickListenerRuleAction {const ZarazClickListenerRuleAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZarazClickListenerRuleAction && other.value == value;
+    other is ZarazClickListenerRuleAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZarazClickListenerRuleAction($value)';
 
  }
 @immutable final class ZarazClickListenerRule {const ZarazClickListenerRule({required this.action, required this.id, required this.settings, });

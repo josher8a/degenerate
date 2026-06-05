@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Tools > Function > Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FunctionType {const FunctionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class FunctionType {const FunctionType();
 
 factory FunctionType.fromJson(String json) { return switch (json) {
   'function' => function,
-  _ => FunctionType._(json),
+  _ => FunctionType$Unknown(json),
 }; }
 
-static const FunctionType function = FunctionType._('function');
+static const FunctionType function = FunctionType$function._();
 
 static const List<FunctionType> values = [function];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FunctionType$Unknown; } 
+@override String toString() => 'FunctionType($value)';
+
+ }
+@immutable final class FunctionType$function extends FunctionType {const FunctionType$function._();
+
+@override String get value => 'function';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionType$function;
+
+@override int get hashCode => 'function'.hashCode;
+
+ }
+@immutable final class FunctionType$Unknown extends FunctionType {const FunctionType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FunctionType && other.value == value;
+    other is FunctionType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FunctionType($value)';
 
  }

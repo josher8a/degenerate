@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AppPermissions (inline: OrganizationPackages)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token for organization packages published to GitHub Packages.
-@immutable final class OrganizationPackages {const OrganizationPackages._(this.value);
+sealed class OrganizationPackages {const OrganizationPackages();
 
 factory OrganizationPackages.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => OrganizationPackages._(json),
+  _ => OrganizationPackages$Unknown(json),
 }; }
 
-static const OrganizationPackages read = OrganizationPackages._('read');
+static const OrganizationPackages read = OrganizationPackages$read._();
 
-static const OrganizationPackages write = OrganizationPackages._('write');
+static const OrganizationPackages write = OrganizationPackages$write._();
 
 static const List<OrganizationPackages> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrganizationPackages$Unknown; } 
+@override String toString() => 'OrganizationPackages($value)';
+
+ }
+@immutable final class OrganizationPackages$read extends OrganizationPackages {const OrganizationPackages$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationPackages$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class OrganizationPackages$write extends OrganizationPackages {const OrganizationPackages$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationPackages$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class OrganizationPackages$Unknown extends OrganizationPackages {const OrganizationPackages$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrganizationPackages && other.value == value;
+    other is OrganizationPackages$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrganizationPackages($value)';
 
  }

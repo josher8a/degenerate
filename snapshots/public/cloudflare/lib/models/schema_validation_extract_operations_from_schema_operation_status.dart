@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SchemaValidationExtractOperationsFromSchemaOperationStatus
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SchemaValidationExtractOperationsFromSchemaOperationStatus {const SchemaValidationExtractOperationsFromSchemaOperationStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SchemaValidationExtractOperationsFromSchemaOperationStatus {const SchemaValidationExtractOperationsFromSchemaOperationStatus();
 
 factory SchemaValidationExtractOperationsFromSchemaOperationStatus.fromJson(String json) { return switch (json) {
   'new' => $new,
   'existing' => existing,
-  _ => SchemaValidationExtractOperationsFromSchemaOperationStatus._(json),
+  _ => SchemaValidationExtractOperationsFromSchemaOperationStatus$Unknown(json),
 }; }
 
-static const SchemaValidationExtractOperationsFromSchemaOperationStatus $new = SchemaValidationExtractOperationsFromSchemaOperationStatus._('new');
+static const SchemaValidationExtractOperationsFromSchemaOperationStatus $new = SchemaValidationExtractOperationsFromSchemaOperationStatus$$new._();
 
-static const SchemaValidationExtractOperationsFromSchemaOperationStatus existing = SchemaValidationExtractOperationsFromSchemaOperationStatus._('existing');
+static const SchemaValidationExtractOperationsFromSchemaOperationStatus existing = SchemaValidationExtractOperationsFromSchemaOperationStatus$existing._();
 
 static const List<SchemaValidationExtractOperationsFromSchemaOperationStatus> values = [$new, existing];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SchemaValidationExtractOperationsFromSchemaOperationStatus$Unknown; } 
+@override String toString() => 'SchemaValidationExtractOperationsFromSchemaOperationStatus($value)';
+
+ }
+@immutable final class SchemaValidationExtractOperationsFromSchemaOperationStatus$$new extends SchemaValidationExtractOperationsFromSchemaOperationStatus {const SchemaValidationExtractOperationsFromSchemaOperationStatus$$new._();
+
+@override String get value => 'new';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SchemaValidationExtractOperationsFromSchemaOperationStatus$$new;
+
+@override int get hashCode => 'new'.hashCode;
+
+ }
+@immutable final class SchemaValidationExtractOperationsFromSchemaOperationStatus$existing extends SchemaValidationExtractOperationsFromSchemaOperationStatus {const SchemaValidationExtractOperationsFromSchemaOperationStatus$existing._();
+
+@override String get value => 'existing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SchemaValidationExtractOperationsFromSchemaOperationStatus$existing;
+
+@override int get hashCode => 'existing'.hashCode;
+
+ }
+@immutable final class SchemaValidationExtractOperationsFromSchemaOperationStatus$Unknown extends SchemaValidationExtractOperationsFromSchemaOperationStatus {const SchemaValidationExtractOperationsFromSchemaOperationStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SchemaValidationExtractOperationsFromSchemaOperationStatus && other.value == value;
+    other is SchemaValidationExtractOperationsFromSchemaOperationStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SchemaValidationExtractOperationsFromSchemaOperationStatus($value)';
 
  }

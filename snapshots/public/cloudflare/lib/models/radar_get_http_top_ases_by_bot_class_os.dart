@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTopAsesByBotClassOs
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByBotClassOs {const RadarGetHttpTopAsesByBotClassOs._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopAsesByBotClassOs {const RadarGetHttpTopAsesByBotClassOs();
 
 factory RadarGetHttpTopAsesByBotClassOs.fromJson(String json) { return switch (json) {
   'WINDOWS' => windows,
@@ -11,27 +11,26 @@ factory RadarGetHttpTopAsesByBotClassOs.fromJson(String json) { return switch (j
   'CHROMEOS' => chromeos,
   'LINUX' => linux,
   'SMART_TV' => smartTv,
-  _ => RadarGetHttpTopAsesByBotClassOs._(json),
+  _ => RadarGetHttpTopAsesByBotClassOs$Unknown(json),
 }; }
 
-static const RadarGetHttpTopAsesByBotClassOs windows = RadarGetHttpTopAsesByBotClassOs._('WINDOWS');
+static const RadarGetHttpTopAsesByBotClassOs windows = RadarGetHttpTopAsesByBotClassOs$windows._();
 
-static const RadarGetHttpTopAsesByBotClassOs macosx = RadarGetHttpTopAsesByBotClassOs._('MACOSX');
+static const RadarGetHttpTopAsesByBotClassOs macosx = RadarGetHttpTopAsesByBotClassOs$macosx._();
 
-static const RadarGetHttpTopAsesByBotClassOs ios = RadarGetHttpTopAsesByBotClassOs._('IOS');
+static const RadarGetHttpTopAsesByBotClassOs ios = RadarGetHttpTopAsesByBotClassOs$ios._();
 
-static const RadarGetHttpTopAsesByBotClassOs android = RadarGetHttpTopAsesByBotClassOs._('ANDROID');
+static const RadarGetHttpTopAsesByBotClassOs android = RadarGetHttpTopAsesByBotClassOs$android._();
 
-static const RadarGetHttpTopAsesByBotClassOs chromeos = RadarGetHttpTopAsesByBotClassOs._('CHROMEOS');
+static const RadarGetHttpTopAsesByBotClassOs chromeos = RadarGetHttpTopAsesByBotClassOs$chromeos._();
 
-static const RadarGetHttpTopAsesByBotClassOs linux = RadarGetHttpTopAsesByBotClassOs._('LINUX');
+static const RadarGetHttpTopAsesByBotClassOs linux = RadarGetHttpTopAsesByBotClassOs$linux._();
 
-static const RadarGetHttpTopAsesByBotClassOs smartTv = RadarGetHttpTopAsesByBotClassOs._('SMART_TV');
+static const RadarGetHttpTopAsesByBotClassOs smartTv = RadarGetHttpTopAsesByBotClassOs$smartTv._();
 
 static const List<RadarGetHttpTopAsesByBotClassOs> values = [windows, macosx, ios, android, chromeos, linux, smartTv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -45,12 +44,80 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopAsesByBotClassOs$Unknown; } 
+@override String toString() => 'RadarGetHttpTopAsesByBotClassOs($value)';
+
+ }
+@immutable final class RadarGetHttpTopAsesByBotClassOs$windows extends RadarGetHttpTopAsesByBotClassOs {const RadarGetHttpTopAsesByBotClassOs$windows._();
+
+@override String get value => 'WINDOWS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByBotClassOs$windows;
+
+@override int get hashCode => 'WINDOWS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByBotClassOs$macosx extends RadarGetHttpTopAsesByBotClassOs {const RadarGetHttpTopAsesByBotClassOs$macosx._();
+
+@override String get value => 'MACOSX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByBotClassOs$macosx;
+
+@override int get hashCode => 'MACOSX'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByBotClassOs$ios extends RadarGetHttpTopAsesByBotClassOs {const RadarGetHttpTopAsesByBotClassOs$ios._();
+
+@override String get value => 'IOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByBotClassOs$ios;
+
+@override int get hashCode => 'IOS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByBotClassOs$android extends RadarGetHttpTopAsesByBotClassOs {const RadarGetHttpTopAsesByBotClassOs$android._();
+
+@override String get value => 'ANDROID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByBotClassOs$android;
+
+@override int get hashCode => 'ANDROID'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByBotClassOs$chromeos extends RadarGetHttpTopAsesByBotClassOs {const RadarGetHttpTopAsesByBotClassOs$chromeos._();
+
+@override String get value => 'CHROMEOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByBotClassOs$chromeos;
+
+@override int get hashCode => 'CHROMEOS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByBotClassOs$linux extends RadarGetHttpTopAsesByBotClassOs {const RadarGetHttpTopAsesByBotClassOs$linux._();
+
+@override String get value => 'LINUX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByBotClassOs$linux;
+
+@override int get hashCode => 'LINUX'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByBotClassOs$smartTv extends RadarGetHttpTopAsesByBotClassOs {const RadarGetHttpTopAsesByBotClassOs$smartTv._();
+
+@override String get value => 'SMART_TV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByBotClassOs$smartTv;
+
+@override int get hashCode => 'SMART_TV'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByBotClassOs$Unknown extends RadarGetHttpTopAsesByBotClassOs {const RadarGetHttpTopAsesByBotClassOs$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopAsesByBotClassOs && other.value == value;
+    other is RadarGetHttpTopAsesByBotClassOs$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopAsesByBotClassOs($value)';
 
  }

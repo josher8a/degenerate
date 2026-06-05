@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ChatCompletionRequestMessageContentPartImage (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the content part.
-@immutable final class ChatCompletionRequestMessageContentPartImageType {const ChatCompletionRequestMessageContentPartImageType._(this.value);
+sealed class ChatCompletionRequestMessageContentPartImageType {const ChatCompletionRequestMessageContentPartImageType();
 
 factory ChatCompletionRequestMessageContentPartImageType.fromJson(String json) { return switch (json) {
   'image_url' => imageUrl,
-  _ => ChatCompletionRequestMessageContentPartImageType._(json),
+  _ => ChatCompletionRequestMessageContentPartImageType$Unknown(json),
 }; }
 
-static const ChatCompletionRequestMessageContentPartImageType imageUrl = ChatCompletionRequestMessageContentPartImageType._('image_url');
+static const ChatCompletionRequestMessageContentPartImageType imageUrl = ChatCompletionRequestMessageContentPartImageType$imageUrl._();
 
 static const List<ChatCompletionRequestMessageContentPartImageType> values = [imageUrl];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ChatCompletionRequestMessageContentPartImageType$Unknown; } 
+@override String toString() => 'ChatCompletionRequestMessageContentPartImageType($value)';
+
+ }
+@immutable final class ChatCompletionRequestMessageContentPartImageType$imageUrl extends ChatCompletionRequestMessageContentPartImageType {const ChatCompletionRequestMessageContentPartImageType$imageUrl._();
+
+@override String get value => 'image_url';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionRequestMessageContentPartImageType$imageUrl;
+
+@override int get hashCode => 'image_url'.hashCode;
+
+ }
+@immutable final class ChatCompletionRequestMessageContentPartImageType$Unknown extends ChatCompletionRequestMessageContentPartImageType {const ChatCompletionRequestMessageContentPartImageType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ChatCompletionRequestMessageContentPartImageType && other.value == value;
+    other is ChatCompletionRequestMessageContentPartImageType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ChatCompletionRequestMessageContentPartImageType($value)';
 
  }

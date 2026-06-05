@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AccountCallStream
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the Stream. Possible values are `stopped` and `in-progress`.
-@immutable final class StreamEnumStatus {const StreamEnumStatus._(this.value);
+sealed class StreamEnumStatus {const StreamEnumStatus();
 
 factory StreamEnumStatus.fromJson(String json) { return switch (json) {
   'in-progress' => inProgress,
   'stopped' => stopped,
-  _ => StreamEnumStatus._(json),
+  _ => StreamEnumStatus$Unknown(json),
 }; }
 
-static const StreamEnumStatus inProgress = StreamEnumStatus._('in-progress');
+static const StreamEnumStatus inProgress = StreamEnumStatus$inProgress._();
 
-static const StreamEnumStatus stopped = StreamEnumStatus._('stopped');
+static const StreamEnumStatus stopped = StreamEnumStatus$stopped._();
 
 static const List<StreamEnumStatus> values = [inProgress, stopped];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StreamEnumStatus$Unknown; } 
+@override String toString() => 'StreamEnumStatus($value)';
+
+ }
+@immutable final class StreamEnumStatus$inProgress extends StreamEnumStatus {const StreamEnumStatus$inProgress._();
+
+@override String get value => 'in-progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamEnumStatus$inProgress;
+
+@override int get hashCode => 'in-progress'.hashCode;
+
+ }
+@immutable final class StreamEnumStatus$stopped extends StreamEnumStatus {const StreamEnumStatus$stopped._();
+
+@override String get value => 'stopped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamEnumStatus$stopped;
+
+@override int get hashCode => 'stopped'.hashCode;
+
+ }
+@immutable final class StreamEnumStatus$Unknown extends StreamEnumStatus {const StreamEnumStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StreamEnumStatus && other.value == value;
+    other is StreamEnumStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StreamEnumStatus($value)';
 
  }
 @immutable final class AccountCallStream {const AccountCallStream({this.sid, this.accountSid, this.callSid, this.name, this.status, this.dateUpdated, this.uri, });

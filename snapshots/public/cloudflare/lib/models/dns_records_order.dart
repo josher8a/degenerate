@@ -2,7 +2,7 @@
 // Source: #/components/schemas/DnsRecordsOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Field to order DNS records by.
-@immutable final class DnsRecordsOrder {const DnsRecordsOrder._(this.value);
+sealed class DnsRecordsOrder {const DnsRecordsOrder();
 
 factory DnsRecordsOrder.fromJson(String json) { return switch (json) {
   'type' => type,
@@ -10,23 +10,22 @@ factory DnsRecordsOrder.fromJson(String json) { return switch (json) {
   'content' => content,
   'ttl' => ttl,
   'proxied' => proxied,
-  _ => DnsRecordsOrder._(json),
+  _ => DnsRecordsOrder$Unknown(json),
 }; }
 
-static const DnsRecordsOrder type = DnsRecordsOrder._('type');
+static const DnsRecordsOrder type = DnsRecordsOrder$type._();
 
-static const DnsRecordsOrder $name = DnsRecordsOrder._('name');
+static const DnsRecordsOrder $name = DnsRecordsOrder$$name._();
 
-static const DnsRecordsOrder content = DnsRecordsOrder._('content');
+static const DnsRecordsOrder content = DnsRecordsOrder$content._();
 
-static const DnsRecordsOrder ttl = DnsRecordsOrder._('ttl');
+static const DnsRecordsOrder ttl = DnsRecordsOrder$ttl._();
 
-static const DnsRecordsOrder proxied = DnsRecordsOrder._('proxied');
+static const DnsRecordsOrder proxied = DnsRecordsOrder$proxied._();
 
 static const List<DnsRecordsOrder> values = [type, $name, content, ttl, proxied];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,12 +37,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DnsRecordsOrder$Unknown; } 
+@override String toString() => 'DnsRecordsOrder($value)';
+
+ }
+@immutable final class DnsRecordsOrder$type extends DnsRecordsOrder {const DnsRecordsOrder$type._();
+
+@override String get value => 'type';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsOrder$type;
+
+@override int get hashCode => 'type'.hashCode;
+
+ }
+@immutable final class DnsRecordsOrder$$name extends DnsRecordsOrder {const DnsRecordsOrder$$name._();
+
+@override String get value => 'name';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsOrder$$name;
+
+@override int get hashCode => 'name'.hashCode;
+
+ }
+@immutable final class DnsRecordsOrder$content extends DnsRecordsOrder {const DnsRecordsOrder$content._();
+
+@override String get value => 'content';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsOrder$content;
+
+@override int get hashCode => 'content'.hashCode;
+
+ }
+@immutable final class DnsRecordsOrder$ttl extends DnsRecordsOrder {const DnsRecordsOrder$ttl._();
+
+@override String get value => 'ttl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsOrder$ttl;
+
+@override int get hashCode => 'ttl'.hashCode;
+
+ }
+@immutable final class DnsRecordsOrder$proxied extends DnsRecordsOrder {const DnsRecordsOrder$proxied._();
+
+@override String get value => 'proxied';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsOrder$proxied;
+
+@override int get hashCode => 'proxied'.hashCode;
+
+ }
+@immutable final class DnsRecordsOrder$Unknown extends DnsRecordsOrder {const DnsRecordsOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsOrder && other.value == value;
+    other is DnsRecordsOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DnsRecordsOrder($value)';
 
  }

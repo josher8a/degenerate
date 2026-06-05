@@ -2,7 +2,7 @@
 // Source: #/components/schemas/PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_checks.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_installments.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_network_token.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_three_d_secure.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_card_details_resource_wallet.dart';/// Card brand. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `jcb`, `link`, `mastercard`, `unionpay`, `visa` or `unknown`.
-@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._(this.value);
+sealed class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand();
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fromJson(String json) { return switch (json) {
   'amex' => amex,
@@ -17,37 +17,36 @@ factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand.fr
   'unionpay' => unionpay,
   'unknown' => unknown,
   'visa' => visa,
-  _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._(json),
+  _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown(json),
 }; }
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand amex = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._('amex');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand amex = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$amex._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand cartesBancaires = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._('cartes_bancaires');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand cartesBancaires = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$cartesBancaires._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand diners = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._('diners');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand diners = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$diners._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand discover = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._('discover');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand discover = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$discover._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand eftposAu = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._('eftpos_au');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand eftposAu = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$eftposAu._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand interac = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._('interac');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand interac = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$interac._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand jcb = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._('jcb');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand jcb = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$jcb._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand link = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._('link');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand link = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$link._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand mastercard = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._('mastercard');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand mastercard = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$mastercard._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand unionpay = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._('unionpay');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand unionpay = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unionpay._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand unknown = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._('unknown');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand unknown = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unknown._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand visa = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand._('visa');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand visa = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$visa._();
 
 static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand> values = [amex, cartesBancaires, diners, discover, eftposAu, interac, jcb, link, mastercard, unionpay, unknown, visa];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -66,38 +65,150 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown; } 
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand($value)';
 
  }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$amex extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$amex._();
+
+@override String get value => 'amex';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$amex;
+
+@override int get hashCode => 'amex'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$cartesBancaires extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$cartesBancaires._();
+
+@override String get value => 'cartes_bancaires';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$cartesBancaires;
+
+@override int get hashCode => 'cartes_bancaires'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$diners extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$diners._();
+
+@override String get value => 'diners';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$diners;
+
+@override int get hashCode => 'diners'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$discover extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$discover._();
+
+@override String get value => 'discover';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$discover;
+
+@override int get hashCode => 'discover'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$eftposAu extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$eftposAu._();
+
+@override String get value => 'eftpos_au';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$eftposAu;
+
+@override int get hashCode => 'eftpos_au'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$interac extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$interac._();
+
+@override String get value => 'interac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$interac;
+
+@override int get hashCode => 'interac'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$jcb extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$jcb._();
+
+@override String get value => 'jcb';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$jcb;
+
+@override int get hashCode => 'jcb'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$link extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$link._();
+
+@override String get value => 'link';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$link;
+
+@override int get hashCode => 'link'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$mastercard extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$mastercard._();
+
+@override String get value => 'mastercard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$mastercard;
+
+@override int get hashCode => 'mastercard'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unionpay extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unionpay._();
+
+@override String get value => 'unionpay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unionpay;
+
+@override int get hashCode => 'unionpay'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$visa extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$visa._();
+
+@override String get value => 'visa';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$visa;
+
+@override int get hashCode => 'visa'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsBrand$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Card funding type. Can be `credit`, `debit`, `prepaid`, or `unknown`.
-@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding._(this.value);
+sealed class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding();
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding.fromJson(String json) { return switch (json) {
   'credit' => credit,
   'debit' => debit,
   'prepaid' => prepaid,
   'unknown' => unknown,
-  _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding._(json),
+  _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown(json),
 }; }
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding credit = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding._('credit');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding credit = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$credit._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding debit = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding._('debit');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding debit = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$debit._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding prepaid = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding._('prepaid');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding prepaid = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$prepaid._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding unknown = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding._('unknown');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding unknown = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$unknown._();
 
 static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding> values = [credit, debit, prepaid, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -108,17 +219,58 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown; } 
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding($value)';
 
  }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$credit extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$credit._();
+
+@override String get value => 'credit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$credit;
+
+@override int get hashCode => 'credit'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$debit extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$debit._();
+
+@override String get value => 'debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$debit;
+
+@override int get hashCode => 'debit'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$prepaid extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$prepaid._();
+
+@override String get value => 'prepaid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$prepaid;
+
+@override int get hashCode => 'prepaid'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsFunding$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Identifies which network this charge was processed on. Can be `amex`, `cartes_bancaires`, `diners`, `discover`, `eftpos_au`, `interac`, `jcb`, `link`, `mastercard`, `unionpay`, `visa`, or `unknown`.
-@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._(this.value);
+sealed class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork();
 
 factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork.fromJson(String json) { return switch (json) {
   'amex' => amex,
@@ -133,37 +285,36 @@ factory PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork.
   'unionpay' => unionpay,
   'unknown' => unknown,
   'visa' => visa,
-  _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._(json),
+  _ => PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown(json),
 }; }
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork amex = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._('amex');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork amex = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$amex._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork cartesBancaires = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._('cartes_bancaires');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork cartesBancaires = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$cartesBancaires._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork diners = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._('diners');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork diners = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$diners._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork discover = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._('discover');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork discover = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$discover._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork eftposAu = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._('eftpos_au');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork eftposAu = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$eftposAu._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork interac = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._('interac');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork interac = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$interac._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork jcb = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._('jcb');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork jcb = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$jcb._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork link = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._('link');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork link = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$link._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork mastercard = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._('mastercard');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork mastercard = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$mastercard._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork unionpay = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._('unionpay');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork unionpay = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unionpay._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork unknown = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._('unknown');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork unknown = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unknown._();
 
-static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork visa = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork._('visa');
+static const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork visa = PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$visa._();
 
 static const List<PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork> values = [amex, cartesBancaires, diners, discover, eftposAu, interac, jcb, link, mastercard, unionpay, unknown, visa];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -182,32 +333,144 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown; } 
 @override String toString() => 'PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork($value)';
 
  }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$amex extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$amex._();
+
+@override String get value => 'amex';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$amex;
+
+@override int get hashCode => 'amex'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$cartesBancaires extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$cartesBancaires._();
+
+@override String get value => 'cartes_bancaires';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$cartesBancaires;
+
+@override int get hashCode => 'cartes_bancaires'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$diners extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$diners._();
+
+@override String get value => 'diners';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$diners;
+
+@override int get hashCode => 'diners'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$discover extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$discover._();
+
+@override String get value => 'discover';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$discover;
+
+@override int get hashCode => 'discover'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$eftposAu extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$eftposAu._();
+
+@override String get value => 'eftpos_au';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$eftposAu;
+
+@override int get hashCode => 'eftpos_au'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$interac extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$interac._();
+
+@override String get value => 'interac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$interac;
+
+@override int get hashCode => 'interac'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$jcb extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$jcb._();
+
+@override String get value => 'jcb';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$jcb;
+
+@override int get hashCode => 'jcb'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$link extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$link._();
+
+@override String get value => 'link';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$link;
+
+@override int get hashCode => 'link'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$mastercard extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$mastercard._();
+
+@override String get value => 'mastercard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$mastercard;
+
+@override int get hashCode => 'mastercard'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unionpay extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unionpay._();
+
+@override String get value => 'unionpay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unionpay;
+
+@override int get hashCode => 'unionpay'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$visa extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$visa._();
+
+@override String get value => 'visa';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$visa;
+
+@override int get hashCode => 'visa'.hashCode;
+
+ }
+@immutable final class PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown extends PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork {const PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentsPrimitivesPaymentRecordsResourcePaymentMethodCardDetailsNetwork$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The transaction type that was passed for an off-session, Merchant-Initiated transaction, one of `recurring` or `unscheduled`.
-@immutable final class StoredCredentialUsage {const StoredCredentialUsage._(this.value);
+sealed class StoredCredentialUsage {const StoredCredentialUsage();
 
 factory StoredCredentialUsage.fromJson(String json) { return switch (json) {
   'recurring' => recurring,
   'unscheduled' => unscheduled,
-  _ => StoredCredentialUsage._(json),
+  _ => StoredCredentialUsage$Unknown(json),
 }; }
 
-static const StoredCredentialUsage recurring = StoredCredentialUsage._('recurring');
+static const StoredCredentialUsage recurring = StoredCredentialUsage$recurring._();
 
-static const StoredCredentialUsage unscheduled = StoredCredentialUsage._('unscheduled');
+static const StoredCredentialUsage unscheduled = StoredCredentialUsage$unscheduled._();
 
 static const List<StoredCredentialUsage> values = [recurring, unscheduled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -216,13 +479,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StoredCredentialUsage$Unknown; } 
+@override String toString() => 'StoredCredentialUsage($value)';
+
+ }
+@immutable final class StoredCredentialUsage$recurring extends StoredCredentialUsage {const StoredCredentialUsage$recurring._();
+
+@override String get value => 'recurring';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StoredCredentialUsage$recurring;
+
+@override int get hashCode => 'recurring'.hashCode;
+
+ }
+@immutable final class StoredCredentialUsage$unscheduled extends StoredCredentialUsage {const StoredCredentialUsage$unscheduled._();
+
+@override String get value => 'unscheduled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StoredCredentialUsage$unscheduled;
+
+@override int get hashCode => 'unscheduled'.hashCode;
+
+ }
+@immutable final class StoredCredentialUsage$Unknown extends StoredCredentialUsage {const StoredCredentialUsage$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StoredCredentialUsage && other.value == value;
+    other is StoredCredentialUsage$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StoredCredentialUsage($value)';
 
  }
 /// Details of the card used for this payment attempt.

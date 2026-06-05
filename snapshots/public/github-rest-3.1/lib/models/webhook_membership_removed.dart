@@ -2,22 +2,21 @@
 // Source: #/components/schemas/WebhookMembershipRemoved
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/webhook_installation_repositories_removed/webhook_installation_repositories_removed_action.dart';import 'package:pub_github_rest_3_1/models/webhook_membership_added/sender.dart';import 'package:pub_github_rest_3_1/models/webhooks_team.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';/// The scope of the membership. Currently, can only be `team`.
-@immutable final class WebhookMembershipRemovedScope {const WebhookMembershipRemovedScope._(this.value);
+sealed class WebhookMembershipRemovedScope {const WebhookMembershipRemovedScope();
 
 factory WebhookMembershipRemovedScope.fromJson(String json) { return switch (json) {
   'team' => team,
   'organization' => organization,
-  _ => WebhookMembershipRemovedScope._(json),
+  _ => WebhookMembershipRemovedScope$Unknown(json),
 }; }
 
-static const WebhookMembershipRemovedScope team = WebhookMembershipRemovedScope._('team');
+static const WebhookMembershipRemovedScope team = WebhookMembershipRemovedScope$team._();
 
-static const WebhookMembershipRemovedScope organization = WebhookMembershipRemovedScope._('organization');
+static const WebhookMembershipRemovedScope organization = WebhookMembershipRemovedScope$organization._();
 
 static const List<WebhookMembershipRemovedScope> values = [team, organization];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookMembershipRemovedScope$Unknown; } 
+@override String toString() => 'WebhookMembershipRemovedScope($value)';
+
+ }
+@immutable final class WebhookMembershipRemovedScope$team extends WebhookMembershipRemovedScope {const WebhookMembershipRemovedScope$team._();
+
+@override String get value => 'team';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookMembershipRemovedScope$team;
+
+@override int get hashCode => 'team'.hashCode;
+
+ }
+@immutable final class WebhookMembershipRemovedScope$organization extends WebhookMembershipRemovedScope {const WebhookMembershipRemovedScope$organization._();
+
+@override String get value => 'organization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookMembershipRemovedScope$organization;
+
+@override int get hashCode => 'organization'.hashCode;
+
+ }
+@immutable final class WebhookMembershipRemovedScope$Unknown extends WebhookMembershipRemovedScope {const WebhookMembershipRemovedScope$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookMembershipRemovedScope && other.value == value;
+    other is WebhookMembershipRemovedScope$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookMembershipRemovedScope($value)';
 
  }
 @immutable final class WebhookMembershipRemoved {const WebhookMembershipRemoved({required this.action, required this.member, required this.organization, required this.scope, required this.sender, required this.team, this.enterprise, this.installation, this.repository, });

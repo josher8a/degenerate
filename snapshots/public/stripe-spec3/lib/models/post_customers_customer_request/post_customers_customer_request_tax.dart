@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCustomersCustomerRequest (inline: Tax)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/ip_address.dart';@immutable final class PostCustomersCustomerRequestTaxValidateLocation {const PostCustomersCustomerRequestTaxValidateLocation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_customers_customer_request/ip_address.dart';sealed class PostCustomersCustomerRequestTaxValidateLocation {const PostCustomersCustomerRequestTaxValidateLocation();
 
 factory PostCustomersCustomerRequestTaxValidateLocation.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'deferred' => $deferred,
   'immediately' => immediately,
-  _ => PostCustomersCustomerRequestTaxValidateLocation._(json),
+  _ => PostCustomersCustomerRequestTaxValidateLocation$Unknown(json),
 }; }
 
-static const PostCustomersCustomerRequestTaxValidateLocation auto = PostCustomersCustomerRequestTaxValidateLocation._('auto');
+static const PostCustomersCustomerRequestTaxValidateLocation auto = PostCustomersCustomerRequestTaxValidateLocation$auto._();
 
-static const PostCustomersCustomerRequestTaxValidateLocation $deferred = PostCustomersCustomerRequestTaxValidateLocation._('deferred');
+static const PostCustomersCustomerRequestTaxValidateLocation $deferred = PostCustomersCustomerRequestTaxValidateLocation$$deferred._();
 
-static const PostCustomersCustomerRequestTaxValidateLocation immediately = PostCustomersCustomerRequestTaxValidateLocation._('immediately');
+static const PostCustomersCustomerRequestTaxValidateLocation immediately = PostCustomersCustomerRequestTaxValidateLocation$immediately._();
 
 static const List<PostCustomersCustomerRequestTaxValidateLocation> values = [auto, $deferred, immediately];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostCustomersCustomerRequestTaxValidateLocation$Unknown; } 
+@override String toString() => 'PostCustomersCustomerRequestTaxValidateLocation($value)';
+
+ }
+@immutable final class PostCustomersCustomerRequestTaxValidateLocation$auto extends PostCustomersCustomerRequestTaxValidateLocation {const PostCustomersCustomerRequestTaxValidateLocation$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCustomersCustomerRequestTaxValidateLocation$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class PostCustomersCustomerRequestTaxValidateLocation$$deferred extends PostCustomersCustomerRequestTaxValidateLocation {const PostCustomersCustomerRequestTaxValidateLocation$$deferred._();
+
+@override String get value => 'deferred';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCustomersCustomerRequestTaxValidateLocation$$deferred;
+
+@override int get hashCode => 'deferred'.hashCode;
+
+ }
+@immutable final class PostCustomersCustomerRequestTaxValidateLocation$immediately extends PostCustomersCustomerRequestTaxValidateLocation {const PostCustomersCustomerRequestTaxValidateLocation$immediately._();
+
+@override String get value => 'immediately';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCustomersCustomerRequestTaxValidateLocation$immediately;
+
+@override int get hashCode => 'immediately'.hashCode;
+
+ }
+@immutable final class PostCustomersCustomerRequestTaxValidateLocation$Unknown extends PostCustomersCustomerRequestTaxValidateLocation {const PostCustomersCustomerRequestTaxValidateLocation$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostCustomersCustomerRequestTaxValidateLocation && other.value == value;
+    other is PostCustomersCustomerRequestTaxValidateLocation$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostCustomersCustomerRequestTaxValidateLocation($value)';
 
  }
 /// Tax details about the customer.

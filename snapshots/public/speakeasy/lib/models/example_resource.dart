@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ExampleResource
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/example_boat.dart';import 'package:pub_speakeasy/models/example_car.dart';import 'package:pub_speakeasy/models/example_resource/chocolates.dart';import 'package:pub_speakeasy/models/example_resource/inline_object.dart';import 'package:pub_speakeasy/models/example_vehicle.dart';@immutable final class EnumStr {const EnumStr._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/example_boat.dart';import 'package:pub_speakeasy/models/example_car.dart';import 'package:pub_speakeasy/models/example_resource/chocolates.dart';import 'package:pub_speakeasy/models/example_resource/inline_object.dart';import 'package:pub_speakeasy/models/example_vehicle.dart';sealed class EnumStr {const EnumStr();
 
 factory EnumStr.fromJson(String json) { return switch (json) {
   'one' => one,
   'two' => two,
   'three' => three,
-  _ => EnumStr._(json),
+  _ => EnumStr$Unknown(json),
 }; }
 
-static const EnumStr one = EnumStr._('one');
+static const EnumStr one = EnumStr$one._();
 
-static const EnumStr two = EnumStr._('two');
+static const EnumStr two = EnumStr$two._();
 
-static const EnumStr three = EnumStr._('three');
+static const EnumStr three = EnumStr$three._();
 
 static const List<EnumStr> values = [one, two, three];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,34 +28,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is EnumStr && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is EnumStr$Unknown; } 
 @override String toString() => 'EnumStr($value)';
 
  }
-@immutable final class EnumNumber {const EnumNumber._(this.value);
+@immutable final class EnumStr$one extends EnumStr {const EnumStr$one._();
+
+@override String get value => 'one';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumStr$one;
+
+@override int get hashCode => 'one'.hashCode;
+
+ }
+@immutable final class EnumStr$two extends EnumStr {const EnumStr$two._();
+
+@override String get value => 'two';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumStr$two;
+
+@override int get hashCode => 'two'.hashCode;
+
+ }
+@immutable final class EnumStr$three extends EnumStr {const EnumStr$three._();
+
+@override String get value => 'three';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumStr$three;
+
+@override int get hashCode => 'three'.hashCode;
+
+ }
+@immutable final class EnumStr$Unknown extends EnumStr {const EnumStr$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EnumStr$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class EnumNumber {const EnumNumber();
 
 factory EnumNumber.fromJson(int json) { return switch (json) {
   1 => $1,
   2 => $2,
   3 => $3,
-  _ => EnumNumber._(json),
+  _ => EnumNumber$Unknown(json),
 }; }
 
-static const EnumNumber $1 = EnumNumber._(1);
+static const EnumNumber $1 = EnumNumber$$1._();
 
-static const EnumNumber $2 = EnumNumber._(2);
+static const EnumNumber $2 = EnumNumber$$2._();
 
-static const EnumNumber $3 = EnumNumber._(3);
+static const EnumNumber $3 = EnumNumber$$3._();
 
 static const List<EnumNumber> values = [$1, $2, $3];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -66,13 +96,45 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EnumNumber$Unknown; } 
+@override String toString() => 'EnumNumber($value)';
+
+ }
+@immutable final class EnumNumber$$1 extends EnumNumber {const EnumNumber$$1._();
+
+@override int get value => 1;
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumNumber$$1;
+
+@override int get hashCode => 1.hashCode;
+
+ }
+@immutable final class EnumNumber$$2 extends EnumNumber {const EnumNumber$$2._();
+
+@override int get value => 2;
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumNumber$$2;
+
+@override int get hashCode => 2.hashCode;
+
+ }
+@immutable final class EnumNumber$$3 extends EnumNumber {const EnumNumber$$3._();
+
+@override int get value => 3;
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumNumber$$3;
+
+@override int get hashCode => 3.hashCode;
+
+ }
+@immutable final class EnumNumber$Unknown extends EnumNumber {const EnumNumber$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EnumNumber && other.value == value;
+    other is EnumNumber$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EnumNumber($value)';
 
  }
 @immutable final class ExampleResource {const ExampleResource({required this.id, required this.name, required this.chocolates, required this.vehicle, this.namePrefix, this.createdAt, this.inlineObject, this.mapOfString, this.mapOfInteger, this.arrayOfString, this.arrayOfNumber, this.enumStr, this.enumNumber, this.updatedAt, });

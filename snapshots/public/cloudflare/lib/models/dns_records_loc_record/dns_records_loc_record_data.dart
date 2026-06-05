@@ -2,22 +2,21 @@
 // Source: #/components/schemas/DnsRecordsLocRecord (inline: Data)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Latitude direction.
-@immutable final class LatDirection {const LatDirection._(this.value);
+sealed class LatDirection {const LatDirection();
 
 factory LatDirection.fromJson(String json) { return switch (json) {
   'N' => n,
   'S' => s,
-  _ => LatDirection._(json),
+  _ => LatDirection$Unknown(json),
 }; }
 
-static const LatDirection n = LatDirection._('N');
+static const LatDirection n = LatDirection$n._();
 
-static const LatDirection s = LatDirection._('S');
+static const LatDirection s = LatDirection$s._();
 
 static const List<LatDirection> values = [n, s];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,32 +25,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is LatDirection && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is LatDirection$Unknown; } 
 @override String toString() => 'LatDirection($value)';
 
  }
+@immutable final class LatDirection$n extends LatDirection {const LatDirection$n._();
+
+@override String get value => 'N';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LatDirection$n;
+
+@override int get hashCode => 'N'.hashCode;
+
+ }
+@immutable final class LatDirection$s extends LatDirection {const LatDirection$s._();
+
+@override String get value => 'S';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LatDirection$s;
+
+@override int get hashCode => 'S'.hashCode;
+
+ }
+@immutable final class LatDirection$Unknown extends LatDirection {const LatDirection$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LatDirection$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Longitude direction.
-@immutable final class LongDirection {const LongDirection._(this.value);
+sealed class LongDirection {const LongDirection();
 
 factory LongDirection.fromJson(String json) { return switch (json) {
   'E' => e,
   'W' => w,
-  _ => LongDirection._(json),
+  _ => LongDirection$Unknown(json),
 }; }
 
-static const LongDirection e = LongDirection._('E');
+static const LongDirection e = LongDirection$e._();
 
-static const LongDirection w = LongDirection._('W');
+static const LongDirection w = LongDirection$w._();
 
 static const List<LongDirection> values = [e, w];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,13 +81,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LongDirection$Unknown; } 
+@override String toString() => 'LongDirection($value)';
+
+ }
+@immutable final class LongDirection$e extends LongDirection {const LongDirection$e._();
+
+@override String get value => 'E';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LongDirection$e;
+
+@override int get hashCode => 'E'.hashCode;
+
+ }
+@immutable final class LongDirection$w extends LongDirection {const LongDirection$w._();
+
+@override String get value => 'W';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LongDirection$w;
+
+@override int get hashCode => 'W'.hashCode;
+
+ }
+@immutable final class LongDirection$Unknown extends LongDirection {const LongDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LongDirection && other.value == value;
+    other is LongDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LongDirection($value)';
 
  }
 /// Components of a LOC record.

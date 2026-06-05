@@ -2,19 +2,18 @@
 // Source: #/components/schemas/InvoicePayment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/deleted_invoice.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoice_payment/invoice_payment_invoice.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_associated_payment.dart';import 'package:pub_stripe_spec3/models/invoices_payments_invoice_payment_status_transitions.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class InvoicePaymentObject {const InvoicePaymentObject._(this.value);
+sealed class InvoicePaymentObject {const InvoicePaymentObject();
 
 factory InvoicePaymentObject.fromJson(String json) { return switch (json) {
   'invoice_payment' => invoicePayment,
-  _ => InvoicePaymentObject._(json),
+  _ => InvoicePaymentObject$Unknown(json),
 }; }
 
-static const InvoicePaymentObject invoicePayment = InvoicePaymentObject._('invoice_payment');
+static const InvoicePaymentObject invoicePayment = InvoicePaymentObject$invoicePayment._();
 
 static const List<InvoicePaymentObject> values = [invoicePayment];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InvoicePaymentObject$Unknown; } 
+@override String toString() => 'InvoicePaymentObject($value)';
+
+ }
+@immutable final class InvoicePaymentObject$invoicePayment extends InvoicePaymentObject {const InvoicePaymentObject$invoicePayment._();
+
+@override String get value => 'invoice_payment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InvoicePaymentObject$invoicePayment;
+
+@override int get hashCode => 'invoice_payment'.hashCode;
+
+ }
+@immutable final class InvoicePaymentObject$Unknown extends InvoicePaymentObject {const InvoicePaymentObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InvoicePaymentObject && other.value == value;
+    other is InvoicePaymentObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InvoicePaymentObject($value)';
 
  }
 /// Invoice Payments represent payments made against invoices. Invoice Payments can

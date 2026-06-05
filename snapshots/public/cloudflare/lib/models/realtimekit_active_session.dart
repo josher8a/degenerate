@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RealtimekitActiveSession
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// current status of session
-@immutable final class RealtimekitActiveSessionStatus {const RealtimekitActiveSessionStatus._(this.value);
+sealed class RealtimekitActiveSessionStatus {const RealtimekitActiveSessionStatus();
 
 factory RealtimekitActiveSessionStatus.fromJson(String json) { return switch (json) {
   'LIVE' => live,
   'ENDED' => ended,
-  _ => RealtimekitActiveSessionStatus._(json),
+  _ => RealtimekitActiveSessionStatus$Unknown(json),
 }; }
 
-static const RealtimekitActiveSessionStatus live = RealtimekitActiveSessionStatus._('LIVE');
+static const RealtimekitActiveSessionStatus live = RealtimekitActiveSessionStatus$live._();
 
-static const RealtimekitActiveSessionStatus ended = RealtimekitActiveSessionStatus._('ENDED');
+static const RealtimekitActiveSessionStatus ended = RealtimekitActiveSessionStatus$ended._();
 
 static const List<RealtimekitActiveSessionStatus> values = [live, ended];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,35 +25,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimekitActiveSessionStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is RealtimekitActiveSessionStatus$Unknown; } 
 @override String toString() => 'RealtimekitActiveSessionStatus($value)';
 
  }
+@immutable final class RealtimekitActiveSessionStatus$live extends RealtimekitActiveSessionStatus {const RealtimekitActiveSessionStatus$live._();
+
+@override String get value => 'LIVE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitActiveSessionStatus$live;
+
+@override int get hashCode => 'LIVE'.hashCode;
+
+ }
+@immutable final class RealtimekitActiveSessionStatus$ended extends RealtimekitActiveSessionStatus {const RealtimekitActiveSessionStatus$ended._();
+
+@override String get value => 'ENDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitActiveSessionStatus$ended;
+
+@override int get hashCode => 'ENDED'.hashCode;
+
+ }
+@immutable final class RealtimekitActiveSessionStatus$Unknown extends RealtimekitActiveSessionStatus {const RealtimekitActiveSessionStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimekitActiveSessionStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// type of session
-@immutable final class RealtimekitActiveSessionType {const RealtimekitActiveSessionType._(this.value);
+sealed class RealtimekitActiveSessionType {const RealtimekitActiveSessionType();
 
 factory RealtimekitActiveSessionType.fromJson(String json) { return switch (json) {
   'meeting' => meeting,
   'livestream' => livestream,
   'participant' => participant,
-  _ => RealtimekitActiveSessionType._(json),
+  _ => RealtimekitActiveSessionType$Unknown(json),
 }; }
 
-static const RealtimekitActiveSessionType meeting = RealtimekitActiveSessionType._('meeting');
+static const RealtimekitActiveSessionType meeting = RealtimekitActiveSessionType$meeting._();
 
-static const RealtimekitActiveSessionType livestream = RealtimekitActiveSessionType._('livestream');
+static const RealtimekitActiveSessionType livestream = RealtimekitActiveSessionType$livestream._();
 
-static const RealtimekitActiveSessionType participant = RealtimekitActiveSessionType._('participant');
+static const RealtimekitActiveSessionType participant = RealtimekitActiveSessionType$participant._();
 
 static const List<RealtimekitActiveSessionType> values = [meeting, livestream, participant];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,13 +85,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimekitActiveSessionType$Unknown; } 
+@override String toString() => 'RealtimekitActiveSessionType($value)';
+
+ }
+@immutable final class RealtimekitActiveSessionType$meeting extends RealtimekitActiveSessionType {const RealtimekitActiveSessionType$meeting._();
+
+@override String get value => 'meeting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitActiveSessionType$meeting;
+
+@override int get hashCode => 'meeting'.hashCode;
+
+ }
+@immutable final class RealtimekitActiveSessionType$livestream extends RealtimekitActiveSessionType {const RealtimekitActiveSessionType$livestream._();
+
+@override String get value => 'livestream';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitActiveSessionType$livestream;
+
+@override int get hashCode => 'livestream'.hashCode;
+
+ }
+@immutable final class RealtimekitActiveSessionType$participant extends RealtimekitActiveSessionType {const RealtimekitActiveSessionType$participant._();
+
+@override String get value => 'participant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitActiveSessionType$participant;
+
+@override int get hashCode => 'participant'.hashCode;
+
+ }
+@immutable final class RealtimekitActiveSessionType$Unknown extends RealtimekitActiveSessionType {const RealtimekitActiveSessionType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimekitActiveSessionType && other.value == value;
+    other is RealtimekitActiveSessionType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimekitActiveSessionType($value)';
 
  }
 @immutable final class RealtimekitActiveSession {const RealtimekitActiveSession({required this.associatedId, required this.createdAt, required this.id, required this.liveParticipants, required this.maxConcurrentParticipants, required this.meetingDisplayName, required this.minutesConsumed, required this.organizationId, required this.startedAt, required this.status, required this.type, required this.updatedAt, this.breakoutRooms, this.endedAt, this.meta, });

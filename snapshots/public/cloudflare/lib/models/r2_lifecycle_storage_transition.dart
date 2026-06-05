@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/R2LifecycleStorageTransition
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_lifecycle_age_condition.dart';import 'package:pub_cloudflare/models/r2_lifecycle_date_condition.dart';import 'package:pub_cloudflare/models/r2_lifecycle_storage_transition/r2_lifecycle_storage_transition_condition.dart';@immutable final class StorageClass {const StorageClass._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/r2_lifecycle_age_condition.dart';import 'package:pub_cloudflare/models/r2_lifecycle_date_condition.dart';import 'package:pub_cloudflare/models/r2_lifecycle_storage_transition/r2_lifecycle_storage_transition_condition.dart';sealed class StorageClass {const StorageClass();
 
 factory StorageClass.fromJson(String json) { return switch (json) {
   'InfrequentAccess' => infrequentAccess,
-  _ => StorageClass._(json),
+  _ => StorageClass$Unknown(json),
 }; }
 
-static const StorageClass infrequentAccess = StorageClass._('InfrequentAccess');
+static const StorageClass infrequentAccess = StorageClass$infrequentAccess._();
 
 static const List<StorageClass> values = [infrequentAccess];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StorageClass$Unknown; } 
+@override String toString() => 'StorageClass($value)';
+
+ }
+@immutable final class StorageClass$infrequentAccess extends StorageClass {const StorageClass$infrequentAccess._();
+
+@override String get value => 'InfrequentAccess';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StorageClass$infrequentAccess;
+
+@override int get hashCode => 'InfrequentAccess'.hashCode;
+
+ }
+@immutable final class StorageClass$Unknown extends StorageClass {const StorageClass$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StorageClass && other.value == value;
+    other is StorageClass$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StorageClass($value)';
 
  }
 @immutable final class R2LifecycleStorageTransition {const R2LifecycleStorageTransition({required this.condition, required this.storageClass, });

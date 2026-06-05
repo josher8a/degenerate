@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookRepositoryUnarchived
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookRepositoryUnarchivedAction {const WebhookRepositoryUnarchivedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookRepositoryUnarchivedAction {const WebhookRepositoryUnarchivedAction();
 
 factory WebhookRepositoryUnarchivedAction.fromJson(String json) { return switch (json) {
   'unarchived' => unarchived,
-  _ => WebhookRepositoryUnarchivedAction._(json),
+  _ => WebhookRepositoryUnarchivedAction$Unknown(json),
 }; }
 
-static const WebhookRepositoryUnarchivedAction unarchived = WebhookRepositoryUnarchivedAction._('unarchived');
+static const WebhookRepositoryUnarchivedAction unarchived = WebhookRepositoryUnarchivedAction$unarchived._();
 
 static const List<WebhookRepositoryUnarchivedAction> values = [unarchived];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookRepositoryUnarchivedAction$Unknown; } 
+@override String toString() => 'WebhookRepositoryUnarchivedAction($value)';
+
+ }
+@immutable final class WebhookRepositoryUnarchivedAction$unarchived extends WebhookRepositoryUnarchivedAction {const WebhookRepositoryUnarchivedAction$unarchived._();
+
+@override String get value => 'unarchived';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookRepositoryUnarchivedAction$unarchived;
+
+@override int get hashCode => 'unarchived'.hashCode;
+
+ }
+@immutable final class WebhookRepositoryUnarchivedAction$Unknown extends WebhookRepositoryUnarchivedAction {const WebhookRepositoryUnarchivedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookRepositoryUnarchivedAction && other.value == value;
+    other is WebhookRepositoryUnarchivedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookRepositoryUnarchivedAction($value)';
 
  }
 @immutable final class WebhookRepositoryUnarchived {const WebhookRepositoryUnarchived({required this.action, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

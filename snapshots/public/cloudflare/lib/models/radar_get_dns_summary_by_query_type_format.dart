@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetDnsSummaryByQueryTypeFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetDnsSummaryByQueryTypeFormat {const RadarGetDnsSummaryByQueryTypeFormat._(this.value);
+sealed class RadarGetDnsSummaryByQueryTypeFormat {const RadarGetDnsSummaryByQueryTypeFormat();
 
 factory RadarGetDnsSummaryByQueryTypeFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetDnsSummaryByQueryTypeFormat._(json),
+  _ => RadarGetDnsSummaryByQueryTypeFormat$Unknown(json),
 }; }
 
-static const RadarGetDnsSummaryByQueryTypeFormat $json = RadarGetDnsSummaryByQueryTypeFormat._('JSON');
+static const RadarGetDnsSummaryByQueryTypeFormat $json = RadarGetDnsSummaryByQueryTypeFormat$$json._();
 
-static const RadarGetDnsSummaryByQueryTypeFormat csv = RadarGetDnsSummaryByQueryTypeFormat._('CSV');
+static const RadarGetDnsSummaryByQueryTypeFormat csv = RadarGetDnsSummaryByQueryTypeFormat$csv._();
 
 static const List<RadarGetDnsSummaryByQueryTypeFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetDnsSummaryByQueryTypeFormat$Unknown; } 
+@override String toString() => 'RadarGetDnsSummaryByQueryTypeFormat($value)';
+
+ }
+@immutable final class RadarGetDnsSummaryByQueryTypeFormat$$json extends RadarGetDnsSummaryByQueryTypeFormat {const RadarGetDnsSummaryByQueryTypeFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByQueryTypeFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByQueryTypeFormat$csv extends RadarGetDnsSummaryByQueryTypeFormat {const RadarGetDnsSummaryByQueryTypeFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByQueryTypeFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByQueryTypeFormat$Unknown extends RadarGetDnsSummaryByQueryTypeFormat {const RadarGetDnsSummaryByQueryTypeFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetDnsSummaryByQueryTypeFormat && other.value == value;
+    other is RadarGetDnsSummaryByQueryTypeFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetDnsSummaryByQueryTypeFormat($value)';
 
  }

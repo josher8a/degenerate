@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/StatusGetXSpeakeasyErrorsResponse501
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ErrorType2 {const ErrorType2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ErrorType2 {const ErrorType2();
 
 factory ErrorType2.fromJson(String json) { return switch (json) {
   'not_found' => notFound,
   'invalid' => invalid,
   'internal' => internal,
-  _ => ErrorType2._(json),
+  _ => ErrorType2$Unknown(json),
 }; }
 
-static const ErrorType2 notFound = ErrorType2._('not_found');
+static const ErrorType2 notFound = ErrorType2$notFound._();
 
-static const ErrorType2 invalid = ErrorType2._('invalid');
+static const ErrorType2 invalid = ErrorType2$invalid._();
 
-static const ErrorType2 internal = ErrorType2._('internal');
+static const ErrorType2 internal = ErrorType2$internal._();
 
 static const List<ErrorType2> values = [notFound, invalid, internal];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ErrorType2$Unknown; } 
+@override String toString() => 'ErrorType2($value)';
+
+ }
+@immutable final class ErrorType2$notFound extends ErrorType2 {const ErrorType2$notFound._();
+
+@override String get value => 'not_found';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrorType2$notFound;
+
+@override int get hashCode => 'not_found'.hashCode;
+
+ }
+@immutable final class ErrorType2$invalid extends ErrorType2 {const ErrorType2$invalid._();
+
+@override String get value => 'invalid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrorType2$invalid;
+
+@override int get hashCode => 'invalid'.hashCode;
+
+ }
+@immutable final class ErrorType2$internal extends ErrorType2 {const ErrorType2$internal._();
+
+@override String get value => 'internal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrorType2$internal;
+
+@override int get hashCode => 'internal'.hashCode;
+
+ }
+@immutable final class ErrorType2$Unknown extends ErrorType2 {const ErrorType2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ErrorType2 && other.value == value;
+    other is ErrorType2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ErrorType2($value)';
 
  }
 @immutable final class StatusGetXSpeakeasyErrorsResponse501 {const StatusGetXSpeakeasyErrorsResponse501({this.code, this.message, this.type, });

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTopAsesByOperatingSystemIpVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByOperatingSystemIpVersion {const RadarGetHttpTopAsesByOperatingSystemIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopAsesByOperatingSystemIpVersion {const RadarGetHttpTopAsesByOperatingSystemIpVersion();
 
 factory RadarGetHttpTopAsesByOperatingSystemIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,
   'IPv6' => iPv6,
-  _ => RadarGetHttpTopAsesByOperatingSystemIpVersion._(json),
+  _ => RadarGetHttpTopAsesByOperatingSystemIpVersion$Unknown(json),
 }; }
 
-static const RadarGetHttpTopAsesByOperatingSystemIpVersion iPv4 = RadarGetHttpTopAsesByOperatingSystemIpVersion._('IPv4');
+static const RadarGetHttpTopAsesByOperatingSystemIpVersion iPv4 = RadarGetHttpTopAsesByOperatingSystemIpVersion$iPv4._();
 
-static const RadarGetHttpTopAsesByOperatingSystemIpVersion iPv6 = RadarGetHttpTopAsesByOperatingSystemIpVersion._('IPv6');
+static const RadarGetHttpTopAsesByOperatingSystemIpVersion iPv6 = RadarGetHttpTopAsesByOperatingSystemIpVersion$iPv6._();
 
 static const List<RadarGetHttpTopAsesByOperatingSystemIpVersion> values = [iPv4, iPv6];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopAsesByOperatingSystemIpVersion$Unknown; } 
+@override String toString() => 'RadarGetHttpTopAsesByOperatingSystemIpVersion($value)';
+
+ }
+@immutable final class RadarGetHttpTopAsesByOperatingSystemIpVersion$iPv4 extends RadarGetHttpTopAsesByOperatingSystemIpVersion {const RadarGetHttpTopAsesByOperatingSystemIpVersion$iPv4._();
+
+@override String get value => 'IPv4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByOperatingSystemIpVersion$iPv4;
+
+@override int get hashCode => 'IPv4'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByOperatingSystemIpVersion$iPv6 extends RadarGetHttpTopAsesByOperatingSystemIpVersion {const RadarGetHttpTopAsesByOperatingSystemIpVersion$iPv6._();
+
+@override String get value => 'IPv6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByOperatingSystemIpVersion$iPv6;
+
+@override int get hashCode => 'IPv6'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByOperatingSystemIpVersion$Unknown extends RadarGetHttpTopAsesByOperatingSystemIpVersion {const RadarGetHttpTopAsesByOperatingSystemIpVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopAsesByOperatingSystemIpVersion && other.value == value;
+    other is RadarGetHttpTopAsesByOperatingSystemIpVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopAsesByOperatingSystemIpVersion($value)';
 
  }

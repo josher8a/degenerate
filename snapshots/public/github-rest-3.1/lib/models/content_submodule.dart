@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ContentSubmodule
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';@immutable final class ContentSubmoduleType {const ContentSubmoduleType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';sealed class ContentSubmoduleType {const ContentSubmoduleType();
 
 factory ContentSubmoduleType.fromJson(String json) { return switch (json) {
   'submodule' => submodule,
-  _ => ContentSubmoduleType._(json),
+  _ => ContentSubmoduleType$Unknown(json),
 }; }
 
-static const ContentSubmoduleType submodule = ContentSubmoduleType._('submodule');
+static const ContentSubmoduleType submodule = ContentSubmoduleType$submodule._();
 
 static const List<ContentSubmoduleType> values = [submodule];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ContentSubmoduleType$Unknown; } 
+@override String toString() => 'ContentSubmoduleType($value)';
+
+ }
+@immutable final class ContentSubmoduleType$submodule extends ContentSubmoduleType {const ContentSubmoduleType$submodule._();
+
+@override String get value => 'submodule';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ContentSubmoduleType$submodule;
+
+@override int get hashCode => 'submodule'.hashCode;
+
+ }
+@immutable final class ContentSubmoduleType$Unknown extends ContentSubmoduleType {const ContentSubmoduleType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ContentSubmoduleType && other.value == value;
+    other is ContentSubmoduleType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ContentSubmoduleType($value)';
 
  }
 /// An object describing a submodule

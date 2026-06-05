@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UsageModerationsResult
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageModerationsResultObject {const UsageModerationsResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageModerationsResultObject {const UsageModerationsResultObject();
 
 factory UsageModerationsResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.moderations.result' => organizationUsageModerationsResult,
-  _ => UsageModerationsResultObject._(json),
+  _ => UsageModerationsResultObject$Unknown(json),
 }; }
 
-static const UsageModerationsResultObject organizationUsageModerationsResult = UsageModerationsResultObject._('organization.usage.moderations.result');
+static const UsageModerationsResultObject organizationUsageModerationsResult = UsageModerationsResultObject$organizationUsageModerationsResult._();
 
 static const List<UsageModerationsResultObject> values = [organizationUsageModerationsResult];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UsageModerationsResultObject$Unknown; } 
+@override String toString() => 'UsageModerationsResultObject($value)';
+
+ }
+@immutable final class UsageModerationsResultObject$organizationUsageModerationsResult extends UsageModerationsResultObject {const UsageModerationsResultObject$organizationUsageModerationsResult._();
+
+@override String get value => 'organization.usage.moderations.result';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageModerationsResultObject$organizationUsageModerationsResult;
+
+@override int get hashCode => 'organization.usage.moderations.result'.hashCode;
+
+ }
+@immutable final class UsageModerationsResultObject$Unknown extends UsageModerationsResultObject {const UsageModerationsResultObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UsageModerationsResultObject && other.value == value;
+    other is UsageModerationsResultObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UsageModerationsResultObject($value)';
 
  }
 /// The aggregated moderations usage details of the specific time bucket.

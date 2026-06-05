@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookWorkflowRunInProgress (inline: WorkflowRun)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_head_commit.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_check_suite_conclusion.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/referenced_workflows.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_completed/webhook_workflow_run_completed_workflow_run_pull_requests.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_in_progress/webhook_workflow_run_in_progress_workflow_run_actor.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_in_progress/webhook_workflow_run_in_progress_workflow_run_head_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_in_progress/webhook_workflow_run_in_progress_workflow_run_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_in_progress/webhook_workflow_run_in_progress_workflow_run_triggering_actor.dart';@immutable final class WebhookWorkflowRunInProgressWorkflowRunStatus {const WebhookWorkflowRunInProgressWorkflowRunStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_head_commit.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_requested/webhook_check_suite_requested_check_suite_conclusion.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/referenced_workflows.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_completed/webhook_workflow_run_completed_workflow_run_pull_requests.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_in_progress/webhook_workflow_run_in_progress_workflow_run_actor.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_in_progress/webhook_workflow_run_in_progress_workflow_run_head_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_in_progress/webhook_workflow_run_in_progress_workflow_run_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_workflow_run_in_progress/webhook_workflow_run_in_progress_workflow_run_triggering_actor.dart';sealed class WebhookWorkflowRunInProgressWorkflowRunStatus {const WebhookWorkflowRunInProgressWorkflowRunStatus();
 
 factory WebhookWorkflowRunInProgressWorkflowRunStatus.fromJson(String json) { return switch (json) {
   'requested' => requested,
@@ -9,23 +9,22 @@ factory WebhookWorkflowRunInProgressWorkflowRunStatus.fromJson(String json) { re
   'completed' => completed,
   'queued' => queued,
   'pending' => pending,
-  _ => WebhookWorkflowRunInProgressWorkflowRunStatus._(json),
+  _ => WebhookWorkflowRunInProgressWorkflowRunStatus$Unknown(json),
 }; }
 
-static const WebhookWorkflowRunInProgressWorkflowRunStatus requested = WebhookWorkflowRunInProgressWorkflowRunStatus._('requested');
+static const WebhookWorkflowRunInProgressWorkflowRunStatus requested = WebhookWorkflowRunInProgressWorkflowRunStatus$requested._();
 
-static const WebhookWorkflowRunInProgressWorkflowRunStatus inProgress = WebhookWorkflowRunInProgressWorkflowRunStatus._('in_progress');
+static const WebhookWorkflowRunInProgressWorkflowRunStatus inProgress = WebhookWorkflowRunInProgressWorkflowRunStatus$inProgress._();
 
-static const WebhookWorkflowRunInProgressWorkflowRunStatus completed = WebhookWorkflowRunInProgressWorkflowRunStatus._('completed');
+static const WebhookWorkflowRunInProgressWorkflowRunStatus completed = WebhookWorkflowRunInProgressWorkflowRunStatus$completed._();
 
-static const WebhookWorkflowRunInProgressWorkflowRunStatus queued = WebhookWorkflowRunInProgressWorkflowRunStatus._('queued');
+static const WebhookWorkflowRunInProgressWorkflowRunStatus queued = WebhookWorkflowRunInProgressWorkflowRunStatus$queued._();
 
-static const WebhookWorkflowRunInProgressWorkflowRunStatus pending = WebhookWorkflowRunInProgressWorkflowRunStatus._('pending');
+static const WebhookWorkflowRunInProgressWorkflowRunStatus pending = WebhookWorkflowRunInProgressWorkflowRunStatus$pending._();
 
 static const List<WebhookWorkflowRunInProgressWorkflowRunStatus> values = [requested, inProgress, completed, queued, pending];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookWorkflowRunInProgressWorkflowRunStatus$Unknown; } 
+@override String toString() => 'WebhookWorkflowRunInProgressWorkflowRunStatus($value)';
+
+ }
+@immutable final class WebhookWorkflowRunInProgressWorkflowRunStatus$requested extends WebhookWorkflowRunInProgressWorkflowRunStatus {const WebhookWorkflowRunInProgressWorkflowRunStatus$requested._();
+
+@override String get value => 'requested';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookWorkflowRunInProgressWorkflowRunStatus$requested;
+
+@override int get hashCode => 'requested'.hashCode;
+
+ }
+@immutable final class WebhookWorkflowRunInProgressWorkflowRunStatus$inProgress extends WebhookWorkflowRunInProgressWorkflowRunStatus {const WebhookWorkflowRunInProgressWorkflowRunStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookWorkflowRunInProgressWorkflowRunStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class WebhookWorkflowRunInProgressWorkflowRunStatus$completed extends WebhookWorkflowRunInProgressWorkflowRunStatus {const WebhookWorkflowRunInProgressWorkflowRunStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookWorkflowRunInProgressWorkflowRunStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class WebhookWorkflowRunInProgressWorkflowRunStatus$queued extends WebhookWorkflowRunInProgressWorkflowRunStatus {const WebhookWorkflowRunInProgressWorkflowRunStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookWorkflowRunInProgressWorkflowRunStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class WebhookWorkflowRunInProgressWorkflowRunStatus$pending extends WebhookWorkflowRunInProgressWorkflowRunStatus {const WebhookWorkflowRunInProgressWorkflowRunStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookWorkflowRunInProgressWorkflowRunStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class WebhookWorkflowRunInProgressWorkflowRunStatus$Unknown extends WebhookWorkflowRunInProgressWorkflowRunStatus {const WebhookWorkflowRunInProgressWorkflowRunStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookWorkflowRunInProgressWorkflowRunStatus && other.value == value;
+    other is WebhookWorkflowRunInProgressWorkflowRunStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookWorkflowRunInProgressWorkflowRunStatus($value)';
 
  }
 @immutable final class WebhookWorkflowRunInProgressWorkflowRun {const WebhookWorkflowRunInProgressWorkflowRun({required this.headRepository, required this.artifactsUrl, required this.cancelUrl, required this.checkSuiteId, required this.checkSuiteNodeId, required this.checkSuiteUrl, required this.conclusion, required this.createdAt, required this.event, required this.headBranch, required this.headCommit, required this.actor, required this.headSha, required this.htmlUrl, required this.id, required this.jobsUrl, required this.logsUrl, required this.name, required this.nodeId, required this.path, required this.previousAttemptUrl, required this.workflowUrl, required this.workflowId, required this.repository, required this.rerunUrl, required this.runAttempt, required this.runNumber, required this.runStartedAt, required this.status, required this.triggeringActor, required this.updatedAt, required this.url, required this.pullRequests, this.referencedWorkflows, });

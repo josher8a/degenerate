@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetTrafficAnomaliesFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetTrafficAnomaliesFormat {const RadarGetTrafficAnomaliesFormat._(this.value);
+sealed class RadarGetTrafficAnomaliesFormat {const RadarGetTrafficAnomaliesFormat();
 
 factory RadarGetTrafficAnomaliesFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetTrafficAnomaliesFormat._(json),
+  _ => RadarGetTrafficAnomaliesFormat$Unknown(json),
 }; }
 
-static const RadarGetTrafficAnomaliesFormat $json = RadarGetTrafficAnomaliesFormat._('JSON');
+static const RadarGetTrafficAnomaliesFormat $json = RadarGetTrafficAnomaliesFormat$$json._();
 
-static const RadarGetTrafficAnomaliesFormat csv = RadarGetTrafficAnomaliesFormat._('CSV');
+static const RadarGetTrafficAnomaliesFormat csv = RadarGetTrafficAnomaliesFormat$csv._();
 
 static const List<RadarGetTrafficAnomaliesFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetTrafficAnomaliesFormat$Unknown; } 
+@override String toString() => 'RadarGetTrafficAnomaliesFormat($value)';
+
+ }
+@immutable final class RadarGetTrafficAnomaliesFormat$$json extends RadarGetTrafficAnomaliesFormat {const RadarGetTrafficAnomaliesFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetTrafficAnomaliesFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetTrafficAnomaliesFormat$csv extends RadarGetTrafficAnomaliesFormat {const RadarGetTrafficAnomaliesFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetTrafficAnomaliesFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetTrafficAnomaliesFormat$Unknown extends RadarGetTrafficAnomaliesFormat {const RadarGetTrafficAnomaliesFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetTrafficAnomaliesFormat && other.value == value;
+    other is RadarGetTrafficAnomaliesFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetTrafficAnomaliesFormat($value)';
 
  }

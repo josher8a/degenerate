@@ -2,19 +2,18 @@
 // Source: #/components/schemas/IssuingTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/issuing_authorization.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/issuing_authorization_token.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_merchant_data.dart';import 'package:pub_stripe_spec3/models/issuing_card.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_dispute.dart';import 'package:pub_stripe_spec3/models/issuing_token.dart';import 'package:pub_stripe_spec3/models/issuing_token/issuing_token_card.dart';import 'package:pub_stripe_spec3/models/issuing_transaction/authorization.dart';import 'package:pub_stripe_spec3/models/issuing_transaction/issuing_transaction_dispute.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_amount_details.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_network_data.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_purchase_details.dart';import 'package:pub_stripe_spec3/models/issuing_transaction_treasury.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class IssuingTransactionObject {const IssuingTransactionObject._(this.value);
+sealed class IssuingTransactionObject {const IssuingTransactionObject();
 
 factory IssuingTransactionObject.fromJson(String json) { return switch (json) {
   'issuing.transaction' => issuingTransaction,
-  _ => IssuingTransactionObject._(json),
+  _ => IssuingTransactionObject$Unknown(json),
 }; }
 
-static const IssuingTransactionObject issuingTransaction = IssuingTransactionObject._('issuing.transaction');
+static const IssuingTransactionObject issuingTransaction = IssuingTransactionObject$issuingTransaction._();
 
 static const List<IssuingTransactionObject> values = [issuingTransaction];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,32 +21,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingTransactionObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingTransactionObject$Unknown; } 
 @override String toString() => 'IssuingTransactionObject($value)';
 
  }
+@immutable final class IssuingTransactionObject$issuingTransaction extends IssuingTransactionObject {const IssuingTransactionObject$issuingTransaction._();
+
+@override String get value => 'issuing.transaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingTransactionObject$issuingTransaction;
+
+@override int get hashCode => 'issuing.transaction'.hashCode;
+
+ }
+@immutable final class IssuingTransactionObject$Unknown extends IssuingTransactionObject {const IssuingTransactionObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingTransactionObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The nature of the transaction.
-@immutable final class IssuingTransactionType {const IssuingTransactionType._(this.value);
+sealed class IssuingTransactionType {const IssuingTransactionType();
 
 factory IssuingTransactionType.fromJson(String json) { return switch (json) {
   'capture' => capture,
   'refund' => refund,
-  _ => IssuingTransactionType._(json),
+  _ => IssuingTransactionType$Unknown(json),
 }; }
 
-static const IssuingTransactionType capture = IssuingTransactionType._('capture');
+static const IssuingTransactionType capture = IssuingTransactionType$capture._();
 
-static const IssuingTransactionType refund = IssuingTransactionType._('refund');
+static const IssuingTransactionType refund = IssuingTransactionType$refund._();
 
 static const List<IssuingTransactionType> values = [capture, refund];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -56,35 +68,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingTransactionType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingTransactionType$Unknown; } 
 @override String toString() => 'IssuingTransactionType($value)';
 
  }
+@immutable final class IssuingTransactionType$capture extends IssuingTransactionType {const IssuingTransactionType$capture._();
+
+@override String get value => 'capture';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingTransactionType$capture;
+
+@override int get hashCode => 'capture'.hashCode;
+
+ }
+@immutable final class IssuingTransactionType$refund extends IssuingTransactionType {const IssuingTransactionType$refund._();
+
+@override String get value => 'refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingTransactionType$refund;
+
+@override int get hashCode => 'refund'.hashCode;
+
+ }
+@immutable final class IssuingTransactionType$Unknown extends IssuingTransactionType {const IssuingTransactionType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingTransactionType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`.
-@immutable final class IssuingTransactionWallet {const IssuingTransactionWallet._(this.value);
+sealed class IssuingTransactionWallet {const IssuingTransactionWallet();
 
 factory IssuingTransactionWallet.fromJson(String json) { return switch (json) {
   'apple_pay' => applePay,
   'google_pay' => googlePay,
   'samsung_pay' => samsungPay,
-  _ => IssuingTransactionWallet._(json),
+  _ => IssuingTransactionWallet$Unknown(json),
 }; }
 
-static const IssuingTransactionWallet applePay = IssuingTransactionWallet._('apple_pay');
+static const IssuingTransactionWallet applePay = IssuingTransactionWallet$applePay._();
 
-static const IssuingTransactionWallet googlePay = IssuingTransactionWallet._('google_pay');
+static const IssuingTransactionWallet googlePay = IssuingTransactionWallet$googlePay._();
 
-static const IssuingTransactionWallet samsungPay = IssuingTransactionWallet._('samsung_pay');
+static const IssuingTransactionWallet samsungPay = IssuingTransactionWallet$samsungPay._();
 
 static const List<IssuingTransactionWallet> values = [applePay, googlePay, samsungPay];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -94,13 +128,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingTransactionWallet$Unknown; } 
+@override String toString() => 'IssuingTransactionWallet($value)';
+
+ }
+@immutable final class IssuingTransactionWallet$applePay extends IssuingTransactionWallet {const IssuingTransactionWallet$applePay._();
+
+@override String get value => 'apple_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingTransactionWallet$applePay;
+
+@override int get hashCode => 'apple_pay'.hashCode;
+
+ }
+@immutable final class IssuingTransactionWallet$googlePay extends IssuingTransactionWallet {const IssuingTransactionWallet$googlePay._();
+
+@override String get value => 'google_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingTransactionWallet$googlePay;
+
+@override int get hashCode => 'google_pay'.hashCode;
+
+ }
+@immutable final class IssuingTransactionWallet$samsungPay extends IssuingTransactionWallet {const IssuingTransactionWallet$samsungPay._();
+
+@override String get value => 'samsung_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingTransactionWallet$samsungPay;
+
+@override int get hashCode => 'samsung_pay'.hashCode;
+
+ }
+@immutable final class IssuingTransactionWallet$Unknown extends IssuingTransactionWallet {const IssuingTransactionWallet$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingTransactionWallet && other.value == value;
+    other is IssuingTransactionWallet$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingTransactionWallet($value)';
 
  }
 /// Any use of an [issued card](https://docs.stripe.com/issuing) that results in funds entering or leaving

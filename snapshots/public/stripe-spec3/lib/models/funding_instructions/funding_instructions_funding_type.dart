@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FundingInstructions (inline: FundingType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The `funding_type` of the returned instructions
-@immutable final class FundingInstructionsFundingType {const FundingInstructionsFundingType._(this.value);
+sealed class FundingInstructionsFundingType {const FundingInstructionsFundingType();
 
 factory FundingInstructionsFundingType.fromJson(String json) { return switch (json) {
   'bank_transfer' => bankTransfer,
-  _ => FundingInstructionsFundingType._(json),
+  _ => FundingInstructionsFundingType$Unknown(json),
 }; }
 
-static const FundingInstructionsFundingType bankTransfer = FundingInstructionsFundingType._('bank_transfer');
+static const FundingInstructionsFundingType bankTransfer = FundingInstructionsFundingType$bankTransfer._();
 
 static const List<FundingInstructionsFundingType> values = [bankTransfer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FundingInstructionsFundingType$Unknown; } 
+@override String toString() => 'FundingInstructionsFundingType($value)';
+
+ }
+@immutable final class FundingInstructionsFundingType$bankTransfer extends FundingInstructionsFundingType {const FundingInstructionsFundingType$bankTransfer._();
+
+@override String get value => 'bank_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsFundingType$bankTransfer;
+
+@override int get hashCode => 'bank_transfer'.hashCode;
+
+ }
+@immutable final class FundingInstructionsFundingType$Unknown extends FundingInstructionsFundingType {const FundingInstructionsFundingType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FundingInstructionsFundingType && other.value == value;
+    other is FundingInstructionsFundingType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FundingInstructionsFundingType($value)';
 
  }

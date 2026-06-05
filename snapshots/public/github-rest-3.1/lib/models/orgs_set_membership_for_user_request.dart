@@ -4,22 +4,21 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role to give the user in the organization. Can be one of:
 ///  * `admin` - The user will become an owner of the organization.
 ///  * `member` - The user will become a non-owner member of the organization.
-@immutable final class OrgsSetMembershipForUserRequestRole {const OrgsSetMembershipForUserRequestRole._(this.value);
+sealed class OrgsSetMembershipForUserRequestRole {const OrgsSetMembershipForUserRequestRole();
 
 factory OrgsSetMembershipForUserRequestRole.fromJson(String json) { return switch (json) {
   'admin' => admin,
   'member' => member,
-  _ => OrgsSetMembershipForUserRequestRole._(json),
+  _ => OrgsSetMembershipForUserRequestRole$Unknown(json),
 }; }
 
-static const OrgsSetMembershipForUserRequestRole admin = OrgsSetMembershipForUserRequestRole._('admin');
+static const OrgsSetMembershipForUserRequestRole admin = OrgsSetMembershipForUserRequestRole$admin._();
 
-static const OrgsSetMembershipForUserRequestRole member = OrgsSetMembershipForUserRequestRole._('member');
+static const OrgsSetMembershipForUserRequestRole member = OrgsSetMembershipForUserRequestRole$member._();
 
 static const List<OrgsSetMembershipForUserRequestRole> values = [admin, member];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -28,13 +27,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrgsSetMembershipForUserRequestRole$Unknown; } 
+@override String toString() => 'OrgsSetMembershipForUserRequestRole($value)';
+
+ }
+@immutable final class OrgsSetMembershipForUserRequestRole$admin extends OrgsSetMembershipForUserRequestRole {const OrgsSetMembershipForUserRequestRole$admin._();
+
+@override String get value => 'admin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsSetMembershipForUserRequestRole$admin;
+
+@override int get hashCode => 'admin'.hashCode;
+
+ }
+@immutable final class OrgsSetMembershipForUserRequestRole$member extends OrgsSetMembershipForUserRequestRole {const OrgsSetMembershipForUserRequestRole$member._();
+
+@override String get value => 'member';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsSetMembershipForUserRequestRole$member;
+
+@override int get hashCode => 'member'.hashCode;
+
+ }
+@immutable final class OrgsSetMembershipForUserRequestRole$Unknown extends OrgsSetMembershipForUserRequestRole {const OrgsSetMembershipForUserRequestRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrgsSetMembershipForUserRequestRole && other.value == value;
+    other is OrgsSetMembershipForUserRequestRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrgsSetMembershipForUserRequestRole($value)';
 
  }
 @immutable final class OrgsSetMembershipForUserRequest {const OrgsSetMembershipForUserRequest({this.role = OrgsSetMembershipForUserRequestRole.member});

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MqR2Producer
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MqR2ProducerType {const MqR2ProducerType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class MqR2ProducerType {const MqR2ProducerType();
 
 factory MqR2ProducerType.fromJson(String json) { return switch (json) {
   'r2_bucket' => r2Bucket,
-  _ => MqR2ProducerType._(json),
+  _ => MqR2ProducerType$Unknown(json),
 }; }
 
-static const MqR2ProducerType r2Bucket = MqR2ProducerType._('r2_bucket');
+static const MqR2ProducerType r2Bucket = MqR2ProducerType$r2Bucket._();
 
 static const List<MqR2ProducerType> values = [r2Bucket];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MqR2ProducerType$Unknown; } 
+@override String toString() => 'MqR2ProducerType($value)';
+
+ }
+@immutable final class MqR2ProducerType$r2Bucket extends MqR2ProducerType {const MqR2ProducerType$r2Bucket._();
+
+@override String get value => 'r2_bucket';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqR2ProducerType$r2Bucket;
+
+@override int get hashCode => 'r2_bucket'.hashCode;
+
+ }
+@immutable final class MqR2ProducerType$Unknown extends MqR2ProducerType {const MqR2ProducerType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MqR2ProducerType && other.value == value;
+    other is MqR2ProducerType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MqR2ProducerType($value)';
 
  }
 @immutable final class MqR2Producer {const MqR2Producer({this.bucketName, this.type, });

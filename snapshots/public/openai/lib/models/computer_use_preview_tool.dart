@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ComputerUsePreviewTool
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ComputerEnvironment {const ComputerEnvironment._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ComputerEnvironment {const ComputerEnvironment();
 
 factory ComputerEnvironment.fromJson(String json) { return switch (json) {
   'windows' => windows,
@@ -9,23 +9,22 @@ factory ComputerEnvironment.fromJson(String json) { return switch (json) {
   'linux' => linux,
   'ubuntu' => ubuntu,
   'browser' => browser,
-  _ => ComputerEnvironment._(json),
+  _ => ComputerEnvironment$Unknown(json),
 }; }
 
-static const ComputerEnvironment windows = ComputerEnvironment._('windows');
+static const ComputerEnvironment windows = ComputerEnvironment$windows._();
 
-static const ComputerEnvironment mac = ComputerEnvironment._('mac');
+static const ComputerEnvironment mac = ComputerEnvironment$mac._();
 
-static const ComputerEnvironment linux = ComputerEnvironment._('linux');
+static const ComputerEnvironment linux = ComputerEnvironment$linux._();
 
-static const ComputerEnvironment ubuntu = ComputerEnvironment._('ubuntu');
+static const ComputerEnvironment ubuntu = ComputerEnvironment$ubuntu._();
 
-static const ComputerEnvironment browser = ComputerEnvironment._('browser');
+static const ComputerEnvironment browser = ComputerEnvironment$browser._();
 
 static const List<ComputerEnvironment> values = [windows, mac, linux, ubuntu, browser];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ComputerEnvironment$Unknown; } 
+@override String toString() => 'ComputerEnvironment($value)';
+
+ }
+@immutable final class ComputerEnvironment$windows extends ComputerEnvironment {const ComputerEnvironment$windows._();
+
+@override String get value => 'windows';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerEnvironment$windows;
+
+@override int get hashCode => 'windows'.hashCode;
+
+ }
+@immutable final class ComputerEnvironment$mac extends ComputerEnvironment {const ComputerEnvironment$mac._();
+
+@override String get value => 'mac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerEnvironment$mac;
+
+@override int get hashCode => 'mac'.hashCode;
+
+ }
+@immutable final class ComputerEnvironment$linux extends ComputerEnvironment {const ComputerEnvironment$linux._();
+
+@override String get value => 'linux';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerEnvironment$linux;
+
+@override int get hashCode => 'linux'.hashCode;
+
+ }
+@immutable final class ComputerEnvironment$ubuntu extends ComputerEnvironment {const ComputerEnvironment$ubuntu._();
+
+@override String get value => 'ubuntu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerEnvironment$ubuntu;
+
+@override int get hashCode => 'ubuntu'.hashCode;
+
+ }
+@immutable final class ComputerEnvironment$browser extends ComputerEnvironment {const ComputerEnvironment$browser._();
+
+@override String get value => 'browser';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerEnvironment$browser;
+
+@override int get hashCode => 'browser'.hashCode;
+
+ }
+@immutable final class ComputerEnvironment$Unknown extends ComputerEnvironment {const ComputerEnvironment$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ComputerEnvironment && other.value == value;
+    other is ComputerEnvironment$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ComputerEnvironment($value)';
 
  }
 /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).

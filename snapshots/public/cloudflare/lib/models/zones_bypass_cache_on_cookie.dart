@@ -4,19 +4,18 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Bypass cache and fetch resources from the origin server if a regular
 /// expression matches against a cookie name present in the request.
 /// 
-@immutable final class ZonesBypassCacheOnCookieId {const ZonesBypassCacheOnCookieId._(this.value);
+sealed class ZonesBypassCacheOnCookieId {const ZonesBypassCacheOnCookieId();
 
 factory ZonesBypassCacheOnCookieId.fromJson(String json) { return switch (json) {
   'bypass_cache_on_cookie' => bypassCacheOnCookie,
-  _ => ZonesBypassCacheOnCookieId._(json),
+  _ => ZonesBypassCacheOnCookieId$Unknown(json),
 }; }
 
-static const ZonesBypassCacheOnCookieId bypassCacheOnCookie = ZonesBypassCacheOnCookieId._('bypass_cache_on_cookie');
+static const ZonesBypassCacheOnCookieId bypassCacheOnCookie = ZonesBypassCacheOnCookieId$bypassCacheOnCookie._();
 
 static const List<ZonesBypassCacheOnCookieId> values = [bypassCacheOnCookie];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -24,13 +23,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesBypassCacheOnCookieId$Unknown; } 
+@override String toString() => 'ZonesBypassCacheOnCookieId($value)';
+
+ }
+@immutable final class ZonesBypassCacheOnCookieId$bypassCacheOnCookie extends ZonesBypassCacheOnCookieId {const ZonesBypassCacheOnCookieId$bypassCacheOnCookie._();
+
+@override String get value => 'bypass_cache_on_cookie';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesBypassCacheOnCookieId$bypassCacheOnCookie;
+
+@override int get hashCode => 'bypass_cache_on_cookie'.hashCode;
+
+ }
+@immutable final class ZonesBypassCacheOnCookieId$Unknown extends ZonesBypassCacheOnCookieId {const ZonesBypassCacheOnCookieId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesBypassCacheOnCookieId && other.value == value;
+    other is ZonesBypassCacheOnCookieId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesBypassCacheOnCookieId($value)';
 
  }
 @immutable final class ZonesBypassCacheOnCookie {const ZonesBypassCacheOnCookie({this.id, this.value, });

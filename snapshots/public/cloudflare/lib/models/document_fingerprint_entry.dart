@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DocumentFingerprintEntry
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DocumentFingerprintEntryType {const DocumentFingerprintEntryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DocumentFingerprintEntryType {const DocumentFingerprintEntryType();
 
 factory DocumentFingerprintEntryType.fromJson(String json) { return switch (json) {
   'document_fingerprint' => documentFingerprint,
-  _ => DocumentFingerprintEntryType._(json),
+  _ => DocumentFingerprintEntryType$Unknown(json),
 }; }
 
-static const DocumentFingerprintEntryType documentFingerprint = DocumentFingerprintEntryType._('document_fingerprint');
+static const DocumentFingerprintEntryType documentFingerprint = DocumentFingerprintEntryType$documentFingerprint._();
 
 static const List<DocumentFingerprintEntryType> values = [documentFingerprint];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DocumentFingerprintEntryType$Unknown; } 
+@override String toString() => 'DocumentFingerprintEntryType($value)';
+
+ }
+@immutable final class DocumentFingerprintEntryType$documentFingerprint extends DocumentFingerprintEntryType {const DocumentFingerprintEntryType$documentFingerprint._();
+
+@override String get value => 'document_fingerprint';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DocumentFingerprintEntryType$documentFingerprint;
+
+@override int get hashCode => 'document_fingerprint'.hashCode;
+
+ }
+@immutable final class DocumentFingerprintEntryType$Unknown extends DocumentFingerprintEntryType {const DocumentFingerprintEntryType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DocumentFingerprintEntryType && other.value == value;
+    other is DocumentFingerprintEntryType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DocumentFingerprintEntryType($value)';
 
  }
 @immutable final class DocumentFingerprintEntry {const DocumentFingerprintEntry({required this.createdAt, required this.enabled, required this.id, required this.name, required this.updatedAt, required this.type, });

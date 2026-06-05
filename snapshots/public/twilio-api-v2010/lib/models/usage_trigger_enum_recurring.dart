@@ -2,28 +2,27 @@
 // Source: #/components/schemas/UsageTriggerEnumRecurring
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The frequency of a recurring UsageTrigger.  Can be: `daily`, `monthly`, or `yearly` for recurring triggers or empty for non-recurring triggers. A trigger will only fire once during each period. Recurring times are in GMT.
-@immutable final class UsageTriggerEnumRecurring {const UsageTriggerEnumRecurring._(this.value);
+sealed class UsageTriggerEnumRecurring {const UsageTriggerEnumRecurring();
 
 factory UsageTriggerEnumRecurring.fromJson(String json) { return switch (json) {
   'daily' => daily,
   'monthly' => monthly,
   'yearly' => yearly,
   'alltime' => alltime,
-  _ => UsageTriggerEnumRecurring._(json),
+  _ => UsageTriggerEnumRecurring$Unknown(json),
 }; }
 
-static const UsageTriggerEnumRecurring daily = UsageTriggerEnumRecurring._('daily');
+static const UsageTriggerEnumRecurring daily = UsageTriggerEnumRecurring$daily._();
 
-static const UsageTriggerEnumRecurring monthly = UsageTriggerEnumRecurring._('monthly');
+static const UsageTriggerEnumRecurring monthly = UsageTriggerEnumRecurring$monthly._();
 
-static const UsageTriggerEnumRecurring yearly = UsageTriggerEnumRecurring._('yearly');
+static const UsageTriggerEnumRecurring yearly = UsageTriggerEnumRecurring$yearly._();
 
-static const UsageTriggerEnumRecurring alltime = UsageTriggerEnumRecurring._('alltime');
+static const UsageTriggerEnumRecurring alltime = UsageTriggerEnumRecurring$alltime._();
 
 static const List<UsageTriggerEnumRecurring> values = [daily, monthly, yearly, alltime];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UsageTriggerEnumRecurring$Unknown; } 
+@override String toString() => 'UsageTriggerEnumRecurring($value)';
+
+ }
+@immutable final class UsageTriggerEnumRecurring$daily extends UsageTriggerEnumRecurring {const UsageTriggerEnumRecurring$daily._();
+
+@override String get value => 'daily';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageTriggerEnumRecurring$daily;
+
+@override int get hashCode => 'daily'.hashCode;
+
+ }
+@immutable final class UsageTriggerEnumRecurring$monthly extends UsageTriggerEnumRecurring {const UsageTriggerEnumRecurring$monthly._();
+
+@override String get value => 'monthly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageTriggerEnumRecurring$monthly;
+
+@override int get hashCode => 'monthly'.hashCode;
+
+ }
+@immutable final class UsageTriggerEnumRecurring$yearly extends UsageTriggerEnumRecurring {const UsageTriggerEnumRecurring$yearly._();
+
+@override String get value => 'yearly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageTriggerEnumRecurring$yearly;
+
+@override int get hashCode => 'yearly'.hashCode;
+
+ }
+@immutable final class UsageTriggerEnumRecurring$alltime extends UsageTriggerEnumRecurring {const UsageTriggerEnumRecurring$alltime._();
+
+@override String get value => 'alltime';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageTriggerEnumRecurring$alltime;
+
+@override int get hashCode => 'alltime'.hashCode;
+
+ }
+@immutable final class UsageTriggerEnumRecurring$Unknown extends UsageTriggerEnumRecurring {const UsageTriggerEnumRecurring$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UsageTriggerEnumRecurring && other.value == value;
+    other is UsageTriggerEnumRecurring$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UsageTriggerEnumRecurring($value)';
 
  }

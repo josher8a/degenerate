@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CampaignsListOrgCampaignsSort
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CampaignsListOrgCampaignsSort {const CampaignsListOrgCampaignsSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CampaignsListOrgCampaignsSort {const CampaignsListOrgCampaignsSort();
 
 factory CampaignsListOrgCampaignsSort.fromJson(String json) { return switch (json) {
   'created' => created,
   'updated' => updated,
   'ends_at' => endsAt,
   'published' => published,
-  _ => CampaignsListOrgCampaignsSort._(json),
+  _ => CampaignsListOrgCampaignsSort$Unknown(json),
 }; }
 
-static const CampaignsListOrgCampaignsSort created = CampaignsListOrgCampaignsSort._('created');
+static const CampaignsListOrgCampaignsSort created = CampaignsListOrgCampaignsSort$created._();
 
-static const CampaignsListOrgCampaignsSort updated = CampaignsListOrgCampaignsSort._('updated');
+static const CampaignsListOrgCampaignsSort updated = CampaignsListOrgCampaignsSort$updated._();
 
-static const CampaignsListOrgCampaignsSort endsAt = CampaignsListOrgCampaignsSort._('ends_at');
+static const CampaignsListOrgCampaignsSort endsAt = CampaignsListOrgCampaignsSort$endsAt._();
 
-static const CampaignsListOrgCampaignsSort published = CampaignsListOrgCampaignsSort._('published');
+static const CampaignsListOrgCampaignsSort published = CampaignsListOrgCampaignsSort$published._();
 
 static const List<CampaignsListOrgCampaignsSort> values = [created, updated, endsAt, published];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CampaignsListOrgCampaignsSort$Unknown; } 
+@override String toString() => 'CampaignsListOrgCampaignsSort($value)';
+
+ }
+@immutable final class CampaignsListOrgCampaignsSort$created extends CampaignsListOrgCampaignsSort {const CampaignsListOrgCampaignsSort$created._();
+
+@override String get value => 'created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CampaignsListOrgCampaignsSort$created;
+
+@override int get hashCode => 'created'.hashCode;
+
+ }
+@immutable final class CampaignsListOrgCampaignsSort$updated extends CampaignsListOrgCampaignsSort {const CampaignsListOrgCampaignsSort$updated._();
+
+@override String get value => 'updated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CampaignsListOrgCampaignsSort$updated;
+
+@override int get hashCode => 'updated'.hashCode;
+
+ }
+@immutable final class CampaignsListOrgCampaignsSort$endsAt extends CampaignsListOrgCampaignsSort {const CampaignsListOrgCampaignsSort$endsAt._();
+
+@override String get value => 'ends_at';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CampaignsListOrgCampaignsSort$endsAt;
+
+@override int get hashCode => 'ends_at'.hashCode;
+
+ }
+@immutable final class CampaignsListOrgCampaignsSort$published extends CampaignsListOrgCampaignsSort {const CampaignsListOrgCampaignsSort$published._();
+
+@override String get value => 'published';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CampaignsListOrgCampaignsSort$published;
+
+@override int get hashCode => 'published'.hashCode;
+
+ }
+@immutable final class CampaignsListOrgCampaignsSort$Unknown extends CampaignsListOrgCampaignsSort {const CampaignsListOrgCampaignsSort$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CampaignsListOrgCampaignsSort && other.value == value;
+    other is CampaignsListOrgCampaignsSort$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CampaignsListOrgCampaignsSort($value)';
 
  }

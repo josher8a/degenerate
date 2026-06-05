@@ -2,22 +2,21 @@
 // Source: #/components/schemas/BillingCreditGrant (inline: Category)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The category of this credit grant. This is for tracking purposes and isn't displayed to the customer.
-@immutable final class BillingCreditGrantCategory {const BillingCreditGrantCategory._(this.value);
+sealed class BillingCreditGrantCategory {const BillingCreditGrantCategory();
 
 factory BillingCreditGrantCategory.fromJson(String json) { return switch (json) {
   'paid' => paid,
   'promotional' => promotional,
-  _ => BillingCreditGrantCategory._(json),
+  _ => BillingCreditGrantCategory$Unknown(json),
 }; }
 
-static const BillingCreditGrantCategory paid = BillingCreditGrantCategory._('paid');
+static const BillingCreditGrantCategory paid = BillingCreditGrantCategory$paid._();
 
-static const BillingCreditGrantCategory promotional = BillingCreditGrantCategory._('promotional');
+static const BillingCreditGrantCategory promotional = BillingCreditGrantCategory$promotional._();
 
 static const List<BillingCreditGrantCategory> values = [paid, promotional];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingCreditGrantCategory$Unknown; } 
+@override String toString() => 'BillingCreditGrantCategory($value)';
+
+ }
+@immutable final class BillingCreditGrantCategory$paid extends BillingCreditGrantCategory {const BillingCreditGrantCategory$paid._();
+
+@override String get value => 'paid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingCreditGrantCategory$paid;
+
+@override int get hashCode => 'paid'.hashCode;
+
+ }
+@immutable final class BillingCreditGrantCategory$promotional extends BillingCreditGrantCategory {const BillingCreditGrantCategory$promotional._();
+
+@override String get value => 'promotional';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingCreditGrantCategory$promotional;
+
+@override int get hashCode => 'promotional'.hashCode;
+
+ }
+@immutable final class BillingCreditGrantCategory$Unknown extends BillingCreditGrantCategory {const BillingCreditGrantCategory$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingCreditGrantCategory && other.value == value;
+    other is BillingCreditGrantCategory$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingCreditGrantCategory($value)';
 
  }

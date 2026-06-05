@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/received_payment_method_details_financial_account.dart';import 'package:pub_stripe_spec3/models/treasury_shared_resource_billing_details.dart';import 'package:pub_stripe_spec3/models/treasury_shared_resource_initiating_payment_method_details_us_bank_account.dart';/// Set when `type` is `balance`.
-@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance._(this.value);
+sealed class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance();
 
 factory TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance.fromJson(String json) { return switch (json) {
   'payments' => payments,
-  _ => TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance._(json),
+  _ => TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance$Unknown(json),
 }; }
 
-static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance payments = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance._('payments');
+static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance payments = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance$payments._();
 
 static const List<TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance> values = [payments];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,17 +21,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance$Unknown; } 
 @override String toString() => 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance($value)';
 
  }
+@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance$payments extends TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance$payments._();
+
+@override String get value => 'payments';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance$payments;
+
+@override int get hashCode => 'payments'.hashCode;
+
+ }
+@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance$Unknown extends TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsBalance$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Polymorphic type matching the originating money movement's source. This can be an external account, a Stripe balance, or a FinancialAccount.
-@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._(this.value);
+sealed class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType();
 
 factory TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType.fromJson(String json) { return switch (json) {
   'balance' => balance,
@@ -40,23 +53,22 @@ factory TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMet
   'issuing_card' => issuingCard,
   'stripe' => stripe,
   'us_bank_account' => usBankAccount,
-  _ => TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._(json),
+  _ => TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$Unknown(json),
 }; }
 
-static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType balance = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._('balance');
+static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType balance = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$balance._();
 
-static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType financialAccount = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._('financial_account');
+static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType financialAccount = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$financialAccount._();
 
-static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType issuingCard = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._('issuing_card');
+static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType issuingCard = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$issuingCard._();
 
-static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType stripe = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._('stripe');
+static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType stripe = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$stripe._();
 
-static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType usBankAccount = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType._('us_bank_account');
+static const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType usBankAccount = TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$usBankAccount._();
 
 static const List<TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType> values = [balance, financialAccount, issuingCard, stripe, usBankAccount];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,13 +80,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$Unknown; } 
+@override String toString() => 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType($value)';
+
+ }
+@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$balance extends TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$balance._();
+
+@override String get value => 'balance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$balance;
+
+@override int get hashCode => 'balance'.hashCode;
+
+ }
+@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$financialAccount extends TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$financialAccount._();
+
+@override String get value => 'financial_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$financialAccount;
+
+@override int get hashCode => 'financial_account'.hashCode;
+
+ }
+@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$issuingCard extends TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$issuingCard._();
+
+@override String get value => 'issuing_card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$issuingCard;
+
+@override int get hashCode => 'issuing_card'.hashCode;
+
+ }
+@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$stripe extends TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$stripe._();
+
+@override String get value => 'stripe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$stripe;
+
+@override int get hashCode => 'stripe'.hashCode;
+
+ }
+@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$usBankAccount extends TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$usBankAccount._();
+
+@override String get value => 'us_bank_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$usBankAccount;
+
+@override int get hashCode => 'us_bank_account'.hashCode;
+
+ }
+@immutable final class TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$Unknown extends TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType {const TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType && other.value == value;
+    other is TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TreasurySharedResourceInitiatingPaymentMethodDetailsInitiatingPaymentMethodDetailsType($value)';
 
  }
 /// 

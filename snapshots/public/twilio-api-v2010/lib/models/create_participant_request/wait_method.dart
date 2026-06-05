@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CreateParticipantRequest (inline: WaitMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we should use to call `wait_url`. Can be `GET` or `POST` and the default is `POST`. When using a static audio file, this should be `GET` so that we can cache the file.
-@immutable final class WaitMethod {const WaitMethod._(this.value);
+sealed class WaitMethod {const WaitMethod();
 
 factory WaitMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => WaitMethod._(json),
+  _ => WaitMethod$Unknown(json),
 }; }
 
-static const WaitMethod $get = WaitMethod._('GET');
+static const WaitMethod $get = WaitMethod$$get._();
 
-static const WaitMethod post = WaitMethod._('POST');
+static const WaitMethod post = WaitMethod$post._();
 
 static const List<WaitMethod> values = [$get, post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WaitMethod$Unknown; } 
+@override String toString() => 'WaitMethod($value)';
+
+ }
+@immutable final class WaitMethod$$get extends WaitMethod {const WaitMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class WaitMethod$post extends WaitMethod {const WaitMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class WaitMethod$Unknown extends WaitMethod {const WaitMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WaitMethod && other.value == value;
+    other is WaitMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WaitMethod($value)';
 
  }

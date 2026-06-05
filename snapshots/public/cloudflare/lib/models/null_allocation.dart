@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/NullAllocation
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class NullAllocationType {const NullAllocationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class NullAllocationType {const NullAllocationType();
 
 factory NullAllocationType.fromJson(String json) { return switch (json) {
   '' => $empty,
-  _ => NullAllocationType._(json),
+  _ => NullAllocationType$Unknown(json),
 }; }
 
-static const NullAllocationType $empty = NullAllocationType._('');
+static const NullAllocationType $empty = NullAllocationType$$empty._();
 
 static const List<NullAllocationType> values = [$empty];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is NullAllocationType$Unknown; } 
+@override String toString() => 'NullAllocationType($value)';
+
+ }
+@immutable final class NullAllocationType$$empty extends NullAllocationType {const NullAllocationType$$empty._();
+
+@override String get value => '';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NullAllocationType$$empty;
+
+@override int get hashCode => ''.hashCode;
+
+ }
+@immutable final class NullAllocationType$Unknown extends NullAllocationType {const NullAllocationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is NullAllocationType && other.value == value;
+    other is NullAllocationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'NullAllocationType($value)';
 
  }
 @immutable final class NullAllocation {const NullAllocation({required this.type, this.value, });

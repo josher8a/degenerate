@@ -2,19 +2,18 @@
 // Source: #/components/schemas/EphemeralKey
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class EphemeralKeyObject {const EphemeralKeyObject._(this.value);
+sealed class EphemeralKeyObject {const EphemeralKeyObject();
 
 factory EphemeralKeyObject.fromJson(String json) { return switch (json) {
   'ephemeral_key' => ephemeralKey,
-  _ => EphemeralKeyObject._(json),
+  _ => EphemeralKeyObject$Unknown(json),
 }; }
 
-static const EphemeralKeyObject ephemeralKey = EphemeralKeyObject._('ephemeral_key');
+static const EphemeralKeyObject ephemeralKey = EphemeralKeyObject$ephemeralKey._();
 
 static const List<EphemeralKeyObject> values = [ephemeralKey];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EphemeralKeyObject$Unknown; } 
+@override String toString() => 'EphemeralKeyObject($value)';
+
+ }
+@immutable final class EphemeralKeyObject$ephemeralKey extends EphemeralKeyObject {const EphemeralKeyObject$ephemeralKey._();
+
+@override String get value => 'ephemeral_key';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EphemeralKeyObject$ephemeralKey;
+
+@override int get hashCode => 'ephemeral_key'.hashCode;
+
+ }
+@immutable final class EphemeralKeyObject$Unknown extends EphemeralKeyObject {const EphemeralKeyObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EphemeralKeyObject && other.value == value;
+    other is EphemeralKeyObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EphemeralKeyObject($value)';
 
  }
 /// 

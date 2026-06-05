@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorDescribeWorkflowInstanceResponse (inline: Result > Steps > Step > Config > Retries)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Backoff {const Backoff._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Backoff {const Backoff();
 
 factory Backoff.fromJson(String json) { return switch (json) {
   'constant' => constant,
   'linear' => linear,
   'exponential' => exponential,
-  _ => Backoff._(json),
+  _ => Backoff$Unknown(json),
 }; }
 
-static const Backoff constant = Backoff._('constant');
+static const Backoff constant = Backoff$constant._();
 
-static const Backoff linear = Backoff._('linear');
+static const Backoff linear = Backoff$linear._();
 
-static const Backoff exponential = Backoff._('exponential');
+static const Backoff exponential = Backoff$exponential._();
 
 static const List<Backoff> values = [constant, linear, exponential];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Backoff$Unknown; } 
+@override String toString() => 'Backoff($value)';
+
+ }
+@immutable final class Backoff$constant extends Backoff {const Backoff$constant._();
+
+@override String get value => 'constant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Backoff$constant;
+
+@override int get hashCode => 'constant'.hashCode;
+
+ }
+@immutable final class Backoff$linear extends Backoff {const Backoff$linear._();
+
+@override String get value => 'linear';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Backoff$linear;
+
+@override int get hashCode => 'linear'.hashCode;
+
+ }
+@immutable final class Backoff$exponential extends Backoff {const Backoff$exponential._();
+
+@override String get value => 'exponential';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Backoff$exponential;
+
+@override int get hashCode => 'exponential'.hashCode;
+
+ }
+@immutable final class Backoff$Unknown extends Backoff {const Backoff$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Backoff && other.value == value;
+    other is Backoff$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Backoff($value)';
 
  }
 @immutable final class ConfigRetries {const ConfigRetries({required this.delay, required this.limit, this.backoff, });

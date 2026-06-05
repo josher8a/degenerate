@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PullsListReviewCommentsDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PullsListReviewCommentsDirection {const PullsListReviewCommentsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PullsListReviewCommentsDirection {const PullsListReviewCommentsDirection();
 
 factory PullsListReviewCommentsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => PullsListReviewCommentsDirection._(json),
+  _ => PullsListReviewCommentsDirection$Unknown(json),
 }; }
 
-static const PullsListReviewCommentsDirection asc = PullsListReviewCommentsDirection._('asc');
+static const PullsListReviewCommentsDirection asc = PullsListReviewCommentsDirection$asc._();
 
-static const PullsListReviewCommentsDirection desc = PullsListReviewCommentsDirection._('desc');
+static const PullsListReviewCommentsDirection desc = PullsListReviewCommentsDirection$desc._();
 
 static const List<PullsListReviewCommentsDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PullsListReviewCommentsDirection$Unknown; } 
+@override String toString() => 'PullsListReviewCommentsDirection($value)';
+
+ }
+@immutable final class PullsListReviewCommentsDirection$asc extends PullsListReviewCommentsDirection {const PullsListReviewCommentsDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PullsListReviewCommentsDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class PullsListReviewCommentsDirection$desc extends PullsListReviewCommentsDirection {const PullsListReviewCommentsDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PullsListReviewCommentsDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class PullsListReviewCommentsDirection$Unknown extends PullsListReviewCommentsDirection {const PullsListReviewCommentsDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PullsListReviewCommentsDirection && other.value == value;
+    other is PullsListReviewCommentsDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PullsListReviewCommentsDirection($value)';
 
  }

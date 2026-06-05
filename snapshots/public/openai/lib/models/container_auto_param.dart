@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ContainerAutoParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/auto_code_interpreter_tool_param/auto_code_interpreter_tool_param_network_policy.dart';import 'package:pub_openai/models/container_auto_param/skills.dart';import 'package:pub_openai/models/container_memory_limit.dart';/// Automatically creates a container for this request
-@immutable final class ContainerAutoParamType {const ContainerAutoParamType._(this.value);
+sealed class ContainerAutoParamType {const ContainerAutoParamType();
 
 factory ContainerAutoParamType.fromJson(String json) { return switch (json) {
   'container_auto' => containerAuto,
-  _ => ContainerAutoParamType._(json),
+  _ => ContainerAutoParamType$Unknown(json),
 }; }
 
-static const ContainerAutoParamType containerAuto = ContainerAutoParamType._('container_auto');
+static const ContainerAutoParamType containerAuto = ContainerAutoParamType$containerAuto._();
 
 static const List<ContainerAutoParamType> values = [containerAuto];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ContainerAutoParamType$Unknown; } 
+@override String toString() => 'ContainerAutoParamType($value)';
+
+ }
+@immutable final class ContainerAutoParamType$containerAuto extends ContainerAutoParamType {const ContainerAutoParamType$containerAuto._();
+
+@override String get value => 'container_auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ContainerAutoParamType$containerAuto;
+
+@override int get hashCode => 'container_auto'.hashCode;
+
+ }
+@immutable final class ContainerAutoParamType$Unknown extends ContainerAutoParamType {const ContainerAutoParamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ContainerAutoParamType && other.value == value;
+    other is ContainerAutoParamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ContainerAutoParamType($value)';
 
  }
 @immutable final class ContainerAutoParam {const ContainerAutoParam({this.type = ContainerAutoParamType.containerAuto, this.fileIds, this.memoryLimit, this.networkPolicy, this.skills, });

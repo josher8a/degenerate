@@ -8,9 +8,8 @@ import 'package:pub_unhinged/models/n3_incident.dart';
 import 'package:pub_unhinged/models/new/new0.dart';
 import 'package:pub_unhinged/models/new/new_null.dart';
 
-@immutable
-final class NewType {
-  const NewType._(this.value);
+sealed class NewType {
+  const NewType();
 
   factory NewType.fromJson(String json) {
     return switch (json) {
@@ -20,21 +19,21 @@ final class NewType {
       'string' => string,
       'integer' => integer,
       'null' => $null,
-      _ => NewType._(json),
+      _ => NewType$Unknown(json),
     };
   }
 
-  static const NewType type = NewType._('type');
+  static const NewType type = NewType$type._();
 
-  static const NewType object = NewType._('object');
+  static const NewType object = NewType$object._();
 
-  static const NewType array = NewType._('array');
+  static const NewType array = NewType$array._();
 
-  static const NewType string = NewType._('string');
+  static const NewType string = NewType$string._();
 
-  static const NewType integer = NewType._('integer');
+  static const NewType integer = NewType$integer._();
 
-  static const NewType $null = NewType._('null');
+  static const NewType $null = NewType$$null._();
 
   static const List<NewType> values = [
     type,
@@ -45,8 +44,7 @@ final class NewType {
     $null,
   ];
 
-  final String value;
-
+  String get value;
   String toJson() {
     return value;
   }
@@ -66,18 +64,117 @@ final class NewType {
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
-    return !values.contains(this);
+    return this is NewType$Unknown;
   }
 
   @override
+  String toString() => 'NewType($value)';
+}
+
+@immutable
+final class NewType$type extends NewType {
+  const NewType$type._();
+
+  @override
+  String get value => 'type';
+
+  @override
   bool operator ==(Object other) =>
-      identical(this, other) || other is NewType && other.value == value;
+      identical(this, other) || other is NewType$type;
+
+  @override
+  int get hashCode => 'type'.hashCode;
+}
+
+@immutable
+final class NewType$object extends NewType {
+  const NewType$object._();
+
+  @override
+  String get value => 'object';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is NewType$object;
+
+  @override
+  int get hashCode => 'object'.hashCode;
+}
+
+@immutable
+final class NewType$array extends NewType {
+  const NewType$array._();
+
+  @override
+  String get value => 'array';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is NewType$array;
+
+  @override
+  int get hashCode => 'array'.hashCode;
+}
+
+@immutable
+final class NewType$string extends NewType {
+  const NewType$string._();
+
+  @override
+  String get value => 'string';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is NewType$string;
+
+  @override
+  int get hashCode => 'string'.hashCode;
+}
+
+@immutable
+final class NewType$integer extends NewType {
+  const NewType$integer._();
+
+  @override
+  String get value => 'integer';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is NewType$integer;
+
+  @override
+  int get hashCode => 'integer'.hashCode;
+}
+
+@immutable
+final class NewType$$null extends NewType {
+  const NewType$$null._();
+
+  @override
+  String get value => 'null';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is NewType$$null;
+
+  @override
+  int get hashCode => 'null'.hashCode;
+}
+
+@immutable
+final class NewType$Unknown extends NewType {
+  const NewType$Unknown(this.value);
+
+  @override
+  final String value;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is NewType$Unknown && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
-
-  @override
-  String toString() => 'NewType($value)';
 }
 
 @immutable

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FirewallBypass
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FirewallBypassName {const FirewallBypassName._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class FirewallBypassName {const FirewallBypassName();
 
 factory FirewallBypassName.fromJson(String json) { return switch (json) {
   'url' => url,
-  _ => FirewallBypassName._(json),
+  _ => FirewallBypassName$Unknown(json),
 }; }
 
-static const FirewallBypassName url = FirewallBypassName._('url');
+static const FirewallBypassName url = FirewallBypassName$url._();
 
 static const List<FirewallBypassName> values = [url];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FirewallBypassName$Unknown; } 
+@override String toString() => 'FirewallBypassName($value)';
+
+ }
+@immutable final class FirewallBypassName$url extends FirewallBypassName {const FirewallBypassName$url._();
+
+@override String get value => 'url';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallBypassName$url;
+
+@override int get hashCode => 'url'.hashCode;
+
+ }
+@immutable final class FirewallBypassName$Unknown extends FirewallBypassName {const FirewallBypassName$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FirewallBypassName && other.value == value;
+    other is FirewallBypassName$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FirewallBypassName($value)';
 
  }
 @immutable final class FirewallBypass2 {const FirewallBypass2({this.name, this.value, });

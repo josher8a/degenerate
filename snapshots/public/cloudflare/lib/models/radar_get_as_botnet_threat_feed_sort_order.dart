@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetAsBotnetThreatFeedSortOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sort order.
-@immutable final class RadarGetAsBotnetThreatFeedSortOrder {const RadarGetAsBotnetThreatFeedSortOrder._(this.value);
+sealed class RadarGetAsBotnetThreatFeedSortOrder {const RadarGetAsBotnetThreatFeedSortOrder();
 
 factory RadarGetAsBotnetThreatFeedSortOrder.fromJson(String json) { return switch (json) {
   'ASC' => asc,
   'DESC' => desc,
-  _ => RadarGetAsBotnetThreatFeedSortOrder._(json),
+  _ => RadarGetAsBotnetThreatFeedSortOrder$Unknown(json),
 }; }
 
-static const RadarGetAsBotnetThreatFeedSortOrder asc = RadarGetAsBotnetThreatFeedSortOrder._('ASC');
+static const RadarGetAsBotnetThreatFeedSortOrder asc = RadarGetAsBotnetThreatFeedSortOrder$asc._();
 
-static const RadarGetAsBotnetThreatFeedSortOrder desc = RadarGetAsBotnetThreatFeedSortOrder._('DESC');
+static const RadarGetAsBotnetThreatFeedSortOrder desc = RadarGetAsBotnetThreatFeedSortOrder$desc._();
 
 static const List<RadarGetAsBotnetThreatFeedSortOrder> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAsBotnetThreatFeedSortOrder$Unknown; } 
+@override String toString() => 'RadarGetAsBotnetThreatFeedSortOrder($value)';
+
+ }
+@immutable final class RadarGetAsBotnetThreatFeedSortOrder$asc extends RadarGetAsBotnetThreatFeedSortOrder {const RadarGetAsBotnetThreatFeedSortOrder$asc._();
+
+@override String get value => 'ASC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAsBotnetThreatFeedSortOrder$asc;
+
+@override int get hashCode => 'ASC'.hashCode;
+
+ }
+@immutable final class RadarGetAsBotnetThreatFeedSortOrder$desc extends RadarGetAsBotnetThreatFeedSortOrder {const RadarGetAsBotnetThreatFeedSortOrder$desc._();
+
+@override String get value => 'DESC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAsBotnetThreatFeedSortOrder$desc;
+
+@override int get hashCode => 'DESC'.hashCode;
+
+ }
+@immutable final class RadarGetAsBotnetThreatFeedSortOrder$Unknown extends RadarGetAsBotnetThreatFeedSortOrder {const RadarGetAsBotnetThreatFeedSortOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAsBotnetThreatFeedSortOrder && other.value == value;
+    other is RadarGetAsBotnetThreatFeedSortOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAsBotnetThreatFeedSortOrder($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DeletedVideoResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type that signals the deletion response.
-@immutable final class DeletedVideoResourceObject {const DeletedVideoResourceObject._(this.value);
+sealed class DeletedVideoResourceObject {const DeletedVideoResourceObject();
 
 factory DeletedVideoResourceObject.fromJson(String json) { return switch (json) {
   'video.deleted' => videoDeleted,
-  _ => DeletedVideoResourceObject._(json),
+  _ => DeletedVideoResourceObject$Unknown(json),
 }; }
 
-static const DeletedVideoResourceObject videoDeleted = DeletedVideoResourceObject._('video.deleted');
+static const DeletedVideoResourceObject videoDeleted = DeletedVideoResourceObject$videoDeleted._();
 
 static const List<DeletedVideoResourceObject> values = [videoDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeletedVideoResourceObject$Unknown; } 
+@override String toString() => 'DeletedVideoResourceObject($value)';
+
+ }
+@immutable final class DeletedVideoResourceObject$videoDeleted extends DeletedVideoResourceObject {const DeletedVideoResourceObject$videoDeleted._();
+
+@override String get value => 'video.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeletedVideoResourceObject$videoDeleted;
+
+@override int get hashCode => 'video.deleted'.hashCode;
+
+ }
+@immutable final class DeletedVideoResourceObject$Unknown extends DeletedVideoResourceObject {const DeletedVideoResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeletedVideoResourceObject && other.value == value;
+    other is DeletedVideoResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeletedVideoResourceObject($value)';
 
  }
 /// Confirmation payload returned after deleting a video.

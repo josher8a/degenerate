@@ -2,7 +2,7 @@
 // Source: #/components/schemas/RadarGetAiBotsSummaryByUserAgentResponse (inline: Result > Meta > ConfidenceInfo > Annotations)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Data source for annotations.
-@immutable final class DataSource {const DataSource._(this.value);
+sealed class DataSource {const DataSource();
 
 factory DataSource.fromJson(String json) { return switch (json) {
   'ALL' => all,
@@ -30,63 +30,62 @@ factory DataSource.fromJson(String json) { return switch (json) {
   'ROBOTS_TXT' => robotsTxt,
   'SPEED' => speed,
   'WORKERS_AI' => workersAi,
-  _ => DataSource._(json),
+  _ => DataSource$Unknown(json),
 }; }
 
-static const DataSource all = DataSource._('ALL');
+static const DataSource all = DataSource$all._();
 
-static const DataSource aiBots = DataSource._('AI_BOTS');
+static const DataSource aiBots = DataSource$aiBots._();
 
-static const DataSource aiGateway = DataSource._('AI_GATEWAY');
+static const DataSource aiGateway = DataSource$aiGateway._();
 
-static const DataSource bgp = DataSource._('BGP');
+static const DataSource bgp = DataSource$bgp._();
 
-static const DataSource bots = DataSource._('BOTS');
+static const DataSource bots = DataSource$bots._();
 
-static const DataSource connectionAnomaly = DataSource._('CONNECTION_ANOMALY');
+static const DataSource connectionAnomaly = DataSource$connectionAnomaly._();
 
-static const DataSource ct = DataSource._('CT');
+static const DataSource ct = DataSource$ct._();
 
-static const DataSource dns = DataSource._('DNS');
+static const DataSource dns = DataSource$dns._();
 
-static const DataSource dnsMagnitude = DataSource._('DNS_MAGNITUDE');
+static const DataSource dnsMagnitude = DataSource$dnsMagnitude._();
 
-static const DataSource dnsAs112 = DataSource._('DNS_AS112');
+static const DataSource dnsAs112 = DataSource$dnsAs112._();
 
-static const DataSource dos = DataSource._('DOS');
+static const DataSource dos = DataSource$dos._();
 
-static const DataSource emailRouting = DataSource._('EMAIL_ROUTING');
+static const DataSource emailRouting = DataSource$emailRouting._();
 
-static const DataSource emailSecurity = DataSource._('EMAIL_SECURITY');
+static const DataSource emailSecurity = DataSource$emailSecurity._();
 
-static const DataSource fw = DataSource._('FW');
+static const DataSource fw = DataSource$fw._();
 
-static const DataSource fwPg = DataSource._('FW_PG');
+static const DataSource fwPg = DataSource$fwPg._();
 
-static const DataSource http = DataSource._('HTTP');
+static const DataSource http = DataSource$http._();
 
-static const DataSource httpControl = DataSource._('HTTP_CONTROL');
+static const DataSource httpControl = DataSource$httpControl._();
 
-static const DataSource httpCrawlerReferer = DataSource._('HTTP_CRAWLER_REFERER');
+static const DataSource httpCrawlerReferer = DataSource$httpCrawlerReferer._();
 
-static const DataSource httpOrigins = DataSource._('HTTP_ORIGINS');
+static const DataSource httpOrigins = DataSource$httpOrigins._();
 
-static const DataSource iqi = DataSource._('IQI');
+static const DataSource iqi = DataSource$iqi._();
 
-static const DataSource leakedCredentials = DataSource._('LEAKED_CREDENTIALS');
+static const DataSource leakedCredentials = DataSource$leakedCredentials._();
 
-static const DataSource net = DataSource._('NET');
+static const DataSource net = DataSource$net._();
 
-static const DataSource robotsTxt = DataSource._('ROBOTS_TXT');
+static const DataSource robotsTxt = DataSource$robotsTxt._();
 
-static const DataSource speed = DataSource._('SPEED');
+static const DataSource speed = DataSource$speed._();
 
-static const DataSource workersAi = DataSource._('WORKERS_AI');
+static const DataSource workersAi = DataSource$workersAi._();
 
 static const List<DataSource> values = [all, aiBots, aiGateway, bgp, bots, connectionAnomaly, ct, dns, dnsMagnitude, dnsAs112, dos, emailRouting, emailSecurity, fw, fwPg, http, httpControl, httpCrawlerReferer, httpOrigins, iqi, leakedCredentials, net, robotsTxt, speed, workersAi];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -118,17 +117,247 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DataSource && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is DataSource$Unknown; } 
 @override String toString() => 'DataSource($value)';
 
  }
+@immutable final class DataSource$all extends DataSource {const DataSource$all._();
+
+@override String get value => 'ALL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$all;
+
+@override int get hashCode => 'ALL'.hashCode;
+
+ }
+@immutable final class DataSource$aiBots extends DataSource {const DataSource$aiBots._();
+
+@override String get value => 'AI_BOTS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$aiBots;
+
+@override int get hashCode => 'AI_BOTS'.hashCode;
+
+ }
+@immutable final class DataSource$aiGateway extends DataSource {const DataSource$aiGateway._();
+
+@override String get value => 'AI_GATEWAY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$aiGateway;
+
+@override int get hashCode => 'AI_GATEWAY'.hashCode;
+
+ }
+@immutable final class DataSource$bgp extends DataSource {const DataSource$bgp._();
+
+@override String get value => 'BGP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$bgp;
+
+@override int get hashCode => 'BGP'.hashCode;
+
+ }
+@immutable final class DataSource$bots extends DataSource {const DataSource$bots._();
+
+@override String get value => 'BOTS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$bots;
+
+@override int get hashCode => 'BOTS'.hashCode;
+
+ }
+@immutable final class DataSource$connectionAnomaly extends DataSource {const DataSource$connectionAnomaly._();
+
+@override String get value => 'CONNECTION_ANOMALY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$connectionAnomaly;
+
+@override int get hashCode => 'CONNECTION_ANOMALY'.hashCode;
+
+ }
+@immutable final class DataSource$ct extends DataSource {const DataSource$ct._();
+
+@override String get value => 'CT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$ct;
+
+@override int get hashCode => 'CT'.hashCode;
+
+ }
+@immutable final class DataSource$dns extends DataSource {const DataSource$dns._();
+
+@override String get value => 'DNS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$dns;
+
+@override int get hashCode => 'DNS'.hashCode;
+
+ }
+@immutable final class DataSource$dnsMagnitude extends DataSource {const DataSource$dnsMagnitude._();
+
+@override String get value => 'DNS_MAGNITUDE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$dnsMagnitude;
+
+@override int get hashCode => 'DNS_MAGNITUDE'.hashCode;
+
+ }
+@immutable final class DataSource$dnsAs112 extends DataSource {const DataSource$dnsAs112._();
+
+@override String get value => 'DNS_AS112';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$dnsAs112;
+
+@override int get hashCode => 'DNS_AS112'.hashCode;
+
+ }
+@immutable final class DataSource$dos extends DataSource {const DataSource$dos._();
+
+@override String get value => 'DOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$dos;
+
+@override int get hashCode => 'DOS'.hashCode;
+
+ }
+@immutable final class DataSource$emailRouting extends DataSource {const DataSource$emailRouting._();
+
+@override String get value => 'EMAIL_ROUTING';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$emailRouting;
+
+@override int get hashCode => 'EMAIL_ROUTING'.hashCode;
+
+ }
+@immutable final class DataSource$emailSecurity extends DataSource {const DataSource$emailSecurity._();
+
+@override String get value => 'EMAIL_SECURITY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$emailSecurity;
+
+@override int get hashCode => 'EMAIL_SECURITY'.hashCode;
+
+ }
+@immutable final class DataSource$fw extends DataSource {const DataSource$fw._();
+
+@override String get value => 'FW';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$fw;
+
+@override int get hashCode => 'FW'.hashCode;
+
+ }
+@immutable final class DataSource$fwPg extends DataSource {const DataSource$fwPg._();
+
+@override String get value => 'FW_PG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$fwPg;
+
+@override int get hashCode => 'FW_PG'.hashCode;
+
+ }
+@immutable final class DataSource$http extends DataSource {const DataSource$http._();
+
+@override String get value => 'HTTP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$http;
+
+@override int get hashCode => 'HTTP'.hashCode;
+
+ }
+@immutable final class DataSource$httpControl extends DataSource {const DataSource$httpControl._();
+
+@override String get value => 'HTTP_CONTROL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$httpControl;
+
+@override int get hashCode => 'HTTP_CONTROL'.hashCode;
+
+ }
+@immutable final class DataSource$httpCrawlerReferer extends DataSource {const DataSource$httpCrawlerReferer._();
+
+@override String get value => 'HTTP_CRAWLER_REFERER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$httpCrawlerReferer;
+
+@override int get hashCode => 'HTTP_CRAWLER_REFERER'.hashCode;
+
+ }
+@immutable final class DataSource$httpOrigins extends DataSource {const DataSource$httpOrigins._();
+
+@override String get value => 'HTTP_ORIGINS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$httpOrigins;
+
+@override int get hashCode => 'HTTP_ORIGINS'.hashCode;
+
+ }
+@immutable final class DataSource$iqi extends DataSource {const DataSource$iqi._();
+
+@override String get value => 'IQI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$iqi;
+
+@override int get hashCode => 'IQI'.hashCode;
+
+ }
+@immutable final class DataSource$leakedCredentials extends DataSource {const DataSource$leakedCredentials._();
+
+@override String get value => 'LEAKED_CREDENTIALS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$leakedCredentials;
+
+@override int get hashCode => 'LEAKED_CREDENTIALS'.hashCode;
+
+ }
+@immutable final class DataSource$net extends DataSource {const DataSource$net._();
+
+@override String get value => 'NET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$net;
+
+@override int get hashCode => 'NET'.hashCode;
+
+ }
+@immutable final class DataSource$robotsTxt extends DataSource {const DataSource$robotsTxt._();
+
+@override String get value => 'ROBOTS_TXT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$robotsTxt;
+
+@override int get hashCode => 'ROBOTS_TXT'.hashCode;
+
+ }
+@immutable final class DataSource$speed extends DataSource {const DataSource$speed._();
+
+@override String get value => 'SPEED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$speed;
+
+@override int get hashCode => 'SPEED'.hashCode;
+
+ }
+@immutable final class DataSource$workersAi extends DataSource {const DataSource$workersAi._();
+
+@override String get value => 'WORKERS_AI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DataSource$workersAi;
+
+@override int get hashCode => 'WORKERS_AI'.hashCode;
+
+ }
+@immutable final class DataSource$Unknown extends DataSource {const DataSource$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DataSource$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Event type for annotations.
-@immutable final class AnnotationsEventType {const AnnotationsEventType._(this.value);
+sealed class AnnotationsEventType {const AnnotationsEventType();
 
 factory AnnotationsEventType.fromJson(String json) { return switch (json) {
   'EVENT' => event,
@@ -137,25 +366,24 @@ factory AnnotationsEventType.fromJson(String json) { return switch (json) {
   'PARTIAL_PROJECTION' => partialProjection,
   'PIPELINE' => pipeline,
   'TRAFFIC_ANOMALY' => trafficAnomaly,
-  _ => AnnotationsEventType._(json),
+  _ => AnnotationsEventType$Unknown(json),
 }; }
 
-static const AnnotationsEventType event = AnnotationsEventType._('EVENT');
+static const AnnotationsEventType event = AnnotationsEventType$event._();
 
-static const AnnotationsEventType general = AnnotationsEventType._('GENERAL');
+static const AnnotationsEventType general = AnnotationsEventType$general._();
 
-static const AnnotationsEventType outage = AnnotationsEventType._('OUTAGE');
+static const AnnotationsEventType outage = AnnotationsEventType$outage._();
 
-static const AnnotationsEventType partialProjection = AnnotationsEventType._('PARTIAL_PROJECTION');
+static const AnnotationsEventType partialProjection = AnnotationsEventType$partialProjection._();
 
-static const AnnotationsEventType pipeline = AnnotationsEventType._('PIPELINE');
+static const AnnotationsEventType pipeline = AnnotationsEventType$pipeline._();
 
-static const AnnotationsEventType trafficAnomaly = AnnotationsEventType._('TRAFFIC_ANOMALY');
+static const AnnotationsEventType trafficAnomaly = AnnotationsEventType$trafficAnomaly._();
 
 static const List<AnnotationsEventType> values = [event, general, outage, partialProjection, pipeline, trafficAnomaly];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -168,13 +396,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AnnotationsEventType$Unknown; } 
+@override String toString() => 'AnnotationsEventType($value)';
+
+ }
+@immutable final class AnnotationsEventType$event extends AnnotationsEventType {const AnnotationsEventType$event._();
+
+@override String get value => 'EVENT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AnnotationsEventType$event;
+
+@override int get hashCode => 'EVENT'.hashCode;
+
+ }
+@immutable final class AnnotationsEventType$general extends AnnotationsEventType {const AnnotationsEventType$general._();
+
+@override String get value => 'GENERAL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AnnotationsEventType$general;
+
+@override int get hashCode => 'GENERAL'.hashCode;
+
+ }
+@immutable final class AnnotationsEventType$outage extends AnnotationsEventType {const AnnotationsEventType$outage._();
+
+@override String get value => 'OUTAGE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AnnotationsEventType$outage;
+
+@override int get hashCode => 'OUTAGE'.hashCode;
+
+ }
+@immutable final class AnnotationsEventType$partialProjection extends AnnotationsEventType {const AnnotationsEventType$partialProjection._();
+
+@override String get value => 'PARTIAL_PROJECTION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AnnotationsEventType$partialProjection;
+
+@override int get hashCode => 'PARTIAL_PROJECTION'.hashCode;
+
+ }
+@immutable final class AnnotationsEventType$pipeline extends AnnotationsEventType {const AnnotationsEventType$pipeline._();
+
+@override String get value => 'PIPELINE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AnnotationsEventType$pipeline;
+
+@override int get hashCode => 'PIPELINE'.hashCode;
+
+ }
+@immutable final class AnnotationsEventType$trafficAnomaly extends AnnotationsEventType {const AnnotationsEventType$trafficAnomaly._();
+
+@override String get value => 'TRAFFIC_ANOMALY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AnnotationsEventType$trafficAnomaly;
+
+@override int get hashCode => 'TRAFFIC_ANOMALY'.hashCode;
+
+ }
+@immutable final class AnnotationsEventType$Unknown extends AnnotationsEventType {const AnnotationsEventType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AnnotationsEventType && other.value == value;
+    other is AnnotationsEventType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AnnotationsEventType($value)';
 
  }
 /// Annotation associated with the result (e.g. outage or other type of event).

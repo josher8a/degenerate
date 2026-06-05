@@ -3,26 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
-@immutable
-final class ProfileAvatarTypeEnum {
-  const ProfileAvatarTypeEnum._(this.value);
+sealed class ProfileAvatarTypeEnum {
+  const ProfileAvatarTypeEnum();
 
   factory ProfileAvatarTypeEnum.fromJson(String json) {
     return switch (json) {
       'TD' => td,
       'IM' => im,
-      _ => ProfileAvatarTypeEnum._(json),
+      _ => ProfileAvatarTypeEnum$Unknown(json),
     };
   }
 
-  static const ProfileAvatarTypeEnum td = ProfileAvatarTypeEnum._('TD');
+  static const ProfileAvatarTypeEnum td = ProfileAvatarTypeEnum$td._();
 
-  static const ProfileAvatarTypeEnum im = ProfileAvatarTypeEnum._('IM');
+  static const ProfileAvatarTypeEnum im = ProfileAvatarTypeEnum$im._();
 
   static const List<ProfileAvatarTypeEnum> values = [td, im];
 
-  final String value;
-
+  String get value;
   String toJson() {
     return value;
   }
@@ -38,17 +36,55 @@ final class ProfileAvatarTypeEnum {
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
-    return !values.contains(this);
+    return this is ProfileAvatarTypeEnum$Unknown;
   }
+
+  @override
+  String toString() => 'ProfileAvatarTypeEnum($value)';
+}
+
+@immutable
+final class ProfileAvatarTypeEnum$td extends ProfileAvatarTypeEnum {
+  const ProfileAvatarTypeEnum$td._();
+
+  @override
+  String get value => 'TD';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ProfileAvatarTypeEnum$td;
+
+  @override
+  int get hashCode => 'TD'.hashCode;
+}
+
+@immutable
+final class ProfileAvatarTypeEnum$im extends ProfileAvatarTypeEnum {
+  const ProfileAvatarTypeEnum$im._();
+
+  @override
+  String get value => 'IM';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is ProfileAvatarTypeEnum$im;
+
+  @override
+  int get hashCode => 'IM'.hashCode;
+}
+
+@immutable
+final class ProfileAvatarTypeEnum$Unknown extends ProfileAvatarTypeEnum {
+  const ProfileAvatarTypeEnum$Unknown(this.value);
+
+  @override
+  final String value;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ProfileAvatarTypeEnum && other.value == value;
+      other is ProfileAvatarTypeEnum$Unknown && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
-
-  @override
-  String toString() => 'ProfileAvatarTypeEnum($value)';
 }

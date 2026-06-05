@@ -2,25 +2,24 @@
 // Source: #/components/schemas/SecretScanningUpdateOrgPatternConfigsRequest (inline: ProviderPatternSettings)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Push protection setting to set for the pattern.
-@immutable final class ProviderPatternSettingsPushProtectionSetting {const ProviderPatternSettingsPushProtectionSetting._(this.value);
+sealed class ProviderPatternSettingsPushProtectionSetting {const ProviderPatternSettingsPushProtectionSetting();
 
 factory ProviderPatternSettingsPushProtectionSetting.fromJson(String json) { return switch (json) {
   'not-set' => notSet,
   'disabled' => disabled,
   'enabled' => enabled,
-  _ => ProviderPatternSettingsPushProtectionSetting._(json),
+  _ => ProviderPatternSettingsPushProtectionSetting$Unknown(json),
 }; }
 
-static const ProviderPatternSettingsPushProtectionSetting notSet = ProviderPatternSettingsPushProtectionSetting._('not-set');
+static const ProviderPatternSettingsPushProtectionSetting notSet = ProviderPatternSettingsPushProtectionSetting$notSet._();
 
-static const ProviderPatternSettingsPushProtectionSetting disabled = ProviderPatternSettingsPushProtectionSetting._('disabled');
+static const ProviderPatternSettingsPushProtectionSetting disabled = ProviderPatternSettingsPushProtectionSetting$disabled._();
 
-static const ProviderPatternSettingsPushProtectionSetting enabled = ProviderPatternSettingsPushProtectionSetting._('enabled');
+static const ProviderPatternSettingsPushProtectionSetting enabled = ProviderPatternSettingsPushProtectionSetting$enabled._();
 
 static const List<ProviderPatternSettingsPushProtectionSetting> values = [notSet, disabled, enabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ProviderPatternSettingsPushProtectionSetting$Unknown; } 
+@override String toString() => 'ProviderPatternSettingsPushProtectionSetting($value)';
+
+ }
+@immutable final class ProviderPatternSettingsPushProtectionSetting$notSet extends ProviderPatternSettingsPushProtectionSetting {const ProviderPatternSettingsPushProtectionSetting$notSet._();
+
+@override String get value => 'not-set';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ProviderPatternSettingsPushProtectionSetting$notSet;
+
+@override int get hashCode => 'not-set'.hashCode;
+
+ }
+@immutable final class ProviderPatternSettingsPushProtectionSetting$disabled extends ProviderPatternSettingsPushProtectionSetting {const ProviderPatternSettingsPushProtectionSetting$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ProviderPatternSettingsPushProtectionSetting$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class ProviderPatternSettingsPushProtectionSetting$enabled extends ProviderPatternSettingsPushProtectionSetting {const ProviderPatternSettingsPushProtectionSetting$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ProviderPatternSettingsPushProtectionSetting$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class ProviderPatternSettingsPushProtectionSetting$Unknown extends ProviderPatternSettingsPushProtectionSetting {const ProviderPatternSettingsPushProtectionSetting$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ProviderPatternSettingsPushProtectionSetting && other.value == value;
+    other is ProviderPatternSettingsPushProtectionSetting$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ProviderPatternSettingsPushProtectionSetting($value)';
 
  }
 @immutable final class ProviderPatternSettings {const ProviderPatternSettings({this.tokenType, this.pushProtectionSetting, });

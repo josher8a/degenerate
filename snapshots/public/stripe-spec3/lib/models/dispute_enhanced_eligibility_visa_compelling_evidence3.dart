@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DisputeEnhancedEligibilityVisaCompellingEvidence3
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RequiredActions {const RequiredActions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RequiredActions {const RequiredActions();
 
 factory RequiredActions.fromJson(String json) { return switch (json) {
   'missing_customer_identifiers' => missingCustomerIdentifiers,
@@ -9,23 +9,22 @@ factory RequiredActions.fromJson(String json) { return switch (json) {
   'missing_merchandise_or_services' => missingMerchandiseOrServices,
   'missing_prior_undisputed_transaction_description' => missingPriorUndisputedTransactionDescription,
   'missing_prior_undisputed_transactions' => missingPriorUndisputedTransactions,
-  _ => RequiredActions._(json),
+  _ => RequiredActions$Unknown(json),
 }; }
 
-static const RequiredActions missingCustomerIdentifiers = RequiredActions._('missing_customer_identifiers');
+static const RequiredActions missingCustomerIdentifiers = RequiredActions$missingCustomerIdentifiers._();
 
-static const RequiredActions missingDisputedTransactionDescription = RequiredActions._('missing_disputed_transaction_description');
+static const RequiredActions missingDisputedTransactionDescription = RequiredActions$missingDisputedTransactionDescription._();
 
-static const RequiredActions missingMerchandiseOrServices = RequiredActions._('missing_merchandise_or_services');
+static const RequiredActions missingMerchandiseOrServices = RequiredActions$missingMerchandiseOrServices._();
 
-static const RequiredActions missingPriorUndisputedTransactionDescription = RequiredActions._('missing_prior_undisputed_transaction_description');
+static const RequiredActions missingPriorUndisputedTransactionDescription = RequiredActions$missingPriorUndisputedTransactionDescription._();
 
-static const RequiredActions missingPriorUndisputedTransactions = RequiredActions._('missing_prior_undisputed_transactions');
+static const RequiredActions missingPriorUndisputedTransactions = RequiredActions$missingPriorUndisputedTransactions._();
 
 static const List<RequiredActions> values = [missingCustomerIdentifiers, missingDisputedTransactionDescription, missingMerchandiseOrServices, missingPriorUndisputedTransactionDescription, missingPriorUndisputedTransactions];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,35 +36,84 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RequiredActions && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is RequiredActions$Unknown; } 
 @override String toString() => 'RequiredActions($value)';
 
  }
+@immutable final class RequiredActions$missingCustomerIdentifiers extends RequiredActions {const RequiredActions$missingCustomerIdentifiers._();
+
+@override String get value => 'missing_customer_identifiers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RequiredActions$missingCustomerIdentifiers;
+
+@override int get hashCode => 'missing_customer_identifiers'.hashCode;
+
+ }
+@immutable final class RequiredActions$missingDisputedTransactionDescription extends RequiredActions {const RequiredActions$missingDisputedTransactionDescription._();
+
+@override String get value => 'missing_disputed_transaction_description';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RequiredActions$missingDisputedTransactionDescription;
+
+@override int get hashCode => 'missing_disputed_transaction_description'.hashCode;
+
+ }
+@immutable final class RequiredActions$missingMerchandiseOrServices extends RequiredActions {const RequiredActions$missingMerchandiseOrServices._();
+
+@override String get value => 'missing_merchandise_or_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RequiredActions$missingMerchandiseOrServices;
+
+@override int get hashCode => 'missing_merchandise_or_services'.hashCode;
+
+ }
+@immutable final class RequiredActions$missingPriorUndisputedTransactionDescription extends RequiredActions {const RequiredActions$missingPriorUndisputedTransactionDescription._();
+
+@override String get value => 'missing_prior_undisputed_transaction_description';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RequiredActions$missingPriorUndisputedTransactionDescription;
+
+@override int get hashCode => 'missing_prior_undisputed_transaction_description'.hashCode;
+
+ }
+@immutable final class RequiredActions$missingPriorUndisputedTransactions extends RequiredActions {const RequiredActions$missingPriorUndisputedTransactions._();
+
+@override String get value => 'missing_prior_undisputed_transactions';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RequiredActions$missingPriorUndisputedTransactions;
+
+@override int get hashCode => 'missing_prior_undisputed_transactions'.hashCode;
+
+ }
+@immutable final class RequiredActions$Unknown extends RequiredActions {const RequiredActions$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RequiredActions$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Visa Compelling Evidence 3.0 eligibility status.
-@immutable final class DisputeEnhancedEligibilityVisaCompellingEvidence3Status {const DisputeEnhancedEligibilityVisaCompellingEvidence3Status._(this.value);
+sealed class DisputeEnhancedEligibilityVisaCompellingEvidence3Status {const DisputeEnhancedEligibilityVisaCompellingEvidence3Status();
 
 factory DisputeEnhancedEligibilityVisaCompellingEvidence3Status.fromJson(String json) { return switch (json) {
   'not_qualified' => notQualified,
   'qualified' => qualified,
   'requires_action' => requiresAction,
-  _ => DisputeEnhancedEligibilityVisaCompellingEvidence3Status._(json),
+  _ => DisputeEnhancedEligibilityVisaCompellingEvidence3Status$Unknown(json),
 }; }
 
-static const DisputeEnhancedEligibilityVisaCompellingEvidence3Status notQualified = DisputeEnhancedEligibilityVisaCompellingEvidence3Status._('not_qualified');
+static const DisputeEnhancedEligibilityVisaCompellingEvidence3Status notQualified = DisputeEnhancedEligibilityVisaCompellingEvidence3Status$notQualified._();
 
-static const DisputeEnhancedEligibilityVisaCompellingEvidence3Status qualified = DisputeEnhancedEligibilityVisaCompellingEvidence3Status._('qualified');
+static const DisputeEnhancedEligibilityVisaCompellingEvidence3Status qualified = DisputeEnhancedEligibilityVisaCompellingEvidence3Status$qualified._();
 
-static const DisputeEnhancedEligibilityVisaCompellingEvidence3Status requiresAction = DisputeEnhancedEligibilityVisaCompellingEvidence3Status._('requires_action');
+static const DisputeEnhancedEligibilityVisaCompellingEvidence3Status requiresAction = DisputeEnhancedEligibilityVisaCompellingEvidence3Status$requiresAction._();
 
 static const List<DisputeEnhancedEligibilityVisaCompellingEvidence3Status> values = [notQualified, qualified, requiresAction];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -75,13 +123,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DisputeEnhancedEligibilityVisaCompellingEvidence3Status$Unknown; } 
+@override String toString() => 'DisputeEnhancedEligibilityVisaCompellingEvidence3Status($value)';
+
+ }
+@immutable final class DisputeEnhancedEligibilityVisaCompellingEvidence3Status$notQualified extends DisputeEnhancedEligibilityVisaCompellingEvidence3Status {const DisputeEnhancedEligibilityVisaCompellingEvidence3Status$notQualified._();
+
+@override String get value => 'not_qualified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeEnhancedEligibilityVisaCompellingEvidence3Status$notQualified;
+
+@override int get hashCode => 'not_qualified'.hashCode;
+
+ }
+@immutable final class DisputeEnhancedEligibilityVisaCompellingEvidence3Status$qualified extends DisputeEnhancedEligibilityVisaCompellingEvidence3Status {const DisputeEnhancedEligibilityVisaCompellingEvidence3Status$qualified._();
+
+@override String get value => 'qualified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeEnhancedEligibilityVisaCompellingEvidence3Status$qualified;
+
+@override int get hashCode => 'qualified'.hashCode;
+
+ }
+@immutable final class DisputeEnhancedEligibilityVisaCompellingEvidence3Status$requiresAction extends DisputeEnhancedEligibilityVisaCompellingEvidence3Status {const DisputeEnhancedEligibilityVisaCompellingEvidence3Status$requiresAction._();
+
+@override String get value => 'requires_action';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeEnhancedEligibilityVisaCompellingEvidence3Status$requiresAction;
+
+@override int get hashCode => 'requires_action'.hashCode;
+
+ }
+@immutable final class DisputeEnhancedEligibilityVisaCompellingEvidence3Status$Unknown extends DisputeEnhancedEligibilityVisaCompellingEvidence3Status {const DisputeEnhancedEligibilityVisaCompellingEvidence3Status$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DisputeEnhancedEligibilityVisaCompellingEvidence3Status && other.value == value;
+    other is DisputeEnhancedEligibilityVisaCompellingEvidence3Status$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DisputeEnhancedEligibilityVisaCompellingEvidence3Status($value)';
 
  }
 /// 

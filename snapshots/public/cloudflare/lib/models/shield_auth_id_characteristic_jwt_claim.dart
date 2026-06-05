@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ShieldAuthIdCharacteristicJwtClaim
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of characteristic.
-@immutable final class ShieldAuthIdCharacteristicJwtClaimType {const ShieldAuthIdCharacteristicJwtClaimType._(this.value);
+sealed class ShieldAuthIdCharacteristicJwtClaimType {const ShieldAuthIdCharacteristicJwtClaimType();
 
 factory ShieldAuthIdCharacteristicJwtClaimType.fromJson(String json) { return switch (json) {
   'jwt' => jwt,
-  _ => ShieldAuthIdCharacteristicJwtClaimType._(json),
+  _ => ShieldAuthIdCharacteristicJwtClaimType$Unknown(json),
 }; }
 
-static const ShieldAuthIdCharacteristicJwtClaimType jwt = ShieldAuthIdCharacteristicJwtClaimType._('jwt');
+static const ShieldAuthIdCharacteristicJwtClaimType jwt = ShieldAuthIdCharacteristicJwtClaimType$jwt._();
 
 static const List<ShieldAuthIdCharacteristicJwtClaimType> values = [jwt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShieldAuthIdCharacteristicJwtClaimType$Unknown; } 
+@override String toString() => 'ShieldAuthIdCharacteristicJwtClaimType($value)';
+
+ }
+@immutable final class ShieldAuthIdCharacteristicJwtClaimType$jwt extends ShieldAuthIdCharacteristicJwtClaimType {const ShieldAuthIdCharacteristicJwtClaimType$jwt._();
+
+@override String get value => 'jwt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldAuthIdCharacteristicJwtClaimType$jwt;
+
+@override int get hashCode => 'jwt'.hashCode;
+
+ }
+@immutable final class ShieldAuthIdCharacteristicJwtClaimType$Unknown extends ShieldAuthIdCharacteristicJwtClaimType {const ShieldAuthIdCharacteristicJwtClaimType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldAuthIdCharacteristicJwtClaimType && other.value == value;
+    other is ShieldAuthIdCharacteristicJwtClaimType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShieldAuthIdCharacteristicJwtClaimType($value)';
 
  }
 /// Auth ID Characteristic extracted from JWT Token Claims

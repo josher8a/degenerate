@@ -2,28 +2,27 @@
 // Source: #/components/schemas/IssuingAuthorizationThreeDSecure (inline: Result)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The outcome of the 3D Secure authentication request.
-@immutable final class IssuingAuthorizationThreeDSecureResult {const IssuingAuthorizationThreeDSecureResult._(this.value);
+sealed class IssuingAuthorizationThreeDSecureResult {const IssuingAuthorizationThreeDSecureResult();
 
 factory IssuingAuthorizationThreeDSecureResult.fromJson(String json) { return switch (json) {
   'attempt_acknowledged' => attemptAcknowledged,
   'authenticated' => authenticated,
   'failed' => failed,
   'required' => $required,
-  _ => IssuingAuthorizationThreeDSecureResult._(json),
+  _ => IssuingAuthorizationThreeDSecureResult$Unknown(json),
 }; }
 
-static const IssuingAuthorizationThreeDSecureResult attemptAcknowledged = IssuingAuthorizationThreeDSecureResult._('attempt_acknowledged');
+static const IssuingAuthorizationThreeDSecureResult attemptAcknowledged = IssuingAuthorizationThreeDSecureResult$attemptAcknowledged._();
 
-static const IssuingAuthorizationThreeDSecureResult authenticated = IssuingAuthorizationThreeDSecureResult._('authenticated');
+static const IssuingAuthorizationThreeDSecureResult authenticated = IssuingAuthorizationThreeDSecureResult$authenticated._();
 
-static const IssuingAuthorizationThreeDSecureResult failed = IssuingAuthorizationThreeDSecureResult._('failed');
+static const IssuingAuthorizationThreeDSecureResult failed = IssuingAuthorizationThreeDSecureResult$failed._();
 
-static const IssuingAuthorizationThreeDSecureResult $required = IssuingAuthorizationThreeDSecureResult._('required');
+static const IssuingAuthorizationThreeDSecureResult $required = IssuingAuthorizationThreeDSecureResult$$required._();
 
 static const List<IssuingAuthorizationThreeDSecureResult> values = [attemptAcknowledged, authenticated, failed, $required];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingAuthorizationThreeDSecureResult$Unknown; } 
+@override String toString() => 'IssuingAuthorizationThreeDSecureResult($value)';
+
+ }
+@immutable final class IssuingAuthorizationThreeDSecureResult$attemptAcknowledged extends IssuingAuthorizationThreeDSecureResult {const IssuingAuthorizationThreeDSecureResult$attemptAcknowledged._();
+
+@override String get value => 'attempt_acknowledged';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationThreeDSecureResult$attemptAcknowledged;
+
+@override int get hashCode => 'attempt_acknowledged'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationThreeDSecureResult$authenticated extends IssuingAuthorizationThreeDSecureResult {const IssuingAuthorizationThreeDSecureResult$authenticated._();
+
+@override String get value => 'authenticated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationThreeDSecureResult$authenticated;
+
+@override int get hashCode => 'authenticated'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationThreeDSecureResult$failed extends IssuingAuthorizationThreeDSecureResult {const IssuingAuthorizationThreeDSecureResult$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationThreeDSecureResult$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationThreeDSecureResult$$required extends IssuingAuthorizationThreeDSecureResult {const IssuingAuthorizationThreeDSecureResult$$required._();
+
+@override String get value => 'required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationThreeDSecureResult$$required;
+
+@override int get hashCode => 'required'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationThreeDSecureResult$Unknown extends IssuingAuthorizationThreeDSecureResult {const IssuingAuthorizationThreeDSecureResult$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingAuthorizationThreeDSecureResult && other.value == value;
+    other is IssuingAuthorizationThreeDSecureResult$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingAuthorizationThreeDSecureResult($value)';
 
  }

@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `eval.run.canceled`.
 /// 
-@immutable final class WebhookEvalRunCanceledType {const WebhookEvalRunCanceledType._(this.value);
+sealed class WebhookEvalRunCanceledType {const WebhookEvalRunCanceledType();
 
 factory WebhookEvalRunCanceledType.fromJson(String json) { return switch (json) {
   'eval.run.canceled' => evalRunCanceled,
-  _ => WebhookEvalRunCanceledType._(json),
+  _ => WebhookEvalRunCanceledType$Unknown(json),
 }; }
 
-static const WebhookEvalRunCanceledType evalRunCanceled = WebhookEvalRunCanceledType._('eval.run.canceled');
+static const WebhookEvalRunCanceledType evalRunCanceled = WebhookEvalRunCanceledType$evalRunCanceled._();
 
 static const List<WebhookEvalRunCanceledType> values = [evalRunCanceled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookEvalRunCanceledType$Unknown; } 
+@override String toString() => 'WebhookEvalRunCanceledType($value)';
+
+ }
+@immutable final class WebhookEvalRunCanceledType$evalRunCanceled extends WebhookEvalRunCanceledType {const WebhookEvalRunCanceledType$evalRunCanceled._();
+
+@override String get value => 'eval.run.canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookEvalRunCanceledType$evalRunCanceled;
+
+@override int get hashCode => 'eval.run.canceled'.hashCode;
+
+ }
+@immutable final class WebhookEvalRunCanceledType$Unknown extends WebhookEvalRunCanceledType {const WebhookEvalRunCanceledType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookEvalRunCanceledType && other.value == value;
+    other is WebhookEvalRunCanceledType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookEvalRunCanceledType($value)';
 
  }
 /// Sent when an eval run has been canceled.

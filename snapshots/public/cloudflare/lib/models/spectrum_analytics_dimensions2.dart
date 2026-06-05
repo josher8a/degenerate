@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SpectrumAnalyticsDimensions
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SpectrumAnalyticsDimensions2 {const SpectrumAnalyticsDimensions2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SpectrumAnalyticsDimensions2 {const SpectrumAnalyticsDimensions2();
 
 factory SpectrumAnalyticsDimensions2.fromJson(String json) { return switch (json) {
   'event' => event,
   'appID' => appId,
   'coloName' => coloName,
   'ipVersion' => ipVersion,
-  _ => SpectrumAnalyticsDimensions2._(json),
+  _ => SpectrumAnalyticsDimensions2$Unknown(json),
 }; }
 
-static const SpectrumAnalyticsDimensions2 event = SpectrumAnalyticsDimensions2._('event');
+static const SpectrumAnalyticsDimensions2 event = SpectrumAnalyticsDimensions2$event._();
 
-static const SpectrumAnalyticsDimensions2 appId = SpectrumAnalyticsDimensions2._('appID');
+static const SpectrumAnalyticsDimensions2 appId = SpectrumAnalyticsDimensions2$appId._();
 
-static const SpectrumAnalyticsDimensions2 coloName = SpectrumAnalyticsDimensions2._('coloName');
+static const SpectrumAnalyticsDimensions2 coloName = SpectrumAnalyticsDimensions2$coloName._();
 
-static const SpectrumAnalyticsDimensions2 ipVersion = SpectrumAnalyticsDimensions2._('ipVersion');
+static const SpectrumAnalyticsDimensions2 ipVersion = SpectrumAnalyticsDimensions2$ipVersion._();
 
 static const List<SpectrumAnalyticsDimensions2> values = [event, appId, coloName, ipVersion];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SpectrumAnalyticsDimensions2$Unknown; } 
+@override String toString() => 'SpectrumAnalyticsDimensions2($value)';
+
+ }
+@immutable final class SpectrumAnalyticsDimensions2$event extends SpectrumAnalyticsDimensions2 {const SpectrumAnalyticsDimensions2$event._();
+
+@override String get value => 'event';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumAnalyticsDimensions2$event;
+
+@override int get hashCode => 'event'.hashCode;
+
+ }
+@immutable final class SpectrumAnalyticsDimensions2$appId extends SpectrumAnalyticsDimensions2 {const SpectrumAnalyticsDimensions2$appId._();
+
+@override String get value => 'appID';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumAnalyticsDimensions2$appId;
+
+@override int get hashCode => 'appID'.hashCode;
+
+ }
+@immutable final class SpectrumAnalyticsDimensions2$coloName extends SpectrumAnalyticsDimensions2 {const SpectrumAnalyticsDimensions2$coloName._();
+
+@override String get value => 'coloName';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumAnalyticsDimensions2$coloName;
+
+@override int get hashCode => 'coloName'.hashCode;
+
+ }
+@immutable final class SpectrumAnalyticsDimensions2$ipVersion extends SpectrumAnalyticsDimensions2 {const SpectrumAnalyticsDimensions2$ipVersion._();
+
+@override String get value => 'ipVersion';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumAnalyticsDimensions2$ipVersion;
+
+@override int get hashCode => 'ipVersion'.hashCode;
+
+ }
+@immutable final class SpectrumAnalyticsDimensions2$Unknown extends SpectrumAnalyticsDimensions2 {const SpectrumAnalyticsDimensions2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SpectrumAnalyticsDimensions2 && other.value == value;
+    other is SpectrumAnalyticsDimensions2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SpectrumAnalyticsDimensions2($value)';
 
  }

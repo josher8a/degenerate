@@ -2,7 +2,7 @@
 // Source: #/components/schemas/BillingPortalSession
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration.dart';import 'package:pub_stripe_spec3/models/billing_portal_session/configuration.dart';import 'package:pub_stripe_spec3/models/portal_flows_flow.dart';/// The IETF language tag of the locale Customer Portal is displayed in. If blank or auto, the customer’s `preferred_locales` or browser’s locale is used.
-@immutable final class BillingPortalSessionLocale {const BillingPortalSessionLocale._(this.value);
+sealed class BillingPortalSessionLocale {const BillingPortalSessionLocale();
 
 factory BillingPortalSessionLocale.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -52,107 +52,106 @@ factory BillingPortalSessionLocale.fromJson(String json) { return switch (json) 
   'zh' => zh,
   'zh-HK' => zhHk,
   'zh-TW' => zhTw,
-  _ => BillingPortalSessionLocale._(json),
+  _ => BillingPortalSessionLocale$Unknown(json),
 }; }
 
-static const BillingPortalSessionLocale auto = BillingPortalSessionLocale._('auto');
+static const BillingPortalSessionLocale auto = BillingPortalSessionLocale$auto._();
 
-static const BillingPortalSessionLocale bg = BillingPortalSessionLocale._('bg');
+static const BillingPortalSessionLocale bg = BillingPortalSessionLocale$bg._();
 
-static const BillingPortalSessionLocale cs = BillingPortalSessionLocale._('cs');
+static const BillingPortalSessionLocale cs = BillingPortalSessionLocale$cs._();
 
-static const BillingPortalSessionLocale da = BillingPortalSessionLocale._('da');
+static const BillingPortalSessionLocale da = BillingPortalSessionLocale$da._();
 
-static const BillingPortalSessionLocale de = BillingPortalSessionLocale._('de');
+static const BillingPortalSessionLocale de = BillingPortalSessionLocale$de._();
 
-static const BillingPortalSessionLocale el = BillingPortalSessionLocale._('el');
+static const BillingPortalSessionLocale el = BillingPortalSessionLocale$el._();
 
-static const BillingPortalSessionLocale en = BillingPortalSessionLocale._('en');
+static const BillingPortalSessionLocale en = BillingPortalSessionLocale$en._();
 
-static const BillingPortalSessionLocale enAu = BillingPortalSessionLocale._('en-AU');
+static const BillingPortalSessionLocale enAu = BillingPortalSessionLocale$enAu._();
 
-static const BillingPortalSessionLocale enCa = BillingPortalSessionLocale._('en-CA');
+static const BillingPortalSessionLocale enCa = BillingPortalSessionLocale$enCa._();
 
-static const BillingPortalSessionLocale enGb = BillingPortalSessionLocale._('en-GB');
+static const BillingPortalSessionLocale enGb = BillingPortalSessionLocale$enGb._();
 
-static const BillingPortalSessionLocale enIe = BillingPortalSessionLocale._('en-IE');
+static const BillingPortalSessionLocale enIe = BillingPortalSessionLocale$enIe._();
 
-static const BillingPortalSessionLocale enIn = BillingPortalSessionLocale._('en-IN');
+static const BillingPortalSessionLocale enIn = BillingPortalSessionLocale$enIn._();
 
-static const BillingPortalSessionLocale enNz = BillingPortalSessionLocale._('en-NZ');
+static const BillingPortalSessionLocale enNz = BillingPortalSessionLocale$enNz._();
 
-static const BillingPortalSessionLocale enSg = BillingPortalSessionLocale._('en-SG');
+static const BillingPortalSessionLocale enSg = BillingPortalSessionLocale$enSg._();
 
-static const BillingPortalSessionLocale es = BillingPortalSessionLocale._('es');
+static const BillingPortalSessionLocale es = BillingPortalSessionLocale$es._();
 
-static const BillingPortalSessionLocale es419 = BillingPortalSessionLocale._('es-419');
+static const BillingPortalSessionLocale es419 = BillingPortalSessionLocale$es419._();
 
-static const BillingPortalSessionLocale et = BillingPortalSessionLocale._('et');
+static const BillingPortalSessionLocale et = BillingPortalSessionLocale$et._();
 
-static const BillingPortalSessionLocale fi = BillingPortalSessionLocale._('fi');
+static const BillingPortalSessionLocale fi = BillingPortalSessionLocale$fi._();
 
-static const BillingPortalSessionLocale fil = BillingPortalSessionLocale._('fil');
+static const BillingPortalSessionLocale fil = BillingPortalSessionLocale$fil._();
 
-static const BillingPortalSessionLocale fr = BillingPortalSessionLocale._('fr');
+static const BillingPortalSessionLocale fr = BillingPortalSessionLocale$fr._();
 
-static const BillingPortalSessionLocale frCa = BillingPortalSessionLocale._('fr-CA');
+static const BillingPortalSessionLocale frCa = BillingPortalSessionLocale$frCa._();
 
-static const BillingPortalSessionLocale hr = BillingPortalSessionLocale._('hr');
+static const BillingPortalSessionLocale hr = BillingPortalSessionLocale$hr._();
 
-static const BillingPortalSessionLocale hu = BillingPortalSessionLocale._('hu');
+static const BillingPortalSessionLocale hu = BillingPortalSessionLocale$hu._();
 
-static const BillingPortalSessionLocale id = BillingPortalSessionLocale._('id');
+static const BillingPortalSessionLocale id = BillingPortalSessionLocale$id._();
 
-static const BillingPortalSessionLocale it = BillingPortalSessionLocale._('it');
+static const BillingPortalSessionLocale it = BillingPortalSessionLocale$it._();
 
-static const BillingPortalSessionLocale ja = BillingPortalSessionLocale._('ja');
+static const BillingPortalSessionLocale ja = BillingPortalSessionLocale$ja._();
 
-static const BillingPortalSessionLocale ko = BillingPortalSessionLocale._('ko');
+static const BillingPortalSessionLocale ko = BillingPortalSessionLocale$ko._();
 
-static const BillingPortalSessionLocale lt = BillingPortalSessionLocale._('lt');
+static const BillingPortalSessionLocale lt = BillingPortalSessionLocale$lt._();
 
-static const BillingPortalSessionLocale lv = BillingPortalSessionLocale._('lv');
+static const BillingPortalSessionLocale lv = BillingPortalSessionLocale$lv._();
 
-static const BillingPortalSessionLocale ms = BillingPortalSessionLocale._('ms');
+static const BillingPortalSessionLocale ms = BillingPortalSessionLocale$ms._();
 
-static const BillingPortalSessionLocale mt = BillingPortalSessionLocale._('mt');
+static const BillingPortalSessionLocale mt = BillingPortalSessionLocale$mt._();
 
-static const BillingPortalSessionLocale nb = BillingPortalSessionLocale._('nb');
+static const BillingPortalSessionLocale nb = BillingPortalSessionLocale$nb._();
 
-static const BillingPortalSessionLocale nl = BillingPortalSessionLocale._('nl');
+static const BillingPortalSessionLocale nl = BillingPortalSessionLocale$nl._();
 
-static const BillingPortalSessionLocale pl = BillingPortalSessionLocale._('pl');
+static const BillingPortalSessionLocale pl = BillingPortalSessionLocale$pl._();
 
-static const BillingPortalSessionLocale pt = BillingPortalSessionLocale._('pt');
+static const BillingPortalSessionLocale pt = BillingPortalSessionLocale$pt._();
 
-static const BillingPortalSessionLocale ptBr = BillingPortalSessionLocale._('pt-BR');
+static const BillingPortalSessionLocale ptBr = BillingPortalSessionLocale$ptBr._();
 
-static const BillingPortalSessionLocale ro = BillingPortalSessionLocale._('ro');
+static const BillingPortalSessionLocale ro = BillingPortalSessionLocale$ro._();
 
-static const BillingPortalSessionLocale ru = BillingPortalSessionLocale._('ru');
+static const BillingPortalSessionLocale ru = BillingPortalSessionLocale$ru._();
 
-static const BillingPortalSessionLocale sk = BillingPortalSessionLocale._('sk');
+static const BillingPortalSessionLocale sk = BillingPortalSessionLocale$sk._();
 
-static const BillingPortalSessionLocale sl = BillingPortalSessionLocale._('sl');
+static const BillingPortalSessionLocale sl = BillingPortalSessionLocale$sl._();
 
-static const BillingPortalSessionLocale sv = BillingPortalSessionLocale._('sv');
+static const BillingPortalSessionLocale sv = BillingPortalSessionLocale$sv._();
 
-static const BillingPortalSessionLocale th = BillingPortalSessionLocale._('th');
+static const BillingPortalSessionLocale th = BillingPortalSessionLocale$th._();
 
-static const BillingPortalSessionLocale tr = BillingPortalSessionLocale._('tr');
+static const BillingPortalSessionLocale tr = BillingPortalSessionLocale$tr._();
 
-static const BillingPortalSessionLocale vi = BillingPortalSessionLocale._('vi');
+static const BillingPortalSessionLocale vi = BillingPortalSessionLocale$vi._();
 
-static const BillingPortalSessionLocale zh = BillingPortalSessionLocale._('zh');
+static const BillingPortalSessionLocale zh = BillingPortalSessionLocale$zh._();
 
-static const BillingPortalSessionLocale zhHk = BillingPortalSessionLocale._('zh-HK');
+static const BillingPortalSessionLocale zhHk = BillingPortalSessionLocale$zhHk._();
 
-static const BillingPortalSessionLocale zhTw = BillingPortalSessionLocale._('zh-TW');
+static const BillingPortalSessionLocale zhTw = BillingPortalSessionLocale$zhTw._();
 
 static const List<BillingPortalSessionLocale> values = [auto, bg, cs, da, de, el, en, enAu, enCa, enGb, enIe, enIn, enNz, enSg, es, es419, et, fi, fil, fr, frCa, hr, hu, id, it, ja, ko, lt, lv, ms, mt, nb, nl, pl, pt, ptBr, ro, ru, sk, sl, sv, th, tr, vi, zh, zhHk, zhTw];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -206,29 +205,456 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingPortalSessionLocale && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is BillingPortalSessionLocale$Unknown; } 
 @override String toString() => 'BillingPortalSessionLocale($value)';
 
  }
+@immutable final class BillingPortalSessionLocale$auto extends BillingPortalSessionLocale {const BillingPortalSessionLocale$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$bg extends BillingPortalSessionLocale {const BillingPortalSessionLocale$bg._();
+
+@override String get value => 'bg';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$bg;
+
+@override int get hashCode => 'bg'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$cs extends BillingPortalSessionLocale {const BillingPortalSessionLocale$cs._();
+
+@override String get value => 'cs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$cs;
+
+@override int get hashCode => 'cs'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$da extends BillingPortalSessionLocale {const BillingPortalSessionLocale$da._();
+
+@override String get value => 'da';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$da;
+
+@override int get hashCode => 'da'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$de extends BillingPortalSessionLocale {const BillingPortalSessionLocale$de._();
+
+@override String get value => 'de';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$de;
+
+@override int get hashCode => 'de'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$el extends BillingPortalSessionLocale {const BillingPortalSessionLocale$el._();
+
+@override String get value => 'el';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$el;
+
+@override int get hashCode => 'el'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$en extends BillingPortalSessionLocale {const BillingPortalSessionLocale$en._();
+
+@override String get value => 'en';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$en;
+
+@override int get hashCode => 'en'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$enAu extends BillingPortalSessionLocale {const BillingPortalSessionLocale$enAu._();
+
+@override String get value => 'en-AU';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$enAu;
+
+@override int get hashCode => 'en-AU'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$enCa extends BillingPortalSessionLocale {const BillingPortalSessionLocale$enCa._();
+
+@override String get value => 'en-CA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$enCa;
+
+@override int get hashCode => 'en-CA'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$enGb extends BillingPortalSessionLocale {const BillingPortalSessionLocale$enGb._();
+
+@override String get value => 'en-GB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$enGb;
+
+@override int get hashCode => 'en-GB'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$enIe extends BillingPortalSessionLocale {const BillingPortalSessionLocale$enIe._();
+
+@override String get value => 'en-IE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$enIe;
+
+@override int get hashCode => 'en-IE'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$enIn extends BillingPortalSessionLocale {const BillingPortalSessionLocale$enIn._();
+
+@override String get value => 'en-IN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$enIn;
+
+@override int get hashCode => 'en-IN'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$enNz extends BillingPortalSessionLocale {const BillingPortalSessionLocale$enNz._();
+
+@override String get value => 'en-NZ';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$enNz;
+
+@override int get hashCode => 'en-NZ'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$enSg extends BillingPortalSessionLocale {const BillingPortalSessionLocale$enSg._();
+
+@override String get value => 'en-SG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$enSg;
+
+@override int get hashCode => 'en-SG'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$es extends BillingPortalSessionLocale {const BillingPortalSessionLocale$es._();
+
+@override String get value => 'es';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$es;
+
+@override int get hashCode => 'es'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$es419 extends BillingPortalSessionLocale {const BillingPortalSessionLocale$es419._();
+
+@override String get value => 'es-419';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$es419;
+
+@override int get hashCode => 'es-419'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$et extends BillingPortalSessionLocale {const BillingPortalSessionLocale$et._();
+
+@override String get value => 'et';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$et;
+
+@override int get hashCode => 'et'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$fi extends BillingPortalSessionLocale {const BillingPortalSessionLocale$fi._();
+
+@override String get value => 'fi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$fi;
+
+@override int get hashCode => 'fi'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$fil extends BillingPortalSessionLocale {const BillingPortalSessionLocale$fil._();
+
+@override String get value => 'fil';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$fil;
+
+@override int get hashCode => 'fil'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$fr extends BillingPortalSessionLocale {const BillingPortalSessionLocale$fr._();
+
+@override String get value => 'fr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$fr;
+
+@override int get hashCode => 'fr'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$frCa extends BillingPortalSessionLocale {const BillingPortalSessionLocale$frCa._();
+
+@override String get value => 'fr-CA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$frCa;
+
+@override int get hashCode => 'fr-CA'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$hr extends BillingPortalSessionLocale {const BillingPortalSessionLocale$hr._();
+
+@override String get value => 'hr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$hr;
+
+@override int get hashCode => 'hr'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$hu extends BillingPortalSessionLocale {const BillingPortalSessionLocale$hu._();
+
+@override String get value => 'hu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$hu;
+
+@override int get hashCode => 'hu'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$id extends BillingPortalSessionLocale {const BillingPortalSessionLocale$id._();
+
+@override String get value => 'id';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$id;
+
+@override int get hashCode => 'id'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$it extends BillingPortalSessionLocale {const BillingPortalSessionLocale$it._();
+
+@override String get value => 'it';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$it;
+
+@override int get hashCode => 'it'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$ja extends BillingPortalSessionLocale {const BillingPortalSessionLocale$ja._();
+
+@override String get value => 'ja';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$ja;
+
+@override int get hashCode => 'ja'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$ko extends BillingPortalSessionLocale {const BillingPortalSessionLocale$ko._();
+
+@override String get value => 'ko';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$ko;
+
+@override int get hashCode => 'ko'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$lt extends BillingPortalSessionLocale {const BillingPortalSessionLocale$lt._();
+
+@override String get value => 'lt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$lt;
+
+@override int get hashCode => 'lt'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$lv extends BillingPortalSessionLocale {const BillingPortalSessionLocale$lv._();
+
+@override String get value => 'lv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$lv;
+
+@override int get hashCode => 'lv'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$ms extends BillingPortalSessionLocale {const BillingPortalSessionLocale$ms._();
+
+@override String get value => 'ms';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$ms;
+
+@override int get hashCode => 'ms'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$mt extends BillingPortalSessionLocale {const BillingPortalSessionLocale$mt._();
+
+@override String get value => 'mt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$mt;
+
+@override int get hashCode => 'mt'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$nb extends BillingPortalSessionLocale {const BillingPortalSessionLocale$nb._();
+
+@override String get value => 'nb';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$nb;
+
+@override int get hashCode => 'nb'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$nl extends BillingPortalSessionLocale {const BillingPortalSessionLocale$nl._();
+
+@override String get value => 'nl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$nl;
+
+@override int get hashCode => 'nl'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$pl extends BillingPortalSessionLocale {const BillingPortalSessionLocale$pl._();
+
+@override String get value => 'pl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$pl;
+
+@override int get hashCode => 'pl'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$pt extends BillingPortalSessionLocale {const BillingPortalSessionLocale$pt._();
+
+@override String get value => 'pt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$pt;
+
+@override int get hashCode => 'pt'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$ptBr extends BillingPortalSessionLocale {const BillingPortalSessionLocale$ptBr._();
+
+@override String get value => 'pt-BR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$ptBr;
+
+@override int get hashCode => 'pt-BR'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$ro extends BillingPortalSessionLocale {const BillingPortalSessionLocale$ro._();
+
+@override String get value => 'ro';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$ro;
+
+@override int get hashCode => 'ro'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$ru extends BillingPortalSessionLocale {const BillingPortalSessionLocale$ru._();
+
+@override String get value => 'ru';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$ru;
+
+@override int get hashCode => 'ru'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$sk extends BillingPortalSessionLocale {const BillingPortalSessionLocale$sk._();
+
+@override String get value => 'sk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$sk;
+
+@override int get hashCode => 'sk'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$sl extends BillingPortalSessionLocale {const BillingPortalSessionLocale$sl._();
+
+@override String get value => 'sl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$sl;
+
+@override int get hashCode => 'sl'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$sv extends BillingPortalSessionLocale {const BillingPortalSessionLocale$sv._();
+
+@override String get value => 'sv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$sv;
+
+@override int get hashCode => 'sv'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$th extends BillingPortalSessionLocale {const BillingPortalSessionLocale$th._();
+
+@override String get value => 'th';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$th;
+
+@override int get hashCode => 'th'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$tr extends BillingPortalSessionLocale {const BillingPortalSessionLocale$tr._();
+
+@override String get value => 'tr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$tr;
+
+@override int get hashCode => 'tr'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$vi extends BillingPortalSessionLocale {const BillingPortalSessionLocale$vi._();
+
+@override String get value => 'vi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$vi;
+
+@override int get hashCode => 'vi'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$zh extends BillingPortalSessionLocale {const BillingPortalSessionLocale$zh._();
+
+@override String get value => 'zh';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$zh;
+
+@override int get hashCode => 'zh'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$zhHk extends BillingPortalSessionLocale {const BillingPortalSessionLocale$zhHk._();
+
+@override String get value => 'zh-HK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$zhHk;
+
+@override int get hashCode => 'zh-HK'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$zhTw extends BillingPortalSessionLocale {const BillingPortalSessionLocale$zhTw._();
+
+@override String get value => 'zh-TW';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionLocale$zhTw;
+
+@override int get hashCode => 'zh-TW'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionLocale$Unknown extends BillingPortalSessionLocale {const BillingPortalSessionLocale$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BillingPortalSessionLocale$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class BillingPortalSessionObject {const BillingPortalSessionObject._(this.value);
+sealed class BillingPortalSessionObject {const BillingPortalSessionObject();
 
 factory BillingPortalSessionObject.fromJson(String json) { return switch (json) {
   'billing_portal.session' => billingPortalSession,
-  _ => BillingPortalSessionObject._(json),
+  _ => BillingPortalSessionObject$Unknown(json),
 }; }
 
-static const BillingPortalSessionObject billingPortalSession = BillingPortalSessionObject._('billing_portal.session');
+static const BillingPortalSessionObject billingPortalSession = BillingPortalSessionObject$billingPortalSession._();
 
 static const List<BillingPortalSessionObject> values = [billingPortalSession];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -236,13 +662,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingPortalSessionObject$Unknown; } 
+@override String toString() => 'BillingPortalSessionObject($value)';
+
+ }
+@immutable final class BillingPortalSessionObject$billingPortalSession extends BillingPortalSessionObject {const BillingPortalSessionObject$billingPortalSession._();
+
+@override String get value => 'billing_portal.session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingPortalSessionObject$billingPortalSession;
+
+@override int get hashCode => 'billing_portal.session'.hashCode;
+
+ }
+@immutable final class BillingPortalSessionObject$Unknown extends BillingPortalSessionObject {const BillingPortalSessionObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingPortalSessionObject && other.value == value;
+    other is BillingPortalSessionObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingPortalSessionObject($value)';
 
  }
 /// The Billing customer portal is a Stripe-hosted UI for subscription and

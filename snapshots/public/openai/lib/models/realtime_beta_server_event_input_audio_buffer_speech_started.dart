@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventInputAudioBufferSpeechStarted
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.speech_started`.
-@immutable final class RealtimeBetaServerEventInputAudioBufferSpeechStartedType {const RealtimeBetaServerEventInputAudioBufferSpeechStartedType._(this.value);
+sealed class RealtimeBetaServerEventInputAudioBufferSpeechStartedType {const RealtimeBetaServerEventInputAudioBufferSpeechStartedType();
 
 factory RealtimeBetaServerEventInputAudioBufferSpeechStartedType.fromJson(String json) { return switch (json) {
   'input_audio_buffer.speech_started' => inputAudioBufferSpeechStarted,
-  _ => RealtimeBetaServerEventInputAudioBufferSpeechStartedType._(json),
+  _ => RealtimeBetaServerEventInputAudioBufferSpeechStartedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventInputAudioBufferSpeechStartedType inputAudioBufferSpeechStarted = RealtimeBetaServerEventInputAudioBufferSpeechStartedType._('input_audio_buffer.speech_started');
+static const RealtimeBetaServerEventInputAudioBufferSpeechStartedType inputAudioBufferSpeechStarted = RealtimeBetaServerEventInputAudioBufferSpeechStartedType$inputAudioBufferSpeechStarted._();
 
 static const List<RealtimeBetaServerEventInputAudioBufferSpeechStartedType> values = [inputAudioBufferSpeechStarted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventInputAudioBufferSpeechStartedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventInputAudioBufferSpeechStartedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventInputAudioBufferSpeechStartedType$inputAudioBufferSpeechStarted extends RealtimeBetaServerEventInputAudioBufferSpeechStartedType {const RealtimeBetaServerEventInputAudioBufferSpeechStartedType$inputAudioBufferSpeechStarted._();
+
+@override String get value => 'input_audio_buffer.speech_started';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventInputAudioBufferSpeechStartedType$inputAudioBufferSpeechStarted;
+
+@override int get hashCode => 'input_audio_buffer.speech_started'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventInputAudioBufferSpeechStartedType$Unknown extends RealtimeBetaServerEventInputAudioBufferSpeechStartedType {const RealtimeBetaServerEventInputAudioBufferSpeechStartedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventInputAudioBufferSpeechStartedType && other.value == value;
+    other is RealtimeBetaServerEventInputAudioBufferSpeechStartedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventInputAudioBufferSpeechStartedType($value)';
 
  }
 /// Sent by the server when in `server_vad` mode to indicate that speech has been

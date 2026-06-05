@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/OneOfGenerationStressTest (inline: OneOfSameType)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OneOfSameTypeVariant2 {const OneOfSameTypeVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class OneOfSameTypeVariant2 {const OneOfSameTypeVariant2();
 
 factory OneOfSameTypeVariant2.fromJson(String json) { return switch (json) {
   'latest' => latest,
-  _ => OneOfSameTypeVariant2._(json),
+  _ => OneOfSameTypeVariant2$Unknown(json),
 }; }
 
-static const OneOfSameTypeVariant2 latest = OneOfSameTypeVariant2._('latest');
+static const OneOfSameTypeVariant2 latest = OneOfSameTypeVariant2$latest._();
 
 static const List<OneOfSameTypeVariant2> values = [latest];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OneOfSameTypeVariant2$Unknown; } 
+@override String toString() => 'OneOfSameTypeVariant2($value)';
+
+ }
+@immutable final class OneOfSameTypeVariant2$latest extends OneOfSameTypeVariant2 {const OneOfSameTypeVariant2$latest._();
+
+@override String get value => 'latest';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OneOfSameTypeVariant2$latest;
+
+@override int get hashCode => 'latest'.hashCode;
+
+ }
+@immutable final class OneOfSameTypeVariant2$Unknown extends OneOfSameTypeVariant2 {const OneOfSameTypeVariant2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OneOfSameTypeVariant2 && other.value == value;
+    other is OneOfSameTypeVariant2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OneOfSameTypeVariant2($value)';
 
  }
 /// Variants:

@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetAccountAuditLogsActorTypeNot
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountAuditLogsActorTypeNot {const GetAccountAuditLogsActorTypeNot._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetAccountAuditLogsActorTypeNot {const GetAccountAuditLogsActorTypeNot();
 
 factory GetAccountAuditLogsActorTypeNot.fromJson(String json) { return switch (json) {
   'account' => account,
   'cloudflare_admin' => cloudflareAdmin,
   'system' => system,
   'user' => user,
-  _ => GetAccountAuditLogsActorTypeNot._(json),
+  _ => GetAccountAuditLogsActorTypeNot$Unknown(json),
 }; }
 
-static const GetAccountAuditLogsActorTypeNot account = GetAccountAuditLogsActorTypeNot._('account');
+static const GetAccountAuditLogsActorTypeNot account = GetAccountAuditLogsActorTypeNot$account._();
 
-static const GetAccountAuditLogsActorTypeNot cloudflareAdmin = GetAccountAuditLogsActorTypeNot._('cloudflare_admin');
+static const GetAccountAuditLogsActorTypeNot cloudflareAdmin = GetAccountAuditLogsActorTypeNot$cloudflareAdmin._();
 
-static const GetAccountAuditLogsActorTypeNot system = GetAccountAuditLogsActorTypeNot._('system');
+static const GetAccountAuditLogsActorTypeNot system = GetAccountAuditLogsActorTypeNot$system._();
 
-static const GetAccountAuditLogsActorTypeNot user = GetAccountAuditLogsActorTypeNot._('user');
+static const GetAccountAuditLogsActorTypeNot user = GetAccountAuditLogsActorTypeNot$user._();
 
 static const List<GetAccountAuditLogsActorTypeNot> values = [account, cloudflareAdmin, system, user];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GetAccountAuditLogsActorTypeNot$Unknown; } 
+@override String toString() => 'GetAccountAuditLogsActorTypeNot($value)';
+
+ }
+@immutable final class GetAccountAuditLogsActorTypeNot$account extends GetAccountAuditLogsActorTypeNot {const GetAccountAuditLogsActorTypeNot$account._();
+
+@override String get value => 'account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetAccountAuditLogsActorTypeNot$account;
+
+@override int get hashCode => 'account'.hashCode;
+
+ }
+@immutable final class GetAccountAuditLogsActorTypeNot$cloudflareAdmin extends GetAccountAuditLogsActorTypeNot {const GetAccountAuditLogsActorTypeNot$cloudflareAdmin._();
+
+@override String get value => 'cloudflare_admin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetAccountAuditLogsActorTypeNot$cloudflareAdmin;
+
+@override int get hashCode => 'cloudflare_admin'.hashCode;
+
+ }
+@immutable final class GetAccountAuditLogsActorTypeNot$system extends GetAccountAuditLogsActorTypeNot {const GetAccountAuditLogsActorTypeNot$system._();
+
+@override String get value => 'system';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetAccountAuditLogsActorTypeNot$system;
+
+@override int get hashCode => 'system'.hashCode;
+
+ }
+@immutable final class GetAccountAuditLogsActorTypeNot$user extends GetAccountAuditLogsActorTypeNot {const GetAccountAuditLogsActorTypeNot$user._();
+
+@override String get value => 'user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetAccountAuditLogsActorTypeNot$user;
+
+@override int get hashCode => 'user'.hashCode;
+
+ }
+@immutable final class GetAccountAuditLogsActorTypeNot$Unknown extends GetAccountAuditLogsActorTypeNot {const GetAccountAuditLogsActorTypeNot$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GetAccountAuditLogsActorTypeNot && other.value == value;
+    other is GetAccountAuditLogsActorTypeNot$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GetAccountAuditLogsActorTypeNot($value)';
 
  }

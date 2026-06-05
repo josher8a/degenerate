@@ -2,28 +2,27 @@
 // Source: #/components/schemas/TlsCertificatesAndHostnamesValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Used when `setting_id` is `min_tls_version`. The minimum TLS version.
-@immutable final class TlsCertificatesAndHostnamesValueVariant2 {const TlsCertificatesAndHostnamesValueVariant2._(this.value);
+sealed class TlsCertificatesAndHostnamesValueVariant2 {const TlsCertificatesAndHostnamesValueVariant2();
 
 factory TlsCertificatesAndHostnamesValueVariant2.fromJson(String json) { return switch (json) {
   '1.0' => $10,
   '1.1' => $11,
   '1.2' => $12,
   '1.3' => $13,
-  _ => TlsCertificatesAndHostnamesValueVariant2._(json),
+  _ => TlsCertificatesAndHostnamesValueVariant2$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesValueVariant2 $10 = TlsCertificatesAndHostnamesValueVariant2._('1.0');
+static const TlsCertificatesAndHostnamesValueVariant2 $10 = TlsCertificatesAndHostnamesValueVariant2$$10._();
 
-static const TlsCertificatesAndHostnamesValueVariant2 $11 = TlsCertificatesAndHostnamesValueVariant2._('1.1');
+static const TlsCertificatesAndHostnamesValueVariant2 $11 = TlsCertificatesAndHostnamesValueVariant2$$11._();
 
-static const TlsCertificatesAndHostnamesValueVariant2 $12 = TlsCertificatesAndHostnamesValueVariant2._('1.2');
+static const TlsCertificatesAndHostnamesValueVariant2 $12 = TlsCertificatesAndHostnamesValueVariant2$$12._();
 
-static const TlsCertificatesAndHostnamesValueVariant2 $13 = TlsCertificatesAndHostnamesValueVariant2._('1.3');
+static const TlsCertificatesAndHostnamesValueVariant2 $13 = TlsCertificatesAndHostnamesValueVariant2$$13._();
 
 static const List<TlsCertificatesAndHostnamesValueVariant2> values = [$10, $11, $12, $13];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,32 +33,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesValueVariant2 && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TlsCertificatesAndHostnamesValueVariant2$Unknown; } 
 @override String toString() => 'TlsCertificatesAndHostnamesValueVariant2($value)';
 
  }
+@immutable final class TlsCertificatesAndHostnamesValueVariant2$$10 extends TlsCertificatesAndHostnamesValueVariant2 {const TlsCertificatesAndHostnamesValueVariant2$$10._();
+
+@override String get value => '1.0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesValueVariant2$$10;
+
+@override int get hashCode => '1.0'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesValueVariant2$$11 extends TlsCertificatesAndHostnamesValueVariant2 {const TlsCertificatesAndHostnamesValueVariant2$$11._();
+
+@override String get value => '1.1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesValueVariant2$$11;
+
+@override int get hashCode => '1.1'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesValueVariant2$$12 extends TlsCertificatesAndHostnamesValueVariant2 {const TlsCertificatesAndHostnamesValueVariant2$$12._();
+
+@override String get value => '1.2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesValueVariant2$$12;
+
+@override int get hashCode => '1.2'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesValueVariant2$$13 extends TlsCertificatesAndHostnamesValueVariant2 {const TlsCertificatesAndHostnamesValueVariant2$$13._();
+
+@override String get value => '1.3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesValueVariant2$$13;
+
+@override int get hashCode => '1.3'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesValueVariant2$Unknown extends TlsCertificatesAndHostnamesValueVariant2 {const TlsCertificatesAndHostnamesValueVariant2$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TlsCertificatesAndHostnamesValueVariant2$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Used when `setting_id` is `http2`. Whether HTTP/2 is enabled.
-@immutable final class TlsCertificatesAndHostnamesValueVariant3 {const TlsCertificatesAndHostnamesValueVariant3._(this.value);
+sealed class TlsCertificatesAndHostnamesValueVariant3 {const TlsCertificatesAndHostnamesValueVariant3();
 
 factory TlsCertificatesAndHostnamesValueVariant3.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => TlsCertificatesAndHostnamesValueVariant3._(json),
+  _ => TlsCertificatesAndHostnamesValueVariant3$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesValueVariant3 $on = TlsCertificatesAndHostnamesValueVariant3._('on');
+static const TlsCertificatesAndHostnamesValueVariant3 $on = TlsCertificatesAndHostnamesValueVariant3$$on._();
 
-static const TlsCertificatesAndHostnamesValueVariant3 off = TlsCertificatesAndHostnamesValueVariant3._('off');
+static const TlsCertificatesAndHostnamesValueVariant3 off = TlsCertificatesAndHostnamesValueVariant3$off._();
 
 static const List<TlsCertificatesAndHostnamesValueVariant3> values = [$on, off];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,13 +107,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesValueVariant3$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesValueVariant3($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesValueVariant3$$on extends TlsCertificatesAndHostnamesValueVariant3 {const TlsCertificatesAndHostnamesValueVariant3$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesValueVariant3$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesValueVariant3$off extends TlsCertificatesAndHostnamesValueVariant3 {const TlsCertificatesAndHostnamesValueVariant3$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesValueVariant3$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesValueVariant3$Unknown extends TlsCertificatesAndHostnamesValueVariant3 {const TlsCertificatesAndHostnamesValueVariant3$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesValueVariant3 && other.value == value;
+    other is TlsCertificatesAndHostnamesValueVariant3$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesValueVariant3($value)';
 
  }
 /// The TLS setting value. The type depends on the `setting_id` used in the request path:

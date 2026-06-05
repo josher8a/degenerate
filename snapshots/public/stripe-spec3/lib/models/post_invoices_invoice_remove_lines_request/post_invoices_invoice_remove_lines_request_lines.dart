@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostInvoicesInvoiceRemoveLinesRequest (inline: Lines)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class LinesBehavior {const LinesBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class LinesBehavior {const LinesBehavior();
 
 factory LinesBehavior.fromJson(String json) { return switch (json) {
   'delete' => delete,
   'unassign' => unassign,
-  _ => LinesBehavior._(json),
+  _ => LinesBehavior$Unknown(json),
 }; }
 
-static const LinesBehavior delete = LinesBehavior._('delete');
+static const LinesBehavior delete = LinesBehavior$delete._();
 
-static const LinesBehavior unassign = LinesBehavior._('unassign');
+static const LinesBehavior unassign = LinesBehavior$unassign._();
 
 static const List<LinesBehavior> values = [delete, unassign];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LinesBehavior$Unknown; } 
+@override String toString() => 'LinesBehavior($value)';
+
+ }
+@immutable final class LinesBehavior$delete extends LinesBehavior {const LinesBehavior$delete._();
+
+@override String get value => 'delete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LinesBehavior$delete;
+
+@override int get hashCode => 'delete'.hashCode;
+
+ }
+@immutable final class LinesBehavior$unassign extends LinesBehavior {const LinesBehavior$unassign._();
+
+@override String get value => 'unassign';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LinesBehavior$unassign;
+
+@override int get hashCode => 'unassign'.hashCode;
+
+ }
+@immutable final class LinesBehavior$Unknown extends LinesBehavior {const LinesBehavior$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LinesBehavior && other.value == value;
+    other is LinesBehavior$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LinesBehavior($value)';
 
  }
 @immutable final class PostInvoicesInvoiceRemoveLinesRequestLines {const PostInvoicesInvoiceRemoveLinesRequestLines({required this.behavior, required this.id, });

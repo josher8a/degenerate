@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MqEventSourceImages
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
-@immutable final class MqEventSourceImagesType {const MqEventSourceImagesType._(this.value);
+sealed class MqEventSourceImagesType {const MqEventSourceImagesType();
 
 factory MqEventSourceImagesType.fromJson(String json) { return switch (json) {
   'images' => images,
-  _ => MqEventSourceImagesType._(json),
+  _ => MqEventSourceImagesType$Unknown(json),
 }; }
 
-static const MqEventSourceImagesType images = MqEventSourceImagesType._('images');
+static const MqEventSourceImagesType images = MqEventSourceImagesType$images._();
 
 static const List<MqEventSourceImagesType> values = [images];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MqEventSourceImagesType$Unknown; } 
+@override String toString() => 'MqEventSourceImagesType($value)';
+
+ }
+@immutable final class MqEventSourceImagesType$images extends MqEventSourceImagesType {const MqEventSourceImagesType$images._();
+
+@override String get value => 'images';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqEventSourceImagesType$images;
+
+@override int get hashCode => 'images'.hashCode;
+
+ }
+@immutable final class MqEventSourceImagesType$Unknown extends MqEventSourceImagesType {const MqEventSourceImagesType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MqEventSourceImagesType && other.value == value;
+    other is MqEventSourceImagesType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MqEventSourceImagesType($value)';
 
  }
 @immutable final class MqEventSourceImages {const MqEventSourceImages({this.type});

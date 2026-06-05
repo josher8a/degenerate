@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_true_client_ip_header_value.dart';/// Turn on or off the True-Client-IP Header feature of the Cloudflare Network app.
 /// 
-@immutable final class ZonesTrueClientIpHeaderId {const ZonesTrueClientIpHeaderId._(this.value);
+sealed class ZonesTrueClientIpHeaderId {const ZonesTrueClientIpHeaderId();
 
 factory ZonesTrueClientIpHeaderId.fromJson(String json) { return switch (json) {
   'true_client_ip_header' => trueClientIpHeader,
-  _ => ZonesTrueClientIpHeaderId._(json),
+  _ => ZonesTrueClientIpHeaderId$Unknown(json),
 }; }
 
-static const ZonesTrueClientIpHeaderId trueClientIpHeader = ZonesTrueClientIpHeaderId._('true_client_ip_header');
+static const ZonesTrueClientIpHeaderId trueClientIpHeader = ZonesTrueClientIpHeaderId$trueClientIpHeader._();
 
 static const List<ZonesTrueClientIpHeaderId> values = [trueClientIpHeader];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesTrueClientIpHeaderId$Unknown; } 
+@override String toString() => 'ZonesTrueClientIpHeaderId($value)';
+
+ }
+@immutable final class ZonesTrueClientIpHeaderId$trueClientIpHeader extends ZonesTrueClientIpHeaderId {const ZonesTrueClientIpHeaderId$trueClientIpHeader._();
+
+@override String get value => 'true_client_ip_header';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesTrueClientIpHeaderId$trueClientIpHeader;
+
+@override int get hashCode => 'true_client_ip_header'.hashCode;
+
+ }
+@immutable final class ZonesTrueClientIpHeaderId$Unknown extends ZonesTrueClientIpHeaderId {const ZonesTrueClientIpHeaderId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesTrueClientIpHeaderId && other.value == value;
+    other is ZonesTrueClientIpHeaderId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesTrueClientIpHeaderId($value)';
 
  }
 @immutable final class ZonesTrueClientIpHeader {const ZonesTrueClientIpHeader({this.id, this.value, });

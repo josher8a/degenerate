@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PaymentRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_money_movement_card/insights_resources_payment_evaluation_money_movement_card_customer_presence.dart';import 'package:pub_stripe_spec3/models/payment_attempt_record/reported_by.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_amount.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_customer_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_payment_method_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_processor_details.dart';import 'package:pub_stripe_spec3/models/payments_primitives_payment_records_resource_shipping_details.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class PaymentRecordObject {const PaymentRecordObject._(this.value);
+sealed class PaymentRecordObject {const PaymentRecordObject();
 
 factory PaymentRecordObject.fromJson(String json) { return switch (json) {
   'payment_record' => paymentRecord,
-  _ => PaymentRecordObject._(json),
+  _ => PaymentRecordObject$Unknown(json),
 }; }
 
-static const PaymentRecordObject paymentRecord = PaymentRecordObject._('payment_record');
+static const PaymentRecordObject paymentRecord = PaymentRecordObject$paymentRecord._();
 
 static const List<PaymentRecordObject> values = [paymentRecord];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentRecordObject$Unknown; } 
+@override String toString() => 'PaymentRecordObject($value)';
+
+ }
+@immutable final class PaymentRecordObject$paymentRecord extends PaymentRecordObject {const PaymentRecordObject$paymentRecord._();
+
+@override String get value => 'payment_record';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentRecordObject$paymentRecord;
+
+@override int get hashCode => 'payment_record'.hashCode;
+
+ }
+@immutable final class PaymentRecordObject$Unknown extends PaymentRecordObject {const PaymentRecordObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentRecordObject && other.value == value;
+    other is PaymentRecordObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentRecordObject($value)';
 
  }
 /// A Payment Record is a resource that allows you to represent payments that occur on- or off-Stripe.

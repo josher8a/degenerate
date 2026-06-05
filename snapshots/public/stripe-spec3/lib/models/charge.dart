@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Charge
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/application_fee.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_balance_refresh/bank_connections_resource_balance_refresh_status.dart';import 'package:pub_stripe_spec3/models/billing_details.dart';import 'package:pub_stripe_spec3/models/charge/charge_application_fee.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/charge/charge_refunds.dart';import 'package:pub_stripe_spec3/models/charge/charge_review.dart';import 'package:pub_stripe_spec3/models/charge/charge_transfer.dart';import 'package:pub_stripe_spec3/models/charge/failure_balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge/source_transfer.dart';import 'package:pub_stripe_spec3/models/charge_fraud_details.dart';import 'package:pub_stripe_spec3/models/charge_outcome.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_presentment_details.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_method_details.dart';import 'package:pub_stripe_spec3/models/radar_radar_options.dart';import 'package:pub_stripe_spec3/models/review.dart';import 'package:pub_stripe_spec3/models/shipping.dart';import 'package:pub_stripe_spec3/models/transfer.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ChargeObject {const ChargeObject._(this.value);
+sealed class ChargeObject {const ChargeObject();
 
 factory ChargeObject.fromJson(String json) { return switch (json) {
   'charge' => charge,
-  _ => ChargeObject._(json),
+  _ => ChargeObject$Unknown(json),
 }; }
 
-static const ChargeObject charge = ChargeObject._('charge');
+static const ChargeObject charge = ChargeObject$charge._();
 
 static const List<ChargeObject> values = [charge];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ChargeObject$Unknown; } 
+@override String toString() => 'ChargeObject($value)';
+
+ }
+@immutable final class ChargeObject$charge extends ChargeObject {const ChargeObject$charge._();
+
+@override String get value => 'charge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChargeObject$charge;
+
+@override int get hashCode => 'charge'.hashCode;
+
+ }
+@immutable final class ChargeObject$Unknown extends ChargeObject {const ChargeObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ChargeObject && other.value == value;
+    other is ChargeObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ChargeObject($value)';
 
  }
 /// The `Charge` object represents a single attempt to move money into your Stripe account.

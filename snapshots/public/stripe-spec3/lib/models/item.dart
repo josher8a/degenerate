@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Item
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/line_items_adjustable_quantity.dart';import 'package:pub_stripe_spec3/models/line_items_discount_amount.dart';import 'package:pub_stripe_spec3/models/line_items_tax_amount.dart';import 'package:pub_stripe_spec3/models/price.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ItemObject {const ItemObject._(this.value);
+sealed class ItemObject {const ItemObject();
 
 factory ItemObject.fromJson(String json) { return switch (json) {
   'item' => item,
-  _ => ItemObject._(json),
+  _ => ItemObject$Unknown(json),
 }; }
 
-static const ItemObject item = ItemObject._('item');
+static const ItemObject item = ItemObject$item._();
 
 static const List<ItemObject> values = [item];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ItemObject$Unknown; } 
+@override String toString() => 'ItemObject($value)';
+
+ }
+@immutable final class ItemObject$item extends ItemObject {const ItemObject$item._();
+
+@override String get value => 'item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemObject$item;
+
+@override int get hashCode => 'item'.hashCode;
+
+ }
+@immutable final class ItemObject$Unknown extends ItemObject {const ItemObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ItemObject && other.value == value;
+    other is ItemObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ItemObject($value)';
 
  }
 /// A line item.

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/OtherChunkingStrategyResponseParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `other`.
-@immutable final class OtherChunkingStrategyResponseParamType {const OtherChunkingStrategyResponseParamType._(this.value);
+sealed class OtherChunkingStrategyResponseParamType {const OtherChunkingStrategyResponseParamType();
 
 factory OtherChunkingStrategyResponseParamType.fromJson(String json) { return switch (json) {
   'other' => $other,
-  _ => OtherChunkingStrategyResponseParamType._(json),
+  _ => OtherChunkingStrategyResponseParamType$Unknown(json),
 }; }
 
-static const OtherChunkingStrategyResponseParamType $other = OtherChunkingStrategyResponseParamType._('other');
+static const OtherChunkingStrategyResponseParamType $other = OtherChunkingStrategyResponseParamType$$other._();
 
 static const List<OtherChunkingStrategyResponseParamType> values = [$other];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OtherChunkingStrategyResponseParamType$Unknown; } 
+@override String toString() => 'OtherChunkingStrategyResponseParamType($value)';
+
+ }
+@immutable final class OtherChunkingStrategyResponseParamType$$other extends OtherChunkingStrategyResponseParamType {const OtherChunkingStrategyResponseParamType$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OtherChunkingStrategyResponseParamType$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class OtherChunkingStrategyResponseParamType$Unknown extends OtherChunkingStrategyResponseParamType {const OtherChunkingStrategyResponseParamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OtherChunkingStrategyResponseParamType && other.value == value;
+    other is OtherChunkingStrategyResponseParamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OtherChunkingStrategyResponseParamType($value)';
 
  }
 /// This is returned when the chunking strategy is unknown. Typically, this is because the file was indexed before the `chunking_strategy` concept was introduced in the API.

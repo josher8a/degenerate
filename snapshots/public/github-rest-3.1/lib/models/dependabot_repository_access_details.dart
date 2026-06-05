@@ -2,25 +2,24 @@
 // Source: #/components/schemas/DependabotRepositoryAccessDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_repository.dart';/// The default repository access level for Dependabot updates.
-@immutable final class DependabotRepositoryAccessDetailsDefaultLevel {const DependabotRepositoryAccessDetailsDefaultLevel._(this.value);
+sealed class DependabotRepositoryAccessDetailsDefaultLevel {const DependabotRepositoryAccessDetailsDefaultLevel();
 
 factory DependabotRepositoryAccessDetailsDefaultLevel.fromJson(String json) { return switch (json) {
   'public' => public,
   'internal' => internal,
   'null' => $null,
-  _ => DependabotRepositoryAccessDetailsDefaultLevel._(json),
+  _ => DependabotRepositoryAccessDetailsDefaultLevel$Unknown(json),
 }; }
 
-static const DependabotRepositoryAccessDetailsDefaultLevel public = DependabotRepositoryAccessDetailsDefaultLevel._('public');
+static const DependabotRepositoryAccessDetailsDefaultLevel public = DependabotRepositoryAccessDetailsDefaultLevel$public._();
 
-static const DependabotRepositoryAccessDetailsDefaultLevel internal = DependabotRepositoryAccessDetailsDefaultLevel._('internal');
+static const DependabotRepositoryAccessDetailsDefaultLevel internal = DependabotRepositoryAccessDetailsDefaultLevel$internal._();
 
-static const DependabotRepositoryAccessDetailsDefaultLevel $null = DependabotRepositoryAccessDetailsDefaultLevel._('null');
+static const DependabotRepositoryAccessDetailsDefaultLevel $null = DependabotRepositoryAccessDetailsDefaultLevel$$null._();
 
 static const List<DependabotRepositoryAccessDetailsDefaultLevel> values = [public, internal, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DependabotRepositoryAccessDetailsDefaultLevel$Unknown; } 
+@override String toString() => 'DependabotRepositoryAccessDetailsDefaultLevel($value)';
+
+ }
+@immutable final class DependabotRepositoryAccessDetailsDefaultLevel$public extends DependabotRepositoryAccessDetailsDefaultLevel {const DependabotRepositoryAccessDetailsDefaultLevel$public._();
+
+@override String get value => 'public';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotRepositoryAccessDetailsDefaultLevel$public;
+
+@override int get hashCode => 'public'.hashCode;
+
+ }
+@immutable final class DependabotRepositoryAccessDetailsDefaultLevel$internal extends DependabotRepositoryAccessDetailsDefaultLevel {const DependabotRepositoryAccessDetailsDefaultLevel$internal._();
+
+@override String get value => 'internal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotRepositoryAccessDetailsDefaultLevel$internal;
+
+@override int get hashCode => 'internal'.hashCode;
+
+ }
+@immutable final class DependabotRepositoryAccessDetailsDefaultLevel$$null extends DependabotRepositoryAccessDetailsDefaultLevel {const DependabotRepositoryAccessDetailsDefaultLevel$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotRepositoryAccessDetailsDefaultLevel$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class DependabotRepositoryAccessDetailsDefaultLevel$Unknown extends DependabotRepositoryAccessDetailsDefaultLevel {const DependabotRepositoryAccessDetailsDefaultLevel$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DependabotRepositoryAccessDetailsDefaultLevel && other.value == value;
+    other is DependabotRepositoryAccessDetailsDefaultLevel$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DependabotRepositoryAccessDetailsDefaultLevel($value)';
 
  }
 /// Information about repositories that Dependabot is able to access in an organization

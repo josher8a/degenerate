@@ -2,28 +2,27 @@
 // Source: #/components/schemas/TeamsDevicesTaniumInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_input_request/teams_devices_crowdstrike_input_request_operator.dart';/// For more details on risk level, refer to the Tanium documentation.
-@immutable final class RiskLevel {const RiskLevel._(this.value);
+sealed class RiskLevel {const RiskLevel();
 
 factory RiskLevel.fromJson(String json) { return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   'critical' => critical,
-  _ => RiskLevel._(json),
+  _ => RiskLevel$Unknown(json),
 }; }
 
-static const RiskLevel low = RiskLevel._('low');
+static const RiskLevel low = RiskLevel$low._();
 
-static const RiskLevel medium = RiskLevel._('medium');
+static const RiskLevel medium = RiskLevel$medium._();
 
-static const RiskLevel high = RiskLevel._('high');
+static const RiskLevel high = RiskLevel$high._();
 
-static const RiskLevel critical = RiskLevel._('critical');
+static const RiskLevel critical = RiskLevel$critical._();
 
 static const List<RiskLevel> values = [low, medium, high, critical];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,17 +33,58 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RiskLevel && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is RiskLevel$Unknown; } 
 @override String toString() => 'RiskLevel($value)';
 
  }
+@immutable final class RiskLevel$low extends RiskLevel {const RiskLevel$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RiskLevel$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class RiskLevel$medium extends RiskLevel {const RiskLevel$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RiskLevel$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class RiskLevel$high extends RiskLevel {const RiskLevel$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RiskLevel$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class RiskLevel$critical extends RiskLevel {const RiskLevel$critical._();
+
+@override String get value => 'critical';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RiskLevel$critical;
+
+@override int get hashCode => 'critical'.hashCode;
+
+ }
+@immutable final class RiskLevel$Unknown extends RiskLevel {const RiskLevel$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RiskLevel$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Score Operator.
-@immutable final class ScoreOperator {const ScoreOperator._(this.value);
+sealed class ScoreOperator {const ScoreOperator();
 
 factory ScoreOperator.fromJson(String json) { return switch (json) {
   '<' => $empty,
@@ -52,23 +92,22 @@ factory ScoreOperator.fromJson(String json) { return switch (json) {
   '>' => $empty3,
   '>=' => $empty4,
   '==' => $empty5,
-  _ => ScoreOperator._(json),
+  _ => ScoreOperator$Unknown(json),
 }; }
 
-static const ScoreOperator $empty = ScoreOperator._('<');
+static const ScoreOperator $empty = ScoreOperator$$empty._();
 
-static const ScoreOperator $empty2 = ScoreOperator._('<=');
+static const ScoreOperator $empty2 = ScoreOperator$$empty2._();
 
-static const ScoreOperator $empty3 = ScoreOperator._('>');
+static const ScoreOperator $empty3 = ScoreOperator$$empty3._();
 
-static const ScoreOperator $empty4 = ScoreOperator._('>=');
+static const ScoreOperator $empty4 = ScoreOperator$$empty4._();
 
-static const ScoreOperator $empty5 = ScoreOperator._('==');
+static const ScoreOperator $empty5 = ScoreOperator$$empty5._();
 
 static const List<ScoreOperator> values = [$empty, $empty2, $empty3, $empty4, $empty5];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -80,13 +119,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ScoreOperator$Unknown; } 
+@override String toString() => 'ScoreOperator($value)';
+
+ }
+@immutable final class ScoreOperator$$empty extends ScoreOperator {const ScoreOperator$$empty._();
+
+@override String get value => '<';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScoreOperator$$empty;
+
+@override int get hashCode => '<'.hashCode;
+
+ }
+@immutable final class ScoreOperator$$empty2 extends ScoreOperator {const ScoreOperator$$empty2._();
+
+@override String get value => '<=';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScoreOperator$$empty2;
+
+@override int get hashCode => '<='.hashCode;
+
+ }
+@immutable final class ScoreOperator$$empty3 extends ScoreOperator {const ScoreOperator$$empty3._();
+
+@override String get value => '>';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScoreOperator$$empty3;
+
+@override int get hashCode => '>'.hashCode;
+
+ }
+@immutable final class ScoreOperator$$empty4 extends ScoreOperator {const ScoreOperator$$empty4._();
+
+@override String get value => '>=';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScoreOperator$$empty4;
+
+@override int get hashCode => '>='.hashCode;
+
+ }
+@immutable final class ScoreOperator$$empty5 extends ScoreOperator {const ScoreOperator$$empty5._();
+
+@override String get value => '==';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScoreOperator$$empty5;
+
+@override int get hashCode => '=='.hashCode;
+
+ }
+@immutable final class ScoreOperator$Unknown extends ScoreOperator {const ScoreOperator$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ScoreOperator && other.value == value;
+    other is ScoreOperator$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ScoreOperator($value)';
 
  }
 @immutable final class TeamsDevicesTaniumInputRequest {const TeamsDevicesTaniumInputRequest({required this.connectionId, this.eidLastSeen, this.$operator, this.riskLevel, this.scoreOperator, this.totalScore, });

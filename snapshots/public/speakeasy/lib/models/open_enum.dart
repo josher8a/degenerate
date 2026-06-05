@@ -2,22 +2,21 @@
 // Source: #/components/schemas/OpenEnum
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An integer based open enum
-@immutable final class OpenEnum {const OpenEnum._(this.value);
+sealed class OpenEnum {const OpenEnum();
 
 factory OpenEnum.fromJson(int json) { return switch (json) {
   101 => $101,
   404 => $404,
-  _ => OpenEnum._(json),
+  _ => OpenEnum$Unknown(json),
 }; }
 
-static const OpenEnum $101 = OpenEnum._(101);
+static const OpenEnum $101 = OpenEnum$$101._();
 
-static const OpenEnum $404 = OpenEnum._(404);
+static const OpenEnum $404 = OpenEnum$$404._();
 
 static const List<OpenEnum> values = [$101, $404];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OpenEnum$Unknown; } 
+@override String toString() => 'OpenEnum($value)';
+
+ }
+@immutable final class OpenEnum$$101 extends OpenEnum {const OpenEnum$$101._();
+
+@override int get value => 101;
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenEnum$$101;
+
+@override int get hashCode => 101.hashCode;
+
+ }
+@immutable final class OpenEnum$$404 extends OpenEnum {const OpenEnum$$404._();
+
+@override int get value => 404;
+
+@override bool operator ==(Object other) => identical(this, other) || other is OpenEnum$$404;
+
+@override int get hashCode => 404.hashCode;
+
+ }
+@immutable final class OpenEnum$Unknown extends OpenEnum {const OpenEnum$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OpenEnum && other.value == value;
+    other is OpenEnum$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OpenEnum($value)';
 
  }

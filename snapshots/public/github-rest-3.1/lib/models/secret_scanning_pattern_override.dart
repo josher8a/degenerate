@@ -2,22 +2,21 @@
 // Source: #/components/schemas/SecretScanningPatternOverride
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The default push protection setting for this pattern.
-@immutable final class DefaultSetting {const DefaultSetting._(this.value);
+sealed class DefaultSetting {const DefaultSetting();
 
 factory DefaultSetting.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
-  _ => DefaultSetting._(json),
+  _ => DefaultSetting$Unknown(json),
 }; }
 
-static const DefaultSetting disabled = DefaultSetting._('disabled');
+static const DefaultSetting disabled = DefaultSetting$disabled._();
 
-static const DefaultSetting enabled = DefaultSetting._('enabled');
+static const DefaultSetting enabled = DefaultSetting$enabled._();
 
 static const List<DefaultSetting> values = [disabled, enabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,38 +25,60 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DefaultSetting && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is DefaultSetting$Unknown; } 
 @override String toString() => 'DefaultSetting($value)';
 
  }
+@immutable final class DefaultSetting$disabled extends DefaultSetting {const DefaultSetting$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultSetting$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class DefaultSetting$enabled extends DefaultSetting {const DefaultSetting$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DefaultSetting$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class DefaultSetting$Unknown extends DefaultSetting {const DefaultSetting$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DefaultSetting$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The push protection setting for this pattern set at the enterprise level. Only present for partner patterns when the organization has a parent enterprise.
-@immutable final class EnterpriseSetting {const EnterpriseSetting._(this.value);
+sealed class EnterpriseSetting {const EnterpriseSetting();
 
 factory EnterpriseSetting.fromJson(String json) { return switch (json) {
   'not-set' => notSet,
   'disabled' => disabled,
   'enabled' => enabled,
   'null' => $null,
-  _ => EnterpriseSetting._(json),
+  _ => EnterpriseSetting$Unknown(json),
 }; }
 
-static const EnterpriseSetting notSet = EnterpriseSetting._('not-set');
+static const EnterpriseSetting notSet = EnterpriseSetting$notSet._();
 
-static const EnterpriseSetting disabled = EnterpriseSetting._('disabled');
+static const EnterpriseSetting disabled = EnterpriseSetting$disabled._();
 
-static const EnterpriseSetting enabled = EnterpriseSetting._('enabled');
+static const EnterpriseSetting enabled = EnterpriseSetting$enabled._();
 
-static const EnterpriseSetting $null = EnterpriseSetting._('null');
+static const EnterpriseSetting $null = EnterpriseSetting$$null._();
 
 static const List<EnterpriseSetting> values = [notSet, disabled, enabled, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,35 +89,75 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is EnterpriseSetting && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is EnterpriseSetting$Unknown; } 
 @override String toString() => 'EnterpriseSetting($value)';
 
  }
+@immutable final class EnterpriseSetting$notSet extends EnterpriseSetting {const EnterpriseSetting$notSet._();
+
+@override String get value => 'not-set';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnterpriseSetting$notSet;
+
+@override int get hashCode => 'not-set'.hashCode;
+
+ }
+@immutable final class EnterpriseSetting$disabled extends EnterpriseSetting {const EnterpriseSetting$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnterpriseSetting$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class EnterpriseSetting$enabled extends EnterpriseSetting {const EnterpriseSetting$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnterpriseSetting$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class EnterpriseSetting$$null extends EnterpriseSetting {const EnterpriseSetting$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnterpriseSetting$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class EnterpriseSetting$Unknown extends EnterpriseSetting {const EnterpriseSetting$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EnterpriseSetting$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The current push protection setting for this pattern. If this is `not-set`, then it inherits either the enterprise setting if it exists or the default setting.
-@immutable final class Setting {const Setting._(this.value);
+sealed class Setting {const Setting();
 
 factory Setting.fromJson(String json) { return switch (json) {
   'not-set' => notSet,
   'disabled' => disabled,
   'enabled' => enabled,
-  _ => Setting._(json),
+  _ => Setting$Unknown(json),
 }; }
 
-static const Setting notSet = Setting._('not-set');
+static const Setting notSet = Setting$notSet._();
 
-static const Setting disabled = Setting._('disabled');
+static const Setting disabled = Setting$disabled._();
 
-static const Setting enabled = Setting._('enabled');
+static const Setting enabled = Setting$enabled._();
 
 static const List<Setting> values = [notSet, disabled, enabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -106,13 +167,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Setting$Unknown; } 
+@override String toString() => 'Setting($value)';
+
+ }
+@immutable final class Setting$notSet extends Setting {const Setting$notSet._();
+
+@override String get value => 'not-set';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Setting$notSet;
+
+@override int get hashCode => 'not-set'.hashCode;
+
+ }
+@immutable final class Setting$disabled extends Setting {const Setting$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Setting$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class Setting$enabled extends Setting {const Setting$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Setting$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class Setting$Unknown extends Setting {const Setting$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Setting && other.value == value;
+    other is Setting$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Setting($value)';
 
  }
 @immutable final class SecretScanningPatternOverride {const SecretScanningPatternOverride({this.tokenType, this.customPatternVersion, this.slug, this.displayName, this.alertTotal, this.alertTotalPercentage, this.falsePositives, this.falsePositiveRate, this.bypassRate, this.defaultSetting, this.enterpriseSetting, this.setting, });

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PostSetupIntentsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_excluded_payment_method_types.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_intent_confirm_request/post_payment_intents_intent_confirm_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/automatic_payment_methods.dart';import 'package:pub_stripe_spec3/models/post_payment_intents_request/post_payment_intents_request_mandate_data.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_confirm_request/post_setup_intents_intent_confirm_request_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_request/flow_directions.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_request/single_use.dart';import 'package:pub_stripe_spec3/models/secret_key_param.dart';/// Indicates how the payment method is intended to be used in the future. If not provided, this value defaults to `off_session`.
-@immutable final class PostSetupIntentsRequestUsage {const PostSetupIntentsRequestUsage._(this.value);
+sealed class PostSetupIntentsRequestUsage {const PostSetupIntentsRequestUsage();
 
 factory PostSetupIntentsRequestUsage.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
-  _ => PostSetupIntentsRequestUsage._(json),
+  _ => PostSetupIntentsRequestUsage$Unknown(json),
 }; }
 
-static const PostSetupIntentsRequestUsage offSession = PostSetupIntentsRequestUsage._('off_session');
+static const PostSetupIntentsRequestUsage offSession = PostSetupIntentsRequestUsage$offSession._();
 
-static const PostSetupIntentsRequestUsage onSession = PostSetupIntentsRequestUsage._('on_session');
+static const PostSetupIntentsRequestUsage onSession = PostSetupIntentsRequestUsage$onSession._();
 
 static const List<PostSetupIntentsRequestUsage> values = [offSession, onSession];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostSetupIntentsRequestUsage$Unknown; } 
+@override String toString() => 'PostSetupIntentsRequestUsage($value)';
+
+ }
+@immutable final class PostSetupIntentsRequestUsage$offSession extends PostSetupIntentsRequestUsage {const PostSetupIntentsRequestUsage$offSession._();
+
+@override String get value => 'off_session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostSetupIntentsRequestUsage$offSession;
+
+@override int get hashCode => 'off_session'.hashCode;
+
+ }
+@immutable final class PostSetupIntentsRequestUsage$onSession extends PostSetupIntentsRequestUsage {const PostSetupIntentsRequestUsage$onSession._();
+
+@override String get value => 'on_session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostSetupIntentsRequestUsage$onSession;
+
+@override int get hashCode => 'on_session'.hashCode;
+
+ }
+@immutable final class PostSetupIntentsRequestUsage$Unknown extends PostSetupIntentsRequestUsage {const PostSetupIntentsRequestUsage$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostSetupIntentsRequestUsage && other.value == value;
+    other is PostSetupIntentsRequestUsage$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostSetupIntentsRequestUsage($value)';
 
  }
 @immutable final class PostSetupIntentsRequest {const PostSetupIntentsRequest({this.attachToSelf, this.automaticPaymentMethods, this.confirm, this.confirmationToken, this.customer, this.customerAccount, this.description, this.excludedPaymentMethodTypes, this.expand, this.flowDirections, this.mandateData, this.metadata, this.onBehalfOf, this.paymentMethod, this.paymentMethodConfiguration, this.paymentMethodData, this.paymentMethodOptions, this.paymentMethodTypes, this.returnUrl, this.singleUse, this.usage, this.useStripeSdk, });

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/CopilotSeatDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/copilot_seat_details/assigning_team.dart';import 'package:pub_github_rest_3_1/models/enterprise_team.dart';import 'package:pub_github_rest_3_1/models/organization_simple.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// The Copilot plan of the organization, or the parent enterprise, when applicable.
-@immutable final class CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType._(this.value);
+sealed class CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType();
 
 factory CopilotSeatDetailsPlanType.fromJson(String json) { return switch (json) {
   'business' => business,
   'enterprise' => enterprise,
   'unknown' => unknown,
-  _ => CopilotSeatDetailsPlanType._(json),
+  _ => CopilotSeatDetailsPlanType$Unknown(json),
 }; }
 
-static const CopilotSeatDetailsPlanType business = CopilotSeatDetailsPlanType._('business');
+static const CopilotSeatDetailsPlanType business = CopilotSeatDetailsPlanType$business._();
 
-static const CopilotSeatDetailsPlanType enterprise = CopilotSeatDetailsPlanType._('enterprise');
+static const CopilotSeatDetailsPlanType enterprise = CopilotSeatDetailsPlanType$enterprise._();
 
-static const CopilotSeatDetailsPlanType unknown = CopilotSeatDetailsPlanType._('unknown');
+static const CopilotSeatDetailsPlanType unknown = CopilotSeatDetailsPlanType$unknown._();
 
 static const List<CopilotSeatDetailsPlanType> values = [business, enterprise, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CopilotSeatDetailsPlanType$Unknown; } 
+@override String toString() => 'CopilotSeatDetailsPlanType($value)';
+
+ }
+@immutable final class CopilotSeatDetailsPlanType$business extends CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType$business._();
+
+@override String get value => 'business';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CopilotSeatDetailsPlanType$business;
+
+@override int get hashCode => 'business'.hashCode;
+
+ }
+@immutable final class CopilotSeatDetailsPlanType$enterprise extends CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType$enterprise._();
+
+@override String get value => 'enterprise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CopilotSeatDetailsPlanType$enterprise;
+
+@override int get hashCode => 'enterprise'.hashCode;
+
+ }
+@immutable final class CopilotSeatDetailsPlanType$unknown extends CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CopilotSeatDetailsPlanType$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class CopilotSeatDetailsPlanType$Unknown extends CopilotSeatDetailsPlanType {const CopilotSeatDetailsPlanType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CopilotSeatDetailsPlanType && other.value == value;
+    other is CopilotSeatDetailsPlanType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CopilotSeatDetailsPlanType($value)';
 
  }
 /// Information about a Copilot Business seat assignment for a user, team, or organization.

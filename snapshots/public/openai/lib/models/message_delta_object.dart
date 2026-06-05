@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MessageDeltaObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_delta_object/message_delta_object_delta.dart';/// The object type, which is always `thread.message.delta`.
-@immutable final class MessageDeltaObjectObject {const MessageDeltaObjectObject._(this.value);
+sealed class MessageDeltaObjectObject {const MessageDeltaObjectObject();
 
 factory MessageDeltaObjectObject.fromJson(String json) { return switch (json) {
   'thread.message.delta' => threadMessageDelta,
-  _ => MessageDeltaObjectObject._(json),
+  _ => MessageDeltaObjectObject$Unknown(json),
 }; }
 
-static const MessageDeltaObjectObject threadMessageDelta = MessageDeltaObjectObject._('thread.message.delta');
+static const MessageDeltaObjectObject threadMessageDelta = MessageDeltaObjectObject$threadMessageDelta._();
 
 static const List<MessageDeltaObjectObject> values = [threadMessageDelta];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MessageDeltaObjectObject$Unknown; } 
+@override String toString() => 'MessageDeltaObjectObject($value)';
+
+ }
+@immutable final class MessageDeltaObjectObject$threadMessageDelta extends MessageDeltaObjectObject {const MessageDeltaObjectObject$threadMessageDelta._();
+
+@override String get value => 'thread.message.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageDeltaObjectObject$threadMessageDelta;
+
+@override int get hashCode => 'thread.message.delta'.hashCode;
+
+ }
+@immutable final class MessageDeltaObjectObject$Unknown extends MessageDeltaObjectObject {const MessageDeltaObjectObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageDeltaObjectObject && other.value == value;
+    other is MessageDeltaObjectObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MessageDeltaObjectObject($value)';
 
  }
 /// Represents a message delta i.e. any changed fields on a message during streaming.

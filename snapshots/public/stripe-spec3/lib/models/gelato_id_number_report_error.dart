@@ -2,25 +2,24 @@
 // Source: #/components/schemas/GelatoIdNumberReportError
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A short machine-readable string giving the reason for the verification failure.
-@immutable final class GelatoIdNumberReportErrorCode {const GelatoIdNumberReportErrorCode._(this.value);
+sealed class GelatoIdNumberReportErrorCode {const GelatoIdNumberReportErrorCode();
 
 factory GelatoIdNumberReportErrorCode.fromJson(String json) { return switch (json) {
   'id_number_insufficient_document_data' => idNumberInsufficientDocumentData,
   'id_number_mismatch' => idNumberMismatch,
   'id_number_unverified_other' => idNumberUnverifiedOther,
-  _ => GelatoIdNumberReportErrorCode._(json),
+  _ => GelatoIdNumberReportErrorCode$Unknown(json),
 }; }
 
-static const GelatoIdNumberReportErrorCode idNumberInsufficientDocumentData = GelatoIdNumberReportErrorCode._('id_number_insufficient_document_data');
+static const GelatoIdNumberReportErrorCode idNumberInsufficientDocumentData = GelatoIdNumberReportErrorCode$idNumberInsufficientDocumentData._();
 
-static const GelatoIdNumberReportErrorCode idNumberMismatch = GelatoIdNumberReportErrorCode._('id_number_mismatch');
+static const GelatoIdNumberReportErrorCode idNumberMismatch = GelatoIdNumberReportErrorCode$idNumberMismatch._();
 
-static const GelatoIdNumberReportErrorCode idNumberUnverifiedOther = GelatoIdNumberReportErrorCode._('id_number_unverified_other');
+static const GelatoIdNumberReportErrorCode idNumberUnverifiedOther = GelatoIdNumberReportErrorCode$idNumberUnverifiedOther._();
 
 static const List<GelatoIdNumberReportErrorCode> values = [idNumberInsufficientDocumentData, idNumberMismatch, idNumberUnverifiedOther];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GelatoIdNumberReportErrorCode$Unknown; } 
+@override String toString() => 'GelatoIdNumberReportErrorCode($value)';
+
+ }
+@immutable final class GelatoIdNumberReportErrorCode$idNumberInsufficientDocumentData extends GelatoIdNumberReportErrorCode {const GelatoIdNumberReportErrorCode$idNumberInsufficientDocumentData._();
+
+@override String get value => 'id_number_insufficient_document_data';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoIdNumberReportErrorCode$idNumberInsufficientDocumentData;
+
+@override int get hashCode => 'id_number_insufficient_document_data'.hashCode;
+
+ }
+@immutable final class GelatoIdNumberReportErrorCode$idNumberMismatch extends GelatoIdNumberReportErrorCode {const GelatoIdNumberReportErrorCode$idNumberMismatch._();
+
+@override String get value => 'id_number_mismatch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoIdNumberReportErrorCode$idNumberMismatch;
+
+@override int get hashCode => 'id_number_mismatch'.hashCode;
+
+ }
+@immutable final class GelatoIdNumberReportErrorCode$idNumberUnverifiedOther extends GelatoIdNumberReportErrorCode {const GelatoIdNumberReportErrorCode$idNumberUnverifiedOther._();
+
+@override String get value => 'id_number_unverified_other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GelatoIdNumberReportErrorCode$idNumberUnverifiedOther;
+
+@override int get hashCode => 'id_number_unverified_other'.hashCode;
+
+ }
+@immutable final class GelatoIdNumberReportErrorCode$Unknown extends GelatoIdNumberReportErrorCode {const GelatoIdNumberReportErrorCode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GelatoIdNumberReportErrorCode && other.value == value;
+    other is GelatoIdNumberReportErrorCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GelatoIdNumberReportErrorCode($value)';
 
  }
 /// 

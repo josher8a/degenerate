@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BrapiPostScreenshotRequest (inline: Variant1 > ScreenshotOptions)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_screenshot_request/clip.dart';import 'package:pub_cloudflare/models/brapi_post_screenshot_request/screenshot_options_type.dart';@immutable final class ScreenshotOptionsEncoding {const ScreenshotOptionsEncoding._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_screenshot_request/clip.dart';import 'package:pub_cloudflare/models/brapi_post_screenshot_request/screenshot_options_type.dart';sealed class ScreenshotOptionsEncoding {const ScreenshotOptionsEncoding();
 
 factory ScreenshotOptionsEncoding.fromJson(String json) { return switch (json) {
   'binary' => binary,
   'base64' => base64,
-  _ => ScreenshotOptionsEncoding._(json),
+  _ => ScreenshotOptionsEncoding$Unknown(json),
 }; }
 
-static const ScreenshotOptionsEncoding binary = ScreenshotOptionsEncoding._('binary');
+static const ScreenshotOptionsEncoding binary = ScreenshotOptionsEncoding$binary._();
 
-static const ScreenshotOptionsEncoding base64 = ScreenshotOptionsEncoding._('base64');
+static const ScreenshotOptionsEncoding base64 = ScreenshotOptionsEncoding$base64._();
 
 static const List<ScreenshotOptionsEncoding> values = [binary, base64];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ScreenshotOptionsEncoding$Unknown; } 
+@override String toString() => 'ScreenshotOptionsEncoding($value)';
+
+ }
+@immutable final class ScreenshotOptionsEncoding$binary extends ScreenshotOptionsEncoding {const ScreenshotOptionsEncoding$binary._();
+
+@override String get value => 'binary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScreenshotOptionsEncoding$binary;
+
+@override int get hashCode => 'binary'.hashCode;
+
+ }
+@immutable final class ScreenshotOptionsEncoding$base64 extends ScreenshotOptionsEncoding {const ScreenshotOptionsEncoding$base64._();
+
+@override String get value => 'base64';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScreenshotOptionsEncoding$base64;
+
+@override int get hashCode => 'base64'.hashCode;
+
+ }
+@immutable final class ScreenshotOptionsEncoding$Unknown extends ScreenshotOptionsEncoding {const ScreenshotOptionsEncoding$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ScreenshotOptionsEncoding && other.value == value;
+    other is ScreenshotOptionsEncoding$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ScreenshotOptionsEncoding($value)';
 
  }
 /// Check [options](https://pptr.dev/api/puppeteer.screenshotoptions).

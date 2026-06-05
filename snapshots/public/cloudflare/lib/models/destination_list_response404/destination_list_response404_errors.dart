@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DestinationListResponse404 (inline: Errors)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationListResponse404ErrorsMessage {const DestinationListResponse404ErrorsMessage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DestinationListResponse404ErrorsMessage {const DestinationListResponse404ErrorsMessage();
 
 factory DestinationListResponse404ErrorsMessage.fromJson(String json) { return switch (json) {
   'Not found' => notFound,
-  _ => DestinationListResponse404ErrorsMessage._(json),
+  _ => DestinationListResponse404ErrorsMessage$Unknown(json),
 }; }
 
-static const DestinationListResponse404ErrorsMessage notFound = DestinationListResponse404ErrorsMessage._('Not found');
+static const DestinationListResponse404ErrorsMessage notFound = DestinationListResponse404ErrorsMessage$notFound._();
 
 static const List<DestinationListResponse404ErrorsMessage> values = [notFound];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DestinationListResponse404ErrorsMessage$Unknown; } 
+@override String toString() => 'DestinationListResponse404ErrorsMessage($value)';
+
+ }
+@immutable final class DestinationListResponse404ErrorsMessage$notFound extends DestinationListResponse404ErrorsMessage {const DestinationListResponse404ErrorsMessage$notFound._();
+
+@override String get value => 'Not found';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DestinationListResponse404ErrorsMessage$notFound;
+
+@override int get hashCode => 'Not found'.hashCode;
+
+ }
+@immutable final class DestinationListResponse404ErrorsMessage$Unknown extends DestinationListResponse404ErrorsMessage {const DestinationListResponse404ErrorsMessage$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DestinationListResponse404ErrorsMessage && other.value == value;
+    other is DestinationListResponse404ErrorsMessage$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DestinationListResponse404ErrorsMessage($value)';
 
  }
 @immutable final class DestinationListResponse404Errors {const DestinationListResponse404Errors({required this.message, this.detail, });

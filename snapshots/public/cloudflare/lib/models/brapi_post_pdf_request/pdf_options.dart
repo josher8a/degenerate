@@ -2,7 +2,7 @@
 // Source: #/components/schemas/BrapiPostPdfRequest (inline: Variant1 > PdfOptions)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/brapi_post_pdf_request/margin.dart';/// Paper format. Takes priority over width and height if set.
-@immutable final class PdfOptionsFormat {const PdfOptionsFormat._(this.value);
+sealed class PdfOptionsFormat {const PdfOptionsFormat();
 
 factory PdfOptionsFormat.fromJson(String json) { return switch (json) {
   'letter' => letter,
@@ -16,35 +16,34 @@ factory PdfOptionsFormat.fromJson(String json) { return switch (json) {
   'a4' => a4,
   'a5' => a5,
   'a6' => a6,
-  _ => PdfOptionsFormat._(json),
+  _ => PdfOptionsFormat$Unknown(json),
 }; }
 
-static const PdfOptionsFormat letter = PdfOptionsFormat._('letter');
+static const PdfOptionsFormat letter = PdfOptionsFormat$letter._();
 
-static const PdfOptionsFormat legal = PdfOptionsFormat._('legal');
+static const PdfOptionsFormat legal = PdfOptionsFormat$legal._();
 
-static const PdfOptionsFormat tabloid = PdfOptionsFormat._('tabloid');
+static const PdfOptionsFormat tabloid = PdfOptionsFormat$tabloid._();
 
-static const PdfOptionsFormat ledger = PdfOptionsFormat._('ledger');
+static const PdfOptionsFormat ledger = PdfOptionsFormat$ledger._();
 
-static const PdfOptionsFormat a0 = PdfOptionsFormat._('a0');
+static const PdfOptionsFormat a0 = PdfOptionsFormat$a0._();
 
-static const PdfOptionsFormat a1 = PdfOptionsFormat._('a1');
+static const PdfOptionsFormat a1 = PdfOptionsFormat$a1._();
 
-static const PdfOptionsFormat a2 = PdfOptionsFormat._('a2');
+static const PdfOptionsFormat a2 = PdfOptionsFormat$a2._();
 
-static const PdfOptionsFormat a3 = PdfOptionsFormat._('a3');
+static const PdfOptionsFormat a3 = PdfOptionsFormat$a3._();
 
-static const PdfOptionsFormat a4 = PdfOptionsFormat._('a4');
+static const PdfOptionsFormat a4 = PdfOptionsFormat$a4._();
 
-static const PdfOptionsFormat a5 = PdfOptionsFormat._('a5');
+static const PdfOptionsFormat a5 = PdfOptionsFormat$a5._();
 
-static const PdfOptionsFormat a6 = PdfOptionsFormat._('a6');
+static const PdfOptionsFormat a6 = PdfOptionsFormat$a6._();
 
 static const List<PdfOptionsFormat> values = [letter, legal, tabloid, ledger, a0, a1, a2, a3, a4, a5, a6];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -62,13 +61,117 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PdfOptionsFormat$Unknown; } 
+@override String toString() => 'PdfOptionsFormat($value)';
+
+ }
+@immutable final class PdfOptionsFormat$letter extends PdfOptionsFormat {const PdfOptionsFormat$letter._();
+
+@override String get value => 'letter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PdfOptionsFormat$letter;
+
+@override int get hashCode => 'letter'.hashCode;
+
+ }
+@immutable final class PdfOptionsFormat$legal extends PdfOptionsFormat {const PdfOptionsFormat$legal._();
+
+@override String get value => 'legal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PdfOptionsFormat$legal;
+
+@override int get hashCode => 'legal'.hashCode;
+
+ }
+@immutable final class PdfOptionsFormat$tabloid extends PdfOptionsFormat {const PdfOptionsFormat$tabloid._();
+
+@override String get value => 'tabloid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PdfOptionsFormat$tabloid;
+
+@override int get hashCode => 'tabloid'.hashCode;
+
+ }
+@immutable final class PdfOptionsFormat$ledger extends PdfOptionsFormat {const PdfOptionsFormat$ledger._();
+
+@override String get value => 'ledger';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PdfOptionsFormat$ledger;
+
+@override int get hashCode => 'ledger'.hashCode;
+
+ }
+@immutable final class PdfOptionsFormat$a0 extends PdfOptionsFormat {const PdfOptionsFormat$a0._();
+
+@override String get value => 'a0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PdfOptionsFormat$a0;
+
+@override int get hashCode => 'a0'.hashCode;
+
+ }
+@immutable final class PdfOptionsFormat$a1 extends PdfOptionsFormat {const PdfOptionsFormat$a1._();
+
+@override String get value => 'a1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PdfOptionsFormat$a1;
+
+@override int get hashCode => 'a1'.hashCode;
+
+ }
+@immutable final class PdfOptionsFormat$a2 extends PdfOptionsFormat {const PdfOptionsFormat$a2._();
+
+@override String get value => 'a2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PdfOptionsFormat$a2;
+
+@override int get hashCode => 'a2'.hashCode;
+
+ }
+@immutable final class PdfOptionsFormat$a3 extends PdfOptionsFormat {const PdfOptionsFormat$a3._();
+
+@override String get value => 'a3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PdfOptionsFormat$a3;
+
+@override int get hashCode => 'a3'.hashCode;
+
+ }
+@immutable final class PdfOptionsFormat$a4 extends PdfOptionsFormat {const PdfOptionsFormat$a4._();
+
+@override String get value => 'a4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PdfOptionsFormat$a4;
+
+@override int get hashCode => 'a4'.hashCode;
+
+ }
+@immutable final class PdfOptionsFormat$a5 extends PdfOptionsFormat {const PdfOptionsFormat$a5._();
+
+@override String get value => 'a5';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PdfOptionsFormat$a5;
+
+@override int get hashCode => 'a5'.hashCode;
+
+ }
+@immutable final class PdfOptionsFormat$a6 extends PdfOptionsFormat {const PdfOptionsFormat$a6._();
+
+@override String get value => 'a6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PdfOptionsFormat$a6;
+
+@override int get hashCode => 'a6'.hashCode;
+
+ }
+@immutable final class PdfOptionsFormat$Unknown extends PdfOptionsFormat {const PdfOptionsFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PdfOptionsFormat && other.value == value;
+    other is PdfOptionsFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PdfOptionsFormat($value)';
 
  }
 /// Check [options](https://pptr.dev/api/puppeteer.pdfoptions).

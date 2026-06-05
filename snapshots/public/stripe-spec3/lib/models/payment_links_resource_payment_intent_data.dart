@@ -2,25 +2,24 @@
 // Source: #/components/schemas/PaymentLinksResourcePaymentIntentData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_token/confirmation_token_setup_future_usage.dart';/// Indicates when the funds will be captured from the customer's account.
-@immutable final class PaymentLinksResourcePaymentIntentDataCaptureMethod {const PaymentLinksResourcePaymentIntentDataCaptureMethod._(this.value);
+sealed class PaymentLinksResourcePaymentIntentDataCaptureMethod {const PaymentLinksResourcePaymentIntentDataCaptureMethod();
 
 factory PaymentLinksResourcePaymentIntentDataCaptureMethod.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
   'automatic_async' => automaticAsync,
   'manual' => manual,
-  _ => PaymentLinksResourcePaymentIntentDataCaptureMethod._(json),
+  _ => PaymentLinksResourcePaymentIntentDataCaptureMethod$Unknown(json),
 }; }
 
-static const PaymentLinksResourcePaymentIntentDataCaptureMethod automatic = PaymentLinksResourcePaymentIntentDataCaptureMethod._('automatic');
+static const PaymentLinksResourcePaymentIntentDataCaptureMethod automatic = PaymentLinksResourcePaymentIntentDataCaptureMethod$automatic._();
 
-static const PaymentLinksResourcePaymentIntentDataCaptureMethod automaticAsync = PaymentLinksResourcePaymentIntentDataCaptureMethod._('automatic_async');
+static const PaymentLinksResourcePaymentIntentDataCaptureMethod automaticAsync = PaymentLinksResourcePaymentIntentDataCaptureMethod$automaticAsync._();
 
-static const PaymentLinksResourcePaymentIntentDataCaptureMethod manual = PaymentLinksResourcePaymentIntentDataCaptureMethod._('manual');
+static const PaymentLinksResourcePaymentIntentDataCaptureMethod manual = PaymentLinksResourcePaymentIntentDataCaptureMethod$manual._();
 
 static const List<PaymentLinksResourcePaymentIntentDataCaptureMethod> values = [automatic, automaticAsync, manual];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentLinksResourcePaymentIntentDataCaptureMethod$Unknown; } 
+@override String toString() => 'PaymentLinksResourcePaymentIntentDataCaptureMethod($value)';
+
+ }
+@immutable final class PaymentLinksResourcePaymentIntentDataCaptureMethod$automatic extends PaymentLinksResourcePaymentIntentDataCaptureMethod {const PaymentLinksResourcePaymentIntentDataCaptureMethod$automatic._();
+
+@override String get value => 'automatic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinksResourcePaymentIntentDataCaptureMethod$automatic;
+
+@override int get hashCode => 'automatic'.hashCode;
+
+ }
+@immutable final class PaymentLinksResourcePaymentIntentDataCaptureMethod$automaticAsync extends PaymentLinksResourcePaymentIntentDataCaptureMethod {const PaymentLinksResourcePaymentIntentDataCaptureMethod$automaticAsync._();
+
+@override String get value => 'automatic_async';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinksResourcePaymentIntentDataCaptureMethod$automaticAsync;
+
+@override int get hashCode => 'automatic_async'.hashCode;
+
+ }
+@immutable final class PaymentLinksResourcePaymentIntentDataCaptureMethod$manual extends PaymentLinksResourcePaymentIntentDataCaptureMethod {const PaymentLinksResourcePaymentIntentDataCaptureMethod$manual._();
+
+@override String get value => 'manual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinksResourcePaymentIntentDataCaptureMethod$manual;
+
+@override int get hashCode => 'manual'.hashCode;
+
+ }
+@immutable final class PaymentLinksResourcePaymentIntentDataCaptureMethod$Unknown extends PaymentLinksResourcePaymentIntentDataCaptureMethod {const PaymentLinksResourcePaymentIntentDataCaptureMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentLinksResourcePaymentIntentDataCaptureMethod && other.value == value;
+    other is PaymentLinksResourcePaymentIntentDataCaptureMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentLinksResourcePaymentIntentDataCaptureMethod($value)';
 
  }
 /// 

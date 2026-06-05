@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentIntentPaymentMethodOptionsParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage();
 
 factory PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage.fromJson(String json) { return switch (json) {
   '' => $empty,
   'none' => none,
-  _ => PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage._(json),
+  _ => PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown(json),
 }; }
 
-static const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage $empty = PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage._('');
+static const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage $empty = PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$$empty._();
 
-static const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage none = PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage._('none');
+static const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage none = PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$none._();
 
 static const List<PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage> values = [$empty, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown; } 
+@override String toString() => 'PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage($value)';
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$$empty extends PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$$empty._();
+
+@override String get value => '';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$$empty;
+
+@override int get hashCode => ''.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$none extends PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown extends PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage {const PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage && other.value == value;
+    other is PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentIntentPaymentMethodOptionsParam18SetupFutureUsage($value)';
 
  }
 @immutable final class PaymentIntentPaymentMethodOptionsParam18 {const PaymentIntentPaymentMethodOptionsParam18({this.code, this.setupFutureUsage, });

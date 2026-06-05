@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the output audio. Always `output_audio`.
 /// 
-@immutable final class OutputAudioType {const OutputAudioType._(this.value);
+sealed class OutputAudioType {const OutputAudioType();
 
 factory OutputAudioType.fromJson(String json) { return switch (json) {
   'output_audio' => outputAudio,
-  _ => OutputAudioType._(json),
+  _ => OutputAudioType$Unknown(json),
 }; }
 
-static const OutputAudioType outputAudio = OutputAudioType._('output_audio');
+static const OutputAudioType outputAudio = OutputAudioType$outputAudio._();
 
 static const List<OutputAudioType> values = [outputAudio];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OutputAudioType$Unknown; } 
+@override String toString() => 'OutputAudioType($value)';
+
+ }
+@immutable final class OutputAudioType$outputAudio extends OutputAudioType {const OutputAudioType$outputAudio._();
+
+@override String get value => 'output_audio';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OutputAudioType$outputAudio;
+
+@override int get hashCode => 'output_audio'.hashCode;
+
+ }
+@immutable final class OutputAudioType$Unknown extends OutputAudioType {const OutputAudioType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OutputAudioType && other.value == value;
+    other is OutputAudioType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OutputAudioType($value)';
 
  }
 /// An audio output from the model.

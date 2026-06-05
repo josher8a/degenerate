@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookIssuesDemilestoned (inline: Action)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookIssuesDemilestonedAction {const WebhookIssuesDemilestonedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class WebhookIssuesDemilestonedAction {const WebhookIssuesDemilestonedAction();
 
 factory WebhookIssuesDemilestonedAction.fromJson(String json) { return switch (json) {
   'demilestoned' => demilestoned,
-  _ => WebhookIssuesDemilestonedAction._(json),
+  _ => WebhookIssuesDemilestonedAction$Unknown(json),
 }; }
 
-static const WebhookIssuesDemilestonedAction demilestoned = WebhookIssuesDemilestonedAction._('demilestoned');
+static const WebhookIssuesDemilestonedAction demilestoned = WebhookIssuesDemilestonedAction$demilestoned._();
 
 static const List<WebhookIssuesDemilestonedAction> values = [demilestoned];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookIssuesDemilestonedAction$Unknown; } 
+@override String toString() => 'WebhookIssuesDemilestonedAction($value)';
+
+ }
+@immutable final class WebhookIssuesDemilestonedAction$demilestoned extends WebhookIssuesDemilestonedAction {const WebhookIssuesDemilestonedAction$demilestoned._();
+
+@override String get value => 'demilestoned';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesDemilestonedAction$demilestoned;
+
+@override int get hashCode => 'demilestoned'.hashCode;
+
+ }
+@immutable final class WebhookIssuesDemilestonedAction$Unknown extends WebhookIssuesDemilestonedAction {const WebhookIssuesDemilestonedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookIssuesDemilestonedAction && other.value == value;
+    other is WebhookIssuesDemilestonedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookIssuesDemilestonedAction($value)';
 
  }

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetCtTimeseriesPublicKeyAlgorithm
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesPublicKeyAlgorithm {const RadarGetCtTimeseriesPublicKeyAlgorithm._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetCtTimeseriesPublicKeyAlgorithm {const RadarGetCtTimeseriesPublicKeyAlgorithm();
 
 factory RadarGetCtTimeseriesPublicKeyAlgorithm.fromJson(String json) { return switch (json) {
   'DSA' => dsa,
   'ECDSA' => ecdsa,
   'RSA' => rsa,
-  _ => RadarGetCtTimeseriesPublicKeyAlgorithm._(json),
+  _ => RadarGetCtTimeseriesPublicKeyAlgorithm$Unknown(json),
 }; }
 
-static const RadarGetCtTimeseriesPublicKeyAlgorithm dsa = RadarGetCtTimeseriesPublicKeyAlgorithm._('DSA');
+static const RadarGetCtTimeseriesPublicKeyAlgorithm dsa = RadarGetCtTimeseriesPublicKeyAlgorithm$dsa._();
 
-static const RadarGetCtTimeseriesPublicKeyAlgorithm ecdsa = RadarGetCtTimeseriesPublicKeyAlgorithm._('ECDSA');
+static const RadarGetCtTimeseriesPublicKeyAlgorithm ecdsa = RadarGetCtTimeseriesPublicKeyAlgorithm$ecdsa._();
 
-static const RadarGetCtTimeseriesPublicKeyAlgorithm rsa = RadarGetCtTimeseriesPublicKeyAlgorithm._('RSA');
+static const RadarGetCtTimeseriesPublicKeyAlgorithm rsa = RadarGetCtTimeseriesPublicKeyAlgorithm$rsa._();
 
 static const List<RadarGetCtTimeseriesPublicKeyAlgorithm> values = [dsa, ecdsa, rsa];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetCtTimeseriesPublicKeyAlgorithm$Unknown; } 
+@override String toString() => 'RadarGetCtTimeseriesPublicKeyAlgorithm($value)';
+
+ }
+@immutable final class RadarGetCtTimeseriesPublicKeyAlgorithm$dsa extends RadarGetCtTimeseriesPublicKeyAlgorithm {const RadarGetCtTimeseriesPublicKeyAlgorithm$dsa._();
+
+@override String get value => 'DSA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetCtTimeseriesPublicKeyAlgorithm$dsa;
+
+@override int get hashCode => 'DSA'.hashCode;
+
+ }
+@immutable final class RadarGetCtTimeseriesPublicKeyAlgorithm$ecdsa extends RadarGetCtTimeseriesPublicKeyAlgorithm {const RadarGetCtTimeseriesPublicKeyAlgorithm$ecdsa._();
+
+@override String get value => 'ECDSA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetCtTimeseriesPublicKeyAlgorithm$ecdsa;
+
+@override int get hashCode => 'ECDSA'.hashCode;
+
+ }
+@immutable final class RadarGetCtTimeseriesPublicKeyAlgorithm$rsa extends RadarGetCtTimeseriesPublicKeyAlgorithm {const RadarGetCtTimeseriesPublicKeyAlgorithm$rsa._();
+
+@override String get value => 'RSA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetCtTimeseriesPublicKeyAlgorithm$rsa;
+
+@override int get hashCode => 'RSA'.hashCode;
+
+ }
+@immutable final class RadarGetCtTimeseriesPublicKeyAlgorithm$Unknown extends RadarGetCtTimeseriesPublicKeyAlgorithm {const RadarGetCtTimeseriesPublicKeyAlgorithm$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetCtTimeseriesPublicKeyAlgorithm && other.value == value;
+    other is RadarGetCtTimeseriesPublicKeyAlgorithm$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetCtTimeseriesPublicKeyAlgorithm($value)';
 
  }

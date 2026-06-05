@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MessageContentRefusalObject (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `refusal`.
-@immutable final class MessageContentRefusalObjectType {const MessageContentRefusalObjectType._(this.value);
+sealed class MessageContentRefusalObjectType {const MessageContentRefusalObjectType();
 
 factory MessageContentRefusalObjectType.fromJson(String json) { return switch (json) {
   'refusal' => refusal,
-  _ => MessageContentRefusalObjectType._(json),
+  _ => MessageContentRefusalObjectType$Unknown(json),
 }; }
 
-static const MessageContentRefusalObjectType refusal = MessageContentRefusalObjectType._('refusal');
+static const MessageContentRefusalObjectType refusal = MessageContentRefusalObjectType$refusal._();
 
 static const List<MessageContentRefusalObjectType> values = [refusal];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MessageContentRefusalObjectType$Unknown; } 
+@override String toString() => 'MessageContentRefusalObjectType($value)';
+
+ }
+@immutable final class MessageContentRefusalObjectType$refusal extends MessageContentRefusalObjectType {const MessageContentRefusalObjectType$refusal._();
+
+@override String get value => 'refusal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageContentRefusalObjectType$refusal;
+
+@override int get hashCode => 'refusal'.hashCode;
+
+ }
+@immutable final class MessageContentRefusalObjectType$Unknown extends MessageContentRefusalObjectType {const MessageContentRefusalObjectType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MessageContentRefusalObjectType && other.value == value;
+    other is MessageContentRefusalObjectType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MessageContentRefusalObjectType($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CacheRulesOriginMaxHttpVersion (inline: Id)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Value of the zone setting.
-@immutable final class CacheRulesOriginMaxHttpVersionId {const CacheRulesOriginMaxHttpVersionId._(this.value);
+sealed class CacheRulesOriginMaxHttpVersionId {const CacheRulesOriginMaxHttpVersionId();
 
 factory CacheRulesOriginMaxHttpVersionId.fromJson(String json) { return switch (json) {
   'origin_max_http_version' => originMaxHttpVersion,
-  _ => CacheRulesOriginMaxHttpVersionId._(json),
+  _ => CacheRulesOriginMaxHttpVersionId$Unknown(json),
 }; }
 
-static const CacheRulesOriginMaxHttpVersionId originMaxHttpVersion = CacheRulesOriginMaxHttpVersionId._('origin_max_http_version');
+static const CacheRulesOriginMaxHttpVersionId originMaxHttpVersion = CacheRulesOriginMaxHttpVersionId$originMaxHttpVersion._();
 
 static const List<CacheRulesOriginMaxHttpVersionId> values = [originMaxHttpVersion];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CacheRulesOriginMaxHttpVersionId$Unknown; } 
+@override String toString() => 'CacheRulesOriginMaxHttpVersionId($value)';
+
+ }
+@immutable final class CacheRulesOriginMaxHttpVersionId$originMaxHttpVersion extends CacheRulesOriginMaxHttpVersionId {const CacheRulesOriginMaxHttpVersionId$originMaxHttpVersion._();
+
+@override String get value => 'origin_max_http_version';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CacheRulesOriginMaxHttpVersionId$originMaxHttpVersion;
+
+@override int get hashCode => 'origin_max_http_version'.hashCode;
+
+ }
+@immutable final class CacheRulesOriginMaxHttpVersionId$Unknown extends CacheRulesOriginMaxHttpVersionId {const CacheRulesOriginMaxHttpVersionId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CacheRulesOriginMaxHttpVersionId && other.value == value;
+    other is CacheRulesOriginMaxHttpVersionId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CacheRulesOriginMaxHttpVersionId($value)';
 
  }

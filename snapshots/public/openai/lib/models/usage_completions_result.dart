@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UsageCompletionsResult
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageCompletionsResultObject {const UsageCompletionsResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageCompletionsResultObject {const UsageCompletionsResultObject();
 
 factory UsageCompletionsResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.completions.result' => organizationUsageCompletionsResult,
-  _ => UsageCompletionsResultObject._(json),
+  _ => UsageCompletionsResultObject$Unknown(json),
 }; }
 
-static const UsageCompletionsResultObject organizationUsageCompletionsResult = UsageCompletionsResultObject._('organization.usage.completions.result');
+static const UsageCompletionsResultObject organizationUsageCompletionsResult = UsageCompletionsResultObject$organizationUsageCompletionsResult._();
 
 static const List<UsageCompletionsResultObject> values = [organizationUsageCompletionsResult];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UsageCompletionsResultObject$Unknown; } 
+@override String toString() => 'UsageCompletionsResultObject($value)';
+
+ }
+@immutable final class UsageCompletionsResultObject$organizationUsageCompletionsResult extends UsageCompletionsResultObject {const UsageCompletionsResultObject$organizationUsageCompletionsResult._();
+
+@override String get value => 'organization.usage.completions.result';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageCompletionsResultObject$organizationUsageCompletionsResult;
+
+@override int get hashCode => 'organization.usage.completions.result'.hashCode;
+
+ }
+@immutable final class UsageCompletionsResultObject$Unknown extends UsageCompletionsResultObject {const UsageCompletionsResultObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UsageCompletionsResultObject && other.value == value;
+    other is UsageCompletionsResultObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UsageCompletionsResultObject($value)';
 
  }
 /// The aggregated completions usage details of the specific time bucket.

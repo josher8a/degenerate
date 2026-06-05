@@ -2,25 +2,24 @@
 // Source: #/components/schemas/PauseCollectionParam (inline: Behavior)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The payment collection behavior for this subscription while paused. One of `keep_as_draft`, `mark_uncollectible`, or `void`.
-@immutable final class PauseCollectionParamBehavior {const PauseCollectionParamBehavior._(this.value);
+sealed class PauseCollectionParamBehavior {const PauseCollectionParamBehavior();
 
 factory PauseCollectionParamBehavior.fromJson(String json) { return switch (json) {
   'keep_as_draft' => keepAsDraft,
   'mark_uncollectible' => markUncollectible,
   'void' => $void,
-  _ => PauseCollectionParamBehavior._(json),
+  _ => PauseCollectionParamBehavior$Unknown(json),
 }; }
 
-static const PauseCollectionParamBehavior keepAsDraft = PauseCollectionParamBehavior._('keep_as_draft');
+static const PauseCollectionParamBehavior keepAsDraft = PauseCollectionParamBehavior$keepAsDraft._();
 
-static const PauseCollectionParamBehavior markUncollectible = PauseCollectionParamBehavior._('mark_uncollectible');
+static const PauseCollectionParamBehavior markUncollectible = PauseCollectionParamBehavior$markUncollectible._();
 
-static const PauseCollectionParamBehavior $void = PauseCollectionParamBehavior._('void');
+static const PauseCollectionParamBehavior $void = PauseCollectionParamBehavior$$void._();
 
 static const List<PauseCollectionParamBehavior> values = [keepAsDraft, markUncollectible, $void];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PauseCollectionParamBehavior$Unknown; } 
+@override String toString() => 'PauseCollectionParamBehavior($value)';
+
+ }
+@immutable final class PauseCollectionParamBehavior$keepAsDraft extends PauseCollectionParamBehavior {const PauseCollectionParamBehavior$keepAsDraft._();
+
+@override String get value => 'keep_as_draft';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PauseCollectionParamBehavior$keepAsDraft;
+
+@override int get hashCode => 'keep_as_draft'.hashCode;
+
+ }
+@immutable final class PauseCollectionParamBehavior$markUncollectible extends PauseCollectionParamBehavior {const PauseCollectionParamBehavior$markUncollectible._();
+
+@override String get value => 'mark_uncollectible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PauseCollectionParamBehavior$markUncollectible;
+
+@override int get hashCode => 'mark_uncollectible'.hashCode;
+
+ }
+@immutable final class PauseCollectionParamBehavior$$void extends PauseCollectionParamBehavior {const PauseCollectionParamBehavior$$void._();
+
+@override String get value => 'void';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PauseCollectionParamBehavior$$void;
+
+@override int get hashCode => 'void'.hashCode;
+
+ }
+@immutable final class PauseCollectionParamBehavior$Unknown extends PauseCollectionParamBehavior {const PauseCollectionParamBehavior$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PauseCollectionParamBehavior && other.value == value;
+    other is PauseCollectionParamBehavior$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PauseCollectionParamBehavior($value)';
 
  }

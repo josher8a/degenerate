@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RulesetsSetCacheControlOperation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The operation to perform on the cache-control directive.
-@immutable final class RulesetsSetCacheControlOperation {const RulesetsSetCacheControlOperation._(this.value);
+sealed class RulesetsSetCacheControlOperation {const RulesetsSetCacheControlOperation();
 
 factory RulesetsSetCacheControlOperation.fromJson(String json) { return switch (json) {
   'set' => $set,
   'remove' => remove,
-  _ => RulesetsSetCacheControlOperation._(json),
+  _ => RulesetsSetCacheControlOperation$Unknown(json),
 }; }
 
-static const RulesetsSetCacheControlOperation $set = RulesetsSetCacheControlOperation._('set');
+static const RulesetsSetCacheControlOperation $set = RulesetsSetCacheControlOperation$$set._();
 
-static const RulesetsSetCacheControlOperation remove = RulesetsSetCacheControlOperation._('remove');
+static const RulesetsSetCacheControlOperation remove = RulesetsSetCacheControlOperation$remove._();
 
 static const List<RulesetsSetCacheControlOperation> values = [$set, remove];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RulesetsSetCacheControlOperation$Unknown; } 
+@override String toString() => 'RulesetsSetCacheControlOperation($value)';
+
+ }
+@immutable final class RulesetsSetCacheControlOperation$$set extends RulesetsSetCacheControlOperation {const RulesetsSetCacheControlOperation$$set._();
+
+@override String get value => 'set';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RulesetsSetCacheControlOperation$$set;
+
+@override int get hashCode => 'set'.hashCode;
+
+ }
+@immutable final class RulesetsSetCacheControlOperation$remove extends RulesetsSetCacheControlOperation {const RulesetsSetCacheControlOperation$remove._();
+
+@override String get value => 'remove';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RulesetsSetCacheControlOperation$remove;
+
+@override int get hashCode => 'remove'.hashCode;
+
+ }
+@immutable final class RulesetsSetCacheControlOperation$Unknown extends RulesetsSetCacheControlOperation {const RulesetsSetCacheControlOperation$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RulesetsSetCacheControlOperation && other.value == value;
+    other is RulesetsSetCacheControlOperation$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RulesetsSetCacheControlOperation($value)';
 
  }

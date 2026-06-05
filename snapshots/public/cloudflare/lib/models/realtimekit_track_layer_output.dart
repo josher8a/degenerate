@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RealtimekitTrackLayerOutput
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_storage_config.dart';/// The type of output destination this layer is being exported to.
-@immutable final class RealtimekitTrackLayerOutputType {const RealtimekitTrackLayerOutputType._(this.value);
+sealed class RealtimekitTrackLayerOutputType {const RealtimekitTrackLayerOutputType();
 
 factory RealtimekitTrackLayerOutputType.fromJson(String json) { return switch (json) {
   'REALTIMEKIT_BUCKET' => realtimekitBucket,
   'STORAGE_CONFIG' => storageConfig,
-  _ => RealtimekitTrackLayerOutputType._(json),
+  _ => RealtimekitTrackLayerOutputType$Unknown(json),
 }; }
 
-static const RealtimekitTrackLayerOutputType realtimekitBucket = RealtimekitTrackLayerOutputType._('REALTIMEKIT_BUCKET');
+static const RealtimekitTrackLayerOutputType realtimekitBucket = RealtimekitTrackLayerOutputType$realtimekitBucket._();
 
-static const RealtimekitTrackLayerOutputType storageConfig = RealtimekitTrackLayerOutputType._('STORAGE_CONFIG');
+static const RealtimekitTrackLayerOutputType storageConfig = RealtimekitTrackLayerOutputType$storageConfig._();
 
 static const List<RealtimekitTrackLayerOutputType> values = [realtimekitBucket, storageConfig];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimekitTrackLayerOutputType$Unknown; } 
+@override String toString() => 'RealtimekitTrackLayerOutputType($value)';
+
+ }
+@immutable final class RealtimekitTrackLayerOutputType$realtimekitBucket extends RealtimekitTrackLayerOutputType {const RealtimekitTrackLayerOutputType$realtimekitBucket._();
+
+@override String get value => 'REALTIMEKIT_BUCKET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitTrackLayerOutputType$realtimekitBucket;
+
+@override int get hashCode => 'REALTIMEKIT_BUCKET'.hashCode;
+
+ }
+@immutable final class RealtimekitTrackLayerOutputType$storageConfig extends RealtimekitTrackLayerOutputType {const RealtimekitTrackLayerOutputType$storageConfig._();
+
+@override String get value => 'STORAGE_CONFIG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitTrackLayerOutputType$storageConfig;
+
+@override int get hashCode => 'STORAGE_CONFIG'.hashCode;
+
+ }
+@immutable final class RealtimekitTrackLayerOutputType$Unknown extends RealtimekitTrackLayerOutputType {const RealtimekitTrackLayerOutputType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimekitTrackLayerOutputType && other.value == value;
+    other is RealtimekitTrackLayerOutputType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimekitTrackLayerOutputType($value)';
 
  }
 @immutable final class RealtimekitTrackLayerOutput {const RealtimekitTrackLayerOutput({this.storageConfig, this.type = RealtimekitTrackLayerOutputType.realtimekitBucket, });

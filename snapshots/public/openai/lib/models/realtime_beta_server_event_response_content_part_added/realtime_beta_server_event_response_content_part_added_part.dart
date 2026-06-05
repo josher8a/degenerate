@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RealtimeBetaServerEventResponseContentPartAdded (inline: Part)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type ("text", "audio").
-@immutable final class PartType {const PartType._(this.value);
+sealed class PartType {const PartType();
 
 factory PartType.fromJson(String json) { return switch (json) {
   'audio' => audio,
   'text' => text,
-  _ => PartType._(json),
+  _ => PartType$Unknown(json),
 }; }
 
-static const PartType audio = PartType._('audio');
+static const PartType audio = PartType$audio._();
 
-static const PartType text = PartType._('text');
+static const PartType text = PartType$text._();
 
 static const List<PartType> values = [audio, text];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PartType$Unknown; } 
+@override String toString() => 'PartType($value)';
+
+ }
+@immutable final class PartType$audio extends PartType {const PartType$audio._();
+
+@override String get value => 'audio';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PartType$audio;
+
+@override int get hashCode => 'audio'.hashCode;
+
+ }
+@immutable final class PartType$text extends PartType {const PartType$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PartType$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class PartType$Unknown extends PartType {const PartType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PartType && other.value == value;
+    other is PartType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PartType($value)';
 
  }
 /// The content part that was added.

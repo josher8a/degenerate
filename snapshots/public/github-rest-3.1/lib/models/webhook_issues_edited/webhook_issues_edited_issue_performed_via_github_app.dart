@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookIssuesEdited (inline: Issue > PerformedViaGithubApp)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/package_owner.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue/webhooks_issue_performed_via_github_app_permissions.dart';@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/webhook_package_published/package_owner.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue/webhooks_issue_performed_via_github_app_permissions.dart';sealed class WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents();
 
 factory WebhookIssuesEditedIssuePerformedViaGithubAppEvents.fromJson(String json) { return switch (json) {
   'branch_protection_rule' => branchProtectionRule,
@@ -52,109 +52,108 @@ factory WebhookIssuesEditedIssuePerformedViaGithubAppEvents.fromJson(String json
   'security_and_analysis' => securityAndAnalysis,
   'pull_request_review_thread' => pullRequestReviewThread,
   'reminder' => reminder,
-  _ => WebhookIssuesEditedIssuePerformedViaGithubAppEvents._(json),
+  _ => WebhookIssuesEditedIssuePerformedViaGithubAppEvents$Unknown(json),
 }; }
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents branchProtectionRule = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('branch_protection_rule');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents branchProtectionRule = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$branchProtectionRule._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents checkRun = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('check_run');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents checkRun = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$checkRun._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents checkSuite = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('check_suite');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents checkSuite = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$checkSuite._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents codeScanningAlert = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('code_scanning_alert');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents codeScanningAlert = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$codeScanningAlert._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents commitComment = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('commit_comment');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents commitComment = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$commitComment._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents contentReference = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('content_reference');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents contentReference = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$contentReference._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents create = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('create');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents create = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$create._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents delete = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('delete');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents delete = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$delete._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents deployment = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('deployment');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents deployment = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deployment._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents deploymentReview = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('deployment_review');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents deploymentReview = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deploymentReview._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents deploymentStatus = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('deployment_status');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents deploymentStatus = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deploymentStatus._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents deployKey = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('deploy_key');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents deployKey = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deployKey._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents discussion = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('discussion');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents discussion = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$discussion._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents discussionComment = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('discussion_comment');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents discussionComment = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$discussionComment._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents fork = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('fork');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents fork = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$fork._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents gollum = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('gollum');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents gollum = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$gollum._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents issues = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('issues');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents issues = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$issues._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents issueComment = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('issue_comment');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents issueComment = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$issueComment._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents label = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('label');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents label = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$label._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents member = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('member');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents member = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$member._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents membership = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('membership');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents membership = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$membership._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents milestone = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('milestone');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents milestone = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$milestone._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents organization = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('organization');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents organization = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$organization._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents orgBlock = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('org_block');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents orgBlock = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$orgBlock._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents pageBuild = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('page_build');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents pageBuild = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pageBuild._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents project = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('project');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents project = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$project._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents projectCard = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('project_card');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents projectCard = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$projectCard._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents projectColumn = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('project_column');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents projectColumn = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$projectColumn._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents public = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('public');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents public = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$public._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents pullRequest = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('pull_request');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents pullRequest = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequest._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents pullRequestReview = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('pull_request_review');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents pullRequestReview = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequestReview._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents pullRequestReviewComment = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('pull_request_review_comment');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents pullRequestReviewComment = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequestReviewComment._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents push = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('push');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents push = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$push._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents registryPackage = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('registry_package');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents registryPackage = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$registryPackage._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents release = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('release');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents release = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$release._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents repository = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('repository');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents repository = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$repository._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents repositoryDispatch = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('repository_dispatch');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents repositoryDispatch = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$repositoryDispatch._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents secretScanningAlert = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('secret_scanning_alert');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents secretScanningAlert = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$secretScanningAlert._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents star = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('star');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents star = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$star._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents status = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('status');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents status = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$status._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents team = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('team');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents team = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$team._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents teamAdd = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('team_add');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents teamAdd = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$teamAdd._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents watch = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('watch');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents watch = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$watch._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents workflowDispatch = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('workflow_dispatch');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents workflowDispatch = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$workflowDispatch._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents workflowRun = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('workflow_run');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents workflowRun = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$workflowRun._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents securityAndAnalysis = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('security_and_analysis');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents securityAndAnalysis = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$securityAndAnalysis._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents pullRequestReviewThread = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('pull_request_review_thread');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents pullRequestReviewThread = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequestReviewThread._();
 
-static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents reminder = WebhookIssuesEditedIssuePerformedViaGithubAppEvents._('reminder');
+static const WebhookIssuesEditedIssuePerformedViaGithubAppEvents reminder = WebhookIssuesEditedIssuePerformedViaGithubAppEvents$reminder._();
 
 static const List<WebhookIssuesEditedIssuePerformedViaGithubAppEvents> values = [branchProtectionRule, checkRun, checkSuite, codeScanningAlert, commitComment, contentReference, create, delete, deployment, deploymentReview, deploymentStatus, deployKey, discussion, discussionComment, fork, gollum, issues, issueComment, label, member, membership, milestone, organization, orgBlock, pageBuild, project, projectCard, projectColumn, public, pullRequest, pullRequestReview, pullRequestReviewComment, push, registryPackage, release, repository, repositoryDispatch, secretScanningAlert, star, status, team, teamAdd, watch, workflowDispatch, workflowRun, securityAndAnalysis, pullRequestReviewThread, reminder];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -209,13 +208,450 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$Unknown; } 
+@override String toString() => 'WebhookIssuesEditedIssuePerformedViaGithubAppEvents($value)';
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$branchProtectionRule extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$branchProtectionRule._();
+
+@override String get value => 'branch_protection_rule';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$branchProtectionRule;
+
+@override int get hashCode => 'branch_protection_rule'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$checkRun extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$checkRun._();
+
+@override String get value => 'check_run';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$checkRun;
+
+@override int get hashCode => 'check_run'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$checkSuite extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$checkSuite._();
+
+@override String get value => 'check_suite';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$checkSuite;
+
+@override int get hashCode => 'check_suite'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$codeScanningAlert extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$codeScanningAlert._();
+
+@override String get value => 'code_scanning_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$codeScanningAlert;
+
+@override int get hashCode => 'code_scanning_alert'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$commitComment extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$commitComment._();
+
+@override String get value => 'commit_comment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$commitComment;
+
+@override int get hashCode => 'commit_comment'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$contentReference extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$contentReference._();
+
+@override String get value => 'content_reference';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$contentReference;
+
+@override int get hashCode => 'content_reference'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$create extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$create._();
+
+@override String get value => 'create';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$create;
+
+@override int get hashCode => 'create'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$delete extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$delete._();
+
+@override String get value => 'delete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$delete;
+
+@override int get hashCode => 'delete'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deployment extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deployment._();
+
+@override String get value => 'deployment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deployment;
+
+@override int get hashCode => 'deployment'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deploymentReview extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deploymentReview._();
+
+@override String get value => 'deployment_review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deploymentReview;
+
+@override int get hashCode => 'deployment_review'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deploymentStatus extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deploymentStatus._();
+
+@override String get value => 'deployment_status';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deploymentStatus;
+
+@override int get hashCode => 'deployment_status'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deployKey extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deployKey._();
+
+@override String get value => 'deploy_key';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$deployKey;
+
+@override int get hashCode => 'deploy_key'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$discussion extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$discussion._();
+
+@override String get value => 'discussion';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$discussion;
+
+@override int get hashCode => 'discussion'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$discussionComment extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$discussionComment._();
+
+@override String get value => 'discussion_comment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$discussionComment;
+
+@override int get hashCode => 'discussion_comment'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$fork extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$fork._();
+
+@override String get value => 'fork';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$fork;
+
+@override int get hashCode => 'fork'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$gollum extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$gollum._();
+
+@override String get value => 'gollum';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$gollum;
+
+@override int get hashCode => 'gollum'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$issues extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$issues._();
+
+@override String get value => 'issues';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$issues;
+
+@override int get hashCode => 'issues'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$issueComment extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$issueComment._();
+
+@override String get value => 'issue_comment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$issueComment;
+
+@override int get hashCode => 'issue_comment'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$label extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$label._();
+
+@override String get value => 'label';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$label;
+
+@override int get hashCode => 'label'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$member extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$member._();
+
+@override String get value => 'member';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$member;
+
+@override int get hashCode => 'member'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$membership extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$membership._();
+
+@override String get value => 'membership';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$membership;
+
+@override int get hashCode => 'membership'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$milestone extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$milestone._();
+
+@override String get value => 'milestone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$milestone;
+
+@override int get hashCode => 'milestone'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$organization extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$organization._();
+
+@override String get value => 'organization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$organization;
+
+@override int get hashCode => 'organization'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$orgBlock extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$orgBlock._();
+
+@override String get value => 'org_block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$orgBlock;
+
+@override int get hashCode => 'org_block'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pageBuild extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pageBuild._();
+
+@override String get value => 'page_build';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pageBuild;
+
+@override int get hashCode => 'page_build'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$project extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$project._();
+
+@override String get value => 'project';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$project;
+
+@override int get hashCode => 'project'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$projectCard extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$projectCard._();
+
+@override String get value => 'project_card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$projectCard;
+
+@override int get hashCode => 'project_card'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$projectColumn extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$projectColumn._();
+
+@override String get value => 'project_column';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$projectColumn;
+
+@override int get hashCode => 'project_column'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$public extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$public._();
+
+@override String get value => 'public';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$public;
+
+@override int get hashCode => 'public'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequest extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequest._();
+
+@override String get value => 'pull_request';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequest;
+
+@override int get hashCode => 'pull_request'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequestReview extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequestReview._();
+
+@override String get value => 'pull_request_review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequestReview;
+
+@override int get hashCode => 'pull_request_review'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequestReviewComment extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequestReviewComment._();
+
+@override String get value => 'pull_request_review_comment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequestReviewComment;
+
+@override int get hashCode => 'pull_request_review_comment'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$push extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$push._();
+
+@override String get value => 'push';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$push;
+
+@override int get hashCode => 'push'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$registryPackage extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$registryPackage._();
+
+@override String get value => 'registry_package';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$registryPackage;
+
+@override int get hashCode => 'registry_package'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$release extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$release._();
+
+@override String get value => 'release';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$release;
+
+@override int get hashCode => 'release'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$repository extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$repository._();
+
+@override String get value => 'repository';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$repository;
+
+@override int get hashCode => 'repository'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$repositoryDispatch extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$repositoryDispatch._();
+
+@override String get value => 'repository_dispatch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$repositoryDispatch;
+
+@override int get hashCode => 'repository_dispatch'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$secretScanningAlert extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$secretScanningAlert._();
+
+@override String get value => 'secret_scanning_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$secretScanningAlert;
+
+@override int get hashCode => 'secret_scanning_alert'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$star extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$star._();
+
+@override String get value => 'star';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$star;
+
+@override int get hashCode => 'star'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$status extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$status._();
+
+@override String get value => 'status';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$status;
+
+@override int get hashCode => 'status'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$team extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$team._();
+
+@override String get value => 'team';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$team;
+
+@override int get hashCode => 'team'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$teamAdd extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$teamAdd._();
+
+@override String get value => 'team_add';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$teamAdd;
+
+@override int get hashCode => 'team_add'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$watch extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$watch._();
+
+@override String get value => 'watch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$watch;
+
+@override int get hashCode => 'watch'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$workflowDispatch extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$workflowDispatch._();
+
+@override String get value => 'workflow_dispatch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$workflowDispatch;
+
+@override int get hashCode => 'workflow_dispatch'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$workflowRun extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$workflowRun._();
+
+@override String get value => 'workflow_run';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$workflowRun;
+
+@override int get hashCode => 'workflow_run'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$securityAndAnalysis extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$securityAndAnalysis._();
+
+@override String get value => 'security_and_analysis';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$securityAndAnalysis;
+
+@override int get hashCode => 'security_and_analysis'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequestReviewThread extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequestReviewThread._();
+
+@override String get value => 'pull_request_review_thread';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$pullRequestReviewThread;
+
+@override int get hashCode => 'pull_request_review_thread'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$reminder extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$reminder._();
+
+@override String get value => 'reminder';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$reminder;
+
+@override int get hashCode => 'reminder'.hashCode;
+
+ }
+@immutable final class WebhookIssuesEditedIssuePerformedViaGithubAppEvents$Unknown extends WebhookIssuesEditedIssuePerformedViaGithubAppEvents {const WebhookIssuesEditedIssuePerformedViaGithubAppEvents$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents && other.value == value;
+    other is WebhookIssuesEditedIssuePerformedViaGithubAppEvents$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookIssuesEditedIssuePerformedViaGithubAppEvents($value)';
 
  }
 /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.

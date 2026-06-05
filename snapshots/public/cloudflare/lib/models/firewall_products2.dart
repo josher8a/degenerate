@@ -2,7 +2,7 @@
 // Source: #/components/schemas/FirewallProducts
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A list of products to bypass for a request when using the `bypass` action.
-@immutable final class FirewallProducts2 {const FirewallProducts2._(this.value);
+sealed class FirewallProducts2 {const FirewallProducts2();
 
 factory FirewallProducts2.fromJson(String json) { return switch (json) {
   'zoneLockdown' => zoneLockdown,
@@ -12,27 +12,26 @@ factory FirewallProducts2.fromJson(String json) { return switch (json) {
   'securityLevel' => securityLevel,
   'rateLimit' => rateLimit,
   'waf' => waf,
-  _ => FirewallProducts2._(json),
+  _ => FirewallProducts2$Unknown(json),
 }; }
 
-static const FirewallProducts2 zoneLockdown = FirewallProducts2._('zoneLockdown');
+static const FirewallProducts2 zoneLockdown = FirewallProducts2$zoneLockdown._();
 
-static const FirewallProducts2 uaBlock = FirewallProducts2._('uaBlock');
+static const FirewallProducts2 uaBlock = FirewallProducts2$uaBlock._();
 
-static const FirewallProducts2 bic = FirewallProducts2._('bic');
+static const FirewallProducts2 bic = FirewallProducts2$bic._();
 
-static const FirewallProducts2 hot = FirewallProducts2._('hot');
+static const FirewallProducts2 hot = FirewallProducts2$hot._();
 
-static const FirewallProducts2 securityLevel = FirewallProducts2._('securityLevel');
+static const FirewallProducts2 securityLevel = FirewallProducts2$securityLevel._();
 
-static const FirewallProducts2 rateLimit = FirewallProducts2._('rateLimit');
+static const FirewallProducts2 rateLimit = FirewallProducts2$rateLimit._();
 
-static const FirewallProducts2 waf = FirewallProducts2._('waf');
+static const FirewallProducts2 waf = FirewallProducts2$waf._();
 
 static const List<FirewallProducts2> values = [zoneLockdown, uaBlock, bic, hot, securityLevel, rateLimit, waf];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -46,12 +45,80 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FirewallProducts2$Unknown; } 
+@override String toString() => 'FirewallProducts2($value)';
+
+ }
+@immutable final class FirewallProducts2$zoneLockdown extends FirewallProducts2 {const FirewallProducts2$zoneLockdown._();
+
+@override String get value => 'zoneLockdown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallProducts2$zoneLockdown;
+
+@override int get hashCode => 'zoneLockdown'.hashCode;
+
+ }
+@immutable final class FirewallProducts2$uaBlock extends FirewallProducts2 {const FirewallProducts2$uaBlock._();
+
+@override String get value => 'uaBlock';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallProducts2$uaBlock;
+
+@override int get hashCode => 'uaBlock'.hashCode;
+
+ }
+@immutable final class FirewallProducts2$bic extends FirewallProducts2 {const FirewallProducts2$bic._();
+
+@override String get value => 'bic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallProducts2$bic;
+
+@override int get hashCode => 'bic'.hashCode;
+
+ }
+@immutable final class FirewallProducts2$hot extends FirewallProducts2 {const FirewallProducts2$hot._();
+
+@override String get value => 'hot';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallProducts2$hot;
+
+@override int get hashCode => 'hot'.hashCode;
+
+ }
+@immutable final class FirewallProducts2$securityLevel extends FirewallProducts2 {const FirewallProducts2$securityLevel._();
+
+@override String get value => 'securityLevel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallProducts2$securityLevel;
+
+@override int get hashCode => 'securityLevel'.hashCode;
+
+ }
+@immutable final class FirewallProducts2$rateLimit extends FirewallProducts2 {const FirewallProducts2$rateLimit._();
+
+@override String get value => 'rateLimit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallProducts2$rateLimit;
+
+@override int get hashCode => 'rateLimit'.hashCode;
+
+ }
+@immutable final class FirewallProducts2$waf extends FirewallProducts2 {const FirewallProducts2$waf._();
+
+@override String get value => 'waf';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallProducts2$waf;
+
+@override int get hashCode => 'waf'.hashCode;
+
+ }
+@immutable final class FirewallProducts2$Unknown extends FirewallProducts2 {const FirewallProducts2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FirewallProducts2 && other.value == value;
+    other is FirewallProducts2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FirewallProducts2($value)';
 
  }

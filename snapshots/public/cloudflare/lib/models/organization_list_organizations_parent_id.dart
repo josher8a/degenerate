@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/OrganizationListOrganizationsParentId
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/organization_id.dart';@immutable final class OrganizationListOrganizationsParentIdVariant2 {const OrganizationListOrganizationsParentIdVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/organization_id.dart';sealed class OrganizationListOrganizationsParentIdVariant2 {const OrganizationListOrganizationsParentIdVariant2();
 
 factory OrganizationListOrganizationsParentIdVariant2.fromJson(String json) { return switch (json) {
   'null' => $null,
-  _ => OrganizationListOrganizationsParentIdVariant2._(json),
+  _ => OrganizationListOrganizationsParentIdVariant2$Unknown(json),
 }; }
 
-static const OrganizationListOrganizationsParentIdVariant2 $null = OrganizationListOrganizationsParentIdVariant2._('null');
+static const OrganizationListOrganizationsParentIdVariant2 $null = OrganizationListOrganizationsParentIdVariant2$$null._();
 
 static const List<OrganizationListOrganizationsParentIdVariant2> values = [$null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrganizationListOrganizationsParentIdVariant2$Unknown; } 
+@override String toString() => 'OrganizationListOrganizationsParentIdVariant2($value)';
+
+ }
+@immutable final class OrganizationListOrganizationsParentIdVariant2$$null extends OrganizationListOrganizationsParentIdVariant2 {const OrganizationListOrganizationsParentIdVariant2$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationListOrganizationsParentIdVariant2$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class OrganizationListOrganizationsParentIdVariant2$Unknown extends OrganizationListOrganizationsParentIdVariant2 {const OrganizationListOrganizationsParentIdVariant2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrganizationListOrganizationsParentIdVariant2 && other.value == value;
+    other is OrganizationListOrganizationsParentIdVariant2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrganizationListOrganizationsParentIdVariant2($value)';
 
  }
 /// Variants:

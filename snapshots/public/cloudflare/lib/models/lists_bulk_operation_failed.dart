@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ListsBulkOperationFailed
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/lists_completed.dart';import 'package:pub_cloudflare/models/lists_operation_id.dart';/// The current status of the asynchronous operation.
-@immutable final class ListsBulkOperationFailedStatus {const ListsBulkOperationFailedStatus._(this.value);
+sealed class ListsBulkOperationFailedStatus {const ListsBulkOperationFailedStatus();
 
 factory ListsBulkOperationFailedStatus.fromJson(String json) { return switch (json) {
   'failed' => failed,
-  _ => ListsBulkOperationFailedStatus._(json),
+  _ => ListsBulkOperationFailedStatus$Unknown(json),
 }; }
 
-static const ListsBulkOperationFailedStatus failed = ListsBulkOperationFailedStatus._('failed');
+static const ListsBulkOperationFailedStatus failed = ListsBulkOperationFailedStatus$failed._();
 
 static const List<ListsBulkOperationFailedStatus> values = [failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ListsBulkOperationFailedStatus$Unknown; } 
+@override String toString() => 'ListsBulkOperationFailedStatus($value)';
+
+ }
+@immutable final class ListsBulkOperationFailedStatus$failed extends ListsBulkOperationFailedStatus {const ListsBulkOperationFailedStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListsBulkOperationFailedStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class ListsBulkOperationFailedStatus$Unknown extends ListsBulkOperationFailedStatus {const ListsBulkOperationFailedStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ListsBulkOperationFailedStatus && other.value == value;
+    other is ListsBulkOperationFailedStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ListsBulkOperationFailedStatus($value)';
 
  }
 @immutable final class ListsBulkOperationFailed {const ListsBulkOperationFailed({required this.completed, required this.error, required this.id, required this.status, });

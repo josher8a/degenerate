@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ItemArchived (inline: Action)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ItemArchivedAction {const ItemArchivedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ItemArchivedAction {const ItemArchivedAction();
 
 factory ItemArchivedAction.fromJson(String json) { return switch (json) {
   'archived' => archived,
-  _ => ItemArchivedAction._(json),
+  _ => ItemArchivedAction$Unknown(json),
 }; }
 
-static const ItemArchivedAction archived = ItemArchivedAction._('archived');
+static const ItemArchivedAction archived = ItemArchivedAction$archived._();
 
 static const List<ItemArchivedAction> values = [archived];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ItemArchivedAction$Unknown; } 
+@override String toString() => 'ItemArchivedAction($value)';
+
+ }
+@immutable final class ItemArchivedAction$archived extends ItemArchivedAction {const ItemArchivedAction$archived._();
+
+@override String get value => 'archived';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemArchivedAction$archived;
+
+@override int get hashCode => 'archived'.hashCode;
+
+ }
+@immutable final class ItemArchivedAction$Unknown extends ItemArchivedAction {const ItemArchivedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ItemArchivedAction && other.value == value;
+    other is ItemArchivedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ItemArchivedAction($value)';
 
  }

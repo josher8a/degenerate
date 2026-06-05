@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_security_level_value.dart';/// Control options for the **Security Level** feature from the **Security** app.
 /// 
-@immutable final class ZonesSecurityLevelId {const ZonesSecurityLevelId._(this.value);
+sealed class ZonesSecurityLevelId {const ZonesSecurityLevelId();
 
 factory ZonesSecurityLevelId.fromJson(String json) { return switch (json) {
   'security_level' => securityLevel,
-  _ => ZonesSecurityLevelId._(json),
+  _ => ZonesSecurityLevelId$Unknown(json),
 }; }
 
-static const ZonesSecurityLevelId securityLevel = ZonesSecurityLevelId._('security_level');
+static const ZonesSecurityLevelId securityLevel = ZonesSecurityLevelId$securityLevel._();
 
 static const List<ZonesSecurityLevelId> values = [securityLevel];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesSecurityLevelId$Unknown; } 
+@override String toString() => 'ZonesSecurityLevelId($value)';
+
+ }
+@immutable final class ZonesSecurityLevelId$securityLevel extends ZonesSecurityLevelId {const ZonesSecurityLevelId$securityLevel._();
+
+@override String get value => 'security_level';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesSecurityLevelId$securityLevel;
+
+@override int get hashCode => 'security_level'.hashCode;
+
+ }
+@immutable final class ZonesSecurityLevelId$Unknown extends ZonesSecurityLevelId {const ZonesSecurityLevelId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesSecurityLevelId && other.value == value;
+    other is ZonesSecurityLevelId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesSecurityLevelId($value)';
 
  }
 @immutable final class ZonesSecurityLevel {const ZonesSecurityLevel({this.id, this.value, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaClientEventOutputAudioBufferClear
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `output_audio_buffer.clear`.
-@immutable final class RealtimeBetaClientEventOutputAudioBufferClearType {const RealtimeBetaClientEventOutputAudioBufferClearType._(this.value);
+sealed class RealtimeBetaClientEventOutputAudioBufferClearType {const RealtimeBetaClientEventOutputAudioBufferClearType();
 
 factory RealtimeBetaClientEventOutputAudioBufferClearType.fromJson(String json) { return switch (json) {
   'output_audio_buffer.clear' => outputAudioBufferClear,
-  _ => RealtimeBetaClientEventOutputAudioBufferClearType._(json),
+  _ => RealtimeBetaClientEventOutputAudioBufferClearType$Unknown(json),
 }; }
 
-static const RealtimeBetaClientEventOutputAudioBufferClearType outputAudioBufferClear = RealtimeBetaClientEventOutputAudioBufferClearType._('output_audio_buffer.clear');
+static const RealtimeBetaClientEventOutputAudioBufferClearType outputAudioBufferClear = RealtimeBetaClientEventOutputAudioBufferClearType$outputAudioBufferClear._();
 
 static const List<RealtimeBetaClientEventOutputAudioBufferClearType> values = [outputAudioBufferClear];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaClientEventOutputAudioBufferClearType$Unknown; } 
+@override String toString() => 'RealtimeBetaClientEventOutputAudioBufferClearType($value)';
+
+ }
+@immutable final class RealtimeBetaClientEventOutputAudioBufferClearType$outputAudioBufferClear extends RealtimeBetaClientEventOutputAudioBufferClearType {const RealtimeBetaClientEventOutputAudioBufferClearType$outputAudioBufferClear._();
+
+@override String get value => 'output_audio_buffer.clear';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaClientEventOutputAudioBufferClearType$outputAudioBufferClear;
+
+@override int get hashCode => 'output_audio_buffer.clear'.hashCode;
+
+ }
+@immutable final class RealtimeBetaClientEventOutputAudioBufferClearType$Unknown extends RealtimeBetaClientEventOutputAudioBufferClearType {const RealtimeBetaClientEventOutputAudioBufferClearType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaClientEventOutputAudioBufferClearType && other.value == value;
+    other is RealtimeBetaClientEventOutputAudioBufferClearType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaClientEventOutputAudioBufferClearType($value)';
 
  }
 /// **WebRTC/SIP Only:** Emit to cut off the current audio response. This will trigger the server to

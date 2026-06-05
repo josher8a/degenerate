@@ -2,25 +2,24 @@
 // Source: #/components/schemas/TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElection (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the election for the state sales tax registration.
-@immutable final class TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType {const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType._(this.value);
+sealed class TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType {const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType();
 
 factory TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType.fromJson(String json) { return switch (json) {
   'local_use_tax' => localUseTax,
   'simplified_sellers_use_tax' => simplifiedSellersUseTax,
   'single_local_use_tax' => singleLocalUseTax,
-  _ => TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType._(json),
+  _ => TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$Unknown(json),
 }; }
 
-static const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType localUseTax = TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType._('local_use_tax');
+static const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType localUseTax = TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$localUseTax._();
 
-static const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType simplifiedSellersUseTax = TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType._('simplified_sellers_use_tax');
+static const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType simplifiedSellersUseTax = TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$simplifiedSellersUseTax._();
 
-static const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType singleLocalUseTax = TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType._('single_local_use_tax');
+static const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType singleLocalUseTax = TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$singleLocalUseTax._();
 
 static const List<TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType> values = [localUseTax, simplifiedSellersUseTax, singleLocalUseTax];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$Unknown; } 
+@override String toString() => 'TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType($value)';
+
+ }
+@immutable final class TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$localUseTax extends TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType {const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$localUseTax._();
+
+@override String get value => 'local_use_tax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$localUseTax;
+
+@override int get hashCode => 'local_use_tax'.hashCode;
+
+ }
+@immutable final class TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$simplifiedSellersUseTax extends TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType {const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$simplifiedSellersUseTax._();
+
+@override String get value => 'simplified_sellers_use_tax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$simplifiedSellersUseTax;
+
+@override int get hashCode => 'simplified_sellers_use_tax'.hashCode;
+
+ }
+@immutable final class TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$singleLocalUseTax extends TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType {const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$singleLocalUseTax._();
+
+@override String get value => 'single_local_use_tax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$singleLocalUseTax;
+
+@override int get hashCode => 'single_local_use_tax'.hashCode;
+
+ }
+@immutable final class TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$Unknown extends TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType {const TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType && other.value == value;
+    other is TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TaxProductRegistrationsResourceCountryOptionsUsStateSalesTaxElectionType($value)';
 
  }

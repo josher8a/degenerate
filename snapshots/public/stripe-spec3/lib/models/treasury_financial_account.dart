@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TreasuryFinancialAccount
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_account_features.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_balance.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_financial_address.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_platform_restrictions.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_status_details.dart';@immutable final class ActiveFeatures {const ActiveFeatures._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/treasury_financial_account_features.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_balance.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_financial_address.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_platform_restrictions.dart';import 'package:pub_stripe_spec3/models/treasury_financial_accounts_resource_status_details.dart';sealed class ActiveFeatures {const ActiveFeatures();
 
 factory ActiveFeatures.fromJson(String json) { return switch (json) {
   'card_issuing' => cardIssuing,
@@ -15,35 +15,34 @@ factory ActiveFeatures.fromJson(String json) { return switch (json) {
   'outbound_transfers.ach' => outboundTransfersAch,
   'outbound_transfers.us_domestic_wire' => outboundTransfersUsDomesticWire,
   'remote_deposit_capture' => remoteDepositCapture,
-  _ => ActiveFeatures._(json),
+  _ => ActiveFeatures$Unknown(json),
 }; }
 
-static const ActiveFeatures cardIssuing = ActiveFeatures._('card_issuing');
+static const ActiveFeatures cardIssuing = ActiveFeatures$cardIssuing._();
 
-static const ActiveFeatures depositInsurance = ActiveFeatures._('deposit_insurance');
+static const ActiveFeatures depositInsurance = ActiveFeatures$depositInsurance._();
 
-static const ActiveFeatures financialAddressesAba = ActiveFeatures._('financial_addresses.aba');
+static const ActiveFeatures financialAddressesAba = ActiveFeatures$financialAddressesAba._();
 
-static const ActiveFeatures financialAddressesAbaForwarding = ActiveFeatures._('financial_addresses.aba.forwarding');
+static const ActiveFeatures financialAddressesAbaForwarding = ActiveFeatures$financialAddressesAbaForwarding._();
 
-static const ActiveFeatures inboundTransfersAch = ActiveFeatures._('inbound_transfers.ach');
+static const ActiveFeatures inboundTransfersAch = ActiveFeatures$inboundTransfersAch._();
 
-static const ActiveFeatures intraStripeFlows = ActiveFeatures._('intra_stripe_flows');
+static const ActiveFeatures intraStripeFlows = ActiveFeatures$intraStripeFlows._();
 
-static const ActiveFeatures outboundPaymentsAch = ActiveFeatures._('outbound_payments.ach');
+static const ActiveFeatures outboundPaymentsAch = ActiveFeatures$outboundPaymentsAch._();
 
-static const ActiveFeatures outboundPaymentsUsDomesticWire = ActiveFeatures._('outbound_payments.us_domestic_wire');
+static const ActiveFeatures outboundPaymentsUsDomesticWire = ActiveFeatures$outboundPaymentsUsDomesticWire._();
 
-static const ActiveFeatures outboundTransfersAch = ActiveFeatures._('outbound_transfers.ach');
+static const ActiveFeatures outboundTransfersAch = ActiveFeatures$outboundTransfersAch._();
 
-static const ActiveFeatures outboundTransfersUsDomesticWire = ActiveFeatures._('outbound_transfers.us_domestic_wire');
+static const ActiveFeatures outboundTransfersUsDomesticWire = ActiveFeatures$outboundTransfersUsDomesticWire._();
 
-static const ActiveFeatures remoteDepositCapture = ActiveFeatures._('remote_deposit_capture');
+static const ActiveFeatures remoteDepositCapture = ActiveFeatures$remoteDepositCapture._();
 
 static const List<ActiveFeatures> values = [cardIssuing, depositInsurance, financialAddressesAba, financialAddressesAbaForwarding, inboundTransfersAch, intraStripeFlows, outboundPaymentsAch, outboundPaymentsUsDomesticWire, outboundTransfersAch, outboundTransfersUsDomesticWire, remoteDepositCapture];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -61,29 +60,132 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ActiveFeatures && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ActiveFeatures$Unknown; } 
 @override String toString() => 'ActiveFeatures($value)';
 
  }
+@immutable final class ActiveFeatures$cardIssuing extends ActiveFeatures {const ActiveFeatures$cardIssuing._();
+
+@override String get value => 'card_issuing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveFeatures$cardIssuing;
+
+@override int get hashCode => 'card_issuing'.hashCode;
+
+ }
+@immutable final class ActiveFeatures$depositInsurance extends ActiveFeatures {const ActiveFeatures$depositInsurance._();
+
+@override String get value => 'deposit_insurance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveFeatures$depositInsurance;
+
+@override int get hashCode => 'deposit_insurance'.hashCode;
+
+ }
+@immutable final class ActiveFeatures$financialAddressesAba extends ActiveFeatures {const ActiveFeatures$financialAddressesAba._();
+
+@override String get value => 'financial_addresses.aba';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveFeatures$financialAddressesAba;
+
+@override int get hashCode => 'financial_addresses.aba'.hashCode;
+
+ }
+@immutable final class ActiveFeatures$financialAddressesAbaForwarding extends ActiveFeatures {const ActiveFeatures$financialAddressesAbaForwarding._();
+
+@override String get value => 'financial_addresses.aba.forwarding';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveFeatures$financialAddressesAbaForwarding;
+
+@override int get hashCode => 'financial_addresses.aba.forwarding'.hashCode;
+
+ }
+@immutable final class ActiveFeatures$inboundTransfersAch extends ActiveFeatures {const ActiveFeatures$inboundTransfersAch._();
+
+@override String get value => 'inbound_transfers.ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveFeatures$inboundTransfersAch;
+
+@override int get hashCode => 'inbound_transfers.ach'.hashCode;
+
+ }
+@immutable final class ActiveFeatures$intraStripeFlows extends ActiveFeatures {const ActiveFeatures$intraStripeFlows._();
+
+@override String get value => 'intra_stripe_flows';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveFeatures$intraStripeFlows;
+
+@override int get hashCode => 'intra_stripe_flows'.hashCode;
+
+ }
+@immutable final class ActiveFeatures$outboundPaymentsAch extends ActiveFeatures {const ActiveFeatures$outboundPaymentsAch._();
+
+@override String get value => 'outbound_payments.ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveFeatures$outboundPaymentsAch;
+
+@override int get hashCode => 'outbound_payments.ach'.hashCode;
+
+ }
+@immutable final class ActiveFeatures$outboundPaymentsUsDomesticWire extends ActiveFeatures {const ActiveFeatures$outboundPaymentsUsDomesticWire._();
+
+@override String get value => 'outbound_payments.us_domestic_wire';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveFeatures$outboundPaymentsUsDomesticWire;
+
+@override int get hashCode => 'outbound_payments.us_domestic_wire'.hashCode;
+
+ }
+@immutable final class ActiveFeatures$outboundTransfersAch extends ActiveFeatures {const ActiveFeatures$outboundTransfersAch._();
+
+@override String get value => 'outbound_transfers.ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveFeatures$outboundTransfersAch;
+
+@override int get hashCode => 'outbound_transfers.ach'.hashCode;
+
+ }
+@immutable final class ActiveFeatures$outboundTransfersUsDomesticWire extends ActiveFeatures {const ActiveFeatures$outboundTransfersUsDomesticWire._();
+
+@override String get value => 'outbound_transfers.us_domestic_wire';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveFeatures$outboundTransfersUsDomesticWire;
+
+@override int get hashCode => 'outbound_transfers.us_domestic_wire'.hashCode;
+
+ }
+@immutable final class ActiveFeatures$remoteDepositCapture extends ActiveFeatures {const ActiveFeatures$remoteDepositCapture._();
+
+@override String get value => 'remote_deposit_capture';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveFeatures$remoteDepositCapture;
+
+@override int get hashCode => 'remote_deposit_capture'.hashCode;
+
+ }
+@immutable final class ActiveFeatures$Unknown extends ActiveFeatures {const ActiveFeatures$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ActiveFeatures$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TreasuryFinancialAccountObject {const TreasuryFinancialAccountObject._(this.value);
+sealed class TreasuryFinancialAccountObject {const TreasuryFinancialAccountObject();
 
 factory TreasuryFinancialAccountObject.fromJson(String json) { return switch (json) {
   'treasury.financial_account' => treasuryFinancialAccount,
-  _ => TreasuryFinancialAccountObject._(json),
+  _ => TreasuryFinancialAccountObject$Unknown(json),
 }; }
 
-static const TreasuryFinancialAccountObject treasuryFinancialAccount = TreasuryFinancialAccountObject._('treasury.financial_account');
+static const TreasuryFinancialAccountObject treasuryFinancialAccount = TreasuryFinancialAccountObject$treasuryFinancialAccount._();
 
 static const List<TreasuryFinancialAccountObject> values = [treasuryFinancialAccount];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -91,16 +193,30 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryFinancialAccountObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TreasuryFinancialAccountObject$Unknown; } 
 @override String toString() => 'TreasuryFinancialAccountObject($value)';
 
  }
-@immutable final class PendingFeatures {const PendingFeatures._(this.value);
+@immutable final class TreasuryFinancialAccountObject$treasuryFinancialAccount extends TreasuryFinancialAccountObject {const TreasuryFinancialAccountObject$treasuryFinancialAccount._();
+
+@override String get value => 'treasury.financial_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountObject$treasuryFinancialAccount;
+
+@override int get hashCode => 'treasury.financial_account'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountObject$Unknown extends TreasuryFinancialAccountObject {const TreasuryFinancialAccountObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TreasuryFinancialAccountObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class PendingFeatures {const PendingFeatures();
 
 factory PendingFeatures.fromJson(String json) { return switch (json) {
   'card_issuing' => cardIssuing,
@@ -114,35 +230,34 @@ factory PendingFeatures.fromJson(String json) { return switch (json) {
   'outbound_transfers.ach' => outboundTransfersAch,
   'outbound_transfers.us_domestic_wire' => outboundTransfersUsDomesticWire,
   'remote_deposit_capture' => remoteDepositCapture,
-  _ => PendingFeatures._(json),
+  _ => PendingFeatures$Unknown(json),
 }; }
 
-static const PendingFeatures cardIssuing = PendingFeatures._('card_issuing');
+static const PendingFeatures cardIssuing = PendingFeatures$cardIssuing._();
 
-static const PendingFeatures depositInsurance = PendingFeatures._('deposit_insurance');
+static const PendingFeatures depositInsurance = PendingFeatures$depositInsurance._();
 
-static const PendingFeatures financialAddressesAba = PendingFeatures._('financial_addresses.aba');
+static const PendingFeatures financialAddressesAba = PendingFeatures$financialAddressesAba._();
 
-static const PendingFeatures financialAddressesAbaForwarding = PendingFeatures._('financial_addresses.aba.forwarding');
+static const PendingFeatures financialAddressesAbaForwarding = PendingFeatures$financialAddressesAbaForwarding._();
 
-static const PendingFeatures inboundTransfersAch = PendingFeatures._('inbound_transfers.ach');
+static const PendingFeatures inboundTransfersAch = PendingFeatures$inboundTransfersAch._();
 
-static const PendingFeatures intraStripeFlows = PendingFeatures._('intra_stripe_flows');
+static const PendingFeatures intraStripeFlows = PendingFeatures$intraStripeFlows._();
 
-static const PendingFeatures outboundPaymentsAch = PendingFeatures._('outbound_payments.ach');
+static const PendingFeatures outboundPaymentsAch = PendingFeatures$outboundPaymentsAch._();
 
-static const PendingFeatures outboundPaymentsUsDomesticWire = PendingFeatures._('outbound_payments.us_domestic_wire');
+static const PendingFeatures outboundPaymentsUsDomesticWire = PendingFeatures$outboundPaymentsUsDomesticWire._();
 
-static const PendingFeatures outboundTransfersAch = PendingFeatures._('outbound_transfers.ach');
+static const PendingFeatures outboundTransfersAch = PendingFeatures$outboundTransfersAch._();
 
-static const PendingFeatures outboundTransfersUsDomesticWire = PendingFeatures._('outbound_transfers.us_domestic_wire');
+static const PendingFeatures outboundTransfersUsDomesticWire = PendingFeatures$outboundTransfersUsDomesticWire._();
 
-static const PendingFeatures remoteDepositCapture = PendingFeatures._('remote_deposit_capture');
+static const PendingFeatures remoteDepositCapture = PendingFeatures$remoteDepositCapture._();
 
 static const List<PendingFeatures> values = [cardIssuing, depositInsurance, financialAddressesAba, financialAddressesAbaForwarding, inboundTransfersAch, intraStripeFlows, outboundPaymentsAch, outboundPaymentsUsDomesticWire, outboundTransfersAch, outboundTransfersUsDomesticWire, remoteDepositCapture];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -160,16 +275,120 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PendingFeatures && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PendingFeatures$Unknown; } 
 @override String toString() => 'PendingFeatures($value)';
 
  }
-@immutable final class RestrictedFeatures {const RestrictedFeatures._(this.value);
+@immutable final class PendingFeatures$cardIssuing extends PendingFeatures {const PendingFeatures$cardIssuing._();
+
+@override String get value => 'card_issuing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingFeatures$cardIssuing;
+
+@override int get hashCode => 'card_issuing'.hashCode;
+
+ }
+@immutable final class PendingFeatures$depositInsurance extends PendingFeatures {const PendingFeatures$depositInsurance._();
+
+@override String get value => 'deposit_insurance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingFeatures$depositInsurance;
+
+@override int get hashCode => 'deposit_insurance'.hashCode;
+
+ }
+@immutable final class PendingFeatures$financialAddressesAba extends PendingFeatures {const PendingFeatures$financialAddressesAba._();
+
+@override String get value => 'financial_addresses.aba';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingFeatures$financialAddressesAba;
+
+@override int get hashCode => 'financial_addresses.aba'.hashCode;
+
+ }
+@immutable final class PendingFeatures$financialAddressesAbaForwarding extends PendingFeatures {const PendingFeatures$financialAddressesAbaForwarding._();
+
+@override String get value => 'financial_addresses.aba.forwarding';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingFeatures$financialAddressesAbaForwarding;
+
+@override int get hashCode => 'financial_addresses.aba.forwarding'.hashCode;
+
+ }
+@immutable final class PendingFeatures$inboundTransfersAch extends PendingFeatures {const PendingFeatures$inboundTransfersAch._();
+
+@override String get value => 'inbound_transfers.ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingFeatures$inboundTransfersAch;
+
+@override int get hashCode => 'inbound_transfers.ach'.hashCode;
+
+ }
+@immutable final class PendingFeatures$intraStripeFlows extends PendingFeatures {const PendingFeatures$intraStripeFlows._();
+
+@override String get value => 'intra_stripe_flows';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingFeatures$intraStripeFlows;
+
+@override int get hashCode => 'intra_stripe_flows'.hashCode;
+
+ }
+@immutable final class PendingFeatures$outboundPaymentsAch extends PendingFeatures {const PendingFeatures$outboundPaymentsAch._();
+
+@override String get value => 'outbound_payments.ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingFeatures$outboundPaymentsAch;
+
+@override int get hashCode => 'outbound_payments.ach'.hashCode;
+
+ }
+@immutable final class PendingFeatures$outboundPaymentsUsDomesticWire extends PendingFeatures {const PendingFeatures$outboundPaymentsUsDomesticWire._();
+
+@override String get value => 'outbound_payments.us_domestic_wire';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingFeatures$outboundPaymentsUsDomesticWire;
+
+@override int get hashCode => 'outbound_payments.us_domestic_wire'.hashCode;
+
+ }
+@immutable final class PendingFeatures$outboundTransfersAch extends PendingFeatures {const PendingFeatures$outboundTransfersAch._();
+
+@override String get value => 'outbound_transfers.ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingFeatures$outboundTransfersAch;
+
+@override int get hashCode => 'outbound_transfers.ach'.hashCode;
+
+ }
+@immutable final class PendingFeatures$outboundTransfersUsDomesticWire extends PendingFeatures {const PendingFeatures$outboundTransfersUsDomesticWire._();
+
+@override String get value => 'outbound_transfers.us_domestic_wire';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingFeatures$outboundTransfersUsDomesticWire;
+
+@override int get hashCode => 'outbound_transfers.us_domestic_wire'.hashCode;
+
+ }
+@immutable final class PendingFeatures$remoteDepositCapture extends PendingFeatures {const PendingFeatures$remoteDepositCapture._();
+
+@override String get value => 'remote_deposit_capture';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PendingFeatures$remoteDepositCapture;
+
+@override int get hashCode => 'remote_deposit_capture'.hashCode;
+
+ }
+@immutable final class PendingFeatures$Unknown extends PendingFeatures {const PendingFeatures$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PendingFeatures$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class RestrictedFeatures {const RestrictedFeatures();
 
 factory RestrictedFeatures.fromJson(String json) { return switch (json) {
   'card_issuing' => cardIssuing,
@@ -183,35 +402,34 @@ factory RestrictedFeatures.fromJson(String json) { return switch (json) {
   'outbound_transfers.ach' => outboundTransfersAch,
   'outbound_transfers.us_domestic_wire' => outboundTransfersUsDomesticWire,
   'remote_deposit_capture' => remoteDepositCapture,
-  _ => RestrictedFeatures._(json),
+  _ => RestrictedFeatures$Unknown(json),
 }; }
 
-static const RestrictedFeatures cardIssuing = RestrictedFeatures._('card_issuing');
+static const RestrictedFeatures cardIssuing = RestrictedFeatures$cardIssuing._();
 
-static const RestrictedFeatures depositInsurance = RestrictedFeatures._('deposit_insurance');
+static const RestrictedFeatures depositInsurance = RestrictedFeatures$depositInsurance._();
 
-static const RestrictedFeatures financialAddressesAba = RestrictedFeatures._('financial_addresses.aba');
+static const RestrictedFeatures financialAddressesAba = RestrictedFeatures$financialAddressesAba._();
 
-static const RestrictedFeatures financialAddressesAbaForwarding = RestrictedFeatures._('financial_addresses.aba.forwarding');
+static const RestrictedFeatures financialAddressesAbaForwarding = RestrictedFeatures$financialAddressesAbaForwarding._();
 
-static const RestrictedFeatures inboundTransfersAch = RestrictedFeatures._('inbound_transfers.ach');
+static const RestrictedFeatures inboundTransfersAch = RestrictedFeatures$inboundTransfersAch._();
 
-static const RestrictedFeatures intraStripeFlows = RestrictedFeatures._('intra_stripe_flows');
+static const RestrictedFeatures intraStripeFlows = RestrictedFeatures$intraStripeFlows._();
 
-static const RestrictedFeatures outboundPaymentsAch = RestrictedFeatures._('outbound_payments.ach');
+static const RestrictedFeatures outboundPaymentsAch = RestrictedFeatures$outboundPaymentsAch._();
 
-static const RestrictedFeatures outboundPaymentsUsDomesticWire = RestrictedFeatures._('outbound_payments.us_domestic_wire');
+static const RestrictedFeatures outboundPaymentsUsDomesticWire = RestrictedFeatures$outboundPaymentsUsDomesticWire._();
 
-static const RestrictedFeatures outboundTransfersAch = RestrictedFeatures._('outbound_transfers.ach');
+static const RestrictedFeatures outboundTransfersAch = RestrictedFeatures$outboundTransfersAch._();
 
-static const RestrictedFeatures outboundTransfersUsDomesticWire = RestrictedFeatures._('outbound_transfers.us_domestic_wire');
+static const RestrictedFeatures outboundTransfersUsDomesticWire = RestrictedFeatures$outboundTransfersUsDomesticWire._();
 
-static const RestrictedFeatures remoteDepositCapture = RestrictedFeatures._('remote_deposit_capture');
+static const RestrictedFeatures remoteDepositCapture = RestrictedFeatures$remoteDepositCapture._();
 
 static const List<RestrictedFeatures> values = [cardIssuing, depositInsurance, financialAddressesAba, financialAddressesAbaForwarding, inboundTransfersAch, intraStripeFlows, outboundPaymentsAch, outboundPaymentsUsDomesticWire, outboundTransfersAch, outboundTransfersUsDomesticWire, remoteDepositCapture];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -229,32 +447,135 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RestrictedFeatures && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is RestrictedFeatures$Unknown; } 
 @override String toString() => 'RestrictedFeatures($value)';
 
  }
+@immutable final class RestrictedFeatures$cardIssuing extends RestrictedFeatures {const RestrictedFeatures$cardIssuing._();
+
+@override String get value => 'card_issuing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RestrictedFeatures$cardIssuing;
+
+@override int get hashCode => 'card_issuing'.hashCode;
+
+ }
+@immutable final class RestrictedFeatures$depositInsurance extends RestrictedFeatures {const RestrictedFeatures$depositInsurance._();
+
+@override String get value => 'deposit_insurance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RestrictedFeatures$depositInsurance;
+
+@override int get hashCode => 'deposit_insurance'.hashCode;
+
+ }
+@immutable final class RestrictedFeatures$financialAddressesAba extends RestrictedFeatures {const RestrictedFeatures$financialAddressesAba._();
+
+@override String get value => 'financial_addresses.aba';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RestrictedFeatures$financialAddressesAba;
+
+@override int get hashCode => 'financial_addresses.aba'.hashCode;
+
+ }
+@immutable final class RestrictedFeatures$financialAddressesAbaForwarding extends RestrictedFeatures {const RestrictedFeatures$financialAddressesAbaForwarding._();
+
+@override String get value => 'financial_addresses.aba.forwarding';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RestrictedFeatures$financialAddressesAbaForwarding;
+
+@override int get hashCode => 'financial_addresses.aba.forwarding'.hashCode;
+
+ }
+@immutable final class RestrictedFeatures$inboundTransfersAch extends RestrictedFeatures {const RestrictedFeatures$inboundTransfersAch._();
+
+@override String get value => 'inbound_transfers.ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RestrictedFeatures$inboundTransfersAch;
+
+@override int get hashCode => 'inbound_transfers.ach'.hashCode;
+
+ }
+@immutable final class RestrictedFeatures$intraStripeFlows extends RestrictedFeatures {const RestrictedFeatures$intraStripeFlows._();
+
+@override String get value => 'intra_stripe_flows';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RestrictedFeatures$intraStripeFlows;
+
+@override int get hashCode => 'intra_stripe_flows'.hashCode;
+
+ }
+@immutable final class RestrictedFeatures$outboundPaymentsAch extends RestrictedFeatures {const RestrictedFeatures$outboundPaymentsAch._();
+
+@override String get value => 'outbound_payments.ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RestrictedFeatures$outboundPaymentsAch;
+
+@override int get hashCode => 'outbound_payments.ach'.hashCode;
+
+ }
+@immutable final class RestrictedFeatures$outboundPaymentsUsDomesticWire extends RestrictedFeatures {const RestrictedFeatures$outboundPaymentsUsDomesticWire._();
+
+@override String get value => 'outbound_payments.us_domestic_wire';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RestrictedFeatures$outboundPaymentsUsDomesticWire;
+
+@override int get hashCode => 'outbound_payments.us_domestic_wire'.hashCode;
+
+ }
+@immutable final class RestrictedFeatures$outboundTransfersAch extends RestrictedFeatures {const RestrictedFeatures$outboundTransfersAch._();
+
+@override String get value => 'outbound_transfers.ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RestrictedFeatures$outboundTransfersAch;
+
+@override int get hashCode => 'outbound_transfers.ach'.hashCode;
+
+ }
+@immutable final class RestrictedFeatures$outboundTransfersUsDomesticWire extends RestrictedFeatures {const RestrictedFeatures$outboundTransfersUsDomesticWire._();
+
+@override String get value => 'outbound_transfers.us_domestic_wire';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RestrictedFeatures$outboundTransfersUsDomesticWire;
+
+@override int get hashCode => 'outbound_transfers.us_domestic_wire'.hashCode;
+
+ }
+@immutable final class RestrictedFeatures$remoteDepositCapture extends RestrictedFeatures {const RestrictedFeatures$remoteDepositCapture._();
+
+@override String get value => 'remote_deposit_capture';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RestrictedFeatures$remoteDepositCapture;
+
+@override int get hashCode => 'remote_deposit_capture'.hashCode;
+
+ }
+@immutable final class RestrictedFeatures$Unknown extends RestrictedFeatures {const RestrictedFeatures$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RestrictedFeatures$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Status of this FinancialAccount.
-@immutable final class TreasuryFinancialAccountStatus {const TreasuryFinancialAccountStatus._(this.value);
+sealed class TreasuryFinancialAccountStatus {const TreasuryFinancialAccountStatus();
 
 factory TreasuryFinancialAccountStatus.fromJson(String json) { return switch (json) {
   'closed' => closed,
   'open' => open,
-  _ => TreasuryFinancialAccountStatus._(json),
+  _ => TreasuryFinancialAccountStatus$Unknown(json),
 }; }
 
-static const TreasuryFinancialAccountStatus closed = TreasuryFinancialAccountStatus._('closed');
+static const TreasuryFinancialAccountStatus closed = TreasuryFinancialAccountStatus$closed._();
 
-static const TreasuryFinancialAccountStatus open = TreasuryFinancialAccountStatus._('open');
+static const TreasuryFinancialAccountStatus open = TreasuryFinancialAccountStatus$open._();
 
 static const List<TreasuryFinancialAccountStatus> values = [closed, open];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -263,13 +584,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TreasuryFinancialAccountStatus$Unknown; } 
+@override String toString() => 'TreasuryFinancialAccountStatus($value)';
+
+ }
+@immutable final class TreasuryFinancialAccountStatus$closed extends TreasuryFinancialAccountStatus {const TreasuryFinancialAccountStatus$closed._();
+
+@override String get value => 'closed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountStatus$closed;
+
+@override int get hashCode => 'closed'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountStatus$open extends TreasuryFinancialAccountStatus {const TreasuryFinancialAccountStatus$open._();
+
+@override String get value => 'open';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreasuryFinancialAccountStatus$open;
+
+@override int get hashCode => 'open'.hashCode;
+
+ }
+@immutable final class TreasuryFinancialAccountStatus$Unknown extends TreasuryFinancialAccountStatus {const TreasuryFinancialAccountStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TreasuryFinancialAccountStatus && other.value == value;
+    other is TreasuryFinancialAccountStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TreasuryFinancialAccountStatus($value)';
 
  }
 /// Stripe Treasury provides users with a container for money called a FinancialAccount that is separate from their Payments balance.

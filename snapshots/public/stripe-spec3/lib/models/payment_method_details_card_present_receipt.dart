@@ -2,28 +2,27 @@
 // Source: #/components/schemas/PaymentMethodDetailsCardPresentReceipt
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of account being debited or credited
-@immutable final class PaymentMethodDetailsCardPresentReceiptAccountType {const PaymentMethodDetailsCardPresentReceiptAccountType._(this.value);
+sealed class PaymentMethodDetailsCardPresentReceiptAccountType {const PaymentMethodDetailsCardPresentReceiptAccountType();
 
 factory PaymentMethodDetailsCardPresentReceiptAccountType.fromJson(String json) { return switch (json) {
   'checking' => checking,
   'credit' => credit,
   'prepaid' => prepaid,
   'unknown' => unknown,
-  _ => PaymentMethodDetailsCardPresentReceiptAccountType._(json),
+  _ => PaymentMethodDetailsCardPresentReceiptAccountType$Unknown(json),
 }; }
 
-static const PaymentMethodDetailsCardPresentReceiptAccountType checking = PaymentMethodDetailsCardPresentReceiptAccountType._('checking');
+static const PaymentMethodDetailsCardPresentReceiptAccountType checking = PaymentMethodDetailsCardPresentReceiptAccountType$checking._();
 
-static const PaymentMethodDetailsCardPresentReceiptAccountType credit = PaymentMethodDetailsCardPresentReceiptAccountType._('credit');
+static const PaymentMethodDetailsCardPresentReceiptAccountType credit = PaymentMethodDetailsCardPresentReceiptAccountType$credit._();
 
-static const PaymentMethodDetailsCardPresentReceiptAccountType prepaid = PaymentMethodDetailsCardPresentReceiptAccountType._('prepaid');
+static const PaymentMethodDetailsCardPresentReceiptAccountType prepaid = PaymentMethodDetailsCardPresentReceiptAccountType$prepaid._();
 
-static const PaymentMethodDetailsCardPresentReceiptAccountType unknown = PaymentMethodDetailsCardPresentReceiptAccountType._('unknown');
+static const PaymentMethodDetailsCardPresentReceiptAccountType unknown = PaymentMethodDetailsCardPresentReceiptAccountType$unknown._();
 
 static const List<PaymentMethodDetailsCardPresentReceiptAccountType> values = [checking, credit, prepaid, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentMethodDetailsCardPresentReceiptAccountType$Unknown; } 
+@override String toString() => 'PaymentMethodDetailsCardPresentReceiptAccountType($value)';
+
+ }
+@immutable final class PaymentMethodDetailsCardPresentReceiptAccountType$checking extends PaymentMethodDetailsCardPresentReceiptAccountType {const PaymentMethodDetailsCardPresentReceiptAccountType$checking._();
+
+@override String get value => 'checking';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsCardPresentReceiptAccountType$checking;
+
+@override int get hashCode => 'checking'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsCardPresentReceiptAccountType$credit extends PaymentMethodDetailsCardPresentReceiptAccountType {const PaymentMethodDetailsCardPresentReceiptAccountType$credit._();
+
+@override String get value => 'credit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsCardPresentReceiptAccountType$credit;
+
+@override int get hashCode => 'credit'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsCardPresentReceiptAccountType$prepaid extends PaymentMethodDetailsCardPresentReceiptAccountType {const PaymentMethodDetailsCardPresentReceiptAccountType$prepaid._();
+
+@override String get value => 'prepaid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsCardPresentReceiptAccountType$prepaid;
+
+@override int get hashCode => 'prepaid'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsCardPresentReceiptAccountType$unknown extends PaymentMethodDetailsCardPresentReceiptAccountType {const PaymentMethodDetailsCardPresentReceiptAccountType$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDetailsCardPresentReceiptAccountType$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class PaymentMethodDetailsCardPresentReceiptAccountType$Unknown extends PaymentMethodDetailsCardPresentReceiptAccountType {const PaymentMethodDetailsCardPresentReceiptAccountType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentMethodDetailsCardPresentReceiptAccountType && other.value == value;
+    other is PaymentMethodDetailsCardPresentReceiptAccountType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentMethodDetailsCardPresentReceiptAccountType($value)';
 
  }
 /// 

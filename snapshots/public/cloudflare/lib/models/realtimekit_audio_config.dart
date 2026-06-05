@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RealtimekitAudioConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Audio signal pathway within an audio file that carries a specific sound source.
-@immutable final class Channel {const Channel._(this.value);
+sealed class Channel {const Channel();
 
 factory Channel.fromJson(String json) { return switch (json) {
   'mono' => mono,
   'stereo' => stereo,
-  _ => Channel._(json),
+  _ => Channel$Unknown(json),
 }; }
 
-static const Channel mono = Channel._('mono');
+static const Channel mono = Channel$mono._();
 
-static const Channel stereo = Channel._('stereo');
+static const Channel stereo = Channel$stereo._();
 
 static const List<Channel> values = [mono, stereo];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,32 +25,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Channel && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Channel$Unknown; } 
 @override String toString() => 'Channel($value)';
 
  }
+@immutable final class Channel$mono extends Channel {const Channel$mono._();
+
+@override String get value => 'mono';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Channel$mono;
+
+@override int get hashCode => 'mono'.hashCode;
+
+ }
+@immutable final class Channel$stereo extends Channel {const Channel$stereo._();
+
+@override String get value => 'stereo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Channel$stereo;
+
+@override int get hashCode => 'stereo'.hashCode;
+
+ }
+@immutable final class Channel$Unknown extends Channel {const Channel$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Channel$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Codec using which the recording will be encoded. If VP8/VP9 is selected for videoConfig, changing audioConfig is not allowed. In this case, the codec in the audioConfig is automatically set to vorbis.
-@immutable final class RealtimekitAudioConfigCodec {const RealtimekitAudioConfigCodec._(this.value);
+sealed class RealtimekitAudioConfigCodec {const RealtimekitAudioConfigCodec();
 
 factory RealtimekitAudioConfigCodec.fromJson(String json) { return switch (json) {
   'MP3' => mp3,
   'AAC' => aac,
-  _ => RealtimekitAudioConfigCodec._(json),
+  _ => RealtimekitAudioConfigCodec$Unknown(json),
 }; }
 
-static const RealtimekitAudioConfigCodec mp3 = RealtimekitAudioConfigCodec._('MP3');
+static const RealtimekitAudioConfigCodec mp3 = RealtimekitAudioConfigCodec$mp3._();
 
-static const RealtimekitAudioConfigCodec aac = RealtimekitAudioConfigCodec._('AAC');
+static const RealtimekitAudioConfigCodec aac = RealtimekitAudioConfigCodec$aac._();
 
 static const List<RealtimekitAudioConfigCodec> values = [mp3, aac];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,13 +81,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimekitAudioConfigCodec$Unknown; } 
+@override String toString() => 'RealtimekitAudioConfigCodec($value)';
+
+ }
+@immutable final class RealtimekitAudioConfigCodec$mp3 extends RealtimekitAudioConfigCodec {const RealtimekitAudioConfigCodec$mp3._();
+
+@override String get value => 'MP3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitAudioConfigCodec$mp3;
+
+@override int get hashCode => 'MP3'.hashCode;
+
+ }
+@immutable final class RealtimekitAudioConfigCodec$aac extends RealtimekitAudioConfigCodec {const RealtimekitAudioConfigCodec$aac._();
+
+@override String get value => 'AAC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitAudioConfigCodec$aac;
+
+@override int get hashCode => 'AAC'.hashCode;
+
+ }
+@immutable final class RealtimekitAudioConfigCodec$Unknown extends RealtimekitAudioConfigCodec {const RealtimekitAudioConfigCodec$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimekitAudioConfigCodec && other.value == value;
+    other is RealtimekitAudioConfigCodec$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimekitAudioConfigCodec($value)';
 
  }
 /// Object containing configuration regarding the audio that is being recorded.

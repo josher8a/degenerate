@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetDnsTimeseriesFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetDnsTimeseriesFormat {const RadarGetDnsTimeseriesFormat._(this.value);
+sealed class RadarGetDnsTimeseriesFormat {const RadarGetDnsTimeseriesFormat();
 
 factory RadarGetDnsTimeseriesFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetDnsTimeseriesFormat._(json),
+  _ => RadarGetDnsTimeseriesFormat$Unknown(json),
 }; }
 
-static const RadarGetDnsTimeseriesFormat $json = RadarGetDnsTimeseriesFormat._('JSON');
+static const RadarGetDnsTimeseriesFormat $json = RadarGetDnsTimeseriesFormat$$json._();
 
-static const RadarGetDnsTimeseriesFormat csv = RadarGetDnsTimeseriesFormat._('CSV');
+static const RadarGetDnsTimeseriesFormat csv = RadarGetDnsTimeseriesFormat$csv._();
 
 static const List<RadarGetDnsTimeseriesFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetDnsTimeseriesFormat$Unknown; } 
+@override String toString() => 'RadarGetDnsTimeseriesFormat($value)';
+
+ }
+@immutable final class RadarGetDnsTimeseriesFormat$$json extends RadarGetDnsTimeseriesFormat {const RadarGetDnsTimeseriesFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesFormat$csv extends RadarGetDnsTimeseriesFormat {const RadarGetDnsTimeseriesFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesFormat$Unknown extends RadarGetDnsTimeseriesFormat {const RadarGetDnsTimeseriesFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetDnsTimeseriesFormat && other.value == value;
+    other is RadarGetDnsTimeseriesFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetDnsTimeseriesFormat($value)';
 
  }

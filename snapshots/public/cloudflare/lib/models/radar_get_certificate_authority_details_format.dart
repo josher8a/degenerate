@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetCertificateAuthorityDetailsFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetCertificateAuthorityDetailsFormat {const RadarGetCertificateAuthorityDetailsFormat._(this.value);
+sealed class RadarGetCertificateAuthorityDetailsFormat {const RadarGetCertificateAuthorityDetailsFormat();
 
 factory RadarGetCertificateAuthorityDetailsFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetCertificateAuthorityDetailsFormat._(json),
+  _ => RadarGetCertificateAuthorityDetailsFormat$Unknown(json),
 }; }
 
-static const RadarGetCertificateAuthorityDetailsFormat $json = RadarGetCertificateAuthorityDetailsFormat._('JSON');
+static const RadarGetCertificateAuthorityDetailsFormat $json = RadarGetCertificateAuthorityDetailsFormat$$json._();
 
-static const RadarGetCertificateAuthorityDetailsFormat csv = RadarGetCertificateAuthorityDetailsFormat._('CSV');
+static const RadarGetCertificateAuthorityDetailsFormat csv = RadarGetCertificateAuthorityDetailsFormat$csv._();
 
 static const List<RadarGetCertificateAuthorityDetailsFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetCertificateAuthorityDetailsFormat$Unknown; } 
+@override String toString() => 'RadarGetCertificateAuthorityDetailsFormat($value)';
+
+ }
+@immutable final class RadarGetCertificateAuthorityDetailsFormat$$json extends RadarGetCertificateAuthorityDetailsFormat {const RadarGetCertificateAuthorityDetailsFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetCertificateAuthorityDetailsFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetCertificateAuthorityDetailsFormat$csv extends RadarGetCertificateAuthorityDetailsFormat {const RadarGetCertificateAuthorityDetailsFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetCertificateAuthorityDetailsFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetCertificateAuthorityDetailsFormat$Unknown extends RadarGetCertificateAuthorityDetailsFormat {const RadarGetCertificateAuthorityDetailsFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetCertificateAuthorityDetailsFormat && other.value == value;
+    other is RadarGetCertificateAuthorityDetailsFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetCertificateAuthorityDetailsFormat($value)';
 
  }

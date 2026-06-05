@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RadarGetBotsBotVerificationStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters results by bot verification status.
-@immutable final class RadarGetBotsBotVerificationStatus {const RadarGetBotsBotVerificationStatus._(this.value);
+sealed class RadarGetBotsBotVerificationStatus {const RadarGetBotsBotVerificationStatus();
 
 factory RadarGetBotsBotVerificationStatus.fromJson(String json) { return switch (json) {
   'VERIFIED' => verified,
-  _ => RadarGetBotsBotVerificationStatus._(json),
+  _ => RadarGetBotsBotVerificationStatus$Unknown(json),
 }; }
 
-static const RadarGetBotsBotVerificationStatus verified = RadarGetBotsBotVerificationStatus._('VERIFIED');
+static const RadarGetBotsBotVerificationStatus verified = RadarGetBotsBotVerificationStatus$verified._();
 
 static const List<RadarGetBotsBotVerificationStatus> values = [verified];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetBotsBotVerificationStatus$Unknown; } 
+@override String toString() => 'RadarGetBotsBotVerificationStatus($value)';
+
+ }
+@immutable final class RadarGetBotsBotVerificationStatus$verified extends RadarGetBotsBotVerificationStatus {const RadarGetBotsBotVerificationStatus$verified._();
+
+@override String get value => 'VERIFIED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBotsBotVerificationStatus$verified;
+
+@override int get hashCode => 'VERIFIED'.hashCode;
+
+ }
+@immutable final class RadarGetBotsBotVerificationStatus$Unknown extends RadarGetBotsBotVerificationStatus {const RadarGetBotsBotVerificationStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetBotsBotVerificationStatus && other.value == value;
+    other is RadarGetBotsBotVerificationStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetBotsBotVerificationStatus($value)';
 
  }

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AppPermissions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/app_permissions/actions.dart';import 'package:pub_github_rest_3_1/models/app_permissions/administration.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_attestations.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_checks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_deployments.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_environments.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_metadata.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_organization_projects.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_packages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_pages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_pull_requests.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_repository_projects.dart';import 'package:pub_github_rest_3_1/models/app_permissions/app_permissions_statuses.dart';import 'package:pub_github_rest_3_1/models/app_permissions/artifact_metadata.dart';import 'package:pub_github_rest_3_1/models/app_permissions/contents.dart';import 'package:pub_github_rest_3_1/models/app_permissions/discussions.dart';import 'package:pub_github_rest_3_1/models/app_permissions/issues.dart';import 'package:pub_github_rest_3_1/models/app_permissions/members.dart';import 'package:pub_github_rest_3_1/models/app_permissions/merge_queues.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_administration.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_hooks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_packages.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_secrets.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_self_hosted_runners.dart';import 'package:pub_github_rest_3_1/models/app_permissions/organization_user_blocking.dart';import 'package:pub_github_rest_3_1/models/app_permissions/repository_hooks.dart';import 'package:pub_github_rest_3_1/models/app_permissions/secret_scanning_alerts.dart';import 'package:pub_github_rest_3_1/models/app_permissions/secrets.dart';import 'package:pub_github_rest_3_1/models/app_permissions/security_events.dart';import 'package:pub_github_rest_3_1/models/app_permissions/single_file.dart';import 'package:pub_github_rest_3_1/models/app_permissions/vulnerability_alerts.dart';/// The level of permission to grant the access token to create, edit, delete, and list Codespaces.
-@immutable final class Codespaces {const Codespaces._(this.value);
+sealed class Codespaces {const Codespaces();
 
 factory Codespaces.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => Codespaces._(json),
+  _ => Codespaces$Unknown(json),
 }; }
 
-static const Codespaces read = Codespaces._('read');
+static const Codespaces read = Codespaces$read._();
 
-static const Codespaces write = Codespaces._('write');
+static const Codespaces write = Codespaces$write._();
 
 static const List<Codespaces> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,32 +25,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Codespaces && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Codespaces$Unknown; } 
 @override String toString() => 'Codespaces($value)';
 
  }
+@immutable final class Codespaces$read extends Codespaces {const Codespaces$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Codespaces$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class Codespaces$write extends Codespaces {const Codespaces$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Codespaces$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class Codespaces$Unknown extends Codespaces {const Codespaces$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Codespaces$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token to manage Dependabot secrets.
-@immutable final class DependabotSecrets {const DependabotSecrets._(this.value);
+sealed class DependabotSecrets {const DependabotSecrets();
 
 factory DependabotSecrets.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => DependabotSecrets._(json),
+  _ => DependabotSecrets$Unknown(json),
 }; }
 
-static const DependabotSecrets read = DependabotSecrets._('read');
+static const DependabotSecrets read = DependabotSecrets$read._();
 
-static const DependabotSecrets write = DependabotSecrets._('write');
+static const DependabotSecrets write = DependabotSecrets$write._();
 
 static const List<DependabotSecrets> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,32 +81,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DependabotSecrets && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is DependabotSecrets$Unknown; } 
 @override String toString() => 'DependabotSecrets($value)';
 
  }
+@immutable final class DependabotSecrets$read extends DependabotSecrets {const DependabotSecrets$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotSecrets$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class DependabotSecrets$write extends DependabotSecrets {const DependabotSecrets$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotSecrets$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class DependabotSecrets$Unknown extends DependabotSecrets {const DependabotSecrets$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DependabotSecrets$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.
-@immutable final class RepositoryCustomProperties {const RepositoryCustomProperties._(this.value);
+sealed class RepositoryCustomProperties {const RepositoryCustomProperties();
 
 factory RepositoryCustomProperties.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => RepositoryCustomProperties._(json),
+  _ => RepositoryCustomProperties$Unknown(json),
 }; }
 
-static const RepositoryCustomProperties read = RepositoryCustomProperties._('read');
+static const RepositoryCustomProperties read = RepositoryCustomProperties$read._();
 
-static const RepositoryCustomProperties write = RepositoryCustomProperties._('write');
+static const RepositoryCustomProperties write = RepositoryCustomProperties$write._();
 
 static const List<RepositoryCustomProperties> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -94,29 +137,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryCustomProperties && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is RepositoryCustomProperties$Unknown; } 
 @override String toString() => 'RepositoryCustomProperties($value)';
 
  }
+@immutable final class RepositoryCustomProperties$read extends RepositoryCustomProperties {const RepositoryCustomProperties$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryCustomProperties$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class RepositoryCustomProperties$write extends RepositoryCustomProperties {const RepositoryCustomProperties$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryCustomProperties$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class RepositoryCustomProperties$Unknown extends RepositoryCustomProperties {const RepositoryCustomProperties$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RepositoryCustomProperties$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token to update GitHub Actions workflow files.
-@immutable final class AppPermissionsWorkflows {const AppPermissionsWorkflows._(this.value);
+sealed class AppPermissionsWorkflows {const AppPermissionsWorkflows();
 
 factory AppPermissionsWorkflows.fromJson(String json) { return switch (json) {
   'write' => write,
-  _ => AppPermissionsWorkflows._(json),
+  _ => AppPermissionsWorkflows$Unknown(json),
 }; }
 
-static const AppPermissionsWorkflows write = AppPermissionsWorkflows._('write');
+static const AppPermissionsWorkflows write = AppPermissionsWorkflows$write._();
 
 static const List<AppPermissionsWorkflows> values = [write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -124,32 +189,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is AppPermissionsWorkflows && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is AppPermissionsWorkflows$Unknown; } 
 @override String toString() => 'AppPermissionsWorkflows($value)';
 
  }
+@immutable final class AppPermissionsWorkflows$write extends AppPermissionsWorkflows {const AppPermissionsWorkflows$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppPermissionsWorkflows$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class AppPermissionsWorkflows$Unknown extends AppPermissionsWorkflows {const AppPermissionsWorkflows$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AppPermissionsWorkflows$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token to view and edit custom properties for an organization, when allowed by the property.
-@immutable final class CustomPropertiesForOrganizations {const CustomPropertiesForOrganizations._(this.value);
+sealed class CustomPropertiesForOrganizations {const CustomPropertiesForOrganizations();
 
 factory CustomPropertiesForOrganizations.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => CustomPropertiesForOrganizations._(json),
+  _ => CustomPropertiesForOrganizations$Unknown(json),
 }; }
 
-static const CustomPropertiesForOrganizations read = CustomPropertiesForOrganizations._('read');
+static const CustomPropertiesForOrganizations read = CustomPropertiesForOrganizations$read._();
 
-static const CustomPropertiesForOrganizations write = CustomPropertiesForOrganizations._('write');
+static const CustomPropertiesForOrganizations write = CustomPropertiesForOrganizations$write._();
 
 static const List<CustomPropertiesForOrganizations> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -158,32 +236,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomPropertiesForOrganizations && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CustomPropertiesForOrganizations$Unknown; } 
 @override String toString() => 'CustomPropertiesForOrganizations($value)';
 
  }
+@immutable final class CustomPropertiesForOrganizations$read extends CustomPropertiesForOrganizations {const CustomPropertiesForOrganizations$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomPropertiesForOrganizations$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class CustomPropertiesForOrganizations$write extends CustomPropertiesForOrganizations {const CustomPropertiesForOrganizations$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomPropertiesForOrganizations$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class CustomPropertiesForOrganizations$Unknown extends CustomPropertiesForOrganizations {const CustomPropertiesForOrganizations$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomPropertiesForOrganizations$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token for custom repository roles management.
-@immutable final class OrganizationCustomRoles {const OrganizationCustomRoles._(this.value);
+sealed class OrganizationCustomRoles {const OrganizationCustomRoles();
 
 factory OrganizationCustomRoles.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => OrganizationCustomRoles._(json),
+  _ => OrganizationCustomRoles$Unknown(json),
 }; }
 
-static const OrganizationCustomRoles read = OrganizationCustomRoles._('read');
+static const OrganizationCustomRoles read = OrganizationCustomRoles$read._();
 
-static const OrganizationCustomRoles write = OrganizationCustomRoles._('write');
+static const OrganizationCustomRoles write = OrganizationCustomRoles$write._();
 
 static const List<OrganizationCustomRoles> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -192,32 +292,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is OrganizationCustomRoles && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is OrganizationCustomRoles$Unknown; } 
 @override String toString() => 'OrganizationCustomRoles($value)';
 
  }
+@immutable final class OrganizationCustomRoles$read extends OrganizationCustomRoles {const OrganizationCustomRoles$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationCustomRoles$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class OrganizationCustomRoles$write extends OrganizationCustomRoles {const OrganizationCustomRoles$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationCustomRoles$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class OrganizationCustomRoles$Unknown extends OrganizationCustomRoles {const OrganizationCustomRoles$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationCustomRoles$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token for custom organization roles management.
-@immutable final class OrganizationCustomOrgRoles {const OrganizationCustomOrgRoles._(this.value);
+sealed class OrganizationCustomOrgRoles {const OrganizationCustomOrgRoles();
 
 factory OrganizationCustomOrgRoles.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => OrganizationCustomOrgRoles._(json),
+  _ => OrganizationCustomOrgRoles$Unknown(json),
 }; }
 
-static const OrganizationCustomOrgRoles read = OrganizationCustomOrgRoles._('read');
+static const OrganizationCustomOrgRoles read = OrganizationCustomOrgRoles$read._();
 
-static const OrganizationCustomOrgRoles write = OrganizationCustomOrgRoles._('write');
+static const OrganizationCustomOrgRoles write = OrganizationCustomOrgRoles$write._();
 
 static const List<OrganizationCustomOrgRoles> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -226,35 +348,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is OrganizationCustomOrgRoles && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is OrganizationCustomOrgRoles$Unknown; } 
 @override String toString() => 'OrganizationCustomOrgRoles($value)';
 
  }
+@immutable final class OrganizationCustomOrgRoles$read extends OrganizationCustomOrgRoles {const OrganizationCustomOrgRoles$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationCustomOrgRoles$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class OrganizationCustomOrgRoles$write extends OrganizationCustomOrgRoles {const OrganizationCustomOrgRoles$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationCustomOrgRoles$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class OrganizationCustomOrgRoles$Unknown extends OrganizationCustomOrgRoles {const OrganizationCustomOrgRoles$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationCustomOrgRoles$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token for repository custom properties management at the organization level.
-@immutable final class OrganizationCustomProperties {const OrganizationCustomProperties._(this.value);
+sealed class OrganizationCustomProperties {const OrganizationCustomProperties();
 
 factory OrganizationCustomProperties.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
   'admin' => admin,
-  _ => OrganizationCustomProperties._(json),
+  _ => OrganizationCustomProperties$Unknown(json),
 }; }
 
-static const OrganizationCustomProperties read = OrganizationCustomProperties._('read');
+static const OrganizationCustomProperties read = OrganizationCustomProperties$read._();
 
-static const OrganizationCustomProperties write = OrganizationCustomProperties._('write');
+static const OrganizationCustomProperties write = OrganizationCustomProperties$write._();
 
-static const OrganizationCustomProperties admin = OrganizationCustomProperties._('admin');
+static const OrganizationCustomProperties admin = OrganizationCustomProperties$admin._();
 
 static const List<OrganizationCustomProperties> values = [read, write, admin];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -264,29 +408,60 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is OrganizationCustomProperties && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is OrganizationCustomProperties$Unknown; } 
 @override String toString() => 'OrganizationCustomProperties($value)';
 
  }
+@immutable final class OrganizationCustomProperties$read extends OrganizationCustomProperties {const OrganizationCustomProperties$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationCustomProperties$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class OrganizationCustomProperties$write extends OrganizationCustomProperties {const OrganizationCustomProperties$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationCustomProperties$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class OrganizationCustomProperties$admin extends OrganizationCustomProperties {const OrganizationCustomProperties$admin._();
+
+@override String get value => 'admin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationCustomProperties$admin;
+
+@override int get hashCode => 'admin'.hashCode;
+
+ }
+@immutable final class OrganizationCustomProperties$Unknown extends OrganizationCustomProperties {const OrganizationCustomProperties$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationCustomProperties$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
-@immutable final class OrganizationCopilotSeatManagement {const OrganizationCopilotSeatManagement._(this.value);
+sealed class OrganizationCopilotSeatManagement {const OrganizationCopilotSeatManagement();
 
 factory OrganizationCopilotSeatManagement.fromJson(String json) { return switch (json) {
   'write' => write,
-  _ => OrganizationCopilotSeatManagement._(json),
+  _ => OrganizationCopilotSeatManagement$Unknown(json),
 }; }
 
-static const OrganizationCopilotSeatManagement write = OrganizationCopilotSeatManagement._('write');
+static const OrganizationCopilotSeatManagement write = OrganizationCopilotSeatManagement$write._();
 
 static const List<OrganizationCopilotSeatManagement> values = [write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -294,32 +469,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is OrganizationCopilotSeatManagement && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is OrganizationCopilotSeatManagement$Unknown; } 
 @override String toString() => 'OrganizationCopilotSeatManagement($value)';
 
  }
+@immutable final class OrganizationCopilotSeatManagement$write extends OrganizationCopilotSeatManagement {const OrganizationCopilotSeatManagement$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationCopilotSeatManagement$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class OrganizationCopilotSeatManagement$Unknown extends OrganizationCopilotSeatManagement {const OrganizationCopilotSeatManagement$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationCopilotSeatManagement$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token to view and manage announcement banners for an organization.
-@immutable final class OrganizationAnnouncementBanners {const OrganizationAnnouncementBanners._(this.value);
+sealed class OrganizationAnnouncementBanners {const OrganizationAnnouncementBanners();
 
 factory OrganizationAnnouncementBanners.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => OrganizationAnnouncementBanners._(json),
+  _ => OrganizationAnnouncementBanners$Unknown(json),
 }; }
 
-static const OrganizationAnnouncementBanners read = OrganizationAnnouncementBanners._('read');
+static const OrganizationAnnouncementBanners read = OrganizationAnnouncementBanners$read._();
 
-static const OrganizationAnnouncementBanners write = OrganizationAnnouncementBanners._('write');
+static const OrganizationAnnouncementBanners write = OrganizationAnnouncementBanners$write._();
 
 static const List<OrganizationAnnouncementBanners> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -328,29 +516,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is OrganizationAnnouncementBanners && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is OrganizationAnnouncementBanners$Unknown; } 
 @override String toString() => 'OrganizationAnnouncementBanners($value)';
 
  }
+@immutable final class OrganizationAnnouncementBanners$read extends OrganizationAnnouncementBanners {const OrganizationAnnouncementBanners$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationAnnouncementBanners$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class OrganizationAnnouncementBanners$write extends OrganizationAnnouncementBanners {const OrganizationAnnouncementBanners$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationAnnouncementBanners$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class OrganizationAnnouncementBanners$Unknown extends OrganizationAnnouncementBanners {const OrganizationAnnouncementBanners$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationAnnouncementBanners$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token to view events triggered by an activity in an organization.
-@immutable final class OrganizationEvents {const OrganizationEvents._(this.value);
+sealed class OrganizationEvents {const OrganizationEvents();
 
 factory OrganizationEvents.fromJson(String json) { return switch (json) {
   'read' => read,
-  _ => OrganizationEvents._(json),
+  _ => OrganizationEvents$Unknown(json),
 }; }
 
-static const OrganizationEvents read = OrganizationEvents._('read');
+static const OrganizationEvents read = OrganizationEvents$read._();
 
 static const List<OrganizationEvents> values = [read];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -358,32 +568,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is OrganizationEvents && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is OrganizationEvents$Unknown; } 
 @override String toString() => 'OrganizationEvents($value)';
 
  }
+@immutable final class OrganizationEvents$read extends OrganizationEvents {const OrganizationEvents$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationEvents$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class OrganizationEvents$Unknown extends OrganizationEvents {const OrganizationEvents$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationEvents$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token for viewing and managing fine-grained personal access token requests to an organization.
-@immutable final class OrganizationPersonalAccessTokens {const OrganizationPersonalAccessTokens._(this.value);
+sealed class OrganizationPersonalAccessTokens {const OrganizationPersonalAccessTokens();
 
 factory OrganizationPersonalAccessTokens.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => OrganizationPersonalAccessTokens._(json),
+  _ => OrganizationPersonalAccessTokens$Unknown(json),
 }; }
 
-static const OrganizationPersonalAccessTokens read = OrganizationPersonalAccessTokens._('read');
+static const OrganizationPersonalAccessTokens read = OrganizationPersonalAccessTokens$read._();
 
-static const OrganizationPersonalAccessTokens write = OrganizationPersonalAccessTokens._('write');
+static const OrganizationPersonalAccessTokens write = OrganizationPersonalAccessTokens$write._();
 
 static const List<OrganizationPersonalAccessTokens> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -392,32 +615,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is OrganizationPersonalAccessTokens && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is OrganizationPersonalAccessTokens$Unknown; } 
 @override String toString() => 'OrganizationPersonalAccessTokens($value)';
 
  }
+@immutable final class OrganizationPersonalAccessTokens$read extends OrganizationPersonalAccessTokens {const OrganizationPersonalAccessTokens$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationPersonalAccessTokens$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class OrganizationPersonalAccessTokens$write extends OrganizationPersonalAccessTokens {const OrganizationPersonalAccessTokens$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationPersonalAccessTokens$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class OrganizationPersonalAccessTokens$Unknown extends OrganizationPersonalAccessTokens {const OrganizationPersonalAccessTokens$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationPersonalAccessTokens$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token for viewing and managing fine-grained personal access tokens that have been approved by an organization.
-@immutable final class OrganizationPersonalAccessTokenRequests {const OrganizationPersonalAccessTokenRequests._(this.value);
+sealed class OrganizationPersonalAccessTokenRequests {const OrganizationPersonalAccessTokenRequests();
 
 factory OrganizationPersonalAccessTokenRequests.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => OrganizationPersonalAccessTokenRequests._(json),
+  _ => OrganizationPersonalAccessTokenRequests$Unknown(json),
 }; }
 
-static const OrganizationPersonalAccessTokenRequests read = OrganizationPersonalAccessTokenRequests._('read');
+static const OrganizationPersonalAccessTokenRequests read = OrganizationPersonalAccessTokenRequests$read._();
 
-static const OrganizationPersonalAccessTokenRequests write = OrganizationPersonalAccessTokenRequests._('write');
+static const OrganizationPersonalAccessTokenRequests write = OrganizationPersonalAccessTokenRequests$write._();
 
 static const List<OrganizationPersonalAccessTokenRequests> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -426,29 +671,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is OrganizationPersonalAccessTokenRequests && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is OrganizationPersonalAccessTokenRequests$Unknown; } 
 @override String toString() => 'OrganizationPersonalAccessTokenRequests($value)';
 
  }
+@immutable final class OrganizationPersonalAccessTokenRequests$read extends OrganizationPersonalAccessTokenRequests {const OrganizationPersonalAccessTokenRequests$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationPersonalAccessTokenRequests$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class OrganizationPersonalAccessTokenRequests$write extends OrganizationPersonalAccessTokenRequests {const OrganizationPersonalAccessTokenRequests$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrganizationPersonalAccessTokenRequests$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class OrganizationPersonalAccessTokenRequests$Unknown extends OrganizationPersonalAccessTokenRequests {const OrganizationPersonalAccessTokenRequests$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OrganizationPersonalAccessTokenRequests$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token for viewing an organization's plan.
-@immutable final class AppPermissionsOrganizationPlan {const AppPermissionsOrganizationPlan._(this.value);
+sealed class AppPermissionsOrganizationPlan {const AppPermissionsOrganizationPlan();
 
 factory AppPermissionsOrganizationPlan.fromJson(String json) { return switch (json) {
   'read' => read,
-  _ => AppPermissionsOrganizationPlan._(json),
+  _ => AppPermissionsOrganizationPlan$Unknown(json),
 }; }
 
-static const AppPermissionsOrganizationPlan read = AppPermissionsOrganizationPlan._('read');
+static const AppPermissionsOrganizationPlan read = AppPermissionsOrganizationPlan$read._();
 
 static const List<AppPermissionsOrganizationPlan> values = [read];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -456,32 +723,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is AppPermissionsOrganizationPlan && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is AppPermissionsOrganizationPlan$Unknown; } 
 @override String toString() => 'AppPermissionsOrganizationPlan($value)';
 
  }
+@immutable final class AppPermissionsOrganizationPlan$read extends AppPermissionsOrganizationPlan {const AppPermissionsOrganizationPlan$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppPermissionsOrganizationPlan$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class AppPermissionsOrganizationPlan$Unknown extends AppPermissionsOrganizationPlan {const AppPermissionsOrganizationPlan$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AppPermissionsOrganizationPlan$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token to manage the email addresses belonging to a user.
-@immutable final class EmailAddresses {const EmailAddresses._(this.value);
+sealed class EmailAddresses {const EmailAddresses();
 
 factory EmailAddresses.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => EmailAddresses._(json),
+  _ => EmailAddresses$Unknown(json),
 }; }
 
-static const EmailAddresses read = EmailAddresses._('read');
+static const EmailAddresses read = EmailAddresses$read._();
 
-static const EmailAddresses write = EmailAddresses._('write');
+static const EmailAddresses write = EmailAddresses$write._();
 
 static const List<EmailAddresses> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -490,32 +770,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is EmailAddresses && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is EmailAddresses$Unknown; } 
 @override String toString() => 'EmailAddresses($value)';
 
  }
+@immutable final class EmailAddresses$read extends EmailAddresses {const EmailAddresses$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailAddresses$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class EmailAddresses$write extends EmailAddresses {const EmailAddresses$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailAddresses$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class EmailAddresses$Unknown extends EmailAddresses {const EmailAddresses$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EmailAddresses$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token to manage the followers belonging to a user.
-@immutable final class Followers {const Followers._(this.value);
+sealed class Followers {const Followers();
 
 factory Followers.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => Followers._(json),
+  _ => Followers$Unknown(json),
 }; }
 
-static const Followers read = Followers._('read');
+static const Followers read = Followers$read._();
 
-static const Followers write = Followers._('write');
+static const Followers write = Followers$write._();
 
 static const List<Followers> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -524,32 +826,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Followers && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Followers$Unknown; } 
 @override String toString() => 'Followers($value)';
 
  }
+@immutable final class Followers$read extends Followers {const Followers$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Followers$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class Followers$write extends Followers {const Followers$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Followers$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class Followers$Unknown extends Followers {const Followers$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Followers$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token to manage git SSH keys.
-@immutable final class GitSshKeys {const GitSshKeys._(this.value);
+sealed class GitSshKeys {const GitSshKeys();
 
 factory GitSshKeys.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => GitSshKeys._(json),
+  _ => GitSshKeys$Unknown(json),
 }; }
 
-static const GitSshKeys read = GitSshKeys._('read');
+static const GitSshKeys read = GitSshKeys$read._();
 
-static const GitSshKeys write = GitSshKeys._('write');
+static const GitSshKeys write = GitSshKeys$write._();
 
 static const List<GitSshKeys> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -558,32 +882,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is GitSshKeys && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is GitSshKeys$Unknown; } 
 @override String toString() => 'GitSshKeys($value)';
 
  }
+@immutable final class GitSshKeys$read extends GitSshKeys {const GitSshKeys$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GitSshKeys$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class GitSshKeys$write extends GitSshKeys {const GitSshKeys$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GitSshKeys$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class GitSshKeys$Unknown extends GitSshKeys {const GitSshKeys$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GitSshKeys$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token to view and manage GPG keys belonging to a user.
-@immutable final class GpgKeys {const GpgKeys._(this.value);
+sealed class GpgKeys {const GpgKeys();
 
 factory GpgKeys.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => GpgKeys._(json),
+  _ => GpgKeys$Unknown(json),
 }; }
 
-static const GpgKeys read = GpgKeys._('read');
+static const GpgKeys read = GpgKeys$read._();
 
-static const GpgKeys write = GpgKeys._('write');
+static const GpgKeys write = GpgKeys$write._();
 
 static const List<GpgKeys> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -592,32 +938,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is GpgKeys && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is GpgKeys$Unknown; } 
 @override String toString() => 'GpgKeys($value)';
 
  }
+@immutable final class GpgKeys$read extends GpgKeys {const GpgKeys$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GpgKeys$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class GpgKeys$write extends GpgKeys {const GpgKeys$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GpgKeys$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class GpgKeys$Unknown extends GpgKeys {const GpgKeys$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GpgKeys$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token to view and manage interaction limits on a repository.
-@immutable final class InteractionLimits {const InteractionLimits._(this.value);
+sealed class InteractionLimits {const InteractionLimits();
 
 factory InteractionLimits.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => InteractionLimits._(json),
+  _ => InteractionLimits$Unknown(json),
 }; }
 
-static const InteractionLimits read = InteractionLimits._('read');
+static const InteractionLimits read = InteractionLimits$read._();
 
-static const InteractionLimits write = InteractionLimits._('write');
+static const InteractionLimits write = InteractionLimits$write._();
 
 static const List<InteractionLimits> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -626,29 +994,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is InteractionLimits && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is InteractionLimits$Unknown; } 
 @override String toString() => 'InteractionLimits($value)';
 
  }
+@immutable final class InteractionLimits$read extends InteractionLimits {const InteractionLimits$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InteractionLimits$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class InteractionLimits$write extends InteractionLimits {const InteractionLimits$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InteractionLimits$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class InteractionLimits$Unknown extends InteractionLimits {const InteractionLimits$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InteractionLimits$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token to manage the profile settings belonging to a user.
-@immutable final class Profile {const Profile._(this.value);
+sealed class Profile {const Profile();
 
 factory Profile.fromJson(String json) { return switch (json) {
   'write' => write,
-  _ => Profile._(json),
+  _ => Profile$Unknown(json),
 }; }
 
-static const Profile write = Profile._('write');
+static const Profile write = Profile$write._();
 
 static const List<Profile> values = [write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -656,32 +1046,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Profile && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Profile$Unknown; } 
 @override String toString() => 'Profile($value)';
 
  }
+@immutable final class Profile$write extends Profile {const Profile$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Profile$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class Profile$Unknown extends Profile {const Profile$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Profile$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token to list and manage repositories a user is starring.
-@immutable final class Starring {const Starring._(this.value);
+sealed class Starring {const Starring();
 
 factory Starring.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => Starring._(json),
+  _ => Starring$Unknown(json),
 }; }
 
-static const Starring read = Starring._('read');
+static const Starring read = Starring$read._();
 
-static const Starring write = Starring._('write');
+static const Starring write = Starring$write._();
 
 static const List<Starring> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -690,35 +1093,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Starring && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Starring$Unknown; } 
 @override String toString() => 'Starring($value)';
 
  }
+@immutable final class Starring$read extends Starring {const Starring$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Starring$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class Starring$write extends Starring {const Starring$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Starring$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class Starring$Unknown extends Starring {const Starring$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Starring$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The level of permission to grant the access token for organization custom properties management at the enterprise level.
-@immutable final class EnterpriseCustomPropertiesForOrganizations {const EnterpriseCustomPropertiesForOrganizations._(this.value);
+sealed class EnterpriseCustomPropertiesForOrganizations {const EnterpriseCustomPropertiesForOrganizations();
 
 factory EnterpriseCustomPropertiesForOrganizations.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
   'admin' => admin,
-  _ => EnterpriseCustomPropertiesForOrganizations._(json),
+  _ => EnterpriseCustomPropertiesForOrganizations$Unknown(json),
 }; }
 
-static const EnterpriseCustomPropertiesForOrganizations read = EnterpriseCustomPropertiesForOrganizations._('read');
+static const EnterpriseCustomPropertiesForOrganizations read = EnterpriseCustomPropertiesForOrganizations$read._();
 
-static const EnterpriseCustomPropertiesForOrganizations write = EnterpriseCustomPropertiesForOrganizations._('write');
+static const EnterpriseCustomPropertiesForOrganizations write = EnterpriseCustomPropertiesForOrganizations$write._();
 
-static const EnterpriseCustomPropertiesForOrganizations admin = EnterpriseCustomPropertiesForOrganizations._('admin');
+static const EnterpriseCustomPropertiesForOrganizations admin = EnterpriseCustomPropertiesForOrganizations$admin._();
 
 static const List<EnterpriseCustomPropertiesForOrganizations> values = [read, write, admin];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -728,13 +1153,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EnterpriseCustomPropertiesForOrganizations$Unknown; } 
+@override String toString() => 'EnterpriseCustomPropertiesForOrganizations($value)';
+
+ }
+@immutable final class EnterpriseCustomPropertiesForOrganizations$read extends EnterpriseCustomPropertiesForOrganizations {const EnterpriseCustomPropertiesForOrganizations$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnterpriseCustomPropertiesForOrganizations$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class EnterpriseCustomPropertiesForOrganizations$write extends EnterpriseCustomPropertiesForOrganizations {const EnterpriseCustomPropertiesForOrganizations$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnterpriseCustomPropertiesForOrganizations$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class EnterpriseCustomPropertiesForOrganizations$admin extends EnterpriseCustomPropertiesForOrganizations {const EnterpriseCustomPropertiesForOrganizations$admin._();
+
+@override String get value => 'admin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnterpriseCustomPropertiesForOrganizations$admin;
+
+@override int get hashCode => 'admin'.hashCode;
+
+ }
+@immutable final class EnterpriseCustomPropertiesForOrganizations$Unknown extends EnterpriseCustomPropertiesForOrganizations {const EnterpriseCustomPropertiesForOrganizations$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EnterpriseCustomPropertiesForOrganizations && other.value == value;
+    other is EnterpriseCustomPropertiesForOrganizations$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EnterpriseCustomPropertiesForOrganizations($value)';
 
  }
 /// The permissions granted to the user access token.

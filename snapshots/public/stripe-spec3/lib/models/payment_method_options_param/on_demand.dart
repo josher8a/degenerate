@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentMethodOptionsParam (inline: OnDemand)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PurchaseInterval {const PurchaseInterval._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PurchaseInterval {const PurchaseInterval();
 
 factory PurchaseInterval.fromJson(String json) { return switch (json) {
   'day' => day,
   'month' => month,
   'week' => week,
   'year' => year,
-  _ => PurchaseInterval._(json),
+  _ => PurchaseInterval$Unknown(json),
 }; }
 
-static const PurchaseInterval day = PurchaseInterval._('day');
+static const PurchaseInterval day = PurchaseInterval$day._();
 
-static const PurchaseInterval month = PurchaseInterval._('month');
+static const PurchaseInterval month = PurchaseInterval$month._();
 
-static const PurchaseInterval week = PurchaseInterval._('week');
+static const PurchaseInterval week = PurchaseInterval$week._();
 
-static const PurchaseInterval year = PurchaseInterval._('year');
+static const PurchaseInterval year = PurchaseInterval$year._();
 
 static const List<PurchaseInterval> values = [day, month, week, year];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PurchaseInterval$Unknown; } 
+@override String toString() => 'PurchaseInterval($value)';
+
+ }
+@immutable final class PurchaseInterval$day extends PurchaseInterval {const PurchaseInterval$day._();
+
+@override String get value => 'day';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PurchaseInterval$day;
+
+@override int get hashCode => 'day'.hashCode;
+
+ }
+@immutable final class PurchaseInterval$month extends PurchaseInterval {const PurchaseInterval$month._();
+
+@override String get value => 'month';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PurchaseInterval$month;
+
+@override int get hashCode => 'month'.hashCode;
+
+ }
+@immutable final class PurchaseInterval$week extends PurchaseInterval {const PurchaseInterval$week._();
+
+@override String get value => 'week';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PurchaseInterval$week;
+
+@override int get hashCode => 'week'.hashCode;
+
+ }
+@immutable final class PurchaseInterval$year extends PurchaseInterval {const PurchaseInterval$year._();
+
+@override String get value => 'year';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PurchaseInterval$year;
+
+@override int get hashCode => 'year'.hashCode;
+
+ }
+@immutable final class PurchaseInterval$Unknown extends PurchaseInterval {const PurchaseInterval$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PurchaseInterval && other.value == value;
+    other is PurchaseInterval$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PurchaseInterval($value)';
 
  }
 @immutable final class OnDemand {const OnDemand({this.averageAmount, this.maximumAmount, this.minimumAmount, this.purchaseInterval, this.purchaseIntervalCount, });

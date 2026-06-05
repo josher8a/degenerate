@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AaaAuditLogs2 (inline: Actor)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActorContext {const ActorContext._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ActorContext {const ActorContext();
 
 factory ActorContext.fromJson(String json) { return switch (json) {
   'api_key' => apiKey,
@@ -9,23 +9,22 @@ factory ActorContext.fromJson(String json) { return switch (json) {
   'dash' => dash,
   'oauth' => oauth,
   'origin_ca_key' => originCaKey,
-  _ => ActorContext._(json),
+  _ => ActorContext$Unknown(json),
 }; }
 
-static const ActorContext apiKey = ActorContext._('api_key');
+static const ActorContext apiKey = ActorContext$apiKey._();
 
-static const ActorContext apiToken = ActorContext._('api_token');
+static const ActorContext apiToken = ActorContext$apiToken._();
 
-static const ActorContext dash = ActorContext._('dash');
+static const ActorContext dash = ActorContext$dash._();
 
-static const ActorContext oauth = ActorContext._('oauth');
+static const ActorContext oauth = ActorContext$oauth._();
 
-static const ActorContext originCaKey = ActorContext._('origin_ca_key');
+static const ActorContext originCaKey = ActorContext$originCaKey._();
 
 static const List<ActorContext> values = [apiKey, apiToken, dash, oauth, originCaKey];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,38 +36,87 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ActorContext && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ActorContext$Unknown; } 
 @override String toString() => 'ActorContext($value)';
 
  }
+@immutable final class ActorContext$apiKey extends ActorContext {const ActorContext$apiKey._();
+
+@override String get value => 'api_key';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActorContext$apiKey;
+
+@override int get hashCode => 'api_key'.hashCode;
+
+ }
+@immutable final class ActorContext$apiToken extends ActorContext {const ActorContext$apiToken._();
+
+@override String get value => 'api_token';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActorContext$apiToken;
+
+@override int get hashCode => 'api_token'.hashCode;
+
+ }
+@immutable final class ActorContext$dash extends ActorContext {const ActorContext$dash._();
+
+@override String get value => 'dash';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActorContext$dash;
+
+@override int get hashCode => 'dash'.hashCode;
+
+ }
+@immutable final class ActorContext$oauth extends ActorContext {const ActorContext$oauth._();
+
+@override String get value => 'oauth';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActorContext$oauth;
+
+@override int get hashCode => 'oauth'.hashCode;
+
+ }
+@immutable final class ActorContext$originCaKey extends ActorContext {const ActorContext$originCaKey._();
+
+@override String get value => 'origin_ca_key';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActorContext$originCaKey;
+
+@override int get hashCode => 'origin_ca_key'.hashCode;
+
+ }
+@immutable final class ActorContext$Unknown extends ActorContext {const ActorContext$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ActorContext$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The type of actor.
-@immutable final class AaaAuditLogs2ActorType {const AaaAuditLogs2ActorType._(this.value);
+sealed class AaaAuditLogs2ActorType {const AaaAuditLogs2ActorType();
 
 factory AaaAuditLogs2ActorType.fromJson(String json) { return switch (json) {
   'account' => account,
   'cloudflare_admin' => cloudflareAdmin,
   'system' => system,
   'user' => user,
-  _ => AaaAuditLogs2ActorType._(json),
+  _ => AaaAuditLogs2ActorType$Unknown(json),
 }; }
 
-static const AaaAuditLogs2ActorType account = AaaAuditLogs2ActorType._('account');
+static const AaaAuditLogs2ActorType account = AaaAuditLogs2ActorType$account._();
 
-static const AaaAuditLogs2ActorType cloudflareAdmin = AaaAuditLogs2ActorType._('cloudflare_admin');
+static const AaaAuditLogs2ActorType cloudflareAdmin = AaaAuditLogs2ActorType$cloudflareAdmin._();
 
-static const AaaAuditLogs2ActorType system = AaaAuditLogs2ActorType._('system');
+static const AaaAuditLogs2ActorType system = AaaAuditLogs2ActorType$system._();
 
-static const AaaAuditLogs2ActorType user = AaaAuditLogs2ActorType._('user');
+static const AaaAuditLogs2ActorType user = AaaAuditLogs2ActorType$user._();
 
 static const List<AaaAuditLogs2ActorType> values = [account, cloudflareAdmin, system, user];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -79,13 +127,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AaaAuditLogs2ActorType$Unknown; } 
+@override String toString() => 'AaaAuditLogs2ActorType($value)';
+
+ }
+@immutable final class AaaAuditLogs2ActorType$account extends AaaAuditLogs2ActorType {const AaaAuditLogs2ActorType$account._();
+
+@override String get value => 'account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAuditLogs2ActorType$account;
+
+@override int get hashCode => 'account'.hashCode;
+
+ }
+@immutable final class AaaAuditLogs2ActorType$cloudflareAdmin extends AaaAuditLogs2ActorType {const AaaAuditLogs2ActorType$cloudflareAdmin._();
+
+@override String get value => 'cloudflare_admin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAuditLogs2ActorType$cloudflareAdmin;
+
+@override int get hashCode => 'cloudflare_admin'.hashCode;
+
+ }
+@immutable final class AaaAuditLogs2ActorType$system extends AaaAuditLogs2ActorType {const AaaAuditLogs2ActorType$system._();
+
+@override String get value => 'system';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAuditLogs2ActorType$system;
+
+@override int get hashCode => 'system'.hashCode;
+
+ }
+@immutable final class AaaAuditLogs2ActorType$user extends AaaAuditLogs2ActorType {const AaaAuditLogs2ActorType$user._();
+
+@override String get value => 'user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAuditLogs2ActorType$user;
+
+@override int get hashCode => 'user'.hashCode;
+
+ }
+@immutable final class AaaAuditLogs2ActorType$Unknown extends AaaAuditLogs2ActorType {const AaaAuditLogs2ActorType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AaaAuditLogs2ActorType && other.value == value;
+    other is AaaAuditLogs2ActorType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AaaAuditLogs2ActorType($value)';
 
  }
 /// Provides details about the actor who performed the action.

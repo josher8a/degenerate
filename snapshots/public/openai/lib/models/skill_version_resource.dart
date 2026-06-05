@@ -2,19 +2,18 @@
 // Source: #/components/schemas/SkillVersionResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is `skill.version`.
-@immutable final class SkillVersionResourceObject {const SkillVersionResourceObject._(this.value);
+sealed class SkillVersionResourceObject {const SkillVersionResourceObject();
 
 factory SkillVersionResourceObject.fromJson(String json) { return switch (json) {
   'skill.version' => skillVersion,
-  _ => SkillVersionResourceObject._(json),
+  _ => SkillVersionResourceObject$Unknown(json),
 }; }
 
-static const SkillVersionResourceObject skillVersion = SkillVersionResourceObject._('skill.version');
+static const SkillVersionResourceObject skillVersion = SkillVersionResourceObject$skillVersion._();
 
 static const List<SkillVersionResourceObject> values = [skillVersion];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SkillVersionResourceObject$Unknown; } 
+@override String toString() => 'SkillVersionResourceObject($value)';
+
+ }
+@immutable final class SkillVersionResourceObject$skillVersion extends SkillVersionResourceObject {const SkillVersionResourceObject$skillVersion._();
+
+@override String get value => 'skill.version';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SkillVersionResourceObject$skillVersion;
+
+@override int get hashCode => 'skill.version'.hashCode;
+
+ }
+@immutable final class SkillVersionResourceObject$Unknown extends SkillVersionResourceObject {const SkillVersionResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SkillVersionResourceObject && other.value == value;
+    other is SkillVersionResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SkillVersionResourceObject($value)';
 
  }
 @immutable final class SkillVersionResource {const SkillVersionResource({required this.id, required this.skillId, required this.version, required this.createdAt, required this.name, required this.description, this.object = SkillVersionResourceObject.skillVersion, });

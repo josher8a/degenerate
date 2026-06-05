@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct {const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct {const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct();
 
 factory RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct.fromJson(String json) { return switch (json) {
   'DDOS' => ddos,
@@ -11,27 +11,26 @@ factory RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct.fromJs
   'IP_REPUTATION' => ipReputation,
   'API_SHIELD' => apiShield,
   'DATA_LOSS_PREVENTION' => dataLossPrevention,
-  _ => RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct._(json),
+  _ => RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct ddos = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct._('DDOS');
+static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct ddos = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$ddos._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct waf = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct._('WAF');
+static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct waf = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$waf._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct botManagement = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct._('BOT_MANAGEMENT');
+static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct botManagement = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$botManagement._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct accessRules = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct._('ACCESS_RULES');
+static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct accessRules = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$accessRules._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct ipReputation = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct._('IP_REPUTATION');
+static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct ipReputation = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$ipReputation._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct apiShield = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct._('API_SHIELD');
+static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct apiShield = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$apiShield._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct dataLossPrevention = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct._('DATA_LOSS_PREVENTION');
+static const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct dataLossPrevention = RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$dataLossPrevention._();
 
 static const List<RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct> values = [ddos, waf, botManagement, accessRules, ipReputation, apiShield, dataLossPrevention];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -45,12 +44,80 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$ddos extends RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct {const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$ddos._();
+
+@override String get value => 'DDOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$ddos;
+
+@override int get hashCode => 'DDOS'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$waf extends RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct {const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$waf._();
+
+@override String get value => 'WAF';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$waf;
+
+@override int get hashCode => 'WAF'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$botManagement extends RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct {const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$botManagement._();
+
+@override String get value => 'BOT_MANAGEMENT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$botManagement;
+
+@override int get hashCode => 'BOT_MANAGEMENT'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$accessRules extends RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct {const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$accessRules._();
+
+@override String get value => 'ACCESS_RULES';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$accessRules;
+
+@override int get hashCode => 'ACCESS_RULES'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$ipReputation extends RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct {const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$ipReputation._();
+
+@override String get value => 'IP_REPUTATION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$ipReputation;
+
+@override int get hashCode => 'IP_REPUTATION'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$apiShield extends RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct {const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$apiShield._();
+
+@override String get value => 'API_SHIELD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$apiShield;
+
+@override int get hashCode => 'API_SHIELD'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$dataLossPrevention extends RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct {const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$dataLossPrevention._();
+
+@override String get value => 'DATA_LOSS_PREVENTION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$dataLossPrevention;
+
+@override int get hashCode => 'DATA_LOSS_PREVENTION'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$Unknown extends RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct {const RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct && other.value == value;
+    other is RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupByHttpMethodMitigationProduct($value)';
 
  }

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetBgpRpkiAspaChangesFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetBgpRpkiAspaChangesFormat {const RadarGetBgpRpkiAspaChangesFormat._(this.value);
+sealed class RadarGetBgpRpkiAspaChangesFormat {const RadarGetBgpRpkiAspaChangesFormat();
 
 factory RadarGetBgpRpkiAspaChangesFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetBgpRpkiAspaChangesFormat._(json),
+  _ => RadarGetBgpRpkiAspaChangesFormat$Unknown(json),
 }; }
 
-static const RadarGetBgpRpkiAspaChangesFormat $json = RadarGetBgpRpkiAspaChangesFormat._('JSON');
+static const RadarGetBgpRpkiAspaChangesFormat $json = RadarGetBgpRpkiAspaChangesFormat$$json._();
 
-static const RadarGetBgpRpkiAspaChangesFormat csv = RadarGetBgpRpkiAspaChangesFormat._('CSV');
+static const RadarGetBgpRpkiAspaChangesFormat csv = RadarGetBgpRpkiAspaChangesFormat$csv._();
 
 static const List<RadarGetBgpRpkiAspaChangesFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetBgpRpkiAspaChangesFormat$Unknown; } 
+@override String toString() => 'RadarGetBgpRpkiAspaChangesFormat($value)';
+
+ }
+@immutable final class RadarGetBgpRpkiAspaChangesFormat$$json extends RadarGetBgpRpkiAspaChangesFormat {const RadarGetBgpRpkiAspaChangesFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpRpkiAspaChangesFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetBgpRpkiAspaChangesFormat$csv extends RadarGetBgpRpkiAspaChangesFormat {const RadarGetBgpRpkiAspaChangesFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpRpkiAspaChangesFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetBgpRpkiAspaChangesFormat$Unknown extends RadarGetBgpRpkiAspaChangesFormat {const RadarGetBgpRpkiAspaChangesFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetBgpRpkiAspaChangesFormat && other.value == value;
+    other is RadarGetBgpRpkiAspaChangesFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetBgpRpkiAspaChangesFormat($value)';
 
  }

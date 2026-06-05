@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/R2CorsRule (inline: Allowed)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Methods {const Methods._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Methods {const Methods();
 
 factory Methods.fromJson(String json) { return switch (json) {
   'GET' => $get,
@@ -9,23 +9,22 @@ factory Methods.fromJson(String json) { return switch (json) {
   'POST' => post,
   'DELETE' => delete,
   'HEAD' => head,
-  _ => Methods._(json),
+  _ => Methods$Unknown(json),
 }; }
 
-static const Methods $get = Methods._('GET');
+static const Methods $get = Methods$$get._();
 
-static const Methods put = Methods._('PUT');
+static const Methods put = Methods$put._();
 
-static const Methods post = Methods._('POST');
+static const Methods post = Methods$post._();
 
-static const Methods delete = Methods._('DELETE');
+static const Methods delete = Methods$delete._();
 
-static const Methods head = Methods._('HEAD');
+static const Methods head = Methods$head._();
 
 static const List<Methods> values = [$get, put, post, delete, head];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Methods$Unknown; } 
+@override String toString() => 'Methods($value)';
+
+ }
+@immutable final class Methods$$get extends Methods {const Methods$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Methods$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class Methods$put extends Methods {const Methods$put._();
+
+@override String get value => 'PUT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Methods$put;
+
+@override int get hashCode => 'PUT'.hashCode;
+
+ }
+@immutable final class Methods$post extends Methods {const Methods$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Methods$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class Methods$delete extends Methods {const Methods$delete._();
+
+@override String get value => 'DELETE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Methods$delete;
+
+@override int get hashCode => 'DELETE'.hashCode;
+
+ }
+@immutable final class Methods$head extends Methods {const Methods$head._();
+
+@override String get value => 'HEAD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Methods$head;
+
+@override int get hashCode => 'HEAD'.hashCode;
+
+ }
+@immutable final class Methods$Unknown extends Methods {const Methods$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Methods && other.value == value;
+    other is Methods$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Methods($value)';
 
  }
 /// Object specifying allowed origins, methods and headers for this CORS rule.

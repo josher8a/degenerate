@@ -2,25 +2,24 @@
 // Source: #/components/schemas/ObjectWithEnumInBoth
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enum used in both request and response - should be automatically opened
-@immutable final class EnumUsedInBothRequestAndResponse {const EnumUsedInBothRequestAndResponse._(this.value);
+sealed class EnumUsedInBothRequestAndResponse {const EnumUsedInBothRequestAndResponse();
 
 factory EnumUsedInBothRequestAndResponse.fromJson(String json) { return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'suspended' => suspended,
-  _ => EnumUsedInBothRequestAndResponse._(json),
+  _ => EnumUsedInBothRequestAndResponse$Unknown(json),
 }; }
 
-static const EnumUsedInBothRequestAndResponse active = EnumUsedInBothRequestAndResponse._('active');
+static const EnumUsedInBothRequestAndResponse active = EnumUsedInBothRequestAndResponse$active._();
 
-static const EnumUsedInBothRequestAndResponse inactive = EnumUsedInBothRequestAndResponse._('inactive');
+static const EnumUsedInBothRequestAndResponse inactive = EnumUsedInBothRequestAndResponse$inactive._();
 
-static const EnumUsedInBothRequestAndResponse suspended = EnumUsedInBothRequestAndResponse._('suspended');
+static const EnumUsedInBothRequestAndResponse suspended = EnumUsedInBothRequestAndResponse$suspended._();
 
 static const List<EnumUsedInBothRequestAndResponse> values = [active, inactive, suspended];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EnumUsedInBothRequestAndResponse$Unknown; } 
+@override String toString() => 'EnumUsedInBothRequestAndResponse($value)';
+
+ }
+@immutable final class EnumUsedInBothRequestAndResponse$active extends EnumUsedInBothRequestAndResponse {const EnumUsedInBothRequestAndResponse$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumUsedInBothRequestAndResponse$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class EnumUsedInBothRequestAndResponse$inactive extends EnumUsedInBothRequestAndResponse {const EnumUsedInBothRequestAndResponse$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumUsedInBothRequestAndResponse$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+ }
+@immutable final class EnumUsedInBothRequestAndResponse$suspended extends EnumUsedInBothRequestAndResponse {const EnumUsedInBothRequestAndResponse$suspended._();
+
+@override String get value => 'suspended';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumUsedInBothRequestAndResponse$suspended;
+
+@override int get hashCode => 'suspended'.hashCode;
+
+ }
+@immutable final class EnumUsedInBothRequestAndResponse$Unknown extends EnumUsedInBothRequestAndResponse {const EnumUsedInBothRequestAndResponse$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EnumUsedInBothRequestAndResponse && other.value == value;
+    other is EnumUsedInBothRequestAndResponse$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EnumUsedInBothRequestAndResponse($value)';
 
  }
 @immutable final class ObjectWithEnumInBoth {const ObjectWithEnumInBoth({required this.state, this.description, });

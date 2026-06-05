@@ -2,19 +2,18 @@
 // Source: #/components/schemas/AccessTargetCriteriaSelfHostedApp
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_port.dart';/// The communication protocol your application secures.
-@immutable final class AccessProtocolSelfHostedApp {const AccessProtocolSelfHostedApp._(this.value);
+sealed class AccessProtocolSelfHostedApp {const AccessProtocolSelfHostedApp();
 
 factory AccessProtocolSelfHostedApp.fromJson(String json) { return switch (json) {
   'RDP' => rdp,
-  _ => AccessProtocolSelfHostedApp._(json),
+  _ => AccessProtocolSelfHostedApp$Unknown(json),
 }; }
 
-static const AccessProtocolSelfHostedApp rdp = AccessProtocolSelfHostedApp._('RDP');
+static const AccessProtocolSelfHostedApp rdp = AccessProtocolSelfHostedApp$rdp._();
 
 static const List<AccessProtocolSelfHostedApp> values = [rdp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccessProtocolSelfHostedApp$Unknown; } 
+@override String toString() => 'AccessProtocolSelfHostedApp($value)';
+
+ }
+@immutable final class AccessProtocolSelfHostedApp$rdp extends AccessProtocolSelfHostedApp {const AccessProtocolSelfHostedApp$rdp._();
+
+@override String get value => 'RDP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessProtocolSelfHostedApp$rdp;
+
+@override int get hashCode => 'RDP'.hashCode;
+
+ }
+@immutable final class AccessProtocolSelfHostedApp$Unknown extends AccessProtocolSelfHostedApp {const AccessProtocolSelfHostedApp$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccessProtocolSelfHostedApp && other.value == value;
+    other is AccessProtocolSelfHostedApp$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccessProtocolSelfHostedApp($value)';
 
  }
 @immutable final class AccessTargetCriteriaSelfHostedApp {const AccessTargetCriteriaSelfHostedApp({required this.port, required this.targetAttributes, required this.protocol, });

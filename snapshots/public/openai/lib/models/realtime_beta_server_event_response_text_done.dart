@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventResponseTextDone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.output_text.done`.
-@immutable final class RealtimeBetaServerEventResponseTextDoneType {const RealtimeBetaServerEventResponseTextDoneType._(this.value);
+sealed class RealtimeBetaServerEventResponseTextDoneType {const RealtimeBetaServerEventResponseTextDoneType();
 
 factory RealtimeBetaServerEventResponseTextDoneType.fromJson(String json) { return switch (json) {
   'response.output_text.done' => responseOutputTextDone,
-  _ => RealtimeBetaServerEventResponseTextDoneType._(json),
+  _ => RealtimeBetaServerEventResponseTextDoneType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventResponseTextDoneType responseOutputTextDone = RealtimeBetaServerEventResponseTextDoneType._('response.output_text.done');
+static const RealtimeBetaServerEventResponseTextDoneType responseOutputTextDone = RealtimeBetaServerEventResponseTextDoneType$responseOutputTextDone._();
 
 static const List<RealtimeBetaServerEventResponseTextDoneType> values = [responseOutputTextDone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseTextDoneType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventResponseTextDoneType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventResponseTextDoneType$responseOutputTextDone extends RealtimeBetaServerEventResponseTextDoneType {const RealtimeBetaServerEventResponseTextDoneType$responseOutputTextDone._();
+
+@override String get value => 'response.output_text.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseTextDoneType$responseOutputTextDone;
+
+@override int get hashCode => 'response.output_text.done'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventResponseTextDoneType$Unknown extends RealtimeBetaServerEventResponseTextDoneType {const RealtimeBetaServerEventResponseTextDoneType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventResponseTextDoneType && other.value == value;
+    other is RealtimeBetaServerEventResponseTextDoneType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventResponseTextDoneType($value)';
 
  }
 /// Returned when the text value of an "output_text" content part is done streaming. Also

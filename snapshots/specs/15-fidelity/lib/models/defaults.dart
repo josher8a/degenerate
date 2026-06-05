@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Defaults
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StringEnum {const StringEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class StringEnum {const StringEnum();
 
 factory StringEnum.fromJson(String json) { return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'pending' => pending,
-  _ => StringEnum._(json),
+  _ => StringEnum$Unknown(json),
 }; }
 
-static const StringEnum active = StringEnum._('active');
+static const StringEnum active = StringEnum$active._();
 
-static const StringEnum inactive = StringEnum._('inactive');
+static const StringEnum inactive = StringEnum$inactive._();
 
-static const StringEnum pending = StringEnum._('pending');
+static const StringEnum pending = StringEnum$pending._();
 
 static const List<StringEnum> values = [active, inactive, pending];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StringEnum$Unknown; } 
+@override String toString() => 'StringEnum($value)';
+
+ }
+@immutable final class StringEnum$active extends StringEnum {const StringEnum$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StringEnum$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class StringEnum$inactive extends StringEnum {const StringEnum$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StringEnum$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+ }
+@immutable final class StringEnum$pending extends StringEnum {const StringEnum$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StringEnum$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class StringEnum$Unknown extends StringEnum {const StringEnum$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StringEnum && other.value == value;
+    other is StringEnum$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StringEnum($value)';
 
  }
 @immutable final class Defaults {const Defaults({this.enabled = true, this.count = 10, this.label = 'unnamed', this.status, this.tags = const [], });

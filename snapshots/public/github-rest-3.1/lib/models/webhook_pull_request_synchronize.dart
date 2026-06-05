@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookPullRequestSynchronize
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_synchronize/webhook_pull_request_synchronize_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';@immutable final class WebhookPullRequestSynchronizeAction {const WebhookPullRequestSynchronizeAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_pull_request_synchronize/webhook_pull_request_synchronize_pull_request.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';sealed class WebhookPullRequestSynchronizeAction {const WebhookPullRequestSynchronizeAction();
 
 factory WebhookPullRequestSynchronizeAction.fromJson(String json) { return switch (json) {
   'synchronize' => synchronize,
-  _ => WebhookPullRequestSynchronizeAction._(json),
+  _ => WebhookPullRequestSynchronizeAction$Unknown(json),
 }; }
 
-static const WebhookPullRequestSynchronizeAction synchronize = WebhookPullRequestSynchronizeAction._('synchronize');
+static const WebhookPullRequestSynchronizeAction synchronize = WebhookPullRequestSynchronizeAction$synchronize._();
 
 static const List<WebhookPullRequestSynchronizeAction> values = [synchronize];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookPullRequestSynchronizeAction$Unknown; } 
+@override String toString() => 'WebhookPullRequestSynchronizeAction($value)';
+
+ }
+@immutable final class WebhookPullRequestSynchronizeAction$synchronize extends WebhookPullRequestSynchronizeAction {const WebhookPullRequestSynchronizeAction$synchronize._();
+
+@override String get value => 'synchronize';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestSynchronizeAction$synchronize;
+
+@override int get hashCode => 'synchronize'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestSynchronizeAction$Unknown extends WebhookPullRequestSynchronizeAction {const WebhookPullRequestSynchronizeAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookPullRequestSynchronizeAction && other.value == value;
+    other is WebhookPullRequestSynchronizeAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookPullRequestSynchronizeAction($value)';
 
  }
 @immutable final class WebhookPullRequestSynchronize {const WebhookPullRequestSynchronize({required this.action, required this.after, required this.before, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

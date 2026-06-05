@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MessageStreamEvent (inline: ThreadMessageDelta)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_delta_object.dart';@immutable final class ThreadMessageDeltaEvent {const ThreadMessageDeltaEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_delta_object.dart';sealed class ThreadMessageDeltaEvent {const ThreadMessageDeltaEvent();
 
 factory ThreadMessageDeltaEvent.fromJson(String json) { return switch (json) {
   'thread.message.delta' => threadMessageDelta,
-  _ => ThreadMessageDeltaEvent._(json),
+  _ => ThreadMessageDeltaEvent$Unknown(json),
 }; }
 
-static const ThreadMessageDeltaEvent threadMessageDelta = ThreadMessageDeltaEvent._('thread.message.delta');
+static const ThreadMessageDeltaEvent threadMessageDelta = ThreadMessageDeltaEvent$threadMessageDelta._();
 
 static const List<ThreadMessageDeltaEvent> values = [threadMessageDelta];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadMessageDeltaEvent$Unknown; } 
+@override String toString() => 'ThreadMessageDeltaEvent($value)';
+
+ }
+@immutable final class ThreadMessageDeltaEvent$threadMessageDelta extends ThreadMessageDeltaEvent {const ThreadMessageDeltaEvent$threadMessageDelta._();
+
+@override String get value => 'thread.message.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadMessageDeltaEvent$threadMessageDelta;
+
+@override int get hashCode => 'thread.message.delta'.hashCode;
+
+ }
+@immutable final class ThreadMessageDeltaEvent$Unknown extends ThreadMessageDeltaEvent {const ThreadMessageDeltaEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadMessageDeltaEvent && other.value == value;
+    other is ThreadMessageDeltaEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadMessageDeltaEvent($value)';
 
  }
 /// Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.

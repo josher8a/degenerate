@@ -6,28 +6,27 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The role for the
 ///  * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.
 ///  * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization.
 ///  * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.
-@immutable final class OrgsCreateInvitationRequestRole {const OrgsCreateInvitationRequestRole._(this.value);
+sealed class OrgsCreateInvitationRequestRole {const OrgsCreateInvitationRequestRole();
 
 factory OrgsCreateInvitationRequestRole.fromJson(String json) { return switch (json) {
   'admin' => admin,
   'direct_member' => directMember,
   'billing_manager' => billingManager,
   'reinstate' => reinstate,
-  _ => OrgsCreateInvitationRequestRole._(json),
+  _ => OrgsCreateInvitationRequestRole$Unknown(json),
 }; }
 
-static const OrgsCreateInvitationRequestRole admin = OrgsCreateInvitationRequestRole._('admin');
+static const OrgsCreateInvitationRequestRole admin = OrgsCreateInvitationRequestRole$admin._();
 
-static const OrgsCreateInvitationRequestRole directMember = OrgsCreateInvitationRequestRole._('direct_member');
+static const OrgsCreateInvitationRequestRole directMember = OrgsCreateInvitationRequestRole$directMember._();
 
-static const OrgsCreateInvitationRequestRole billingManager = OrgsCreateInvitationRequestRole._('billing_manager');
+static const OrgsCreateInvitationRequestRole billingManager = OrgsCreateInvitationRequestRole$billingManager._();
 
-static const OrgsCreateInvitationRequestRole reinstate = OrgsCreateInvitationRequestRole._('reinstate');
+static const OrgsCreateInvitationRequestRole reinstate = OrgsCreateInvitationRequestRole$reinstate._();
 
 static const List<OrgsCreateInvitationRequestRole> values = [admin, directMember, billingManager, reinstate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrgsCreateInvitationRequestRole$Unknown; } 
+@override String toString() => 'OrgsCreateInvitationRequestRole($value)';
+
+ }
+@immutable final class OrgsCreateInvitationRequestRole$admin extends OrgsCreateInvitationRequestRole {const OrgsCreateInvitationRequestRole$admin._();
+
+@override String get value => 'admin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsCreateInvitationRequestRole$admin;
+
+@override int get hashCode => 'admin'.hashCode;
+
+ }
+@immutable final class OrgsCreateInvitationRequestRole$directMember extends OrgsCreateInvitationRequestRole {const OrgsCreateInvitationRequestRole$directMember._();
+
+@override String get value => 'direct_member';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsCreateInvitationRequestRole$directMember;
+
+@override int get hashCode => 'direct_member'.hashCode;
+
+ }
+@immutable final class OrgsCreateInvitationRequestRole$billingManager extends OrgsCreateInvitationRequestRole {const OrgsCreateInvitationRequestRole$billingManager._();
+
+@override String get value => 'billing_manager';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsCreateInvitationRequestRole$billingManager;
+
+@override int get hashCode => 'billing_manager'.hashCode;
+
+ }
+@immutable final class OrgsCreateInvitationRequestRole$reinstate extends OrgsCreateInvitationRequestRole {const OrgsCreateInvitationRequestRole$reinstate._();
+
+@override String get value => 'reinstate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsCreateInvitationRequestRole$reinstate;
+
+@override int get hashCode => 'reinstate'.hashCode;
+
+ }
+@immutable final class OrgsCreateInvitationRequestRole$Unknown extends OrgsCreateInvitationRequestRole {const OrgsCreateInvitationRequestRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrgsCreateInvitationRequestRole && other.value == value;
+    other is OrgsCreateInvitationRequestRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrgsCreateInvitationRequestRole($value)';
 
  }
 @immutable final class OrgsCreateInvitationRequest {const OrgsCreateInvitationRequest({this.inviteeId, this.email, this.role = OrgsCreateInvitationRequestRole.directMember, this.teamIds, });

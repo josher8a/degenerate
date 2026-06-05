@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CreateEvalCompletionsRunDataSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source/create_eval_completions_run_data_source_input_messages.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source/create_eval_completions_run_data_source_sampling_params.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source/create_eval_completions_run_data_source_source.dart';import 'package:pub_openai/models/eval_jsonl_file_content_source.dart';import 'package:pub_openai/models/eval_jsonl_file_id_source.dart';import 'package:pub_openai/models/eval_stored_completions_source.dart';import 'package:pub_openai/models/item_reference_input_messages.dart';import 'package:pub_openai/models/template_input_messages.dart';/// The type of run data source. Always `completions`.
-@immutable final class CreateEvalCompletionsRunDataSourceType {const CreateEvalCompletionsRunDataSourceType._(this.value);
+sealed class CreateEvalCompletionsRunDataSourceType {const CreateEvalCompletionsRunDataSourceType();
 
 factory CreateEvalCompletionsRunDataSourceType.fromJson(String json) { return switch (json) {
   'completions' => completions,
-  _ => CreateEvalCompletionsRunDataSourceType._(json),
+  _ => CreateEvalCompletionsRunDataSourceType$Unknown(json),
 }; }
 
-static const CreateEvalCompletionsRunDataSourceType completions = CreateEvalCompletionsRunDataSourceType._('completions');
+static const CreateEvalCompletionsRunDataSourceType completions = CreateEvalCompletionsRunDataSourceType$completions._();
 
 static const List<CreateEvalCompletionsRunDataSourceType> values = [completions];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateEvalCompletionsRunDataSourceType$Unknown; } 
+@override String toString() => 'CreateEvalCompletionsRunDataSourceType($value)';
+
+ }
+@immutable final class CreateEvalCompletionsRunDataSourceType$completions extends CreateEvalCompletionsRunDataSourceType {const CreateEvalCompletionsRunDataSourceType$completions._();
+
+@override String get value => 'completions';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateEvalCompletionsRunDataSourceType$completions;
+
+@override int get hashCode => 'completions'.hashCode;
+
+ }
+@immutable final class CreateEvalCompletionsRunDataSourceType$Unknown extends CreateEvalCompletionsRunDataSourceType {const CreateEvalCompletionsRunDataSourceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateEvalCompletionsRunDataSourceType && other.value == value;
+    other is CreateEvalCompletionsRunDataSourceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateEvalCompletionsRunDataSourceType($value)';
 
  }
 /// A CompletionsRunDataSource object describing a model sampling configuration.

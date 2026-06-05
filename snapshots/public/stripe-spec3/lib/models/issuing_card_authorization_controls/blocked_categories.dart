@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/IssuingCardAuthorizationControls (inline: BlockedCategories)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BlockedCategories {const BlockedCategories._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class BlockedCategories {const BlockedCategories();
 
 factory BlockedCategories.fromJson(String json) { return switch (json) {
   'ac_refrigeration_repair' => acRefrigerationRepair,
@@ -299,603 +299,602 @@ factory BlockedCategories.fromJson(String json) { return switch (json) {
   'womens_accessory_and_specialty_shops' => womensAccessoryAndSpecialtyShops,
   'womens_ready_to_wear_stores' => womensReadyToWearStores,
   'wrecking_and_salvage_yards' => wreckingAndSalvageYards,
-  _ => BlockedCategories._(json),
+  _ => BlockedCategories$Unknown(json),
 }; }
 
-static const BlockedCategories acRefrigerationRepair = BlockedCategories._('ac_refrigeration_repair');
+static const BlockedCategories acRefrigerationRepair = BlockedCategories$acRefrigerationRepair._();
 
-static const BlockedCategories accountingBookkeepingServices = BlockedCategories._('accounting_bookkeeping_services');
+static const BlockedCategories accountingBookkeepingServices = BlockedCategories$accountingBookkeepingServices._();
 
-static const BlockedCategories advertisingServices = BlockedCategories._('advertising_services');
+static const BlockedCategories advertisingServices = BlockedCategories$advertisingServices._();
 
-static const BlockedCategories agriculturalCooperative = BlockedCategories._('agricultural_cooperative');
+static const BlockedCategories agriculturalCooperative = BlockedCategories$agriculturalCooperative._();
 
-static const BlockedCategories airlinesAirCarriers = BlockedCategories._('airlines_air_carriers');
+static const BlockedCategories airlinesAirCarriers = BlockedCategories$airlinesAirCarriers._();
 
-static const BlockedCategories airportsFlyingFields = BlockedCategories._('airports_flying_fields');
+static const BlockedCategories airportsFlyingFields = BlockedCategories$airportsFlyingFields._();
 
-static const BlockedCategories ambulanceServices = BlockedCategories._('ambulance_services');
+static const BlockedCategories ambulanceServices = BlockedCategories$ambulanceServices._();
 
-static const BlockedCategories amusementParksCarnivals = BlockedCategories._('amusement_parks_carnivals');
+static const BlockedCategories amusementParksCarnivals = BlockedCategories$amusementParksCarnivals._();
 
-static const BlockedCategories antiqueReproductions = BlockedCategories._('antique_reproductions');
+static const BlockedCategories antiqueReproductions = BlockedCategories$antiqueReproductions._();
 
-static const BlockedCategories antiqueShops = BlockedCategories._('antique_shops');
+static const BlockedCategories antiqueShops = BlockedCategories$antiqueShops._();
 
-static const BlockedCategories aquariums = BlockedCategories._('aquariums');
+static const BlockedCategories aquariums = BlockedCategories$aquariums._();
 
-static const BlockedCategories architecturalSurveyingServices = BlockedCategories._('architectural_surveying_services');
+static const BlockedCategories architecturalSurveyingServices = BlockedCategories$architecturalSurveyingServices._();
 
-static const BlockedCategories artDealersAndGalleries = BlockedCategories._('art_dealers_and_galleries');
+static const BlockedCategories artDealersAndGalleries = BlockedCategories$artDealersAndGalleries._();
 
-static const BlockedCategories artistsSupplyAndCraftShops = BlockedCategories._('artists_supply_and_craft_shops');
+static const BlockedCategories artistsSupplyAndCraftShops = BlockedCategories$artistsSupplyAndCraftShops._();
 
-static const BlockedCategories autoAndHomeSupplyStores = BlockedCategories._('auto_and_home_supply_stores');
+static const BlockedCategories autoAndHomeSupplyStores = BlockedCategories$autoAndHomeSupplyStores._();
 
-static const BlockedCategories autoBodyRepairShops = BlockedCategories._('auto_body_repair_shops');
+static const BlockedCategories autoBodyRepairShops = BlockedCategories$autoBodyRepairShops._();
 
-static const BlockedCategories autoPaintShops = BlockedCategories._('auto_paint_shops');
+static const BlockedCategories autoPaintShops = BlockedCategories$autoPaintShops._();
 
-static const BlockedCategories autoServiceShops = BlockedCategories._('auto_service_shops');
+static const BlockedCategories autoServiceShops = BlockedCategories$autoServiceShops._();
 
-static const BlockedCategories automatedCashDisburse = BlockedCategories._('automated_cash_disburse');
+static const BlockedCategories automatedCashDisburse = BlockedCategories$automatedCashDisburse._();
 
-static const BlockedCategories automatedFuelDispensers = BlockedCategories._('automated_fuel_dispensers');
+static const BlockedCategories automatedFuelDispensers = BlockedCategories$automatedFuelDispensers._();
 
-static const BlockedCategories automobileAssociations = BlockedCategories._('automobile_associations');
+static const BlockedCategories automobileAssociations = BlockedCategories$automobileAssociations._();
 
-static const BlockedCategories automotivePartsAndAccessoriesStores = BlockedCategories._('automotive_parts_and_accessories_stores');
+static const BlockedCategories automotivePartsAndAccessoriesStores = BlockedCategories$automotivePartsAndAccessoriesStores._();
 
-static const BlockedCategories automotiveTireStores = BlockedCategories._('automotive_tire_stores');
+static const BlockedCategories automotiveTireStores = BlockedCategories$automotiveTireStores._();
 
-static const BlockedCategories bailAndBondPayments = BlockedCategories._('bail_and_bond_payments');
+static const BlockedCategories bailAndBondPayments = BlockedCategories$bailAndBondPayments._();
 
-static const BlockedCategories bakeries = BlockedCategories._('bakeries');
+static const BlockedCategories bakeries = BlockedCategories$bakeries._();
 
-static const BlockedCategories bandsOrchestras = BlockedCategories._('bands_orchestras');
+static const BlockedCategories bandsOrchestras = BlockedCategories$bandsOrchestras._();
 
-static const BlockedCategories barberAndBeautyShops = BlockedCategories._('barber_and_beauty_shops');
+static const BlockedCategories barberAndBeautyShops = BlockedCategories$barberAndBeautyShops._();
 
-static const BlockedCategories bettingCasinoGambling = BlockedCategories._('betting_casino_gambling');
+static const BlockedCategories bettingCasinoGambling = BlockedCategories$bettingCasinoGambling._();
 
-static const BlockedCategories bicycleShops = BlockedCategories._('bicycle_shops');
+static const BlockedCategories bicycleShops = BlockedCategories$bicycleShops._();
 
-static const BlockedCategories billiardPoolEstablishments = BlockedCategories._('billiard_pool_establishments');
+static const BlockedCategories billiardPoolEstablishments = BlockedCategories$billiardPoolEstablishments._();
 
-static const BlockedCategories boatDealers = BlockedCategories._('boat_dealers');
+static const BlockedCategories boatDealers = BlockedCategories$boatDealers._();
 
-static const BlockedCategories boatRentalsAndLeases = BlockedCategories._('boat_rentals_and_leases');
+static const BlockedCategories boatRentalsAndLeases = BlockedCategories$boatRentalsAndLeases._();
 
-static const BlockedCategories bookStores = BlockedCategories._('book_stores');
+static const BlockedCategories bookStores = BlockedCategories$bookStores._();
 
-static const BlockedCategories booksPeriodicalsAndNewspapers = BlockedCategories._('books_periodicals_and_newspapers');
+static const BlockedCategories booksPeriodicalsAndNewspapers = BlockedCategories$booksPeriodicalsAndNewspapers._();
 
-static const BlockedCategories bowlingAlleys = BlockedCategories._('bowling_alleys');
+static const BlockedCategories bowlingAlleys = BlockedCategories$bowlingAlleys._();
 
-static const BlockedCategories busLines = BlockedCategories._('bus_lines');
+static const BlockedCategories busLines = BlockedCategories$busLines._();
 
-static const BlockedCategories businessSecretarialSchools = BlockedCategories._('business_secretarial_schools');
+static const BlockedCategories businessSecretarialSchools = BlockedCategories$businessSecretarialSchools._();
 
-static const BlockedCategories buyingShoppingServices = BlockedCategories._('buying_shopping_services');
+static const BlockedCategories buyingShoppingServices = BlockedCategories$buyingShoppingServices._();
 
-static const BlockedCategories cableSatelliteAndOtherPayTelevisionAndRadio = BlockedCategories._('cable_satellite_and_other_pay_television_and_radio');
+static const BlockedCategories cableSatelliteAndOtherPayTelevisionAndRadio = BlockedCategories$cableSatelliteAndOtherPayTelevisionAndRadio._();
 
-static const BlockedCategories cameraAndPhotographicSupplyStores = BlockedCategories._('camera_and_photographic_supply_stores');
+static const BlockedCategories cameraAndPhotographicSupplyStores = BlockedCategories$cameraAndPhotographicSupplyStores._();
 
-static const BlockedCategories candyNutAndConfectioneryStores = BlockedCategories._('candy_nut_and_confectionery_stores');
+static const BlockedCategories candyNutAndConfectioneryStores = BlockedCategories$candyNutAndConfectioneryStores._();
 
-static const BlockedCategories carAndTruckDealersNewUsed = BlockedCategories._('car_and_truck_dealers_new_used');
+static const BlockedCategories carAndTruckDealersNewUsed = BlockedCategories$carAndTruckDealersNewUsed._();
 
-static const BlockedCategories carAndTruckDealersUsedOnly = BlockedCategories._('car_and_truck_dealers_used_only');
+static const BlockedCategories carAndTruckDealersUsedOnly = BlockedCategories$carAndTruckDealersUsedOnly._();
 
-static const BlockedCategories carRentalAgencies = BlockedCategories._('car_rental_agencies');
+static const BlockedCategories carRentalAgencies = BlockedCategories$carRentalAgencies._();
 
-static const BlockedCategories carWashes = BlockedCategories._('car_washes');
+static const BlockedCategories carWashes = BlockedCategories$carWashes._();
 
-static const BlockedCategories carpentryServices = BlockedCategories._('carpentry_services');
+static const BlockedCategories carpentryServices = BlockedCategories$carpentryServices._();
 
-static const BlockedCategories carpetUpholsteryCleaning = BlockedCategories._('carpet_upholstery_cleaning');
+static const BlockedCategories carpetUpholsteryCleaning = BlockedCategories$carpetUpholsteryCleaning._();
 
-static const BlockedCategories caterers = BlockedCategories._('caterers');
+static const BlockedCategories caterers = BlockedCategories$caterers._();
 
-static const BlockedCategories charitableAndSocialServiceOrganizationsFundraising = BlockedCategories._('charitable_and_social_service_organizations_fundraising');
+static const BlockedCategories charitableAndSocialServiceOrganizationsFundraising = BlockedCategories$charitableAndSocialServiceOrganizationsFundraising._();
 
-static const BlockedCategories chemicalsAndAlliedProducts = BlockedCategories._('chemicals_and_allied_products');
+static const BlockedCategories chemicalsAndAlliedProducts = BlockedCategories$chemicalsAndAlliedProducts._();
 
-static const BlockedCategories childCareServices = BlockedCategories._('child_care_services');
+static const BlockedCategories childCareServices = BlockedCategories$childCareServices._();
 
-static const BlockedCategories childrensAndInfantsWearStores = BlockedCategories._('childrens_and_infants_wear_stores');
+static const BlockedCategories childrensAndInfantsWearStores = BlockedCategories$childrensAndInfantsWearStores._();
 
-static const BlockedCategories chiropodistsPodiatrists = BlockedCategories._('chiropodists_podiatrists');
+static const BlockedCategories chiropodistsPodiatrists = BlockedCategories$chiropodistsPodiatrists._();
 
-static const BlockedCategories chiropractors = BlockedCategories._('chiropractors');
+static const BlockedCategories chiropractors = BlockedCategories$chiropractors._();
 
-static const BlockedCategories cigarStoresAndStands = BlockedCategories._('cigar_stores_and_stands');
+static const BlockedCategories cigarStoresAndStands = BlockedCategories$cigarStoresAndStands._();
 
-static const BlockedCategories civicSocialFraternalAssociations = BlockedCategories._('civic_social_fraternal_associations');
+static const BlockedCategories civicSocialFraternalAssociations = BlockedCategories$civicSocialFraternalAssociations._();
 
-static const BlockedCategories cleaningAndMaintenance = BlockedCategories._('cleaning_and_maintenance');
+static const BlockedCategories cleaningAndMaintenance = BlockedCategories$cleaningAndMaintenance._();
 
-static const BlockedCategories clothingRental = BlockedCategories._('clothing_rental');
+static const BlockedCategories clothingRental = BlockedCategories$clothingRental._();
 
-static const BlockedCategories collegesUniversities = BlockedCategories._('colleges_universities');
+static const BlockedCategories collegesUniversities = BlockedCategories$collegesUniversities._();
 
-static const BlockedCategories commercialEquipment = BlockedCategories._('commercial_equipment');
+static const BlockedCategories commercialEquipment = BlockedCategories$commercialEquipment._();
 
-static const BlockedCategories commercialFootwear = BlockedCategories._('commercial_footwear');
+static const BlockedCategories commercialFootwear = BlockedCategories$commercialFootwear._();
 
-static const BlockedCategories commercialPhotographyArtAndGraphics = BlockedCategories._('commercial_photography_art_and_graphics');
+static const BlockedCategories commercialPhotographyArtAndGraphics = BlockedCategories$commercialPhotographyArtAndGraphics._();
 
-static const BlockedCategories commuterTransportAndFerries = BlockedCategories._('commuter_transport_and_ferries');
+static const BlockedCategories commuterTransportAndFerries = BlockedCategories$commuterTransportAndFerries._();
 
-static const BlockedCategories computerNetworkServices = BlockedCategories._('computer_network_services');
+static const BlockedCategories computerNetworkServices = BlockedCategories$computerNetworkServices._();
 
-static const BlockedCategories computerProgramming = BlockedCategories._('computer_programming');
+static const BlockedCategories computerProgramming = BlockedCategories$computerProgramming._();
 
-static const BlockedCategories computerRepair = BlockedCategories._('computer_repair');
+static const BlockedCategories computerRepair = BlockedCategories$computerRepair._();
 
-static const BlockedCategories computerSoftwareStores = BlockedCategories._('computer_software_stores');
+static const BlockedCategories computerSoftwareStores = BlockedCategories$computerSoftwareStores._();
 
-static const BlockedCategories computersPeripheralsAndSoftware = BlockedCategories._('computers_peripherals_and_software');
+static const BlockedCategories computersPeripheralsAndSoftware = BlockedCategories$computersPeripheralsAndSoftware._();
 
-static const BlockedCategories concreteWorkServices = BlockedCategories._('concrete_work_services');
+static const BlockedCategories concreteWorkServices = BlockedCategories$concreteWorkServices._();
 
-static const BlockedCategories constructionMaterials = BlockedCategories._('construction_materials');
+static const BlockedCategories constructionMaterials = BlockedCategories$constructionMaterials._();
 
-static const BlockedCategories consultingPublicRelations = BlockedCategories._('consulting_public_relations');
+static const BlockedCategories consultingPublicRelations = BlockedCategories$consultingPublicRelations._();
 
-static const BlockedCategories correspondenceSchools = BlockedCategories._('correspondence_schools');
+static const BlockedCategories correspondenceSchools = BlockedCategories$correspondenceSchools._();
 
-static const BlockedCategories cosmeticStores = BlockedCategories._('cosmetic_stores');
+static const BlockedCategories cosmeticStores = BlockedCategories$cosmeticStores._();
 
-static const BlockedCategories counselingServices = BlockedCategories._('counseling_services');
+static const BlockedCategories counselingServices = BlockedCategories$counselingServices._();
 
-static const BlockedCategories countryClubs = BlockedCategories._('country_clubs');
+static const BlockedCategories countryClubs = BlockedCategories$countryClubs._();
 
-static const BlockedCategories courierServices = BlockedCategories._('courier_services');
+static const BlockedCategories courierServices = BlockedCategories$courierServices._();
 
-static const BlockedCategories courtCosts = BlockedCategories._('court_costs');
+static const BlockedCategories courtCosts = BlockedCategories$courtCosts._();
 
-static const BlockedCategories creditReportingAgencies = BlockedCategories._('credit_reporting_agencies');
+static const BlockedCategories creditReportingAgencies = BlockedCategories$creditReportingAgencies._();
 
-static const BlockedCategories cruiseLines = BlockedCategories._('cruise_lines');
+static const BlockedCategories cruiseLines = BlockedCategories$cruiseLines._();
 
-static const BlockedCategories dairyProductsStores = BlockedCategories._('dairy_products_stores');
+static const BlockedCategories dairyProductsStores = BlockedCategories$dairyProductsStores._();
 
-static const BlockedCategories danceHallStudiosSchools = BlockedCategories._('dance_hall_studios_schools');
+static const BlockedCategories danceHallStudiosSchools = BlockedCategories$danceHallStudiosSchools._();
 
-static const BlockedCategories datingEscortServices = BlockedCategories._('dating_escort_services');
+static const BlockedCategories datingEscortServices = BlockedCategories$datingEscortServices._();
 
-static const BlockedCategories dentistsOrthodontists = BlockedCategories._('dentists_orthodontists');
+static const BlockedCategories dentistsOrthodontists = BlockedCategories$dentistsOrthodontists._();
 
-static const BlockedCategories departmentStores = BlockedCategories._('department_stores');
+static const BlockedCategories departmentStores = BlockedCategories$departmentStores._();
 
-static const BlockedCategories detectiveAgencies = BlockedCategories._('detective_agencies');
+static const BlockedCategories detectiveAgencies = BlockedCategories$detectiveAgencies._();
 
-static const BlockedCategories digitalGoodsApplications = BlockedCategories._('digital_goods_applications');
+static const BlockedCategories digitalGoodsApplications = BlockedCategories$digitalGoodsApplications._();
 
-static const BlockedCategories digitalGoodsGames = BlockedCategories._('digital_goods_games');
+static const BlockedCategories digitalGoodsGames = BlockedCategories$digitalGoodsGames._();
 
-static const BlockedCategories digitalGoodsLargeVolume = BlockedCategories._('digital_goods_large_volume');
+static const BlockedCategories digitalGoodsLargeVolume = BlockedCategories$digitalGoodsLargeVolume._();
 
-static const BlockedCategories digitalGoodsMedia = BlockedCategories._('digital_goods_media');
+static const BlockedCategories digitalGoodsMedia = BlockedCategories$digitalGoodsMedia._();
 
-static const BlockedCategories directMarketingCatalogMerchant = BlockedCategories._('direct_marketing_catalog_merchant');
+static const BlockedCategories directMarketingCatalogMerchant = BlockedCategories$directMarketingCatalogMerchant._();
 
-static const BlockedCategories directMarketingCombinationCatalogAndRetailMerchant = BlockedCategories._('direct_marketing_combination_catalog_and_retail_merchant');
+static const BlockedCategories directMarketingCombinationCatalogAndRetailMerchant = BlockedCategories$directMarketingCombinationCatalogAndRetailMerchant._();
 
-static const BlockedCategories directMarketingInboundTelemarketing = BlockedCategories._('direct_marketing_inbound_telemarketing');
+static const BlockedCategories directMarketingInboundTelemarketing = BlockedCategories$directMarketingInboundTelemarketing._();
 
-static const BlockedCategories directMarketingInsuranceServices = BlockedCategories._('direct_marketing_insurance_services');
+static const BlockedCategories directMarketingInsuranceServices = BlockedCategories$directMarketingInsuranceServices._();
 
-static const BlockedCategories directMarketingOther = BlockedCategories._('direct_marketing_other');
+static const BlockedCategories directMarketingOther = BlockedCategories$directMarketingOther._();
 
-static const BlockedCategories directMarketingOutboundTelemarketing = BlockedCategories._('direct_marketing_outbound_telemarketing');
+static const BlockedCategories directMarketingOutboundTelemarketing = BlockedCategories$directMarketingOutboundTelemarketing._();
 
-static const BlockedCategories directMarketingSubscription = BlockedCategories._('direct_marketing_subscription');
+static const BlockedCategories directMarketingSubscription = BlockedCategories$directMarketingSubscription._();
 
-static const BlockedCategories directMarketingTravel = BlockedCategories._('direct_marketing_travel');
+static const BlockedCategories directMarketingTravel = BlockedCategories$directMarketingTravel._();
 
-static const BlockedCategories discountStores = BlockedCategories._('discount_stores');
+static const BlockedCategories discountStores = BlockedCategories$discountStores._();
 
-static const BlockedCategories doctors = BlockedCategories._('doctors');
+static const BlockedCategories doctors = BlockedCategories$doctors._();
 
-static const BlockedCategories doorToDoorSales = BlockedCategories._('door_to_door_sales');
+static const BlockedCategories doorToDoorSales = BlockedCategories$doorToDoorSales._();
 
-static const BlockedCategories draperyWindowCoveringAndUpholsteryStores = BlockedCategories._('drapery_window_covering_and_upholstery_stores');
+static const BlockedCategories draperyWindowCoveringAndUpholsteryStores = BlockedCategories$draperyWindowCoveringAndUpholsteryStores._();
 
-static const BlockedCategories drinkingPlaces = BlockedCategories._('drinking_places');
+static const BlockedCategories drinkingPlaces = BlockedCategories$drinkingPlaces._();
 
-static const BlockedCategories drugStoresAndPharmacies = BlockedCategories._('drug_stores_and_pharmacies');
+static const BlockedCategories drugStoresAndPharmacies = BlockedCategories$drugStoresAndPharmacies._();
 
-static const BlockedCategories drugsDrugProprietariesAndDruggistSundries = BlockedCategories._('drugs_drug_proprietaries_and_druggist_sundries');
+static const BlockedCategories drugsDrugProprietariesAndDruggistSundries = BlockedCategories$drugsDrugProprietariesAndDruggistSundries._();
 
-static const BlockedCategories dryCleaners = BlockedCategories._('dry_cleaners');
+static const BlockedCategories dryCleaners = BlockedCategories$dryCleaners._();
 
-static const BlockedCategories durableGoods = BlockedCategories._('durable_goods');
+static const BlockedCategories durableGoods = BlockedCategories$durableGoods._();
 
-static const BlockedCategories dutyFreeStores = BlockedCategories._('duty_free_stores');
+static const BlockedCategories dutyFreeStores = BlockedCategories$dutyFreeStores._();
 
-static const BlockedCategories eatingPlacesRestaurants = BlockedCategories._('eating_places_restaurants');
+static const BlockedCategories eatingPlacesRestaurants = BlockedCategories$eatingPlacesRestaurants._();
 
-static const BlockedCategories educationalServices = BlockedCategories._('educational_services');
+static const BlockedCategories educationalServices = BlockedCategories$educationalServices._();
 
-static const BlockedCategories electricRazorStores = BlockedCategories._('electric_razor_stores');
+static const BlockedCategories electricRazorStores = BlockedCategories$electricRazorStores._();
 
-static const BlockedCategories electricVehicleCharging = BlockedCategories._('electric_vehicle_charging');
+static const BlockedCategories electricVehicleCharging = BlockedCategories$electricVehicleCharging._();
 
-static const BlockedCategories electricalPartsAndEquipment = BlockedCategories._('electrical_parts_and_equipment');
+static const BlockedCategories electricalPartsAndEquipment = BlockedCategories$electricalPartsAndEquipment._();
 
-static const BlockedCategories electricalServices = BlockedCategories._('electrical_services');
+static const BlockedCategories electricalServices = BlockedCategories$electricalServices._();
 
-static const BlockedCategories electronicsRepairShops = BlockedCategories._('electronics_repair_shops');
+static const BlockedCategories electronicsRepairShops = BlockedCategories$electronicsRepairShops._();
 
-static const BlockedCategories electronicsStores = BlockedCategories._('electronics_stores');
+static const BlockedCategories electronicsStores = BlockedCategories$electronicsStores._();
 
-static const BlockedCategories elementarySecondarySchools = BlockedCategories._('elementary_secondary_schools');
+static const BlockedCategories elementarySecondarySchools = BlockedCategories$elementarySecondarySchools._();
 
-static const BlockedCategories emergencyServicesGcasVisaUseOnly = BlockedCategories._('emergency_services_gcas_visa_use_only');
+static const BlockedCategories emergencyServicesGcasVisaUseOnly = BlockedCategories$emergencyServicesGcasVisaUseOnly._();
 
-static const BlockedCategories employmentTempAgencies = BlockedCategories._('employment_temp_agencies');
+static const BlockedCategories employmentTempAgencies = BlockedCategories$employmentTempAgencies._();
 
-static const BlockedCategories equipmentRental = BlockedCategories._('equipment_rental');
+static const BlockedCategories equipmentRental = BlockedCategories$equipmentRental._();
 
-static const BlockedCategories exterminatingServices = BlockedCategories._('exterminating_services');
+static const BlockedCategories exterminatingServices = BlockedCategories$exterminatingServices._();
 
-static const BlockedCategories familyClothingStores = BlockedCategories._('family_clothing_stores');
+static const BlockedCategories familyClothingStores = BlockedCategories$familyClothingStores._();
 
-static const BlockedCategories fastFoodRestaurants = BlockedCategories._('fast_food_restaurants');
+static const BlockedCategories fastFoodRestaurants = BlockedCategories$fastFoodRestaurants._();
 
-static const BlockedCategories financialInstitutions = BlockedCategories._('financial_institutions');
+static const BlockedCategories financialInstitutions = BlockedCategories$financialInstitutions._();
 
-static const BlockedCategories finesGovernmentAdministrativeEntities = BlockedCategories._('fines_government_administrative_entities');
+static const BlockedCategories finesGovernmentAdministrativeEntities = BlockedCategories$finesGovernmentAdministrativeEntities._();
 
-static const BlockedCategories fireplaceFireplaceScreensAndAccessoriesStores = BlockedCategories._('fireplace_fireplace_screens_and_accessories_stores');
+static const BlockedCategories fireplaceFireplaceScreensAndAccessoriesStores = BlockedCategories$fireplaceFireplaceScreensAndAccessoriesStores._();
 
-static const BlockedCategories floorCoveringStores = BlockedCategories._('floor_covering_stores');
+static const BlockedCategories floorCoveringStores = BlockedCategories$floorCoveringStores._();
 
-static const BlockedCategories florists = BlockedCategories._('florists');
+static const BlockedCategories florists = BlockedCategories$florists._();
 
-static const BlockedCategories floristsSuppliesNurseryStockAndFlowers = BlockedCategories._('florists_supplies_nursery_stock_and_flowers');
+static const BlockedCategories floristsSuppliesNurseryStockAndFlowers = BlockedCategories$floristsSuppliesNurseryStockAndFlowers._();
 
-static const BlockedCategories freezerAndLockerMeatProvisioners = BlockedCategories._('freezer_and_locker_meat_provisioners');
+static const BlockedCategories freezerAndLockerMeatProvisioners = BlockedCategories$freezerAndLockerMeatProvisioners._();
 
-static const BlockedCategories fuelDealersNonAutomotive = BlockedCategories._('fuel_dealers_non_automotive');
+static const BlockedCategories fuelDealersNonAutomotive = BlockedCategories$fuelDealersNonAutomotive._();
 
-static const BlockedCategories funeralServicesCrematories = BlockedCategories._('funeral_services_crematories');
+static const BlockedCategories funeralServicesCrematories = BlockedCategories$funeralServicesCrematories._();
 
-static const BlockedCategories furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances = BlockedCategories._('furniture_home_furnishings_and_equipment_stores_except_appliances');
+static const BlockedCategories furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances = BlockedCategories$furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances._();
 
-static const BlockedCategories furnitureRepairRefinishing = BlockedCategories._('furniture_repair_refinishing');
+static const BlockedCategories furnitureRepairRefinishing = BlockedCategories$furnitureRepairRefinishing._();
 
-static const BlockedCategories furriersAndFurShops = BlockedCategories._('furriers_and_fur_shops');
+static const BlockedCategories furriersAndFurShops = BlockedCategories$furriersAndFurShops._();
 
-static const BlockedCategories generalServices = BlockedCategories._('general_services');
+static const BlockedCategories generalServices = BlockedCategories$generalServices._();
 
-static const BlockedCategories giftCardNoveltyAndSouvenirShops = BlockedCategories._('gift_card_novelty_and_souvenir_shops');
+static const BlockedCategories giftCardNoveltyAndSouvenirShops = BlockedCategories$giftCardNoveltyAndSouvenirShops._();
 
-static const BlockedCategories glassPaintAndWallpaperStores = BlockedCategories._('glass_paint_and_wallpaper_stores');
+static const BlockedCategories glassPaintAndWallpaperStores = BlockedCategories$glassPaintAndWallpaperStores._();
 
-static const BlockedCategories glasswareCrystalStores = BlockedCategories._('glassware_crystal_stores');
+static const BlockedCategories glasswareCrystalStores = BlockedCategories$glasswareCrystalStores._();
 
-static const BlockedCategories golfCoursesPublic = BlockedCategories._('golf_courses_public');
+static const BlockedCategories golfCoursesPublic = BlockedCategories$golfCoursesPublic._();
 
-static const BlockedCategories governmentLicensedHorseDogRacingUsRegionOnly = BlockedCategories._('government_licensed_horse_dog_racing_us_region_only');
+static const BlockedCategories governmentLicensedHorseDogRacingUsRegionOnly = BlockedCategories$governmentLicensedHorseDogRacingUsRegionOnly._();
 
-static const BlockedCategories governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly = BlockedCategories._('government_licensed_online_casions_online_gambling_us_region_only');
+static const BlockedCategories governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly = BlockedCategories$governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly._();
 
-static const BlockedCategories governmentOwnedLotteriesNonUsRegion = BlockedCategories._('government_owned_lotteries_non_us_region');
+static const BlockedCategories governmentOwnedLotteriesNonUsRegion = BlockedCategories$governmentOwnedLotteriesNonUsRegion._();
 
-static const BlockedCategories governmentOwnedLotteriesUsRegionOnly = BlockedCategories._('government_owned_lotteries_us_region_only');
+static const BlockedCategories governmentOwnedLotteriesUsRegionOnly = BlockedCategories$governmentOwnedLotteriesUsRegionOnly._();
 
-static const BlockedCategories governmentServices = BlockedCategories._('government_services');
+static const BlockedCategories governmentServices = BlockedCategories$governmentServices._();
 
-static const BlockedCategories groceryStoresSupermarkets = BlockedCategories._('grocery_stores_supermarkets');
+static const BlockedCategories groceryStoresSupermarkets = BlockedCategories$groceryStoresSupermarkets._();
 
-static const BlockedCategories hardwareEquipmentAndSupplies = BlockedCategories._('hardware_equipment_and_supplies');
+static const BlockedCategories hardwareEquipmentAndSupplies = BlockedCategories$hardwareEquipmentAndSupplies._();
 
-static const BlockedCategories hardwareStores = BlockedCategories._('hardware_stores');
+static const BlockedCategories hardwareStores = BlockedCategories$hardwareStores._();
 
-static const BlockedCategories healthAndBeautySpas = BlockedCategories._('health_and_beauty_spas');
+static const BlockedCategories healthAndBeautySpas = BlockedCategories$healthAndBeautySpas._();
 
-static const BlockedCategories hearingAidsSalesAndSupplies = BlockedCategories._('hearing_aids_sales_and_supplies');
+static const BlockedCategories hearingAidsSalesAndSupplies = BlockedCategories$hearingAidsSalesAndSupplies._();
 
-static const BlockedCategories heatingPlumbingAC = BlockedCategories._('heating_plumbing_a_c');
+static const BlockedCategories heatingPlumbingAC = BlockedCategories$heatingPlumbingAC._();
 
-static const BlockedCategories hobbyToyAndGameShops = BlockedCategories._('hobby_toy_and_game_shops');
+static const BlockedCategories hobbyToyAndGameShops = BlockedCategories$hobbyToyAndGameShops._();
 
-static const BlockedCategories homeSupplyWarehouseStores = BlockedCategories._('home_supply_warehouse_stores');
+static const BlockedCategories homeSupplyWarehouseStores = BlockedCategories$homeSupplyWarehouseStores._();
 
-static const BlockedCategories hospitals = BlockedCategories._('hospitals');
+static const BlockedCategories hospitals = BlockedCategories$hospitals._();
 
-static const BlockedCategories hotelsMotelsAndResorts = BlockedCategories._('hotels_motels_and_resorts');
+static const BlockedCategories hotelsMotelsAndResorts = BlockedCategories$hotelsMotelsAndResorts._();
 
-static const BlockedCategories householdApplianceStores = BlockedCategories._('household_appliance_stores');
+static const BlockedCategories householdApplianceStores = BlockedCategories$householdApplianceStores._();
 
-static const BlockedCategories industrialSupplies = BlockedCategories._('industrial_supplies');
+static const BlockedCategories industrialSupplies = BlockedCategories$industrialSupplies._();
 
-static const BlockedCategories informationRetrievalServices = BlockedCategories._('information_retrieval_services');
+static const BlockedCategories informationRetrievalServices = BlockedCategories$informationRetrievalServices._();
 
-static const BlockedCategories insuranceDefault = BlockedCategories._('insurance_default');
+static const BlockedCategories insuranceDefault = BlockedCategories$insuranceDefault._();
 
-static const BlockedCategories insuranceUnderwritingPremiums = BlockedCategories._('insurance_underwriting_premiums');
+static const BlockedCategories insuranceUnderwritingPremiums = BlockedCategories$insuranceUnderwritingPremiums._();
 
-static const BlockedCategories intraCompanyPurchases = BlockedCategories._('intra_company_purchases');
+static const BlockedCategories intraCompanyPurchases = BlockedCategories$intraCompanyPurchases._();
 
-static const BlockedCategories jewelryStoresWatchesClocksAndSilverwareStores = BlockedCategories._('jewelry_stores_watches_clocks_and_silverware_stores');
+static const BlockedCategories jewelryStoresWatchesClocksAndSilverwareStores = BlockedCategories$jewelryStoresWatchesClocksAndSilverwareStores._();
 
-static const BlockedCategories landscapingServices = BlockedCategories._('landscaping_services');
+static const BlockedCategories landscapingServices = BlockedCategories$landscapingServices._();
 
-static const BlockedCategories laundries = BlockedCategories._('laundries');
+static const BlockedCategories laundries = BlockedCategories$laundries._();
 
-static const BlockedCategories laundryCleaningServices = BlockedCategories._('laundry_cleaning_services');
+static const BlockedCategories laundryCleaningServices = BlockedCategories$laundryCleaningServices._();
 
-static const BlockedCategories legalServicesAttorneys = BlockedCategories._('legal_services_attorneys');
+static const BlockedCategories legalServicesAttorneys = BlockedCategories$legalServicesAttorneys._();
 
-static const BlockedCategories luggageAndLeatherGoodsStores = BlockedCategories._('luggage_and_leather_goods_stores');
+static const BlockedCategories luggageAndLeatherGoodsStores = BlockedCategories$luggageAndLeatherGoodsStores._();
 
-static const BlockedCategories lumberBuildingMaterialsStores = BlockedCategories._('lumber_building_materials_stores');
+static const BlockedCategories lumberBuildingMaterialsStores = BlockedCategories$lumberBuildingMaterialsStores._();
 
-static const BlockedCategories manualCashDisburse = BlockedCategories._('manual_cash_disburse');
+static const BlockedCategories manualCashDisburse = BlockedCategories$manualCashDisburse._();
 
-static const BlockedCategories marinasServiceAndSupplies = BlockedCategories._('marinas_service_and_supplies');
+static const BlockedCategories marinasServiceAndSupplies = BlockedCategories$marinasServiceAndSupplies._();
 
-static const BlockedCategories marketplaces = BlockedCategories._('marketplaces');
+static const BlockedCategories marketplaces = BlockedCategories$marketplaces._();
 
-static const BlockedCategories masonryStoneworkAndPlaster = BlockedCategories._('masonry_stonework_and_plaster');
+static const BlockedCategories masonryStoneworkAndPlaster = BlockedCategories$masonryStoneworkAndPlaster._();
 
-static const BlockedCategories massageParlors = BlockedCategories._('massage_parlors');
+static const BlockedCategories massageParlors = BlockedCategories$massageParlors._();
 
-static const BlockedCategories medicalAndDentalLabs = BlockedCategories._('medical_and_dental_labs');
+static const BlockedCategories medicalAndDentalLabs = BlockedCategories$medicalAndDentalLabs._();
 
-static const BlockedCategories medicalDentalOphthalmicAndHospitalEquipmentAndSupplies = BlockedCategories._('medical_dental_ophthalmic_and_hospital_equipment_and_supplies');
+static const BlockedCategories medicalDentalOphthalmicAndHospitalEquipmentAndSupplies = BlockedCategories$medicalDentalOphthalmicAndHospitalEquipmentAndSupplies._();
 
-static const BlockedCategories medicalServices = BlockedCategories._('medical_services');
+static const BlockedCategories medicalServices = BlockedCategories$medicalServices._();
 
-static const BlockedCategories membershipOrganizations = BlockedCategories._('membership_organizations');
+static const BlockedCategories membershipOrganizations = BlockedCategories$membershipOrganizations._();
 
-static const BlockedCategories mensAndBoysClothingAndAccessoriesStores = BlockedCategories._('mens_and_boys_clothing_and_accessories_stores');
+static const BlockedCategories mensAndBoysClothingAndAccessoriesStores = BlockedCategories$mensAndBoysClothingAndAccessoriesStores._();
 
-static const BlockedCategories mensWomensClothingStores = BlockedCategories._('mens_womens_clothing_stores');
+static const BlockedCategories mensWomensClothingStores = BlockedCategories$mensWomensClothingStores._();
 
-static const BlockedCategories metalServiceCenters = BlockedCategories._('metal_service_centers');
+static const BlockedCategories metalServiceCenters = BlockedCategories$metalServiceCenters._();
 
-static const BlockedCategories miscellaneous = BlockedCategories._('miscellaneous');
+static const BlockedCategories miscellaneous = BlockedCategories$miscellaneous._();
 
-static const BlockedCategories miscellaneousApparelAndAccessoryShops = BlockedCategories._('miscellaneous_apparel_and_accessory_shops');
+static const BlockedCategories miscellaneousApparelAndAccessoryShops = BlockedCategories$miscellaneousApparelAndAccessoryShops._();
 
-static const BlockedCategories miscellaneousAutoDealers = BlockedCategories._('miscellaneous_auto_dealers');
+static const BlockedCategories miscellaneousAutoDealers = BlockedCategories$miscellaneousAutoDealers._();
 
-static const BlockedCategories miscellaneousBusinessServices = BlockedCategories._('miscellaneous_business_services');
+static const BlockedCategories miscellaneousBusinessServices = BlockedCategories$miscellaneousBusinessServices._();
 
-static const BlockedCategories miscellaneousFoodStores = BlockedCategories._('miscellaneous_food_stores');
+static const BlockedCategories miscellaneousFoodStores = BlockedCategories$miscellaneousFoodStores._();
 
-static const BlockedCategories miscellaneousGeneralMerchandise = BlockedCategories._('miscellaneous_general_merchandise');
+static const BlockedCategories miscellaneousGeneralMerchandise = BlockedCategories$miscellaneousGeneralMerchandise._();
 
-static const BlockedCategories miscellaneousGeneralServices = BlockedCategories._('miscellaneous_general_services');
+static const BlockedCategories miscellaneousGeneralServices = BlockedCategories$miscellaneousGeneralServices._();
 
-static const BlockedCategories miscellaneousHomeFurnishingSpecialtyStores = BlockedCategories._('miscellaneous_home_furnishing_specialty_stores');
+static const BlockedCategories miscellaneousHomeFurnishingSpecialtyStores = BlockedCategories$miscellaneousHomeFurnishingSpecialtyStores._();
 
-static const BlockedCategories miscellaneousPublishingAndPrinting = BlockedCategories._('miscellaneous_publishing_and_printing');
+static const BlockedCategories miscellaneousPublishingAndPrinting = BlockedCategories$miscellaneousPublishingAndPrinting._();
 
-static const BlockedCategories miscellaneousRecreationServices = BlockedCategories._('miscellaneous_recreation_services');
+static const BlockedCategories miscellaneousRecreationServices = BlockedCategories$miscellaneousRecreationServices._();
 
-static const BlockedCategories miscellaneousRepairShops = BlockedCategories._('miscellaneous_repair_shops');
+static const BlockedCategories miscellaneousRepairShops = BlockedCategories$miscellaneousRepairShops._();
 
-static const BlockedCategories miscellaneousSpecialtyRetail = BlockedCategories._('miscellaneous_specialty_retail');
+static const BlockedCategories miscellaneousSpecialtyRetail = BlockedCategories$miscellaneousSpecialtyRetail._();
 
-static const BlockedCategories mobileHomeDealers = BlockedCategories._('mobile_home_dealers');
+static const BlockedCategories mobileHomeDealers = BlockedCategories$mobileHomeDealers._();
 
-static const BlockedCategories motionPictureTheaters = BlockedCategories._('motion_picture_theaters');
+static const BlockedCategories motionPictureTheaters = BlockedCategories$motionPictureTheaters._();
 
-static const BlockedCategories motorFreightCarriersAndTrucking = BlockedCategories._('motor_freight_carriers_and_trucking');
+static const BlockedCategories motorFreightCarriersAndTrucking = BlockedCategories$motorFreightCarriersAndTrucking._();
 
-static const BlockedCategories motorHomesDealers = BlockedCategories._('motor_homes_dealers');
+static const BlockedCategories motorHomesDealers = BlockedCategories$motorHomesDealers._();
 
-static const BlockedCategories motorVehicleSuppliesAndNewParts = BlockedCategories._('motor_vehicle_supplies_and_new_parts');
+static const BlockedCategories motorVehicleSuppliesAndNewParts = BlockedCategories$motorVehicleSuppliesAndNewParts._();
 
-static const BlockedCategories motorcycleShopsAndDealers = BlockedCategories._('motorcycle_shops_and_dealers');
+static const BlockedCategories motorcycleShopsAndDealers = BlockedCategories$motorcycleShopsAndDealers._();
 
-static const BlockedCategories motorcycleShopsDealers = BlockedCategories._('motorcycle_shops_dealers');
+static const BlockedCategories motorcycleShopsDealers = BlockedCategories$motorcycleShopsDealers._();
 
-static const BlockedCategories musicStoresMusicalInstrumentsPianosAndSheetMusic = BlockedCategories._('music_stores_musical_instruments_pianos_and_sheet_music');
+static const BlockedCategories musicStoresMusicalInstrumentsPianosAndSheetMusic = BlockedCategories$musicStoresMusicalInstrumentsPianosAndSheetMusic._();
 
-static const BlockedCategories newsDealersAndNewsstands = BlockedCategories._('news_dealers_and_newsstands');
+static const BlockedCategories newsDealersAndNewsstands = BlockedCategories$newsDealersAndNewsstands._();
 
-static const BlockedCategories nonFiMoneyOrders = BlockedCategories._('non_fi_money_orders');
+static const BlockedCategories nonFiMoneyOrders = BlockedCategories$nonFiMoneyOrders._();
 
-static const BlockedCategories nonFiStoredValueCardPurchaseLoad = BlockedCategories._('non_fi_stored_value_card_purchase_load');
+static const BlockedCategories nonFiStoredValueCardPurchaseLoad = BlockedCategories$nonFiStoredValueCardPurchaseLoad._();
 
-static const BlockedCategories nondurableGoods = BlockedCategories._('nondurable_goods');
+static const BlockedCategories nondurableGoods = BlockedCategories$nondurableGoods._();
 
-static const BlockedCategories nurseriesLawnAndGardenSupplyStores = BlockedCategories._('nurseries_lawn_and_garden_supply_stores');
+static const BlockedCategories nurseriesLawnAndGardenSupplyStores = BlockedCategories$nurseriesLawnAndGardenSupplyStores._();
 
-static const BlockedCategories nursingPersonalCare = BlockedCategories._('nursing_personal_care');
+static const BlockedCategories nursingPersonalCare = BlockedCategories$nursingPersonalCare._();
 
-static const BlockedCategories officeAndCommercialFurniture = BlockedCategories._('office_and_commercial_furniture');
+static const BlockedCategories officeAndCommercialFurniture = BlockedCategories$officeAndCommercialFurniture._();
 
-static const BlockedCategories opticiansEyeglasses = BlockedCategories._('opticians_eyeglasses');
+static const BlockedCategories opticiansEyeglasses = BlockedCategories$opticiansEyeglasses._();
 
-static const BlockedCategories optometristsOphthalmologist = BlockedCategories._('optometrists_ophthalmologist');
+static const BlockedCategories optometristsOphthalmologist = BlockedCategories$optometristsOphthalmologist._();
 
-static const BlockedCategories orthopedicGoodsProstheticDevices = BlockedCategories._('orthopedic_goods_prosthetic_devices');
+static const BlockedCategories orthopedicGoodsProstheticDevices = BlockedCategories$orthopedicGoodsProstheticDevices._();
 
-static const BlockedCategories osteopaths = BlockedCategories._('osteopaths');
+static const BlockedCategories osteopaths = BlockedCategories$osteopaths._();
 
-static const BlockedCategories packageStoresBeerWineAndLiquor = BlockedCategories._('package_stores_beer_wine_and_liquor');
+static const BlockedCategories packageStoresBeerWineAndLiquor = BlockedCategories$packageStoresBeerWineAndLiquor._();
 
-static const BlockedCategories paintsVarnishesAndSupplies = BlockedCategories._('paints_varnishes_and_supplies');
+static const BlockedCategories paintsVarnishesAndSupplies = BlockedCategories$paintsVarnishesAndSupplies._();
 
-static const BlockedCategories parkingLotsGarages = BlockedCategories._('parking_lots_garages');
+static const BlockedCategories parkingLotsGarages = BlockedCategories$parkingLotsGarages._();
 
-static const BlockedCategories passengerRailways = BlockedCategories._('passenger_railways');
+static const BlockedCategories passengerRailways = BlockedCategories$passengerRailways._();
 
-static const BlockedCategories pawnShops = BlockedCategories._('pawn_shops');
+static const BlockedCategories pawnShops = BlockedCategories$pawnShops._();
 
-static const BlockedCategories petShopsPetFoodAndSupplies = BlockedCategories._('pet_shops_pet_food_and_supplies');
+static const BlockedCategories petShopsPetFoodAndSupplies = BlockedCategories$petShopsPetFoodAndSupplies._();
 
-static const BlockedCategories petroleumAndPetroleumProducts = BlockedCategories._('petroleum_and_petroleum_products');
+static const BlockedCategories petroleumAndPetroleumProducts = BlockedCategories$petroleumAndPetroleumProducts._();
 
-static const BlockedCategories photoDeveloping = BlockedCategories._('photo_developing');
+static const BlockedCategories photoDeveloping = BlockedCategories$photoDeveloping._();
 
-static const BlockedCategories photographicPhotocopyMicrofilmEquipmentAndSupplies = BlockedCategories._('photographic_photocopy_microfilm_equipment_and_supplies');
+static const BlockedCategories photographicPhotocopyMicrofilmEquipmentAndSupplies = BlockedCategories$photographicPhotocopyMicrofilmEquipmentAndSupplies._();
 
-static const BlockedCategories photographicStudios = BlockedCategories._('photographic_studios');
+static const BlockedCategories photographicStudios = BlockedCategories$photographicStudios._();
 
-static const BlockedCategories pictureVideoProduction = BlockedCategories._('picture_video_production');
+static const BlockedCategories pictureVideoProduction = BlockedCategories$pictureVideoProduction._();
 
-static const BlockedCategories pieceGoodsNotionsAndOtherDryGoods = BlockedCategories._('piece_goods_notions_and_other_dry_goods');
+static const BlockedCategories pieceGoodsNotionsAndOtherDryGoods = BlockedCategories$pieceGoodsNotionsAndOtherDryGoods._();
 
-static const BlockedCategories plumbingHeatingEquipmentAndSupplies = BlockedCategories._('plumbing_heating_equipment_and_supplies');
+static const BlockedCategories plumbingHeatingEquipmentAndSupplies = BlockedCategories$plumbingHeatingEquipmentAndSupplies._();
 
-static const BlockedCategories politicalOrganizations = BlockedCategories._('political_organizations');
+static const BlockedCategories politicalOrganizations = BlockedCategories$politicalOrganizations._();
 
-static const BlockedCategories postalServicesGovernmentOnly = BlockedCategories._('postal_services_government_only');
+static const BlockedCategories postalServicesGovernmentOnly = BlockedCategories$postalServicesGovernmentOnly._();
 
-static const BlockedCategories preciousStonesAndMetalsWatchesAndJewelry = BlockedCategories._('precious_stones_and_metals_watches_and_jewelry');
+static const BlockedCategories preciousStonesAndMetalsWatchesAndJewelry = BlockedCategories$preciousStonesAndMetalsWatchesAndJewelry._();
 
-static const BlockedCategories professionalServices = BlockedCategories._('professional_services');
+static const BlockedCategories professionalServices = BlockedCategories$professionalServices._();
 
-static const BlockedCategories publicWarehousingAndStorage = BlockedCategories._('public_warehousing_and_storage');
+static const BlockedCategories publicWarehousingAndStorage = BlockedCategories$publicWarehousingAndStorage._();
 
-static const BlockedCategories quickCopyReproAndBlueprint = BlockedCategories._('quick_copy_repro_and_blueprint');
+static const BlockedCategories quickCopyReproAndBlueprint = BlockedCategories$quickCopyReproAndBlueprint._();
 
-static const BlockedCategories railroads = BlockedCategories._('railroads');
+static const BlockedCategories railroads = BlockedCategories$railroads._();
 
-static const BlockedCategories realEstateAgentsAndManagersRentals = BlockedCategories._('real_estate_agents_and_managers_rentals');
+static const BlockedCategories realEstateAgentsAndManagersRentals = BlockedCategories$realEstateAgentsAndManagersRentals._();
 
-static const BlockedCategories recordStores = BlockedCategories._('record_stores');
+static const BlockedCategories recordStores = BlockedCategories$recordStores._();
 
-static const BlockedCategories recreationalVehicleRentals = BlockedCategories._('recreational_vehicle_rentals');
+static const BlockedCategories recreationalVehicleRentals = BlockedCategories$recreationalVehicleRentals._();
 
-static const BlockedCategories religiousGoodsStores = BlockedCategories._('religious_goods_stores');
+static const BlockedCategories religiousGoodsStores = BlockedCategories$religiousGoodsStores._();
 
-static const BlockedCategories religiousOrganizations = BlockedCategories._('religious_organizations');
+static const BlockedCategories religiousOrganizations = BlockedCategories$religiousOrganizations._();
 
-static const BlockedCategories roofingSidingSheetMetal = BlockedCategories._('roofing_siding_sheet_metal');
+static const BlockedCategories roofingSidingSheetMetal = BlockedCategories$roofingSidingSheetMetal._();
 
-static const BlockedCategories secretarialSupportServices = BlockedCategories._('secretarial_support_services');
+static const BlockedCategories secretarialSupportServices = BlockedCategories$secretarialSupportServices._();
 
-static const BlockedCategories securityBrokersDealers = BlockedCategories._('security_brokers_dealers');
+static const BlockedCategories securityBrokersDealers = BlockedCategories$securityBrokersDealers._();
 
-static const BlockedCategories serviceStations = BlockedCategories._('service_stations');
+static const BlockedCategories serviceStations = BlockedCategories$serviceStations._();
 
-static const BlockedCategories sewingNeedleworkFabricAndPieceGoodsStores = BlockedCategories._('sewing_needlework_fabric_and_piece_goods_stores');
+static const BlockedCategories sewingNeedleworkFabricAndPieceGoodsStores = BlockedCategories$sewingNeedleworkFabricAndPieceGoodsStores._();
 
-static const BlockedCategories shoeRepairHatCleaning = BlockedCategories._('shoe_repair_hat_cleaning');
+static const BlockedCategories shoeRepairHatCleaning = BlockedCategories$shoeRepairHatCleaning._();
 
-static const BlockedCategories shoeStores = BlockedCategories._('shoe_stores');
+static const BlockedCategories shoeStores = BlockedCategories$shoeStores._();
 
-static const BlockedCategories smallApplianceRepair = BlockedCategories._('small_appliance_repair');
+static const BlockedCategories smallApplianceRepair = BlockedCategories$smallApplianceRepair._();
 
-static const BlockedCategories snowmobileDealers = BlockedCategories._('snowmobile_dealers');
+static const BlockedCategories snowmobileDealers = BlockedCategories$snowmobileDealers._();
 
-static const BlockedCategories specialTradeServices = BlockedCategories._('special_trade_services');
+static const BlockedCategories specialTradeServices = BlockedCategories$specialTradeServices._();
 
-static const BlockedCategories specialtyCleaning = BlockedCategories._('specialty_cleaning');
+static const BlockedCategories specialtyCleaning = BlockedCategories$specialtyCleaning._();
 
-static const BlockedCategories sportingGoodsStores = BlockedCategories._('sporting_goods_stores');
+static const BlockedCategories sportingGoodsStores = BlockedCategories$sportingGoodsStores._();
 
-static const BlockedCategories sportingRecreationCamps = BlockedCategories._('sporting_recreation_camps');
+static const BlockedCategories sportingRecreationCamps = BlockedCategories$sportingRecreationCamps._();
 
-static const BlockedCategories sportsAndRidingApparelStores = BlockedCategories._('sports_and_riding_apparel_stores');
+static const BlockedCategories sportsAndRidingApparelStores = BlockedCategories$sportsAndRidingApparelStores._();
 
-static const BlockedCategories sportsClubsFields = BlockedCategories._('sports_clubs_fields');
+static const BlockedCategories sportsClubsFields = BlockedCategories$sportsClubsFields._();
 
-static const BlockedCategories stampAndCoinStores = BlockedCategories._('stamp_and_coin_stores');
+static const BlockedCategories stampAndCoinStores = BlockedCategories$stampAndCoinStores._();
 
-static const BlockedCategories stationaryOfficeSuppliesPrintingAndWritingPaper = BlockedCategories._('stationary_office_supplies_printing_and_writing_paper');
+static const BlockedCategories stationaryOfficeSuppliesPrintingAndWritingPaper = BlockedCategories$stationaryOfficeSuppliesPrintingAndWritingPaper._();
 
-static const BlockedCategories stationeryStoresOfficeAndSchoolSupplyStores = BlockedCategories._('stationery_stores_office_and_school_supply_stores');
+static const BlockedCategories stationeryStoresOfficeAndSchoolSupplyStores = BlockedCategories$stationeryStoresOfficeAndSchoolSupplyStores._();
 
-static const BlockedCategories swimmingPoolsSales = BlockedCategories._('swimming_pools_sales');
+static const BlockedCategories swimmingPoolsSales = BlockedCategories$swimmingPoolsSales._();
 
-static const BlockedCategories tUiTravelGermany = BlockedCategories._('t_ui_travel_germany');
+static const BlockedCategories tUiTravelGermany = BlockedCategories$tUiTravelGermany._();
 
-static const BlockedCategories tailorsAlterations = BlockedCategories._('tailors_alterations');
+static const BlockedCategories tailorsAlterations = BlockedCategories$tailorsAlterations._();
 
-static const BlockedCategories taxPaymentsGovernmentAgencies = BlockedCategories._('tax_payments_government_agencies');
+static const BlockedCategories taxPaymentsGovernmentAgencies = BlockedCategories$taxPaymentsGovernmentAgencies._();
 
-static const BlockedCategories taxPreparationServices = BlockedCategories._('tax_preparation_services');
+static const BlockedCategories taxPreparationServices = BlockedCategories$taxPreparationServices._();
 
-static const BlockedCategories taxicabsLimousines = BlockedCategories._('taxicabs_limousines');
+static const BlockedCategories taxicabsLimousines = BlockedCategories$taxicabsLimousines._();
 
-static const BlockedCategories telecommunicationEquipmentAndTelephoneSales = BlockedCategories._('telecommunication_equipment_and_telephone_sales');
+static const BlockedCategories telecommunicationEquipmentAndTelephoneSales = BlockedCategories$telecommunicationEquipmentAndTelephoneSales._();
 
-static const BlockedCategories telecommunicationServices = BlockedCategories._('telecommunication_services');
+static const BlockedCategories telecommunicationServices = BlockedCategories$telecommunicationServices._();
 
-static const BlockedCategories telegraphServices = BlockedCategories._('telegraph_services');
+static const BlockedCategories telegraphServices = BlockedCategories$telegraphServices._();
 
-static const BlockedCategories tentAndAwningShops = BlockedCategories._('tent_and_awning_shops');
+static const BlockedCategories tentAndAwningShops = BlockedCategories$tentAndAwningShops._();
 
-static const BlockedCategories testingLaboratories = BlockedCategories._('testing_laboratories');
+static const BlockedCategories testingLaboratories = BlockedCategories$testingLaboratories._();
 
-static const BlockedCategories theatricalTicketAgencies = BlockedCategories._('theatrical_ticket_agencies');
+static const BlockedCategories theatricalTicketAgencies = BlockedCategories$theatricalTicketAgencies._();
 
-static const BlockedCategories timeshares = BlockedCategories._('timeshares');
+static const BlockedCategories timeshares = BlockedCategories$timeshares._();
 
-static const BlockedCategories tireRetreadingAndRepair = BlockedCategories._('tire_retreading_and_repair');
+static const BlockedCategories tireRetreadingAndRepair = BlockedCategories$tireRetreadingAndRepair._();
 
-static const BlockedCategories tollsBridgeFees = BlockedCategories._('tolls_bridge_fees');
+static const BlockedCategories tollsBridgeFees = BlockedCategories$tollsBridgeFees._();
 
-static const BlockedCategories touristAttractionsAndExhibits = BlockedCategories._('tourist_attractions_and_exhibits');
+static const BlockedCategories touristAttractionsAndExhibits = BlockedCategories$touristAttractionsAndExhibits._();
 
-static const BlockedCategories towingServices = BlockedCategories._('towing_services');
+static const BlockedCategories towingServices = BlockedCategories$towingServices._();
 
-static const BlockedCategories trailerParksCampgrounds = BlockedCategories._('trailer_parks_campgrounds');
+static const BlockedCategories trailerParksCampgrounds = BlockedCategories$trailerParksCampgrounds._();
 
-static const BlockedCategories transportationServices = BlockedCategories._('transportation_services');
+static const BlockedCategories transportationServices = BlockedCategories$transportationServices._();
 
-static const BlockedCategories travelAgenciesTourOperators = BlockedCategories._('travel_agencies_tour_operators');
+static const BlockedCategories travelAgenciesTourOperators = BlockedCategories$travelAgenciesTourOperators._();
 
-static const BlockedCategories truckStopIteration = BlockedCategories._('truck_stop_iteration');
+static const BlockedCategories truckStopIteration = BlockedCategories$truckStopIteration._();
 
-static const BlockedCategories truckUtilityTrailerRentals = BlockedCategories._('truck_utility_trailer_rentals');
+static const BlockedCategories truckUtilityTrailerRentals = BlockedCategories$truckUtilityTrailerRentals._();
 
-static const BlockedCategories typesettingPlateMakingAndRelatedServices = BlockedCategories._('typesetting_plate_making_and_related_services');
+static const BlockedCategories typesettingPlateMakingAndRelatedServices = BlockedCategories$typesettingPlateMakingAndRelatedServices._();
 
-static const BlockedCategories typewriterStores = BlockedCategories._('typewriter_stores');
+static const BlockedCategories typewriterStores = BlockedCategories$typewriterStores._();
 
-static const BlockedCategories uSFederalGovernmentAgenciesOrDepartments = BlockedCategories._('u_s_federal_government_agencies_or_departments');
+static const BlockedCategories uSFederalGovernmentAgenciesOrDepartments = BlockedCategories$uSFederalGovernmentAgenciesOrDepartments._();
 
-static const BlockedCategories uniformsCommercialClothing = BlockedCategories._('uniforms_commercial_clothing');
+static const BlockedCategories uniformsCommercialClothing = BlockedCategories$uniformsCommercialClothing._();
 
-static const BlockedCategories usedMerchandiseAndSecondhandStores = BlockedCategories._('used_merchandise_and_secondhand_stores');
+static const BlockedCategories usedMerchandiseAndSecondhandStores = BlockedCategories$usedMerchandiseAndSecondhandStores._();
 
-static const BlockedCategories utilities = BlockedCategories._('utilities');
+static const BlockedCategories utilities = BlockedCategories$utilities._();
 
-static const BlockedCategories varietyStores = BlockedCategories._('variety_stores');
+static const BlockedCategories varietyStores = BlockedCategories$varietyStores._();
 
-static const BlockedCategories veterinaryServices = BlockedCategories._('veterinary_services');
+static const BlockedCategories veterinaryServices = BlockedCategories$veterinaryServices._();
 
-static const BlockedCategories videoAmusementGameSupplies = BlockedCategories._('video_amusement_game_supplies');
+static const BlockedCategories videoAmusementGameSupplies = BlockedCategories$videoAmusementGameSupplies._();
 
-static const BlockedCategories videoGameArcades = BlockedCategories._('video_game_arcades');
+static const BlockedCategories videoGameArcades = BlockedCategories$videoGameArcades._();
 
-static const BlockedCategories videoTapeRentalStores = BlockedCategories._('video_tape_rental_stores');
+static const BlockedCategories videoTapeRentalStores = BlockedCategories$videoTapeRentalStores._();
 
-static const BlockedCategories vocationalTradeSchools = BlockedCategories._('vocational_trade_schools');
+static const BlockedCategories vocationalTradeSchools = BlockedCategories$vocationalTradeSchools._();
 
-static const BlockedCategories watchJewelryRepair = BlockedCategories._('watch_jewelry_repair');
+static const BlockedCategories watchJewelryRepair = BlockedCategories$watchJewelryRepair._();
 
-static const BlockedCategories weldingRepair = BlockedCategories._('welding_repair');
+static const BlockedCategories weldingRepair = BlockedCategories$weldingRepair._();
 
-static const BlockedCategories wholesaleClubs = BlockedCategories._('wholesale_clubs');
+static const BlockedCategories wholesaleClubs = BlockedCategories$wholesaleClubs._();
 
-static const BlockedCategories wigAndToupeeStores = BlockedCategories._('wig_and_toupee_stores');
+static const BlockedCategories wigAndToupeeStores = BlockedCategories$wigAndToupeeStores._();
 
-static const BlockedCategories wiresMoneyOrders = BlockedCategories._('wires_money_orders');
+static const BlockedCategories wiresMoneyOrders = BlockedCategories$wiresMoneyOrders._();
 
-static const BlockedCategories womensAccessoryAndSpecialtyShops = BlockedCategories._('womens_accessory_and_specialty_shops');
+static const BlockedCategories womensAccessoryAndSpecialtyShops = BlockedCategories$womensAccessoryAndSpecialtyShops._();
 
-static const BlockedCategories womensReadyToWearStores = BlockedCategories._('womens_ready_to_wear_stores');
+static const BlockedCategories womensReadyToWearStores = BlockedCategories$womensReadyToWearStores._();
 
-static const BlockedCategories wreckingAndSalvageYards = BlockedCategories._('wrecking_and_salvage_yards');
+static const BlockedCategories wreckingAndSalvageYards = BlockedCategories$wreckingAndSalvageYards._();
 
 static const List<BlockedCategories> values = [acRefrigerationRepair, accountingBookkeepingServices, advertisingServices, agriculturalCooperative, airlinesAirCarriers, airportsFlyingFields, ambulanceServices, amusementParksCarnivals, antiqueReproductions, antiqueShops, aquariums, architecturalSurveyingServices, artDealersAndGalleries, artistsSupplyAndCraftShops, autoAndHomeSupplyStores, autoBodyRepairShops, autoPaintShops, autoServiceShops, automatedCashDisburse, automatedFuelDispensers, automobileAssociations, automotivePartsAndAccessoriesStores, automotiveTireStores, bailAndBondPayments, bakeries, bandsOrchestras, barberAndBeautyShops, bettingCasinoGambling, bicycleShops, billiardPoolEstablishments, boatDealers, boatRentalsAndLeases, bookStores, booksPeriodicalsAndNewspapers, bowlingAlleys, busLines, businessSecretarialSchools, buyingShoppingServices, cableSatelliteAndOtherPayTelevisionAndRadio, cameraAndPhotographicSupplyStores, candyNutAndConfectioneryStores, carAndTruckDealersNewUsed, carAndTruckDealersUsedOnly, carRentalAgencies, carWashes, carpentryServices, carpetUpholsteryCleaning, caterers, charitableAndSocialServiceOrganizationsFundraising, chemicalsAndAlliedProducts, childCareServices, childrensAndInfantsWearStores, chiropodistsPodiatrists, chiropractors, cigarStoresAndStands, civicSocialFraternalAssociations, cleaningAndMaintenance, clothingRental, collegesUniversities, commercialEquipment, commercialFootwear, commercialPhotographyArtAndGraphics, commuterTransportAndFerries, computerNetworkServices, computerProgramming, computerRepair, computerSoftwareStores, computersPeripheralsAndSoftware, concreteWorkServices, constructionMaterials, consultingPublicRelations, correspondenceSchools, cosmeticStores, counselingServices, countryClubs, courierServices, courtCosts, creditReportingAgencies, cruiseLines, dairyProductsStores, danceHallStudiosSchools, datingEscortServices, dentistsOrthodontists, departmentStores, detectiveAgencies, digitalGoodsApplications, digitalGoodsGames, digitalGoodsLargeVolume, digitalGoodsMedia, directMarketingCatalogMerchant, directMarketingCombinationCatalogAndRetailMerchant, directMarketingInboundTelemarketing, directMarketingInsuranceServices, directMarketingOther, directMarketingOutboundTelemarketing, directMarketingSubscription, directMarketingTravel, discountStores, doctors, doorToDoorSales, draperyWindowCoveringAndUpholsteryStores, drinkingPlaces, drugStoresAndPharmacies, drugsDrugProprietariesAndDruggistSundries, dryCleaners, durableGoods, dutyFreeStores, eatingPlacesRestaurants, educationalServices, electricRazorStores, electricVehicleCharging, electricalPartsAndEquipment, electricalServices, electronicsRepairShops, electronicsStores, elementarySecondarySchools, emergencyServicesGcasVisaUseOnly, employmentTempAgencies, equipmentRental, exterminatingServices, familyClothingStores, fastFoodRestaurants, financialInstitutions, finesGovernmentAdministrativeEntities, fireplaceFireplaceScreensAndAccessoriesStores, floorCoveringStores, florists, floristsSuppliesNurseryStockAndFlowers, freezerAndLockerMeatProvisioners, fuelDealersNonAutomotive, funeralServicesCrematories, furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances, furnitureRepairRefinishing, furriersAndFurShops, generalServices, giftCardNoveltyAndSouvenirShops, glassPaintAndWallpaperStores, glasswareCrystalStores, golfCoursesPublic, governmentLicensedHorseDogRacingUsRegionOnly, governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly, governmentOwnedLotteriesNonUsRegion, governmentOwnedLotteriesUsRegionOnly, governmentServices, groceryStoresSupermarkets, hardwareEquipmentAndSupplies, hardwareStores, healthAndBeautySpas, hearingAidsSalesAndSupplies, heatingPlumbingAC, hobbyToyAndGameShops, homeSupplyWarehouseStores, hospitals, hotelsMotelsAndResorts, householdApplianceStores, industrialSupplies, informationRetrievalServices, insuranceDefault, insuranceUnderwritingPremiums, intraCompanyPurchases, jewelryStoresWatchesClocksAndSilverwareStores, landscapingServices, laundries, laundryCleaningServices, legalServicesAttorneys, luggageAndLeatherGoodsStores, lumberBuildingMaterialsStores, manualCashDisburse, marinasServiceAndSupplies, marketplaces, masonryStoneworkAndPlaster, massageParlors, medicalAndDentalLabs, medicalDentalOphthalmicAndHospitalEquipmentAndSupplies, medicalServices, membershipOrganizations, mensAndBoysClothingAndAccessoriesStores, mensWomensClothingStores, metalServiceCenters, miscellaneous, miscellaneousApparelAndAccessoryShops, miscellaneousAutoDealers, miscellaneousBusinessServices, miscellaneousFoodStores, miscellaneousGeneralMerchandise, miscellaneousGeneralServices, miscellaneousHomeFurnishingSpecialtyStores, miscellaneousPublishingAndPrinting, miscellaneousRecreationServices, miscellaneousRepairShops, miscellaneousSpecialtyRetail, mobileHomeDealers, motionPictureTheaters, motorFreightCarriersAndTrucking, motorHomesDealers, motorVehicleSuppliesAndNewParts, motorcycleShopsAndDealers, motorcycleShopsDealers, musicStoresMusicalInstrumentsPianosAndSheetMusic, newsDealersAndNewsstands, nonFiMoneyOrders, nonFiStoredValueCardPurchaseLoad, nondurableGoods, nurseriesLawnAndGardenSupplyStores, nursingPersonalCare, officeAndCommercialFurniture, opticiansEyeglasses, optometristsOphthalmologist, orthopedicGoodsProstheticDevices, osteopaths, packageStoresBeerWineAndLiquor, paintsVarnishesAndSupplies, parkingLotsGarages, passengerRailways, pawnShops, petShopsPetFoodAndSupplies, petroleumAndPetroleumProducts, photoDeveloping, photographicPhotocopyMicrofilmEquipmentAndSupplies, photographicStudios, pictureVideoProduction, pieceGoodsNotionsAndOtherDryGoods, plumbingHeatingEquipmentAndSupplies, politicalOrganizations, postalServicesGovernmentOnly, preciousStonesAndMetalsWatchesAndJewelry, professionalServices, publicWarehousingAndStorage, quickCopyReproAndBlueprint, railroads, realEstateAgentsAndManagersRentals, recordStores, recreationalVehicleRentals, religiousGoodsStores, religiousOrganizations, roofingSidingSheetMetal, secretarialSupportServices, securityBrokersDealers, serviceStations, sewingNeedleworkFabricAndPieceGoodsStores, shoeRepairHatCleaning, shoeStores, smallApplianceRepair, snowmobileDealers, specialTradeServices, specialtyCleaning, sportingGoodsStores, sportingRecreationCamps, sportsAndRidingApparelStores, sportsClubsFields, stampAndCoinStores, stationaryOfficeSuppliesPrintingAndWritingPaper, stationeryStoresOfficeAndSchoolSupplyStores, swimmingPoolsSales, tUiTravelGermany, tailorsAlterations, taxPaymentsGovernmentAgencies, taxPreparationServices, taxicabsLimousines, telecommunicationEquipmentAndTelephoneSales, telecommunicationServices, telegraphServices, tentAndAwningShops, testingLaboratories, theatricalTicketAgencies, timeshares, tireRetreadingAndRepair, tollsBridgeFees, touristAttractionsAndExhibits, towingServices, trailerParksCampgrounds, transportationServices, travelAgenciesTourOperators, truckStopIteration, truckUtilityTrailerRentals, typesettingPlateMakingAndRelatedServices, typewriterStores, uSFederalGovernmentAgenciesOrDepartments, uniformsCommercialClothing, usedMerchandiseAndSecondhandStores, utilities, varietyStores, veterinaryServices, videoAmusementGameSupplies, videoGameArcades, videoTapeRentalStores, vocationalTradeSchools, watchJewelryRepair, weldingRepair, wholesaleClubs, wigAndToupeeStores, wiresMoneyOrders, womensAccessoryAndSpecialtyShops, womensReadyToWearStores, wreckingAndSalvageYards];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -1197,12 +1196,2672 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BlockedCategories$Unknown; } 
+@override String toString() => 'BlockedCategories($value)';
+
+ }
+@immutable final class BlockedCategories$acRefrigerationRepair extends BlockedCategories {const BlockedCategories$acRefrigerationRepair._();
+
+@override String get value => 'ac_refrigeration_repair';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$acRefrigerationRepair;
+
+@override int get hashCode => 'ac_refrigeration_repair'.hashCode;
+
+ }
+@immutable final class BlockedCategories$accountingBookkeepingServices extends BlockedCategories {const BlockedCategories$accountingBookkeepingServices._();
+
+@override String get value => 'accounting_bookkeeping_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$accountingBookkeepingServices;
+
+@override int get hashCode => 'accounting_bookkeeping_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$advertisingServices extends BlockedCategories {const BlockedCategories$advertisingServices._();
+
+@override String get value => 'advertising_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$advertisingServices;
+
+@override int get hashCode => 'advertising_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$agriculturalCooperative extends BlockedCategories {const BlockedCategories$agriculturalCooperative._();
+
+@override String get value => 'agricultural_cooperative';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$agriculturalCooperative;
+
+@override int get hashCode => 'agricultural_cooperative'.hashCode;
+
+ }
+@immutable final class BlockedCategories$airlinesAirCarriers extends BlockedCategories {const BlockedCategories$airlinesAirCarriers._();
+
+@override String get value => 'airlines_air_carriers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$airlinesAirCarriers;
+
+@override int get hashCode => 'airlines_air_carriers'.hashCode;
+
+ }
+@immutable final class BlockedCategories$airportsFlyingFields extends BlockedCategories {const BlockedCategories$airportsFlyingFields._();
+
+@override String get value => 'airports_flying_fields';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$airportsFlyingFields;
+
+@override int get hashCode => 'airports_flying_fields'.hashCode;
+
+ }
+@immutable final class BlockedCategories$ambulanceServices extends BlockedCategories {const BlockedCategories$ambulanceServices._();
+
+@override String get value => 'ambulance_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$ambulanceServices;
+
+@override int get hashCode => 'ambulance_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$amusementParksCarnivals extends BlockedCategories {const BlockedCategories$amusementParksCarnivals._();
+
+@override String get value => 'amusement_parks_carnivals';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$amusementParksCarnivals;
+
+@override int get hashCode => 'amusement_parks_carnivals'.hashCode;
+
+ }
+@immutable final class BlockedCategories$antiqueReproductions extends BlockedCategories {const BlockedCategories$antiqueReproductions._();
+
+@override String get value => 'antique_reproductions';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$antiqueReproductions;
+
+@override int get hashCode => 'antique_reproductions'.hashCode;
+
+ }
+@immutable final class BlockedCategories$antiqueShops extends BlockedCategories {const BlockedCategories$antiqueShops._();
+
+@override String get value => 'antique_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$antiqueShops;
+
+@override int get hashCode => 'antique_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$aquariums extends BlockedCategories {const BlockedCategories$aquariums._();
+
+@override String get value => 'aquariums';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$aquariums;
+
+@override int get hashCode => 'aquariums'.hashCode;
+
+ }
+@immutable final class BlockedCategories$architecturalSurveyingServices extends BlockedCategories {const BlockedCategories$architecturalSurveyingServices._();
+
+@override String get value => 'architectural_surveying_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$architecturalSurveyingServices;
+
+@override int get hashCode => 'architectural_surveying_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$artDealersAndGalleries extends BlockedCategories {const BlockedCategories$artDealersAndGalleries._();
+
+@override String get value => 'art_dealers_and_galleries';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$artDealersAndGalleries;
+
+@override int get hashCode => 'art_dealers_and_galleries'.hashCode;
+
+ }
+@immutable final class BlockedCategories$artistsSupplyAndCraftShops extends BlockedCategories {const BlockedCategories$artistsSupplyAndCraftShops._();
+
+@override String get value => 'artists_supply_and_craft_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$artistsSupplyAndCraftShops;
+
+@override int get hashCode => 'artists_supply_and_craft_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$autoAndHomeSupplyStores extends BlockedCategories {const BlockedCategories$autoAndHomeSupplyStores._();
+
+@override String get value => 'auto_and_home_supply_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$autoAndHomeSupplyStores;
+
+@override int get hashCode => 'auto_and_home_supply_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$autoBodyRepairShops extends BlockedCategories {const BlockedCategories$autoBodyRepairShops._();
+
+@override String get value => 'auto_body_repair_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$autoBodyRepairShops;
+
+@override int get hashCode => 'auto_body_repair_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$autoPaintShops extends BlockedCategories {const BlockedCategories$autoPaintShops._();
+
+@override String get value => 'auto_paint_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$autoPaintShops;
+
+@override int get hashCode => 'auto_paint_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$autoServiceShops extends BlockedCategories {const BlockedCategories$autoServiceShops._();
+
+@override String get value => 'auto_service_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$autoServiceShops;
+
+@override int get hashCode => 'auto_service_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$automatedCashDisburse extends BlockedCategories {const BlockedCategories$automatedCashDisburse._();
+
+@override String get value => 'automated_cash_disburse';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$automatedCashDisburse;
+
+@override int get hashCode => 'automated_cash_disburse'.hashCode;
+
+ }
+@immutable final class BlockedCategories$automatedFuelDispensers extends BlockedCategories {const BlockedCategories$automatedFuelDispensers._();
+
+@override String get value => 'automated_fuel_dispensers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$automatedFuelDispensers;
+
+@override int get hashCode => 'automated_fuel_dispensers'.hashCode;
+
+ }
+@immutable final class BlockedCategories$automobileAssociations extends BlockedCategories {const BlockedCategories$automobileAssociations._();
+
+@override String get value => 'automobile_associations';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$automobileAssociations;
+
+@override int get hashCode => 'automobile_associations'.hashCode;
+
+ }
+@immutable final class BlockedCategories$automotivePartsAndAccessoriesStores extends BlockedCategories {const BlockedCategories$automotivePartsAndAccessoriesStores._();
+
+@override String get value => 'automotive_parts_and_accessories_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$automotivePartsAndAccessoriesStores;
+
+@override int get hashCode => 'automotive_parts_and_accessories_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$automotiveTireStores extends BlockedCategories {const BlockedCategories$automotiveTireStores._();
+
+@override String get value => 'automotive_tire_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$automotiveTireStores;
+
+@override int get hashCode => 'automotive_tire_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$bailAndBondPayments extends BlockedCategories {const BlockedCategories$bailAndBondPayments._();
+
+@override String get value => 'bail_and_bond_payments';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$bailAndBondPayments;
+
+@override int get hashCode => 'bail_and_bond_payments'.hashCode;
+
+ }
+@immutable final class BlockedCategories$bakeries extends BlockedCategories {const BlockedCategories$bakeries._();
+
+@override String get value => 'bakeries';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$bakeries;
+
+@override int get hashCode => 'bakeries'.hashCode;
+
+ }
+@immutable final class BlockedCategories$bandsOrchestras extends BlockedCategories {const BlockedCategories$bandsOrchestras._();
+
+@override String get value => 'bands_orchestras';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$bandsOrchestras;
+
+@override int get hashCode => 'bands_orchestras'.hashCode;
+
+ }
+@immutable final class BlockedCategories$barberAndBeautyShops extends BlockedCategories {const BlockedCategories$barberAndBeautyShops._();
+
+@override String get value => 'barber_and_beauty_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$barberAndBeautyShops;
+
+@override int get hashCode => 'barber_and_beauty_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$bettingCasinoGambling extends BlockedCategories {const BlockedCategories$bettingCasinoGambling._();
+
+@override String get value => 'betting_casino_gambling';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$bettingCasinoGambling;
+
+@override int get hashCode => 'betting_casino_gambling'.hashCode;
+
+ }
+@immutable final class BlockedCategories$bicycleShops extends BlockedCategories {const BlockedCategories$bicycleShops._();
+
+@override String get value => 'bicycle_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$bicycleShops;
+
+@override int get hashCode => 'bicycle_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$billiardPoolEstablishments extends BlockedCategories {const BlockedCategories$billiardPoolEstablishments._();
+
+@override String get value => 'billiard_pool_establishments';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$billiardPoolEstablishments;
+
+@override int get hashCode => 'billiard_pool_establishments'.hashCode;
+
+ }
+@immutable final class BlockedCategories$boatDealers extends BlockedCategories {const BlockedCategories$boatDealers._();
+
+@override String get value => 'boat_dealers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$boatDealers;
+
+@override int get hashCode => 'boat_dealers'.hashCode;
+
+ }
+@immutable final class BlockedCategories$boatRentalsAndLeases extends BlockedCategories {const BlockedCategories$boatRentalsAndLeases._();
+
+@override String get value => 'boat_rentals_and_leases';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$boatRentalsAndLeases;
+
+@override int get hashCode => 'boat_rentals_and_leases'.hashCode;
+
+ }
+@immutable final class BlockedCategories$bookStores extends BlockedCategories {const BlockedCategories$bookStores._();
+
+@override String get value => 'book_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$bookStores;
+
+@override int get hashCode => 'book_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$booksPeriodicalsAndNewspapers extends BlockedCategories {const BlockedCategories$booksPeriodicalsAndNewspapers._();
+
+@override String get value => 'books_periodicals_and_newspapers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$booksPeriodicalsAndNewspapers;
+
+@override int get hashCode => 'books_periodicals_and_newspapers'.hashCode;
+
+ }
+@immutable final class BlockedCategories$bowlingAlleys extends BlockedCategories {const BlockedCategories$bowlingAlleys._();
+
+@override String get value => 'bowling_alleys';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$bowlingAlleys;
+
+@override int get hashCode => 'bowling_alleys'.hashCode;
+
+ }
+@immutable final class BlockedCategories$busLines extends BlockedCategories {const BlockedCategories$busLines._();
+
+@override String get value => 'bus_lines';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$busLines;
+
+@override int get hashCode => 'bus_lines'.hashCode;
+
+ }
+@immutable final class BlockedCategories$businessSecretarialSchools extends BlockedCategories {const BlockedCategories$businessSecretarialSchools._();
+
+@override String get value => 'business_secretarial_schools';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$businessSecretarialSchools;
+
+@override int get hashCode => 'business_secretarial_schools'.hashCode;
+
+ }
+@immutable final class BlockedCategories$buyingShoppingServices extends BlockedCategories {const BlockedCategories$buyingShoppingServices._();
+
+@override String get value => 'buying_shopping_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$buyingShoppingServices;
+
+@override int get hashCode => 'buying_shopping_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$cableSatelliteAndOtherPayTelevisionAndRadio extends BlockedCategories {const BlockedCategories$cableSatelliteAndOtherPayTelevisionAndRadio._();
+
+@override String get value => 'cable_satellite_and_other_pay_television_and_radio';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$cableSatelliteAndOtherPayTelevisionAndRadio;
+
+@override int get hashCode => 'cable_satellite_and_other_pay_television_and_radio'.hashCode;
+
+ }
+@immutable final class BlockedCategories$cameraAndPhotographicSupplyStores extends BlockedCategories {const BlockedCategories$cameraAndPhotographicSupplyStores._();
+
+@override String get value => 'camera_and_photographic_supply_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$cameraAndPhotographicSupplyStores;
+
+@override int get hashCode => 'camera_and_photographic_supply_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$candyNutAndConfectioneryStores extends BlockedCategories {const BlockedCategories$candyNutAndConfectioneryStores._();
+
+@override String get value => 'candy_nut_and_confectionery_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$candyNutAndConfectioneryStores;
+
+@override int get hashCode => 'candy_nut_and_confectionery_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$carAndTruckDealersNewUsed extends BlockedCategories {const BlockedCategories$carAndTruckDealersNewUsed._();
+
+@override String get value => 'car_and_truck_dealers_new_used';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$carAndTruckDealersNewUsed;
+
+@override int get hashCode => 'car_and_truck_dealers_new_used'.hashCode;
+
+ }
+@immutable final class BlockedCategories$carAndTruckDealersUsedOnly extends BlockedCategories {const BlockedCategories$carAndTruckDealersUsedOnly._();
+
+@override String get value => 'car_and_truck_dealers_used_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$carAndTruckDealersUsedOnly;
+
+@override int get hashCode => 'car_and_truck_dealers_used_only'.hashCode;
+
+ }
+@immutable final class BlockedCategories$carRentalAgencies extends BlockedCategories {const BlockedCategories$carRentalAgencies._();
+
+@override String get value => 'car_rental_agencies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$carRentalAgencies;
+
+@override int get hashCode => 'car_rental_agencies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$carWashes extends BlockedCategories {const BlockedCategories$carWashes._();
+
+@override String get value => 'car_washes';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$carWashes;
+
+@override int get hashCode => 'car_washes'.hashCode;
+
+ }
+@immutable final class BlockedCategories$carpentryServices extends BlockedCategories {const BlockedCategories$carpentryServices._();
+
+@override String get value => 'carpentry_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$carpentryServices;
+
+@override int get hashCode => 'carpentry_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$carpetUpholsteryCleaning extends BlockedCategories {const BlockedCategories$carpetUpholsteryCleaning._();
+
+@override String get value => 'carpet_upholstery_cleaning';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$carpetUpholsteryCleaning;
+
+@override int get hashCode => 'carpet_upholstery_cleaning'.hashCode;
+
+ }
+@immutable final class BlockedCategories$caterers extends BlockedCategories {const BlockedCategories$caterers._();
+
+@override String get value => 'caterers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$caterers;
+
+@override int get hashCode => 'caterers'.hashCode;
+
+ }
+@immutable final class BlockedCategories$charitableAndSocialServiceOrganizationsFundraising extends BlockedCategories {const BlockedCategories$charitableAndSocialServiceOrganizationsFundraising._();
+
+@override String get value => 'charitable_and_social_service_organizations_fundraising';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$charitableAndSocialServiceOrganizationsFundraising;
+
+@override int get hashCode => 'charitable_and_social_service_organizations_fundraising'.hashCode;
+
+ }
+@immutable final class BlockedCategories$chemicalsAndAlliedProducts extends BlockedCategories {const BlockedCategories$chemicalsAndAlliedProducts._();
+
+@override String get value => 'chemicals_and_allied_products';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$chemicalsAndAlliedProducts;
+
+@override int get hashCode => 'chemicals_and_allied_products'.hashCode;
+
+ }
+@immutable final class BlockedCategories$childCareServices extends BlockedCategories {const BlockedCategories$childCareServices._();
+
+@override String get value => 'child_care_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$childCareServices;
+
+@override int get hashCode => 'child_care_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$childrensAndInfantsWearStores extends BlockedCategories {const BlockedCategories$childrensAndInfantsWearStores._();
+
+@override String get value => 'childrens_and_infants_wear_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$childrensAndInfantsWearStores;
+
+@override int get hashCode => 'childrens_and_infants_wear_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$chiropodistsPodiatrists extends BlockedCategories {const BlockedCategories$chiropodistsPodiatrists._();
+
+@override String get value => 'chiropodists_podiatrists';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$chiropodistsPodiatrists;
+
+@override int get hashCode => 'chiropodists_podiatrists'.hashCode;
+
+ }
+@immutable final class BlockedCategories$chiropractors extends BlockedCategories {const BlockedCategories$chiropractors._();
+
+@override String get value => 'chiropractors';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$chiropractors;
+
+@override int get hashCode => 'chiropractors'.hashCode;
+
+ }
+@immutable final class BlockedCategories$cigarStoresAndStands extends BlockedCategories {const BlockedCategories$cigarStoresAndStands._();
+
+@override String get value => 'cigar_stores_and_stands';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$cigarStoresAndStands;
+
+@override int get hashCode => 'cigar_stores_and_stands'.hashCode;
+
+ }
+@immutable final class BlockedCategories$civicSocialFraternalAssociations extends BlockedCategories {const BlockedCategories$civicSocialFraternalAssociations._();
+
+@override String get value => 'civic_social_fraternal_associations';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$civicSocialFraternalAssociations;
+
+@override int get hashCode => 'civic_social_fraternal_associations'.hashCode;
+
+ }
+@immutable final class BlockedCategories$cleaningAndMaintenance extends BlockedCategories {const BlockedCategories$cleaningAndMaintenance._();
+
+@override String get value => 'cleaning_and_maintenance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$cleaningAndMaintenance;
+
+@override int get hashCode => 'cleaning_and_maintenance'.hashCode;
+
+ }
+@immutable final class BlockedCategories$clothingRental extends BlockedCategories {const BlockedCategories$clothingRental._();
+
+@override String get value => 'clothing_rental';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$clothingRental;
+
+@override int get hashCode => 'clothing_rental'.hashCode;
+
+ }
+@immutable final class BlockedCategories$collegesUniversities extends BlockedCategories {const BlockedCategories$collegesUniversities._();
+
+@override String get value => 'colleges_universities';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$collegesUniversities;
+
+@override int get hashCode => 'colleges_universities'.hashCode;
+
+ }
+@immutable final class BlockedCategories$commercialEquipment extends BlockedCategories {const BlockedCategories$commercialEquipment._();
+
+@override String get value => 'commercial_equipment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$commercialEquipment;
+
+@override int get hashCode => 'commercial_equipment'.hashCode;
+
+ }
+@immutable final class BlockedCategories$commercialFootwear extends BlockedCategories {const BlockedCategories$commercialFootwear._();
+
+@override String get value => 'commercial_footwear';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$commercialFootwear;
+
+@override int get hashCode => 'commercial_footwear'.hashCode;
+
+ }
+@immutable final class BlockedCategories$commercialPhotographyArtAndGraphics extends BlockedCategories {const BlockedCategories$commercialPhotographyArtAndGraphics._();
+
+@override String get value => 'commercial_photography_art_and_graphics';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$commercialPhotographyArtAndGraphics;
+
+@override int get hashCode => 'commercial_photography_art_and_graphics'.hashCode;
+
+ }
+@immutable final class BlockedCategories$commuterTransportAndFerries extends BlockedCategories {const BlockedCategories$commuterTransportAndFerries._();
+
+@override String get value => 'commuter_transport_and_ferries';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$commuterTransportAndFerries;
+
+@override int get hashCode => 'commuter_transport_and_ferries'.hashCode;
+
+ }
+@immutable final class BlockedCategories$computerNetworkServices extends BlockedCategories {const BlockedCategories$computerNetworkServices._();
+
+@override String get value => 'computer_network_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$computerNetworkServices;
+
+@override int get hashCode => 'computer_network_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$computerProgramming extends BlockedCategories {const BlockedCategories$computerProgramming._();
+
+@override String get value => 'computer_programming';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$computerProgramming;
+
+@override int get hashCode => 'computer_programming'.hashCode;
+
+ }
+@immutable final class BlockedCategories$computerRepair extends BlockedCategories {const BlockedCategories$computerRepair._();
+
+@override String get value => 'computer_repair';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$computerRepair;
+
+@override int get hashCode => 'computer_repair'.hashCode;
+
+ }
+@immutable final class BlockedCategories$computerSoftwareStores extends BlockedCategories {const BlockedCategories$computerSoftwareStores._();
+
+@override String get value => 'computer_software_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$computerSoftwareStores;
+
+@override int get hashCode => 'computer_software_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$computersPeripheralsAndSoftware extends BlockedCategories {const BlockedCategories$computersPeripheralsAndSoftware._();
+
+@override String get value => 'computers_peripherals_and_software';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$computersPeripheralsAndSoftware;
+
+@override int get hashCode => 'computers_peripherals_and_software'.hashCode;
+
+ }
+@immutable final class BlockedCategories$concreteWorkServices extends BlockedCategories {const BlockedCategories$concreteWorkServices._();
+
+@override String get value => 'concrete_work_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$concreteWorkServices;
+
+@override int get hashCode => 'concrete_work_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$constructionMaterials extends BlockedCategories {const BlockedCategories$constructionMaterials._();
+
+@override String get value => 'construction_materials';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$constructionMaterials;
+
+@override int get hashCode => 'construction_materials'.hashCode;
+
+ }
+@immutable final class BlockedCategories$consultingPublicRelations extends BlockedCategories {const BlockedCategories$consultingPublicRelations._();
+
+@override String get value => 'consulting_public_relations';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$consultingPublicRelations;
+
+@override int get hashCode => 'consulting_public_relations'.hashCode;
+
+ }
+@immutable final class BlockedCategories$correspondenceSchools extends BlockedCategories {const BlockedCategories$correspondenceSchools._();
+
+@override String get value => 'correspondence_schools';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$correspondenceSchools;
+
+@override int get hashCode => 'correspondence_schools'.hashCode;
+
+ }
+@immutable final class BlockedCategories$cosmeticStores extends BlockedCategories {const BlockedCategories$cosmeticStores._();
+
+@override String get value => 'cosmetic_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$cosmeticStores;
+
+@override int get hashCode => 'cosmetic_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$counselingServices extends BlockedCategories {const BlockedCategories$counselingServices._();
+
+@override String get value => 'counseling_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$counselingServices;
+
+@override int get hashCode => 'counseling_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$countryClubs extends BlockedCategories {const BlockedCategories$countryClubs._();
+
+@override String get value => 'country_clubs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$countryClubs;
+
+@override int get hashCode => 'country_clubs'.hashCode;
+
+ }
+@immutable final class BlockedCategories$courierServices extends BlockedCategories {const BlockedCategories$courierServices._();
+
+@override String get value => 'courier_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$courierServices;
+
+@override int get hashCode => 'courier_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$courtCosts extends BlockedCategories {const BlockedCategories$courtCosts._();
+
+@override String get value => 'court_costs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$courtCosts;
+
+@override int get hashCode => 'court_costs'.hashCode;
+
+ }
+@immutable final class BlockedCategories$creditReportingAgencies extends BlockedCategories {const BlockedCategories$creditReportingAgencies._();
+
+@override String get value => 'credit_reporting_agencies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$creditReportingAgencies;
+
+@override int get hashCode => 'credit_reporting_agencies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$cruiseLines extends BlockedCategories {const BlockedCategories$cruiseLines._();
+
+@override String get value => 'cruise_lines';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$cruiseLines;
+
+@override int get hashCode => 'cruise_lines'.hashCode;
+
+ }
+@immutable final class BlockedCategories$dairyProductsStores extends BlockedCategories {const BlockedCategories$dairyProductsStores._();
+
+@override String get value => 'dairy_products_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$dairyProductsStores;
+
+@override int get hashCode => 'dairy_products_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$danceHallStudiosSchools extends BlockedCategories {const BlockedCategories$danceHallStudiosSchools._();
+
+@override String get value => 'dance_hall_studios_schools';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$danceHallStudiosSchools;
+
+@override int get hashCode => 'dance_hall_studios_schools'.hashCode;
+
+ }
+@immutable final class BlockedCategories$datingEscortServices extends BlockedCategories {const BlockedCategories$datingEscortServices._();
+
+@override String get value => 'dating_escort_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$datingEscortServices;
+
+@override int get hashCode => 'dating_escort_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$dentistsOrthodontists extends BlockedCategories {const BlockedCategories$dentistsOrthodontists._();
+
+@override String get value => 'dentists_orthodontists';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$dentistsOrthodontists;
+
+@override int get hashCode => 'dentists_orthodontists'.hashCode;
+
+ }
+@immutable final class BlockedCategories$departmentStores extends BlockedCategories {const BlockedCategories$departmentStores._();
+
+@override String get value => 'department_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$departmentStores;
+
+@override int get hashCode => 'department_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$detectiveAgencies extends BlockedCategories {const BlockedCategories$detectiveAgencies._();
+
+@override String get value => 'detective_agencies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$detectiveAgencies;
+
+@override int get hashCode => 'detective_agencies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$digitalGoodsApplications extends BlockedCategories {const BlockedCategories$digitalGoodsApplications._();
+
+@override String get value => 'digital_goods_applications';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$digitalGoodsApplications;
+
+@override int get hashCode => 'digital_goods_applications'.hashCode;
+
+ }
+@immutable final class BlockedCategories$digitalGoodsGames extends BlockedCategories {const BlockedCategories$digitalGoodsGames._();
+
+@override String get value => 'digital_goods_games';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$digitalGoodsGames;
+
+@override int get hashCode => 'digital_goods_games'.hashCode;
+
+ }
+@immutable final class BlockedCategories$digitalGoodsLargeVolume extends BlockedCategories {const BlockedCategories$digitalGoodsLargeVolume._();
+
+@override String get value => 'digital_goods_large_volume';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$digitalGoodsLargeVolume;
+
+@override int get hashCode => 'digital_goods_large_volume'.hashCode;
+
+ }
+@immutable final class BlockedCategories$digitalGoodsMedia extends BlockedCategories {const BlockedCategories$digitalGoodsMedia._();
+
+@override String get value => 'digital_goods_media';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$digitalGoodsMedia;
+
+@override int get hashCode => 'digital_goods_media'.hashCode;
+
+ }
+@immutable final class BlockedCategories$directMarketingCatalogMerchant extends BlockedCategories {const BlockedCategories$directMarketingCatalogMerchant._();
+
+@override String get value => 'direct_marketing_catalog_merchant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$directMarketingCatalogMerchant;
+
+@override int get hashCode => 'direct_marketing_catalog_merchant'.hashCode;
+
+ }
+@immutable final class BlockedCategories$directMarketingCombinationCatalogAndRetailMerchant extends BlockedCategories {const BlockedCategories$directMarketingCombinationCatalogAndRetailMerchant._();
+
+@override String get value => 'direct_marketing_combination_catalog_and_retail_merchant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$directMarketingCombinationCatalogAndRetailMerchant;
+
+@override int get hashCode => 'direct_marketing_combination_catalog_and_retail_merchant'.hashCode;
+
+ }
+@immutable final class BlockedCategories$directMarketingInboundTelemarketing extends BlockedCategories {const BlockedCategories$directMarketingInboundTelemarketing._();
+
+@override String get value => 'direct_marketing_inbound_telemarketing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$directMarketingInboundTelemarketing;
+
+@override int get hashCode => 'direct_marketing_inbound_telemarketing'.hashCode;
+
+ }
+@immutable final class BlockedCategories$directMarketingInsuranceServices extends BlockedCategories {const BlockedCategories$directMarketingInsuranceServices._();
+
+@override String get value => 'direct_marketing_insurance_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$directMarketingInsuranceServices;
+
+@override int get hashCode => 'direct_marketing_insurance_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$directMarketingOther extends BlockedCategories {const BlockedCategories$directMarketingOther._();
+
+@override String get value => 'direct_marketing_other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$directMarketingOther;
+
+@override int get hashCode => 'direct_marketing_other'.hashCode;
+
+ }
+@immutable final class BlockedCategories$directMarketingOutboundTelemarketing extends BlockedCategories {const BlockedCategories$directMarketingOutboundTelemarketing._();
+
+@override String get value => 'direct_marketing_outbound_telemarketing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$directMarketingOutboundTelemarketing;
+
+@override int get hashCode => 'direct_marketing_outbound_telemarketing'.hashCode;
+
+ }
+@immutable final class BlockedCategories$directMarketingSubscription extends BlockedCategories {const BlockedCategories$directMarketingSubscription._();
+
+@override String get value => 'direct_marketing_subscription';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$directMarketingSubscription;
+
+@override int get hashCode => 'direct_marketing_subscription'.hashCode;
+
+ }
+@immutable final class BlockedCategories$directMarketingTravel extends BlockedCategories {const BlockedCategories$directMarketingTravel._();
+
+@override String get value => 'direct_marketing_travel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$directMarketingTravel;
+
+@override int get hashCode => 'direct_marketing_travel'.hashCode;
+
+ }
+@immutable final class BlockedCategories$discountStores extends BlockedCategories {const BlockedCategories$discountStores._();
+
+@override String get value => 'discount_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$discountStores;
+
+@override int get hashCode => 'discount_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$doctors extends BlockedCategories {const BlockedCategories$doctors._();
+
+@override String get value => 'doctors';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$doctors;
+
+@override int get hashCode => 'doctors'.hashCode;
+
+ }
+@immutable final class BlockedCategories$doorToDoorSales extends BlockedCategories {const BlockedCategories$doorToDoorSales._();
+
+@override String get value => 'door_to_door_sales';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$doorToDoorSales;
+
+@override int get hashCode => 'door_to_door_sales'.hashCode;
+
+ }
+@immutable final class BlockedCategories$draperyWindowCoveringAndUpholsteryStores extends BlockedCategories {const BlockedCategories$draperyWindowCoveringAndUpholsteryStores._();
+
+@override String get value => 'drapery_window_covering_and_upholstery_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$draperyWindowCoveringAndUpholsteryStores;
+
+@override int get hashCode => 'drapery_window_covering_and_upholstery_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$drinkingPlaces extends BlockedCategories {const BlockedCategories$drinkingPlaces._();
+
+@override String get value => 'drinking_places';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$drinkingPlaces;
+
+@override int get hashCode => 'drinking_places'.hashCode;
+
+ }
+@immutable final class BlockedCategories$drugStoresAndPharmacies extends BlockedCategories {const BlockedCategories$drugStoresAndPharmacies._();
+
+@override String get value => 'drug_stores_and_pharmacies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$drugStoresAndPharmacies;
+
+@override int get hashCode => 'drug_stores_and_pharmacies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$drugsDrugProprietariesAndDruggistSundries extends BlockedCategories {const BlockedCategories$drugsDrugProprietariesAndDruggistSundries._();
+
+@override String get value => 'drugs_drug_proprietaries_and_druggist_sundries';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$drugsDrugProprietariesAndDruggistSundries;
+
+@override int get hashCode => 'drugs_drug_proprietaries_and_druggist_sundries'.hashCode;
+
+ }
+@immutable final class BlockedCategories$dryCleaners extends BlockedCategories {const BlockedCategories$dryCleaners._();
+
+@override String get value => 'dry_cleaners';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$dryCleaners;
+
+@override int get hashCode => 'dry_cleaners'.hashCode;
+
+ }
+@immutable final class BlockedCategories$durableGoods extends BlockedCategories {const BlockedCategories$durableGoods._();
+
+@override String get value => 'durable_goods';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$durableGoods;
+
+@override int get hashCode => 'durable_goods'.hashCode;
+
+ }
+@immutable final class BlockedCategories$dutyFreeStores extends BlockedCategories {const BlockedCategories$dutyFreeStores._();
+
+@override String get value => 'duty_free_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$dutyFreeStores;
+
+@override int get hashCode => 'duty_free_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$eatingPlacesRestaurants extends BlockedCategories {const BlockedCategories$eatingPlacesRestaurants._();
+
+@override String get value => 'eating_places_restaurants';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$eatingPlacesRestaurants;
+
+@override int get hashCode => 'eating_places_restaurants'.hashCode;
+
+ }
+@immutable final class BlockedCategories$educationalServices extends BlockedCategories {const BlockedCategories$educationalServices._();
+
+@override String get value => 'educational_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$educationalServices;
+
+@override int get hashCode => 'educational_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$electricRazorStores extends BlockedCategories {const BlockedCategories$electricRazorStores._();
+
+@override String get value => 'electric_razor_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$electricRazorStores;
+
+@override int get hashCode => 'electric_razor_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$electricVehicleCharging extends BlockedCategories {const BlockedCategories$electricVehicleCharging._();
+
+@override String get value => 'electric_vehicle_charging';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$electricVehicleCharging;
+
+@override int get hashCode => 'electric_vehicle_charging'.hashCode;
+
+ }
+@immutable final class BlockedCategories$electricalPartsAndEquipment extends BlockedCategories {const BlockedCategories$electricalPartsAndEquipment._();
+
+@override String get value => 'electrical_parts_and_equipment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$electricalPartsAndEquipment;
+
+@override int get hashCode => 'electrical_parts_and_equipment'.hashCode;
+
+ }
+@immutable final class BlockedCategories$electricalServices extends BlockedCategories {const BlockedCategories$electricalServices._();
+
+@override String get value => 'electrical_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$electricalServices;
+
+@override int get hashCode => 'electrical_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$electronicsRepairShops extends BlockedCategories {const BlockedCategories$electronicsRepairShops._();
+
+@override String get value => 'electronics_repair_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$electronicsRepairShops;
+
+@override int get hashCode => 'electronics_repair_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$electronicsStores extends BlockedCategories {const BlockedCategories$electronicsStores._();
+
+@override String get value => 'electronics_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$electronicsStores;
+
+@override int get hashCode => 'electronics_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$elementarySecondarySchools extends BlockedCategories {const BlockedCategories$elementarySecondarySchools._();
+
+@override String get value => 'elementary_secondary_schools';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$elementarySecondarySchools;
+
+@override int get hashCode => 'elementary_secondary_schools'.hashCode;
+
+ }
+@immutable final class BlockedCategories$emergencyServicesGcasVisaUseOnly extends BlockedCategories {const BlockedCategories$emergencyServicesGcasVisaUseOnly._();
+
+@override String get value => 'emergency_services_gcas_visa_use_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$emergencyServicesGcasVisaUseOnly;
+
+@override int get hashCode => 'emergency_services_gcas_visa_use_only'.hashCode;
+
+ }
+@immutable final class BlockedCategories$employmentTempAgencies extends BlockedCategories {const BlockedCategories$employmentTempAgencies._();
+
+@override String get value => 'employment_temp_agencies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$employmentTempAgencies;
+
+@override int get hashCode => 'employment_temp_agencies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$equipmentRental extends BlockedCategories {const BlockedCategories$equipmentRental._();
+
+@override String get value => 'equipment_rental';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$equipmentRental;
+
+@override int get hashCode => 'equipment_rental'.hashCode;
+
+ }
+@immutable final class BlockedCategories$exterminatingServices extends BlockedCategories {const BlockedCategories$exterminatingServices._();
+
+@override String get value => 'exterminating_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$exterminatingServices;
+
+@override int get hashCode => 'exterminating_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$familyClothingStores extends BlockedCategories {const BlockedCategories$familyClothingStores._();
+
+@override String get value => 'family_clothing_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$familyClothingStores;
+
+@override int get hashCode => 'family_clothing_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$fastFoodRestaurants extends BlockedCategories {const BlockedCategories$fastFoodRestaurants._();
+
+@override String get value => 'fast_food_restaurants';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$fastFoodRestaurants;
+
+@override int get hashCode => 'fast_food_restaurants'.hashCode;
+
+ }
+@immutable final class BlockedCategories$financialInstitutions extends BlockedCategories {const BlockedCategories$financialInstitutions._();
+
+@override String get value => 'financial_institutions';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$financialInstitutions;
+
+@override int get hashCode => 'financial_institutions'.hashCode;
+
+ }
+@immutable final class BlockedCategories$finesGovernmentAdministrativeEntities extends BlockedCategories {const BlockedCategories$finesGovernmentAdministrativeEntities._();
+
+@override String get value => 'fines_government_administrative_entities';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$finesGovernmentAdministrativeEntities;
+
+@override int get hashCode => 'fines_government_administrative_entities'.hashCode;
+
+ }
+@immutable final class BlockedCategories$fireplaceFireplaceScreensAndAccessoriesStores extends BlockedCategories {const BlockedCategories$fireplaceFireplaceScreensAndAccessoriesStores._();
+
+@override String get value => 'fireplace_fireplace_screens_and_accessories_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$fireplaceFireplaceScreensAndAccessoriesStores;
+
+@override int get hashCode => 'fireplace_fireplace_screens_and_accessories_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$floorCoveringStores extends BlockedCategories {const BlockedCategories$floorCoveringStores._();
+
+@override String get value => 'floor_covering_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$floorCoveringStores;
+
+@override int get hashCode => 'floor_covering_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$florists extends BlockedCategories {const BlockedCategories$florists._();
+
+@override String get value => 'florists';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$florists;
+
+@override int get hashCode => 'florists'.hashCode;
+
+ }
+@immutable final class BlockedCategories$floristsSuppliesNurseryStockAndFlowers extends BlockedCategories {const BlockedCategories$floristsSuppliesNurseryStockAndFlowers._();
+
+@override String get value => 'florists_supplies_nursery_stock_and_flowers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$floristsSuppliesNurseryStockAndFlowers;
+
+@override int get hashCode => 'florists_supplies_nursery_stock_and_flowers'.hashCode;
+
+ }
+@immutable final class BlockedCategories$freezerAndLockerMeatProvisioners extends BlockedCategories {const BlockedCategories$freezerAndLockerMeatProvisioners._();
+
+@override String get value => 'freezer_and_locker_meat_provisioners';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$freezerAndLockerMeatProvisioners;
+
+@override int get hashCode => 'freezer_and_locker_meat_provisioners'.hashCode;
+
+ }
+@immutable final class BlockedCategories$fuelDealersNonAutomotive extends BlockedCategories {const BlockedCategories$fuelDealersNonAutomotive._();
+
+@override String get value => 'fuel_dealers_non_automotive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$fuelDealersNonAutomotive;
+
+@override int get hashCode => 'fuel_dealers_non_automotive'.hashCode;
+
+ }
+@immutable final class BlockedCategories$funeralServicesCrematories extends BlockedCategories {const BlockedCategories$funeralServicesCrematories._();
+
+@override String get value => 'funeral_services_crematories';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$funeralServicesCrematories;
+
+@override int get hashCode => 'funeral_services_crematories'.hashCode;
+
+ }
+@immutable final class BlockedCategories$furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances extends BlockedCategories {const BlockedCategories$furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances._();
+
+@override String get value => 'furniture_home_furnishings_and_equipment_stores_except_appliances';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$furnitureHomeFurnishingsAndEquipmentStoresExceptAppliances;
+
+@override int get hashCode => 'furniture_home_furnishings_and_equipment_stores_except_appliances'.hashCode;
+
+ }
+@immutable final class BlockedCategories$furnitureRepairRefinishing extends BlockedCategories {const BlockedCategories$furnitureRepairRefinishing._();
+
+@override String get value => 'furniture_repair_refinishing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$furnitureRepairRefinishing;
+
+@override int get hashCode => 'furniture_repair_refinishing'.hashCode;
+
+ }
+@immutable final class BlockedCategories$furriersAndFurShops extends BlockedCategories {const BlockedCategories$furriersAndFurShops._();
+
+@override String get value => 'furriers_and_fur_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$furriersAndFurShops;
+
+@override int get hashCode => 'furriers_and_fur_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$generalServices extends BlockedCategories {const BlockedCategories$generalServices._();
+
+@override String get value => 'general_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$generalServices;
+
+@override int get hashCode => 'general_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$giftCardNoveltyAndSouvenirShops extends BlockedCategories {const BlockedCategories$giftCardNoveltyAndSouvenirShops._();
+
+@override String get value => 'gift_card_novelty_and_souvenir_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$giftCardNoveltyAndSouvenirShops;
+
+@override int get hashCode => 'gift_card_novelty_and_souvenir_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$glassPaintAndWallpaperStores extends BlockedCategories {const BlockedCategories$glassPaintAndWallpaperStores._();
+
+@override String get value => 'glass_paint_and_wallpaper_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$glassPaintAndWallpaperStores;
+
+@override int get hashCode => 'glass_paint_and_wallpaper_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$glasswareCrystalStores extends BlockedCategories {const BlockedCategories$glasswareCrystalStores._();
+
+@override String get value => 'glassware_crystal_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$glasswareCrystalStores;
+
+@override int get hashCode => 'glassware_crystal_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$golfCoursesPublic extends BlockedCategories {const BlockedCategories$golfCoursesPublic._();
+
+@override String get value => 'golf_courses_public';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$golfCoursesPublic;
+
+@override int get hashCode => 'golf_courses_public'.hashCode;
+
+ }
+@immutable final class BlockedCategories$governmentLicensedHorseDogRacingUsRegionOnly extends BlockedCategories {const BlockedCategories$governmentLicensedHorseDogRacingUsRegionOnly._();
+
+@override String get value => 'government_licensed_horse_dog_racing_us_region_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$governmentLicensedHorseDogRacingUsRegionOnly;
+
+@override int get hashCode => 'government_licensed_horse_dog_racing_us_region_only'.hashCode;
+
+ }
+@immutable final class BlockedCategories$governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly extends BlockedCategories {const BlockedCategories$governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly._();
+
+@override String get value => 'government_licensed_online_casions_online_gambling_us_region_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$governmentLicensedOnlineCasionsOnlineGamblingUsRegionOnly;
+
+@override int get hashCode => 'government_licensed_online_casions_online_gambling_us_region_only'.hashCode;
+
+ }
+@immutable final class BlockedCategories$governmentOwnedLotteriesNonUsRegion extends BlockedCategories {const BlockedCategories$governmentOwnedLotteriesNonUsRegion._();
+
+@override String get value => 'government_owned_lotteries_non_us_region';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$governmentOwnedLotteriesNonUsRegion;
+
+@override int get hashCode => 'government_owned_lotteries_non_us_region'.hashCode;
+
+ }
+@immutable final class BlockedCategories$governmentOwnedLotteriesUsRegionOnly extends BlockedCategories {const BlockedCategories$governmentOwnedLotteriesUsRegionOnly._();
+
+@override String get value => 'government_owned_lotteries_us_region_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$governmentOwnedLotteriesUsRegionOnly;
+
+@override int get hashCode => 'government_owned_lotteries_us_region_only'.hashCode;
+
+ }
+@immutable final class BlockedCategories$governmentServices extends BlockedCategories {const BlockedCategories$governmentServices._();
+
+@override String get value => 'government_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$governmentServices;
+
+@override int get hashCode => 'government_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$groceryStoresSupermarkets extends BlockedCategories {const BlockedCategories$groceryStoresSupermarkets._();
+
+@override String get value => 'grocery_stores_supermarkets';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$groceryStoresSupermarkets;
+
+@override int get hashCode => 'grocery_stores_supermarkets'.hashCode;
+
+ }
+@immutable final class BlockedCategories$hardwareEquipmentAndSupplies extends BlockedCategories {const BlockedCategories$hardwareEquipmentAndSupplies._();
+
+@override String get value => 'hardware_equipment_and_supplies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$hardwareEquipmentAndSupplies;
+
+@override int get hashCode => 'hardware_equipment_and_supplies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$hardwareStores extends BlockedCategories {const BlockedCategories$hardwareStores._();
+
+@override String get value => 'hardware_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$hardwareStores;
+
+@override int get hashCode => 'hardware_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$healthAndBeautySpas extends BlockedCategories {const BlockedCategories$healthAndBeautySpas._();
+
+@override String get value => 'health_and_beauty_spas';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$healthAndBeautySpas;
+
+@override int get hashCode => 'health_and_beauty_spas'.hashCode;
+
+ }
+@immutable final class BlockedCategories$hearingAidsSalesAndSupplies extends BlockedCategories {const BlockedCategories$hearingAidsSalesAndSupplies._();
+
+@override String get value => 'hearing_aids_sales_and_supplies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$hearingAidsSalesAndSupplies;
+
+@override int get hashCode => 'hearing_aids_sales_and_supplies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$heatingPlumbingAC extends BlockedCategories {const BlockedCategories$heatingPlumbingAC._();
+
+@override String get value => 'heating_plumbing_a_c';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$heatingPlumbingAC;
+
+@override int get hashCode => 'heating_plumbing_a_c'.hashCode;
+
+ }
+@immutable final class BlockedCategories$hobbyToyAndGameShops extends BlockedCategories {const BlockedCategories$hobbyToyAndGameShops._();
+
+@override String get value => 'hobby_toy_and_game_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$hobbyToyAndGameShops;
+
+@override int get hashCode => 'hobby_toy_and_game_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$homeSupplyWarehouseStores extends BlockedCategories {const BlockedCategories$homeSupplyWarehouseStores._();
+
+@override String get value => 'home_supply_warehouse_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$homeSupplyWarehouseStores;
+
+@override int get hashCode => 'home_supply_warehouse_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$hospitals extends BlockedCategories {const BlockedCategories$hospitals._();
+
+@override String get value => 'hospitals';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$hospitals;
+
+@override int get hashCode => 'hospitals'.hashCode;
+
+ }
+@immutable final class BlockedCategories$hotelsMotelsAndResorts extends BlockedCategories {const BlockedCategories$hotelsMotelsAndResorts._();
+
+@override String get value => 'hotels_motels_and_resorts';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$hotelsMotelsAndResorts;
+
+@override int get hashCode => 'hotels_motels_and_resorts'.hashCode;
+
+ }
+@immutable final class BlockedCategories$householdApplianceStores extends BlockedCategories {const BlockedCategories$householdApplianceStores._();
+
+@override String get value => 'household_appliance_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$householdApplianceStores;
+
+@override int get hashCode => 'household_appliance_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$industrialSupplies extends BlockedCategories {const BlockedCategories$industrialSupplies._();
+
+@override String get value => 'industrial_supplies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$industrialSupplies;
+
+@override int get hashCode => 'industrial_supplies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$informationRetrievalServices extends BlockedCategories {const BlockedCategories$informationRetrievalServices._();
+
+@override String get value => 'information_retrieval_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$informationRetrievalServices;
+
+@override int get hashCode => 'information_retrieval_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$insuranceDefault extends BlockedCategories {const BlockedCategories$insuranceDefault._();
+
+@override String get value => 'insurance_default';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$insuranceDefault;
+
+@override int get hashCode => 'insurance_default'.hashCode;
+
+ }
+@immutable final class BlockedCategories$insuranceUnderwritingPremiums extends BlockedCategories {const BlockedCategories$insuranceUnderwritingPremiums._();
+
+@override String get value => 'insurance_underwriting_premiums';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$insuranceUnderwritingPremiums;
+
+@override int get hashCode => 'insurance_underwriting_premiums'.hashCode;
+
+ }
+@immutable final class BlockedCategories$intraCompanyPurchases extends BlockedCategories {const BlockedCategories$intraCompanyPurchases._();
+
+@override String get value => 'intra_company_purchases';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$intraCompanyPurchases;
+
+@override int get hashCode => 'intra_company_purchases'.hashCode;
+
+ }
+@immutable final class BlockedCategories$jewelryStoresWatchesClocksAndSilverwareStores extends BlockedCategories {const BlockedCategories$jewelryStoresWatchesClocksAndSilverwareStores._();
+
+@override String get value => 'jewelry_stores_watches_clocks_and_silverware_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$jewelryStoresWatchesClocksAndSilverwareStores;
+
+@override int get hashCode => 'jewelry_stores_watches_clocks_and_silverware_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$landscapingServices extends BlockedCategories {const BlockedCategories$landscapingServices._();
+
+@override String get value => 'landscaping_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$landscapingServices;
+
+@override int get hashCode => 'landscaping_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$laundries extends BlockedCategories {const BlockedCategories$laundries._();
+
+@override String get value => 'laundries';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$laundries;
+
+@override int get hashCode => 'laundries'.hashCode;
+
+ }
+@immutable final class BlockedCategories$laundryCleaningServices extends BlockedCategories {const BlockedCategories$laundryCleaningServices._();
+
+@override String get value => 'laundry_cleaning_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$laundryCleaningServices;
+
+@override int get hashCode => 'laundry_cleaning_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$legalServicesAttorneys extends BlockedCategories {const BlockedCategories$legalServicesAttorneys._();
+
+@override String get value => 'legal_services_attorneys';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$legalServicesAttorneys;
+
+@override int get hashCode => 'legal_services_attorneys'.hashCode;
+
+ }
+@immutable final class BlockedCategories$luggageAndLeatherGoodsStores extends BlockedCategories {const BlockedCategories$luggageAndLeatherGoodsStores._();
+
+@override String get value => 'luggage_and_leather_goods_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$luggageAndLeatherGoodsStores;
+
+@override int get hashCode => 'luggage_and_leather_goods_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$lumberBuildingMaterialsStores extends BlockedCategories {const BlockedCategories$lumberBuildingMaterialsStores._();
+
+@override String get value => 'lumber_building_materials_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$lumberBuildingMaterialsStores;
+
+@override int get hashCode => 'lumber_building_materials_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$manualCashDisburse extends BlockedCategories {const BlockedCategories$manualCashDisburse._();
+
+@override String get value => 'manual_cash_disburse';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$manualCashDisburse;
+
+@override int get hashCode => 'manual_cash_disburse'.hashCode;
+
+ }
+@immutable final class BlockedCategories$marinasServiceAndSupplies extends BlockedCategories {const BlockedCategories$marinasServiceAndSupplies._();
+
+@override String get value => 'marinas_service_and_supplies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$marinasServiceAndSupplies;
+
+@override int get hashCode => 'marinas_service_and_supplies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$marketplaces extends BlockedCategories {const BlockedCategories$marketplaces._();
+
+@override String get value => 'marketplaces';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$marketplaces;
+
+@override int get hashCode => 'marketplaces'.hashCode;
+
+ }
+@immutable final class BlockedCategories$masonryStoneworkAndPlaster extends BlockedCategories {const BlockedCategories$masonryStoneworkAndPlaster._();
+
+@override String get value => 'masonry_stonework_and_plaster';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$masonryStoneworkAndPlaster;
+
+@override int get hashCode => 'masonry_stonework_and_plaster'.hashCode;
+
+ }
+@immutable final class BlockedCategories$massageParlors extends BlockedCategories {const BlockedCategories$massageParlors._();
+
+@override String get value => 'massage_parlors';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$massageParlors;
+
+@override int get hashCode => 'massage_parlors'.hashCode;
+
+ }
+@immutable final class BlockedCategories$medicalAndDentalLabs extends BlockedCategories {const BlockedCategories$medicalAndDentalLabs._();
+
+@override String get value => 'medical_and_dental_labs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$medicalAndDentalLabs;
+
+@override int get hashCode => 'medical_and_dental_labs'.hashCode;
+
+ }
+@immutable final class BlockedCategories$medicalDentalOphthalmicAndHospitalEquipmentAndSupplies extends BlockedCategories {const BlockedCategories$medicalDentalOphthalmicAndHospitalEquipmentAndSupplies._();
+
+@override String get value => 'medical_dental_ophthalmic_and_hospital_equipment_and_supplies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$medicalDentalOphthalmicAndHospitalEquipmentAndSupplies;
+
+@override int get hashCode => 'medical_dental_ophthalmic_and_hospital_equipment_and_supplies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$medicalServices extends BlockedCategories {const BlockedCategories$medicalServices._();
+
+@override String get value => 'medical_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$medicalServices;
+
+@override int get hashCode => 'medical_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$membershipOrganizations extends BlockedCategories {const BlockedCategories$membershipOrganizations._();
+
+@override String get value => 'membership_organizations';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$membershipOrganizations;
+
+@override int get hashCode => 'membership_organizations'.hashCode;
+
+ }
+@immutable final class BlockedCategories$mensAndBoysClothingAndAccessoriesStores extends BlockedCategories {const BlockedCategories$mensAndBoysClothingAndAccessoriesStores._();
+
+@override String get value => 'mens_and_boys_clothing_and_accessories_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$mensAndBoysClothingAndAccessoriesStores;
+
+@override int get hashCode => 'mens_and_boys_clothing_and_accessories_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$mensWomensClothingStores extends BlockedCategories {const BlockedCategories$mensWomensClothingStores._();
+
+@override String get value => 'mens_womens_clothing_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$mensWomensClothingStores;
+
+@override int get hashCode => 'mens_womens_clothing_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$metalServiceCenters extends BlockedCategories {const BlockedCategories$metalServiceCenters._();
+
+@override String get value => 'metal_service_centers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$metalServiceCenters;
+
+@override int get hashCode => 'metal_service_centers'.hashCode;
+
+ }
+@immutable final class BlockedCategories$miscellaneous extends BlockedCategories {const BlockedCategories$miscellaneous._();
+
+@override String get value => 'miscellaneous';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$miscellaneous;
+
+@override int get hashCode => 'miscellaneous'.hashCode;
+
+ }
+@immutable final class BlockedCategories$miscellaneousApparelAndAccessoryShops extends BlockedCategories {const BlockedCategories$miscellaneousApparelAndAccessoryShops._();
+
+@override String get value => 'miscellaneous_apparel_and_accessory_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$miscellaneousApparelAndAccessoryShops;
+
+@override int get hashCode => 'miscellaneous_apparel_and_accessory_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$miscellaneousAutoDealers extends BlockedCategories {const BlockedCategories$miscellaneousAutoDealers._();
+
+@override String get value => 'miscellaneous_auto_dealers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$miscellaneousAutoDealers;
+
+@override int get hashCode => 'miscellaneous_auto_dealers'.hashCode;
+
+ }
+@immutable final class BlockedCategories$miscellaneousBusinessServices extends BlockedCategories {const BlockedCategories$miscellaneousBusinessServices._();
+
+@override String get value => 'miscellaneous_business_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$miscellaneousBusinessServices;
+
+@override int get hashCode => 'miscellaneous_business_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$miscellaneousFoodStores extends BlockedCategories {const BlockedCategories$miscellaneousFoodStores._();
+
+@override String get value => 'miscellaneous_food_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$miscellaneousFoodStores;
+
+@override int get hashCode => 'miscellaneous_food_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$miscellaneousGeneralMerchandise extends BlockedCategories {const BlockedCategories$miscellaneousGeneralMerchandise._();
+
+@override String get value => 'miscellaneous_general_merchandise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$miscellaneousGeneralMerchandise;
+
+@override int get hashCode => 'miscellaneous_general_merchandise'.hashCode;
+
+ }
+@immutable final class BlockedCategories$miscellaneousGeneralServices extends BlockedCategories {const BlockedCategories$miscellaneousGeneralServices._();
+
+@override String get value => 'miscellaneous_general_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$miscellaneousGeneralServices;
+
+@override int get hashCode => 'miscellaneous_general_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$miscellaneousHomeFurnishingSpecialtyStores extends BlockedCategories {const BlockedCategories$miscellaneousHomeFurnishingSpecialtyStores._();
+
+@override String get value => 'miscellaneous_home_furnishing_specialty_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$miscellaneousHomeFurnishingSpecialtyStores;
+
+@override int get hashCode => 'miscellaneous_home_furnishing_specialty_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$miscellaneousPublishingAndPrinting extends BlockedCategories {const BlockedCategories$miscellaneousPublishingAndPrinting._();
+
+@override String get value => 'miscellaneous_publishing_and_printing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$miscellaneousPublishingAndPrinting;
+
+@override int get hashCode => 'miscellaneous_publishing_and_printing'.hashCode;
+
+ }
+@immutable final class BlockedCategories$miscellaneousRecreationServices extends BlockedCategories {const BlockedCategories$miscellaneousRecreationServices._();
+
+@override String get value => 'miscellaneous_recreation_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$miscellaneousRecreationServices;
+
+@override int get hashCode => 'miscellaneous_recreation_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$miscellaneousRepairShops extends BlockedCategories {const BlockedCategories$miscellaneousRepairShops._();
+
+@override String get value => 'miscellaneous_repair_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$miscellaneousRepairShops;
+
+@override int get hashCode => 'miscellaneous_repair_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$miscellaneousSpecialtyRetail extends BlockedCategories {const BlockedCategories$miscellaneousSpecialtyRetail._();
+
+@override String get value => 'miscellaneous_specialty_retail';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$miscellaneousSpecialtyRetail;
+
+@override int get hashCode => 'miscellaneous_specialty_retail'.hashCode;
+
+ }
+@immutable final class BlockedCategories$mobileHomeDealers extends BlockedCategories {const BlockedCategories$mobileHomeDealers._();
+
+@override String get value => 'mobile_home_dealers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$mobileHomeDealers;
+
+@override int get hashCode => 'mobile_home_dealers'.hashCode;
+
+ }
+@immutable final class BlockedCategories$motionPictureTheaters extends BlockedCategories {const BlockedCategories$motionPictureTheaters._();
+
+@override String get value => 'motion_picture_theaters';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$motionPictureTheaters;
+
+@override int get hashCode => 'motion_picture_theaters'.hashCode;
+
+ }
+@immutable final class BlockedCategories$motorFreightCarriersAndTrucking extends BlockedCategories {const BlockedCategories$motorFreightCarriersAndTrucking._();
+
+@override String get value => 'motor_freight_carriers_and_trucking';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$motorFreightCarriersAndTrucking;
+
+@override int get hashCode => 'motor_freight_carriers_and_trucking'.hashCode;
+
+ }
+@immutable final class BlockedCategories$motorHomesDealers extends BlockedCategories {const BlockedCategories$motorHomesDealers._();
+
+@override String get value => 'motor_homes_dealers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$motorHomesDealers;
+
+@override int get hashCode => 'motor_homes_dealers'.hashCode;
+
+ }
+@immutable final class BlockedCategories$motorVehicleSuppliesAndNewParts extends BlockedCategories {const BlockedCategories$motorVehicleSuppliesAndNewParts._();
+
+@override String get value => 'motor_vehicle_supplies_and_new_parts';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$motorVehicleSuppliesAndNewParts;
+
+@override int get hashCode => 'motor_vehicle_supplies_and_new_parts'.hashCode;
+
+ }
+@immutable final class BlockedCategories$motorcycleShopsAndDealers extends BlockedCategories {const BlockedCategories$motorcycleShopsAndDealers._();
+
+@override String get value => 'motorcycle_shops_and_dealers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$motorcycleShopsAndDealers;
+
+@override int get hashCode => 'motorcycle_shops_and_dealers'.hashCode;
+
+ }
+@immutable final class BlockedCategories$motorcycleShopsDealers extends BlockedCategories {const BlockedCategories$motorcycleShopsDealers._();
+
+@override String get value => 'motorcycle_shops_dealers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$motorcycleShopsDealers;
+
+@override int get hashCode => 'motorcycle_shops_dealers'.hashCode;
+
+ }
+@immutable final class BlockedCategories$musicStoresMusicalInstrumentsPianosAndSheetMusic extends BlockedCategories {const BlockedCategories$musicStoresMusicalInstrumentsPianosAndSheetMusic._();
+
+@override String get value => 'music_stores_musical_instruments_pianos_and_sheet_music';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$musicStoresMusicalInstrumentsPianosAndSheetMusic;
+
+@override int get hashCode => 'music_stores_musical_instruments_pianos_and_sheet_music'.hashCode;
+
+ }
+@immutable final class BlockedCategories$newsDealersAndNewsstands extends BlockedCategories {const BlockedCategories$newsDealersAndNewsstands._();
+
+@override String get value => 'news_dealers_and_newsstands';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$newsDealersAndNewsstands;
+
+@override int get hashCode => 'news_dealers_and_newsstands'.hashCode;
+
+ }
+@immutable final class BlockedCategories$nonFiMoneyOrders extends BlockedCategories {const BlockedCategories$nonFiMoneyOrders._();
+
+@override String get value => 'non_fi_money_orders';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$nonFiMoneyOrders;
+
+@override int get hashCode => 'non_fi_money_orders'.hashCode;
+
+ }
+@immutable final class BlockedCategories$nonFiStoredValueCardPurchaseLoad extends BlockedCategories {const BlockedCategories$nonFiStoredValueCardPurchaseLoad._();
+
+@override String get value => 'non_fi_stored_value_card_purchase_load';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$nonFiStoredValueCardPurchaseLoad;
+
+@override int get hashCode => 'non_fi_stored_value_card_purchase_load'.hashCode;
+
+ }
+@immutable final class BlockedCategories$nondurableGoods extends BlockedCategories {const BlockedCategories$nondurableGoods._();
+
+@override String get value => 'nondurable_goods';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$nondurableGoods;
+
+@override int get hashCode => 'nondurable_goods'.hashCode;
+
+ }
+@immutable final class BlockedCategories$nurseriesLawnAndGardenSupplyStores extends BlockedCategories {const BlockedCategories$nurseriesLawnAndGardenSupplyStores._();
+
+@override String get value => 'nurseries_lawn_and_garden_supply_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$nurseriesLawnAndGardenSupplyStores;
+
+@override int get hashCode => 'nurseries_lawn_and_garden_supply_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$nursingPersonalCare extends BlockedCategories {const BlockedCategories$nursingPersonalCare._();
+
+@override String get value => 'nursing_personal_care';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$nursingPersonalCare;
+
+@override int get hashCode => 'nursing_personal_care'.hashCode;
+
+ }
+@immutable final class BlockedCategories$officeAndCommercialFurniture extends BlockedCategories {const BlockedCategories$officeAndCommercialFurniture._();
+
+@override String get value => 'office_and_commercial_furniture';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$officeAndCommercialFurniture;
+
+@override int get hashCode => 'office_and_commercial_furniture'.hashCode;
+
+ }
+@immutable final class BlockedCategories$opticiansEyeglasses extends BlockedCategories {const BlockedCategories$opticiansEyeglasses._();
+
+@override String get value => 'opticians_eyeglasses';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$opticiansEyeglasses;
+
+@override int get hashCode => 'opticians_eyeglasses'.hashCode;
+
+ }
+@immutable final class BlockedCategories$optometristsOphthalmologist extends BlockedCategories {const BlockedCategories$optometristsOphthalmologist._();
+
+@override String get value => 'optometrists_ophthalmologist';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$optometristsOphthalmologist;
+
+@override int get hashCode => 'optometrists_ophthalmologist'.hashCode;
+
+ }
+@immutable final class BlockedCategories$orthopedicGoodsProstheticDevices extends BlockedCategories {const BlockedCategories$orthopedicGoodsProstheticDevices._();
+
+@override String get value => 'orthopedic_goods_prosthetic_devices';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$orthopedicGoodsProstheticDevices;
+
+@override int get hashCode => 'orthopedic_goods_prosthetic_devices'.hashCode;
+
+ }
+@immutable final class BlockedCategories$osteopaths extends BlockedCategories {const BlockedCategories$osteopaths._();
+
+@override String get value => 'osteopaths';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$osteopaths;
+
+@override int get hashCode => 'osteopaths'.hashCode;
+
+ }
+@immutable final class BlockedCategories$packageStoresBeerWineAndLiquor extends BlockedCategories {const BlockedCategories$packageStoresBeerWineAndLiquor._();
+
+@override String get value => 'package_stores_beer_wine_and_liquor';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$packageStoresBeerWineAndLiquor;
+
+@override int get hashCode => 'package_stores_beer_wine_and_liquor'.hashCode;
+
+ }
+@immutable final class BlockedCategories$paintsVarnishesAndSupplies extends BlockedCategories {const BlockedCategories$paintsVarnishesAndSupplies._();
+
+@override String get value => 'paints_varnishes_and_supplies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$paintsVarnishesAndSupplies;
+
+@override int get hashCode => 'paints_varnishes_and_supplies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$parkingLotsGarages extends BlockedCategories {const BlockedCategories$parkingLotsGarages._();
+
+@override String get value => 'parking_lots_garages';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$parkingLotsGarages;
+
+@override int get hashCode => 'parking_lots_garages'.hashCode;
+
+ }
+@immutable final class BlockedCategories$passengerRailways extends BlockedCategories {const BlockedCategories$passengerRailways._();
+
+@override String get value => 'passenger_railways';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$passengerRailways;
+
+@override int get hashCode => 'passenger_railways'.hashCode;
+
+ }
+@immutable final class BlockedCategories$pawnShops extends BlockedCategories {const BlockedCategories$pawnShops._();
+
+@override String get value => 'pawn_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$pawnShops;
+
+@override int get hashCode => 'pawn_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$petShopsPetFoodAndSupplies extends BlockedCategories {const BlockedCategories$petShopsPetFoodAndSupplies._();
+
+@override String get value => 'pet_shops_pet_food_and_supplies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$petShopsPetFoodAndSupplies;
+
+@override int get hashCode => 'pet_shops_pet_food_and_supplies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$petroleumAndPetroleumProducts extends BlockedCategories {const BlockedCategories$petroleumAndPetroleumProducts._();
+
+@override String get value => 'petroleum_and_petroleum_products';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$petroleumAndPetroleumProducts;
+
+@override int get hashCode => 'petroleum_and_petroleum_products'.hashCode;
+
+ }
+@immutable final class BlockedCategories$photoDeveloping extends BlockedCategories {const BlockedCategories$photoDeveloping._();
+
+@override String get value => 'photo_developing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$photoDeveloping;
+
+@override int get hashCode => 'photo_developing'.hashCode;
+
+ }
+@immutable final class BlockedCategories$photographicPhotocopyMicrofilmEquipmentAndSupplies extends BlockedCategories {const BlockedCategories$photographicPhotocopyMicrofilmEquipmentAndSupplies._();
+
+@override String get value => 'photographic_photocopy_microfilm_equipment_and_supplies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$photographicPhotocopyMicrofilmEquipmentAndSupplies;
+
+@override int get hashCode => 'photographic_photocopy_microfilm_equipment_and_supplies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$photographicStudios extends BlockedCategories {const BlockedCategories$photographicStudios._();
+
+@override String get value => 'photographic_studios';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$photographicStudios;
+
+@override int get hashCode => 'photographic_studios'.hashCode;
+
+ }
+@immutable final class BlockedCategories$pictureVideoProduction extends BlockedCategories {const BlockedCategories$pictureVideoProduction._();
+
+@override String get value => 'picture_video_production';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$pictureVideoProduction;
+
+@override int get hashCode => 'picture_video_production'.hashCode;
+
+ }
+@immutable final class BlockedCategories$pieceGoodsNotionsAndOtherDryGoods extends BlockedCategories {const BlockedCategories$pieceGoodsNotionsAndOtherDryGoods._();
+
+@override String get value => 'piece_goods_notions_and_other_dry_goods';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$pieceGoodsNotionsAndOtherDryGoods;
+
+@override int get hashCode => 'piece_goods_notions_and_other_dry_goods'.hashCode;
+
+ }
+@immutable final class BlockedCategories$plumbingHeatingEquipmentAndSupplies extends BlockedCategories {const BlockedCategories$plumbingHeatingEquipmentAndSupplies._();
+
+@override String get value => 'plumbing_heating_equipment_and_supplies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$plumbingHeatingEquipmentAndSupplies;
+
+@override int get hashCode => 'plumbing_heating_equipment_and_supplies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$politicalOrganizations extends BlockedCategories {const BlockedCategories$politicalOrganizations._();
+
+@override String get value => 'political_organizations';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$politicalOrganizations;
+
+@override int get hashCode => 'political_organizations'.hashCode;
+
+ }
+@immutable final class BlockedCategories$postalServicesGovernmentOnly extends BlockedCategories {const BlockedCategories$postalServicesGovernmentOnly._();
+
+@override String get value => 'postal_services_government_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$postalServicesGovernmentOnly;
+
+@override int get hashCode => 'postal_services_government_only'.hashCode;
+
+ }
+@immutable final class BlockedCategories$preciousStonesAndMetalsWatchesAndJewelry extends BlockedCategories {const BlockedCategories$preciousStonesAndMetalsWatchesAndJewelry._();
+
+@override String get value => 'precious_stones_and_metals_watches_and_jewelry';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$preciousStonesAndMetalsWatchesAndJewelry;
+
+@override int get hashCode => 'precious_stones_and_metals_watches_and_jewelry'.hashCode;
+
+ }
+@immutable final class BlockedCategories$professionalServices extends BlockedCategories {const BlockedCategories$professionalServices._();
+
+@override String get value => 'professional_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$professionalServices;
+
+@override int get hashCode => 'professional_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$publicWarehousingAndStorage extends BlockedCategories {const BlockedCategories$publicWarehousingAndStorage._();
+
+@override String get value => 'public_warehousing_and_storage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$publicWarehousingAndStorage;
+
+@override int get hashCode => 'public_warehousing_and_storage'.hashCode;
+
+ }
+@immutable final class BlockedCategories$quickCopyReproAndBlueprint extends BlockedCategories {const BlockedCategories$quickCopyReproAndBlueprint._();
+
+@override String get value => 'quick_copy_repro_and_blueprint';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$quickCopyReproAndBlueprint;
+
+@override int get hashCode => 'quick_copy_repro_and_blueprint'.hashCode;
+
+ }
+@immutable final class BlockedCategories$railroads extends BlockedCategories {const BlockedCategories$railroads._();
+
+@override String get value => 'railroads';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$railroads;
+
+@override int get hashCode => 'railroads'.hashCode;
+
+ }
+@immutable final class BlockedCategories$realEstateAgentsAndManagersRentals extends BlockedCategories {const BlockedCategories$realEstateAgentsAndManagersRentals._();
+
+@override String get value => 'real_estate_agents_and_managers_rentals';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$realEstateAgentsAndManagersRentals;
+
+@override int get hashCode => 'real_estate_agents_and_managers_rentals'.hashCode;
+
+ }
+@immutable final class BlockedCategories$recordStores extends BlockedCategories {const BlockedCategories$recordStores._();
+
+@override String get value => 'record_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$recordStores;
+
+@override int get hashCode => 'record_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$recreationalVehicleRentals extends BlockedCategories {const BlockedCategories$recreationalVehicleRentals._();
+
+@override String get value => 'recreational_vehicle_rentals';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$recreationalVehicleRentals;
+
+@override int get hashCode => 'recreational_vehicle_rentals'.hashCode;
+
+ }
+@immutable final class BlockedCategories$religiousGoodsStores extends BlockedCategories {const BlockedCategories$religiousGoodsStores._();
+
+@override String get value => 'religious_goods_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$religiousGoodsStores;
+
+@override int get hashCode => 'religious_goods_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$religiousOrganizations extends BlockedCategories {const BlockedCategories$religiousOrganizations._();
+
+@override String get value => 'religious_organizations';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$religiousOrganizations;
+
+@override int get hashCode => 'religious_organizations'.hashCode;
+
+ }
+@immutable final class BlockedCategories$roofingSidingSheetMetal extends BlockedCategories {const BlockedCategories$roofingSidingSheetMetal._();
+
+@override String get value => 'roofing_siding_sheet_metal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$roofingSidingSheetMetal;
+
+@override int get hashCode => 'roofing_siding_sheet_metal'.hashCode;
+
+ }
+@immutable final class BlockedCategories$secretarialSupportServices extends BlockedCategories {const BlockedCategories$secretarialSupportServices._();
+
+@override String get value => 'secretarial_support_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$secretarialSupportServices;
+
+@override int get hashCode => 'secretarial_support_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$securityBrokersDealers extends BlockedCategories {const BlockedCategories$securityBrokersDealers._();
+
+@override String get value => 'security_brokers_dealers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$securityBrokersDealers;
+
+@override int get hashCode => 'security_brokers_dealers'.hashCode;
+
+ }
+@immutable final class BlockedCategories$serviceStations extends BlockedCategories {const BlockedCategories$serviceStations._();
+
+@override String get value => 'service_stations';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$serviceStations;
+
+@override int get hashCode => 'service_stations'.hashCode;
+
+ }
+@immutable final class BlockedCategories$sewingNeedleworkFabricAndPieceGoodsStores extends BlockedCategories {const BlockedCategories$sewingNeedleworkFabricAndPieceGoodsStores._();
+
+@override String get value => 'sewing_needlework_fabric_and_piece_goods_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$sewingNeedleworkFabricAndPieceGoodsStores;
+
+@override int get hashCode => 'sewing_needlework_fabric_and_piece_goods_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$shoeRepairHatCleaning extends BlockedCategories {const BlockedCategories$shoeRepairHatCleaning._();
+
+@override String get value => 'shoe_repair_hat_cleaning';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$shoeRepairHatCleaning;
+
+@override int get hashCode => 'shoe_repair_hat_cleaning'.hashCode;
+
+ }
+@immutable final class BlockedCategories$shoeStores extends BlockedCategories {const BlockedCategories$shoeStores._();
+
+@override String get value => 'shoe_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$shoeStores;
+
+@override int get hashCode => 'shoe_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$smallApplianceRepair extends BlockedCategories {const BlockedCategories$smallApplianceRepair._();
+
+@override String get value => 'small_appliance_repair';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$smallApplianceRepair;
+
+@override int get hashCode => 'small_appliance_repair'.hashCode;
+
+ }
+@immutable final class BlockedCategories$snowmobileDealers extends BlockedCategories {const BlockedCategories$snowmobileDealers._();
+
+@override String get value => 'snowmobile_dealers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$snowmobileDealers;
+
+@override int get hashCode => 'snowmobile_dealers'.hashCode;
+
+ }
+@immutable final class BlockedCategories$specialTradeServices extends BlockedCategories {const BlockedCategories$specialTradeServices._();
+
+@override String get value => 'special_trade_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$specialTradeServices;
+
+@override int get hashCode => 'special_trade_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$specialtyCleaning extends BlockedCategories {const BlockedCategories$specialtyCleaning._();
+
+@override String get value => 'specialty_cleaning';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$specialtyCleaning;
+
+@override int get hashCode => 'specialty_cleaning'.hashCode;
+
+ }
+@immutable final class BlockedCategories$sportingGoodsStores extends BlockedCategories {const BlockedCategories$sportingGoodsStores._();
+
+@override String get value => 'sporting_goods_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$sportingGoodsStores;
+
+@override int get hashCode => 'sporting_goods_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$sportingRecreationCamps extends BlockedCategories {const BlockedCategories$sportingRecreationCamps._();
+
+@override String get value => 'sporting_recreation_camps';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$sportingRecreationCamps;
+
+@override int get hashCode => 'sporting_recreation_camps'.hashCode;
+
+ }
+@immutable final class BlockedCategories$sportsAndRidingApparelStores extends BlockedCategories {const BlockedCategories$sportsAndRidingApparelStores._();
+
+@override String get value => 'sports_and_riding_apparel_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$sportsAndRidingApparelStores;
+
+@override int get hashCode => 'sports_and_riding_apparel_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$sportsClubsFields extends BlockedCategories {const BlockedCategories$sportsClubsFields._();
+
+@override String get value => 'sports_clubs_fields';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$sportsClubsFields;
+
+@override int get hashCode => 'sports_clubs_fields'.hashCode;
+
+ }
+@immutable final class BlockedCategories$stampAndCoinStores extends BlockedCategories {const BlockedCategories$stampAndCoinStores._();
+
+@override String get value => 'stamp_and_coin_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$stampAndCoinStores;
+
+@override int get hashCode => 'stamp_and_coin_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$stationaryOfficeSuppliesPrintingAndWritingPaper extends BlockedCategories {const BlockedCategories$stationaryOfficeSuppliesPrintingAndWritingPaper._();
+
+@override String get value => 'stationary_office_supplies_printing_and_writing_paper';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$stationaryOfficeSuppliesPrintingAndWritingPaper;
+
+@override int get hashCode => 'stationary_office_supplies_printing_and_writing_paper'.hashCode;
+
+ }
+@immutable final class BlockedCategories$stationeryStoresOfficeAndSchoolSupplyStores extends BlockedCategories {const BlockedCategories$stationeryStoresOfficeAndSchoolSupplyStores._();
+
+@override String get value => 'stationery_stores_office_and_school_supply_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$stationeryStoresOfficeAndSchoolSupplyStores;
+
+@override int get hashCode => 'stationery_stores_office_and_school_supply_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$swimmingPoolsSales extends BlockedCategories {const BlockedCategories$swimmingPoolsSales._();
+
+@override String get value => 'swimming_pools_sales';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$swimmingPoolsSales;
+
+@override int get hashCode => 'swimming_pools_sales'.hashCode;
+
+ }
+@immutable final class BlockedCategories$tUiTravelGermany extends BlockedCategories {const BlockedCategories$tUiTravelGermany._();
+
+@override String get value => 't_ui_travel_germany';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$tUiTravelGermany;
+
+@override int get hashCode => 't_ui_travel_germany'.hashCode;
+
+ }
+@immutable final class BlockedCategories$tailorsAlterations extends BlockedCategories {const BlockedCategories$tailorsAlterations._();
+
+@override String get value => 'tailors_alterations';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$tailorsAlterations;
+
+@override int get hashCode => 'tailors_alterations'.hashCode;
+
+ }
+@immutable final class BlockedCategories$taxPaymentsGovernmentAgencies extends BlockedCategories {const BlockedCategories$taxPaymentsGovernmentAgencies._();
+
+@override String get value => 'tax_payments_government_agencies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$taxPaymentsGovernmentAgencies;
+
+@override int get hashCode => 'tax_payments_government_agencies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$taxPreparationServices extends BlockedCategories {const BlockedCategories$taxPreparationServices._();
+
+@override String get value => 'tax_preparation_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$taxPreparationServices;
+
+@override int get hashCode => 'tax_preparation_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$taxicabsLimousines extends BlockedCategories {const BlockedCategories$taxicabsLimousines._();
+
+@override String get value => 'taxicabs_limousines';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$taxicabsLimousines;
+
+@override int get hashCode => 'taxicabs_limousines'.hashCode;
+
+ }
+@immutable final class BlockedCategories$telecommunicationEquipmentAndTelephoneSales extends BlockedCategories {const BlockedCategories$telecommunicationEquipmentAndTelephoneSales._();
+
+@override String get value => 'telecommunication_equipment_and_telephone_sales';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$telecommunicationEquipmentAndTelephoneSales;
+
+@override int get hashCode => 'telecommunication_equipment_and_telephone_sales'.hashCode;
+
+ }
+@immutable final class BlockedCategories$telecommunicationServices extends BlockedCategories {const BlockedCategories$telecommunicationServices._();
+
+@override String get value => 'telecommunication_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$telecommunicationServices;
+
+@override int get hashCode => 'telecommunication_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$telegraphServices extends BlockedCategories {const BlockedCategories$telegraphServices._();
+
+@override String get value => 'telegraph_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$telegraphServices;
+
+@override int get hashCode => 'telegraph_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$tentAndAwningShops extends BlockedCategories {const BlockedCategories$tentAndAwningShops._();
+
+@override String get value => 'tent_and_awning_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$tentAndAwningShops;
+
+@override int get hashCode => 'tent_and_awning_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$testingLaboratories extends BlockedCategories {const BlockedCategories$testingLaboratories._();
+
+@override String get value => 'testing_laboratories';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$testingLaboratories;
+
+@override int get hashCode => 'testing_laboratories'.hashCode;
+
+ }
+@immutable final class BlockedCategories$theatricalTicketAgencies extends BlockedCategories {const BlockedCategories$theatricalTicketAgencies._();
+
+@override String get value => 'theatrical_ticket_agencies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$theatricalTicketAgencies;
+
+@override int get hashCode => 'theatrical_ticket_agencies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$timeshares extends BlockedCategories {const BlockedCategories$timeshares._();
+
+@override String get value => 'timeshares';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$timeshares;
+
+@override int get hashCode => 'timeshares'.hashCode;
+
+ }
+@immutable final class BlockedCategories$tireRetreadingAndRepair extends BlockedCategories {const BlockedCategories$tireRetreadingAndRepair._();
+
+@override String get value => 'tire_retreading_and_repair';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$tireRetreadingAndRepair;
+
+@override int get hashCode => 'tire_retreading_and_repair'.hashCode;
+
+ }
+@immutable final class BlockedCategories$tollsBridgeFees extends BlockedCategories {const BlockedCategories$tollsBridgeFees._();
+
+@override String get value => 'tolls_bridge_fees';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$tollsBridgeFees;
+
+@override int get hashCode => 'tolls_bridge_fees'.hashCode;
+
+ }
+@immutable final class BlockedCategories$touristAttractionsAndExhibits extends BlockedCategories {const BlockedCategories$touristAttractionsAndExhibits._();
+
+@override String get value => 'tourist_attractions_and_exhibits';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$touristAttractionsAndExhibits;
+
+@override int get hashCode => 'tourist_attractions_and_exhibits'.hashCode;
+
+ }
+@immutable final class BlockedCategories$towingServices extends BlockedCategories {const BlockedCategories$towingServices._();
+
+@override String get value => 'towing_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$towingServices;
+
+@override int get hashCode => 'towing_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$trailerParksCampgrounds extends BlockedCategories {const BlockedCategories$trailerParksCampgrounds._();
+
+@override String get value => 'trailer_parks_campgrounds';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$trailerParksCampgrounds;
+
+@override int get hashCode => 'trailer_parks_campgrounds'.hashCode;
+
+ }
+@immutable final class BlockedCategories$transportationServices extends BlockedCategories {const BlockedCategories$transportationServices._();
+
+@override String get value => 'transportation_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$transportationServices;
+
+@override int get hashCode => 'transportation_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$travelAgenciesTourOperators extends BlockedCategories {const BlockedCategories$travelAgenciesTourOperators._();
+
+@override String get value => 'travel_agencies_tour_operators';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$travelAgenciesTourOperators;
+
+@override int get hashCode => 'travel_agencies_tour_operators'.hashCode;
+
+ }
+@immutable final class BlockedCategories$truckStopIteration extends BlockedCategories {const BlockedCategories$truckStopIteration._();
+
+@override String get value => 'truck_stop_iteration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$truckStopIteration;
+
+@override int get hashCode => 'truck_stop_iteration'.hashCode;
+
+ }
+@immutable final class BlockedCategories$truckUtilityTrailerRentals extends BlockedCategories {const BlockedCategories$truckUtilityTrailerRentals._();
+
+@override String get value => 'truck_utility_trailer_rentals';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$truckUtilityTrailerRentals;
+
+@override int get hashCode => 'truck_utility_trailer_rentals'.hashCode;
+
+ }
+@immutable final class BlockedCategories$typesettingPlateMakingAndRelatedServices extends BlockedCategories {const BlockedCategories$typesettingPlateMakingAndRelatedServices._();
+
+@override String get value => 'typesetting_plate_making_and_related_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$typesettingPlateMakingAndRelatedServices;
+
+@override int get hashCode => 'typesetting_plate_making_and_related_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$typewriterStores extends BlockedCategories {const BlockedCategories$typewriterStores._();
+
+@override String get value => 'typewriter_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$typewriterStores;
+
+@override int get hashCode => 'typewriter_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$uSFederalGovernmentAgenciesOrDepartments extends BlockedCategories {const BlockedCategories$uSFederalGovernmentAgenciesOrDepartments._();
+
+@override String get value => 'u_s_federal_government_agencies_or_departments';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$uSFederalGovernmentAgenciesOrDepartments;
+
+@override int get hashCode => 'u_s_federal_government_agencies_or_departments'.hashCode;
+
+ }
+@immutable final class BlockedCategories$uniformsCommercialClothing extends BlockedCategories {const BlockedCategories$uniformsCommercialClothing._();
+
+@override String get value => 'uniforms_commercial_clothing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$uniformsCommercialClothing;
+
+@override int get hashCode => 'uniforms_commercial_clothing'.hashCode;
+
+ }
+@immutable final class BlockedCategories$usedMerchandiseAndSecondhandStores extends BlockedCategories {const BlockedCategories$usedMerchandiseAndSecondhandStores._();
+
+@override String get value => 'used_merchandise_and_secondhand_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$usedMerchandiseAndSecondhandStores;
+
+@override int get hashCode => 'used_merchandise_and_secondhand_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$utilities extends BlockedCategories {const BlockedCategories$utilities._();
+
+@override String get value => 'utilities';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$utilities;
+
+@override int get hashCode => 'utilities'.hashCode;
+
+ }
+@immutable final class BlockedCategories$varietyStores extends BlockedCategories {const BlockedCategories$varietyStores._();
+
+@override String get value => 'variety_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$varietyStores;
+
+@override int get hashCode => 'variety_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$veterinaryServices extends BlockedCategories {const BlockedCategories$veterinaryServices._();
+
+@override String get value => 'veterinary_services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$veterinaryServices;
+
+@override int get hashCode => 'veterinary_services'.hashCode;
+
+ }
+@immutable final class BlockedCategories$videoAmusementGameSupplies extends BlockedCategories {const BlockedCategories$videoAmusementGameSupplies._();
+
+@override String get value => 'video_amusement_game_supplies';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$videoAmusementGameSupplies;
+
+@override int get hashCode => 'video_amusement_game_supplies'.hashCode;
+
+ }
+@immutable final class BlockedCategories$videoGameArcades extends BlockedCategories {const BlockedCategories$videoGameArcades._();
+
+@override String get value => 'video_game_arcades';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$videoGameArcades;
+
+@override int get hashCode => 'video_game_arcades'.hashCode;
+
+ }
+@immutable final class BlockedCategories$videoTapeRentalStores extends BlockedCategories {const BlockedCategories$videoTapeRentalStores._();
+
+@override String get value => 'video_tape_rental_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$videoTapeRentalStores;
+
+@override int get hashCode => 'video_tape_rental_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$vocationalTradeSchools extends BlockedCategories {const BlockedCategories$vocationalTradeSchools._();
+
+@override String get value => 'vocational_trade_schools';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$vocationalTradeSchools;
+
+@override int get hashCode => 'vocational_trade_schools'.hashCode;
+
+ }
+@immutable final class BlockedCategories$watchJewelryRepair extends BlockedCategories {const BlockedCategories$watchJewelryRepair._();
+
+@override String get value => 'watch_jewelry_repair';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$watchJewelryRepair;
+
+@override int get hashCode => 'watch_jewelry_repair'.hashCode;
+
+ }
+@immutable final class BlockedCategories$weldingRepair extends BlockedCategories {const BlockedCategories$weldingRepair._();
+
+@override String get value => 'welding_repair';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$weldingRepair;
+
+@override int get hashCode => 'welding_repair'.hashCode;
+
+ }
+@immutable final class BlockedCategories$wholesaleClubs extends BlockedCategories {const BlockedCategories$wholesaleClubs._();
+
+@override String get value => 'wholesale_clubs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$wholesaleClubs;
+
+@override int get hashCode => 'wholesale_clubs'.hashCode;
+
+ }
+@immutable final class BlockedCategories$wigAndToupeeStores extends BlockedCategories {const BlockedCategories$wigAndToupeeStores._();
+
+@override String get value => 'wig_and_toupee_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$wigAndToupeeStores;
+
+@override int get hashCode => 'wig_and_toupee_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$wiresMoneyOrders extends BlockedCategories {const BlockedCategories$wiresMoneyOrders._();
+
+@override String get value => 'wires_money_orders';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$wiresMoneyOrders;
+
+@override int get hashCode => 'wires_money_orders'.hashCode;
+
+ }
+@immutable final class BlockedCategories$womensAccessoryAndSpecialtyShops extends BlockedCategories {const BlockedCategories$womensAccessoryAndSpecialtyShops._();
+
+@override String get value => 'womens_accessory_and_specialty_shops';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$womensAccessoryAndSpecialtyShops;
+
+@override int get hashCode => 'womens_accessory_and_specialty_shops'.hashCode;
+
+ }
+@immutable final class BlockedCategories$womensReadyToWearStores extends BlockedCategories {const BlockedCategories$womensReadyToWearStores._();
+
+@override String get value => 'womens_ready_to_wear_stores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$womensReadyToWearStores;
+
+@override int get hashCode => 'womens_ready_to_wear_stores'.hashCode;
+
+ }
+@immutable final class BlockedCategories$wreckingAndSalvageYards extends BlockedCategories {const BlockedCategories$wreckingAndSalvageYards._();
+
+@override String get value => 'wrecking_and_salvage_yards';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockedCategories$wreckingAndSalvageYards;
+
+@override int get hashCode => 'wrecking_and_salvage_yards'.hashCode;
+
+ }
+@immutable final class BlockedCategories$Unknown extends BlockedCategories {const BlockedCategories$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BlockedCategories && other.value == value;
+    other is BlockedCategories$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BlockedCategories($value)';
 
  }

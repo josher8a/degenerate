@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleBranchNamePattern (inline: Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleBranchNamePatternType {const RepositoryRuleBranchNamePatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RepositoryRuleBranchNamePatternType {const RepositoryRuleBranchNamePatternType();
 
 factory RepositoryRuleBranchNamePatternType.fromJson(String json) { return switch (json) {
   'branch_name_pattern' => branchNamePattern,
-  _ => RepositoryRuleBranchNamePatternType._(json),
+  _ => RepositoryRuleBranchNamePatternType$Unknown(json),
 }; }
 
-static const RepositoryRuleBranchNamePatternType branchNamePattern = RepositoryRuleBranchNamePatternType._('branch_name_pattern');
+static const RepositoryRuleBranchNamePatternType branchNamePattern = RepositoryRuleBranchNamePatternType$branchNamePattern._();
 
 static const List<RepositoryRuleBranchNamePatternType> values = [branchNamePattern];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RepositoryRuleBranchNamePatternType$Unknown; } 
+@override String toString() => 'RepositoryRuleBranchNamePatternType($value)';
+
+ }
+@immutable final class RepositoryRuleBranchNamePatternType$branchNamePattern extends RepositoryRuleBranchNamePatternType {const RepositoryRuleBranchNamePatternType$branchNamePattern._();
+
+@override String get value => 'branch_name_pattern';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryRuleBranchNamePatternType$branchNamePattern;
+
+@override int get hashCode => 'branch_name_pattern'.hashCode;
+
+ }
+@immutable final class RepositoryRuleBranchNamePatternType$Unknown extends RepositoryRuleBranchNamePatternType {const RepositoryRuleBranchNamePatternType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleBranchNamePatternType && other.value == value;
+    other is RepositoryRuleBranchNamePatternType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleBranchNamePatternType($value)';
 
  }

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostTreasuryFinancialAccountsFinancialAccountRequest (inline: PlatformRestrictions)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PlatformRestrictionsInboundFlows {const PlatformRestrictionsInboundFlows._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PlatformRestrictionsInboundFlows {const PlatformRestrictionsInboundFlows();
 
 factory PlatformRestrictionsInboundFlows.fromJson(String json) { return switch (json) {
   'restricted' => restricted,
   'unrestricted' => unrestricted,
-  _ => PlatformRestrictionsInboundFlows._(json),
+  _ => PlatformRestrictionsInboundFlows$Unknown(json),
 }; }
 
-static const PlatformRestrictionsInboundFlows restricted = PlatformRestrictionsInboundFlows._('restricted');
+static const PlatformRestrictionsInboundFlows restricted = PlatformRestrictionsInboundFlows$restricted._();
 
-static const PlatformRestrictionsInboundFlows unrestricted = PlatformRestrictionsInboundFlows._('unrestricted');
+static const PlatformRestrictionsInboundFlows unrestricted = PlatformRestrictionsInboundFlows$unrestricted._();
 
 static const List<PlatformRestrictionsInboundFlows> values = [restricted, unrestricted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,31 +24,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PlatformRestrictionsInboundFlows && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PlatformRestrictionsInboundFlows$Unknown; } 
 @override String toString() => 'PlatformRestrictionsInboundFlows($value)';
 
  }
-@immutable final class PlatformRestrictionsOutboundFlows {const PlatformRestrictionsOutboundFlows._(this.value);
+@immutable final class PlatformRestrictionsInboundFlows$restricted extends PlatformRestrictionsInboundFlows {const PlatformRestrictionsInboundFlows$restricted._();
+
+@override String get value => 'restricted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PlatformRestrictionsInboundFlows$restricted;
+
+@override int get hashCode => 'restricted'.hashCode;
+
+ }
+@immutable final class PlatformRestrictionsInboundFlows$unrestricted extends PlatformRestrictionsInboundFlows {const PlatformRestrictionsInboundFlows$unrestricted._();
+
+@override String get value => 'unrestricted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PlatformRestrictionsInboundFlows$unrestricted;
+
+@override int get hashCode => 'unrestricted'.hashCode;
+
+ }
+@immutable final class PlatformRestrictionsInboundFlows$Unknown extends PlatformRestrictionsInboundFlows {const PlatformRestrictionsInboundFlows$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PlatformRestrictionsInboundFlows$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class PlatformRestrictionsOutboundFlows {const PlatformRestrictionsOutboundFlows();
 
 factory PlatformRestrictionsOutboundFlows.fromJson(String json) { return switch (json) {
   'restricted' => restricted,
   'unrestricted' => unrestricted,
-  _ => PlatformRestrictionsOutboundFlows._(json),
+  _ => PlatformRestrictionsOutboundFlows$Unknown(json),
 }; }
 
-static const PlatformRestrictionsOutboundFlows restricted = PlatformRestrictionsOutboundFlows._('restricted');
+static const PlatformRestrictionsOutboundFlows restricted = PlatformRestrictionsOutboundFlows$restricted._();
 
-static const PlatformRestrictionsOutboundFlows unrestricted = PlatformRestrictionsOutboundFlows._('unrestricted');
+static const PlatformRestrictionsOutboundFlows unrestricted = PlatformRestrictionsOutboundFlows$unrestricted._();
 
 static const List<PlatformRestrictionsOutboundFlows> values = [restricted, unrestricted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -58,13 +79,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PlatformRestrictionsOutboundFlows$Unknown; } 
+@override String toString() => 'PlatformRestrictionsOutboundFlows($value)';
+
+ }
+@immutable final class PlatformRestrictionsOutboundFlows$restricted extends PlatformRestrictionsOutboundFlows {const PlatformRestrictionsOutboundFlows$restricted._();
+
+@override String get value => 'restricted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PlatformRestrictionsOutboundFlows$restricted;
+
+@override int get hashCode => 'restricted'.hashCode;
+
+ }
+@immutable final class PlatformRestrictionsOutboundFlows$unrestricted extends PlatformRestrictionsOutboundFlows {const PlatformRestrictionsOutboundFlows$unrestricted._();
+
+@override String get value => 'unrestricted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PlatformRestrictionsOutboundFlows$unrestricted;
+
+@override int get hashCode => 'unrestricted'.hashCode;
+
+ }
+@immutable final class PlatformRestrictionsOutboundFlows$Unknown extends PlatformRestrictionsOutboundFlows {const PlatformRestrictionsOutboundFlows$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PlatformRestrictionsOutboundFlows && other.value == value;
+    other is PlatformRestrictionsOutboundFlows$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PlatformRestrictionsOutboundFlows($value)';
 
  }
 /// The set of functionalities that the platform can restrict on the FinancialAccount.

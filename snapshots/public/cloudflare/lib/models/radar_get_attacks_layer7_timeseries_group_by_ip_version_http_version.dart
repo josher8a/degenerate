@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion {const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion {const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion();
 
 factory RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion.fromJson(String json) { return switch (json) {
   'HTTPv1' => httPv1,
   'HTTPv2' => httPv2,
   'HTTPv3' => httPv3,
-  _ => RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion._(json),
+  _ => RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion httPv1 = RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion._('HTTPv1');
+static const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion httPv1 = RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$httPv1._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion httPv2 = RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion._('HTTPv2');
+static const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion httPv2 = RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$httPv2._();
 
-static const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion httPv3 = RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion._('HTTPv3');
+static const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion httPv3 = RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$httPv3._();
 
 static const List<RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion> values = [httPv1, httPv2, httPv3];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$httPv1 extends RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion {const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$httPv1._();
+
+@override String get value => 'HTTPv1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$httPv1;
+
+@override int get hashCode => 'HTTPv1'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$httPv2 extends RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion {const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$httPv2._();
+
+@override String get value => 'HTTPv2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$httPv2;
+
+@override int get hashCode => 'HTTPv2'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$httPv3 extends RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion {const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$httPv3._();
+
+@override String get value => 'HTTPv3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$httPv3;
+
+@override int get hashCode => 'HTTPv3'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$Unknown extends RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion {const RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion && other.value == value;
+    other is RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer7TimeseriesGroupByIpVersionHttpVersion($value)';
 
  }

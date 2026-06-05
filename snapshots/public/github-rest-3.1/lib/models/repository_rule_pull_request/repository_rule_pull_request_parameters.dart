@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRulePullRequest (inline: Parameters)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_params_required_reviewer_configuration.dart';@immutable final class AllowedMergeMethods {const AllowedMergeMethods._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/repository_rule_params_required_reviewer_configuration.dart';sealed class AllowedMergeMethods {const AllowedMergeMethods();
 
 factory AllowedMergeMethods.fromJson(String json) { return switch (json) {
   'merge' => merge,
   'squash' => squash,
   'rebase' => rebase,
-  _ => AllowedMergeMethods._(json),
+  _ => AllowedMergeMethods$Unknown(json),
 }; }
 
-static const AllowedMergeMethods merge = AllowedMergeMethods._('merge');
+static const AllowedMergeMethods merge = AllowedMergeMethods$merge._();
 
-static const AllowedMergeMethods squash = AllowedMergeMethods._('squash');
+static const AllowedMergeMethods squash = AllowedMergeMethods$squash._();
 
-static const AllowedMergeMethods rebase = AllowedMergeMethods._('rebase');
+static const AllowedMergeMethods rebase = AllowedMergeMethods$rebase._();
 
 static const List<AllowedMergeMethods> values = [merge, squash, rebase];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AllowedMergeMethods$Unknown; } 
+@override String toString() => 'AllowedMergeMethods($value)';
+
+ }
+@immutable final class AllowedMergeMethods$merge extends AllowedMergeMethods {const AllowedMergeMethods$merge._();
+
+@override String get value => 'merge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowedMergeMethods$merge;
+
+@override int get hashCode => 'merge'.hashCode;
+
+ }
+@immutable final class AllowedMergeMethods$squash extends AllowedMergeMethods {const AllowedMergeMethods$squash._();
+
+@override String get value => 'squash';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowedMergeMethods$squash;
+
+@override int get hashCode => 'squash'.hashCode;
+
+ }
+@immutable final class AllowedMergeMethods$rebase extends AllowedMergeMethods {const AllowedMergeMethods$rebase._();
+
+@override String get value => 'rebase';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowedMergeMethods$rebase;
+
+@override int get hashCode => 'rebase'.hashCode;
+
+ }
+@immutable final class AllowedMergeMethods$Unknown extends AllowedMergeMethods {const AllowedMergeMethods$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AllowedMergeMethods && other.value == value;
+    other is AllowedMergeMethods$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AllowedMergeMethods($value)';
 
  }
 @immutable final class RepositoryRulePullRequestParameters {const RepositoryRulePullRequestParameters({required this.dismissStaleReviewsOnPush, required this.requireCodeOwnerReview, required this.requireLastPushApproval, required this.requiredApprovingReviewCount, required this.requiredReviewThreadResolution, this.allowedMergeMethods, this.requiredReviewers, });

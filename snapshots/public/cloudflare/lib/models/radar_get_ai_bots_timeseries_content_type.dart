@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetAiBotsTimeseriesContentType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType();
 
 factory RadarGetAiBotsTimeseriesContentType.fromJson(String json) { return switch (json) {
   'HTML' => html,
@@ -20,45 +20,44 @@ factory RadarGetAiBotsTimeseriesContentType.fromJson(String json) { return switc
   'BINARY' => binary,
   'SERIALIZATION' => serialization,
   'OTHER' => $other,
-  _ => RadarGetAiBotsTimeseriesContentType._(json),
+  _ => RadarGetAiBotsTimeseriesContentType$Unknown(json),
 }; }
 
-static const RadarGetAiBotsTimeseriesContentType html = RadarGetAiBotsTimeseriesContentType._('HTML');
+static const RadarGetAiBotsTimeseriesContentType html = RadarGetAiBotsTimeseriesContentType$html._();
 
-static const RadarGetAiBotsTimeseriesContentType images = RadarGetAiBotsTimeseriesContentType._('IMAGES');
+static const RadarGetAiBotsTimeseriesContentType images = RadarGetAiBotsTimeseriesContentType$images._();
 
-static const RadarGetAiBotsTimeseriesContentType $json = RadarGetAiBotsTimeseriesContentType._('JSON');
+static const RadarGetAiBotsTimeseriesContentType $json = RadarGetAiBotsTimeseriesContentType$$json._();
 
-static const RadarGetAiBotsTimeseriesContentType javascript = RadarGetAiBotsTimeseriesContentType._('JAVASCRIPT');
+static const RadarGetAiBotsTimeseriesContentType javascript = RadarGetAiBotsTimeseriesContentType$javascript._();
 
-static const RadarGetAiBotsTimeseriesContentType css = RadarGetAiBotsTimeseriesContentType._('CSS');
+static const RadarGetAiBotsTimeseriesContentType css = RadarGetAiBotsTimeseriesContentType$css._();
 
-static const RadarGetAiBotsTimeseriesContentType plainText = RadarGetAiBotsTimeseriesContentType._('PLAIN_TEXT');
+static const RadarGetAiBotsTimeseriesContentType plainText = RadarGetAiBotsTimeseriesContentType$plainText._();
 
-static const RadarGetAiBotsTimeseriesContentType fonts = RadarGetAiBotsTimeseriesContentType._('FONTS');
+static const RadarGetAiBotsTimeseriesContentType fonts = RadarGetAiBotsTimeseriesContentType$fonts._();
 
-static const RadarGetAiBotsTimeseriesContentType xml = RadarGetAiBotsTimeseriesContentType._('XML');
+static const RadarGetAiBotsTimeseriesContentType xml = RadarGetAiBotsTimeseriesContentType$xml._();
 
-static const RadarGetAiBotsTimeseriesContentType yaml = RadarGetAiBotsTimeseriesContentType._('YAML');
+static const RadarGetAiBotsTimeseriesContentType yaml = RadarGetAiBotsTimeseriesContentType$yaml._();
 
-static const RadarGetAiBotsTimeseriesContentType video = RadarGetAiBotsTimeseriesContentType._('VIDEO');
+static const RadarGetAiBotsTimeseriesContentType video = RadarGetAiBotsTimeseriesContentType$video._();
 
-static const RadarGetAiBotsTimeseriesContentType audio = RadarGetAiBotsTimeseriesContentType._('AUDIO');
+static const RadarGetAiBotsTimeseriesContentType audio = RadarGetAiBotsTimeseriesContentType$audio._();
 
-static const RadarGetAiBotsTimeseriesContentType markdown = RadarGetAiBotsTimeseriesContentType._('MARKDOWN');
+static const RadarGetAiBotsTimeseriesContentType markdown = RadarGetAiBotsTimeseriesContentType$markdown._();
 
-static const RadarGetAiBotsTimeseriesContentType documents = RadarGetAiBotsTimeseriesContentType._('DOCUMENTS');
+static const RadarGetAiBotsTimeseriesContentType documents = RadarGetAiBotsTimeseriesContentType$documents._();
 
-static const RadarGetAiBotsTimeseriesContentType binary = RadarGetAiBotsTimeseriesContentType._('BINARY');
+static const RadarGetAiBotsTimeseriesContentType binary = RadarGetAiBotsTimeseriesContentType$binary._();
 
-static const RadarGetAiBotsTimeseriesContentType serialization = RadarGetAiBotsTimeseriesContentType._('SERIALIZATION');
+static const RadarGetAiBotsTimeseriesContentType serialization = RadarGetAiBotsTimeseriesContentType$serialization._();
 
-static const RadarGetAiBotsTimeseriesContentType $other = RadarGetAiBotsTimeseriesContentType._('OTHER');
+static const RadarGetAiBotsTimeseriesContentType $other = RadarGetAiBotsTimeseriesContentType$$other._();
 
 static const List<RadarGetAiBotsTimeseriesContentType> values = [html, images, $json, javascript, css, plainText, fonts, xml, yaml, video, audio, markdown, documents, binary, serialization, $other];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -81,12 +80,161 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAiBotsTimeseriesContentType$Unknown; } 
+@override String toString() => 'RadarGetAiBotsTimeseriesContentType($value)';
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$html extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$html._();
+
+@override String get value => 'HTML';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$html;
+
+@override int get hashCode => 'HTML'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$images extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$images._();
+
+@override String get value => 'IMAGES';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$images;
+
+@override int get hashCode => 'IMAGES'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$$json extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$javascript extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$javascript._();
+
+@override String get value => 'JAVASCRIPT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$javascript;
+
+@override int get hashCode => 'JAVASCRIPT'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$css extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$css._();
+
+@override String get value => 'CSS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$css;
+
+@override int get hashCode => 'CSS'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$plainText extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$plainText._();
+
+@override String get value => 'PLAIN_TEXT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$plainText;
+
+@override int get hashCode => 'PLAIN_TEXT'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$fonts extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$fonts._();
+
+@override String get value => 'FONTS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$fonts;
+
+@override int get hashCode => 'FONTS'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$xml extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$xml._();
+
+@override String get value => 'XML';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$xml;
+
+@override int get hashCode => 'XML'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$yaml extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$yaml._();
+
+@override String get value => 'YAML';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$yaml;
+
+@override int get hashCode => 'YAML'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$video extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$video._();
+
+@override String get value => 'VIDEO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$video;
+
+@override int get hashCode => 'VIDEO'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$audio extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$audio._();
+
+@override String get value => 'AUDIO';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$audio;
+
+@override int get hashCode => 'AUDIO'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$markdown extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$markdown._();
+
+@override String get value => 'MARKDOWN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$markdown;
+
+@override int get hashCode => 'MARKDOWN'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$documents extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$documents._();
+
+@override String get value => 'DOCUMENTS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$documents;
+
+@override int get hashCode => 'DOCUMENTS'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$binary extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$binary._();
+
+@override String get value => 'BINARY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$binary;
+
+@override int get hashCode => 'BINARY'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$serialization extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$serialization._();
+
+@override String get value => 'SERIALIZATION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$serialization;
+
+@override int get hashCode => 'SERIALIZATION'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$$other extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$$other._();
+
+@override String get value => 'OTHER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiBotsTimeseriesContentType$$other;
+
+@override int get hashCode => 'OTHER'.hashCode;
+
+ }
+@immutable final class RadarGetAiBotsTimeseriesContentType$Unknown extends RadarGetAiBotsTimeseriesContentType {const RadarGetAiBotsTimeseriesContentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAiBotsTimeseriesContentType && other.value == value;
+    other is RadarGetAiBotsTimeseriesContentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAiBotsTimeseriesContentType($value)';
 
  }

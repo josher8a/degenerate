@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WorkersErrorInternalServer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that an unknown internal server error has occurred.
-@immutable final class WorkersErrorInternalServerCode {const WorkersErrorInternalServerCode._(this.value);
+sealed class WorkersErrorInternalServerCode {const WorkersErrorInternalServerCode();
 
 factory WorkersErrorInternalServerCode.fromJson(int json) { return switch (json) {
   10002 => $10002,
-  _ => WorkersErrorInternalServerCode._(json),
+  _ => WorkersErrorInternalServerCode$Unknown(json),
 }; }
 
-static const WorkersErrorInternalServerCode $10002 = WorkersErrorInternalServerCode._(10002);
+static const WorkersErrorInternalServerCode $10002 = WorkersErrorInternalServerCode$$10002._();
 
 static const List<WorkersErrorInternalServerCode> values = [$10002];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersErrorInternalServerCode$Unknown; } 
+@override String toString() => 'WorkersErrorInternalServerCode($value)';
+
+ }
+@immutable final class WorkersErrorInternalServerCode$$10002 extends WorkersErrorInternalServerCode {const WorkersErrorInternalServerCode$$10002._();
+
+@override int get value => 10002;
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersErrorInternalServerCode$$10002;
+
+@override int get hashCode => 10002.hashCode;
+
+ }
+@immutable final class WorkersErrorInternalServerCode$Unknown extends WorkersErrorInternalServerCode {const WorkersErrorInternalServerCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersErrorInternalServerCode && other.value == value;
+    other is WorkersErrorInternalServerCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersErrorInternalServerCode($value)';
 
  }
 @immutable final class WorkersErrorInternalServer {const WorkersErrorInternalServer({required this.code, required this.message, });

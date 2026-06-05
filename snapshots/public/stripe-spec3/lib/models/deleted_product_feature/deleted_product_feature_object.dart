@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DeletedProductFeature (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class DeletedProductFeatureObject {const DeletedProductFeatureObject._(this.value);
+sealed class DeletedProductFeatureObject {const DeletedProductFeatureObject();
 
 factory DeletedProductFeatureObject.fromJson(String json) { return switch (json) {
   'product_feature' => productFeature,
-  _ => DeletedProductFeatureObject._(json),
+  _ => DeletedProductFeatureObject$Unknown(json),
 }; }
 
-static const DeletedProductFeatureObject productFeature = DeletedProductFeatureObject._('product_feature');
+static const DeletedProductFeatureObject productFeature = DeletedProductFeatureObject$productFeature._();
 
 static const List<DeletedProductFeatureObject> values = [productFeature];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeletedProductFeatureObject$Unknown; } 
+@override String toString() => 'DeletedProductFeatureObject($value)';
+
+ }
+@immutable final class DeletedProductFeatureObject$productFeature extends DeletedProductFeatureObject {const DeletedProductFeatureObject$productFeature._();
+
+@override String get value => 'product_feature';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeletedProductFeatureObject$productFeature;
+
+@override int get hashCode => 'product_feature'.hashCode;
+
+ }
+@immutable final class DeletedProductFeatureObject$Unknown extends DeletedProductFeatureObject {const DeletedProductFeatureObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeletedProductFeatureObject && other.value == value;
+    other is DeletedProductFeatureObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeletedProductFeatureObject($value)';
 
  }

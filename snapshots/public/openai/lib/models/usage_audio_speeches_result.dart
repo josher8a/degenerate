@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UsageAudioSpeechesResult
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageAudioSpeechesResultObject {const UsageAudioSpeechesResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageAudioSpeechesResultObject {const UsageAudioSpeechesResultObject();
 
 factory UsageAudioSpeechesResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.audio_speeches.result' => organizationUsageAudioSpeechesResult,
-  _ => UsageAudioSpeechesResultObject._(json),
+  _ => UsageAudioSpeechesResultObject$Unknown(json),
 }; }
 
-static const UsageAudioSpeechesResultObject organizationUsageAudioSpeechesResult = UsageAudioSpeechesResultObject._('organization.usage.audio_speeches.result');
+static const UsageAudioSpeechesResultObject organizationUsageAudioSpeechesResult = UsageAudioSpeechesResultObject$organizationUsageAudioSpeechesResult._();
 
 static const List<UsageAudioSpeechesResultObject> values = [organizationUsageAudioSpeechesResult];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UsageAudioSpeechesResultObject$Unknown; } 
+@override String toString() => 'UsageAudioSpeechesResultObject($value)';
+
+ }
+@immutable final class UsageAudioSpeechesResultObject$organizationUsageAudioSpeechesResult extends UsageAudioSpeechesResultObject {const UsageAudioSpeechesResultObject$organizationUsageAudioSpeechesResult._();
+
+@override String get value => 'organization.usage.audio_speeches.result';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageAudioSpeechesResultObject$organizationUsageAudioSpeechesResult;
+
+@override int get hashCode => 'organization.usage.audio_speeches.result'.hashCode;
+
+ }
+@immutable final class UsageAudioSpeechesResultObject$Unknown extends UsageAudioSpeechesResultObject {const UsageAudioSpeechesResultObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UsageAudioSpeechesResultObject && other.value == value;
+    other is UsageAudioSpeechesResultObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UsageAudioSpeechesResultObject($value)';
 
  }
 /// The aggregated audio speeches usage details of the specific time bucket.

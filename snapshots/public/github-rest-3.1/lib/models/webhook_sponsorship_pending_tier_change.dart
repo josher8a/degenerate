@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookSponsorshipPendingTierChange
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_changes8.dart';import 'package:pub_github_rest_3_1/models/webhooks_effective_date.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship.dart';@immutable final class WebhookSponsorshipPendingTierChangeAction {const WebhookSponsorshipPendingTierChangeAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_changes8.dart';import 'package:pub_github_rest_3_1/models/webhooks_effective_date.dart';import 'package:pub_github_rest_3_1/models/webhooks_sponsorship.dart';sealed class WebhookSponsorshipPendingTierChangeAction {const WebhookSponsorshipPendingTierChangeAction();
 
 factory WebhookSponsorshipPendingTierChangeAction.fromJson(String json) { return switch (json) {
   'pending_tier_change' => pendingTierChange,
-  _ => WebhookSponsorshipPendingTierChangeAction._(json),
+  _ => WebhookSponsorshipPendingTierChangeAction$Unknown(json),
 }; }
 
-static const WebhookSponsorshipPendingTierChangeAction pendingTierChange = WebhookSponsorshipPendingTierChangeAction._('pending_tier_change');
+static const WebhookSponsorshipPendingTierChangeAction pendingTierChange = WebhookSponsorshipPendingTierChangeAction$pendingTierChange._();
 
 static const List<WebhookSponsorshipPendingTierChangeAction> values = [pendingTierChange];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookSponsorshipPendingTierChangeAction$Unknown; } 
+@override String toString() => 'WebhookSponsorshipPendingTierChangeAction($value)';
+
+ }
+@immutable final class WebhookSponsorshipPendingTierChangeAction$pendingTierChange extends WebhookSponsorshipPendingTierChangeAction {const WebhookSponsorshipPendingTierChangeAction$pendingTierChange._();
+
+@override String get value => 'pending_tier_change';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookSponsorshipPendingTierChangeAction$pendingTierChange;
+
+@override int get hashCode => 'pending_tier_change'.hashCode;
+
+ }
+@immutable final class WebhookSponsorshipPendingTierChangeAction$Unknown extends WebhookSponsorshipPendingTierChangeAction {const WebhookSponsorshipPendingTierChangeAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookSponsorshipPendingTierChangeAction && other.value == value;
+    other is WebhookSponsorshipPendingTierChangeAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookSponsorshipPendingTierChangeAction($value)';
 
  }
 @immutable final class WebhookSponsorshipPendingTierChange {const WebhookSponsorshipPendingTierChange({required this.action, required this.changes, required this.sender, required this.sponsorship, this.effectiveDate, this.enterprise, this.installation, this.organization, this.repository, });

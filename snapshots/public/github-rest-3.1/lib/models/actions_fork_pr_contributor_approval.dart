@@ -2,25 +2,24 @@
 // Source: #/components/schemas/ActionsForkPrContributorApproval
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The policy that controls when fork PR workflows require approval from a maintainer.
-@immutable final class ApprovalPolicy {const ApprovalPolicy._(this.value);
+sealed class ApprovalPolicy {const ApprovalPolicy();
 
 factory ApprovalPolicy.fromJson(String json) { return switch (json) {
   'first_time_contributors_new_to_github' => firstTimeContributorsNewToGithub,
   'first_time_contributors' => firstTimeContributors,
   'all_external_contributors' => allExternalContributors,
-  _ => ApprovalPolicy._(json),
+  _ => ApprovalPolicy$Unknown(json),
 }; }
 
-static const ApprovalPolicy firstTimeContributorsNewToGithub = ApprovalPolicy._('first_time_contributors_new_to_github');
+static const ApprovalPolicy firstTimeContributorsNewToGithub = ApprovalPolicy$firstTimeContributorsNewToGithub._();
 
-static const ApprovalPolicy firstTimeContributors = ApprovalPolicy._('first_time_contributors');
+static const ApprovalPolicy firstTimeContributors = ApprovalPolicy$firstTimeContributors._();
 
-static const ApprovalPolicy allExternalContributors = ApprovalPolicy._('all_external_contributors');
+static const ApprovalPolicy allExternalContributors = ApprovalPolicy$allExternalContributors._();
 
 static const List<ApprovalPolicy> values = [firstTimeContributorsNewToGithub, firstTimeContributors, allExternalContributors];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ApprovalPolicy$Unknown; } 
+@override String toString() => 'ApprovalPolicy($value)';
+
+ }
+@immutable final class ApprovalPolicy$firstTimeContributorsNewToGithub extends ApprovalPolicy {const ApprovalPolicy$firstTimeContributorsNewToGithub._();
+
+@override String get value => 'first_time_contributors_new_to_github';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApprovalPolicy$firstTimeContributorsNewToGithub;
+
+@override int get hashCode => 'first_time_contributors_new_to_github'.hashCode;
+
+ }
+@immutable final class ApprovalPolicy$firstTimeContributors extends ApprovalPolicy {const ApprovalPolicy$firstTimeContributors._();
+
+@override String get value => 'first_time_contributors';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApprovalPolicy$firstTimeContributors;
+
+@override int get hashCode => 'first_time_contributors'.hashCode;
+
+ }
+@immutable final class ApprovalPolicy$allExternalContributors extends ApprovalPolicy {const ApprovalPolicy$allExternalContributors._();
+
+@override String get value => 'all_external_contributors';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApprovalPolicy$allExternalContributors;
+
+@override int get hashCode => 'all_external_contributors'.hashCode;
+
+ }
+@immutable final class ApprovalPolicy$Unknown extends ApprovalPolicy {const ApprovalPolicy$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ApprovalPolicy && other.value == value;
+    other is ApprovalPolicy$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ApprovalPolicy($value)';
 
  }
 @immutable final class ActionsForkPrContributorApproval {const ActionsForkPrContributorApproval({required this.approvalPolicy});

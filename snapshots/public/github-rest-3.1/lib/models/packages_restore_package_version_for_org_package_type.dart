@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PackagesRestorePackageVersionForOrgPackageType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PackagesRestorePackageVersionForOrgPackageType {const PackagesRestorePackageVersionForOrgPackageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PackagesRestorePackageVersionForOrgPackageType {const PackagesRestorePackageVersionForOrgPackageType();
 
 factory PackagesRestorePackageVersionForOrgPackageType.fromJson(String json) { return switch (json) {
   'npm' => npm,
@@ -10,25 +10,24 @@ factory PackagesRestorePackageVersionForOrgPackageType.fromJson(String json) { r
   'docker' => docker,
   'nuget' => nuget,
   'container' => container,
-  _ => PackagesRestorePackageVersionForOrgPackageType._(json),
+  _ => PackagesRestorePackageVersionForOrgPackageType$Unknown(json),
 }; }
 
-static const PackagesRestorePackageVersionForOrgPackageType npm = PackagesRestorePackageVersionForOrgPackageType._('npm');
+static const PackagesRestorePackageVersionForOrgPackageType npm = PackagesRestorePackageVersionForOrgPackageType$npm._();
 
-static const PackagesRestorePackageVersionForOrgPackageType maven = PackagesRestorePackageVersionForOrgPackageType._('maven');
+static const PackagesRestorePackageVersionForOrgPackageType maven = PackagesRestorePackageVersionForOrgPackageType$maven._();
 
-static const PackagesRestorePackageVersionForOrgPackageType rubygems = PackagesRestorePackageVersionForOrgPackageType._('rubygems');
+static const PackagesRestorePackageVersionForOrgPackageType rubygems = PackagesRestorePackageVersionForOrgPackageType$rubygems._();
 
-static const PackagesRestorePackageVersionForOrgPackageType docker = PackagesRestorePackageVersionForOrgPackageType._('docker');
+static const PackagesRestorePackageVersionForOrgPackageType docker = PackagesRestorePackageVersionForOrgPackageType$docker._();
 
-static const PackagesRestorePackageVersionForOrgPackageType nuget = PackagesRestorePackageVersionForOrgPackageType._('nuget');
+static const PackagesRestorePackageVersionForOrgPackageType nuget = PackagesRestorePackageVersionForOrgPackageType$nuget._();
 
-static const PackagesRestorePackageVersionForOrgPackageType container = PackagesRestorePackageVersionForOrgPackageType._('container');
+static const PackagesRestorePackageVersionForOrgPackageType container = PackagesRestorePackageVersionForOrgPackageType$container._();
 
 static const List<PackagesRestorePackageVersionForOrgPackageType> values = [npm, maven, rubygems, docker, nuget, container];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,12 +40,71 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PackagesRestorePackageVersionForOrgPackageType$Unknown; } 
+@override String toString() => 'PackagesRestorePackageVersionForOrgPackageType($value)';
+
+ }
+@immutable final class PackagesRestorePackageVersionForOrgPackageType$npm extends PackagesRestorePackageVersionForOrgPackageType {const PackagesRestorePackageVersionForOrgPackageType$npm._();
+
+@override String get value => 'npm';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesRestorePackageVersionForOrgPackageType$npm;
+
+@override int get hashCode => 'npm'.hashCode;
+
+ }
+@immutable final class PackagesRestorePackageVersionForOrgPackageType$maven extends PackagesRestorePackageVersionForOrgPackageType {const PackagesRestorePackageVersionForOrgPackageType$maven._();
+
+@override String get value => 'maven';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesRestorePackageVersionForOrgPackageType$maven;
+
+@override int get hashCode => 'maven'.hashCode;
+
+ }
+@immutable final class PackagesRestorePackageVersionForOrgPackageType$rubygems extends PackagesRestorePackageVersionForOrgPackageType {const PackagesRestorePackageVersionForOrgPackageType$rubygems._();
+
+@override String get value => 'rubygems';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesRestorePackageVersionForOrgPackageType$rubygems;
+
+@override int get hashCode => 'rubygems'.hashCode;
+
+ }
+@immutable final class PackagesRestorePackageVersionForOrgPackageType$docker extends PackagesRestorePackageVersionForOrgPackageType {const PackagesRestorePackageVersionForOrgPackageType$docker._();
+
+@override String get value => 'docker';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesRestorePackageVersionForOrgPackageType$docker;
+
+@override int get hashCode => 'docker'.hashCode;
+
+ }
+@immutable final class PackagesRestorePackageVersionForOrgPackageType$nuget extends PackagesRestorePackageVersionForOrgPackageType {const PackagesRestorePackageVersionForOrgPackageType$nuget._();
+
+@override String get value => 'nuget';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesRestorePackageVersionForOrgPackageType$nuget;
+
+@override int get hashCode => 'nuget'.hashCode;
+
+ }
+@immutable final class PackagesRestorePackageVersionForOrgPackageType$container extends PackagesRestorePackageVersionForOrgPackageType {const PackagesRestorePackageVersionForOrgPackageType$container._();
+
+@override String get value => 'container';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PackagesRestorePackageVersionForOrgPackageType$container;
+
+@override int get hashCode => 'container'.hashCode;
+
+ }
+@immutable final class PackagesRestorePackageVersionForOrgPackageType$Unknown extends PackagesRestorePackageVersionForOrgPackageType {const PackagesRestorePackageVersionForOrgPackageType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PackagesRestorePackageVersionForOrgPackageType && other.value == value;
+    other is PackagesRestorePackageVersionForOrgPackageType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PackagesRestorePackageVersionForOrgPackageType($value)';
 
  }

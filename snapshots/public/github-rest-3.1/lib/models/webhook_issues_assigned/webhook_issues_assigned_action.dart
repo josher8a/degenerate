@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WebhookIssuesAssigned (inline: Action)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action that was performed.
-@immutable final class WebhookIssuesAssignedAction {const WebhookIssuesAssignedAction._(this.value);
+sealed class WebhookIssuesAssignedAction {const WebhookIssuesAssignedAction();
 
 factory WebhookIssuesAssignedAction.fromJson(String json) { return switch (json) {
   'assigned' => assigned,
-  _ => WebhookIssuesAssignedAction._(json),
+  _ => WebhookIssuesAssignedAction$Unknown(json),
 }; }
 
-static const WebhookIssuesAssignedAction assigned = WebhookIssuesAssignedAction._('assigned');
+static const WebhookIssuesAssignedAction assigned = WebhookIssuesAssignedAction$assigned._();
 
 static const List<WebhookIssuesAssignedAction> values = [assigned];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookIssuesAssignedAction$Unknown; } 
+@override String toString() => 'WebhookIssuesAssignedAction($value)';
+
+ }
+@immutable final class WebhookIssuesAssignedAction$assigned extends WebhookIssuesAssignedAction {const WebhookIssuesAssignedAction$assigned._();
+
+@override String get value => 'assigned';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssuesAssignedAction$assigned;
+
+@override int get hashCode => 'assigned'.hashCode;
+
+ }
+@immutable final class WebhookIssuesAssignedAction$Unknown extends WebhookIssuesAssignedAction {const WebhookIssuesAssignedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookIssuesAssignedAction && other.value == value;
+    other is WebhookIssuesAssignedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookIssuesAssignedAction($value)';
 
  }

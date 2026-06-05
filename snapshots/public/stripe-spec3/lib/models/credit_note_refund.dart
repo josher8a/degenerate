@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CreditNoteRefund
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/credit_note_refund/credit_note_refund_refund.dart';import 'package:pub_stripe_spec3/models/credit_notes_payment_record_refund.dart';import 'package:pub_stripe_spec3/models/refund.dart';/// Type of the refund, one of `refund` or `payment_record_refund`.
-@immutable final class CreditNoteRefundType {const CreditNoteRefundType._(this.value);
+sealed class CreditNoteRefundType {const CreditNoteRefundType();
 
 factory CreditNoteRefundType.fromJson(String json) { return switch (json) {
   'payment_record_refund' => paymentRecordRefund,
   'refund' => refund,
-  _ => CreditNoteRefundType._(json),
+  _ => CreditNoteRefundType$Unknown(json),
 }; }
 
-static const CreditNoteRefundType paymentRecordRefund = CreditNoteRefundType._('payment_record_refund');
+static const CreditNoteRefundType paymentRecordRefund = CreditNoteRefundType$paymentRecordRefund._();
 
-static const CreditNoteRefundType refund = CreditNoteRefundType._('refund');
+static const CreditNoteRefundType refund = CreditNoteRefundType$refund._();
 
 static const List<CreditNoteRefundType> values = [paymentRecordRefund, refund];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreditNoteRefundType$Unknown; } 
+@override String toString() => 'CreditNoteRefundType($value)';
+
+ }
+@immutable final class CreditNoteRefundType$paymentRecordRefund extends CreditNoteRefundType {const CreditNoteRefundType$paymentRecordRefund._();
+
+@override String get value => 'payment_record_refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreditNoteRefundType$paymentRecordRefund;
+
+@override int get hashCode => 'payment_record_refund'.hashCode;
+
+ }
+@immutable final class CreditNoteRefundType$refund extends CreditNoteRefundType {const CreditNoteRefundType$refund._();
+
+@override String get value => 'refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreditNoteRefundType$refund;
+
+@override int get hashCode => 'refund'.hashCode;
+
+ }
+@immutable final class CreditNoteRefundType$Unknown extends CreditNoteRefundType {const CreditNoteRefundType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreditNoteRefundType && other.value == value;
+    other is CreditNoteRefundType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreditNoteRefundType($value)';
 
  }
 /// 

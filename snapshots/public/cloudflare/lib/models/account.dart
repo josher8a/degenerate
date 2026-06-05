@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Account
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account/account_settings.dart';@immutable final class AccountType {const AccountType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account/account_settings.dart';sealed class AccountType {const AccountType();
 
 factory AccountType.fromJson(String json) { return switch (json) {
   'standard' => standard,
   'enterprise' => enterprise,
-  _ => AccountType._(json),
+  _ => AccountType$Unknown(json),
 }; }
 
-static const AccountType standard = AccountType._('standard');
+static const AccountType standard = AccountType$standard._();
 
-static const AccountType enterprise = AccountType._('enterprise');
+static const AccountType enterprise = AccountType$enterprise._();
 
 static const List<AccountType> values = [standard, enterprise];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountType$Unknown; } 
+@override String toString() => 'AccountType($value)';
+
+ }
+@immutable final class AccountType$standard extends AccountType {const AccountType$standard._();
+
+@override String get value => 'standard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountType$standard;
+
+@override int get hashCode => 'standard'.hashCode;
+
+ }
+@immutable final class AccountType$enterprise extends AccountType {const AccountType$enterprise._();
+
+@override String get value => 'enterprise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountType$enterprise;
+
+@override int get hashCode => 'enterprise'.hashCode;
+
+ }
+@immutable final class AccountType$Unknown extends AccountType {const AccountType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountType && other.value == value;
+    other is AccountType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountType($value)';
 
  }
 @immutable final class Account {const Account({required this.createdOn, required this.id, required this.name, required this.settings, required this.type, });

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostChargesChargeRequest (inline: FraudDetails)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UserReport {const UserReport._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UserReport {const UserReport();
 
 factory UserReport.fromJson(String json) { return switch (json) {
   '' => $empty,
   'fraudulent' => fraudulent,
   'safe' => safe,
-  _ => UserReport._(json),
+  _ => UserReport$Unknown(json),
 }; }
 
-static const UserReport $empty = UserReport._('');
+static const UserReport $empty = UserReport$$empty._();
 
-static const UserReport fraudulent = UserReport._('fraudulent');
+static const UserReport fraudulent = UserReport$fraudulent._();
 
-static const UserReport safe = UserReport._('safe');
+static const UserReport safe = UserReport$safe._();
 
 static const List<UserReport> values = [$empty, fraudulent, safe];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UserReport$Unknown; } 
+@override String toString() => 'UserReport($value)';
+
+ }
+@immutable final class UserReport$$empty extends UserReport {const UserReport$$empty._();
+
+@override String get value => '';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserReport$$empty;
+
+@override int get hashCode => ''.hashCode;
+
+ }
+@immutable final class UserReport$fraudulent extends UserReport {const UserReport$fraudulent._();
+
+@override String get value => 'fraudulent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserReport$fraudulent;
+
+@override int get hashCode => 'fraudulent'.hashCode;
+
+ }
+@immutable final class UserReport$safe extends UserReport {const UserReport$safe._();
+
+@override String get value => 'safe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserReport$safe;
+
+@override int get hashCode => 'safe'.hashCode;
+
+ }
+@immutable final class UserReport$Unknown extends UserReport {const UserReport$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UserReport && other.value == value;
+    other is UserReport$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UserReport($value)';
 
  }
 /// A set of key-value pairs you can attach to a charge giving information about its riskiness. If you believe a charge is fraudulent, include a `user_report` key with a value of `fraudulent`. If you believe a charge is safe, include a `user_report` key with a value of `safe`. Stripe will use the information you send to improve our fraud detection algorithms.

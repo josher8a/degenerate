@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AiSearchInstanceChangeJobStatusRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AiSearchInstanceChangeJobStatusRequestAction {const AiSearchInstanceChangeJobStatusRequestAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AiSearchInstanceChangeJobStatusRequestAction {const AiSearchInstanceChangeJobStatusRequestAction();
 
 factory AiSearchInstanceChangeJobStatusRequestAction.fromJson(String json) { return switch (json) {
   'cancel' => cancel,
-  _ => AiSearchInstanceChangeJobStatusRequestAction._(json),
+  _ => AiSearchInstanceChangeJobStatusRequestAction$Unknown(json),
 }; }
 
-static const AiSearchInstanceChangeJobStatusRequestAction cancel = AiSearchInstanceChangeJobStatusRequestAction._('cancel');
+static const AiSearchInstanceChangeJobStatusRequestAction cancel = AiSearchInstanceChangeJobStatusRequestAction$cancel._();
 
 static const List<AiSearchInstanceChangeJobStatusRequestAction> values = [cancel];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AiSearchInstanceChangeJobStatusRequestAction$Unknown; } 
+@override String toString() => 'AiSearchInstanceChangeJobStatusRequestAction($value)';
+
+ }
+@immutable final class AiSearchInstanceChangeJobStatusRequestAction$cancel extends AiSearchInstanceChangeJobStatusRequestAction {const AiSearchInstanceChangeJobStatusRequestAction$cancel._();
+
+@override String get value => 'cancel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AiSearchInstanceChangeJobStatusRequestAction$cancel;
+
+@override int get hashCode => 'cancel'.hashCode;
+
+ }
+@immutable final class AiSearchInstanceChangeJobStatusRequestAction$Unknown extends AiSearchInstanceChangeJobStatusRequestAction {const AiSearchInstanceChangeJobStatusRequestAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AiSearchInstanceChangeJobStatusRequestAction && other.value == value;
+    other is AiSearchInstanceChangeJobStatusRequestAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AiSearchInstanceChangeJobStatusRequestAction($value)';
 
  }
 @immutable final class AiSearchInstanceChangeJobStatusRequest {const AiSearchInstanceChangeJobStatusRequest({required this.action});

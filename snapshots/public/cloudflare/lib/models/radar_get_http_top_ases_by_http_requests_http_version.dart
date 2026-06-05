@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTopAsesByHttpRequestsHttpVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByHttpRequestsHttpVersion {const RadarGetHttpTopAsesByHttpRequestsHttpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopAsesByHttpRequestsHttpVersion {const RadarGetHttpTopAsesByHttpRequestsHttpVersion();
 
 factory RadarGetHttpTopAsesByHttpRequestsHttpVersion.fromJson(String json) { return switch (json) {
   'HTTPv1' => httPv1,
   'HTTPv2' => httPv2,
   'HTTPv3' => httPv3,
-  _ => RadarGetHttpTopAsesByHttpRequestsHttpVersion._(json),
+  _ => RadarGetHttpTopAsesByHttpRequestsHttpVersion$Unknown(json),
 }; }
 
-static const RadarGetHttpTopAsesByHttpRequestsHttpVersion httPv1 = RadarGetHttpTopAsesByHttpRequestsHttpVersion._('HTTPv1');
+static const RadarGetHttpTopAsesByHttpRequestsHttpVersion httPv1 = RadarGetHttpTopAsesByHttpRequestsHttpVersion$httPv1._();
 
-static const RadarGetHttpTopAsesByHttpRequestsHttpVersion httPv2 = RadarGetHttpTopAsesByHttpRequestsHttpVersion._('HTTPv2');
+static const RadarGetHttpTopAsesByHttpRequestsHttpVersion httPv2 = RadarGetHttpTopAsesByHttpRequestsHttpVersion$httPv2._();
 
-static const RadarGetHttpTopAsesByHttpRequestsHttpVersion httPv3 = RadarGetHttpTopAsesByHttpRequestsHttpVersion._('HTTPv3');
+static const RadarGetHttpTopAsesByHttpRequestsHttpVersion httPv3 = RadarGetHttpTopAsesByHttpRequestsHttpVersion$httPv3._();
 
 static const List<RadarGetHttpTopAsesByHttpRequestsHttpVersion> values = [httPv1, httPv2, httPv3];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopAsesByHttpRequestsHttpVersion$Unknown; } 
+@override String toString() => 'RadarGetHttpTopAsesByHttpRequestsHttpVersion($value)';
+
+ }
+@immutable final class RadarGetHttpTopAsesByHttpRequestsHttpVersion$httPv1 extends RadarGetHttpTopAsesByHttpRequestsHttpVersion {const RadarGetHttpTopAsesByHttpRequestsHttpVersion$httPv1._();
+
+@override String get value => 'HTTPv1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByHttpRequestsHttpVersion$httPv1;
+
+@override int get hashCode => 'HTTPv1'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByHttpRequestsHttpVersion$httPv2 extends RadarGetHttpTopAsesByHttpRequestsHttpVersion {const RadarGetHttpTopAsesByHttpRequestsHttpVersion$httPv2._();
+
+@override String get value => 'HTTPv2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByHttpRequestsHttpVersion$httPv2;
+
+@override int get hashCode => 'HTTPv2'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByHttpRequestsHttpVersion$httPv3 extends RadarGetHttpTopAsesByHttpRequestsHttpVersion {const RadarGetHttpTopAsesByHttpRequestsHttpVersion$httPv3._();
+
+@override String get value => 'HTTPv3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByHttpRequestsHttpVersion$httPv3;
+
+@override int get hashCode => 'HTTPv3'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByHttpRequestsHttpVersion$Unknown extends RadarGetHttpTopAsesByHttpRequestsHttpVersion {const RadarGetHttpTopAsesByHttpRequestsHttpVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopAsesByHttpRequestsHttpVersion && other.value == value;
+    other is RadarGetHttpTopAsesByHttpRequestsHttpVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopAsesByHttpRequestsHttpVersion($value)';
 
  }

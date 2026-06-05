@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MconnEvent (inline: FinishRotatePkiSuccess)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Finished PKI rotation
-@immutable final class FinishRotatePkiSuccessK {const FinishRotatePkiSuccessK._(this.value);
+sealed class FinishRotatePkiSuccessK {const FinishRotatePkiSuccessK();
 
 factory FinishRotatePkiSuccessK.fromJson(String json) { return switch (json) {
   'FinishRotatePkiSuccess' => finishRotatePkiSuccess,
-  _ => FinishRotatePkiSuccessK._(json),
+  _ => FinishRotatePkiSuccessK$Unknown(json),
 }; }
 
-static const FinishRotatePkiSuccessK finishRotatePkiSuccess = FinishRotatePkiSuccessK._('FinishRotatePkiSuccess');
+static const FinishRotatePkiSuccessK finishRotatePkiSuccess = FinishRotatePkiSuccessK$finishRotatePkiSuccess._();
 
 static const List<FinishRotatePkiSuccessK> values = [finishRotatePkiSuccess];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FinishRotatePkiSuccessK$Unknown; } 
+@override String toString() => 'FinishRotatePkiSuccessK($value)';
+
+ }
+@immutable final class FinishRotatePkiSuccessK$finishRotatePkiSuccess extends FinishRotatePkiSuccessK {const FinishRotatePkiSuccessK$finishRotatePkiSuccess._();
+
+@override String get value => 'FinishRotatePkiSuccess';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinishRotatePkiSuccessK$finishRotatePkiSuccess;
+
+@override int get hashCode => 'FinishRotatePkiSuccess'.hashCode;
+
+ }
+@immutable final class FinishRotatePkiSuccessK$Unknown extends FinishRotatePkiSuccessK {const FinishRotatePkiSuccessK$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FinishRotatePkiSuccessK && other.value == value;
+    other is FinishRotatePkiSuccessK$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FinishRotatePkiSuccessK($value)';
 
  }
 @immutable final class FinishRotatePkiSuccess {const FinishRotatePkiSuccess({required this.k});

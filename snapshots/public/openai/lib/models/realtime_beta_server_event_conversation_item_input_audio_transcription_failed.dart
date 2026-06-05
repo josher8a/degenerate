@@ -4,19 +4,18 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_conversation_item_input_audio_transcription_failed/realtime_beta_server_event_conversation_item_input_audio_transcription_failed_error.dart';/// The event type, must be
 /// `conversation.item.input_audio_transcription.failed`.
 /// 
-@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType._(this.value);
+sealed class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType();
 
 factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType.fromJson(String json) { return switch (json) {
   'conversation.item.input_audio_transcription.failed' => conversationItemInputAudioTranscriptionFailed,
-  _ => RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType._(json),
+  _ => RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType conversationItemInputAudioTranscriptionFailed = RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType._('conversation.item.input_audio_transcription.failed');
+static const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType conversationItemInputAudioTranscriptionFailed = RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$conversationItemInputAudioTranscriptionFailed._();
 
 static const List<RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType> values = [conversationItemInputAudioTranscriptionFailed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -24,13 +23,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$conversationItemInputAudioTranscriptionFailed extends RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$conversationItemInputAudioTranscriptionFailed._();
+
+@override String get value => 'conversation.item.input_audio_transcription.failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$conversationItemInputAudioTranscriptionFailed;
+
+@override int get hashCode => 'conversation.item.input_audio_transcription.failed'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$Unknown extends RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType && other.value == value;
+    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType($value)';
 
  }
 /// Returned when input audio transcription is configured, and a transcription

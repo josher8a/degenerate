@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetBgpHijacksEventsFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetBgpHijacksEventsFormat {const RadarGetBgpHijacksEventsFormat._(this.value);
+sealed class RadarGetBgpHijacksEventsFormat {const RadarGetBgpHijacksEventsFormat();
 
 factory RadarGetBgpHijacksEventsFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetBgpHijacksEventsFormat._(json),
+  _ => RadarGetBgpHijacksEventsFormat$Unknown(json),
 }; }
 
-static const RadarGetBgpHijacksEventsFormat $json = RadarGetBgpHijacksEventsFormat._('JSON');
+static const RadarGetBgpHijacksEventsFormat $json = RadarGetBgpHijacksEventsFormat$$json._();
 
-static const RadarGetBgpHijacksEventsFormat csv = RadarGetBgpHijacksEventsFormat._('CSV');
+static const RadarGetBgpHijacksEventsFormat csv = RadarGetBgpHijacksEventsFormat$csv._();
 
 static const List<RadarGetBgpHijacksEventsFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetBgpHijacksEventsFormat$Unknown; } 
+@override String toString() => 'RadarGetBgpHijacksEventsFormat($value)';
+
+ }
+@immutable final class RadarGetBgpHijacksEventsFormat$$json extends RadarGetBgpHijacksEventsFormat {const RadarGetBgpHijacksEventsFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpHijacksEventsFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetBgpHijacksEventsFormat$csv extends RadarGetBgpHijacksEventsFormat {const RadarGetBgpHijacksEventsFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpHijacksEventsFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetBgpHijacksEventsFormat$Unknown extends RadarGetBgpHijacksEventsFormat {const RadarGetBgpHijacksEventsFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetBgpHijacksEventsFormat && other.value == value;
+    other is RadarGetBgpHijacksEventsFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetBgpHijacksEventsFormat($value)';
 
  }

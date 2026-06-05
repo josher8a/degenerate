@@ -2,25 +2,24 @@
 // Source: #/components/schemas/SetupIntent
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_application.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/errors.dart';import 'package:pub_stripe_spec3/models/inbound_transfers_payment_method_details_us_bank_account/inbound_transfers_payment_method_details_us_bank_account_mandate.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_payment_method_details/insights_resources_payment_evaluation_payment_method_details_payment_method.dart';import 'package:pub_stripe_spec3/models/mandate.dart';import 'package:pub_stripe_spec3/models/payment_flows_automatic_payment_methods_setup_intent.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_excluded_payment_method_types.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/payment_method_config_biz_payment_method_configuration_details.dart';import 'package:pub_stripe_spec3/models/post_setup_intents_intent_request/flow_directions.dart';import 'package:pub_stripe_spec3/models/setup_attempt.dart';import 'package:pub_stripe_spec3/models/setup_intent/latest_attempt.dart';import 'package:pub_stripe_spec3/models/setup_intent/single_use_mandate.dart';import 'package:pub_stripe_spec3/models/setup_intent_next_action.dart';import 'package:pub_stripe_spec3/models/setup_intent_payment_method_options.dart';/// Reason for cancellation of this SetupIntent, one of `abandoned`, `requested_by_customer`, or `duplicate`.
-@immutable final class SetupIntentCancellationReason {const SetupIntentCancellationReason._(this.value);
+sealed class SetupIntentCancellationReason {const SetupIntentCancellationReason();
 
 factory SetupIntentCancellationReason.fromJson(String json) { return switch (json) {
   'abandoned' => abandoned,
   'duplicate' => duplicate,
   'requested_by_customer' => requestedByCustomer,
-  _ => SetupIntentCancellationReason._(json),
+  _ => SetupIntentCancellationReason$Unknown(json),
 }; }
 
-static const SetupIntentCancellationReason abandoned = SetupIntentCancellationReason._('abandoned');
+static const SetupIntentCancellationReason abandoned = SetupIntentCancellationReason$abandoned._();
 
-static const SetupIntentCancellationReason duplicate = SetupIntentCancellationReason._('duplicate');
+static const SetupIntentCancellationReason duplicate = SetupIntentCancellationReason$duplicate._();
 
-static const SetupIntentCancellationReason requestedByCustomer = SetupIntentCancellationReason._('requested_by_customer');
+static const SetupIntentCancellationReason requestedByCustomer = SetupIntentCancellationReason$requestedByCustomer._();
 
 static const List<SetupIntentCancellationReason> values = [abandoned, duplicate, requestedByCustomer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,29 +29,60 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SetupIntentCancellationReason && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SetupIntentCancellationReason$Unknown; } 
 @override String toString() => 'SetupIntentCancellationReason($value)';
 
  }
+@immutable final class SetupIntentCancellationReason$abandoned extends SetupIntentCancellationReason {const SetupIntentCancellationReason$abandoned._();
+
+@override String get value => 'abandoned';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupIntentCancellationReason$abandoned;
+
+@override int get hashCode => 'abandoned'.hashCode;
+
+ }
+@immutable final class SetupIntentCancellationReason$duplicate extends SetupIntentCancellationReason {const SetupIntentCancellationReason$duplicate._();
+
+@override String get value => 'duplicate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupIntentCancellationReason$duplicate;
+
+@override int get hashCode => 'duplicate'.hashCode;
+
+ }
+@immutable final class SetupIntentCancellationReason$requestedByCustomer extends SetupIntentCancellationReason {const SetupIntentCancellationReason$requestedByCustomer._();
+
+@override String get value => 'requested_by_customer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupIntentCancellationReason$requestedByCustomer;
+
+@override int get hashCode => 'requested_by_customer'.hashCode;
+
+ }
+@immutable final class SetupIntentCancellationReason$Unknown extends SetupIntentCancellationReason {const SetupIntentCancellationReason$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SetupIntentCancellationReason$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class SetupIntentObject {const SetupIntentObject._(this.value);
+sealed class SetupIntentObject {const SetupIntentObject();
 
 factory SetupIntentObject.fromJson(String json) { return switch (json) {
   'setup_intent' => setupIntent,
-  _ => SetupIntentObject._(json),
+  _ => SetupIntentObject$Unknown(json),
 }; }
 
-static const SetupIntentObject setupIntent = SetupIntentObject._('setup_intent');
+static const SetupIntentObject setupIntent = SetupIntentObject$setupIntent._();
 
 static const List<SetupIntentObject> values = [setupIntent];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,17 +90,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SetupIntentObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SetupIntentObject$Unknown; } 
 @override String toString() => 'SetupIntentObject($value)';
 
  }
+@immutable final class SetupIntentObject$setupIntent extends SetupIntentObject {const SetupIntentObject$setupIntent._();
+
+@override String get value => 'setup_intent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupIntentObject$setupIntent;
+
+@override int get hashCode => 'setup_intent'.hashCode;
+
+ }
+@immutable final class SetupIntentObject$Unknown extends SetupIntentObject {const SetupIntentObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SetupIntentObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// [Status](https://docs.stripe.com/payments/intents#intent-statuses) of this SetupIntent, one of `requires_payment_method`, `requires_confirmation`, `requires_action`, `processing`, `canceled`, or `succeeded`.
-@immutable final class SetupIntentStatus {const SetupIntentStatus._(this.value);
+sealed class SetupIntentStatus {const SetupIntentStatus();
 
 factory SetupIntentStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -79,25 +123,24 @@ factory SetupIntentStatus.fromJson(String json) { return switch (json) {
   'requires_confirmation' => requiresConfirmation,
   'requires_payment_method' => requiresPaymentMethod,
   'succeeded' => succeeded,
-  _ => SetupIntentStatus._(json),
+  _ => SetupIntentStatus$Unknown(json),
 }; }
 
-static const SetupIntentStatus canceled = SetupIntentStatus._('canceled');
+static const SetupIntentStatus canceled = SetupIntentStatus$canceled._();
 
-static const SetupIntentStatus processing = SetupIntentStatus._('processing');
+static const SetupIntentStatus processing = SetupIntentStatus$processing._();
 
-static const SetupIntentStatus requiresAction = SetupIntentStatus._('requires_action');
+static const SetupIntentStatus requiresAction = SetupIntentStatus$requiresAction._();
 
-static const SetupIntentStatus requiresConfirmation = SetupIntentStatus._('requires_confirmation');
+static const SetupIntentStatus requiresConfirmation = SetupIntentStatus$requiresConfirmation._();
 
-static const SetupIntentStatus requiresPaymentMethod = SetupIntentStatus._('requires_payment_method');
+static const SetupIntentStatus requiresPaymentMethod = SetupIntentStatus$requiresPaymentMethod._();
 
-static const SetupIntentStatus succeeded = SetupIntentStatus._('succeeded');
+static const SetupIntentStatus succeeded = SetupIntentStatus$succeeded._();
 
 static const List<SetupIntentStatus> values = [canceled, processing, requiresAction, requiresConfirmation, requiresPaymentMethod, succeeded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -110,13 +153,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SetupIntentStatus$Unknown; } 
+@override String toString() => 'SetupIntentStatus($value)';
+
+ }
+@immutable final class SetupIntentStatus$canceled extends SetupIntentStatus {const SetupIntentStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupIntentStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class SetupIntentStatus$processing extends SetupIntentStatus {const SetupIntentStatus$processing._();
+
+@override String get value => 'processing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupIntentStatus$processing;
+
+@override int get hashCode => 'processing'.hashCode;
+
+ }
+@immutable final class SetupIntentStatus$requiresAction extends SetupIntentStatus {const SetupIntentStatus$requiresAction._();
+
+@override String get value => 'requires_action';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupIntentStatus$requiresAction;
+
+@override int get hashCode => 'requires_action'.hashCode;
+
+ }
+@immutable final class SetupIntentStatus$requiresConfirmation extends SetupIntentStatus {const SetupIntentStatus$requiresConfirmation._();
+
+@override String get value => 'requires_confirmation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupIntentStatus$requiresConfirmation;
+
+@override int get hashCode => 'requires_confirmation'.hashCode;
+
+ }
+@immutable final class SetupIntentStatus$requiresPaymentMethod extends SetupIntentStatus {const SetupIntentStatus$requiresPaymentMethod._();
+
+@override String get value => 'requires_payment_method';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupIntentStatus$requiresPaymentMethod;
+
+@override int get hashCode => 'requires_payment_method'.hashCode;
+
+ }
+@immutable final class SetupIntentStatus$succeeded extends SetupIntentStatus {const SetupIntentStatus$succeeded._();
+
+@override String get value => 'succeeded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupIntentStatus$succeeded;
+
+@override int get hashCode => 'succeeded'.hashCode;
+
+ }
+@immutable final class SetupIntentStatus$Unknown extends SetupIntentStatus {const SetupIntentStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SetupIntentStatus && other.value == value;
+    other is SetupIntentStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SetupIntentStatus($value)';
 
  }
 /// A SetupIntent guides you through the process of setting up and saving a customer's payment credentials for future payments.

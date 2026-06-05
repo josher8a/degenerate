@@ -2,28 +2,27 @@
 // Source: #/components/schemas/TeamsDevicesSentineloneS2sInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_input_request/teams_devices_crowdstrike_input_request_operator.dart';/// Network status of device.
-@immutable final class NetworkStatus {const NetworkStatus._(this.value);
+sealed class NetworkStatus {const NetworkStatus();
 
 factory NetworkStatus.fromJson(String json) { return switch (json) {
   'connected' => connected,
   'disconnected' => disconnected,
   'disconnecting' => disconnecting,
   'connecting' => connecting,
-  _ => NetworkStatus._(json),
+  _ => NetworkStatus$Unknown(json),
 }; }
 
-static const NetworkStatus connected = NetworkStatus._('connected');
+static const NetworkStatus connected = NetworkStatus$connected._();
 
-static const NetworkStatus disconnected = NetworkStatus._('disconnected');
+static const NetworkStatus disconnected = NetworkStatus$disconnected._();
 
-static const NetworkStatus disconnecting = NetworkStatus._('disconnecting');
+static const NetworkStatus disconnecting = NetworkStatus$disconnecting._();
 
-static const NetworkStatus connecting = NetworkStatus._('connecting');
+static const NetworkStatus connecting = NetworkStatus$connecting._();
 
 static const List<NetworkStatus> values = [connected, disconnected, disconnecting, connecting];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,17 +33,58 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is NetworkStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is NetworkStatus$Unknown; } 
 @override String toString() => 'NetworkStatus($value)';
 
  }
+@immutable final class NetworkStatus$connected extends NetworkStatus {const NetworkStatus$connected._();
+
+@override String get value => 'connected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkStatus$connected;
+
+@override int get hashCode => 'connected'.hashCode;
+
+ }
+@immutable final class NetworkStatus$disconnected extends NetworkStatus {const NetworkStatus$disconnected._();
+
+@override String get value => 'disconnected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkStatus$disconnected;
+
+@override int get hashCode => 'disconnected'.hashCode;
+
+ }
+@immutable final class NetworkStatus$disconnecting extends NetworkStatus {const NetworkStatus$disconnecting._();
+
+@override String get value => 'disconnecting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkStatus$disconnecting;
+
+@override int get hashCode => 'disconnecting'.hashCode;
+
+ }
+@immutable final class NetworkStatus$connecting extends NetworkStatus {const NetworkStatus$connecting._();
+
+@override String get value => 'connecting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NetworkStatus$connecting;
+
+@override int get hashCode => 'connecting'.hashCode;
+
+ }
+@immutable final class NetworkStatus$Unknown extends NetworkStatus {const NetworkStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is NetworkStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Agent operational state.
-@immutable final class OperationalState {const OperationalState._(this.value);
+sealed class OperationalState {const OperationalState();
 
 factory OperationalState.fromJson(String json) { return switch (json) {
   'na' => na,
@@ -54,27 +94,26 @@ factory OperationalState.fromJson(String json) { return switch (json) {
   'auto_partially_disabled' => autoPartiallyDisabled,
   'disabled_error' => disabledError,
   'db_corruption' => dbCorruption,
-  _ => OperationalState._(json),
+  _ => OperationalState$Unknown(json),
 }; }
 
-static const OperationalState na = OperationalState._('na');
+static const OperationalState na = OperationalState$na._();
 
-static const OperationalState partiallyDisabled = OperationalState._('partially_disabled');
+static const OperationalState partiallyDisabled = OperationalState$partiallyDisabled._();
 
-static const OperationalState autoFullyDisabled = OperationalState._('auto_fully_disabled');
+static const OperationalState autoFullyDisabled = OperationalState$autoFullyDisabled._();
 
-static const OperationalState fullyDisabled = OperationalState._('fully_disabled');
+static const OperationalState fullyDisabled = OperationalState$fullyDisabled._();
 
-static const OperationalState autoPartiallyDisabled = OperationalState._('auto_partially_disabled');
+static const OperationalState autoPartiallyDisabled = OperationalState$autoPartiallyDisabled._();
 
-static const OperationalState disabledError = OperationalState._('disabled_error');
+static const OperationalState disabledError = OperationalState$disabledError._();
 
-static const OperationalState dbCorruption = OperationalState._('db_corruption');
+static const OperationalState dbCorruption = OperationalState$dbCorruption._();
 
 static const List<OperationalState> values = [na, partiallyDisabled, autoFullyDisabled, fullyDisabled, autoPartiallyDisabled, disabledError, dbCorruption];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -88,13 +127,81 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OperationalState$Unknown; } 
+@override String toString() => 'OperationalState($value)';
+
+ }
+@immutable final class OperationalState$na extends OperationalState {const OperationalState$na._();
+
+@override String get value => 'na';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OperationalState$na;
+
+@override int get hashCode => 'na'.hashCode;
+
+ }
+@immutable final class OperationalState$partiallyDisabled extends OperationalState {const OperationalState$partiallyDisabled._();
+
+@override String get value => 'partially_disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OperationalState$partiallyDisabled;
+
+@override int get hashCode => 'partially_disabled'.hashCode;
+
+ }
+@immutable final class OperationalState$autoFullyDisabled extends OperationalState {const OperationalState$autoFullyDisabled._();
+
+@override String get value => 'auto_fully_disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OperationalState$autoFullyDisabled;
+
+@override int get hashCode => 'auto_fully_disabled'.hashCode;
+
+ }
+@immutable final class OperationalState$fullyDisabled extends OperationalState {const OperationalState$fullyDisabled._();
+
+@override String get value => 'fully_disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OperationalState$fullyDisabled;
+
+@override int get hashCode => 'fully_disabled'.hashCode;
+
+ }
+@immutable final class OperationalState$autoPartiallyDisabled extends OperationalState {const OperationalState$autoPartiallyDisabled._();
+
+@override String get value => 'auto_partially_disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OperationalState$autoPartiallyDisabled;
+
+@override int get hashCode => 'auto_partially_disabled'.hashCode;
+
+ }
+@immutable final class OperationalState$disabledError extends OperationalState {const OperationalState$disabledError._();
+
+@override String get value => 'disabled_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OperationalState$disabledError;
+
+@override int get hashCode => 'disabled_error'.hashCode;
+
+ }
+@immutable final class OperationalState$dbCorruption extends OperationalState {const OperationalState$dbCorruption._();
+
+@override String get value => 'db_corruption';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OperationalState$dbCorruption;
+
+@override int get hashCode => 'db_corruption'.hashCode;
+
+ }
+@immutable final class OperationalState$Unknown extends OperationalState {const OperationalState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OperationalState && other.value == value;
+    other is OperationalState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OperationalState($value)';
 
  }
 @immutable final class TeamsDevicesSentineloneS2sInputRequest {const TeamsDevicesSentineloneS2sInputRequest({required this.connectionId, this.activeThreats, this.infected, this.isActive, this.networkStatus, this.operationalState, this.$operator, });

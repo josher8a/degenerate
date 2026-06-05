@@ -2,19 +2,18 @@
 // Source: #/components/schemas/AccessScimConfigAuthenticationHttpBasic
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The authentication scheme to use when making SCIM requests to this application.
-@immutable final class AccessScimConfigAuthenticationHttpBasicScheme {const AccessScimConfigAuthenticationHttpBasicScheme._(this.value);
+sealed class AccessScimConfigAuthenticationHttpBasicScheme {const AccessScimConfigAuthenticationHttpBasicScheme();
 
 factory AccessScimConfigAuthenticationHttpBasicScheme.fromJson(String json) { return switch (json) {
   'httpbasic' => httpbasic,
-  _ => AccessScimConfigAuthenticationHttpBasicScheme._(json),
+  _ => AccessScimConfigAuthenticationHttpBasicScheme$Unknown(json),
 }; }
 
-static const AccessScimConfigAuthenticationHttpBasicScheme httpbasic = AccessScimConfigAuthenticationHttpBasicScheme._('httpbasic');
+static const AccessScimConfigAuthenticationHttpBasicScheme httpbasic = AccessScimConfigAuthenticationHttpBasicScheme$httpbasic._();
 
 static const List<AccessScimConfigAuthenticationHttpBasicScheme> values = [httpbasic];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccessScimConfigAuthenticationHttpBasicScheme$Unknown; } 
+@override String toString() => 'AccessScimConfigAuthenticationHttpBasicScheme($value)';
+
+ }
+@immutable final class AccessScimConfigAuthenticationHttpBasicScheme$httpbasic extends AccessScimConfigAuthenticationHttpBasicScheme {const AccessScimConfigAuthenticationHttpBasicScheme$httpbasic._();
+
+@override String get value => 'httpbasic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessScimConfigAuthenticationHttpBasicScheme$httpbasic;
+
+@override int get hashCode => 'httpbasic'.hashCode;
+
+ }
+@immutable final class AccessScimConfigAuthenticationHttpBasicScheme$Unknown extends AccessScimConfigAuthenticationHttpBasicScheme {const AccessScimConfigAuthenticationHttpBasicScheme$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccessScimConfigAuthenticationHttpBasicScheme && other.value == value;
+    other is AccessScimConfigAuthenticationHttpBasicScheme$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccessScimConfigAuthenticationHttpBasicScheme($value)';
 
  }
 /// Attributes for configuring HTTP Basic authentication scheme for SCIM provisioning to an application.

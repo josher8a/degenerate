@@ -2,25 +2,24 @@
 // Source: #/components/schemas/CodeScanningDefaultSetupOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to use labeled runners or standard GitHub runners.
-@immutable final class CodeScanningDefaultSetupOptionsRunnerType {const CodeScanningDefaultSetupOptionsRunnerType._(this.value);
+sealed class CodeScanningDefaultSetupOptionsRunnerType {const CodeScanningDefaultSetupOptionsRunnerType();
 
 factory CodeScanningDefaultSetupOptionsRunnerType.fromJson(String json) { return switch (json) {
   'standard' => standard,
   'labeled' => labeled,
   'not_set' => notSet,
-  _ => CodeScanningDefaultSetupOptionsRunnerType._(json),
+  _ => CodeScanningDefaultSetupOptionsRunnerType$Unknown(json),
 }; }
 
-static const CodeScanningDefaultSetupOptionsRunnerType standard = CodeScanningDefaultSetupOptionsRunnerType._('standard');
+static const CodeScanningDefaultSetupOptionsRunnerType standard = CodeScanningDefaultSetupOptionsRunnerType$standard._();
 
-static const CodeScanningDefaultSetupOptionsRunnerType labeled = CodeScanningDefaultSetupOptionsRunnerType._('labeled');
+static const CodeScanningDefaultSetupOptionsRunnerType labeled = CodeScanningDefaultSetupOptionsRunnerType$labeled._();
 
-static const CodeScanningDefaultSetupOptionsRunnerType notSet = CodeScanningDefaultSetupOptionsRunnerType._('not_set');
+static const CodeScanningDefaultSetupOptionsRunnerType notSet = CodeScanningDefaultSetupOptionsRunnerType$notSet._();
 
 static const List<CodeScanningDefaultSetupOptionsRunnerType> values = [standard, labeled, notSet];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeScanningDefaultSetupOptionsRunnerType$Unknown; } 
+@override String toString() => 'CodeScanningDefaultSetupOptionsRunnerType($value)';
+
+ }
+@immutable final class CodeScanningDefaultSetupOptionsRunnerType$standard extends CodeScanningDefaultSetupOptionsRunnerType {const CodeScanningDefaultSetupOptionsRunnerType$standard._();
+
+@override String get value => 'standard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupOptionsRunnerType$standard;
+
+@override int get hashCode => 'standard'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupOptionsRunnerType$labeled extends CodeScanningDefaultSetupOptionsRunnerType {const CodeScanningDefaultSetupOptionsRunnerType$labeled._();
+
+@override String get value => 'labeled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupOptionsRunnerType$labeled;
+
+@override int get hashCode => 'labeled'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupOptionsRunnerType$notSet extends CodeScanningDefaultSetupOptionsRunnerType {const CodeScanningDefaultSetupOptionsRunnerType$notSet._();
+
+@override String get value => 'not_set';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningDefaultSetupOptionsRunnerType$notSet;
+
+@override int get hashCode => 'not_set'.hashCode;
+
+ }
+@immutable final class CodeScanningDefaultSetupOptionsRunnerType$Unknown extends CodeScanningDefaultSetupOptionsRunnerType {const CodeScanningDefaultSetupOptionsRunnerType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeScanningDefaultSetupOptionsRunnerType && other.value == value;
+    other is CodeScanningDefaultSetupOptionsRunnerType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeScanningDefaultSetupOptionsRunnerType($value)';
 
  }
 /// Feature options for code scanning default setup

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RealtimeConversationItemMessageAssistant (inline: Content)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The content type, `output_text` or `output_audio` depending on the session `output_modalities` configuration.
-@immutable final class RealtimeConversationItemMessageAssistantContentType {const RealtimeConversationItemMessageAssistantContentType._(this.value);
+sealed class RealtimeConversationItemMessageAssistantContentType {const RealtimeConversationItemMessageAssistantContentType();
 
 factory RealtimeConversationItemMessageAssistantContentType.fromJson(String json) { return switch (json) {
   'output_text' => outputText,
   'output_audio' => outputAudio,
-  _ => RealtimeConversationItemMessageAssistantContentType._(json),
+  _ => RealtimeConversationItemMessageAssistantContentType$Unknown(json),
 }; }
 
-static const RealtimeConversationItemMessageAssistantContentType outputText = RealtimeConversationItemMessageAssistantContentType._('output_text');
+static const RealtimeConversationItemMessageAssistantContentType outputText = RealtimeConversationItemMessageAssistantContentType$outputText._();
 
-static const RealtimeConversationItemMessageAssistantContentType outputAudio = RealtimeConversationItemMessageAssistantContentType._('output_audio');
+static const RealtimeConversationItemMessageAssistantContentType outputAudio = RealtimeConversationItemMessageAssistantContentType$outputAudio._();
 
 static const List<RealtimeConversationItemMessageAssistantContentType> values = [outputText, outputAudio];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeConversationItemMessageAssistantContentType$Unknown; } 
+@override String toString() => 'RealtimeConversationItemMessageAssistantContentType($value)';
+
+ }
+@immutable final class RealtimeConversationItemMessageAssistantContentType$outputText extends RealtimeConversationItemMessageAssistantContentType {const RealtimeConversationItemMessageAssistantContentType$outputText._();
+
+@override String get value => 'output_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemMessageAssistantContentType$outputText;
+
+@override int get hashCode => 'output_text'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemMessageAssistantContentType$outputAudio extends RealtimeConversationItemMessageAssistantContentType {const RealtimeConversationItemMessageAssistantContentType$outputAudio._();
+
+@override String get value => 'output_audio';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemMessageAssistantContentType$outputAudio;
+
+@override int get hashCode => 'output_audio'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemMessageAssistantContentType$Unknown extends RealtimeConversationItemMessageAssistantContentType {const RealtimeConversationItemMessageAssistantContentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeConversationItemMessageAssistantContentType && other.value == value;
+    other is RealtimeConversationItemMessageAssistantContentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeConversationItemMessageAssistantContentType($value)';
 
  }
 @immutable final class RealtimeConversationItemMessageAssistantContent {const RealtimeConversationItemMessageAssistantContent({this.type, this.text, this.audio, this.transcript, });

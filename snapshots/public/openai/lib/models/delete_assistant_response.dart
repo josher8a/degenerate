@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DeleteAssistantResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteAssistantResponseObject {const DeleteAssistantResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DeleteAssistantResponseObject {const DeleteAssistantResponseObject();
 
 factory DeleteAssistantResponseObject.fromJson(String json) { return switch (json) {
   'assistant.deleted' => assistantDeleted,
-  _ => DeleteAssistantResponseObject._(json),
+  _ => DeleteAssistantResponseObject$Unknown(json),
 }; }
 
-static const DeleteAssistantResponseObject assistantDeleted = DeleteAssistantResponseObject._('assistant.deleted');
+static const DeleteAssistantResponseObject assistantDeleted = DeleteAssistantResponseObject$assistantDeleted._();
 
 static const List<DeleteAssistantResponseObject> values = [assistantDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeleteAssistantResponseObject$Unknown; } 
+@override String toString() => 'DeleteAssistantResponseObject($value)';
+
+ }
+@immutable final class DeleteAssistantResponseObject$assistantDeleted extends DeleteAssistantResponseObject {const DeleteAssistantResponseObject$assistantDeleted._();
+
+@override String get value => 'assistant.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeleteAssistantResponseObject$assistantDeleted;
+
+@override int get hashCode => 'assistant.deleted'.hashCode;
+
+ }
+@immutable final class DeleteAssistantResponseObject$Unknown extends DeleteAssistantResponseObject {const DeleteAssistantResponseObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeleteAssistantResponseObject && other.value == value;
+    other is DeleteAssistantResponseObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeleteAssistantResponseObject($value)';
 
  }
 @immutable final class DeleteAssistantResponse {const DeleteAssistantResponse({required this.id, required this.deleted, required this.object, });

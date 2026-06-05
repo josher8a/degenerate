@@ -2,25 +2,24 @@
 // Source: #/components/schemas/ObjectWithEnumInResponseOnly
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enum used only in responses - should be automatically opened
-@immutable final class EnumUsedInResponseOnly {const EnumUsedInResponseOnly._(this.value);
+sealed class EnumUsedInResponseOnly {const EnumUsedInResponseOnly();
 
 factory EnumUsedInResponseOnly.fromJson(String json) { return switch (json) {
   'success' => success,
   'pending' => pending,
   'failed' => failed,
-  _ => EnumUsedInResponseOnly._(json),
+  _ => EnumUsedInResponseOnly$Unknown(json),
 }; }
 
-static const EnumUsedInResponseOnly success = EnumUsedInResponseOnly._('success');
+static const EnumUsedInResponseOnly success = EnumUsedInResponseOnly$success._();
 
-static const EnumUsedInResponseOnly pending = EnumUsedInResponseOnly._('pending');
+static const EnumUsedInResponseOnly pending = EnumUsedInResponseOnly$pending._();
 
-static const EnumUsedInResponseOnly failed = EnumUsedInResponseOnly._('failed');
+static const EnumUsedInResponseOnly failed = EnumUsedInResponseOnly$failed._();
 
 static const List<EnumUsedInResponseOnly> values = [success, pending, failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EnumUsedInResponseOnly$Unknown; } 
+@override String toString() => 'EnumUsedInResponseOnly($value)';
+
+ }
+@immutable final class EnumUsedInResponseOnly$success extends EnumUsedInResponseOnly {const EnumUsedInResponseOnly$success._();
+
+@override String get value => 'success';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumUsedInResponseOnly$success;
+
+@override int get hashCode => 'success'.hashCode;
+
+ }
+@immutable final class EnumUsedInResponseOnly$pending extends EnumUsedInResponseOnly {const EnumUsedInResponseOnly$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumUsedInResponseOnly$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class EnumUsedInResponseOnly$failed extends EnumUsedInResponseOnly {const EnumUsedInResponseOnly$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumUsedInResponseOnly$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class EnumUsedInResponseOnly$Unknown extends EnumUsedInResponseOnly {const EnumUsedInResponseOnly$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EnumUsedInResponseOnly && other.value == value;
+    other is EnumUsedInResponseOnly$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EnumUsedInResponseOnly($value)';
 
  }
 @immutable final class ObjectWithEnumInResponseOnly {const ObjectWithEnumInResponseOnly({required this.status, this.message, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ApplyPatchUpdateFileOperation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Update an existing file with the provided diff.
-@immutable final class ApplyPatchUpdateFileOperationType {const ApplyPatchUpdateFileOperationType._(this.value);
+sealed class ApplyPatchUpdateFileOperationType {const ApplyPatchUpdateFileOperationType();
 
 factory ApplyPatchUpdateFileOperationType.fromJson(String json) { return switch (json) {
   'update_file' => updateFile,
-  _ => ApplyPatchUpdateFileOperationType._(json),
+  _ => ApplyPatchUpdateFileOperationType$Unknown(json),
 }; }
 
-static const ApplyPatchUpdateFileOperationType updateFile = ApplyPatchUpdateFileOperationType._('update_file');
+static const ApplyPatchUpdateFileOperationType updateFile = ApplyPatchUpdateFileOperationType$updateFile._();
 
 static const List<ApplyPatchUpdateFileOperationType> values = [updateFile];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ApplyPatchUpdateFileOperationType$Unknown; } 
+@override String toString() => 'ApplyPatchUpdateFileOperationType($value)';
+
+ }
+@immutable final class ApplyPatchUpdateFileOperationType$updateFile extends ApplyPatchUpdateFileOperationType {const ApplyPatchUpdateFileOperationType$updateFile._();
+
+@override String get value => 'update_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApplyPatchUpdateFileOperationType$updateFile;
+
+@override int get hashCode => 'update_file'.hashCode;
+
+ }
+@immutable final class ApplyPatchUpdateFileOperationType$Unknown extends ApplyPatchUpdateFileOperationType {const ApplyPatchUpdateFileOperationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ApplyPatchUpdateFileOperationType && other.value == value;
+    other is ApplyPatchUpdateFileOperationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ApplyPatchUpdateFileOperationType($value)';
 
  }
 /// Instruction describing how to update a file via the apply_patch tool.

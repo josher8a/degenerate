@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PaymentLinksResourceConsentCollection (inline: TermsOfService)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// If set to `required`, it requires cutomers to accept the terms of service before being able to pay. If set to `none`, customers won't be shown a checkbox to accept the terms of service.
-@immutable final class PaymentLinksResourceConsentCollectionTermsOfService {const PaymentLinksResourceConsentCollectionTermsOfService._(this.value);
+sealed class PaymentLinksResourceConsentCollectionTermsOfService {const PaymentLinksResourceConsentCollectionTermsOfService();
 
 factory PaymentLinksResourceConsentCollectionTermsOfService.fromJson(String json) { return switch (json) {
   'none' => none,
   'required' => $required,
-  _ => PaymentLinksResourceConsentCollectionTermsOfService._(json),
+  _ => PaymentLinksResourceConsentCollectionTermsOfService$Unknown(json),
 }; }
 
-static const PaymentLinksResourceConsentCollectionTermsOfService none = PaymentLinksResourceConsentCollectionTermsOfService._('none');
+static const PaymentLinksResourceConsentCollectionTermsOfService none = PaymentLinksResourceConsentCollectionTermsOfService$none._();
 
-static const PaymentLinksResourceConsentCollectionTermsOfService $required = PaymentLinksResourceConsentCollectionTermsOfService._('required');
+static const PaymentLinksResourceConsentCollectionTermsOfService $required = PaymentLinksResourceConsentCollectionTermsOfService$$required._();
 
 static const List<PaymentLinksResourceConsentCollectionTermsOfService> values = [none, $required];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentLinksResourceConsentCollectionTermsOfService$Unknown; } 
+@override String toString() => 'PaymentLinksResourceConsentCollectionTermsOfService($value)';
+
+ }
+@immutable final class PaymentLinksResourceConsentCollectionTermsOfService$none extends PaymentLinksResourceConsentCollectionTermsOfService {const PaymentLinksResourceConsentCollectionTermsOfService$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinksResourceConsentCollectionTermsOfService$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class PaymentLinksResourceConsentCollectionTermsOfService$$required extends PaymentLinksResourceConsentCollectionTermsOfService {const PaymentLinksResourceConsentCollectionTermsOfService$$required._();
+
+@override String get value => 'required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentLinksResourceConsentCollectionTermsOfService$$required;
+
+@override int get hashCode => 'required'.hashCode;
+
+ }
+@immutable final class PaymentLinksResourceConsentCollectionTermsOfService$Unknown extends PaymentLinksResourceConsentCollectionTermsOfService {const PaymentLinksResourceConsentCollectionTermsOfService$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentLinksResourceConsentCollectionTermsOfService && other.value == value;
+    other is PaymentLinksResourceConsentCollectionTermsOfService$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentLinksResourceConsentCollectionTermsOfService($value)';
 
  }

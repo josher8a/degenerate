@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RunStepObject (inline: LastError)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `server_error` or `rate_limit_exceeded`.
-@immutable final class RunStepObjectLastErrorCode {const RunStepObjectLastErrorCode._(this.value);
+sealed class RunStepObjectLastErrorCode {const RunStepObjectLastErrorCode();
 
 factory RunStepObjectLastErrorCode.fromJson(String json) { return switch (json) {
   'server_error' => serverError,
   'rate_limit_exceeded' => rateLimitExceeded,
-  _ => RunStepObjectLastErrorCode._(json),
+  _ => RunStepObjectLastErrorCode$Unknown(json),
 }; }
 
-static const RunStepObjectLastErrorCode serverError = RunStepObjectLastErrorCode._('server_error');
+static const RunStepObjectLastErrorCode serverError = RunStepObjectLastErrorCode$serverError._();
 
-static const RunStepObjectLastErrorCode rateLimitExceeded = RunStepObjectLastErrorCode._('rate_limit_exceeded');
+static const RunStepObjectLastErrorCode rateLimitExceeded = RunStepObjectLastErrorCode$rateLimitExceeded._();
 
 static const List<RunStepObjectLastErrorCode> values = [serverError, rateLimitExceeded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RunStepObjectLastErrorCode$Unknown; } 
+@override String toString() => 'RunStepObjectLastErrorCode($value)';
+
+ }
+@immutable final class RunStepObjectLastErrorCode$serverError extends RunStepObjectLastErrorCode {const RunStepObjectLastErrorCode$serverError._();
+
+@override String get value => 'server_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunStepObjectLastErrorCode$serverError;
+
+@override int get hashCode => 'server_error'.hashCode;
+
+ }
+@immutable final class RunStepObjectLastErrorCode$rateLimitExceeded extends RunStepObjectLastErrorCode {const RunStepObjectLastErrorCode$rateLimitExceeded._();
+
+@override String get value => 'rate_limit_exceeded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunStepObjectLastErrorCode$rateLimitExceeded;
+
+@override int get hashCode => 'rate_limit_exceeded'.hashCode;
+
+ }
+@immutable final class RunStepObjectLastErrorCode$Unknown extends RunStepObjectLastErrorCode {const RunStepObjectLastErrorCode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RunStepObjectLastErrorCode && other.value == value;
+    other is RunStepObjectLastErrorCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RunStepObjectLastErrorCode($value)';
 
  }
 /// The last error associated with this run step. Will be `null` if there are no errors.

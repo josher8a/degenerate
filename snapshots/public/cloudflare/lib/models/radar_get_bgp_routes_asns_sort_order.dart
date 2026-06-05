@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetBgpRoutesAsnsSortOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sort order.
-@immutable final class RadarGetBgpRoutesAsnsSortOrder {const RadarGetBgpRoutesAsnsSortOrder._(this.value);
+sealed class RadarGetBgpRoutesAsnsSortOrder {const RadarGetBgpRoutesAsnsSortOrder();
 
 factory RadarGetBgpRoutesAsnsSortOrder.fromJson(String json) { return switch (json) {
   'ASC' => asc,
   'DESC' => desc,
-  _ => RadarGetBgpRoutesAsnsSortOrder._(json),
+  _ => RadarGetBgpRoutesAsnsSortOrder$Unknown(json),
 }; }
 
-static const RadarGetBgpRoutesAsnsSortOrder asc = RadarGetBgpRoutesAsnsSortOrder._('ASC');
+static const RadarGetBgpRoutesAsnsSortOrder asc = RadarGetBgpRoutesAsnsSortOrder$asc._();
 
-static const RadarGetBgpRoutesAsnsSortOrder desc = RadarGetBgpRoutesAsnsSortOrder._('DESC');
+static const RadarGetBgpRoutesAsnsSortOrder desc = RadarGetBgpRoutesAsnsSortOrder$desc._();
 
 static const List<RadarGetBgpRoutesAsnsSortOrder> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetBgpRoutesAsnsSortOrder$Unknown; } 
+@override String toString() => 'RadarGetBgpRoutesAsnsSortOrder($value)';
+
+ }
+@immutable final class RadarGetBgpRoutesAsnsSortOrder$asc extends RadarGetBgpRoutesAsnsSortOrder {const RadarGetBgpRoutesAsnsSortOrder$asc._();
+
+@override String get value => 'ASC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpRoutesAsnsSortOrder$asc;
+
+@override int get hashCode => 'ASC'.hashCode;
+
+ }
+@immutable final class RadarGetBgpRoutesAsnsSortOrder$desc extends RadarGetBgpRoutesAsnsSortOrder {const RadarGetBgpRoutesAsnsSortOrder$desc._();
+
+@override String get value => 'DESC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpRoutesAsnsSortOrder$desc;
+
+@override int get hashCode => 'DESC'.hashCode;
+
+ }
+@immutable final class RadarGetBgpRoutesAsnsSortOrder$Unknown extends RadarGetBgpRoutesAsnsSortOrder {const RadarGetBgpRoutesAsnsSortOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetBgpRoutesAsnsSortOrder && other.value == value;
+    other is RadarGetBgpRoutesAsnsSortOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetBgpRoutesAsnsSortOrder($value)';
 
  }

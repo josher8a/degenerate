@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FundingInstructionsBankTransferFinancialAddress
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_aba_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_iban_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_sort_code_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_spei_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_swift_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_zengin_record.dart';@immutable final class FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_aba_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_iban_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_sort_code_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_spei_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_swift_record.dart';import 'package:pub_stripe_spec3/models/funding_instructions_bank_transfer_zengin_record.dart';sealed class FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks();
 
 factory FundingInstructionsBankTransferFinancialAddressSupportedNetworks.fromJson(String json) { return switch (json) {
   'ach' => ach,
@@ -12,29 +12,28 @@ factory FundingInstructionsBankTransferFinancialAddressSupportedNetworks.fromJso
   'spei' => spei,
   'swift' => swift,
   'zengin' => zengin,
-  _ => FundingInstructionsBankTransferFinancialAddressSupportedNetworks._(json),
+  _ => FundingInstructionsBankTransferFinancialAddressSupportedNetworks$Unknown(json),
 }; }
 
-static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks ach = FundingInstructionsBankTransferFinancialAddressSupportedNetworks._('ach');
+static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks ach = FundingInstructionsBankTransferFinancialAddressSupportedNetworks$ach._();
 
-static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks bacs = FundingInstructionsBankTransferFinancialAddressSupportedNetworks._('bacs');
+static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks bacs = FundingInstructionsBankTransferFinancialAddressSupportedNetworks$bacs._();
 
-static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks domesticWireUs = FundingInstructionsBankTransferFinancialAddressSupportedNetworks._('domestic_wire_us');
+static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks domesticWireUs = FundingInstructionsBankTransferFinancialAddressSupportedNetworks$domesticWireUs._();
 
-static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks fps = FundingInstructionsBankTransferFinancialAddressSupportedNetworks._('fps');
+static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks fps = FundingInstructionsBankTransferFinancialAddressSupportedNetworks$fps._();
 
-static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks sepa = FundingInstructionsBankTransferFinancialAddressSupportedNetworks._('sepa');
+static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks sepa = FundingInstructionsBankTransferFinancialAddressSupportedNetworks$sepa._();
 
-static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks spei = FundingInstructionsBankTransferFinancialAddressSupportedNetworks._('spei');
+static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks spei = FundingInstructionsBankTransferFinancialAddressSupportedNetworks$spei._();
 
-static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks swift = FundingInstructionsBankTransferFinancialAddressSupportedNetworks._('swift');
+static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks swift = FundingInstructionsBankTransferFinancialAddressSupportedNetworks$swift._();
 
-static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks zengin = FundingInstructionsBankTransferFinancialAddressSupportedNetworks._('zengin');
+static const FundingInstructionsBankTransferFinancialAddressSupportedNetworks zengin = FundingInstructionsBankTransferFinancialAddressSupportedNetworks$zengin._();
 
 static const List<FundingInstructionsBankTransferFinancialAddressSupportedNetworks> values = [ach, bacs, domesticWireUs, fps, sepa, spei, swift, zengin];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -49,17 +48,94 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is FundingInstructionsBankTransferFinancialAddressSupportedNetworks && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is FundingInstructionsBankTransferFinancialAddressSupportedNetworks$Unknown; } 
 @override String toString() => 'FundingInstructionsBankTransferFinancialAddressSupportedNetworks($value)';
 
  }
+@immutable final class FundingInstructionsBankTransferFinancialAddressSupportedNetworks$ach extends FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks$ach._();
+
+@override String get value => 'ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferFinancialAddressSupportedNetworks$ach;
+
+@override int get hashCode => 'ach'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressSupportedNetworks$bacs extends FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks$bacs._();
+
+@override String get value => 'bacs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferFinancialAddressSupportedNetworks$bacs;
+
+@override int get hashCode => 'bacs'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressSupportedNetworks$domesticWireUs extends FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks$domesticWireUs._();
+
+@override String get value => 'domestic_wire_us';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferFinancialAddressSupportedNetworks$domesticWireUs;
+
+@override int get hashCode => 'domestic_wire_us'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressSupportedNetworks$fps extends FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks$fps._();
+
+@override String get value => 'fps';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferFinancialAddressSupportedNetworks$fps;
+
+@override int get hashCode => 'fps'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressSupportedNetworks$sepa extends FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks$sepa._();
+
+@override String get value => 'sepa';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferFinancialAddressSupportedNetworks$sepa;
+
+@override int get hashCode => 'sepa'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressSupportedNetworks$spei extends FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks$spei._();
+
+@override String get value => 'spei';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferFinancialAddressSupportedNetworks$spei;
+
+@override int get hashCode => 'spei'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressSupportedNetworks$swift extends FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks$swift._();
+
+@override String get value => 'swift';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferFinancialAddressSupportedNetworks$swift;
+
+@override int get hashCode => 'swift'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressSupportedNetworks$zengin extends FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks$zengin._();
+
+@override String get value => 'zengin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferFinancialAddressSupportedNetworks$zengin;
+
+@override int get hashCode => 'zengin'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressSupportedNetworks$Unknown extends FundingInstructionsBankTransferFinancialAddressSupportedNetworks {const FundingInstructionsBankTransferFinancialAddressSupportedNetworks$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FundingInstructionsBankTransferFinancialAddressSupportedNetworks$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The type of financial address
-@immutable final class FundingInstructionsBankTransferFinancialAddressType {const FundingInstructionsBankTransferFinancialAddressType._(this.value);
+sealed class FundingInstructionsBankTransferFinancialAddressType {const FundingInstructionsBankTransferFinancialAddressType();
 
 factory FundingInstructionsBankTransferFinancialAddressType.fromJson(String json) { return switch (json) {
   'aba' => aba,
@@ -68,25 +144,24 @@ factory FundingInstructionsBankTransferFinancialAddressType.fromJson(String json
   'spei' => spei,
   'swift' => swift,
   'zengin' => zengin,
-  _ => FundingInstructionsBankTransferFinancialAddressType._(json),
+  _ => FundingInstructionsBankTransferFinancialAddressType$Unknown(json),
 }; }
 
-static const FundingInstructionsBankTransferFinancialAddressType aba = FundingInstructionsBankTransferFinancialAddressType._('aba');
+static const FundingInstructionsBankTransferFinancialAddressType aba = FundingInstructionsBankTransferFinancialAddressType$aba._();
 
-static const FundingInstructionsBankTransferFinancialAddressType iban = FundingInstructionsBankTransferFinancialAddressType._('iban');
+static const FundingInstructionsBankTransferFinancialAddressType iban = FundingInstructionsBankTransferFinancialAddressType$iban._();
 
-static const FundingInstructionsBankTransferFinancialAddressType sortCode = FundingInstructionsBankTransferFinancialAddressType._('sort_code');
+static const FundingInstructionsBankTransferFinancialAddressType sortCode = FundingInstructionsBankTransferFinancialAddressType$sortCode._();
 
-static const FundingInstructionsBankTransferFinancialAddressType spei = FundingInstructionsBankTransferFinancialAddressType._('spei');
+static const FundingInstructionsBankTransferFinancialAddressType spei = FundingInstructionsBankTransferFinancialAddressType$spei._();
 
-static const FundingInstructionsBankTransferFinancialAddressType swift = FundingInstructionsBankTransferFinancialAddressType._('swift');
+static const FundingInstructionsBankTransferFinancialAddressType swift = FundingInstructionsBankTransferFinancialAddressType$swift._();
 
-static const FundingInstructionsBankTransferFinancialAddressType zengin = FundingInstructionsBankTransferFinancialAddressType._('zengin');
+static const FundingInstructionsBankTransferFinancialAddressType zengin = FundingInstructionsBankTransferFinancialAddressType$zengin._();
 
 static const List<FundingInstructionsBankTransferFinancialAddressType> values = [aba, iban, sortCode, spei, swift, zengin];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -99,13 +174,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FundingInstructionsBankTransferFinancialAddressType$Unknown; } 
+@override String toString() => 'FundingInstructionsBankTransferFinancialAddressType($value)';
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressType$aba extends FundingInstructionsBankTransferFinancialAddressType {const FundingInstructionsBankTransferFinancialAddressType$aba._();
+
+@override String get value => 'aba';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferFinancialAddressType$aba;
+
+@override int get hashCode => 'aba'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressType$iban extends FundingInstructionsBankTransferFinancialAddressType {const FundingInstructionsBankTransferFinancialAddressType$iban._();
+
+@override String get value => 'iban';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferFinancialAddressType$iban;
+
+@override int get hashCode => 'iban'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressType$sortCode extends FundingInstructionsBankTransferFinancialAddressType {const FundingInstructionsBankTransferFinancialAddressType$sortCode._();
+
+@override String get value => 'sort_code';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferFinancialAddressType$sortCode;
+
+@override int get hashCode => 'sort_code'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressType$spei extends FundingInstructionsBankTransferFinancialAddressType {const FundingInstructionsBankTransferFinancialAddressType$spei._();
+
+@override String get value => 'spei';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferFinancialAddressType$spei;
+
+@override int get hashCode => 'spei'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressType$swift extends FundingInstructionsBankTransferFinancialAddressType {const FundingInstructionsBankTransferFinancialAddressType$swift._();
+
+@override String get value => 'swift';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferFinancialAddressType$swift;
+
+@override int get hashCode => 'swift'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressType$zengin extends FundingInstructionsBankTransferFinancialAddressType {const FundingInstructionsBankTransferFinancialAddressType$zengin._();
+
+@override String get value => 'zengin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FundingInstructionsBankTransferFinancialAddressType$zengin;
+
+@override int get hashCode => 'zengin'.hashCode;
+
+ }
+@immutable final class FundingInstructionsBankTransferFinancialAddressType$Unknown extends FundingInstructionsBankTransferFinancialAddressType {const FundingInstructionsBankTransferFinancialAddressType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FundingInstructionsBankTransferFinancialAddressType && other.value == value;
+    other is FundingInstructionsBankTransferFinancialAddressType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FundingInstructionsBankTransferFinancialAddressType($value)';
 
  }
 /// FinancialAddresses contain identifying information that resolves to a FinancialAccount.

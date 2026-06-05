@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ZonesGetDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order zones.
-@immutable final class ZonesGetDirection {const ZonesGetDirection._(this.value);
+sealed class ZonesGetDirection {const ZonesGetDirection();
 
 factory ZonesGetDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => ZonesGetDirection._(json),
+  _ => ZonesGetDirection$Unknown(json),
 }; }
 
-static const ZonesGetDirection asc = ZonesGetDirection._('asc');
+static const ZonesGetDirection asc = ZonesGetDirection$asc._();
 
-static const ZonesGetDirection desc = ZonesGetDirection._('desc');
+static const ZonesGetDirection desc = ZonesGetDirection$desc._();
 
 static const List<ZonesGetDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesGetDirection$Unknown; } 
+@override String toString() => 'ZonesGetDirection($value)';
+
+ }
+@immutable final class ZonesGetDirection$asc extends ZonesGetDirection {const ZonesGetDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesGetDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class ZonesGetDirection$desc extends ZonesGetDirection {const ZonesGetDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesGetDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class ZonesGetDirection$Unknown extends ZonesGetDirection {const ZonesGetDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesGetDirection && other.value == value;
+    other is ZonesGetDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesGetDirection($value)';
 
  }

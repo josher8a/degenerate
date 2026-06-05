@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PageShieldListCookiesOrderBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned cookies.
-@immutable final class PageShieldListCookiesOrderBy {const PageShieldListCookiesOrderBy._(this.value);
+sealed class PageShieldListCookiesOrderBy {const PageShieldListCookiesOrderBy();
 
 factory PageShieldListCookiesOrderBy.fromJson(String json) { return switch (json) {
   'first_seen_at' => firstSeenAt,
   'last_seen_at' => lastSeenAt,
-  _ => PageShieldListCookiesOrderBy._(json),
+  _ => PageShieldListCookiesOrderBy$Unknown(json),
 }; }
 
-static const PageShieldListCookiesOrderBy firstSeenAt = PageShieldListCookiesOrderBy._('first_seen_at');
+static const PageShieldListCookiesOrderBy firstSeenAt = PageShieldListCookiesOrderBy$firstSeenAt._();
 
-static const PageShieldListCookiesOrderBy lastSeenAt = PageShieldListCookiesOrderBy._('last_seen_at');
+static const PageShieldListCookiesOrderBy lastSeenAt = PageShieldListCookiesOrderBy$lastSeenAt._();
 
 static const List<PageShieldListCookiesOrderBy> values = [firstSeenAt, lastSeenAt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PageShieldListCookiesOrderBy$Unknown; } 
+@override String toString() => 'PageShieldListCookiesOrderBy($value)';
+
+ }
+@immutable final class PageShieldListCookiesOrderBy$firstSeenAt extends PageShieldListCookiesOrderBy {const PageShieldListCookiesOrderBy$firstSeenAt._();
+
+@override String get value => 'first_seen_at';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageShieldListCookiesOrderBy$firstSeenAt;
+
+@override int get hashCode => 'first_seen_at'.hashCode;
+
+ }
+@immutable final class PageShieldListCookiesOrderBy$lastSeenAt extends PageShieldListCookiesOrderBy {const PageShieldListCookiesOrderBy$lastSeenAt._();
+
+@override String get value => 'last_seen_at';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageShieldListCookiesOrderBy$lastSeenAt;
+
+@override int get hashCode => 'last_seen_at'.hashCode;
+
+ }
+@immutable final class PageShieldListCookiesOrderBy$Unknown extends PageShieldListCookiesOrderBy {const PageShieldListCookiesOrderBy$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PageShieldListCookiesOrderBy && other.value == value;
+    other is PageShieldListCookiesOrderBy$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PageShieldListCookiesOrderBy($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventMcpListToolsFailed
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `mcp_list_tools.failed`.
-@immutable final class RealtimeBetaServerEventMcpListToolsFailedType {const RealtimeBetaServerEventMcpListToolsFailedType._(this.value);
+sealed class RealtimeBetaServerEventMcpListToolsFailedType {const RealtimeBetaServerEventMcpListToolsFailedType();
 
 factory RealtimeBetaServerEventMcpListToolsFailedType.fromJson(String json) { return switch (json) {
   'mcp_list_tools.failed' => mcpListToolsFailed,
-  _ => RealtimeBetaServerEventMcpListToolsFailedType._(json),
+  _ => RealtimeBetaServerEventMcpListToolsFailedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventMcpListToolsFailedType mcpListToolsFailed = RealtimeBetaServerEventMcpListToolsFailedType._('mcp_list_tools.failed');
+static const RealtimeBetaServerEventMcpListToolsFailedType mcpListToolsFailed = RealtimeBetaServerEventMcpListToolsFailedType$mcpListToolsFailed._();
 
 static const List<RealtimeBetaServerEventMcpListToolsFailedType> values = [mcpListToolsFailed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventMcpListToolsFailedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventMcpListToolsFailedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventMcpListToolsFailedType$mcpListToolsFailed extends RealtimeBetaServerEventMcpListToolsFailedType {const RealtimeBetaServerEventMcpListToolsFailedType$mcpListToolsFailed._();
+
+@override String get value => 'mcp_list_tools.failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventMcpListToolsFailedType$mcpListToolsFailed;
+
+@override int get hashCode => 'mcp_list_tools.failed'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventMcpListToolsFailedType$Unknown extends RealtimeBetaServerEventMcpListToolsFailedType {const RealtimeBetaServerEventMcpListToolsFailedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventMcpListToolsFailedType && other.value == value;
+    other is RealtimeBetaServerEventMcpListToolsFailedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventMcpListToolsFailedType($value)';
 
  }
 /// Returned when listing MCP tools has failed for an item.

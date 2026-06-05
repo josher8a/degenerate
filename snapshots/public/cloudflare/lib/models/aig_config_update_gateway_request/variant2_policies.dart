@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigUpdateGatewayRequest (inline: Dlp > Variant2 > Policies)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/variant1_action.dart';@immutable final class Check {const Check._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_update_gateway_request/variant1_action.dart';sealed class Check {const Check();
 
 factory Check.fromJson(String json) { return switch (json) {
   'REQUEST' => request,
   'RESPONSE' => response,
-  _ => Check._(json),
+  _ => Check$Unknown(json),
 }; }
 
-static const Check request = Check._('REQUEST');
+static const Check request = Check$request._();
 
-static const Check response = Check._('RESPONSE');
+static const Check response = Check$response._();
 
 static const List<Check> values = [request, response];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Check$Unknown; } 
+@override String toString() => 'Check($value)';
+
+ }
+@immutable final class Check$request extends Check {const Check$request._();
+
+@override String get value => 'REQUEST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Check$request;
+
+@override int get hashCode => 'REQUEST'.hashCode;
+
+ }
+@immutable final class Check$response extends Check {const Check$response._();
+
+@override String get value => 'RESPONSE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Check$response;
+
+@override int get hashCode => 'RESPONSE'.hashCode;
+
+ }
+@immutable final class Check$Unknown extends Check {const Check$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Check && other.value == value;
+    other is Check$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Check($value)';
 
  }
 @immutable final class Variant2Policies {const Variant2Policies({required this.action, required this.check, required this.enabled, required this.id, required this.profiles, });

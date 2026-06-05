@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookSubIssuesParentIssueRemoved
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookSubIssuesParentIssueRemovedAction {const WebhookSubIssuesParentIssueRemovedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookSubIssuesParentIssueRemovedAction {const WebhookSubIssuesParentIssueRemovedAction();
 
 factory WebhookSubIssuesParentIssueRemovedAction.fromJson(String json) { return switch (json) {
   'parent_issue_removed' => parentIssueRemoved,
-  _ => WebhookSubIssuesParentIssueRemovedAction._(json),
+  _ => WebhookSubIssuesParentIssueRemovedAction$Unknown(json),
 }; }
 
-static const WebhookSubIssuesParentIssueRemovedAction parentIssueRemoved = WebhookSubIssuesParentIssueRemovedAction._('parent_issue_removed');
+static const WebhookSubIssuesParentIssueRemovedAction parentIssueRemoved = WebhookSubIssuesParentIssueRemovedAction$parentIssueRemoved._();
 
 static const List<WebhookSubIssuesParentIssueRemovedAction> values = [parentIssueRemoved];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookSubIssuesParentIssueRemovedAction$Unknown; } 
+@override String toString() => 'WebhookSubIssuesParentIssueRemovedAction($value)';
+
+ }
+@immutable final class WebhookSubIssuesParentIssueRemovedAction$parentIssueRemoved extends WebhookSubIssuesParentIssueRemovedAction {const WebhookSubIssuesParentIssueRemovedAction$parentIssueRemoved._();
+
+@override String get value => 'parent_issue_removed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookSubIssuesParentIssueRemovedAction$parentIssueRemoved;
+
+@override int get hashCode => 'parent_issue_removed'.hashCode;
+
+ }
+@immutable final class WebhookSubIssuesParentIssueRemovedAction$Unknown extends WebhookSubIssuesParentIssueRemovedAction {const WebhookSubIssuesParentIssueRemovedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookSubIssuesParentIssueRemovedAction && other.value == value;
+    other is WebhookSubIssuesParentIssueRemovedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookSubIssuesParentIssueRemovedAction($value)';
 
  }
 @immutable final class WebhookSubIssuesParentIssueRemoved {const WebhookSubIssuesParentIssueRemoved({required this.action, required this.parentIssueId, required this.parentIssue, required this.parentIssueRepo, required this.subIssueId, required this.subIssue, this.installation, this.organization, this.repository, this.sender, });

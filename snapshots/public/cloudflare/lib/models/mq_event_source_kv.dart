@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MqEventSourceKv
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
-@immutable final class MqEventSourceKvType {const MqEventSourceKvType._(this.value);
+sealed class MqEventSourceKvType {const MqEventSourceKvType();
 
 factory MqEventSourceKvType.fromJson(String json) { return switch (json) {
   'kv' => kv,
-  _ => MqEventSourceKvType._(json),
+  _ => MqEventSourceKvType$Unknown(json),
 }; }
 
-static const MqEventSourceKvType kv = MqEventSourceKvType._('kv');
+static const MqEventSourceKvType kv = MqEventSourceKvType$kv._();
 
 static const List<MqEventSourceKvType> values = [kv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MqEventSourceKvType$Unknown; } 
+@override String toString() => 'MqEventSourceKvType($value)';
+
+ }
+@immutable final class MqEventSourceKvType$kv extends MqEventSourceKvType {const MqEventSourceKvType$kv._();
+
+@override String get value => 'kv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqEventSourceKvType$kv;
+
+@override int get hashCode => 'kv'.hashCode;
+
+ }
+@immutable final class MqEventSourceKvType$Unknown extends MqEventSourceKvType {const MqEventSourceKvType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MqEventSourceKvType && other.value == value;
+    other is MqEventSourceKvType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MqEventSourceKvType($value)';
 
  }
 @immutable final class MqEventSourceKv {const MqEventSourceKv({this.type});

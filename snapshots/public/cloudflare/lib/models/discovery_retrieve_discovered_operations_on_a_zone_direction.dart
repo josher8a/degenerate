@@ -2,22 +2,21 @@
 // Source: #/components/schemas/DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order results.
-@immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection {const DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection._(this.value);
+sealed class DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection {const DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection();
 
 factory DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection._(json),
+  _ => DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection$Unknown(json),
 }; }
 
-static const DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection asc = DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection._('asc');
+static const DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection asc = DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection$asc._();
 
-static const DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection desc = DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection._('desc');
+static const DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection desc = DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection$desc._();
 
 static const List<DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection$Unknown; } 
+@override String toString() => 'DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection($value)';
+
+ }
+@immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection$asc extends DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection {const DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection$desc extends DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection {const DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection$Unknown extends DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection {const DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection && other.value == value;
+    other is DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DiscoveryRetrieveDiscoveredOperationsOnAZoneDirection($value)';
 
  }

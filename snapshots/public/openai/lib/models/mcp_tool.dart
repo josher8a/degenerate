@@ -16,7 +16,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// - Outlook Email: `connector_outlookemail`
 /// - SharePoint: `connector_sharepoint`
 /// 
-@immutable final class ConnectorId {const ConnectorId._(this.value);
+sealed class ConnectorId {const ConnectorId();
 
 factory ConnectorId.fromJson(String json) { return switch (json) {
   'connector_dropbox' => connectorDropbox,
@@ -27,29 +27,28 @@ factory ConnectorId.fromJson(String json) { return switch (json) {
   'connector_outlookcalendar' => connectorOutlookcalendar,
   'connector_outlookemail' => connectorOutlookemail,
   'connector_sharepoint' => connectorSharepoint,
-  _ => ConnectorId._(json),
+  _ => ConnectorId$Unknown(json),
 }; }
 
-static const ConnectorId connectorDropbox = ConnectorId._('connector_dropbox');
+static const ConnectorId connectorDropbox = ConnectorId$connectorDropbox._();
 
-static const ConnectorId connectorGmail = ConnectorId._('connector_gmail');
+static const ConnectorId connectorGmail = ConnectorId$connectorGmail._();
 
-static const ConnectorId connectorGooglecalendar = ConnectorId._('connector_googlecalendar');
+static const ConnectorId connectorGooglecalendar = ConnectorId$connectorGooglecalendar._();
 
-static const ConnectorId connectorGoogledrive = ConnectorId._('connector_googledrive');
+static const ConnectorId connectorGoogledrive = ConnectorId$connectorGoogledrive._();
 
-static const ConnectorId connectorMicrosoftteams = ConnectorId._('connector_microsoftteams');
+static const ConnectorId connectorMicrosoftteams = ConnectorId$connectorMicrosoftteams._();
 
-static const ConnectorId connectorOutlookcalendar = ConnectorId._('connector_outlookcalendar');
+static const ConnectorId connectorOutlookcalendar = ConnectorId$connectorOutlookcalendar._();
 
-static const ConnectorId connectorOutlookemail = ConnectorId._('connector_outlookemail');
+static const ConnectorId connectorOutlookemail = ConnectorId$connectorOutlookemail._();
 
-static const ConnectorId connectorSharepoint = ConnectorId._('connector_sharepoint');
+static const ConnectorId connectorSharepoint = ConnectorId$connectorSharepoint._();
 
 static const List<ConnectorId> values = [connectorDropbox, connectorGmail, connectorGooglecalendar, connectorGoogledrive, connectorMicrosoftteams, connectorOutlookcalendar, connectorOutlookemail, connectorSharepoint];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,13 +63,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConnectorId$Unknown; } 
+@override String toString() => 'ConnectorId($value)';
+
+ }
+@immutable final class ConnectorId$connectorDropbox extends ConnectorId {const ConnectorId$connectorDropbox._();
+
+@override String get value => 'connector_dropbox';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConnectorId$connectorDropbox;
+
+@override int get hashCode => 'connector_dropbox'.hashCode;
+
+ }
+@immutable final class ConnectorId$connectorGmail extends ConnectorId {const ConnectorId$connectorGmail._();
+
+@override String get value => 'connector_gmail';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConnectorId$connectorGmail;
+
+@override int get hashCode => 'connector_gmail'.hashCode;
+
+ }
+@immutable final class ConnectorId$connectorGooglecalendar extends ConnectorId {const ConnectorId$connectorGooglecalendar._();
+
+@override String get value => 'connector_googlecalendar';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConnectorId$connectorGooglecalendar;
+
+@override int get hashCode => 'connector_googlecalendar'.hashCode;
+
+ }
+@immutable final class ConnectorId$connectorGoogledrive extends ConnectorId {const ConnectorId$connectorGoogledrive._();
+
+@override String get value => 'connector_googledrive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConnectorId$connectorGoogledrive;
+
+@override int get hashCode => 'connector_googledrive'.hashCode;
+
+ }
+@immutable final class ConnectorId$connectorMicrosoftteams extends ConnectorId {const ConnectorId$connectorMicrosoftteams._();
+
+@override String get value => 'connector_microsoftteams';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConnectorId$connectorMicrosoftteams;
+
+@override int get hashCode => 'connector_microsoftteams'.hashCode;
+
+ }
+@immutable final class ConnectorId$connectorOutlookcalendar extends ConnectorId {const ConnectorId$connectorOutlookcalendar._();
+
+@override String get value => 'connector_outlookcalendar';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConnectorId$connectorOutlookcalendar;
+
+@override int get hashCode => 'connector_outlookcalendar'.hashCode;
+
+ }
+@immutable final class ConnectorId$connectorOutlookemail extends ConnectorId {const ConnectorId$connectorOutlookemail._();
+
+@override String get value => 'connector_outlookemail';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConnectorId$connectorOutlookemail;
+
+@override int get hashCode => 'connector_outlookemail'.hashCode;
+
+ }
+@immutable final class ConnectorId$connectorSharepoint extends ConnectorId {const ConnectorId$connectorSharepoint._();
+
+@override String get value => 'connector_sharepoint';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConnectorId$connectorSharepoint;
+
+@override int get hashCode => 'connector_sharepoint'.hashCode;
+
+ }
+@immutable final class ConnectorId$Unknown extends ConnectorId {const ConnectorId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConnectorId && other.value == value;
+    other is ConnectorId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConnectorId($value)';
 
  }
 /// Give the model access to additional tools via remote Model Context Protocol

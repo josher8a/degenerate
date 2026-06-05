@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetEmailRoutingSummaryFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetEmailRoutingSummaryFormat {const RadarGetEmailRoutingSummaryFormat._(this.value);
+sealed class RadarGetEmailRoutingSummaryFormat {const RadarGetEmailRoutingSummaryFormat();
 
 factory RadarGetEmailRoutingSummaryFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetEmailRoutingSummaryFormat._(json),
+  _ => RadarGetEmailRoutingSummaryFormat$Unknown(json),
 }; }
 
-static const RadarGetEmailRoutingSummaryFormat $json = RadarGetEmailRoutingSummaryFormat._('JSON');
+static const RadarGetEmailRoutingSummaryFormat $json = RadarGetEmailRoutingSummaryFormat$$json._();
 
-static const RadarGetEmailRoutingSummaryFormat csv = RadarGetEmailRoutingSummaryFormat._('CSV');
+static const RadarGetEmailRoutingSummaryFormat csv = RadarGetEmailRoutingSummaryFormat$csv._();
 
 static const List<RadarGetEmailRoutingSummaryFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailRoutingSummaryFormat$Unknown; } 
+@override String toString() => 'RadarGetEmailRoutingSummaryFormat($value)';
+
+ }
+@immutable final class RadarGetEmailRoutingSummaryFormat$$json extends RadarGetEmailRoutingSummaryFormat {const RadarGetEmailRoutingSummaryFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingSummaryFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingSummaryFormat$csv extends RadarGetEmailRoutingSummaryFormat {const RadarGetEmailRoutingSummaryFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingSummaryFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingSummaryFormat$Unknown extends RadarGetEmailRoutingSummaryFormat {const RadarGetEmailRoutingSummaryFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailRoutingSummaryFormat && other.value == value;
+    other is RadarGetEmailRoutingSummaryFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailRoutingSummaryFormat($value)';
 
  }

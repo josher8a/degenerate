@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Token
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account.dart';import 'package:pub_stripe_spec3/models/card.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TokenObject {const TokenObject._(this.value);
+sealed class TokenObject {const TokenObject();
 
 factory TokenObject.fromJson(String json) { return switch (json) {
   'token' => token,
-  _ => TokenObject._(json),
+  _ => TokenObject$Unknown(json),
 }; }
 
-static const TokenObject token = TokenObject._('token');
+static const TokenObject token = TokenObject$token._();
 
 static const List<TokenObject> values = [token];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TokenObject$Unknown; } 
+@override String toString() => 'TokenObject($value)';
+
+ }
+@immutable final class TokenObject$token extends TokenObject {const TokenObject$token._();
+
+@override String get value => 'token';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TokenObject$token;
+
+@override int get hashCode => 'token'.hashCode;
+
+ }
+@immutable final class TokenObject$Unknown extends TokenObject {const TokenObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TokenObject && other.value == value;
+    other is TokenObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TokenObject($value)';
 
  }
 /// Tokenization is the process Stripe uses to collect sensitive card or bank

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WorkersErrorWorkerNameInvalid
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker name is invalid.
-@immutable final class WorkersErrorWorkerNameInvalidCode {const WorkersErrorWorkerNameInvalidCode._(this.value);
+sealed class WorkersErrorWorkerNameInvalidCode {const WorkersErrorWorkerNameInvalidCode();
 
 factory WorkersErrorWorkerNameInvalidCode.fromJson(int json) { return switch (json) {
   10016 => $10016,
-  _ => WorkersErrorWorkerNameInvalidCode._(json),
+  _ => WorkersErrorWorkerNameInvalidCode$Unknown(json),
 }; }
 
-static const WorkersErrorWorkerNameInvalidCode $10016 = WorkersErrorWorkerNameInvalidCode._(10016);
+static const WorkersErrorWorkerNameInvalidCode $10016 = WorkersErrorWorkerNameInvalidCode$$10016._();
 
 static const List<WorkersErrorWorkerNameInvalidCode> values = [$10016];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersErrorWorkerNameInvalidCode$Unknown; } 
+@override String toString() => 'WorkersErrorWorkerNameInvalidCode($value)';
+
+ }
+@immutable final class WorkersErrorWorkerNameInvalidCode$$10016 extends WorkersErrorWorkerNameInvalidCode {const WorkersErrorWorkerNameInvalidCode$$10016._();
+
+@override int get value => 10016;
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersErrorWorkerNameInvalidCode$$10016;
+
+@override int get hashCode => 10016.hashCode;
+
+ }
+@immutable final class WorkersErrorWorkerNameInvalidCode$Unknown extends WorkersErrorWorkerNameInvalidCode {const WorkersErrorWorkerNameInvalidCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersErrorWorkerNameInvalidCode && other.value == value;
+    other is WorkersErrorWorkerNameInvalidCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersErrorWorkerNameInvalidCode($value)';
 
  }
 @immutable final class WorkersErrorWorkerNameInvalid {const WorkersErrorWorkerNameInvalid({required this.code, required this.message, });

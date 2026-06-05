@@ -2,28 +2,27 @@
 // Source: #/components/schemas/InsightsResourcesPaymentEvaluationOutcome
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_merchant_blocked.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_rejected.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_succeeded.dart';/// Indicates the outcome of the payment evaluation.
-@immutable final class InsightsResourcesPaymentEvaluationOutcomeType {const InsightsResourcesPaymentEvaluationOutcomeType._(this.value);
+sealed class InsightsResourcesPaymentEvaluationOutcomeType {const InsightsResourcesPaymentEvaluationOutcomeType();
 
 factory InsightsResourcesPaymentEvaluationOutcomeType.fromJson(String json) { return switch (json) {
   'failed' => failed,
   'merchant_blocked' => merchantBlocked,
   'rejected' => rejected,
   'succeeded' => succeeded,
-  _ => InsightsResourcesPaymentEvaluationOutcomeType._(json),
+  _ => InsightsResourcesPaymentEvaluationOutcomeType$Unknown(json),
 }; }
 
-static const InsightsResourcesPaymentEvaluationOutcomeType failed = InsightsResourcesPaymentEvaluationOutcomeType._('failed');
+static const InsightsResourcesPaymentEvaluationOutcomeType failed = InsightsResourcesPaymentEvaluationOutcomeType$failed._();
 
-static const InsightsResourcesPaymentEvaluationOutcomeType merchantBlocked = InsightsResourcesPaymentEvaluationOutcomeType._('merchant_blocked');
+static const InsightsResourcesPaymentEvaluationOutcomeType merchantBlocked = InsightsResourcesPaymentEvaluationOutcomeType$merchantBlocked._();
 
-static const InsightsResourcesPaymentEvaluationOutcomeType rejected = InsightsResourcesPaymentEvaluationOutcomeType._('rejected');
+static const InsightsResourcesPaymentEvaluationOutcomeType rejected = InsightsResourcesPaymentEvaluationOutcomeType$rejected._();
 
-static const InsightsResourcesPaymentEvaluationOutcomeType succeeded = InsightsResourcesPaymentEvaluationOutcomeType._('succeeded');
+static const InsightsResourcesPaymentEvaluationOutcomeType succeeded = InsightsResourcesPaymentEvaluationOutcomeType$succeeded._();
 
 static const List<InsightsResourcesPaymentEvaluationOutcomeType> values = [failed, merchantBlocked, rejected, succeeded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InsightsResourcesPaymentEvaluationOutcomeType$Unknown; } 
+@override String toString() => 'InsightsResourcesPaymentEvaluationOutcomeType($value)';
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationOutcomeType$failed extends InsightsResourcesPaymentEvaluationOutcomeType {const InsightsResourcesPaymentEvaluationOutcomeType$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationOutcomeType$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationOutcomeType$merchantBlocked extends InsightsResourcesPaymentEvaluationOutcomeType {const InsightsResourcesPaymentEvaluationOutcomeType$merchantBlocked._();
+
+@override String get value => 'merchant_blocked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationOutcomeType$merchantBlocked;
+
+@override int get hashCode => 'merchant_blocked'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationOutcomeType$rejected extends InsightsResourcesPaymentEvaluationOutcomeType {const InsightsResourcesPaymentEvaluationOutcomeType$rejected._();
+
+@override String get value => 'rejected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationOutcomeType$rejected;
+
+@override int get hashCode => 'rejected'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationOutcomeType$succeeded extends InsightsResourcesPaymentEvaluationOutcomeType {const InsightsResourcesPaymentEvaluationOutcomeType$succeeded._();
+
+@override String get value => 'succeeded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationOutcomeType$succeeded;
+
+@override int get hashCode => 'succeeded'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationOutcomeType$Unknown extends InsightsResourcesPaymentEvaluationOutcomeType {const InsightsResourcesPaymentEvaluationOutcomeType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationOutcomeType && other.value == value;
+    other is InsightsResourcesPaymentEvaluationOutcomeType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InsightsResourcesPaymentEvaluationOutcomeType($value)';
 
  }
 /// Outcome details for this payment evaluation.

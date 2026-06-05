@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigPostGatewayDynamicRouteRequest (inline: Elements > Start)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/start_outputs.dart';@immutable final class StartType {const StartType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/start_outputs.dart';sealed class StartType {const StartType();
 
 factory StartType.fromJson(String json) { return switch (json) {
   'start' => start,
-  _ => StartType._(json),
+  _ => StartType$Unknown(json),
 }; }
 
-static const StartType start = StartType._('start');
+static const StartType start = StartType$start._();
 
 static const List<StartType> values = [start];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StartType$Unknown; } 
+@override String toString() => 'StartType($value)';
+
+ }
+@immutable final class StartType$start extends StartType {const StartType$start._();
+
+@override String get value => 'start';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StartType$start;
+
+@override int get hashCode => 'start'.hashCode;
+
+ }
+@immutable final class StartType$Unknown extends StartType {const StartType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StartType && other.value == value;
+    other is StartType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StartType($value)';
 
  }
 @immutable final class Start {const Start({required this.id, required this.outputs, required this.type, });

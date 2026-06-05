@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WorkersErrorWorkerObservabilitySamplingRateInvalid
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that an observability sampling rate is invalid.
-@immutable final class WorkersErrorWorkerObservabilitySamplingRateInvalidCode {const WorkersErrorWorkerObservabilitySamplingRateInvalidCode._(this.value);
+sealed class WorkersErrorWorkerObservabilitySamplingRateInvalidCode {const WorkersErrorWorkerObservabilitySamplingRateInvalidCode();
 
 factory WorkersErrorWorkerObservabilitySamplingRateInvalidCode.fromJson(int json) { return switch (json) {
   100308 => $100308,
-  _ => WorkersErrorWorkerObservabilitySamplingRateInvalidCode._(json),
+  _ => WorkersErrorWorkerObservabilitySamplingRateInvalidCode$Unknown(json),
 }; }
 
-static const WorkersErrorWorkerObservabilitySamplingRateInvalidCode $100308 = WorkersErrorWorkerObservabilitySamplingRateInvalidCode._(100308);
+static const WorkersErrorWorkerObservabilitySamplingRateInvalidCode $100308 = WorkersErrorWorkerObservabilitySamplingRateInvalidCode$$100308._();
 
 static const List<WorkersErrorWorkerObservabilitySamplingRateInvalidCode> values = [$100308];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersErrorWorkerObservabilitySamplingRateInvalidCode$Unknown; } 
+@override String toString() => 'WorkersErrorWorkerObservabilitySamplingRateInvalidCode($value)';
+
+ }
+@immutable final class WorkersErrorWorkerObservabilitySamplingRateInvalidCode$$100308 extends WorkersErrorWorkerObservabilitySamplingRateInvalidCode {const WorkersErrorWorkerObservabilitySamplingRateInvalidCode$$100308._();
+
+@override int get value => 100308;
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersErrorWorkerObservabilitySamplingRateInvalidCode$$100308;
+
+@override int get hashCode => 100308.hashCode;
+
+ }
+@immutable final class WorkersErrorWorkerObservabilitySamplingRateInvalidCode$Unknown extends WorkersErrorWorkerObservabilitySamplingRateInvalidCode {const WorkersErrorWorkerObservabilitySamplingRateInvalidCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersErrorWorkerObservabilitySamplingRateInvalidCode && other.value == value;
+    other is WorkersErrorWorkerObservabilitySamplingRateInvalidCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersErrorWorkerObservabilitySamplingRateInvalidCode($value)';
 
  }
 @immutable final class WorkersErrorWorkerObservabilitySamplingRateInvalid {const WorkersErrorWorkerObservabilitySamplingRateInvalid({required this.code, required this.message, });

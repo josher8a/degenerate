@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AaaFilters
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IncidentImpact {const IncidentImpact._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class IncidentImpact {const IncidentImpact();
 
 factory IncidentImpact.fromJson(String json) { return switch (json) {
   'INCIDENT_IMPACT_NONE' => incidentImpactNone,
   'INCIDENT_IMPACT_MINOR' => incidentImpactMinor,
   'INCIDENT_IMPACT_MAJOR' => incidentImpactMajor,
   'INCIDENT_IMPACT_CRITICAL' => incidentImpactCritical,
-  _ => IncidentImpact._(json),
+  _ => IncidentImpact$Unknown(json),
 }; }
 
-static const IncidentImpact incidentImpactNone = IncidentImpact._('INCIDENT_IMPACT_NONE');
+static const IncidentImpact incidentImpactNone = IncidentImpact$incidentImpactNone._();
 
-static const IncidentImpact incidentImpactMinor = IncidentImpact._('INCIDENT_IMPACT_MINOR');
+static const IncidentImpact incidentImpactMinor = IncidentImpact$incidentImpactMinor._();
 
-static const IncidentImpact incidentImpactMajor = IncidentImpact._('INCIDENT_IMPACT_MAJOR');
+static const IncidentImpact incidentImpactMajor = IncidentImpact$incidentImpactMajor._();
 
-static const IncidentImpact incidentImpactCritical = IncidentImpact._('INCIDENT_IMPACT_CRITICAL');
+static const IncidentImpact incidentImpactCritical = IncidentImpact$incidentImpactCritical._();
 
 static const List<IncidentImpact> values = [incidentImpactNone, incidentImpactMinor, incidentImpactMajor, incidentImpactCritical];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,28 +32,68 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IncidentImpact && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IncidentImpact$Unknown; } 
 @override String toString() => 'IncidentImpact($value)';
 
  }
-@immutable final class TrafficExclusions {const TrafficExclusions._(this.value);
+@immutable final class IncidentImpact$incidentImpactNone extends IncidentImpact {const IncidentImpact$incidentImpactNone._();
+
+@override String get value => 'INCIDENT_IMPACT_NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncidentImpact$incidentImpactNone;
+
+@override int get hashCode => 'INCIDENT_IMPACT_NONE'.hashCode;
+
+ }
+@immutable final class IncidentImpact$incidentImpactMinor extends IncidentImpact {const IncidentImpact$incidentImpactMinor._();
+
+@override String get value => 'INCIDENT_IMPACT_MINOR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncidentImpact$incidentImpactMinor;
+
+@override int get hashCode => 'INCIDENT_IMPACT_MINOR'.hashCode;
+
+ }
+@immutable final class IncidentImpact$incidentImpactMajor extends IncidentImpact {const IncidentImpact$incidentImpactMajor._();
+
+@override String get value => 'INCIDENT_IMPACT_MAJOR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncidentImpact$incidentImpactMajor;
+
+@override int get hashCode => 'INCIDENT_IMPACT_MAJOR'.hashCode;
+
+ }
+@immutable final class IncidentImpact$incidentImpactCritical extends IncidentImpact {const IncidentImpact$incidentImpactCritical._();
+
+@override String get value => 'INCIDENT_IMPACT_CRITICAL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncidentImpact$incidentImpactCritical;
+
+@override int get hashCode => 'INCIDENT_IMPACT_CRITICAL'.hashCode;
+
+ }
+@immutable final class IncidentImpact$Unknown extends IncidentImpact {const IncidentImpact$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IncidentImpact$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class TrafficExclusions {const TrafficExclusions();
 
 factory TrafficExclusions.fromJson(String json) { return switch (json) {
   'security_events' => securityEvents,
-  _ => TrafficExclusions._(json),
+  _ => TrafficExclusions$Unknown(json),
 }; }
 
-static const TrafficExclusions securityEvents = TrafficExclusions._('security_events');
+static const TrafficExclusions securityEvents = TrafficExclusions$securityEvents._();
 
 static const List<TrafficExclusions> values = [securityEvents];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -62,13 +101,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TrafficExclusions$Unknown; } 
+@override String toString() => 'TrafficExclusions($value)';
+
+ }
+@immutable final class TrafficExclusions$securityEvents extends TrafficExclusions {const TrafficExclusions$securityEvents._();
+
+@override String get value => 'security_events';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TrafficExclusions$securityEvents;
+
+@override int get hashCode => 'security_events'.hashCode;
+
+ }
+@immutable final class TrafficExclusions$Unknown extends TrafficExclusions {const TrafficExclusions$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TrafficExclusions && other.value == value;
+    other is TrafficExclusions$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TrafficExclusions($value)';
 
  }
 /// Optional filters that allow you to be alerted only on a subset of events for that alert type based on some criteria. This is only available for select alert types. See alert type documentation for more details.

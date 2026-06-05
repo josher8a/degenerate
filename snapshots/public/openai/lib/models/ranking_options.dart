@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RankingOptions
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/hybrid_search_options.dart';@immutable final class RankerVersionType {const RankerVersionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/hybrid_search_options.dart';sealed class RankerVersionType {const RankerVersionType();
 
 factory RankerVersionType.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'default-2024-11-15' => default20241115,
-  _ => RankerVersionType._(json),
+  _ => RankerVersionType$Unknown(json),
 }; }
 
-static const RankerVersionType auto = RankerVersionType._('auto');
+static const RankerVersionType auto = RankerVersionType$auto._();
 
-static const RankerVersionType default20241115 = RankerVersionType._('default-2024-11-15');
+static const RankerVersionType default20241115 = RankerVersionType$default20241115._();
 
 static const List<RankerVersionType> values = [auto, default20241115];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RankerVersionType$Unknown; } 
+@override String toString() => 'RankerVersionType($value)';
+
+ }
+@immutable final class RankerVersionType$auto extends RankerVersionType {const RankerVersionType$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RankerVersionType$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class RankerVersionType$default20241115 extends RankerVersionType {const RankerVersionType$default20241115._();
+
+@override String get value => 'default-2024-11-15';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RankerVersionType$default20241115;
+
+@override int get hashCode => 'default-2024-11-15'.hashCode;
+
+ }
+@immutable final class RankerVersionType$Unknown extends RankerVersionType {const RankerVersionType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RankerVersionType && other.value == value;
+    other is RankerVersionType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RankerVersionType($value)';
 
  }
 @immutable final class RankingOptions {const RankingOptions({this.ranker, this.scoreThreshold, this.hybridSearch, });

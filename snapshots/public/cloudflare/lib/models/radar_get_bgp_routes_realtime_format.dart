@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetBgpRoutesRealtimeFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetBgpRoutesRealtimeFormat {const RadarGetBgpRoutesRealtimeFormat._(this.value);
+sealed class RadarGetBgpRoutesRealtimeFormat {const RadarGetBgpRoutesRealtimeFormat();
 
 factory RadarGetBgpRoutesRealtimeFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetBgpRoutesRealtimeFormat._(json),
+  _ => RadarGetBgpRoutesRealtimeFormat$Unknown(json),
 }; }
 
-static const RadarGetBgpRoutesRealtimeFormat $json = RadarGetBgpRoutesRealtimeFormat._('JSON');
+static const RadarGetBgpRoutesRealtimeFormat $json = RadarGetBgpRoutesRealtimeFormat$$json._();
 
-static const RadarGetBgpRoutesRealtimeFormat csv = RadarGetBgpRoutesRealtimeFormat._('CSV');
+static const RadarGetBgpRoutesRealtimeFormat csv = RadarGetBgpRoutesRealtimeFormat$csv._();
 
 static const List<RadarGetBgpRoutesRealtimeFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetBgpRoutesRealtimeFormat$Unknown; } 
+@override String toString() => 'RadarGetBgpRoutesRealtimeFormat($value)';
+
+ }
+@immutable final class RadarGetBgpRoutesRealtimeFormat$$json extends RadarGetBgpRoutesRealtimeFormat {const RadarGetBgpRoutesRealtimeFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpRoutesRealtimeFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetBgpRoutesRealtimeFormat$csv extends RadarGetBgpRoutesRealtimeFormat {const RadarGetBgpRoutesRealtimeFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpRoutesRealtimeFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetBgpRoutesRealtimeFormat$Unknown extends RadarGetBgpRoutesRealtimeFormat {const RadarGetBgpRoutesRealtimeFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetBgpRoutesRealtimeFormat && other.value == value;
+    other is RadarGetBgpRoutesRealtimeFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetBgpRoutesRealtimeFormat($value)';
 
  }

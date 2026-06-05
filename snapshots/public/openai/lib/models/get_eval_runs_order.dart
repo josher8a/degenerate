@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetEvalRunsOrder
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetEvalRunsOrder {const GetEvalRunsOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetEvalRunsOrder {const GetEvalRunsOrder();
 
 factory GetEvalRunsOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => GetEvalRunsOrder._(json),
+  _ => GetEvalRunsOrder$Unknown(json),
 }; }
 
-static const GetEvalRunsOrder asc = GetEvalRunsOrder._('asc');
+static const GetEvalRunsOrder asc = GetEvalRunsOrder$asc._();
 
-static const GetEvalRunsOrder desc = GetEvalRunsOrder._('desc');
+static const GetEvalRunsOrder desc = GetEvalRunsOrder$desc._();
 
 static const List<GetEvalRunsOrder> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GetEvalRunsOrder$Unknown; } 
+@override String toString() => 'GetEvalRunsOrder($value)';
+
+ }
+@immutable final class GetEvalRunsOrder$asc extends GetEvalRunsOrder {const GetEvalRunsOrder$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetEvalRunsOrder$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class GetEvalRunsOrder$desc extends GetEvalRunsOrder {const GetEvalRunsOrder$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetEvalRunsOrder$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class GetEvalRunsOrder$Unknown extends GetEvalRunsOrder {const GetEvalRunsOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GetEvalRunsOrder && other.value == value;
+    other is GetEvalRunsOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GetEvalRunsOrder($value)';
 
  }

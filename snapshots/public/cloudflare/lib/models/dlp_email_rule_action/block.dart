@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpEmailRuleAction (inline: Block)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BlockAction {const BlockAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class BlockAction {const BlockAction();
 
 factory BlockAction.fromJson(String json) { return switch (json) {
   'Block' => block,
-  _ => BlockAction._(json),
+  _ => BlockAction$Unknown(json),
 }; }
 
-static const BlockAction block = BlockAction._('Block');
+static const BlockAction block = BlockAction$block._();
 
 static const List<BlockAction> values = [block];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BlockAction$Unknown; } 
+@override String toString() => 'BlockAction($value)';
+
+ }
+@immutable final class BlockAction$block extends BlockAction {const BlockAction$block._();
+
+@override String get value => 'Block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BlockAction$block;
+
+@override int get hashCode => 'Block'.hashCode;
+
+ }
+@immutable final class BlockAction$Unknown extends BlockAction {const BlockAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BlockAction && other.value == value;
+    other is BlockAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BlockAction($value)';
 
  }
 @immutable final class Block {const Block({required this.action, this.message, });

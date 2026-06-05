@@ -5,19 +5,18 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// resources to cache. This allows customers to determine what to cache
 /// based on something other than just the URL.
 /// 
-@immutable final class ZonesCacheKeyFieldsId {const ZonesCacheKeyFieldsId._(this.value);
+sealed class ZonesCacheKeyFieldsId {const ZonesCacheKeyFieldsId();
 
 factory ZonesCacheKeyFieldsId.fromJson(String json) { return switch (json) {
   'cache_key_fields' => cacheKeyFields,
-  _ => ZonesCacheKeyFieldsId._(json),
+  _ => ZonesCacheKeyFieldsId$Unknown(json),
 }; }
 
-static const ZonesCacheKeyFieldsId cacheKeyFields = ZonesCacheKeyFieldsId._('cache_key_fields');
+static const ZonesCacheKeyFieldsId cacheKeyFields = ZonesCacheKeyFieldsId$cacheKeyFields._();
 
 static const List<ZonesCacheKeyFieldsId> values = [cacheKeyFields];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesCacheKeyFieldsId$Unknown; } 
+@override String toString() => 'ZonesCacheKeyFieldsId($value)';
+
+ }
+@immutable final class ZonesCacheKeyFieldsId$cacheKeyFields extends ZonesCacheKeyFieldsId {const ZonesCacheKeyFieldsId$cacheKeyFields._();
+
+@override String get value => 'cache_key_fields';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesCacheKeyFieldsId$cacheKeyFields;
+
+@override int get hashCode => 'cache_key_fields'.hashCode;
+
+ }
+@immutable final class ZonesCacheKeyFieldsId$Unknown extends ZonesCacheKeyFieldsId {const ZonesCacheKeyFieldsId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesCacheKeyFieldsId && other.value == value;
+    other is ZonesCacheKeyFieldsId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesCacheKeyFieldsId($value)';
 
  }
 @immutable final class ZonesCacheKeyFields {const ZonesCacheKeyFields({this.id, this.value, });

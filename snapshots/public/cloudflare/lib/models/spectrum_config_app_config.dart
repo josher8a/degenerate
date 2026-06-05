@@ -18,28 +18,27 @@ bool toJson() => value;
 
 }
 /// Enables Proxy Protocol to the origin. Refer to [Enable Proxy protocol](https://developers.cloudflare.com/spectrum/getting-started/proxy-protocol/) for implementation details on PROXY Protocol V1, PROXY Protocol V2, and Simple Proxy Protocol.
-@immutable final class SpectrumConfigProxyProtocol {const SpectrumConfigProxyProtocol._(this.value);
+sealed class SpectrumConfigProxyProtocol {const SpectrumConfigProxyProtocol();
 
 factory SpectrumConfigProxyProtocol.fromJson(String json) { return switch (json) {
   'off' => off,
   'v1' => v1,
   'v2' => v2,
   'simple' => simple,
-  _ => SpectrumConfigProxyProtocol._(json),
+  _ => SpectrumConfigProxyProtocol$Unknown(json),
 }; }
 
-static const SpectrumConfigProxyProtocol off = SpectrumConfigProxyProtocol._('off');
+static const SpectrumConfigProxyProtocol off = SpectrumConfigProxyProtocol$off._();
 
-static const SpectrumConfigProxyProtocol v1 = SpectrumConfigProxyProtocol._('v1');
+static const SpectrumConfigProxyProtocol v1 = SpectrumConfigProxyProtocol$v1._();
 
-static const SpectrumConfigProxyProtocol v2 = SpectrumConfigProxyProtocol._('v2');
+static const SpectrumConfigProxyProtocol v2 = SpectrumConfigProxyProtocol$v2._();
 
-static const SpectrumConfigProxyProtocol simple = SpectrumConfigProxyProtocol._('simple');
+static const SpectrumConfigProxyProtocol simple = SpectrumConfigProxyProtocol$simple._();
 
 static const List<SpectrumConfigProxyProtocol> values = [off, v1, v2, simple];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,38 +49,78 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SpectrumConfigProxyProtocol && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SpectrumConfigProxyProtocol$Unknown; } 
 @override String toString() => 'SpectrumConfigProxyProtocol($value)';
 
  }
+@immutable final class SpectrumConfigProxyProtocol$off extends SpectrumConfigProxyProtocol {const SpectrumConfigProxyProtocol$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigProxyProtocol$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class SpectrumConfigProxyProtocol$v1 extends SpectrumConfigProxyProtocol {const SpectrumConfigProxyProtocol$v1._();
+
+@override String get value => 'v1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigProxyProtocol$v1;
+
+@override int get hashCode => 'v1'.hashCode;
+
+ }
+@immutable final class SpectrumConfigProxyProtocol$v2 extends SpectrumConfigProxyProtocol {const SpectrumConfigProxyProtocol$v2._();
+
+@override String get value => 'v2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigProxyProtocol$v2;
+
+@override int get hashCode => 'v2'.hashCode;
+
+ }
+@immutable final class SpectrumConfigProxyProtocol$simple extends SpectrumConfigProxyProtocol {const SpectrumConfigProxyProtocol$simple._();
+
+@override String get value => 'simple';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigProxyProtocol$simple;
+
+@override int get hashCode => 'simple'.hashCode;
+
+ }
+@immutable final class SpectrumConfigProxyProtocol$Unknown extends SpectrumConfigProxyProtocol {const SpectrumConfigProxyProtocol$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SpectrumConfigProxyProtocol$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The type of TLS termination associated with the application.
-@immutable final class SpectrumConfigTls {const SpectrumConfigTls._(this.value);
+sealed class SpectrumConfigTls {const SpectrumConfigTls();
 
 factory SpectrumConfigTls.fromJson(String json) { return switch (json) {
   'off' => off,
   'flexible' => flexible,
   'full' => full,
   'strict' => strict,
-  _ => SpectrumConfigTls._(json),
+  _ => SpectrumConfigTls$Unknown(json),
 }; }
 
-static const SpectrumConfigTls off = SpectrumConfigTls._('off');
+static const SpectrumConfigTls off = SpectrumConfigTls$off._();
 
-static const SpectrumConfigTls flexible = SpectrumConfigTls._('flexible');
+static const SpectrumConfigTls flexible = SpectrumConfigTls$flexible._();
 
-static const SpectrumConfigTls full = SpectrumConfigTls._('full');
+static const SpectrumConfigTls full = SpectrumConfigTls$full._();
 
-static const SpectrumConfigTls strict = SpectrumConfigTls._('strict');
+static const SpectrumConfigTls strict = SpectrumConfigTls$strict._();
 
 static const List<SpectrumConfigTls> values = [off, flexible, full, strict];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -92,35 +131,75 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SpectrumConfigTls && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SpectrumConfigTls$Unknown; } 
 @override String toString() => 'SpectrumConfigTls($value)';
 
  }
+@immutable final class SpectrumConfigTls$off extends SpectrumConfigTls {const SpectrumConfigTls$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigTls$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class SpectrumConfigTls$flexible extends SpectrumConfigTls {const SpectrumConfigTls$flexible._();
+
+@override String get value => 'flexible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigTls$flexible;
+
+@override int get hashCode => 'flexible'.hashCode;
+
+ }
+@immutable final class SpectrumConfigTls$full extends SpectrumConfigTls {const SpectrumConfigTls$full._();
+
+@override String get value => 'full';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigTls$full;
+
+@override int get hashCode => 'full'.hashCode;
+
+ }
+@immutable final class SpectrumConfigTls$strict extends SpectrumConfigTls {const SpectrumConfigTls$strict._();
+
+@override String get value => 'strict';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigTls$strict;
+
+@override int get hashCode => 'strict'.hashCode;
+
+ }
+@immutable final class SpectrumConfigTls$Unknown extends SpectrumConfigTls {const SpectrumConfigTls$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SpectrumConfigTls$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Determines how data travels from the edge to your origin. When set to "direct", Spectrum will send traffic directly to your origin, and the application's type is derived from the `protocol`. When set to "http" or "https", Spectrum will apply Cloudflare's HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly.
-@immutable final class SpectrumConfigTrafficType {const SpectrumConfigTrafficType._(this.value);
+sealed class SpectrumConfigTrafficType {const SpectrumConfigTrafficType();
 
 factory SpectrumConfigTrafficType.fromJson(String json) { return switch (json) {
   'direct' => direct,
   'http' => http,
   'https' => https,
-  _ => SpectrumConfigTrafficType._(json),
+  _ => SpectrumConfigTrafficType$Unknown(json),
 }; }
 
-static const SpectrumConfigTrafficType direct = SpectrumConfigTrafficType._('direct');
+static const SpectrumConfigTrafficType direct = SpectrumConfigTrafficType$direct._();
 
-static const SpectrumConfigTrafficType http = SpectrumConfigTrafficType._('http');
+static const SpectrumConfigTrafficType http = SpectrumConfigTrafficType$http._();
 
-static const SpectrumConfigTrafficType https = SpectrumConfigTrafficType._('https');
+static const SpectrumConfigTrafficType https = SpectrumConfigTrafficType$https._();
 
 static const List<SpectrumConfigTrafficType> values = [direct, http, https];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -130,13 +209,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SpectrumConfigTrafficType$Unknown; } 
+@override String toString() => 'SpectrumConfigTrafficType($value)';
+
+ }
+@immutable final class SpectrumConfigTrafficType$direct extends SpectrumConfigTrafficType {const SpectrumConfigTrafficType$direct._();
+
+@override String get value => 'direct';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigTrafficType$direct;
+
+@override int get hashCode => 'direct'.hashCode;
+
+ }
+@immutable final class SpectrumConfigTrafficType$http extends SpectrumConfigTrafficType {const SpectrumConfigTrafficType$http._();
+
+@override String get value => 'http';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigTrafficType$http;
+
+@override int get hashCode => 'http'.hashCode;
+
+ }
+@immutable final class SpectrumConfigTrafficType$https extends SpectrumConfigTrafficType {const SpectrumConfigTrafficType$https._();
+
+@override String get value => 'https';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigTrafficType$https;
+
+@override int get hashCode => 'https'.hashCode;
+
+ }
+@immutable final class SpectrumConfigTrafficType$Unknown extends SpectrumConfigTrafficType {const SpectrumConfigTrafficType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SpectrumConfigTrafficType && other.value == value;
+    other is SpectrumConfigTrafficType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SpectrumConfigTrafficType($value)';
 
  }
 @immutable final class SpectrumConfigAppConfig {const SpectrumConfigAppConfig({required this.createdOn, required this.id, required this.modifiedOn, required this.dns, required this.protocol, required this.trafficType, this.argoSmartRouting, this.edgeIps, this.ipFirewall, this.originDirect, this.originDns, this.originPort, this.proxyProtocol, this.tls, });

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpSummaryByOperatingSystemHttpVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByOperatingSystemHttpVersion {const RadarGetHttpSummaryByOperatingSystemHttpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpSummaryByOperatingSystemHttpVersion {const RadarGetHttpSummaryByOperatingSystemHttpVersion();
 
 factory RadarGetHttpSummaryByOperatingSystemHttpVersion.fromJson(String json) { return switch (json) {
   'HTTPv1' => httPv1,
   'HTTPv2' => httPv2,
   'HTTPv3' => httPv3,
-  _ => RadarGetHttpSummaryByOperatingSystemHttpVersion._(json),
+  _ => RadarGetHttpSummaryByOperatingSystemHttpVersion$Unknown(json),
 }; }
 
-static const RadarGetHttpSummaryByOperatingSystemHttpVersion httPv1 = RadarGetHttpSummaryByOperatingSystemHttpVersion._('HTTPv1');
+static const RadarGetHttpSummaryByOperatingSystemHttpVersion httPv1 = RadarGetHttpSummaryByOperatingSystemHttpVersion$httPv1._();
 
-static const RadarGetHttpSummaryByOperatingSystemHttpVersion httPv2 = RadarGetHttpSummaryByOperatingSystemHttpVersion._('HTTPv2');
+static const RadarGetHttpSummaryByOperatingSystemHttpVersion httPv2 = RadarGetHttpSummaryByOperatingSystemHttpVersion$httPv2._();
 
-static const RadarGetHttpSummaryByOperatingSystemHttpVersion httPv3 = RadarGetHttpSummaryByOperatingSystemHttpVersion._('HTTPv3');
+static const RadarGetHttpSummaryByOperatingSystemHttpVersion httPv3 = RadarGetHttpSummaryByOperatingSystemHttpVersion$httPv3._();
 
 static const List<RadarGetHttpSummaryByOperatingSystemHttpVersion> values = [httPv1, httPv2, httPv3];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpSummaryByOperatingSystemHttpVersion$Unknown; } 
+@override String toString() => 'RadarGetHttpSummaryByOperatingSystemHttpVersion($value)';
+
+ }
+@immutable final class RadarGetHttpSummaryByOperatingSystemHttpVersion$httPv1 extends RadarGetHttpSummaryByOperatingSystemHttpVersion {const RadarGetHttpSummaryByOperatingSystemHttpVersion$httPv1._();
+
+@override String get value => 'HTTPv1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByOperatingSystemHttpVersion$httPv1;
+
+@override int get hashCode => 'HTTPv1'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByOperatingSystemHttpVersion$httPv2 extends RadarGetHttpSummaryByOperatingSystemHttpVersion {const RadarGetHttpSummaryByOperatingSystemHttpVersion$httPv2._();
+
+@override String get value => 'HTTPv2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByOperatingSystemHttpVersion$httPv2;
+
+@override int get hashCode => 'HTTPv2'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByOperatingSystemHttpVersion$httPv3 extends RadarGetHttpSummaryByOperatingSystemHttpVersion {const RadarGetHttpSummaryByOperatingSystemHttpVersion$httPv3._();
+
+@override String get value => 'HTTPv3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByOperatingSystemHttpVersion$httPv3;
+
+@override int get hashCode => 'HTTPv3'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByOperatingSystemHttpVersion$Unknown extends RadarGetHttpSummaryByOperatingSystemHttpVersion {const RadarGetHttpSummaryByOperatingSystemHttpVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpSummaryByOperatingSystemHttpVersion && other.value == value;
+    other is RadarGetHttpSummaryByOperatingSystemHttpVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpSummaryByOperatingSystemHttpVersion($value)';
 
  }

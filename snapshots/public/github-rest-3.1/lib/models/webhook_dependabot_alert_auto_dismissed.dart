@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookDependabotAlertAutoDismissed
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookDependabotAlertAutoDismissedAction {const WebhookDependabotAlertAutoDismissedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookDependabotAlertAutoDismissedAction {const WebhookDependabotAlertAutoDismissedAction();
 
 factory WebhookDependabotAlertAutoDismissedAction.fromJson(String json) { return switch (json) {
   'auto_dismissed' => autoDismissed,
-  _ => WebhookDependabotAlertAutoDismissedAction._(json),
+  _ => WebhookDependabotAlertAutoDismissedAction$Unknown(json),
 }; }
 
-static const WebhookDependabotAlertAutoDismissedAction autoDismissed = WebhookDependabotAlertAutoDismissedAction._('auto_dismissed');
+static const WebhookDependabotAlertAutoDismissedAction autoDismissed = WebhookDependabotAlertAutoDismissedAction$autoDismissed._();
 
 static const List<WebhookDependabotAlertAutoDismissedAction> values = [autoDismissed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookDependabotAlertAutoDismissedAction$Unknown; } 
+@override String toString() => 'WebhookDependabotAlertAutoDismissedAction($value)';
+
+ }
+@immutable final class WebhookDependabotAlertAutoDismissedAction$autoDismissed extends WebhookDependabotAlertAutoDismissedAction {const WebhookDependabotAlertAutoDismissedAction$autoDismissed._();
+
+@override String get value => 'auto_dismissed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookDependabotAlertAutoDismissedAction$autoDismissed;
+
+@override int get hashCode => 'auto_dismissed'.hashCode;
+
+ }
+@immutable final class WebhookDependabotAlertAutoDismissedAction$Unknown extends WebhookDependabotAlertAutoDismissedAction {const WebhookDependabotAlertAutoDismissedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookDependabotAlertAutoDismissedAction && other.value == value;
+    other is WebhookDependabotAlertAutoDismissedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookDependabotAlertAutoDismissedAction($value)';
 
  }
 @immutable final class WebhookDependabotAlertAutoDismissed {const WebhookDependabotAlertAutoDismissed({required this.action, required this.alert, required this.repository, required this.sender, this.installation, this.organization, this.enterprise, });

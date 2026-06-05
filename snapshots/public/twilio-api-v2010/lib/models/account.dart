@@ -2,22 +2,21 @@
 // Source: #/components/schemas/Account
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_enum_status.dart';/// The type of this account. Either `Trial` or `Full` if it's been upgraded
-@immutable final class AccountEnumType {const AccountEnumType._(this.value);
+sealed class AccountEnumType {const AccountEnumType();
 
 factory AccountEnumType.fromJson(String json) { return switch (json) {
   'Trial' => trial,
   'Full' => full,
-  _ => AccountEnumType._(json),
+  _ => AccountEnumType$Unknown(json),
 }; }
 
-static const AccountEnumType trial = AccountEnumType._('Trial');
+static const AccountEnumType trial = AccountEnumType$trial._();
 
-static const AccountEnumType full = AccountEnumType._('Full');
+static const AccountEnumType full = AccountEnumType$full._();
 
 static const List<AccountEnumType> values = [trial, full];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountEnumType$Unknown; } 
+@override String toString() => 'AccountEnumType($value)';
+
+ }
+@immutable final class AccountEnumType$trial extends AccountEnumType {const AccountEnumType$trial._();
+
+@override String get value => 'Trial';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountEnumType$trial;
+
+@override int get hashCode => 'Trial'.hashCode;
+
+ }
+@immutable final class AccountEnumType$full extends AccountEnumType {const AccountEnumType$full._();
+
+@override String get value => 'Full';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountEnumType$full;
+
+@override int get hashCode => 'Full'.hashCode;
+
+ }
+@immutable final class AccountEnumType$Unknown extends AccountEnumType {const AccountEnumType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountEnumType && other.value == value;
+    other is AccountEnumType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountEnumType($value)';
 
  }
 @immutable final class Account {const Account({this.authToken, this.dateCreated, this.dateUpdated, this.friendlyName, this.ownerAccountSid, this.sid, this.status, this.subresourceUris, this.type, this.uri, });

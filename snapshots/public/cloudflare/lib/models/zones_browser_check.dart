@@ -4,19 +4,18 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_browser_check_value.dart';/// Inspect the visitor's browser for headers commonly associated with
 /// spammers and certain bots.
 /// 
-@immutable final class ZonesBrowserCheckId {const ZonesBrowserCheckId._(this.value);
+sealed class ZonesBrowserCheckId {const ZonesBrowserCheckId();
 
 factory ZonesBrowserCheckId.fromJson(String json) { return switch (json) {
   'browser_check' => browserCheck,
-  _ => ZonesBrowserCheckId._(json),
+  _ => ZonesBrowserCheckId$Unknown(json),
 }; }
 
-static const ZonesBrowserCheckId browserCheck = ZonesBrowserCheckId._('browser_check');
+static const ZonesBrowserCheckId browserCheck = ZonesBrowserCheckId$browserCheck._();
 
 static const List<ZonesBrowserCheckId> values = [browserCheck];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -24,13 +23,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesBrowserCheckId$Unknown; } 
+@override String toString() => 'ZonesBrowserCheckId($value)';
+
+ }
+@immutable final class ZonesBrowserCheckId$browserCheck extends ZonesBrowserCheckId {const ZonesBrowserCheckId$browserCheck._();
+
+@override String get value => 'browser_check';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesBrowserCheckId$browserCheck;
+
+@override int get hashCode => 'browser_check'.hashCode;
+
+ }
+@immutable final class ZonesBrowserCheckId$Unknown extends ZonesBrowserCheckId {const ZonesBrowserCheckId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesBrowserCheckId && other.value == value;
+    other is ZonesBrowserCheckId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesBrowserCheckId($value)';
 
  }
 @immutable final class ZonesBrowserCheck {const ZonesBrowserCheck({this.id, this.value, });

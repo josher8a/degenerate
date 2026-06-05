@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PagesDeploymentCreateDeploymentRequest
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';/// Boolean string indicating if the working directory has uncommitted changes.
-@immutable final class CommitDirty {const CommitDirty._(this.value);
+sealed class CommitDirty {const CommitDirty();
 
 factory CommitDirty.fromJson(String json) { return switch (json) {
   'true' => $true,
   'false' => $false,
-  _ => CommitDirty._(json),
+  _ => CommitDirty$Unknown(json),
 }; }
 
-static const CommitDirty $true = CommitDirty._('true');
+static const CommitDirty $true = CommitDirty$$true._();
 
-static const CommitDirty $false = CommitDirty._('false');
+static const CommitDirty $false = CommitDirty$$false._();
 
 static const List<CommitDirty> values = [$true, $false];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CommitDirty$Unknown; } 
+@override String toString() => 'CommitDirty($value)';
+
+ }
+@immutable final class CommitDirty$$true extends CommitDirty {const CommitDirty$$true._();
+
+@override String get value => 'true';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CommitDirty$$true;
+
+@override int get hashCode => 'true'.hashCode;
+
+ }
+@immutable final class CommitDirty$$false extends CommitDirty {const CommitDirty$$false._();
+
+@override String get value => 'false';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CommitDirty$$false;
+
+@override int get hashCode => 'false'.hashCode;
+
+ }
+@immutable final class CommitDirty$Unknown extends CommitDirty {const CommitDirty$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CommitDirty && other.value == value;
+    other is CommitDirty$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CommitDirty($value)';
 
  }
 @immutable final class PagesDeploymentCreateDeploymentRequest {const PagesDeploymentCreateDeploymentRequest({this.headers, this.redirects, this.routesJson, this.workerBundle, this.workerJs, this.branch, this.commitDirty, this.commitHash, this.commitMessage, this.functionsFilepathRoutingConfigJson, this.manifest, this.pagesBuildOutputDir, this.wranglerConfigHash, });

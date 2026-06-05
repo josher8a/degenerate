@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TaxAssociation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_association_transaction_attempts.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TaxAssociationObject {const TaxAssociationObject._(this.value);
+sealed class TaxAssociationObject {const TaxAssociationObject();
 
 factory TaxAssociationObject.fromJson(String json) { return switch (json) {
   'tax.association' => taxAssociation,
-  _ => TaxAssociationObject._(json),
+  _ => TaxAssociationObject$Unknown(json),
 }; }
 
-static const TaxAssociationObject taxAssociation = TaxAssociationObject._('tax.association');
+static const TaxAssociationObject taxAssociation = TaxAssociationObject$taxAssociation._();
 
 static const List<TaxAssociationObject> values = [taxAssociation];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TaxAssociationObject$Unknown; } 
+@override String toString() => 'TaxAssociationObject($value)';
+
+ }
+@immutable final class TaxAssociationObject$taxAssociation extends TaxAssociationObject {const TaxAssociationObject$taxAssociation._();
+
+@override String get value => 'tax.association';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxAssociationObject$taxAssociation;
+
+@override int get hashCode => 'tax.association'.hashCode;
+
+ }
+@immutable final class TaxAssociationObject$Unknown extends TaxAssociationObject {const TaxAssociationObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxAssociationObject && other.value == value;
+    other is TaxAssociationObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TaxAssociationObject($value)';
 
  }
 /// A Tax Association exposes the Tax Transactions that Stripe attempted to create on your behalf based on the PaymentIntent input

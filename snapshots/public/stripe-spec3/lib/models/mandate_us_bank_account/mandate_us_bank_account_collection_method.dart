@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MandateUsBankAccount (inline: CollectionMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Mandate collection method
-@immutable final class MandateUsBankAccountCollectionMethod {const MandateUsBankAccountCollectionMethod._(this.value);
+sealed class MandateUsBankAccountCollectionMethod {const MandateUsBankAccountCollectionMethod();
 
 factory MandateUsBankAccountCollectionMethod.fromJson(String json) { return switch (json) {
   'paper' => paper,
-  _ => MandateUsBankAccountCollectionMethod._(json),
+  _ => MandateUsBankAccountCollectionMethod$Unknown(json),
 }; }
 
-static const MandateUsBankAccountCollectionMethod paper = MandateUsBankAccountCollectionMethod._('paper');
+static const MandateUsBankAccountCollectionMethod paper = MandateUsBankAccountCollectionMethod$paper._();
 
 static const List<MandateUsBankAccountCollectionMethod> values = [paper];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MandateUsBankAccountCollectionMethod$Unknown; } 
+@override String toString() => 'MandateUsBankAccountCollectionMethod($value)';
+
+ }
+@immutable final class MandateUsBankAccountCollectionMethod$paper extends MandateUsBankAccountCollectionMethod {const MandateUsBankAccountCollectionMethod$paper._();
+
+@override String get value => 'paper';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandateUsBankAccountCollectionMethod$paper;
+
+@override int get hashCode => 'paper'.hashCode;
+
+ }
+@immutable final class MandateUsBankAccountCollectionMethod$Unknown extends MandateUsBankAccountCollectionMethod {const MandateUsBankAccountCollectionMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MandateUsBankAccountCollectionMethod && other.value == value;
+    other is MandateUsBankAccountCollectionMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MandateUsBankAccountCollectionMethod($value)';
 
  }

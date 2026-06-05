@@ -2,28 +2,27 @@
 // Source: #/components/schemas/CodespaceMachine
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.
-@immutable final class PrebuildAvailability {const PrebuildAvailability._(this.value);
+sealed class PrebuildAvailability {const PrebuildAvailability();
 
 factory PrebuildAvailability.fromJson(String json) { return switch (json) {
   'none' => none,
   'ready' => ready,
   'in_progress' => inProgress,
   'null' => $null,
-  _ => PrebuildAvailability._(json),
+  _ => PrebuildAvailability$Unknown(json),
 }; }
 
-static const PrebuildAvailability none = PrebuildAvailability._('none');
+static const PrebuildAvailability none = PrebuildAvailability$none._();
 
-static const PrebuildAvailability ready = PrebuildAvailability._('ready');
+static const PrebuildAvailability ready = PrebuildAvailability$ready._();
 
-static const PrebuildAvailability inProgress = PrebuildAvailability._('in_progress');
+static const PrebuildAvailability inProgress = PrebuildAvailability$inProgress._();
 
-static const PrebuildAvailability $null = PrebuildAvailability._('null');
+static const PrebuildAvailability $null = PrebuildAvailability$$null._();
 
 static const List<PrebuildAvailability> values = [none, ready, inProgress, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PrebuildAvailability$Unknown; } 
+@override String toString() => 'PrebuildAvailability($value)';
+
+ }
+@immutable final class PrebuildAvailability$none extends PrebuildAvailability {const PrebuildAvailability$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PrebuildAvailability$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class PrebuildAvailability$ready extends PrebuildAvailability {const PrebuildAvailability$ready._();
+
+@override String get value => 'ready';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PrebuildAvailability$ready;
+
+@override int get hashCode => 'ready'.hashCode;
+
+ }
+@immutable final class PrebuildAvailability$inProgress extends PrebuildAvailability {const PrebuildAvailability$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PrebuildAvailability$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class PrebuildAvailability$$null extends PrebuildAvailability {const PrebuildAvailability$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PrebuildAvailability$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class PrebuildAvailability$Unknown extends PrebuildAvailability {const PrebuildAvailability$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PrebuildAvailability && other.value == value;
+    other is PrebuildAvailability$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PrebuildAvailability($value)';
 
  }
 /// A description of the machine powering a codespace.

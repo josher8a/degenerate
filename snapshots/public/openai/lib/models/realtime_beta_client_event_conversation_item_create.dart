@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaClientEventConversationItemCreate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';/// The event type, must be `conversation.item.create`.
-@immutable final class RealtimeBetaClientEventConversationItemCreateType {const RealtimeBetaClientEventConversationItemCreateType._(this.value);
+sealed class RealtimeBetaClientEventConversationItemCreateType {const RealtimeBetaClientEventConversationItemCreateType();
 
 factory RealtimeBetaClientEventConversationItemCreateType.fromJson(String json) { return switch (json) {
   'conversation.item.create' => conversationItemCreate,
-  _ => RealtimeBetaClientEventConversationItemCreateType._(json),
+  _ => RealtimeBetaClientEventConversationItemCreateType$Unknown(json),
 }; }
 
-static const RealtimeBetaClientEventConversationItemCreateType conversationItemCreate = RealtimeBetaClientEventConversationItemCreateType._('conversation.item.create');
+static const RealtimeBetaClientEventConversationItemCreateType conversationItemCreate = RealtimeBetaClientEventConversationItemCreateType$conversationItemCreate._();
 
 static const List<RealtimeBetaClientEventConversationItemCreateType> values = [conversationItemCreate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaClientEventConversationItemCreateType$Unknown; } 
+@override String toString() => 'RealtimeBetaClientEventConversationItemCreateType($value)';
+
+ }
+@immutable final class RealtimeBetaClientEventConversationItemCreateType$conversationItemCreate extends RealtimeBetaClientEventConversationItemCreateType {const RealtimeBetaClientEventConversationItemCreateType$conversationItemCreate._();
+
+@override String get value => 'conversation.item.create';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaClientEventConversationItemCreateType$conversationItemCreate;
+
+@override int get hashCode => 'conversation.item.create'.hashCode;
+
+ }
+@immutable final class RealtimeBetaClientEventConversationItemCreateType$Unknown extends RealtimeBetaClientEventConversationItemCreateType {const RealtimeBetaClientEventConversationItemCreateType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaClientEventConversationItemCreateType && other.value == value;
+    other is RealtimeBetaClientEventConversationItemCreateType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaClientEventConversationItemCreateType($value)';
 
  }
 /// Add a new Item to the Conversation's context, including messages, function

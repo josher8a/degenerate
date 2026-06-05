@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CheckoutSession
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_subscription_parent/billing_bill_resource_invoicing_parents_invoice_subscription_parent_subscription.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_line_items.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_mode.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_payment_link.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_setup_intent.dart';import 'package:pub_stripe_spec3/models/checkout_session/redirect_on_completion.dart';import 'package:pub_stripe_spec3/models/checkout_session_payment_method_options.dart';import 'package:pub_stripe_spec3/models/checkout_session_wallet_options.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/payment_flows_payment_intent_presentment_details.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';import 'package:pub_stripe_spec3/models/payment_link.dart';import 'package:pub_stripe_spec3/models/payment_method_config_biz_payment_method_configuration_details.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_adaptive_pricing.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_after_expiration.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_automatic_tax.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_branding_settings.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_collected_information.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_consent.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_consent_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_currency_conversion.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_fields.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_custom_text.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_customer_details.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_discount.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_invoice_creation.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_name_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_optional_item.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_permissions.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_phone_number_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_saved_payment_method_options.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_shipping_address_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_shipping_cost.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_shipping_option.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_tax_id_collection.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_total_details.dart';import 'package:pub_stripe_spec3/models/setup_intent.dart';import 'package:pub_stripe_spec3/models/subscription.dart';/// Describes whether Checkout should collect the customer's billing address. Defaults to `auto`.
-@immutable final class CheckoutSessionBillingAddressCollection {const CheckoutSessionBillingAddressCollection._(this.value);
+sealed class CheckoutSessionBillingAddressCollection {const CheckoutSessionBillingAddressCollection();
 
 factory CheckoutSessionBillingAddressCollection.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'required' => $required,
-  _ => CheckoutSessionBillingAddressCollection._(json),
+  _ => CheckoutSessionBillingAddressCollection$Unknown(json),
 }; }
 
-static const CheckoutSessionBillingAddressCollection auto = CheckoutSessionBillingAddressCollection._('auto');
+static const CheckoutSessionBillingAddressCollection auto = CheckoutSessionBillingAddressCollection$auto._();
 
-static const CheckoutSessionBillingAddressCollection $required = CheckoutSessionBillingAddressCollection._('required');
+static const CheckoutSessionBillingAddressCollection $required = CheckoutSessionBillingAddressCollection$$required._();
 
 static const List<CheckoutSessionBillingAddressCollection> values = [auto, $required];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,32 +25,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CheckoutSessionBillingAddressCollection && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CheckoutSessionBillingAddressCollection$Unknown; } 
 @override String toString() => 'CheckoutSessionBillingAddressCollection($value)';
 
  }
+@immutable final class CheckoutSessionBillingAddressCollection$auto extends CheckoutSessionBillingAddressCollection {const CheckoutSessionBillingAddressCollection$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionBillingAddressCollection$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class CheckoutSessionBillingAddressCollection$$required extends CheckoutSessionBillingAddressCollection {const CheckoutSessionBillingAddressCollection$$required._();
+
+@override String get value => 'required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionBillingAddressCollection$$required;
+
+@override int get hashCode => 'required'.hashCode;
+
+ }
+@immutable final class CheckoutSessionBillingAddressCollection$Unknown extends CheckoutSessionBillingAddressCollection {const CheckoutSessionBillingAddressCollection$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionBillingAddressCollection$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Configure whether a Checkout Session creates a Customer when the Checkout Session completes.
-@immutable final class CheckoutSessionCustomerCreation {const CheckoutSessionCustomerCreation._(this.value);
+sealed class CheckoutSessionCustomerCreation {const CheckoutSessionCustomerCreation();
 
 factory CheckoutSessionCustomerCreation.fromJson(String json) { return switch (json) {
   'always' => always,
   'if_required' => ifRequired,
-  _ => CheckoutSessionCustomerCreation._(json),
+  _ => CheckoutSessionCustomerCreation$Unknown(json),
 }; }
 
-static const CheckoutSessionCustomerCreation always = CheckoutSessionCustomerCreation._('always');
+static const CheckoutSessionCustomerCreation always = CheckoutSessionCustomerCreation$always._();
 
-static const CheckoutSessionCustomerCreation ifRequired = CheckoutSessionCustomerCreation._('if_required');
+static const CheckoutSessionCustomerCreation ifRequired = CheckoutSessionCustomerCreation$ifRequired._();
 
 static const List<CheckoutSessionCustomerCreation> values = [always, ifRequired];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,17 +81,40 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CheckoutSessionCustomerCreation && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CheckoutSessionCustomerCreation$Unknown; } 
 @override String toString() => 'CheckoutSessionCustomerCreation($value)';
 
  }
+@immutable final class CheckoutSessionCustomerCreation$always extends CheckoutSessionCustomerCreation {const CheckoutSessionCustomerCreation$always._();
+
+@override String get value => 'always';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionCustomerCreation$always;
+
+@override int get hashCode => 'always'.hashCode;
+
+ }
+@immutable final class CheckoutSessionCustomerCreation$ifRequired extends CheckoutSessionCustomerCreation {const CheckoutSessionCustomerCreation$ifRequired._();
+
+@override String get value => 'if_required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionCustomerCreation$ifRequired;
+
+@override int get hashCode => 'if_required'.hashCode;
+
+ }
+@immutable final class CheckoutSessionCustomerCreation$Unknown extends CheckoutSessionCustomerCreation {const CheckoutSessionCustomerCreation$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionCustomerCreation$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The IETF language tag of the locale Checkout is displayed in. If blank or `auto`, the browser's locale is used.
-@immutable final class CheckoutSessionLocale {const CheckoutSessionLocale._(this.value);
+sealed class CheckoutSessionLocale {const CheckoutSessionLocale();
 
 factory CheckoutSessionLocale.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -114,95 +158,94 @@ factory CheckoutSessionLocale.fromJson(String json) { return switch (json) {
   'zh' => zh,
   'zh-HK' => zhHk,
   'zh-TW' => zhTw,
-  _ => CheckoutSessionLocale._(json),
+  _ => CheckoutSessionLocale$Unknown(json),
 }; }
 
-static const CheckoutSessionLocale auto = CheckoutSessionLocale._('auto');
+static const CheckoutSessionLocale auto = CheckoutSessionLocale$auto._();
 
-static const CheckoutSessionLocale bg = CheckoutSessionLocale._('bg');
+static const CheckoutSessionLocale bg = CheckoutSessionLocale$bg._();
 
-static const CheckoutSessionLocale cs = CheckoutSessionLocale._('cs');
+static const CheckoutSessionLocale cs = CheckoutSessionLocale$cs._();
 
-static const CheckoutSessionLocale da = CheckoutSessionLocale._('da');
+static const CheckoutSessionLocale da = CheckoutSessionLocale$da._();
 
-static const CheckoutSessionLocale de = CheckoutSessionLocale._('de');
+static const CheckoutSessionLocale de = CheckoutSessionLocale$de._();
 
-static const CheckoutSessionLocale el = CheckoutSessionLocale._('el');
+static const CheckoutSessionLocale el = CheckoutSessionLocale$el._();
 
-static const CheckoutSessionLocale en = CheckoutSessionLocale._('en');
+static const CheckoutSessionLocale en = CheckoutSessionLocale$en._();
 
-static const CheckoutSessionLocale enGb = CheckoutSessionLocale._('en-GB');
+static const CheckoutSessionLocale enGb = CheckoutSessionLocale$enGb._();
 
-static const CheckoutSessionLocale es = CheckoutSessionLocale._('es');
+static const CheckoutSessionLocale es = CheckoutSessionLocale$es._();
 
-static const CheckoutSessionLocale es419 = CheckoutSessionLocale._('es-419');
+static const CheckoutSessionLocale es419 = CheckoutSessionLocale$es419._();
 
-static const CheckoutSessionLocale et = CheckoutSessionLocale._('et');
+static const CheckoutSessionLocale et = CheckoutSessionLocale$et._();
 
-static const CheckoutSessionLocale fi = CheckoutSessionLocale._('fi');
+static const CheckoutSessionLocale fi = CheckoutSessionLocale$fi._();
 
-static const CheckoutSessionLocale fil = CheckoutSessionLocale._('fil');
+static const CheckoutSessionLocale fil = CheckoutSessionLocale$fil._();
 
-static const CheckoutSessionLocale fr = CheckoutSessionLocale._('fr');
+static const CheckoutSessionLocale fr = CheckoutSessionLocale$fr._();
 
-static const CheckoutSessionLocale frCa = CheckoutSessionLocale._('fr-CA');
+static const CheckoutSessionLocale frCa = CheckoutSessionLocale$frCa._();
 
-static const CheckoutSessionLocale hr = CheckoutSessionLocale._('hr');
+static const CheckoutSessionLocale hr = CheckoutSessionLocale$hr._();
 
-static const CheckoutSessionLocale hu = CheckoutSessionLocale._('hu');
+static const CheckoutSessionLocale hu = CheckoutSessionLocale$hu._();
 
-static const CheckoutSessionLocale id = CheckoutSessionLocale._('id');
+static const CheckoutSessionLocale id = CheckoutSessionLocale$id._();
 
-static const CheckoutSessionLocale it = CheckoutSessionLocale._('it');
+static const CheckoutSessionLocale it = CheckoutSessionLocale$it._();
 
-static const CheckoutSessionLocale ja = CheckoutSessionLocale._('ja');
+static const CheckoutSessionLocale ja = CheckoutSessionLocale$ja._();
 
-static const CheckoutSessionLocale ko = CheckoutSessionLocale._('ko');
+static const CheckoutSessionLocale ko = CheckoutSessionLocale$ko._();
 
-static const CheckoutSessionLocale lt = CheckoutSessionLocale._('lt');
+static const CheckoutSessionLocale lt = CheckoutSessionLocale$lt._();
 
-static const CheckoutSessionLocale lv = CheckoutSessionLocale._('lv');
+static const CheckoutSessionLocale lv = CheckoutSessionLocale$lv._();
 
-static const CheckoutSessionLocale ms = CheckoutSessionLocale._('ms');
+static const CheckoutSessionLocale ms = CheckoutSessionLocale$ms._();
 
-static const CheckoutSessionLocale mt = CheckoutSessionLocale._('mt');
+static const CheckoutSessionLocale mt = CheckoutSessionLocale$mt._();
 
-static const CheckoutSessionLocale nb = CheckoutSessionLocale._('nb');
+static const CheckoutSessionLocale nb = CheckoutSessionLocale$nb._();
 
-static const CheckoutSessionLocale nl = CheckoutSessionLocale._('nl');
+static const CheckoutSessionLocale nl = CheckoutSessionLocale$nl._();
 
-static const CheckoutSessionLocale pl = CheckoutSessionLocale._('pl');
+static const CheckoutSessionLocale pl = CheckoutSessionLocale$pl._();
 
-static const CheckoutSessionLocale pt = CheckoutSessionLocale._('pt');
+static const CheckoutSessionLocale pt = CheckoutSessionLocale$pt._();
 
-static const CheckoutSessionLocale ptBr = CheckoutSessionLocale._('pt-BR');
+static const CheckoutSessionLocale ptBr = CheckoutSessionLocale$ptBr._();
 
-static const CheckoutSessionLocale ro = CheckoutSessionLocale._('ro');
+static const CheckoutSessionLocale ro = CheckoutSessionLocale$ro._();
 
-static const CheckoutSessionLocale ru = CheckoutSessionLocale._('ru');
+static const CheckoutSessionLocale ru = CheckoutSessionLocale$ru._();
 
-static const CheckoutSessionLocale sk = CheckoutSessionLocale._('sk');
+static const CheckoutSessionLocale sk = CheckoutSessionLocale$sk._();
 
-static const CheckoutSessionLocale sl = CheckoutSessionLocale._('sl');
+static const CheckoutSessionLocale sl = CheckoutSessionLocale$sl._();
 
-static const CheckoutSessionLocale sv = CheckoutSessionLocale._('sv');
+static const CheckoutSessionLocale sv = CheckoutSessionLocale$sv._();
 
-static const CheckoutSessionLocale th = CheckoutSessionLocale._('th');
+static const CheckoutSessionLocale th = CheckoutSessionLocale$th._();
 
-static const CheckoutSessionLocale tr = CheckoutSessionLocale._('tr');
+static const CheckoutSessionLocale tr = CheckoutSessionLocale$tr._();
 
-static const CheckoutSessionLocale vi = CheckoutSessionLocale._('vi');
+static const CheckoutSessionLocale vi = CheckoutSessionLocale$vi._();
 
-static const CheckoutSessionLocale zh = CheckoutSessionLocale._('zh');
+static const CheckoutSessionLocale zh = CheckoutSessionLocale$zh._();
 
-static const CheckoutSessionLocale zhHk = CheckoutSessionLocale._('zh-HK');
+static const CheckoutSessionLocale zhHk = CheckoutSessionLocale$zhHk._();
 
-static const CheckoutSessionLocale zhTw = CheckoutSessionLocale._('zh-TW');
+static const CheckoutSessionLocale zhTw = CheckoutSessionLocale$zhTw._();
 
 static const List<CheckoutSessionLocale> values = [auto, bg, cs, da, de, el, en, enGb, es, es419, et, fi, fil, fr, frCa, hr, hu, id, it, ja, ko, lt, lv, ms, mt, nb, nl, pl, pt, ptBr, ro, ru, sk, sl, sv, th, tr, vi, zh, zhHk, zhTw];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -250,29 +293,402 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CheckoutSessionLocale && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CheckoutSessionLocale$Unknown; } 
 @override String toString() => 'CheckoutSessionLocale($value)';
 
  }
+@immutable final class CheckoutSessionLocale$auto extends CheckoutSessionLocale {const CheckoutSessionLocale$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$bg extends CheckoutSessionLocale {const CheckoutSessionLocale$bg._();
+
+@override String get value => 'bg';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$bg;
+
+@override int get hashCode => 'bg'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$cs extends CheckoutSessionLocale {const CheckoutSessionLocale$cs._();
+
+@override String get value => 'cs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$cs;
+
+@override int get hashCode => 'cs'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$da extends CheckoutSessionLocale {const CheckoutSessionLocale$da._();
+
+@override String get value => 'da';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$da;
+
+@override int get hashCode => 'da'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$de extends CheckoutSessionLocale {const CheckoutSessionLocale$de._();
+
+@override String get value => 'de';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$de;
+
+@override int get hashCode => 'de'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$el extends CheckoutSessionLocale {const CheckoutSessionLocale$el._();
+
+@override String get value => 'el';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$el;
+
+@override int get hashCode => 'el'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$en extends CheckoutSessionLocale {const CheckoutSessionLocale$en._();
+
+@override String get value => 'en';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$en;
+
+@override int get hashCode => 'en'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$enGb extends CheckoutSessionLocale {const CheckoutSessionLocale$enGb._();
+
+@override String get value => 'en-GB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$enGb;
+
+@override int get hashCode => 'en-GB'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$es extends CheckoutSessionLocale {const CheckoutSessionLocale$es._();
+
+@override String get value => 'es';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$es;
+
+@override int get hashCode => 'es'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$es419 extends CheckoutSessionLocale {const CheckoutSessionLocale$es419._();
+
+@override String get value => 'es-419';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$es419;
+
+@override int get hashCode => 'es-419'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$et extends CheckoutSessionLocale {const CheckoutSessionLocale$et._();
+
+@override String get value => 'et';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$et;
+
+@override int get hashCode => 'et'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$fi extends CheckoutSessionLocale {const CheckoutSessionLocale$fi._();
+
+@override String get value => 'fi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$fi;
+
+@override int get hashCode => 'fi'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$fil extends CheckoutSessionLocale {const CheckoutSessionLocale$fil._();
+
+@override String get value => 'fil';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$fil;
+
+@override int get hashCode => 'fil'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$fr extends CheckoutSessionLocale {const CheckoutSessionLocale$fr._();
+
+@override String get value => 'fr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$fr;
+
+@override int get hashCode => 'fr'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$frCa extends CheckoutSessionLocale {const CheckoutSessionLocale$frCa._();
+
+@override String get value => 'fr-CA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$frCa;
+
+@override int get hashCode => 'fr-CA'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$hr extends CheckoutSessionLocale {const CheckoutSessionLocale$hr._();
+
+@override String get value => 'hr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$hr;
+
+@override int get hashCode => 'hr'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$hu extends CheckoutSessionLocale {const CheckoutSessionLocale$hu._();
+
+@override String get value => 'hu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$hu;
+
+@override int get hashCode => 'hu'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$id extends CheckoutSessionLocale {const CheckoutSessionLocale$id._();
+
+@override String get value => 'id';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$id;
+
+@override int get hashCode => 'id'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$it extends CheckoutSessionLocale {const CheckoutSessionLocale$it._();
+
+@override String get value => 'it';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$it;
+
+@override int get hashCode => 'it'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$ja extends CheckoutSessionLocale {const CheckoutSessionLocale$ja._();
+
+@override String get value => 'ja';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$ja;
+
+@override int get hashCode => 'ja'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$ko extends CheckoutSessionLocale {const CheckoutSessionLocale$ko._();
+
+@override String get value => 'ko';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$ko;
+
+@override int get hashCode => 'ko'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$lt extends CheckoutSessionLocale {const CheckoutSessionLocale$lt._();
+
+@override String get value => 'lt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$lt;
+
+@override int get hashCode => 'lt'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$lv extends CheckoutSessionLocale {const CheckoutSessionLocale$lv._();
+
+@override String get value => 'lv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$lv;
+
+@override int get hashCode => 'lv'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$ms extends CheckoutSessionLocale {const CheckoutSessionLocale$ms._();
+
+@override String get value => 'ms';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$ms;
+
+@override int get hashCode => 'ms'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$mt extends CheckoutSessionLocale {const CheckoutSessionLocale$mt._();
+
+@override String get value => 'mt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$mt;
+
+@override int get hashCode => 'mt'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$nb extends CheckoutSessionLocale {const CheckoutSessionLocale$nb._();
+
+@override String get value => 'nb';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$nb;
+
+@override int get hashCode => 'nb'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$nl extends CheckoutSessionLocale {const CheckoutSessionLocale$nl._();
+
+@override String get value => 'nl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$nl;
+
+@override int get hashCode => 'nl'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$pl extends CheckoutSessionLocale {const CheckoutSessionLocale$pl._();
+
+@override String get value => 'pl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$pl;
+
+@override int get hashCode => 'pl'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$pt extends CheckoutSessionLocale {const CheckoutSessionLocale$pt._();
+
+@override String get value => 'pt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$pt;
+
+@override int get hashCode => 'pt'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$ptBr extends CheckoutSessionLocale {const CheckoutSessionLocale$ptBr._();
+
+@override String get value => 'pt-BR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$ptBr;
+
+@override int get hashCode => 'pt-BR'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$ro extends CheckoutSessionLocale {const CheckoutSessionLocale$ro._();
+
+@override String get value => 'ro';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$ro;
+
+@override int get hashCode => 'ro'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$ru extends CheckoutSessionLocale {const CheckoutSessionLocale$ru._();
+
+@override String get value => 'ru';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$ru;
+
+@override int get hashCode => 'ru'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$sk extends CheckoutSessionLocale {const CheckoutSessionLocale$sk._();
+
+@override String get value => 'sk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$sk;
+
+@override int get hashCode => 'sk'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$sl extends CheckoutSessionLocale {const CheckoutSessionLocale$sl._();
+
+@override String get value => 'sl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$sl;
+
+@override int get hashCode => 'sl'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$sv extends CheckoutSessionLocale {const CheckoutSessionLocale$sv._();
+
+@override String get value => 'sv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$sv;
+
+@override int get hashCode => 'sv'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$th extends CheckoutSessionLocale {const CheckoutSessionLocale$th._();
+
+@override String get value => 'th';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$th;
+
+@override int get hashCode => 'th'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$tr extends CheckoutSessionLocale {const CheckoutSessionLocale$tr._();
+
+@override String get value => 'tr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$tr;
+
+@override int get hashCode => 'tr'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$vi extends CheckoutSessionLocale {const CheckoutSessionLocale$vi._();
+
+@override String get value => 'vi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$vi;
+
+@override int get hashCode => 'vi'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$zh extends CheckoutSessionLocale {const CheckoutSessionLocale$zh._();
+
+@override String get value => 'zh';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$zh;
+
+@override int get hashCode => 'zh'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$zhHk extends CheckoutSessionLocale {const CheckoutSessionLocale$zhHk._();
+
+@override String get value => 'zh-HK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$zhHk;
+
+@override int get hashCode => 'zh-HK'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$zhTw extends CheckoutSessionLocale {const CheckoutSessionLocale$zhTw._();
+
+@override String get value => 'zh-TW';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionLocale$zhTw;
+
+@override int get hashCode => 'zh-TW'.hashCode;
+
+ }
+@immutable final class CheckoutSessionLocale$Unknown extends CheckoutSessionLocale {const CheckoutSessionLocale$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionLocale$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class CheckoutSessionObject {const CheckoutSessionObject._(this.value);
+sealed class CheckoutSessionObject {const CheckoutSessionObject();
 
 factory CheckoutSessionObject.fromJson(String json) { return switch (json) {
   'checkout.session' => checkoutSession,
-  _ => CheckoutSessionObject._(json),
+  _ => CheckoutSessionObject$Unknown(json),
 }; }
 
-static const CheckoutSessionObject checkoutSession = CheckoutSessionObject._('checkout.session');
+static const CheckoutSessionObject checkoutSession = CheckoutSessionObject$checkoutSession._();
 
 static const List<CheckoutSessionObject> values = [checkoutSession];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -280,32 +696,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CheckoutSessionObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CheckoutSessionObject$Unknown; } 
 @override String toString() => 'CheckoutSessionObject($value)';
 
  }
+@immutable final class CheckoutSessionObject$checkoutSession extends CheckoutSessionObject {const CheckoutSessionObject$checkoutSession._();
+
+@override String get value => 'checkout.session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionObject$checkoutSession;
+
+@override int get hashCode => 'checkout.session'.hashCode;
+
+ }
+@immutable final class CheckoutSessionObject$Unknown extends CheckoutSessionObject {const CheckoutSessionObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Where the user is coming from. This informs the optimizations that are applied to the session.
-@immutable final class CheckoutSessionOriginContext {const CheckoutSessionOriginContext._(this.value);
+sealed class CheckoutSessionOriginContext {const CheckoutSessionOriginContext();
 
 factory CheckoutSessionOriginContext.fromJson(String json) { return switch (json) {
   'mobile_app' => mobileApp,
   'web' => web,
-  _ => CheckoutSessionOriginContext._(json),
+  _ => CheckoutSessionOriginContext$Unknown(json),
 }; }
 
-static const CheckoutSessionOriginContext mobileApp = CheckoutSessionOriginContext._('mobile_app');
+static const CheckoutSessionOriginContext mobileApp = CheckoutSessionOriginContext$mobileApp._();
 
-static const CheckoutSessionOriginContext web = CheckoutSessionOriginContext._('web');
+static const CheckoutSessionOriginContext web = CheckoutSessionOriginContext$web._();
 
 static const List<CheckoutSessionOriginContext> values = [mobileApp, web];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -314,32 +743,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CheckoutSessionOriginContext && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CheckoutSessionOriginContext$Unknown; } 
 @override String toString() => 'CheckoutSessionOriginContext($value)';
 
  }
+@immutable final class CheckoutSessionOriginContext$mobileApp extends CheckoutSessionOriginContext {const CheckoutSessionOriginContext$mobileApp._();
+
+@override String get value => 'mobile_app';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionOriginContext$mobileApp;
+
+@override int get hashCode => 'mobile_app'.hashCode;
+
+ }
+@immutable final class CheckoutSessionOriginContext$web extends CheckoutSessionOriginContext {const CheckoutSessionOriginContext$web._();
+
+@override String get value => 'web';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionOriginContext$web;
+
+@override int get hashCode => 'web'.hashCode;
+
+ }
+@immutable final class CheckoutSessionOriginContext$Unknown extends CheckoutSessionOriginContext {const CheckoutSessionOriginContext$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionOriginContext$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Configure whether a Checkout Session should collect a payment method. Defaults to `always`.
-@immutable final class CheckoutSessionPaymentMethodCollection {const CheckoutSessionPaymentMethodCollection._(this.value);
+sealed class CheckoutSessionPaymentMethodCollection {const CheckoutSessionPaymentMethodCollection();
 
 factory CheckoutSessionPaymentMethodCollection.fromJson(String json) { return switch (json) {
   'always' => always,
   'if_required' => ifRequired,
-  _ => CheckoutSessionPaymentMethodCollection._(json),
+  _ => CheckoutSessionPaymentMethodCollection$Unknown(json),
 }; }
 
-static const CheckoutSessionPaymentMethodCollection always = CheckoutSessionPaymentMethodCollection._('always');
+static const CheckoutSessionPaymentMethodCollection always = CheckoutSessionPaymentMethodCollection$always._();
 
-static const CheckoutSessionPaymentMethodCollection ifRequired = CheckoutSessionPaymentMethodCollection._('if_required');
+static const CheckoutSessionPaymentMethodCollection ifRequired = CheckoutSessionPaymentMethodCollection$ifRequired._();
 
 static const List<CheckoutSessionPaymentMethodCollection> values = [always, ifRequired];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -348,36 +799,58 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CheckoutSessionPaymentMethodCollection$Unknown; } 
+@override String toString() => 'CheckoutSessionPaymentMethodCollection($value)';
+
+ }
+@immutable final class CheckoutSessionPaymentMethodCollection$always extends CheckoutSessionPaymentMethodCollection {const CheckoutSessionPaymentMethodCollection$always._();
+
+@override String get value => 'always';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionPaymentMethodCollection$always;
+
+@override int get hashCode => 'always'.hashCode;
+
+ }
+@immutable final class CheckoutSessionPaymentMethodCollection$ifRequired extends CheckoutSessionPaymentMethodCollection {const CheckoutSessionPaymentMethodCollection$ifRequired._();
+
+@override String get value => 'if_required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionPaymentMethodCollection$ifRequired;
+
+@override int get hashCode => 'if_required'.hashCode;
+
+ }
+@immutable final class CheckoutSessionPaymentMethodCollection$Unknown extends CheckoutSessionPaymentMethodCollection {const CheckoutSessionPaymentMethodCollection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CheckoutSessionPaymentMethodCollection && other.value == value;
+    other is CheckoutSessionPaymentMethodCollection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CheckoutSessionPaymentMethodCollection($value)';
 
  }
 /// The payment status of the Checkout Session, one of `paid`, `unpaid`, or `no_payment_required`.
 /// You can use this value to decide when to fulfill your customer's order.
-@immutable final class PaymentStatus {const PaymentStatus._(this.value);
+sealed class PaymentStatus {const PaymentStatus();
 
 factory PaymentStatus.fromJson(String json) { return switch (json) {
   'no_payment_required' => noPaymentRequired,
   'paid' => paid,
   'unpaid' => unpaid,
-  _ => PaymentStatus._(json),
+  _ => PaymentStatus$Unknown(json),
 }; }
 
-static const PaymentStatus noPaymentRequired = PaymentStatus._('no_payment_required');
+static const PaymentStatus noPaymentRequired = PaymentStatus$noPaymentRequired._();
 
-static const PaymentStatus paid = PaymentStatus._('paid');
+static const PaymentStatus paid = PaymentStatus$paid._();
 
-static const PaymentStatus unpaid = PaymentStatus._('unpaid');
+static const PaymentStatus unpaid = PaymentStatus$unpaid._();
 
 static const List<PaymentStatus> values = [noPaymentRequired, paid, unpaid];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -387,35 +860,66 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PaymentStatus$Unknown; } 
 @override String toString() => 'PaymentStatus($value)';
 
  }
+@immutable final class PaymentStatus$noPaymentRequired extends PaymentStatus {const PaymentStatus$noPaymentRequired._();
+
+@override String get value => 'no_payment_required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentStatus$noPaymentRequired;
+
+@override int get hashCode => 'no_payment_required'.hashCode;
+
+ }
+@immutable final class PaymentStatus$paid extends PaymentStatus {const PaymentStatus$paid._();
+
+@override String get value => 'paid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentStatus$paid;
+
+@override int get hashCode => 'paid'.hashCode;
+
+ }
+@immutable final class PaymentStatus$unpaid extends PaymentStatus {const PaymentStatus$unpaid._();
+
+@override String get value => 'unpaid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentStatus$unpaid;
+
+@override int get hashCode => 'unpaid'.hashCode;
+
+ }
+@immutable final class PaymentStatus$Unknown extends PaymentStatus {const PaymentStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of the Checkout Session, one of `open`, `complete`, or `expired`.
-@immutable final class CheckoutSessionStatus {const CheckoutSessionStatus._(this.value);
+sealed class CheckoutSessionStatus {const CheckoutSessionStatus();
 
 factory CheckoutSessionStatus.fromJson(String json) { return switch (json) {
   'complete' => complete,
   'expired' => expired,
   'open' => open,
-  _ => CheckoutSessionStatus._(json),
+  _ => CheckoutSessionStatus$Unknown(json),
 }; }
 
-static const CheckoutSessionStatus complete = CheckoutSessionStatus._('complete');
+static const CheckoutSessionStatus complete = CheckoutSessionStatus$complete._();
 
-static const CheckoutSessionStatus expired = CheckoutSessionStatus._('expired');
+static const CheckoutSessionStatus expired = CheckoutSessionStatus$expired._();
 
-static const CheckoutSessionStatus open = CheckoutSessionStatus._('open');
+static const CheckoutSessionStatus open = CheckoutSessionStatus$open._();
 
 static const List<CheckoutSessionStatus> values = [complete, expired, open];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -425,19 +929,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CheckoutSessionStatus$Unknown; } 
+@override String toString() => 'CheckoutSessionStatus($value)';
+
+ }
+@immutable final class CheckoutSessionStatus$complete extends CheckoutSessionStatus {const CheckoutSessionStatus$complete._();
+
+@override String get value => 'complete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionStatus$complete;
+
+@override int get hashCode => 'complete'.hashCode;
+
+ }
+@immutable final class CheckoutSessionStatus$expired extends CheckoutSessionStatus {const CheckoutSessionStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class CheckoutSessionStatus$open extends CheckoutSessionStatus {const CheckoutSessionStatus$open._();
+
+@override String get value => 'open';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionStatus$open;
+
+@override int get hashCode => 'open'.hashCode;
+
+ }
+@immutable final class CheckoutSessionStatus$Unknown extends CheckoutSessionStatus {const CheckoutSessionStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CheckoutSessionStatus && other.value == value;
+    other is CheckoutSessionStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CheckoutSessionStatus($value)';
 
  }
 /// Describes the type of transaction being performed by Checkout in order to customize
 /// relevant text on the page, such as the submit button. `submit_type` can only be
 /// specified on Checkout Sessions in `payment` mode. If blank or `auto`, `pay` is used.
-@immutable final class CheckoutSessionSubmitType {const CheckoutSessionSubmitType._(this.value);
+sealed class CheckoutSessionSubmitType {const CheckoutSessionSubmitType();
 
 factory CheckoutSessionSubmitType.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -445,23 +981,22 @@ factory CheckoutSessionSubmitType.fromJson(String json) { return switch (json) {
   'donate' => donate,
   'pay' => pay,
   'subscribe' => subscribe,
-  _ => CheckoutSessionSubmitType._(json),
+  _ => CheckoutSessionSubmitType$Unknown(json),
 }; }
 
-static const CheckoutSessionSubmitType auto = CheckoutSessionSubmitType._('auto');
+static const CheckoutSessionSubmitType auto = CheckoutSessionSubmitType$auto._();
 
-static const CheckoutSessionSubmitType book = CheckoutSessionSubmitType._('book');
+static const CheckoutSessionSubmitType book = CheckoutSessionSubmitType$book._();
 
-static const CheckoutSessionSubmitType donate = CheckoutSessionSubmitType._('donate');
+static const CheckoutSessionSubmitType donate = CheckoutSessionSubmitType$donate._();
 
-static const CheckoutSessionSubmitType pay = CheckoutSessionSubmitType._('pay');
+static const CheckoutSessionSubmitType pay = CheckoutSessionSubmitType$pay._();
 
-static const CheckoutSessionSubmitType subscribe = CheckoutSessionSubmitType._('subscribe');
+static const CheckoutSessionSubmitType subscribe = CheckoutSessionSubmitType$subscribe._();
 
 static const List<CheckoutSessionSubmitType> values = [auto, book, donate, pay, subscribe];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -473,35 +1008,84 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CheckoutSessionSubmitType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CheckoutSessionSubmitType$Unknown; } 
 @override String toString() => 'CheckoutSessionSubmitType($value)';
 
  }
+@immutable final class CheckoutSessionSubmitType$auto extends CheckoutSessionSubmitType {const CheckoutSessionSubmitType$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionSubmitType$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class CheckoutSessionSubmitType$book extends CheckoutSessionSubmitType {const CheckoutSessionSubmitType$book._();
+
+@override String get value => 'book';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionSubmitType$book;
+
+@override int get hashCode => 'book'.hashCode;
+
+ }
+@immutable final class CheckoutSessionSubmitType$donate extends CheckoutSessionSubmitType {const CheckoutSessionSubmitType$donate._();
+
+@override String get value => 'donate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionSubmitType$donate;
+
+@override int get hashCode => 'donate'.hashCode;
+
+ }
+@immutable final class CheckoutSessionSubmitType$pay extends CheckoutSessionSubmitType {const CheckoutSessionSubmitType$pay._();
+
+@override String get value => 'pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionSubmitType$pay;
+
+@override int get hashCode => 'pay'.hashCode;
+
+ }
+@immutable final class CheckoutSessionSubmitType$subscribe extends CheckoutSessionSubmitType {const CheckoutSessionSubmitType$subscribe._();
+
+@override String get value => 'subscribe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionSubmitType$subscribe;
+
+@override int get hashCode => 'subscribe'.hashCode;
+
+ }
+@immutable final class CheckoutSessionSubmitType$Unknown extends CheckoutSessionSubmitType {const CheckoutSessionSubmitType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CheckoutSessionSubmitType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The UI mode of the Session. Defaults to `hosted`.
-@immutable final class CheckoutSessionUiMode {const CheckoutSessionUiMode._(this.value);
+sealed class CheckoutSessionUiMode {const CheckoutSessionUiMode();
 
 factory CheckoutSessionUiMode.fromJson(String json) { return switch (json) {
   'custom' => custom,
   'embedded' => embedded,
   'hosted' => hosted,
-  _ => CheckoutSessionUiMode._(json),
+  _ => CheckoutSessionUiMode$Unknown(json),
 }; }
 
-static const CheckoutSessionUiMode custom = CheckoutSessionUiMode._('custom');
+static const CheckoutSessionUiMode custom = CheckoutSessionUiMode$custom._();
 
-static const CheckoutSessionUiMode embedded = CheckoutSessionUiMode._('embedded');
+static const CheckoutSessionUiMode embedded = CheckoutSessionUiMode$embedded._();
 
-static const CheckoutSessionUiMode hosted = CheckoutSessionUiMode._('hosted');
+static const CheckoutSessionUiMode hosted = CheckoutSessionUiMode$hosted._();
 
 static const List<CheckoutSessionUiMode> values = [custom, embedded, hosted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -511,13 +1095,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CheckoutSessionUiMode$Unknown; } 
+@override String toString() => 'CheckoutSessionUiMode($value)';
+
+ }
+@immutable final class CheckoutSessionUiMode$custom extends CheckoutSessionUiMode {const CheckoutSessionUiMode$custom._();
+
+@override String get value => 'custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionUiMode$custom;
+
+@override int get hashCode => 'custom'.hashCode;
+
+ }
+@immutable final class CheckoutSessionUiMode$embedded extends CheckoutSessionUiMode {const CheckoutSessionUiMode$embedded._();
+
+@override String get value => 'embedded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionUiMode$embedded;
+
+@override int get hashCode => 'embedded'.hashCode;
+
+ }
+@immutable final class CheckoutSessionUiMode$hosted extends CheckoutSessionUiMode {const CheckoutSessionUiMode$hosted._();
+
+@override String get value => 'hosted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionUiMode$hosted;
+
+@override int get hashCode => 'hosted'.hashCode;
+
+ }
+@immutable final class CheckoutSessionUiMode$Unknown extends CheckoutSessionUiMode {const CheckoutSessionUiMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CheckoutSessionUiMode && other.value == value;
+    other is CheckoutSessionUiMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CheckoutSessionUiMode($value)';
 
  }
 /// A Checkout Session represents your customer's session as they pay for

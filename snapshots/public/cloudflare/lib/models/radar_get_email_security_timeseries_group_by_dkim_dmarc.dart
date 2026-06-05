@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupByDkimDmarc
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupByDkimDmarc {const RadarGetEmailSecurityTimeseriesGroupByDkimDmarc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailSecurityTimeseriesGroupByDkimDmarc {const RadarGetEmailSecurityTimeseriesGroupByDkimDmarc();
 
 factory RadarGetEmailSecurityTimeseriesGroupByDkimDmarc.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailSecurityTimeseriesGroupByDkimDmarc._(json),
+  _ => RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$Unknown(json),
 }; }
 
-static const RadarGetEmailSecurityTimeseriesGroupByDkimDmarc pass = RadarGetEmailSecurityTimeseriesGroupByDkimDmarc._('PASS');
+static const RadarGetEmailSecurityTimeseriesGroupByDkimDmarc pass = RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$pass._();
 
-static const RadarGetEmailSecurityTimeseriesGroupByDkimDmarc none = RadarGetEmailSecurityTimeseriesGroupByDkimDmarc._('NONE');
+static const RadarGetEmailSecurityTimeseriesGroupByDkimDmarc none = RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$none._();
 
-static const RadarGetEmailSecurityTimeseriesGroupByDkimDmarc fail = RadarGetEmailSecurityTimeseriesGroupByDkimDmarc._('FAIL');
+static const RadarGetEmailSecurityTimeseriesGroupByDkimDmarc fail = RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$fail._();
 
 static const List<RadarGetEmailSecurityTimeseriesGroupByDkimDmarc> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$Unknown; } 
+@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupByDkimDmarc($value)';
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$pass extends RadarGetEmailSecurityTimeseriesGroupByDkimDmarc {const RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$none extends RadarGetEmailSecurityTimeseriesGroupByDkimDmarc {const RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$fail extends RadarGetEmailSecurityTimeseriesGroupByDkimDmarc {const RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$Unknown extends RadarGetEmailSecurityTimeseriesGroupByDkimDmarc {const RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecurityTimeseriesGroupByDkimDmarc && other.value == value;
+    other is RadarGetEmailSecurityTimeseriesGroupByDkimDmarc$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupByDkimDmarc($value)';
 
  }

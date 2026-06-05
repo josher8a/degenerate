@@ -2,22 +2,21 @@
 // Source: #/components/schemas/OutboundPaymentsPaymentMethodDetailsUsBankAccount (inline: Network)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The network rails used. See the [docs](https://docs.stripe.com/treasury/money-movement/timelines) to learn more about money movement timelines for each network type.
-@immutable final class OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork {const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork._(this.value);
+sealed class OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork {const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork();
 
 factory OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork.fromJson(String json) { return switch (json) {
   'ach' => ach,
   'us_domestic_wire' => usDomesticWire,
-  _ => OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork._(json),
+  _ => OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$Unknown(json),
 }; }
 
-static const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork ach = OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork._('ach');
+static const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork ach = OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$ach._();
 
-static const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork usDomesticWire = OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork._('us_domestic_wire');
+static const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork usDomesticWire = OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$usDomesticWire._();
 
 static const List<OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork> values = [ach, usDomesticWire];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$Unknown; } 
+@override String toString() => 'OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork($value)';
+
+ }
+@immutable final class OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$ach extends OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork {const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$ach._();
+
+@override String get value => 'ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$ach;
+
+@override int get hashCode => 'ach'.hashCode;
+
+ }
+@immutable final class OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$usDomesticWire extends OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork {const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$usDomesticWire._();
+
+@override String get value => 'us_domestic_wire';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$usDomesticWire;
+
+@override int get hashCode => 'us_domestic_wire'.hashCode;
+
+ }
+@immutable final class OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$Unknown extends OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork {const OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork && other.value == value;
+    other is OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OutboundPaymentsPaymentMethodDetailsUsBankAccountNetwork($value)';
 
  }

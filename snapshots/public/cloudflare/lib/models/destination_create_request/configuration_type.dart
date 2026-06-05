@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DestinationCreateRequest (inline: Configuration > Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ConfigurationType {const ConfigurationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ConfigurationType {const ConfigurationType();
 
 factory ConfigurationType.fromJson(String json) { return switch (json) {
   'logpush' => logpush,
-  _ => ConfigurationType._(json),
+  _ => ConfigurationType$Unknown(json),
 }; }
 
-static const ConfigurationType logpush = ConfigurationType._('logpush');
+static const ConfigurationType logpush = ConfigurationType$logpush._();
 
 static const List<ConfigurationType> values = [logpush];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConfigurationType$Unknown; } 
+@override String toString() => 'ConfigurationType($value)';
+
+ }
+@immutable final class ConfigurationType$logpush extends ConfigurationType {const ConfigurationType$logpush._();
+
+@override String get value => 'logpush';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConfigurationType$logpush;
+
+@override int get hashCode => 'logpush'.hashCode;
+
+ }
+@immutable final class ConfigurationType$Unknown extends ConfigurationType {const ConfigurationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConfigurationType && other.value == value;
+    other is ConfigurationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConfigurationType($value)';
 
  }

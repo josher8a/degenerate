@@ -2,22 +2,21 @@
 // Source: #/components/schemas/FileSearchRanker
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The ranker to use for the file search. If not specified will use the `auto` ranker.
-@immutable final class FileSearchRanker {const FileSearchRanker._(this.value);
+sealed class FileSearchRanker {const FileSearchRanker();
 
 factory FileSearchRanker.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'default_2024_08_21' => default20240821,
-  _ => FileSearchRanker._(json),
+  _ => FileSearchRanker$Unknown(json),
 }; }
 
-static const FileSearchRanker auto = FileSearchRanker._('auto');
+static const FileSearchRanker auto = FileSearchRanker$auto._();
 
-static const FileSearchRanker default20240821 = FileSearchRanker._('default_2024_08_21');
+static const FileSearchRanker default20240821 = FileSearchRanker$default20240821._();
 
 static const List<FileSearchRanker> values = [auto, default20240821];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FileSearchRanker$Unknown; } 
+@override String toString() => 'FileSearchRanker($value)';
+
+ }
+@immutable final class FileSearchRanker$auto extends FileSearchRanker {const FileSearchRanker$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileSearchRanker$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class FileSearchRanker$default20240821 extends FileSearchRanker {const FileSearchRanker$default20240821._();
+
+@override String get value => 'default_2024_08_21';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileSearchRanker$default20240821;
+
+@override int get hashCode => 'default_2024_08_21'.hashCode;
+
+ }
+@immutable final class FileSearchRanker$Unknown extends FileSearchRanker {const FileSearchRanker$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FileSearchRanker && other.value == value;
+    other is FileSearchRanker$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FileSearchRanker($value)';
 
  }

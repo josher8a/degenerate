@@ -2,28 +2,27 @@
 // Source: #/components/schemas/LoadBalancingSessionAffinityAttributes
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configures the SameSite attribute on session affinity cookie. Value "Auto" will be translated to "Lax" or "None" depending if Always Use HTTPS is enabled. Note: when using value "None", the secure attribute can not be set to "Never".
-@immutable final class LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite._(this.value);
+sealed class LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite();
 
 factory LoadBalancingSessionAffinityAttributesSamesite.fromJson(String json) { return switch (json) {
   'Auto' => auto,
   'Lax' => lax,
   'None' => none,
   'Strict' => strict,
-  _ => LoadBalancingSessionAffinityAttributesSamesite._(json),
+  _ => LoadBalancingSessionAffinityAttributesSamesite$Unknown(json),
 }; }
 
-static const LoadBalancingSessionAffinityAttributesSamesite auto = LoadBalancingSessionAffinityAttributesSamesite._('Auto');
+static const LoadBalancingSessionAffinityAttributesSamesite auto = LoadBalancingSessionAffinityAttributesSamesite$auto._();
 
-static const LoadBalancingSessionAffinityAttributesSamesite lax = LoadBalancingSessionAffinityAttributesSamesite._('Lax');
+static const LoadBalancingSessionAffinityAttributesSamesite lax = LoadBalancingSessionAffinityAttributesSamesite$lax._();
 
-static const LoadBalancingSessionAffinityAttributesSamesite none = LoadBalancingSessionAffinityAttributesSamesite._('None');
+static const LoadBalancingSessionAffinityAttributesSamesite none = LoadBalancingSessionAffinityAttributesSamesite$none._();
 
-static const LoadBalancingSessionAffinityAttributesSamesite strict = LoadBalancingSessionAffinityAttributesSamesite._('Strict');
+static const LoadBalancingSessionAffinityAttributesSamesite strict = LoadBalancingSessionAffinityAttributesSamesite$strict._();
 
 static const List<LoadBalancingSessionAffinityAttributesSamesite> values = [auto, lax, none, strict];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,35 +33,75 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is LoadBalancingSessionAffinityAttributesSamesite && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is LoadBalancingSessionAffinityAttributesSamesite$Unknown; } 
 @override String toString() => 'LoadBalancingSessionAffinityAttributesSamesite($value)';
 
  }
+@immutable final class LoadBalancingSessionAffinityAttributesSamesite$auto extends LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite$auto._();
+
+@override String get value => 'Auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoadBalancingSessionAffinityAttributesSamesite$auto;
+
+@override int get hashCode => 'Auto'.hashCode;
+
+ }
+@immutable final class LoadBalancingSessionAffinityAttributesSamesite$lax extends LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite$lax._();
+
+@override String get value => 'Lax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoadBalancingSessionAffinityAttributesSamesite$lax;
+
+@override int get hashCode => 'Lax'.hashCode;
+
+ }
+@immutable final class LoadBalancingSessionAffinityAttributesSamesite$none extends LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite$none._();
+
+@override String get value => 'None';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoadBalancingSessionAffinityAttributesSamesite$none;
+
+@override int get hashCode => 'None'.hashCode;
+
+ }
+@immutable final class LoadBalancingSessionAffinityAttributesSamesite$strict extends LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite$strict._();
+
+@override String get value => 'Strict';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoadBalancingSessionAffinityAttributesSamesite$strict;
+
+@override int get hashCode => 'Strict'.hashCode;
+
+ }
+@immutable final class LoadBalancingSessionAffinityAttributesSamesite$Unknown extends LoadBalancingSessionAffinityAttributesSamesite {const LoadBalancingSessionAffinityAttributesSamesite$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LoadBalancingSessionAffinityAttributesSamesite$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Configures the Secure attribute on session affinity cookie. Value "Always" indicates the Secure attribute will be set in the Set-Cookie header, "Never" indicates the Secure attribute will not be set, and "Auto" will set the Secure attribute depending if Always Use HTTPS is enabled.
-@immutable final class LoadBalancingSessionAffinityAttributesSecure {const LoadBalancingSessionAffinityAttributesSecure._(this.value);
+sealed class LoadBalancingSessionAffinityAttributesSecure {const LoadBalancingSessionAffinityAttributesSecure();
 
 factory LoadBalancingSessionAffinityAttributesSecure.fromJson(String json) { return switch (json) {
   'Auto' => auto,
   'Always' => always,
   'Never' => never,
-  _ => LoadBalancingSessionAffinityAttributesSecure._(json),
+  _ => LoadBalancingSessionAffinityAttributesSecure$Unknown(json),
 }; }
 
-static const LoadBalancingSessionAffinityAttributesSecure auto = LoadBalancingSessionAffinityAttributesSecure._('Auto');
+static const LoadBalancingSessionAffinityAttributesSecure auto = LoadBalancingSessionAffinityAttributesSecure$auto._();
 
-static const LoadBalancingSessionAffinityAttributesSecure always = LoadBalancingSessionAffinityAttributesSecure._('Always');
+static const LoadBalancingSessionAffinityAttributesSecure always = LoadBalancingSessionAffinityAttributesSecure$always._();
 
-static const LoadBalancingSessionAffinityAttributesSecure never = LoadBalancingSessionAffinityAttributesSecure._('Never');
+static const LoadBalancingSessionAffinityAttributesSecure never = LoadBalancingSessionAffinityAttributesSecure$never._();
 
 static const List<LoadBalancingSessionAffinityAttributesSecure> values = [auto, always, never];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -72,35 +111,66 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is LoadBalancingSessionAffinityAttributesSecure && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is LoadBalancingSessionAffinityAttributesSecure$Unknown; } 
 @override String toString() => 'LoadBalancingSessionAffinityAttributesSecure($value)';
 
  }
+@immutable final class LoadBalancingSessionAffinityAttributesSecure$auto extends LoadBalancingSessionAffinityAttributesSecure {const LoadBalancingSessionAffinityAttributesSecure$auto._();
+
+@override String get value => 'Auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoadBalancingSessionAffinityAttributesSecure$auto;
+
+@override int get hashCode => 'Auto'.hashCode;
+
+ }
+@immutable final class LoadBalancingSessionAffinityAttributesSecure$always extends LoadBalancingSessionAffinityAttributesSecure {const LoadBalancingSessionAffinityAttributesSecure$always._();
+
+@override String get value => 'Always';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoadBalancingSessionAffinityAttributesSecure$always;
+
+@override int get hashCode => 'Always'.hashCode;
+
+ }
+@immutable final class LoadBalancingSessionAffinityAttributesSecure$never extends LoadBalancingSessionAffinityAttributesSecure {const LoadBalancingSessionAffinityAttributesSecure$never._();
+
+@override String get value => 'Never';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoadBalancingSessionAffinityAttributesSecure$never;
+
+@override int get hashCode => 'Never'.hashCode;
+
+ }
+@immutable final class LoadBalancingSessionAffinityAttributesSecure$Unknown extends LoadBalancingSessionAffinityAttributesSecure {const LoadBalancingSessionAffinityAttributesSecure$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LoadBalancingSessionAffinityAttributesSecure$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Configures the zero-downtime failover between origins within a pool when session affinity is enabled. This feature is currently incompatible with Argo, Tiered Cache, and Bandwidth Alliance. The supported values are: - `"none"`: No failover takes place for sessions pinned to the origin (default). - `"temporary"`: Traffic will be sent to another other healthy origin until the originally pinned origin is available; note that this can potentially result in heavy origin flapping. - `"sticky"`: The session affinity cookie is updated and subsequent requests are sent to the new origin. Note: Zero-downtime failover with sticky sessions is currently not supported for session affinity by header.
-@immutable final class ZeroDowntimeFailover {const ZeroDowntimeFailover._(this.value);
+sealed class ZeroDowntimeFailover {const ZeroDowntimeFailover();
 
 factory ZeroDowntimeFailover.fromJson(String json) { return switch (json) {
   'none' => none,
   'temporary' => temporary,
   'sticky' => sticky,
-  _ => ZeroDowntimeFailover._(json),
+  _ => ZeroDowntimeFailover$Unknown(json),
 }; }
 
-static const ZeroDowntimeFailover none = ZeroDowntimeFailover._('none');
+static const ZeroDowntimeFailover none = ZeroDowntimeFailover$none._();
 
-static const ZeroDowntimeFailover temporary = ZeroDowntimeFailover._('temporary');
+static const ZeroDowntimeFailover temporary = ZeroDowntimeFailover$temporary._();
 
-static const ZeroDowntimeFailover sticky = ZeroDowntimeFailover._('sticky');
+static const ZeroDowntimeFailover sticky = ZeroDowntimeFailover$sticky._();
 
 static const List<ZeroDowntimeFailover> values = [none, temporary, sticky];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -110,13 +180,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZeroDowntimeFailover$Unknown; } 
+@override String toString() => 'ZeroDowntimeFailover($value)';
+
+ }
+@immutable final class ZeroDowntimeFailover$none extends ZeroDowntimeFailover {const ZeroDowntimeFailover$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZeroDowntimeFailover$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class ZeroDowntimeFailover$temporary extends ZeroDowntimeFailover {const ZeroDowntimeFailover$temporary._();
+
+@override String get value => 'temporary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZeroDowntimeFailover$temporary;
+
+@override int get hashCode => 'temporary'.hashCode;
+
+ }
+@immutable final class ZeroDowntimeFailover$sticky extends ZeroDowntimeFailover {const ZeroDowntimeFailover$sticky._();
+
+@override String get value => 'sticky';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZeroDowntimeFailover$sticky;
+
+@override int get hashCode => 'sticky'.hashCode;
+
+ }
+@immutable final class ZeroDowntimeFailover$Unknown extends ZeroDowntimeFailover {const ZeroDowntimeFailover$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZeroDowntimeFailover && other.value == value;
+    other is ZeroDowntimeFailover$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZeroDowntimeFailover($value)';
 
  }
 /// Configures attributes for session affinity.

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MconnEvent (inline: ConfigureCloudflaredTunnel)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configured Cloudflared tunnel
-@immutable final class ConfigureCloudflaredTunnelK {const ConfigureCloudflaredTunnelK._(this.value);
+sealed class ConfigureCloudflaredTunnelK {const ConfigureCloudflaredTunnelK();
 
 factory ConfigureCloudflaredTunnelK.fromJson(String json) { return switch (json) {
   'ConfigureCloudflaredTunnel' => configureCloudflaredTunnel,
-  _ => ConfigureCloudflaredTunnelK._(json),
+  _ => ConfigureCloudflaredTunnelK$Unknown(json),
 }; }
 
-static const ConfigureCloudflaredTunnelK configureCloudflaredTunnel = ConfigureCloudflaredTunnelK._('ConfigureCloudflaredTunnel');
+static const ConfigureCloudflaredTunnelK configureCloudflaredTunnel = ConfigureCloudflaredTunnelK$configureCloudflaredTunnel._();
 
 static const List<ConfigureCloudflaredTunnelK> values = [configureCloudflaredTunnel];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConfigureCloudflaredTunnelK$Unknown; } 
+@override String toString() => 'ConfigureCloudflaredTunnelK($value)';
+
+ }
+@immutable final class ConfigureCloudflaredTunnelK$configureCloudflaredTunnel extends ConfigureCloudflaredTunnelK {const ConfigureCloudflaredTunnelK$configureCloudflaredTunnel._();
+
+@override String get value => 'ConfigureCloudflaredTunnel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConfigureCloudflaredTunnelK$configureCloudflaredTunnel;
+
+@override int get hashCode => 'ConfigureCloudflaredTunnel'.hashCode;
+
+ }
+@immutable final class ConfigureCloudflaredTunnelK$Unknown extends ConfigureCloudflaredTunnelK {const ConfigureCloudflaredTunnelK$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConfigureCloudflaredTunnelK && other.value == value;
+    other is ConfigureCloudflaredTunnelK$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConfigureCloudflaredTunnelK($value)';
 
  }
 @immutable final class ConfigureCloudflaredTunnel {const ConfigureCloudflaredTunnel({required this.k});

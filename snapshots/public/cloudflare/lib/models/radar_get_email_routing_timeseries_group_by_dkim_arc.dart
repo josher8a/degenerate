@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailRoutingTimeseriesGroupByDkimArc
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByDkimArc {const RadarGetEmailRoutingTimeseriesGroupByDkimArc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailRoutingTimeseriesGroupByDkimArc {const RadarGetEmailRoutingTimeseriesGroupByDkimArc();
 
 factory RadarGetEmailRoutingTimeseriesGroupByDkimArc.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailRoutingTimeseriesGroupByDkimArc._(json),
+  _ => RadarGetEmailRoutingTimeseriesGroupByDkimArc$Unknown(json),
 }; }
 
-static const RadarGetEmailRoutingTimeseriesGroupByDkimArc pass = RadarGetEmailRoutingTimeseriesGroupByDkimArc._('PASS');
+static const RadarGetEmailRoutingTimeseriesGroupByDkimArc pass = RadarGetEmailRoutingTimeseriesGroupByDkimArc$pass._();
 
-static const RadarGetEmailRoutingTimeseriesGroupByDkimArc none = RadarGetEmailRoutingTimeseriesGroupByDkimArc._('NONE');
+static const RadarGetEmailRoutingTimeseriesGroupByDkimArc none = RadarGetEmailRoutingTimeseriesGroupByDkimArc$none._();
 
-static const RadarGetEmailRoutingTimeseriesGroupByDkimArc fail = RadarGetEmailRoutingTimeseriesGroupByDkimArc._('FAIL');
+static const RadarGetEmailRoutingTimeseriesGroupByDkimArc fail = RadarGetEmailRoutingTimeseriesGroupByDkimArc$fail._();
 
 static const List<RadarGetEmailRoutingTimeseriesGroupByDkimArc> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupByDkimArc$Unknown; } 
+@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByDkimArc($value)';
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByDkimArc$pass extends RadarGetEmailRoutingTimeseriesGroupByDkimArc {const RadarGetEmailRoutingTimeseriesGroupByDkimArc$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByDkimArc$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByDkimArc$none extends RadarGetEmailRoutingTimeseriesGroupByDkimArc {const RadarGetEmailRoutingTimeseriesGroupByDkimArc$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByDkimArc$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByDkimArc$fail extends RadarGetEmailRoutingTimeseriesGroupByDkimArc {const RadarGetEmailRoutingTimeseriesGroupByDkimArc$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByDkimArc$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByDkimArc$Unknown extends RadarGetEmailRoutingTimeseriesGroupByDkimArc {const RadarGetEmailRoutingTimeseriesGroupByDkimArc$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailRoutingTimeseriesGroupByDkimArc && other.value == value;
+    other is RadarGetEmailRoutingTimeseriesGroupByDkimArc$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByDkimArc($value)';
 
  }

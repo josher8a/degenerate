@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetEmailRoutingTimeseriesGroupByDkimFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetEmailRoutingTimeseriesGroupByDkimFormat {const RadarGetEmailRoutingTimeseriesGroupByDkimFormat._(this.value);
+sealed class RadarGetEmailRoutingTimeseriesGroupByDkimFormat {const RadarGetEmailRoutingTimeseriesGroupByDkimFormat();
 
 factory RadarGetEmailRoutingTimeseriesGroupByDkimFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetEmailRoutingTimeseriesGroupByDkimFormat._(json),
+  _ => RadarGetEmailRoutingTimeseriesGroupByDkimFormat$Unknown(json),
 }; }
 
-static const RadarGetEmailRoutingTimeseriesGroupByDkimFormat $json = RadarGetEmailRoutingTimeseriesGroupByDkimFormat._('JSON');
+static const RadarGetEmailRoutingTimeseriesGroupByDkimFormat $json = RadarGetEmailRoutingTimeseriesGroupByDkimFormat$$json._();
 
-static const RadarGetEmailRoutingTimeseriesGroupByDkimFormat csv = RadarGetEmailRoutingTimeseriesGroupByDkimFormat._('CSV');
+static const RadarGetEmailRoutingTimeseriesGroupByDkimFormat csv = RadarGetEmailRoutingTimeseriesGroupByDkimFormat$csv._();
 
 static const List<RadarGetEmailRoutingTimeseriesGroupByDkimFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupByDkimFormat$Unknown; } 
+@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByDkimFormat($value)';
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByDkimFormat$$json extends RadarGetEmailRoutingTimeseriesGroupByDkimFormat {const RadarGetEmailRoutingTimeseriesGroupByDkimFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByDkimFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByDkimFormat$csv extends RadarGetEmailRoutingTimeseriesGroupByDkimFormat {const RadarGetEmailRoutingTimeseriesGroupByDkimFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByDkimFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByDkimFormat$Unknown extends RadarGetEmailRoutingTimeseriesGroupByDkimFormat {const RadarGetEmailRoutingTimeseriesGroupByDkimFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailRoutingTimeseriesGroupByDkimFormat && other.value == value;
+    other is RadarGetEmailRoutingTimeseriesGroupByDkimFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByDkimFormat($value)';
 
  }

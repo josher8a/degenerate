@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleUpdate (inline: Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleUpdateType {const RepositoryRuleUpdateType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RepositoryRuleUpdateType {const RepositoryRuleUpdateType();
 
 factory RepositoryRuleUpdateType.fromJson(String json) { return switch (json) {
   'update' => update,
-  _ => RepositoryRuleUpdateType._(json),
+  _ => RepositoryRuleUpdateType$Unknown(json),
 }; }
 
-static const RepositoryRuleUpdateType update = RepositoryRuleUpdateType._('update');
+static const RepositoryRuleUpdateType update = RepositoryRuleUpdateType$update._();
 
 static const List<RepositoryRuleUpdateType> values = [update];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RepositoryRuleUpdateType$Unknown; } 
+@override String toString() => 'RepositoryRuleUpdateType($value)';
+
+ }
+@immutable final class RepositoryRuleUpdateType$update extends RepositoryRuleUpdateType {const RepositoryRuleUpdateType$update._();
+
+@override String get value => 'update';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryRuleUpdateType$update;
+
+@override int get hashCode => 'update'.hashCode;
+
+ }
+@immutable final class RepositoryRuleUpdateType$Unknown extends RepositoryRuleUpdateType {const RepositoryRuleUpdateType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleUpdateType && other.value == value;
+    other is RepositoryRuleUpdateType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleUpdateType($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/EntitlementsFeature
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class EntitlementsFeatureObject {const EntitlementsFeatureObject._(this.value);
+sealed class EntitlementsFeatureObject {const EntitlementsFeatureObject();
 
 factory EntitlementsFeatureObject.fromJson(String json) { return switch (json) {
   'entitlements.feature' => entitlementsFeature,
-  _ => EntitlementsFeatureObject._(json),
+  _ => EntitlementsFeatureObject$Unknown(json),
 }; }
 
-static const EntitlementsFeatureObject entitlementsFeature = EntitlementsFeatureObject._('entitlements.feature');
+static const EntitlementsFeatureObject entitlementsFeature = EntitlementsFeatureObject$entitlementsFeature._();
 
 static const List<EntitlementsFeatureObject> values = [entitlementsFeature];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EntitlementsFeatureObject$Unknown; } 
+@override String toString() => 'EntitlementsFeatureObject($value)';
+
+ }
+@immutable final class EntitlementsFeatureObject$entitlementsFeature extends EntitlementsFeatureObject {const EntitlementsFeatureObject$entitlementsFeature._();
+
+@override String get value => 'entitlements.feature';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EntitlementsFeatureObject$entitlementsFeature;
+
+@override int get hashCode => 'entitlements.feature'.hashCode;
+
+ }
+@immutable final class EntitlementsFeatureObject$Unknown extends EntitlementsFeatureObject {const EntitlementsFeatureObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EntitlementsFeatureObject && other.value == value;
+    other is EntitlementsFeatureObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EntitlementsFeatureObject($value)';
 
  }
 /// A feature represents a monetizable ability or functionality in your system.

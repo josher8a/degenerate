@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/OrgsListPendingInvitationsRole
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsListPendingInvitationsRole {const OrgsListPendingInvitationsRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class OrgsListPendingInvitationsRole {const OrgsListPendingInvitationsRole();
 
 factory OrgsListPendingInvitationsRole.fromJson(String json) { return switch (json) {
   'all' => all,
@@ -9,23 +9,22 @@ factory OrgsListPendingInvitationsRole.fromJson(String json) { return switch (js
   'direct_member' => directMember,
   'billing_manager' => billingManager,
   'hiring_manager' => hiringManager,
-  _ => OrgsListPendingInvitationsRole._(json),
+  _ => OrgsListPendingInvitationsRole$Unknown(json),
 }; }
 
-static const OrgsListPendingInvitationsRole all = OrgsListPendingInvitationsRole._('all');
+static const OrgsListPendingInvitationsRole all = OrgsListPendingInvitationsRole$all._();
 
-static const OrgsListPendingInvitationsRole admin = OrgsListPendingInvitationsRole._('admin');
+static const OrgsListPendingInvitationsRole admin = OrgsListPendingInvitationsRole$admin._();
 
-static const OrgsListPendingInvitationsRole directMember = OrgsListPendingInvitationsRole._('direct_member');
+static const OrgsListPendingInvitationsRole directMember = OrgsListPendingInvitationsRole$directMember._();
 
-static const OrgsListPendingInvitationsRole billingManager = OrgsListPendingInvitationsRole._('billing_manager');
+static const OrgsListPendingInvitationsRole billingManager = OrgsListPendingInvitationsRole$billingManager._();
 
-static const OrgsListPendingInvitationsRole hiringManager = OrgsListPendingInvitationsRole._('hiring_manager');
+static const OrgsListPendingInvitationsRole hiringManager = OrgsListPendingInvitationsRole$hiringManager._();
 
 static const List<OrgsListPendingInvitationsRole> values = [all, admin, directMember, billingManager, hiringManager];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,12 +36,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrgsListPendingInvitationsRole$Unknown; } 
+@override String toString() => 'OrgsListPendingInvitationsRole($value)';
+
+ }
+@immutable final class OrgsListPendingInvitationsRole$all extends OrgsListPendingInvitationsRole {const OrgsListPendingInvitationsRole$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsListPendingInvitationsRole$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class OrgsListPendingInvitationsRole$admin extends OrgsListPendingInvitationsRole {const OrgsListPendingInvitationsRole$admin._();
+
+@override String get value => 'admin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsListPendingInvitationsRole$admin;
+
+@override int get hashCode => 'admin'.hashCode;
+
+ }
+@immutable final class OrgsListPendingInvitationsRole$directMember extends OrgsListPendingInvitationsRole {const OrgsListPendingInvitationsRole$directMember._();
+
+@override String get value => 'direct_member';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsListPendingInvitationsRole$directMember;
+
+@override int get hashCode => 'direct_member'.hashCode;
+
+ }
+@immutable final class OrgsListPendingInvitationsRole$billingManager extends OrgsListPendingInvitationsRole {const OrgsListPendingInvitationsRole$billingManager._();
+
+@override String get value => 'billing_manager';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsListPendingInvitationsRole$billingManager;
+
+@override int get hashCode => 'billing_manager'.hashCode;
+
+ }
+@immutable final class OrgsListPendingInvitationsRole$hiringManager extends OrgsListPendingInvitationsRole {const OrgsListPendingInvitationsRole$hiringManager._();
+
+@override String get value => 'hiring_manager';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsListPendingInvitationsRole$hiringManager;
+
+@override int get hashCode => 'hiring_manager'.hashCode;
+
+ }
+@immutable final class OrgsListPendingInvitationsRole$Unknown extends OrgsListPendingInvitationsRole {const OrgsListPendingInvitationsRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrgsListPendingInvitationsRole && other.value == value;
+    other is OrgsListPendingInvitationsRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrgsListPendingInvitationsRole($value)';
 
  }

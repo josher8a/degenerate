@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct {const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct {const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct();
 
 factory RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct.fromJson(String json) { return switch (json) {
   'DDOS' => ddos,
@@ -11,27 +11,26 @@ factory RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct.fromJson(Str
   'IP_REPUTATION' => ipReputation,
   'API_SHIELD' => apiShield,
   'DATA_LOSS_PREVENTION' => dataLossPrevention,
-  _ => RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct._(json),
+  _ => RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct ddos = RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct._('DDOS');
+static const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct ddos = RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$ddos._();
 
-static const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct waf = RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct._('WAF');
+static const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct waf = RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$waf._();
 
-static const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct botManagement = RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct._('BOT_MANAGEMENT');
+static const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct botManagement = RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$botManagement._();
 
-static const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct accessRules = RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct._('ACCESS_RULES');
+static const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct accessRules = RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$accessRules._();
 
-static const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct ipReputation = RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct._('IP_REPUTATION');
+static const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct ipReputation = RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$ipReputation._();
 
-static const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct apiShield = RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct._('API_SHIELD');
+static const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct apiShield = RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$apiShield._();
 
-static const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct dataLossPrevention = RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct._('DATA_LOSS_PREVENTION');
+static const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct dataLossPrevention = RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$dataLossPrevention._();
 
 static const List<RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct> values = [ddos, waf, botManagement, accessRules, ipReputation, apiShield, dataLossPrevention];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -45,12 +44,80 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$ddos extends RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct {const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$ddos._();
+
+@override String get value => 'DDOS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$ddos;
+
+@override int get hashCode => 'DDOS'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$waf extends RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct {const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$waf._();
+
+@override String get value => 'WAF';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$waf;
+
+@override int get hashCode => 'WAF'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$botManagement extends RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct {const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$botManagement._();
+
+@override String get value => 'BOT_MANAGEMENT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$botManagement;
+
+@override int get hashCode => 'BOT_MANAGEMENT'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$accessRules extends RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct {const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$accessRules._();
+
+@override String get value => 'ACCESS_RULES';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$accessRules;
+
+@override int get hashCode => 'ACCESS_RULES'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$ipReputation extends RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct {const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$ipReputation._();
+
+@override String get value => 'IP_REPUTATION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$ipReputation;
+
+@override int get hashCode => 'IP_REPUTATION'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$apiShield extends RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct {const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$apiShield._();
+
+@override String get value => 'API_SHIELD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$apiShield;
+
+@override int get hashCode => 'API_SHIELD'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$dataLossPrevention extends RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct {const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$dataLossPrevention._();
+
+@override String get value => 'DATA_LOSS_PREVENTION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$dataLossPrevention;
+
+@override int get hashCode => 'DATA_LOSS_PREVENTION'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$Unknown extends RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct {const RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct && other.value == value;
+    other is RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer7SummaryByManagedRulesMitigationProduct($value)';
 
  }

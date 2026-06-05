@@ -5,25 +5,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Defines the leve
 /// repository.
 /// 
 /// `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
-@immutable final class AccessLevel {const AccessLevel._(this.value);
+sealed class AccessLevel {const AccessLevel();
 
 factory AccessLevel.fromJson(String json) { return switch (json) {
   'none' => none,
   'user' => user,
   'organization' => organization,
-  _ => AccessLevel._(json),
+  _ => AccessLevel$Unknown(json),
 }; }
 
-static const AccessLevel none = AccessLevel._('none');
+static const AccessLevel none = AccessLevel$none._();
 
-static const AccessLevel user = AccessLevel._('user');
+static const AccessLevel user = AccessLevel$user._();
 
-static const AccessLevel organization = AccessLevel._('organization');
+static const AccessLevel organization = AccessLevel$organization._();
 
 static const List<AccessLevel> values = [none, user, organization];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccessLevel$Unknown; } 
+@override String toString() => 'AccessLevel($value)';
+
+ }
+@immutable final class AccessLevel$none extends AccessLevel {const AccessLevel$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessLevel$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class AccessLevel$user extends AccessLevel {const AccessLevel$user._();
+
+@override String get value => 'user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessLevel$user;
+
+@override int get hashCode => 'user'.hashCode;
+
+ }
+@immutable final class AccessLevel$organization extends AccessLevel {const AccessLevel$organization._();
+
+@override String get value => 'organization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessLevel$organization;
+
+@override int get hashCode => 'organization'.hashCode;
+
+ }
+@immutable final class AccessLevel$Unknown extends AccessLevel {const AccessLevel$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccessLevel && other.value == value;
+    other is AccessLevel$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccessLevel($value)';
 
  }
 @immutable final class ActionsWorkflowAccessToRepository {const ActionsWorkflowAccessToRepository({required this.accessLevel});

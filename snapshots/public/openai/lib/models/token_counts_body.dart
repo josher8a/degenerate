@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TokenCountsBody
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/compact_response_method_public_body/compact_response_method_public_body_input.dart';import 'package:pub_openai/models/conversation_param.dart';import 'package:pub_openai/models/conversation_param2.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/reasoning.dart';import 'package:pub_openai/models/response_text_param.dart';import 'package:pub_openai/models/specific_apply_patch_param.dart';import 'package:pub_openai/models/specific_function_shell_param.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_choice_allowed.dart';import 'package:pub_openai/models/tool_choice_custom.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/tool_choice_param.dart';import 'package:pub_openai/models/tool_choice_types.dart';@immutable final class TruncationEnum {const TruncationEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/compact_response_method_public_body/compact_response_method_public_body_input.dart';import 'package:pub_openai/models/conversation_param.dart';import 'package:pub_openai/models/conversation_param2.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/reasoning.dart';import 'package:pub_openai/models/response_text_param.dart';import 'package:pub_openai/models/specific_apply_patch_param.dart';import 'package:pub_openai/models/specific_function_shell_param.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_choice_allowed.dart';import 'package:pub_openai/models/tool_choice_custom.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/tool_choice_param.dart';import 'package:pub_openai/models/tool_choice_types.dart';sealed class TruncationEnum {const TruncationEnum();
 
 factory TruncationEnum.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'disabled' => disabled,
-  _ => TruncationEnum._(json),
+  _ => TruncationEnum$Unknown(json),
 }; }
 
-static const TruncationEnum auto = TruncationEnum._('auto');
+static const TruncationEnum auto = TruncationEnum$auto._();
 
-static const TruncationEnum disabled = TruncationEnum._('disabled');
+static const TruncationEnum disabled = TruncationEnum$disabled._();
 
 static const List<TruncationEnum> values = [auto, disabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TruncationEnum$Unknown; } 
+@override String toString() => 'TruncationEnum($value)';
+
+ }
+@immutable final class TruncationEnum$auto extends TruncationEnum {const TruncationEnum$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TruncationEnum$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class TruncationEnum$disabled extends TruncationEnum {const TruncationEnum$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TruncationEnum$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class TruncationEnum$Unknown extends TruncationEnum {const TruncationEnum$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TruncationEnum && other.value == value;
+    other is TruncationEnum$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TruncationEnum($value)';
 
  }
 @immutable final class TokenCountsBody {const TokenCountsBody({this.model, this.input, this.previousResponseId, this.tools, this.text, this.reasoning, this.truncation, this.instructions, this.conversation, this.toolChoice, this.parallelToolCalls, });

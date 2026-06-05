@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DigitalExperienceMonitoringDeviceDexTestSchemasData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_data/digital_experience_monitoring_device_dex_test_schemas_data_kind.dart';/// The HTTP request method type.
-@immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod {const DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod._(this.value);
+sealed class DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod {const DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod();
 
 factory DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
-  _ => DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod._(json),
+  _ => DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown(json),
 }; }
 
-static const DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod $get = DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod._('GET');
+static const DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod $get = DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$$get._();
 
 static const List<DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod> values = [$get];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown; } 
+@override String toString() => 'DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod($value)';
+
+ }
+@immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$$get extends DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod {const DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown extends DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod {const DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod && other.value == value;
+    other is DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DigitalExperienceMonitoringDeviceDexTestSchemasDataMethod($value)';
 
  }
 /// The configuration object which contains the details for the WARP client to conduct the test.

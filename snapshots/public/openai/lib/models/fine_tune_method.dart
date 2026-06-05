@@ -2,25 +2,24 @@
 // Source: #/components/schemas/FineTuneMethod
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tune_dpo_method.dart';import 'package:pub_openai/models/fine_tune_reinforcement_method.dart';import 'package:pub_openai/models/fine_tune_supervised_method.dart';/// The type of method. Is either `supervised`, `dpo`, or `reinforcement`.
-@immutable final class FineTuneMethodType {const FineTuneMethodType._(this.value);
+sealed class FineTuneMethodType {const FineTuneMethodType();
 
 factory FineTuneMethodType.fromJson(String json) { return switch (json) {
   'supervised' => supervised,
   'dpo' => dpo,
   'reinforcement' => reinforcement,
-  _ => FineTuneMethodType._(json),
+  _ => FineTuneMethodType$Unknown(json),
 }; }
 
-static const FineTuneMethodType supervised = FineTuneMethodType._('supervised');
+static const FineTuneMethodType supervised = FineTuneMethodType$supervised._();
 
-static const FineTuneMethodType dpo = FineTuneMethodType._('dpo');
+static const FineTuneMethodType dpo = FineTuneMethodType$dpo._();
 
-static const FineTuneMethodType reinforcement = FineTuneMethodType._('reinforcement');
+static const FineTuneMethodType reinforcement = FineTuneMethodType$reinforcement._();
 
 static const List<FineTuneMethodType> values = [supervised, dpo, reinforcement];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FineTuneMethodType$Unknown; } 
+@override String toString() => 'FineTuneMethodType($value)';
+
+ }
+@immutable final class FineTuneMethodType$supervised extends FineTuneMethodType {const FineTuneMethodType$supervised._();
+
+@override String get value => 'supervised';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuneMethodType$supervised;
+
+@override int get hashCode => 'supervised'.hashCode;
+
+ }
+@immutable final class FineTuneMethodType$dpo extends FineTuneMethodType {const FineTuneMethodType$dpo._();
+
+@override String get value => 'dpo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuneMethodType$dpo;
+
+@override int get hashCode => 'dpo'.hashCode;
+
+ }
+@immutable final class FineTuneMethodType$reinforcement extends FineTuneMethodType {const FineTuneMethodType$reinforcement._();
+
+@override String get value => 'reinforcement';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuneMethodType$reinforcement;
+
+@override int get hashCode => 'reinforcement'.hashCode;
+
+ }
+@immutable final class FineTuneMethodType$Unknown extends FineTuneMethodType {const FineTuneMethodType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FineTuneMethodType && other.value == value;
+    other is FineTuneMethodType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FineTuneMethodType($value)';
 
  }
 /// The method used for fine-tuning.

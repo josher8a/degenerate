@@ -2,19 +2,18 @@
 // Source: #/components/schemas/IssuingCardholder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder/issuing_cardholder_type.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder/preferred_locales.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_address.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_authorization_controls.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_company.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_individual.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder_requirements.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class IssuingCardholderObject {const IssuingCardholderObject._(this.value);
+sealed class IssuingCardholderObject {const IssuingCardholderObject();
 
 factory IssuingCardholderObject.fromJson(String json) { return switch (json) {
   'issuing.cardholder' => issuingCardholder,
-  _ => IssuingCardholderObject._(json),
+  _ => IssuingCardholderObject$Unknown(json),
 }; }
 
-static const IssuingCardholderObject issuingCardholder = IssuingCardholderObject._('issuing.cardholder');
+static const IssuingCardholderObject issuingCardholder = IssuingCardholderObject$issuingCardholder._();
 
 static const List<IssuingCardholderObject> values = [issuingCardholder];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,35 +21,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingCardholderObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingCardholderObject$Unknown; } 
 @override String toString() => 'IssuingCardholderObject($value)';
 
  }
+@immutable final class IssuingCardholderObject$issuingCardholder extends IssuingCardholderObject {const IssuingCardholderObject$issuingCardholder._();
+
+@override String get value => 'issuing.cardholder';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardholderObject$issuingCardholder;
+
+@override int get hashCode => 'issuing.cardholder'.hashCode;
+
+ }
+@immutable final class IssuingCardholderObject$Unknown extends IssuingCardholderObject {const IssuingCardholderObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingCardholderObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Specifies whether to permit authorizations on this cardholder's cards.
-@immutable final class IssuingCardholderStatus {const IssuingCardholderStatus._(this.value);
+sealed class IssuingCardholderStatus {const IssuingCardholderStatus();
 
 factory IssuingCardholderStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'blocked' => blocked,
   'inactive' => inactive,
-  _ => IssuingCardholderStatus._(json),
+  _ => IssuingCardholderStatus$Unknown(json),
 }; }
 
-static const IssuingCardholderStatus active = IssuingCardholderStatus._('active');
+static const IssuingCardholderStatus active = IssuingCardholderStatus$active._();
 
-static const IssuingCardholderStatus blocked = IssuingCardholderStatus._('blocked');
+static const IssuingCardholderStatus blocked = IssuingCardholderStatus$blocked._();
 
-static const IssuingCardholderStatus inactive = IssuingCardholderStatus._('inactive');
+static const IssuingCardholderStatus inactive = IssuingCardholderStatus$inactive._();
 
 static const List<IssuingCardholderStatus> values = [active, blocked, inactive];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,13 +72,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingCardholderStatus$Unknown; } 
+@override String toString() => 'IssuingCardholderStatus($value)';
+
+ }
+@immutable final class IssuingCardholderStatus$active extends IssuingCardholderStatus {const IssuingCardholderStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardholderStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class IssuingCardholderStatus$blocked extends IssuingCardholderStatus {const IssuingCardholderStatus$blocked._();
+
+@override String get value => 'blocked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardholderStatus$blocked;
+
+@override int get hashCode => 'blocked'.hashCode;
+
+ }
+@immutable final class IssuingCardholderStatus$inactive extends IssuingCardholderStatus {const IssuingCardholderStatus$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardholderStatus$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+ }
+@immutable final class IssuingCardholderStatus$Unknown extends IssuingCardholderStatus {const IssuingCardholderStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingCardholderStatus && other.value == value;
+    other is IssuingCardholderStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingCardholderStatus($value)';
 
  }
 /// An Issuing `Cardholder` object represents an individual or business entity who is [issued](https://docs.stripe.com/issuing) cards.

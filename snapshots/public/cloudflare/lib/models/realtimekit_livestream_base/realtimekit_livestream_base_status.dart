@@ -2,28 +2,27 @@
 // Source: #/components/schemas/RealtimekitLivestreamBase (inline: Status)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the livestream.
-@immutable final class RealtimekitLivestreamBaseStatus {const RealtimekitLivestreamBaseStatus._(this.value);
+sealed class RealtimekitLivestreamBaseStatus {const RealtimekitLivestreamBaseStatus();
 
 factory RealtimekitLivestreamBaseStatus.fromJson(String json) { return switch (json) {
   'LIVE' => live,
   'IDLE' => idle,
   'ERRORED' => errored,
   'INVOKED' => invoked,
-  _ => RealtimekitLivestreamBaseStatus._(json),
+  _ => RealtimekitLivestreamBaseStatus$Unknown(json),
 }; }
 
-static const RealtimekitLivestreamBaseStatus live = RealtimekitLivestreamBaseStatus._('LIVE');
+static const RealtimekitLivestreamBaseStatus live = RealtimekitLivestreamBaseStatus$live._();
 
-static const RealtimekitLivestreamBaseStatus idle = RealtimekitLivestreamBaseStatus._('IDLE');
+static const RealtimekitLivestreamBaseStatus idle = RealtimekitLivestreamBaseStatus$idle._();
 
-static const RealtimekitLivestreamBaseStatus errored = RealtimekitLivestreamBaseStatus._('ERRORED');
+static const RealtimekitLivestreamBaseStatus errored = RealtimekitLivestreamBaseStatus$errored._();
 
-static const RealtimekitLivestreamBaseStatus invoked = RealtimekitLivestreamBaseStatus._('INVOKED');
+static const RealtimekitLivestreamBaseStatus invoked = RealtimekitLivestreamBaseStatus$invoked._();
 
 static const List<RealtimekitLivestreamBaseStatus> values = [live, idle, errored, invoked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimekitLivestreamBaseStatus$Unknown; } 
+@override String toString() => 'RealtimekitLivestreamBaseStatus($value)';
+
+ }
+@immutable final class RealtimekitLivestreamBaseStatus$live extends RealtimekitLivestreamBaseStatus {const RealtimekitLivestreamBaseStatus$live._();
+
+@override String get value => 'LIVE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitLivestreamBaseStatus$live;
+
+@override int get hashCode => 'LIVE'.hashCode;
+
+ }
+@immutable final class RealtimekitLivestreamBaseStatus$idle extends RealtimekitLivestreamBaseStatus {const RealtimekitLivestreamBaseStatus$idle._();
+
+@override String get value => 'IDLE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitLivestreamBaseStatus$idle;
+
+@override int get hashCode => 'IDLE'.hashCode;
+
+ }
+@immutable final class RealtimekitLivestreamBaseStatus$errored extends RealtimekitLivestreamBaseStatus {const RealtimekitLivestreamBaseStatus$errored._();
+
+@override String get value => 'ERRORED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitLivestreamBaseStatus$errored;
+
+@override int get hashCode => 'ERRORED'.hashCode;
+
+ }
+@immutable final class RealtimekitLivestreamBaseStatus$invoked extends RealtimekitLivestreamBaseStatus {const RealtimekitLivestreamBaseStatus$invoked._();
+
+@override String get value => 'INVOKED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitLivestreamBaseStatus$invoked;
+
+@override int get hashCode => 'INVOKED'.hashCode;
+
+ }
+@immutable final class RealtimekitLivestreamBaseStatus$Unknown extends RealtimekitLivestreamBaseStatus {const RealtimekitLivestreamBaseStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimekitLivestreamBaseStatus && other.value == value;
+    other is RealtimekitLivestreamBaseStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimekitLivestreamBaseStatus($value)';
 
  }

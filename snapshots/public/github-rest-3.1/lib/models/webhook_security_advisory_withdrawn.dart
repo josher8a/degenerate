@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookSecurityAdvisoryWithdrawn
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_security_advisory_withdrawn/security_advisory.dart';@immutable final class WebhookSecurityAdvisoryWithdrawnAction {const WebhookSecurityAdvisoryWithdrawnAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_security_advisory_withdrawn/security_advisory.dart';sealed class WebhookSecurityAdvisoryWithdrawnAction {const WebhookSecurityAdvisoryWithdrawnAction();
 
 factory WebhookSecurityAdvisoryWithdrawnAction.fromJson(String json) { return switch (json) {
   'withdrawn' => withdrawn,
-  _ => WebhookSecurityAdvisoryWithdrawnAction._(json),
+  _ => WebhookSecurityAdvisoryWithdrawnAction$Unknown(json),
 }; }
 
-static const WebhookSecurityAdvisoryWithdrawnAction withdrawn = WebhookSecurityAdvisoryWithdrawnAction._('withdrawn');
+static const WebhookSecurityAdvisoryWithdrawnAction withdrawn = WebhookSecurityAdvisoryWithdrawnAction$withdrawn._();
 
 static const List<WebhookSecurityAdvisoryWithdrawnAction> values = [withdrawn];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookSecurityAdvisoryWithdrawnAction$Unknown; } 
+@override String toString() => 'WebhookSecurityAdvisoryWithdrawnAction($value)';
+
+ }
+@immutable final class WebhookSecurityAdvisoryWithdrawnAction$withdrawn extends WebhookSecurityAdvisoryWithdrawnAction {const WebhookSecurityAdvisoryWithdrawnAction$withdrawn._();
+
+@override String get value => 'withdrawn';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookSecurityAdvisoryWithdrawnAction$withdrawn;
+
+@override int get hashCode => 'withdrawn'.hashCode;
+
+ }
+@immutable final class WebhookSecurityAdvisoryWithdrawnAction$Unknown extends WebhookSecurityAdvisoryWithdrawnAction {const WebhookSecurityAdvisoryWithdrawnAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookSecurityAdvisoryWithdrawnAction && other.value == value;
+    other is WebhookSecurityAdvisoryWithdrawnAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookSecurityAdvisoryWithdrawnAction($value)';
 
  }
 @immutable final class WebhookSecurityAdvisoryWithdrawn {const WebhookSecurityAdvisoryWithdrawn({required this.action, required this.securityAdvisory, this.enterprise, this.installation, this.organization, this.repository, this.sender, });

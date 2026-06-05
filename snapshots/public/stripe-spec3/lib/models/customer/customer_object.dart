@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Customer (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class CustomerObject {const CustomerObject._(this.value);
+sealed class CustomerObject {const CustomerObject();
 
 factory CustomerObject.fromJson(String json) { return switch (json) {
   'customer' => customer,
-  _ => CustomerObject._(json),
+  _ => CustomerObject$Unknown(json),
 }; }
 
-static const CustomerObject customer = CustomerObject._('customer');
+static const CustomerObject customer = CustomerObject$customer._();
 
 static const List<CustomerObject> values = [customer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomerObject$Unknown; } 
+@override String toString() => 'CustomerObject($value)';
+
+ }
+@immutable final class CustomerObject$customer extends CustomerObject {const CustomerObject$customer._();
+
+@override String get value => 'customer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerObject$customer;
+
+@override int get hashCode => 'customer'.hashCode;
+
+ }
+@immutable final class CustomerObject$Unknown extends CustomerObject {const CustomerObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerObject && other.value == value;
+    other is CustomerObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomerObject($value)';
 
  }

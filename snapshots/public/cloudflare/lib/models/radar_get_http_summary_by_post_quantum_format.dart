@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetHttpSummaryByPostQuantumFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetHttpSummaryByPostQuantumFormat {const RadarGetHttpSummaryByPostQuantumFormat._(this.value);
+sealed class RadarGetHttpSummaryByPostQuantumFormat {const RadarGetHttpSummaryByPostQuantumFormat();
 
 factory RadarGetHttpSummaryByPostQuantumFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetHttpSummaryByPostQuantumFormat._(json),
+  _ => RadarGetHttpSummaryByPostQuantumFormat$Unknown(json),
 }; }
 
-static const RadarGetHttpSummaryByPostQuantumFormat $json = RadarGetHttpSummaryByPostQuantumFormat._('JSON');
+static const RadarGetHttpSummaryByPostQuantumFormat $json = RadarGetHttpSummaryByPostQuantumFormat$$json._();
 
-static const RadarGetHttpSummaryByPostQuantumFormat csv = RadarGetHttpSummaryByPostQuantumFormat._('CSV');
+static const RadarGetHttpSummaryByPostQuantumFormat csv = RadarGetHttpSummaryByPostQuantumFormat$csv._();
 
 static const List<RadarGetHttpSummaryByPostQuantumFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpSummaryByPostQuantumFormat$Unknown; } 
+@override String toString() => 'RadarGetHttpSummaryByPostQuantumFormat($value)';
+
+ }
+@immutable final class RadarGetHttpSummaryByPostQuantumFormat$$json extends RadarGetHttpSummaryByPostQuantumFormat {const RadarGetHttpSummaryByPostQuantumFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByPostQuantumFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByPostQuantumFormat$csv extends RadarGetHttpSummaryByPostQuantumFormat {const RadarGetHttpSummaryByPostQuantumFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByPostQuantumFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByPostQuantumFormat$Unknown extends RadarGetHttpSummaryByPostQuantumFormat {const RadarGetHttpSummaryByPostQuantumFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpSummaryByPostQuantumFormat && other.value == value;
+    other is RadarGetHttpSummaryByPostQuantumFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpSummaryByPostQuantumFormat($value)';
 
  }

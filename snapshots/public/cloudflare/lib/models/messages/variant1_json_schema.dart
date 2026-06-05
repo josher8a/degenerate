@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: ResponseFormat > Variant1 > JsonSchema)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/json_schema_json_schema.dart';@immutable final class JsonSchemaType {const JsonSchemaType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/json_schema_json_schema.dart';sealed class JsonSchemaType {const JsonSchemaType();
 
 factory JsonSchemaType.fromJson(String json) { return switch (json) {
   'json_schema' => jsonSchema,
-  _ => JsonSchemaType._(json),
+  _ => JsonSchemaType$Unknown(json),
 }; }
 
-static const JsonSchemaType jsonSchema = JsonSchemaType._('json_schema');
+static const JsonSchemaType jsonSchema = JsonSchemaType$jsonSchema._();
 
 static const List<JsonSchemaType> values = [jsonSchema];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is JsonSchemaType$Unknown; } 
+@override String toString() => 'JsonSchemaType($value)';
+
+ }
+@immutable final class JsonSchemaType$jsonSchema extends JsonSchemaType {const JsonSchemaType$jsonSchema._();
+
+@override String get value => 'json_schema';
+
+@override bool operator ==(Object other) => identical(this, other) || other is JsonSchemaType$jsonSchema;
+
+@override int get hashCode => 'json_schema'.hashCode;
+
+ }
+@immutable final class JsonSchemaType$Unknown extends JsonSchemaType {const JsonSchemaType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is JsonSchemaType && other.value == value;
+    other is JsonSchemaType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'JsonSchemaType($value)';
 
  }
 @immutable final class Variant1JsonSchema {const Variant1JsonSchema({required this.jsonSchema, required this.type, });

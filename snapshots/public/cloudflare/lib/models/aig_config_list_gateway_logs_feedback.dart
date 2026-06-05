@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigListGatewayLogsFeedback
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListGatewayLogsFeedbackVariant1 {const AigConfigListGatewayLogsFeedbackVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AigConfigListGatewayLogsFeedbackVariant1 {const AigConfigListGatewayLogsFeedbackVariant1();
 
 factory AigConfigListGatewayLogsFeedbackVariant1.fromJson(double json) { return switch (json) {
   -1 => minus1,
-  _ => AigConfigListGatewayLogsFeedbackVariant1._(json),
+  _ => AigConfigListGatewayLogsFeedbackVariant1$Unknown(json),
 }; }
 
-static const AigConfigListGatewayLogsFeedbackVariant1 minus1 = AigConfigListGatewayLogsFeedbackVariant1._(-1);
+static const AigConfigListGatewayLogsFeedbackVariant1 minus1 = AigConfigListGatewayLogsFeedbackVariant1$minus1._();
 
 static const List<AigConfigListGatewayLogsFeedbackVariant1> values = [minus1];
 
-final double value;
-
+double get value;
 double toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,28 +20,41 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is AigConfigListGatewayLogsFeedbackVariant1 && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is AigConfigListGatewayLogsFeedbackVariant1$Unknown; } 
 @override String toString() => 'AigConfigListGatewayLogsFeedbackVariant1($value)';
 
  }
-@immutable final class AigConfigListGatewayLogsFeedbackVariant2 {const AigConfigListGatewayLogsFeedbackVariant2._(this.value);
+@immutable final class AigConfigListGatewayLogsFeedbackVariant1$minus1 extends AigConfigListGatewayLogsFeedbackVariant1 {const AigConfigListGatewayLogsFeedbackVariant1$minus1._();
+
+@override double get value => -1;
+
+@override bool operator ==(Object other) => identical(this, other) || other is AigConfigListGatewayLogsFeedbackVariant1$minus1;
+
+@override int get hashCode => -1.hashCode;
+
+ }
+@immutable final class AigConfigListGatewayLogsFeedbackVariant1$Unknown extends AigConfigListGatewayLogsFeedbackVariant1 {const AigConfigListGatewayLogsFeedbackVariant1$Unknown(this.value);
+
+@override final double value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AigConfigListGatewayLogsFeedbackVariant1$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class AigConfigListGatewayLogsFeedbackVariant2 {const AigConfigListGatewayLogsFeedbackVariant2();
 
 factory AigConfigListGatewayLogsFeedbackVariant2.fromJson(double json) { return switch (json) {
   0 => $0,
-  _ => AigConfigListGatewayLogsFeedbackVariant2._(json),
+  _ => AigConfigListGatewayLogsFeedbackVariant2$Unknown(json),
 }; }
 
-static const AigConfigListGatewayLogsFeedbackVariant2 $0 = AigConfigListGatewayLogsFeedbackVariant2._(0);
+static const AigConfigListGatewayLogsFeedbackVariant2 $0 = AigConfigListGatewayLogsFeedbackVariant2$$0._();
 
 static const List<AigConfigListGatewayLogsFeedbackVariant2> values = [$0];
 
-final double value;
-
+double get value;
 double toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,28 +62,41 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is AigConfigListGatewayLogsFeedbackVariant2 && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is AigConfigListGatewayLogsFeedbackVariant2$Unknown; } 
 @override String toString() => 'AigConfigListGatewayLogsFeedbackVariant2($value)';
 
  }
-@immutable final class AigConfigListGatewayLogsFeedbackVariant3 {const AigConfigListGatewayLogsFeedbackVariant3._(this.value);
+@immutable final class AigConfigListGatewayLogsFeedbackVariant2$$0 extends AigConfigListGatewayLogsFeedbackVariant2 {const AigConfigListGatewayLogsFeedbackVariant2$$0._();
+
+@override double get value => 0;
+
+@override bool operator ==(Object other) => identical(this, other) || other is AigConfigListGatewayLogsFeedbackVariant2$$0;
+
+@override int get hashCode => 0.hashCode;
+
+ }
+@immutable final class AigConfigListGatewayLogsFeedbackVariant2$Unknown extends AigConfigListGatewayLogsFeedbackVariant2 {const AigConfigListGatewayLogsFeedbackVariant2$Unknown(this.value);
+
+@override final double value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AigConfigListGatewayLogsFeedbackVariant2$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class AigConfigListGatewayLogsFeedbackVariant3 {const AigConfigListGatewayLogsFeedbackVariant3();
 
 factory AigConfigListGatewayLogsFeedbackVariant3.fromJson(double json) { return switch (json) {
   1 => $1,
-  _ => AigConfigListGatewayLogsFeedbackVariant3._(json),
+  _ => AigConfigListGatewayLogsFeedbackVariant3$Unknown(json),
 }; }
 
-static const AigConfigListGatewayLogsFeedbackVariant3 $1 = AigConfigListGatewayLogsFeedbackVariant3._(1);
+static const AigConfigListGatewayLogsFeedbackVariant3 $1 = AigConfigListGatewayLogsFeedbackVariant3$$1._();
 
 static const List<AigConfigListGatewayLogsFeedbackVariant3> values = [$1];
 
-final double value;
-
+double get value;
 double toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -79,13 +104,27 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AigConfigListGatewayLogsFeedbackVariant3$Unknown; } 
+@override String toString() => 'AigConfigListGatewayLogsFeedbackVariant3($value)';
+
+ }
+@immutable final class AigConfigListGatewayLogsFeedbackVariant3$$1 extends AigConfigListGatewayLogsFeedbackVariant3 {const AigConfigListGatewayLogsFeedbackVariant3$$1._();
+
+@override double get value => 1;
+
+@override bool operator ==(Object other) => identical(this, other) || other is AigConfigListGatewayLogsFeedbackVariant3$$1;
+
+@override int get hashCode => 1.hashCode;
+
+ }
+@immutable final class AigConfigListGatewayLogsFeedbackVariant3$Unknown extends AigConfigListGatewayLogsFeedbackVariant3 {const AigConfigListGatewayLogsFeedbackVariant3$Unknown(this.value);
+
+@override final double value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AigConfigListGatewayLogsFeedbackVariant3 && other.value == value;
+    other is AigConfigListGatewayLogsFeedbackVariant3$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AigConfigListGatewayLogsFeedbackVariant3($value)';
 
  }
 /// Variants:

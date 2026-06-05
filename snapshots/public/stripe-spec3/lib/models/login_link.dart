@@ -2,19 +2,18 @@
 // Source: #/components/schemas/LoginLink
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class LoginLinkObject {const LoginLinkObject._(this.value);
+sealed class LoginLinkObject {const LoginLinkObject();
 
 factory LoginLinkObject.fromJson(String json) { return switch (json) {
   'login_link' => loginLink,
-  _ => LoginLinkObject._(json),
+  _ => LoginLinkObject$Unknown(json),
 }; }
 
-static const LoginLinkObject loginLink = LoginLinkObject._('login_link');
+static const LoginLinkObject loginLink = LoginLinkObject$loginLink._();
 
 static const List<LoginLinkObject> values = [loginLink];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LoginLinkObject$Unknown; } 
+@override String toString() => 'LoginLinkObject($value)';
+
+ }
+@immutable final class LoginLinkObject$loginLink extends LoginLinkObject {const LoginLinkObject$loginLink._();
+
+@override String get value => 'login_link';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LoginLinkObject$loginLink;
+
+@override int get hashCode => 'login_link'.hashCode;
+
+ }
+@immutable final class LoginLinkObject$Unknown extends LoginLinkObject {const LoginLinkObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LoginLinkObject && other.value == value;
+    other is LoginLinkObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LoginLinkObject($value)';
 
  }
 /// Login Links are single-use URLs that takes an Express account to the login page for their Stripe dashboard.

@@ -3,28 +3,25 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
-@immutable
-final class MeetingProviderEnum {
-  const MeetingProviderEnum._(this.value);
+sealed class MeetingProviderEnum {
+  const MeetingProviderEnum();
 
   factory MeetingProviderEnum.fromJson(String json) {
     return switch (json) {
       'google_meet' => googleMeet,
       'livekit' => livekit,
-      _ => MeetingProviderEnum._(json),
+      _ => MeetingProviderEnum$Unknown(json),
     };
   }
 
-  static const MeetingProviderEnum googleMeet = MeetingProviderEnum._(
-    'google_meet',
-  );
+  static const MeetingProviderEnum googleMeet =
+      MeetingProviderEnum$googleMeet._();
 
-  static const MeetingProviderEnum livekit = MeetingProviderEnum._('livekit');
+  static const MeetingProviderEnum livekit = MeetingProviderEnum$livekit._();
 
   static const List<MeetingProviderEnum> values = [googleMeet, livekit];
 
-  final String value;
-
+  String get value;
   String toJson() {
     return value;
   }
@@ -40,17 +37,55 @@ final class MeetingProviderEnum {
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
-    return !values.contains(this);
+    return this is MeetingProviderEnum$Unknown;
   }
+
+  @override
+  String toString() => 'MeetingProviderEnum($value)';
+}
+
+@immutable
+final class MeetingProviderEnum$googleMeet extends MeetingProviderEnum {
+  const MeetingProviderEnum$googleMeet._();
+
+  @override
+  String get value => 'google_meet';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is MeetingProviderEnum$googleMeet;
+
+  @override
+  int get hashCode => 'google_meet'.hashCode;
+}
+
+@immutable
+final class MeetingProviderEnum$livekit extends MeetingProviderEnum {
+  const MeetingProviderEnum$livekit._();
+
+  @override
+  String get value => 'livekit';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is MeetingProviderEnum$livekit;
+
+  @override
+  int get hashCode => 'livekit'.hashCode;
+}
+
+@immutable
+final class MeetingProviderEnum$Unknown extends MeetingProviderEnum {
+  const MeetingProviderEnum$Unknown(this.value);
+
+  @override
+  final String value;
 
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is MeetingProviderEnum && other.value == value;
+      other is MeetingProviderEnum$Unknown && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
-
-  @override
-  String toString() => 'MeetingProviderEnum($value)';
 }

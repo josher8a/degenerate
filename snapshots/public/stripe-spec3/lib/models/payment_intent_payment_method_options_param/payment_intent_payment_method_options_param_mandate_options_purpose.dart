@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentIntentPaymentMethodOptionsParam (inline: MandateOptions > Purpose)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose();
 
 factory PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -16,37 +16,36 @@ factory PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose.fromJson(Str
   'salary' => salary,
   'tax' => tax,
   'utility' => utility,
-  _ => PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._(json),
+  _ => PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$Unknown(json),
 }; }
 
-static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose $empty = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._('');
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose $empty = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$$empty._();
 
-static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose dependantSupport = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._('dependant_support');
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose dependantSupport = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$dependantSupport._();
 
-static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose government = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._('government');
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose government = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$government._();
 
-static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose loan = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._('loan');
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose loan = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$loan._();
 
-static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose mortgage = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._('mortgage');
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose mortgage = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$mortgage._();
 
-static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose $other = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._('other');
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose $other = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$$other._();
 
-static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose pension = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._('pension');
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose pension = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$pension._();
 
-static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose personal = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._('personal');
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose personal = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$personal._();
 
-static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose retail = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._('retail');
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose retail = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$retail._();
 
-static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose salary = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._('salary');
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose salary = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$salary._();
 
-static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose tax = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._('tax');
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose tax = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$tax._();
 
-static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose utility = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose._('utility');
+static const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose utility = PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$utility._();
 
 static const List<PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose> values = [$empty, dependantSupport, government, loan, mortgage, $other, pension, personal, retail, salary, tax, utility];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -65,12 +64,125 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$Unknown; } 
+@override String toString() => 'PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose($value)';
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$$empty extends PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$$empty._();
+
+@override String get value => '';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$$empty;
+
+@override int get hashCode => ''.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$dependantSupport extends PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$dependantSupport._();
+
+@override String get value => 'dependant_support';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$dependantSupport;
+
+@override int get hashCode => 'dependant_support'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$government extends PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$government._();
+
+@override String get value => 'government';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$government;
+
+@override int get hashCode => 'government'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$loan extends PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$loan._();
+
+@override String get value => 'loan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$loan;
+
+@override int get hashCode => 'loan'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$mortgage extends PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$mortgage._();
+
+@override String get value => 'mortgage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$mortgage;
+
+@override int get hashCode => 'mortgage'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$$other extends PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$pension extends PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$pension._();
+
+@override String get value => 'pension';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$pension;
+
+@override int get hashCode => 'pension'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$personal extends PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$personal._();
+
+@override String get value => 'personal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$personal;
+
+@override int get hashCode => 'personal'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$retail extends PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$retail._();
+
+@override String get value => 'retail';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$retail;
+
+@override int get hashCode => 'retail'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$salary extends PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$salary._();
+
+@override String get value => 'salary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$salary;
+
+@override int get hashCode => 'salary'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$tax extends PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$tax._();
+
+@override String get value => 'tax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$tax;
+
+@override int get hashCode => 'tax'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$utility extends PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$utility._();
+
+@override String get value => 'utility';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$utility;
+
+@override int get hashCode => 'utility'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$Unknown extends PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose {const PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose && other.value == value;
+    other is PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentIntentPaymentMethodOptionsParamMandateOptionsPurpose($value)';
 
  }

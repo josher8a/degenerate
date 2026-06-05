@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DnsRecordsSmimeaRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_smimea_record/dns_records_smimea_record_data.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';/// Record type.
-@immutable final class DnsRecordsSmimeaRecordType {const DnsRecordsSmimeaRecordType._(this.value);
+sealed class DnsRecordsSmimeaRecordType {const DnsRecordsSmimeaRecordType();
 
 factory DnsRecordsSmimeaRecordType.fromJson(String json) { return switch (json) {
   'SMIMEA' => smimea,
-  _ => DnsRecordsSmimeaRecordType._(json),
+  _ => DnsRecordsSmimeaRecordType$Unknown(json),
 }; }
 
-static const DnsRecordsSmimeaRecordType smimea = DnsRecordsSmimeaRecordType._('SMIMEA');
+static const DnsRecordsSmimeaRecordType smimea = DnsRecordsSmimeaRecordType$smimea._();
 
 static const List<DnsRecordsSmimeaRecordType> values = [smimea];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DnsRecordsSmimeaRecordType$Unknown; } 
+@override String toString() => 'DnsRecordsSmimeaRecordType($value)';
+
+ }
+@immutable final class DnsRecordsSmimeaRecordType$smimea extends DnsRecordsSmimeaRecordType {const DnsRecordsSmimeaRecordType$smimea._();
+
+@override String get value => 'SMIMEA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsSmimeaRecordType$smimea;
+
+@override int get hashCode => 'SMIMEA'.hashCode;
+
+ }
+@immutable final class DnsRecordsSmimeaRecordType$Unknown extends DnsRecordsSmimeaRecordType {const DnsRecordsSmimeaRecordType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsSmimeaRecordType && other.value == value;
+    other is DnsRecordsSmimeaRecordType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DnsRecordsSmimeaRecordType($value)';
 
  }
 @immutable final class DnsRecordsSmimeaRecord {const DnsRecordsSmimeaRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });

@@ -2,7 +2,7 @@
 // Source: #/components/schemas/WorkersAiPostRunCfDeepgramAura1Request (inline: Encoding)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Encoding of the output audio.
-@immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding._(this.value);
+sealed class WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding();
 
 factory WorkersAiPostRunCfDeepgramAura1RequestEncoding.fromJson(String json) { return switch (json) {
   'linear16' => linear16,
@@ -12,27 +12,26 @@ factory WorkersAiPostRunCfDeepgramAura1RequestEncoding.fromJson(String json) { r
   'mp3' => mp3,
   'opus' => opus,
   'aac' => aac,
-  _ => WorkersAiPostRunCfDeepgramAura1RequestEncoding._(json),
+  _ => WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown(json),
 }; }
 
-static const WorkersAiPostRunCfDeepgramAura1RequestEncoding linear16 = WorkersAiPostRunCfDeepgramAura1RequestEncoding._('linear16');
+static const WorkersAiPostRunCfDeepgramAura1RequestEncoding linear16 = WorkersAiPostRunCfDeepgramAura1RequestEncoding$linear16._();
 
-static const WorkersAiPostRunCfDeepgramAura1RequestEncoding flac = WorkersAiPostRunCfDeepgramAura1RequestEncoding._('flac');
+static const WorkersAiPostRunCfDeepgramAura1RequestEncoding flac = WorkersAiPostRunCfDeepgramAura1RequestEncoding$flac._();
 
-static const WorkersAiPostRunCfDeepgramAura1RequestEncoding mulaw = WorkersAiPostRunCfDeepgramAura1RequestEncoding._('mulaw');
+static const WorkersAiPostRunCfDeepgramAura1RequestEncoding mulaw = WorkersAiPostRunCfDeepgramAura1RequestEncoding$mulaw._();
 
-static const WorkersAiPostRunCfDeepgramAura1RequestEncoding alaw = WorkersAiPostRunCfDeepgramAura1RequestEncoding._('alaw');
+static const WorkersAiPostRunCfDeepgramAura1RequestEncoding alaw = WorkersAiPostRunCfDeepgramAura1RequestEncoding$alaw._();
 
-static const WorkersAiPostRunCfDeepgramAura1RequestEncoding mp3 = WorkersAiPostRunCfDeepgramAura1RequestEncoding._('mp3');
+static const WorkersAiPostRunCfDeepgramAura1RequestEncoding mp3 = WorkersAiPostRunCfDeepgramAura1RequestEncoding$mp3._();
 
-static const WorkersAiPostRunCfDeepgramAura1RequestEncoding opus = WorkersAiPostRunCfDeepgramAura1RequestEncoding._('opus');
+static const WorkersAiPostRunCfDeepgramAura1RequestEncoding opus = WorkersAiPostRunCfDeepgramAura1RequestEncoding$opus._();
 
-static const WorkersAiPostRunCfDeepgramAura1RequestEncoding aac = WorkersAiPostRunCfDeepgramAura1RequestEncoding._('aac');
+static const WorkersAiPostRunCfDeepgramAura1RequestEncoding aac = WorkersAiPostRunCfDeepgramAura1RequestEncoding$aac._();
 
 static const List<WorkersAiPostRunCfDeepgramAura1RequestEncoding> values = [linear16, flac, mulaw, alaw, mp3, opus, aac];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -46,12 +45,80 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown; } 
+@override String toString() => 'WorkersAiPostRunCfDeepgramAura1RequestEncoding($value)';
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$linear16 extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$linear16._();
+
+@override String get value => 'linear16';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura1RequestEncoding$linear16;
+
+@override int get hashCode => 'linear16'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$flac extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$flac._();
+
+@override String get value => 'flac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura1RequestEncoding$flac;
+
+@override int get hashCode => 'flac'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$mulaw extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$mulaw._();
+
+@override String get value => 'mulaw';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura1RequestEncoding$mulaw;
+
+@override int get hashCode => 'mulaw'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$alaw extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$alaw._();
+
+@override String get value => 'alaw';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura1RequestEncoding$alaw;
+
+@override int get hashCode => 'alaw'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$mp3 extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$mp3._();
+
+@override String get value => 'mp3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura1RequestEncoding$mp3;
+
+@override int get hashCode => 'mp3'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$opus extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$opus._();
+
+@override String get value => 'opus';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura1RequestEncoding$opus;
+
+@override int get hashCode => 'opus'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$aac extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$aac._();
+
+@override String get value => 'aac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersAiPostRunCfDeepgramAura1RequestEncoding$aac;
+
+@override int get hashCode => 'aac'.hashCode;
+
+ }
+@immutable final class WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown extends WorkersAiPostRunCfDeepgramAura1RequestEncoding {const WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersAiPostRunCfDeepgramAura1RequestEncoding && other.value == value;
+    other is WorkersAiPostRunCfDeepgramAura1RequestEncoding$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersAiPostRunCfDeepgramAura1RequestEncoding($value)';
 
  }

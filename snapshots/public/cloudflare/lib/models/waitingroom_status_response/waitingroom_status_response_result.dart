@@ -19,28 +19,27 @@ factory WaitingroomMaxEstimatedTimeMinutes.fromJson(num json) => WaitingroomMaxE
 num toJson() => value;
 
 }
-@immutable final class WaitingroomStatus {const WaitingroomStatus._(this.value);
+sealed class WaitingroomStatus {const WaitingroomStatus();
 
 factory WaitingroomStatus.fromJson(String json) { return switch (json) {
   'event_prequeueing' => eventPrequeueing,
   'not_queueing' => notQueueing,
   'queueing' => queueing,
   'suspended' => suspended,
-  _ => WaitingroomStatus._(json),
+  _ => WaitingroomStatus$Unknown(json),
 }; }
 
-static const WaitingroomStatus eventPrequeueing = WaitingroomStatus._('event_prequeueing');
+static const WaitingroomStatus eventPrequeueing = WaitingroomStatus$eventPrequeueing._();
 
-static const WaitingroomStatus notQueueing = WaitingroomStatus._('not_queueing');
+static const WaitingroomStatus notQueueing = WaitingroomStatus$notQueueing._();
 
-static const WaitingroomStatus queueing = WaitingroomStatus._('queueing');
+static const WaitingroomStatus queueing = WaitingroomStatus$queueing._();
 
-static const WaitingroomStatus suspended = WaitingroomStatus._('suspended');
+static const WaitingroomStatus suspended = WaitingroomStatus$suspended._();
 
 static const List<WaitingroomStatus> values = [eventPrequeueing, notQueueing, queueing, suspended];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -51,13 +50,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WaitingroomStatus$Unknown; } 
+@override String toString() => 'WaitingroomStatus($value)';
+
+ }
+@immutable final class WaitingroomStatus$eventPrequeueing extends WaitingroomStatus {const WaitingroomStatus$eventPrequeueing._();
+
+@override String get value => 'event_prequeueing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomStatus$eventPrequeueing;
+
+@override int get hashCode => 'event_prequeueing'.hashCode;
+
+ }
+@immutable final class WaitingroomStatus$notQueueing extends WaitingroomStatus {const WaitingroomStatus$notQueueing._();
+
+@override String get value => 'not_queueing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomStatus$notQueueing;
+
+@override int get hashCode => 'not_queueing'.hashCode;
+
+ }
+@immutable final class WaitingroomStatus$queueing extends WaitingroomStatus {const WaitingroomStatus$queueing._();
+
+@override String get value => 'queueing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomStatus$queueing;
+
+@override int get hashCode => 'queueing'.hashCode;
+
+ }
+@immutable final class WaitingroomStatus$suspended extends WaitingroomStatus {const WaitingroomStatus$suspended._();
+
+@override String get value => 'suspended';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomStatus$suspended;
+
+@override int get hashCode => 'suspended'.hashCode;
+
+ }
+@immutable final class WaitingroomStatus$Unknown extends WaitingroomStatus {const WaitingroomStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WaitingroomStatus && other.value == value;
+    other is WaitingroomStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WaitingroomStatus($value)';
 
  }
 extension type const WaitingroomStatusEventId(String value) {

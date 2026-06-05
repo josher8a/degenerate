@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FileLink
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/file_link/file_link_file.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class FileLinkObject {const FileLinkObject._(this.value);
+sealed class FileLinkObject {const FileLinkObject();
 
 factory FileLinkObject.fromJson(String json) { return switch (json) {
   'file_link' => fileLink,
-  _ => FileLinkObject._(json),
+  _ => FileLinkObject$Unknown(json),
 }; }
 
-static const FileLinkObject fileLink = FileLinkObject._('file_link');
+static const FileLinkObject fileLink = FileLinkObject$fileLink._();
 
 static const List<FileLinkObject> values = [fileLink];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FileLinkObject$Unknown; } 
+@override String toString() => 'FileLinkObject($value)';
+
+ }
+@immutable final class FileLinkObject$fileLink extends FileLinkObject {const FileLinkObject$fileLink._();
+
+@override String get value => 'file_link';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FileLinkObject$fileLink;
+
+@override int get hashCode => 'file_link'.hashCode;
+
+ }
+@immutable final class FileLinkObject$Unknown extends FileLinkObject {const FileLinkObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FileLinkObject && other.value == value;
+    other is FileLinkObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FileLinkObject($value)';
 
  }
 /// To share the contents of a `File` object with non-Stripe users, you can

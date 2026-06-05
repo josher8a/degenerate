@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZarazFormSubmissionRule
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_form_submission_rule/zaraz_form_submission_rule_settings.dart';@immutable final class ZarazFormSubmissionRuleAction {const ZarazFormSubmissionRuleAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zaraz_form_submission_rule/zaraz_form_submission_rule_settings.dart';sealed class ZarazFormSubmissionRuleAction {const ZarazFormSubmissionRuleAction();
 
 factory ZarazFormSubmissionRuleAction.fromJson(String json) { return switch (json) {
   'formSubmission' => formSubmission,
-  _ => ZarazFormSubmissionRuleAction._(json),
+  _ => ZarazFormSubmissionRuleAction$Unknown(json),
 }; }
 
-static const ZarazFormSubmissionRuleAction formSubmission = ZarazFormSubmissionRuleAction._('formSubmission');
+static const ZarazFormSubmissionRuleAction formSubmission = ZarazFormSubmissionRuleAction$formSubmission._();
 
 static const List<ZarazFormSubmissionRuleAction> values = [formSubmission];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZarazFormSubmissionRuleAction$Unknown; } 
+@override String toString() => 'ZarazFormSubmissionRuleAction($value)';
+
+ }
+@immutable final class ZarazFormSubmissionRuleAction$formSubmission extends ZarazFormSubmissionRuleAction {const ZarazFormSubmissionRuleAction$formSubmission._();
+
+@override String get value => 'formSubmission';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazFormSubmissionRuleAction$formSubmission;
+
+@override int get hashCode => 'formSubmission'.hashCode;
+
+ }
+@immutable final class ZarazFormSubmissionRuleAction$Unknown extends ZarazFormSubmissionRuleAction {const ZarazFormSubmissionRuleAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZarazFormSubmissionRuleAction && other.value == value;
+    other is ZarazFormSubmissionRuleAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZarazFormSubmissionRuleAction($value)';
 
  }
 @immutable final class ZarazFormSubmissionRule {const ZarazFormSubmissionRule({required this.action, required this.id, required this.settings, });

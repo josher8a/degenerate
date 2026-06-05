@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CashBalance
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_balance_customer_balance_settings.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class CashBalanceObject {const CashBalanceObject._(this.value);
+sealed class CashBalanceObject {const CashBalanceObject();
 
 factory CashBalanceObject.fromJson(String json) { return switch (json) {
   'cash_balance' => cashBalance,
-  _ => CashBalanceObject._(json),
+  _ => CashBalanceObject$Unknown(json),
 }; }
 
-static const CashBalanceObject cashBalance = CashBalanceObject._('cash_balance');
+static const CashBalanceObject cashBalance = CashBalanceObject$cashBalance._();
 
 static const List<CashBalanceObject> values = [cashBalance];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CashBalanceObject$Unknown; } 
+@override String toString() => 'CashBalanceObject($value)';
+
+ }
+@immutable final class CashBalanceObject$cashBalance extends CashBalanceObject {const CashBalanceObject$cashBalance._();
+
+@override String get value => 'cash_balance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CashBalanceObject$cashBalance;
+
+@override int get hashCode => 'cash_balance'.hashCode;
+
+ }
+@immutable final class CashBalanceObject$Unknown extends CashBalanceObject {const CashBalanceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CashBalanceObject && other.value == value;
+    other is CashBalanceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CashBalanceObject($value)';
 
  }
 /// A customer's `Cash balance` represents real funds. Customers can add funds to their cash balance by sending a bank transfer. These funds can be used for payment and can eventually be paid out to your bank account.

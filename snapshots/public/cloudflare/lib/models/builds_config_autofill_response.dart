@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BuildsConfigAutofillResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BuildsPackageManager {const BuildsPackageManager._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class BuildsPackageManager {const BuildsPackageManager();
 
 factory BuildsPackageManager.fromJson(String json) { return switch (json) {
   'npm' => npm,
@@ -9,23 +9,22 @@ factory BuildsPackageManager.fromJson(String json) { return switch (json) {
   'pnpm' => pnpm,
   'bun' => bun,
   'uv' => uv,
-  _ => BuildsPackageManager._(json),
+  _ => BuildsPackageManager$Unknown(json),
 }; }
 
-static const BuildsPackageManager npm = BuildsPackageManager._('npm');
+static const BuildsPackageManager npm = BuildsPackageManager$npm._();
 
-static const BuildsPackageManager yarn = BuildsPackageManager._('yarn');
+static const BuildsPackageManager yarn = BuildsPackageManager$yarn._();
 
-static const BuildsPackageManager pnpm = BuildsPackageManager._('pnpm');
+static const BuildsPackageManager pnpm = BuildsPackageManager$pnpm._();
 
-static const BuildsPackageManager bun = BuildsPackageManager._('bun');
+static const BuildsPackageManager bun = BuildsPackageManager$bun._();
 
-static const BuildsPackageManager uv = BuildsPackageManager._('uv');
+static const BuildsPackageManager uv = BuildsPackageManager$uv._();
 
 static const List<BuildsPackageManager> values = [npm, yarn, pnpm, bun, uv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BuildsPackageManager$Unknown; } 
+@override String toString() => 'BuildsPackageManager($value)';
+
+ }
+@immutable final class BuildsPackageManager$npm extends BuildsPackageManager {const BuildsPackageManager$npm._();
+
+@override String get value => 'npm';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BuildsPackageManager$npm;
+
+@override int get hashCode => 'npm'.hashCode;
+
+ }
+@immutable final class BuildsPackageManager$yarn extends BuildsPackageManager {const BuildsPackageManager$yarn._();
+
+@override String get value => 'yarn';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BuildsPackageManager$yarn;
+
+@override int get hashCode => 'yarn'.hashCode;
+
+ }
+@immutable final class BuildsPackageManager$pnpm extends BuildsPackageManager {const BuildsPackageManager$pnpm._();
+
+@override String get value => 'pnpm';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BuildsPackageManager$pnpm;
+
+@override int get hashCode => 'pnpm'.hashCode;
+
+ }
+@immutable final class BuildsPackageManager$bun extends BuildsPackageManager {const BuildsPackageManager$bun._();
+
+@override String get value => 'bun';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BuildsPackageManager$bun;
+
+@override int get hashCode => 'bun'.hashCode;
+
+ }
+@immutable final class BuildsPackageManager$uv extends BuildsPackageManager {const BuildsPackageManager$uv._();
+
+@override String get value => 'uv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BuildsPackageManager$uv;
+
+@override int get hashCode => 'uv'.hashCode;
+
+ }
+@immutable final class BuildsPackageManager$Unknown extends BuildsPackageManager {const BuildsPackageManager$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BuildsPackageManager && other.value == value;
+    other is BuildsPackageManager$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BuildsPackageManager($value)';
 
  }
 @immutable final class BuildsConfigAutofillResponse {const BuildsConfigAutofillResponse({this.configFile, this.defaultWorkerName, this.envWorkerNames, this.packageManager, this.scripts, });

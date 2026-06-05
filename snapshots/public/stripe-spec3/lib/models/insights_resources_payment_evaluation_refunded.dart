@@ -2,28 +2,27 @@
 // Source: #/components/schemas/InsightsResourcesPaymentEvaluationRefunded
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the reason for the refund.
-@immutable final class InsightsResourcesPaymentEvaluationRefundedReason {const InsightsResourcesPaymentEvaluationRefundedReason._(this.value);
+sealed class InsightsResourcesPaymentEvaluationRefundedReason {const InsightsResourcesPaymentEvaluationRefundedReason();
 
 factory InsightsResourcesPaymentEvaluationRefundedReason.fromJson(String json) { return switch (json) {
   'duplicate' => duplicate,
   'fraudulent' => fraudulent,
   'other' => $other,
   'requested_by_customer' => requestedByCustomer,
-  _ => InsightsResourcesPaymentEvaluationRefundedReason._(json),
+  _ => InsightsResourcesPaymentEvaluationRefundedReason$Unknown(json),
 }; }
 
-static const InsightsResourcesPaymentEvaluationRefundedReason duplicate = InsightsResourcesPaymentEvaluationRefundedReason._('duplicate');
+static const InsightsResourcesPaymentEvaluationRefundedReason duplicate = InsightsResourcesPaymentEvaluationRefundedReason$duplicate._();
 
-static const InsightsResourcesPaymentEvaluationRefundedReason fraudulent = InsightsResourcesPaymentEvaluationRefundedReason._('fraudulent');
+static const InsightsResourcesPaymentEvaluationRefundedReason fraudulent = InsightsResourcesPaymentEvaluationRefundedReason$fraudulent._();
 
-static const InsightsResourcesPaymentEvaluationRefundedReason $other = InsightsResourcesPaymentEvaluationRefundedReason._('other');
+static const InsightsResourcesPaymentEvaluationRefundedReason $other = InsightsResourcesPaymentEvaluationRefundedReason$$other._();
 
-static const InsightsResourcesPaymentEvaluationRefundedReason requestedByCustomer = InsightsResourcesPaymentEvaluationRefundedReason._('requested_by_customer');
+static const InsightsResourcesPaymentEvaluationRefundedReason requestedByCustomer = InsightsResourcesPaymentEvaluationRefundedReason$requestedByCustomer._();
 
 static const List<InsightsResourcesPaymentEvaluationRefundedReason> values = [duplicate, fraudulent, $other, requestedByCustomer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InsightsResourcesPaymentEvaluationRefundedReason$Unknown; } 
+@override String toString() => 'InsightsResourcesPaymentEvaluationRefundedReason($value)';
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRefundedReason$duplicate extends InsightsResourcesPaymentEvaluationRefundedReason {const InsightsResourcesPaymentEvaluationRefundedReason$duplicate._();
+
+@override String get value => 'duplicate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRefundedReason$duplicate;
+
+@override int get hashCode => 'duplicate'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRefundedReason$fraudulent extends InsightsResourcesPaymentEvaluationRefundedReason {const InsightsResourcesPaymentEvaluationRefundedReason$fraudulent._();
+
+@override String get value => 'fraudulent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRefundedReason$fraudulent;
+
+@override int get hashCode => 'fraudulent'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRefundedReason$$other extends InsightsResourcesPaymentEvaluationRefundedReason {const InsightsResourcesPaymentEvaluationRefundedReason$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRefundedReason$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRefundedReason$requestedByCustomer extends InsightsResourcesPaymentEvaluationRefundedReason {const InsightsResourcesPaymentEvaluationRefundedReason$requestedByCustomer._();
+
+@override String get value => 'requested_by_customer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationRefundedReason$requestedByCustomer;
+
+@override int get hashCode => 'requested_by_customer'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationRefundedReason$Unknown extends InsightsResourcesPaymentEvaluationRefundedReason {const InsightsResourcesPaymentEvaluationRefundedReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationRefundedReason && other.value == value;
+    other is InsightsResourcesPaymentEvaluationRefundedReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InsightsResourcesPaymentEvaluationRefundedReason($value)';
 
  }
 /// Refunded Event details attached to this payment evaluation.

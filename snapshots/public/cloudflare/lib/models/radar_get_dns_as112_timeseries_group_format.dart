@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetDnsAs112TimeseriesGroupFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetDnsAs112TimeseriesGroupFormat {const RadarGetDnsAs112TimeseriesGroupFormat._(this.value);
+sealed class RadarGetDnsAs112TimeseriesGroupFormat {const RadarGetDnsAs112TimeseriesGroupFormat();
 
 factory RadarGetDnsAs112TimeseriesGroupFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetDnsAs112TimeseriesGroupFormat._(json),
+  _ => RadarGetDnsAs112TimeseriesGroupFormat$Unknown(json),
 }; }
 
-static const RadarGetDnsAs112TimeseriesGroupFormat $json = RadarGetDnsAs112TimeseriesGroupFormat._('JSON');
+static const RadarGetDnsAs112TimeseriesGroupFormat $json = RadarGetDnsAs112TimeseriesGroupFormat$$json._();
 
-static const RadarGetDnsAs112TimeseriesGroupFormat csv = RadarGetDnsAs112TimeseriesGroupFormat._('CSV');
+static const RadarGetDnsAs112TimeseriesGroupFormat csv = RadarGetDnsAs112TimeseriesGroupFormat$csv._();
 
 static const List<RadarGetDnsAs112TimeseriesGroupFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetDnsAs112TimeseriesGroupFormat$Unknown; } 
+@override String toString() => 'RadarGetDnsAs112TimeseriesGroupFormat($value)';
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesGroupFormat$$json extends RadarGetDnsAs112TimeseriesGroupFormat {const RadarGetDnsAs112TimeseriesGroupFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesGroupFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesGroupFormat$csv extends RadarGetDnsAs112TimeseriesGroupFormat {const RadarGetDnsAs112TimeseriesGroupFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsAs112TimeseriesGroupFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetDnsAs112TimeseriesGroupFormat$Unknown extends RadarGetDnsAs112TimeseriesGroupFormat {const RadarGetDnsAs112TimeseriesGroupFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetDnsAs112TimeseriesGroupFormat && other.value == value;
+    other is RadarGetDnsAs112TimeseriesGroupFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetDnsAs112TimeseriesGroupFormat($value)';
 
  }

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/CustomPropertySetPayload (inline: ValuesEditableBy)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Who can edit the values of the property
-@immutable final class ValuesEditableBy {const ValuesEditableBy._(this.value);
+sealed class ValuesEditableBy {const ValuesEditableBy();
 
 factory ValuesEditableBy.fromJson(String json) { return switch (json) {
   'org_actors' => orgActors,
   'org_and_repo_actors' => orgAndRepoActors,
   'null' => $null,
-  _ => ValuesEditableBy._(json),
+  _ => ValuesEditableBy$Unknown(json),
 }; }
 
-static const ValuesEditableBy orgActors = ValuesEditableBy._('org_actors');
+static const ValuesEditableBy orgActors = ValuesEditableBy$orgActors._();
 
-static const ValuesEditableBy orgAndRepoActors = ValuesEditableBy._('org_and_repo_actors');
+static const ValuesEditableBy orgAndRepoActors = ValuesEditableBy$orgAndRepoActors._();
 
-static const ValuesEditableBy $null = ValuesEditableBy._('null');
+static const ValuesEditableBy $null = ValuesEditableBy$$null._();
 
 static const List<ValuesEditableBy> values = [orgActors, orgAndRepoActors, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ValuesEditableBy$Unknown; } 
+@override String toString() => 'ValuesEditableBy($value)';
+
+ }
+@immutable final class ValuesEditableBy$orgActors extends ValuesEditableBy {const ValuesEditableBy$orgActors._();
+
+@override String get value => 'org_actors';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValuesEditableBy$orgActors;
+
+@override int get hashCode => 'org_actors'.hashCode;
+
+ }
+@immutable final class ValuesEditableBy$orgAndRepoActors extends ValuesEditableBy {const ValuesEditableBy$orgAndRepoActors._();
+
+@override String get value => 'org_and_repo_actors';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValuesEditableBy$orgAndRepoActors;
+
+@override int get hashCode => 'org_and_repo_actors'.hashCode;
+
+ }
+@immutable final class ValuesEditableBy$$null extends ValuesEditableBy {const ValuesEditableBy$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ValuesEditableBy$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class ValuesEditableBy$Unknown extends ValuesEditableBy {const ValuesEditableBy$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ValuesEditableBy && other.value == value;
+    other is ValuesEditableBy$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ValuesEditableBy($value)';
 
  }

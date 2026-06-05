@@ -2,28 +2,27 @@
 // Source: #/components/schemas/RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).
-@immutable final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval._(this.value);
+sealed class RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval();
 
 factory RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval.fromJson(String json) { return switch (json) {
   '15m' => $15m,
   '1h' => $1h,
   '1d' => $1d,
   '1w' => $1w,
-  _ => RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval._(json),
+  _ => RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$Unknown(json),
 }; }
 
-static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval $15m = RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval._('15m');
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval $15m = RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$15m._();
 
-static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval $1h = RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval._('1h');
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval $1h = RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$1h._();
 
-static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval $1d = RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval._('1d');
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval $1d = RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$1d._();
 
-static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval $1w = RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval._('1w');
+static const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval $1w = RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$1w._();
 
 static const List<RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval> values = [$15m, $1h, $1d, $1w];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,12 +33,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$Unknown; } 
+@override String toString() => 'RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval($value)';
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$15m extends RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$15m._();
+
+@override String get value => '15m';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$15m;
+
+@override int get hashCode => '15m'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$1h extends RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$1h._();
+
+@override String get value => '1h';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$1h;
+
+@override int get hashCode => '1h'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$1d extends RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$1d._();
+
+@override String get value => '1d';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$1d;
+
+@override int get hashCode => '1d'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$1w extends RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$1w._();
+
+@override String get value => '1w';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$$1w;
+
+@override int get hashCode => '1w'.hashCode;
+
+ }
+@immutable final class RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$Unknown extends RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval {const RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval && other.value == value;
+    other is RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetDnsTimeseriesGroupByDnssecE2eVersionAggInterval($value)';
 
  }

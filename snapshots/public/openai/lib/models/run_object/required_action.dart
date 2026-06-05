@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RunObject (inline: RequiredAction)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object/submit_tool_outputs.dart';/// For now, this is always `submit_tool_outputs`.
-@immutable final class RequiredActionType {const RequiredActionType._(this.value);
+sealed class RequiredActionType {const RequiredActionType();
 
 factory RequiredActionType.fromJson(String json) { return switch (json) {
   'submit_tool_outputs' => submitToolOutputs,
-  _ => RequiredActionType._(json),
+  _ => RequiredActionType$Unknown(json),
 }; }
 
-static const RequiredActionType submitToolOutputs = RequiredActionType._('submit_tool_outputs');
+static const RequiredActionType submitToolOutputs = RequiredActionType$submitToolOutputs._();
 
 static const List<RequiredActionType> values = [submitToolOutputs];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RequiredActionType$Unknown; } 
+@override String toString() => 'RequiredActionType($value)';
+
+ }
+@immutable final class RequiredActionType$submitToolOutputs extends RequiredActionType {const RequiredActionType$submitToolOutputs._();
+
+@override String get value => 'submit_tool_outputs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RequiredActionType$submitToolOutputs;
+
+@override int get hashCode => 'submit_tool_outputs'.hashCode;
+
+ }
+@immutable final class RequiredActionType$Unknown extends RequiredActionType {const RequiredActionType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RequiredActionType && other.value == value;
+    other is RequiredActionType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RequiredActionType($value)';
 
  }
 /// Details on the action required to continue the run. Will be `null` if no action is required.

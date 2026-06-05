@@ -2,28 +2,27 @@
 // Source: #/components/schemas/IssuingCardFraudWarning
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of fraud warning that most recently took place on this card. This field updates with every new fraud warning, so the value changes over time. If populated, cancel and reissue the card.
-@immutable final class IssuingCardFraudWarningType {const IssuingCardFraudWarningType._(this.value);
+sealed class IssuingCardFraudWarningType {const IssuingCardFraudWarningType();
 
 factory IssuingCardFraudWarningType.fromJson(String json) { return switch (json) {
   'card_testing_exposure' => cardTestingExposure,
   'fraud_dispute_filed' => fraudDisputeFiled,
   'third_party_reported' => thirdPartyReported,
   'user_indicated_fraud' => userIndicatedFraud,
-  _ => IssuingCardFraudWarningType._(json),
+  _ => IssuingCardFraudWarningType$Unknown(json),
 }; }
 
-static const IssuingCardFraudWarningType cardTestingExposure = IssuingCardFraudWarningType._('card_testing_exposure');
+static const IssuingCardFraudWarningType cardTestingExposure = IssuingCardFraudWarningType$cardTestingExposure._();
 
-static const IssuingCardFraudWarningType fraudDisputeFiled = IssuingCardFraudWarningType._('fraud_dispute_filed');
+static const IssuingCardFraudWarningType fraudDisputeFiled = IssuingCardFraudWarningType$fraudDisputeFiled._();
 
-static const IssuingCardFraudWarningType thirdPartyReported = IssuingCardFraudWarningType._('third_party_reported');
+static const IssuingCardFraudWarningType thirdPartyReported = IssuingCardFraudWarningType$thirdPartyReported._();
 
-static const IssuingCardFraudWarningType userIndicatedFraud = IssuingCardFraudWarningType._('user_indicated_fraud');
+static const IssuingCardFraudWarningType userIndicatedFraud = IssuingCardFraudWarningType$userIndicatedFraud._();
 
 static const List<IssuingCardFraudWarningType> values = [cardTestingExposure, fraudDisputeFiled, thirdPartyReported, userIndicatedFraud];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingCardFraudWarningType$Unknown; } 
+@override String toString() => 'IssuingCardFraudWarningType($value)';
+
+ }
+@immutable final class IssuingCardFraudWarningType$cardTestingExposure extends IssuingCardFraudWarningType {const IssuingCardFraudWarningType$cardTestingExposure._();
+
+@override String get value => 'card_testing_exposure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardFraudWarningType$cardTestingExposure;
+
+@override int get hashCode => 'card_testing_exposure'.hashCode;
+
+ }
+@immutable final class IssuingCardFraudWarningType$fraudDisputeFiled extends IssuingCardFraudWarningType {const IssuingCardFraudWarningType$fraudDisputeFiled._();
+
+@override String get value => 'fraud_dispute_filed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardFraudWarningType$fraudDisputeFiled;
+
+@override int get hashCode => 'fraud_dispute_filed'.hashCode;
+
+ }
+@immutable final class IssuingCardFraudWarningType$thirdPartyReported extends IssuingCardFraudWarningType {const IssuingCardFraudWarningType$thirdPartyReported._();
+
+@override String get value => 'third_party_reported';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardFraudWarningType$thirdPartyReported;
+
+@override int get hashCode => 'third_party_reported'.hashCode;
+
+ }
+@immutable final class IssuingCardFraudWarningType$userIndicatedFraud extends IssuingCardFraudWarningType {const IssuingCardFraudWarningType$userIndicatedFraud._();
+
+@override String get value => 'user_indicated_fraud';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardFraudWarningType$userIndicatedFraud;
+
+@override int get hashCode => 'user_indicated_fraud'.hashCode;
+
+ }
+@immutable final class IssuingCardFraudWarningType$Unknown extends IssuingCardFraudWarningType {const IssuingCardFraudWarningType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingCardFraudWarningType && other.value == value;
+    other is IssuingCardFraudWarningType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingCardFraudWarningType($value)';
 
  }
 /// 

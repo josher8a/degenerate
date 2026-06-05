@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PagesHttpsCertificate
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PagesHttpsCertificateState {const PagesHttpsCertificateState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PagesHttpsCertificateState {const PagesHttpsCertificateState();
 
 factory PagesHttpsCertificateState.fromJson(String json) { return switch (json) {
   'new' => $new,
@@ -16,37 +16,36 @@ factory PagesHttpsCertificateState.fromJson(String json) { return switch (json) 
   'bad_authz' => badAuthz,
   'destroy_pending' => destroyPending,
   'dns_changed' => dnsChanged,
-  _ => PagesHttpsCertificateState._(json),
+  _ => PagesHttpsCertificateState$Unknown(json),
 }; }
 
-static const PagesHttpsCertificateState $new = PagesHttpsCertificateState._('new');
+static const PagesHttpsCertificateState $new = PagesHttpsCertificateState$$new._();
 
-static const PagesHttpsCertificateState authorizationCreated = PagesHttpsCertificateState._('authorization_created');
+static const PagesHttpsCertificateState authorizationCreated = PagesHttpsCertificateState$authorizationCreated._();
 
-static const PagesHttpsCertificateState authorizationPending = PagesHttpsCertificateState._('authorization_pending');
+static const PagesHttpsCertificateState authorizationPending = PagesHttpsCertificateState$authorizationPending._();
 
-static const PagesHttpsCertificateState authorized = PagesHttpsCertificateState._('authorized');
+static const PagesHttpsCertificateState authorized = PagesHttpsCertificateState$authorized._();
 
-static const PagesHttpsCertificateState authorizationRevoked = PagesHttpsCertificateState._('authorization_revoked');
+static const PagesHttpsCertificateState authorizationRevoked = PagesHttpsCertificateState$authorizationRevoked._();
 
-static const PagesHttpsCertificateState issued = PagesHttpsCertificateState._('issued');
+static const PagesHttpsCertificateState issued = PagesHttpsCertificateState$issued._();
 
-static const PagesHttpsCertificateState uploaded = PagesHttpsCertificateState._('uploaded');
+static const PagesHttpsCertificateState uploaded = PagesHttpsCertificateState$uploaded._();
 
-static const PagesHttpsCertificateState approved = PagesHttpsCertificateState._('approved');
+static const PagesHttpsCertificateState approved = PagesHttpsCertificateState$approved._();
 
-static const PagesHttpsCertificateState errored = PagesHttpsCertificateState._('errored');
+static const PagesHttpsCertificateState errored = PagesHttpsCertificateState$errored._();
 
-static const PagesHttpsCertificateState badAuthz = PagesHttpsCertificateState._('bad_authz');
+static const PagesHttpsCertificateState badAuthz = PagesHttpsCertificateState$badAuthz._();
 
-static const PagesHttpsCertificateState destroyPending = PagesHttpsCertificateState._('destroy_pending');
+static const PagesHttpsCertificateState destroyPending = PagesHttpsCertificateState$destroyPending._();
 
-static const PagesHttpsCertificateState dnsChanged = PagesHttpsCertificateState._('dns_changed');
+static const PagesHttpsCertificateState dnsChanged = PagesHttpsCertificateState$dnsChanged._();
 
 static const List<PagesHttpsCertificateState> values = [$new, authorizationCreated, authorizationPending, authorized, authorizationRevoked, issued, uploaded, approved, errored, badAuthz, destroyPending, dnsChanged];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -65,13 +64,126 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PagesHttpsCertificateState$Unknown; } 
+@override String toString() => 'PagesHttpsCertificateState($value)';
+
+ }
+@immutable final class PagesHttpsCertificateState$$new extends PagesHttpsCertificateState {const PagesHttpsCertificateState$$new._();
+
+@override String get value => 'new';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesHttpsCertificateState$$new;
+
+@override int get hashCode => 'new'.hashCode;
+
+ }
+@immutable final class PagesHttpsCertificateState$authorizationCreated extends PagesHttpsCertificateState {const PagesHttpsCertificateState$authorizationCreated._();
+
+@override String get value => 'authorization_created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesHttpsCertificateState$authorizationCreated;
+
+@override int get hashCode => 'authorization_created'.hashCode;
+
+ }
+@immutable final class PagesHttpsCertificateState$authorizationPending extends PagesHttpsCertificateState {const PagesHttpsCertificateState$authorizationPending._();
+
+@override String get value => 'authorization_pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesHttpsCertificateState$authorizationPending;
+
+@override int get hashCode => 'authorization_pending'.hashCode;
+
+ }
+@immutable final class PagesHttpsCertificateState$authorized extends PagesHttpsCertificateState {const PagesHttpsCertificateState$authorized._();
+
+@override String get value => 'authorized';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesHttpsCertificateState$authorized;
+
+@override int get hashCode => 'authorized'.hashCode;
+
+ }
+@immutable final class PagesHttpsCertificateState$authorizationRevoked extends PagesHttpsCertificateState {const PagesHttpsCertificateState$authorizationRevoked._();
+
+@override String get value => 'authorization_revoked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesHttpsCertificateState$authorizationRevoked;
+
+@override int get hashCode => 'authorization_revoked'.hashCode;
+
+ }
+@immutable final class PagesHttpsCertificateState$issued extends PagesHttpsCertificateState {const PagesHttpsCertificateState$issued._();
+
+@override String get value => 'issued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesHttpsCertificateState$issued;
+
+@override int get hashCode => 'issued'.hashCode;
+
+ }
+@immutable final class PagesHttpsCertificateState$uploaded extends PagesHttpsCertificateState {const PagesHttpsCertificateState$uploaded._();
+
+@override String get value => 'uploaded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesHttpsCertificateState$uploaded;
+
+@override int get hashCode => 'uploaded'.hashCode;
+
+ }
+@immutable final class PagesHttpsCertificateState$approved extends PagesHttpsCertificateState {const PagesHttpsCertificateState$approved._();
+
+@override String get value => 'approved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesHttpsCertificateState$approved;
+
+@override int get hashCode => 'approved'.hashCode;
+
+ }
+@immutable final class PagesHttpsCertificateState$errored extends PagesHttpsCertificateState {const PagesHttpsCertificateState$errored._();
+
+@override String get value => 'errored';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesHttpsCertificateState$errored;
+
+@override int get hashCode => 'errored'.hashCode;
+
+ }
+@immutable final class PagesHttpsCertificateState$badAuthz extends PagesHttpsCertificateState {const PagesHttpsCertificateState$badAuthz._();
+
+@override String get value => 'bad_authz';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesHttpsCertificateState$badAuthz;
+
+@override int get hashCode => 'bad_authz'.hashCode;
+
+ }
+@immutable final class PagesHttpsCertificateState$destroyPending extends PagesHttpsCertificateState {const PagesHttpsCertificateState$destroyPending._();
+
+@override String get value => 'destroy_pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesHttpsCertificateState$destroyPending;
+
+@override int get hashCode => 'destroy_pending'.hashCode;
+
+ }
+@immutable final class PagesHttpsCertificateState$dnsChanged extends PagesHttpsCertificateState {const PagesHttpsCertificateState$dnsChanged._();
+
+@override String get value => 'dns_changed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesHttpsCertificateState$dnsChanged;
+
+@override int get hashCode => 'dns_changed'.hashCode;
+
+ }
+@immutable final class PagesHttpsCertificateState$Unknown extends PagesHttpsCertificateState {const PagesHttpsCertificateState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PagesHttpsCertificateState && other.value == value;
+    other is PagesHttpsCertificateState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PagesHttpsCertificateState($value)';
 
  }
 @immutable final class PagesHttpsCertificate {const PagesHttpsCertificate({required this.state, required this.description, required this.domains, this.expiresAt, });

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/WebhookCodeScanningAlertClosedByUser (inline: Alert)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_dismissed_comment.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/alert_dismissed_reason.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/dismissed_by.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/most_recent_instance.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_closed_by_user/dismissal_approved_by.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_closed_by_user/webhook_code_scanning_alert_closed_by_user_alert_rule.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_closed_by_user/webhook_code_scanning_alert_closed_by_user_alert_tool.dart';/// State of a code scanning alert.
-@immutable final class WebhookCodeScanningAlertClosedByUserAlertState {const WebhookCodeScanningAlertClosedByUserAlertState._(this.value);
+sealed class WebhookCodeScanningAlertClosedByUserAlertState {const WebhookCodeScanningAlertClosedByUserAlertState();
 
 factory WebhookCodeScanningAlertClosedByUserAlertState.fromJson(String json) { return switch (json) {
   'dismissed' => dismissed,
   'fixed' => fixed,
-  _ => WebhookCodeScanningAlertClosedByUserAlertState._(json),
+  _ => WebhookCodeScanningAlertClosedByUserAlertState$Unknown(json),
 }; }
 
-static const WebhookCodeScanningAlertClosedByUserAlertState dismissed = WebhookCodeScanningAlertClosedByUserAlertState._('dismissed');
+static const WebhookCodeScanningAlertClosedByUserAlertState dismissed = WebhookCodeScanningAlertClosedByUserAlertState$dismissed._();
 
-static const WebhookCodeScanningAlertClosedByUserAlertState fixed = WebhookCodeScanningAlertClosedByUserAlertState._('fixed');
+static const WebhookCodeScanningAlertClosedByUserAlertState fixed = WebhookCodeScanningAlertClosedByUserAlertState$fixed._();
 
 static const List<WebhookCodeScanningAlertClosedByUserAlertState> values = [dismissed, fixed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookCodeScanningAlertClosedByUserAlertState$Unknown; } 
+@override String toString() => 'WebhookCodeScanningAlertClosedByUserAlertState($value)';
+
+ }
+@immutable final class WebhookCodeScanningAlertClosedByUserAlertState$dismissed extends WebhookCodeScanningAlertClosedByUserAlertState {const WebhookCodeScanningAlertClosedByUserAlertState$dismissed._();
+
+@override String get value => 'dismissed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCodeScanningAlertClosedByUserAlertState$dismissed;
+
+@override int get hashCode => 'dismissed'.hashCode;
+
+ }
+@immutable final class WebhookCodeScanningAlertClosedByUserAlertState$fixed extends WebhookCodeScanningAlertClosedByUserAlertState {const WebhookCodeScanningAlertClosedByUserAlertState$fixed._();
+
+@override String get value => 'fixed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCodeScanningAlertClosedByUserAlertState$fixed;
+
+@override int get hashCode => 'fixed'.hashCode;
+
+ }
+@immutable final class WebhookCodeScanningAlertClosedByUserAlertState$Unknown extends WebhookCodeScanningAlertClosedByUserAlertState {const WebhookCodeScanningAlertClosedByUserAlertState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookCodeScanningAlertClosedByUserAlertState && other.value == value;
+    other is WebhookCodeScanningAlertClosedByUserAlertState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookCodeScanningAlertClosedByUserAlertState($value)';
 
  }
 /// The code scanning alert involved in the event.

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/LoadBalancingMonitorGroupReferencesResponse (inline: Result)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResultReferenceType {const ResultReferenceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ResultReferenceType {const ResultReferenceType();
 
 factory ResultReferenceType.fromJson(String json) { return switch (json) {
   '*' => $empty,
   'referral' => referral,
   'referrer' => referrer,
-  _ => ResultReferenceType._(json),
+  _ => ResultReferenceType$Unknown(json),
 }; }
 
-static const ResultReferenceType $empty = ResultReferenceType._('*');
+static const ResultReferenceType $empty = ResultReferenceType$$empty._();
 
-static const ResultReferenceType referral = ResultReferenceType._('referral');
+static const ResultReferenceType referral = ResultReferenceType$referral._();
 
-static const ResultReferenceType referrer = ResultReferenceType._('referrer');
+static const ResultReferenceType referrer = ResultReferenceType$referrer._();
 
 static const List<ResultReferenceType> values = [$empty, referral, referrer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ResultReferenceType$Unknown; } 
+@override String toString() => 'ResultReferenceType($value)';
+
+ }
+@immutable final class ResultReferenceType$$empty extends ResultReferenceType {const ResultReferenceType$$empty._();
+
+@override String get value => '*';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResultReferenceType$$empty;
+
+@override int get hashCode => '*'.hashCode;
+
+ }
+@immutable final class ResultReferenceType$referral extends ResultReferenceType {const ResultReferenceType$referral._();
+
+@override String get value => 'referral';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResultReferenceType$referral;
+
+@override int get hashCode => 'referral'.hashCode;
+
+ }
+@immutable final class ResultReferenceType$referrer extends ResultReferenceType {const ResultReferenceType$referrer._();
+
+@override String get value => 'referrer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResultReferenceType$referrer;
+
+@override int get hashCode => 'referrer'.hashCode;
+
+ }
+@immutable final class ResultReferenceType$Unknown extends ResultReferenceType {const ResultReferenceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ResultReferenceType && other.value == value;
+    other is ResultReferenceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ResultReferenceType($value)';
 
  }
 @immutable final class LoadBalancingMonitorGroupReferencesResponseResult {const LoadBalancingMonitorGroupReferencesResponseResult({this.referenceType, this.resourceId, this.resourceName, this.resourceType, });

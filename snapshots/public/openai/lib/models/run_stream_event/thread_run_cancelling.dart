@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStreamEvent (inline: ThreadRunCancelling)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';@immutable final class ThreadRunCancellingEvent {const ThreadRunCancellingEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';sealed class ThreadRunCancellingEvent {const ThreadRunCancellingEvent();
 
 factory ThreadRunCancellingEvent.fromJson(String json) { return switch (json) {
   'thread.run.cancelling' => threadRunCancelling,
-  _ => ThreadRunCancellingEvent._(json),
+  _ => ThreadRunCancellingEvent$Unknown(json),
 }; }
 
-static const ThreadRunCancellingEvent threadRunCancelling = ThreadRunCancellingEvent._('thread.run.cancelling');
+static const ThreadRunCancellingEvent threadRunCancelling = ThreadRunCancellingEvent$threadRunCancelling._();
 
 static const List<ThreadRunCancellingEvent> values = [threadRunCancelling];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunCancellingEvent$Unknown; } 
+@override String toString() => 'ThreadRunCancellingEvent($value)';
+
+ }
+@immutable final class ThreadRunCancellingEvent$threadRunCancelling extends ThreadRunCancellingEvent {const ThreadRunCancellingEvent$threadRunCancelling._();
+
+@override String get value => 'thread.run.cancelling';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunCancellingEvent$threadRunCancelling;
+
+@override int get hashCode => 'thread.run.cancelling'.hashCode;
+
+ }
+@immutable final class ThreadRunCancellingEvent$Unknown extends ThreadRunCancellingEvent {const ThreadRunCancellingEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunCancellingEvent && other.value == value;
+    other is ThreadRunCancellingEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunCancellingEvent($value)';
 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.

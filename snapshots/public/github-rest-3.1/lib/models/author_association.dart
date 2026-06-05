@@ -2,7 +2,7 @@
 // Source: #/components/schemas/AuthorAssociation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// How the author is associated with the repository.
-@immutable final class AuthorAssociation {const AuthorAssociation._(this.value);
+sealed class AuthorAssociation {const AuthorAssociation();
 
 factory AuthorAssociation.fromJson(String json) { return switch (json) {
   'COLLABORATOR' => collaborator,
@@ -13,29 +13,28 @@ factory AuthorAssociation.fromJson(String json) { return switch (json) {
   'MEMBER' => member,
   'NONE' => none,
   'OWNER' => owner,
-  _ => AuthorAssociation._(json),
+  _ => AuthorAssociation$Unknown(json),
 }; }
 
-static const AuthorAssociation collaborator = AuthorAssociation._('COLLABORATOR');
+static const AuthorAssociation collaborator = AuthorAssociation$collaborator._();
 
-static const AuthorAssociation contributor = AuthorAssociation._('CONTRIBUTOR');
+static const AuthorAssociation contributor = AuthorAssociation$contributor._();
 
-static const AuthorAssociation firstTimer = AuthorAssociation._('FIRST_TIMER');
+static const AuthorAssociation firstTimer = AuthorAssociation$firstTimer._();
 
-static const AuthorAssociation firstTimeContributor = AuthorAssociation._('FIRST_TIME_CONTRIBUTOR');
+static const AuthorAssociation firstTimeContributor = AuthorAssociation$firstTimeContributor._();
 
-static const AuthorAssociation mannequin = AuthorAssociation._('MANNEQUIN');
+static const AuthorAssociation mannequin = AuthorAssociation$mannequin._();
 
-static const AuthorAssociation member = AuthorAssociation._('MEMBER');
+static const AuthorAssociation member = AuthorAssociation$member._();
 
-static const AuthorAssociation none = AuthorAssociation._('NONE');
+static const AuthorAssociation none = AuthorAssociation$none._();
 
-static const AuthorAssociation owner = AuthorAssociation._('OWNER');
+static const AuthorAssociation owner = AuthorAssociation$owner._();
 
 static const List<AuthorAssociation> values = [collaborator, contributor, firstTimer, firstTimeContributor, mannequin, member, none, owner];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,12 +49,89 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AuthorAssociation$Unknown; } 
+@override String toString() => 'AuthorAssociation($value)';
+
+ }
+@immutable final class AuthorAssociation$collaborator extends AuthorAssociation {const AuthorAssociation$collaborator._();
+
+@override String get value => 'COLLABORATOR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AuthorAssociation$collaborator;
+
+@override int get hashCode => 'COLLABORATOR'.hashCode;
+
+ }
+@immutable final class AuthorAssociation$contributor extends AuthorAssociation {const AuthorAssociation$contributor._();
+
+@override String get value => 'CONTRIBUTOR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AuthorAssociation$contributor;
+
+@override int get hashCode => 'CONTRIBUTOR'.hashCode;
+
+ }
+@immutable final class AuthorAssociation$firstTimer extends AuthorAssociation {const AuthorAssociation$firstTimer._();
+
+@override String get value => 'FIRST_TIMER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AuthorAssociation$firstTimer;
+
+@override int get hashCode => 'FIRST_TIMER'.hashCode;
+
+ }
+@immutable final class AuthorAssociation$firstTimeContributor extends AuthorAssociation {const AuthorAssociation$firstTimeContributor._();
+
+@override String get value => 'FIRST_TIME_CONTRIBUTOR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AuthorAssociation$firstTimeContributor;
+
+@override int get hashCode => 'FIRST_TIME_CONTRIBUTOR'.hashCode;
+
+ }
+@immutable final class AuthorAssociation$mannequin extends AuthorAssociation {const AuthorAssociation$mannequin._();
+
+@override String get value => 'MANNEQUIN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AuthorAssociation$mannequin;
+
+@override int get hashCode => 'MANNEQUIN'.hashCode;
+
+ }
+@immutable final class AuthorAssociation$member extends AuthorAssociation {const AuthorAssociation$member._();
+
+@override String get value => 'MEMBER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AuthorAssociation$member;
+
+@override int get hashCode => 'MEMBER'.hashCode;
+
+ }
+@immutable final class AuthorAssociation$none extends AuthorAssociation {const AuthorAssociation$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AuthorAssociation$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class AuthorAssociation$owner extends AuthorAssociation {const AuthorAssociation$owner._();
+
+@override String get value => 'OWNER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AuthorAssociation$owner;
+
+@override int get hashCode => 'OWNER'.hashCode;
+
+ }
+@immutable final class AuthorAssociation$Unknown extends AuthorAssociation {const AuthorAssociation$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AuthorAssociation && other.value == value;
+    other is AuthorAssociation$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AuthorAssociation($value)';
 
  }

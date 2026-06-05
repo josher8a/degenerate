@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status of the certificate or the association.
-@immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus._(this.value);
+sealed class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus();
 
 factory TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -12,27 +12,26 @@ factory TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSche
   'deleted' => deleted,
   'deployment_timed_out' => deploymentTimedOut,
   'deletion_timed_out' => deletionTimedOut,
-  _ => TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus._(json),
+  _ => TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus initializing = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus._('initializing');
+static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus initializing = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$initializing._();
 
-static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus pendingDeployment = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus._('pending_deployment');
+static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus pendingDeployment = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeployment._();
 
-static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus pendingDeletion = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus._('pending_deletion');
+static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus pendingDeletion = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeletion._();
 
-static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus active = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus._('active');
+static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus active = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$active._();
 
-static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus deleted = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus._('deleted');
+static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus deleted = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deleted._();
 
-static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus deploymentTimedOut = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus._('deployment_timed_out');
+static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus deploymentTimedOut = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deploymentTimedOut._();
 
-static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus deletionTimedOut = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus._('deletion_timed_out');
+static const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus deletionTimedOut = TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deletionTimedOut._();
 
 static const List<TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus> values = [initializing, pendingDeployment, pendingDeletion, active, deleted, deploymentTimedOut, deletionTimedOut];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -46,12 +45,80 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$initializing extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$initializing._();
+
+@override String get value => 'initializing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$initializing;
+
+@override int get hashCode => 'initializing'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeployment extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeployment._();
+
+@override String get value => 'pending_deployment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeployment;
+
+@override int get hashCode => 'pending_deployment'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeletion extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeletion._();
+
+@override String get value => 'pending_deletion';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$pendingDeletion;
+
+@override int get hashCode => 'pending_deletion'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$active extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deleted extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deleted._();
+
+@override String get value => 'deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deleted;
+
+@override int get hashCode => 'deleted'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deploymentTimedOut extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deploymentTimedOut._();
+
+@override String get value => 'deployment_timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deploymentTimedOut;
+
+@override int get hashCode => 'deployment_timed_out'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deletionTimedOut extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deletionTimedOut._();
+
+@override String get value => 'deletion_timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$deletionTimedOut;
+
+@override int get hashCode => 'deletion_timed_out'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$Unknown extends TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus {const TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus && other.value == value;
+    other is TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPullComponentsSchemasStatus($value)';
 
  }

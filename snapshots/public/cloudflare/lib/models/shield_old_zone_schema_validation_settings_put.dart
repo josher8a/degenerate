@@ -8,25 +8,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 /// To clear any override, use the special value `disable_override` or `null`
 /// 
-@immutable final class ShieldOldValidationOverrideMitigationActionWrite {const ShieldOldValidationOverrideMitigationActionWrite._(this.value);
+sealed class ShieldOldValidationOverrideMitigationActionWrite {const ShieldOldValidationOverrideMitigationActionWrite();
 
 factory ShieldOldValidationOverrideMitigationActionWrite.fromJson(String json) { return switch (json) {
   'none' => none,
   'disable_override' => disableOverride,
   'null' => $null,
-  _ => ShieldOldValidationOverrideMitigationActionWrite._(json),
+  _ => ShieldOldValidationOverrideMitigationActionWrite$Unknown(json),
 }; }
 
-static const ShieldOldValidationOverrideMitigationActionWrite none = ShieldOldValidationOverrideMitigationActionWrite._('none');
+static const ShieldOldValidationOverrideMitigationActionWrite none = ShieldOldValidationOverrideMitigationActionWrite$none._();
 
-static const ShieldOldValidationOverrideMitigationActionWrite disableOverride = ShieldOldValidationOverrideMitigationActionWrite._('disable_override');
+static const ShieldOldValidationOverrideMitigationActionWrite disableOverride = ShieldOldValidationOverrideMitigationActionWrite$disableOverride._();
 
-static const ShieldOldValidationOverrideMitigationActionWrite $null = ShieldOldValidationOverrideMitigationActionWrite._('null');
+static const ShieldOldValidationOverrideMitigationActionWrite $null = ShieldOldValidationOverrideMitigationActionWrite$$null._();
 
 static const List<ShieldOldValidationOverrideMitigationActionWrite> values = [none, disableOverride, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -36,13 +35,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShieldOldValidationOverrideMitigationActionWrite$Unknown; } 
+@override String toString() => 'ShieldOldValidationOverrideMitigationActionWrite($value)';
+
+ }
+@immutable final class ShieldOldValidationOverrideMitigationActionWrite$none extends ShieldOldValidationOverrideMitigationActionWrite {const ShieldOldValidationOverrideMitigationActionWrite$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldOldValidationOverrideMitigationActionWrite$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class ShieldOldValidationOverrideMitigationActionWrite$disableOverride extends ShieldOldValidationOverrideMitigationActionWrite {const ShieldOldValidationOverrideMitigationActionWrite$disableOverride._();
+
+@override String get value => 'disable_override';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldOldValidationOverrideMitigationActionWrite$disableOverride;
+
+@override int get hashCode => 'disable_override'.hashCode;
+
+ }
+@immutable final class ShieldOldValidationOverrideMitigationActionWrite$$null extends ShieldOldValidationOverrideMitigationActionWrite {const ShieldOldValidationOverrideMitigationActionWrite$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldOldValidationOverrideMitigationActionWrite$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class ShieldOldValidationOverrideMitigationActionWrite$Unknown extends ShieldOldValidationOverrideMitigationActionWrite {const ShieldOldValidationOverrideMitigationActionWrite$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldOldValidationOverrideMitigationActionWrite && other.value == value;
+    other is ShieldOldValidationOverrideMitigationActionWrite$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShieldOldValidationOverrideMitigationActionWrite($value)';
 
  }
 @immutable final class ShieldOldZoneSchemaValidationSettingsPut {const ShieldOldZoneSchemaValidationSettingsPut({required this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookOrgBlockUnblocked
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';@immutable final class WebhookOrgBlockUnblockedAction {const WebhookOrgBlockUnblockedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';sealed class WebhookOrgBlockUnblockedAction {const WebhookOrgBlockUnblockedAction();
 
 factory WebhookOrgBlockUnblockedAction.fromJson(String json) { return switch (json) {
   'unblocked' => unblocked,
-  _ => WebhookOrgBlockUnblockedAction._(json),
+  _ => WebhookOrgBlockUnblockedAction$Unknown(json),
 }; }
 
-static const WebhookOrgBlockUnblockedAction unblocked = WebhookOrgBlockUnblockedAction._('unblocked');
+static const WebhookOrgBlockUnblockedAction unblocked = WebhookOrgBlockUnblockedAction$unblocked._();
 
 static const List<WebhookOrgBlockUnblockedAction> values = [unblocked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookOrgBlockUnblockedAction$Unknown; } 
+@override String toString() => 'WebhookOrgBlockUnblockedAction($value)';
+
+ }
+@immutable final class WebhookOrgBlockUnblockedAction$unblocked extends WebhookOrgBlockUnblockedAction {const WebhookOrgBlockUnblockedAction$unblocked._();
+
+@override String get value => 'unblocked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookOrgBlockUnblockedAction$unblocked;
+
+@override int get hashCode => 'unblocked'.hashCode;
+
+ }
+@immutable final class WebhookOrgBlockUnblockedAction$Unknown extends WebhookOrgBlockUnblockedAction {const WebhookOrgBlockUnblockedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookOrgBlockUnblockedAction && other.value == value;
+    other is WebhookOrgBlockUnblockedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookOrgBlockUnblockedAction($value)';
 
  }
 @immutable final class WebhookOrgBlockUnblocked {const WebhookOrgBlockUnblocked({required this.action, required this.blockedUser, required this.organization, required this.sender, this.enterprise, this.installation, this.repository, });

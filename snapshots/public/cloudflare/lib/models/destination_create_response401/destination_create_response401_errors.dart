@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DestinationCreateResponse401 (inline: Errors)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationCreateResponse401ErrorsMessage {const DestinationCreateResponse401ErrorsMessage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DestinationCreateResponse401ErrorsMessage {const DestinationCreateResponse401ErrorsMessage();
 
 factory DestinationCreateResponse401ErrorsMessage.fromJson(String json) { return switch (json) {
   'Unauthorized' => unauthorized,
-  _ => DestinationCreateResponse401ErrorsMessage._(json),
+  _ => DestinationCreateResponse401ErrorsMessage$Unknown(json),
 }; }
 
-static const DestinationCreateResponse401ErrorsMessage unauthorized = DestinationCreateResponse401ErrorsMessage._('Unauthorized');
+static const DestinationCreateResponse401ErrorsMessage unauthorized = DestinationCreateResponse401ErrorsMessage$unauthorized._();
 
 static const List<DestinationCreateResponse401ErrorsMessage> values = [unauthorized];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DestinationCreateResponse401ErrorsMessage$Unknown; } 
+@override String toString() => 'DestinationCreateResponse401ErrorsMessage($value)';
+
+ }
+@immutable final class DestinationCreateResponse401ErrorsMessage$unauthorized extends DestinationCreateResponse401ErrorsMessage {const DestinationCreateResponse401ErrorsMessage$unauthorized._();
+
+@override String get value => 'Unauthorized';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DestinationCreateResponse401ErrorsMessage$unauthorized;
+
+@override int get hashCode => 'Unauthorized'.hashCode;
+
+ }
+@immutable final class DestinationCreateResponse401ErrorsMessage$Unknown extends DestinationCreateResponse401ErrorsMessage {const DestinationCreateResponse401ErrorsMessage$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DestinationCreateResponse401ErrorsMessage && other.value == value;
+    other is DestinationCreateResponse401ErrorsMessage$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DestinationCreateResponse401ErrorsMessage($value)';
 
  }
 @immutable final class DestinationCreateResponse401Errors {const DestinationCreateResponse401Errors({required this.message, this.detail, });

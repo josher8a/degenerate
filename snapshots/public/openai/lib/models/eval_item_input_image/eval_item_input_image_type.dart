@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the image input. Always `input_image`.
 /// 
-@immutable final class EvalItemInputImageType {const EvalItemInputImageType._(this.value);
+sealed class EvalItemInputImageType {const EvalItemInputImageType();
 
 factory EvalItemInputImageType.fromJson(String json) { return switch (json) {
   'input_image' => inputImage,
-  _ => EvalItemInputImageType._(json),
+  _ => EvalItemInputImageType$Unknown(json),
 }; }
 
-static const EvalItemInputImageType inputImage = EvalItemInputImageType._('input_image');
+static const EvalItemInputImageType inputImage = EvalItemInputImageType$inputImage._();
 
 static const List<EvalItemInputImageType> values = [inputImage];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,12 +22,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EvalItemInputImageType$Unknown; } 
+@override String toString() => 'EvalItemInputImageType($value)';
+
+ }
+@immutable final class EvalItemInputImageType$inputImage extends EvalItemInputImageType {const EvalItemInputImageType$inputImage._();
+
+@override String get value => 'input_image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EvalItemInputImageType$inputImage;
+
+@override int get hashCode => 'input_image'.hashCode;
+
+ }
+@immutable final class EvalItemInputImageType$Unknown extends EvalItemInputImageType {const EvalItemInputImageType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EvalItemInputImageType && other.value == value;
+    other is EvalItemInputImageType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EvalItemInputImageType($value)';
 
  }

@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action type.
 /// 
-@immutable final class WebSearchActionFindType {const WebSearchActionFindType._(this.value);
+sealed class WebSearchActionFindType {const WebSearchActionFindType();
 
 factory WebSearchActionFindType.fromJson(String json) { return switch (json) {
   'find_in_page' => findInPage,
-  _ => WebSearchActionFindType._(json),
+  _ => WebSearchActionFindType$Unknown(json),
 }; }
 
-static const WebSearchActionFindType findInPage = WebSearchActionFindType._('find_in_page');
+static const WebSearchActionFindType findInPage = WebSearchActionFindType$findInPage._();
 
 static const List<WebSearchActionFindType> values = [findInPage];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebSearchActionFindType$Unknown; } 
+@override String toString() => 'WebSearchActionFindType($value)';
+
+ }
+@immutable final class WebSearchActionFindType$findInPage extends WebSearchActionFindType {const WebSearchActionFindType$findInPage._();
+
+@override String get value => 'find_in_page';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchActionFindType$findInPage;
+
+@override int get hashCode => 'find_in_page'.hashCode;
+
+ }
+@immutable final class WebSearchActionFindType$Unknown extends WebSearchActionFindType {const WebSearchActionFindType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebSearchActionFindType && other.value == value;
+    other is WebSearchActionFindType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebSearchActionFindType($value)';
 
  }
 /// Action type "find_in_page": Searches for a pattern within a loaded page.

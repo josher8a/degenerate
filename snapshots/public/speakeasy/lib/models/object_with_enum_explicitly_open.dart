@@ -2,25 +2,24 @@
 // Source: #/components/schemas/ObjectWithEnumExplicitlyOpen
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enum used only in requests but explicitly marked open
-@immutable final class EnumUsedInRequestExplicitlyOpen {const EnumUsedInRequestExplicitlyOpen._(this.value);
+sealed class EnumUsedInRequestExplicitlyOpen {const EnumUsedInRequestExplicitlyOpen();
 
 factory EnumUsedInRequestExplicitlyOpen.fromJson(String json) { return switch (json) {
   'alpha' => alpha,
   'beta' => beta,
   'gamma' => gamma,
-  _ => EnumUsedInRequestExplicitlyOpen._(json),
+  _ => EnumUsedInRequestExplicitlyOpen$Unknown(json),
 }; }
 
-static const EnumUsedInRequestExplicitlyOpen alpha = EnumUsedInRequestExplicitlyOpen._('alpha');
+static const EnumUsedInRequestExplicitlyOpen alpha = EnumUsedInRequestExplicitlyOpen$alpha._();
 
-static const EnumUsedInRequestExplicitlyOpen beta = EnumUsedInRequestExplicitlyOpen._('beta');
+static const EnumUsedInRequestExplicitlyOpen beta = EnumUsedInRequestExplicitlyOpen$beta._();
 
-static const EnumUsedInRequestExplicitlyOpen gamma = EnumUsedInRequestExplicitlyOpen._('gamma');
+static const EnumUsedInRequestExplicitlyOpen gamma = EnumUsedInRequestExplicitlyOpen$gamma._();
 
 static const List<EnumUsedInRequestExplicitlyOpen> values = [alpha, beta, gamma];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EnumUsedInRequestExplicitlyOpen$Unknown; } 
+@override String toString() => 'EnumUsedInRequestExplicitlyOpen($value)';
+
+ }
+@immutable final class EnumUsedInRequestExplicitlyOpen$alpha extends EnumUsedInRequestExplicitlyOpen {const EnumUsedInRequestExplicitlyOpen$alpha._();
+
+@override String get value => 'alpha';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumUsedInRequestExplicitlyOpen$alpha;
+
+@override int get hashCode => 'alpha'.hashCode;
+
+ }
+@immutable final class EnumUsedInRequestExplicitlyOpen$beta extends EnumUsedInRequestExplicitlyOpen {const EnumUsedInRequestExplicitlyOpen$beta._();
+
+@override String get value => 'beta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumUsedInRequestExplicitlyOpen$beta;
+
+@override int get hashCode => 'beta'.hashCode;
+
+ }
+@immutable final class EnumUsedInRequestExplicitlyOpen$gamma extends EnumUsedInRequestExplicitlyOpen {const EnumUsedInRequestExplicitlyOpen$gamma._();
+
+@override String get value => 'gamma';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnumUsedInRequestExplicitlyOpen$gamma;
+
+@override int get hashCode => 'gamma'.hashCode;
+
+ }
+@immutable final class EnumUsedInRequestExplicitlyOpen$Unknown extends EnumUsedInRequestExplicitlyOpen {const EnumUsedInRequestExplicitlyOpen$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EnumUsedInRequestExplicitlyOpen && other.value == value;
+    other is EnumUsedInRequestExplicitlyOpen$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EnumUsedInRequestExplicitlyOpen($value)';
 
  }
 @immutable final class ObjectWithEnumExplicitlyOpen {const ObjectWithEnumExplicitlyOpen({required this.mode, this.value, });

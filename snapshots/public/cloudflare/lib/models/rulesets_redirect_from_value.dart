@@ -2,7 +2,7 @@
 // Source: #/components/schemas/RulesetsRedirectFromValue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/rulesets_redirect_from_value/target_url.dart';/// The status code to use for the redirect.
-@immutable final class RulesetsRedirectFromValueStatusCode {const RulesetsRedirectFromValueStatusCode._(this.value);
+sealed class RulesetsRedirectFromValueStatusCode {const RulesetsRedirectFromValueStatusCode();
 
 factory RulesetsRedirectFromValueStatusCode.fromJson(int json) { return switch (json) {
   301 => $301,
@@ -10,23 +10,22 @@ factory RulesetsRedirectFromValueStatusCode.fromJson(int json) { return switch (
   303 => $303,
   307 => $307,
   308 => $308,
-  _ => RulesetsRedirectFromValueStatusCode._(json),
+  _ => RulesetsRedirectFromValueStatusCode$Unknown(json),
 }; }
 
-static const RulesetsRedirectFromValueStatusCode $301 = RulesetsRedirectFromValueStatusCode._(301);
+static const RulesetsRedirectFromValueStatusCode $301 = RulesetsRedirectFromValueStatusCode$$301._();
 
-static const RulesetsRedirectFromValueStatusCode $302 = RulesetsRedirectFromValueStatusCode._(302);
+static const RulesetsRedirectFromValueStatusCode $302 = RulesetsRedirectFromValueStatusCode$$302._();
 
-static const RulesetsRedirectFromValueStatusCode $303 = RulesetsRedirectFromValueStatusCode._(303);
+static const RulesetsRedirectFromValueStatusCode $303 = RulesetsRedirectFromValueStatusCode$$303._();
 
-static const RulesetsRedirectFromValueStatusCode $307 = RulesetsRedirectFromValueStatusCode._(307);
+static const RulesetsRedirectFromValueStatusCode $307 = RulesetsRedirectFromValueStatusCode$$307._();
 
-static const RulesetsRedirectFromValueStatusCode $308 = RulesetsRedirectFromValueStatusCode._(308);
+static const RulesetsRedirectFromValueStatusCode $308 = RulesetsRedirectFromValueStatusCode$$308._();
 
 static const List<RulesetsRedirectFromValueStatusCode> values = [$301, $302, $303, $307, $308];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RulesetsRedirectFromValueStatusCode$Unknown; } 
+@override String toString() => 'RulesetsRedirectFromValueStatusCode($value)';
+
+ }
+@immutable final class RulesetsRedirectFromValueStatusCode$$301 extends RulesetsRedirectFromValueStatusCode {const RulesetsRedirectFromValueStatusCode$$301._();
+
+@override int get value => 301;
+
+@override bool operator ==(Object other) => identical(this, other) || other is RulesetsRedirectFromValueStatusCode$$301;
+
+@override int get hashCode => 301.hashCode;
+
+ }
+@immutable final class RulesetsRedirectFromValueStatusCode$$302 extends RulesetsRedirectFromValueStatusCode {const RulesetsRedirectFromValueStatusCode$$302._();
+
+@override int get value => 302;
+
+@override bool operator ==(Object other) => identical(this, other) || other is RulesetsRedirectFromValueStatusCode$$302;
+
+@override int get hashCode => 302.hashCode;
+
+ }
+@immutable final class RulesetsRedirectFromValueStatusCode$$303 extends RulesetsRedirectFromValueStatusCode {const RulesetsRedirectFromValueStatusCode$$303._();
+
+@override int get value => 303;
+
+@override bool operator ==(Object other) => identical(this, other) || other is RulesetsRedirectFromValueStatusCode$$303;
+
+@override int get hashCode => 303.hashCode;
+
+ }
+@immutable final class RulesetsRedirectFromValueStatusCode$$307 extends RulesetsRedirectFromValueStatusCode {const RulesetsRedirectFromValueStatusCode$$307._();
+
+@override int get value => 307;
+
+@override bool operator ==(Object other) => identical(this, other) || other is RulesetsRedirectFromValueStatusCode$$307;
+
+@override int get hashCode => 307.hashCode;
+
+ }
+@immutable final class RulesetsRedirectFromValueStatusCode$$308 extends RulesetsRedirectFromValueStatusCode {const RulesetsRedirectFromValueStatusCode$$308._();
+
+@override int get value => 308;
+
+@override bool operator ==(Object other) => identical(this, other) || other is RulesetsRedirectFromValueStatusCode$$308;
+
+@override int get hashCode => 308.hashCode;
+
+ }
+@immutable final class RulesetsRedirectFromValueStatusCode$Unknown extends RulesetsRedirectFromValueStatusCode {const RulesetsRedirectFromValueStatusCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RulesetsRedirectFromValueStatusCode && other.value == value;
+    other is RulesetsRedirectFromValueStatusCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RulesetsRedirectFromValueStatusCode($value)';
 
  }
 /// A redirect based on the request properties.

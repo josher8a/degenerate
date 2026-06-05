@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AccessUserRiskScoreRule (inline: UserRiskScore)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UserRiskScoreUserRiskScore {const UserRiskScoreUserRiskScore._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UserRiskScoreUserRiskScore {const UserRiskScoreUserRiskScore();
 
 factory UserRiskScoreUserRiskScore.fromJson(String json) { return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
   'unscored' => unscored,
-  _ => UserRiskScoreUserRiskScore._(json),
+  _ => UserRiskScoreUserRiskScore$Unknown(json),
 }; }
 
-static const UserRiskScoreUserRiskScore low = UserRiskScoreUserRiskScore._('low');
+static const UserRiskScoreUserRiskScore low = UserRiskScoreUserRiskScore$low._();
 
-static const UserRiskScoreUserRiskScore medium = UserRiskScoreUserRiskScore._('medium');
+static const UserRiskScoreUserRiskScore medium = UserRiskScoreUserRiskScore$medium._();
 
-static const UserRiskScoreUserRiskScore high = UserRiskScoreUserRiskScore._('high');
+static const UserRiskScoreUserRiskScore high = UserRiskScoreUserRiskScore$high._();
 
-static const UserRiskScoreUserRiskScore unscored = UserRiskScoreUserRiskScore._('unscored');
+static const UserRiskScoreUserRiskScore unscored = UserRiskScoreUserRiskScore$unscored._();
 
 static const List<UserRiskScoreUserRiskScore> values = [low, medium, high, unscored];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UserRiskScoreUserRiskScore$Unknown; } 
+@override String toString() => 'UserRiskScoreUserRiskScore($value)';
+
+ }
+@immutable final class UserRiskScoreUserRiskScore$low extends UserRiskScoreUserRiskScore {const UserRiskScoreUserRiskScore$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserRiskScoreUserRiskScore$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class UserRiskScoreUserRiskScore$medium extends UserRiskScoreUserRiskScore {const UserRiskScoreUserRiskScore$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserRiskScoreUserRiskScore$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class UserRiskScoreUserRiskScore$high extends UserRiskScoreUserRiskScore {const UserRiskScoreUserRiskScore$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserRiskScoreUserRiskScore$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class UserRiskScoreUserRiskScore$unscored extends UserRiskScoreUserRiskScore {const UserRiskScoreUserRiskScore$unscored._();
+
+@override String get value => 'unscored';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserRiskScoreUserRiskScore$unscored;
+
+@override int get hashCode => 'unscored'.hashCode;
+
+ }
+@immutable final class UserRiskScoreUserRiskScore$Unknown extends UserRiskScoreUserRiskScore {const UserRiskScoreUserRiskScore$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UserRiskScoreUserRiskScore && other.value == value;
+    other is UserRiskScoreUserRiskScore$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UserRiskScoreUserRiskScore($value)';
 
  }
 @immutable final class AccessUserRiskScoreRuleUserRiskScore {const AccessUserRiskScoreRuleUserRiskScore({required this.userRiskScore});

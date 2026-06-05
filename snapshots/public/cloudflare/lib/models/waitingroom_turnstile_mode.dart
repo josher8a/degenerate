@@ -7,28 +7,27 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Which Turnstile 
 /// Turnstile integration entirely. Setting this to anything other than
 /// `off` or `invisible` requires Advanced Waiting Room.
 /// 
-@immutable final class WaitingroomTurnstileMode {const WaitingroomTurnstileMode._(this.value);
+sealed class WaitingroomTurnstileMode {const WaitingroomTurnstileMode();
 
 factory WaitingroomTurnstileMode.fromJson(String json) { return switch (json) {
   'off' => off,
   'invisible' => invisible,
   'visible_non_interactive' => visibleNonInteractive,
   'visible_managed' => visibleManaged,
-  _ => WaitingroomTurnstileMode._(json),
+  _ => WaitingroomTurnstileMode$Unknown(json),
 }; }
 
-static const WaitingroomTurnstileMode off = WaitingroomTurnstileMode._('off');
+static const WaitingroomTurnstileMode off = WaitingroomTurnstileMode$off._();
 
-static const WaitingroomTurnstileMode invisible = WaitingroomTurnstileMode._('invisible');
+static const WaitingroomTurnstileMode invisible = WaitingroomTurnstileMode$invisible._();
 
-static const WaitingroomTurnstileMode visibleNonInteractive = WaitingroomTurnstileMode._('visible_non_interactive');
+static const WaitingroomTurnstileMode visibleNonInteractive = WaitingroomTurnstileMode$visibleNonInteractive._();
 
-static const WaitingroomTurnstileMode visibleManaged = WaitingroomTurnstileMode._('visible_managed');
+static const WaitingroomTurnstileMode visibleManaged = WaitingroomTurnstileMode$visibleManaged._();
 
 static const List<WaitingroomTurnstileMode> values = [off, invisible, visibleNonInteractive, visibleManaged];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -39,12 +38,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WaitingroomTurnstileMode$Unknown; } 
+@override String toString() => 'WaitingroomTurnstileMode($value)';
+
+ }
+@immutable final class WaitingroomTurnstileMode$off extends WaitingroomTurnstileMode {const WaitingroomTurnstileMode$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomTurnstileMode$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class WaitingroomTurnstileMode$invisible extends WaitingroomTurnstileMode {const WaitingroomTurnstileMode$invisible._();
+
+@override String get value => 'invisible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomTurnstileMode$invisible;
+
+@override int get hashCode => 'invisible'.hashCode;
+
+ }
+@immutable final class WaitingroomTurnstileMode$visibleNonInteractive extends WaitingroomTurnstileMode {const WaitingroomTurnstileMode$visibleNonInteractive._();
+
+@override String get value => 'visible_non_interactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomTurnstileMode$visibleNonInteractive;
+
+@override int get hashCode => 'visible_non_interactive'.hashCode;
+
+ }
+@immutable final class WaitingroomTurnstileMode$visibleManaged extends WaitingroomTurnstileMode {const WaitingroomTurnstileMode$visibleManaged._();
+
+@override String get value => 'visible_managed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomTurnstileMode$visibleManaged;
+
+@override int get hashCode => 'visible_managed'.hashCode;
+
+ }
+@immutable final class WaitingroomTurnstileMode$Unknown extends WaitingroomTurnstileMode {const WaitingroomTurnstileMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WaitingroomTurnstileMode && other.value == value;
+    other is WaitingroomTurnstileMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WaitingroomTurnstileMode($value)';
 
  }

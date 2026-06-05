@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EnhancedEvidence (inline: VisaCompellingEvidence3 > DisputedTransaction)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_account_id.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_device_fingerprint.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_device_id.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_email_address.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_purchase_ip.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/disputed_transaction_product_description.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/disputed_transaction_shipping_address.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';@immutable final class DisputedTransactionMerchandiseOrServices {const DisputedTransactionMerchandiseOrServices._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_account_id.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_device_fingerprint.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_device_id.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_email_address.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/customer_purchase_ip.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/disputed_transaction_product_description.dart';import 'package:pub_stripe_spec3/models/enhanced_evidence/disputed_transaction_shipping_address.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';sealed class DisputedTransactionMerchandiseOrServices {const DisputedTransactionMerchandiseOrServices();
 
 factory DisputedTransactionMerchandiseOrServices.fromJson(String json) { return switch (json) {
   'merchandise' => merchandise,
   'services' => services,
-  _ => DisputedTransactionMerchandiseOrServices._(json),
+  _ => DisputedTransactionMerchandiseOrServices$Unknown(json),
 }; }
 
-static const DisputedTransactionMerchandiseOrServices merchandise = DisputedTransactionMerchandiseOrServices._('merchandise');
+static const DisputedTransactionMerchandiseOrServices merchandise = DisputedTransactionMerchandiseOrServices$merchandise._();
 
-static const DisputedTransactionMerchandiseOrServices services = DisputedTransactionMerchandiseOrServices._('services');
+static const DisputedTransactionMerchandiseOrServices services = DisputedTransactionMerchandiseOrServices$services._();
 
 static const List<DisputedTransactionMerchandiseOrServices> values = [merchandise, services];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DisputedTransactionMerchandiseOrServices$Unknown; } 
+@override String toString() => 'DisputedTransactionMerchandiseOrServices($value)';
+
+ }
+@immutable final class DisputedTransactionMerchandiseOrServices$merchandise extends DisputedTransactionMerchandiseOrServices {const DisputedTransactionMerchandiseOrServices$merchandise._();
+
+@override String get value => 'merchandise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputedTransactionMerchandiseOrServices$merchandise;
+
+@override int get hashCode => 'merchandise'.hashCode;
+
+ }
+@immutable final class DisputedTransactionMerchandiseOrServices$services extends DisputedTransactionMerchandiseOrServices {const DisputedTransactionMerchandiseOrServices$services._();
+
+@override String get value => 'services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputedTransactionMerchandiseOrServices$services;
+
+@override int get hashCode => 'services'.hashCode;
+
+ }
+@immutable final class DisputedTransactionMerchandiseOrServices$Unknown extends DisputedTransactionMerchandiseOrServices {const DisputedTransactionMerchandiseOrServices$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DisputedTransactionMerchandiseOrServices && other.value == value;
+    other is DisputedTransactionMerchandiseOrServices$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DisputedTransactionMerchandiseOrServices($value)';
 
  }
 @immutable final class DisputedTransaction {const DisputedTransaction({this.customerAccountId, this.customerDeviceFingerprint, this.customerDeviceId, this.customerEmailAddress, this.customerPurchaseIp, this.merchandiseOrServices, this.productDescription, this.shippingAddress, });

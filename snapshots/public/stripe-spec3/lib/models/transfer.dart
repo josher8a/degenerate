@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Transfer
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge_transfer_data/charge_transfer_data_destination.dart';import 'package:pub_stripe_spec3/models/transfer/destination_payment.dart';import 'package:pub_stripe_spec3/models/transfer/reversals.dart';import 'package:pub_stripe_spec3/models/transfer/transfer_source_transaction.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TransferObject {const TransferObject._(this.value);
+sealed class TransferObject {const TransferObject();
 
 factory TransferObject.fromJson(String json) { return switch (json) {
   'transfer' => transfer,
-  _ => TransferObject._(json),
+  _ => TransferObject$Unknown(json),
 }; }
 
-static const TransferObject transfer = TransferObject._('transfer');
+static const TransferObject transfer = TransferObject$transfer._();
 
 static const List<TransferObject> values = [transfer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TransferObject$Unknown; } 
+@override String toString() => 'TransferObject($value)';
+
+ }
+@immutable final class TransferObject$transfer extends TransferObject {const TransferObject$transfer._();
+
+@override String get value => 'transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TransferObject$transfer;
+
+@override int get hashCode => 'transfer'.hashCode;
+
+ }
+@immutable final class TransferObject$Unknown extends TransferObject {const TransferObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TransferObject && other.value == value;
+    other is TransferObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TransferObject($value)';
 
  }
 /// A `Transfer` object is created when you move funds between Stripe accounts as

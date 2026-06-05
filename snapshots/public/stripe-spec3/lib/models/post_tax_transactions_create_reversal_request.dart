@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PostTaxTransactionsCreateReversalRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_tax_transactions_create_reversal_request/post_tax_transactions_create_reversal_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_tax_transactions_create_reversal_request/post_tax_transactions_create_reversal_request_shipping_cost.dart';/// If `partial`, the provided line item or shipping cost amounts are reversed. If `full`, the original transaction is fully reversed.
-@immutable final class PostTaxTransactionsCreateReversalRequestMode {const PostTaxTransactionsCreateReversalRequestMode._(this.value);
+sealed class PostTaxTransactionsCreateReversalRequestMode {const PostTaxTransactionsCreateReversalRequestMode();
 
 factory PostTaxTransactionsCreateReversalRequestMode.fromJson(String json) { return switch (json) {
   'full' => full,
   'partial' => partial,
-  _ => PostTaxTransactionsCreateReversalRequestMode._(json),
+  _ => PostTaxTransactionsCreateReversalRequestMode$Unknown(json),
 }; }
 
-static const PostTaxTransactionsCreateReversalRequestMode full = PostTaxTransactionsCreateReversalRequestMode._('full');
+static const PostTaxTransactionsCreateReversalRequestMode full = PostTaxTransactionsCreateReversalRequestMode$full._();
 
-static const PostTaxTransactionsCreateReversalRequestMode partial = PostTaxTransactionsCreateReversalRequestMode._('partial');
+static const PostTaxTransactionsCreateReversalRequestMode partial = PostTaxTransactionsCreateReversalRequestMode$partial._();
 
 static const List<PostTaxTransactionsCreateReversalRequestMode> values = [full, partial];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostTaxTransactionsCreateReversalRequestMode$Unknown; } 
+@override String toString() => 'PostTaxTransactionsCreateReversalRequestMode($value)';
+
+ }
+@immutable final class PostTaxTransactionsCreateReversalRequestMode$full extends PostTaxTransactionsCreateReversalRequestMode {const PostTaxTransactionsCreateReversalRequestMode$full._();
+
+@override String get value => 'full';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostTaxTransactionsCreateReversalRequestMode$full;
+
+@override int get hashCode => 'full'.hashCode;
+
+ }
+@immutable final class PostTaxTransactionsCreateReversalRequestMode$partial extends PostTaxTransactionsCreateReversalRequestMode {const PostTaxTransactionsCreateReversalRequestMode$partial._();
+
+@override String get value => 'partial';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostTaxTransactionsCreateReversalRequestMode$partial;
+
+@override int get hashCode => 'partial'.hashCode;
+
+ }
+@immutable final class PostTaxTransactionsCreateReversalRequestMode$Unknown extends PostTaxTransactionsCreateReversalRequestMode {const PostTaxTransactionsCreateReversalRequestMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostTaxTransactionsCreateReversalRequestMode && other.value == value;
+    other is PostTaxTransactionsCreateReversalRequestMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostTaxTransactionsCreateReversalRequestMode($value)';
 
  }
 @immutable final class PostTaxTransactionsCreateReversalRequest {const PostTaxTransactionsCreateReversalRequest({required this.mode, required this.originalTransaction, required this.reference, this.expand, this.flatAmount, this.lineItems, this.metadata, this.shippingCost, });

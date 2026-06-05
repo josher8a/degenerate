@@ -2,7 +2,7 @@
 // Source: #/components/schemas/SpectrumApplicationsListSpectrumApplicationsOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Application field by which results are ordered.
-@immutable final class SpectrumApplicationsListSpectrumApplicationsOrder {const SpectrumApplicationsListSpectrumApplicationsOrder._(this.value);
+sealed class SpectrumApplicationsListSpectrumApplicationsOrder {const SpectrumApplicationsListSpectrumApplicationsOrder();
 
 factory SpectrumApplicationsListSpectrumApplicationsOrder.fromJson(String json) { return switch (json) {
   'protocol' => protocol,
@@ -10,23 +10,22 @@ factory SpectrumApplicationsListSpectrumApplicationsOrder.fromJson(String json) 
   'created_on' => createdOn,
   'modified_on' => modifiedOn,
   'dns' => dns,
-  _ => SpectrumApplicationsListSpectrumApplicationsOrder._(json),
+  _ => SpectrumApplicationsListSpectrumApplicationsOrder$Unknown(json),
 }; }
 
-static const SpectrumApplicationsListSpectrumApplicationsOrder protocol = SpectrumApplicationsListSpectrumApplicationsOrder._('protocol');
+static const SpectrumApplicationsListSpectrumApplicationsOrder protocol = SpectrumApplicationsListSpectrumApplicationsOrder$protocol._();
 
-static const SpectrumApplicationsListSpectrumApplicationsOrder appId = SpectrumApplicationsListSpectrumApplicationsOrder._('app_id');
+static const SpectrumApplicationsListSpectrumApplicationsOrder appId = SpectrumApplicationsListSpectrumApplicationsOrder$appId._();
 
-static const SpectrumApplicationsListSpectrumApplicationsOrder createdOn = SpectrumApplicationsListSpectrumApplicationsOrder._('created_on');
+static const SpectrumApplicationsListSpectrumApplicationsOrder createdOn = SpectrumApplicationsListSpectrumApplicationsOrder$createdOn._();
 
-static const SpectrumApplicationsListSpectrumApplicationsOrder modifiedOn = SpectrumApplicationsListSpectrumApplicationsOrder._('modified_on');
+static const SpectrumApplicationsListSpectrumApplicationsOrder modifiedOn = SpectrumApplicationsListSpectrumApplicationsOrder$modifiedOn._();
 
-static const SpectrumApplicationsListSpectrumApplicationsOrder dns = SpectrumApplicationsListSpectrumApplicationsOrder._('dns');
+static const SpectrumApplicationsListSpectrumApplicationsOrder dns = SpectrumApplicationsListSpectrumApplicationsOrder$dns._();
 
 static const List<SpectrumApplicationsListSpectrumApplicationsOrder> values = [protocol, appId, createdOn, modifiedOn, dns];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,12 +37,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SpectrumApplicationsListSpectrumApplicationsOrder$Unknown; } 
+@override String toString() => 'SpectrumApplicationsListSpectrumApplicationsOrder($value)';
+
+ }
+@immutable final class SpectrumApplicationsListSpectrumApplicationsOrder$protocol extends SpectrumApplicationsListSpectrumApplicationsOrder {const SpectrumApplicationsListSpectrumApplicationsOrder$protocol._();
+
+@override String get value => 'protocol';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumApplicationsListSpectrumApplicationsOrder$protocol;
+
+@override int get hashCode => 'protocol'.hashCode;
+
+ }
+@immutable final class SpectrumApplicationsListSpectrumApplicationsOrder$appId extends SpectrumApplicationsListSpectrumApplicationsOrder {const SpectrumApplicationsListSpectrumApplicationsOrder$appId._();
+
+@override String get value => 'app_id';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumApplicationsListSpectrumApplicationsOrder$appId;
+
+@override int get hashCode => 'app_id'.hashCode;
+
+ }
+@immutable final class SpectrumApplicationsListSpectrumApplicationsOrder$createdOn extends SpectrumApplicationsListSpectrumApplicationsOrder {const SpectrumApplicationsListSpectrumApplicationsOrder$createdOn._();
+
+@override String get value => 'created_on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumApplicationsListSpectrumApplicationsOrder$createdOn;
+
+@override int get hashCode => 'created_on'.hashCode;
+
+ }
+@immutable final class SpectrumApplicationsListSpectrumApplicationsOrder$modifiedOn extends SpectrumApplicationsListSpectrumApplicationsOrder {const SpectrumApplicationsListSpectrumApplicationsOrder$modifiedOn._();
+
+@override String get value => 'modified_on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumApplicationsListSpectrumApplicationsOrder$modifiedOn;
+
+@override int get hashCode => 'modified_on'.hashCode;
+
+ }
+@immutable final class SpectrumApplicationsListSpectrumApplicationsOrder$dns extends SpectrumApplicationsListSpectrumApplicationsOrder {const SpectrumApplicationsListSpectrumApplicationsOrder$dns._();
+
+@override String get value => 'dns';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumApplicationsListSpectrumApplicationsOrder$dns;
+
+@override int get hashCode => 'dns'.hashCode;
+
+ }
+@immutable final class SpectrumApplicationsListSpectrumApplicationsOrder$Unknown extends SpectrumApplicationsListSpectrumApplicationsOrder {const SpectrumApplicationsListSpectrumApplicationsOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SpectrumApplicationsListSpectrumApplicationsOrder && other.value == value;
+    other is SpectrumApplicationsListSpectrumApplicationsOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SpectrumApplicationsListSpectrumApplicationsOrder($value)';
 
  }

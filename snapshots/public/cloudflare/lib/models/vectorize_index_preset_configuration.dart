@@ -2,7 +2,7 @@
 // Source: #/components/schemas/VectorizeIndexPresetConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the preset to use for the index.
-@immutable final class VectorizeIndexPreset {const VectorizeIndexPreset._(this.value);
+sealed class VectorizeIndexPreset {const VectorizeIndexPreset();
 
 factory VectorizeIndexPreset.fromJson(String json) { return switch (json) {
   '@cf/baai/bge-small-en-v1.5' => cfBaaiBgeSmallEnV15,
@@ -10,23 +10,22 @@ factory VectorizeIndexPreset.fromJson(String json) { return switch (json) {
   '@cf/baai/bge-large-en-v1.5' => cfBaaiBgeLargeEnV15,
   'openai/text-embedding-ada-002' => openaiTextEmbeddingAda002,
   'cohere/embed-multilingual-v2.0' => cohereEmbedMultilingualV20,
-  _ => VectorizeIndexPreset._(json),
+  _ => VectorizeIndexPreset$Unknown(json),
 }; }
 
-static const VectorizeIndexPreset cfBaaiBgeSmallEnV15 = VectorizeIndexPreset._('@cf/baai/bge-small-en-v1.5');
+static const VectorizeIndexPreset cfBaaiBgeSmallEnV15 = VectorizeIndexPreset$cfBaaiBgeSmallEnV15._();
 
-static const VectorizeIndexPreset cfBaaiBgeBaseEnV15 = VectorizeIndexPreset._('@cf/baai/bge-base-en-v1.5');
+static const VectorizeIndexPreset cfBaaiBgeBaseEnV15 = VectorizeIndexPreset$cfBaaiBgeBaseEnV15._();
 
-static const VectorizeIndexPreset cfBaaiBgeLargeEnV15 = VectorizeIndexPreset._('@cf/baai/bge-large-en-v1.5');
+static const VectorizeIndexPreset cfBaaiBgeLargeEnV15 = VectorizeIndexPreset$cfBaaiBgeLargeEnV15._();
 
-static const VectorizeIndexPreset openaiTextEmbeddingAda002 = VectorizeIndexPreset._('openai/text-embedding-ada-002');
+static const VectorizeIndexPreset openaiTextEmbeddingAda002 = VectorizeIndexPreset$openaiTextEmbeddingAda002._();
 
-static const VectorizeIndexPreset cohereEmbedMultilingualV20 = VectorizeIndexPreset._('cohere/embed-multilingual-v2.0');
+static const VectorizeIndexPreset cohereEmbedMultilingualV20 = VectorizeIndexPreset$cohereEmbedMultilingualV20._();
 
 static const List<VectorizeIndexPreset> values = [cfBaaiBgeSmallEnV15, cfBaaiBgeBaseEnV15, cfBaaiBgeLargeEnV15, openaiTextEmbeddingAda002, cohereEmbedMultilingualV20];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is VectorizeIndexPreset$Unknown; } 
+@override String toString() => 'VectorizeIndexPreset($value)';
+
+ }
+@immutable final class VectorizeIndexPreset$cfBaaiBgeSmallEnV15 extends VectorizeIndexPreset {const VectorizeIndexPreset$cfBaaiBgeSmallEnV15._();
+
+@override String get value => '@cf/baai/bge-small-en-v1.5';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorizeIndexPreset$cfBaaiBgeSmallEnV15;
+
+@override int get hashCode => '@cf/baai/bge-small-en-v1.5'.hashCode;
+
+ }
+@immutable final class VectorizeIndexPreset$cfBaaiBgeBaseEnV15 extends VectorizeIndexPreset {const VectorizeIndexPreset$cfBaaiBgeBaseEnV15._();
+
+@override String get value => '@cf/baai/bge-base-en-v1.5';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorizeIndexPreset$cfBaaiBgeBaseEnV15;
+
+@override int get hashCode => '@cf/baai/bge-base-en-v1.5'.hashCode;
+
+ }
+@immutable final class VectorizeIndexPreset$cfBaaiBgeLargeEnV15 extends VectorizeIndexPreset {const VectorizeIndexPreset$cfBaaiBgeLargeEnV15._();
+
+@override String get value => '@cf/baai/bge-large-en-v1.5';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorizeIndexPreset$cfBaaiBgeLargeEnV15;
+
+@override int get hashCode => '@cf/baai/bge-large-en-v1.5'.hashCode;
+
+ }
+@immutable final class VectorizeIndexPreset$openaiTextEmbeddingAda002 extends VectorizeIndexPreset {const VectorizeIndexPreset$openaiTextEmbeddingAda002._();
+
+@override String get value => 'openai/text-embedding-ada-002';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorizeIndexPreset$openaiTextEmbeddingAda002;
+
+@override int get hashCode => 'openai/text-embedding-ada-002'.hashCode;
+
+ }
+@immutable final class VectorizeIndexPreset$cohereEmbedMultilingualV20 extends VectorizeIndexPreset {const VectorizeIndexPreset$cohereEmbedMultilingualV20._();
+
+@override String get value => 'cohere/embed-multilingual-v2.0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorizeIndexPreset$cohereEmbedMultilingualV20;
+
+@override int get hashCode => 'cohere/embed-multilingual-v2.0'.hashCode;
+
+ }
+@immutable final class VectorizeIndexPreset$Unknown extends VectorizeIndexPreset {const VectorizeIndexPreset$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is VectorizeIndexPreset && other.value == value;
+    other is VectorizeIndexPreset$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'VectorizeIndexPreset($value)';
 
  }
 @immutable final class VectorizeIndexPresetConfiguration {const VectorizeIndexPresetConfiguration({required this.preset});

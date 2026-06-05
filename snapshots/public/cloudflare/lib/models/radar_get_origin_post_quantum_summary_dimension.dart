@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RadarGetOriginPostQuantumSummaryDimension
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the origin post-quantum data dimension by which to group the results.
-@immutable final class RadarGetOriginPostQuantumSummaryDimension {const RadarGetOriginPostQuantumSummaryDimension._(this.value);
+sealed class RadarGetOriginPostQuantumSummaryDimension {const RadarGetOriginPostQuantumSummaryDimension();
 
 factory RadarGetOriginPostQuantumSummaryDimension.fromJson(String json) { return switch (json) {
   'KEY_AGREEMENT' => keyAgreement,
-  _ => RadarGetOriginPostQuantumSummaryDimension._(json),
+  _ => RadarGetOriginPostQuantumSummaryDimension$Unknown(json),
 }; }
 
-static const RadarGetOriginPostQuantumSummaryDimension keyAgreement = RadarGetOriginPostQuantumSummaryDimension._('KEY_AGREEMENT');
+static const RadarGetOriginPostQuantumSummaryDimension keyAgreement = RadarGetOriginPostQuantumSummaryDimension$keyAgreement._();
 
 static const List<RadarGetOriginPostQuantumSummaryDimension> values = [keyAgreement];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetOriginPostQuantumSummaryDimension$Unknown; } 
+@override String toString() => 'RadarGetOriginPostQuantumSummaryDimension($value)';
+
+ }
+@immutable final class RadarGetOriginPostQuantumSummaryDimension$keyAgreement extends RadarGetOriginPostQuantumSummaryDimension {const RadarGetOriginPostQuantumSummaryDimension$keyAgreement._();
+
+@override String get value => 'KEY_AGREEMENT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetOriginPostQuantumSummaryDimension$keyAgreement;
+
+@override int get hashCode => 'KEY_AGREEMENT'.hashCode;
+
+ }
+@immutable final class RadarGetOriginPostQuantumSummaryDimension$Unknown extends RadarGetOriginPostQuantumSummaryDimension {const RadarGetOriginPostQuantumSummaryDimension$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetOriginPostQuantumSummaryDimension && other.value == value;
+    other is RadarGetOriginPostQuantumSummaryDimension$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetOriginPostQuantumSummaryDimension($value)';
 
  }

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ImageGenTool
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_background.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_output_format.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_quality.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_size.dart';import 'package:pub_openai/models/image_gen_tool/image_gen_tool_model.dart';import 'package:pub_openai/models/image_gen_tool/input_image_mask.dart';import 'package:pub_openai/models/input_fidelity.dart';@immutable final class ImageGenActionEnum {const ImageGenActionEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_background.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_output_format.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_quality.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_size.dart';import 'package:pub_openai/models/image_gen_tool/image_gen_tool_model.dart';import 'package:pub_openai/models/image_gen_tool/input_image_mask.dart';import 'package:pub_openai/models/input_fidelity.dart';sealed class ImageGenActionEnum {const ImageGenActionEnum();
 
 factory ImageGenActionEnum.fromJson(String json) { return switch (json) {
   'generate' => generate,
   'edit' => edit,
   'auto' => auto,
-  _ => ImageGenActionEnum._(json),
+  _ => ImageGenActionEnum$Unknown(json),
 }; }
 
-static const ImageGenActionEnum generate = ImageGenActionEnum._('generate');
+static const ImageGenActionEnum generate = ImageGenActionEnum$generate._();
 
-static const ImageGenActionEnum edit = ImageGenActionEnum._('edit');
+static const ImageGenActionEnum edit = ImageGenActionEnum$edit._();
 
-static const ImageGenActionEnum auto = ImageGenActionEnum._('auto');
+static const ImageGenActionEnum auto = ImageGenActionEnum$auto._();
 
 static const List<ImageGenActionEnum> values = [generate, edit, auto];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,33 +28,64 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ImageGenActionEnum$Unknown; } 
+@override String toString() => 'ImageGenActionEnum($value)';
+
+ }
+@immutable final class ImageGenActionEnum$generate extends ImageGenActionEnum {const ImageGenActionEnum$generate._();
+
+@override String get value => 'generate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenActionEnum$generate;
+
+@override int get hashCode => 'generate'.hashCode;
+
+ }
+@immutable final class ImageGenActionEnum$edit extends ImageGenActionEnum {const ImageGenActionEnum$edit._();
+
+@override String get value => 'edit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenActionEnum$edit;
+
+@override int get hashCode => 'edit'.hashCode;
+
+ }
+@immutable final class ImageGenActionEnum$auto extends ImageGenActionEnum {const ImageGenActionEnum$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenActionEnum$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class ImageGenActionEnum$Unknown extends ImageGenActionEnum {const ImageGenActionEnum$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ImageGenActionEnum && other.value == value;
+    other is ImageGenActionEnum$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ImageGenActionEnum($value)';
 
  }
 /// Moderation level for the generated image. Default: `auto`.
 /// 
-@immutable final class ImageGenToolModeration {const ImageGenToolModeration._(this.value);
+sealed class ImageGenToolModeration {const ImageGenToolModeration();
 
 factory ImageGenToolModeration.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'low' => low,
-  _ => ImageGenToolModeration._(json),
+  _ => ImageGenToolModeration$Unknown(json),
 }; }
 
-static const ImageGenToolModeration auto = ImageGenToolModeration._('auto');
+static const ImageGenToolModeration auto = ImageGenToolModeration$auto._();
 
-static const ImageGenToolModeration low = ImageGenToolModeration._('low');
+static const ImageGenToolModeration low = ImageGenToolModeration$low._();
 
 static const List<ImageGenToolModeration> values = [auto, low];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,13 +94,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ImageGenToolModeration$Unknown; } 
+@override String toString() => 'ImageGenToolModeration($value)';
+
+ }
+@immutable final class ImageGenToolModeration$auto extends ImageGenToolModeration {const ImageGenToolModeration$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolModeration$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class ImageGenToolModeration$low extends ImageGenToolModeration {const ImageGenToolModeration$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolModeration$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class ImageGenToolModeration$Unknown extends ImageGenToolModeration {const ImageGenToolModeration$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ImageGenToolModeration && other.value == value;
+    other is ImageGenToolModeration$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ImageGenToolModeration($value)';
 
  }
 /// A tool that generates images using the GPT image models.

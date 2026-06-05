@@ -2,25 +2,24 @@
 // Source: #/components/schemas/CodeScanningAlertInstanceList
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_classification.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_environment.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_instance_list/message.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_location.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_analysis_key.dart';import 'package:pub_github_rest_3_1/models/code_scanning_analysis_category.dart';import 'package:pub_github_rest_3_1/models/code_scanning_ref.dart';/// State of a code scanning alert instance.
-@immutable final class CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState._(this.value);
+sealed class CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState();
 
 factory CodeScanningAlertInstanceState.fromJson(String json) { return switch (json) {
   'open' => open,
   'fixed' => fixed,
   'null' => $null,
-  _ => CodeScanningAlertInstanceState._(json),
+  _ => CodeScanningAlertInstanceState$Unknown(json),
 }; }
 
-static const CodeScanningAlertInstanceState open = CodeScanningAlertInstanceState._('open');
+static const CodeScanningAlertInstanceState open = CodeScanningAlertInstanceState$open._();
 
-static const CodeScanningAlertInstanceState fixed = CodeScanningAlertInstanceState._('fixed');
+static const CodeScanningAlertInstanceState fixed = CodeScanningAlertInstanceState$fixed._();
 
-static const CodeScanningAlertInstanceState $null = CodeScanningAlertInstanceState._('null');
+static const CodeScanningAlertInstanceState $null = CodeScanningAlertInstanceState$$null._();
 
 static const List<CodeScanningAlertInstanceState> values = [open, fixed, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeScanningAlertInstanceState$Unknown; } 
+@override String toString() => 'CodeScanningAlertInstanceState($value)';
+
+ }
+@immutable final class CodeScanningAlertInstanceState$open extends CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState$open._();
+
+@override String get value => 'open';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAlertInstanceState$open;
+
+@override int get hashCode => 'open'.hashCode;
+
+ }
+@immutable final class CodeScanningAlertInstanceState$fixed extends CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState$fixed._();
+
+@override String get value => 'fixed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAlertInstanceState$fixed;
+
+@override int get hashCode => 'fixed'.hashCode;
+
+ }
+@immutable final class CodeScanningAlertInstanceState$$null extends CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAlertInstanceState$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class CodeScanningAlertInstanceState$Unknown extends CodeScanningAlertInstanceState {const CodeScanningAlertInstanceState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeScanningAlertInstanceState && other.value == value;
+    other is CodeScanningAlertInstanceState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeScanningAlertInstanceState($value)';
 
  }
 @immutable final class CodeScanningAlertInstanceList {const CodeScanningAlertInstanceList({this.ref, this.analysisKey, this.environment, this.category, this.state, this.commitSha, this.message, this.location, this.htmlUrl, this.classifications, });

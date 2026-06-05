@@ -16,28 +16,27 @@ String toJson() => value;
 
 }
 /// The type of DNS record associated with the origin. "" is used to specify a combination of A/AAAA records.
-@immutable final class SpectrumConfigOriginDnsType {const SpectrumConfigOriginDnsType._(this.value);
+sealed class SpectrumConfigOriginDnsType {const SpectrumConfigOriginDnsType();
 
 factory SpectrumConfigOriginDnsType.fromJson(String json) { return switch (json) {
   '' => $empty,
   'A' => a,
   'AAAA' => aaaa,
   'SRV' => srv,
-  _ => SpectrumConfigOriginDnsType._(json),
+  _ => SpectrumConfigOriginDnsType$Unknown(json),
 }; }
 
-static const SpectrumConfigOriginDnsType $empty = SpectrumConfigOriginDnsType._('');
+static const SpectrumConfigOriginDnsType $empty = SpectrumConfigOriginDnsType$$empty._();
 
-static const SpectrumConfigOriginDnsType a = SpectrumConfigOriginDnsType._('A');
+static const SpectrumConfigOriginDnsType a = SpectrumConfigOriginDnsType$a._();
 
-static const SpectrumConfigOriginDnsType aaaa = SpectrumConfigOriginDnsType._('AAAA');
+static const SpectrumConfigOriginDnsType aaaa = SpectrumConfigOriginDnsType$aaaa._();
 
-static const SpectrumConfigOriginDnsType srv = SpectrumConfigOriginDnsType._('SRV');
+static const SpectrumConfigOriginDnsType srv = SpectrumConfigOriginDnsType$srv._();
 
 static const List<SpectrumConfigOriginDnsType> values = [$empty, a, aaaa, srv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -48,13 +47,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SpectrumConfigOriginDnsType$Unknown; } 
+@override String toString() => 'SpectrumConfigOriginDnsType($value)';
+
+ }
+@immutable final class SpectrumConfigOriginDnsType$$empty extends SpectrumConfigOriginDnsType {const SpectrumConfigOriginDnsType$$empty._();
+
+@override String get value => '';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigOriginDnsType$$empty;
+
+@override int get hashCode => ''.hashCode;
+
+ }
+@immutable final class SpectrumConfigOriginDnsType$a extends SpectrumConfigOriginDnsType {const SpectrumConfigOriginDnsType$a._();
+
+@override String get value => 'A';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigOriginDnsType$a;
+
+@override int get hashCode => 'A'.hashCode;
+
+ }
+@immutable final class SpectrumConfigOriginDnsType$aaaa extends SpectrumConfigOriginDnsType {const SpectrumConfigOriginDnsType$aaaa._();
+
+@override String get value => 'AAAA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigOriginDnsType$aaaa;
+
+@override int get hashCode => 'AAAA'.hashCode;
+
+ }
+@immutable final class SpectrumConfigOriginDnsType$srv extends SpectrumConfigOriginDnsType {const SpectrumConfigOriginDnsType$srv._();
+
+@override String get value => 'SRV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpectrumConfigOriginDnsType$srv;
+
+@override int get hashCode => 'SRV'.hashCode;
+
+ }
+@immutable final class SpectrumConfigOriginDnsType$Unknown extends SpectrumConfigOriginDnsType {const SpectrumConfigOriginDnsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SpectrumConfigOriginDnsType && other.value == value;
+    other is SpectrumConfigOriginDnsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SpectrumConfigOriginDnsType($value)';
 
  }
 /// The name and type of DNS record for the Spectrum application.

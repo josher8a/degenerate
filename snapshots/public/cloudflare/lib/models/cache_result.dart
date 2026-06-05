@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CacheResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current setting of the automatic SSL/TLS.
-@immutable final class CacheResultValue {const CacheResultValue._(this.value);
+sealed class CacheResultValue {const CacheResultValue();
 
 factory CacheResultValue.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'custom' => custom,
-  _ => CacheResultValue._(json),
+  _ => CacheResultValue$Unknown(json),
 }; }
 
-static const CacheResultValue auto = CacheResultValue._('auto');
+static const CacheResultValue auto = CacheResultValue$auto._();
 
-static const CacheResultValue custom = CacheResultValue._('custom');
+static const CacheResultValue custom = CacheResultValue$custom._();
 
 static const List<CacheResultValue> values = [auto, custom];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CacheResultValue$Unknown; } 
+@override String toString() => 'CacheResultValue($value)';
+
+ }
+@immutable final class CacheResultValue$auto extends CacheResultValue {const CacheResultValue$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CacheResultValue$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class CacheResultValue$custom extends CacheResultValue {const CacheResultValue$custom._();
+
+@override String get value => 'custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CacheResultValue$custom;
+
+@override int get hashCode => 'custom'.hashCode;
+
+ }
+@immutable final class CacheResultValue$Unknown extends CacheResultValue {const CacheResultValue$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CacheResultValue && other.value == value;
+    other is CacheResultValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CacheResultValue($value)';
 
  }
 @immutable final class CacheResult {const CacheResult({required this.editable, required this.id, required this.modifiedOn, required this.value, this.nextScheduledScan, });

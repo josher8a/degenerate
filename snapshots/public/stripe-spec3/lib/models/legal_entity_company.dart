@@ -2,22 +2,21 @@
 // Source: #/components/schemas/LegalEntityCompany
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/address.dart';import 'package:pub_stripe_spec3/models/legal_entity_company_verification.dart';import 'package:pub_stripe_spec3/models/legal_entity_directorship_declaration.dart';import 'package:pub_stripe_spec3/models/legal_entity_japan_address.dart';import 'package:pub_stripe_spec3/models/legal_entity_registration_date.dart';import 'package:pub_stripe_spec3/models/legal_entity_representative_declaration.dart';import 'package:pub_stripe_spec3/models/legal_entity_ubo_declaration.dart';/// This value is used to determine if a business is exempt from providing ultimate beneficial owners. See [this support article](https://support.stripe.com/questions/exemption-from-providing-ownership-details) and [changelog](https://docs.stripe.com/changelog/acacia/2025-01-27/ownership-exemption-reason-accounts-api) for more details.
-@immutable final class LegalEntityCompanyOwnershipExemptionReason {const LegalEntityCompanyOwnershipExemptionReason._(this.value);
+sealed class LegalEntityCompanyOwnershipExemptionReason {const LegalEntityCompanyOwnershipExemptionReason();
 
 factory LegalEntityCompanyOwnershipExemptionReason.fromJson(String json) { return switch (json) {
   'qualified_entity_exceeds_ownership_threshold' => qualifiedEntityExceedsOwnershipThreshold,
   'qualifies_as_financial_institution' => qualifiesAsFinancialInstitution,
-  _ => LegalEntityCompanyOwnershipExemptionReason._(json),
+  _ => LegalEntityCompanyOwnershipExemptionReason$Unknown(json),
 }; }
 
-static const LegalEntityCompanyOwnershipExemptionReason qualifiedEntityExceedsOwnershipThreshold = LegalEntityCompanyOwnershipExemptionReason._('qualified_entity_exceeds_ownership_threshold');
+static const LegalEntityCompanyOwnershipExemptionReason qualifiedEntityExceedsOwnershipThreshold = LegalEntityCompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold._();
 
-static const LegalEntityCompanyOwnershipExemptionReason qualifiesAsFinancialInstitution = LegalEntityCompanyOwnershipExemptionReason._('qualifies_as_financial_institution');
+static const LegalEntityCompanyOwnershipExemptionReason qualifiesAsFinancialInstitution = LegalEntityCompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution._();
 
 static const List<LegalEntityCompanyOwnershipExemptionReason> values = [qualifiedEntityExceedsOwnershipThreshold, qualifiesAsFinancialInstitution];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,17 +25,40 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is LegalEntityCompanyOwnershipExemptionReason && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is LegalEntityCompanyOwnershipExemptionReason$Unknown; } 
 @override String toString() => 'LegalEntityCompanyOwnershipExemptionReason($value)';
 
  }
+@immutable final class LegalEntityCompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold extends LegalEntityCompanyOwnershipExemptionReason {const LegalEntityCompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold._();
+
+@override String get value => 'qualified_entity_exceeds_ownership_threshold';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyOwnershipExemptionReason$qualifiedEntityExceedsOwnershipThreshold;
+
+@override int get hashCode => 'qualified_entity_exceeds_ownership_threshold'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution extends LegalEntityCompanyOwnershipExemptionReason {const LegalEntityCompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution._();
+
+@override String get value => 'qualifies_as_financial_institution';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyOwnershipExemptionReason$qualifiesAsFinancialInstitution;
+
+@override int get hashCode => 'qualifies_as_financial_institution'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyOwnershipExemptionReason$Unknown extends LegalEntityCompanyOwnershipExemptionReason {const LegalEntityCompanyOwnershipExemptionReason$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is LegalEntityCompanyOwnershipExemptionReason$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The category identifying the legal structure of the company or legal entity. Also available for accounts where [controller.requirement_collection](/api/accounts/object#account_object-controller-requirement_collection) is `stripe`. See [Business structure](https://docs.stripe.com/connect/identity-verification#business-structure) for more details.
-@immutable final class LegalEntityCompanyStructure {const LegalEntityCompanyStructure._(this.value);
+sealed class LegalEntityCompanyStructure {const LegalEntityCompanyStructure();
 
 factory LegalEntityCompanyStructure.fromJson(String json) { return switch (json) {
   'free_zone_establishment' => freeZoneEstablishment,
@@ -62,59 +84,58 @@ factory LegalEntityCompanyStructure.fromJson(String json) { return switch (json)
   'unincorporated_association' => unincorporatedAssociation,
   'unincorporated_non_profit' => unincorporatedNonProfit,
   'unincorporated_partnership' => unincorporatedPartnership,
-  _ => LegalEntityCompanyStructure._(json),
+  _ => LegalEntityCompanyStructure$Unknown(json),
 }; }
 
-static const LegalEntityCompanyStructure freeZoneEstablishment = LegalEntityCompanyStructure._('free_zone_establishment');
+static const LegalEntityCompanyStructure freeZoneEstablishment = LegalEntityCompanyStructure$freeZoneEstablishment._();
 
-static const LegalEntityCompanyStructure freeZoneLlc = LegalEntityCompanyStructure._('free_zone_llc');
+static const LegalEntityCompanyStructure freeZoneLlc = LegalEntityCompanyStructure$freeZoneLlc._();
 
-static const LegalEntityCompanyStructure governmentInstrumentality = LegalEntityCompanyStructure._('government_instrumentality');
+static const LegalEntityCompanyStructure governmentInstrumentality = LegalEntityCompanyStructure$governmentInstrumentality._();
 
-static const LegalEntityCompanyStructure governmentalUnit = LegalEntityCompanyStructure._('governmental_unit');
+static const LegalEntityCompanyStructure governmentalUnit = LegalEntityCompanyStructure$governmentalUnit._();
 
-static const LegalEntityCompanyStructure incorporatedNonProfit = LegalEntityCompanyStructure._('incorporated_non_profit');
+static const LegalEntityCompanyStructure incorporatedNonProfit = LegalEntityCompanyStructure$incorporatedNonProfit._();
 
-static const LegalEntityCompanyStructure incorporatedPartnership = LegalEntityCompanyStructure._('incorporated_partnership');
+static const LegalEntityCompanyStructure incorporatedPartnership = LegalEntityCompanyStructure$incorporatedPartnership._();
 
-static const LegalEntityCompanyStructure limitedLiabilityPartnership = LegalEntityCompanyStructure._('limited_liability_partnership');
+static const LegalEntityCompanyStructure limitedLiabilityPartnership = LegalEntityCompanyStructure$limitedLiabilityPartnership._();
 
-static const LegalEntityCompanyStructure llc = LegalEntityCompanyStructure._('llc');
+static const LegalEntityCompanyStructure llc = LegalEntityCompanyStructure$llc._();
 
-static const LegalEntityCompanyStructure multiMemberLlc = LegalEntityCompanyStructure._('multi_member_llc');
+static const LegalEntityCompanyStructure multiMemberLlc = LegalEntityCompanyStructure$multiMemberLlc._();
 
-static const LegalEntityCompanyStructure privateCompany = LegalEntityCompanyStructure._('private_company');
+static const LegalEntityCompanyStructure privateCompany = LegalEntityCompanyStructure$privateCompany._();
 
-static const LegalEntityCompanyStructure privateCorporation = LegalEntityCompanyStructure._('private_corporation');
+static const LegalEntityCompanyStructure privateCorporation = LegalEntityCompanyStructure$privateCorporation._();
 
-static const LegalEntityCompanyStructure privatePartnership = LegalEntityCompanyStructure._('private_partnership');
+static const LegalEntityCompanyStructure privatePartnership = LegalEntityCompanyStructure$privatePartnership._();
 
-static const LegalEntityCompanyStructure publicCompany = LegalEntityCompanyStructure._('public_company');
+static const LegalEntityCompanyStructure publicCompany = LegalEntityCompanyStructure$publicCompany._();
 
-static const LegalEntityCompanyStructure publicCorporation = LegalEntityCompanyStructure._('public_corporation');
+static const LegalEntityCompanyStructure publicCorporation = LegalEntityCompanyStructure$publicCorporation._();
 
-static const LegalEntityCompanyStructure publicPartnership = LegalEntityCompanyStructure._('public_partnership');
+static const LegalEntityCompanyStructure publicPartnership = LegalEntityCompanyStructure$publicPartnership._();
 
-static const LegalEntityCompanyStructure registeredCharity = LegalEntityCompanyStructure._('registered_charity');
+static const LegalEntityCompanyStructure registeredCharity = LegalEntityCompanyStructure$registeredCharity._();
 
-static const LegalEntityCompanyStructure singleMemberLlc = LegalEntityCompanyStructure._('single_member_llc');
+static const LegalEntityCompanyStructure singleMemberLlc = LegalEntityCompanyStructure$singleMemberLlc._();
 
-static const LegalEntityCompanyStructure soleEstablishment = LegalEntityCompanyStructure._('sole_establishment');
+static const LegalEntityCompanyStructure soleEstablishment = LegalEntityCompanyStructure$soleEstablishment._();
 
-static const LegalEntityCompanyStructure soleProprietorship = LegalEntityCompanyStructure._('sole_proprietorship');
+static const LegalEntityCompanyStructure soleProprietorship = LegalEntityCompanyStructure$soleProprietorship._();
 
-static const LegalEntityCompanyStructure taxExemptGovernmentInstrumentality = LegalEntityCompanyStructure._('tax_exempt_government_instrumentality');
+static const LegalEntityCompanyStructure taxExemptGovernmentInstrumentality = LegalEntityCompanyStructure$taxExemptGovernmentInstrumentality._();
 
-static const LegalEntityCompanyStructure unincorporatedAssociation = LegalEntityCompanyStructure._('unincorporated_association');
+static const LegalEntityCompanyStructure unincorporatedAssociation = LegalEntityCompanyStructure$unincorporatedAssociation._();
 
-static const LegalEntityCompanyStructure unincorporatedNonProfit = LegalEntityCompanyStructure._('unincorporated_non_profit');
+static const LegalEntityCompanyStructure unincorporatedNonProfit = LegalEntityCompanyStructure$unincorporatedNonProfit._();
 
-static const LegalEntityCompanyStructure unincorporatedPartnership = LegalEntityCompanyStructure._('unincorporated_partnership');
+static const LegalEntityCompanyStructure unincorporatedPartnership = LegalEntityCompanyStructure$unincorporatedPartnership._();
 
 static const List<LegalEntityCompanyStructure> values = [freeZoneEstablishment, freeZoneLlc, governmentInstrumentality, governmentalUnit, incorporatedNonProfit, incorporatedPartnership, limitedLiabilityPartnership, llc, multiMemberLlc, privateCompany, privateCorporation, privatePartnership, publicCompany, publicCorporation, publicPartnership, registeredCharity, singleMemberLlc, soleEstablishment, soleProprietorship, taxExemptGovernmentInstrumentality, unincorporatedAssociation, unincorporatedNonProfit, unincorporatedPartnership];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -144,13 +165,225 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LegalEntityCompanyStructure$Unknown; } 
+@override String toString() => 'LegalEntityCompanyStructure($value)';
+
+ }
+@immutable final class LegalEntityCompanyStructure$freeZoneEstablishment extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$freeZoneEstablishment._();
+
+@override String get value => 'free_zone_establishment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$freeZoneEstablishment;
+
+@override int get hashCode => 'free_zone_establishment'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$freeZoneLlc extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$freeZoneLlc._();
+
+@override String get value => 'free_zone_llc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$freeZoneLlc;
+
+@override int get hashCode => 'free_zone_llc'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$governmentInstrumentality extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$governmentInstrumentality._();
+
+@override String get value => 'government_instrumentality';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$governmentInstrumentality;
+
+@override int get hashCode => 'government_instrumentality'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$governmentalUnit extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$governmentalUnit._();
+
+@override String get value => 'governmental_unit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$governmentalUnit;
+
+@override int get hashCode => 'governmental_unit'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$incorporatedNonProfit extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$incorporatedNonProfit._();
+
+@override String get value => 'incorporated_non_profit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$incorporatedNonProfit;
+
+@override int get hashCode => 'incorporated_non_profit'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$incorporatedPartnership extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$incorporatedPartnership._();
+
+@override String get value => 'incorporated_partnership';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$incorporatedPartnership;
+
+@override int get hashCode => 'incorporated_partnership'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$limitedLiabilityPartnership extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$limitedLiabilityPartnership._();
+
+@override String get value => 'limited_liability_partnership';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$limitedLiabilityPartnership;
+
+@override int get hashCode => 'limited_liability_partnership'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$llc extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$llc._();
+
+@override String get value => 'llc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$llc;
+
+@override int get hashCode => 'llc'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$multiMemberLlc extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$multiMemberLlc._();
+
+@override String get value => 'multi_member_llc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$multiMemberLlc;
+
+@override int get hashCode => 'multi_member_llc'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$privateCompany extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$privateCompany._();
+
+@override String get value => 'private_company';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$privateCompany;
+
+@override int get hashCode => 'private_company'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$privateCorporation extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$privateCorporation._();
+
+@override String get value => 'private_corporation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$privateCorporation;
+
+@override int get hashCode => 'private_corporation'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$privatePartnership extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$privatePartnership._();
+
+@override String get value => 'private_partnership';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$privatePartnership;
+
+@override int get hashCode => 'private_partnership'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$publicCompany extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$publicCompany._();
+
+@override String get value => 'public_company';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$publicCompany;
+
+@override int get hashCode => 'public_company'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$publicCorporation extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$publicCorporation._();
+
+@override String get value => 'public_corporation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$publicCorporation;
+
+@override int get hashCode => 'public_corporation'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$publicPartnership extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$publicPartnership._();
+
+@override String get value => 'public_partnership';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$publicPartnership;
+
+@override int get hashCode => 'public_partnership'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$registeredCharity extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$registeredCharity._();
+
+@override String get value => 'registered_charity';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$registeredCharity;
+
+@override int get hashCode => 'registered_charity'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$singleMemberLlc extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$singleMemberLlc._();
+
+@override String get value => 'single_member_llc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$singleMemberLlc;
+
+@override int get hashCode => 'single_member_llc'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$soleEstablishment extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$soleEstablishment._();
+
+@override String get value => 'sole_establishment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$soleEstablishment;
+
+@override int get hashCode => 'sole_establishment'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$soleProprietorship extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$soleProprietorship._();
+
+@override String get value => 'sole_proprietorship';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$soleProprietorship;
+
+@override int get hashCode => 'sole_proprietorship'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$taxExemptGovernmentInstrumentality extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$taxExemptGovernmentInstrumentality._();
+
+@override String get value => 'tax_exempt_government_instrumentality';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$taxExemptGovernmentInstrumentality;
+
+@override int get hashCode => 'tax_exempt_government_instrumentality'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$unincorporatedAssociation extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$unincorporatedAssociation._();
+
+@override String get value => 'unincorporated_association';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$unincorporatedAssociation;
+
+@override int get hashCode => 'unincorporated_association'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$unincorporatedNonProfit extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$unincorporatedNonProfit._();
+
+@override String get value => 'unincorporated_non_profit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$unincorporatedNonProfit;
+
+@override int get hashCode => 'unincorporated_non_profit'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$unincorporatedPartnership extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$unincorporatedPartnership._();
+
+@override String get value => 'unincorporated_partnership';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LegalEntityCompanyStructure$unincorporatedPartnership;
+
+@override int get hashCode => 'unincorporated_partnership'.hashCode;
+
+ }
+@immutable final class LegalEntityCompanyStructure$Unknown extends LegalEntityCompanyStructure {const LegalEntityCompanyStructure$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LegalEntityCompanyStructure && other.value == value;
+    other is LegalEntityCompanyStructure$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LegalEntityCompanyStructure($value)';
 
  }
 /// 

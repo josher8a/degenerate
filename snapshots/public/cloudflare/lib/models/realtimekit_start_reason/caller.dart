@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RealtimekitStartReason (inline: Caller)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type can be an App or a user. If the type is `user`, then only the `user_Id` and `name` are returned.
-@immutable final class CallerType {const CallerType._(this.value);
+sealed class CallerType {const CallerType();
 
 factory CallerType.fromJson(String json) { return switch (json) {
   'ORGANIZATION' => organization,
   'USER' => user,
-  _ => CallerType._(json),
+  _ => CallerType$Unknown(json),
 }; }
 
-static const CallerType organization = CallerType._('ORGANIZATION');
+static const CallerType organization = CallerType$organization._();
 
-static const CallerType user = CallerType._('USER');
+static const CallerType user = CallerType$user._();
 
 static const List<CallerType> values = [organization, user];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CallerType$Unknown; } 
+@override String toString() => 'CallerType($value)';
+
+ }
+@immutable final class CallerType$organization extends CallerType {const CallerType$organization._();
+
+@override String get value => 'ORGANIZATION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CallerType$organization;
+
+@override int get hashCode => 'ORGANIZATION'.hashCode;
+
+ }
+@immutable final class CallerType$user extends CallerType {const CallerType$user._();
+
+@override String get value => 'USER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CallerType$user;
+
+@override int get hashCode => 'USER'.hashCode;
+
+ }
+@immutable final class CallerType$Unknown extends CallerType {const CallerType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CallerType && other.value == value;
+    other is CallerType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CallerType($value)';
 
  }
 @immutable final class Caller {const Caller({this.name, this.type, this.userId, });

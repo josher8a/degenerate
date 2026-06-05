@@ -4,19 +4,18 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_forwarding_url/zones_forwarding_url_value.dart';/// Redirects one URL to another using an `HTTP 301/302` redirect. Refer
 /// to [Wildcard matching and referencing](https://developers.cloudflare.com/rules/page-rules/reference/wildcard-matching/).
 /// 
-@immutable final class ZonesForwardingUrlId {const ZonesForwardingUrlId._(this.value);
+sealed class ZonesForwardingUrlId {const ZonesForwardingUrlId();
 
 factory ZonesForwardingUrlId.fromJson(String json) { return switch (json) {
   'forwarding_url' => forwardingUrl,
-  _ => ZonesForwardingUrlId._(json),
+  _ => ZonesForwardingUrlId$Unknown(json),
 }; }
 
-static const ZonesForwardingUrlId forwardingUrl = ZonesForwardingUrlId._('forwarding_url');
+static const ZonesForwardingUrlId forwardingUrl = ZonesForwardingUrlId$forwardingUrl._();
 
 static const List<ZonesForwardingUrlId> values = [forwardingUrl];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -24,13 +23,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesForwardingUrlId$Unknown; } 
+@override String toString() => 'ZonesForwardingUrlId($value)';
+
+ }
+@immutable final class ZonesForwardingUrlId$forwardingUrl extends ZonesForwardingUrlId {const ZonesForwardingUrlId$forwardingUrl._();
+
+@override String get value => 'forwarding_url';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesForwardingUrlId$forwardingUrl;
+
+@override int get hashCode => 'forwarding_url'.hashCode;
+
+ }
+@immutable final class ZonesForwardingUrlId$Unknown extends ZonesForwardingUrlId {const ZonesForwardingUrlId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesForwardingUrlId && other.value == value;
+    other is ZonesForwardingUrlId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesForwardingUrlId($value)';
 
  }
 @immutable final class ZonesForwardingUrl {const ZonesForwardingUrl({this.id, this.value, });

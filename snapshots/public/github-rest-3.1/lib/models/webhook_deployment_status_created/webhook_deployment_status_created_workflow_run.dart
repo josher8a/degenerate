@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookDeploymentStatusCreated (inline: WorkflowRun)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_status.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_pull_requests.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/referenced_workflows.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_actor.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_head_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_triggering_actor.dart';@immutable final class WorkflowRunConclusion {const WorkflowRunConclusion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run/check_run_status.dart';import 'package:pub_github_rest_3_1/models/webhook_check_suite_completed/check_suite_pull_requests.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/referenced_workflows.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_actor.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_head_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_repository.dart';import 'package:pub_github_rest_3_1/models/webhook_deployment_created/webhook_deployment_created_workflow_run_triggering_actor.dart';sealed class WorkflowRunConclusion {const WorkflowRunConclusion();
 
 factory WorkflowRunConclusion.fromJson(String json) { return switch (json) {
   'success' => success,
@@ -13,31 +13,30 @@ factory WorkflowRunConclusion.fromJson(String json) { return switch (json) {
   'stale' => stale,
   'null' => $null,
   'startup_failure' => startupFailure,
-  _ => WorkflowRunConclusion._(json),
+  _ => WorkflowRunConclusion$Unknown(json),
 }; }
 
-static const WorkflowRunConclusion success = WorkflowRunConclusion._('success');
+static const WorkflowRunConclusion success = WorkflowRunConclusion$success._();
 
-static const WorkflowRunConclusion failure = WorkflowRunConclusion._('failure');
+static const WorkflowRunConclusion failure = WorkflowRunConclusion$failure._();
 
-static const WorkflowRunConclusion neutral = WorkflowRunConclusion._('neutral');
+static const WorkflowRunConclusion neutral = WorkflowRunConclusion$neutral._();
 
-static const WorkflowRunConclusion cancelled = WorkflowRunConclusion._('cancelled');
+static const WorkflowRunConclusion cancelled = WorkflowRunConclusion$cancelled._();
 
-static const WorkflowRunConclusion timedOut = WorkflowRunConclusion._('timed_out');
+static const WorkflowRunConclusion timedOut = WorkflowRunConclusion$timedOut._();
 
-static const WorkflowRunConclusion actionRequired = WorkflowRunConclusion._('action_required');
+static const WorkflowRunConclusion actionRequired = WorkflowRunConclusion$actionRequired._();
 
-static const WorkflowRunConclusion stale = WorkflowRunConclusion._('stale');
+static const WorkflowRunConclusion stale = WorkflowRunConclusion$stale._();
 
-static const WorkflowRunConclusion $null = WorkflowRunConclusion._('null');
+static const WorkflowRunConclusion $null = WorkflowRunConclusion$$null._();
 
-static const WorkflowRunConclusion startupFailure = WorkflowRunConclusion._('startup_failure');
+static const WorkflowRunConclusion startupFailure = WorkflowRunConclusion$startupFailure._();
 
 static const List<WorkflowRunConclusion> values = [success, failure, neutral, cancelled, timedOut, actionRequired, stale, $null, startupFailure];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -53,13 +52,99 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkflowRunConclusion$Unknown; } 
+@override String toString() => 'WorkflowRunConclusion($value)';
+
+ }
+@immutable final class WorkflowRunConclusion$success extends WorkflowRunConclusion {const WorkflowRunConclusion$success._();
+
+@override String get value => 'success';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowRunConclusion$success;
+
+@override int get hashCode => 'success'.hashCode;
+
+ }
+@immutable final class WorkflowRunConclusion$failure extends WorkflowRunConclusion {const WorkflowRunConclusion$failure._();
+
+@override String get value => 'failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowRunConclusion$failure;
+
+@override int get hashCode => 'failure'.hashCode;
+
+ }
+@immutable final class WorkflowRunConclusion$neutral extends WorkflowRunConclusion {const WorkflowRunConclusion$neutral._();
+
+@override String get value => 'neutral';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowRunConclusion$neutral;
+
+@override int get hashCode => 'neutral'.hashCode;
+
+ }
+@immutable final class WorkflowRunConclusion$cancelled extends WorkflowRunConclusion {const WorkflowRunConclusion$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowRunConclusion$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class WorkflowRunConclusion$timedOut extends WorkflowRunConclusion {const WorkflowRunConclusion$timedOut._();
+
+@override String get value => 'timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowRunConclusion$timedOut;
+
+@override int get hashCode => 'timed_out'.hashCode;
+
+ }
+@immutable final class WorkflowRunConclusion$actionRequired extends WorkflowRunConclusion {const WorkflowRunConclusion$actionRequired._();
+
+@override String get value => 'action_required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowRunConclusion$actionRequired;
+
+@override int get hashCode => 'action_required'.hashCode;
+
+ }
+@immutable final class WorkflowRunConclusion$stale extends WorkflowRunConclusion {const WorkflowRunConclusion$stale._();
+
+@override String get value => 'stale';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowRunConclusion$stale;
+
+@override int get hashCode => 'stale'.hashCode;
+
+ }
+@immutable final class WorkflowRunConclusion$$null extends WorkflowRunConclusion {const WorkflowRunConclusion$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowRunConclusion$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class WorkflowRunConclusion$startupFailure extends WorkflowRunConclusion {const WorkflowRunConclusion$startupFailure._();
+
+@override String get value => 'startup_failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowRunConclusion$startupFailure;
+
+@override int get hashCode => 'startup_failure'.hashCode;
+
+ }
+@immutable final class WorkflowRunConclusion$Unknown extends WorkflowRunConclusion {const WorkflowRunConclusion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkflowRunConclusion && other.value == value;
+    other is WorkflowRunConclusion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkflowRunConclusion($value)';
 
  }
 @immutable final class WebhookDeploymentStatusCreatedWorkflowRun {const WebhookDeploymentStatusCreatedWorkflowRun({required this.status, required this.checkSuiteId, required this.checkSuiteNodeId, required this.pullRequests, required this.conclusion, required this.createdAt, required this.displayTitle, required this.event, required this.headBranch, required this.actor, required this.headSha, required this.htmlUrl, required this.id, required this.name, required this.nodeId, required this.path, required this.triggeringActor, required this.runStartedAt, required this.url, required this.updatedAt, required this.workflowId, required this.runNumber, required this.runAttempt, this.referencedWorkflows, this.repository, this.rerunUrl, this.workflowUrl, this.previousAttemptUrl, this.logsUrl, this.headRepository, this.jobsUrl, this.headCommit, this.cancelUrl, this.artifactsUrl, this.checkSuiteUrl, });

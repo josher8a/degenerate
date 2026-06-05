@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleFilePathRestriction (inline: Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleFilePathRestrictionType {const RepositoryRuleFilePathRestrictionType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RepositoryRuleFilePathRestrictionType {const RepositoryRuleFilePathRestrictionType();
 
 factory RepositoryRuleFilePathRestrictionType.fromJson(String json) { return switch (json) {
   'file_path_restriction' => filePathRestriction,
-  _ => RepositoryRuleFilePathRestrictionType._(json),
+  _ => RepositoryRuleFilePathRestrictionType$Unknown(json),
 }; }
 
-static const RepositoryRuleFilePathRestrictionType filePathRestriction = RepositoryRuleFilePathRestrictionType._('file_path_restriction');
+static const RepositoryRuleFilePathRestrictionType filePathRestriction = RepositoryRuleFilePathRestrictionType$filePathRestriction._();
 
 static const List<RepositoryRuleFilePathRestrictionType> values = [filePathRestriction];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RepositoryRuleFilePathRestrictionType$Unknown; } 
+@override String toString() => 'RepositoryRuleFilePathRestrictionType($value)';
+
+ }
+@immutable final class RepositoryRuleFilePathRestrictionType$filePathRestriction extends RepositoryRuleFilePathRestrictionType {const RepositoryRuleFilePathRestrictionType$filePathRestriction._();
+
+@override String get value => 'file_path_restriction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryRuleFilePathRestrictionType$filePathRestriction;
+
+@override int get hashCode => 'file_path_restriction'.hashCode;
+
+ }
+@immutable final class RepositoryRuleFilePathRestrictionType$Unknown extends RepositoryRuleFilePathRestrictionType {const RepositoryRuleFilePathRestrictionType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleFilePathRestrictionType && other.value == value;
+    other is RepositoryRuleFilePathRestrictionType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleFilePathRestrictionType($value)';
 
  }

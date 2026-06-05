@@ -2,7 +2,7 @@
 // Source: #/components/schemas/AccountRecordingRecordingAddOnResult
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the result. Can be: `canceled`, `completed`, `deleted`, `failed`, `in-progress`, `init`, `processing`, `queued`.
-@immutable final class RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus._(this.value);
+sealed class RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus();
 
 factory RecordingAddOnResultEnumStatus.fromJson(String json) { return switch (json) {
   'canceled' => canceled,
@@ -13,29 +13,28 @@ factory RecordingAddOnResultEnumStatus.fromJson(String json) { return switch (js
   'init' => init,
   'processing' => processing,
   'queued' => queued,
-  _ => RecordingAddOnResultEnumStatus._(json),
+  _ => RecordingAddOnResultEnumStatus$Unknown(json),
 }; }
 
-static const RecordingAddOnResultEnumStatus canceled = RecordingAddOnResultEnumStatus._('canceled');
+static const RecordingAddOnResultEnumStatus canceled = RecordingAddOnResultEnumStatus$canceled._();
 
-static const RecordingAddOnResultEnumStatus completed = RecordingAddOnResultEnumStatus._('completed');
+static const RecordingAddOnResultEnumStatus completed = RecordingAddOnResultEnumStatus$completed._();
 
-static const RecordingAddOnResultEnumStatus deleted = RecordingAddOnResultEnumStatus._('deleted');
+static const RecordingAddOnResultEnumStatus deleted = RecordingAddOnResultEnumStatus$deleted._();
 
-static const RecordingAddOnResultEnumStatus failed = RecordingAddOnResultEnumStatus._('failed');
+static const RecordingAddOnResultEnumStatus failed = RecordingAddOnResultEnumStatus$failed._();
 
-static const RecordingAddOnResultEnumStatus inProgress = RecordingAddOnResultEnumStatus._('in-progress');
+static const RecordingAddOnResultEnumStatus inProgress = RecordingAddOnResultEnumStatus$inProgress._();
 
-static const RecordingAddOnResultEnumStatus init = RecordingAddOnResultEnumStatus._('init');
+static const RecordingAddOnResultEnumStatus init = RecordingAddOnResultEnumStatus$init._();
 
-static const RecordingAddOnResultEnumStatus processing = RecordingAddOnResultEnumStatus._('processing');
+static const RecordingAddOnResultEnumStatus processing = RecordingAddOnResultEnumStatus$processing._();
 
-static const RecordingAddOnResultEnumStatus queued = RecordingAddOnResultEnumStatus._('queued');
+static const RecordingAddOnResultEnumStatus queued = RecordingAddOnResultEnumStatus$queued._();
 
 static const List<RecordingAddOnResultEnumStatus> values = [canceled, completed, deleted, failed, inProgress, init, processing, queued];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,13 +49,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RecordingAddOnResultEnumStatus$Unknown; } 
+@override String toString() => 'RecordingAddOnResultEnumStatus($value)';
+
+ }
+@immutable final class RecordingAddOnResultEnumStatus$canceled extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingAddOnResultEnumStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class RecordingAddOnResultEnumStatus$completed extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingAddOnResultEnumStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class RecordingAddOnResultEnumStatus$deleted extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$deleted._();
+
+@override String get value => 'deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingAddOnResultEnumStatus$deleted;
+
+@override int get hashCode => 'deleted'.hashCode;
+
+ }
+@immutable final class RecordingAddOnResultEnumStatus$failed extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingAddOnResultEnumStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class RecordingAddOnResultEnumStatus$inProgress extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$inProgress._();
+
+@override String get value => 'in-progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingAddOnResultEnumStatus$inProgress;
+
+@override int get hashCode => 'in-progress'.hashCode;
+
+ }
+@immutable final class RecordingAddOnResultEnumStatus$init extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$init._();
+
+@override String get value => 'init';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingAddOnResultEnumStatus$init;
+
+@override int get hashCode => 'init'.hashCode;
+
+ }
+@immutable final class RecordingAddOnResultEnumStatus$processing extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$processing._();
+
+@override String get value => 'processing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingAddOnResultEnumStatus$processing;
+
+@override int get hashCode => 'processing'.hashCode;
+
+ }
+@immutable final class RecordingAddOnResultEnumStatus$queued extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingAddOnResultEnumStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class RecordingAddOnResultEnumStatus$Unknown extends RecordingAddOnResultEnumStatus {const RecordingAddOnResultEnumStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RecordingAddOnResultEnumStatus && other.value == value;
+    other is RecordingAddOnResultEnumStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RecordingAddOnResultEnumStatus($value)';
 
  }
 @immutable final class AccountRecordingRecordingAddOnResult {const AccountRecordingRecordingAddOnResult({this.sid, this.accountSid, this.status, this.addOnSid, this.addOnConfigurationSid, this.dateCreated, this.dateUpdated, this.dateCompleted, this.referenceSid, this.subresourceUris, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PaymentMethod
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/billing_details.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_type.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/payment_flows_private_payment_methods_alipay.dart';import 'package:pub_stripe_spec3/models/payment_method_acss_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_affirm.dart';import 'package:pub_stripe_spec3/models/payment_method_afterpay_clearpay.dart';import 'package:pub_stripe_spec3/models/payment_method_alma.dart';import 'package:pub_stripe_spec3/models/payment_method_amazon_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_au_becs_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_bacs_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_bancontact.dart';import 'package:pub_stripe_spec3/models/payment_method_billie.dart';import 'package:pub_stripe_spec3/models/payment_method_blik.dart';import 'package:pub_stripe_spec3/models/payment_method_boleto.dart';import 'package:pub_stripe_spec3/models/payment_method_card.dart';import 'package:pub_stripe_spec3/models/payment_method_card_present.dart';import 'package:pub_stripe_spec3/models/payment_method_cashapp.dart';import 'package:pub_stripe_spec3/models/payment_method_crypto.dart';import 'package:pub_stripe_spec3/models/payment_method_custom.dart';import 'package:pub_stripe_spec3/models/payment_method_customer_balance.dart';import 'package:pub_stripe_spec3/models/payment_method_eps.dart';import 'package:pub_stripe_spec3/models/payment_method_fpx.dart';import 'package:pub_stripe_spec3/models/payment_method_giropay.dart';import 'package:pub_stripe_spec3/models/payment_method_grabpay.dart';import 'package:pub_stripe_spec3/models/payment_method_ideal.dart';import 'package:pub_stripe_spec3/models/payment_method_interac_present.dart';import 'package:pub_stripe_spec3/models/payment_method_kakao_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_klarna.dart';import 'package:pub_stripe_spec3/models/payment_method_konbini.dart';import 'package:pub_stripe_spec3/models/payment_method_kr_card.dart';import 'package:pub_stripe_spec3/models/payment_method_link.dart';import 'package:pub_stripe_spec3/models/payment_method_mb_way.dart';import 'package:pub_stripe_spec3/models/payment_method_mobilepay.dart';import 'package:pub_stripe_spec3/models/payment_method_multibanco.dart';import 'package:pub_stripe_spec3/models/payment_method_naver_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_nz_bank_account.dart';import 'package:pub_stripe_spec3/models/payment_method_oxxo.dart';import 'package:pub_stripe_spec3/models/payment_method_p24.dart';import 'package:pub_stripe_spec3/models/payment_method_pay_by_bank.dart';import 'package:pub_stripe_spec3/models/payment_method_payco.dart';import 'package:pub_stripe_spec3/models/payment_method_paynow.dart';import 'package:pub_stripe_spec3/models/payment_method_paypal.dart';import 'package:pub_stripe_spec3/models/payment_method_payto.dart';import 'package:pub_stripe_spec3/models/payment_method_pix.dart';import 'package:pub_stripe_spec3/models/payment_method_promptpay.dart';import 'package:pub_stripe_spec3/models/payment_method_revolut_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_samsung_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_satispay.dart';import 'package:pub_stripe_spec3/models/payment_method_sepa_debit.dart';import 'package:pub_stripe_spec3/models/payment_method_sofort.dart';import 'package:pub_stripe_spec3/models/payment_method_swish.dart';import 'package:pub_stripe_spec3/models/payment_method_twint.dart';import 'package:pub_stripe_spec3/models/payment_method_us_bank_account.dart';import 'package:pub_stripe_spec3/models/payment_method_wechat_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_zip.dart';import 'package:pub_stripe_spec3/models/radar_radar_options.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class PaymentMethodObject {const PaymentMethodObject._(this.value);
+sealed class PaymentMethodObject {const PaymentMethodObject();
 
 factory PaymentMethodObject.fromJson(String json) { return switch (json) {
   'payment_method' => paymentMethod,
-  _ => PaymentMethodObject._(json),
+  _ => PaymentMethodObject$Unknown(json),
 }; }
 
-static const PaymentMethodObject paymentMethod = PaymentMethodObject._('payment_method');
+static const PaymentMethodObject paymentMethod = PaymentMethodObject$paymentMethod._();
 
 static const List<PaymentMethodObject> values = [paymentMethod];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentMethodObject$Unknown; } 
+@override String toString() => 'PaymentMethodObject($value)';
+
+ }
+@immutable final class PaymentMethodObject$paymentMethod extends PaymentMethodObject {const PaymentMethodObject$paymentMethod._();
+
+@override String get value => 'payment_method';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodObject$paymentMethod;
+
+@override int get hashCode => 'payment_method'.hashCode;
+
+ }
+@immutable final class PaymentMethodObject$Unknown extends PaymentMethodObject {const PaymentMethodObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentMethodObject && other.value == value;
+    other is PaymentMethodObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentMethodObject($value)';
 
  }
 /// PaymentMethod objects represent your customer's payment instruments.

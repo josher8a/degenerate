@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CreateChatCompletionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/completion_usage.dart';import 'package:pub_openai/models/create_chat_completion_response/create_chat_completion_response_choices.dart';import 'package:pub_openai/models/service_tier.dart';/// The object type, which is always `chat.completion`.
-@immutable final class CreateChatCompletionResponseObject {const CreateChatCompletionResponseObject._(this.value);
+sealed class CreateChatCompletionResponseObject {const CreateChatCompletionResponseObject();
 
 factory CreateChatCompletionResponseObject.fromJson(String json) { return switch (json) {
   'chat.completion' => chatCompletion,
-  _ => CreateChatCompletionResponseObject._(json),
+  _ => CreateChatCompletionResponseObject$Unknown(json),
 }; }
 
-static const CreateChatCompletionResponseObject chatCompletion = CreateChatCompletionResponseObject._('chat.completion');
+static const CreateChatCompletionResponseObject chatCompletion = CreateChatCompletionResponseObject$chatCompletion._();
 
 static const List<CreateChatCompletionResponseObject> values = [chatCompletion];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateChatCompletionResponseObject$Unknown; } 
+@override String toString() => 'CreateChatCompletionResponseObject($value)';
+
+ }
+@immutable final class CreateChatCompletionResponseObject$chatCompletion extends CreateChatCompletionResponseObject {const CreateChatCompletionResponseObject$chatCompletion._();
+
+@override String get value => 'chat.completion';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateChatCompletionResponseObject$chatCompletion;
+
+@override int get hashCode => 'chat.completion'.hashCode;
+
+ }
+@immutable final class CreateChatCompletionResponseObject$Unknown extends CreateChatCompletionResponseObject {const CreateChatCompletionResponseObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateChatCompletionResponseObject && other.value == value;
+    other is CreateChatCompletionResponseObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateChatCompletionResponseObject($value)';
 
  }
 /// Represents a chat completion response returned by model, based on the provided input.

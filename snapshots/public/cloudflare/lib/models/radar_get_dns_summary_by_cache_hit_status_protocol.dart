@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetDnsSummaryByCacheHitStatusProtocol
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetDnsSummaryByCacheHitStatusProtocol {const RadarGetDnsSummaryByCacheHitStatusProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetDnsSummaryByCacheHitStatusProtocol {const RadarGetDnsSummaryByCacheHitStatusProtocol();
 
 factory RadarGetDnsSummaryByCacheHitStatusProtocol.fromJson(String json) { return switch (json) {
   'UDP' => udp,
   'TCP' => tcp,
   'HTTPS' => https,
   'TLS' => tls,
-  _ => RadarGetDnsSummaryByCacheHitStatusProtocol._(json),
+  _ => RadarGetDnsSummaryByCacheHitStatusProtocol$Unknown(json),
 }; }
 
-static const RadarGetDnsSummaryByCacheHitStatusProtocol udp = RadarGetDnsSummaryByCacheHitStatusProtocol._('UDP');
+static const RadarGetDnsSummaryByCacheHitStatusProtocol udp = RadarGetDnsSummaryByCacheHitStatusProtocol$udp._();
 
-static const RadarGetDnsSummaryByCacheHitStatusProtocol tcp = RadarGetDnsSummaryByCacheHitStatusProtocol._('TCP');
+static const RadarGetDnsSummaryByCacheHitStatusProtocol tcp = RadarGetDnsSummaryByCacheHitStatusProtocol$tcp._();
 
-static const RadarGetDnsSummaryByCacheHitStatusProtocol https = RadarGetDnsSummaryByCacheHitStatusProtocol._('HTTPS');
+static const RadarGetDnsSummaryByCacheHitStatusProtocol https = RadarGetDnsSummaryByCacheHitStatusProtocol$https._();
 
-static const RadarGetDnsSummaryByCacheHitStatusProtocol tls = RadarGetDnsSummaryByCacheHitStatusProtocol._('TLS');
+static const RadarGetDnsSummaryByCacheHitStatusProtocol tls = RadarGetDnsSummaryByCacheHitStatusProtocol$tls._();
 
 static const List<RadarGetDnsSummaryByCacheHitStatusProtocol> values = [udp, tcp, https, tls];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetDnsSummaryByCacheHitStatusProtocol$Unknown; } 
+@override String toString() => 'RadarGetDnsSummaryByCacheHitStatusProtocol($value)';
+
+ }
+@immutable final class RadarGetDnsSummaryByCacheHitStatusProtocol$udp extends RadarGetDnsSummaryByCacheHitStatusProtocol {const RadarGetDnsSummaryByCacheHitStatusProtocol$udp._();
+
+@override String get value => 'UDP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByCacheHitStatusProtocol$udp;
+
+@override int get hashCode => 'UDP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByCacheHitStatusProtocol$tcp extends RadarGetDnsSummaryByCacheHitStatusProtocol {const RadarGetDnsSummaryByCacheHitStatusProtocol$tcp._();
+
+@override String get value => 'TCP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByCacheHitStatusProtocol$tcp;
+
+@override int get hashCode => 'TCP'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByCacheHitStatusProtocol$https extends RadarGetDnsSummaryByCacheHitStatusProtocol {const RadarGetDnsSummaryByCacheHitStatusProtocol$https._();
+
+@override String get value => 'HTTPS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByCacheHitStatusProtocol$https;
+
+@override int get hashCode => 'HTTPS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByCacheHitStatusProtocol$tls extends RadarGetDnsSummaryByCacheHitStatusProtocol {const RadarGetDnsSummaryByCacheHitStatusProtocol$tls._();
+
+@override String get value => 'TLS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetDnsSummaryByCacheHitStatusProtocol$tls;
+
+@override int get hashCode => 'TLS'.hashCode;
+
+ }
+@immutable final class RadarGetDnsSummaryByCacheHitStatusProtocol$Unknown extends RadarGetDnsSummaryByCacheHitStatusProtocol {const RadarGetDnsSummaryByCacheHitStatusProtocol$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetDnsSummaryByCacheHitStatusProtocol && other.value == value;
+    other is RadarGetDnsSummaryByCacheHitStatusProtocol$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetDnsSummaryByCacheHitStatusProtocol($value)';
 
  }

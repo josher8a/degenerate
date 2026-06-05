@@ -2,19 +2,18 @@
 // Source: #/components/schemas/VectorStoreSearchResultsPage
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_search_result_item.dart';/// The object type, which is always `vector_store.search_results.page`
-@immutable final class VectorStoreSearchResultsPageObject {const VectorStoreSearchResultsPageObject._(this.value);
+sealed class VectorStoreSearchResultsPageObject {const VectorStoreSearchResultsPageObject();
 
 factory VectorStoreSearchResultsPageObject.fromJson(String json) { return switch (json) {
   'vector_store.search_results.page' => vectorStoreSearchResultsPage,
-  _ => VectorStoreSearchResultsPageObject._(json),
+  _ => VectorStoreSearchResultsPageObject$Unknown(json),
 }; }
 
-static const VectorStoreSearchResultsPageObject vectorStoreSearchResultsPage = VectorStoreSearchResultsPageObject._('vector_store.search_results.page');
+static const VectorStoreSearchResultsPageObject vectorStoreSearchResultsPage = VectorStoreSearchResultsPageObject$vectorStoreSearchResultsPage._();
 
 static const List<VectorStoreSearchResultsPageObject> values = [vectorStoreSearchResultsPage];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is VectorStoreSearchResultsPageObject$Unknown; } 
+@override String toString() => 'VectorStoreSearchResultsPageObject($value)';
+
+ }
+@immutable final class VectorStoreSearchResultsPageObject$vectorStoreSearchResultsPage extends VectorStoreSearchResultsPageObject {const VectorStoreSearchResultsPageObject$vectorStoreSearchResultsPage._();
+
+@override String get value => 'vector_store.search_results.page';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorStoreSearchResultsPageObject$vectorStoreSearchResultsPage;
+
+@override int get hashCode => 'vector_store.search_results.page'.hashCode;
+
+ }
+@immutable final class VectorStoreSearchResultsPageObject$Unknown extends VectorStoreSearchResultsPageObject {const VectorStoreSearchResultsPageObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is VectorStoreSearchResultsPageObject && other.value == value;
+    other is VectorStoreSearchResultsPageObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'VectorStoreSearchResultsPageObject($value)';
 
  }
 @immutable final class VectorStoreSearchResultsPage {const VectorStoreSearchResultsPage({required this.object, required this.searchQuery, required this.data, required this.hasMore, required this.nextPage, });

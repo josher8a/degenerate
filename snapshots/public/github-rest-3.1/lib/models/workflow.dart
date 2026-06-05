@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Workflow
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WorkflowState {const WorkflowState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class WorkflowState {const WorkflowState();
 
 factory WorkflowState.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -9,23 +9,22 @@ factory WorkflowState.fromJson(String json) { return switch (json) {
   'disabled_fork' => disabledFork,
   'disabled_inactivity' => disabledInactivity,
   'disabled_manually' => disabledManually,
-  _ => WorkflowState._(json),
+  _ => WorkflowState$Unknown(json),
 }; }
 
-static const WorkflowState active = WorkflowState._('active');
+static const WorkflowState active = WorkflowState$active._();
 
-static const WorkflowState deleted = WorkflowState._('deleted');
+static const WorkflowState deleted = WorkflowState$deleted._();
 
-static const WorkflowState disabledFork = WorkflowState._('disabled_fork');
+static const WorkflowState disabledFork = WorkflowState$disabledFork._();
 
-static const WorkflowState disabledInactivity = WorkflowState._('disabled_inactivity');
+static const WorkflowState disabledInactivity = WorkflowState$disabledInactivity._();
 
-static const WorkflowState disabledManually = WorkflowState._('disabled_manually');
+static const WorkflowState disabledManually = WorkflowState$disabledManually._();
 
 static const List<WorkflowState> values = [active, deleted, disabledFork, disabledInactivity, disabledManually];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkflowState$Unknown; } 
+@override String toString() => 'WorkflowState($value)';
+
+ }
+@immutable final class WorkflowState$active extends WorkflowState {const WorkflowState$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowState$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class WorkflowState$deleted extends WorkflowState {const WorkflowState$deleted._();
+
+@override String get value => 'deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowState$deleted;
+
+@override int get hashCode => 'deleted'.hashCode;
+
+ }
+@immutable final class WorkflowState$disabledFork extends WorkflowState {const WorkflowState$disabledFork._();
+
+@override String get value => 'disabled_fork';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowState$disabledFork;
+
+@override int get hashCode => 'disabled_fork'.hashCode;
+
+ }
+@immutable final class WorkflowState$disabledInactivity extends WorkflowState {const WorkflowState$disabledInactivity._();
+
+@override String get value => 'disabled_inactivity';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowState$disabledInactivity;
+
+@override int get hashCode => 'disabled_inactivity'.hashCode;
+
+ }
+@immutable final class WorkflowState$disabledManually extends WorkflowState {const WorkflowState$disabledManually._();
+
+@override String get value => 'disabled_manually';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkflowState$disabledManually;
+
+@override int get hashCode => 'disabled_manually'.hashCode;
+
+ }
+@immutable final class WorkflowState$Unknown extends WorkflowState {const WorkflowState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkflowState && other.value == value;
+    other is WorkflowState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkflowState($value)';
 
  }
 /// A GitHub Actions workflow

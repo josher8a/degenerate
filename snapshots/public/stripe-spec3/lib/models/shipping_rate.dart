@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ShippingRate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/currency_option/currency_option_tax_behavior.dart';import 'package:pub_stripe_spec3/models/post_shipping_rates_request/post_shipping_rates_request_type.dart';import 'package:pub_stripe_spec3/models/product/product_tax_code.dart';import 'package:pub_stripe_spec3/models/shipping_rate_delivery_estimate.dart';import 'package:pub_stripe_spec3/models/shipping_rate_fixed_amount.dart';import 'package:pub_stripe_spec3/models/tax_code.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ShippingRateObject {const ShippingRateObject._(this.value);
+sealed class ShippingRateObject {const ShippingRateObject();
 
 factory ShippingRateObject.fromJson(String json) { return switch (json) {
   'shipping_rate' => shippingRate,
-  _ => ShippingRateObject._(json),
+  _ => ShippingRateObject$Unknown(json),
 }; }
 
-static const ShippingRateObject shippingRate = ShippingRateObject._('shipping_rate');
+static const ShippingRateObject shippingRate = ShippingRateObject$shippingRate._();
 
 static const List<ShippingRateObject> values = [shippingRate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShippingRateObject$Unknown; } 
+@override String toString() => 'ShippingRateObject($value)';
+
+ }
+@immutable final class ShippingRateObject$shippingRate extends ShippingRateObject {const ShippingRateObject$shippingRate._();
+
+@override String get value => 'shipping_rate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShippingRateObject$shippingRate;
+
+@override int get hashCode => 'shipping_rate'.hashCode;
+
+ }
+@immutable final class ShippingRateObject$Unknown extends ShippingRateObject {const ShippingRateObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShippingRateObject && other.value == value;
+    other is ShippingRateObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShippingRateObject($value)';
 
  }
 /// Shipping rates describe the price of shipping presented to your customers and

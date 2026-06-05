@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EnumArrays
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class JustSymbol {const JustSymbol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class JustSymbol {const JustSymbol();
 
 factory JustSymbol.fromJson(String json) { return switch (json) {
   '>=' => $empty,
   r'$' => $empty2,
-  _ => JustSymbol._(json),
+  _ => JustSymbol$Unknown(json),
 }; }
 
-static const JustSymbol $empty = JustSymbol._('>=');
+static const JustSymbol $empty = JustSymbol$$empty._();
 
-static const JustSymbol $empty2 = JustSymbol._(r'$');
+static const JustSymbol $empty2 = JustSymbol$$empty2._();
 
 static const List<JustSymbol> values = [$empty, $empty2];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,31 +24,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is JustSymbol && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is JustSymbol$Unknown; } 
 @override String toString() => 'JustSymbol($value)';
 
  }
-@immutable final class ArrayEnum {const ArrayEnum._(this.value);
+@immutable final class JustSymbol$$empty extends JustSymbol {const JustSymbol$$empty._();
+
+@override String get value => '>=';
+
+@override bool operator ==(Object other) => identical(this, other) || other is JustSymbol$$empty;
+
+@override int get hashCode => '>='.hashCode;
+
+ }
+@immutable final class JustSymbol$$empty2 extends JustSymbol {const JustSymbol$$empty2._();
+
+@override String get value => r'$';
+
+@override bool operator ==(Object other) => identical(this, other) || other is JustSymbol$$empty2;
+
+@override int get hashCode => r'$'.hashCode;
+
+ }
+@immutable final class JustSymbol$Unknown extends JustSymbol {const JustSymbol$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is JustSymbol$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class ArrayEnum {const ArrayEnum();
 
 factory ArrayEnum.fromJson(String json) { return switch (json) {
   'fish' => fish,
   'crab' => crab,
-  _ => ArrayEnum._(json),
+  _ => ArrayEnum$Unknown(json),
 }; }
 
-static const ArrayEnum fish = ArrayEnum._('fish');
+static const ArrayEnum fish = ArrayEnum$fish._();
 
-static const ArrayEnum crab = ArrayEnum._('crab');
+static const ArrayEnum crab = ArrayEnum$crab._();
 
 static const List<ArrayEnum> values = [fish, crab];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -58,13 +79,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ArrayEnum$Unknown; } 
+@override String toString() => 'ArrayEnum($value)';
+
+ }
+@immutable final class ArrayEnum$fish extends ArrayEnum {const ArrayEnum$fish._();
+
+@override String get value => 'fish';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ArrayEnum$fish;
+
+@override int get hashCode => 'fish'.hashCode;
+
+ }
+@immutable final class ArrayEnum$crab extends ArrayEnum {const ArrayEnum$crab._();
+
+@override String get value => 'crab';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ArrayEnum$crab;
+
+@override int get hashCode => 'crab'.hashCode;
+
+ }
+@immutable final class ArrayEnum$Unknown extends ArrayEnum {const ArrayEnum$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ArrayEnum && other.value == value;
+    other is ArrayEnum$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ArrayEnum($value)';
 
  }
 @immutable final class EnumArrays {const EnumArrays({this.justSymbol, this.arrayEnum, });

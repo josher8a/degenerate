@@ -2,19 +2,18 @@
 // Source: #/components/schemas/VectorStoreFileObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/other_chunking_strategy_response_param.dart';import 'package:pub_openai/models/static_chunking_strategy_response_param.dart';import 'package:pub_openai/models/vector_store_file_batch_object/vector_store_file_batch_object_status.dart';import 'package:pub_openai/models/vector_store_file_object/vector_store_file_object_chunking_strategy.dart';import 'package:pub_openai/models/vector_store_file_object/vector_store_file_object_last_error.dart';/// The object type, which is always `vector_store.file`.
-@immutable final class VectorStoreFileObjectObject {const VectorStoreFileObjectObject._(this.value);
+sealed class VectorStoreFileObjectObject {const VectorStoreFileObjectObject();
 
 factory VectorStoreFileObjectObject.fromJson(String json) { return switch (json) {
   'vector_store.file' => vectorStoreFile,
-  _ => VectorStoreFileObjectObject._(json),
+  _ => VectorStoreFileObjectObject$Unknown(json),
 }; }
 
-static const VectorStoreFileObjectObject vectorStoreFile = VectorStoreFileObjectObject._('vector_store.file');
+static const VectorStoreFileObjectObject vectorStoreFile = VectorStoreFileObjectObject$vectorStoreFile._();
 
 static const List<VectorStoreFileObjectObject> values = [vectorStoreFile];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is VectorStoreFileObjectObject$Unknown; } 
+@override String toString() => 'VectorStoreFileObjectObject($value)';
+
+ }
+@immutable final class VectorStoreFileObjectObject$vectorStoreFile extends VectorStoreFileObjectObject {const VectorStoreFileObjectObject$vectorStoreFile._();
+
+@override String get value => 'vector_store.file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorStoreFileObjectObject$vectorStoreFile;
+
+@override int get hashCode => 'vector_store.file'.hashCode;
+
+ }
+@immutable final class VectorStoreFileObjectObject$Unknown extends VectorStoreFileObjectObject {const VectorStoreFileObjectObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is VectorStoreFileObjectObject && other.value == value;
+    other is VectorStoreFileObjectObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'VectorStoreFileObjectObject($value)';
 
  }
 /// A list of files attached to a vector store.

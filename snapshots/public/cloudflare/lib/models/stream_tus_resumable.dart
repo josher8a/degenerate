@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the TUS protocol version. This value must be included in every upload request.
 /// Notes: The only supported version of TUS protocol is 1.0.0.
-@immutable final class StreamTusResumable {const StreamTusResumable._(this.value);
+sealed class StreamTusResumable {const StreamTusResumable();
 
 factory StreamTusResumable.fromJson(String json) { return switch (json) {
   '1.0.0' => $100,
-  _ => StreamTusResumable._(json),
+  _ => StreamTusResumable$Unknown(json),
 }; }
 
-static const StreamTusResumable $100 = StreamTusResumable._('1.0.0');
+static const StreamTusResumable $100 = StreamTusResumable$$100._();
 
 static const List<StreamTusResumable> values = [$100];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,12 +22,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StreamTusResumable$Unknown; } 
+@override String toString() => 'StreamTusResumable($value)';
+
+ }
+@immutable final class StreamTusResumable$$100 extends StreamTusResumable {const StreamTusResumable$$100._();
+
+@override String get value => '1.0.0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamTusResumable$$100;
+
+@override int get hashCode => '1.0.0'.hashCode;
+
+ }
+@immutable final class StreamTusResumable$Unknown extends StreamTusResumable {const StreamTusResumable$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StreamTusResumable && other.value == value;
+    other is StreamTusResumable$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StreamTusResumable($value)';
 
  }

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ToolSearchCall
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';@immutable final class FunctionCallStatus {const FunctionCallStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';sealed class FunctionCallStatus {const FunctionCallStatus();
 
 factory FunctionCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
-  _ => FunctionCallStatus._(json),
+  _ => FunctionCallStatus$Unknown(json),
 }; }
 
-static const FunctionCallStatus inProgress = FunctionCallStatus._('in_progress');
+static const FunctionCallStatus inProgress = FunctionCallStatus$inProgress._();
 
-static const FunctionCallStatus completed = FunctionCallStatus._('completed');
+static const FunctionCallStatus completed = FunctionCallStatus$completed._();
 
-static const FunctionCallStatus incomplete = FunctionCallStatus._('incomplete');
+static const FunctionCallStatus incomplete = FunctionCallStatus$incomplete._();
 
 static const List<FunctionCallStatus> values = [inProgress, completed, incomplete];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FunctionCallStatus$Unknown; } 
+@override String toString() => 'FunctionCallStatus($value)';
+
+ }
+@immutable final class FunctionCallStatus$inProgress extends FunctionCallStatus {const FunctionCallStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionCallStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class FunctionCallStatus$completed extends FunctionCallStatus {const FunctionCallStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionCallStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class FunctionCallStatus$incomplete extends FunctionCallStatus {const FunctionCallStatus$incomplete._();
+
+@override String get value => 'incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionCallStatus$incomplete;
+
+@override int get hashCode => 'incomplete'.hashCode;
+
+ }
+@immutable final class FunctionCallStatus$Unknown extends FunctionCallStatus {const FunctionCallStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FunctionCallStatus && other.value == value;
+    other is FunctionCallStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FunctionCallStatus($value)';
 
  }
 @immutable final class ToolSearchCall {const ToolSearchCall({required this.id, required this.callId, required this.execution, required this.arguments, required this.status, this.type = 'tool_search_call', this.createdBy, });

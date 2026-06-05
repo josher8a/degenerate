@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetGeolocationDetailsFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetGeolocationDetailsFormat {const RadarGetGeolocationDetailsFormat._(this.value);
+sealed class RadarGetGeolocationDetailsFormat {const RadarGetGeolocationDetailsFormat();
 
 factory RadarGetGeolocationDetailsFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetGeolocationDetailsFormat._(json),
+  _ => RadarGetGeolocationDetailsFormat$Unknown(json),
 }; }
 
-static const RadarGetGeolocationDetailsFormat $json = RadarGetGeolocationDetailsFormat._('JSON');
+static const RadarGetGeolocationDetailsFormat $json = RadarGetGeolocationDetailsFormat$$json._();
 
-static const RadarGetGeolocationDetailsFormat csv = RadarGetGeolocationDetailsFormat._('CSV');
+static const RadarGetGeolocationDetailsFormat csv = RadarGetGeolocationDetailsFormat$csv._();
 
 static const List<RadarGetGeolocationDetailsFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetGeolocationDetailsFormat$Unknown; } 
+@override String toString() => 'RadarGetGeolocationDetailsFormat($value)';
+
+ }
+@immutable final class RadarGetGeolocationDetailsFormat$$json extends RadarGetGeolocationDetailsFormat {const RadarGetGeolocationDetailsFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetGeolocationDetailsFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetGeolocationDetailsFormat$csv extends RadarGetGeolocationDetailsFormat {const RadarGetGeolocationDetailsFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetGeolocationDetailsFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetGeolocationDetailsFormat$Unknown extends RadarGetGeolocationDetailsFormat {const RadarGetGeolocationDetailsFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetGeolocationDetailsFormat && other.value == value;
+    other is RadarGetGeolocationDetailsFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetGeolocationDetailsFormat($value)';
 
  }

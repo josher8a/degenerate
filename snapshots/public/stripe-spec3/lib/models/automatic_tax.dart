@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AutomaticTax
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/automatic_tax/automatic_tax_status.dart';import 'package:pub_stripe_spec3/models/connect_account_reference.dart';/// If Stripe disabled automatic tax, this enum describes why.
-@immutable final class AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason._(this.value);
+sealed class AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason();
 
 factory AutomaticTaxDisabledReason.fromJson(String json) { return switch (json) {
   'finalization_requires_location_inputs' => finalizationRequiresLocationInputs,
   'finalization_system_error' => finalizationSystemError,
-  _ => AutomaticTaxDisabledReason._(json),
+  _ => AutomaticTaxDisabledReason$Unknown(json),
 }; }
 
-static const AutomaticTaxDisabledReason finalizationRequiresLocationInputs = AutomaticTaxDisabledReason._('finalization_requires_location_inputs');
+static const AutomaticTaxDisabledReason finalizationRequiresLocationInputs = AutomaticTaxDisabledReason$finalizationRequiresLocationInputs._();
 
-static const AutomaticTaxDisabledReason finalizationSystemError = AutomaticTaxDisabledReason._('finalization_system_error');
+static const AutomaticTaxDisabledReason finalizationSystemError = AutomaticTaxDisabledReason$finalizationSystemError._();
 
 static const List<AutomaticTaxDisabledReason> values = [finalizationRequiresLocationInputs, finalizationSystemError];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AutomaticTaxDisabledReason$Unknown; } 
+@override String toString() => 'AutomaticTaxDisabledReason($value)';
+
+ }
+@immutable final class AutomaticTaxDisabledReason$finalizationRequiresLocationInputs extends AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason$finalizationRequiresLocationInputs._();
+
+@override String get value => 'finalization_requires_location_inputs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AutomaticTaxDisabledReason$finalizationRequiresLocationInputs;
+
+@override int get hashCode => 'finalization_requires_location_inputs'.hashCode;
+
+ }
+@immutable final class AutomaticTaxDisabledReason$finalizationSystemError extends AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason$finalizationSystemError._();
+
+@override String get value => 'finalization_system_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AutomaticTaxDisabledReason$finalizationSystemError;
+
+@override int get hashCode => 'finalization_system_error'.hashCode;
+
+ }
+@immutable final class AutomaticTaxDisabledReason$Unknown extends AutomaticTaxDisabledReason {const AutomaticTaxDisabledReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AutomaticTaxDisabledReason && other.value == value;
+    other is AutomaticTaxDisabledReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AutomaticTaxDisabledReason($value)';
 
  }
 /// 

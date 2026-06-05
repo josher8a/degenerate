@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/IssuesListForAuthenticatedUserSort
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class IssuesListForAuthenticatedUserSort {const IssuesListForAuthenticatedUserSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class IssuesListForAuthenticatedUserSort {const IssuesListForAuthenticatedUserSort();
 
 factory IssuesListForAuthenticatedUserSort.fromJson(String json) { return switch (json) {
   'created' => created,
   'updated' => updated,
   'comments' => comments,
-  _ => IssuesListForAuthenticatedUserSort._(json),
+  _ => IssuesListForAuthenticatedUserSort$Unknown(json),
 }; }
 
-static const IssuesListForAuthenticatedUserSort created = IssuesListForAuthenticatedUserSort._('created');
+static const IssuesListForAuthenticatedUserSort created = IssuesListForAuthenticatedUserSort$created._();
 
-static const IssuesListForAuthenticatedUserSort updated = IssuesListForAuthenticatedUserSort._('updated');
+static const IssuesListForAuthenticatedUserSort updated = IssuesListForAuthenticatedUserSort$updated._();
 
-static const IssuesListForAuthenticatedUserSort comments = IssuesListForAuthenticatedUserSort._('comments');
+static const IssuesListForAuthenticatedUserSort comments = IssuesListForAuthenticatedUserSort$comments._();
 
 static const List<IssuesListForAuthenticatedUserSort> values = [created, updated, comments];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuesListForAuthenticatedUserSort$Unknown; } 
+@override String toString() => 'IssuesListForAuthenticatedUserSort($value)';
+
+ }
+@immutable final class IssuesListForAuthenticatedUserSort$created extends IssuesListForAuthenticatedUserSort {const IssuesListForAuthenticatedUserSort$created._();
+
+@override String get value => 'created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuesListForAuthenticatedUserSort$created;
+
+@override int get hashCode => 'created'.hashCode;
+
+ }
+@immutable final class IssuesListForAuthenticatedUserSort$updated extends IssuesListForAuthenticatedUserSort {const IssuesListForAuthenticatedUserSort$updated._();
+
+@override String get value => 'updated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuesListForAuthenticatedUserSort$updated;
+
+@override int get hashCode => 'updated'.hashCode;
+
+ }
+@immutable final class IssuesListForAuthenticatedUserSort$comments extends IssuesListForAuthenticatedUserSort {const IssuesListForAuthenticatedUserSort$comments._();
+
+@override String get value => 'comments';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuesListForAuthenticatedUserSort$comments;
+
+@override int get hashCode => 'comments'.hashCode;
+
+ }
+@immutable final class IssuesListForAuthenticatedUserSort$Unknown extends IssuesListForAuthenticatedUserSort {const IssuesListForAuthenticatedUserSort$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuesListForAuthenticatedUserSort && other.value == value;
+    other is IssuesListForAuthenticatedUserSort$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuesListForAuthenticatedUserSort($value)';
 
  }

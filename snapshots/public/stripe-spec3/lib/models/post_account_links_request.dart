@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PostAccountLinksRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_account_links_request/collection_options.dart';/// The collect parameter is deprecated. Use `collection_options` instead.
-@immutable final class Collect {const Collect._(this.value);
+sealed class Collect {const Collect();
 
 factory Collect.fromJson(String json) { return switch (json) {
   'currently_due' => currentlyDue,
   'eventually_due' => eventuallyDue,
-  _ => Collect._(json),
+  _ => Collect$Unknown(json),
 }; }
 
-static const Collect currentlyDue = Collect._('currently_due');
+static const Collect currentlyDue = Collect$currentlyDue._();
 
-static const Collect eventuallyDue = Collect._('eventually_due');
+static const Collect eventuallyDue = Collect$eventuallyDue._();
 
 static const List<Collect> values = [currentlyDue, eventuallyDue];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,34 +25,56 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Collect$Unknown; } 
+@override String toString() => 'Collect($value)';
+
+ }
+@immutable final class Collect$currentlyDue extends Collect {const Collect$currentlyDue._();
+
+@override String get value => 'currently_due';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Collect$currentlyDue;
+
+@override int get hashCode => 'currently_due'.hashCode;
+
+ }
+@immutable final class Collect$eventuallyDue extends Collect {const Collect$eventuallyDue._();
+
+@override String get value => 'eventually_due';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Collect$eventuallyDue;
+
+@override int get hashCode => 'eventually_due'.hashCode;
+
+ }
+@immutable final class Collect$Unknown extends Collect {const Collect$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Collect && other.value == value;
+    other is Collect$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Collect($value)';
 
  }
 /// The type of account link the user is requesting.
 /// 
 /// You can create Account Links of type `account_update` only for connected accounts where your platform is responsible for collecting requirements, including Custom accounts. You can't create them for accounts that have access to a Stripe-hosted Dashboard. If you use [Connect embedded components](/connect/get-started-connect-embedded-components), you can include components that allow your connected accounts to update their own information. For an account without Stripe-hosted Dashboard access where Stripe is liable for negative balances, you must use embedded components.
-@immutable final class PostAccountLinksRequestType {const PostAccountLinksRequestType._(this.value);
+sealed class PostAccountLinksRequestType {const PostAccountLinksRequestType();
 
 factory PostAccountLinksRequestType.fromJson(String json) { return switch (json) {
   'account_onboarding' => accountOnboarding,
   'account_update' => accountUpdate,
-  _ => PostAccountLinksRequestType._(json),
+  _ => PostAccountLinksRequestType$Unknown(json),
 }; }
 
-static const PostAccountLinksRequestType accountOnboarding = PostAccountLinksRequestType._('account_onboarding');
+static const PostAccountLinksRequestType accountOnboarding = PostAccountLinksRequestType$accountOnboarding._();
 
-static const PostAccountLinksRequestType accountUpdate = PostAccountLinksRequestType._('account_update');
+static const PostAccountLinksRequestType accountUpdate = PostAccountLinksRequestType$accountUpdate._();
 
 static const List<PostAccountLinksRequestType> values = [accountOnboarding, accountUpdate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -62,13 +83,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostAccountLinksRequestType$Unknown; } 
+@override String toString() => 'PostAccountLinksRequestType($value)';
+
+ }
+@immutable final class PostAccountLinksRequestType$accountOnboarding extends PostAccountLinksRequestType {const PostAccountLinksRequestType$accountOnboarding._();
+
+@override String get value => 'account_onboarding';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostAccountLinksRequestType$accountOnboarding;
+
+@override int get hashCode => 'account_onboarding'.hashCode;
+
+ }
+@immutable final class PostAccountLinksRequestType$accountUpdate extends PostAccountLinksRequestType {const PostAccountLinksRequestType$accountUpdate._();
+
+@override String get value => 'account_update';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostAccountLinksRequestType$accountUpdate;
+
+@override int get hashCode => 'account_update'.hashCode;
+
+ }
+@immutable final class PostAccountLinksRequestType$Unknown extends PostAccountLinksRequestType {const PostAccountLinksRequestType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostAccountLinksRequestType && other.value == value;
+    other is PostAccountLinksRequestType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostAccountLinksRequestType($value)';
 
  }
 @immutable final class PostAccountLinksRequest {const PostAccountLinksRequest({required this.account, required this.type, this.collect, this.collectionOptions, this.expand, this.refreshUrl, this.returnUrl, });

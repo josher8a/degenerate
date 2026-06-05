@@ -2,25 +2,24 @@
 // Source: #/components/schemas/RunObject (inline: LastError)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// One of `server_error`, `rate_limit_exceeded`, or `invalid_prompt`.
-@immutable final class RunObjectLastErrorCode {const RunObjectLastErrorCode._(this.value);
+sealed class RunObjectLastErrorCode {const RunObjectLastErrorCode();
 
 factory RunObjectLastErrorCode.fromJson(String json) { return switch (json) {
   'server_error' => serverError,
   'rate_limit_exceeded' => rateLimitExceeded,
   'invalid_prompt' => invalidPrompt,
-  _ => RunObjectLastErrorCode._(json),
+  _ => RunObjectLastErrorCode$Unknown(json),
 }; }
 
-static const RunObjectLastErrorCode serverError = RunObjectLastErrorCode._('server_error');
+static const RunObjectLastErrorCode serverError = RunObjectLastErrorCode$serverError._();
 
-static const RunObjectLastErrorCode rateLimitExceeded = RunObjectLastErrorCode._('rate_limit_exceeded');
+static const RunObjectLastErrorCode rateLimitExceeded = RunObjectLastErrorCode$rateLimitExceeded._();
 
-static const RunObjectLastErrorCode invalidPrompt = RunObjectLastErrorCode._('invalid_prompt');
+static const RunObjectLastErrorCode invalidPrompt = RunObjectLastErrorCode$invalidPrompt._();
 
 static const List<RunObjectLastErrorCode> values = [serverError, rateLimitExceeded, invalidPrompt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RunObjectLastErrorCode$Unknown; } 
+@override String toString() => 'RunObjectLastErrorCode($value)';
+
+ }
+@immutable final class RunObjectLastErrorCode$serverError extends RunObjectLastErrorCode {const RunObjectLastErrorCode$serverError._();
+
+@override String get value => 'server_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectLastErrorCode$serverError;
+
+@override int get hashCode => 'server_error'.hashCode;
+
+ }
+@immutable final class RunObjectLastErrorCode$rateLimitExceeded extends RunObjectLastErrorCode {const RunObjectLastErrorCode$rateLimitExceeded._();
+
+@override String get value => 'rate_limit_exceeded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectLastErrorCode$rateLimitExceeded;
+
+@override int get hashCode => 'rate_limit_exceeded'.hashCode;
+
+ }
+@immutable final class RunObjectLastErrorCode$invalidPrompt extends RunObjectLastErrorCode {const RunObjectLastErrorCode$invalidPrompt._();
+
+@override String get value => 'invalid_prompt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectLastErrorCode$invalidPrompt;
+
+@override int get hashCode => 'invalid_prompt'.hashCode;
+
+ }
+@immutable final class RunObjectLastErrorCode$Unknown extends RunObjectLastErrorCode {const RunObjectLastErrorCode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RunObjectLastErrorCode && other.value == value;
+    other is RunObjectLastErrorCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RunObjectLastErrorCode($value)';
 
  }
 /// The last error associated with this run. Will be `null` if there are no errors.

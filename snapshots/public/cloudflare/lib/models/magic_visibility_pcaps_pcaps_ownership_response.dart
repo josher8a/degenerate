@@ -2,25 +2,24 @@
 // Source: #/components/schemas/MagicVisibilityPcapsPcapsOwnershipResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_destination_conf.dart';import 'package:pub_cloudflare/models/magic_visibility_pcaps_pcaps_ownership_challenge.dart';/// The status of the ownership challenge. Can be pending, success or failed.
-@immutable final class MagicVisibilityPcapsPcapsOwnershipResponseStatus {const MagicVisibilityPcapsPcapsOwnershipResponseStatus._(this.value);
+sealed class MagicVisibilityPcapsPcapsOwnershipResponseStatus {const MagicVisibilityPcapsPcapsOwnershipResponseStatus();
 
 factory MagicVisibilityPcapsPcapsOwnershipResponseStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'success' => success,
   'failed' => failed,
-  _ => MagicVisibilityPcapsPcapsOwnershipResponseStatus._(json),
+  _ => MagicVisibilityPcapsPcapsOwnershipResponseStatus$Unknown(json),
 }; }
 
-static const MagicVisibilityPcapsPcapsOwnershipResponseStatus pending = MagicVisibilityPcapsPcapsOwnershipResponseStatus._('pending');
+static const MagicVisibilityPcapsPcapsOwnershipResponseStatus pending = MagicVisibilityPcapsPcapsOwnershipResponseStatus$pending._();
 
-static const MagicVisibilityPcapsPcapsOwnershipResponseStatus success = MagicVisibilityPcapsPcapsOwnershipResponseStatus._('success');
+static const MagicVisibilityPcapsPcapsOwnershipResponseStatus success = MagicVisibilityPcapsPcapsOwnershipResponseStatus$success._();
 
-static const MagicVisibilityPcapsPcapsOwnershipResponseStatus failed = MagicVisibilityPcapsPcapsOwnershipResponseStatus._('failed');
+static const MagicVisibilityPcapsPcapsOwnershipResponseStatus failed = MagicVisibilityPcapsPcapsOwnershipResponseStatus$failed._();
 
 static const List<MagicVisibilityPcapsPcapsOwnershipResponseStatus> values = [pending, success, failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MagicVisibilityPcapsPcapsOwnershipResponseStatus$Unknown; } 
+@override String toString() => 'MagicVisibilityPcapsPcapsOwnershipResponseStatus($value)';
+
+ }
+@immutable final class MagicVisibilityPcapsPcapsOwnershipResponseStatus$pending extends MagicVisibilityPcapsPcapsOwnershipResponseStatus {const MagicVisibilityPcapsPcapsOwnershipResponseStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicVisibilityPcapsPcapsOwnershipResponseStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class MagicVisibilityPcapsPcapsOwnershipResponseStatus$success extends MagicVisibilityPcapsPcapsOwnershipResponseStatus {const MagicVisibilityPcapsPcapsOwnershipResponseStatus$success._();
+
+@override String get value => 'success';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicVisibilityPcapsPcapsOwnershipResponseStatus$success;
+
+@override int get hashCode => 'success'.hashCode;
+
+ }
+@immutable final class MagicVisibilityPcapsPcapsOwnershipResponseStatus$failed extends MagicVisibilityPcapsPcapsOwnershipResponseStatus {const MagicVisibilityPcapsPcapsOwnershipResponseStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MagicVisibilityPcapsPcapsOwnershipResponseStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class MagicVisibilityPcapsPcapsOwnershipResponseStatus$Unknown extends MagicVisibilityPcapsPcapsOwnershipResponseStatus {const MagicVisibilityPcapsPcapsOwnershipResponseStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MagicVisibilityPcapsPcapsOwnershipResponseStatus && other.value == value;
+    other is MagicVisibilityPcapsPcapsOwnershipResponseStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MagicVisibilityPcapsPcapsOwnershipResponseStatus($value)';
 
  }
 @immutable final class MagicVisibilityPcapsPcapsOwnershipResponse {const MagicVisibilityPcapsPcapsOwnershipResponse({required this.destinationConf, required this.filename, required this.id, required this.status, required this.submitted, this.validated, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MqEventSourceWorkersAiModel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
-@immutable final class MqEventSourceWorkersAiModelType {const MqEventSourceWorkersAiModelType._(this.value);
+sealed class MqEventSourceWorkersAiModelType {const MqEventSourceWorkersAiModelType();
 
 factory MqEventSourceWorkersAiModelType.fromJson(String json) { return switch (json) {
   'workersAi.model' => workersAiModel,
-  _ => MqEventSourceWorkersAiModelType._(json),
+  _ => MqEventSourceWorkersAiModelType$Unknown(json),
 }; }
 
-static const MqEventSourceWorkersAiModelType workersAiModel = MqEventSourceWorkersAiModelType._('workersAi.model');
+static const MqEventSourceWorkersAiModelType workersAiModel = MqEventSourceWorkersAiModelType$workersAiModel._();
 
 static const List<MqEventSourceWorkersAiModelType> values = [workersAiModel];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MqEventSourceWorkersAiModelType$Unknown; } 
+@override String toString() => 'MqEventSourceWorkersAiModelType($value)';
+
+ }
+@immutable final class MqEventSourceWorkersAiModelType$workersAiModel extends MqEventSourceWorkersAiModelType {const MqEventSourceWorkersAiModelType$workersAiModel._();
+
+@override String get value => 'workersAi.model';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqEventSourceWorkersAiModelType$workersAiModel;
+
+@override int get hashCode => 'workersAi.model'.hashCode;
+
+ }
+@immutable final class MqEventSourceWorkersAiModelType$Unknown extends MqEventSourceWorkersAiModelType {const MqEventSourceWorkersAiModelType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MqEventSourceWorkersAiModelType && other.value == value;
+    other is MqEventSourceWorkersAiModelType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MqEventSourceWorkersAiModelType($value)';
 
  }
 @immutable final class MqEventSourceWorkersAiModel {const MqEventSourceWorkersAiModel({this.modelName, this.type, });

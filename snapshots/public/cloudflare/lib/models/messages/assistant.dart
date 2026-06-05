@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > Assistant)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/assistant_audio_variant1.dart';import 'package:pub_cloudflare/models/messages/assistant_content.dart';import 'package:pub_cloudflare/models/messages/assistant_content_variant2.dart';import 'package:pub_cloudflare/models/messages/assistant_function_call_variant1.dart';import 'package:pub_cloudflare/models/messages/assistant_tool_calls.dart';import 'package:pub_cloudflare/models/messages/tool_calls_custom.dart';import 'package:pub_cloudflare/models/messages/tool_calls_function.dart';@immutable final class AssistantRole {const AssistantRole._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/assistant_audio_variant1.dart';import 'package:pub_cloudflare/models/messages/assistant_content.dart';import 'package:pub_cloudflare/models/messages/assistant_content_variant2.dart';import 'package:pub_cloudflare/models/messages/assistant_function_call_variant1.dart';import 'package:pub_cloudflare/models/messages/assistant_tool_calls.dart';import 'package:pub_cloudflare/models/messages/tool_calls_custom.dart';import 'package:pub_cloudflare/models/messages/tool_calls_function.dart';sealed class AssistantRole {const AssistantRole();
 
 factory AssistantRole.fromJson(String json) { return switch (json) {
   'assistant' => assistant,
-  _ => AssistantRole._(json),
+  _ => AssistantRole$Unknown(json),
 }; }
 
-static const AssistantRole assistant = AssistantRole._('assistant');
+static const AssistantRole assistant = AssistantRole$assistant._();
 
 static const List<AssistantRole> values = [assistant];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AssistantRole$Unknown; } 
+@override String toString() => 'AssistantRole($value)';
+
+ }
+@immutable final class AssistantRole$assistant extends AssistantRole {const AssistantRole$assistant._();
+
+@override String get value => 'assistant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AssistantRole$assistant;
+
+@override int get hashCode => 'assistant'.hashCode;
+
+ }
+@immutable final class AssistantRole$Unknown extends AssistantRole {const AssistantRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AssistantRole && other.value == value;
+    other is AssistantRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AssistantRole($value)';
 
  }
 @immutable final class Assistant {const Assistant({required this.role, this.audio, this.content, this.functionCall, this.name, this.refusal, this.toolCalls, });

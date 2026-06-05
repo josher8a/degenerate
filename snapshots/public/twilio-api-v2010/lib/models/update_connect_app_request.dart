@@ -2,22 +2,21 @@
 // Source: #/components/schemas/UpdateConnectAppRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/connect_app_enum_permission.dart';/// The HTTP method to use when calling `deauthorize_callback_url`.
-@immutable final class UpdateConnectAppRequestDeauthorizeCallbackMethod {const UpdateConnectAppRequestDeauthorizeCallbackMethod._(this.value);
+sealed class UpdateConnectAppRequestDeauthorizeCallbackMethod {const UpdateConnectAppRequestDeauthorizeCallbackMethod();
 
 factory UpdateConnectAppRequestDeauthorizeCallbackMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => UpdateConnectAppRequestDeauthorizeCallbackMethod._(json),
+  _ => UpdateConnectAppRequestDeauthorizeCallbackMethod$Unknown(json),
 }; }
 
-static const UpdateConnectAppRequestDeauthorizeCallbackMethod $get = UpdateConnectAppRequestDeauthorizeCallbackMethod._('GET');
+static const UpdateConnectAppRequestDeauthorizeCallbackMethod $get = UpdateConnectAppRequestDeauthorizeCallbackMethod$$get._();
 
-static const UpdateConnectAppRequestDeauthorizeCallbackMethod post = UpdateConnectAppRequestDeauthorizeCallbackMethod._('POST');
+static const UpdateConnectAppRequestDeauthorizeCallbackMethod post = UpdateConnectAppRequestDeauthorizeCallbackMethod$post._();
 
 static const List<UpdateConnectAppRequestDeauthorizeCallbackMethod> values = [$get, post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UpdateConnectAppRequestDeauthorizeCallbackMethod$Unknown; } 
+@override String toString() => 'UpdateConnectAppRequestDeauthorizeCallbackMethod($value)';
+
+ }
+@immutable final class UpdateConnectAppRequestDeauthorizeCallbackMethod$$get extends UpdateConnectAppRequestDeauthorizeCallbackMethod {const UpdateConnectAppRequestDeauthorizeCallbackMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UpdateConnectAppRequestDeauthorizeCallbackMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class UpdateConnectAppRequestDeauthorizeCallbackMethod$post extends UpdateConnectAppRequestDeauthorizeCallbackMethod {const UpdateConnectAppRequestDeauthorizeCallbackMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UpdateConnectAppRequestDeauthorizeCallbackMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class UpdateConnectAppRequestDeauthorizeCallbackMethod$Unknown extends UpdateConnectAppRequestDeauthorizeCallbackMethod {const UpdateConnectAppRequestDeauthorizeCallbackMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UpdateConnectAppRequestDeauthorizeCallbackMethod && other.value == value;
+    other is UpdateConnectAppRequestDeauthorizeCallbackMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UpdateConnectAppRequestDeauthorizeCallbackMethod($value)';
 
  }
 @immutable final class UpdateConnectAppRequest {const UpdateConnectAppRequest({this.authorizeRedirectUrl, this.companyName, this.deauthorizeCallbackMethod, this.deauthorizeCallbackUrl, this.description, this.friendlyName, this.homepageUrl, this.permissions, });

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetAttacksLayer7SummaryByManagedRulesIpVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesIpVersion {const RadarGetAttacksLayer7SummaryByManagedRulesIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer7SummaryByManagedRulesIpVersion {const RadarGetAttacksLayer7SummaryByManagedRulesIpVersion();
 
 factory RadarGetAttacksLayer7SummaryByManagedRulesIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,
   'IPv6' => iPv6,
-  _ => RadarGetAttacksLayer7SummaryByManagedRulesIpVersion._(json),
+  _ => RadarGetAttacksLayer7SummaryByManagedRulesIpVersion$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer7SummaryByManagedRulesIpVersion iPv4 = RadarGetAttacksLayer7SummaryByManagedRulesIpVersion._('IPv4');
+static const RadarGetAttacksLayer7SummaryByManagedRulesIpVersion iPv4 = RadarGetAttacksLayer7SummaryByManagedRulesIpVersion$iPv4._();
 
-static const RadarGetAttacksLayer7SummaryByManagedRulesIpVersion iPv6 = RadarGetAttacksLayer7SummaryByManagedRulesIpVersion._('IPv6');
+static const RadarGetAttacksLayer7SummaryByManagedRulesIpVersion iPv6 = RadarGetAttacksLayer7SummaryByManagedRulesIpVersion$iPv6._();
 
 static const List<RadarGetAttacksLayer7SummaryByManagedRulesIpVersion> values = [iPv4, iPv6];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer7SummaryByManagedRulesIpVersion$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer7SummaryByManagedRulesIpVersion($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesIpVersion$iPv4 extends RadarGetAttacksLayer7SummaryByManagedRulesIpVersion {const RadarGetAttacksLayer7SummaryByManagedRulesIpVersion$iPv4._();
+
+@override String get value => 'IPv4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByManagedRulesIpVersion$iPv4;
+
+@override int get hashCode => 'IPv4'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesIpVersion$iPv6 extends RadarGetAttacksLayer7SummaryByManagedRulesIpVersion {const RadarGetAttacksLayer7SummaryByManagedRulesIpVersion$iPv6._();
+
+@override String get value => 'IPv6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByManagedRulesIpVersion$iPv6;
+
+@override int get hashCode => 'IPv6'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByManagedRulesIpVersion$Unknown extends RadarGetAttacksLayer7SummaryByManagedRulesIpVersion {const RadarGetAttacksLayer7SummaryByManagedRulesIpVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer7SummaryByManagedRulesIpVersion && other.value == value;
+    other is RadarGetAttacksLayer7SummaryByManagedRulesIpVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer7SummaryByManagedRulesIpVersion($value)';
 
  }

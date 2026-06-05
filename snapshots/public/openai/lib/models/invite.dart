@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Invite
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/invite/invite_projects.dart';import 'package:pub_openai/models/invite_request/invite_request_role.dart';/// The object type, which is always `organization.invite`
-@immutable final class InviteObject {const InviteObject._(this.value);
+sealed class InviteObject {const InviteObject();
 
 factory InviteObject.fromJson(String json) { return switch (json) {
   'organization.invite' => organizationInvite,
-  _ => InviteObject._(json),
+  _ => InviteObject$Unknown(json),
 }; }
 
-static const InviteObject organizationInvite = InviteObject._('organization.invite');
+static const InviteObject organizationInvite = InviteObject$organizationInvite._();
 
 static const List<InviteObject> values = [organizationInvite];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,35 +21,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is InviteObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is InviteObject$Unknown; } 
 @override String toString() => 'InviteObject($value)';
 
  }
+@immutable final class InviteObject$organizationInvite extends InviteObject {const InviteObject$organizationInvite._();
+
+@override String get value => 'organization.invite';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InviteObject$organizationInvite;
+
+@override int get hashCode => 'organization.invite'.hashCode;
+
+ }
+@immutable final class InviteObject$Unknown extends InviteObject {const InviteObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is InviteObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// `accepted`,`expired`, or `pending`
-@immutable final class InviteStatus {const InviteStatus._(this.value);
+sealed class InviteStatus {const InviteStatus();
 
 factory InviteStatus.fromJson(String json) { return switch (json) {
   'accepted' => accepted,
   'expired' => expired,
   'pending' => pending,
-  _ => InviteStatus._(json),
+  _ => InviteStatus$Unknown(json),
 }; }
 
-static const InviteStatus accepted = InviteStatus._('accepted');
+static const InviteStatus accepted = InviteStatus$accepted._();
 
-static const InviteStatus expired = InviteStatus._('expired');
+static const InviteStatus expired = InviteStatus$expired._();
 
-static const InviteStatus pending = InviteStatus._('pending');
+static const InviteStatus pending = InviteStatus$pending._();
 
 static const List<InviteStatus> values = [accepted, expired, pending];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,13 +72,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InviteStatus$Unknown; } 
+@override String toString() => 'InviteStatus($value)';
+
+ }
+@immutable final class InviteStatus$accepted extends InviteStatus {const InviteStatus$accepted._();
+
+@override String get value => 'accepted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InviteStatus$accepted;
+
+@override int get hashCode => 'accepted'.hashCode;
+
+ }
+@immutable final class InviteStatus$expired extends InviteStatus {const InviteStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InviteStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class InviteStatus$pending extends InviteStatus {const InviteStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InviteStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class InviteStatus$Unknown extends InviteStatus {const InviteStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InviteStatus && other.value == value;
+    other is InviteStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InviteStatus($value)';
 
  }
 /// Represents an individual `invite` to the organization.

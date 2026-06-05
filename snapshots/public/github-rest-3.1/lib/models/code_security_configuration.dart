@@ -2,25 +2,24 @@
 // Source: #/components/schemas/CodeSecurityConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_options.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_scanning_delegated_alert_dismissal.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_advanced_security.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_code_scanning_default_setup.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_code_scanning_default_setup_options.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_dependabot_security_updates.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_enforcement.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_delegated_alert_dismissal.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_delegated_bypass.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_delegated_bypass_options.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_non_provider_patterns.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/code_security_configuration_secret_scanning_push_protection.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/dependabot_alerts.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/dependency_graph.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/dependency_graph_autosubmit_action.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/dependency_graph_autosubmit_action_options.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/private_vulnerability_reporting.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/secret_scanning_extended_metadata.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/secret_scanning_generic_secrets.dart';import 'package:pub_github_rest_3_1/models/code_security_configuration/secret_scanning_validity_checks.dart';/// The type of the code security configuration.
-@immutable final class TargetType {const TargetType._(this.value);
+sealed class TargetType {const TargetType();
 
 factory TargetType.fromJson(String json) { return switch (json) {
   'global' => global,
   'organization' => organization,
   'enterprise' => enterprise,
-  _ => TargetType._(json),
+  _ => TargetType$Unknown(json),
 }; }
 
-static const TargetType global = TargetType._('global');
+static const TargetType global = TargetType$global._();
 
-static const TargetType organization = TargetType._('organization');
+static const TargetType organization = TargetType$organization._();
 
-static const TargetType enterprise = TargetType._('enterprise');
+static const TargetType enterprise = TargetType$enterprise._();
 
 static const List<TargetType> values = [global, organization, enterprise];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,38 +29,69 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TargetType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TargetType$Unknown; } 
 @override String toString() => 'TargetType($value)';
 
  }
+@immutable final class TargetType$global extends TargetType {const TargetType$global._();
+
+@override String get value => 'global';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TargetType$global;
+
+@override int get hashCode => 'global'.hashCode;
+
+ }
+@immutable final class TargetType$organization extends TargetType {const TargetType$organization._();
+
+@override String get value => 'organization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TargetType$organization;
+
+@override int get hashCode => 'organization'.hashCode;
+
+ }
+@immutable final class TargetType$enterprise extends TargetType {const TargetType$enterprise._();
+
+@override String get value => 'enterprise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TargetType$enterprise;
+
+@override int get hashCode => 'enterprise'.hashCode;
+
+ }
+@immutable final class TargetType$Unknown extends TargetType {const TargetType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TargetType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The enablement status of Dependabot delegated alert dismissal
-@immutable final class CodeSecurityConfigurationDependabotDelegatedAlertDismissal {const CodeSecurityConfigurationDependabotDelegatedAlertDismissal._(this.value);
+sealed class CodeSecurityConfigurationDependabotDelegatedAlertDismissal {const CodeSecurityConfigurationDependabotDelegatedAlertDismissal();
 
 factory CodeSecurityConfigurationDependabotDelegatedAlertDismissal.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
   'null' => $null,
-  _ => CodeSecurityConfigurationDependabotDelegatedAlertDismissal._(json),
+  _ => CodeSecurityConfigurationDependabotDelegatedAlertDismissal$Unknown(json),
 }; }
 
-static const CodeSecurityConfigurationDependabotDelegatedAlertDismissal enabled = CodeSecurityConfigurationDependabotDelegatedAlertDismissal._('enabled');
+static const CodeSecurityConfigurationDependabotDelegatedAlertDismissal enabled = CodeSecurityConfigurationDependabotDelegatedAlertDismissal$enabled._();
 
-static const CodeSecurityConfigurationDependabotDelegatedAlertDismissal disabled = CodeSecurityConfigurationDependabotDelegatedAlertDismissal._('disabled');
+static const CodeSecurityConfigurationDependabotDelegatedAlertDismissal disabled = CodeSecurityConfigurationDependabotDelegatedAlertDismissal$disabled._();
 
-static const CodeSecurityConfigurationDependabotDelegatedAlertDismissal notSet = CodeSecurityConfigurationDependabotDelegatedAlertDismissal._('not_set');
+static const CodeSecurityConfigurationDependabotDelegatedAlertDismissal notSet = CodeSecurityConfigurationDependabotDelegatedAlertDismissal$notSet._();
 
-static const CodeSecurityConfigurationDependabotDelegatedAlertDismissal $null = CodeSecurityConfigurationDependabotDelegatedAlertDismissal._('null');
+static const CodeSecurityConfigurationDependabotDelegatedAlertDismissal $null = CodeSecurityConfigurationDependabotDelegatedAlertDismissal$$null._();
 
 static const List<CodeSecurityConfigurationDependabotDelegatedAlertDismissal> values = [enabled, disabled, notSet, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -72,13 +102,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeSecurityConfigurationDependabotDelegatedAlertDismissal$Unknown; } 
+@override String toString() => 'CodeSecurityConfigurationDependabotDelegatedAlertDismissal($value)';
+
+ }
+@immutable final class CodeSecurityConfigurationDependabotDelegatedAlertDismissal$enabled extends CodeSecurityConfigurationDependabotDelegatedAlertDismissal {const CodeSecurityConfigurationDependabotDelegatedAlertDismissal$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationDependabotDelegatedAlertDismissal$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationDependabotDelegatedAlertDismissal$disabled extends CodeSecurityConfigurationDependabotDelegatedAlertDismissal {const CodeSecurityConfigurationDependabotDelegatedAlertDismissal$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationDependabotDelegatedAlertDismissal$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationDependabotDelegatedAlertDismissal$notSet extends CodeSecurityConfigurationDependabotDelegatedAlertDismissal {const CodeSecurityConfigurationDependabotDelegatedAlertDismissal$notSet._();
+
+@override String get value => 'not_set';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationDependabotDelegatedAlertDismissal$notSet;
+
+@override int get hashCode => 'not_set'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationDependabotDelegatedAlertDismissal$$null extends CodeSecurityConfigurationDependabotDelegatedAlertDismissal {const CodeSecurityConfigurationDependabotDelegatedAlertDismissal$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationDependabotDelegatedAlertDismissal$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationDependabotDelegatedAlertDismissal$Unknown extends CodeSecurityConfigurationDependabotDelegatedAlertDismissal {const CodeSecurityConfigurationDependabotDelegatedAlertDismissal$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeSecurityConfigurationDependabotDelegatedAlertDismissal && other.value == value;
+    other is CodeSecurityConfigurationDependabotDelegatedAlertDismissal$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeSecurityConfigurationDependabotDelegatedAlertDismissal($value)';
 
  }
 /// A code security configuration

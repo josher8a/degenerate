@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ExchangeRate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class ExchangeRateObject {const ExchangeRateObject._(this.value);
+sealed class ExchangeRateObject {const ExchangeRateObject();
 
 factory ExchangeRateObject.fromJson(String json) { return switch (json) {
   'exchange_rate' => exchangeRate,
-  _ => ExchangeRateObject._(json),
+  _ => ExchangeRateObject$Unknown(json),
 }; }
 
-static const ExchangeRateObject exchangeRate = ExchangeRateObject._('exchange_rate');
+static const ExchangeRateObject exchangeRate = ExchangeRateObject$exchangeRate._();
 
 static const List<ExchangeRateObject> values = [exchangeRate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ExchangeRateObject$Unknown; } 
+@override String toString() => 'ExchangeRateObject($value)';
+
+ }
+@immutable final class ExchangeRateObject$exchangeRate extends ExchangeRateObject {const ExchangeRateObject$exchangeRate._();
+
+@override String get value => 'exchange_rate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ExchangeRateObject$exchangeRate;
+
+@override int get hashCode => 'exchange_rate'.hashCode;
+
+ }
+@immutable final class ExchangeRateObject$Unknown extends ExchangeRateObject {const ExchangeRateObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ExchangeRateObject && other.value == value;
+    other is ExchangeRateObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ExchangeRateObject($value)';
 
  }
 /// `[Deprecated]` The `ExchangeRate` APIs are deprecated. Please use the [FX Quotes API](https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api) instead.

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTopAsesByTlsVersionHttpVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopAsesByTlsVersionHttpVersion {const RadarGetHttpTopAsesByTlsVersionHttpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopAsesByTlsVersionHttpVersion {const RadarGetHttpTopAsesByTlsVersionHttpVersion();
 
 factory RadarGetHttpTopAsesByTlsVersionHttpVersion.fromJson(String json) { return switch (json) {
   'HTTPv1' => httPv1,
   'HTTPv2' => httPv2,
   'HTTPv3' => httPv3,
-  _ => RadarGetHttpTopAsesByTlsVersionHttpVersion._(json),
+  _ => RadarGetHttpTopAsesByTlsVersionHttpVersion$Unknown(json),
 }; }
 
-static const RadarGetHttpTopAsesByTlsVersionHttpVersion httPv1 = RadarGetHttpTopAsesByTlsVersionHttpVersion._('HTTPv1');
+static const RadarGetHttpTopAsesByTlsVersionHttpVersion httPv1 = RadarGetHttpTopAsesByTlsVersionHttpVersion$httPv1._();
 
-static const RadarGetHttpTopAsesByTlsVersionHttpVersion httPv2 = RadarGetHttpTopAsesByTlsVersionHttpVersion._('HTTPv2');
+static const RadarGetHttpTopAsesByTlsVersionHttpVersion httPv2 = RadarGetHttpTopAsesByTlsVersionHttpVersion$httPv2._();
 
-static const RadarGetHttpTopAsesByTlsVersionHttpVersion httPv3 = RadarGetHttpTopAsesByTlsVersionHttpVersion._('HTTPv3');
+static const RadarGetHttpTopAsesByTlsVersionHttpVersion httPv3 = RadarGetHttpTopAsesByTlsVersionHttpVersion$httPv3._();
 
 static const List<RadarGetHttpTopAsesByTlsVersionHttpVersion> values = [httPv1, httPv2, httPv3];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopAsesByTlsVersionHttpVersion$Unknown; } 
+@override String toString() => 'RadarGetHttpTopAsesByTlsVersionHttpVersion($value)';
+
+ }
+@immutable final class RadarGetHttpTopAsesByTlsVersionHttpVersion$httPv1 extends RadarGetHttpTopAsesByTlsVersionHttpVersion {const RadarGetHttpTopAsesByTlsVersionHttpVersion$httPv1._();
+
+@override String get value => 'HTTPv1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByTlsVersionHttpVersion$httPv1;
+
+@override int get hashCode => 'HTTPv1'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByTlsVersionHttpVersion$httPv2 extends RadarGetHttpTopAsesByTlsVersionHttpVersion {const RadarGetHttpTopAsesByTlsVersionHttpVersion$httPv2._();
+
+@override String get value => 'HTTPv2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByTlsVersionHttpVersion$httPv2;
+
+@override int get hashCode => 'HTTPv2'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByTlsVersionHttpVersion$httPv3 extends RadarGetHttpTopAsesByTlsVersionHttpVersion {const RadarGetHttpTopAsesByTlsVersionHttpVersion$httPv3._();
+
+@override String get value => 'HTTPv3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByTlsVersionHttpVersion$httPv3;
+
+@override int get hashCode => 'HTTPv3'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByTlsVersionHttpVersion$Unknown extends RadarGetHttpTopAsesByTlsVersionHttpVersion {const RadarGetHttpTopAsesByTlsVersionHttpVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopAsesByTlsVersionHttpVersion && other.value == value;
+    other is RadarGetHttpTopAsesByTlsVersionHttpVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopAsesByTlsVersionHttpVersion($value)';
 
  }

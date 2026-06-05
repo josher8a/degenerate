@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CreateCompletionResponse
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/completion_usage.dart';import 'package:pub_openai/models/create_completion_response/create_completion_response_choices.dart';/// The object type, which is always "text_completion"
-@immutable final class CreateCompletionResponseObject {const CreateCompletionResponseObject._(this.value);
+sealed class CreateCompletionResponseObject {const CreateCompletionResponseObject();
 
 factory CreateCompletionResponseObject.fromJson(String json) { return switch (json) {
   'text_completion' => textCompletion,
-  _ => CreateCompletionResponseObject._(json),
+  _ => CreateCompletionResponseObject$Unknown(json),
 }; }
 
-static const CreateCompletionResponseObject textCompletion = CreateCompletionResponseObject._('text_completion');
+static const CreateCompletionResponseObject textCompletion = CreateCompletionResponseObject$textCompletion._();
 
 static const List<CreateCompletionResponseObject> values = [textCompletion];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateCompletionResponseObject$Unknown; } 
+@override String toString() => 'CreateCompletionResponseObject($value)';
+
+ }
+@immutable final class CreateCompletionResponseObject$textCompletion extends CreateCompletionResponseObject {const CreateCompletionResponseObject$textCompletion._();
+
+@override String get value => 'text_completion';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateCompletionResponseObject$textCompletion;
+
+@override int get hashCode => 'text_completion'.hashCode;
+
+ }
+@immutable final class CreateCompletionResponseObject$Unknown extends CreateCompletionResponseObject {const CreateCompletionResponseObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateCompletionResponseObject && other.value == value;
+    other is CreateCompletionResponseObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateCompletionResponseObject($value)';
 
  }
 /// Represents a completion response from the API. Note: both the streamed and non-streamed response objects share the same shape (unlike the chat endpoint).

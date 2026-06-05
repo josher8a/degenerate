@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ChatCompletionStreamResponseDelta
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_tool_call_chunk.dart';import 'package:pub_openai/models/chat_completion_stream_response_delta/chat_completion_stream_response_delta_function_call.dart';/// The role of the author of this message.
-@immutable final class ChatCompletionStreamResponseDeltaRole {const ChatCompletionStreamResponseDeltaRole._(this.value);
+sealed class ChatCompletionStreamResponseDeltaRole {const ChatCompletionStreamResponseDeltaRole();
 
 factory ChatCompletionStreamResponseDeltaRole.fromJson(String json) { return switch (json) {
   'developer' => developer,
@@ -10,23 +10,22 @@ factory ChatCompletionStreamResponseDeltaRole.fromJson(String json) { return swi
   'user' => user,
   'assistant' => assistant,
   'tool' => tool,
-  _ => ChatCompletionStreamResponseDeltaRole._(json),
+  _ => ChatCompletionStreamResponseDeltaRole$Unknown(json),
 }; }
 
-static const ChatCompletionStreamResponseDeltaRole developer = ChatCompletionStreamResponseDeltaRole._('developer');
+static const ChatCompletionStreamResponseDeltaRole developer = ChatCompletionStreamResponseDeltaRole$developer._();
 
-static const ChatCompletionStreamResponseDeltaRole system = ChatCompletionStreamResponseDeltaRole._('system');
+static const ChatCompletionStreamResponseDeltaRole system = ChatCompletionStreamResponseDeltaRole$system._();
 
-static const ChatCompletionStreamResponseDeltaRole user = ChatCompletionStreamResponseDeltaRole._('user');
+static const ChatCompletionStreamResponseDeltaRole user = ChatCompletionStreamResponseDeltaRole$user._();
 
-static const ChatCompletionStreamResponseDeltaRole assistant = ChatCompletionStreamResponseDeltaRole._('assistant');
+static const ChatCompletionStreamResponseDeltaRole assistant = ChatCompletionStreamResponseDeltaRole$assistant._();
 
-static const ChatCompletionStreamResponseDeltaRole tool = ChatCompletionStreamResponseDeltaRole._('tool');
+static const ChatCompletionStreamResponseDeltaRole tool = ChatCompletionStreamResponseDeltaRole$tool._();
 
 static const List<ChatCompletionStreamResponseDeltaRole> values = [developer, system, user, assistant, tool];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ChatCompletionStreamResponseDeltaRole$Unknown; } 
+@override String toString() => 'ChatCompletionStreamResponseDeltaRole($value)';
+
+ }
+@immutable final class ChatCompletionStreamResponseDeltaRole$developer extends ChatCompletionStreamResponseDeltaRole {const ChatCompletionStreamResponseDeltaRole$developer._();
+
+@override String get value => 'developer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionStreamResponseDeltaRole$developer;
+
+@override int get hashCode => 'developer'.hashCode;
+
+ }
+@immutable final class ChatCompletionStreamResponseDeltaRole$system extends ChatCompletionStreamResponseDeltaRole {const ChatCompletionStreamResponseDeltaRole$system._();
+
+@override String get value => 'system';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionStreamResponseDeltaRole$system;
+
+@override int get hashCode => 'system'.hashCode;
+
+ }
+@immutable final class ChatCompletionStreamResponseDeltaRole$user extends ChatCompletionStreamResponseDeltaRole {const ChatCompletionStreamResponseDeltaRole$user._();
+
+@override String get value => 'user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionStreamResponseDeltaRole$user;
+
+@override int get hashCode => 'user'.hashCode;
+
+ }
+@immutable final class ChatCompletionStreamResponseDeltaRole$assistant extends ChatCompletionStreamResponseDeltaRole {const ChatCompletionStreamResponseDeltaRole$assistant._();
+
+@override String get value => 'assistant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionStreamResponseDeltaRole$assistant;
+
+@override int get hashCode => 'assistant'.hashCode;
+
+ }
+@immutable final class ChatCompletionStreamResponseDeltaRole$tool extends ChatCompletionStreamResponseDeltaRole {const ChatCompletionStreamResponseDeltaRole$tool._();
+
+@override String get value => 'tool';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionStreamResponseDeltaRole$tool;
+
+@override int get hashCode => 'tool'.hashCode;
+
+ }
+@immutable final class ChatCompletionStreamResponseDeltaRole$Unknown extends ChatCompletionStreamResponseDeltaRole {const ChatCompletionStreamResponseDeltaRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ChatCompletionStreamResponseDeltaRole && other.value == value;
+    other is ChatCompletionStreamResponseDeltaRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ChatCompletionStreamResponseDeltaRole($value)';
 
  }
 /// A chat completion delta generated by streamed model responses.

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/IncomingPhoneNumberLocalEnumEmergencyStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The parameter displays if emergency calling is enabled for this number. Active numbers may place emergency calls by dialing valid emergency numbers for the country.
-@immutable final class IncomingPhoneNumberLocalEnumEmergencyStatus {const IncomingPhoneNumberLocalEnumEmergencyStatus._(this.value);
+sealed class IncomingPhoneNumberLocalEnumEmergencyStatus {const IncomingPhoneNumberLocalEnumEmergencyStatus();
 
 factory IncomingPhoneNumberLocalEnumEmergencyStatus.fromJson(String json) { return switch (json) {
   'Active' => active,
   'Inactive' => inactive,
-  _ => IncomingPhoneNumberLocalEnumEmergencyStatus._(json),
+  _ => IncomingPhoneNumberLocalEnumEmergencyStatus$Unknown(json),
 }; }
 
-static const IncomingPhoneNumberLocalEnumEmergencyStatus active = IncomingPhoneNumberLocalEnumEmergencyStatus._('Active');
+static const IncomingPhoneNumberLocalEnumEmergencyStatus active = IncomingPhoneNumberLocalEnumEmergencyStatus$active._();
 
-static const IncomingPhoneNumberLocalEnumEmergencyStatus inactive = IncomingPhoneNumberLocalEnumEmergencyStatus._('Inactive');
+static const IncomingPhoneNumberLocalEnumEmergencyStatus inactive = IncomingPhoneNumberLocalEnumEmergencyStatus$inactive._();
 
 static const List<IncomingPhoneNumberLocalEnumEmergencyStatus> values = [active, inactive];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IncomingPhoneNumberLocalEnumEmergencyStatus$Unknown; } 
+@override String toString() => 'IncomingPhoneNumberLocalEnumEmergencyStatus($value)';
+
+ }
+@immutable final class IncomingPhoneNumberLocalEnumEmergencyStatus$active extends IncomingPhoneNumberLocalEnumEmergencyStatus {const IncomingPhoneNumberLocalEnumEmergencyStatus$active._();
+
+@override String get value => 'Active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncomingPhoneNumberLocalEnumEmergencyStatus$active;
+
+@override int get hashCode => 'Active'.hashCode;
+
+ }
+@immutable final class IncomingPhoneNumberLocalEnumEmergencyStatus$inactive extends IncomingPhoneNumberLocalEnumEmergencyStatus {const IncomingPhoneNumberLocalEnumEmergencyStatus$inactive._();
+
+@override String get value => 'Inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncomingPhoneNumberLocalEnumEmergencyStatus$inactive;
+
+@override int get hashCode => 'Inactive'.hashCode;
+
+ }
+@immutable final class IncomingPhoneNumberLocalEnumEmergencyStatus$Unknown extends IncomingPhoneNumberLocalEnumEmergencyStatus {const IncomingPhoneNumberLocalEnumEmergencyStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IncomingPhoneNumberLocalEnumEmergencyStatus && other.value == value;
+    other is IncomingPhoneNumberLocalEnumEmergencyStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IncomingPhoneNumberLocalEnumEmergencyStatus($value)';
 
  }

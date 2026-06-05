@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetBillingCreditBalanceSummaryFilter
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_summary_filter/applicability_scope.dart';@immutable final class GetBillingCreditBalanceSummaryFilterType {const GetBillingCreditBalanceSummaryFilterType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/get_billing_credit_balance_summary_filter/applicability_scope.dart';sealed class GetBillingCreditBalanceSummaryFilterType {const GetBillingCreditBalanceSummaryFilterType();
 
 factory GetBillingCreditBalanceSummaryFilterType.fromJson(String json) { return switch (json) {
   'applicability_scope' => applicabilityScope,
   'credit_grant' => creditGrant,
-  _ => GetBillingCreditBalanceSummaryFilterType._(json),
+  _ => GetBillingCreditBalanceSummaryFilterType$Unknown(json),
 }; }
 
-static const GetBillingCreditBalanceSummaryFilterType applicabilityScope = GetBillingCreditBalanceSummaryFilterType._('applicability_scope');
+static const GetBillingCreditBalanceSummaryFilterType applicabilityScope = GetBillingCreditBalanceSummaryFilterType$applicabilityScope._();
 
-static const GetBillingCreditBalanceSummaryFilterType creditGrant = GetBillingCreditBalanceSummaryFilterType._('credit_grant');
+static const GetBillingCreditBalanceSummaryFilterType creditGrant = GetBillingCreditBalanceSummaryFilterType$creditGrant._();
 
 static const List<GetBillingCreditBalanceSummaryFilterType> values = [applicabilityScope, creditGrant];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GetBillingCreditBalanceSummaryFilterType$Unknown; } 
+@override String toString() => 'GetBillingCreditBalanceSummaryFilterType($value)';
+
+ }
+@immutable final class GetBillingCreditBalanceSummaryFilterType$applicabilityScope extends GetBillingCreditBalanceSummaryFilterType {const GetBillingCreditBalanceSummaryFilterType$applicabilityScope._();
+
+@override String get value => 'applicability_scope';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetBillingCreditBalanceSummaryFilterType$applicabilityScope;
+
+@override int get hashCode => 'applicability_scope'.hashCode;
+
+ }
+@immutable final class GetBillingCreditBalanceSummaryFilterType$creditGrant extends GetBillingCreditBalanceSummaryFilterType {const GetBillingCreditBalanceSummaryFilterType$creditGrant._();
+
+@override String get value => 'credit_grant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetBillingCreditBalanceSummaryFilterType$creditGrant;
+
+@override int get hashCode => 'credit_grant'.hashCode;
+
+ }
+@immutable final class GetBillingCreditBalanceSummaryFilterType$Unknown extends GetBillingCreditBalanceSummaryFilterType {const GetBillingCreditBalanceSummaryFilterType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GetBillingCreditBalanceSummaryFilterType && other.value == value;
+    other is GetBillingCreditBalanceSummaryFilterType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GetBillingCreditBalanceSummaryFilterType($value)';
 
  }
 @immutable final class GetBillingCreditBalanceSummaryFilter {const GetBillingCreditBalanceSummaryFilter({required this.type, this.applicabilityScope, this.creditGrant, });

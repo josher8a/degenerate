@@ -2,22 +2,21 @@
 // Source: #/components/schemas/BankConnectionsResourceAccountNumberDetails
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of account number associated with the account.
-@immutable final class IdentifierType {const IdentifierType._(this.value);
+sealed class IdentifierType {const IdentifierType();
 
 factory IdentifierType.fromJson(String json) { return switch (json) {
   'account_number' => accountNumber,
   'tokenized_account_number' => tokenizedAccountNumber,
-  _ => IdentifierType._(json),
+  _ => IdentifierType$Unknown(json),
 }; }
 
-static const IdentifierType accountNumber = IdentifierType._('account_number');
+static const IdentifierType accountNumber = IdentifierType$accountNumber._();
 
-static const IdentifierType tokenizedAccountNumber = IdentifierType._('tokenized_account_number');
+static const IdentifierType tokenizedAccountNumber = IdentifierType$tokenizedAccountNumber._();
 
 static const List<IdentifierType> values = [accountNumber, tokenizedAccountNumber];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,32 +25,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IdentifierType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IdentifierType$Unknown; } 
 @override String toString() => 'IdentifierType($value)';
 
  }
+@immutable final class IdentifierType$accountNumber extends IdentifierType {const IdentifierType$accountNumber._();
+
+@override String get value => 'account_number';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IdentifierType$accountNumber;
+
+@override int get hashCode => 'account_number'.hashCode;
+
+ }
+@immutable final class IdentifierType$tokenizedAccountNumber extends IdentifierType {const IdentifierType$tokenizedAccountNumber._();
+
+@override String get value => 'tokenized_account_number';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IdentifierType$tokenizedAccountNumber;
+
+@override int get hashCode => 'tokenized_account_number'.hashCode;
+
+ }
+@immutable final class IdentifierType$Unknown extends IdentifierType {const IdentifierType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IdentifierType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Whether the account number is currently active and usable for transactions.
-@immutable final class BankConnectionsResourceAccountNumberDetailsStatus {const BankConnectionsResourceAccountNumberDetailsStatus._(this.value);
+sealed class BankConnectionsResourceAccountNumberDetailsStatus {const BankConnectionsResourceAccountNumberDetailsStatus();
 
 factory BankConnectionsResourceAccountNumberDetailsStatus.fromJson(String json) { return switch (json) {
   'deactivated' => deactivated,
   'transactable' => transactable,
-  _ => BankConnectionsResourceAccountNumberDetailsStatus._(json),
+  _ => BankConnectionsResourceAccountNumberDetailsStatus$Unknown(json),
 }; }
 
-static const BankConnectionsResourceAccountNumberDetailsStatus deactivated = BankConnectionsResourceAccountNumberDetailsStatus._('deactivated');
+static const BankConnectionsResourceAccountNumberDetailsStatus deactivated = BankConnectionsResourceAccountNumberDetailsStatus$deactivated._();
 
-static const BankConnectionsResourceAccountNumberDetailsStatus transactable = BankConnectionsResourceAccountNumberDetailsStatus._('transactable');
+static const BankConnectionsResourceAccountNumberDetailsStatus transactable = BankConnectionsResourceAccountNumberDetailsStatus$transactable._();
 
 static const List<BankConnectionsResourceAccountNumberDetailsStatus> values = [deactivated, transactable];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,28 +81,50 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is BankConnectionsResourceAccountNumberDetailsStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is BankConnectionsResourceAccountNumberDetailsStatus$Unknown; } 
 @override String toString() => 'BankConnectionsResourceAccountNumberDetailsStatus($value)';
 
  }
-@immutable final class BankConnectionsResourceAccountNumberDetailsSupportedNetworks {const BankConnectionsResourceAccountNumberDetailsSupportedNetworks._(this.value);
+@immutable final class BankConnectionsResourceAccountNumberDetailsStatus$deactivated extends BankConnectionsResourceAccountNumberDetailsStatus {const BankConnectionsResourceAccountNumberDetailsStatus$deactivated._();
+
+@override String get value => 'deactivated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BankConnectionsResourceAccountNumberDetailsStatus$deactivated;
+
+@override int get hashCode => 'deactivated'.hashCode;
+
+ }
+@immutable final class BankConnectionsResourceAccountNumberDetailsStatus$transactable extends BankConnectionsResourceAccountNumberDetailsStatus {const BankConnectionsResourceAccountNumberDetailsStatus$transactable._();
+
+@override String get value => 'transactable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BankConnectionsResourceAccountNumberDetailsStatus$transactable;
+
+@override int get hashCode => 'transactable'.hashCode;
+
+ }
+@immutable final class BankConnectionsResourceAccountNumberDetailsStatus$Unknown extends BankConnectionsResourceAccountNumberDetailsStatus {const BankConnectionsResourceAccountNumberDetailsStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is BankConnectionsResourceAccountNumberDetailsStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class BankConnectionsResourceAccountNumberDetailsSupportedNetworks {const BankConnectionsResourceAccountNumberDetailsSupportedNetworks();
 
 factory BankConnectionsResourceAccountNumberDetailsSupportedNetworks.fromJson(String json) { return switch (json) {
   'ach' => ach,
-  _ => BankConnectionsResourceAccountNumberDetailsSupportedNetworks._(json),
+  _ => BankConnectionsResourceAccountNumberDetailsSupportedNetworks$Unknown(json),
 }; }
 
-static const BankConnectionsResourceAccountNumberDetailsSupportedNetworks ach = BankConnectionsResourceAccountNumberDetailsSupportedNetworks._('ach');
+static const BankConnectionsResourceAccountNumberDetailsSupportedNetworks ach = BankConnectionsResourceAccountNumberDetailsSupportedNetworks$ach._();
 
 static const List<BankConnectionsResourceAccountNumberDetailsSupportedNetworks> values = [ach];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -89,13 +132,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BankConnectionsResourceAccountNumberDetailsSupportedNetworks$Unknown; } 
+@override String toString() => 'BankConnectionsResourceAccountNumberDetailsSupportedNetworks($value)';
+
+ }
+@immutable final class BankConnectionsResourceAccountNumberDetailsSupportedNetworks$ach extends BankConnectionsResourceAccountNumberDetailsSupportedNetworks {const BankConnectionsResourceAccountNumberDetailsSupportedNetworks$ach._();
+
+@override String get value => 'ach';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BankConnectionsResourceAccountNumberDetailsSupportedNetworks$ach;
+
+@override int get hashCode => 'ach'.hashCode;
+
+ }
+@immutable final class BankConnectionsResourceAccountNumberDetailsSupportedNetworks$Unknown extends BankConnectionsResourceAccountNumberDetailsSupportedNetworks {const BankConnectionsResourceAccountNumberDetailsSupportedNetworks$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BankConnectionsResourceAccountNumberDetailsSupportedNetworks && other.value == value;
+    other is BankConnectionsResourceAccountNumberDetailsSupportedNetworks$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BankConnectionsResourceAccountNumberDetailsSupportedNetworks($value)';
 
  }
 /// 

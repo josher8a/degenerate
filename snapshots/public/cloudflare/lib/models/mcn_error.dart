@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/McnError
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_error_meta.dart';import 'package:pub_cloudflare/models/mcn_error_source.dart';@immutable final class McnErrorCode {const McnErrorCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_error_meta.dart';import 'package:pub_cloudflare/models/mcn_error_source.dart';sealed class McnErrorCode {const McnErrorCode();
 
 factory McnErrorCode.fromJson(int json) { return switch (json) {
   1001 => $1001,
@@ -159,323 +159,322 @@ factory McnErrorCode.fromJson(int json) { return switch (json) {
   103006 => $103006,
   103007 => $103007,
   103008 => $103008,
-  _ => McnErrorCode._(json),
+  _ => McnErrorCode$Unknown(json),
 }; }
 
-static const McnErrorCode $1001 = McnErrorCode._(1001);
+static const McnErrorCode $1001 = McnErrorCode$$1001._();
 
-static const McnErrorCode $1002 = McnErrorCode._(1002);
+static const McnErrorCode $1002 = McnErrorCode$$1002._();
 
-static const McnErrorCode $1003 = McnErrorCode._(1003);
+static const McnErrorCode $1003 = McnErrorCode$$1003._();
 
-static const McnErrorCode $1004 = McnErrorCode._(1004);
+static const McnErrorCode $1004 = McnErrorCode$$1004._();
 
-static const McnErrorCode $1005 = McnErrorCode._(1005);
+static const McnErrorCode $1005 = McnErrorCode$$1005._();
 
-static const McnErrorCode $1006 = McnErrorCode._(1006);
+static const McnErrorCode $1006 = McnErrorCode$$1006._();
 
-static const McnErrorCode $1007 = McnErrorCode._(1007);
+static const McnErrorCode $1007 = McnErrorCode$$1007._();
 
-static const McnErrorCode $1008 = McnErrorCode._(1008);
+static const McnErrorCode $1008 = McnErrorCode$$1008._();
 
-static const McnErrorCode $1009 = McnErrorCode._(1009);
+static const McnErrorCode $1009 = McnErrorCode$$1009._();
 
-static const McnErrorCode $1010 = McnErrorCode._(1010);
+static const McnErrorCode $1010 = McnErrorCode$$1010._();
 
-static const McnErrorCode $1011 = McnErrorCode._(1011);
+static const McnErrorCode $1011 = McnErrorCode$$1011._();
 
-static const McnErrorCode $1012 = McnErrorCode._(1012);
+static const McnErrorCode $1012 = McnErrorCode$$1012._();
 
-static const McnErrorCode $1013 = McnErrorCode._(1013);
+static const McnErrorCode $1013 = McnErrorCode$$1013._();
 
-static const McnErrorCode $1014 = McnErrorCode._(1014);
+static const McnErrorCode $1014 = McnErrorCode$$1014._();
 
-static const McnErrorCode $1015 = McnErrorCode._(1015);
+static const McnErrorCode $1015 = McnErrorCode$$1015._();
 
-static const McnErrorCode $1016 = McnErrorCode._(1016);
+static const McnErrorCode $1016 = McnErrorCode$$1016._();
 
-static const McnErrorCode $1017 = McnErrorCode._(1017);
+static const McnErrorCode $1017 = McnErrorCode$$1017._();
 
-static const McnErrorCode $1018 = McnErrorCode._(1018);
+static const McnErrorCode $1018 = McnErrorCode$$1018._();
 
-static const McnErrorCode $2001 = McnErrorCode._(2001);
+static const McnErrorCode $2001 = McnErrorCode$$2001._();
 
-static const McnErrorCode $2002 = McnErrorCode._(2002);
+static const McnErrorCode $2002 = McnErrorCode$$2002._();
 
-static const McnErrorCode $2003 = McnErrorCode._(2003);
+static const McnErrorCode $2003 = McnErrorCode$$2003._();
 
-static const McnErrorCode $2004 = McnErrorCode._(2004);
+static const McnErrorCode $2004 = McnErrorCode$$2004._();
 
-static const McnErrorCode $2005 = McnErrorCode._(2005);
+static const McnErrorCode $2005 = McnErrorCode$$2005._();
 
-static const McnErrorCode $2006 = McnErrorCode._(2006);
+static const McnErrorCode $2006 = McnErrorCode$$2006._();
 
-static const McnErrorCode $2007 = McnErrorCode._(2007);
+static const McnErrorCode $2007 = McnErrorCode$$2007._();
 
-static const McnErrorCode $2008 = McnErrorCode._(2008);
+static const McnErrorCode $2008 = McnErrorCode$$2008._();
 
-static const McnErrorCode $2009 = McnErrorCode._(2009);
+static const McnErrorCode $2009 = McnErrorCode$$2009._();
 
-static const McnErrorCode $2010 = McnErrorCode._(2010);
+static const McnErrorCode $2010 = McnErrorCode$$2010._();
 
-static const McnErrorCode $2011 = McnErrorCode._(2011);
+static const McnErrorCode $2011 = McnErrorCode$$2011._();
 
-static const McnErrorCode $2012 = McnErrorCode._(2012);
+static const McnErrorCode $2012 = McnErrorCode$$2012._();
 
-static const McnErrorCode $2013 = McnErrorCode._(2013);
+static const McnErrorCode $2013 = McnErrorCode$$2013._();
 
-static const McnErrorCode $2014 = McnErrorCode._(2014);
+static const McnErrorCode $2014 = McnErrorCode$$2014._();
 
-static const McnErrorCode $2015 = McnErrorCode._(2015);
+static const McnErrorCode $2015 = McnErrorCode$$2015._();
 
-static const McnErrorCode $2016 = McnErrorCode._(2016);
+static const McnErrorCode $2016 = McnErrorCode$$2016._();
 
-static const McnErrorCode $2017 = McnErrorCode._(2017);
+static const McnErrorCode $2017 = McnErrorCode$$2017._();
 
-static const McnErrorCode $2018 = McnErrorCode._(2018);
+static const McnErrorCode $2018 = McnErrorCode$$2018._();
 
-static const McnErrorCode $2019 = McnErrorCode._(2019);
+static const McnErrorCode $2019 = McnErrorCode$$2019._();
 
-static const McnErrorCode $2020 = McnErrorCode._(2020);
+static const McnErrorCode $2020 = McnErrorCode$$2020._();
 
-static const McnErrorCode $2021 = McnErrorCode._(2021);
+static const McnErrorCode $2021 = McnErrorCode$$2021._();
 
-static const McnErrorCode $2022 = McnErrorCode._(2022);
+static const McnErrorCode $2022 = McnErrorCode$$2022._();
 
-static const McnErrorCode $3001 = McnErrorCode._(3001);
+static const McnErrorCode $3001 = McnErrorCode$$3001._();
 
-static const McnErrorCode $3002 = McnErrorCode._(3002);
+static const McnErrorCode $3002 = McnErrorCode$$3002._();
 
-static const McnErrorCode $3003 = McnErrorCode._(3003);
+static const McnErrorCode $3003 = McnErrorCode$$3003._();
 
-static const McnErrorCode $3004 = McnErrorCode._(3004);
+static const McnErrorCode $3004 = McnErrorCode$$3004._();
 
-static const McnErrorCode $3005 = McnErrorCode._(3005);
+static const McnErrorCode $3005 = McnErrorCode$$3005._();
 
-static const McnErrorCode $3006 = McnErrorCode._(3006);
+static const McnErrorCode $3006 = McnErrorCode$$3006._();
 
-static const McnErrorCode $3007 = McnErrorCode._(3007);
+static const McnErrorCode $3007 = McnErrorCode$$3007._();
 
-static const McnErrorCode $4001 = McnErrorCode._(4001);
+static const McnErrorCode $4001 = McnErrorCode$$4001._();
 
-static const McnErrorCode $4002 = McnErrorCode._(4002);
+static const McnErrorCode $4002 = McnErrorCode$$4002._();
 
-static const McnErrorCode $4003 = McnErrorCode._(4003);
+static const McnErrorCode $4003 = McnErrorCode$$4003._();
 
-static const McnErrorCode $4004 = McnErrorCode._(4004);
+static const McnErrorCode $4004 = McnErrorCode$$4004._();
 
-static const McnErrorCode $4005 = McnErrorCode._(4005);
+static const McnErrorCode $4005 = McnErrorCode$$4005._();
 
-static const McnErrorCode $4006 = McnErrorCode._(4006);
+static const McnErrorCode $4006 = McnErrorCode$$4006._();
 
-static const McnErrorCode $4007 = McnErrorCode._(4007);
+static const McnErrorCode $4007 = McnErrorCode$$4007._();
 
-static const McnErrorCode $4008 = McnErrorCode._(4008);
+static const McnErrorCode $4008 = McnErrorCode$$4008._();
 
-static const McnErrorCode $4009 = McnErrorCode._(4009);
+static const McnErrorCode $4009 = McnErrorCode$$4009._();
 
-static const McnErrorCode $4010 = McnErrorCode._(4010);
+static const McnErrorCode $4010 = McnErrorCode$$4010._();
 
-static const McnErrorCode $4011 = McnErrorCode._(4011);
+static const McnErrorCode $4011 = McnErrorCode$$4011._();
 
-static const McnErrorCode $4012 = McnErrorCode._(4012);
+static const McnErrorCode $4012 = McnErrorCode$$4012._();
 
-static const McnErrorCode $4013 = McnErrorCode._(4013);
+static const McnErrorCode $4013 = McnErrorCode$$4013._();
 
-static const McnErrorCode $4014 = McnErrorCode._(4014);
+static const McnErrorCode $4014 = McnErrorCode$$4014._();
 
-static const McnErrorCode $4015 = McnErrorCode._(4015);
+static const McnErrorCode $4015 = McnErrorCode$$4015._();
 
-static const McnErrorCode $4016 = McnErrorCode._(4016);
+static const McnErrorCode $4016 = McnErrorCode$$4016._();
 
-static const McnErrorCode $4017 = McnErrorCode._(4017);
+static const McnErrorCode $4017 = McnErrorCode$$4017._();
 
-static const McnErrorCode $4018 = McnErrorCode._(4018);
+static const McnErrorCode $4018 = McnErrorCode$$4018._();
 
-static const McnErrorCode $4019 = McnErrorCode._(4019);
+static const McnErrorCode $4019 = McnErrorCode$$4019._();
 
-static const McnErrorCode $4020 = McnErrorCode._(4020);
+static const McnErrorCode $4020 = McnErrorCode$$4020._();
 
-static const McnErrorCode $4021 = McnErrorCode._(4021);
+static const McnErrorCode $4021 = McnErrorCode$$4021._();
 
-static const McnErrorCode $4022 = McnErrorCode._(4022);
+static const McnErrorCode $4022 = McnErrorCode$$4022._();
 
-static const McnErrorCode $4023 = McnErrorCode._(4023);
+static const McnErrorCode $4023 = McnErrorCode$$4023._();
 
-static const McnErrorCode $5001 = McnErrorCode._(5001);
+static const McnErrorCode $5001 = McnErrorCode$$5001._();
 
-static const McnErrorCode $5002 = McnErrorCode._(5002);
+static const McnErrorCode $5002 = McnErrorCode$$5002._();
 
-static const McnErrorCode $5003 = McnErrorCode._(5003);
+static const McnErrorCode $5003 = McnErrorCode$$5003._();
 
-static const McnErrorCode $5004 = McnErrorCode._(5004);
+static const McnErrorCode $5004 = McnErrorCode$$5004._();
 
-static const McnErrorCode $102000 = McnErrorCode._(102000);
+static const McnErrorCode $102000 = McnErrorCode$$102000._();
 
-static const McnErrorCode $102001 = McnErrorCode._(102001);
+static const McnErrorCode $102001 = McnErrorCode$$102001._();
 
-static const McnErrorCode $102002 = McnErrorCode._(102002);
+static const McnErrorCode $102002 = McnErrorCode$$102002._();
 
-static const McnErrorCode $102003 = McnErrorCode._(102003);
+static const McnErrorCode $102003 = McnErrorCode$$102003._();
 
-static const McnErrorCode $102004 = McnErrorCode._(102004);
+static const McnErrorCode $102004 = McnErrorCode$$102004._();
 
-static const McnErrorCode $102005 = McnErrorCode._(102005);
+static const McnErrorCode $102005 = McnErrorCode$$102005._();
 
-static const McnErrorCode $102006 = McnErrorCode._(102006);
+static const McnErrorCode $102006 = McnErrorCode$$102006._();
 
-static const McnErrorCode $102007 = McnErrorCode._(102007);
+static const McnErrorCode $102007 = McnErrorCode$$102007._();
 
-static const McnErrorCode $102008 = McnErrorCode._(102008);
+static const McnErrorCode $102008 = McnErrorCode$$102008._();
 
-static const McnErrorCode $102009 = McnErrorCode._(102009);
+static const McnErrorCode $102009 = McnErrorCode$$102009._();
 
-static const McnErrorCode $102010 = McnErrorCode._(102010);
+static const McnErrorCode $102010 = McnErrorCode$$102010._();
 
-static const McnErrorCode $102011 = McnErrorCode._(102011);
+static const McnErrorCode $102011 = McnErrorCode$$102011._();
 
-static const McnErrorCode $102012 = McnErrorCode._(102012);
+static const McnErrorCode $102012 = McnErrorCode$$102012._();
 
-static const McnErrorCode $102013 = McnErrorCode._(102013);
+static const McnErrorCode $102013 = McnErrorCode$$102013._();
 
-static const McnErrorCode $102014 = McnErrorCode._(102014);
+static const McnErrorCode $102014 = McnErrorCode$$102014._();
 
-static const McnErrorCode $102015 = McnErrorCode._(102015);
+static const McnErrorCode $102015 = McnErrorCode$$102015._();
 
-static const McnErrorCode $102016 = McnErrorCode._(102016);
+static const McnErrorCode $102016 = McnErrorCode$$102016._();
 
-static const McnErrorCode $102017 = McnErrorCode._(102017);
+static const McnErrorCode $102017 = McnErrorCode$$102017._();
 
-static const McnErrorCode $102018 = McnErrorCode._(102018);
+static const McnErrorCode $102018 = McnErrorCode$$102018._();
 
-static const McnErrorCode $102019 = McnErrorCode._(102019);
+static const McnErrorCode $102019 = McnErrorCode$$102019._();
 
-static const McnErrorCode $102020 = McnErrorCode._(102020);
+static const McnErrorCode $102020 = McnErrorCode$$102020._();
 
-static const McnErrorCode $102021 = McnErrorCode._(102021);
+static const McnErrorCode $102021 = McnErrorCode$$102021._();
 
-static const McnErrorCode $102022 = McnErrorCode._(102022);
+static const McnErrorCode $102022 = McnErrorCode$$102022._();
 
-static const McnErrorCode $102023 = McnErrorCode._(102023);
+static const McnErrorCode $102023 = McnErrorCode$$102023._();
 
-static const McnErrorCode $102024 = McnErrorCode._(102024);
+static const McnErrorCode $102024 = McnErrorCode$$102024._();
 
-static const McnErrorCode $102025 = McnErrorCode._(102025);
+static const McnErrorCode $102025 = McnErrorCode$$102025._();
 
-static const McnErrorCode $102026 = McnErrorCode._(102026);
+static const McnErrorCode $102026 = McnErrorCode$$102026._();
 
-static const McnErrorCode $102027 = McnErrorCode._(102027);
+static const McnErrorCode $102027 = McnErrorCode$$102027._();
 
-static const McnErrorCode $102028 = McnErrorCode._(102028);
+static const McnErrorCode $102028 = McnErrorCode$$102028._();
 
-static const McnErrorCode $102029 = McnErrorCode._(102029);
+static const McnErrorCode $102029 = McnErrorCode$$102029._();
 
-static const McnErrorCode $102030 = McnErrorCode._(102030);
+static const McnErrorCode $102030 = McnErrorCode$$102030._();
 
-static const McnErrorCode $102031 = McnErrorCode._(102031);
+static const McnErrorCode $102031 = McnErrorCode$$102031._();
 
-static const McnErrorCode $102032 = McnErrorCode._(102032);
+static const McnErrorCode $102032 = McnErrorCode$$102032._();
 
-static const McnErrorCode $102033 = McnErrorCode._(102033);
+static const McnErrorCode $102033 = McnErrorCode$$102033._();
 
-static const McnErrorCode $102034 = McnErrorCode._(102034);
+static const McnErrorCode $102034 = McnErrorCode$$102034._();
 
-static const McnErrorCode $102035 = McnErrorCode._(102035);
+static const McnErrorCode $102035 = McnErrorCode$$102035._();
 
-static const McnErrorCode $102036 = McnErrorCode._(102036);
+static const McnErrorCode $102036 = McnErrorCode$$102036._();
 
-static const McnErrorCode $102037 = McnErrorCode._(102037);
+static const McnErrorCode $102037 = McnErrorCode$$102037._();
 
-static const McnErrorCode $102038 = McnErrorCode._(102038);
+static const McnErrorCode $102038 = McnErrorCode$$102038._();
 
-static const McnErrorCode $102039 = McnErrorCode._(102039);
+static const McnErrorCode $102039 = McnErrorCode$$102039._();
 
-static const McnErrorCode $102040 = McnErrorCode._(102040);
+static const McnErrorCode $102040 = McnErrorCode$$102040._();
 
-static const McnErrorCode $102041 = McnErrorCode._(102041);
+static const McnErrorCode $102041 = McnErrorCode$$102041._();
 
-static const McnErrorCode $102042 = McnErrorCode._(102042);
+static const McnErrorCode $102042 = McnErrorCode$$102042._();
 
-static const McnErrorCode $102043 = McnErrorCode._(102043);
+static const McnErrorCode $102043 = McnErrorCode$$102043._();
 
-static const McnErrorCode $102044 = McnErrorCode._(102044);
+static const McnErrorCode $102044 = McnErrorCode$$102044._();
 
-static const McnErrorCode $102045 = McnErrorCode._(102045);
+static const McnErrorCode $102045 = McnErrorCode$$102045._();
 
-static const McnErrorCode $102046 = McnErrorCode._(102046);
+static const McnErrorCode $102046 = McnErrorCode$$102046._();
 
-static const McnErrorCode $102047 = McnErrorCode._(102047);
+static const McnErrorCode $102047 = McnErrorCode$$102047._();
 
-static const McnErrorCode $102048 = McnErrorCode._(102048);
+static const McnErrorCode $102048 = McnErrorCode$$102048._();
 
-static const McnErrorCode $102049 = McnErrorCode._(102049);
+static const McnErrorCode $102049 = McnErrorCode$$102049._();
 
-static const McnErrorCode $102050 = McnErrorCode._(102050);
+static const McnErrorCode $102050 = McnErrorCode$$102050._();
 
-static const McnErrorCode $102051 = McnErrorCode._(102051);
+static const McnErrorCode $102051 = McnErrorCode$$102051._();
 
-static const McnErrorCode $102052 = McnErrorCode._(102052);
+static const McnErrorCode $102052 = McnErrorCode$$102052._();
 
-static const McnErrorCode $102053 = McnErrorCode._(102053);
+static const McnErrorCode $102053 = McnErrorCode$$102053._();
 
-static const McnErrorCode $102054 = McnErrorCode._(102054);
+static const McnErrorCode $102054 = McnErrorCode$$102054._();
 
-static const McnErrorCode $102055 = McnErrorCode._(102055);
+static const McnErrorCode $102055 = McnErrorCode$$102055._();
 
-static const McnErrorCode $102056 = McnErrorCode._(102056);
+static const McnErrorCode $102056 = McnErrorCode$$102056._();
 
-static const McnErrorCode $102057 = McnErrorCode._(102057);
+static const McnErrorCode $102057 = McnErrorCode$$102057._();
 
-static const McnErrorCode $102058 = McnErrorCode._(102058);
+static const McnErrorCode $102058 = McnErrorCode$$102058._();
 
-static const McnErrorCode $102059 = McnErrorCode._(102059);
+static const McnErrorCode $102059 = McnErrorCode$$102059._();
 
-static const McnErrorCode $102060 = McnErrorCode._(102060);
+static const McnErrorCode $102060 = McnErrorCode$$102060._();
 
-static const McnErrorCode $102061 = McnErrorCode._(102061);
+static const McnErrorCode $102061 = McnErrorCode$$102061._();
 
-static const McnErrorCode $102062 = McnErrorCode._(102062);
+static const McnErrorCode $102062 = McnErrorCode$$102062._();
 
-static const McnErrorCode $102063 = McnErrorCode._(102063);
+static const McnErrorCode $102063 = McnErrorCode$$102063._();
 
-static const McnErrorCode $102064 = McnErrorCode._(102064);
+static const McnErrorCode $102064 = McnErrorCode$$102064._();
 
-static const McnErrorCode $102065 = McnErrorCode._(102065);
+static const McnErrorCode $102065 = McnErrorCode$$102065._();
 
-static const McnErrorCode $102066 = McnErrorCode._(102066);
+static const McnErrorCode $102066 = McnErrorCode$$102066._();
 
-static const McnErrorCode $102067 = McnErrorCode._(102067);
+static const McnErrorCode $102067 = McnErrorCode$$102067._();
 
-static const McnErrorCode $102068 = McnErrorCode._(102068);
+static const McnErrorCode $102068 = McnErrorCode$$102068._();
 
-static const McnErrorCode $102069 = McnErrorCode._(102069);
+static const McnErrorCode $102069 = McnErrorCode$$102069._();
 
-static const McnErrorCode $102070 = McnErrorCode._(102070);
+static const McnErrorCode $102070 = McnErrorCode$$102070._();
 
-static const McnErrorCode $102071 = McnErrorCode._(102071);
+static const McnErrorCode $102071 = McnErrorCode$$102071._();
 
-static const McnErrorCode $102072 = McnErrorCode._(102072);
+static const McnErrorCode $102072 = McnErrorCode$$102072._();
 
-static const McnErrorCode $103001 = McnErrorCode._(103001);
+static const McnErrorCode $103001 = McnErrorCode$$103001._();
 
-static const McnErrorCode $103002 = McnErrorCode._(103002);
+static const McnErrorCode $103002 = McnErrorCode$$103002._();
 
-static const McnErrorCode $103003 = McnErrorCode._(103003);
+static const McnErrorCode $103003 = McnErrorCode$$103003._();
 
-static const McnErrorCode $103004 = McnErrorCode._(103004);
+static const McnErrorCode $103004 = McnErrorCode$$103004._();
 
-static const McnErrorCode $103005 = McnErrorCode._(103005);
+static const McnErrorCode $103005 = McnErrorCode$$103005._();
 
-static const McnErrorCode $103006 = McnErrorCode._(103006);
+static const McnErrorCode $103006 = McnErrorCode$$103006._();
 
-static const McnErrorCode $103007 = McnErrorCode._(103007);
+static const McnErrorCode $103007 = McnErrorCode$$103007._();
 
-static const McnErrorCode $103008 = McnErrorCode._(103008);
+static const McnErrorCode $103008 = McnErrorCode$$103008._();
 
 static const List<McnErrorCode> values = [$1001, $1002, $1003, $1004, $1005, $1006, $1007, $1008, $1009, $1010, $1011, $1012, $1013, $1014, $1015, $1016, $1017, $1018, $2001, $2002, $2003, $2004, $2005, $2006, $2007, $2008, $2009, $2010, $2011, $2012, $2013, $2014, $2015, $2016, $2017, $2018, $2019, $2020, $2021, $2022, $3001, $3002, $3003, $3004, $3005, $3006, $3007, $4001, $4002, $4003, $4004, $4005, $4006, $4007, $4008, $4009, $4010, $4011, $4012, $4013, $4014, $4015, $4016, $4017, $4018, $4019, $4020, $4021, $4022, $4023, $5001, $5002, $5003, $5004, $102000, $102001, $102002, $102003, $102004, $102005, $102006, $102007, $102008, $102009, $102010, $102011, $102012, $102013, $102014, $102015, $102016, $102017, $102018, $102019, $102020, $102021, $102022, $102023, $102024, $102025, $102026, $102027, $102028, $102029, $102030, $102031, $102032, $102033, $102034, $102035, $102036, $102037, $102038, $102039, $102040, $102041, $102042, $102043, $102044, $102045, $102046, $102047, $102048, $102049, $102050, $102051, $102052, $102053, $102054, $102055, $102056, $102057, $102058, $102059, $102060, $102061, $102062, $102063, $102064, $102065, $102066, $102067, $102068, $102069, $102070, $102071, $102072, $103001, $103002, $103003, $103004, $103005, $103006, $103007, $103008];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -637,13 +636,1413 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is McnErrorCode$Unknown; } 
+@override String toString() => 'McnErrorCode($value)';
+
+ }
+@immutable final class McnErrorCode$$1001 extends McnErrorCode {const McnErrorCode$$1001._();
+
+@override int get value => 1001;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1001;
+
+@override int get hashCode => 1001.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1002 extends McnErrorCode {const McnErrorCode$$1002._();
+
+@override int get value => 1002;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1002;
+
+@override int get hashCode => 1002.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1003 extends McnErrorCode {const McnErrorCode$$1003._();
+
+@override int get value => 1003;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1003;
+
+@override int get hashCode => 1003.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1004 extends McnErrorCode {const McnErrorCode$$1004._();
+
+@override int get value => 1004;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1004;
+
+@override int get hashCode => 1004.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1005 extends McnErrorCode {const McnErrorCode$$1005._();
+
+@override int get value => 1005;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1005;
+
+@override int get hashCode => 1005.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1006 extends McnErrorCode {const McnErrorCode$$1006._();
+
+@override int get value => 1006;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1006;
+
+@override int get hashCode => 1006.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1007 extends McnErrorCode {const McnErrorCode$$1007._();
+
+@override int get value => 1007;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1007;
+
+@override int get hashCode => 1007.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1008 extends McnErrorCode {const McnErrorCode$$1008._();
+
+@override int get value => 1008;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1008;
+
+@override int get hashCode => 1008.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1009 extends McnErrorCode {const McnErrorCode$$1009._();
+
+@override int get value => 1009;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1009;
+
+@override int get hashCode => 1009.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1010 extends McnErrorCode {const McnErrorCode$$1010._();
+
+@override int get value => 1010;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1010;
+
+@override int get hashCode => 1010.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1011 extends McnErrorCode {const McnErrorCode$$1011._();
+
+@override int get value => 1011;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1011;
+
+@override int get hashCode => 1011.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1012 extends McnErrorCode {const McnErrorCode$$1012._();
+
+@override int get value => 1012;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1012;
+
+@override int get hashCode => 1012.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1013 extends McnErrorCode {const McnErrorCode$$1013._();
+
+@override int get value => 1013;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1013;
+
+@override int get hashCode => 1013.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1014 extends McnErrorCode {const McnErrorCode$$1014._();
+
+@override int get value => 1014;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1014;
+
+@override int get hashCode => 1014.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1015 extends McnErrorCode {const McnErrorCode$$1015._();
+
+@override int get value => 1015;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1015;
+
+@override int get hashCode => 1015.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1016 extends McnErrorCode {const McnErrorCode$$1016._();
+
+@override int get value => 1016;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1016;
+
+@override int get hashCode => 1016.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1017 extends McnErrorCode {const McnErrorCode$$1017._();
+
+@override int get value => 1017;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1017;
+
+@override int get hashCode => 1017.hashCode;
+
+ }
+@immutable final class McnErrorCode$$1018 extends McnErrorCode {const McnErrorCode$$1018._();
+
+@override int get value => 1018;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$1018;
+
+@override int get hashCode => 1018.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2001 extends McnErrorCode {const McnErrorCode$$2001._();
+
+@override int get value => 2001;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2001;
+
+@override int get hashCode => 2001.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2002 extends McnErrorCode {const McnErrorCode$$2002._();
+
+@override int get value => 2002;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2002;
+
+@override int get hashCode => 2002.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2003 extends McnErrorCode {const McnErrorCode$$2003._();
+
+@override int get value => 2003;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2003;
+
+@override int get hashCode => 2003.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2004 extends McnErrorCode {const McnErrorCode$$2004._();
+
+@override int get value => 2004;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2004;
+
+@override int get hashCode => 2004.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2005 extends McnErrorCode {const McnErrorCode$$2005._();
+
+@override int get value => 2005;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2005;
+
+@override int get hashCode => 2005.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2006 extends McnErrorCode {const McnErrorCode$$2006._();
+
+@override int get value => 2006;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2006;
+
+@override int get hashCode => 2006.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2007 extends McnErrorCode {const McnErrorCode$$2007._();
+
+@override int get value => 2007;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2007;
+
+@override int get hashCode => 2007.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2008 extends McnErrorCode {const McnErrorCode$$2008._();
+
+@override int get value => 2008;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2008;
+
+@override int get hashCode => 2008.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2009 extends McnErrorCode {const McnErrorCode$$2009._();
+
+@override int get value => 2009;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2009;
+
+@override int get hashCode => 2009.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2010 extends McnErrorCode {const McnErrorCode$$2010._();
+
+@override int get value => 2010;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2010;
+
+@override int get hashCode => 2010.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2011 extends McnErrorCode {const McnErrorCode$$2011._();
+
+@override int get value => 2011;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2011;
+
+@override int get hashCode => 2011.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2012 extends McnErrorCode {const McnErrorCode$$2012._();
+
+@override int get value => 2012;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2012;
+
+@override int get hashCode => 2012.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2013 extends McnErrorCode {const McnErrorCode$$2013._();
+
+@override int get value => 2013;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2013;
+
+@override int get hashCode => 2013.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2014 extends McnErrorCode {const McnErrorCode$$2014._();
+
+@override int get value => 2014;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2014;
+
+@override int get hashCode => 2014.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2015 extends McnErrorCode {const McnErrorCode$$2015._();
+
+@override int get value => 2015;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2015;
+
+@override int get hashCode => 2015.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2016 extends McnErrorCode {const McnErrorCode$$2016._();
+
+@override int get value => 2016;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2016;
+
+@override int get hashCode => 2016.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2017 extends McnErrorCode {const McnErrorCode$$2017._();
+
+@override int get value => 2017;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2017;
+
+@override int get hashCode => 2017.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2018 extends McnErrorCode {const McnErrorCode$$2018._();
+
+@override int get value => 2018;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2018;
+
+@override int get hashCode => 2018.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2019 extends McnErrorCode {const McnErrorCode$$2019._();
+
+@override int get value => 2019;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2019;
+
+@override int get hashCode => 2019.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2020 extends McnErrorCode {const McnErrorCode$$2020._();
+
+@override int get value => 2020;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2020;
+
+@override int get hashCode => 2020.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2021 extends McnErrorCode {const McnErrorCode$$2021._();
+
+@override int get value => 2021;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2021;
+
+@override int get hashCode => 2021.hashCode;
+
+ }
+@immutable final class McnErrorCode$$2022 extends McnErrorCode {const McnErrorCode$$2022._();
+
+@override int get value => 2022;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$2022;
+
+@override int get hashCode => 2022.hashCode;
+
+ }
+@immutable final class McnErrorCode$$3001 extends McnErrorCode {const McnErrorCode$$3001._();
+
+@override int get value => 3001;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$3001;
+
+@override int get hashCode => 3001.hashCode;
+
+ }
+@immutable final class McnErrorCode$$3002 extends McnErrorCode {const McnErrorCode$$3002._();
+
+@override int get value => 3002;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$3002;
+
+@override int get hashCode => 3002.hashCode;
+
+ }
+@immutable final class McnErrorCode$$3003 extends McnErrorCode {const McnErrorCode$$3003._();
+
+@override int get value => 3003;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$3003;
+
+@override int get hashCode => 3003.hashCode;
+
+ }
+@immutable final class McnErrorCode$$3004 extends McnErrorCode {const McnErrorCode$$3004._();
+
+@override int get value => 3004;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$3004;
+
+@override int get hashCode => 3004.hashCode;
+
+ }
+@immutable final class McnErrorCode$$3005 extends McnErrorCode {const McnErrorCode$$3005._();
+
+@override int get value => 3005;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$3005;
+
+@override int get hashCode => 3005.hashCode;
+
+ }
+@immutable final class McnErrorCode$$3006 extends McnErrorCode {const McnErrorCode$$3006._();
+
+@override int get value => 3006;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$3006;
+
+@override int get hashCode => 3006.hashCode;
+
+ }
+@immutable final class McnErrorCode$$3007 extends McnErrorCode {const McnErrorCode$$3007._();
+
+@override int get value => 3007;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$3007;
+
+@override int get hashCode => 3007.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4001 extends McnErrorCode {const McnErrorCode$$4001._();
+
+@override int get value => 4001;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4001;
+
+@override int get hashCode => 4001.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4002 extends McnErrorCode {const McnErrorCode$$4002._();
+
+@override int get value => 4002;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4002;
+
+@override int get hashCode => 4002.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4003 extends McnErrorCode {const McnErrorCode$$4003._();
+
+@override int get value => 4003;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4003;
+
+@override int get hashCode => 4003.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4004 extends McnErrorCode {const McnErrorCode$$4004._();
+
+@override int get value => 4004;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4004;
+
+@override int get hashCode => 4004.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4005 extends McnErrorCode {const McnErrorCode$$4005._();
+
+@override int get value => 4005;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4005;
+
+@override int get hashCode => 4005.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4006 extends McnErrorCode {const McnErrorCode$$4006._();
+
+@override int get value => 4006;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4006;
+
+@override int get hashCode => 4006.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4007 extends McnErrorCode {const McnErrorCode$$4007._();
+
+@override int get value => 4007;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4007;
+
+@override int get hashCode => 4007.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4008 extends McnErrorCode {const McnErrorCode$$4008._();
+
+@override int get value => 4008;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4008;
+
+@override int get hashCode => 4008.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4009 extends McnErrorCode {const McnErrorCode$$4009._();
+
+@override int get value => 4009;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4009;
+
+@override int get hashCode => 4009.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4010 extends McnErrorCode {const McnErrorCode$$4010._();
+
+@override int get value => 4010;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4010;
+
+@override int get hashCode => 4010.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4011 extends McnErrorCode {const McnErrorCode$$4011._();
+
+@override int get value => 4011;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4011;
+
+@override int get hashCode => 4011.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4012 extends McnErrorCode {const McnErrorCode$$4012._();
+
+@override int get value => 4012;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4012;
+
+@override int get hashCode => 4012.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4013 extends McnErrorCode {const McnErrorCode$$4013._();
+
+@override int get value => 4013;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4013;
+
+@override int get hashCode => 4013.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4014 extends McnErrorCode {const McnErrorCode$$4014._();
+
+@override int get value => 4014;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4014;
+
+@override int get hashCode => 4014.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4015 extends McnErrorCode {const McnErrorCode$$4015._();
+
+@override int get value => 4015;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4015;
+
+@override int get hashCode => 4015.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4016 extends McnErrorCode {const McnErrorCode$$4016._();
+
+@override int get value => 4016;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4016;
+
+@override int get hashCode => 4016.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4017 extends McnErrorCode {const McnErrorCode$$4017._();
+
+@override int get value => 4017;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4017;
+
+@override int get hashCode => 4017.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4018 extends McnErrorCode {const McnErrorCode$$4018._();
+
+@override int get value => 4018;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4018;
+
+@override int get hashCode => 4018.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4019 extends McnErrorCode {const McnErrorCode$$4019._();
+
+@override int get value => 4019;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4019;
+
+@override int get hashCode => 4019.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4020 extends McnErrorCode {const McnErrorCode$$4020._();
+
+@override int get value => 4020;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4020;
+
+@override int get hashCode => 4020.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4021 extends McnErrorCode {const McnErrorCode$$4021._();
+
+@override int get value => 4021;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4021;
+
+@override int get hashCode => 4021.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4022 extends McnErrorCode {const McnErrorCode$$4022._();
+
+@override int get value => 4022;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4022;
+
+@override int get hashCode => 4022.hashCode;
+
+ }
+@immutable final class McnErrorCode$$4023 extends McnErrorCode {const McnErrorCode$$4023._();
+
+@override int get value => 4023;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$4023;
+
+@override int get hashCode => 4023.hashCode;
+
+ }
+@immutable final class McnErrorCode$$5001 extends McnErrorCode {const McnErrorCode$$5001._();
+
+@override int get value => 5001;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$5001;
+
+@override int get hashCode => 5001.hashCode;
+
+ }
+@immutable final class McnErrorCode$$5002 extends McnErrorCode {const McnErrorCode$$5002._();
+
+@override int get value => 5002;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$5002;
+
+@override int get hashCode => 5002.hashCode;
+
+ }
+@immutable final class McnErrorCode$$5003 extends McnErrorCode {const McnErrorCode$$5003._();
+
+@override int get value => 5003;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$5003;
+
+@override int get hashCode => 5003.hashCode;
+
+ }
+@immutable final class McnErrorCode$$5004 extends McnErrorCode {const McnErrorCode$$5004._();
+
+@override int get value => 5004;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$5004;
+
+@override int get hashCode => 5004.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102000 extends McnErrorCode {const McnErrorCode$$102000._();
+
+@override int get value => 102000;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102000;
+
+@override int get hashCode => 102000.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102001 extends McnErrorCode {const McnErrorCode$$102001._();
+
+@override int get value => 102001;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102001;
+
+@override int get hashCode => 102001.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102002 extends McnErrorCode {const McnErrorCode$$102002._();
+
+@override int get value => 102002;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102002;
+
+@override int get hashCode => 102002.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102003 extends McnErrorCode {const McnErrorCode$$102003._();
+
+@override int get value => 102003;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102003;
+
+@override int get hashCode => 102003.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102004 extends McnErrorCode {const McnErrorCode$$102004._();
+
+@override int get value => 102004;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102004;
+
+@override int get hashCode => 102004.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102005 extends McnErrorCode {const McnErrorCode$$102005._();
+
+@override int get value => 102005;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102005;
+
+@override int get hashCode => 102005.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102006 extends McnErrorCode {const McnErrorCode$$102006._();
+
+@override int get value => 102006;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102006;
+
+@override int get hashCode => 102006.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102007 extends McnErrorCode {const McnErrorCode$$102007._();
+
+@override int get value => 102007;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102007;
+
+@override int get hashCode => 102007.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102008 extends McnErrorCode {const McnErrorCode$$102008._();
+
+@override int get value => 102008;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102008;
+
+@override int get hashCode => 102008.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102009 extends McnErrorCode {const McnErrorCode$$102009._();
+
+@override int get value => 102009;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102009;
+
+@override int get hashCode => 102009.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102010 extends McnErrorCode {const McnErrorCode$$102010._();
+
+@override int get value => 102010;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102010;
+
+@override int get hashCode => 102010.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102011 extends McnErrorCode {const McnErrorCode$$102011._();
+
+@override int get value => 102011;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102011;
+
+@override int get hashCode => 102011.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102012 extends McnErrorCode {const McnErrorCode$$102012._();
+
+@override int get value => 102012;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102012;
+
+@override int get hashCode => 102012.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102013 extends McnErrorCode {const McnErrorCode$$102013._();
+
+@override int get value => 102013;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102013;
+
+@override int get hashCode => 102013.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102014 extends McnErrorCode {const McnErrorCode$$102014._();
+
+@override int get value => 102014;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102014;
+
+@override int get hashCode => 102014.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102015 extends McnErrorCode {const McnErrorCode$$102015._();
+
+@override int get value => 102015;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102015;
+
+@override int get hashCode => 102015.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102016 extends McnErrorCode {const McnErrorCode$$102016._();
+
+@override int get value => 102016;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102016;
+
+@override int get hashCode => 102016.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102017 extends McnErrorCode {const McnErrorCode$$102017._();
+
+@override int get value => 102017;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102017;
+
+@override int get hashCode => 102017.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102018 extends McnErrorCode {const McnErrorCode$$102018._();
+
+@override int get value => 102018;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102018;
+
+@override int get hashCode => 102018.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102019 extends McnErrorCode {const McnErrorCode$$102019._();
+
+@override int get value => 102019;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102019;
+
+@override int get hashCode => 102019.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102020 extends McnErrorCode {const McnErrorCode$$102020._();
+
+@override int get value => 102020;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102020;
+
+@override int get hashCode => 102020.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102021 extends McnErrorCode {const McnErrorCode$$102021._();
+
+@override int get value => 102021;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102021;
+
+@override int get hashCode => 102021.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102022 extends McnErrorCode {const McnErrorCode$$102022._();
+
+@override int get value => 102022;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102022;
+
+@override int get hashCode => 102022.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102023 extends McnErrorCode {const McnErrorCode$$102023._();
+
+@override int get value => 102023;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102023;
+
+@override int get hashCode => 102023.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102024 extends McnErrorCode {const McnErrorCode$$102024._();
+
+@override int get value => 102024;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102024;
+
+@override int get hashCode => 102024.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102025 extends McnErrorCode {const McnErrorCode$$102025._();
+
+@override int get value => 102025;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102025;
+
+@override int get hashCode => 102025.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102026 extends McnErrorCode {const McnErrorCode$$102026._();
+
+@override int get value => 102026;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102026;
+
+@override int get hashCode => 102026.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102027 extends McnErrorCode {const McnErrorCode$$102027._();
+
+@override int get value => 102027;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102027;
+
+@override int get hashCode => 102027.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102028 extends McnErrorCode {const McnErrorCode$$102028._();
+
+@override int get value => 102028;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102028;
+
+@override int get hashCode => 102028.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102029 extends McnErrorCode {const McnErrorCode$$102029._();
+
+@override int get value => 102029;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102029;
+
+@override int get hashCode => 102029.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102030 extends McnErrorCode {const McnErrorCode$$102030._();
+
+@override int get value => 102030;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102030;
+
+@override int get hashCode => 102030.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102031 extends McnErrorCode {const McnErrorCode$$102031._();
+
+@override int get value => 102031;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102031;
+
+@override int get hashCode => 102031.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102032 extends McnErrorCode {const McnErrorCode$$102032._();
+
+@override int get value => 102032;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102032;
+
+@override int get hashCode => 102032.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102033 extends McnErrorCode {const McnErrorCode$$102033._();
+
+@override int get value => 102033;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102033;
+
+@override int get hashCode => 102033.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102034 extends McnErrorCode {const McnErrorCode$$102034._();
+
+@override int get value => 102034;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102034;
+
+@override int get hashCode => 102034.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102035 extends McnErrorCode {const McnErrorCode$$102035._();
+
+@override int get value => 102035;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102035;
+
+@override int get hashCode => 102035.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102036 extends McnErrorCode {const McnErrorCode$$102036._();
+
+@override int get value => 102036;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102036;
+
+@override int get hashCode => 102036.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102037 extends McnErrorCode {const McnErrorCode$$102037._();
+
+@override int get value => 102037;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102037;
+
+@override int get hashCode => 102037.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102038 extends McnErrorCode {const McnErrorCode$$102038._();
+
+@override int get value => 102038;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102038;
+
+@override int get hashCode => 102038.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102039 extends McnErrorCode {const McnErrorCode$$102039._();
+
+@override int get value => 102039;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102039;
+
+@override int get hashCode => 102039.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102040 extends McnErrorCode {const McnErrorCode$$102040._();
+
+@override int get value => 102040;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102040;
+
+@override int get hashCode => 102040.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102041 extends McnErrorCode {const McnErrorCode$$102041._();
+
+@override int get value => 102041;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102041;
+
+@override int get hashCode => 102041.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102042 extends McnErrorCode {const McnErrorCode$$102042._();
+
+@override int get value => 102042;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102042;
+
+@override int get hashCode => 102042.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102043 extends McnErrorCode {const McnErrorCode$$102043._();
+
+@override int get value => 102043;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102043;
+
+@override int get hashCode => 102043.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102044 extends McnErrorCode {const McnErrorCode$$102044._();
+
+@override int get value => 102044;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102044;
+
+@override int get hashCode => 102044.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102045 extends McnErrorCode {const McnErrorCode$$102045._();
+
+@override int get value => 102045;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102045;
+
+@override int get hashCode => 102045.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102046 extends McnErrorCode {const McnErrorCode$$102046._();
+
+@override int get value => 102046;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102046;
+
+@override int get hashCode => 102046.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102047 extends McnErrorCode {const McnErrorCode$$102047._();
+
+@override int get value => 102047;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102047;
+
+@override int get hashCode => 102047.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102048 extends McnErrorCode {const McnErrorCode$$102048._();
+
+@override int get value => 102048;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102048;
+
+@override int get hashCode => 102048.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102049 extends McnErrorCode {const McnErrorCode$$102049._();
+
+@override int get value => 102049;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102049;
+
+@override int get hashCode => 102049.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102050 extends McnErrorCode {const McnErrorCode$$102050._();
+
+@override int get value => 102050;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102050;
+
+@override int get hashCode => 102050.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102051 extends McnErrorCode {const McnErrorCode$$102051._();
+
+@override int get value => 102051;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102051;
+
+@override int get hashCode => 102051.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102052 extends McnErrorCode {const McnErrorCode$$102052._();
+
+@override int get value => 102052;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102052;
+
+@override int get hashCode => 102052.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102053 extends McnErrorCode {const McnErrorCode$$102053._();
+
+@override int get value => 102053;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102053;
+
+@override int get hashCode => 102053.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102054 extends McnErrorCode {const McnErrorCode$$102054._();
+
+@override int get value => 102054;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102054;
+
+@override int get hashCode => 102054.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102055 extends McnErrorCode {const McnErrorCode$$102055._();
+
+@override int get value => 102055;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102055;
+
+@override int get hashCode => 102055.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102056 extends McnErrorCode {const McnErrorCode$$102056._();
+
+@override int get value => 102056;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102056;
+
+@override int get hashCode => 102056.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102057 extends McnErrorCode {const McnErrorCode$$102057._();
+
+@override int get value => 102057;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102057;
+
+@override int get hashCode => 102057.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102058 extends McnErrorCode {const McnErrorCode$$102058._();
+
+@override int get value => 102058;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102058;
+
+@override int get hashCode => 102058.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102059 extends McnErrorCode {const McnErrorCode$$102059._();
+
+@override int get value => 102059;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102059;
+
+@override int get hashCode => 102059.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102060 extends McnErrorCode {const McnErrorCode$$102060._();
+
+@override int get value => 102060;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102060;
+
+@override int get hashCode => 102060.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102061 extends McnErrorCode {const McnErrorCode$$102061._();
+
+@override int get value => 102061;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102061;
+
+@override int get hashCode => 102061.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102062 extends McnErrorCode {const McnErrorCode$$102062._();
+
+@override int get value => 102062;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102062;
+
+@override int get hashCode => 102062.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102063 extends McnErrorCode {const McnErrorCode$$102063._();
+
+@override int get value => 102063;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102063;
+
+@override int get hashCode => 102063.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102064 extends McnErrorCode {const McnErrorCode$$102064._();
+
+@override int get value => 102064;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102064;
+
+@override int get hashCode => 102064.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102065 extends McnErrorCode {const McnErrorCode$$102065._();
+
+@override int get value => 102065;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102065;
+
+@override int get hashCode => 102065.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102066 extends McnErrorCode {const McnErrorCode$$102066._();
+
+@override int get value => 102066;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102066;
+
+@override int get hashCode => 102066.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102067 extends McnErrorCode {const McnErrorCode$$102067._();
+
+@override int get value => 102067;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102067;
+
+@override int get hashCode => 102067.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102068 extends McnErrorCode {const McnErrorCode$$102068._();
+
+@override int get value => 102068;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102068;
+
+@override int get hashCode => 102068.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102069 extends McnErrorCode {const McnErrorCode$$102069._();
+
+@override int get value => 102069;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102069;
+
+@override int get hashCode => 102069.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102070 extends McnErrorCode {const McnErrorCode$$102070._();
+
+@override int get value => 102070;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102070;
+
+@override int get hashCode => 102070.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102071 extends McnErrorCode {const McnErrorCode$$102071._();
+
+@override int get value => 102071;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102071;
+
+@override int get hashCode => 102071.hashCode;
+
+ }
+@immutable final class McnErrorCode$$102072 extends McnErrorCode {const McnErrorCode$$102072._();
+
+@override int get value => 102072;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$102072;
+
+@override int get hashCode => 102072.hashCode;
+
+ }
+@immutable final class McnErrorCode$$103001 extends McnErrorCode {const McnErrorCode$$103001._();
+
+@override int get value => 103001;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$103001;
+
+@override int get hashCode => 103001.hashCode;
+
+ }
+@immutable final class McnErrorCode$$103002 extends McnErrorCode {const McnErrorCode$$103002._();
+
+@override int get value => 103002;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$103002;
+
+@override int get hashCode => 103002.hashCode;
+
+ }
+@immutable final class McnErrorCode$$103003 extends McnErrorCode {const McnErrorCode$$103003._();
+
+@override int get value => 103003;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$103003;
+
+@override int get hashCode => 103003.hashCode;
+
+ }
+@immutable final class McnErrorCode$$103004 extends McnErrorCode {const McnErrorCode$$103004._();
+
+@override int get value => 103004;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$103004;
+
+@override int get hashCode => 103004.hashCode;
+
+ }
+@immutable final class McnErrorCode$$103005 extends McnErrorCode {const McnErrorCode$$103005._();
+
+@override int get value => 103005;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$103005;
+
+@override int get hashCode => 103005.hashCode;
+
+ }
+@immutable final class McnErrorCode$$103006 extends McnErrorCode {const McnErrorCode$$103006._();
+
+@override int get value => 103006;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$103006;
+
+@override int get hashCode => 103006.hashCode;
+
+ }
+@immutable final class McnErrorCode$$103007 extends McnErrorCode {const McnErrorCode$$103007._();
+
+@override int get value => 103007;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$103007;
+
+@override int get hashCode => 103007.hashCode;
+
+ }
+@immutable final class McnErrorCode$$103008 extends McnErrorCode {const McnErrorCode$$103008._();
+
+@override int get value => 103008;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnErrorCode$$103008;
+
+@override int get hashCode => 103008.hashCode;
+
+ }
+@immutable final class McnErrorCode$Unknown extends McnErrorCode {const McnErrorCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is McnErrorCode && other.value == value;
+    other is McnErrorCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'McnErrorCode($value)';
 
  }
 @immutable final class McnError {const McnError({required this.code, required this.message, this.documentationUrl, this.meta, this.source, });

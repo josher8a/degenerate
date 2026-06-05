@@ -8,19 +8,18 @@ return McnPlatformClientId(json); }
 String toJson() => value;
 
 }
-@immutable final class McnCloudPlatformClientClientType {const McnCloudPlatformClientClientType._(this.value);
+sealed class McnCloudPlatformClientClientType {const McnCloudPlatformClientClientType();
 
 factory McnCloudPlatformClientClientType.fromJson(String json) { return switch (json) {
   'MAGIC_WAN_CLOUD_ONRAMP' => magicWanCloudOnramp,
-  _ => McnCloudPlatformClientClientType._(json),
+  _ => McnCloudPlatformClientClientType$Unknown(json),
 }; }
 
-static const McnCloudPlatformClientClientType magicWanCloudOnramp = McnCloudPlatformClientClientType._('MAGIC_WAN_CLOUD_ONRAMP');
+static const McnCloudPlatformClientClientType magicWanCloudOnramp = McnCloudPlatformClientClientType$magicWanCloudOnramp._();
 
 static const List<McnCloudPlatformClientClientType> values = [magicWanCloudOnramp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -28,13 +27,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is McnCloudPlatformClientClientType$Unknown; } 
+@override String toString() => 'McnCloudPlatformClientClientType($value)';
+
+ }
+@immutable final class McnCloudPlatformClientClientType$magicWanCloudOnramp extends McnCloudPlatformClientClientType {const McnCloudPlatformClientClientType$magicWanCloudOnramp._();
+
+@override String get value => 'MAGIC_WAN_CLOUD_ONRAMP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnCloudPlatformClientClientType$magicWanCloudOnramp;
+
+@override int get hashCode => 'MAGIC_WAN_CLOUD_ONRAMP'.hashCode;
+
+ }
+@immutable final class McnCloudPlatformClientClientType$Unknown extends McnCloudPlatformClientClientType {const McnCloudPlatformClientClientType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is McnCloudPlatformClientClientType && other.value == value;
+    other is McnCloudPlatformClientClientType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'McnCloudPlatformClientClientType($value)';
 
  }
 @immutable final class McnCloudPlatformClient {const McnCloudPlatformClient({required this.clientType, required this.id, required this.name, });

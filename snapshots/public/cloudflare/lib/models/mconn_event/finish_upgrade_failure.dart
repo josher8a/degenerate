@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MconnEvent (inline: FinishUpgradeFailure)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Failed upgrade
-@immutable final class FinishUpgradeFailureK {const FinishUpgradeFailureK._(this.value);
+sealed class FinishUpgradeFailureK {const FinishUpgradeFailureK();
 
 factory FinishUpgradeFailureK.fromJson(String json) { return switch (json) {
   'FinishUpgradeFailure' => finishUpgradeFailure,
-  _ => FinishUpgradeFailureK._(json),
+  _ => FinishUpgradeFailureK$Unknown(json),
 }; }
 
-static const FinishUpgradeFailureK finishUpgradeFailure = FinishUpgradeFailureK._('FinishUpgradeFailure');
+static const FinishUpgradeFailureK finishUpgradeFailure = FinishUpgradeFailureK$finishUpgradeFailure._();
 
 static const List<FinishUpgradeFailureK> values = [finishUpgradeFailure];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FinishUpgradeFailureK$Unknown; } 
+@override String toString() => 'FinishUpgradeFailureK($value)';
+
+ }
+@immutable final class FinishUpgradeFailureK$finishUpgradeFailure extends FinishUpgradeFailureK {const FinishUpgradeFailureK$finishUpgradeFailure._();
+
+@override String get value => 'FinishUpgradeFailure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinishUpgradeFailureK$finishUpgradeFailure;
+
+@override int get hashCode => 'FinishUpgradeFailure'.hashCode;
+
+ }
+@immutable final class FinishUpgradeFailureK$Unknown extends FinishUpgradeFailureK {const FinishUpgradeFailureK$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FinishUpgradeFailureK && other.value == value;
+    other is FinishUpgradeFailureK$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FinishUpgradeFailureK($value)';
 
  }
 @immutable final class FinishUpgradeFailure {const FinishUpgradeFailure({required this.k});

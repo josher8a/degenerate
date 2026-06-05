@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostPaymentIntentsIntentConfirmRequest (inline: PaymentMethodData)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/post_charges_request/radar_options.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_billing_details.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_payto.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_acss_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_affirm.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_afterpay_clearpay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_alipay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_alma.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_amazon_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_au_becs_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_bacs_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_bancontact.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_billie.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_blik.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_boleto.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_cashapp.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_crypto.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_customer_balance.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_eps.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_fpx.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_giropay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_grabpay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_ideal.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_interac_present.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_kakao_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_klarna.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_konbini.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_kr_card.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_link.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_mb_way.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_mobilepay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_multibanco.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_naver_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_nz_bank_account.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_oxxo.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_p24.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_pay_by_bank.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_payco.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_paynow.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_paypal.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_pix.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_promptpay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_revolut_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_samsung_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_satispay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_sepa_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_sofort.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_swish.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_twint.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_us_bank_account.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_wechat_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_zip.dart';@immutable final class PaymentMethodDataType {const PaymentMethodDataType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/confirmation_tokens_resource_payment_method_preview/confirmation_tokens_resource_payment_method_preview_allow_redisplay.dart';import 'package:pub_stripe_spec3/models/post_charges_request/radar_options.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_billing_details.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_payment_method_request/post_payment_methods_payment_method_request_payto.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_acss_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_affirm.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_afterpay_clearpay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_alipay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_alma.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_amazon_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_au_becs_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_bacs_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_bancontact.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_billie.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_blik.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_boleto.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_cashapp.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_crypto.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_customer_balance.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_eps.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_fpx.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_giropay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_grabpay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_ideal.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_interac_present.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_kakao_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_klarna.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_konbini.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_kr_card.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_link.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_mb_way.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_mobilepay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_multibanco.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_naver_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_nz_bank_account.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_oxxo.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_p24.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_pay_by_bank.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_payco.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_paynow.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_paypal.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_pix.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_promptpay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_revolut_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_samsung_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_satispay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_sepa_debit.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_sofort.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_swish.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_twint.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_us_bank_account.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_wechat_pay.dart';import 'package:pub_stripe_spec3/models/post_payment_methods_request/post_payment_methods_request_zip.dart';sealed class PaymentMethodDataType {const PaymentMethodDataType();
 
 factory PaymentMethodDataType.fromJson(String json) { return switch (json) {
   'acss_debit' => acssDebit,
@@ -53,111 +53,110 @@ factory PaymentMethodDataType.fromJson(String json) { return switch (json) {
   'us_bank_account' => usBankAccount,
   'wechat_pay' => wechatPay,
   'zip' => zip,
-  _ => PaymentMethodDataType._(json),
+  _ => PaymentMethodDataType$Unknown(json),
 }; }
 
-static const PaymentMethodDataType acssDebit = PaymentMethodDataType._('acss_debit');
+static const PaymentMethodDataType acssDebit = PaymentMethodDataType$acssDebit._();
 
-static const PaymentMethodDataType affirm = PaymentMethodDataType._('affirm');
+static const PaymentMethodDataType affirm = PaymentMethodDataType$affirm._();
 
-static const PaymentMethodDataType afterpayClearpay = PaymentMethodDataType._('afterpay_clearpay');
+static const PaymentMethodDataType afterpayClearpay = PaymentMethodDataType$afterpayClearpay._();
 
-static const PaymentMethodDataType alipay = PaymentMethodDataType._('alipay');
+static const PaymentMethodDataType alipay = PaymentMethodDataType$alipay._();
 
-static const PaymentMethodDataType alma = PaymentMethodDataType._('alma');
+static const PaymentMethodDataType alma = PaymentMethodDataType$alma._();
 
-static const PaymentMethodDataType amazonPay = PaymentMethodDataType._('amazon_pay');
+static const PaymentMethodDataType amazonPay = PaymentMethodDataType$amazonPay._();
 
-static const PaymentMethodDataType auBecsDebit = PaymentMethodDataType._('au_becs_debit');
+static const PaymentMethodDataType auBecsDebit = PaymentMethodDataType$auBecsDebit._();
 
-static const PaymentMethodDataType bacsDebit = PaymentMethodDataType._('bacs_debit');
+static const PaymentMethodDataType bacsDebit = PaymentMethodDataType$bacsDebit._();
 
-static const PaymentMethodDataType bancontact = PaymentMethodDataType._('bancontact');
+static const PaymentMethodDataType bancontact = PaymentMethodDataType$bancontact._();
 
-static const PaymentMethodDataType billie = PaymentMethodDataType._('billie');
+static const PaymentMethodDataType billie = PaymentMethodDataType$billie._();
 
-static const PaymentMethodDataType blik = PaymentMethodDataType._('blik');
+static const PaymentMethodDataType blik = PaymentMethodDataType$blik._();
 
-static const PaymentMethodDataType boleto = PaymentMethodDataType._('boleto');
+static const PaymentMethodDataType boleto = PaymentMethodDataType$boleto._();
 
-static const PaymentMethodDataType cashapp = PaymentMethodDataType._('cashapp');
+static const PaymentMethodDataType cashapp = PaymentMethodDataType$cashapp._();
 
-static const PaymentMethodDataType crypto = PaymentMethodDataType._('crypto');
+static const PaymentMethodDataType crypto = PaymentMethodDataType$crypto._();
 
-static const PaymentMethodDataType customerBalance = PaymentMethodDataType._('customer_balance');
+static const PaymentMethodDataType customerBalance = PaymentMethodDataType$customerBalance._();
 
-static const PaymentMethodDataType eps = PaymentMethodDataType._('eps');
+static const PaymentMethodDataType eps = PaymentMethodDataType$eps._();
 
-static const PaymentMethodDataType fpx = PaymentMethodDataType._('fpx');
+static const PaymentMethodDataType fpx = PaymentMethodDataType$fpx._();
 
-static const PaymentMethodDataType giropay = PaymentMethodDataType._('giropay');
+static const PaymentMethodDataType giropay = PaymentMethodDataType$giropay._();
 
-static const PaymentMethodDataType grabpay = PaymentMethodDataType._('grabpay');
+static const PaymentMethodDataType grabpay = PaymentMethodDataType$grabpay._();
 
-static const PaymentMethodDataType ideal = PaymentMethodDataType._('ideal');
+static const PaymentMethodDataType ideal = PaymentMethodDataType$ideal._();
 
-static const PaymentMethodDataType kakaoPay = PaymentMethodDataType._('kakao_pay');
+static const PaymentMethodDataType kakaoPay = PaymentMethodDataType$kakaoPay._();
 
-static const PaymentMethodDataType klarna = PaymentMethodDataType._('klarna');
+static const PaymentMethodDataType klarna = PaymentMethodDataType$klarna._();
 
-static const PaymentMethodDataType konbini = PaymentMethodDataType._('konbini');
+static const PaymentMethodDataType konbini = PaymentMethodDataType$konbini._();
 
-static const PaymentMethodDataType krCard = PaymentMethodDataType._('kr_card');
+static const PaymentMethodDataType krCard = PaymentMethodDataType$krCard._();
 
-static const PaymentMethodDataType link = PaymentMethodDataType._('link');
+static const PaymentMethodDataType link = PaymentMethodDataType$link._();
 
-static const PaymentMethodDataType mbWay = PaymentMethodDataType._('mb_way');
+static const PaymentMethodDataType mbWay = PaymentMethodDataType$mbWay._();
 
-static const PaymentMethodDataType mobilepay = PaymentMethodDataType._('mobilepay');
+static const PaymentMethodDataType mobilepay = PaymentMethodDataType$mobilepay._();
 
-static const PaymentMethodDataType multibanco = PaymentMethodDataType._('multibanco');
+static const PaymentMethodDataType multibanco = PaymentMethodDataType$multibanco._();
 
-static const PaymentMethodDataType naverPay = PaymentMethodDataType._('naver_pay');
+static const PaymentMethodDataType naverPay = PaymentMethodDataType$naverPay._();
 
-static const PaymentMethodDataType nzBankAccount = PaymentMethodDataType._('nz_bank_account');
+static const PaymentMethodDataType nzBankAccount = PaymentMethodDataType$nzBankAccount._();
 
-static const PaymentMethodDataType oxxo = PaymentMethodDataType._('oxxo');
+static const PaymentMethodDataType oxxo = PaymentMethodDataType$oxxo._();
 
-static const PaymentMethodDataType p24 = PaymentMethodDataType._('p24');
+static const PaymentMethodDataType p24 = PaymentMethodDataType$p24._();
 
-static const PaymentMethodDataType payByBank = PaymentMethodDataType._('pay_by_bank');
+static const PaymentMethodDataType payByBank = PaymentMethodDataType$payByBank._();
 
-static const PaymentMethodDataType payco = PaymentMethodDataType._('payco');
+static const PaymentMethodDataType payco = PaymentMethodDataType$payco._();
 
-static const PaymentMethodDataType paynow = PaymentMethodDataType._('paynow');
+static const PaymentMethodDataType paynow = PaymentMethodDataType$paynow._();
 
-static const PaymentMethodDataType paypal = PaymentMethodDataType._('paypal');
+static const PaymentMethodDataType paypal = PaymentMethodDataType$paypal._();
 
-static const PaymentMethodDataType payto = PaymentMethodDataType._('payto');
+static const PaymentMethodDataType payto = PaymentMethodDataType$payto._();
 
-static const PaymentMethodDataType pix = PaymentMethodDataType._('pix');
+static const PaymentMethodDataType pix = PaymentMethodDataType$pix._();
 
-static const PaymentMethodDataType promptpay = PaymentMethodDataType._('promptpay');
+static const PaymentMethodDataType promptpay = PaymentMethodDataType$promptpay._();
 
-static const PaymentMethodDataType revolutPay = PaymentMethodDataType._('revolut_pay');
+static const PaymentMethodDataType revolutPay = PaymentMethodDataType$revolutPay._();
 
-static const PaymentMethodDataType samsungPay = PaymentMethodDataType._('samsung_pay');
+static const PaymentMethodDataType samsungPay = PaymentMethodDataType$samsungPay._();
 
-static const PaymentMethodDataType satispay = PaymentMethodDataType._('satispay');
+static const PaymentMethodDataType satispay = PaymentMethodDataType$satispay._();
 
-static const PaymentMethodDataType sepaDebit = PaymentMethodDataType._('sepa_debit');
+static const PaymentMethodDataType sepaDebit = PaymentMethodDataType$sepaDebit._();
 
-static const PaymentMethodDataType sofort = PaymentMethodDataType._('sofort');
+static const PaymentMethodDataType sofort = PaymentMethodDataType$sofort._();
 
-static const PaymentMethodDataType swish = PaymentMethodDataType._('swish');
+static const PaymentMethodDataType swish = PaymentMethodDataType$swish._();
 
-static const PaymentMethodDataType twint = PaymentMethodDataType._('twint');
+static const PaymentMethodDataType twint = PaymentMethodDataType$twint._();
 
-static const PaymentMethodDataType usBankAccount = PaymentMethodDataType._('us_bank_account');
+static const PaymentMethodDataType usBankAccount = PaymentMethodDataType$usBankAccount._();
 
-static const PaymentMethodDataType wechatPay = PaymentMethodDataType._('wechat_pay');
+static const PaymentMethodDataType wechatPay = PaymentMethodDataType$wechatPay._();
 
-static const PaymentMethodDataType zip = PaymentMethodDataType._('zip');
+static const PaymentMethodDataType zip = PaymentMethodDataType$zip._();
 
 static const List<PaymentMethodDataType> values = [acssDebit, affirm, afterpayClearpay, alipay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, cashapp, crypto, customerBalance, eps, fpx, giropay, grabpay, ideal, kakaoPay, klarna, konbini, krCard, link, mbWay, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -213,13 +212,459 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentMethodDataType$Unknown; } 
+@override String toString() => 'PaymentMethodDataType($value)';
+
+ }
+@immutable final class PaymentMethodDataType$acssDebit extends PaymentMethodDataType {const PaymentMethodDataType$acssDebit._();
+
+@override String get value => 'acss_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$acssDebit;
+
+@override int get hashCode => 'acss_debit'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$affirm extends PaymentMethodDataType {const PaymentMethodDataType$affirm._();
+
+@override String get value => 'affirm';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$affirm;
+
+@override int get hashCode => 'affirm'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$afterpayClearpay extends PaymentMethodDataType {const PaymentMethodDataType$afterpayClearpay._();
+
+@override String get value => 'afterpay_clearpay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$afterpayClearpay;
+
+@override int get hashCode => 'afterpay_clearpay'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$alipay extends PaymentMethodDataType {const PaymentMethodDataType$alipay._();
+
+@override String get value => 'alipay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$alipay;
+
+@override int get hashCode => 'alipay'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$alma extends PaymentMethodDataType {const PaymentMethodDataType$alma._();
+
+@override String get value => 'alma';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$alma;
+
+@override int get hashCode => 'alma'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$amazonPay extends PaymentMethodDataType {const PaymentMethodDataType$amazonPay._();
+
+@override String get value => 'amazon_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$amazonPay;
+
+@override int get hashCode => 'amazon_pay'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$auBecsDebit extends PaymentMethodDataType {const PaymentMethodDataType$auBecsDebit._();
+
+@override String get value => 'au_becs_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$auBecsDebit;
+
+@override int get hashCode => 'au_becs_debit'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$bacsDebit extends PaymentMethodDataType {const PaymentMethodDataType$bacsDebit._();
+
+@override String get value => 'bacs_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$bacsDebit;
+
+@override int get hashCode => 'bacs_debit'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$bancontact extends PaymentMethodDataType {const PaymentMethodDataType$bancontact._();
+
+@override String get value => 'bancontact';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$bancontact;
+
+@override int get hashCode => 'bancontact'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$billie extends PaymentMethodDataType {const PaymentMethodDataType$billie._();
+
+@override String get value => 'billie';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$billie;
+
+@override int get hashCode => 'billie'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$blik extends PaymentMethodDataType {const PaymentMethodDataType$blik._();
+
+@override String get value => 'blik';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$blik;
+
+@override int get hashCode => 'blik'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$boleto extends PaymentMethodDataType {const PaymentMethodDataType$boleto._();
+
+@override String get value => 'boleto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$boleto;
+
+@override int get hashCode => 'boleto'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$cashapp extends PaymentMethodDataType {const PaymentMethodDataType$cashapp._();
+
+@override String get value => 'cashapp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$cashapp;
+
+@override int get hashCode => 'cashapp'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$crypto extends PaymentMethodDataType {const PaymentMethodDataType$crypto._();
+
+@override String get value => 'crypto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$crypto;
+
+@override int get hashCode => 'crypto'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$customerBalance extends PaymentMethodDataType {const PaymentMethodDataType$customerBalance._();
+
+@override String get value => 'customer_balance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$customerBalance;
+
+@override int get hashCode => 'customer_balance'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$eps extends PaymentMethodDataType {const PaymentMethodDataType$eps._();
+
+@override String get value => 'eps';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$eps;
+
+@override int get hashCode => 'eps'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$fpx extends PaymentMethodDataType {const PaymentMethodDataType$fpx._();
+
+@override String get value => 'fpx';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$fpx;
+
+@override int get hashCode => 'fpx'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$giropay extends PaymentMethodDataType {const PaymentMethodDataType$giropay._();
+
+@override String get value => 'giropay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$giropay;
+
+@override int get hashCode => 'giropay'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$grabpay extends PaymentMethodDataType {const PaymentMethodDataType$grabpay._();
+
+@override String get value => 'grabpay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$grabpay;
+
+@override int get hashCode => 'grabpay'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$ideal extends PaymentMethodDataType {const PaymentMethodDataType$ideal._();
+
+@override String get value => 'ideal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$ideal;
+
+@override int get hashCode => 'ideal'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$kakaoPay extends PaymentMethodDataType {const PaymentMethodDataType$kakaoPay._();
+
+@override String get value => 'kakao_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$kakaoPay;
+
+@override int get hashCode => 'kakao_pay'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$klarna extends PaymentMethodDataType {const PaymentMethodDataType$klarna._();
+
+@override String get value => 'klarna';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$klarna;
+
+@override int get hashCode => 'klarna'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$konbini extends PaymentMethodDataType {const PaymentMethodDataType$konbini._();
+
+@override String get value => 'konbini';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$konbini;
+
+@override int get hashCode => 'konbini'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$krCard extends PaymentMethodDataType {const PaymentMethodDataType$krCard._();
+
+@override String get value => 'kr_card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$krCard;
+
+@override int get hashCode => 'kr_card'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$link extends PaymentMethodDataType {const PaymentMethodDataType$link._();
+
+@override String get value => 'link';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$link;
+
+@override int get hashCode => 'link'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$mbWay extends PaymentMethodDataType {const PaymentMethodDataType$mbWay._();
+
+@override String get value => 'mb_way';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$mbWay;
+
+@override int get hashCode => 'mb_way'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$mobilepay extends PaymentMethodDataType {const PaymentMethodDataType$mobilepay._();
+
+@override String get value => 'mobilepay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$mobilepay;
+
+@override int get hashCode => 'mobilepay'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$multibanco extends PaymentMethodDataType {const PaymentMethodDataType$multibanco._();
+
+@override String get value => 'multibanco';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$multibanco;
+
+@override int get hashCode => 'multibanco'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$naverPay extends PaymentMethodDataType {const PaymentMethodDataType$naverPay._();
+
+@override String get value => 'naver_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$naverPay;
+
+@override int get hashCode => 'naver_pay'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$nzBankAccount extends PaymentMethodDataType {const PaymentMethodDataType$nzBankAccount._();
+
+@override String get value => 'nz_bank_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$nzBankAccount;
+
+@override int get hashCode => 'nz_bank_account'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$oxxo extends PaymentMethodDataType {const PaymentMethodDataType$oxxo._();
+
+@override String get value => 'oxxo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$oxxo;
+
+@override int get hashCode => 'oxxo'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$p24 extends PaymentMethodDataType {const PaymentMethodDataType$p24._();
+
+@override String get value => 'p24';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$p24;
+
+@override int get hashCode => 'p24'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$payByBank extends PaymentMethodDataType {const PaymentMethodDataType$payByBank._();
+
+@override String get value => 'pay_by_bank';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$payByBank;
+
+@override int get hashCode => 'pay_by_bank'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$payco extends PaymentMethodDataType {const PaymentMethodDataType$payco._();
+
+@override String get value => 'payco';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$payco;
+
+@override int get hashCode => 'payco'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$paynow extends PaymentMethodDataType {const PaymentMethodDataType$paynow._();
+
+@override String get value => 'paynow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$paynow;
+
+@override int get hashCode => 'paynow'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$paypal extends PaymentMethodDataType {const PaymentMethodDataType$paypal._();
+
+@override String get value => 'paypal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$paypal;
+
+@override int get hashCode => 'paypal'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$payto extends PaymentMethodDataType {const PaymentMethodDataType$payto._();
+
+@override String get value => 'payto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$payto;
+
+@override int get hashCode => 'payto'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$pix extends PaymentMethodDataType {const PaymentMethodDataType$pix._();
+
+@override String get value => 'pix';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$pix;
+
+@override int get hashCode => 'pix'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$promptpay extends PaymentMethodDataType {const PaymentMethodDataType$promptpay._();
+
+@override String get value => 'promptpay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$promptpay;
+
+@override int get hashCode => 'promptpay'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$revolutPay extends PaymentMethodDataType {const PaymentMethodDataType$revolutPay._();
+
+@override String get value => 'revolut_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$revolutPay;
+
+@override int get hashCode => 'revolut_pay'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$samsungPay extends PaymentMethodDataType {const PaymentMethodDataType$samsungPay._();
+
+@override String get value => 'samsung_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$samsungPay;
+
+@override int get hashCode => 'samsung_pay'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$satispay extends PaymentMethodDataType {const PaymentMethodDataType$satispay._();
+
+@override String get value => 'satispay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$satispay;
+
+@override int get hashCode => 'satispay'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$sepaDebit extends PaymentMethodDataType {const PaymentMethodDataType$sepaDebit._();
+
+@override String get value => 'sepa_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$sepaDebit;
+
+@override int get hashCode => 'sepa_debit'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$sofort extends PaymentMethodDataType {const PaymentMethodDataType$sofort._();
+
+@override String get value => 'sofort';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$sofort;
+
+@override int get hashCode => 'sofort'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$swish extends PaymentMethodDataType {const PaymentMethodDataType$swish._();
+
+@override String get value => 'swish';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$swish;
+
+@override int get hashCode => 'swish'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$twint extends PaymentMethodDataType {const PaymentMethodDataType$twint._();
+
+@override String get value => 'twint';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$twint;
+
+@override int get hashCode => 'twint'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$usBankAccount extends PaymentMethodDataType {const PaymentMethodDataType$usBankAccount._();
+
+@override String get value => 'us_bank_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$usBankAccount;
+
+@override int get hashCode => 'us_bank_account'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$wechatPay extends PaymentMethodDataType {const PaymentMethodDataType$wechatPay._();
+
+@override String get value => 'wechat_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$wechatPay;
+
+@override int get hashCode => 'wechat_pay'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$zip extends PaymentMethodDataType {const PaymentMethodDataType$zip._();
+
+@override String get value => 'zip';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodDataType$zip;
+
+@override int get hashCode => 'zip'.hashCode;
+
+ }
+@immutable final class PaymentMethodDataType$Unknown extends PaymentMethodDataType {const PaymentMethodDataType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentMethodDataType && other.value == value;
+    other is PaymentMethodDataType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentMethodDataType($value)';
 
  }
 /// If provided, this hash will be used to create a PaymentMethod. The new PaymentMethod will appear

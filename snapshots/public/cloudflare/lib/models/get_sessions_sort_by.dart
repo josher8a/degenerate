@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetSessionsSortBy
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSessionsSortBy {const GetSessionsSortBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetSessionsSortBy {const GetSessionsSortBy();
 
 factory GetSessionsSortBy.fromJson(String json) { return switch (json) {
   'minutesConsumed' => minutesConsumed,
   'createdAt' => createdAt,
-  _ => GetSessionsSortBy._(json),
+  _ => GetSessionsSortBy$Unknown(json),
 }; }
 
-static const GetSessionsSortBy minutesConsumed = GetSessionsSortBy._('minutesConsumed');
+static const GetSessionsSortBy minutesConsumed = GetSessionsSortBy$minutesConsumed._();
 
-static const GetSessionsSortBy createdAt = GetSessionsSortBy._('createdAt');
+static const GetSessionsSortBy createdAt = GetSessionsSortBy$createdAt._();
 
 static const List<GetSessionsSortBy> values = [minutesConsumed, createdAt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GetSessionsSortBy$Unknown; } 
+@override String toString() => 'GetSessionsSortBy($value)';
+
+ }
+@immutable final class GetSessionsSortBy$minutesConsumed extends GetSessionsSortBy {const GetSessionsSortBy$minutesConsumed._();
+
+@override String get value => 'minutesConsumed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetSessionsSortBy$minutesConsumed;
+
+@override int get hashCode => 'minutesConsumed'.hashCode;
+
+ }
+@immutable final class GetSessionsSortBy$createdAt extends GetSessionsSortBy {const GetSessionsSortBy$createdAt._();
+
+@override String get value => 'createdAt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetSessionsSortBy$createdAt;
+
+@override int get hashCode => 'createdAt'.hashCode;
+
+ }
+@immutable final class GetSessionsSortBy$Unknown extends GetSessionsSortBy {const GetSessionsSortBy$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GetSessionsSortBy && other.value == value;
+    other is GetSessionsSortBy$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GetSessionsSortBy($value)';
 
  }

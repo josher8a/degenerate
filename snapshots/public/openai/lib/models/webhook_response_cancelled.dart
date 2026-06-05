@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `response.cancelled`.
 /// 
-@immutable final class WebhookResponseCancelledType {const WebhookResponseCancelledType._(this.value);
+sealed class WebhookResponseCancelledType {const WebhookResponseCancelledType();
 
 factory WebhookResponseCancelledType.fromJson(String json) { return switch (json) {
   'response.cancelled' => responseCancelled,
-  _ => WebhookResponseCancelledType._(json),
+  _ => WebhookResponseCancelledType$Unknown(json),
 }; }
 
-static const WebhookResponseCancelledType responseCancelled = WebhookResponseCancelledType._('response.cancelled');
+static const WebhookResponseCancelledType responseCancelled = WebhookResponseCancelledType$responseCancelled._();
 
 static const List<WebhookResponseCancelledType> values = [responseCancelled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookResponseCancelledType$Unknown; } 
+@override String toString() => 'WebhookResponseCancelledType($value)';
+
+ }
+@immutable final class WebhookResponseCancelledType$responseCancelled extends WebhookResponseCancelledType {const WebhookResponseCancelledType$responseCancelled._();
+
+@override String get value => 'response.cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookResponseCancelledType$responseCancelled;
+
+@override int get hashCode => 'response.cancelled'.hashCode;
+
+ }
+@immutable final class WebhookResponseCancelledType$Unknown extends WebhookResponseCancelledType {const WebhookResponseCancelledType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookResponseCancelledType && other.value == value;
+    other is WebhookResponseCancelledType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookResponseCancelledType($value)';
 
  }
 /// Sent when a background response has been cancelled.

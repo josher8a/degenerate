@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetAttacksLayer3TopAttacksMagnitude
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Orders results based on attack magnitude, defined by total mitigated bytes or total mitigated attacks.
-@immutable final class RadarGetAttacksLayer3TopAttacksMagnitude {const RadarGetAttacksLayer3TopAttacksMagnitude._(this.value);
+sealed class RadarGetAttacksLayer3TopAttacksMagnitude {const RadarGetAttacksLayer3TopAttacksMagnitude();
 
 factory RadarGetAttacksLayer3TopAttacksMagnitude.fromJson(String json) { return switch (json) {
   'MITIGATED_BYTES' => mitigatedBytes,
   'MITIGATED_ATTACKS' => mitigatedAttacks,
-  _ => RadarGetAttacksLayer3TopAttacksMagnitude._(json),
+  _ => RadarGetAttacksLayer3TopAttacksMagnitude$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer3TopAttacksMagnitude mitigatedBytes = RadarGetAttacksLayer3TopAttacksMagnitude._('MITIGATED_BYTES');
+static const RadarGetAttacksLayer3TopAttacksMagnitude mitigatedBytes = RadarGetAttacksLayer3TopAttacksMagnitude$mitigatedBytes._();
 
-static const RadarGetAttacksLayer3TopAttacksMagnitude mitigatedAttacks = RadarGetAttacksLayer3TopAttacksMagnitude._('MITIGATED_ATTACKS');
+static const RadarGetAttacksLayer3TopAttacksMagnitude mitigatedAttacks = RadarGetAttacksLayer3TopAttacksMagnitude$mitigatedAttacks._();
 
 static const List<RadarGetAttacksLayer3TopAttacksMagnitude> values = [mitigatedBytes, mitigatedAttacks];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer3TopAttacksMagnitude$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer3TopAttacksMagnitude($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer3TopAttacksMagnitude$mitigatedBytes extends RadarGetAttacksLayer3TopAttacksMagnitude {const RadarGetAttacksLayer3TopAttacksMagnitude$mitigatedBytes._();
+
+@override String get value => 'MITIGATED_BYTES';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TopAttacksMagnitude$mitigatedBytes;
+
+@override int get hashCode => 'MITIGATED_BYTES'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TopAttacksMagnitude$mitigatedAttacks extends RadarGetAttacksLayer3TopAttacksMagnitude {const RadarGetAttacksLayer3TopAttacksMagnitude$mitigatedAttacks._();
+
+@override String get value => 'MITIGATED_ATTACKS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TopAttacksMagnitude$mitigatedAttacks;
+
+@override int get hashCode => 'MITIGATED_ATTACKS'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TopAttacksMagnitude$Unknown extends RadarGetAttacksLayer3TopAttacksMagnitude {const RadarGetAttacksLayer3TopAttacksMagnitude$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer3TopAttacksMagnitude && other.value == value;
+    other is RadarGetAttacksLayer3TopAttacksMagnitude$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer3TopAttacksMagnitude($value)';
 
  }

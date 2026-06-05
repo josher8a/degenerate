@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ReposGetOrgRuleSuitesTimePeriod
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposGetOrgRuleSuitesTimePeriod {const ReposGetOrgRuleSuitesTimePeriod._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ReposGetOrgRuleSuitesTimePeriod {const ReposGetOrgRuleSuitesTimePeriod();
 
 factory ReposGetOrgRuleSuitesTimePeriod.fromJson(String json) { return switch (json) {
   'hour' => hour,
   'day' => day,
   'week' => week,
   'month' => month,
-  _ => ReposGetOrgRuleSuitesTimePeriod._(json),
+  _ => ReposGetOrgRuleSuitesTimePeriod$Unknown(json),
 }; }
 
-static const ReposGetOrgRuleSuitesTimePeriod hour = ReposGetOrgRuleSuitesTimePeriod._('hour');
+static const ReposGetOrgRuleSuitesTimePeriod hour = ReposGetOrgRuleSuitesTimePeriod$hour._();
 
-static const ReposGetOrgRuleSuitesTimePeriod day = ReposGetOrgRuleSuitesTimePeriod._('day');
+static const ReposGetOrgRuleSuitesTimePeriod day = ReposGetOrgRuleSuitesTimePeriod$day._();
 
-static const ReposGetOrgRuleSuitesTimePeriod week = ReposGetOrgRuleSuitesTimePeriod._('week');
+static const ReposGetOrgRuleSuitesTimePeriod week = ReposGetOrgRuleSuitesTimePeriod$week._();
 
-static const ReposGetOrgRuleSuitesTimePeriod month = ReposGetOrgRuleSuitesTimePeriod._('month');
+static const ReposGetOrgRuleSuitesTimePeriod month = ReposGetOrgRuleSuitesTimePeriod$month._();
 
 static const List<ReposGetOrgRuleSuitesTimePeriod> values = [hour, day, week, month];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ReposGetOrgRuleSuitesTimePeriod$Unknown; } 
+@override String toString() => 'ReposGetOrgRuleSuitesTimePeriod($value)';
+
+ }
+@immutable final class ReposGetOrgRuleSuitesTimePeriod$hour extends ReposGetOrgRuleSuitesTimePeriod {const ReposGetOrgRuleSuitesTimePeriod$hour._();
+
+@override String get value => 'hour';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposGetOrgRuleSuitesTimePeriod$hour;
+
+@override int get hashCode => 'hour'.hashCode;
+
+ }
+@immutable final class ReposGetOrgRuleSuitesTimePeriod$day extends ReposGetOrgRuleSuitesTimePeriod {const ReposGetOrgRuleSuitesTimePeriod$day._();
+
+@override String get value => 'day';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposGetOrgRuleSuitesTimePeriod$day;
+
+@override int get hashCode => 'day'.hashCode;
+
+ }
+@immutable final class ReposGetOrgRuleSuitesTimePeriod$week extends ReposGetOrgRuleSuitesTimePeriod {const ReposGetOrgRuleSuitesTimePeriod$week._();
+
+@override String get value => 'week';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposGetOrgRuleSuitesTimePeriod$week;
+
+@override int get hashCode => 'week'.hashCode;
+
+ }
+@immutable final class ReposGetOrgRuleSuitesTimePeriod$month extends ReposGetOrgRuleSuitesTimePeriod {const ReposGetOrgRuleSuitesTimePeriod$month._();
+
+@override String get value => 'month';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposGetOrgRuleSuitesTimePeriod$month;
+
+@override int get hashCode => 'month'.hashCode;
+
+ }
+@immutable final class ReposGetOrgRuleSuitesTimePeriod$Unknown extends ReposGetOrgRuleSuitesTimePeriod {const ReposGetOrgRuleSuitesTimePeriod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ReposGetOrgRuleSuitesTimePeriod && other.value == value;
+    other is ReposGetOrgRuleSuitesTimePeriod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ReposGetOrgRuleSuitesTimePeriod($value)';
 
  }

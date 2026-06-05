@@ -2,25 +2,24 @@
 // Source: #/components/schemas/GlobalAdvisory
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/cvss_severities.dart';import 'package:pub_github_rest_3_1/models/cvss_severities/cvss_severities_cvss.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/cwes.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/dependabot_alert_security_advisory_identifiers.dart';import 'package:pub_github_rest_3_1/models/global_advisory/global_advisory_credits.dart';import 'package:pub_github_rest_3_1/models/security_advisory_epss.dart';import 'package:pub_github_rest_3_1/models/vulnerability.dart';/// The type of advisory.
-@immutable final class GlobalAdvisoryType {const GlobalAdvisoryType._(this.value);
+sealed class GlobalAdvisoryType {const GlobalAdvisoryType();
 
 factory GlobalAdvisoryType.fromJson(String json) { return switch (json) {
   'reviewed' => reviewed,
   'unreviewed' => unreviewed,
   'malware' => malware,
-  _ => GlobalAdvisoryType._(json),
+  _ => GlobalAdvisoryType$Unknown(json),
 }; }
 
-static const GlobalAdvisoryType reviewed = GlobalAdvisoryType._('reviewed');
+static const GlobalAdvisoryType reviewed = GlobalAdvisoryType$reviewed._();
 
-static const GlobalAdvisoryType unreviewed = GlobalAdvisoryType._('unreviewed');
+static const GlobalAdvisoryType unreviewed = GlobalAdvisoryType$unreviewed._();
 
-static const GlobalAdvisoryType malware = GlobalAdvisoryType._('malware');
+static const GlobalAdvisoryType malware = GlobalAdvisoryType$malware._();
 
 static const List<GlobalAdvisoryType> values = [reviewed, unreviewed, malware];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,17 +29,49 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is GlobalAdvisoryType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is GlobalAdvisoryType$Unknown; } 
 @override String toString() => 'GlobalAdvisoryType($value)';
 
  }
+@immutable final class GlobalAdvisoryType$reviewed extends GlobalAdvisoryType {const GlobalAdvisoryType$reviewed._();
+
+@override String get value => 'reviewed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GlobalAdvisoryType$reviewed;
+
+@override int get hashCode => 'reviewed'.hashCode;
+
+ }
+@immutable final class GlobalAdvisoryType$unreviewed extends GlobalAdvisoryType {const GlobalAdvisoryType$unreviewed._();
+
+@override String get value => 'unreviewed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GlobalAdvisoryType$unreviewed;
+
+@override int get hashCode => 'unreviewed'.hashCode;
+
+ }
+@immutable final class GlobalAdvisoryType$malware extends GlobalAdvisoryType {const GlobalAdvisoryType$malware._();
+
+@override String get value => 'malware';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GlobalAdvisoryType$malware;
+
+@override int get hashCode => 'malware'.hashCode;
+
+ }
+@immutable final class GlobalAdvisoryType$Unknown extends GlobalAdvisoryType {const GlobalAdvisoryType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is GlobalAdvisoryType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The severity of the advisory.
-@immutable final class GlobalAdvisorySeverity {const GlobalAdvisorySeverity._(this.value);
+sealed class GlobalAdvisorySeverity {const GlobalAdvisorySeverity();
 
 factory GlobalAdvisorySeverity.fromJson(String json) { return switch (json) {
   'critical' => critical,
@@ -48,23 +79,22 @@ factory GlobalAdvisorySeverity.fromJson(String json) { return switch (json) {
   'medium' => medium,
   'low' => low,
   'unknown' => unknown,
-  _ => GlobalAdvisorySeverity._(json),
+  _ => GlobalAdvisorySeverity$Unknown(json),
 }; }
 
-static const GlobalAdvisorySeverity critical = GlobalAdvisorySeverity._('critical');
+static const GlobalAdvisorySeverity critical = GlobalAdvisorySeverity$critical._();
 
-static const GlobalAdvisorySeverity high = GlobalAdvisorySeverity._('high');
+static const GlobalAdvisorySeverity high = GlobalAdvisorySeverity$high._();
 
-static const GlobalAdvisorySeverity medium = GlobalAdvisorySeverity._('medium');
+static const GlobalAdvisorySeverity medium = GlobalAdvisorySeverity$medium._();
 
-static const GlobalAdvisorySeverity low = GlobalAdvisorySeverity._('low');
+static const GlobalAdvisorySeverity low = GlobalAdvisorySeverity$low._();
 
-static const GlobalAdvisorySeverity unknown = GlobalAdvisorySeverity._('unknown');
+static const GlobalAdvisorySeverity unknown = GlobalAdvisorySeverity$unknown._();
 
 static const List<GlobalAdvisorySeverity> values = [critical, high, medium, low, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -76,13 +106,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GlobalAdvisorySeverity$Unknown; } 
+@override String toString() => 'GlobalAdvisorySeverity($value)';
+
+ }
+@immutable final class GlobalAdvisorySeverity$critical extends GlobalAdvisorySeverity {const GlobalAdvisorySeverity$critical._();
+
+@override String get value => 'critical';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GlobalAdvisorySeverity$critical;
+
+@override int get hashCode => 'critical'.hashCode;
+
+ }
+@immutable final class GlobalAdvisorySeverity$high extends GlobalAdvisorySeverity {const GlobalAdvisorySeverity$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GlobalAdvisorySeverity$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class GlobalAdvisorySeverity$medium extends GlobalAdvisorySeverity {const GlobalAdvisorySeverity$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GlobalAdvisorySeverity$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class GlobalAdvisorySeverity$low extends GlobalAdvisorySeverity {const GlobalAdvisorySeverity$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GlobalAdvisorySeverity$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class GlobalAdvisorySeverity$unknown extends GlobalAdvisorySeverity {const GlobalAdvisorySeverity$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GlobalAdvisorySeverity$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class GlobalAdvisorySeverity$Unknown extends GlobalAdvisorySeverity {const GlobalAdvisorySeverity$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GlobalAdvisorySeverity && other.value == value;
+    other is GlobalAdvisorySeverity$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GlobalAdvisorySeverity($value)';
 
  }
 /// A GitHub Security Advisory.

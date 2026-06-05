@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TaxSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_settings_defaults.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_settings_head_office.dart';import 'package:pub_stripe_spec3/models/tax_product_resource_tax_settings_status_details.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TaxSettingsObject {const TaxSettingsObject._(this.value);
+sealed class TaxSettingsObject {const TaxSettingsObject();
 
 factory TaxSettingsObject.fromJson(String json) { return switch (json) {
   'tax.settings' => taxSettings,
-  _ => TaxSettingsObject._(json),
+  _ => TaxSettingsObject$Unknown(json),
 }; }
 
-static const TaxSettingsObject taxSettings = TaxSettingsObject._('tax.settings');
+static const TaxSettingsObject taxSettings = TaxSettingsObject$taxSettings._();
 
 static const List<TaxSettingsObject> values = [taxSettings];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,32 +21,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxSettingsObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TaxSettingsObject$Unknown; } 
 @override String toString() => 'TaxSettingsObject($value)';
 
  }
+@immutable final class TaxSettingsObject$taxSettings extends TaxSettingsObject {const TaxSettingsObject$taxSettings._();
+
+@override String get value => 'tax.settings';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxSettingsObject$taxSettings;
+
+@override int get hashCode => 'tax.settings'.hashCode;
+
+ }
+@immutable final class TaxSettingsObject$Unknown extends TaxSettingsObject {const TaxSettingsObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TaxSettingsObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of the Tax `Settings`.
-@immutable final class TaxSettingsStatus {const TaxSettingsStatus._(this.value);
+sealed class TaxSettingsStatus {const TaxSettingsStatus();
 
 factory TaxSettingsStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'pending' => pending,
-  _ => TaxSettingsStatus._(json),
+  _ => TaxSettingsStatus$Unknown(json),
 }; }
 
-static const TaxSettingsStatus active = TaxSettingsStatus._('active');
+static const TaxSettingsStatus active = TaxSettingsStatus$active._();
 
-static const TaxSettingsStatus pending = TaxSettingsStatus._('pending');
+static const TaxSettingsStatus pending = TaxSettingsStatus$pending._();
 
 static const List<TaxSettingsStatus> values = [active, pending];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -56,13 +68,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TaxSettingsStatus$Unknown; } 
+@override String toString() => 'TaxSettingsStatus($value)';
+
+ }
+@immutable final class TaxSettingsStatus$active extends TaxSettingsStatus {const TaxSettingsStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxSettingsStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class TaxSettingsStatus$pending extends TaxSettingsStatus {const TaxSettingsStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxSettingsStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class TaxSettingsStatus$Unknown extends TaxSettingsStatus {const TaxSettingsStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxSettingsStatus && other.value == value;
+    other is TaxSettingsStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TaxSettingsStatus($value)';
 
  }
 /// You can use Tax `Settings` to manage configurations used by Stripe Tax calculations.

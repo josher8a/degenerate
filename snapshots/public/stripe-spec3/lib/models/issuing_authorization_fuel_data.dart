@@ -2,7 +2,7 @@
 // Source: #/components/schemas/IssuingAuthorizationFuelData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of fuel that was purchased.
-@immutable final class IssuingAuthorizationFuelDataType {const IssuingAuthorizationFuelDataType._(this.value);
+sealed class IssuingAuthorizationFuelDataType {const IssuingAuthorizationFuelDataType();
 
 factory IssuingAuthorizationFuelDataType.fromJson(String json) { return switch (json) {
   'diesel' => diesel,
@@ -10,23 +10,22 @@ factory IssuingAuthorizationFuelDataType.fromJson(String json) { return switch (
   'unleaded_plus' => unleadedPlus,
   'unleaded_regular' => unleadedRegular,
   'unleaded_super' => unleadedSuper,
-  _ => IssuingAuthorizationFuelDataType._(json),
+  _ => IssuingAuthorizationFuelDataType$Unknown(json),
 }; }
 
-static const IssuingAuthorizationFuelDataType diesel = IssuingAuthorizationFuelDataType._('diesel');
+static const IssuingAuthorizationFuelDataType diesel = IssuingAuthorizationFuelDataType$diesel._();
 
-static const IssuingAuthorizationFuelDataType $other = IssuingAuthorizationFuelDataType._('other');
+static const IssuingAuthorizationFuelDataType $other = IssuingAuthorizationFuelDataType$$other._();
 
-static const IssuingAuthorizationFuelDataType unleadedPlus = IssuingAuthorizationFuelDataType._('unleaded_plus');
+static const IssuingAuthorizationFuelDataType unleadedPlus = IssuingAuthorizationFuelDataType$unleadedPlus._();
 
-static const IssuingAuthorizationFuelDataType unleadedRegular = IssuingAuthorizationFuelDataType._('unleaded_regular');
+static const IssuingAuthorizationFuelDataType unleadedRegular = IssuingAuthorizationFuelDataType$unleadedRegular._();
 
-static const IssuingAuthorizationFuelDataType unleadedSuper = IssuingAuthorizationFuelDataType._('unleaded_super');
+static const IssuingAuthorizationFuelDataType unleadedSuper = IssuingAuthorizationFuelDataType$unleadedSuper._();
 
 static const List<IssuingAuthorizationFuelDataType> values = [diesel, $other, unleadedPlus, unleadedRegular, unleadedSuper];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,17 +37,67 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingAuthorizationFuelDataType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingAuthorizationFuelDataType$Unknown; } 
 @override String toString() => 'IssuingAuthorizationFuelDataType($value)';
 
  }
+@immutable final class IssuingAuthorizationFuelDataType$diesel extends IssuingAuthorizationFuelDataType {const IssuingAuthorizationFuelDataType$diesel._();
+
+@override String get value => 'diesel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFuelDataType$diesel;
+
+@override int get hashCode => 'diesel'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFuelDataType$$other extends IssuingAuthorizationFuelDataType {const IssuingAuthorizationFuelDataType$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFuelDataType$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFuelDataType$unleadedPlus extends IssuingAuthorizationFuelDataType {const IssuingAuthorizationFuelDataType$unleadedPlus._();
+
+@override String get value => 'unleaded_plus';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFuelDataType$unleadedPlus;
+
+@override int get hashCode => 'unleaded_plus'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFuelDataType$unleadedRegular extends IssuingAuthorizationFuelDataType {const IssuingAuthorizationFuelDataType$unleadedRegular._();
+
+@override String get value => 'unleaded_regular';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFuelDataType$unleadedRegular;
+
+@override int get hashCode => 'unleaded_regular'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFuelDataType$unleadedSuper extends IssuingAuthorizationFuelDataType {const IssuingAuthorizationFuelDataType$unleadedSuper._();
+
+@override String get value => 'unleaded_super';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFuelDataType$unleadedSuper;
+
+@override int get hashCode => 'unleaded_super'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFuelDataType$Unknown extends IssuingAuthorizationFuelDataType {const IssuingAuthorizationFuelDataType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingAuthorizationFuelDataType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The units for `quantity_decimal`.
-@immutable final class IssuingAuthorizationFuelDataUnit {const IssuingAuthorizationFuelDataUnit._(this.value);
+sealed class IssuingAuthorizationFuelDataUnit {const IssuingAuthorizationFuelDataUnit();
 
 factory IssuingAuthorizationFuelDataUnit.fromJson(String json) { return switch (json) {
   'charging_minute' => chargingMinute,
@@ -59,29 +108,28 @@ factory IssuingAuthorizationFuelDataUnit.fromJson(String json) { return switch (
   'other' => $other,
   'pound' => pound,
   'us_gallon' => usGallon,
-  _ => IssuingAuthorizationFuelDataUnit._(json),
+  _ => IssuingAuthorizationFuelDataUnit$Unknown(json),
 }; }
 
-static const IssuingAuthorizationFuelDataUnit chargingMinute = IssuingAuthorizationFuelDataUnit._('charging_minute');
+static const IssuingAuthorizationFuelDataUnit chargingMinute = IssuingAuthorizationFuelDataUnit$chargingMinute._();
 
-static const IssuingAuthorizationFuelDataUnit imperialGallon = IssuingAuthorizationFuelDataUnit._('imperial_gallon');
+static const IssuingAuthorizationFuelDataUnit imperialGallon = IssuingAuthorizationFuelDataUnit$imperialGallon._();
 
-static const IssuingAuthorizationFuelDataUnit kilogram = IssuingAuthorizationFuelDataUnit._('kilogram');
+static const IssuingAuthorizationFuelDataUnit kilogram = IssuingAuthorizationFuelDataUnit$kilogram._();
 
-static const IssuingAuthorizationFuelDataUnit kilowattHour = IssuingAuthorizationFuelDataUnit._('kilowatt_hour');
+static const IssuingAuthorizationFuelDataUnit kilowattHour = IssuingAuthorizationFuelDataUnit$kilowattHour._();
 
-static const IssuingAuthorizationFuelDataUnit liter = IssuingAuthorizationFuelDataUnit._('liter');
+static const IssuingAuthorizationFuelDataUnit liter = IssuingAuthorizationFuelDataUnit$liter._();
 
-static const IssuingAuthorizationFuelDataUnit $other = IssuingAuthorizationFuelDataUnit._('other');
+static const IssuingAuthorizationFuelDataUnit $other = IssuingAuthorizationFuelDataUnit$$other._();
 
-static const IssuingAuthorizationFuelDataUnit pound = IssuingAuthorizationFuelDataUnit._('pound');
+static const IssuingAuthorizationFuelDataUnit pound = IssuingAuthorizationFuelDataUnit$pound._();
 
-static const IssuingAuthorizationFuelDataUnit usGallon = IssuingAuthorizationFuelDataUnit._('us_gallon');
+static const IssuingAuthorizationFuelDataUnit usGallon = IssuingAuthorizationFuelDataUnit$usGallon._();
 
 static const List<IssuingAuthorizationFuelDataUnit> values = [chargingMinute, imperialGallon, kilogram, kilowattHour, liter, $other, pound, usGallon];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -96,13 +144,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingAuthorizationFuelDataUnit$Unknown; } 
+@override String toString() => 'IssuingAuthorizationFuelDataUnit($value)';
+
+ }
+@immutable final class IssuingAuthorizationFuelDataUnit$chargingMinute extends IssuingAuthorizationFuelDataUnit {const IssuingAuthorizationFuelDataUnit$chargingMinute._();
+
+@override String get value => 'charging_minute';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFuelDataUnit$chargingMinute;
+
+@override int get hashCode => 'charging_minute'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFuelDataUnit$imperialGallon extends IssuingAuthorizationFuelDataUnit {const IssuingAuthorizationFuelDataUnit$imperialGallon._();
+
+@override String get value => 'imperial_gallon';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFuelDataUnit$imperialGallon;
+
+@override int get hashCode => 'imperial_gallon'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFuelDataUnit$kilogram extends IssuingAuthorizationFuelDataUnit {const IssuingAuthorizationFuelDataUnit$kilogram._();
+
+@override String get value => 'kilogram';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFuelDataUnit$kilogram;
+
+@override int get hashCode => 'kilogram'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFuelDataUnit$kilowattHour extends IssuingAuthorizationFuelDataUnit {const IssuingAuthorizationFuelDataUnit$kilowattHour._();
+
+@override String get value => 'kilowatt_hour';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFuelDataUnit$kilowattHour;
+
+@override int get hashCode => 'kilowatt_hour'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFuelDataUnit$liter extends IssuingAuthorizationFuelDataUnit {const IssuingAuthorizationFuelDataUnit$liter._();
+
+@override String get value => 'liter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFuelDataUnit$liter;
+
+@override int get hashCode => 'liter'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFuelDataUnit$$other extends IssuingAuthorizationFuelDataUnit {const IssuingAuthorizationFuelDataUnit$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFuelDataUnit$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFuelDataUnit$pound extends IssuingAuthorizationFuelDataUnit {const IssuingAuthorizationFuelDataUnit$pound._();
+
+@override String get value => 'pound';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFuelDataUnit$pound;
+
+@override int get hashCode => 'pound'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFuelDataUnit$usGallon extends IssuingAuthorizationFuelDataUnit {const IssuingAuthorizationFuelDataUnit$usGallon._();
+
+@override String get value => 'us_gallon';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFuelDataUnit$usGallon;
+
+@override int get hashCode => 'us_gallon'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFuelDataUnit$Unknown extends IssuingAuthorizationFuelDataUnit {const IssuingAuthorizationFuelDataUnit$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingAuthorizationFuelDataUnit && other.value == value;
+    other is IssuingAuthorizationFuelDataUnit$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingAuthorizationFuelDataUnit($value)';
 
  }
 /// 

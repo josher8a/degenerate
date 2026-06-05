@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TranscriptTextUsageTokens
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/transcript_text_usage_tokens/transcript_text_usage_tokens_input_token_details.dart';/// The type of the usage object. Always `tokens` for this variant.
-@immutable final class TranscriptTextUsageTokensType {const TranscriptTextUsageTokensType._(this.value);
+sealed class TranscriptTextUsageTokensType {const TranscriptTextUsageTokensType();
 
 factory TranscriptTextUsageTokensType.fromJson(String json) { return switch (json) {
   'tokens' => tokens,
-  _ => TranscriptTextUsageTokensType._(json),
+  _ => TranscriptTextUsageTokensType$Unknown(json),
 }; }
 
-static const TranscriptTextUsageTokensType tokens = TranscriptTextUsageTokensType._('tokens');
+static const TranscriptTextUsageTokensType tokens = TranscriptTextUsageTokensType$tokens._();
 
 static const List<TranscriptTextUsageTokensType> values = [tokens];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TranscriptTextUsageTokensType$Unknown; } 
+@override String toString() => 'TranscriptTextUsageTokensType($value)';
+
+ }
+@immutable final class TranscriptTextUsageTokensType$tokens extends TranscriptTextUsageTokensType {const TranscriptTextUsageTokensType$tokens._();
+
+@override String get value => 'tokens';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TranscriptTextUsageTokensType$tokens;
+
+@override int get hashCode => 'tokens'.hashCode;
+
+ }
+@immutable final class TranscriptTextUsageTokensType$Unknown extends TranscriptTextUsageTokensType {const TranscriptTextUsageTokensType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TranscriptTextUsageTokensType && other.value == value;
+    other is TranscriptTextUsageTokensType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TranscriptTextUsageTokensType($value)';
 
  }
 /// Usage statistics for models billed by token usage.

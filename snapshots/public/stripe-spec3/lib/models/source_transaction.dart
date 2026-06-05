@@ -2,19 +2,18 @@
 // Source: #/components/schemas/SourceTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/source_transaction_ach_credit_transfer_data.dart';import 'package:pub_stripe_spec3/models/source_transaction_chf_credit_transfer_data.dart';import 'package:pub_stripe_spec3/models/source_transaction_gbp_credit_transfer_data.dart';import 'package:pub_stripe_spec3/models/source_transaction_paper_check_data.dart';import 'package:pub_stripe_spec3/models/source_transaction_sepa_credit_transfer_data.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class SourceTransactionObject {const SourceTransactionObject._(this.value);
+sealed class SourceTransactionObject {const SourceTransactionObject();
 
 factory SourceTransactionObject.fromJson(String json) { return switch (json) {
   'source_transaction' => sourceTransaction,
-  _ => SourceTransactionObject._(json),
+  _ => SourceTransactionObject$Unknown(json),
 }; }
 
-static const SourceTransactionObject sourceTransaction = SourceTransactionObject._('source_transaction');
+static const SourceTransactionObject sourceTransaction = SourceTransactionObject$sourceTransaction._();
 
 static const List<SourceTransactionObject> values = [sourceTransaction];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,17 +21,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SourceTransactionObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SourceTransactionObject$Unknown; } 
 @override String toString() => 'SourceTransactionObject($value)';
 
  }
+@immutable final class SourceTransactionObject$sourceTransaction extends SourceTransactionObject {const SourceTransactionObject$sourceTransaction._();
+
+@override String get value => 'source_transaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionObject$sourceTransaction;
+
+@override int get hashCode => 'source_transaction'.hashCode;
+
+ }
+@immutable final class SourceTransactionObject$Unknown extends SourceTransactionObject {const SourceTransactionObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SourceTransactionObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The type of source this transaction is attached to.
-@immutable final class SourceTransactionType {const SourceTransactionType._(this.value);
+sealed class SourceTransactionType {const SourceTransactionType();
 
 factory SourceTransactionType.fromJson(String json) { return switch (json) {
   'ach_credit_transfer' => achCreditTransfer,
@@ -51,45 +64,44 @@ factory SourceTransactionType.fromJson(String json) { return switch (json) {
   'sofort' => sofort,
   'three_d_secure' => threeDSecure,
   'wechat' => wechat,
-  _ => SourceTransactionType._(json),
+  _ => SourceTransactionType$Unknown(json),
 }; }
 
-static const SourceTransactionType achCreditTransfer = SourceTransactionType._('ach_credit_transfer');
+static const SourceTransactionType achCreditTransfer = SourceTransactionType$achCreditTransfer._();
 
-static const SourceTransactionType achDebit = SourceTransactionType._('ach_debit');
+static const SourceTransactionType achDebit = SourceTransactionType$achDebit._();
 
-static const SourceTransactionType alipay = SourceTransactionType._('alipay');
+static const SourceTransactionType alipay = SourceTransactionType$alipay._();
 
-static const SourceTransactionType bancontact = SourceTransactionType._('bancontact');
+static const SourceTransactionType bancontact = SourceTransactionType$bancontact._();
 
-static const SourceTransactionType card = SourceTransactionType._('card');
+static const SourceTransactionType card = SourceTransactionType$card._();
 
-static const SourceTransactionType cardPresent = SourceTransactionType._('card_present');
+static const SourceTransactionType cardPresent = SourceTransactionType$cardPresent._();
 
-static const SourceTransactionType eps = SourceTransactionType._('eps');
+static const SourceTransactionType eps = SourceTransactionType$eps._();
 
-static const SourceTransactionType giropay = SourceTransactionType._('giropay');
+static const SourceTransactionType giropay = SourceTransactionType$giropay._();
 
-static const SourceTransactionType ideal = SourceTransactionType._('ideal');
+static const SourceTransactionType ideal = SourceTransactionType$ideal._();
 
-static const SourceTransactionType klarna = SourceTransactionType._('klarna');
+static const SourceTransactionType klarna = SourceTransactionType$klarna._();
 
-static const SourceTransactionType multibanco = SourceTransactionType._('multibanco');
+static const SourceTransactionType multibanco = SourceTransactionType$multibanco._();
 
-static const SourceTransactionType p24 = SourceTransactionType._('p24');
+static const SourceTransactionType p24 = SourceTransactionType$p24._();
 
-static const SourceTransactionType sepaDebit = SourceTransactionType._('sepa_debit');
+static const SourceTransactionType sepaDebit = SourceTransactionType$sepaDebit._();
 
-static const SourceTransactionType sofort = SourceTransactionType._('sofort');
+static const SourceTransactionType sofort = SourceTransactionType$sofort._();
 
-static const SourceTransactionType threeDSecure = SourceTransactionType._('three_d_secure');
+static const SourceTransactionType threeDSecure = SourceTransactionType$threeDSecure._();
 
-static const SourceTransactionType wechat = SourceTransactionType._('wechat');
+static const SourceTransactionType wechat = SourceTransactionType$wechat._();
 
 static const List<SourceTransactionType> values = [achCreditTransfer, achDebit, alipay, bancontact, card, cardPresent, eps, giropay, ideal, klarna, multibanco, p24, sepaDebit, sofort, threeDSecure, wechat];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -112,13 +124,162 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SourceTransactionType$Unknown; } 
+@override String toString() => 'SourceTransactionType($value)';
+
+ }
+@immutable final class SourceTransactionType$achCreditTransfer extends SourceTransactionType {const SourceTransactionType$achCreditTransfer._();
+
+@override String get value => 'ach_credit_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$achCreditTransfer;
+
+@override int get hashCode => 'ach_credit_transfer'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$achDebit extends SourceTransactionType {const SourceTransactionType$achDebit._();
+
+@override String get value => 'ach_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$achDebit;
+
+@override int get hashCode => 'ach_debit'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$alipay extends SourceTransactionType {const SourceTransactionType$alipay._();
+
+@override String get value => 'alipay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$alipay;
+
+@override int get hashCode => 'alipay'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$bancontact extends SourceTransactionType {const SourceTransactionType$bancontact._();
+
+@override String get value => 'bancontact';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$bancontact;
+
+@override int get hashCode => 'bancontact'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$card extends SourceTransactionType {const SourceTransactionType$card._();
+
+@override String get value => 'card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$card;
+
+@override int get hashCode => 'card'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$cardPresent extends SourceTransactionType {const SourceTransactionType$cardPresent._();
+
+@override String get value => 'card_present';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$cardPresent;
+
+@override int get hashCode => 'card_present'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$eps extends SourceTransactionType {const SourceTransactionType$eps._();
+
+@override String get value => 'eps';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$eps;
+
+@override int get hashCode => 'eps'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$giropay extends SourceTransactionType {const SourceTransactionType$giropay._();
+
+@override String get value => 'giropay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$giropay;
+
+@override int get hashCode => 'giropay'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$ideal extends SourceTransactionType {const SourceTransactionType$ideal._();
+
+@override String get value => 'ideal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$ideal;
+
+@override int get hashCode => 'ideal'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$klarna extends SourceTransactionType {const SourceTransactionType$klarna._();
+
+@override String get value => 'klarna';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$klarna;
+
+@override int get hashCode => 'klarna'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$multibanco extends SourceTransactionType {const SourceTransactionType$multibanco._();
+
+@override String get value => 'multibanco';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$multibanco;
+
+@override int get hashCode => 'multibanco'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$p24 extends SourceTransactionType {const SourceTransactionType$p24._();
+
+@override String get value => 'p24';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$p24;
+
+@override int get hashCode => 'p24'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$sepaDebit extends SourceTransactionType {const SourceTransactionType$sepaDebit._();
+
+@override String get value => 'sepa_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$sepaDebit;
+
+@override int get hashCode => 'sepa_debit'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$sofort extends SourceTransactionType {const SourceTransactionType$sofort._();
+
+@override String get value => 'sofort';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$sofort;
+
+@override int get hashCode => 'sofort'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$threeDSecure extends SourceTransactionType {const SourceTransactionType$threeDSecure._();
+
+@override String get value => 'three_d_secure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$threeDSecure;
+
+@override int get hashCode => 'three_d_secure'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$wechat extends SourceTransactionType {const SourceTransactionType$wechat._();
+
+@override String get value => 'wechat';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SourceTransactionType$wechat;
+
+@override int get hashCode => 'wechat'.hashCode;
+
+ }
+@immutable final class SourceTransactionType$Unknown extends SourceTransactionType {const SourceTransactionType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SourceTransactionType && other.value == value;
+    other is SourceTransactionType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SourceTransactionType($value)';
 
  }
 /// Some payment methods have no required amount that a customer must send.

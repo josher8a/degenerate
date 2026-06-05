@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetSessionsStatus
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetSessionsStatus {const GetSessionsStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetSessionsStatus {const GetSessionsStatus();
 
 factory GetSessionsStatus.fromJson(String json) { return switch (json) {
   'LIVE' => live,
   'ENDED' => ended,
-  _ => GetSessionsStatus._(json),
+  _ => GetSessionsStatus$Unknown(json),
 }; }
 
-static const GetSessionsStatus live = GetSessionsStatus._('LIVE');
+static const GetSessionsStatus live = GetSessionsStatus$live._();
 
-static const GetSessionsStatus ended = GetSessionsStatus._('ENDED');
+static const GetSessionsStatus ended = GetSessionsStatus$ended._();
 
 static const List<GetSessionsStatus> values = [live, ended];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GetSessionsStatus$Unknown; } 
+@override String toString() => 'GetSessionsStatus($value)';
+
+ }
+@immutable final class GetSessionsStatus$live extends GetSessionsStatus {const GetSessionsStatus$live._();
+
+@override String get value => 'LIVE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetSessionsStatus$live;
+
+@override int get hashCode => 'LIVE'.hashCode;
+
+ }
+@immutable final class GetSessionsStatus$ended extends GetSessionsStatus {const GetSessionsStatus$ended._();
+
+@override String get value => 'ENDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetSessionsStatus$ended;
+
+@override int get hashCode => 'ENDED'.hashCode;
+
+ }
+@immutable final class GetSessionsStatus$Unknown extends GetSessionsStatus {const GetSessionsStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GetSessionsStatus && other.value == value;
+    other is GetSessionsStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GetSessionsStatus($value)';
 
  }

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailRoutingTimeseriesGroupByArcDmarc
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupByArcDmarc {const RadarGetEmailRoutingTimeseriesGroupByArcDmarc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailRoutingTimeseriesGroupByArcDmarc {const RadarGetEmailRoutingTimeseriesGroupByArcDmarc();
 
 factory RadarGetEmailRoutingTimeseriesGroupByArcDmarc.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailRoutingTimeseriesGroupByArcDmarc._(json),
+  _ => RadarGetEmailRoutingTimeseriesGroupByArcDmarc$Unknown(json),
 }; }
 
-static const RadarGetEmailRoutingTimeseriesGroupByArcDmarc pass = RadarGetEmailRoutingTimeseriesGroupByArcDmarc._('PASS');
+static const RadarGetEmailRoutingTimeseriesGroupByArcDmarc pass = RadarGetEmailRoutingTimeseriesGroupByArcDmarc$pass._();
 
-static const RadarGetEmailRoutingTimeseriesGroupByArcDmarc none = RadarGetEmailRoutingTimeseriesGroupByArcDmarc._('NONE');
+static const RadarGetEmailRoutingTimeseriesGroupByArcDmarc none = RadarGetEmailRoutingTimeseriesGroupByArcDmarc$none._();
 
-static const RadarGetEmailRoutingTimeseriesGroupByArcDmarc fail = RadarGetEmailRoutingTimeseriesGroupByArcDmarc._('FAIL');
+static const RadarGetEmailRoutingTimeseriesGroupByArcDmarc fail = RadarGetEmailRoutingTimeseriesGroupByArcDmarc$fail._();
 
 static const List<RadarGetEmailRoutingTimeseriesGroupByArcDmarc> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupByArcDmarc$Unknown; } 
+@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByArcDmarc($value)';
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByArcDmarc$pass extends RadarGetEmailRoutingTimeseriesGroupByArcDmarc {const RadarGetEmailRoutingTimeseriesGroupByArcDmarc$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByArcDmarc$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByArcDmarc$none extends RadarGetEmailRoutingTimeseriesGroupByArcDmarc {const RadarGetEmailRoutingTimeseriesGroupByArcDmarc$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByArcDmarc$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByArcDmarc$fail extends RadarGetEmailRoutingTimeseriesGroupByArcDmarc {const RadarGetEmailRoutingTimeseriesGroupByArcDmarc$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupByArcDmarc$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupByArcDmarc$Unknown extends RadarGetEmailRoutingTimeseriesGroupByArcDmarc {const RadarGetEmailRoutingTimeseriesGroupByArcDmarc$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailRoutingTimeseriesGroupByArcDmarc && other.value == value;
+    other is RadarGetEmailRoutingTimeseriesGroupByArcDmarc$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupByArcDmarc($value)';
 
  }

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/IssuingAuthorizationFleetData
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fleet_cardholder_prompt_data.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_fleet_reported_breakdown.dart';/// The type of purchase.
-@immutable final class IssuingAuthorizationFleetDataPurchaseType {const IssuingAuthorizationFleetDataPurchaseType._(this.value);
+sealed class IssuingAuthorizationFleetDataPurchaseType {const IssuingAuthorizationFleetDataPurchaseType();
 
 factory IssuingAuthorizationFleetDataPurchaseType.fromJson(String json) { return switch (json) {
   'fuel_and_non_fuel_purchase' => fuelAndNonFuelPurchase,
   'fuel_purchase' => fuelPurchase,
   'non_fuel_purchase' => nonFuelPurchase,
-  _ => IssuingAuthorizationFleetDataPurchaseType._(json),
+  _ => IssuingAuthorizationFleetDataPurchaseType$Unknown(json),
 }; }
 
-static const IssuingAuthorizationFleetDataPurchaseType fuelAndNonFuelPurchase = IssuingAuthorizationFleetDataPurchaseType._('fuel_and_non_fuel_purchase');
+static const IssuingAuthorizationFleetDataPurchaseType fuelAndNonFuelPurchase = IssuingAuthorizationFleetDataPurchaseType$fuelAndNonFuelPurchase._();
 
-static const IssuingAuthorizationFleetDataPurchaseType fuelPurchase = IssuingAuthorizationFleetDataPurchaseType._('fuel_purchase');
+static const IssuingAuthorizationFleetDataPurchaseType fuelPurchase = IssuingAuthorizationFleetDataPurchaseType$fuelPurchase._();
 
-static const IssuingAuthorizationFleetDataPurchaseType nonFuelPurchase = IssuingAuthorizationFleetDataPurchaseType._('non_fuel_purchase');
+static const IssuingAuthorizationFleetDataPurchaseType nonFuelPurchase = IssuingAuthorizationFleetDataPurchaseType$nonFuelPurchase._();
 
 static const List<IssuingAuthorizationFleetDataPurchaseType> values = [fuelAndNonFuelPurchase, fuelPurchase, nonFuelPurchase];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,35 +29,66 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingAuthorizationFleetDataPurchaseType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingAuthorizationFleetDataPurchaseType$Unknown; } 
 @override String toString() => 'IssuingAuthorizationFleetDataPurchaseType($value)';
 
  }
+@immutable final class IssuingAuthorizationFleetDataPurchaseType$fuelAndNonFuelPurchase extends IssuingAuthorizationFleetDataPurchaseType {const IssuingAuthorizationFleetDataPurchaseType$fuelAndNonFuelPurchase._();
+
+@override String get value => 'fuel_and_non_fuel_purchase';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFleetDataPurchaseType$fuelAndNonFuelPurchase;
+
+@override int get hashCode => 'fuel_and_non_fuel_purchase'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFleetDataPurchaseType$fuelPurchase extends IssuingAuthorizationFleetDataPurchaseType {const IssuingAuthorizationFleetDataPurchaseType$fuelPurchase._();
+
+@override String get value => 'fuel_purchase';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFleetDataPurchaseType$fuelPurchase;
+
+@override int get hashCode => 'fuel_purchase'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFleetDataPurchaseType$nonFuelPurchase extends IssuingAuthorizationFleetDataPurchaseType {const IssuingAuthorizationFleetDataPurchaseType$nonFuelPurchase._();
+
+@override String get value => 'non_fuel_purchase';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFleetDataPurchaseType$nonFuelPurchase;
+
+@override int get hashCode => 'non_fuel_purchase'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFleetDataPurchaseType$Unknown extends IssuingAuthorizationFleetDataPurchaseType {const IssuingAuthorizationFleetDataPurchaseType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingAuthorizationFleetDataPurchaseType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The type of fuel service.
-@immutable final class IssuingAuthorizationFleetDataServiceType {const IssuingAuthorizationFleetDataServiceType._(this.value);
+sealed class IssuingAuthorizationFleetDataServiceType {const IssuingAuthorizationFleetDataServiceType();
 
 factory IssuingAuthorizationFleetDataServiceType.fromJson(String json) { return switch (json) {
   'full_service' => fullService,
   'non_fuel_transaction' => nonFuelTransaction,
   'self_service' => selfService,
-  _ => IssuingAuthorizationFleetDataServiceType._(json),
+  _ => IssuingAuthorizationFleetDataServiceType$Unknown(json),
 }; }
 
-static const IssuingAuthorizationFleetDataServiceType fullService = IssuingAuthorizationFleetDataServiceType._('full_service');
+static const IssuingAuthorizationFleetDataServiceType fullService = IssuingAuthorizationFleetDataServiceType$fullService._();
 
-static const IssuingAuthorizationFleetDataServiceType nonFuelTransaction = IssuingAuthorizationFleetDataServiceType._('non_fuel_transaction');
+static const IssuingAuthorizationFleetDataServiceType nonFuelTransaction = IssuingAuthorizationFleetDataServiceType$nonFuelTransaction._();
 
-static const IssuingAuthorizationFleetDataServiceType selfService = IssuingAuthorizationFleetDataServiceType._('self_service');
+static const IssuingAuthorizationFleetDataServiceType selfService = IssuingAuthorizationFleetDataServiceType$selfService._();
 
 static const List<IssuingAuthorizationFleetDataServiceType> values = [fullService, nonFuelTransaction, selfService];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,13 +98,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingAuthorizationFleetDataServiceType$Unknown; } 
+@override String toString() => 'IssuingAuthorizationFleetDataServiceType($value)';
+
+ }
+@immutable final class IssuingAuthorizationFleetDataServiceType$fullService extends IssuingAuthorizationFleetDataServiceType {const IssuingAuthorizationFleetDataServiceType$fullService._();
+
+@override String get value => 'full_service';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFleetDataServiceType$fullService;
+
+@override int get hashCode => 'full_service'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFleetDataServiceType$nonFuelTransaction extends IssuingAuthorizationFleetDataServiceType {const IssuingAuthorizationFleetDataServiceType$nonFuelTransaction._();
+
+@override String get value => 'non_fuel_transaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFleetDataServiceType$nonFuelTransaction;
+
+@override int get hashCode => 'non_fuel_transaction'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFleetDataServiceType$selfService extends IssuingAuthorizationFleetDataServiceType {const IssuingAuthorizationFleetDataServiceType$selfService._();
+
+@override String get value => 'self_service';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationFleetDataServiceType$selfService;
+
+@override int get hashCode => 'self_service'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationFleetDataServiceType$Unknown extends IssuingAuthorizationFleetDataServiceType {const IssuingAuthorizationFleetDataServiceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingAuthorizationFleetDataServiceType && other.value == value;
+    other is IssuingAuthorizationFleetDataServiceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingAuthorizationFleetDataServiceType($value)';
 
  }
 /// 

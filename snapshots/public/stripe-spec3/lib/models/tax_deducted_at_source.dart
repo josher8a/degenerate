@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TaxDeductedAtSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TaxDeductedAtSourceObject {const TaxDeductedAtSourceObject._(this.value);
+sealed class TaxDeductedAtSourceObject {const TaxDeductedAtSourceObject();
 
 factory TaxDeductedAtSourceObject.fromJson(String json) { return switch (json) {
   'tax_deducted_at_source' => taxDeductedAtSource,
-  _ => TaxDeductedAtSourceObject._(json),
+  _ => TaxDeductedAtSourceObject$Unknown(json),
 }; }
 
-static const TaxDeductedAtSourceObject taxDeductedAtSource = TaxDeductedAtSourceObject._('tax_deducted_at_source');
+static const TaxDeductedAtSourceObject taxDeductedAtSource = TaxDeductedAtSourceObject$taxDeductedAtSource._();
 
 static const List<TaxDeductedAtSourceObject> values = [taxDeductedAtSource];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TaxDeductedAtSourceObject$Unknown; } 
+@override String toString() => 'TaxDeductedAtSourceObject($value)';
+
+ }
+@immutable final class TaxDeductedAtSourceObject$taxDeductedAtSource extends TaxDeductedAtSourceObject {const TaxDeductedAtSourceObject$taxDeductedAtSource._();
+
+@override String get value => 'tax_deducted_at_source';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxDeductedAtSourceObject$taxDeductedAtSource;
+
+@override int get hashCode => 'tax_deducted_at_source'.hashCode;
+
+ }
+@immutable final class TaxDeductedAtSourceObject$Unknown extends TaxDeductedAtSourceObject {const TaxDeductedAtSourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxDeductedAtSourceObject && other.value == value;
+    other is TaxDeductedAtSourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TaxDeductedAtSourceObject($value)';
 
  }
 /// 

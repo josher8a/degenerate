@@ -2,25 +2,24 @@
 // Source: #/components/schemas/PaymentPagesCheckoutSessionBrandingSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_branding_settings_icon.dart';import 'package:pub_stripe_spec3/models/payment_pages_checkout_session_branding_settings_logo.dart';/// The border style for the Checkout Session. Must be one of `rounded`, `rectangular`, or `pill`.
-@immutable final class PaymentPagesCheckoutSessionBrandingSettingsBorderStyle {const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle._(this.value);
+sealed class PaymentPagesCheckoutSessionBrandingSettingsBorderStyle {const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle();
 
 factory PaymentPagesCheckoutSessionBrandingSettingsBorderStyle.fromJson(String json) { return switch (json) {
   'pill' => pill,
   'rectangular' => rectangular,
   'rounded' => rounded,
-  _ => PaymentPagesCheckoutSessionBrandingSettingsBorderStyle._(json),
+  _ => PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$Unknown(json),
 }; }
 
-static const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle pill = PaymentPagesCheckoutSessionBrandingSettingsBorderStyle._('pill');
+static const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle pill = PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$pill._();
 
-static const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle rectangular = PaymentPagesCheckoutSessionBrandingSettingsBorderStyle._('rectangular');
+static const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle rectangular = PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$rectangular._();
 
-static const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle rounded = PaymentPagesCheckoutSessionBrandingSettingsBorderStyle._('rounded');
+static const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle rounded = PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$rounded._();
 
 static const List<PaymentPagesCheckoutSessionBrandingSettingsBorderStyle> values = [pill, rectangular, rounded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$Unknown; } 
+@override String toString() => 'PaymentPagesCheckoutSessionBrandingSettingsBorderStyle($value)';
+
+ }
+@immutable final class PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$pill extends PaymentPagesCheckoutSessionBrandingSettingsBorderStyle {const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$pill._();
+
+@override String get value => 'pill';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$pill;
+
+@override int get hashCode => 'pill'.hashCode;
+
+ }
+@immutable final class PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$rectangular extends PaymentPagesCheckoutSessionBrandingSettingsBorderStyle {const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$rectangular._();
+
+@override String get value => 'rectangular';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$rectangular;
+
+@override int get hashCode => 'rectangular'.hashCode;
+
+ }
+@immutable final class PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$rounded extends PaymentPagesCheckoutSessionBrandingSettingsBorderStyle {const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$rounded._();
+
+@override String get value => 'rounded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$rounded;
+
+@override int get hashCode => 'rounded'.hashCode;
+
+ }
+@immutable final class PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$Unknown extends PaymentPagesCheckoutSessionBrandingSettingsBorderStyle {const PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentPagesCheckoutSessionBrandingSettingsBorderStyle && other.value == value;
+    other is PaymentPagesCheckoutSessionBrandingSettingsBorderStyle$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentPagesCheckoutSessionBrandingSettingsBorderStyle($value)';
 
  }
 /// 

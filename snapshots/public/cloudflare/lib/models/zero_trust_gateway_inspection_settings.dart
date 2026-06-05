@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ZeroTrustGatewayInspectionSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Define the proxy inspection mode.   1. static: Gateway applies static inspection to HTTP on TCP(80). With TLS decryption on, Gateway inspects HTTPS traffic on TCP(443) and UDP(443).   2. dynamic: Gateway applies protocol detection to inspect HTTP and HTTPS traffic on any port. TLS decryption must remain on to inspect HTTPS traffic.
-@immutable final class ZeroTrustGatewayInspectionSettingsMode {const ZeroTrustGatewayInspectionSettingsMode._(this.value);
+sealed class ZeroTrustGatewayInspectionSettingsMode {const ZeroTrustGatewayInspectionSettingsMode();
 
 factory ZeroTrustGatewayInspectionSettingsMode.fromJson(String json) { return switch (json) {
   'static' => $static,
   'dynamic' => $dynamic,
-  _ => ZeroTrustGatewayInspectionSettingsMode._(json),
+  _ => ZeroTrustGatewayInspectionSettingsMode$Unknown(json),
 }; }
 
-static const ZeroTrustGatewayInspectionSettingsMode $static = ZeroTrustGatewayInspectionSettingsMode._('static');
+static const ZeroTrustGatewayInspectionSettingsMode $static = ZeroTrustGatewayInspectionSettingsMode$$static._();
 
-static const ZeroTrustGatewayInspectionSettingsMode $dynamic = ZeroTrustGatewayInspectionSettingsMode._('dynamic');
+static const ZeroTrustGatewayInspectionSettingsMode $dynamic = ZeroTrustGatewayInspectionSettingsMode$$dynamic._();
 
 static const List<ZeroTrustGatewayInspectionSettingsMode> values = [$static, $dynamic];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZeroTrustGatewayInspectionSettingsMode$Unknown; } 
+@override String toString() => 'ZeroTrustGatewayInspectionSettingsMode($value)';
+
+ }
+@immutable final class ZeroTrustGatewayInspectionSettingsMode$$static extends ZeroTrustGatewayInspectionSettingsMode {const ZeroTrustGatewayInspectionSettingsMode$$static._();
+
+@override String get value => 'static';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZeroTrustGatewayInspectionSettingsMode$$static;
+
+@override int get hashCode => 'static'.hashCode;
+
+ }
+@immutable final class ZeroTrustGatewayInspectionSettingsMode$$dynamic extends ZeroTrustGatewayInspectionSettingsMode {const ZeroTrustGatewayInspectionSettingsMode$$dynamic._();
+
+@override String get value => 'dynamic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZeroTrustGatewayInspectionSettingsMode$$dynamic;
+
+@override int get hashCode => 'dynamic'.hashCode;
+
+ }
+@immutable final class ZeroTrustGatewayInspectionSettingsMode$Unknown extends ZeroTrustGatewayInspectionSettingsMode {const ZeroTrustGatewayInspectionSettingsMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZeroTrustGatewayInspectionSettingsMode && other.value == value;
+    other is ZeroTrustGatewayInspectionSettingsMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZeroTrustGatewayInspectionSettingsMode($value)';
 
  }
 /// Define the proxy inspection mode.

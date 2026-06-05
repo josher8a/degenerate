@@ -2,19 +2,18 @@
 // Source: #/components/schemas/BillingBillResourceInvoicingPricingPricing
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_pricing_pricing_price_details.dart';/// The type of the pricing details.
-@immutable final class BillingBillResourceInvoicingPricingPricingType {const BillingBillResourceInvoicingPricingPricingType._(this.value);
+sealed class BillingBillResourceInvoicingPricingPricingType {const BillingBillResourceInvoicingPricingPricingType();
 
 factory BillingBillResourceInvoicingPricingPricingType.fromJson(String json) { return switch (json) {
   'price_details' => priceDetails,
-  _ => BillingBillResourceInvoicingPricingPricingType._(json),
+  _ => BillingBillResourceInvoicingPricingPricingType$Unknown(json),
 }; }
 
-static const BillingBillResourceInvoicingPricingPricingType priceDetails = BillingBillResourceInvoicingPricingPricingType._('price_details');
+static const BillingBillResourceInvoicingPricingPricingType priceDetails = BillingBillResourceInvoicingPricingPricingType$priceDetails._();
 
 static const List<BillingBillResourceInvoicingPricingPricingType> values = [priceDetails];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingBillResourceInvoicingPricingPricingType$Unknown; } 
+@override String toString() => 'BillingBillResourceInvoicingPricingPricingType($value)';
+
+ }
+@immutable final class BillingBillResourceInvoicingPricingPricingType$priceDetails extends BillingBillResourceInvoicingPricingPricingType {const BillingBillResourceInvoicingPricingPricingType$priceDetails._();
+
+@override String get value => 'price_details';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingBillResourceInvoicingPricingPricingType$priceDetails;
+
+@override int get hashCode => 'price_details'.hashCode;
+
+ }
+@immutable final class BillingBillResourceInvoicingPricingPricingType$Unknown extends BillingBillResourceInvoicingPricingPricingType {const BillingBillResourceInvoicingPricingPricingType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingBillResourceInvoicingPricingPricingType && other.value == value;
+    other is BillingBillResourceInvoicingPricingPricingType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingBillResourceInvoicingPricingPricingType($value)';
 
  }
 /// 

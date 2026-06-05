@@ -2,7 +2,7 @@
 // Source: #/components/schemas/AbuseReportsMitigationStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of a mitigation
-@immutable final class AbuseReportsMitigationStatus {const AbuseReportsMitigationStatus._(this.value);
+sealed class AbuseReportsMitigationStatus {const AbuseReportsMitigationStatus();
 
 factory AbuseReportsMitigationStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
@@ -10,23 +10,22 @@ factory AbuseReportsMitigationStatus.fromJson(String json) { return switch (json
   'in_review' => inReview,
   'cancelled' => cancelled,
   'removed' => removed,
-  _ => AbuseReportsMitigationStatus._(json),
+  _ => AbuseReportsMitigationStatus$Unknown(json),
 }; }
 
-static const AbuseReportsMitigationStatus pending = AbuseReportsMitigationStatus._('pending');
+static const AbuseReportsMitigationStatus pending = AbuseReportsMitigationStatus$pending._();
 
-static const AbuseReportsMitigationStatus active = AbuseReportsMitigationStatus._('active');
+static const AbuseReportsMitigationStatus active = AbuseReportsMitigationStatus$active._();
 
-static const AbuseReportsMitigationStatus inReview = AbuseReportsMitigationStatus._('in_review');
+static const AbuseReportsMitigationStatus inReview = AbuseReportsMitigationStatus$inReview._();
 
-static const AbuseReportsMitigationStatus cancelled = AbuseReportsMitigationStatus._('cancelled');
+static const AbuseReportsMitigationStatus cancelled = AbuseReportsMitigationStatus$cancelled._();
 
-static const AbuseReportsMitigationStatus removed = AbuseReportsMitigationStatus._('removed');
+static const AbuseReportsMitigationStatus removed = AbuseReportsMitigationStatus$removed._();
 
 static const List<AbuseReportsMitigationStatus> values = [pending, active, inReview, cancelled, removed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,12 +37,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AbuseReportsMitigationStatus$Unknown; } 
+@override String toString() => 'AbuseReportsMitigationStatus($value)';
+
+ }
+@immutable final class AbuseReportsMitigationStatus$pending extends AbuseReportsMitigationStatus {const AbuseReportsMitigationStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AbuseReportsMitigationStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class AbuseReportsMitigationStatus$active extends AbuseReportsMitigationStatus {const AbuseReportsMitigationStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AbuseReportsMitigationStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class AbuseReportsMitigationStatus$inReview extends AbuseReportsMitigationStatus {const AbuseReportsMitigationStatus$inReview._();
+
+@override String get value => 'in_review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AbuseReportsMitigationStatus$inReview;
+
+@override int get hashCode => 'in_review'.hashCode;
+
+ }
+@immutable final class AbuseReportsMitigationStatus$cancelled extends AbuseReportsMitigationStatus {const AbuseReportsMitigationStatus$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AbuseReportsMitigationStatus$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class AbuseReportsMitigationStatus$removed extends AbuseReportsMitigationStatus {const AbuseReportsMitigationStatus$removed._();
+
+@override String get value => 'removed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AbuseReportsMitigationStatus$removed;
+
+@override int get hashCode => 'removed'.hashCode;
+
+ }
+@immutable final class AbuseReportsMitigationStatus$Unknown extends AbuseReportsMitigationStatus {const AbuseReportsMitigationStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AbuseReportsMitigationStatus && other.value == value;
+    other is AbuseReportsMitigationStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AbuseReportsMitigationStatus($value)';
 
  }

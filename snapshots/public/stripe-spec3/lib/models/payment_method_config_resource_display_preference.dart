@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PaymentMethodConfigResourceDisplayPreference
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_config_resource_display_preference/preference.dart';/// The effective display preference value.
-@immutable final class PaymentMethodConfigResourceDisplayPreferenceValue {const PaymentMethodConfigResourceDisplayPreferenceValue._(this.value);
+sealed class PaymentMethodConfigResourceDisplayPreferenceValue {const PaymentMethodConfigResourceDisplayPreferenceValue();
 
 factory PaymentMethodConfigResourceDisplayPreferenceValue.fromJson(String json) { return switch (json) {
   'off' => off,
   'on' => $on,
-  _ => PaymentMethodConfigResourceDisplayPreferenceValue._(json),
+  _ => PaymentMethodConfigResourceDisplayPreferenceValue$Unknown(json),
 }; }
 
-static const PaymentMethodConfigResourceDisplayPreferenceValue off = PaymentMethodConfigResourceDisplayPreferenceValue._('off');
+static const PaymentMethodConfigResourceDisplayPreferenceValue off = PaymentMethodConfigResourceDisplayPreferenceValue$off._();
 
-static const PaymentMethodConfigResourceDisplayPreferenceValue $on = PaymentMethodConfigResourceDisplayPreferenceValue._('on');
+static const PaymentMethodConfigResourceDisplayPreferenceValue $on = PaymentMethodConfigResourceDisplayPreferenceValue$$on._();
 
 static const List<PaymentMethodConfigResourceDisplayPreferenceValue> values = [off, $on];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentMethodConfigResourceDisplayPreferenceValue$Unknown; } 
+@override String toString() => 'PaymentMethodConfigResourceDisplayPreferenceValue($value)';
+
+ }
+@immutable final class PaymentMethodConfigResourceDisplayPreferenceValue$off extends PaymentMethodConfigResourceDisplayPreferenceValue {const PaymentMethodConfigResourceDisplayPreferenceValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodConfigResourceDisplayPreferenceValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class PaymentMethodConfigResourceDisplayPreferenceValue$$on extends PaymentMethodConfigResourceDisplayPreferenceValue {const PaymentMethodConfigResourceDisplayPreferenceValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentMethodConfigResourceDisplayPreferenceValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class PaymentMethodConfigResourceDisplayPreferenceValue$Unknown extends PaymentMethodConfigResourceDisplayPreferenceValue {const PaymentMethodConfigResourceDisplayPreferenceValue$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentMethodConfigResourceDisplayPreferenceValue && other.value == value;
+    other is PaymentMethodConfigResourceDisplayPreferenceValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentMethodConfigResourceDisplayPreferenceValue($value)';
 
  }
 /// 

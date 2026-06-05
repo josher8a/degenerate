@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookCodeScanningAlertAppearedInBranch
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert.dart';import 'package:pub_github_rest_3_1/models/webhooks_code_scanning_commit_oid.dart';import 'package:pub_github_rest_3_1/models/webhooks_code_scanning_ref.dart';@immutable final class WebhookCodeScanningAlertAppearedInBranchAction {const WebhookCodeScanningAlertAppearedInBranchAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/webhook_code_scanning_alert_appeared_in_branch_alert.dart';import 'package:pub_github_rest_3_1/models/webhooks_code_scanning_commit_oid.dart';import 'package:pub_github_rest_3_1/models/webhooks_code_scanning_ref.dart';sealed class WebhookCodeScanningAlertAppearedInBranchAction {const WebhookCodeScanningAlertAppearedInBranchAction();
 
 factory WebhookCodeScanningAlertAppearedInBranchAction.fromJson(String json) { return switch (json) {
   'appeared_in_branch' => appearedInBranch,
-  _ => WebhookCodeScanningAlertAppearedInBranchAction._(json),
+  _ => WebhookCodeScanningAlertAppearedInBranchAction$Unknown(json),
 }; }
 
-static const WebhookCodeScanningAlertAppearedInBranchAction appearedInBranch = WebhookCodeScanningAlertAppearedInBranchAction._('appeared_in_branch');
+static const WebhookCodeScanningAlertAppearedInBranchAction appearedInBranch = WebhookCodeScanningAlertAppearedInBranchAction$appearedInBranch._();
 
 static const List<WebhookCodeScanningAlertAppearedInBranchAction> values = [appearedInBranch];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookCodeScanningAlertAppearedInBranchAction$Unknown; } 
+@override String toString() => 'WebhookCodeScanningAlertAppearedInBranchAction($value)';
+
+ }
+@immutable final class WebhookCodeScanningAlertAppearedInBranchAction$appearedInBranch extends WebhookCodeScanningAlertAppearedInBranchAction {const WebhookCodeScanningAlertAppearedInBranchAction$appearedInBranch._();
+
+@override String get value => 'appeared_in_branch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCodeScanningAlertAppearedInBranchAction$appearedInBranch;
+
+@override int get hashCode => 'appeared_in_branch'.hashCode;
+
+ }
+@immutable final class WebhookCodeScanningAlertAppearedInBranchAction$Unknown extends WebhookCodeScanningAlertAppearedInBranchAction {const WebhookCodeScanningAlertAppearedInBranchAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookCodeScanningAlertAppearedInBranchAction && other.value == value;
+    other is WebhookCodeScanningAlertAppearedInBranchAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookCodeScanningAlertAppearedInBranchAction($value)';
 
  }
 @immutable final class WebhookCodeScanningAlertAppearedInBranch {const WebhookCodeScanningAlertAppearedInBranch({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookMarketplacePurchasePurchased
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/webhooks_previous_marketplace_purchase.dart';@immutable final class WebhookMarketplacePurchasePurchasedAction {const WebhookMarketplacePurchasePurchasedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_marketplace_purchase.dart';import 'package:pub_github_rest_3_1/models/webhooks_previous_marketplace_purchase.dart';sealed class WebhookMarketplacePurchasePurchasedAction {const WebhookMarketplacePurchasePurchasedAction();
 
 factory WebhookMarketplacePurchasePurchasedAction.fromJson(String json) { return switch (json) {
   'purchased' => purchased,
-  _ => WebhookMarketplacePurchasePurchasedAction._(json),
+  _ => WebhookMarketplacePurchasePurchasedAction$Unknown(json),
 }; }
 
-static const WebhookMarketplacePurchasePurchasedAction purchased = WebhookMarketplacePurchasePurchasedAction._('purchased');
+static const WebhookMarketplacePurchasePurchasedAction purchased = WebhookMarketplacePurchasePurchasedAction$purchased._();
 
 static const List<WebhookMarketplacePurchasePurchasedAction> values = [purchased];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookMarketplacePurchasePurchasedAction$Unknown; } 
+@override String toString() => 'WebhookMarketplacePurchasePurchasedAction($value)';
+
+ }
+@immutable final class WebhookMarketplacePurchasePurchasedAction$purchased extends WebhookMarketplacePurchasePurchasedAction {const WebhookMarketplacePurchasePurchasedAction$purchased._();
+
+@override String get value => 'purchased';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookMarketplacePurchasePurchasedAction$purchased;
+
+@override int get hashCode => 'purchased'.hashCode;
+
+ }
+@immutable final class WebhookMarketplacePurchasePurchasedAction$Unknown extends WebhookMarketplacePurchasePurchasedAction {const WebhookMarketplacePurchasePurchasedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookMarketplacePurchasePurchasedAction && other.value == value;
+    other is WebhookMarketplacePurchasePurchasedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookMarketplacePurchasePurchasedAction($value)';
 
  }
 @immutable final class WebhookMarketplacePurchasePurchased {const WebhookMarketplacePurchasePurchased({required this.action, required this.effectiveDate, required this.marketplacePurchase, required this.sender, this.enterprise, this.installation, this.organization, this.previousMarketplacePurchase, this.repository, });

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ForwardRefDiagSection (inline: Style)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StyleVariant1 {const StyleVariant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class StyleVariant1 {const StyleVariant1();
 
 factory StyleVariant1.fromJson(String json) { return switch (json) {
   'bold' => bold,
   'italic' => italic,
-  _ => StyleVariant1._(json),
+  _ => StyleVariant1$Unknown(json),
 }; }
 
-static const StyleVariant1 bold = StyleVariant1._('bold');
+static const StyleVariant1 bold = StyleVariant1$bold._();
 
-static const StyleVariant1 italic = StyleVariant1._('italic');
+static const StyleVariant1 italic = StyleVariant1$italic._();
 
 static const List<StyleVariant1> values = [bold, italic];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,31 +24,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is StyleVariant1 && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is StyleVariant1$Unknown; } 
 @override String toString() => 'StyleVariant1($value)';
 
  }
-@immutable final class StyleVariant2 {const StyleVariant2._(this.value);
+@immutable final class StyleVariant1$bold extends StyleVariant1 {const StyleVariant1$bold._();
+
+@override String get value => 'bold';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StyleVariant1$bold;
+
+@override int get hashCode => 'bold'.hashCode;
+
+ }
+@immutable final class StyleVariant1$italic extends StyleVariant1 {const StyleVariant1$italic._();
+
+@override String get value => 'italic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StyleVariant1$italic;
+
+@override int get hashCode => 'italic'.hashCode;
+
+ }
+@immutable final class StyleVariant1$Unknown extends StyleVariant1 {const StyleVariant1$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StyleVariant1$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class StyleVariant2 {const StyleVariant2();
 
 factory StyleVariant2.fromJson(String json) { return switch (json) {
   'compact' => compact,
   'expanded' => expanded,
-  _ => StyleVariant2._(json),
+  _ => StyleVariant2$Unknown(json),
 }; }
 
-static const StyleVariant2 compact = StyleVariant2._('compact');
+static const StyleVariant2 compact = StyleVariant2$compact._();
 
-static const StyleVariant2 expanded = StyleVariant2._('expanded');
+static const StyleVariant2 expanded = StyleVariant2$expanded._();
 
 static const List<StyleVariant2> values = [compact, expanded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -58,28 +79,50 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is StyleVariant2 && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is StyleVariant2$Unknown; } 
 @override String toString() => 'StyleVariant2($value)';
 
  }
-@immutable final class StyleVariant3 {const StyleVariant3._(this.value);
+@immutable final class StyleVariant2$compact extends StyleVariant2 {const StyleVariant2$compact._();
+
+@override String get value => 'compact';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StyleVariant2$compact;
+
+@override int get hashCode => 'compact'.hashCode;
+
+ }
+@immutable final class StyleVariant2$expanded extends StyleVariant2 {const StyleVariant2$expanded._();
+
+@override String get value => 'expanded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StyleVariant2$expanded;
+
+@override int get hashCode => 'expanded'.hashCode;
+
+ }
+@immutable final class StyleVariant2$Unknown extends StyleVariant2 {const StyleVariant2$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is StyleVariant2$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class StyleVariant3 {const StyleVariant3();
 
 factory StyleVariant3.fromJson(String json) { return switch (json) {
   'default' => $default,
-  _ => StyleVariant3._(json),
+  _ => StyleVariant3$Unknown(json),
 }; }
 
-static const StyleVariant3 $default = StyleVariant3._('default');
+static const StyleVariant3 $default = StyleVariant3$$default._();
 
 static const List<StyleVariant3> values = [$default];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -87,13 +130,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StyleVariant3$Unknown; } 
+@override String toString() => 'StyleVariant3($value)';
+
+ }
+@immutable final class StyleVariant3$$default extends StyleVariant3 {const StyleVariant3$$default._();
+
+@override String get value => 'default';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StyleVariant3$$default;
+
+@override int get hashCode => 'default'.hashCode;
+
+ }
+@immutable final class StyleVariant3$Unknown extends StyleVariant3 {const StyleVariant3$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StyleVariant3 && other.value == value;
+    other is StyleVariant3$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StyleVariant3($value)';
 
  }
 /// Variants:

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/InsightsResourcesPaymentEvaluationUserInterventionRaised
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/insights_resources_payment_evaluation_user_intervention_raised_custom.dart';/// Type of user intervention raised.
-@immutable final class InsightsResourcesPaymentEvaluationUserInterventionRaisedType {const InsightsResourcesPaymentEvaluationUserInterventionRaisedType._(this.value);
+sealed class InsightsResourcesPaymentEvaluationUserInterventionRaisedType {const InsightsResourcesPaymentEvaluationUserInterventionRaisedType();
 
 factory InsightsResourcesPaymentEvaluationUserInterventionRaisedType.fromJson(String json) { return switch (json) {
   '3ds' => $3ds,
   'captcha' => captcha,
   'custom' => custom,
-  _ => InsightsResourcesPaymentEvaluationUserInterventionRaisedType._(json),
+  _ => InsightsResourcesPaymentEvaluationUserInterventionRaisedType$Unknown(json),
 }; }
 
-static const InsightsResourcesPaymentEvaluationUserInterventionRaisedType $3ds = InsightsResourcesPaymentEvaluationUserInterventionRaisedType._('3ds');
+static const InsightsResourcesPaymentEvaluationUserInterventionRaisedType $3ds = InsightsResourcesPaymentEvaluationUserInterventionRaisedType$$3ds._();
 
-static const InsightsResourcesPaymentEvaluationUserInterventionRaisedType captcha = InsightsResourcesPaymentEvaluationUserInterventionRaisedType._('captcha');
+static const InsightsResourcesPaymentEvaluationUserInterventionRaisedType captcha = InsightsResourcesPaymentEvaluationUserInterventionRaisedType$captcha._();
 
-static const InsightsResourcesPaymentEvaluationUserInterventionRaisedType custom = InsightsResourcesPaymentEvaluationUserInterventionRaisedType._('custom');
+static const InsightsResourcesPaymentEvaluationUserInterventionRaisedType custom = InsightsResourcesPaymentEvaluationUserInterventionRaisedType$custom._();
 
 static const List<InsightsResourcesPaymentEvaluationUserInterventionRaisedType> values = [$3ds, captcha, custom];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InsightsResourcesPaymentEvaluationUserInterventionRaisedType$Unknown; } 
+@override String toString() => 'InsightsResourcesPaymentEvaluationUserInterventionRaisedType($value)';
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationUserInterventionRaisedType$$3ds extends InsightsResourcesPaymentEvaluationUserInterventionRaisedType {const InsightsResourcesPaymentEvaluationUserInterventionRaisedType$$3ds._();
+
+@override String get value => '3ds';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationUserInterventionRaisedType$$3ds;
+
+@override int get hashCode => '3ds'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationUserInterventionRaisedType$captcha extends InsightsResourcesPaymentEvaluationUserInterventionRaisedType {const InsightsResourcesPaymentEvaluationUserInterventionRaisedType$captcha._();
+
+@override String get value => 'captcha';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationUserInterventionRaisedType$captcha;
+
+@override int get hashCode => 'captcha'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationUserInterventionRaisedType$custom extends InsightsResourcesPaymentEvaluationUserInterventionRaisedType {const InsightsResourcesPaymentEvaluationUserInterventionRaisedType$custom._();
+
+@override String get value => 'custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InsightsResourcesPaymentEvaluationUserInterventionRaisedType$custom;
+
+@override int get hashCode => 'custom'.hashCode;
+
+ }
+@immutable final class InsightsResourcesPaymentEvaluationUserInterventionRaisedType$Unknown extends InsightsResourcesPaymentEvaluationUserInterventionRaisedType {const InsightsResourcesPaymentEvaluationUserInterventionRaisedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InsightsResourcesPaymentEvaluationUserInterventionRaisedType && other.value == value;
+    other is InsightsResourcesPaymentEvaluationUserInterventionRaisedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InsightsResourcesPaymentEvaluationUserInterventionRaisedType($value)';
 
  }
 /// User intervention raised event details attached to this payment evaluation

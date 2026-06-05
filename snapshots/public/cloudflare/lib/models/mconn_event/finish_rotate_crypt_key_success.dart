@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MconnEvent (inline: FinishRotateCryptKeySuccess)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Finished crypt key rotation
-@immutable final class FinishRotateCryptKeySuccessK {const FinishRotateCryptKeySuccessK._(this.value);
+sealed class FinishRotateCryptKeySuccessK {const FinishRotateCryptKeySuccessK();
 
 factory FinishRotateCryptKeySuccessK.fromJson(String json) { return switch (json) {
   'FinishRotateCryptKeySuccess' => finishRotateCryptKeySuccess,
-  _ => FinishRotateCryptKeySuccessK._(json),
+  _ => FinishRotateCryptKeySuccessK$Unknown(json),
 }; }
 
-static const FinishRotateCryptKeySuccessK finishRotateCryptKeySuccess = FinishRotateCryptKeySuccessK._('FinishRotateCryptKeySuccess');
+static const FinishRotateCryptKeySuccessK finishRotateCryptKeySuccess = FinishRotateCryptKeySuccessK$finishRotateCryptKeySuccess._();
 
 static const List<FinishRotateCryptKeySuccessK> values = [finishRotateCryptKeySuccess];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FinishRotateCryptKeySuccessK$Unknown; } 
+@override String toString() => 'FinishRotateCryptKeySuccessK($value)';
+
+ }
+@immutable final class FinishRotateCryptKeySuccessK$finishRotateCryptKeySuccess extends FinishRotateCryptKeySuccessK {const FinishRotateCryptKeySuccessK$finishRotateCryptKeySuccess._();
+
+@override String get value => 'FinishRotateCryptKeySuccess';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinishRotateCryptKeySuccessK$finishRotateCryptKeySuccess;
+
+@override int get hashCode => 'FinishRotateCryptKeySuccess'.hashCode;
+
+ }
+@immutable final class FinishRotateCryptKeySuccessK$Unknown extends FinishRotateCryptKeySuccessK {const FinishRotateCryptKeySuccessK$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FinishRotateCryptKeySuccessK && other.value == value;
+    other is FinishRotateCryptKeySuccessK$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FinishRotateCryptKeySuccessK($value)';
 
  }
 @immutable final class FinishRotateCryptKeySuccess {const FinishRotateCryptKeySuccess({required this.k});

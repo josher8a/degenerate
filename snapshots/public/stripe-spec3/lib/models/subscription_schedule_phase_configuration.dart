@@ -2,22 +2,21 @@
 // Source: #/components/schemas/SubscriptionSchedulePhaseConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/invoice/default_payment_method.dart';import 'package:pub_stripe_spec3/models/invoice_setting_subscription_schedule_phase_setting.dart';import 'package:pub_stripe_spec3/models/payment_method.dart';import 'package:pub_stripe_spec3/models/schedules_phase_automatic_tax.dart';import 'package:pub_stripe_spec3/models/stackable_discount_with_discount_settings_and_discount_end.dart';import 'package:pub_stripe_spec3/models/subscription_billing_thresholds.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_add_invoice_item.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_configuration_item.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_phase_configuration/subscription_schedule_phase_configuration_collection_method.dart';import 'package:pub_stripe_spec3/models/subscription_transfer_data.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';/// Possible values are `phase_start` or `automatic`. If `phase_start` then billing cycle anchor of the subscription is set to the start of the phase when entering the phase. If `automatic` then the billing cycle anchor is automatically modified as needed when entering the phase. For more information, see the billing cycle [documentation](https://docs.stripe.com/billing/subscriptions/billing-cycle).
-@immutable final class SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor._(this.value);
+sealed class SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor();
 
 factory SubscriptionSchedulePhaseConfigurationBillingCycleAnchor.fromJson(String json) { return switch (json) {
   'automatic' => automatic,
   'phase_start' => phaseStart,
-  _ => SubscriptionSchedulePhaseConfigurationBillingCycleAnchor._(json),
+  _ => SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown(json),
 }; }
 
-static const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor automatic = SubscriptionSchedulePhaseConfigurationBillingCycleAnchor._('automatic');
+static const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor automatic = SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$automatic._();
 
-static const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor phaseStart = SubscriptionSchedulePhaseConfigurationBillingCycleAnchor._('phase_start');
+static const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor phaseStart = SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$phaseStart._();
 
 static const List<SubscriptionSchedulePhaseConfigurationBillingCycleAnchor> values = [automatic, phaseStart];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown; } 
+@override String toString() => 'SubscriptionSchedulePhaseConfigurationBillingCycleAnchor($value)';
+
+ }
+@immutable final class SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$automatic extends SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$automatic._();
+
+@override String get value => 'automatic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$automatic;
+
+@override int get hashCode => 'automatic'.hashCode;
+
+ }
+@immutable final class SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$phaseStart extends SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$phaseStart._();
+
+@override String get value => 'phase_start';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$phaseStart;
+
+@override int get hashCode => 'phase_start'.hashCode;
+
+ }
+@immutable final class SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown extends SubscriptionSchedulePhaseConfigurationBillingCycleAnchor {const SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SubscriptionSchedulePhaseConfigurationBillingCycleAnchor && other.value == value;
+    other is SubscriptionSchedulePhaseConfigurationBillingCycleAnchor$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SubscriptionSchedulePhaseConfigurationBillingCycleAnchor($value)';
 
  }
 /// A phase describes the plans, coupon, and trialing status of a subscription for a predefined time period.

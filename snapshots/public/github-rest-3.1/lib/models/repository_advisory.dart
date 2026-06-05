@@ -2,7 +2,7 @@
 // Source: #/components/schemas/RepositoryAdvisory
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/cvss_severities.dart';import 'package:pub_github_rest_3_1/models/cvss_severities/cvss_severities_cvss.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/cwes.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_security_advisory/dependabot_alert_security_advisory_identifiers.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_severity.dart';import 'package:pub_github_rest_3_1/models/repository_advisory/repository_advisory_credits.dart';import 'package:pub_github_rest_3_1/models/repository_advisory/submission.dart';import 'package:pub_github_rest_3_1/models/repository_advisory_credit.dart';import 'package:pub_github_rest_3_1/models/repository_advisory_vulnerability.dart';import 'package:pub_github_rest_3_1/models/simple_repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/team.dart';/// The state of the advisory.
-@immutable final class RepositoryAdvisoryState {const RepositoryAdvisoryState._(this.value);
+sealed class RepositoryAdvisoryState {const RepositoryAdvisoryState();
 
 factory RepositoryAdvisoryState.fromJson(String json) { return switch (json) {
   'published' => published,
@@ -10,23 +10,22 @@ factory RepositoryAdvisoryState.fromJson(String json) { return switch (json) {
   'withdrawn' => withdrawn,
   'draft' => draft,
   'triage' => triage,
-  _ => RepositoryAdvisoryState._(json),
+  _ => RepositoryAdvisoryState$Unknown(json),
 }; }
 
-static const RepositoryAdvisoryState published = RepositoryAdvisoryState._('published');
+static const RepositoryAdvisoryState published = RepositoryAdvisoryState$published._();
 
-static const RepositoryAdvisoryState closed = RepositoryAdvisoryState._('closed');
+static const RepositoryAdvisoryState closed = RepositoryAdvisoryState$closed._();
 
-static const RepositoryAdvisoryState withdrawn = RepositoryAdvisoryState._('withdrawn');
+static const RepositoryAdvisoryState withdrawn = RepositoryAdvisoryState$withdrawn._();
 
-static const RepositoryAdvisoryState draft = RepositoryAdvisoryState._('draft');
+static const RepositoryAdvisoryState draft = RepositoryAdvisoryState$draft._();
 
-static const RepositoryAdvisoryState triage = RepositoryAdvisoryState._('triage');
+static const RepositoryAdvisoryState triage = RepositoryAdvisoryState$triage._();
 
 static const List<RepositoryAdvisoryState> values = [published, closed, withdrawn, draft, triage];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RepositoryAdvisoryState$Unknown; } 
+@override String toString() => 'RepositoryAdvisoryState($value)';
+
+ }
+@immutable final class RepositoryAdvisoryState$published extends RepositoryAdvisoryState {const RepositoryAdvisoryState$published._();
+
+@override String get value => 'published';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryAdvisoryState$published;
+
+@override int get hashCode => 'published'.hashCode;
+
+ }
+@immutable final class RepositoryAdvisoryState$closed extends RepositoryAdvisoryState {const RepositoryAdvisoryState$closed._();
+
+@override String get value => 'closed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryAdvisoryState$closed;
+
+@override int get hashCode => 'closed'.hashCode;
+
+ }
+@immutable final class RepositoryAdvisoryState$withdrawn extends RepositoryAdvisoryState {const RepositoryAdvisoryState$withdrawn._();
+
+@override String get value => 'withdrawn';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryAdvisoryState$withdrawn;
+
+@override int get hashCode => 'withdrawn'.hashCode;
+
+ }
+@immutable final class RepositoryAdvisoryState$draft extends RepositoryAdvisoryState {const RepositoryAdvisoryState$draft._();
+
+@override String get value => 'draft';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryAdvisoryState$draft;
+
+@override int get hashCode => 'draft'.hashCode;
+
+ }
+@immutable final class RepositoryAdvisoryState$triage extends RepositoryAdvisoryState {const RepositoryAdvisoryState$triage._();
+
+@override String get value => 'triage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryAdvisoryState$triage;
+
+@override int get hashCode => 'triage'.hashCode;
+
+ }
+@immutable final class RepositoryAdvisoryState$Unknown extends RepositoryAdvisoryState {const RepositoryAdvisoryState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryAdvisoryState && other.value == value;
+    other is RepositoryAdvisoryState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryAdvisoryState($value)';
 
  }
 /// A repository security advisory.

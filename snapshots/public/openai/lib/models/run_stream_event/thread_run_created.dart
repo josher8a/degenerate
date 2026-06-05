@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStreamEvent (inline: ThreadRunCreated)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';@immutable final class ThreadRunCreatedEvent {const ThreadRunCreatedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';sealed class ThreadRunCreatedEvent {const ThreadRunCreatedEvent();
 
 factory ThreadRunCreatedEvent.fromJson(String json) { return switch (json) {
   'thread.run.created' => threadRunCreated,
-  _ => ThreadRunCreatedEvent._(json),
+  _ => ThreadRunCreatedEvent$Unknown(json),
 }; }
 
-static const ThreadRunCreatedEvent threadRunCreated = ThreadRunCreatedEvent._('thread.run.created');
+static const ThreadRunCreatedEvent threadRunCreated = ThreadRunCreatedEvent$threadRunCreated._();
 
 static const List<ThreadRunCreatedEvent> values = [threadRunCreated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunCreatedEvent$Unknown; } 
+@override String toString() => 'ThreadRunCreatedEvent($value)';
+
+ }
+@immutable final class ThreadRunCreatedEvent$threadRunCreated extends ThreadRunCreatedEvent {const ThreadRunCreatedEvent$threadRunCreated._();
+
+@override String get value => 'thread.run.created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunCreatedEvent$threadRunCreated;
+
+@override int get hashCode => 'thread.run.created'.hashCode;
+
+ }
+@immutable final class ThreadRunCreatedEvent$Unknown extends ThreadRunCreatedEvent {const ThreadRunCreatedEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunCreatedEvent && other.value == value;
+    other is ThreadRunCreatedEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunCreatedEvent($value)';
 
  }
 /// Occurs when a new [run](/docs/api-reference/runs/object) is created.

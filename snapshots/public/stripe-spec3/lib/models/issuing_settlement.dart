@@ -2,19 +2,18 @@
 // Source: #/components/schemas/IssuingSettlement
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment/billing_meter_event_adjustment_status.dart';import 'package:pub_stripe_spec3/models/issuing_settlement/issuing_settlement_network.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class IssuingSettlementObject {const IssuingSettlementObject._(this.value);
+sealed class IssuingSettlementObject {const IssuingSettlementObject();
 
 factory IssuingSettlementObject.fromJson(String json) { return switch (json) {
   'issuing.settlement' => issuingSettlement,
-  _ => IssuingSettlementObject._(json),
+  _ => IssuingSettlementObject$Unknown(json),
 }; }
 
-static const IssuingSettlementObject issuingSettlement = IssuingSettlementObject._('issuing.settlement');
+static const IssuingSettlementObject issuingSettlement = IssuingSettlementObject$issuingSettlement._();
 
 static const List<IssuingSettlementObject> values = [issuingSettlement];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingSettlementObject$Unknown; } 
+@override String toString() => 'IssuingSettlementObject($value)';
+
+ }
+@immutable final class IssuingSettlementObject$issuingSettlement extends IssuingSettlementObject {const IssuingSettlementObject$issuingSettlement._();
+
+@override String get value => 'issuing.settlement';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingSettlementObject$issuingSettlement;
+
+@override int get hashCode => 'issuing.settlement'.hashCode;
+
+ }
+@immutable final class IssuingSettlementObject$Unknown extends IssuingSettlementObject {const IssuingSettlementObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingSettlementObject && other.value == value;
+    other is IssuingSettlementObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingSettlementObject($value)';
 
  }
 /// When a non-stripe BIN is used, any use of an [issued card](https://docs.stripe.com/issuing) must be settled directly with the card network. The net amount owed is represented by an Issuing `Settlement` object.

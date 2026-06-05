@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeConversationItemMessageUser
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_message_user/realtime_conversation_item_message_user_content.dart';/// The role of the message sender. Always `user`.
-@immutable final class RealtimeConversationItemMessageUserRole {const RealtimeConversationItemMessageUserRole._(this.value);
+sealed class RealtimeConversationItemMessageUserRole {const RealtimeConversationItemMessageUserRole();
 
 factory RealtimeConversationItemMessageUserRole.fromJson(String json) { return switch (json) {
   'user' => user,
-  _ => RealtimeConversationItemMessageUserRole._(json),
+  _ => RealtimeConversationItemMessageUserRole$Unknown(json),
 }; }
 
-static const RealtimeConversationItemMessageUserRole user = RealtimeConversationItemMessageUserRole._('user');
+static const RealtimeConversationItemMessageUserRole user = RealtimeConversationItemMessageUserRole$user._();
 
 static const List<RealtimeConversationItemMessageUserRole> values = [user];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeConversationItemMessageUserRole$Unknown; } 
+@override String toString() => 'RealtimeConversationItemMessageUserRole($value)';
+
+ }
+@immutable final class RealtimeConversationItemMessageUserRole$user extends RealtimeConversationItemMessageUserRole {const RealtimeConversationItemMessageUserRole$user._();
+
+@override String get value => 'user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemMessageUserRole$user;
+
+@override int get hashCode => 'user'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemMessageUserRole$Unknown extends RealtimeConversationItemMessageUserRole {const RealtimeConversationItemMessageUserRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeConversationItemMessageUserRole && other.value == value;
+    other is RealtimeConversationItemMessageUserRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeConversationItemMessageUserRole($value)';
 
  }
 /// A user message item in a Realtime conversation.

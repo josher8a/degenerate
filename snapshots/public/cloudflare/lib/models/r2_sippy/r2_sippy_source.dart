@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/R2Sippy (inline: Source)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2SippySourceProvider {const R2SippySourceProvider._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class R2SippySourceProvider {const R2SippySourceProvider();
 
 factory R2SippySourceProvider.fromJson(String json) { return switch (json) {
   'aws' => aws,
   'gcs' => gcs,
   's3' => s3,
-  _ => R2SippySourceProvider._(json),
+  _ => R2SippySourceProvider$Unknown(json),
 }; }
 
-static const R2SippySourceProvider aws = R2SippySourceProvider._('aws');
+static const R2SippySourceProvider aws = R2SippySourceProvider$aws._();
 
-static const R2SippySourceProvider gcs = R2SippySourceProvider._('gcs');
+static const R2SippySourceProvider gcs = R2SippySourceProvider$gcs._();
 
-static const R2SippySourceProvider s3 = R2SippySourceProvider._('s3');
+static const R2SippySourceProvider s3 = R2SippySourceProvider$s3._();
 
 static const List<R2SippySourceProvider> values = [aws, gcs, s3];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is R2SippySourceProvider$Unknown; } 
+@override String toString() => 'R2SippySourceProvider($value)';
+
+ }
+@immutable final class R2SippySourceProvider$aws extends R2SippySourceProvider {const R2SippySourceProvider$aws._();
+
+@override String get value => 'aws';
+
+@override bool operator ==(Object other) => identical(this, other) || other is R2SippySourceProvider$aws;
+
+@override int get hashCode => 'aws'.hashCode;
+
+ }
+@immutable final class R2SippySourceProvider$gcs extends R2SippySourceProvider {const R2SippySourceProvider$gcs._();
+
+@override String get value => 'gcs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is R2SippySourceProvider$gcs;
+
+@override int get hashCode => 'gcs'.hashCode;
+
+ }
+@immutable final class R2SippySourceProvider$s3 extends R2SippySourceProvider {const R2SippySourceProvider$s3._();
+
+@override String get value => 's3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is R2SippySourceProvider$s3;
+
+@override int get hashCode => 's3'.hashCode;
+
+ }
+@immutable final class R2SippySourceProvider$Unknown extends R2SippySourceProvider {const R2SippySourceProvider$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is R2SippySourceProvider && other.value == value;
+    other is R2SippySourceProvider$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'R2SippySourceProvider($value)';
 
  }
 /// Details about the configured source bucket.

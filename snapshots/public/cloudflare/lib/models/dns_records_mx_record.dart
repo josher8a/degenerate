@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DnsRecordsMxRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_priority.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';/// Record type.
-@immutable final class DnsRecordsMxRecordType {const DnsRecordsMxRecordType._(this.value);
+sealed class DnsRecordsMxRecordType {const DnsRecordsMxRecordType();
 
 factory DnsRecordsMxRecordType.fromJson(String json) { return switch (json) {
   'MX' => mx,
-  _ => DnsRecordsMxRecordType._(json),
+  _ => DnsRecordsMxRecordType$Unknown(json),
 }; }
 
-static const DnsRecordsMxRecordType mx = DnsRecordsMxRecordType._('MX');
+static const DnsRecordsMxRecordType mx = DnsRecordsMxRecordType$mx._();
 
 static const List<DnsRecordsMxRecordType> values = [mx];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DnsRecordsMxRecordType$Unknown; } 
+@override String toString() => 'DnsRecordsMxRecordType($value)';
+
+ }
+@immutable final class DnsRecordsMxRecordType$mx extends DnsRecordsMxRecordType {const DnsRecordsMxRecordType$mx._();
+
+@override String get value => 'MX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsMxRecordType$mx;
+
+@override int get hashCode => 'MX'.hashCode;
+
+ }
+@immutable final class DnsRecordsMxRecordType$Unknown extends DnsRecordsMxRecordType {const DnsRecordsMxRecordType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsMxRecordType && other.value == value;
+    other is DnsRecordsMxRecordType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DnsRecordsMxRecordType($value)';
 
  }
 @immutable final class DnsRecordsMxRecord {const DnsRecordsMxRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.priority, this.type, });

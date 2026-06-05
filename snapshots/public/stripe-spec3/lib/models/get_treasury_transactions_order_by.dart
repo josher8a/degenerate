@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetTreasuryTransactionsOrderBy
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetTreasuryTransactionsOrderBy {const GetTreasuryTransactionsOrderBy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetTreasuryTransactionsOrderBy {const GetTreasuryTransactionsOrderBy();
 
 factory GetTreasuryTransactionsOrderBy.fromJson(String json) { return switch (json) {
   'created' => created,
   'posted_at' => postedAt,
-  _ => GetTreasuryTransactionsOrderBy._(json),
+  _ => GetTreasuryTransactionsOrderBy$Unknown(json),
 }; }
 
-static const GetTreasuryTransactionsOrderBy created = GetTreasuryTransactionsOrderBy._('created');
+static const GetTreasuryTransactionsOrderBy created = GetTreasuryTransactionsOrderBy$created._();
 
-static const GetTreasuryTransactionsOrderBy postedAt = GetTreasuryTransactionsOrderBy._('posted_at');
+static const GetTreasuryTransactionsOrderBy postedAt = GetTreasuryTransactionsOrderBy$postedAt._();
 
 static const List<GetTreasuryTransactionsOrderBy> values = [created, postedAt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GetTreasuryTransactionsOrderBy$Unknown; } 
+@override String toString() => 'GetTreasuryTransactionsOrderBy($value)';
+
+ }
+@immutable final class GetTreasuryTransactionsOrderBy$created extends GetTreasuryTransactionsOrderBy {const GetTreasuryTransactionsOrderBy$created._();
+
+@override String get value => 'created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetTreasuryTransactionsOrderBy$created;
+
+@override int get hashCode => 'created'.hashCode;
+
+ }
+@immutable final class GetTreasuryTransactionsOrderBy$postedAt extends GetTreasuryTransactionsOrderBy {const GetTreasuryTransactionsOrderBy$postedAt._();
+
+@override String get value => 'posted_at';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetTreasuryTransactionsOrderBy$postedAt;
+
+@override int get hashCode => 'posted_at'.hashCode;
+
+ }
+@immutable final class GetTreasuryTransactionsOrderBy$Unknown extends GetTreasuryTransactionsOrderBy {const GetTreasuryTransactionsOrderBy$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GetTreasuryTransactionsOrderBy && other.value == value;
+    other is GetTreasuryTransactionsOrderBy$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GetTreasuryTransactionsOrderBy($value)';
 
  }

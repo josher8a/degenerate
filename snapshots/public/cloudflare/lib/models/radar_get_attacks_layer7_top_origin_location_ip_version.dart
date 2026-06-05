@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetAttacksLayer7TopOriginLocationIpVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7TopOriginLocationIpVersion {const RadarGetAttacksLayer7TopOriginLocationIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer7TopOriginLocationIpVersion {const RadarGetAttacksLayer7TopOriginLocationIpVersion();
 
 factory RadarGetAttacksLayer7TopOriginLocationIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,
   'IPv6' => iPv6,
-  _ => RadarGetAttacksLayer7TopOriginLocationIpVersion._(json),
+  _ => RadarGetAttacksLayer7TopOriginLocationIpVersion$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer7TopOriginLocationIpVersion iPv4 = RadarGetAttacksLayer7TopOriginLocationIpVersion._('IPv4');
+static const RadarGetAttacksLayer7TopOriginLocationIpVersion iPv4 = RadarGetAttacksLayer7TopOriginLocationIpVersion$iPv4._();
 
-static const RadarGetAttacksLayer7TopOriginLocationIpVersion iPv6 = RadarGetAttacksLayer7TopOriginLocationIpVersion._('IPv6');
+static const RadarGetAttacksLayer7TopOriginLocationIpVersion iPv6 = RadarGetAttacksLayer7TopOriginLocationIpVersion$iPv6._();
 
 static const List<RadarGetAttacksLayer7TopOriginLocationIpVersion> values = [iPv4, iPv6];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer7TopOriginLocationIpVersion$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer7TopOriginLocationIpVersion($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer7TopOriginLocationIpVersion$iPv4 extends RadarGetAttacksLayer7TopOriginLocationIpVersion {const RadarGetAttacksLayer7TopOriginLocationIpVersion$iPv4._();
+
+@override String get value => 'IPv4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopOriginLocationIpVersion$iPv4;
+
+@override int get hashCode => 'IPv4'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopOriginLocationIpVersion$iPv6 extends RadarGetAttacksLayer7TopOriginLocationIpVersion {const RadarGetAttacksLayer7TopOriginLocationIpVersion$iPv6._();
+
+@override String get value => 'IPv6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7TopOriginLocationIpVersion$iPv6;
+
+@override int get hashCode => 'IPv6'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7TopOriginLocationIpVersion$Unknown extends RadarGetAttacksLayer7TopOriginLocationIpVersion {const RadarGetAttacksLayer7TopOriginLocationIpVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer7TopOriginLocationIpVersion && other.value == value;
+    other is RadarGetAttacksLayer7TopOriginLocationIpVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer7TopOriginLocationIpVersion($value)';
 
  }

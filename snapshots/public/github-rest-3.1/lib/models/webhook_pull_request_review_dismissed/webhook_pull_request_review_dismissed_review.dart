@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookPullRequestReviewDismissed (inline: Review)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment/webhooks_issue_comment_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_review/webhooks_review_links.dart';@immutable final class ReviewState {const ReviewState._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/author_association.dart';import 'package:pub_github_rest_3_1/models/webhooks_issue_comment/webhooks_issue_comment_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_review/webhooks_review_links.dart';sealed class ReviewState {const ReviewState();
 
 factory ReviewState.fromJson(String json) { return switch (json) {
   'dismissed' => dismissed,
   'approved' => approved,
   'changes_requested' => changesRequested,
-  _ => ReviewState._(json),
+  _ => ReviewState$Unknown(json),
 }; }
 
-static const ReviewState dismissed = ReviewState._('dismissed');
+static const ReviewState dismissed = ReviewState$dismissed._();
 
-static const ReviewState approved = ReviewState._('approved');
+static const ReviewState approved = ReviewState$approved._();
 
-static const ReviewState changesRequested = ReviewState._('changes_requested');
+static const ReviewState changesRequested = ReviewState$changesRequested._();
 
 static const List<ReviewState> values = [dismissed, approved, changesRequested];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ReviewState$Unknown; } 
+@override String toString() => 'ReviewState($value)';
+
+ }
+@immutable final class ReviewState$dismissed extends ReviewState {const ReviewState$dismissed._();
+
+@override String get value => 'dismissed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReviewState$dismissed;
+
+@override int get hashCode => 'dismissed'.hashCode;
+
+ }
+@immutable final class ReviewState$approved extends ReviewState {const ReviewState$approved._();
+
+@override String get value => 'approved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReviewState$approved;
+
+@override int get hashCode => 'approved'.hashCode;
+
+ }
+@immutable final class ReviewState$changesRequested extends ReviewState {const ReviewState$changesRequested._();
+
+@override String get value => 'changes_requested';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReviewState$changesRequested;
+
+@override int get hashCode => 'changes_requested'.hashCode;
+
+ }
+@immutable final class ReviewState$Unknown extends ReviewState {const ReviewState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ReviewState && other.value == value;
+    other is ReviewState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ReviewState($value)';
 
  }
 /// The review that was affected.

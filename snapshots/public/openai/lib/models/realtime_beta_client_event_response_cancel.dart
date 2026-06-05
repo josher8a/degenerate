@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaClientEventResponseCancel
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.cancel`.
-@immutable final class RealtimeBetaClientEventResponseCancelType {const RealtimeBetaClientEventResponseCancelType._(this.value);
+sealed class RealtimeBetaClientEventResponseCancelType {const RealtimeBetaClientEventResponseCancelType();
 
 factory RealtimeBetaClientEventResponseCancelType.fromJson(String json) { return switch (json) {
   'response.cancel' => responseCancel,
-  _ => RealtimeBetaClientEventResponseCancelType._(json),
+  _ => RealtimeBetaClientEventResponseCancelType$Unknown(json),
 }; }
 
-static const RealtimeBetaClientEventResponseCancelType responseCancel = RealtimeBetaClientEventResponseCancelType._('response.cancel');
+static const RealtimeBetaClientEventResponseCancelType responseCancel = RealtimeBetaClientEventResponseCancelType$responseCancel._();
 
 static const List<RealtimeBetaClientEventResponseCancelType> values = [responseCancel];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaClientEventResponseCancelType$Unknown; } 
+@override String toString() => 'RealtimeBetaClientEventResponseCancelType($value)';
+
+ }
+@immutable final class RealtimeBetaClientEventResponseCancelType$responseCancel extends RealtimeBetaClientEventResponseCancelType {const RealtimeBetaClientEventResponseCancelType$responseCancel._();
+
+@override String get value => 'response.cancel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaClientEventResponseCancelType$responseCancel;
+
+@override int get hashCode => 'response.cancel'.hashCode;
+
+ }
+@immutable final class RealtimeBetaClientEventResponseCancelType$Unknown extends RealtimeBetaClientEventResponseCancelType {const RealtimeBetaClientEventResponseCancelType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaClientEventResponseCancelType && other.value == value;
+    other is RealtimeBetaClientEventResponseCancelType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaClientEventResponseCancelType($value)';
 
  }
 /// Send this event to cancel an in-progress response. The server will respond

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FirewallCountryConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The configuration target. You must set the target to `country` when specifying a country code in the rule.
-@immutable final class FirewallCountryConfigurationTarget {const FirewallCountryConfigurationTarget._(this.value);
+sealed class FirewallCountryConfigurationTarget {const FirewallCountryConfigurationTarget();
 
 factory FirewallCountryConfigurationTarget.fromJson(String json) { return switch (json) {
   'country' => country,
-  _ => FirewallCountryConfigurationTarget._(json),
+  _ => FirewallCountryConfigurationTarget$Unknown(json),
 }; }
 
-static const FirewallCountryConfigurationTarget country = FirewallCountryConfigurationTarget._('country');
+static const FirewallCountryConfigurationTarget country = FirewallCountryConfigurationTarget$country._();
 
 static const List<FirewallCountryConfigurationTarget> values = [country];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FirewallCountryConfigurationTarget$Unknown; } 
+@override String toString() => 'FirewallCountryConfigurationTarget($value)';
+
+ }
+@immutable final class FirewallCountryConfigurationTarget$country extends FirewallCountryConfigurationTarget {const FirewallCountryConfigurationTarget$country._();
+
+@override String get value => 'country';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallCountryConfigurationTarget$country;
+
+@override int get hashCode => 'country'.hashCode;
+
+ }
+@immutable final class FirewallCountryConfigurationTarget$Unknown extends FirewallCountryConfigurationTarget {const FirewallCountryConfigurationTarget$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FirewallCountryConfigurationTarget && other.value == value;
+    other is FirewallCountryConfigurationTarget$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FirewallCountryConfigurationTarget($value)';
 
  }
 @immutable final class FirewallCountryConfiguration {const FirewallCountryConfiguration({this.target, this.value, });

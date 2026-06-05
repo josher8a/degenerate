@@ -2,25 +2,24 @@
 // Source: #/components/schemas/TlsCertificatesAndHostnamesRequestType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Signature type desired on certificate ("origin-rsa" (rsa), "origin-ecc" (ecdsa), or "keyless-certificate" (for Keyless SSL servers).
-@immutable final class TlsCertificatesAndHostnamesRequestType {const TlsCertificatesAndHostnamesRequestType._(this.value);
+sealed class TlsCertificatesAndHostnamesRequestType {const TlsCertificatesAndHostnamesRequestType();
 
 factory TlsCertificatesAndHostnamesRequestType.fromJson(String json) { return switch (json) {
   'origin-rsa' => originRsa,
   'origin-ecc' => originEcc,
   'keyless-certificate' => keylessCertificate,
-  _ => TlsCertificatesAndHostnamesRequestType._(json),
+  _ => TlsCertificatesAndHostnamesRequestType$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesRequestType originRsa = TlsCertificatesAndHostnamesRequestType._('origin-rsa');
+static const TlsCertificatesAndHostnamesRequestType originRsa = TlsCertificatesAndHostnamesRequestType$originRsa._();
 
-static const TlsCertificatesAndHostnamesRequestType originEcc = TlsCertificatesAndHostnamesRequestType._('origin-ecc');
+static const TlsCertificatesAndHostnamesRequestType originEcc = TlsCertificatesAndHostnamesRequestType$originEcc._();
 
-static const TlsCertificatesAndHostnamesRequestType keylessCertificate = TlsCertificatesAndHostnamesRequestType._('keyless-certificate');
+static const TlsCertificatesAndHostnamesRequestType keylessCertificate = TlsCertificatesAndHostnamesRequestType$keylessCertificate._();
 
 static const List<TlsCertificatesAndHostnamesRequestType> values = [originRsa, originEcc, keylessCertificate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesRequestType$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesRequestType($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesRequestType$originRsa extends TlsCertificatesAndHostnamesRequestType {const TlsCertificatesAndHostnamesRequestType$originRsa._();
+
+@override String get value => 'origin-rsa';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesRequestType$originRsa;
+
+@override int get hashCode => 'origin-rsa'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesRequestType$originEcc extends TlsCertificatesAndHostnamesRequestType {const TlsCertificatesAndHostnamesRequestType$originEcc._();
+
+@override String get value => 'origin-ecc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesRequestType$originEcc;
+
+@override int get hashCode => 'origin-ecc'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesRequestType$keylessCertificate extends TlsCertificatesAndHostnamesRequestType {const TlsCertificatesAndHostnamesRequestType$keylessCertificate._();
+
+@override String get value => 'keyless-certificate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesRequestType$keylessCertificate;
+
+@override int get hashCode => 'keyless-certificate'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesRequestType$Unknown extends TlsCertificatesAndHostnamesRequestType {const TlsCertificatesAndHostnamesRequestType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesRequestType && other.value == value;
+    other is TlsCertificatesAndHostnamesRequestType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesRequestType($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventTranscriptionSessionUpdated (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `transcription_session.updated`.
-@immutable final class RealtimeBetaServerEventTranscriptionSessionUpdatedType {const RealtimeBetaServerEventTranscriptionSessionUpdatedType._(this.value);
+sealed class RealtimeBetaServerEventTranscriptionSessionUpdatedType {const RealtimeBetaServerEventTranscriptionSessionUpdatedType();
 
 factory RealtimeBetaServerEventTranscriptionSessionUpdatedType.fromJson(String json) { return switch (json) {
   'transcription_session.updated' => transcriptionSessionUpdated,
-  _ => RealtimeBetaServerEventTranscriptionSessionUpdatedType._(json),
+  _ => RealtimeBetaServerEventTranscriptionSessionUpdatedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventTranscriptionSessionUpdatedType transcriptionSessionUpdated = RealtimeBetaServerEventTranscriptionSessionUpdatedType._('transcription_session.updated');
+static const RealtimeBetaServerEventTranscriptionSessionUpdatedType transcriptionSessionUpdated = RealtimeBetaServerEventTranscriptionSessionUpdatedType$transcriptionSessionUpdated._();
 
 static const List<RealtimeBetaServerEventTranscriptionSessionUpdatedType> values = [transcriptionSessionUpdated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventTranscriptionSessionUpdatedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventTranscriptionSessionUpdatedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventTranscriptionSessionUpdatedType$transcriptionSessionUpdated extends RealtimeBetaServerEventTranscriptionSessionUpdatedType {const RealtimeBetaServerEventTranscriptionSessionUpdatedType$transcriptionSessionUpdated._();
+
+@override String get value => 'transcription_session.updated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventTranscriptionSessionUpdatedType$transcriptionSessionUpdated;
+
+@override int get hashCode => 'transcription_session.updated'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventTranscriptionSessionUpdatedType$Unknown extends RealtimeBetaServerEventTranscriptionSessionUpdatedType {const RealtimeBetaServerEventTranscriptionSessionUpdatedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventTranscriptionSessionUpdatedType && other.value == value;
+    other is RealtimeBetaServerEventTranscriptionSessionUpdatedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventTranscriptionSessionUpdatedType($value)';
 
  }

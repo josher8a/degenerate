@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MqEventSourceWorkflowsWorkflow
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
-@immutable final class MqEventSourceWorkflowsWorkflowType {const MqEventSourceWorkflowsWorkflowType._(this.value);
+sealed class MqEventSourceWorkflowsWorkflowType {const MqEventSourceWorkflowsWorkflowType();
 
 factory MqEventSourceWorkflowsWorkflowType.fromJson(String json) { return switch (json) {
   'workflows.workflow' => workflowsWorkflow,
-  _ => MqEventSourceWorkflowsWorkflowType._(json),
+  _ => MqEventSourceWorkflowsWorkflowType$Unknown(json),
 }; }
 
-static const MqEventSourceWorkflowsWorkflowType workflowsWorkflow = MqEventSourceWorkflowsWorkflowType._('workflows.workflow');
+static const MqEventSourceWorkflowsWorkflowType workflowsWorkflow = MqEventSourceWorkflowsWorkflowType$workflowsWorkflow._();
 
 static const List<MqEventSourceWorkflowsWorkflowType> values = [workflowsWorkflow];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MqEventSourceWorkflowsWorkflowType$Unknown; } 
+@override String toString() => 'MqEventSourceWorkflowsWorkflowType($value)';
+
+ }
+@immutable final class MqEventSourceWorkflowsWorkflowType$workflowsWorkflow extends MqEventSourceWorkflowsWorkflowType {const MqEventSourceWorkflowsWorkflowType$workflowsWorkflow._();
+
+@override String get value => 'workflows.workflow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqEventSourceWorkflowsWorkflowType$workflowsWorkflow;
+
+@override int get hashCode => 'workflows.workflow'.hashCode;
+
+ }
+@immutable final class MqEventSourceWorkflowsWorkflowType$Unknown extends MqEventSourceWorkflowsWorkflowType {const MqEventSourceWorkflowsWorkflowType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MqEventSourceWorkflowsWorkflowType && other.value == value;
+    other is MqEventSourceWorkflowsWorkflowType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MqEventSourceWorkflowsWorkflowType($value)';
 
  }
 @immutable final class MqEventSourceWorkflowsWorkflow {const MqEventSourceWorkflowsWorkflow({this.type, this.workflowName, });

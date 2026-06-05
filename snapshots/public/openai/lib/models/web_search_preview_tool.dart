@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebSearchPreviewTool
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/approximate_location.dart';@immutable final class SearchContextSize {const SearchContextSize._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/approximate_location.dart';sealed class SearchContextSize {const SearchContextSize();
 
 factory SearchContextSize.fromJson(String json) { return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
-  _ => SearchContextSize._(json),
+  _ => SearchContextSize$Unknown(json),
 }; }
 
-static const SearchContextSize low = SearchContextSize._('low');
+static const SearchContextSize low = SearchContextSize$low._();
 
-static const SearchContextSize medium = SearchContextSize._('medium');
+static const SearchContextSize medium = SearchContextSize$medium._();
 
-static const SearchContextSize high = SearchContextSize._('high');
+static const SearchContextSize high = SearchContextSize$high._();
 
 static const List<SearchContextSize> values = [low, medium, high];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,31 +28,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SearchContextSize && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SearchContextSize$Unknown; } 
 @override String toString() => 'SearchContextSize($value)';
 
  }
-@immutable final class SearchContentType {const SearchContentType._(this.value);
+@immutable final class SearchContextSize$low extends SearchContextSize {const SearchContextSize$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SearchContextSize$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class SearchContextSize$medium extends SearchContextSize {const SearchContextSize$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SearchContextSize$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class SearchContextSize$high extends SearchContextSize {const SearchContextSize$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SearchContextSize$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class SearchContextSize$Unknown extends SearchContextSize {const SearchContextSize$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SearchContextSize$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class SearchContentType {const SearchContentType();
 
 factory SearchContentType.fromJson(String json) { return switch (json) {
   'text' => text,
   'image' => image,
-  _ => SearchContentType._(json),
+  _ => SearchContentType$Unknown(json),
 }; }
 
-static const SearchContentType text = SearchContentType._('text');
+static const SearchContentType text = SearchContentType$text._();
 
-static const SearchContentType image = SearchContentType._('image');
+static const SearchContentType image = SearchContentType$image._();
 
 static const List<SearchContentType> values = [text, image];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -62,13 +92,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SearchContentType$Unknown; } 
+@override String toString() => 'SearchContentType($value)';
+
+ }
+@immutable final class SearchContentType$text extends SearchContentType {const SearchContentType$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SearchContentType$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class SearchContentType$image extends SearchContentType {const SearchContentType$image._();
+
+@override String get value => 'image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SearchContentType$image;
+
+@override int get hashCode => 'image'.hashCode;
+
+ }
+@immutable final class SearchContentType$Unknown extends SearchContentType {const SearchContentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SearchContentType && other.value == value;
+    other is SearchContentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SearchContentType($value)';
 
  }
 /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaClientEventConversationItemDelete
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.delete`.
-@immutable final class RealtimeBetaClientEventConversationItemDeleteType {const RealtimeBetaClientEventConversationItemDeleteType._(this.value);
+sealed class RealtimeBetaClientEventConversationItemDeleteType {const RealtimeBetaClientEventConversationItemDeleteType();
 
 factory RealtimeBetaClientEventConversationItemDeleteType.fromJson(String json) { return switch (json) {
   'conversation.item.delete' => conversationItemDelete,
-  _ => RealtimeBetaClientEventConversationItemDeleteType._(json),
+  _ => RealtimeBetaClientEventConversationItemDeleteType$Unknown(json),
 }; }
 
-static const RealtimeBetaClientEventConversationItemDeleteType conversationItemDelete = RealtimeBetaClientEventConversationItemDeleteType._('conversation.item.delete');
+static const RealtimeBetaClientEventConversationItemDeleteType conversationItemDelete = RealtimeBetaClientEventConversationItemDeleteType$conversationItemDelete._();
 
 static const List<RealtimeBetaClientEventConversationItemDeleteType> values = [conversationItemDelete];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaClientEventConversationItemDeleteType$Unknown; } 
+@override String toString() => 'RealtimeBetaClientEventConversationItemDeleteType($value)';
+
+ }
+@immutable final class RealtimeBetaClientEventConversationItemDeleteType$conversationItemDelete extends RealtimeBetaClientEventConversationItemDeleteType {const RealtimeBetaClientEventConversationItemDeleteType$conversationItemDelete._();
+
+@override String get value => 'conversation.item.delete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaClientEventConversationItemDeleteType$conversationItemDelete;
+
+@override int get hashCode => 'conversation.item.delete'.hashCode;
+
+ }
+@immutable final class RealtimeBetaClientEventConversationItemDeleteType$Unknown extends RealtimeBetaClientEventConversationItemDeleteType {const RealtimeBetaClientEventConversationItemDeleteType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaClientEventConversationItemDeleteType && other.value == value;
+    other is RealtimeBetaClientEventConversationItemDeleteType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaClientEventConversationItemDeleteType($value)';
 
  }
 /// Send this event when you want to remove any item from the conversation

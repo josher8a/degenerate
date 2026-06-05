@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WorkersErrorWorkerNameSubdomainLengthLimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker name is too long to be used as a subdomain.
-@immutable final class WorkersErrorWorkerNameSubdomainLengthLimitCode {const WorkersErrorWorkerNameSubdomainLengthLimitCode._(this.value);
+sealed class WorkersErrorWorkerNameSubdomainLengthLimitCode {const WorkersErrorWorkerNameSubdomainLengthLimitCode();
 
 factory WorkersErrorWorkerNameSubdomainLengthLimitCode.fromJson(int json) { return switch (json) {
   100132 => $100132,
-  _ => WorkersErrorWorkerNameSubdomainLengthLimitCode._(json),
+  _ => WorkersErrorWorkerNameSubdomainLengthLimitCode$Unknown(json),
 }; }
 
-static const WorkersErrorWorkerNameSubdomainLengthLimitCode $100132 = WorkersErrorWorkerNameSubdomainLengthLimitCode._(100132);
+static const WorkersErrorWorkerNameSubdomainLengthLimitCode $100132 = WorkersErrorWorkerNameSubdomainLengthLimitCode$$100132._();
 
 static const List<WorkersErrorWorkerNameSubdomainLengthLimitCode> values = [$100132];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersErrorWorkerNameSubdomainLengthLimitCode$Unknown; } 
+@override String toString() => 'WorkersErrorWorkerNameSubdomainLengthLimitCode($value)';
+
+ }
+@immutable final class WorkersErrorWorkerNameSubdomainLengthLimitCode$$100132 extends WorkersErrorWorkerNameSubdomainLengthLimitCode {const WorkersErrorWorkerNameSubdomainLengthLimitCode$$100132._();
+
+@override int get value => 100132;
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersErrorWorkerNameSubdomainLengthLimitCode$$100132;
+
+@override int get hashCode => 100132.hashCode;
+
+ }
+@immutable final class WorkersErrorWorkerNameSubdomainLengthLimitCode$Unknown extends WorkersErrorWorkerNameSubdomainLengthLimitCode {const WorkersErrorWorkerNameSubdomainLengthLimitCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersErrorWorkerNameSubdomainLengthLimitCode && other.value == value;
+    other is WorkersErrorWorkerNameSubdomainLengthLimitCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersErrorWorkerNameSubdomainLengthLimitCode($value)';
 
  }
 @immutable final class WorkersErrorWorkerNameSubdomainLengthLimit {const WorkersErrorWorkerNameSubdomainLengthLimit({required this.code, required this.message, });

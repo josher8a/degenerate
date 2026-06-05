@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `batch.cancelled`.
 /// 
-@immutable final class WebhookBatchCancelledType {const WebhookBatchCancelledType._(this.value);
+sealed class WebhookBatchCancelledType {const WebhookBatchCancelledType();
 
 factory WebhookBatchCancelledType.fromJson(String json) { return switch (json) {
   'batch.cancelled' => batchCancelled,
-  _ => WebhookBatchCancelledType._(json),
+  _ => WebhookBatchCancelledType$Unknown(json),
 }; }
 
-static const WebhookBatchCancelledType batchCancelled = WebhookBatchCancelledType._('batch.cancelled');
+static const WebhookBatchCancelledType batchCancelled = WebhookBatchCancelledType$batchCancelled._();
 
 static const List<WebhookBatchCancelledType> values = [batchCancelled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookBatchCancelledType$Unknown; } 
+@override String toString() => 'WebhookBatchCancelledType($value)';
+
+ }
+@immutable final class WebhookBatchCancelledType$batchCancelled extends WebhookBatchCancelledType {const WebhookBatchCancelledType$batchCancelled._();
+
+@override String get value => 'batch.cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookBatchCancelledType$batchCancelled;
+
+@override int get hashCode => 'batch.cancelled'.hashCode;
+
+ }
+@immutable final class WebhookBatchCancelledType$Unknown extends WebhookBatchCancelledType {const WebhookBatchCancelledType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookBatchCancelledType && other.value == value;
+    other is WebhookBatchCancelledType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookBatchCancelledType($value)';
 
  }
 /// Sent when a batch API request has been cancelled.

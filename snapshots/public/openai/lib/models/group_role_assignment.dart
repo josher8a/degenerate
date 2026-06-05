@@ -2,19 +2,18 @@
 // Source: #/components/schemas/GroupRoleAssignment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/group.dart';import 'package:pub_openai/models/role.dart';/// Always `group.role`.
-@immutable final class GroupRoleAssignmentObject {const GroupRoleAssignmentObject._(this.value);
+sealed class GroupRoleAssignmentObject {const GroupRoleAssignmentObject();
 
 factory GroupRoleAssignmentObject.fromJson(String json) { return switch (json) {
   'group.role' => groupRole,
-  _ => GroupRoleAssignmentObject._(json),
+  _ => GroupRoleAssignmentObject$Unknown(json),
 }; }
 
-static const GroupRoleAssignmentObject groupRole = GroupRoleAssignmentObject._('group.role');
+static const GroupRoleAssignmentObject groupRole = GroupRoleAssignmentObject$groupRole._();
 
 static const List<GroupRoleAssignmentObject> values = [groupRole];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GroupRoleAssignmentObject$Unknown; } 
+@override String toString() => 'GroupRoleAssignmentObject($value)';
+
+ }
+@immutable final class GroupRoleAssignmentObject$groupRole extends GroupRoleAssignmentObject {const GroupRoleAssignmentObject$groupRole._();
+
+@override String get value => 'group.role';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GroupRoleAssignmentObject$groupRole;
+
+@override int get hashCode => 'group.role'.hashCode;
+
+ }
+@immutable final class GroupRoleAssignmentObject$Unknown extends GroupRoleAssignmentObject {const GroupRoleAssignmentObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GroupRoleAssignmentObject && other.value == value;
+    other is GroupRoleAssignmentObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GroupRoleAssignmentObject($value)';
 
  }
 /// Role assignment linking a group to a role.

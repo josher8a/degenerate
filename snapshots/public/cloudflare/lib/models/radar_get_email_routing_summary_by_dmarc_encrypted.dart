@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailRoutingSummaryByDmarcEncrypted
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingSummaryByDmarcEncrypted {const RadarGetEmailRoutingSummaryByDmarcEncrypted._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailRoutingSummaryByDmarcEncrypted {const RadarGetEmailRoutingSummaryByDmarcEncrypted();
 
 factory RadarGetEmailRoutingSummaryByDmarcEncrypted.fromJson(String json) { return switch (json) {
   'ENCRYPTED' => encrypted,
   'NOT_ENCRYPTED' => notEncrypted,
-  _ => RadarGetEmailRoutingSummaryByDmarcEncrypted._(json),
+  _ => RadarGetEmailRoutingSummaryByDmarcEncrypted$Unknown(json),
 }; }
 
-static const RadarGetEmailRoutingSummaryByDmarcEncrypted encrypted = RadarGetEmailRoutingSummaryByDmarcEncrypted._('ENCRYPTED');
+static const RadarGetEmailRoutingSummaryByDmarcEncrypted encrypted = RadarGetEmailRoutingSummaryByDmarcEncrypted$encrypted._();
 
-static const RadarGetEmailRoutingSummaryByDmarcEncrypted notEncrypted = RadarGetEmailRoutingSummaryByDmarcEncrypted._('NOT_ENCRYPTED');
+static const RadarGetEmailRoutingSummaryByDmarcEncrypted notEncrypted = RadarGetEmailRoutingSummaryByDmarcEncrypted$notEncrypted._();
 
 static const List<RadarGetEmailRoutingSummaryByDmarcEncrypted> values = [encrypted, notEncrypted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailRoutingSummaryByDmarcEncrypted$Unknown; } 
+@override String toString() => 'RadarGetEmailRoutingSummaryByDmarcEncrypted($value)';
+
+ }
+@immutable final class RadarGetEmailRoutingSummaryByDmarcEncrypted$encrypted extends RadarGetEmailRoutingSummaryByDmarcEncrypted {const RadarGetEmailRoutingSummaryByDmarcEncrypted$encrypted._();
+
+@override String get value => 'ENCRYPTED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingSummaryByDmarcEncrypted$encrypted;
+
+@override int get hashCode => 'ENCRYPTED'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingSummaryByDmarcEncrypted$notEncrypted extends RadarGetEmailRoutingSummaryByDmarcEncrypted {const RadarGetEmailRoutingSummaryByDmarcEncrypted$notEncrypted._();
+
+@override String get value => 'NOT_ENCRYPTED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingSummaryByDmarcEncrypted$notEncrypted;
+
+@override int get hashCode => 'NOT_ENCRYPTED'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingSummaryByDmarcEncrypted$Unknown extends RadarGetEmailRoutingSummaryByDmarcEncrypted {const RadarGetEmailRoutingSummaryByDmarcEncrypted$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailRoutingSummaryByDmarcEncrypted && other.value == value;
+    other is RadarGetEmailRoutingSummaryByDmarcEncrypted$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailRoutingSummaryByDmarcEncrypted($value)';
 
  }

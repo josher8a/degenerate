@@ -8,22 +8,21 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// The truncation s
 /// - `disabled` (default): If the input size will exceed the context window
 ///   size for a model, the request will fail with a 400 error.
 /// 
-@immutable final class Truncation {const Truncation._(this.value);
+sealed class Truncation {const Truncation();
 
 factory Truncation.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'disabled' => disabled,
-  _ => Truncation._(json),
+  _ => Truncation$Unknown(json),
 }; }
 
-static const Truncation auto = Truncation._('auto');
+static const Truncation auto = Truncation$auto._();
 
-static const Truncation disabled = Truncation._('disabled');
+static const Truncation disabled = Truncation$disabled._();
 
 static const List<Truncation> values = [auto, disabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -32,12 +31,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Truncation$Unknown; } 
+@override String toString() => 'Truncation($value)';
+
+ }
+@immutable final class Truncation$auto extends Truncation {const Truncation$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Truncation$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class Truncation$disabled extends Truncation {const Truncation$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Truncation$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class Truncation$Unknown extends Truncation {const Truncation$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Truncation && other.value == value;
+    other is Truncation$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Truncation($value)';
 
  }

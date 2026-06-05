@@ -2,25 +2,24 @@
 // Source: #/components/schemas/SpectrumConfigEdgeIps (inline: Dynamic)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The IP versions supported for inbound connections on Spectrum anycast IPs.
-@immutable final class DynamicConnectivity {const DynamicConnectivity._(this.value);
+sealed class DynamicConnectivity {const DynamicConnectivity();
 
 factory DynamicConnectivity.fromJson(String json) { return switch (json) {
   'all' => all,
   'ipv4' => ipv4,
   'ipv6' => ipv6,
-  _ => DynamicConnectivity._(json),
+  _ => DynamicConnectivity$Unknown(json),
 }; }
 
-static const DynamicConnectivity all = DynamicConnectivity._('all');
+static const DynamicConnectivity all = DynamicConnectivity$all._();
 
-static const DynamicConnectivity ipv4 = DynamicConnectivity._('ipv4');
+static const DynamicConnectivity ipv4 = DynamicConnectivity$ipv4._();
 
-static const DynamicConnectivity ipv6 = DynamicConnectivity._('ipv6');
+static const DynamicConnectivity ipv6 = DynamicConnectivity$ipv6._();
 
 static const List<DynamicConnectivity> values = [all, ipv4, ipv6];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,29 +29,60 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DynamicConnectivity && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is DynamicConnectivity$Unknown; } 
 @override String toString() => 'DynamicConnectivity($value)';
 
  }
+@immutable final class DynamicConnectivity$all extends DynamicConnectivity {const DynamicConnectivity$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DynamicConnectivity$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class DynamicConnectivity$ipv4 extends DynamicConnectivity {const DynamicConnectivity$ipv4._();
+
+@override String get value => 'ipv4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DynamicConnectivity$ipv4;
+
+@override int get hashCode => 'ipv4'.hashCode;
+
+ }
+@immutable final class DynamicConnectivity$ipv6 extends DynamicConnectivity {const DynamicConnectivity$ipv6._();
+
+@override String get value => 'ipv6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DynamicConnectivity$ipv6;
+
+@override int get hashCode => 'ipv6'.hashCode;
+
+ }
+@immutable final class DynamicConnectivity$Unknown extends DynamicConnectivity {const DynamicConnectivity$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DynamicConnectivity$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The type of edge IP configuration specified. Dynamically allocated edge IPs use Spectrum anycast IPs in accordance with the connectivity you specify. Only valid with CNAME DNS names.
-@immutable final class DynamicType {const DynamicType._(this.value);
+sealed class DynamicType {const DynamicType();
 
 factory DynamicType.fromJson(String json) { return switch (json) {
   'dynamic' => $dynamic,
-  _ => DynamicType._(json),
+  _ => DynamicType$Unknown(json),
 }; }
 
-static const DynamicType $dynamic = DynamicType._('dynamic');
+static const DynamicType $dynamic = DynamicType$$dynamic._();
 
 static const List<DynamicType> values = [$dynamic];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,13 +90,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DynamicType$Unknown; } 
+@override String toString() => 'DynamicType($value)';
+
+ }
+@immutable final class DynamicType$$dynamic extends DynamicType {const DynamicType$$dynamic._();
+
+@override String get value => 'dynamic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DynamicType$$dynamic;
+
+@override int get hashCode => 'dynamic'.hashCode;
+
+ }
+@immutable final class DynamicType$Unknown extends DynamicType {const DynamicType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DynamicType && other.value == value;
+    other is DynamicType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DynamicType($value)';
 
  }
 @immutable final class Dynamic {const Dynamic({this.connectivity, this.type, });

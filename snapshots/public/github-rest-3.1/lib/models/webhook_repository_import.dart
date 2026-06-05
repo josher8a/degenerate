@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookRepositoryImport
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookRepositoryImportStatus {const WebhookRepositoryImportStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookRepositoryImportStatus {const WebhookRepositoryImportStatus();
 
 factory WebhookRepositoryImportStatus.fromJson(String json) { return switch (json) {
   'success' => success,
   'cancelled' => cancelled,
   'failure' => failure,
-  _ => WebhookRepositoryImportStatus._(json),
+  _ => WebhookRepositoryImportStatus$Unknown(json),
 }; }
 
-static const WebhookRepositoryImportStatus success = WebhookRepositoryImportStatus._('success');
+static const WebhookRepositoryImportStatus success = WebhookRepositoryImportStatus$success._();
 
-static const WebhookRepositoryImportStatus cancelled = WebhookRepositoryImportStatus._('cancelled');
+static const WebhookRepositoryImportStatus cancelled = WebhookRepositoryImportStatus$cancelled._();
 
-static const WebhookRepositoryImportStatus failure = WebhookRepositoryImportStatus._('failure');
+static const WebhookRepositoryImportStatus failure = WebhookRepositoryImportStatus$failure._();
 
 static const List<WebhookRepositoryImportStatus> values = [success, cancelled, failure];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookRepositoryImportStatus$Unknown; } 
+@override String toString() => 'WebhookRepositoryImportStatus($value)';
+
+ }
+@immutable final class WebhookRepositoryImportStatus$success extends WebhookRepositoryImportStatus {const WebhookRepositoryImportStatus$success._();
+
+@override String get value => 'success';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookRepositoryImportStatus$success;
+
+@override int get hashCode => 'success'.hashCode;
+
+ }
+@immutable final class WebhookRepositoryImportStatus$cancelled extends WebhookRepositoryImportStatus {const WebhookRepositoryImportStatus$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookRepositoryImportStatus$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class WebhookRepositoryImportStatus$failure extends WebhookRepositoryImportStatus {const WebhookRepositoryImportStatus$failure._();
+
+@override String get value => 'failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookRepositoryImportStatus$failure;
+
+@override int get hashCode => 'failure'.hashCode;
+
+ }
+@immutable final class WebhookRepositoryImportStatus$Unknown extends WebhookRepositoryImportStatus {const WebhookRepositoryImportStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookRepositoryImportStatus && other.value == value;
+    other is WebhookRepositoryImportStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookRepositoryImportStatus($value)';
 
  }
 @immutable final class WebhookRepositoryImport {const WebhookRepositoryImport({required this.repository, required this.sender, required this.status, this.enterprise, this.installation, this.organization, });

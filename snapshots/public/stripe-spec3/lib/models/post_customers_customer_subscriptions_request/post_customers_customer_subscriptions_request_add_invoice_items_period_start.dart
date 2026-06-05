@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCustomersCustomerSubscriptionsRequest (inline: AddInvoiceItems > Period > Start)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StartType {const StartType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class StartType {const StartType();
 
 factory StartType.fromJson(String json) { return switch (json) {
   'max_item_period_start' => maxItemPeriodStart,
   'now' => now,
   'timestamp' => timestamp,
-  _ => StartType._(json),
+  _ => StartType$Unknown(json),
 }; }
 
-static const StartType maxItemPeriodStart = StartType._('max_item_period_start');
+static const StartType maxItemPeriodStart = StartType$maxItemPeriodStart._();
 
-static const StartType now = StartType._('now');
+static const StartType now = StartType$now._();
 
-static const StartType timestamp = StartType._('timestamp');
+static const StartType timestamp = StartType$timestamp._();
 
 static const List<StartType> values = [maxItemPeriodStart, now, timestamp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StartType$Unknown; } 
+@override String toString() => 'StartType($value)';
+
+ }
+@immutable final class StartType$maxItemPeriodStart extends StartType {const StartType$maxItemPeriodStart._();
+
+@override String get value => 'max_item_period_start';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StartType$maxItemPeriodStart;
+
+@override int get hashCode => 'max_item_period_start'.hashCode;
+
+ }
+@immutable final class StartType$now extends StartType {const StartType$now._();
+
+@override String get value => 'now';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StartType$now;
+
+@override int get hashCode => 'now'.hashCode;
+
+ }
+@immutable final class StartType$timestamp extends StartType {const StartType$timestamp._();
+
+@override String get value => 'timestamp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StartType$timestamp;
+
+@override int get hashCode => 'timestamp'.hashCode;
+
+ }
+@immutable final class StartType$Unknown extends StartType {const StartType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StartType && other.value == value;
+    other is StartType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StartType($value)';
 
  }
 @immutable final class PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart {const PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodStart({required this.type, this.timestamp, });

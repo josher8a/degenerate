@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ZeroTrustGatewayBodyScanningSettings
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specify the inspection mode as either `deep` or `shallow`.
-@immutable final class InspectionMode {const InspectionMode._(this.value);
+sealed class InspectionMode {const InspectionMode();
 
 factory InspectionMode.fromJson(String json) { return switch (json) {
   'deep' => deep,
   'shallow' => shallow,
-  _ => InspectionMode._(json),
+  _ => InspectionMode$Unknown(json),
 }; }
 
-static const InspectionMode deep = InspectionMode._('deep');
+static const InspectionMode deep = InspectionMode$deep._();
 
-static const InspectionMode shallow = InspectionMode._('shallow');
+static const InspectionMode shallow = InspectionMode$shallow._();
 
 static const List<InspectionMode> values = [deep, shallow];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InspectionMode$Unknown; } 
+@override String toString() => 'InspectionMode($value)';
+
+ }
+@immutable final class InspectionMode$deep extends InspectionMode {const InspectionMode$deep._();
+
+@override String get value => 'deep';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InspectionMode$deep;
+
+@override int get hashCode => 'deep'.hashCode;
+
+ }
+@immutable final class InspectionMode$shallow extends InspectionMode {const InspectionMode$shallow._();
+
+@override String get value => 'shallow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InspectionMode$shallow;
+
+@override int get hashCode => 'shallow'.hashCode;
+
+ }
+@immutable final class InspectionMode$Unknown extends InspectionMode {const InspectionMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InspectionMode && other.value == value;
+    other is InspectionMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InspectionMode($value)';
 
  }
 /// Specify the DLP inspection mode.

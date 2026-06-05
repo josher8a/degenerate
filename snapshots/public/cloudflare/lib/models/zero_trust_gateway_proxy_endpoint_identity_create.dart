@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ZeroTrustGatewayProxyEndpointIdentityCreate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints_components_schemas_name.dart';/// The proxy endpoint kind
-@immutable final class ZeroTrustGatewayProxyEndpointIdentityCreateKind {const ZeroTrustGatewayProxyEndpointIdentityCreateKind._(this.value);
+sealed class ZeroTrustGatewayProxyEndpointIdentityCreateKind {const ZeroTrustGatewayProxyEndpointIdentityCreateKind();
 
 factory ZeroTrustGatewayProxyEndpointIdentityCreateKind.fromJson(String json) { return switch (json) {
   'identity' => identity,
-  _ => ZeroTrustGatewayProxyEndpointIdentityCreateKind._(json),
+  _ => ZeroTrustGatewayProxyEndpointIdentityCreateKind$Unknown(json),
 }; }
 
-static const ZeroTrustGatewayProxyEndpointIdentityCreateKind identity = ZeroTrustGatewayProxyEndpointIdentityCreateKind._('identity');
+static const ZeroTrustGatewayProxyEndpointIdentityCreateKind identity = ZeroTrustGatewayProxyEndpointIdentityCreateKind$identity._();
 
 static const List<ZeroTrustGatewayProxyEndpointIdentityCreateKind> values = [identity];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZeroTrustGatewayProxyEndpointIdentityCreateKind$Unknown; } 
+@override String toString() => 'ZeroTrustGatewayProxyEndpointIdentityCreateKind($value)';
+
+ }
+@immutable final class ZeroTrustGatewayProxyEndpointIdentityCreateKind$identity extends ZeroTrustGatewayProxyEndpointIdentityCreateKind {const ZeroTrustGatewayProxyEndpointIdentityCreateKind$identity._();
+
+@override String get value => 'identity';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZeroTrustGatewayProxyEndpointIdentityCreateKind$identity;
+
+@override int get hashCode => 'identity'.hashCode;
+
+ }
+@immutable final class ZeroTrustGatewayProxyEndpointIdentityCreateKind$Unknown extends ZeroTrustGatewayProxyEndpointIdentityCreateKind {const ZeroTrustGatewayProxyEndpointIdentityCreateKind$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZeroTrustGatewayProxyEndpointIdentityCreateKind && other.value == value;
+    other is ZeroTrustGatewayProxyEndpointIdentityCreateKind$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZeroTrustGatewayProxyEndpointIdentityCreateKind($value)';
 
  }
 @immutable final class ZeroTrustGatewayProxyEndpointIdentityCreate {const ZeroTrustGatewayProxyEndpointIdentityCreate({required this.kind, required this.name, });

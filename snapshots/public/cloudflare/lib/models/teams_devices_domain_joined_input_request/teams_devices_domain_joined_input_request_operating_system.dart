@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TeamsDevicesDomainJoinedInputRequest (inline: OperatingSystem)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating System.
-@immutable final class TeamsDevicesDomainJoinedInputRequestOperatingSystem {const TeamsDevicesDomainJoinedInputRequestOperatingSystem._(this.value);
+sealed class TeamsDevicesDomainJoinedInputRequestOperatingSystem {const TeamsDevicesDomainJoinedInputRequestOperatingSystem();
 
 factory TeamsDevicesDomainJoinedInputRequestOperatingSystem.fromJson(String json) { return switch (json) {
   'windows' => windows,
-  _ => TeamsDevicesDomainJoinedInputRequestOperatingSystem._(json),
+  _ => TeamsDevicesDomainJoinedInputRequestOperatingSystem$Unknown(json),
 }; }
 
-static const TeamsDevicesDomainJoinedInputRequestOperatingSystem windows = TeamsDevicesDomainJoinedInputRequestOperatingSystem._('windows');
+static const TeamsDevicesDomainJoinedInputRequestOperatingSystem windows = TeamsDevicesDomainJoinedInputRequestOperatingSystem$windows._();
 
 static const List<TeamsDevicesDomainJoinedInputRequestOperatingSystem> values = [windows];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TeamsDevicesDomainJoinedInputRequestOperatingSystem$Unknown; } 
+@override String toString() => 'TeamsDevicesDomainJoinedInputRequestOperatingSystem($value)';
+
+ }
+@immutable final class TeamsDevicesDomainJoinedInputRequestOperatingSystem$windows extends TeamsDevicesDomainJoinedInputRequestOperatingSystem {const TeamsDevicesDomainJoinedInputRequestOperatingSystem$windows._();
+
+@override String get value => 'windows';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesDomainJoinedInputRequestOperatingSystem$windows;
+
+@override int get hashCode => 'windows'.hashCode;
+
+ }
+@immutable final class TeamsDevicesDomainJoinedInputRequestOperatingSystem$Unknown extends TeamsDevicesDomainJoinedInputRequestOperatingSystem {const TeamsDevicesDomainJoinedInputRequestOperatingSystem$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TeamsDevicesDomainJoinedInputRequestOperatingSystem && other.value == value;
+    other is TeamsDevicesDomainJoinedInputRequestOperatingSystem$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TeamsDevicesDomainJoinedInputRequestOperatingSystem($value)';
 
  }

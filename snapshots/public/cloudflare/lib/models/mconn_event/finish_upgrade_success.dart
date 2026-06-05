@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MconnEvent (inline: FinishUpgradeSuccess)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Finished upgrade
-@immutable final class FinishUpgradeSuccessK {const FinishUpgradeSuccessK._(this.value);
+sealed class FinishUpgradeSuccessK {const FinishUpgradeSuccessK();
 
 factory FinishUpgradeSuccessK.fromJson(String json) { return switch (json) {
   'FinishUpgradeSuccess' => finishUpgradeSuccess,
-  _ => FinishUpgradeSuccessK._(json),
+  _ => FinishUpgradeSuccessK$Unknown(json),
 }; }
 
-static const FinishUpgradeSuccessK finishUpgradeSuccess = FinishUpgradeSuccessK._('FinishUpgradeSuccess');
+static const FinishUpgradeSuccessK finishUpgradeSuccess = FinishUpgradeSuccessK$finishUpgradeSuccess._();
 
 static const List<FinishUpgradeSuccessK> values = [finishUpgradeSuccess];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FinishUpgradeSuccessK$Unknown; } 
+@override String toString() => 'FinishUpgradeSuccessK($value)';
+
+ }
+@immutable final class FinishUpgradeSuccessK$finishUpgradeSuccess extends FinishUpgradeSuccessK {const FinishUpgradeSuccessK$finishUpgradeSuccess._();
+
+@override String get value => 'FinishUpgradeSuccess';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FinishUpgradeSuccessK$finishUpgradeSuccess;
+
+@override int get hashCode => 'FinishUpgradeSuccess'.hashCode;
+
+ }
+@immutable final class FinishUpgradeSuccessK$Unknown extends FinishUpgradeSuccessK {const FinishUpgradeSuccessK$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FinishUpgradeSuccessK && other.value == value;
+    other is FinishUpgradeSuccessK$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FinishUpgradeSuccessK($value)';
 
  }
 @immutable final class FinishUpgradeSuccess {const FinishUpgradeSuccess({required this.k});

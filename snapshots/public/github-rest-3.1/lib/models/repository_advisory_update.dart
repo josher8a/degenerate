@@ -2,25 +2,24 @@
 // Source: #/components/schemas/RepositoryAdvisoryUpdate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_severity.dart';import 'package:pub_github_rest_3_1/models/private_vulnerability_report_create/private_vulnerability_report_create_vulnerabilities.dart';import 'package:pub_github_rest_3_1/models/repository_advisory_create/repository_advisory_create_credits.dart';/// The state of the advisory.
-@immutable final class RepositoryAdvisoryUpdateState {const RepositoryAdvisoryUpdateState._(this.value);
+sealed class RepositoryAdvisoryUpdateState {const RepositoryAdvisoryUpdateState();
 
 factory RepositoryAdvisoryUpdateState.fromJson(String json) { return switch (json) {
   'published' => published,
   'closed' => closed,
   'draft' => draft,
-  _ => RepositoryAdvisoryUpdateState._(json),
+  _ => RepositoryAdvisoryUpdateState$Unknown(json),
 }; }
 
-static const RepositoryAdvisoryUpdateState published = RepositoryAdvisoryUpdateState._('published');
+static const RepositoryAdvisoryUpdateState published = RepositoryAdvisoryUpdateState$published._();
 
-static const RepositoryAdvisoryUpdateState closed = RepositoryAdvisoryUpdateState._('closed');
+static const RepositoryAdvisoryUpdateState closed = RepositoryAdvisoryUpdateState$closed._();
 
-static const RepositoryAdvisoryUpdateState draft = RepositoryAdvisoryUpdateState._('draft');
+static const RepositoryAdvisoryUpdateState draft = RepositoryAdvisoryUpdateState$draft._();
 
 static const List<RepositoryAdvisoryUpdateState> values = [published, closed, draft];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RepositoryAdvisoryUpdateState$Unknown; } 
+@override String toString() => 'RepositoryAdvisoryUpdateState($value)';
+
+ }
+@immutable final class RepositoryAdvisoryUpdateState$published extends RepositoryAdvisoryUpdateState {const RepositoryAdvisoryUpdateState$published._();
+
+@override String get value => 'published';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryAdvisoryUpdateState$published;
+
+@override int get hashCode => 'published'.hashCode;
+
+ }
+@immutable final class RepositoryAdvisoryUpdateState$closed extends RepositoryAdvisoryUpdateState {const RepositoryAdvisoryUpdateState$closed._();
+
+@override String get value => 'closed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryAdvisoryUpdateState$closed;
+
+@override int get hashCode => 'closed'.hashCode;
+
+ }
+@immutable final class RepositoryAdvisoryUpdateState$draft extends RepositoryAdvisoryUpdateState {const RepositoryAdvisoryUpdateState$draft._();
+
+@override String get value => 'draft';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryAdvisoryUpdateState$draft;
+
+@override int get hashCode => 'draft'.hashCode;
+
+ }
+@immutable final class RepositoryAdvisoryUpdateState$Unknown extends RepositoryAdvisoryUpdateState {const RepositoryAdvisoryUpdateState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryAdvisoryUpdateState && other.value == value;
+    other is RepositoryAdvisoryUpdateState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryAdvisoryUpdateState($value)';
 
  }
 @immutable final class RepositoryAdvisoryUpdate {const RepositoryAdvisoryUpdate({this.summary, this.description, this.cveId, this.vulnerabilities, this.cweIds, this.credits, this.severity, this.cvssVectorString, this.state, this.collaboratingUsers, this.collaboratingTeams, });

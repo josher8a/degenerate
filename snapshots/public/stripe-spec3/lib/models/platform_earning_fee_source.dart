@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PlatformEarningFeeSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of object that created the application fee.
-@immutable final class PlatformEarningFeeSourceType {const PlatformEarningFeeSourceType._(this.value);
+sealed class PlatformEarningFeeSourceType {const PlatformEarningFeeSourceType();
 
 factory PlatformEarningFeeSourceType.fromJson(String json) { return switch (json) {
   'charge' => charge,
   'payout' => payout,
-  _ => PlatformEarningFeeSourceType._(json),
+  _ => PlatformEarningFeeSourceType$Unknown(json),
 }; }
 
-static const PlatformEarningFeeSourceType charge = PlatformEarningFeeSourceType._('charge');
+static const PlatformEarningFeeSourceType charge = PlatformEarningFeeSourceType$charge._();
 
-static const PlatformEarningFeeSourceType payout = PlatformEarningFeeSourceType._('payout');
+static const PlatformEarningFeeSourceType payout = PlatformEarningFeeSourceType$payout._();
 
 static const List<PlatformEarningFeeSourceType> values = [charge, payout];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PlatformEarningFeeSourceType$Unknown; } 
+@override String toString() => 'PlatformEarningFeeSourceType($value)';
+
+ }
+@immutable final class PlatformEarningFeeSourceType$charge extends PlatformEarningFeeSourceType {const PlatformEarningFeeSourceType$charge._();
+
+@override String get value => 'charge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PlatformEarningFeeSourceType$charge;
+
+@override int get hashCode => 'charge'.hashCode;
+
+ }
+@immutable final class PlatformEarningFeeSourceType$payout extends PlatformEarningFeeSourceType {const PlatformEarningFeeSourceType$payout._();
+
+@override String get value => 'payout';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PlatformEarningFeeSourceType$payout;
+
+@override int get hashCode => 'payout'.hashCode;
+
+ }
+@immutable final class PlatformEarningFeeSourceType$Unknown extends PlatformEarningFeeSourceType {const PlatformEarningFeeSourceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PlatformEarningFeeSourceType && other.value == value;
+    other is PlatformEarningFeeSourceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PlatformEarningFeeSourceType($value)';
 
  }
 /// 

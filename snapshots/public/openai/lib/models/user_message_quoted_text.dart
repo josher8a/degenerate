@@ -2,19 +2,18 @@
 // Source: #/components/schemas/UserMessageQuotedText
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type discriminator that is always `quoted_text`.
-@immutable final class UserMessageQuotedTextType {const UserMessageQuotedTextType._(this.value);
+sealed class UserMessageQuotedTextType {const UserMessageQuotedTextType();
 
 factory UserMessageQuotedTextType.fromJson(String json) { return switch (json) {
   'quoted_text' => quotedText,
-  _ => UserMessageQuotedTextType._(json),
+  _ => UserMessageQuotedTextType$Unknown(json),
 }; }
 
-static const UserMessageQuotedTextType quotedText = UserMessageQuotedTextType._('quoted_text');
+static const UserMessageQuotedTextType quotedText = UserMessageQuotedTextType$quotedText._();
 
 static const List<UserMessageQuotedTextType> values = [quotedText];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UserMessageQuotedTextType$Unknown; } 
+@override String toString() => 'UserMessageQuotedTextType($value)';
+
+ }
+@immutable final class UserMessageQuotedTextType$quotedText extends UserMessageQuotedTextType {const UserMessageQuotedTextType$quotedText._();
+
+@override String get value => 'quoted_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserMessageQuotedTextType$quotedText;
+
+@override int get hashCode => 'quoted_text'.hashCode;
+
+ }
+@immutable final class UserMessageQuotedTextType$Unknown extends UserMessageQuotedTextType {const UserMessageQuotedTextType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UserMessageQuotedTextType && other.value == value;
+    other is UserMessageQuotedTextType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UserMessageQuotedTextType($value)';
 
  }
 /// Quoted snippet that the user referenced in their message.

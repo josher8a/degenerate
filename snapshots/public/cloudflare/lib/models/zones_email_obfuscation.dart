@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ZonesEmailObfuscation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_email_obfuscation_value.dart';/// Turn on or off **Email Obfuscation**.
-@immutable final class ZonesEmailObfuscationId {const ZonesEmailObfuscationId._(this.value);
+sealed class ZonesEmailObfuscationId {const ZonesEmailObfuscationId();
 
 factory ZonesEmailObfuscationId.fromJson(String json) { return switch (json) {
   'email_obfuscation' => emailObfuscation,
-  _ => ZonesEmailObfuscationId._(json),
+  _ => ZonesEmailObfuscationId$Unknown(json),
 }; }
 
-static const ZonesEmailObfuscationId emailObfuscation = ZonesEmailObfuscationId._('email_obfuscation');
+static const ZonesEmailObfuscationId emailObfuscation = ZonesEmailObfuscationId$emailObfuscation._();
 
 static const List<ZonesEmailObfuscationId> values = [emailObfuscation];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesEmailObfuscationId$Unknown; } 
+@override String toString() => 'ZonesEmailObfuscationId($value)';
+
+ }
+@immutable final class ZonesEmailObfuscationId$emailObfuscation extends ZonesEmailObfuscationId {const ZonesEmailObfuscationId$emailObfuscation._();
+
+@override String get value => 'email_obfuscation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesEmailObfuscationId$emailObfuscation;
+
+@override int get hashCode => 'email_obfuscation'.hashCode;
+
+ }
+@immutable final class ZonesEmailObfuscationId$Unknown extends ZonesEmailObfuscationId {const ZonesEmailObfuscationId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesEmailObfuscationId && other.value == value;
+    other is ZonesEmailObfuscationId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesEmailObfuscationId($value)';
 
  }
 @immutable final class ZonesEmailObfuscation {const ZonesEmailObfuscation({this.id, this.value, });

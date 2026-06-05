@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MconnEvent (inline: Reconcile)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reconciled
-@immutable final class ReconcileK {const ReconcileK._(this.value);
+sealed class ReconcileK {const ReconcileK();
 
 factory ReconcileK.fromJson(String json) { return switch (json) {
   'Reconcile' => reconcile,
-  _ => ReconcileK._(json),
+  _ => ReconcileK$Unknown(json),
 }; }
 
-static const ReconcileK reconcile = ReconcileK._('Reconcile');
+static const ReconcileK reconcile = ReconcileK$reconcile._();
 
 static const List<ReconcileK> values = [reconcile];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ReconcileK$Unknown; } 
+@override String toString() => 'ReconcileK($value)';
+
+ }
+@immutable final class ReconcileK$reconcile extends ReconcileK {const ReconcileK$reconcile._();
+
+@override String get value => 'Reconcile';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReconcileK$reconcile;
+
+@override int get hashCode => 'Reconcile'.hashCode;
+
+ }
+@immutable final class ReconcileK$Unknown extends ReconcileK {const ReconcileK$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ReconcileK && other.value == value;
+    other is ReconcileK$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ReconcileK($value)';
 
  }
 @immutable final class Reconcile {const Reconcile({required this.k});

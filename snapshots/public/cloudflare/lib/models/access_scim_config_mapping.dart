@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AccessScimConfigMapping
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_scim_config_mapping/access_scim_config_mapping_operations.dart';/// The level of adherence to outbound resource schemas when provisioning to this mapping. ‘Strict’ removes unknown values, while ‘passthrough’ passes unknown values to the target.
-@immutable final class Strictness {const Strictness._(this.value);
+sealed class Strictness {const Strictness();
 
 factory Strictness.fromJson(String json) { return switch (json) {
   'strict' => strict,
   'passthrough' => passthrough,
-  _ => Strictness._(json),
+  _ => Strictness$Unknown(json),
 }; }
 
-static const Strictness strict = Strictness._('strict');
+static const Strictness strict = Strictness$strict._();
 
-static const Strictness passthrough = Strictness._('passthrough');
+static const Strictness passthrough = Strictness$passthrough._();
 
 static const List<Strictness> values = [strict, passthrough];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Strictness$Unknown; } 
+@override String toString() => 'Strictness($value)';
+
+ }
+@immutable final class Strictness$strict extends Strictness {const Strictness$strict._();
+
+@override String get value => 'strict';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Strictness$strict;
+
+@override int get hashCode => 'strict'.hashCode;
+
+ }
+@immutable final class Strictness$passthrough extends Strictness {const Strictness$passthrough._();
+
+@override String get value => 'passthrough';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Strictness$passthrough;
+
+@override int get hashCode => 'passthrough'.hashCode;
+
+ }
+@immutable final class Strictness$Unknown extends Strictness {const Strictness$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Strictness && other.value == value;
+    other is Strictness$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Strictness($value)';
 
  }
 /// Transformations and filters applied to resources before they are provisioned in the remote SCIM service.

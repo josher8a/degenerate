@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `fine_tuning.job.failed`.
 /// 
-@immutable final class WebhookFineTuningJobFailedType {const WebhookFineTuningJobFailedType._(this.value);
+sealed class WebhookFineTuningJobFailedType {const WebhookFineTuningJobFailedType();
 
 factory WebhookFineTuningJobFailedType.fromJson(String json) { return switch (json) {
   'fine_tuning.job.failed' => fineTuningJobFailed,
-  _ => WebhookFineTuningJobFailedType._(json),
+  _ => WebhookFineTuningJobFailedType$Unknown(json),
 }; }
 
-static const WebhookFineTuningJobFailedType fineTuningJobFailed = WebhookFineTuningJobFailedType._('fine_tuning.job.failed');
+static const WebhookFineTuningJobFailedType fineTuningJobFailed = WebhookFineTuningJobFailedType$fineTuningJobFailed._();
 
 static const List<WebhookFineTuningJobFailedType> values = [fineTuningJobFailed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookFineTuningJobFailedType$Unknown; } 
+@override String toString() => 'WebhookFineTuningJobFailedType($value)';
+
+ }
+@immutable final class WebhookFineTuningJobFailedType$fineTuningJobFailed extends WebhookFineTuningJobFailedType {const WebhookFineTuningJobFailedType$fineTuningJobFailed._();
+
+@override String get value => 'fine_tuning.job.failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookFineTuningJobFailedType$fineTuningJobFailed;
+
+@override int get hashCode => 'fine_tuning.job.failed'.hashCode;
+
+ }
+@immutable final class WebhookFineTuningJobFailedType$Unknown extends WebhookFineTuningJobFailedType {const WebhookFineTuningJobFailedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookFineTuningJobFailedType && other.value == value;
+    other is WebhookFineTuningJobFailedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookFineTuningJobFailedType($value)';
 
  }
 /// Sent when a fine-tuning job has failed.

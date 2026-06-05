@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/BoolAllocation
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class BoolAllocationType {const BoolAllocationType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class BoolAllocationType {const BoolAllocationType();
 
 factory BoolAllocationType.fromJson(String json) { return switch (json) {
   'bool' => $bool,
-  _ => BoolAllocationType._(json),
+  _ => BoolAllocationType$Unknown(json),
 }; }
 
-static const BoolAllocationType $bool = BoolAllocationType._('bool');
+static const BoolAllocationType $bool = BoolAllocationType$$bool._();
 
 static const List<BoolAllocationType> values = [$bool];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BoolAllocationType$Unknown; } 
+@override String toString() => 'BoolAllocationType($value)';
+
+ }
+@immutable final class BoolAllocationType$$bool extends BoolAllocationType {const BoolAllocationType$$bool._();
+
+@override String get value => 'bool';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BoolAllocationType$$bool;
+
+@override int get hashCode => 'bool'.hashCode;
+
+ }
+@immutable final class BoolAllocationType$Unknown extends BoolAllocationType {const BoolAllocationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BoolAllocationType && other.value == value;
+    other is BoolAllocationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BoolAllocationType($value)';
 
  }
 @immutable final class BoolAllocation {const BoolAllocation({required this.type, required this.value, });

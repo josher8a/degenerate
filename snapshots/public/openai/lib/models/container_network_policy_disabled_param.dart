@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ContainerNetworkPolicyDisabledParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Disable outbound network access. Always `disabled`.
-@immutable final class ContainerNetworkPolicyDisabledParamType {const ContainerNetworkPolicyDisabledParamType._(this.value);
+sealed class ContainerNetworkPolicyDisabledParamType {const ContainerNetworkPolicyDisabledParamType();
 
 factory ContainerNetworkPolicyDisabledParamType.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
-  _ => ContainerNetworkPolicyDisabledParamType._(json),
+  _ => ContainerNetworkPolicyDisabledParamType$Unknown(json),
 }; }
 
-static const ContainerNetworkPolicyDisabledParamType disabled = ContainerNetworkPolicyDisabledParamType._('disabled');
+static const ContainerNetworkPolicyDisabledParamType disabled = ContainerNetworkPolicyDisabledParamType$disabled._();
 
 static const List<ContainerNetworkPolicyDisabledParamType> values = [disabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ContainerNetworkPolicyDisabledParamType$Unknown; } 
+@override String toString() => 'ContainerNetworkPolicyDisabledParamType($value)';
+
+ }
+@immutable final class ContainerNetworkPolicyDisabledParamType$disabled extends ContainerNetworkPolicyDisabledParamType {const ContainerNetworkPolicyDisabledParamType$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ContainerNetworkPolicyDisabledParamType$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class ContainerNetworkPolicyDisabledParamType$Unknown extends ContainerNetworkPolicyDisabledParamType {const ContainerNetworkPolicyDisabledParamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ContainerNetworkPolicyDisabledParamType && other.value == value;
+    other is ContainerNetworkPolicyDisabledParamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ContainerNetworkPolicyDisabledParamType($value)';
 
  }
 @immutable final class ContainerNetworkPolicyDisabledParam {const ContainerNetworkPolicyDisabledParam({this.type = ContainerNetworkPolicyDisabledParamType.disabled});

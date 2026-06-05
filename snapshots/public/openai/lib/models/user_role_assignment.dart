@@ -2,19 +2,18 @@
 // Source: #/components/schemas/UserRoleAssignment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/role.dart';import 'package:pub_openai/models/user.dart';/// Always `user.role`.
-@immutable final class UserRoleAssignmentObject {const UserRoleAssignmentObject._(this.value);
+sealed class UserRoleAssignmentObject {const UserRoleAssignmentObject();
 
 factory UserRoleAssignmentObject.fromJson(String json) { return switch (json) {
   'user.role' => userRole,
-  _ => UserRoleAssignmentObject._(json),
+  _ => UserRoleAssignmentObject$Unknown(json),
 }; }
 
-static const UserRoleAssignmentObject userRole = UserRoleAssignmentObject._('user.role');
+static const UserRoleAssignmentObject userRole = UserRoleAssignmentObject$userRole._();
 
 static const List<UserRoleAssignmentObject> values = [userRole];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UserRoleAssignmentObject$Unknown; } 
+@override String toString() => 'UserRoleAssignmentObject($value)';
+
+ }
+@immutable final class UserRoleAssignmentObject$userRole extends UserRoleAssignmentObject {const UserRoleAssignmentObject$userRole._();
+
+@override String get value => 'user.role';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserRoleAssignmentObject$userRole;
+
+@override int get hashCode => 'user.role'.hashCode;
+
+ }
+@immutable final class UserRoleAssignmentObject$Unknown extends UserRoleAssignmentObject {const UserRoleAssignmentObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UserRoleAssignmentObject && other.value == value;
+    other is UserRoleAssignmentObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UserRoleAssignmentObject($value)';
 
  }
 /// Role assignment linking a user to a role.

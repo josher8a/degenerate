@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Key3
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/key3/key3_owner.dart';/// The object type, which is always `organization.project.api_key`
-@immutable final class Key3Object {const Key3Object._(this.value);
+sealed class Key3Object {const Key3Object();
 
 factory Key3Object.fromJson(String json) { return switch (json) {
   'organization.project.api_key' => organizationProjectApiKey,
-  _ => Key3Object._(json),
+  _ => Key3Object$Unknown(json),
 }; }
 
-static const Key3Object organizationProjectApiKey = Key3Object._('organization.project.api_key');
+static const Key3Object organizationProjectApiKey = Key3Object$organizationProjectApiKey._();
 
 static const List<Key3Object> values = [organizationProjectApiKey];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Key3Object$Unknown; } 
+@override String toString() => 'Key3Object($value)';
+
+ }
+@immutable final class Key3Object$organizationProjectApiKey extends Key3Object {const Key3Object$organizationProjectApiKey._();
+
+@override String get value => 'organization.project.api_key';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Key3Object$organizationProjectApiKey;
+
+@override int get hashCode => 'organization.project.api_key'.hashCode;
+
+ }
+@immutable final class Key3Object$Unknown extends Key3Object {const Key3Object$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Key3Object && other.value == value;
+    other is Key3Object$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Key3Object($value)';
 
  }
 /// Represents an individual API key in a project.

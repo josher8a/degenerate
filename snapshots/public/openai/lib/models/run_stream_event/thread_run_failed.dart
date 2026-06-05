@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStreamEvent (inline: ThreadRunFailed)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';@immutable final class ThreadRunFailedEvent {const ThreadRunFailedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';sealed class ThreadRunFailedEvent {const ThreadRunFailedEvent();
 
 factory ThreadRunFailedEvent.fromJson(String json) { return switch (json) {
   'thread.run.failed' => threadRunFailed,
-  _ => ThreadRunFailedEvent._(json),
+  _ => ThreadRunFailedEvent$Unknown(json),
 }; }
 
-static const ThreadRunFailedEvent threadRunFailed = ThreadRunFailedEvent._('thread.run.failed');
+static const ThreadRunFailedEvent threadRunFailed = ThreadRunFailedEvent$threadRunFailed._();
 
 static const List<ThreadRunFailedEvent> values = [threadRunFailed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunFailedEvent$Unknown; } 
+@override String toString() => 'ThreadRunFailedEvent($value)';
+
+ }
+@immutable final class ThreadRunFailedEvent$threadRunFailed extends ThreadRunFailedEvent {const ThreadRunFailedEvent$threadRunFailed._();
+
+@override String get value => 'thread.run.failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunFailedEvent$threadRunFailed;
+
+@override int get hashCode => 'thread.run.failed'.hashCode;
+
+ }
+@immutable final class ThreadRunFailedEvent$Unknown extends ThreadRunFailedEvent {const ThreadRunFailedEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunFailedEvent && other.value == value;
+    other is ThreadRunFailedEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunFailedEvent($value)';
 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) fails.

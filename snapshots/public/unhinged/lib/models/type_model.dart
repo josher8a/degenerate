@@ -3,9 +3,8 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 
-@immutable
-final class EventType {
-  const EventType._(this.value);
+sealed class EventType {
+  const EventType();
 
   factory EventType.fromJson(String json) {
     return switch (json) {
@@ -27,45 +26,45 @@ final class EventType {
       'hasOwnProperty' => hasOwnProperty,
       '__proto__' => proto,
       'constructor' => constructor,
-      _ => EventType._(json),
+      _ => EventType$Unknown(json),
     };
   }
 
-  static const EventType ectoplasmSpike = EventType._('ectoplasm_spike');
+  static const EventType ectoplasmSpike = EventType$ectoplasmSpike._();
 
-  static const EventType $null = EventType._('null');
+  static const EventType $null = EventType$$null._();
 
-  static const EventType $true = EventType._('true');
+  static const EventType $true = EventType$$true._();
 
-  static const EventType $false = EventType._('false');
+  static const EventType $false = EventType$$false._();
 
-  static const EventType $0 = EventType._('0');
+  static const EventType $0 = EventType$$0._();
 
-  static const EventType naN = EventType._('NaN');
+  static const EventType naN = EventType$naN._();
 
-  static const EventType $empty = EventType._('');
+  static const EventType $empty = EventType$$empty._();
 
-  static const EventType $empty2 = EventType._(' ');
+  static const EventType $empty2 = EventType$$empty2._();
 
-  static const EventType $empty3 = EventType._('  ');
+  static const EventType $empty3 = EventType$$empty3._();
 
-  static const EventType ectoplasmSpike2 = EventType._('ectoplasm spike');
+  static const EventType ectoplasmSpike2 = EventType$ectoplasmSpike2._();
 
-  static const EventType ectoplasmSpike3 = EventType._('ectoplasm_spike ');
+  static const EventType ectoplasmSpike3 = EventType$ectoplasmSpike3._();
 
-  static const EventType $empty4 = EventType._('\t');
+  static const EventType $empty4 = EventType$$empty4._();
 
-  static const EventType $empty5 = EventType._('🔥');
+  static const EventType $empty5 = EventType$$empty5._();
 
-  static const EventType $empty6 = EventType._('🔥🔥');
+  static const EventType $empty6 = EventType$$empty6._();
 
-  static const EventType $toString = EventType._('toString');
+  static const EventType $toString = EventType$$toString._();
 
-  static const EventType hasOwnProperty = EventType._('hasOwnProperty');
+  static const EventType hasOwnProperty = EventType$hasOwnProperty._();
 
-  static const EventType proto = EventType._('__proto__');
+  static const EventType proto = EventType$proto._();
 
-  static const EventType constructor = EventType._('constructor');
+  static const EventType constructor = EventType$constructor._();
 
   static const List<EventType> values = [
     ectoplasmSpike,
@@ -88,8 +87,7 @@ final class EventType {
     constructor,
   ];
 
-  final String value;
-
+  String get value;
   String toJson() {
     return value;
   }
@@ -121,18 +119,297 @@ final class EventType {
 
   /// Whether this value is unknown (not defined in the OpenAPI spec).
   bool get isUnknown {
-    return !values.contains(this);
+    return this is EventType$Unknown;
   }
 
   @override
+  String toString() => 'EventType($value)';
+}
+
+@immutable
+final class EventType$ectoplasmSpike extends EventType {
+  const EventType$ectoplasmSpike._();
+
+  @override
+  String get value => 'ectoplasm_spike';
+
+  @override
   bool operator ==(Object other) =>
-      identical(this, other) || other is EventType && other.value == value;
+      identical(this, other) || other is EventType$ectoplasmSpike;
+
+  @override
+  int get hashCode => 'ectoplasm_spike'.hashCode;
+}
+
+@immutable
+final class EventType$$null extends EventType {
+  const EventType$$null._();
+
+  @override
+  String get value => 'null';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$$null;
+
+  @override
+  int get hashCode => 'null'.hashCode;
+}
+
+@immutable
+final class EventType$$true extends EventType {
+  const EventType$$true._();
+
+  @override
+  String get value => 'true';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$$true;
+
+  @override
+  int get hashCode => 'true'.hashCode;
+}
+
+@immutable
+final class EventType$$false extends EventType {
+  const EventType$$false._();
+
+  @override
+  String get value => 'false';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$$false;
+
+  @override
+  int get hashCode => 'false'.hashCode;
+}
+
+@immutable
+final class EventType$$0 extends EventType {
+  const EventType$$0._();
+
+  @override
+  String get value => '0';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$$0;
+
+  @override
+  int get hashCode => '0'.hashCode;
+}
+
+@immutable
+final class EventType$naN extends EventType {
+  const EventType$naN._();
+
+  @override
+  String get value => 'NaN';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$naN;
+
+  @override
+  int get hashCode => 'NaN'.hashCode;
+}
+
+@immutable
+final class EventType$$empty extends EventType {
+  const EventType$$empty._();
+
+  @override
+  String get value => '';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$$empty;
+
+  @override
+  int get hashCode => ''.hashCode;
+}
+
+@immutable
+final class EventType$$empty2 extends EventType {
+  const EventType$$empty2._();
+
+  @override
+  String get value => ' ';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$$empty2;
+
+  @override
+  int get hashCode => ' '.hashCode;
+}
+
+@immutable
+final class EventType$$empty3 extends EventType {
+  const EventType$$empty3._();
+
+  @override
+  String get value => '  ';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$$empty3;
+
+  @override
+  int get hashCode => '  '.hashCode;
+}
+
+@immutable
+final class EventType$ectoplasmSpike2 extends EventType {
+  const EventType$ectoplasmSpike2._();
+
+  @override
+  String get value => 'ectoplasm spike';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$ectoplasmSpike2;
+
+  @override
+  int get hashCode => 'ectoplasm spike'.hashCode;
+}
+
+@immutable
+final class EventType$ectoplasmSpike3 extends EventType {
+  const EventType$ectoplasmSpike3._();
+
+  @override
+  String get value => 'ectoplasm_spike ';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$ectoplasmSpike3;
+
+  @override
+  int get hashCode => 'ectoplasm_spike '.hashCode;
+}
+
+@immutable
+final class EventType$$empty4 extends EventType {
+  const EventType$$empty4._();
+
+  @override
+  String get value => '\t';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$$empty4;
+
+  @override
+  int get hashCode => '\t'.hashCode;
+}
+
+@immutable
+final class EventType$$empty5 extends EventType {
+  const EventType$$empty5._();
+
+  @override
+  String get value => '🔥';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$$empty5;
+
+  @override
+  int get hashCode => '🔥'.hashCode;
+}
+
+@immutable
+final class EventType$$empty6 extends EventType {
+  const EventType$$empty6._();
+
+  @override
+  String get value => '🔥🔥';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$$empty6;
+
+  @override
+  int get hashCode => '🔥🔥'.hashCode;
+}
+
+@immutable
+final class EventType$$toString extends EventType {
+  const EventType$$toString._();
+
+  @override
+  String get value => 'toString';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$$toString;
+
+  @override
+  int get hashCode => 'toString'.hashCode;
+}
+
+@immutable
+final class EventType$hasOwnProperty extends EventType {
+  const EventType$hasOwnProperty._();
+
+  @override
+  String get value => 'hasOwnProperty';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$hasOwnProperty;
+
+  @override
+  int get hashCode => 'hasOwnProperty'.hashCode;
+}
+
+@immutable
+final class EventType$proto extends EventType {
+  const EventType$proto._();
+
+  @override
+  String get value => '__proto__';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$proto;
+
+  @override
+  int get hashCode => '__proto__'.hashCode;
+}
+
+@immutable
+final class EventType$constructor extends EventType {
+  const EventType$constructor._();
+
+  @override
+  String get value => 'constructor';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$constructor;
+
+  @override
+  int get hashCode => 'constructor'.hashCode;
+}
+
+@immutable
+final class EventType$Unknown extends EventType {
+  const EventType$Unknown(this.value);
+
+  @override
+  final String value;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EventType$Unknown && other.value == value;
 
   @override
   int get hashCode => value.hashCode;
-
-  @override
-  String toString() => 'EventType($value)';
 }
 
 @immutable

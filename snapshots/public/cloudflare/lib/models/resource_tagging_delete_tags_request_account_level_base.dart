@@ -2,7 +2,7 @@
 // Source: #/components/schemas/ResourceTaggingDeleteTagsRequestAccountLevelBase
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';/// Enum for base account-level resource types (those with no extra required fields).
-@immutable final class ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum._(this.value);
+sealed class ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum();
 
 factory ResourceTaggingAccountResourceTypeBaseEnum.fromJson(String json) { return switch (json) {
   'access_application' => accessApplication,
@@ -24,51 +24,50 @@ factory ResourceTaggingAccountResourceTypeBaseEnum.fromJson(String json) { retur
   'stream_live_input' => streamLiveInput,
   'stream_video' => streamVideo,
   'worker' => worker,
-  _ => ResourceTaggingAccountResourceTypeBaseEnum._(json),
+  _ => ResourceTaggingAccountResourceTypeBaseEnum$Unknown(json),
 }; }
 
-static const ResourceTaggingAccountResourceTypeBaseEnum accessApplication = ResourceTaggingAccountResourceTypeBaseEnum._('access_application');
+static const ResourceTaggingAccountResourceTypeBaseEnum accessApplication = ResourceTaggingAccountResourceTypeBaseEnum$accessApplication._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum accessGroup = ResourceTaggingAccountResourceTypeBaseEnum._('access_group');
+static const ResourceTaggingAccountResourceTypeBaseEnum accessGroup = ResourceTaggingAccountResourceTypeBaseEnum$accessGroup._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum account = ResourceTaggingAccountResourceTypeBaseEnum._('account');
+static const ResourceTaggingAccountResourceTypeBaseEnum account = ResourceTaggingAccountResourceTypeBaseEnum$account._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum aiGateway = ResourceTaggingAccountResourceTypeBaseEnum._('ai_gateway');
+static const ResourceTaggingAccountResourceTypeBaseEnum aiGateway = ResourceTaggingAccountResourceTypeBaseEnum$aiGateway._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum alertingPolicy = ResourceTaggingAccountResourceTypeBaseEnum._('alerting_policy');
+static const ResourceTaggingAccountResourceTypeBaseEnum alertingPolicy = ResourceTaggingAccountResourceTypeBaseEnum$alertingPolicy._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum alertingWebhook = ResourceTaggingAccountResourceTypeBaseEnum._('alerting_webhook');
+static const ResourceTaggingAccountResourceTypeBaseEnum alertingWebhook = ResourceTaggingAccountResourceTypeBaseEnum$alertingWebhook._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum cloudflaredTunnel = ResourceTaggingAccountResourceTypeBaseEnum._('cloudflared_tunnel');
+static const ResourceTaggingAccountResourceTypeBaseEnum cloudflaredTunnel = ResourceTaggingAccountResourceTypeBaseEnum$cloudflaredTunnel._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum d1Database = ResourceTaggingAccountResourceTypeBaseEnum._('d1_database');
+static const ResourceTaggingAccountResourceTypeBaseEnum d1Database = ResourceTaggingAccountResourceTypeBaseEnum$d1Database._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum durableObjectNamespace = ResourceTaggingAccountResourceTypeBaseEnum._('durable_object_namespace');
+static const ResourceTaggingAccountResourceTypeBaseEnum durableObjectNamespace = ResourceTaggingAccountResourceTypeBaseEnum$durableObjectNamespace._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum gatewayList = ResourceTaggingAccountResourceTypeBaseEnum._('gateway_list');
+static const ResourceTaggingAccountResourceTypeBaseEnum gatewayList = ResourceTaggingAccountResourceTypeBaseEnum$gatewayList._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum gatewayRule = ResourceTaggingAccountResourceTypeBaseEnum._('gateway_rule');
+static const ResourceTaggingAccountResourceTypeBaseEnum gatewayRule = ResourceTaggingAccountResourceTypeBaseEnum$gatewayRule._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum image = ResourceTaggingAccountResourceTypeBaseEnum._('image');
+static const ResourceTaggingAccountResourceTypeBaseEnum image = ResourceTaggingAccountResourceTypeBaseEnum$image._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum kvNamespace = ResourceTaggingAccountResourceTypeBaseEnum._('kv_namespace');
+static const ResourceTaggingAccountResourceTypeBaseEnum kvNamespace = ResourceTaggingAccountResourceTypeBaseEnum$kvNamespace._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum queue = ResourceTaggingAccountResourceTypeBaseEnum._('queue');
+static const ResourceTaggingAccountResourceTypeBaseEnum queue = ResourceTaggingAccountResourceTypeBaseEnum$queue._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum r2Bucket = ResourceTaggingAccountResourceTypeBaseEnum._('r2_bucket');
+static const ResourceTaggingAccountResourceTypeBaseEnum r2Bucket = ResourceTaggingAccountResourceTypeBaseEnum$r2Bucket._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum resourceShare = ResourceTaggingAccountResourceTypeBaseEnum._('resource_share');
+static const ResourceTaggingAccountResourceTypeBaseEnum resourceShare = ResourceTaggingAccountResourceTypeBaseEnum$resourceShare._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum streamLiveInput = ResourceTaggingAccountResourceTypeBaseEnum._('stream_live_input');
+static const ResourceTaggingAccountResourceTypeBaseEnum streamLiveInput = ResourceTaggingAccountResourceTypeBaseEnum$streamLiveInput._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum streamVideo = ResourceTaggingAccountResourceTypeBaseEnum._('stream_video');
+static const ResourceTaggingAccountResourceTypeBaseEnum streamVideo = ResourceTaggingAccountResourceTypeBaseEnum$streamVideo._();
 
-static const ResourceTaggingAccountResourceTypeBaseEnum worker = ResourceTaggingAccountResourceTypeBaseEnum._('worker');
+static const ResourceTaggingAccountResourceTypeBaseEnum worker = ResourceTaggingAccountResourceTypeBaseEnum$worker._();
 
 static const List<ResourceTaggingAccountResourceTypeBaseEnum> values = [accessApplication, accessGroup, account, aiGateway, alertingPolicy, alertingWebhook, cloudflaredTunnel, d1Database, durableObjectNamespace, gatewayList, gatewayRule, image, kvNamespace, queue, r2Bucket, resourceShare, streamLiveInput, streamVideo, worker];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -94,13 +93,189 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ResourceTaggingAccountResourceTypeBaseEnum$Unknown; } 
+@override String toString() => 'ResourceTaggingAccountResourceTypeBaseEnum($value)';
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$accessApplication extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$accessApplication._();
+
+@override String get value => 'access_application';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$accessApplication;
+
+@override int get hashCode => 'access_application'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$accessGroup extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$accessGroup._();
+
+@override String get value => 'access_group';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$accessGroup;
+
+@override int get hashCode => 'access_group'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$account extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$account._();
+
+@override String get value => 'account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$account;
+
+@override int get hashCode => 'account'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$aiGateway extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$aiGateway._();
+
+@override String get value => 'ai_gateway';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$aiGateway;
+
+@override int get hashCode => 'ai_gateway'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$alertingPolicy extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$alertingPolicy._();
+
+@override String get value => 'alerting_policy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$alertingPolicy;
+
+@override int get hashCode => 'alerting_policy'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$alertingWebhook extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$alertingWebhook._();
+
+@override String get value => 'alerting_webhook';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$alertingWebhook;
+
+@override int get hashCode => 'alerting_webhook'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$cloudflaredTunnel extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$cloudflaredTunnel._();
+
+@override String get value => 'cloudflared_tunnel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$cloudflaredTunnel;
+
+@override int get hashCode => 'cloudflared_tunnel'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$d1Database extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$d1Database._();
+
+@override String get value => 'd1_database';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$d1Database;
+
+@override int get hashCode => 'd1_database'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$durableObjectNamespace extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$durableObjectNamespace._();
+
+@override String get value => 'durable_object_namespace';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$durableObjectNamespace;
+
+@override int get hashCode => 'durable_object_namespace'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$gatewayList extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$gatewayList._();
+
+@override String get value => 'gateway_list';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$gatewayList;
+
+@override int get hashCode => 'gateway_list'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$gatewayRule extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$gatewayRule._();
+
+@override String get value => 'gateway_rule';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$gatewayRule;
+
+@override int get hashCode => 'gateway_rule'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$image extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$image._();
+
+@override String get value => 'image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$image;
+
+@override int get hashCode => 'image'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$kvNamespace extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$kvNamespace._();
+
+@override String get value => 'kv_namespace';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$kvNamespace;
+
+@override int get hashCode => 'kv_namespace'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$queue extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$queue._();
+
+@override String get value => 'queue';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$queue;
+
+@override int get hashCode => 'queue'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$r2Bucket extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$r2Bucket._();
+
+@override String get value => 'r2_bucket';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$r2Bucket;
+
+@override int get hashCode => 'r2_bucket'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$resourceShare extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$resourceShare._();
+
+@override String get value => 'resource_share';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$resourceShare;
+
+@override int get hashCode => 'resource_share'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$streamLiveInput extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$streamLiveInput._();
+
+@override String get value => 'stream_live_input';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$streamLiveInput;
+
+@override int get hashCode => 'stream_live_input'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$streamVideo extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$streamVideo._();
+
+@override String get value => 'stream_video';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$streamVideo;
+
+@override int get hashCode => 'stream_video'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$worker extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$worker._();
+
+@override String get value => 'worker';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeBaseEnum$worker;
+
+@override int get hashCode => 'worker'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeBaseEnum$Unknown extends ResourceTaggingAccountResourceTypeBaseEnum {const ResourceTaggingAccountResourceTypeBaseEnum$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ResourceTaggingAccountResourceTypeBaseEnum && other.value == value;
+    other is ResourceTaggingAccountResourceTypeBaseEnum$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ResourceTaggingAccountResourceTypeBaseEnum($value)';
 
  }
 /// Request body schema for deleting tags from account-level resources.

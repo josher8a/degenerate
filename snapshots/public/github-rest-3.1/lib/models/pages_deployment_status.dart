@@ -2,7 +2,7 @@
 // Source: #/components/schemas/PagesDeploymentStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The current status of the deployment.
-@immutable final class PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus._(this.value);
+sealed class PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus();
 
 factory PagesDeploymentStatusStatus.fromJson(String json) { return switch (json) {
   'deployment_in_progress' => deploymentInProgress,
@@ -16,35 +16,34 @@ factory PagesDeploymentStatusStatus.fromJson(String json) { return switch (json)
   'deployment_attempt_error' => deploymentAttemptError,
   'deployment_lost' => deploymentLost,
   'succeed' => succeed,
-  _ => PagesDeploymentStatusStatus._(json),
+  _ => PagesDeploymentStatusStatus$Unknown(json),
 }; }
 
-static const PagesDeploymentStatusStatus deploymentInProgress = PagesDeploymentStatusStatus._('deployment_in_progress');
+static const PagesDeploymentStatusStatus deploymentInProgress = PagesDeploymentStatusStatus$deploymentInProgress._();
 
-static const PagesDeploymentStatusStatus syncingFiles = PagesDeploymentStatusStatus._('syncing_files');
+static const PagesDeploymentStatusStatus syncingFiles = PagesDeploymentStatusStatus$syncingFiles._();
 
-static const PagesDeploymentStatusStatus finishedFileSync = PagesDeploymentStatusStatus._('finished_file_sync');
+static const PagesDeploymentStatusStatus finishedFileSync = PagesDeploymentStatusStatus$finishedFileSync._();
 
-static const PagesDeploymentStatusStatus updatingPages = PagesDeploymentStatusStatus._('updating_pages');
+static const PagesDeploymentStatusStatus updatingPages = PagesDeploymentStatusStatus$updatingPages._();
 
-static const PagesDeploymentStatusStatus purgingCdn = PagesDeploymentStatusStatus._('purging_cdn');
+static const PagesDeploymentStatusStatus purgingCdn = PagesDeploymentStatusStatus$purgingCdn._();
 
-static const PagesDeploymentStatusStatus deploymentCancelled = PagesDeploymentStatusStatus._('deployment_cancelled');
+static const PagesDeploymentStatusStatus deploymentCancelled = PagesDeploymentStatusStatus$deploymentCancelled._();
 
-static const PagesDeploymentStatusStatus deploymentFailed = PagesDeploymentStatusStatus._('deployment_failed');
+static const PagesDeploymentStatusStatus deploymentFailed = PagesDeploymentStatusStatus$deploymentFailed._();
 
-static const PagesDeploymentStatusStatus deploymentContentFailed = PagesDeploymentStatusStatus._('deployment_content_failed');
+static const PagesDeploymentStatusStatus deploymentContentFailed = PagesDeploymentStatusStatus$deploymentContentFailed._();
 
-static const PagesDeploymentStatusStatus deploymentAttemptError = PagesDeploymentStatusStatus._('deployment_attempt_error');
+static const PagesDeploymentStatusStatus deploymentAttemptError = PagesDeploymentStatusStatus$deploymentAttemptError._();
 
-static const PagesDeploymentStatusStatus deploymentLost = PagesDeploymentStatusStatus._('deployment_lost');
+static const PagesDeploymentStatusStatus deploymentLost = PagesDeploymentStatusStatus$deploymentLost._();
 
-static const PagesDeploymentStatusStatus succeed = PagesDeploymentStatusStatus._('succeed');
+static const PagesDeploymentStatusStatus succeed = PagesDeploymentStatusStatus$succeed._();
 
 static const List<PagesDeploymentStatusStatus> values = [deploymentInProgress, syncingFiles, finishedFileSync, updatingPages, purgingCdn, deploymentCancelled, deploymentFailed, deploymentContentFailed, deploymentAttemptError, deploymentLost, succeed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -62,13 +61,117 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PagesDeploymentStatusStatus$Unknown; } 
+@override String toString() => 'PagesDeploymentStatusStatus($value)';
+
+ }
+@immutable final class PagesDeploymentStatusStatus$deploymentInProgress extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$deploymentInProgress._();
+
+@override String get value => 'deployment_in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDeploymentStatusStatus$deploymentInProgress;
+
+@override int get hashCode => 'deployment_in_progress'.hashCode;
+
+ }
+@immutable final class PagesDeploymentStatusStatus$syncingFiles extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$syncingFiles._();
+
+@override String get value => 'syncing_files';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDeploymentStatusStatus$syncingFiles;
+
+@override int get hashCode => 'syncing_files'.hashCode;
+
+ }
+@immutable final class PagesDeploymentStatusStatus$finishedFileSync extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$finishedFileSync._();
+
+@override String get value => 'finished_file_sync';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDeploymentStatusStatus$finishedFileSync;
+
+@override int get hashCode => 'finished_file_sync'.hashCode;
+
+ }
+@immutable final class PagesDeploymentStatusStatus$updatingPages extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$updatingPages._();
+
+@override String get value => 'updating_pages';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDeploymentStatusStatus$updatingPages;
+
+@override int get hashCode => 'updating_pages'.hashCode;
+
+ }
+@immutable final class PagesDeploymentStatusStatus$purgingCdn extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$purgingCdn._();
+
+@override String get value => 'purging_cdn';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDeploymentStatusStatus$purgingCdn;
+
+@override int get hashCode => 'purging_cdn'.hashCode;
+
+ }
+@immutable final class PagesDeploymentStatusStatus$deploymentCancelled extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$deploymentCancelled._();
+
+@override String get value => 'deployment_cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDeploymentStatusStatus$deploymentCancelled;
+
+@override int get hashCode => 'deployment_cancelled'.hashCode;
+
+ }
+@immutable final class PagesDeploymentStatusStatus$deploymentFailed extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$deploymentFailed._();
+
+@override String get value => 'deployment_failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDeploymentStatusStatus$deploymentFailed;
+
+@override int get hashCode => 'deployment_failed'.hashCode;
+
+ }
+@immutable final class PagesDeploymentStatusStatus$deploymentContentFailed extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$deploymentContentFailed._();
+
+@override String get value => 'deployment_content_failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDeploymentStatusStatus$deploymentContentFailed;
+
+@override int get hashCode => 'deployment_content_failed'.hashCode;
+
+ }
+@immutable final class PagesDeploymentStatusStatus$deploymentAttemptError extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$deploymentAttemptError._();
+
+@override String get value => 'deployment_attempt_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDeploymentStatusStatus$deploymentAttemptError;
+
+@override int get hashCode => 'deployment_attempt_error'.hashCode;
+
+ }
+@immutable final class PagesDeploymentStatusStatus$deploymentLost extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$deploymentLost._();
+
+@override String get value => 'deployment_lost';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDeploymentStatusStatus$deploymentLost;
+
+@override int get hashCode => 'deployment_lost'.hashCode;
+
+ }
+@immutable final class PagesDeploymentStatusStatus$succeed extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$succeed._();
+
+@override String get value => 'succeed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PagesDeploymentStatusStatus$succeed;
+
+@override int get hashCode => 'succeed'.hashCode;
+
+ }
+@immutable final class PagesDeploymentStatusStatus$Unknown extends PagesDeploymentStatusStatus {const PagesDeploymentStatusStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PagesDeploymentStatusStatus && other.value == value;
+    other is PagesDeploymentStatusStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PagesDeploymentStatusStatus($value)';
 
  }
 @immutable final class PagesDeploymentStatus {const PagesDeploymentStatus({this.status});

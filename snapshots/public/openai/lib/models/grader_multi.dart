@@ -2,19 +2,18 @@
 // Source: #/components/schemas/GraderMulti
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/grader_label_model.dart';import 'package:pub_openai/models/grader_multi/graders.dart';import 'package:pub_openai/models/grader_python.dart';import 'package:pub_openai/models/grader_score_model.dart';import 'package:pub_openai/models/grader_string_check.dart';import 'package:pub_openai/models/grader_text_similarity.dart';/// The object type, which is always `multi`.
-@immutable final class GraderMultiType {const GraderMultiType._(this.value);
+sealed class GraderMultiType {const GraderMultiType();
 
 factory GraderMultiType.fromJson(String json) { return switch (json) {
   'multi' => multi,
-  _ => GraderMultiType._(json),
+  _ => GraderMultiType$Unknown(json),
 }; }
 
-static const GraderMultiType multi = GraderMultiType._('multi');
+static const GraderMultiType multi = GraderMultiType$multi._();
 
 static const List<GraderMultiType> values = [multi];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GraderMultiType$Unknown; } 
+@override String toString() => 'GraderMultiType($value)';
+
+ }
+@immutable final class GraderMultiType$multi extends GraderMultiType {const GraderMultiType$multi._();
+
+@override String get value => 'multi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GraderMultiType$multi;
+
+@override int get hashCode => 'multi'.hashCode;
+
+ }
+@immutable final class GraderMultiType$Unknown extends GraderMultiType {const GraderMultiType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GraderMultiType && other.value == value;
+    other is GraderMultiType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GraderMultiType($value)';
 
  }
 /// A MultiGrader object combines the output of multiple graders to produce a single score.

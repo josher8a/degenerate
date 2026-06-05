@@ -2,28 +2,27 @@
 // Source: #/components/schemas/PostTestHelpersIssuingAuthorizationsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization/authorization_method.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_finalize_amount_request/fleet.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_authorization_finalize_amount_request/post_test_helpers_issuing_authorizations_authorization_finalize_amount_request_fuel.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/merchant_data.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/network_data.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/post_test_helpers_issuing_authorizations_request_amount_details.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/risk_assessment.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_issuing_authorizations_request/verification_data.dart';/// Probability that this transaction can be disputed in the event of fraud. Assessed by comparing the characteristics of the authorization to card network rules.
-@immutable final class FraudDisputabilityLikelihood {const FraudDisputabilityLikelihood._(this.value);
+sealed class FraudDisputabilityLikelihood {const FraudDisputabilityLikelihood();
 
 factory FraudDisputabilityLikelihood.fromJson(String json) { return switch (json) {
   'neutral' => neutral,
   'unknown' => unknown,
   'very_likely' => veryLikely,
   'very_unlikely' => veryUnlikely,
-  _ => FraudDisputabilityLikelihood._(json),
+  _ => FraudDisputabilityLikelihood$Unknown(json),
 }; }
 
-static const FraudDisputabilityLikelihood neutral = FraudDisputabilityLikelihood._('neutral');
+static const FraudDisputabilityLikelihood neutral = FraudDisputabilityLikelihood$neutral._();
 
-static const FraudDisputabilityLikelihood unknown = FraudDisputabilityLikelihood._('unknown');
+static const FraudDisputabilityLikelihood unknown = FraudDisputabilityLikelihood$unknown._();
 
-static const FraudDisputabilityLikelihood veryLikely = FraudDisputabilityLikelihood._('very_likely');
+static const FraudDisputabilityLikelihood veryLikely = FraudDisputabilityLikelihood$veryLikely._();
 
-static const FraudDisputabilityLikelihood veryUnlikely = FraudDisputabilityLikelihood._('very_unlikely');
+static const FraudDisputabilityLikelihood veryUnlikely = FraudDisputabilityLikelihood$veryUnlikely._();
 
 static const List<FraudDisputabilityLikelihood> values = [neutral, unknown, veryLikely, veryUnlikely];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,35 +33,75 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is FraudDisputabilityLikelihood && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is FraudDisputabilityLikelihood$Unknown; } 
 @override String toString() => 'FraudDisputabilityLikelihood($value)';
 
  }
+@immutable final class FraudDisputabilityLikelihood$neutral extends FraudDisputabilityLikelihood {const FraudDisputabilityLikelihood$neutral._();
+
+@override String get value => 'neutral';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FraudDisputabilityLikelihood$neutral;
+
+@override int get hashCode => 'neutral'.hashCode;
+
+ }
+@immutable final class FraudDisputabilityLikelihood$unknown extends FraudDisputabilityLikelihood {const FraudDisputabilityLikelihood$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FraudDisputabilityLikelihood$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class FraudDisputabilityLikelihood$veryLikely extends FraudDisputabilityLikelihood {const FraudDisputabilityLikelihood$veryLikely._();
+
+@override String get value => 'very_likely';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FraudDisputabilityLikelihood$veryLikely;
+
+@override int get hashCode => 'very_likely'.hashCode;
+
+ }
+@immutable final class FraudDisputabilityLikelihood$veryUnlikely extends FraudDisputabilityLikelihood {const FraudDisputabilityLikelihood$veryUnlikely._();
+
+@override String get value => 'very_unlikely';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FraudDisputabilityLikelihood$veryUnlikely;
+
+@override int get hashCode => 'very_unlikely'.hashCode;
+
+ }
+@immutable final class FraudDisputabilityLikelihood$Unknown extends FraudDisputabilityLikelihood {const FraudDisputabilityLikelihood$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is FraudDisputabilityLikelihood$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The digital wallet used for this transaction. One of `apple_pay`, `google_pay`, or `samsung_pay`. Will populate as `null` when no digital wallet was utilized.
-@immutable final class PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet._(this.value);
+sealed class PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet();
 
 factory PostTestHelpersIssuingAuthorizationsRequestWallet.fromJson(String json) { return switch (json) {
   'apple_pay' => applePay,
   'google_pay' => googlePay,
   'samsung_pay' => samsungPay,
-  _ => PostTestHelpersIssuingAuthorizationsRequestWallet._(json),
+  _ => PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown(json),
 }; }
 
-static const PostTestHelpersIssuingAuthorizationsRequestWallet applePay = PostTestHelpersIssuingAuthorizationsRequestWallet._('apple_pay');
+static const PostTestHelpersIssuingAuthorizationsRequestWallet applePay = PostTestHelpersIssuingAuthorizationsRequestWallet$applePay._();
 
-static const PostTestHelpersIssuingAuthorizationsRequestWallet googlePay = PostTestHelpersIssuingAuthorizationsRequestWallet._('google_pay');
+static const PostTestHelpersIssuingAuthorizationsRequestWallet googlePay = PostTestHelpersIssuingAuthorizationsRequestWallet$googlePay._();
 
-static const PostTestHelpersIssuingAuthorizationsRequestWallet samsungPay = PostTestHelpersIssuingAuthorizationsRequestWallet._('samsung_pay');
+static const PostTestHelpersIssuingAuthorizationsRequestWallet samsungPay = PostTestHelpersIssuingAuthorizationsRequestWallet$samsungPay._();
 
 static const List<PostTestHelpersIssuingAuthorizationsRequestWallet> values = [applePay, googlePay, samsungPay];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -72,13 +111,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown; } 
+@override String toString() => 'PostTestHelpersIssuingAuthorizationsRequestWallet($value)';
+
+ }
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestWallet$applePay extends PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet$applePay._();
+
+@override String get value => 'apple_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostTestHelpersIssuingAuthorizationsRequestWallet$applePay;
+
+@override int get hashCode => 'apple_pay'.hashCode;
+
+ }
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestWallet$googlePay extends PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet$googlePay._();
+
+@override String get value => 'google_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostTestHelpersIssuingAuthorizationsRequestWallet$googlePay;
+
+@override int get hashCode => 'google_pay'.hashCode;
+
+ }
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestWallet$samsungPay extends PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet$samsungPay._();
+
+@override String get value => 'samsung_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostTestHelpersIssuingAuthorizationsRequestWallet$samsungPay;
+
+@override int get hashCode => 'samsung_pay'.hashCode;
+
+ }
+@immutable final class PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown extends PostTestHelpersIssuingAuthorizationsRequestWallet {const PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostTestHelpersIssuingAuthorizationsRequestWallet && other.value == value;
+    other is PostTestHelpersIssuingAuthorizationsRequestWallet$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostTestHelpersIssuingAuthorizationsRequestWallet($value)';
 
  }
 @immutable final class PostTestHelpersIssuingAuthorizationsRequest {const PostTestHelpersIssuingAuthorizationsRequest({required this.card, this.amount, this.amountDetails, this.authorizationMethod, this.currency, this.expand, this.fleet, this.fraudDisputabilityLikelihood, this.fuel, this.isAmountControllable, this.merchantAmount, this.merchantCurrency, this.merchantData, this.networkData, this.riskAssessment, this.verificationData, this.wallet, });

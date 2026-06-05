@@ -3,25 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The image generation model to use. Default: `gpt-image-1`.
 /// 
-@immutable final class ImageGenToolModelVariant2 {const ImageGenToolModelVariant2._(this.value);
+sealed class ImageGenToolModelVariant2 {const ImageGenToolModelVariant2();
 
 factory ImageGenToolModelVariant2.fromJson(String json) { return switch (json) {
   'gpt-image-1' => gptImage1,
   'gpt-image-1-mini' => gptImage1Mini,
   'gpt-image-1.5' => gptImage15,
-  _ => ImageGenToolModelVariant2._(json),
+  _ => ImageGenToolModelVariant2$Unknown(json),
 }; }
 
-static const ImageGenToolModelVariant2 gptImage1 = ImageGenToolModelVariant2._('gpt-image-1');
+static const ImageGenToolModelVariant2 gptImage1 = ImageGenToolModelVariant2$gptImage1._();
 
-static const ImageGenToolModelVariant2 gptImage1Mini = ImageGenToolModelVariant2._('gpt-image-1-mini');
+static const ImageGenToolModelVariant2 gptImage1Mini = ImageGenToolModelVariant2$gptImage1Mini._();
 
-static const ImageGenToolModelVariant2 gptImage15 = ImageGenToolModelVariant2._('gpt-image-1.5');
+static const ImageGenToolModelVariant2 gptImage15 = ImageGenToolModelVariant2$gptImage15._();
 
 static const List<ImageGenToolModelVariant2> values = [gptImage1, gptImage1Mini, gptImage15];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -31,13 +30,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ImageGenToolModelVariant2$Unknown; } 
+@override String toString() => 'ImageGenToolModelVariant2($value)';
+
+ }
+@immutable final class ImageGenToolModelVariant2$gptImage1 extends ImageGenToolModelVariant2 {const ImageGenToolModelVariant2$gptImage1._();
+
+@override String get value => 'gpt-image-1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolModelVariant2$gptImage1;
+
+@override int get hashCode => 'gpt-image-1'.hashCode;
+
+ }
+@immutable final class ImageGenToolModelVariant2$gptImage1Mini extends ImageGenToolModelVariant2 {const ImageGenToolModelVariant2$gptImage1Mini._();
+
+@override String get value => 'gpt-image-1-mini';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolModelVariant2$gptImage1Mini;
+
+@override int get hashCode => 'gpt-image-1-mini'.hashCode;
+
+ }
+@immutable final class ImageGenToolModelVariant2$gptImage15 extends ImageGenToolModelVariant2 {const ImageGenToolModelVariant2$gptImage15._();
+
+@override String get value => 'gpt-image-1.5';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenToolModelVariant2$gptImage15;
+
+@override int get hashCode => 'gpt-image-1.5'.hashCode;
+
+ }
+@immutable final class ImageGenToolModelVariant2$Unknown extends ImageGenToolModelVariant2 {const ImageGenToolModelVariant2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ImageGenToolModelVariant2 && other.value == value;
+    other is ImageGenToolModelVariant2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ImageGenToolModelVariant2($value)';
 
  }
 /// Variants:

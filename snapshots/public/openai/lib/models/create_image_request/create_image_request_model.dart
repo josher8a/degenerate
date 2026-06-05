@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateImageRequest (inline: Model)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CreateImageRequestModelVariant2 {const CreateImageRequestModelVariant2._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CreateImageRequestModelVariant2 {const CreateImageRequestModelVariant2();
 
 factory CreateImageRequestModelVariant2.fromJson(String json) { return switch (json) {
   'gpt-image-1.5' => gptImage15,
@@ -9,23 +9,22 @@ factory CreateImageRequestModelVariant2.fromJson(String json) { return switch (j
   'dall-e-3' => dallE3,
   'gpt-image-1' => gptImage1,
   'gpt-image-1-mini' => gptImage1Mini,
-  _ => CreateImageRequestModelVariant2._(json),
+  _ => CreateImageRequestModelVariant2$Unknown(json),
 }; }
 
-static const CreateImageRequestModelVariant2 gptImage15 = CreateImageRequestModelVariant2._('gpt-image-1.5');
+static const CreateImageRequestModelVariant2 gptImage15 = CreateImageRequestModelVariant2$gptImage15._();
 
-static const CreateImageRequestModelVariant2 dallE2 = CreateImageRequestModelVariant2._('dall-e-2');
+static const CreateImageRequestModelVariant2 dallE2 = CreateImageRequestModelVariant2$dallE2._();
 
-static const CreateImageRequestModelVariant2 dallE3 = CreateImageRequestModelVariant2._('dall-e-3');
+static const CreateImageRequestModelVariant2 dallE3 = CreateImageRequestModelVariant2$dallE3._();
 
-static const CreateImageRequestModelVariant2 gptImage1 = CreateImageRequestModelVariant2._('gpt-image-1');
+static const CreateImageRequestModelVariant2 gptImage1 = CreateImageRequestModelVariant2$gptImage1._();
 
-static const CreateImageRequestModelVariant2 gptImage1Mini = CreateImageRequestModelVariant2._('gpt-image-1-mini');
+static const CreateImageRequestModelVariant2 gptImage1Mini = CreateImageRequestModelVariant2$gptImage1Mini._();
 
 static const List<CreateImageRequestModelVariant2> values = [gptImage15, dallE2, dallE3, gptImage1, gptImage1Mini];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateImageRequestModelVariant2$Unknown; } 
+@override String toString() => 'CreateImageRequestModelVariant2($value)';
+
+ }
+@immutable final class CreateImageRequestModelVariant2$gptImage15 extends CreateImageRequestModelVariant2 {const CreateImageRequestModelVariant2$gptImage15._();
+
+@override String get value => 'gpt-image-1.5';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestModelVariant2$gptImage15;
+
+@override int get hashCode => 'gpt-image-1.5'.hashCode;
+
+ }
+@immutable final class CreateImageRequestModelVariant2$dallE2 extends CreateImageRequestModelVariant2 {const CreateImageRequestModelVariant2$dallE2._();
+
+@override String get value => 'dall-e-2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestModelVariant2$dallE2;
+
+@override int get hashCode => 'dall-e-2'.hashCode;
+
+ }
+@immutable final class CreateImageRequestModelVariant2$dallE3 extends CreateImageRequestModelVariant2 {const CreateImageRequestModelVariant2$dallE3._();
+
+@override String get value => 'dall-e-3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestModelVariant2$dallE3;
+
+@override int get hashCode => 'dall-e-3'.hashCode;
+
+ }
+@immutable final class CreateImageRequestModelVariant2$gptImage1 extends CreateImageRequestModelVariant2 {const CreateImageRequestModelVariant2$gptImage1._();
+
+@override String get value => 'gpt-image-1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestModelVariant2$gptImage1;
+
+@override int get hashCode => 'gpt-image-1'.hashCode;
+
+ }
+@immutable final class CreateImageRequestModelVariant2$gptImage1Mini extends CreateImageRequestModelVariant2 {const CreateImageRequestModelVariant2$gptImage1Mini._();
+
+@override String get value => 'gpt-image-1-mini';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageRequestModelVariant2$gptImage1Mini;
+
+@override int get hashCode => 'gpt-image-1-mini'.hashCode;
+
+ }
+@immutable final class CreateImageRequestModelVariant2$Unknown extends CreateImageRequestModelVariant2 {const CreateImageRequestModelVariant2$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateImageRequestModelVariant2 && other.value == value;
+    other is CreateImageRequestModelVariant2$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateImageRequestModelVariant2($value)';
 
  }
 /// The model to use for image generation. One of `dall-e-2`, `dall-e-3`, or a GPT image model (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`). Defaults to `dall-e-2` unless a parameter specific to the GPT image models is used.

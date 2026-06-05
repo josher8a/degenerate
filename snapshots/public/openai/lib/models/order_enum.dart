@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/OrderEnum
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrderEnum {const OrderEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class OrderEnum {const OrderEnum();
 
 factory OrderEnum.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => OrderEnum._(json),
+  _ => OrderEnum$Unknown(json),
 }; }
 
-static const OrderEnum asc = OrderEnum._('asc');
+static const OrderEnum asc = OrderEnum$asc._();
 
-static const OrderEnum desc = OrderEnum._('desc');
+static const OrderEnum desc = OrderEnum$desc._();
 
 static const List<OrderEnum> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrderEnum$Unknown; } 
+@override String toString() => 'OrderEnum($value)';
+
+ }
+@immutable final class OrderEnum$asc extends OrderEnum {const OrderEnum$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrderEnum$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class OrderEnum$desc extends OrderEnum {const OrderEnum$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrderEnum$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class OrderEnum$Unknown extends OrderEnum {const OrderEnum$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrderEnum && other.value == value;
+    other is OrderEnum$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrderEnum($value)';
 
  }

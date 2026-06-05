@@ -2,7 +2,7 @@
 // Source: #/components/schemas/IssuingAuthorizationRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_authorization_amount_details.dart';/// When an authorization is approved or declined by you or by Stripe, this field provides additional detail on the reason for the outcome.
-@immutable final class IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason._(this.value);
+sealed class IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason();
 
 factory IssuingAuthorizationRequestReason.fromJson(String json) { return switch (json) {
   'account_disabled' => accountDisabled,
@@ -25,53 +25,52 @@ factory IssuingAuthorizationRequestReason.fromJson(String json) { return switch 
   'webhook_declined' => webhookDeclined,
   'webhook_error' => webhookError,
   'webhook_timeout' => webhookTimeout,
-  _ => IssuingAuthorizationRequestReason._(json),
+  _ => IssuingAuthorizationRequestReason$Unknown(json),
 }; }
 
-static const IssuingAuthorizationRequestReason accountDisabled = IssuingAuthorizationRequestReason._('account_disabled');
+static const IssuingAuthorizationRequestReason accountDisabled = IssuingAuthorizationRequestReason$accountDisabled._();
 
-static const IssuingAuthorizationRequestReason cardActive = IssuingAuthorizationRequestReason._('card_active');
+static const IssuingAuthorizationRequestReason cardActive = IssuingAuthorizationRequestReason$cardActive._();
 
-static const IssuingAuthorizationRequestReason cardCanceled = IssuingAuthorizationRequestReason._('card_canceled');
+static const IssuingAuthorizationRequestReason cardCanceled = IssuingAuthorizationRequestReason$cardCanceled._();
 
-static const IssuingAuthorizationRequestReason cardExpired = IssuingAuthorizationRequestReason._('card_expired');
+static const IssuingAuthorizationRequestReason cardExpired = IssuingAuthorizationRequestReason$cardExpired._();
 
-static const IssuingAuthorizationRequestReason cardInactive = IssuingAuthorizationRequestReason._('card_inactive');
+static const IssuingAuthorizationRequestReason cardInactive = IssuingAuthorizationRequestReason$cardInactive._();
 
-static const IssuingAuthorizationRequestReason cardholderBlocked = IssuingAuthorizationRequestReason._('cardholder_blocked');
+static const IssuingAuthorizationRequestReason cardholderBlocked = IssuingAuthorizationRequestReason$cardholderBlocked._();
 
-static const IssuingAuthorizationRequestReason cardholderInactive = IssuingAuthorizationRequestReason._('cardholder_inactive');
+static const IssuingAuthorizationRequestReason cardholderInactive = IssuingAuthorizationRequestReason$cardholderInactive._();
 
-static const IssuingAuthorizationRequestReason cardholderVerificationRequired = IssuingAuthorizationRequestReason._('cardholder_verification_required');
+static const IssuingAuthorizationRequestReason cardholderVerificationRequired = IssuingAuthorizationRequestReason$cardholderVerificationRequired._();
 
-static const IssuingAuthorizationRequestReason insecureAuthorizationMethod = IssuingAuthorizationRequestReason._('insecure_authorization_method');
+static const IssuingAuthorizationRequestReason insecureAuthorizationMethod = IssuingAuthorizationRequestReason$insecureAuthorizationMethod._();
 
-static const IssuingAuthorizationRequestReason insufficientFunds = IssuingAuthorizationRequestReason._('insufficient_funds');
+static const IssuingAuthorizationRequestReason insufficientFunds = IssuingAuthorizationRequestReason$insufficientFunds._();
 
-static const IssuingAuthorizationRequestReason networkFallback = IssuingAuthorizationRequestReason._('network_fallback');
+static const IssuingAuthorizationRequestReason networkFallback = IssuingAuthorizationRequestReason$networkFallback._();
 
-static const IssuingAuthorizationRequestReason notAllowed = IssuingAuthorizationRequestReason._('not_allowed');
+static const IssuingAuthorizationRequestReason notAllowed = IssuingAuthorizationRequestReason$notAllowed._();
 
-static const IssuingAuthorizationRequestReason pinBlocked = IssuingAuthorizationRequestReason._('pin_blocked');
+static const IssuingAuthorizationRequestReason pinBlocked = IssuingAuthorizationRequestReason$pinBlocked._();
 
-static const IssuingAuthorizationRequestReason spendingControls = IssuingAuthorizationRequestReason._('spending_controls');
+static const IssuingAuthorizationRequestReason spendingControls = IssuingAuthorizationRequestReason$spendingControls._();
 
-static const IssuingAuthorizationRequestReason suspectedFraud = IssuingAuthorizationRequestReason._('suspected_fraud');
+static const IssuingAuthorizationRequestReason suspectedFraud = IssuingAuthorizationRequestReason$suspectedFraud._();
 
-static const IssuingAuthorizationRequestReason verificationFailed = IssuingAuthorizationRequestReason._('verification_failed');
+static const IssuingAuthorizationRequestReason verificationFailed = IssuingAuthorizationRequestReason$verificationFailed._();
 
-static const IssuingAuthorizationRequestReason webhookApproved = IssuingAuthorizationRequestReason._('webhook_approved');
+static const IssuingAuthorizationRequestReason webhookApproved = IssuingAuthorizationRequestReason$webhookApproved._();
 
-static const IssuingAuthorizationRequestReason webhookDeclined = IssuingAuthorizationRequestReason._('webhook_declined');
+static const IssuingAuthorizationRequestReason webhookDeclined = IssuingAuthorizationRequestReason$webhookDeclined._();
 
-static const IssuingAuthorizationRequestReason webhookError = IssuingAuthorizationRequestReason._('webhook_error');
+static const IssuingAuthorizationRequestReason webhookError = IssuingAuthorizationRequestReason$webhookError._();
 
-static const IssuingAuthorizationRequestReason webhookTimeout = IssuingAuthorizationRequestReason._('webhook_timeout');
+static const IssuingAuthorizationRequestReason webhookTimeout = IssuingAuthorizationRequestReason$webhookTimeout._();
 
 static const List<IssuingAuthorizationRequestReason> values = [accountDisabled, cardActive, cardCanceled, cardExpired, cardInactive, cardholderBlocked, cardholderInactive, cardholderVerificationRequired, insecureAuthorizationMethod, insufficientFunds, networkFallback, notAllowed, pinBlocked, spendingControls, suspectedFraud, verificationFailed, webhookApproved, webhookDeclined, webhookError, webhookTimeout];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -98,13 +97,198 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingAuthorizationRequestReason$Unknown; } 
+@override String toString() => 'IssuingAuthorizationRequestReason($value)';
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$accountDisabled extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$accountDisabled._();
+
+@override String get value => 'account_disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$accountDisabled;
+
+@override int get hashCode => 'account_disabled'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$cardActive extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$cardActive._();
+
+@override String get value => 'card_active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$cardActive;
+
+@override int get hashCode => 'card_active'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$cardCanceled extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$cardCanceled._();
+
+@override String get value => 'card_canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$cardCanceled;
+
+@override int get hashCode => 'card_canceled'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$cardExpired extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$cardExpired._();
+
+@override String get value => 'card_expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$cardExpired;
+
+@override int get hashCode => 'card_expired'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$cardInactive extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$cardInactive._();
+
+@override String get value => 'card_inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$cardInactive;
+
+@override int get hashCode => 'card_inactive'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$cardholderBlocked extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$cardholderBlocked._();
+
+@override String get value => 'cardholder_blocked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$cardholderBlocked;
+
+@override int get hashCode => 'cardholder_blocked'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$cardholderInactive extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$cardholderInactive._();
+
+@override String get value => 'cardholder_inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$cardholderInactive;
+
+@override int get hashCode => 'cardholder_inactive'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$cardholderVerificationRequired extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$cardholderVerificationRequired._();
+
+@override String get value => 'cardholder_verification_required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$cardholderVerificationRequired;
+
+@override int get hashCode => 'cardholder_verification_required'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$insecureAuthorizationMethod extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$insecureAuthorizationMethod._();
+
+@override String get value => 'insecure_authorization_method';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$insecureAuthorizationMethod;
+
+@override int get hashCode => 'insecure_authorization_method'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$insufficientFunds extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$insufficientFunds._();
+
+@override String get value => 'insufficient_funds';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$insufficientFunds;
+
+@override int get hashCode => 'insufficient_funds'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$networkFallback extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$networkFallback._();
+
+@override String get value => 'network_fallback';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$networkFallback;
+
+@override int get hashCode => 'network_fallback'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$notAllowed extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$notAllowed._();
+
+@override String get value => 'not_allowed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$notAllowed;
+
+@override int get hashCode => 'not_allowed'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$pinBlocked extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$pinBlocked._();
+
+@override String get value => 'pin_blocked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$pinBlocked;
+
+@override int get hashCode => 'pin_blocked'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$spendingControls extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$spendingControls._();
+
+@override String get value => 'spending_controls';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$spendingControls;
+
+@override int get hashCode => 'spending_controls'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$suspectedFraud extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$suspectedFraud._();
+
+@override String get value => 'suspected_fraud';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$suspectedFraud;
+
+@override int get hashCode => 'suspected_fraud'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$verificationFailed extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$verificationFailed._();
+
+@override String get value => 'verification_failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$verificationFailed;
+
+@override int get hashCode => 'verification_failed'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$webhookApproved extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$webhookApproved._();
+
+@override String get value => 'webhook_approved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$webhookApproved;
+
+@override int get hashCode => 'webhook_approved'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$webhookDeclined extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$webhookDeclined._();
+
+@override String get value => 'webhook_declined';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$webhookDeclined;
+
+@override int get hashCode => 'webhook_declined'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$webhookError extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$webhookError._();
+
+@override String get value => 'webhook_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$webhookError;
+
+@override int get hashCode => 'webhook_error'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$webhookTimeout extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$webhookTimeout._();
+
+@override String get value => 'webhook_timeout';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingAuthorizationRequestReason$webhookTimeout;
+
+@override int get hashCode => 'webhook_timeout'.hashCode;
+
+ }
+@immutable final class IssuingAuthorizationRequestReason$Unknown extends IssuingAuthorizationRequestReason {const IssuingAuthorizationRequestReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingAuthorizationRequestReason && other.value == value;
+    other is IssuingAuthorizationRequestReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingAuthorizationRequestReason($value)';
 
  }
 /// 

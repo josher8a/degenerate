@@ -2,7 +2,7 @@
 // Source: #/components/schemas/Field
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/field/field_configuration.dart';import 'package:pub_github_rest_3_1/models/single_select_options.dart';/// The field's data type.
-@immutable final class FieldDataType {const FieldDataType._(this.value);
+sealed class FieldDataType {const FieldDataType();
 
 factory FieldDataType.fromJson(String json) { return switch (json) {
   'assignees' => assignees,
@@ -20,43 +20,42 @@ factory FieldDataType.fromJson(String json) { return switch (json) {
   'issue_type' => issueType,
   'parent_issue' => parentIssue,
   'sub_issues_progress' => subIssuesProgress,
-  _ => FieldDataType._(json),
+  _ => FieldDataType$Unknown(json),
 }; }
 
-static const FieldDataType assignees = FieldDataType._('assignees');
+static const FieldDataType assignees = FieldDataType$assignees._();
 
-static const FieldDataType linkedPullRequests = FieldDataType._('linked_pull_requests');
+static const FieldDataType linkedPullRequests = FieldDataType$linkedPullRequests._();
 
-static const FieldDataType reviewers = FieldDataType._('reviewers');
+static const FieldDataType reviewers = FieldDataType$reviewers._();
 
-static const FieldDataType labels = FieldDataType._('labels');
+static const FieldDataType labels = FieldDataType$labels._();
 
-static const FieldDataType milestone = FieldDataType._('milestone');
+static const FieldDataType milestone = FieldDataType$milestone._();
 
-static const FieldDataType repository = FieldDataType._('repository');
+static const FieldDataType repository = FieldDataType$repository._();
 
-static const FieldDataType title = FieldDataType._('title');
+static const FieldDataType title = FieldDataType$title._();
 
-static const FieldDataType text = FieldDataType._('text');
+static const FieldDataType text = FieldDataType$text._();
 
-static const FieldDataType singleSelect = FieldDataType._('single_select');
+static const FieldDataType singleSelect = FieldDataType$singleSelect._();
 
-static const FieldDataType number = FieldDataType._('number');
+static const FieldDataType number = FieldDataType$number._();
 
-static const FieldDataType date = FieldDataType._('date');
+static const FieldDataType date = FieldDataType$date._();
 
-static const FieldDataType iteration = FieldDataType._('iteration');
+static const FieldDataType iteration = FieldDataType$iteration._();
 
-static const FieldDataType issueType = FieldDataType._('issue_type');
+static const FieldDataType issueType = FieldDataType$issueType._();
 
-static const FieldDataType parentIssue = FieldDataType._('parent_issue');
+static const FieldDataType parentIssue = FieldDataType$parentIssue._();
 
-static const FieldDataType subIssuesProgress = FieldDataType._('sub_issues_progress');
+static const FieldDataType subIssuesProgress = FieldDataType$subIssuesProgress._();
 
 static const List<FieldDataType> values = [assignees, linkedPullRequests, reviewers, labels, milestone, repository, title, text, singleSelect, number, date, iteration, issueType, parentIssue, subIssuesProgress];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -78,13 +77,153 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FieldDataType$Unknown; } 
+@override String toString() => 'FieldDataType($value)';
+
+ }
+@immutable final class FieldDataType$assignees extends FieldDataType {const FieldDataType$assignees._();
+
+@override String get value => 'assignees';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$assignees;
+
+@override int get hashCode => 'assignees'.hashCode;
+
+ }
+@immutable final class FieldDataType$linkedPullRequests extends FieldDataType {const FieldDataType$linkedPullRequests._();
+
+@override String get value => 'linked_pull_requests';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$linkedPullRequests;
+
+@override int get hashCode => 'linked_pull_requests'.hashCode;
+
+ }
+@immutable final class FieldDataType$reviewers extends FieldDataType {const FieldDataType$reviewers._();
+
+@override String get value => 'reviewers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$reviewers;
+
+@override int get hashCode => 'reviewers'.hashCode;
+
+ }
+@immutable final class FieldDataType$labels extends FieldDataType {const FieldDataType$labels._();
+
+@override String get value => 'labels';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$labels;
+
+@override int get hashCode => 'labels'.hashCode;
+
+ }
+@immutable final class FieldDataType$milestone extends FieldDataType {const FieldDataType$milestone._();
+
+@override String get value => 'milestone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$milestone;
+
+@override int get hashCode => 'milestone'.hashCode;
+
+ }
+@immutable final class FieldDataType$repository extends FieldDataType {const FieldDataType$repository._();
+
+@override String get value => 'repository';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$repository;
+
+@override int get hashCode => 'repository'.hashCode;
+
+ }
+@immutable final class FieldDataType$title extends FieldDataType {const FieldDataType$title._();
+
+@override String get value => 'title';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$title;
+
+@override int get hashCode => 'title'.hashCode;
+
+ }
+@immutable final class FieldDataType$text extends FieldDataType {const FieldDataType$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class FieldDataType$singleSelect extends FieldDataType {const FieldDataType$singleSelect._();
+
+@override String get value => 'single_select';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$singleSelect;
+
+@override int get hashCode => 'single_select'.hashCode;
+
+ }
+@immutable final class FieldDataType$number extends FieldDataType {const FieldDataType$number._();
+
+@override String get value => 'number';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$number;
+
+@override int get hashCode => 'number'.hashCode;
+
+ }
+@immutable final class FieldDataType$date extends FieldDataType {const FieldDataType$date._();
+
+@override String get value => 'date';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$date;
+
+@override int get hashCode => 'date'.hashCode;
+
+ }
+@immutable final class FieldDataType$iteration extends FieldDataType {const FieldDataType$iteration._();
+
+@override String get value => 'iteration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$iteration;
+
+@override int get hashCode => 'iteration'.hashCode;
+
+ }
+@immutable final class FieldDataType$issueType extends FieldDataType {const FieldDataType$issueType._();
+
+@override String get value => 'issue_type';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$issueType;
+
+@override int get hashCode => 'issue_type'.hashCode;
+
+ }
+@immutable final class FieldDataType$parentIssue extends FieldDataType {const FieldDataType$parentIssue._();
+
+@override String get value => 'parent_issue';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$parentIssue;
+
+@override int get hashCode => 'parent_issue'.hashCode;
+
+ }
+@immutable final class FieldDataType$subIssuesProgress extends FieldDataType {const FieldDataType$subIssuesProgress._();
+
+@override String get value => 'sub_issues_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FieldDataType$subIssuesProgress;
+
+@override int get hashCode => 'sub_issues_progress'.hashCode;
+
+ }
+@immutable final class FieldDataType$Unknown extends FieldDataType {const FieldDataType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FieldDataType && other.value == value;
+    other is FieldDataType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FieldDataType($value)';
 
  }
 /// A field inside a projects v2 project

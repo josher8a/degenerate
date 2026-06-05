@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DnsRecordsCaaRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_caa_record/dns_records_caa_record_data.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';/// Record type.
-@immutable final class DnsRecordsCaaRecordType {const DnsRecordsCaaRecordType._(this.value);
+sealed class DnsRecordsCaaRecordType {const DnsRecordsCaaRecordType();
 
 factory DnsRecordsCaaRecordType.fromJson(String json) { return switch (json) {
   'CAA' => caa,
-  _ => DnsRecordsCaaRecordType._(json),
+  _ => DnsRecordsCaaRecordType$Unknown(json),
 }; }
 
-static const DnsRecordsCaaRecordType caa = DnsRecordsCaaRecordType._('CAA');
+static const DnsRecordsCaaRecordType caa = DnsRecordsCaaRecordType$caa._();
 
 static const List<DnsRecordsCaaRecordType> values = [caa];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DnsRecordsCaaRecordType$Unknown; } 
+@override String toString() => 'DnsRecordsCaaRecordType($value)';
+
+ }
+@immutable final class DnsRecordsCaaRecordType$caa extends DnsRecordsCaaRecordType {const DnsRecordsCaaRecordType$caa._();
+
+@override String get value => 'CAA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsCaaRecordType$caa;
+
+@override int get hashCode => 'CAA'.hashCode;
+
+ }
+@immutable final class DnsRecordsCaaRecordType$Unknown extends DnsRecordsCaaRecordType {const DnsRecordsCaaRecordType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsCaaRecordType && other.value == value;
+    other is DnsRecordsCaaRecordType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DnsRecordsCaaRecordType($value)';
 
  }
 @immutable final class DnsRecordsCaaRecord {const DnsRecordsCaaRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });

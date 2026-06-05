@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TaxProductResourceTaxRateDetails (inline: TaxType)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The tax type, such as `vat` or `sales_tax`.
-@immutable final class TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType._(this.value);
+sealed class TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType();
 
 factory TaxProductResourceTaxRateDetailsTaxType.fromJson(String json) { return switch (json) {
   'amusement_tax' => amusementTax,
@@ -19,41 +19,40 @@ factory TaxProductResourceTaxRateDetailsTaxType.fromJson(String json) { return s
   'sales_tax' => salesTax,
   'service_tax' => serviceTax,
   'vat' => vat,
-  _ => TaxProductResourceTaxRateDetailsTaxType._(json),
+  _ => TaxProductResourceTaxRateDetailsTaxType$Unknown(json),
 }; }
 
-static const TaxProductResourceTaxRateDetailsTaxType amusementTax = TaxProductResourceTaxRateDetailsTaxType._('amusement_tax');
+static const TaxProductResourceTaxRateDetailsTaxType amusementTax = TaxProductResourceTaxRateDetailsTaxType$amusementTax._();
 
-static const TaxProductResourceTaxRateDetailsTaxType communicationsTax = TaxProductResourceTaxRateDetailsTaxType._('communications_tax');
+static const TaxProductResourceTaxRateDetailsTaxType communicationsTax = TaxProductResourceTaxRateDetailsTaxType$communicationsTax._();
 
-static const TaxProductResourceTaxRateDetailsTaxType gst = TaxProductResourceTaxRateDetailsTaxType._('gst');
+static const TaxProductResourceTaxRateDetailsTaxType gst = TaxProductResourceTaxRateDetailsTaxType$gst._();
 
-static const TaxProductResourceTaxRateDetailsTaxType hst = TaxProductResourceTaxRateDetailsTaxType._('hst');
+static const TaxProductResourceTaxRateDetailsTaxType hst = TaxProductResourceTaxRateDetailsTaxType$hst._();
 
-static const TaxProductResourceTaxRateDetailsTaxType igst = TaxProductResourceTaxRateDetailsTaxType._('igst');
+static const TaxProductResourceTaxRateDetailsTaxType igst = TaxProductResourceTaxRateDetailsTaxType$igst._();
 
-static const TaxProductResourceTaxRateDetailsTaxType jct = TaxProductResourceTaxRateDetailsTaxType._('jct');
+static const TaxProductResourceTaxRateDetailsTaxType jct = TaxProductResourceTaxRateDetailsTaxType$jct._();
 
-static const TaxProductResourceTaxRateDetailsTaxType leaseTax = TaxProductResourceTaxRateDetailsTaxType._('lease_tax');
+static const TaxProductResourceTaxRateDetailsTaxType leaseTax = TaxProductResourceTaxRateDetailsTaxType$leaseTax._();
 
-static const TaxProductResourceTaxRateDetailsTaxType pst = TaxProductResourceTaxRateDetailsTaxType._('pst');
+static const TaxProductResourceTaxRateDetailsTaxType pst = TaxProductResourceTaxRateDetailsTaxType$pst._();
 
-static const TaxProductResourceTaxRateDetailsTaxType qst = TaxProductResourceTaxRateDetailsTaxType._('qst');
+static const TaxProductResourceTaxRateDetailsTaxType qst = TaxProductResourceTaxRateDetailsTaxType$qst._();
 
-static const TaxProductResourceTaxRateDetailsTaxType retailDeliveryFee = TaxProductResourceTaxRateDetailsTaxType._('retail_delivery_fee');
+static const TaxProductResourceTaxRateDetailsTaxType retailDeliveryFee = TaxProductResourceTaxRateDetailsTaxType$retailDeliveryFee._();
 
-static const TaxProductResourceTaxRateDetailsTaxType rst = TaxProductResourceTaxRateDetailsTaxType._('rst');
+static const TaxProductResourceTaxRateDetailsTaxType rst = TaxProductResourceTaxRateDetailsTaxType$rst._();
 
-static const TaxProductResourceTaxRateDetailsTaxType salesTax = TaxProductResourceTaxRateDetailsTaxType._('sales_tax');
+static const TaxProductResourceTaxRateDetailsTaxType salesTax = TaxProductResourceTaxRateDetailsTaxType$salesTax._();
 
-static const TaxProductResourceTaxRateDetailsTaxType serviceTax = TaxProductResourceTaxRateDetailsTaxType._('service_tax');
+static const TaxProductResourceTaxRateDetailsTaxType serviceTax = TaxProductResourceTaxRateDetailsTaxType$serviceTax._();
 
-static const TaxProductResourceTaxRateDetailsTaxType vat = TaxProductResourceTaxRateDetailsTaxType._('vat');
+static const TaxProductResourceTaxRateDetailsTaxType vat = TaxProductResourceTaxRateDetailsTaxType$vat._();
 
 static const List<TaxProductResourceTaxRateDetailsTaxType> values = [amusementTax, communicationsTax, gst, hst, igst, jct, leaseTax, pst, qst, retailDeliveryFee, rst, salesTax, serviceTax, vat];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -74,12 +73,143 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TaxProductResourceTaxRateDetailsTaxType$Unknown; } 
+@override String toString() => 'TaxProductResourceTaxRateDetailsTaxType($value)';
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$amusementTax extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$amusementTax._();
+
+@override String get value => 'amusement_tax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceTaxRateDetailsTaxType$amusementTax;
+
+@override int get hashCode => 'amusement_tax'.hashCode;
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$communicationsTax extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$communicationsTax._();
+
+@override String get value => 'communications_tax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceTaxRateDetailsTaxType$communicationsTax;
+
+@override int get hashCode => 'communications_tax'.hashCode;
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$gst extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$gst._();
+
+@override String get value => 'gst';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceTaxRateDetailsTaxType$gst;
+
+@override int get hashCode => 'gst'.hashCode;
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$hst extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$hst._();
+
+@override String get value => 'hst';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceTaxRateDetailsTaxType$hst;
+
+@override int get hashCode => 'hst'.hashCode;
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$igst extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$igst._();
+
+@override String get value => 'igst';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceTaxRateDetailsTaxType$igst;
+
+@override int get hashCode => 'igst'.hashCode;
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$jct extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$jct._();
+
+@override String get value => 'jct';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceTaxRateDetailsTaxType$jct;
+
+@override int get hashCode => 'jct'.hashCode;
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$leaseTax extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$leaseTax._();
+
+@override String get value => 'lease_tax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceTaxRateDetailsTaxType$leaseTax;
+
+@override int get hashCode => 'lease_tax'.hashCode;
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$pst extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$pst._();
+
+@override String get value => 'pst';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceTaxRateDetailsTaxType$pst;
+
+@override int get hashCode => 'pst'.hashCode;
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$qst extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$qst._();
+
+@override String get value => 'qst';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceTaxRateDetailsTaxType$qst;
+
+@override int get hashCode => 'qst'.hashCode;
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$retailDeliveryFee extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$retailDeliveryFee._();
+
+@override String get value => 'retail_delivery_fee';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceTaxRateDetailsTaxType$retailDeliveryFee;
+
+@override int get hashCode => 'retail_delivery_fee'.hashCode;
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$rst extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$rst._();
+
+@override String get value => 'rst';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceTaxRateDetailsTaxType$rst;
+
+@override int get hashCode => 'rst'.hashCode;
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$salesTax extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$salesTax._();
+
+@override String get value => 'sales_tax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceTaxRateDetailsTaxType$salesTax;
+
+@override int get hashCode => 'sales_tax'.hashCode;
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$serviceTax extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$serviceTax._();
+
+@override String get value => 'service_tax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceTaxRateDetailsTaxType$serviceTax;
+
+@override int get hashCode => 'service_tax'.hashCode;
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$vat extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$vat._();
+
+@override String get value => 'vat';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceTaxRateDetailsTaxType$vat;
+
+@override int get hashCode => 'vat'.hashCode;
+
+ }
+@immutable final class TaxProductResourceTaxRateDetailsTaxType$Unknown extends TaxProductResourceTaxRateDetailsTaxType {const TaxProductResourceTaxRateDetailsTaxType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxProductResourceTaxRateDetailsTaxType && other.value == value;
+    other is TaxProductResourceTaxRateDetailsTaxType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TaxProductResourceTaxRateDetailsTaxType($value)';
 
  }

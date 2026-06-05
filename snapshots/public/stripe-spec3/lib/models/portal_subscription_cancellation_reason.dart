@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PortalSubscriptionCancellationReason
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions();
 
 factory PortalSubscriptionCancellationReasonOptions.fromJson(String json) { return switch (json) {
   'customer_service' => customerService,
@@ -12,29 +12,28 @@ factory PortalSubscriptionCancellationReasonOptions.fromJson(String json) { retu
   'too_complex' => tooComplex,
   'too_expensive' => tooExpensive,
   'unused' => unused,
-  _ => PortalSubscriptionCancellationReasonOptions._(json),
+  _ => PortalSubscriptionCancellationReasonOptions$Unknown(json),
 }; }
 
-static const PortalSubscriptionCancellationReasonOptions customerService = PortalSubscriptionCancellationReasonOptions._('customer_service');
+static const PortalSubscriptionCancellationReasonOptions customerService = PortalSubscriptionCancellationReasonOptions$customerService._();
 
-static const PortalSubscriptionCancellationReasonOptions lowQuality = PortalSubscriptionCancellationReasonOptions._('low_quality');
+static const PortalSubscriptionCancellationReasonOptions lowQuality = PortalSubscriptionCancellationReasonOptions$lowQuality._();
 
-static const PortalSubscriptionCancellationReasonOptions missingFeatures = PortalSubscriptionCancellationReasonOptions._('missing_features');
+static const PortalSubscriptionCancellationReasonOptions missingFeatures = PortalSubscriptionCancellationReasonOptions$missingFeatures._();
 
-static const PortalSubscriptionCancellationReasonOptions $other = PortalSubscriptionCancellationReasonOptions._('other');
+static const PortalSubscriptionCancellationReasonOptions $other = PortalSubscriptionCancellationReasonOptions$$other._();
 
-static const PortalSubscriptionCancellationReasonOptions switchedService = PortalSubscriptionCancellationReasonOptions._('switched_service');
+static const PortalSubscriptionCancellationReasonOptions switchedService = PortalSubscriptionCancellationReasonOptions$switchedService._();
 
-static const PortalSubscriptionCancellationReasonOptions tooComplex = PortalSubscriptionCancellationReasonOptions._('too_complex');
+static const PortalSubscriptionCancellationReasonOptions tooComplex = PortalSubscriptionCancellationReasonOptions$tooComplex._();
 
-static const PortalSubscriptionCancellationReasonOptions tooExpensive = PortalSubscriptionCancellationReasonOptions._('too_expensive');
+static const PortalSubscriptionCancellationReasonOptions tooExpensive = PortalSubscriptionCancellationReasonOptions$tooExpensive._();
 
-static const PortalSubscriptionCancellationReasonOptions unused = PortalSubscriptionCancellationReasonOptions._('unused');
+static const PortalSubscriptionCancellationReasonOptions unused = PortalSubscriptionCancellationReasonOptions$unused._();
 
 static const List<PortalSubscriptionCancellationReasonOptions> values = [customerService, lowQuality, missingFeatures, $other, switchedService, tooComplex, tooExpensive, unused];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -49,13 +48,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PortalSubscriptionCancellationReasonOptions$Unknown; } 
+@override String toString() => 'PortalSubscriptionCancellationReasonOptions($value)';
+
+ }
+@immutable final class PortalSubscriptionCancellationReasonOptions$customerService extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$customerService._();
+
+@override String get value => 'customer_service';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalSubscriptionCancellationReasonOptions$customerService;
+
+@override int get hashCode => 'customer_service'.hashCode;
+
+ }
+@immutable final class PortalSubscriptionCancellationReasonOptions$lowQuality extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$lowQuality._();
+
+@override String get value => 'low_quality';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalSubscriptionCancellationReasonOptions$lowQuality;
+
+@override int get hashCode => 'low_quality'.hashCode;
+
+ }
+@immutable final class PortalSubscriptionCancellationReasonOptions$missingFeatures extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$missingFeatures._();
+
+@override String get value => 'missing_features';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalSubscriptionCancellationReasonOptions$missingFeatures;
+
+@override int get hashCode => 'missing_features'.hashCode;
+
+ }
+@immutable final class PortalSubscriptionCancellationReasonOptions$$other extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalSubscriptionCancellationReasonOptions$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class PortalSubscriptionCancellationReasonOptions$switchedService extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$switchedService._();
+
+@override String get value => 'switched_service';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalSubscriptionCancellationReasonOptions$switchedService;
+
+@override int get hashCode => 'switched_service'.hashCode;
+
+ }
+@immutable final class PortalSubscriptionCancellationReasonOptions$tooComplex extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$tooComplex._();
+
+@override String get value => 'too_complex';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalSubscriptionCancellationReasonOptions$tooComplex;
+
+@override int get hashCode => 'too_complex'.hashCode;
+
+ }
+@immutable final class PortalSubscriptionCancellationReasonOptions$tooExpensive extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$tooExpensive._();
+
+@override String get value => 'too_expensive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalSubscriptionCancellationReasonOptions$tooExpensive;
+
+@override int get hashCode => 'too_expensive'.hashCode;
+
+ }
+@immutable final class PortalSubscriptionCancellationReasonOptions$unused extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$unused._();
+
+@override String get value => 'unused';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalSubscriptionCancellationReasonOptions$unused;
+
+@override int get hashCode => 'unused'.hashCode;
+
+ }
+@immutable final class PortalSubscriptionCancellationReasonOptions$Unknown extends PortalSubscriptionCancellationReasonOptions {const PortalSubscriptionCancellationReasonOptions$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PortalSubscriptionCancellationReasonOptions && other.value == value;
+    other is PortalSubscriptionCancellationReasonOptions$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PortalSubscriptionCancellationReasonOptions($value)';
 
  }
 /// 

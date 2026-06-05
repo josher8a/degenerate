@@ -2,25 +2,24 @@
 // Source: #/components/schemas/PostSetupIntentsIntentCancelRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Reason for canceling this SetupIntent. Possible values are: `abandoned`, `requested_by_customer`, or `duplicate`
-@immutable final class PostSetupIntentsIntentCancelRequestCancellationReason {const PostSetupIntentsIntentCancelRequestCancellationReason._(this.value);
+sealed class PostSetupIntentsIntentCancelRequestCancellationReason {const PostSetupIntentsIntentCancelRequestCancellationReason();
 
 factory PostSetupIntentsIntentCancelRequestCancellationReason.fromJson(String json) { return switch (json) {
   'abandoned' => abandoned,
   'duplicate' => duplicate,
   'requested_by_customer' => requestedByCustomer,
-  _ => PostSetupIntentsIntentCancelRequestCancellationReason._(json),
+  _ => PostSetupIntentsIntentCancelRequestCancellationReason$Unknown(json),
 }; }
 
-static const PostSetupIntentsIntentCancelRequestCancellationReason abandoned = PostSetupIntentsIntentCancelRequestCancellationReason._('abandoned');
+static const PostSetupIntentsIntentCancelRequestCancellationReason abandoned = PostSetupIntentsIntentCancelRequestCancellationReason$abandoned._();
 
-static const PostSetupIntentsIntentCancelRequestCancellationReason duplicate = PostSetupIntentsIntentCancelRequestCancellationReason._('duplicate');
+static const PostSetupIntentsIntentCancelRequestCancellationReason duplicate = PostSetupIntentsIntentCancelRequestCancellationReason$duplicate._();
 
-static const PostSetupIntentsIntentCancelRequestCancellationReason requestedByCustomer = PostSetupIntentsIntentCancelRequestCancellationReason._('requested_by_customer');
+static const PostSetupIntentsIntentCancelRequestCancellationReason requestedByCustomer = PostSetupIntentsIntentCancelRequestCancellationReason$requestedByCustomer._();
 
 static const List<PostSetupIntentsIntentCancelRequestCancellationReason> values = [abandoned, duplicate, requestedByCustomer];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostSetupIntentsIntentCancelRequestCancellationReason$Unknown; } 
+@override String toString() => 'PostSetupIntentsIntentCancelRequestCancellationReason($value)';
+
+ }
+@immutable final class PostSetupIntentsIntentCancelRequestCancellationReason$abandoned extends PostSetupIntentsIntentCancelRequestCancellationReason {const PostSetupIntentsIntentCancelRequestCancellationReason$abandoned._();
+
+@override String get value => 'abandoned';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostSetupIntentsIntentCancelRequestCancellationReason$abandoned;
+
+@override int get hashCode => 'abandoned'.hashCode;
+
+ }
+@immutable final class PostSetupIntentsIntentCancelRequestCancellationReason$duplicate extends PostSetupIntentsIntentCancelRequestCancellationReason {const PostSetupIntentsIntentCancelRequestCancellationReason$duplicate._();
+
+@override String get value => 'duplicate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostSetupIntentsIntentCancelRequestCancellationReason$duplicate;
+
+@override int get hashCode => 'duplicate'.hashCode;
+
+ }
+@immutable final class PostSetupIntentsIntentCancelRequestCancellationReason$requestedByCustomer extends PostSetupIntentsIntentCancelRequestCancellationReason {const PostSetupIntentsIntentCancelRequestCancellationReason$requestedByCustomer._();
+
+@override String get value => 'requested_by_customer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostSetupIntentsIntentCancelRequestCancellationReason$requestedByCustomer;
+
+@override int get hashCode => 'requested_by_customer'.hashCode;
+
+ }
+@immutable final class PostSetupIntentsIntentCancelRequestCancellationReason$Unknown extends PostSetupIntentsIntentCancelRequestCancellationReason {const PostSetupIntentsIntentCancelRequestCancellationReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostSetupIntentsIntentCancelRequestCancellationReason && other.value == value;
+    other is PostSetupIntentsIntentCancelRequestCancellationReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostSetupIntentsIntentCancelRequestCancellationReason($value)';
 
  }
 @immutable final class PostSetupIntentsIntentCancelRequest {const PostSetupIntentsIntentCancelRequest({this.cancellationReason, this.expand, });

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetBgpHijacksEventsSortOrder
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Sort order.
-@immutable final class RadarGetBgpHijacksEventsSortOrder {const RadarGetBgpHijacksEventsSortOrder._(this.value);
+sealed class RadarGetBgpHijacksEventsSortOrder {const RadarGetBgpHijacksEventsSortOrder();
 
 factory RadarGetBgpHijacksEventsSortOrder.fromJson(String json) { return switch (json) {
   'ASC' => asc,
   'DESC' => desc,
-  _ => RadarGetBgpHijacksEventsSortOrder._(json),
+  _ => RadarGetBgpHijacksEventsSortOrder$Unknown(json),
 }; }
 
-static const RadarGetBgpHijacksEventsSortOrder asc = RadarGetBgpHijacksEventsSortOrder._('ASC');
+static const RadarGetBgpHijacksEventsSortOrder asc = RadarGetBgpHijacksEventsSortOrder$asc._();
 
-static const RadarGetBgpHijacksEventsSortOrder desc = RadarGetBgpHijacksEventsSortOrder._('DESC');
+static const RadarGetBgpHijacksEventsSortOrder desc = RadarGetBgpHijacksEventsSortOrder$desc._();
 
 static const List<RadarGetBgpHijacksEventsSortOrder> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetBgpHijacksEventsSortOrder$Unknown; } 
+@override String toString() => 'RadarGetBgpHijacksEventsSortOrder($value)';
+
+ }
+@immutable final class RadarGetBgpHijacksEventsSortOrder$asc extends RadarGetBgpHijacksEventsSortOrder {const RadarGetBgpHijacksEventsSortOrder$asc._();
+
+@override String get value => 'ASC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpHijacksEventsSortOrder$asc;
+
+@override int get hashCode => 'ASC'.hashCode;
+
+ }
+@immutable final class RadarGetBgpHijacksEventsSortOrder$desc extends RadarGetBgpHijacksEventsSortOrder {const RadarGetBgpHijacksEventsSortOrder$desc._();
+
+@override String get value => 'DESC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpHijacksEventsSortOrder$desc;
+
+@override int get hashCode => 'DESC'.hashCode;
+
+ }
+@immutable final class RadarGetBgpHijacksEventsSortOrder$Unknown extends RadarGetBgpHijacksEventsSortOrder {const RadarGetBgpHijacksEventsSortOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetBgpHijacksEventsSortOrder && other.value == value;
+    other is RadarGetBgpHijacksEventsSortOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetBgpHijacksEventsSortOrder($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Quote
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/account.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_subscription_parent/billing_bill_resource_invoicing_parents_invoice_subscription_parent_subscription.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/charge/charge_on_behalf_of.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_line_items.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/deleted_invoice.dart';import 'package:pub_stripe_spec3/models/discount.dart';import 'package:pub_stripe_spec3/models/invoice.dart';import 'package:pub_stripe_spec3/models/invoice/invoice_collection_method.dart';import 'package:pub_stripe_spec3/models/invoice_payment/invoice_payment_invoice.dart';import 'package:pub_stripe_spec3/models/invoice_setting_quote_setting.dart';import 'package:pub_stripe_spec3/models/invoiceitem/invoiceitem_discounts.dart';import 'package:pub_stripe_spec3/models/quote/quote_default_tax_rates.dart';import 'package:pub_stripe_spec3/models/quote/quote_subscription_schedule.dart';import 'package:pub_stripe_spec3/models/quotes_resource_automatic_tax.dart';import 'package:pub_stripe_spec3/models/quotes_resource_computed.dart';import 'package:pub_stripe_spec3/models/quotes_resource_from_quote.dart';import 'package:pub_stripe_spec3/models/quotes_resource_status_transitions.dart';import 'package:pub_stripe_spec3/models/quotes_resource_subscription_data_subscription_data.dart';import 'package:pub_stripe_spec3/models/quotes_resource_total_details.dart';import 'package:pub_stripe_spec3/models/quotes_resource_transfer_data.dart';import 'package:pub_stripe_spec3/models/subscription.dart';import 'package:pub_stripe_spec3/models/subscription_schedule.dart';import 'package:pub_stripe_spec3/models/tax_rate.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class QuoteObject {const QuoteObject._(this.value);
+sealed class QuoteObject {const QuoteObject();
 
 factory QuoteObject.fromJson(String json) { return switch (json) {
   'quote' => quote,
-  _ => QuoteObject._(json),
+  _ => QuoteObject$Unknown(json),
 }; }
 
-static const QuoteObject quote = QuoteObject._('quote');
+static const QuoteObject quote = QuoteObject$quote._();
 
 static const List<QuoteObject> values = [quote];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,38 +21,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is QuoteObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is QuoteObject$Unknown; } 
 @override String toString() => 'QuoteObject($value)';
 
  }
+@immutable final class QuoteObject$quote extends QuoteObject {const QuoteObject$quote._();
+
+@override String get value => 'quote';
+
+@override bool operator ==(Object other) => identical(this, other) || other is QuoteObject$quote;
+
+@override int get hashCode => 'quote'.hashCode;
+
+ }
+@immutable final class QuoteObject$Unknown extends QuoteObject {const QuoteObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is QuoteObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of the quote.
-@immutable final class QuoteStatus {const QuoteStatus._(this.value);
+sealed class QuoteStatus {const QuoteStatus();
 
 factory QuoteStatus.fromJson(String json) { return switch (json) {
   'accepted' => accepted,
   'canceled' => canceled,
   'draft' => draft,
   'open' => open,
-  _ => QuoteStatus._(json),
+  _ => QuoteStatus$Unknown(json),
 }; }
 
-static const QuoteStatus accepted = QuoteStatus._('accepted');
+static const QuoteStatus accepted = QuoteStatus$accepted._();
 
-static const QuoteStatus canceled = QuoteStatus._('canceled');
+static const QuoteStatus canceled = QuoteStatus$canceled._();
 
-static const QuoteStatus draft = QuoteStatus._('draft');
+static const QuoteStatus draft = QuoteStatus$draft._();
 
-static const QuoteStatus open = QuoteStatus._('open');
+static const QuoteStatus open = QuoteStatus$open._();
 
 static const List<QuoteStatus> values = [accepted, canceled, draft, open];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,13 +76,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is QuoteStatus$Unknown; } 
+@override String toString() => 'QuoteStatus($value)';
+
+ }
+@immutable final class QuoteStatus$accepted extends QuoteStatus {const QuoteStatus$accepted._();
+
+@override String get value => 'accepted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is QuoteStatus$accepted;
+
+@override int get hashCode => 'accepted'.hashCode;
+
+ }
+@immutable final class QuoteStatus$canceled extends QuoteStatus {const QuoteStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is QuoteStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class QuoteStatus$draft extends QuoteStatus {const QuoteStatus$draft._();
+
+@override String get value => 'draft';
+
+@override bool operator ==(Object other) => identical(this, other) || other is QuoteStatus$draft;
+
+@override int get hashCode => 'draft'.hashCode;
+
+ }
+@immutable final class QuoteStatus$open extends QuoteStatus {const QuoteStatus$open._();
+
+@override String get value => 'open';
+
+@override bool operator ==(Object other) => identical(this, other) || other is QuoteStatus$open;
+
+@override int get hashCode => 'open'.hashCode;
+
+ }
+@immutable final class QuoteStatus$Unknown extends QuoteStatus {const QuoteStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is QuoteStatus && other.value == value;
+    other is QuoteStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'QuoteStatus($value)';
 
  }
 /// A Quote is a way to model prices that you'd like to provide to a customer.

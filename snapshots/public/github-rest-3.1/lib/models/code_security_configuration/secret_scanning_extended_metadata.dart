@@ -2,25 +2,24 @@
 // Source: #/components/schemas/CodeSecurityConfiguration (inline: SecretScanningExtendedMetadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of secret scanning extended metadata
-@immutable final class SecretScanningExtendedMetadata {const SecretScanningExtendedMetadata._(this.value);
+sealed class SecretScanningExtendedMetadata {const SecretScanningExtendedMetadata();
 
 factory SecretScanningExtendedMetadata.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
-  _ => SecretScanningExtendedMetadata._(json),
+  _ => SecretScanningExtendedMetadata$Unknown(json),
 }; }
 
-static const SecretScanningExtendedMetadata enabled = SecretScanningExtendedMetadata._('enabled');
+static const SecretScanningExtendedMetadata enabled = SecretScanningExtendedMetadata$enabled._();
 
-static const SecretScanningExtendedMetadata disabled = SecretScanningExtendedMetadata._('disabled');
+static const SecretScanningExtendedMetadata disabled = SecretScanningExtendedMetadata$disabled._();
 
-static const SecretScanningExtendedMetadata notSet = SecretScanningExtendedMetadata._('not_set');
+static const SecretScanningExtendedMetadata notSet = SecretScanningExtendedMetadata$notSet._();
 
 static const List<SecretScanningExtendedMetadata> values = [enabled, disabled, notSet];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SecretScanningExtendedMetadata$Unknown; } 
+@override String toString() => 'SecretScanningExtendedMetadata($value)';
+
+ }
+@immutable final class SecretScanningExtendedMetadata$enabled extends SecretScanningExtendedMetadata {const SecretScanningExtendedMetadata$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningExtendedMetadata$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class SecretScanningExtendedMetadata$disabled extends SecretScanningExtendedMetadata {const SecretScanningExtendedMetadata$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningExtendedMetadata$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class SecretScanningExtendedMetadata$notSet extends SecretScanningExtendedMetadata {const SecretScanningExtendedMetadata$notSet._();
+
+@override String get value => 'not_set';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningExtendedMetadata$notSet;
+
+@override int get hashCode => 'not_set'.hashCode;
+
+ }
+@immutable final class SecretScanningExtendedMetadata$Unknown extends SecretScanningExtendedMetadata {const SecretScanningExtendedMetadata$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SecretScanningExtendedMetadata && other.value == value;
+    other is SecretScanningExtendedMetadata$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SecretScanningExtendedMetadata($value)';
 
  }

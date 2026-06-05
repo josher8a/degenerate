@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetCtTimeseriesValidationLevel
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetCtTimeseriesValidationLevel {const RadarGetCtTimeseriesValidationLevel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetCtTimeseriesValidationLevel {const RadarGetCtTimeseriesValidationLevel();
 
 factory RadarGetCtTimeseriesValidationLevel.fromJson(String json) { return switch (json) {
   'DOMAIN' => domain,
   'ORGANIZATION' => organization,
   'EXTENDED' => extended,
-  _ => RadarGetCtTimeseriesValidationLevel._(json),
+  _ => RadarGetCtTimeseriesValidationLevel$Unknown(json),
 }; }
 
-static const RadarGetCtTimeseriesValidationLevel domain = RadarGetCtTimeseriesValidationLevel._('DOMAIN');
+static const RadarGetCtTimeseriesValidationLevel domain = RadarGetCtTimeseriesValidationLevel$domain._();
 
-static const RadarGetCtTimeseriesValidationLevel organization = RadarGetCtTimeseriesValidationLevel._('ORGANIZATION');
+static const RadarGetCtTimeseriesValidationLevel organization = RadarGetCtTimeseriesValidationLevel$organization._();
 
-static const RadarGetCtTimeseriesValidationLevel extended = RadarGetCtTimeseriesValidationLevel._('EXTENDED');
+static const RadarGetCtTimeseriesValidationLevel extended = RadarGetCtTimeseriesValidationLevel$extended._();
 
 static const List<RadarGetCtTimeseriesValidationLevel> values = [domain, organization, extended];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetCtTimeseriesValidationLevel$Unknown; } 
+@override String toString() => 'RadarGetCtTimeseriesValidationLevel($value)';
+
+ }
+@immutable final class RadarGetCtTimeseriesValidationLevel$domain extends RadarGetCtTimeseriesValidationLevel {const RadarGetCtTimeseriesValidationLevel$domain._();
+
+@override String get value => 'DOMAIN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetCtTimeseriesValidationLevel$domain;
+
+@override int get hashCode => 'DOMAIN'.hashCode;
+
+ }
+@immutable final class RadarGetCtTimeseriesValidationLevel$organization extends RadarGetCtTimeseriesValidationLevel {const RadarGetCtTimeseriesValidationLevel$organization._();
+
+@override String get value => 'ORGANIZATION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetCtTimeseriesValidationLevel$organization;
+
+@override int get hashCode => 'ORGANIZATION'.hashCode;
+
+ }
+@immutable final class RadarGetCtTimeseriesValidationLevel$extended extends RadarGetCtTimeseriesValidationLevel {const RadarGetCtTimeseriesValidationLevel$extended._();
+
+@override String get value => 'EXTENDED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetCtTimeseriesValidationLevel$extended;
+
+@override int get hashCode => 'EXTENDED'.hashCode;
+
+ }
+@immutable final class RadarGetCtTimeseriesValidationLevel$Unknown extends RadarGetCtTimeseriesValidationLevel {const RadarGetCtTimeseriesValidationLevel$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetCtTimeseriesValidationLevel && other.value == value;
+    other is RadarGetCtTimeseriesValidationLevel$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetCtTimeseriesValidationLevel($value)';
 
  }

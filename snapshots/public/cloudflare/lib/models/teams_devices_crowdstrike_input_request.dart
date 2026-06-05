@@ -2,25 +2,24 @@
 // Source: #/components/schemas/TeamsDevicesCrowdstrikeInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/teams_devices_crowdstrike_input_request/teams_devices_crowdstrike_input_request_operator.dart';/// For more details on state, please refer to the Crowdstrike documentation.
-@immutable final class TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState._(this.value);
+sealed class TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState();
 
 factory TeamsDevicesCrowdstrikeInputRequestState.fromJson(String json) { return switch (json) {
   'online' => online,
   'offline' => offline,
   'unknown' => unknown,
-  _ => TeamsDevicesCrowdstrikeInputRequestState._(json),
+  _ => TeamsDevicesCrowdstrikeInputRequestState$Unknown(json),
 }; }
 
-static const TeamsDevicesCrowdstrikeInputRequestState online = TeamsDevicesCrowdstrikeInputRequestState._('online');
+static const TeamsDevicesCrowdstrikeInputRequestState online = TeamsDevicesCrowdstrikeInputRequestState$online._();
 
-static const TeamsDevicesCrowdstrikeInputRequestState offline = TeamsDevicesCrowdstrikeInputRequestState._('offline');
+static const TeamsDevicesCrowdstrikeInputRequestState offline = TeamsDevicesCrowdstrikeInputRequestState$offline._();
 
-static const TeamsDevicesCrowdstrikeInputRequestState unknown = TeamsDevicesCrowdstrikeInputRequestState._('unknown');
+static const TeamsDevicesCrowdstrikeInputRequestState unknown = TeamsDevicesCrowdstrikeInputRequestState$unknown._();
 
 static const List<TeamsDevicesCrowdstrikeInputRequestState> values = [online, offline, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,17 +29,49 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TeamsDevicesCrowdstrikeInputRequestState && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TeamsDevicesCrowdstrikeInputRequestState$Unknown; } 
 @override String toString() => 'TeamsDevicesCrowdstrikeInputRequestState($value)';
 
  }
+@immutable final class TeamsDevicesCrowdstrikeInputRequestState$online extends TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState$online._();
+
+@override String get value => 'online';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesCrowdstrikeInputRequestState$online;
+
+@override int get hashCode => 'online'.hashCode;
+
+ }
+@immutable final class TeamsDevicesCrowdstrikeInputRequestState$offline extends TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState$offline._();
+
+@override String get value => 'offline';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesCrowdstrikeInputRequestState$offline;
+
+@override int get hashCode => 'offline'.hashCode;
+
+ }
+@immutable final class TeamsDevicesCrowdstrikeInputRequestState$unknown extends TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesCrowdstrikeInputRequestState$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class TeamsDevicesCrowdstrikeInputRequestState$Unknown extends TeamsDevicesCrowdstrikeInputRequestState {const TeamsDevicesCrowdstrikeInputRequestState$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TeamsDevicesCrowdstrikeInputRequestState$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Version Operator.
-@immutable final class VersionOperator {const VersionOperator._(this.value);
+sealed class VersionOperator {const VersionOperator();
 
 factory VersionOperator.fromJson(String json) { return switch (json) {
   '<' => $empty,
@@ -48,23 +79,22 @@ factory VersionOperator.fromJson(String json) { return switch (json) {
   '>' => $empty3,
   '>=' => $empty4,
   '==' => $empty5,
-  _ => VersionOperator._(json),
+  _ => VersionOperator$Unknown(json),
 }; }
 
-static const VersionOperator $empty = VersionOperator._('<');
+static const VersionOperator $empty = VersionOperator$$empty._();
 
-static const VersionOperator $empty2 = VersionOperator._('<=');
+static const VersionOperator $empty2 = VersionOperator$$empty2._();
 
-static const VersionOperator $empty3 = VersionOperator._('>');
+static const VersionOperator $empty3 = VersionOperator$$empty3._();
 
-static const VersionOperator $empty4 = VersionOperator._('>=');
+static const VersionOperator $empty4 = VersionOperator$$empty4._();
 
-static const VersionOperator $empty5 = VersionOperator._('==');
+static const VersionOperator $empty5 = VersionOperator$$empty5._();
 
 static const List<VersionOperator> values = [$empty, $empty2, $empty3, $empty4, $empty5];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -76,13 +106,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is VersionOperator$Unknown; } 
+@override String toString() => 'VersionOperator($value)';
+
+ }
+@immutable final class VersionOperator$$empty extends VersionOperator {const VersionOperator$$empty._();
+
+@override String get value => '<';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VersionOperator$$empty;
+
+@override int get hashCode => '<'.hashCode;
+
+ }
+@immutable final class VersionOperator$$empty2 extends VersionOperator {const VersionOperator$$empty2._();
+
+@override String get value => '<=';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VersionOperator$$empty2;
+
+@override int get hashCode => '<='.hashCode;
+
+ }
+@immutable final class VersionOperator$$empty3 extends VersionOperator {const VersionOperator$$empty3._();
+
+@override String get value => '>';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VersionOperator$$empty3;
+
+@override int get hashCode => '>'.hashCode;
+
+ }
+@immutable final class VersionOperator$$empty4 extends VersionOperator {const VersionOperator$$empty4._();
+
+@override String get value => '>=';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VersionOperator$$empty4;
+
+@override int get hashCode => '>='.hashCode;
+
+ }
+@immutable final class VersionOperator$$empty5 extends VersionOperator {const VersionOperator$$empty5._();
+
+@override String get value => '==';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VersionOperator$$empty5;
+
+@override int get hashCode => '=='.hashCode;
+
+ }
+@immutable final class VersionOperator$Unknown extends VersionOperator {const VersionOperator$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is VersionOperator && other.value == value;
+    other is VersionOperator$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'VersionOperator($value)';
 
  }
 @immutable final class TeamsDevicesCrowdstrikeInputRequest {const TeamsDevicesCrowdstrikeInputRequest({required this.connectionId, this.lastSeen, this.$operator, this.os, this.overall, this.sensorConfig, this.state, this.version, this.versionOperator, });

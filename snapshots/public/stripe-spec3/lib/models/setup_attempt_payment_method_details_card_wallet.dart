@@ -2,25 +2,24 @@
 // Source: #/components/schemas/SetupAttemptPaymentMethodDetailsCardWallet
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_wallet_apple_pay.dart';import 'package:pub_stripe_spec3/models/payment_method_details_card_wallet_google_pay.dart';/// The type of the card wallet, one of `apple_pay`, `google_pay`, or `link`. An additional hash is included on the Wallet subhash with a name matching this value. It contains additional information specific to the card wallet type.
-@immutable final class SetupAttemptPaymentMethodDetailsCardWalletType {const SetupAttemptPaymentMethodDetailsCardWalletType._(this.value);
+sealed class SetupAttemptPaymentMethodDetailsCardWalletType {const SetupAttemptPaymentMethodDetailsCardWalletType();
 
 factory SetupAttemptPaymentMethodDetailsCardWalletType.fromJson(String json) { return switch (json) {
   'apple_pay' => applePay,
   'google_pay' => googlePay,
   'link' => link,
-  _ => SetupAttemptPaymentMethodDetailsCardWalletType._(json),
+  _ => SetupAttemptPaymentMethodDetailsCardWalletType$Unknown(json),
 }; }
 
-static const SetupAttemptPaymentMethodDetailsCardWalletType applePay = SetupAttemptPaymentMethodDetailsCardWalletType._('apple_pay');
+static const SetupAttemptPaymentMethodDetailsCardWalletType applePay = SetupAttemptPaymentMethodDetailsCardWalletType$applePay._();
 
-static const SetupAttemptPaymentMethodDetailsCardWalletType googlePay = SetupAttemptPaymentMethodDetailsCardWalletType._('google_pay');
+static const SetupAttemptPaymentMethodDetailsCardWalletType googlePay = SetupAttemptPaymentMethodDetailsCardWalletType$googlePay._();
 
-static const SetupAttemptPaymentMethodDetailsCardWalletType link = SetupAttemptPaymentMethodDetailsCardWalletType._('link');
+static const SetupAttemptPaymentMethodDetailsCardWalletType link = SetupAttemptPaymentMethodDetailsCardWalletType$link._();
 
 static const List<SetupAttemptPaymentMethodDetailsCardWalletType> values = [applePay, googlePay, link];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SetupAttemptPaymentMethodDetailsCardWalletType$Unknown; } 
+@override String toString() => 'SetupAttemptPaymentMethodDetailsCardWalletType($value)';
+
+ }
+@immutable final class SetupAttemptPaymentMethodDetailsCardWalletType$applePay extends SetupAttemptPaymentMethodDetailsCardWalletType {const SetupAttemptPaymentMethodDetailsCardWalletType$applePay._();
+
+@override String get value => 'apple_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupAttemptPaymentMethodDetailsCardWalletType$applePay;
+
+@override int get hashCode => 'apple_pay'.hashCode;
+
+ }
+@immutable final class SetupAttemptPaymentMethodDetailsCardWalletType$googlePay extends SetupAttemptPaymentMethodDetailsCardWalletType {const SetupAttemptPaymentMethodDetailsCardWalletType$googlePay._();
+
+@override String get value => 'google_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupAttemptPaymentMethodDetailsCardWalletType$googlePay;
+
+@override int get hashCode => 'google_pay'.hashCode;
+
+ }
+@immutable final class SetupAttemptPaymentMethodDetailsCardWalletType$link extends SetupAttemptPaymentMethodDetailsCardWalletType {const SetupAttemptPaymentMethodDetailsCardWalletType$link._();
+
+@override String get value => 'link';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SetupAttemptPaymentMethodDetailsCardWalletType$link;
+
+@override int get hashCode => 'link'.hashCode;
+
+ }
+@immutable final class SetupAttemptPaymentMethodDetailsCardWalletType$Unknown extends SetupAttemptPaymentMethodDetailsCardWalletType {const SetupAttemptPaymentMethodDetailsCardWalletType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SetupAttemptPaymentMethodDetailsCardWalletType && other.value == value;
+    other is SetupAttemptPaymentMethodDetailsCardWalletType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SetupAttemptPaymentMethodDetailsCardWalletType($value)';
 
  }
 /// 

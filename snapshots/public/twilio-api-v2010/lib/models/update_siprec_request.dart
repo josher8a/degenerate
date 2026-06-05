@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UpdateSiprecRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SiprecEnumUpdateStatus {const SiprecEnumUpdateStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SiprecEnumUpdateStatus {const SiprecEnumUpdateStatus();
 
 factory SiprecEnumUpdateStatus.fromJson(String json) { return switch (json) {
   'stopped' => stopped,
-  _ => SiprecEnumUpdateStatus._(json),
+  _ => SiprecEnumUpdateStatus$Unknown(json),
 }; }
 
-static const SiprecEnumUpdateStatus stopped = SiprecEnumUpdateStatus._('stopped');
+static const SiprecEnumUpdateStatus stopped = SiprecEnumUpdateStatus$stopped._();
 
 static const List<SiprecEnumUpdateStatus> values = [stopped];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SiprecEnumUpdateStatus$Unknown; } 
+@override String toString() => 'SiprecEnumUpdateStatus($value)';
+
+ }
+@immutable final class SiprecEnumUpdateStatus$stopped extends SiprecEnumUpdateStatus {const SiprecEnumUpdateStatus$stopped._();
+
+@override String get value => 'stopped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SiprecEnumUpdateStatus$stopped;
+
+@override int get hashCode => 'stopped'.hashCode;
+
+ }
+@immutable final class SiprecEnumUpdateStatus$Unknown extends SiprecEnumUpdateStatus {const SiprecEnumUpdateStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SiprecEnumUpdateStatus && other.value == value;
+    other is SiprecEnumUpdateStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SiprecEnumUpdateStatus($value)';
 
  }
 @immutable final class UpdateSiprecRequest {const UpdateSiprecRequest({required this.status});

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/VectorizeIndexDimensionConfiguration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/vectorize_index_dimensions.dart';/// Specifies the type of metric to use calculating distance.
-@immutable final class VectorizeIndexMetric {const VectorizeIndexMetric._(this.value);
+sealed class VectorizeIndexMetric {const VectorizeIndexMetric();
 
 factory VectorizeIndexMetric.fromJson(String json) { return switch (json) {
   'cosine' => cosine,
   'euclidean' => euclidean,
   'dot-product' => dotProduct,
-  _ => VectorizeIndexMetric._(json),
+  _ => VectorizeIndexMetric$Unknown(json),
 }; }
 
-static const VectorizeIndexMetric cosine = VectorizeIndexMetric._('cosine');
+static const VectorizeIndexMetric cosine = VectorizeIndexMetric$cosine._();
 
-static const VectorizeIndexMetric euclidean = VectorizeIndexMetric._('euclidean');
+static const VectorizeIndexMetric euclidean = VectorizeIndexMetric$euclidean._();
 
-static const VectorizeIndexMetric dotProduct = VectorizeIndexMetric._('dot-product');
+static const VectorizeIndexMetric dotProduct = VectorizeIndexMetric$dotProduct._();
 
 static const List<VectorizeIndexMetric> values = [cosine, euclidean, dotProduct];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is VectorizeIndexMetric$Unknown; } 
+@override String toString() => 'VectorizeIndexMetric($value)';
+
+ }
+@immutable final class VectorizeIndexMetric$cosine extends VectorizeIndexMetric {const VectorizeIndexMetric$cosine._();
+
+@override String get value => 'cosine';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorizeIndexMetric$cosine;
+
+@override int get hashCode => 'cosine'.hashCode;
+
+ }
+@immutable final class VectorizeIndexMetric$euclidean extends VectorizeIndexMetric {const VectorizeIndexMetric$euclidean._();
+
+@override String get value => 'euclidean';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorizeIndexMetric$euclidean;
+
+@override int get hashCode => 'euclidean'.hashCode;
+
+ }
+@immutable final class VectorizeIndexMetric$dotProduct extends VectorizeIndexMetric {const VectorizeIndexMetric$dotProduct._();
+
+@override String get value => 'dot-product';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorizeIndexMetric$dotProduct;
+
+@override int get hashCode => 'dot-product'.hashCode;
+
+ }
+@immutable final class VectorizeIndexMetric$Unknown extends VectorizeIndexMetric {const VectorizeIndexMetric$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is VectorizeIndexMetric && other.value == value;
+    other is VectorizeIndexMetric$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'VectorizeIndexMetric($value)';
 
  }
 @immutable final class VectorizeIndexDimensionConfiguration {const VectorizeIndexDimensionConfiguration({required this.dimensions, required this.metric, });

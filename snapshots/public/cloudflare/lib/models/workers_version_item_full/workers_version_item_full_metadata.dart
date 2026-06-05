@@ -2,7 +2,7 @@
 // Source: #/components/schemas/WorkersVersionItemFull (inline: Metadata)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The source of the version upload.
-@immutable final class MetadataSource {const MetadataSource._(this.value);
+sealed class MetadataSource {const MetadataSource();
 
 factory MetadataSource.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
@@ -15,33 +15,32 @@ factory MetadataSource.fromJson(String json) { return switch (json) {
   'quick_editor' => quickEditor,
   'playground' => playground,
   'workersci' => workersci,
-  _ => MetadataSource._(json),
+  _ => MetadataSource$Unknown(json),
 }; }
 
-static const MetadataSource unknown = MetadataSource._('unknown');
+static const MetadataSource unknown = MetadataSource$unknown._();
 
-static const MetadataSource api = MetadataSource._('api');
+static const MetadataSource api = MetadataSource$api._();
 
-static const MetadataSource wrangler = MetadataSource._('wrangler');
+static const MetadataSource wrangler = MetadataSource$wrangler._();
 
-static const MetadataSource terraform = MetadataSource._('terraform');
+static const MetadataSource terraform = MetadataSource$terraform._();
 
-static const MetadataSource dash = MetadataSource._('dash');
+static const MetadataSource dash = MetadataSource$dash._();
 
-static const MetadataSource dashTemplate = MetadataSource._('dash_template');
+static const MetadataSource dashTemplate = MetadataSource$dashTemplate._();
 
-static const MetadataSource integration = MetadataSource._('integration');
+static const MetadataSource integration = MetadataSource$integration._();
 
-static const MetadataSource quickEditor = MetadataSource._('quick_editor');
+static const MetadataSource quickEditor = MetadataSource$quickEditor._();
 
-static const MetadataSource playground = MetadataSource._('playground');
+static const MetadataSource playground = MetadataSource$playground._();
 
-static const MetadataSource workersci = MetadataSource._('workersci');
+static const MetadataSource workersci = MetadataSource$workersci._();
 
 static const List<MetadataSource> values = [unknown, api, wrangler, terraform, dash, dashTemplate, integration, quickEditor, playground, workersci];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -58,13 +57,108 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MetadataSource$Unknown; } 
+@override String toString() => 'MetadataSource($value)';
+
+ }
+@immutable final class MetadataSource$unknown extends MetadataSource {const MetadataSource$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MetadataSource$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class MetadataSource$api extends MetadataSource {const MetadataSource$api._();
+
+@override String get value => 'api';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MetadataSource$api;
+
+@override int get hashCode => 'api'.hashCode;
+
+ }
+@immutable final class MetadataSource$wrangler extends MetadataSource {const MetadataSource$wrangler._();
+
+@override String get value => 'wrangler';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MetadataSource$wrangler;
+
+@override int get hashCode => 'wrangler'.hashCode;
+
+ }
+@immutable final class MetadataSource$terraform extends MetadataSource {const MetadataSource$terraform._();
+
+@override String get value => 'terraform';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MetadataSource$terraform;
+
+@override int get hashCode => 'terraform'.hashCode;
+
+ }
+@immutable final class MetadataSource$dash extends MetadataSource {const MetadataSource$dash._();
+
+@override String get value => 'dash';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MetadataSource$dash;
+
+@override int get hashCode => 'dash'.hashCode;
+
+ }
+@immutable final class MetadataSource$dashTemplate extends MetadataSource {const MetadataSource$dashTemplate._();
+
+@override String get value => 'dash_template';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MetadataSource$dashTemplate;
+
+@override int get hashCode => 'dash_template'.hashCode;
+
+ }
+@immutable final class MetadataSource$integration extends MetadataSource {const MetadataSource$integration._();
+
+@override String get value => 'integration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MetadataSource$integration;
+
+@override int get hashCode => 'integration'.hashCode;
+
+ }
+@immutable final class MetadataSource$quickEditor extends MetadataSource {const MetadataSource$quickEditor._();
+
+@override String get value => 'quick_editor';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MetadataSource$quickEditor;
+
+@override int get hashCode => 'quick_editor'.hashCode;
+
+ }
+@immutable final class MetadataSource$playground extends MetadataSource {const MetadataSource$playground._();
+
+@override String get value => 'playground';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MetadataSource$playground;
+
+@override int get hashCode => 'playground'.hashCode;
+
+ }
+@immutable final class MetadataSource$workersci extends MetadataSource {const MetadataSource$workersci._();
+
+@override String get value => 'workersci';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MetadataSource$workersci;
+
+@override int get hashCode => 'workersci'.hashCode;
+
+ }
+@immutable final class MetadataSource$Unknown extends MetadataSource {const MetadataSource$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MetadataSource && other.value == value;
+    other is MetadataSource$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MetadataSource($value)';
 
  }
 /// Example:

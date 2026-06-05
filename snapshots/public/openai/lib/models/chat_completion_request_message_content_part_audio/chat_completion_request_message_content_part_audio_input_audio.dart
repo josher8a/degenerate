@@ -3,22 +3,21 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The format of the encoded audio data. Currently supports "wav" and "mp3".
 /// 
-@immutable final class ChatCompletionRequestMessageContentPartAudioInputAudioFormat {const ChatCompletionRequestMessageContentPartAudioInputAudioFormat._(this.value);
+sealed class ChatCompletionRequestMessageContentPartAudioInputAudioFormat {const ChatCompletionRequestMessageContentPartAudioInputAudioFormat();
 
 factory ChatCompletionRequestMessageContentPartAudioInputAudioFormat.fromJson(String json) { return switch (json) {
   'wav' => wav,
   'mp3' => mp3,
-  _ => ChatCompletionRequestMessageContentPartAudioInputAudioFormat._(json),
+  _ => ChatCompletionRequestMessageContentPartAudioInputAudioFormat$Unknown(json),
 }; }
 
-static const ChatCompletionRequestMessageContentPartAudioInputAudioFormat wav = ChatCompletionRequestMessageContentPartAudioInputAudioFormat._('wav');
+static const ChatCompletionRequestMessageContentPartAudioInputAudioFormat wav = ChatCompletionRequestMessageContentPartAudioInputAudioFormat$wav._();
 
-static const ChatCompletionRequestMessageContentPartAudioInputAudioFormat mp3 = ChatCompletionRequestMessageContentPartAudioInputAudioFormat._('mp3');
+static const ChatCompletionRequestMessageContentPartAudioInputAudioFormat mp3 = ChatCompletionRequestMessageContentPartAudioInputAudioFormat$mp3._();
 
 static const List<ChatCompletionRequestMessageContentPartAudioInputAudioFormat> values = [wav, mp3];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -27,13 +26,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ChatCompletionRequestMessageContentPartAudioInputAudioFormat$Unknown; } 
+@override String toString() => 'ChatCompletionRequestMessageContentPartAudioInputAudioFormat($value)';
+
+ }
+@immutable final class ChatCompletionRequestMessageContentPartAudioInputAudioFormat$wav extends ChatCompletionRequestMessageContentPartAudioInputAudioFormat {const ChatCompletionRequestMessageContentPartAudioInputAudioFormat$wav._();
+
+@override String get value => 'wav';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionRequestMessageContentPartAudioInputAudioFormat$wav;
+
+@override int get hashCode => 'wav'.hashCode;
+
+ }
+@immutable final class ChatCompletionRequestMessageContentPartAudioInputAudioFormat$mp3 extends ChatCompletionRequestMessageContentPartAudioInputAudioFormat {const ChatCompletionRequestMessageContentPartAudioInputAudioFormat$mp3._();
+
+@override String get value => 'mp3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionRequestMessageContentPartAudioInputAudioFormat$mp3;
+
+@override int get hashCode => 'mp3'.hashCode;
+
+ }
+@immutable final class ChatCompletionRequestMessageContentPartAudioInputAudioFormat$Unknown extends ChatCompletionRequestMessageContentPartAudioInputAudioFormat {const ChatCompletionRequestMessageContentPartAudioInputAudioFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ChatCompletionRequestMessageContentPartAudioInputAudioFormat && other.value == value;
+    other is ChatCompletionRequestMessageContentPartAudioInputAudioFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ChatCompletionRequestMessageContentPartAudioInputAudioFormat($value)';
 
  }
 @immutable final class ChatCompletionRequestMessageContentPartAudioInputAudio {const ChatCompletionRequestMessageContentPartAudioInputAudio({required this.data, required this.format, });

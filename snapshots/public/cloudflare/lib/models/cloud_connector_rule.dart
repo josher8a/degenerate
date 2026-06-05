@@ -2,28 +2,27 @@
 // Source: #/components/schemas/CloudConnectorRule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloud_connector_rule/cloud_connector_rule_parameters.dart';/// Cloud Provider type
-@immutable final class CloudConnectorProvider {const CloudConnectorProvider._(this.value);
+sealed class CloudConnectorProvider {const CloudConnectorProvider();
 
 factory CloudConnectorProvider.fromJson(String json) { return switch (json) {
   'aws_s3' => awsS3,
   'cloudflare_r2' => cloudflareR2,
   'gcp_storage' => gcpStorage,
   'azure_storage' => azureStorage,
-  _ => CloudConnectorProvider._(json),
+  _ => CloudConnectorProvider$Unknown(json),
 }; }
 
-static const CloudConnectorProvider awsS3 = CloudConnectorProvider._('aws_s3');
+static const CloudConnectorProvider awsS3 = CloudConnectorProvider$awsS3._();
 
-static const CloudConnectorProvider cloudflareR2 = CloudConnectorProvider._('cloudflare_r2');
+static const CloudConnectorProvider cloudflareR2 = CloudConnectorProvider$cloudflareR2._();
 
-static const CloudConnectorProvider gcpStorage = CloudConnectorProvider._('gcp_storage');
+static const CloudConnectorProvider gcpStorage = CloudConnectorProvider$gcpStorage._();
 
-static const CloudConnectorProvider azureStorage = CloudConnectorProvider._('azure_storage');
+static const CloudConnectorProvider azureStorage = CloudConnectorProvider$azureStorage._();
 
 static const List<CloudConnectorProvider> values = [awsS3, cloudflareR2, gcpStorage, azureStorage];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CloudConnectorProvider$Unknown; } 
+@override String toString() => 'CloudConnectorProvider($value)';
+
+ }
+@immutable final class CloudConnectorProvider$awsS3 extends CloudConnectorProvider {const CloudConnectorProvider$awsS3._();
+
+@override String get value => 'aws_s3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudConnectorProvider$awsS3;
+
+@override int get hashCode => 'aws_s3'.hashCode;
+
+ }
+@immutable final class CloudConnectorProvider$cloudflareR2 extends CloudConnectorProvider {const CloudConnectorProvider$cloudflareR2._();
+
+@override String get value => 'cloudflare_r2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudConnectorProvider$cloudflareR2;
+
+@override int get hashCode => 'cloudflare_r2'.hashCode;
+
+ }
+@immutable final class CloudConnectorProvider$gcpStorage extends CloudConnectorProvider {const CloudConnectorProvider$gcpStorage._();
+
+@override String get value => 'gcp_storage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudConnectorProvider$gcpStorage;
+
+@override int get hashCode => 'gcp_storage'.hashCode;
+
+ }
+@immutable final class CloudConnectorProvider$azureStorage extends CloudConnectorProvider {const CloudConnectorProvider$azureStorage._();
+
+@override String get value => 'azure_storage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudConnectorProvider$azureStorage;
+
+@override int get hashCode => 'azure_storage'.hashCode;
+
+ }
+@immutable final class CloudConnectorProvider$Unknown extends CloudConnectorProvider {const CloudConnectorProvider$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CloudConnectorProvider && other.value == value;
+    other is CloudConnectorProvider$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CloudConnectorProvider($value)';
 
  }
 @immutable final class CloudConnectorRule {const CloudConnectorRule({this.description, this.enabled, this.expression, this.id, this.parameters, this.provider, });

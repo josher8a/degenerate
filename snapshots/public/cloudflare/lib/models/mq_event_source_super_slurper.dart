@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MqEventSourceSuperSlurper
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
-@immutable final class MqEventSourceSuperSlurperType {const MqEventSourceSuperSlurperType._(this.value);
+sealed class MqEventSourceSuperSlurperType {const MqEventSourceSuperSlurperType();
 
 factory MqEventSourceSuperSlurperType.fromJson(String json) { return switch (json) {
   'superSlurper' => superSlurper,
-  _ => MqEventSourceSuperSlurperType._(json),
+  _ => MqEventSourceSuperSlurperType$Unknown(json),
 }; }
 
-static const MqEventSourceSuperSlurperType superSlurper = MqEventSourceSuperSlurperType._('superSlurper');
+static const MqEventSourceSuperSlurperType superSlurper = MqEventSourceSuperSlurperType$superSlurper._();
 
 static const List<MqEventSourceSuperSlurperType> values = [superSlurper];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MqEventSourceSuperSlurperType$Unknown; } 
+@override String toString() => 'MqEventSourceSuperSlurperType($value)';
+
+ }
+@immutable final class MqEventSourceSuperSlurperType$superSlurper extends MqEventSourceSuperSlurperType {const MqEventSourceSuperSlurperType$superSlurper._();
+
+@override String get value => 'superSlurper';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqEventSourceSuperSlurperType$superSlurper;
+
+@override int get hashCode => 'superSlurper'.hashCode;
+
+ }
+@immutable final class MqEventSourceSuperSlurperType$Unknown extends MqEventSourceSuperSlurperType {const MqEventSourceSuperSlurperType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MqEventSourceSuperSlurperType && other.value == value;
+    other is MqEventSourceSuperSlurperType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MqEventSourceSuperSlurperType($value)';
 
  }
 @immutable final class MqEventSourceSuperSlurper {const MqEventSourceSuperSlurper({this.type});

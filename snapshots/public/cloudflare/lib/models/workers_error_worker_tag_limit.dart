@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WorkersErrorWorkerTagLimit
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker has exceeded the maximum number of tags allowed.
-@immutable final class WorkersErrorWorkerTagLimitCode {const WorkersErrorWorkerTagLimitCode._(this.value);
+sealed class WorkersErrorWorkerTagLimitCode {const WorkersErrorWorkerTagLimitCode();
 
 factory WorkersErrorWorkerTagLimitCode.fromJson(int json) { return switch (json) {
   100103 => $100103,
-  _ => WorkersErrorWorkerTagLimitCode._(json),
+  _ => WorkersErrorWorkerTagLimitCode$Unknown(json),
 }; }
 
-static const WorkersErrorWorkerTagLimitCode $100103 = WorkersErrorWorkerTagLimitCode._(100103);
+static const WorkersErrorWorkerTagLimitCode $100103 = WorkersErrorWorkerTagLimitCode$$100103._();
 
 static const List<WorkersErrorWorkerTagLimitCode> values = [$100103];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersErrorWorkerTagLimitCode$Unknown; } 
+@override String toString() => 'WorkersErrorWorkerTagLimitCode($value)';
+
+ }
+@immutable final class WorkersErrorWorkerTagLimitCode$$100103 extends WorkersErrorWorkerTagLimitCode {const WorkersErrorWorkerTagLimitCode$$100103._();
+
+@override int get value => 100103;
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersErrorWorkerTagLimitCode$$100103;
+
+@override int get hashCode => 100103.hashCode;
+
+ }
+@immutable final class WorkersErrorWorkerTagLimitCode$Unknown extends WorkersErrorWorkerTagLimitCode {const WorkersErrorWorkerTagLimitCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersErrorWorkerTagLimitCode && other.value == value;
+    other is WorkersErrorWorkerTagLimitCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersErrorWorkerTagLimitCode($value)';
 
  }
 @immutable final class WorkersErrorWorkerTagLimit {const WorkersErrorWorkerTagLimit({required this.code, required this.message, });

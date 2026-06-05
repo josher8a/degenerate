@@ -9,22 +9,21 @@ String toJson() => value;
 
 }
 /// Defines the scope of the rule.
-@immutable final class ScopeType {const ScopeType._(this.value);
+sealed class ScopeType {const ScopeType();
 
 factory ScopeType.fromJson(String json) { return switch (json) {
   'user' => user,
   'organization' => organization,
-  _ => ScopeType._(json),
+  _ => ScopeType$Unknown(json),
 }; }
 
-static const ScopeType user = ScopeType._('user');
+static const ScopeType user = ScopeType$user._();
 
-static const ScopeType organization = ScopeType._('organization');
+static const ScopeType organization = ScopeType$organization._();
 
 static const List<ScopeType> values = [user, organization];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ScopeType$Unknown; } 
+@override String toString() => 'ScopeType($value)';
+
+ }
+@immutable final class ScopeType$user extends ScopeType {const ScopeType$user._();
+
+@override String get value => 'user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScopeType$user;
+
+@override int get hashCode => 'user'.hashCode;
+
+ }
+@immutable final class ScopeType$organization extends ScopeType {const ScopeType$organization._();
+
+@override String get value => 'organization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScopeType$organization;
+
+@override int get hashCode => 'organization'.hashCode;
+
+ }
+@immutable final class ScopeType$Unknown extends ScopeType {const ScopeType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ScopeType && other.value == value;
+    other is ScopeType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ScopeType($value)';
 
  }
 /// All zones owned by the user will have the rule applied.

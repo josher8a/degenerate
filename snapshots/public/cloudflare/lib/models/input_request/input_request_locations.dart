@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/InputRequest (inline: Locations)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class TeamsDevicesTrustStoresEnum {const TeamsDevicesTrustStoresEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class TeamsDevicesTrustStoresEnum {const TeamsDevicesTrustStoresEnum();
 
 factory TeamsDevicesTrustStoresEnum.fromJson(String json) { return switch (json) {
   'system' => system,
   'user' => user,
-  _ => TeamsDevicesTrustStoresEnum._(json),
+  _ => TeamsDevicesTrustStoresEnum$Unknown(json),
 }; }
 
-static const TeamsDevicesTrustStoresEnum system = TeamsDevicesTrustStoresEnum._('system');
+static const TeamsDevicesTrustStoresEnum system = TeamsDevicesTrustStoresEnum$system._();
 
-static const TeamsDevicesTrustStoresEnum user = TeamsDevicesTrustStoresEnum._('user');
+static const TeamsDevicesTrustStoresEnum user = TeamsDevicesTrustStoresEnum$user._();
 
 static const List<TeamsDevicesTrustStoresEnum> values = [system, user];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TeamsDevicesTrustStoresEnum$Unknown; } 
+@override String toString() => 'TeamsDevicesTrustStoresEnum($value)';
+
+ }
+@immutable final class TeamsDevicesTrustStoresEnum$system extends TeamsDevicesTrustStoresEnum {const TeamsDevicesTrustStoresEnum$system._();
+
+@override String get value => 'system';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesTrustStoresEnum$system;
+
+@override int get hashCode => 'system'.hashCode;
+
+ }
+@immutable final class TeamsDevicesTrustStoresEnum$user extends TeamsDevicesTrustStoresEnum {const TeamsDevicesTrustStoresEnum$user._();
+
+@override String get value => 'user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesTrustStoresEnum$user;
+
+@override int get hashCode => 'user'.hashCode;
+
+ }
+@immutable final class TeamsDevicesTrustStoresEnum$Unknown extends TeamsDevicesTrustStoresEnum {const TeamsDevicesTrustStoresEnum$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TeamsDevicesTrustStoresEnum && other.value == value;
+    other is TeamsDevicesTrustStoresEnum$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TeamsDevicesTrustStoresEnum($value)';
 
  }
 @immutable final class InputRequestLocations {const InputRequestLocations({this.paths, this.trustStores, });

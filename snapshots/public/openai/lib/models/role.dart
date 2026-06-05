@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Role
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `role`.
-@immutable final class RoleObject {const RoleObject._(this.value);
+sealed class RoleObject {const RoleObject();
 
 factory RoleObject.fromJson(String json) { return switch (json) {
   'role' => role,
-  _ => RoleObject._(json),
+  _ => RoleObject$Unknown(json),
 }; }
 
-static const RoleObject role = RoleObject._('role');
+static const RoleObject role = RoleObject$role._();
 
 static const List<RoleObject> values = [role];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RoleObject$Unknown; } 
+@override String toString() => 'RoleObject($value)';
+
+ }
+@immutable final class RoleObject$role extends RoleObject {const RoleObject$role._();
+
+@override String get value => 'role';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RoleObject$role;
+
+@override int get hashCode => 'role'.hashCode;
+
+ }
+@immutable final class RoleObject$Unknown extends RoleObject {const RoleObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RoleObject && other.value == value;
+    other is RoleObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RoleObject($value)';
 
  }
 /// Details about a role that can be assigned through the public Roles API.

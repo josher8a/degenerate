@@ -2,19 +2,18 @@
 // Source: #/components/schemas/SpecificFunctionShellParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The tool to call. Always `shell`.
-@immutable final class SpecificFunctionShellParamType {const SpecificFunctionShellParamType._(this.value);
+sealed class SpecificFunctionShellParamType {const SpecificFunctionShellParamType();
 
 factory SpecificFunctionShellParamType.fromJson(String json) { return switch (json) {
   'shell' => shell,
-  _ => SpecificFunctionShellParamType._(json),
+  _ => SpecificFunctionShellParamType$Unknown(json),
 }; }
 
-static const SpecificFunctionShellParamType shell = SpecificFunctionShellParamType._('shell');
+static const SpecificFunctionShellParamType shell = SpecificFunctionShellParamType$shell._();
 
 static const List<SpecificFunctionShellParamType> values = [shell];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SpecificFunctionShellParamType$Unknown; } 
+@override String toString() => 'SpecificFunctionShellParamType($value)';
+
+ }
+@immutable final class SpecificFunctionShellParamType$shell extends SpecificFunctionShellParamType {const SpecificFunctionShellParamType$shell._();
+
+@override String get value => 'shell';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SpecificFunctionShellParamType$shell;
+
+@override int get hashCode => 'shell'.hashCode;
+
+ }
+@immutable final class SpecificFunctionShellParamType$Unknown extends SpecificFunctionShellParamType {const SpecificFunctionShellParamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SpecificFunctionShellParamType && other.value == value;
+    other is SpecificFunctionShellParamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SpecificFunctionShellParamType($value)';
 
  }
 /// Forces the model to call the shell tool when a tool call is required.

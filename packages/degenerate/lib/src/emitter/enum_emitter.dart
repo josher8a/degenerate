@@ -10,11 +10,12 @@ String _enumWireType(PrimitiveKind kind) => switch (kind) {
   _ => 'String',
 };
 
-/// Emits a `final class` from an [IrEnum] that behaves like an enhanced enum.
+/// Emits a `sealed class` hierarchy from an [IrEnum].
 ///
-/// Generates: static const values, const constructor, fromJson factory,
-/// toJson method. Unknown server values are preserved via the raw `value`
-/// field, enabling round-trip fidelity.
+/// Generates a sealed base with per-value `final class` subclasses plus a
+/// `$Unknown` catch-all. Static constants on the base provide backward
+/// compatible access (`ChainId.$42161`). The sealed hierarchy enables
+/// exhaustive `switch` while `$Unknown` preserves forward compatibility.
 final class EnumEmitter {
   /// Creates an emitter for the given [irEnum].
   const EnumEmitter(this.irEnum);
@@ -35,38 +36,27 @@ final class EnumEmitter {
     return result;
   }
 
-  /// Emit the enum class as code_builder specs.
+  /// Emit the sealed enum hierarchy as code_builder specs.
   List<Spec> emit() {
     final deduped = _deduplicatedValues();
     final className = irEnum.name;
     final isString = irEnum.valueKind == PrimitiveKind.string;
     final dartType = _enumWireType(irEnum.valueKind);
 
-    return [
+    final specs = <Spec>[];
+
+    // Sealed base class
+    specs.add(
       Class(
         (b) => b
           ..name = className
-          ..modifier = ClassModifier.final$
-          ..annotations.add(refer('immutable'))
+          ..sealed = true
           ..docs.addAll(_buildDocs())
           // Private const constructor
-          ..constructors.add(
-            Constructor(
-              (c) => c
-                ..name = '_'
-                ..constant = true
-                ..requiredParameters.add(
-                  Parameter(
-                    (p) => p
-                      ..name = 'value'
-                      ..toThis = true,
-                  ),
-                ),
-            ),
-          )
+          ..constructors.add(Constructor((c) => c..constant = true))
           // fromJson factory
           ..constructors.add(_buildFromJson(className, deduped))
-          // Static const instances for each known value
+          // Static const instances (backward compat: ClassName.$value still works)
           ..fields.addAll(
             deduped.map(
               (pair) => Field(
@@ -75,11 +65,7 @@ final class EnumEmitter {
                   ..static = true
                   ..modifier = FieldModifier.constant
                   ..type = refer(className)
-                  ..assignment = Code(
-                    isString
-                        ? '$className._(${dartStringLiteral(pair.$1)})'
-                        : '$className._(${pair.$1})',
-                  ),
+                  ..assignment = Code('$className\$${pair.$2}._()'),
               ),
             ),
           )
@@ -94,23 +80,102 @@ final class EnumEmitter {
                 ..assignment = Code('[${deduped.map((p) => p.$2).join(', ')}]'),
             ),
           )
-          // Instance value field
-          ..fields.add(
-            Field(
-              (f) => f
+          // Abstract value getter
+          ..methods.add(
+            Method(
+              (m) => m
                 ..name = 'value'
-                ..type = refer(dartType)
-                ..modifier = FieldModifier.final$,
+                ..type = MethodType.getter
+                ..returns = refer(dartType),
             ),
           )
           ..methods.add(_buildToJson())
           ..methods.add(_buildName(className, deduped))
           ..methods.add(_buildIsUnknown())
-          ..methods.add(_buildEquals(className))
-          ..methods.add(_buildHashCode())
           ..methods.add(_buildToString(className)),
       ),
-    ];
+    );
+
+    // Per-value subclasses
+    for (final pair in deduped) {
+      final subName = '$className\$${pair.$2}';
+      final valueLiteral = isString ? dartStringLiteral(pair.$1) : pair.$1;
+      specs.add(
+        Class(
+          (b) => b
+            ..name = subName
+            ..modifier = ClassModifier.final$
+            ..annotations.add(refer('immutable'))
+            ..extend = refer(className)
+            ..constructors.add(
+              Constructor(
+                (c) => c
+                  ..name = '_'
+                  ..constant = true,
+              ),
+            )
+            ..methods.add(
+              Method(
+                (m) => m
+                  ..name = 'value'
+                  ..type = MethodType.getter
+                  ..lambda = true
+                  ..annotations.add(refer('override'))
+                  ..returns = refer(dartType)
+                  ..body = Code(valueLiteral),
+              ),
+            )
+            ..methods.add(
+              buildEqualsOverride(
+                'identical(this, other) || other is $subName',
+              ),
+            )
+            ..methods.add(buildHashCodeOverride('$valueLiteral.hashCode')),
+        ),
+      );
+    }
+
+    // $Unknown subclass
+    specs.add(
+      Class(
+        (b) => b
+          ..name = '$className\$Unknown'
+          ..modifier = ClassModifier.final$
+          ..annotations.add(refer('immutable'))
+          ..extend = refer(className)
+          ..constructors.add(
+            Constructor(
+              (c) => c
+                ..constant = true
+                ..requiredParameters.add(
+                  Parameter(
+                    (p) => p
+                      ..name = 'value'
+                      ..toThis = true,
+                  ),
+                ),
+            ),
+          )
+          ..fields.add(
+            Field(
+              (f) => f
+                ..name = 'value'
+                ..modifier = FieldModifier.final$
+                ..annotations.add(refer('override'))
+                ..type = refer(dartType),
+            ),
+          )
+          ..methods.add(
+            buildEqualsOverride(
+              'identical(this, other) ||\n'
+              '    other is $className\$Unknown && other.value == value',
+            ),
+          )
+          ..methods.add(buildHashCodeOverride('value.hashCode')),
+      ),
+    );
+
+    return specs;
   }
 
   List<String> _buildDocs() => docCommentLines(irEnum.description);
@@ -118,7 +183,6 @@ final class EnumEmitter {
   Constructor _buildFromJson(String className, List<(String, String)> deduped) {
     final isString = irEnum.valueKind == PrimitiveKind.string;
     final jsonType = _enumWireType(irEnum.valueKind);
-    // For non-string enums, deduplicate switch cases (e.g. 0 and -0 both → 0).
     final seenCaseKeys = <String>{};
     final cases = deduped
         .where((pair) {
@@ -146,7 +210,7 @@ final class EnumEmitter {
         ..body = Code(
           'return switch (json) {\n'
           '$cases\n'
-          '  _ => $className._(json),\n'
+          '  _ => $className\$Unknown(json),\n'
           '};',
         ),
     );
@@ -165,13 +229,16 @@ final class EnumEmitter {
   Method _buildName(String className, List<(String, String)> deduped) {
     final isString = irEnum.valueKind == PrimitiveKind.string;
     final seenCaseKeys = <String>{};
-    final cases = deduped.where((pair) {
-      final key = isString ? dartStringLiteral(pair.$1) : pair.$1;
-      return seenCaseKeys.add(key);
-    }).map((pair) {
-      final matchExpr = isString ? dartStringLiteral(pair.$1) : pair.$1;
-      return '  $matchExpr => ${dartStringLiteral(pair.$2)},';
-    }).join('\n');
+    final cases = deduped
+        .where((pair) {
+          final key = isString ? dartStringLiteral(pair.$1) : pair.$1;
+          return seenCaseKeys.add(key);
+        })
+        .map((pair) {
+          final matchExpr = isString ? dartStringLiteral(pair.$1) : pair.$1;
+          return '  $matchExpr => ${dartStringLiteral(pair.$2)},';
+        })
+        .join('\n');
     final fallback = isString ? 'value' : r"'$value'";
     return Method(
       (m) => m
@@ -191,6 +258,7 @@ final class EnumEmitter {
   }
 
   Method _buildIsUnknown() {
+    final unknownClass = '${irEnum.name}\$Unknown';
     return Method(
       (m) => m
         ..name = 'isUnknown'
@@ -199,19 +267,10 @@ final class EnumEmitter {
         ..docs.add(
           '/// Whether this value is unknown (not defined in the OpenAPI spec).',
         )
-        ..body = const Code('return !values.contains(this);'),
+        ..body = Code('return this is $unknownClass;'),
     );
   }
 
-  Method _buildEquals(String className) => buildEqualsOverride(
-    'identical(this, other) ||\n'
-    '    other is $className && other.value == value',
-  );
-
-  Method _buildHashCode() => buildHashCodeOverride('value.hashCode');
-
-  Method _buildToString(String className) => buildToStringOverride(
-    "'${escapeNameForString(className)}(\$value)'",
-  );
-
+  Method _buildToString(String className) =>
+      buildToStringOverride("'${escapeNameForString(className)}(\$value)'");
 }

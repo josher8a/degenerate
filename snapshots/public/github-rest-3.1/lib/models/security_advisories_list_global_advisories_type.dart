@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SecurityAdvisoriesListGlobalAdvisoriesType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class SecurityAdvisoriesListGlobalAdvisoriesType {const SecurityAdvisoriesListGlobalAdvisoriesType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class SecurityAdvisoriesListGlobalAdvisoriesType {const SecurityAdvisoriesListGlobalAdvisoriesType();
 
 factory SecurityAdvisoriesListGlobalAdvisoriesType.fromJson(String json) { return switch (json) {
   'reviewed' => reviewed,
   'malware' => malware,
   'unreviewed' => unreviewed,
-  _ => SecurityAdvisoriesListGlobalAdvisoriesType._(json),
+  _ => SecurityAdvisoriesListGlobalAdvisoriesType$Unknown(json),
 }; }
 
-static const SecurityAdvisoriesListGlobalAdvisoriesType reviewed = SecurityAdvisoriesListGlobalAdvisoriesType._('reviewed');
+static const SecurityAdvisoriesListGlobalAdvisoriesType reviewed = SecurityAdvisoriesListGlobalAdvisoriesType$reviewed._();
 
-static const SecurityAdvisoriesListGlobalAdvisoriesType malware = SecurityAdvisoriesListGlobalAdvisoriesType._('malware');
+static const SecurityAdvisoriesListGlobalAdvisoriesType malware = SecurityAdvisoriesListGlobalAdvisoriesType$malware._();
 
-static const SecurityAdvisoriesListGlobalAdvisoriesType unreviewed = SecurityAdvisoriesListGlobalAdvisoriesType._('unreviewed');
+static const SecurityAdvisoriesListGlobalAdvisoriesType unreviewed = SecurityAdvisoriesListGlobalAdvisoriesType$unreviewed._();
 
 static const List<SecurityAdvisoriesListGlobalAdvisoriesType> values = [reviewed, malware, unreviewed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SecurityAdvisoriesListGlobalAdvisoriesType$Unknown; } 
+@override String toString() => 'SecurityAdvisoriesListGlobalAdvisoriesType($value)';
+
+ }
+@immutable final class SecurityAdvisoriesListGlobalAdvisoriesType$reviewed extends SecurityAdvisoriesListGlobalAdvisoriesType {const SecurityAdvisoriesListGlobalAdvisoriesType$reviewed._();
+
+@override String get value => 'reviewed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecurityAdvisoriesListGlobalAdvisoriesType$reviewed;
+
+@override int get hashCode => 'reviewed'.hashCode;
+
+ }
+@immutable final class SecurityAdvisoriesListGlobalAdvisoriesType$malware extends SecurityAdvisoriesListGlobalAdvisoriesType {const SecurityAdvisoriesListGlobalAdvisoriesType$malware._();
+
+@override String get value => 'malware';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecurityAdvisoriesListGlobalAdvisoriesType$malware;
+
+@override int get hashCode => 'malware'.hashCode;
+
+ }
+@immutable final class SecurityAdvisoriesListGlobalAdvisoriesType$unreviewed extends SecurityAdvisoriesListGlobalAdvisoriesType {const SecurityAdvisoriesListGlobalAdvisoriesType$unreviewed._();
+
+@override String get value => 'unreviewed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecurityAdvisoriesListGlobalAdvisoriesType$unreviewed;
+
+@override int get hashCode => 'unreviewed'.hashCode;
+
+ }
+@immutable final class SecurityAdvisoriesListGlobalAdvisoriesType$Unknown extends SecurityAdvisoriesListGlobalAdvisoriesType {const SecurityAdvisoriesListGlobalAdvisoriesType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SecurityAdvisoriesListGlobalAdvisoriesType && other.value == value;
+    other is SecurityAdvisoriesListGlobalAdvisoriesType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SecurityAdvisoriesListGlobalAdvisoriesType($value)';
 
  }

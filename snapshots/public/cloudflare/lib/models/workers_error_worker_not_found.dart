@@ -2,19 +2,18 @@
 // Source: #/components/schemas/WorkersErrorWorkerNotFound
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Code indicating that the Worker does not exist.
-@immutable final class WorkersErrorWorkerNotFoundCode {const WorkersErrorWorkerNotFoundCode._(this.value);
+sealed class WorkersErrorWorkerNotFoundCode {const WorkersErrorWorkerNotFoundCode();
 
 factory WorkersErrorWorkerNotFoundCode.fromJson(int json) { return switch (json) {
   10007 => $10007,
-  _ => WorkersErrorWorkerNotFoundCode._(json),
+  _ => WorkersErrorWorkerNotFoundCode$Unknown(json),
 }; }
 
-static const WorkersErrorWorkerNotFoundCode $10007 = WorkersErrorWorkerNotFoundCode._(10007);
+static const WorkersErrorWorkerNotFoundCode $10007 = WorkersErrorWorkerNotFoundCode$$10007._();
 
 static const List<WorkersErrorWorkerNotFoundCode> values = [$10007];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersErrorWorkerNotFoundCode$Unknown; } 
+@override String toString() => 'WorkersErrorWorkerNotFoundCode($value)';
+
+ }
+@immutable final class WorkersErrorWorkerNotFoundCode$$10007 extends WorkersErrorWorkerNotFoundCode {const WorkersErrorWorkerNotFoundCode$$10007._();
+
+@override int get value => 10007;
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersErrorWorkerNotFoundCode$$10007;
+
+@override int get hashCode => 10007.hashCode;
+
+ }
+@immutable final class WorkersErrorWorkerNotFoundCode$Unknown extends WorkersErrorWorkerNotFoundCode {const WorkersErrorWorkerNotFoundCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersErrorWorkerNotFoundCode && other.value == value;
+    other is WorkersErrorWorkerNotFoundCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersErrorWorkerNotFoundCode($value)';
 
  }
 @immutable final class WorkersErrorWorkerNotFound {const WorkersErrorWorkerNotFound({required this.code, required this.message, });

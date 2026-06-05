@@ -2,7 +2,7 @@
 // Source: #/components/schemas/AaaAlertType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values.
-@immutable final class AaaAlertType {const AaaAlertType._(this.value);
+sealed class AaaAlertType {const AaaAlertType();
 
 factory AaaAlertType.fromJson(String json) { return switch (json) {
   'abuse_report_alert' => abuseReportAlert,
@@ -73,149 +73,148 @@ factory AaaAlertType.fromJson(String json) { return switch (json) {
   'universal_ssl_event_type' => universalSslEventType,
   'web_analytics_metrics_update' => webAnalyticsMetricsUpdate,
   'zone_aop_custom_certificate_expiration_type' => zoneAopCustomCertificateExpirationType,
-  _ => AaaAlertType._(json),
+  _ => AaaAlertType$Unknown(json),
 }; }
 
-static const AaaAlertType abuseReportAlert = AaaAlertType._('abuse_report_alert');
+static const AaaAlertType abuseReportAlert = AaaAlertType$abuseReportAlert._();
 
-static const AaaAlertType accessCustomCertificateExpirationType = AaaAlertType._('access_custom_certificate_expiration_type');
+static const AaaAlertType accessCustomCertificateExpirationType = AaaAlertType$accessCustomCertificateExpirationType._();
 
-static const AaaAlertType advancedDdosAttackL4Alert = AaaAlertType._('advanced_ddos_attack_l4_alert');
+static const AaaAlertType advancedDdosAttackL4Alert = AaaAlertType$advancedDdosAttackL4Alert._();
 
-static const AaaAlertType advancedDdosAttackL7Alert = AaaAlertType._('advanced_ddos_attack_l7_alert');
+static const AaaAlertType advancedDdosAttackL7Alert = AaaAlertType$advancedDdosAttackL7Alert._();
 
-static const AaaAlertType advancedHttpAlertError = AaaAlertType._('advanced_http_alert_error');
+static const AaaAlertType advancedHttpAlertError = AaaAlertType$advancedHttpAlertError._();
 
-static const AaaAlertType bgpHijackNotification = AaaAlertType._('bgp_hijack_notification');
+static const AaaAlertType bgpHijackNotification = AaaAlertType$bgpHijackNotification._();
 
-static const AaaAlertType billingUsageAlert = AaaAlertType._('billing_usage_alert');
+static const AaaAlertType billingUsageAlert = AaaAlertType$billingUsageAlert._();
 
-static const AaaAlertType blockNotificationBlockRemoved = AaaAlertType._('block_notification_block_removed');
+static const AaaAlertType blockNotificationBlockRemoved = AaaAlertType$blockNotificationBlockRemoved._();
 
-static const AaaAlertType blockNotificationNewBlock = AaaAlertType._('block_notification_new_block');
+static const AaaAlertType blockNotificationNewBlock = AaaAlertType$blockNotificationNewBlock._();
 
-static const AaaAlertType blockNotificationReviewRejected = AaaAlertType._('block_notification_review_rejected');
+static const AaaAlertType blockNotificationReviewRejected = AaaAlertType$blockNotificationReviewRejected._();
 
-static const AaaAlertType botTrafficBasicAlert = AaaAlertType._('bot_traffic_basic_alert');
+static const AaaAlertType botTrafficBasicAlert = AaaAlertType$botTrafficBasicAlert._();
 
-static const AaaAlertType brandProtectionAlert = AaaAlertType._('brand_protection_alert');
+static const AaaAlertType brandProtectionAlert = AaaAlertType$brandProtectionAlert._();
 
-static const AaaAlertType brandProtectionDigest = AaaAlertType._('brand_protection_digest');
+static const AaaAlertType brandProtectionDigest = AaaAlertType$brandProtectionDigest._();
 
-static const AaaAlertType clickhouseAlertFwAnomaly = AaaAlertType._('clickhouse_alert_fw_anomaly');
+static const AaaAlertType clickhouseAlertFwAnomaly = AaaAlertType$clickhouseAlertFwAnomaly._();
 
-static const AaaAlertType clickhouseAlertFwEntAnomaly = AaaAlertType._('clickhouse_alert_fw_ent_anomaly');
+static const AaaAlertType clickhouseAlertFwEntAnomaly = AaaAlertType$clickhouseAlertFwEntAnomaly._();
 
-static const AaaAlertType cloudforceOneRequestNotification = AaaAlertType._('cloudforce_one_request_notification');
+static const AaaAlertType cloudforceOneRequestNotification = AaaAlertType$cloudforceOneRequestNotification._();
 
-static const AaaAlertType customAnalytics = AaaAlertType._('custom_analytics');
+static const AaaAlertType customAnalytics = AaaAlertType$customAnalytics._();
 
-static const AaaAlertType customBotDetectionAlert = AaaAlertType._('custom_bot_detection_alert');
+static const AaaAlertType customBotDetectionAlert = AaaAlertType$customBotDetectionAlert._();
 
-static const AaaAlertType customSslCertificateEventType = AaaAlertType._('custom_ssl_certificate_event_type');
+static const AaaAlertType customSslCertificateEventType = AaaAlertType$customSslCertificateEventType._();
 
-static const AaaAlertType dedicatedSslCertificateEventType = AaaAlertType._('dedicated_ssl_certificate_event_type');
+static const AaaAlertType dedicatedSslCertificateEventType = AaaAlertType$dedicatedSslCertificateEventType._();
 
-static const AaaAlertType deviceConnectivityAnomalyAlert = AaaAlertType._('device_connectivity_anomaly_alert');
+static const AaaAlertType deviceConnectivityAnomalyAlert = AaaAlertType$deviceConnectivityAnomalyAlert._();
 
-static const AaaAlertType dosAttackL4 = AaaAlertType._('dos_attack_l4');
+static const AaaAlertType dosAttackL4 = AaaAlertType$dosAttackL4._();
 
-static const AaaAlertType dosAttackL7 = AaaAlertType._('dos_attack_l7');
+static const AaaAlertType dosAttackL7 = AaaAlertType$dosAttackL7._();
 
-static const AaaAlertType expiringServiceTokenAlert = AaaAlertType._('expiring_service_token_alert');
+static const AaaAlertType expiringServiceTokenAlert = AaaAlertType$expiringServiceTokenAlert._();
 
-static const AaaAlertType failingLogpushJobDisabledAlert = AaaAlertType._('failing_logpush_job_disabled_alert');
+static const AaaAlertType failingLogpushJobDisabledAlert = AaaAlertType$failingLogpushJobDisabledAlert._();
 
-static const AaaAlertType fbmAutoAdvertisement = AaaAlertType._('fbm_auto_advertisement');
+static const AaaAlertType fbmAutoAdvertisement = AaaAlertType$fbmAutoAdvertisement._();
 
-static const AaaAlertType fbmDosdAttack = AaaAlertType._('fbm_dosd_attack');
+static const AaaAlertType fbmDosdAttack = AaaAlertType$fbmDosdAttack._();
 
-static const AaaAlertType fbmVolumetricAttack = AaaAlertType._('fbm_volumetric_attack');
+static const AaaAlertType fbmVolumetricAttack = AaaAlertType$fbmVolumetricAttack._();
 
-static const AaaAlertType healthCheckStatusNotification = AaaAlertType._('health_check_status_notification');
+static const AaaAlertType healthCheckStatusNotification = AaaAlertType$healthCheckStatusNotification._();
 
-static const AaaAlertType hostnameAopCustomCertificateExpirationType = AaaAlertType._('hostname_aop_custom_certificate_expiration_type');
+static const AaaAlertType hostnameAopCustomCertificateExpirationType = AaaAlertType$hostnameAopCustomCertificateExpirationType._();
 
-static const AaaAlertType httpAlertEdgeError = AaaAlertType._('http_alert_edge_error');
+static const AaaAlertType httpAlertEdgeError = AaaAlertType$httpAlertEdgeError._();
 
-static const AaaAlertType httpAlertOriginError = AaaAlertType._('http_alert_origin_error');
+static const AaaAlertType httpAlertOriginError = AaaAlertType$httpAlertOriginError._();
 
-static const AaaAlertType imageNotification = AaaAlertType._('image_notification');
+static const AaaAlertType imageNotification = AaaAlertType$imageNotification._();
 
-static const AaaAlertType imageResizingNotification = AaaAlertType._('image_resizing_notification');
+static const AaaAlertType imageResizingNotification = AaaAlertType$imageResizingNotification._();
 
-static const AaaAlertType incidentAlert = AaaAlertType._('incident_alert');
+static const AaaAlertType incidentAlert = AaaAlertType$incidentAlert._();
 
-static const AaaAlertType loadBalancingHealthAlert = AaaAlertType._('load_balancing_health_alert');
+static const AaaAlertType loadBalancingHealthAlert = AaaAlertType$loadBalancingHealthAlert._();
 
-static const AaaAlertType loadBalancingPoolEnablementAlert = AaaAlertType._('load_balancing_pool_enablement_alert');
+static const AaaAlertType loadBalancingPoolEnablementAlert = AaaAlertType$loadBalancingPoolEnablementAlert._();
 
-static const AaaAlertType logoMatchAlert = AaaAlertType._('logo_match_alert');
+static const AaaAlertType logoMatchAlert = AaaAlertType$logoMatchAlert._();
 
-static const AaaAlertType magicTunnelHealthCheckEvent = AaaAlertType._('magic_tunnel_health_check_event');
+static const AaaAlertType magicTunnelHealthCheckEvent = AaaAlertType$magicTunnelHealthCheckEvent._();
 
-static const AaaAlertType magicWanTunnelHealth = AaaAlertType._('magic_wan_tunnel_health');
+static const AaaAlertType magicWanTunnelHealth = AaaAlertType$magicWanTunnelHealth._();
 
-static const AaaAlertType maintenanceEventNotification = AaaAlertType._('maintenance_event_notification');
+static const AaaAlertType maintenanceEventNotification = AaaAlertType$maintenanceEventNotification._();
 
-static const AaaAlertType mtlsCertificateStoreCertificateExpirationType = AaaAlertType._('mtls_certificate_store_certificate_expiration_type');
+static const AaaAlertType mtlsCertificateStoreCertificateExpirationType = AaaAlertType$mtlsCertificateStoreCertificateExpirationType._();
 
-static const AaaAlertType pagesEventAlert = AaaAlertType._('pages_event_alert');
+static const AaaAlertType pagesEventAlert = AaaAlertType$pagesEventAlert._();
 
-static const AaaAlertType radarNotification = AaaAlertType._('radar_notification');
+static const AaaAlertType radarNotification = AaaAlertType$radarNotification._();
 
-static const AaaAlertType realOriginMonitoring = AaaAlertType._('real_origin_monitoring');
+static const AaaAlertType realOriginMonitoring = AaaAlertType$realOriginMonitoring._();
 
-static const AaaAlertType scriptmonitorAlertNewCodeChangeDetections = AaaAlertType._('scriptmonitor_alert_new_code_change_detections');
+static const AaaAlertType scriptmonitorAlertNewCodeChangeDetections = AaaAlertType$scriptmonitorAlertNewCodeChangeDetections._();
 
-static const AaaAlertType scriptmonitorAlertNewHosts = AaaAlertType._('scriptmonitor_alert_new_hosts');
+static const AaaAlertType scriptmonitorAlertNewHosts = AaaAlertType$scriptmonitorAlertNewHosts._();
 
-static const AaaAlertType scriptmonitorAlertNewMaliciousHosts = AaaAlertType._('scriptmonitor_alert_new_malicious_hosts');
+static const AaaAlertType scriptmonitorAlertNewMaliciousHosts = AaaAlertType$scriptmonitorAlertNewMaliciousHosts._();
 
-static const AaaAlertType scriptmonitorAlertNewMaliciousScripts = AaaAlertType._('scriptmonitor_alert_new_malicious_scripts');
+static const AaaAlertType scriptmonitorAlertNewMaliciousScripts = AaaAlertType$scriptmonitorAlertNewMaliciousScripts._();
 
-static const AaaAlertType scriptmonitorAlertNewMaliciousUrl = AaaAlertType._('scriptmonitor_alert_new_malicious_url');
+static const AaaAlertType scriptmonitorAlertNewMaliciousUrl = AaaAlertType$scriptmonitorAlertNewMaliciousUrl._();
 
-static const AaaAlertType scriptmonitorAlertNewMaxLengthResourceUrl = AaaAlertType._('scriptmonitor_alert_new_max_length_resource_url');
+static const AaaAlertType scriptmonitorAlertNewMaxLengthResourceUrl = AaaAlertType$scriptmonitorAlertNewMaxLengthResourceUrl._();
 
-static const AaaAlertType scriptmonitorAlertNewResources = AaaAlertType._('scriptmonitor_alert_new_resources');
+static const AaaAlertType scriptmonitorAlertNewResources = AaaAlertType$scriptmonitorAlertNewResources._();
 
-static const AaaAlertType secondaryDnsAllPrimariesFailing = AaaAlertType._('secondary_dns_all_primaries_failing');
+static const AaaAlertType secondaryDnsAllPrimariesFailing = AaaAlertType$secondaryDnsAllPrimariesFailing._();
 
-static const AaaAlertType secondaryDnsPrimariesFailing = AaaAlertType._('secondary_dns_primaries_failing');
+static const AaaAlertType secondaryDnsPrimariesFailing = AaaAlertType$secondaryDnsPrimariesFailing._();
 
-static const AaaAlertType secondaryDnsWarning = AaaAlertType._('secondary_dns_warning');
+static const AaaAlertType secondaryDnsWarning = AaaAlertType$secondaryDnsWarning._();
 
-static const AaaAlertType secondaryDnsZoneSuccessfullyUpdated = AaaAlertType._('secondary_dns_zone_successfully_updated');
+static const AaaAlertType secondaryDnsZoneSuccessfullyUpdated = AaaAlertType$secondaryDnsZoneSuccessfullyUpdated._();
 
-static const AaaAlertType secondaryDnsZoneValidationWarning = AaaAlertType._('secondary_dns_zone_validation_warning');
+static const AaaAlertType secondaryDnsZoneValidationWarning = AaaAlertType$secondaryDnsZoneValidationWarning._();
 
-static const AaaAlertType securityInsightsAlert = AaaAlertType._('security_insights_alert');
+static const AaaAlertType securityInsightsAlert = AaaAlertType$securityInsightsAlert._();
 
-static const AaaAlertType sentinelAlert = AaaAlertType._('sentinel_alert');
+static const AaaAlertType sentinelAlert = AaaAlertType$sentinelAlert._();
 
-static const AaaAlertType streamLiveNotifications = AaaAlertType._('stream_live_notifications');
+static const AaaAlertType streamLiveNotifications = AaaAlertType$streamLiveNotifications._();
 
-static const AaaAlertType syntheticTestLatencyAlert = AaaAlertType._('synthetic_test_latency_alert');
+static const AaaAlertType syntheticTestLatencyAlert = AaaAlertType$syntheticTestLatencyAlert._();
 
-static const AaaAlertType syntheticTestLowAvailabilityAlert = AaaAlertType._('synthetic_test_low_availability_alert');
+static const AaaAlertType syntheticTestLowAvailabilityAlert = AaaAlertType$syntheticTestLowAvailabilityAlert._();
 
-static const AaaAlertType trafficAnomaliesAlert = AaaAlertType._('traffic_anomalies_alert');
+static const AaaAlertType trafficAnomaliesAlert = AaaAlertType$trafficAnomaliesAlert._();
 
-static const AaaAlertType tunnelHealthEvent = AaaAlertType._('tunnel_health_event');
+static const AaaAlertType tunnelHealthEvent = AaaAlertType$tunnelHealthEvent._();
 
-static const AaaAlertType tunnelUpdateEvent = AaaAlertType._('tunnel_update_event');
+static const AaaAlertType tunnelUpdateEvent = AaaAlertType$tunnelUpdateEvent._();
 
-static const AaaAlertType universalSslEventType = AaaAlertType._('universal_ssl_event_type');
+static const AaaAlertType universalSslEventType = AaaAlertType$universalSslEventType._();
 
-static const AaaAlertType webAnalyticsMetricsUpdate = AaaAlertType._('web_analytics_metrics_update');
+static const AaaAlertType webAnalyticsMetricsUpdate = AaaAlertType$webAnalyticsMetricsUpdate._();
 
-static const AaaAlertType zoneAopCustomCertificateExpirationType = AaaAlertType._('zone_aop_custom_certificate_expiration_type');
+static const AaaAlertType zoneAopCustomCertificateExpirationType = AaaAlertType$zoneAopCustomCertificateExpirationType._();
 
 static const List<AaaAlertType> values = [abuseReportAlert, accessCustomCertificateExpirationType, advancedDdosAttackL4Alert, advancedDdosAttackL7Alert, advancedHttpAlertError, bgpHijackNotification, billingUsageAlert, blockNotificationBlockRemoved, blockNotificationNewBlock, blockNotificationReviewRejected, botTrafficBasicAlert, brandProtectionAlert, brandProtectionDigest, clickhouseAlertFwAnomaly, clickhouseAlertFwEntAnomaly, cloudforceOneRequestNotification, customAnalytics, customBotDetectionAlert, customSslCertificateEventType, dedicatedSslCertificateEventType, deviceConnectivityAnomalyAlert, dosAttackL4, dosAttackL7, expiringServiceTokenAlert, failingLogpushJobDisabledAlert, fbmAutoAdvertisement, fbmDosdAttack, fbmVolumetricAttack, healthCheckStatusNotification, hostnameAopCustomCertificateExpirationType, httpAlertEdgeError, httpAlertOriginError, imageNotification, imageResizingNotification, incidentAlert, loadBalancingHealthAlert, loadBalancingPoolEnablementAlert, logoMatchAlert, magicTunnelHealthCheckEvent, magicWanTunnelHealth, maintenanceEventNotification, mtlsCertificateStoreCertificateExpirationType, pagesEventAlert, radarNotification, realOriginMonitoring, scriptmonitorAlertNewCodeChangeDetections, scriptmonitorAlertNewHosts, scriptmonitorAlertNewMaliciousHosts, scriptmonitorAlertNewMaliciousScripts, scriptmonitorAlertNewMaliciousUrl, scriptmonitorAlertNewMaxLengthResourceUrl, scriptmonitorAlertNewResources, secondaryDnsAllPrimariesFailing, secondaryDnsPrimariesFailing, secondaryDnsWarning, secondaryDnsZoneSuccessfullyUpdated, secondaryDnsZoneValidationWarning, securityInsightsAlert, sentinelAlert, streamLiveNotifications, syntheticTestLatencyAlert, syntheticTestLowAvailabilityAlert, trafficAnomaliesAlert, tunnelHealthEvent, tunnelUpdateEvent, universalSslEventType, webAnalyticsMetricsUpdate, zoneAopCustomCertificateExpirationType];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -290,12 +289,629 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AaaAlertType$Unknown; } 
+@override String toString() => 'AaaAlertType($value)';
+
+ }
+@immutable final class AaaAlertType$abuseReportAlert extends AaaAlertType {const AaaAlertType$abuseReportAlert._();
+
+@override String get value => 'abuse_report_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$abuseReportAlert;
+
+@override int get hashCode => 'abuse_report_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$accessCustomCertificateExpirationType extends AaaAlertType {const AaaAlertType$accessCustomCertificateExpirationType._();
+
+@override String get value => 'access_custom_certificate_expiration_type';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$accessCustomCertificateExpirationType;
+
+@override int get hashCode => 'access_custom_certificate_expiration_type'.hashCode;
+
+ }
+@immutable final class AaaAlertType$advancedDdosAttackL4Alert extends AaaAlertType {const AaaAlertType$advancedDdosAttackL4Alert._();
+
+@override String get value => 'advanced_ddos_attack_l4_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$advancedDdosAttackL4Alert;
+
+@override int get hashCode => 'advanced_ddos_attack_l4_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$advancedDdosAttackL7Alert extends AaaAlertType {const AaaAlertType$advancedDdosAttackL7Alert._();
+
+@override String get value => 'advanced_ddos_attack_l7_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$advancedDdosAttackL7Alert;
+
+@override int get hashCode => 'advanced_ddos_attack_l7_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$advancedHttpAlertError extends AaaAlertType {const AaaAlertType$advancedHttpAlertError._();
+
+@override String get value => 'advanced_http_alert_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$advancedHttpAlertError;
+
+@override int get hashCode => 'advanced_http_alert_error'.hashCode;
+
+ }
+@immutable final class AaaAlertType$bgpHijackNotification extends AaaAlertType {const AaaAlertType$bgpHijackNotification._();
+
+@override String get value => 'bgp_hijack_notification';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$bgpHijackNotification;
+
+@override int get hashCode => 'bgp_hijack_notification'.hashCode;
+
+ }
+@immutable final class AaaAlertType$billingUsageAlert extends AaaAlertType {const AaaAlertType$billingUsageAlert._();
+
+@override String get value => 'billing_usage_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$billingUsageAlert;
+
+@override int get hashCode => 'billing_usage_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$blockNotificationBlockRemoved extends AaaAlertType {const AaaAlertType$blockNotificationBlockRemoved._();
+
+@override String get value => 'block_notification_block_removed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$blockNotificationBlockRemoved;
+
+@override int get hashCode => 'block_notification_block_removed'.hashCode;
+
+ }
+@immutable final class AaaAlertType$blockNotificationNewBlock extends AaaAlertType {const AaaAlertType$blockNotificationNewBlock._();
+
+@override String get value => 'block_notification_new_block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$blockNotificationNewBlock;
+
+@override int get hashCode => 'block_notification_new_block'.hashCode;
+
+ }
+@immutable final class AaaAlertType$blockNotificationReviewRejected extends AaaAlertType {const AaaAlertType$blockNotificationReviewRejected._();
+
+@override String get value => 'block_notification_review_rejected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$blockNotificationReviewRejected;
+
+@override int get hashCode => 'block_notification_review_rejected'.hashCode;
+
+ }
+@immutable final class AaaAlertType$botTrafficBasicAlert extends AaaAlertType {const AaaAlertType$botTrafficBasicAlert._();
+
+@override String get value => 'bot_traffic_basic_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$botTrafficBasicAlert;
+
+@override int get hashCode => 'bot_traffic_basic_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$brandProtectionAlert extends AaaAlertType {const AaaAlertType$brandProtectionAlert._();
+
+@override String get value => 'brand_protection_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$brandProtectionAlert;
+
+@override int get hashCode => 'brand_protection_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$brandProtectionDigest extends AaaAlertType {const AaaAlertType$brandProtectionDigest._();
+
+@override String get value => 'brand_protection_digest';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$brandProtectionDigest;
+
+@override int get hashCode => 'brand_protection_digest'.hashCode;
+
+ }
+@immutable final class AaaAlertType$clickhouseAlertFwAnomaly extends AaaAlertType {const AaaAlertType$clickhouseAlertFwAnomaly._();
+
+@override String get value => 'clickhouse_alert_fw_anomaly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$clickhouseAlertFwAnomaly;
+
+@override int get hashCode => 'clickhouse_alert_fw_anomaly'.hashCode;
+
+ }
+@immutable final class AaaAlertType$clickhouseAlertFwEntAnomaly extends AaaAlertType {const AaaAlertType$clickhouseAlertFwEntAnomaly._();
+
+@override String get value => 'clickhouse_alert_fw_ent_anomaly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$clickhouseAlertFwEntAnomaly;
+
+@override int get hashCode => 'clickhouse_alert_fw_ent_anomaly'.hashCode;
+
+ }
+@immutable final class AaaAlertType$cloudforceOneRequestNotification extends AaaAlertType {const AaaAlertType$cloudforceOneRequestNotification._();
+
+@override String get value => 'cloudforce_one_request_notification';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$cloudforceOneRequestNotification;
+
+@override int get hashCode => 'cloudforce_one_request_notification'.hashCode;
+
+ }
+@immutable final class AaaAlertType$customAnalytics extends AaaAlertType {const AaaAlertType$customAnalytics._();
+
+@override String get value => 'custom_analytics';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$customAnalytics;
+
+@override int get hashCode => 'custom_analytics'.hashCode;
+
+ }
+@immutable final class AaaAlertType$customBotDetectionAlert extends AaaAlertType {const AaaAlertType$customBotDetectionAlert._();
+
+@override String get value => 'custom_bot_detection_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$customBotDetectionAlert;
+
+@override int get hashCode => 'custom_bot_detection_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$customSslCertificateEventType extends AaaAlertType {const AaaAlertType$customSslCertificateEventType._();
+
+@override String get value => 'custom_ssl_certificate_event_type';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$customSslCertificateEventType;
+
+@override int get hashCode => 'custom_ssl_certificate_event_type'.hashCode;
+
+ }
+@immutable final class AaaAlertType$dedicatedSslCertificateEventType extends AaaAlertType {const AaaAlertType$dedicatedSslCertificateEventType._();
+
+@override String get value => 'dedicated_ssl_certificate_event_type';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$dedicatedSslCertificateEventType;
+
+@override int get hashCode => 'dedicated_ssl_certificate_event_type'.hashCode;
+
+ }
+@immutable final class AaaAlertType$deviceConnectivityAnomalyAlert extends AaaAlertType {const AaaAlertType$deviceConnectivityAnomalyAlert._();
+
+@override String get value => 'device_connectivity_anomaly_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$deviceConnectivityAnomalyAlert;
+
+@override int get hashCode => 'device_connectivity_anomaly_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$dosAttackL4 extends AaaAlertType {const AaaAlertType$dosAttackL4._();
+
+@override String get value => 'dos_attack_l4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$dosAttackL4;
+
+@override int get hashCode => 'dos_attack_l4'.hashCode;
+
+ }
+@immutable final class AaaAlertType$dosAttackL7 extends AaaAlertType {const AaaAlertType$dosAttackL7._();
+
+@override String get value => 'dos_attack_l7';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$dosAttackL7;
+
+@override int get hashCode => 'dos_attack_l7'.hashCode;
+
+ }
+@immutable final class AaaAlertType$expiringServiceTokenAlert extends AaaAlertType {const AaaAlertType$expiringServiceTokenAlert._();
+
+@override String get value => 'expiring_service_token_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$expiringServiceTokenAlert;
+
+@override int get hashCode => 'expiring_service_token_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$failingLogpushJobDisabledAlert extends AaaAlertType {const AaaAlertType$failingLogpushJobDisabledAlert._();
+
+@override String get value => 'failing_logpush_job_disabled_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$failingLogpushJobDisabledAlert;
+
+@override int get hashCode => 'failing_logpush_job_disabled_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$fbmAutoAdvertisement extends AaaAlertType {const AaaAlertType$fbmAutoAdvertisement._();
+
+@override String get value => 'fbm_auto_advertisement';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$fbmAutoAdvertisement;
+
+@override int get hashCode => 'fbm_auto_advertisement'.hashCode;
+
+ }
+@immutable final class AaaAlertType$fbmDosdAttack extends AaaAlertType {const AaaAlertType$fbmDosdAttack._();
+
+@override String get value => 'fbm_dosd_attack';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$fbmDosdAttack;
+
+@override int get hashCode => 'fbm_dosd_attack'.hashCode;
+
+ }
+@immutable final class AaaAlertType$fbmVolumetricAttack extends AaaAlertType {const AaaAlertType$fbmVolumetricAttack._();
+
+@override String get value => 'fbm_volumetric_attack';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$fbmVolumetricAttack;
+
+@override int get hashCode => 'fbm_volumetric_attack'.hashCode;
+
+ }
+@immutable final class AaaAlertType$healthCheckStatusNotification extends AaaAlertType {const AaaAlertType$healthCheckStatusNotification._();
+
+@override String get value => 'health_check_status_notification';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$healthCheckStatusNotification;
+
+@override int get hashCode => 'health_check_status_notification'.hashCode;
+
+ }
+@immutable final class AaaAlertType$hostnameAopCustomCertificateExpirationType extends AaaAlertType {const AaaAlertType$hostnameAopCustomCertificateExpirationType._();
+
+@override String get value => 'hostname_aop_custom_certificate_expiration_type';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$hostnameAopCustomCertificateExpirationType;
+
+@override int get hashCode => 'hostname_aop_custom_certificate_expiration_type'.hashCode;
+
+ }
+@immutable final class AaaAlertType$httpAlertEdgeError extends AaaAlertType {const AaaAlertType$httpAlertEdgeError._();
+
+@override String get value => 'http_alert_edge_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$httpAlertEdgeError;
+
+@override int get hashCode => 'http_alert_edge_error'.hashCode;
+
+ }
+@immutable final class AaaAlertType$httpAlertOriginError extends AaaAlertType {const AaaAlertType$httpAlertOriginError._();
+
+@override String get value => 'http_alert_origin_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$httpAlertOriginError;
+
+@override int get hashCode => 'http_alert_origin_error'.hashCode;
+
+ }
+@immutable final class AaaAlertType$imageNotification extends AaaAlertType {const AaaAlertType$imageNotification._();
+
+@override String get value => 'image_notification';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$imageNotification;
+
+@override int get hashCode => 'image_notification'.hashCode;
+
+ }
+@immutable final class AaaAlertType$imageResizingNotification extends AaaAlertType {const AaaAlertType$imageResizingNotification._();
+
+@override String get value => 'image_resizing_notification';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$imageResizingNotification;
+
+@override int get hashCode => 'image_resizing_notification'.hashCode;
+
+ }
+@immutable final class AaaAlertType$incidentAlert extends AaaAlertType {const AaaAlertType$incidentAlert._();
+
+@override String get value => 'incident_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$incidentAlert;
+
+@override int get hashCode => 'incident_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$loadBalancingHealthAlert extends AaaAlertType {const AaaAlertType$loadBalancingHealthAlert._();
+
+@override String get value => 'load_balancing_health_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$loadBalancingHealthAlert;
+
+@override int get hashCode => 'load_balancing_health_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$loadBalancingPoolEnablementAlert extends AaaAlertType {const AaaAlertType$loadBalancingPoolEnablementAlert._();
+
+@override String get value => 'load_balancing_pool_enablement_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$loadBalancingPoolEnablementAlert;
+
+@override int get hashCode => 'load_balancing_pool_enablement_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$logoMatchAlert extends AaaAlertType {const AaaAlertType$logoMatchAlert._();
+
+@override String get value => 'logo_match_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$logoMatchAlert;
+
+@override int get hashCode => 'logo_match_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$magicTunnelHealthCheckEvent extends AaaAlertType {const AaaAlertType$magicTunnelHealthCheckEvent._();
+
+@override String get value => 'magic_tunnel_health_check_event';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$magicTunnelHealthCheckEvent;
+
+@override int get hashCode => 'magic_tunnel_health_check_event'.hashCode;
+
+ }
+@immutable final class AaaAlertType$magicWanTunnelHealth extends AaaAlertType {const AaaAlertType$magicWanTunnelHealth._();
+
+@override String get value => 'magic_wan_tunnel_health';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$magicWanTunnelHealth;
+
+@override int get hashCode => 'magic_wan_tunnel_health'.hashCode;
+
+ }
+@immutable final class AaaAlertType$maintenanceEventNotification extends AaaAlertType {const AaaAlertType$maintenanceEventNotification._();
+
+@override String get value => 'maintenance_event_notification';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$maintenanceEventNotification;
+
+@override int get hashCode => 'maintenance_event_notification'.hashCode;
+
+ }
+@immutable final class AaaAlertType$mtlsCertificateStoreCertificateExpirationType extends AaaAlertType {const AaaAlertType$mtlsCertificateStoreCertificateExpirationType._();
+
+@override String get value => 'mtls_certificate_store_certificate_expiration_type';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$mtlsCertificateStoreCertificateExpirationType;
+
+@override int get hashCode => 'mtls_certificate_store_certificate_expiration_type'.hashCode;
+
+ }
+@immutable final class AaaAlertType$pagesEventAlert extends AaaAlertType {const AaaAlertType$pagesEventAlert._();
+
+@override String get value => 'pages_event_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$pagesEventAlert;
+
+@override int get hashCode => 'pages_event_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$radarNotification extends AaaAlertType {const AaaAlertType$radarNotification._();
+
+@override String get value => 'radar_notification';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$radarNotification;
+
+@override int get hashCode => 'radar_notification'.hashCode;
+
+ }
+@immutable final class AaaAlertType$realOriginMonitoring extends AaaAlertType {const AaaAlertType$realOriginMonitoring._();
+
+@override String get value => 'real_origin_monitoring';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$realOriginMonitoring;
+
+@override int get hashCode => 'real_origin_monitoring'.hashCode;
+
+ }
+@immutable final class AaaAlertType$scriptmonitorAlertNewCodeChangeDetections extends AaaAlertType {const AaaAlertType$scriptmonitorAlertNewCodeChangeDetections._();
+
+@override String get value => 'scriptmonitor_alert_new_code_change_detections';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$scriptmonitorAlertNewCodeChangeDetections;
+
+@override int get hashCode => 'scriptmonitor_alert_new_code_change_detections'.hashCode;
+
+ }
+@immutable final class AaaAlertType$scriptmonitorAlertNewHosts extends AaaAlertType {const AaaAlertType$scriptmonitorAlertNewHosts._();
+
+@override String get value => 'scriptmonitor_alert_new_hosts';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$scriptmonitorAlertNewHosts;
+
+@override int get hashCode => 'scriptmonitor_alert_new_hosts'.hashCode;
+
+ }
+@immutable final class AaaAlertType$scriptmonitorAlertNewMaliciousHosts extends AaaAlertType {const AaaAlertType$scriptmonitorAlertNewMaliciousHosts._();
+
+@override String get value => 'scriptmonitor_alert_new_malicious_hosts';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$scriptmonitorAlertNewMaliciousHosts;
+
+@override int get hashCode => 'scriptmonitor_alert_new_malicious_hosts'.hashCode;
+
+ }
+@immutable final class AaaAlertType$scriptmonitorAlertNewMaliciousScripts extends AaaAlertType {const AaaAlertType$scriptmonitorAlertNewMaliciousScripts._();
+
+@override String get value => 'scriptmonitor_alert_new_malicious_scripts';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$scriptmonitorAlertNewMaliciousScripts;
+
+@override int get hashCode => 'scriptmonitor_alert_new_malicious_scripts'.hashCode;
+
+ }
+@immutable final class AaaAlertType$scriptmonitorAlertNewMaliciousUrl extends AaaAlertType {const AaaAlertType$scriptmonitorAlertNewMaliciousUrl._();
+
+@override String get value => 'scriptmonitor_alert_new_malicious_url';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$scriptmonitorAlertNewMaliciousUrl;
+
+@override int get hashCode => 'scriptmonitor_alert_new_malicious_url'.hashCode;
+
+ }
+@immutable final class AaaAlertType$scriptmonitorAlertNewMaxLengthResourceUrl extends AaaAlertType {const AaaAlertType$scriptmonitorAlertNewMaxLengthResourceUrl._();
+
+@override String get value => 'scriptmonitor_alert_new_max_length_resource_url';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$scriptmonitorAlertNewMaxLengthResourceUrl;
+
+@override int get hashCode => 'scriptmonitor_alert_new_max_length_resource_url'.hashCode;
+
+ }
+@immutable final class AaaAlertType$scriptmonitorAlertNewResources extends AaaAlertType {const AaaAlertType$scriptmonitorAlertNewResources._();
+
+@override String get value => 'scriptmonitor_alert_new_resources';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$scriptmonitorAlertNewResources;
+
+@override int get hashCode => 'scriptmonitor_alert_new_resources'.hashCode;
+
+ }
+@immutable final class AaaAlertType$secondaryDnsAllPrimariesFailing extends AaaAlertType {const AaaAlertType$secondaryDnsAllPrimariesFailing._();
+
+@override String get value => 'secondary_dns_all_primaries_failing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$secondaryDnsAllPrimariesFailing;
+
+@override int get hashCode => 'secondary_dns_all_primaries_failing'.hashCode;
+
+ }
+@immutable final class AaaAlertType$secondaryDnsPrimariesFailing extends AaaAlertType {const AaaAlertType$secondaryDnsPrimariesFailing._();
+
+@override String get value => 'secondary_dns_primaries_failing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$secondaryDnsPrimariesFailing;
+
+@override int get hashCode => 'secondary_dns_primaries_failing'.hashCode;
+
+ }
+@immutable final class AaaAlertType$secondaryDnsWarning extends AaaAlertType {const AaaAlertType$secondaryDnsWarning._();
+
+@override String get value => 'secondary_dns_warning';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$secondaryDnsWarning;
+
+@override int get hashCode => 'secondary_dns_warning'.hashCode;
+
+ }
+@immutable final class AaaAlertType$secondaryDnsZoneSuccessfullyUpdated extends AaaAlertType {const AaaAlertType$secondaryDnsZoneSuccessfullyUpdated._();
+
+@override String get value => 'secondary_dns_zone_successfully_updated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$secondaryDnsZoneSuccessfullyUpdated;
+
+@override int get hashCode => 'secondary_dns_zone_successfully_updated'.hashCode;
+
+ }
+@immutable final class AaaAlertType$secondaryDnsZoneValidationWarning extends AaaAlertType {const AaaAlertType$secondaryDnsZoneValidationWarning._();
+
+@override String get value => 'secondary_dns_zone_validation_warning';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$secondaryDnsZoneValidationWarning;
+
+@override int get hashCode => 'secondary_dns_zone_validation_warning'.hashCode;
+
+ }
+@immutable final class AaaAlertType$securityInsightsAlert extends AaaAlertType {const AaaAlertType$securityInsightsAlert._();
+
+@override String get value => 'security_insights_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$securityInsightsAlert;
+
+@override int get hashCode => 'security_insights_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$sentinelAlert extends AaaAlertType {const AaaAlertType$sentinelAlert._();
+
+@override String get value => 'sentinel_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$sentinelAlert;
+
+@override int get hashCode => 'sentinel_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$streamLiveNotifications extends AaaAlertType {const AaaAlertType$streamLiveNotifications._();
+
+@override String get value => 'stream_live_notifications';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$streamLiveNotifications;
+
+@override int get hashCode => 'stream_live_notifications'.hashCode;
+
+ }
+@immutable final class AaaAlertType$syntheticTestLatencyAlert extends AaaAlertType {const AaaAlertType$syntheticTestLatencyAlert._();
+
+@override String get value => 'synthetic_test_latency_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$syntheticTestLatencyAlert;
+
+@override int get hashCode => 'synthetic_test_latency_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$syntheticTestLowAvailabilityAlert extends AaaAlertType {const AaaAlertType$syntheticTestLowAvailabilityAlert._();
+
+@override String get value => 'synthetic_test_low_availability_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$syntheticTestLowAvailabilityAlert;
+
+@override int get hashCode => 'synthetic_test_low_availability_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$trafficAnomaliesAlert extends AaaAlertType {const AaaAlertType$trafficAnomaliesAlert._();
+
+@override String get value => 'traffic_anomalies_alert';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$trafficAnomaliesAlert;
+
+@override int get hashCode => 'traffic_anomalies_alert'.hashCode;
+
+ }
+@immutable final class AaaAlertType$tunnelHealthEvent extends AaaAlertType {const AaaAlertType$tunnelHealthEvent._();
+
+@override String get value => 'tunnel_health_event';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$tunnelHealthEvent;
+
+@override int get hashCode => 'tunnel_health_event'.hashCode;
+
+ }
+@immutable final class AaaAlertType$tunnelUpdateEvent extends AaaAlertType {const AaaAlertType$tunnelUpdateEvent._();
+
+@override String get value => 'tunnel_update_event';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$tunnelUpdateEvent;
+
+@override int get hashCode => 'tunnel_update_event'.hashCode;
+
+ }
+@immutable final class AaaAlertType$universalSslEventType extends AaaAlertType {const AaaAlertType$universalSslEventType._();
+
+@override String get value => 'universal_ssl_event_type';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$universalSslEventType;
+
+@override int get hashCode => 'universal_ssl_event_type'.hashCode;
+
+ }
+@immutable final class AaaAlertType$webAnalyticsMetricsUpdate extends AaaAlertType {const AaaAlertType$webAnalyticsMetricsUpdate._();
+
+@override String get value => 'web_analytics_metrics_update';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$webAnalyticsMetricsUpdate;
+
+@override int get hashCode => 'web_analytics_metrics_update'.hashCode;
+
+ }
+@immutable final class AaaAlertType$zoneAopCustomCertificateExpirationType extends AaaAlertType {const AaaAlertType$zoneAopCustomCertificateExpirationType._();
+
+@override String get value => 'zone_aop_custom_certificate_expiration_type';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AaaAlertType$zoneAopCustomCertificateExpirationType;
+
+@override int get hashCode => 'zone_aop_custom_certificate_expiration_type'.hashCode;
+
+ }
+@immutable final class AaaAlertType$Unknown extends AaaAlertType {const AaaAlertType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AaaAlertType && other.value == value;
+    other is AaaAlertType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AaaAlertType($value)';
 
  }

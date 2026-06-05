@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostAccountsRequest (inline: Controller > Fees)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FeesPayer {const FeesPayer._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class FeesPayer {const FeesPayer();
 
 factory FeesPayer.fromJson(String json) { return switch (json) {
   'account' => account,
   'application' => application,
-  _ => FeesPayer._(json),
+  _ => FeesPayer$Unknown(json),
 }; }
 
-static const FeesPayer account = FeesPayer._('account');
+static const FeesPayer account = FeesPayer$account._();
 
-static const FeesPayer application = FeesPayer._('application');
+static const FeesPayer application = FeesPayer$application._();
 
 static const List<FeesPayer> values = [account, application];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FeesPayer$Unknown; } 
+@override String toString() => 'FeesPayer($value)';
+
+ }
+@immutable final class FeesPayer$account extends FeesPayer {const FeesPayer$account._();
+
+@override String get value => 'account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FeesPayer$account;
+
+@override int get hashCode => 'account'.hashCode;
+
+ }
+@immutable final class FeesPayer$application extends FeesPayer {const FeesPayer$application._();
+
+@override String get value => 'application';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FeesPayer$application;
+
+@override int get hashCode => 'application'.hashCode;
+
+ }
+@immutable final class FeesPayer$Unknown extends FeesPayer {const FeesPayer$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FeesPayer && other.value == value;
+    other is FeesPayer$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FeesPayer($value)';
 
  }
 @immutable final class Fees {const Fees({this.payer});

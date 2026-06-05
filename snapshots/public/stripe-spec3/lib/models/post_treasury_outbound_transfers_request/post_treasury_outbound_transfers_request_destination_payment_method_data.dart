@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostTreasuryOutboundTransfersRequest (inline: DestinationPaymentMethodData)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationPaymentMethodDataType {const DestinationPaymentMethodDataType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DestinationPaymentMethodDataType {const DestinationPaymentMethodDataType();
 
 factory DestinationPaymentMethodDataType.fromJson(String json) { return switch (json) {
   'financial_account' => financialAccount,
-  _ => DestinationPaymentMethodDataType._(json),
+  _ => DestinationPaymentMethodDataType$Unknown(json),
 }; }
 
-static const DestinationPaymentMethodDataType financialAccount = DestinationPaymentMethodDataType._('financial_account');
+static const DestinationPaymentMethodDataType financialAccount = DestinationPaymentMethodDataType$financialAccount._();
 
 static const List<DestinationPaymentMethodDataType> values = [financialAccount];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DestinationPaymentMethodDataType$Unknown; } 
+@override String toString() => 'DestinationPaymentMethodDataType($value)';
+
+ }
+@immutable final class DestinationPaymentMethodDataType$financialAccount extends DestinationPaymentMethodDataType {const DestinationPaymentMethodDataType$financialAccount._();
+
+@override String get value => 'financial_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DestinationPaymentMethodDataType$financialAccount;
+
+@override int get hashCode => 'financial_account'.hashCode;
+
+ }
+@immutable final class DestinationPaymentMethodDataType$Unknown extends DestinationPaymentMethodDataType {const DestinationPaymentMethodDataType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DestinationPaymentMethodDataType && other.value == value;
+    other is DestinationPaymentMethodDataType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DestinationPaymentMethodDataType($value)';
 
  }
 /// Hash used to generate the PaymentMethod to be used for this OutboundTransfer. Exclusive with `destination_payment_method`.

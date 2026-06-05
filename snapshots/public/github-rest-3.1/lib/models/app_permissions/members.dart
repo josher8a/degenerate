@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AppPermissions (inline: Members)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token for organization teams and members.
-@immutable final class Members {const Members._(this.value);
+sealed class Members {const Members();
 
 factory Members.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
-  _ => Members._(json),
+  _ => Members$Unknown(json),
 }; }
 
-static const Members read = Members._('read');
+static const Members read = Members$read._();
 
-static const Members write = Members._('write');
+static const Members write = Members$write._();
 
 static const List<Members> values = [read, write];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Members$Unknown; } 
+@override String toString() => 'Members($value)';
+
+ }
+@immutable final class Members$read extends Members {const Members$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Members$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class Members$write extends Members {const Members$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Members$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class Members$Unknown extends Members {const Members$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Members && other.value == value;
+    other is Members$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Members($value)';
 
  }

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PcmAudioFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The audio format. Always `audio/pcm`.
-@immutable final class PcmAudioFormatType {const PcmAudioFormatType._(this.value);
+sealed class PcmAudioFormatType {const PcmAudioFormatType();
 
 factory PcmAudioFormatType.fromJson(String json) { return switch (json) {
   'audio/pcm' => audioPcm,
-  _ => PcmAudioFormatType._(json),
+  _ => PcmAudioFormatType$Unknown(json),
 }; }
 
-static const PcmAudioFormatType audioPcm = PcmAudioFormatType._('audio/pcm');
+static const PcmAudioFormatType audioPcm = PcmAudioFormatType$audioPcm._();
 
 static const List<PcmAudioFormatType> values = [audioPcm];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,29 +21,42 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PcmAudioFormatType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PcmAudioFormatType$Unknown; } 
 @override String toString() => 'PcmAudioFormatType($value)';
 
  }
+@immutable final class PcmAudioFormatType$audioPcm extends PcmAudioFormatType {const PcmAudioFormatType$audioPcm._();
+
+@override String get value => 'audio/pcm';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PcmAudioFormatType$audioPcm;
+
+@override int get hashCode => 'audio/pcm'.hashCode;
+
+ }
+@immutable final class PcmAudioFormatType$Unknown extends PcmAudioFormatType {const PcmAudioFormatType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PcmAudioFormatType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The sample rate of the audio. Always `24000`.
-@immutable final class Rate {const Rate._(this.value);
+sealed class Rate {const Rate();
 
 factory Rate.fromJson(int json) { return switch (json) {
   24000 => $24000,
-  _ => Rate._(json),
+  _ => Rate$Unknown(json),
 }; }
 
-static const Rate $24000 = Rate._(24000);
+static const Rate $24000 = Rate$$24000._();
 
 static const List<Rate> values = [$24000];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -52,13 +64,27 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Rate$Unknown; } 
+@override String toString() => 'Rate($value)';
+
+ }
+@immutable final class Rate$$24000 extends Rate {const Rate$$24000._();
+
+@override int get value => 24000;
+
+@override bool operator ==(Object other) => identical(this, other) || other is Rate$$24000;
+
+@override int get hashCode => 24000.hashCode;
+
+ }
+@immutable final class Rate$Unknown extends Rate {const Rate$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Rate && other.value == value;
+    other is Rate$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Rate($value)';
 
  }
 /// The PCM audio format. Only a 24kHz sample rate is supported.

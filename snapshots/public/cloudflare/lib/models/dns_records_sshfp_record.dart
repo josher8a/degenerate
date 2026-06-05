@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DnsRecordsSshfpRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_sshfp_record/dns_records_sshfp_record_data.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';/// Record type.
-@immutable final class DnsRecordsSshfpRecordType {const DnsRecordsSshfpRecordType._(this.value);
+sealed class DnsRecordsSshfpRecordType {const DnsRecordsSshfpRecordType();
 
 factory DnsRecordsSshfpRecordType.fromJson(String json) { return switch (json) {
   'SSHFP' => sshfp,
-  _ => DnsRecordsSshfpRecordType._(json),
+  _ => DnsRecordsSshfpRecordType$Unknown(json),
 }; }
 
-static const DnsRecordsSshfpRecordType sshfp = DnsRecordsSshfpRecordType._('SSHFP');
+static const DnsRecordsSshfpRecordType sshfp = DnsRecordsSshfpRecordType$sshfp._();
 
 static const List<DnsRecordsSshfpRecordType> values = [sshfp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DnsRecordsSshfpRecordType$Unknown; } 
+@override String toString() => 'DnsRecordsSshfpRecordType($value)';
+
+ }
+@immutable final class DnsRecordsSshfpRecordType$sshfp extends DnsRecordsSshfpRecordType {const DnsRecordsSshfpRecordType$sshfp._();
+
+@override String get value => 'SSHFP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsSshfpRecordType$sshfp;
+
+@override int get hashCode => 'SSHFP'.hashCode;
+
+ }
+@immutable final class DnsRecordsSshfpRecordType$Unknown extends DnsRecordsSshfpRecordType {const DnsRecordsSshfpRecordType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsSshfpRecordType && other.value == value;
+    other is DnsRecordsSshfpRecordType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DnsRecordsSshfpRecordType($value)';
 
  }
 @immutable final class DnsRecordsSshfpRecord {const DnsRecordsSshfpRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.data, this.type, });

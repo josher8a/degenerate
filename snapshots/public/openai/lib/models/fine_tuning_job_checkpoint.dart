@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FineTuningJobCheckpoint
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/fine_tuning_job_checkpoint/metrics.dart';/// The object type, which is always "fine_tuning.job.checkpoint".
-@immutable final class FineTuningJobCheckpointObject {const FineTuningJobCheckpointObject._(this.value);
+sealed class FineTuningJobCheckpointObject {const FineTuningJobCheckpointObject();
 
 factory FineTuningJobCheckpointObject.fromJson(String json) { return switch (json) {
   'fine_tuning.job.checkpoint' => fineTuningJobCheckpoint,
-  _ => FineTuningJobCheckpointObject._(json),
+  _ => FineTuningJobCheckpointObject$Unknown(json),
 }; }
 
-static const FineTuningJobCheckpointObject fineTuningJobCheckpoint = FineTuningJobCheckpointObject._('fine_tuning.job.checkpoint');
+static const FineTuningJobCheckpointObject fineTuningJobCheckpoint = FineTuningJobCheckpointObject$fineTuningJobCheckpoint._();
 
 static const List<FineTuningJobCheckpointObject> values = [fineTuningJobCheckpoint];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FineTuningJobCheckpointObject$Unknown; } 
+@override String toString() => 'FineTuningJobCheckpointObject($value)';
+
+ }
+@immutable final class FineTuningJobCheckpointObject$fineTuningJobCheckpoint extends FineTuningJobCheckpointObject {const FineTuningJobCheckpointObject$fineTuningJobCheckpoint._();
+
+@override String get value => 'fine_tuning.job.checkpoint';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FineTuningJobCheckpointObject$fineTuningJobCheckpoint;
+
+@override int get hashCode => 'fine_tuning.job.checkpoint'.hashCode;
+
+ }
+@immutable final class FineTuningJobCheckpointObject$Unknown extends FineTuningJobCheckpointObject {const FineTuningJobCheckpointObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FineTuningJobCheckpointObject && other.value == value;
+    other is FineTuningJobCheckpointObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FineTuningJobCheckpointObject($value)';
 
  }
 /// The `fine_tuning.job.checkpoint` object represents a model checkpoint for a fine-tuning job that is ready to use.

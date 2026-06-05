@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > User > Content > Variant2 > InputAudio)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class InputAudioFormat {const InputAudioFormat._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class InputAudioFormat {const InputAudioFormat();
 
 factory InputAudioFormat.fromJson(String json) { return switch (json) {
   'wav' => wav,
   'mp3' => mp3,
-  _ => InputAudioFormat._(json),
+  _ => InputAudioFormat$Unknown(json),
 }; }
 
-static const InputAudioFormat wav = InputAudioFormat._('wav');
+static const InputAudioFormat wav = InputAudioFormat$wav._();
 
-static const InputAudioFormat mp3 = InputAudioFormat._('mp3');
+static const InputAudioFormat mp3 = InputAudioFormat$mp3._();
 
 static const List<InputAudioFormat> values = [wav, mp3];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is InputAudioFormat$Unknown; } 
+@override String toString() => 'InputAudioFormat($value)';
+
+ }
+@immutable final class InputAudioFormat$wav extends InputAudioFormat {const InputAudioFormat$wav._();
+
+@override String get value => 'wav';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputAudioFormat$wav;
+
+@override int get hashCode => 'wav'.hashCode;
+
+ }
+@immutable final class InputAudioFormat$mp3 extends InputAudioFormat {const InputAudioFormat$mp3._();
+
+@override String get value => 'mp3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputAudioFormat$mp3;
+
+@override int get hashCode => 'mp3'.hashCode;
+
+ }
+@immutable final class InputAudioFormat$Unknown extends InputAudioFormat {const InputAudioFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InputAudioFormat && other.value == value;
+    other is InputAudioFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'InputAudioFormat($value)';
 
  }
 @immutable final class InputAudio {const InputAudio({this.data, this.format, });

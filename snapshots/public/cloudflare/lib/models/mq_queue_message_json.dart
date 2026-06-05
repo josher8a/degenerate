@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MqQueueMessageJson
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class MqQueueMessageJsonContentType {const MqQueueMessageJsonContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class MqQueueMessageJsonContentType {const MqQueueMessageJsonContentType();
 
 factory MqQueueMessageJsonContentType.fromJson(String json) { return switch (json) {
   'json' => $json,
-  _ => MqQueueMessageJsonContentType._(json),
+  _ => MqQueueMessageJsonContentType$Unknown(json),
 }; }
 
-static const MqQueueMessageJsonContentType $json = MqQueueMessageJsonContentType._('json');
+static const MqQueueMessageJsonContentType $json = MqQueueMessageJsonContentType$$json._();
 
 static const List<MqQueueMessageJsonContentType> values = [$json];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MqQueueMessageJsonContentType$Unknown; } 
+@override String toString() => 'MqQueueMessageJsonContentType($value)';
+
+ }
+@immutable final class MqQueueMessageJsonContentType$$json extends MqQueueMessageJsonContentType {const MqQueueMessageJsonContentType$$json._();
+
+@override String get value => 'json';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqQueueMessageJsonContentType$$json;
+
+@override int get hashCode => 'json'.hashCode;
+
+ }
+@immutable final class MqQueueMessageJsonContentType$Unknown extends MqQueueMessageJsonContentType {const MqQueueMessageJsonContentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MqQueueMessageJsonContentType && other.value == value;
+    other is MqQueueMessageJsonContentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MqQueueMessageJsonContentType($value)';
 
  }
 @immutable final class MqQueueMessageJson {const MqQueueMessageJson({this.body, this.contentType, });

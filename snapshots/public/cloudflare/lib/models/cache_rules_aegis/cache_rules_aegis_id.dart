@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CacheRulesAegis (inline: Id)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// ID of the zone setting.
-@immutable final class CacheRulesAegisId {const CacheRulesAegisId._(this.value);
+sealed class CacheRulesAegisId {const CacheRulesAegisId();
 
 factory CacheRulesAegisId.fromJson(String json) { return switch (json) {
   'aegis' => aegis,
-  _ => CacheRulesAegisId._(json),
+  _ => CacheRulesAegisId$Unknown(json),
 }; }
 
-static const CacheRulesAegisId aegis = CacheRulesAegisId._('aegis');
+static const CacheRulesAegisId aegis = CacheRulesAegisId$aegis._();
 
 static const List<CacheRulesAegisId> values = [aegis];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CacheRulesAegisId$Unknown; } 
+@override String toString() => 'CacheRulesAegisId($value)';
+
+ }
+@immutable final class CacheRulesAegisId$aegis extends CacheRulesAegisId {const CacheRulesAegisId$aegis._();
+
+@override String get value => 'aegis';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CacheRulesAegisId$aegis;
+
+@override int get hashCode => 'aegis'.hashCode;
+
+ }
+@immutable final class CacheRulesAegisId$Unknown extends CacheRulesAegisId {const CacheRulesAegisId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CacheRulesAegisId && other.value == value;
+    other is CacheRulesAegisId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CacheRulesAegisId($value)';
 
  }

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/CodeSecurityConfiguration (inline: CodeScanningDefaultSetup)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The enablement status of code scanning default setup
-@immutable final class CodeSecurityConfigurationCodeScanningDefaultSetup {const CodeSecurityConfigurationCodeScanningDefaultSetup._(this.value);
+sealed class CodeSecurityConfigurationCodeScanningDefaultSetup {const CodeSecurityConfigurationCodeScanningDefaultSetup();
 
 factory CodeSecurityConfigurationCodeScanningDefaultSetup.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'not_set' => notSet,
-  _ => CodeSecurityConfigurationCodeScanningDefaultSetup._(json),
+  _ => CodeSecurityConfigurationCodeScanningDefaultSetup$Unknown(json),
 }; }
 
-static const CodeSecurityConfigurationCodeScanningDefaultSetup enabled = CodeSecurityConfigurationCodeScanningDefaultSetup._('enabled');
+static const CodeSecurityConfigurationCodeScanningDefaultSetup enabled = CodeSecurityConfigurationCodeScanningDefaultSetup$enabled._();
 
-static const CodeSecurityConfigurationCodeScanningDefaultSetup disabled = CodeSecurityConfigurationCodeScanningDefaultSetup._('disabled');
+static const CodeSecurityConfigurationCodeScanningDefaultSetup disabled = CodeSecurityConfigurationCodeScanningDefaultSetup$disabled._();
 
-static const CodeSecurityConfigurationCodeScanningDefaultSetup notSet = CodeSecurityConfigurationCodeScanningDefaultSetup._('not_set');
+static const CodeSecurityConfigurationCodeScanningDefaultSetup notSet = CodeSecurityConfigurationCodeScanningDefaultSetup$notSet._();
 
 static const List<CodeSecurityConfigurationCodeScanningDefaultSetup> values = [enabled, disabled, notSet];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeSecurityConfigurationCodeScanningDefaultSetup$Unknown; } 
+@override String toString() => 'CodeSecurityConfigurationCodeScanningDefaultSetup($value)';
+
+ }
+@immutable final class CodeSecurityConfigurationCodeScanningDefaultSetup$enabled extends CodeSecurityConfigurationCodeScanningDefaultSetup {const CodeSecurityConfigurationCodeScanningDefaultSetup$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationCodeScanningDefaultSetup$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationCodeScanningDefaultSetup$disabled extends CodeSecurityConfigurationCodeScanningDefaultSetup {const CodeSecurityConfigurationCodeScanningDefaultSetup$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationCodeScanningDefaultSetup$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationCodeScanningDefaultSetup$notSet extends CodeSecurityConfigurationCodeScanningDefaultSetup {const CodeSecurityConfigurationCodeScanningDefaultSetup$notSet._();
+
+@override String get value => 'not_set';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeSecurityConfigurationCodeScanningDefaultSetup$notSet;
+
+@override int get hashCode => 'not_set'.hashCode;
+
+ }
+@immutable final class CodeSecurityConfigurationCodeScanningDefaultSetup$Unknown extends CodeSecurityConfigurationCodeScanningDefaultSetup {const CodeSecurityConfigurationCodeScanningDefaultSetup$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeSecurityConfigurationCodeScanningDefaultSetup && other.value == value;
+    other is CodeSecurityConfigurationCodeScanningDefaultSetup$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeSecurityConfigurationCodeScanningDefaultSetup($value)';
 
  }

@@ -5,19 +5,18 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// 
 ///   - `"none"` will skip running schema validation entirely for the request
 /// 
-@immutable final class ShieldGlobalSettingsValidationOverrideMitigationAction {const ShieldGlobalSettingsValidationOverrideMitigationAction._(this.value);
+sealed class ShieldGlobalSettingsValidationOverrideMitigationAction {const ShieldGlobalSettingsValidationOverrideMitigationAction();
 
 factory ShieldGlobalSettingsValidationOverrideMitigationAction.fromJson(String json) { return switch (json) {
   'none' => none,
-  _ => ShieldGlobalSettingsValidationOverrideMitigationAction._(json),
+  _ => ShieldGlobalSettingsValidationOverrideMitigationAction$Unknown(json),
 }; }
 
-static const ShieldGlobalSettingsValidationOverrideMitigationAction none = ShieldGlobalSettingsValidationOverrideMitigationAction._('none');
+static const ShieldGlobalSettingsValidationOverrideMitigationAction none = ShieldGlobalSettingsValidationOverrideMitigationAction$none._();
 
 static const List<ShieldGlobalSettingsValidationOverrideMitigationAction> values = [none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShieldGlobalSettingsValidationOverrideMitigationAction$Unknown; } 
+@override String toString() => 'ShieldGlobalSettingsValidationOverrideMitigationAction($value)';
+
+ }
+@immutable final class ShieldGlobalSettingsValidationOverrideMitigationAction$none extends ShieldGlobalSettingsValidationOverrideMitigationAction {const ShieldGlobalSettingsValidationOverrideMitigationAction$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldGlobalSettingsValidationOverrideMitigationAction$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class ShieldGlobalSettingsValidationOverrideMitigationAction$Unknown extends ShieldGlobalSettingsValidationOverrideMitigationAction {const ShieldGlobalSettingsValidationOverrideMitigationAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldGlobalSettingsValidationOverrideMitigationAction && other.value == value;
+    other is ShieldGlobalSettingsValidationOverrideMitigationAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShieldGlobalSettingsValidationOverrideMitigationAction($value)';
 
  }
 @immutable final class ShieldGlobalSettings {const ShieldGlobalSettings({required this.validationDefaultMitigationAction, this.validationOverrideMitigationAction, });

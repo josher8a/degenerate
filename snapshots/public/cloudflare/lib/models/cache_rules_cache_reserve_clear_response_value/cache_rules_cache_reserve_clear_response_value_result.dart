@@ -16,22 +16,21 @@ String toJson() => value.toIso8601String();
 
 }
 /// The current state of the Cache Reserve Clear operation.
-@immutable final class CacheRulesCacheReserveClearState {const CacheRulesCacheReserveClearState._(this.value);
+sealed class CacheRulesCacheReserveClearState {const CacheRulesCacheReserveClearState();
 
 factory CacheRulesCacheReserveClearState.fromJson(String json) { return switch (json) {
   'In-progress' => inProgress,
   'Completed' => completed,
-  _ => CacheRulesCacheReserveClearState._(json),
+  _ => CacheRulesCacheReserveClearState$Unknown(json),
 }; }
 
-static const CacheRulesCacheReserveClearState inProgress = CacheRulesCacheReserveClearState._('In-progress');
+static const CacheRulesCacheReserveClearState inProgress = CacheRulesCacheReserveClearState$inProgress._();
 
-static const CacheRulesCacheReserveClearState completed = CacheRulesCacheReserveClearState._('Completed');
+static const CacheRulesCacheReserveClearState completed = CacheRulesCacheReserveClearState$completed._();
 
 static const List<CacheRulesCacheReserveClearState> values = [inProgress, completed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -40,13 +39,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CacheRulesCacheReserveClearState$Unknown; } 
+@override String toString() => 'CacheRulesCacheReserveClearState($value)';
+
+ }
+@immutable final class CacheRulesCacheReserveClearState$inProgress extends CacheRulesCacheReserveClearState {const CacheRulesCacheReserveClearState$inProgress._();
+
+@override String get value => 'In-progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CacheRulesCacheReserveClearState$inProgress;
+
+@override int get hashCode => 'In-progress'.hashCode;
+
+ }
+@immutable final class CacheRulesCacheReserveClearState$completed extends CacheRulesCacheReserveClearState {const CacheRulesCacheReserveClearState$completed._();
+
+@override String get value => 'Completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CacheRulesCacheReserveClearState$completed;
+
+@override int get hashCode => 'Completed'.hashCode;
+
+ }
+@immutable final class CacheRulesCacheReserveClearState$Unknown extends CacheRulesCacheReserveClearState {const CacheRulesCacheReserveClearState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CacheRulesCacheReserveClearState && other.value == value;
+    other is CacheRulesCacheReserveClearState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CacheRulesCacheReserveClearState($value)';
 
  }
 @immutable final class CacheRulesCacheReserveClearResponseValueResult {const CacheRulesCacheReserveClearResponseValueResult({required this.startTs, required this.state, this.endTs, });

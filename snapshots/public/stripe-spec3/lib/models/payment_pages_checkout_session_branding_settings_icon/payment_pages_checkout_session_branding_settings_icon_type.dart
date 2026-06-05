@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PaymentPagesCheckoutSessionBrandingSettingsIcon (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of image for the icon. Must be one of `file` or `url`.
-@immutable final class PaymentPagesCheckoutSessionBrandingSettingsIconType {const PaymentPagesCheckoutSessionBrandingSettingsIconType._(this.value);
+sealed class PaymentPagesCheckoutSessionBrandingSettingsIconType {const PaymentPagesCheckoutSessionBrandingSettingsIconType();
 
 factory PaymentPagesCheckoutSessionBrandingSettingsIconType.fromJson(String json) { return switch (json) {
   'file' => file,
   'url' => url,
-  _ => PaymentPagesCheckoutSessionBrandingSettingsIconType._(json),
+  _ => PaymentPagesCheckoutSessionBrandingSettingsIconType$Unknown(json),
 }; }
 
-static const PaymentPagesCheckoutSessionBrandingSettingsIconType file = PaymentPagesCheckoutSessionBrandingSettingsIconType._('file');
+static const PaymentPagesCheckoutSessionBrandingSettingsIconType file = PaymentPagesCheckoutSessionBrandingSettingsIconType$file._();
 
-static const PaymentPagesCheckoutSessionBrandingSettingsIconType url = PaymentPagesCheckoutSessionBrandingSettingsIconType._('url');
+static const PaymentPagesCheckoutSessionBrandingSettingsIconType url = PaymentPagesCheckoutSessionBrandingSettingsIconType$url._();
 
 static const List<PaymentPagesCheckoutSessionBrandingSettingsIconType> values = [file, url];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentPagesCheckoutSessionBrandingSettingsIconType$Unknown; } 
+@override String toString() => 'PaymentPagesCheckoutSessionBrandingSettingsIconType($value)';
+
+ }
+@immutable final class PaymentPagesCheckoutSessionBrandingSettingsIconType$file extends PaymentPagesCheckoutSessionBrandingSettingsIconType {const PaymentPagesCheckoutSessionBrandingSettingsIconType$file._();
+
+@override String get value => 'file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentPagesCheckoutSessionBrandingSettingsIconType$file;
+
+@override int get hashCode => 'file'.hashCode;
+
+ }
+@immutable final class PaymentPagesCheckoutSessionBrandingSettingsIconType$url extends PaymentPagesCheckoutSessionBrandingSettingsIconType {const PaymentPagesCheckoutSessionBrandingSettingsIconType$url._();
+
+@override String get value => 'url';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentPagesCheckoutSessionBrandingSettingsIconType$url;
+
+@override int get hashCode => 'url'.hashCode;
+
+ }
+@immutable final class PaymentPagesCheckoutSessionBrandingSettingsIconType$Unknown extends PaymentPagesCheckoutSessionBrandingSettingsIconType {const PaymentPagesCheckoutSessionBrandingSettingsIconType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentPagesCheckoutSessionBrandingSettingsIconType && other.value == value;
+    other is PaymentPagesCheckoutSessionBrandingSettingsIconType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentPagesCheckoutSessionBrandingSettingsIconType($value)';
 
  }

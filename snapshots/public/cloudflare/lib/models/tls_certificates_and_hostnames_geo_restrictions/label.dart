@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TlsCertificatesAndHostnamesGeoRestrictions (inline: Label)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Label {const Label._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Label {const Label();
 
 factory Label.fromJson(String json) { return switch (json) {
   'us' => us,
   'eu' => eu,
   'highest_security' => highestSecurity,
-  _ => Label._(json),
+  _ => Label$Unknown(json),
 }; }
 
-static const Label us = Label._('us');
+static const Label us = Label$us._();
 
-static const Label eu = Label._('eu');
+static const Label eu = Label$eu._();
 
-static const Label highestSecurity = Label._('highest_security');
+static const Label highestSecurity = Label$highestSecurity._();
 
 static const List<Label> values = [us, eu, highestSecurity];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Label$Unknown; } 
+@override String toString() => 'Label($value)';
+
+ }
+@immutable final class Label$us extends Label {const Label$us._();
+
+@override String get value => 'us';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Label$us;
+
+@override int get hashCode => 'us'.hashCode;
+
+ }
+@immutable final class Label$eu extends Label {const Label$eu._();
+
+@override String get value => 'eu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Label$eu;
+
+@override int get hashCode => 'eu'.hashCode;
+
+ }
+@immutable final class Label$highestSecurity extends Label {const Label$highestSecurity._();
+
+@override String get value => 'highest_security';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Label$highestSecurity;
+
+@override int get hashCode => 'highest_security'.hashCode;
+
+ }
+@immutable final class Label$Unknown extends Label {const Label$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Label && other.value == value;
+    other is Label$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Label($value)';
 
  }

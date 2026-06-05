@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/InputRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_request/input_request_locations.dart';import 'package:pub_cloudflare/models/input_request/input_request_operating_system.dart';@immutable final class TeamsDevicesExtendedKeyUsageEnum {const TeamsDevicesExtendedKeyUsageEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/input_request/input_request_locations.dart';import 'package:pub_cloudflare/models/input_request/input_request_operating_system.dart';sealed class TeamsDevicesExtendedKeyUsageEnum {const TeamsDevicesExtendedKeyUsageEnum();
 
 factory TeamsDevicesExtendedKeyUsageEnum.fromJson(String json) { return switch (json) {
   'clientAuth' => clientAuth,
   'emailProtection' => emailProtection,
-  _ => TeamsDevicesExtendedKeyUsageEnum._(json),
+  _ => TeamsDevicesExtendedKeyUsageEnum$Unknown(json),
 }; }
 
-static const TeamsDevicesExtendedKeyUsageEnum clientAuth = TeamsDevicesExtendedKeyUsageEnum._('clientAuth');
+static const TeamsDevicesExtendedKeyUsageEnum clientAuth = TeamsDevicesExtendedKeyUsageEnum$clientAuth._();
 
-static const TeamsDevicesExtendedKeyUsageEnum emailProtection = TeamsDevicesExtendedKeyUsageEnum._('emailProtection');
+static const TeamsDevicesExtendedKeyUsageEnum emailProtection = TeamsDevicesExtendedKeyUsageEnum$emailProtection._();
 
 static const List<TeamsDevicesExtendedKeyUsageEnum> values = [clientAuth, emailProtection];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TeamsDevicesExtendedKeyUsageEnum$Unknown; } 
+@override String toString() => 'TeamsDevicesExtendedKeyUsageEnum($value)';
+
+ }
+@immutable final class TeamsDevicesExtendedKeyUsageEnum$clientAuth extends TeamsDevicesExtendedKeyUsageEnum {const TeamsDevicesExtendedKeyUsageEnum$clientAuth._();
+
+@override String get value => 'clientAuth';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesExtendedKeyUsageEnum$clientAuth;
+
+@override int get hashCode => 'clientAuth'.hashCode;
+
+ }
+@immutable final class TeamsDevicesExtendedKeyUsageEnum$emailProtection extends TeamsDevicesExtendedKeyUsageEnum {const TeamsDevicesExtendedKeyUsageEnum$emailProtection._();
+
+@override String get value => 'emailProtection';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesExtendedKeyUsageEnum$emailProtection;
+
+@override int get hashCode => 'emailProtection'.hashCode;
+
+ }
+@immutable final class TeamsDevicesExtendedKeyUsageEnum$Unknown extends TeamsDevicesExtendedKeyUsageEnum {const TeamsDevicesExtendedKeyUsageEnum$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TeamsDevicesExtendedKeyUsageEnum && other.value == value;
+    other is TeamsDevicesExtendedKeyUsageEnum$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TeamsDevicesExtendedKeyUsageEnum($value)';
 
  }
 @immutable final class InputRequest {const InputRequest({required this.certificateId, required this.checkPrivateKey, required this.operatingSystem, this.cn, this.extendedKeyUsage, this.locations, this.subjectAlternativeNames, });

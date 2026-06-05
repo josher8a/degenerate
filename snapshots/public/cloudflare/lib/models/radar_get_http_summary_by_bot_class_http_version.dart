@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpSummaryByBotClassHttpVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByBotClassHttpVersion {const RadarGetHttpSummaryByBotClassHttpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpSummaryByBotClassHttpVersion {const RadarGetHttpSummaryByBotClassHttpVersion();
 
 factory RadarGetHttpSummaryByBotClassHttpVersion.fromJson(String json) { return switch (json) {
   'HTTPv1' => httPv1,
   'HTTPv2' => httPv2,
   'HTTPv3' => httPv3,
-  _ => RadarGetHttpSummaryByBotClassHttpVersion._(json),
+  _ => RadarGetHttpSummaryByBotClassHttpVersion$Unknown(json),
 }; }
 
-static const RadarGetHttpSummaryByBotClassHttpVersion httPv1 = RadarGetHttpSummaryByBotClassHttpVersion._('HTTPv1');
+static const RadarGetHttpSummaryByBotClassHttpVersion httPv1 = RadarGetHttpSummaryByBotClassHttpVersion$httPv1._();
 
-static const RadarGetHttpSummaryByBotClassHttpVersion httPv2 = RadarGetHttpSummaryByBotClassHttpVersion._('HTTPv2');
+static const RadarGetHttpSummaryByBotClassHttpVersion httPv2 = RadarGetHttpSummaryByBotClassHttpVersion$httPv2._();
 
-static const RadarGetHttpSummaryByBotClassHttpVersion httPv3 = RadarGetHttpSummaryByBotClassHttpVersion._('HTTPv3');
+static const RadarGetHttpSummaryByBotClassHttpVersion httPv3 = RadarGetHttpSummaryByBotClassHttpVersion$httPv3._();
 
 static const List<RadarGetHttpSummaryByBotClassHttpVersion> values = [httPv1, httPv2, httPv3];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpSummaryByBotClassHttpVersion$Unknown; } 
+@override String toString() => 'RadarGetHttpSummaryByBotClassHttpVersion($value)';
+
+ }
+@immutable final class RadarGetHttpSummaryByBotClassHttpVersion$httPv1 extends RadarGetHttpSummaryByBotClassHttpVersion {const RadarGetHttpSummaryByBotClassHttpVersion$httPv1._();
+
+@override String get value => 'HTTPv1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByBotClassHttpVersion$httPv1;
+
+@override int get hashCode => 'HTTPv1'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByBotClassHttpVersion$httPv2 extends RadarGetHttpSummaryByBotClassHttpVersion {const RadarGetHttpSummaryByBotClassHttpVersion$httPv2._();
+
+@override String get value => 'HTTPv2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByBotClassHttpVersion$httPv2;
+
+@override int get hashCode => 'HTTPv2'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByBotClassHttpVersion$httPv3 extends RadarGetHttpSummaryByBotClassHttpVersion {const RadarGetHttpSummaryByBotClassHttpVersion$httPv3._();
+
+@override String get value => 'HTTPv3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByBotClassHttpVersion$httPv3;
+
+@override int get hashCode => 'HTTPv3'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByBotClassHttpVersion$Unknown extends RadarGetHttpSummaryByBotClassHttpVersion {const RadarGetHttpSummaryByBotClassHttpVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpSummaryByBotClassHttpVersion && other.value == value;
+    other is RadarGetHttpSummaryByBotClassHttpVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpSummaryByBotClassHttpVersion($value)';
 
  }

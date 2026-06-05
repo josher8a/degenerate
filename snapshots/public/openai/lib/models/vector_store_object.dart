@@ -2,19 +2,18 @@
 // Source: #/components/schemas/VectorStoreObject
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/vector_store_expiration_after.dart';import 'package:pub_openai/models/vector_store_file_batch_object/file_counts.dart';/// The object type, which is always `vector_store`.
-@immutable final class VectorStoreObjectObject {const VectorStoreObjectObject._(this.value);
+sealed class VectorStoreObjectObject {const VectorStoreObjectObject();
 
 factory VectorStoreObjectObject.fromJson(String json) { return switch (json) {
   'vector_store' => vectorStore,
-  _ => VectorStoreObjectObject._(json),
+  _ => VectorStoreObjectObject$Unknown(json),
 }; }
 
-static const VectorStoreObjectObject vectorStore = VectorStoreObjectObject._('vector_store');
+static const VectorStoreObjectObject vectorStore = VectorStoreObjectObject$vectorStore._();
 
 static const List<VectorStoreObjectObject> values = [vectorStore];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,35 +21,48 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is VectorStoreObjectObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is VectorStoreObjectObject$Unknown; } 
 @override String toString() => 'VectorStoreObjectObject($value)';
 
  }
+@immutable final class VectorStoreObjectObject$vectorStore extends VectorStoreObjectObject {const VectorStoreObjectObject$vectorStore._();
+
+@override String get value => 'vector_store';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorStoreObjectObject$vectorStore;
+
+@override int get hashCode => 'vector_store'.hashCode;
+
+ }
+@immutable final class VectorStoreObjectObject$Unknown extends VectorStoreObjectObject {const VectorStoreObjectObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is VectorStoreObjectObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
-@immutable final class VectorStoreObjectStatus {const VectorStoreObjectStatus._(this.value);
+sealed class VectorStoreObjectStatus {const VectorStoreObjectStatus();
 
 factory VectorStoreObjectStatus.fromJson(String json) { return switch (json) {
   'expired' => expired,
   'in_progress' => inProgress,
   'completed' => completed,
-  _ => VectorStoreObjectStatus._(json),
+  _ => VectorStoreObjectStatus$Unknown(json),
 }; }
 
-static const VectorStoreObjectStatus expired = VectorStoreObjectStatus._('expired');
+static const VectorStoreObjectStatus expired = VectorStoreObjectStatus$expired._();
 
-static const VectorStoreObjectStatus inProgress = VectorStoreObjectStatus._('in_progress');
+static const VectorStoreObjectStatus inProgress = VectorStoreObjectStatus$inProgress._();
 
-static const VectorStoreObjectStatus completed = VectorStoreObjectStatus._('completed');
+static const VectorStoreObjectStatus completed = VectorStoreObjectStatus$completed._();
 
 static const List<VectorStoreObjectStatus> values = [expired, inProgress, completed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,13 +72,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is VectorStoreObjectStatus$Unknown; } 
+@override String toString() => 'VectorStoreObjectStatus($value)';
+
+ }
+@immutable final class VectorStoreObjectStatus$expired extends VectorStoreObjectStatus {const VectorStoreObjectStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorStoreObjectStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class VectorStoreObjectStatus$inProgress extends VectorStoreObjectStatus {const VectorStoreObjectStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorStoreObjectStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class VectorStoreObjectStatus$completed extends VectorStoreObjectStatus {const VectorStoreObjectStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VectorStoreObjectStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class VectorStoreObjectStatus$Unknown extends VectorStoreObjectStatus {const VectorStoreObjectStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is VectorStoreObjectStatus && other.value == value;
+    other is VectorStoreObjectStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'VectorStoreObjectStatus($value)';
 
  }
 /// A vector store is a collection of processed files can be used by the `file_search` tool.

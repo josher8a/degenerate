@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostInvoicesCreatePreviewRequest (inline: ScheduleDetails)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_billing_mode.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_request/post_subscription_schedules_schedule_request_phases.dart';@immutable final class ScheduleDetailsEndBehavior {const ScheduleDetailsEndBehavior._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/delete_subscription_items_item_request/delete_subscription_items_item_request_proration_behavior.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_billing_mode.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_schedule_request/post_subscription_schedules_schedule_request_phases.dart';sealed class ScheduleDetailsEndBehavior {const ScheduleDetailsEndBehavior();
 
 factory ScheduleDetailsEndBehavior.fromJson(String json) { return switch (json) {
   'cancel' => cancel,
   'release' => release,
-  _ => ScheduleDetailsEndBehavior._(json),
+  _ => ScheduleDetailsEndBehavior$Unknown(json),
 }; }
 
-static const ScheduleDetailsEndBehavior cancel = ScheduleDetailsEndBehavior._('cancel');
+static const ScheduleDetailsEndBehavior cancel = ScheduleDetailsEndBehavior$cancel._();
 
-static const ScheduleDetailsEndBehavior release = ScheduleDetailsEndBehavior._('release');
+static const ScheduleDetailsEndBehavior release = ScheduleDetailsEndBehavior$release._();
 
 static const List<ScheduleDetailsEndBehavior> values = [cancel, release];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ScheduleDetailsEndBehavior$Unknown; } 
+@override String toString() => 'ScheduleDetailsEndBehavior($value)';
+
+ }
+@immutable final class ScheduleDetailsEndBehavior$cancel extends ScheduleDetailsEndBehavior {const ScheduleDetailsEndBehavior$cancel._();
+
+@override String get value => 'cancel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScheduleDetailsEndBehavior$cancel;
+
+@override int get hashCode => 'cancel'.hashCode;
+
+ }
+@immutable final class ScheduleDetailsEndBehavior$release extends ScheduleDetailsEndBehavior {const ScheduleDetailsEndBehavior$release._();
+
+@override String get value => 'release';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ScheduleDetailsEndBehavior$release;
+
+@override int get hashCode => 'release'.hashCode;
+
+ }
+@immutable final class ScheduleDetailsEndBehavior$Unknown extends ScheduleDetailsEndBehavior {const ScheduleDetailsEndBehavior$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ScheduleDetailsEndBehavior && other.value == value;
+    other is ScheduleDetailsEndBehavior$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ScheduleDetailsEndBehavior($value)';
 
  }
 /// The schedule creation or modification params to apply as a preview. Cannot be used with `subscription` or `subscription_` prefixed fields.

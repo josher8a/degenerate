@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ProjectGroup
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `project.group`.
-@immutable final class ProjectGroupObject {const ProjectGroupObject._(this.value);
+sealed class ProjectGroupObject {const ProjectGroupObject();
 
 factory ProjectGroupObject.fromJson(String json) { return switch (json) {
   'project.group' => projectGroup,
-  _ => ProjectGroupObject._(json),
+  _ => ProjectGroupObject$Unknown(json),
 }; }
 
-static const ProjectGroupObject projectGroup = ProjectGroupObject._('project.group');
+static const ProjectGroupObject projectGroup = ProjectGroupObject$projectGroup._();
 
 static const List<ProjectGroupObject> values = [projectGroup];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ProjectGroupObject$Unknown; } 
+@override String toString() => 'ProjectGroupObject($value)';
+
+ }
+@immutable final class ProjectGroupObject$projectGroup extends ProjectGroupObject {const ProjectGroupObject$projectGroup._();
+
+@override String get value => 'project.group';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ProjectGroupObject$projectGroup;
+
+@override int get hashCode => 'project.group'.hashCode;
+
+ }
+@immutable final class ProjectGroupObject$Unknown extends ProjectGroupObject {const ProjectGroupObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ProjectGroupObject && other.value == value;
+    other is ProjectGroupObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ProjectGroupObject($value)';
 
  }
 /// Details about a group's membership in a project.

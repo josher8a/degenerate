@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventInputAudioBufferCleared
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `input_audio_buffer.cleared`.
-@immutable final class RealtimeBetaServerEventInputAudioBufferClearedType {const RealtimeBetaServerEventInputAudioBufferClearedType._(this.value);
+sealed class RealtimeBetaServerEventInputAudioBufferClearedType {const RealtimeBetaServerEventInputAudioBufferClearedType();
 
 factory RealtimeBetaServerEventInputAudioBufferClearedType.fromJson(String json) { return switch (json) {
   'input_audio_buffer.cleared' => inputAudioBufferCleared,
-  _ => RealtimeBetaServerEventInputAudioBufferClearedType._(json),
+  _ => RealtimeBetaServerEventInputAudioBufferClearedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventInputAudioBufferClearedType inputAudioBufferCleared = RealtimeBetaServerEventInputAudioBufferClearedType._('input_audio_buffer.cleared');
+static const RealtimeBetaServerEventInputAudioBufferClearedType inputAudioBufferCleared = RealtimeBetaServerEventInputAudioBufferClearedType$inputAudioBufferCleared._();
 
 static const List<RealtimeBetaServerEventInputAudioBufferClearedType> values = [inputAudioBufferCleared];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventInputAudioBufferClearedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventInputAudioBufferClearedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventInputAudioBufferClearedType$inputAudioBufferCleared extends RealtimeBetaServerEventInputAudioBufferClearedType {const RealtimeBetaServerEventInputAudioBufferClearedType$inputAudioBufferCleared._();
+
+@override String get value => 'input_audio_buffer.cleared';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventInputAudioBufferClearedType$inputAudioBufferCleared;
+
+@override int get hashCode => 'input_audio_buffer.cleared'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventInputAudioBufferClearedType$Unknown extends RealtimeBetaServerEventInputAudioBufferClearedType {const RealtimeBetaServerEventInputAudioBufferClearedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventInputAudioBufferClearedType && other.value == value;
+    other is RealtimeBetaServerEventInputAudioBufferClearedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventInputAudioBufferClearedType($value)';
 
  }
 /// Returned when the input audio buffer is cleared by the client with a

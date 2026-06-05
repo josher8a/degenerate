@@ -2,7 +2,7 @@
 // Source: #/components/schemas/MandatePayto
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/invoice_mandate_options_payto/invoice_mandate_options_payto_purpose.dart';import 'package:pub_stripe_spec3/models/mandate_payto/mandate_payto_amount_type.dart';/// The periodicity at which payments will be collected. Defaults to `adhoc`.
-@immutable final class MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule._(this.value);
+sealed class MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule();
 
 factory MandatePaytoPaymentSchedule.fromJson(String json) { return switch (json) {
   'adhoc' => adhoc,
@@ -13,29 +13,28 @@ factory MandatePaytoPaymentSchedule.fromJson(String json) { return switch (json)
   'quarterly' => quarterly,
   'semi_annual' => semiAnnual,
   'weekly' => weekly,
-  _ => MandatePaytoPaymentSchedule._(json),
+  _ => MandatePaytoPaymentSchedule$Unknown(json),
 }; }
 
-static const MandatePaytoPaymentSchedule adhoc = MandatePaytoPaymentSchedule._('adhoc');
+static const MandatePaytoPaymentSchedule adhoc = MandatePaytoPaymentSchedule$adhoc._();
 
-static const MandatePaytoPaymentSchedule annual = MandatePaytoPaymentSchedule._('annual');
+static const MandatePaytoPaymentSchedule annual = MandatePaytoPaymentSchedule$annual._();
 
-static const MandatePaytoPaymentSchedule daily = MandatePaytoPaymentSchedule._('daily');
+static const MandatePaytoPaymentSchedule daily = MandatePaytoPaymentSchedule$daily._();
 
-static const MandatePaytoPaymentSchedule fortnightly = MandatePaytoPaymentSchedule._('fortnightly');
+static const MandatePaytoPaymentSchedule fortnightly = MandatePaytoPaymentSchedule$fortnightly._();
 
-static const MandatePaytoPaymentSchedule monthly = MandatePaytoPaymentSchedule._('monthly');
+static const MandatePaytoPaymentSchedule monthly = MandatePaytoPaymentSchedule$monthly._();
 
-static const MandatePaytoPaymentSchedule quarterly = MandatePaytoPaymentSchedule._('quarterly');
+static const MandatePaytoPaymentSchedule quarterly = MandatePaytoPaymentSchedule$quarterly._();
 
-static const MandatePaytoPaymentSchedule semiAnnual = MandatePaytoPaymentSchedule._('semi_annual');
+static const MandatePaytoPaymentSchedule semiAnnual = MandatePaytoPaymentSchedule$semiAnnual._();
 
-static const MandatePaytoPaymentSchedule weekly = MandatePaytoPaymentSchedule._('weekly');
+static const MandatePaytoPaymentSchedule weekly = MandatePaytoPaymentSchedule$weekly._();
 
 static const List<MandatePaytoPaymentSchedule> values = [adhoc, annual, daily, fortnightly, monthly, quarterly, semiAnnual, weekly];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -50,13 +49,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MandatePaytoPaymentSchedule$Unknown; } 
+@override String toString() => 'MandatePaytoPaymentSchedule($value)';
+
+ }
+@immutable final class MandatePaytoPaymentSchedule$adhoc extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$adhoc._();
+
+@override String get value => 'adhoc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandatePaytoPaymentSchedule$adhoc;
+
+@override int get hashCode => 'adhoc'.hashCode;
+
+ }
+@immutable final class MandatePaytoPaymentSchedule$annual extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$annual._();
+
+@override String get value => 'annual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandatePaytoPaymentSchedule$annual;
+
+@override int get hashCode => 'annual'.hashCode;
+
+ }
+@immutable final class MandatePaytoPaymentSchedule$daily extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$daily._();
+
+@override String get value => 'daily';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandatePaytoPaymentSchedule$daily;
+
+@override int get hashCode => 'daily'.hashCode;
+
+ }
+@immutable final class MandatePaytoPaymentSchedule$fortnightly extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$fortnightly._();
+
+@override String get value => 'fortnightly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandatePaytoPaymentSchedule$fortnightly;
+
+@override int get hashCode => 'fortnightly'.hashCode;
+
+ }
+@immutable final class MandatePaytoPaymentSchedule$monthly extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$monthly._();
+
+@override String get value => 'monthly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandatePaytoPaymentSchedule$monthly;
+
+@override int get hashCode => 'monthly'.hashCode;
+
+ }
+@immutable final class MandatePaytoPaymentSchedule$quarterly extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$quarterly._();
+
+@override String get value => 'quarterly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandatePaytoPaymentSchedule$quarterly;
+
+@override int get hashCode => 'quarterly'.hashCode;
+
+ }
+@immutable final class MandatePaytoPaymentSchedule$semiAnnual extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$semiAnnual._();
+
+@override String get value => 'semi_annual';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandatePaytoPaymentSchedule$semiAnnual;
+
+@override int get hashCode => 'semi_annual'.hashCode;
+
+ }
+@immutable final class MandatePaytoPaymentSchedule$weekly extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$weekly._();
+
+@override String get value => 'weekly';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MandatePaytoPaymentSchedule$weekly;
+
+@override int get hashCode => 'weekly'.hashCode;
+
+ }
+@immutable final class MandatePaytoPaymentSchedule$Unknown extends MandatePaytoPaymentSchedule {const MandatePaytoPaymentSchedule$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MandatePaytoPaymentSchedule && other.value == value;
+    other is MandatePaytoPaymentSchedule$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MandatePaytoPaymentSchedule($value)';
 
  }
 /// 

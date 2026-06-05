@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `eval.run.failed`.
 /// 
-@immutable final class WebhookEvalRunFailedType {const WebhookEvalRunFailedType._(this.value);
+sealed class WebhookEvalRunFailedType {const WebhookEvalRunFailedType();
 
 factory WebhookEvalRunFailedType.fromJson(String json) { return switch (json) {
   'eval.run.failed' => evalRunFailed,
-  _ => WebhookEvalRunFailedType._(json),
+  _ => WebhookEvalRunFailedType$Unknown(json),
 }; }
 
-static const WebhookEvalRunFailedType evalRunFailed = WebhookEvalRunFailedType._('eval.run.failed');
+static const WebhookEvalRunFailedType evalRunFailed = WebhookEvalRunFailedType$evalRunFailed._();
 
 static const List<WebhookEvalRunFailedType> values = [evalRunFailed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookEvalRunFailedType$Unknown; } 
+@override String toString() => 'WebhookEvalRunFailedType($value)';
+
+ }
+@immutable final class WebhookEvalRunFailedType$evalRunFailed extends WebhookEvalRunFailedType {const WebhookEvalRunFailedType$evalRunFailed._();
+
+@override String get value => 'eval.run.failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookEvalRunFailedType$evalRunFailed;
+
+@override int get hashCode => 'eval.run.failed'.hashCode;
+
+ }
+@immutable final class WebhookEvalRunFailedType$Unknown extends WebhookEvalRunFailedType {const WebhookEvalRunFailedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookEvalRunFailedType && other.value == value;
+    other is WebhookEvalRunFailedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookEvalRunFailedType($value)';
 
  }
 /// Sent when an eval run has failed.

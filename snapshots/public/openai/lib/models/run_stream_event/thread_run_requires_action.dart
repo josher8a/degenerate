@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStreamEvent (inline: ThreadRunRequiresAction)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';@immutable final class ThreadRunRequiresActionEvent {const ThreadRunRequiresActionEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';sealed class ThreadRunRequiresActionEvent {const ThreadRunRequiresActionEvent();
 
 factory ThreadRunRequiresActionEvent.fromJson(String json) { return switch (json) {
   'thread.run.requires_action' => threadRunRequiresAction,
-  _ => ThreadRunRequiresActionEvent._(json),
+  _ => ThreadRunRequiresActionEvent$Unknown(json),
 }; }
 
-static const ThreadRunRequiresActionEvent threadRunRequiresAction = ThreadRunRequiresActionEvent._('thread.run.requires_action');
+static const ThreadRunRequiresActionEvent threadRunRequiresAction = ThreadRunRequiresActionEvent$threadRunRequiresAction._();
 
 static const List<ThreadRunRequiresActionEvent> values = [threadRunRequiresAction];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunRequiresActionEvent$Unknown; } 
+@override String toString() => 'ThreadRunRequiresActionEvent($value)';
+
+ }
+@immutable final class ThreadRunRequiresActionEvent$threadRunRequiresAction extends ThreadRunRequiresActionEvent {const ThreadRunRequiresActionEvent$threadRunRequiresAction._();
+
+@override String get value => 'thread.run.requires_action';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunRequiresActionEvent$threadRunRequiresAction;
+
+@override int get hashCode => 'thread.run.requires_action'.hashCode;
+
+ }
+@immutable final class ThreadRunRequiresActionEvent$Unknown extends ThreadRunRequiresActionEvent {const ThreadRunRequiresActionEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunRequiresActionEvent && other.value == value;
+    other is ThreadRunRequiresActionEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunRequiresActionEvent($value)';
 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.

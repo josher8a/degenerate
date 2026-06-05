@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DestinationCreateResponse (inline: Messages)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DestinationCreateResponseMessagesMessage {const DestinationCreateResponseMessagesMessage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DestinationCreateResponseMessagesMessage {const DestinationCreateResponseMessagesMessage();
 
 factory DestinationCreateResponseMessagesMessage.fromJson(String json) { return switch (json) {
   'Resource created' => resourceCreated,
-  _ => DestinationCreateResponseMessagesMessage._(json),
+  _ => DestinationCreateResponseMessagesMessage$Unknown(json),
 }; }
 
-static const DestinationCreateResponseMessagesMessage resourceCreated = DestinationCreateResponseMessagesMessage._('Resource created');
+static const DestinationCreateResponseMessagesMessage resourceCreated = DestinationCreateResponseMessagesMessage$resourceCreated._();
 
 static const List<DestinationCreateResponseMessagesMessage> values = [resourceCreated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DestinationCreateResponseMessagesMessage$Unknown; } 
+@override String toString() => 'DestinationCreateResponseMessagesMessage($value)';
+
+ }
+@immutable final class DestinationCreateResponseMessagesMessage$resourceCreated extends DestinationCreateResponseMessagesMessage {const DestinationCreateResponseMessagesMessage$resourceCreated._();
+
+@override String get value => 'Resource created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DestinationCreateResponseMessagesMessage$resourceCreated;
+
+@override int get hashCode => 'Resource created'.hashCode;
+
+ }
+@immutable final class DestinationCreateResponseMessagesMessage$Unknown extends DestinationCreateResponseMessagesMessage {const DestinationCreateResponseMessagesMessage$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DestinationCreateResponseMessagesMessage && other.value == value;
+    other is DestinationCreateResponseMessagesMessage$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DestinationCreateResponseMessagesMessage($value)';
 
  }
 @immutable final class DestinationCreateResponseMessages {const DestinationCreateResponseMessages({required this.message});

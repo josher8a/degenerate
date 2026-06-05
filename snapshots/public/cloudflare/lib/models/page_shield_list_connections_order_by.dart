@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PageShieldListConnectionsOrderBy
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The field used to sort returned connections.
-@immutable final class PageShieldListConnectionsOrderBy {const PageShieldListConnectionsOrderBy._(this.value);
+sealed class PageShieldListConnectionsOrderBy {const PageShieldListConnectionsOrderBy();
 
 factory PageShieldListConnectionsOrderBy.fromJson(String json) { return switch (json) {
   'first_seen_at' => firstSeenAt,
   'last_seen_at' => lastSeenAt,
-  _ => PageShieldListConnectionsOrderBy._(json),
+  _ => PageShieldListConnectionsOrderBy$Unknown(json),
 }; }
 
-static const PageShieldListConnectionsOrderBy firstSeenAt = PageShieldListConnectionsOrderBy._('first_seen_at');
+static const PageShieldListConnectionsOrderBy firstSeenAt = PageShieldListConnectionsOrderBy$firstSeenAt._();
 
-static const PageShieldListConnectionsOrderBy lastSeenAt = PageShieldListConnectionsOrderBy._('last_seen_at');
+static const PageShieldListConnectionsOrderBy lastSeenAt = PageShieldListConnectionsOrderBy$lastSeenAt._();
 
 static const List<PageShieldListConnectionsOrderBy> values = [firstSeenAt, lastSeenAt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PageShieldListConnectionsOrderBy$Unknown; } 
+@override String toString() => 'PageShieldListConnectionsOrderBy($value)';
+
+ }
+@immutable final class PageShieldListConnectionsOrderBy$firstSeenAt extends PageShieldListConnectionsOrderBy {const PageShieldListConnectionsOrderBy$firstSeenAt._();
+
+@override String get value => 'first_seen_at';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageShieldListConnectionsOrderBy$firstSeenAt;
+
+@override int get hashCode => 'first_seen_at'.hashCode;
+
+ }
+@immutable final class PageShieldListConnectionsOrderBy$lastSeenAt extends PageShieldListConnectionsOrderBy {const PageShieldListConnectionsOrderBy$lastSeenAt._();
+
+@override String get value => 'last_seen_at';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageShieldListConnectionsOrderBy$lastSeenAt;
+
+@override int get hashCode => 'last_seen_at'.hashCode;
+
+ }
+@immutable final class PageShieldListConnectionsOrderBy$Unknown extends PageShieldListConnectionsOrderBy {const PageShieldListConnectionsOrderBy$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PageShieldListConnectionsOrderBy && other.value == value;
+    other is PageShieldListConnectionsOrderBy$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PageShieldListConnectionsOrderBy($value)';
 
  }

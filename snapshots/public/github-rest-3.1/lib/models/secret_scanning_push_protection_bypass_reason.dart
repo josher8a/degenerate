@@ -2,25 +2,24 @@
 // Source: #/components/schemas/SecretScanningPushProtectionBypassReason
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason for bypassing push protection.
-@immutable final class SecretScanningPushProtectionBypassReason {const SecretScanningPushProtectionBypassReason._(this.value);
+sealed class SecretScanningPushProtectionBypassReason {const SecretScanningPushProtectionBypassReason();
 
 factory SecretScanningPushProtectionBypassReason.fromJson(String json) { return switch (json) {
   'false_positive' => falsePositive,
   'used_in_tests' => usedInTests,
   'will_fix_later' => willFixLater,
-  _ => SecretScanningPushProtectionBypassReason._(json),
+  _ => SecretScanningPushProtectionBypassReason$Unknown(json),
 }; }
 
-static const SecretScanningPushProtectionBypassReason falsePositive = SecretScanningPushProtectionBypassReason._('false_positive');
+static const SecretScanningPushProtectionBypassReason falsePositive = SecretScanningPushProtectionBypassReason$falsePositive._();
 
-static const SecretScanningPushProtectionBypassReason usedInTests = SecretScanningPushProtectionBypassReason._('used_in_tests');
+static const SecretScanningPushProtectionBypassReason usedInTests = SecretScanningPushProtectionBypassReason$usedInTests._();
 
-static const SecretScanningPushProtectionBypassReason willFixLater = SecretScanningPushProtectionBypassReason._('will_fix_later');
+static const SecretScanningPushProtectionBypassReason willFixLater = SecretScanningPushProtectionBypassReason$willFixLater._();
 
 static const List<SecretScanningPushProtectionBypassReason> values = [falsePositive, usedInTests, willFixLater];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SecretScanningPushProtectionBypassReason$Unknown; } 
+@override String toString() => 'SecretScanningPushProtectionBypassReason($value)';
+
+ }
+@immutable final class SecretScanningPushProtectionBypassReason$falsePositive extends SecretScanningPushProtectionBypassReason {const SecretScanningPushProtectionBypassReason$falsePositive._();
+
+@override String get value => 'false_positive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningPushProtectionBypassReason$falsePositive;
+
+@override int get hashCode => 'false_positive'.hashCode;
+
+ }
+@immutable final class SecretScanningPushProtectionBypassReason$usedInTests extends SecretScanningPushProtectionBypassReason {const SecretScanningPushProtectionBypassReason$usedInTests._();
+
+@override String get value => 'used_in_tests';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningPushProtectionBypassReason$usedInTests;
+
+@override int get hashCode => 'used_in_tests'.hashCode;
+
+ }
+@immutable final class SecretScanningPushProtectionBypassReason$willFixLater extends SecretScanningPushProtectionBypassReason {const SecretScanningPushProtectionBypassReason$willFixLater._();
+
+@override String get value => 'will_fix_later';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SecretScanningPushProtectionBypassReason$willFixLater;
+
+@override int get hashCode => 'will_fix_later'.hashCode;
+
+ }
+@immutable final class SecretScanningPushProtectionBypassReason$Unknown extends SecretScanningPushProtectionBypassReason {const SecretScanningPushProtectionBypassReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SecretScanningPushProtectionBypassReason && other.value == value;
+    other is SecretScanningPushProtectionBypassReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SecretScanningPushProtectionBypassReason($value)';
 
  }

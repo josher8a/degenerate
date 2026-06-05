@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TaggedError1
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Tag {const Tag._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Tag {const Tag();
 
 factory Tag.fromJson(String json) { return switch (json) {
   'tag0' => tag0,
   'tag1' => tag1,
-  _ => Tag._(json),
+  _ => Tag$Unknown(json),
 }; }
 
-static const Tag tag0 = Tag._('tag0');
+static const Tag tag0 = Tag$tag0._();
 
-static const Tag tag1 = Tag._('tag1');
+static const Tag tag1 = Tag$tag1._();
 
 static const List<Tag> values = [tag0, tag1];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Tag$Unknown; } 
+@override String toString() => 'Tag($value)';
+
+ }
+@immutable final class Tag$tag0 extends Tag {const Tag$tag0._();
+
+@override String get value => 'tag0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Tag$tag0;
+
+@override int get hashCode => 'tag0'.hashCode;
+
+ }
+@immutable final class Tag$tag1 extends Tag {const Tag$tag1._();
+
+@override String get value => 'tag1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Tag$tag1;
+
+@override int get hashCode => 'tag1'.hashCode;
+
+ }
+@immutable final class Tag$Unknown extends Tag {const Tag$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Tag && other.value == value;
+    other is Tag$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Tag($value)';
 
  }
 @immutable final class TaggedError1 {const TaggedError1({required this.tag, required this.error, });

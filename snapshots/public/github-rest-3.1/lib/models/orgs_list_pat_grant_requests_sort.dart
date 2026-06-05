@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/OrgsListPatGrantRequestsSort
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OrgsListPatGrantRequestsSort {const OrgsListPatGrantRequestsSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class OrgsListPatGrantRequestsSort {const OrgsListPatGrantRequestsSort();
 
 factory OrgsListPatGrantRequestsSort.fromJson(String json) { return switch (json) {
   'created_at' => createdAt,
-  _ => OrgsListPatGrantRequestsSort._(json),
+  _ => OrgsListPatGrantRequestsSort$Unknown(json),
 }; }
 
-static const OrgsListPatGrantRequestsSort createdAt = OrgsListPatGrantRequestsSort._('created_at');
+static const OrgsListPatGrantRequestsSort createdAt = OrgsListPatGrantRequestsSort$createdAt._();
 
 static const List<OrgsListPatGrantRequestsSort> values = [createdAt];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OrgsListPatGrantRequestsSort$Unknown; } 
+@override String toString() => 'OrgsListPatGrantRequestsSort($value)';
+
+ }
+@immutable final class OrgsListPatGrantRequestsSort$createdAt extends OrgsListPatGrantRequestsSort {const OrgsListPatGrantRequestsSort$createdAt._();
+
+@override String get value => 'created_at';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OrgsListPatGrantRequestsSort$createdAt;
+
+@override int get hashCode => 'created_at'.hashCode;
+
+ }
+@immutable final class OrgsListPatGrantRequestsSort$Unknown extends OrgsListPatGrantRequestsSort {const OrgsListPatGrantRequestsSort$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OrgsListPatGrantRequestsSort && other.value == value;
+    other is OrgsListPatGrantRequestsSort$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OrgsListPatGrantRequestsSort($value)';
 
  }

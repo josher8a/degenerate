@@ -2,19 +2,18 @@
 // Source: #/components/schemas/DnsRecordsOpenpgpkeyRecord
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_records_comment.dart';import 'package:pub_cloudflare/models/dns_records_name.dart';import 'package:pub_cloudflare/models/dns_records_proxied.dart';import 'package:pub_cloudflare/models/dns_records_settings.dart';import 'package:pub_cloudflare/models/dns_records_ttl.dart';import 'package:pub_cloudflare/models/dns_records_ttl/dns_records_ttl_variant2.dart';/// Record type.
-@immutable final class DnsRecordsOpenpgpkeyRecordType {const DnsRecordsOpenpgpkeyRecordType._(this.value);
+sealed class DnsRecordsOpenpgpkeyRecordType {const DnsRecordsOpenpgpkeyRecordType();
 
 factory DnsRecordsOpenpgpkeyRecordType.fromJson(String json) { return switch (json) {
   'OPENPGPKEY' => openpgpkey,
-  _ => DnsRecordsOpenpgpkeyRecordType._(json),
+  _ => DnsRecordsOpenpgpkeyRecordType$Unknown(json),
 }; }
 
-static const DnsRecordsOpenpgpkeyRecordType openpgpkey = DnsRecordsOpenpgpkeyRecordType._('OPENPGPKEY');
+static const DnsRecordsOpenpgpkeyRecordType openpgpkey = DnsRecordsOpenpgpkeyRecordType$openpgpkey._();
 
 static const List<DnsRecordsOpenpgpkeyRecordType> values = [openpgpkey];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DnsRecordsOpenpgpkeyRecordType$Unknown; } 
+@override String toString() => 'DnsRecordsOpenpgpkeyRecordType($value)';
+
+ }
+@immutable final class DnsRecordsOpenpgpkeyRecordType$openpgpkey extends DnsRecordsOpenpgpkeyRecordType {const DnsRecordsOpenpgpkeyRecordType$openpgpkey._();
+
+@override String get value => 'OPENPGPKEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DnsRecordsOpenpgpkeyRecordType$openpgpkey;
+
+@override int get hashCode => 'OPENPGPKEY'.hashCode;
+
+ }
+@immutable final class DnsRecordsOpenpgpkeyRecordType$Unknown extends DnsRecordsOpenpgpkeyRecordType {const DnsRecordsOpenpgpkeyRecordType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DnsRecordsOpenpgpkeyRecordType && other.value == value;
+    other is DnsRecordsOpenpgpkeyRecordType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DnsRecordsOpenpgpkeyRecordType($value)';
 
  }
 @immutable final class DnsRecordsOpenpgpkeyRecord {const DnsRecordsOpenpgpkeyRecord({this.comment, this.name, this.proxied, this.settings, this.tags, this.ttl, this.content, this.type, });

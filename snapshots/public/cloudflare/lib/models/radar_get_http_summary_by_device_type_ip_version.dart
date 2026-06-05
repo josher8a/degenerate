@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpSummaryByDeviceTypeIpVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryByDeviceTypeIpVersion {const RadarGetHttpSummaryByDeviceTypeIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpSummaryByDeviceTypeIpVersion {const RadarGetHttpSummaryByDeviceTypeIpVersion();
 
 factory RadarGetHttpSummaryByDeviceTypeIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,
   'IPv6' => iPv6,
-  _ => RadarGetHttpSummaryByDeviceTypeIpVersion._(json),
+  _ => RadarGetHttpSummaryByDeviceTypeIpVersion$Unknown(json),
 }; }
 
-static const RadarGetHttpSummaryByDeviceTypeIpVersion iPv4 = RadarGetHttpSummaryByDeviceTypeIpVersion._('IPv4');
+static const RadarGetHttpSummaryByDeviceTypeIpVersion iPv4 = RadarGetHttpSummaryByDeviceTypeIpVersion$iPv4._();
 
-static const RadarGetHttpSummaryByDeviceTypeIpVersion iPv6 = RadarGetHttpSummaryByDeviceTypeIpVersion._('IPv6');
+static const RadarGetHttpSummaryByDeviceTypeIpVersion iPv6 = RadarGetHttpSummaryByDeviceTypeIpVersion$iPv6._();
 
 static const List<RadarGetHttpSummaryByDeviceTypeIpVersion> values = [iPv4, iPv6];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpSummaryByDeviceTypeIpVersion$Unknown; } 
+@override String toString() => 'RadarGetHttpSummaryByDeviceTypeIpVersion($value)';
+
+ }
+@immutable final class RadarGetHttpSummaryByDeviceTypeIpVersion$iPv4 extends RadarGetHttpSummaryByDeviceTypeIpVersion {const RadarGetHttpSummaryByDeviceTypeIpVersion$iPv4._();
+
+@override String get value => 'IPv4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByDeviceTypeIpVersion$iPv4;
+
+@override int get hashCode => 'IPv4'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByDeviceTypeIpVersion$iPv6 extends RadarGetHttpSummaryByDeviceTypeIpVersion {const RadarGetHttpSummaryByDeviceTypeIpVersion$iPv6._();
+
+@override String get value => 'IPv6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryByDeviceTypeIpVersion$iPv6;
+
+@override int get hashCode => 'IPv6'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryByDeviceTypeIpVersion$Unknown extends RadarGetHttpSummaryByDeviceTypeIpVersion {const RadarGetHttpSummaryByDeviceTypeIpVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpSummaryByDeviceTypeIpVersion && other.value == value;
+    other is RadarGetHttpSummaryByDeviceTypeIpVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpSummaryByDeviceTypeIpVersion($value)';
 
  }

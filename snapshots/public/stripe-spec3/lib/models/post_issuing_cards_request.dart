@@ -2,28 +2,27 @@
 // Source: #/components/schemas/PostIssuingCardsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter/billing_meter_status.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_type.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/pin.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/post_issuing_cards_card_request_shipping.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_card_request/post_issuing_cards_card_request_spending_controls.dart';import 'package:pub_stripe_spec3/models/post_issuing_cards_request/post_issuing_cards_request_second_line.dart';/// If `replacement_for` is specified, this should indicate why that card is being replaced.
-@immutable final class PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason._(this.value);
+sealed class PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason();
 
 factory PostIssuingCardsRequestReplacementReason.fromJson(String json) { return switch (json) {
   'damaged' => damaged,
   'expired' => expired,
   'lost' => lost,
   'stolen' => stolen,
-  _ => PostIssuingCardsRequestReplacementReason._(json),
+  _ => PostIssuingCardsRequestReplacementReason$Unknown(json),
 }; }
 
-static const PostIssuingCardsRequestReplacementReason damaged = PostIssuingCardsRequestReplacementReason._('damaged');
+static const PostIssuingCardsRequestReplacementReason damaged = PostIssuingCardsRequestReplacementReason$damaged._();
 
-static const PostIssuingCardsRequestReplacementReason expired = PostIssuingCardsRequestReplacementReason._('expired');
+static const PostIssuingCardsRequestReplacementReason expired = PostIssuingCardsRequestReplacementReason$expired._();
 
-static const PostIssuingCardsRequestReplacementReason lost = PostIssuingCardsRequestReplacementReason._('lost');
+static const PostIssuingCardsRequestReplacementReason lost = PostIssuingCardsRequestReplacementReason$lost._();
 
-static const PostIssuingCardsRequestReplacementReason stolen = PostIssuingCardsRequestReplacementReason._('stolen');
+static const PostIssuingCardsRequestReplacementReason stolen = PostIssuingCardsRequestReplacementReason$stolen._();
 
 static const List<PostIssuingCardsRequestReplacementReason> values = [damaged, expired, lost, stolen];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostIssuingCardsRequestReplacementReason$Unknown; } 
+@override String toString() => 'PostIssuingCardsRequestReplacementReason($value)';
+
+ }
+@immutable final class PostIssuingCardsRequestReplacementReason$damaged extends PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason$damaged._();
+
+@override String get value => 'damaged';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostIssuingCardsRequestReplacementReason$damaged;
+
+@override int get hashCode => 'damaged'.hashCode;
+
+ }
+@immutable final class PostIssuingCardsRequestReplacementReason$expired extends PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostIssuingCardsRequestReplacementReason$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class PostIssuingCardsRequestReplacementReason$lost extends PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason$lost._();
+
+@override String get value => 'lost';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostIssuingCardsRequestReplacementReason$lost;
+
+@override int get hashCode => 'lost'.hashCode;
+
+ }
+@immutable final class PostIssuingCardsRequestReplacementReason$stolen extends PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason$stolen._();
+
+@override String get value => 'stolen';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostIssuingCardsRequestReplacementReason$stolen;
+
+@override int get hashCode => 'stolen'.hashCode;
+
+ }
+@immutable final class PostIssuingCardsRequestReplacementReason$Unknown extends PostIssuingCardsRequestReplacementReason {const PostIssuingCardsRequestReplacementReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostIssuingCardsRequestReplacementReason && other.value == value;
+    other is PostIssuingCardsRequestReplacementReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostIssuingCardsRequestReplacementReason($value)';
 
  }
 @immutable final class PostIssuingCardsRequest {const PostIssuingCardsRequest({required this.currency, required this.type, this.cardholder, this.expMonth, this.expYear, this.expand, this.financialAccount, this.metadata, this.personalizationDesign, this.pin, this.replacementFor, this.replacementReason, this.secondLine, this.shipping, this.spendingControls, this.status, });

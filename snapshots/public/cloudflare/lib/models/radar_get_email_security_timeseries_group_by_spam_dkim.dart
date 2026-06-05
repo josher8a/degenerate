@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailSecurityTimeseriesGroupBySpamDkim
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpamDkim {const RadarGetEmailSecurityTimeseriesGroupBySpamDkim._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailSecurityTimeseriesGroupBySpamDkim {const RadarGetEmailSecurityTimeseriesGroupBySpamDkim();
 
 factory RadarGetEmailSecurityTimeseriesGroupBySpamDkim.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailSecurityTimeseriesGroupBySpamDkim._(json),
+  _ => RadarGetEmailSecurityTimeseriesGroupBySpamDkim$Unknown(json),
 }; }
 
-static const RadarGetEmailSecurityTimeseriesGroupBySpamDkim pass = RadarGetEmailSecurityTimeseriesGroupBySpamDkim._('PASS');
+static const RadarGetEmailSecurityTimeseriesGroupBySpamDkim pass = RadarGetEmailSecurityTimeseriesGroupBySpamDkim$pass._();
 
-static const RadarGetEmailSecurityTimeseriesGroupBySpamDkim none = RadarGetEmailSecurityTimeseriesGroupBySpamDkim._('NONE');
+static const RadarGetEmailSecurityTimeseriesGroupBySpamDkim none = RadarGetEmailSecurityTimeseriesGroupBySpamDkim$none._();
 
-static const RadarGetEmailSecurityTimeseriesGroupBySpamDkim fail = RadarGetEmailSecurityTimeseriesGroupBySpamDkim._('FAIL');
+static const RadarGetEmailSecurityTimeseriesGroupBySpamDkim fail = RadarGetEmailSecurityTimeseriesGroupBySpamDkim$fail._();
 
 static const List<RadarGetEmailSecurityTimeseriesGroupBySpamDkim> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecurityTimeseriesGroupBySpamDkim$Unknown; } 
+@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupBySpamDkim($value)';
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpamDkim$pass extends RadarGetEmailSecurityTimeseriesGroupBySpamDkim {const RadarGetEmailSecurityTimeseriesGroupBySpamDkim$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupBySpamDkim$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpamDkim$none extends RadarGetEmailSecurityTimeseriesGroupBySpamDkim {const RadarGetEmailSecurityTimeseriesGroupBySpamDkim$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupBySpamDkim$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpamDkim$fail extends RadarGetEmailSecurityTimeseriesGroupBySpamDkim {const RadarGetEmailSecurityTimeseriesGroupBySpamDkim$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTimeseriesGroupBySpamDkim$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTimeseriesGroupBySpamDkim$Unknown extends RadarGetEmailSecurityTimeseriesGroupBySpamDkim {const RadarGetEmailSecurityTimeseriesGroupBySpamDkim$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecurityTimeseriesGroupBySpamDkim && other.value == value;
+    other is RadarGetEmailSecurityTimeseriesGroupBySpamDkim$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecurityTimeseriesGroupBySpamDkim($value)';
 
  }

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion {const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion {const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion();
 
 factory RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion.fromJson(String json) { return switch (json) {
   'TLSv1_0' => tlSv10,
@@ -9,23 +9,22 @@ factory RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion.fromJson(String json)
   'TLSv1_2' => tlSv12,
   'TLSv1_3' => tlSv13,
   'TLSvQUIC' => tlSvQuic,
-  _ => RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion._(json),
+  _ => RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$Unknown(json),
 }; }
 
-static const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion tlSv10 = RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion._('TLSv1_0');
+static const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion tlSv10 = RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv10._();
 
-static const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion tlSv11 = RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion._('TLSv1_1');
+static const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion tlSv11 = RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv11._();
 
-static const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion tlSv12 = RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion._('TLSv1_2');
+static const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion tlSv12 = RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv12._();
 
-static const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion tlSv13 = RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion._('TLSv1_3');
+static const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion tlSv13 = RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv13._();
 
-static const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion tlSvQuic = RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion._('TLSvQUIC');
+static const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion tlSvQuic = RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSvQuic._();
 
 static const List<RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion> values = [tlSv10, tlSv11, tlSv12, tlSv13, tlSvQuic];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,12 +36,62 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$Unknown; } 
+@override String toString() => 'RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion($value)';
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv10 extends RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion {const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv10._();
+
+@override String get value => 'TLSv1_0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv10;
+
+@override int get hashCode => 'TLSv1_0'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv11 extends RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion {const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv11._();
+
+@override String get value => 'TLSv1_1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv11;
+
+@override int get hashCode => 'TLSv1_1'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv12 extends RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion {const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv12._();
+
+@override String get value => 'TLSv1_2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv12;
+
+@override int get hashCode => 'TLSv1_2'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv13 extends RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion {const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv13._();
+
+@override String get value => 'TLSv1_3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSv13;
+
+@override int get hashCode => 'TLSv1_3'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSvQuic extends RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion {const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSvQuic._();
+
+@override String get value => 'TLSvQUIC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$tlSvQuic;
+
+@override int get hashCode => 'TLSvQUIC'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$Unknown extends RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion {const RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion && other.value == value;
+    other is RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTimeseriesGroupByPostQuantumTlsVersion($value)';
 
  }

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/AppPermissions (inline: RepositoryProjects)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The level of permission to grant the access token to manage repository projects, columns, and cards.
-@immutable final class AppPermissionsRepositoryProjects {const AppPermissionsRepositoryProjects._(this.value);
+sealed class AppPermissionsRepositoryProjects {const AppPermissionsRepositoryProjects();
 
 factory AppPermissionsRepositoryProjects.fromJson(String json) { return switch (json) {
   'read' => read,
   'write' => write,
   'admin' => admin,
-  _ => AppPermissionsRepositoryProjects._(json),
+  _ => AppPermissionsRepositoryProjects$Unknown(json),
 }; }
 
-static const AppPermissionsRepositoryProjects read = AppPermissionsRepositoryProjects._('read');
+static const AppPermissionsRepositoryProjects read = AppPermissionsRepositoryProjects$read._();
 
-static const AppPermissionsRepositoryProjects write = AppPermissionsRepositoryProjects._('write');
+static const AppPermissionsRepositoryProjects write = AppPermissionsRepositoryProjects$write._();
 
-static const AppPermissionsRepositoryProjects admin = AppPermissionsRepositoryProjects._('admin');
+static const AppPermissionsRepositoryProjects admin = AppPermissionsRepositoryProjects$admin._();
 
 static const List<AppPermissionsRepositoryProjects> values = [read, write, admin];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AppPermissionsRepositoryProjects$Unknown; } 
+@override String toString() => 'AppPermissionsRepositoryProjects($value)';
+
+ }
+@immutable final class AppPermissionsRepositoryProjects$read extends AppPermissionsRepositoryProjects {const AppPermissionsRepositoryProjects$read._();
+
+@override String get value => 'read';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppPermissionsRepositoryProjects$read;
+
+@override int get hashCode => 'read'.hashCode;
+
+ }
+@immutable final class AppPermissionsRepositoryProjects$write extends AppPermissionsRepositoryProjects {const AppPermissionsRepositoryProjects$write._();
+
+@override String get value => 'write';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppPermissionsRepositoryProjects$write;
+
+@override int get hashCode => 'write'.hashCode;
+
+ }
+@immutable final class AppPermissionsRepositoryProjects$admin extends AppPermissionsRepositoryProjects {const AppPermissionsRepositoryProjects$admin._();
+
+@override String get value => 'admin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AppPermissionsRepositoryProjects$admin;
+
+@override int get hashCode => 'admin'.hashCode;
+
+ }
+@immutable final class AppPermissionsRepositoryProjects$Unknown extends AppPermissionsRepositoryProjects {const AppPermissionsRepositoryProjects$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AppPermissionsRepositoryProjects && other.value == value;
+    other is AppPermissionsRepositoryProjects$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AppPermissionsRepositoryProjects($value)';
 
  }

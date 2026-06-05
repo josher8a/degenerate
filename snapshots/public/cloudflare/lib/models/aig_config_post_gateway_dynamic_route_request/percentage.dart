@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigPostGatewayDynamicRouteRequest (inline: Elements > Percentage)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/outputs_value.dart';@immutable final class PercentageType {const PercentageType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aig_config_post_gateway_dynamic_route_request/outputs_value.dart';sealed class PercentageType {const PercentageType();
 
 factory PercentageType.fromJson(String json) { return switch (json) {
   'percentage' => percentage,
-  _ => PercentageType._(json),
+  _ => PercentageType$Unknown(json),
 }; }
 
-static const PercentageType percentage = PercentageType._('percentage');
+static const PercentageType percentage = PercentageType$percentage._();
 
 static const List<PercentageType> values = [percentage];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PercentageType$Unknown; } 
+@override String toString() => 'PercentageType($value)';
+
+ }
+@immutable final class PercentageType$percentage extends PercentageType {const PercentageType$percentage._();
+
+@override String get value => 'percentage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PercentageType$percentage;
+
+@override int get hashCode => 'percentage'.hashCode;
+
+ }
+@immutable final class PercentageType$Unknown extends PercentageType {const PercentageType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PercentageType && other.value == value;
+    other is PercentageType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PercentageType($value)';
 
  }
 @immutable final class Percentage {const Percentage({required this.id, required this.outputs, required this.type, });

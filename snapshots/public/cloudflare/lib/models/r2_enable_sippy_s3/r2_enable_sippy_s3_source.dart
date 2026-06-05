@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/R2EnableSippyS3 (inline: Source)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class R2EnableSippyS3SourceProvider {const R2EnableSippyS3SourceProvider._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class R2EnableSippyS3SourceProvider {const R2EnableSippyS3SourceProvider();
 
 factory R2EnableSippyS3SourceProvider.fromJson(String json) { return switch (json) {
   's3' => s3,
-  _ => R2EnableSippyS3SourceProvider._(json),
+  _ => R2EnableSippyS3SourceProvider$Unknown(json),
 }; }
 
-static const R2EnableSippyS3SourceProvider s3 = R2EnableSippyS3SourceProvider._('s3');
+static const R2EnableSippyS3SourceProvider s3 = R2EnableSippyS3SourceProvider$s3._();
 
 static const List<R2EnableSippyS3SourceProvider> values = [s3];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is R2EnableSippyS3SourceProvider$Unknown; } 
+@override String toString() => 'R2EnableSippyS3SourceProvider($value)';
+
+ }
+@immutable final class R2EnableSippyS3SourceProvider$s3 extends R2EnableSippyS3SourceProvider {const R2EnableSippyS3SourceProvider$s3._();
+
+@override String get value => 's3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is R2EnableSippyS3SourceProvider$s3;
+
+@override int get hashCode => 's3'.hashCode;
+
+ }
+@immutable final class R2EnableSippyS3SourceProvider$Unknown extends R2EnableSippyS3SourceProvider {const R2EnableSippyS3SourceProvider$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is R2EnableSippyS3SourceProvider && other.value == value;
+    other is R2EnableSippyS3SourceProvider$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'R2EnableSippyS3SourceProvider($value)';
 
  }
 /// General S3-compatible provider to copy objects from.

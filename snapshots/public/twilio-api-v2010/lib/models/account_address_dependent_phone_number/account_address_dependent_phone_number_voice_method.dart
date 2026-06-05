@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AccountAddressDependentPhoneNumber (inline: VoiceMethod)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The HTTP method we use to call `voice_url`. Can be: `GET` or `POST`.
-@immutable final class AccountAddressDependentPhoneNumberVoiceMethod {const AccountAddressDependentPhoneNumberVoiceMethod._(this.value);
+sealed class AccountAddressDependentPhoneNumberVoiceMethod {const AccountAddressDependentPhoneNumberVoiceMethod();
 
 factory AccountAddressDependentPhoneNumberVoiceMethod.fromJson(String json) { return switch (json) {
   'GET' => $get,
   'POST' => post,
-  _ => AccountAddressDependentPhoneNumberVoiceMethod._(json),
+  _ => AccountAddressDependentPhoneNumberVoiceMethod$Unknown(json),
 }; }
 
-static const AccountAddressDependentPhoneNumberVoiceMethod $get = AccountAddressDependentPhoneNumberVoiceMethod._('GET');
+static const AccountAddressDependentPhoneNumberVoiceMethod $get = AccountAddressDependentPhoneNumberVoiceMethod$$get._();
 
-static const AccountAddressDependentPhoneNumberVoiceMethod post = AccountAddressDependentPhoneNumberVoiceMethod._('POST');
+static const AccountAddressDependentPhoneNumberVoiceMethod post = AccountAddressDependentPhoneNumberVoiceMethod$post._();
 
 static const List<AccountAddressDependentPhoneNumberVoiceMethod> values = [$get, post];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountAddressDependentPhoneNumberVoiceMethod$Unknown; } 
+@override String toString() => 'AccountAddressDependentPhoneNumberVoiceMethod($value)';
+
+ }
+@immutable final class AccountAddressDependentPhoneNumberVoiceMethod$$get extends AccountAddressDependentPhoneNumberVoiceMethod {const AccountAddressDependentPhoneNumberVoiceMethod$$get._();
+
+@override String get value => 'GET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountAddressDependentPhoneNumberVoiceMethod$$get;
+
+@override int get hashCode => 'GET'.hashCode;
+
+ }
+@immutable final class AccountAddressDependentPhoneNumberVoiceMethod$post extends AccountAddressDependentPhoneNumberVoiceMethod {const AccountAddressDependentPhoneNumberVoiceMethod$post._();
+
+@override String get value => 'POST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountAddressDependentPhoneNumberVoiceMethod$post;
+
+@override int get hashCode => 'POST'.hashCode;
+
+ }
+@immutable final class AccountAddressDependentPhoneNumberVoiceMethod$Unknown extends AccountAddressDependentPhoneNumberVoiceMethod {const AccountAddressDependentPhoneNumberVoiceMethod$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountAddressDependentPhoneNumberVoiceMethod && other.value == value;
+    other is AccountAddressDependentPhoneNumberVoiceMethod$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountAddressDependentPhoneNumberVoiceMethod($value)';
 
  }

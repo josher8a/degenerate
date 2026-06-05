@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCheckoutSessionsRequest (inline: ConsentCollection)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/payment_method_reuse_agreement.dart';@immutable final class ConsentCollectionPromotions {const ConsentCollectionPromotions._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/payment_method_reuse_agreement.dart';sealed class ConsentCollectionPromotions {const ConsentCollectionPromotions();
 
 factory ConsentCollectionPromotions.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'none' => none,
-  _ => ConsentCollectionPromotions._(json),
+  _ => ConsentCollectionPromotions$Unknown(json),
 }; }
 
-static const ConsentCollectionPromotions auto = ConsentCollectionPromotions._('auto');
+static const ConsentCollectionPromotions auto = ConsentCollectionPromotions$auto._();
 
-static const ConsentCollectionPromotions none = ConsentCollectionPromotions._('none');
+static const ConsentCollectionPromotions none = ConsentCollectionPromotions$none._();
 
 static const List<ConsentCollectionPromotions> values = [auto, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,31 +24,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ConsentCollectionPromotions && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ConsentCollectionPromotions$Unknown; } 
 @override String toString() => 'ConsentCollectionPromotions($value)';
 
  }
-@immutable final class ConsentCollectionTermsOfService {const ConsentCollectionTermsOfService._(this.value);
+@immutable final class ConsentCollectionPromotions$auto extends ConsentCollectionPromotions {const ConsentCollectionPromotions$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConsentCollectionPromotions$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class ConsentCollectionPromotions$none extends ConsentCollectionPromotions {const ConsentCollectionPromotions$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConsentCollectionPromotions$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class ConsentCollectionPromotions$Unknown extends ConsentCollectionPromotions {const ConsentCollectionPromotions$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ConsentCollectionPromotions$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class ConsentCollectionTermsOfService {const ConsentCollectionTermsOfService();
 
 factory ConsentCollectionTermsOfService.fromJson(String json) { return switch (json) {
   'none' => none,
   'required' => $required,
-  _ => ConsentCollectionTermsOfService._(json),
+  _ => ConsentCollectionTermsOfService$Unknown(json),
 }; }
 
-static const ConsentCollectionTermsOfService none = ConsentCollectionTermsOfService._('none');
+static const ConsentCollectionTermsOfService none = ConsentCollectionTermsOfService$none._();
 
-static const ConsentCollectionTermsOfService $required = ConsentCollectionTermsOfService._('required');
+static const ConsentCollectionTermsOfService $required = ConsentCollectionTermsOfService$$required._();
 
 static const List<ConsentCollectionTermsOfService> values = [none, $required];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -58,13 +79,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ConsentCollectionTermsOfService$Unknown; } 
+@override String toString() => 'ConsentCollectionTermsOfService($value)';
+
+ }
+@immutable final class ConsentCollectionTermsOfService$none extends ConsentCollectionTermsOfService {const ConsentCollectionTermsOfService$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConsentCollectionTermsOfService$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class ConsentCollectionTermsOfService$$required extends ConsentCollectionTermsOfService {const ConsentCollectionTermsOfService$$required._();
+
+@override String get value => 'required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConsentCollectionTermsOfService$$required;
+
+@override int get hashCode => 'required'.hashCode;
+
+ }
+@immutable final class ConsentCollectionTermsOfService$Unknown extends ConsentCollectionTermsOfService {const ConsentCollectionTermsOfService$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ConsentCollectionTermsOfService && other.value == value;
+    other is ConsentCollectionTermsOfService$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ConsentCollectionTermsOfService($value)';
 
  }
 /// Configure fields for the Checkout Session to gather active consent from customers.

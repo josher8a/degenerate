@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Tools > Custom > Custom > Format > Grammar > Grammar)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Syntax {const Syntax._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Syntax {const Syntax();
 
 factory Syntax.fromJson(String json) { return switch (json) {
   'lark' => lark,
   'regex' => regex,
-  _ => Syntax._(json),
+  _ => Syntax$Unknown(json),
 }; }
 
-static const Syntax lark = Syntax._('lark');
+static const Syntax lark = Syntax$lark._();
 
-static const Syntax regex = Syntax._('regex');
+static const Syntax regex = Syntax$regex._();
 
 static const List<Syntax> values = [lark, regex];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Syntax$Unknown; } 
+@override String toString() => 'Syntax($value)';
+
+ }
+@immutable final class Syntax$lark extends Syntax {const Syntax$lark._();
+
+@override String get value => 'lark';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Syntax$lark;
+
+@override int get hashCode => 'lark'.hashCode;
+
+ }
+@immutable final class Syntax$regex extends Syntax {const Syntax$regex._();
+
+@override String get value => 'regex';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Syntax$regex;
+
+@override int get hashCode => 'regex'.hashCode;
+
+ }
+@immutable final class Syntax$Unknown extends Syntax {const Syntax$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Syntax && other.value == value;
+    other is Syntax$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Syntax($value)';
 
  }
 @immutable final class GrammarGrammar {const GrammarGrammar({required this.definition, required this.syntax, });

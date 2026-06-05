@@ -2,28 +2,27 @@
 // Source: #/components/schemas/AccountIncomingPhoneNumberIncomingPhoneNumberMobile
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_sms_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_status_callback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_fallback_method.dart';import 'package:pub_twilio_api_v2010/models/account_address_dependent_phone_number/account_address_dependent_phone_number_voice_method.dart';import 'package:pub_twilio_api_v2010/models/account_available_phone_number_country_available_phone_number_local/capabilities.dart';import 'package:pub_twilio_api_v2010/models/incoming_phone_number_mobile_enum_emergency_status.dart';import 'package:pub_twilio_api_v2010/models/incoming_phone_number_mobile_enum_voice_receive_mode.dart';/// Whether the phone number requires an [Address](https://www.twilio.com/docs/usage/api/address) registered with Twilio. Can be: `none`, `any`, `local`, or `foreign`.
-@immutable final class IncomingPhoneNumberMobileEnumAddressRequirement {const IncomingPhoneNumberMobileEnumAddressRequirement._(this.value);
+sealed class IncomingPhoneNumberMobileEnumAddressRequirement {const IncomingPhoneNumberMobileEnumAddressRequirement();
 
 factory IncomingPhoneNumberMobileEnumAddressRequirement.fromJson(String json) { return switch (json) {
   'none' => none,
   'any' => any,
   'local' => local,
   'foreign' => foreign,
-  _ => IncomingPhoneNumberMobileEnumAddressRequirement._(json),
+  _ => IncomingPhoneNumberMobileEnumAddressRequirement$Unknown(json),
 }; }
 
-static const IncomingPhoneNumberMobileEnumAddressRequirement none = IncomingPhoneNumberMobileEnumAddressRequirement._('none');
+static const IncomingPhoneNumberMobileEnumAddressRequirement none = IncomingPhoneNumberMobileEnumAddressRequirement$none._();
 
-static const IncomingPhoneNumberMobileEnumAddressRequirement any = IncomingPhoneNumberMobileEnumAddressRequirement._('any');
+static const IncomingPhoneNumberMobileEnumAddressRequirement any = IncomingPhoneNumberMobileEnumAddressRequirement$any._();
 
-static const IncomingPhoneNumberMobileEnumAddressRequirement local = IncomingPhoneNumberMobileEnumAddressRequirement._('local');
+static const IncomingPhoneNumberMobileEnumAddressRequirement local = IncomingPhoneNumberMobileEnumAddressRequirement$local._();
 
-static const IncomingPhoneNumberMobileEnumAddressRequirement foreign = IncomingPhoneNumberMobileEnumAddressRequirement._('foreign');
+static const IncomingPhoneNumberMobileEnumAddressRequirement foreign = IncomingPhoneNumberMobileEnumAddressRequirement$foreign._();
 
 static const List<IncomingPhoneNumberMobileEnumAddressRequirement> values = [none, any, local, foreign];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,17 +33,58 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IncomingPhoneNumberMobileEnumAddressRequirement && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IncomingPhoneNumberMobileEnumAddressRequirement$Unknown; } 
 @override String toString() => 'IncomingPhoneNumberMobileEnumAddressRequirement($value)';
 
  }
+@immutable final class IncomingPhoneNumberMobileEnumAddressRequirement$none extends IncomingPhoneNumberMobileEnumAddressRequirement {const IncomingPhoneNumberMobileEnumAddressRequirement$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncomingPhoneNumberMobileEnumAddressRequirement$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class IncomingPhoneNumberMobileEnumAddressRequirement$any extends IncomingPhoneNumberMobileEnumAddressRequirement {const IncomingPhoneNumberMobileEnumAddressRequirement$any._();
+
+@override String get value => 'any';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncomingPhoneNumberMobileEnumAddressRequirement$any;
+
+@override int get hashCode => 'any'.hashCode;
+
+ }
+@immutable final class IncomingPhoneNumberMobileEnumAddressRequirement$local extends IncomingPhoneNumberMobileEnumAddressRequirement {const IncomingPhoneNumberMobileEnumAddressRequirement$local._();
+
+@override String get value => 'local';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncomingPhoneNumberMobileEnumAddressRequirement$local;
+
+@override int get hashCode => 'local'.hashCode;
+
+ }
+@immutable final class IncomingPhoneNumberMobileEnumAddressRequirement$foreign extends IncomingPhoneNumberMobileEnumAddressRequirement {const IncomingPhoneNumberMobileEnumAddressRequirement$foreign._();
+
+@override String get value => 'foreign';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncomingPhoneNumberMobileEnumAddressRequirement$foreign;
+
+@override int get hashCode => 'foreign'.hashCode;
+
+ }
+@immutable final class IncomingPhoneNumberMobileEnumAddressRequirement$Unknown extends IncomingPhoneNumberMobileEnumAddressRequirement {const IncomingPhoneNumberMobileEnumAddressRequirement$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IncomingPhoneNumberMobileEnumAddressRequirement$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The status of address registration with emergency services. A registered emergency address will be used during handling of emergency calls from this number.
-@immutable final class IncomingPhoneNumberMobileEnumEmergencyAddressStatus {const IncomingPhoneNumberMobileEnumEmergencyAddressStatus._(this.value);
+sealed class IncomingPhoneNumberMobileEnumEmergencyAddressStatus {const IncomingPhoneNumberMobileEnumEmergencyAddressStatus();
 
 factory IncomingPhoneNumberMobileEnumEmergencyAddressStatus.fromJson(String json) { return switch (json) {
   'registered' => registered,
@@ -53,25 +93,24 @@ factory IncomingPhoneNumberMobileEnumEmergencyAddressStatus.fromJson(String json
   'registration-failure' => registrationFailure,
   'pending-unregistration' => pendingUnregistration,
   'unregistration-failure' => unregistrationFailure,
-  _ => IncomingPhoneNumberMobileEnumEmergencyAddressStatus._(json),
+  _ => IncomingPhoneNumberMobileEnumEmergencyAddressStatus$Unknown(json),
 }; }
 
-static const IncomingPhoneNumberMobileEnumEmergencyAddressStatus registered = IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('registered');
+static const IncomingPhoneNumberMobileEnumEmergencyAddressStatus registered = IncomingPhoneNumberMobileEnumEmergencyAddressStatus$registered._();
 
-static const IncomingPhoneNumberMobileEnumEmergencyAddressStatus unregistered = IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('unregistered');
+static const IncomingPhoneNumberMobileEnumEmergencyAddressStatus unregistered = IncomingPhoneNumberMobileEnumEmergencyAddressStatus$unregistered._();
 
-static const IncomingPhoneNumberMobileEnumEmergencyAddressStatus pendingRegistration = IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('pending-registration');
+static const IncomingPhoneNumberMobileEnumEmergencyAddressStatus pendingRegistration = IncomingPhoneNumberMobileEnumEmergencyAddressStatus$pendingRegistration._();
 
-static const IncomingPhoneNumberMobileEnumEmergencyAddressStatus registrationFailure = IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('registration-failure');
+static const IncomingPhoneNumberMobileEnumEmergencyAddressStatus registrationFailure = IncomingPhoneNumberMobileEnumEmergencyAddressStatus$registrationFailure._();
 
-static const IncomingPhoneNumberMobileEnumEmergencyAddressStatus pendingUnregistration = IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('pending-unregistration');
+static const IncomingPhoneNumberMobileEnumEmergencyAddressStatus pendingUnregistration = IncomingPhoneNumberMobileEnumEmergencyAddressStatus$pendingUnregistration._();
 
-static const IncomingPhoneNumberMobileEnumEmergencyAddressStatus unregistrationFailure = IncomingPhoneNumberMobileEnumEmergencyAddressStatus._('unregistration-failure');
+static const IncomingPhoneNumberMobileEnumEmergencyAddressStatus unregistrationFailure = IncomingPhoneNumberMobileEnumEmergencyAddressStatus$unregistrationFailure._();
 
 static const List<IncomingPhoneNumberMobileEnumEmergencyAddressStatus> values = [registered, unregistered, pendingRegistration, registrationFailure, pendingUnregistration, unregistrationFailure];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -84,13 +123,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IncomingPhoneNumberMobileEnumEmergencyAddressStatus$Unknown; } 
+@override String toString() => 'IncomingPhoneNumberMobileEnumEmergencyAddressStatus($value)';
+
+ }
+@immutable final class IncomingPhoneNumberMobileEnumEmergencyAddressStatus$registered extends IncomingPhoneNumberMobileEnumEmergencyAddressStatus {const IncomingPhoneNumberMobileEnumEmergencyAddressStatus$registered._();
+
+@override String get value => 'registered';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncomingPhoneNumberMobileEnumEmergencyAddressStatus$registered;
+
+@override int get hashCode => 'registered'.hashCode;
+
+ }
+@immutable final class IncomingPhoneNumberMobileEnumEmergencyAddressStatus$unregistered extends IncomingPhoneNumberMobileEnumEmergencyAddressStatus {const IncomingPhoneNumberMobileEnumEmergencyAddressStatus$unregistered._();
+
+@override String get value => 'unregistered';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncomingPhoneNumberMobileEnumEmergencyAddressStatus$unregistered;
+
+@override int get hashCode => 'unregistered'.hashCode;
+
+ }
+@immutable final class IncomingPhoneNumberMobileEnumEmergencyAddressStatus$pendingRegistration extends IncomingPhoneNumberMobileEnumEmergencyAddressStatus {const IncomingPhoneNumberMobileEnumEmergencyAddressStatus$pendingRegistration._();
+
+@override String get value => 'pending-registration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncomingPhoneNumberMobileEnumEmergencyAddressStatus$pendingRegistration;
+
+@override int get hashCode => 'pending-registration'.hashCode;
+
+ }
+@immutable final class IncomingPhoneNumberMobileEnumEmergencyAddressStatus$registrationFailure extends IncomingPhoneNumberMobileEnumEmergencyAddressStatus {const IncomingPhoneNumberMobileEnumEmergencyAddressStatus$registrationFailure._();
+
+@override String get value => 'registration-failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncomingPhoneNumberMobileEnumEmergencyAddressStatus$registrationFailure;
+
+@override int get hashCode => 'registration-failure'.hashCode;
+
+ }
+@immutable final class IncomingPhoneNumberMobileEnumEmergencyAddressStatus$pendingUnregistration extends IncomingPhoneNumberMobileEnumEmergencyAddressStatus {const IncomingPhoneNumberMobileEnumEmergencyAddressStatus$pendingUnregistration._();
+
+@override String get value => 'pending-unregistration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncomingPhoneNumberMobileEnumEmergencyAddressStatus$pendingUnregistration;
+
+@override int get hashCode => 'pending-unregistration'.hashCode;
+
+ }
+@immutable final class IncomingPhoneNumberMobileEnumEmergencyAddressStatus$unregistrationFailure extends IncomingPhoneNumberMobileEnumEmergencyAddressStatus {const IncomingPhoneNumberMobileEnumEmergencyAddressStatus$unregistrationFailure._();
+
+@override String get value => 'unregistration-failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IncomingPhoneNumberMobileEnumEmergencyAddressStatus$unregistrationFailure;
+
+@override int get hashCode => 'unregistration-failure'.hashCode;
+
+ }
+@immutable final class IncomingPhoneNumberMobileEnumEmergencyAddressStatus$Unknown extends IncomingPhoneNumberMobileEnumEmergencyAddressStatus {const IncomingPhoneNumberMobileEnumEmergencyAddressStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IncomingPhoneNumberMobileEnumEmergencyAddressStatus && other.value == value;
+    other is IncomingPhoneNumberMobileEnumEmergencyAddressStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IncomingPhoneNumberMobileEnumEmergencyAddressStatus($value)';
 
  }
 @immutable final class AccountIncomingPhoneNumberIncomingPhoneNumberMobile {const AccountIncomingPhoneNumberIncomingPhoneNumberMobile({this.origin, this.addressSid, this.addressRequirements, this.apiVersion, this.beta, this.capabilities, this.dateCreated, this.dateUpdated, this.friendlyName, this.identitySid, this.phoneNumber, this.accountSid, this.sid, this.smsApplicationSid, this.smsFallbackMethod, this.smsFallbackUrl, this.smsMethod, this.smsUrl, this.statusCallback, this.statusCallbackMethod, this.trunkSid, this.status, this.voiceReceiveMode, this.voiceApplicationSid, this.voiceCallerIdLookup, this.voiceFallbackMethod, this.voiceFallbackUrl, this.voiceMethod, this.voiceUrl, this.emergencyStatus, this.emergencyAddressSid, this.emergencyAddressStatus, this.bundleSid, this.uri, });

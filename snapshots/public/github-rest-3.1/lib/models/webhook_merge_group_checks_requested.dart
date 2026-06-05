@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookMergeGroupChecksRequested
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/merge_group.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookMergeGroupChecksRequestedAction {const WebhookMergeGroupChecksRequestedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/merge_group.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookMergeGroupChecksRequestedAction {const WebhookMergeGroupChecksRequestedAction();
 
 factory WebhookMergeGroupChecksRequestedAction.fromJson(String json) { return switch (json) {
   'checks_requested' => checksRequested,
-  _ => WebhookMergeGroupChecksRequestedAction._(json),
+  _ => WebhookMergeGroupChecksRequestedAction$Unknown(json),
 }; }
 
-static const WebhookMergeGroupChecksRequestedAction checksRequested = WebhookMergeGroupChecksRequestedAction._('checks_requested');
+static const WebhookMergeGroupChecksRequestedAction checksRequested = WebhookMergeGroupChecksRequestedAction$checksRequested._();
 
 static const List<WebhookMergeGroupChecksRequestedAction> values = [checksRequested];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookMergeGroupChecksRequestedAction$Unknown; } 
+@override String toString() => 'WebhookMergeGroupChecksRequestedAction($value)';
+
+ }
+@immutable final class WebhookMergeGroupChecksRequestedAction$checksRequested extends WebhookMergeGroupChecksRequestedAction {const WebhookMergeGroupChecksRequestedAction$checksRequested._();
+
+@override String get value => 'checks_requested';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookMergeGroupChecksRequestedAction$checksRequested;
+
+@override int get hashCode => 'checks_requested'.hashCode;
+
+ }
+@immutable final class WebhookMergeGroupChecksRequestedAction$Unknown extends WebhookMergeGroupChecksRequestedAction {const WebhookMergeGroupChecksRequestedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookMergeGroupChecksRequestedAction && other.value == value;
+    other is WebhookMergeGroupChecksRequestedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookMergeGroupChecksRequestedAction($value)';
 
  }
 @immutable final class WebhookMergeGroupChecksRequested {const WebhookMergeGroupChecksRequested({required this.action, required this.mergeGroup, this.installation, this.organization, this.repository, this.sender, });

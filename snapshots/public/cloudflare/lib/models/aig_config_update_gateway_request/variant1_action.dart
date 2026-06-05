@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigUpdateGatewayRequest (inline: Dlp > Variant1 > Action)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Variant1Action {const Variant1Action._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Variant1Action {const Variant1Action();
 
 factory Variant1Action.fromJson(String json) { return switch (json) {
   'BLOCK' => block,
   'FLAG' => flag,
-  _ => Variant1Action._(json),
+  _ => Variant1Action$Unknown(json),
 }; }
 
-static const Variant1Action block = Variant1Action._('BLOCK');
+static const Variant1Action block = Variant1Action$block._();
 
-static const Variant1Action flag = Variant1Action._('FLAG');
+static const Variant1Action flag = Variant1Action$flag._();
 
 static const List<Variant1Action> values = [block, flag];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Variant1Action$Unknown; } 
+@override String toString() => 'Variant1Action($value)';
+
+ }
+@immutable final class Variant1Action$block extends Variant1Action {const Variant1Action$block._();
+
+@override String get value => 'BLOCK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Variant1Action$block;
+
+@override int get hashCode => 'BLOCK'.hashCode;
+
+ }
+@immutable final class Variant1Action$flag extends Variant1Action {const Variant1Action$flag._();
+
+@override String get value => 'FLAG';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Variant1Action$flag;
+
+@override int get hashCode => 'FLAG'.hashCode;
+
+ }
+@immutable final class Variant1Action$Unknown extends Variant1Action {const Variant1Action$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Variant1Action && other.value == value;
+    other is Variant1Action$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Variant1Action($value)';
 
  }

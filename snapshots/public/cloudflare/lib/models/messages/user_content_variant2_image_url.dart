@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: Messages > User > Content > Variant2 > ImageUrl)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class Detail {const Detail._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class Detail {const Detail();
 
 factory Detail.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'low' => low,
   'high' => high,
-  _ => Detail._(json),
+  _ => Detail$Unknown(json),
 }; }
 
-static const Detail auto = Detail._('auto');
+static const Detail auto = Detail$auto._();
 
-static const Detail low = Detail._('low');
+static const Detail low = Detail$low._();
 
-static const Detail high = Detail._('high');
+static const Detail high = Detail$high._();
 
 static const List<Detail> values = [auto, low, high];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Detail$Unknown; } 
+@override String toString() => 'Detail($value)';
+
+ }
+@immutable final class Detail$auto extends Detail {const Detail$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Detail$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class Detail$low extends Detail {const Detail$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Detail$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class Detail$high extends Detail {const Detail$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Detail$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class Detail$Unknown extends Detail {const Detail$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Detail && other.value == value;
+    other is Detail$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Detail($value)';
 
  }
 @immutable final class UserContentVariant2ImageUrl {const UserContentVariant2ImageUrl({this.detail = Detail.auto, this.url, });

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ClientKeyParam (inline: CustomerAcceptance)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/client_key_param/client_key_param_customer_acceptance_online.dart';@immutable final class ClientKeyParamCustomerAcceptanceType {const ClientKeyParamCustomerAcceptanceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/client_key_param/client_key_param_customer_acceptance_online.dart';sealed class ClientKeyParamCustomerAcceptanceType {const ClientKeyParamCustomerAcceptanceType();
 
 factory ClientKeyParamCustomerAcceptanceType.fromJson(String json) { return switch (json) {
   'online' => online,
-  _ => ClientKeyParamCustomerAcceptanceType._(json),
+  _ => ClientKeyParamCustomerAcceptanceType$Unknown(json),
 }; }
 
-static const ClientKeyParamCustomerAcceptanceType online = ClientKeyParamCustomerAcceptanceType._('online');
+static const ClientKeyParamCustomerAcceptanceType online = ClientKeyParamCustomerAcceptanceType$online._();
 
 static const List<ClientKeyParamCustomerAcceptanceType> values = [online];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ClientKeyParamCustomerAcceptanceType$Unknown; } 
+@override String toString() => 'ClientKeyParamCustomerAcceptanceType($value)';
+
+ }
+@immutable final class ClientKeyParamCustomerAcceptanceType$online extends ClientKeyParamCustomerAcceptanceType {const ClientKeyParamCustomerAcceptanceType$online._();
+
+@override String get value => 'online';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClientKeyParamCustomerAcceptanceType$online;
+
+@override int get hashCode => 'online'.hashCode;
+
+ }
+@immutable final class ClientKeyParamCustomerAcceptanceType$Unknown extends ClientKeyParamCustomerAcceptanceType {const ClientKeyParamCustomerAcceptanceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ClientKeyParamCustomerAcceptanceType && other.value == value;
+    other is ClientKeyParamCustomerAcceptanceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ClientKeyParamCustomerAcceptanceType($value)';
 
  }
 @immutable final class ClientKeyParamCustomerAcceptance {const ClientKeyParamCustomerAcceptance({required this.online, required this.type, });

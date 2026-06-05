@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FunctionShellCallOutputExitOutcome
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The outcome type. Always `exit`.
-@immutable final class FunctionShellCallOutputExitOutcomeType {const FunctionShellCallOutputExitOutcomeType._(this.value);
+sealed class FunctionShellCallOutputExitOutcomeType {const FunctionShellCallOutputExitOutcomeType();
 
 factory FunctionShellCallOutputExitOutcomeType.fromJson(String json) { return switch (json) {
   'exit' => exit,
-  _ => FunctionShellCallOutputExitOutcomeType._(json),
+  _ => FunctionShellCallOutputExitOutcomeType$Unknown(json),
 }; }
 
-static const FunctionShellCallOutputExitOutcomeType exit = FunctionShellCallOutputExitOutcomeType._('exit');
+static const FunctionShellCallOutputExitOutcomeType exit = FunctionShellCallOutputExitOutcomeType$exit._();
 
 static const List<FunctionShellCallOutputExitOutcomeType> values = [exit];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FunctionShellCallOutputExitOutcomeType$Unknown; } 
+@override String toString() => 'FunctionShellCallOutputExitOutcomeType($value)';
+
+ }
+@immutable final class FunctionShellCallOutputExitOutcomeType$exit extends FunctionShellCallOutputExitOutcomeType {const FunctionShellCallOutputExitOutcomeType$exit._();
+
+@override String get value => 'exit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionShellCallOutputExitOutcomeType$exit;
+
+@override int get hashCode => 'exit'.hashCode;
+
+ }
+@immutable final class FunctionShellCallOutputExitOutcomeType$Unknown extends FunctionShellCallOutputExitOutcomeType {const FunctionShellCallOutputExitOutcomeType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FunctionShellCallOutputExitOutcomeType && other.value == value;
+    other is FunctionShellCallOutputExitOutcomeType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FunctionShellCallOutputExitOutcomeType($value)';
 
  }
 /// Indicates that the shell commands finished and returned an exit code.

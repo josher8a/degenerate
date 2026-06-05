@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CustomerBalanceTransaction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/bank_connections_resource_accountholder/bank_connections_resource_accountholder_customer.dart';import 'package:pub_stripe_spec3/models/billing_credit_grants_resource_balance_credits_application_invoice_voided/billing_credit_grants_resource_balance_credits_application_invoice_voided_invoice.dart';import 'package:pub_stripe_spec3/models/checkout_session.dart';import 'package:pub_stripe_spec3/models/credit_note.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_checkout_session.dart';import 'package:pub_stripe_spec3/models/customer_balance_transaction/customer_balance_transaction_credit_note.dart';import 'package:pub_stripe_spec3/models/invoice.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject._(this.value);
+sealed class CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject();
 
 factory CustomerBalanceTransactionObject.fromJson(String json) { return switch (json) {
   'customer_balance_transaction' => customerBalanceTransaction,
-  _ => CustomerBalanceTransactionObject._(json),
+  _ => CustomerBalanceTransactionObject$Unknown(json),
 }; }
 
-static const CustomerBalanceTransactionObject customerBalanceTransaction = CustomerBalanceTransactionObject._('customer_balance_transaction');
+static const CustomerBalanceTransactionObject customerBalanceTransaction = CustomerBalanceTransactionObject$customerBalanceTransaction._();
 
 static const List<CustomerBalanceTransactionObject> values = [customerBalanceTransaction];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,17 +21,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerBalanceTransactionObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is CustomerBalanceTransactionObject$Unknown; } 
 @override String toString() => 'CustomerBalanceTransactionObject($value)';
 
  }
+@immutable final class CustomerBalanceTransactionObject$customerBalanceTransaction extends CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject$customerBalanceTransaction._();
+
+@override String get value => 'customer_balance_transaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceTransactionObject$customerBalanceTransaction;
+
+@override int get hashCode => 'customer_balance_transaction'.hashCode;
+
+ }
+@immutable final class CustomerBalanceTransactionObject$Unknown extends CustomerBalanceTransactionObject {const CustomerBalanceTransactionObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CustomerBalanceTransactionObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Transaction type: `adjustment`, `applied_to_invoice`, `credit_note`, `initial`, `invoice_overpaid`, `invoice_too_large`, `invoice_too_small`, `unspent_receiver_credit`, `unapplied_from_invoice`, `checkout_session_subscription_payment`, or `checkout_session_subscription_payment_canceled`. See the [Customer Balance page](https://docs.stripe.com/billing/customer/balance#types) to learn more about transaction types.
-@immutable final class CustomerBalanceTransactionType {const CustomerBalanceTransactionType._(this.value);
+sealed class CustomerBalanceTransactionType {const CustomerBalanceTransactionType();
 
 factory CustomerBalanceTransactionType.fromJson(String json) { return switch (json) {
   'adjustment' => adjustment,
@@ -47,37 +60,36 @@ factory CustomerBalanceTransactionType.fromJson(String json) { return switch (js
   'migration' => migration,
   'unapplied_from_invoice' => unappliedFromInvoice,
   'unspent_receiver_credit' => unspentReceiverCredit,
-  _ => CustomerBalanceTransactionType._(json),
+  _ => CustomerBalanceTransactionType$Unknown(json),
 }; }
 
-static const CustomerBalanceTransactionType adjustment = CustomerBalanceTransactionType._('adjustment');
+static const CustomerBalanceTransactionType adjustment = CustomerBalanceTransactionType$adjustment._();
 
-static const CustomerBalanceTransactionType appliedToInvoice = CustomerBalanceTransactionType._('applied_to_invoice');
+static const CustomerBalanceTransactionType appliedToInvoice = CustomerBalanceTransactionType$appliedToInvoice._();
 
-static const CustomerBalanceTransactionType checkoutSessionSubscriptionPayment = CustomerBalanceTransactionType._('checkout_session_subscription_payment');
+static const CustomerBalanceTransactionType checkoutSessionSubscriptionPayment = CustomerBalanceTransactionType$checkoutSessionSubscriptionPayment._();
 
-static const CustomerBalanceTransactionType checkoutSessionSubscriptionPaymentCanceled = CustomerBalanceTransactionType._('checkout_session_subscription_payment_canceled');
+static const CustomerBalanceTransactionType checkoutSessionSubscriptionPaymentCanceled = CustomerBalanceTransactionType$checkoutSessionSubscriptionPaymentCanceled._();
 
-static const CustomerBalanceTransactionType creditNote = CustomerBalanceTransactionType._('credit_note');
+static const CustomerBalanceTransactionType creditNote = CustomerBalanceTransactionType$creditNote._();
 
-static const CustomerBalanceTransactionType initial = CustomerBalanceTransactionType._('initial');
+static const CustomerBalanceTransactionType initial = CustomerBalanceTransactionType$initial._();
 
-static const CustomerBalanceTransactionType invoiceOverpaid = CustomerBalanceTransactionType._('invoice_overpaid');
+static const CustomerBalanceTransactionType invoiceOverpaid = CustomerBalanceTransactionType$invoiceOverpaid._();
 
-static const CustomerBalanceTransactionType invoiceTooLarge = CustomerBalanceTransactionType._('invoice_too_large');
+static const CustomerBalanceTransactionType invoiceTooLarge = CustomerBalanceTransactionType$invoiceTooLarge._();
 
-static const CustomerBalanceTransactionType invoiceTooSmall = CustomerBalanceTransactionType._('invoice_too_small');
+static const CustomerBalanceTransactionType invoiceTooSmall = CustomerBalanceTransactionType$invoiceTooSmall._();
 
-static const CustomerBalanceTransactionType migration = CustomerBalanceTransactionType._('migration');
+static const CustomerBalanceTransactionType migration = CustomerBalanceTransactionType$migration._();
 
-static const CustomerBalanceTransactionType unappliedFromInvoice = CustomerBalanceTransactionType._('unapplied_from_invoice');
+static const CustomerBalanceTransactionType unappliedFromInvoice = CustomerBalanceTransactionType$unappliedFromInvoice._();
 
-static const CustomerBalanceTransactionType unspentReceiverCredit = CustomerBalanceTransactionType._('unspent_receiver_credit');
+static const CustomerBalanceTransactionType unspentReceiverCredit = CustomerBalanceTransactionType$unspentReceiverCredit._();
 
 static const List<CustomerBalanceTransactionType> values = [adjustment, appliedToInvoice, checkoutSessionSubscriptionPayment, checkoutSessionSubscriptionPaymentCanceled, creditNote, initial, invoiceOverpaid, invoiceTooLarge, invoiceTooSmall, migration, unappliedFromInvoice, unspentReceiverCredit];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -96,13 +108,126 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomerBalanceTransactionType$Unknown; } 
+@override String toString() => 'CustomerBalanceTransactionType($value)';
+
+ }
+@immutable final class CustomerBalanceTransactionType$adjustment extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$adjustment._();
+
+@override String get value => 'adjustment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceTransactionType$adjustment;
+
+@override int get hashCode => 'adjustment'.hashCode;
+
+ }
+@immutable final class CustomerBalanceTransactionType$appliedToInvoice extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$appliedToInvoice._();
+
+@override String get value => 'applied_to_invoice';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceTransactionType$appliedToInvoice;
+
+@override int get hashCode => 'applied_to_invoice'.hashCode;
+
+ }
+@immutable final class CustomerBalanceTransactionType$checkoutSessionSubscriptionPayment extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$checkoutSessionSubscriptionPayment._();
+
+@override String get value => 'checkout_session_subscription_payment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceTransactionType$checkoutSessionSubscriptionPayment;
+
+@override int get hashCode => 'checkout_session_subscription_payment'.hashCode;
+
+ }
+@immutable final class CustomerBalanceTransactionType$checkoutSessionSubscriptionPaymentCanceled extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$checkoutSessionSubscriptionPaymentCanceled._();
+
+@override String get value => 'checkout_session_subscription_payment_canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceTransactionType$checkoutSessionSubscriptionPaymentCanceled;
+
+@override int get hashCode => 'checkout_session_subscription_payment_canceled'.hashCode;
+
+ }
+@immutable final class CustomerBalanceTransactionType$creditNote extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$creditNote._();
+
+@override String get value => 'credit_note';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceTransactionType$creditNote;
+
+@override int get hashCode => 'credit_note'.hashCode;
+
+ }
+@immutable final class CustomerBalanceTransactionType$initial extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$initial._();
+
+@override String get value => 'initial';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceTransactionType$initial;
+
+@override int get hashCode => 'initial'.hashCode;
+
+ }
+@immutable final class CustomerBalanceTransactionType$invoiceOverpaid extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$invoiceOverpaid._();
+
+@override String get value => 'invoice_overpaid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceTransactionType$invoiceOverpaid;
+
+@override int get hashCode => 'invoice_overpaid'.hashCode;
+
+ }
+@immutable final class CustomerBalanceTransactionType$invoiceTooLarge extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$invoiceTooLarge._();
+
+@override String get value => 'invoice_too_large';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceTransactionType$invoiceTooLarge;
+
+@override int get hashCode => 'invoice_too_large'.hashCode;
+
+ }
+@immutable final class CustomerBalanceTransactionType$invoiceTooSmall extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$invoiceTooSmall._();
+
+@override String get value => 'invoice_too_small';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceTransactionType$invoiceTooSmall;
+
+@override int get hashCode => 'invoice_too_small'.hashCode;
+
+ }
+@immutable final class CustomerBalanceTransactionType$migration extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$migration._();
+
+@override String get value => 'migration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceTransactionType$migration;
+
+@override int get hashCode => 'migration'.hashCode;
+
+ }
+@immutable final class CustomerBalanceTransactionType$unappliedFromInvoice extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$unappliedFromInvoice._();
+
+@override String get value => 'unapplied_from_invoice';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceTransactionType$unappliedFromInvoice;
+
+@override int get hashCode => 'unapplied_from_invoice'.hashCode;
+
+ }
+@immutable final class CustomerBalanceTransactionType$unspentReceiverCredit extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$unspentReceiverCredit._();
+
+@override String get value => 'unspent_receiver_credit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerBalanceTransactionType$unspentReceiverCredit;
+
+@override int get hashCode => 'unspent_receiver_credit'.hashCode;
+
+ }
+@immutable final class CustomerBalanceTransactionType$Unknown extends CustomerBalanceTransactionType {const CustomerBalanceTransactionType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerBalanceTransactionType && other.value == value;
+    other is CustomerBalanceTransactionType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomerBalanceTransactionType($value)';
 
  }
 /// Each customer has a [Balance](https://docs.stripe.com/api/customers/object#customer_object-balance) value,

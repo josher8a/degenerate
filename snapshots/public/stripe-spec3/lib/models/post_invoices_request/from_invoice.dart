@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostInvoicesRequest (inline: FromInvoice)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class FromInvoiceAction {const FromInvoiceAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class FromInvoiceAction {const FromInvoiceAction();
 
 factory FromInvoiceAction.fromJson(String json) { return switch (json) {
   'revision' => revision,
-  _ => FromInvoiceAction._(json),
+  _ => FromInvoiceAction$Unknown(json),
 }; }
 
-static const FromInvoiceAction revision = FromInvoiceAction._('revision');
+static const FromInvoiceAction revision = FromInvoiceAction$revision._();
 
 static const List<FromInvoiceAction> values = [revision];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FromInvoiceAction$Unknown; } 
+@override String toString() => 'FromInvoiceAction($value)';
+
+ }
+@immutable final class FromInvoiceAction$revision extends FromInvoiceAction {const FromInvoiceAction$revision._();
+
+@override String get value => 'revision';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FromInvoiceAction$revision;
+
+@override int get hashCode => 'revision'.hashCode;
+
+ }
+@immutable final class FromInvoiceAction$Unknown extends FromInvoiceAction {const FromInvoiceAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FromInvoiceAction && other.value == value;
+    other is FromInvoiceAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FromInvoiceAction($value)';
 
  }
 /// Revise an existing invoice. The new invoice will be created in `status=draft`. See the [revision documentation](https://docs.stripe.com/invoicing/invoice-revisions) for more details.

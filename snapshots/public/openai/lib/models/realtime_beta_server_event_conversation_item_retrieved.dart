@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventConversationItemRetrieved
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';/// The event type, must be `conversation.item.retrieved`.
-@immutable final class RealtimeBetaServerEventConversationItemRetrievedType {const RealtimeBetaServerEventConversationItemRetrievedType._(this.value);
+sealed class RealtimeBetaServerEventConversationItemRetrievedType {const RealtimeBetaServerEventConversationItemRetrievedType();
 
 factory RealtimeBetaServerEventConversationItemRetrievedType.fromJson(String json) { return switch (json) {
   'conversation.item.retrieved' => conversationItemRetrieved,
-  _ => RealtimeBetaServerEventConversationItemRetrievedType._(json),
+  _ => RealtimeBetaServerEventConversationItemRetrievedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventConversationItemRetrievedType conversationItemRetrieved = RealtimeBetaServerEventConversationItemRetrievedType._('conversation.item.retrieved');
+static const RealtimeBetaServerEventConversationItemRetrievedType conversationItemRetrieved = RealtimeBetaServerEventConversationItemRetrievedType$conversationItemRetrieved._();
 
 static const List<RealtimeBetaServerEventConversationItemRetrievedType> values = [conversationItemRetrieved];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventConversationItemRetrievedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventConversationItemRetrievedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventConversationItemRetrievedType$conversationItemRetrieved extends RealtimeBetaServerEventConversationItemRetrievedType {const RealtimeBetaServerEventConversationItemRetrievedType$conversationItemRetrieved._();
+
+@override String get value => 'conversation.item.retrieved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventConversationItemRetrievedType$conversationItemRetrieved;
+
+@override int get hashCode => 'conversation.item.retrieved'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventConversationItemRetrievedType$Unknown extends RealtimeBetaServerEventConversationItemRetrievedType {const RealtimeBetaServerEventConversationItemRetrievedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventConversationItemRetrievedType && other.value == value;
+    other is RealtimeBetaServerEventConversationItemRetrievedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventConversationItemRetrievedType($value)';
 
  }
 /// Returned when a conversation item is retrieved with `conversation.item.retrieve`.

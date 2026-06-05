@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ReposListForUserSort
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposListForUserSort {const ReposListForUserSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ReposListForUserSort {const ReposListForUserSort();
 
 factory ReposListForUserSort.fromJson(String json) { return switch (json) {
   'created' => created,
   'updated' => updated,
   'pushed' => pushed,
   'full_name' => fullName,
-  _ => ReposListForUserSort._(json),
+  _ => ReposListForUserSort$Unknown(json),
 }; }
 
-static const ReposListForUserSort created = ReposListForUserSort._('created');
+static const ReposListForUserSort created = ReposListForUserSort$created._();
 
-static const ReposListForUserSort updated = ReposListForUserSort._('updated');
+static const ReposListForUserSort updated = ReposListForUserSort$updated._();
 
-static const ReposListForUserSort pushed = ReposListForUserSort._('pushed');
+static const ReposListForUserSort pushed = ReposListForUserSort$pushed._();
 
-static const ReposListForUserSort fullName = ReposListForUserSort._('full_name');
+static const ReposListForUserSort fullName = ReposListForUserSort$fullName._();
 
 static const List<ReposListForUserSort> values = [created, updated, pushed, fullName];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ReposListForUserSort$Unknown; } 
+@override String toString() => 'ReposListForUserSort($value)';
+
+ }
+@immutable final class ReposListForUserSort$created extends ReposListForUserSort {const ReposListForUserSort$created._();
+
+@override String get value => 'created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposListForUserSort$created;
+
+@override int get hashCode => 'created'.hashCode;
+
+ }
+@immutable final class ReposListForUserSort$updated extends ReposListForUserSort {const ReposListForUserSort$updated._();
+
+@override String get value => 'updated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposListForUserSort$updated;
+
+@override int get hashCode => 'updated'.hashCode;
+
+ }
+@immutable final class ReposListForUserSort$pushed extends ReposListForUserSort {const ReposListForUserSort$pushed._();
+
+@override String get value => 'pushed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposListForUserSort$pushed;
+
+@override int get hashCode => 'pushed'.hashCode;
+
+ }
+@immutable final class ReposListForUserSort$fullName extends ReposListForUserSort {const ReposListForUserSort$fullName._();
+
+@override String get value => 'full_name';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposListForUserSort$fullName;
+
+@override int get hashCode => 'full_name'.hashCode;
+
+ }
+@immutable final class ReposListForUserSort$Unknown extends ReposListForUserSort {const ReposListForUserSort$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ReposListForUserSort && other.value == value;
+    other is ReposListForUserSort$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ReposListForUserSort($value)';
 
  }

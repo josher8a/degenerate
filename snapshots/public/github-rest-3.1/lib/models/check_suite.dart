@@ -2,7 +2,7 @@
 // Source: #/components/schemas/CheckSuite
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_suite/check_suite_conclusion.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/minimal_repository.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';import 'package:pub_github_rest_3_1/models/simple_commit.dart';/// The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
-@immutable final class CheckSuiteStatus {const CheckSuiteStatus._(this.value);
+sealed class CheckSuiteStatus {const CheckSuiteStatus();
 
 factory CheckSuiteStatus.fromJson(String json) { return switch (json) {
   'queued' => queued,
@@ -12,27 +12,26 @@ factory CheckSuiteStatus.fromJson(String json) { return switch (json) {
   'requested' => requested,
   'pending' => pending,
   'null' => $null,
-  _ => CheckSuiteStatus._(json),
+  _ => CheckSuiteStatus$Unknown(json),
 }; }
 
-static const CheckSuiteStatus queued = CheckSuiteStatus._('queued');
+static const CheckSuiteStatus queued = CheckSuiteStatus$queued._();
 
-static const CheckSuiteStatus inProgress = CheckSuiteStatus._('in_progress');
+static const CheckSuiteStatus inProgress = CheckSuiteStatus$inProgress._();
 
-static const CheckSuiteStatus completed = CheckSuiteStatus._('completed');
+static const CheckSuiteStatus completed = CheckSuiteStatus$completed._();
 
-static const CheckSuiteStatus waiting = CheckSuiteStatus._('waiting');
+static const CheckSuiteStatus waiting = CheckSuiteStatus$waiting._();
 
-static const CheckSuiteStatus requested = CheckSuiteStatus._('requested');
+static const CheckSuiteStatus requested = CheckSuiteStatus$requested._();
 
-static const CheckSuiteStatus pending = CheckSuiteStatus._('pending');
+static const CheckSuiteStatus pending = CheckSuiteStatus$pending._();
 
-static const CheckSuiteStatus $null = CheckSuiteStatus._('null');
+static const CheckSuiteStatus $null = CheckSuiteStatus$$null._();
 
 static const List<CheckSuiteStatus> values = [queued, inProgress, completed, waiting, requested, pending, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -46,13 +45,81 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CheckSuiteStatus$Unknown; } 
+@override String toString() => 'CheckSuiteStatus($value)';
+
+ }
+@immutable final class CheckSuiteStatus$queued extends CheckSuiteStatus {const CheckSuiteStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckSuiteStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class CheckSuiteStatus$inProgress extends CheckSuiteStatus {const CheckSuiteStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckSuiteStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class CheckSuiteStatus$completed extends CheckSuiteStatus {const CheckSuiteStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckSuiteStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class CheckSuiteStatus$waiting extends CheckSuiteStatus {const CheckSuiteStatus$waiting._();
+
+@override String get value => 'waiting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckSuiteStatus$waiting;
+
+@override int get hashCode => 'waiting'.hashCode;
+
+ }
+@immutable final class CheckSuiteStatus$requested extends CheckSuiteStatus {const CheckSuiteStatus$requested._();
+
+@override String get value => 'requested';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckSuiteStatus$requested;
+
+@override int get hashCode => 'requested'.hashCode;
+
+ }
+@immutable final class CheckSuiteStatus$pending extends CheckSuiteStatus {const CheckSuiteStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckSuiteStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class CheckSuiteStatus$$null extends CheckSuiteStatus {const CheckSuiteStatus$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckSuiteStatus$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class CheckSuiteStatus$Unknown extends CheckSuiteStatus {const CheckSuiteStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CheckSuiteStatus && other.value == value;
+    other is CheckSuiteStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CheckSuiteStatus($value)';
 
  }
 /// A suite of checks performed on the code of a given code change

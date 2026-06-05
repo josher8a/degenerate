@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CodeScanningListRecentAnalysesSort
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeScanningListRecentAnalysesSort {const CodeScanningListRecentAnalysesSort._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CodeScanningListRecentAnalysesSort {const CodeScanningListRecentAnalysesSort();
 
 factory CodeScanningListRecentAnalysesSort.fromJson(String json) { return switch (json) {
   'created' => created,
-  _ => CodeScanningListRecentAnalysesSort._(json),
+  _ => CodeScanningListRecentAnalysesSort$Unknown(json),
 }; }
 
-static const CodeScanningListRecentAnalysesSort created = CodeScanningListRecentAnalysesSort._('created');
+static const CodeScanningListRecentAnalysesSort created = CodeScanningListRecentAnalysesSort$created._();
 
 static const List<CodeScanningListRecentAnalysesSort> values = [created];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeScanningListRecentAnalysesSort$Unknown; } 
+@override String toString() => 'CodeScanningListRecentAnalysesSort($value)';
+
+ }
+@immutable final class CodeScanningListRecentAnalysesSort$created extends CodeScanningListRecentAnalysesSort {const CodeScanningListRecentAnalysesSort$created._();
+
+@override String get value => 'created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningListRecentAnalysesSort$created;
+
+@override int get hashCode => 'created'.hashCode;
+
+ }
+@immutable final class CodeScanningListRecentAnalysesSort$Unknown extends CodeScanningListRecentAnalysesSort {const CodeScanningListRecentAnalysesSort$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeScanningListRecentAnalysesSort && other.value == value;
+    other is CodeScanningListRecentAnalysesSort$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeScanningListRecentAnalysesSort($value)';
 
  }

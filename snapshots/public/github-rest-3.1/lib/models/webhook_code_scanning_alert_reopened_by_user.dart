@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookCodeScanningAlertReopenedByUser
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_reopened_by_user/webhook_code_scanning_alert_reopened_by_user_alert.dart';import 'package:pub_github_rest_3_1/models/webhooks_code_scanning_commit_oid.dart';import 'package:pub_github_rest_3_1/models/webhooks_code_scanning_ref.dart';@immutable final class WebhookCodeScanningAlertReopenedByUserAction {const WebhookCodeScanningAlertReopenedByUserAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_reopened_by_user/webhook_code_scanning_alert_reopened_by_user_alert.dart';import 'package:pub_github_rest_3_1/models/webhooks_code_scanning_commit_oid.dart';import 'package:pub_github_rest_3_1/models/webhooks_code_scanning_ref.dart';sealed class WebhookCodeScanningAlertReopenedByUserAction {const WebhookCodeScanningAlertReopenedByUserAction();
 
 factory WebhookCodeScanningAlertReopenedByUserAction.fromJson(String json) { return switch (json) {
   'reopened_by_user' => reopenedByUser,
-  _ => WebhookCodeScanningAlertReopenedByUserAction._(json),
+  _ => WebhookCodeScanningAlertReopenedByUserAction$Unknown(json),
 }; }
 
-static const WebhookCodeScanningAlertReopenedByUserAction reopenedByUser = WebhookCodeScanningAlertReopenedByUserAction._('reopened_by_user');
+static const WebhookCodeScanningAlertReopenedByUserAction reopenedByUser = WebhookCodeScanningAlertReopenedByUserAction$reopenedByUser._();
 
 static const List<WebhookCodeScanningAlertReopenedByUserAction> values = [reopenedByUser];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookCodeScanningAlertReopenedByUserAction$Unknown; } 
+@override String toString() => 'WebhookCodeScanningAlertReopenedByUserAction($value)';
+
+ }
+@immutable final class WebhookCodeScanningAlertReopenedByUserAction$reopenedByUser extends WebhookCodeScanningAlertReopenedByUserAction {const WebhookCodeScanningAlertReopenedByUserAction$reopenedByUser._();
+
+@override String get value => 'reopened_by_user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCodeScanningAlertReopenedByUserAction$reopenedByUser;
+
+@override int get hashCode => 'reopened_by_user'.hashCode;
+
+ }
+@immutable final class WebhookCodeScanningAlertReopenedByUserAction$Unknown extends WebhookCodeScanningAlertReopenedByUserAction {const WebhookCodeScanningAlertReopenedByUserAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookCodeScanningAlertReopenedByUserAction && other.value == value;
+    other is WebhookCodeScanningAlertReopenedByUserAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookCodeScanningAlertReopenedByUserAction($value)';
 
  }
 @immutable final class WebhookCodeScanningAlertReopenedByUser {const WebhookCodeScanningAlertReopenedByUser({required this.action, required this.alert, required this.commitOid, required this.ref, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

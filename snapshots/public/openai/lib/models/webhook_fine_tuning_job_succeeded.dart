@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `fine_tuning.job.succeeded`.
 /// 
-@immutable final class WebhookFineTuningJobSucceededType {const WebhookFineTuningJobSucceededType._(this.value);
+sealed class WebhookFineTuningJobSucceededType {const WebhookFineTuningJobSucceededType();
 
 factory WebhookFineTuningJobSucceededType.fromJson(String json) { return switch (json) {
   'fine_tuning.job.succeeded' => fineTuningJobSucceeded,
-  _ => WebhookFineTuningJobSucceededType._(json),
+  _ => WebhookFineTuningJobSucceededType$Unknown(json),
 }; }
 
-static const WebhookFineTuningJobSucceededType fineTuningJobSucceeded = WebhookFineTuningJobSucceededType._('fine_tuning.job.succeeded');
+static const WebhookFineTuningJobSucceededType fineTuningJobSucceeded = WebhookFineTuningJobSucceededType$fineTuningJobSucceeded._();
 
 static const List<WebhookFineTuningJobSucceededType> values = [fineTuningJobSucceeded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookFineTuningJobSucceededType$Unknown; } 
+@override String toString() => 'WebhookFineTuningJobSucceededType($value)';
+
+ }
+@immutable final class WebhookFineTuningJobSucceededType$fineTuningJobSucceeded extends WebhookFineTuningJobSucceededType {const WebhookFineTuningJobSucceededType$fineTuningJobSucceeded._();
+
+@override String get value => 'fine_tuning.job.succeeded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookFineTuningJobSucceededType$fineTuningJobSucceeded;
+
+@override int get hashCode => 'fine_tuning.job.succeeded'.hashCode;
+
+ }
+@immutable final class WebhookFineTuningJobSucceededType$Unknown extends WebhookFineTuningJobSucceededType {const WebhookFineTuningJobSucceededType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookFineTuningJobSucceededType && other.value == value;
+    other is WebhookFineTuningJobSucceededType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookFineTuningJobSucceededType($value)';
 
  }
 /// Sent when a fine-tuning job has succeeded.

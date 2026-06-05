@@ -2,25 +2,24 @@
 // Source: #/components/schemas/ResourceSharingResourceStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Resource Status.
-@immutable final class ResourceSharingResourceStatus {const ResourceSharingResourceStatus._(this.value);
+sealed class ResourceSharingResourceStatus {const ResourceSharingResourceStatus();
 
 factory ResourceSharingResourceStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'deleting' => deleting,
   'deleted' => deleted,
-  _ => ResourceSharingResourceStatus._(json),
+  _ => ResourceSharingResourceStatus$Unknown(json),
 }; }
 
-static const ResourceSharingResourceStatus active = ResourceSharingResourceStatus._('active');
+static const ResourceSharingResourceStatus active = ResourceSharingResourceStatus$active._();
 
-static const ResourceSharingResourceStatus deleting = ResourceSharingResourceStatus._('deleting');
+static const ResourceSharingResourceStatus deleting = ResourceSharingResourceStatus$deleting._();
 
-static const ResourceSharingResourceStatus deleted = ResourceSharingResourceStatus._('deleted');
+static const ResourceSharingResourceStatus deleted = ResourceSharingResourceStatus$deleted._();
 
 static const List<ResourceSharingResourceStatus> values = [active, deleting, deleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ResourceSharingResourceStatus$Unknown; } 
+@override String toString() => 'ResourceSharingResourceStatus($value)';
+
+ }
+@immutable final class ResourceSharingResourceStatus$active extends ResourceSharingResourceStatus {const ResourceSharingResourceStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceSharingResourceStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class ResourceSharingResourceStatus$deleting extends ResourceSharingResourceStatus {const ResourceSharingResourceStatus$deleting._();
+
+@override String get value => 'deleting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceSharingResourceStatus$deleting;
+
+@override int get hashCode => 'deleting'.hashCode;
+
+ }
+@immutable final class ResourceSharingResourceStatus$deleted extends ResourceSharingResourceStatus {const ResourceSharingResourceStatus$deleted._();
+
+@override String get value => 'deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceSharingResourceStatus$deleted;
+
+@override int get hashCode => 'deleted'.hashCode;
+
+ }
+@immutable final class ResourceSharingResourceStatus$Unknown extends ResourceSharingResourceStatus {const ResourceSharingResourceStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ResourceSharingResourceStatus && other.value == value;
+    other is ResourceSharingResourceStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ResourceSharingResourceStatus($value)';
 
  }

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RepositoryRuleCommitterEmailPattern (inline: Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RepositoryRuleCommitterEmailPatternType {const RepositoryRuleCommitterEmailPatternType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RepositoryRuleCommitterEmailPatternType {const RepositoryRuleCommitterEmailPatternType();
 
 factory RepositoryRuleCommitterEmailPatternType.fromJson(String json) { return switch (json) {
   'committer_email_pattern' => committerEmailPattern,
-  _ => RepositoryRuleCommitterEmailPatternType._(json),
+  _ => RepositoryRuleCommitterEmailPatternType$Unknown(json),
 }; }
 
-static const RepositoryRuleCommitterEmailPatternType committerEmailPattern = RepositoryRuleCommitterEmailPatternType._('committer_email_pattern');
+static const RepositoryRuleCommitterEmailPatternType committerEmailPattern = RepositoryRuleCommitterEmailPatternType$committerEmailPattern._();
 
 static const List<RepositoryRuleCommitterEmailPatternType> values = [committerEmailPattern];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RepositoryRuleCommitterEmailPatternType$Unknown; } 
+@override String toString() => 'RepositoryRuleCommitterEmailPatternType($value)';
+
+ }
+@immutable final class RepositoryRuleCommitterEmailPatternType$committerEmailPattern extends RepositoryRuleCommitterEmailPatternType {const RepositoryRuleCommitterEmailPatternType$committerEmailPattern._();
+
+@override String get value => 'committer_email_pattern';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RepositoryRuleCommitterEmailPatternType$committerEmailPattern;
+
+@override int get hashCode => 'committer_email_pattern'.hashCode;
+
+ }
+@immutable final class RepositoryRuleCommitterEmailPatternType$Unknown extends RepositoryRuleCommitterEmailPatternType {const RepositoryRuleCommitterEmailPatternType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RepositoryRuleCommitterEmailPatternType && other.value == value;
+    other is RepositoryRuleCommitterEmailPatternType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RepositoryRuleCommitterEmailPatternType($value)';
 
  }

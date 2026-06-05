@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// This parameter defines the skip behavior for input collection.
-@immutable final class SkipNonRequiredInputs {const SkipNonRequiredInputs._(this.value);
+sealed class SkipNonRequiredInputs {const SkipNonRequiredInputs();
 
 factory SkipNonRequiredInputs.fromJson(String json) { return switch (json) {
   'all' => all,
   'none' => none,
-  _ => SkipNonRequiredInputs._(json),
+  _ => SkipNonRequiredInputs$Unknown(json),
 }; }
 
-static const SkipNonRequiredInputs all = SkipNonRequiredInputs._('all');
+static const SkipNonRequiredInputs all = SkipNonRequiredInputs$all._();
 
-static const SkipNonRequiredInputs none = SkipNonRequiredInputs._('none');
+static const SkipNonRequiredInputs none = SkipNonRequiredInputs$none._();
 
 static const List<SkipNonRequiredInputs> values = [all, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SkipNonRequiredInputs$Unknown; } 
+@override String toString() => 'SkipNonRequiredInputs($value)';
+
+ }
+@immutable final class SkipNonRequiredInputs$all extends SkipNonRequiredInputs {const SkipNonRequiredInputs$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SkipNonRequiredInputs$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class SkipNonRequiredInputs$none extends SkipNonRequiredInputs {const SkipNonRequiredInputs$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SkipNonRequiredInputs$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class SkipNonRequiredInputs$Unknown extends SkipNonRequiredInputs {const SkipNonRequiredInputs$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SkipNonRequiredInputs && other.value == value;
+    other is SkipNonRequiredInputs$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SkipNonRequiredInputs($value)';
 
  }
 @immutable final class PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest {const PostTestHelpersTerminalReadersReaderSucceedInputCollectionRequest({this.expand, this.skipNonRequiredInputs, });

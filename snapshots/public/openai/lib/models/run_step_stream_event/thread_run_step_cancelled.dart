@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStepStreamEvent (inline: ThreadRunStepCancelled)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';@immutable final class ThreadRunStepCancelledEvent {const ThreadRunStepCancelledEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_step_object.dart';sealed class ThreadRunStepCancelledEvent {const ThreadRunStepCancelledEvent();
 
 factory ThreadRunStepCancelledEvent.fromJson(String json) { return switch (json) {
   'thread.run.step.cancelled' => threadRunStepCancelled,
-  _ => ThreadRunStepCancelledEvent._(json),
+  _ => ThreadRunStepCancelledEvent$Unknown(json),
 }; }
 
-static const ThreadRunStepCancelledEvent threadRunStepCancelled = ThreadRunStepCancelledEvent._('thread.run.step.cancelled');
+static const ThreadRunStepCancelledEvent threadRunStepCancelled = ThreadRunStepCancelledEvent$threadRunStepCancelled._();
 
 static const List<ThreadRunStepCancelledEvent> values = [threadRunStepCancelled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunStepCancelledEvent$Unknown; } 
+@override String toString() => 'ThreadRunStepCancelledEvent($value)';
+
+ }
+@immutable final class ThreadRunStepCancelledEvent$threadRunStepCancelled extends ThreadRunStepCancelledEvent {const ThreadRunStepCancelledEvent$threadRunStepCancelled._();
+
+@override String get value => 'thread.run.step.cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunStepCancelledEvent$threadRunStepCancelled;
+
+@override int get hashCode => 'thread.run.step.cancelled'.hashCode;
+
+ }
+@immutable final class ThreadRunStepCancelledEvent$Unknown extends ThreadRunStepCancelledEvent {const ThreadRunStepCancelledEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunStepCancelledEvent && other.value == value;
+    other is ThreadRunStepCancelledEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunStepCancelledEvent($value)';
 
  }
 /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is cancelled.

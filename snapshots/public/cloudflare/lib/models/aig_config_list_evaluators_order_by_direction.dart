@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigListEvaluatorsOrderByDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AigConfigListEvaluatorsOrderByDirection {const AigConfigListEvaluatorsOrderByDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AigConfigListEvaluatorsOrderByDirection {const AigConfigListEvaluatorsOrderByDirection();
 
 factory AigConfigListEvaluatorsOrderByDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => AigConfigListEvaluatorsOrderByDirection._(json),
+  _ => AigConfigListEvaluatorsOrderByDirection$Unknown(json),
 }; }
 
-static const AigConfigListEvaluatorsOrderByDirection asc = AigConfigListEvaluatorsOrderByDirection._('asc');
+static const AigConfigListEvaluatorsOrderByDirection asc = AigConfigListEvaluatorsOrderByDirection$asc._();
 
-static const AigConfigListEvaluatorsOrderByDirection desc = AigConfigListEvaluatorsOrderByDirection._('desc');
+static const AigConfigListEvaluatorsOrderByDirection desc = AigConfigListEvaluatorsOrderByDirection$desc._();
 
 static const List<AigConfigListEvaluatorsOrderByDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AigConfigListEvaluatorsOrderByDirection$Unknown; } 
+@override String toString() => 'AigConfigListEvaluatorsOrderByDirection($value)';
+
+ }
+@immutable final class AigConfigListEvaluatorsOrderByDirection$asc extends AigConfigListEvaluatorsOrderByDirection {const AigConfigListEvaluatorsOrderByDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AigConfigListEvaluatorsOrderByDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class AigConfigListEvaluatorsOrderByDirection$desc extends AigConfigListEvaluatorsOrderByDirection {const AigConfigListEvaluatorsOrderByDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AigConfigListEvaluatorsOrderByDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class AigConfigListEvaluatorsOrderByDirection$Unknown extends AigConfigListEvaluatorsOrderByDirection {const AigConfigListEvaluatorsOrderByDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AigConfigListEvaluatorsOrderByDirection && other.value == value;
+    other is AigConfigListEvaluatorsOrderByDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AigConfigListEvaluatorsOrderByDirection($value)';
 
  }

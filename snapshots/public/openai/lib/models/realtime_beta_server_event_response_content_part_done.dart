@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventResponseContentPartDone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_response_content_part_added/realtime_beta_server_event_response_content_part_added_part.dart';/// The event type, must be `response.content_part.done`.
-@immutable final class RealtimeBetaServerEventResponseContentPartDoneType {const RealtimeBetaServerEventResponseContentPartDoneType._(this.value);
+sealed class RealtimeBetaServerEventResponseContentPartDoneType {const RealtimeBetaServerEventResponseContentPartDoneType();
 
 factory RealtimeBetaServerEventResponseContentPartDoneType.fromJson(String json) { return switch (json) {
   'response.content_part.done' => responseContentPartDone,
-  _ => RealtimeBetaServerEventResponseContentPartDoneType._(json),
+  _ => RealtimeBetaServerEventResponseContentPartDoneType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventResponseContentPartDoneType responseContentPartDone = RealtimeBetaServerEventResponseContentPartDoneType._('response.content_part.done');
+static const RealtimeBetaServerEventResponseContentPartDoneType responseContentPartDone = RealtimeBetaServerEventResponseContentPartDoneType$responseContentPartDone._();
 
 static const List<RealtimeBetaServerEventResponseContentPartDoneType> values = [responseContentPartDone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseContentPartDoneType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventResponseContentPartDoneType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventResponseContentPartDoneType$responseContentPartDone extends RealtimeBetaServerEventResponseContentPartDoneType {const RealtimeBetaServerEventResponseContentPartDoneType$responseContentPartDone._();
+
+@override String get value => 'response.content_part.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseContentPartDoneType$responseContentPartDone;
+
+@override int get hashCode => 'response.content_part.done'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventResponseContentPartDoneType$Unknown extends RealtimeBetaServerEventResponseContentPartDoneType {const RealtimeBetaServerEventResponseContentPartDoneType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventResponseContentPartDoneType && other.value == value;
+    other is RealtimeBetaServerEventResponseContentPartDoneType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventResponseContentPartDoneType($value)';
 
  }
 /// Returned when a content part is done streaming in an assistant message item.

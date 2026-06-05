@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Dispute
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/dispute_evidence.dart';import 'package:pub_stripe_spec3/models/dispute_evidence_details.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';@immutable final class EnhancedEligibilityTypes {const EnhancedEligibilityTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_charge.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge.dart';import 'package:pub_stripe_spec3/models/charge/charge_payment_intent.dart';import 'package:pub_stripe_spec3/models/dispute_evidence.dart';import 'package:pub_stripe_spec3/models/dispute_evidence_details.dart';import 'package:pub_stripe_spec3/models/dispute_payment_method_details.dart';import 'package:pub_stripe_spec3/models/payment_intent.dart';sealed class EnhancedEligibilityTypes {const EnhancedEligibilityTypes();
 
 factory EnhancedEligibilityTypes.fromJson(String json) { return switch (json) {
   'visa_compelling_evidence_3' => visaCompellingEvidence3,
   'visa_compliance' => visaCompliance,
-  _ => EnhancedEligibilityTypes._(json),
+  _ => EnhancedEligibilityTypes$Unknown(json),
 }; }
 
-static const EnhancedEligibilityTypes visaCompellingEvidence3 = EnhancedEligibilityTypes._('visa_compelling_evidence_3');
+static const EnhancedEligibilityTypes visaCompellingEvidence3 = EnhancedEligibilityTypes$visaCompellingEvidence3._();
 
-static const EnhancedEligibilityTypes visaCompliance = EnhancedEligibilityTypes._('visa_compliance');
+static const EnhancedEligibilityTypes visaCompliance = EnhancedEligibilityTypes$visaCompliance._();
 
 static const List<EnhancedEligibilityTypes> values = [visaCompellingEvidence3, visaCompliance];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,29 +24,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is EnhancedEligibilityTypes && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is EnhancedEligibilityTypes$Unknown; } 
 @override String toString() => 'EnhancedEligibilityTypes($value)';
 
  }
+@immutable final class EnhancedEligibilityTypes$visaCompellingEvidence3 extends EnhancedEligibilityTypes {const EnhancedEligibilityTypes$visaCompellingEvidence3._();
+
+@override String get value => 'visa_compelling_evidence_3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnhancedEligibilityTypes$visaCompellingEvidence3;
+
+@override int get hashCode => 'visa_compelling_evidence_3'.hashCode;
+
+ }
+@immutable final class EnhancedEligibilityTypes$visaCompliance extends EnhancedEligibilityTypes {const EnhancedEligibilityTypes$visaCompliance._();
+
+@override String get value => 'visa_compliance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EnhancedEligibilityTypes$visaCompliance;
+
+@override int get hashCode => 'visa_compliance'.hashCode;
+
+ }
+@immutable final class EnhancedEligibilityTypes$Unknown extends EnhancedEligibilityTypes {const EnhancedEligibilityTypes$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is EnhancedEligibilityTypes$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class DisputeObject {const DisputeObject._(this.value);
+sealed class DisputeObject {const DisputeObject();
 
 factory DisputeObject.fromJson(String json) { return switch (json) {
   'dispute' => dispute,
-  _ => DisputeObject._(json),
+  _ => DisputeObject$Unknown(json),
 }; }
 
-static const DisputeObject dispute = DisputeObject._('dispute');
+static const DisputeObject dispute = DisputeObject$dispute._();
 
 static const List<DisputeObject> values = [dispute];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -55,17 +76,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is DisputeObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is DisputeObject$Unknown; } 
 @override String toString() => 'DisputeObject($value)';
 
  }
+@immutable final class DisputeObject$dispute extends DisputeObject {const DisputeObject$dispute._();
+
+@override String get value => 'dispute';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeObject$dispute;
+
+@override int get hashCode => 'dispute'.hashCode;
+
+ }
+@immutable final class DisputeObject$Unknown extends DisputeObject {const DisputeObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is DisputeObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The current status of a dispute. Possible values include:`warning_needs_response`, `warning_under_review`, `warning_closed`, `needs_response`, `under_review`, `won`, `lost`, or `prevented`.
-@immutable final class DisputeStatus {const DisputeStatus._(this.value);
+sealed class DisputeStatus {const DisputeStatus();
 
 factory DisputeStatus.fromJson(String json) { return switch (json) {
   'lost' => lost,
@@ -76,29 +111,28 @@ factory DisputeStatus.fromJson(String json) { return switch (json) {
   'warning_needs_response' => warningNeedsResponse,
   'warning_under_review' => warningUnderReview,
   'won' => won,
-  _ => DisputeStatus._(json),
+  _ => DisputeStatus$Unknown(json),
 }; }
 
-static const DisputeStatus lost = DisputeStatus._('lost');
+static const DisputeStatus lost = DisputeStatus$lost._();
 
-static const DisputeStatus needsResponse = DisputeStatus._('needs_response');
+static const DisputeStatus needsResponse = DisputeStatus$needsResponse._();
 
-static const DisputeStatus prevented = DisputeStatus._('prevented');
+static const DisputeStatus prevented = DisputeStatus$prevented._();
 
-static const DisputeStatus underReview = DisputeStatus._('under_review');
+static const DisputeStatus underReview = DisputeStatus$underReview._();
 
-static const DisputeStatus warningClosed = DisputeStatus._('warning_closed');
+static const DisputeStatus warningClosed = DisputeStatus$warningClosed._();
 
-static const DisputeStatus warningNeedsResponse = DisputeStatus._('warning_needs_response');
+static const DisputeStatus warningNeedsResponse = DisputeStatus$warningNeedsResponse._();
 
-static const DisputeStatus warningUnderReview = DisputeStatus._('warning_under_review');
+static const DisputeStatus warningUnderReview = DisputeStatus$warningUnderReview._();
 
-static const DisputeStatus won = DisputeStatus._('won');
+static const DisputeStatus won = DisputeStatus$won._();
 
 static const List<DisputeStatus> values = [lost, needsResponse, prevented, underReview, warningClosed, warningNeedsResponse, warningUnderReview, won];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -113,13 +147,90 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DisputeStatus$Unknown; } 
+@override String toString() => 'DisputeStatus($value)';
+
+ }
+@immutable final class DisputeStatus$lost extends DisputeStatus {const DisputeStatus$lost._();
+
+@override String get value => 'lost';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeStatus$lost;
+
+@override int get hashCode => 'lost'.hashCode;
+
+ }
+@immutable final class DisputeStatus$needsResponse extends DisputeStatus {const DisputeStatus$needsResponse._();
+
+@override String get value => 'needs_response';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeStatus$needsResponse;
+
+@override int get hashCode => 'needs_response'.hashCode;
+
+ }
+@immutable final class DisputeStatus$prevented extends DisputeStatus {const DisputeStatus$prevented._();
+
+@override String get value => 'prevented';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeStatus$prevented;
+
+@override int get hashCode => 'prevented'.hashCode;
+
+ }
+@immutable final class DisputeStatus$underReview extends DisputeStatus {const DisputeStatus$underReview._();
+
+@override String get value => 'under_review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeStatus$underReview;
+
+@override int get hashCode => 'under_review'.hashCode;
+
+ }
+@immutable final class DisputeStatus$warningClosed extends DisputeStatus {const DisputeStatus$warningClosed._();
+
+@override String get value => 'warning_closed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeStatus$warningClosed;
+
+@override int get hashCode => 'warning_closed'.hashCode;
+
+ }
+@immutable final class DisputeStatus$warningNeedsResponse extends DisputeStatus {const DisputeStatus$warningNeedsResponse._();
+
+@override String get value => 'warning_needs_response';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeStatus$warningNeedsResponse;
+
+@override int get hashCode => 'warning_needs_response'.hashCode;
+
+ }
+@immutable final class DisputeStatus$warningUnderReview extends DisputeStatus {const DisputeStatus$warningUnderReview._();
+
+@override String get value => 'warning_under_review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeStatus$warningUnderReview;
+
+@override int get hashCode => 'warning_under_review'.hashCode;
+
+ }
+@immutable final class DisputeStatus$won extends DisputeStatus {const DisputeStatus$won._();
+
+@override String get value => 'won';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DisputeStatus$won;
+
+@override int get hashCode => 'won'.hashCode;
+
+ }
+@immutable final class DisputeStatus$Unknown extends DisputeStatus {const DisputeStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DisputeStatus && other.value == value;
+    other is DisputeStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DisputeStatus($value)';
 
  }
 /// A dispute occurs when a customer questions your charge with their card issuer.

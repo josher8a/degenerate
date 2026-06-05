@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Canceled (inline: ProductType)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CanceledProductType {const CanceledProductType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CanceledProductType {const CanceledProductType();
 
 factory CanceledProductType.fromJson(String json) { return switch (json) {
   '' => $empty,
   'merchandise' => merchandise,
   'service' => service,
-  _ => CanceledProductType._(json),
+  _ => CanceledProductType$Unknown(json),
 }; }
 
-static const CanceledProductType $empty = CanceledProductType._('');
+static const CanceledProductType $empty = CanceledProductType$$empty._();
 
-static const CanceledProductType merchandise = CanceledProductType._('merchandise');
+static const CanceledProductType merchandise = CanceledProductType$merchandise._();
 
-static const CanceledProductType service = CanceledProductType._('service');
+static const CanceledProductType service = CanceledProductType$service._();
 
 static const List<CanceledProductType> values = [$empty, merchandise, service];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CanceledProductType$Unknown; } 
+@override String toString() => 'CanceledProductType($value)';
+
+ }
+@immutable final class CanceledProductType$$empty extends CanceledProductType {const CanceledProductType$$empty._();
+
+@override String get value => '';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CanceledProductType$$empty;
+
+@override int get hashCode => ''.hashCode;
+
+ }
+@immutable final class CanceledProductType$merchandise extends CanceledProductType {const CanceledProductType$merchandise._();
+
+@override String get value => 'merchandise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CanceledProductType$merchandise;
+
+@override int get hashCode => 'merchandise'.hashCode;
+
+ }
+@immutable final class CanceledProductType$service extends CanceledProductType {const CanceledProductType$service._();
+
+@override String get value => 'service';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CanceledProductType$service;
+
+@override int get hashCode => 'service'.hashCode;
+
+ }
+@immutable final class CanceledProductType$Unknown extends CanceledProductType {const CanceledProductType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CanceledProductType && other.value == value;
+    other is CanceledProductType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CanceledProductType($value)';
 
  }

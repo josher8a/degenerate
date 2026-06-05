@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookProjectCardMoved (inline: Action)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class WebhookProjectCardMovedAction {const WebhookProjectCardMovedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class WebhookProjectCardMovedAction {const WebhookProjectCardMovedAction();
 
 factory WebhookProjectCardMovedAction.fromJson(String json) { return switch (json) {
   'moved' => moved,
-  _ => WebhookProjectCardMovedAction._(json),
+  _ => WebhookProjectCardMovedAction$Unknown(json),
 }; }
 
-static const WebhookProjectCardMovedAction moved = WebhookProjectCardMovedAction._('moved');
+static const WebhookProjectCardMovedAction moved = WebhookProjectCardMovedAction$moved._();
 
 static const List<WebhookProjectCardMovedAction> values = [moved];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookProjectCardMovedAction$Unknown; } 
+@override String toString() => 'WebhookProjectCardMovedAction($value)';
+
+ }
+@immutable final class WebhookProjectCardMovedAction$moved extends WebhookProjectCardMovedAction {const WebhookProjectCardMovedAction$moved._();
+
+@override String get value => 'moved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookProjectCardMovedAction$moved;
+
+@override int get hashCode => 'moved'.hashCode;
+
+ }
+@immutable final class WebhookProjectCardMovedAction$Unknown extends WebhookProjectCardMovedAction {const WebhookProjectCardMovedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookProjectCardMovedAction && other.value == value;
+    other is WebhookProjectCardMovedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookProjectCardMovedAction($value)';
 
  }

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ObjectWithKnownOpenEnum
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ObjectWithKnownOpenEnumStatus {const ObjectWithKnownOpenEnumStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ObjectWithKnownOpenEnumStatus {const ObjectWithKnownOpenEnumStatus();
 
 factory ObjectWithKnownOpenEnumStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'inactive' => inactive,
-  _ => ObjectWithKnownOpenEnumStatus._(json),
+  _ => ObjectWithKnownOpenEnumStatus$Unknown(json),
 }; }
 
-static const ObjectWithKnownOpenEnumStatus active = ObjectWithKnownOpenEnumStatus._('active');
+static const ObjectWithKnownOpenEnumStatus active = ObjectWithKnownOpenEnumStatus$active._();
 
-static const ObjectWithKnownOpenEnumStatus inactive = ObjectWithKnownOpenEnumStatus._('inactive');
+static const ObjectWithKnownOpenEnumStatus inactive = ObjectWithKnownOpenEnumStatus$inactive._();
 
 static const List<ObjectWithKnownOpenEnumStatus> values = [active, inactive];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ObjectWithKnownOpenEnumStatus$Unknown; } 
+@override String toString() => 'ObjectWithKnownOpenEnumStatus($value)';
+
+ }
+@immutable final class ObjectWithKnownOpenEnumStatus$active extends ObjectWithKnownOpenEnumStatus {const ObjectWithKnownOpenEnumStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ObjectWithKnownOpenEnumStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class ObjectWithKnownOpenEnumStatus$inactive extends ObjectWithKnownOpenEnumStatus {const ObjectWithKnownOpenEnumStatus$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ObjectWithKnownOpenEnumStatus$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+ }
+@immutable final class ObjectWithKnownOpenEnumStatus$Unknown extends ObjectWithKnownOpenEnumStatus {const ObjectWithKnownOpenEnumStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ObjectWithKnownOpenEnumStatus && other.value == value;
+    other is ObjectWithKnownOpenEnumStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ObjectWithKnownOpenEnumStatus($value)';
 
  }
 @immutable final class ObjectWithKnownOpenEnum {const ObjectWithKnownOpenEnum({required this.name, required this.status, required this.value, });

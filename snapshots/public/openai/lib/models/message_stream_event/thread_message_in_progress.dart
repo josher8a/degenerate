@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MessageStreamEvent (inline: ThreadMessageInProgress)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_object.dart';@immutable final class ThreadMessageInProgressEvent {const ThreadMessageInProgressEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/message_object.dart';sealed class ThreadMessageInProgressEvent {const ThreadMessageInProgressEvent();
 
 factory ThreadMessageInProgressEvent.fromJson(String json) { return switch (json) {
   'thread.message.in_progress' => threadMessageInProgress,
-  _ => ThreadMessageInProgressEvent._(json),
+  _ => ThreadMessageInProgressEvent$Unknown(json),
 }; }
 
-static const ThreadMessageInProgressEvent threadMessageInProgress = ThreadMessageInProgressEvent._('thread.message.in_progress');
+static const ThreadMessageInProgressEvent threadMessageInProgress = ThreadMessageInProgressEvent$threadMessageInProgress._();
 
 static const List<ThreadMessageInProgressEvent> values = [threadMessageInProgress];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadMessageInProgressEvent$Unknown; } 
+@override String toString() => 'ThreadMessageInProgressEvent($value)';
+
+ }
+@immutable final class ThreadMessageInProgressEvent$threadMessageInProgress extends ThreadMessageInProgressEvent {const ThreadMessageInProgressEvent$threadMessageInProgress._();
+
+@override String get value => 'thread.message.in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadMessageInProgressEvent$threadMessageInProgress;
+
+@override int get hashCode => 'thread.message.in_progress'.hashCode;
+
+ }
+@immutable final class ThreadMessageInProgressEvent$Unknown extends ThreadMessageInProgressEvent {const ThreadMessageInProgressEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadMessageInProgressEvent && other.value == value;
+    other is ThreadMessageInProgressEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadMessageInProgressEvent($value)';
 
  }
 /// Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.

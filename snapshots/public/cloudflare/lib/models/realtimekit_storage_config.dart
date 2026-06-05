@@ -3,22 +3,21 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Authentication method used for "sftp" type storage medium
 /// 
-@immutable final class RealtimekitStorageConfigAuthMethod {const RealtimekitStorageConfigAuthMethod._(this.value);
+sealed class RealtimekitStorageConfigAuthMethod {const RealtimekitStorageConfigAuthMethod();
 
 factory RealtimekitStorageConfigAuthMethod.fromJson(String json) { return switch (json) {
   'KEY' => key,
   'PASSWORD' => password,
-  _ => RealtimekitStorageConfigAuthMethod._(json),
+  _ => RealtimekitStorageConfigAuthMethod$Unknown(json),
 }; }
 
-static const RealtimekitStorageConfigAuthMethod key = RealtimekitStorageConfigAuthMethod._('KEY');
+static const RealtimekitStorageConfigAuthMethod key = RealtimekitStorageConfigAuthMethod$key._();
 
-static const RealtimekitStorageConfigAuthMethod password = RealtimekitStorageConfigAuthMethod._('PASSWORD');
+static const RealtimekitStorageConfigAuthMethod password = RealtimekitStorageConfigAuthMethod$password._();
 
 static const List<RealtimekitStorageConfigAuthMethod> values = [key, password];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -27,17 +26,40 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimekitStorageConfigAuthMethod && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is RealtimekitStorageConfigAuthMethod$Unknown; } 
 @override String toString() => 'RealtimekitStorageConfigAuthMethod($value)';
 
  }
+@immutable final class RealtimekitStorageConfigAuthMethod$key extends RealtimekitStorageConfigAuthMethod {const RealtimekitStorageConfigAuthMethod$key._();
+
+@override String get value => 'KEY';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitStorageConfigAuthMethod$key;
+
+@override int get hashCode => 'KEY'.hashCode;
+
+ }
+@immutable final class RealtimekitStorageConfigAuthMethod$password extends RealtimekitStorageConfigAuthMethod {const RealtimekitStorageConfigAuthMethod$password._();
+
+@override String get value => 'PASSWORD';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitStorageConfigAuthMethod$password;
+
+@override int get hashCode => 'PASSWORD'.hashCode;
+
+ }
+@immutable final class RealtimekitStorageConfigAuthMethod$Unknown extends RealtimekitStorageConfigAuthMethod {const RealtimekitStorageConfigAuthMethod$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RealtimekitStorageConfigAuthMethod$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Type of storage media.
-@immutable final class RealtimekitStorageConfigType {const RealtimekitStorageConfigType._(this.value);
+sealed class RealtimekitStorageConfigType {const RealtimekitStorageConfigType();
 
 factory RealtimekitStorageConfigType.fromJson(String json) { return switch (json) {
   'aws' => aws,
@@ -45,23 +67,22 @@ factory RealtimekitStorageConfigType.fromJson(String json) { return switch (json
   'digitalocean' => digitalocean,
   'gcs' => gcs,
   'sftp' => sftp,
-  _ => RealtimekitStorageConfigType._(json),
+  _ => RealtimekitStorageConfigType$Unknown(json),
 }; }
 
-static const RealtimekitStorageConfigType aws = RealtimekitStorageConfigType._('aws');
+static const RealtimekitStorageConfigType aws = RealtimekitStorageConfigType$aws._();
 
-static const RealtimekitStorageConfigType azure = RealtimekitStorageConfigType._('azure');
+static const RealtimekitStorageConfigType azure = RealtimekitStorageConfigType$azure._();
 
-static const RealtimekitStorageConfigType digitalocean = RealtimekitStorageConfigType._('digitalocean');
+static const RealtimekitStorageConfigType digitalocean = RealtimekitStorageConfigType$digitalocean._();
 
-static const RealtimekitStorageConfigType gcs = RealtimekitStorageConfigType._('gcs');
+static const RealtimekitStorageConfigType gcs = RealtimekitStorageConfigType$gcs._();
 
-static const RealtimekitStorageConfigType sftp = RealtimekitStorageConfigType._('sftp');
+static const RealtimekitStorageConfigType sftp = RealtimekitStorageConfigType$sftp._();
 
 static const List<RealtimekitStorageConfigType> values = [aws, azure, digitalocean, gcs, sftp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -73,13 +94,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimekitStorageConfigType$Unknown; } 
+@override String toString() => 'RealtimekitStorageConfigType($value)';
+
+ }
+@immutable final class RealtimekitStorageConfigType$aws extends RealtimekitStorageConfigType {const RealtimekitStorageConfigType$aws._();
+
+@override String get value => 'aws';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitStorageConfigType$aws;
+
+@override int get hashCode => 'aws'.hashCode;
+
+ }
+@immutable final class RealtimekitStorageConfigType$azure extends RealtimekitStorageConfigType {const RealtimekitStorageConfigType$azure._();
+
+@override String get value => 'azure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitStorageConfigType$azure;
+
+@override int get hashCode => 'azure'.hashCode;
+
+ }
+@immutable final class RealtimekitStorageConfigType$digitalocean extends RealtimekitStorageConfigType {const RealtimekitStorageConfigType$digitalocean._();
+
+@override String get value => 'digitalocean';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitStorageConfigType$digitalocean;
+
+@override int get hashCode => 'digitalocean'.hashCode;
+
+ }
+@immutable final class RealtimekitStorageConfigType$gcs extends RealtimekitStorageConfigType {const RealtimekitStorageConfigType$gcs._();
+
+@override String get value => 'gcs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitStorageConfigType$gcs;
+
+@override int get hashCode => 'gcs'.hashCode;
+
+ }
+@immutable final class RealtimekitStorageConfigType$sftp extends RealtimekitStorageConfigType {const RealtimekitStorageConfigType$sftp._();
+
+@override String get value => 'sftp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitStorageConfigType$sftp;
+
+@override int get hashCode => 'sftp'.hashCode;
+
+ }
+@immutable final class RealtimekitStorageConfigType$Unknown extends RealtimekitStorageConfigType {const RealtimekitStorageConfigType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimekitStorageConfigType && other.value == value;
+    other is RealtimekitStorageConfigType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimekitStorageConfigType($value)';
 
  }
 @immutable final class RealtimekitStorageConfig {const RealtimekitStorageConfig({required this.type, this.accessKey, this.authMethod, this.bucket, this.host, this.password, this.path, this.port, this.privateKey, this.region, this.secret, this.username, });

@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TeamsDevicesType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of device posture rule.
-@immutable final class TeamsDevicesType {const TeamsDevicesType._(this.value);
+sealed class TeamsDevicesType {const TeamsDevicesType();
 
 factory TeamsDevicesType.fromJson(String json) { return switch (json) {
   'file' => file,
@@ -28,59 +28,58 @@ factory TeamsDevicesType.fromJson(String json) { return switch (json) {
   'workspace_one' => workspaceOne,
   'sentinelone_s2s' => sentineloneS2s,
   'custom_s2s' => customS2s,
-  _ => TeamsDevicesType._(json),
+  _ => TeamsDevicesType$Unknown(json),
 }; }
 
-static const TeamsDevicesType file = TeamsDevicesType._('file');
+static const TeamsDevicesType file = TeamsDevicesType$file._();
 
-static const TeamsDevicesType application = TeamsDevicesType._('application');
+static const TeamsDevicesType application = TeamsDevicesType$application._();
 
-static const TeamsDevicesType tanium = TeamsDevicesType._('tanium');
+static const TeamsDevicesType tanium = TeamsDevicesType$tanium._();
 
-static const TeamsDevicesType gateway = TeamsDevicesType._('gateway');
+static const TeamsDevicesType gateway = TeamsDevicesType$gateway._();
 
-static const TeamsDevicesType warp = TeamsDevicesType._('warp');
+static const TeamsDevicesType warp = TeamsDevicesType$warp._();
 
-static const TeamsDevicesType diskEncryption = TeamsDevicesType._('disk_encryption');
+static const TeamsDevicesType diskEncryption = TeamsDevicesType$diskEncryption._();
 
-static const TeamsDevicesType serialNumber = TeamsDevicesType._('serial_number');
+static const TeamsDevicesType serialNumber = TeamsDevicesType$serialNumber._();
 
-static const TeamsDevicesType sentinelone = TeamsDevicesType._('sentinelone');
+static const TeamsDevicesType sentinelone = TeamsDevicesType$sentinelone._();
 
-static const TeamsDevicesType carbonblack = TeamsDevicesType._('carbonblack');
+static const TeamsDevicesType carbonblack = TeamsDevicesType$carbonblack._();
 
-static const TeamsDevicesType firewall = TeamsDevicesType._('firewall');
+static const TeamsDevicesType firewall = TeamsDevicesType$firewall._();
 
-static const TeamsDevicesType osVersion = TeamsDevicesType._('os_version');
+static const TeamsDevicesType osVersion = TeamsDevicesType$osVersion._();
 
-static const TeamsDevicesType domainJoined = TeamsDevicesType._('domain_joined');
+static const TeamsDevicesType domainJoined = TeamsDevicesType$domainJoined._();
 
-static const TeamsDevicesType clientCertificate = TeamsDevicesType._('client_certificate');
+static const TeamsDevicesType clientCertificate = TeamsDevicesType$clientCertificate._();
 
-static const TeamsDevicesType clientCertificateV2 = TeamsDevicesType._('client_certificate_v2');
+static const TeamsDevicesType clientCertificateV2 = TeamsDevicesType$clientCertificateV2._();
 
-static const TeamsDevicesType antivirus = TeamsDevicesType._('antivirus');
+static const TeamsDevicesType antivirus = TeamsDevicesType$antivirus._();
 
-static const TeamsDevicesType uniqueClientId = TeamsDevicesType._('unique_client_id');
+static const TeamsDevicesType uniqueClientId = TeamsDevicesType$uniqueClientId._();
 
-static const TeamsDevicesType kolide = TeamsDevicesType._('kolide');
+static const TeamsDevicesType kolide = TeamsDevicesType$kolide._();
 
-static const TeamsDevicesType taniumS2s = TeamsDevicesType._('tanium_s2s');
+static const TeamsDevicesType taniumS2s = TeamsDevicesType$taniumS2s._();
 
-static const TeamsDevicesType crowdstrikeS2s = TeamsDevicesType._('crowdstrike_s2s');
+static const TeamsDevicesType crowdstrikeS2s = TeamsDevicesType$crowdstrikeS2s._();
 
-static const TeamsDevicesType intune = TeamsDevicesType._('intune');
+static const TeamsDevicesType intune = TeamsDevicesType$intune._();
 
-static const TeamsDevicesType workspaceOne = TeamsDevicesType._('workspace_one');
+static const TeamsDevicesType workspaceOne = TeamsDevicesType$workspaceOne._();
 
-static const TeamsDevicesType sentineloneS2s = TeamsDevicesType._('sentinelone_s2s');
+static const TeamsDevicesType sentineloneS2s = TeamsDevicesType$sentineloneS2s._();
 
-static const TeamsDevicesType customS2s = TeamsDevicesType._('custom_s2s');
+static const TeamsDevicesType customS2s = TeamsDevicesType$customS2s._();
 
 static const List<TeamsDevicesType> values = [file, application, tanium, gateway, warp, diskEncryption, serialNumber, sentinelone, carbonblack, firewall, osVersion, domainJoined, clientCertificate, clientCertificateV2, antivirus, uniqueClientId, kolide, taniumS2s, crowdstrikeS2s, intune, workspaceOne, sentineloneS2s, customS2s];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -110,12 +109,224 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TeamsDevicesType$Unknown; } 
+@override String toString() => 'TeamsDevicesType($value)';
+
+ }
+@immutable final class TeamsDevicesType$file extends TeamsDevicesType {const TeamsDevicesType$file._();
+
+@override String get value => 'file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$file;
+
+@override int get hashCode => 'file'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$application extends TeamsDevicesType {const TeamsDevicesType$application._();
+
+@override String get value => 'application';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$application;
+
+@override int get hashCode => 'application'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$tanium extends TeamsDevicesType {const TeamsDevicesType$tanium._();
+
+@override String get value => 'tanium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$tanium;
+
+@override int get hashCode => 'tanium'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$gateway extends TeamsDevicesType {const TeamsDevicesType$gateway._();
+
+@override String get value => 'gateway';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$gateway;
+
+@override int get hashCode => 'gateway'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$warp extends TeamsDevicesType {const TeamsDevicesType$warp._();
+
+@override String get value => 'warp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$warp;
+
+@override int get hashCode => 'warp'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$diskEncryption extends TeamsDevicesType {const TeamsDevicesType$diskEncryption._();
+
+@override String get value => 'disk_encryption';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$diskEncryption;
+
+@override int get hashCode => 'disk_encryption'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$serialNumber extends TeamsDevicesType {const TeamsDevicesType$serialNumber._();
+
+@override String get value => 'serial_number';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$serialNumber;
+
+@override int get hashCode => 'serial_number'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$sentinelone extends TeamsDevicesType {const TeamsDevicesType$sentinelone._();
+
+@override String get value => 'sentinelone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$sentinelone;
+
+@override int get hashCode => 'sentinelone'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$carbonblack extends TeamsDevicesType {const TeamsDevicesType$carbonblack._();
+
+@override String get value => 'carbonblack';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$carbonblack;
+
+@override int get hashCode => 'carbonblack'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$firewall extends TeamsDevicesType {const TeamsDevicesType$firewall._();
+
+@override String get value => 'firewall';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$firewall;
+
+@override int get hashCode => 'firewall'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$osVersion extends TeamsDevicesType {const TeamsDevicesType$osVersion._();
+
+@override String get value => 'os_version';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$osVersion;
+
+@override int get hashCode => 'os_version'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$domainJoined extends TeamsDevicesType {const TeamsDevicesType$domainJoined._();
+
+@override String get value => 'domain_joined';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$domainJoined;
+
+@override int get hashCode => 'domain_joined'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$clientCertificate extends TeamsDevicesType {const TeamsDevicesType$clientCertificate._();
+
+@override String get value => 'client_certificate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$clientCertificate;
+
+@override int get hashCode => 'client_certificate'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$clientCertificateV2 extends TeamsDevicesType {const TeamsDevicesType$clientCertificateV2._();
+
+@override String get value => 'client_certificate_v2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$clientCertificateV2;
+
+@override int get hashCode => 'client_certificate_v2'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$antivirus extends TeamsDevicesType {const TeamsDevicesType$antivirus._();
+
+@override String get value => 'antivirus';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$antivirus;
+
+@override int get hashCode => 'antivirus'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$uniqueClientId extends TeamsDevicesType {const TeamsDevicesType$uniqueClientId._();
+
+@override String get value => 'unique_client_id';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$uniqueClientId;
+
+@override int get hashCode => 'unique_client_id'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$kolide extends TeamsDevicesType {const TeamsDevicesType$kolide._();
+
+@override String get value => 'kolide';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$kolide;
+
+@override int get hashCode => 'kolide'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$taniumS2s extends TeamsDevicesType {const TeamsDevicesType$taniumS2s._();
+
+@override String get value => 'tanium_s2s';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$taniumS2s;
+
+@override int get hashCode => 'tanium_s2s'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$crowdstrikeS2s extends TeamsDevicesType {const TeamsDevicesType$crowdstrikeS2s._();
+
+@override String get value => 'crowdstrike_s2s';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$crowdstrikeS2s;
+
+@override int get hashCode => 'crowdstrike_s2s'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$intune extends TeamsDevicesType {const TeamsDevicesType$intune._();
+
+@override String get value => 'intune';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$intune;
+
+@override int get hashCode => 'intune'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$workspaceOne extends TeamsDevicesType {const TeamsDevicesType$workspaceOne._();
+
+@override String get value => 'workspace_one';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$workspaceOne;
+
+@override int get hashCode => 'workspace_one'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$sentineloneS2s extends TeamsDevicesType {const TeamsDevicesType$sentineloneS2s._();
+
+@override String get value => 'sentinelone_s2s';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$sentineloneS2s;
+
+@override int get hashCode => 'sentinelone_s2s'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$customS2s extends TeamsDevicesType {const TeamsDevicesType$customS2s._();
+
+@override String get value => 'custom_s2s';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesType$customS2s;
+
+@override int get hashCode => 'custom_s2s'.hashCode;
+
+ }
+@immutable final class TeamsDevicesType$Unknown extends TeamsDevicesType {const TeamsDevicesType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TeamsDevicesType && other.value == value;
+    other is TeamsDevicesType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TeamsDevicesType($value)';
 
  }

@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';import 'package:pub_openai/models/webhook_realtime_call_incoming/webhook_realtime_call_incoming_data.dart';/// The type of the event. Always `realtime.call.incoming`.
 /// 
-@immutable final class WebhookRealtimeCallIncomingType {const WebhookRealtimeCallIncomingType._(this.value);
+sealed class WebhookRealtimeCallIncomingType {const WebhookRealtimeCallIncomingType();
 
 factory WebhookRealtimeCallIncomingType.fromJson(String json) { return switch (json) {
   'realtime.call.incoming' => realtimeCallIncoming,
-  _ => WebhookRealtimeCallIncomingType._(json),
+  _ => WebhookRealtimeCallIncomingType$Unknown(json),
 }; }
 
-static const WebhookRealtimeCallIncomingType realtimeCallIncoming = WebhookRealtimeCallIncomingType._('realtime.call.incoming');
+static const WebhookRealtimeCallIncomingType realtimeCallIncoming = WebhookRealtimeCallIncomingType$realtimeCallIncoming._();
 
 static const List<WebhookRealtimeCallIncomingType> values = [realtimeCallIncoming];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookRealtimeCallIncomingType$Unknown; } 
+@override String toString() => 'WebhookRealtimeCallIncomingType($value)';
+
+ }
+@immutable final class WebhookRealtimeCallIncomingType$realtimeCallIncoming extends WebhookRealtimeCallIncomingType {const WebhookRealtimeCallIncomingType$realtimeCallIncoming._();
+
+@override String get value => 'realtime.call.incoming';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookRealtimeCallIncomingType$realtimeCallIncoming;
+
+@override int get hashCode => 'realtime.call.incoming'.hashCode;
+
+ }
+@immutable final class WebhookRealtimeCallIncomingType$Unknown extends WebhookRealtimeCallIncomingType {const WebhookRealtimeCallIncomingType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookRealtimeCallIncomingType && other.value == value;
+    other is WebhookRealtimeCallIncomingType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookRealtimeCallIncomingType($value)';
 
  }
 /// Sent when Realtime API Receives a incoming SIP call.

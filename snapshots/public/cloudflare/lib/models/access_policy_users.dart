@@ -2,25 +2,24 @@
 // Source: #/components/schemas/AccessPolicyUsers
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_schemas_email.dart';import 'package:pub_cloudflare/models/access_users_components_schemas_name.dart';import 'package:pub_cloudflare/models/access_uuid.dart';/// Policy evaluation result for an individual user.
-@immutable final class AccessUserResult {const AccessUserResult._(this.value);
+sealed class AccessUserResult {const AccessUserResult();
 
 factory AccessUserResult.fromJson(String json) { return switch (json) {
   'approved' => approved,
   'blocked' => blocked,
   'error' => error,
-  _ => AccessUserResult._(json),
+  _ => AccessUserResult$Unknown(json),
 }; }
 
-static const AccessUserResult approved = AccessUserResult._('approved');
+static const AccessUserResult approved = AccessUserResult$approved._();
 
-static const AccessUserResult blocked = AccessUserResult._('blocked');
+static const AccessUserResult blocked = AccessUserResult$blocked._();
 
-static const AccessUserResult error = AccessUserResult._('error');
+static const AccessUserResult error = AccessUserResult$error._();
 
 static const List<AccessUserResult> values = [approved, blocked, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccessUserResult$Unknown; } 
+@override String toString() => 'AccessUserResult($value)';
+
+ }
+@immutable final class AccessUserResult$approved extends AccessUserResult {const AccessUserResult$approved._();
+
+@override String get value => 'approved';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessUserResult$approved;
+
+@override int get hashCode => 'approved'.hashCode;
+
+ }
+@immutable final class AccessUserResult$blocked extends AccessUserResult {const AccessUserResult$blocked._();
+
+@override String get value => 'blocked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessUserResult$blocked;
+
+@override int get hashCode => 'blocked'.hashCode;
+
+ }
+@immutable final class AccessUserResult$error extends AccessUserResult {const AccessUserResult$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccessUserResult$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class AccessUserResult$Unknown extends AccessUserResult {const AccessUserResult$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccessUserResult && other.value == value;
+    other is AccessUserResult$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccessUserResult($value)';
 
  }
 @immutable final class AccessPolicyUsers {const AccessPolicyUsers({this.email, this.id, this.name, this.status, });

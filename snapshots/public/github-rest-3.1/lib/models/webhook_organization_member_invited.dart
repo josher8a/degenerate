@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookOrganizationMemberInvited
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_organization_member_invited/invitation.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';@immutable final class WebhookOrganizationMemberInvitedAction {const WebhookOrganizationMemberInvitedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_organization_member_invited/invitation.dart';import 'package:pub_github_rest_3_1/models/webhooks_user.dart';sealed class WebhookOrganizationMemberInvitedAction {const WebhookOrganizationMemberInvitedAction();
 
 factory WebhookOrganizationMemberInvitedAction.fromJson(String json) { return switch (json) {
   'member_invited' => memberInvited,
-  _ => WebhookOrganizationMemberInvitedAction._(json),
+  _ => WebhookOrganizationMemberInvitedAction$Unknown(json),
 }; }
 
-static const WebhookOrganizationMemberInvitedAction memberInvited = WebhookOrganizationMemberInvitedAction._('member_invited');
+static const WebhookOrganizationMemberInvitedAction memberInvited = WebhookOrganizationMemberInvitedAction$memberInvited._();
 
 static const List<WebhookOrganizationMemberInvitedAction> values = [memberInvited];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookOrganizationMemberInvitedAction$Unknown; } 
+@override String toString() => 'WebhookOrganizationMemberInvitedAction($value)';
+
+ }
+@immutable final class WebhookOrganizationMemberInvitedAction$memberInvited extends WebhookOrganizationMemberInvitedAction {const WebhookOrganizationMemberInvitedAction$memberInvited._();
+
+@override String get value => 'member_invited';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookOrganizationMemberInvitedAction$memberInvited;
+
+@override int get hashCode => 'member_invited'.hashCode;
+
+ }
+@immutable final class WebhookOrganizationMemberInvitedAction$Unknown extends WebhookOrganizationMemberInvitedAction {const WebhookOrganizationMemberInvitedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookOrganizationMemberInvitedAction && other.value == value;
+    other is WebhookOrganizationMemberInvitedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookOrganizationMemberInvitedAction($value)';
 
  }
 @immutable final class WebhookOrganizationMemberInvited {const WebhookOrganizationMemberInvited({required this.action, required this.invitation, required this.organization, required this.sender, this.enterprise, this.installation, this.repository, this.user, });

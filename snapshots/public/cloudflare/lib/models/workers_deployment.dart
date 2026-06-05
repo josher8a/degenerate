@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersDeployment
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_deployment/workers_deployment_annotations.dart';import 'package:pub_cloudflare/models/workers_deployment/workers_deployment_versions.dart';@immutable final class WorkersDeploymentStrategy {const WorkersDeploymentStrategy._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_deployment/workers_deployment_annotations.dart';import 'package:pub_cloudflare/models/workers_deployment/workers_deployment_versions.dart';sealed class WorkersDeploymentStrategy {const WorkersDeploymentStrategy();
 
 factory WorkersDeploymentStrategy.fromJson(String json) { return switch (json) {
   'percentage' => percentage,
-  _ => WorkersDeploymentStrategy._(json),
+  _ => WorkersDeploymentStrategy$Unknown(json),
 }; }
 
-static const WorkersDeploymentStrategy percentage = WorkersDeploymentStrategy._('percentage');
+static const WorkersDeploymentStrategy percentage = WorkersDeploymentStrategy$percentage._();
 
 static const List<WorkersDeploymentStrategy> values = [percentage];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersDeploymentStrategy$Unknown; } 
+@override String toString() => 'WorkersDeploymentStrategy($value)';
+
+ }
+@immutable final class WorkersDeploymentStrategy$percentage extends WorkersDeploymentStrategy {const WorkersDeploymentStrategy$percentage._();
+
+@override String get value => 'percentage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersDeploymentStrategy$percentage;
+
+@override int get hashCode => 'percentage'.hashCode;
+
+ }
+@immutable final class WorkersDeploymentStrategy$Unknown extends WorkersDeploymentStrategy {const WorkersDeploymentStrategy$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersDeploymentStrategy && other.value == value;
+    other is WorkersDeploymentStrategy$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersDeploymentStrategy($value)';
 
  }
 @immutable final class WorkersDeployment {const WorkersDeployment({required this.createdOn, required this.id, required this.source, required this.strategy, required this.versions, this.annotations, this.authorEmail, });

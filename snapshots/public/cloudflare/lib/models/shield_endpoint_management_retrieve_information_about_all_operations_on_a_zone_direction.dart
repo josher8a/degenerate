@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order results.
-@immutable final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection._(this.value);
+sealed class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection();
 
 factory ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection._(json),
+  _ => ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection$Unknown(json),
 }; }
 
-static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection asc = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection._('asc');
+static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection asc = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection$asc._();
 
-static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection desc = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection._('desc');
+static const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection desc = ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection$desc._();
 
 static const List<ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection$Unknown; } 
+@override String toString() => 'ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection($value)';
+
+ }
+@immutable final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection$asc extends ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection$desc extends ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection$Unknown extends ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection {const ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection && other.value == value;
+    other is ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneDirection($value)';
 
  }

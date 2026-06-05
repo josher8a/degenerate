@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailSecuritySummaryByTlsVersionDmarc
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecuritySummaryByTlsVersionDmarc {const RadarGetEmailSecuritySummaryByTlsVersionDmarc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailSecuritySummaryByTlsVersionDmarc {const RadarGetEmailSecuritySummaryByTlsVersionDmarc();
 
 factory RadarGetEmailSecuritySummaryByTlsVersionDmarc.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailSecuritySummaryByTlsVersionDmarc._(json),
+  _ => RadarGetEmailSecuritySummaryByTlsVersionDmarc$Unknown(json),
 }; }
 
-static const RadarGetEmailSecuritySummaryByTlsVersionDmarc pass = RadarGetEmailSecuritySummaryByTlsVersionDmarc._('PASS');
+static const RadarGetEmailSecuritySummaryByTlsVersionDmarc pass = RadarGetEmailSecuritySummaryByTlsVersionDmarc$pass._();
 
-static const RadarGetEmailSecuritySummaryByTlsVersionDmarc none = RadarGetEmailSecuritySummaryByTlsVersionDmarc._('NONE');
+static const RadarGetEmailSecuritySummaryByTlsVersionDmarc none = RadarGetEmailSecuritySummaryByTlsVersionDmarc$none._();
 
-static const RadarGetEmailSecuritySummaryByTlsVersionDmarc fail = RadarGetEmailSecuritySummaryByTlsVersionDmarc._('FAIL');
+static const RadarGetEmailSecuritySummaryByTlsVersionDmarc fail = RadarGetEmailSecuritySummaryByTlsVersionDmarc$fail._();
 
 static const List<RadarGetEmailSecuritySummaryByTlsVersionDmarc> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecuritySummaryByTlsVersionDmarc$Unknown; } 
+@override String toString() => 'RadarGetEmailSecuritySummaryByTlsVersionDmarc($value)';
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryByTlsVersionDmarc$pass extends RadarGetEmailSecuritySummaryByTlsVersionDmarc {const RadarGetEmailSecuritySummaryByTlsVersionDmarc$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryByTlsVersionDmarc$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryByTlsVersionDmarc$none extends RadarGetEmailSecuritySummaryByTlsVersionDmarc {const RadarGetEmailSecuritySummaryByTlsVersionDmarc$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryByTlsVersionDmarc$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryByTlsVersionDmarc$fail extends RadarGetEmailSecuritySummaryByTlsVersionDmarc {const RadarGetEmailSecuritySummaryByTlsVersionDmarc$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecuritySummaryByTlsVersionDmarc$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecuritySummaryByTlsVersionDmarc$Unknown extends RadarGetEmailSecuritySummaryByTlsVersionDmarc {const RadarGetEmailSecuritySummaryByTlsVersionDmarc$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecuritySummaryByTlsVersionDmarc && other.value == value;
+    other is RadarGetEmailSecuritySummaryByTlsVersionDmarc$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecuritySummaryByTlsVersionDmarc($value)';
 
  }

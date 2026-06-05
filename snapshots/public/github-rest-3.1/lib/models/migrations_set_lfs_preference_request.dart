@@ -2,22 +2,21 @@
 // Source: #/components/schemas/MigrationsSetLfsPreferenceRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.
-@immutable final class UseLfs {const UseLfs._(this.value);
+sealed class UseLfs {const UseLfs();
 
 factory UseLfs.fromJson(String json) { return switch (json) {
   'opt_in' => optIn,
   'opt_out' => optOut,
-  _ => UseLfs._(json),
+  _ => UseLfs$Unknown(json),
 }; }
 
-static const UseLfs optIn = UseLfs._('opt_in');
+static const UseLfs optIn = UseLfs$optIn._();
 
-static const UseLfs optOut = UseLfs._('opt_out');
+static const UseLfs optOut = UseLfs$optOut._();
 
 static const List<UseLfs> values = [optIn, optOut];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UseLfs$Unknown; } 
+@override String toString() => 'UseLfs($value)';
+
+ }
+@immutable final class UseLfs$optIn extends UseLfs {const UseLfs$optIn._();
+
+@override String get value => 'opt_in';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UseLfs$optIn;
+
+@override int get hashCode => 'opt_in'.hashCode;
+
+ }
+@immutable final class UseLfs$optOut extends UseLfs {const UseLfs$optOut._();
+
+@override String get value => 'opt_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UseLfs$optOut;
+
+@override int get hashCode => 'opt_out'.hashCode;
+
+ }
+@immutable final class UseLfs$Unknown extends UseLfs {const UseLfs$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UseLfs && other.value == value;
+    other is UseLfs$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UseLfs($value)';
 
  }
 @immutable final class MigrationsSetLfsPreferenceRequest {const MigrationsSetLfsPreferenceRequest({required this.useLfs});

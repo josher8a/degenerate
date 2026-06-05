@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MqEventDestinationQueue
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of destination
-@immutable final class MqEventDestinationQueueType {const MqEventDestinationQueueType._(this.value);
+sealed class MqEventDestinationQueueType {const MqEventDestinationQueueType();
 
 factory MqEventDestinationQueueType.fromJson(String json) { return switch (json) {
   'queues.queue' => queuesQueue,
-  _ => MqEventDestinationQueueType._(json),
+  _ => MqEventDestinationQueueType$Unknown(json),
 }; }
 
-static const MqEventDestinationQueueType queuesQueue = MqEventDestinationQueueType._('queues.queue');
+static const MqEventDestinationQueueType queuesQueue = MqEventDestinationQueueType$queuesQueue._();
 
 static const List<MqEventDestinationQueueType> values = [queuesQueue];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MqEventDestinationQueueType$Unknown; } 
+@override String toString() => 'MqEventDestinationQueueType($value)';
+
+ }
+@immutable final class MqEventDestinationQueueType$queuesQueue extends MqEventDestinationQueueType {const MqEventDestinationQueueType$queuesQueue._();
+
+@override String get value => 'queues.queue';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqEventDestinationQueueType$queuesQueue;
+
+@override int get hashCode => 'queues.queue'.hashCode;
+
+ }
+@immutable final class MqEventDestinationQueueType$Unknown extends MqEventDestinationQueueType {const MqEventDestinationQueueType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MqEventDestinationQueueType && other.value == value;
+    other is MqEventDestinationQueueType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MqEventDestinationQueueType($value)';
 
  }
 @immutable final class MqEventDestinationQueue {const MqEventDestinationQueue({required this.queueId, required this.type, });

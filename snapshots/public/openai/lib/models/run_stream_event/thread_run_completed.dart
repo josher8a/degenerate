@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RunStreamEvent (inline: ThreadRunCompleted)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';@immutable final class ThreadRunCompletedEvent {const ThreadRunCompletedEvent._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/run_object.dart';sealed class ThreadRunCompletedEvent {const ThreadRunCompletedEvent();
 
 factory ThreadRunCompletedEvent.fromJson(String json) { return switch (json) {
   'thread.run.completed' => threadRunCompleted,
-  _ => ThreadRunCompletedEvent._(json),
+  _ => ThreadRunCompletedEvent$Unknown(json),
 }; }
 
-static const ThreadRunCompletedEvent threadRunCompleted = ThreadRunCompletedEvent._('thread.run.completed');
+static const ThreadRunCompletedEvent threadRunCompleted = ThreadRunCompletedEvent$threadRunCompleted._();
 
 static const List<ThreadRunCompletedEvent> values = [threadRunCompleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreadRunCompletedEvent$Unknown; } 
+@override String toString() => 'ThreadRunCompletedEvent($value)';
+
+ }
+@immutable final class ThreadRunCompletedEvent$threadRunCompleted extends ThreadRunCompletedEvent {const ThreadRunCompletedEvent$threadRunCompleted._();
+
+@override String get value => 'thread.run.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadRunCompletedEvent$threadRunCompleted;
+
+@override int get hashCode => 'thread.run.completed'.hashCode;
+
+ }
+@immutable final class ThreadRunCompletedEvent$Unknown extends ThreadRunCompletedEvent {const ThreadRunCompletedEvent$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreadRunCompletedEvent && other.value == value;
+    other is ThreadRunCompletedEvent$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreadRunCompletedEvent($value)';
 
  }
 /// Occurs when a [run](/docs/api-reference/runs/object) is completed.

@@ -2,28 +2,27 @@
 // Source: #/components/schemas/CodeScanningAutofix
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of an autofix.
-@immutable final class CodeScanningAutofixStatus {const CodeScanningAutofixStatus._(this.value);
+sealed class CodeScanningAutofixStatus {const CodeScanningAutofixStatus();
 
 factory CodeScanningAutofixStatus.fromJson(String json) { return switch (json) {
   'pending' => pending,
   'error' => error,
   'success' => success,
   'outdated' => outdated,
-  _ => CodeScanningAutofixStatus._(json),
+  _ => CodeScanningAutofixStatus$Unknown(json),
 }; }
 
-static const CodeScanningAutofixStatus pending = CodeScanningAutofixStatus._('pending');
+static const CodeScanningAutofixStatus pending = CodeScanningAutofixStatus$pending._();
 
-static const CodeScanningAutofixStatus error = CodeScanningAutofixStatus._('error');
+static const CodeScanningAutofixStatus error = CodeScanningAutofixStatus$error._();
 
-static const CodeScanningAutofixStatus success = CodeScanningAutofixStatus._('success');
+static const CodeScanningAutofixStatus success = CodeScanningAutofixStatus$success._();
 
-static const CodeScanningAutofixStatus outdated = CodeScanningAutofixStatus._('outdated');
+static const CodeScanningAutofixStatus outdated = CodeScanningAutofixStatus$outdated._();
 
 static const List<CodeScanningAutofixStatus> values = [pending, error, success, outdated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,13 +33,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeScanningAutofixStatus$Unknown; } 
+@override String toString() => 'CodeScanningAutofixStatus($value)';
+
+ }
+@immutable final class CodeScanningAutofixStatus$pending extends CodeScanningAutofixStatus {const CodeScanningAutofixStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAutofixStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class CodeScanningAutofixStatus$error extends CodeScanningAutofixStatus {const CodeScanningAutofixStatus$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAutofixStatus$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class CodeScanningAutofixStatus$success extends CodeScanningAutofixStatus {const CodeScanningAutofixStatus$success._();
+
+@override String get value => 'success';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAutofixStatus$success;
+
+@override int get hashCode => 'success'.hashCode;
+
+ }
+@immutable final class CodeScanningAutofixStatus$outdated extends CodeScanningAutofixStatus {const CodeScanningAutofixStatus$outdated._();
+
+@override String get value => 'outdated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningAutofixStatus$outdated;
+
+@override int get hashCode => 'outdated'.hashCode;
+
+ }
+@immutable final class CodeScanningAutofixStatus$Unknown extends CodeScanningAutofixStatus {const CodeScanningAutofixStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeScanningAutofixStatus && other.value == value;
+    other is CodeScanningAutofixStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeScanningAutofixStatus($value)';
 
  }
 /// The description of an autofix.

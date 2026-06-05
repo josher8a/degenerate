@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TaxProductResourceJurisdiction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates the level of the jurisdiction imposing the tax.
-@immutable final class TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel._(this.value);
+sealed class TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel();
 
 factory TaxProductResourceJurisdictionLevel.fromJson(String json) { return switch (json) {
   'city' => city,
@@ -10,23 +10,22 @@ factory TaxProductResourceJurisdictionLevel.fromJson(String json) { return switc
   'county' => county,
   'district' => district,
   'state' => state,
-  _ => TaxProductResourceJurisdictionLevel._(json),
+  _ => TaxProductResourceJurisdictionLevel$Unknown(json),
 }; }
 
-static const TaxProductResourceJurisdictionLevel city = TaxProductResourceJurisdictionLevel._('city');
+static const TaxProductResourceJurisdictionLevel city = TaxProductResourceJurisdictionLevel$city._();
 
-static const TaxProductResourceJurisdictionLevel country = TaxProductResourceJurisdictionLevel._('country');
+static const TaxProductResourceJurisdictionLevel country = TaxProductResourceJurisdictionLevel$country._();
 
-static const TaxProductResourceJurisdictionLevel county = TaxProductResourceJurisdictionLevel._('county');
+static const TaxProductResourceJurisdictionLevel county = TaxProductResourceJurisdictionLevel$county._();
 
-static const TaxProductResourceJurisdictionLevel district = TaxProductResourceJurisdictionLevel._('district');
+static const TaxProductResourceJurisdictionLevel district = TaxProductResourceJurisdictionLevel$district._();
 
-static const TaxProductResourceJurisdictionLevel state = TaxProductResourceJurisdictionLevel._('state');
+static const TaxProductResourceJurisdictionLevel state = TaxProductResourceJurisdictionLevel$state._();
 
 static const List<TaxProductResourceJurisdictionLevel> values = [city, country, county, district, state];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TaxProductResourceJurisdictionLevel$Unknown; } 
+@override String toString() => 'TaxProductResourceJurisdictionLevel($value)';
+
+ }
+@immutable final class TaxProductResourceJurisdictionLevel$city extends TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel$city._();
+
+@override String get value => 'city';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceJurisdictionLevel$city;
+
+@override int get hashCode => 'city'.hashCode;
+
+ }
+@immutable final class TaxProductResourceJurisdictionLevel$country extends TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel$country._();
+
+@override String get value => 'country';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceJurisdictionLevel$country;
+
+@override int get hashCode => 'country'.hashCode;
+
+ }
+@immutable final class TaxProductResourceJurisdictionLevel$county extends TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel$county._();
+
+@override String get value => 'county';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceJurisdictionLevel$county;
+
+@override int get hashCode => 'county'.hashCode;
+
+ }
+@immutable final class TaxProductResourceJurisdictionLevel$district extends TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel$district._();
+
+@override String get value => 'district';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceJurisdictionLevel$district;
+
+@override int get hashCode => 'district'.hashCode;
+
+ }
+@immutable final class TaxProductResourceJurisdictionLevel$state extends TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel$state._();
+
+@override String get value => 'state';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductResourceJurisdictionLevel$state;
+
+@override int get hashCode => 'state'.hashCode;
+
+ }
+@immutable final class TaxProductResourceJurisdictionLevel$Unknown extends TaxProductResourceJurisdictionLevel {const TaxProductResourceJurisdictionLevel$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxProductResourceJurisdictionLevel && other.value == value;
+    other is TaxProductResourceJurisdictionLevel$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TaxProductResourceJurisdictionLevel($value)';
 
  }
 /// 

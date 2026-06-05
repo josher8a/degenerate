@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTimeseriesBrowserFamily
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesBrowserFamily {const RadarGetHttpTimeseriesBrowserFamily._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTimeseriesBrowserFamily {const RadarGetHttpTimeseriesBrowserFamily();
 
 factory RadarGetHttpTimeseriesBrowserFamily.fromJson(String json) { return switch (json) {
   'CHROME' => chrome,
   'EDGE' => edge,
   'FIREFOX' => firefox,
   'SAFARI' => safari,
-  _ => RadarGetHttpTimeseriesBrowserFamily._(json),
+  _ => RadarGetHttpTimeseriesBrowserFamily$Unknown(json),
 }; }
 
-static const RadarGetHttpTimeseriesBrowserFamily chrome = RadarGetHttpTimeseriesBrowserFamily._('CHROME');
+static const RadarGetHttpTimeseriesBrowserFamily chrome = RadarGetHttpTimeseriesBrowserFamily$chrome._();
 
-static const RadarGetHttpTimeseriesBrowserFamily edge = RadarGetHttpTimeseriesBrowserFamily._('EDGE');
+static const RadarGetHttpTimeseriesBrowserFamily edge = RadarGetHttpTimeseriesBrowserFamily$edge._();
 
-static const RadarGetHttpTimeseriesBrowserFamily firefox = RadarGetHttpTimeseriesBrowserFamily._('FIREFOX');
+static const RadarGetHttpTimeseriesBrowserFamily firefox = RadarGetHttpTimeseriesBrowserFamily$firefox._();
 
-static const RadarGetHttpTimeseriesBrowserFamily safari = RadarGetHttpTimeseriesBrowserFamily._('SAFARI');
+static const RadarGetHttpTimeseriesBrowserFamily safari = RadarGetHttpTimeseriesBrowserFamily$safari._();
 
 static const List<RadarGetHttpTimeseriesBrowserFamily> values = [chrome, edge, firefox, safari];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTimeseriesBrowserFamily$Unknown; } 
+@override String toString() => 'RadarGetHttpTimeseriesBrowserFamily($value)';
+
+ }
+@immutable final class RadarGetHttpTimeseriesBrowserFamily$chrome extends RadarGetHttpTimeseriesBrowserFamily {const RadarGetHttpTimeseriesBrowserFamily$chrome._();
+
+@override String get value => 'CHROME';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesBrowserFamily$chrome;
+
+@override int get hashCode => 'CHROME'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesBrowserFamily$edge extends RadarGetHttpTimeseriesBrowserFamily {const RadarGetHttpTimeseriesBrowserFamily$edge._();
+
+@override String get value => 'EDGE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesBrowserFamily$edge;
+
+@override int get hashCode => 'EDGE'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesBrowserFamily$firefox extends RadarGetHttpTimeseriesBrowserFamily {const RadarGetHttpTimeseriesBrowserFamily$firefox._();
+
+@override String get value => 'FIREFOX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesBrowserFamily$firefox;
+
+@override int get hashCode => 'FIREFOX'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesBrowserFamily$safari extends RadarGetHttpTimeseriesBrowserFamily {const RadarGetHttpTimeseriesBrowserFamily$safari._();
+
+@override String get value => 'SAFARI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesBrowserFamily$safari;
+
+@override int get hashCode => 'SAFARI'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesBrowserFamily$Unknown extends RadarGetHttpTimeseriesBrowserFamily {const RadarGetHttpTimeseriesBrowserFamily$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTimeseriesBrowserFamily && other.value == value;
+    other is RadarGetHttpTimeseriesBrowserFamily$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTimeseriesBrowserFamily($value)';
 
  }

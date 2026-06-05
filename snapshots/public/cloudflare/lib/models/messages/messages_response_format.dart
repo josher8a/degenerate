@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: ResponseFormat)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ResponseFormatType {const ResponseFormatType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ResponseFormatType {const ResponseFormatType();
 
 factory ResponseFormatType.fromJson(String json) { return switch (json) {
   'json_object' => jsonObject,
   'json_schema' => jsonSchema,
-  _ => ResponseFormatType._(json),
+  _ => ResponseFormatType$Unknown(json),
 }; }
 
-static const ResponseFormatType jsonObject = ResponseFormatType._('json_object');
+static const ResponseFormatType jsonObject = ResponseFormatType$jsonObject._();
 
-static const ResponseFormatType jsonSchema = ResponseFormatType._('json_schema');
+static const ResponseFormatType jsonSchema = ResponseFormatType$jsonSchema._();
 
 static const List<ResponseFormatType> values = [jsonObject, jsonSchema];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ResponseFormatType$Unknown; } 
+@override String toString() => 'ResponseFormatType($value)';
+
+ }
+@immutable final class ResponseFormatType$jsonObject extends ResponseFormatType {const ResponseFormatType$jsonObject._();
+
+@override String get value => 'json_object';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseFormatType$jsonObject;
+
+@override int get hashCode => 'json_object'.hashCode;
+
+ }
+@immutable final class ResponseFormatType$jsonSchema extends ResponseFormatType {const ResponseFormatType$jsonSchema._();
+
+@override String get value => 'json_schema';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseFormatType$jsonSchema;
+
+@override int get hashCode => 'json_schema'.hashCode;
+
+ }
+@immutable final class ResponseFormatType$Unknown extends ResponseFormatType {const ResponseFormatType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ResponseFormatType && other.value == value;
+    other is ResponseFormatType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ResponseFormatType($value)';
 
  }
 @immutable final class MessagesResponseFormat {const MessagesResponseFormat({this.jsonSchema, this.type, });

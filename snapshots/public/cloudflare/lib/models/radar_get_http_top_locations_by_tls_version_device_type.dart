@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTopLocationsByTlsVersionDeviceType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopLocationsByTlsVersionDeviceType {const RadarGetHttpTopLocationsByTlsVersionDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopLocationsByTlsVersionDeviceType {const RadarGetHttpTopLocationsByTlsVersionDeviceType();
 
 factory RadarGetHttpTopLocationsByTlsVersionDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
   'OTHER' => $other,
-  _ => RadarGetHttpTopLocationsByTlsVersionDeviceType._(json),
+  _ => RadarGetHttpTopLocationsByTlsVersionDeviceType$Unknown(json),
 }; }
 
-static const RadarGetHttpTopLocationsByTlsVersionDeviceType desktop = RadarGetHttpTopLocationsByTlsVersionDeviceType._('DESKTOP');
+static const RadarGetHttpTopLocationsByTlsVersionDeviceType desktop = RadarGetHttpTopLocationsByTlsVersionDeviceType$desktop._();
 
-static const RadarGetHttpTopLocationsByTlsVersionDeviceType mobile = RadarGetHttpTopLocationsByTlsVersionDeviceType._('MOBILE');
+static const RadarGetHttpTopLocationsByTlsVersionDeviceType mobile = RadarGetHttpTopLocationsByTlsVersionDeviceType$mobile._();
 
-static const RadarGetHttpTopLocationsByTlsVersionDeviceType $other = RadarGetHttpTopLocationsByTlsVersionDeviceType._('OTHER');
+static const RadarGetHttpTopLocationsByTlsVersionDeviceType $other = RadarGetHttpTopLocationsByTlsVersionDeviceType$$other._();
 
 static const List<RadarGetHttpTopLocationsByTlsVersionDeviceType> values = [desktop, mobile, $other];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopLocationsByTlsVersionDeviceType$Unknown; } 
+@override String toString() => 'RadarGetHttpTopLocationsByTlsVersionDeviceType($value)';
+
+ }
+@immutable final class RadarGetHttpTopLocationsByTlsVersionDeviceType$desktop extends RadarGetHttpTopLocationsByTlsVersionDeviceType {const RadarGetHttpTopLocationsByTlsVersionDeviceType$desktop._();
+
+@override String get value => 'DESKTOP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByTlsVersionDeviceType$desktop;
+
+@override int get hashCode => 'DESKTOP'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByTlsVersionDeviceType$mobile extends RadarGetHttpTopLocationsByTlsVersionDeviceType {const RadarGetHttpTopLocationsByTlsVersionDeviceType$mobile._();
+
+@override String get value => 'MOBILE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByTlsVersionDeviceType$mobile;
+
+@override int get hashCode => 'MOBILE'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByTlsVersionDeviceType$$other extends RadarGetHttpTopLocationsByTlsVersionDeviceType {const RadarGetHttpTopLocationsByTlsVersionDeviceType$$other._();
+
+@override String get value => 'OTHER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopLocationsByTlsVersionDeviceType$$other;
+
+@override int get hashCode => 'OTHER'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopLocationsByTlsVersionDeviceType$Unknown extends RadarGetHttpTopLocationsByTlsVersionDeviceType {const RadarGetHttpTopLocationsByTlsVersionDeviceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopLocationsByTlsVersionDeviceType && other.value == value;
+    other is RadarGetHttpTopLocationsByTlsVersionDeviceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopLocationsByTlsVersionDeviceType($value)';
 
  }

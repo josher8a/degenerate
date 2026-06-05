@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentIntentParam (inline: ThreeDSecure)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/ares_trans_status.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/network_options.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/three_d_secure_electronic_commerce_indicator.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/three_d_secure_version.dart';@immutable final class ThreeDSecureExemptionIndicator {const ThreeDSecureExemptionIndicator._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/ares_trans_status.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/network_options.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/three_d_secure_electronic_commerce_indicator.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/three_d_secure_version.dart';sealed class ThreeDSecureExemptionIndicator {const ThreeDSecureExemptionIndicator();
 
 factory ThreeDSecureExemptionIndicator.fromJson(String json) { return switch (json) {
   'low_risk' => lowRisk,
   'none' => none,
-  _ => ThreeDSecureExemptionIndicator._(json),
+  _ => ThreeDSecureExemptionIndicator$Unknown(json),
 }; }
 
-static const ThreeDSecureExemptionIndicator lowRisk = ThreeDSecureExemptionIndicator._('low_risk');
+static const ThreeDSecureExemptionIndicator lowRisk = ThreeDSecureExemptionIndicator$lowRisk._();
 
-static const ThreeDSecureExemptionIndicator none = ThreeDSecureExemptionIndicator._('none');
+static const ThreeDSecureExemptionIndicator none = ThreeDSecureExemptionIndicator$none._();
 
 static const List<ThreeDSecureExemptionIndicator> values = [lowRisk, none];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ThreeDSecureExemptionIndicator$Unknown; } 
+@override String toString() => 'ThreeDSecureExemptionIndicator($value)';
+
+ }
+@immutable final class ThreeDSecureExemptionIndicator$lowRisk extends ThreeDSecureExemptionIndicator {const ThreeDSecureExemptionIndicator$lowRisk._();
+
+@override String get value => 'low_risk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreeDSecureExemptionIndicator$lowRisk;
+
+@override int get hashCode => 'low_risk'.hashCode;
+
+ }
+@immutable final class ThreeDSecureExemptionIndicator$none extends ThreeDSecureExemptionIndicator {const ThreeDSecureExemptionIndicator$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreeDSecureExemptionIndicator$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class ThreeDSecureExemptionIndicator$Unknown extends ThreeDSecureExemptionIndicator {const ThreeDSecureExemptionIndicator$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ThreeDSecureExemptionIndicator && other.value == value;
+    other is ThreeDSecureExemptionIndicator$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ThreeDSecureExemptionIndicator($value)';
 
  }
 @immutable final class PaymentIntentParamThreeDSecure {const PaymentIntentParamThreeDSecure({required this.cryptogram, required this.transactionId, required this.version, this.aresTransStatus, this.electronicCommerceIndicator, this.exemptionIndicator, this.networkOptions, this.requestorChallengeIndicator, });

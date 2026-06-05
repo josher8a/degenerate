@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostTreasuryFinancialAccountsFinancialAccountCloseRequest (inline: ForwardingSettings)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ForwardingSettingsType {const ForwardingSettingsType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ForwardingSettingsType {const ForwardingSettingsType();
 
 factory ForwardingSettingsType.fromJson(String json) { return switch (json) {
   'financial_account' => financialAccount,
   'payment_method' => paymentMethod,
-  _ => ForwardingSettingsType._(json),
+  _ => ForwardingSettingsType$Unknown(json),
 }; }
 
-static const ForwardingSettingsType financialAccount = ForwardingSettingsType._('financial_account');
+static const ForwardingSettingsType financialAccount = ForwardingSettingsType$financialAccount._();
 
-static const ForwardingSettingsType paymentMethod = ForwardingSettingsType._('payment_method');
+static const ForwardingSettingsType paymentMethod = ForwardingSettingsType$paymentMethod._();
 
 static const List<ForwardingSettingsType> values = [financialAccount, paymentMethod];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ForwardingSettingsType$Unknown; } 
+@override String toString() => 'ForwardingSettingsType($value)';
+
+ }
+@immutable final class ForwardingSettingsType$financialAccount extends ForwardingSettingsType {const ForwardingSettingsType$financialAccount._();
+
+@override String get value => 'financial_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ForwardingSettingsType$financialAccount;
+
+@override int get hashCode => 'financial_account'.hashCode;
+
+ }
+@immutable final class ForwardingSettingsType$paymentMethod extends ForwardingSettingsType {const ForwardingSettingsType$paymentMethod._();
+
+@override String get value => 'payment_method';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ForwardingSettingsType$paymentMethod;
+
+@override int get hashCode => 'payment_method'.hashCode;
+
+ }
+@immutable final class ForwardingSettingsType$Unknown extends ForwardingSettingsType {const ForwardingSettingsType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ForwardingSettingsType && other.value == value;
+    other is ForwardingSettingsType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ForwardingSettingsType($value)';
 
  }
 /// A different bank account where funds can be deposited/debited in order to get the closing FA's balance to $0

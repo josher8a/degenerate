@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZarazLoadRule
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ZarazLoadRuleOp {const ZarazLoadRuleOp._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ZarazLoadRuleOp {const ZarazLoadRuleOp();
 
 factory ZarazLoadRuleOp.fromJson(String json) { return switch (json) {
   'CONTAINS' => contains,
@@ -14,33 +14,32 @@ factory ZarazLoadRuleOp.fromJson(String json) { return switch (json) {
   'GREATER_THAN_OR_EQUAL' => greaterThanOrEqual,
   'LESS_THAN' => lessThan,
   'LESS_THAN_OR_EQUAL' => lessThanOrEqual,
-  _ => ZarazLoadRuleOp._(json),
+  _ => ZarazLoadRuleOp$Unknown(json),
 }; }
 
-static const ZarazLoadRuleOp contains = ZarazLoadRuleOp._('CONTAINS');
+static const ZarazLoadRuleOp contains = ZarazLoadRuleOp$contains._();
 
-static const ZarazLoadRuleOp equals = ZarazLoadRuleOp._('EQUALS');
+static const ZarazLoadRuleOp equals = ZarazLoadRuleOp$equals._();
 
-static const ZarazLoadRuleOp startsWith = ZarazLoadRuleOp._('STARTS_WITH');
+static const ZarazLoadRuleOp startsWith = ZarazLoadRuleOp$startsWith._();
 
-static const ZarazLoadRuleOp endsWith = ZarazLoadRuleOp._('ENDS_WITH');
+static const ZarazLoadRuleOp endsWith = ZarazLoadRuleOp$endsWith._();
 
-static const ZarazLoadRuleOp matchRegex = ZarazLoadRuleOp._('MATCH_REGEX');
+static const ZarazLoadRuleOp matchRegex = ZarazLoadRuleOp$matchRegex._();
 
-static const ZarazLoadRuleOp notMatchRegex = ZarazLoadRuleOp._('NOT_MATCH_REGEX');
+static const ZarazLoadRuleOp notMatchRegex = ZarazLoadRuleOp$notMatchRegex._();
 
-static const ZarazLoadRuleOp greaterThan = ZarazLoadRuleOp._('GREATER_THAN');
+static const ZarazLoadRuleOp greaterThan = ZarazLoadRuleOp$greaterThan._();
 
-static const ZarazLoadRuleOp greaterThanOrEqual = ZarazLoadRuleOp._('GREATER_THAN_OR_EQUAL');
+static const ZarazLoadRuleOp greaterThanOrEqual = ZarazLoadRuleOp$greaterThanOrEqual._();
 
-static const ZarazLoadRuleOp lessThan = ZarazLoadRuleOp._('LESS_THAN');
+static const ZarazLoadRuleOp lessThan = ZarazLoadRuleOp$lessThan._();
 
-static const ZarazLoadRuleOp lessThanOrEqual = ZarazLoadRuleOp._('LESS_THAN_OR_EQUAL');
+static const ZarazLoadRuleOp lessThanOrEqual = ZarazLoadRuleOp$lessThanOrEqual._();
 
 static const List<ZarazLoadRuleOp> values = [contains, equals, startsWith, endsWith, matchRegex, notMatchRegex, greaterThan, greaterThanOrEqual, lessThan, lessThanOrEqual];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -57,13 +56,108 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZarazLoadRuleOp$Unknown; } 
+@override String toString() => 'ZarazLoadRuleOp($value)';
+
+ }
+@immutable final class ZarazLoadRuleOp$contains extends ZarazLoadRuleOp {const ZarazLoadRuleOp$contains._();
+
+@override String get value => 'CONTAINS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazLoadRuleOp$contains;
+
+@override int get hashCode => 'CONTAINS'.hashCode;
+
+ }
+@immutable final class ZarazLoadRuleOp$equals extends ZarazLoadRuleOp {const ZarazLoadRuleOp$equals._();
+
+@override String get value => 'EQUALS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazLoadRuleOp$equals;
+
+@override int get hashCode => 'EQUALS'.hashCode;
+
+ }
+@immutable final class ZarazLoadRuleOp$startsWith extends ZarazLoadRuleOp {const ZarazLoadRuleOp$startsWith._();
+
+@override String get value => 'STARTS_WITH';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazLoadRuleOp$startsWith;
+
+@override int get hashCode => 'STARTS_WITH'.hashCode;
+
+ }
+@immutable final class ZarazLoadRuleOp$endsWith extends ZarazLoadRuleOp {const ZarazLoadRuleOp$endsWith._();
+
+@override String get value => 'ENDS_WITH';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazLoadRuleOp$endsWith;
+
+@override int get hashCode => 'ENDS_WITH'.hashCode;
+
+ }
+@immutable final class ZarazLoadRuleOp$matchRegex extends ZarazLoadRuleOp {const ZarazLoadRuleOp$matchRegex._();
+
+@override String get value => 'MATCH_REGEX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazLoadRuleOp$matchRegex;
+
+@override int get hashCode => 'MATCH_REGEX'.hashCode;
+
+ }
+@immutable final class ZarazLoadRuleOp$notMatchRegex extends ZarazLoadRuleOp {const ZarazLoadRuleOp$notMatchRegex._();
+
+@override String get value => 'NOT_MATCH_REGEX';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazLoadRuleOp$notMatchRegex;
+
+@override int get hashCode => 'NOT_MATCH_REGEX'.hashCode;
+
+ }
+@immutable final class ZarazLoadRuleOp$greaterThan extends ZarazLoadRuleOp {const ZarazLoadRuleOp$greaterThan._();
+
+@override String get value => 'GREATER_THAN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazLoadRuleOp$greaterThan;
+
+@override int get hashCode => 'GREATER_THAN'.hashCode;
+
+ }
+@immutable final class ZarazLoadRuleOp$greaterThanOrEqual extends ZarazLoadRuleOp {const ZarazLoadRuleOp$greaterThanOrEqual._();
+
+@override String get value => 'GREATER_THAN_OR_EQUAL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazLoadRuleOp$greaterThanOrEqual;
+
+@override int get hashCode => 'GREATER_THAN_OR_EQUAL'.hashCode;
+
+ }
+@immutable final class ZarazLoadRuleOp$lessThan extends ZarazLoadRuleOp {const ZarazLoadRuleOp$lessThan._();
+
+@override String get value => 'LESS_THAN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazLoadRuleOp$lessThan;
+
+@override int get hashCode => 'LESS_THAN'.hashCode;
+
+ }
+@immutable final class ZarazLoadRuleOp$lessThanOrEqual extends ZarazLoadRuleOp {const ZarazLoadRuleOp$lessThanOrEqual._();
+
+@override String get value => 'LESS_THAN_OR_EQUAL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZarazLoadRuleOp$lessThanOrEqual;
+
+@override int get hashCode => 'LESS_THAN_OR_EQUAL'.hashCode;
+
+ }
+@immutable final class ZarazLoadRuleOp$Unknown extends ZarazLoadRuleOp {const ZarazLoadRuleOp$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZarazLoadRuleOp && other.value == value;
+    other is ZarazLoadRuleOp$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZarazLoadRuleOp($value)';
 
  }
 @immutable final class ZarazLoadRule {const ZarazLoadRule({required this.id, required this.match, required this.op, required this.value, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MconnEvent (inline: Leave)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Stopped process
-@immutable final class LeaveK {const LeaveK._(this.value);
+sealed class LeaveK {const LeaveK();
 
 factory LeaveK.fromJson(String json) { return switch (json) {
   'Leave' => leave,
-  _ => LeaveK._(json),
+  _ => LeaveK$Unknown(json),
 }; }
 
-static const LeaveK leave = LeaveK._('Leave');
+static const LeaveK leave = LeaveK$leave._();
 
 static const List<LeaveK> values = [leave];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LeaveK$Unknown; } 
+@override String toString() => 'LeaveK($value)';
+
+ }
+@immutable final class LeaveK$leave extends LeaveK {const LeaveK$leave._();
+
+@override String get value => 'Leave';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LeaveK$leave;
+
+@override int get hashCode => 'Leave'.hashCode;
+
+ }
+@immutable final class LeaveK$Unknown extends LeaveK {const LeaveK$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LeaveK && other.value == value;
+    other is LeaveK$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LeaveK($value)';
 
  }
 @immutable final class Leave {const Leave({required this.k});

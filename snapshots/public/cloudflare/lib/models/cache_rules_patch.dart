@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CacheRulesPatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enables Tiered Caching.
-@immutable final class CacheRulesValue {const CacheRulesValue._(this.value);
+sealed class CacheRulesValue {const CacheRulesValue();
 
 factory CacheRulesValue.fromJson(String json) { return switch (json) {
   'on' => $on,
   'off' => off,
-  _ => CacheRulesValue._(json),
+  _ => CacheRulesValue$Unknown(json),
 }; }
 
-static const CacheRulesValue $on = CacheRulesValue._('on');
+static const CacheRulesValue $on = CacheRulesValue$$on._();
 
-static const CacheRulesValue off = CacheRulesValue._('off');
+static const CacheRulesValue off = CacheRulesValue$off._();
 
 static const List<CacheRulesValue> values = [$on, off];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CacheRulesValue$Unknown; } 
+@override String toString() => 'CacheRulesValue($value)';
+
+ }
+@immutable final class CacheRulesValue$$on extends CacheRulesValue {const CacheRulesValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CacheRulesValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class CacheRulesValue$off extends CacheRulesValue {const CacheRulesValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CacheRulesValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class CacheRulesValue$Unknown extends CacheRulesValue {const CacheRulesValue$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CacheRulesValue && other.value == value;
+    other is CacheRulesValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CacheRulesValue($value)';
 
  }
 /// Update enablement of Tiered Caching.

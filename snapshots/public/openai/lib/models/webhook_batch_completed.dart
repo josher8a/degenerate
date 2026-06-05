@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_data.dart';import 'package:pub_openai/models/webhook_batch_cancelled/webhook_batch_cancelled_object.dart';/// The type of the event. Always `batch.completed`.
 /// 
-@immutable final class WebhookBatchCompletedType {const WebhookBatchCompletedType._(this.value);
+sealed class WebhookBatchCompletedType {const WebhookBatchCompletedType();
 
 factory WebhookBatchCompletedType.fromJson(String json) { return switch (json) {
   'batch.completed' => batchCompleted,
-  _ => WebhookBatchCompletedType._(json),
+  _ => WebhookBatchCompletedType$Unknown(json),
 }; }
 
-static const WebhookBatchCompletedType batchCompleted = WebhookBatchCompletedType._('batch.completed');
+static const WebhookBatchCompletedType batchCompleted = WebhookBatchCompletedType$batchCompleted._();
 
 static const List<WebhookBatchCompletedType> values = [batchCompleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookBatchCompletedType$Unknown; } 
+@override String toString() => 'WebhookBatchCompletedType($value)';
+
+ }
+@immutable final class WebhookBatchCompletedType$batchCompleted extends WebhookBatchCompletedType {const WebhookBatchCompletedType$batchCompleted._();
+
+@override String get value => 'batch.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookBatchCompletedType$batchCompleted;
+
+@override int get hashCode => 'batch.completed'.hashCode;
+
+ }
+@immutable final class WebhookBatchCompletedType$Unknown extends WebhookBatchCompletedType {const WebhookBatchCompletedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookBatchCompletedType && other.value == value;
+    other is WebhookBatchCompletedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookBatchCompletedType($value)';
 
  }
 /// Sent when a batch API request has been completed.

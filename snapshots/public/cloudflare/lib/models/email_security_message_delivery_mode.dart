@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EmailSecurityMessageDeliveryMode
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode();
 
 factory EmailSecurityMessageDeliveryMode.fromJson(String json) { return switch (json) {
   'DIRECT' => direct,
@@ -15,35 +15,34 @@ factory EmailSecurityMessageDeliveryMode.fromJson(String json) { return switch (
   'SIMULATION_SUBMISSION' => simulationSubmission,
   'API' => api,
   'RETRO_SCAN' => retroScan,
-  _ => EmailSecurityMessageDeliveryMode._(json),
+  _ => EmailSecurityMessageDeliveryMode$Unknown(json),
 }; }
 
-static const EmailSecurityMessageDeliveryMode direct = EmailSecurityMessageDeliveryMode._('DIRECT');
+static const EmailSecurityMessageDeliveryMode direct = EmailSecurityMessageDeliveryMode$direct._();
 
-static const EmailSecurityMessageDeliveryMode bcc = EmailSecurityMessageDeliveryMode._('BCC');
+static const EmailSecurityMessageDeliveryMode bcc = EmailSecurityMessageDeliveryMode$bcc._();
 
-static const EmailSecurityMessageDeliveryMode journal = EmailSecurityMessageDeliveryMode._('JOURNAL');
+static const EmailSecurityMessageDeliveryMode journal = EmailSecurityMessageDeliveryMode$journal._();
 
-static const EmailSecurityMessageDeliveryMode reviewSubmission = EmailSecurityMessageDeliveryMode._('REVIEW_SUBMISSION');
+static const EmailSecurityMessageDeliveryMode reviewSubmission = EmailSecurityMessageDeliveryMode$reviewSubmission._();
 
-static const EmailSecurityMessageDeliveryMode dmarcUnverified = EmailSecurityMessageDeliveryMode._('DMARC_UNVERIFIED');
+static const EmailSecurityMessageDeliveryMode dmarcUnverified = EmailSecurityMessageDeliveryMode$dmarcUnverified._();
 
-static const EmailSecurityMessageDeliveryMode dmarcFailureReport = EmailSecurityMessageDeliveryMode._('DMARC_FAILURE_REPORT');
+static const EmailSecurityMessageDeliveryMode dmarcFailureReport = EmailSecurityMessageDeliveryMode$dmarcFailureReport._();
 
-static const EmailSecurityMessageDeliveryMode dmarcAggregateReport = EmailSecurityMessageDeliveryMode._('DMARC_AGGREGATE_REPORT');
+static const EmailSecurityMessageDeliveryMode dmarcAggregateReport = EmailSecurityMessageDeliveryMode$dmarcAggregateReport._();
 
-static const EmailSecurityMessageDeliveryMode threatIntelSubmission = EmailSecurityMessageDeliveryMode._('THREAT_INTEL_SUBMISSION');
+static const EmailSecurityMessageDeliveryMode threatIntelSubmission = EmailSecurityMessageDeliveryMode$threatIntelSubmission._();
 
-static const EmailSecurityMessageDeliveryMode simulationSubmission = EmailSecurityMessageDeliveryMode._('SIMULATION_SUBMISSION');
+static const EmailSecurityMessageDeliveryMode simulationSubmission = EmailSecurityMessageDeliveryMode$simulationSubmission._();
 
-static const EmailSecurityMessageDeliveryMode api = EmailSecurityMessageDeliveryMode._('API');
+static const EmailSecurityMessageDeliveryMode api = EmailSecurityMessageDeliveryMode$api._();
 
-static const EmailSecurityMessageDeliveryMode retroScan = EmailSecurityMessageDeliveryMode._('RETRO_SCAN');
+static const EmailSecurityMessageDeliveryMode retroScan = EmailSecurityMessageDeliveryMode$retroScan._();
 
 static const List<EmailSecurityMessageDeliveryMode> values = [direct, bcc, journal, reviewSubmission, dmarcUnverified, dmarcFailureReport, dmarcAggregateReport, threatIntelSubmission, simulationSubmission, api, retroScan];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -61,12 +60,116 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EmailSecurityMessageDeliveryMode$Unknown; } 
+@override String toString() => 'EmailSecurityMessageDeliveryMode($value)';
+
+ }
+@immutable final class EmailSecurityMessageDeliveryMode$direct extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$direct._();
+
+@override String get value => 'DIRECT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityMessageDeliveryMode$direct;
+
+@override int get hashCode => 'DIRECT'.hashCode;
+
+ }
+@immutable final class EmailSecurityMessageDeliveryMode$bcc extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$bcc._();
+
+@override String get value => 'BCC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityMessageDeliveryMode$bcc;
+
+@override int get hashCode => 'BCC'.hashCode;
+
+ }
+@immutable final class EmailSecurityMessageDeliveryMode$journal extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$journal._();
+
+@override String get value => 'JOURNAL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityMessageDeliveryMode$journal;
+
+@override int get hashCode => 'JOURNAL'.hashCode;
+
+ }
+@immutable final class EmailSecurityMessageDeliveryMode$reviewSubmission extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$reviewSubmission._();
+
+@override String get value => 'REVIEW_SUBMISSION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityMessageDeliveryMode$reviewSubmission;
+
+@override int get hashCode => 'REVIEW_SUBMISSION'.hashCode;
+
+ }
+@immutable final class EmailSecurityMessageDeliveryMode$dmarcUnverified extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$dmarcUnverified._();
+
+@override String get value => 'DMARC_UNVERIFIED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityMessageDeliveryMode$dmarcUnverified;
+
+@override int get hashCode => 'DMARC_UNVERIFIED'.hashCode;
+
+ }
+@immutable final class EmailSecurityMessageDeliveryMode$dmarcFailureReport extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$dmarcFailureReport._();
+
+@override String get value => 'DMARC_FAILURE_REPORT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityMessageDeliveryMode$dmarcFailureReport;
+
+@override int get hashCode => 'DMARC_FAILURE_REPORT'.hashCode;
+
+ }
+@immutable final class EmailSecurityMessageDeliveryMode$dmarcAggregateReport extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$dmarcAggregateReport._();
+
+@override String get value => 'DMARC_AGGREGATE_REPORT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityMessageDeliveryMode$dmarcAggregateReport;
+
+@override int get hashCode => 'DMARC_AGGREGATE_REPORT'.hashCode;
+
+ }
+@immutable final class EmailSecurityMessageDeliveryMode$threatIntelSubmission extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$threatIntelSubmission._();
+
+@override String get value => 'THREAT_INTEL_SUBMISSION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityMessageDeliveryMode$threatIntelSubmission;
+
+@override int get hashCode => 'THREAT_INTEL_SUBMISSION'.hashCode;
+
+ }
+@immutable final class EmailSecurityMessageDeliveryMode$simulationSubmission extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$simulationSubmission._();
+
+@override String get value => 'SIMULATION_SUBMISSION';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityMessageDeliveryMode$simulationSubmission;
+
+@override int get hashCode => 'SIMULATION_SUBMISSION'.hashCode;
+
+ }
+@immutable final class EmailSecurityMessageDeliveryMode$api extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$api._();
+
+@override String get value => 'API';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityMessageDeliveryMode$api;
+
+@override int get hashCode => 'API'.hashCode;
+
+ }
+@immutable final class EmailSecurityMessageDeliveryMode$retroScan extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$retroScan._();
+
+@override String get value => 'RETRO_SCAN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EmailSecurityMessageDeliveryMode$retroScan;
+
+@override int get hashCode => 'RETRO_SCAN'.hashCode;
+
+ }
+@immutable final class EmailSecurityMessageDeliveryMode$Unknown extends EmailSecurityMessageDeliveryMode {const EmailSecurityMessageDeliveryMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EmailSecurityMessageDeliveryMode && other.value == value;
+    other is EmailSecurityMessageDeliveryMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EmailSecurityMessageDeliveryMode($value)';
 
  }

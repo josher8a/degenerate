@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/EmailSecurityPostReclassifyRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ExpectedDisposition {const ExpectedDisposition._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ExpectedDisposition {const ExpectedDisposition();
 
 factory ExpectedDisposition.fromJson(String json) { return switch (json) {
   'NONE' => none,
@@ -10,25 +10,24 @@ factory ExpectedDisposition.fromJson(String json) { return switch (json) {
   'SPAM' => spam,
   'SPOOF' => spoof,
   'SUSPICIOUS' => suspicious,
-  _ => ExpectedDisposition._(json),
+  _ => ExpectedDisposition$Unknown(json),
 }; }
 
-static const ExpectedDisposition none = ExpectedDisposition._('NONE');
+static const ExpectedDisposition none = ExpectedDisposition$none._();
 
-static const ExpectedDisposition bulk = ExpectedDisposition._('BULK');
+static const ExpectedDisposition bulk = ExpectedDisposition$bulk._();
 
-static const ExpectedDisposition malicious = ExpectedDisposition._('MALICIOUS');
+static const ExpectedDisposition malicious = ExpectedDisposition$malicious._();
 
-static const ExpectedDisposition spam = ExpectedDisposition._('SPAM');
+static const ExpectedDisposition spam = ExpectedDisposition$spam._();
 
-static const ExpectedDisposition spoof = ExpectedDisposition._('SPOOF');
+static const ExpectedDisposition spoof = ExpectedDisposition$spoof._();
 
-static const ExpectedDisposition suspicious = ExpectedDisposition._('SUSPICIOUS');
+static const ExpectedDisposition suspicious = ExpectedDisposition$suspicious._();
 
 static const List<ExpectedDisposition> values = [none, bulk, malicious, spam, spoof, suspicious];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,13 +40,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ExpectedDisposition$Unknown; } 
+@override String toString() => 'ExpectedDisposition($value)';
+
+ }
+@immutable final class ExpectedDisposition$none extends ExpectedDisposition {const ExpectedDisposition$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ExpectedDisposition$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class ExpectedDisposition$bulk extends ExpectedDisposition {const ExpectedDisposition$bulk._();
+
+@override String get value => 'BULK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ExpectedDisposition$bulk;
+
+@override int get hashCode => 'BULK'.hashCode;
+
+ }
+@immutable final class ExpectedDisposition$malicious extends ExpectedDisposition {const ExpectedDisposition$malicious._();
+
+@override String get value => 'MALICIOUS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ExpectedDisposition$malicious;
+
+@override int get hashCode => 'MALICIOUS'.hashCode;
+
+ }
+@immutable final class ExpectedDisposition$spam extends ExpectedDisposition {const ExpectedDisposition$spam._();
+
+@override String get value => 'SPAM';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ExpectedDisposition$spam;
+
+@override int get hashCode => 'SPAM'.hashCode;
+
+ }
+@immutable final class ExpectedDisposition$spoof extends ExpectedDisposition {const ExpectedDisposition$spoof._();
+
+@override String get value => 'SPOOF';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ExpectedDisposition$spoof;
+
+@override int get hashCode => 'SPOOF'.hashCode;
+
+ }
+@immutable final class ExpectedDisposition$suspicious extends ExpectedDisposition {const ExpectedDisposition$suspicious._();
+
+@override String get value => 'SUSPICIOUS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ExpectedDisposition$suspicious;
+
+@override int get hashCode => 'SUSPICIOUS'.hashCode;
+
+ }
+@immutable final class ExpectedDisposition$Unknown extends ExpectedDisposition {const ExpectedDisposition$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ExpectedDisposition && other.value == value;
+    other is ExpectedDisposition$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ExpectedDisposition($value)';
 
  }
 @immutable final class EmailSecurityPostReclassifyRequest {const EmailSecurityPostReclassifyRequest({required this.expectedDisposition, this.emlContent, this.escalatedSubmissionId, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MconnEvent (inline: StartUpgrade)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started upgrade
-@immutable final class StartUpgradeK {const StartUpgradeK._(this.value);
+sealed class StartUpgradeK {const StartUpgradeK();
 
 factory StartUpgradeK.fromJson(String json) { return switch (json) {
   'StartUpgrade' => startUpgrade,
-  _ => StartUpgradeK._(json),
+  _ => StartUpgradeK$Unknown(json),
 }; }
 
-static const StartUpgradeK startUpgrade = StartUpgradeK._('StartUpgrade');
+static const StartUpgradeK startUpgrade = StartUpgradeK$startUpgrade._();
 
 static const List<StartUpgradeK> values = [startUpgrade];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StartUpgradeK$Unknown; } 
+@override String toString() => 'StartUpgradeK($value)';
+
+ }
+@immutable final class StartUpgradeK$startUpgrade extends StartUpgradeK {const StartUpgradeK$startUpgrade._();
+
+@override String get value => 'StartUpgrade';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StartUpgradeK$startUpgrade;
+
+@override int get hashCode => 'StartUpgrade'.hashCode;
+
+ }
+@immutable final class StartUpgradeK$Unknown extends StartUpgradeK {const StartUpgradeK$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StartUpgradeK && other.value == value;
+    other is StartUpgradeK$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StartUpgradeK($value)';
 
  }
 @immutable final class StartUpgrade {const StartUpgrade({required this.k, required this.url, });

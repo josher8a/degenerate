@@ -2,22 +2,21 @@
 // Source: #/components/schemas/AccountMembersListMembersDirection
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Direction to order results.
-@immutable final class AccountMembersListMembersDirection {const AccountMembersListMembersDirection._(this.value);
+sealed class AccountMembersListMembersDirection {const AccountMembersListMembersDirection();
 
 factory AccountMembersListMembersDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => AccountMembersListMembersDirection._(json),
+  _ => AccountMembersListMembersDirection$Unknown(json),
 }; }
 
-static const AccountMembersListMembersDirection asc = AccountMembersListMembersDirection._('asc');
+static const AccountMembersListMembersDirection asc = AccountMembersListMembersDirection$asc._();
 
-static const AccountMembersListMembersDirection desc = AccountMembersListMembersDirection._('desc');
+static const AccountMembersListMembersDirection desc = AccountMembersListMembersDirection$desc._();
 
 static const List<AccountMembersListMembersDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountMembersListMembersDirection$Unknown; } 
+@override String toString() => 'AccountMembersListMembersDirection($value)';
+
+ }
+@immutable final class AccountMembersListMembersDirection$asc extends AccountMembersListMembersDirection {const AccountMembersListMembersDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountMembersListMembersDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class AccountMembersListMembersDirection$desc extends AccountMembersListMembersDirection {const AccountMembersListMembersDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountMembersListMembersDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class AccountMembersListMembersDirection$Unknown extends AccountMembersListMembersDirection {const AccountMembersListMembersDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountMembersListMembersDirection && other.value == value;
+    other is AccountMembersListMembersDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountMembersListMembersDirection($value)';
 
  }

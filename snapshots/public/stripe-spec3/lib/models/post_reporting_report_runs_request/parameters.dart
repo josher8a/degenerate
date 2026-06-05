@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostReportingReportRunsRequest (inline: Parameters)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReportingCategory {const ReportingCategory._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ReportingCategory {const ReportingCategory();
 
 factory ReportingCategory.fromJson(String json) { return switch (json) {
   'advance' => advance,
@@ -41,87 +41,86 @@ factory ReportingCategory.fromJson(String json) { return switch (json) {
   'transfer' => transfer,
   'transfer_reversal' => transferReversal,
   'unreconciled_customer_funds' => unreconciledCustomerFunds,
-  _ => ReportingCategory._(json),
+  _ => ReportingCategory$Unknown(json),
 }; }
 
-static const ReportingCategory advance = ReportingCategory._('advance');
+static const ReportingCategory advance = ReportingCategory$advance._();
 
-static const ReportingCategory advanceFunding = ReportingCategory._('advance_funding');
+static const ReportingCategory advanceFunding = ReportingCategory$advanceFunding._();
 
-static const ReportingCategory anticipationRepayment = ReportingCategory._('anticipation_repayment');
+static const ReportingCategory anticipationRepayment = ReportingCategory$anticipationRepayment._();
 
-static const ReportingCategory charge = ReportingCategory._('charge');
+static const ReportingCategory charge = ReportingCategory$charge._();
 
-static const ReportingCategory chargeFailure = ReportingCategory._('charge_failure');
+static const ReportingCategory chargeFailure = ReportingCategory$chargeFailure._();
 
-static const ReportingCategory climateOrderPurchase = ReportingCategory._('climate_order_purchase');
+static const ReportingCategory climateOrderPurchase = ReportingCategory$climateOrderPurchase._();
 
-static const ReportingCategory climateOrderRefund = ReportingCategory._('climate_order_refund');
+static const ReportingCategory climateOrderRefund = ReportingCategory$climateOrderRefund._();
 
-static const ReportingCategory connectCollectionTransfer = ReportingCategory._('connect_collection_transfer');
+static const ReportingCategory connectCollectionTransfer = ReportingCategory$connectCollectionTransfer._();
 
-static const ReportingCategory connectReservedFunds = ReportingCategory._('connect_reserved_funds');
+static const ReportingCategory connectReservedFunds = ReportingCategory$connectReservedFunds._();
 
-static const ReportingCategory contribution = ReportingCategory._('contribution');
+static const ReportingCategory contribution = ReportingCategory$contribution._();
 
-static const ReportingCategory dispute = ReportingCategory._('dispute');
+static const ReportingCategory dispute = ReportingCategory$dispute._();
 
-static const ReportingCategory disputeReversal = ReportingCategory._('dispute_reversal');
+static const ReportingCategory disputeReversal = ReportingCategory$disputeReversal._();
 
-static const ReportingCategory fee = ReportingCategory._('fee');
+static const ReportingCategory fee = ReportingCategory$fee._();
 
-static const ReportingCategory financingPaydown = ReportingCategory._('financing_paydown');
+static const ReportingCategory financingPaydown = ReportingCategory$financingPaydown._();
 
-static const ReportingCategory financingPaydownReversal = ReportingCategory._('financing_paydown_reversal');
+static const ReportingCategory financingPaydownReversal = ReportingCategory$financingPaydownReversal._();
 
-static const ReportingCategory financingPayout = ReportingCategory._('financing_payout');
+static const ReportingCategory financingPayout = ReportingCategory$financingPayout._();
 
-static const ReportingCategory financingPayoutReversal = ReportingCategory._('financing_payout_reversal');
+static const ReportingCategory financingPayoutReversal = ReportingCategory$financingPayoutReversal._();
 
-static const ReportingCategory issuingAuthorizationHold = ReportingCategory._('issuing_authorization_hold');
+static const ReportingCategory issuingAuthorizationHold = ReportingCategory$issuingAuthorizationHold._();
 
-static const ReportingCategory issuingAuthorizationRelease = ReportingCategory._('issuing_authorization_release');
+static const ReportingCategory issuingAuthorizationRelease = ReportingCategory$issuingAuthorizationRelease._();
 
-static const ReportingCategory issuingDispute = ReportingCategory._('issuing_dispute');
+static const ReportingCategory issuingDispute = ReportingCategory$issuingDispute._();
 
-static const ReportingCategory issuingTransaction = ReportingCategory._('issuing_transaction');
+static const ReportingCategory issuingTransaction = ReportingCategory$issuingTransaction._();
 
-static const ReportingCategory networkCost = ReportingCategory._('network_cost');
+static const ReportingCategory networkCost = ReportingCategory$networkCost._();
 
-static const ReportingCategory otherAdjustment = ReportingCategory._('other_adjustment');
+static const ReportingCategory otherAdjustment = ReportingCategory$otherAdjustment._();
 
-static const ReportingCategory partialCaptureReversal = ReportingCategory._('partial_capture_reversal');
+static const ReportingCategory partialCaptureReversal = ReportingCategory$partialCaptureReversal._();
 
-static const ReportingCategory payout = ReportingCategory._('payout');
+static const ReportingCategory payout = ReportingCategory$payout._();
 
-static const ReportingCategory payoutReversal = ReportingCategory._('payout_reversal');
+static const ReportingCategory payoutReversal = ReportingCategory$payoutReversal._();
 
-static const ReportingCategory platformEarning = ReportingCategory._('platform_earning');
+static const ReportingCategory platformEarning = ReportingCategory$platformEarning._();
 
-static const ReportingCategory platformEarningRefund = ReportingCategory._('platform_earning_refund');
+static const ReportingCategory platformEarningRefund = ReportingCategory$platformEarningRefund._();
 
-static const ReportingCategory refund = ReportingCategory._('refund');
+static const ReportingCategory refund = ReportingCategory$refund._();
 
-static const ReportingCategory refundFailure = ReportingCategory._('refund_failure');
+static const ReportingCategory refundFailure = ReportingCategory$refundFailure._();
 
-static const ReportingCategory riskReservedFunds = ReportingCategory._('risk_reserved_funds');
+static const ReportingCategory riskReservedFunds = ReportingCategory$riskReservedFunds._();
 
-static const ReportingCategory tax = ReportingCategory._('tax');
+static const ReportingCategory tax = ReportingCategory$tax._();
 
-static const ReportingCategory topup = ReportingCategory._('topup');
+static const ReportingCategory topup = ReportingCategory$topup._();
 
-static const ReportingCategory topupReversal = ReportingCategory._('topup_reversal');
+static const ReportingCategory topupReversal = ReportingCategory$topupReversal._();
 
-static const ReportingCategory transfer = ReportingCategory._('transfer');
+static const ReportingCategory transfer = ReportingCategory$transfer._();
 
-static const ReportingCategory transferReversal = ReportingCategory._('transfer_reversal');
+static const ReportingCategory transferReversal = ReportingCategory$transferReversal._();
 
-static const ReportingCategory unreconciledCustomerFunds = ReportingCategory._('unreconciled_customer_funds');
+static const ReportingCategory unreconciledCustomerFunds = ReportingCategory$unreconciledCustomerFunds._();
 
 static const List<ReportingCategory> values = [advance, advanceFunding, anticipationRepayment, charge, chargeFailure, climateOrderPurchase, climateOrderRefund, connectCollectionTransfer, connectReservedFunds, contribution, dispute, disputeReversal, fee, financingPaydown, financingPaydownReversal, financingPayout, financingPayoutReversal, issuingAuthorizationHold, issuingAuthorizationRelease, issuingDispute, issuingTransaction, networkCost, otherAdjustment, partialCaptureReversal, payout, payoutReversal, platformEarning, platformEarningRefund, refund, refundFailure, riskReservedFunds, tax, topup, topupReversal, transfer, transferReversal, unreconciledCustomerFunds];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -165,16 +164,354 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ReportingCategory && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ReportingCategory$Unknown; } 
 @override String toString() => 'ReportingCategory($value)';
 
  }
-@immutable final class Timezone {const Timezone._(this.value);
+@immutable final class ReportingCategory$advance extends ReportingCategory {const ReportingCategory$advance._();
+
+@override String get value => 'advance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$advance;
+
+@override int get hashCode => 'advance'.hashCode;
+
+ }
+@immutable final class ReportingCategory$advanceFunding extends ReportingCategory {const ReportingCategory$advanceFunding._();
+
+@override String get value => 'advance_funding';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$advanceFunding;
+
+@override int get hashCode => 'advance_funding'.hashCode;
+
+ }
+@immutable final class ReportingCategory$anticipationRepayment extends ReportingCategory {const ReportingCategory$anticipationRepayment._();
+
+@override String get value => 'anticipation_repayment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$anticipationRepayment;
+
+@override int get hashCode => 'anticipation_repayment'.hashCode;
+
+ }
+@immutable final class ReportingCategory$charge extends ReportingCategory {const ReportingCategory$charge._();
+
+@override String get value => 'charge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$charge;
+
+@override int get hashCode => 'charge'.hashCode;
+
+ }
+@immutable final class ReportingCategory$chargeFailure extends ReportingCategory {const ReportingCategory$chargeFailure._();
+
+@override String get value => 'charge_failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$chargeFailure;
+
+@override int get hashCode => 'charge_failure'.hashCode;
+
+ }
+@immutable final class ReportingCategory$climateOrderPurchase extends ReportingCategory {const ReportingCategory$climateOrderPurchase._();
+
+@override String get value => 'climate_order_purchase';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$climateOrderPurchase;
+
+@override int get hashCode => 'climate_order_purchase'.hashCode;
+
+ }
+@immutable final class ReportingCategory$climateOrderRefund extends ReportingCategory {const ReportingCategory$climateOrderRefund._();
+
+@override String get value => 'climate_order_refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$climateOrderRefund;
+
+@override int get hashCode => 'climate_order_refund'.hashCode;
+
+ }
+@immutable final class ReportingCategory$connectCollectionTransfer extends ReportingCategory {const ReportingCategory$connectCollectionTransfer._();
+
+@override String get value => 'connect_collection_transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$connectCollectionTransfer;
+
+@override int get hashCode => 'connect_collection_transfer'.hashCode;
+
+ }
+@immutable final class ReportingCategory$connectReservedFunds extends ReportingCategory {const ReportingCategory$connectReservedFunds._();
+
+@override String get value => 'connect_reserved_funds';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$connectReservedFunds;
+
+@override int get hashCode => 'connect_reserved_funds'.hashCode;
+
+ }
+@immutable final class ReportingCategory$contribution extends ReportingCategory {const ReportingCategory$contribution._();
+
+@override String get value => 'contribution';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$contribution;
+
+@override int get hashCode => 'contribution'.hashCode;
+
+ }
+@immutable final class ReportingCategory$dispute extends ReportingCategory {const ReportingCategory$dispute._();
+
+@override String get value => 'dispute';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$dispute;
+
+@override int get hashCode => 'dispute'.hashCode;
+
+ }
+@immutable final class ReportingCategory$disputeReversal extends ReportingCategory {const ReportingCategory$disputeReversal._();
+
+@override String get value => 'dispute_reversal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$disputeReversal;
+
+@override int get hashCode => 'dispute_reversal'.hashCode;
+
+ }
+@immutable final class ReportingCategory$fee extends ReportingCategory {const ReportingCategory$fee._();
+
+@override String get value => 'fee';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$fee;
+
+@override int get hashCode => 'fee'.hashCode;
+
+ }
+@immutable final class ReportingCategory$financingPaydown extends ReportingCategory {const ReportingCategory$financingPaydown._();
+
+@override String get value => 'financing_paydown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$financingPaydown;
+
+@override int get hashCode => 'financing_paydown'.hashCode;
+
+ }
+@immutable final class ReportingCategory$financingPaydownReversal extends ReportingCategory {const ReportingCategory$financingPaydownReversal._();
+
+@override String get value => 'financing_paydown_reversal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$financingPaydownReversal;
+
+@override int get hashCode => 'financing_paydown_reversal'.hashCode;
+
+ }
+@immutable final class ReportingCategory$financingPayout extends ReportingCategory {const ReportingCategory$financingPayout._();
+
+@override String get value => 'financing_payout';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$financingPayout;
+
+@override int get hashCode => 'financing_payout'.hashCode;
+
+ }
+@immutable final class ReportingCategory$financingPayoutReversal extends ReportingCategory {const ReportingCategory$financingPayoutReversal._();
+
+@override String get value => 'financing_payout_reversal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$financingPayoutReversal;
+
+@override int get hashCode => 'financing_payout_reversal'.hashCode;
+
+ }
+@immutable final class ReportingCategory$issuingAuthorizationHold extends ReportingCategory {const ReportingCategory$issuingAuthorizationHold._();
+
+@override String get value => 'issuing_authorization_hold';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$issuingAuthorizationHold;
+
+@override int get hashCode => 'issuing_authorization_hold'.hashCode;
+
+ }
+@immutable final class ReportingCategory$issuingAuthorizationRelease extends ReportingCategory {const ReportingCategory$issuingAuthorizationRelease._();
+
+@override String get value => 'issuing_authorization_release';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$issuingAuthorizationRelease;
+
+@override int get hashCode => 'issuing_authorization_release'.hashCode;
+
+ }
+@immutable final class ReportingCategory$issuingDispute extends ReportingCategory {const ReportingCategory$issuingDispute._();
+
+@override String get value => 'issuing_dispute';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$issuingDispute;
+
+@override int get hashCode => 'issuing_dispute'.hashCode;
+
+ }
+@immutable final class ReportingCategory$issuingTransaction extends ReportingCategory {const ReportingCategory$issuingTransaction._();
+
+@override String get value => 'issuing_transaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$issuingTransaction;
+
+@override int get hashCode => 'issuing_transaction'.hashCode;
+
+ }
+@immutable final class ReportingCategory$networkCost extends ReportingCategory {const ReportingCategory$networkCost._();
+
+@override String get value => 'network_cost';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$networkCost;
+
+@override int get hashCode => 'network_cost'.hashCode;
+
+ }
+@immutable final class ReportingCategory$otherAdjustment extends ReportingCategory {const ReportingCategory$otherAdjustment._();
+
+@override String get value => 'other_adjustment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$otherAdjustment;
+
+@override int get hashCode => 'other_adjustment'.hashCode;
+
+ }
+@immutable final class ReportingCategory$partialCaptureReversal extends ReportingCategory {const ReportingCategory$partialCaptureReversal._();
+
+@override String get value => 'partial_capture_reversal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$partialCaptureReversal;
+
+@override int get hashCode => 'partial_capture_reversal'.hashCode;
+
+ }
+@immutable final class ReportingCategory$payout extends ReportingCategory {const ReportingCategory$payout._();
+
+@override String get value => 'payout';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$payout;
+
+@override int get hashCode => 'payout'.hashCode;
+
+ }
+@immutable final class ReportingCategory$payoutReversal extends ReportingCategory {const ReportingCategory$payoutReversal._();
+
+@override String get value => 'payout_reversal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$payoutReversal;
+
+@override int get hashCode => 'payout_reversal'.hashCode;
+
+ }
+@immutable final class ReportingCategory$platformEarning extends ReportingCategory {const ReportingCategory$platformEarning._();
+
+@override String get value => 'platform_earning';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$platformEarning;
+
+@override int get hashCode => 'platform_earning'.hashCode;
+
+ }
+@immutable final class ReportingCategory$platformEarningRefund extends ReportingCategory {const ReportingCategory$platformEarningRefund._();
+
+@override String get value => 'platform_earning_refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$platformEarningRefund;
+
+@override int get hashCode => 'platform_earning_refund'.hashCode;
+
+ }
+@immutable final class ReportingCategory$refund extends ReportingCategory {const ReportingCategory$refund._();
+
+@override String get value => 'refund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$refund;
+
+@override int get hashCode => 'refund'.hashCode;
+
+ }
+@immutable final class ReportingCategory$refundFailure extends ReportingCategory {const ReportingCategory$refundFailure._();
+
+@override String get value => 'refund_failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$refundFailure;
+
+@override int get hashCode => 'refund_failure'.hashCode;
+
+ }
+@immutable final class ReportingCategory$riskReservedFunds extends ReportingCategory {const ReportingCategory$riskReservedFunds._();
+
+@override String get value => 'risk_reserved_funds';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$riskReservedFunds;
+
+@override int get hashCode => 'risk_reserved_funds'.hashCode;
+
+ }
+@immutable final class ReportingCategory$tax extends ReportingCategory {const ReportingCategory$tax._();
+
+@override String get value => 'tax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$tax;
+
+@override int get hashCode => 'tax'.hashCode;
+
+ }
+@immutable final class ReportingCategory$topup extends ReportingCategory {const ReportingCategory$topup._();
+
+@override String get value => 'topup';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$topup;
+
+@override int get hashCode => 'topup'.hashCode;
+
+ }
+@immutable final class ReportingCategory$topupReversal extends ReportingCategory {const ReportingCategory$topupReversal._();
+
+@override String get value => 'topup_reversal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$topupReversal;
+
+@override int get hashCode => 'topup_reversal'.hashCode;
+
+ }
+@immutable final class ReportingCategory$transfer extends ReportingCategory {const ReportingCategory$transfer._();
+
+@override String get value => 'transfer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$transfer;
+
+@override int get hashCode => 'transfer'.hashCode;
+
+ }
+@immutable final class ReportingCategory$transferReversal extends ReportingCategory {const ReportingCategory$transferReversal._();
+
+@override String get value => 'transfer_reversal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$transferReversal;
+
+@override int get hashCode => 'transfer_reversal'.hashCode;
+
+ }
+@immutable final class ReportingCategory$unreconciledCustomerFunds extends ReportingCategory {const ReportingCategory$unreconciledCustomerFunds._();
+
+@override String get value => 'unreconciled_customer_funds';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReportingCategory$unreconciledCustomerFunds;
+
+@override int get hashCode => 'unreconciled_customer_funds'.hashCode;
+
+ }
+@immutable final class ReportingCategory$Unknown extends ReportingCategory {const ReportingCategory$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ReportingCategory$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class Timezone {const Timezone();
 
 factory Timezone.fromJson(String json) { return switch (json) {
   'Africa/Abidjan' => africaAbidjan,
@@ -776,1211 +1113,1210 @@ factory Timezone.fromJson(String json) { return switch (json) {
   'W-SU' => wSu,
   'WET' => wet,
   'Zulu' => zulu,
-  _ => Timezone._(json),
+  _ => Timezone$Unknown(json),
 }; }
 
-static const Timezone africaAbidjan = Timezone._('Africa/Abidjan');
+static const Timezone africaAbidjan = Timezone$africaAbidjan._();
 
-static const Timezone africaAccra = Timezone._('Africa/Accra');
+static const Timezone africaAccra = Timezone$africaAccra._();
 
-static const Timezone africaAddisAbaba = Timezone._('Africa/Addis_Ababa');
+static const Timezone africaAddisAbaba = Timezone$africaAddisAbaba._();
 
-static const Timezone africaAlgiers = Timezone._('Africa/Algiers');
+static const Timezone africaAlgiers = Timezone$africaAlgiers._();
 
-static const Timezone africaAsmara = Timezone._('Africa/Asmara');
+static const Timezone africaAsmara = Timezone$africaAsmara._();
 
-static const Timezone africaAsmera = Timezone._('Africa/Asmera');
+static const Timezone africaAsmera = Timezone$africaAsmera._();
 
-static const Timezone africaBamako = Timezone._('Africa/Bamako');
+static const Timezone africaBamako = Timezone$africaBamako._();
 
-static const Timezone africaBangui = Timezone._('Africa/Bangui');
+static const Timezone africaBangui = Timezone$africaBangui._();
 
-static const Timezone africaBanjul = Timezone._('Africa/Banjul');
+static const Timezone africaBanjul = Timezone$africaBanjul._();
 
-static const Timezone africaBissau = Timezone._('Africa/Bissau');
+static const Timezone africaBissau = Timezone$africaBissau._();
 
-static const Timezone africaBlantyre = Timezone._('Africa/Blantyre');
+static const Timezone africaBlantyre = Timezone$africaBlantyre._();
 
-static const Timezone africaBrazzaville = Timezone._('Africa/Brazzaville');
+static const Timezone africaBrazzaville = Timezone$africaBrazzaville._();
 
-static const Timezone africaBujumbura = Timezone._('Africa/Bujumbura');
+static const Timezone africaBujumbura = Timezone$africaBujumbura._();
 
-static const Timezone africaCairo = Timezone._('Africa/Cairo');
+static const Timezone africaCairo = Timezone$africaCairo._();
 
-static const Timezone africaCasablanca = Timezone._('Africa/Casablanca');
+static const Timezone africaCasablanca = Timezone$africaCasablanca._();
 
-static const Timezone africaCeuta = Timezone._('Africa/Ceuta');
+static const Timezone africaCeuta = Timezone$africaCeuta._();
 
-static const Timezone africaConakry = Timezone._('Africa/Conakry');
+static const Timezone africaConakry = Timezone$africaConakry._();
 
-static const Timezone africaDakar = Timezone._('Africa/Dakar');
+static const Timezone africaDakar = Timezone$africaDakar._();
 
-static const Timezone africaDarEsSalaam = Timezone._('Africa/Dar_es_Salaam');
+static const Timezone africaDarEsSalaam = Timezone$africaDarEsSalaam._();
 
-static const Timezone africaDjibouti = Timezone._('Africa/Djibouti');
+static const Timezone africaDjibouti = Timezone$africaDjibouti._();
 
-static const Timezone africaDouala = Timezone._('Africa/Douala');
+static const Timezone africaDouala = Timezone$africaDouala._();
 
-static const Timezone africaElAaiun = Timezone._('Africa/El_Aaiun');
+static const Timezone africaElAaiun = Timezone$africaElAaiun._();
 
-static const Timezone africaFreetown = Timezone._('Africa/Freetown');
+static const Timezone africaFreetown = Timezone$africaFreetown._();
 
-static const Timezone africaGaborone = Timezone._('Africa/Gaborone');
+static const Timezone africaGaborone = Timezone$africaGaborone._();
 
-static const Timezone africaHarare = Timezone._('Africa/Harare');
+static const Timezone africaHarare = Timezone$africaHarare._();
 
-static const Timezone africaJohannesburg = Timezone._('Africa/Johannesburg');
+static const Timezone africaJohannesburg = Timezone$africaJohannesburg._();
 
-static const Timezone africaJuba = Timezone._('Africa/Juba');
+static const Timezone africaJuba = Timezone$africaJuba._();
 
-static const Timezone africaKampala = Timezone._('Africa/Kampala');
+static const Timezone africaKampala = Timezone$africaKampala._();
 
-static const Timezone africaKhartoum = Timezone._('Africa/Khartoum');
+static const Timezone africaKhartoum = Timezone$africaKhartoum._();
 
-static const Timezone africaKigali = Timezone._('Africa/Kigali');
+static const Timezone africaKigali = Timezone$africaKigali._();
 
-static const Timezone africaKinshasa = Timezone._('Africa/Kinshasa');
+static const Timezone africaKinshasa = Timezone$africaKinshasa._();
 
-static const Timezone africaLagos = Timezone._('Africa/Lagos');
+static const Timezone africaLagos = Timezone$africaLagos._();
 
-static const Timezone africaLibreville = Timezone._('Africa/Libreville');
+static const Timezone africaLibreville = Timezone$africaLibreville._();
 
-static const Timezone africaLome = Timezone._('Africa/Lome');
+static const Timezone africaLome = Timezone$africaLome._();
 
-static const Timezone africaLuanda = Timezone._('Africa/Luanda');
+static const Timezone africaLuanda = Timezone$africaLuanda._();
 
-static const Timezone africaLubumbashi = Timezone._('Africa/Lubumbashi');
+static const Timezone africaLubumbashi = Timezone$africaLubumbashi._();
 
-static const Timezone africaLusaka = Timezone._('Africa/Lusaka');
+static const Timezone africaLusaka = Timezone$africaLusaka._();
 
-static const Timezone africaMalabo = Timezone._('Africa/Malabo');
+static const Timezone africaMalabo = Timezone$africaMalabo._();
 
-static const Timezone africaMaputo = Timezone._('Africa/Maputo');
+static const Timezone africaMaputo = Timezone$africaMaputo._();
 
-static const Timezone africaMaseru = Timezone._('Africa/Maseru');
+static const Timezone africaMaseru = Timezone$africaMaseru._();
 
-static const Timezone africaMbabane = Timezone._('Africa/Mbabane');
+static const Timezone africaMbabane = Timezone$africaMbabane._();
 
-static const Timezone africaMogadishu = Timezone._('Africa/Mogadishu');
+static const Timezone africaMogadishu = Timezone$africaMogadishu._();
 
-static const Timezone africaMonrovia = Timezone._('Africa/Monrovia');
+static const Timezone africaMonrovia = Timezone$africaMonrovia._();
 
-static const Timezone africaNairobi = Timezone._('Africa/Nairobi');
+static const Timezone africaNairobi = Timezone$africaNairobi._();
 
-static const Timezone africaNdjamena = Timezone._('Africa/Ndjamena');
+static const Timezone africaNdjamena = Timezone$africaNdjamena._();
 
-static const Timezone africaNiamey = Timezone._('Africa/Niamey');
+static const Timezone africaNiamey = Timezone$africaNiamey._();
 
-static const Timezone africaNouakchott = Timezone._('Africa/Nouakchott');
+static const Timezone africaNouakchott = Timezone$africaNouakchott._();
 
-static const Timezone africaOuagadougou = Timezone._('Africa/Ouagadougou');
+static const Timezone africaOuagadougou = Timezone$africaOuagadougou._();
 
-static const Timezone africaPortoNovo = Timezone._('Africa/Porto-Novo');
+static const Timezone africaPortoNovo = Timezone$africaPortoNovo._();
 
-static const Timezone africaSaoTome = Timezone._('Africa/Sao_Tome');
+static const Timezone africaSaoTome = Timezone$africaSaoTome._();
 
-static const Timezone africaTimbuktu = Timezone._('Africa/Timbuktu');
+static const Timezone africaTimbuktu = Timezone$africaTimbuktu._();
 
-static const Timezone africaTripoli = Timezone._('Africa/Tripoli');
+static const Timezone africaTripoli = Timezone$africaTripoli._();
 
-static const Timezone africaTunis = Timezone._('Africa/Tunis');
+static const Timezone africaTunis = Timezone$africaTunis._();
 
-static const Timezone africaWindhoek = Timezone._('Africa/Windhoek');
+static const Timezone africaWindhoek = Timezone$africaWindhoek._();
 
-static const Timezone americaAdak = Timezone._('America/Adak');
+static const Timezone americaAdak = Timezone$americaAdak._();
 
-static const Timezone americaAnchorage = Timezone._('America/Anchorage');
+static const Timezone americaAnchorage = Timezone$americaAnchorage._();
 
-static const Timezone americaAnguilla = Timezone._('America/Anguilla');
+static const Timezone americaAnguilla = Timezone$americaAnguilla._();
 
-static const Timezone americaAntigua = Timezone._('America/Antigua');
+static const Timezone americaAntigua = Timezone$americaAntigua._();
 
-static const Timezone americaAraguaina = Timezone._('America/Araguaina');
+static const Timezone americaAraguaina = Timezone$americaAraguaina._();
 
-static const Timezone americaArgentinaBuenosAires = Timezone._('America/Argentina/Buenos_Aires');
+static const Timezone americaArgentinaBuenosAires = Timezone$americaArgentinaBuenosAires._();
 
-static const Timezone americaArgentinaCatamarca = Timezone._('America/Argentina/Catamarca');
+static const Timezone americaArgentinaCatamarca = Timezone$americaArgentinaCatamarca._();
 
-static const Timezone americaArgentinaComodRivadavia = Timezone._('America/Argentina/ComodRivadavia');
+static const Timezone americaArgentinaComodRivadavia = Timezone$americaArgentinaComodRivadavia._();
 
-static const Timezone americaArgentinaCordoba = Timezone._('America/Argentina/Cordoba');
+static const Timezone americaArgentinaCordoba = Timezone$americaArgentinaCordoba._();
 
-static const Timezone americaArgentinaJujuy = Timezone._('America/Argentina/Jujuy');
+static const Timezone americaArgentinaJujuy = Timezone$americaArgentinaJujuy._();
 
-static const Timezone americaArgentinaLaRioja = Timezone._('America/Argentina/La_Rioja');
+static const Timezone americaArgentinaLaRioja = Timezone$americaArgentinaLaRioja._();
 
-static const Timezone americaArgentinaMendoza = Timezone._('America/Argentina/Mendoza');
+static const Timezone americaArgentinaMendoza = Timezone$americaArgentinaMendoza._();
 
-static const Timezone americaArgentinaRioGallegos = Timezone._('America/Argentina/Rio_Gallegos');
+static const Timezone americaArgentinaRioGallegos = Timezone$americaArgentinaRioGallegos._();
 
-static const Timezone americaArgentinaSalta = Timezone._('America/Argentina/Salta');
+static const Timezone americaArgentinaSalta = Timezone$americaArgentinaSalta._();
 
-static const Timezone americaArgentinaSanJuan = Timezone._('America/Argentina/San_Juan');
+static const Timezone americaArgentinaSanJuan = Timezone$americaArgentinaSanJuan._();
 
-static const Timezone americaArgentinaSanLuis = Timezone._('America/Argentina/San_Luis');
+static const Timezone americaArgentinaSanLuis = Timezone$americaArgentinaSanLuis._();
 
-static const Timezone americaArgentinaTucuman = Timezone._('America/Argentina/Tucuman');
+static const Timezone americaArgentinaTucuman = Timezone$americaArgentinaTucuman._();
 
-static const Timezone americaArgentinaUshuaia = Timezone._('America/Argentina/Ushuaia');
+static const Timezone americaArgentinaUshuaia = Timezone$americaArgentinaUshuaia._();
 
-static const Timezone americaAruba = Timezone._('America/Aruba');
+static const Timezone americaAruba = Timezone$americaAruba._();
 
-static const Timezone americaAsuncion = Timezone._('America/Asuncion');
+static const Timezone americaAsuncion = Timezone$americaAsuncion._();
 
-static const Timezone americaAtikokan = Timezone._('America/Atikokan');
+static const Timezone americaAtikokan = Timezone$americaAtikokan._();
 
-static const Timezone americaAtka = Timezone._('America/Atka');
+static const Timezone americaAtka = Timezone$americaAtka._();
 
-static const Timezone americaBahia = Timezone._('America/Bahia');
+static const Timezone americaBahia = Timezone$americaBahia._();
 
-static const Timezone americaBahiaBanderas = Timezone._('America/Bahia_Banderas');
+static const Timezone americaBahiaBanderas = Timezone$americaBahiaBanderas._();
 
-static const Timezone americaBarbados = Timezone._('America/Barbados');
+static const Timezone americaBarbados = Timezone$americaBarbados._();
 
-static const Timezone americaBelem = Timezone._('America/Belem');
+static const Timezone americaBelem = Timezone$americaBelem._();
 
-static const Timezone americaBelize = Timezone._('America/Belize');
+static const Timezone americaBelize = Timezone$americaBelize._();
 
-static const Timezone americaBlancSablon = Timezone._('America/Blanc-Sablon');
+static const Timezone americaBlancSablon = Timezone$americaBlancSablon._();
 
-static const Timezone americaBoaVista = Timezone._('America/Boa_Vista');
+static const Timezone americaBoaVista = Timezone$americaBoaVista._();
 
-static const Timezone americaBogota = Timezone._('America/Bogota');
+static const Timezone americaBogota = Timezone$americaBogota._();
 
-static const Timezone americaBoise = Timezone._('America/Boise');
+static const Timezone americaBoise = Timezone$americaBoise._();
 
-static const Timezone americaBuenosAires = Timezone._('America/Buenos_Aires');
+static const Timezone americaBuenosAires = Timezone$americaBuenosAires._();
 
-static const Timezone americaCambridgeBay = Timezone._('America/Cambridge_Bay');
+static const Timezone americaCambridgeBay = Timezone$americaCambridgeBay._();
 
-static const Timezone americaCampoGrande = Timezone._('America/Campo_Grande');
+static const Timezone americaCampoGrande = Timezone$americaCampoGrande._();
 
-static const Timezone americaCancun = Timezone._('America/Cancun');
+static const Timezone americaCancun = Timezone$americaCancun._();
 
-static const Timezone americaCaracas = Timezone._('America/Caracas');
+static const Timezone americaCaracas = Timezone$americaCaracas._();
 
-static const Timezone americaCatamarca = Timezone._('America/Catamarca');
+static const Timezone americaCatamarca = Timezone$americaCatamarca._();
 
-static const Timezone americaCayenne = Timezone._('America/Cayenne');
+static const Timezone americaCayenne = Timezone$americaCayenne._();
 
-static const Timezone americaCayman = Timezone._('America/Cayman');
+static const Timezone americaCayman = Timezone$americaCayman._();
 
-static const Timezone americaChicago = Timezone._('America/Chicago');
+static const Timezone americaChicago = Timezone$americaChicago._();
 
-static const Timezone americaChihuahua = Timezone._('America/Chihuahua');
+static const Timezone americaChihuahua = Timezone$americaChihuahua._();
 
-static const Timezone americaCiudadJuarez = Timezone._('America/Ciudad_Juarez');
+static const Timezone americaCiudadJuarez = Timezone$americaCiudadJuarez._();
 
-static const Timezone americaCoralHarbour = Timezone._('America/Coral_Harbour');
+static const Timezone americaCoralHarbour = Timezone$americaCoralHarbour._();
 
-static const Timezone americaCordoba = Timezone._('America/Cordoba');
+static const Timezone americaCordoba = Timezone$americaCordoba._();
 
-static const Timezone americaCostaRica = Timezone._('America/Costa_Rica');
+static const Timezone americaCostaRica = Timezone$americaCostaRica._();
 
-static const Timezone americaCoyhaique = Timezone._('America/Coyhaique');
+static const Timezone americaCoyhaique = Timezone$americaCoyhaique._();
 
-static const Timezone americaCreston = Timezone._('America/Creston');
+static const Timezone americaCreston = Timezone$americaCreston._();
 
-static const Timezone americaCuiaba = Timezone._('America/Cuiaba');
+static const Timezone americaCuiaba = Timezone$americaCuiaba._();
 
-static const Timezone americaCuracao = Timezone._('America/Curacao');
+static const Timezone americaCuracao = Timezone$americaCuracao._();
 
-static const Timezone americaDanmarkshavn = Timezone._('America/Danmarkshavn');
+static const Timezone americaDanmarkshavn = Timezone$americaDanmarkshavn._();
 
-static const Timezone americaDawson = Timezone._('America/Dawson');
+static const Timezone americaDawson = Timezone$americaDawson._();
 
-static const Timezone americaDawsonCreek = Timezone._('America/Dawson_Creek');
+static const Timezone americaDawsonCreek = Timezone$americaDawsonCreek._();
 
-static const Timezone americaDenver = Timezone._('America/Denver');
+static const Timezone americaDenver = Timezone$americaDenver._();
 
-static const Timezone americaDetroit = Timezone._('America/Detroit');
+static const Timezone americaDetroit = Timezone$americaDetroit._();
 
-static const Timezone americaDominica = Timezone._('America/Dominica');
+static const Timezone americaDominica = Timezone$americaDominica._();
 
-static const Timezone americaEdmonton = Timezone._('America/Edmonton');
+static const Timezone americaEdmonton = Timezone$americaEdmonton._();
 
-static const Timezone americaEirunepe = Timezone._('America/Eirunepe');
+static const Timezone americaEirunepe = Timezone$americaEirunepe._();
 
-static const Timezone americaElSalvador = Timezone._('America/El_Salvador');
+static const Timezone americaElSalvador = Timezone$americaElSalvador._();
 
-static const Timezone americaEnsenada = Timezone._('America/Ensenada');
+static const Timezone americaEnsenada = Timezone$americaEnsenada._();
 
-static const Timezone americaFortNelson = Timezone._('America/Fort_Nelson');
+static const Timezone americaFortNelson = Timezone$americaFortNelson._();
 
-static const Timezone americaFortWayne = Timezone._('America/Fort_Wayne');
+static const Timezone americaFortWayne = Timezone$americaFortWayne._();
 
-static const Timezone americaFortaleza = Timezone._('America/Fortaleza');
+static const Timezone americaFortaleza = Timezone$americaFortaleza._();
 
-static const Timezone americaGlaceBay = Timezone._('America/Glace_Bay');
+static const Timezone americaGlaceBay = Timezone$americaGlaceBay._();
 
-static const Timezone americaGodthab = Timezone._('America/Godthab');
+static const Timezone americaGodthab = Timezone$americaGodthab._();
 
-static const Timezone americaGooseBay = Timezone._('America/Goose_Bay');
+static const Timezone americaGooseBay = Timezone$americaGooseBay._();
 
-static const Timezone americaGrandTurk = Timezone._('America/Grand_Turk');
+static const Timezone americaGrandTurk = Timezone$americaGrandTurk._();
 
-static const Timezone americaGrenada = Timezone._('America/Grenada');
+static const Timezone americaGrenada = Timezone$americaGrenada._();
 
-static const Timezone americaGuadeloupe = Timezone._('America/Guadeloupe');
+static const Timezone americaGuadeloupe = Timezone$americaGuadeloupe._();
 
-static const Timezone americaGuatemala = Timezone._('America/Guatemala');
+static const Timezone americaGuatemala = Timezone$americaGuatemala._();
 
-static const Timezone americaGuayaquil = Timezone._('America/Guayaquil');
+static const Timezone americaGuayaquil = Timezone$americaGuayaquil._();
 
-static const Timezone americaGuyana = Timezone._('America/Guyana');
+static const Timezone americaGuyana = Timezone$americaGuyana._();
 
-static const Timezone americaHalifax = Timezone._('America/Halifax');
+static const Timezone americaHalifax = Timezone$americaHalifax._();
 
-static const Timezone americaHavana = Timezone._('America/Havana');
+static const Timezone americaHavana = Timezone$americaHavana._();
 
-static const Timezone americaHermosillo = Timezone._('America/Hermosillo');
+static const Timezone americaHermosillo = Timezone$americaHermosillo._();
 
-static const Timezone americaIndianaIndianapolis = Timezone._('America/Indiana/Indianapolis');
+static const Timezone americaIndianaIndianapolis = Timezone$americaIndianaIndianapolis._();
 
-static const Timezone americaIndianaKnox = Timezone._('America/Indiana/Knox');
+static const Timezone americaIndianaKnox = Timezone$americaIndianaKnox._();
 
-static const Timezone americaIndianaMarengo = Timezone._('America/Indiana/Marengo');
+static const Timezone americaIndianaMarengo = Timezone$americaIndianaMarengo._();
 
-static const Timezone americaIndianaPetersburg = Timezone._('America/Indiana/Petersburg');
+static const Timezone americaIndianaPetersburg = Timezone$americaIndianaPetersburg._();
 
-static const Timezone americaIndianaTellCity = Timezone._('America/Indiana/Tell_City');
+static const Timezone americaIndianaTellCity = Timezone$americaIndianaTellCity._();
 
-static const Timezone americaIndianaVevay = Timezone._('America/Indiana/Vevay');
+static const Timezone americaIndianaVevay = Timezone$americaIndianaVevay._();
 
-static const Timezone americaIndianaVincennes = Timezone._('America/Indiana/Vincennes');
+static const Timezone americaIndianaVincennes = Timezone$americaIndianaVincennes._();
 
-static const Timezone americaIndianaWinamac = Timezone._('America/Indiana/Winamac');
+static const Timezone americaIndianaWinamac = Timezone$americaIndianaWinamac._();
 
-static const Timezone americaIndianapolis = Timezone._('America/Indianapolis');
+static const Timezone americaIndianapolis = Timezone$americaIndianapolis._();
 
-static const Timezone americaInuvik = Timezone._('America/Inuvik');
+static const Timezone americaInuvik = Timezone$americaInuvik._();
 
-static const Timezone americaIqaluit = Timezone._('America/Iqaluit');
+static const Timezone americaIqaluit = Timezone$americaIqaluit._();
 
-static const Timezone americaJamaica = Timezone._('America/Jamaica');
+static const Timezone americaJamaica = Timezone$americaJamaica._();
 
-static const Timezone americaJujuy = Timezone._('America/Jujuy');
+static const Timezone americaJujuy = Timezone$americaJujuy._();
 
-static const Timezone americaJuneau = Timezone._('America/Juneau');
+static const Timezone americaJuneau = Timezone$americaJuneau._();
 
-static const Timezone americaKentuckyLouisville = Timezone._('America/Kentucky/Louisville');
+static const Timezone americaKentuckyLouisville = Timezone$americaKentuckyLouisville._();
 
-static const Timezone americaKentuckyMonticello = Timezone._('America/Kentucky/Monticello');
+static const Timezone americaKentuckyMonticello = Timezone$americaKentuckyMonticello._();
 
-static const Timezone americaKnoxIn = Timezone._('America/Knox_IN');
+static const Timezone americaKnoxIn = Timezone$americaKnoxIn._();
 
-static const Timezone americaKralendijk = Timezone._('America/Kralendijk');
+static const Timezone americaKralendijk = Timezone$americaKralendijk._();
 
-static const Timezone americaLaPaz = Timezone._('America/La_Paz');
+static const Timezone americaLaPaz = Timezone$americaLaPaz._();
 
-static const Timezone americaLima = Timezone._('America/Lima');
+static const Timezone americaLima = Timezone$americaLima._();
 
-static const Timezone americaLosAngeles = Timezone._('America/Los_Angeles');
+static const Timezone americaLosAngeles = Timezone$americaLosAngeles._();
 
-static const Timezone americaLouisville = Timezone._('America/Louisville');
+static const Timezone americaLouisville = Timezone$americaLouisville._();
 
-static const Timezone americaLowerPrinces = Timezone._('America/Lower_Princes');
+static const Timezone americaLowerPrinces = Timezone$americaLowerPrinces._();
 
-static const Timezone americaMaceio = Timezone._('America/Maceio');
+static const Timezone americaMaceio = Timezone$americaMaceio._();
 
-static const Timezone americaManagua = Timezone._('America/Managua');
+static const Timezone americaManagua = Timezone$americaManagua._();
 
-static const Timezone americaManaus = Timezone._('America/Manaus');
+static const Timezone americaManaus = Timezone$americaManaus._();
 
-static const Timezone americaMarigot = Timezone._('America/Marigot');
+static const Timezone americaMarigot = Timezone$americaMarigot._();
 
-static const Timezone americaMartinique = Timezone._('America/Martinique');
+static const Timezone americaMartinique = Timezone$americaMartinique._();
 
-static const Timezone americaMatamoros = Timezone._('America/Matamoros');
+static const Timezone americaMatamoros = Timezone$americaMatamoros._();
 
-static const Timezone americaMazatlan = Timezone._('America/Mazatlan');
+static const Timezone americaMazatlan = Timezone$americaMazatlan._();
 
-static const Timezone americaMendoza = Timezone._('America/Mendoza');
+static const Timezone americaMendoza = Timezone$americaMendoza._();
 
-static const Timezone americaMenominee = Timezone._('America/Menominee');
+static const Timezone americaMenominee = Timezone$americaMenominee._();
 
-static const Timezone americaMerida = Timezone._('America/Merida');
+static const Timezone americaMerida = Timezone$americaMerida._();
 
-static const Timezone americaMetlakatla = Timezone._('America/Metlakatla');
+static const Timezone americaMetlakatla = Timezone$americaMetlakatla._();
 
-static const Timezone americaMexicoCity = Timezone._('America/Mexico_City');
+static const Timezone americaMexicoCity = Timezone$americaMexicoCity._();
 
-static const Timezone americaMiquelon = Timezone._('America/Miquelon');
+static const Timezone americaMiquelon = Timezone$americaMiquelon._();
 
-static const Timezone americaMoncton = Timezone._('America/Moncton');
+static const Timezone americaMoncton = Timezone$americaMoncton._();
 
-static const Timezone americaMonterrey = Timezone._('America/Monterrey');
+static const Timezone americaMonterrey = Timezone$americaMonterrey._();
 
-static const Timezone americaMontevideo = Timezone._('America/Montevideo');
+static const Timezone americaMontevideo = Timezone$americaMontevideo._();
 
-static const Timezone americaMontreal = Timezone._('America/Montreal');
+static const Timezone americaMontreal = Timezone$americaMontreal._();
 
-static const Timezone americaMontserrat = Timezone._('America/Montserrat');
+static const Timezone americaMontserrat = Timezone$americaMontserrat._();
 
-static const Timezone americaNassau = Timezone._('America/Nassau');
+static const Timezone americaNassau = Timezone$americaNassau._();
 
-static const Timezone americaNewYork = Timezone._('America/New_York');
+static const Timezone americaNewYork = Timezone$americaNewYork._();
 
-static const Timezone americaNipigon = Timezone._('America/Nipigon');
+static const Timezone americaNipigon = Timezone$americaNipigon._();
 
-static const Timezone americaNome = Timezone._('America/Nome');
+static const Timezone americaNome = Timezone$americaNome._();
 
-static const Timezone americaNoronha = Timezone._('America/Noronha');
+static const Timezone americaNoronha = Timezone$americaNoronha._();
 
-static const Timezone americaNorthDakotaBeulah = Timezone._('America/North_Dakota/Beulah');
+static const Timezone americaNorthDakotaBeulah = Timezone$americaNorthDakotaBeulah._();
 
-static const Timezone americaNorthDakotaCenter = Timezone._('America/North_Dakota/Center');
+static const Timezone americaNorthDakotaCenter = Timezone$americaNorthDakotaCenter._();
 
-static const Timezone americaNorthDakotaNewSalem = Timezone._('America/North_Dakota/New_Salem');
+static const Timezone americaNorthDakotaNewSalem = Timezone$americaNorthDakotaNewSalem._();
 
-static const Timezone americaNuuk = Timezone._('America/Nuuk');
+static const Timezone americaNuuk = Timezone$americaNuuk._();
 
-static const Timezone americaOjinaga = Timezone._('America/Ojinaga');
+static const Timezone americaOjinaga = Timezone$americaOjinaga._();
 
-static const Timezone americaPanama = Timezone._('America/Panama');
+static const Timezone americaPanama = Timezone$americaPanama._();
 
-static const Timezone americaPangnirtung = Timezone._('America/Pangnirtung');
+static const Timezone americaPangnirtung = Timezone$americaPangnirtung._();
 
-static const Timezone americaParamaribo = Timezone._('America/Paramaribo');
+static const Timezone americaParamaribo = Timezone$americaParamaribo._();
 
-static const Timezone americaPhoenix = Timezone._('America/Phoenix');
+static const Timezone americaPhoenix = Timezone$americaPhoenix._();
 
-static const Timezone americaPortAuPrince = Timezone._('America/Port-au-Prince');
+static const Timezone americaPortAuPrince = Timezone$americaPortAuPrince._();
 
-static const Timezone americaPortOfSpain = Timezone._('America/Port_of_Spain');
+static const Timezone americaPortOfSpain = Timezone$americaPortOfSpain._();
 
-static const Timezone americaPortoAcre = Timezone._('America/Porto_Acre');
+static const Timezone americaPortoAcre = Timezone$americaPortoAcre._();
 
-static const Timezone americaPortoVelho = Timezone._('America/Porto_Velho');
+static const Timezone americaPortoVelho = Timezone$americaPortoVelho._();
 
-static const Timezone americaPuertoRico = Timezone._('America/Puerto_Rico');
+static const Timezone americaPuertoRico = Timezone$americaPuertoRico._();
 
-static const Timezone americaPuntaArenas = Timezone._('America/Punta_Arenas');
+static const Timezone americaPuntaArenas = Timezone$americaPuntaArenas._();
 
-static const Timezone americaRainyRiver = Timezone._('America/Rainy_River');
+static const Timezone americaRainyRiver = Timezone$americaRainyRiver._();
 
-static const Timezone americaRankinInlet = Timezone._('America/Rankin_Inlet');
+static const Timezone americaRankinInlet = Timezone$americaRankinInlet._();
 
-static const Timezone americaRecife = Timezone._('America/Recife');
+static const Timezone americaRecife = Timezone$americaRecife._();
 
-static const Timezone americaRegina = Timezone._('America/Regina');
+static const Timezone americaRegina = Timezone$americaRegina._();
 
-static const Timezone americaResolute = Timezone._('America/Resolute');
+static const Timezone americaResolute = Timezone$americaResolute._();
 
-static const Timezone americaRioBranco = Timezone._('America/Rio_Branco');
+static const Timezone americaRioBranco = Timezone$americaRioBranco._();
 
-static const Timezone americaRosario = Timezone._('America/Rosario');
+static const Timezone americaRosario = Timezone$americaRosario._();
 
-static const Timezone americaSantaIsabel = Timezone._('America/Santa_Isabel');
+static const Timezone americaSantaIsabel = Timezone$americaSantaIsabel._();
 
-static const Timezone americaSantarem = Timezone._('America/Santarem');
+static const Timezone americaSantarem = Timezone$americaSantarem._();
 
-static const Timezone americaSantiago = Timezone._('America/Santiago');
+static const Timezone americaSantiago = Timezone$americaSantiago._();
 
-static const Timezone americaSantoDomingo = Timezone._('America/Santo_Domingo');
+static const Timezone americaSantoDomingo = Timezone$americaSantoDomingo._();
 
-static const Timezone americaSaoPaulo = Timezone._('America/Sao_Paulo');
+static const Timezone americaSaoPaulo = Timezone$americaSaoPaulo._();
 
-static const Timezone americaScoresbysund = Timezone._('America/Scoresbysund');
+static const Timezone americaScoresbysund = Timezone$americaScoresbysund._();
 
-static const Timezone americaShiprock = Timezone._('America/Shiprock');
+static const Timezone americaShiprock = Timezone$americaShiprock._();
 
-static const Timezone americaSitka = Timezone._('America/Sitka');
+static const Timezone americaSitka = Timezone$americaSitka._();
 
-static const Timezone americaStBarthelemy = Timezone._('America/St_Barthelemy');
+static const Timezone americaStBarthelemy = Timezone$americaStBarthelemy._();
 
-static const Timezone americaStJohns = Timezone._('America/St_Johns');
+static const Timezone americaStJohns = Timezone$americaStJohns._();
 
-static const Timezone americaStKitts = Timezone._('America/St_Kitts');
+static const Timezone americaStKitts = Timezone$americaStKitts._();
 
-static const Timezone americaStLucia = Timezone._('America/St_Lucia');
+static const Timezone americaStLucia = Timezone$americaStLucia._();
 
-static const Timezone americaStThomas = Timezone._('America/St_Thomas');
+static const Timezone americaStThomas = Timezone$americaStThomas._();
 
-static const Timezone americaStVincent = Timezone._('America/St_Vincent');
+static const Timezone americaStVincent = Timezone$americaStVincent._();
 
-static const Timezone americaSwiftCurrent = Timezone._('America/Swift_Current');
+static const Timezone americaSwiftCurrent = Timezone$americaSwiftCurrent._();
 
-static const Timezone americaTegucigalpa = Timezone._('America/Tegucigalpa');
+static const Timezone americaTegucigalpa = Timezone$americaTegucigalpa._();
 
-static const Timezone americaThule = Timezone._('America/Thule');
+static const Timezone americaThule = Timezone$americaThule._();
 
-static const Timezone americaThunderBay = Timezone._('America/Thunder_Bay');
+static const Timezone americaThunderBay = Timezone$americaThunderBay._();
 
-static const Timezone americaTijuana = Timezone._('America/Tijuana');
+static const Timezone americaTijuana = Timezone$americaTijuana._();
 
-static const Timezone americaToronto = Timezone._('America/Toronto');
+static const Timezone americaToronto = Timezone$americaToronto._();
 
-static const Timezone americaTortola = Timezone._('America/Tortola');
+static const Timezone americaTortola = Timezone$americaTortola._();
 
-static const Timezone americaVancouver = Timezone._('America/Vancouver');
+static const Timezone americaVancouver = Timezone$americaVancouver._();
 
-static const Timezone americaVirgin = Timezone._('America/Virgin');
+static const Timezone americaVirgin = Timezone$americaVirgin._();
 
-static const Timezone americaWhitehorse = Timezone._('America/Whitehorse');
+static const Timezone americaWhitehorse = Timezone$americaWhitehorse._();
 
-static const Timezone americaWinnipeg = Timezone._('America/Winnipeg');
+static const Timezone americaWinnipeg = Timezone$americaWinnipeg._();
 
-static const Timezone americaYakutat = Timezone._('America/Yakutat');
+static const Timezone americaYakutat = Timezone$americaYakutat._();
 
-static const Timezone americaYellowknife = Timezone._('America/Yellowknife');
+static const Timezone americaYellowknife = Timezone$americaYellowknife._();
 
-static const Timezone antarcticaCasey = Timezone._('Antarctica/Casey');
+static const Timezone antarcticaCasey = Timezone$antarcticaCasey._();
 
-static const Timezone antarcticaDavis = Timezone._('Antarctica/Davis');
+static const Timezone antarcticaDavis = Timezone$antarcticaDavis._();
 
-static const Timezone antarcticaDumontDUrville = Timezone._('Antarctica/DumontDUrville');
+static const Timezone antarcticaDumontDUrville = Timezone$antarcticaDumontDUrville._();
 
-static const Timezone antarcticaMacquarie = Timezone._('Antarctica/Macquarie');
+static const Timezone antarcticaMacquarie = Timezone$antarcticaMacquarie._();
 
-static const Timezone antarcticaMawson = Timezone._('Antarctica/Mawson');
+static const Timezone antarcticaMawson = Timezone$antarcticaMawson._();
 
-static const Timezone antarcticaMcMurdo = Timezone._('Antarctica/McMurdo');
+static const Timezone antarcticaMcMurdo = Timezone$antarcticaMcMurdo._();
 
-static const Timezone antarcticaPalmer = Timezone._('Antarctica/Palmer');
+static const Timezone antarcticaPalmer = Timezone$antarcticaPalmer._();
 
-static const Timezone antarcticaRothera = Timezone._('Antarctica/Rothera');
+static const Timezone antarcticaRothera = Timezone$antarcticaRothera._();
 
-static const Timezone antarcticaSouthPole = Timezone._('Antarctica/South_Pole');
+static const Timezone antarcticaSouthPole = Timezone$antarcticaSouthPole._();
 
-static const Timezone antarcticaSyowa = Timezone._('Antarctica/Syowa');
+static const Timezone antarcticaSyowa = Timezone$antarcticaSyowa._();
 
-static const Timezone antarcticaTroll = Timezone._('Antarctica/Troll');
+static const Timezone antarcticaTroll = Timezone$antarcticaTroll._();
 
-static const Timezone antarcticaVostok = Timezone._('Antarctica/Vostok');
+static const Timezone antarcticaVostok = Timezone$antarcticaVostok._();
 
-static const Timezone arcticLongyearbyen = Timezone._('Arctic/Longyearbyen');
+static const Timezone arcticLongyearbyen = Timezone$arcticLongyearbyen._();
 
-static const Timezone asiaAden = Timezone._('Asia/Aden');
+static const Timezone asiaAden = Timezone$asiaAden._();
 
-static const Timezone asiaAlmaty = Timezone._('Asia/Almaty');
+static const Timezone asiaAlmaty = Timezone$asiaAlmaty._();
 
-static const Timezone asiaAmman = Timezone._('Asia/Amman');
+static const Timezone asiaAmman = Timezone$asiaAmman._();
 
-static const Timezone asiaAnadyr = Timezone._('Asia/Anadyr');
+static const Timezone asiaAnadyr = Timezone$asiaAnadyr._();
 
-static const Timezone asiaAqtau = Timezone._('Asia/Aqtau');
+static const Timezone asiaAqtau = Timezone$asiaAqtau._();
 
-static const Timezone asiaAqtobe = Timezone._('Asia/Aqtobe');
+static const Timezone asiaAqtobe = Timezone$asiaAqtobe._();
 
-static const Timezone asiaAshgabat = Timezone._('Asia/Ashgabat');
+static const Timezone asiaAshgabat = Timezone$asiaAshgabat._();
 
-static const Timezone asiaAshkhabad = Timezone._('Asia/Ashkhabad');
+static const Timezone asiaAshkhabad = Timezone$asiaAshkhabad._();
 
-static const Timezone asiaAtyrau = Timezone._('Asia/Atyrau');
+static const Timezone asiaAtyrau = Timezone$asiaAtyrau._();
 
-static const Timezone asiaBaghdad = Timezone._('Asia/Baghdad');
+static const Timezone asiaBaghdad = Timezone$asiaBaghdad._();
 
-static const Timezone asiaBahrain = Timezone._('Asia/Bahrain');
+static const Timezone asiaBahrain = Timezone$asiaBahrain._();
 
-static const Timezone asiaBaku = Timezone._('Asia/Baku');
+static const Timezone asiaBaku = Timezone$asiaBaku._();
 
-static const Timezone asiaBangkok = Timezone._('Asia/Bangkok');
+static const Timezone asiaBangkok = Timezone$asiaBangkok._();
 
-static const Timezone asiaBarnaul = Timezone._('Asia/Barnaul');
+static const Timezone asiaBarnaul = Timezone$asiaBarnaul._();
 
-static const Timezone asiaBeirut = Timezone._('Asia/Beirut');
+static const Timezone asiaBeirut = Timezone$asiaBeirut._();
 
-static const Timezone asiaBishkek = Timezone._('Asia/Bishkek');
+static const Timezone asiaBishkek = Timezone$asiaBishkek._();
 
-static const Timezone asiaBrunei = Timezone._('Asia/Brunei');
+static const Timezone asiaBrunei = Timezone$asiaBrunei._();
 
-static const Timezone asiaCalcutta = Timezone._('Asia/Calcutta');
+static const Timezone asiaCalcutta = Timezone$asiaCalcutta._();
 
-static const Timezone asiaChita = Timezone._('Asia/Chita');
+static const Timezone asiaChita = Timezone$asiaChita._();
 
-static const Timezone asiaChoibalsan = Timezone._('Asia/Choibalsan');
+static const Timezone asiaChoibalsan = Timezone$asiaChoibalsan._();
 
-static const Timezone asiaChongqing = Timezone._('Asia/Chongqing');
+static const Timezone asiaChongqing = Timezone$asiaChongqing._();
 
-static const Timezone asiaChungking = Timezone._('Asia/Chungking');
+static const Timezone asiaChungking = Timezone$asiaChungking._();
 
-static const Timezone asiaColombo = Timezone._('Asia/Colombo');
+static const Timezone asiaColombo = Timezone$asiaColombo._();
 
-static const Timezone asiaDacca = Timezone._('Asia/Dacca');
+static const Timezone asiaDacca = Timezone$asiaDacca._();
 
-static const Timezone asiaDamascus = Timezone._('Asia/Damascus');
+static const Timezone asiaDamascus = Timezone$asiaDamascus._();
 
-static const Timezone asiaDhaka = Timezone._('Asia/Dhaka');
+static const Timezone asiaDhaka = Timezone$asiaDhaka._();
 
-static const Timezone asiaDili = Timezone._('Asia/Dili');
+static const Timezone asiaDili = Timezone$asiaDili._();
 
-static const Timezone asiaDubai = Timezone._('Asia/Dubai');
+static const Timezone asiaDubai = Timezone$asiaDubai._();
 
-static const Timezone asiaDushanbe = Timezone._('Asia/Dushanbe');
+static const Timezone asiaDushanbe = Timezone$asiaDushanbe._();
 
-static const Timezone asiaFamagusta = Timezone._('Asia/Famagusta');
+static const Timezone asiaFamagusta = Timezone$asiaFamagusta._();
 
-static const Timezone asiaGaza = Timezone._('Asia/Gaza');
+static const Timezone asiaGaza = Timezone$asiaGaza._();
 
-static const Timezone asiaHarbin = Timezone._('Asia/Harbin');
+static const Timezone asiaHarbin = Timezone$asiaHarbin._();
 
-static const Timezone asiaHebron = Timezone._('Asia/Hebron');
+static const Timezone asiaHebron = Timezone$asiaHebron._();
 
-static const Timezone asiaHoChiMinh = Timezone._('Asia/Ho_Chi_Minh');
+static const Timezone asiaHoChiMinh = Timezone$asiaHoChiMinh._();
 
-static const Timezone asiaHongKong = Timezone._('Asia/Hong_Kong');
+static const Timezone asiaHongKong = Timezone$asiaHongKong._();
 
-static const Timezone asiaHovd = Timezone._('Asia/Hovd');
+static const Timezone asiaHovd = Timezone$asiaHovd._();
 
-static const Timezone asiaIrkutsk = Timezone._('Asia/Irkutsk');
+static const Timezone asiaIrkutsk = Timezone$asiaIrkutsk._();
 
-static const Timezone asiaIstanbul = Timezone._('Asia/Istanbul');
+static const Timezone asiaIstanbul = Timezone$asiaIstanbul._();
 
-static const Timezone asiaJakarta = Timezone._('Asia/Jakarta');
+static const Timezone asiaJakarta = Timezone$asiaJakarta._();
 
-static const Timezone asiaJayapura = Timezone._('Asia/Jayapura');
+static const Timezone asiaJayapura = Timezone$asiaJayapura._();
 
-static const Timezone asiaJerusalem = Timezone._('Asia/Jerusalem');
+static const Timezone asiaJerusalem = Timezone$asiaJerusalem._();
 
-static const Timezone asiaKabul = Timezone._('Asia/Kabul');
+static const Timezone asiaKabul = Timezone$asiaKabul._();
 
-static const Timezone asiaKamchatka = Timezone._('Asia/Kamchatka');
+static const Timezone asiaKamchatka = Timezone$asiaKamchatka._();
 
-static const Timezone asiaKarachi = Timezone._('Asia/Karachi');
+static const Timezone asiaKarachi = Timezone$asiaKarachi._();
 
-static const Timezone asiaKashgar = Timezone._('Asia/Kashgar');
+static const Timezone asiaKashgar = Timezone$asiaKashgar._();
 
-static const Timezone asiaKathmandu = Timezone._('Asia/Kathmandu');
+static const Timezone asiaKathmandu = Timezone$asiaKathmandu._();
 
-static const Timezone asiaKatmandu = Timezone._('Asia/Katmandu');
+static const Timezone asiaKatmandu = Timezone$asiaKatmandu._();
 
-static const Timezone asiaKhandyga = Timezone._('Asia/Khandyga');
+static const Timezone asiaKhandyga = Timezone$asiaKhandyga._();
 
-static const Timezone asiaKolkata = Timezone._('Asia/Kolkata');
+static const Timezone asiaKolkata = Timezone$asiaKolkata._();
 
-static const Timezone asiaKrasnoyarsk = Timezone._('Asia/Krasnoyarsk');
+static const Timezone asiaKrasnoyarsk = Timezone$asiaKrasnoyarsk._();
 
-static const Timezone asiaKualaLumpur = Timezone._('Asia/Kuala_Lumpur');
+static const Timezone asiaKualaLumpur = Timezone$asiaKualaLumpur._();
 
-static const Timezone asiaKuching = Timezone._('Asia/Kuching');
+static const Timezone asiaKuching = Timezone$asiaKuching._();
 
-static const Timezone asiaKuwait = Timezone._('Asia/Kuwait');
+static const Timezone asiaKuwait = Timezone$asiaKuwait._();
 
-static const Timezone asiaMacao = Timezone._('Asia/Macao');
+static const Timezone asiaMacao = Timezone$asiaMacao._();
 
-static const Timezone asiaMacau = Timezone._('Asia/Macau');
+static const Timezone asiaMacau = Timezone$asiaMacau._();
 
-static const Timezone asiaMagadan = Timezone._('Asia/Magadan');
+static const Timezone asiaMagadan = Timezone$asiaMagadan._();
 
-static const Timezone asiaMakassar = Timezone._('Asia/Makassar');
+static const Timezone asiaMakassar = Timezone$asiaMakassar._();
 
-static const Timezone asiaManila = Timezone._('Asia/Manila');
+static const Timezone asiaManila = Timezone$asiaManila._();
 
-static const Timezone asiaMuscat = Timezone._('Asia/Muscat');
+static const Timezone asiaMuscat = Timezone$asiaMuscat._();
 
-static const Timezone asiaNicosia = Timezone._('Asia/Nicosia');
+static const Timezone asiaNicosia = Timezone$asiaNicosia._();
 
-static const Timezone asiaNovokuznetsk = Timezone._('Asia/Novokuznetsk');
+static const Timezone asiaNovokuznetsk = Timezone$asiaNovokuznetsk._();
 
-static const Timezone asiaNovosibirsk = Timezone._('Asia/Novosibirsk');
+static const Timezone asiaNovosibirsk = Timezone$asiaNovosibirsk._();
 
-static const Timezone asiaOmsk = Timezone._('Asia/Omsk');
+static const Timezone asiaOmsk = Timezone$asiaOmsk._();
 
-static const Timezone asiaOral = Timezone._('Asia/Oral');
+static const Timezone asiaOral = Timezone$asiaOral._();
 
-static const Timezone asiaPhnomPenh = Timezone._('Asia/Phnom_Penh');
+static const Timezone asiaPhnomPenh = Timezone$asiaPhnomPenh._();
 
-static const Timezone asiaPontianak = Timezone._('Asia/Pontianak');
+static const Timezone asiaPontianak = Timezone$asiaPontianak._();
 
-static const Timezone asiaPyongyang = Timezone._('Asia/Pyongyang');
+static const Timezone asiaPyongyang = Timezone$asiaPyongyang._();
 
-static const Timezone asiaQatar = Timezone._('Asia/Qatar');
+static const Timezone asiaQatar = Timezone$asiaQatar._();
 
-static const Timezone asiaQostanay = Timezone._('Asia/Qostanay');
+static const Timezone asiaQostanay = Timezone$asiaQostanay._();
 
-static const Timezone asiaQyzylorda = Timezone._('Asia/Qyzylorda');
+static const Timezone asiaQyzylorda = Timezone$asiaQyzylorda._();
 
-static const Timezone asiaRangoon = Timezone._('Asia/Rangoon');
+static const Timezone asiaRangoon = Timezone$asiaRangoon._();
 
-static const Timezone asiaRiyadh = Timezone._('Asia/Riyadh');
+static const Timezone asiaRiyadh = Timezone$asiaRiyadh._();
 
-static const Timezone asiaSaigon = Timezone._('Asia/Saigon');
+static const Timezone asiaSaigon = Timezone$asiaSaigon._();
 
-static const Timezone asiaSakhalin = Timezone._('Asia/Sakhalin');
+static const Timezone asiaSakhalin = Timezone$asiaSakhalin._();
 
-static const Timezone asiaSamarkand = Timezone._('Asia/Samarkand');
+static const Timezone asiaSamarkand = Timezone$asiaSamarkand._();
 
-static const Timezone asiaSeoul = Timezone._('Asia/Seoul');
+static const Timezone asiaSeoul = Timezone$asiaSeoul._();
 
-static const Timezone asiaShanghai = Timezone._('Asia/Shanghai');
+static const Timezone asiaShanghai = Timezone$asiaShanghai._();
 
-static const Timezone asiaSingapore = Timezone._('Asia/Singapore');
+static const Timezone asiaSingapore = Timezone$asiaSingapore._();
 
-static const Timezone asiaSrednekolymsk = Timezone._('Asia/Srednekolymsk');
+static const Timezone asiaSrednekolymsk = Timezone$asiaSrednekolymsk._();
 
-static const Timezone asiaTaipei = Timezone._('Asia/Taipei');
+static const Timezone asiaTaipei = Timezone$asiaTaipei._();
 
-static const Timezone asiaTashkent = Timezone._('Asia/Tashkent');
+static const Timezone asiaTashkent = Timezone$asiaTashkent._();
 
-static const Timezone asiaTbilisi = Timezone._('Asia/Tbilisi');
+static const Timezone asiaTbilisi = Timezone$asiaTbilisi._();
 
-static const Timezone asiaTehran = Timezone._('Asia/Tehran');
+static const Timezone asiaTehran = Timezone$asiaTehran._();
 
-static const Timezone asiaTelAviv = Timezone._('Asia/Tel_Aviv');
+static const Timezone asiaTelAviv = Timezone$asiaTelAviv._();
 
-static const Timezone asiaThimbu = Timezone._('Asia/Thimbu');
+static const Timezone asiaThimbu = Timezone$asiaThimbu._();
 
-static const Timezone asiaThimphu = Timezone._('Asia/Thimphu');
+static const Timezone asiaThimphu = Timezone$asiaThimphu._();
 
-static const Timezone asiaTokyo = Timezone._('Asia/Tokyo');
+static const Timezone asiaTokyo = Timezone$asiaTokyo._();
 
-static const Timezone asiaTomsk = Timezone._('Asia/Tomsk');
+static const Timezone asiaTomsk = Timezone$asiaTomsk._();
 
-static const Timezone asiaUjungPandang = Timezone._('Asia/Ujung_Pandang');
+static const Timezone asiaUjungPandang = Timezone$asiaUjungPandang._();
 
-static const Timezone asiaUlaanbaatar = Timezone._('Asia/Ulaanbaatar');
+static const Timezone asiaUlaanbaatar = Timezone$asiaUlaanbaatar._();
 
-static const Timezone asiaUlanBator = Timezone._('Asia/Ulan_Bator');
+static const Timezone asiaUlanBator = Timezone$asiaUlanBator._();
 
-static const Timezone asiaUrumqi = Timezone._('Asia/Urumqi');
+static const Timezone asiaUrumqi = Timezone$asiaUrumqi._();
 
-static const Timezone asiaUstNera = Timezone._('Asia/Ust-Nera');
+static const Timezone asiaUstNera = Timezone$asiaUstNera._();
 
-static const Timezone asiaVientiane = Timezone._('Asia/Vientiane');
+static const Timezone asiaVientiane = Timezone$asiaVientiane._();
 
-static const Timezone asiaVladivostok = Timezone._('Asia/Vladivostok');
+static const Timezone asiaVladivostok = Timezone$asiaVladivostok._();
 
-static const Timezone asiaYakutsk = Timezone._('Asia/Yakutsk');
+static const Timezone asiaYakutsk = Timezone$asiaYakutsk._();
 
-static const Timezone asiaYangon = Timezone._('Asia/Yangon');
+static const Timezone asiaYangon = Timezone$asiaYangon._();
 
-static const Timezone asiaYekaterinburg = Timezone._('Asia/Yekaterinburg');
+static const Timezone asiaYekaterinburg = Timezone$asiaYekaterinburg._();
 
-static const Timezone asiaYerevan = Timezone._('Asia/Yerevan');
+static const Timezone asiaYerevan = Timezone$asiaYerevan._();
 
-static const Timezone atlanticAzores = Timezone._('Atlantic/Azores');
+static const Timezone atlanticAzores = Timezone$atlanticAzores._();
 
-static const Timezone atlanticBermuda = Timezone._('Atlantic/Bermuda');
+static const Timezone atlanticBermuda = Timezone$atlanticBermuda._();
 
-static const Timezone atlanticCanary = Timezone._('Atlantic/Canary');
+static const Timezone atlanticCanary = Timezone$atlanticCanary._();
 
-static const Timezone atlanticCapeVerde = Timezone._('Atlantic/Cape_Verde');
+static const Timezone atlanticCapeVerde = Timezone$atlanticCapeVerde._();
 
-static const Timezone atlanticFaeroe = Timezone._('Atlantic/Faeroe');
+static const Timezone atlanticFaeroe = Timezone$atlanticFaeroe._();
 
-static const Timezone atlanticFaroe = Timezone._('Atlantic/Faroe');
+static const Timezone atlanticFaroe = Timezone$atlanticFaroe._();
 
-static const Timezone atlanticJanMayen = Timezone._('Atlantic/Jan_Mayen');
+static const Timezone atlanticJanMayen = Timezone$atlanticJanMayen._();
 
-static const Timezone atlanticMadeira = Timezone._('Atlantic/Madeira');
+static const Timezone atlanticMadeira = Timezone$atlanticMadeira._();
 
-static const Timezone atlanticReykjavik = Timezone._('Atlantic/Reykjavik');
+static const Timezone atlanticReykjavik = Timezone$atlanticReykjavik._();
 
-static const Timezone atlanticSouthGeorgia = Timezone._('Atlantic/South_Georgia');
+static const Timezone atlanticSouthGeorgia = Timezone$atlanticSouthGeorgia._();
 
-static const Timezone atlanticStHelena = Timezone._('Atlantic/St_Helena');
+static const Timezone atlanticStHelena = Timezone$atlanticStHelena._();
 
-static const Timezone atlanticStanley = Timezone._('Atlantic/Stanley');
+static const Timezone atlanticStanley = Timezone$atlanticStanley._();
 
-static const Timezone australiaAct = Timezone._('Australia/ACT');
+static const Timezone australiaAct = Timezone$australiaAct._();
 
-static const Timezone australiaAdelaide = Timezone._('Australia/Adelaide');
+static const Timezone australiaAdelaide = Timezone$australiaAdelaide._();
 
-static const Timezone australiaBrisbane = Timezone._('Australia/Brisbane');
+static const Timezone australiaBrisbane = Timezone$australiaBrisbane._();
 
-static const Timezone australiaBrokenHill = Timezone._('Australia/Broken_Hill');
+static const Timezone australiaBrokenHill = Timezone$australiaBrokenHill._();
 
-static const Timezone australiaCanberra = Timezone._('Australia/Canberra');
+static const Timezone australiaCanberra = Timezone$australiaCanberra._();
 
-static const Timezone australiaCurrie = Timezone._('Australia/Currie');
+static const Timezone australiaCurrie = Timezone$australiaCurrie._();
 
-static const Timezone australiaDarwin = Timezone._('Australia/Darwin');
+static const Timezone australiaDarwin = Timezone$australiaDarwin._();
 
-static const Timezone australiaEucla = Timezone._('Australia/Eucla');
+static const Timezone australiaEucla = Timezone$australiaEucla._();
 
-static const Timezone australiaHobart = Timezone._('Australia/Hobart');
+static const Timezone australiaHobart = Timezone$australiaHobart._();
 
-static const Timezone australiaLhi = Timezone._('Australia/LHI');
+static const Timezone australiaLhi = Timezone$australiaLhi._();
 
-static const Timezone australiaLindeman = Timezone._('Australia/Lindeman');
+static const Timezone australiaLindeman = Timezone$australiaLindeman._();
 
-static const Timezone australiaLordHowe = Timezone._('Australia/Lord_Howe');
+static const Timezone australiaLordHowe = Timezone$australiaLordHowe._();
 
-static const Timezone australiaMelbourne = Timezone._('Australia/Melbourne');
+static const Timezone australiaMelbourne = Timezone$australiaMelbourne._();
 
-static const Timezone australiaNsw = Timezone._('Australia/NSW');
+static const Timezone australiaNsw = Timezone$australiaNsw._();
 
-static const Timezone australiaNorth = Timezone._('Australia/North');
+static const Timezone australiaNorth = Timezone$australiaNorth._();
 
-static const Timezone australiaPerth = Timezone._('Australia/Perth');
+static const Timezone australiaPerth = Timezone$australiaPerth._();
 
-static const Timezone australiaQueensland = Timezone._('Australia/Queensland');
+static const Timezone australiaQueensland = Timezone$australiaQueensland._();
 
-static const Timezone australiaSouth = Timezone._('Australia/South');
+static const Timezone australiaSouth = Timezone$australiaSouth._();
 
-static const Timezone australiaSydney = Timezone._('Australia/Sydney');
+static const Timezone australiaSydney = Timezone$australiaSydney._();
 
-static const Timezone australiaTasmania = Timezone._('Australia/Tasmania');
+static const Timezone australiaTasmania = Timezone$australiaTasmania._();
 
-static const Timezone australiaVictoria = Timezone._('Australia/Victoria');
+static const Timezone australiaVictoria = Timezone$australiaVictoria._();
 
-static const Timezone australiaWest = Timezone._('Australia/West');
+static const Timezone australiaWest = Timezone$australiaWest._();
 
-static const Timezone australiaYancowinna = Timezone._('Australia/Yancowinna');
+static const Timezone australiaYancowinna = Timezone$australiaYancowinna._();
 
-static const Timezone brazilAcre = Timezone._('Brazil/Acre');
+static const Timezone brazilAcre = Timezone$brazilAcre._();
 
-static const Timezone brazilDeNoronha = Timezone._('Brazil/DeNoronha');
+static const Timezone brazilDeNoronha = Timezone$brazilDeNoronha._();
 
-static const Timezone brazilEast = Timezone._('Brazil/East');
+static const Timezone brazilEast = Timezone$brazilEast._();
 
-static const Timezone brazilWest = Timezone._('Brazil/West');
+static const Timezone brazilWest = Timezone$brazilWest._();
 
-static const Timezone cet = Timezone._('CET');
+static const Timezone cet = Timezone$cet._();
 
-static const Timezone cst6Cdt = Timezone._('CST6CDT');
+static const Timezone cst6Cdt = Timezone$cst6Cdt._();
 
-static const Timezone canadaAtlantic = Timezone._('Canada/Atlantic');
+static const Timezone canadaAtlantic = Timezone$canadaAtlantic._();
 
-static const Timezone canadaCentral = Timezone._('Canada/Central');
+static const Timezone canadaCentral = Timezone$canadaCentral._();
 
-static const Timezone canadaEastern = Timezone._('Canada/Eastern');
+static const Timezone canadaEastern = Timezone$canadaEastern._();
 
-static const Timezone canadaMountain = Timezone._('Canada/Mountain');
+static const Timezone canadaMountain = Timezone$canadaMountain._();
 
-static const Timezone canadaNewfoundland = Timezone._('Canada/Newfoundland');
+static const Timezone canadaNewfoundland = Timezone$canadaNewfoundland._();
 
-static const Timezone canadaPacific = Timezone._('Canada/Pacific');
+static const Timezone canadaPacific = Timezone$canadaPacific._();
 
-static const Timezone canadaSaskatchewan = Timezone._('Canada/Saskatchewan');
+static const Timezone canadaSaskatchewan = Timezone$canadaSaskatchewan._();
 
-static const Timezone canadaYukon = Timezone._('Canada/Yukon');
+static const Timezone canadaYukon = Timezone$canadaYukon._();
 
-static const Timezone chileContinental = Timezone._('Chile/Continental');
+static const Timezone chileContinental = Timezone$chileContinental._();
 
-static const Timezone chileEasterIsland = Timezone._('Chile/EasterIsland');
+static const Timezone chileEasterIsland = Timezone$chileEasterIsland._();
 
-static const Timezone cuba = Timezone._('Cuba');
+static const Timezone cuba = Timezone$cuba._();
 
-static const Timezone eet = Timezone._('EET');
+static const Timezone eet = Timezone$eet._();
 
-static const Timezone est = Timezone._('EST');
+static const Timezone est = Timezone$est._();
 
-static const Timezone est5Edt = Timezone._('EST5EDT');
+static const Timezone est5Edt = Timezone$est5Edt._();
 
-static const Timezone egypt = Timezone._('Egypt');
+static const Timezone egypt = Timezone$egypt._();
 
-static const Timezone eire = Timezone._('Eire');
+static const Timezone eire = Timezone$eire._();
 
-static const Timezone etcGmt = Timezone._('Etc/GMT');
+static const Timezone etcGmt = Timezone$etcGmt._();
 
-static const Timezone etcGmt0 = Timezone._('Etc/GMT+0');
+static const Timezone etcGmt0 = Timezone$etcGmt0._();
 
-static const Timezone etcGmt1 = Timezone._('Etc/GMT+1');
+static const Timezone etcGmt1 = Timezone$etcGmt1._();
 
-static const Timezone etcGmt10 = Timezone._('Etc/GMT+10');
+static const Timezone etcGmt10 = Timezone$etcGmt10._();
 
-static const Timezone etcGmt11 = Timezone._('Etc/GMT+11');
+static const Timezone etcGmt11 = Timezone$etcGmt11._();
 
-static const Timezone etcGmt12 = Timezone._('Etc/GMT+12');
+static const Timezone etcGmt12 = Timezone$etcGmt12._();
 
-static const Timezone etcGmt2 = Timezone._('Etc/GMT+2');
+static const Timezone etcGmt2 = Timezone$etcGmt2._();
 
-static const Timezone etcGmt3 = Timezone._('Etc/GMT+3');
+static const Timezone etcGmt3 = Timezone$etcGmt3._();
 
-static const Timezone etcGmt4 = Timezone._('Etc/GMT+4');
+static const Timezone etcGmt4 = Timezone$etcGmt4._();
 
-static const Timezone etcGmt5 = Timezone._('Etc/GMT+5');
+static const Timezone etcGmt5 = Timezone$etcGmt5._();
 
-static const Timezone etcGmt6 = Timezone._('Etc/GMT+6');
+static const Timezone etcGmt6 = Timezone$etcGmt6._();
 
-static const Timezone etcGmt7 = Timezone._('Etc/GMT+7');
+static const Timezone etcGmt7 = Timezone$etcGmt7._();
 
-static const Timezone etcGmt8 = Timezone._('Etc/GMT+8');
+static const Timezone etcGmt8 = Timezone$etcGmt8._();
 
-static const Timezone etcGmt9 = Timezone._('Etc/GMT+9');
+static const Timezone etcGmt9 = Timezone$etcGmt9._();
 
-static const Timezone etcGmt02 = Timezone._('Etc/GMT-0');
+static const Timezone etcGmt02 = Timezone$etcGmt02._();
 
-static const Timezone etcGmt13 = Timezone._('Etc/GMT-1');
+static const Timezone etcGmt13 = Timezone$etcGmt13._();
 
-static const Timezone etcGmt102 = Timezone._('Etc/GMT-10');
+static const Timezone etcGmt102 = Timezone$etcGmt102._();
 
-static const Timezone etcGmt112 = Timezone._('Etc/GMT-11');
+static const Timezone etcGmt112 = Timezone$etcGmt112._();
 
-static const Timezone etcGmt122 = Timezone._('Etc/GMT-12');
+static const Timezone etcGmt122 = Timezone$etcGmt122._();
 
-static const Timezone etcGmt132 = Timezone._('Etc/GMT-13');
+static const Timezone etcGmt132 = Timezone$etcGmt132._();
 
-static const Timezone etcGmt14 = Timezone._('Etc/GMT-14');
+static const Timezone etcGmt14 = Timezone$etcGmt14._();
 
-static const Timezone etcGmt22 = Timezone._('Etc/GMT-2');
+static const Timezone etcGmt22 = Timezone$etcGmt22._();
 
-static const Timezone etcGmt32 = Timezone._('Etc/GMT-3');
+static const Timezone etcGmt32 = Timezone$etcGmt32._();
 
-static const Timezone etcGmt42 = Timezone._('Etc/GMT-4');
+static const Timezone etcGmt42 = Timezone$etcGmt42._();
 
-static const Timezone etcGmt52 = Timezone._('Etc/GMT-5');
+static const Timezone etcGmt52 = Timezone$etcGmt52._();
 
-static const Timezone etcGmt62 = Timezone._('Etc/GMT-6');
+static const Timezone etcGmt62 = Timezone$etcGmt62._();
 
-static const Timezone etcGmt72 = Timezone._('Etc/GMT-7');
+static const Timezone etcGmt72 = Timezone$etcGmt72._();
 
-static const Timezone etcGmt82 = Timezone._('Etc/GMT-8');
+static const Timezone etcGmt82 = Timezone$etcGmt82._();
 
-static const Timezone etcGmt92 = Timezone._('Etc/GMT-9');
+static const Timezone etcGmt92 = Timezone$etcGmt92._();
 
-static const Timezone etcGmt03 = Timezone._('Etc/GMT0');
+static const Timezone etcGmt03 = Timezone$etcGmt03._();
 
-static const Timezone etcGreenwich = Timezone._('Etc/Greenwich');
+static const Timezone etcGreenwich = Timezone$etcGreenwich._();
 
-static const Timezone etcUct = Timezone._('Etc/UCT');
+static const Timezone etcUct = Timezone$etcUct._();
 
-static const Timezone etcUtc = Timezone._('Etc/UTC');
+static const Timezone etcUtc = Timezone$etcUtc._();
 
-static const Timezone etcUniversal = Timezone._('Etc/Universal');
+static const Timezone etcUniversal = Timezone$etcUniversal._();
 
-static const Timezone etcZulu = Timezone._('Etc/Zulu');
+static const Timezone etcZulu = Timezone$etcZulu._();
 
-static const Timezone europeAmsterdam = Timezone._('Europe/Amsterdam');
+static const Timezone europeAmsterdam = Timezone$europeAmsterdam._();
 
-static const Timezone europeAndorra = Timezone._('Europe/Andorra');
+static const Timezone europeAndorra = Timezone$europeAndorra._();
 
-static const Timezone europeAstrakhan = Timezone._('Europe/Astrakhan');
+static const Timezone europeAstrakhan = Timezone$europeAstrakhan._();
 
-static const Timezone europeAthens = Timezone._('Europe/Athens');
+static const Timezone europeAthens = Timezone$europeAthens._();
 
-static const Timezone europeBelfast = Timezone._('Europe/Belfast');
+static const Timezone europeBelfast = Timezone$europeBelfast._();
 
-static const Timezone europeBelgrade = Timezone._('Europe/Belgrade');
+static const Timezone europeBelgrade = Timezone$europeBelgrade._();
 
-static const Timezone europeBerlin = Timezone._('Europe/Berlin');
+static const Timezone europeBerlin = Timezone$europeBerlin._();
 
-static const Timezone europeBratislava = Timezone._('Europe/Bratislava');
+static const Timezone europeBratislava = Timezone$europeBratislava._();
 
-static const Timezone europeBrussels = Timezone._('Europe/Brussels');
+static const Timezone europeBrussels = Timezone$europeBrussels._();
 
-static const Timezone europeBucharest = Timezone._('Europe/Bucharest');
+static const Timezone europeBucharest = Timezone$europeBucharest._();
 
-static const Timezone europeBudapest = Timezone._('Europe/Budapest');
+static const Timezone europeBudapest = Timezone$europeBudapest._();
 
-static const Timezone europeBusingen = Timezone._('Europe/Busingen');
+static const Timezone europeBusingen = Timezone$europeBusingen._();
 
-static const Timezone europeChisinau = Timezone._('Europe/Chisinau');
+static const Timezone europeChisinau = Timezone$europeChisinau._();
 
-static const Timezone europeCopenhagen = Timezone._('Europe/Copenhagen');
+static const Timezone europeCopenhagen = Timezone$europeCopenhagen._();
 
-static const Timezone europeDublin = Timezone._('Europe/Dublin');
+static const Timezone europeDublin = Timezone$europeDublin._();
 
-static const Timezone europeGibraltar = Timezone._('Europe/Gibraltar');
+static const Timezone europeGibraltar = Timezone$europeGibraltar._();
 
-static const Timezone europeGuernsey = Timezone._('Europe/Guernsey');
+static const Timezone europeGuernsey = Timezone$europeGuernsey._();
 
-static const Timezone europeHelsinki = Timezone._('Europe/Helsinki');
+static const Timezone europeHelsinki = Timezone$europeHelsinki._();
 
-static const Timezone europeIsleOfMan = Timezone._('Europe/Isle_of_Man');
+static const Timezone europeIsleOfMan = Timezone$europeIsleOfMan._();
 
-static const Timezone europeIstanbul = Timezone._('Europe/Istanbul');
+static const Timezone europeIstanbul = Timezone$europeIstanbul._();
 
-static const Timezone europeJersey = Timezone._('Europe/Jersey');
+static const Timezone europeJersey = Timezone$europeJersey._();
 
-static const Timezone europeKaliningrad = Timezone._('Europe/Kaliningrad');
+static const Timezone europeKaliningrad = Timezone$europeKaliningrad._();
 
-static const Timezone europeKiev = Timezone._('Europe/Kiev');
+static const Timezone europeKiev = Timezone$europeKiev._();
 
-static const Timezone europeKirov = Timezone._('Europe/Kirov');
+static const Timezone europeKirov = Timezone$europeKirov._();
 
-static const Timezone europeKyiv = Timezone._('Europe/Kyiv');
+static const Timezone europeKyiv = Timezone$europeKyiv._();
 
-static const Timezone europeLisbon = Timezone._('Europe/Lisbon');
+static const Timezone europeLisbon = Timezone$europeLisbon._();
 
-static const Timezone europeLjubljana = Timezone._('Europe/Ljubljana');
+static const Timezone europeLjubljana = Timezone$europeLjubljana._();
 
-static const Timezone europeLondon = Timezone._('Europe/London');
+static const Timezone europeLondon = Timezone$europeLondon._();
 
-static const Timezone europeLuxembourg = Timezone._('Europe/Luxembourg');
+static const Timezone europeLuxembourg = Timezone$europeLuxembourg._();
 
-static const Timezone europeMadrid = Timezone._('Europe/Madrid');
+static const Timezone europeMadrid = Timezone$europeMadrid._();
 
-static const Timezone europeMalta = Timezone._('Europe/Malta');
+static const Timezone europeMalta = Timezone$europeMalta._();
 
-static const Timezone europeMariehamn = Timezone._('Europe/Mariehamn');
+static const Timezone europeMariehamn = Timezone$europeMariehamn._();
 
-static const Timezone europeMinsk = Timezone._('Europe/Minsk');
+static const Timezone europeMinsk = Timezone$europeMinsk._();
 
-static const Timezone europeMonaco = Timezone._('Europe/Monaco');
+static const Timezone europeMonaco = Timezone$europeMonaco._();
 
-static const Timezone europeMoscow = Timezone._('Europe/Moscow');
+static const Timezone europeMoscow = Timezone$europeMoscow._();
 
-static const Timezone europeNicosia = Timezone._('Europe/Nicosia');
+static const Timezone europeNicosia = Timezone$europeNicosia._();
 
-static const Timezone europeOslo = Timezone._('Europe/Oslo');
+static const Timezone europeOslo = Timezone$europeOslo._();
 
-static const Timezone europeParis = Timezone._('Europe/Paris');
+static const Timezone europeParis = Timezone$europeParis._();
 
-static const Timezone europePodgorica = Timezone._('Europe/Podgorica');
+static const Timezone europePodgorica = Timezone$europePodgorica._();
 
-static const Timezone europePrague = Timezone._('Europe/Prague');
+static const Timezone europePrague = Timezone$europePrague._();
 
-static const Timezone europeRiga = Timezone._('Europe/Riga');
+static const Timezone europeRiga = Timezone$europeRiga._();
 
-static const Timezone europeRome = Timezone._('Europe/Rome');
+static const Timezone europeRome = Timezone$europeRome._();
 
-static const Timezone europeSamara = Timezone._('Europe/Samara');
+static const Timezone europeSamara = Timezone$europeSamara._();
 
-static const Timezone europeSanMarino = Timezone._('Europe/San_Marino');
+static const Timezone europeSanMarino = Timezone$europeSanMarino._();
 
-static const Timezone europeSarajevo = Timezone._('Europe/Sarajevo');
+static const Timezone europeSarajevo = Timezone$europeSarajevo._();
 
-static const Timezone europeSaratov = Timezone._('Europe/Saratov');
+static const Timezone europeSaratov = Timezone$europeSaratov._();
 
-static const Timezone europeSimferopol = Timezone._('Europe/Simferopol');
+static const Timezone europeSimferopol = Timezone$europeSimferopol._();
 
-static const Timezone europeSkopje = Timezone._('Europe/Skopje');
+static const Timezone europeSkopje = Timezone$europeSkopje._();
 
-static const Timezone europeSofia = Timezone._('Europe/Sofia');
+static const Timezone europeSofia = Timezone$europeSofia._();
 
-static const Timezone europeStockholm = Timezone._('Europe/Stockholm');
+static const Timezone europeStockholm = Timezone$europeStockholm._();
 
-static const Timezone europeTallinn = Timezone._('Europe/Tallinn');
+static const Timezone europeTallinn = Timezone$europeTallinn._();
 
-static const Timezone europeTirane = Timezone._('Europe/Tirane');
+static const Timezone europeTirane = Timezone$europeTirane._();
 
-static const Timezone europeTiraspol = Timezone._('Europe/Tiraspol');
+static const Timezone europeTiraspol = Timezone$europeTiraspol._();
 
-static const Timezone europeUlyanovsk = Timezone._('Europe/Ulyanovsk');
+static const Timezone europeUlyanovsk = Timezone$europeUlyanovsk._();
 
-static const Timezone europeUzhgorod = Timezone._('Europe/Uzhgorod');
+static const Timezone europeUzhgorod = Timezone$europeUzhgorod._();
 
-static const Timezone europeVaduz = Timezone._('Europe/Vaduz');
+static const Timezone europeVaduz = Timezone$europeVaduz._();
 
-static const Timezone europeVatican = Timezone._('Europe/Vatican');
+static const Timezone europeVatican = Timezone$europeVatican._();
 
-static const Timezone europeVienna = Timezone._('Europe/Vienna');
+static const Timezone europeVienna = Timezone$europeVienna._();
 
-static const Timezone europeVilnius = Timezone._('Europe/Vilnius');
+static const Timezone europeVilnius = Timezone$europeVilnius._();
 
-static const Timezone europeVolgograd = Timezone._('Europe/Volgograd');
+static const Timezone europeVolgograd = Timezone$europeVolgograd._();
 
-static const Timezone europeWarsaw = Timezone._('Europe/Warsaw');
+static const Timezone europeWarsaw = Timezone$europeWarsaw._();
 
-static const Timezone europeZagreb = Timezone._('Europe/Zagreb');
+static const Timezone europeZagreb = Timezone$europeZagreb._();
 
-static const Timezone europeZaporozhye = Timezone._('Europe/Zaporozhye');
+static const Timezone europeZaporozhye = Timezone$europeZaporozhye._();
 
-static const Timezone europeZurich = Timezone._('Europe/Zurich');
+static const Timezone europeZurich = Timezone$europeZurich._();
 
-static const Timezone $factory = Timezone._('Factory');
+static const Timezone $factory = Timezone$$factory._();
 
-static const Timezone gb = Timezone._('GB');
+static const Timezone gb = Timezone$gb._();
 
-static const Timezone gbEire = Timezone._('GB-Eire');
+static const Timezone gbEire = Timezone$gbEire._();
 
-static const Timezone gmt = Timezone._('GMT');
+static const Timezone gmt = Timezone$gmt._();
 
-static const Timezone gmt0 = Timezone._('GMT+0');
+static const Timezone gmt0 = Timezone$gmt0._();
 
-static const Timezone gmt02 = Timezone._('GMT-0');
+static const Timezone gmt02 = Timezone$gmt02._();
 
-static const Timezone gmt03 = Timezone._('GMT0');
+static const Timezone gmt03 = Timezone$gmt03._();
 
-static const Timezone greenwich = Timezone._('Greenwich');
+static const Timezone greenwich = Timezone$greenwich._();
 
-static const Timezone hst = Timezone._('HST');
+static const Timezone hst = Timezone$hst._();
 
-static const Timezone hongkong = Timezone._('Hongkong');
+static const Timezone hongkong = Timezone$hongkong._();
 
-static const Timezone iceland = Timezone._('Iceland');
+static const Timezone iceland = Timezone$iceland._();
 
-static const Timezone indianAntananarivo = Timezone._('Indian/Antananarivo');
+static const Timezone indianAntananarivo = Timezone$indianAntananarivo._();
 
-static const Timezone indianChagos = Timezone._('Indian/Chagos');
+static const Timezone indianChagos = Timezone$indianChagos._();
 
-static const Timezone indianChristmas = Timezone._('Indian/Christmas');
+static const Timezone indianChristmas = Timezone$indianChristmas._();
 
-static const Timezone indianCocos = Timezone._('Indian/Cocos');
+static const Timezone indianCocos = Timezone$indianCocos._();
 
-static const Timezone indianComoro = Timezone._('Indian/Comoro');
+static const Timezone indianComoro = Timezone$indianComoro._();
 
-static const Timezone indianKerguelen = Timezone._('Indian/Kerguelen');
+static const Timezone indianKerguelen = Timezone$indianKerguelen._();
 
-static const Timezone indianMahe = Timezone._('Indian/Mahe');
+static const Timezone indianMahe = Timezone$indianMahe._();
 
-static const Timezone indianMaldives = Timezone._('Indian/Maldives');
+static const Timezone indianMaldives = Timezone$indianMaldives._();
 
-static const Timezone indianMauritius = Timezone._('Indian/Mauritius');
+static const Timezone indianMauritius = Timezone$indianMauritius._();
 
-static const Timezone indianMayotte = Timezone._('Indian/Mayotte');
+static const Timezone indianMayotte = Timezone$indianMayotte._();
 
-static const Timezone indianReunion = Timezone._('Indian/Reunion');
+static const Timezone indianReunion = Timezone$indianReunion._();
 
-static const Timezone iran = Timezone._('Iran');
+static const Timezone iran = Timezone$iran._();
 
-static const Timezone israel = Timezone._('Israel');
+static const Timezone israel = Timezone$israel._();
 
-static const Timezone jamaica = Timezone._('Jamaica');
+static const Timezone jamaica = Timezone$jamaica._();
 
-static const Timezone japan = Timezone._('Japan');
+static const Timezone japan = Timezone$japan._();
 
-static const Timezone kwajalein = Timezone._('Kwajalein');
+static const Timezone kwajalein = Timezone$kwajalein._();
 
-static const Timezone libya = Timezone._('Libya');
+static const Timezone libya = Timezone$libya._();
 
-static const Timezone met = Timezone._('MET');
+static const Timezone met = Timezone$met._();
 
-static const Timezone mst = Timezone._('MST');
+static const Timezone mst = Timezone$mst._();
 
-static const Timezone mst7Mdt = Timezone._('MST7MDT');
+static const Timezone mst7Mdt = Timezone$mst7Mdt._();
 
-static const Timezone mexicoBajaNorte = Timezone._('Mexico/BajaNorte');
+static const Timezone mexicoBajaNorte = Timezone$mexicoBajaNorte._();
 
-static const Timezone mexicoBajaSur = Timezone._('Mexico/BajaSur');
+static const Timezone mexicoBajaSur = Timezone$mexicoBajaSur._();
 
-static const Timezone mexicoGeneral = Timezone._('Mexico/General');
+static const Timezone mexicoGeneral = Timezone$mexicoGeneral._();
 
-static const Timezone nz = Timezone._('NZ');
+static const Timezone nz = Timezone$nz._();
 
-static const Timezone nzChat = Timezone._('NZ-CHAT');
+static const Timezone nzChat = Timezone$nzChat._();
 
-static const Timezone navajo = Timezone._('Navajo');
+static const Timezone navajo = Timezone$navajo._();
 
-static const Timezone prc = Timezone._('PRC');
+static const Timezone prc = Timezone$prc._();
 
-static const Timezone pst8Pdt = Timezone._('PST8PDT');
+static const Timezone pst8Pdt = Timezone$pst8Pdt._();
 
-static const Timezone pacificApia = Timezone._('Pacific/Apia');
+static const Timezone pacificApia = Timezone$pacificApia._();
 
-static const Timezone pacificAuckland = Timezone._('Pacific/Auckland');
+static const Timezone pacificAuckland = Timezone$pacificAuckland._();
 
-static const Timezone pacificBougainville = Timezone._('Pacific/Bougainville');
+static const Timezone pacificBougainville = Timezone$pacificBougainville._();
 
-static const Timezone pacificChatham = Timezone._('Pacific/Chatham');
+static const Timezone pacificChatham = Timezone$pacificChatham._();
 
-static const Timezone pacificChuuk = Timezone._('Pacific/Chuuk');
+static const Timezone pacificChuuk = Timezone$pacificChuuk._();
 
-static const Timezone pacificEaster = Timezone._('Pacific/Easter');
+static const Timezone pacificEaster = Timezone$pacificEaster._();
 
-static const Timezone pacificEfate = Timezone._('Pacific/Efate');
+static const Timezone pacificEfate = Timezone$pacificEfate._();
 
-static const Timezone pacificEnderbury = Timezone._('Pacific/Enderbury');
+static const Timezone pacificEnderbury = Timezone$pacificEnderbury._();
 
-static const Timezone pacificFakaofo = Timezone._('Pacific/Fakaofo');
+static const Timezone pacificFakaofo = Timezone$pacificFakaofo._();
 
-static const Timezone pacificFiji = Timezone._('Pacific/Fiji');
+static const Timezone pacificFiji = Timezone$pacificFiji._();
 
-static const Timezone pacificFunafuti = Timezone._('Pacific/Funafuti');
+static const Timezone pacificFunafuti = Timezone$pacificFunafuti._();
 
-static const Timezone pacificGalapagos = Timezone._('Pacific/Galapagos');
+static const Timezone pacificGalapagos = Timezone$pacificGalapagos._();
 
-static const Timezone pacificGambier = Timezone._('Pacific/Gambier');
+static const Timezone pacificGambier = Timezone$pacificGambier._();
 
-static const Timezone pacificGuadalcanal = Timezone._('Pacific/Guadalcanal');
+static const Timezone pacificGuadalcanal = Timezone$pacificGuadalcanal._();
 
-static const Timezone pacificGuam = Timezone._('Pacific/Guam');
+static const Timezone pacificGuam = Timezone$pacificGuam._();
 
-static const Timezone pacificHonolulu = Timezone._('Pacific/Honolulu');
+static const Timezone pacificHonolulu = Timezone$pacificHonolulu._();
 
-static const Timezone pacificJohnston = Timezone._('Pacific/Johnston');
+static const Timezone pacificJohnston = Timezone$pacificJohnston._();
 
-static const Timezone pacificKanton = Timezone._('Pacific/Kanton');
+static const Timezone pacificKanton = Timezone$pacificKanton._();
 
-static const Timezone pacificKiritimati = Timezone._('Pacific/Kiritimati');
+static const Timezone pacificKiritimati = Timezone$pacificKiritimati._();
 
-static const Timezone pacificKosrae = Timezone._('Pacific/Kosrae');
+static const Timezone pacificKosrae = Timezone$pacificKosrae._();
 
-static const Timezone pacificKwajalein = Timezone._('Pacific/Kwajalein');
+static const Timezone pacificKwajalein = Timezone$pacificKwajalein._();
 
-static const Timezone pacificMajuro = Timezone._('Pacific/Majuro');
+static const Timezone pacificMajuro = Timezone$pacificMajuro._();
 
-static const Timezone pacificMarquesas = Timezone._('Pacific/Marquesas');
+static const Timezone pacificMarquesas = Timezone$pacificMarquesas._();
 
-static const Timezone pacificMidway = Timezone._('Pacific/Midway');
+static const Timezone pacificMidway = Timezone$pacificMidway._();
 
-static const Timezone pacificNauru = Timezone._('Pacific/Nauru');
+static const Timezone pacificNauru = Timezone$pacificNauru._();
 
-static const Timezone pacificNiue = Timezone._('Pacific/Niue');
+static const Timezone pacificNiue = Timezone$pacificNiue._();
 
-static const Timezone pacificNorfolk = Timezone._('Pacific/Norfolk');
+static const Timezone pacificNorfolk = Timezone$pacificNorfolk._();
 
-static const Timezone pacificNoumea = Timezone._('Pacific/Noumea');
+static const Timezone pacificNoumea = Timezone$pacificNoumea._();
 
-static const Timezone pacificPagoPago = Timezone._('Pacific/Pago_Pago');
+static const Timezone pacificPagoPago = Timezone$pacificPagoPago._();
 
-static const Timezone pacificPalau = Timezone._('Pacific/Palau');
+static const Timezone pacificPalau = Timezone$pacificPalau._();
 
-static const Timezone pacificPitcairn = Timezone._('Pacific/Pitcairn');
+static const Timezone pacificPitcairn = Timezone$pacificPitcairn._();
 
-static const Timezone pacificPohnpei = Timezone._('Pacific/Pohnpei');
+static const Timezone pacificPohnpei = Timezone$pacificPohnpei._();
 
-static const Timezone pacificPonape = Timezone._('Pacific/Ponape');
+static const Timezone pacificPonape = Timezone$pacificPonape._();
 
-static const Timezone pacificPortMoresby = Timezone._('Pacific/Port_Moresby');
+static const Timezone pacificPortMoresby = Timezone$pacificPortMoresby._();
 
-static const Timezone pacificRarotonga = Timezone._('Pacific/Rarotonga');
+static const Timezone pacificRarotonga = Timezone$pacificRarotonga._();
 
-static const Timezone pacificSaipan = Timezone._('Pacific/Saipan');
+static const Timezone pacificSaipan = Timezone$pacificSaipan._();
 
-static const Timezone pacificSamoa = Timezone._('Pacific/Samoa');
+static const Timezone pacificSamoa = Timezone$pacificSamoa._();
 
-static const Timezone pacificTahiti = Timezone._('Pacific/Tahiti');
+static const Timezone pacificTahiti = Timezone$pacificTahiti._();
 
-static const Timezone pacificTarawa = Timezone._('Pacific/Tarawa');
+static const Timezone pacificTarawa = Timezone$pacificTarawa._();
 
-static const Timezone pacificTongatapu = Timezone._('Pacific/Tongatapu');
+static const Timezone pacificTongatapu = Timezone$pacificTongatapu._();
 
-static const Timezone pacificTruk = Timezone._('Pacific/Truk');
+static const Timezone pacificTruk = Timezone$pacificTruk._();
 
-static const Timezone pacificWake = Timezone._('Pacific/Wake');
+static const Timezone pacificWake = Timezone$pacificWake._();
 
-static const Timezone pacificWallis = Timezone._('Pacific/Wallis');
+static const Timezone pacificWallis = Timezone$pacificWallis._();
 
-static const Timezone pacificYap = Timezone._('Pacific/Yap');
+static const Timezone pacificYap = Timezone$pacificYap._();
 
-static const Timezone poland = Timezone._('Poland');
+static const Timezone poland = Timezone$poland._();
 
-static const Timezone portugal = Timezone._('Portugal');
+static const Timezone portugal = Timezone$portugal._();
 
-static const Timezone roc = Timezone._('ROC');
+static const Timezone roc = Timezone$roc._();
 
-static const Timezone rok = Timezone._('ROK');
+static const Timezone rok = Timezone$rok._();
 
-static const Timezone singapore = Timezone._('Singapore');
+static const Timezone singapore = Timezone$singapore._();
 
-static const Timezone turkey = Timezone._('Turkey');
+static const Timezone turkey = Timezone$turkey._();
 
-static const Timezone uct = Timezone._('UCT');
+static const Timezone uct = Timezone$uct._();
 
-static const Timezone usAlaska = Timezone._('US/Alaska');
+static const Timezone usAlaska = Timezone$usAlaska._();
 
-static const Timezone usAleutian = Timezone._('US/Aleutian');
+static const Timezone usAleutian = Timezone$usAleutian._();
 
-static const Timezone usArizona = Timezone._('US/Arizona');
+static const Timezone usArizona = Timezone$usArizona._();
 
-static const Timezone usCentral = Timezone._('US/Central');
+static const Timezone usCentral = Timezone$usCentral._();
 
-static const Timezone usEastIndiana = Timezone._('US/East-Indiana');
+static const Timezone usEastIndiana = Timezone$usEastIndiana._();
 
-static const Timezone usEastern = Timezone._('US/Eastern');
+static const Timezone usEastern = Timezone$usEastern._();
 
-static const Timezone usHawaii = Timezone._('US/Hawaii');
+static const Timezone usHawaii = Timezone$usHawaii._();
 
-static const Timezone usIndianaStarke = Timezone._('US/Indiana-Starke');
+static const Timezone usIndianaStarke = Timezone$usIndianaStarke._();
 
-static const Timezone usMichigan = Timezone._('US/Michigan');
+static const Timezone usMichigan = Timezone$usMichigan._();
 
-static const Timezone usMountain = Timezone._('US/Mountain');
+static const Timezone usMountain = Timezone$usMountain._();
 
-static const Timezone usPacific = Timezone._('US/Pacific');
+static const Timezone usPacific = Timezone$usPacific._();
 
-static const Timezone usPacificNew = Timezone._('US/Pacific-New');
+static const Timezone usPacificNew = Timezone$usPacificNew._();
 
-static const Timezone usSamoa = Timezone._('US/Samoa');
+static const Timezone usSamoa = Timezone$usSamoa._();
 
-static const Timezone utc = Timezone._('UTC');
+static const Timezone utc = Timezone$utc._();
 
-static const Timezone universal = Timezone._('Universal');
+static const Timezone universal = Timezone$universal._();
 
-static const Timezone wSu = Timezone._('W-SU');
+static const Timezone wSu = Timezone$wSu._();
 
-static const Timezone wet = Timezone._('WET');
+static const Timezone wet = Timezone$wet._();
 
-static const Timezone zulu = Timezone._('Zulu');
+static const Timezone zulu = Timezone$zulu._();
 
 static const List<Timezone> values = [africaAbidjan, africaAccra, africaAddisAbaba, africaAlgiers, africaAsmara, africaAsmera, africaBamako, africaBangui, africaBanjul, africaBissau, africaBlantyre, africaBrazzaville, africaBujumbura, africaCairo, africaCasablanca, africaCeuta, africaConakry, africaDakar, africaDarEsSalaam, africaDjibouti, africaDouala, africaElAaiun, africaFreetown, africaGaborone, africaHarare, africaJohannesburg, africaJuba, africaKampala, africaKhartoum, africaKigali, africaKinshasa, africaLagos, africaLibreville, africaLome, africaLuanda, africaLubumbashi, africaLusaka, africaMalabo, africaMaputo, africaMaseru, africaMbabane, africaMogadishu, africaMonrovia, africaNairobi, africaNdjamena, africaNiamey, africaNouakchott, africaOuagadougou, africaPortoNovo, africaSaoTome, africaTimbuktu, africaTripoli, africaTunis, africaWindhoek, americaAdak, americaAnchorage, americaAnguilla, americaAntigua, americaAraguaina, americaArgentinaBuenosAires, americaArgentinaCatamarca, americaArgentinaComodRivadavia, americaArgentinaCordoba, americaArgentinaJujuy, americaArgentinaLaRioja, americaArgentinaMendoza, americaArgentinaRioGallegos, americaArgentinaSalta, americaArgentinaSanJuan, americaArgentinaSanLuis, americaArgentinaTucuman, americaArgentinaUshuaia, americaAruba, americaAsuncion, americaAtikokan, americaAtka, americaBahia, americaBahiaBanderas, americaBarbados, americaBelem, americaBelize, americaBlancSablon, americaBoaVista, americaBogota, americaBoise, americaBuenosAires, americaCambridgeBay, americaCampoGrande, americaCancun, americaCaracas, americaCatamarca, americaCayenne, americaCayman, americaChicago, americaChihuahua, americaCiudadJuarez, americaCoralHarbour, americaCordoba, americaCostaRica, americaCoyhaique, americaCreston, americaCuiaba, americaCuracao, americaDanmarkshavn, americaDawson, americaDawsonCreek, americaDenver, americaDetroit, americaDominica, americaEdmonton, americaEirunepe, americaElSalvador, americaEnsenada, americaFortNelson, americaFortWayne, americaFortaleza, americaGlaceBay, americaGodthab, americaGooseBay, americaGrandTurk, americaGrenada, americaGuadeloupe, americaGuatemala, americaGuayaquil, americaGuyana, americaHalifax, americaHavana, americaHermosillo, americaIndianaIndianapolis, americaIndianaKnox, americaIndianaMarengo, americaIndianaPetersburg, americaIndianaTellCity, americaIndianaVevay, americaIndianaVincennes, americaIndianaWinamac, americaIndianapolis, americaInuvik, americaIqaluit, americaJamaica, americaJujuy, americaJuneau, americaKentuckyLouisville, americaKentuckyMonticello, americaKnoxIn, americaKralendijk, americaLaPaz, americaLima, americaLosAngeles, americaLouisville, americaLowerPrinces, americaMaceio, americaManagua, americaManaus, americaMarigot, americaMartinique, americaMatamoros, americaMazatlan, americaMendoza, americaMenominee, americaMerida, americaMetlakatla, americaMexicoCity, americaMiquelon, americaMoncton, americaMonterrey, americaMontevideo, americaMontreal, americaMontserrat, americaNassau, americaNewYork, americaNipigon, americaNome, americaNoronha, americaNorthDakotaBeulah, americaNorthDakotaCenter, americaNorthDakotaNewSalem, americaNuuk, americaOjinaga, americaPanama, americaPangnirtung, americaParamaribo, americaPhoenix, americaPortAuPrince, americaPortOfSpain, americaPortoAcre, americaPortoVelho, americaPuertoRico, americaPuntaArenas, americaRainyRiver, americaRankinInlet, americaRecife, americaRegina, americaResolute, americaRioBranco, americaRosario, americaSantaIsabel, americaSantarem, americaSantiago, americaSantoDomingo, americaSaoPaulo, americaScoresbysund, americaShiprock, americaSitka, americaStBarthelemy, americaStJohns, americaStKitts, americaStLucia, americaStThomas, americaStVincent, americaSwiftCurrent, americaTegucigalpa, americaThule, americaThunderBay, americaTijuana, americaToronto, americaTortola, americaVancouver, americaVirgin, americaWhitehorse, americaWinnipeg, americaYakutat, americaYellowknife, antarcticaCasey, antarcticaDavis, antarcticaDumontDUrville, antarcticaMacquarie, antarcticaMawson, antarcticaMcMurdo, antarcticaPalmer, antarcticaRothera, antarcticaSouthPole, antarcticaSyowa, antarcticaTroll, antarcticaVostok, arcticLongyearbyen, asiaAden, asiaAlmaty, asiaAmman, asiaAnadyr, asiaAqtau, asiaAqtobe, asiaAshgabat, asiaAshkhabad, asiaAtyrau, asiaBaghdad, asiaBahrain, asiaBaku, asiaBangkok, asiaBarnaul, asiaBeirut, asiaBishkek, asiaBrunei, asiaCalcutta, asiaChita, asiaChoibalsan, asiaChongqing, asiaChungking, asiaColombo, asiaDacca, asiaDamascus, asiaDhaka, asiaDili, asiaDubai, asiaDushanbe, asiaFamagusta, asiaGaza, asiaHarbin, asiaHebron, asiaHoChiMinh, asiaHongKong, asiaHovd, asiaIrkutsk, asiaIstanbul, asiaJakarta, asiaJayapura, asiaJerusalem, asiaKabul, asiaKamchatka, asiaKarachi, asiaKashgar, asiaKathmandu, asiaKatmandu, asiaKhandyga, asiaKolkata, asiaKrasnoyarsk, asiaKualaLumpur, asiaKuching, asiaKuwait, asiaMacao, asiaMacau, asiaMagadan, asiaMakassar, asiaManila, asiaMuscat, asiaNicosia, asiaNovokuznetsk, asiaNovosibirsk, asiaOmsk, asiaOral, asiaPhnomPenh, asiaPontianak, asiaPyongyang, asiaQatar, asiaQostanay, asiaQyzylorda, asiaRangoon, asiaRiyadh, asiaSaigon, asiaSakhalin, asiaSamarkand, asiaSeoul, asiaShanghai, asiaSingapore, asiaSrednekolymsk, asiaTaipei, asiaTashkent, asiaTbilisi, asiaTehran, asiaTelAviv, asiaThimbu, asiaThimphu, asiaTokyo, asiaTomsk, asiaUjungPandang, asiaUlaanbaatar, asiaUlanBator, asiaUrumqi, asiaUstNera, asiaVientiane, asiaVladivostok, asiaYakutsk, asiaYangon, asiaYekaterinburg, asiaYerevan, atlanticAzores, atlanticBermuda, atlanticCanary, atlanticCapeVerde, atlanticFaeroe, atlanticFaroe, atlanticJanMayen, atlanticMadeira, atlanticReykjavik, atlanticSouthGeorgia, atlanticStHelena, atlanticStanley, australiaAct, australiaAdelaide, australiaBrisbane, australiaBrokenHill, australiaCanberra, australiaCurrie, australiaDarwin, australiaEucla, australiaHobart, australiaLhi, australiaLindeman, australiaLordHowe, australiaMelbourne, australiaNsw, australiaNorth, australiaPerth, australiaQueensland, australiaSouth, australiaSydney, australiaTasmania, australiaVictoria, australiaWest, australiaYancowinna, brazilAcre, brazilDeNoronha, brazilEast, brazilWest, cet, cst6Cdt, canadaAtlantic, canadaCentral, canadaEastern, canadaMountain, canadaNewfoundland, canadaPacific, canadaSaskatchewan, canadaYukon, chileContinental, chileEasterIsland, cuba, eet, est, est5Edt, egypt, eire, etcGmt, etcGmt0, etcGmt1, etcGmt10, etcGmt11, etcGmt12, etcGmt2, etcGmt3, etcGmt4, etcGmt5, etcGmt6, etcGmt7, etcGmt8, etcGmt9, etcGmt02, etcGmt13, etcGmt102, etcGmt112, etcGmt122, etcGmt132, etcGmt14, etcGmt22, etcGmt32, etcGmt42, etcGmt52, etcGmt62, etcGmt72, etcGmt82, etcGmt92, etcGmt03, etcGreenwich, etcUct, etcUtc, etcUniversal, etcZulu, europeAmsterdam, europeAndorra, europeAstrakhan, europeAthens, europeBelfast, europeBelgrade, europeBerlin, europeBratislava, europeBrussels, europeBucharest, europeBudapest, europeBusingen, europeChisinau, europeCopenhagen, europeDublin, europeGibraltar, europeGuernsey, europeHelsinki, europeIsleOfMan, europeIstanbul, europeJersey, europeKaliningrad, europeKiev, europeKirov, europeKyiv, europeLisbon, europeLjubljana, europeLondon, europeLuxembourg, europeMadrid, europeMalta, europeMariehamn, europeMinsk, europeMonaco, europeMoscow, europeNicosia, europeOslo, europeParis, europePodgorica, europePrague, europeRiga, europeRome, europeSamara, europeSanMarino, europeSarajevo, europeSaratov, europeSimferopol, europeSkopje, europeSofia, europeStockholm, europeTallinn, europeTirane, europeTiraspol, europeUlyanovsk, europeUzhgorod, europeVaduz, europeVatican, europeVienna, europeVilnius, europeVolgograd, europeWarsaw, europeZagreb, europeZaporozhye, europeZurich, $factory, gb, gbEire, gmt, gmt0, gmt02, gmt03, greenwich, hst, hongkong, iceland, indianAntananarivo, indianChagos, indianChristmas, indianCocos, indianComoro, indianKerguelen, indianMahe, indianMaldives, indianMauritius, indianMayotte, indianReunion, iran, israel, jamaica, japan, kwajalein, libya, met, mst, mst7Mdt, mexicoBajaNorte, mexicoBajaSur, mexicoGeneral, nz, nzChat, navajo, prc, pst8Pdt, pacificApia, pacificAuckland, pacificBougainville, pacificChatham, pacificChuuk, pacificEaster, pacificEfate, pacificEnderbury, pacificFakaofo, pacificFiji, pacificFunafuti, pacificGalapagos, pacificGambier, pacificGuadalcanal, pacificGuam, pacificHonolulu, pacificJohnston, pacificKanton, pacificKiritimati, pacificKosrae, pacificKwajalein, pacificMajuro, pacificMarquesas, pacificMidway, pacificNauru, pacificNiue, pacificNorfolk, pacificNoumea, pacificPagoPago, pacificPalau, pacificPitcairn, pacificPohnpei, pacificPonape, pacificPortMoresby, pacificRarotonga, pacificSaipan, pacificSamoa, pacificTahiti, pacificTarawa, pacificTongatapu, pacificTruk, pacificWake, pacificWallis, pacificYap, poland, portugal, roc, rok, singapore, turkey, uct, usAlaska, usAleutian, usArizona, usCentral, usEastIndiana, usEastern, usHawaii, usIndianaStarke, usMichigan, usMountain, usPacific, usPacificNew, usSamoa, utc, universal, wSu, wet, zulu];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -2586,13 +2922,5409 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Timezone$Unknown; } 
+@override String toString() => 'Timezone($value)';
+
+ }
+@immutable final class Timezone$africaAbidjan extends Timezone {const Timezone$africaAbidjan._();
+
+@override String get value => 'Africa/Abidjan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaAbidjan;
+
+@override int get hashCode => 'Africa/Abidjan'.hashCode;
+
+ }
+@immutable final class Timezone$africaAccra extends Timezone {const Timezone$africaAccra._();
+
+@override String get value => 'Africa/Accra';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaAccra;
+
+@override int get hashCode => 'Africa/Accra'.hashCode;
+
+ }
+@immutable final class Timezone$africaAddisAbaba extends Timezone {const Timezone$africaAddisAbaba._();
+
+@override String get value => 'Africa/Addis_Ababa';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaAddisAbaba;
+
+@override int get hashCode => 'Africa/Addis_Ababa'.hashCode;
+
+ }
+@immutable final class Timezone$africaAlgiers extends Timezone {const Timezone$africaAlgiers._();
+
+@override String get value => 'Africa/Algiers';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaAlgiers;
+
+@override int get hashCode => 'Africa/Algiers'.hashCode;
+
+ }
+@immutable final class Timezone$africaAsmara extends Timezone {const Timezone$africaAsmara._();
+
+@override String get value => 'Africa/Asmara';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaAsmara;
+
+@override int get hashCode => 'Africa/Asmara'.hashCode;
+
+ }
+@immutable final class Timezone$africaAsmera extends Timezone {const Timezone$africaAsmera._();
+
+@override String get value => 'Africa/Asmera';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaAsmera;
+
+@override int get hashCode => 'Africa/Asmera'.hashCode;
+
+ }
+@immutable final class Timezone$africaBamako extends Timezone {const Timezone$africaBamako._();
+
+@override String get value => 'Africa/Bamako';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaBamako;
+
+@override int get hashCode => 'Africa/Bamako'.hashCode;
+
+ }
+@immutable final class Timezone$africaBangui extends Timezone {const Timezone$africaBangui._();
+
+@override String get value => 'Africa/Bangui';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaBangui;
+
+@override int get hashCode => 'Africa/Bangui'.hashCode;
+
+ }
+@immutable final class Timezone$africaBanjul extends Timezone {const Timezone$africaBanjul._();
+
+@override String get value => 'Africa/Banjul';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaBanjul;
+
+@override int get hashCode => 'Africa/Banjul'.hashCode;
+
+ }
+@immutable final class Timezone$africaBissau extends Timezone {const Timezone$africaBissau._();
+
+@override String get value => 'Africa/Bissau';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaBissau;
+
+@override int get hashCode => 'Africa/Bissau'.hashCode;
+
+ }
+@immutable final class Timezone$africaBlantyre extends Timezone {const Timezone$africaBlantyre._();
+
+@override String get value => 'Africa/Blantyre';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaBlantyre;
+
+@override int get hashCode => 'Africa/Blantyre'.hashCode;
+
+ }
+@immutable final class Timezone$africaBrazzaville extends Timezone {const Timezone$africaBrazzaville._();
+
+@override String get value => 'Africa/Brazzaville';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaBrazzaville;
+
+@override int get hashCode => 'Africa/Brazzaville'.hashCode;
+
+ }
+@immutable final class Timezone$africaBujumbura extends Timezone {const Timezone$africaBujumbura._();
+
+@override String get value => 'Africa/Bujumbura';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaBujumbura;
+
+@override int get hashCode => 'Africa/Bujumbura'.hashCode;
+
+ }
+@immutable final class Timezone$africaCairo extends Timezone {const Timezone$africaCairo._();
+
+@override String get value => 'Africa/Cairo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaCairo;
+
+@override int get hashCode => 'Africa/Cairo'.hashCode;
+
+ }
+@immutable final class Timezone$africaCasablanca extends Timezone {const Timezone$africaCasablanca._();
+
+@override String get value => 'Africa/Casablanca';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaCasablanca;
+
+@override int get hashCode => 'Africa/Casablanca'.hashCode;
+
+ }
+@immutable final class Timezone$africaCeuta extends Timezone {const Timezone$africaCeuta._();
+
+@override String get value => 'Africa/Ceuta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaCeuta;
+
+@override int get hashCode => 'Africa/Ceuta'.hashCode;
+
+ }
+@immutable final class Timezone$africaConakry extends Timezone {const Timezone$africaConakry._();
+
+@override String get value => 'Africa/Conakry';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaConakry;
+
+@override int get hashCode => 'Africa/Conakry'.hashCode;
+
+ }
+@immutable final class Timezone$africaDakar extends Timezone {const Timezone$africaDakar._();
+
+@override String get value => 'Africa/Dakar';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaDakar;
+
+@override int get hashCode => 'Africa/Dakar'.hashCode;
+
+ }
+@immutable final class Timezone$africaDarEsSalaam extends Timezone {const Timezone$africaDarEsSalaam._();
+
+@override String get value => 'Africa/Dar_es_Salaam';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaDarEsSalaam;
+
+@override int get hashCode => 'Africa/Dar_es_Salaam'.hashCode;
+
+ }
+@immutable final class Timezone$africaDjibouti extends Timezone {const Timezone$africaDjibouti._();
+
+@override String get value => 'Africa/Djibouti';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaDjibouti;
+
+@override int get hashCode => 'Africa/Djibouti'.hashCode;
+
+ }
+@immutable final class Timezone$africaDouala extends Timezone {const Timezone$africaDouala._();
+
+@override String get value => 'Africa/Douala';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaDouala;
+
+@override int get hashCode => 'Africa/Douala'.hashCode;
+
+ }
+@immutable final class Timezone$africaElAaiun extends Timezone {const Timezone$africaElAaiun._();
+
+@override String get value => 'Africa/El_Aaiun';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaElAaiun;
+
+@override int get hashCode => 'Africa/El_Aaiun'.hashCode;
+
+ }
+@immutable final class Timezone$africaFreetown extends Timezone {const Timezone$africaFreetown._();
+
+@override String get value => 'Africa/Freetown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaFreetown;
+
+@override int get hashCode => 'Africa/Freetown'.hashCode;
+
+ }
+@immutable final class Timezone$africaGaborone extends Timezone {const Timezone$africaGaborone._();
+
+@override String get value => 'Africa/Gaborone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaGaborone;
+
+@override int get hashCode => 'Africa/Gaborone'.hashCode;
+
+ }
+@immutable final class Timezone$africaHarare extends Timezone {const Timezone$africaHarare._();
+
+@override String get value => 'Africa/Harare';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaHarare;
+
+@override int get hashCode => 'Africa/Harare'.hashCode;
+
+ }
+@immutable final class Timezone$africaJohannesburg extends Timezone {const Timezone$africaJohannesburg._();
+
+@override String get value => 'Africa/Johannesburg';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaJohannesburg;
+
+@override int get hashCode => 'Africa/Johannesburg'.hashCode;
+
+ }
+@immutable final class Timezone$africaJuba extends Timezone {const Timezone$africaJuba._();
+
+@override String get value => 'Africa/Juba';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaJuba;
+
+@override int get hashCode => 'Africa/Juba'.hashCode;
+
+ }
+@immutable final class Timezone$africaKampala extends Timezone {const Timezone$africaKampala._();
+
+@override String get value => 'Africa/Kampala';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaKampala;
+
+@override int get hashCode => 'Africa/Kampala'.hashCode;
+
+ }
+@immutable final class Timezone$africaKhartoum extends Timezone {const Timezone$africaKhartoum._();
+
+@override String get value => 'Africa/Khartoum';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaKhartoum;
+
+@override int get hashCode => 'Africa/Khartoum'.hashCode;
+
+ }
+@immutable final class Timezone$africaKigali extends Timezone {const Timezone$africaKigali._();
+
+@override String get value => 'Africa/Kigali';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaKigali;
+
+@override int get hashCode => 'Africa/Kigali'.hashCode;
+
+ }
+@immutable final class Timezone$africaKinshasa extends Timezone {const Timezone$africaKinshasa._();
+
+@override String get value => 'Africa/Kinshasa';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaKinshasa;
+
+@override int get hashCode => 'Africa/Kinshasa'.hashCode;
+
+ }
+@immutable final class Timezone$africaLagos extends Timezone {const Timezone$africaLagos._();
+
+@override String get value => 'Africa/Lagos';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaLagos;
+
+@override int get hashCode => 'Africa/Lagos'.hashCode;
+
+ }
+@immutable final class Timezone$africaLibreville extends Timezone {const Timezone$africaLibreville._();
+
+@override String get value => 'Africa/Libreville';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaLibreville;
+
+@override int get hashCode => 'Africa/Libreville'.hashCode;
+
+ }
+@immutable final class Timezone$africaLome extends Timezone {const Timezone$africaLome._();
+
+@override String get value => 'Africa/Lome';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaLome;
+
+@override int get hashCode => 'Africa/Lome'.hashCode;
+
+ }
+@immutable final class Timezone$africaLuanda extends Timezone {const Timezone$africaLuanda._();
+
+@override String get value => 'Africa/Luanda';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaLuanda;
+
+@override int get hashCode => 'Africa/Luanda'.hashCode;
+
+ }
+@immutable final class Timezone$africaLubumbashi extends Timezone {const Timezone$africaLubumbashi._();
+
+@override String get value => 'Africa/Lubumbashi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaLubumbashi;
+
+@override int get hashCode => 'Africa/Lubumbashi'.hashCode;
+
+ }
+@immutable final class Timezone$africaLusaka extends Timezone {const Timezone$africaLusaka._();
+
+@override String get value => 'Africa/Lusaka';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaLusaka;
+
+@override int get hashCode => 'Africa/Lusaka'.hashCode;
+
+ }
+@immutable final class Timezone$africaMalabo extends Timezone {const Timezone$africaMalabo._();
+
+@override String get value => 'Africa/Malabo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaMalabo;
+
+@override int get hashCode => 'Africa/Malabo'.hashCode;
+
+ }
+@immutable final class Timezone$africaMaputo extends Timezone {const Timezone$africaMaputo._();
+
+@override String get value => 'Africa/Maputo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaMaputo;
+
+@override int get hashCode => 'Africa/Maputo'.hashCode;
+
+ }
+@immutable final class Timezone$africaMaseru extends Timezone {const Timezone$africaMaseru._();
+
+@override String get value => 'Africa/Maseru';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaMaseru;
+
+@override int get hashCode => 'Africa/Maseru'.hashCode;
+
+ }
+@immutable final class Timezone$africaMbabane extends Timezone {const Timezone$africaMbabane._();
+
+@override String get value => 'Africa/Mbabane';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaMbabane;
+
+@override int get hashCode => 'Africa/Mbabane'.hashCode;
+
+ }
+@immutable final class Timezone$africaMogadishu extends Timezone {const Timezone$africaMogadishu._();
+
+@override String get value => 'Africa/Mogadishu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaMogadishu;
+
+@override int get hashCode => 'Africa/Mogadishu'.hashCode;
+
+ }
+@immutable final class Timezone$africaMonrovia extends Timezone {const Timezone$africaMonrovia._();
+
+@override String get value => 'Africa/Monrovia';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaMonrovia;
+
+@override int get hashCode => 'Africa/Monrovia'.hashCode;
+
+ }
+@immutable final class Timezone$africaNairobi extends Timezone {const Timezone$africaNairobi._();
+
+@override String get value => 'Africa/Nairobi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaNairobi;
+
+@override int get hashCode => 'Africa/Nairobi'.hashCode;
+
+ }
+@immutable final class Timezone$africaNdjamena extends Timezone {const Timezone$africaNdjamena._();
+
+@override String get value => 'Africa/Ndjamena';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaNdjamena;
+
+@override int get hashCode => 'Africa/Ndjamena'.hashCode;
+
+ }
+@immutable final class Timezone$africaNiamey extends Timezone {const Timezone$africaNiamey._();
+
+@override String get value => 'Africa/Niamey';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaNiamey;
+
+@override int get hashCode => 'Africa/Niamey'.hashCode;
+
+ }
+@immutable final class Timezone$africaNouakchott extends Timezone {const Timezone$africaNouakchott._();
+
+@override String get value => 'Africa/Nouakchott';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaNouakchott;
+
+@override int get hashCode => 'Africa/Nouakchott'.hashCode;
+
+ }
+@immutable final class Timezone$africaOuagadougou extends Timezone {const Timezone$africaOuagadougou._();
+
+@override String get value => 'Africa/Ouagadougou';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaOuagadougou;
+
+@override int get hashCode => 'Africa/Ouagadougou'.hashCode;
+
+ }
+@immutable final class Timezone$africaPortoNovo extends Timezone {const Timezone$africaPortoNovo._();
+
+@override String get value => 'Africa/Porto-Novo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaPortoNovo;
+
+@override int get hashCode => 'Africa/Porto-Novo'.hashCode;
+
+ }
+@immutable final class Timezone$africaSaoTome extends Timezone {const Timezone$africaSaoTome._();
+
+@override String get value => 'Africa/Sao_Tome';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaSaoTome;
+
+@override int get hashCode => 'Africa/Sao_Tome'.hashCode;
+
+ }
+@immutable final class Timezone$africaTimbuktu extends Timezone {const Timezone$africaTimbuktu._();
+
+@override String get value => 'Africa/Timbuktu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaTimbuktu;
+
+@override int get hashCode => 'Africa/Timbuktu'.hashCode;
+
+ }
+@immutable final class Timezone$africaTripoli extends Timezone {const Timezone$africaTripoli._();
+
+@override String get value => 'Africa/Tripoli';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaTripoli;
+
+@override int get hashCode => 'Africa/Tripoli'.hashCode;
+
+ }
+@immutable final class Timezone$africaTunis extends Timezone {const Timezone$africaTunis._();
+
+@override String get value => 'Africa/Tunis';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaTunis;
+
+@override int get hashCode => 'Africa/Tunis'.hashCode;
+
+ }
+@immutable final class Timezone$africaWindhoek extends Timezone {const Timezone$africaWindhoek._();
+
+@override String get value => 'Africa/Windhoek';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$africaWindhoek;
+
+@override int get hashCode => 'Africa/Windhoek'.hashCode;
+
+ }
+@immutable final class Timezone$americaAdak extends Timezone {const Timezone$americaAdak._();
+
+@override String get value => 'America/Adak';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaAdak;
+
+@override int get hashCode => 'America/Adak'.hashCode;
+
+ }
+@immutable final class Timezone$americaAnchorage extends Timezone {const Timezone$americaAnchorage._();
+
+@override String get value => 'America/Anchorage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaAnchorage;
+
+@override int get hashCode => 'America/Anchorage'.hashCode;
+
+ }
+@immutable final class Timezone$americaAnguilla extends Timezone {const Timezone$americaAnguilla._();
+
+@override String get value => 'America/Anguilla';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaAnguilla;
+
+@override int get hashCode => 'America/Anguilla'.hashCode;
+
+ }
+@immutable final class Timezone$americaAntigua extends Timezone {const Timezone$americaAntigua._();
+
+@override String get value => 'America/Antigua';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaAntigua;
+
+@override int get hashCode => 'America/Antigua'.hashCode;
+
+ }
+@immutable final class Timezone$americaAraguaina extends Timezone {const Timezone$americaAraguaina._();
+
+@override String get value => 'America/Araguaina';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaAraguaina;
+
+@override int get hashCode => 'America/Araguaina'.hashCode;
+
+ }
+@immutable final class Timezone$americaArgentinaBuenosAires extends Timezone {const Timezone$americaArgentinaBuenosAires._();
+
+@override String get value => 'America/Argentina/Buenos_Aires';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaArgentinaBuenosAires;
+
+@override int get hashCode => 'America/Argentina/Buenos_Aires'.hashCode;
+
+ }
+@immutable final class Timezone$americaArgentinaCatamarca extends Timezone {const Timezone$americaArgentinaCatamarca._();
+
+@override String get value => 'America/Argentina/Catamarca';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaArgentinaCatamarca;
+
+@override int get hashCode => 'America/Argentina/Catamarca'.hashCode;
+
+ }
+@immutable final class Timezone$americaArgentinaComodRivadavia extends Timezone {const Timezone$americaArgentinaComodRivadavia._();
+
+@override String get value => 'America/Argentina/ComodRivadavia';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaArgentinaComodRivadavia;
+
+@override int get hashCode => 'America/Argentina/ComodRivadavia'.hashCode;
+
+ }
+@immutable final class Timezone$americaArgentinaCordoba extends Timezone {const Timezone$americaArgentinaCordoba._();
+
+@override String get value => 'America/Argentina/Cordoba';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaArgentinaCordoba;
+
+@override int get hashCode => 'America/Argentina/Cordoba'.hashCode;
+
+ }
+@immutable final class Timezone$americaArgentinaJujuy extends Timezone {const Timezone$americaArgentinaJujuy._();
+
+@override String get value => 'America/Argentina/Jujuy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaArgentinaJujuy;
+
+@override int get hashCode => 'America/Argentina/Jujuy'.hashCode;
+
+ }
+@immutable final class Timezone$americaArgentinaLaRioja extends Timezone {const Timezone$americaArgentinaLaRioja._();
+
+@override String get value => 'America/Argentina/La_Rioja';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaArgentinaLaRioja;
+
+@override int get hashCode => 'America/Argentina/La_Rioja'.hashCode;
+
+ }
+@immutable final class Timezone$americaArgentinaMendoza extends Timezone {const Timezone$americaArgentinaMendoza._();
+
+@override String get value => 'America/Argentina/Mendoza';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaArgentinaMendoza;
+
+@override int get hashCode => 'America/Argentina/Mendoza'.hashCode;
+
+ }
+@immutable final class Timezone$americaArgentinaRioGallegos extends Timezone {const Timezone$americaArgentinaRioGallegos._();
+
+@override String get value => 'America/Argentina/Rio_Gallegos';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaArgentinaRioGallegos;
+
+@override int get hashCode => 'America/Argentina/Rio_Gallegos'.hashCode;
+
+ }
+@immutable final class Timezone$americaArgentinaSalta extends Timezone {const Timezone$americaArgentinaSalta._();
+
+@override String get value => 'America/Argentina/Salta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaArgentinaSalta;
+
+@override int get hashCode => 'America/Argentina/Salta'.hashCode;
+
+ }
+@immutable final class Timezone$americaArgentinaSanJuan extends Timezone {const Timezone$americaArgentinaSanJuan._();
+
+@override String get value => 'America/Argentina/San_Juan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaArgentinaSanJuan;
+
+@override int get hashCode => 'America/Argentina/San_Juan'.hashCode;
+
+ }
+@immutable final class Timezone$americaArgentinaSanLuis extends Timezone {const Timezone$americaArgentinaSanLuis._();
+
+@override String get value => 'America/Argentina/San_Luis';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaArgentinaSanLuis;
+
+@override int get hashCode => 'America/Argentina/San_Luis'.hashCode;
+
+ }
+@immutable final class Timezone$americaArgentinaTucuman extends Timezone {const Timezone$americaArgentinaTucuman._();
+
+@override String get value => 'America/Argentina/Tucuman';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaArgentinaTucuman;
+
+@override int get hashCode => 'America/Argentina/Tucuman'.hashCode;
+
+ }
+@immutable final class Timezone$americaArgentinaUshuaia extends Timezone {const Timezone$americaArgentinaUshuaia._();
+
+@override String get value => 'America/Argentina/Ushuaia';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaArgentinaUshuaia;
+
+@override int get hashCode => 'America/Argentina/Ushuaia'.hashCode;
+
+ }
+@immutable final class Timezone$americaAruba extends Timezone {const Timezone$americaAruba._();
+
+@override String get value => 'America/Aruba';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaAruba;
+
+@override int get hashCode => 'America/Aruba'.hashCode;
+
+ }
+@immutable final class Timezone$americaAsuncion extends Timezone {const Timezone$americaAsuncion._();
+
+@override String get value => 'America/Asuncion';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaAsuncion;
+
+@override int get hashCode => 'America/Asuncion'.hashCode;
+
+ }
+@immutable final class Timezone$americaAtikokan extends Timezone {const Timezone$americaAtikokan._();
+
+@override String get value => 'America/Atikokan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaAtikokan;
+
+@override int get hashCode => 'America/Atikokan'.hashCode;
+
+ }
+@immutable final class Timezone$americaAtka extends Timezone {const Timezone$americaAtka._();
+
+@override String get value => 'America/Atka';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaAtka;
+
+@override int get hashCode => 'America/Atka'.hashCode;
+
+ }
+@immutable final class Timezone$americaBahia extends Timezone {const Timezone$americaBahia._();
+
+@override String get value => 'America/Bahia';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaBahia;
+
+@override int get hashCode => 'America/Bahia'.hashCode;
+
+ }
+@immutable final class Timezone$americaBahiaBanderas extends Timezone {const Timezone$americaBahiaBanderas._();
+
+@override String get value => 'America/Bahia_Banderas';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaBahiaBanderas;
+
+@override int get hashCode => 'America/Bahia_Banderas'.hashCode;
+
+ }
+@immutable final class Timezone$americaBarbados extends Timezone {const Timezone$americaBarbados._();
+
+@override String get value => 'America/Barbados';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaBarbados;
+
+@override int get hashCode => 'America/Barbados'.hashCode;
+
+ }
+@immutable final class Timezone$americaBelem extends Timezone {const Timezone$americaBelem._();
+
+@override String get value => 'America/Belem';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaBelem;
+
+@override int get hashCode => 'America/Belem'.hashCode;
+
+ }
+@immutable final class Timezone$americaBelize extends Timezone {const Timezone$americaBelize._();
+
+@override String get value => 'America/Belize';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaBelize;
+
+@override int get hashCode => 'America/Belize'.hashCode;
+
+ }
+@immutable final class Timezone$americaBlancSablon extends Timezone {const Timezone$americaBlancSablon._();
+
+@override String get value => 'America/Blanc-Sablon';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaBlancSablon;
+
+@override int get hashCode => 'America/Blanc-Sablon'.hashCode;
+
+ }
+@immutable final class Timezone$americaBoaVista extends Timezone {const Timezone$americaBoaVista._();
+
+@override String get value => 'America/Boa_Vista';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaBoaVista;
+
+@override int get hashCode => 'America/Boa_Vista'.hashCode;
+
+ }
+@immutable final class Timezone$americaBogota extends Timezone {const Timezone$americaBogota._();
+
+@override String get value => 'America/Bogota';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaBogota;
+
+@override int get hashCode => 'America/Bogota'.hashCode;
+
+ }
+@immutable final class Timezone$americaBoise extends Timezone {const Timezone$americaBoise._();
+
+@override String get value => 'America/Boise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaBoise;
+
+@override int get hashCode => 'America/Boise'.hashCode;
+
+ }
+@immutable final class Timezone$americaBuenosAires extends Timezone {const Timezone$americaBuenosAires._();
+
+@override String get value => 'America/Buenos_Aires';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaBuenosAires;
+
+@override int get hashCode => 'America/Buenos_Aires'.hashCode;
+
+ }
+@immutable final class Timezone$americaCambridgeBay extends Timezone {const Timezone$americaCambridgeBay._();
+
+@override String get value => 'America/Cambridge_Bay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCambridgeBay;
+
+@override int get hashCode => 'America/Cambridge_Bay'.hashCode;
+
+ }
+@immutable final class Timezone$americaCampoGrande extends Timezone {const Timezone$americaCampoGrande._();
+
+@override String get value => 'America/Campo_Grande';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCampoGrande;
+
+@override int get hashCode => 'America/Campo_Grande'.hashCode;
+
+ }
+@immutable final class Timezone$americaCancun extends Timezone {const Timezone$americaCancun._();
+
+@override String get value => 'America/Cancun';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCancun;
+
+@override int get hashCode => 'America/Cancun'.hashCode;
+
+ }
+@immutable final class Timezone$americaCaracas extends Timezone {const Timezone$americaCaracas._();
+
+@override String get value => 'America/Caracas';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCaracas;
+
+@override int get hashCode => 'America/Caracas'.hashCode;
+
+ }
+@immutable final class Timezone$americaCatamarca extends Timezone {const Timezone$americaCatamarca._();
+
+@override String get value => 'America/Catamarca';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCatamarca;
+
+@override int get hashCode => 'America/Catamarca'.hashCode;
+
+ }
+@immutable final class Timezone$americaCayenne extends Timezone {const Timezone$americaCayenne._();
+
+@override String get value => 'America/Cayenne';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCayenne;
+
+@override int get hashCode => 'America/Cayenne'.hashCode;
+
+ }
+@immutable final class Timezone$americaCayman extends Timezone {const Timezone$americaCayman._();
+
+@override String get value => 'America/Cayman';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCayman;
+
+@override int get hashCode => 'America/Cayman'.hashCode;
+
+ }
+@immutable final class Timezone$americaChicago extends Timezone {const Timezone$americaChicago._();
+
+@override String get value => 'America/Chicago';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaChicago;
+
+@override int get hashCode => 'America/Chicago'.hashCode;
+
+ }
+@immutable final class Timezone$americaChihuahua extends Timezone {const Timezone$americaChihuahua._();
+
+@override String get value => 'America/Chihuahua';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaChihuahua;
+
+@override int get hashCode => 'America/Chihuahua'.hashCode;
+
+ }
+@immutable final class Timezone$americaCiudadJuarez extends Timezone {const Timezone$americaCiudadJuarez._();
+
+@override String get value => 'America/Ciudad_Juarez';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCiudadJuarez;
+
+@override int get hashCode => 'America/Ciudad_Juarez'.hashCode;
+
+ }
+@immutable final class Timezone$americaCoralHarbour extends Timezone {const Timezone$americaCoralHarbour._();
+
+@override String get value => 'America/Coral_Harbour';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCoralHarbour;
+
+@override int get hashCode => 'America/Coral_Harbour'.hashCode;
+
+ }
+@immutable final class Timezone$americaCordoba extends Timezone {const Timezone$americaCordoba._();
+
+@override String get value => 'America/Cordoba';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCordoba;
+
+@override int get hashCode => 'America/Cordoba'.hashCode;
+
+ }
+@immutable final class Timezone$americaCostaRica extends Timezone {const Timezone$americaCostaRica._();
+
+@override String get value => 'America/Costa_Rica';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCostaRica;
+
+@override int get hashCode => 'America/Costa_Rica'.hashCode;
+
+ }
+@immutable final class Timezone$americaCoyhaique extends Timezone {const Timezone$americaCoyhaique._();
+
+@override String get value => 'America/Coyhaique';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCoyhaique;
+
+@override int get hashCode => 'America/Coyhaique'.hashCode;
+
+ }
+@immutable final class Timezone$americaCreston extends Timezone {const Timezone$americaCreston._();
+
+@override String get value => 'America/Creston';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCreston;
+
+@override int get hashCode => 'America/Creston'.hashCode;
+
+ }
+@immutable final class Timezone$americaCuiaba extends Timezone {const Timezone$americaCuiaba._();
+
+@override String get value => 'America/Cuiaba';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCuiaba;
+
+@override int get hashCode => 'America/Cuiaba'.hashCode;
+
+ }
+@immutable final class Timezone$americaCuracao extends Timezone {const Timezone$americaCuracao._();
+
+@override String get value => 'America/Curacao';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaCuracao;
+
+@override int get hashCode => 'America/Curacao'.hashCode;
+
+ }
+@immutable final class Timezone$americaDanmarkshavn extends Timezone {const Timezone$americaDanmarkshavn._();
+
+@override String get value => 'America/Danmarkshavn';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaDanmarkshavn;
+
+@override int get hashCode => 'America/Danmarkshavn'.hashCode;
+
+ }
+@immutable final class Timezone$americaDawson extends Timezone {const Timezone$americaDawson._();
+
+@override String get value => 'America/Dawson';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaDawson;
+
+@override int get hashCode => 'America/Dawson'.hashCode;
+
+ }
+@immutable final class Timezone$americaDawsonCreek extends Timezone {const Timezone$americaDawsonCreek._();
+
+@override String get value => 'America/Dawson_Creek';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaDawsonCreek;
+
+@override int get hashCode => 'America/Dawson_Creek'.hashCode;
+
+ }
+@immutable final class Timezone$americaDenver extends Timezone {const Timezone$americaDenver._();
+
+@override String get value => 'America/Denver';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaDenver;
+
+@override int get hashCode => 'America/Denver'.hashCode;
+
+ }
+@immutable final class Timezone$americaDetroit extends Timezone {const Timezone$americaDetroit._();
+
+@override String get value => 'America/Detroit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaDetroit;
+
+@override int get hashCode => 'America/Detroit'.hashCode;
+
+ }
+@immutable final class Timezone$americaDominica extends Timezone {const Timezone$americaDominica._();
+
+@override String get value => 'America/Dominica';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaDominica;
+
+@override int get hashCode => 'America/Dominica'.hashCode;
+
+ }
+@immutable final class Timezone$americaEdmonton extends Timezone {const Timezone$americaEdmonton._();
+
+@override String get value => 'America/Edmonton';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaEdmonton;
+
+@override int get hashCode => 'America/Edmonton'.hashCode;
+
+ }
+@immutable final class Timezone$americaEirunepe extends Timezone {const Timezone$americaEirunepe._();
+
+@override String get value => 'America/Eirunepe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaEirunepe;
+
+@override int get hashCode => 'America/Eirunepe'.hashCode;
+
+ }
+@immutable final class Timezone$americaElSalvador extends Timezone {const Timezone$americaElSalvador._();
+
+@override String get value => 'America/El_Salvador';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaElSalvador;
+
+@override int get hashCode => 'America/El_Salvador'.hashCode;
+
+ }
+@immutable final class Timezone$americaEnsenada extends Timezone {const Timezone$americaEnsenada._();
+
+@override String get value => 'America/Ensenada';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaEnsenada;
+
+@override int get hashCode => 'America/Ensenada'.hashCode;
+
+ }
+@immutable final class Timezone$americaFortNelson extends Timezone {const Timezone$americaFortNelson._();
+
+@override String get value => 'America/Fort_Nelson';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaFortNelson;
+
+@override int get hashCode => 'America/Fort_Nelson'.hashCode;
+
+ }
+@immutable final class Timezone$americaFortWayne extends Timezone {const Timezone$americaFortWayne._();
+
+@override String get value => 'America/Fort_Wayne';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaFortWayne;
+
+@override int get hashCode => 'America/Fort_Wayne'.hashCode;
+
+ }
+@immutable final class Timezone$americaFortaleza extends Timezone {const Timezone$americaFortaleza._();
+
+@override String get value => 'America/Fortaleza';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaFortaleza;
+
+@override int get hashCode => 'America/Fortaleza'.hashCode;
+
+ }
+@immutable final class Timezone$americaGlaceBay extends Timezone {const Timezone$americaGlaceBay._();
+
+@override String get value => 'America/Glace_Bay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaGlaceBay;
+
+@override int get hashCode => 'America/Glace_Bay'.hashCode;
+
+ }
+@immutable final class Timezone$americaGodthab extends Timezone {const Timezone$americaGodthab._();
+
+@override String get value => 'America/Godthab';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaGodthab;
+
+@override int get hashCode => 'America/Godthab'.hashCode;
+
+ }
+@immutable final class Timezone$americaGooseBay extends Timezone {const Timezone$americaGooseBay._();
+
+@override String get value => 'America/Goose_Bay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaGooseBay;
+
+@override int get hashCode => 'America/Goose_Bay'.hashCode;
+
+ }
+@immutable final class Timezone$americaGrandTurk extends Timezone {const Timezone$americaGrandTurk._();
+
+@override String get value => 'America/Grand_Turk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaGrandTurk;
+
+@override int get hashCode => 'America/Grand_Turk'.hashCode;
+
+ }
+@immutable final class Timezone$americaGrenada extends Timezone {const Timezone$americaGrenada._();
+
+@override String get value => 'America/Grenada';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaGrenada;
+
+@override int get hashCode => 'America/Grenada'.hashCode;
+
+ }
+@immutable final class Timezone$americaGuadeloupe extends Timezone {const Timezone$americaGuadeloupe._();
+
+@override String get value => 'America/Guadeloupe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaGuadeloupe;
+
+@override int get hashCode => 'America/Guadeloupe'.hashCode;
+
+ }
+@immutable final class Timezone$americaGuatemala extends Timezone {const Timezone$americaGuatemala._();
+
+@override String get value => 'America/Guatemala';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaGuatemala;
+
+@override int get hashCode => 'America/Guatemala'.hashCode;
+
+ }
+@immutable final class Timezone$americaGuayaquil extends Timezone {const Timezone$americaGuayaquil._();
+
+@override String get value => 'America/Guayaquil';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaGuayaquil;
+
+@override int get hashCode => 'America/Guayaquil'.hashCode;
+
+ }
+@immutable final class Timezone$americaGuyana extends Timezone {const Timezone$americaGuyana._();
+
+@override String get value => 'America/Guyana';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaGuyana;
+
+@override int get hashCode => 'America/Guyana'.hashCode;
+
+ }
+@immutable final class Timezone$americaHalifax extends Timezone {const Timezone$americaHalifax._();
+
+@override String get value => 'America/Halifax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaHalifax;
+
+@override int get hashCode => 'America/Halifax'.hashCode;
+
+ }
+@immutable final class Timezone$americaHavana extends Timezone {const Timezone$americaHavana._();
+
+@override String get value => 'America/Havana';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaHavana;
+
+@override int get hashCode => 'America/Havana'.hashCode;
+
+ }
+@immutable final class Timezone$americaHermosillo extends Timezone {const Timezone$americaHermosillo._();
+
+@override String get value => 'America/Hermosillo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaHermosillo;
+
+@override int get hashCode => 'America/Hermosillo'.hashCode;
+
+ }
+@immutable final class Timezone$americaIndianaIndianapolis extends Timezone {const Timezone$americaIndianaIndianapolis._();
+
+@override String get value => 'America/Indiana/Indianapolis';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaIndianaIndianapolis;
+
+@override int get hashCode => 'America/Indiana/Indianapolis'.hashCode;
+
+ }
+@immutable final class Timezone$americaIndianaKnox extends Timezone {const Timezone$americaIndianaKnox._();
+
+@override String get value => 'America/Indiana/Knox';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaIndianaKnox;
+
+@override int get hashCode => 'America/Indiana/Knox'.hashCode;
+
+ }
+@immutable final class Timezone$americaIndianaMarengo extends Timezone {const Timezone$americaIndianaMarengo._();
+
+@override String get value => 'America/Indiana/Marengo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaIndianaMarengo;
+
+@override int get hashCode => 'America/Indiana/Marengo'.hashCode;
+
+ }
+@immutable final class Timezone$americaIndianaPetersburg extends Timezone {const Timezone$americaIndianaPetersburg._();
+
+@override String get value => 'America/Indiana/Petersburg';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaIndianaPetersburg;
+
+@override int get hashCode => 'America/Indiana/Petersburg'.hashCode;
+
+ }
+@immutable final class Timezone$americaIndianaTellCity extends Timezone {const Timezone$americaIndianaTellCity._();
+
+@override String get value => 'America/Indiana/Tell_City';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaIndianaTellCity;
+
+@override int get hashCode => 'America/Indiana/Tell_City'.hashCode;
+
+ }
+@immutable final class Timezone$americaIndianaVevay extends Timezone {const Timezone$americaIndianaVevay._();
+
+@override String get value => 'America/Indiana/Vevay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaIndianaVevay;
+
+@override int get hashCode => 'America/Indiana/Vevay'.hashCode;
+
+ }
+@immutable final class Timezone$americaIndianaVincennes extends Timezone {const Timezone$americaIndianaVincennes._();
+
+@override String get value => 'America/Indiana/Vincennes';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaIndianaVincennes;
+
+@override int get hashCode => 'America/Indiana/Vincennes'.hashCode;
+
+ }
+@immutable final class Timezone$americaIndianaWinamac extends Timezone {const Timezone$americaIndianaWinamac._();
+
+@override String get value => 'America/Indiana/Winamac';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaIndianaWinamac;
+
+@override int get hashCode => 'America/Indiana/Winamac'.hashCode;
+
+ }
+@immutable final class Timezone$americaIndianapolis extends Timezone {const Timezone$americaIndianapolis._();
+
+@override String get value => 'America/Indianapolis';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaIndianapolis;
+
+@override int get hashCode => 'America/Indianapolis'.hashCode;
+
+ }
+@immutable final class Timezone$americaInuvik extends Timezone {const Timezone$americaInuvik._();
+
+@override String get value => 'America/Inuvik';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaInuvik;
+
+@override int get hashCode => 'America/Inuvik'.hashCode;
+
+ }
+@immutable final class Timezone$americaIqaluit extends Timezone {const Timezone$americaIqaluit._();
+
+@override String get value => 'America/Iqaluit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaIqaluit;
+
+@override int get hashCode => 'America/Iqaluit'.hashCode;
+
+ }
+@immutable final class Timezone$americaJamaica extends Timezone {const Timezone$americaJamaica._();
+
+@override String get value => 'America/Jamaica';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaJamaica;
+
+@override int get hashCode => 'America/Jamaica'.hashCode;
+
+ }
+@immutable final class Timezone$americaJujuy extends Timezone {const Timezone$americaJujuy._();
+
+@override String get value => 'America/Jujuy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaJujuy;
+
+@override int get hashCode => 'America/Jujuy'.hashCode;
+
+ }
+@immutable final class Timezone$americaJuneau extends Timezone {const Timezone$americaJuneau._();
+
+@override String get value => 'America/Juneau';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaJuneau;
+
+@override int get hashCode => 'America/Juneau'.hashCode;
+
+ }
+@immutable final class Timezone$americaKentuckyLouisville extends Timezone {const Timezone$americaKentuckyLouisville._();
+
+@override String get value => 'America/Kentucky/Louisville';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaKentuckyLouisville;
+
+@override int get hashCode => 'America/Kentucky/Louisville'.hashCode;
+
+ }
+@immutable final class Timezone$americaKentuckyMonticello extends Timezone {const Timezone$americaKentuckyMonticello._();
+
+@override String get value => 'America/Kentucky/Monticello';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaKentuckyMonticello;
+
+@override int get hashCode => 'America/Kentucky/Monticello'.hashCode;
+
+ }
+@immutable final class Timezone$americaKnoxIn extends Timezone {const Timezone$americaKnoxIn._();
+
+@override String get value => 'America/Knox_IN';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaKnoxIn;
+
+@override int get hashCode => 'America/Knox_IN'.hashCode;
+
+ }
+@immutable final class Timezone$americaKralendijk extends Timezone {const Timezone$americaKralendijk._();
+
+@override String get value => 'America/Kralendijk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaKralendijk;
+
+@override int get hashCode => 'America/Kralendijk'.hashCode;
+
+ }
+@immutable final class Timezone$americaLaPaz extends Timezone {const Timezone$americaLaPaz._();
+
+@override String get value => 'America/La_Paz';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaLaPaz;
+
+@override int get hashCode => 'America/La_Paz'.hashCode;
+
+ }
+@immutable final class Timezone$americaLima extends Timezone {const Timezone$americaLima._();
+
+@override String get value => 'America/Lima';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaLima;
+
+@override int get hashCode => 'America/Lima'.hashCode;
+
+ }
+@immutable final class Timezone$americaLosAngeles extends Timezone {const Timezone$americaLosAngeles._();
+
+@override String get value => 'America/Los_Angeles';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaLosAngeles;
+
+@override int get hashCode => 'America/Los_Angeles'.hashCode;
+
+ }
+@immutable final class Timezone$americaLouisville extends Timezone {const Timezone$americaLouisville._();
+
+@override String get value => 'America/Louisville';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaLouisville;
+
+@override int get hashCode => 'America/Louisville'.hashCode;
+
+ }
+@immutable final class Timezone$americaLowerPrinces extends Timezone {const Timezone$americaLowerPrinces._();
+
+@override String get value => 'America/Lower_Princes';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaLowerPrinces;
+
+@override int get hashCode => 'America/Lower_Princes'.hashCode;
+
+ }
+@immutable final class Timezone$americaMaceio extends Timezone {const Timezone$americaMaceio._();
+
+@override String get value => 'America/Maceio';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMaceio;
+
+@override int get hashCode => 'America/Maceio'.hashCode;
+
+ }
+@immutable final class Timezone$americaManagua extends Timezone {const Timezone$americaManagua._();
+
+@override String get value => 'America/Managua';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaManagua;
+
+@override int get hashCode => 'America/Managua'.hashCode;
+
+ }
+@immutable final class Timezone$americaManaus extends Timezone {const Timezone$americaManaus._();
+
+@override String get value => 'America/Manaus';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaManaus;
+
+@override int get hashCode => 'America/Manaus'.hashCode;
+
+ }
+@immutable final class Timezone$americaMarigot extends Timezone {const Timezone$americaMarigot._();
+
+@override String get value => 'America/Marigot';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMarigot;
+
+@override int get hashCode => 'America/Marigot'.hashCode;
+
+ }
+@immutable final class Timezone$americaMartinique extends Timezone {const Timezone$americaMartinique._();
+
+@override String get value => 'America/Martinique';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMartinique;
+
+@override int get hashCode => 'America/Martinique'.hashCode;
+
+ }
+@immutable final class Timezone$americaMatamoros extends Timezone {const Timezone$americaMatamoros._();
+
+@override String get value => 'America/Matamoros';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMatamoros;
+
+@override int get hashCode => 'America/Matamoros'.hashCode;
+
+ }
+@immutable final class Timezone$americaMazatlan extends Timezone {const Timezone$americaMazatlan._();
+
+@override String get value => 'America/Mazatlan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMazatlan;
+
+@override int get hashCode => 'America/Mazatlan'.hashCode;
+
+ }
+@immutable final class Timezone$americaMendoza extends Timezone {const Timezone$americaMendoza._();
+
+@override String get value => 'America/Mendoza';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMendoza;
+
+@override int get hashCode => 'America/Mendoza'.hashCode;
+
+ }
+@immutable final class Timezone$americaMenominee extends Timezone {const Timezone$americaMenominee._();
+
+@override String get value => 'America/Menominee';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMenominee;
+
+@override int get hashCode => 'America/Menominee'.hashCode;
+
+ }
+@immutable final class Timezone$americaMerida extends Timezone {const Timezone$americaMerida._();
+
+@override String get value => 'America/Merida';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMerida;
+
+@override int get hashCode => 'America/Merida'.hashCode;
+
+ }
+@immutable final class Timezone$americaMetlakatla extends Timezone {const Timezone$americaMetlakatla._();
+
+@override String get value => 'America/Metlakatla';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMetlakatla;
+
+@override int get hashCode => 'America/Metlakatla'.hashCode;
+
+ }
+@immutable final class Timezone$americaMexicoCity extends Timezone {const Timezone$americaMexicoCity._();
+
+@override String get value => 'America/Mexico_City';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMexicoCity;
+
+@override int get hashCode => 'America/Mexico_City'.hashCode;
+
+ }
+@immutable final class Timezone$americaMiquelon extends Timezone {const Timezone$americaMiquelon._();
+
+@override String get value => 'America/Miquelon';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMiquelon;
+
+@override int get hashCode => 'America/Miquelon'.hashCode;
+
+ }
+@immutable final class Timezone$americaMoncton extends Timezone {const Timezone$americaMoncton._();
+
+@override String get value => 'America/Moncton';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMoncton;
+
+@override int get hashCode => 'America/Moncton'.hashCode;
+
+ }
+@immutable final class Timezone$americaMonterrey extends Timezone {const Timezone$americaMonterrey._();
+
+@override String get value => 'America/Monterrey';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMonterrey;
+
+@override int get hashCode => 'America/Monterrey'.hashCode;
+
+ }
+@immutable final class Timezone$americaMontevideo extends Timezone {const Timezone$americaMontevideo._();
+
+@override String get value => 'America/Montevideo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMontevideo;
+
+@override int get hashCode => 'America/Montevideo'.hashCode;
+
+ }
+@immutable final class Timezone$americaMontreal extends Timezone {const Timezone$americaMontreal._();
+
+@override String get value => 'America/Montreal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMontreal;
+
+@override int get hashCode => 'America/Montreal'.hashCode;
+
+ }
+@immutable final class Timezone$americaMontserrat extends Timezone {const Timezone$americaMontserrat._();
+
+@override String get value => 'America/Montserrat';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaMontserrat;
+
+@override int get hashCode => 'America/Montserrat'.hashCode;
+
+ }
+@immutable final class Timezone$americaNassau extends Timezone {const Timezone$americaNassau._();
+
+@override String get value => 'America/Nassau';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaNassau;
+
+@override int get hashCode => 'America/Nassau'.hashCode;
+
+ }
+@immutable final class Timezone$americaNewYork extends Timezone {const Timezone$americaNewYork._();
+
+@override String get value => 'America/New_York';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaNewYork;
+
+@override int get hashCode => 'America/New_York'.hashCode;
+
+ }
+@immutable final class Timezone$americaNipigon extends Timezone {const Timezone$americaNipigon._();
+
+@override String get value => 'America/Nipigon';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaNipigon;
+
+@override int get hashCode => 'America/Nipigon'.hashCode;
+
+ }
+@immutable final class Timezone$americaNome extends Timezone {const Timezone$americaNome._();
+
+@override String get value => 'America/Nome';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaNome;
+
+@override int get hashCode => 'America/Nome'.hashCode;
+
+ }
+@immutable final class Timezone$americaNoronha extends Timezone {const Timezone$americaNoronha._();
+
+@override String get value => 'America/Noronha';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaNoronha;
+
+@override int get hashCode => 'America/Noronha'.hashCode;
+
+ }
+@immutable final class Timezone$americaNorthDakotaBeulah extends Timezone {const Timezone$americaNorthDakotaBeulah._();
+
+@override String get value => 'America/North_Dakota/Beulah';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaNorthDakotaBeulah;
+
+@override int get hashCode => 'America/North_Dakota/Beulah'.hashCode;
+
+ }
+@immutable final class Timezone$americaNorthDakotaCenter extends Timezone {const Timezone$americaNorthDakotaCenter._();
+
+@override String get value => 'America/North_Dakota/Center';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaNorthDakotaCenter;
+
+@override int get hashCode => 'America/North_Dakota/Center'.hashCode;
+
+ }
+@immutable final class Timezone$americaNorthDakotaNewSalem extends Timezone {const Timezone$americaNorthDakotaNewSalem._();
+
+@override String get value => 'America/North_Dakota/New_Salem';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaNorthDakotaNewSalem;
+
+@override int get hashCode => 'America/North_Dakota/New_Salem'.hashCode;
+
+ }
+@immutable final class Timezone$americaNuuk extends Timezone {const Timezone$americaNuuk._();
+
+@override String get value => 'America/Nuuk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaNuuk;
+
+@override int get hashCode => 'America/Nuuk'.hashCode;
+
+ }
+@immutable final class Timezone$americaOjinaga extends Timezone {const Timezone$americaOjinaga._();
+
+@override String get value => 'America/Ojinaga';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaOjinaga;
+
+@override int get hashCode => 'America/Ojinaga'.hashCode;
+
+ }
+@immutable final class Timezone$americaPanama extends Timezone {const Timezone$americaPanama._();
+
+@override String get value => 'America/Panama';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaPanama;
+
+@override int get hashCode => 'America/Panama'.hashCode;
+
+ }
+@immutable final class Timezone$americaPangnirtung extends Timezone {const Timezone$americaPangnirtung._();
+
+@override String get value => 'America/Pangnirtung';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaPangnirtung;
+
+@override int get hashCode => 'America/Pangnirtung'.hashCode;
+
+ }
+@immutable final class Timezone$americaParamaribo extends Timezone {const Timezone$americaParamaribo._();
+
+@override String get value => 'America/Paramaribo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaParamaribo;
+
+@override int get hashCode => 'America/Paramaribo'.hashCode;
+
+ }
+@immutable final class Timezone$americaPhoenix extends Timezone {const Timezone$americaPhoenix._();
+
+@override String get value => 'America/Phoenix';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaPhoenix;
+
+@override int get hashCode => 'America/Phoenix'.hashCode;
+
+ }
+@immutable final class Timezone$americaPortAuPrince extends Timezone {const Timezone$americaPortAuPrince._();
+
+@override String get value => 'America/Port-au-Prince';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaPortAuPrince;
+
+@override int get hashCode => 'America/Port-au-Prince'.hashCode;
+
+ }
+@immutable final class Timezone$americaPortOfSpain extends Timezone {const Timezone$americaPortOfSpain._();
+
+@override String get value => 'America/Port_of_Spain';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaPortOfSpain;
+
+@override int get hashCode => 'America/Port_of_Spain'.hashCode;
+
+ }
+@immutable final class Timezone$americaPortoAcre extends Timezone {const Timezone$americaPortoAcre._();
+
+@override String get value => 'America/Porto_Acre';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaPortoAcre;
+
+@override int get hashCode => 'America/Porto_Acre'.hashCode;
+
+ }
+@immutable final class Timezone$americaPortoVelho extends Timezone {const Timezone$americaPortoVelho._();
+
+@override String get value => 'America/Porto_Velho';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaPortoVelho;
+
+@override int get hashCode => 'America/Porto_Velho'.hashCode;
+
+ }
+@immutable final class Timezone$americaPuertoRico extends Timezone {const Timezone$americaPuertoRico._();
+
+@override String get value => 'America/Puerto_Rico';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaPuertoRico;
+
+@override int get hashCode => 'America/Puerto_Rico'.hashCode;
+
+ }
+@immutable final class Timezone$americaPuntaArenas extends Timezone {const Timezone$americaPuntaArenas._();
+
+@override String get value => 'America/Punta_Arenas';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaPuntaArenas;
+
+@override int get hashCode => 'America/Punta_Arenas'.hashCode;
+
+ }
+@immutable final class Timezone$americaRainyRiver extends Timezone {const Timezone$americaRainyRiver._();
+
+@override String get value => 'America/Rainy_River';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaRainyRiver;
+
+@override int get hashCode => 'America/Rainy_River'.hashCode;
+
+ }
+@immutable final class Timezone$americaRankinInlet extends Timezone {const Timezone$americaRankinInlet._();
+
+@override String get value => 'America/Rankin_Inlet';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaRankinInlet;
+
+@override int get hashCode => 'America/Rankin_Inlet'.hashCode;
+
+ }
+@immutable final class Timezone$americaRecife extends Timezone {const Timezone$americaRecife._();
+
+@override String get value => 'America/Recife';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaRecife;
+
+@override int get hashCode => 'America/Recife'.hashCode;
+
+ }
+@immutable final class Timezone$americaRegina extends Timezone {const Timezone$americaRegina._();
+
+@override String get value => 'America/Regina';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaRegina;
+
+@override int get hashCode => 'America/Regina'.hashCode;
+
+ }
+@immutable final class Timezone$americaResolute extends Timezone {const Timezone$americaResolute._();
+
+@override String get value => 'America/Resolute';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaResolute;
+
+@override int get hashCode => 'America/Resolute'.hashCode;
+
+ }
+@immutable final class Timezone$americaRioBranco extends Timezone {const Timezone$americaRioBranco._();
+
+@override String get value => 'America/Rio_Branco';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaRioBranco;
+
+@override int get hashCode => 'America/Rio_Branco'.hashCode;
+
+ }
+@immutable final class Timezone$americaRosario extends Timezone {const Timezone$americaRosario._();
+
+@override String get value => 'America/Rosario';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaRosario;
+
+@override int get hashCode => 'America/Rosario'.hashCode;
+
+ }
+@immutable final class Timezone$americaSantaIsabel extends Timezone {const Timezone$americaSantaIsabel._();
+
+@override String get value => 'America/Santa_Isabel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaSantaIsabel;
+
+@override int get hashCode => 'America/Santa_Isabel'.hashCode;
+
+ }
+@immutable final class Timezone$americaSantarem extends Timezone {const Timezone$americaSantarem._();
+
+@override String get value => 'America/Santarem';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaSantarem;
+
+@override int get hashCode => 'America/Santarem'.hashCode;
+
+ }
+@immutable final class Timezone$americaSantiago extends Timezone {const Timezone$americaSantiago._();
+
+@override String get value => 'America/Santiago';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaSantiago;
+
+@override int get hashCode => 'America/Santiago'.hashCode;
+
+ }
+@immutable final class Timezone$americaSantoDomingo extends Timezone {const Timezone$americaSantoDomingo._();
+
+@override String get value => 'America/Santo_Domingo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaSantoDomingo;
+
+@override int get hashCode => 'America/Santo_Domingo'.hashCode;
+
+ }
+@immutable final class Timezone$americaSaoPaulo extends Timezone {const Timezone$americaSaoPaulo._();
+
+@override String get value => 'America/Sao_Paulo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaSaoPaulo;
+
+@override int get hashCode => 'America/Sao_Paulo'.hashCode;
+
+ }
+@immutable final class Timezone$americaScoresbysund extends Timezone {const Timezone$americaScoresbysund._();
+
+@override String get value => 'America/Scoresbysund';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaScoresbysund;
+
+@override int get hashCode => 'America/Scoresbysund'.hashCode;
+
+ }
+@immutable final class Timezone$americaShiprock extends Timezone {const Timezone$americaShiprock._();
+
+@override String get value => 'America/Shiprock';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaShiprock;
+
+@override int get hashCode => 'America/Shiprock'.hashCode;
+
+ }
+@immutable final class Timezone$americaSitka extends Timezone {const Timezone$americaSitka._();
+
+@override String get value => 'America/Sitka';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaSitka;
+
+@override int get hashCode => 'America/Sitka'.hashCode;
+
+ }
+@immutable final class Timezone$americaStBarthelemy extends Timezone {const Timezone$americaStBarthelemy._();
+
+@override String get value => 'America/St_Barthelemy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaStBarthelemy;
+
+@override int get hashCode => 'America/St_Barthelemy'.hashCode;
+
+ }
+@immutable final class Timezone$americaStJohns extends Timezone {const Timezone$americaStJohns._();
+
+@override String get value => 'America/St_Johns';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaStJohns;
+
+@override int get hashCode => 'America/St_Johns'.hashCode;
+
+ }
+@immutable final class Timezone$americaStKitts extends Timezone {const Timezone$americaStKitts._();
+
+@override String get value => 'America/St_Kitts';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaStKitts;
+
+@override int get hashCode => 'America/St_Kitts'.hashCode;
+
+ }
+@immutable final class Timezone$americaStLucia extends Timezone {const Timezone$americaStLucia._();
+
+@override String get value => 'America/St_Lucia';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaStLucia;
+
+@override int get hashCode => 'America/St_Lucia'.hashCode;
+
+ }
+@immutable final class Timezone$americaStThomas extends Timezone {const Timezone$americaStThomas._();
+
+@override String get value => 'America/St_Thomas';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaStThomas;
+
+@override int get hashCode => 'America/St_Thomas'.hashCode;
+
+ }
+@immutable final class Timezone$americaStVincent extends Timezone {const Timezone$americaStVincent._();
+
+@override String get value => 'America/St_Vincent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaStVincent;
+
+@override int get hashCode => 'America/St_Vincent'.hashCode;
+
+ }
+@immutable final class Timezone$americaSwiftCurrent extends Timezone {const Timezone$americaSwiftCurrent._();
+
+@override String get value => 'America/Swift_Current';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaSwiftCurrent;
+
+@override int get hashCode => 'America/Swift_Current'.hashCode;
+
+ }
+@immutable final class Timezone$americaTegucigalpa extends Timezone {const Timezone$americaTegucigalpa._();
+
+@override String get value => 'America/Tegucigalpa';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaTegucigalpa;
+
+@override int get hashCode => 'America/Tegucigalpa'.hashCode;
+
+ }
+@immutable final class Timezone$americaThule extends Timezone {const Timezone$americaThule._();
+
+@override String get value => 'America/Thule';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaThule;
+
+@override int get hashCode => 'America/Thule'.hashCode;
+
+ }
+@immutable final class Timezone$americaThunderBay extends Timezone {const Timezone$americaThunderBay._();
+
+@override String get value => 'America/Thunder_Bay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaThunderBay;
+
+@override int get hashCode => 'America/Thunder_Bay'.hashCode;
+
+ }
+@immutable final class Timezone$americaTijuana extends Timezone {const Timezone$americaTijuana._();
+
+@override String get value => 'America/Tijuana';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaTijuana;
+
+@override int get hashCode => 'America/Tijuana'.hashCode;
+
+ }
+@immutable final class Timezone$americaToronto extends Timezone {const Timezone$americaToronto._();
+
+@override String get value => 'America/Toronto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaToronto;
+
+@override int get hashCode => 'America/Toronto'.hashCode;
+
+ }
+@immutable final class Timezone$americaTortola extends Timezone {const Timezone$americaTortola._();
+
+@override String get value => 'America/Tortola';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaTortola;
+
+@override int get hashCode => 'America/Tortola'.hashCode;
+
+ }
+@immutable final class Timezone$americaVancouver extends Timezone {const Timezone$americaVancouver._();
+
+@override String get value => 'America/Vancouver';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaVancouver;
+
+@override int get hashCode => 'America/Vancouver'.hashCode;
+
+ }
+@immutable final class Timezone$americaVirgin extends Timezone {const Timezone$americaVirgin._();
+
+@override String get value => 'America/Virgin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaVirgin;
+
+@override int get hashCode => 'America/Virgin'.hashCode;
+
+ }
+@immutable final class Timezone$americaWhitehorse extends Timezone {const Timezone$americaWhitehorse._();
+
+@override String get value => 'America/Whitehorse';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaWhitehorse;
+
+@override int get hashCode => 'America/Whitehorse'.hashCode;
+
+ }
+@immutable final class Timezone$americaWinnipeg extends Timezone {const Timezone$americaWinnipeg._();
+
+@override String get value => 'America/Winnipeg';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaWinnipeg;
+
+@override int get hashCode => 'America/Winnipeg'.hashCode;
+
+ }
+@immutable final class Timezone$americaYakutat extends Timezone {const Timezone$americaYakutat._();
+
+@override String get value => 'America/Yakutat';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaYakutat;
+
+@override int get hashCode => 'America/Yakutat'.hashCode;
+
+ }
+@immutable final class Timezone$americaYellowknife extends Timezone {const Timezone$americaYellowknife._();
+
+@override String get value => 'America/Yellowknife';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$americaYellowknife;
+
+@override int get hashCode => 'America/Yellowknife'.hashCode;
+
+ }
+@immutable final class Timezone$antarcticaCasey extends Timezone {const Timezone$antarcticaCasey._();
+
+@override String get value => 'Antarctica/Casey';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$antarcticaCasey;
+
+@override int get hashCode => 'Antarctica/Casey'.hashCode;
+
+ }
+@immutable final class Timezone$antarcticaDavis extends Timezone {const Timezone$antarcticaDavis._();
+
+@override String get value => 'Antarctica/Davis';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$antarcticaDavis;
+
+@override int get hashCode => 'Antarctica/Davis'.hashCode;
+
+ }
+@immutable final class Timezone$antarcticaDumontDUrville extends Timezone {const Timezone$antarcticaDumontDUrville._();
+
+@override String get value => 'Antarctica/DumontDUrville';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$antarcticaDumontDUrville;
+
+@override int get hashCode => 'Antarctica/DumontDUrville'.hashCode;
+
+ }
+@immutable final class Timezone$antarcticaMacquarie extends Timezone {const Timezone$antarcticaMacquarie._();
+
+@override String get value => 'Antarctica/Macquarie';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$antarcticaMacquarie;
+
+@override int get hashCode => 'Antarctica/Macquarie'.hashCode;
+
+ }
+@immutable final class Timezone$antarcticaMawson extends Timezone {const Timezone$antarcticaMawson._();
+
+@override String get value => 'Antarctica/Mawson';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$antarcticaMawson;
+
+@override int get hashCode => 'Antarctica/Mawson'.hashCode;
+
+ }
+@immutable final class Timezone$antarcticaMcMurdo extends Timezone {const Timezone$antarcticaMcMurdo._();
+
+@override String get value => 'Antarctica/McMurdo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$antarcticaMcMurdo;
+
+@override int get hashCode => 'Antarctica/McMurdo'.hashCode;
+
+ }
+@immutable final class Timezone$antarcticaPalmer extends Timezone {const Timezone$antarcticaPalmer._();
+
+@override String get value => 'Antarctica/Palmer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$antarcticaPalmer;
+
+@override int get hashCode => 'Antarctica/Palmer'.hashCode;
+
+ }
+@immutable final class Timezone$antarcticaRothera extends Timezone {const Timezone$antarcticaRothera._();
+
+@override String get value => 'Antarctica/Rothera';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$antarcticaRothera;
+
+@override int get hashCode => 'Antarctica/Rothera'.hashCode;
+
+ }
+@immutable final class Timezone$antarcticaSouthPole extends Timezone {const Timezone$antarcticaSouthPole._();
+
+@override String get value => 'Antarctica/South_Pole';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$antarcticaSouthPole;
+
+@override int get hashCode => 'Antarctica/South_Pole'.hashCode;
+
+ }
+@immutable final class Timezone$antarcticaSyowa extends Timezone {const Timezone$antarcticaSyowa._();
+
+@override String get value => 'Antarctica/Syowa';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$antarcticaSyowa;
+
+@override int get hashCode => 'Antarctica/Syowa'.hashCode;
+
+ }
+@immutable final class Timezone$antarcticaTroll extends Timezone {const Timezone$antarcticaTroll._();
+
+@override String get value => 'Antarctica/Troll';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$antarcticaTroll;
+
+@override int get hashCode => 'Antarctica/Troll'.hashCode;
+
+ }
+@immutable final class Timezone$antarcticaVostok extends Timezone {const Timezone$antarcticaVostok._();
+
+@override String get value => 'Antarctica/Vostok';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$antarcticaVostok;
+
+@override int get hashCode => 'Antarctica/Vostok'.hashCode;
+
+ }
+@immutable final class Timezone$arcticLongyearbyen extends Timezone {const Timezone$arcticLongyearbyen._();
+
+@override String get value => 'Arctic/Longyearbyen';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$arcticLongyearbyen;
+
+@override int get hashCode => 'Arctic/Longyearbyen'.hashCode;
+
+ }
+@immutable final class Timezone$asiaAden extends Timezone {const Timezone$asiaAden._();
+
+@override String get value => 'Asia/Aden';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaAden;
+
+@override int get hashCode => 'Asia/Aden'.hashCode;
+
+ }
+@immutable final class Timezone$asiaAlmaty extends Timezone {const Timezone$asiaAlmaty._();
+
+@override String get value => 'Asia/Almaty';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaAlmaty;
+
+@override int get hashCode => 'Asia/Almaty'.hashCode;
+
+ }
+@immutable final class Timezone$asiaAmman extends Timezone {const Timezone$asiaAmman._();
+
+@override String get value => 'Asia/Amman';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaAmman;
+
+@override int get hashCode => 'Asia/Amman'.hashCode;
+
+ }
+@immutable final class Timezone$asiaAnadyr extends Timezone {const Timezone$asiaAnadyr._();
+
+@override String get value => 'Asia/Anadyr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaAnadyr;
+
+@override int get hashCode => 'Asia/Anadyr'.hashCode;
+
+ }
+@immutable final class Timezone$asiaAqtau extends Timezone {const Timezone$asiaAqtau._();
+
+@override String get value => 'Asia/Aqtau';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaAqtau;
+
+@override int get hashCode => 'Asia/Aqtau'.hashCode;
+
+ }
+@immutable final class Timezone$asiaAqtobe extends Timezone {const Timezone$asiaAqtobe._();
+
+@override String get value => 'Asia/Aqtobe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaAqtobe;
+
+@override int get hashCode => 'Asia/Aqtobe'.hashCode;
+
+ }
+@immutable final class Timezone$asiaAshgabat extends Timezone {const Timezone$asiaAshgabat._();
+
+@override String get value => 'Asia/Ashgabat';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaAshgabat;
+
+@override int get hashCode => 'Asia/Ashgabat'.hashCode;
+
+ }
+@immutable final class Timezone$asiaAshkhabad extends Timezone {const Timezone$asiaAshkhabad._();
+
+@override String get value => 'Asia/Ashkhabad';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaAshkhabad;
+
+@override int get hashCode => 'Asia/Ashkhabad'.hashCode;
+
+ }
+@immutable final class Timezone$asiaAtyrau extends Timezone {const Timezone$asiaAtyrau._();
+
+@override String get value => 'Asia/Atyrau';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaAtyrau;
+
+@override int get hashCode => 'Asia/Atyrau'.hashCode;
+
+ }
+@immutable final class Timezone$asiaBaghdad extends Timezone {const Timezone$asiaBaghdad._();
+
+@override String get value => 'Asia/Baghdad';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaBaghdad;
+
+@override int get hashCode => 'Asia/Baghdad'.hashCode;
+
+ }
+@immutable final class Timezone$asiaBahrain extends Timezone {const Timezone$asiaBahrain._();
+
+@override String get value => 'Asia/Bahrain';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaBahrain;
+
+@override int get hashCode => 'Asia/Bahrain'.hashCode;
+
+ }
+@immutable final class Timezone$asiaBaku extends Timezone {const Timezone$asiaBaku._();
+
+@override String get value => 'Asia/Baku';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaBaku;
+
+@override int get hashCode => 'Asia/Baku'.hashCode;
+
+ }
+@immutable final class Timezone$asiaBangkok extends Timezone {const Timezone$asiaBangkok._();
+
+@override String get value => 'Asia/Bangkok';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaBangkok;
+
+@override int get hashCode => 'Asia/Bangkok'.hashCode;
+
+ }
+@immutable final class Timezone$asiaBarnaul extends Timezone {const Timezone$asiaBarnaul._();
+
+@override String get value => 'Asia/Barnaul';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaBarnaul;
+
+@override int get hashCode => 'Asia/Barnaul'.hashCode;
+
+ }
+@immutable final class Timezone$asiaBeirut extends Timezone {const Timezone$asiaBeirut._();
+
+@override String get value => 'Asia/Beirut';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaBeirut;
+
+@override int get hashCode => 'Asia/Beirut'.hashCode;
+
+ }
+@immutable final class Timezone$asiaBishkek extends Timezone {const Timezone$asiaBishkek._();
+
+@override String get value => 'Asia/Bishkek';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaBishkek;
+
+@override int get hashCode => 'Asia/Bishkek'.hashCode;
+
+ }
+@immutable final class Timezone$asiaBrunei extends Timezone {const Timezone$asiaBrunei._();
+
+@override String get value => 'Asia/Brunei';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaBrunei;
+
+@override int get hashCode => 'Asia/Brunei'.hashCode;
+
+ }
+@immutable final class Timezone$asiaCalcutta extends Timezone {const Timezone$asiaCalcutta._();
+
+@override String get value => 'Asia/Calcutta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaCalcutta;
+
+@override int get hashCode => 'Asia/Calcutta'.hashCode;
+
+ }
+@immutable final class Timezone$asiaChita extends Timezone {const Timezone$asiaChita._();
+
+@override String get value => 'Asia/Chita';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaChita;
+
+@override int get hashCode => 'Asia/Chita'.hashCode;
+
+ }
+@immutable final class Timezone$asiaChoibalsan extends Timezone {const Timezone$asiaChoibalsan._();
+
+@override String get value => 'Asia/Choibalsan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaChoibalsan;
+
+@override int get hashCode => 'Asia/Choibalsan'.hashCode;
+
+ }
+@immutable final class Timezone$asiaChongqing extends Timezone {const Timezone$asiaChongqing._();
+
+@override String get value => 'Asia/Chongqing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaChongqing;
+
+@override int get hashCode => 'Asia/Chongqing'.hashCode;
+
+ }
+@immutable final class Timezone$asiaChungking extends Timezone {const Timezone$asiaChungking._();
+
+@override String get value => 'Asia/Chungking';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaChungking;
+
+@override int get hashCode => 'Asia/Chungking'.hashCode;
+
+ }
+@immutable final class Timezone$asiaColombo extends Timezone {const Timezone$asiaColombo._();
+
+@override String get value => 'Asia/Colombo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaColombo;
+
+@override int get hashCode => 'Asia/Colombo'.hashCode;
+
+ }
+@immutable final class Timezone$asiaDacca extends Timezone {const Timezone$asiaDacca._();
+
+@override String get value => 'Asia/Dacca';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaDacca;
+
+@override int get hashCode => 'Asia/Dacca'.hashCode;
+
+ }
+@immutable final class Timezone$asiaDamascus extends Timezone {const Timezone$asiaDamascus._();
+
+@override String get value => 'Asia/Damascus';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaDamascus;
+
+@override int get hashCode => 'Asia/Damascus'.hashCode;
+
+ }
+@immutable final class Timezone$asiaDhaka extends Timezone {const Timezone$asiaDhaka._();
+
+@override String get value => 'Asia/Dhaka';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaDhaka;
+
+@override int get hashCode => 'Asia/Dhaka'.hashCode;
+
+ }
+@immutable final class Timezone$asiaDili extends Timezone {const Timezone$asiaDili._();
+
+@override String get value => 'Asia/Dili';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaDili;
+
+@override int get hashCode => 'Asia/Dili'.hashCode;
+
+ }
+@immutable final class Timezone$asiaDubai extends Timezone {const Timezone$asiaDubai._();
+
+@override String get value => 'Asia/Dubai';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaDubai;
+
+@override int get hashCode => 'Asia/Dubai'.hashCode;
+
+ }
+@immutable final class Timezone$asiaDushanbe extends Timezone {const Timezone$asiaDushanbe._();
+
+@override String get value => 'Asia/Dushanbe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaDushanbe;
+
+@override int get hashCode => 'Asia/Dushanbe'.hashCode;
+
+ }
+@immutable final class Timezone$asiaFamagusta extends Timezone {const Timezone$asiaFamagusta._();
+
+@override String get value => 'Asia/Famagusta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaFamagusta;
+
+@override int get hashCode => 'Asia/Famagusta'.hashCode;
+
+ }
+@immutable final class Timezone$asiaGaza extends Timezone {const Timezone$asiaGaza._();
+
+@override String get value => 'Asia/Gaza';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaGaza;
+
+@override int get hashCode => 'Asia/Gaza'.hashCode;
+
+ }
+@immutable final class Timezone$asiaHarbin extends Timezone {const Timezone$asiaHarbin._();
+
+@override String get value => 'Asia/Harbin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaHarbin;
+
+@override int get hashCode => 'Asia/Harbin'.hashCode;
+
+ }
+@immutable final class Timezone$asiaHebron extends Timezone {const Timezone$asiaHebron._();
+
+@override String get value => 'Asia/Hebron';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaHebron;
+
+@override int get hashCode => 'Asia/Hebron'.hashCode;
+
+ }
+@immutable final class Timezone$asiaHoChiMinh extends Timezone {const Timezone$asiaHoChiMinh._();
+
+@override String get value => 'Asia/Ho_Chi_Minh';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaHoChiMinh;
+
+@override int get hashCode => 'Asia/Ho_Chi_Minh'.hashCode;
+
+ }
+@immutable final class Timezone$asiaHongKong extends Timezone {const Timezone$asiaHongKong._();
+
+@override String get value => 'Asia/Hong_Kong';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaHongKong;
+
+@override int get hashCode => 'Asia/Hong_Kong'.hashCode;
+
+ }
+@immutable final class Timezone$asiaHovd extends Timezone {const Timezone$asiaHovd._();
+
+@override String get value => 'Asia/Hovd';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaHovd;
+
+@override int get hashCode => 'Asia/Hovd'.hashCode;
+
+ }
+@immutable final class Timezone$asiaIrkutsk extends Timezone {const Timezone$asiaIrkutsk._();
+
+@override String get value => 'Asia/Irkutsk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaIrkutsk;
+
+@override int get hashCode => 'Asia/Irkutsk'.hashCode;
+
+ }
+@immutable final class Timezone$asiaIstanbul extends Timezone {const Timezone$asiaIstanbul._();
+
+@override String get value => 'Asia/Istanbul';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaIstanbul;
+
+@override int get hashCode => 'Asia/Istanbul'.hashCode;
+
+ }
+@immutable final class Timezone$asiaJakarta extends Timezone {const Timezone$asiaJakarta._();
+
+@override String get value => 'Asia/Jakarta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaJakarta;
+
+@override int get hashCode => 'Asia/Jakarta'.hashCode;
+
+ }
+@immutable final class Timezone$asiaJayapura extends Timezone {const Timezone$asiaJayapura._();
+
+@override String get value => 'Asia/Jayapura';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaJayapura;
+
+@override int get hashCode => 'Asia/Jayapura'.hashCode;
+
+ }
+@immutable final class Timezone$asiaJerusalem extends Timezone {const Timezone$asiaJerusalem._();
+
+@override String get value => 'Asia/Jerusalem';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaJerusalem;
+
+@override int get hashCode => 'Asia/Jerusalem'.hashCode;
+
+ }
+@immutable final class Timezone$asiaKabul extends Timezone {const Timezone$asiaKabul._();
+
+@override String get value => 'Asia/Kabul';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaKabul;
+
+@override int get hashCode => 'Asia/Kabul'.hashCode;
+
+ }
+@immutable final class Timezone$asiaKamchatka extends Timezone {const Timezone$asiaKamchatka._();
+
+@override String get value => 'Asia/Kamchatka';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaKamchatka;
+
+@override int get hashCode => 'Asia/Kamchatka'.hashCode;
+
+ }
+@immutable final class Timezone$asiaKarachi extends Timezone {const Timezone$asiaKarachi._();
+
+@override String get value => 'Asia/Karachi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaKarachi;
+
+@override int get hashCode => 'Asia/Karachi'.hashCode;
+
+ }
+@immutable final class Timezone$asiaKashgar extends Timezone {const Timezone$asiaKashgar._();
+
+@override String get value => 'Asia/Kashgar';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaKashgar;
+
+@override int get hashCode => 'Asia/Kashgar'.hashCode;
+
+ }
+@immutable final class Timezone$asiaKathmandu extends Timezone {const Timezone$asiaKathmandu._();
+
+@override String get value => 'Asia/Kathmandu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaKathmandu;
+
+@override int get hashCode => 'Asia/Kathmandu'.hashCode;
+
+ }
+@immutable final class Timezone$asiaKatmandu extends Timezone {const Timezone$asiaKatmandu._();
+
+@override String get value => 'Asia/Katmandu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaKatmandu;
+
+@override int get hashCode => 'Asia/Katmandu'.hashCode;
+
+ }
+@immutable final class Timezone$asiaKhandyga extends Timezone {const Timezone$asiaKhandyga._();
+
+@override String get value => 'Asia/Khandyga';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaKhandyga;
+
+@override int get hashCode => 'Asia/Khandyga'.hashCode;
+
+ }
+@immutable final class Timezone$asiaKolkata extends Timezone {const Timezone$asiaKolkata._();
+
+@override String get value => 'Asia/Kolkata';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaKolkata;
+
+@override int get hashCode => 'Asia/Kolkata'.hashCode;
+
+ }
+@immutable final class Timezone$asiaKrasnoyarsk extends Timezone {const Timezone$asiaKrasnoyarsk._();
+
+@override String get value => 'Asia/Krasnoyarsk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaKrasnoyarsk;
+
+@override int get hashCode => 'Asia/Krasnoyarsk'.hashCode;
+
+ }
+@immutable final class Timezone$asiaKualaLumpur extends Timezone {const Timezone$asiaKualaLumpur._();
+
+@override String get value => 'Asia/Kuala_Lumpur';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaKualaLumpur;
+
+@override int get hashCode => 'Asia/Kuala_Lumpur'.hashCode;
+
+ }
+@immutable final class Timezone$asiaKuching extends Timezone {const Timezone$asiaKuching._();
+
+@override String get value => 'Asia/Kuching';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaKuching;
+
+@override int get hashCode => 'Asia/Kuching'.hashCode;
+
+ }
+@immutable final class Timezone$asiaKuwait extends Timezone {const Timezone$asiaKuwait._();
+
+@override String get value => 'Asia/Kuwait';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaKuwait;
+
+@override int get hashCode => 'Asia/Kuwait'.hashCode;
+
+ }
+@immutable final class Timezone$asiaMacao extends Timezone {const Timezone$asiaMacao._();
+
+@override String get value => 'Asia/Macao';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaMacao;
+
+@override int get hashCode => 'Asia/Macao'.hashCode;
+
+ }
+@immutable final class Timezone$asiaMacau extends Timezone {const Timezone$asiaMacau._();
+
+@override String get value => 'Asia/Macau';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaMacau;
+
+@override int get hashCode => 'Asia/Macau'.hashCode;
+
+ }
+@immutable final class Timezone$asiaMagadan extends Timezone {const Timezone$asiaMagadan._();
+
+@override String get value => 'Asia/Magadan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaMagadan;
+
+@override int get hashCode => 'Asia/Magadan'.hashCode;
+
+ }
+@immutable final class Timezone$asiaMakassar extends Timezone {const Timezone$asiaMakassar._();
+
+@override String get value => 'Asia/Makassar';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaMakassar;
+
+@override int get hashCode => 'Asia/Makassar'.hashCode;
+
+ }
+@immutable final class Timezone$asiaManila extends Timezone {const Timezone$asiaManila._();
+
+@override String get value => 'Asia/Manila';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaManila;
+
+@override int get hashCode => 'Asia/Manila'.hashCode;
+
+ }
+@immutable final class Timezone$asiaMuscat extends Timezone {const Timezone$asiaMuscat._();
+
+@override String get value => 'Asia/Muscat';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaMuscat;
+
+@override int get hashCode => 'Asia/Muscat'.hashCode;
+
+ }
+@immutable final class Timezone$asiaNicosia extends Timezone {const Timezone$asiaNicosia._();
+
+@override String get value => 'Asia/Nicosia';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaNicosia;
+
+@override int get hashCode => 'Asia/Nicosia'.hashCode;
+
+ }
+@immutable final class Timezone$asiaNovokuznetsk extends Timezone {const Timezone$asiaNovokuznetsk._();
+
+@override String get value => 'Asia/Novokuznetsk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaNovokuznetsk;
+
+@override int get hashCode => 'Asia/Novokuznetsk'.hashCode;
+
+ }
+@immutable final class Timezone$asiaNovosibirsk extends Timezone {const Timezone$asiaNovosibirsk._();
+
+@override String get value => 'Asia/Novosibirsk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaNovosibirsk;
+
+@override int get hashCode => 'Asia/Novosibirsk'.hashCode;
+
+ }
+@immutable final class Timezone$asiaOmsk extends Timezone {const Timezone$asiaOmsk._();
+
+@override String get value => 'Asia/Omsk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaOmsk;
+
+@override int get hashCode => 'Asia/Omsk'.hashCode;
+
+ }
+@immutable final class Timezone$asiaOral extends Timezone {const Timezone$asiaOral._();
+
+@override String get value => 'Asia/Oral';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaOral;
+
+@override int get hashCode => 'Asia/Oral'.hashCode;
+
+ }
+@immutable final class Timezone$asiaPhnomPenh extends Timezone {const Timezone$asiaPhnomPenh._();
+
+@override String get value => 'Asia/Phnom_Penh';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaPhnomPenh;
+
+@override int get hashCode => 'Asia/Phnom_Penh'.hashCode;
+
+ }
+@immutable final class Timezone$asiaPontianak extends Timezone {const Timezone$asiaPontianak._();
+
+@override String get value => 'Asia/Pontianak';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaPontianak;
+
+@override int get hashCode => 'Asia/Pontianak'.hashCode;
+
+ }
+@immutable final class Timezone$asiaPyongyang extends Timezone {const Timezone$asiaPyongyang._();
+
+@override String get value => 'Asia/Pyongyang';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaPyongyang;
+
+@override int get hashCode => 'Asia/Pyongyang'.hashCode;
+
+ }
+@immutable final class Timezone$asiaQatar extends Timezone {const Timezone$asiaQatar._();
+
+@override String get value => 'Asia/Qatar';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaQatar;
+
+@override int get hashCode => 'Asia/Qatar'.hashCode;
+
+ }
+@immutable final class Timezone$asiaQostanay extends Timezone {const Timezone$asiaQostanay._();
+
+@override String get value => 'Asia/Qostanay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaQostanay;
+
+@override int get hashCode => 'Asia/Qostanay'.hashCode;
+
+ }
+@immutable final class Timezone$asiaQyzylorda extends Timezone {const Timezone$asiaQyzylorda._();
+
+@override String get value => 'Asia/Qyzylorda';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaQyzylorda;
+
+@override int get hashCode => 'Asia/Qyzylorda'.hashCode;
+
+ }
+@immutable final class Timezone$asiaRangoon extends Timezone {const Timezone$asiaRangoon._();
+
+@override String get value => 'Asia/Rangoon';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaRangoon;
+
+@override int get hashCode => 'Asia/Rangoon'.hashCode;
+
+ }
+@immutable final class Timezone$asiaRiyadh extends Timezone {const Timezone$asiaRiyadh._();
+
+@override String get value => 'Asia/Riyadh';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaRiyadh;
+
+@override int get hashCode => 'Asia/Riyadh'.hashCode;
+
+ }
+@immutable final class Timezone$asiaSaigon extends Timezone {const Timezone$asiaSaigon._();
+
+@override String get value => 'Asia/Saigon';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaSaigon;
+
+@override int get hashCode => 'Asia/Saigon'.hashCode;
+
+ }
+@immutable final class Timezone$asiaSakhalin extends Timezone {const Timezone$asiaSakhalin._();
+
+@override String get value => 'Asia/Sakhalin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaSakhalin;
+
+@override int get hashCode => 'Asia/Sakhalin'.hashCode;
+
+ }
+@immutable final class Timezone$asiaSamarkand extends Timezone {const Timezone$asiaSamarkand._();
+
+@override String get value => 'Asia/Samarkand';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaSamarkand;
+
+@override int get hashCode => 'Asia/Samarkand'.hashCode;
+
+ }
+@immutable final class Timezone$asiaSeoul extends Timezone {const Timezone$asiaSeoul._();
+
+@override String get value => 'Asia/Seoul';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaSeoul;
+
+@override int get hashCode => 'Asia/Seoul'.hashCode;
+
+ }
+@immutable final class Timezone$asiaShanghai extends Timezone {const Timezone$asiaShanghai._();
+
+@override String get value => 'Asia/Shanghai';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaShanghai;
+
+@override int get hashCode => 'Asia/Shanghai'.hashCode;
+
+ }
+@immutable final class Timezone$asiaSingapore extends Timezone {const Timezone$asiaSingapore._();
+
+@override String get value => 'Asia/Singapore';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaSingapore;
+
+@override int get hashCode => 'Asia/Singapore'.hashCode;
+
+ }
+@immutable final class Timezone$asiaSrednekolymsk extends Timezone {const Timezone$asiaSrednekolymsk._();
+
+@override String get value => 'Asia/Srednekolymsk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaSrednekolymsk;
+
+@override int get hashCode => 'Asia/Srednekolymsk'.hashCode;
+
+ }
+@immutable final class Timezone$asiaTaipei extends Timezone {const Timezone$asiaTaipei._();
+
+@override String get value => 'Asia/Taipei';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaTaipei;
+
+@override int get hashCode => 'Asia/Taipei'.hashCode;
+
+ }
+@immutable final class Timezone$asiaTashkent extends Timezone {const Timezone$asiaTashkent._();
+
+@override String get value => 'Asia/Tashkent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaTashkent;
+
+@override int get hashCode => 'Asia/Tashkent'.hashCode;
+
+ }
+@immutable final class Timezone$asiaTbilisi extends Timezone {const Timezone$asiaTbilisi._();
+
+@override String get value => 'Asia/Tbilisi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaTbilisi;
+
+@override int get hashCode => 'Asia/Tbilisi'.hashCode;
+
+ }
+@immutable final class Timezone$asiaTehran extends Timezone {const Timezone$asiaTehran._();
+
+@override String get value => 'Asia/Tehran';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaTehran;
+
+@override int get hashCode => 'Asia/Tehran'.hashCode;
+
+ }
+@immutable final class Timezone$asiaTelAviv extends Timezone {const Timezone$asiaTelAviv._();
+
+@override String get value => 'Asia/Tel_Aviv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaTelAviv;
+
+@override int get hashCode => 'Asia/Tel_Aviv'.hashCode;
+
+ }
+@immutable final class Timezone$asiaThimbu extends Timezone {const Timezone$asiaThimbu._();
+
+@override String get value => 'Asia/Thimbu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaThimbu;
+
+@override int get hashCode => 'Asia/Thimbu'.hashCode;
+
+ }
+@immutable final class Timezone$asiaThimphu extends Timezone {const Timezone$asiaThimphu._();
+
+@override String get value => 'Asia/Thimphu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaThimphu;
+
+@override int get hashCode => 'Asia/Thimphu'.hashCode;
+
+ }
+@immutable final class Timezone$asiaTokyo extends Timezone {const Timezone$asiaTokyo._();
+
+@override String get value => 'Asia/Tokyo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaTokyo;
+
+@override int get hashCode => 'Asia/Tokyo'.hashCode;
+
+ }
+@immutable final class Timezone$asiaTomsk extends Timezone {const Timezone$asiaTomsk._();
+
+@override String get value => 'Asia/Tomsk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaTomsk;
+
+@override int get hashCode => 'Asia/Tomsk'.hashCode;
+
+ }
+@immutable final class Timezone$asiaUjungPandang extends Timezone {const Timezone$asiaUjungPandang._();
+
+@override String get value => 'Asia/Ujung_Pandang';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaUjungPandang;
+
+@override int get hashCode => 'Asia/Ujung_Pandang'.hashCode;
+
+ }
+@immutable final class Timezone$asiaUlaanbaatar extends Timezone {const Timezone$asiaUlaanbaatar._();
+
+@override String get value => 'Asia/Ulaanbaatar';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaUlaanbaatar;
+
+@override int get hashCode => 'Asia/Ulaanbaatar'.hashCode;
+
+ }
+@immutable final class Timezone$asiaUlanBator extends Timezone {const Timezone$asiaUlanBator._();
+
+@override String get value => 'Asia/Ulan_Bator';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaUlanBator;
+
+@override int get hashCode => 'Asia/Ulan_Bator'.hashCode;
+
+ }
+@immutable final class Timezone$asiaUrumqi extends Timezone {const Timezone$asiaUrumqi._();
+
+@override String get value => 'Asia/Urumqi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaUrumqi;
+
+@override int get hashCode => 'Asia/Urumqi'.hashCode;
+
+ }
+@immutable final class Timezone$asiaUstNera extends Timezone {const Timezone$asiaUstNera._();
+
+@override String get value => 'Asia/Ust-Nera';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaUstNera;
+
+@override int get hashCode => 'Asia/Ust-Nera'.hashCode;
+
+ }
+@immutable final class Timezone$asiaVientiane extends Timezone {const Timezone$asiaVientiane._();
+
+@override String get value => 'Asia/Vientiane';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaVientiane;
+
+@override int get hashCode => 'Asia/Vientiane'.hashCode;
+
+ }
+@immutable final class Timezone$asiaVladivostok extends Timezone {const Timezone$asiaVladivostok._();
+
+@override String get value => 'Asia/Vladivostok';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaVladivostok;
+
+@override int get hashCode => 'Asia/Vladivostok'.hashCode;
+
+ }
+@immutable final class Timezone$asiaYakutsk extends Timezone {const Timezone$asiaYakutsk._();
+
+@override String get value => 'Asia/Yakutsk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaYakutsk;
+
+@override int get hashCode => 'Asia/Yakutsk'.hashCode;
+
+ }
+@immutable final class Timezone$asiaYangon extends Timezone {const Timezone$asiaYangon._();
+
+@override String get value => 'Asia/Yangon';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaYangon;
+
+@override int get hashCode => 'Asia/Yangon'.hashCode;
+
+ }
+@immutable final class Timezone$asiaYekaterinburg extends Timezone {const Timezone$asiaYekaterinburg._();
+
+@override String get value => 'Asia/Yekaterinburg';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaYekaterinburg;
+
+@override int get hashCode => 'Asia/Yekaterinburg'.hashCode;
+
+ }
+@immutable final class Timezone$asiaYerevan extends Timezone {const Timezone$asiaYerevan._();
+
+@override String get value => 'Asia/Yerevan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$asiaYerevan;
+
+@override int get hashCode => 'Asia/Yerevan'.hashCode;
+
+ }
+@immutable final class Timezone$atlanticAzores extends Timezone {const Timezone$atlanticAzores._();
+
+@override String get value => 'Atlantic/Azores';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$atlanticAzores;
+
+@override int get hashCode => 'Atlantic/Azores'.hashCode;
+
+ }
+@immutable final class Timezone$atlanticBermuda extends Timezone {const Timezone$atlanticBermuda._();
+
+@override String get value => 'Atlantic/Bermuda';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$atlanticBermuda;
+
+@override int get hashCode => 'Atlantic/Bermuda'.hashCode;
+
+ }
+@immutable final class Timezone$atlanticCanary extends Timezone {const Timezone$atlanticCanary._();
+
+@override String get value => 'Atlantic/Canary';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$atlanticCanary;
+
+@override int get hashCode => 'Atlantic/Canary'.hashCode;
+
+ }
+@immutable final class Timezone$atlanticCapeVerde extends Timezone {const Timezone$atlanticCapeVerde._();
+
+@override String get value => 'Atlantic/Cape_Verde';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$atlanticCapeVerde;
+
+@override int get hashCode => 'Atlantic/Cape_Verde'.hashCode;
+
+ }
+@immutable final class Timezone$atlanticFaeroe extends Timezone {const Timezone$atlanticFaeroe._();
+
+@override String get value => 'Atlantic/Faeroe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$atlanticFaeroe;
+
+@override int get hashCode => 'Atlantic/Faeroe'.hashCode;
+
+ }
+@immutable final class Timezone$atlanticFaroe extends Timezone {const Timezone$atlanticFaroe._();
+
+@override String get value => 'Atlantic/Faroe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$atlanticFaroe;
+
+@override int get hashCode => 'Atlantic/Faroe'.hashCode;
+
+ }
+@immutable final class Timezone$atlanticJanMayen extends Timezone {const Timezone$atlanticJanMayen._();
+
+@override String get value => 'Atlantic/Jan_Mayen';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$atlanticJanMayen;
+
+@override int get hashCode => 'Atlantic/Jan_Mayen'.hashCode;
+
+ }
+@immutable final class Timezone$atlanticMadeira extends Timezone {const Timezone$atlanticMadeira._();
+
+@override String get value => 'Atlantic/Madeira';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$atlanticMadeira;
+
+@override int get hashCode => 'Atlantic/Madeira'.hashCode;
+
+ }
+@immutable final class Timezone$atlanticReykjavik extends Timezone {const Timezone$atlanticReykjavik._();
+
+@override String get value => 'Atlantic/Reykjavik';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$atlanticReykjavik;
+
+@override int get hashCode => 'Atlantic/Reykjavik'.hashCode;
+
+ }
+@immutable final class Timezone$atlanticSouthGeorgia extends Timezone {const Timezone$atlanticSouthGeorgia._();
+
+@override String get value => 'Atlantic/South_Georgia';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$atlanticSouthGeorgia;
+
+@override int get hashCode => 'Atlantic/South_Georgia'.hashCode;
+
+ }
+@immutable final class Timezone$atlanticStHelena extends Timezone {const Timezone$atlanticStHelena._();
+
+@override String get value => 'Atlantic/St_Helena';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$atlanticStHelena;
+
+@override int get hashCode => 'Atlantic/St_Helena'.hashCode;
+
+ }
+@immutable final class Timezone$atlanticStanley extends Timezone {const Timezone$atlanticStanley._();
+
+@override String get value => 'Atlantic/Stanley';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$atlanticStanley;
+
+@override int get hashCode => 'Atlantic/Stanley'.hashCode;
+
+ }
+@immutable final class Timezone$australiaAct extends Timezone {const Timezone$australiaAct._();
+
+@override String get value => 'Australia/ACT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaAct;
+
+@override int get hashCode => 'Australia/ACT'.hashCode;
+
+ }
+@immutable final class Timezone$australiaAdelaide extends Timezone {const Timezone$australiaAdelaide._();
+
+@override String get value => 'Australia/Adelaide';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaAdelaide;
+
+@override int get hashCode => 'Australia/Adelaide'.hashCode;
+
+ }
+@immutable final class Timezone$australiaBrisbane extends Timezone {const Timezone$australiaBrisbane._();
+
+@override String get value => 'Australia/Brisbane';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaBrisbane;
+
+@override int get hashCode => 'Australia/Brisbane'.hashCode;
+
+ }
+@immutable final class Timezone$australiaBrokenHill extends Timezone {const Timezone$australiaBrokenHill._();
+
+@override String get value => 'Australia/Broken_Hill';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaBrokenHill;
+
+@override int get hashCode => 'Australia/Broken_Hill'.hashCode;
+
+ }
+@immutable final class Timezone$australiaCanberra extends Timezone {const Timezone$australiaCanberra._();
+
+@override String get value => 'Australia/Canberra';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaCanberra;
+
+@override int get hashCode => 'Australia/Canberra'.hashCode;
+
+ }
+@immutable final class Timezone$australiaCurrie extends Timezone {const Timezone$australiaCurrie._();
+
+@override String get value => 'Australia/Currie';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaCurrie;
+
+@override int get hashCode => 'Australia/Currie'.hashCode;
+
+ }
+@immutable final class Timezone$australiaDarwin extends Timezone {const Timezone$australiaDarwin._();
+
+@override String get value => 'Australia/Darwin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaDarwin;
+
+@override int get hashCode => 'Australia/Darwin'.hashCode;
+
+ }
+@immutable final class Timezone$australiaEucla extends Timezone {const Timezone$australiaEucla._();
+
+@override String get value => 'Australia/Eucla';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaEucla;
+
+@override int get hashCode => 'Australia/Eucla'.hashCode;
+
+ }
+@immutable final class Timezone$australiaHobart extends Timezone {const Timezone$australiaHobart._();
+
+@override String get value => 'Australia/Hobart';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaHobart;
+
+@override int get hashCode => 'Australia/Hobart'.hashCode;
+
+ }
+@immutable final class Timezone$australiaLhi extends Timezone {const Timezone$australiaLhi._();
+
+@override String get value => 'Australia/LHI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaLhi;
+
+@override int get hashCode => 'Australia/LHI'.hashCode;
+
+ }
+@immutable final class Timezone$australiaLindeman extends Timezone {const Timezone$australiaLindeman._();
+
+@override String get value => 'Australia/Lindeman';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaLindeman;
+
+@override int get hashCode => 'Australia/Lindeman'.hashCode;
+
+ }
+@immutable final class Timezone$australiaLordHowe extends Timezone {const Timezone$australiaLordHowe._();
+
+@override String get value => 'Australia/Lord_Howe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaLordHowe;
+
+@override int get hashCode => 'Australia/Lord_Howe'.hashCode;
+
+ }
+@immutable final class Timezone$australiaMelbourne extends Timezone {const Timezone$australiaMelbourne._();
+
+@override String get value => 'Australia/Melbourne';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaMelbourne;
+
+@override int get hashCode => 'Australia/Melbourne'.hashCode;
+
+ }
+@immutable final class Timezone$australiaNsw extends Timezone {const Timezone$australiaNsw._();
+
+@override String get value => 'Australia/NSW';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaNsw;
+
+@override int get hashCode => 'Australia/NSW'.hashCode;
+
+ }
+@immutable final class Timezone$australiaNorth extends Timezone {const Timezone$australiaNorth._();
+
+@override String get value => 'Australia/North';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaNorth;
+
+@override int get hashCode => 'Australia/North'.hashCode;
+
+ }
+@immutable final class Timezone$australiaPerth extends Timezone {const Timezone$australiaPerth._();
+
+@override String get value => 'Australia/Perth';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaPerth;
+
+@override int get hashCode => 'Australia/Perth'.hashCode;
+
+ }
+@immutable final class Timezone$australiaQueensland extends Timezone {const Timezone$australiaQueensland._();
+
+@override String get value => 'Australia/Queensland';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaQueensland;
+
+@override int get hashCode => 'Australia/Queensland'.hashCode;
+
+ }
+@immutable final class Timezone$australiaSouth extends Timezone {const Timezone$australiaSouth._();
+
+@override String get value => 'Australia/South';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaSouth;
+
+@override int get hashCode => 'Australia/South'.hashCode;
+
+ }
+@immutable final class Timezone$australiaSydney extends Timezone {const Timezone$australiaSydney._();
+
+@override String get value => 'Australia/Sydney';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaSydney;
+
+@override int get hashCode => 'Australia/Sydney'.hashCode;
+
+ }
+@immutable final class Timezone$australiaTasmania extends Timezone {const Timezone$australiaTasmania._();
+
+@override String get value => 'Australia/Tasmania';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaTasmania;
+
+@override int get hashCode => 'Australia/Tasmania'.hashCode;
+
+ }
+@immutable final class Timezone$australiaVictoria extends Timezone {const Timezone$australiaVictoria._();
+
+@override String get value => 'Australia/Victoria';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaVictoria;
+
+@override int get hashCode => 'Australia/Victoria'.hashCode;
+
+ }
+@immutable final class Timezone$australiaWest extends Timezone {const Timezone$australiaWest._();
+
+@override String get value => 'Australia/West';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaWest;
+
+@override int get hashCode => 'Australia/West'.hashCode;
+
+ }
+@immutable final class Timezone$australiaYancowinna extends Timezone {const Timezone$australiaYancowinna._();
+
+@override String get value => 'Australia/Yancowinna';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$australiaYancowinna;
+
+@override int get hashCode => 'Australia/Yancowinna'.hashCode;
+
+ }
+@immutable final class Timezone$brazilAcre extends Timezone {const Timezone$brazilAcre._();
+
+@override String get value => 'Brazil/Acre';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$brazilAcre;
+
+@override int get hashCode => 'Brazil/Acre'.hashCode;
+
+ }
+@immutable final class Timezone$brazilDeNoronha extends Timezone {const Timezone$brazilDeNoronha._();
+
+@override String get value => 'Brazil/DeNoronha';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$brazilDeNoronha;
+
+@override int get hashCode => 'Brazil/DeNoronha'.hashCode;
+
+ }
+@immutable final class Timezone$brazilEast extends Timezone {const Timezone$brazilEast._();
+
+@override String get value => 'Brazil/East';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$brazilEast;
+
+@override int get hashCode => 'Brazil/East'.hashCode;
+
+ }
+@immutable final class Timezone$brazilWest extends Timezone {const Timezone$brazilWest._();
+
+@override String get value => 'Brazil/West';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$brazilWest;
+
+@override int get hashCode => 'Brazil/West'.hashCode;
+
+ }
+@immutable final class Timezone$cet extends Timezone {const Timezone$cet._();
+
+@override String get value => 'CET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$cet;
+
+@override int get hashCode => 'CET'.hashCode;
+
+ }
+@immutable final class Timezone$cst6Cdt extends Timezone {const Timezone$cst6Cdt._();
+
+@override String get value => 'CST6CDT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$cst6Cdt;
+
+@override int get hashCode => 'CST6CDT'.hashCode;
+
+ }
+@immutable final class Timezone$canadaAtlantic extends Timezone {const Timezone$canadaAtlantic._();
+
+@override String get value => 'Canada/Atlantic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$canadaAtlantic;
+
+@override int get hashCode => 'Canada/Atlantic'.hashCode;
+
+ }
+@immutable final class Timezone$canadaCentral extends Timezone {const Timezone$canadaCentral._();
+
+@override String get value => 'Canada/Central';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$canadaCentral;
+
+@override int get hashCode => 'Canada/Central'.hashCode;
+
+ }
+@immutable final class Timezone$canadaEastern extends Timezone {const Timezone$canadaEastern._();
+
+@override String get value => 'Canada/Eastern';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$canadaEastern;
+
+@override int get hashCode => 'Canada/Eastern'.hashCode;
+
+ }
+@immutable final class Timezone$canadaMountain extends Timezone {const Timezone$canadaMountain._();
+
+@override String get value => 'Canada/Mountain';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$canadaMountain;
+
+@override int get hashCode => 'Canada/Mountain'.hashCode;
+
+ }
+@immutable final class Timezone$canadaNewfoundland extends Timezone {const Timezone$canadaNewfoundland._();
+
+@override String get value => 'Canada/Newfoundland';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$canadaNewfoundland;
+
+@override int get hashCode => 'Canada/Newfoundland'.hashCode;
+
+ }
+@immutable final class Timezone$canadaPacific extends Timezone {const Timezone$canadaPacific._();
+
+@override String get value => 'Canada/Pacific';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$canadaPacific;
+
+@override int get hashCode => 'Canada/Pacific'.hashCode;
+
+ }
+@immutable final class Timezone$canadaSaskatchewan extends Timezone {const Timezone$canadaSaskatchewan._();
+
+@override String get value => 'Canada/Saskatchewan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$canadaSaskatchewan;
+
+@override int get hashCode => 'Canada/Saskatchewan'.hashCode;
+
+ }
+@immutable final class Timezone$canadaYukon extends Timezone {const Timezone$canadaYukon._();
+
+@override String get value => 'Canada/Yukon';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$canadaYukon;
+
+@override int get hashCode => 'Canada/Yukon'.hashCode;
+
+ }
+@immutable final class Timezone$chileContinental extends Timezone {const Timezone$chileContinental._();
+
+@override String get value => 'Chile/Continental';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$chileContinental;
+
+@override int get hashCode => 'Chile/Continental'.hashCode;
+
+ }
+@immutable final class Timezone$chileEasterIsland extends Timezone {const Timezone$chileEasterIsland._();
+
+@override String get value => 'Chile/EasterIsland';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$chileEasterIsland;
+
+@override int get hashCode => 'Chile/EasterIsland'.hashCode;
+
+ }
+@immutable final class Timezone$cuba extends Timezone {const Timezone$cuba._();
+
+@override String get value => 'Cuba';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$cuba;
+
+@override int get hashCode => 'Cuba'.hashCode;
+
+ }
+@immutable final class Timezone$eet extends Timezone {const Timezone$eet._();
+
+@override String get value => 'EET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$eet;
+
+@override int get hashCode => 'EET'.hashCode;
+
+ }
+@immutable final class Timezone$est extends Timezone {const Timezone$est._();
+
+@override String get value => 'EST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$est;
+
+@override int get hashCode => 'EST'.hashCode;
+
+ }
+@immutable final class Timezone$est5Edt extends Timezone {const Timezone$est5Edt._();
+
+@override String get value => 'EST5EDT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$est5Edt;
+
+@override int get hashCode => 'EST5EDT'.hashCode;
+
+ }
+@immutable final class Timezone$egypt extends Timezone {const Timezone$egypt._();
+
+@override String get value => 'Egypt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$egypt;
+
+@override int get hashCode => 'Egypt'.hashCode;
+
+ }
+@immutable final class Timezone$eire extends Timezone {const Timezone$eire._();
+
+@override String get value => 'Eire';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$eire;
+
+@override int get hashCode => 'Eire'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt extends Timezone {const Timezone$etcGmt._();
+
+@override String get value => 'Etc/GMT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt;
+
+@override int get hashCode => 'Etc/GMT'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt0 extends Timezone {const Timezone$etcGmt0._();
+
+@override String get value => 'Etc/GMT+0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt0;
+
+@override int get hashCode => 'Etc/GMT+0'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt1 extends Timezone {const Timezone$etcGmt1._();
+
+@override String get value => 'Etc/GMT+1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt1;
+
+@override int get hashCode => 'Etc/GMT+1'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt10 extends Timezone {const Timezone$etcGmt10._();
+
+@override String get value => 'Etc/GMT+10';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt10;
+
+@override int get hashCode => 'Etc/GMT+10'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt11 extends Timezone {const Timezone$etcGmt11._();
+
+@override String get value => 'Etc/GMT+11';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt11;
+
+@override int get hashCode => 'Etc/GMT+11'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt12 extends Timezone {const Timezone$etcGmt12._();
+
+@override String get value => 'Etc/GMT+12';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt12;
+
+@override int get hashCode => 'Etc/GMT+12'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt2 extends Timezone {const Timezone$etcGmt2._();
+
+@override String get value => 'Etc/GMT+2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt2;
+
+@override int get hashCode => 'Etc/GMT+2'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt3 extends Timezone {const Timezone$etcGmt3._();
+
+@override String get value => 'Etc/GMT+3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt3;
+
+@override int get hashCode => 'Etc/GMT+3'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt4 extends Timezone {const Timezone$etcGmt4._();
+
+@override String get value => 'Etc/GMT+4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt4;
+
+@override int get hashCode => 'Etc/GMT+4'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt5 extends Timezone {const Timezone$etcGmt5._();
+
+@override String get value => 'Etc/GMT+5';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt5;
+
+@override int get hashCode => 'Etc/GMT+5'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt6 extends Timezone {const Timezone$etcGmt6._();
+
+@override String get value => 'Etc/GMT+6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt6;
+
+@override int get hashCode => 'Etc/GMT+6'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt7 extends Timezone {const Timezone$etcGmt7._();
+
+@override String get value => 'Etc/GMT+7';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt7;
+
+@override int get hashCode => 'Etc/GMT+7'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt8 extends Timezone {const Timezone$etcGmt8._();
+
+@override String get value => 'Etc/GMT+8';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt8;
+
+@override int get hashCode => 'Etc/GMT+8'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt9 extends Timezone {const Timezone$etcGmt9._();
+
+@override String get value => 'Etc/GMT+9';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt9;
+
+@override int get hashCode => 'Etc/GMT+9'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt02 extends Timezone {const Timezone$etcGmt02._();
+
+@override String get value => 'Etc/GMT-0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt02;
+
+@override int get hashCode => 'Etc/GMT-0'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt13 extends Timezone {const Timezone$etcGmt13._();
+
+@override String get value => 'Etc/GMT-1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt13;
+
+@override int get hashCode => 'Etc/GMT-1'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt102 extends Timezone {const Timezone$etcGmt102._();
+
+@override String get value => 'Etc/GMT-10';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt102;
+
+@override int get hashCode => 'Etc/GMT-10'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt112 extends Timezone {const Timezone$etcGmt112._();
+
+@override String get value => 'Etc/GMT-11';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt112;
+
+@override int get hashCode => 'Etc/GMT-11'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt122 extends Timezone {const Timezone$etcGmt122._();
+
+@override String get value => 'Etc/GMT-12';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt122;
+
+@override int get hashCode => 'Etc/GMT-12'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt132 extends Timezone {const Timezone$etcGmt132._();
+
+@override String get value => 'Etc/GMT-13';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt132;
+
+@override int get hashCode => 'Etc/GMT-13'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt14 extends Timezone {const Timezone$etcGmt14._();
+
+@override String get value => 'Etc/GMT-14';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt14;
+
+@override int get hashCode => 'Etc/GMT-14'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt22 extends Timezone {const Timezone$etcGmt22._();
+
+@override String get value => 'Etc/GMT-2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt22;
+
+@override int get hashCode => 'Etc/GMT-2'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt32 extends Timezone {const Timezone$etcGmt32._();
+
+@override String get value => 'Etc/GMT-3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt32;
+
+@override int get hashCode => 'Etc/GMT-3'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt42 extends Timezone {const Timezone$etcGmt42._();
+
+@override String get value => 'Etc/GMT-4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt42;
+
+@override int get hashCode => 'Etc/GMT-4'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt52 extends Timezone {const Timezone$etcGmt52._();
+
+@override String get value => 'Etc/GMT-5';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt52;
+
+@override int get hashCode => 'Etc/GMT-5'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt62 extends Timezone {const Timezone$etcGmt62._();
+
+@override String get value => 'Etc/GMT-6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt62;
+
+@override int get hashCode => 'Etc/GMT-6'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt72 extends Timezone {const Timezone$etcGmt72._();
+
+@override String get value => 'Etc/GMT-7';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt72;
+
+@override int get hashCode => 'Etc/GMT-7'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt82 extends Timezone {const Timezone$etcGmt82._();
+
+@override String get value => 'Etc/GMT-8';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt82;
+
+@override int get hashCode => 'Etc/GMT-8'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt92 extends Timezone {const Timezone$etcGmt92._();
+
+@override String get value => 'Etc/GMT-9';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt92;
+
+@override int get hashCode => 'Etc/GMT-9'.hashCode;
+
+ }
+@immutable final class Timezone$etcGmt03 extends Timezone {const Timezone$etcGmt03._();
+
+@override String get value => 'Etc/GMT0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGmt03;
+
+@override int get hashCode => 'Etc/GMT0'.hashCode;
+
+ }
+@immutable final class Timezone$etcGreenwich extends Timezone {const Timezone$etcGreenwich._();
+
+@override String get value => 'Etc/Greenwich';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcGreenwich;
+
+@override int get hashCode => 'Etc/Greenwich'.hashCode;
+
+ }
+@immutable final class Timezone$etcUct extends Timezone {const Timezone$etcUct._();
+
+@override String get value => 'Etc/UCT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcUct;
+
+@override int get hashCode => 'Etc/UCT'.hashCode;
+
+ }
+@immutable final class Timezone$etcUtc extends Timezone {const Timezone$etcUtc._();
+
+@override String get value => 'Etc/UTC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcUtc;
+
+@override int get hashCode => 'Etc/UTC'.hashCode;
+
+ }
+@immutable final class Timezone$etcUniversal extends Timezone {const Timezone$etcUniversal._();
+
+@override String get value => 'Etc/Universal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcUniversal;
+
+@override int get hashCode => 'Etc/Universal'.hashCode;
+
+ }
+@immutable final class Timezone$etcZulu extends Timezone {const Timezone$etcZulu._();
+
+@override String get value => 'Etc/Zulu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$etcZulu;
+
+@override int get hashCode => 'Etc/Zulu'.hashCode;
+
+ }
+@immutable final class Timezone$europeAmsterdam extends Timezone {const Timezone$europeAmsterdam._();
+
+@override String get value => 'Europe/Amsterdam';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeAmsterdam;
+
+@override int get hashCode => 'Europe/Amsterdam'.hashCode;
+
+ }
+@immutable final class Timezone$europeAndorra extends Timezone {const Timezone$europeAndorra._();
+
+@override String get value => 'Europe/Andorra';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeAndorra;
+
+@override int get hashCode => 'Europe/Andorra'.hashCode;
+
+ }
+@immutable final class Timezone$europeAstrakhan extends Timezone {const Timezone$europeAstrakhan._();
+
+@override String get value => 'Europe/Astrakhan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeAstrakhan;
+
+@override int get hashCode => 'Europe/Astrakhan'.hashCode;
+
+ }
+@immutable final class Timezone$europeAthens extends Timezone {const Timezone$europeAthens._();
+
+@override String get value => 'Europe/Athens';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeAthens;
+
+@override int get hashCode => 'Europe/Athens'.hashCode;
+
+ }
+@immutable final class Timezone$europeBelfast extends Timezone {const Timezone$europeBelfast._();
+
+@override String get value => 'Europe/Belfast';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeBelfast;
+
+@override int get hashCode => 'Europe/Belfast'.hashCode;
+
+ }
+@immutable final class Timezone$europeBelgrade extends Timezone {const Timezone$europeBelgrade._();
+
+@override String get value => 'Europe/Belgrade';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeBelgrade;
+
+@override int get hashCode => 'Europe/Belgrade'.hashCode;
+
+ }
+@immutable final class Timezone$europeBerlin extends Timezone {const Timezone$europeBerlin._();
+
+@override String get value => 'Europe/Berlin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeBerlin;
+
+@override int get hashCode => 'Europe/Berlin'.hashCode;
+
+ }
+@immutable final class Timezone$europeBratislava extends Timezone {const Timezone$europeBratislava._();
+
+@override String get value => 'Europe/Bratislava';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeBratislava;
+
+@override int get hashCode => 'Europe/Bratislava'.hashCode;
+
+ }
+@immutable final class Timezone$europeBrussels extends Timezone {const Timezone$europeBrussels._();
+
+@override String get value => 'Europe/Brussels';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeBrussels;
+
+@override int get hashCode => 'Europe/Brussels'.hashCode;
+
+ }
+@immutable final class Timezone$europeBucharest extends Timezone {const Timezone$europeBucharest._();
+
+@override String get value => 'Europe/Bucharest';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeBucharest;
+
+@override int get hashCode => 'Europe/Bucharest'.hashCode;
+
+ }
+@immutable final class Timezone$europeBudapest extends Timezone {const Timezone$europeBudapest._();
+
+@override String get value => 'Europe/Budapest';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeBudapest;
+
+@override int get hashCode => 'Europe/Budapest'.hashCode;
+
+ }
+@immutable final class Timezone$europeBusingen extends Timezone {const Timezone$europeBusingen._();
+
+@override String get value => 'Europe/Busingen';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeBusingen;
+
+@override int get hashCode => 'Europe/Busingen'.hashCode;
+
+ }
+@immutable final class Timezone$europeChisinau extends Timezone {const Timezone$europeChisinau._();
+
+@override String get value => 'Europe/Chisinau';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeChisinau;
+
+@override int get hashCode => 'Europe/Chisinau'.hashCode;
+
+ }
+@immutable final class Timezone$europeCopenhagen extends Timezone {const Timezone$europeCopenhagen._();
+
+@override String get value => 'Europe/Copenhagen';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeCopenhagen;
+
+@override int get hashCode => 'Europe/Copenhagen'.hashCode;
+
+ }
+@immutable final class Timezone$europeDublin extends Timezone {const Timezone$europeDublin._();
+
+@override String get value => 'Europe/Dublin';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeDublin;
+
+@override int get hashCode => 'Europe/Dublin'.hashCode;
+
+ }
+@immutable final class Timezone$europeGibraltar extends Timezone {const Timezone$europeGibraltar._();
+
+@override String get value => 'Europe/Gibraltar';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeGibraltar;
+
+@override int get hashCode => 'Europe/Gibraltar'.hashCode;
+
+ }
+@immutable final class Timezone$europeGuernsey extends Timezone {const Timezone$europeGuernsey._();
+
+@override String get value => 'Europe/Guernsey';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeGuernsey;
+
+@override int get hashCode => 'Europe/Guernsey'.hashCode;
+
+ }
+@immutable final class Timezone$europeHelsinki extends Timezone {const Timezone$europeHelsinki._();
+
+@override String get value => 'Europe/Helsinki';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeHelsinki;
+
+@override int get hashCode => 'Europe/Helsinki'.hashCode;
+
+ }
+@immutable final class Timezone$europeIsleOfMan extends Timezone {const Timezone$europeIsleOfMan._();
+
+@override String get value => 'Europe/Isle_of_Man';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeIsleOfMan;
+
+@override int get hashCode => 'Europe/Isle_of_Man'.hashCode;
+
+ }
+@immutable final class Timezone$europeIstanbul extends Timezone {const Timezone$europeIstanbul._();
+
+@override String get value => 'Europe/Istanbul';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeIstanbul;
+
+@override int get hashCode => 'Europe/Istanbul'.hashCode;
+
+ }
+@immutable final class Timezone$europeJersey extends Timezone {const Timezone$europeJersey._();
+
+@override String get value => 'Europe/Jersey';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeJersey;
+
+@override int get hashCode => 'Europe/Jersey'.hashCode;
+
+ }
+@immutable final class Timezone$europeKaliningrad extends Timezone {const Timezone$europeKaliningrad._();
+
+@override String get value => 'Europe/Kaliningrad';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeKaliningrad;
+
+@override int get hashCode => 'Europe/Kaliningrad'.hashCode;
+
+ }
+@immutable final class Timezone$europeKiev extends Timezone {const Timezone$europeKiev._();
+
+@override String get value => 'Europe/Kiev';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeKiev;
+
+@override int get hashCode => 'Europe/Kiev'.hashCode;
+
+ }
+@immutable final class Timezone$europeKirov extends Timezone {const Timezone$europeKirov._();
+
+@override String get value => 'Europe/Kirov';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeKirov;
+
+@override int get hashCode => 'Europe/Kirov'.hashCode;
+
+ }
+@immutable final class Timezone$europeKyiv extends Timezone {const Timezone$europeKyiv._();
+
+@override String get value => 'Europe/Kyiv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeKyiv;
+
+@override int get hashCode => 'Europe/Kyiv'.hashCode;
+
+ }
+@immutable final class Timezone$europeLisbon extends Timezone {const Timezone$europeLisbon._();
+
+@override String get value => 'Europe/Lisbon';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeLisbon;
+
+@override int get hashCode => 'Europe/Lisbon'.hashCode;
+
+ }
+@immutable final class Timezone$europeLjubljana extends Timezone {const Timezone$europeLjubljana._();
+
+@override String get value => 'Europe/Ljubljana';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeLjubljana;
+
+@override int get hashCode => 'Europe/Ljubljana'.hashCode;
+
+ }
+@immutable final class Timezone$europeLondon extends Timezone {const Timezone$europeLondon._();
+
+@override String get value => 'Europe/London';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeLondon;
+
+@override int get hashCode => 'Europe/London'.hashCode;
+
+ }
+@immutable final class Timezone$europeLuxembourg extends Timezone {const Timezone$europeLuxembourg._();
+
+@override String get value => 'Europe/Luxembourg';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeLuxembourg;
+
+@override int get hashCode => 'Europe/Luxembourg'.hashCode;
+
+ }
+@immutable final class Timezone$europeMadrid extends Timezone {const Timezone$europeMadrid._();
+
+@override String get value => 'Europe/Madrid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeMadrid;
+
+@override int get hashCode => 'Europe/Madrid'.hashCode;
+
+ }
+@immutable final class Timezone$europeMalta extends Timezone {const Timezone$europeMalta._();
+
+@override String get value => 'Europe/Malta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeMalta;
+
+@override int get hashCode => 'Europe/Malta'.hashCode;
+
+ }
+@immutable final class Timezone$europeMariehamn extends Timezone {const Timezone$europeMariehamn._();
+
+@override String get value => 'Europe/Mariehamn';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeMariehamn;
+
+@override int get hashCode => 'Europe/Mariehamn'.hashCode;
+
+ }
+@immutable final class Timezone$europeMinsk extends Timezone {const Timezone$europeMinsk._();
+
+@override String get value => 'Europe/Minsk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeMinsk;
+
+@override int get hashCode => 'Europe/Minsk'.hashCode;
+
+ }
+@immutable final class Timezone$europeMonaco extends Timezone {const Timezone$europeMonaco._();
+
+@override String get value => 'Europe/Monaco';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeMonaco;
+
+@override int get hashCode => 'Europe/Monaco'.hashCode;
+
+ }
+@immutable final class Timezone$europeMoscow extends Timezone {const Timezone$europeMoscow._();
+
+@override String get value => 'Europe/Moscow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeMoscow;
+
+@override int get hashCode => 'Europe/Moscow'.hashCode;
+
+ }
+@immutable final class Timezone$europeNicosia extends Timezone {const Timezone$europeNicosia._();
+
+@override String get value => 'Europe/Nicosia';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeNicosia;
+
+@override int get hashCode => 'Europe/Nicosia'.hashCode;
+
+ }
+@immutable final class Timezone$europeOslo extends Timezone {const Timezone$europeOslo._();
+
+@override String get value => 'Europe/Oslo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeOslo;
+
+@override int get hashCode => 'Europe/Oslo'.hashCode;
+
+ }
+@immutable final class Timezone$europeParis extends Timezone {const Timezone$europeParis._();
+
+@override String get value => 'Europe/Paris';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeParis;
+
+@override int get hashCode => 'Europe/Paris'.hashCode;
+
+ }
+@immutable final class Timezone$europePodgorica extends Timezone {const Timezone$europePodgorica._();
+
+@override String get value => 'Europe/Podgorica';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europePodgorica;
+
+@override int get hashCode => 'Europe/Podgorica'.hashCode;
+
+ }
+@immutable final class Timezone$europePrague extends Timezone {const Timezone$europePrague._();
+
+@override String get value => 'Europe/Prague';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europePrague;
+
+@override int get hashCode => 'Europe/Prague'.hashCode;
+
+ }
+@immutable final class Timezone$europeRiga extends Timezone {const Timezone$europeRiga._();
+
+@override String get value => 'Europe/Riga';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeRiga;
+
+@override int get hashCode => 'Europe/Riga'.hashCode;
+
+ }
+@immutable final class Timezone$europeRome extends Timezone {const Timezone$europeRome._();
+
+@override String get value => 'Europe/Rome';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeRome;
+
+@override int get hashCode => 'Europe/Rome'.hashCode;
+
+ }
+@immutable final class Timezone$europeSamara extends Timezone {const Timezone$europeSamara._();
+
+@override String get value => 'Europe/Samara';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeSamara;
+
+@override int get hashCode => 'Europe/Samara'.hashCode;
+
+ }
+@immutable final class Timezone$europeSanMarino extends Timezone {const Timezone$europeSanMarino._();
+
+@override String get value => 'Europe/San_Marino';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeSanMarino;
+
+@override int get hashCode => 'Europe/San_Marino'.hashCode;
+
+ }
+@immutable final class Timezone$europeSarajevo extends Timezone {const Timezone$europeSarajevo._();
+
+@override String get value => 'Europe/Sarajevo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeSarajevo;
+
+@override int get hashCode => 'Europe/Sarajevo'.hashCode;
+
+ }
+@immutable final class Timezone$europeSaratov extends Timezone {const Timezone$europeSaratov._();
+
+@override String get value => 'Europe/Saratov';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeSaratov;
+
+@override int get hashCode => 'Europe/Saratov'.hashCode;
+
+ }
+@immutable final class Timezone$europeSimferopol extends Timezone {const Timezone$europeSimferopol._();
+
+@override String get value => 'Europe/Simferopol';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeSimferopol;
+
+@override int get hashCode => 'Europe/Simferopol'.hashCode;
+
+ }
+@immutable final class Timezone$europeSkopje extends Timezone {const Timezone$europeSkopje._();
+
+@override String get value => 'Europe/Skopje';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeSkopje;
+
+@override int get hashCode => 'Europe/Skopje'.hashCode;
+
+ }
+@immutable final class Timezone$europeSofia extends Timezone {const Timezone$europeSofia._();
+
+@override String get value => 'Europe/Sofia';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeSofia;
+
+@override int get hashCode => 'Europe/Sofia'.hashCode;
+
+ }
+@immutable final class Timezone$europeStockholm extends Timezone {const Timezone$europeStockholm._();
+
+@override String get value => 'Europe/Stockholm';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeStockholm;
+
+@override int get hashCode => 'Europe/Stockholm'.hashCode;
+
+ }
+@immutable final class Timezone$europeTallinn extends Timezone {const Timezone$europeTallinn._();
+
+@override String get value => 'Europe/Tallinn';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeTallinn;
+
+@override int get hashCode => 'Europe/Tallinn'.hashCode;
+
+ }
+@immutable final class Timezone$europeTirane extends Timezone {const Timezone$europeTirane._();
+
+@override String get value => 'Europe/Tirane';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeTirane;
+
+@override int get hashCode => 'Europe/Tirane'.hashCode;
+
+ }
+@immutable final class Timezone$europeTiraspol extends Timezone {const Timezone$europeTiraspol._();
+
+@override String get value => 'Europe/Tiraspol';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeTiraspol;
+
+@override int get hashCode => 'Europe/Tiraspol'.hashCode;
+
+ }
+@immutable final class Timezone$europeUlyanovsk extends Timezone {const Timezone$europeUlyanovsk._();
+
+@override String get value => 'Europe/Ulyanovsk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeUlyanovsk;
+
+@override int get hashCode => 'Europe/Ulyanovsk'.hashCode;
+
+ }
+@immutable final class Timezone$europeUzhgorod extends Timezone {const Timezone$europeUzhgorod._();
+
+@override String get value => 'Europe/Uzhgorod';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeUzhgorod;
+
+@override int get hashCode => 'Europe/Uzhgorod'.hashCode;
+
+ }
+@immutable final class Timezone$europeVaduz extends Timezone {const Timezone$europeVaduz._();
+
+@override String get value => 'Europe/Vaduz';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeVaduz;
+
+@override int get hashCode => 'Europe/Vaduz'.hashCode;
+
+ }
+@immutable final class Timezone$europeVatican extends Timezone {const Timezone$europeVatican._();
+
+@override String get value => 'Europe/Vatican';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeVatican;
+
+@override int get hashCode => 'Europe/Vatican'.hashCode;
+
+ }
+@immutable final class Timezone$europeVienna extends Timezone {const Timezone$europeVienna._();
+
+@override String get value => 'Europe/Vienna';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeVienna;
+
+@override int get hashCode => 'Europe/Vienna'.hashCode;
+
+ }
+@immutable final class Timezone$europeVilnius extends Timezone {const Timezone$europeVilnius._();
+
+@override String get value => 'Europe/Vilnius';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeVilnius;
+
+@override int get hashCode => 'Europe/Vilnius'.hashCode;
+
+ }
+@immutable final class Timezone$europeVolgograd extends Timezone {const Timezone$europeVolgograd._();
+
+@override String get value => 'Europe/Volgograd';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeVolgograd;
+
+@override int get hashCode => 'Europe/Volgograd'.hashCode;
+
+ }
+@immutable final class Timezone$europeWarsaw extends Timezone {const Timezone$europeWarsaw._();
+
+@override String get value => 'Europe/Warsaw';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeWarsaw;
+
+@override int get hashCode => 'Europe/Warsaw'.hashCode;
+
+ }
+@immutable final class Timezone$europeZagreb extends Timezone {const Timezone$europeZagreb._();
+
+@override String get value => 'Europe/Zagreb';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeZagreb;
+
+@override int get hashCode => 'Europe/Zagreb'.hashCode;
+
+ }
+@immutable final class Timezone$europeZaporozhye extends Timezone {const Timezone$europeZaporozhye._();
+
+@override String get value => 'Europe/Zaporozhye';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeZaporozhye;
+
+@override int get hashCode => 'Europe/Zaporozhye'.hashCode;
+
+ }
+@immutable final class Timezone$europeZurich extends Timezone {const Timezone$europeZurich._();
+
+@override String get value => 'Europe/Zurich';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$europeZurich;
+
+@override int get hashCode => 'Europe/Zurich'.hashCode;
+
+ }
+@immutable final class Timezone$$factory extends Timezone {const Timezone$$factory._();
+
+@override String get value => 'Factory';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$$factory;
+
+@override int get hashCode => 'Factory'.hashCode;
+
+ }
+@immutable final class Timezone$gb extends Timezone {const Timezone$gb._();
+
+@override String get value => 'GB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$gb;
+
+@override int get hashCode => 'GB'.hashCode;
+
+ }
+@immutable final class Timezone$gbEire extends Timezone {const Timezone$gbEire._();
+
+@override String get value => 'GB-Eire';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$gbEire;
+
+@override int get hashCode => 'GB-Eire'.hashCode;
+
+ }
+@immutable final class Timezone$gmt extends Timezone {const Timezone$gmt._();
+
+@override String get value => 'GMT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$gmt;
+
+@override int get hashCode => 'GMT'.hashCode;
+
+ }
+@immutable final class Timezone$gmt0 extends Timezone {const Timezone$gmt0._();
+
+@override String get value => 'GMT+0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$gmt0;
+
+@override int get hashCode => 'GMT+0'.hashCode;
+
+ }
+@immutable final class Timezone$gmt02 extends Timezone {const Timezone$gmt02._();
+
+@override String get value => 'GMT-0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$gmt02;
+
+@override int get hashCode => 'GMT-0'.hashCode;
+
+ }
+@immutable final class Timezone$gmt03 extends Timezone {const Timezone$gmt03._();
+
+@override String get value => 'GMT0';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$gmt03;
+
+@override int get hashCode => 'GMT0'.hashCode;
+
+ }
+@immutable final class Timezone$greenwich extends Timezone {const Timezone$greenwich._();
+
+@override String get value => 'Greenwich';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$greenwich;
+
+@override int get hashCode => 'Greenwich'.hashCode;
+
+ }
+@immutable final class Timezone$hst extends Timezone {const Timezone$hst._();
+
+@override String get value => 'HST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$hst;
+
+@override int get hashCode => 'HST'.hashCode;
+
+ }
+@immutable final class Timezone$hongkong extends Timezone {const Timezone$hongkong._();
+
+@override String get value => 'Hongkong';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$hongkong;
+
+@override int get hashCode => 'Hongkong'.hashCode;
+
+ }
+@immutable final class Timezone$iceland extends Timezone {const Timezone$iceland._();
+
+@override String get value => 'Iceland';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$iceland;
+
+@override int get hashCode => 'Iceland'.hashCode;
+
+ }
+@immutable final class Timezone$indianAntananarivo extends Timezone {const Timezone$indianAntananarivo._();
+
+@override String get value => 'Indian/Antananarivo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$indianAntananarivo;
+
+@override int get hashCode => 'Indian/Antananarivo'.hashCode;
+
+ }
+@immutable final class Timezone$indianChagos extends Timezone {const Timezone$indianChagos._();
+
+@override String get value => 'Indian/Chagos';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$indianChagos;
+
+@override int get hashCode => 'Indian/Chagos'.hashCode;
+
+ }
+@immutable final class Timezone$indianChristmas extends Timezone {const Timezone$indianChristmas._();
+
+@override String get value => 'Indian/Christmas';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$indianChristmas;
+
+@override int get hashCode => 'Indian/Christmas'.hashCode;
+
+ }
+@immutable final class Timezone$indianCocos extends Timezone {const Timezone$indianCocos._();
+
+@override String get value => 'Indian/Cocos';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$indianCocos;
+
+@override int get hashCode => 'Indian/Cocos'.hashCode;
+
+ }
+@immutable final class Timezone$indianComoro extends Timezone {const Timezone$indianComoro._();
+
+@override String get value => 'Indian/Comoro';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$indianComoro;
+
+@override int get hashCode => 'Indian/Comoro'.hashCode;
+
+ }
+@immutable final class Timezone$indianKerguelen extends Timezone {const Timezone$indianKerguelen._();
+
+@override String get value => 'Indian/Kerguelen';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$indianKerguelen;
+
+@override int get hashCode => 'Indian/Kerguelen'.hashCode;
+
+ }
+@immutable final class Timezone$indianMahe extends Timezone {const Timezone$indianMahe._();
+
+@override String get value => 'Indian/Mahe';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$indianMahe;
+
+@override int get hashCode => 'Indian/Mahe'.hashCode;
+
+ }
+@immutable final class Timezone$indianMaldives extends Timezone {const Timezone$indianMaldives._();
+
+@override String get value => 'Indian/Maldives';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$indianMaldives;
+
+@override int get hashCode => 'Indian/Maldives'.hashCode;
+
+ }
+@immutable final class Timezone$indianMauritius extends Timezone {const Timezone$indianMauritius._();
+
+@override String get value => 'Indian/Mauritius';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$indianMauritius;
+
+@override int get hashCode => 'Indian/Mauritius'.hashCode;
+
+ }
+@immutable final class Timezone$indianMayotte extends Timezone {const Timezone$indianMayotte._();
+
+@override String get value => 'Indian/Mayotte';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$indianMayotte;
+
+@override int get hashCode => 'Indian/Mayotte'.hashCode;
+
+ }
+@immutable final class Timezone$indianReunion extends Timezone {const Timezone$indianReunion._();
+
+@override String get value => 'Indian/Reunion';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$indianReunion;
+
+@override int get hashCode => 'Indian/Reunion'.hashCode;
+
+ }
+@immutable final class Timezone$iran extends Timezone {const Timezone$iran._();
+
+@override String get value => 'Iran';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$iran;
+
+@override int get hashCode => 'Iran'.hashCode;
+
+ }
+@immutable final class Timezone$israel extends Timezone {const Timezone$israel._();
+
+@override String get value => 'Israel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$israel;
+
+@override int get hashCode => 'Israel'.hashCode;
+
+ }
+@immutable final class Timezone$jamaica extends Timezone {const Timezone$jamaica._();
+
+@override String get value => 'Jamaica';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$jamaica;
+
+@override int get hashCode => 'Jamaica'.hashCode;
+
+ }
+@immutable final class Timezone$japan extends Timezone {const Timezone$japan._();
+
+@override String get value => 'Japan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$japan;
+
+@override int get hashCode => 'Japan'.hashCode;
+
+ }
+@immutable final class Timezone$kwajalein extends Timezone {const Timezone$kwajalein._();
+
+@override String get value => 'Kwajalein';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$kwajalein;
+
+@override int get hashCode => 'Kwajalein'.hashCode;
+
+ }
+@immutable final class Timezone$libya extends Timezone {const Timezone$libya._();
+
+@override String get value => 'Libya';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$libya;
+
+@override int get hashCode => 'Libya'.hashCode;
+
+ }
+@immutable final class Timezone$met extends Timezone {const Timezone$met._();
+
+@override String get value => 'MET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$met;
+
+@override int get hashCode => 'MET'.hashCode;
+
+ }
+@immutable final class Timezone$mst extends Timezone {const Timezone$mst._();
+
+@override String get value => 'MST';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$mst;
+
+@override int get hashCode => 'MST'.hashCode;
+
+ }
+@immutable final class Timezone$mst7Mdt extends Timezone {const Timezone$mst7Mdt._();
+
+@override String get value => 'MST7MDT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$mst7Mdt;
+
+@override int get hashCode => 'MST7MDT'.hashCode;
+
+ }
+@immutable final class Timezone$mexicoBajaNorte extends Timezone {const Timezone$mexicoBajaNorte._();
+
+@override String get value => 'Mexico/BajaNorte';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$mexicoBajaNorte;
+
+@override int get hashCode => 'Mexico/BajaNorte'.hashCode;
+
+ }
+@immutable final class Timezone$mexicoBajaSur extends Timezone {const Timezone$mexicoBajaSur._();
+
+@override String get value => 'Mexico/BajaSur';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$mexicoBajaSur;
+
+@override int get hashCode => 'Mexico/BajaSur'.hashCode;
+
+ }
+@immutable final class Timezone$mexicoGeneral extends Timezone {const Timezone$mexicoGeneral._();
+
+@override String get value => 'Mexico/General';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$mexicoGeneral;
+
+@override int get hashCode => 'Mexico/General'.hashCode;
+
+ }
+@immutable final class Timezone$nz extends Timezone {const Timezone$nz._();
+
+@override String get value => 'NZ';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$nz;
+
+@override int get hashCode => 'NZ'.hashCode;
+
+ }
+@immutable final class Timezone$nzChat extends Timezone {const Timezone$nzChat._();
+
+@override String get value => 'NZ-CHAT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$nzChat;
+
+@override int get hashCode => 'NZ-CHAT'.hashCode;
+
+ }
+@immutable final class Timezone$navajo extends Timezone {const Timezone$navajo._();
+
+@override String get value => 'Navajo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$navajo;
+
+@override int get hashCode => 'Navajo'.hashCode;
+
+ }
+@immutable final class Timezone$prc extends Timezone {const Timezone$prc._();
+
+@override String get value => 'PRC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$prc;
+
+@override int get hashCode => 'PRC'.hashCode;
+
+ }
+@immutable final class Timezone$pst8Pdt extends Timezone {const Timezone$pst8Pdt._();
+
+@override String get value => 'PST8PDT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pst8Pdt;
+
+@override int get hashCode => 'PST8PDT'.hashCode;
+
+ }
+@immutable final class Timezone$pacificApia extends Timezone {const Timezone$pacificApia._();
+
+@override String get value => 'Pacific/Apia';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificApia;
+
+@override int get hashCode => 'Pacific/Apia'.hashCode;
+
+ }
+@immutable final class Timezone$pacificAuckland extends Timezone {const Timezone$pacificAuckland._();
+
+@override String get value => 'Pacific/Auckland';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificAuckland;
+
+@override int get hashCode => 'Pacific/Auckland'.hashCode;
+
+ }
+@immutable final class Timezone$pacificBougainville extends Timezone {const Timezone$pacificBougainville._();
+
+@override String get value => 'Pacific/Bougainville';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificBougainville;
+
+@override int get hashCode => 'Pacific/Bougainville'.hashCode;
+
+ }
+@immutable final class Timezone$pacificChatham extends Timezone {const Timezone$pacificChatham._();
+
+@override String get value => 'Pacific/Chatham';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificChatham;
+
+@override int get hashCode => 'Pacific/Chatham'.hashCode;
+
+ }
+@immutable final class Timezone$pacificChuuk extends Timezone {const Timezone$pacificChuuk._();
+
+@override String get value => 'Pacific/Chuuk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificChuuk;
+
+@override int get hashCode => 'Pacific/Chuuk'.hashCode;
+
+ }
+@immutable final class Timezone$pacificEaster extends Timezone {const Timezone$pacificEaster._();
+
+@override String get value => 'Pacific/Easter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificEaster;
+
+@override int get hashCode => 'Pacific/Easter'.hashCode;
+
+ }
+@immutable final class Timezone$pacificEfate extends Timezone {const Timezone$pacificEfate._();
+
+@override String get value => 'Pacific/Efate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificEfate;
+
+@override int get hashCode => 'Pacific/Efate'.hashCode;
+
+ }
+@immutable final class Timezone$pacificEnderbury extends Timezone {const Timezone$pacificEnderbury._();
+
+@override String get value => 'Pacific/Enderbury';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificEnderbury;
+
+@override int get hashCode => 'Pacific/Enderbury'.hashCode;
+
+ }
+@immutable final class Timezone$pacificFakaofo extends Timezone {const Timezone$pacificFakaofo._();
+
+@override String get value => 'Pacific/Fakaofo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificFakaofo;
+
+@override int get hashCode => 'Pacific/Fakaofo'.hashCode;
+
+ }
+@immutable final class Timezone$pacificFiji extends Timezone {const Timezone$pacificFiji._();
+
+@override String get value => 'Pacific/Fiji';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificFiji;
+
+@override int get hashCode => 'Pacific/Fiji'.hashCode;
+
+ }
+@immutable final class Timezone$pacificFunafuti extends Timezone {const Timezone$pacificFunafuti._();
+
+@override String get value => 'Pacific/Funafuti';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificFunafuti;
+
+@override int get hashCode => 'Pacific/Funafuti'.hashCode;
+
+ }
+@immutable final class Timezone$pacificGalapagos extends Timezone {const Timezone$pacificGalapagos._();
+
+@override String get value => 'Pacific/Galapagos';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificGalapagos;
+
+@override int get hashCode => 'Pacific/Galapagos'.hashCode;
+
+ }
+@immutable final class Timezone$pacificGambier extends Timezone {const Timezone$pacificGambier._();
+
+@override String get value => 'Pacific/Gambier';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificGambier;
+
+@override int get hashCode => 'Pacific/Gambier'.hashCode;
+
+ }
+@immutable final class Timezone$pacificGuadalcanal extends Timezone {const Timezone$pacificGuadalcanal._();
+
+@override String get value => 'Pacific/Guadalcanal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificGuadalcanal;
+
+@override int get hashCode => 'Pacific/Guadalcanal'.hashCode;
+
+ }
+@immutable final class Timezone$pacificGuam extends Timezone {const Timezone$pacificGuam._();
+
+@override String get value => 'Pacific/Guam';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificGuam;
+
+@override int get hashCode => 'Pacific/Guam'.hashCode;
+
+ }
+@immutable final class Timezone$pacificHonolulu extends Timezone {const Timezone$pacificHonolulu._();
+
+@override String get value => 'Pacific/Honolulu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificHonolulu;
+
+@override int get hashCode => 'Pacific/Honolulu'.hashCode;
+
+ }
+@immutable final class Timezone$pacificJohnston extends Timezone {const Timezone$pacificJohnston._();
+
+@override String get value => 'Pacific/Johnston';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificJohnston;
+
+@override int get hashCode => 'Pacific/Johnston'.hashCode;
+
+ }
+@immutable final class Timezone$pacificKanton extends Timezone {const Timezone$pacificKanton._();
+
+@override String get value => 'Pacific/Kanton';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificKanton;
+
+@override int get hashCode => 'Pacific/Kanton'.hashCode;
+
+ }
+@immutable final class Timezone$pacificKiritimati extends Timezone {const Timezone$pacificKiritimati._();
+
+@override String get value => 'Pacific/Kiritimati';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificKiritimati;
+
+@override int get hashCode => 'Pacific/Kiritimati'.hashCode;
+
+ }
+@immutable final class Timezone$pacificKosrae extends Timezone {const Timezone$pacificKosrae._();
+
+@override String get value => 'Pacific/Kosrae';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificKosrae;
+
+@override int get hashCode => 'Pacific/Kosrae'.hashCode;
+
+ }
+@immutable final class Timezone$pacificKwajalein extends Timezone {const Timezone$pacificKwajalein._();
+
+@override String get value => 'Pacific/Kwajalein';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificKwajalein;
+
+@override int get hashCode => 'Pacific/Kwajalein'.hashCode;
+
+ }
+@immutable final class Timezone$pacificMajuro extends Timezone {const Timezone$pacificMajuro._();
+
+@override String get value => 'Pacific/Majuro';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificMajuro;
+
+@override int get hashCode => 'Pacific/Majuro'.hashCode;
+
+ }
+@immutable final class Timezone$pacificMarquesas extends Timezone {const Timezone$pacificMarquesas._();
+
+@override String get value => 'Pacific/Marquesas';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificMarquesas;
+
+@override int get hashCode => 'Pacific/Marquesas'.hashCode;
+
+ }
+@immutable final class Timezone$pacificMidway extends Timezone {const Timezone$pacificMidway._();
+
+@override String get value => 'Pacific/Midway';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificMidway;
+
+@override int get hashCode => 'Pacific/Midway'.hashCode;
+
+ }
+@immutable final class Timezone$pacificNauru extends Timezone {const Timezone$pacificNauru._();
+
+@override String get value => 'Pacific/Nauru';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificNauru;
+
+@override int get hashCode => 'Pacific/Nauru'.hashCode;
+
+ }
+@immutable final class Timezone$pacificNiue extends Timezone {const Timezone$pacificNiue._();
+
+@override String get value => 'Pacific/Niue';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificNiue;
+
+@override int get hashCode => 'Pacific/Niue'.hashCode;
+
+ }
+@immutable final class Timezone$pacificNorfolk extends Timezone {const Timezone$pacificNorfolk._();
+
+@override String get value => 'Pacific/Norfolk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificNorfolk;
+
+@override int get hashCode => 'Pacific/Norfolk'.hashCode;
+
+ }
+@immutable final class Timezone$pacificNoumea extends Timezone {const Timezone$pacificNoumea._();
+
+@override String get value => 'Pacific/Noumea';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificNoumea;
+
+@override int get hashCode => 'Pacific/Noumea'.hashCode;
+
+ }
+@immutable final class Timezone$pacificPagoPago extends Timezone {const Timezone$pacificPagoPago._();
+
+@override String get value => 'Pacific/Pago_Pago';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificPagoPago;
+
+@override int get hashCode => 'Pacific/Pago_Pago'.hashCode;
+
+ }
+@immutable final class Timezone$pacificPalau extends Timezone {const Timezone$pacificPalau._();
+
+@override String get value => 'Pacific/Palau';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificPalau;
+
+@override int get hashCode => 'Pacific/Palau'.hashCode;
+
+ }
+@immutable final class Timezone$pacificPitcairn extends Timezone {const Timezone$pacificPitcairn._();
+
+@override String get value => 'Pacific/Pitcairn';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificPitcairn;
+
+@override int get hashCode => 'Pacific/Pitcairn'.hashCode;
+
+ }
+@immutable final class Timezone$pacificPohnpei extends Timezone {const Timezone$pacificPohnpei._();
+
+@override String get value => 'Pacific/Pohnpei';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificPohnpei;
+
+@override int get hashCode => 'Pacific/Pohnpei'.hashCode;
+
+ }
+@immutable final class Timezone$pacificPonape extends Timezone {const Timezone$pacificPonape._();
+
+@override String get value => 'Pacific/Ponape';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificPonape;
+
+@override int get hashCode => 'Pacific/Ponape'.hashCode;
+
+ }
+@immutable final class Timezone$pacificPortMoresby extends Timezone {const Timezone$pacificPortMoresby._();
+
+@override String get value => 'Pacific/Port_Moresby';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificPortMoresby;
+
+@override int get hashCode => 'Pacific/Port_Moresby'.hashCode;
+
+ }
+@immutable final class Timezone$pacificRarotonga extends Timezone {const Timezone$pacificRarotonga._();
+
+@override String get value => 'Pacific/Rarotonga';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificRarotonga;
+
+@override int get hashCode => 'Pacific/Rarotonga'.hashCode;
+
+ }
+@immutable final class Timezone$pacificSaipan extends Timezone {const Timezone$pacificSaipan._();
+
+@override String get value => 'Pacific/Saipan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificSaipan;
+
+@override int get hashCode => 'Pacific/Saipan'.hashCode;
+
+ }
+@immutable final class Timezone$pacificSamoa extends Timezone {const Timezone$pacificSamoa._();
+
+@override String get value => 'Pacific/Samoa';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificSamoa;
+
+@override int get hashCode => 'Pacific/Samoa'.hashCode;
+
+ }
+@immutable final class Timezone$pacificTahiti extends Timezone {const Timezone$pacificTahiti._();
+
+@override String get value => 'Pacific/Tahiti';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificTahiti;
+
+@override int get hashCode => 'Pacific/Tahiti'.hashCode;
+
+ }
+@immutable final class Timezone$pacificTarawa extends Timezone {const Timezone$pacificTarawa._();
+
+@override String get value => 'Pacific/Tarawa';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificTarawa;
+
+@override int get hashCode => 'Pacific/Tarawa'.hashCode;
+
+ }
+@immutable final class Timezone$pacificTongatapu extends Timezone {const Timezone$pacificTongatapu._();
+
+@override String get value => 'Pacific/Tongatapu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificTongatapu;
+
+@override int get hashCode => 'Pacific/Tongatapu'.hashCode;
+
+ }
+@immutable final class Timezone$pacificTruk extends Timezone {const Timezone$pacificTruk._();
+
+@override String get value => 'Pacific/Truk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificTruk;
+
+@override int get hashCode => 'Pacific/Truk'.hashCode;
+
+ }
+@immutable final class Timezone$pacificWake extends Timezone {const Timezone$pacificWake._();
+
+@override String get value => 'Pacific/Wake';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificWake;
+
+@override int get hashCode => 'Pacific/Wake'.hashCode;
+
+ }
+@immutable final class Timezone$pacificWallis extends Timezone {const Timezone$pacificWallis._();
+
+@override String get value => 'Pacific/Wallis';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificWallis;
+
+@override int get hashCode => 'Pacific/Wallis'.hashCode;
+
+ }
+@immutable final class Timezone$pacificYap extends Timezone {const Timezone$pacificYap._();
+
+@override String get value => 'Pacific/Yap';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$pacificYap;
+
+@override int get hashCode => 'Pacific/Yap'.hashCode;
+
+ }
+@immutable final class Timezone$poland extends Timezone {const Timezone$poland._();
+
+@override String get value => 'Poland';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$poland;
+
+@override int get hashCode => 'Poland'.hashCode;
+
+ }
+@immutable final class Timezone$portugal extends Timezone {const Timezone$portugal._();
+
+@override String get value => 'Portugal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$portugal;
+
+@override int get hashCode => 'Portugal'.hashCode;
+
+ }
+@immutable final class Timezone$roc extends Timezone {const Timezone$roc._();
+
+@override String get value => 'ROC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$roc;
+
+@override int get hashCode => 'ROC'.hashCode;
+
+ }
+@immutable final class Timezone$rok extends Timezone {const Timezone$rok._();
+
+@override String get value => 'ROK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$rok;
+
+@override int get hashCode => 'ROK'.hashCode;
+
+ }
+@immutable final class Timezone$singapore extends Timezone {const Timezone$singapore._();
+
+@override String get value => 'Singapore';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$singapore;
+
+@override int get hashCode => 'Singapore'.hashCode;
+
+ }
+@immutable final class Timezone$turkey extends Timezone {const Timezone$turkey._();
+
+@override String get value => 'Turkey';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$turkey;
+
+@override int get hashCode => 'Turkey'.hashCode;
+
+ }
+@immutable final class Timezone$uct extends Timezone {const Timezone$uct._();
+
+@override String get value => 'UCT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$uct;
+
+@override int get hashCode => 'UCT'.hashCode;
+
+ }
+@immutable final class Timezone$usAlaska extends Timezone {const Timezone$usAlaska._();
+
+@override String get value => 'US/Alaska';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$usAlaska;
+
+@override int get hashCode => 'US/Alaska'.hashCode;
+
+ }
+@immutable final class Timezone$usAleutian extends Timezone {const Timezone$usAleutian._();
+
+@override String get value => 'US/Aleutian';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$usAleutian;
+
+@override int get hashCode => 'US/Aleutian'.hashCode;
+
+ }
+@immutable final class Timezone$usArizona extends Timezone {const Timezone$usArizona._();
+
+@override String get value => 'US/Arizona';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$usArizona;
+
+@override int get hashCode => 'US/Arizona'.hashCode;
+
+ }
+@immutable final class Timezone$usCentral extends Timezone {const Timezone$usCentral._();
+
+@override String get value => 'US/Central';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$usCentral;
+
+@override int get hashCode => 'US/Central'.hashCode;
+
+ }
+@immutable final class Timezone$usEastIndiana extends Timezone {const Timezone$usEastIndiana._();
+
+@override String get value => 'US/East-Indiana';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$usEastIndiana;
+
+@override int get hashCode => 'US/East-Indiana'.hashCode;
+
+ }
+@immutable final class Timezone$usEastern extends Timezone {const Timezone$usEastern._();
+
+@override String get value => 'US/Eastern';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$usEastern;
+
+@override int get hashCode => 'US/Eastern'.hashCode;
+
+ }
+@immutable final class Timezone$usHawaii extends Timezone {const Timezone$usHawaii._();
+
+@override String get value => 'US/Hawaii';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$usHawaii;
+
+@override int get hashCode => 'US/Hawaii'.hashCode;
+
+ }
+@immutable final class Timezone$usIndianaStarke extends Timezone {const Timezone$usIndianaStarke._();
+
+@override String get value => 'US/Indiana-Starke';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$usIndianaStarke;
+
+@override int get hashCode => 'US/Indiana-Starke'.hashCode;
+
+ }
+@immutable final class Timezone$usMichigan extends Timezone {const Timezone$usMichigan._();
+
+@override String get value => 'US/Michigan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$usMichigan;
+
+@override int get hashCode => 'US/Michigan'.hashCode;
+
+ }
+@immutable final class Timezone$usMountain extends Timezone {const Timezone$usMountain._();
+
+@override String get value => 'US/Mountain';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$usMountain;
+
+@override int get hashCode => 'US/Mountain'.hashCode;
+
+ }
+@immutable final class Timezone$usPacific extends Timezone {const Timezone$usPacific._();
+
+@override String get value => 'US/Pacific';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$usPacific;
+
+@override int get hashCode => 'US/Pacific'.hashCode;
+
+ }
+@immutable final class Timezone$usPacificNew extends Timezone {const Timezone$usPacificNew._();
+
+@override String get value => 'US/Pacific-New';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$usPacificNew;
+
+@override int get hashCode => 'US/Pacific-New'.hashCode;
+
+ }
+@immutable final class Timezone$usSamoa extends Timezone {const Timezone$usSamoa._();
+
+@override String get value => 'US/Samoa';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$usSamoa;
+
+@override int get hashCode => 'US/Samoa'.hashCode;
+
+ }
+@immutable final class Timezone$utc extends Timezone {const Timezone$utc._();
+
+@override String get value => 'UTC';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$utc;
+
+@override int get hashCode => 'UTC'.hashCode;
+
+ }
+@immutable final class Timezone$universal extends Timezone {const Timezone$universal._();
+
+@override String get value => 'Universal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$universal;
+
+@override int get hashCode => 'Universal'.hashCode;
+
+ }
+@immutable final class Timezone$wSu extends Timezone {const Timezone$wSu._();
+
+@override String get value => 'W-SU';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$wSu;
+
+@override int get hashCode => 'W-SU'.hashCode;
+
+ }
+@immutable final class Timezone$wet extends Timezone {const Timezone$wet._();
+
+@override String get value => 'WET';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$wet;
+
+@override int get hashCode => 'WET'.hashCode;
+
+ }
+@immutable final class Timezone$zulu extends Timezone {const Timezone$zulu._();
+
+@override String get value => 'Zulu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Timezone$zulu;
+
+@override int get hashCode => 'Zulu'.hashCode;
+
+ }
+@immutable final class Timezone$Unknown extends Timezone {const Timezone$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Timezone && other.value == value;
+    other is Timezone$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Timezone($value)';
 
  }
 /// Parameters specifying how the report should be run. Different Report Types have different required and optional parameters, listed in the [API Access to Reports](https://docs.stripe.com/reporting/statements/api) documentation.

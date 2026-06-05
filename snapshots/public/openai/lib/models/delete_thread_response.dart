@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DeleteThreadResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteThreadResponseObject {const DeleteThreadResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DeleteThreadResponseObject {const DeleteThreadResponseObject();
 
 factory DeleteThreadResponseObject.fromJson(String json) { return switch (json) {
   'thread.deleted' => threadDeleted,
-  _ => DeleteThreadResponseObject._(json),
+  _ => DeleteThreadResponseObject$Unknown(json),
 }; }
 
-static const DeleteThreadResponseObject threadDeleted = DeleteThreadResponseObject._('thread.deleted');
+static const DeleteThreadResponseObject threadDeleted = DeleteThreadResponseObject$threadDeleted._();
 
 static const List<DeleteThreadResponseObject> values = [threadDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeleteThreadResponseObject$Unknown; } 
+@override String toString() => 'DeleteThreadResponseObject($value)';
+
+ }
+@immutable final class DeleteThreadResponseObject$threadDeleted extends DeleteThreadResponseObject {const DeleteThreadResponseObject$threadDeleted._();
+
+@override String get value => 'thread.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeleteThreadResponseObject$threadDeleted;
+
+@override int get hashCode => 'thread.deleted'.hashCode;
+
+ }
+@immutable final class DeleteThreadResponseObject$Unknown extends DeleteThreadResponseObject {const DeleteThreadResponseObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeleteThreadResponseObject && other.value == value;
+    other is DeleteThreadResponseObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeleteThreadResponseObject($value)';
 
  }
 @immutable final class DeleteThreadResponse {const DeleteThreadResponse({required this.id, required this.deleted, required this.object, });

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetBillingMetersIdEventSummariesValueGroupingWindow
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetBillingMetersIdEventSummariesValueGroupingWindow {const GetBillingMetersIdEventSummariesValueGroupingWindow._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetBillingMetersIdEventSummariesValueGroupingWindow {const GetBillingMetersIdEventSummariesValueGroupingWindow();
 
 factory GetBillingMetersIdEventSummariesValueGroupingWindow.fromJson(String json) { return switch (json) {
   'day' => day,
   'hour' => hour,
-  _ => GetBillingMetersIdEventSummariesValueGroupingWindow._(json),
+  _ => GetBillingMetersIdEventSummariesValueGroupingWindow$Unknown(json),
 }; }
 
-static const GetBillingMetersIdEventSummariesValueGroupingWindow day = GetBillingMetersIdEventSummariesValueGroupingWindow._('day');
+static const GetBillingMetersIdEventSummariesValueGroupingWindow day = GetBillingMetersIdEventSummariesValueGroupingWindow$day._();
 
-static const GetBillingMetersIdEventSummariesValueGroupingWindow hour = GetBillingMetersIdEventSummariesValueGroupingWindow._('hour');
+static const GetBillingMetersIdEventSummariesValueGroupingWindow hour = GetBillingMetersIdEventSummariesValueGroupingWindow$hour._();
 
 static const List<GetBillingMetersIdEventSummariesValueGroupingWindow> values = [day, hour];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GetBillingMetersIdEventSummariesValueGroupingWindow$Unknown; } 
+@override String toString() => 'GetBillingMetersIdEventSummariesValueGroupingWindow($value)';
+
+ }
+@immutable final class GetBillingMetersIdEventSummariesValueGroupingWindow$day extends GetBillingMetersIdEventSummariesValueGroupingWindow {const GetBillingMetersIdEventSummariesValueGroupingWindow$day._();
+
+@override String get value => 'day';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetBillingMetersIdEventSummariesValueGroupingWindow$day;
+
+@override int get hashCode => 'day'.hashCode;
+
+ }
+@immutable final class GetBillingMetersIdEventSummariesValueGroupingWindow$hour extends GetBillingMetersIdEventSummariesValueGroupingWindow {const GetBillingMetersIdEventSummariesValueGroupingWindow$hour._();
+
+@override String get value => 'hour';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetBillingMetersIdEventSummariesValueGroupingWindow$hour;
+
+@override int get hashCode => 'hour'.hashCode;
+
+ }
+@immutable final class GetBillingMetersIdEventSummariesValueGroupingWindow$Unknown extends GetBillingMetersIdEventSummariesValueGroupingWindow {const GetBillingMetersIdEventSummariesValueGroupingWindow$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GetBillingMetersIdEventSummariesValueGroupingWindow && other.value == value;
+    other is GetBillingMetersIdEventSummariesValueGroupingWindow$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GetBillingMetersIdEventSummariesValueGroupingWindow($value)';
 
  }

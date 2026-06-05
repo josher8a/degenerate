@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PredefinedEntry (inline: Type)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PredefinedEntryType {const PredefinedEntryType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PredefinedEntryType {const PredefinedEntryType();
 
 factory PredefinedEntryType.fromJson(String json) { return switch (json) {
   'predefined' => predefined,
-  _ => PredefinedEntryType._(json),
+  _ => PredefinedEntryType$Unknown(json),
 }; }
 
-static const PredefinedEntryType predefined = PredefinedEntryType._('predefined');
+static const PredefinedEntryType predefined = PredefinedEntryType$predefined._();
 
 static const List<PredefinedEntryType> values = [predefined];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PredefinedEntryType$Unknown; } 
+@override String toString() => 'PredefinedEntryType($value)';
+
+ }
+@immutable final class PredefinedEntryType$predefined extends PredefinedEntryType {const PredefinedEntryType$predefined._();
+
+@override String get value => 'predefined';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PredefinedEntryType$predefined;
+
+@override int get hashCode => 'predefined'.hashCode;
+
+ }
+@immutable final class PredefinedEntryType$Unknown extends PredefinedEntryType {const PredefinedEntryType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PredefinedEntryType && other.value == value;
+    other is PredefinedEntryType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PredefinedEntryType($value)';
 
  }

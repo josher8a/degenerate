@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AutoragConfigFilesStatus
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AutoragConfigFilesStatus {const AutoragConfigFilesStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AutoragConfigFilesStatus {const AutoragConfigFilesStatus();
 
 factory AutoragConfigFilesStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
   'queued' => queued,
   'running' => running,
   'error' => error,
-  _ => AutoragConfigFilesStatus._(json),
+  _ => AutoragConfigFilesStatus$Unknown(json),
 }; }
 
-static const AutoragConfigFilesStatus completed = AutoragConfigFilesStatus._('completed');
+static const AutoragConfigFilesStatus completed = AutoragConfigFilesStatus$completed._();
 
-static const AutoragConfigFilesStatus queued = AutoragConfigFilesStatus._('queued');
+static const AutoragConfigFilesStatus queued = AutoragConfigFilesStatus$queued._();
 
-static const AutoragConfigFilesStatus running = AutoragConfigFilesStatus._('running');
+static const AutoragConfigFilesStatus running = AutoragConfigFilesStatus$running._();
 
-static const AutoragConfigFilesStatus error = AutoragConfigFilesStatus._('error');
+static const AutoragConfigFilesStatus error = AutoragConfigFilesStatus$error._();
 
 static const List<AutoragConfigFilesStatus> values = [completed, queued, running, error];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AutoragConfigFilesStatus$Unknown; } 
+@override String toString() => 'AutoragConfigFilesStatus($value)';
+
+ }
+@immutable final class AutoragConfigFilesStatus$completed extends AutoragConfigFilesStatus {const AutoragConfigFilesStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AutoragConfigFilesStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class AutoragConfigFilesStatus$queued extends AutoragConfigFilesStatus {const AutoragConfigFilesStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AutoragConfigFilesStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+ }
+@immutable final class AutoragConfigFilesStatus$running extends AutoragConfigFilesStatus {const AutoragConfigFilesStatus$running._();
+
+@override String get value => 'running';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AutoragConfigFilesStatus$running;
+
+@override int get hashCode => 'running'.hashCode;
+
+ }
+@immutable final class AutoragConfigFilesStatus$error extends AutoragConfigFilesStatus {const AutoragConfigFilesStatus$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AutoragConfigFilesStatus$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+ }
+@immutable final class AutoragConfigFilesStatus$Unknown extends AutoragConfigFilesStatus {const AutoragConfigFilesStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AutoragConfigFilesStatus && other.value == value;
+    other is AutoragConfigFilesStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AutoragConfigFilesStatus($value)';
 
  }

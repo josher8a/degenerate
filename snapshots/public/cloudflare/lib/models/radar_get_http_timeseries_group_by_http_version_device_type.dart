@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTimeseriesGroupByHttpVersionDeviceType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByHttpVersionDeviceType {const RadarGetHttpTimeseriesGroupByHttpVersionDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTimeseriesGroupByHttpVersionDeviceType {const RadarGetHttpTimeseriesGroupByHttpVersionDeviceType();
 
 factory RadarGetHttpTimeseriesGroupByHttpVersionDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
   'OTHER' => $other,
-  _ => RadarGetHttpTimeseriesGroupByHttpVersionDeviceType._(json),
+  _ => RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$Unknown(json),
 }; }
 
-static const RadarGetHttpTimeseriesGroupByHttpVersionDeviceType desktop = RadarGetHttpTimeseriesGroupByHttpVersionDeviceType._('DESKTOP');
+static const RadarGetHttpTimeseriesGroupByHttpVersionDeviceType desktop = RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$desktop._();
 
-static const RadarGetHttpTimeseriesGroupByHttpVersionDeviceType mobile = RadarGetHttpTimeseriesGroupByHttpVersionDeviceType._('MOBILE');
+static const RadarGetHttpTimeseriesGroupByHttpVersionDeviceType mobile = RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$mobile._();
 
-static const RadarGetHttpTimeseriesGroupByHttpVersionDeviceType $other = RadarGetHttpTimeseriesGroupByHttpVersionDeviceType._('OTHER');
+static const RadarGetHttpTimeseriesGroupByHttpVersionDeviceType $other = RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$$other._();
 
 static const List<RadarGetHttpTimeseriesGroupByHttpVersionDeviceType> values = [desktop, mobile, $other];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$Unknown; } 
+@override String toString() => 'RadarGetHttpTimeseriesGroupByHttpVersionDeviceType($value)';
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$desktop extends RadarGetHttpTimeseriesGroupByHttpVersionDeviceType {const RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$desktop._();
+
+@override String get value => 'DESKTOP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$desktop;
+
+@override int get hashCode => 'DESKTOP'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$mobile extends RadarGetHttpTimeseriesGroupByHttpVersionDeviceType {const RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$mobile._();
+
+@override String get value => 'MOBILE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$mobile;
+
+@override int get hashCode => 'MOBILE'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$$other extends RadarGetHttpTimeseriesGroupByHttpVersionDeviceType {const RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$$other._();
+
+@override String get value => 'OTHER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$$other;
+
+@override int get hashCode => 'OTHER'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$Unknown extends RadarGetHttpTimeseriesGroupByHttpVersionDeviceType {const RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupByHttpVersionDeviceType && other.value == value;
+    other is RadarGetHttpTimeseriesGroupByHttpVersionDeviceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTimeseriesGroupByHttpVersionDeviceType($value)';
 
  }

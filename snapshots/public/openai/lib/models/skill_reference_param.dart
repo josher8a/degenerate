@@ -2,19 +2,18 @@
 // Source: #/components/schemas/SkillReferenceParam
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// References a skill created with the /v1/skills endpoint.
-@immutable final class SkillReferenceParamType {const SkillReferenceParamType._(this.value);
+sealed class SkillReferenceParamType {const SkillReferenceParamType();
 
 factory SkillReferenceParamType.fromJson(String json) { return switch (json) {
   'skill_reference' => skillReference,
-  _ => SkillReferenceParamType._(json),
+  _ => SkillReferenceParamType$Unknown(json),
 }; }
 
-static const SkillReferenceParamType skillReference = SkillReferenceParamType._('skill_reference');
+static const SkillReferenceParamType skillReference = SkillReferenceParamType$skillReference._();
 
 static const List<SkillReferenceParamType> values = [skillReference];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SkillReferenceParamType$Unknown; } 
+@override String toString() => 'SkillReferenceParamType($value)';
+
+ }
+@immutable final class SkillReferenceParamType$skillReference extends SkillReferenceParamType {const SkillReferenceParamType$skillReference._();
+
+@override String get value => 'skill_reference';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SkillReferenceParamType$skillReference;
+
+@override int get hashCode => 'skill_reference'.hashCode;
+
+ }
+@immutable final class SkillReferenceParamType$Unknown extends SkillReferenceParamType {const SkillReferenceParamType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SkillReferenceParamType && other.value == value;
+    other is SkillReferenceParamType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SkillReferenceParamType($value)';
 
  }
 @immutable final class SkillReferenceParam {const SkillReferenceParam({required this.skillId, this.type = SkillReferenceParamType.skillReference, this.version, });

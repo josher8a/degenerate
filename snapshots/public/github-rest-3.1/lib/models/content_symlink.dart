@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ContentSymlink
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';@immutable final class ContentSymlinkType {const ContentSymlinkType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';sealed class ContentSymlinkType {const ContentSymlinkType();
 
 factory ContentSymlinkType.fromJson(String json) { return switch (json) {
   'symlink' => symlink,
-  _ => ContentSymlinkType._(json),
+  _ => ContentSymlinkType$Unknown(json),
 }; }
 
-static const ContentSymlinkType symlink = ContentSymlinkType._('symlink');
+static const ContentSymlinkType symlink = ContentSymlinkType$symlink._();
 
 static const List<ContentSymlinkType> values = [symlink];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ContentSymlinkType$Unknown; } 
+@override String toString() => 'ContentSymlinkType($value)';
+
+ }
+@immutable final class ContentSymlinkType$symlink extends ContentSymlinkType {const ContentSymlinkType$symlink._();
+
+@override String get value => 'symlink';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ContentSymlinkType$symlink;
+
+@override int get hashCode => 'symlink'.hashCode;
+
+ }
+@immutable final class ContentSymlinkType$Unknown extends ContentSymlinkType {const ContentSymlinkType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ContentSymlinkType && other.value == value;
+    other is ContentSymlinkType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ContentSymlinkType($value)';
 
  }
 /// An object describing a symlink

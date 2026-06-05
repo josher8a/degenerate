@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTopBrowserFamiliesDeviceType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTopBrowserFamiliesDeviceType {const RadarGetHttpTopBrowserFamiliesDeviceType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTopBrowserFamiliesDeviceType {const RadarGetHttpTopBrowserFamiliesDeviceType();
 
 factory RadarGetHttpTopBrowserFamiliesDeviceType.fromJson(String json) { return switch (json) {
   'DESKTOP' => desktop,
   'MOBILE' => mobile,
   'OTHER' => $other,
-  _ => RadarGetHttpTopBrowserFamiliesDeviceType._(json),
+  _ => RadarGetHttpTopBrowserFamiliesDeviceType$Unknown(json),
 }; }
 
-static const RadarGetHttpTopBrowserFamiliesDeviceType desktop = RadarGetHttpTopBrowserFamiliesDeviceType._('DESKTOP');
+static const RadarGetHttpTopBrowserFamiliesDeviceType desktop = RadarGetHttpTopBrowserFamiliesDeviceType$desktop._();
 
-static const RadarGetHttpTopBrowserFamiliesDeviceType mobile = RadarGetHttpTopBrowserFamiliesDeviceType._('MOBILE');
+static const RadarGetHttpTopBrowserFamiliesDeviceType mobile = RadarGetHttpTopBrowserFamiliesDeviceType$mobile._();
 
-static const RadarGetHttpTopBrowserFamiliesDeviceType $other = RadarGetHttpTopBrowserFamiliesDeviceType._('OTHER');
+static const RadarGetHttpTopBrowserFamiliesDeviceType $other = RadarGetHttpTopBrowserFamiliesDeviceType$$other._();
 
 static const List<RadarGetHttpTopBrowserFamiliesDeviceType> values = [desktop, mobile, $other];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopBrowserFamiliesDeviceType$Unknown; } 
+@override String toString() => 'RadarGetHttpTopBrowserFamiliesDeviceType($value)';
+
+ }
+@immutable final class RadarGetHttpTopBrowserFamiliesDeviceType$desktop extends RadarGetHttpTopBrowserFamiliesDeviceType {const RadarGetHttpTopBrowserFamiliesDeviceType$desktop._();
+
+@override String get value => 'DESKTOP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopBrowserFamiliesDeviceType$desktop;
+
+@override int get hashCode => 'DESKTOP'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopBrowserFamiliesDeviceType$mobile extends RadarGetHttpTopBrowserFamiliesDeviceType {const RadarGetHttpTopBrowserFamiliesDeviceType$mobile._();
+
+@override String get value => 'MOBILE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopBrowserFamiliesDeviceType$mobile;
+
+@override int get hashCode => 'MOBILE'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopBrowserFamiliesDeviceType$$other extends RadarGetHttpTopBrowserFamiliesDeviceType {const RadarGetHttpTopBrowserFamiliesDeviceType$$other._();
+
+@override String get value => 'OTHER';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopBrowserFamiliesDeviceType$$other;
+
+@override int get hashCode => 'OTHER'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopBrowserFamiliesDeviceType$Unknown extends RadarGetHttpTopBrowserFamiliesDeviceType {const RadarGetHttpTopBrowserFamiliesDeviceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopBrowserFamiliesDeviceType && other.value == value;
+    other is RadarGetHttpTopBrowserFamiliesDeviceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopBrowserFamiliesDeviceType($value)';
 
  }

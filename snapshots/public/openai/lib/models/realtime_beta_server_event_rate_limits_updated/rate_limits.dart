@@ -3,22 +3,21 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The name of the rate limit (`requests`, `tokens`).
 /// 
-@immutable final class Name {const Name._(this.value);
+sealed class Name {const Name();
 
 factory Name.fromJson(String json) { return switch (json) {
   'requests' => requests,
   'tokens' => tokens,
-  _ => Name._(json),
+  _ => Name$Unknown(json),
 }; }
 
-static const Name requests = Name._('requests');
+static const Name requests = Name$requests._();
 
-static const Name tokens = Name._('tokens');
+static const Name tokens = Name$tokens._();
 
 static const List<Name> values = [requests, tokens];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -27,13 +26,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Name$Unknown; } 
+@override String toString() => 'Name($value)';
+
+ }
+@immutable final class Name$requests extends Name {const Name$requests._();
+
+@override String get value => 'requests';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Name$requests;
+
+@override int get hashCode => 'requests'.hashCode;
+
+ }
+@immutable final class Name$tokens extends Name {const Name$tokens._();
+
+@override String get value => 'tokens';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Name$tokens;
+
+@override int get hashCode => 'tokens'.hashCode;
+
+ }
+@immutable final class Name$Unknown extends Name {const Name$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Name && other.value == value;
+    other is Name$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Name($value)';
 
  }
 @immutable final class RateLimits {const RateLimits({this.name, this.limit, this.remaining, this.resetSeconds, });

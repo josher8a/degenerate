@@ -2,7 +2,7 @@
 // Source: #/components/schemas/FirewallSchemasAction
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The action to apply to a matched request. The `log` action is only available on an Enterprise plan.
-@immutable final class FirewallSchemasAction {const FirewallSchemasAction._(this.value);
+sealed class FirewallSchemasAction {const FirewallSchemasAction();
 
 factory FirewallSchemasAction.fromJson(String json) { return switch (json) {
   'block' => block,
@@ -12,27 +12,26 @@ factory FirewallSchemasAction.fromJson(String json) { return switch (json) {
   'allow' => allow,
   'log' => log,
   'bypass' => bypass,
-  _ => FirewallSchemasAction._(json),
+  _ => FirewallSchemasAction$Unknown(json),
 }; }
 
-static const FirewallSchemasAction block = FirewallSchemasAction._('block');
+static const FirewallSchemasAction block = FirewallSchemasAction$block._();
 
-static const FirewallSchemasAction challenge = FirewallSchemasAction._('challenge');
+static const FirewallSchemasAction challenge = FirewallSchemasAction$challenge._();
 
-static const FirewallSchemasAction jsChallenge = FirewallSchemasAction._('js_challenge');
+static const FirewallSchemasAction jsChallenge = FirewallSchemasAction$jsChallenge._();
 
-static const FirewallSchemasAction managedChallenge = FirewallSchemasAction._('managed_challenge');
+static const FirewallSchemasAction managedChallenge = FirewallSchemasAction$managedChallenge._();
 
-static const FirewallSchemasAction allow = FirewallSchemasAction._('allow');
+static const FirewallSchemasAction allow = FirewallSchemasAction$allow._();
 
-static const FirewallSchemasAction log = FirewallSchemasAction._('log');
+static const FirewallSchemasAction log = FirewallSchemasAction$log._();
 
-static const FirewallSchemasAction bypass = FirewallSchemasAction._('bypass');
+static const FirewallSchemasAction bypass = FirewallSchemasAction$bypass._();
 
 static const List<FirewallSchemasAction> values = [block, challenge, jsChallenge, managedChallenge, allow, log, bypass];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -46,12 +45,80 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FirewallSchemasAction$Unknown; } 
+@override String toString() => 'FirewallSchemasAction($value)';
+
+ }
+@immutable final class FirewallSchemasAction$block extends FirewallSchemasAction {const FirewallSchemasAction$block._();
+
+@override String get value => 'block';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallSchemasAction$block;
+
+@override int get hashCode => 'block'.hashCode;
+
+ }
+@immutable final class FirewallSchemasAction$challenge extends FirewallSchemasAction {const FirewallSchemasAction$challenge._();
+
+@override String get value => 'challenge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallSchemasAction$challenge;
+
+@override int get hashCode => 'challenge'.hashCode;
+
+ }
+@immutable final class FirewallSchemasAction$jsChallenge extends FirewallSchemasAction {const FirewallSchemasAction$jsChallenge._();
+
+@override String get value => 'js_challenge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallSchemasAction$jsChallenge;
+
+@override int get hashCode => 'js_challenge'.hashCode;
+
+ }
+@immutable final class FirewallSchemasAction$managedChallenge extends FirewallSchemasAction {const FirewallSchemasAction$managedChallenge._();
+
+@override String get value => 'managed_challenge';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallSchemasAction$managedChallenge;
+
+@override int get hashCode => 'managed_challenge'.hashCode;
+
+ }
+@immutable final class FirewallSchemasAction$allow extends FirewallSchemasAction {const FirewallSchemasAction$allow._();
+
+@override String get value => 'allow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallSchemasAction$allow;
+
+@override int get hashCode => 'allow'.hashCode;
+
+ }
+@immutable final class FirewallSchemasAction$log extends FirewallSchemasAction {const FirewallSchemasAction$log._();
+
+@override String get value => 'log';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallSchemasAction$log;
+
+@override int get hashCode => 'log'.hashCode;
+
+ }
+@immutable final class FirewallSchemasAction$bypass extends FirewallSchemasAction {const FirewallSchemasAction$bypass._();
+
+@override String get value => 'bypass';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallSchemasAction$bypass;
+
+@override int get hashCode => 'bypass'.hashCode;
+
+ }
+@immutable final class FirewallSchemasAction$Unknown extends FirewallSchemasAction {const FirewallSchemasAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FirewallSchemasAction && other.value == value;
+    other is FirewallSchemasAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FirewallSchemasAction($value)';
 
  }

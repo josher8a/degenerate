@@ -2,19 +2,18 @@
 // Source: #/components/schemas/SubscriptionSchedule
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application.dart';import 'package:pub_stripe_spec3/models/bank_account/bank_account_customer.dart';import 'package:pub_stripe_spec3/models/billing_bill_resource_invoicing_parents_invoice_subscription_parent/billing_bill_resource_invoicing_parents_invoice_subscription_parent_subscription.dart';import 'package:pub_stripe_spec3/models/billing_credit_balance_transaction/test_clock.dart';import 'package:pub_stripe_spec3/models/billing_portal_configuration/billing_portal_configuration_application.dart';import 'package:pub_stripe_spec3/models/customer.dart';import 'package:pub_stripe_spec3/models/deleted_application.dart';import 'package:pub_stripe_spec3/models/deleted_customer.dart';import 'package:pub_stripe_spec3/models/post_subscription_schedules_request/post_subscription_schedules_request_end_behavior.dart';import 'package:pub_stripe_spec3/models/subscription.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_current_phase.dart';import 'package:pub_stripe_spec3/models/subscription_schedule_phase_configuration.dart';import 'package:pub_stripe_spec3/models/subscription_schedules_resource_default_settings.dart';import 'package:pub_stripe_spec3/models/subscriptions_resource_billing_mode.dart';import 'package:pub_stripe_spec3/models/test_helpers_test_clock.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class SubscriptionScheduleObject {const SubscriptionScheduleObject._(this.value);
+sealed class SubscriptionScheduleObject {const SubscriptionScheduleObject();
 
 factory SubscriptionScheduleObject.fromJson(String json) { return switch (json) {
   'subscription_schedule' => subscriptionSchedule,
-  _ => SubscriptionScheduleObject._(json),
+  _ => SubscriptionScheduleObject$Unknown(json),
 }; }
 
-static const SubscriptionScheduleObject subscriptionSchedule = SubscriptionScheduleObject._('subscription_schedule');
+static const SubscriptionScheduleObject subscriptionSchedule = SubscriptionScheduleObject$subscriptionSchedule._();
 
 static const List<SubscriptionScheduleObject> values = [subscriptionSchedule];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,17 +21,31 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is SubscriptionScheduleObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is SubscriptionScheduleObject$Unknown; } 
 @override String toString() => 'SubscriptionScheduleObject($value)';
 
  }
+@immutable final class SubscriptionScheduleObject$subscriptionSchedule extends SubscriptionScheduleObject {const SubscriptionScheduleObject$subscriptionSchedule._();
+
+@override String get value => 'subscription_schedule';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionScheduleObject$subscriptionSchedule;
+
+@override int get hashCode => 'subscription_schedule'.hashCode;
+
+ }
+@immutable final class SubscriptionScheduleObject$Unknown extends SubscriptionScheduleObject {const SubscriptionScheduleObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is SubscriptionScheduleObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The present status of the subscription schedule. Possible values are `not_started`, `active`, `completed`, `released`, and `canceled`. You can read more about the different states in our [behavior guide](https://docs.stripe.com/billing/subscriptions/subscription-schedules).
-@immutable final class SubscriptionScheduleStatus {const SubscriptionScheduleStatus._(this.value);
+sealed class SubscriptionScheduleStatus {const SubscriptionScheduleStatus();
 
 factory SubscriptionScheduleStatus.fromJson(String json) { return switch (json) {
   'active' => active,
@@ -40,23 +53,22 @@ factory SubscriptionScheduleStatus.fromJson(String json) { return switch (json) 
   'completed' => completed,
   'not_started' => notStarted,
   'released' => released,
-  _ => SubscriptionScheduleStatus._(json),
+  _ => SubscriptionScheduleStatus$Unknown(json),
 }; }
 
-static const SubscriptionScheduleStatus active = SubscriptionScheduleStatus._('active');
+static const SubscriptionScheduleStatus active = SubscriptionScheduleStatus$active._();
 
-static const SubscriptionScheduleStatus canceled = SubscriptionScheduleStatus._('canceled');
+static const SubscriptionScheduleStatus canceled = SubscriptionScheduleStatus$canceled._();
 
-static const SubscriptionScheduleStatus completed = SubscriptionScheduleStatus._('completed');
+static const SubscriptionScheduleStatus completed = SubscriptionScheduleStatus$completed._();
 
-static const SubscriptionScheduleStatus notStarted = SubscriptionScheduleStatus._('not_started');
+static const SubscriptionScheduleStatus notStarted = SubscriptionScheduleStatus$notStarted._();
 
-static const SubscriptionScheduleStatus released = SubscriptionScheduleStatus._('released');
+static const SubscriptionScheduleStatus released = SubscriptionScheduleStatus$released._();
 
 static const List<SubscriptionScheduleStatus> values = [active, canceled, completed, notStarted, released];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,13 +80,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SubscriptionScheduleStatus$Unknown; } 
+@override String toString() => 'SubscriptionScheduleStatus($value)';
+
+ }
+@immutable final class SubscriptionScheduleStatus$active extends SubscriptionScheduleStatus {const SubscriptionScheduleStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionScheduleStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class SubscriptionScheduleStatus$canceled extends SubscriptionScheduleStatus {const SubscriptionScheduleStatus$canceled._();
+
+@override String get value => 'canceled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionScheduleStatus$canceled;
+
+@override int get hashCode => 'canceled'.hashCode;
+
+ }
+@immutable final class SubscriptionScheduleStatus$completed extends SubscriptionScheduleStatus {const SubscriptionScheduleStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionScheduleStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class SubscriptionScheduleStatus$notStarted extends SubscriptionScheduleStatus {const SubscriptionScheduleStatus$notStarted._();
+
+@override String get value => 'not_started';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionScheduleStatus$notStarted;
+
+@override int get hashCode => 'not_started'.hashCode;
+
+ }
+@immutable final class SubscriptionScheduleStatus$released extends SubscriptionScheduleStatus {const SubscriptionScheduleStatus$released._();
+
+@override String get value => 'released';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SubscriptionScheduleStatus$released;
+
+@override int get hashCode => 'released'.hashCode;
+
+ }
+@immutable final class SubscriptionScheduleStatus$Unknown extends SubscriptionScheduleStatus {const SubscriptionScheduleStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SubscriptionScheduleStatus && other.value == value;
+    other is SubscriptionScheduleStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SubscriptionScheduleStatus($value)';
 
  }
 /// A subscription schedule allows you to create and manage the lifecycle of a subscription by predefining expected changes.

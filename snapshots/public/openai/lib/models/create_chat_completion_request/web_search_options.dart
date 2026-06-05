@@ -4,25 +4,24 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_chat_completion_request/user_location.dart';/// High level guidance for the amount of context window space to use for the
 /// search. One of `low`, `medium`, or `high`. `medium` is the default.
 /// 
-@immutable final class WebSearchContextSize {const WebSearchContextSize._(this.value);
+sealed class WebSearchContextSize {const WebSearchContextSize();
 
 factory WebSearchContextSize.fromJson(String json) { return switch (json) {
   'low' => low,
   'medium' => medium,
   'high' => high,
-  _ => WebSearchContextSize._(json),
+  _ => WebSearchContextSize$Unknown(json),
 }; }
 
-static const WebSearchContextSize low = WebSearchContextSize._('low');
+static const WebSearchContextSize low = WebSearchContextSize$low._();
 
-static const WebSearchContextSize medium = WebSearchContextSize._('medium');
+static const WebSearchContextSize medium = WebSearchContextSize$medium._();
 
-static const WebSearchContextSize high = WebSearchContextSize._('high');
+static const WebSearchContextSize high = WebSearchContextSize$high._();
 
 static const List<WebSearchContextSize> values = [low, medium, high];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -32,13 +31,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebSearchContextSize$Unknown; } 
+@override String toString() => 'WebSearchContextSize($value)';
+
+ }
+@immutable final class WebSearchContextSize$low extends WebSearchContextSize {const WebSearchContextSize$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchContextSize$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class WebSearchContextSize$medium extends WebSearchContextSize {const WebSearchContextSize$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchContextSize$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class WebSearchContextSize$high extends WebSearchContextSize {const WebSearchContextSize$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchContextSize$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class WebSearchContextSize$Unknown extends WebSearchContextSize {const WebSearchContextSize$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebSearchContextSize && other.value == value;
+    other is WebSearchContextSize$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebSearchContextSize($value)';
 
  }
 /// This tool searches the web for relevant results to use in a response.

@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/GetAccountAuditLogsActionResultNot
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class GetAccountAuditLogsActionResultNot {const GetAccountAuditLogsActionResultNot._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class GetAccountAuditLogsActionResultNot {const GetAccountAuditLogsActionResultNot();
 
 factory GetAccountAuditLogsActionResultNot.fromJson(String json) { return switch (json) {
   'success' => success,
   'failure' => failure,
-  _ => GetAccountAuditLogsActionResultNot._(json),
+  _ => GetAccountAuditLogsActionResultNot$Unknown(json),
 }; }
 
-static const GetAccountAuditLogsActionResultNot success = GetAccountAuditLogsActionResultNot._('success');
+static const GetAccountAuditLogsActionResultNot success = GetAccountAuditLogsActionResultNot$success._();
 
-static const GetAccountAuditLogsActionResultNot failure = GetAccountAuditLogsActionResultNot._('failure');
+static const GetAccountAuditLogsActionResultNot failure = GetAccountAuditLogsActionResultNot$failure._();
 
 static const List<GetAccountAuditLogsActionResultNot> values = [success, failure];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is GetAccountAuditLogsActionResultNot$Unknown; } 
+@override String toString() => 'GetAccountAuditLogsActionResultNot($value)';
+
+ }
+@immutable final class GetAccountAuditLogsActionResultNot$success extends GetAccountAuditLogsActionResultNot {const GetAccountAuditLogsActionResultNot$success._();
+
+@override String get value => 'success';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetAccountAuditLogsActionResultNot$success;
+
+@override int get hashCode => 'success'.hashCode;
+
+ }
+@immutable final class GetAccountAuditLogsActionResultNot$failure extends GetAccountAuditLogsActionResultNot {const GetAccountAuditLogsActionResultNot$failure._();
+
+@override String get value => 'failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is GetAccountAuditLogsActionResultNot$failure;
+
+@override int get hashCode => 'failure'.hashCode;
+
+ }
+@immutable final class GetAccountAuditLogsActionResultNot$Unknown extends GetAccountAuditLogsActionResultNot {const GetAccountAuditLogsActionResultNot$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is GetAccountAuditLogsActionResultNot && other.value == value;
+    other is GetAccountAuditLogsActionResultNot$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'GetAccountAuditLogsActionResultNot($value)';
 
  }

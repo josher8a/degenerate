@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/TerminalOnboardingLink
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_onboarding_links_request/link_type.dart';import 'package:pub_stripe_spec3/models/terminal_onboarding_link_link_options.dart';@immutable final class TerminalOnboardingLinkObject {const TerminalOnboardingLinkObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_terminal_onboarding_links_request/link_type.dart';import 'package:pub_stripe_spec3/models/terminal_onboarding_link_link_options.dart';sealed class TerminalOnboardingLinkObject {const TerminalOnboardingLinkObject();
 
 factory TerminalOnboardingLinkObject.fromJson(String json) { return switch (json) {
   'terminal.onboarding_link' => terminalOnboardingLink,
-  _ => TerminalOnboardingLinkObject._(json),
+  _ => TerminalOnboardingLinkObject$Unknown(json),
 }; }
 
-static const TerminalOnboardingLinkObject terminalOnboardingLink = TerminalOnboardingLinkObject._('terminal.onboarding_link');
+static const TerminalOnboardingLinkObject terminalOnboardingLink = TerminalOnboardingLinkObject$terminalOnboardingLink._();
 
 static const List<TerminalOnboardingLinkObject> values = [terminalOnboardingLink];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TerminalOnboardingLinkObject$Unknown; } 
+@override String toString() => 'TerminalOnboardingLinkObject($value)';
+
+ }
+@immutable final class TerminalOnboardingLinkObject$terminalOnboardingLink extends TerminalOnboardingLinkObject {const TerminalOnboardingLinkObject$terminalOnboardingLink._();
+
+@override String get value => 'terminal.onboarding_link';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalOnboardingLinkObject$terminalOnboardingLink;
+
+@override int get hashCode => 'terminal.onboarding_link'.hashCode;
+
+ }
+@immutable final class TerminalOnboardingLinkObject$Unknown extends TerminalOnboardingLinkObject {const TerminalOnboardingLinkObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TerminalOnboardingLinkObject && other.value == value;
+    other is TerminalOnboardingLinkObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TerminalOnboardingLinkObject($value)';
 
  }
 /// Returns redirect links used for onboarding onto Tap to Pay on iPhone.

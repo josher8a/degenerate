@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookReleasePrereleased
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_release_prereleased/webhook_release_prereleased_release.dart';@immutable final class WebhookReleasePrereleasedAction {const WebhookReleasePrereleasedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_release_prereleased/webhook_release_prereleased_release.dart';sealed class WebhookReleasePrereleasedAction {const WebhookReleasePrereleasedAction();
 
 factory WebhookReleasePrereleasedAction.fromJson(String json) { return switch (json) {
   'prereleased' => prereleased,
-  _ => WebhookReleasePrereleasedAction._(json),
+  _ => WebhookReleasePrereleasedAction$Unknown(json),
 }; }
 
-static const WebhookReleasePrereleasedAction prereleased = WebhookReleasePrereleasedAction._('prereleased');
+static const WebhookReleasePrereleasedAction prereleased = WebhookReleasePrereleasedAction$prereleased._();
 
 static const List<WebhookReleasePrereleasedAction> values = [prereleased];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookReleasePrereleasedAction$Unknown; } 
+@override String toString() => 'WebhookReleasePrereleasedAction($value)';
+
+ }
+@immutable final class WebhookReleasePrereleasedAction$prereleased extends WebhookReleasePrereleasedAction {const WebhookReleasePrereleasedAction$prereleased._();
+
+@override String get value => 'prereleased';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookReleasePrereleasedAction$prereleased;
+
+@override int get hashCode => 'prereleased'.hashCode;
+
+ }
+@immutable final class WebhookReleasePrereleasedAction$Unknown extends WebhookReleasePrereleasedAction {const WebhookReleasePrereleasedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookReleasePrereleasedAction && other.value == value;
+    other is WebhookReleasePrereleasedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookReleasePrereleasedAction($value)';
 
  }
 @immutable final class WebhookReleasePrereleased {const WebhookReleasePrereleased({required this.action, required this.release, required this.repository, this.enterprise, this.installation, this.organization, this.sender, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/EvalJsonlFileIdSource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of jsonl source. Always `file_id`.
-@immutable final class EvalJsonlFileIdSourceType {const EvalJsonlFileIdSourceType._(this.value);
+sealed class EvalJsonlFileIdSourceType {const EvalJsonlFileIdSourceType();
 
 factory EvalJsonlFileIdSourceType.fromJson(String json) { return switch (json) {
   'file_id' => fileId,
-  _ => EvalJsonlFileIdSourceType._(json),
+  _ => EvalJsonlFileIdSourceType$Unknown(json),
 }; }
 
-static const EvalJsonlFileIdSourceType fileId = EvalJsonlFileIdSourceType._('file_id');
+static const EvalJsonlFileIdSourceType fileId = EvalJsonlFileIdSourceType$fileId._();
 
 static const List<EvalJsonlFileIdSourceType> values = [fileId];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EvalJsonlFileIdSourceType$Unknown; } 
+@override String toString() => 'EvalJsonlFileIdSourceType($value)';
+
+ }
+@immutable final class EvalJsonlFileIdSourceType$fileId extends EvalJsonlFileIdSourceType {const EvalJsonlFileIdSourceType$fileId._();
+
+@override String get value => 'file_id';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EvalJsonlFileIdSourceType$fileId;
+
+@override int get hashCode => 'file_id'.hashCode;
+
+ }
+@immutable final class EvalJsonlFileIdSourceType$Unknown extends EvalJsonlFileIdSourceType {const EvalJsonlFileIdSourceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EvalJsonlFileIdSourceType && other.value == value;
+    other is EvalJsonlFileIdSourceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EvalJsonlFileIdSourceType($value)';
 
  }
 @immutable final class EvalJsonlFileIdSource {const EvalJsonlFileIdSource({required this.id, this.type = EvalJsonlFileIdSourceType.fileId, });

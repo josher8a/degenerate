@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ContentFile
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';@immutable final class ContentFileType {const ContentFileType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';sealed class ContentFileType {const ContentFileType();
 
 factory ContentFileType.fromJson(String json) { return switch (json) {
   'file' => file,
-  _ => ContentFileType._(json),
+  _ => ContentFileType$Unknown(json),
 }; }
 
-static const ContentFileType file = ContentFileType._('file');
+static const ContentFileType file = ContentFileType$file._();
 
 static const List<ContentFileType> values = [file];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ContentFileType$Unknown; } 
+@override String toString() => 'ContentFileType($value)';
+
+ }
+@immutable final class ContentFileType$file extends ContentFileType {const ContentFileType$file._();
+
+@override String get value => 'file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ContentFileType$file;
+
+@override int get hashCode => 'file'.hashCode;
+
+ }
+@immutable final class ContentFileType$Unknown extends ContentFileType {const ContentFileType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ContentFileType && other.value == value;
+    other is ContentFileType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ContentFileType($value)';
 
  }
 /// Content File

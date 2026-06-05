@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCustomerSessionsRequest (inline: Components > PaymentElement > Features)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_customer_sheet_resource_features/payment_method_allow_redisplay_filters.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_redisplay.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_remove.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_save.dart';@immutable final class FeaturesPaymentMethodSaveUsage {const FeaturesPaymentMethodSaveUsage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_customer_sheet_resource_features/payment_method_allow_redisplay_filters.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_redisplay.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_remove.dart';import 'package:pub_stripe_spec3/models/customer_session_resource_components_resource_payment_element_resource_features/customer_session_resource_components_resource_payment_element_resource_features_payment_method_save.dart';sealed class FeaturesPaymentMethodSaveUsage {const FeaturesPaymentMethodSaveUsage();
 
 factory FeaturesPaymentMethodSaveUsage.fromJson(String json) { return switch (json) {
   'off_session' => offSession,
   'on_session' => onSession,
-  _ => FeaturesPaymentMethodSaveUsage._(json),
+  _ => FeaturesPaymentMethodSaveUsage$Unknown(json),
 }; }
 
-static const FeaturesPaymentMethodSaveUsage offSession = FeaturesPaymentMethodSaveUsage._('off_session');
+static const FeaturesPaymentMethodSaveUsage offSession = FeaturesPaymentMethodSaveUsage$offSession._();
 
-static const FeaturesPaymentMethodSaveUsage onSession = FeaturesPaymentMethodSaveUsage._('on_session');
+static const FeaturesPaymentMethodSaveUsage onSession = FeaturesPaymentMethodSaveUsage$onSession._();
 
 static const List<FeaturesPaymentMethodSaveUsage> values = [offSession, onSession];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FeaturesPaymentMethodSaveUsage$Unknown; } 
+@override String toString() => 'FeaturesPaymentMethodSaveUsage($value)';
+
+ }
+@immutable final class FeaturesPaymentMethodSaveUsage$offSession extends FeaturesPaymentMethodSaveUsage {const FeaturesPaymentMethodSaveUsage$offSession._();
+
+@override String get value => 'off_session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FeaturesPaymentMethodSaveUsage$offSession;
+
+@override int get hashCode => 'off_session'.hashCode;
+
+ }
+@immutable final class FeaturesPaymentMethodSaveUsage$onSession extends FeaturesPaymentMethodSaveUsage {const FeaturesPaymentMethodSaveUsage$onSession._();
+
+@override String get value => 'on_session';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FeaturesPaymentMethodSaveUsage$onSession;
+
+@override int get hashCode => 'on_session'.hashCode;
+
+ }
+@immutable final class FeaturesPaymentMethodSaveUsage$Unknown extends FeaturesPaymentMethodSaveUsage {const FeaturesPaymentMethodSaveUsage$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FeaturesPaymentMethodSaveUsage && other.value == value;
+    other is FeaturesPaymentMethodSaveUsage$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FeaturesPaymentMethodSaveUsage($value)';
 
  }
 @immutable final class PaymentElementFeatures {const PaymentElementFeatures({this.paymentMethodAllowRedisplayFilters, this.paymentMethodRedisplay, this.paymentMethodRedisplayLimit, this.paymentMethodRemove, this.paymentMethodSave, this.paymentMethodSaveUsage, });

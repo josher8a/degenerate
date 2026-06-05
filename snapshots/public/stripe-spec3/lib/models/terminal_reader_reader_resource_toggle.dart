@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TerminalReaderReaderResourceToggle
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The toggle's default value. Can be `enabled` or `disabled`.
-@immutable final class TerminalReaderReaderResourceToggleDefaultValue {const TerminalReaderReaderResourceToggleDefaultValue._(this.value);
+sealed class TerminalReaderReaderResourceToggleDefaultValue {const TerminalReaderReaderResourceToggleDefaultValue();
 
 factory TerminalReaderReaderResourceToggleDefaultValue.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
-  _ => TerminalReaderReaderResourceToggleDefaultValue._(json),
+  _ => TerminalReaderReaderResourceToggleDefaultValue$Unknown(json),
 }; }
 
-static const TerminalReaderReaderResourceToggleDefaultValue disabled = TerminalReaderReaderResourceToggleDefaultValue._('disabled');
+static const TerminalReaderReaderResourceToggleDefaultValue disabled = TerminalReaderReaderResourceToggleDefaultValue$disabled._();
 
-static const TerminalReaderReaderResourceToggleDefaultValue enabled = TerminalReaderReaderResourceToggleDefaultValue._('enabled');
+static const TerminalReaderReaderResourceToggleDefaultValue enabled = TerminalReaderReaderResourceToggleDefaultValue$enabled._();
 
 static const List<TerminalReaderReaderResourceToggleDefaultValue> values = [disabled, enabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,32 +25,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TerminalReaderReaderResourceToggleDefaultValue && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TerminalReaderReaderResourceToggleDefaultValue$Unknown; } 
 @override String toString() => 'TerminalReaderReaderResourceToggleDefaultValue($value)';
 
  }
+@immutable final class TerminalReaderReaderResourceToggleDefaultValue$disabled extends TerminalReaderReaderResourceToggleDefaultValue {const TerminalReaderReaderResourceToggleDefaultValue$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceToggleDefaultValue$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceToggleDefaultValue$enabled extends TerminalReaderReaderResourceToggleDefaultValue {const TerminalReaderReaderResourceToggleDefaultValue$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceToggleDefaultValue$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceToggleDefaultValue$Unknown extends TerminalReaderReaderResourceToggleDefaultValue {const TerminalReaderReaderResourceToggleDefaultValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TerminalReaderReaderResourceToggleDefaultValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The toggle's collected value. Can be `enabled` or `disabled`.
-@immutable final class TerminalReaderReaderResourceToggleValue {const TerminalReaderReaderResourceToggleValue._(this.value);
+sealed class TerminalReaderReaderResourceToggleValue {const TerminalReaderReaderResourceToggleValue();
 
 factory TerminalReaderReaderResourceToggleValue.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
-  _ => TerminalReaderReaderResourceToggleValue._(json),
+  _ => TerminalReaderReaderResourceToggleValue$Unknown(json),
 }; }
 
-static const TerminalReaderReaderResourceToggleValue disabled = TerminalReaderReaderResourceToggleValue._('disabled');
+static const TerminalReaderReaderResourceToggleValue disabled = TerminalReaderReaderResourceToggleValue$disabled._();
 
-static const TerminalReaderReaderResourceToggleValue enabled = TerminalReaderReaderResourceToggleValue._('enabled');
+static const TerminalReaderReaderResourceToggleValue enabled = TerminalReaderReaderResourceToggleValue$enabled._();
 
 static const List<TerminalReaderReaderResourceToggleValue> values = [disabled, enabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,13 +81,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TerminalReaderReaderResourceToggleValue$Unknown; } 
+@override String toString() => 'TerminalReaderReaderResourceToggleValue($value)';
+
+ }
+@immutable final class TerminalReaderReaderResourceToggleValue$disabled extends TerminalReaderReaderResourceToggleValue {const TerminalReaderReaderResourceToggleValue$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceToggleValue$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceToggleValue$enabled extends TerminalReaderReaderResourceToggleValue {const TerminalReaderReaderResourceToggleValue$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalReaderReaderResourceToggleValue$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class TerminalReaderReaderResourceToggleValue$Unknown extends TerminalReaderReaderResourceToggleValue {const TerminalReaderReaderResourceToggleValue$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TerminalReaderReaderResourceToggleValue && other.value == value;
+    other is TerminalReaderReaderResourceToggleValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TerminalReaderReaderResourceToggleValue($value)';
 
  }
 /// Information about an input's toggle

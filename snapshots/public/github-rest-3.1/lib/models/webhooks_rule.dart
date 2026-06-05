@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhooksRule
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class AllowDeletionsEnforcementLevel {const AllowDeletionsEnforcementLevel._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class AllowDeletionsEnforcementLevel {const AllowDeletionsEnforcementLevel();
 
 factory AllowDeletionsEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
-  _ => AllowDeletionsEnforcementLevel._(json),
+  _ => AllowDeletionsEnforcementLevel$Unknown(json),
 }; }
 
-static const AllowDeletionsEnforcementLevel off = AllowDeletionsEnforcementLevel._('off');
+static const AllowDeletionsEnforcementLevel off = AllowDeletionsEnforcementLevel$off._();
 
-static const AllowDeletionsEnforcementLevel nonAdmins = AllowDeletionsEnforcementLevel._('non_admins');
+static const AllowDeletionsEnforcementLevel nonAdmins = AllowDeletionsEnforcementLevel$nonAdmins._();
 
-static const AllowDeletionsEnforcementLevel everyone = AllowDeletionsEnforcementLevel._('everyone');
+static const AllowDeletionsEnforcementLevel everyone = AllowDeletionsEnforcementLevel$everyone._();
 
 static const List<AllowDeletionsEnforcementLevel> values = [off, nonAdmins, everyone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,34 +28,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is AllowDeletionsEnforcementLevel && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is AllowDeletionsEnforcementLevel$Unknown; } 
 @override String toString() => 'AllowDeletionsEnforcementLevel($value)';
 
  }
-@immutable final class AllowForcePushesEnforcementLevel {const AllowForcePushesEnforcementLevel._(this.value);
+@immutable final class AllowDeletionsEnforcementLevel$off extends AllowDeletionsEnforcementLevel {const AllowDeletionsEnforcementLevel$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowDeletionsEnforcementLevel$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class AllowDeletionsEnforcementLevel$nonAdmins extends AllowDeletionsEnforcementLevel {const AllowDeletionsEnforcementLevel$nonAdmins._();
+
+@override String get value => 'non_admins';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowDeletionsEnforcementLevel$nonAdmins;
+
+@override int get hashCode => 'non_admins'.hashCode;
+
+ }
+@immutable final class AllowDeletionsEnforcementLevel$everyone extends AllowDeletionsEnforcementLevel {const AllowDeletionsEnforcementLevel$everyone._();
+
+@override String get value => 'everyone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowDeletionsEnforcementLevel$everyone;
+
+@override int get hashCode => 'everyone'.hashCode;
+
+ }
+@immutable final class AllowDeletionsEnforcementLevel$Unknown extends AllowDeletionsEnforcementLevel {const AllowDeletionsEnforcementLevel$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AllowDeletionsEnforcementLevel$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class AllowForcePushesEnforcementLevel {const AllowForcePushesEnforcementLevel();
 
 factory AllowForcePushesEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
-  _ => AllowForcePushesEnforcementLevel._(json),
+  _ => AllowForcePushesEnforcementLevel$Unknown(json),
 }; }
 
-static const AllowForcePushesEnforcementLevel off = AllowForcePushesEnforcementLevel._('off');
+static const AllowForcePushesEnforcementLevel off = AllowForcePushesEnforcementLevel$off._();
 
-static const AllowForcePushesEnforcementLevel nonAdmins = AllowForcePushesEnforcementLevel._('non_admins');
+static const AllowForcePushesEnforcementLevel nonAdmins = AllowForcePushesEnforcementLevel$nonAdmins._();
 
-static const AllowForcePushesEnforcementLevel everyone = AllowForcePushesEnforcementLevel._('everyone');
+static const AllowForcePushesEnforcementLevel everyone = AllowForcePushesEnforcementLevel$everyone._();
 
 static const List<AllowForcePushesEnforcementLevel> values = [off, nonAdmins, everyone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -66,34 +96,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is AllowForcePushesEnforcementLevel && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is AllowForcePushesEnforcementLevel$Unknown; } 
 @override String toString() => 'AllowForcePushesEnforcementLevel($value)';
 
  }
-@immutable final class WebhooksRuleLinearHistoryRequirementEnforcementLevel {const WebhooksRuleLinearHistoryRequirementEnforcementLevel._(this.value);
+@immutable final class AllowForcePushesEnforcementLevel$off extends AllowForcePushesEnforcementLevel {const AllowForcePushesEnforcementLevel$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowForcePushesEnforcementLevel$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class AllowForcePushesEnforcementLevel$nonAdmins extends AllowForcePushesEnforcementLevel {const AllowForcePushesEnforcementLevel$nonAdmins._();
+
+@override String get value => 'non_admins';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowForcePushesEnforcementLevel$nonAdmins;
+
+@override int get hashCode => 'non_admins'.hashCode;
+
+ }
+@immutable final class AllowForcePushesEnforcementLevel$everyone extends AllowForcePushesEnforcementLevel {const AllowForcePushesEnforcementLevel$everyone._();
+
+@override String get value => 'everyone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AllowForcePushesEnforcementLevel$everyone;
+
+@override int get hashCode => 'everyone'.hashCode;
+
+ }
+@immutable final class AllowForcePushesEnforcementLevel$Unknown extends AllowForcePushesEnforcementLevel {const AllowForcePushesEnforcementLevel$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AllowForcePushesEnforcementLevel$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class WebhooksRuleLinearHistoryRequirementEnforcementLevel {const WebhooksRuleLinearHistoryRequirementEnforcementLevel();
 
 factory WebhooksRuleLinearHistoryRequirementEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
-  _ => WebhooksRuleLinearHistoryRequirementEnforcementLevel._(json),
+  _ => WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown(json),
 }; }
 
-static const WebhooksRuleLinearHistoryRequirementEnforcementLevel off = WebhooksRuleLinearHistoryRequirementEnforcementLevel._('off');
+static const WebhooksRuleLinearHistoryRequirementEnforcementLevel off = WebhooksRuleLinearHistoryRequirementEnforcementLevel$off._();
 
-static const WebhooksRuleLinearHistoryRequirementEnforcementLevel nonAdmins = WebhooksRuleLinearHistoryRequirementEnforcementLevel._('non_admins');
+static const WebhooksRuleLinearHistoryRequirementEnforcementLevel nonAdmins = WebhooksRuleLinearHistoryRequirementEnforcementLevel$nonAdmins._();
 
-static const WebhooksRuleLinearHistoryRequirementEnforcementLevel everyone = WebhooksRuleLinearHistoryRequirementEnforcementLevel._('everyone');
+static const WebhooksRuleLinearHistoryRequirementEnforcementLevel everyone = WebhooksRuleLinearHistoryRequirementEnforcementLevel$everyone._();
 
 static const List<WebhooksRuleLinearHistoryRequirementEnforcementLevel> values = [off, nonAdmins, everyone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -103,35 +164,66 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhooksRuleLinearHistoryRequirementEnforcementLevel && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown; } 
 @override String toString() => 'WebhooksRuleLinearHistoryRequirementEnforcementLevel($value)';
 
  }
+@immutable final class WebhooksRuleLinearHistoryRequirementEnforcementLevel$off extends WebhooksRuleLinearHistoryRequirementEnforcementLevel {const WebhooksRuleLinearHistoryRequirementEnforcementLevel$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksRuleLinearHistoryRequirementEnforcementLevel$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class WebhooksRuleLinearHistoryRequirementEnforcementLevel$nonAdmins extends WebhooksRuleLinearHistoryRequirementEnforcementLevel {const WebhooksRuleLinearHistoryRequirementEnforcementLevel$nonAdmins._();
+
+@override String get value => 'non_admins';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksRuleLinearHistoryRequirementEnforcementLevel$nonAdmins;
+
+@override int get hashCode => 'non_admins'.hashCode;
+
+ }
+@immutable final class WebhooksRuleLinearHistoryRequirementEnforcementLevel$everyone extends WebhooksRuleLinearHistoryRequirementEnforcementLevel {const WebhooksRuleLinearHistoryRequirementEnforcementLevel$everyone._();
+
+@override String get value => 'everyone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksRuleLinearHistoryRequirementEnforcementLevel$everyone;
+
+@override int get hashCode => 'everyone'.hashCode;
+
+ }
+@immutable final class WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown extends WebhooksRuleLinearHistoryRequirementEnforcementLevel {const WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhooksRuleLinearHistoryRequirementEnforcementLevel$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The enforcement level of the branch lock setting. `off` means the branch is not locked, `non_admins` means the branch is read-only for non_admins, and `everyone` means the branch is read-only for everyone.
-@immutable final class WebhooksRuleLockBranchEnforcementLevel {const WebhooksRuleLockBranchEnforcementLevel._(this.value);
+sealed class WebhooksRuleLockBranchEnforcementLevel {const WebhooksRuleLockBranchEnforcementLevel();
 
 factory WebhooksRuleLockBranchEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
-  _ => WebhooksRuleLockBranchEnforcementLevel._(json),
+  _ => WebhooksRuleLockBranchEnforcementLevel$Unknown(json),
 }; }
 
-static const WebhooksRuleLockBranchEnforcementLevel off = WebhooksRuleLockBranchEnforcementLevel._('off');
+static const WebhooksRuleLockBranchEnforcementLevel off = WebhooksRuleLockBranchEnforcementLevel$off._();
 
-static const WebhooksRuleLockBranchEnforcementLevel nonAdmins = WebhooksRuleLockBranchEnforcementLevel._('non_admins');
+static const WebhooksRuleLockBranchEnforcementLevel nonAdmins = WebhooksRuleLockBranchEnforcementLevel$nonAdmins._();
 
-static const WebhooksRuleLockBranchEnforcementLevel everyone = WebhooksRuleLockBranchEnforcementLevel._('everyone');
+static const WebhooksRuleLockBranchEnforcementLevel everyone = WebhooksRuleLockBranchEnforcementLevel$everyone._();
 
 static const List<WebhooksRuleLockBranchEnforcementLevel> values = [off, nonAdmins, everyone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -141,34 +233,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhooksRuleLockBranchEnforcementLevel && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is WebhooksRuleLockBranchEnforcementLevel$Unknown; } 
 @override String toString() => 'WebhooksRuleLockBranchEnforcementLevel($value)';
 
  }
-@immutable final class MergeQueueEnforcementLevel {const MergeQueueEnforcementLevel._(this.value);
+@immutable final class WebhooksRuleLockBranchEnforcementLevel$off extends WebhooksRuleLockBranchEnforcementLevel {const WebhooksRuleLockBranchEnforcementLevel$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksRuleLockBranchEnforcementLevel$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class WebhooksRuleLockBranchEnforcementLevel$nonAdmins extends WebhooksRuleLockBranchEnforcementLevel {const WebhooksRuleLockBranchEnforcementLevel$nonAdmins._();
+
+@override String get value => 'non_admins';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksRuleLockBranchEnforcementLevel$nonAdmins;
+
+@override int get hashCode => 'non_admins'.hashCode;
+
+ }
+@immutable final class WebhooksRuleLockBranchEnforcementLevel$everyone extends WebhooksRuleLockBranchEnforcementLevel {const WebhooksRuleLockBranchEnforcementLevel$everyone._();
+
+@override String get value => 'everyone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksRuleLockBranchEnforcementLevel$everyone;
+
+@override int get hashCode => 'everyone'.hashCode;
+
+ }
+@immutable final class WebhooksRuleLockBranchEnforcementLevel$Unknown extends WebhooksRuleLockBranchEnforcementLevel {const WebhooksRuleLockBranchEnforcementLevel$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhooksRuleLockBranchEnforcementLevel$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class MergeQueueEnforcementLevel {const MergeQueueEnforcementLevel();
 
 factory MergeQueueEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
-  _ => MergeQueueEnforcementLevel._(json),
+  _ => MergeQueueEnforcementLevel$Unknown(json),
 }; }
 
-static const MergeQueueEnforcementLevel off = MergeQueueEnforcementLevel._('off');
+static const MergeQueueEnforcementLevel off = MergeQueueEnforcementLevel$off._();
 
-static const MergeQueueEnforcementLevel nonAdmins = MergeQueueEnforcementLevel._('non_admins');
+static const MergeQueueEnforcementLevel nonAdmins = MergeQueueEnforcementLevel$nonAdmins._();
 
-static const MergeQueueEnforcementLevel everyone = MergeQueueEnforcementLevel._('everyone');
+static const MergeQueueEnforcementLevel everyone = MergeQueueEnforcementLevel$everyone._();
 
 static const List<MergeQueueEnforcementLevel> values = [off, nonAdmins, everyone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -178,34 +301,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is MergeQueueEnforcementLevel && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is MergeQueueEnforcementLevel$Unknown; } 
 @override String toString() => 'MergeQueueEnforcementLevel($value)';
 
  }
-@immutable final class WebhooksRulePullRequestReviewsEnforcementLevel {const WebhooksRulePullRequestReviewsEnforcementLevel._(this.value);
+@immutable final class MergeQueueEnforcementLevel$off extends MergeQueueEnforcementLevel {const MergeQueueEnforcementLevel$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MergeQueueEnforcementLevel$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class MergeQueueEnforcementLevel$nonAdmins extends MergeQueueEnforcementLevel {const MergeQueueEnforcementLevel$nonAdmins._();
+
+@override String get value => 'non_admins';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MergeQueueEnforcementLevel$nonAdmins;
+
+@override int get hashCode => 'non_admins'.hashCode;
+
+ }
+@immutable final class MergeQueueEnforcementLevel$everyone extends MergeQueueEnforcementLevel {const MergeQueueEnforcementLevel$everyone._();
+
+@override String get value => 'everyone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MergeQueueEnforcementLevel$everyone;
+
+@override int get hashCode => 'everyone'.hashCode;
+
+ }
+@immutable final class MergeQueueEnforcementLevel$Unknown extends MergeQueueEnforcementLevel {const MergeQueueEnforcementLevel$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is MergeQueueEnforcementLevel$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class WebhooksRulePullRequestReviewsEnforcementLevel {const WebhooksRulePullRequestReviewsEnforcementLevel();
 
 factory WebhooksRulePullRequestReviewsEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
-  _ => WebhooksRulePullRequestReviewsEnforcementLevel._(json),
+  _ => WebhooksRulePullRequestReviewsEnforcementLevel$Unknown(json),
 }; }
 
-static const WebhooksRulePullRequestReviewsEnforcementLevel off = WebhooksRulePullRequestReviewsEnforcementLevel._('off');
+static const WebhooksRulePullRequestReviewsEnforcementLevel off = WebhooksRulePullRequestReviewsEnforcementLevel$off._();
 
-static const WebhooksRulePullRequestReviewsEnforcementLevel nonAdmins = WebhooksRulePullRequestReviewsEnforcementLevel._('non_admins');
+static const WebhooksRulePullRequestReviewsEnforcementLevel nonAdmins = WebhooksRulePullRequestReviewsEnforcementLevel$nonAdmins._();
 
-static const WebhooksRulePullRequestReviewsEnforcementLevel everyone = WebhooksRulePullRequestReviewsEnforcementLevel._('everyone');
+static const WebhooksRulePullRequestReviewsEnforcementLevel everyone = WebhooksRulePullRequestReviewsEnforcementLevel$everyone._();
 
 static const List<WebhooksRulePullRequestReviewsEnforcementLevel> values = [off, nonAdmins, everyone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -215,34 +369,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhooksRulePullRequestReviewsEnforcementLevel && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is WebhooksRulePullRequestReviewsEnforcementLevel$Unknown; } 
 @override String toString() => 'WebhooksRulePullRequestReviewsEnforcementLevel($value)';
 
  }
-@immutable final class RequiredConversationResolutionLevel {const RequiredConversationResolutionLevel._(this.value);
+@immutable final class WebhooksRulePullRequestReviewsEnforcementLevel$off extends WebhooksRulePullRequestReviewsEnforcementLevel {const WebhooksRulePullRequestReviewsEnforcementLevel$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksRulePullRequestReviewsEnforcementLevel$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class WebhooksRulePullRequestReviewsEnforcementLevel$nonAdmins extends WebhooksRulePullRequestReviewsEnforcementLevel {const WebhooksRulePullRequestReviewsEnforcementLevel$nonAdmins._();
+
+@override String get value => 'non_admins';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksRulePullRequestReviewsEnforcementLevel$nonAdmins;
+
+@override int get hashCode => 'non_admins'.hashCode;
+
+ }
+@immutable final class WebhooksRulePullRequestReviewsEnforcementLevel$everyone extends WebhooksRulePullRequestReviewsEnforcementLevel {const WebhooksRulePullRequestReviewsEnforcementLevel$everyone._();
+
+@override String get value => 'everyone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksRulePullRequestReviewsEnforcementLevel$everyone;
+
+@override int get hashCode => 'everyone'.hashCode;
+
+ }
+@immutable final class WebhooksRulePullRequestReviewsEnforcementLevel$Unknown extends WebhooksRulePullRequestReviewsEnforcementLevel {const WebhooksRulePullRequestReviewsEnforcementLevel$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhooksRulePullRequestReviewsEnforcementLevel$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class RequiredConversationResolutionLevel {const RequiredConversationResolutionLevel();
 
 factory RequiredConversationResolutionLevel.fromJson(String json) { return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
-  _ => RequiredConversationResolutionLevel._(json),
+  _ => RequiredConversationResolutionLevel$Unknown(json),
 }; }
 
-static const RequiredConversationResolutionLevel off = RequiredConversationResolutionLevel._('off');
+static const RequiredConversationResolutionLevel off = RequiredConversationResolutionLevel$off._();
 
-static const RequiredConversationResolutionLevel nonAdmins = RequiredConversationResolutionLevel._('non_admins');
+static const RequiredConversationResolutionLevel nonAdmins = RequiredConversationResolutionLevel$nonAdmins._();
 
-static const RequiredConversationResolutionLevel everyone = RequiredConversationResolutionLevel._('everyone');
+static const RequiredConversationResolutionLevel everyone = RequiredConversationResolutionLevel$everyone._();
 
 static const List<RequiredConversationResolutionLevel> values = [off, nonAdmins, everyone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -252,34 +437,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RequiredConversationResolutionLevel && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is RequiredConversationResolutionLevel$Unknown; } 
 @override String toString() => 'RequiredConversationResolutionLevel($value)';
 
  }
-@immutable final class RequiredDeploymentsEnforcementLevel {const RequiredDeploymentsEnforcementLevel._(this.value);
+@immutable final class RequiredConversationResolutionLevel$off extends RequiredConversationResolutionLevel {const RequiredConversationResolutionLevel$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RequiredConversationResolutionLevel$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class RequiredConversationResolutionLevel$nonAdmins extends RequiredConversationResolutionLevel {const RequiredConversationResolutionLevel$nonAdmins._();
+
+@override String get value => 'non_admins';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RequiredConversationResolutionLevel$nonAdmins;
+
+@override int get hashCode => 'non_admins'.hashCode;
+
+ }
+@immutable final class RequiredConversationResolutionLevel$everyone extends RequiredConversationResolutionLevel {const RequiredConversationResolutionLevel$everyone._();
+
+@override String get value => 'everyone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RequiredConversationResolutionLevel$everyone;
+
+@override int get hashCode => 'everyone'.hashCode;
+
+ }
+@immutable final class RequiredConversationResolutionLevel$Unknown extends RequiredConversationResolutionLevel {const RequiredConversationResolutionLevel$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RequiredConversationResolutionLevel$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class RequiredDeploymentsEnforcementLevel {const RequiredDeploymentsEnforcementLevel();
 
 factory RequiredDeploymentsEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
-  _ => RequiredDeploymentsEnforcementLevel._(json),
+  _ => RequiredDeploymentsEnforcementLevel$Unknown(json),
 }; }
 
-static const RequiredDeploymentsEnforcementLevel off = RequiredDeploymentsEnforcementLevel._('off');
+static const RequiredDeploymentsEnforcementLevel off = RequiredDeploymentsEnforcementLevel$off._();
 
-static const RequiredDeploymentsEnforcementLevel nonAdmins = RequiredDeploymentsEnforcementLevel._('non_admins');
+static const RequiredDeploymentsEnforcementLevel nonAdmins = RequiredDeploymentsEnforcementLevel$nonAdmins._();
 
-static const RequiredDeploymentsEnforcementLevel everyone = RequiredDeploymentsEnforcementLevel._('everyone');
+static const RequiredDeploymentsEnforcementLevel everyone = RequiredDeploymentsEnforcementLevel$everyone._();
 
 static const List<RequiredDeploymentsEnforcementLevel> values = [off, nonAdmins, everyone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -289,34 +505,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RequiredDeploymentsEnforcementLevel && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is RequiredDeploymentsEnforcementLevel$Unknown; } 
 @override String toString() => 'RequiredDeploymentsEnforcementLevel($value)';
 
  }
-@immutable final class WebhooksRuleRequiredStatusChecksEnforcementLevel {const WebhooksRuleRequiredStatusChecksEnforcementLevel._(this.value);
+@immutable final class RequiredDeploymentsEnforcementLevel$off extends RequiredDeploymentsEnforcementLevel {const RequiredDeploymentsEnforcementLevel$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RequiredDeploymentsEnforcementLevel$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class RequiredDeploymentsEnforcementLevel$nonAdmins extends RequiredDeploymentsEnforcementLevel {const RequiredDeploymentsEnforcementLevel$nonAdmins._();
+
+@override String get value => 'non_admins';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RequiredDeploymentsEnforcementLevel$nonAdmins;
+
+@override int get hashCode => 'non_admins'.hashCode;
+
+ }
+@immutable final class RequiredDeploymentsEnforcementLevel$everyone extends RequiredDeploymentsEnforcementLevel {const RequiredDeploymentsEnforcementLevel$everyone._();
+
+@override String get value => 'everyone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RequiredDeploymentsEnforcementLevel$everyone;
+
+@override int get hashCode => 'everyone'.hashCode;
+
+ }
+@immutable final class RequiredDeploymentsEnforcementLevel$Unknown extends RequiredDeploymentsEnforcementLevel {const RequiredDeploymentsEnforcementLevel$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RequiredDeploymentsEnforcementLevel$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class WebhooksRuleRequiredStatusChecksEnforcementLevel {const WebhooksRuleRequiredStatusChecksEnforcementLevel();
 
 factory WebhooksRuleRequiredStatusChecksEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
-  _ => WebhooksRuleRequiredStatusChecksEnforcementLevel._(json),
+  _ => WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown(json),
 }; }
 
-static const WebhooksRuleRequiredStatusChecksEnforcementLevel off = WebhooksRuleRequiredStatusChecksEnforcementLevel._('off');
+static const WebhooksRuleRequiredStatusChecksEnforcementLevel off = WebhooksRuleRequiredStatusChecksEnforcementLevel$off._();
 
-static const WebhooksRuleRequiredStatusChecksEnforcementLevel nonAdmins = WebhooksRuleRequiredStatusChecksEnforcementLevel._('non_admins');
+static const WebhooksRuleRequiredStatusChecksEnforcementLevel nonAdmins = WebhooksRuleRequiredStatusChecksEnforcementLevel$nonAdmins._();
 
-static const WebhooksRuleRequiredStatusChecksEnforcementLevel everyone = WebhooksRuleRequiredStatusChecksEnforcementLevel._('everyone');
+static const WebhooksRuleRequiredStatusChecksEnforcementLevel everyone = WebhooksRuleRequiredStatusChecksEnforcementLevel$everyone._();
 
 static const List<WebhooksRuleRequiredStatusChecksEnforcementLevel> values = [off, nonAdmins, everyone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -326,34 +573,65 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhooksRuleRequiredStatusChecksEnforcementLevel && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown; } 
 @override String toString() => 'WebhooksRuleRequiredStatusChecksEnforcementLevel($value)';
 
  }
-@immutable final class SignatureRequirementEnforcementLevel {const SignatureRequirementEnforcementLevel._(this.value);
+@immutable final class WebhooksRuleRequiredStatusChecksEnforcementLevel$off extends WebhooksRuleRequiredStatusChecksEnforcementLevel {const WebhooksRuleRequiredStatusChecksEnforcementLevel$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksRuleRequiredStatusChecksEnforcementLevel$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class WebhooksRuleRequiredStatusChecksEnforcementLevel$nonAdmins extends WebhooksRuleRequiredStatusChecksEnforcementLevel {const WebhooksRuleRequiredStatusChecksEnforcementLevel$nonAdmins._();
+
+@override String get value => 'non_admins';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksRuleRequiredStatusChecksEnforcementLevel$nonAdmins;
+
+@override int get hashCode => 'non_admins'.hashCode;
+
+ }
+@immutable final class WebhooksRuleRequiredStatusChecksEnforcementLevel$everyone extends WebhooksRuleRequiredStatusChecksEnforcementLevel {const WebhooksRuleRequiredStatusChecksEnforcementLevel$everyone._();
+
+@override String get value => 'everyone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhooksRuleRequiredStatusChecksEnforcementLevel$everyone;
+
+@override int get hashCode => 'everyone'.hashCode;
+
+ }
+@immutable final class WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown extends WebhooksRuleRequiredStatusChecksEnforcementLevel {const WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WebhooksRuleRequiredStatusChecksEnforcementLevel$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class SignatureRequirementEnforcementLevel {const SignatureRequirementEnforcementLevel();
 
 factory SignatureRequirementEnforcementLevel.fromJson(String json) { return switch (json) {
   'off' => off,
   'non_admins' => nonAdmins,
   'everyone' => everyone,
-  _ => SignatureRequirementEnforcementLevel._(json),
+  _ => SignatureRequirementEnforcementLevel$Unknown(json),
 }; }
 
-static const SignatureRequirementEnforcementLevel off = SignatureRequirementEnforcementLevel._('off');
+static const SignatureRequirementEnforcementLevel off = SignatureRequirementEnforcementLevel$off._();
 
-static const SignatureRequirementEnforcementLevel nonAdmins = SignatureRequirementEnforcementLevel._('non_admins');
+static const SignatureRequirementEnforcementLevel nonAdmins = SignatureRequirementEnforcementLevel$nonAdmins._();
 
-static const SignatureRequirementEnforcementLevel everyone = SignatureRequirementEnforcementLevel._('everyone');
+static const SignatureRequirementEnforcementLevel everyone = SignatureRequirementEnforcementLevel$everyone._();
 
 static const List<SignatureRequirementEnforcementLevel> values = [off, nonAdmins, everyone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -363,13 +641,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SignatureRequirementEnforcementLevel$Unknown; } 
+@override String toString() => 'SignatureRequirementEnforcementLevel($value)';
+
+ }
+@immutable final class SignatureRequirementEnforcementLevel$off extends SignatureRequirementEnforcementLevel {const SignatureRequirementEnforcementLevel$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SignatureRequirementEnforcementLevel$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class SignatureRequirementEnforcementLevel$nonAdmins extends SignatureRequirementEnforcementLevel {const SignatureRequirementEnforcementLevel$nonAdmins._();
+
+@override String get value => 'non_admins';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SignatureRequirementEnforcementLevel$nonAdmins;
+
+@override int get hashCode => 'non_admins'.hashCode;
+
+ }
+@immutable final class SignatureRequirementEnforcementLevel$everyone extends SignatureRequirementEnforcementLevel {const SignatureRequirementEnforcementLevel$everyone._();
+
+@override String get value => 'everyone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SignatureRequirementEnforcementLevel$everyone;
+
+@override int get hashCode => 'everyone'.hashCode;
+
+ }
+@immutable final class SignatureRequirementEnforcementLevel$Unknown extends SignatureRequirementEnforcementLevel {const SignatureRequirementEnforcementLevel$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SignatureRequirementEnforcementLevel && other.value == value;
+    other is SignatureRequirementEnforcementLevel$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SignatureRequirementEnforcementLevel($value)';
 
  }
 /// The branch protection rule. Includes a `name` and all the [branch protection settings](https://docs.github.com/github/administering-a-repository/defining-the-mergeability-of-pull-requests/about-protected-branches#about-branch-protection-settings) applied to branches that match the name. Binary settings are boolean. Multi-level configurations are one of `off`, `non_admins`, or `everyone`. Actor and build lists are arrays of strings.

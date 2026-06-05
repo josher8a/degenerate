@@ -2,22 +2,21 @@
 // Source: #/components/schemas/LogpushOutputOptions
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Specifies the output type, such as `ndjson` or `csv`. This sets default values for the rest of the settings, depending on the chosen output type. Some formatting rules, like string quoting, are different between output types.
-@immutable final class OutputType {const OutputType._(this.value);
+sealed class OutputType {const OutputType();
 
 factory OutputType.fromJson(String json) { return switch (json) {
   'ndjson' => ndjson,
   'csv' => csv,
-  _ => OutputType._(json),
+  _ => OutputType$Unknown(json),
 }; }
 
-static const OutputType ndjson = OutputType._('ndjson');
+static const OutputType ndjson = OutputType$ndjson._();
 
-static const OutputType csv = OutputType._('csv');
+static const OutputType csv = OutputType$csv._();
 
 static const List<OutputType> values = [ndjson, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,38 +25,60 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is OutputType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is OutputType$Unknown; } 
 @override String toString() => 'OutputType($value)';
 
  }
+@immutable final class OutputType$ndjson extends OutputType {const OutputType$ndjson._();
+
+@override String get value => 'ndjson';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OutputType$ndjson;
+
+@override int get hashCode => 'ndjson'.hashCode;
+
+ }
+@immutable final class OutputType$csv extends OutputType {const OutputType$csv._();
+
+@override String get value => 'csv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OutputType$csv;
+
+@override int get hashCode => 'csv'.hashCode;
+
+ }
+@immutable final class OutputType$Unknown extends OutputType {const OutputType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is OutputType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339` or `rfc3339nano`.
-@immutable final class TimestampFormat {const TimestampFormat._(this.value);
+sealed class TimestampFormat {const TimestampFormat();
 
 factory TimestampFormat.fromJson(String json) { return switch (json) {
   'unixnano' => unixnano,
   'unix' => unix,
   'rfc3339' => rfc3339,
   'rfc3339nano' => rfc3339nano,
-  _ => TimestampFormat._(json),
+  _ => TimestampFormat$Unknown(json),
 }; }
 
-static const TimestampFormat unixnano = TimestampFormat._('unixnano');
+static const TimestampFormat unixnano = TimestampFormat$unixnano._();
 
-static const TimestampFormat unix = TimestampFormat._('unix');
+static const TimestampFormat unix = TimestampFormat$unix._();
 
-static const TimestampFormat rfc3339 = TimestampFormat._('rfc3339');
+static const TimestampFormat rfc3339 = TimestampFormat$rfc3339._();
 
-static const TimestampFormat rfc3339nano = TimestampFormat._('rfc3339nano');
+static const TimestampFormat rfc3339nano = TimestampFormat$rfc3339nano._();
 
 static const List<TimestampFormat> values = [unixnano, unix, rfc3339, rfc3339nano];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,13 +89,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TimestampFormat$Unknown; } 
+@override String toString() => 'TimestampFormat($value)';
+
+ }
+@immutable final class TimestampFormat$unixnano extends TimestampFormat {const TimestampFormat$unixnano._();
+
+@override String get value => 'unixnano';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TimestampFormat$unixnano;
+
+@override int get hashCode => 'unixnano'.hashCode;
+
+ }
+@immutable final class TimestampFormat$unix extends TimestampFormat {const TimestampFormat$unix._();
+
+@override String get value => 'unix';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TimestampFormat$unix;
+
+@override int get hashCode => 'unix'.hashCode;
+
+ }
+@immutable final class TimestampFormat$rfc3339 extends TimestampFormat {const TimestampFormat$rfc3339._();
+
+@override String get value => 'rfc3339';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TimestampFormat$rfc3339;
+
+@override int get hashCode => 'rfc3339'.hashCode;
+
+ }
+@immutable final class TimestampFormat$rfc3339nano extends TimestampFormat {const TimestampFormat$rfc3339nano._();
+
+@override String get value => 'rfc3339nano';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TimestampFormat$rfc3339nano;
+
+@override int get hashCode => 'rfc3339nano'.hashCode;
+
+ }
+@immutable final class TimestampFormat$Unknown extends TimestampFormat {const TimestampFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TimestampFormat && other.value == value;
+    other is TimestampFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TimestampFormat($value)';
 
  }
 /// The structured replacement for `logpull_options`. When including this field, the `logpull_option` field will be ignored.

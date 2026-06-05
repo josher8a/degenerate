@@ -2,25 +2,24 @@
 // Source: #/components/schemas/MagicWan
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_port.dart';import 'package:pub_cloudflare/models/magic_vlan_tag.dart';import 'package:pub_cloudflare/models/magic_wan_static_addressing.dart';/// Magic WAN health check rate for tunnels created on this link. The default value is `mid`.
-@immutable final class HealthCheckRate {const HealthCheckRate._(this.value);
+sealed class HealthCheckRate {const HealthCheckRate();
 
 factory HealthCheckRate.fromJson(String json) { return switch (json) {
   'low' => low,
   'mid' => mid,
   'high' => high,
-  _ => HealthCheckRate._(json),
+  _ => HealthCheckRate$Unknown(json),
 }; }
 
-static const HealthCheckRate low = HealthCheckRate._('low');
+static const HealthCheckRate low = HealthCheckRate$low._();
 
-static const HealthCheckRate mid = HealthCheckRate._('mid');
+static const HealthCheckRate mid = HealthCheckRate$mid._();
 
-static const HealthCheckRate high = HealthCheckRate._('high');
+static const HealthCheckRate high = HealthCheckRate$high._();
 
 static const List<HealthCheckRate> values = [low, mid, high];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is HealthCheckRate$Unknown; } 
+@override String toString() => 'HealthCheckRate($value)';
+
+ }
+@immutable final class HealthCheckRate$low extends HealthCheckRate {const HealthCheckRate$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HealthCheckRate$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class HealthCheckRate$mid extends HealthCheckRate {const HealthCheckRate$mid._();
+
+@override String get value => 'mid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HealthCheckRate$mid;
+
+@override int get hashCode => 'mid'.hashCode;
+
+ }
+@immutable final class HealthCheckRate$high extends HealthCheckRate {const HealthCheckRate$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is HealthCheckRate$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class HealthCheckRate$Unknown extends HealthCheckRate {const HealthCheckRate$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is HealthCheckRate && other.value == value;
+    other is HealthCheckRate$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'HealthCheckRate($value)';
 
  }
 @immutable final class MagicWan {const MagicWan({this.healthCheckRate = HealthCheckRate.mid, this.id, this.name, this.physport, this.priority, this.siteId, this.staticAddressing, this.vlanTag, });

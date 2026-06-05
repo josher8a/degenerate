@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersObservabilityQueryRun
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_query_request/timeframe.dart';import 'package:pub_cloudflare/models/workers_observability_query.dart';import 'package:pub_cloudflare/models/workers_observability_query_run/statistics.dart';@immutable final class WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/telemetry_query_request/timeframe.dart';import 'package:pub_cloudflare/models/workers_observability_query.dart';import 'package:pub_cloudflare/models/workers_observability_query_run/statistics.dart';sealed class WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus();
 
 factory WorkersObservabilityQueryRunStatus.fromJson(String json) { return switch (json) {
   'STARTED' => started,
   'COMPLETED' => completed,
-  _ => WorkersObservabilityQueryRunStatus._(json),
+  _ => WorkersObservabilityQueryRunStatus$Unknown(json),
 }; }
 
-static const WorkersObservabilityQueryRunStatus started = WorkersObservabilityQueryRunStatus._('STARTED');
+static const WorkersObservabilityQueryRunStatus started = WorkersObservabilityQueryRunStatus$started._();
 
-static const WorkersObservabilityQueryRunStatus completed = WorkersObservabilityQueryRunStatus._('COMPLETED');
+static const WorkersObservabilityQueryRunStatus completed = WorkersObservabilityQueryRunStatus$completed._();
 
 static const List<WorkersObservabilityQueryRunStatus> values = [started, completed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WorkersObservabilityQueryRunStatus$Unknown; } 
+@override String toString() => 'WorkersObservabilityQueryRunStatus($value)';
+
+ }
+@immutable final class WorkersObservabilityQueryRunStatus$started extends WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus$started._();
+
+@override String get value => 'STARTED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersObservabilityQueryRunStatus$started;
+
+@override int get hashCode => 'STARTED'.hashCode;
+
+ }
+@immutable final class WorkersObservabilityQueryRunStatus$completed extends WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus$completed._();
+
+@override String get value => 'COMPLETED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersObservabilityQueryRunStatus$completed;
+
+@override int get hashCode => 'COMPLETED'.hashCode;
+
+ }
+@immutable final class WorkersObservabilityQueryRunStatus$Unknown extends WorkersObservabilityQueryRunStatus {const WorkersObservabilityQueryRunStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WorkersObservabilityQueryRunStatus && other.value == value;
+    other is WorkersObservabilityQueryRunStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WorkersObservabilityQueryRunStatus($value)';
 
  }
 /// A Workers Observability Query Object

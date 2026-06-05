@@ -2,19 +2,18 @@
 // Source: #/components/schemas/IssuingPersonalizationDesign
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/file.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design/issuing_personalization_design_card_logo.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design/physical_bundle.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design_carrier_text.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design_preferences.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design_rejection_reasons.dart';import 'package:pub_stripe_spec3/models/issuing_physical_bundle.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class IssuingPersonalizationDesignObject {const IssuingPersonalizationDesignObject._(this.value);
+sealed class IssuingPersonalizationDesignObject {const IssuingPersonalizationDesignObject();
 
 factory IssuingPersonalizationDesignObject.fromJson(String json) { return switch (json) {
   'issuing.personalization_design' => issuingPersonalizationDesign,
-  _ => IssuingPersonalizationDesignObject._(json),
+  _ => IssuingPersonalizationDesignObject$Unknown(json),
 }; }
 
-static const IssuingPersonalizationDesignObject issuingPersonalizationDesign = IssuingPersonalizationDesignObject._('issuing.personalization_design');
+static const IssuingPersonalizationDesignObject issuingPersonalizationDesign = IssuingPersonalizationDesignObject$issuingPersonalizationDesign._();
 
 static const List<IssuingPersonalizationDesignObject> values = [issuingPersonalizationDesign];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,38 +21,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingPersonalizationDesignObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingPersonalizationDesignObject$Unknown; } 
 @override String toString() => 'IssuingPersonalizationDesignObject($value)';
 
  }
+@immutable final class IssuingPersonalizationDesignObject$issuingPersonalizationDesign extends IssuingPersonalizationDesignObject {const IssuingPersonalizationDesignObject$issuingPersonalizationDesign._();
+
+@override String get value => 'issuing.personalization_design';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingPersonalizationDesignObject$issuingPersonalizationDesign;
+
+@override int get hashCode => 'issuing.personalization_design'.hashCode;
+
+ }
+@immutable final class IssuingPersonalizationDesignObject$Unknown extends IssuingPersonalizationDesignObject {const IssuingPersonalizationDesignObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingPersonalizationDesignObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Whether this personalization design can be used to create cards.
-@immutable final class IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus._(this.value);
+sealed class IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus();
 
 factory IssuingPersonalizationDesignStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'inactive' => inactive,
   'rejected' => rejected,
   'review' => review,
-  _ => IssuingPersonalizationDesignStatus._(json),
+  _ => IssuingPersonalizationDesignStatus$Unknown(json),
 }; }
 
-static const IssuingPersonalizationDesignStatus active = IssuingPersonalizationDesignStatus._('active');
+static const IssuingPersonalizationDesignStatus active = IssuingPersonalizationDesignStatus$active._();
 
-static const IssuingPersonalizationDesignStatus inactive = IssuingPersonalizationDesignStatus._('inactive');
+static const IssuingPersonalizationDesignStatus inactive = IssuingPersonalizationDesignStatus$inactive._();
 
-static const IssuingPersonalizationDesignStatus rejected = IssuingPersonalizationDesignStatus._('rejected');
+static const IssuingPersonalizationDesignStatus rejected = IssuingPersonalizationDesignStatus$rejected._();
 
-static const IssuingPersonalizationDesignStatus review = IssuingPersonalizationDesignStatus._('review');
+static const IssuingPersonalizationDesignStatus review = IssuingPersonalizationDesignStatus$review._();
 
 static const List<IssuingPersonalizationDesignStatus> values = [active, inactive, rejected, review];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,13 +76,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingPersonalizationDesignStatus$Unknown; } 
+@override String toString() => 'IssuingPersonalizationDesignStatus($value)';
+
+ }
+@immutable final class IssuingPersonalizationDesignStatus$active extends IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingPersonalizationDesignStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class IssuingPersonalizationDesignStatus$inactive extends IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingPersonalizationDesignStatus$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+ }
+@immutable final class IssuingPersonalizationDesignStatus$rejected extends IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus$rejected._();
+
+@override String get value => 'rejected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingPersonalizationDesignStatus$rejected;
+
+@override int get hashCode => 'rejected'.hashCode;
+
+ }
+@immutable final class IssuingPersonalizationDesignStatus$review extends IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus$review._();
+
+@override String get value => 'review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingPersonalizationDesignStatus$review;
+
+@override int get hashCode => 'review'.hashCode;
+
+ }
+@immutable final class IssuingPersonalizationDesignStatus$Unknown extends IssuingPersonalizationDesignStatus {const IssuingPersonalizationDesignStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingPersonalizationDesignStatus && other.value == value;
+    other is IssuingPersonalizationDesignStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingPersonalizationDesignStatus($value)';
 
  }
 /// A Personalization Design is a logical grouping of a Physical Bundle, card logo, and carrier text that represents a product line.

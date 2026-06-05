@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RichCompletionEventData
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class StopReason {const StopReason._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class StopReason {const StopReason();
 
 factory StopReason.fromJson(String json) { return switch (json) {
   'stop_sequence' => stopSequence,
   'max_tokens' => maxTokens,
   'null' => $null,
-  _ => StopReason._(json),
+  _ => StopReason$Unknown(json),
 }; }
 
-static const StopReason stopSequence = StopReason._('stop_sequence');
+static const StopReason stopSequence = StopReason$stopSequence._();
 
-static const StopReason maxTokens = StopReason._('max_tokens');
+static const StopReason maxTokens = StopReason$maxTokens._();
 
-static const StopReason $null = StopReason._('null');
+static const StopReason $null = StopReason$$null._();
 
 static const List<StopReason> values = [stopSequence, maxTokens, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StopReason$Unknown; } 
+@override String toString() => 'StopReason($value)';
+
+ }
+@immutable final class StopReason$stopSequence extends StopReason {const StopReason$stopSequence._();
+
+@override String get value => 'stop_sequence';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StopReason$stopSequence;
+
+@override int get hashCode => 'stop_sequence'.hashCode;
+
+ }
+@immutable final class StopReason$maxTokens extends StopReason {const StopReason$maxTokens._();
+
+@override String get value => 'max_tokens';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StopReason$maxTokens;
+
+@override int get hashCode => 'max_tokens'.hashCode;
+
+ }
+@immutable final class StopReason$$null extends StopReason {const StopReason$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StopReason$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class StopReason$Unknown extends StopReason {const StopReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StopReason && other.value == value;
+    other is StopReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StopReason($value)';
 
  }
 @immutable final class RichCompletionEventData {const RichCompletionEventData({required this.completion, required this.stopReason, this.model, });

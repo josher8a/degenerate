@@ -2,22 +2,21 @@
 // Source: #/components/schemas/ReleaseAsset
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// State of the release asset.
-@immutable final class ReleaseAssetState {const ReleaseAssetState._(this.value);
+sealed class ReleaseAssetState {const ReleaseAssetState();
 
 factory ReleaseAssetState.fromJson(String json) { return switch (json) {
   'uploaded' => uploaded,
   'open' => open,
-  _ => ReleaseAssetState._(json),
+  _ => ReleaseAssetState$Unknown(json),
 }; }
 
-static const ReleaseAssetState uploaded = ReleaseAssetState._('uploaded');
+static const ReleaseAssetState uploaded = ReleaseAssetState$uploaded._();
 
-static const ReleaseAssetState open = ReleaseAssetState._('open');
+static const ReleaseAssetState open = ReleaseAssetState$open._();
 
 static const List<ReleaseAssetState> values = [uploaded, open];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ReleaseAssetState$Unknown; } 
+@override String toString() => 'ReleaseAssetState($value)';
+
+ }
+@immutable final class ReleaseAssetState$uploaded extends ReleaseAssetState {const ReleaseAssetState$uploaded._();
+
+@override String get value => 'uploaded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReleaseAssetState$uploaded;
+
+@override int get hashCode => 'uploaded'.hashCode;
+
+ }
+@immutable final class ReleaseAssetState$open extends ReleaseAssetState {const ReleaseAssetState$open._();
+
+@override String get value => 'open';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReleaseAssetState$open;
+
+@override int get hashCode => 'open'.hashCode;
+
+ }
+@immutable final class ReleaseAssetState$Unknown extends ReleaseAssetState {const ReleaseAssetState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ReleaseAssetState && other.value == value;
+    other is ReleaseAssetState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ReleaseAssetState($value)';
 
  }
 /// Data related to a release.

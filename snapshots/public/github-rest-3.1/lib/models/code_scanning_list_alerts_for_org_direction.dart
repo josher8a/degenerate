@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CodeScanningListAlertsForOrgDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CodeScanningListAlertsForOrgDirection {const CodeScanningListAlertsForOrgDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class CodeScanningListAlertsForOrgDirection {const CodeScanningListAlertsForOrgDirection();
 
 factory CodeScanningListAlertsForOrgDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => CodeScanningListAlertsForOrgDirection._(json),
+  _ => CodeScanningListAlertsForOrgDirection$Unknown(json),
 }; }
 
-static const CodeScanningListAlertsForOrgDirection asc = CodeScanningListAlertsForOrgDirection._('asc');
+static const CodeScanningListAlertsForOrgDirection asc = CodeScanningListAlertsForOrgDirection$asc._();
 
-static const CodeScanningListAlertsForOrgDirection desc = CodeScanningListAlertsForOrgDirection._('desc');
+static const CodeScanningListAlertsForOrgDirection desc = CodeScanningListAlertsForOrgDirection$desc._();
 
 static const List<CodeScanningListAlertsForOrgDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeScanningListAlertsForOrgDirection$Unknown; } 
+@override String toString() => 'CodeScanningListAlertsForOrgDirection($value)';
+
+ }
+@immutable final class CodeScanningListAlertsForOrgDirection$asc extends CodeScanningListAlertsForOrgDirection {const CodeScanningListAlertsForOrgDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningListAlertsForOrgDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class CodeScanningListAlertsForOrgDirection$desc extends CodeScanningListAlertsForOrgDirection {const CodeScanningListAlertsForOrgDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningListAlertsForOrgDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class CodeScanningListAlertsForOrgDirection$Unknown extends CodeScanningListAlertsForOrgDirection {const CodeScanningListAlertsForOrgDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeScanningListAlertsForOrgDirection && other.value == value;
+    other is CodeScanningListAlertsForOrgDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeScanningListAlertsForOrgDirection($value)';
 
  }

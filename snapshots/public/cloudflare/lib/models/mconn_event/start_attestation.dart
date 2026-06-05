@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MconnEvent (inline: StartAttestation)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Started attestation
-@immutable final class StartAttestationK {const StartAttestationK._(this.value);
+sealed class StartAttestationK {const StartAttestationK();
 
 factory StartAttestationK.fromJson(String json) { return switch (json) {
   'StartAttestation' => startAttestation,
-  _ => StartAttestationK._(json),
+  _ => StartAttestationK$Unknown(json),
 }; }
 
-static const StartAttestationK startAttestation = StartAttestationK._('StartAttestation');
+static const StartAttestationK startAttestation = StartAttestationK$startAttestation._();
 
 static const List<StartAttestationK> values = [startAttestation];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StartAttestationK$Unknown; } 
+@override String toString() => 'StartAttestationK($value)';
+
+ }
+@immutable final class StartAttestationK$startAttestation extends StartAttestationK {const StartAttestationK$startAttestation._();
+
+@override String get value => 'StartAttestation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StartAttestationK$startAttestation;
+
+@override int get hashCode => 'StartAttestation'.hashCode;
+
+ }
+@immutable final class StartAttestationK$Unknown extends StartAttestationK {const StartAttestationK$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StartAttestationK && other.value == value;
+    other is StartAttestationK$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StartAttestationK($value)';
 
  }
 @immutable final class StartAttestation {const StartAttestation({required this.k});

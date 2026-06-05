@@ -481,14 +481,14 @@ void main() {
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
 
-      expect(source, contains('final class Status'));
-      expect(source, contains('final String value;'));
-      expect(source, contains('const Status._(this.value)'));
+      expect(source, contains('sealed class Status'));
       expect(source, contains('factory Status.fromJson(String json)'));
       expect(source, contains('String toJson()'));
-      expect(source, contains("active = Status._('active')"));
-      expect(source, contains("inactive = Status._('inactive')"));
-      expect(source, contains("suspended = Status._('suspended')"));
+      expect(source, contains('active = Status\$active._()'));
+      expect(source, contains('inactive = Status\$inactive._()'));
+      expect(source, contains('suspended = Status\$suspended._()'));
+      expect(source, contains('final class Status\$active'));
+      expect(source, contains('final class Status\$Unknown'));
     });
 
     test('enum code is valid Dart', () {
@@ -507,11 +507,12 @@ void main() {
       final library = Library((b) => b..body.addAll(specs));
       final source = emitRaw(library);
 
-      expect(source, contains('final int value;'));
+      expect(source, contains('sealed class Priority'));
       expect(source, contains('factory Priority.fromJson(int json)'));
       expect(source, contains('int toJson()'));
-      expect(source, contains('Priority._(0)'));
-      expect(source, contains('Priority._(1)'));
+      expect(source, contains(r'Priority$$0._()'));
+      expect(source, contains(r'Priority$$1._()'));
+      expect(source, contains('final class Priority\$Unknown'));
     });
 
     test('integer enum is valid Dart', () {

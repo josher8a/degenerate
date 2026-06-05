@@ -15,7 +15,7 @@ return McnConduitTunnelId(json); }
 String toJson() => value;
 
 }
-@immutable final class McnOnrampLifecycleState {const McnOnrampLifecycleState._(this.value);
+sealed class McnOnrampLifecycleState {const McnOnrampLifecycleState();
 
 factory McnOnrampLifecycleState.fromJson(String json) { return switch (json) {
   'OnrampNeedsApply' => onrampNeedsApply,
@@ -30,37 +30,36 @@ factory McnOnrampLifecycleState.fromJson(String json) { return switch (json) {
   'OnrampPendingDestroy' => onrampPendingDestroy,
   'OnrampDestroying' => onrampDestroying,
   'OnrampDestroyFailed' => onrampDestroyFailed,
-  _ => McnOnrampLifecycleState._(json),
+  _ => McnOnrampLifecycleState$Unknown(json),
 }; }
 
-static const McnOnrampLifecycleState onrampNeedsApply = McnOnrampLifecycleState._('OnrampNeedsApply');
+static const McnOnrampLifecycleState onrampNeedsApply = McnOnrampLifecycleState$onrampNeedsApply._();
 
-static const McnOnrampLifecycleState onrampPendingPlan = McnOnrampLifecycleState._('OnrampPendingPlan');
+static const McnOnrampLifecycleState onrampPendingPlan = McnOnrampLifecycleState$onrampPendingPlan._();
 
-static const McnOnrampLifecycleState onrampPlanning = McnOnrampLifecycleState._('OnrampPlanning');
+static const McnOnrampLifecycleState onrampPlanning = McnOnrampLifecycleState$onrampPlanning._();
 
-static const McnOnrampLifecycleState onrampPlanFailed = McnOnrampLifecycleState._('OnrampPlanFailed');
+static const McnOnrampLifecycleState onrampPlanFailed = McnOnrampLifecycleState$onrampPlanFailed._();
 
-static const McnOnrampLifecycleState onrampPendingApproval = McnOnrampLifecycleState._('OnrampPendingApproval');
+static const McnOnrampLifecycleState onrampPendingApproval = McnOnrampLifecycleState$onrampPendingApproval._();
 
-static const McnOnrampLifecycleState onrampPendingApply = McnOnrampLifecycleState._('OnrampPendingApply');
+static const McnOnrampLifecycleState onrampPendingApply = McnOnrampLifecycleState$onrampPendingApply._();
 
-static const McnOnrampLifecycleState onrampApplying = McnOnrampLifecycleState._('OnrampApplying');
+static const McnOnrampLifecycleState onrampApplying = McnOnrampLifecycleState$onrampApplying._();
 
-static const McnOnrampLifecycleState onrampApplyFailed = McnOnrampLifecycleState._('OnrampApplyFailed');
+static const McnOnrampLifecycleState onrampApplyFailed = McnOnrampLifecycleState$onrampApplyFailed._();
 
-static const McnOnrampLifecycleState onrampActive = McnOnrampLifecycleState._('OnrampActive');
+static const McnOnrampLifecycleState onrampActive = McnOnrampLifecycleState$onrampActive._();
 
-static const McnOnrampLifecycleState onrampPendingDestroy = McnOnrampLifecycleState._('OnrampPendingDestroy');
+static const McnOnrampLifecycleState onrampPendingDestroy = McnOnrampLifecycleState$onrampPendingDestroy._();
 
-static const McnOnrampLifecycleState onrampDestroying = McnOnrampLifecycleState._('OnrampDestroying');
+static const McnOnrampLifecycleState onrampDestroying = McnOnrampLifecycleState$onrampDestroying._();
 
-static const McnOnrampLifecycleState onrampDestroyFailed = McnOnrampLifecycleState._('OnrampDestroyFailed');
+static const McnOnrampLifecycleState onrampDestroyFailed = McnOnrampLifecycleState$onrampDestroyFailed._();
 
 static const List<McnOnrampLifecycleState> values = [onrampNeedsApply, onrampPendingPlan, onrampPlanning, onrampPlanFailed, onrampPendingApproval, onrampPendingApply, onrampApplying, onrampApplyFailed, onrampActive, onrampPendingDestroy, onrampDestroying, onrampDestroyFailed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -79,13 +78,126 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is McnOnrampLifecycleState$Unknown; } 
+@override String toString() => 'McnOnrampLifecycleState($value)';
+
+ }
+@immutable final class McnOnrampLifecycleState$onrampNeedsApply extends McnOnrampLifecycleState {const McnOnrampLifecycleState$onrampNeedsApply._();
+
+@override String get value => 'OnrampNeedsApply';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnOnrampLifecycleState$onrampNeedsApply;
+
+@override int get hashCode => 'OnrampNeedsApply'.hashCode;
+
+ }
+@immutable final class McnOnrampLifecycleState$onrampPendingPlan extends McnOnrampLifecycleState {const McnOnrampLifecycleState$onrampPendingPlan._();
+
+@override String get value => 'OnrampPendingPlan';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnOnrampLifecycleState$onrampPendingPlan;
+
+@override int get hashCode => 'OnrampPendingPlan'.hashCode;
+
+ }
+@immutable final class McnOnrampLifecycleState$onrampPlanning extends McnOnrampLifecycleState {const McnOnrampLifecycleState$onrampPlanning._();
+
+@override String get value => 'OnrampPlanning';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnOnrampLifecycleState$onrampPlanning;
+
+@override int get hashCode => 'OnrampPlanning'.hashCode;
+
+ }
+@immutable final class McnOnrampLifecycleState$onrampPlanFailed extends McnOnrampLifecycleState {const McnOnrampLifecycleState$onrampPlanFailed._();
+
+@override String get value => 'OnrampPlanFailed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnOnrampLifecycleState$onrampPlanFailed;
+
+@override int get hashCode => 'OnrampPlanFailed'.hashCode;
+
+ }
+@immutable final class McnOnrampLifecycleState$onrampPendingApproval extends McnOnrampLifecycleState {const McnOnrampLifecycleState$onrampPendingApproval._();
+
+@override String get value => 'OnrampPendingApproval';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnOnrampLifecycleState$onrampPendingApproval;
+
+@override int get hashCode => 'OnrampPendingApproval'.hashCode;
+
+ }
+@immutable final class McnOnrampLifecycleState$onrampPendingApply extends McnOnrampLifecycleState {const McnOnrampLifecycleState$onrampPendingApply._();
+
+@override String get value => 'OnrampPendingApply';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnOnrampLifecycleState$onrampPendingApply;
+
+@override int get hashCode => 'OnrampPendingApply'.hashCode;
+
+ }
+@immutable final class McnOnrampLifecycleState$onrampApplying extends McnOnrampLifecycleState {const McnOnrampLifecycleState$onrampApplying._();
+
+@override String get value => 'OnrampApplying';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnOnrampLifecycleState$onrampApplying;
+
+@override int get hashCode => 'OnrampApplying'.hashCode;
+
+ }
+@immutable final class McnOnrampLifecycleState$onrampApplyFailed extends McnOnrampLifecycleState {const McnOnrampLifecycleState$onrampApplyFailed._();
+
+@override String get value => 'OnrampApplyFailed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnOnrampLifecycleState$onrampApplyFailed;
+
+@override int get hashCode => 'OnrampApplyFailed'.hashCode;
+
+ }
+@immutable final class McnOnrampLifecycleState$onrampActive extends McnOnrampLifecycleState {const McnOnrampLifecycleState$onrampActive._();
+
+@override String get value => 'OnrampActive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnOnrampLifecycleState$onrampActive;
+
+@override int get hashCode => 'OnrampActive'.hashCode;
+
+ }
+@immutable final class McnOnrampLifecycleState$onrampPendingDestroy extends McnOnrampLifecycleState {const McnOnrampLifecycleState$onrampPendingDestroy._();
+
+@override String get value => 'OnrampPendingDestroy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnOnrampLifecycleState$onrampPendingDestroy;
+
+@override int get hashCode => 'OnrampPendingDestroy'.hashCode;
+
+ }
+@immutable final class McnOnrampLifecycleState$onrampDestroying extends McnOnrampLifecycleState {const McnOnrampLifecycleState$onrampDestroying._();
+
+@override String get value => 'OnrampDestroying';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnOnrampLifecycleState$onrampDestroying;
+
+@override int get hashCode => 'OnrampDestroying'.hashCode;
+
+ }
+@immutable final class McnOnrampLifecycleState$onrampDestroyFailed extends McnOnrampLifecycleState {const McnOnrampLifecycleState$onrampDestroyFailed._();
+
+@override String get value => 'OnrampDestroyFailed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnOnrampLifecycleState$onrampDestroyFailed;
+
+@override int get hashCode => 'OnrampDestroyFailed'.hashCode;
+
+ }
+@immutable final class McnOnrampLifecycleState$Unknown extends McnOnrampLifecycleState {const McnOnrampLifecycleState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is McnOnrampLifecycleState && other.value == value;
+    other is McnOnrampLifecycleState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'McnOnrampLifecycleState($value)';
 
  }
 @immutable final class McnOnrampStatus {const McnOnrampStatus({required this.applyProgress, required this.lifecycleState, required this.planProgress, required this.routes, required this.tunnels, this.lifecycleErrors, });

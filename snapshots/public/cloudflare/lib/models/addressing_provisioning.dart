@@ -3,22 +3,21 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When a binding has been deployed to a majority of Cloudflare datacenters, the binding will become active and can be used with its associated service.
 /// 
-@immutable final class AddressingProvisioningState {const AddressingProvisioningState._(this.value);
+sealed class AddressingProvisioningState {const AddressingProvisioningState();
 
 factory AddressingProvisioningState.fromJson(String json) { return switch (json) {
   'provisioning' => provisioning,
   'active' => active,
-  _ => AddressingProvisioningState._(json),
+  _ => AddressingProvisioningState$Unknown(json),
 }; }
 
-static const AddressingProvisioningState provisioning = AddressingProvisioningState._('provisioning');
+static const AddressingProvisioningState provisioning = AddressingProvisioningState$provisioning._();
 
-static const AddressingProvisioningState active = AddressingProvisioningState._('active');
+static const AddressingProvisioningState active = AddressingProvisioningState$active._();
 
 static const List<AddressingProvisioningState> values = [provisioning, active];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -27,13 +26,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AddressingProvisioningState$Unknown; } 
+@override String toString() => 'AddressingProvisioningState($value)';
+
+ }
+@immutable final class AddressingProvisioningState$provisioning extends AddressingProvisioningState {const AddressingProvisioningState$provisioning._();
+
+@override String get value => 'provisioning';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AddressingProvisioningState$provisioning;
+
+@override int get hashCode => 'provisioning'.hashCode;
+
+ }
+@immutable final class AddressingProvisioningState$active extends AddressingProvisioningState {const AddressingProvisioningState$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AddressingProvisioningState$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class AddressingProvisioningState$Unknown extends AddressingProvisioningState {const AddressingProvisioningState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AddressingProvisioningState && other.value == value;
+    other is AddressingProvisioningState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AddressingProvisioningState($value)';
 
  }
 /// Status of a Service Binding's deployment to the Cloudflare network

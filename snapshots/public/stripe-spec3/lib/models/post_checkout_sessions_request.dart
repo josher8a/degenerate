@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCheckoutSessionsRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_mode.dart';import 'package:pub_stripe_spec3/models/checkout_session/redirect_on_completion.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_excluded_payment_method_types.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_billing_address_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_customer_creation.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_payment_method_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_submit_type.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/adaptive_pricing.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/after_expiration.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/branding_settings.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/consent_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/phone_number_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_custom_fields.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_custom_text.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_customer_update.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_invoice_creation.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_name_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_optional_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_payment_intent_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_permissions.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_shipping_address_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_shipping_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_subscription_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/saved_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/setup_intent_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/tax_id_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/wallet_options.dart';@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_session/checkout_session_mode.dart';import 'package:pub_stripe_spec3/models/checkout_session/redirect_on_completion.dart';import 'package:pub_stripe_spec3/models/payment_intent/payment_intent_excluded_payment_method_types.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_billing_address_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_customer_creation.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_payment_method_collection.dart';import 'package:pub_stripe_spec3/models/payment_link/payment_link_submit_type.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/adaptive_pricing.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/after_expiration.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/branding_settings.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/consent_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/phone_number_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_automatic_tax.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_custom_fields.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_custom_text.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_customer_update.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_discounts.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_invoice_creation.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_line_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_name_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_optional_items.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_payment_intent_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_payment_method_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_permissions.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_shipping_address_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_shipping_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/post_checkout_sessions_request_subscription_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/saved_payment_method_options.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/setup_intent_data.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/tax_id_collection.dart';import 'package:pub_stripe_spec3/models/post_checkout_sessions_request/wallet_options.dart';sealed class PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes();
 
 factory PostCheckoutSessionsRequestPaymentMethodTypes.fromJson(String json) { return switch (json) {
   'acss_debit' => acssDebit,
@@ -54,113 +54,112 @@ factory PostCheckoutSessionsRequestPaymentMethodTypes.fromJson(String json) { re
   'us_bank_account' => usBankAccount,
   'wechat_pay' => wechatPay,
   'zip' => zip,
-  _ => PostCheckoutSessionsRequestPaymentMethodTypes._(json),
+  _ => PostCheckoutSessionsRequestPaymentMethodTypes$Unknown(json),
 }; }
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes acssDebit = PostCheckoutSessionsRequestPaymentMethodTypes._('acss_debit');
+static const PostCheckoutSessionsRequestPaymentMethodTypes acssDebit = PostCheckoutSessionsRequestPaymentMethodTypes$acssDebit._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes affirm = PostCheckoutSessionsRequestPaymentMethodTypes._('affirm');
+static const PostCheckoutSessionsRequestPaymentMethodTypes affirm = PostCheckoutSessionsRequestPaymentMethodTypes$affirm._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes afterpayClearpay = PostCheckoutSessionsRequestPaymentMethodTypes._('afterpay_clearpay');
+static const PostCheckoutSessionsRequestPaymentMethodTypes afterpayClearpay = PostCheckoutSessionsRequestPaymentMethodTypes$afterpayClearpay._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes alipay = PostCheckoutSessionsRequestPaymentMethodTypes._('alipay');
+static const PostCheckoutSessionsRequestPaymentMethodTypes alipay = PostCheckoutSessionsRequestPaymentMethodTypes$alipay._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes alma = PostCheckoutSessionsRequestPaymentMethodTypes._('alma');
+static const PostCheckoutSessionsRequestPaymentMethodTypes alma = PostCheckoutSessionsRequestPaymentMethodTypes$alma._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes amazonPay = PostCheckoutSessionsRequestPaymentMethodTypes._('amazon_pay');
+static const PostCheckoutSessionsRequestPaymentMethodTypes amazonPay = PostCheckoutSessionsRequestPaymentMethodTypes$amazonPay._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes auBecsDebit = PostCheckoutSessionsRequestPaymentMethodTypes._('au_becs_debit');
+static const PostCheckoutSessionsRequestPaymentMethodTypes auBecsDebit = PostCheckoutSessionsRequestPaymentMethodTypes$auBecsDebit._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes bacsDebit = PostCheckoutSessionsRequestPaymentMethodTypes._('bacs_debit');
+static const PostCheckoutSessionsRequestPaymentMethodTypes bacsDebit = PostCheckoutSessionsRequestPaymentMethodTypes$bacsDebit._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes bancontact = PostCheckoutSessionsRequestPaymentMethodTypes._('bancontact');
+static const PostCheckoutSessionsRequestPaymentMethodTypes bancontact = PostCheckoutSessionsRequestPaymentMethodTypes$bancontact._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes billie = PostCheckoutSessionsRequestPaymentMethodTypes._('billie');
+static const PostCheckoutSessionsRequestPaymentMethodTypes billie = PostCheckoutSessionsRequestPaymentMethodTypes$billie._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes blik = PostCheckoutSessionsRequestPaymentMethodTypes._('blik');
+static const PostCheckoutSessionsRequestPaymentMethodTypes blik = PostCheckoutSessionsRequestPaymentMethodTypes$blik._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes boleto = PostCheckoutSessionsRequestPaymentMethodTypes._('boleto');
+static const PostCheckoutSessionsRequestPaymentMethodTypes boleto = PostCheckoutSessionsRequestPaymentMethodTypes$boleto._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes card = PostCheckoutSessionsRequestPaymentMethodTypes._('card');
+static const PostCheckoutSessionsRequestPaymentMethodTypes card = PostCheckoutSessionsRequestPaymentMethodTypes$card._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes cashapp = PostCheckoutSessionsRequestPaymentMethodTypes._('cashapp');
+static const PostCheckoutSessionsRequestPaymentMethodTypes cashapp = PostCheckoutSessionsRequestPaymentMethodTypes$cashapp._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes crypto = PostCheckoutSessionsRequestPaymentMethodTypes._('crypto');
+static const PostCheckoutSessionsRequestPaymentMethodTypes crypto = PostCheckoutSessionsRequestPaymentMethodTypes$crypto._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes customerBalance = PostCheckoutSessionsRequestPaymentMethodTypes._('customer_balance');
+static const PostCheckoutSessionsRequestPaymentMethodTypes customerBalance = PostCheckoutSessionsRequestPaymentMethodTypes$customerBalance._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes eps = PostCheckoutSessionsRequestPaymentMethodTypes._('eps');
+static const PostCheckoutSessionsRequestPaymentMethodTypes eps = PostCheckoutSessionsRequestPaymentMethodTypes$eps._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes fpx = PostCheckoutSessionsRequestPaymentMethodTypes._('fpx');
+static const PostCheckoutSessionsRequestPaymentMethodTypes fpx = PostCheckoutSessionsRequestPaymentMethodTypes$fpx._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes giropay = PostCheckoutSessionsRequestPaymentMethodTypes._('giropay');
+static const PostCheckoutSessionsRequestPaymentMethodTypes giropay = PostCheckoutSessionsRequestPaymentMethodTypes$giropay._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes grabpay = PostCheckoutSessionsRequestPaymentMethodTypes._('grabpay');
+static const PostCheckoutSessionsRequestPaymentMethodTypes grabpay = PostCheckoutSessionsRequestPaymentMethodTypes$grabpay._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes ideal = PostCheckoutSessionsRequestPaymentMethodTypes._('ideal');
+static const PostCheckoutSessionsRequestPaymentMethodTypes ideal = PostCheckoutSessionsRequestPaymentMethodTypes$ideal._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes kakaoPay = PostCheckoutSessionsRequestPaymentMethodTypes._('kakao_pay');
+static const PostCheckoutSessionsRequestPaymentMethodTypes kakaoPay = PostCheckoutSessionsRequestPaymentMethodTypes$kakaoPay._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes klarna = PostCheckoutSessionsRequestPaymentMethodTypes._('klarna');
+static const PostCheckoutSessionsRequestPaymentMethodTypes klarna = PostCheckoutSessionsRequestPaymentMethodTypes$klarna._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes konbini = PostCheckoutSessionsRequestPaymentMethodTypes._('konbini');
+static const PostCheckoutSessionsRequestPaymentMethodTypes konbini = PostCheckoutSessionsRequestPaymentMethodTypes$konbini._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes krCard = PostCheckoutSessionsRequestPaymentMethodTypes._('kr_card');
+static const PostCheckoutSessionsRequestPaymentMethodTypes krCard = PostCheckoutSessionsRequestPaymentMethodTypes$krCard._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes link = PostCheckoutSessionsRequestPaymentMethodTypes._('link');
+static const PostCheckoutSessionsRequestPaymentMethodTypes link = PostCheckoutSessionsRequestPaymentMethodTypes$link._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes mbWay = PostCheckoutSessionsRequestPaymentMethodTypes._('mb_way');
+static const PostCheckoutSessionsRequestPaymentMethodTypes mbWay = PostCheckoutSessionsRequestPaymentMethodTypes$mbWay._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes mobilepay = PostCheckoutSessionsRequestPaymentMethodTypes._('mobilepay');
+static const PostCheckoutSessionsRequestPaymentMethodTypes mobilepay = PostCheckoutSessionsRequestPaymentMethodTypes$mobilepay._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes multibanco = PostCheckoutSessionsRequestPaymentMethodTypes._('multibanco');
+static const PostCheckoutSessionsRequestPaymentMethodTypes multibanco = PostCheckoutSessionsRequestPaymentMethodTypes$multibanco._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes naverPay = PostCheckoutSessionsRequestPaymentMethodTypes._('naver_pay');
+static const PostCheckoutSessionsRequestPaymentMethodTypes naverPay = PostCheckoutSessionsRequestPaymentMethodTypes$naverPay._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes nzBankAccount = PostCheckoutSessionsRequestPaymentMethodTypes._('nz_bank_account');
+static const PostCheckoutSessionsRequestPaymentMethodTypes nzBankAccount = PostCheckoutSessionsRequestPaymentMethodTypes$nzBankAccount._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes oxxo = PostCheckoutSessionsRequestPaymentMethodTypes._('oxxo');
+static const PostCheckoutSessionsRequestPaymentMethodTypes oxxo = PostCheckoutSessionsRequestPaymentMethodTypes$oxxo._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes p24 = PostCheckoutSessionsRequestPaymentMethodTypes._('p24');
+static const PostCheckoutSessionsRequestPaymentMethodTypes p24 = PostCheckoutSessionsRequestPaymentMethodTypes$p24._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes payByBank = PostCheckoutSessionsRequestPaymentMethodTypes._('pay_by_bank');
+static const PostCheckoutSessionsRequestPaymentMethodTypes payByBank = PostCheckoutSessionsRequestPaymentMethodTypes$payByBank._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes payco = PostCheckoutSessionsRequestPaymentMethodTypes._('payco');
+static const PostCheckoutSessionsRequestPaymentMethodTypes payco = PostCheckoutSessionsRequestPaymentMethodTypes$payco._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes paynow = PostCheckoutSessionsRequestPaymentMethodTypes._('paynow');
+static const PostCheckoutSessionsRequestPaymentMethodTypes paynow = PostCheckoutSessionsRequestPaymentMethodTypes$paynow._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes paypal = PostCheckoutSessionsRequestPaymentMethodTypes._('paypal');
+static const PostCheckoutSessionsRequestPaymentMethodTypes paypal = PostCheckoutSessionsRequestPaymentMethodTypes$paypal._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes payto = PostCheckoutSessionsRequestPaymentMethodTypes._('payto');
+static const PostCheckoutSessionsRequestPaymentMethodTypes payto = PostCheckoutSessionsRequestPaymentMethodTypes$payto._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes pix = PostCheckoutSessionsRequestPaymentMethodTypes._('pix');
+static const PostCheckoutSessionsRequestPaymentMethodTypes pix = PostCheckoutSessionsRequestPaymentMethodTypes$pix._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes promptpay = PostCheckoutSessionsRequestPaymentMethodTypes._('promptpay');
+static const PostCheckoutSessionsRequestPaymentMethodTypes promptpay = PostCheckoutSessionsRequestPaymentMethodTypes$promptpay._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes revolutPay = PostCheckoutSessionsRequestPaymentMethodTypes._('revolut_pay');
+static const PostCheckoutSessionsRequestPaymentMethodTypes revolutPay = PostCheckoutSessionsRequestPaymentMethodTypes$revolutPay._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes samsungPay = PostCheckoutSessionsRequestPaymentMethodTypes._('samsung_pay');
+static const PostCheckoutSessionsRequestPaymentMethodTypes samsungPay = PostCheckoutSessionsRequestPaymentMethodTypes$samsungPay._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes satispay = PostCheckoutSessionsRequestPaymentMethodTypes._('satispay');
+static const PostCheckoutSessionsRequestPaymentMethodTypes satispay = PostCheckoutSessionsRequestPaymentMethodTypes$satispay._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes sepaDebit = PostCheckoutSessionsRequestPaymentMethodTypes._('sepa_debit');
+static const PostCheckoutSessionsRequestPaymentMethodTypes sepaDebit = PostCheckoutSessionsRequestPaymentMethodTypes$sepaDebit._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes sofort = PostCheckoutSessionsRequestPaymentMethodTypes._('sofort');
+static const PostCheckoutSessionsRequestPaymentMethodTypes sofort = PostCheckoutSessionsRequestPaymentMethodTypes$sofort._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes swish = PostCheckoutSessionsRequestPaymentMethodTypes._('swish');
+static const PostCheckoutSessionsRequestPaymentMethodTypes swish = PostCheckoutSessionsRequestPaymentMethodTypes$swish._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes twint = PostCheckoutSessionsRequestPaymentMethodTypes._('twint');
+static const PostCheckoutSessionsRequestPaymentMethodTypes twint = PostCheckoutSessionsRequestPaymentMethodTypes$twint._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes usBankAccount = PostCheckoutSessionsRequestPaymentMethodTypes._('us_bank_account');
+static const PostCheckoutSessionsRequestPaymentMethodTypes usBankAccount = PostCheckoutSessionsRequestPaymentMethodTypes$usBankAccount._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes wechatPay = PostCheckoutSessionsRequestPaymentMethodTypes._('wechat_pay');
+static const PostCheckoutSessionsRequestPaymentMethodTypes wechatPay = PostCheckoutSessionsRequestPaymentMethodTypes$wechatPay._();
 
-static const PostCheckoutSessionsRequestPaymentMethodTypes zip = PostCheckoutSessionsRequestPaymentMethodTypes._('zip');
+static const PostCheckoutSessionsRequestPaymentMethodTypes zip = PostCheckoutSessionsRequestPaymentMethodTypes$zip._();
 
 static const List<PostCheckoutSessionsRequestPaymentMethodTypes> values = [acssDebit, affirm, afterpayClearpay, alipay, alma, amazonPay, auBecsDebit, bacsDebit, bancontact, billie, blik, boleto, card, cashapp, crypto, customerBalance, eps, fpx, giropay, grabpay, ideal, kakaoPay, klarna, konbini, krCard, link, mbWay, mobilepay, multibanco, naverPay, nzBankAccount, oxxo, p24, payByBank, payco, paynow, paypal, payto, pix, promptpay, revolutPay, samsungPay, satispay, sepaDebit, sofort, swish, twint, usBankAccount, wechatPay, zip];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -217,17 +216,472 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PostCheckoutSessionsRequestPaymentMethodTypes && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PostCheckoutSessionsRequestPaymentMethodTypes$Unknown; } 
 @override String toString() => 'PostCheckoutSessionsRequestPaymentMethodTypes($value)';
 
  }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$acssDebit extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$acssDebit._();
+
+@override String get value => 'acss_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$acssDebit;
+
+@override int get hashCode => 'acss_debit'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$affirm extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$affirm._();
+
+@override String get value => 'affirm';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$affirm;
+
+@override int get hashCode => 'affirm'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$afterpayClearpay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$afterpayClearpay._();
+
+@override String get value => 'afterpay_clearpay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$afterpayClearpay;
+
+@override int get hashCode => 'afterpay_clearpay'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$alipay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$alipay._();
+
+@override String get value => 'alipay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$alipay;
+
+@override int get hashCode => 'alipay'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$alma extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$alma._();
+
+@override String get value => 'alma';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$alma;
+
+@override int get hashCode => 'alma'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$amazonPay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$amazonPay._();
+
+@override String get value => 'amazon_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$amazonPay;
+
+@override int get hashCode => 'amazon_pay'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$auBecsDebit extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$auBecsDebit._();
+
+@override String get value => 'au_becs_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$auBecsDebit;
+
+@override int get hashCode => 'au_becs_debit'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$bacsDebit extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$bacsDebit._();
+
+@override String get value => 'bacs_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$bacsDebit;
+
+@override int get hashCode => 'bacs_debit'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$bancontact extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$bancontact._();
+
+@override String get value => 'bancontact';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$bancontact;
+
+@override int get hashCode => 'bancontact'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$billie extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$billie._();
+
+@override String get value => 'billie';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$billie;
+
+@override int get hashCode => 'billie'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$blik extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$blik._();
+
+@override String get value => 'blik';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$blik;
+
+@override int get hashCode => 'blik'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$boleto extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$boleto._();
+
+@override String get value => 'boleto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$boleto;
+
+@override int get hashCode => 'boleto'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$card extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$card._();
+
+@override String get value => 'card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$card;
+
+@override int get hashCode => 'card'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$cashapp extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$cashapp._();
+
+@override String get value => 'cashapp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$cashapp;
+
+@override int get hashCode => 'cashapp'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$crypto extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$crypto._();
+
+@override String get value => 'crypto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$crypto;
+
+@override int get hashCode => 'crypto'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$customerBalance extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$customerBalance._();
+
+@override String get value => 'customer_balance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$customerBalance;
+
+@override int get hashCode => 'customer_balance'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$eps extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$eps._();
+
+@override String get value => 'eps';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$eps;
+
+@override int get hashCode => 'eps'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$fpx extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$fpx._();
+
+@override String get value => 'fpx';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$fpx;
+
+@override int get hashCode => 'fpx'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$giropay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$giropay._();
+
+@override String get value => 'giropay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$giropay;
+
+@override int get hashCode => 'giropay'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$grabpay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$grabpay._();
+
+@override String get value => 'grabpay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$grabpay;
+
+@override int get hashCode => 'grabpay'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$ideal extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$ideal._();
+
+@override String get value => 'ideal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$ideal;
+
+@override int get hashCode => 'ideal'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$kakaoPay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$kakaoPay._();
+
+@override String get value => 'kakao_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$kakaoPay;
+
+@override int get hashCode => 'kakao_pay'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$klarna extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$klarna._();
+
+@override String get value => 'klarna';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$klarna;
+
+@override int get hashCode => 'klarna'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$konbini extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$konbini._();
+
+@override String get value => 'konbini';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$konbini;
+
+@override int get hashCode => 'konbini'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$krCard extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$krCard._();
+
+@override String get value => 'kr_card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$krCard;
+
+@override int get hashCode => 'kr_card'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$link extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$link._();
+
+@override String get value => 'link';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$link;
+
+@override int get hashCode => 'link'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$mbWay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$mbWay._();
+
+@override String get value => 'mb_way';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$mbWay;
+
+@override int get hashCode => 'mb_way'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$mobilepay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$mobilepay._();
+
+@override String get value => 'mobilepay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$mobilepay;
+
+@override int get hashCode => 'mobilepay'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$multibanco extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$multibanco._();
+
+@override String get value => 'multibanco';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$multibanco;
+
+@override int get hashCode => 'multibanco'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$naverPay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$naverPay._();
+
+@override String get value => 'naver_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$naverPay;
+
+@override int get hashCode => 'naver_pay'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$nzBankAccount extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$nzBankAccount._();
+
+@override String get value => 'nz_bank_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$nzBankAccount;
+
+@override int get hashCode => 'nz_bank_account'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$oxxo extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$oxxo._();
+
+@override String get value => 'oxxo';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$oxxo;
+
+@override int get hashCode => 'oxxo'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$p24 extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$p24._();
+
+@override String get value => 'p24';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$p24;
+
+@override int get hashCode => 'p24'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$payByBank extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$payByBank._();
+
+@override String get value => 'pay_by_bank';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$payByBank;
+
+@override int get hashCode => 'pay_by_bank'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$payco extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$payco._();
+
+@override String get value => 'payco';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$payco;
+
+@override int get hashCode => 'payco'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$paynow extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$paynow._();
+
+@override String get value => 'paynow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$paynow;
+
+@override int get hashCode => 'paynow'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$paypal extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$paypal._();
+
+@override String get value => 'paypal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$paypal;
+
+@override int get hashCode => 'paypal'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$payto extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$payto._();
+
+@override String get value => 'payto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$payto;
+
+@override int get hashCode => 'payto'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$pix extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$pix._();
+
+@override String get value => 'pix';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$pix;
+
+@override int get hashCode => 'pix'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$promptpay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$promptpay._();
+
+@override String get value => 'promptpay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$promptpay;
+
+@override int get hashCode => 'promptpay'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$revolutPay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$revolutPay._();
+
+@override String get value => 'revolut_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$revolutPay;
+
+@override int get hashCode => 'revolut_pay'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$samsungPay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$samsungPay._();
+
+@override String get value => 'samsung_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$samsungPay;
+
+@override int get hashCode => 'samsung_pay'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$satispay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$satispay._();
+
+@override String get value => 'satispay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$satispay;
+
+@override int get hashCode => 'satispay'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$sepaDebit extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$sepaDebit._();
+
+@override String get value => 'sepa_debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$sepaDebit;
+
+@override int get hashCode => 'sepa_debit'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$sofort extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$sofort._();
+
+@override String get value => 'sofort';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$sofort;
+
+@override int get hashCode => 'sofort'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$swish extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$swish._();
+
+@override String get value => 'swish';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$swish;
+
+@override int get hashCode => 'swish'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$twint extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$twint._();
+
+@override String get value => 'twint';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$twint;
+
+@override int get hashCode => 'twint'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$usBankAccount extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$usBankAccount._();
+
+@override String get value => 'us_bank_account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$usBankAccount;
+
+@override int get hashCode => 'us_bank_account'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$wechatPay extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$wechatPay._();
+
+@override String get value => 'wechat_pay';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$wechatPay;
+
+@override int get hashCode => 'wechat_pay'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$zip extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$zip._();
+
+@override String get value => 'zip';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestPaymentMethodTypes$zip;
+
+@override int get hashCode => 'zip'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestPaymentMethodTypes$Unknown extends PostCheckoutSessionsRequestPaymentMethodTypes {const PostCheckoutSessionsRequestPaymentMethodTypes$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostCheckoutSessionsRequestPaymentMethodTypes$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The IETF language tag of the locale Checkout is displayed in. If blank or `auto`, the browser's locale is used.
-@immutable final class PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale._(this.value);
+sealed class PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale();
 
 factory PostCheckoutSessionsRequestLocale.fromJson(String json) { return switch (json) {
   'auto' => auto,
@@ -271,95 +725,94 @@ factory PostCheckoutSessionsRequestLocale.fromJson(String json) { return switch 
   'zh' => zh,
   'zh-HK' => zhHk,
   'zh-TW' => zhTw,
-  _ => PostCheckoutSessionsRequestLocale._(json),
+  _ => PostCheckoutSessionsRequestLocale$Unknown(json),
 }; }
 
-static const PostCheckoutSessionsRequestLocale auto = PostCheckoutSessionsRequestLocale._('auto');
+static const PostCheckoutSessionsRequestLocale auto = PostCheckoutSessionsRequestLocale$auto._();
 
-static const PostCheckoutSessionsRequestLocale bg = PostCheckoutSessionsRequestLocale._('bg');
+static const PostCheckoutSessionsRequestLocale bg = PostCheckoutSessionsRequestLocale$bg._();
 
-static const PostCheckoutSessionsRequestLocale cs = PostCheckoutSessionsRequestLocale._('cs');
+static const PostCheckoutSessionsRequestLocale cs = PostCheckoutSessionsRequestLocale$cs._();
 
-static const PostCheckoutSessionsRequestLocale da = PostCheckoutSessionsRequestLocale._('da');
+static const PostCheckoutSessionsRequestLocale da = PostCheckoutSessionsRequestLocale$da._();
 
-static const PostCheckoutSessionsRequestLocale de = PostCheckoutSessionsRequestLocale._('de');
+static const PostCheckoutSessionsRequestLocale de = PostCheckoutSessionsRequestLocale$de._();
 
-static const PostCheckoutSessionsRequestLocale el = PostCheckoutSessionsRequestLocale._('el');
+static const PostCheckoutSessionsRequestLocale el = PostCheckoutSessionsRequestLocale$el._();
 
-static const PostCheckoutSessionsRequestLocale en = PostCheckoutSessionsRequestLocale._('en');
+static const PostCheckoutSessionsRequestLocale en = PostCheckoutSessionsRequestLocale$en._();
 
-static const PostCheckoutSessionsRequestLocale enGb = PostCheckoutSessionsRequestLocale._('en-GB');
+static const PostCheckoutSessionsRequestLocale enGb = PostCheckoutSessionsRequestLocale$enGb._();
 
-static const PostCheckoutSessionsRequestLocale es = PostCheckoutSessionsRequestLocale._('es');
+static const PostCheckoutSessionsRequestLocale es = PostCheckoutSessionsRequestLocale$es._();
 
-static const PostCheckoutSessionsRequestLocale es419 = PostCheckoutSessionsRequestLocale._('es-419');
+static const PostCheckoutSessionsRequestLocale es419 = PostCheckoutSessionsRequestLocale$es419._();
 
-static const PostCheckoutSessionsRequestLocale et = PostCheckoutSessionsRequestLocale._('et');
+static const PostCheckoutSessionsRequestLocale et = PostCheckoutSessionsRequestLocale$et._();
 
-static const PostCheckoutSessionsRequestLocale fi = PostCheckoutSessionsRequestLocale._('fi');
+static const PostCheckoutSessionsRequestLocale fi = PostCheckoutSessionsRequestLocale$fi._();
 
-static const PostCheckoutSessionsRequestLocale fil = PostCheckoutSessionsRequestLocale._('fil');
+static const PostCheckoutSessionsRequestLocale fil = PostCheckoutSessionsRequestLocale$fil._();
 
-static const PostCheckoutSessionsRequestLocale fr = PostCheckoutSessionsRequestLocale._('fr');
+static const PostCheckoutSessionsRequestLocale fr = PostCheckoutSessionsRequestLocale$fr._();
 
-static const PostCheckoutSessionsRequestLocale frCa = PostCheckoutSessionsRequestLocale._('fr-CA');
+static const PostCheckoutSessionsRequestLocale frCa = PostCheckoutSessionsRequestLocale$frCa._();
 
-static const PostCheckoutSessionsRequestLocale hr = PostCheckoutSessionsRequestLocale._('hr');
+static const PostCheckoutSessionsRequestLocale hr = PostCheckoutSessionsRequestLocale$hr._();
 
-static const PostCheckoutSessionsRequestLocale hu = PostCheckoutSessionsRequestLocale._('hu');
+static const PostCheckoutSessionsRequestLocale hu = PostCheckoutSessionsRequestLocale$hu._();
 
-static const PostCheckoutSessionsRequestLocale id = PostCheckoutSessionsRequestLocale._('id');
+static const PostCheckoutSessionsRequestLocale id = PostCheckoutSessionsRequestLocale$id._();
 
-static const PostCheckoutSessionsRequestLocale it = PostCheckoutSessionsRequestLocale._('it');
+static const PostCheckoutSessionsRequestLocale it = PostCheckoutSessionsRequestLocale$it._();
 
-static const PostCheckoutSessionsRequestLocale ja = PostCheckoutSessionsRequestLocale._('ja');
+static const PostCheckoutSessionsRequestLocale ja = PostCheckoutSessionsRequestLocale$ja._();
 
-static const PostCheckoutSessionsRequestLocale ko = PostCheckoutSessionsRequestLocale._('ko');
+static const PostCheckoutSessionsRequestLocale ko = PostCheckoutSessionsRequestLocale$ko._();
 
-static const PostCheckoutSessionsRequestLocale lt = PostCheckoutSessionsRequestLocale._('lt');
+static const PostCheckoutSessionsRequestLocale lt = PostCheckoutSessionsRequestLocale$lt._();
 
-static const PostCheckoutSessionsRequestLocale lv = PostCheckoutSessionsRequestLocale._('lv');
+static const PostCheckoutSessionsRequestLocale lv = PostCheckoutSessionsRequestLocale$lv._();
 
-static const PostCheckoutSessionsRequestLocale ms = PostCheckoutSessionsRequestLocale._('ms');
+static const PostCheckoutSessionsRequestLocale ms = PostCheckoutSessionsRequestLocale$ms._();
 
-static const PostCheckoutSessionsRequestLocale mt = PostCheckoutSessionsRequestLocale._('mt');
+static const PostCheckoutSessionsRequestLocale mt = PostCheckoutSessionsRequestLocale$mt._();
 
-static const PostCheckoutSessionsRequestLocale nb = PostCheckoutSessionsRequestLocale._('nb');
+static const PostCheckoutSessionsRequestLocale nb = PostCheckoutSessionsRequestLocale$nb._();
 
-static const PostCheckoutSessionsRequestLocale nl = PostCheckoutSessionsRequestLocale._('nl');
+static const PostCheckoutSessionsRequestLocale nl = PostCheckoutSessionsRequestLocale$nl._();
 
-static const PostCheckoutSessionsRequestLocale pl = PostCheckoutSessionsRequestLocale._('pl');
+static const PostCheckoutSessionsRequestLocale pl = PostCheckoutSessionsRequestLocale$pl._();
 
-static const PostCheckoutSessionsRequestLocale pt = PostCheckoutSessionsRequestLocale._('pt');
+static const PostCheckoutSessionsRequestLocale pt = PostCheckoutSessionsRequestLocale$pt._();
 
-static const PostCheckoutSessionsRequestLocale ptBr = PostCheckoutSessionsRequestLocale._('pt-BR');
+static const PostCheckoutSessionsRequestLocale ptBr = PostCheckoutSessionsRequestLocale$ptBr._();
 
-static const PostCheckoutSessionsRequestLocale ro = PostCheckoutSessionsRequestLocale._('ro');
+static const PostCheckoutSessionsRequestLocale ro = PostCheckoutSessionsRequestLocale$ro._();
 
-static const PostCheckoutSessionsRequestLocale ru = PostCheckoutSessionsRequestLocale._('ru');
+static const PostCheckoutSessionsRequestLocale ru = PostCheckoutSessionsRequestLocale$ru._();
 
-static const PostCheckoutSessionsRequestLocale sk = PostCheckoutSessionsRequestLocale._('sk');
+static const PostCheckoutSessionsRequestLocale sk = PostCheckoutSessionsRequestLocale$sk._();
 
-static const PostCheckoutSessionsRequestLocale sl = PostCheckoutSessionsRequestLocale._('sl');
+static const PostCheckoutSessionsRequestLocale sl = PostCheckoutSessionsRequestLocale$sl._();
 
-static const PostCheckoutSessionsRequestLocale sv = PostCheckoutSessionsRequestLocale._('sv');
+static const PostCheckoutSessionsRequestLocale sv = PostCheckoutSessionsRequestLocale$sv._();
 
-static const PostCheckoutSessionsRequestLocale th = PostCheckoutSessionsRequestLocale._('th');
+static const PostCheckoutSessionsRequestLocale th = PostCheckoutSessionsRequestLocale$th._();
 
-static const PostCheckoutSessionsRequestLocale tr = PostCheckoutSessionsRequestLocale._('tr');
+static const PostCheckoutSessionsRequestLocale tr = PostCheckoutSessionsRequestLocale$tr._();
 
-static const PostCheckoutSessionsRequestLocale vi = PostCheckoutSessionsRequestLocale._('vi');
+static const PostCheckoutSessionsRequestLocale vi = PostCheckoutSessionsRequestLocale$vi._();
 
-static const PostCheckoutSessionsRequestLocale zh = PostCheckoutSessionsRequestLocale._('zh');
+static const PostCheckoutSessionsRequestLocale zh = PostCheckoutSessionsRequestLocale$zh._();
 
-static const PostCheckoutSessionsRequestLocale zhHk = PostCheckoutSessionsRequestLocale._('zh-HK');
+static const PostCheckoutSessionsRequestLocale zhHk = PostCheckoutSessionsRequestLocale$zhHk._();
 
-static const PostCheckoutSessionsRequestLocale zhTw = PostCheckoutSessionsRequestLocale._('zh-TW');
+static const PostCheckoutSessionsRequestLocale zhTw = PostCheckoutSessionsRequestLocale$zhTw._();
 
 static const List<PostCheckoutSessionsRequestLocale> values = [auto, bg, cs, da, de, el, en, enGb, es, es419, et, fi, fil, fr, frCa, hr, hu, id, it, ja, ko, lt, lv, ms, mt, nb, nl, pl, pt, ptBr, ro, ru, sk, sl, sv, th, tr, vi, zh, zhHk, zhTw];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -407,32 +860,405 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PostCheckoutSessionsRequestLocale && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PostCheckoutSessionsRequestLocale$Unknown; } 
 @override String toString() => 'PostCheckoutSessionsRequestLocale($value)';
 
  }
+@immutable final class PostCheckoutSessionsRequestLocale$auto extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$bg extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$bg._();
+
+@override String get value => 'bg';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$bg;
+
+@override int get hashCode => 'bg'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$cs extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$cs._();
+
+@override String get value => 'cs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$cs;
+
+@override int get hashCode => 'cs'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$da extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$da._();
+
+@override String get value => 'da';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$da;
+
+@override int get hashCode => 'da'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$de extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$de._();
+
+@override String get value => 'de';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$de;
+
+@override int get hashCode => 'de'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$el extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$el._();
+
+@override String get value => 'el';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$el;
+
+@override int get hashCode => 'el'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$en extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$en._();
+
+@override String get value => 'en';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$en;
+
+@override int get hashCode => 'en'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$enGb extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$enGb._();
+
+@override String get value => 'en-GB';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$enGb;
+
+@override int get hashCode => 'en-GB'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$es extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$es._();
+
+@override String get value => 'es';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$es;
+
+@override int get hashCode => 'es'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$es419 extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$es419._();
+
+@override String get value => 'es-419';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$es419;
+
+@override int get hashCode => 'es-419'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$et extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$et._();
+
+@override String get value => 'et';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$et;
+
+@override int get hashCode => 'et'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$fi extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$fi._();
+
+@override String get value => 'fi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$fi;
+
+@override int get hashCode => 'fi'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$fil extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$fil._();
+
+@override String get value => 'fil';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$fil;
+
+@override int get hashCode => 'fil'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$fr extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$fr._();
+
+@override String get value => 'fr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$fr;
+
+@override int get hashCode => 'fr'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$frCa extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$frCa._();
+
+@override String get value => 'fr-CA';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$frCa;
+
+@override int get hashCode => 'fr-CA'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$hr extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$hr._();
+
+@override String get value => 'hr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$hr;
+
+@override int get hashCode => 'hr'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$hu extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$hu._();
+
+@override String get value => 'hu';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$hu;
+
+@override int get hashCode => 'hu'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$id extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$id._();
+
+@override String get value => 'id';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$id;
+
+@override int get hashCode => 'id'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$it extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$it._();
+
+@override String get value => 'it';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$it;
+
+@override int get hashCode => 'it'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$ja extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$ja._();
+
+@override String get value => 'ja';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$ja;
+
+@override int get hashCode => 'ja'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$ko extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$ko._();
+
+@override String get value => 'ko';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$ko;
+
+@override int get hashCode => 'ko'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$lt extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$lt._();
+
+@override String get value => 'lt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$lt;
+
+@override int get hashCode => 'lt'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$lv extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$lv._();
+
+@override String get value => 'lv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$lv;
+
+@override int get hashCode => 'lv'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$ms extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$ms._();
+
+@override String get value => 'ms';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$ms;
+
+@override int get hashCode => 'ms'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$mt extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$mt._();
+
+@override String get value => 'mt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$mt;
+
+@override int get hashCode => 'mt'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$nb extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$nb._();
+
+@override String get value => 'nb';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$nb;
+
+@override int get hashCode => 'nb'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$nl extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$nl._();
+
+@override String get value => 'nl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$nl;
+
+@override int get hashCode => 'nl'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$pl extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$pl._();
+
+@override String get value => 'pl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$pl;
+
+@override int get hashCode => 'pl'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$pt extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$pt._();
+
+@override String get value => 'pt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$pt;
+
+@override int get hashCode => 'pt'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$ptBr extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$ptBr._();
+
+@override String get value => 'pt-BR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$ptBr;
+
+@override int get hashCode => 'pt-BR'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$ro extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$ro._();
+
+@override String get value => 'ro';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$ro;
+
+@override int get hashCode => 'ro'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$ru extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$ru._();
+
+@override String get value => 'ru';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$ru;
+
+@override int get hashCode => 'ru'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$sk extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$sk._();
+
+@override String get value => 'sk';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$sk;
+
+@override int get hashCode => 'sk'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$sl extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$sl._();
+
+@override String get value => 'sl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$sl;
+
+@override int get hashCode => 'sl'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$sv extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$sv._();
+
+@override String get value => 'sv';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$sv;
+
+@override int get hashCode => 'sv'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$th extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$th._();
+
+@override String get value => 'th';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$th;
+
+@override int get hashCode => 'th'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$tr extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$tr._();
+
+@override String get value => 'tr';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$tr;
+
+@override int get hashCode => 'tr'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$vi extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$vi._();
+
+@override String get value => 'vi';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$vi;
+
+@override int get hashCode => 'vi'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$zh extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$zh._();
+
+@override String get value => 'zh';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$zh;
+
+@override int get hashCode => 'zh'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$zhHk extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$zhHk._();
+
+@override String get value => 'zh-HK';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$zhHk;
+
+@override int get hashCode => 'zh-HK'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$zhTw extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$zhTw._();
+
+@override String get value => 'zh-TW';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestLocale$zhTw;
+
+@override int get hashCode => 'zh-TW'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestLocale$Unknown extends PostCheckoutSessionsRequestLocale {const PostCheckoutSessionsRequestLocale$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostCheckoutSessionsRequestLocale$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Where the user is coming from. This informs the optimizations that are applied to the session. You can't set this parameter if `ui_mode` is `custom`.
-@immutable final class PostCheckoutSessionsRequestOriginContext {const PostCheckoutSessionsRequestOriginContext._(this.value);
+sealed class PostCheckoutSessionsRequestOriginContext {const PostCheckoutSessionsRequestOriginContext();
 
 factory PostCheckoutSessionsRequestOriginContext.fromJson(String json) { return switch (json) {
   'mobile_app' => mobileApp,
   'web' => web,
-  _ => PostCheckoutSessionsRequestOriginContext._(json),
+  _ => PostCheckoutSessionsRequestOriginContext$Unknown(json),
 }; }
 
-static const PostCheckoutSessionsRequestOriginContext mobileApp = PostCheckoutSessionsRequestOriginContext._('mobile_app');
+static const PostCheckoutSessionsRequestOriginContext mobileApp = PostCheckoutSessionsRequestOriginContext$mobileApp._();
 
-static const PostCheckoutSessionsRequestOriginContext web = PostCheckoutSessionsRequestOriginContext._('web');
+static const PostCheckoutSessionsRequestOriginContext web = PostCheckoutSessionsRequestOriginContext$web._();
 
 static const List<PostCheckoutSessionsRequestOriginContext> values = [mobileApp, web];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -441,35 +1267,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PostCheckoutSessionsRequestOriginContext && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PostCheckoutSessionsRequestOriginContext$Unknown; } 
 @override String toString() => 'PostCheckoutSessionsRequestOriginContext($value)';
 
  }
+@immutable final class PostCheckoutSessionsRequestOriginContext$mobileApp extends PostCheckoutSessionsRequestOriginContext {const PostCheckoutSessionsRequestOriginContext$mobileApp._();
+
+@override String get value => 'mobile_app';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestOriginContext$mobileApp;
+
+@override int get hashCode => 'mobile_app'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestOriginContext$web extends PostCheckoutSessionsRequestOriginContext {const PostCheckoutSessionsRequestOriginContext$web._();
+
+@override String get value => 'web';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestOriginContext$web;
+
+@override int get hashCode => 'web'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestOriginContext$Unknown extends PostCheckoutSessionsRequestOriginContext {const PostCheckoutSessionsRequestOriginContext$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PostCheckoutSessionsRequestOriginContext$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The UI mode of the Session. Defaults to `hosted`.
-@immutable final class PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode._(this.value);
+sealed class PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode();
 
 factory PostCheckoutSessionsRequestUiMode.fromJson(String json) { return switch (json) {
   'custom' => custom,
   'embedded' => embedded,
   'hosted' => hosted,
-  _ => PostCheckoutSessionsRequestUiMode._(json),
+  _ => PostCheckoutSessionsRequestUiMode$Unknown(json),
 }; }
 
-static const PostCheckoutSessionsRequestUiMode custom = PostCheckoutSessionsRequestUiMode._('custom');
+static const PostCheckoutSessionsRequestUiMode custom = PostCheckoutSessionsRequestUiMode$custom._();
 
-static const PostCheckoutSessionsRequestUiMode embedded = PostCheckoutSessionsRequestUiMode._('embedded');
+static const PostCheckoutSessionsRequestUiMode embedded = PostCheckoutSessionsRequestUiMode$embedded._();
 
-static const PostCheckoutSessionsRequestUiMode hosted = PostCheckoutSessionsRequestUiMode._('hosted');
+static const PostCheckoutSessionsRequestUiMode hosted = PostCheckoutSessionsRequestUiMode$hosted._();
 
 static const List<PostCheckoutSessionsRequestUiMode> values = [custom, embedded, hosted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -479,13 +1327,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostCheckoutSessionsRequestUiMode$Unknown; } 
+@override String toString() => 'PostCheckoutSessionsRequestUiMode($value)';
+
+ }
+@immutable final class PostCheckoutSessionsRequestUiMode$custom extends PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode$custom._();
+
+@override String get value => 'custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestUiMode$custom;
+
+@override int get hashCode => 'custom'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestUiMode$embedded extends PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode$embedded._();
+
+@override String get value => 'embedded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestUiMode$embedded;
+
+@override int get hashCode => 'embedded'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestUiMode$hosted extends PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode$hosted._();
+
+@override String get value => 'hosted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostCheckoutSessionsRequestUiMode$hosted;
+
+@override int get hashCode => 'hosted'.hashCode;
+
+ }
+@immutable final class PostCheckoutSessionsRequestUiMode$Unknown extends PostCheckoutSessionsRequestUiMode {const PostCheckoutSessionsRequestUiMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostCheckoutSessionsRequestUiMode && other.value == value;
+    other is PostCheckoutSessionsRequestUiMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostCheckoutSessionsRequestUiMode($value)';
 
  }
 @immutable final class PostCheckoutSessionsRequest {const PostCheckoutSessionsRequest({this.customerUpdate, this.afterExpiration, this.allowPromotionCodes, this.automaticTax, this.billingAddressCollection, this.brandingSettings, this.cancelUrl, this.clientReferenceId, this.consentCollection, this.currency, this.customFields, this.customText, this.customer, this.customerAccount, this.customerCreation, this.customerEmail, this.adaptivePricing, this.discounts, this.excludedPaymentMethodTypes, this.expand, this.expiresAt, this.invoiceCreation, this.lineItems, this.locale, this.metadata, this.mode, this.nameCollection, this.optionalItems, this.originContext, this.paymentIntentData, this.paymentMethodCollection, this.paymentMethodConfiguration, this.walletOptions, this.paymentMethodOptions, this.paymentMethodTypes, this.permissions, this.phoneNumberCollection, this.redirectOnCompletion, this.returnUrl, this.savedPaymentMethodOptions, this.setupIntentData, this.shippingAddressCollection, this.shippingOptions, this.submitType, this.subscriptionData, this.successUrl, this.taxIdCollection, this.uiMode, this.paymentMethodData, });

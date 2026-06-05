@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PaymentIntentPaymentMethodOptionsParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param14_mandate_options.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param_financial_connections.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param_networks.dart';@immutable final class PaymentIntentPaymentMethodOptionsParamTransactionPurpose {const PaymentIntentPaymentMethodOptionsParamTransactionPurpose._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/checkout_acss_debit_payment_method_options/checkout_acss_debit_payment_method_options_verification_method.dart';import 'package:pub_stripe_spec3/models/payment_intent_param/payment_intent_param_setup_future_usage.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param14_mandate_options.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param_financial_connections.dart';import 'package:pub_stripe_spec3/models/payment_intent_payment_method_options_param/payment_intent_payment_method_options_param_networks.dart';sealed class PaymentIntentPaymentMethodOptionsParamTransactionPurpose {const PaymentIntentPaymentMethodOptionsParamTransactionPurpose();
 
 factory PaymentIntentPaymentMethodOptionsParamTransactionPurpose.fromJson(String json) { return switch (json) {
   '' => $empty,
@@ -9,23 +9,22 @@ factory PaymentIntentPaymentMethodOptionsParamTransactionPurpose.fromJson(String
   'other' => $other,
   'services' => services,
   'unspecified' => unspecified,
-  _ => PaymentIntentPaymentMethodOptionsParamTransactionPurpose._(json),
+  _ => PaymentIntentPaymentMethodOptionsParamTransactionPurpose$Unknown(json),
 }; }
 
-static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose $empty = PaymentIntentPaymentMethodOptionsParamTransactionPurpose._('');
+static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose $empty = PaymentIntentPaymentMethodOptionsParamTransactionPurpose$$empty._();
 
-static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose goods = PaymentIntentPaymentMethodOptionsParamTransactionPurpose._('goods');
+static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose goods = PaymentIntentPaymentMethodOptionsParamTransactionPurpose$goods._();
 
-static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose $other = PaymentIntentPaymentMethodOptionsParamTransactionPurpose._('other');
+static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose $other = PaymentIntentPaymentMethodOptionsParamTransactionPurpose$$other._();
 
-static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose services = PaymentIntentPaymentMethodOptionsParamTransactionPurpose._('services');
+static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose services = PaymentIntentPaymentMethodOptionsParamTransactionPurpose$services._();
 
-static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose unspecified = PaymentIntentPaymentMethodOptionsParamTransactionPurpose._('unspecified');
+static const PaymentIntentPaymentMethodOptionsParamTransactionPurpose unspecified = PaymentIntentPaymentMethodOptionsParamTransactionPurpose$unspecified._();
 
 static const List<PaymentIntentPaymentMethodOptionsParamTransactionPurpose> values = [$empty, goods, $other, services, unspecified];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentIntentPaymentMethodOptionsParamTransactionPurpose$Unknown; } 
+@override String toString() => 'PaymentIntentPaymentMethodOptionsParamTransactionPurpose($value)';
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamTransactionPurpose$$empty extends PaymentIntentPaymentMethodOptionsParamTransactionPurpose {const PaymentIntentPaymentMethodOptionsParamTransactionPurpose$$empty._();
+
+@override String get value => '';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamTransactionPurpose$$empty;
+
+@override int get hashCode => ''.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamTransactionPurpose$goods extends PaymentIntentPaymentMethodOptionsParamTransactionPurpose {const PaymentIntentPaymentMethodOptionsParamTransactionPurpose$goods._();
+
+@override String get value => 'goods';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamTransactionPurpose$goods;
+
+@override int get hashCode => 'goods'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamTransactionPurpose$$other extends PaymentIntentPaymentMethodOptionsParamTransactionPurpose {const PaymentIntentPaymentMethodOptionsParamTransactionPurpose$$other._();
+
+@override String get value => 'other';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamTransactionPurpose$$other;
+
+@override int get hashCode => 'other'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamTransactionPurpose$services extends PaymentIntentPaymentMethodOptionsParamTransactionPurpose {const PaymentIntentPaymentMethodOptionsParamTransactionPurpose$services._();
+
+@override String get value => 'services';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamTransactionPurpose$services;
+
+@override int get hashCode => 'services'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamTransactionPurpose$unspecified extends PaymentIntentPaymentMethodOptionsParamTransactionPurpose {const PaymentIntentPaymentMethodOptionsParamTransactionPurpose$unspecified._();
+
+@override String get value => 'unspecified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentIntentPaymentMethodOptionsParamTransactionPurpose$unspecified;
+
+@override int get hashCode => 'unspecified'.hashCode;
+
+ }
+@immutable final class PaymentIntentPaymentMethodOptionsParamTransactionPurpose$Unknown extends PaymentIntentPaymentMethodOptionsParamTransactionPurpose {const PaymentIntentPaymentMethodOptionsParamTransactionPurpose$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentIntentPaymentMethodOptionsParamTransactionPurpose && other.value == value;
+    other is PaymentIntentPaymentMethodOptionsParamTransactionPurpose$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentIntentPaymentMethodOptionsParamTransactionPurpose($value)';
 
  }
 @immutable final class PaymentIntentPaymentMethodOptionsParam14 {const PaymentIntentPaymentMethodOptionsParam14({this.financialConnections, this.mandateOptions, this.networks, this.setupFutureUsage, this.targetDate, this.transactionPurpose, this.verificationMethod, });

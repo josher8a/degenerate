@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpSummaryIpVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpSummaryIpVersion {const RadarGetHttpSummaryIpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpSummaryIpVersion {const RadarGetHttpSummaryIpVersion();
 
 factory RadarGetHttpSummaryIpVersion.fromJson(String json) { return switch (json) {
   'IPv4' => iPv4,
   'IPv6' => iPv6,
-  _ => RadarGetHttpSummaryIpVersion._(json),
+  _ => RadarGetHttpSummaryIpVersion$Unknown(json),
 }; }
 
-static const RadarGetHttpSummaryIpVersion iPv4 = RadarGetHttpSummaryIpVersion._('IPv4');
+static const RadarGetHttpSummaryIpVersion iPv4 = RadarGetHttpSummaryIpVersion$iPv4._();
 
-static const RadarGetHttpSummaryIpVersion iPv6 = RadarGetHttpSummaryIpVersion._('IPv6');
+static const RadarGetHttpSummaryIpVersion iPv6 = RadarGetHttpSummaryIpVersion$iPv6._();
 
 static const List<RadarGetHttpSummaryIpVersion> values = [iPv4, iPv6];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpSummaryIpVersion$Unknown; } 
+@override String toString() => 'RadarGetHttpSummaryIpVersion($value)';
+
+ }
+@immutable final class RadarGetHttpSummaryIpVersion$iPv4 extends RadarGetHttpSummaryIpVersion {const RadarGetHttpSummaryIpVersion$iPv4._();
+
+@override String get value => 'IPv4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryIpVersion$iPv4;
+
+@override int get hashCode => 'IPv4'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryIpVersion$iPv6 extends RadarGetHttpSummaryIpVersion {const RadarGetHttpSummaryIpVersion$iPv6._();
+
+@override String get value => 'IPv6';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpSummaryIpVersion$iPv6;
+
+@override int get hashCode => 'IPv6'.hashCode;
+
+ }
+@immutable final class RadarGetHttpSummaryIpVersion$Unknown extends RadarGetHttpSummaryIpVersion {const RadarGetHttpSummaryIpVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpSummaryIpVersion && other.value == value;
+    other is RadarGetHttpSummaryIpVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpSummaryIpVersion($value)';
 
  }

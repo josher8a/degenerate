@@ -7,25 +7,24 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// - If listing, activating, or deactivating certificates for the organization, the object type is `organization.certificate`.
 /// - If listing, activating, or deactivating certificates for a project, the object type is `organization.project.certificate`.
 /// 
-@immutable final class CertificateObject {const CertificateObject._(this.value);
+sealed class CertificateObject {const CertificateObject();
 
 factory CertificateObject.fromJson(String json) { return switch (json) {
   'certificate' => certificate,
   'organization.certificate' => organizationCertificate,
   'organization.project.certificate' => organizationProjectCertificate,
-  _ => CertificateObject._(json),
+  _ => CertificateObject$Unknown(json),
 }; }
 
-static const CertificateObject certificate = CertificateObject._('certificate');
+static const CertificateObject certificate = CertificateObject$certificate._();
 
-static const CertificateObject organizationCertificate = CertificateObject._('organization.certificate');
+static const CertificateObject organizationCertificate = CertificateObject$organizationCertificate._();
 
-static const CertificateObject organizationProjectCertificate = CertificateObject._('organization.project.certificate');
+static const CertificateObject organizationProjectCertificate = CertificateObject$organizationProjectCertificate._();
 
 static const List<CertificateObject> values = [certificate, organizationCertificate, organizationProjectCertificate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -35,13 +34,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CertificateObject$Unknown; } 
+@override String toString() => 'CertificateObject($value)';
+
+ }
+@immutable final class CertificateObject$certificate extends CertificateObject {const CertificateObject$certificate._();
+
+@override String get value => 'certificate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CertificateObject$certificate;
+
+@override int get hashCode => 'certificate'.hashCode;
+
+ }
+@immutable final class CertificateObject$organizationCertificate extends CertificateObject {const CertificateObject$organizationCertificate._();
+
+@override String get value => 'organization.certificate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CertificateObject$organizationCertificate;
+
+@override int get hashCode => 'organization.certificate'.hashCode;
+
+ }
+@immutable final class CertificateObject$organizationProjectCertificate extends CertificateObject {const CertificateObject$organizationProjectCertificate._();
+
+@override String get value => 'organization.project.certificate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CertificateObject$organizationProjectCertificate;
+
+@override int get hashCode => 'organization.project.certificate'.hashCode;
+
+ }
+@immutable final class CertificateObject$Unknown extends CertificateObject {const CertificateObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CertificateObject && other.value == value;
+    other is CertificateObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CertificateObject($value)';
 
  }
 /// Represents an individual `certificate` uploaded to the organization.

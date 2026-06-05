@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PostIdentityVerificationSessionsRequest (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of [verification check](https://docs.stripe.com/identity/verification-checks) to be performed. You must provide a `type` if not passing `verification_flow`.
-@immutable final class PostIdentityVerificationSessionsRequestType {const PostIdentityVerificationSessionsRequestType._(this.value);
+sealed class PostIdentityVerificationSessionsRequestType {const PostIdentityVerificationSessionsRequestType();
 
 factory PostIdentityVerificationSessionsRequestType.fromJson(String json) { return switch (json) {
   'document' => document,
   'id_number' => idNumber,
-  _ => PostIdentityVerificationSessionsRequestType._(json),
+  _ => PostIdentityVerificationSessionsRequestType$Unknown(json),
 }; }
 
-static const PostIdentityVerificationSessionsRequestType document = PostIdentityVerificationSessionsRequestType._('document');
+static const PostIdentityVerificationSessionsRequestType document = PostIdentityVerificationSessionsRequestType$document._();
 
-static const PostIdentityVerificationSessionsRequestType idNumber = PostIdentityVerificationSessionsRequestType._('id_number');
+static const PostIdentityVerificationSessionsRequestType idNumber = PostIdentityVerificationSessionsRequestType$idNumber._();
 
 static const List<PostIdentityVerificationSessionsRequestType> values = [document, idNumber];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostIdentityVerificationSessionsRequestType$Unknown; } 
+@override String toString() => 'PostIdentityVerificationSessionsRequestType($value)';
+
+ }
+@immutable final class PostIdentityVerificationSessionsRequestType$document extends PostIdentityVerificationSessionsRequestType {const PostIdentityVerificationSessionsRequestType$document._();
+
+@override String get value => 'document';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostIdentityVerificationSessionsRequestType$document;
+
+@override int get hashCode => 'document'.hashCode;
+
+ }
+@immutable final class PostIdentityVerificationSessionsRequestType$idNumber extends PostIdentityVerificationSessionsRequestType {const PostIdentityVerificationSessionsRequestType$idNumber._();
+
+@override String get value => 'id_number';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostIdentityVerificationSessionsRequestType$idNumber;
+
+@override int get hashCode => 'id_number'.hashCode;
+
+ }
+@immutable final class PostIdentityVerificationSessionsRequestType$Unknown extends PostIdentityVerificationSessionsRequestType {const PostIdentityVerificationSessionsRequestType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostIdentityVerificationSessionsRequestType && other.value == value;
+    other is PostIdentityVerificationSessionsRequestType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostIdentityVerificationSessionsRequestType($value)';
 
  }

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RunObject (inline: IncompleteDetails)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The reason why the run is incomplete. This will point to which specific token limit was reached over the course of the run.
-@immutable final class RunObjectIncompleteDetailsReason {const RunObjectIncompleteDetailsReason._(this.value);
+sealed class RunObjectIncompleteDetailsReason {const RunObjectIncompleteDetailsReason();
 
 factory RunObjectIncompleteDetailsReason.fromJson(String json) { return switch (json) {
   'max_completion_tokens' => maxCompletionTokens,
   'max_prompt_tokens' => maxPromptTokens,
-  _ => RunObjectIncompleteDetailsReason._(json),
+  _ => RunObjectIncompleteDetailsReason$Unknown(json),
 }; }
 
-static const RunObjectIncompleteDetailsReason maxCompletionTokens = RunObjectIncompleteDetailsReason._('max_completion_tokens');
+static const RunObjectIncompleteDetailsReason maxCompletionTokens = RunObjectIncompleteDetailsReason$maxCompletionTokens._();
 
-static const RunObjectIncompleteDetailsReason maxPromptTokens = RunObjectIncompleteDetailsReason._('max_prompt_tokens');
+static const RunObjectIncompleteDetailsReason maxPromptTokens = RunObjectIncompleteDetailsReason$maxPromptTokens._();
 
 static const List<RunObjectIncompleteDetailsReason> values = [maxCompletionTokens, maxPromptTokens];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RunObjectIncompleteDetailsReason$Unknown; } 
+@override String toString() => 'RunObjectIncompleteDetailsReason($value)';
+
+ }
+@immutable final class RunObjectIncompleteDetailsReason$maxCompletionTokens extends RunObjectIncompleteDetailsReason {const RunObjectIncompleteDetailsReason$maxCompletionTokens._();
+
+@override String get value => 'max_completion_tokens';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectIncompleteDetailsReason$maxCompletionTokens;
+
+@override int get hashCode => 'max_completion_tokens'.hashCode;
+
+ }
+@immutable final class RunObjectIncompleteDetailsReason$maxPromptTokens extends RunObjectIncompleteDetailsReason {const RunObjectIncompleteDetailsReason$maxPromptTokens._();
+
+@override String get value => 'max_prompt_tokens';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RunObjectIncompleteDetailsReason$maxPromptTokens;
+
+@override int get hashCode => 'max_prompt_tokens'.hashCode;
+
+ }
+@immutable final class RunObjectIncompleteDetailsReason$Unknown extends RunObjectIncompleteDetailsReason {const RunObjectIncompleteDetailsReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RunObjectIncompleteDetailsReason && other.value == value;
+    other is RunObjectIncompleteDetailsReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RunObjectIncompleteDetailsReason($value)';
 
  }
 /// Details on why the run is incomplete. Will be `null` if the run is not incomplete.

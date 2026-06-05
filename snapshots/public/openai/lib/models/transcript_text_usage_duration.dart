@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TranscriptTextUsageDuration
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of the usage object. Always `duration` for this variant.
-@immutable final class TranscriptTextUsageDurationType {const TranscriptTextUsageDurationType._(this.value);
+sealed class TranscriptTextUsageDurationType {const TranscriptTextUsageDurationType();
 
 factory TranscriptTextUsageDurationType.fromJson(String json) { return switch (json) {
   'duration' => duration,
-  _ => TranscriptTextUsageDurationType._(json),
+  _ => TranscriptTextUsageDurationType$Unknown(json),
 }; }
 
-static const TranscriptTextUsageDurationType duration = TranscriptTextUsageDurationType._('duration');
+static const TranscriptTextUsageDurationType duration = TranscriptTextUsageDurationType$duration._();
 
 static const List<TranscriptTextUsageDurationType> values = [duration];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TranscriptTextUsageDurationType$Unknown; } 
+@override String toString() => 'TranscriptTextUsageDurationType($value)';
+
+ }
+@immutable final class TranscriptTextUsageDurationType$duration extends TranscriptTextUsageDurationType {const TranscriptTextUsageDurationType$duration._();
+
+@override String get value => 'duration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TranscriptTextUsageDurationType$duration;
+
+@override int get hashCode => 'duration'.hashCode;
+
+ }
+@immutable final class TranscriptTextUsageDurationType$Unknown extends TranscriptTextUsageDurationType {const TranscriptTextUsageDurationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TranscriptTextUsageDurationType && other.value == value;
+    other is TranscriptTextUsageDurationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TranscriptTextUsageDurationType($value)';
 
  }
 /// Usage statistics for models billed by audio input duration.

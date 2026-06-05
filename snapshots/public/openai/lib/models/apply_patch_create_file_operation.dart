@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ApplyPatchCreateFileOperation
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Create a new file with the provided diff.
-@immutable final class ApplyPatchCreateFileOperationType {const ApplyPatchCreateFileOperationType._(this.value);
+sealed class ApplyPatchCreateFileOperationType {const ApplyPatchCreateFileOperationType();
 
 factory ApplyPatchCreateFileOperationType.fromJson(String json) { return switch (json) {
   'create_file' => createFile,
-  _ => ApplyPatchCreateFileOperationType._(json),
+  _ => ApplyPatchCreateFileOperationType$Unknown(json),
 }; }
 
-static const ApplyPatchCreateFileOperationType createFile = ApplyPatchCreateFileOperationType._('create_file');
+static const ApplyPatchCreateFileOperationType createFile = ApplyPatchCreateFileOperationType$createFile._();
 
 static const List<ApplyPatchCreateFileOperationType> values = [createFile];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ApplyPatchCreateFileOperationType$Unknown; } 
+@override String toString() => 'ApplyPatchCreateFileOperationType($value)';
+
+ }
+@immutable final class ApplyPatchCreateFileOperationType$createFile extends ApplyPatchCreateFileOperationType {const ApplyPatchCreateFileOperationType$createFile._();
+
+@override String get value => 'create_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApplyPatchCreateFileOperationType$createFile;
+
+@override int get hashCode => 'create_file'.hashCode;
+
+ }
+@immutable final class ApplyPatchCreateFileOperationType$Unknown extends ApplyPatchCreateFileOperationType {const ApplyPatchCreateFileOperationType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ApplyPatchCreateFileOperationType && other.value == value;
+    other is ApplyPatchCreateFileOperationType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ApplyPatchCreateFileOperationType($value)';
 
  }
 /// Instruction describing how to create a file via the apply_patch tool.

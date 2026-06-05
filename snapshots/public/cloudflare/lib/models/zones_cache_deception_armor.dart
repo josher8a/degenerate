@@ -5,19 +5,18 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 /// assets to be cached. This setting verifies that the URL's extension
 /// matches the returned `Content-Type`.
 /// 
-@immutable final class ZonesCacheDeceptionArmorId {const ZonesCacheDeceptionArmorId._(this.value);
+sealed class ZonesCacheDeceptionArmorId {const ZonesCacheDeceptionArmorId();
 
 factory ZonesCacheDeceptionArmorId.fromJson(String json) { return switch (json) {
   'cache_deception_armor' => cacheDeceptionArmor,
-  _ => ZonesCacheDeceptionArmorId._(json),
+  _ => ZonesCacheDeceptionArmorId$Unknown(json),
 }; }
 
-static const ZonesCacheDeceptionArmorId cacheDeceptionArmor = ZonesCacheDeceptionArmorId._('cache_deception_armor');
+static const ZonesCacheDeceptionArmorId cacheDeceptionArmor = ZonesCacheDeceptionArmorId$cacheDeceptionArmor._();
 
 static const List<ZonesCacheDeceptionArmorId> values = [cacheDeceptionArmor];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesCacheDeceptionArmorId$Unknown; } 
+@override String toString() => 'ZonesCacheDeceptionArmorId($value)';
+
+ }
+@immutable final class ZonesCacheDeceptionArmorId$cacheDeceptionArmor extends ZonesCacheDeceptionArmorId {const ZonesCacheDeceptionArmorId$cacheDeceptionArmor._();
+
+@override String get value => 'cache_deception_armor';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesCacheDeceptionArmorId$cacheDeceptionArmor;
+
+@override int get hashCode => 'cache_deception_armor'.hashCode;
+
+ }
+@immutable final class ZonesCacheDeceptionArmorId$Unknown extends ZonesCacheDeceptionArmorId {const ZonesCacheDeceptionArmorId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesCacheDeceptionArmorId && other.value == value;
+    other is ZonesCacheDeceptionArmorId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesCacheDeceptionArmorId($value)';
 
  }
 @immutable final class ZonesCacheDeceptionArmor {const ZonesCacheDeceptionArmor({this.id, this.value, });

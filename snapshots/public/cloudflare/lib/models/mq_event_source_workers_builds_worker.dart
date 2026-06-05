@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MqEventSourceWorkersBuildsWorker
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
-@immutable final class MqEventSourceWorkersBuildsWorkerType {const MqEventSourceWorkersBuildsWorkerType._(this.value);
+sealed class MqEventSourceWorkersBuildsWorkerType {const MqEventSourceWorkersBuildsWorkerType();
 
 factory MqEventSourceWorkersBuildsWorkerType.fromJson(String json) { return switch (json) {
   'workersBuilds.worker' => workersBuildsWorker,
-  _ => MqEventSourceWorkersBuildsWorkerType._(json),
+  _ => MqEventSourceWorkersBuildsWorkerType$Unknown(json),
 }; }
 
-static const MqEventSourceWorkersBuildsWorkerType workersBuildsWorker = MqEventSourceWorkersBuildsWorkerType._('workersBuilds.worker');
+static const MqEventSourceWorkersBuildsWorkerType workersBuildsWorker = MqEventSourceWorkersBuildsWorkerType$workersBuildsWorker._();
 
 static const List<MqEventSourceWorkersBuildsWorkerType> values = [workersBuildsWorker];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MqEventSourceWorkersBuildsWorkerType$Unknown; } 
+@override String toString() => 'MqEventSourceWorkersBuildsWorkerType($value)';
+
+ }
+@immutable final class MqEventSourceWorkersBuildsWorkerType$workersBuildsWorker extends MqEventSourceWorkersBuildsWorkerType {const MqEventSourceWorkersBuildsWorkerType$workersBuildsWorker._();
+
+@override String get value => 'workersBuilds.worker';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqEventSourceWorkersBuildsWorkerType$workersBuildsWorker;
+
+@override int get hashCode => 'workersBuilds.worker'.hashCode;
+
+ }
+@immutable final class MqEventSourceWorkersBuildsWorkerType$Unknown extends MqEventSourceWorkersBuildsWorkerType {const MqEventSourceWorkersBuildsWorkerType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MqEventSourceWorkersBuildsWorkerType && other.value == value;
+    other is MqEventSourceWorkersBuildsWorkerType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MqEventSourceWorkersBuildsWorkerType($value)';
 
  }
 @immutable final class MqEventSourceWorkersBuildsWorker {const MqEventSourceWorkersBuildsWorker({this.type, this.workerName, });

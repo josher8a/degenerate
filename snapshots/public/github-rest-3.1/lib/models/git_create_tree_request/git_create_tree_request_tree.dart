@@ -2,7 +2,7 @@
 // Source: #/components/schemas/GitCreateTreeRequest (inline: Tree)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/git_create_tag_request/git_create_tag_request_type.dart';/// The file mode; one of `100644` for file (blob), `100755` for executable (blob), `040000` for subdirectory (tree), `160000` for submodule (commit), or `120000` for a blob that specifies the path of a symlink.
-@immutable final class TreeMode {const TreeMode._(this.value);
+sealed class TreeMode {const TreeMode();
 
 factory TreeMode.fromJson(String json) { return switch (json) {
   '100644' => $100644,
@@ -10,23 +10,22 @@ factory TreeMode.fromJson(String json) { return switch (json) {
   '040000' => $040000,
   '160000' => $160000,
   '120000' => $120000,
-  _ => TreeMode._(json),
+  _ => TreeMode$Unknown(json),
 }; }
 
-static const TreeMode $100644 = TreeMode._('100644');
+static const TreeMode $100644 = TreeMode$$100644._();
 
-static const TreeMode $100755 = TreeMode._('100755');
+static const TreeMode $100755 = TreeMode$$100755._();
 
-static const TreeMode $040000 = TreeMode._('040000');
+static const TreeMode $040000 = TreeMode$$040000._();
 
-static const TreeMode $160000 = TreeMode._('160000');
+static const TreeMode $160000 = TreeMode$$160000._();
 
-static const TreeMode $120000 = TreeMode._('120000');
+static const TreeMode $120000 = TreeMode$$120000._();
 
 static const List<TreeMode> values = [$100644, $100755, $040000, $160000, $120000];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -38,13 +37,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TreeMode$Unknown; } 
+@override String toString() => 'TreeMode($value)';
+
+ }
+@immutable final class TreeMode$$100644 extends TreeMode {const TreeMode$$100644._();
+
+@override String get value => '100644';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreeMode$$100644;
+
+@override int get hashCode => '100644'.hashCode;
+
+ }
+@immutable final class TreeMode$$100755 extends TreeMode {const TreeMode$$100755._();
+
+@override String get value => '100755';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreeMode$$100755;
+
+@override int get hashCode => '100755'.hashCode;
+
+ }
+@immutable final class TreeMode$$040000 extends TreeMode {const TreeMode$$040000._();
+
+@override String get value => '040000';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreeMode$$040000;
+
+@override int get hashCode => '040000'.hashCode;
+
+ }
+@immutable final class TreeMode$$160000 extends TreeMode {const TreeMode$$160000._();
+
+@override String get value => '160000';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreeMode$$160000;
+
+@override int get hashCode => '160000'.hashCode;
+
+ }
+@immutable final class TreeMode$$120000 extends TreeMode {const TreeMode$$120000._();
+
+@override String get value => '120000';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TreeMode$$120000;
+
+@override int get hashCode => '120000'.hashCode;
+
+ }
+@immutable final class TreeMode$Unknown extends TreeMode {const TreeMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TreeMode && other.value == value;
+    other is TreeMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TreeMode($value)';
 
  }
 @immutable final class GitCreateTreeRequestTree {const GitCreateTreeRequestTree({this.path, this.mode, this.type, this.sha, this.content, });

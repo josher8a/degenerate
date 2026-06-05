@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Messages (inline: ToolChoice > Variant1)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/variant1_allowed_tools.dart';import 'package:pub_cloudflare/models/messages/variant1_custom.dart';import 'package:pub_cloudflare/models/messages/variant1_function.dart';@immutable final class Variant1Variant1 {const Variant1Variant1._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/messages/variant1_allowed_tools.dart';import 'package:pub_cloudflare/models/messages/variant1_custom.dart';import 'package:pub_cloudflare/models/messages/variant1_function.dart';sealed class Variant1Variant1 {const Variant1Variant1();
 
 factory Variant1Variant1.fromJson(String json) { return switch (json) {
   'none' => none,
   'auto' => auto,
   'required' => $required,
-  _ => Variant1Variant1._(json),
+  _ => Variant1Variant1$Unknown(json),
 }; }
 
-static const Variant1Variant1 none = Variant1Variant1._('none');
+static const Variant1Variant1 none = Variant1Variant1$none._();
 
-static const Variant1Variant1 auto = Variant1Variant1._('auto');
+static const Variant1Variant1 auto = Variant1Variant1$auto._();
 
-static const Variant1Variant1 $required = Variant1Variant1._('required');
+static const Variant1Variant1 $required = Variant1Variant1$$required._();
 
 static const List<Variant1Variant1> values = [none, auto, $required];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Variant1Variant1$Unknown; } 
+@override String toString() => 'Variant1Variant1($value)';
+
+ }
+@immutable final class Variant1Variant1$none extends Variant1Variant1 {const Variant1Variant1$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Variant1Variant1$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class Variant1Variant1$auto extends Variant1Variant1 {const Variant1Variant1$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Variant1Variant1$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class Variant1Variant1$$required extends Variant1Variant1 {const Variant1Variant1$$required._();
+
+@override String get value => 'required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Variant1Variant1$$required;
+
+@override int get hashCode => 'required'.hashCode;
+
+ }
+@immutable final class Variant1Variant1$Unknown extends Variant1Variant1 {const Variant1Variant1$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Variant1Variant1 && other.value == value;
+    other is Variant1Variant1$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Variant1Variant1($value)';
 
  }
 /// Controls which (if any) tool is called by the model. 'none' = no tools, 'auto' = model decides, 'required' = must call a tool.

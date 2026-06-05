@@ -2,25 +2,24 @@
 // Source: #/components/schemas/DependabotAlert (inline: Dependency)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/dependabot_alert_package.dart';/// The execution scope of the vulnerable dependency.
-@immutable final class DependabotAlertDependencyScope {const DependabotAlertDependencyScope._(this.value);
+sealed class DependabotAlertDependencyScope {const DependabotAlertDependencyScope();
 
 factory DependabotAlertDependencyScope.fromJson(String json) { return switch (json) {
   'development' => development,
   'runtime' => runtime,
   'null' => $null,
-  _ => DependabotAlertDependencyScope._(json),
+  _ => DependabotAlertDependencyScope$Unknown(json),
 }; }
 
-static const DependabotAlertDependencyScope development = DependabotAlertDependencyScope._('development');
+static const DependabotAlertDependencyScope development = DependabotAlertDependencyScope$development._();
 
-static const DependabotAlertDependencyScope runtime = DependabotAlertDependencyScope._('runtime');
+static const DependabotAlertDependencyScope runtime = DependabotAlertDependencyScope$runtime._();
 
-static const DependabotAlertDependencyScope $null = DependabotAlertDependencyScope._('null');
+static const DependabotAlertDependencyScope $null = DependabotAlertDependencyScope$$null._();
 
 static const List<DependabotAlertDependencyScope> values = [development, runtime, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DependabotAlertDependencyScope$Unknown; } 
+@override String toString() => 'DependabotAlertDependencyScope($value)';
+
+ }
+@immutable final class DependabotAlertDependencyScope$development extends DependabotAlertDependencyScope {const DependabotAlertDependencyScope$development._();
+
+@override String get value => 'development';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotAlertDependencyScope$development;
+
+@override int get hashCode => 'development'.hashCode;
+
+ }
+@immutable final class DependabotAlertDependencyScope$runtime extends DependabotAlertDependencyScope {const DependabotAlertDependencyScope$runtime._();
+
+@override String get value => 'runtime';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotAlertDependencyScope$runtime;
+
+@override int get hashCode => 'runtime'.hashCode;
+
+ }
+@immutable final class DependabotAlertDependencyScope$$null extends DependabotAlertDependencyScope {const DependabotAlertDependencyScope$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotAlertDependencyScope$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class DependabotAlertDependencyScope$Unknown extends DependabotAlertDependencyScope {const DependabotAlertDependencyScope$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DependabotAlertDependencyScope && other.value == value;
+    other is DependabotAlertDependencyScope$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DependabotAlertDependencyScope($value)';
 
  }
 /// The vulnerable dependency's relationship to your project.
@@ -44,28 +75,27 @@ bool get isUnknown { return !values.contains(this); }
 /// > `[!NOTE]`
 /// > We are rolling out support for dependency relationship across ecosystems. This value will be "unknown" for all dependencies in unsupported ecosystems.
 /// 
-@immutable final class DependabotAlertDependencyRelationship {const DependabotAlertDependencyRelationship._(this.value);
+sealed class DependabotAlertDependencyRelationship {const DependabotAlertDependencyRelationship();
 
 factory DependabotAlertDependencyRelationship.fromJson(String json) { return switch (json) {
   'unknown' => unknown,
   'direct' => direct,
   'transitive' => transitive,
   'null' => $null,
-  _ => DependabotAlertDependencyRelationship._(json),
+  _ => DependabotAlertDependencyRelationship$Unknown(json),
 }; }
 
-static const DependabotAlertDependencyRelationship unknown = DependabotAlertDependencyRelationship._('unknown');
+static const DependabotAlertDependencyRelationship unknown = DependabotAlertDependencyRelationship$unknown._();
 
-static const DependabotAlertDependencyRelationship direct = DependabotAlertDependencyRelationship._('direct');
+static const DependabotAlertDependencyRelationship direct = DependabotAlertDependencyRelationship$direct._();
 
-static const DependabotAlertDependencyRelationship transitive = DependabotAlertDependencyRelationship._('transitive');
+static const DependabotAlertDependencyRelationship transitive = DependabotAlertDependencyRelationship$transitive._();
 
-static const DependabotAlertDependencyRelationship $null = DependabotAlertDependencyRelationship._('null');
+static const DependabotAlertDependencyRelationship $null = DependabotAlertDependencyRelationship$$null._();
 
 static const List<DependabotAlertDependencyRelationship> values = [unknown, direct, transitive, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -76,13 +106,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DependabotAlertDependencyRelationship$Unknown; } 
+@override String toString() => 'DependabotAlertDependencyRelationship($value)';
+
+ }
+@immutable final class DependabotAlertDependencyRelationship$unknown extends DependabotAlertDependencyRelationship {const DependabotAlertDependencyRelationship$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotAlertDependencyRelationship$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class DependabotAlertDependencyRelationship$direct extends DependabotAlertDependencyRelationship {const DependabotAlertDependencyRelationship$direct._();
+
+@override String get value => 'direct';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotAlertDependencyRelationship$direct;
+
+@override int get hashCode => 'direct'.hashCode;
+
+ }
+@immutable final class DependabotAlertDependencyRelationship$transitive extends DependabotAlertDependencyRelationship {const DependabotAlertDependencyRelationship$transitive._();
+
+@override String get value => 'transitive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotAlertDependencyRelationship$transitive;
+
+@override int get hashCode => 'transitive'.hashCode;
+
+ }
+@immutable final class DependabotAlertDependencyRelationship$$null extends DependabotAlertDependencyRelationship {const DependabotAlertDependencyRelationship$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DependabotAlertDependencyRelationship$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class DependabotAlertDependencyRelationship$Unknown extends DependabotAlertDependencyRelationship {const DependabotAlertDependencyRelationship$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DependabotAlertDependencyRelationship && other.value == value;
+    other is DependabotAlertDependencyRelationship$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DependabotAlertDependencyRelationship($value)';
 
  }
 /// Details for the vulnerable dependency.

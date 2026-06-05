@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimekitInteractiveConfig
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The metadata is presented in the form of ID3 tags.
-@immutable final class RealtimekitInteractiveConfigType {const RealtimekitInteractiveConfigType._(this.value);
+sealed class RealtimekitInteractiveConfigType {const RealtimekitInteractiveConfigType();
 
 factory RealtimekitInteractiveConfigType.fromJson(String json) { return switch (json) {
   'ID3' => id3,
-  _ => RealtimekitInteractiveConfigType._(json),
+  _ => RealtimekitInteractiveConfigType$Unknown(json),
 }; }
 
-static const RealtimekitInteractiveConfigType id3 = RealtimekitInteractiveConfigType._('ID3');
+static const RealtimekitInteractiveConfigType id3 = RealtimekitInteractiveConfigType$id3._();
 
 static const List<RealtimekitInteractiveConfigType> values = [id3];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimekitInteractiveConfigType$Unknown; } 
+@override String toString() => 'RealtimekitInteractiveConfigType($value)';
+
+ }
+@immutable final class RealtimekitInteractiveConfigType$id3 extends RealtimekitInteractiveConfigType {const RealtimekitInteractiveConfigType$id3._();
+
+@override String get value => 'ID3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitInteractiveConfigType$id3;
+
+@override int get hashCode => 'ID3'.hashCode;
+
+ }
+@immutable final class RealtimekitInteractiveConfigType$Unknown extends RealtimekitInteractiveConfigType {const RealtimekitInteractiveConfigType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimekitInteractiveConfigType && other.value == value;
+    other is RealtimekitInteractiveConfigType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimekitInteractiveConfigType($value)';
 
  }
 /// Allows you to add timed metadata to your recordings, which are digital markers inserted into a video file to provide contextual information at specific points in the content range. The ID3 tags containing this information are available to clients on the playback timeline in HLS format. The output files are generated in a compressed .tar format.

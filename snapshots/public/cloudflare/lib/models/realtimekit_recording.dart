@@ -2,7 +2,7 @@
 // Source: #/components/schemas/RealtimekitRecording
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Current status of the recording.
-@immutable final class RealtimekitRecordingStatus {const RealtimekitRecordingStatus._(this.value);
+sealed class RealtimekitRecordingStatus {const RealtimekitRecordingStatus();
 
 factory RealtimekitRecordingStatus.fromJson(String json) { return switch (json) {
   'INVOKED' => invoked,
@@ -11,25 +11,24 @@ factory RealtimekitRecordingStatus.fromJson(String json) { return switch (json) 
   'UPLOADED' => uploaded,
   'ERRORED' => errored,
   'PAUSED' => paused,
-  _ => RealtimekitRecordingStatus._(json),
+  _ => RealtimekitRecordingStatus$Unknown(json),
 }; }
 
-static const RealtimekitRecordingStatus invoked = RealtimekitRecordingStatus._('INVOKED');
+static const RealtimekitRecordingStatus invoked = RealtimekitRecordingStatus$invoked._();
 
-static const RealtimekitRecordingStatus recording = RealtimekitRecordingStatus._('RECORDING');
+static const RealtimekitRecordingStatus recording = RealtimekitRecordingStatus$recording._();
 
-static const RealtimekitRecordingStatus uploading = RealtimekitRecordingStatus._('UPLOADING');
+static const RealtimekitRecordingStatus uploading = RealtimekitRecordingStatus$uploading._();
 
-static const RealtimekitRecordingStatus uploaded = RealtimekitRecordingStatus._('UPLOADED');
+static const RealtimekitRecordingStatus uploaded = RealtimekitRecordingStatus$uploaded._();
 
-static const RealtimekitRecordingStatus errored = RealtimekitRecordingStatus._('ERRORED');
+static const RealtimekitRecordingStatus errored = RealtimekitRecordingStatus$errored._();
 
-static const RealtimekitRecordingStatus paused = RealtimekitRecordingStatus._('PAUSED');
+static const RealtimekitRecordingStatus paused = RealtimekitRecordingStatus$paused._();
 
 static const List<RealtimekitRecordingStatus> values = [invoked, recording, uploading, uploaded, errored, paused];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,13 +41,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimekitRecordingStatus$Unknown; } 
+@override String toString() => 'RealtimekitRecordingStatus($value)';
+
+ }
+@immutable final class RealtimekitRecordingStatus$invoked extends RealtimekitRecordingStatus {const RealtimekitRecordingStatus$invoked._();
+
+@override String get value => 'INVOKED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitRecordingStatus$invoked;
+
+@override int get hashCode => 'INVOKED'.hashCode;
+
+ }
+@immutable final class RealtimekitRecordingStatus$recording extends RealtimekitRecordingStatus {const RealtimekitRecordingStatus$recording._();
+
+@override String get value => 'RECORDING';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitRecordingStatus$recording;
+
+@override int get hashCode => 'RECORDING'.hashCode;
+
+ }
+@immutable final class RealtimekitRecordingStatus$uploading extends RealtimekitRecordingStatus {const RealtimekitRecordingStatus$uploading._();
+
+@override String get value => 'UPLOADING';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitRecordingStatus$uploading;
+
+@override int get hashCode => 'UPLOADING'.hashCode;
+
+ }
+@immutable final class RealtimekitRecordingStatus$uploaded extends RealtimekitRecordingStatus {const RealtimekitRecordingStatus$uploaded._();
+
+@override String get value => 'UPLOADED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitRecordingStatus$uploaded;
+
+@override int get hashCode => 'UPLOADED'.hashCode;
+
+ }
+@immutable final class RealtimekitRecordingStatus$errored extends RealtimekitRecordingStatus {const RealtimekitRecordingStatus$errored._();
+
+@override String get value => 'ERRORED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitRecordingStatus$errored;
+
+@override int get hashCode => 'ERRORED'.hashCode;
+
+ }
+@immutable final class RealtimekitRecordingStatus$paused extends RealtimekitRecordingStatus {const RealtimekitRecordingStatus$paused._();
+
+@override String get value => 'PAUSED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitRecordingStatus$paused;
+
+@override int get hashCode => 'PAUSED'.hashCode;
+
+ }
+@immutable final class RealtimekitRecordingStatus$Unknown extends RealtimekitRecordingStatus {const RealtimekitRecordingStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimekitRecordingStatus && other.value == value;
+    other is RealtimekitRecordingStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimekitRecordingStatus($value)';
 
  }
 @immutable final class RealtimekitRecording {const RealtimekitRecording({required this.audioDownloadUrl, required this.downloadUrl, required this.downloadUrlExpiry, required this.fileSize, required this.id, required this.invokedTime, required this.outputFileName, required this.sessionId, required this.startedTime, required this.status, required this.stoppedTime, this.recordingDuration, });

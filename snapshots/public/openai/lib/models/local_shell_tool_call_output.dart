@@ -3,25 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the item. One of `in_progress`, `completed`, or `incomplete`.
 /// 
-@immutable final class LocalShellToolCallOutputStatus {const LocalShellToolCallOutputStatus._(this.value);
+sealed class LocalShellToolCallOutputStatus {const LocalShellToolCallOutputStatus();
 
 factory LocalShellToolCallOutputStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
   'incomplete' => incomplete,
-  _ => LocalShellToolCallOutputStatus._(json),
+  _ => LocalShellToolCallOutputStatus$Unknown(json),
 }; }
 
-static const LocalShellToolCallOutputStatus inProgress = LocalShellToolCallOutputStatus._('in_progress');
+static const LocalShellToolCallOutputStatus inProgress = LocalShellToolCallOutputStatus$inProgress._();
 
-static const LocalShellToolCallOutputStatus completed = LocalShellToolCallOutputStatus._('completed');
+static const LocalShellToolCallOutputStatus completed = LocalShellToolCallOutputStatus$completed._();
 
-static const LocalShellToolCallOutputStatus incomplete = LocalShellToolCallOutputStatus._('incomplete');
+static const LocalShellToolCallOutputStatus incomplete = LocalShellToolCallOutputStatus$incomplete._();
 
 static const List<LocalShellToolCallOutputStatus> values = [inProgress, completed, incomplete];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -31,13 +30,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is LocalShellToolCallOutputStatus$Unknown; } 
+@override String toString() => 'LocalShellToolCallOutputStatus($value)';
+
+ }
+@immutable final class LocalShellToolCallOutputStatus$inProgress extends LocalShellToolCallOutputStatus {const LocalShellToolCallOutputStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LocalShellToolCallOutputStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class LocalShellToolCallOutputStatus$completed extends LocalShellToolCallOutputStatus {const LocalShellToolCallOutputStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LocalShellToolCallOutputStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class LocalShellToolCallOutputStatus$incomplete extends LocalShellToolCallOutputStatus {const LocalShellToolCallOutputStatus$incomplete._();
+
+@override String get value => 'incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is LocalShellToolCallOutputStatus$incomplete;
+
+@override int get hashCode => 'incomplete'.hashCode;
+
+ }
+@immutable final class LocalShellToolCallOutputStatus$Unknown extends LocalShellToolCallOutputStatus {const LocalShellToolCallOutputStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is LocalShellToolCallOutputStatus && other.value == value;
+    other is LocalShellToolCallOutputStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'LocalShellToolCallOutputStatus($value)';
 
  }
 /// The output of a local shell tool call.

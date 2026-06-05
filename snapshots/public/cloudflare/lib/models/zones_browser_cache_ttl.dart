@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Control how long resources cached by client browsers remain valid.
 /// 
-@immutable final class ZonesBrowserCacheTtlId {const ZonesBrowserCacheTtlId._(this.value);
+sealed class ZonesBrowserCacheTtlId {const ZonesBrowserCacheTtlId();
 
 factory ZonesBrowserCacheTtlId.fromJson(String json) { return switch (json) {
   'browser_cache_ttl' => browserCacheTtl,
-  _ => ZonesBrowserCacheTtlId._(json),
+  _ => ZonesBrowserCacheTtlId$Unknown(json),
 }; }
 
-static const ZonesBrowserCacheTtlId browserCacheTtl = ZonesBrowserCacheTtlId._('browser_cache_ttl');
+static const ZonesBrowserCacheTtlId browserCacheTtl = ZonesBrowserCacheTtlId$browserCacheTtl._();
 
 static const List<ZonesBrowserCacheTtlId> values = [browserCacheTtl];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesBrowserCacheTtlId$Unknown; } 
+@override String toString() => 'ZonesBrowserCacheTtlId($value)';
+
+ }
+@immutable final class ZonesBrowserCacheTtlId$browserCacheTtl extends ZonesBrowserCacheTtlId {const ZonesBrowserCacheTtlId$browserCacheTtl._();
+
+@override String get value => 'browser_cache_ttl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesBrowserCacheTtlId$browserCacheTtl;
+
+@override int get hashCode => 'browser_cache_ttl'.hashCode;
+
+ }
+@immutable final class ZonesBrowserCacheTtlId$Unknown extends ZonesBrowserCacheTtlId {const ZonesBrowserCacheTtlId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesBrowserCacheTtlId && other.value == value;
+    other is ZonesBrowserCacheTtlId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesBrowserCacheTtlId($value)';
 
  }
 @immutable final class ZonesBrowserCacheTtl {const ZonesBrowserCacheTtl({this.id, this.value, });

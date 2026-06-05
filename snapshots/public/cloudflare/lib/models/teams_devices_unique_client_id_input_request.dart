@@ -2,25 +2,24 @@
 // Source: #/components/schemas/TeamsDevicesUniqueClientIdInputRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Operating System.
-@immutable final class TeamsDevicesUniqueClientIdInputRequestOperatingSystem {const TeamsDevicesUniqueClientIdInputRequestOperatingSystem._(this.value);
+sealed class TeamsDevicesUniqueClientIdInputRequestOperatingSystem {const TeamsDevicesUniqueClientIdInputRequestOperatingSystem();
 
 factory TeamsDevicesUniqueClientIdInputRequestOperatingSystem.fromJson(String json) { return switch (json) {
   'android' => android,
   'ios' => ios,
   'chromeos' => chromeos,
-  _ => TeamsDevicesUniqueClientIdInputRequestOperatingSystem._(json),
+  _ => TeamsDevicesUniqueClientIdInputRequestOperatingSystem$Unknown(json),
 }; }
 
-static const TeamsDevicesUniqueClientIdInputRequestOperatingSystem android = TeamsDevicesUniqueClientIdInputRequestOperatingSystem._('android');
+static const TeamsDevicesUniqueClientIdInputRequestOperatingSystem android = TeamsDevicesUniqueClientIdInputRequestOperatingSystem$android._();
 
-static const TeamsDevicesUniqueClientIdInputRequestOperatingSystem ios = TeamsDevicesUniqueClientIdInputRequestOperatingSystem._('ios');
+static const TeamsDevicesUniqueClientIdInputRequestOperatingSystem ios = TeamsDevicesUniqueClientIdInputRequestOperatingSystem$ios._();
 
-static const TeamsDevicesUniqueClientIdInputRequestOperatingSystem chromeos = TeamsDevicesUniqueClientIdInputRequestOperatingSystem._('chromeos');
+static const TeamsDevicesUniqueClientIdInputRequestOperatingSystem chromeos = TeamsDevicesUniqueClientIdInputRequestOperatingSystem$chromeos._();
 
 static const List<TeamsDevicesUniqueClientIdInputRequestOperatingSystem> values = [android, ios, chromeos];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TeamsDevicesUniqueClientIdInputRequestOperatingSystem$Unknown; } 
+@override String toString() => 'TeamsDevicesUniqueClientIdInputRequestOperatingSystem($value)';
+
+ }
+@immutable final class TeamsDevicesUniqueClientIdInputRequestOperatingSystem$android extends TeamsDevicesUniqueClientIdInputRequestOperatingSystem {const TeamsDevicesUniqueClientIdInputRequestOperatingSystem$android._();
+
+@override String get value => 'android';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesUniqueClientIdInputRequestOperatingSystem$android;
+
+@override int get hashCode => 'android'.hashCode;
+
+ }
+@immutable final class TeamsDevicesUniqueClientIdInputRequestOperatingSystem$ios extends TeamsDevicesUniqueClientIdInputRequestOperatingSystem {const TeamsDevicesUniqueClientIdInputRequestOperatingSystem$ios._();
+
+@override String get value => 'ios';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesUniqueClientIdInputRequestOperatingSystem$ios;
+
+@override int get hashCode => 'ios'.hashCode;
+
+ }
+@immutable final class TeamsDevicesUniqueClientIdInputRequestOperatingSystem$chromeos extends TeamsDevicesUniqueClientIdInputRequestOperatingSystem {const TeamsDevicesUniqueClientIdInputRequestOperatingSystem$chromeos._();
+
+@override String get value => 'chromeos';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TeamsDevicesUniqueClientIdInputRequestOperatingSystem$chromeos;
+
+@override int get hashCode => 'chromeos'.hashCode;
+
+ }
+@immutable final class TeamsDevicesUniqueClientIdInputRequestOperatingSystem$Unknown extends TeamsDevicesUniqueClientIdInputRequestOperatingSystem {const TeamsDevicesUniqueClientIdInputRequestOperatingSystem$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TeamsDevicesUniqueClientIdInputRequestOperatingSystem && other.value == value;
+    other is TeamsDevicesUniqueClientIdInputRequestOperatingSystem$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TeamsDevicesUniqueClientIdInputRequestOperatingSystem($value)';
 
  }
 @immutable final class TeamsDevicesUniqueClientIdInputRequest {const TeamsDevicesUniqueClientIdInputRequest({required this.id, required this.operatingSystem, });

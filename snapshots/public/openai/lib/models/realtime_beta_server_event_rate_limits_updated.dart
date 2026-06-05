@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventRateLimitsUpdated
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_beta_server_event_rate_limits_updated/rate_limits.dart';/// The event type, must be `rate_limits.updated`.
-@immutable final class RealtimeBetaServerEventRateLimitsUpdatedType {const RealtimeBetaServerEventRateLimitsUpdatedType._(this.value);
+sealed class RealtimeBetaServerEventRateLimitsUpdatedType {const RealtimeBetaServerEventRateLimitsUpdatedType();
 
 factory RealtimeBetaServerEventRateLimitsUpdatedType.fromJson(String json) { return switch (json) {
   'rate_limits.updated' => rateLimitsUpdated,
-  _ => RealtimeBetaServerEventRateLimitsUpdatedType._(json),
+  _ => RealtimeBetaServerEventRateLimitsUpdatedType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventRateLimitsUpdatedType rateLimitsUpdated = RealtimeBetaServerEventRateLimitsUpdatedType._('rate_limits.updated');
+static const RealtimeBetaServerEventRateLimitsUpdatedType rateLimitsUpdated = RealtimeBetaServerEventRateLimitsUpdatedType$rateLimitsUpdated._();
 
 static const List<RealtimeBetaServerEventRateLimitsUpdatedType> values = [rateLimitsUpdated];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventRateLimitsUpdatedType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventRateLimitsUpdatedType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventRateLimitsUpdatedType$rateLimitsUpdated extends RealtimeBetaServerEventRateLimitsUpdatedType {const RealtimeBetaServerEventRateLimitsUpdatedType$rateLimitsUpdated._();
+
+@override String get value => 'rate_limits.updated';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventRateLimitsUpdatedType$rateLimitsUpdated;
+
+@override int get hashCode => 'rate_limits.updated'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventRateLimitsUpdatedType$Unknown extends RealtimeBetaServerEventRateLimitsUpdatedType {const RealtimeBetaServerEventRateLimitsUpdatedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventRateLimitsUpdatedType && other.value == value;
+    other is RealtimeBetaServerEventRateLimitsUpdatedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventRateLimitsUpdatedType($value)';
 
  }
 /// Emitted at the beginning of a Response to indicate the updated rate limits.

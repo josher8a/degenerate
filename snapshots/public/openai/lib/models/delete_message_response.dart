@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DeleteMessageResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DeleteMessageResponseObject {const DeleteMessageResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DeleteMessageResponseObject {const DeleteMessageResponseObject();
 
 factory DeleteMessageResponseObject.fromJson(String json) { return switch (json) {
   'thread.message.deleted' => threadMessageDeleted,
-  _ => DeleteMessageResponseObject._(json),
+  _ => DeleteMessageResponseObject$Unknown(json),
 }; }
 
-static const DeleteMessageResponseObject threadMessageDeleted = DeleteMessageResponseObject._('thread.message.deleted');
+static const DeleteMessageResponseObject threadMessageDeleted = DeleteMessageResponseObject$threadMessageDeleted._();
 
 static const List<DeleteMessageResponseObject> values = [threadMessageDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DeleteMessageResponseObject$Unknown; } 
+@override String toString() => 'DeleteMessageResponseObject($value)';
+
+ }
+@immutable final class DeleteMessageResponseObject$threadMessageDeleted extends DeleteMessageResponseObject {const DeleteMessageResponseObject$threadMessageDeleted._();
+
+@override String get value => 'thread.message.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DeleteMessageResponseObject$threadMessageDeleted;
+
+@override int get hashCode => 'thread.message.deleted'.hashCode;
+
+ }
+@immutable final class DeleteMessageResponseObject$Unknown extends DeleteMessageResponseObject {const DeleteMessageResponseObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DeleteMessageResponseObject && other.value == value;
+    other is DeleteMessageResponseObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DeleteMessageResponseObject($value)';
 
  }
 @immutable final class DeleteMessageResponse {const DeleteMessageResponse({required this.id, required this.deleted, required this.object, });

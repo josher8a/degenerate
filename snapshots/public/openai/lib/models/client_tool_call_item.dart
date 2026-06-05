@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ClientToolCallItem
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_message_item/assistant_message_item_object.dart';@immutable final class ClientToolCallStatus {const ClientToolCallStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_message_item/assistant_message_item_object.dart';sealed class ClientToolCallStatus {const ClientToolCallStatus();
 
 factory ClientToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
   'completed' => completed,
-  _ => ClientToolCallStatus._(json),
+  _ => ClientToolCallStatus$Unknown(json),
 }; }
 
-static const ClientToolCallStatus inProgress = ClientToolCallStatus._('in_progress');
+static const ClientToolCallStatus inProgress = ClientToolCallStatus$inProgress._();
 
-static const ClientToolCallStatus completed = ClientToolCallStatus._('completed');
+static const ClientToolCallStatus completed = ClientToolCallStatus$completed._();
 
 static const List<ClientToolCallStatus> values = [inProgress, completed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ClientToolCallStatus$Unknown; } 
+@override String toString() => 'ClientToolCallStatus($value)';
+
+ }
+@immutable final class ClientToolCallStatus$inProgress extends ClientToolCallStatus {const ClientToolCallStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClientToolCallStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class ClientToolCallStatus$completed extends ClientToolCallStatus {const ClientToolCallStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ClientToolCallStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class ClientToolCallStatus$Unknown extends ClientToolCallStatus {const ClientToolCallStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ClientToolCallStatus && other.value == value;
+    other is ClientToolCallStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ClientToolCallStatus($value)';
 
  }
 /// Record of a client side tool invocation initiated by the assistant.

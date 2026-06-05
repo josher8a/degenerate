@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ActiveStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Status discriminator that is always `active`.
-@immutable final class ActiveStatusType {const ActiveStatusType._(this.value);
+sealed class ActiveStatusType {const ActiveStatusType();
 
 factory ActiveStatusType.fromJson(String json) { return switch (json) {
   'active' => active,
-  _ => ActiveStatusType._(json),
+  _ => ActiveStatusType$Unknown(json),
 }; }
 
-static const ActiveStatusType active = ActiveStatusType._('active');
+static const ActiveStatusType active = ActiveStatusType$active._();
 
 static const List<ActiveStatusType> values = [active];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ActiveStatusType$Unknown; } 
+@override String toString() => 'ActiveStatusType($value)';
+
+ }
+@immutable final class ActiveStatusType$active extends ActiveStatusType {const ActiveStatusType$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActiveStatusType$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class ActiveStatusType$Unknown extends ActiveStatusType {const ActiveStatusType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ActiveStatusType && other.value == value;
+    other is ActiveStatusType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ActiveStatusType($value)';
 
  }
 /// Indicates that a thread is active.

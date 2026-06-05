@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PostCustomersCustomerSubscriptionsRequest (inline: AddInvoiceItems > Period > End)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class EndType {const EndType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class EndType {const EndType();
 
 factory EndType.fromJson(String json) { return switch (json) {
   'min_item_period_end' => minItemPeriodEnd,
   'timestamp' => timestamp,
-  _ => EndType._(json),
+  _ => EndType$Unknown(json),
 }; }
 
-static const EndType minItemPeriodEnd = EndType._('min_item_period_end');
+static const EndType minItemPeriodEnd = EndType$minItemPeriodEnd._();
 
-static const EndType timestamp = EndType._('timestamp');
+static const EndType timestamp = EndType$timestamp._();
 
 static const List<EndType> values = [minItemPeriodEnd, timestamp];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EndType$Unknown; } 
+@override String toString() => 'EndType($value)';
+
+ }
+@immutable final class EndType$minItemPeriodEnd extends EndType {const EndType$minItemPeriodEnd._();
+
+@override String get value => 'min_item_period_end';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EndType$minItemPeriodEnd;
+
+@override int get hashCode => 'min_item_period_end'.hashCode;
+
+ }
+@immutable final class EndType$timestamp extends EndType {const EndType$timestamp._();
+
+@override String get value => 'timestamp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EndType$timestamp;
+
+@override int get hashCode => 'timestamp'.hashCode;
+
+ }
+@immutable final class EndType$Unknown extends EndType {const EndType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EndType && other.value == value;
+    other is EndType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EndType($value)';
 
  }
 @immutable final class PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd {const PostCustomersCustomerSubscriptionsRequestAddInvoiceItemsPeriodEnd({required this.type, this.timestamp, });

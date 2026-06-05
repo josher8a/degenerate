@@ -2,19 +2,18 @@
 // Source: #/components/schemas/FirewallStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// When set to `active`, indicates that the WAF package will be applied to the zone.
-@immutable final class FirewallStatus {const FirewallStatus._(this.value);
+sealed class FirewallStatus {const FirewallStatus();
 
 factory FirewallStatus.fromJson(String json) { return switch (json) {
   'active' => active,
-  _ => FirewallStatus._(json),
+  _ => FirewallStatus$Unknown(json),
 }; }
 
-static const FirewallStatus active = FirewallStatus._('active');
+static const FirewallStatus active = FirewallStatus$active._();
 
 static const List<FirewallStatus> values = [active];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is FirewallStatus$Unknown; } 
+@override String toString() => 'FirewallStatus($value)';
+
+ }
+@immutable final class FirewallStatus$active extends FirewallStatus {const FirewallStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FirewallStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class FirewallStatus$Unknown extends FirewallStatus {const FirewallStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is FirewallStatus && other.value == value;
+    other is FirewallStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'FirewallStatus($value)';
 
  }

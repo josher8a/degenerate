@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookOrganizationMemberRemoved
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_membership.dart';@immutable final class WebhookOrganizationMemberRemovedAction {const WebhookOrganizationMemberRemovedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_membership.dart';sealed class WebhookOrganizationMemberRemovedAction {const WebhookOrganizationMemberRemovedAction();
 
 factory WebhookOrganizationMemberRemovedAction.fromJson(String json) { return switch (json) {
   'member_removed' => memberRemoved,
-  _ => WebhookOrganizationMemberRemovedAction._(json),
+  _ => WebhookOrganizationMemberRemovedAction$Unknown(json),
 }; }
 
-static const WebhookOrganizationMemberRemovedAction memberRemoved = WebhookOrganizationMemberRemovedAction._('member_removed');
+static const WebhookOrganizationMemberRemovedAction memberRemoved = WebhookOrganizationMemberRemovedAction$memberRemoved._();
 
 static const List<WebhookOrganizationMemberRemovedAction> values = [memberRemoved];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookOrganizationMemberRemovedAction$Unknown; } 
+@override String toString() => 'WebhookOrganizationMemberRemovedAction($value)';
+
+ }
+@immutable final class WebhookOrganizationMemberRemovedAction$memberRemoved extends WebhookOrganizationMemberRemovedAction {const WebhookOrganizationMemberRemovedAction$memberRemoved._();
+
+@override String get value => 'member_removed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookOrganizationMemberRemovedAction$memberRemoved;
+
+@override int get hashCode => 'member_removed'.hashCode;
+
+ }
+@immutable final class WebhookOrganizationMemberRemovedAction$Unknown extends WebhookOrganizationMemberRemovedAction {const WebhookOrganizationMemberRemovedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookOrganizationMemberRemovedAction && other.value == value;
+    other is WebhookOrganizationMemberRemovedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookOrganizationMemberRemovedAction($value)';
 
  }
 @immutable final class WebhookOrganizationMemberRemoved {const WebhookOrganizationMemberRemoved({required this.action, required this.membership, required this.organization, required this.sender, this.enterprise, this.installation, this.repository, });

@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TlsCertificatesAndHostnamesSsl (inline: Dv)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_certificate_pack/validation_errors.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/bundle_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/dv_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_ssl/dv_type.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_sslsettings.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validation_record.dart';/// Status of the hostname's SSL certificates.
-@immutable final class DvStatus {const DvStatus._(this.value);
+sealed class DvStatus {const DvStatus();
 
 factory DvStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -26,55 +26,54 @@ factory DvStatus.fromJson(String json) { return switch (json) {
   'inactive' => inactive,
   'backup_issued' => backupIssued,
   'holding_deployment' => holdingDeployment,
-  _ => DvStatus._(json),
+  _ => DvStatus$Unknown(json),
 }; }
 
-static const DvStatus initializing = DvStatus._('initializing');
+static const DvStatus initializing = DvStatus$initializing._();
 
-static const DvStatus pendingValidation = DvStatus._('pending_validation');
+static const DvStatus pendingValidation = DvStatus$pendingValidation._();
 
-static const DvStatus deleted = DvStatus._('deleted');
+static const DvStatus deleted = DvStatus$deleted._();
 
-static const DvStatus pendingIssuance = DvStatus._('pending_issuance');
+static const DvStatus pendingIssuance = DvStatus$pendingIssuance._();
 
-static const DvStatus pendingDeployment = DvStatus._('pending_deployment');
+static const DvStatus pendingDeployment = DvStatus$pendingDeployment._();
 
-static const DvStatus pendingDeletion = DvStatus._('pending_deletion');
+static const DvStatus pendingDeletion = DvStatus$pendingDeletion._();
 
-static const DvStatus pendingExpiration = DvStatus._('pending_expiration');
+static const DvStatus pendingExpiration = DvStatus$pendingExpiration._();
 
-static const DvStatus expired = DvStatus._('expired');
+static const DvStatus expired = DvStatus$expired._();
 
-static const DvStatus active = DvStatus._('active');
+static const DvStatus active = DvStatus$active._();
 
-static const DvStatus initializingTimedOut = DvStatus._('initializing_timed_out');
+static const DvStatus initializingTimedOut = DvStatus$initializingTimedOut._();
 
-static const DvStatus validationTimedOut = DvStatus._('validation_timed_out');
+static const DvStatus validationTimedOut = DvStatus$validationTimedOut._();
 
-static const DvStatus issuanceTimedOut = DvStatus._('issuance_timed_out');
+static const DvStatus issuanceTimedOut = DvStatus$issuanceTimedOut._();
 
-static const DvStatus deploymentTimedOut = DvStatus._('deployment_timed_out');
+static const DvStatus deploymentTimedOut = DvStatus$deploymentTimedOut._();
 
-static const DvStatus deletionTimedOut = DvStatus._('deletion_timed_out');
+static const DvStatus deletionTimedOut = DvStatus$deletionTimedOut._();
 
-static const DvStatus pendingCleanup = DvStatus._('pending_cleanup');
+static const DvStatus pendingCleanup = DvStatus$pendingCleanup._();
 
-static const DvStatus stagingDeployment = DvStatus._('staging_deployment');
+static const DvStatus stagingDeployment = DvStatus$stagingDeployment._();
 
-static const DvStatus stagingActive = DvStatus._('staging_active');
+static const DvStatus stagingActive = DvStatus$stagingActive._();
 
-static const DvStatus deactivating = DvStatus._('deactivating');
+static const DvStatus deactivating = DvStatus$deactivating._();
 
-static const DvStatus inactive = DvStatus._('inactive');
+static const DvStatus inactive = DvStatus$inactive._();
 
-static const DvStatus backupIssued = DvStatus._('backup_issued');
+static const DvStatus backupIssued = DvStatus$backupIssued._();
 
-static const DvStatus holdingDeployment = DvStatus._('holding_deployment');
+static const DvStatus holdingDeployment = DvStatus$holdingDeployment._();
 
 static const List<DvStatus> values = [initializing, pendingValidation, deleted, pendingIssuance, pendingDeployment, pendingDeletion, pendingExpiration, expired, active, initializingTimedOut, validationTimedOut, issuanceTimedOut, deploymentTimedOut, deletionTimedOut, pendingCleanup, stagingDeployment, stagingActive, deactivating, inactive, backupIssued, holdingDeployment];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -102,13 +101,207 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DvStatus$Unknown; } 
+@override String toString() => 'DvStatus($value)';
+
+ }
+@immutable final class DvStatus$initializing extends DvStatus {const DvStatus$initializing._();
+
+@override String get value => 'initializing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$initializing;
+
+@override int get hashCode => 'initializing'.hashCode;
+
+ }
+@immutable final class DvStatus$pendingValidation extends DvStatus {const DvStatus$pendingValidation._();
+
+@override String get value => 'pending_validation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$pendingValidation;
+
+@override int get hashCode => 'pending_validation'.hashCode;
+
+ }
+@immutable final class DvStatus$deleted extends DvStatus {const DvStatus$deleted._();
+
+@override String get value => 'deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$deleted;
+
+@override int get hashCode => 'deleted'.hashCode;
+
+ }
+@immutable final class DvStatus$pendingIssuance extends DvStatus {const DvStatus$pendingIssuance._();
+
+@override String get value => 'pending_issuance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$pendingIssuance;
+
+@override int get hashCode => 'pending_issuance'.hashCode;
+
+ }
+@immutable final class DvStatus$pendingDeployment extends DvStatus {const DvStatus$pendingDeployment._();
+
+@override String get value => 'pending_deployment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$pendingDeployment;
+
+@override int get hashCode => 'pending_deployment'.hashCode;
+
+ }
+@immutable final class DvStatus$pendingDeletion extends DvStatus {const DvStatus$pendingDeletion._();
+
+@override String get value => 'pending_deletion';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$pendingDeletion;
+
+@override int get hashCode => 'pending_deletion'.hashCode;
+
+ }
+@immutable final class DvStatus$pendingExpiration extends DvStatus {const DvStatus$pendingExpiration._();
+
+@override String get value => 'pending_expiration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$pendingExpiration;
+
+@override int get hashCode => 'pending_expiration'.hashCode;
+
+ }
+@immutable final class DvStatus$expired extends DvStatus {const DvStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class DvStatus$active extends DvStatus {const DvStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class DvStatus$initializingTimedOut extends DvStatus {const DvStatus$initializingTimedOut._();
+
+@override String get value => 'initializing_timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$initializingTimedOut;
+
+@override int get hashCode => 'initializing_timed_out'.hashCode;
+
+ }
+@immutable final class DvStatus$validationTimedOut extends DvStatus {const DvStatus$validationTimedOut._();
+
+@override String get value => 'validation_timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$validationTimedOut;
+
+@override int get hashCode => 'validation_timed_out'.hashCode;
+
+ }
+@immutable final class DvStatus$issuanceTimedOut extends DvStatus {const DvStatus$issuanceTimedOut._();
+
+@override String get value => 'issuance_timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$issuanceTimedOut;
+
+@override int get hashCode => 'issuance_timed_out'.hashCode;
+
+ }
+@immutable final class DvStatus$deploymentTimedOut extends DvStatus {const DvStatus$deploymentTimedOut._();
+
+@override String get value => 'deployment_timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$deploymentTimedOut;
+
+@override int get hashCode => 'deployment_timed_out'.hashCode;
+
+ }
+@immutable final class DvStatus$deletionTimedOut extends DvStatus {const DvStatus$deletionTimedOut._();
+
+@override String get value => 'deletion_timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$deletionTimedOut;
+
+@override int get hashCode => 'deletion_timed_out'.hashCode;
+
+ }
+@immutable final class DvStatus$pendingCleanup extends DvStatus {const DvStatus$pendingCleanup._();
+
+@override String get value => 'pending_cleanup';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$pendingCleanup;
+
+@override int get hashCode => 'pending_cleanup'.hashCode;
+
+ }
+@immutable final class DvStatus$stagingDeployment extends DvStatus {const DvStatus$stagingDeployment._();
+
+@override String get value => 'staging_deployment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$stagingDeployment;
+
+@override int get hashCode => 'staging_deployment'.hashCode;
+
+ }
+@immutable final class DvStatus$stagingActive extends DvStatus {const DvStatus$stagingActive._();
+
+@override String get value => 'staging_active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$stagingActive;
+
+@override int get hashCode => 'staging_active'.hashCode;
+
+ }
+@immutable final class DvStatus$deactivating extends DvStatus {const DvStatus$deactivating._();
+
+@override String get value => 'deactivating';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$deactivating;
+
+@override int get hashCode => 'deactivating'.hashCode;
+
+ }
+@immutable final class DvStatus$inactive extends DvStatus {const DvStatus$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+ }
+@immutable final class DvStatus$backupIssued extends DvStatus {const DvStatus$backupIssued._();
+
+@override String get value => 'backup_issued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$backupIssued;
+
+@override int get hashCode => 'backup_issued'.hashCode;
+
+ }
+@immutable final class DvStatus$holdingDeployment extends DvStatus {const DvStatus$holdingDeployment._();
+
+@override String get value => 'holding_deployment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DvStatus$holdingDeployment;
+
+@override int get hashCode => 'holding_deployment'.hashCode;
+
+ }
+@immutable final class DvStatus$Unknown extends DvStatus {const DvStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DvStatus && other.value == value;
+    other is DvStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DvStatus($value)';
 
  }
 @immutable final class TlsCertificatesAndHostnamesSslDv {const TlsCertificatesAndHostnamesSslDv({this.bundleMethod = BundleMethod.ubiquitous, this.certificateAuthority, this.customCertificate, this.customCsrId, this.customKey, this.dcvDelegationRecords, this.expiresOn, this.hosts, this.id, this.issuer, this.method, this.serialNumber, this.settings, this.signature, this.status, this.type, this.uploadedOn, this.validationErrors, this.validationRecords, this.wildcard, });

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_cloudflare_branding.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_certificate_authority.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validation_method.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_validity_days.dart';/// Type of certificate pack.
-@immutable final class TlsCertificatesAndHostnamesAdvancedType {const TlsCertificatesAndHostnamesAdvancedType._(this.value);
+sealed class TlsCertificatesAndHostnamesAdvancedType {const TlsCertificatesAndHostnamesAdvancedType();
 
 factory TlsCertificatesAndHostnamesAdvancedType.fromJson(String json) { return switch (json) {
   'advanced' => advanced,
-  _ => TlsCertificatesAndHostnamesAdvancedType._(json),
+  _ => TlsCertificatesAndHostnamesAdvancedType$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesAdvancedType advanced = TlsCertificatesAndHostnamesAdvancedType._('advanced');
+static const TlsCertificatesAndHostnamesAdvancedType advanced = TlsCertificatesAndHostnamesAdvancedType$advanced._();
 
 static const List<TlsCertificatesAndHostnamesAdvancedType> values = [advanced];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesAdvancedType$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesAdvancedType($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesAdvancedType$advanced extends TlsCertificatesAndHostnamesAdvancedType {const TlsCertificatesAndHostnamesAdvancedType$advanced._();
+
+@override String get value => 'advanced';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesAdvancedType$advanced;
+
+@override int get hashCode => 'advanced'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesAdvancedType$Unknown extends TlsCertificatesAndHostnamesAdvancedType {const TlsCertificatesAndHostnamesAdvancedType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesAdvancedType && other.value == value;
+    other is TlsCertificatesAndHostnamesAdvancedType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesAdvancedType($value)';
 
  }
 @immutable final class CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest {const CertificatePacksOrderAdvancedCertificateManagerCertificatePackRequest({required this.certificateAuthority, required this.hosts, required this.type, required this.validationMethod, required this.validityDays, this.cloudflareBranding, });

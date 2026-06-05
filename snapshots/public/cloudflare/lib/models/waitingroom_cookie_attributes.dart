@@ -2,28 +2,27 @@
 // Source: #/components/schemas/WaitingroomCookieAttributes
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configures the SameSite attribute on the waiting room cookie. Value `auto` will be translated to `lax` or `none` depending if **Always Use HTTPS** is enabled. Note that when using value `none`, the secure attribute cannot be set to `never`.
-@immutable final class WaitingroomCookieAttributesSamesite {const WaitingroomCookieAttributesSamesite._(this.value);
+sealed class WaitingroomCookieAttributesSamesite {const WaitingroomCookieAttributesSamesite();
 
 factory WaitingroomCookieAttributesSamesite.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'lax' => lax,
   'none' => none,
   'strict' => strict,
-  _ => WaitingroomCookieAttributesSamesite._(json),
+  _ => WaitingroomCookieAttributesSamesite$Unknown(json),
 }; }
 
-static const WaitingroomCookieAttributesSamesite auto = WaitingroomCookieAttributesSamesite._('auto');
+static const WaitingroomCookieAttributesSamesite auto = WaitingroomCookieAttributesSamesite$auto._();
 
-static const WaitingroomCookieAttributesSamesite lax = WaitingroomCookieAttributesSamesite._('lax');
+static const WaitingroomCookieAttributesSamesite lax = WaitingroomCookieAttributesSamesite$lax._();
 
-static const WaitingroomCookieAttributesSamesite none = WaitingroomCookieAttributesSamesite._('none');
+static const WaitingroomCookieAttributesSamesite none = WaitingroomCookieAttributesSamesite$none._();
 
-static const WaitingroomCookieAttributesSamesite strict = WaitingroomCookieAttributesSamesite._('strict');
+static const WaitingroomCookieAttributesSamesite strict = WaitingroomCookieAttributesSamesite$strict._();
 
 static const List<WaitingroomCookieAttributesSamesite> values = [auto, lax, none, strict];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,35 +33,75 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is WaitingroomCookieAttributesSamesite && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is WaitingroomCookieAttributesSamesite$Unknown; } 
 @override String toString() => 'WaitingroomCookieAttributesSamesite($value)';
 
  }
+@immutable final class WaitingroomCookieAttributesSamesite$auto extends WaitingroomCookieAttributesSamesite {const WaitingroomCookieAttributesSamesite$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomCookieAttributesSamesite$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class WaitingroomCookieAttributesSamesite$lax extends WaitingroomCookieAttributesSamesite {const WaitingroomCookieAttributesSamesite$lax._();
+
+@override String get value => 'lax';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomCookieAttributesSamesite$lax;
+
+@override int get hashCode => 'lax'.hashCode;
+
+ }
+@immutable final class WaitingroomCookieAttributesSamesite$none extends WaitingroomCookieAttributesSamesite {const WaitingroomCookieAttributesSamesite$none._();
+
+@override String get value => 'none';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomCookieAttributesSamesite$none;
+
+@override int get hashCode => 'none'.hashCode;
+
+ }
+@immutable final class WaitingroomCookieAttributesSamesite$strict extends WaitingroomCookieAttributesSamesite {const WaitingroomCookieAttributesSamesite$strict._();
+
+@override String get value => 'strict';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomCookieAttributesSamesite$strict;
+
+@override int get hashCode => 'strict'.hashCode;
+
+ }
+@immutable final class WaitingroomCookieAttributesSamesite$Unknown extends WaitingroomCookieAttributesSamesite {const WaitingroomCookieAttributesSamesite$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is WaitingroomCookieAttributesSamesite$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Configures the Secure attribute on the waiting room cookie. Value `always` indicates that the Secure attribute will be set in the Set-Cookie header, `never` indicates that the Secure attribute will not be set, and `auto` will set the Secure attribute depending if **Always Use HTTPS** is enabled.
-@immutable final class WaitingroomCookieAttributesSecure {const WaitingroomCookieAttributesSecure._(this.value);
+sealed class WaitingroomCookieAttributesSecure {const WaitingroomCookieAttributesSecure();
 
 factory WaitingroomCookieAttributesSecure.fromJson(String json) { return switch (json) {
   'auto' => auto,
   'always' => always,
   'never' => never,
-  _ => WaitingroomCookieAttributesSecure._(json),
+  _ => WaitingroomCookieAttributesSecure$Unknown(json),
 }; }
 
-static const WaitingroomCookieAttributesSecure auto = WaitingroomCookieAttributesSecure._('auto');
+static const WaitingroomCookieAttributesSecure auto = WaitingroomCookieAttributesSecure$auto._();
 
-static const WaitingroomCookieAttributesSecure always = WaitingroomCookieAttributesSecure._('always');
+static const WaitingroomCookieAttributesSecure always = WaitingroomCookieAttributesSecure$always._();
 
-static const WaitingroomCookieAttributesSecure never = WaitingroomCookieAttributesSecure._('never');
+static const WaitingroomCookieAttributesSecure never = WaitingroomCookieAttributesSecure$never._();
 
 static const List<WaitingroomCookieAttributesSecure> values = [auto, always, never];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -72,13 +111,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WaitingroomCookieAttributesSecure$Unknown; } 
+@override String toString() => 'WaitingroomCookieAttributesSecure($value)';
+
+ }
+@immutable final class WaitingroomCookieAttributesSecure$auto extends WaitingroomCookieAttributesSecure {const WaitingroomCookieAttributesSecure$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomCookieAttributesSecure$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class WaitingroomCookieAttributesSecure$always extends WaitingroomCookieAttributesSecure {const WaitingroomCookieAttributesSecure$always._();
+
+@override String get value => 'always';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomCookieAttributesSecure$always;
+
+@override int get hashCode => 'always'.hashCode;
+
+ }
+@immutable final class WaitingroomCookieAttributesSecure$never extends WaitingroomCookieAttributesSecure {const WaitingroomCookieAttributesSecure$never._();
+
+@override String get value => 'never';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WaitingroomCookieAttributesSecure$never;
+
+@override int get hashCode => 'never'.hashCode;
+
+ }
+@immutable final class WaitingroomCookieAttributesSecure$Unknown extends WaitingroomCookieAttributesSecure {const WaitingroomCookieAttributesSecure$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WaitingroomCookieAttributesSecure && other.value == value;
+    other is WaitingroomCookieAttributesSecure$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WaitingroomCookieAttributesSecure($value)';
 
  }
 /// Configures cookie attributes for the waiting room cookie. This encrypted cookie stores a user's status in the waiting room, such as queue position.

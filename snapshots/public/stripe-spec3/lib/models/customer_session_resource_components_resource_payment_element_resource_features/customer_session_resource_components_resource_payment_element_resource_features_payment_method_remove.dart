@@ -4,22 +4,21 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Controls whether the Payment Element displays the option to remove a saved payment method. This parameter defaults to `disabled`.
 /// 
 /// Allowing buyers to remove their saved payment methods impacts subscriptions that depend on that payment method. Removing the payment method detaches the [`customer` object](https://docs.stripe.com/api/payment_methods/object#payment_method_object-customer) from that [PaymentMethod](https://docs.stripe.com/api/payment_methods).
-@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove._(this.value);
+sealed class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove();
 
 factory CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove.fromJson(String json) { return switch (json) {
   'disabled' => disabled,
   'enabled' => enabled,
-  _ => CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove._(json),
+  _ => CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove$Unknown(json),
 }; }
 
-static const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove disabled = CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove._('disabled');
+static const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove disabled = CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove$disabled._();
 
-static const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove enabled = CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove._('enabled');
+static const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove enabled = CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove$enabled._();
 
 static const List<CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove> values = [disabled, enabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -28,12 +27,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove$Unknown; } 
+@override String toString() => 'CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove($value)';
+
+ }
+@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove$disabled extends CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove$enabled extends CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove$Unknown extends CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove {const CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove && other.value == value;
+    other is CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CustomerSessionResourceComponentsResourcePaymentElementResourceFeaturesPaymentMethodRemove($value)';
 
  }

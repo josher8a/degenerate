@@ -2,19 +2,18 @@
 // Source: #/components/schemas/User
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/invite_request/invite_request_role.dart';/// The object type, which is always `organization.user`
-@immutable final class UserObject {const UserObject._(this.value);
+sealed class UserObject {const UserObject();
 
 factory UserObject.fromJson(String json) { return switch (json) {
   'organization.user' => organizationUser,
-  _ => UserObject._(json),
+  _ => UserObject$Unknown(json),
 }; }
 
-static const UserObject organizationUser = UserObject._('organization.user');
+static const UserObject organizationUser = UserObject$organizationUser._();
 
 static const List<UserObject> values = [organizationUser];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UserObject$Unknown; } 
+@override String toString() => 'UserObject($value)';
+
+ }
+@immutable final class UserObject$organizationUser extends UserObject {const UserObject$organizationUser._();
+
+@override String get value => 'organization.user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserObject$organizationUser;
+
+@override int get hashCode => 'organization.user'.hashCode;
+
+ }
+@immutable final class UserObject$Unknown extends UserObject {const UserObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UserObject && other.value == value;
+    other is UserObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UserObject($value)';
 
  }
 /// Represents an individual `user` within an organization.

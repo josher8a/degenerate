@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventResponseOutputItemDone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/realtime_conversation_item.dart';/// The event type, must be `response.output_item.done`.
-@immutable final class RealtimeBetaServerEventResponseOutputItemDoneType {const RealtimeBetaServerEventResponseOutputItemDoneType._(this.value);
+sealed class RealtimeBetaServerEventResponseOutputItemDoneType {const RealtimeBetaServerEventResponseOutputItemDoneType();
 
 factory RealtimeBetaServerEventResponseOutputItemDoneType.fromJson(String json) { return switch (json) {
   'response.output_item.done' => responseOutputItemDone,
-  _ => RealtimeBetaServerEventResponseOutputItemDoneType._(json),
+  _ => RealtimeBetaServerEventResponseOutputItemDoneType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventResponseOutputItemDoneType responseOutputItemDone = RealtimeBetaServerEventResponseOutputItemDoneType._('response.output_item.done');
+static const RealtimeBetaServerEventResponseOutputItemDoneType responseOutputItemDone = RealtimeBetaServerEventResponseOutputItemDoneType$responseOutputItemDone._();
 
 static const List<RealtimeBetaServerEventResponseOutputItemDoneType> values = [responseOutputItemDone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseOutputItemDoneType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventResponseOutputItemDoneType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventResponseOutputItemDoneType$responseOutputItemDone extends RealtimeBetaServerEventResponseOutputItemDoneType {const RealtimeBetaServerEventResponseOutputItemDoneType$responseOutputItemDone._();
+
+@override String get value => 'response.output_item.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseOutputItemDoneType$responseOutputItemDone;
+
+@override int get hashCode => 'response.output_item.done'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventResponseOutputItemDoneType$Unknown extends RealtimeBetaServerEventResponseOutputItemDoneType {const RealtimeBetaServerEventResponseOutputItemDoneType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventResponseOutputItemDoneType && other.value == value;
+    other is RealtimeBetaServerEventResponseOutputItemDoneType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventResponseOutputItemDoneType($value)';
 
  }
 /// Returned when an Item is done streaming. Also emitted when a Response is

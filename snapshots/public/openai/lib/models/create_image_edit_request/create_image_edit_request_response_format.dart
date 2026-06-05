@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CreateImageEditRequest (inline: ResponseFormat)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter is only supported for `dall-e-2` (default is `url` for `dall-e-2`), as GPT image models always return base64-encoded images.
-@immutable final class CreateImageEditRequestResponseFormat {const CreateImageEditRequestResponseFormat._(this.value);
+sealed class CreateImageEditRequestResponseFormat {const CreateImageEditRequestResponseFormat();
 
 factory CreateImageEditRequestResponseFormat.fromJson(String json) { return switch (json) {
   'url' => url,
   'b64_json' => b64Json,
-  _ => CreateImageEditRequestResponseFormat._(json),
+  _ => CreateImageEditRequestResponseFormat$Unknown(json),
 }; }
 
-static const CreateImageEditRequestResponseFormat url = CreateImageEditRequestResponseFormat._('url');
+static const CreateImageEditRequestResponseFormat url = CreateImageEditRequestResponseFormat$url._();
 
-static const CreateImageEditRequestResponseFormat b64Json = CreateImageEditRequestResponseFormat._('b64_json');
+static const CreateImageEditRequestResponseFormat b64Json = CreateImageEditRequestResponseFormat$b64Json._();
 
 static const List<CreateImageEditRequestResponseFormat> values = [url, b64Json];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CreateImageEditRequestResponseFormat$Unknown; } 
+@override String toString() => 'CreateImageEditRequestResponseFormat($value)';
+
+ }
+@immutable final class CreateImageEditRequestResponseFormat$url extends CreateImageEditRequestResponseFormat {const CreateImageEditRequestResponseFormat$url._();
+
+@override String get value => 'url';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestResponseFormat$url;
+
+@override int get hashCode => 'url'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestResponseFormat$b64Json extends CreateImageEditRequestResponseFormat {const CreateImageEditRequestResponseFormat$b64Json._();
+
+@override String get value => 'b64_json';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateImageEditRequestResponseFormat$b64Json;
+
+@override int get hashCode => 'b64_json'.hashCode;
+
+ }
+@immutable final class CreateImageEditRequestResponseFormat$Unknown extends CreateImageEditRequestResponseFormat {const CreateImageEditRequestResponseFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CreateImageEditRequestResponseFormat && other.value == value;
+    other is CreateImageEditRequestResponseFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CreateImageEditRequestResponseFormat($value)';
 
  }

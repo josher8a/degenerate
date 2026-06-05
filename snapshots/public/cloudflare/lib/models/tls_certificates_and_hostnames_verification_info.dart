@@ -2,28 +2,27 @@
 // Source: #/components/schemas/TlsCertificatesAndHostnamesVerificationInfo
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Name of CNAME record.
-@immutable final class RecordName {const RecordName._(this.value);
+sealed class RecordName {const RecordName();
 
 factory RecordName.fromJson(String json) { return switch (json) {
   'record_name' => recordName,
   'http_url' => httpUrl,
   'cname' => cname,
   'txt_name' => txtName,
-  _ => RecordName._(json),
+  _ => RecordName$Unknown(json),
 }; }
 
-static const RecordName recordName = RecordName._('record_name');
+static const RecordName recordName = RecordName$recordName._();
 
-static const RecordName httpUrl = RecordName._('http_url');
+static const RecordName httpUrl = RecordName$httpUrl._();
 
-static const RecordName cname = RecordName._('cname');
+static const RecordName cname = RecordName$cname._();
 
-static const RecordName txtName = RecordName._('txt_name');
+static const RecordName txtName = RecordName$txtName._();
 
 static const List<RecordName> values = [recordName, httpUrl, cname, txtName];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -34,38 +33,78 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RecordName && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is RecordName$Unknown; } 
 @override String toString() => 'RecordName($value)';
 
  }
+@immutable final class RecordName$recordName extends RecordName {const RecordName$recordName._();
+
+@override String get value => 'record_name';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordName$recordName;
+
+@override int get hashCode => 'record_name'.hashCode;
+
+ }
+@immutable final class RecordName$httpUrl extends RecordName {const RecordName$httpUrl._();
+
+@override String get value => 'http_url';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordName$httpUrl;
+
+@override int get hashCode => 'http_url'.hashCode;
+
+ }
+@immutable final class RecordName$cname extends RecordName {const RecordName$cname._();
+
+@override String get value => 'cname';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordName$cname;
+
+@override int get hashCode => 'cname'.hashCode;
+
+ }
+@immutable final class RecordName$txtName extends RecordName {const RecordName$txtName._();
+
+@override String get value => 'txt_name';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordName$txtName;
+
+@override int get hashCode => 'txt_name'.hashCode;
+
+ }
+@immutable final class RecordName$Unknown extends RecordName {const RecordName$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RecordName$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Target of CNAME record.
-@immutable final class RecordTarget {const RecordTarget._(this.value);
+sealed class RecordTarget {const RecordTarget();
 
 factory RecordTarget.fromJson(String json) { return switch (json) {
   'record_value' => recordValue,
   'http_body' => httpBody,
   'cname_target' => cnameTarget,
   'txt_value' => txtValue,
-  _ => RecordTarget._(json),
+  _ => RecordTarget$Unknown(json),
 }; }
 
-static const RecordTarget recordValue = RecordTarget._('record_value');
+static const RecordTarget recordValue = RecordTarget$recordValue._();
 
-static const RecordTarget httpBody = RecordTarget._('http_body');
+static const RecordTarget httpBody = RecordTarget$httpBody._();
 
-static const RecordTarget cnameTarget = RecordTarget._('cname_target');
+static const RecordTarget cnameTarget = RecordTarget$cnameTarget._();
 
-static const RecordTarget txtValue = RecordTarget._('txt_value');
+static const RecordTarget txtValue = RecordTarget$txtValue._();
 
 static const List<RecordTarget> values = [recordValue, httpBody, cnameTarget, txtValue];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -76,13 +115,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RecordTarget$Unknown; } 
+@override String toString() => 'RecordTarget($value)';
+
+ }
+@immutable final class RecordTarget$recordValue extends RecordTarget {const RecordTarget$recordValue._();
+
+@override String get value => 'record_value';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordTarget$recordValue;
+
+@override int get hashCode => 'record_value'.hashCode;
+
+ }
+@immutable final class RecordTarget$httpBody extends RecordTarget {const RecordTarget$httpBody._();
+
+@override String get value => 'http_body';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordTarget$httpBody;
+
+@override int get hashCode => 'http_body'.hashCode;
+
+ }
+@immutable final class RecordTarget$cnameTarget extends RecordTarget {const RecordTarget$cnameTarget._();
+
+@override String get value => 'cname_target';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordTarget$cnameTarget;
+
+@override int get hashCode => 'cname_target'.hashCode;
+
+ }
+@immutable final class RecordTarget$txtValue extends RecordTarget {const RecordTarget$txtValue._();
+
+@override String get value => 'txt_value';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordTarget$txtValue;
+
+@override int get hashCode => 'txt_value'.hashCode;
+
+ }
+@immutable final class RecordTarget$Unknown extends RecordTarget {const RecordTarget$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RecordTarget && other.value == value;
+    other is RecordTarget$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RecordTarget($value)';
 
  }
 /// Certificate's required verification information.

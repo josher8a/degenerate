@@ -2,22 +2,21 @@
 // Source: #/components/schemas/TaxProductRegistrationsResourceCountryOptionsDefaultStandard (inline: PlaceOfSupplyScheme)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Place of supply scheme used in an Default standard registration.
-@immutable final class TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme {const TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme._(this.value);
+sealed class TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme {const TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme();
 
 factory TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme.fromJson(String json) { return switch (json) {
   'inbound_goods' => inboundGoods,
   'standard' => standard,
-  _ => TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme._(json),
+  _ => TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme$Unknown(json),
 }; }
 
-static const TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme inboundGoods = TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme._('inbound_goods');
+static const TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme inboundGoods = TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme$inboundGoods._();
 
-static const TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme standard = TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme._('standard');
+static const TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme standard = TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme$standard._();
 
 static const List<TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme> values = [inboundGoods, standard];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme$Unknown; } 
+@override String toString() => 'TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme($value)';
+
+ }
+@immutable final class TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme$inboundGoods extends TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme {const TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme$inboundGoods._();
+
+@override String get value => 'inbound_goods';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme$inboundGoods;
+
+@override int get hashCode => 'inbound_goods'.hashCode;
+
+ }
+@immutable final class TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme$standard extends TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme {const TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme$standard._();
+
+@override String get value => 'standard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme$standard;
+
+@override int get hashCode => 'standard'.hashCode;
+
+ }
+@immutable final class TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme$Unknown extends TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme {const TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme && other.value == value;
+    other is TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TaxProductRegistrationsResourceCountryOptionsDefaultStandardPlaceOfSupplyScheme($value)';
 
  }

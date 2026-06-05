@@ -2,7 +2,7 @@
 // Source: #/components/schemas/AccountRecording
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The status of the recording. Can be: `processing`, `completed`, `absent` or `deleted`. For information about more detailed statuses on in-progress recordings, check out how to [Update a Recording Resource](https://www.twilio.com/docs/voice/api/recording#update-a-recording-resource).
-@immutable final class RecordingEnumStatus {const RecordingEnumStatus._(this.value);
+sealed class RecordingEnumStatus {const RecordingEnumStatus();
 
 factory RecordingEnumStatus.fromJson(String json) { return switch (json) {
   'in-progress' => inProgress,
@@ -12,27 +12,26 @@ factory RecordingEnumStatus.fromJson(String json) { return switch (json) {
   'completed' => completed,
   'absent' => absent,
   'deleted' => deleted,
-  _ => RecordingEnumStatus._(json),
+  _ => RecordingEnumStatus$Unknown(json),
 }; }
 
-static const RecordingEnumStatus inProgress = RecordingEnumStatus._('in-progress');
+static const RecordingEnumStatus inProgress = RecordingEnumStatus$inProgress._();
 
-static const RecordingEnumStatus paused = RecordingEnumStatus._('paused');
+static const RecordingEnumStatus paused = RecordingEnumStatus$paused._();
 
-static const RecordingEnumStatus stopped = RecordingEnumStatus._('stopped');
+static const RecordingEnumStatus stopped = RecordingEnumStatus$stopped._();
 
-static const RecordingEnumStatus processing = RecordingEnumStatus._('processing');
+static const RecordingEnumStatus processing = RecordingEnumStatus$processing._();
 
-static const RecordingEnumStatus completed = RecordingEnumStatus._('completed');
+static const RecordingEnumStatus completed = RecordingEnumStatus$completed._();
 
-static const RecordingEnumStatus absent = RecordingEnumStatus._('absent');
+static const RecordingEnumStatus absent = RecordingEnumStatus$absent._();
 
-static const RecordingEnumStatus deleted = RecordingEnumStatus._('deleted');
+static const RecordingEnumStatus deleted = RecordingEnumStatus$deleted._();
 
 static const List<RecordingEnumStatus> values = [inProgress, paused, stopped, processing, completed, absent, deleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -46,17 +45,85 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is RecordingEnumStatus && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is RecordingEnumStatus$Unknown; } 
 @override String toString() => 'RecordingEnumStatus($value)';
 
  }
+@immutable final class RecordingEnumStatus$inProgress extends RecordingEnumStatus {const RecordingEnumStatus$inProgress._();
+
+@override String get value => 'in-progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingEnumStatus$inProgress;
+
+@override int get hashCode => 'in-progress'.hashCode;
+
+ }
+@immutable final class RecordingEnumStatus$paused extends RecordingEnumStatus {const RecordingEnumStatus$paused._();
+
+@override String get value => 'paused';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingEnumStatus$paused;
+
+@override int get hashCode => 'paused'.hashCode;
+
+ }
+@immutable final class RecordingEnumStatus$stopped extends RecordingEnumStatus {const RecordingEnumStatus$stopped._();
+
+@override String get value => 'stopped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingEnumStatus$stopped;
+
+@override int get hashCode => 'stopped'.hashCode;
+
+ }
+@immutable final class RecordingEnumStatus$processing extends RecordingEnumStatus {const RecordingEnumStatus$processing._();
+
+@override String get value => 'processing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingEnumStatus$processing;
+
+@override int get hashCode => 'processing'.hashCode;
+
+ }
+@immutable final class RecordingEnumStatus$completed extends RecordingEnumStatus {const RecordingEnumStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingEnumStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class RecordingEnumStatus$absent extends RecordingEnumStatus {const RecordingEnumStatus$absent._();
+
+@override String get value => 'absent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingEnumStatus$absent;
+
+@override int get hashCode => 'absent'.hashCode;
+
+ }
+@immutable final class RecordingEnumStatus$deleted extends RecordingEnumStatus {const RecordingEnumStatus$deleted._();
+
+@override String get value => 'deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingEnumStatus$deleted;
+
+@override int get hashCode => 'deleted'.hashCode;
+
+ }
+@immutable final class RecordingEnumStatus$Unknown extends RecordingEnumStatus {const RecordingEnumStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is RecordingEnumStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// How the recording was created. Can be: `DialVerb`, `Conference`, `OutboundAPI`, `Trunking`, `RecordVerb`, `StartCallRecordingAPI`, and `StartConferenceRecordingAPI`.
-@immutable final class RecordingEnumSource {const RecordingEnumSource._(this.value);
+sealed class RecordingEnumSource {const RecordingEnumSource();
 
 factory RecordingEnumSource.fromJson(String json) { return switch (json) {
   'DialVerb' => dialVerb,
@@ -66,27 +133,26 @@ factory RecordingEnumSource.fromJson(String json) { return switch (json) {
   'RecordVerb' => recordVerb,
   'StartCallRecordingAPI' => startCallRecordingApi,
   'StartConferenceRecordingAPI' => startConferenceRecordingApi,
-  _ => RecordingEnumSource._(json),
+  _ => RecordingEnumSource$Unknown(json),
 }; }
 
-static const RecordingEnumSource dialVerb = RecordingEnumSource._('DialVerb');
+static const RecordingEnumSource dialVerb = RecordingEnumSource$dialVerb._();
 
-static const RecordingEnumSource conference = RecordingEnumSource._('Conference');
+static const RecordingEnumSource conference = RecordingEnumSource$conference._();
 
-static const RecordingEnumSource outboundApi = RecordingEnumSource._('OutboundAPI');
+static const RecordingEnumSource outboundApi = RecordingEnumSource$outboundApi._();
 
-static const RecordingEnumSource trunking = RecordingEnumSource._('Trunking');
+static const RecordingEnumSource trunking = RecordingEnumSource$trunking._();
 
-static const RecordingEnumSource recordVerb = RecordingEnumSource._('RecordVerb');
+static const RecordingEnumSource recordVerb = RecordingEnumSource$recordVerb._();
 
-static const RecordingEnumSource startCallRecordingApi = RecordingEnumSource._('StartCallRecordingAPI');
+static const RecordingEnumSource startCallRecordingApi = RecordingEnumSource$startCallRecordingApi._();
 
-static const RecordingEnumSource startConferenceRecordingApi = RecordingEnumSource._('StartConferenceRecordingAPI');
+static const RecordingEnumSource startConferenceRecordingApi = RecordingEnumSource$startConferenceRecordingApi._();
 
 static const List<RecordingEnumSource> values = [dialVerb, conference, outboundApi, trunking, recordVerb, startCallRecordingApi, startConferenceRecordingApi];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -100,13 +166,81 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RecordingEnumSource$Unknown; } 
+@override String toString() => 'RecordingEnumSource($value)';
+
+ }
+@immutable final class RecordingEnumSource$dialVerb extends RecordingEnumSource {const RecordingEnumSource$dialVerb._();
+
+@override String get value => 'DialVerb';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingEnumSource$dialVerb;
+
+@override int get hashCode => 'DialVerb'.hashCode;
+
+ }
+@immutable final class RecordingEnumSource$conference extends RecordingEnumSource {const RecordingEnumSource$conference._();
+
+@override String get value => 'Conference';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingEnumSource$conference;
+
+@override int get hashCode => 'Conference'.hashCode;
+
+ }
+@immutable final class RecordingEnumSource$outboundApi extends RecordingEnumSource {const RecordingEnumSource$outboundApi._();
+
+@override String get value => 'OutboundAPI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingEnumSource$outboundApi;
+
+@override int get hashCode => 'OutboundAPI'.hashCode;
+
+ }
+@immutable final class RecordingEnumSource$trunking extends RecordingEnumSource {const RecordingEnumSource$trunking._();
+
+@override String get value => 'Trunking';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingEnumSource$trunking;
+
+@override int get hashCode => 'Trunking'.hashCode;
+
+ }
+@immutable final class RecordingEnumSource$recordVerb extends RecordingEnumSource {const RecordingEnumSource$recordVerb._();
+
+@override String get value => 'RecordVerb';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingEnumSource$recordVerb;
+
+@override int get hashCode => 'RecordVerb'.hashCode;
+
+ }
+@immutable final class RecordingEnumSource$startCallRecordingApi extends RecordingEnumSource {const RecordingEnumSource$startCallRecordingApi._();
+
+@override String get value => 'StartCallRecordingAPI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingEnumSource$startCallRecordingApi;
+
+@override int get hashCode => 'StartCallRecordingAPI'.hashCode;
+
+ }
+@immutable final class RecordingEnumSource$startConferenceRecordingApi extends RecordingEnumSource {const RecordingEnumSource$startConferenceRecordingApi._();
+
+@override String get value => 'StartConferenceRecordingAPI';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RecordingEnumSource$startConferenceRecordingApi;
+
+@override int get hashCode => 'StartConferenceRecordingAPI'.hashCode;
+
+ }
+@immutable final class RecordingEnumSource$Unknown extends RecordingEnumSource {const RecordingEnumSource$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RecordingEnumSource && other.value == value;
+    other is RecordingEnumSource$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RecordingEnumSource($value)';
 
  }
 @immutable final class AccountRecording {const AccountRecording({this.accountSid, this.apiVersion, this.callSid, this.conferenceSid, this.dateCreated, this.dateUpdated, this.startTime, this.duration, this.sid, this.price, this.priceUnit, this.status, this.channels, this.source, this.errorCode, this.uri, this.encryptionDetails, this.subresourceUris, this.mediaUrl, });

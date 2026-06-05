@@ -9,22 +9,21 @@ bool toJson() => value;
 
 }
 /// Specifies the recording behavior for the live input. Set this value to `off` to prevent a recording. Set the value to `automatic` to begin a recording and transition to on-demand after Stream Live stops receiving input.
-@immutable final class StreamLiveInputRecordingMode {const StreamLiveInputRecordingMode._(this.value);
+sealed class StreamLiveInputRecordingMode {const StreamLiveInputRecordingMode();
 
 factory StreamLiveInputRecordingMode.fromJson(String json) { return switch (json) {
   'off' => off,
   'automatic' => automatic,
-  _ => StreamLiveInputRecordingMode._(json),
+  _ => StreamLiveInputRecordingMode$Unknown(json),
 }; }
 
-static const StreamLiveInputRecordingMode off = StreamLiveInputRecordingMode._('off');
+static const StreamLiveInputRecordingMode off = StreamLiveInputRecordingMode$off._();
 
-static const StreamLiveInputRecordingMode automatic = StreamLiveInputRecordingMode._('automatic');
+static const StreamLiveInputRecordingMode automatic = StreamLiveInputRecordingMode$automatic._();
 
 static const List<StreamLiveInputRecordingMode> values = [off, automatic];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StreamLiveInputRecordingMode$Unknown; } 
+@override String toString() => 'StreamLiveInputRecordingMode($value)';
+
+ }
+@immutable final class StreamLiveInputRecordingMode$off extends StreamLiveInputRecordingMode {const StreamLiveInputRecordingMode$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamLiveInputRecordingMode$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class StreamLiveInputRecordingMode$automatic extends StreamLiveInputRecordingMode {const StreamLiveInputRecordingMode$automatic._();
+
+@override String get value => 'automatic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StreamLiveInputRecordingMode$automatic;
+
+@override int get hashCode => 'automatic'.hashCode;
+
+ }
+@immutable final class StreamLiveInputRecordingMode$Unknown extends StreamLiveInputRecordingMode {const StreamLiveInputRecordingMode$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StreamLiveInputRecordingMode && other.value == value;
+    other is StreamLiveInputRecordingMode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StreamLiveInputRecordingMode($value)';
 
  }
 /// Indicates if a video using the live input has the `requireSignedURLs` property set. Also enforces access controls on any video recording of the livestream with the live input.

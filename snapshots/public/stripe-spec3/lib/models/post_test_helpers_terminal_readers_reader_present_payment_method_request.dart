@@ -2,25 +2,24 @@
 // Source: #/components/schemas/PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_present_payment_method_request/post_test_helpers_terminal_readers_reader_present_payment_method_request_card.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_present_payment_method_request/post_test_helpers_terminal_readers_reader_present_payment_method_request_card_present.dart';import 'package:pub_stripe_spec3/models/post_test_helpers_terminal_readers_reader_present_payment_method_request/post_test_helpers_terminal_readers_reader_present_payment_method_request_interac_present.dart';/// Simulated payment type.
-@immutable final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType._(this.value);
+sealed class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType();
 
 factory PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType.fromJson(String json) { return switch (json) {
   'card' => card,
   'card_present' => cardPresent,
   'interac_present' => interacPresent,
-  _ => PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType._(json),
+  _ => PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$Unknown(json),
 }; }
 
-static const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType card = PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType._('card');
+static const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType card = PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$card._();
 
-static const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType cardPresent = PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType._('card_present');
+static const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType cardPresent = PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$cardPresent._();
 
-static const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType interacPresent = PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType._('interac_present');
+static const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType interacPresent = PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$interacPresent._();
 
 static const List<PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType> values = [card, cardPresent, interacPresent];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$Unknown; } 
+@override String toString() => 'PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType($value)';
+
+ }
+@immutable final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$card extends PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$card._();
+
+@override String get value => 'card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$card;
+
+@override int get hashCode => 'card'.hashCode;
+
+ }
+@immutable final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$cardPresent extends PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$cardPresent._();
+
+@override String get value => 'card_present';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$cardPresent;
+
+@override int get hashCode => 'card_present'.hashCode;
+
+ }
+@immutable final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$interacPresent extends PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$interacPresent._();
+
+@override String get value => 'interac_present';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$interacPresent;
+
+@override int get hashCode => 'interac_present'.hashCode;
+
+ }
+@immutable final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$Unknown extends PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType && other.value == value;
+    other is PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequestType($value)';
 
  }
 @immutable final class PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest {const PostTestHelpersTerminalReadersReaderPresentPaymentMethodRequest({this.amountTip, this.card, this.cardPresent, this.expand, this.interacPresent, this.type, });

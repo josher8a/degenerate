@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Model
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always "model".
-@immutable final class ModelObject {const ModelObject._(this.value);
+sealed class ModelObject {const ModelObject();
 
 factory ModelObject.fromJson(String json) { return switch (json) {
   'model' => model,
-  _ => ModelObject._(json),
+  _ => ModelObject$Unknown(json),
 }; }
 
-static const ModelObject model = ModelObject._('model');
+static const ModelObject model = ModelObject$model._();
 
 static const List<ModelObject> values = [model];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ModelObject$Unknown; } 
+@override String toString() => 'ModelObject($value)';
+
+ }
+@immutable final class ModelObject$model extends ModelObject {const ModelObject$model._();
+
+@override String get value => 'model';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ModelObject$model;
+
+@override int get hashCode => 'model'.hashCode;
+
+ }
+@immutable final class ModelObject$Unknown extends ModelObject {const ModelObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ModelObject && other.value == value;
+    other is ModelObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ModelObject($value)';
 
  }
 /// Describes an OpenAI model offering that can be used with the API.

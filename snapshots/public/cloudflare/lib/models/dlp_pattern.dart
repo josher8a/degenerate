@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DlpPattern
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class DlpValidation {const DlpValidation._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class DlpValidation {const DlpValidation();
 
 factory DlpValidation.fromJson(String json) { return switch (json) {
   'luhn' => luhn,
-  _ => DlpValidation._(json),
+  _ => DlpValidation$Unknown(json),
 }; }
 
-static const DlpValidation luhn = DlpValidation._('luhn');
+static const DlpValidation luhn = DlpValidation$luhn._();
 
 static const List<DlpValidation> values = [luhn];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DlpValidation$Unknown; } 
+@override String toString() => 'DlpValidation($value)';
+
+ }
+@immutable final class DlpValidation$luhn extends DlpValidation {const DlpValidation$luhn._();
+
+@override String get value => 'luhn';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DlpValidation$luhn;
+
+@override int get hashCode => 'luhn'.hashCode;
+
+ }
+@immutable final class DlpValidation$Unknown extends DlpValidation {const DlpValidation$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DlpValidation && other.value == value;
+    other is DlpValidation$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DlpValidation($value)';
 
  }
 @immutable final class DlpPattern {const DlpPattern({required this.regex, this.validation, });

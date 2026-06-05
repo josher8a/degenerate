@@ -2,25 +2,24 @@
 // Source: #/components/schemas/IssuingCard
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_status.dart';import 'package:pub_stripe_spec3/models/issuing_card/issuing_card_type.dart';import 'package:pub_stripe_spec3/models/issuing_card/personalization_design.dart';import 'package:pub_stripe_spec3/models/issuing_card/replaced_by.dart';import 'package:pub_stripe_spec3/models/issuing_card/replacement_for.dart';import 'package:pub_stripe_spec3/models/issuing_card_authorization_controls.dart';import 'package:pub_stripe_spec3/models/issuing_card_fraud_warning.dart';import 'package:pub_stripe_spec3/models/issuing_card_shipping.dart';import 'package:pub_stripe_spec3/models/issuing_card_wallets.dart';import 'package:pub_stripe_spec3/models/issuing_cardholder.dart';import 'package:pub_stripe_spec3/models/issuing_personalization_design.dart';/// The reason why the card was canceled.
-@immutable final class IssuingCardCancellationReason {const IssuingCardCancellationReason._(this.value);
+sealed class IssuingCardCancellationReason {const IssuingCardCancellationReason();
 
 factory IssuingCardCancellationReason.fromJson(String json) { return switch (json) {
   'design_rejected' => designRejected,
   'lost' => lost,
   'stolen' => stolen,
-  _ => IssuingCardCancellationReason._(json),
+  _ => IssuingCardCancellationReason$Unknown(json),
 }; }
 
-static const IssuingCardCancellationReason designRejected = IssuingCardCancellationReason._('design_rejected');
+static const IssuingCardCancellationReason designRejected = IssuingCardCancellationReason$designRejected._();
 
-static const IssuingCardCancellationReason lost = IssuingCardCancellationReason._('lost');
+static const IssuingCardCancellationReason lost = IssuingCardCancellationReason$lost._();
 
-static const IssuingCardCancellationReason stolen = IssuingCardCancellationReason._('stolen');
+static const IssuingCardCancellationReason stolen = IssuingCardCancellationReason$stolen._();
 
 static const List<IssuingCardCancellationReason> values = [designRejected, lost, stolen];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,29 +29,60 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingCardCancellationReason && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingCardCancellationReason$Unknown; } 
 @override String toString() => 'IssuingCardCancellationReason($value)';
 
  }
+@immutable final class IssuingCardCancellationReason$designRejected extends IssuingCardCancellationReason {const IssuingCardCancellationReason$designRejected._();
+
+@override String get value => 'design_rejected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardCancellationReason$designRejected;
+
+@override int get hashCode => 'design_rejected'.hashCode;
+
+ }
+@immutable final class IssuingCardCancellationReason$lost extends IssuingCardCancellationReason {const IssuingCardCancellationReason$lost._();
+
+@override String get value => 'lost';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardCancellationReason$lost;
+
+@override int get hashCode => 'lost'.hashCode;
+
+ }
+@immutable final class IssuingCardCancellationReason$stolen extends IssuingCardCancellationReason {const IssuingCardCancellationReason$stolen._();
+
+@override String get value => 'stolen';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardCancellationReason$stolen;
+
+@override int get hashCode => 'stolen'.hashCode;
+
+ }
+@immutable final class IssuingCardCancellationReason$Unknown extends IssuingCardCancellationReason {const IssuingCardCancellationReason$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingCardCancellationReason$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// String representing the object's type. Objects of the same type share the same value.
-@immutable final class IssuingCardObject {const IssuingCardObject._(this.value);
+sealed class IssuingCardObject {const IssuingCardObject();
 
 factory IssuingCardObject.fromJson(String json) { return switch (json) {
   'issuing.card' => issuingCard,
-  _ => IssuingCardObject._(json),
+  _ => IssuingCardObject$Unknown(json),
 }; }
 
-static const IssuingCardObject issuingCard = IssuingCardObject._('issuing.card');
+static const IssuingCardObject issuingCard = IssuingCardObject$issuingCard._();
 
 static const List<IssuingCardObject> values = [issuingCard];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -60,38 +90,51 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingCardObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is IssuingCardObject$Unknown; } 
 @override String toString() => 'IssuingCardObject($value)';
 
  }
+@immutable final class IssuingCardObject$issuingCard extends IssuingCardObject {const IssuingCardObject$issuingCard._();
+
+@override String get value => 'issuing.card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardObject$issuingCard;
+
+@override int get hashCode => 'issuing.card'.hashCode;
+
+ }
+@immutable final class IssuingCardObject$Unknown extends IssuingCardObject {const IssuingCardObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is IssuingCardObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The reason why the previous card needed to be replaced.
-@immutable final class IssuingCardReplacementReason {const IssuingCardReplacementReason._(this.value);
+sealed class IssuingCardReplacementReason {const IssuingCardReplacementReason();
 
 factory IssuingCardReplacementReason.fromJson(String json) { return switch (json) {
   'damaged' => damaged,
   'expired' => expired,
   'lost' => lost,
   'stolen' => stolen,
-  _ => IssuingCardReplacementReason._(json),
+  _ => IssuingCardReplacementReason$Unknown(json),
 }; }
 
-static const IssuingCardReplacementReason damaged = IssuingCardReplacementReason._('damaged');
+static const IssuingCardReplacementReason damaged = IssuingCardReplacementReason$damaged._();
 
-static const IssuingCardReplacementReason expired = IssuingCardReplacementReason._('expired');
+static const IssuingCardReplacementReason expired = IssuingCardReplacementReason$expired._();
 
-static const IssuingCardReplacementReason lost = IssuingCardReplacementReason._('lost');
+static const IssuingCardReplacementReason lost = IssuingCardReplacementReason$lost._();
 
-static const IssuingCardReplacementReason stolen = IssuingCardReplacementReason._('stolen');
+static const IssuingCardReplacementReason stolen = IssuingCardReplacementReason$stolen._();
 
 static const List<IssuingCardReplacementReason> values = [damaged, expired, lost, stolen];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -102,13 +145,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IssuingCardReplacementReason$Unknown; } 
+@override String toString() => 'IssuingCardReplacementReason($value)';
+
+ }
+@immutable final class IssuingCardReplacementReason$damaged extends IssuingCardReplacementReason {const IssuingCardReplacementReason$damaged._();
+
+@override String get value => 'damaged';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardReplacementReason$damaged;
+
+@override int get hashCode => 'damaged'.hashCode;
+
+ }
+@immutable final class IssuingCardReplacementReason$expired extends IssuingCardReplacementReason {const IssuingCardReplacementReason$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardReplacementReason$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class IssuingCardReplacementReason$lost extends IssuingCardReplacementReason {const IssuingCardReplacementReason$lost._();
+
+@override String get value => 'lost';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardReplacementReason$lost;
+
+@override int get hashCode => 'lost'.hashCode;
+
+ }
+@immutable final class IssuingCardReplacementReason$stolen extends IssuingCardReplacementReason {const IssuingCardReplacementReason$stolen._();
+
+@override String get value => 'stolen';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IssuingCardReplacementReason$stolen;
+
+@override int get hashCode => 'stolen'.hashCode;
+
+ }
+@immutable final class IssuingCardReplacementReason$Unknown extends IssuingCardReplacementReason {const IssuingCardReplacementReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IssuingCardReplacementReason && other.value == value;
+    other is IssuingCardReplacementReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IssuingCardReplacementReason($value)';
 
  }
 /// You can [create physical or virtual cards](https://docs.stripe.com/issuing) that are issued to cardholders.

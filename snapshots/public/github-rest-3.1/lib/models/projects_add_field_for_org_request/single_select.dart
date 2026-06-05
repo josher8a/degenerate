@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ProjectsAddFieldForOrgRequest (inline: SingleSelect)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/field_single_select_option.dart';/// The field's data type.
-@immutable final class SingleSelectDataType {const SingleSelectDataType._(this.value);
+sealed class SingleSelectDataType {const SingleSelectDataType();
 
 factory SingleSelectDataType.fromJson(String json) { return switch (json) {
   'single_select' => singleSelect,
-  _ => SingleSelectDataType._(json),
+  _ => SingleSelectDataType$Unknown(json),
 }; }
 
-static const SingleSelectDataType singleSelect = SingleSelectDataType._('single_select');
+static const SingleSelectDataType singleSelect = SingleSelectDataType$singleSelect._();
 
 static const List<SingleSelectDataType> values = [singleSelect];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is SingleSelectDataType$Unknown; } 
+@override String toString() => 'SingleSelectDataType($value)';
+
+ }
+@immutable final class SingleSelectDataType$singleSelect extends SingleSelectDataType {const SingleSelectDataType$singleSelect._();
+
+@override String get value => 'single_select';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SingleSelectDataType$singleSelect;
+
+@override int get hashCode => 'single_select'.hashCode;
+
+ }
+@immutable final class SingleSelectDataType$Unknown extends SingleSelectDataType {const SingleSelectDataType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is SingleSelectDataType && other.value == value;
+    other is SingleSelectDataType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'SingleSelectDataType($value)';
 
  }
 @immutable final class SingleSelect {const SingleSelect({required this.name, required this.dataType, required this.singleSelectOptions, });

@@ -3,19 +3,18 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/web_search_action_search/sources.dart';/// The action type.
 /// 
-@immutable final class WebSearchActionSearchType {const WebSearchActionSearchType._(this.value);
+sealed class WebSearchActionSearchType {const WebSearchActionSearchType();
 
 factory WebSearchActionSearchType.fromJson(String json) { return switch (json) {
   'search' => search,
-  _ => WebSearchActionSearchType._(json),
+  _ => WebSearchActionSearchType$Unknown(json),
 }; }
 
-static const WebSearchActionSearchType search = WebSearchActionSearchType._('search');
+static const WebSearchActionSearchType search = WebSearchActionSearchType$search._();
 
 static const List<WebSearchActionSearchType> values = [search];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -23,13 +22,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebSearchActionSearchType$Unknown; } 
+@override String toString() => 'WebSearchActionSearchType($value)';
+
+ }
+@immutable final class WebSearchActionSearchType$search extends WebSearchActionSearchType {const WebSearchActionSearchType$search._();
+
+@override String get value => 'search';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchActionSearchType$search;
+
+@override int get hashCode => 'search'.hashCode;
+
+ }
+@immutable final class WebSearchActionSearchType$Unknown extends WebSearchActionSearchType {const WebSearchActionSearchType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebSearchActionSearchType && other.value == value;
+    other is WebSearchActionSearchType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebSearchActionSearchType($value)';
 
  }
 /// Action type "search" - Performs a web search query.

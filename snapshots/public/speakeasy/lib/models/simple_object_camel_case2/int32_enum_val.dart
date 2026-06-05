@@ -2,25 +2,24 @@
 // Source: #/components/schemas/SimpleObjectCamelCase2 (inline: Int32EnumVal)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// An int32 enum property.
-@immutable final class Int32EnumVal {const Int32EnumVal._(this.value);
+sealed class Int32EnumVal {const Int32EnumVal();
 
 factory Int32EnumVal.fromJson(int json) { return switch (json) {
   55 => $55,
   69 => $69,
   181 => $181,
-  _ => Int32EnumVal._(json),
+  _ => Int32EnumVal$Unknown(json),
 }; }
 
-static const Int32EnumVal $55 = Int32EnumVal._(55);
+static const Int32EnumVal $55 = Int32EnumVal$$55._();
 
-static const Int32EnumVal $69 = Int32EnumVal._(69);
+static const Int32EnumVal $69 = Int32EnumVal$$69._();
 
-static const Int32EnumVal $181 = Int32EnumVal._(181);
+static const Int32EnumVal $181 = Int32EnumVal$$181._();
 
 static const List<Int32EnumVal> values = [$55, $69, $181];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is Int32EnumVal$Unknown; } 
+@override String toString() => 'Int32EnumVal($value)';
+
+ }
+@immutable final class Int32EnumVal$$55 extends Int32EnumVal {const Int32EnumVal$$55._();
+
+@override int get value => 55;
+
+@override bool operator ==(Object other) => identical(this, other) || other is Int32EnumVal$$55;
+
+@override int get hashCode => 55.hashCode;
+
+ }
+@immutable final class Int32EnumVal$$69 extends Int32EnumVal {const Int32EnumVal$$69._();
+
+@override int get value => 69;
+
+@override bool operator ==(Object other) => identical(this, other) || other is Int32EnumVal$$69;
+
+@override int get hashCode => 69.hashCode;
+
+ }
+@immutable final class Int32EnumVal$$181 extends Int32EnumVal {const Int32EnumVal$$181._();
+
+@override int get value => 181;
+
+@override bool operator ==(Object other) => identical(this, other) || other is Int32EnumVal$$181;
+
+@override int get hashCode => 181.hashCode;
+
+ }
+@immutable final class Int32EnumVal$Unknown extends Int32EnumVal {const Int32EnumVal$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is Int32EnumVal && other.value == value;
+    other is Int32EnumVal$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'Int32EnumVal($value)';
 
  }

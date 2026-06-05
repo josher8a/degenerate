@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol {const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol {const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol();
 
 factory RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol.fromJson(String json) { return switch (json) {
   'UDP' => udp,
   'TCP' => tcp,
   'ICMP' => icmp,
   'GRE' => gre,
-  _ => RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol._(json),
+  _ => RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol udp = RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol._('UDP');
+static const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol udp = RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$udp._();
 
-static const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol tcp = RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol._('TCP');
+static const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol tcp = RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$tcp._();
 
-static const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol icmp = RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol._('ICMP');
+static const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol icmp = RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$icmp._();
 
-static const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol gre = RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol._('GRE');
+static const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol gre = RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$gre._();
 
 static const List<RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol> values = [udp, tcp, icmp, gre];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,12 +32,53 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$udp extends RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol {const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$udp._();
+
+@override String get value => 'UDP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$udp;
+
+@override int get hashCode => 'UDP'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$tcp extends RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol {const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$tcp._();
+
+@override String get value => 'TCP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$tcp;
+
+@override int get hashCode => 'TCP'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$icmp extends RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol {const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$icmp._();
+
+@override String get value => 'ICMP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$icmp;
+
+@override int get hashCode => 'ICMP'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$gre extends RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol {const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$gre._();
+
+@override String get value => 'GRE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$gre;
+
+@override int get hashCode => 'GRE'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$Unknown extends RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol {const RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol && other.value == value;
+    other is RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer3TimeseriesGroupByVectorProtocol($value)';
 
  }

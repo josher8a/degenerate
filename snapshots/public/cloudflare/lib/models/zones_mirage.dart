@@ -4,19 +4,18 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_mirage_value.dart';/// Cloudflare Mirage reduces bandwidth used by images in mobile browsers.
 /// It can accelerate loading of image-heavy websites on very slow mobile connections and HTTP/1.
 /// 
-@immutable final class ZonesMirageId {const ZonesMirageId._(this.value);
+sealed class ZonesMirageId {const ZonesMirageId();
 
 factory ZonesMirageId.fromJson(String json) { return switch (json) {
   'mirage' => mirage,
-  _ => ZonesMirageId._(json),
+  _ => ZonesMirageId$Unknown(json),
 }; }
 
-static const ZonesMirageId mirage = ZonesMirageId._('mirage');
+static const ZonesMirageId mirage = ZonesMirageId$mirage._();
 
 static const List<ZonesMirageId> values = [mirage];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -24,13 +23,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesMirageId$Unknown; } 
+@override String toString() => 'ZonesMirageId($value)';
+
+ }
+@immutable final class ZonesMirageId$mirage extends ZonesMirageId {const ZonesMirageId$mirage._();
+
+@override String get value => 'mirage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesMirageId$mirage;
+
+@override int get hashCode => 'mirage'.hashCode;
+
+ }
+@immutable final class ZonesMirageId$Unknown extends ZonesMirageId {const ZonesMirageId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesMirageId && other.value == value;
+    other is ZonesMirageId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesMirageId($value)';
 
  }
 @immutable final class ZonesMirage {const ZonesMirage({this.id, this.value, });

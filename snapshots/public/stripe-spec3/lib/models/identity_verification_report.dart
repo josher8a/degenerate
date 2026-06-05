@@ -2,19 +2,18 @@
 // Source: #/components/schemas/IdentityVerificationReport
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/gelato_document_report.dart';import 'package:pub_stripe_spec3/models/gelato_email_report.dart';import 'package:pub_stripe_spec3/models/gelato_id_number_report.dart';import 'package:pub_stripe_spec3/models/gelato_phone_report.dart';import 'package:pub_stripe_spec3/models/gelato_selfie_report.dart';import 'package:pub_stripe_spec3/models/gelato_verification_report_options.dart';import 'package:pub_stripe_spec3/models/identity_verification_report/identity_verification_report_type.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class IdentityVerificationReportObject {const IdentityVerificationReportObject._(this.value);
+sealed class IdentityVerificationReportObject {const IdentityVerificationReportObject();
 
 factory IdentityVerificationReportObject.fromJson(String json) { return switch (json) {
   'identity.verification_report' => identityVerificationReport,
-  _ => IdentityVerificationReportObject._(json),
+  _ => IdentityVerificationReportObject$Unknown(json),
 }; }
 
-static const IdentityVerificationReportObject identityVerificationReport = IdentityVerificationReportObject._('identity.verification_report');
+static const IdentityVerificationReportObject identityVerificationReport = IdentityVerificationReportObject$identityVerificationReport._();
 
 static const List<IdentityVerificationReportObject> values = [identityVerificationReport];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is IdentityVerificationReportObject$Unknown; } 
+@override String toString() => 'IdentityVerificationReportObject($value)';
+
+ }
+@immutable final class IdentityVerificationReportObject$identityVerificationReport extends IdentityVerificationReportObject {const IdentityVerificationReportObject$identityVerificationReport._();
+
+@override String get value => 'identity.verification_report';
+
+@override bool operator ==(Object other) => identical(this, other) || other is IdentityVerificationReportObject$identityVerificationReport;
+
+@override int get hashCode => 'identity.verification_report'.hashCode;
+
+ }
+@immutable final class IdentityVerificationReportObject$Unknown extends IdentityVerificationReportObject {const IdentityVerificationReportObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is IdentityVerificationReportObject && other.value == value;
+    other is IdentityVerificationReportObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'IdentityVerificationReportObject($value)';
 
  }
 /// A VerificationReport is the result of an attempt to collect and verify data from a user.

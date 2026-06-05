@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UsageAudioTranscriptionsResult
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageAudioTranscriptionsResultObject {const UsageAudioTranscriptionsResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageAudioTranscriptionsResultObject {const UsageAudioTranscriptionsResultObject();
 
 factory UsageAudioTranscriptionsResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.audio_transcriptions.result' => organizationUsageAudioTranscriptionsResult,
-  _ => UsageAudioTranscriptionsResultObject._(json),
+  _ => UsageAudioTranscriptionsResultObject$Unknown(json),
 }; }
 
-static const UsageAudioTranscriptionsResultObject organizationUsageAudioTranscriptionsResult = UsageAudioTranscriptionsResultObject._('organization.usage.audio_transcriptions.result');
+static const UsageAudioTranscriptionsResultObject organizationUsageAudioTranscriptionsResult = UsageAudioTranscriptionsResultObject$organizationUsageAudioTranscriptionsResult._();
 
 static const List<UsageAudioTranscriptionsResultObject> values = [organizationUsageAudioTranscriptionsResult];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UsageAudioTranscriptionsResultObject$Unknown; } 
+@override String toString() => 'UsageAudioTranscriptionsResultObject($value)';
+
+ }
+@immutable final class UsageAudioTranscriptionsResultObject$organizationUsageAudioTranscriptionsResult extends UsageAudioTranscriptionsResultObject {const UsageAudioTranscriptionsResultObject$organizationUsageAudioTranscriptionsResult._();
+
+@override String get value => 'organization.usage.audio_transcriptions.result';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageAudioTranscriptionsResultObject$organizationUsageAudioTranscriptionsResult;
+
+@override int get hashCode => 'organization.usage.audio_transcriptions.result'.hashCode;
+
+ }
+@immutable final class UsageAudioTranscriptionsResultObject$Unknown extends UsageAudioTranscriptionsResultObject {const UsageAudioTranscriptionsResultObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UsageAudioTranscriptionsResultObject && other.value == value;
+    other is UsageAudioTranscriptionsResultObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UsageAudioTranscriptionsResultObject($value)';
 
  }
 /// The aggregated audio transcriptions usage details of the specific time bucket.

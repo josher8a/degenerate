@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted {const RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted {const RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted();
 
 factory RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted.fromJson(String json) { return switch (json) {
   'ENCRYPTED' => encrypted,
   'NOT_ENCRYPTED' => notEncrypted,
-  _ => RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted._(json),
+  _ => RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted$Unknown(json),
 }; }
 
-static const RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted encrypted = RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted._('ENCRYPTED');
+static const RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted encrypted = RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted$encrypted._();
 
-static const RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted notEncrypted = RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted._('NOT_ENCRYPTED');
+static const RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted notEncrypted = RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted$notEncrypted._();
 
 static const List<RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted> values = [encrypted, notEncrypted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted$Unknown; } 
+@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted($value)';
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted$encrypted extends RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted {const RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted$encrypted._();
+
+@override String get value => 'ENCRYPTED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted$encrypted;
+
+@override int get hashCode => 'ENCRYPTED'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted$notEncrypted extends RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted {const RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted$notEncrypted._();
+
+@override String get value => 'NOT_ENCRYPTED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted$notEncrypted;
+
+@override int get hashCode => 'NOT_ENCRYPTED'.hashCode;
+
+ }
+@immutable final class RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted$Unknown extends RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted {const RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted && other.value == value;
+    other is RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailRoutingTimeseriesGroupBySpfEncrypted($value)';
 
  }

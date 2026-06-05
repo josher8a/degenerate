@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol {const RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol {const RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol();
 
 factory RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol.fromJson(String json) { return switch (json) {
   'HTTP' => http,
   'HTTPS' => https,
-  _ => RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol._(json),
+  _ => RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol$Unknown(json),
 }; }
 
-static const RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol http = RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol._('HTTP');
+static const RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol http = RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol$http._();
 
-static const RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol https = RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol._('HTTPS');
+static const RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol https = RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol$https._();
 
 static const List<RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol> values = [http, https];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol$Unknown; } 
+@override String toString() => 'RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol($value)';
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol$http extends RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol {const RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol$http._();
+
+@override String get value => 'HTTP';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol$http;
+
+@override int get hashCode => 'HTTP'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol$https extends RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol {const RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol$https._();
+
+@override String get value => 'HTTPS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol$https;
+
+@override int get hashCode => 'HTTPS'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol$Unknown extends RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol {const RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol && other.value == value;
+    other is RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTimeseriesGroupByPostQuantumHttpProtocol($value)';
 
  }

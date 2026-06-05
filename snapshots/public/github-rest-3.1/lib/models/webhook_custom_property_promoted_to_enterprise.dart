@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookCustomPropertyPromotedToEnterprise
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/custom_property.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookCustomPropertyPromotedToEnterpriseAction {const WebhookCustomPropertyPromotedToEnterpriseAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/custom_property.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookCustomPropertyPromotedToEnterpriseAction {const WebhookCustomPropertyPromotedToEnterpriseAction();
 
 factory WebhookCustomPropertyPromotedToEnterpriseAction.fromJson(String json) { return switch (json) {
   'promote_to_enterprise' => promoteToEnterprise,
-  _ => WebhookCustomPropertyPromotedToEnterpriseAction._(json),
+  _ => WebhookCustomPropertyPromotedToEnterpriseAction$Unknown(json),
 }; }
 
-static const WebhookCustomPropertyPromotedToEnterpriseAction promoteToEnterprise = WebhookCustomPropertyPromotedToEnterpriseAction._('promote_to_enterprise');
+static const WebhookCustomPropertyPromotedToEnterpriseAction promoteToEnterprise = WebhookCustomPropertyPromotedToEnterpriseAction$promoteToEnterprise._();
 
 static const List<WebhookCustomPropertyPromotedToEnterpriseAction> values = [promoteToEnterprise];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookCustomPropertyPromotedToEnterpriseAction$Unknown; } 
+@override String toString() => 'WebhookCustomPropertyPromotedToEnterpriseAction($value)';
+
+ }
+@immutable final class WebhookCustomPropertyPromotedToEnterpriseAction$promoteToEnterprise extends WebhookCustomPropertyPromotedToEnterpriseAction {const WebhookCustomPropertyPromotedToEnterpriseAction$promoteToEnterprise._();
+
+@override String get value => 'promote_to_enterprise';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCustomPropertyPromotedToEnterpriseAction$promoteToEnterprise;
+
+@override int get hashCode => 'promote_to_enterprise'.hashCode;
+
+ }
+@immutable final class WebhookCustomPropertyPromotedToEnterpriseAction$Unknown extends WebhookCustomPropertyPromotedToEnterpriseAction {const WebhookCustomPropertyPromotedToEnterpriseAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookCustomPropertyPromotedToEnterpriseAction && other.value == value;
+    other is WebhookCustomPropertyPromotedToEnterpriseAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookCustomPropertyPromotedToEnterpriseAction($value)';
 
  }
 @immutable final class WebhookCustomPropertyPromotedToEnterprise {const WebhookCustomPropertyPromotedToEnterprise({required this.action, required this.definition, this.enterprise, this.installation, this.organization, this.sender, });

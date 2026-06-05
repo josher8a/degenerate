@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaClientEventConversationItemTruncate
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.truncate`.
-@immutable final class RealtimeBetaClientEventConversationItemTruncateType {const RealtimeBetaClientEventConversationItemTruncateType._(this.value);
+sealed class RealtimeBetaClientEventConversationItemTruncateType {const RealtimeBetaClientEventConversationItemTruncateType();
 
 factory RealtimeBetaClientEventConversationItemTruncateType.fromJson(String json) { return switch (json) {
   'conversation.item.truncate' => conversationItemTruncate,
-  _ => RealtimeBetaClientEventConversationItemTruncateType._(json),
+  _ => RealtimeBetaClientEventConversationItemTruncateType$Unknown(json),
 }; }
 
-static const RealtimeBetaClientEventConversationItemTruncateType conversationItemTruncate = RealtimeBetaClientEventConversationItemTruncateType._('conversation.item.truncate');
+static const RealtimeBetaClientEventConversationItemTruncateType conversationItemTruncate = RealtimeBetaClientEventConversationItemTruncateType$conversationItemTruncate._();
 
 static const List<RealtimeBetaClientEventConversationItemTruncateType> values = [conversationItemTruncate];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaClientEventConversationItemTruncateType$Unknown; } 
+@override String toString() => 'RealtimeBetaClientEventConversationItemTruncateType($value)';
+
+ }
+@immutable final class RealtimeBetaClientEventConversationItemTruncateType$conversationItemTruncate extends RealtimeBetaClientEventConversationItemTruncateType {const RealtimeBetaClientEventConversationItemTruncateType$conversationItemTruncate._();
+
+@override String get value => 'conversation.item.truncate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaClientEventConversationItemTruncateType$conversationItemTruncate;
+
+@override int get hashCode => 'conversation.item.truncate'.hashCode;
+
+ }
+@immutable final class RealtimeBetaClientEventConversationItemTruncateType$Unknown extends RealtimeBetaClientEventConversationItemTruncateType {const RealtimeBetaClientEventConversationItemTruncateType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaClientEventConversationItemTruncateType && other.value == value;
+    other is RealtimeBetaClientEventConversationItemTruncateType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaClientEventConversationItemTruncateType($value)';
 
  }
 /// Send this event to truncate a previous assistant message’s audio. The server

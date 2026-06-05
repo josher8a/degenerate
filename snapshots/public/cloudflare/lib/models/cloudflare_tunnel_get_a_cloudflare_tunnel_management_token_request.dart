@@ -2,19 +2,18 @@
 // Source: #/components/schemas/CloudflareTunnelGetACloudflareTunnelManagementTokenRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Management resources the token will have access to.
-@immutable final class TunnelManagementResources {const TunnelManagementResources._(this.value);
+sealed class TunnelManagementResources {const TunnelManagementResources();
 
 factory TunnelManagementResources.fromJson(String json) { return switch (json) {
   'logs' => logs,
-  _ => TunnelManagementResources._(json),
+  _ => TunnelManagementResources$Unknown(json),
 }; }
 
-static const TunnelManagementResources logs = TunnelManagementResources._('logs');
+static const TunnelManagementResources logs = TunnelManagementResources$logs._();
 
 static const List<TunnelManagementResources> values = [logs];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TunnelManagementResources$Unknown; } 
+@override String toString() => 'TunnelManagementResources($value)';
+
+ }
+@immutable final class TunnelManagementResources$logs extends TunnelManagementResources {const TunnelManagementResources$logs._();
+
+@override String get value => 'logs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TunnelManagementResources$logs;
+
+@override int get hashCode => 'logs'.hashCode;
+
+ }
+@immutable final class TunnelManagementResources$Unknown extends TunnelManagementResources {const TunnelManagementResources$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TunnelManagementResources && other.value == value;
+    other is TunnelManagementResources$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TunnelManagementResources($value)';
 
  }
 @immutable final class CloudflareTunnelGetACloudflareTunnelManagementTokenRequest {const CloudflareTunnelGetACloudflareTunnelManagementTokenRequest({required this.resources});

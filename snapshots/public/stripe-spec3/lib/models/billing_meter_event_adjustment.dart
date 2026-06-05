@@ -2,19 +2,18 @@
 // Source: #/components/schemas/BillingMeterEventAdjustment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment/billing_meter_event_adjustment_status.dart';import 'package:pub_stripe_spec3/models/billing_meter_event_adjustment/billing_meter_event_adjustment_type.dart';import 'package:pub_stripe_spec3/models/billing_meter_resource_billing_meter_event_adjustment_cancel.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class BillingMeterEventAdjustmentObject {const BillingMeterEventAdjustmentObject._(this.value);
+sealed class BillingMeterEventAdjustmentObject {const BillingMeterEventAdjustmentObject();
 
 factory BillingMeterEventAdjustmentObject.fromJson(String json) { return switch (json) {
   'billing.meter_event_adjustment' => billingMeterEventAdjustment,
-  _ => BillingMeterEventAdjustmentObject._(json),
+  _ => BillingMeterEventAdjustmentObject$Unknown(json),
 }; }
 
-static const BillingMeterEventAdjustmentObject billingMeterEventAdjustment = BillingMeterEventAdjustmentObject._('billing.meter_event_adjustment');
+static const BillingMeterEventAdjustmentObject billingMeterEventAdjustment = BillingMeterEventAdjustmentObject$billingMeterEventAdjustment._();
 
 static const List<BillingMeterEventAdjustmentObject> values = [billingMeterEventAdjustment];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BillingMeterEventAdjustmentObject$Unknown; } 
+@override String toString() => 'BillingMeterEventAdjustmentObject($value)';
+
+ }
+@immutable final class BillingMeterEventAdjustmentObject$billingMeterEventAdjustment extends BillingMeterEventAdjustmentObject {const BillingMeterEventAdjustmentObject$billingMeterEventAdjustment._();
+
+@override String get value => 'billing.meter_event_adjustment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BillingMeterEventAdjustmentObject$billingMeterEventAdjustment;
+
+@override int get hashCode => 'billing.meter_event_adjustment'.hashCode;
+
+ }
+@immutable final class BillingMeterEventAdjustmentObject$Unknown extends BillingMeterEventAdjustmentObject {const BillingMeterEventAdjustmentObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BillingMeterEventAdjustmentObject && other.value == value;
+    other is BillingMeterEventAdjustmentObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BillingMeterEventAdjustmentObject($value)';
 
  }
 /// A billing meter event adjustment is a resource that allows you to cancel a meter event. For example, you might create a billing meter event adjustment to cancel a meter event that was created in error or attached to the wrong customer.

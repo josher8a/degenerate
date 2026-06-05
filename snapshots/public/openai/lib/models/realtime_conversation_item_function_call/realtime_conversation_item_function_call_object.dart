@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeConversationItemFunctionCall (inline: Object)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
-@immutable final class RealtimeConversationItemFunctionCallObject {const RealtimeConversationItemFunctionCallObject._(this.value);
+sealed class RealtimeConversationItemFunctionCallObject {const RealtimeConversationItemFunctionCallObject();
 
 factory RealtimeConversationItemFunctionCallObject.fromJson(String json) { return switch (json) {
   'realtime.item' => realtimeItem,
-  _ => RealtimeConversationItemFunctionCallObject._(json),
+  _ => RealtimeConversationItemFunctionCallObject$Unknown(json),
 }; }
 
-static const RealtimeConversationItemFunctionCallObject realtimeItem = RealtimeConversationItemFunctionCallObject._('realtime.item');
+static const RealtimeConversationItemFunctionCallObject realtimeItem = RealtimeConversationItemFunctionCallObject$realtimeItem._();
 
 static const List<RealtimeConversationItemFunctionCallObject> values = [realtimeItem];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeConversationItemFunctionCallObject$Unknown; } 
+@override String toString() => 'RealtimeConversationItemFunctionCallObject($value)';
+
+ }
+@immutable final class RealtimeConversationItemFunctionCallObject$realtimeItem extends RealtimeConversationItemFunctionCallObject {const RealtimeConversationItemFunctionCallObject$realtimeItem._();
+
+@override String get value => 'realtime.item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemFunctionCallObject$realtimeItem;
+
+@override int get hashCode => 'realtime.item'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemFunctionCallObject$Unknown extends RealtimeConversationItemFunctionCallObject {const RealtimeConversationItemFunctionCallObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeConversationItemFunctionCallObject && other.value == value;
+    other is RealtimeConversationItemFunctionCallObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeConversationItemFunctionCallObject($value)';
 
  }

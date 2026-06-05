@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetHttpTopAsesByHttpVersionFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetHttpTopAsesByHttpVersionFormat {const RadarGetHttpTopAsesByHttpVersionFormat._(this.value);
+sealed class RadarGetHttpTopAsesByHttpVersionFormat {const RadarGetHttpTopAsesByHttpVersionFormat();
 
 factory RadarGetHttpTopAsesByHttpVersionFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetHttpTopAsesByHttpVersionFormat._(json),
+  _ => RadarGetHttpTopAsesByHttpVersionFormat$Unknown(json),
 }; }
 
-static const RadarGetHttpTopAsesByHttpVersionFormat $json = RadarGetHttpTopAsesByHttpVersionFormat._('JSON');
+static const RadarGetHttpTopAsesByHttpVersionFormat $json = RadarGetHttpTopAsesByHttpVersionFormat$$json._();
 
-static const RadarGetHttpTopAsesByHttpVersionFormat csv = RadarGetHttpTopAsesByHttpVersionFormat._('CSV');
+static const RadarGetHttpTopAsesByHttpVersionFormat csv = RadarGetHttpTopAsesByHttpVersionFormat$csv._();
 
 static const List<RadarGetHttpTopAsesByHttpVersionFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetHttpTopAsesByHttpVersionFormat$Unknown; } 
+@override String toString() => 'RadarGetHttpTopAsesByHttpVersionFormat($value)';
+
+ }
+@immutable final class RadarGetHttpTopAsesByHttpVersionFormat$$json extends RadarGetHttpTopAsesByHttpVersionFormat {const RadarGetHttpTopAsesByHttpVersionFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByHttpVersionFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByHttpVersionFormat$csv extends RadarGetHttpTopAsesByHttpVersionFormat {const RadarGetHttpTopAsesByHttpVersionFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetHttpTopAsesByHttpVersionFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetHttpTopAsesByHttpVersionFormat$Unknown extends RadarGetHttpTopAsesByHttpVersionFormat {const RadarGetHttpTopAsesByHttpVersionFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetHttpTopAsesByHttpVersionFormat && other.value == value;
+    other is RadarGetHttpTopAsesByHttpVersionFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetHttpTopAsesByHttpVersionFormat($value)';
 
  }

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/RealtimekitStopReason
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/realtimekit_start_reason/caller.dart';/// Specifies the reason why the recording stopped.
-@immutable final class RealtimekitStopReasonReason {const RealtimekitStopReasonReason._(this.value);
+sealed class RealtimekitStopReasonReason {const RealtimekitStopReasonReason();
 
 factory RealtimekitStopReasonReason.fromJson(String json) { return switch (json) {
   'API_CALL' => apiCall,
   'INTERNAL_ERROR' => internalError,
   'ALL_PEERS_LEFT' => allPeersLeft,
-  _ => RealtimekitStopReasonReason._(json),
+  _ => RealtimekitStopReasonReason$Unknown(json),
 }; }
 
-static const RealtimekitStopReasonReason apiCall = RealtimekitStopReasonReason._('API_CALL');
+static const RealtimekitStopReasonReason apiCall = RealtimekitStopReasonReason$apiCall._();
 
-static const RealtimekitStopReasonReason internalError = RealtimekitStopReasonReason._('INTERNAL_ERROR');
+static const RealtimekitStopReasonReason internalError = RealtimekitStopReasonReason$internalError._();
 
-static const RealtimekitStopReasonReason allPeersLeft = RealtimekitStopReasonReason._('ALL_PEERS_LEFT');
+static const RealtimekitStopReasonReason allPeersLeft = RealtimekitStopReasonReason$allPeersLeft._();
 
 static const List<RealtimekitStopReasonReason> values = [apiCall, internalError, allPeersLeft];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimekitStopReasonReason$Unknown; } 
+@override String toString() => 'RealtimekitStopReasonReason($value)';
+
+ }
+@immutable final class RealtimekitStopReasonReason$apiCall extends RealtimekitStopReasonReason {const RealtimekitStopReasonReason$apiCall._();
+
+@override String get value => 'API_CALL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitStopReasonReason$apiCall;
+
+@override int get hashCode => 'API_CALL'.hashCode;
+
+ }
+@immutable final class RealtimekitStopReasonReason$internalError extends RealtimekitStopReasonReason {const RealtimekitStopReasonReason$internalError._();
+
+@override String get value => 'INTERNAL_ERROR';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitStopReasonReason$internalError;
+
+@override int get hashCode => 'INTERNAL_ERROR'.hashCode;
+
+ }
+@immutable final class RealtimekitStopReasonReason$allPeersLeft extends RealtimekitStopReasonReason {const RealtimekitStopReasonReason$allPeersLeft._();
+
+@override String get value => 'ALL_PEERS_LEFT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimekitStopReasonReason$allPeersLeft;
+
+@override int get hashCode => 'ALL_PEERS_LEFT'.hashCode;
+
+ }
+@immutable final class RealtimekitStopReasonReason$Unknown extends RealtimekitStopReasonReason {const RealtimekitStopReasonReason$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimekitStopReasonReason && other.value == value;
+    other is RealtimekitStopReasonReason$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimekitStopReasonReason($value)';
 
  }
 @immutable final class RealtimekitStopReason {const RealtimekitStopReason({this.caller, this.reason, });

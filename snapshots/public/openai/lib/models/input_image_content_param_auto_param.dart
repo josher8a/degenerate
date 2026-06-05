@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/InputImageContentParamAutoParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_item_input_image/eval_item_input_image_type.dart';@immutable final class DetailEnum {const DetailEnum._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/eval_item_input_image/eval_item_input_image_type.dart';sealed class DetailEnum {const DetailEnum();
 
 factory DetailEnum.fromJson(String json) { return switch (json) {
   'low' => low,
   'high' => high,
   'auto' => auto,
   'original' => original,
-  _ => DetailEnum._(json),
+  _ => DetailEnum$Unknown(json),
 }; }
 
-static const DetailEnum low = DetailEnum._('low');
+static const DetailEnum low = DetailEnum$low._();
 
-static const DetailEnum high = DetailEnum._('high');
+static const DetailEnum high = DetailEnum$high._();
 
-static const DetailEnum auto = DetailEnum._('auto');
+static const DetailEnum auto = DetailEnum$auto._();
 
-static const DetailEnum original = DetailEnum._('original');
+static const DetailEnum original = DetailEnum$original._();
 
 static const List<DetailEnum> values = [low, high, auto, original];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is DetailEnum$Unknown; } 
+@override String toString() => 'DetailEnum($value)';
+
+ }
+@immutable final class DetailEnum$low extends DetailEnum {const DetailEnum$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DetailEnum$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class DetailEnum$high extends DetailEnum {const DetailEnum$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DetailEnum$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class DetailEnum$auto extends DetailEnum {const DetailEnum$auto._();
+
+@override String get value => 'auto';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DetailEnum$auto;
+
+@override int get hashCode => 'auto'.hashCode;
+
+ }
+@immutable final class DetailEnum$original extends DetailEnum {const DetailEnum$original._();
+
+@override String get value => 'original';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DetailEnum$original;
+
+@override int get hashCode => 'original'.hashCode;
+
+ }
+@immutable final class DetailEnum$Unknown extends DetailEnum {const DetailEnum$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is DetailEnum && other.value == value;
+    other is DetailEnum$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'DetailEnum($value)';
 
  }
 /// An image input to the model. Learn about [image inputs](/docs/guides/vision)

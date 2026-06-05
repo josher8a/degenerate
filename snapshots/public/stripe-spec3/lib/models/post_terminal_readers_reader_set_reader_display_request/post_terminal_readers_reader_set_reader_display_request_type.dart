@@ -2,19 +2,18 @@
 // Source: #/components/schemas/PostTerminalReadersReaderSetReaderDisplayRequest (inline: Type)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of information to be displayed by the reader. Only `cart` is currently supported.
-@immutable final class PostTerminalReadersReaderSetReaderDisplayRequestType {const PostTerminalReadersReaderSetReaderDisplayRequestType._(this.value);
+sealed class PostTerminalReadersReaderSetReaderDisplayRequestType {const PostTerminalReadersReaderSetReaderDisplayRequestType();
 
 factory PostTerminalReadersReaderSetReaderDisplayRequestType.fromJson(String json) { return switch (json) {
   'cart' => cart,
-  _ => PostTerminalReadersReaderSetReaderDisplayRequestType._(json),
+  _ => PostTerminalReadersReaderSetReaderDisplayRequestType$Unknown(json),
 }; }
 
-static const PostTerminalReadersReaderSetReaderDisplayRequestType cart = PostTerminalReadersReaderSetReaderDisplayRequestType._('cart');
+static const PostTerminalReadersReaderSetReaderDisplayRequestType cart = PostTerminalReadersReaderSetReaderDisplayRequestType$cart._();
 
 static const List<PostTerminalReadersReaderSetReaderDisplayRequestType> values = [cart];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostTerminalReadersReaderSetReaderDisplayRequestType$Unknown; } 
+@override String toString() => 'PostTerminalReadersReaderSetReaderDisplayRequestType($value)';
+
+ }
+@immutable final class PostTerminalReadersReaderSetReaderDisplayRequestType$cart extends PostTerminalReadersReaderSetReaderDisplayRequestType {const PostTerminalReadersReaderSetReaderDisplayRequestType$cart._();
+
+@override String get value => 'cart';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostTerminalReadersReaderSetReaderDisplayRequestType$cart;
+
+@override int get hashCode => 'cart'.hashCode;
+
+ }
+@immutable final class PostTerminalReadersReaderSetReaderDisplayRequestType$Unknown extends PostTerminalReadersReaderSetReaderDisplayRequestType {const PostTerminalReadersReaderSetReaderDisplayRequestType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostTerminalReadersReaderSetReaderDisplayRequestType && other.value == value;
+    other is PostTerminalReadersReaderSetReaderDisplayRequestType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostTerminalReadersReaderSetReaderDisplayRequestType($value)';
 
  }

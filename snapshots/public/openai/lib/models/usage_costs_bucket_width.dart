@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UsageCostsBucketWidth
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageCostsBucketWidth {const UsageCostsBucketWidth._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageCostsBucketWidth {const UsageCostsBucketWidth();
 
 factory UsageCostsBucketWidth.fromJson(String json) { return switch (json) {
   '1d' => $1d,
-  _ => UsageCostsBucketWidth._(json),
+  _ => UsageCostsBucketWidth$Unknown(json),
 }; }
 
-static const UsageCostsBucketWidth $1d = UsageCostsBucketWidth._('1d');
+static const UsageCostsBucketWidth $1d = UsageCostsBucketWidth$$1d._();
 
 static const List<UsageCostsBucketWidth> values = [$1d];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,12 +20,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UsageCostsBucketWidth$Unknown; } 
+@override String toString() => 'UsageCostsBucketWidth($value)';
+
+ }
+@immutable final class UsageCostsBucketWidth$$1d extends UsageCostsBucketWidth {const UsageCostsBucketWidth$$1d._();
+
+@override String get value => '1d';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageCostsBucketWidth$$1d;
+
+@override int get hashCode => '1d'.hashCode;
+
+ }
+@immutable final class UsageCostsBucketWidth$Unknown extends UsageCostsBucketWidth {const UsageCostsBucketWidth$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UsageCostsBucketWidth && other.value == value;
+    other is UsageCostsBucketWidth$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UsageCostsBucketWidth($value)';
 
  }

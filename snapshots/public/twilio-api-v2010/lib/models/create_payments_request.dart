@@ -2,22 +2,21 @@
 // Source: #/components/schemas/CreatePaymentsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of payment being captured. One of `credit-card` or `ach-debit`. The default value is `credit-card`.
-@immutable final class PaymentsEnumPaymentMethod {const PaymentsEnumPaymentMethod._(this.value);
+sealed class PaymentsEnumPaymentMethod {const PaymentsEnumPaymentMethod();
 
 factory PaymentsEnumPaymentMethod.fromJson(String json) { return switch (json) {
   'credit-card' => creditCard,
   'ach-debit' => achDebit,
-  _ => PaymentsEnumPaymentMethod._(json),
+  _ => PaymentsEnumPaymentMethod$Unknown(json),
 }; }
 
-static const PaymentsEnumPaymentMethod creditCard = PaymentsEnumPaymentMethod._('credit-card');
+static const PaymentsEnumPaymentMethod creditCard = PaymentsEnumPaymentMethod$creditCard._();
 
-static const PaymentsEnumPaymentMethod achDebit = PaymentsEnumPaymentMethod._('ach-debit');
+static const PaymentsEnumPaymentMethod achDebit = PaymentsEnumPaymentMethod$achDebit._();
 
 static const List<PaymentsEnumPaymentMethod> values = [creditCard, achDebit];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,35 +25,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentsEnumPaymentMethod && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PaymentsEnumPaymentMethod$Unknown; } 
 @override String toString() => 'PaymentsEnumPaymentMethod($value)';
 
  }
+@immutable final class PaymentsEnumPaymentMethod$creditCard extends PaymentsEnumPaymentMethod {const PaymentsEnumPaymentMethod$creditCard._();
+
+@override String get value => 'credit-card';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumPaymentMethod$creditCard;
+
+@override int get hashCode => 'credit-card'.hashCode;
+
+ }
+@immutable final class PaymentsEnumPaymentMethod$achDebit extends PaymentsEnumPaymentMethod {const PaymentsEnumPaymentMethod$achDebit._();
+
+@override String get value => 'ach-debit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumPaymentMethod$achDebit;
+
+@override int get hashCode => 'ach-debit'.hashCode;
+
+ }
+@immutable final class PaymentsEnumPaymentMethod$Unknown extends PaymentsEnumPaymentMethod {const PaymentsEnumPaymentMethod$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentsEnumPaymentMethod$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Type of bank account if payment source is ACH. One of `consumer-checking`, `consumer-savings`, or `commercial-checking`. The default value is `consumer-checking`.
-@immutable final class PaymentsEnumBankAccountType {const PaymentsEnumBankAccountType._(this.value);
+sealed class PaymentsEnumBankAccountType {const PaymentsEnumBankAccountType();
 
 factory PaymentsEnumBankAccountType.fromJson(String json) { return switch (json) {
   'consumer-checking' => consumerChecking,
   'consumer-savings' => consumerSavings,
   'commercial-checking' => commercialChecking,
-  _ => PaymentsEnumBankAccountType._(json),
+  _ => PaymentsEnumBankAccountType$Unknown(json),
 }; }
 
-static const PaymentsEnumBankAccountType consumerChecking = PaymentsEnumBankAccountType._('consumer-checking');
+static const PaymentsEnumBankAccountType consumerChecking = PaymentsEnumBankAccountType$consumerChecking._();
 
-static const PaymentsEnumBankAccountType consumerSavings = PaymentsEnumBankAccountType._('consumer-savings');
+static const PaymentsEnumBankAccountType consumerSavings = PaymentsEnumBankAccountType$consumerSavings._();
 
-static const PaymentsEnumBankAccountType commercialChecking = PaymentsEnumBankAccountType._('commercial-checking');
+static const PaymentsEnumBankAccountType commercialChecking = PaymentsEnumBankAccountType$commercialChecking._();
 
 static const List<PaymentsEnumBankAccountType> values = [consumerChecking, consumerSavings, commercialChecking];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -64,35 +85,66 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentsEnumBankAccountType && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is PaymentsEnumBankAccountType$Unknown; } 
 @override String toString() => 'PaymentsEnumBankAccountType($value)';
 
  }
+@immutable final class PaymentsEnumBankAccountType$consumerChecking extends PaymentsEnumBankAccountType {const PaymentsEnumBankAccountType$consumerChecking._();
+
+@override String get value => 'consumer-checking';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumBankAccountType$consumerChecking;
+
+@override int get hashCode => 'consumer-checking'.hashCode;
+
+ }
+@immutable final class PaymentsEnumBankAccountType$consumerSavings extends PaymentsEnumBankAccountType {const PaymentsEnumBankAccountType$consumerSavings._();
+
+@override String get value => 'consumer-savings';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumBankAccountType$consumerSavings;
+
+@override int get hashCode => 'consumer-savings'.hashCode;
+
+ }
+@immutable final class PaymentsEnumBankAccountType$commercialChecking extends PaymentsEnumBankAccountType {const PaymentsEnumBankAccountType$commercialChecking._();
+
+@override String get value => 'commercial-checking';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumBankAccountType$commercialChecking;
+
+@override int get hashCode => 'commercial-checking'.hashCode;
+
+ }
+@immutable final class PaymentsEnumBankAccountType$Unknown extends PaymentsEnumBankAccountType {const PaymentsEnumBankAccountType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is PaymentsEnumBankAccountType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Indicates whether the payment method should be tokenized as a `one-time`, `reusable`, or `payment-method` token. The default value is `reusable`. Do not enter a charge amount when tokenizing. If a charge amount is entered, the payment method will be charged and not tokenized.
-@immutable final class PaymentsEnumTokenType {const PaymentsEnumTokenType._(this.value);
+sealed class PaymentsEnumTokenType {const PaymentsEnumTokenType();
 
 factory PaymentsEnumTokenType.fromJson(String json) { return switch (json) {
   'one-time' => oneTime,
   'reusable' => reusable,
   'payment-method' => paymentMethod,
-  _ => PaymentsEnumTokenType._(json),
+  _ => PaymentsEnumTokenType$Unknown(json),
 }; }
 
-static const PaymentsEnumTokenType oneTime = PaymentsEnumTokenType._('one-time');
+static const PaymentsEnumTokenType oneTime = PaymentsEnumTokenType$oneTime._();
 
-static const PaymentsEnumTokenType reusable = PaymentsEnumTokenType._('reusable');
+static const PaymentsEnumTokenType reusable = PaymentsEnumTokenType$reusable._();
 
-static const PaymentsEnumTokenType paymentMethod = PaymentsEnumTokenType._('payment-method');
+static const PaymentsEnumTokenType paymentMethod = PaymentsEnumTokenType$paymentMethod._();
 
 static const List<PaymentsEnumTokenType> values = [oneTime, reusable, paymentMethod];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -102,13 +154,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PaymentsEnumTokenType$Unknown; } 
+@override String toString() => 'PaymentsEnumTokenType($value)';
+
+ }
+@immutable final class PaymentsEnumTokenType$oneTime extends PaymentsEnumTokenType {const PaymentsEnumTokenType$oneTime._();
+
+@override String get value => 'one-time';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumTokenType$oneTime;
+
+@override int get hashCode => 'one-time'.hashCode;
+
+ }
+@immutable final class PaymentsEnumTokenType$reusable extends PaymentsEnumTokenType {const PaymentsEnumTokenType$reusable._();
+
+@override String get value => 'reusable';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumTokenType$reusable;
+
+@override int get hashCode => 'reusable'.hashCode;
+
+ }
+@immutable final class PaymentsEnumTokenType$paymentMethod extends PaymentsEnumTokenType {const PaymentsEnumTokenType$paymentMethod._();
+
+@override String get value => 'payment-method';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PaymentsEnumTokenType$paymentMethod;
+
+@override int get hashCode => 'payment-method'.hashCode;
+
+ }
+@immutable final class PaymentsEnumTokenType$Unknown extends PaymentsEnumTokenType {const PaymentsEnumTokenType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PaymentsEnumTokenType && other.value == value;
+    other is PaymentsEnumTokenType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PaymentsEnumTokenType($value)';
 
  }
 @immutable final class CreatePaymentsRequest {const CreatePaymentsRequest({required this.idempotencyKey, required this.statusCallback, this.bankAccountType, this.chargeAmount, this.currency, this.description, this.input, this.minPostalCodeLength, this.parameter, this.paymentConnector, this.paymentMethod, this.postalCode, this.securityCode, this.timeout, this.tokenType, this.validCardTypes, });

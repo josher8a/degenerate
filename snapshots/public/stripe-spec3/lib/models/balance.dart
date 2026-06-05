@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Balance
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/balance_amount.dart';import 'package:pub_stripe_spec3/models/balance_amount_net.dart';import 'package:pub_stripe_spec3/models/balance_detail.dart';import 'package:pub_stripe_spec3/models/balance_detail_ungated.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class BalanceObject {const BalanceObject._(this.value);
+sealed class BalanceObject {const BalanceObject();
 
 factory BalanceObject.fromJson(String json) { return switch (json) {
   'balance' => balance,
-  _ => BalanceObject._(json),
+  _ => BalanceObject$Unknown(json),
 }; }
 
-static const BalanceObject balance = BalanceObject._('balance');
+static const BalanceObject balance = BalanceObject$balance._();
 
 static const List<BalanceObject> values = [balance];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BalanceObject$Unknown; } 
+@override String toString() => 'BalanceObject($value)';
+
+ }
+@immutable final class BalanceObject$balance extends BalanceObject {const BalanceObject$balance._();
+
+@override String get value => 'balance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BalanceObject$balance;
+
+@override int get hashCode => 'balance'.hashCode;
+
+ }
+@immutable final class BalanceObject$Unknown extends BalanceObject {const BalanceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BalanceObject && other.value == value;
+    other is BalanceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BalanceObject($value)';
 
  }
 /// This is an object representing your Stripe balance. You can retrieve it to see

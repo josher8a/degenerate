@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateVideoBody
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_ref_param2.dart';import 'package:pub_openai/models/video_model.dart';import 'package:pub_openai/models/video_size.dart';@immutable final class VideoSeconds {const VideoSeconds._(this.value);
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_ref_param2.dart';import 'package:pub_openai/models/video_model.dart';import 'package:pub_openai/models/video_size.dart';sealed class VideoSeconds {const VideoSeconds();
 
 factory VideoSeconds.fromJson(String json) { return switch (json) {
   '4' => $4,
   '8' => $8,
   '12' => $12,
-  _ => VideoSeconds._(json),
+  _ => VideoSeconds$Unknown(json),
 }; }
 
-static const VideoSeconds $4 = VideoSeconds._('4');
+static const VideoSeconds $4 = VideoSeconds$$4._();
 
-static const VideoSeconds $8 = VideoSeconds._('8');
+static const VideoSeconds $8 = VideoSeconds$$8._();
 
-static const VideoSeconds $12 = VideoSeconds._('12');
+static const VideoSeconds $12 = VideoSeconds$$12._();
 
 static const List<VideoSeconds> values = [$4, $8, $12];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is VideoSeconds$Unknown; } 
+@override String toString() => 'VideoSeconds($value)';
+
+ }
+@immutable final class VideoSeconds$$4 extends VideoSeconds {const VideoSeconds$$4._();
+
+@override String get value => '4';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VideoSeconds$$4;
+
+@override int get hashCode => '4'.hashCode;
+
+ }
+@immutable final class VideoSeconds$$8 extends VideoSeconds {const VideoSeconds$$8._();
+
+@override String get value => '8';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VideoSeconds$$8;
+
+@override int get hashCode => '8'.hashCode;
+
+ }
+@immutable final class VideoSeconds$$12 extends VideoSeconds {const VideoSeconds$$12._();
+
+@override String get value => '12';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VideoSeconds$$12;
+
+@override int get hashCode => '12'.hashCode;
+
+ }
+@immutable final class VideoSeconds$Unknown extends VideoSeconds {const VideoSeconds$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is VideoSeconds && other.value == value;
+    other is VideoSeconds$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'VideoSeconds($value)';
 
  }
 /// Parameters for creating a new video generation job.

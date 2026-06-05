@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookDiscussionCategoryChanged
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_category_changed/webhook_discussion_category_changed_changes.dart';@immutable final class WebhookDiscussionCategoryChangedAction {const WebhookDiscussionCategoryChangedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/discussion.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_discussion_category_changed/webhook_discussion_category_changed_changes.dart';sealed class WebhookDiscussionCategoryChangedAction {const WebhookDiscussionCategoryChangedAction();
 
 factory WebhookDiscussionCategoryChangedAction.fromJson(String json) { return switch (json) {
   'category_changed' => categoryChanged,
-  _ => WebhookDiscussionCategoryChangedAction._(json),
+  _ => WebhookDiscussionCategoryChangedAction$Unknown(json),
 }; }
 
-static const WebhookDiscussionCategoryChangedAction categoryChanged = WebhookDiscussionCategoryChangedAction._('category_changed');
+static const WebhookDiscussionCategoryChangedAction categoryChanged = WebhookDiscussionCategoryChangedAction$categoryChanged._();
 
 static const List<WebhookDiscussionCategoryChangedAction> values = [categoryChanged];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookDiscussionCategoryChangedAction$Unknown; } 
+@override String toString() => 'WebhookDiscussionCategoryChangedAction($value)';
+
+ }
+@immutable final class WebhookDiscussionCategoryChangedAction$categoryChanged extends WebhookDiscussionCategoryChangedAction {const WebhookDiscussionCategoryChangedAction$categoryChanged._();
+
+@override String get value => 'category_changed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookDiscussionCategoryChangedAction$categoryChanged;
+
+@override int get hashCode => 'category_changed'.hashCode;
+
+ }
+@immutable final class WebhookDiscussionCategoryChangedAction$Unknown extends WebhookDiscussionCategoryChangedAction {const WebhookDiscussionCategoryChangedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookDiscussionCategoryChangedAction && other.value == value;
+    other is WebhookDiscussionCategoryChangedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookDiscussionCategoryChangedAction($value)';
 
  }
 @immutable final class WebhookDiscussionCategoryChanged {const WebhookDiscussionCategoryChanged({required this.action, required this.changes, required this.discussion, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

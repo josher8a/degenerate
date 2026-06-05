@@ -2,7 +2,7 @@
 // Source: #/components/schemas/TlsCertificatesAndHostnamesCustomTrustStore
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_components_schemas_certificate.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_issuer.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_expires_on.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_signature.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_uploaded_on.dart';/// Status of the zone's custom SSL.
-@immutable final class TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus._(this.value);
+sealed class TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus();
 
 factory TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus.fromJson(String json) { return switch (json) {
   'initializing' => initializing,
@@ -11,25 +11,24 @@ factory TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus.fromJ
   'pending_deletion' => pendingDeletion,
   'deleted' => deleted,
   'expired' => expired,
-  _ => TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus._(json),
+  _ => TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$Unknown(json),
 }; }
 
-static const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus initializing = TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus._('initializing');
+static const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus initializing = TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$initializing._();
 
-static const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus pendingDeployment = TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus._('pending_deployment');
+static const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus pendingDeployment = TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$pendingDeployment._();
 
-static const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus active = TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus._('active');
+static const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus active = TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$active._();
 
-static const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus pendingDeletion = TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus._('pending_deletion');
+static const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus pendingDeletion = TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$pendingDeletion._();
 
-static const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus deleted = TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus._('deleted');
+static const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus deleted = TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$deleted._();
 
-static const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus expired = TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus._('expired');
+static const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus expired = TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$expired._();
 
 static const List<TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus> values = [initializing, pendingDeployment, active, pendingDeletion, deleted, expired];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -42,13 +41,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$Unknown; } 
+@override String toString() => 'TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus($value)';
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$initializing extends TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$initializing._();
+
+@override String get value => 'initializing';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$initializing;
+
+@override int get hashCode => 'initializing'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$pendingDeployment extends TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$pendingDeployment._();
+
+@override String get value => 'pending_deployment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$pendingDeployment;
+
+@override int get hashCode => 'pending_deployment'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$active extends TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$pendingDeletion extends TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$pendingDeletion._();
+
+@override String get value => 'pending_deletion';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$pendingDeletion;
+
+@override int get hashCode => 'pending_deletion'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$deleted extends TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$deleted._();
+
+@override String get value => 'deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$deleted;
+
+@override int get hashCode => 'deleted'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$expired extends TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$expired._();
+
+@override String get value => 'expired';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$expired;
+
+@override int get hashCode => 'expired'.hashCode;
+
+ }
+@immutable final class TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$Unknown extends TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus {const TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus && other.value == value;
+    other is TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TlsCertificatesAndHostnamesCustomTrustStoreComponentsSchemasStatus($value)';
 
  }
 /// When the certificate was last modified.

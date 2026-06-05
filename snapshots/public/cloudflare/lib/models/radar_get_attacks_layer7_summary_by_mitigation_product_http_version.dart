@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion {const RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion {const RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion();
 
 factory RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion.fromJson(String json) { return switch (json) {
   'HTTPv1' => httPv1,
   'HTTPv2' => httPv2,
   'HTTPv3' => httPv3,
-  _ => RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion._(json),
+  _ => RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$Unknown(json),
 }; }
 
-static const RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion httPv1 = RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion._('HTTPv1');
+static const RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion httPv1 = RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$httPv1._();
 
-static const RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion httPv2 = RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion._('HTTPv2');
+static const RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion httPv2 = RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$httPv2._();
 
-static const RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion httPv3 = RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion._('HTTPv3');
+static const RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion httPv3 = RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$httPv3._();
 
 static const List<RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion> values = [httPv1, httPv2, httPv3];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$Unknown; } 
+@override String toString() => 'RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion($value)';
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$httPv1 extends RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion {const RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$httPv1._();
+
+@override String get value => 'HTTPv1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$httPv1;
+
+@override int get hashCode => 'HTTPv1'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$httPv2 extends RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion {const RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$httPv2._();
+
+@override String get value => 'HTTPv2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$httPv2;
+
+@override int get hashCode => 'HTTPv2'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$httPv3 extends RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion {const RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$httPv3._();
+
+@override String get value => 'HTTPv3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$httPv3;
+
+@override int get hashCode => 'HTTPv3'.hashCode;
+
+ }
+@immutable final class RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$Unknown extends RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion {const RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion && other.value == value;
+    other is RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAttacksLayer7SummaryByMitigationProductHttpVersion($value)';
 
  }

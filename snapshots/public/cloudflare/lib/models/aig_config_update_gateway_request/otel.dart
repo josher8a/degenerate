@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AigConfigUpdateGatewayRequest (inline: Otel)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class OtelContentType {const OtelContentType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class OtelContentType {const OtelContentType();
 
 factory OtelContentType.fromJson(String json) { return switch (json) {
   'json' => $json,
   'protobuf' => protobuf,
-  _ => OtelContentType._(json),
+  _ => OtelContentType$Unknown(json),
 }; }
 
-static const OtelContentType $json = OtelContentType._('json');
+static const OtelContentType $json = OtelContentType$$json._();
 
-static const OtelContentType protobuf = OtelContentType._('protobuf');
+static const OtelContentType protobuf = OtelContentType$protobuf._();
 
 static const List<OtelContentType> values = [$json, protobuf];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is OtelContentType$Unknown; } 
+@override String toString() => 'OtelContentType($value)';
+
+ }
+@immutable final class OtelContentType$$json extends OtelContentType {const OtelContentType$$json._();
+
+@override String get value => 'json';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OtelContentType$$json;
+
+@override int get hashCode => 'json'.hashCode;
+
+ }
+@immutable final class OtelContentType$protobuf extends OtelContentType {const OtelContentType$protobuf._();
+
+@override String get value => 'protobuf';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OtelContentType$protobuf;
+
+@override int get hashCode => 'protobuf'.hashCode;
+
+ }
+@immutable final class OtelContentType$Unknown extends OtelContentType {const OtelContentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is OtelContentType && other.value == value;
+    other is OtelContentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'OtelContentType($value)';
 
  }
 @immutable final class Otel {const Otel({required this.authorization, required this.headers, required this.url, this.contentType = OtelContentType.$json, });

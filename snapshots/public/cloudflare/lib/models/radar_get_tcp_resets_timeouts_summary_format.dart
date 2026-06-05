@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetTcpResetsTimeoutsSummaryFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetTcpResetsTimeoutsSummaryFormat {const RadarGetTcpResetsTimeoutsSummaryFormat._(this.value);
+sealed class RadarGetTcpResetsTimeoutsSummaryFormat {const RadarGetTcpResetsTimeoutsSummaryFormat();
 
 factory RadarGetTcpResetsTimeoutsSummaryFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetTcpResetsTimeoutsSummaryFormat._(json),
+  _ => RadarGetTcpResetsTimeoutsSummaryFormat$Unknown(json),
 }; }
 
-static const RadarGetTcpResetsTimeoutsSummaryFormat $json = RadarGetTcpResetsTimeoutsSummaryFormat._('JSON');
+static const RadarGetTcpResetsTimeoutsSummaryFormat $json = RadarGetTcpResetsTimeoutsSummaryFormat$$json._();
 
-static const RadarGetTcpResetsTimeoutsSummaryFormat csv = RadarGetTcpResetsTimeoutsSummaryFormat._('CSV');
+static const RadarGetTcpResetsTimeoutsSummaryFormat csv = RadarGetTcpResetsTimeoutsSummaryFormat$csv._();
 
 static const List<RadarGetTcpResetsTimeoutsSummaryFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetTcpResetsTimeoutsSummaryFormat$Unknown; } 
+@override String toString() => 'RadarGetTcpResetsTimeoutsSummaryFormat($value)';
+
+ }
+@immutable final class RadarGetTcpResetsTimeoutsSummaryFormat$$json extends RadarGetTcpResetsTimeoutsSummaryFormat {const RadarGetTcpResetsTimeoutsSummaryFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetTcpResetsTimeoutsSummaryFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetTcpResetsTimeoutsSummaryFormat$csv extends RadarGetTcpResetsTimeoutsSummaryFormat {const RadarGetTcpResetsTimeoutsSummaryFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetTcpResetsTimeoutsSummaryFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetTcpResetsTimeoutsSummaryFormat$Unknown extends RadarGetTcpResetsTimeoutsSummaryFormat {const RadarGetTcpResetsTimeoutsSummaryFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetTcpResetsTimeoutsSummaryFormat && other.value == value;
+    other is RadarGetTcpResetsTimeoutsSummaryFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetTcpResetsTimeoutsSummaryFormat($value)';
 
  }

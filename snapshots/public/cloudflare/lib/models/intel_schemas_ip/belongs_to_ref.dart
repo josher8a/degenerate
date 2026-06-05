@@ -2,25 +2,24 @@
 // Source: #/components/schemas/IntelSchemasIp (inline: BelongsToRef)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Infrastructure type of this ASN.
-@immutable final class BelongsToRefType {const BelongsToRefType._(this.value);
+sealed class BelongsToRefType {const BelongsToRefType();
 
 factory BelongsToRefType.fromJson(String json) { return switch (json) {
   'hosting_provider' => hostingProvider,
   'isp' => isp,
   'organization' => organization,
-  _ => BelongsToRefType._(json),
+  _ => BelongsToRefType$Unknown(json),
 }; }
 
-static const BelongsToRefType hostingProvider = BelongsToRefType._('hosting_provider');
+static const BelongsToRefType hostingProvider = BelongsToRefType$hostingProvider._();
 
-static const BelongsToRefType isp = BelongsToRefType._('isp');
+static const BelongsToRefType isp = BelongsToRefType$isp._();
 
-static const BelongsToRefType organization = BelongsToRefType._('organization');
+static const BelongsToRefType organization = BelongsToRefType$organization._();
 
 static const List<BelongsToRefType> values = [hostingProvider, isp, organization];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BelongsToRefType$Unknown; } 
+@override String toString() => 'BelongsToRefType($value)';
+
+ }
+@immutable final class BelongsToRefType$hostingProvider extends BelongsToRefType {const BelongsToRefType$hostingProvider._();
+
+@override String get value => 'hosting_provider';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BelongsToRefType$hostingProvider;
+
+@override int get hashCode => 'hosting_provider'.hashCode;
+
+ }
+@immutable final class BelongsToRefType$isp extends BelongsToRefType {const BelongsToRefType$isp._();
+
+@override String get value => 'isp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BelongsToRefType$isp;
+
+@override int get hashCode => 'isp'.hashCode;
+
+ }
+@immutable final class BelongsToRefType$organization extends BelongsToRefType {const BelongsToRefType$organization._();
+
+@override String get value => 'organization';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BelongsToRefType$organization;
+
+@override int get hashCode => 'organization'.hashCode;
+
+ }
+@immutable final class BelongsToRefType$Unknown extends BelongsToRefType {const BelongsToRefType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BelongsToRefType && other.value == value;
+    other is BelongsToRefType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BelongsToRefType($value)';
 
  }
 /// Specifies a reference to the autonomous systems (AS) that the IP address belongs to.

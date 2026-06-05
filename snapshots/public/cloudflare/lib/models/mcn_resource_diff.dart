@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/McnResourceDiff
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_cost_diff.dart';import 'package:pub_cloudflare/models/mcn_resource_preview.dart';import 'package:pub_cloudflare/models/mcn_yaml_diff.dart';@immutable final class McnPlannedAction {const McnPlannedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_cost_diff.dart';import 'package:pub_cloudflare/models/mcn_resource_preview.dart';import 'package:pub_cloudflare/models/mcn_yaml_diff.dart';sealed class McnPlannedAction {const McnPlannedAction();
 
 factory McnPlannedAction.fromJson(String json) { return switch (json) {
   'no_op' => noOp,
@@ -9,23 +9,22 @@ factory McnPlannedAction.fromJson(String json) { return switch (json) {
   'update' => update,
   'replace' => replace,
   'destroy' => destroy,
-  _ => McnPlannedAction._(json),
+  _ => McnPlannedAction$Unknown(json),
 }; }
 
-static const McnPlannedAction noOp = McnPlannedAction._('no_op');
+static const McnPlannedAction noOp = McnPlannedAction$noOp._();
 
-static const McnPlannedAction create = McnPlannedAction._('create');
+static const McnPlannedAction create = McnPlannedAction$create._();
 
-static const McnPlannedAction update = McnPlannedAction._('update');
+static const McnPlannedAction update = McnPlannedAction$update._();
 
-static const McnPlannedAction replace = McnPlannedAction._('replace');
+static const McnPlannedAction replace = McnPlannedAction$replace._();
 
-static const McnPlannedAction destroy = McnPlannedAction._('destroy');
+static const McnPlannedAction destroy = McnPlannedAction$destroy._();
 
 static const List<McnPlannedAction> values = [noOp, create, update, replace, destroy];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is McnPlannedAction$Unknown; } 
+@override String toString() => 'McnPlannedAction($value)';
+
+ }
+@immutable final class McnPlannedAction$noOp extends McnPlannedAction {const McnPlannedAction$noOp._();
+
+@override String get value => 'no_op';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnPlannedAction$noOp;
+
+@override int get hashCode => 'no_op'.hashCode;
+
+ }
+@immutable final class McnPlannedAction$create extends McnPlannedAction {const McnPlannedAction$create._();
+
+@override String get value => 'create';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnPlannedAction$create;
+
+@override int get hashCode => 'create'.hashCode;
+
+ }
+@immutable final class McnPlannedAction$update extends McnPlannedAction {const McnPlannedAction$update._();
+
+@override String get value => 'update';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnPlannedAction$update;
+
+@override int get hashCode => 'update'.hashCode;
+
+ }
+@immutable final class McnPlannedAction$replace extends McnPlannedAction {const McnPlannedAction$replace._();
+
+@override String get value => 'replace';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnPlannedAction$replace;
+
+@override int get hashCode => 'replace'.hashCode;
+
+ }
+@immutable final class McnPlannedAction$destroy extends McnPlannedAction {const McnPlannedAction$destroy._();
+
+@override String get value => 'destroy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnPlannedAction$destroy;
+
+@override int get hashCode => 'destroy'.hashCode;
+
+ }
+@immutable final class McnPlannedAction$Unknown extends McnPlannedAction {const McnPlannedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is McnPlannedAction && other.value == value;
+    other is McnPlannedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'McnPlannedAction($value)';
 
  }
 @immutable final class McnResourceDiff {const McnResourceDiff({required this.diff, required this.keysRequireReplace, required this.monthlyCostEstimateDiff, required this.plannedAction, required this.resource, });

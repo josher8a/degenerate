@@ -2,25 +2,24 @@
 // Source: #/components/schemas/AccountMembersListMembersStatus
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// A member's status in the account.
-@immutable final class AccountMembersListMembersStatus {const AccountMembersListMembersStatus._(this.value);
+sealed class AccountMembersListMembersStatus {const AccountMembersListMembersStatus();
 
 factory AccountMembersListMembersStatus.fromJson(String json) { return switch (json) {
   'accepted' => accepted,
   'pending' => pending,
   'rejected' => rejected,
-  _ => AccountMembersListMembersStatus._(json),
+  _ => AccountMembersListMembersStatus$Unknown(json),
 }; }
 
-static const AccountMembersListMembersStatus accepted = AccountMembersListMembersStatus._('accepted');
+static const AccountMembersListMembersStatus accepted = AccountMembersListMembersStatus$accepted._();
 
-static const AccountMembersListMembersStatus pending = AccountMembersListMembersStatus._('pending');
+static const AccountMembersListMembersStatus pending = AccountMembersListMembersStatus$pending._();
 
-static const AccountMembersListMembersStatus rejected = AccountMembersListMembersStatus._('rejected');
+static const AccountMembersListMembersStatus rejected = AccountMembersListMembersStatus$rejected._();
 
 static const List<AccountMembersListMembersStatus> values = [accepted, pending, rejected];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,12 +29,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is AccountMembersListMembersStatus$Unknown; } 
+@override String toString() => 'AccountMembersListMembersStatus($value)';
+
+ }
+@immutable final class AccountMembersListMembersStatus$accepted extends AccountMembersListMembersStatus {const AccountMembersListMembersStatus$accepted._();
+
+@override String get value => 'accepted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountMembersListMembersStatus$accepted;
+
+@override int get hashCode => 'accepted'.hashCode;
+
+ }
+@immutable final class AccountMembersListMembersStatus$pending extends AccountMembersListMembersStatus {const AccountMembersListMembersStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountMembersListMembersStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class AccountMembersListMembersStatus$rejected extends AccountMembersListMembersStatus {const AccountMembersListMembersStatus$rejected._();
+
+@override String get value => 'rejected';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountMembersListMembersStatus$rejected;
+
+@override int get hashCode => 'rejected'.hashCode;
+
+ }
+@immutable final class AccountMembersListMembersStatus$Unknown extends AccountMembersListMembersStatus {const AccountMembersListMembersStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is AccountMembersListMembersStatus && other.value == value;
+    other is AccountMembersListMembersStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'AccountMembersListMembersStatus($value)';
 
  }

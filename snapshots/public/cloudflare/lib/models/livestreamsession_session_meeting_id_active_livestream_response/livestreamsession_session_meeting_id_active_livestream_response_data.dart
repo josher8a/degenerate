@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/LivestreamsessionSessionMeetingIdActiveLivestreamResponse (inline: Data)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/livestreamsession_session_meeting_id_active_livestream_response/livestreamsession_session_meeting_id_active_livestream_response_data_paging.dart';@immutable final class ErrMessage {const ErrMessage._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/livestreamsession_session_meeting_id_active_livestream_response/livestreamsession_session_meeting_id_active_livestream_response_data_paging.dart';sealed class ErrMessage {const ErrMessage();
 
 factory ErrMessage.fromJson(String json) { return switch (json) {
   'LIVE' => live,
   'IDLE' => idle,
   'ERRORED' => errored,
   'INVOKED' => invoked,
-  _ => ErrMessage._(json),
+  _ => ErrMessage$Unknown(json),
 }; }
 
-static const ErrMessage live = ErrMessage._('LIVE');
+static const ErrMessage live = ErrMessage$live._();
 
-static const ErrMessage idle = ErrMessage._('IDLE');
+static const ErrMessage idle = ErrMessage$idle._();
 
-static const ErrMessage errored = ErrMessage._('ERRORED');
+static const ErrMessage errored = ErrMessage$errored._();
 
-static const ErrMessage invoked = ErrMessage._('INVOKED');
+static const ErrMessage invoked = ErrMessage$invoked._();
 
 static const List<ErrMessage> values = [live, idle, errored, invoked];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ErrMessage$Unknown; } 
+@override String toString() => 'ErrMessage($value)';
+
+ }
+@immutable final class ErrMessage$live extends ErrMessage {const ErrMessage$live._();
+
+@override String get value => 'LIVE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrMessage$live;
+
+@override int get hashCode => 'LIVE'.hashCode;
+
+ }
+@immutable final class ErrMessage$idle extends ErrMessage {const ErrMessage$idle._();
+
+@override String get value => 'IDLE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrMessage$idle;
+
+@override int get hashCode => 'IDLE'.hashCode;
+
+ }
+@immutable final class ErrMessage$errored extends ErrMessage {const ErrMessage$errored._();
+
+@override String get value => 'ERRORED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrMessage$errored;
+
+@override int get hashCode => 'ERRORED'.hashCode;
+
+ }
+@immutable final class ErrMessage$invoked extends ErrMessage {const ErrMessage$invoked._();
+
+@override String get value => 'INVOKED';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ErrMessage$invoked;
+
+@override int get hashCode => 'INVOKED'.hashCode;
+
+ }
+@immutable final class ErrMessage$Unknown extends ErrMessage {const ErrMessage$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ErrMessage && other.value == value;
+    other is ErrMessage$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ErrMessage($value)';
 
  }
 @immutable final class LivestreamsessionSessionMeetingIdActiveLivestreamResponseData {const LivestreamsessionSessionMeetingIdActiveLivestreamResponseData({this.createdAt, this.errMessage, this.id, this.ingestSeconds, this.invokedTime, this.livestreamId, this.paging, this.stoppedTime, this.updatedAt, this.viewerSeconds, });

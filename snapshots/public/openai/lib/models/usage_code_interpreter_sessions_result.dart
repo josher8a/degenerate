@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UsageCodeInterpreterSessionsResult
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class UsageCodeInterpreterSessionsResultObject {const UsageCodeInterpreterSessionsResultObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class UsageCodeInterpreterSessionsResultObject {const UsageCodeInterpreterSessionsResultObject();
 
 factory UsageCodeInterpreterSessionsResultObject.fromJson(String json) { return switch (json) {
   'organization.usage.code_interpreter_sessions.result' => organizationUsageCodeInterpreterSessionsResult,
-  _ => UsageCodeInterpreterSessionsResultObject._(json),
+  _ => UsageCodeInterpreterSessionsResultObject$Unknown(json),
 }; }
 
-static const UsageCodeInterpreterSessionsResultObject organizationUsageCodeInterpreterSessionsResult = UsageCodeInterpreterSessionsResultObject._('organization.usage.code_interpreter_sessions.result');
+static const UsageCodeInterpreterSessionsResultObject organizationUsageCodeInterpreterSessionsResult = UsageCodeInterpreterSessionsResultObject$organizationUsageCodeInterpreterSessionsResult._();
 
 static const List<UsageCodeInterpreterSessionsResultObject> values = [organizationUsageCodeInterpreterSessionsResult];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UsageCodeInterpreterSessionsResultObject$Unknown; } 
+@override String toString() => 'UsageCodeInterpreterSessionsResultObject($value)';
+
+ }
+@immutable final class UsageCodeInterpreterSessionsResultObject$organizationUsageCodeInterpreterSessionsResult extends UsageCodeInterpreterSessionsResultObject {const UsageCodeInterpreterSessionsResultObject$organizationUsageCodeInterpreterSessionsResult._();
+
+@override String get value => 'organization.usage.code_interpreter_sessions.result';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageCodeInterpreterSessionsResultObject$organizationUsageCodeInterpreterSessionsResult;
+
+@override int get hashCode => 'organization.usage.code_interpreter_sessions.result'.hashCode;
+
+ }
+@immutable final class UsageCodeInterpreterSessionsResultObject$Unknown extends UsageCodeInterpreterSessionsResultObject {const UsageCodeInterpreterSessionsResultObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UsageCodeInterpreterSessionsResultObject && other.value == value;
+    other is UsageCodeInterpreterSessionsResultObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UsageCodeInterpreterSessionsResultObject($value)';
 
  }
 /// The aggregated code interpreter sessions usage details of the specific time bucket.

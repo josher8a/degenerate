@@ -2,25 +2,24 @@
 // Source: #/components/schemas/ZeroTrustGatewayRuleSettings (inline: BisoAdminControls)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == "v2".
-@immutable final class Copy {const Copy._(this.value);
+sealed class Copy {const Copy();
 
 factory Copy.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'remote_only' => remoteOnly,
-  _ => Copy._(json),
+  _ => Copy$Unknown(json),
 }; }
 
-static const Copy enabled = Copy._('enabled');
+static const Copy enabled = Copy$enabled._();
 
-static const Copy disabled = Copy._('disabled');
+static const Copy disabled = Copy$disabled._();
 
-static const Copy remoteOnly = Copy._('remote_only');
+static const Copy remoteOnly = Copy$remoteOnly._();
 
 static const List<Copy> values = [enabled, disabled, remoteOnly];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,35 +29,66 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Copy && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Copy$Unknown; } 
 @override String toString() => 'Copy($value)';
 
  }
+@immutable final class Copy$enabled extends Copy {const Copy$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Copy$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class Copy$disabled extends Copy {const Copy$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Copy$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class Copy$remoteOnly extends Copy {const Copy$remoteOnly._();
+
+@override String get value => 'remote_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Copy$remoteOnly;
+
+@override int get hashCode => 'remote_only'.hashCode;
+
+ }
+@immutable final class Copy$Unknown extends Copy {const Copy$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Copy$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Configure download behavior. When set to remote_only, users can view downloads but cannot save them. Applies only when version == "v2".
-@immutable final class Download {const Download._(this.value);
+sealed class Download {const Download();
 
 factory Download.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'remote_only' => remoteOnly,
-  _ => Download._(json),
+  _ => Download$Unknown(json),
 }; }
 
-static const Download enabled = Download._('enabled');
+static const Download enabled = Download$enabled._();
 
-static const Download disabled = Download._('disabled');
+static const Download disabled = Download$disabled._();
 
-static const Download remoteOnly = Download._('remote_only');
+static const Download remoteOnly = Download$remoteOnly._();
 
 static const List<Download> values = [enabled, disabled, remoteOnly];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -68,32 +98,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Download && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Download$Unknown; } 
 @override String toString() => 'Download($value)';
 
  }
+@immutable final class Download$enabled extends Download {const Download$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Download$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class Download$disabled extends Download {const Download$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Download$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class Download$remoteOnly extends Download {const Download$remoteOnly._();
+
+@override String get value => 'remote_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Download$remoteOnly;
+
+@override int get hashCode => 'remote_only'.hashCode;
+
+ }
+@immutable final class Download$Unknown extends Download {const Download$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Download$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Configure keyboard usage behavior. If this field is absent, keyboard usage remains enabled. Applies only when version == "v2".
-@immutable final class Keyboard {const Keyboard._(this.value);
+sealed class Keyboard {const Keyboard();
 
 factory Keyboard.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
-  _ => Keyboard._(json),
+  _ => Keyboard$Unknown(json),
 }; }
 
-static const Keyboard enabled = Keyboard._('enabled');
+static const Keyboard enabled = Keyboard$enabled._();
 
-static const Keyboard disabled = Keyboard._('disabled');
+static const Keyboard disabled = Keyboard$disabled._();
 
 static const List<Keyboard> values = [enabled, disabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -102,35 +163,57 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Keyboard && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Keyboard$Unknown; } 
 @override String toString() => 'Keyboard($value)';
 
  }
+@immutable final class Keyboard$enabled extends Keyboard {const Keyboard$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Keyboard$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class Keyboard$disabled extends Keyboard {const Keyboard$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Keyboard$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class Keyboard$Unknown extends Keyboard {const Keyboard$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Keyboard$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Configure paste behavior. If set to remote_only, users cannot paste content from the local clipboard into isolated pages. If this field is absent, pasting remains enabled. Applies only when version == "v2".
-@immutable final class Paste {const Paste._(this.value);
+sealed class Paste {const Paste();
 
 factory Paste.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
   'remote_only' => remoteOnly,
-  _ => Paste._(json),
+  _ => Paste$Unknown(json),
 }; }
 
-static const Paste enabled = Paste._('enabled');
+static const Paste enabled = Paste$enabled._();
 
-static const Paste disabled = Paste._('disabled');
+static const Paste disabled = Paste$disabled._();
 
-static const Paste remoteOnly = Paste._('remote_only');
+static const Paste remoteOnly = Paste$remoteOnly._();
 
 static const List<Paste> values = [enabled, disabled, remoteOnly];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -140,32 +223,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Paste && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Paste$Unknown; } 
 @override String toString() => 'Paste($value)';
 
  }
+@immutable final class Paste$enabled extends Paste {const Paste$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Paste$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class Paste$disabled extends Paste {const Paste$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Paste$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class Paste$remoteOnly extends Paste {const Paste$remoteOnly._();
+
+@override String get value => 'remote_only';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Paste$remoteOnly;
+
+@override int get hashCode => 'remote_only'.hashCode;
+
+ }
+@immutable final class Paste$Unknown extends Paste {const Paste$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Paste$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Configure print behavior. Default, Printing is enabled. Applies only when version == "v2".
-@immutable final class Printing {const Printing._(this.value);
+sealed class Printing {const Printing();
 
 factory Printing.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
-  _ => Printing._(json),
+  _ => Printing$Unknown(json),
 }; }
 
-static const Printing enabled = Printing._('enabled');
+static const Printing enabled = Printing$enabled._();
 
-static const Printing disabled = Printing._('disabled');
+static const Printing disabled = Printing$disabled._();
 
 static const List<Printing> values = [enabled, disabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -174,32 +288,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Printing && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Printing$Unknown; } 
 @override String toString() => 'Printing($value)';
 
  }
+@immutable final class Printing$enabled extends Printing {const Printing$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Printing$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class Printing$disabled extends Printing {const Printing$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Printing$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class Printing$Unknown extends Printing {const Printing$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Printing$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Configure upload behavior. If this field is absent, uploading remains enabled. Applies only when version == "v2".
-@immutable final class Upload {const Upload._(this.value);
+sealed class Upload {const Upload();
 
 factory Upload.fromJson(String json) { return switch (json) {
   'enabled' => enabled,
   'disabled' => disabled,
-  _ => Upload._(json),
+  _ => Upload$Unknown(json),
 }; }
 
-static const Upload enabled = Upload._('enabled');
+static const Upload enabled = Upload$enabled._();
 
-static const Upload disabled = Upload._('disabled');
+static const Upload disabled = Upload$disabled._();
 
 static const List<Upload> values = [enabled, disabled];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -208,32 +344,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is Upload && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is Upload$Unknown; } 
 @override String toString() => 'Upload($value)';
 
  }
+@immutable final class Upload$enabled extends Upload {const Upload$enabled._();
+
+@override String get value => 'enabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Upload$enabled;
+
+@override int get hashCode => 'enabled'.hashCode;
+
+ }
+@immutable final class Upload$disabled extends Upload {const Upload$disabled._();
+
+@override String get value => 'disabled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is Upload$disabled;
+
+@override int get hashCode => 'disabled'.hashCode;
+
+ }
+@immutable final class Upload$Unknown extends Upload {const Upload$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is Upload$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Indicate which version of the browser isolation controls should apply.
-@immutable final class BisoAdminControlsVersion {const BisoAdminControlsVersion._(this.value);
+sealed class BisoAdminControlsVersion {const BisoAdminControlsVersion();
 
 factory BisoAdminControlsVersion.fromJson(String json) { return switch (json) {
   'v1' => v1,
   'v2' => v2,
-  _ => BisoAdminControlsVersion._(json),
+  _ => BisoAdminControlsVersion$Unknown(json),
 }; }
 
-static const BisoAdminControlsVersion v1 = BisoAdminControlsVersion._('v1');
+static const BisoAdminControlsVersion v1 = BisoAdminControlsVersion$v1._();
 
-static const BisoAdminControlsVersion v2 = BisoAdminControlsVersion._('v2');
+static const BisoAdminControlsVersion v2 = BisoAdminControlsVersion$v2._();
 
 static const List<BisoAdminControlsVersion> values = [v1, v2];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -242,13 +400,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is BisoAdminControlsVersion$Unknown; } 
+@override String toString() => 'BisoAdminControlsVersion($value)';
+
+ }
+@immutable final class BisoAdminControlsVersion$v1 extends BisoAdminControlsVersion {const BisoAdminControlsVersion$v1._();
+
+@override String get value => 'v1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BisoAdminControlsVersion$v1;
+
+@override int get hashCode => 'v1'.hashCode;
+
+ }
+@immutable final class BisoAdminControlsVersion$v2 extends BisoAdminControlsVersion {const BisoAdminControlsVersion$v2._();
+
+@override String get value => 'v2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is BisoAdminControlsVersion$v2;
+
+@override int get hashCode => 'v2'.hashCode;
+
+ }
+@immutable final class BisoAdminControlsVersion$Unknown extends BisoAdminControlsVersion {const BisoAdminControlsVersion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is BisoAdminControlsVersion && other.value == value;
+    other is BisoAdminControlsVersion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'BisoAdminControlsVersion($value)';
 
  }
 /// Configure browser isolation behavior. Settable only for `http` rules with the action set to `isolate`.

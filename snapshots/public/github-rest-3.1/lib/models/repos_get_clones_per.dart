@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ReposGetClonesPer
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ReposGetClonesPer {const ReposGetClonesPer._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ReposGetClonesPer {const ReposGetClonesPer();
 
 factory ReposGetClonesPer.fromJson(String json) { return switch (json) {
   'day' => day,
   'week' => week,
-  _ => ReposGetClonesPer._(json),
+  _ => ReposGetClonesPer$Unknown(json),
 }; }
 
-static const ReposGetClonesPer day = ReposGetClonesPer._('day');
+static const ReposGetClonesPer day = ReposGetClonesPer$day._();
 
-static const ReposGetClonesPer week = ReposGetClonesPer._('week');
+static const ReposGetClonesPer week = ReposGetClonesPer$week._();
 
 static const List<ReposGetClonesPer> values = [day, week];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ReposGetClonesPer$Unknown; } 
+@override String toString() => 'ReposGetClonesPer($value)';
+
+ }
+@immutable final class ReposGetClonesPer$day extends ReposGetClonesPer {const ReposGetClonesPer$day._();
+
+@override String get value => 'day';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposGetClonesPer$day;
+
+@override int get hashCode => 'day'.hashCode;
+
+ }
+@immutable final class ReposGetClonesPer$week extends ReposGetClonesPer {const ReposGetClonesPer$week._();
+
+@override String get value => 'week';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposGetClonesPer$week;
+
+@override int get hashCode => 'week'.hashCode;
+
+ }
+@immutable final class ReposGetClonesPer$Unknown extends ReposGetClonesPer {const ReposGetClonesPer$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ReposGetClonesPer && other.value == value;
+    other is ReposGetClonesPer$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ReposGetClonesPer($value)';
 
  }

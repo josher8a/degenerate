@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RoleDeletedResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Always `role.deleted`.
-@immutable final class RoleDeletedResourceObject {const RoleDeletedResourceObject._(this.value);
+sealed class RoleDeletedResourceObject {const RoleDeletedResourceObject();
 
 factory RoleDeletedResourceObject.fromJson(String json) { return switch (json) {
   'role.deleted' => roleDeleted,
-  _ => RoleDeletedResourceObject._(json),
+  _ => RoleDeletedResourceObject$Unknown(json),
 }; }
 
-static const RoleDeletedResourceObject roleDeleted = RoleDeletedResourceObject._('role.deleted');
+static const RoleDeletedResourceObject roleDeleted = RoleDeletedResourceObject$roleDeleted._();
 
 static const List<RoleDeletedResourceObject> values = [roleDeleted];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RoleDeletedResourceObject$Unknown; } 
+@override String toString() => 'RoleDeletedResourceObject($value)';
+
+ }
+@immutable final class RoleDeletedResourceObject$roleDeleted extends RoleDeletedResourceObject {const RoleDeletedResourceObject$roleDeleted._();
+
+@override String get value => 'role.deleted';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RoleDeletedResourceObject$roleDeleted;
+
+@override int get hashCode => 'role.deleted'.hashCode;
+
+ }
+@immutable final class RoleDeletedResourceObject$Unknown extends RoleDeletedResourceObject {const RoleDeletedResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RoleDeletedResourceObject && other.value == value;
+    other is RoleDeletedResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RoleDeletedResourceObject($value)';
 
  }
 /// Confirmation payload returned after deleting a role.

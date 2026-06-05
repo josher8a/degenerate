@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CheckRunWithSimpleCheckSuite
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run/output.dart';import 'package:pub_github_rest_3_1/models/check_run_with_simple_check_suite/check_run_with_simple_check_suite_status.dart';import 'package:pub_github_rest_3_1/models/deployment_simple.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';import 'package:pub_github_rest_3_1/models/simple_check_suite.dart';@immutable final class CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/check_run/output.dart';import 'package:pub_github_rest_3_1/models/check_run_with_simple_check_suite/check_run_with_simple_check_suite_status.dart';import 'package:pub_github_rest_3_1/models/deployment_simple.dart';import 'package:pub_github_rest_3_1/models/integration.dart';import 'package:pub_github_rest_3_1/models/pull_request_minimal.dart';import 'package:pub_github_rest_3_1/models/simple_check_suite.dart';sealed class CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion();
 
 factory CheckRunWithSimpleCheckSuiteConclusion.fromJson(String json) { return switch (json) {
   'waiting' => waiting,
@@ -16,37 +16,36 @@ factory CheckRunWithSimpleCheckSuiteConclusion.fromJson(String json) { return sw
   'timed_out' => timedOut,
   'action_required' => actionRequired,
   'null' => $null,
-  _ => CheckRunWithSimpleCheckSuiteConclusion._(json),
+  _ => CheckRunWithSimpleCheckSuiteConclusion$Unknown(json),
 }; }
 
-static const CheckRunWithSimpleCheckSuiteConclusion waiting = CheckRunWithSimpleCheckSuiteConclusion._('waiting');
+static const CheckRunWithSimpleCheckSuiteConclusion waiting = CheckRunWithSimpleCheckSuiteConclusion$waiting._();
 
-static const CheckRunWithSimpleCheckSuiteConclusion pending = CheckRunWithSimpleCheckSuiteConclusion._('pending');
+static const CheckRunWithSimpleCheckSuiteConclusion pending = CheckRunWithSimpleCheckSuiteConclusion$pending._();
 
-static const CheckRunWithSimpleCheckSuiteConclusion startupFailure = CheckRunWithSimpleCheckSuiteConclusion._('startup_failure');
+static const CheckRunWithSimpleCheckSuiteConclusion startupFailure = CheckRunWithSimpleCheckSuiteConclusion$startupFailure._();
 
-static const CheckRunWithSimpleCheckSuiteConclusion stale = CheckRunWithSimpleCheckSuiteConclusion._('stale');
+static const CheckRunWithSimpleCheckSuiteConclusion stale = CheckRunWithSimpleCheckSuiteConclusion$stale._();
 
-static const CheckRunWithSimpleCheckSuiteConclusion success = CheckRunWithSimpleCheckSuiteConclusion._('success');
+static const CheckRunWithSimpleCheckSuiteConclusion success = CheckRunWithSimpleCheckSuiteConclusion$success._();
 
-static const CheckRunWithSimpleCheckSuiteConclusion failure = CheckRunWithSimpleCheckSuiteConclusion._('failure');
+static const CheckRunWithSimpleCheckSuiteConclusion failure = CheckRunWithSimpleCheckSuiteConclusion$failure._();
 
-static const CheckRunWithSimpleCheckSuiteConclusion neutral = CheckRunWithSimpleCheckSuiteConclusion._('neutral');
+static const CheckRunWithSimpleCheckSuiteConclusion neutral = CheckRunWithSimpleCheckSuiteConclusion$neutral._();
 
-static const CheckRunWithSimpleCheckSuiteConclusion cancelled = CheckRunWithSimpleCheckSuiteConclusion._('cancelled');
+static const CheckRunWithSimpleCheckSuiteConclusion cancelled = CheckRunWithSimpleCheckSuiteConclusion$cancelled._();
 
-static const CheckRunWithSimpleCheckSuiteConclusion skipped = CheckRunWithSimpleCheckSuiteConclusion._('skipped');
+static const CheckRunWithSimpleCheckSuiteConclusion skipped = CheckRunWithSimpleCheckSuiteConclusion$skipped._();
 
-static const CheckRunWithSimpleCheckSuiteConclusion timedOut = CheckRunWithSimpleCheckSuiteConclusion._('timed_out');
+static const CheckRunWithSimpleCheckSuiteConclusion timedOut = CheckRunWithSimpleCheckSuiteConclusion$timedOut._();
 
-static const CheckRunWithSimpleCheckSuiteConclusion actionRequired = CheckRunWithSimpleCheckSuiteConclusion._('action_required');
+static const CheckRunWithSimpleCheckSuiteConclusion actionRequired = CheckRunWithSimpleCheckSuiteConclusion$actionRequired._();
 
-static const CheckRunWithSimpleCheckSuiteConclusion $null = CheckRunWithSimpleCheckSuiteConclusion._('null');
+static const CheckRunWithSimpleCheckSuiteConclusion $null = CheckRunWithSimpleCheckSuiteConclusion$$null._();
 
 static const List<CheckRunWithSimpleCheckSuiteConclusion> values = [waiting, pending, startupFailure, stale, success, failure, neutral, cancelled, skipped, timedOut, actionRequired, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -65,13 +64,126 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CheckRunWithSimpleCheckSuiteConclusion$Unknown; } 
+@override String toString() => 'CheckRunWithSimpleCheckSuiteConclusion($value)';
+
+ }
+@immutable final class CheckRunWithSimpleCheckSuiteConclusion$waiting extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$waiting._();
+
+@override String get value => 'waiting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckRunWithSimpleCheckSuiteConclusion$waiting;
+
+@override int get hashCode => 'waiting'.hashCode;
+
+ }
+@immutable final class CheckRunWithSimpleCheckSuiteConclusion$pending extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckRunWithSimpleCheckSuiteConclusion$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+ }
+@immutable final class CheckRunWithSimpleCheckSuiteConclusion$startupFailure extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$startupFailure._();
+
+@override String get value => 'startup_failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckRunWithSimpleCheckSuiteConclusion$startupFailure;
+
+@override int get hashCode => 'startup_failure'.hashCode;
+
+ }
+@immutable final class CheckRunWithSimpleCheckSuiteConclusion$stale extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$stale._();
+
+@override String get value => 'stale';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckRunWithSimpleCheckSuiteConclusion$stale;
+
+@override int get hashCode => 'stale'.hashCode;
+
+ }
+@immutable final class CheckRunWithSimpleCheckSuiteConclusion$success extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$success._();
+
+@override String get value => 'success';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckRunWithSimpleCheckSuiteConclusion$success;
+
+@override int get hashCode => 'success'.hashCode;
+
+ }
+@immutable final class CheckRunWithSimpleCheckSuiteConclusion$failure extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$failure._();
+
+@override String get value => 'failure';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckRunWithSimpleCheckSuiteConclusion$failure;
+
+@override int get hashCode => 'failure'.hashCode;
+
+ }
+@immutable final class CheckRunWithSimpleCheckSuiteConclusion$neutral extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$neutral._();
+
+@override String get value => 'neutral';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckRunWithSimpleCheckSuiteConclusion$neutral;
+
+@override int get hashCode => 'neutral'.hashCode;
+
+ }
+@immutable final class CheckRunWithSimpleCheckSuiteConclusion$cancelled extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckRunWithSimpleCheckSuiteConclusion$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class CheckRunWithSimpleCheckSuiteConclusion$skipped extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$skipped._();
+
+@override String get value => 'skipped';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckRunWithSimpleCheckSuiteConclusion$skipped;
+
+@override int get hashCode => 'skipped'.hashCode;
+
+ }
+@immutable final class CheckRunWithSimpleCheckSuiteConclusion$timedOut extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$timedOut._();
+
+@override String get value => 'timed_out';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckRunWithSimpleCheckSuiteConclusion$timedOut;
+
+@override int get hashCode => 'timed_out'.hashCode;
+
+ }
+@immutable final class CheckRunWithSimpleCheckSuiteConclusion$actionRequired extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$actionRequired._();
+
+@override String get value => 'action_required';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckRunWithSimpleCheckSuiteConclusion$actionRequired;
+
+@override int get hashCode => 'action_required'.hashCode;
+
+ }
+@immutable final class CheckRunWithSimpleCheckSuiteConclusion$$null extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CheckRunWithSimpleCheckSuiteConclusion$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class CheckRunWithSimpleCheckSuiteConclusion$Unknown extends CheckRunWithSimpleCheckSuiteConclusion {const CheckRunWithSimpleCheckSuiteConclusion$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CheckRunWithSimpleCheckSuiteConclusion && other.value == value;
+    other is CheckRunWithSimpleCheckSuiteConclusion$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CheckRunWithSimpleCheckSuiteConclusion($value)';
 
  }
 /// A check performed on the code of a given code change

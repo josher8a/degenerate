@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PostCommandsRequest (inline: Commands)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/post_commands_request/command_args.dart';/// Type of command to execute on the device
-@immutable final class CommandType {const CommandType._(this.value);
+sealed class CommandType {const CommandType();
 
 factory CommandType.fromJson(String json) { return switch (json) {
   'pcap' => pcap,
   'warp-diag' => warpDiag,
-  _ => CommandType._(json),
+  _ => CommandType$Unknown(json),
 }; }
 
-static const CommandType pcap = CommandType._('pcap');
+static const CommandType pcap = CommandType$pcap._();
 
-static const CommandType warpDiag = CommandType._('warp-diag');
+static const CommandType warpDiag = CommandType$warpDiag._();
 
 static const List<CommandType> values = [pcap, warpDiag];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,13 +25,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CommandType$Unknown; } 
+@override String toString() => 'CommandType($value)';
+
+ }
+@immutable final class CommandType$pcap extends CommandType {const CommandType$pcap._();
+
+@override String get value => 'pcap';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CommandType$pcap;
+
+@override int get hashCode => 'pcap'.hashCode;
+
+ }
+@immutable final class CommandType$warpDiag extends CommandType {const CommandType$warpDiag._();
+
+@override String get value => 'warp-diag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CommandType$warpDiag;
+
+@override int get hashCode => 'warp-diag'.hashCode;
+
+ }
+@immutable final class CommandType$Unknown extends CommandType {const CommandType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CommandType && other.value == value;
+    other is CommandType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CommandType($value)';
 
  }
 @immutable final class PostCommandsRequestCommands {const PostCommandsRequestCommands({required this.commandType, required this.deviceId, required this.userEmail, this.commandArgs, this.registrationId, });

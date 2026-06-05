@@ -2,19 +2,18 @@
 // Source: #/components/schemas/EvalRun
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_eval_completions_run_data_source.dart';import 'package:pub_openai/models/create_eval_jsonl_run_data_source.dart';import 'package:pub_openai/models/create_eval_responses_run_data_source.dart';import 'package:pub_openai/models/create_eval_run_request/data_source.dart';import 'package:pub_openai/models/error_model2.dart';import 'package:pub_openai/models/eval_run/per_model_usage.dart';import 'package:pub_openai/models/eval_run/per_testing_criteria_results.dart';import 'package:pub_openai/models/eval_run/result_counts.dart';/// The type of the object. Always "eval.run".
-@immutable final class EvalRunObject {const EvalRunObject._(this.value);
+sealed class EvalRunObject {const EvalRunObject();
 
 factory EvalRunObject.fromJson(String json) { return switch (json) {
   'eval.run' => evalRun,
-  _ => EvalRunObject._(json),
+  _ => EvalRunObject$Unknown(json),
 }; }
 
-static const EvalRunObject evalRun = EvalRunObject._('eval.run');
+static const EvalRunObject evalRun = EvalRunObject$evalRun._();
 
 static const List<EvalRunObject> values = [evalRun];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is EvalRunObject$Unknown; } 
+@override String toString() => 'EvalRunObject($value)';
+
+ }
+@immutable final class EvalRunObject$evalRun extends EvalRunObject {const EvalRunObject$evalRun._();
+
+@override String get value => 'eval.run';
+
+@override bool operator ==(Object other) => identical(this, other) || other is EvalRunObject$evalRun;
+
+@override int get hashCode => 'eval.run'.hashCode;
+
+ }
+@immutable final class EvalRunObject$Unknown extends EvalRunObject {const EvalRunObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is EvalRunObject && other.value == value;
+    other is EvalRunObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'EvalRunObject($value)';
 
  }
 /// A schema representing an evaluation run.

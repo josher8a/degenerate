@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UsageResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/usage_time_bucket.dart';@immutable final class UsageResponseObject {const UsageResponseObject._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/usage_time_bucket.dart';sealed class UsageResponseObject {const UsageResponseObject();
 
 factory UsageResponseObject.fromJson(String json) { return switch (json) {
   'page' => page,
-  _ => UsageResponseObject._(json),
+  _ => UsageResponseObject$Unknown(json),
 }; }
 
-static const UsageResponseObject page = UsageResponseObject._('page');
+static const UsageResponseObject page = UsageResponseObject$page._();
 
 static const List<UsageResponseObject> values = [page];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UsageResponseObject$Unknown; } 
+@override String toString() => 'UsageResponseObject($value)';
+
+ }
+@immutable final class UsageResponseObject$page extends UsageResponseObject {const UsageResponseObject$page._();
+
+@override String get value => 'page';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsageResponseObject$page;
+
+@override int get hashCode => 'page'.hashCode;
+
+ }
+@immutable final class UsageResponseObject$Unknown extends UsageResponseObject {const UsageResponseObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UsageResponseObject && other.value == value;
+    other is UsageResponseObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UsageResponseObject($value)';
 
  }
 @immutable final class UsageResponse {const UsageResponse({required this.object, required this.data, required this.hasMore, required this.nextPage, });

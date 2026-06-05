@@ -2,19 +2,18 @@
 // Source: #/components/schemas/VoiceResource
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `audio.voice`.
-@immutable final class VoiceResourceObject {const VoiceResourceObject._(this.value);
+sealed class VoiceResourceObject {const VoiceResourceObject();
 
 factory VoiceResourceObject.fromJson(String json) { return switch (json) {
   'audio.voice' => audioVoice,
-  _ => VoiceResourceObject._(json),
+  _ => VoiceResourceObject$Unknown(json),
 }; }
 
-static const VoiceResourceObject audioVoice = VoiceResourceObject._('audio.voice');
+static const VoiceResourceObject audioVoice = VoiceResourceObject$audioVoice._();
 
 static const List<VoiceResourceObject> values = [audioVoice];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is VoiceResourceObject$Unknown; } 
+@override String toString() => 'VoiceResourceObject($value)';
+
+ }
+@immutable final class VoiceResourceObject$audioVoice extends VoiceResourceObject {const VoiceResourceObject$audioVoice._();
+
+@override String get value => 'audio.voice';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VoiceResourceObject$audioVoice;
+
+@override int get hashCode => 'audio.voice'.hashCode;
+
+ }
+@immutable final class VoiceResourceObject$Unknown extends VoiceResourceObject {const VoiceResourceObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is VoiceResourceObject && other.value == value;
+    other is VoiceResourceObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'VoiceResourceObject($value)';
 
  }
 /// A custom voice that can be used for audio output.

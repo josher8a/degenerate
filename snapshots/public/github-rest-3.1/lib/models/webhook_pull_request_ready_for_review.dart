@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookPullRequestReadyForReview
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/pull_request_webhook.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';@immutable final class WebhookPullRequestReadyForReviewAction {const WebhookPullRequestReadyForReviewAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/pull_request_webhook.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_number.dart';sealed class WebhookPullRequestReadyForReviewAction {const WebhookPullRequestReadyForReviewAction();
 
 factory WebhookPullRequestReadyForReviewAction.fromJson(String json) { return switch (json) {
   'ready_for_review' => readyForReview,
-  _ => WebhookPullRequestReadyForReviewAction._(json),
+  _ => WebhookPullRequestReadyForReviewAction$Unknown(json),
 }; }
 
-static const WebhookPullRequestReadyForReviewAction readyForReview = WebhookPullRequestReadyForReviewAction._('ready_for_review');
+static const WebhookPullRequestReadyForReviewAction readyForReview = WebhookPullRequestReadyForReviewAction$readyForReview._();
 
 static const List<WebhookPullRequestReadyForReviewAction> values = [readyForReview];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookPullRequestReadyForReviewAction$Unknown; } 
+@override String toString() => 'WebhookPullRequestReadyForReviewAction($value)';
+
+ }
+@immutable final class WebhookPullRequestReadyForReviewAction$readyForReview extends WebhookPullRequestReadyForReviewAction {const WebhookPullRequestReadyForReviewAction$readyForReview._();
+
+@override String get value => 'ready_for_review';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookPullRequestReadyForReviewAction$readyForReview;
+
+@override int get hashCode => 'ready_for_review'.hashCode;
+
+ }
+@immutable final class WebhookPullRequestReadyForReviewAction$Unknown extends WebhookPullRequestReadyForReviewAction {const WebhookPullRequestReadyForReviewAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookPullRequestReadyForReviewAction && other.value == value;
+    other is WebhookPullRequestReadyForReviewAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookPullRequestReadyForReviewAction($value)';
 
  }
 @immutable final class WebhookPullRequestReadyForReview {const WebhookPullRequestReadyForReview({required this.action, required this.number, required this.pullRequest, required this.repository, required this.sender, this.enterprise, this.installation, this.organization, });

@@ -2,25 +2,24 @@
 // Source: #/components/schemas/WebhookCodeScanningAlertCreated (inline: Alert)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_alert_dismissed_comment.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_appeared_in_branch/most_recent_instance.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_closed_by_user/webhook_code_scanning_alert_closed_by_user_alert_rule.dart';import 'package:pub_github_rest_3_1/models/webhook_code_scanning_alert_created/webhook_code_scanning_alert_created_alert_tool.dart';/// State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed.
-@immutable final class WebhookCodeScanningAlertCreatedAlertState {const WebhookCodeScanningAlertCreatedAlertState._(this.value);
+sealed class WebhookCodeScanningAlertCreatedAlertState {const WebhookCodeScanningAlertCreatedAlertState();
 
 factory WebhookCodeScanningAlertCreatedAlertState.fromJson(String json) { return switch (json) {
   'open' => open,
   'dismissed' => dismissed,
   'null' => $null,
-  _ => WebhookCodeScanningAlertCreatedAlertState._(json),
+  _ => WebhookCodeScanningAlertCreatedAlertState$Unknown(json),
 }; }
 
-static const WebhookCodeScanningAlertCreatedAlertState open = WebhookCodeScanningAlertCreatedAlertState._('open');
+static const WebhookCodeScanningAlertCreatedAlertState open = WebhookCodeScanningAlertCreatedAlertState$open._();
 
-static const WebhookCodeScanningAlertCreatedAlertState dismissed = WebhookCodeScanningAlertCreatedAlertState._('dismissed');
+static const WebhookCodeScanningAlertCreatedAlertState dismissed = WebhookCodeScanningAlertCreatedAlertState$dismissed._();
 
-static const WebhookCodeScanningAlertCreatedAlertState $null = WebhookCodeScanningAlertCreatedAlertState._('null');
+static const WebhookCodeScanningAlertCreatedAlertState $null = WebhookCodeScanningAlertCreatedAlertState$$null._();
 
 static const List<WebhookCodeScanningAlertCreatedAlertState> values = [open, dismissed, $null];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookCodeScanningAlertCreatedAlertState$Unknown; } 
+@override String toString() => 'WebhookCodeScanningAlertCreatedAlertState($value)';
+
+ }
+@immutable final class WebhookCodeScanningAlertCreatedAlertState$open extends WebhookCodeScanningAlertCreatedAlertState {const WebhookCodeScanningAlertCreatedAlertState$open._();
+
+@override String get value => 'open';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCodeScanningAlertCreatedAlertState$open;
+
+@override int get hashCode => 'open'.hashCode;
+
+ }
+@immutable final class WebhookCodeScanningAlertCreatedAlertState$dismissed extends WebhookCodeScanningAlertCreatedAlertState {const WebhookCodeScanningAlertCreatedAlertState$dismissed._();
+
+@override String get value => 'dismissed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCodeScanningAlertCreatedAlertState$dismissed;
+
+@override int get hashCode => 'dismissed'.hashCode;
+
+ }
+@immutable final class WebhookCodeScanningAlertCreatedAlertState$$null extends WebhookCodeScanningAlertCreatedAlertState {const WebhookCodeScanningAlertCreatedAlertState$$null._();
+
+@override String get value => 'null';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookCodeScanningAlertCreatedAlertState$$null;
+
+@override int get hashCode => 'null'.hashCode;
+
+ }
+@immutable final class WebhookCodeScanningAlertCreatedAlertState$Unknown extends WebhookCodeScanningAlertCreatedAlertState {const WebhookCodeScanningAlertCreatedAlertState$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookCodeScanningAlertCreatedAlertState && other.value == value;
+    other is WebhookCodeScanningAlertCreatedAlertState$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookCodeScanningAlertCreatedAlertState($value)';
 
  }
 /// The code scanning alert involved in the event.

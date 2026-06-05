@@ -2,19 +2,18 @@
 // Source: #/components/schemas/MqEventSourceVectorize
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Type of source
-@immutable final class MqEventSourceVectorizeType {const MqEventSourceVectorizeType._(this.value);
+sealed class MqEventSourceVectorizeType {const MqEventSourceVectorizeType();
 
 factory MqEventSourceVectorizeType.fromJson(String json) { return switch (json) {
   'vectorize' => vectorize,
-  _ => MqEventSourceVectorizeType._(json),
+  _ => MqEventSourceVectorizeType$Unknown(json),
 }; }
 
-static const MqEventSourceVectorizeType vectorize = MqEventSourceVectorizeType._('vectorize');
+static const MqEventSourceVectorizeType vectorize = MqEventSourceVectorizeType$vectorize._();
 
 static const List<MqEventSourceVectorizeType> values = [vectorize];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is MqEventSourceVectorizeType$Unknown; } 
+@override String toString() => 'MqEventSourceVectorizeType($value)';
+
+ }
+@immutable final class MqEventSourceVectorizeType$vectorize extends MqEventSourceVectorizeType {const MqEventSourceVectorizeType$vectorize._();
+
+@override String get value => 'vectorize';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqEventSourceVectorizeType$vectorize;
+
+@override int get hashCode => 'vectorize'.hashCode;
+
+ }
+@immutable final class MqEventSourceVectorizeType$Unknown extends MqEventSourceVectorizeType {const MqEventSourceVectorizeType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is MqEventSourceVectorizeType && other.value == value;
+    other is MqEventSourceVectorizeType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'MqEventSourceVectorizeType($value)';
 
  }
 @immutable final class MqEventSourceVectorize {const MqEventSourceVectorize({this.type});

@@ -5,19 +5,18 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';/// Turn off
 /// [Rocket Loader](https://developers.cloudflare.com/speed/optimization/content/rocket-loader/), and
 /// [Polish](https://developers.cloudflare.com/images/polish/).
 /// 
-@immutable final class ZonesDisablePerformanceId {const ZonesDisablePerformanceId._(this.value);
+sealed class ZonesDisablePerformanceId {const ZonesDisablePerformanceId();
 
 factory ZonesDisablePerformanceId.fromJson(String json) { return switch (json) {
   'disable_performance' => disablePerformance,
-  _ => ZonesDisablePerformanceId._(json),
+  _ => ZonesDisablePerformanceId$Unknown(json),
 }; }
 
-static const ZonesDisablePerformanceId disablePerformance = ZonesDisablePerformanceId._('disable_performance');
+static const ZonesDisablePerformanceId disablePerformance = ZonesDisablePerformanceId$disablePerformance._();
 
 static const List<ZonesDisablePerformanceId> values = [disablePerformance];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,13 +24,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesDisablePerformanceId$Unknown; } 
+@override String toString() => 'ZonesDisablePerformanceId($value)';
+
+ }
+@immutable final class ZonesDisablePerformanceId$disablePerformance extends ZonesDisablePerformanceId {const ZonesDisablePerformanceId$disablePerformance._();
+
+@override String get value => 'disable_performance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesDisablePerformanceId$disablePerformance;
+
+@override int get hashCode => 'disable_performance'.hashCode;
+
+ }
+@immutable final class ZonesDisablePerformanceId$Unknown extends ZonesDisablePerformanceId {const ZonesDisablePerformanceId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesDisablePerformanceId && other.value == value;
+    other is ZonesDisablePerformanceId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesDisablePerformanceId($value)';
 
  }
 @immutable final class ZonesDisablePerformance {const ZonesDisablePerformance({this.id});

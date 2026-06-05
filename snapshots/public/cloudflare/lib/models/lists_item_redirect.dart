@@ -1,28 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ListsItemRedirect
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode();
 
 factory ListsItemRedirectStatusCode.fromJson(int json) { return switch (json) {
   301 => $301,
   302 => $302,
   307 => $307,
   308 => $308,
-  _ => ListsItemRedirectStatusCode._(json),
+  _ => ListsItemRedirectStatusCode$Unknown(json),
 }; }
 
-static const ListsItemRedirectStatusCode $301 = ListsItemRedirectStatusCode._(301);
+static const ListsItemRedirectStatusCode $301 = ListsItemRedirectStatusCode$$301._();
 
-static const ListsItemRedirectStatusCode $302 = ListsItemRedirectStatusCode._(302);
+static const ListsItemRedirectStatusCode $302 = ListsItemRedirectStatusCode$$302._();
 
-static const ListsItemRedirectStatusCode $307 = ListsItemRedirectStatusCode._(307);
+static const ListsItemRedirectStatusCode $307 = ListsItemRedirectStatusCode$$307._();
 
-static const ListsItemRedirectStatusCode $308 = ListsItemRedirectStatusCode._(308);
+static const ListsItemRedirectStatusCode $308 = ListsItemRedirectStatusCode$$308._();
 
 static const List<ListsItemRedirectStatusCode> values = [$301, $302, $307, $308];
 
-final int value;
-
+int get value;
 int toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -33,13 +32,54 @@ String get name { return switch (value) {
   _ => '$value',
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ListsItemRedirectStatusCode$Unknown; } 
+@override String toString() => 'ListsItemRedirectStatusCode($value)';
+
+ }
+@immutable final class ListsItemRedirectStatusCode$$301 extends ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode$$301._();
+
+@override int get value => 301;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListsItemRedirectStatusCode$$301;
+
+@override int get hashCode => 301.hashCode;
+
+ }
+@immutable final class ListsItemRedirectStatusCode$$302 extends ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode$$302._();
+
+@override int get value => 302;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListsItemRedirectStatusCode$$302;
+
+@override int get hashCode => 302.hashCode;
+
+ }
+@immutable final class ListsItemRedirectStatusCode$$307 extends ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode$$307._();
+
+@override int get value => 307;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListsItemRedirectStatusCode$$307;
+
+@override int get hashCode => 307.hashCode;
+
+ }
+@immutable final class ListsItemRedirectStatusCode$$308 extends ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode$$308._();
+
+@override int get value => 308;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListsItemRedirectStatusCode$$308;
+
+@override int get hashCode => 308.hashCode;
+
+ }
+@immutable final class ListsItemRedirectStatusCode$Unknown extends ListsItemRedirectStatusCode {const ListsItemRedirectStatusCode$Unknown(this.value);
+
+@override final int value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ListsItemRedirectStatusCode && other.value == value;
+    other is ListsItemRedirectStatusCode$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ListsItemRedirectStatusCode($value)';
 
  }
 /// The definition of the redirect.

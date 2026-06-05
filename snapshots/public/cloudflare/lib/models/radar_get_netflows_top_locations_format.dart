@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetNetflowsTopLocationsFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetNetflowsTopLocationsFormat {const RadarGetNetflowsTopLocationsFormat._(this.value);
+sealed class RadarGetNetflowsTopLocationsFormat {const RadarGetNetflowsTopLocationsFormat();
 
 factory RadarGetNetflowsTopLocationsFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetNetflowsTopLocationsFormat._(json),
+  _ => RadarGetNetflowsTopLocationsFormat$Unknown(json),
 }; }
 
-static const RadarGetNetflowsTopLocationsFormat $json = RadarGetNetflowsTopLocationsFormat._('JSON');
+static const RadarGetNetflowsTopLocationsFormat $json = RadarGetNetflowsTopLocationsFormat$$json._();
 
-static const RadarGetNetflowsTopLocationsFormat csv = RadarGetNetflowsTopLocationsFormat._('CSV');
+static const RadarGetNetflowsTopLocationsFormat csv = RadarGetNetflowsTopLocationsFormat$csv._();
 
 static const List<RadarGetNetflowsTopLocationsFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetNetflowsTopLocationsFormat$Unknown; } 
+@override String toString() => 'RadarGetNetflowsTopLocationsFormat($value)';
+
+ }
+@immutable final class RadarGetNetflowsTopLocationsFormat$$json extends RadarGetNetflowsTopLocationsFormat {const RadarGetNetflowsTopLocationsFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetNetflowsTopLocationsFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetNetflowsTopLocationsFormat$csv extends RadarGetNetflowsTopLocationsFormat {const RadarGetNetflowsTopLocationsFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetNetflowsTopLocationsFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetNetflowsTopLocationsFormat$Unknown extends RadarGetNetflowsTopLocationsFormat {const RadarGetNetflowsTopLocationsFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetNetflowsTopLocationsFormat && other.value == value;
+    other is RadarGetNetflowsTopLocationsFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetNetflowsTopLocationsFormat($value)';
 
  }

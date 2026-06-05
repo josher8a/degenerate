@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ShieldOldKind
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Kind of schema
-@immutable final class ShieldOldKind {const ShieldOldKind._(this.value);
+sealed class ShieldOldKind {const ShieldOldKind();
 
 factory ShieldOldKind.fromJson(String json) { return switch (json) {
   'openapi_v3' => openapiV3,
-  _ => ShieldOldKind._(json),
+  _ => ShieldOldKind$Unknown(json),
 }; }
 
-static const ShieldOldKind openapiV3 = ShieldOldKind._('openapi_v3');
+static const ShieldOldKind openapiV3 = ShieldOldKind$openapiV3._();
 
 static const List<ShieldOldKind> values = [openapiV3];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ShieldOldKind$Unknown; } 
+@override String toString() => 'ShieldOldKind($value)';
+
+ }
+@immutable final class ShieldOldKind$openapiV3 extends ShieldOldKind {const ShieldOldKind$openapiV3._();
+
+@override String get value => 'openapi_v3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ShieldOldKind$openapiV3;
+
+@override int get hashCode => 'openapi_v3'.hashCode;
+
+ }
+@immutable final class ShieldOldKind$Unknown extends ShieldOldKind {const ShieldOldKind$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ShieldOldKind && other.value == value;
+    other is ShieldOldKind$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ShieldOldKind($value)';
 
  }

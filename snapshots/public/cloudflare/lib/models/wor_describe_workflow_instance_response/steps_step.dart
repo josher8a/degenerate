@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorDescribeWorkflowInstanceResponse (inline: Result > Steps > Step)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/attempts.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/step_config.dart';@immutable final class StepType {const StepType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/attempts.dart';import 'package:pub_cloudflare/models/wor_describe_workflow_instance_response/step_config.dart';sealed class StepType {const StepType();
 
 factory StepType.fromJson(String json) { return switch (json) {
   'step' => step,
-  _ => StepType._(json),
+  _ => StepType$Unknown(json),
 }; }
 
-static const StepType step = StepType._('step');
+static const StepType step = StepType$step._();
 
 static const List<StepType> values = [step];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StepType$Unknown; } 
+@override String toString() => 'StepType($value)';
+
+ }
+@immutable final class StepType$step extends StepType {const StepType$step._();
+
+@override String get value => 'step';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StepType$step;
+
+@override int get hashCode => 'step'.hashCode;
+
+ }
+@immutable final class StepType$Unknown extends StepType {const StepType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StepType && other.value == value;
+    other is StepType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StepType($value)';
 
  }
 @immutable final class StepsStep {const StepsStep({required this.attempts, required this.config, required this.end, required this.name, required this.output, required this.start, required this.success, required this.type, });

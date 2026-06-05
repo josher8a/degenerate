@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TransferReversal
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/application_fee/application_fee_balance_transaction.dart';import 'package:pub_stripe_spec3/models/balance_transaction.dart';import 'package:pub_stripe_spec3/models/charge/charge_transfer.dart';import 'package:pub_stripe_spec3/models/refund.dart';import 'package:pub_stripe_spec3/models/transfer.dart';import 'package:pub_stripe_spec3/models/transfer_reversal/destination_payment_refund.dart';import 'package:pub_stripe_spec3/models/transfer_reversal/source_refund.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TransferReversalObject {const TransferReversalObject._(this.value);
+sealed class TransferReversalObject {const TransferReversalObject();
 
 factory TransferReversalObject.fromJson(String json) { return switch (json) {
   'transfer_reversal' => transferReversal,
-  _ => TransferReversalObject._(json),
+  _ => TransferReversalObject$Unknown(json),
 }; }
 
-static const TransferReversalObject transferReversal = TransferReversalObject._('transfer_reversal');
+static const TransferReversalObject transferReversal = TransferReversalObject$transferReversal._();
 
 static const List<TransferReversalObject> values = [transferReversal];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TransferReversalObject$Unknown; } 
+@override String toString() => 'TransferReversalObject($value)';
+
+ }
+@immutable final class TransferReversalObject$transferReversal extends TransferReversalObject {const TransferReversalObject$transferReversal._();
+
+@override String get value => 'transfer_reversal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TransferReversalObject$transferReversal;
+
+@override int get hashCode => 'transfer_reversal'.hashCode;
+
+ }
+@immutable final class TransferReversalObject$Unknown extends TransferReversalObject {const TransferReversalObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TransferReversalObject && other.value == value;
+    other is TransferReversalObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TransferReversalObject($value)';
 
  }
 /// [Stripe Connect](https://docs.stripe.com/connect) platforms can reverse transfers made to a

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/McpToolCall
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class McpToolCallStatus {const McpToolCallStatus._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class McpToolCallStatus {const McpToolCallStatus();
 
 factory McpToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -9,23 +9,22 @@ factory McpToolCallStatus.fromJson(String json) { return switch (json) {
   'incomplete' => incomplete,
   'calling' => calling,
   'failed' => failed,
-  _ => McpToolCallStatus._(json),
+  _ => McpToolCallStatus$Unknown(json),
 }; }
 
-static const McpToolCallStatus inProgress = McpToolCallStatus._('in_progress');
+static const McpToolCallStatus inProgress = McpToolCallStatus$inProgress._();
 
-static const McpToolCallStatus completed = McpToolCallStatus._('completed');
+static const McpToolCallStatus completed = McpToolCallStatus$completed._();
 
-static const McpToolCallStatus incomplete = McpToolCallStatus._('incomplete');
+static const McpToolCallStatus incomplete = McpToolCallStatus$incomplete._();
 
-static const McpToolCallStatus calling = McpToolCallStatus._('calling');
+static const McpToolCallStatus calling = McpToolCallStatus$calling._();
 
-static const McpToolCallStatus failed = McpToolCallStatus._('failed');
+static const McpToolCallStatus failed = McpToolCallStatus$failed._();
 
 static const List<McpToolCallStatus> values = [inProgress, completed, incomplete, calling, failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -37,13 +36,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is McpToolCallStatus$Unknown; } 
+@override String toString() => 'McpToolCallStatus($value)';
+
+ }
+@immutable final class McpToolCallStatus$inProgress extends McpToolCallStatus {const McpToolCallStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McpToolCallStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class McpToolCallStatus$completed extends McpToolCallStatus {const McpToolCallStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McpToolCallStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class McpToolCallStatus$incomplete extends McpToolCallStatus {const McpToolCallStatus$incomplete._();
+
+@override String get value => 'incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McpToolCallStatus$incomplete;
+
+@override int get hashCode => 'incomplete'.hashCode;
+
+ }
+@immutable final class McpToolCallStatus$calling extends McpToolCallStatus {const McpToolCallStatus$calling._();
+
+@override String get value => 'calling';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McpToolCallStatus$calling;
+
+@override int get hashCode => 'calling'.hashCode;
+
+ }
+@immutable final class McpToolCallStatus$failed extends McpToolCallStatus {const McpToolCallStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McpToolCallStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class McpToolCallStatus$Unknown extends McpToolCallStatus {const McpToolCallStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is McpToolCallStatus && other.value == value;
+    other is McpToolCallStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'McpToolCallStatus($value)';
 
  }
 /// An invocation of a tool on an MCP server.

@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Project
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The object type, which is always `organization.project`
-@immutable final class ProjectObject {const ProjectObject._(this.value);
+sealed class ProjectObject {const ProjectObject();
 
 factory ProjectObject.fromJson(String json) { return switch (json) {
   'organization.project' => organizationProject,
-  _ => ProjectObject._(json),
+  _ => ProjectObject$Unknown(json),
 }; }
 
-static const ProjectObject organizationProject = ProjectObject._('organization.project');
+static const ProjectObject organizationProject = ProjectObject$organizationProject._();
 
 static const List<ProjectObject> values = [organizationProject];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,32 +21,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is ProjectObject && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is ProjectObject$Unknown; } 
 @override String toString() => 'ProjectObject($value)';
 
  }
+@immutable final class ProjectObject$organizationProject extends ProjectObject {const ProjectObject$organizationProject._();
+
+@override String get value => 'organization.project';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ProjectObject$organizationProject;
+
+@override int get hashCode => 'organization.project'.hashCode;
+
+ }
+@immutable final class ProjectObject$Unknown extends ProjectObject {const ProjectObject$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ProjectObject$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// `active` or `archived`
-@immutable final class ProjectStatus {const ProjectStatus._(this.value);
+sealed class ProjectStatus {const ProjectStatus();
 
 factory ProjectStatus.fromJson(String json) { return switch (json) {
   'active' => active,
   'archived' => archived,
-  _ => ProjectStatus._(json),
+  _ => ProjectStatus$Unknown(json),
 }; }
 
-static const ProjectStatus active = ProjectStatus._('active');
+static const ProjectStatus active = ProjectStatus$active._();
 
-static const ProjectStatus archived = ProjectStatus._('archived');
+static const ProjectStatus archived = ProjectStatus$archived._();
 
 static const List<ProjectStatus> values = [active, archived];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -56,13 +68,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ProjectStatus$Unknown; } 
+@override String toString() => 'ProjectStatus($value)';
+
+ }
+@immutable final class ProjectStatus$active extends ProjectStatus {const ProjectStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ProjectStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+ }
+@immutable final class ProjectStatus$archived extends ProjectStatus {const ProjectStatus$archived._();
+
+@override String get value => 'archived';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ProjectStatus$archived;
+
+@override int get hashCode => 'archived'.hashCode;
+
+ }
+@immutable final class ProjectStatus$Unknown extends ProjectStatus {const ProjectStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ProjectStatus && other.value == value;
+    other is ProjectStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ProjectStatus($value)';
 
  }
 /// Represents an individual project.

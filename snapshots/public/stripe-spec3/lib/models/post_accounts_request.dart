@@ -2,25 +2,24 @@
 // Source: #/components/schemas/PostAccountsRequest
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_stripe_spec3/models/external_account_payout_bank_account.dart';import 'package:pub_stripe_spec3/models/get_payment_method_configurations_application/get_payment_method_configurations_application_variant2.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_id_request/metadata.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_bank_accounts_request/post_accounts_account_bank_accounts_request_bank_account.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/capabilities.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/groups.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_business_profile.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_business_type.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_company.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_documents.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_individual.dart';import 'package:pub_stripe_spec3/models/post_accounts_account_request/post_accounts_account_request_tos_acceptance.dart';import 'package:pub_stripe_spec3/models/post_accounts_request/controller.dart';import 'package:pub_stripe_spec3/models/post_accounts_request/post_accounts_request_settings.dart';/// The type of Stripe account to create. May be one of `custom`, `express` or `standard`.
-@immutable final class PostAccountsRequestType {const PostAccountsRequestType._(this.value);
+sealed class PostAccountsRequestType {const PostAccountsRequestType();
 
 factory PostAccountsRequestType.fromJson(String json) { return switch (json) {
   'custom' => custom,
   'express' => express,
   'standard' => standard,
-  _ => PostAccountsRequestType._(json),
+  _ => PostAccountsRequestType$Unknown(json),
 }; }
 
-static const PostAccountsRequestType custom = PostAccountsRequestType._('custom');
+static const PostAccountsRequestType custom = PostAccountsRequestType$custom._();
 
-static const PostAccountsRequestType express = PostAccountsRequestType._('express');
+static const PostAccountsRequestType express = PostAccountsRequestType$express._();
 
-static const PostAccountsRequestType standard = PostAccountsRequestType._('standard');
+static const PostAccountsRequestType standard = PostAccountsRequestType$standard._();
 
 static const List<PostAccountsRequestType> values = [custom, express, standard];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -30,13 +29,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PostAccountsRequestType$Unknown; } 
+@override String toString() => 'PostAccountsRequestType($value)';
+
+ }
+@immutable final class PostAccountsRequestType$custom extends PostAccountsRequestType {const PostAccountsRequestType$custom._();
+
+@override String get value => 'custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostAccountsRequestType$custom;
+
+@override int get hashCode => 'custom'.hashCode;
+
+ }
+@immutable final class PostAccountsRequestType$express extends PostAccountsRequestType {const PostAccountsRequestType$express._();
+
+@override String get value => 'express';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostAccountsRequestType$express;
+
+@override int get hashCode => 'express'.hashCode;
+
+ }
+@immutable final class PostAccountsRequestType$standard extends PostAccountsRequestType {const PostAccountsRequestType$standard._();
+
+@override String get value => 'standard';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PostAccountsRequestType$standard;
+
+@override int get hashCode => 'standard'.hashCode;
+
+ }
+@immutable final class PostAccountsRequestType$Unknown extends PostAccountsRequestType {const PostAccountsRequestType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PostAccountsRequestType && other.value == value;
+    other is PostAccountsRequestType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PostAccountsRequestType($value)';
 
  }
 @immutable final class PostAccountsRequest {const PostAccountsRequest({this.accountToken, this.bankAccount, this.businessProfile, this.businessType, this.capabilities, this.company, this.controller, this.country, this.defaultCurrency, this.documents, this.email, this.expand, this.externalAccount, this.groups, this.individual, this.metadata, this.settings, this.tosAcceptance, this.type, });

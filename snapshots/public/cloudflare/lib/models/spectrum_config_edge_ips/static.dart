@@ -2,19 +2,18 @@
 // Source: #/components/schemas/SpectrumConfigEdgeIps (inline: Static)
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The type of edge IP configuration specified. Statically allocated edge IPs use customer IPs in accordance with the ips array you specify. Only valid with ADDRESS DNS names.
-@immutable final class StaticType {const StaticType._(this.value);
+sealed class StaticType {const StaticType();
 
 factory StaticType.fromJson(String json) { return switch (json) {
   'static' => $static,
-  _ => StaticType._(json),
+  _ => StaticType$Unknown(json),
 }; }
 
-static const StaticType $static = StaticType._('static');
+static const StaticType $static = StaticType$$static._();
 
 static const List<StaticType> values = [$static];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is StaticType$Unknown; } 
+@override String toString() => 'StaticType($value)';
+
+ }
+@immutable final class StaticType$$static extends StaticType {const StaticType$$static._();
+
+@override String get value => 'static';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StaticType$$static;
+
+@override int get hashCode => 'static'.hashCode;
+
+ }
+@immutable final class StaticType$Unknown extends StaticType {const StaticType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is StaticType && other.value == value;
+    other is StaticType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'StaticType($value)';
 
  }
 @immutable final class Static {const Static({this.ips, this.type, });

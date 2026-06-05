@@ -3,25 +3,24 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_with_reference/realtime_conversation_item_with_reference_content.dart';/// The type of the item (`message`, `function_call`, `function_call_output`, `item_reference`).
 /// 
-@immutable final class RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType._(this.value);
+sealed class RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType();
 
 factory RealtimeConversationItemWithReferenceType.fromJson(String json) { return switch (json) {
   'message' => message,
   'function_call' => functionCall,
   'function_call_output' => functionCallOutput,
-  _ => RealtimeConversationItemWithReferenceType._(json),
+  _ => RealtimeConversationItemWithReferenceType$Unknown(json),
 }; }
 
-static const RealtimeConversationItemWithReferenceType message = RealtimeConversationItemWithReferenceType._('message');
+static const RealtimeConversationItemWithReferenceType message = RealtimeConversationItemWithReferenceType$message._();
 
-static const RealtimeConversationItemWithReferenceType functionCall = RealtimeConversationItemWithReferenceType._('function_call');
+static const RealtimeConversationItemWithReferenceType functionCall = RealtimeConversationItemWithReferenceType$functionCall._();
 
-static const RealtimeConversationItemWithReferenceType functionCallOutput = RealtimeConversationItemWithReferenceType._('function_call_output');
+static const RealtimeConversationItemWithReferenceType functionCallOutput = RealtimeConversationItemWithReferenceType$functionCallOutput._();
 
 static const List<RealtimeConversationItemWithReferenceType> values = [message, functionCall, functionCallOutput];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -31,37 +30,68 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeConversationItemWithReferenceType$Unknown; } 
+@override String toString() => 'RealtimeConversationItemWithReferenceType($value)';
+
+ }
+@immutable final class RealtimeConversationItemWithReferenceType$message extends RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType$message._();
+
+@override String get value => 'message';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemWithReferenceType$message;
+
+@override int get hashCode => 'message'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemWithReferenceType$functionCall extends RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType$functionCall._();
+
+@override String get value => 'function_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemWithReferenceType$functionCall;
+
+@override int get hashCode => 'function_call'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemWithReferenceType$functionCallOutput extends RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType$functionCallOutput._();
+
+@override String get value => 'function_call_output';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemWithReferenceType$functionCallOutput;
+
+@override int get hashCode => 'function_call_output'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemWithReferenceType$Unknown extends RealtimeConversationItemWithReferenceType {const RealtimeConversationItemWithReferenceType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeConversationItemWithReferenceType && other.value == value;
+    other is RealtimeConversationItemWithReferenceType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeConversationItemWithReferenceType($value)';
 
  }
 /// The role of the message sender (`user`, `assistant`, `system`), only
 /// applicable for `message` items.
 /// 
-@immutable final class RealtimeConversationItemWithReferenceRole {const RealtimeConversationItemWithReferenceRole._(this.value);
+sealed class RealtimeConversationItemWithReferenceRole {const RealtimeConversationItemWithReferenceRole();
 
 factory RealtimeConversationItemWithReferenceRole.fromJson(String json) { return switch (json) {
   'user' => user,
   'assistant' => assistant,
   'system' => system,
-  _ => RealtimeConversationItemWithReferenceRole._(json),
+  _ => RealtimeConversationItemWithReferenceRole$Unknown(json),
 }; }
 
-static const RealtimeConversationItemWithReferenceRole user = RealtimeConversationItemWithReferenceRole._('user');
+static const RealtimeConversationItemWithReferenceRole user = RealtimeConversationItemWithReferenceRole$user._();
 
-static const RealtimeConversationItemWithReferenceRole assistant = RealtimeConversationItemWithReferenceRole._('assistant');
+static const RealtimeConversationItemWithReferenceRole assistant = RealtimeConversationItemWithReferenceRole$assistant._();
 
-static const RealtimeConversationItemWithReferenceRole system = RealtimeConversationItemWithReferenceRole._('system');
+static const RealtimeConversationItemWithReferenceRole system = RealtimeConversationItemWithReferenceRole$system._();
 
 static const List<RealtimeConversationItemWithReferenceRole> values = [user, assistant, system];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -71,13 +101,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeConversationItemWithReferenceRole$Unknown; } 
+@override String toString() => 'RealtimeConversationItemWithReferenceRole($value)';
+
+ }
+@immutable final class RealtimeConversationItemWithReferenceRole$user extends RealtimeConversationItemWithReferenceRole {const RealtimeConversationItemWithReferenceRole$user._();
+
+@override String get value => 'user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemWithReferenceRole$user;
+
+@override int get hashCode => 'user'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemWithReferenceRole$assistant extends RealtimeConversationItemWithReferenceRole {const RealtimeConversationItemWithReferenceRole$assistant._();
+
+@override String get value => 'assistant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemWithReferenceRole$assistant;
+
+@override int get hashCode => 'assistant'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemWithReferenceRole$system extends RealtimeConversationItemWithReferenceRole {const RealtimeConversationItemWithReferenceRole$system._();
+
+@override String get value => 'system';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeConversationItemWithReferenceRole$system;
+
+@override int get hashCode => 'system'.hashCode;
+
+ }
+@immutable final class RealtimeConversationItemWithReferenceRole$Unknown extends RealtimeConversationItemWithReferenceRole {const RealtimeConversationItemWithReferenceRole$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeConversationItemWithReferenceRole && other.value == value;
+    other is RealtimeConversationItemWithReferenceRole$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeConversationItemWithReferenceRole($value)';
 
  }
 /// The item to add to the conversation.

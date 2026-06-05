@@ -2,22 +2,21 @@
 // Source: #/components/schemas/PageShieldListCookiesType
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Filters the returned cookies that match the specified type attribute
-@immutable final class PageShieldListCookiesType {const PageShieldListCookiesType._(this.value);
+sealed class PageShieldListCookiesType {const PageShieldListCookiesType();
 
 factory PageShieldListCookiesType.fromJson(String json) { return switch (json) {
   'first_party' => firstParty,
   'unknown' => unknown,
-  _ => PageShieldListCookiesType._(json),
+  _ => PageShieldListCookiesType$Unknown(json),
 }; }
 
-static const PageShieldListCookiesType firstParty = PageShieldListCookiesType._('first_party');
+static const PageShieldListCookiesType firstParty = PageShieldListCookiesType$firstParty._();
 
-static const PageShieldListCookiesType unknown = PageShieldListCookiesType._('unknown');
+static const PageShieldListCookiesType unknown = PageShieldListCookiesType$unknown._();
 
 static const List<PageShieldListCookiesType> values = [firstParty, unknown];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PageShieldListCookiesType$Unknown; } 
+@override String toString() => 'PageShieldListCookiesType($value)';
+
+ }
+@immutable final class PageShieldListCookiesType$firstParty extends PageShieldListCookiesType {const PageShieldListCookiesType$firstParty._();
+
+@override String get value => 'first_party';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageShieldListCookiesType$firstParty;
+
+@override int get hashCode => 'first_party'.hashCode;
+
+ }
+@immutable final class PageShieldListCookiesType$unknown extends PageShieldListCookiesType {const PageShieldListCookiesType$unknown._();
+
+@override String get value => 'unknown';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PageShieldListCookiesType$unknown;
+
+@override int get hashCode => 'unknown'.hashCode;
+
+ }
+@immutable final class PageShieldListCookiesType$Unknown extends PageShieldListCookiesType {const PageShieldListCookiesType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PageShieldListCookiesType && other.value == value;
+    other is PageShieldListCookiesType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PageShieldListCookiesType($value)';
 
  }

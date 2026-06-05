@@ -2,22 +2,21 @@
 // Source: #/components/schemas/RadarGetAiInferenceTimeseriesGroupByModelFormat
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Format in which results will be returned.
-@immutable final class RadarGetAiInferenceTimeseriesGroupByModelFormat {const RadarGetAiInferenceTimeseriesGroupByModelFormat._(this.value);
+sealed class RadarGetAiInferenceTimeseriesGroupByModelFormat {const RadarGetAiInferenceTimeseriesGroupByModelFormat();
 
 factory RadarGetAiInferenceTimeseriesGroupByModelFormat.fromJson(String json) { return switch (json) {
   'JSON' => $json,
   'CSV' => csv,
-  _ => RadarGetAiInferenceTimeseriesGroupByModelFormat._(json),
+  _ => RadarGetAiInferenceTimeseriesGroupByModelFormat$Unknown(json),
 }; }
 
-static const RadarGetAiInferenceTimeseriesGroupByModelFormat $json = RadarGetAiInferenceTimeseriesGroupByModelFormat._('JSON');
+static const RadarGetAiInferenceTimeseriesGroupByModelFormat $json = RadarGetAiInferenceTimeseriesGroupByModelFormat$$json._();
 
-static const RadarGetAiInferenceTimeseriesGroupByModelFormat csv = RadarGetAiInferenceTimeseriesGroupByModelFormat._('CSV');
+static const RadarGetAiInferenceTimeseriesGroupByModelFormat csv = RadarGetAiInferenceTimeseriesGroupByModelFormat$csv._();
 
 static const List<RadarGetAiInferenceTimeseriesGroupByModelFormat> values = [$json, csv];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetAiInferenceTimeseriesGroupByModelFormat$Unknown; } 
+@override String toString() => 'RadarGetAiInferenceTimeseriesGroupByModelFormat($value)';
+
+ }
+@immutable final class RadarGetAiInferenceTimeseriesGroupByModelFormat$$json extends RadarGetAiInferenceTimeseriesGroupByModelFormat {const RadarGetAiInferenceTimeseriesGroupByModelFormat$$json._();
+
+@override String get value => 'JSON';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiInferenceTimeseriesGroupByModelFormat$$json;
+
+@override int get hashCode => 'JSON'.hashCode;
+
+ }
+@immutable final class RadarGetAiInferenceTimeseriesGroupByModelFormat$csv extends RadarGetAiInferenceTimeseriesGroupByModelFormat {const RadarGetAiInferenceTimeseriesGroupByModelFormat$csv._();
+
+@override String get value => 'CSV';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetAiInferenceTimeseriesGroupByModelFormat$csv;
+
+@override int get hashCode => 'CSV'.hashCode;
+
+ }
+@immutable final class RadarGetAiInferenceTimeseriesGroupByModelFormat$Unknown extends RadarGetAiInferenceTimeseriesGroupByModelFormat {const RadarGetAiInferenceTimeseriesGroupByModelFormat$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetAiInferenceTimeseriesGroupByModelFormat && other.value == value;
+    other is RadarGetAiInferenceTimeseriesGroupByModelFormat$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetAiInferenceTimeseriesGroupByModelFormat($value)';
 
  }

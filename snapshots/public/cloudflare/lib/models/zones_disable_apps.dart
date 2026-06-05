@@ -4,19 +4,18 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Turn off all active [Cloudflare Apps](https://developers.cloudflare.com/support/more-dashboard-apps/cloudflare-apps/)
 /// (deprecated).
 /// 
-@immutable final class ZonesDisableAppsId {const ZonesDisableAppsId._(this.value);
+sealed class ZonesDisableAppsId {const ZonesDisableAppsId();
 
 factory ZonesDisableAppsId.fromJson(String json) { return switch (json) {
   'disable_apps' => disableApps,
-  _ => ZonesDisableAppsId._(json),
+  _ => ZonesDisableAppsId$Unknown(json),
 }; }
 
-static const ZonesDisableAppsId disableApps = ZonesDisableAppsId._('disable_apps');
+static const ZonesDisableAppsId disableApps = ZonesDisableAppsId$disableApps._();
 
 static const List<ZonesDisableAppsId> values = [disableApps];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -24,13 +23,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ZonesDisableAppsId$Unknown; } 
+@override String toString() => 'ZonesDisableAppsId($value)';
+
+ }
+@immutable final class ZonesDisableAppsId$disableApps extends ZonesDisableAppsId {const ZonesDisableAppsId$disableApps._();
+
+@override String get value => 'disable_apps';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesDisableAppsId$disableApps;
+
+@override int get hashCode => 'disable_apps'.hashCode;
+
+ }
+@immutable final class ZonesDisableAppsId$Unknown extends ZonesDisableAppsId {const ZonesDisableAppsId$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ZonesDisableAppsId && other.value == value;
+    other is ZonesDisableAppsId$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ZonesDisableAppsId($value)';
 
  }
 @immutable final class ZonesDisableApps {const ZonesDisableApps({this.id});

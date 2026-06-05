@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegment
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `conversation.item.input_audio_transcription.segment`.
-@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType._(this.value);
+sealed class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType();
 
 factory RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType.fromJson(String json) { return switch (json) {
   'conversation.item.input_audio_transcription.segment' => conversationItemInputAudioTranscriptionSegment,
-  _ => RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType._(json),
+  _ => RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType conversationItemInputAudioTranscriptionSegment = RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType._('conversation.item.input_audio_transcription.segment');
+static const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType conversationItemInputAudioTranscriptionSegment = RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$conversationItemInputAudioTranscriptionSegment._();
 
 static const List<RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType> values = [conversationItemInputAudioTranscriptionSegment];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$conversationItemInputAudioTranscriptionSegment extends RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$conversationItemInputAudioTranscriptionSegment._();
+
+@override String get value => 'conversation.item.input_audio_transcription.segment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$conversationItemInputAudioTranscriptionSegment;
+
+@override int get hashCode => 'conversation.item.input_audio_transcription.segment'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$Unknown extends RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType {const RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType && other.value == value;
+    other is RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType($value)';
 
  }
 /// Returned when an input audio transcription segment is identified for an item.

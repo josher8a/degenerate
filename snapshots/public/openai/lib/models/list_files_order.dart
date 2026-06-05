@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ListFilesOrder
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ListFilesOrder {const ListFilesOrder._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ListFilesOrder {const ListFilesOrder();
 
 factory ListFilesOrder.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => ListFilesOrder._(json),
+  _ => ListFilesOrder$Unknown(json),
 }; }
 
-static const ListFilesOrder asc = ListFilesOrder._('asc');
+static const ListFilesOrder asc = ListFilesOrder$asc._();
 
-static const ListFilesOrder desc = ListFilesOrder._('desc');
+static const ListFilesOrder desc = ListFilesOrder$desc._();
 
 static const List<ListFilesOrder> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ListFilesOrder$Unknown; } 
+@override String toString() => 'ListFilesOrder($value)';
+
+ }
+@immutable final class ListFilesOrder$asc extends ListFilesOrder {const ListFilesOrder$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListFilesOrder$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class ListFilesOrder$desc extends ListFilesOrder {const ListFilesOrder$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ListFilesOrder$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class ListFilesOrder$Unknown extends ListFilesOrder {const ListFilesOrder$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ListFilesOrder && other.value == value;
+    other is ListFilesOrder$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ListFilesOrder($value)';
 
  }

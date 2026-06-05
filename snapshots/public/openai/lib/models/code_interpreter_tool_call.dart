@@ -3,7 +3,7 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_tool_call/code_interpreter_tool_call_outputs.dart';/// The status of the code interpreter tool call. Valid values are `in_progress`, `completed`, `incomplete`, `interpreting`, and `failed`.
 /// 
-@immutable final class CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus._(this.value);
+sealed class CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus();
 
 factory CodeInterpreterToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
@@ -11,23 +11,22 @@ factory CodeInterpreterToolCallStatus.fromJson(String json) { return switch (jso
   'incomplete' => incomplete,
   'interpreting' => interpreting,
   'failed' => failed,
-  _ => CodeInterpreterToolCallStatus._(json),
+  _ => CodeInterpreterToolCallStatus$Unknown(json),
 }; }
 
-static const CodeInterpreterToolCallStatus inProgress = CodeInterpreterToolCallStatus._('in_progress');
+static const CodeInterpreterToolCallStatus inProgress = CodeInterpreterToolCallStatus$inProgress._();
 
-static const CodeInterpreterToolCallStatus completed = CodeInterpreterToolCallStatus._('completed');
+static const CodeInterpreterToolCallStatus completed = CodeInterpreterToolCallStatus$completed._();
 
-static const CodeInterpreterToolCallStatus incomplete = CodeInterpreterToolCallStatus._('incomplete');
+static const CodeInterpreterToolCallStatus incomplete = CodeInterpreterToolCallStatus$incomplete._();
 
-static const CodeInterpreterToolCallStatus interpreting = CodeInterpreterToolCallStatus._('interpreting');
+static const CodeInterpreterToolCallStatus interpreting = CodeInterpreterToolCallStatus$interpreting._();
 
-static const CodeInterpreterToolCallStatus failed = CodeInterpreterToolCallStatus._('failed');
+static const CodeInterpreterToolCallStatus failed = CodeInterpreterToolCallStatus$failed._();
 
 static const List<CodeInterpreterToolCallStatus> values = [inProgress, completed, incomplete, interpreting, failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -39,13 +38,63 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is CodeInterpreterToolCallStatus$Unknown; } 
+@override String toString() => 'CodeInterpreterToolCallStatus($value)';
+
+ }
+@immutable final class CodeInterpreterToolCallStatus$inProgress extends CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeInterpreterToolCallStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class CodeInterpreterToolCallStatus$completed extends CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeInterpreterToolCallStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class CodeInterpreterToolCallStatus$incomplete extends CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus$incomplete._();
+
+@override String get value => 'incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeInterpreterToolCallStatus$incomplete;
+
+@override int get hashCode => 'incomplete'.hashCode;
+
+ }
+@immutable final class CodeInterpreterToolCallStatus$interpreting extends CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus$interpreting._();
+
+@override String get value => 'interpreting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeInterpreterToolCallStatus$interpreting;
+
+@override int get hashCode => 'interpreting'.hashCode;
+
+ }
+@immutable final class CodeInterpreterToolCallStatus$failed extends CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeInterpreterToolCallStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class CodeInterpreterToolCallStatus$Unknown extends CodeInterpreterToolCallStatus {const CodeInterpreterToolCallStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is CodeInterpreterToolCallStatus && other.value == value;
+    other is CodeInterpreterToolCallStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'CodeInterpreterToolCallStatus($value)';
 
  }
 /// A tool call to run code.

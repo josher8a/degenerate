@@ -2,19 +2,18 @@
 // Source: #/components/schemas/RealtimeBetaServerEventResponseMcpCallArgumentsDone
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// The event type, must be `response.mcp_call_arguments.done`.
-@immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDoneType {const RealtimeBetaServerEventResponseMcpCallArgumentsDoneType._(this.value);
+sealed class RealtimeBetaServerEventResponseMcpCallArgumentsDoneType {const RealtimeBetaServerEventResponseMcpCallArgumentsDoneType();
 
 factory RealtimeBetaServerEventResponseMcpCallArgumentsDoneType.fromJson(String json) { return switch (json) {
   'response.mcp_call_arguments.done' => responseMcpCallArgumentsDone,
-  _ => RealtimeBetaServerEventResponseMcpCallArgumentsDoneType._(json),
+  _ => RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$Unknown(json),
 }; }
 
-static const RealtimeBetaServerEventResponseMcpCallArgumentsDoneType responseMcpCallArgumentsDone = RealtimeBetaServerEventResponseMcpCallArgumentsDoneType._('response.mcp_call_arguments.done');
+static const RealtimeBetaServerEventResponseMcpCallArgumentsDoneType responseMcpCallArgumentsDone = RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$responseMcpCallArgumentsDone._();
 
 static const List<RealtimeBetaServerEventResponseMcpCallArgumentsDoneType> values = [responseMcpCallArgumentsDone];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$Unknown; } 
+@override String toString() => 'RealtimeBetaServerEventResponseMcpCallArgumentsDoneType($value)';
+
+ }
+@immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$responseMcpCallArgumentsDone extends RealtimeBetaServerEventResponseMcpCallArgumentsDoneType {const RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$responseMcpCallArgumentsDone._();
+
+@override String get value => 'response.mcp_call_arguments.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$responseMcpCallArgumentsDone;
+
+@override int get hashCode => 'response.mcp_call_arguments.done'.hashCode;
+
+ }
+@immutable final class RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$Unknown extends RealtimeBetaServerEventResponseMcpCallArgumentsDoneType {const RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeBetaServerEventResponseMcpCallArgumentsDoneType && other.value == value;
+    other is RealtimeBetaServerEventResponseMcpCallArgumentsDoneType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeBetaServerEventResponseMcpCallArgumentsDoneType($value)';
 
  }
 /// Returned when MCP tool call arguments are finalized during response generation.

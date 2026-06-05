@@ -2,19 +2,18 @@
 // Source: #/components/schemas/TerminalConnectionToken
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// String representing the object's type. Objects of the same type share the same value.
-@immutable final class TerminalConnectionTokenObject {const TerminalConnectionTokenObject._(this.value);
+sealed class TerminalConnectionTokenObject {const TerminalConnectionTokenObject();
 
 factory TerminalConnectionTokenObject.fromJson(String json) { return switch (json) {
   'terminal.connection_token' => terminalConnectionToken,
-  _ => TerminalConnectionTokenObject._(json),
+  _ => TerminalConnectionTokenObject$Unknown(json),
 }; }
 
-static const TerminalConnectionTokenObject terminalConnectionToken = TerminalConnectionTokenObject._('terminal.connection_token');
+static const TerminalConnectionTokenObject terminalConnectionToken = TerminalConnectionTokenObject$terminalConnectionToken._();
 
 static const List<TerminalConnectionTokenObject> values = [terminalConnectionToken];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TerminalConnectionTokenObject$Unknown; } 
+@override String toString() => 'TerminalConnectionTokenObject($value)';
+
+ }
+@immutable final class TerminalConnectionTokenObject$terminalConnectionToken extends TerminalConnectionTokenObject {const TerminalConnectionTokenObject$terminalConnectionToken._();
+
+@override String get value => 'terminal.connection_token';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TerminalConnectionTokenObject$terminalConnectionToken;
+
+@override int get hashCode => 'terminal.connection_token'.hashCode;
+
+ }
+@immutable final class TerminalConnectionTokenObject$Unknown extends TerminalConnectionTokenObject {const TerminalConnectionTokenObject$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TerminalConnectionTokenObject && other.value == value;
+    other is TerminalConnectionTokenObject$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TerminalConnectionTokenObject($value)';
 
  }
 /// A Connection Token is used by the Stripe Terminal SDK to connect to a reader.

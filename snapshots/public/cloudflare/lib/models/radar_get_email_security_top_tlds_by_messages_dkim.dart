@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailSecurityTopTldsByMessagesDkim
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTopTldsByMessagesDkim {const RadarGetEmailSecurityTopTldsByMessagesDkim._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailSecurityTopTldsByMessagesDkim {const RadarGetEmailSecurityTopTldsByMessagesDkim();
 
 factory RadarGetEmailSecurityTopTldsByMessagesDkim.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailSecurityTopTldsByMessagesDkim._(json),
+  _ => RadarGetEmailSecurityTopTldsByMessagesDkim$Unknown(json),
 }; }
 
-static const RadarGetEmailSecurityTopTldsByMessagesDkim pass = RadarGetEmailSecurityTopTldsByMessagesDkim._('PASS');
+static const RadarGetEmailSecurityTopTldsByMessagesDkim pass = RadarGetEmailSecurityTopTldsByMessagesDkim$pass._();
 
-static const RadarGetEmailSecurityTopTldsByMessagesDkim none = RadarGetEmailSecurityTopTldsByMessagesDkim._('NONE');
+static const RadarGetEmailSecurityTopTldsByMessagesDkim none = RadarGetEmailSecurityTopTldsByMessagesDkim$none._();
 
-static const RadarGetEmailSecurityTopTldsByMessagesDkim fail = RadarGetEmailSecurityTopTldsByMessagesDkim._('FAIL');
+static const RadarGetEmailSecurityTopTldsByMessagesDkim fail = RadarGetEmailSecurityTopTldsByMessagesDkim$fail._();
 
 static const List<RadarGetEmailSecurityTopTldsByMessagesDkim> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecurityTopTldsByMessagesDkim$Unknown; } 
+@override String toString() => 'RadarGetEmailSecurityTopTldsByMessagesDkim($value)';
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsByMessagesDkim$pass extends RadarGetEmailSecurityTopTldsByMessagesDkim {const RadarGetEmailSecurityTopTldsByMessagesDkim$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTopTldsByMessagesDkim$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsByMessagesDkim$none extends RadarGetEmailSecurityTopTldsByMessagesDkim {const RadarGetEmailSecurityTopTldsByMessagesDkim$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTopTldsByMessagesDkim$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsByMessagesDkim$fail extends RadarGetEmailSecurityTopTldsByMessagesDkim {const RadarGetEmailSecurityTopTldsByMessagesDkim$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTopTldsByMessagesDkim$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsByMessagesDkim$Unknown extends RadarGetEmailSecurityTopTldsByMessagesDkim {const RadarGetEmailSecurityTopTldsByMessagesDkim$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecurityTopTldsByMessagesDkim && other.value == value;
+    other is RadarGetEmailSecurityTopTldsByMessagesDkim$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecurityTopTldsByMessagesDkim($value)';
 
  }

@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookIssueDependenciesBlockedByAdded
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';@immutable final class WebhookIssueDependenciesBlockedByAddedAction {const WebhookIssueDependenciesBlockedByAddedAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/issue.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_installation.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';sealed class WebhookIssueDependenciesBlockedByAddedAction {const WebhookIssueDependenciesBlockedByAddedAction();
 
 factory WebhookIssueDependenciesBlockedByAddedAction.fromJson(String json) { return switch (json) {
   'blocked_by_added' => blockedByAdded,
-  _ => WebhookIssueDependenciesBlockedByAddedAction._(json),
+  _ => WebhookIssueDependenciesBlockedByAddedAction$Unknown(json),
 }; }
 
-static const WebhookIssueDependenciesBlockedByAddedAction blockedByAdded = WebhookIssueDependenciesBlockedByAddedAction._('blocked_by_added');
+static const WebhookIssueDependenciesBlockedByAddedAction blockedByAdded = WebhookIssueDependenciesBlockedByAddedAction$blockedByAdded._();
 
 static const List<WebhookIssueDependenciesBlockedByAddedAction> values = [blockedByAdded];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookIssueDependenciesBlockedByAddedAction$Unknown; } 
+@override String toString() => 'WebhookIssueDependenciesBlockedByAddedAction($value)';
+
+ }
+@immutable final class WebhookIssueDependenciesBlockedByAddedAction$blockedByAdded extends WebhookIssueDependenciesBlockedByAddedAction {const WebhookIssueDependenciesBlockedByAddedAction$blockedByAdded._();
+
+@override String get value => 'blocked_by_added';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookIssueDependenciesBlockedByAddedAction$blockedByAdded;
+
+@override int get hashCode => 'blocked_by_added'.hashCode;
+
+ }
+@immutable final class WebhookIssueDependenciesBlockedByAddedAction$Unknown extends WebhookIssueDependenciesBlockedByAddedAction {const WebhookIssueDependenciesBlockedByAddedAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookIssueDependenciesBlockedByAddedAction && other.value == value;
+    other is WebhookIssueDependenciesBlockedByAddedAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookIssueDependenciesBlockedByAddedAction($value)';
 
  }
 @immutable final class WebhookIssueDependenciesBlockedByAdded {const WebhookIssueDependenciesBlockedByAdded({required this.action, required this.organization, required this.repository, required this.sender, this.blockedIssueId, this.blockedIssue, this.blockingIssueId, this.blockingIssue, this.blockingIssueRepo, this.installation, });

@@ -2,22 +2,21 @@
 // Source: #/components/schemas/UserSOrganizationsListOrganizationsMatch
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Whether to match all search requirements or at least one (any).
-@immutable final class UserSOrganizationsListOrganizationsMatch {const UserSOrganizationsListOrganizationsMatch._(this.value);
+sealed class UserSOrganizationsListOrganizationsMatch {const UserSOrganizationsListOrganizationsMatch();
 
 factory UserSOrganizationsListOrganizationsMatch.fromJson(String json) { return switch (json) {
   'any' => any,
   'all' => all,
-  _ => UserSOrganizationsListOrganizationsMatch._(json),
+  _ => UserSOrganizationsListOrganizationsMatch$Unknown(json),
 }; }
 
-static const UserSOrganizationsListOrganizationsMatch any = UserSOrganizationsListOrganizationsMatch._('any');
+static const UserSOrganizationsListOrganizationsMatch any = UserSOrganizationsListOrganizationsMatch$any._();
 
-static const UserSOrganizationsListOrganizationsMatch all = UserSOrganizationsListOrganizationsMatch._('all');
+static const UserSOrganizationsListOrganizationsMatch all = UserSOrganizationsListOrganizationsMatch$all._();
 
 static const List<UserSOrganizationsListOrganizationsMatch> values = [any, all];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -26,12 +25,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is UserSOrganizationsListOrganizationsMatch$Unknown; } 
+@override String toString() => 'UserSOrganizationsListOrganizationsMatch($value)';
+
+ }
+@immutable final class UserSOrganizationsListOrganizationsMatch$any extends UserSOrganizationsListOrganizationsMatch {const UserSOrganizationsListOrganizationsMatch$any._();
+
+@override String get value => 'any';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserSOrganizationsListOrganizationsMatch$any;
+
+@override int get hashCode => 'any'.hashCode;
+
+ }
+@immutable final class UserSOrganizationsListOrganizationsMatch$all extends UserSOrganizationsListOrganizationsMatch {const UserSOrganizationsListOrganizationsMatch$all._();
+
+@override String get value => 'all';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UserSOrganizationsListOrganizationsMatch$all;
+
+@override int get hashCode => 'all'.hashCode;
+
+ }
+@immutable final class UserSOrganizationsListOrganizationsMatch$Unknown extends UserSOrganizationsListOrganizationsMatch {const UserSOrganizationsListOrganizationsMatch$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is UserSOrganizationsListOrganizationsMatch && other.value == value;
+    other is UserSOrganizationsListOrganizationsMatch$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'UserSOrganizationsListOrganizationsMatch($value)';
 
  }

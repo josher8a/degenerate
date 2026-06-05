@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeMcpProtocolError
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RealtimeMcpProtocolErrorType {const RealtimeMcpProtocolErrorType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RealtimeMcpProtocolErrorType {const RealtimeMcpProtocolErrorType();
 
 factory RealtimeMcpProtocolErrorType.fromJson(String json) { return switch (json) {
   'protocol_error' => protocolError,
-  _ => RealtimeMcpProtocolErrorType._(json),
+  _ => RealtimeMcpProtocolErrorType$Unknown(json),
 }; }
 
-static const RealtimeMcpProtocolErrorType protocolError = RealtimeMcpProtocolErrorType._('protocol_error');
+static const RealtimeMcpProtocolErrorType protocolError = RealtimeMcpProtocolErrorType$protocolError._();
 
 static const List<RealtimeMcpProtocolErrorType> values = [protocolError];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RealtimeMcpProtocolErrorType$Unknown; } 
+@override String toString() => 'RealtimeMcpProtocolErrorType($value)';
+
+ }
+@immutable final class RealtimeMcpProtocolErrorType$protocolError extends RealtimeMcpProtocolErrorType {const RealtimeMcpProtocolErrorType$protocolError._();
+
+@override String get value => 'protocol_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeMcpProtocolErrorType$protocolError;
+
+@override int get hashCode => 'protocol_error'.hashCode;
+
+ }
+@immutable final class RealtimeMcpProtocolErrorType$Unknown extends RealtimeMcpProtocolErrorType {const RealtimeMcpProtocolErrorType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeMcpProtocolErrorType && other.value == value;
+    other is RealtimeMcpProtocolErrorType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RealtimeMcpProtocolErrorType($value)';
 
  }
 @immutable final class RealtimeMcpProtocolError {const RealtimeMcpProtocolError({required this.type, required this.code, required this.message, });

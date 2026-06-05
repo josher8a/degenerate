@@ -2,19 +2,18 @@
 // Source: #/components/schemas/Poll
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Indicates you've finished uploading to tell the D1 to start consuming it
-@immutable final class PollAction {const PollAction._(this.value);
+sealed class PollAction {const PollAction();
 
 factory PollAction.fromJson(String json) { return switch (json) {
   'poll' => poll,
-  _ => PollAction._(json),
+  _ => PollAction$Unknown(json),
 }; }
 
-static const PollAction poll = PollAction._('poll');
+static const PollAction poll = PollAction$poll._();
 
 static const List<PollAction> values = [poll];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,13 +21,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PollAction$Unknown; } 
+@override String toString() => 'PollAction($value)';
+
+ }
+@immutable final class PollAction$poll extends PollAction {const PollAction$poll._();
+
+@override String get value => 'poll';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PollAction$poll;
+
+@override int get hashCode => 'poll'.hashCode;
+
+ }
+@immutable final class PollAction$Unknown extends PollAction {const PollAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PollAction && other.value == value;
+    other is PollAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PollAction($value)';
 
  }
 @immutable final class Poll {const Poll({required this.action, required this.currentBookmark, });

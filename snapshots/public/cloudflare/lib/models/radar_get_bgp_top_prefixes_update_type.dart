@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetBgpTopPrefixesUpdateType
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetBgpTopPrefixesUpdateType {const RadarGetBgpTopPrefixesUpdateType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetBgpTopPrefixesUpdateType {const RadarGetBgpTopPrefixesUpdateType();
 
 factory RadarGetBgpTopPrefixesUpdateType.fromJson(String json) { return switch (json) {
   'ANNOUNCEMENT' => announcement,
   'WITHDRAWAL' => withdrawal,
-  _ => RadarGetBgpTopPrefixesUpdateType._(json),
+  _ => RadarGetBgpTopPrefixesUpdateType$Unknown(json),
 }; }
 
-static const RadarGetBgpTopPrefixesUpdateType announcement = RadarGetBgpTopPrefixesUpdateType._('ANNOUNCEMENT');
+static const RadarGetBgpTopPrefixesUpdateType announcement = RadarGetBgpTopPrefixesUpdateType$announcement._();
 
-static const RadarGetBgpTopPrefixesUpdateType withdrawal = RadarGetBgpTopPrefixesUpdateType._('WITHDRAWAL');
+static const RadarGetBgpTopPrefixesUpdateType withdrawal = RadarGetBgpTopPrefixesUpdateType$withdrawal._();
 
 static const List<RadarGetBgpTopPrefixesUpdateType> values = [announcement, withdrawal];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetBgpTopPrefixesUpdateType$Unknown; } 
+@override String toString() => 'RadarGetBgpTopPrefixesUpdateType($value)';
+
+ }
+@immutable final class RadarGetBgpTopPrefixesUpdateType$announcement extends RadarGetBgpTopPrefixesUpdateType {const RadarGetBgpTopPrefixesUpdateType$announcement._();
+
+@override String get value => 'ANNOUNCEMENT';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpTopPrefixesUpdateType$announcement;
+
+@override int get hashCode => 'ANNOUNCEMENT'.hashCode;
+
+ }
+@immutable final class RadarGetBgpTopPrefixesUpdateType$withdrawal extends RadarGetBgpTopPrefixesUpdateType {const RadarGetBgpTopPrefixesUpdateType$withdrawal._();
+
+@override String get value => 'WITHDRAWAL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetBgpTopPrefixesUpdateType$withdrawal;
+
+@override int get hashCode => 'WITHDRAWAL'.hashCode;
+
+ }
+@immutable final class RadarGetBgpTopPrefixesUpdateType$Unknown extends RadarGetBgpTopPrefixesUpdateType {const RadarGetBgpTopPrefixesUpdateType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetBgpTopPrefixesUpdateType && other.value == value;
+    other is RadarGetBgpTopPrefixesUpdateType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetBgpTopPrefixesUpdateType($value)';
 
  }

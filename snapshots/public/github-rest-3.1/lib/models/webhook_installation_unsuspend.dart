@@ -1,19 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebhookInstallationUnsuspend
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/installation.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_repositories2.dart';@immutable final class WebhookInstallationUnsuspendAction {const WebhookInstallationUnsuspendAction._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/enterprise_webhooks.dart';import 'package:pub_github_rest_3_1/models/installation.dart';import 'package:pub_github_rest_3_1/models/organization_simple_webhooks.dart';import 'package:pub_github_rest_3_1/models/repository_webhooks.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';import 'package:pub_github_rest_3_1/models/webhooks_repositories2.dart';sealed class WebhookInstallationUnsuspendAction {const WebhookInstallationUnsuspendAction();
 
 factory WebhookInstallationUnsuspendAction.fromJson(String json) { return switch (json) {
   'unsuspend' => unsuspend,
-  _ => WebhookInstallationUnsuspendAction._(json),
+  _ => WebhookInstallationUnsuspendAction$Unknown(json),
 }; }
 
-static const WebhookInstallationUnsuspendAction unsuspend = WebhookInstallationUnsuspendAction._('unsuspend');
+static const WebhookInstallationUnsuspendAction unsuspend = WebhookInstallationUnsuspendAction$unsuspend._();
 
 static const List<WebhookInstallationUnsuspendAction> values = [unsuspend];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -21,13 +20,27 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebhookInstallationUnsuspendAction$Unknown; } 
+@override String toString() => 'WebhookInstallationUnsuspendAction($value)';
+
+ }
+@immutable final class WebhookInstallationUnsuspendAction$unsuspend extends WebhookInstallationUnsuspendAction {const WebhookInstallationUnsuspendAction$unsuspend._();
+
+@override String get value => 'unsuspend';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebhookInstallationUnsuspendAction$unsuspend;
+
+@override int get hashCode => 'unsuspend'.hashCode;
+
+ }
+@immutable final class WebhookInstallationUnsuspendAction$Unknown extends WebhookInstallationUnsuspendAction {const WebhookInstallationUnsuspendAction$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebhookInstallationUnsuspendAction && other.value == value;
+    other is WebhookInstallationUnsuspendAction$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebhookInstallationUnsuspendAction($value)';
 
  }
 @immutable final class WebhookInstallationUnsuspend {const WebhookInstallationUnsuspend({required this.action, required this.installation, required this.sender, this.enterprise, this.organization, this.repositories, this.repository, this.requester, });

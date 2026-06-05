@@ -3,28 +3,27 @@
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/web_search_tool_call/web_search_tool_call_action.dart';/// The status of the web search tool call.
 /// 
-@immutable final class WebSearchToolCallStatus {const WebSearchToolCallStatus._(this.value);
+sealed class WebSearchToolCallStatus {const WebSearchToolCallStatus();
 
 factory WebSearchToolCallStatus.fromJson(String json) { return switch (json) {
   'in_progress' => inProgress,
   'searching' => searching,
   'completed' => completed,
   'failed' => failed,
-  _ => WebSearchToolCallStatus._(json),
+  _ => WebSearchToolCallStatus$Unknown(json),
 }; }
 
-static const WebSearchToolCallStatus inProgress = WebSearchToolCallStatus._('in_progress');
+static const WebSearchToolCallStatus inProgress = WebSearchToolCallStatus$inProgress._();
 
-static const WebSearchToolCallStatus searching = WebSearchToolCallStatus._('searching');
+static const WebSearchToolCallStatus searching = WebSearchToolCallStatus$searching._();
 
-static const WebSearchToolCallStatus completed = WebSearchToolCallStatus._('completed');
+static const WebSearchToolCallStatus completed = WebSearchToolCallStatus$completed._();
 
-static const WebSearchToolCallStatus failed = WebSearchToolCallStatus._('failed');
+static const WebSearchToolCallStatus failed = WebSearchToolCallStatus$failed._();
 
 static const List<WebSearchToolCallStatus> values = [inProgress, searching, completed, failed];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -35,13 +34,54 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is WebSearchToolCallStatus$Unknown; } 
+@override String toString() => 'WebSearchToolCallStatus($value)';
+
+ }
+@immutable final class WebSearchToolCallStatus$inProgress extends WebSearchToolCallStatus {const WebSearchToolCallStatus$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchToolCallStatus$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class WebSearchToolCallStatus$searching extends WebSearchToolCallStatus {const WebSearchToolCallStatus$searching._();
+
+@override String get value => 'searching';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchToolCallStatus$searching;
+
+@override int get hashCode => 'searching'.hashCode;
+
+ }
+@immutable final class WebSearchToolCallStatus$completed extends WebSearchToolCallStatus {const WebSearchToolCallStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchToolCallStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+ }
+@immutable final class WebSearchToolCallStatus$failed extends WebSearchToolCallStatus {const WebSearchToolCallStatus$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchToolCallStatus$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class WebSearchToolCallStatus$Unknown extends WebSearchToolCallStatus {const WebSearchToolCallStatus$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is WebSearchToolCallStatus && other.value == value;
+    other is WebSearchToolCallStatus$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'WebSearchToolCallStatus($value)';
 
  }
 /// The results of a web search tool call. See the

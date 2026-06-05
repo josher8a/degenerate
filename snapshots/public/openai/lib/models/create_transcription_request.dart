@@ -3,7 +3,7 @@
 
 import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/audio_transcription/audio_transcription_model.dart';import 'package:pub_openai/models/create_transcription_request/create_transcription_request_chunking_strategy.dart';import 'package:pub_openai/models/response_format_option/response_format_option_variant1.dart';import 'package:pub_openai/models/vad_config.dart';/// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, `vtt`, or `diarized_json`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`. For `gpt-4o-transcribe-diarize`, the supported formats are `json`, `text`, and `diarized_json`, with `diarized_json` required to receive speaker annotations.
 /// 
-@immutable final class AudioResponseFormat {const AudioResponseFormat._(this.value);
+sealed class AudioResponseFormat {const AudioResponseFormat();
 
 factory AudioResponseFormat.fromJson(String json) { return switch (json) {
   'json' => $json,
@@ -12,25 +12,24 @@ factory AudioResponseFormat.fromJson(String json) { return switch (json) {
   'verbose_json' => verboseJson,
   'vtt' => vtt,
   'diarized_json' => diarizedJson,
-  _ => AudioResponseFormat._(json),
+  _ => AudioResponseFormat$Unknown(json),
 }; }
 
-static const AudioResponseFormat $json = AudioResponseFormat._('json');
+static const AudioResponseFormat $json = AudioResponseFormat$$json._();
 
-static const AudioResponseFormat text = AudioResponseFormat._('text');
+static const AudioResponseFormat text = AudioResponseFormat$text._();
 
-static const AudioResponseFormat srt = AudioResponseFormat._('srt');
+static const AudioResponseFormat srt = AudioResponseFormat$srt._();
 
-static const AudioResponseFormat verboseJson = AudioResponseFormat._('verbose_json');
+static const AudioResponseFormat verboseJson = AudioResponseFormat$verboseJson._();
 
-static const AudioResponseFormat vtt = AudioResponseFormat._('vtt');
+static const AudioResponseFormat vtt = AudioResponseFormat$vtt._();
 
-static const AudioResponseFormat diarizedJson = AudioResponseFormat._('diarized_json');
+static const AudioResponseFormat diarizedJson = AudioResponseFormat$diarizedJson._();
 
 static const List<AudioResponseFormat> values = [$json, text, srt, verboseJson, vtt, diarizedJson];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -43,28 +42,86 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is AudioResponseFormat && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is AudioResponseFormat$Unknown; } 
 @override String toString() => 'AudioResponseFormat($value)';
 
  }
-@immutable final class TranscriptionInclude {const TranscriptionInclude._(this.value);
+@immutable final class AudioResponseFormat$$json extends AudioResponseFormat {const AudioResponseFormat$$json._();
+
+@override String get value => 'json';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AudioResponseFormat$$json;
+
+@override int get hashCode => 'json'.hashCode;
+
+ }
+@immutable final class AudioResponseFormat$text extends AudioResponseFormat {const AudioResponseFormat$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AudioResponseFormat$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+ }
+@immutable final class AudioResponseFormat$srt extends AudioResponseFormat {const AudioResponseFormat$srt._();
+
+@override String get value => 'srt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AudioResponseFormat$srt;
+
+@override int get hashCode => 'srt'.hashCode;
+
+ }
+@immutable final class AudioResponseFormat$verboseJson extends AudioResponseFormat {const AudioResponseFormat$verboseJson._();
+
+@override String get value => 'verbose_json';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AudioResponseFormat$verboseJson;
+
+@override int get hashCode => 'verbose_json'.hashCode;
+
+ }
+@immutable final class AudioResponseFormat$vtt extends AudioResponseFormat {const AudioResponseFormat$vtt._();
+
+@override String get value => 'vtt';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AudioResponseFormat$vtt;
+
+@override int get hashCode => 'vtt'.hashCode;
+
+ }
+@immutable final class AudioResponseFormat$diarizedJson extends AudioResponseFormat {const AudioResponseFormat$diarizedJson._();
+
+@override String get value => 'diarized_json';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AudioResponseFormat$diarizedJson;
+
+@override int get hashCode => 'diarized_json'.hashCode;
+
+ }
+@immutable final class AudioResponseFormat$Unknown extends AudioResponseFormat {const AudioResponseFormat$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is AudioResponseFormat$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class TranscriptionInclude {const TranscriptionInclude();
 
 factory TranscriptionInclude.fromJson(String json) { return switch (json) {
   'logprobs' => logprobs,
-  _ => TranscriptionInclude._(json),
+  _ => TranscriptionInclude$Unknown(json),
 }; }
 
-static const TranscriptionInclude logprobs = TranscriptionInclude._('logprobs');
+static const TranscriptionInclude logprobs = TranscriptionInclude$logprobs._();
 
 static const List<TranscriptionInclude> values = [logprobs];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -72,31 +129,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
-@override bool operator ==(Object other) => identical(this, other) ||
-    other is TranscriptionInclude && other.value == value;
-
-@override int get hashCode => value.hashCode;
-
+bool get isUnknown { return this is TranscriptionInclude$Unknown; } 
 @override String toString() => 'TranscriptionInclude($value)';
 
  }
-@immutable final class TimestampGranularities {const TimestampGranularities._(this.value);
+@immutable final class TranscriptionInclude$logprobs extends TranscriptionInclude {const TranscriptionInclude$logprobs._();
+
+@override String get value => 'logprobs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TranscriptionInclude$logprobs;
+
+@override int get hashCode => 'logprobs'.hashCode;
+
+ }
+@immutable final class TranscriptionInclude$Unknown extends TranscriptionInclude {const TranscriptionInclude$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is TranscriptionInclude$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+sealed class TimestampGranularities {const TimestampGranularities();
 
 factory TimestampGranularities.fromJson(String json) { return switch (json) {
   'word' => word,
   'segment' => segment,
-  _ => TimestampGranularities._(json),
+  _ => TimestampGranularities$Unknown(json),
 }; }
 
-static const TimestampGranularities word = TimestampGranularities._('word');
+static const TimestampGranularities word = TimestampGranularities$word._();
 
-static const TimestampGranularities segment = TimestampGranularities._('segment');
+static const TimestampGranularities segment = TimestampGranularities$segment._();
 
 static const List<TimestampGranularities> values = [word, segment];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -105,13 +175,36 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is TimestampGranularities$Unknown; } 
+@override String toString() => 'TimestampGranularities($value)';
+
+ }
+@immutable final class TimestampGranularities$word extends TimestampGranularities {const TimestampGranularities$word._();
+
+@override String get value => 'word';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TimestampGranularities$word;
+
+@override int get hashCode => 'word'.hashCode;
+
+ }
+@immutable final class TimestampGranularities$segment extends TimestampGranularities {const TimestampGranularities$segment._();
+
+@override String get value => 'segment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is TimestampGranularities$segment;
+
+@override int get hashCode => 'segment'.hashCode;
+
+ }
+@immutable final class TimestampGranularities$Unknown extends TimestampGranularities {const TimestampGranularities$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is TimestampGranularities && other.value == value;
+    other is TimestampGranularities$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'TimestampGranularities($value)';
 
  }
 @immutable final class CreateTranscriptionRequest {const CreateTranscriptionRequest({required this.file, required this.model, this.language, this.prompt, this.responseFormat, this.temperature = 0.0, this.include, this.timestampGranularities, this.stream, this.chunkingStrategy, this.knownSpeakerNames, this.knownSpeakerReferences, });

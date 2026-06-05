@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RadarGetEmailSecurityTopTldsBySpoofDmarc
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class RadarGetEmailSecurityTopTldsBySpoofDmarc {const RadarGetEmailSecurityTopTldsBySpoofDmarc._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class RadarGetEmailSecurityTopTldsBySpoofDmarc {const RadarGetEmailSecurityTopTldsBySpoofDmarc();
 
 factory RadarGetEmailSecurityTopTldsBySpoofDmarc.fromJson(String json) { return switch (json) {
   'PASS' => pass,
   'NONE' => none,
   'FAIL' => fail,
-  _ => RadarGetEmailSecurityTopTldsBySpoofDmarc._(json),
+  _ => RadarGetEmailSecurityTopTldsBySpoofDmarc$Unknown(json),
 }; }
 
-static const RadarGetEmailSecurityTopTldsBySpoofDmarc pass = RadarGetEmailSecurityTopTldsBySpoofDmarc._('PASS');
+static const RadarGetEmailSecurityTopTldsBySpoofDmarc pass = RadarGetEmailSecurityTopTldsBySpoofDmarc$pass._();
 
-static const RadarGetEmailSecurityTopTldsBySpoofDmarc none = RadarGetEmailSecurityTopTldsBySpoofDmarc._('NONE');
+static const RadarGetEmailSecurityTopTldsBySpoofDmarc none = RadarGetEmailSecurityTopTldsBySpoofDmarc$none._();
 
-static const RadarGetEmailSecurityTopTldsBySpoofDmarc fail = RadarGetEmailSecurityTopTldsBySpoofDmarc._('FAIL');
+static const RadarGetEmailSecurityTopTldsBySpoofDmarc fail = RadarGetEmailSecurityTopTldsBySpoofDmarc$fail._();
 
 static const List<RadarGetEmailSecurityTopTldsBySpoofDmarc> values = [pass, none, fail];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,12 +28,44 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RadarGetEmailSecurityTopTldsBySpoofDmarc$Unknown; } 
+@override String toString() => 'RadarGetEmailSecurityTopTldsBySpoofDmarc($value)';
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsBySpoofDmarc$pass extends RadarGetEmailSecurityTopTldsBySpoofDmarc {const RadarGetEmailSecurityTopTldsBySpoofDmarc$pass._();
+
+@override String get value => 'PASS';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTopTldsBySpoofDmarc$pass;
+
+@override int get hashCode => 'PASS'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsBySpoofDmarc$none extends RadarGetEmailSecurityTopTldsBySpoofDmarc {const RadarGetEmailSecurityTopTldsBySpoofDmarc$none._();
+
+@override String get value => 'NONE';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTopTldsBySpoofDmarc$none;
+
+@override int get hashCode => 'NONE'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsBySpoofDmarc$fail extends RadarGetEmailSecurityTopTldsBySpoofDmarc {const RadarGetEmailSecurityTopTldsBySpoofDmarc$fail._();
+
+@override String get value => 'FAIL';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RadarGetEmailSecurityTopTldsBySpoofDmarc$fail;
+
+@override int get hashCode => 'FAIL'.hashCode;
+
+ }
+@immutable final class RadarGetEmailSecurityTopTldsBySpoofDmarc$Unknown extends RadarGetEmailSecurityTopTldsBySpoofDmarc {const RadarGetEmailSecurityTopTldsBySpoofDmarc$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RadarGetEmailSecurityTopTldsBySpoofDmarc && other.value == value;
+    other is RadarGetEmailSecurityTopTldsBySpoofDmarc$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RadarGetEmailSecurityTopTldsBySpoofDmarc($value)';
 
  }

@@ -1,25 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AiSearchInstanceChatCompletionRequest (inline: AiSearchOptions > Retrieval)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/boost_by.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/fusion_method.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/keyword_match_mode.dart';@immutable final class RetrievalType {const RetrievalType._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/boost_by.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/fusion_method.dart';import 'package:pub_cloudflare/models/ai_search_create_instances_request/keyword_match_mode.dart';sealed class RetrievalType {const RetrievalType();
 
 factory RetrievalType.fromJson(String json) { return switch (json) {
   'vector' => vector,
   'keyword' => keyword,
   'hybrid' => hybrid,
-  _ => RetrievalType._(json),
+  _ => RetrievalType$Unknown(json),
 }; }
 
-static const RetrievalType vector = RetrievalType._('vector');
+static const RetrievalType vector = RetrievalType$vector._();
 
-static const RetrievalType keyword = RetrievalType._('keyword');
+static const RetrievalType keyword = RetrievalType$keyword._();
 
-static const RetrievalType hybrid = RetrievalType._('hybrid');
+static const RetrievalType hybrid = RetrievalType$hybrid._();
 
 static const List<RetrievalType> values = [vector, keyword, hybrid];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -29,13 +28,45 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is RetrievalType$Unknown; } 
+@override String toString() => 'RetrievalType($value)';
+
+ }
+@immutable final class RetrievalType$vector extends RetrievalType {const RetrievalType$vector._();
+
+@override String get value => 'vector';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RetrievalType$vector;
+
+@override int get hashCode => 'vector'.hashCode;
+
+ }
+@immutable final class RetrievalType$keyword extends RetrievalType {const RetrievalType$keyword._();
+
+@override String get value => 'keyword';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RetrievalType$keyword;
+
+@override int get hashCode => 'keyword'.hashCode;
+
+ }
+@immutable final class RetrievalType$hybrid extends RetrievalType {const RetrievalType$hybrid._();
+
+@override String get value => 'hybrid';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RetrievalType$hybrid;
+
+@override int get hashCode => 'hybrid'.hashCode;
+
+ }
+@immutable final class RetrievalType$Unknown extends RetrievalType {const RetrievalType$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RetrievalType && other.value == value;
+    other is RetrievalType$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'RetrievalType($value)';
 
  }
 @immutable final class Retrieval {const Retrieval({this.boostBy, this.contextExpansion = 0, this.filters, this.fusionMethod, this.keywordMatchMode = KeywordMatchMode.exactMatch, this.matchThreshold = 0.4, this.maxNumResults = 10, this.retrievalType, this.returnOnFailure = true, });

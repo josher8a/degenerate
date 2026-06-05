@@ -2,19 +2,18 @@
 // Source: #/components/schemas/ResourceTaggingAccountResourceTypeWorkerVersionEnum
 
 import 'package:degenerate_runtime/degenerate_runtime.dart';/// Enum for worker_version resource type.
-@immutable final class ResourceTaggingAccountResourceTypeWorkerVersionEnum {const ResourceTaggingAccountResourceTypeWorkerVersionEnum._(this.value);
+sealed class ResourceTaggingAccountResourceTypeWorkerVersionEnum {const ResourceTaggingAccountResourceTypeWorkerVersionEnum();
 
 factory ResourceTaggingAccountResourceTypeWorkerVersionEnum.fromJson(String json) { return switch (json) {
   'worker_version' => workerVersion,
-  _ => ResourceTaggingAccountResourceTypeWorkerVersionEnum._(json),
+  _ => ResourceTaggingAccountResourceTypeWorkerVersionEnum$Unknown(json),
 }; }
 
-static const ResourceTaggingAccountResourceTypeWorkerVersionEnum workerVersion = ResourceTaggingAccountResourceTypeWorkerVersionEnum._('worker_version');
+static const ResourceTaggingAccountResourceTypeWorkerVersionEnum workerVersion = ResourceTaggingAccountResourceTypeWorkerVersionEnum$workerVersion._();
 
 static const List<ResourceTaggingAccountResourceTypeWorkerVersionEnum> values = [workerVersion];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -22,12 +21,26 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ResourceTaggingAccountResourceTypeWorkerVersionEnum$Unknown; } 
+@override String toString() => 'ResourceTaggingAccountResourceTypeWorkerVersionEnum($value)';
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeWorkerVersionEnum$workerVersion extends ResourceTaggingAccountResourceTypeWorkerVersionEnum {const ResourceTaggingAccountResourceTypeWorkerVersionEnum$workerVersion._();
+
+@override String get value => 'worker_version';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingAccountResourceTypeWorkerVersionEnum$workerVersion;
+
+@override int get hashCode => 'worker_version'.hashCode;
+
+ }
+@immutable final class ResourceTaggingAccountResourceTypeWorkerVersionEnum$Unknown extends ResourceTaggingAccountResourceTypeWorkerVersionEnum {const ResourceTaggingAccountResourceTypeWorkerVersionEnum$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ResourceTaggingAccountResourceTypeWorkerVersionEnum && other.value == value;
+    other is ResourceTaggingAccountResourceTypeWorkerVersionEnum$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ResourceTaggingAccountResourceTypeWorkerVersionEnum($value)';
 
  }

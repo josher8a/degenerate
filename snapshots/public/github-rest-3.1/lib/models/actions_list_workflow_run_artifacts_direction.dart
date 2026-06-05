@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ActionsListWorkflowRunArtifactsDirection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class ActionsListWorkflowRunArtifactsDirection {const ActionsListWorkflowRunArtifactsDirection._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class ActionsListWorkflowRunArtifactsDirection {const ActionsListWorkflowRunArtifactsDirection();
 
 factory ActionsListWorkflowRunArtifactsDirection.fromJson(String json) { return switch (json) {
   'asc' => asc,
   'desc' => desc,
-  _ => ActionsListWorkflowRunArtifactsDirection._(json),
+  _ => ActionsListWorkflowRunArtifactsDirection$Unknown(json),
 }; }
 
-static const ActionsListWorkflowRunArtifactsDirection asc = ActionsListWorkflowRunArtifactsDirection._('asc');
+static const ActionsListWorkflowRunArtifactsDirection asc = ActionsListWorkflowRunArtifactsDirection$asc._();
 
-static const ActionsListWorkflowRunArtifactsDirection desc = ActionsListWorkflowRunArtifactsDirection._('desc');
+static const ActionsListWorkflowRunArtifactsDirection desc = ActionsListWorkflowRunArtifactsDirection$desc._();
 
 static const List<ActionsListWorkflowRunArtifactsDirection> values = [asc, desc];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -25,12 +24,35 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is ActionsListWorkflowRunArtifactsDirection$Unknown; } 
+@override String toString() => 'ActionsListWorkflowRunArtifactsDirection($value)';
+
+ }
+@immutable final class ActionsListWorkflowRunArtifactsDirection$asc extends ActionsListWorkflowRunArtifactsDirection {const ActionsListWorkflowRunArtifactsDirection$asc._();
+
+@override String get value => 'asc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsListWorkflowRunArtifactsDirection$asc;
+
+@override int get hashCode => 'asc'.hashCode;
+
+ }
+@immutable final class ActionsListWorkflowRunArtifactsDirection$desc extends ActionsListWorkflowRunArtifactsDirection {const ActionsListWorkflowRunArtifactsDirection$desc._();
+
+@override String get value => 'desc';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ActionsListWorkflowRunArtifactsDirection$desc;
+
+@override int get hashCode => 'desc'.hashCode;
+
+ }
+@immutable final class ActionsListWorkflowRunArtifactsDirection$Unknown extends ActionsListWorkflowRunArtifactsDirection {const ActionsListWorkflowRunArtifactsDirection$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ActionsListWorkflowRunArtifactsDirection && other.value == value;
+    other is ActionsListWorkflowRunArtifactsDirection$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'ActionsListWorkflowRunArtifactsDirection($value)';
 
  }

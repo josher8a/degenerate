@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/PortalCustomerUpdate
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PortalCustomerUpdateAllowedUpdates {const PortalCustomerUpdateAllowedUpdates._(this.value);
+import 'package:degenerate_runtime/degenerate_runtime.dart';sealed class PortalCustomerUpdateAllowedUpdates {const PortalCustomerUpdateAllowedUpdates();
 
 factory PortalCustomerUpdateAllowedUpdates.fromJson(String json) { return switch (json) {
   'address' => address,
@@ -10,25 +10,24 @@ factory PortalCustomerUpdateAllowedUpdates.fromJson(String json) { return switch
   'phone' => phone,
   'shipping' => shipping,
   'tax_id' => taxId,
-  _ => PortalCustomerUpdateAllowedUpdates._(json),
+  _ => PortalCustomerUpdateAllowedUpdates$Unknown(json),
 }; }
 
-static const PortalCustomerUpdateAllowedUpdates address = PortalCustomerUpdateAllowedUpdates._('address');
+static const PortalCustomerUpdateAllowedUpdates address = PortalCustomerUpdateAllowedUpdates$address._();
 
-static const PortalCustomerUpdateAllowedUpdates email = PortalCustomerUpdateAllowedUpdates._('email');
+static const PortalCustomerUpdateAllowedUpdates email = PortalCustomerUpdateAllowedUpdates$email._();
 
-static const PortalCustomerUpdateAllowedUpdates $name = PortalCustomerUpdateAllowedUpdates._('name');
+static const PortalCustomerUpdateAllowedUpdates $name = PortalCustomerUpdateAllowedUpdates$$name._();
 
-static const PortalCustomerUpdateAllowedUpdates phone = PortalCustomerUpdateAllowedUpdates._('phone');
+static const PortalCustomerUpdateAllowedUpdates phone = PortalCustomerUpdateAllowedUpdates$phone._();
 
-static const PortalCustomerUpdateAllowedUpdates shipping = PortalCustomerUpdateAllowedUpdates._('shipping');
+static const PortalCustomerUpdateAllowedUpdates shipping = PortalCustomerUpdateAllowedUpdates$shipping._();
 
-static const PortalCustomerUpdateAllowedUpdates taxId = PortalCustomerUpdateAllowedUpdates._('tax_id');
+static const PortalCustomerUpdateAllowedUpdates taxId = PortalCustomerUpdateAllowedUpdates$taxId._();
 
 static const List<PortalCustomerUpdateAllowedUpdates> values = [address, email, $name, phone, shipping, taxId];
 
-final String value;
-
+String get value;
 String toJson() { return value; } 
 /// The Dart identifier name for this value, or the raw value if unknown.
 String get name { return switch (value) {
@@ -41,13 +40,72 @@ String get name { return switch (value) {
   _ => value,
 }; } 
 /// Whether this value is unknown (not defined in the OpenAPI spec).
-bool get isUnknown { return !values.contains(this); } 
+bool get isUnknown { return this is PortalCustomerUpdateAllowedUpdates$Unknown; } 
+@override String toString() => 'PortalCustomerUpdateAllowedUpdates($value)';
+
+ }
+@immutable final class PortalCustomerUpdateAllowedUpdates$address extends PortalCustomerUpdateAllowedUpdates {const PortalCustomerUpdateAllowedUpdates$address._();
+
+@override String get value => 'address';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalCustomerUpdateAllowedUpdates$address;
+
+@override int get hashCode => 'address'.hashCode;
+
+ }
+@immutable final class PortalCustomerUpdateAllowedUpdates$email extends PortalCustomerUpdateAllowedUpdates {const PortalCustomerUpdateAllowedUpdates$email._();
+
+@override String get value => 'email';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalCustomerUpdateAllowedUpdates$email;
+
+@override int get hashCode => 'email'.hashCode;
+
+ }
+@immutable final class PortalCustomerUpdateAllowedUpdates$$name extends PortalCustomerUpdateAllowedUpdates {const PortalCustomerUpdateAllowedUpdates$$name._();
+
+@override String get value => 'name';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalCustomerUpdateAllowedUpdates$$name;
+
+@override int get hashCode => 'name'.hashCode;
+
+ }
+@immutable final class PortalCustomerUpdateAllowedUpdates$phone extends PortalCustomerUpdateAllowedUpdates {const PortalCustomerUpdateAllowedUpdates$phone._();
+
+@override String get value => 'phone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalCustomerUpdateAllowedUpdates$phone;
+
+@override int get hashCode => 'phone'.hashCode;
+
+ }
+@immutable final class PortalCustomerUpdateAllowedUpdates$shipping extends PortalCustomerUpdateAllowedUpdates {const PortalCustomerUpdateAllowedUpdates$shipping._();
+
+@override String get value => 'shipping';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalCustomerUpdateAllowedUpdates$shipping;
+
+@override int get hashCode => 'shipping'.hashCode;
+
+ }
+@immutable final class PortalCustomerUpdateAllowedUpdates$taxId extends PortalCustomerUpdateAllowedUpdates {const PortalCustomerUpdateAllowedUpdates$taxId._();
+
+@override String get value => 'tax_id';
+
+@override bool operator ==(Object other) => identical(this, other) || other is PortalCustomerUpdateAllowedUpdates$taxId;
+
+@override int get hashCode => 'tax_id'.hashCode;
+
+ }
+@immutable final class PortalCustomerUpdateAllowedUpdates$Unknown extends PortalCustomerUpdateAllowedUpdates {const PortalCustomerUpdateAllowedUpdates$Unknown(this.value);
+
+@override final String value;
+
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is PortalCustomerUpdateAllowedUpdates && other.value == value;
+    other is PortalCustomerUpdateAllowedUpdates$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
-
-@override String toString() => 'PortalCustomerUpdateAllowedUpdates($value)';
 
  }
 /// 
