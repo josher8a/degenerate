@@ -1,7 +1,382 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Item
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_call_output_status.dart';import 'package:pub_openai/models/apply_patch_call_status.dart';import 'package:pub_openai/models/apply_patch_operation_param.dart';import 'package:pub_openai/models/apply_patch_tool_call_item_param.dart';import 'package:pub_openai/models/apply_patch_tool_call_output_item_param.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_role.dart';import 'package:pub_openai/models/code_interpreter_tool_call.dart';import 'package:pub_openai/models/code_interpreter_tool_call/code_interpreter_tool_call_outputs.dart';import 'package:pub_openai/models/compaction_summary_item_param.dart';import 'package:pub_openai/models/computer_action.dart';import 'package:pub_openai/models/computer_call_output_item_param.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_screenshot_image.dart';import 'package:pub_openai/models/computer_tool_call.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/custom_tool_call.dart';import 'package:pub_openai/models/custom_tool_call_output.dart';import 'package:pub_openai/models/custom_tool_call_output/custom_tool_call_output_output.dart';import 'package:pub_openai/models/empty_model_param.dart';import 'package:pub_openai/models/file_search_tool_call.dart';import 'package:pub_openai/models/file_search_tool_call/file_search_tool_call_results.dart';import 'package:pub_openai/models/function_call_item_status.dart';import 'package:pub_openai/models/function_call_output_item_param.dart';import 'package:pub_openai/models/function_call_output_item_param/function_call_output_item_param_output.dart';import 'package:pub_openai/models/function_shell_action_param.dart';import 'package:pub_openai/models/function_shell_call_item_param.dart';import 'package:pub_openai/models/function_shell_call_item_param/function_shell_call_item_param_environment.dart';import 'package:pub_openai/models/function_shell_call_item_status.dart';import 'package:pub_openai/models/function_shell_call_output_content_param.dart';import 'package:pub_openai/models/function_shell_call_output_item_param.dart';import 'package:pub_openai/models/function_tool_call.dart';import 'package:pub_openai/models/image_gen_tool_call.dart';import 'package:pub_openai/models/local_shell_exec_action.dart';import 'package:pub_openai/models/local_shell_tool_call.dart';import 'package:pub_openai/models/local_shell_tool_call_output.dart';import 'package:pub_openai/models/mcp_approval_request.dart';import 'package:pub_openai/models/mcp_approval_response.dart';import 'package:pub_openai/models/mcp_list_tools.dart';import 'package:pub_openai/models/mcp_list_tools_tool.dart';import 'package:pub_openai/models/mcp_tool_call.dart';import 'package:pub_openai/models/message_phase.dart';import 'package:pub_openai/models/output_message.dart';import 'package:pub_openai/models/output_message_content.dart';import 'package:pub_openai/models/reasoning_item.dart';import 'package:pub_openai/models/reasoning_text_content.dart';import 'package:pub_openai/models/summary_text_content.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_search_call_item_param.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';import 'package:pub_openai/models/tool_search_output_item_param.dart';import 'package:pub_openai/models/web_search_tool_call.dart';import 'package:pub_openai/models/web_search_tool_call/web_search_tool_call_action.dart';/// Content item used to generate a response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_call_output_status.dart';import 'package:pub_openai/models/apply_patch_call_status.dart';import 'package:pub_openai/models/apply_patch_operation_param.dart';import 'package:pub_openai/models/apply_patch_tool_call_item_param.dart';import 'package:pub_openai/models/apply_patch_tool_call_output_item_param.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_role.dart';import 'package:pub_openai/models/code_interpreter_tool_call.dart';import 'package:pub_openai/models/code_interpreter_tool_call/code_interpreter_tool_call_outputs.dart';import 'package:pub_openai/models/compaction_summary_item_param.dart';import 'package:pub_openai/models/computer_action.dart';import 'package:pub_openai/models/computer_call_output_item_param.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_screenshot_image.dart';import 'package:pub_openai/models/computer_tool_call.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/custom_tool_call.dart';import 'package:pub_openai/models/custom_tool_call_output.dart';import 'package:pub_openai/models/custom_tool_call_output/custom_tool_call_output_output.dart';import 'package:pub_openai/models/empty_model_param.dart';import 'package:pub_openai/models/file_search_tool_call.dart';import 'package:pub_openai/models/file_search_tool_call/file_search_tool_call_results.dart';import 'package:pub_openai/models/function_call_item_status.dart';import 'package:pub_openai/models/function_call_output_item_param.dart';import 'package:pub_openai/models/function_call_output_item_param/function_call_output_item_param_output.dart';import 'package:pub_openai/models/function_shell_action_param.dart';import 'package:pub_openai/models/function_shell_call_item_param.dart';import 'package:pub_openai/models/function_shell_call_item_param/function_shell_call_item_param_environment.dart';import 'package:pub_openai/models/function_shell_call_item_status.dart';import 'package:pub_openai/models/function_shell_call_output_content_param.dart';import 'package:pub_openai/models/function_shell_call_output_item_param.dart';import 'package:pub_openai/models/function_tool_call.dart';import 'package:pub_openai/models/image_gen_tool_call.dart';import 'package:pub_openai/models/local_shell_exec_action.dart';import 'package:pub_openai/models/local_shell_tool_call.dart';import 'package:pub_openai/models/local_shell_tool_call_output.dart';import 'package:pub_openai/models/mcp_approval_request.dart';import 'package:pub_openai/models/mcp_approval_response.dart';import 'package:pub_openai/models/mcp_list_tools.dart';import 'package:pub_openai/models/mcp_list_tools_tool.dart';import 'package:pub_openai/models/mcp_tool_call.dart';import 'package:pub_openai/models/message_phase.dart';import 'package:pub_openai/models/output_message.dart';import 'package:pub_openai/models/output_message_content.dart';import 'package:pub_openai/models/reasoning_item.dart';import 'package:pub_openai/models/reasoning_text_content.dart';import 'package:pub_openai/models/summary_text_content.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_search_call_item_param.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';import 'package:pub_openai/models/tool_search_output_item_param.dart';import 'package:pub_openai/models/web_search_tool_call.dart';import 'package:pub_openai/models/web_search_tool_call/web_search_tool_call_action.dart';sealed class ItemType {const ItemType();
+
+factory ItemType.fromJson(String json) { return switch (json) {
+  'message' => message,
+  'file_search_call' => fileSearchCall,
+  'computer_call' => computerCall,
+  'computer_call_output' => computerCallOutput,
+  'web_search_call' => webSearchCall,
+  'function_call' => functionCall,
+  'function_call_output' => functionCallOutput,
+  'tool_search_call' => toolSearchCall,
+  'tool_search_output' => toolSearchOutput,
+  'reasoning' => reasoning,
+  'compaction' => compaction,
+  'image_generation_call' => imageGenerationCall,
+  'code_interpreter_call' => codeInterpreterCall,
+  'local_shell_call' => localShellCall,
+  'local_shell_call_output' => localShellCallOutput,
+  'shell_call' => shellCall,
+  'shell_call_output' => shellCallOutput,
+  'apply_patch_call' => applyPatchCall,
+  'apply_patch_call_output' => applyPatchCallOutput,
+  'mcp_list_tools' => mcpListTools,
+  'mcp_approval_request' => mcpApprovalRequest,
+  'mcp_approval_response' => mcpApprovalResponse,
+  'mcp_call' => mcpCall,
+  'custom_tool_call_output' => customToolCallOutput,
+  'custom_tool_call' => customToolCall,
+  _ => ItemType$Unknown(json),
+}; }
+
+static const ItemType message = ItemType$message._();
+
+static const ItemType fileSearchCall = ItemType$fileSearchCall._();
+
+static const ItemType computerCall = ItemType$computerCall._();
+
+static const ItemType computerCallOutput = ItemType$computerCallOutput._();
+
+static const ItemType webSearchCall = ItemType$webSearchCall._();
+
+static const ItemType functionCall = ItemType$functionCall._();
+
+static const ItemType functionCallOutput = ItemType$functionCallOutput._();
+
+static const ItemType toolSearchCall = ItemType$toolSearchCall._();
+
+static const ItemType toolSearchOutput = ItemType$toolSearchOutput._();
+
+static const ItemType reasoning = ItemType$reasoning._();
+
+static const ItemType compaction = ItemType$compaction._();
+
+static const ItemType imageGenerationCall = ItemType$imageGenerationCall._();
+
+static const ItemType codeInterpreterCall = ItemType$codeInterpreterCall._();
+
+static const ItemType localShellCall = ItemType$localShellCall._();
+
+static const ItemType localShellCallOutput = ItemType$localShellCallOutput._();
+
+static const ItemType shellCall = ItemType$shellCall._();
+
+static const ItemType shellCallOutput = ItemType$shellCallOutput._();
+
+static const ItemType applyPatchCall = ItemType$applyPatchCall._();
+
+static const ItemType applyPatchCallOutput = ItemType$applyPatchCallOutput._();
+
+static const ItemType mcpListTools = ItemType$mcpListTools._();
+
+static const ItemType mcpApprovalRequest = ItemType$mcpApprovalRequest._();
+
+static const ItemType mcpApprovalResponse = ItemType$mcpApprovalResponse._();
+
+static const ItemType mcpCall = ItemType$mcpCall._();
+
+static const ItemType customToolCallOutput = ItemType$customToolCallOutput._();
+
+static const ItemType customToolCall = ItemType$customToolCall._();
+
+static const List<ItemType> values = [message, fileSearchCall, computerCall, computerCallOutput, webSearchCall, functionCall, functionCallOutput, toolSearchCall, toolSearchOutput, reasoning, compaction, imageGenerationCall, codeInterpreterCall, localShellCall, localShellCallOutput, shellCall, shellCallOutput, applyPatchCall, applyPatchCallOutput, mcpListTools, mcpApprovalRequest, mcpApprovalResponse, mcpCall, customToolCallOutput, customToolCall];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ItemType$Unknown;
+
+ }
+@immutable final class ItemType$message extends ItemType {const ItemType$message._();
+
+@override String get value => 'message';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$message;
+
+@override int get hashCode => 'message'.hashCode;
+
+@override String toString() => 'ItemType(message)';
+
+ }
+@immutable final class ItemType$fileSearchCall extends ItemType {const ItemType$fileSearchCall._();
+
+@override String get value => 'file_search_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$fileSearchCall;
+
+@override int get hashCode => 'file_search_call'.hashCode;
+
+@override String toString() => 'ItemType(file_search_call)';
+
+ }
+@immutable final class ItemType$computerCall extends ItemType {const ItemType$computerCall._();
+
+@override String get value => 'computer_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$computerCall;
+
+@override int get hashCode => 'computer_call'.hashCode;
+
+@override String toString() => 'ItemType(computer_call)';
+
+ }
+@immutable final class ItemType$computerCallOutput extends ItemType {const ItemType$computerCallOutput._();
+
+@override String get value => 'computer_call_output';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$computerCallOutput;
+
+@override int get hashCode => 'computer_call_output'.hashCode;
+
+@override String toString() => 'ItemType(computer_call_output)';
+
+ }
+@immutable final class ItemType$webSearchCall extends ItemType {const ItemType$webSearchCall._();
+
+@override String get value => 'web_search_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$webSearchCall;
+
+@override int get hashCode => 'web_search_call'.hashCode;
+
+@override String toString() => 'ItemType(web_search_call)';
+
+ }
+@immutable final class ItemType$functionCall extends ItemType {const ItemType$functionCall._();
+
+@override String get value => 'function_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$functionCall;
+
+@override int get hashCode => 'function_call'.hashCode;
+
+@override String toString() => 'ItemType(function_call)';
+
+ }
+@immutable final class ItemType$functionCallOutput extends ItemType {const ItemType$functionCallOutput._();
+
+@override String get value => 'function_call_output';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$functionCallOutput;
+
+@override int get hashCode => 'function_call_output'.hashCode;
+
+@override String toString() => 'ItemType(function_call_output)';
+
+ }
+@immutable final class ItemType$toolSearchCall extends ItemType {const ItemType$toolSearchCall._();
+
+@override String get value => 'tool_search_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$toolSearchCall;
+
+@override int get hashCode => 'tool_search_call'.hashCode;
+
+@override String toString() => 'ItemType(tool_search_call)';
+
+ }
+@immutable final class ItemType$toolSearchOutput extends ItemType {const ItemType$toolSearchOutput._();
+
+@override String get value => 'tool_search_output';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$toolSearchOutput;
+
+@override int get hashCode => 'tool_search_output'.hashCode;
+
+@override String toString() => 'ItemType(tool_search_output)';
+
+ }
+@immutable final class ItemType$reasoning extends ItemType {const ItemType$reasoning._();
+
+@override String get value => 'reasoning';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$reasoning;
+
+@override int get hashCode => 'reasoning'.hashCode;
+
+@override String toString() => 'ItemType(reasoning)';
+
+ }
+@immutable final class ItemType$compaction extends ItemType {const ItemType$compaction._();
+
+@override String get value => 'compaction';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$compaction;
+
+@override int get hashCode => 'compaction'.hashCode;
+
+@override String toString() => 'ItemType(compaction)';
+
+ }
+@immutable final class ItemType$imageGenerationCall extends ItemType {const ItemType$imageGenerationCall._();
+
+@override String get value => 'image_generation_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$imageGenerationCall;
+
+@override int get hashCode => 'image_generation_call'.hashCode;
+
+@override String toString() => 'ItemType(image_generation_call)';
+
+ }
+@immutable final class ItemType$codeInterpreterCall extends ItemType {const ItemType$codeInterpreterCall._();
+
+@override String get value => 'code_interpreter_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$codeInterpreterCall;
+
+@override int get hashCode => 'code_interpreter_call'.hashCode;
+
+@override String toString() => 'ItemType(code_interpreter_call)';
+
+ }
+@immutable final class ItemType$localShellCall extends ItemType {const ItemType$localShellCall._();
+
+@override String get value => 'local_shell_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$localShellCall;
+
+@override int get hashCode => 'local_shell_call'.hashCode;
+
+@override String toString() => 'ItemType(local_shell_call)';
+
+ }
+@immutable final class ItemType$localShellCallOutput extends ItemType {const ItemType$localShellCallOutput._();
+
+@override String get value => 'local_shell_call_output';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$localShellCallOutput;
+
+@override int get hashCode => 'local_shell_call_output'.hashCode;
+
+@override String toString() => 'ItemType(local_shell_call_output)';
+
+ }
+@immutable final class ItemType$shellCall extends ItemType {const ItemType$shellCall._();
+
+@override String get value => 'shell_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$shellCall;
+
+@override int get hashCode => 'shell_call'.hashCode;
+
+@override String toString() => 'ItemType(shell_call)';
+
+ }
+@immutable final class ItemType$shellCallOutput extends ItemType {const ItemType$shellCallOutput._();
+
+@override String get value => 'shell_call_output';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$shellCallOutput;
+
+@override int get hashCode => 'shell_call_output'.hashCode;
+
+@override String toString() => 'ItemType(shell_call_output)';
+
+ }
+@immutable final class ItemType$applyPatchCall extends ItemType {const ItemType$applyPatchCall._();
+
+@override String get value => 'apply_patch_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$applyPatchCall;
+
+@override int get hashCode => 'apply_patch_call'.hashCode;
+
+@override String toString() => 'ItemType(apply_patch_call)';
+
+ }
+@immutable final class ItemType$applyPatchCallOutput extends ItemType {const ItemType$applyPatchCallOutput._();
+
+@override String get value => 'apply_patch_call_output';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$applyPatchCallOutput;
+
+@override int get hashCode => 'apply_patch_call_output'.hashCode;
+
+@override String toString() => 'ItemType(apply_patch_call_output)';
+
+ }
+@immutable final class ItemType$mcpListTools extends ItemType {const ItemType$mcpListTools._();
+
+@override String get value => 'mcp_list_tools';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$mcpListTools;
+
+@override int get hashCode => 'mcp_list_tools'.hashCode;
+
+@override String toString() => 'ItemType(mcp_list_tools)';
+
+ }
+@immutable final class ItemType$mcpApprovalRequest extends ItemType {const ItemType$mcpApprovalRequest._();
+
+@override String get value => 'mcp_approval_request';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$mcpApprovalRequest;
+
+@override int get hashCode => 'mcp_approval_request'.hashCode;
+
+@override String toString() => 'ItemType(mcp_approval_request)';
+
+ }
+@immutable final class ItemType$mcpApprovalResponse extends ItemType {const ItemType$mcpApprovalResponse._();
+
+@override String get value => 'mcp_approval_response';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$mcpApprovalResponse;
+
+@override int get hashCode => 'mcp_approval_response'.hashCode;
+
+@override String toString() => 'ItemType(mcp_approval_response)';
+
+ }
+@immutable final class ItemType$mcpCall extends ItemType {const ItemType$mcpCall._();
+
+@override String get value => 'mcp_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$mcpCall;
+
+@override int get hashCode => 'mcp_call'.hashCode;
+
+@override String toString() => 'ItemType(mcp_call)';
+
+ }
+@immutable final class ItemType$customToolCallOutput extends ItemType {const ItemType$customToolCallOutput._();
+
+@override String get value => 'custom_tool_call_output';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$customToolCallOutput;
+
+@override int get hashCode => 'custom_tool_call_output'.hashCode;
+
+@override String toString() => 'ItemType(custom_tool_call_output)';
+
+ }
+@immutable final class ItemType$customToolCall extends ItemType {const ItemType$customToolCall._();
+
+@override String get value => 'custom_tool_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$customToolCall;
+
+@override int get hashCode => 'custom_tool_call'.hashCode;
+
+@override String toString() => 'ItemType(custom_tool_call)';
+
+ }
+@immutable final class ItemType$Unknown extends ItemType {const ItemType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ItemType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ItemType($value)';
+
+ }
+/// Content item used to generate a response.
 /// 
 sealed class Item {const Item();
 
@@ -111,7 +486,7 @@ factory Item.customToolCallOutput({required String callId, required CustomToolCa
 factory Item.customToolCall({required String callId, required String name, required String input, String? id, String? namespace, }) { return ItemCustomToolCall(CustomToolCall(type: 'custom_tool_call', id: id, callId: callId, namespace: namespace, name: name, input: input)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+ItemType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is Item$Unknown;
@@ -153,9 +528,9 @@ factory ItemMessage.fromJson(Map<String, dynamic> json) { return ItemMessage(Out
 
 final OutputMessage outputMessage;
 
-@override String get type => 'message';
+@override ItemType get type => ItemType.fromJson('message');
 
-@override Map<String, dynamic> toJson() => {...outputMessage.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...outputMessage.toJson(), 'type': type.toJson()};
 
 ItemMessage copyWith({String? id, ChatCompletionResponseMessageRole? role, List<OutputMessageContent>? content, MessagePhase? Function()? phase, ComputerToolCallOutputStatus? status, }) { return ItemMessage(outputMessage.copyWith(
   id: id,
@@ -180,9 +555,9 @@ factory ItemFileSearchCall.fromJson(Map<String, dynamic> json) { return ItemFile
 
 final FileSearchToolCall fileSearchToolCall;
 
-@override String get type => 'file_search_call';
+@override ItemType get type => ItemType.fromJson('file_search_call');
 
-@override Map<String, dynamic> toJson() => {...fileSearchToolCall.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...fileSearchToolCall.toJson(), 'type': type.toJson()};
 
 ItemFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status, List<String>? queries, List<FileSearchToolCallResults>? Function()? results, }) { return ItemFileSearchCall(fileSearchToolCall.copyWith(
   id: id,
@@ -206,9 +581,9 @@ factory ItemComputerCall.fromJson(Map<String, dynamic> json) { return ItemComput
 
 final ComputerToolCall computerToolCall;
 
-@override String get type => 'computer_call';
+@override ItemType get type => ItemType.fromJson('computer_call');
 
-@override Map<String, dynamic> toJson() => {...computerToolCall.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...computerToolCall.toJson(), 'type': type.toJson()};
 
 ItemComputerCall copyWith({String? id, String? callId, ComputerAction? Function()? action, List<ComputerAction>? Function()? actions, List<ComputerCallSafetyCheckParam>? pendingSafetyChecks, ComputerToolCallOutputStatus? status, }) { return ItemComputerCall(computerToolCall.copyWith(
   id: id,
@@ -234,9 +609,9 @@ factory ItemComputerCallOutput.fromJson(Map<String, dynamic> json) { return Item
 
 final ComputerCallOutputItemParam computerCallOutputItemParam;
 
-@override String get type => 'computer_call_output';
+@override ItemType get type => ItemType.fromJson('computer_call_output');
 
-@override Map<String, dynamic> toJson() => {...computerCallOutputItemParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...computerCallOutputItemParam.toJson(), 'type': type.toJson()};
 
 ItemComputerCallOutput copyWith({String? Function()? id, String? callId, ComputerScreenshotImage? output, List<ComputerCallSafetyCheckParam>? Function()? acknowledgedSafetyChecks, FunctionCallItemStatus? Function()? status, }) { return ItemComputerCallOutput(computerCallOutputItemParam.copyWith(
   id: id,
@@ -261,9 +636,9 @@ factory ItemWebSearchCall.fromJson(Map<String, dynamic> json) { return ItemWebSe
 
 final WebSearchToolCall webSearchToolCall;
 
-@override String get type => 'web_search_call';
+@override ItemType get type => ItemType.fromJson('web_search_call');
 
-@override Map<String, dynamic> toJson() => {...webSearchToolCall.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...webSearchToolCall.toJson(), 'type': type.toJson()};
 
 ItemWebSearchCall copyWith({String? id, WebSearchToolCallStatus? status, WebSearchToolCallAction? action, }) { return ItemWebSearchCall(webSearchToolCall.copyWith(
   id: id,
@@ -286,9 +661,9 @@ factory ItemFunctionCall.fromJson(Map<String, dynamic> json) { return ItemFuncti
 
 final FunctionToolCall functionToolCall;
 
-@override String get type => 'function_call';
+@override ItemType get type => ItemType.fromJson('function_call');
 
-@override Map<String, dynamic> toJson() => {...functionToolCall.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...functionToolCall.toJson(), 'type': type.toJson()};
 
 ItemFunctionCall copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? arguments, ComputerToolCallOutputStatus? Function()? status, }) { return ItemFunctionCall(functionToolCall.copyWith(
   id: id,
@@ -314,9 +689,9 @@ factory ItemFunctionCallOutput.fromJson(Map<String, dynamic> json) { return Item
 
 final FunctionCallOutputItemParam functionCallOutputItemParam;
 
-@override String get type => 'function_call_output';
+@override ItemType get type => ItemType.fromJson('function_call_output');
 
-@override Map<String, dynamic> toJson() => {...functionCallOutputItemParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...functionCallOutputItemParam.toJson(), 'type': type.toJson()};
 
 ItemFunctionCallOutput copyWith({String? Function()? id, String? callId, FunctionCallOutputItemParamOutput? output, FunctionCallItemStatus? Function()? status, }) { return ItemFunctionCallOutput(functionCallOutputItemParam.copyWith(
   id: id,
@@ -340,9 +715,9 @@ factory ItemToolSearchCall.fromJson(Map<String, dynamic> json) { return ItemTool
 
 final ToolSearchCallItemParam toolSearchCallItemParam;
 
-@override String get type => 'tool_search_call';
+@override ItemType get type => ItemType.fromJson('tool_search_call');
 
-@override Map<String, dynamic> toJson() => {...toolSearchCallItemParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...toolSearchCallItemParam.toJson(), 'type': type.toJson()};
 
 ItemToolSearchCall copyWith({String? Function()? id, String? Function()? callId, ToolSearchExecutionType? Function()? execution, EmptyModelParam? arguments, FunctionCallItemStatus? Function()? status, }) { return ItemToolSearchCall(toolSearchCallItemParam.copyWith(
   id: id,
@@ -367,9 +742,9 @@ factory ItemToolSearchOutput.fromJson(Map<String, dynamic> json) { return ItemTo
 
 final ToolSearchOutputItemParam toolSearchOutputItemParam;
 
-@override String get type => 'tool_search_output';
+@override ItemType get type => ItemType.fromJson('tool_search_output');
 
-@override Map<String, dynamic> toJson() => {...toolSearchOutputItemParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...toolSearchOutputItemParam.toJson(), 'type': type.toJson()};
 
 ItemToolSearchOutput copyWith({String? Function()? id, String? Function()? callId, ToolSearchExecutionType? Function()? execution, List<Tool>? tools, FunctionCallItemStatus? Function()? status, }) { return ItemToolSearchOutput(toolSearchOutputItemParam.copyWith(
   id: id,
@@ -394,9 +769,9 @@ factory ItemReasoning.fromJson(Map<String, dynamic> json) { return ItemReasoning
 
 final ReasoningItem reasoningItem;
 
-@override String get type => 'reasoning';
+@override ItemType get type => ItemType.fromJson('reasoning');
 
-@override Map<String, dynamic> toJson() => {...reasoningItem.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...reasoningItem.toJson(), 'type': type.toJson()};
 
 ItemReasoning copyWith({String? id, String? Function()? encryptedContent, List<SummaryTextContent>? summary, List<ReasoningTextContent>? Function()? content, ComputerToolCallOutputStatus? Function()? status, }) { return ItemReasoning(reasoningItem.copyWith(
   id: id,
@@ -421,9 +796,9 @@ factory ItemCompaction.fromJson(Map<String, dynamic> json) { return ItemCompacti
 
 final CompactionSummaryItemParam compactionSummaryItemParam;
 
-@override String get type => 'compaction';
+@override ItemType get type => ItemType.fromJson('compaction');
 
-@override Map<String, dynamic> toJson() => {...compactionSummaryItemParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...compactionSummaryItemParam.toJson(), 'type': type.toJson()};
 
 ItemCompaction copyWith({String? Function()? id, String? encryptedContent, }) { return ItemCompaction(compactionSummaryItemParam.copyWith(
   id: id,
@@ -445,9 +820,9 @@ factory ItemImageGenerationCall.fromJson(Map<String, dynamic> json) { return Ite
 
 final ImageGenToolCall imageGenToolCall;
 
-@override String get type => 'image_generation_call';
+@override ItemType get type => ItemType.fromJson('image_generation_call');
 
-@override Map<String, dynamic> toJson() => {...imageGenToolCall.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...imageGenToolCall.toJson(), 'type': type.toJson()};
 
 ItemImageGenerationCall copyWith({String? id, ImageGenToolCallStatus? status, String? Function()? result, }) { return ItemImageGenerationCall(imageGenToolCall.copyWith(
   id: id,
@@ -470,9 +845,9 @@ factory ItemCodeInterpreterCall.fromJson(Map<String, dynamic> json) { return Ite
 
 final CodeInterpreterToolCall codeInterpreterToolCall;
 
-@override String get type => 'code_interpreter_call';
+@override ItemType get type => ItemType.fromJson('code_interpreter_call');
 
-@override Map<String, dynamic> toJson() => {...codeInterpreterToolCall.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...codeInterpreterToolCall.toJson(), 'type': type.toJson()};
 
 ItemCodeInterpreterCall copyWith({String? id, CodeInterpreterToolCallStatus? status, String? containerId, String? Function()? code, List<CodeInterpreterToolCallOutputs>? Function()? outputs, }) { return ItemCodeInterpreterCall(codeInterpreterToolCall.copyWith(
   id: id,
@@ -497,9 +872,9 @@ factory ItemLocalShellCall.fromJson(Map<String, dynamic> json) { return ItemLoca
 
 final LocalShellToolCall localShellToolCall;
 
-@override String get type => 'local_shell_call';
+@override ItemType get type => ItemType.fromJson('local_shell_call');
 
-@override Map<String, dynamic> toJson() => {...localShellToolCall.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...localShellToolCall.toJson(), 'type': type.toJson()};
 
 ItemLocalShellCall copyWith({String? id, String? callId, LocalShellExecAction? action, ComputerToolCallOutputStatus? status, }) { return ItemLocalShellCall(localShellToolCall.copyWith(
   id: id,
@@ -523,9 +898,9 @@ factory ItemLocalShellCallOutput.fromJson(Map<String, dynamic> json) { return It
 
 final LocalShellToolCallOutput localShellToolCallOutput;
 
-@override String get type => 'local_shell_call_output';
+@override ItemType get type => ItemType.fromJson('local_shell_call_output');
 
-@override Map<String, dynamic> toJson() => {...localShellToolCallOutput.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...localShellToolCallOutput.toJson(), 'type': type.toJson()};
 
 ItemLocalShellCallOutput copyWith({String? id, String? output, LocalShellToolCallOutputStatus? Function()? status, }) { return ItemLocalShellCallOutput(localShellToolCallOutput.copyWith(
   id: id,
@@ -548,9 +923,9 @@ factory ItemShellCall.fromJson(Map<String, dynamic> json) { return ItemShellCall
 
 final FunctionShellCallItemParam functionShellCallItemParam;
 
-@override String get type => 'shell_call';
+@override ItemType get type => ItemType.fromJson('shell_call');
 
-@override Map<String, dynamic> toJson() => {...functionShellCallItemParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...functionShellCallItemParam.toJson(), 'type': type.toJson()};
 
 ItemShellCall copyWith({String? Function()? id, String? callId, FunctionShellActionParam? action, FunctionShellCallItemStatus? Function()? status, FunctionShellCallItemParamEnvironment? Function()? environment, }) { return ItemShellCall(functionShellCallItemParam.copyWith(
   id: id,
@@ -575,9 +950,9 @@ factory ItemShellCallOutput.fromJson(Map<String, dynamic> json) { return ItemShe
 
 final FunctionShellCallOutputItemParam functionShellCallOutputItemParam;
 
-@override String get type => 'shell_call_output';
+@override ItemType get type => ItemType.fromJson('shell_call_output');
 
-@override Map<String, dynamic> toJson() => {...functionShellCallOutputItemParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...functionShellCallOutputItemParam.toJson(), 'type': type.toJson()};
 
 ItemShellCallOutput copyWith({String? Function()? id, String? callId, List<FunctionShellCallOutputContentParam>? output, FunctionShellCallItemStatus? Function()? status, int? Function()? maxOutputLength, }) { return ItemShellCallOutput(functionShellCallOutputItemParam.copyWith(
   id: id,
@@ -602,9 +977,9 @@ factory ItemApplyPatchCall.fromJson(Map<String, dynamic> json) { return ItemAppl
 
 final ApplyPatchToolCallItemParam applyPatchToolCallItemParam;
 
-@override String get type => 'apply_patch_call';
+@override ItemType get type => ItemType.fromJson('apply_patch_call');
 
-@override Map<String, dynamic> toJson() => {...applyPatchToolCallItemParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...applyPatchToolCallItemParam.toJson(), 'type': type.toJson()};
 
 ItemApplyPatchCall copyWith({String? Function()? id, String? callId, ApplyPatchCallStatus? status, ApplyPatchOperationParam? operation, }) { return ItemApplyPatchCall(applyPatchToolCallItemParam.copyWith(
   id: id,
@@ -628,9 +1003,9 @@ factory ItemApplyPatchCallOutput.fromJson(Map<String, dynamic> json) { return It
 
 final ApplyPatchToolCallOutputItemParam applyPatchToolCallOutputItemParam;
 
-@override String get type => 'apply_patch_call_output';
+@override ItemType get type => ItemType.fromJson('apply_patch_call_output');
 
-@override Map<String, dynamic> toJson() => {...applyPatchToolCallOutputItemParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...applyPatchToolCallOutputItemParam.toJson(), 'type': type.toJson()};
 
 ItemApplyPatchCallOutput copyWith({String? Function()? id, String? callId, ApplyPatchCallOutputStatus? status, String? Function()? output, }) { return ItemApplyPatchCallOutput(applyPatchToolCallOutputItemParam.copyWith(
   id: id,
@@ -654,9 +1029,9 @@ factory ItemMcpListTools.fromJson(Map<String, dynamic> json) { return ItemMcpLis
 
 final McpListTools mcpListTools;
 
-@override String get type => 'mcp_list_tools';
+@override ItemType get type => ItemType.fromJson('mcp_list_tools');
 
-@override Map<String, dynamic> toJson() => {...mcpListTools.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...mcpListTools.toJson(), 'type': type.toJson()};
 
 ItemMcpListTools copyWith({String? id, String? serverLabel, List<McpListToolsTool>? tools, String? Function()? error, }) { return ItemMcpListTools(mcpListTools.copyWith(
   id: id,
@@ -680,9 +1055,9 @@ factory ItemMcpApprovalRequest.fromJson(Map<String, dynamic> json) { return Item
 
 final McpApprovalRequest mcpApprovalRequest;
 
-@override String get type => 'mcp_approval_request';
+@override ItemType get type => ItemType.fromJson('mcp_approval_request');
 
-@override Map<String, dynamic> toJson() => {...mcpApprovalRequest.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...mcpApprovalRequest.toJson(), 'type': type.toJson()};
 
 ItemMcpApprovalRequest copyWith({String? id, String? serverLabel, String? name, String? arguments, }) { return ItemMcpApprovalRequest(mcpApprovalRequest.copyWith(
   id: id,
@@ -706,9 +1081,9 @@ factory ItemMcpApprovalResponse.fromJson(Map<String, dynamic> json) { return Ite
 
 final McpApprovalResponse mcpApprovalResponse;
 
-@override String get type => 'mcp_approval_response';
+@override ItemType get type => ItemType.fromJson('mcp_approval_response');
 
-@override Map<String, dynamic> toJson() => {...mcpApprovalResponse.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...mcpApprovalResponse.toJson(), 'type': type.toJson()};
 
 ItemMcpApprovalResponse copyWith({String? Function()? id, String? approvalRequestId, bool? approve, String? Function()? reason, }) { return ItemMcpApprovalResponse(mcpApprovalResponse.copyWith(
   id: id,
@@ -732,9 +1107,9 @@ factory ItemMcpCall.fromJson(Map<String, dynamic> json) { return ItemMcpCall(Mcp
 
 final McpToolCall mcpToolCall;
 
-@override String get type => 'mcp_call';
+@override ItemType get type => ItemType.fromJson('mcp_call');
 
-@override Map<String, dynamic> toJson() => {...mcpToolCall.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...mcpToolCall.toJson(), 'type': type.toJson()};
 
 ItemMcpCall copyWith({String? id, String? serverLabel, String? name, String? arguments, String? Function()? output, String? Function()? error, McpToolCallStatus? Function()? status, String? Function()? approvalRequestId, }) { return ItemMcpCall(mcpToolCall.copyWith(
   id: id,
@@ -762,9 +1137,9 @@ factory ItemCustomToolCallOutput.fromJson(Map<String, dynamic> json) { return It
 
 final CustomToolCallOutput customToolCallOutput;
 
-@override String get type => 'custom_tool_call_output';
+@override ItemType get type => ItemType.fromJson('custom_tool_call_output');
 
-@override Map<String, dynamic> toJson() => {...customToolCallOutput.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...customToolCallOutput.toJson(), 'type': type.toJson()};
 
 ItemCustomToolCallOutput copyWith({String? Function()? id, String? callId, CustomToolCallOutputOutput? output, }) { return ItemCustomToolCallOutput(customToolCallOutput.copyWith(
   id: id,
@@ -787,9 +1162,9 @@ factory ItemCustomToolCall.fromJson(Map<String, dynamic> json) { return ItemCust
 
 final CustomToolCall customToolCall;
 
-@override String get type => 'custom_tool_call';
+@override ItemType get type => ItemType.fromJson('custom_tool_call');
 
-@override Map<String, dynamic> toJson() => {...customToolCall.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...customToolCall.toJson(), 'type': type.toJson()};
 
 ItemCustomToolCall copyWith({String? Function()? id, String? callId, String? Function()? namespace, String? name, String? input, }) { return ItemCustomToolCall(customToolCall.copyWith(
   id: id,
@@ -816,7 +1191,7 @@ final Map<String, dynamic> json;
 
 late final String? _id = json['id'] as String?;
 
-@override String get type => json['type'] as String? ?? '';
+@override ItemType get type => ItemType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

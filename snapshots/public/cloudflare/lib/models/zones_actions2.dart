@@ -1,7 +1,508 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesActions
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';import 'package:pub_cloudflare/models/zones_always_use_https.dart';import 'package:pub_cloudflare/models/zones_automatic_https_rewrites.dart';import 'package:pub_cloudflare/models/zones_automatic_https_rewrites_value.dart';import 'package:pub_cloudflare/models/zones_browser_cache_ttl.dart';import 'package:pub_cloudflare/models/zones_browser_check.dart';import 'package:pub_cloudflare/models/zones_browser_check_value.dart';import 'package:pub_cloudflare/models/zones_bypass_cache_on_cookie.dart';import 'package:pub_cloudflare/models/zones_cache_by_device_type.dart';import 'package:pub_cloudflare/models/zones_cache_deception_armor.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields/zones_cache_key_fields_value.dart';import 'package:pub_cloudflare/models/zones_cache_level.dart';import 'package:pub_cloudflare/models/zones_cache_level_value.dart';import 'package:pub_cloudflare/models/zones_cache_on_cookie.dart';import 'package:pub_cloudflare/models/zones_cache_ttl_by_status.dart';import 'package:pub_cloudflare/models/zones_cache_ttl_by_status/value_value.dart';import 'package:pub_cloudflare/models/zones_disable_apps.dart';import 'package:pub_cloudflare/models/zones_disable_performance.dart';import 'package:pub_cloudflare/models/zones_disable_security.dart';import 'package:pub_cloudflare/models/zones_disable_zaraz.dart';import 'package:pub_cloudflare/models/zones_edge_cache_ttl.dart';import 'package:pub_cloudflare/models/zones_email_obfuscation.dart';import 'package:pub_cloudflare/models/zones_email_obfuscation_value.dart';import 'package:pub_cloudflare/models/zones_explicit_cache_control.dart';import 'package:pub_cloudflare/models/zones_forwarding_url.dart';import 'package:pub_cloudflare/models/zones_forwarding_url/zones_forwarding_url_value.dart';import 'package:pub_cloudflare/models/zones_host_header_override.dart';import 'package:pub_cloudflare/models/zones_ip_geolocation.dart';import 'package:pub_cloudflare/models/zones_ip_geolocation_value.dart';import 'package:pub_cloudflare/models/zones_mirage.dart';import 'package:pub_cloudflare/models/zones_mirage_value.dart';import 'package:pub_cloudflare/models/zones_opportunistic_encryption.dart';import 'package:pub_cloudflare/models/zones_opportunistic_encryption_value.dart';import 'package:pub_cloudflare/models/zones_origin_error_page_pass_thru.dart';import 'package:pub_cloudflare/models/zones_origin_error_page_pass_thru_value.dart';import 'package:pub_cloudflare/models/zones_polish.dart';import 'package:pub_cloudflare/models/zones_polish_value.dart';import 'package:pub_cloudflare/models/zones_resolve_override.dart';import 'package:pub_cloudflare/models/zones_respect_strong_etag.dart';import 'package:pub_cloudflare/models/zones_response_buffering.dart';import 'package:pub_cloudflare/models/zones_response_buffering_value.dart';import 'package:pub_cloudflare/models/zones_rocket_loader.dart';import 'package:pub_cloudflare/models/zones_rocket_loader_value.dart';import 'package:pub_cloudflare/models/zones_security_level.dart';import 'package:pub_cloudflare/models/zones_security_level_value.dart';import 'package:pub_cloudflare/models/zones_sort_query_string_for_cache.dart';import 'package:pub_cloudflare/models/zones_sort_query_string_for_cache_value.dart';import 'package:pub_cloudflare/models/zones_ssl.dart';import 'package:pub_cloudflare/models/zones_ssl_value.dart';import 'package:pub_cloudflare/models/zones_true_client_ip_header.dart';import 'package:pub_cloudflare/models/zones_true_client_ip_header_value.dart';import 'package:pub_cloudflare/models/zones_waf.dart';import 'package:pub_cloudflare/models/zones_waf_value.dart';sealed class ZonesActions2 {const ZonesActions2();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';import 'package:pub_cloudflare/models/zones_always_use_https.dart';import 'package:pub_cloudflare/models/zones_automatic_https_rewrites.dart';import 'package:pub_cloudflare/models/zones_automatic_https_rewrites_value.dart';import 'package:pub_cloudflare/models/zones_browser_cache_ttl.dart';import 'package:pub_cloudflare/models/zones_browser_check.dart';import 'package:pub_cloudflare/models/zones_browser_check_value.dart';import 'package:pub_cloudflare/models/zones_bypass_cache_on_cookie.dart';import 'package:pub_cloudflare/models/zones_cache_by_device_type.dart';import 'package:pub_cloudflare/models/zones_cache_deception_armor.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields/zones_cache_key_fields_value.dart';import 'package:pub_cloudflare/models/zones_cache_level.dart';import 'package:pub_cloudflare/models/zones_cache_level_value.dart';import 'package:pub_cloudflare/models/zones_cache_on_cookie.dart';import 'package:pub_cloudflare/models/zones_cache_ttl_by_status.dart';import 'package:pub_cloudflare/models/zones_cache_ttl_by_status/value_value.dart';import 'package:pub_cloudflare/models/zones_disable_apps.dart';import 'package:pub_cloudflare/models/zones_disable_performance.dart';import 'package:pub_cloudflare/models/zones_disable_security.dart';import 'package:pub_cloudflare/models/zones_disable_zaraz.dart';import 'package:pub_cloudflare/models/zones_edge_cache_ttl.dart';import 'package:pub_cloudflare/models/zones_email_obfuscation.dart';import 'package:pub_cloudflare/models/zones_email_obfuscation_value.dart';import 'package:pub_cloudflare/models/zones_explicit_cache_control.dart';import 'package:pub_cloudflare/models/zones_forwarding_url.dart';import 'package:pub_cloudflare/models/zones_forwarding_url/zones_forwarding_url_value.dart';import 'package:pub_cloudflare/models/zones_host_header_override.dart';import 'package:pub_cloudflare/models/zones_ip_geolocation.dart';import 'package:pub_cloudflare/models/zones_ip_geolocation_value.dart';import 'package:pub_cloudflare/models/zones_mirage.dart';import 'package:pub_cloudflare/models/zones_mirage_value.dart';import 'package:pub_cloudflare/models/zones_opportunistic_encryption.dart';import 'package:pub_cloudflare/models/zones_opportunistic_encryption_value.dart';import 'package:pub_cloudflare/models/zones_origin_error_page_pass_thru.dart';import 'package:pub_cloudflare/models/zones_origin_error_page_pass_thru_value.dart';import 'package:pub_cloudflare/models/zones_polish.dart';import 'package:pub_cloudflare/models/zones_polish_value.dart';import 'package:pub_cloudflare/models/zones_resolve_override.dart';import 'package:pub_cloudflare/models/zones_respect_strong_etag.dart';import 'package:pub_cloudflare/models/zones_response_buffering.dart';import 'package:pub_cloudflare/models/zones_response_buffering_value.dart';import 'package:pub_cloudflare/models/zones_rocket_loader.dart';import 'package:pub_cloudflare/models/zones_rocket_loader_value.dart';import 'package:pub_cloudflare/models/zones_security_level.dart';import 'package:pub_cloudflare/models/zones_security_level_value.dart';import 'package:pub_cloudflare/models/zones_sort_query_string_for_cache.dart';import 'package:pub_cloudflare/models/zones_sort_query_string_for_cache_value.dart';import 'package:pub_cloudflare/models/zones_ssl.dart';import 'package:pub_cloudflare/models/zones_ssl_value.dart';import 'package:pub_cloudflare/models/zones_true_client_ip_header.dart';import 'package:pub_cloudflare/models/zones_true_client_ip_header_value.dart';import 'package:pub_cloudflare/models/zones_waf.dart';import 'package:pub_cloudflare/models/zones_waf_value.dart';sealed class ZonesActions2Id {const ZonesActions2Id();
+
+factory ZonesActions2Id.fromJson(String json) { return switch (json) {
+  'always_use_https' => alwaysUseHttps,
+  'automatic_https_rewrites' => automaticHttpsRewrites,
+  'browser_cache_ttl' => browserCacheTtl,
+  'browser_check' => browserCheck,
+  'bypass_cache_on_cookie' => bypassCacheOnCookie,
+  'cache_by_device_type' => cacheByDeviceType,
+  'cache_deception_armor' => cacheDeceptionArmor,
+  'cache_key_fields' => cacheKeyFields,
+  'cache_level' => cacheLevel,
+  'cache_on_cookie' => cacheOnCookie,
+  'cache_ttl_by_status' => cacheTtlByStatus,
+  'disable_apps' => disableApps,
+  'disable_performance' => disablePerformance,
+  'disable_security' => disableSecurity,
+  'disable_zaraz' => disableZaraz,
+  'edge_cache_ttl' => edgeCacheTtl,
+  'email_obfuscation' => emailObfuscation,
+  'explicit_cache_control' => explicitCacheControl,
+  'forwarding_url' => forwardingUrl,
+  'host_header_override' => hostHeaderOverride,
+  'ip_geolocation' => ipGeolocation,
+  'mirage' => mirage,
+  'opportunistic_encryption' => opportunisticEncryption,
+  'origin_error_page_pass_thru' => originErrorPagePassThru,
+  'polish' => polish,
+  'resolve_override' => resolveOverride,
+  'respect_strong_etag' => respectStrongEtag,
+  'response_buffering' => responseBuffering,
+  'rocket_loader' => rocketLoader,
+  'security_level' => securityLevel,
+  'sort_query_string_for_cache' => sortQueryStringForCache,
+  'ssl' => ssl,
+  'true_client_ip_header' => trueClientIpHeader,
+  'waf' => waf,
+  _ => ZonesActions2Id$Unknown(json),
+}; }
+
+static const ZonesActions2Id alwaysUseHttps = ZonesActions2Id$alwaysUseHttps._();
+
+static const ZonesActions2Id automaticHttpsRewrites = ZonesActions2Id$automaticHttpsRewrites._();
+
+static const ZonesActions2Id browserCacheTtl = ZonesActions2Id$browserCacheTtl._();
+
+static const ZonesActions2Id browserCheck = ZonesActions2Id$browserCheck._();
+
+static const ZonesActions2Id bypassCacheOnCookie = ZonesActions2Id$bypassCacheOnCookie._();
+
+static const ZonesActions2Id cacheByDeviceType = ZonesActions2Id$cacheByDeviceType._();
+
+static const ZonesActions2Id cacheDeceptionArmor = ZonesActions2Id$cacheDeceptionArmor._();
+
+static const ZonesActions2Id cacheKeyFields = ZonesActions2Id$cacheKeyFields._();
+
+static const ZonesActions2Id cacheLevel = ZonesActions2Id$cacheLevel._();
+
+static const ZonesActions2Id cacheOnCookie = ZonesActions2Id$cacheOnCookie._();
+
+static const ZonesActions2Id cacheTtlByStatus = ZonesActions2Id$cacheTtlByStatus._();
+
+static const ZonesActions2Id disableApps = ZonesActions2Id$disableApps._();
+
+static const ZonesActions2Id disablePerformance = ZonesActions2Id$disablePerformance._();
+
+static const ZonesActions2Id disableSecurity = ZonesActions2Id$disableSecurity._();
+
+static const ZonesActions2Id disableZaraz = ZonesActions2Id$disableZaraz._();
+
+static const ZonesActions2Id edgeCacheTtl = ZonesActions2Id$edgeCacheTtl._();
+
+static const ZonesActions2Id emailObfuscation = ZonesActions2Id$emailObfuscation._();
+
+static const ZonesActions2Id explicitCacheControl = ZonesActions2Id$explicitCacheControl._();
+
+static const ZonesActions2Id forwardingUrl = ZonesActions2Id$forwardingUrl._();
+
+static const ZonesActions2Id hostHeaderOverride = ZonesActions2Id$hostHeaderOverride._();
+
+static const ZonesActions2Id ipGeolocation = ZonesActions2Id$ipGeolocation._();
+
+static const ZonesActions2Id mirage = ZonesActions2Id$mirage._();
+
+static const ZonesActions2Id opportunisticEncryption = ZonesActions2Id$opportunisticEncryption._();
+
+static const ZonesActions2Id originErrorPagePassThru = ZonesActions2Id$originErrorPagePassThru._();
+
+static const ZonesActions2Id polish = ZonesActions2Id$polish._();
+
+static const ZonesActions2Id resolveOverride = ZonesActions2Id$resolveOverride._();
+
+static const ZonesActions2Id respectStrongEtag = ZonesActions2Id$respectStrongEtag._();
+
+static const ZonesActions2Id responseBuffering = ZonesActions2Id$responseBuffering._();
+
+static const ZonesActions2Id rocketLoader = ZonesActions2Id$rocketLoader._();
+
+static const ZonesActions2Id securityLevel = ZonesActions2Id$securityLevel._();
+
+static const ZonesActions2Id sortQueryStringForCache = ZonesActions2Id$sortQueryStringForCache._();
+
+static const ZonesActions2Id ssl = ZonesActions2Id$ssl._();
+
+static const ZonesActions2Id trueClientIpHeader = ZonesActions2Id$trueClientIpHeader._();
+
+static const ZonesActions2Id waf = ZonesActions2Id$waf._();
+
+static const List<ZonesActions2Id> values = [alwaysUseHttps, automaticHttpsRewrites, browserCacheTtl, browserCheck, bypassCacheOnCookie, cacheByDeviceType, cacheDeceptionArmor, cacheKeyFields, cacheLevel, cacheOnCookie, cacheTtlByStatus, disableApps, disablePerformance, disableSecurity, disableZaraz, edgeCacheTtl, emailObfuscation, explicitCacheControl, forwardingUrl, hostHeaderOverride, ipGeolocation, mirage, opportunisticEncryption, originErrorPagePassThru, polish, resolveOverride, respectStrongEtag, responseBuffering, rocketLoader, securityLevel, sortQueryStringForCache, ssl, trueClientIpHeader, waf];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ZonesActions2Id$Unknown;
+
+ }
+@immutable final class ZonesActions2Id$alwaysUseHttps extends ZonesActions2Id {const ZonesActions2Id$alwaysUseHttps._();
+
+@override String get value => 'always_use_https';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$alwaysUseHttps;
+
+@override int get hashCode => 'always_use_https'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(always_use_https)';
+
+ }
+@immutable final class ZonesActions2Id$automaticHttpsRewrites extends ZonesActions2Id {const ZonesActions2Id$automaticHttpsRewrites._();
+
+@override String get value => 'automatic_https_rewrites';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$automaticHttpsRewrites;
+
+@override int get hashCode => 'automatic_https_rewrites'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(automatic_https_rewrites)';
+
+ }
+@immutable final class ZonesActions2Id$browserCacheTtl extends ZonesActions2Id {const ZonesActions2Id$browserCacheTtl._();
+
+@override String get value => 'browser_cache_ttl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$browserCacheTtl;
+
+@override int get hashCode => 'browser_cache_ttl'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(browser_cache_ttl)';
+
+ }
+@immutable final class ZonesActions2Id$browserCheck extends ZonesActions2Id {const ZonesActions2Id$browserCheck._();
+
+@override String get value => 'browser_check';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$browserCheck;
+
+@override int get hashCode => 'browser_check'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(browser_check)';
+
+ }
+@immutable final class ZonesActions2Id$bypassCacheOnCookie extends ZonesActions2Id {const ZonesActions2Id$bypassCacheOnCookie._();
+
+@override String get value => 'bypass_cache_on_cookie';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$bypassCacheOnCookie;
+
+@override int get hashCode => 'bypass_cache_on_cookie'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(bypass_cache_on_cookie)';
+
+ }
+@immutable final class ZonesActions2Id$cacheByDeviceType extends ZonesActions2Id {const ZonesActions2Id$cacheByDeviceType._();
+
+@override String get value => 'cache_by_device_type';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$cacheByDeviceType;
+
+@override int get hashCode => 'cache_by_device_type'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(cache_by_device_type)';
+
+ }
+@immutable final class ZonesActions2Id$cacheDeceptionArmor extends ZonesActions2Id {const ZonesActions2Id$cacheDeceptionArmor._();
+
+@override String get value => 'cache_deception_armor';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$cacheDeceptionArmor;
+
+@override int get hashCode => 'cache_deception_armor'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(cache_deception_armor)';
+
+ }
+@immutable final class ZonesActions2Id$cacheKeyFields extends ZonesActions2Id {const ZonesActions2Id$cacheKeyFields._();
+
+@override String get value => 'cache_key_fields';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$cacheKeyFields;
+
+@override int get hashCode => 'cache_key_fields'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(cache_key_fields)';
+
+ }
+@immutable final class ZonesActions2Id$cacheLevel extends ZonesActions2Id {const ZonesActions2Id$cacheLevel._();
+
+@override String get value => 'cache_level';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$cacheLevel;
+
+@override int get hashCode => 'cache_level'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(cache_level)';
+
+ }
+@immutable final class ZonesActions2Id$cacheOnCookie extends ZonesActions2Id {const ZonesActions2Id$cacheOnCookie._();
+
+@override String get value => 'cache_on_cookie';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$cacheOnCookie;
+
+@override int get hashCode => 'cache_on_cookie'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(cache_on_cookie)';
+
+ }
+@immutable final class ZonesActions2Id$cacheTtlByStatus extends ZonesActions2Id {const ZonesActions2Id$cacheTtlByStatus._();
+
+@override String get value => 'cache_ttl_by_status';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$cacheTtlByStatus;
+
+@override int get hashCode => 'cache_ttl_by_status'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(cache_ttl_by_status)';
+
+ }
+@immutable final class ZonesActions2Id$disableApps extends ZonesActions2Id {const ZonesActions2Id$disableApps._();
+
+@override String get value => 'disable_apps';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$disableApps;
+
+@override int get hashCode => 'disable_apps'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(disable_apps)';
+
+ }
+@immutable final class ZonesActions2Id$disablePerformance extends ZonesActions2Id {const ZonesActions2Id$disablePerformance._();
+
+@override String get value => 'disable_performance';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$disablePerformance;
+
+@override int get hashCode => 'disable_performance'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(disable_performance)';
+
+ }
+@immutable final class ZonesActions2Id$disableSecurity extends ZonesActions2Id {const ZonesActions2Id$disableSecurity._();
+
+@override String get value => 'disable_security';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$disableSecurity;
+
+@override int get hashCode => 'disable_security'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(disable_security)';
+
+ }
+@immutable final class ZonesActions2Id$disableZaraz extends ZonesActions2Id {const ZonesActions2Id$disableZaraz._();
+
+@override String get value => 'disable_zaraz';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$disableZaraz;
+
+@override int get hashCode => 'disable_zaraz'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(disable_zaraz)';
+
+ }
+@immutable final class ZonesActions2Id$edgeCacheTtl extends ZonesActions2Id {const ZonesActions2Id$edgeCacheTtl._();
+
+@override String get value => 'edge_cache_ttl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$edgeCacheTtl;
+
+@override int get hashCode => 'edge_cache_ttl'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(edge_cache_ttl)';
+
+ }
+@immutable final class ZonesActions2Id$emailObfuscation extends ZonesActions2Id {const ZonesActions2Id$emailObfuscation._();
+
+@override String get value => 'email_obfuscation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$emailObfuscation;
+
+@override int get hashCode => 'email_obfuscation'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(email_obfuscation)';
+
+ }
+@immutable final class ZonesActions2Id$explicitCacheControl extends ZonesActions2Id {const ZonesActions2Id$explicitCacheControl._();
+
+@override String get value => 'explicit_cache_control';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$explicitCacheControl;
+
+@override int get hashCode => 'explicit_cache_control'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(explicit_cache_control)';
+
+ }
+@immutable final class ZonesActions2Id$forwardingUrl extends ZonesActions2Id {const ZonesActions2Id$forwardingUrl._();
+
+@override String get value => 'forwarding_url';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$forwardingUrl;
+
+@override int get hashCode => 'forwarding_url'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(forwarding_url)';
+
+ }
+@immutable final class ZonesActions2Id$hostHeaderOverride extends ZonesActions2Id {const ZonesActions2Id$hostHeaderOverride._();
+
+@override String get value => 'host_header_override';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$hostHeaderOverride;
+
+@override int get hashCode => 'host_header_override'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(host_header_override)';
+
+ }
+@immutable final class ZonesActions2Id$ipGeolocation extends ZonesActions2Id {const ZonesActions2Id$ipGeolocation._();
+
+@override String get value => 'ip_geolocation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$ipGeolocation;
+
+@override int get hashCode => 'ip_geolocation'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(ip_geolocation)';
+
+ }
+@immutable final class ZonesActions2Id$mirage extends ZonesActions2Id {const ZonesActions2Id$mirage._();
+
+@override String get value => 'mirage';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$mirage;
+
+@override int get hashCode => 'mirage'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(mirage)';
+
+ }
+@immutable final class ZonesActions2Id$opportunisticEncryption extends ZonesActions2Id {const ZonesActions2Id$opportunisticEncryption._();
+
+@override String get value => 'opportunistic_encryption';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$opportunisticEncryption;
+
+@override int get hashCode => 'opportunistic_encryption'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(opportunistic_encryption)';
+
+ }
+@immutable final class ZonesActions2Id$originErrorPagePassThru extends ZonesActions2Id {const ZonesActions2Id$originErrorPagePassThru._();
+
+@override String get value => 'origin_error_page_pass_thru';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$originErrorPagePassThru;
+
+@override int get hashCode => 'origin_error_page_pass_thru'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(origin_error_page_pass_thru)';
+
+ }
+@immutable final class ZonesActions2Id$polish extends ZonesActions2Id {const ZonesActions2Id$polish._();
+
+@override String get value => 'polish';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$polish;
+
+@override int get hashCode => 'polish'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(polish)';
+
+ }
+@immutable final class ZonesActions2Id$resolveOverride extends ZonesActions2Id {const ZonesActions2Id$resolveOverride._();
+
+@override String get value => 'resolve_override';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$resolveOverride;
+
+@override int get hashCode => 'resolve_override'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(resolve_override)';
+
+ }
+@immutable final class ZonesActions2Id$respectStrongEtag extends ZonesActions2Id {const ZonesActions2Id$respectStrongEtag._();
+
+@override String get value => 'respect_strong_etag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$respectStrongEtag;
+
+@override int get hashCode => 'respect_strong_etag'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(respect_strong_etag)';
+
+ }
+@immutable final class ZonesActions2Id$responseBuffering extends ZonesActions2Id {const ZonesActions2Id$responseBuffering._();
+
+@override String get value => 'response_buffering';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$responseBuffering;
+
+@override int get hashCode => 'response_buffering'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(response_buffering)';
+
+ }
+@immutable final class ZonesActions2Id$rocketLoader extends ZonesActions2Id {const ZonesActions2Id$rocketLoader._();
+
+@override String get value => 'rocket_loader';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$rocketLoader;
+
+@override int get hashCode => 'rocket_loader'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(rocket_loader)';
+
+ }
+@immutable final class ZonesActions2Id$securityLevel extends ZonesActions2Id {const ZonesActions2Id$securityLevel._();
+
+@override String get value => 'security_level';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$securityLevel;
+
+@override int get hashCode => 'security_level'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(security_level)';
+
+ }
+@immutable final class ZonesActions2Id$sortQueryStringForCache extends ZonesActions2Id {const ZonesActions2Id$sortQueryStringForCache._();
+
+@override String get value => 'sort_query_string_for_cache';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$sortQueryStringForCache;
+
+@override int get hashCode => 'sort_query_string_for_cache'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(sort_query_string_for_cache)';
+
+ }
+@immutable final class ZonesActions2Id$ssl extends ZonesActions2Id {const ZonesActions2Id$ssl._();
+
+@override String get value => 'ssl';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$ssl;
+
+@override int get hashCode => 'ssl'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(ssl)';
+
+ }
+@immutable final class ZonesActions2Id$trueClientIpHeader extends ZonesActions2Id {const ZonesActions2Id$trueClientIpHeader._();
+
+@override String get value => 'true_client_ip_header';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$trueClientIpHeader;
+
+@override int get hashCode => 'true_client_ip_header'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(true_client_ip_header)';
+
+ }
+@immutable final class ZonesActions2Id$waf extends ZonesActions2Id {const ZonesActions2Id$waf._();
+
+@override String get value => 'waf';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$waf;
+
+@override int get hashCode => 'waf'.hashCode;
+
+@override String toString() => 'ZonesActions2Id(waf)';
+
+ }
+@immutable final class ZonesActions2Id$Unknown extends ZonesActions2Id {const ZonesActions2Id$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesActions2Id$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ZonesActions2Id($value)';
+
+ }
+sealed class ZonesActions2 {const ZonesActions2();
 
 /// Deserialize from JSON, dispatching on the `id` discriminator.
 factory ZonesActions2.fromJson(Map<String, dynamic> json) { return switch (json['id']) {
@@ -130,7 +631,7 @@ factory ZonesActions2.trueClientIpHeader({ZonesTrueClientIpHeaderValue? value}) 
 factory ZonesActions2.waf({ZonesWafValue? value}) { return ZonesActions2Waf(ZonesWaf(id: ZonesWafId.fromJson('waf'), value: value)); }
 
 /// The discriminator value identifying this variant.
-String get id;
+ZonesActions2Id get id;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ZonesActions2$Unknown;
@@ -179,9 +680,9 @@ factory ZonesActions2AlwaysUseHttps.fromJson(Map<String, dynamic> json) { return
 
 final ZonesAlwaysUseHttps zonesAlwaysUseHttps;
 
-@override String get id => 'always_use_https';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('always_use_https');
 
-@override Map<String, dynamic> toJson() => {...zonesAlwaysUseHttps.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesAlwaysUseHttps.toJson(), 'id': id.toJson()};
 
 ZonesActions2AlwaysUseHttps copyWith({ZonesAlwaysUseHttps? zonesAlwaysUseHttps}) { return ZonesActions2AlwaysUseHttps(zonesAlwaysUseHttps ?? this.zonesAlwaysUseHttps); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -198,9 +699,9 @@ factory ZonesActions2AutomaticHttpsRewrites.fromJson(Map<String, dynamic> json) 
 
 final ZonesAutomaticHttpsRewrites zonesAutomaticHttpsRewrites;
 
-@override String get id => 'automatic_https_rewrites';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('automatic_https_rewrites');
 
-@override Map<String, dynamic> toJson() => {...zonesAutomaticHttpsRewrites.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesAutomaticHttpsRewrites.toJson(), 'id': id.toJson()};
 
 ZonesActions2AutomaticHttpsRewrites copyWith({ZonesAutomaticHttpsRewritesValue? Function()? value}) { return ZonesActions2AutomaticHttpsRewrites(zonesAutomaticHttpsRewrites.copyWith(
   value: value,
@@ -219,9 +720,9 @@ factory ZonesActions2BrowserCacheTtl.fromJson(Map<String, dynamic> json) { retur
 
 final ZonesBrowserCacheTtl zonesBrowserCacheTtl;
 
-@override String get id => 'browser_cache_ttl';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('browser_cache_ttl');
 
-@override Map<String, dynamic> toJson() => {...zonesBrowserCacheTtl.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesBrowserCacheTtl.toJson(), 'id': id.toJson()};
 
 ZonesActions2BrowserCacheTtl copyWith({int? Function()? value}) { return ZonesActions2BrowserCacheTtl(zonesBrowserCacheTtl.copyWith(
   value: value,
@@ -240,9 +741,9 @@ factory ZonesActions2BrowserCheck.fromJson(Map<String, dynamic> json) { return Z
 
 final ZonesBrowserCheck zonesBrowserCheck;
 
-@override String get id => 'browser_check';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('browser_check');
 
-@override Map<String, dynamic> toJson() => {...zonesBrowserCheck.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesBrowserCheck.toJson(), 'id': id.toJson()};
 
 ZonesActions2BrowserCheck copyWith({ZonesBrowserCheckValue? Function()? value}) { return ZonesActions2BrowserCheck(zonesBrowserCheck.copyWith(
   value: value,
@@ -261,9 +762,9 @@ factory ZonesActions2BypassCacheOnCookie.fromJson(Map<String, dynamic> json) { r
 
 final ZonesBypassCacheOnCookie zonesBypassCacheOnCookie;
 
-@override String get id => 'bypass_cache_on_cookie';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('bypass_cache_on_cookie');
 
-@override Map<String, dynamic> toJson() => {...zonesBypassCacheOnCookie.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesBypassCacheOnCookie.toJson(), 'id': id.toJson()};
 
 ZonesActions2BypassCacheOnCookie copyWith({String? Function()? value}) { return ZonesActions2BypassCacheOnCookie(zonesBypassCacheOnCookie.copyWith(
   value: value,
@@ -282,9 +783,9 @@ factory ZonesActions2CacheByDeviceType.fromJson(Map<String, dynamic> json) { ret
 
 final ZonesCacheByDeviceType zonesCacheByDeviceType;
 
-@override String get id => 'cache_by_device_type';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('cache_by_device_type');
 
-@override Map<String, dynamic> toJson() => {...zonesCacheByDeviceType.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesCacheByDeviceType.toJson(), 'id': id.toJson()};
 
 ZonesActions2CacheByDeviceType copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2CacheByDeviceType(zonesCacheByDeviceType.copyWith(
   value: value,
@@ -303,9 +804,9 @@ factory ZonesActions2CacheDeceptionArmor.fromJson(Map<String, dynamic> json) { r
 
 final ZonesCacheDeceptionArmor zonesCacheDeceptionArmor;
 
-@override String get id => 'cache_deception_armor';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('cache_deception_armor');
 
-@override Map<String, dynamic> toJson() => {...zonesCacheDeceptionArmor.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesCacheDeceptionArmor.toJson(), 'id': id.toJson()};
 
 ZonesActions2CacheDeceptionArmor copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2CacheDeceptionArmor(zonesCacheDeceptionArmor.copyWith(
   value: value,
@@ -324,9 +825,9 @@ factory ZonesActions2CacheKeyFields.fromJson(Map<String, dynamic> json) { return
 
 final ZonesCacheKeyFields zonesCacheKeyFields;
 
-@override String get id => 'cache_key_fields';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('cache_key_fields');
 
-@override Map<String, dynamic> toJson() => {...zonesCacheKeyFields.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesCacheKeyFields.toJson(), 'id': id.toJson()};
 
 ZonesActions2CacheKeyFields copyWith({ZonesCacheKeyFieldsValue? Function()? value}) { return ZonesActions2CacheKeyFields(zonesCacheKeyFields.copyWith(
   value: value,
@@ -345,9 +846,9 @@ factory ZonesActions2CacheLevel.fromJson(Map<String, dynamic> json) { return Zon
 
 final ZonesCacheLevel zonesCacheLevel;
 
-@override String get id => 'cache_level';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('cache_level');
 
-@override Map<String, dynamic> toJson() => {...zonesCacheLevel.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesCacheLevel.toJson(), 'id': id.toJson()};
 
 ZonesActions2CacheLevel copyWith({ZonesCacheLevelValue? Function()? value}) { return ZonesActions2CacheLevel(zonesCacheLevel.copyWith(
   value: value,
@@ -366,9 +867,9 @@ factory ZonesActions2CacheOnCookie.fromJson(Map<String, dynamic> json) { return 
 
 final ZonesCacheOnCookie zonesCacheOnCookie;
 
-@override String get id => 'cache_on_cookie';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('cache_on_cookie');
 
-@override Map<String, dynamic> toJson() => {...zonesCacheOnCookie.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesCacheOnCookie.toJson(), 'id': id.toJson()};
 
 ZonesActions2CacheOnCookie copyWith({String? Function()? value}) { return ZonesActions2CacheOnCookie(zonesCacheOnCookie.copyWith(
   value: value,
@@ -387,9 +888,9 @@ factory ZonesActions2CacheTtlByStatus.fromJson(Map<String, dynamic> json) { retu
 
 final ZonesCacheTtlByStatus zonesCacheTtlByStatus;
 
-@override String get id => 'cache_ttl_by_status';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('cache_ttl_by_status');
 
-@override Map<String, dynamic> toJson() => {...zonesCacheTtlByStatus.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesCacheTtlByStatus.toJson(), 'id': id.toJson()};
 
 ZonesActions2CacheTtlByStatus copyWith({Map<String, ValueValue>? Function()? value}) { return ZonesActions2CacheTtlByStatus(zonesCacheTtlByStatus.copyWith(
   value: value,
@@ -408,9 +909,9 @@ factory ZonesActions2DisableApps.fromJson(Map<String, dynamic> json) { return Zo
 
 final ZonesDisableApps zonesDisableApps;
 
-@override String get id => 'disable_apps';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('disable_apps');
 
-@override Map<String, dynamic> toJson() => {...zonesDisableApps.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesDisableApps.toJson(), 'id': id.toJson()};
 
 ZonesActions2DisableApps copyWith({ZonesDisableApps? zonesDisableApps}) { return ZonesActions2DisableApps(zonesDisableApps ?? this.zonesDisableApps); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -427,9 +928,9 @@ factory ZonesActions2DisablePerformance.fromJson(Map<String, dynamic> json) { re
 
 final ZonesDisablePerformance zonesDisablePerformance;
 
-@override String get id => 'disable_performance';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('disable_performance');
 
-@override Map<String, dynamic> toJson() => {...zonesDisablePerformance.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesDisablePerformance.toJson(), 'id': id.toJson()};
 
 ZonesActions2DisablePerformance copyWith({ZonesDisablePerformance? zonesDisablePerformance}) { return ZonesActions2DisablePerformance(zonesDisablePerformance ?? this.zonesDisablePerformance); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -446,9 +947,9 @@ factory ZonesActions2DisableSecurity.fromJson(Map<String, dynamic> json) { retur
 
 final ZonesDisableSecurity zonesDisableSecurity;
 
-@override String get id => 'disable_security';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('disable_security');
 
-@override Map<String, dynamic> toJson() => {...zonesDisableSecurity.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesDisableSecurity.toJson(), 'id': id.toJson()};
 
 ZonesActions2DisableSecurity copyWith({ZonesDisableSecurity? zonesDisableSecurity}) { return ZonesActions2DisableSecurity(zonesDisableSecurity ?? this.zonesDisableSecurity); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -465,9 +966,9 @@ factory ZonesActions2DisableZaraz.fromJson(Map<String, dynamic> json) { return Z
 
 final ZonesDisableZaraz zonesDisableZaraz;
 
-@override String get id => 'disable_zaraz';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('disable_zaraz');
 
-@override Map<String, dynamic> toJson() => {...zonesDisableZaraz.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesDisableZaraz.toJson(), 'id': id.toJson()};
 
 ZonesActions2DisableZaraz copyWith({ZonesDisableZaraz? zonesDisableZaraz}) { return ZonesActions2DisableZaraz(zonesDisableZaraz ?? this.zonesDisableZaraz); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -484,9 +985,9 @@ factory ZonesActions2EdgeCacheTtl.fromJson(Map<String, dynamic> json) { return Z
 
 final ZonesEdgeCacheTtl zonesEdgeCacheTtl;
 
-@override String get id => 'edge_cache_ttl';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('edge_cache_ttl');
 
-@override Map<String, dynamic> toJson() => {...zonesEdgeCacheTtl.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesEdgeCacheTtl.toJson(), 'id': id.toJson()};
 
 ZonesActions2EdgeCacheTtl copyWith({int? Function()? value}) { return ZonesActions2EdgeCacheTtl(zonesEdgeCacheTtl.copyWith(
   value: value,
@@ -505,9 +1006,9 @@ factory ZonesActions2EmailObfuscation.fromJson(Map<String, dynamic> json) { retu
 
 final ZonesEmailObfuscation zonesEmailObfuscation;
 
-@override String get id => 'email_obfuscation';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('email_obfuscation');
 
-@override Map<String, dynamic> toJson() => {...zonesEmailObfuscation.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesEmailObfuscation.toJson(), 'id': id.toJson()};
 
 ZonesActions2EmailObfuscation copyWith({ZonesEmailObfuscationValue? Function()? value}) { return ZonesActions2EmailObfuscation(zonesEmailObfuscation.copyWith(
   value: value,
@@ -526,9 +1027,9 @@ factory ZonesActions2ExplicitCacheControl.fromJson(Map<String, dynamic> json) { 
 
 final ZonesExplicitCacheControl zonesExplicitCacheControl;
 
-@override String get id => 'explicit_cache_control';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('explicit_cache_control');
 
-@override Map<String, dynamic> toJson() => {...zonesExplicitCacheControl.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesExplicitCacheControl.toJson(), 'id': id.toJson()};
 
 ZonesActions2ExplicitCacheControl copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2ExplicitCacheControl(zonesExplicitCacheControl.copyWith(
   value: value,
@@ -547,9 +1048,9 @@ factory ZonesActions2ForwardingUrl.fromJson(Map<String, dynamic> json) { return 
 
 final ZonesForwardingUrl zonesForwardingUrl;
 
-@override String get id => 'forwarding_url';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('forwarding_url');
 
-@override Map<String, dynamic> toJson() => {...zonesForwardingUrl.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesForwardingUrl.toJson(), 'id': id.toJson()};
 
 ZonesActions2ForwardingUrl copyWith({ZonesForwardingUrlValue? Function()? value}) { return ZonesActions2ForwardingUrl(zonesForwardingUrl.copyWith(
   value: value,
@@ -568,9 +1069,9 @@ factory ZonesActions2HostHeaderOverride.fromJson(Map<String, dynamic> json) { re
 
 final ZonesHostHeaderOverride zonesHostHeaderOverride;
 
-@override String get id => 'host_header_override';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('host_header_override');
 
-@override Map<String, dynamic> toJson() => {...zonesHostHeaderOverride.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesHostHeaderOverride.toJson(), 'id': id.toJson()};
 
 ZonesActions2HostHeaderOverride copyWith({String? Function()? value}) { return ZonesActions2HostHeaderOverride(zonesHostHeaderOverride.copyWith(
   value: value,
@@ -589,9 +1090,9 @@ factory ZonesActions2IpGeolocation.fromJson(Map<String, dynamic> json) { return 
 
 final ZonesIpGeolocation zonesIpGeolocation;
 
-@override String get id => 'ip_geolocation';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('ip_geolocation');
 
-@override Map<String, dynamic> toJson() => {...zonesIpGeolocation.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesIpGeolocation.toJson(), 'id': id.toJson()};
 
 ZonesActions2IpGeolocation copyWith({ZonesIpGeolocationValue? Function()? value}) { return ZonesActions2IpGeolocation(zonesIpGeolocation.copyWith(
   value: value,
@@ -610,9 +1111,9 @@ factory ZonesActions2Mirage.fromJson(Map<String, dynamic> json) { return ZonesAc
 
 final ZonesMirage zonesMirage;
 
-@override String get id => 'mirage';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('mirage');
 
-@override Map<String, dynamic> toJson() => {...zonesMirage.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesMirage.toJson(), 'id': id.toJson()};
 
 ZonesActions2Mirage copyWith({ZonesMirageValue? Function()? value}) { return ZonesActions2Mirage(zonesMirage.copyWith(
   value: value,
@@ -631,9 +1132,9 @@ factory ZonesActions2OpportunisticEncryption.fromJson(Map<String, dynamic> json)
 
 final ZonesOpportunisticEncryption zonesOpportunisticEncryption;
 
-@override String get id => 'opportunistic_encryption';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('opportunistic_encryption');
 
-@override Map<String, dynamic> toJson() => {...zonesOpportunisticEncryption.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesOpportunisticEncryption.toJson(), 'id': id.toJson()};
 
 ZonesActions2OpportunisticEncryption copyWith({ZonesOpportunisticEncryptionValue? Function()? value}) { return ZonesActions2OpportunisticEncryption(zonesOpportunisticEncryption.copyWith(
   value: value,
@@ -652,9 +1153,9 @@ factory ZonesActions2OriginErrorPagePassThru.fromJson(Map<String, dynamic> json)
 
 final ZonesOriginErrorPagePassThru zonesOriginErrorPagePassThru;
 
-@override String get id => 'origin_error_page_pass_thru';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('origin_error_page_pass_thru');
 
-@override Map<String, dynamic> toJson() => {...zonesOriginErrorPagePassThru.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesOriginErrorPagePassThru.toJson(), 'id': id.toJson()};
 
 ZonesActions2OriginErrorPagePassThru copyWith({ZonesOriginErrorPagePassThruValue? Function()? value}) { return ZonesActions2OriginErrorPagePassThru(zonesOriginErrorPagePassThru.copyWith(
   value: value,
@@ -673,9 +1174,9 @@ factory ZonesActions2Polish.fromJson(Map<String, dynamic> json) { return ZonesAc
 
 final ZonesPolish zonesPolish;
 
-@override String get id => 'polish';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('polish');
 
-@override Map<String, dynamic> toJson() => {...zonesPolish.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesPolish.toJson(), 'id': id.toJson()};
 
 ZonesActions2Polish copyWith({ZonesPolishValue? Function()? value}) { return ZonesActions2Polish(zonesPolish.copyWith(
   value: value,
@@ -694,9 +1195,9 @@ factory ZonesActions2ResolveOverride.fromJson(Map<String, dynamic> json) { retur
 
 final ZonesResolveOverride zonesResolveOverride;
 
-@override String get id => 'resolve_override';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('resolve_override');
 
-@override Map<String, dynamic> toJson() => {...zonesResolveOverride.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesResolveOverride.toJson(), 'id': id.toJson()};
 
 ZonesActions2ResolveOverride copyWith({String? Function()? value}) { return ZonesActions2ResolveOverride(zonesResolveOverride.copyWith(
   value: value,
@@ -715,9 +1216,9 @@ factory ZonesActions2RespectStrongEtag.fromJson(Map<String, dynamic> json) { ret
 
 final ZonesRespectStrongEtag zonesRespectStrongEtag;
 
-@override String get id => 'respect_strong_etag';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('respect_strong_etag');
 
-@override Map<String, dynamic> toJson() => {...zonesRespectStrongEtag.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesRespectStrongEtag.toJson(), 'id': id.toJson()};
 
 ZonesActions2RespectStrongEtag copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2RespectStrongEtag(zonesRespectStrongEtag.copyWith(
   value: value,
@@ -736,9 +1237,9 @@ factory ZonesActions2ResponseBuffering.fromJson(Map<String, dynamic> json) { ret
 
 final ZonesResponseBuffering zonesResponseBuffering;
 
-@override String get id => 'response_buffering';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('response_buffering');
 
-@override Map<String, dynamic> toJson() => {...zonesResponseBuffering.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesResponseBuffering.toJson(), 'id': id.toJson()};
 
 ZonesActions2ResponseBuffering copyWith({ZonesResponseBufferingValue? Function()? value}) { return ZonesActions2ResponseBuffering(zonesResponseBuffering.copyWith(
   value: value,
@@ -757,9 +1258,9 @@ factory ZonesActions2RocketLoader.fromJson(Map<String, dynamic> json) { return Z
 
 final ZonesRocketLoader zonesRocketLoader;
 
-@override String get id => 'rocket_loader';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('rocket_loader');
 
-@override Map<String, dynamic> toJson() => {...zonesRocketLoader.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesRocketLoader.toJson(), 'id': id.toJson()};
 
 ZonesActions2RocketLoader copyWith({ZonesRocketLoaderValue? Function()? value}) { return ZonesActions2RocketLoader(zonesRocketLoader.copyWith(
   value: value,
@@ -778,9 +1279,9 @@ factory ZonesActions2SecurityLevel.fromJson(Map<String, dynamic> json) { return 
 
 final ZonesSecurityLevel zonesSecurityLevel;
 
-@override String get id => 'security_level';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('security_level');
 
-@override Map<String, dynamic> toJson() => {...zonesSecurityLevel.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesSecurityLevel.toJson(), 'id': id.toJson()};
 
 ZonesActions2SecurityLevel copyWith({ZonesSecurityLevelValue? Function()? value}) { return ZonesActions2SecurityLevel(zonesSecurityLevel.copyWith(
   value: value,
@@ -799,9 +1300,9 @@ factory ZonesActions2SortQueryStringForCache.fromJson(Map<String, dynamic> json)
 
 final ZonesSortQueryStringForCache zonesSortQueryStringForCache;
 
-@override String get id => 'sort_query_string_for_cache';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('sort_query_string_for_cache');
 
-@override Map<String, dynamic> toJson() => {...zonesSortQueryStringForCache.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesSortQueryStringForCache.toJson(), 'id': id.toJson()};
 
 ZonesActions2SortQueryStringForCache copyWith({ZonesSortQueryStringForCacheValue? Function()? value}) { return ZonesActions2SortQueryStringForCache(zonesSortQueryStringForCache.copyWith(
   value: value,
@@ -820,9 +1321,9 @@ factory ZonesActions2Ssl.fromJson(Map<String, dynamic> json) { return ZonesActio
 
 final ZonesSsl zonesSsl;
 
-@override String get id => 'ssl';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('ssl');
 
-@override Map<String, dynamic> toJson() => {...zonesSsl.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesSsl.toJson(), 'id': id.toJson()};
 
 ZonesActions2Ssl copyWith({ZonesSslValue? Function()? value}) { return ZonesActions2Ssl(zonesSsl.copyWith(
   value: value,
@@ -841,9 +1342,9 @@ factory ZonesActions2TrueClientIpHeader.fromJson(Map<String, dynamic> json) { re
 
 final ZonesTrueClientIpHeader zonesTrueClientIpHeader;
 
-@override String get id => 'true_client_ip_header';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('true_client_ip_header');
 
-@override Map<String, dynamic> toJson() => {...zonesTrueClientIpHeader.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesTrueClientIpHeader.toJson(), 'id': id.toJson()};
 
 ZonesActions2TrueClientIpHeader copyWith({ZonesTrueClientIpHeaderValue? Function()? value}) { return ZonesActions2TrueClientIpHeader(zonesTrueClientIpHeader.copyWith(
   value: value,
@@ -862,9 +1363,9 @@ factory ZonesActions2Waf.fromJson(Map<String, dynamic> json) { return ZonesActio
 
 final ZonesWaf zonesWaf;
 
-@override String get id => 'waf';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson('waf');
 
-@override Map<String, dynamic> toJson() => {...zonesWaf.toJson(), 'id': id};
+@override Map<String, dynamic> toJson() => {...zonesWaf.toJson(), 'id': id.toJson()};
 
 ZonesActions2Waf copyWith({ZonesWafValue? Function()? value}) { return ZonesActions2Waf(zonesWaf.copyWith(
   value: value,
@@ -883,7 +1384,7 @@ ZonesActions2Waf copyWith({ZonesWafValue? Function()? value}) { return ZonesActi
 
 final Map<String, dynamic> json;
 
-@override String get id => json['id'] as String? ?? '';
+@override ZonesActions2Id get id => ZonesActions2Id.fromJson(json['id'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

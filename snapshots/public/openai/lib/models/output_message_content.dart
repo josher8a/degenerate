@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/OutputMessageContent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/annotation.dart';import 'package:pub_openai/models/log_prob.dart';import 'package:pub_openai/models/output_text_content.dart';import 'package:pub_openai/models/refusal_content.dart';sealed class OutputMessageContent {const OutputMessageContent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/annotation.dart';import 'package:pub_openai/models/log_prob.dart';import 'package:pub_openai/models/output_text_content.dart';import 'package:pub_openai/models/refusal_content.dart';sealed class OutputMessageContentType {const OutputMessageContentType();
+
+factory OutputMessageContentType.fromJson(String json) { return switch (json) {
+  'output_text' => outputText,
+  'refusal' => refusal,
+  _ => OutputMessageContentType$Unknown(json),
+}; }
+
+static const OutputMessageContentType outputText = OutputMessageContentType$outputText._();
+
+static const OutputMessageContentType refusal = OutputMessageContentType$refusal._();
+
+static const List<OutputMessageContentType> values = [outputText, refusal];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is OutputMessageContentType$Unknown;
+
+ }
+@immutable final class OutputMessageContentType$outputText extends OutputMessageContentType {const OutputMessageContentType$outputText._();
+
+@override String get value => 'output_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OutputMessageContentType$outputText;
+
+@override int get hashCode => 'output_text'.hashCode;
+
+@override String toString() => 'OutputMessageContentType(output_text)';
+
+ }
+@immutable final class OutputMessageContentType$refusal extends OutputMessageContentType {const OutputMessageContentType$refusal._();
+
+@override String get value => 'refusal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OutputMessageContentType$refusal;
+
+@override int get hashCode => 'refusal'.hashCode;
+
+@override String toString() => 'OutputMessageContentType(refusal)';
+
+ }
+@immutable final class OutputMessageContentType$Unknown extends OutputMessageContentType {const OutputMessageContentType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is OutputMessageContentType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OutputMessageContentType($value)';
+
+ }
+sealed class OutputMessageContent {const OutputMessageContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory OutputMessageContent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -17,7 +70,7 @@ factory OutputMessageContent.outputText({required String text, required List<Ann
 factory OutputMessageContent.refusal({required String refusal}) { return OutputMessageContentRefusal(RefusalContent(refusal: refusal)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+OutputMessageContentType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is OutputMessageContent$Unknown;
@@ -34,9 +87,9 @@ factory OutputMessageContentOutputText.fromJson(Map<String, dynamic> json) { ret
 
 final OutputTextContent outputTextContent;
 
-@override String get type => 'output_text';
+@override OutputMessageContentType get type => OutputMessageContentType.fromJson('output_text');
 
-@override Map<String, dynamic> toJson() => {...outputTextContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...outputTextContent.toJson(), 'type': type.toJson()};
 
 OutputMessageContentOutputText copyWith({String? text, List<Annotation>? annotations, List<LogProb>? logprobs, }) { return OutputMessageContentOutputText(outputTextContent.copyWith(
   text: text,
@@ -57,9 +110,9 @@ factory OutputMessageContentRefusal.fromJson(Map<String, dynamic> json) { return
 
 final RefusalContent refusalContent;
 
-@override String get type => 'refusal';
+@override OutputMessageContentType get type => OutputMessageContentType.fromJson('refusal');
 
-@override Map<String, dynamic> toJson() => {...refusalContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...refusalContent.toJson(), 'type': type.toJson()};
 
 OutputMessageContentRefusal copyWith({String? refusal}) { return OutputMessageContentRefusal(refusalContent.copyWith(
   refusal: refusal,
@@ -78,7 +131,7 @@ OutputMessageContentRefusal copyWith({String? refusal}) { return OutputMessageCo
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override OutputMessageContentType get type => OutputMessageContentType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

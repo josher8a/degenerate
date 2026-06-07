@@ -41,7 +41,7 @@ factory AbuseReportsSubmitReportRequest.abuseThreat({required String email, requ
 factory AbuseReportsSubmitReportRequest.abuseTrademark({required String email, required String email2, required String name, required String urls, String? comments, String? company, String? reportedCountry, String? reportedUserAgent, String? tele, String? title, }) { return AbuseReportsSubmitReportRequestAbuseTrademark(AbuseReportsBaseReportFields(act: AbuseReportsSubmissionReportType.fromJson('abuse_trademark'), comments: comments, company: company, email: email, email2: email2, name: name, reportedCountry: reportedCountry, reportedUserAgent: reportedUserAgent, tele: tele, title: title, urls: urls)); }
 
 /// The discriminator value identifying this variant.
-String get act;
+AbuseReportsSubmissionReportType get act;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is AbuseReportsSubmitReportRequest$Unknown;
@@ -84,9 +84,9 @@ factory AbuseReportsSubmitReportRequestAbuseChildren.fromJson(Map<String, dynami
 
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
-@override String get act => 'abuse_children';
+@override AbuseReportsSubmissionReportType get act => AbuseReportsSubmissionReportType.fromJson('abuse_children');
 
-@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act.toJson()};
 
 AbuseReportsSubmitReportRequestAbuseChildren copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseChildren(abuseReportsBaseReportFields.copyWith(
   comments: comments,
@@ -134,9 +134,9 @@ factory AbuseReportsSubmitReportRequestAbuseDmca.fromJson(Map<String, dynamic> j
 
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
-@override String get act => 'abuse_dmca';
+@override AbuseReportsSubmissionReportType get act => AbuseReportsSubmissionReportType.fromJson('abuse_dmca');
 
-@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act.toJson()};
 
 AbuseReportsSubmitReportRequestAbuseDmca copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseDmca(abuseReportsBaseReportFields.copyWith(
   comments: comments,
@@ -184,9 +184,9 @@ factory AbuseReportsSubmitReportRequestAbuseGeneral.fromJson(Map<String, dynamic
 
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
-@override String get act => 'abuse_general';
+@override AbuseReportsSubmissionReportType get act => AbuseReportsSubmissionReportType.fromJson('abuse_general');
 
-@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act.toJson()};
 
 AbuseReportsSubmitReportRequestAbuseGeneral copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseGeneral(abuseReportsBaseReportFields.copyWith(
   comments: comments,
@@ -234,9 +234,9 @@ factory AbuseReportsSubmitReportRequestAbuseNcsei.fromJson(Map<String, dynamic> 
 
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
-@override String get act => 'abuse_ncsei';
+@override AbuseReportsSubmissionReportType get act => AbuseReportsSubmissionReportType.fromJson('abuse_ncsei');
 
-@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act.toJson()};
 
 AbuseReportsSubmitReportRequestAbuseNcsei copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseNcsei(abuseReportsBaseReportFields.copyWith(
   comments: comments,
@@ -284,9 +284,9 @@ factory AbuseReportsSubmitReportRequestAbusePhishing.fromJson(Map<String, dynami
 
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
-@override String get act => 'abuse_phishing';
+@override AbuseReportsSubmissionReportType get act => AbuseReportsSubmissionReportType.fromJson('abuse_phishing');
 
-@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act.toJson()};
 
 AbuseReportsSubmitReportRequestAbusePhishing copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbusePhishing(abuseReportsBaseReportFields.copyWith(
   comments: comments,
@@ -334,9 +334,9 @@ factory AbuseReportsSubmitReportRequestAbuseRegistrarWhois.fromJson(Map<String, 
 
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
-@override String get act => 'abuse_registrar_whois';
+@override AbuseReportsSubmissionReportType get act => AbuseReportsSubmissionReportType.fromJson('abuse_registrar_whois');
 
-@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act.toJson()};
 
 AbuseReportsSubmitReportRequestAbuseRegistrarWhois copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseRegistrarWhois(abuseReportsBaseReportFields.copyWith(
   comments: comments,
@@ -384,9 +384,9 @@ factory AbuseReportsSubmitReportRequestAbuseThreat.fromJson(Map<String, dynamic>
 
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
-@override String get act => 'abuse_threat';
+@override AbuseReportsSubmissionReportType get act => AbuseReportsSubmissionReportType.fromJson('abuse_threat');
 
-@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act.toJson()};
 
 AbuseReportsSubmitReportRequestAbuseThreat copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseThreat(abuseReportsBaseReportFields.copyWith(
   comments: comments,
@@ -434,9 +434,9 @@ factory AbuseReportsSubmitReportRequestAbuseTrademark.fromJson(Map<String, dynam
 
 final AbuseReportsBaseReportFields abuseReportsBaseReportFields;
 
-@override String get act => 'abuse_trademark';
+@override AbuseReportsSubmissionReportType get act => AbuseReportsSubmissionReportType.fromJson('abuse_trademark');
 
-@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act};
+@override Map<String, dynamic> toJson() => {...abuseReportsBaseReportFields.toJson(), 'act': act.toJson()};
 
 AbuseReportsSubmitReportRequestAbuseTrademark copyWith({String? Function()? comments, String? Function()? company, String? email, String? email2, String? name, String? Function()? reportedCountry, String? Function()? reportedUserAgent, String? Function()? tele, String? Function()? title, String? urls, }) { return AbuseReportsSubmitReportRequestAbuseTrademark(abuseReportsBaseReportFields.copyWith(
   comments: comments,
@@ -504,7 +504,7 @@ late final String? _title = json['title'] as String?;
 
 late final String _urls = json['urls'] as String;
 
-@override String get act => json['act'] as String? ?? '';
+@override AbuseReportsSubmissionReportType get act => AbuseReportsSubmissionReportType.fromJson(json['act'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

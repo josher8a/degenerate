@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ObjectWithOptionalNullableDiscriminatedUnion (inline: UnionField)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/tagged_object1.dart';import 'package:pub_speakeasy/models/tagged_object2.dart';sealed class UnionField {const UnionField();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/tagged_object1.dart';import 'package:pub_speakeasy/models/tagged_object2.dart';sealed class UnionFieldTag {const UnionFieldTag();
+
+factory UnionFieldTag.fromJson(String json) { return switch (json) {
+  'tag1' => tag1,
+  'tag2' => tag2,
+  _ => UnionFieldTag$Unknown(json),
+}; }
+
+static const UnionFieldTag tag1 = UnionFieldTag$tag1._();
+
+static const UnionFieldTag tag2 = UnionFieldTag$tag2._();
+
+static const List<UnionFieldTag> values = [tag1, tag2];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is UnionFieldTag$Unknown;
+
+ }
+@immutable final class UnionFieldTag$tag1 extends UnionFieldTag {const UnionFieldTag$tag1._();
+
+@override String get value => 'tag1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UnionFieldTag$tag1;
+
+@override int get hashCode => 'tag1'.hashCode;
+
+@override String toString() => 'UnionFieldTag(tag1)';
+
+ }
+@immutable final class UnionFieldTag$tag2 extends UnionFieldTag {const UnionFieldTag$tag2._();
+
+@override String get value => 'tag2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UnionFieldTag$tag2;
+
+@override int get hashCode => 'tag2'.hashCode;
+
+@override String toString() => 'UnionFieldTag(tag2)';
+
+ }
+@immutable final class UnionFieldTag$Unknown extends UnionFieldTag {const UnionFieldTag$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is UnionFieldTag$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UnionFieldTag($value)';
+
+ }
+sealed class UnionField {const UnionField();
 
 /// Deserialize from JSON, dispatching on the `tag` discriminator.
 factory UnionField.fromJson(Map<String, dynamic> json) { return switch (json['tag']) {
@@ -17,7 +70,7 @@ factory UnionField.tag1({required String imageUrl}) { return UnionFieldTag1(Tagg
 factory UnionField.tag2({required String profileId}) { return UnionFieldTag2(TaggedObject2(tag: 'tag2', profileId: profileId)); }
 
 /// The discriminator value identifying this variant.
-String get tag;
+UnionFieldTag get tag;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is UnionField$Unknown;
@@ -34,9 +87,9 @@ factory UnionFieldTag1.fromJson(Map<String, dynamic> json) { return UnionFieldTa
 
 final TaggedObject1 taggedObject1;
 
-@override String get tag => 'tag1';
+@override UnionFieldTag get tag => UnionFieldTag.fromJson('tag1');
 
-@override Map<String, dynamic> toJson() => {...taggedObject1.toJson(), 'tag': tag};
+@override Map<String, dynamic> toJson() => {...taggedObject1.toJson(), 'tag': tag.toJson()};
 
 UnionFieldTag1 copyWith({String? imageUrl}) { return UnionFieldTag1(taggedObject1.copyWith(
   imageUrl: imageUrl,
@@ -55,9 +108,9 @@ factory UnionFieldTag2.fromJson(Map<String, dynamic> json) { return UnionFieldTa
 
 final TaggedObject2 taggedObject2;
 
-@override String get tag => 'tag2';
+@override UnionFieldTag get tag => UnionFieldTag.fromJson('tag2');
 
-@override Map<String, dynamic> toJson() => {...taggedObject2.toJson(), 'tag': tag};
+@override Map<String, dynamic> toJson() => {...taggedObject2.toJson(), 'tag': tag.toJson()};
 
 UnionFieldTag2 copyWith({String? profileId}) { return UnionFieldTag2(taggedObject2.copyWith(
   profileId: profileId,
@@ -76,7 +129,7 @@ UnionFieldTag2 copyWith({String? profileId}) { return UnionFieldTag2(taggedObjec
 
 final Map<String, dynamic> json;
 
-@override String get tag => json['tag'] as String? ?? '';
+@override UnionFieldTag get tag => UnionFieldTag.fromJson(json['tag'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

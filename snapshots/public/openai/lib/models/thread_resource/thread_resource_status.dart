@@ -1,7 +1,74 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ThreadResource (inline: Status)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/active_status.dart';import 'package:pub_openai/models/closed_status.dart';import 'package:pub_openai/models/locked_status.dart';/// Current status for the thread. Defaults to `active` for newly created threads.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/active_status.dart';import 'package:pub_openai/models/closed_status.dart';import 'package:pub_openai/models/locked_status.dart';sealed class ThreadResourceStatusType {const ThreadResourceStatusType();
+
+factory ThreadResourceStatusType.fromJson(String json) { return switch (json) {
+  'active' => active,
+  'locked' => locked,
+  'closed' => closed,
+  _ => ThreadResourceStatusType$Unknown(json),
+}; }
+
+static const ThreadResourceStatusType active = ThreadResourceStatusType$active._();
+
+static const ThreadResourceStatusType locked = ThreadResourceStatusType$locked._();
+
+static const ThreadResourceStatusType closed = ThreadResourceStatusType$closed._();
+
+static const List<ThreadResourceStatusType> values = [active, locked, closed];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ThreadResourceStatusType$Unknown;
+
+ }
+@immutable final class ThreadResourceStatusType$active extends ThreadResourceStatusType {const ThreadResourceStatusType$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadResourceStatusType$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+@override String toString() => 'ThreadResourceStatusType(active)';
+
+ }
+@immutable final class ThreadResourceStatusType$locked extends ThreadResourceStatusType {const ThreadResourceStatusType$locked._();
+
+@override String get value => 'locked';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadResourceStatusType$locked;
+
+@override int get hashCode => 'locked'.hashCode;
+
+@override String toString() => 'ThreadResourceStatusType(locked)';
+
+ }
+@immutable final class ThreadResourceStatusType$closed extends ThreadResourceStatusType {const ThreadResourceStatusType$closed._();
+
+@override String get value => 'closed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadResourceStatusType$closed;
+
+@override int get hashCode => 'closed'.hashCode;
+
+@override String toString() => 'ThreadResourceStatusType(closed)';
+
+ }
+@immutable final class ThreadResourceStatusType$Unknown extends ThreadResourceStatusType {const ThreadResourceStatusType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadResourceStatusType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ThreadResourceStatusType($value)';
+
+ }
+/// Current status for the thread. Defaults to `active` for newly created threads.
 sealed class ThreadResourceStatus {const ThreadResourceStatus();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -19,7 +86,7 @@ factory ThreadResourceStatus.locked({required String? reason}) { return ThreadRe
 factory ThreadResourceStatus.closed({required String? reason}) { return ThreadResourceStatusClosed(ClosedStatus(reason: reason)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+ThreadResourceStatusType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ThreadResourceStatus$Unknown;
@@ -37,9 +104,9 @@ factory ThreadResourceStatusActive.fromJson(Map<String, dynamic> json) { return 
 
 final ActiveStatus activeStatus;
 
-@override String get type => 'active';
+@override ThreadResourceStatusType get type => ThreadResourceStatusType.fromJson('active');
 
-@override Map<String, dynamic> toJson() => {...activeStatus.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...activeStatus.toJson(), 'type': type.toJson()};
 
 ThreadResourceStatusActive copyWith({ActiveStatus? activeStatus}) { return ThreadResourceStatusActive(activeStatus ?? this.activeStatus); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -56,9 +123,9 @@ factory ThreadResourceStatusLocked.fromJson(Map<String, dynamic> json) { return 
 
 final LockedStatus lockedStatus;
 
-@override String get type => 'locked';
+@override ThreadResourceStatusType get type => ThreadResourceStatusType.fromJson('locked');
 
-@override Map<String, dynamic> toJson() => {...lockedStatus.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...lockedStatus.toJson(), 'type': type.toJson()};
 
 ThreadResourceStatusLocked copyWith({String? Function()? reason}) { return ThreadResourceStatusLocked(lockedStatus.copyWith(
   reason: reason,
@@ -77,9 +144,9 @@ factory ThreadResourceStatusClosed.fromJson(Map<String, dynamic> json) { return 
 
 final ClosedStatus closedStatus;
 
-@override String get type => 'closed';
+@override ThreadResourceStatusType get type => ThreadResourceStatusType.fromJson('closed');
 
-@override Map<String, dynamic> toJson() => {...closedStatus.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...closedStatus.toJson(), 'type': type.toJson()};
 
 ThreadResourceStatusClosed copyWith({String? Function()? reason}) { return ThreadResourceStatusClosed(closedStatus.copyWith(
   reason: reason,
@@ -98,7 +165,7 @@ ThreadResourceStatusClosed copyWith({String? Function()? reason}) { return Threa
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override ThreadResourceStatusType get type => ThreadResourceStatusType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResponseOutputText (inline: Annotations)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_annotation.dart';import 'package:pub_openai/models/file_annotation_source.dart';import 'package:pub_openai/models/url_annotation.dart';import 'package:pub_openai/models/url_annotation_source.dart';/// Annotation object describing a cited source.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/file_annotation.dart';import 'package:pub_openai/models/file_annotation_source.dart';import 'package:pub_openai/models/url_annotation.dart';import 'package:pub_openai/models/url_annotation_source.dart';sealed class ResponseOutputTextAnnotationsType {const ResponseOutputTextAnnotationsType();
+
+factory ResponseOutputTextAnnotationsType.fromJson(String json) { return switch (json) {
+  'file' => file,
+  'url' => url,
+  _ => ResponseOutputTextAnnotationsType$Unknown(json),
+}; }
+
+static const ResponseOutputTextAnnotationsType file = ResponseOutputTextAnnotationsType$file._();
+
+static const ResponseOutputTextAnnotationsType url = ResponseOutputTextAnnotationsType$url._();
+
+static const List<ResponseOutputTextAnnotationsType> values = [file, url];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ResponseOutputTextAnnotationsType$Unknown;
+
+ }
+@immutable final class ResponseOutputTextAnnotationsType$file extends ResponseOutputTextAnnotationsType {const ResponseOutputTextAnnotationsType$file._();
+
+@override String get value => 'file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseOutputTextAnnotationsType$file;
+
+@override int get hashCode => 'file'.hashCode;
+
+@override String toString() => 'ResponseOutputTextAnnotationsType(file)';
+
+ }
+@immutable final class ResponseOutputTextAnnotationsType$url extends ResponseOutputTextAnnotationsType {const ResponseOutputTextAnnotationsType$url._();
+
+@override String get value => 'url';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseOutputTextAnnotationsType$url;
+
+@override int get hashCode => 'url'.hashCode;
+
+@override String toString() => 'ResponseOutputTextAnnotationsType(url)';
+
+ }
+@immutable final class ResponseOutputTextAnnotationsType$Unknown extends ResponseOutputTextAnnotationsType {const ResponseOutputTextAnnotationsType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseOutputTextAnnotationsType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResponseOutputTextAnnotationsType($value)';
+
+ }
+/// Annotation object describing a cited source.
 sealed class ResponseOutputTextAnnotations {const ResponseOutputTextAnnotations();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -18,7 +71,7 @@ factory ResponseOutputTextAnnotations.file({required FileAnnotationSource source
 factory ResponseOutputTextAnnotations.url({required UrlAnnotationSource source}) { return ResponseOutputTextAnnotationsUrl(UrlAnnotation(source: source)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+ResponseOutputTextAnnotationsType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ResponseOutputTextAnnotations$Unknown;
@@ -35,9 +88,9 @@ factory ResponseOutputTextAnnotationsFile.fromJson(Map<String, dynamic> json) { 
 
 final FileAnnotation fileAnnotation;
 
-@override String get type => 'file';
+@override ResponseOutputTextAnnotationsType get type => ResponseOutputTextAnnotationsType.fromJson('file');
 
-@override Map<String, dynamic> toJson() => {...fileAnnotation.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...fileAnnotation.toJson(), 'type': type.toJson()};
 
 ResponseOutputTextAnnotationsFile copyWith({FileAnnotationSource? source}) { return ResponseOutputTextAnnotationsFile(fileAnnotation.copyWith(
   source: source,
@@ -56,9 +109,9 @@ factory ResponseOutputTextAnnotationsUrl.fromJson(Map<String, dynamic> json) { r
 
 final UrlAnnotation urlAnnotation;
 
-@override String get type => 'url';
+@override ResponseOutputTextAnnotationsType get type => ResponseOutputTextAnnotationsType.fromJson('url');
 
-@override Map<String, dynamic> toJson() => {...urlAnnotation.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...urlAnnotation.toJson(), 'type': type.toJson()};
 
 ResponseOutputTextAnnotationsUrl copyWith({UrlAnnotationSource? source}) { return ResponseOutputTextAnnotationsUrl(urlAnnotation.copyWith(
   source: source,
@@ -77,7 +130,7 @@ ResponseOutputTextAnnotationsUrl copyWith({UrlAnnotationSource? source}) { retur
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override ResponseOutputTextAnnotationsType get type => ResponseOutputTextAnnotationsType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

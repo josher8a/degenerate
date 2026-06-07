@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CloudflarePipelinesFormat
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_json_format.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_parquet_format.dart';sealed class CloudflarePipelinesFormat {const CloudflarePipelinesFormat();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_json_format.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_parquet_format.dart';sealed class CloudflarePipelinesFormatType {const CloudflarePipelinesFormatType();
+
+factory CloudflarePipelinesFormatType.fromJson(String json) { return switch (json) {
+  'Json' => json,
+  'Parquet' => parquet,
+  _ => CloudflarePipelinesFormatType$Unknown(json),
+}; }
+
+static const CloudflarePipelinesFormatType json = CloudflarePipelinesFormatType$json._();
+
+static const CloudflarePipelinesFormatType parquet = CloudflarePipelinesFormatType$parquet._();
+
+static const List<CloudflarePipelinesFormatType> values = [json, parquet];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is CloudflarePipelinesFormatType$Unknown;
+
+ }
+@immutable final class CloudflarePipelinesFormatType$json extends CloudflarePipelinesFormatType {const CloudflarePipelinesFormatType$json._();
+
+@override String get value => 'Json';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudflarePipelinesFormatType$json;
+
+@override int get hashCode => 'Json'.hashCode;
+
+@override String toString() => 'CloudflarePipelinesFormatType(Json)';
+
+ }
+@immutable final class CloudflarePipelinesFormatType$parquet extends CloudflarePipelinesFormatType {const CloudflarePipelinesFormatType$parquet._();
+
+@override String get value => 'Parquet';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudflarePipelinesFormatType$parquet;
+
+@override int get hashCode => 'Parquet'.hashCode;
+
+@override String toString() => 'CloudflarePipelinesFormatType(Parquet)';
+
+ }
+@immutable final class CloudflarePipelinesFormatType$Unknown extends CloudflarePipelinesFormatType {const CloudflarePipelinesFormatType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is CloudflarePipelinesFormatType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CloudflarePipelinesFormatType($value)';
+
+ }
+sealed class CloudflarePipelinesFormat {const CloudflarePipelinesFormat();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CloudflarePipelinesFormat.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -17,7 +70,7 @@ factory CloudflarePipelinesFormat.json({CloudflarePipelinesDecimalEncoding? deci
 factory CloudflarePipelinesFormat.parquet({CloudflarePipelinesParquetCompression? compression, int? rowGroupBytes, }) { return CloudflarePipelinesFormatParquet(CloudflarePipelinesParquetFormat(compression: compression, rowGroupBytes: rowGroupBytes)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+CloudflarePipelinesFormatType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CloudflarePipelinesFormat$Unknown;
@@ -34,9 +87,9 @@ factory CloudflarePipelinesFormatJson.fromJson(Map<String, dynamic> json) { retu
 
 final CloudflarePipelinesJsonFormat cloudflarePipelinesJsonFormat;
 
-@override String get type => 'Json';
+@override CloudflarePipelinesFormatType get type => CloudflarePipelinesFormatType.fromJson('Json');
 
-@override Map<String, dynamic> toJson() => {...cloudflarePipelinesJsonFormat.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...cloudflarePipelinesJsonFormat.toJson(), 'type': type.toJson()};
 
 CloudflarePipelinesFormatJson copyWith({CloudflarePipelinesDecimalEncoding? Function()? decimalEncoding, CloudflarePipelinesTimestampFormat? Function()? timestampFormat, bool? Function()? unstructured, }) { return CloudflarePipelinesFormatJson(cloudflarePipelinesJsonFormat.copyWith(
   decimalEncoding: decimalEncoding,
@@ -57,9 +110,9 @@ factory CloudflarePipelinesFormatParquet.fromJson(Map<String, dynamic> json) { r
 
 final CloudflarePipelinesParquetFormat cloudflarePipelinesParquetFormat;
 
-@override String get type => 'Parquet';
+@override CloudflarePipelinesFormatType get type => CloudflarePipelinesFormatType.fromJson('Parquet');
 
-@override Map<String, dynamic> toJson() => {...cloudflarePipelinesParquetFormat.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...cloudflarePipelinesParquetFormat.toJson(), 'type': type.toJson()};
 
 CloudflarePipelinesFormatParquet copyWith({CloudflarePipelinesParquetCompression? Function()? compression, int? Function()? rowGroupBytes, }) { return CloudflarePipelinesFormatParquet(cloudflarePipelinesParquetFormat.copyWith(
   compression: compression,
@@ -79,7 +132,7 @@ CloudflarePipelinesFormatParquet copyWith({CloudflarePipelinesParquetCompression
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override CloudflarePipelinesFormatType get type => CloudflarePipelinesFormatType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

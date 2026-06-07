@@ -1,7 +1,88 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DiscriminatedOpenEnumUnion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/object_with_open_enum_status1.dart';import 'package:pub_speakeasy/models/object_with_open_enum_status2.dart';sealed class DiscriminatedOpenEnumUnion {const DiscriminatedOpenEnumUnion();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/object_with_open_enum_status1.dart';import 'package:pub_speakeasy/models/object_with_open_enum_status2.dart';sealed class DiscriminatedOpenEnumUnionStatus {const DiscriminatedOpenEnumUnionStatus();
+
+factory DiscriminatedOpenEnumUnionStatus.fromJson(String json) { return switch (json) {
+  'active' => active,
+  'inactive' => inactive,
+  'pending' => pending,
+  'archived' => archived,
+  _ => DiscriminatedOpenEnumUnionStatus$Unknown(json),
+}; }
+
+static const DiscriminatedOpenEnumUnionStatus active = DiscriminatedOpenEnumUnionStatus$active._();
+
+static const DiscriminatedOpenEnumUnionStatus inactive = DiscriminatedOpenEnumUnionStatus$inactive._();
+
+static const DiscriminatedOpenEnumUnionStatus pending = DiscriminatedOpenEnumUnionStatus$pending._();
+
+static const DiscriminatedOpenEnumUnionStatus archived = DiscriminatedOpenEnumUnionStatus$archived._();
+
+static const List<DiscriminatedOpenEnumUnionStatus> values = [active, inactive, pending, archived];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is DiscriminatedOpenEnumUnionStatus$Unknown;
+
+ }
+@immutable final class DiscriminatedOpenEnumUnionStatus$active extends DiscriminatedOpenEnumUnionStatus {const DiscriminatedOpenEnumUnionStatus$active._();
+
+@override String get value => 'active';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscriminatedOpenEnumUnionStatus$active;
+
+@override int get hashCode => 'active'.hashCode;
+
+@override String toString() => 'DiscriminatedOpenEnumUnionStatus(active)';
+
+ }
+@immutable final class DiscriminatedOpenEnumUnionStatus$inactive extends DiscriminatedOpenEnumUnionStatus {const DiscriminatedOpenEnumUnionStatus$inactive._();
+
+@override String get value => 'inactive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscriminatedOpenEnumUnionStatus$inactive;
+
+@override int get hashCode => 'inactive'.hashCode;
+
+@override String toString() => 'DiscriminatedOpenEnumUnionStatus(inactive)';
+
+ }
+@immutable final class DiscriminatedOpenEnumUnionStatus$pending extends DiscriminatedOpenEnumUnionStatus {const DiscriminatedOpenEnumUnionStatus$pending._();
+
+@override String get value => 'pending';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscriminatedOpenEnumUnionStatus$pending;
+
+@override int get hashCode => 'pending'.hashCode;
+
+@override String toString() => 'DiscriminatedOpenEnumUnionStatus(pending)';
+
+ }
+@immutable final class DiscriminatedOpenEnumUnionStatus$archived extends DiscriminatedOpenEnumUnionStatus {const DiscriminatedOpenEnumUnionStatus$archived._();
+
+@override String get value => 'archived';
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscriminatedOpenEnumUnionStatus$archived;
+
+@override int get hashCode => 'archived'.hashCode;
+
+@override String toString() => 'DiscriminatedOpenEnumUnionStatus(archived)';
+
+ }
+@immutable final class DiscriminatedOpenEnumUnionStatus$Unknown extends DiscriminatedOpenEnumUnionStatus {const DiscriminatedOpenEnumUnionStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is DiscriminatedOpenEnumUnionStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'DiscriminatedOpenEnumUnionStatus($value)';
+
+ }
+sealed class DiscriminatedOpenEnumUnion {const DiscriminatedOpenEnumUnion();
 
 /// Deserialize from JSON, dispatching on the `status` discriminator.
 factory DiscriminatedOpenEnumUnion.fromJson(Map<String, dynamic> json) { return switch (json['status']) {
@@ -25,7 +106,7 @@ factory DiscriminatedOpenEnumUnion.pending({required String userId, DateTime? ac
 factory DiscriminatedOpenEnumUnion.archived({required String reason, DateTime? inactiveSince, }) { return DiscriminatedOpenEnumUnionArchived(ObjectWithOpenEnumStatus2(status: 'archived', reason: reason, inactiveSince: inactiveSince)); }
 
 /// The discriminator value identifying this variant.
-String get status;
+DiscriminatedOpenEnumUnionStatus get status;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is DiscriminatedOpenEnumUnion$Unknown;
@@ -44,9 +125,9 @@ factory DiscriminatedOpenEnumUnionActive.fromJson(Map<String, dynamic> json) { r
 
 final ObjectWithOpenEnumStatus1 objectWithOpenEnumStatus1;
 
-@override String get status => 'active';
+@override DiscriminatedOpenEnumUnionStatus get status => DiscriminatedOpenEnumUnionStatus.fromJson('active');
 
-@override Map<String, dynamic> toJson() => {...objectWithOpenEnumStatus1.toJson(), 'status': status};
+@override Map<String, dynamic> toJson() => {...objectWithOpenEnumStatus1.toJson(), 'status': status.toJson()};
 
 DiscriminatedOpenEnumUnionActive copyWith({String? userId, DateTime? Function()? activeAt, }) { return DiscriminatedOpenEnumUnionActive(objectWithOpenEnumStatus1.copyWith(
   userId: userId,
@@ -66,9 +147,9 @@ factory DiscriminatedOpenEnumUnionInactive.fromJson(Map<String, dynamic> json) {
 
 final ObjectWithOpenEnumStatus2 objectWithOpenEnumStatus2;
 
-@override String get status => 'inactive';
+@override DiscriminatedOpenEnumUnionStatus get status => DiscriminatedOpenEnumUnionStatus.fromJson('inactive');
 
-@override Map<String, dynamic> toJson() => {...objectWithOpenEnumStatus2.toJson(), 'status': status};
+@override Map<String, dynamic> toJson() => {...objectWithOpenEnumStatus2.toJson(), 'status': status.toJson()};
 
 DiscriminatedOpenEnumUnionInactive copyWith({String? reason, DateTime? Function()? inactiveSince, }) { return DiscriminatedOpenEnumUnionInactive(objectWithOpenEnumStatus2.copyWith(
   reason: reason,
@@ -88,9 +169,9 @@ factory DiscriminatedOpenEnumUnionPending.fromJson(Map<String, dynamic> json) { 
 
 final ObjectWithOpenEnumStatus1 objectWithOpenEnumStatus1;
 
-@override String get status => 'pending';
+@override DiscriminatedOpenEnumUnionStatus get status => DiscriminatedOpenEnumUnionStatus.fromJson('pending');
 
-@override Map<String, dynamic> toJson() => {...objectWithOpenEnumStatus1.toJson(), 'status': status};
+@override Map<String, dynamic> toJson() => {...objectWithOpenEnumStatus1.toJson(), 'status': status.toJson()};
 
 DiscriminatedOpenEnumUnionPending copyWith({String? userId, DateTime? Function()? activeAt, }) { return DiscriminatedOpenEnumUnionPending(objectWithOpenEnumStatus1.copyWith(
   userId: userId,
@@ -110,9 +191,9 @@ factory DiscriminatedOpenEnumUnionArchived.fromJson(Map<String, dynamic> json) {
 
 final ObjectWithOpenEnumStatus2 objectWithOpenEnumStatus2;
 
-@override String get status => 'archived';
+@override DiscriminatedOpenEnumUnionStatus get status => DiscriminatedOpenEnumUnionStatus.fromJson('archived');
 
-@override Map<String, dynamic> toJson() => {...objectWithOpenEnumStatus2.toJson(), 'status': status};
+@override Map<String, dynamic> toJson() => {...objectWithOpenEnumStatus2.toJson(), 'status': status.toJson()};
 
 DiscriminatedOpenEnumUnionArchived copyWith({String? reason, DateTime? Function()? inactiveSince, }) { return DiscriminatedOpenEnumUnionArchived(objectWithOpenEnumStatus2.copyWith(
   reason: reason,
@@ -132,7 +213,7 @@ DiscriminatedOpenEnumUnionArchived copyWith({String? reason, DateTime? Function(
 
 final Map<String, dynamic> json;
 
-@override String get status => json['status'] as String? ?? '';
+@override DiscriminatedOpenEnumUnionStatus get status => DiscriminatedOpenEnumUnionStatus.fromJson(json['status'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

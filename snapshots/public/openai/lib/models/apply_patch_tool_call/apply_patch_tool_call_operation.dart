@@ -1,7 +1,74 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ApplyPatchToolCall (inline: Operation)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_create_file_operation.dart';import 'package:pub_openai/models/apply_patch_delete_file_operation.dart';import 'package:pub_openai/models/apply_patch_update_file_operation.dart';/// One of the create_file, delete_file, or update_file operations applied via apply_patch.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_create_file_operation.dart';import 'package:pub_openai/models/apply_patch_delete_file_operation.dart';import 'package:pub_openai/models/apply_patch_update_file_operation.dart';sealed class ApplyPatchToolCallOperationType {const ApplyPatchToolCallOperationType();
+
+factory ApplyPatchToolCallOperationType.fromJson(String json) { return switch (json) {
+  'create_file' => createFile,
+  'delete_file' => deleteFile,
+  'update_file' => updateFile,
+  _ => ApplyPatchToolCallOperationType$Unknown(json),
+}; }
+
+static const ApplyPatchToolCallOperationType createFile = ApplyPatchToolCallOperationType$createFile._();
+
+static const ApplyPatchToolCallOperationType deleteFile = ApplyPatchToolCallOperationType$deleteFile._();
+
+static const ApplyPatchToolCallOperationType updateFile = ApplyPatchToolCallOperationType$updateFile._();
+
+static const List<ApplyPatchToolCallOperationType> values = [createFile, deleteFile, updateFile];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ApplyPatchToolCallOperationType$Unknown;
+
+ }
+@immutable final class ApplyPatchToolCallOperationType$createFile extends ApplyPatchToolCallOperationType {const ApplyPatchToolCallOperationType$createFile._();
+
+@override String get value => 'create_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApplyPatchToolCallOperationType$createFile;
+
+@override int get hashCode => 'create_file'.hashCode;
+
+@override String toString() => 'ApplyPatchToolCallOperationType(create_file)';
+
+ }
+@immutable final class ApplyPatchToolCallOperationType$deleteFile extends ApplyPatchToolCallOperationType {const ApplyPatchToolCallOperationType$deleteFile._();
+
+@override String get value => 'delete_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApplyPatchToolCallOperationType$deleteFile;
+
+@override int get hashCode => 'delete_file'.hashCode;
+
+@override String toString() => 'ApplyPatchToolCallOperationType(delete_file)';
+
+ }
+@immutable final class ApplyPatchToolCallOperationType$updateFile extends ApplyPatchToolCallOperationType {const ApplyPatchToolCallOperationType$updateFile._();
+
+@override String get value => 'update_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApplyPatchToolCallOperationType$updateFile;
+
+@override int get hashCode => 'update_file'.hashCode;
+
+@override String toString() => 'ApplyPatchToolCallOperationType(update_file)';
+
+ }
+@immutable final class ApplyPatchToolCallOperationType$Unknown extends ApplyPatchToolCallOperationType {const ApplyPatchToolCallOperationType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ApplyPatchToolCallOperationType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ApplyPatchToolCallOperationType($value)';
+
+ }
+/// One of the create_file, delete_file, or update_file operations applied via apply_patch.
 sealed class ApplyPatchToolCallOperation {const ApplyPatchToolCallOperation();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -22,7 +89,7 @@ factory ApplyPatchToolCallOperation.deleteFile({required String path}) { return 
 factory ApplyPatchToolCallOperation.updateFile({required String path, required String diff, }) { return ApplyPatchToolCallOperationUpdateFile(ApplyPatchUpdateFileOperation(path: path, diff: diff)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+ApplyPatchToolCallOperationType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ApplyPatchToolCallOperation$Unknown;
@@ -42,9 +109,9 @@ factory ApplyPatchToolCallOperationCreateFile.fromJson(Map<String, dynamic> json
 
 final ApplyPatchCreateFileOperation applyPatchCreateFileOperation;
 
-@override String get type => 'create_file';
+@override ApplyPatchToolCallOperationType get type => ApplyPatchToolCallOperationType.fromJson('create_file');
 
-@override Map<String, dynamic> toJson() => {...applyPatchCreateFileOperation.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...applyPatchCreateFileOperation.toJson(), 'type': type.toJson()};
 
 ApplyPatchToolCallOperationCreateFile copyWith({String? path, String? diff, }) { return ApplyPatchToolCallOperationCreateFile(applyPatchCreateFileOperation.copyWith(
   path: path,
@@ -66,9 +133,9 @@ factory ApplyPatchToolCallOperationDeleteFile.fromJson(Map<String, dynamic> json
 
 final ApplyPatchDeleteFileOperation applyPatchDeleteFileOperation;
 
-@override String get type => 'delete_file';
+@override ApplyPatchToolCallOperationType get type => ApplyPatchToolCallOperationType.fromJson('delete_file');
 
-@override Map<String, dynamic> toJson() => {...applyPatchDeleteFileOperation.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...applyPatchDeleteFileOperation.toJson(), 'type': type.toJson()};
 
 ApplyPatchToolCallOperationDeleteFile copyWith({String? path}) { return ApplyPatchToolCallOperationDeleteFile(applyPatchDeleteFileOperation.copyWith(
   path: path,
@@ -89,9 +156,9 @@ factory ApplyPatchToolCallOperationUpdateFile.fromJson(Map<String, dynamic> json
 
 final ApplyPatchUpdateFileOperation applyPatchUpdateFileOperation;
 
-@override String get type => 'update_file';
+@override ApplyPatchToolCallOperationType get type => ApplyPatchToolCallOperationType.fromJson('update_file');
 
-@override Map<String, dynamic> toJson() => {...applyPatchUpdateFileOperation.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...applyPatchUpdateFileOperation.toJson(), 'type': type.toJson()};
 
 ApplyPatchToolCallOperationUpdateFile copyWith({String? path, String? diff, }) { return ApplyPatchToolCallOperationUpdateFile(applyPatchUpdateFileOperation.copyWith(
   path: path,
@@ -115,7 +182,7 @@ final Map<String, dynamic> json;
 
 late final String _path = json['path'] as String;
 
-@override String get type => json['type'] as String? ?? '';
+@override ApplyPatchToolCallOperationType get type => ApplyPatchToolCallOperationType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

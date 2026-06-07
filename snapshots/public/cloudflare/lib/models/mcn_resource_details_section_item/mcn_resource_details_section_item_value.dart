@@ -1,7 +1,102 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/McnResourceDetailsSectionItem (inline: Value)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_list_item.dart';import 'package:pub_cloudflare/models/mcn_list_item/mcn_list_item_list.dart';import 'package:pub_cloudflare/models/mcn_resource_preview.dart';import 'package:pub_cloudflare/models/mcn_resource_preview_item.dart';import 'package:pub_cloudflare/models/mcn_string_item.dart';import 'package:pub_cloudflare/models/mcn_yaml_diff.dart';import 'package:pub_cloudflare/models/mcn_yaml_diff_item.dart';import 'package:pub_cloudflare/models/mcn_yaml_item.dart';sealed class McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValue();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mcn_list_item.dart';import 'package:pub_cloudflare/models/mcn_list_item/mcn_list_item_list.dart';import 'package:pub_cloudflare/models/mcn_resource_preview.dart';import 'package:pub_cloudflare/models/mcn_resource_preview_item.dart';import 'package:pub_cloudflare/models/mcn_string_item.dart';import 'package:pub_cloudflare/models/mcn_yaml_diff.dart';import 'package:pub_cloudflare/models/mcn_yaml_diff_item.dart';import 'package:pub_cloudflare/models/mcn_yaml_item.dart';sealed class McnResourceDetailsSectionItemValueItemType {const McnResourceDetailsSectionItemValueItemType();
+
+factory McnResourceDetailsSectionItemValueItemType.fromJson(String json) { return switch (json) {
+  'mcn_string_item' => mcnStringItem,
+  'mcn_yaml_item' => mcnYamlItem,
+  'mcn_yaml_diff_item' => mcnYamlDiffItem,
+  'mcn_resource_preview_item' => mcnResourcePreviewItem,
+  'mcn_list_item' => mcnListItem,
+  _ => McnResourceDetailsSectionItemValueItemType$Unknown(json),
+}; }
+
+static const McnResourceDetailsSectionItemValueItemType mcnStringItem = McnResourceDetailsSectionItemValueItemType$mcnStringItem._();
+
+static const McnResourceDetailsSectionItemValueItemType mcnYamlItem = McnResourceDetailsSectionItemValueItemType$mcnYamlItem._();
+
+static const McnResourceDetailsSectionItemValueItemType mcnYamlDiffItem = McnResourceDetailsSectionItemValueItemType$mcnYamlDiffItem._();
+
+static const McnResourceDetailsSectionItemValueItemType mcnResourcePreviewItem = McnResourceDetailsSectionItemValueItemType$mcnResourcePreviewItem._();
+
+static const McnResourceDetailsSectionItemValueItemType mcnListItem = McnResourceDetailsSectionItemValueItemType$mcnListItem._();
+
+static const List<McnResourceDetailsSectionItemValueItemType> values = [mcnStringItem, mcnYamlItem, mcnYamlDiffItem, mcnResourcePreviewItem, mcnListItem];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is McnResourceDetailsSectionItemValueItemType$Unknown;
+
+ }
+@immutable final class McnResourceDetailsSectionItemValueItemType$mcnStringItem extends McnResourceDetailsSectionItemValueItemType {const McnResourceDetailsSectionItemValueItemType$mcnStringItem._();
+
+@override String get value => 'mcn_string_item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnResourceDetailsSectionItemValueItemType$mcnStringItem;
+
+@override int get hashCode => 'mcn_string_item'.hashCode;
+
+@override String toString() => 'McnResourceDetailsSectionItemValueItemType(mcn_string_item)';
+
+ }
+@immutable final class McnResourceDetailsSectionItemValueItemType$mcnYamlItem extends McnResourceDetailsSectionItemValueItemType {const McnResourceDetailsSectionItemValueItemType$mcnYamlItem._();
+
+@override String get value => 'mcn_yaml_item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnResourceDetailsSectionItemValueItemType$mcnYamlItem;
+
+@override int get hashCode => 'mcn_yaml_item'.hashCode;
+
+@override String toString() => 'McnResourceDetailsSectionItemValueItemType(mcn_yaml_item)';
+
+ }
+@immutable final class McnResourceDetailsSectionItemValueItemType$mcnYamlDiffItem extends McnResourceDetailsSectionItemValueItemType {const McnResourceDetailsSectionItemValueItemType$mcnYamlDiffItem._();
+
+@override String get value => 'mcn_yaml_diff_item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnResourceDetailsSectionItemValueItemType$mcnYamlDiffItem;
+
+@override int get hashCode => 'mcn_yaml_diff_item'.hashCode;
+
+@override String toString() => 'McnResourceDetailsSectionItemValueItemType(mcn_yaml_diff_item)';
+
+ }
+@immutable final class McnResourceDetailsSectionItemValueItemType$mcnResourcePreviewItem extends McnResourceDetailsSectionItemValueItemType {const McnResourceDetailsSectionItemValueItemType$mcnResourcePreviewItem._();
+
+@override String get value => 'mcn_resource_preview_item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnResourceDetailsSectionItemValueItemType$mcnResourcePreviewItem;
+
+@override int get hashCode => 'mcn_resource_preview_item'.hashCode;
+
+@override String toString() => 'McnResourceDetailsSectionItemValueItemType(mcn_resource_preview_item)';
+
+ }
+@immutable final class McnResourceDetailsSectionItemValueItemType$mcnListItem extends McnResourceDetailsSectionItemValueItemType {const McnResourceDetailsSectionItemValueItemType$mcnListItem._();
+
+@override String get value => 'mcn_list_item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnResourceDetailsSectionItemValueItemType$mcnListItem;
+
+@override int get hashCode => 'mcn_list_item'.hashCode;
+
+@override String toString() => 'McnResourceDetailsSectionItemValueItemType(mcn_list_item)';
+
+ }
+@immutable final class McnResourceDetailsSectionItemValueItemType$Unknown extends McnResourceDetailsSectionItemValueItemType {const McnResourceDetailsSectionItemValueItemType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is McnResourceDetailsSectionItemValueItemType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'McnResourceDetailsSectionItemValueItemType($value)';
+
+ }
+sealed class McnResourceDetailsSectionItemValue {const McnResourceDetailsSectionItemValue();
 
 /// Deserialize from JSON, dispatching on the `item_type` discriminator.
 factory McnResourceDetailsSectionItemValue.fromJson(Map<String, dynamic> json) { return switch (json['item_type']) {
@@ -29,7 +124,7 @@ factory McnResourceDetailsSectionItemValue.mcnResourcePreviewItem({required McnR
 factory McnResourceDetailsSectionItemValue.mcnListItem({required List<McnListItemList> list}) { return McnResourceDetailsSectionItemValueMcnListItem(McnListItem(itemType: 'mcn_list_item', list: list)); }
 
 /// The discriminator value identifying this variant.
-String get itemType;
+McnResourceDetailsSectionItemValueItemType get itemType;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is McnResourceDetailsSectionItemValue$Unknown;
@@ -49,9 +144,9 @@ factory McnResourceDetailsSectionItemValueMcnStringItem.fromJson(Map<String, dyn
 
 final McnStringItem mcnStringItem;
 
-@override String get itemType => 'mcn_string_item';
+@override McnResourceDetailsSectionItemValueItemType get itemType => McnResourceDetailsSectionItemValueItemType.fromJson('mcn_string_item');
 
-@override Map<String, dynamic> toJson() => {...mcnStringItem.toJson(), 'item_type': itemType};
+@override Map<String, dynamic> toJson() => {...mcnStringItem.toJson(), 'item_type': itemType.toJson()};
 
 McnResourceDetailsSectionItemValueMcnStringItem copyWith({String? string}) { return McnResourceDetailsSectionItemValueMcnStringItem(mcnStringItem.copyWith(
   string: string,
@@ -70,9 +165,9 @@ factory McnResourceDetailsSectionItemValueMcnYamlItem.fromJson(Map<String, dynam
 
 final McnYamlItem mcnYamlItem;
 
-@override String get itemType => 'mcn_yaml_item';
+@override McnResourceDetailsSectionItemValueItemType get itemType => McnResourceDetailsSectionItemValueItemType.fromJson('mcn_yaml_item');
 
-@override Map<String, dynamic> toJson() => {...mcnYamlItem.toJson(), 'item_type': itemType};
+@override Map<String, dynamic> toJson() => {...mcnYamlItem.toJson(), 'item_type': itemType.toJson()};
 
 McnResourceDetailsSectionItemValueMcnYamlItem copyWith({String? yaml}) { return McnResourceDetailsSectionItemValueMcnYamlItem(mcnYamlItem.copyWith(
   yaml: yaml,
@@ -91,9 +186,9 @@ factory McnResourceDetailsSectionItemValueMcnYamlDiffItem.fromJson(Map<String, d
 
 final McnYamlDiffItem mcnYamlDiffItem;
 
-@override String get itemType => 'mcn_yaml_diff_item';
+@override McnResourceDetailsSectionItemValueItemType get itemType => McnResourceDetailsSectionItemValueItemType.fromJson('mcn_yaml_diff_item');
 
-@override Map<String, dynamic> toJson() => {...mcnYamlDiffItem.toJson(), 'item_type': itemType};
+@override Map<String, dynamic> toJson() => {...mcnYamlDiffItem.toJson(), 'item_type': itemType.toJson()};
 
 McnResourceDetailsSectionItemValueMcnYamlDiffItem copyWith({McnYamlDiff? yamlDiff}) { return McnResourceDetailsSectionItemValueMcnYamlDiffItem(mcnYamlDiffItem.copyWith(
   yamlDiff: yamlDiff,
@@ -112,9 +207,9 @@ factory McnResourceDetailsSectionItemValueMcnResourcePreviewItem.fromJson(Map<St
 
 final McnResourcePreviewItem mcnResourcePreviewItem;
 
-@override String get itemType => 'mcn_resource_preview_item';
+@override McnResourceDetailsSectionItemValueItemType get itemType => McnResourceDetailsSectionItemValueItemType.fromJson('mcn_resource_preview_item');
 
-@override Map<String, dynamic> toJson() => {...mcnResourcePreviewItem.toJson(), 'item_type': itemType};
+@override Map<String, dynamic> toJson() => {...mcnResourcePreviewItem.toJson(), 'item_type': itemType.toJson()};
 
 McnResourceDetailsSectionItemValueMcnResourcePreviewItem copyWith({McnResourcePreview? resourcePreview}) { return McnResourceDetailsSectionItemValueMcnResourcePreviewItem(mcnResourcePreviewItem.copyWith(
   resourcePreview: resourcePreview,
@@ -133,9 +228,9 @@ factory McnResourceDetailsSectionItemValueMcnListItem.fromJson(Map<String, dynam
 
 final McnListItem mcnListItem;
 
-@override String get itemType => 'mcn_list_item';
+@override McnResourceDetailsSectionItemValueItemType get itemType => McnResourceDetailsSectionItemValueItemType.fromJson('mcn_list_item');
 
-@override Map<String, dynamic> toJson() => {...mcnListItem.toJson(), 'item_type': itemType};
+@override Map<String, dynamic> toJson() => {...mcnListItem.toJson(), 'item_type': itemType.toJson()};
 
 McnResourceDetailsSectionItemValueMcnListItem copyWith({List<McnListItemList>? list}) { return McnResourceDetailsSectionItemValueMcnListItem(mcnListItem.copyWith(
   list: list,
@@ -154,7 +249,7 @@ McnResourceDetailsSectionItemValueMcnListItem copyWith({List<McnListItemList>? l
 
 final Map<String, dynamic> json;
 
-@override String get itemType => json['item_type'] as String? ?? '';
+@override McnResourceDetailsSectionItemValueItemType get itemType => McnResourceDetailsSectionItemValueItemType.fromJson(json['item_type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

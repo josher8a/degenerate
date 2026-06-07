@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FunctionShellCallOutputOutcomeParam
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_call_output_exit_outcome_param.dart';import 'package:pub_openai/models/function_shell_call_output_timeout_outcome_param.dart';/// The exit or timeout outcome associated with this shell call.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/function_shell_call_output_exit_outcome_param.dart';import 'package:pub_openai/models/function_shell_call_output_timeout_outcome_param.dart';sealed class FunctionShellCallOutputOutcomeParamType {const FunctionShellCallOutputOutcomeParamType();
+
+factory FunctionShellCallOutputOutcomeParamType.fromJson(String json) { return switch (json) {
+  'timeout' => timeout,
+  'exit' => exit,
+  _ => FunctionShellCallOutputOutcomeParamType$Unknown(json),
+}; }
+
+static const FunctionShellCallOutputOutcomeParamType timeout = FunctionShellCallOutputOutcomeParamType$timeout._();
+
+static const FunctionShellCallOutputOutcomeParamType exit = FunctionShellCallOutputOutcomeParamType$exit._();
+
+static const List<FunctionShellCallOutputOutcomeParamType> values = [timeout, exit];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is FunctionShellCallOutputOutcomeParamType$Unknown;
+
+ }
+@immutable final class FunctionShellCallOutputOutcomeParamType$timeout extends FunctionShellCallOutputOutcomeParamType {const FunctionShellCallOutputOutcomeParamType$timeout._();
+
+@override String get value => 'timeout';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionShellCallOutputOutcomeParamType$timeout;
+
+@override int get hashCode => 'timeout'.hashCode;
+
+@override String toString() => 'FunctionShellCallOutputOutcomeParamType(timeout)';
+
+ }
+@immutable final class FunctionShellCallOutputOutcomeParamType$exit extends FunctionShellCallOutputOutcomeParamType {const FunctionShellCallOutputOutcomeParamType$exit._();
+
+@override String get value => 'exit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionShellCallOutputOutcomeParamType$exit;
+
+@override int get hashCode => 'exit'.hashCode;
+
+@override String toString() => 'FunctionShellCallOutputOutcomeParamType(exit)';
+
+ }
+@immutable final class FunctionShellCallOutputOutcomeParamType$Unknown extends FunctionShellCallOutputOutcomeParamType {const FunctionShellCallOutputOutcomeParamType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionShellCallOutputOutcomeParamType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FunctionShellCallOutputOutcomeParamType($value)';
+
+ }
+/// The exit or timeout outcome associated with this shell call.
 sealed class FunctionShellCallOutputOutcomeParam {const FunctionShellCallOutputOutcomeParam();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -15,7 +68,7 @@ factory FunctionShellCallOutputOutcomeParam.fromJson(Map<String, dynamic> json) 
 factory FunctionShellCallOutputOutcomeParam.exit({required int exitCode}) { return FunctionShellCallOutputOutcomeParamExit(FunctionShellCallOutputExitOutcomeParam(exitCode: exitCode)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+FunctionShellCallOutputOutcomeParamType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is FunctionShellCallOutputOutcomeParam$Unknown;
@@ -32,9 +85,9 @@ factory FunctionShellCallOutputOutcomeParamTimeout.fromJson(Map<String, dynamic>
 
 final FunctionShellCallOutputTimeoutOutcomeParam functionShellCallOutputTimeoutOutcomeParam;
 
-@override String get type => 'timeout';
+@override FunctionShellCallOutputOutcomeParamType get type => FunctionShellCallOutputOutcomeParamType.fromJson('timeout');
 
-@override Map<String, dynamic> toJson() => {...functionShellCallOutputTimeoutOutcomeParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...functionShellCallOutputTimeoutOutcomeParam.toJson(), 'type': type.toJson()};
 
 FunctionShellCallOutputOutcomeParamTimeout copyWith({FunctionShellCallOutputTimeoutOutcomeParam? functionShellCallOutputTimeoutOutcomeParam}) { return FunctionShellCallOutputOutcomeParamTimeout(functionShellCallOutputTimeoutOutcomeParam ?? this.functionShellCallOutputTimeoutOutcomeParam); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -51,9 +104,9 @@ factory FunctionShellCallOutputOutcomeParamExit.fromJson(Map<String, dynamic> js
 
 final FunctionShellCallOutputExitOutcomeParam functionShellCallOutputExitOutcomeParam;
 
-@override String get type => 'exit';
+@override FunctionShellCallOutputOutcomeParamType get type => FunctionShellCallOutputOutcomeParamType.fromJson('exit');
 
-@override Map<String, dynamic> toJson() => {...functionShellCallOutputExitOutcomeParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...functionShellCallOutputExitOutcomeParam.toJson(), 'type': type.toJson()};
 
 FunctionShellCallOutputOutcomeParamExit copyWith({int? exitCode}) { return FunctionShellCallOutputOutcomeParamExit(functionShellCallOutputExitOutcomeParam.copyWith(
   exitCode: exitCode,
@@ -72,7 +125,7 @@ FunctionShellCallOutputOutcomeParamExit copyWith({int? exitCode}) { return Funct
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override FunctionShellCallOutputOutcomeParamType get type => FunctionShellCallOutputOutcomeParamType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

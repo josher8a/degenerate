@@ -1,7 +1,242 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Tool
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_tool_param.dart';import 'package:pub_openai/models/approximate_location.dart';import 'package:pub_openai/models/code_interpreter_tool.dart';import 'package:pub_openai/models/code_interpreter_tool/code_interpreter_tool_container.dart';import 'package:pub_openai/models/computer_tool.dart';import 'package:pub_openai/models/computer_use_preview_tool.dart';import 'package:pub_openai/models/custom_tool_param.dart';import 'package:pub_openai/models/custom_tool_param/custom_tool_param_format.dart';import 'package:pub_openai/models/empty_model_param.dart';import 'package:pub_openai/models/file_search_tool.dart';import 'package:pub_openai/models/filters.dart';import 'package:pub_openai/models/function_shell_tool_param.dart';import 'package:pub_openai/models/function_shell_tool_param/function_shell_tool_param_environment.dart';import 'package:pub_openai/models/function_tool.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_background.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_output_format.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_quality.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_size.dart';import 'package:pub_openai/models/image_gen_tool.dart';import 'package:pub_openai/models/image_gen_tool/image_gen_tool_model.dart';import 'package:pub_openai/models/image_gen_tool/input_image_mask.dart';import 'package:pub_openai/models/input_fidelity.dart';import 'package:pub_openai/models/local_shell_tool_param.dart';import 'package:pub_openai/models/mcp_tool.dart';import 'package:pub_openai/models/mcp_tool/allowed_tools.dart';import 'package:pub_openai/models/mcp_tool/require_approval.dart';import 'package:pub_openai/models/namespace_tool_param.dart';import 'package:pub_openai/models/namespace_tool_param/namespace_tool_param_tools.dart';import 'package:pub_openai/models/ranking_options.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';import 'package:pub_openai/models/tool_search_tool_param.dart';import 'package:pub_openai/models/web_search_approximate_location.dart';import 'package:pub_openai/models/web_search_preview_tool.dart';import 'package:pub_openai/models/web_search_tool.dart';import 'package:pub_openai/models/web_search_tool/web_search_tool_filters.dart';/// A tool that can be used to generate a response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_tool_param.dart';import 'package:pub_openai/models/approximate_location.dart';import 'package:pub_openai/models/code_interpreter_tool.dart';import 'package:pub_openai/models/code_interpreter_tool/code_interpreter_tool_container.dart';import 'package:pub_openai/models/computer_tool.dart';import 'package:pub_openai/models/computer_use_preview_tool.dart';import 'package:pub_openai/models/custom_tool_param.dart';import 'package:pub_openai/models/custom_tool_param/custom_tool_param_format.dart';import 'package:pub_openai/models/empty_model_param.dart';import 'package:pub_openai/models/file_search_tool.dart';import 'package:pub_openai/models/filters.dart';import 'package:pub_openai/models/function_shell_tool_param.dart';import 'package:pub_openai/models/function_shell_tool_param/function_shell_tool_param_environment.dart';import 'package:pub_openai/models/function_tool.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_background.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_output_format.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_quality.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_size.dart';import 'package:pub_openai/models/image_gen_tool.dart';import 'package:pub_openai/models/image_gen_tool/image_gen_tool_model.dart';import 'package:pub_openai/models/image_gen_tool/input_image_mask.dart';import 'package:pub_openai/models/input_fidelity.dart';import 'package:pub_openai/models/local_shell_tool_param.dart';import 'package:pub_openai/models/mcp_tool.dart';import 'package:pub_openai/models/mcp_tool/allowed_tools.dart';import 'package:pub_openai/models/mcp_tool/require_approval.dart';import 'package:pub_openai/models/namespace_tool_param.dart';import 'package:pub_openai/models/namespace_tool_param/namespace_tool_param_tools.dart';import 'package:pub_openai/models/ranking_options.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';import 'package:pub_openai/models/tool_search_tool_param.dart';import 'package:pub_openai/models/web_search_approximate_location.dart';import 'package:pub_openai/models/web_search_preview_tool.dart';import 'package:pub_openai/models/web_search_tool.dart';import 'package:pub_openai/models/web_search_tool/web_search_tool_filters.dart';sealed class ToolType {const ToolType();
+
+factory ToolType.fromJson(String json) { return switch (json) {
+  'function' => function,
+  'file_search' => fileSearch,
+  'computer' => computer,
+  'computer_use_preview' => computerUsePreview,
+  'web_search' => webSearch,
+  'mcp' => mcp,
+  'code_interpreter' => codeInterpreter,
+  'image_generation' => imageGeneration,
+  'local_shell' => localShell,
+  'shell' => shell,
+  'custom' => custom,
+  'namespace' => namespace,
+  'tool_search' => toolSearch,
+  'web_search_preview' => webSearchPreview,
+  'apply_patch' => applyPatch,
+  _ => ToolType$Unknown(json),
+}; }
+
+static const ToolType function = ToolType$function._();
+
+static const ToolType fileSearch = ToolType$fileSearch._();
+
+static const ToolType computer = ToolType$computer._();
+
+static const ToolType computerUsePreview = ToolType$computerUsePreview._();
+
+static const ToolType webSearch = ToolType$webSearch._();
+
+static const ToolType mcp = ToolType$mcp._();
+
+static const ToolType codeInterpreter = ToolType$codeInterpreter._();
+
+static const ToolType imageGeneration = ToolType$imageGeneration._();
+
+static const ToolType localShell = ToolType$localShell._();
+
+static const ToolType shell = ToolType$shell._();
+
+static const ToolType custom = ToolType$custom._();
+
+static const ToolType namespace = ToolType$namespace._();
+
+static const ToolType toolSearch = ToolType$toolSearch._();
+
+static const ToolType webSearchPreview = ToolType$webSearchPreview._();
+
+static const ToolType applyPatch = ToolType$applyPatch._();
+
+static const List<ToolType> values = [function, fileSearch, computer, computerUsePreview, webSearch, mcp, codeInterpreter, imageGeneration, localShell, shell, custom, namespace, toolSearch, webSearchPreview, applyPatch];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ToolType$Unknown;
+
+ }
+@immutable final class ToolType$function extends ToolType {const ToolType$function._();
+
+@override String get value => 'function';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$function;
+
+@override int get hashCode => 'function'.hashCode;
+
+@override String toString() => 'ToolType(function)';
+
+ }
+@immutable final class ToolType$fileSearch extends ToolType {const ToolType$fileSearch._();
+
+@override String get value => 'file_search';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$fileSearch;
+
+@override int get hashCode => 'file_search'.hashCode;
+
+@override String toString() => 'ToolType(file_search)';
+
+ }
+@immutable final class ToolType$computer extends ToolType {const ToolType$computer._();
+
+@override String get value => 'computer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$computer;
+
+@override int get hashCode => 'computer'.hashCode;
+
+@override String toString() => 'ToolType(computer)';
+
+ }
+@immutable final class ToolType$computerUsePreview extends ToolType {const ToolType$computerUsePreview._();
+
+@override String get value => 'computer_use_preview';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$computerUsePreview;
+
+@override int get hashCode => 'computer_use_preview'.hashCode;
+
+@override String toString() => 'ToolType(computer_use_preview)';
+
+ }
+@immutable final class ToolType$webSearch extends ToolType {const ToolType$webSearch._();
+
+@override String get value => 'web_search';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$webSearch;
+
+@override int get hashCode => 'web_search'.hashCode;
+
+@override String toString() => 'ToolType(web_search)';
+
+ }
+@immutable final class ToolType$mcp extends ToolType {const ToolType$mcp._();
+
+@override String get value => 'mcp';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$mcp;
+
+@override int get hashCode => 'mcp'.hashCode;
+
+@override String toString() => 'ToolType(mcp)';
+
+ }
+@immutable final class ToolType$codeInterpreter extends ToolType {const ToolType$codeInterpreter._();
+
+@override String get value => 'code_interpreter';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$codeInterpreter;
+
+@override int get hashCode => 'code_interpreter'.hashCode;
+
+@override String toString() => 'ToolType(code_interpreter)';
+
+ }
+@immutable final class ToolType$imageGeneration extends ToolType {const ToolType$imageGeneration._();
+
+@override String get value => 'image_generation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$imageGeneration;
+
+@override int get hashCode => 'image_generation'.hashCode;
+
+@override String toString() => 'ToolType(image_generation)';
+
+ }
+@immutable final class ToolType$localShell extends ToolType {const ToolType$localShell._();
+
+@override String get value => 'local_shell';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$localShell;
+
+@override int get hashCode => 'local_shell'.hashCode;
+
+@override String toString() => 'ToolType(local_shell)';
+
+ }
+@immutable final class ToolType$shell extends ToolType {const ToolType$shell._();
+
+@override String get value => 'shell';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$shell;
+
+@override int get hashCode => 'shell'.hashCode;
+
+@override String toString() => 'ToolType(shell)';
+
+ }
+@immutable final class ToolType$custom extends ToolType {const ToolType$custom._();
+
+@override String get value => 'custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$custom;
+
+@override int get hashCode => 'custom'.hashCode;
+
+@override String toString() => 'ToolType(custom)';
+
+ }
+@immutable final class ToolType$namespace extends ToolType {const ToolType$namespace._();
+
+@override String get value => 'namespace';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$namespace;
+
+@override int get hashCode => 'namespace'.hashCode;
+
+@override String toString() => 'ToolType(namespace)';
+
+ }
+@immutable final class ToolType$toolSearch extends ToolType {const ToolType$toolSearch._();
+
+@override String get value => 'tool_search';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$toolSearch;
+
+@override int get hashCode => 'tool_search'.hashCode;
+
+@override String toString() => 'ToolType(tool_search)';
+
+ }
+@immutable final class ToolType$webSearchPreview extends ToolType {const ToolType$webSearchPreview._();
+
+@override String get value => 'web_search_preview';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$webSearchPreview;
+
+@override int get hashCode => 'web_search_preview'.hashCode;
+
+@override String toString() => 'ToolType(web_search_preview)';
+
+ }
+@immutable final class ToolType$applyPatch extends ToolType {const ToolType$applyPatch._();
+
+@override String get value => 'apply_patch';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$applyPatch;
+
+@override int get hashCode => 'apply_patch'.hashCode;
+
+@override String toString() => 'ToolType(apply_patch)';
+
+ }
+@immutable final class ToolType$Unknown extends ToolType {const ToolType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ToolType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ToolType($value)';
+
+ }
+/// A tool that can be used to generate a response.
 /// 
 sealed class Tool {const Tool();
 
@@ -62,7 +297,7 @@ factory Tool.toolSearch({ToolSearchExecutionType? execution, String? description
 factory Tool.webSearchPreview({ApproximateLocation? userLocation, SearchContextSize? searchContextSize, List<SearchContentType>? searchContentTypes, }) { return ToolWebSearchPreview(WebSearchPreviewTool(userLocation: userLocation, searchContextSize: searchContextSize, searchContentTypes: searchContentTypes)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+ToolType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is Tool$Unknown;
@@ -92,9 +327,9 @@ factory ToolFunction.fromJson(Map<String, dynamic> json) { return ToolFunction(F
 
 final FunctionTool functionTool;
 
-@override String get type => 'function';
+@override ToolType get type => ToolType.fromJson('function');
 
-@override Map<String, dynamic> toJson() => {...functionTool.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...functionTool.toJson(), 'type': type.toJson()};
 
 ToolFunction copyWith({String? name, String? Function()? description, Map<String, dynamic>? Function()? parameters, bool? Function()? strict, bool? Function()? deferLoading, }) { return ToolFunction(functionTool.copyWith(
   name: name,
@@ -117,9 +352,9 @@ factory ToolFileSearch.fromJson(Map<String, dynamic> json) { return ToolFileSear
 
 final FileSearchTool fileSearchTool;
 
-@override String get type => 'file_search';
+@override ToolType get type => ToolType.fromJson('file_search');
 
-@override Map<String, dynamic> toJson() => {...fileSearchTool.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...fileSearchTool.toJson(), 'type': type.toJson()};
 
 ToolFileSearch copyWith({List<String>? vectorStoreIds, int? Function()? maxNumResults, RankingOptions? Function()? rankingOptions, Filters? Function()? filters, }) { return ToolFileSearch(fileSearchTool.copyWith(
   vectorStoreIds: vectorStoreIds,
@@ -141,9 +376,9 @@ factory ToolComputer.fromJson(Map<String, dynamic> json) { return ToolComputer(C
 
 final ComputerTool computerTool;
 
-@override String get type => 'computer';
+@override ToolType get type => ToolType.fromJson('computer');
 
-@override Map<String, dynamic> toJson() => {...computerTool.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...computerTool.toJson(), 'type': type.toJson()};
 
 ToolComputer copyWith({ComputerTool? computerTool}) { return ToolComputer(computerTool ?? this.computerTool); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -160,9 +395,9 @@ factory ToolComputerUsePreview.fromJson(Map<String, dynamic> json) { return Tool
 
 final ComputerUsePreviewTool computerUsePreviewTool;
 
-@override String get type => 'computer_use_preview';
+@override ToolType get type => ToolType.fromJson('computer_use_preview');
 
-@override Map<String, dynamic> toJson() => {...computerUsePreviewTool.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...computerUsePreviewTool.toJson(), 'type': type.toJson()};
 
 ToolComputerUsePreview copyWith({ComputerEnvironment? environment, int? displayWidth, int? displayHeight, }) { return ToolComputerUsePreview(computerUsePreviewTool.copyWith(
   environment: environment,
@@ -183,9 +418,9 @@ factory ToolWebSearch.fromJson(Map<String, dynamic> json) { return ToolWebSearch
 
 final WebSearchTool webSearchTool;
 
-@override String get type => 'web_search';
+@override ToolType get type => ToolType.fromJson('web_search');
 
-@override Map<String, dynamic> toJson() => {...webSearchTool.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...webSearchTool.toJson(), 'type': type.toJson()};
 
 ToolWebSearch copyWith({WebSearchToolFilters? Function()? filters, WebSearchApproximateLocation? Function()? userLocation, WebSearchToolSearchContextSize Function()? searchContextSize, }) { return ToolWebSearch(webSearchTool.copyWith(
   filters: filters,
@@ -206,9 +441,9 @@ factory ToolMcp.fromJson(Map<String, dynamic> json) { return ToolMcp(McpTool.fro
 
 final McpTool mcpTool;
 
-@override String get type => 'mcp';
+@override ToolType get type => ToolType.fromJson('mcp');
 
-@override Map<String, dynamic> toJson() => {...mcpTool.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...mcpTool.toJson(), 'type': type.toJson()};
 
 ToolMcp copyWith({String? serverLabel, String? Function()? serverUrl, ConnectorId? Function()? connectorId, String? Function()? authorization, String? Function()? serverDescription, Map<String, String>? Function()? headers, AllowedTools? Function()? allowedTools, RequireApproval? Function()? requireApproval, bool? Function()? deferLoading, }) { return ToolMcp(mcpTool.copyWith(
   serverLabel: serverLabel,
@@ -235,9 +470,9 @@ factory ToolCodeInterpreter.fromJson(Map<String, dynamic> json) { return ToolCod
 
 final CodeInterpreterTool codeInterpreterTool;
 
-@override String get type => 'code_interpreter';
+@override ToolType get type => ToolType.fromJson('code_interpreter');
 
-@override Map<String, dynamic> toJson() => {...codeInterpreterTool.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...codeInterpreterTool.toJson(), 'type': type.toJson()};
 
 ToolCodeInterpreter copyWith({CodeInterpreterToolContainer? container}) { return ToolCodeInterpreter(codeInterpreterTool.copyWith(
   container: container,
@@ -256,9 +491,9 @@ factory ToolImageGeneration.fromJson(Map<String, dynamic> json) { return ToolIma
 
 final ImageGenTool imageGenTool;
 
-@override String get type => 'image_generation';
+@override ToolType get type => ToolType.fromJson('image_generation');
 
-@override Map<String, dynamic> toJson() => {...imageGenTool.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...imageGenTool.toJson(), 'type': type.toJson()};
 
 ToolImageGeneration copyWith({ImageGenToolModel? Function()? model, ImageEditCompletedEventQuality Function()? quality, ImageEditCompletedEventSize Function()? size, ImageEditCompletedEventOutputFormat Function()? outputFormat, int Function()? outputCompression, ImageGenToolModeration Function()? moderation, ImageEditCompletedEventBackground Function()? background, InputFidelity? Function()? inputFidelity, InputImageMask? Function()? inputImageMask, int Function()? partialImages, ImageGenActionEnum? Function()? action, }) { return ToolImageGeneration(imageGenTool.copyWith(
   model: model,
@@ -287,9 +522,9 @@ factory ToolLocalShell.fromJson(Map<String, dynamic> json) { return ToolLocalShe
 
 final LocalShellToolParam localShellToolParam;
 
-@override String get type => 'local_shell';
+@override ToolType get type => ToolType.fromJson('local_shell');
 
-@override Map<String, dynamic> toJson() => {...localShellToolParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...localShellToolParam.toJson(), 'type': type.toJson()};
 
 ToolLocalShell copyWith({LocalShellToolParam? localShellToolParam}) { return ToolLocalShell(localShellToolParam ?? this.localShellToolParam); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -306,9 +541,9 @@ factory ToolShell.fromJson(Map<String, dynamic> json) { return ToolShell(Functio
 
 final FunctionShellToolParam functionShellToolParam;
 
-@override String get type => 'shell';
+@override ToolType get type => ToolType.fromJson('shell');
 
-@override Map<String, dynamic> toJson() => {...functionShellToolParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...functionShellToolParam.toJson(), 'type': type.toJson()};
 
 ToolShell copyWith({FunctionShellToolParamEnvironment? Function()? environment}) { return ToolShell(functionShellToolParam.copyWith(
   environment: environment,
@@ -327,9 +562,9 @@ factory ToolCustom.fromJson(Map<String, dynamic> json) { return ToolCustom(Custo
 
 final CustomToolParam customToolParam;
 
-@override String get type => 'custom';
+@override ToolType get type => ToolType.fromJson('custom');
 
-@override Map<String, dynamic> toJson() => {...customToolParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...customToolParam.toJson(), 'type': type.toJson()};
 
 ToolCustom copyWith({String? name, String? Function()? description, CustomToolParamFormat? Function()? format, bool? Function()? deferLoading, }) { return ToolCustom(customToolParam.copyWith(
   name: name,
@@ -351,9 +586,9 @@ factory ToolNamespace.fromJson(Map<String, dynamic> json) { return ToolNamespace
 
 final NamespaceToolParam namespaceToolParam;
 
-@override String get type => 'namespace';
+@override ToolType get type => ToolType.fromJson('namespace');
 
-@override Map<String, dynamic> toJson() => {...namespaceToolParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...namespaceToolParam.toJson(), 'type': type.toJson()};
 
 ToolNamespace copyWith({String? name, String? description, List<NamespaceToolParamTools>? tools, }) { return ToolNamespace(namespaceToolParam.copyWith(
   name: name,
@@ -374,9 +609,9 @@ factory ToolToolSearch.fromJson(Map<String, dynamic> json) { return ToolToolSear
 
 final ToolSearchToolParam toolSearchToolParam;
 
-@override String get type => 'tool_search';
+@override ToolType get type => ToolType.fromJson('tool_search');
 
-@override Map<String, dynamic> toJson() => {...toolSearchToolParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...toolSearchToolParam.toJson(), 'type': type.toJson()};
 
 ToolToolSearch copyWith({ToolSearchExecutionType? Function()? execution, String? Function()? description, EmptyModelParam? Function()? parameters, }) { return ToolToolSearch(toolSearchToolParam.copyWith(
   execution: execution,
@@ -397,9 +632,9 @@ factory ToolWebSearchPreview.fromJson(Map<String, dynamic> json) { return ToolWe
 
 final WebSearchPreviewTool webSearchPreviewTool;
 
-@override String get type => 'web_search_preview';
+@override ToolType get type => ToolType.fromJson('web_search_preview');
 
-@override Map<String, dynamic> toJson() => {...webSearchPreviewTool.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...webSearchPreviewTool.toJson(), 'type': type.toJson()};
 
 ToolWebSearchPreview copyWith({ApproximateLocation? Function()? userLocation, SearchContextSize? Function()? searchContextSize, List<SearchContentType>? Function()? searchContentTypes, }) { return ToolWebSearchPreview(webSearchPreviewTool.copyWith(
   userLocation: userLocation,
@@ -420,9 +655,9 @@ factory ToolApplyPatch.fromJson(Map<String, dynamic> json) { return ToolApplyPat
 
 final ApplyPatchToolParam applyPatchToolParam;
 
-@override String get type => 'apply_patch';
+@override ToolType get type => ToolType.fromJson('apply_patch');
 
-@override Map<String, dynamic> toJson() => {...applyPatchToolParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...applyPatchToolParam.toJson(), 'type': type.toJson()};
 
 ToolApplyPatch copyWith({ApplyPatchToolParam? applyPatchToolParam}) { return ToolApplyPatch(applyPatchToolParam ?? this.applyPatchToolParam); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -439,7 +674,7 @@ ToolApplyPatch copyWith({ApplyPatchToolParam? applyPatchToolParam}) { return Too
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override ToolType get type => ToolType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

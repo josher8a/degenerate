@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ChecksCreateRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/checks_create_request/checks_create_request_completed.dart';import 'package:pub_github_rest_3_1/models/checks_create_request/checks_create_request_variant2.dart';sealed class ChecksCreateRequest {const ChecksCreateRequest();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/checks_create_request/checks_create_request_completed.dart';import 'package:pub_github_rest_3_1/models/checks_create_request/checks_create_request_variant2.dart';sealed class ChecksCreateRequestStatus {const ChecksCreateRequestStatus();
+
+factory ChecksCreateRequestStatus.fromJson(String json) { return switch (json) {
+  'completed' => completed,
+  'queued' => queued,
+  _ => ChecksCreateRequestStatus$Unknown(json),
+}; }
+
+static const ChecksCreateRequestStatus completed = ChecksCreateRequestStatus$completed._();
+
+static const ChecksCreateRequestStatus queued = ChecksCreateRequestStatus$queued._();
+
+static const List<ChecksCreateRequestStatus> values = [completed, queued];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ChecksCreateRequestStatus$Unknown;
+
+ }
+@immutable final class ChecksCreateRequestStatus$completed extends ChecksCreateRequestStatus {const ChecksCreateRequestStatus$completed._();
+
+@override String get value => 'completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChecksCreateRequestStatus$completed;
+
+@override int get hashCode => 'completed'.hashCode;
+
+@override String toString() => 'ChecksCreateRequestStatus(completed)';
+
+ }
+@immutable final class ChecksCreateRequestStatus$queued extends ChecksCreateRequestStatus {const ChecksCreateRequestStatus$queued._();
+
+@override String get value => 'queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChecksCreateRequestStatus$queued;
+
+@override int get hashCode => 'queued'.hashCode;
+
+@override String toString() => 'ChecksCreateRequestStatus(queued)';
+
+ }
+@immutable final class ChecksCreateRequestStatus$Unknown extends ChecksCreateRequestStatus {const ChecksCreateRequestStatus$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChecksCreateRequestStatus$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ChecksCreateRequestStatus($value)';
+
+ }
+sealed class ChecksCreateRequest {const ChecksCreateRequest();
 
 /// Deserialize from JSON, dispatching on the `status` discriminator.
 factory ChecksCreateRequest.fromJson(Map<String, dynamic> json) { return switch (json['status']) {
@@ -11,7 +64,7 @@ factory ChecksCreateRequest.fromJson(Map<String, dynamic> json) { return switch 
 }; }
 
 /// The discriminator value identifying this variant.
-String get status;
+ChecksCreateRequestStatus get status;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ChecksCreateRequest$Unknown;
@@ -28,9 +81,9 @@ factory ChecksCreateRequestCompleted$Variant.fromJson(Map<String, dynamic> json)
 
 final ChecksCreateRequestCompleted checksCreateRequestCompleted;
 
-@override String get status => 'completed';
+@override ChecksCreateRequestStatus get status => ChecksCreateRequestStatus.fromJson('completed');
 
-@override Map<String, dynamic> toJson() => {...checksCreateRequestCompleted.toJson(), 'status': status};
+@override Map<String, dynamic> toJson() => {...checksCreateRequestCompleted.toJson(), 'status': status.toJson()};
 
 ChecksCreateRequestCompleted$Variant copyWith({ChecksCreateRequestCompleted? checksCreateRequestCompleted}) { return ChecksCreateRequestCompleted$Variant(checksCreateRequestCompleted ?? this.checksCreateRequestCompleted); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -47,9 +100,9 @@ factory ChecksCreateRequestQueued.fromJson(Map<String, dynamic> json) { return C
 
 final ChecksCreateRequestVariant2 checksCreateRequestVariant2;
 
-@override String get status => 'queued';
+@override ChecksCreateRequestStatus get status => ChecksCreateRequestStatus.fromJson('queued');
 
-@override Map<String, dynamic> toJson() => {...checksCreateRequestVariant2.toJson(), 'status': status};
+@override Map<String, dynamic> toJson() => {...checksCreateRequestVariant2.toJson(), 'status': status.toJson()};
 
 ChecksCreateRequestQueued copyWith({ChecksCreateRequestVariant2? checksCreateRequestVariant2}) { return ChecksCreateRequestQueued(checksCreateRequestVariant2 ?? this.checksCreateRequestVariant2); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -66,7 +119,7 @@ ChecksCreateRequestQueued copyWith({ChecksCreateRequestVariant2? checksCreateReq
 
 final Map<String, dynamic> json;
 
-@override String get status => json['status'] as String? ?? '';
+@override ChecksCreateRequestStatus get status => ChecksCreateRequestStatus.fromJson(json['status'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

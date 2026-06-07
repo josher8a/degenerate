@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateSpeechResponseStreamEvent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/speech_audio_delta_event.dart';import 'package:pub_openai/models/speech_audio_done_event.dart';import 'package:pub_openai/models/speech_audio_done_event/speech_audio_done_event_usage.dart';sealed class CreateSpeechResponseStreamEvent {const CreateSpeechResponseStreamEvent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/speech_audio_delta_event.dart';import 'package:pub_openai/models/speech_audio_done_event.dart';import 'package:pub_openai/models/speech_audio_done_event/speech_audio_done_event_usage.dart';sealed class CreateSpeechResponseStreamEventType {const CreateSpeechResponseStreamEventType();
+
+factory CreateSpeechResponseStreamEventType.fromJson(String json) { return switch (json) {
+  'speech.audio.delta' => speechAudioDelta,
+  'speech.audio.done' => speechAudioDone,
+  _ => CreateSpeechResponseStreamEventType$Unknown(json),
+}; }
+
+static const CreateSpeechResponseStreamEventType speechAudioDelta = CreateSpeechResponseStreamEventType$speechAudioDelta._();
+
+static const CreateSpeechResponseStreamEventType speechAudioDone = CreateSpeechResponseStreamEventType$speechAudioDone._();
+
+static const List<CreateSpeechResponseStreamEventType> values = [speechAudioDelta, speechAudioDone];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is CreateSpeechResponseStreamEventType$Unknown;
+
+ }
+@immutable final class CreateSpeechResponseStreamEventType$speechAudioDelta extends CreateSpeechResponseStreamEventType {const CreateSpeechResponseStreamEventType$speechAudioDelta._();
+
+@override String get value => 'speech.audio.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateSpeechResponseStreamEventType$speechAudioDelta;
+
+@override int get hashCode => 'speech.audio.delta'.hashCode;
+
+@override String toString() => 'CreateSpeechResponseStreamEventType(speech.audio.delta)';
+
+ }
+@immutable final class CreateSpeechResponseStreamEventType$speechAudioDone extends CreateSpeechResponseStreamEventType {const CreateSpeechResponseStreamEventType$speechAudioDone._();
+
+@override String get value => 'speech.audio.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateSpeechResponseStreamEventType$speechAudioDone;
+
+@override int get hashCode => 'speech.audio.done'.hashCode;
+
+@override String toString() => 'CreateSpeechResponseStreamEventType(speech.audio.done)';
+
+ }
+@immutable final class CreateSpeechResponseStreamEventType$Unknown extends CreateSpeechResponseStreamEventType {const CreateSpeechResponseStreamEventType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateSpeechResponseStreamEventType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateSpeechResponseStreamEventType($value)';
+
+ }
+sealed class CreateSpeechResponseStreamEvent {const CreateSpeechResponseStreamEvent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CreateSpeechResponseStreamEvent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -17,7 +70,7 @@ factory CreateSpeechResponseStreamEvent.speechAudioDelta({required String audio}
 factory CreateSpeechResponseStreamEvent.speechAudioDone({required SpeechAudioDoneEventUsage usage}) { return CreateSpeechResponseStreamEventSpeechAudioDone(SpeechAudioDoneEvent(type: 'speech.audio.done', usage: usage)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+CreateSpeechResponseStreamEventType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CreateSpeechResponseStreamEvent$Unknown;
@@ -34,9 +87,9 @@ factory CreateSpeechResponseStreamEventSpeechAudioDelta.fromJson(Map<String, dyn
 
 final SpeechAudioDeltaEvent speechAudioDeltaEvent;
 
-@override String get type => 'speech.audio.delta';
+@override CreateSpeechResponseStreamEventType get type => CreateSpeechResponseStreamEventType.fromJson('speech.audio.delta');
 
-@override Map<String, dynamic> toJson() => {...speechAudioDeltaEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...speechAudioDeltaEvent.toJson(), 'type': type.toJson()};
 
 CreateSpeechResponseStreamEventSpeechAudioDelta copyWith({String? audio}) { return CreateSpeechResponseStreamEventSpeechAudioDelta(speechAudioDeltaEvent.copyWith(
   audio: audio,
@@ -55,9 +108,9 @@ factory CreateSpeechResponseStreamEventSpeechAudioDone.fromJson(Map<String, dyna
 
 final SpeechAudioDoneEvent speechAudioDoneEvent;
 
-@override String get type => 'speech.audio.done';
+@override CreateSpeechResponseStreamEventType get type => CreateSpeechResponseStreamEventType.fromJson('speech.audio.done');
 
-@override Map<String, dynamic> toJson() => {...speechAudioDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...speechAudioDoneEvent.toJson(), 'type': type.toJson()};
 
 CreateSpeechResponseStreamEventSpeechAudioDone copyWith({SpeechAudioDoneEventUsage? usage}) { return CreateSpeechResponseStreamEventSpeechAudioDone(speechAudioDoneEvent.copyWith(
   usage: usage,
@@ -76,7 +129,7 @@ CreateSpeechResponseStreamEventSpeechAudioDone copyWith({SpeechAudioDoneEventUsa
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override CreateSpeechResponseStreamEventType get type => CreateSpeechResponseStreamEventType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

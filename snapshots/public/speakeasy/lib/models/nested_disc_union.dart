@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/NestedDiscUnion
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/type_a.dart';import 'package:pub_speakeasy/models/type_a1.dart';import 'package:pub_speakeasy/models/type_a2.dart';import 'package:pub_speakeasy/models/type_b.dart';sealed class NestedDiscUnion {const NestedDiscUnion();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/type_a.dart';import 'package:pub_speakeasy/models/type_a1.dart';import 'package:pub_speakeasy/models/type_a2.dart';import 'package:pub_speakeasy/models/type_b.dart';sealed class NestedDiscUnionType {const NestedDiscUnionType();
+
+factory NestedDiscUnionType.fromJson(String json) { return switch (json) {
+  'a' => a,
+  'b' => b,
+  _ => NestedDiscUnionType$Unknown(json),
+}; }
+
+static const NestedDiscUnionType a = NestedDiscUnionType$a._();
+
+static const NestedDiscUnionType b = NestedDiscUnionType$b._();
+
+static const List<NestedDiscUnionType> values = [a, b];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is NestedDiscUnionType$Unknown;
+
+ }
+@immutable final class NestedDiscUnionType$a extends NestedDiscUnionType {const NestedDiscUnionType$a._();
+
+@override String get value => 'a';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NestedDiscUnionType$a;
+
+@override int get hashCode => 'a'.hashCode;
+
+@override String toString() => 'NestedDiscUnionType(a)';
+
+ }
+@immutable final class NestedDiscUnionType$b extends NestedDiscUnionType {const NestedDiscUnionType$b._();
+
+@override String get value => 'b';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NestedDiscUnionType$b;
+
+@override int get hashCode => 'b'.hashCode;
+
+@override String toString() => 'NestedDiscUnionType(b)';
+
+ }
+@immutable final class NestedDiscUnionType$Unknown extends NestedDiscUnionType {const NestedDiscUnionType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is NestedDiscUnionType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'NestedDiscUnionType($value)';
+
+ }
+sealed class NestedDiscUnion {const NestedDiscUnion();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory NestedDiscUnion.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -14,7 +67,7 @@ factory NestedDiscUnion.fromJson(Map<String, dynamic> json) { return switch (jso
 factory NestedDiscUnion.b({required String data}) { return NestedDiscUnionB(TypeB(type: 'b', data: data)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+NestedDiscUnionType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is NestedDiscUnion$Unknown;
@@ -31,9 +84,9 @@ factory NestedDiscUnionA.fromJson(Map<String, dynamic> json) { return NestedDisc
 
 final TypeA typeA;
 
-@override String get type => 'a';
+@override NestedDiscUnionType get type => NestedDiscUnionType.fromJson('a');
 
-@override Map<String, dynamic> toJson() => {'type': type, 'data': typeA.toJson()};
+@override Map<String, dynamic> toJson() => {'type': type.toJson(), 'data': typeA.toJson()};
 
 NestedDiscUnionA copyWith({TypeA? typeA}) { return NestedDiscUnionA(typeA ?? this.typeA); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -50,9 +103,9 @@ factory NestedDiscUnionB.fromJson(Map<String, dynamic> json) { return NestedDisc
 
 final TypeB typeB;
 
-@override String get type => 'b';
+@override NestedDiscUnionType get type => NestedDiscUnionType.fromJson('b');
 
-@override Map<String, dynamic> toJson() => {...typeB.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...typeB.toJson(), 'type': type.toJson()};
 
 NestedDiscUnionB copyWith({String? data}) { return NestedDiscUnionB(typeB.copyWith(
   data: data,
@@ -71,7 +124,7 @@ NestedDiscUnionB copyWith({String? data}) { return NestedDiscUnionB(typeB.copyWi
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override NestedDiscUnionType get type => NestedDiscUnionType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/SharedErrorUnionPost1Response4Xx
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/shared_discriminated_error.dart';import 'package:pub_speakeasy/models/specific_error1.dart';sealed class SharedErrorUnionPost1Response4Xx {const SharedErrorUnionPost1Response4Xx();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/shared_discriminated_error.dart';import 'package:pub_speakeasy/models/specific_error1.dart';sealed class SharedErrorUnionPost1Response4XxErrorType {const SharedErrorUnionPost1Response4XxErrorType();
+
+factory SharedErrorUnionPost1Response4XxErrorType.fromJson(String json) { return switch (json) {
+  'specific_error_1' => specificError1,
+  'shared_error' => sharedError,
+  _ => SharedErrorUnionPost1Response4XxErrorType$Unknown(json),
+}; }
+
+static const SharedErrorUnionPost1Response4XxErrorType specificError1 = SharedErrorUnionPost1Response4XxErrorType$specificError1._();
+
+static const SharedErrorUnionPost1Response4XxErrorType sharedError = SharedErrorUnionPost1Response4XxErrorType$sharedError._();
+
+static const List<SharedErrorUnionPost1Response4XxErrorType> values = [specificError1, sharedError];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is SharedErrorUnionPost1Response4XxErrorType$Unknown;
+
+ }
+@immutable final class SharedErrorUnionPost1Response4XxErrorType$specificError1 extends SharedErrorUnionPost1Response4XxErrorType {const SharedErrorUnionPost1Response4XxErrorType$specificError1._();
+
+@override String get value => 'specific_error_1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SharedErrorUnionPost1Response4XxErrorType$specificError1;
+
+@override int get hashCode => 'specific_error_1'.hashCode;
+
+@override String toString() => 'SharedErrorUnionPost1Response4XxErrorType(specific_error_1)';
+
+ }
+@immutable final class SharedErrorUnionPost1Response4XxErrorType$sharedError extends SharedErrorUnionPost1Response4XxErrorType {const SharedErrorUnionPost1Response4XxErrorType$sharedError._();
+
+@override String get value => 'shared_error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is SharedErrorUnionPost1Response4XxErrorType$sharedError;
+
+@override int get hashCode => 'shared_error'.hashCode;
+
+@override String toString() => 'SharedErrorUnionPost1Response4XxErrorType(shared_error)';
+
+ }
+@immutable final class SharedErrorUnionPost1Response4XxErrorType$Unknown extends SharedErrorUnionPost1Response4XxErrorType {const SharedErrorUnionPost1Response4XxErrorType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is SharedErrorUnionPost1Response4XxErrorType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'SharedErrorUnionPost1Response4XxErrorType($value)';
+
+ }
+sealed class SharedErrorUnionPost1Response4Xx {const SharedErrorUnionPost1Response4Xx();
 
 /// Deserialize from JSON, dispatching on the `errorType` discriminator.
 factory SharedErrorUnionPost1Response4Xx.fromJson(Map<String, dynamic> json) { return switch (json['errorType']) {
@@ -17,7 +70,7 @@ factory SharedErrorUnionPost1Response4Xx.specificError1({required String details
 factory SharedErrorUnionPost1Response4Xx.sharedError({required String message}) { return SharedErrorUnionPost1Response4XxSharedError(SharedDiscriminatedError(errorType: 'shared_error', message: message)); }
 
 /// The discriminator value identifying this variant.
-String get errorType;
+SharedErrorUnionPost1Response4XxErrorType get errorType;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is SharedErrorUnionPost1Response4Xx$Unknown;
@@ -34,9 +87,9 @@ factory SharedErrorUnionPost1Response4XxSpecificError1.fromJson(Map<String, dyna
 
 final SpecificError1 specificError1;
 
-@override String get errorType => 'specific_error_1';
+@override SharedErrorUnionPost1Response4XxErrorType get errorType => SharedErrorUnionPost1Response4XxErrorType.fromJson('specific_error_1');
 
-@override Map<String, dynamic> toJson() => {...specificError1.toJson(), 'errorType': errorType};
+@override Map<String, dynamic> toJson() => {...specificError1.toJson(), 'errorType': errorType.toJson()};
 
 SharedErrorUnionPost1Response4XxSpecificError1 copyWith({String? details}) { return SharedErrorUnionPost1Response4XxSpecificError1(specificError1.copyWith(
   details: details,
@@ -55,9 +108,9 @@ factory SharedErrorUnionPost1Response4XxSharedError.fromJson(Map<String, dynamic
 
 final SharedDiscriminatedError sharedDiscriminatedError;
 
-@override String get errorType => 'shared_error';
+@override SharedErrorUnionPost1Response4XxErrorType get errorType => SharedErrorUnionPost1Response4XxErrorType.fromJson('shared_error');
 
-@override Map<String, dynamic> toJson() => {...sharedDiscriminatedError.toJson(), 'errorType': errorType};
+@override Map<String, dynamic> toJson() => {...sharedDiscriminatedError.toJson(), 'errorType': errorType.toJson()};
 
 SharedErrorUnionPost1Response4XxSharedError copyWith({String? message}) { return SharedErrorUnionPost1Response4XxSharedError(sharedDiscriminatedError.copyWith(
   message: message,
@@ -76,7 +129,7 @@ SharedErrorUnionPost1Response4XxSharedError copyWith({String? message}) { return
 
 final Map<String, dynamic> json;
 
-@override String get errorType => json['errorType'] as String? ?? '';
+@override SharedErrorUnionPost1Response4XxErrorType get errorType => SharedErrorUnionPost1Response4XxErrorType.fromJson(json['errorType'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

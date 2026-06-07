@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeCreateClientSecretResponse (inline: Session)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_tool_choice.dart';import 'package:pub_openai/models/realtime_response_create_params/output_modalities.dart';import 'package:pub_openai/models/realtime_response_create_params/realtime_response_create_params_tools.dart';import 'package:pub_openai/models/realtime_session_create_request/client_secret.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/include.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_model.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_tracing.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_type.dart';import 'package:pub_openai/models/realtime_session_create_response_ga.dart';import 'package:pub_openai/models/realtime_session_create_response_ga/realtime_session_create_response_ga_audio.dart';import 'package:pub_openai/models/realtime_transcription_session_create_request_ga/realtime_transcription_session_create_request_ga_type.dart';import 'package:pub_openai/models/realtime_transcription_session_create_response_ga.dart';import 'package:pub_openai/models/realtime_transcription_session_create_response_ga/realtime_transcription_session_create_response_ga_audio.dart';import 'package:pub_openai/models/realtime_truncation.dart';/// The session configuration for either a realtime or transcription session.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/max_output_tokens.dart';import 'package:pub_openai/models/realtime_beta_response_create_params/realtime_beta_response_create_params_tool_choice.dart';import 'package:pub_openai/models/realtime_response_create_params/output_modalities.dart';import 'package:pub_openai/models/realtime_response_create_params/realtime_response_create_params_tools.dart';import 'package:pub_openai/models/realtime_session_create_request/client_secret.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/include.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_model.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_tracing.dart';import 'package:pub_openai/models/realtime_session_create_request_ga/realtime_session_create_request_ga_type.dart';import 'package:pub_openai/models/realtime_session_create_response_ga.dart';import 'package:pub_openai/models/realtime_session_create_response_ga/realtime_session_create_response_ga_audio.dart';import 'package:pub_openai/models/realtime_transcription_session_create_request_ga/realtime_transcription_session_create_request_ga_type.dart';import 'package:pub_openai/models/realtime_transcription_session_create_response_ga.dart';import 'package:pub_openai/models/realtime_transcription_session_create_response_ga/realtime_transcription_session_create_response_ga_audio.dart';import 'package:pub_openai/models/realtime_truncation.dart';sealed class RealtimeCreateClientSecretResponseSessionType {const RealtimeCreateClientSecretResponseSessionType();
+
+factory RealtimeCreateClientSecretResponseSessionType.fromJson(String json) { return switch (json) {
+  'realtime' => realtime,
+  'transcription' => transcription,
+  _ => RealtimeCreateClientSecretResponseSessionType$Unknown(json),
+}; }
+
+static const RealtimeCreateClientSecretResponseSessionType realtime = RealtimeCreateClientSecretResponseSessionType$realtime._();
+
+static const RealtimeCreateClientSecretResponseSessionType transcription = RealtimeCreateClientSecretResponseSessionType$transcription._();
+
+static const List<RealtimeCreateClientSecretResponseSessionType> values = [realtime, transcription];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is RealtimeCreateClientSecretResponseSessionType$Unknown;
+
+ }
+@immutable final class RealtimeCreateClientSecretResponseSessionType$realtime extends RealtimeCreateClientSecretResponseSessionType {const RealtimeCreateClientSecretResponseSessionType$realtime._();
+
+@override String get value => 'realtime';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeCreateClientSecretResponseSessionType$realtime;
+
+@override int get hashCode => 'realtime'.hashCode;
+
+@override String toString() => 'RealtimeCreateClientSecretResponseSessionType(realtime)';
+
+ }
+@immutable final class RealtimeCreateClientSecretResponseSessionType$transcription extends RealtimeCreateClientSecretResponseSessionType {const RealtimeCreateClientSecretResponseSessionType$transcription._();
+
+@override String get value => 'transcription';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeCreateClientSecretResponseSessionType$transcription;
+
+@override int get hashCode => 'transcription'.hashCode;
+
+@override String toString() => 'RealtimeCreateClientSecretResponseSessionType(transcription)';
+
+ }
+@immutable final class RealtimeCreateClientSecretResponseSessionType$Unknown extends RealtimeCreateClientSecretResponseSessionType {const RealtimeCreateClientSecretResponseSessionType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeCreateClientSecretResponseSessionType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeCreateClientSecretResponseSessionType($value)';
+
+ }
+/// The session configuration for either a realtime or transcription session.
 /// 
 sealed class RealtimeCreateClientSecretResponseSession {const RealtimeCreateClientSecretResponseSession();
 
@@ -19,7 +72,7 @@ factory RealtimeCreateClientSecretResponseSession.realtime({required ClientSecre
 factory RealtimeCreateClientSecretResponseSession.transcription({required String id, required String object, int? expiresAt, List<Include>? include, RealtimeTranscriptionSessionCreateResponseGaAudio? audio, }) { return RealtimeCreateClientSecretResponseSessionTranscription(RealtimeTranscriptionSessionCreateResponseGa(type: RealtimeTranscriptionSessionCreateRequestGaType.fromJson('transcription'), id: id, object: object, expiresAt: expiresAt, include: include, audio: audio)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+RealtimeCreateClientSecretResponseSessionType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is RealtimeCreateClientSecretResponseSession$Unknown;
@@ -38,9 +91,9 @@ factory RealtimeCreateClientSecretResponseSessionRealtime.fromJson(Map<String, d
 
 final RealtimeSessionCreateResponseGa realtimeSessionCreateResponseGa;
 
-@override String get type => 'realtime';
+@override RealtimeCreateClientSecretResponseSessionType get type => RealtimeCreateClientSecretResponseSessionType.fromJson('realtime');
 
-@override Map<String, dynamic> toJson() => {...realtimeSessionCreateResponseGa.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...realtimeSessionCreateResponseGa.toJson(), 'type': type.toJson()};
 
 RealtimeCreateClientSecretResponseSessionRealtime copyWith({ClientSecret? clientSecret, List<OutputModalities>? Function()? outputModalities, RealtimeSessionCreateRequestGaModel? Function()? model, String? Function()? instructions, RealtimeSessionCreateResponseGaAudio? Function()? audio, List<Include>? Function()? include, RealtimeSessionCreateRequestGaTracing? Function()? tracing, List<RealtimeResponseCreateParamsTools>? Function()? tools, RealtimeBetaResponseCreateParamsToolChoice? Function()? toolChoice, MaxOutputTokens? Function()? maxOutputTokens, RealtimeTruncation? Function()? truncation, Prompt? Function()? prompt, }) { return RealtimeCreateClientSecretResponseSessionRealtime(realtimeSessionCreateResponseGa.copyWith(
   clientSecret: clientSecret,
@@ -72,9 +125,9 @@ factory RealtimeCreateClientSecretResponseSessionTranscription.fromJson(Map<Stri
 
 final RealtimeTranscriptionSessionCreateResponseGa realtimeTranscriptionSessionCreateResponseGa;
 
-@override String get type => 'transcription';
+@override RealtimeCreateClientSecretResponseSessionType get type => RealtimeCreateClientSecretResponseSessionType.fromJson('transcription');
 
-@override Map<String, dynamic> toJson() => {...realtimeTranscriptionSessionCreateResponseGa.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...realtimeTranscriptionSessionCreateResponseGa.toJson(), 'type': type.toJson()};
 
 RealtimeCreateClientSecretResponseSessionTranscription copyWith({String? id, String? object, int? Function()? expiresAt, List<Include>? Function()? include, RealtimeTranscriptionSessionCreateResponseGaAudio? Function()? audio, }) { return RealtimeCreateClientSecretResponseSessionTranscription(realtimeTranscriptionSessionCreateResponseGa.copyWith(
   id: id,
@@ -101,7 +154,7 @@ final Map<String, dynamic> json;
 
 late final List<Include>? _include = (json['include'] as List<dynamic>?)?.map((e) => Include.fromJson(e as String)).toList();
 
-@override String get type => json['type'] as String? ?? '';
+@override RealtimeCreateClientSecretResponseSessionType get type => RealtimeCreateClientSecretResponseSessionType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateTranscriptionResponseDiarizedJson (inline: Usage)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/transcript_text_usage_duration.dart';import 'package:pub_openai/models/transcript_text_usage_tokens.dart';import 'package:pub_openai/models/transcript_text_usage_tokens/transcript_text_usage_tokens_input_token_details.dart';/// Token or duration usage statistics for the request.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/transcript_text_usage_duration.dart';import 'package:pub_openai/models/transcript_text_usage_tokens.dart';import 'package:pub_openai/models/transcript_text_usage_tokens/transcript_text_usage_tokens_input_token_details.dart';sealed class CreateTranscriptionResponseDiarizedJsonUsageType {const CreateTranscriptionResponseDiarizedJsonUsageType();
+
+factory CreateTranscriptionResponseDiarizedJsonUsageType.fromJson(String json) { return switch (json) {
+  'tokens' => tokens,
+  'duration' => duration,
+  _ => CreateTranscriptionResponseDiarizedJsonUsageType$Unknown(json),
+}; }
+
+static const CreateTranscriptionResponseDiarizedJsonUsageType tokens = CreateTranscriptionResponseDiarizedJsonUsageType$tokens._();
+
+static const CreateTranscriptionResponseDiarizedJsonUsageType duration = CreateTranscriptionResponseDiarizedJsonUsageType$duration._();
+
+static const List<CreateTranscriptionResponseDiarizedJsonUsageType> values = [tokens, duration];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is CreateTranscriptionResponseDiarizedJsonUsageType$Unknown;
+
+ }
+@immutable final class CreateTranscriptionResponseDiarizedJsonUsageType$tokens extends CreateTranscriptionResponseDiarizedJsonUsageType {const CreateTranscriptionResponseDiarizedJsonUsageType$tokens._();
+
+@override String get value => 'tokens';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateTranscriptionResponseDiarizedJsonUsageType$tokens;
+
+@override int get hashCode => 'tokens'.hashCode;
+
+@override String toString() => 'CreateTranscriptionResponseDiarizedJsonUsageType(tokens)';
+
+ }
+@immutable final class CreateTranscriptionResponseDiarizedJsonUsageType$duration extends CreateTranscriptionResponseDiarizedJsonUsageType {const CreateTranscriptionResponseDiarizedJsonUsageType$duration._();
+
+@override String get value => 'duration';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateTranscriptionResponseDiarizedJsonUsageType$duration;
+
+@override int get hashCode => 'duration'.hashCode;
+
+@override String toString() => 'CreateTranscriptionResponseDiarizedJsonUsageType(duration)';
+
+ }
+@immutable final class CreateTranscriptionResponseDiarizedJsonUsageType$Unknown extends CreateTranscriptionResponseDiarizedJsonUsageType {const CreateTranscriptionResponseDiarizedJsonUsageType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateTranscriptionResponseDiarizedJsonUsageType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateTranscriptionResponseDiarizedJsonUsageType($value)';
+
+ }
+/// Token or duration usage statistics for the request.
 sealed class CreateTranscriptionResponseDiarizedJsonUsage {const CreateTranscriptionResponseDiarizedJsonUsage();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -18,7 +71,7 @@ factory CreateTranscriptionResponseDiarizedJsonUsage.tokens({required int inputT
 factory CreateTranscriptionResponseDiarizedJsonUsage.duration({required double seconds}) { return CreateTranscriptionResponseDiarizedJsonUsageDuration(TranscriptTextUsageDuration(type: TranscriptTextUsageDurationType.fromJson('duration'), seconds: seconds)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+CreateTranscriptionResponseDiarizedJsonUsageType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CreateTranscriptionResponseDiarizedJsonUsage$Unknown;
@@ -35,9 +88,9 @@ factory CreateTranscriptionResponseDiarizedJsonUsageTokens.fromJson(Map<String, 
 
 final TranscriptTextUsageTokens transcriptTextUsageTokens;
 
-@override String get type => 'tokens';
+@override CreateTranscriptionResponseDiarizedJsonUsageType get type => CreateTranscriptionResponseDiarizedJsonUsageType.fromJson('tokens');
 
-@override Map<String, dynamic> toJson() => {...transcriptTextUsageTokens.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...transcriptTextUsageTokens.toJson(), 'type': type.toJson()};
 
 CreateTranscriptionResponseDiarizedJsonUsageTokens copyWith({int? inputTokens, TranscriptTextUsageTokensInputTokenDetails? Function()? inputTokenDetails, int? outputTokens, int? totalTokens, }) { return CreateTranscriptionResponseDiarizedJsonUsageTokens(transcriptTextUsageTokens.copyWith(
   inputTokens: inputTokens,
@@ -59,9 +112,9 @@ factory CreateTranscriptionResponseDiarizedJsonUsageDuration.fromJson(Map<String
 
 final TranscriptTextUsageDuration transcriptTextUsageDuration;
 
-@override String get type => 'duration';
+@override CreateTranscriptionResponseDiarizedJsonUsageType get type => CreateTranscriptionResponseDiarizedJsonUsageType.fromJson('duration');
 
-@override Map<String, dynamic> toJson() => {...transcriptTextUsageDuration.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...transcriptTextUsageDuration.toJson(), 'type': type.toJson()};
 
 CreateTranscriptionResponseDiarizedJsonUsageDuration copyWith({double? seconds}) { return CreateTranscriptionResponseDiarizedJsonUsageDuration(transcriptTextUsageDuration.copyWith(
   seconds: seconds,
@@ -80,7 +133,7 @@ CreateTranscriptionResponseDiarizedJsonUsageDuration copyWith({double? seconds})
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override CreateTranscriptionResponseDiarizedJsonUsageType get type => CreateTranscriptionResponseDiarizedJsonUsageType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

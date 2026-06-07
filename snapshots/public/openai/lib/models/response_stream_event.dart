@@ -1,7 +1,774 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResponseStreamEvent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/output_content.dart';import 'package:pub_openai/models/output_item.dart';import 'package:pub_openai/models/response.dart';import 'package:pub_openai/models/response_audio_delta_event.dart';import 'package:pub_openai/models/response_audio_done_event.dart';import 'package:pub_openai/models/response_audio_transcript_delta_event.dart';import 'package:pub_openai/models/response_audio_transcript_done_event.dart';import 'package:pub_openai/models/response_code_interpreter_call_code_delta_event.dart';import 'package:pub_openai/models/response_code_interpreter_call_code_done_event.dart';import 'package:pub_openai/models/response_code_interpreter_call_completed_event.dart';import 'package:pub_openai/models/response_code_interpreter_call_in_progress_event.dart';import 'package:pub_openai/models/response_code_interpreter_call_interpreting_event.dart';import 'package:pub_openai/models/response_completed_event.dart';import 'package:pub_openai/models/response_content_part_added_event.dart';import 'package:pub_openai/models/response_content_part_done_event.dart';import 'package:pub_openai/models/response_created_event.dart';import 'package:pub_openai/models/response_custom_tool_call_input_delta_event.dart';import 'package:pub_openai/models/response_custom_tool_call_input_done_event.dart';import 'package:pub_openai/models/response_error_event.dart';import 'package:pub_openai/models/response_failed_event.dart';import 'package:pub_openai/models/response_file_search_call_completed_event.dart';import 'package:pub_openai/models/response_file_search_call_in_progress_event.dart';import 'package:pub_openai/models/response_file_search_call_searching_event.dart';import 'package:pub_openai/models/response_function_call_arguments_delta_event.dart';import 'package:pub_openai/models/response_function_call_arguments_done_event.dart';import 'package:pub_openai/models/response_image_gen_call_completed_event.dart';import 'package:pub_openai/models/response_image_gen_call_generating_event.dart';import 'package:pub_openai/models/response_image_gen_call_in_progress_event.dart';import 'package:pub_openai/models/response_image_gen_call_partial_image_event.dart';import 'package:pub_openai/models/response_in_progress_event.dart';import 'package:pub_openai/models/response_incomplete_event.dart';import 'package:pub_openai/models/response_log_prob.dart';import 'package:pub_openai/models/response_mcp_call_arguments_delta_event.dart';import 'package:pub_openai/models/response_mcp_call_arguments_done_event.dart';import 'package:pub_openai/models/response_mcp_call_completed_event.dart';import 'package:pub_openai/models/response_mcp_call_failed_event.dart';import 'package:pub_openai/models/response_mcp_call_in_progress_event.dart';import 'package:pub_openai/models/response_mcp_list_tools_completed_event.dart';import 'package:pub_openai/models/response_mcp_list_tools_failed_event.dart';import 'package:pub_openai/models/response_mcp_list_tools_in_progress_event.dart';import 'package:pub_openai/models/response_output_item_added_event.dart';import 'package:pub_openai/models/response_output_item_done_event.dart';import 'package:pub_openai/models/response_output_text_annotation_added_event.dart';import 'package:pub_openai/models/response_queued_event.dart';import 'package:pub_openai/models/response_reasoning_summary_part_added_event.dart';import 'package:pub_openai/models/response_reasoning_summary_part_added_event/response_reasoning_summary_part_added_event_part.dart';import 'package:pub_openai/models/response_reasoning_summary_part_done_event.dart';import 'package:pub_openai/models/response_reasoning_summary_text_delta_event.dart';import 'package:pub_openai/models/response_reasoning_summary_text_done_event.dart';import 'package:pub_openai/models/response_reasoning_text_delta_event.dart';import 'package:pub_openai/models/response_reasoning_text_done_event.dart';import 'package:pub_openai/models/response_refusal_delta_event.dart';import 'package:pub_openai/models/response_refusal_done_event.dart';import 'package:pub_openai/models/response_text_delta_event.dart';import 'package:pub_openai/models/response_text_done_event.dart';import 'package:pub_openai/models/response_web_search_call_completed_event.dart';import 'package:pub_openai/models/response_web_search_call_in_progress_event.dart';import 'package:pub_openai/models/response_web_search_call_searching_event.dart';sealed class ResponseStreamEvent {const ResponseStreamEvent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/output_content.dart';import 'package:pub_openai/models/output_item.dart';import 'package:pub_openai/models/response.dart';import 'package:pub_openai/models/response_audio_delta_event.dart';import 'package:pub_openai/models/response_audio_done_event.dart';import 'package:pub_openai/models/response_audio_transcript_delta_event.dart';import 'package:pub_openai/models/response_audio_transcript_done_event.dart';import 'package:pub_openai/models/response_code_interpreter_call_code_delta_event.dart';import 'package:pub_openai/models/response_code_interpreter_call_code_done_event.dart';import 'package:pub_openai/models/response_code_interpreter_call_completed_event.dart';import 'package:pub_openai/models/response_code_interpreter_call_in_progress_event.dart';import 'package:pub_openai/models/response_code_interpreter_call_interpreting_event.dart';import 'package:pub_openai/models/response_completed_event.dart';import 'package:pub_openai/models/response_content_part_added_event.dart';import 'package:pub_openai/models/response_content_part_done_event.dart';import 'package:pub_openai/models/response_created_event.dart';import 'package:pub_openai/models/response_custom_tool_call_input_delta_event.dart';import 'package:pub_openai/models/response_custom_tool_call_input_done_event.dart';import 'package:pub_openai/models/response_error_event.dart';import 'package:pub_openai/models/response_failed_event.dart';import 'package:pub_openai/models/response_file_search_call_completed_event.dart';import 'package:pub_openai/models/response_file_search_call_in_progress_event.dart';import 'package:pub_openai/models/response_file_search_call_searching_event.dart';import 'package:pub_openai/models/response_function_call_arguments_delta_event.dart';import 'package:pub_openai/models/response_function_call_arguments_done_event.dart';import 'package:pub_openai/models/response_image_gen_call_completed_event.dart';import 'package:pub_openai/models/response_image_gen_call_generating_event.dart';import 'package:pub_openai/models/response_image_gen_call_in_progress_event.dart';import 'package:pub_openai/models/response_image_gen_call_partial_image_event.dart';import 'package:pub_openai/models/response_in_progress_event.dart';import 'package:pub_openai/models/response_incomplete_event.dart';import 'package:pub_openai/models/response_log_prob.dart';import 'package:pub_openai/models/response_mcp_call_arguments_delta_event.dart';import 'package:pub_openai/models/response_mcp_call_arguments_done_event.dart';import 'package:pub_openai/models/response_mcp_call_completed_event.dart';import 'package:pub_openai/models/response_mcp_call_failed_event.dart';import 'package:pub_openai/models/response_mcp_call_in_progress_event.dart';import 'package:pub_openai/models/response_mcp_list_tools_completed_event.dart';import 'package:pub_openai/models/response_mcp_list_tools_failed_event.dart';import 'package:pub_openai/models/response_mcp_list_tools_in_progress_event.dart';import 'package:pub_openai/models/response_output_item_added_event.dart';import 'package:pub_openai/models/response_output_item_done_event.dart';import 'package:pub_openai/models/response_output_text_annotation_added_event.dart';import 'package:pub_openai/models/response_queued_event.dart';import 'package:pub_openai/models/response_reasoning_summary_part_added_event.dart';import 'package:pub_openai/models/response_reasoning_summary_part_added_event/response_reasoning_summary_part_added_event_part.dart';import 'package:pub_openai/models/response_reasoning_summary_part_done_event.dart';import 'package:pub_openai/models/response_reasoning_summary_text_delta_event.dart';import 'package:pub_openai/models/response_reasoning_summary_text_done_event.dart';import 'package:pub_openai/models/response_reasoning_text_delta_event.dart';import 'package:pub_openai/models/response_reasoning_text_done_event.dart';import 'package:pub_openai/models/response_refusal_delta_event.dart';import 'package:pub_openai/models/response_refusal_done_event.dart';import 'package:pub_openai/models/response_text_delta_event.dart';import 'package:pub_openai/models/response_text_done_event.dart';import 'package:pub_openai/models/response_web_search_call_completed_event.dart';import 'package:pub_openai/models/response_web_search_call_in_progress_event.dart';import 'package:pub_openai/models/response_web_search_call_searching_event.dart';sealed class ResponseStreamEventType {const ResponseStreamEventType();
+
+factory ResponseStreamEventType.fromJson(String json) { return switch (json) {
+  'response.audio.delta' => responseAudioDelta,
+  'response.audio.done' => responseAudioDone,
+  'response.audio.transcript.delta' => responseAudioTranscriptDelta,
+  'response.audio.transcript.done' => responseAudioTranscriptDone,
+  'response.code_interpreter_call_code.delta' => responseCodeInterpreterCallCodeDelta,
+  'response.code_interpreter_call_code.done' => responseCodeInterpreterCallCodeDone,
+  'response.code_interpreter_call.completed' => responseCodeInterpreterCallCompleted,
+  'response.code_interpreter_call.in_progress' => responseCodeInterpreterCallInProgress,
+  'response.code_interpreter_call.interpreting' => responseCodeInterpreterCallInterpreting,
+  'response.completed' => responseCompleted,
+  'response.content_part.added' => responseContentPartAdded,
+  'response.content_part.done' => responseContentPartDone,
+  'response.created' => responseCreated,
+  'error' => error,
+  'response.file_search_call.completed' => responseFileSearchCallCompleted,
+  'response.file_search_call.in_progress' => responseFileSearchCallInProgress,
+  'response.file_search_call.searching' => responseFileSearchCallSearching,
+  'response.function_call_arguments.delta' => responseFunctionCallArgumentsDelta,
+  'response.function_call_arguments.done' => responseFunctionCallArgumentsDone,
+  'response.in_progress' => responseInProgress,
+  'response.failed' => responseFailed,
+  'response.incomplete' => responseIncomplete,
+  'response.output_item.added' => responseOutputItemAdded,
+  'response.output_item.done' => responseOutputItemDone,
+  'response.reasoning_summary_part.added' => responseReasoningSummaryPartAdded,
+  'response.reasoning_summary_part.done' => responseReasoningSummaryPartDone,
+  'response.reasoning_summary_text.delta' => responseReasoningSummaryTextDelta,
+  'response.reasoning_summary_text.done' => responseReasoningSummaryTextDone,
+  'response.reasoning_text.delta' => responseReasoningTextDelta,
+  'response.reasoning_text.done' => responseReasoningTextDone,
+  'response.refusal.delta' => responseRefusalDelta,
+  'response.refusal.done' => responseRefusalDone,
+  'response.output_text.delta' => responseOutputTextDelta,
+  'response.output_text.done' => responseOutputTextDone,
+  'response.web_search_call.completed' => responseWebSearchCallCompleted,
+  'response.web_search_call.in_progress' => responseWebSearchCallInProgress,
+  'response.web_search_call.searching' => responseWebSearchCallSearching,
+  'response.image_generation_call.completed' => responseImageGenerationCallCompleted,
+  'response.image_generation_call.generating' => responseImageGenerationCallGenerating,
+  'response.image_generation_call.in_progress' => responseImageGenerationCallInProgress,
+  'response.image_generation_call.partial_image' => responseImageGenerationCallPartialImage,
+  'response.mcp_call_arguments.delta' => responseMcpCallArgumentsDelta,
+  'response.mcp_call_arguments.done' => responseMcpCallArgumentsDone,
+  'response.mcp_call.completed' => responseMcpCallCompleted,
+  'response.mcp_call.failed' => responseMcpCallFailed,
+  'response.mcp_call.in_progress' => responseMcpCallInProgress,
+  'response.mcp_list_tools.completed' => responseMcpListToolsCompleted,
+  'response.mcp_list_tools.failed' => responseMcpListToolsFailed,
+  'response.mcp_list_tools.in_progress' => responseMcpListToolsInProgress,
+  'response.output_text.annotation.added' => responseOutputTextAnnotationAdded,
+  'response.queued' => responseQueued,
+  'response.custom_tool_call_input.delta' => responseCustomToolCallInputDelta,
+  'response.custom_tool_call_input.done' => responseCustomToolCallInputDone,
+  _ => ResponseStreamEventType$Unknown(json),
+}; }
+
+static const ResponseStreamEventType responseAudioDelta = ResponseStreamEventType$responseAudioDelta._();
+
+static const ResponseStreamEventType responseAudioDone = ResponseStreamEventType$responseAudioDone._();
+
+static const ResponseStreamEventType responseAudioTranscriptDelta = ResponseStreamEventType$responseAudioTranscriptDelta._();
+
+static const ResponseStreamEventType responseAudioTranscriptDone = ResponseStreamEventType$responseAudioTranscriptDone._();
+
+static const ResponseStreamEventType responseCodeInterpreterCallCodeDelta = ResponseStreamEventType$responseCodeInterpreterCallCodeDelta._();
+
+static const ResponseStreamEventType responseCodeInterpreterCallCodeDone = ResponseStreamEventType$responseCodeInterpreterCallCodeDone._();
+
+static const ResponseStreamEventType responseCodeInterpreterCallCompleted = ResponseStreamEventType$responseCodeInterpreterCallCompleted._();
+
+static const ResponseStreamEventType responseCodeInterpreterCallInProgress = ResponseStreamEventType$responseCodeInterpreterCallInProgress._();
+
+static const ResponseStreamEventType responseCodeInterpreterCallInterpreting = ResponseStreamEventType$responseCodeInterpreterCallInterpreting._();
+
+static const ResponseStreamEventType responseCompleted = ResponseStreamEventType$responseCompleted._();
+
+static const ResponseStreamEventType responseContentPartAdded = ResponseStreamEventType$responseContentPartAdded._();
+
+static const ResponseStreamEventType responseContentPartDone = ResponseStreamEventType$responseContentPartDone._();
+
+static const ResponseStreamEventType responseCreated = ResponseStreamEventType$responseCreated._();
+
+static const ResponseStreamEventType error = ResponseStreamEventType$error._();
+
+static const ResponseStreamEventType responseFileSearchCallCompleted = ResponseStreamEventType$responseFileSearchCallCompleted._();
+
+static const ResponseStreamEventType responseFileSearchCallInProgress = ResponseStreamEventType$responseFileSearchCallInProgress._();
+
+static const ResponseStreamEventType responseFileSearchCallSearching = ResponseStreamEventType$responseFileSearchCallSearching._();
+
+static const ResponseStreamEventType responseFunctionCallArgumentsDelta = ResponseStreamEventType$responseFunctionCallArgumentsDelta._();
+
+static const ResponseStreamEventType responseFunctionCallArgumentsDone = ResponseStreamEventType$responseFunctionCallArgumentsDone._();
+
+static const ResponseStreamEventType responseInProgress = ResponseStreamEventType$responseInProgress._();
+
+static const ResponseStreamEventType responseFailed = ResponseStreamEventType$responseFailed._();
+
+static const ResponseStreamEventType responseIncomplete = ResponseStreamEventType$responseIncomplete._();
+
+static const ResponseStreamEventType responseOutputItemAdded = ResponseStreamEventType$responseOutputItemAdded._();
+
+static const ResponseStreamEventType responseOutputItemDone = ResponseStreamEventType$responseOutputItemDone._();
+
+static const ResponseStreamEventType responseReasoningSummaryPartAdded = ResponseStreamEventType$responseReasoningSummaryPartAdded._();
+
+static const ResponseStreamEventType responseReasoningSummaryPartDone = ResponseStreamEventType$responseReasoningSummaryPartDone._();
+
+static const ResponseStreamEventType responseReasoningSummaryTextDelta = ResponseStreamEventType$responseReasoningSummaryTextDelta._();
+
+static const ResponseStreamEventType responseReasoningSummaryTextDone = ResponseStreamEventType$responseReasoningSummaryTextDone._();
+
+static const ResponseStreamEventType responseReasoningTextDelta = ResponseStreamEventType$responseReasoningTextDelta._();
+
+static const ResponseStreamEventType responseReasoningTextDone = ResponseStreamEventType$responseReasoningTextDone._();
+
+static const ResponseStreamEventType responseRefusalDelta = ResponseStreamEventType$responseRefusalDelta._();
+
+static const ResponseStreamEventType responseRefusalDone = ResponseStreamEventType$responseRefusalDone._();
+
+static const ResponseStreamEventType responseOutputTextDelta = ResponseStreamEventType$responseOutputTextDelta._();
+
+static const ResponseStreamEventType responseOutputTextDone = ResponseStreamEventType$responseOutputTextDone._();
+
+static const ResponseStreamEventType responseWebSearchCallCompleted = ResponseStreamEventType$responseWebSearchCallCompleted._();
+
+static const ResponseStreamEventType responseWebSearchCallInProgress = ResponseStreamEventType$responseWebSearchCallInProgress._();
+
+static const ResponseStreamEventType responseWebSearchCallSearching = ResponseStreamEventType$responseWebSearchCallSearching._();
+
+static const ResponseStreamEventType responseImageGenerationCallCompleted = ResponseStreamEventType$responseImageGenerationCallCompleted._();
+
+static const ResponseStreamEventType responseImageGenerationCallGenerating = ResponseStreamEventType$responseImageGenerationCallGenerating._();
+
+static const ResponseStreamEventType responseImageGenerationCallInProgress = ResponseStreamEventType$responseImageGenerationCallInProgress._();
+
+static const ResponseStreamEventType responseImageGenerationCallPartialImage = ResponseStreamEventType$responseImageGenerationCallPartialImage._();
+
+static const ResponseStreamEventType responseMcpCallArgumentsDelta = ResponseStreamEventType$responseMcpCallArgumentsDelta._();
+
+static const ResponseStreamEventType responseMcpCallArgumentsDone = ResponseStreamEventType$responseMcpCallArgumentsDone._();
+
+static const ResponseStreamEventType responseMcpCallCompleted = ResponseStreamEventType$responseMcpCallCompleted._();
+
+static const ResponseStreamEventType responseMcpCallFailed = ResponseStreamEventType$responseMcpCallFailed._();
+
+static const ResponseStreamEventType responseMcpCallInProgress = ResponseStreamEventType$responseMcpCallInProgress._();
+
+static const ResponseStreamEventType responseMcpListToolsCompleted = ResponseStreamEventType$responseMcpListToolsCompleted._();
+
+static const ResponseStreamEventType responseMcpListToolsFailed = ResponseStreamEventType$responseMcpListToolsFailed._();
+
+static const ResponseStreamEventType responseMcpListToolsInProgress = ResponseStreamEventType$responseMcpListToolsInProgress._();
+
+static const ResponseStreamEventType responseOutputTextAnnotationAdded = ResponseStreamEventType$responseOutputTextAnnotationAdded._();
+
+static const ResponseStreamEventType responseQueued = ResponseStreamEventType$responseQueued._();
+
+static const ResponseStreamEventType responseCustomToolCallInputDelta = ResponseStreamEventType$responseCustomToolCallInputDelta._();
+
+static const ResponseStreamEventType responseCustomToolCallInputDone = ResponseStreamEventType$responseCustomToolCallInputDone._();
+
+static const List<ResponseStreamEventType> values = [responseAudioDelta, responseAudioDone, responseAudioTranscriptDelta, responseAudioTranscriptDone, responseCodeInterpreterCallCodeDelta, responseCodeInterpreterCallCodeDone, responseCodeInterpreterCallCompleted, responseCodeInterpreterCallInProgress, responseCodeInterpreterCallInterpreting, responseCompleted, responseContentPartAdded, responseContentPartDone, responseCreated, error, responseFileSearchCallCompleted, responseFileSearchCallInProgress, responseFileSearchCallSearching, responseFunctionCallArgumentsDelta, responseFunctionCallArgumentsDone, responseInProgress, responseFailed, responseIncomplete, responseOutputItemAdded, responseOutputItemDone, responseReasoningSummaryPartAdded, responseReasoningSummaryPartDone, responseReasoningSummaryTextDelta, responseReasoningSummaryTextDone, responseReasoningTextDelta, responseReasoningTextDone, responseRefusalDelta, responseRefusalDone, responseOutputTextDelta, responseOutputTextDone, responseWebSearchCallCompleted, responseWebSearchCallInProgress, responseWebSearchCallSearching, responseImageGenerationCallCompleted, responseImageGenerationCallGenerating, responseImageGenerationCallInProgress, responseImageGenerationCallPartialImage, responseMcpCallArgumentsDelta, responseMcpCallArgumentsDone, responseMcpCallCompleted, responseMcpCallFailed, responseMcpCallInProgress, responseMcpListToolsCompleted, responseMcpListToolsFailed, responseMcpListToolsInProgress, responseOutputTextAnnotationAdded, responseQueued, responseCustomToolCallInputDelta, responseCustomToolCallInputDone];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ResponseStreamEventType$Unknown;
+
+ }
+@immutable final class ResponseStreamEventType$responseAudioDelta extends ResponseStreamEventType {const ResponseStreamEventType$responseAudioDelta._();
+
+@override String get value => 'response.audio.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseAudioDelta;
+
+@override int get hashCode => 'response.audio.delta'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.audio.delta)';
+
+ }
+@immutable final class ResponseStreamEventType$responseAudioDone extends ResponseStreamEventType {const ResponseStreamEventType$responseAudioDone._();
+
+@override String get value => 'response.audio.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseAudioDone;
+
+@override int get hashCode => 'response.audio.done'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.audio.done)';
+
+ }
+@immutable final class ResponseStreamEventType$responseAudioTranscriptDelta extends ResponseStreamEventType {const ResponseStreamEventType$responseAudioTranscriptDelta._();
+
+@override String get value => 'response.audio.transcript.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseAudioTranscriptDelta;
+
+@override int get hashCode => 'response.audio.transcript.delta'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.audio.transcript.delta)';
+
+ }
+@immutable final class ResponseStreamEventType$responseAudioTranscriptDone extends ResponseStreamEventType {const ResponseStreamEventType$responseAudioTranscriptDone._();
+
+@override String get value => 'response.audio.transcript.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseAudioTranscriptDone;
+
+@override int get hashCode => 'response.audio.transcript.done'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.audio.transcript.done)';
+
+ }
+@immutable final class ResponseStreamEventType$responseCodeInterpreterCallCodeDelta extends ResponseStreamEventType {const ResponseStreamEventType$responseCodeInterpreterCallCodeDelta._();
+
+@override String get value => 'response.code_interpreter_call_code.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseCodeInterpreterCallCodeDelta;
+
+@override int get hashCode => 'response.code_interpreter_call_code.delta'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.code_interpreter_call_code.delta)';
+
+ }
+@immutable final class ResponseStreamEventType$responseCodeInterpreterCallCodeDone extends ResponseStreamEventType {const ResponseStreamEventType$responseCodeInterpreterCallCodeDone._();
+
+@override String get value => 'response.code_interpreter_call_code.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseCodeInterpreterCallCodeDone;
+
+@override int get hashCode => 'response.code_interpreter_call_code.done'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.code_interpreter_call_code.done)';
+
+ }
+@immutable final class ResponseStreamEventType$responseCodeInterpreterCallCompleted extends ResponseStreamEventType {const ResponseStreamEventType$responseCodeInterpreterCallCompleted._();
+
+@override String get value => 'response.code_interpreter_call.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseCodeInterpreterCallCompleted;
+
+@override int get hashCode => 'response.code_interpreter_call.completed'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.code_interpreter_call.completed)';
+
+ }
+@immutable final class ResponseStreamEventType$responseCodeInterpreterCallInProgress extends ResponseStreamEventType {const ResponseStreamEventType$responseCodeInterpreterCallInProgress._();
+
+@override String get value => 'response.code_interpreter_call.in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseCodeInterpreterCallInProgress;
+
+@override int get hashCode => 'response.code_interpreter_call.in_progress'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.code_interpreter_call.in_progress)';
+
+ }
+@immutable final class ResponseStreamEventType$responseCodeInterpreterCallInterpreting extends ResponseStreamEventType {const ResponseStreamEventType$responseCodeInterpreterCallInterpreting._();
+
+@override String get value => 'response.code_interpreter_call.interpreting';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseCodeInterpreterCallInterpreting;
+
+@override int get hashCode => 'response.code_interpreter_call.interpreting'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.code_interpreter_call.interpreting)';
+
+ }
+@immutable final class ResponseStreamEventType$responseCompleted extends ResponseStreamEventType {const ResponseStreamEventType$responseCompleted._();
+
+@override String get value => 'response.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseCompleted;
+
+@override int get hashCode => 'response.completed'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.completed)';
+
+ }
+@immutable final class ResponseStreamEventType$responseContentPartAdded extends ResponseStreamEventType {const ResponseStreamEventType$responseContentPartAdded._();
+
+@override String get value => 'response.content_part.added';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseContentPartAdded;
+
+@override int get hashCode => 'response.content_part.added'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.content_part.added)';
+
+ }
+@immutable final class ResponseStreamEventType$responseContentPartDone extends ResponseStreamEventType {const ResponseStreamEventType$responseContentPartDone._();
+
+@override String get value => 'response.content_part.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseContentPartDone;
+
+@override int get hashCode => 'response.content_part.done'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.content_part.done)';
+
+ }
+@immutable final class ResponseStreamEventType$responseCreated extends ResponseStreamEventType {const ResponseStreamEventType$responseCreated._();
+
+@override String get value => 'response.created';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseCreated;
+
+@override int get hashCode => 'response.created'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.created)';
+
+ }
+@immutable final class ResponseStreamEventType$error extends ResponseStreamEventType {const ResponseStreamEventType$error._();
+
+@override String get value => 'error';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$error;
+
+@override int get hashCode => 'error'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(error)';
+
+ }
+@immutable final class ResponseStreamEventType$responseFileSearchCallCompleted extends ResponseStreamEventType {const ResponseStreamEventType$responseFileSearchCallCompleted._();
+
+@override String get value => 'response.file_search_call.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseFileSearchCallCompleted;
+
+@override int get hashCode => 'response.file_search_call.completed'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.file_search_call.completed)';
+
+ }
+@immutable final class ResponseStreamEventType$responseFileSearchCallInProgress extends ResponseStreamEventType {const ResponseStreamEventType$responseFileSearchCallInProgress._();
+
+@override String get value => 'response.file_search_call.in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseFileSearchCallInProgress;
+
+@override int get hashCode => 'response.file_search_call.in_progress'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.file_search_call.in_progress)';
+
+ }
+@immutable final class ResponseStreamEventType$responseFileSearchCallSearching extends ResponseStreamEventType {const ResponseStreamEventType$responseFileSearchCallSearching._();
+
+@override String get value => 'response.file_search_call.searching';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseFileSearchCallSearching;
+
+@override int get hashCode => 'response.file_search_call.searching'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.file_search_call.searching)';
+
+ }
+@immutable final class ResponseStreamEventType$responseFunctionCallArgumentsDelta extends ResponseStreamEventType {const ResponseStreamEventType$responseFunctionCallArgumentsDelta._();
+
+@override String get value => 'response.function_call_arguments.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseFunctionCallArgumentsDelta;
+
+@override int get hashCode => 'response.function_call_arguments.delta'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.function_call_arguments.delta)';
+
+ }
+@immutable final class ResponseStreamEventType$responseFunctionCallArgumentsDone extends ResponseStreamEventType {const ResponseStreamEventType$responseFunctionCallArgumentsDone._();
+
+@override String get value => 'response.function_call_arguments.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseFunctionCallArgumentsDone;
+
+@override int get hashCode => 'response.function_call_arguments.done'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.function_call_arguments.done)';
+
+ }
+@immutable final class ResponseStreamEventType$responseInProgress extends ResponseStreamEventType {const ResponseStreamEventType$responseInProgress._();
+
+@override String get value => 'response.in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseInProgress;
+
+@override int get hashCode => 'response.in_progress'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.in_progress)';
+
+ }
+@immutable final class ResponseStreamEventType$responseFailed extends ResponseStreamEventType {const ResponseStreamEventType$responseFailed._();
+
+@override String get value => 'response.failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseFailed;
+
+@override int get hashCode => 'response.failed'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.failed)';
+
+ }
+@immutable final class ResponseStreamEventType$responseIncomplete extends ResponseStreamEventType {const ResponseStreamEventType$responseIncomplete._();
+
+@override String get value => 'response.incomplete';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseIncomplete;
+
+@override int get hashCode => 'response.incomplete'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.incomplete)';
+
+ }
+@immutable final class ResponseStreamEventType$responseOutputItemAdded extends ResponseStreamEventType {const ResponseStreamEventType$responseOutputItemAdded._();
+
+@override String get value => 'response.output_item.added';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseOutputItemAdded;
+
+@override int get hashCode => 'response.output_item.added'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.output_item.added)';
+
+ }
+@immutable final class ResponseStreamEventType$responseOutputItemDone extends ResponseStreamEventType {const ResponseStreamEventType$responseOutputItemDone._();
+
+@override String get value => 'response.output_item.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseOutputItemDone;
+
+@override int get hashCode => 'response.output_item.done'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.output_item.done)';
+
+ }
+@immutable final class ResponseStreamEventType$responseReasoningSummaryPartAdded extends ResponseStreamEventType {const ResponseStreamEventType$responseReasoningSummaryPartAdded._();
+
+@override String get value => 'response.reasoning_summary_part.added';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseReasoningSummaryPartAdded;
+
+@override int get hashCode => 'response.reasoning_summary_part.added'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.reasoning_summary_part.added)';
+
+ }
+@immutable final class ResponseStreamEventType$responseReasoningSummaryPartDone extends ResponseStreamEventType {const ResponseStreamEventType$responseReasoningSummaryPartDone._();
+
+@override String get value => 'response.reasoning_summary_part.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseReasoningSummaryPartDone;
+
+@override int get hashCode => 'response.reasoning_summary_part.done'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.reasoning_summary_part.done)';
+
+ }
+@immutable final class ResponseStreamEventType$responseReasoningSummaryTextDelta extends ResponseStreamEventType {const ResponseStreamEventType$responseReasoningSummaryTextDelta._();
+
+@override String get value => 'response.reasoning_summary_text.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseReasoningSummaryTextDelta;
+
+@override int get hashCode => 'response.reasoning_summary_text.delta'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.reasoning_summary_text.delta)';
+
+ }
+@immutable final class ResponseStreamEventType$responseReasoningSummaryTextDone extends ResponseStreamEventType {const ResponseStreamEventType$responseReasoningSummaryTextDone._();
+
+@override String get value => 'response.reasoning_summary_text.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseReasoningSummaryTextDone;
+
+@override int get hashCode => 'response.reasoning_summary_text.done'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.reasoning_summary_text.done)';
+
+ }
+@immutable final class ResponseStreamEventType$responseReasoningTextDelta extends ResponseStreamEventType {const ResponseStreamEventType$responseReasoningTextDelta._();
+
+@override String get value => 'response.reasoning_text.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseReasoningTextDelta;
+
+@override int get hashCode => 'response.reasoning_text.delta'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.reasoning_text.delta)';
+
+ }
+@immutable final class ResponseStreamEventType$responseReasoningTextDone extends ResponseStreamEventType {const ResponseStreamEventType$responseReasoningTextDone._();
+
+@override String get value => 'response.reasoning_text.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseReasoningTextDone;
+
+@override int get hashCode => 'response.reasoning_text.done'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.reasoning_text.done)';
+
+ }
+@immutable final class ResponseStreamEventType$responseRefusalDelta extends ResponseStreamEventType {const ResponseStreamEventType$responseRefusalDelta._();
+
+@override String get value => 'response.refusal.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseRefusalDelta;
+
+@override int get hashCode => 'response.refusal.delta'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.refusal.delta)';
+
+ }
+@immutable final class ResponseStreamEventType$responseRefusalDone extends ResponseStreamEventType {const ResponseStreamEventType$responseRefusalDone._();
+
+@override String get value => 'response.refusal.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseRefusalDone;
+
+@override int get hashCode => 'response.refusal.done'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.refusal.done)';
+
+ }
+@immutable final class ResponseStreamEventType$responseOutputTextDelta extends ResponseStreamEventType {const ResponseStreamEventType$responseOutputTextDelta._();
+
+@override String get value => 'response.output_text.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseOutputTextDelta;
+
+@override int get hashCode => 'response.output_text.delta'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.output_text.delta)';
+
+ }
+@immutable final class ResponseStreamEventType$responseOutputTextDone extends ResponseStreamEventType {const ResponseStreamEventType$responseOutputTextDone._();
+
+@override String get value => 'response.output_text.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseOutputTextDone;
+
+@override int get hashCode => 'response.output_text.done'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.output_text.done)';
+
+ }
+@immutable final class ResponseStreamEventType$responseWebSearchCallCompleted extends ResponseStreamEventType {const ResponseStreamEventType$responseWebSearchCallCompleted._();
+
+@override String get value => 'response.web_search_call.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseWebSearchCallCompleted;
+
+@override int get hashCode => 'response.web_search_call.completed'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.web_search_call.completed)';
+
+ }
+@immutable final class ResponseStreamEventType$responseWebSearchCallInProgress extends ResponseStreamEventType {const ResponseStreamEventType$responseWebSearchCallInProgress._();
+
+@override String get value => 'response.web_search_call.in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseWebSearchCallInProgress;
+
+@override int get hashCode => 'response.web_search_call.in_progress'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.web_search_call.in_progress)';
+
+ }
+@immutable final class ResponseStreamEventType$responseWebSearchCallSearching extends ResponseStreamEventType {const ResponseStreamEventType$responseWebSearchCallSearching._();
+
+@override String get value => 'response.web_search_call.searching';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseWebSearchCallSearching;
+
+@override int get hashCode => 'response.web_search_call.searching'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.web_search_call.searching)';
+
+ }
+@immutable final class ResponseStreamEventType$responseImageGenerationCallCompleted extends ResponseStreamEventType {const ResponseStreamEventType$responseImageGenerationCallCompleted._();
+
+@override String get value => 'response.image_generation_call.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseImageGenerationCallCompleted;
+
+@override int get hashCode => 'response.image_generation_call.completed'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.image_generation_call.completed)';
+
+ }
+@immutable final class ResponseStreamEventType$responseImageGenerationCallGenerating extends ResponseStreamEventType {const ResponseStreamEventType$responseImageGenerationCallGenerating._();
+
+@override String get value => 'response.image_generation_call.generating';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseImageGenerationCallGenerating;
+
+@override int get hashCode => 'response.image_generation_call.generating'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.image_generation_call.generating)';
+
+ }
+@immutable final class ResponseStreamEventType$responseImageGenerationCallInProgress extends ResponseStreamEventType {const ResponseStreamEventType$responseImageGenerationCallInProgress._();
+
+@override String get value => 'response.image_generation_call.in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseImageGenerationCallInProgress;
+
+@override int get hashCode => 'response.image_generation_call.in_progress'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.image_generation_call.in_progress)';
+
+ }
+@immutable final class ResponseStreamEventType$responseImageGenerationCallPartialImage extends ResponseStreamEventType {const ResponseStreamEventType$responseImageGenerationCallPartialImage._();
+
+@override String get value => 'response.image_generation_call.partial_image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseImageGenerationCallPartialImage;
+
+@override int get hashCode => 'response.image_generation_call.partial_image'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.image_generation_call.partial_image)';
+
+ }
+@immutable final class ResponseStreamEventType$responseMcpCallArgumentsDelta extends ResponseStreamEventType {const ResponseStreamEventType$responseMcpCallArgumentsDelta._();
+
+@override String get value => 'response.mcp_call_arguments.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseMcpCallArgumentsDelta;
+
+@override int get hashCode => 'response.mcp_call_arguments.delta'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.mcp_call_arguments.delta)';
+
+ }
+@immutable final class ResponseStreamEventType$responseMcpCallArgumentsDone extends ResponseStreamEventType {const ResponseStreamEventType$responseMcpCallArgumentsDone._();
+
+@override String get value => 'response.mcp_call_arguments.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseMcpCallArgumentsDone;
+
+@override int get hashCode => 'response.mcp_call_arguments.done'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.mcp_call_arguments.done)';
+
+ }
+@immutable final class ResponseStreamEventType$responseMcpCallCompleted extends ResponseStreamEventType {const ResponseStreamEventType$responseMcpCallCompleted._();
+
+@override String get value => 'response.mcp_call.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseMcpCallCompleted;
+
+@override int get hashCode => 'response.mcp_call.completed'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.mcp_call.completed)';
+
+ }
+@immutable final class ResponseStreamEventType$responseMcpCallFailed extends ResponseStreamEventType {const ResponseStreamEventType$responseMcpCallFailed._();
+
+@override String get value => 'response.mcp_call.failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseMcpCallFailed;
+
+@override int get hashCode => 'response.mcp_call.failed'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.mcp_call.failed)';
+
+ }
+@immutable final class ResponseStreamEventType$responseMcpCallInProgress extends ResponseStreamEventType {const ResponseStreamEventType$responseMcpCallInProgress._();
+
+@override String get value => 'response.mcp_call.in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseMcpCallInProgress;
+
+@override int get hashCode => 'response.mcp_call.in_progress'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.mcp_call.in_progress)';
+
+ }
+@immutable final class ResponseStreamEventType$responseMcpListToolsCompleted extends ResponseStreamEventType {const ResponseStreamEventType$responseMcpListToolsCompleted._();
+
+@override String get value => 'response.mcp_list_tools.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseMcpListToolsCompleted;
+
+@override int get hashCode => 'response.mcp_list_tools.completed'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.mcp_list_tools.completed)';
+
+ }
+@immutable final class ResponseStreamEventType$responseMcpListToolsFailed extends ResponseStreamEventType {const ResponseStreamEventType$responseMcpListToolsFailed._();
+
+@override String get value => 'response.mcp_list_tools.failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseMcpListToolsFailed;
+
+@override int get hashCode => 'response.mcp_list_tools.failed'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.mcp_list_tools.failed)';
+
+ }
+@immutable final class ResponseStreamEventType$responseMcpListToolsInProgress extends ResponseStreamEventType {const ResponseStreamEventType$responseMcpListToolsInProgress._();
+
+@override String get value => 'response.mcp_list_tools.in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseMcpListToolsInProgress;
+
+@override int get hashCode => 'response.mcp_list_tools.in_progress'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.mcp_list_tools.in_progress)';
+
+ }
+@immutable final class ResponseStreamEventType$responseOutputTextAnnotationAdded extends ResponseStreamEventType {const ResponseStreamEventType$responseOutputTextAnnotationAdded._();
+
+@override String get value => 'response.output_text.annotation.added';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseOutputTextAnnotationAdded;
+
+@override int get hashCode => 'response.output_text.annotation.added'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.output_text.annotation.added)';
+
+ }
+@immutable final class ResponseStreamEventType$responseQueued extends ResponseStreamEventType {const ResponseStreamEventType$responseQueued._();
+
+@override String get value => 'response.queued';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseQueued;
+
+@override int get hashCode => 'response.queued'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.queued)';
+
+ }
+@immutable final class ResponseStreamEventType$responseCustomToolCallInputDelta extends ResponseStreamEventType {const ResponseStreamEventType$responseCustomToolCallInputDelta._();
+
+@override String get value => 'response.custom_tool_call_input.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseCustomToolCallInputDelta;
+
+@override int get hashCode => 'response.custom_tool_call_input.delta'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.custom_tool_call_input.delta)';
+
+ }
+@immutable final class ResponseStreamEventType$responseCustomToolCallInputDone extends ResponseStreamEventType {const ResponseStreamEventType$responseCustomToolCallInputDone._();
+
+@override String get value => 'response.custom_tool_call_input.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$responseCustomToolCallInputDone;
+
+@override int get hashCode => 'response.custom_tool_call_input.done'.hashCode;
+
+@override String toString() => 'ResponseStreamEventType(response.custom_tool_call_input.done)';
+
+ }
+@immutable final class ResponseStreamEventType$Unknown extends ResponseStreamEventType {const ResponseStreamEventType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponseStreamEventType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResponseStreamEventType($value)';
+
+ }
+sealed class ResponseStreamEvent {const ResponseStreamEvent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ResponseStreamEvent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -221,7 +988,7 @@ factory ResponseStreamEvent.responseCustomToolCallInputDelta({required int seque
 factory ResponseStreamEvent.responseCustomToolCallInputDone({required int sequenceNumber, required int outputIndex, required String itemId, required String input, }) { return ResponseStreamEventResponseCustomToolCallInputDone(ResponseCustomToolCallInputDoneEvent(type: 'response.custom_tool_call_input.done', sequenceNumber: sequenceNumber, outputIndex: outputIndex, itemId: itemId, input: input)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+ResponseStreamEventType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ResponseStreamEvent$Unknown;
@@ -291,9 +1058,9 @@ factory ResponseStreamEventResponseAudioDelta.fromJson(Map<String, dynamic> json
 
 final ResponseAudioDeltaEvent responseAudioDeltaEvent;
 
-@override String get type => 'response.audio.delta';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.audio.delta');
 
-@override Map<String, dynamic> toJson() => {...responseAudioDeltaEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseAudioDeltaEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseAudioDelta copyWith({int? sequenceNumber, String? delta, }) { return ResponseStreamEventResponseAudioDelta(responseAudioDeltaEvent.copyWith(
   sequenceNumber: sequenceNumber,
@@ -315,9 +1082,9 @@ factory ResponseStreamEventResponseAudioDone.fromJson(Map<String, dynamic> json)
 
 final ResponseAudioDoneEvent responseAudioDoneEvent;
 
-@override String get type => 'response.audio.done';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.audio.done');
 
-@override Map<String, dynamic> toJson() => {...responseAudioDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseAudioDoneEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseAudioDone copyWith({int? sequenceNumber}) { return ResponseStreamEventResponseAudioDone(responseAudioDoneEvent.copyWith(
   sequenceNumber: sequenceNumber,
@@ -338,9 +1105,9 @@ factory ResponseStreamEventResponseAudioTranscriptDelta.fromJson(Map<String, dyn
 
 final ResponseAudioTranscriptDeltaEvent responseAudioTranscriptDeltaEvent;
 
-@override String get type => 'response.audio.transcript.delta';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.audio.transcript.delta');
 
-@override Map<String, dynamic> toJson() => {...responseAudioTranscriptDeltaEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseAudioTranscriptDeltaEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseAudioTranscriptDelta copyWith({String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseAudioTranscriptDelta(responseAudioTranscriptDeltaEvent.copyWith(
   delta: delta,
@@ -362,9 +1129,9 @@ factory ResponseStreamEventResponseAudioTranscriptDone.fromJson(Map<String, dyna
 
 final ResponseAudioTranscriptDoneEvent responseAudioTranscriptDoneEvent;
 
-@override String get type => 'response.audio.transcript.done';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.audio.transcript.done');
 
-@override Map<String, dynamic> toJson() => {...responseAudioTranscriptDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseAudioTranscriptDoneEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseAudioTranscriptDone copyWith({int? sequenceNumber}) { return ResponseStreamEventResponseAudioTranscriptDone(responseAudioTranscriptDoneEvent.copyWith(
   sequenceNumber: sequenceNumber,
@@ -385,9 +1152,9 @@ factory ResponseStreamEventResponseCodeInterpreterCallCodeDelta.fromJson(Map<Str
 
 final ResponseCodeInterpreterCallCodeDeltaEvent responseCodeInterpreterCallCodeDeltaEvent;
 
-@override String get type => 'response.code_interpreter_call_code.delta';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.code_interpreter_call_code.delta');
 
-@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallCodeDeltaEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallCodeDeltaEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseCodeInterpreterCallCodeDelta copyWith({int? outputIndex, String? itemId, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallCodeDelta(responseCodeInterpreterCallCodeDeltaEvent.copyWith(
   outputIndex: outputIndex,
@@ -411,9 +1178,9 @@ factory ResponseStreamEventResponseCodeInterpreterCallCodeDone.fromJson(Map<Stri
 
 final ResponseCodeInterpreterCallCodeDoneEvent responseCodeInterpreterCallCodeDoneEvent;
 
-@override String get type => 'response.code_interpreter_call_code.done';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.code_interpreter_call_code.done');
 
-@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallCodeDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallCodeDoneEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseCodeInterpreterCallCodeDone copyWith({int? outputIndex, String? itemId, String? code, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallCodeDone(responseCodeInterpreterCallCodeDoneEvent.copyWith(
   outputIndex: outputIndex,
@@ -437,9 +1204,9 @@ factory ResponseStreamEventResponseCodeInterpreterCallCompleted.fromJson(Map<Str
 
 final ResponseCodeInterpreterCallCompletedEvent responseCodeInterpreterCallCompletedEvent;
 
-@override String get type => 'response.code_interpreter_call.completed';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.code_interpreter_call.completed');
 
-@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallCompletedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallCompletedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseCodeInterpreterCallCompleted copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallCompleted(responseCodeInterpreterCallCompletedEvent.copyWith(
   outputIndex: outputIndex,
@@ -462,9 +1229,9 @@ factory ResponseStreamEventResponseCodeInterpreterCallInProgress.fromJson(Map<St
 
 final ResponseCodeInterpreterCallInProgressEvent responseCodeInterpreterCallInProgressEvent;
 
-@override String get type => 'response.code_interpreter_call.in_progress';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.code_interpreter_call.in_progress');
 
-@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallInProgressEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallInProgressEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseCodeInterpreterCallInProgress copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallInProgress(responseCodeInterpreterCallInProgressEvent.copyWith(
   outputIndex: outputIndex,
@@ -487,9 +1254,9 @@ factory ResponseStreamEventResponseCodeInterpreterCallInterpreting.fromJson(Map<
 
 final ResponseCodeInterpreterCallInterpretingEvent responseCodeInterpreterCallInterpretingEvent;
 
-@override String get type => 'response.code_interpreter_call.interpreting';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.code_interpreter_call.interpreting');
 
-@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallInterpretingEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseCodeInterpreterCallInterpretingEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseCodeInterpreterCallInterpreting copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseCodeInterpreterCallInterpreting(responseCodeInterpreterCallInterpretingEvent.copyWith(
   outputIndex: outputIndex,
@@ -512,9 +1279,9 @@ factory ResponseStreamEventResponseCompleted.fromJson(Map<String, dynamic> json)
 
 final ResponseCompletedEvent responseCompletedEvent;
 
-@override String get type => 'response.completed';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.completed');
 
-@override Map<String, dynamic> toJson() => {...responseCompletedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseCompletedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseCompleted copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseCompleted(responseCompletedEvent.copyWith(
   response: response,
@@ -536,9 +1303,9 @@ factory ResponseStreamEventResponseContentPartAdded.fromJson(Map<String, dynamic
 
 final ResponseContentPartAddedEvent responseContentPartAddedEvent;
 
-@override String get type => 'response.content_part.added';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.content_part.added');
 
-@override Map<String, dynamic> toJson() => {...responseContentPartAddedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseContentPartAddedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseContentPartAdded copyWith({String? itemId, int? outputIndex, int? contentIndex, OutputContent? $part, int? sequenceNumber, }) { return ResponseStreamEventResponseContentPartAdded(responseContentPartAddedEvent.copyWith(
   itemId: itemId,
@@ -563,9 +1330,9 @@ factory ResponseStreamEventResponseContentPartDone.fromJson(Map<String, dynamic>
 
 final ResponseContentPartDoneEvent responseContentPartDoneEvent;
 
-@override String get type => 'response.content_part.done';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.content_part.done');
 
-@override Map<String, dynamic> toJson() => {...responseContentPartDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseContentPartDoneEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseContentPartDone copyWith({String? itemId, int? outputIndex, int? contentIndex, int? sequenceNumber, OutputContent? $part, }) { return ResponseStreamEventResponseContentPartDone(responseContentPartDoneEvent.copyWith(
   itemId: itemId,
@@ -590,9 +1357,9 @@ factory ResponseStreamEventResponseCreated.fromJson(Map<String, dynamic> json) {
 
 final ResponseCreatedEvent responseCreatedEvent;
 
-@override String get type => 'response.created';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.created');
 
-@override Map<String, dynamic> toJson() => {...responseCreatedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseCreatedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseCreated copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseCreated(responseCreatedEvent.copyWith(
   response: response,
@@ -614,9 +1381,9 @@ factory ResponseStreamEventError.fromJson(Map<String, dynamic> json) { return Re
 
 final ResponseErrorEvent responseErrorEvent;
 
-@override String get type => 'error';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('error');
 
-@override Map<String, dynamic> toJson() => {...responseErrorEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseErrorEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventError copyWith({String? Function()? code, String? message, String? Function()? param, int? sequenceNumber, }) { return ResponseStreamEventError(responseErrorEvent.copyWith(
   code: code,
@@ -640,9 +1407,9 @@ factory ResponseStreamEventResponseFileSearchCallCompleted.fromJson(Map<String, 
 
 final ResponseFileSearchCallCompletedEvent responseFileSearchCallCompletedEvent;
 
-@override String get type => 'response.file_search_call.completed';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.file_search_call.completed');
 
-@override Map<String, dynamic> toJson() => {...responseFileSearchCallCompletedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseFileSearchCallCompletedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseFileSearchCallCompleted copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseFileSearchCallCompleted(responseFileSearchCallCompletedEvent.copyWith(
   outputIndex: outputIndex,
@@ -665,9 +1432,9 @@ factory ResponseStreamEventResponseFileSearchCallInProgress.fromJson(Map<String,
 
 final ResponseFileSearchCallInProgressEvent responseFileSearchCallInProgressEvent;
 
-@override String get type => 'response.file_search_call.in_progress';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.file_search_call.in_progress');
 
-@override Map<String, dynamic> toJson() => {...responseFileSearchCallInProgressEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseFileSearchCallInProgressEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseFileSearchCallInProgress copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseFileSearchCallInProgress(responseFileSearchCallInProgressEvent.copyWith(
   outputIndex: outputIndex,
@@ -690,9 +1457,9 @@ factory ResponseStreamEventResponseFileSearchCallSearching.fromJson(Map<String, 
 
 final ResponseFileSearchCallSearchingEvent responseFileSearchCallSearchingEvent;
 
-@override String get type => 'response.file_search_call.searching';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.file_search_call.searching');
 
-@override Map<String, dynamic> toJson() => {...responseFileSearchCallSearchingEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseFileSearchCallSearchingEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseFileSearchCallSearching copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseFileSearchCallSearching(responseFileSearchCallSearchingEvent.copyWith(
   outputIndex: outputIndex,
@@ -715,9 +1482,9 @@ factory ResponseStreamEventResponseFunctionCallArgumentsDelta.fromJson(Map<Strin
 
 final ResponseFunctionCallArgumentsDeltaEvent responseFunctionCallArgumentsDeltaEvent;
 
-@override String get type => 'response.function_call_arguments.delta';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.function_call_arguments.delta');
 
-@override Map<String, dynamic> toJson() => {...responseFunctionCallArgumentsDeltaEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseFunctionCallArgumentsDeltaEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseFunctionCallArgumentsDelta copyWith({String? itemId, int? outputIndex, int? sequenceNumber, String? delta, }) { return ResponseStreamEventResponseFunctionCallArgumentsDelta(responseFunctionCallArgumentsDeltaEvent.copyWith(
   itemId: itemId,
@@ -741,9 +1508,9 @@ factory ResponseStreamEventResponseFunctionCallArgumentsDone.fromJson(Map<String
 
 final ResponseFunctionCallArgumentsDoneEvent responseFunctionCallArgumentsDoneEvent;
 
-@override String get type => 'response.function_call_arguments.done';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.function_call_arguments.done');
 
-@override Map<String, dynamic> toJson() => {...responseFunctionCallArgumentsDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseFunctionCallArgumentsDoneEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseFunctionCallArgumentsDone copyWith({String? itemId, String? name, int? outputIndex, int? sequenceNumber, String? arguments, }) { return ResponseStreamEventResponseFunctionCallArgumentsDone(responseFunctionCallArgumentsDoneEvent.copyWith(
   itemId: itemId,
@@ -768,9 +1535,9 @@ factory ResponseStreamEventResponseInProgress.fromJson(Map<String, dynamic> json
 
 final ResponseInProgressEvent responseInProgressEvent;
 
-@override String get type => 'response.in_progress';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.in_progress');
 
-@override Map<String, dynamic> toJson() => {...responseInProgressEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseInProgressEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseInProgress copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseInProgress(responseInProgressEvent.copyWith(
   response: response,
@@ -792,9 +1559,9 @@ factory ResponseStreamEventResponseFailed.fromJson(Map<String, dynamic> json) { 
 
 final ResponseFailedEvent responseFailedEvent;
 
-@override String get type => 'response.failed';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.failed');
 
-@override Map<String, dynamic> toJson() => {...responseFailedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseFailedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseFailed copyWith({int? sequenceNumber, Response? response, }) { return ResponseStreamEventResponseFailed(responseFailedEvent.copyWith(
   sequenceNumber: sequenceNumber,
@@ -816,9 +1583,9 @@ factory ResponseStreamEventResponseIncomplete.fromJson(Map<String, dynamic> json
 
 final ResponseIncompleteEvent responseIncompleteEvent;
 
-@override String get type => 'response.incomplete';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.incomplete');
 
-@override Map<String, dynamic> toJson() => {...responseIncompleteEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseIncompleteEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseIncomplete copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseIncomplete(responseIncompleteEvent.copyWith(
   response: response,
@@ -840,9 +1607,9 @@ factory ResponseStreamEventResponseOutputItemAdded.fromJson(Map<String, dynamic>
 
 final ResponseOutputItemAddedEvent responseOutputItemAddedEvent;
 
-@override String get type => 'response.output_item.added';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.output_item.added');
 
-@override Map<String, dynamic> toJson() => {...responseOutputItemAddedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseOutputItemAddedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseOutputItemAdded copyWith({int? outputIndex, int? sequenceNumber, OutputItem? item, }) { return ResponseStreamEventResponseOutputItemAdded(responseOutputItemAddedEvent.copyWith(
   outputIndex: outputIndex,
@@ -865,9 +1632,9 @@ factory ResponseStreamEventResponseOutputItemDone.fromJson(Map<String, dynamic> 
 
 final ResponseOutputItemDoneEvent responseOutputItemDoneEvent;
 
-@override String get type => 'response.output_item.done';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.output_item.done');
 
-@override Map<String, dynamic> toJson() => {...responseOutputItemDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseOutputItemDoneEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseOutputItemDone copyWith({int? outputIndex, int? sequenceNumber, OutputItem? item, }) { return ResponseStreamEventResponseOutputItemDone(responseOutputItemDoneEvent.copyWith(
   outputIndex: outputIndex,
@@ -890,9 +1657,9 @@ factory ResponseStreamEventResponseReasoningSummaryPartAdded.fromJson(Map<String
 
 final ResponseReasoningSummaryPartAddedEvent responseReasoningSummaryPartAddedEvent;
 
-@override String get type => 'response.reasoning_summary_part.added';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.reasoning_summary_part.added');
 
-@override Map<String, dynamic> toJson() => {...responseReasoningSummaryPartAddedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseReasoningSummaryPartAddedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseReasoningSummaryPartAdded copyWith({String? itemId, int? outputIndex, int? summaryIndex, int? sequenceNumber, ResponseReasoningSummaryPartAddedEventPart? $part, }) { return ResponseStreamEventResponseReasoningSummaryPartAdded(responseReasoningSummaryPartAddedEvent.copyWith(
   itemId: itemId,
@@ -917,9 +1684,9 @@ factory ResponseStreamEventResponseReasoningSummaryPartDone.fromJson(Map<String,
 
 final ResponseReasoningSummaryPartDoneEvent responseReasoningSummaryPartDoneEvent;
 
-@override String get type => 'response.reasoning_summary_part.done';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.reasoning_summary_part.done');
 
-@override Map<String, dynamic> toJson() => {...responseReasoningSummaryPartDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseReasoningSummaryPartDoneEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseReasoningSummaryPartDone copyWith({String? itemId, int? outputIndex, int? summaryIndex, int? sequenceNumber, ResponseReasoningSummaryPartAddedEventPart? $part, }) { return ResponseStreamEventResponseReasoningSummaryPartDone(responseReasoningSummaryPartDoneEvent.copyWith(
   itemId: itemId,
@@ -944,9 +1711,9 @@ factory ResponseStreamEventResponseReasoningSummaryTextDelta.fromJson(Map<String
 
 final ResponseReasoningSummaryTextDeltaEvent responseReasoningSummaryTextDeltaEvent;
 
-@override String get type => 'response.reasoning_summary_text.delta';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.reasoning_summary_text.delta');
 
-@override Map<String, dynamic> toJson() => {...responseReasoningSummaryTextDeltaEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseReasoningSummaryTextDeltaEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseReasoningSummaryTextDelta copyWith({String? itemId, int? outputIndex, int? summaryIndex, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseReasoningSummaryTextDelta(responseReasoningSummaryTextDeltaEvent.copyWith(
   itemId: itemId,
@@ -971,9 +1738,9 @@ factory ResponseStreamEventResponseReasoningSummaryTextDone.fromJson(Map<String,
 
 final ResponseReasoningSummaryTextDoneEvent responseReasoningSummaryTextDoneEvent;
 
-@override String get type => 'response.reasoning_summary_text.done';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.reasoning_summary_text.done');
 
-@override Map<String, dynamic> toJson() => {...responseReasoningSummaryTextDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseReasoningSummaryTextDoneEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseReasoningSummaryTextDone copyWith({String? itemId, int? outputIndex, int? summaryIndex, String? text, int? sequenceNumber, }) { return ResponseStreamEventResponseReasoningSummaryTextDone(responseReasoningSummaryTextDoneEvent.copyWith(
   itemId: itemId,
@@ -998,9 +1765,9 @@ factory ResponseStreamEventResponseReasoningTextDelta.fromJson(Map<String, dynam
 
 final ResponseReasoningTextDeltaEvent responseReasoningTextDeltaEvent;
 
-@override String get type => 'response.reasoning_text.delta';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.reasoning_text.delta');
 
-@override Map<String, dynamic> toJson() => {...responseReasoningTextDeltaEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseReasoningTextDeltaEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseReasoningTextDelta copyWith({String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseReasoningTextDelta(responseReasoningTextDeltaEvent.copyWith(
   itemId: itemId,
@@ -1025,9 +1792,9 @@ factory ResponseStreamEventResponseReasoningTextDone.fromJson(Map<String, dynami
 
 final ResponseReasoningTextDoneEvent responseReasoningTextDoneEvent;
 
-@override String get type => 'response.reasoning_text.done';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.reasoning_text.done');
 
-@override Map<String, dynamic> toJson() => {...responseReasoningTextDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseReasoningTextDoneEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseReasoningTextDone copyWith({String? itemId, int? outputIndex, int? contentIndex, String? text, int? sequenceNumber, }) { return ResponseStreamEventResponseReasoningTextDone(responseReasoningTextDoneEvent.copyWith(
   itemId: itemId,
@@ -1052,9 +1819,9 @@ factory ResponseStreamEventResponseRefusalDelta.fromJson(Map<String, dynamic> js
 
 final ResponseRefusalDeltaEvent responseRefusalDeltaEvent;
 
-@override String get type => 'response.refusal.delta';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.refusal.delta');
 
-@override Map<String, dynamic> toJson() => {...responseRefusalDeltaEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseRefusalDeltaEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseRefusalDelta copyWith({String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseRefusalDelta(responseRefusalDeltaEvent.copyWith(
   itemId: itemId,
@@ -1079,9 +1846,9 @@ factory ResponseStreamEventResponseRefusalDone.fromJson(Map<String, dynamic> jso
 
 final ResponseRefusalDoneEvent responseRefusalDoneEvent;
 
-@override String get type => 'response.refusal.done';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.refusal.done');
 
-@override Map<String, dynamic> toJson() => {...responseRefusalDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseRefusalDoneEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseRefusalDone copyWith({String? itemId, int? outputIndex, int? contentIndex, String? refusal, int? sequenceNumber, }) { return ResponseStreamEventResponseRefusalDone(responseRefusalDoneEvent.copyWith(
   itemId: itemId,
@@ -1106,9 +1873,9 @@ factory ResponseStreamEventResponseOutputTextDelta.fromJson(Map<String, dynamic>
 
 final ResponseTextDeltaEvent responseTextDeltaEvent;
 
-@override String get type => 'response.output_text.delta';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.output_text.delta');
 
-@override Map<String, dynamic> toJson() => {...responseTextDeltaEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseTextDeltaEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseOutputTextDelta copyWith({String? itemId, int? outputIndex, int? contentIndex, String? delta, int? sequenceNumber, List<ResponseLogProb>? logprobs, }) { return ResponseStreamEventResponseOutputTextDelta(responseTextDeltaEvent.copyWith(
   itemId: itemId,
@@ -1134,9 +1901,9 @@ factory ResponseStreamEventResponseOutputTextDone.fromJson(Map<String, dynamic> 
 
 final ResponseTextDoneEvent responseTextDoneEvent;
 
-@override String get type => 'response.output_text.done';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.output_text.done');
 
-@override Map<String, dynamic> toJson() => {...responseTextDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseTextDoneEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseOutputTextDone copyWith({String? itemId, int? outputIndex, int? contentIndex, String? text, int? sequenceNumber, List<ResponseLogProb>? logprobs, }) { return ResponseStreamEventResponseOutputTextDone(responseTextDoneEvent.copyWith(
   itemId: itemId,
@@ -1162,9 +1929,9 @@ factory ResponseStreamEventResponseWebSearchCallCompleted.fromJson(Map<String, d
 
 final ResponseWebSearchCallCompletedEvent responseWebSearchCallCompletedEvent;
 
-@override String get type => 'response.web_search_call.completed';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.web_search_call.completed');
 
-@override Map<String, dynamic> toJson() => {...responseWebSearchCallCompletedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseWebSearchCallCompletedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseWebSearchCallCompleted copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseWebSearchCallCompleted(responseWebSearchCallCompletedEvent.copyWith(
   outputIndex: outputIndex,
@@ -1187,9 +1954,9 @@ factory ResponseStreamEventResponseWebSearchCallInProgress.fromJson(Map<String, 
 
 final ResponseWebSearchCallInProgressEvent responseWebSearchCallInProgressEvent;
 
-@override String get type => 'response.web_search_call.in_progress';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.web_search_call.in_progress');
 
-@override Map<String, dynamic> toJson() => {...responseWebSearchCallInProgressEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseWebSearchCallInProgressEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseWebSearchCallInProgress copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseWebSearchCallInProgress(responseWebSearchCallInProgressEvent.copyWith(
   outputIndex: outputIndex,
@@ -1212,9 +1979,9 @@ factory ResponseStreamEventResponseWebSearchCallSearching.fromJson(Map<String, d
 
 final ResponseWebSearchCallSearchingEvent responseWebSearchCallSearchingEvent;
 
-@override String get type => 'response.web_search_call.searching';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.web_search_call.searching');
 
-@override Map<String, dynamic> toJson() => {...responseWebSearchCallSearchingEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseWebSearchCallSearchingEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseWebSearchCallSearching copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseWebSearchCallSearching(responseWebSearchCallSearchingEvent.copyWith(
   outputIndex: outputIndex,
@@ -1237,9 +2004,9 @@ factory ResponseStreamEventResponseImageGenerationCallCompleted.fromJson(Map<Str
 
 final ResponseImageGenCallCompletedEvent responseImageGenCallCompletedEvent;
 
-@override String get type => 'response.image_generation_call.completed';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.image_generation_call.completed');
 
-@override Map<String, dynamic> toJson() => {...responseImageGenCallCompletedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseImageGenCallCompletedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseImageGenerationCallCompleted copyWith({int? outputIndex, int? sequenceNumber, String? itemId, }) { return ResponseStreamEventResponseImageGenerationCallCompleted(responseImageGenCallCompletedEvent.copyWith(
   outputIndex: outputIndex,
@@ -1262,9 +2029,9 @@ factory ResponseStreamEventResponseImageGenerationCallGenerating.fromJson(Map<St
 
 final ResponseImageGenCallGeneratingEvent responseImageGenCallGeneratingEvent;
 
-@override String get type => 'response.image_generation_call.generating';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.image_generation_call.generating');
 
-@override Map<String, dynamic> toJson() => {...responseImageGenCallGeneratingEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseImageGenCallGeneratingEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseImageGenerationCallGenerating copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseImageGenerationCallGenerating(responseImageGenCallGeneratingEvent.copyWith(
   outputIndex: outputIndex,
@@ -1287,9 +2054,9 @@ factory ResponseStreamEventResponseImageGenerationCallInProgress.fromJson(Map<St
 
 final ResponseImageGenCallInProgressEvent responseImageGenCallInProgressEvent;
 
-@override String get type => 'response.image_generation_call.in_progress';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.image_generation_call.in_progress');
 
-@override Map<String, dynamic> toJson() => {...responseImageGenCallInProgressEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseImageGenCallInProgressEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseImageGenerationCallInProgress copyWith({int? outputIndex, String? itemId, int? sequenceNumber, }) { return ResponseStreamEventResponseImageGenerationCallInProgress(responseImageGenCallInProgressEvent.copyWith(
   outputIndex: outputIndex,
@@ -1312,9 +2079,9 @@ factory ResponseStreamEventResponseImageGenerationCallPartialImage.fromJson(Map<
 
 final ResponseImageGenCallPartialImageEvent responseImageGenCallPartialImageEvent;
 
-@override String get type => 'response.image_generation_call.partial_image';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.image_generation_call.partial_image');
 
-@override Map<String, dynamic> toJson() => {...responseImageGenCallPartialImageEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseImageGenCallPartialImageEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseImageGenerationCallPartialImage copyWith({int? outputIndex, String? itemId, int? sequenceNumber, int? partialImageIndex, String? partialImageB64, }) { return ResponseStreamEventResponseImageGenerationCallPartialImage(responseImageGenCallPartialImageEvent.copyWith(
   outputIndex: outputIndex,
@@ -1339,9 +2106,9 @@ factory ResponseStreamEventResponseMcpCallArgumentsDelta.fromJson(Map<String, dy
 
 final ResponseMcpCallArgumentsDeltaEvent responseMcpCallArgumentsDeltaEvent;
 
-@override String get type => 'response.mcp_call_arguments.delta';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.mcp_call_arguments.delta');
 
-@override Map<String, dynamic> toJson() => {...responseMcpCallArgumentsDeltaEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseMcpCallArgumentsDeltaEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseMcpCallArgumentsDelta copyWith({int? outputIndex, String? itemId, String? delta, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpCallArgumentsDelta(responseMcpCallArgumentsDeltaEvent.copyWith(
   outputIndex: outputIndex,
@@ -1365,9 +2132,9 @@ factory ResponseStreamEventResponseMcpCallArgumentsDone.fromJson(Map<String, dyn
 
 final ResponseMcpCallArgumentsDoneEvent responseMcpCallArgumentsDoneEvent;
 
-@override String get type => 'response.mcp_call_arguments.done';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.mcp_call_arguments.done');
 
-@override Map<String, dynamic> toJson() => {...responseMcpCallArgumentsDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseMcpCallArgumentsDoneEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseMcpCallArgumentsDone copyWith({int? outputIndex, String? itemId, String? arguments, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpCallArgumentsDone(responseMcpCallArgumentsDoneEvent.copyWith(
   outputIndex: outputIndex,
@@ -1391,9 +2158,9 @@ factory ResponseStreamEventResponseMcpCallCompleted.fromJson(Map<String, dynamic
 
 final ResponseMcpCallCompletedEvent responseMcpCallCompletedEvent;
 
-@override String get type => 'response.mcp_call.completed';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.mcp_call.completed');
 
-@override Map<String, dynamic> toJson() => {...responseMcpCallCompletedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseMcpCallCompletedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseMcpCallCompleted copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpCallCompleted(responseMcpCallCompletedEvent.copyWith(
   itemId: itemId,
@@ -1416,9 +2183,9 @@ factory ResponseStreamEventResponseMcpCallFailed.fromJson(Map<String, dynamic> j
 
 final ResponseMcpCallFailedEvent responseMcpCallFailedEvent;
 
-@override String get type => 'response.mcp_call.failed';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.mcp_call.failed');
 
-@override Map<String, dynamic> toJson() => {...responseMcpCallFailedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseMcpCallFailedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseMcpCallFailed copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpCallFailed(responseMcpCallFailedEvent.copyWith(
   itemId: itemId,
@@ -1441,9 +2208,9 @@ factory ResponseStreamEventResponseMcpCallInProgress.fromJson(Map<String, dynami
 
 final ResponseMcpCallInProgressEvent responseMcpCallInProgressEvent;
 
-@override String get type => 'response.mcp_call.in_progress';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.mcp_call.in_progress');
 
-@override Map<String, dynamic> toJson() => {...responseMcpCallInProgressEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseMcpCallInProgressEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseMcpCallInProgress copyWith({int? sequenceNumber, int? outputIndex, String? itemId, }) { return ResponseStreamEventResponseMcpCallInProgress(responseMcpCallInProgressEvent.copyWith(
   sequenceNumber: sequenceNumber,
@@ -1466,9 +2233,9 @@ factory ResponseStreamEventResponseMcpListToolsCompleted.fromJson(Map<String, dy
 
 final ResponseMcpListToolsCompletedEvent responseMcpListToolsCompletedEvent;
 
-@override String get type => 'response.mcp_list_tools.completed';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.mcp_list_tools.completed');
 
-@override Map<String, dynamic> toJson() => {...responseMcpListToolsCompletedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseMcpListToolsCompletedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseMcpListToolsCompleted copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpListToolsCompleted(responseMcpListToolsCompletedEvent.copyWith(
   itemId: itemId,
@@ -1491,9 +2258,9 @@ factory ResponseStreamEventResponseMcpListToolsFailed.fromJson(Map<String, dynam
 
 final ResponseMcpListToolsFailedEvent responseMcpListToolsFailedEvent;
 
-@override String get type => 'response.mcp_list_tools.failed';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.mcp_list_tools.failed');
 
-@override Map<String, dynamic> toJson() => {...responseMcpListToolsFailedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseMcpListToolsFailedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseMcpListToolsFailed copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpListToolsFailed(responseMcpListToolsFailedEvent.copyWith(
   itemId: itemId,
@@ -1516,9 +2283,9 @@ factory ResponseStreamEventResponseMcpListToolsInProgress.fromJson(Map<String, d
 
 final ResponseMcpListToolsInProgressEvent responseMcpListToolsInProgressEvent;
 
-@override String get type => 'response.mcp_list_tools.in_progress';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.mcp_list_tools.in_progress');
 
-@override Map<String, dynamic> toJson() => {...responseMcpListToolsInProgressEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseMcpListToolsInProgressEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseMcpListToolsInProgress copyWith({String? itemId, int? outputIndex, int? sequenceNumber, }) { return ResponseStreamEventResponseMcpListToolsInProgress(responseMcpListToolsInProgressEvent.copyWith(
   itemId: itemId,
@@ -1541,9 +2308,9 @@ factory ResponseStreamEventResponseOutputTextAnnotationAdded.fromJson(Map<String
 
 final ResponseOutputTextAnnotationAddedEvent responseOutputTextAnnotationAddedEvent;
 
-@override String get type => 'response.output_text.annotation.added';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.output_text.annotation.added');
 
-@override Map<String, dynamic> toJson() => {...responseOutputTextAnnotationAddedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseOutputTextAnnotationAddedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseOutputTextAnnotationAdded copyWith({String? itemId, int? outputIndex, int? contentIndex, int? annotationIndex, int? sequenceNumber, Map<String,dynamic>? annotation, }) { return ResponseStreamEventResponseOutputTextAnnotationAdded(responseOutputTextAnnotationAddedEvent.copyWith(
   itemId: itemId,
@@ -1569,9 +2336,9 @@ factory ResponseStreamEventResponseQueued.fromJson(Map<String, dynamic> json) { 
 
 final ResponseQueuedEvent responseQueuedEvent;
 
-@override String get type => 'response.queued';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.queued');
 
-@override Map<String, dynamic> toJson() => {...responseQueuedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseQueuedEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseQueued copyWith({Response? response, int? sequenceNumber, }) { return ResponseStreamEventResponseQueued(responseQueuedEvent.copyWith(
   response: response,
@@ -1593,9 +2360,9 @@ factory ResponseStreamEventResponseCustomToolCallInputDelta.fromJson(Map<String,
 
 final ResponseCustomToolCallInputDeltaEvent responseCustomToolCallInputDeltaEvent;
 
-@override String get type => 'response.custom_tool_call_input.delta';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.custom_tool_call_input.delta');
 
-@override Map<String, dynamic> toJson() => {...responseCustomToolCallInputDeltaEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseCustomToolCallInputDeltaEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseCustomToolCallInputDelta copyWith({int? sequenceNumber, int? outputIndex, String? itemId, String? delta, }) { return ResponseStreamEventResponseCustomToolCallInputDelta(responseCustomToolCallInputDeltaEvent.copyWith(
   sequenceNumber: sequenceNumber,
@@ -1619,9 +2386,9 @@ factory ResponseStreamEventResponseCustomToolCallInputDone.fromJson(Map<String, 
 
 final ResponseCustomToolCallInputDoneEvent responseCustomToolCallInputDoneEvent;
 
-@override String get type => 'response.custom_tool_call_input.done';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson('response.custom_tool_call_input.done');
 
-@override Map<String, dynamic> toJson() => {...responseCustomToolCallInputDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseCustomToolCallInputDoneEvent.toJson(), 'type': type.toJson()};
 
 ResponseStreamEventResponseCustomToolCallInputDone copyWith({int? sequenceNumber, int? outputIndex, String? itemId, String? input, }) { return ResponseStreamEventResponseCustomToolCallInputDone(responseCustomToolCallInputDoneEvent.copyWith(
   sequenceNumber: sequenceNumber,
@@ -1647,7 +2414,7 @@ final Map<String, dynamic> json;
 
 late final int _sequenceNumber = (json['sequence_number'] as num).toInt();
 
-@override String get type => json['type'] as String? ?? '';
+@override ResponseStreamEventType get type => ResponseStreamEventType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

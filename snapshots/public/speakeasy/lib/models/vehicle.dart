@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Vehicle
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/bike.dart';import 'package:pub_speakeasy/models/car.dart';sealed class Vehicle {const Vehicle();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/bike.dart';import 'package:pub_speakeasy/models/car.dart';sealed class VehicleVehicleType {const VehicleVehicleType();
+
+factory VehicleVehicleType.fromJson(String json) { return switch (json) {
+  'car' => car,
+  'bike' => bike,
+  _ => VehicleVehicleType$Unknown(json),
+}; }
+
+static const VehicleVehicleType car = VehicleVehicleType$car._();
+
+static const VehicleVehicleType bike = VehicleVehicleType$bike._();
+
+static const List<VehicleVehicleType> values = [car, bike];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is VehicleVehicleType$Unknown;
+
+ }
+@immutable final class VehicleVehicleType$car extends VehicleVehicleType {const VehicleVehicleType$car._();
+
+@override String get value => 'car';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VehicleVehicleType$car;
+
+@override int get hashCode => 'car'.hashCode;
+
+@override String toString() => 'VehicleVehicleType(car)';
+
+ }
+@immutable final class VehicleVehicleType$bike extends VehicleVehicleType {const VehicleVehicleType$bike._();
+
+@override String get value => 'bike';
+
+@override bool operator ==(Object other) => identical(this, other) || other is VehicleVehicleType$bike;
+
+@override int get hashCode => 'bike'.hashCode;
+
+@override String toString() => 'VehicleVehicleType(bike)';
+
+ }
+@immutable final class VehicleVehicleType$Unknown extends VehicleVehicleType {const VehicleVehicleType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is VehicleVehicleType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'VehicleVehicleType($value)';
+
+ }
+sealed class Vehicle {const Vehicle();
 
 /// Deserialize from JSON, dispatching on the `vehicleType` discriminator.
 factory Vehicle.fromJson(Map<String, dynamic> json) { return switch (json['vehicleType']) {
@@ -17,7 +70,7 @@ factory Vehicle.car({required String wheelsType}) { return VehicleCar(Car(vehicl
 factory Vehicle.bike({required String wheelsType, required String colour, }) { return VehicleBike(Bike(vehicleType: 'bike', wheelsType: wheelsType, colour: colour)); }
 
 /// The discriminator value identifying this variant.
-String get vehicleType;
+VehicleVehicleType get vehicleType;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is Vehicle$Unknown;
@@ -36,9 +89,9 @@ factory VehicleCar.fromJson(Map<String, dynamic> json) { return VehicleCar(Car.f
 
 final Car car;
 
-@override String get vehicleType => 'car';
+@override VehicleVehicleType get vehicleType => VehicleVehicleType.fromJson('car');
 
-@override Map<String, dynamic> toJson() => {...car.toJson(), 'vehicleType': vehicleType};
+@override Map<String, dynamic> toJson() => {...car.toJson(), 'vehicleType': vehicleType.toJson()};
 
 VehicleCar copyWith({String? wheelsType}) { return VehicleCar(car.copyWith(
   wheelsType: wheelsType,
@@ -59,9 +112,9 @@ factory VehicleBike.fromJson(Map<String, dynamic> json) { return VehicleBike(Bik
 
 final Bike bike;
 
-@override String get vehicleType => 'bike';
+@override VehicleVehicleType get vehicleType => VehicleVehicleType.fromJson('bike');
 
-@override Map<String, dynamic> toJson() => {...bike.toJson(), 'vehicleType': vehicleType};
+@override Map<String, dynamic> toJson() => {...bike.toJson(), 'vehicleType': vehicleType.toJson()};
 
 VehicleBike copyWith({String? wheelsType, String? colour, }) { return VehicleBike(bike.copyWith(
   wheelsType: wheelsType,
@@ -85,7 +138,7 @@ final Map<String, dynamic> json;
 
 late final String _wheelsType = json['wheelsType'] as String;
 
-@override String get vehicleType => json['vehicleType'] as String? ?? '';
+@override VehicleVehicleType get vehicleType => VehicleVehicleType.fromJson(json['vehicleType'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

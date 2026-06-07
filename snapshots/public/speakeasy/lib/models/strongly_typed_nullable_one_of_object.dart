@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/StronglyTypedNullableOneOfObject
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/enum2.dart';import 'package:pub_speakeasy/models/nested_enum_array.dart';import 'package:pub_speakeasy/models/nested_enum_map.dart';sealed class StronglyTypedNullableOneOfObject {const StronglyTypedNullableOneOfObject();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/enum2.dart';import 'package:pub_speakeasy/models/nested_enum_array.dart';import 'package:pub_speakeasy/models/nested_enum_map.dart';sealed class StronglyTypedNullableOneOfObjectTags {const StronglyTypedNullableOneOfObjectTags();
+
+factory StronglyTypedNullableOneOfObjectTags.fromJson(String json) { return switch (json) {
+  'nestedEnumArray' => nestedEnumArray,
+  'nestedEnumMap' => nestedEnumMap,
+  _ => StronglyTypedNullableOneOfObjectTags$Unknown(json),
+}; }
+
+static const StronglyTypedNullableOneOfObjectTags nestedEnumArray = StronglyTypedNullableOneOfObjectTags$nestedEnumArray._();
+
+static const StronglyTypedNullableOneOfObjectTags nestedEnumMap = StronglyTypedNullableOneOfObjectTags$nestedEnumMap._();
+
+static const List<StronglyTypedNullableOneOfObjectTags> values = [nestedEnumArray, nestedEnumMap];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is StronglyTypedNullableOneOfObjectTags$Unknown;
+
+ }
+@immutable final class StronglyTypedNullableOneOfObjectTags$nestedEnumArray extends StronglyTypedNullableOneOfObjectTags {const StronglyTypedNullableOneOfObjectTags$nestedEnumArray._();
+
+@override String get value => 'nestedEnumArray';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StronglyTypedNullableOneOfObjectTags$nestedEnumArray;
+
+@override int get hashCode => 'nestedEnumArray'.hashCode;
+
+@override String toString() => 'StronglyTypedNullableOneOfObjectTags(nestedEnumArray)';
+
+ }
+@immutable final class StronglyTypedNullableOneOfObjectTags$nestedEnumMap extends StronglyTypedNullableOneOfObjectTags {const StronglyTypedNullableOneOfObjectTags$nestedEnumMap._();
+
+@override String get value => 'nestedEnumMap';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StronglyTypedNullableOneOfObjectTags$nestedEnumMap;
+
+@override int get hashCode => 'nestedEnumMap'.hashCode;
+
+@override String toString() => 'StronglyTypedNullableOneOfObjectTags(nestedEnumMap)';
+
+ }
+@immutable final class StronglyTypedNullableOneOfObjectTags$Unknown extends StronglyTypedNullableOneOfObjectTags {const StronglyTypedNullableOneOfObjectTags$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is StronglyTypedNullableOneOfObjectTags$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StronglyTypedNullableOneOfObjectTags($value)';
+
+ }
+sealed class StronglyTypedNullableOneOfObject {const StronglyTypedNullableOneOfObject();
 
 /// Deserialize from JSON, dispatching on the `tags` discriminator.
 factory StronglyTypedNullableOneOfObject.fromJson(Map<String, dynamic> json) { return switch (json['tags']) {
@@ -17,7 +70,7 @@ factory StronglyTypedNullableOneOfObject.nestedEnumArray({required List<Enum2> e
 factory StronglyTypedNullableOneOfObject.nestedEnumMap({required Map<String,Enum2> enums}) { return StronglyTypedNullableOneOfObjectNestedEnumMap(NestedEnumMap(tags: 'nestedEnumMap', enums: enums)); }
 
 /// The discriminator value identifying this variant.
-String get tags;
+StronglyTypedNullableOneOfObjectTags get tags;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is StronglyTypedNullableOneOfObject$Unknown;
@@ -34,9 +87,9 @@ factory StronglyTypedNullableOneOfObjectNestedEnumArray.fromJson(Map<String, dyn
 
 final NestedEnumArray nestedEnumArray;
 
-@override String get tags => 'nestedEnumArray';
+@override StronglyTypedNullableOneOfObjectTags get tags => StronglyTypedNullableOneOfObjectTags.fromJson('nestedEnumArray');
 
-@override Map<String, dynamic> toJson() => {...nestedEnumArray.toJson(), 'tags': tags};
+@override Map<String, dynamic> toJson() => {...nestedEnumArray.toJson(), 'tags': tags.toJson()};
 
 StronglyTypedNullableOneOfObjectNestedEnumArray copyWith({List<Enum2>? enums}) { return StronglyTypedNullableOneOfObjectNestedEnumArray(nestedEnumArray.copyWith(
   enums: enums,
@@ -55,9 +108,9 @@ factory StronglyTypedNullableOneOfObjectNestedEnumMap.fromJson(Map<String, dynam
 
 final NestedEnumMap nestedEnumMap;
 
-@override String get tags => 'nestedEnumMap';
+@override StronglyTypedNullableOneOfObjectTags get tags => StronglyTypedNullableOneOfObjectTags.fromJson('nestedEnumMap');
 
-@override Map<String, dynamic> toJson() => {...nestedEnumMap.toJson(), 'tags': tags};
+@override Map<String, dynamic> toJson() => {...nestedEnumMap.toJson(), 'tags': tags.toJson()};
 
 StronglyTypedNullableOneOfObjectNestedEnumMap copyWith({Map<String,Enum2>? enums}) { return StronglyTypedNullableOneOfObjectNestedEnumMap(nestedEnumMap.copyWith(
   enums: enums,
@@ -76,7 +129,7 @@ StronglyTypedNullableOneOfObjectNestedEnumMap copyWith({Map<String,Enum2>? enums
 
 final Map<String, dynamic> json;
 
-@override String get tags => json['tags'] as String? ?? '';
+@override StronglyTypedNullableOneOfObjectTags get tags => StronglyTypedNullableOneOfObjectTags.fromJson(json['tags'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

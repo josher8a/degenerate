@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequest (inline: Source)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_binding_source.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_binding_source/cloudflare_pipelines_workers_pipelines_binding_source_format.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_http_source.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_http_source/cors.dart';sealed class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_binding_source.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_binding_source/cloudflare_pipelines_workers_pipelines_binding_source_format.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_http_source.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_workers_pipelines_http_source/cors.dart';sealed class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType();
+
+factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType.fromJson(String json) { return switch (json) {
+  'binding' => binding,
+  'http' => http,
+  _ => AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType$Unknown(json),
+}; }
+
+static const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType binding = AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType$binding._();
+
+static const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType http = AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType$http._();
+
+static const List<AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType> values = [binding, http];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType$Unknown;
+
+ }
+@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType$binding extends AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType$binding._();
+
+@override String get value => 'binding';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType$binding;
+
+@override int get hashCode => 'binding'.hashCode;
+
+@override String toString() => 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType(binding)';
+
+ }
+@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType$http extends AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType$http._();
+
+@override String get value => 'http';
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType$http;
+
+@override int get hashCode => 'http'.hashCode;
+
+@override String toString() => 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType(http)';
+
+ }
+@immutable final class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType$Unknown extends AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType($value)';
+
+ }
+sealed class AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource {const AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -17,7 +70,7 @@ factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.bindin
 factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource.http({required CloudflarePipelinesWorkersPipelinesBindingSourceFormat format, bool? authentication, Cors? cors, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp(CloudflarePipelinesWorkersPipelinesHttpSource(type: 'http', authentication: authentication, cors: cors, format: format)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSource$Unknown;
@@ -36,9 +89,9 @@ factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding
 
 final CloudflarePipelinesWorkersPipelinesBindingSource cloudflarePipelinesWorkersPipelinesBindingSource;
 
-@override String get type => 'binding';
+@override AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType get type => AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType.fromJson('binding');
 
-@override Map<String, dynamic> toJson() => {...cloudflarePipelinesWorkersPipelinesBindingSource.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...cloudflarePipelinesWorkersPipelinesBindingSource.toJson(), 'type': type.toJson()};
 
 AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding copyWith({CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format}) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceBinding(cloudflarePipelinesWorkersPipelinesBindingSource.copyWith(
   format: format,
@@ -59,9 +112,9 @@ factory AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp.fr
 
 final CloudflarePipelinesWorkersPipelinesHttpSource cloudflarePipelinesWorkersPipelinesHttpSource;
 
-@override String get type => 'http';
+@override AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType get type => AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType.fromJson('http');
 
-@override Map<String, dynamic> toJson() => {...cloudflarePipelinesWorkersPipelinesHttpSource.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...cloudflarePipelinesWorkersPipelinesHttpSource.toJson(), 'type': type.toJson()};
 
 AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp copyWith({bool? Function()? authentication, Cors? Function()? cors, CloudflarePipelinesWorkersPipelinesBindingSourceFormat? format, }) { return AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceHttp(cloudflarePipelinesWorkersPipelinesHttpSource.copyWith(
   authentication: authentication,
@@ -86,7 +139,7 @@ final Map<String, dynamic> json;
 
 late final CloudflarePipelinesWorkersPipelinesBindingSourceFormat _format = CloudflarePipelinesWorkersPipelinesBindingSourceFormat.fromJson(json['format'] as String);
 
-@override String get type => json['type'] as String? ?? '';
+@override AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType get type => AccountsByAccountIdPipelinesByPipelineNameDeprecatedRequestSourceType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

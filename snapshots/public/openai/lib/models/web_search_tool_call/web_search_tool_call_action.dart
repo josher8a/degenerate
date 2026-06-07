@@ -1,7 +1,74 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WebSearchToolCall (inline: Action)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/web_search_action_find.dart';import 'package:pub_openai/models/web_search_action_open_page.dart';import 'package:pub_openai/models/web_search_action_search.dart';import 'package:pub_openai/models/web_search_action_search/sources.dart';/// An object describing the specific action taken in this web search call.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/web_search_action_find.dart';import 'package:pub_openai/models/web_search_action_open_page.dart';import 'package:pub_openai/models/web_search_action_search.dart';import 'package:pub_openai/models/web_search_action_search/sources.dart';sealed class WebSearchToolCallActionType {const WebSearchToolCallActionType();
+
+factory WebSearchToolCallActionType.fromJson(String json) { return switch (json) {
+  'search' => search,
+  'open_page' => openPage,
+  'find_in_page' => findInPage,
+  _ => WebSearchToolCallActionType$Unknown(json),
+}; }
+
+static const WebSearchToolCallActionType search = WebSearchToolCallActionType$search._();
+
+static const WebSearchToolCallActionType openPage = WebSearchToolCallActionType$openPage._();
+
+static const WebSearchToolCallActionType findInPage = WebSearchToolCallActionType$findInPage._();
+
+static const List<WebSearchToolCallActionType> values = [search, openPage, findInPage];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is WebSearchToolCallActionType$Unknown;
+
+ }
+@immutable final class WebSearchToolCallActionType$search extends WebSearchToolCallActionType {const WebSearchToolCallActionType$search._();
+
+@override String get value => 'search';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchToolCallActionType$search;
+
+@override int get hashCode => 'search'.hashCode;
+
+@override String toString() => 'WebSearchToolCallActionType(search)';
+
+ }
+@immutable final class WebSearchToolCallActionType$openPage extends WebSearchToolCallActionType {const WebSearchToolCallActionType$openPage._();
+
+@override String get value => 'open_page';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchToolCallActionType$openPage;
+
+@override int get hashCode => 'open_page'.hashCode;
+
+@override String toString() => 'WebSearchToolCallActionType(open_page)';
+
+ }
+@immutable final class WebSearchToolCallActionType$findInPage extends WebSearchToolCallActionType {const WebSearchToolCallActionType$findInPage._();
+
+@override String get value => 'find_in_page';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchToolCallActionType$findInPage;
+
+@override int get hashCode => 'find_in_page'.hashCode;
+
+@override String toString() => 'WebSearchToolCallActionType(find_in_page)';
+
+ }
+@immutable final class WebSearchToolCallActionType$Unknown extends WebSearchToolCallActionType {const WebSearchToolCallActionType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is WebSearchToolCallActionType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WebSearchToolCallActionType($value)';
+
+ }
+/// An object describing the specific action taken in this web search call.
 /// Includes details on how the model used the web (search, open_page, find_in_page).
 /// 
 sealed class WebSearchToolCallAction {const WebSearchToolCallAction();
@@ -24,7 +91,7 @@ factory WebSearchToolCallAction.openPage({Uri? url}) { return WebSearchToolCallA
 factory WebSearchToolCallAction.findInPage({required Uri url, required String pattern, }) { return WebSearchToolCallActionFindInPage(WebSearchActionFind(type: WebSearchActionFindType.fromJson('find_in_page'), url: url, pattern: pattern)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+WebSearchToolCallActionType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is WebSearchToolCallAction$Unknown;
@@ -42,9 +109,9 @@ factory WebSearchToolCallActionSearch.fromJson(Map<String, dynamic> json) { retu
 
 final WebSearchActionSearch webSearchActionSearch;
 
-@override String get type => 'search';
+@override WebSearchToolCallActionType get type => WebSearchToolCallActionType.fromJson('search');
 
-@override Map<String, dynamic> toJson() => {...webSearchActionSearch.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...webSearchActionSearch.toJson(), 'type': type.toJson()};
 
 WebSearchToolCallActionSearch copyWith({String? query, List<String>? Function()? queries, List<Sources>? Function()? sources, }) { return WebSearchToolCallActionSearch(webSearchActionSearch.copyWith(
   query: query,
@@ -65,9 +132,9 @@ factory WebSearchToolCallActionOpenPage.fromJson(Map<String, dynamic> json) { re
 
 final WebSearchActionOpenPage webSearchActionOpenPage;
 
-@override String get type => 'open_page';
+@override WebSearchToolCallActionType get type => WebSearchToolCallActionType.fromJson('open_page');
 
-@override Map<String, dynamic> toJson() => {...webSearchActionOpenPage.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...webSearchActionOpenPage.toJson(), 'type': type.toJson()};
 
 WebSearchToolCallActionOpenPage copyWith({Uri? Function()? url}) { return WebSearchToolCallActionOpenPage(webSearchActionOpenPage.copyWith(
   url: url,
@@ -86,9 +153,9 @@ factory WebSearchToolCallActionFindInPage.fromJson(Map<String, dynamic> json) { 
 
 final WebSearchActionFind webSearchActionFind;
 
-@override String get type => 'find_in_page';
+@override WebSearchToolCallActionType get type => WebSearchToolCallActionType.fromJson('find_in_page');
 
-@override Map<String, dynamic> toJson() => {...webSearchActionFind.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...webSearchActionFind.toJson(), 'type': type.toJson()};
 
 WebSearchToolCallActionFindInPage copyWith({Uri? url, String? pattern, }) { return WebSearchToolCallActionFindInPage(webSearchActionFind.copyWith(
   url: url,
@@ -108,7 +175,7 @@ WebSearchToolCallActionFindInPage copyWith({Uri? url, String? pattern, }) { retu
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override WebSearchToolCallActionType get type => WebSearchToolCallActionType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

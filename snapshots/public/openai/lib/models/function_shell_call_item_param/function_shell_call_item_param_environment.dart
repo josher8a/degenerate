@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FunctionShellCallItemParam (inline: Environment)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_param.dart';import 'package:pub_openai/models/local_environment_param.dart';import 'package:pub_openai/models/local_skill_param.dart';/// The environment to execute the shell commands in.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_param.dart';import 'package:pub_openai/models/local_environment_param.dart';import 'package:pub_openai/models/local_skill_param.dart';sealed class FunctionShellCallItemParamEnvironmentType {const FunctionShellCallItemParamEnvironmentType();
+
+factory FunctionShellCallItemParamEnvironmentType.fromJson(String json) { return switch (json) {
+  'local' => local,
+  'container_reference' => containerReference,
+  _ => FunctionShellCallItemParamEnvironmentType$Unknown(json),
+}; }
+
+static const FunctionShellCallItemParamEnvironmentType local = FunctionShellCallItemParamEnvironmentType$local._();
+
+static const FunctionShellCallItemParamEnvironmentType containerReference = FunctionShellCallItemParamEnvironmentType$containerReference._();
+
+static const List<FunctionShellCallItemParamEnvironmentType> values = [local, containerReference];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is FunctionShellCallItemParamEnvironmentType$Unknown;
+
+ }
+@immutable final class FunctionShellCallItemParamEnvironmentType$local extends FunctionShellCallItemParamEnvironmentType {const FunctionShellCallItemParamEnvironmentType$local._();
+
+@override String get value => 'local';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionShellCallItemParamEnvironmentType$local;
+
+@override int get hashCode => 'local'.hashCode;
+
+@override String toString() => 'FunctionShellCallItemParamEnvironmentType(local)';
+
+ }
+@immutable final class FunctionShellCallItemParamEnvironmentType$containerReference extends FunctionShellCallItemParamEnvironmentType {const FunctionShellCallItemParamEnvironmentType$containerReference._();
+
+@override String get value => 'container_reference';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionShellCallItemParamEnvironmentType$containerReference;
+
+@override int get hashCode => 'container_reference'.hashCode;
+
+@override String toString() => 'FunctionShellCallItemParamEnvironmentType(container_reference)';
+
+ }
+@immutable final class FunctionShellCallItemParamEnvironmentType$Unknown extends FunctionShellCallItemParamEnvironmentType {const FunctionShellCallItemParamEnvironmentType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionShellCallItemParamEnvironmentType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FunctionShellCallItemParamEnvironmentType($value)';
+
+ }
+/// The environment to execute the shell commands in.
 sealed class FunctionShellCallItemParamEnvironment {const FunctionShellCallItemParamEnvironment();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -18,7 +71,7 @@ factory FunctionShellCallItemParamEnvironment.local({List<LocalSkillParam>? skil
 factory FunctionShellCallItemParamEnvironment.containerReference({required String containerId}) { return FunctionShellCallItemParamEnvironmentContainerReference(ContainerReferenceParam(containerId: containerId)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+FunctionShellCallItemParamEnvironmentType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is FunctionShellCallItemParamEnvironment$Unknown;
@@ -35,9 +88,9 @@ factory FunctionShellCallItemParamEnvironmentLocal.fromJson(Map<String, dynamic>
 
 final LocalEnvironmentParam localEnvironmentParam;
 
-@override String get type => 'local';
+@override FunctionShellCallItemParamEnvironmentType get type => FunctionShellCallItemParamEnvironmentType.fromJson('local');
 
-@override Map<String, dynamic> toJson() => {...localEnvironmentParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...localEnvironmentParam.toJson(), 'type': type.toJson()};
 
 FunctionShellCallItemParamEnvironmentLocal copyWith({List<LocalSkillParam>? Function()? skills}) { return FunctionShellCallItemParamEnvironmentLocal(localEnvironmentParam.copyWith(
   skills: skills,
@@ -56,9 +109,9 @@ factory FunctionShellCallItemParamEnvironmentContainerReference.fromJson(Map<Str
 
 final ContainerReferenceParam containerReferenceParam;
 
-@override String get type => 'container_reference';
+@override FunctionShellCallItemParamEnvironmentType get type => FunctionShellCallItemParamEnvironmentType.fromJson('container_reference');
 
-@override Map<String, dynamic> toJson() => {...containerReferenceParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...containerReferenceParam.toJson(), 'type': type.toJson()};
 
 FunctionShellCallItemParamEnvironmentContainerReference copyWith({String? containerId}) { return FunctionShellCallItemParamEnvironmentContainerReference(containerReferenceParam.copyWith(
   containerId: containerId,
@@ -77,7 +130,7 @@ FunctionShellCallItemParamEnvironmentContainerReference copyWith({String? contai
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override FunctionShellCallItemParamEnvironmentType get type => FunctionShellCallItemParamEnvironmentType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

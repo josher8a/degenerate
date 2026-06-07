@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ImageGenStreamEvent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_background.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_output_format.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_quality.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_size.dart';import 'package:pub_openai/models/image_gen_completed_event.dart';import 'package:pub_openai/models/image_gen_partial_image_event.dart';import 'package:pub_openai/models/images_usage.dart';sealed class ImageGenStreamEvent {const ImageGenStreamEvent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_background.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_output_format.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_quality.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_size.dart';import 'package:pub_openai/models/image_gen_completed_event.dart';import 'package:pub_openai/models/image_gen_partial_image_event.dart';import 'package:pub_openai/models/images_usage.dart';sealed class ImageGenStreamEventType {const ImageGenStreamEventType();
+
+factory ImageGenStreamEventType.fromJson(String json) { return switch (json) {
+  'image_generation.partial_image' => imageGenerationPartialImage,
+  'image_generation.completed' => imageGenerationCompleted,
+  _ => ImageGenStreamEventType$Unknown(json),
+}; }
+
+static const ImageGenStreamEventType imageGenerationPartialImage = ImageGenStreamEventType$imageGenerationPartialImage._();
+
+static const ImageGenStreamEventType imageGenerationCompleted = ImageGenStreamEventType$imageGenerationCompleted._();
+
+static const List<ImageGenStreamEventType> values = [imageGenerationPartialImage, imageGenerationCompleted];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ImageGenStreamEventType$Unknown;
+
+ }
+@immutable final class ImageGenStreamEventType$imageGenerationPartialImage extends ImageGenStreamEventType {const ImageGenStreamEventType$imageGenerationPartialImage._();
+
+@override String get value => 'image_generation.partial_image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenStreamEventType$imageGenerationPartialImage;
+
+@override int get hashCode => 'image_generation.partial_image'.hashCode;
+
+@override String toString() => 'ImageGenStreamEventType(image_generation.partial_image)';
+
+ }
+@immutable final class ImageGenStreamEventType$imageGenerationCompleted extends ImageGenStreamEventType {const ImageGenStreamEventType$imageGenerationCompleted._();
+
+@override String get value => 'image_generation.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenStreamEventType$imageGenerationCompleted;
+
+@override int get hashCode => 'image_generation.completed'.hashCode;
+
+@override String toString() => 'ImageGenStreamEventType(image_generation.completed)';
+
+ }
+@immutable final class ImageGenStreamEventType$Unknown extends ImageGenStreamEventType {const ImageGenStreamEventType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageGenStreamEventType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ImageGenStreamEventType($value)';
+
+ }
+sealed class ImageGenStreamEvent {const ImageGenStreamEvent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ImageGenStreamEvent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -17,7 +70,7 @@ factory ImageGenStreamEvent.imageGenerationPartialImage({required String b64Json
 factory ImageGenStreamEvent.imageGenerationCompleted({required String b64Json, required int createdAt, required ImageEditCompletedEventSize size, required ImageEditCompletedEventQuality quality, required ImageEditCompletedEventBackground background, required ImageEditCompletedEventOutputFormat outputFormat, required ImagesUsage usage, }) { return ImageGenStreamEventImageGenerationCompleted(ImageGenCompletedEvent(type: 'image_generation.completed', b64Json: b64Json, createdAt: createdAt, size: size, quality: quality, background: background, outputFormat: outputFormat, usage: usage)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+ImageGenStreamEventType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ImageGenStreamEvent$Unknown;
@@ -46,9 +99,9 @@ factory ImageGenStreamEventImageGenerationPartialImage.fromJson(Map<String, dyna
 
 final ImageGenPartialImageEvent imageGenPartialImageEvent;
 
-@override String get type => 'image_generation.partial_image';
+@override ImageGenStreamEventType get type => ImageGenStreamEventType.fromJson('image_generation.partial_image');
 
-@override Map<String, dynamic> toJson() => {...imageGenPartialImageEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...imageGenPartialImageEvent.toJson(), 'type': type.toJson()};
 
 ImageGenStreamEventImageGenerationPartialImage copyWith({String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, int? partialImageIndex, }) { return ImageGenStreamEventImageGenerationPartialImage(imageGenPartialImageEvent.copyWith(
   b64Json: b64Json,
@@ -85,9 +138,9 @@ factory ImageGenStreamEventImageGenerationCompleted.fromJson(Map<String, dynamic
 
 final ImageGenCompletedEvent imageGenCompletedEvent;
 
-@override String get type => 'image_generation.completed';
+@override ImageGenStreamEventType get type => ImageGenStreamEventType.fromJson('image_generation.completed');
 
-@override Map<String, dynamic> toJson() => {...imageGenCompletedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...imageGenCompletedEvent.toJson(), 'type': type.toJson()};
 
 ImageGenStreamEventImageGenerationCompleted copyWith({String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, ImagesUsage? usage, }) { return ImageGenStreamEventImageGenerationCompleted(imageGenCompletedEvent.copyWith(
   b64Json: b64Json,
@@ -136,7 +189,7 @@ late final ImageEditCompletedEventBackground _background = ImageEditCompletedEve
 
 late final ImageEditCompletedEventOutputFormat _outputFormat = ImageEditCompletedEventOutputFormat.fromJson(json['output_format'] as String);
 
-@override String get type => json['type'] as String? ?? '';
+@override ImageGenStreamEventType get type => ImageGenStreamEventType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

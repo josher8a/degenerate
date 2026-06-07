@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ImageEditStreamEvent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_edit_completed_event.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_background.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_output_format.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_quality.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_size.dart';import 'package:pub_openai/models/image_edit_partial_image_event.dart';import 'package:pub_openai/models/images_usage.dart';sealed class ImageEditStreamEvent {const ImageEditStreamEvent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_edit_completed_event.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_background.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_output_format.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_quality.dart';import 'package:pub_openai/models/image_edit_completed_event/image_edit_completed_event_size.dart';import 'package:pub_openai/models/image_edit_partial_image_event.dart';import 'package:pub_openai/models/images_usage.dart';sealed class ImageEditStreamEventType {const ImageEditStreamEventType();
+
+factory ImageEditStreamEventType.fromJson(String json) { return switch (json) {
+  'image_edit.partial_image' => imageEditPartialImage,
+  'image_edit.completed' => imageEditCompleted,
+  _ => ImageEditStreamEventType$Unknown(json),
+}; }
+
+static const ImageEditStreamEventType imageEditPartialImage = ImageEditStreamEventType$imageEditPartialImage._();
+
+static const ImageEditStreamEventType imageEditCompleted = ImageEditStreamEventType$imageEditCompleted._();
+
+static const List<ImageEditStreamEventType> values = [imageEditPartialImage, imageEditCompleted];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ImageEditStreamEventType$Unknown;
+
+ }
+@immutable final class ImageEditStreamEventType$imageEditPartialImage extends ImageEditStreamEventType {const ImageEditStreamEventType$imageEditPartialImage._();
+
+@override String get value => 'image_edit.partial_image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageEditStreamEventType$imageEditPartialImage;
+
+@override int get hashCode => 'image_edit.partial_image'.hashCode;
+
+@override String toString() => 'ImageEditStreamEventType(image_edit.partial_image)';
+
+ }
+@immutable final class ImageEditStreamEventType$imageEditCompleted extends ImageEditStreamEventType {const ImageEditStreamEventType$imageEditCompleted._();
+
+@override String get value => 'image_edit.completed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageEditStreamEventType$imageEditCompleted;
+
+@override int get hashCode => 'image_edit.completed'.hashCode;
+
+@override String toString() => 'ImageEditStreamEventType(image_edit.completed)';
+
+ }
+@immutable final class ImageEditStreamEventType$Unknown extends ImageEditStreamEventType {const ImageEditStreamEventType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ImageEditStreamEventType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ImageEditStreamEventType($value)';
+
+ }
+sealed class ImageEditStreamEvent {const ImageEditStreamEvent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ImageEditStreamEvent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -17,7 +70,7 @@ factory ImageEditStreamEvent.imageEditPartialImage({required String b64Json, req
 factory ImageEditStreamEvent.imageEditCompleted({required String b64Json, required int createdAt, required ImageEditCompletedEventSize size, required ImageEditCompletedEventQuality quality, required ImageEditCompletedEventBackground background, required ImageEditCompletedEventOutputFormat outputFormat, required ImagesUsage usage, }) { return ImageEditStreamEventImageEditCompleted(ImageEditCompletedEvent(type: 'image_edit.completed', b64Json: b64Json, createdAt: createdAt, size: size, quality: quality, background: background, outputFormat: outputFormat, usage: usage)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+ImageEditStreamEventType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ImageEditStreamEvent$Unknown;
@@ -46,9 +99,9 @@ factory ImageEditStreamEventImageEditPartialImage.fromJson(Map<String, dynamic> 
 
 final ImageEditPartialImageEvent imageEditPartialImageEvent;
 
-@override String get type => 'image_edit.partial_image';
+@override ImageEditStreamEventType get type => ImageEditStreamEventType.fromJson('image_edit.partial_image');
 
-@override Map<String, dynamic> toJson() => {...imageEditPartialImageEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...imageEditPartialImageEvent.toJson(), 'type': type.toJson()};
 
 ImageEditStreamEventImageEditPartialImage copyWith({String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, int? partialImageIndex, }) { return ImageEditStreamEventImageEditPartialImage(imageEditPartialImageEvent.copyWith(
   b64Json: b64Json,
@@ -85,9 +138,9 @@ factory ImageEditStreamEventImageEditCompleted.fromJson(Map<String, dynamic> jso
 
 final ImageEditCompletedEvent imageEditCompletedEvent;
 
-@override String get type => 'image_edit.completed';
+@override ImageEditStreamEventType get type => ImageEditStreamEventType.fromJson('image_edit.completed');
 
-@override Map<String, dynamic> toJson() => {...imageEditCompletedEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...imageEditCompletedEvent.toJson(), 'type': type.toJson()};
 
 ImageEditStreamEventImageEditCompleted copyWith({String? b64Json, int? createdAt, ImageEditCompletedEventSize? size, ImageEditCompletedEventQuality? quality, ImageEditCompletedEventBackground? background, ImageEditCompletedEventOutputFormat? outputFormat, ImagesUsage? usage, }) { return ImageEditStreamEventImageEditCompleted(imageEditCompletedEvent.copyWith(
   b64Json: b64Json,
@@ -136,7 +189,7 @@ late final ImageEditCompletedEventBackground _background = ImageEditCompletedEve
 
 late final ImageEditCompletedEventOutputFormat _outputFormat = ImageEditCompletedEventOutputFormat.fromJson(json['output_format'] as String);
 
-@override String get type => json['type'] as String? ?? '';
+@override ImageEditStreamEventType get type => ImageEditStreamEventType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

@@ -13,7 +13,7 @@ factory InfraServiceConfig.fromJson(Map<String, dynamic> json) { return switch (
 factory InfraServiceConfig.http({required InfraServiceHost host, required String name, DateTime? createdAt, String? serviceId, DateTime? updatedAt, }) { return InfraServiceConfigHttp(InfraServiceCommon(type: InfraServiceType.fromJson('http'), createdAt: createdAt, host: host, name: name, serviceId: serviceId, updatedAt: updatedAt)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+InfraServiceType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is InfraServiceConfig$Unknown;
@@ -29,9 +29,9 @@ factory InfraServiceConfigHttp.fromJson(Map<String, dynamic> json) { return Infr
 
 final InfraServiceCommon infraServiceCommon;
 
-@override String get type => 'http';
+@override InfraServiceType get type => InfraServiceType.fromJson('http');
 
-@override Map<String, dynamic> toJson() => {...infraServiceCommon.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...infraServiceCommon.toJson(), 'type': type.toJson()};
 
 InfraServiceConfigHttp copyWith({DateTime? Function()? createdAt, InfraServiceHost? host, String? name, String? Function()? serviceId, DateTime? Function()? updatedAt, }) { return InfraServiceConfigHttp(infraServiceCommon.copyWith(
   createdAt: createdAt,
@@ -54,7 +54,7 @@ InfraServiceConfigHttp copyWith({DateTime? Function()? createdAt, InfraServiceHo
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override InfraServiceType get type => InfraServiceType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CodeInterpreterToolCall (inline: Outputs)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_image.dart';import 'package:pub_openai/models/code_interpreter_output_logs.dart';sealed class CodeInterpreterToolCallOutputs {const CodeInterpreterToolCallOutputs();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/code_interpreter_output_image.dart';import 'package:pub_openai/models/code_interpreter_output_logs.dart';sealed class CodeInterpreterToolCallOutputsType {const CodeInterpreterToolCallOutputsType();
+
+factory CodeInterpreterToolCallOutputsType.fromJson(String json) { return switch (json) {
+  'logs' => logs,
+  'image' => image,
+  _ => CodeInterpreterToolCallOutputsType$Unknown(json),
+}; }
+
+static const CodeInterpreterToolCallOutputsType logs = CodeInterpreterToolCallOutputsType$logs._();
+
+static const CodeInterpreterToolCallOutputsType image = CodeInterpreterToolCallOutputsType$image._();
+
+static const List<CodeInterpreterToolCallOutputsType> values = [logs, image];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is CodeInterpreterToolCallOutputsType$Unknown;
+
+ }
+@immutable final class CodeInterpreterToolCallOutputsType$logs extends CodeInterpreterToolCallOutputsType {const CodeInterpreterToolCallOutputsType$logs._();
+
+@override String get value => 'logs';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeInterpreterToolCallOutputsType$logs;
+
+@override int get hashCode => 'logs'.hashCode;
+
+@override String toString() => 'CodeInterpreterToolCallOutputsType(logs)';
+
+ }
+@immutable final class CodeInterpreterToolCallOutputsType$image extends CodeInterpreterToolCallOutputsType {const CodeInterpreterToolCallOutputsType$image._();
+
+@override String get value => 'image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeInterpreterToolCallOutputsType$image;
+
+@override int get hashCode => 'image'.hashCode;
+
+@override String toString() => 'CodeInterpreterToolCallOutputsType(image)';
+
+ }
+@immutable final class CodeInterpreterToolCallOutputsType$Unknown extends CodeInterpreterToolCallOutputsType {const CodeInterpreterToolCallOutputsType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeInterpreterToolCallOutputsType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CodeInterpreterToolCallOutputsType($value)';
+
+ }
+sealed class CodeInterpreterToolCallOutputs {const CodeInterpreterToolCallOutputs();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CodeInterpreterToolCallOutputs.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -17,7 +70,7 @@ factory CodeInterpreterToolCallOutputs.logs({required String logs}) { return Cod
 factory CodeInterpreterToolCallOutputs.image({required String url}) { return CodeInterpreterToolCallOutputsImage(CodeInterpreterOutputImage(url: url)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+CodeInterpreterToolCallOutputsType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CodeInterpreterToolCallOutputs$Unknown;
@@ -34,9 +87,9 @@ factory CodeInterpreterToolCallOutputsLogs.fromJson(Map<String, dynamic> json) {
 
 final CodeInterpreterOutputLogs codeInterpreterOutputLogs;
 
-@override String get type => 'logs';
+@override CodeInterpreterToolCallOutputsType get type => CodeInterpreterToolCallOutputsType.fromJson('logs');
 
-@override Map<String, dynamic> toJson() => {...codeInterpreterOutputLogs.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...codeInterpreterOutputLogs.toJson(), 'type': type.toJson()};
 
 CodeInterpreterToolCallOutputsLogs copyWith({String? logs}) { return CodeInterpreterToolCallOutputsLogs(codeInterpreterOutputLogs.copyWith(
   logs: logs,
@@ -55,9 +108,9 @@ factory CodeInterpreterToolCallOutputsImage.fromJson(Map<String, dynamic> json) 
 
 final CodeInterpreterOutputImage codeInterpreterOutputImage;
 
-@override String get type => 'image';
+@override CodeInterpreterToolCallOutputsType get type => CodeInterpreterToolCallOutputsType.fromJson('image');
 
-@override Map<String, dynamic> toJson() => {...codeInterpreterOutputImage.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...codeInterpreterOutputImage.toJson(), 'type': type.toJson()};
 
 CodeInterpreterToolCallOutputsImage copyWith({String? url}) { return CodeInterpreterToolCallOutputsImage(codeInterpreterOutputImage.copyWith(
   url: url,
@@ -76,7 +129,7 @@ CodeInterpreterToolCallOutputsImage copyWith({String? url}) { return CodeInterpr
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override CodeInterpreterToolCallOutputsType get type => CodeInterpreterToolCallOutputsType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

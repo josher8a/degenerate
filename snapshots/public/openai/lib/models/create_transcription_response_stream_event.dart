@@ -1,7 +1,74 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateTranscriptionResponseStreamEvent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/transcript_text_delta_event.dart';import 'package:pub_openai/models/transcript_text_delta_event/transcript_text_delta_event_logprobs.dart';import 'package:pub_openai/models/transcript_text_done_event.dart';import 'package:pub_openai/models/transcript_text_segment_event.dart';import 'package:pub_openai/models/transcript_text_usage_tokens.dart';sealed class CreateTranscriptionResponseStreamEvent {const CreateTranscriptionResponseStreamEvent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/transcript_text_delta_event.dart';import 'package:pub_openai/models/transcript_text_delta_event/transcript_text_delta_event_logprobs.dart';import 'package:pub_openai/models/transcript_text_done_event.dart';import 'package:pub_openai/models/transcript_text_segment_event.dart';import 'package:pub_openai/models/transcript_text_usage_tokens.dart';sealed class CreateTranscriptionResponseStreamEventType {const CreateTranscriptionResponseStreamEventType();
+
+factory CreateTranscriptionResponseStreamEventType.fromJson(String json) { return switch (json) {
+  'transcript.text.segment' => transcriptTextSegment,
+  'transcript.text.delta' => transcriptTextDelta,
+  'transcript.text.done' => transcriptTextDone,
+  _ => CreateTranscriptionResponseStreamEventType$Unknown(json),
+}; }
+
+static const CreateTranscriptionResponseStreamEventType transcriptTextSegment = CreateTranscriptionResponseStreamEventType$transcriptTextSegment._();
+
+static const CreateTranscriptionResponseStreamEventType transcriptTextDelta = CreateTranscriptionResponseStreamEventType$transcriptTextDelta._();
+
+static const CreateTranscriptionResponseStreamEventType transcriptTextDone = CreateTranscriptionResponseStreamEventType$transcriptTextDone._();
+
+static const List<CreateTranscriptionResponseStreamEventType> values = [transcriptTextSegment, transcriptTextDelta, transcriptTextDone];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is CreateTranscriptionResponseStreamEventType$Unknown;
+
+ }
+@immutable final class CreateTranscriptionResponseStreamEventType$transcriptTextSegment extends CreateTranscriptionResponseStreamEventType {const CreateTranscriptionResponseStreamEventType$transcriptTextSegment._();
+
+@override String get value => 'transcript.text.segment';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateTranscriptionResponseStreamEventType$transcriptTextSegment;
+
+@override int get hashCode => 'transcript.text.segment'.hashCode;
+
+@override String toString() => 'CreateTranscriptionResponseStreamEventType(transcript.text.segment)';
+
+ }
+@immutable final class CreateTranscriptionResponseStreamEventType$transcriptTextDelta extends CreateTranscriptionResponseStreamEventType {const CreateTranscriptionResponseStreamEventType$transcriptTextDelta._();
+
+@override String get value => 'transcript.text.delta';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateTranscriptionResponseStreamEventType$transcriptTextDelta;
+
+@override int get hashCode => 'transcript.text.delta'.hashCode;
+
+@override String toString() => 'CreateTranscriptionResponseStreamEventType(transcript.text.delta)';
+
+ }
+@immutable final class CreateTranscriptionResponseStreamEventType$transcriptTextDone extends CreateTranscriptionResponseStreamEventType {const CreateTranscriptionResponseStreamEventType$transcriptTextDone._();
+
+@override String get value => 'transcript.text.done';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateTranscriptionResponseStreamEventType$transcriptTextDone;
+
+@override int get hashCode => 'transcript.text.done'.hashCode;
+
+@override String toString() => 'CreateTranscriptionResponseStreamEventType(transcript.text.done)';
+
+ }
+@immutable final class CreateTranscriptionResponseStreamEventType$Unknown extends CreateTranscriptionResponseStreamEventType {const CreateTranscriptionResponseStreamEventType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is CreateTranscriptionResponseStreamEventType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CreateTranscriptionResponseStreamEventType($value)';
+
+ }
+sealed class CreateTranscriptionResponseStreamEvent {const CreateTranscriptionResponseStreamEvent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory CreateTranscriptionResponseStreamEvent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -21,7 +88,7 @@ factory CreateTranscriptionResponseStreamEvent.transcriptTextDelta({required Str
 factory CreateTranscriptionResponseStreamEvent.transcriptTextDone({required String text, List<TranscriptTextDeltaEventLogprobs>? logprobs, TranscriptTextUsageTokens? usage, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDone(TranscriptTextDoneEvent(type: 'transcript.text.done', text: text, logprobs: logprobs, usage: usage)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+CreateTranscriptionResponseStreamEventType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CreateTranscriptionResponseStreamEvent$Unknown;
@@ -39,9 +106,9 @@ factory CreateTranscriptionResponseStreamEventTranscriptTextSegment.fromJson(Map
 
 final TranscriptTextSegmentEvent transcriptTextSegmentEvent;
 
-@override String get type => 'transcript.text.segment';
+@override CreateTranscriptionResponseStreamEventType get type => CreateTranscriptionResponseStreamEventType.fromJson('transcript.text.segment');
 
-@override Map<String, dynamic> toJson() => {...transcriptTextSegmentEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...transcriptTextSegmentEvent.toJson(), 'type': type.toJson()};
 
 CreateTranscriptionResponseStreamEventTranscriptTextSegment copyWith({String? id, double? start, double? end, String? text, String? speaker, }) { return CreateTranscriptionResponseStreamEventTranscriptTextSegment(transcriptTextSegmentEvent.copyWith(
   id: id,
@@ -64,9 +131,9 @@ factory CreateTranscriptionResponseStreamEventTranscriptTextDelta.fromJson(Map<S
 
 final TranscriptTextDeltaEvent transcriptTextDeltaEvent;
 
-@override String get type => 'transcript.text.delta';
+@override CreateTranscriptionResponseStreamEventType get type => CreateTranscriptionResponseStreamEventType.fromJson('transcript.text.delta');
 
-@override Map<String, dynamic> toJson() => {...transcriptTextDeltaEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...transcriptTextDeltaEvent.toJson(), 'type': type.toJson()};
 
 CreateTranscriptionResponseStreamEventTranscriptTextDelta copyWith({String? delta, List<TranscriptTextDeltaEventLogprobs>? Function()? logprobs, String? Function()? segmentId, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDelta(transcriptTextDeltaEvent.copyWith(
   delta: delta,
@@ -87,9 +154,9 @@ factory CreateTranscriptionResponseStreamEventTranscriptTextDone.fromJson(Map<St
 
 final TranscriptTextDoneEvent transcriptTextDoneEvent;
 
-@override String get type => 'transcript.text.done';
+@override CreateTranscriptionResponseStreamEventType get type => CreateTranscriptionResponseStreamEventType.fromJson('transcript.text.done');
 
-@override Map<String, dynamic> toJson() => {...transcriptTextDoneEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...transcriptTextDoneEvent.toJson(), 'type': type.toJson()};
 
 CreateTranscriptionResponseStreamEventTranscriptTextDone copyWith({String? text, List<TranscriptTextDeltaEventLogprobs>? Function()? logprobs, TranscriptTextUsageTokens? Function()? usage, }) { return CreateTranscriptionResponseStreamEventTranscriptTextDone(transcriptTextDoneEvent.copyWith(
   text: text,
@@ -110,7 +177,7 @@ CreateTranscriptionResponseStreamEventTranscriptTextDone copyWith({String? text,
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override CreateTranscriptionResponseStreamEventType get type => CreateTranscriptionResponseStreamEventType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

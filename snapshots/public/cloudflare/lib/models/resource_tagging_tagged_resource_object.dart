@@ -1,7 +1,410 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResourceTaggingTaggedResourceObject
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_access_application_id.dart';import 'package:pub_cloudflare/models/resource_tagging_etag.dart';import 'package:pub_cloudflare/models/resource_tagging_identifier.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_name.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object_access_application_policy_base.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object_account_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object_worker_version_base.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object_zone_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_worker_id.dart';sealed class ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObject();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/resource_tagging_access_application_id.dart';import 'package:pub_cloudflare/models/resource_tagging_etag.dart';import 'package:pub_cloudflare/models/resource_tagging_identifier.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_id.dart';import 'package:pub_cloudflare/models/resource_tagging_resource_name.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object_access_application_policy_base.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object_account_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object_worker_version_base.dart';import 'package:pub_cloudflare/models/resource_tagging_tagged_resource_object_zone_level_base.dart';import 'package:pub_cloudflare/models/resource_tagging_worker_id.dart';sealed class ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType();
+
+factory ResourceTaggingTaggedResourceObjectType.fromJson(String json) { return switch (json) {
+  'access_application' => accessApplication,
+  'access_application_policy' => accessApplicationPolicy,
+  'access_group' => accessGroup,
+  'account' => account,
+  'ai_gateway' => aiGateway,
+  'alerting_policy' => alertingPolicy,
+  'alerting_webhook' => alertingWebhook,
+  'api_gateway_operation' => apiGatewayOperation,
+  'cloudflared_tunnel' => cloudflaredTunnel,
+  'custom_certificate' => customCertificate,
+  'custom_hostname' => customHostname,
+  'd1_database' => d1Database,
+  'dns_record' => dnsRecord,
+  'durable_object_namespace' => durableObjectNamespace,
+  'gateway_list' => gatewayList,
+  'gateway_rule' => gatewayRule,
+  'image' => image,
+  'kv_namespace' => kvNamespace,
+  'managed_client_certificate' => managedClientCertificate,
+  'queue' => queue,
+  'r2_bucket' => r2Bucket,
+  'resource_share' => resourceShare,
+  'stream_live_input' => streamLiveInput,
+  'stream_video' => streamVideo,
+  'worker' => worker,
+  'worker_version' => workerVersion,
+  'zone' => zone,
+  _ => ResourceTaggingTaggedResourceObjectType$Unknown(json),
+}; }
+
+static const ResourceTaggingTaggedResourceObjectType accessApplication = ResourceTaggingTaggedResourceObjectType$accessApplication._();
+
+static const ResourceTaggingTaggedResourceObjectType accessApplicationPolicy = ResourceTaggingTaggedResourceObjectType$accessApplicationPolicy._();
+
+static const ResourceTaggingTaggedResourceObjectType accessGroup = ResourceTaggingTaggedResourceObjectType$accessGroup._();
+
+static const ResourceTaggingTaggedResourceObjectType account = ResourceTaggingTaggedResourceObjectType$account._();
+
+static const ResourceTaggingTaggedResourceObjectType aiGateway = ResourceTaggingTaggedResourceObjectType$aiGateway._();
+
+static const ResourceTaggingTaggedResourceObjectType alertingPolicy = ResourceTaggingTaggedResourceObjectType$alertingPolicy._();
+
+static const ResourceTaggingTaggedResourceObjectType alertingWebhook = ResourceTaggingTaggedResourceObjectType$alertingWebhook._();
+
+static const ResourceTaggingTaggedResourceObjectType apiGatewayOperation = ResourceTaggingTaggedResourceObjectType$apiGatewayOperation._();
+
+static const ResourceTaggingTaggedResourceObjectType cloudflaredTunnel = ResourceTaggingTaggedResourceObjectType$cloudflaredTunnel._();
+
+static const ResourceTaggingTaggedResourceObjectType customCertificate = ResourceTaggingTaggedResourceObjectType$customCertificate._();
+
+static const ResourceTaggingTaggedResourceObjectType customHostname = ResourceTaggingTaggedResourceObjectType$customHostname._();
+
+static const ResourceTaggingTaggedResourceObjectType d1Database = ResourceTaggingTaggedResourceObjectType$d1Database._();
+
+static const ResourceTaggingTaggedResourceObjectType dnsRecord = ResourceTaggingTaggedResourceObjectType$dnsRecord._();
+
+static const ResourceTaggingTaggedResourceObjectType durableObjectNamespace = ResourceTaggingTaggedResourceObjectType$durableObjectNamespace._();
+
+static const ResourceTaggingTaggedResourceObjectType gatewayList = ResourceTaggingTaggedResourceObjectType$gatewayList._();
+
+static const ResourceTaggingTaggedResourceObjectType gatewayRule = ResourceTaggingTaggedResourceObjectType$gatewayRule._();
+
+static const ResourceTaggingTaggedResourceObjectType image = ResourceTaggingTaggedResourceObjectType$image._();
+
+static const ResourceTaggingTaggedResourceObjectType kvNamespace = ResourceTaggingTaggedResourceObjectType$kvNamespace._();
+
+static const ResourceTaggingTaggedResourceObjectType managedClientCertificate = ResourceTaggingTaggedResourceObjectType$managedClientCertificate._();
+
+static const ResourceTaggingTaggedResourceObjectType queue = ResourceTaggingTaggedResourceObjectType$queue._();
+
+static const ResourceTaggingTaggedResourceObjectType r2Bucket = ResourceTaggingTaggedResourceObjectType$r2Bucket._();
+
+static const ResourceTaggingTaggedResourceObjectType resourceShare = ResourceTaggingTaggedResourceObjectType$resourceShare._();
+
+static const ResourceTaggingTaggedResourceObjectType streamLiveInput = ResourceTaggingTaggedResourceObjectType$streamLiveInput._();
+
+static const ResourceTaggingTaggedResourceObjectType streamVideo = ResourceTaggingTaggedResourceObjectType$streamVideo._();
+
+static const ResourceTaggingTaggedResourceObjectType worker = ResourceTaggingTaggedResourceObjectType$worker._();
+
+static const ResourceTaggingTaggedResourceObjectType workerVersion = ResourceTaggingTaggedResourceObjectType$workerVersion._();
+
+static const ResourceTaggingTaggedResourceObjectType zone = ResourceTaggingTaggedResourceObjectType$zone._();
+
+static const List<ResourceTaggingTaggedResourceObjectType> values = [accessApplication, accessApplicationPolicy, accessGroup, account, aiGateway, alertingPolicy, alertingWebhook, apiGatewayOperation, cloudflaredTunnel, customCertificate, customHostname, d1Database, dnsRecord, durableObjectNamespace, gatewayList, gatewayRule, image, kvNamespace, managedClientCertificate, queue, r2Bucket, resourceShare, streamLiveInput, streamVideo, worker, workerVersion, zone];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ResourceTaggingTaggedResourceObjectType$Unknown;
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$accessApplication extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$accessApplication._();
+
+@override String get value => 'access_application';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$accessApplication;
+
+@override int get hashCode => 'access_application'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(access_application)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$accessApplicationPolicy extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$accessApplicationPolicy._();
+
+@override String get value => 'access_application_policy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$accessApplicationPolicy;
+
+@override int get hashCode => 'access_application_policy'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(access_application_policy)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$accessGroup extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$accessGroup._();
+
+@override String get value => 'access_group';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$accessGroup;
+
+@override int get hashCode => 'access_group'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(access_group)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$account extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$account._();
+
+@override String get value => 'account';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$account;
+
+@override int get hashCode => 'account'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(account)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$aiGateway extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$aiGateway._();
+
+@override String get value => 'ai_gateway';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$aiGateway;
+
+@override int get hashCode => 'ai_gateway'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(ai_gateway)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$alertingPolicy extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$alertingPolicy._();
+
+@override String get value => 'alerting_policy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$alertingPolicy;
+
+@override int get hashCode => 'alerting_policy'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(alerting_policy)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$alertingWebhook extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$alertingWebhook._();
+
+@override String get value => 'alerting_webhook';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$alertingWebhook;
+
+@override int get hashCode => 'alerting_webhook'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(alerting_webhook)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$apiGatewayOperation extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$apiGatewayOperation._();
+
+@override String get value => 'api_gateway_operation';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$apiGatewayOperation;
+
+@override int get hashCode => 'api_gateway_operation'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(api_gateway_operation)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$cloudflaredTunnel extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$cloudflaredTunnel._();
+
+@override String get value => 'cloudflared_tunnel';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$cloudflaredTunnel;
+
+@override int get hashCode => 'cloudflared_tunnel'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(cloudflared_tunnel)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$customCertificate extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$customCertificate._();
+
+@override String get value => 'custom_certificate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$customCertificate;
+
+@override int get hashCode => 'custom_certificate'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(custom_certificate)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$customHostname extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$customHostname._();
+
+@override String get value => 'custom_hostname';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$customHostname;
+
+@override int get hashCode => 'custom_hostname'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(custom_hostname)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$d1Database extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$d1Database._();
+
+@override String get value => 'd1_database';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$d1Database;
+
+@override int get hashCode => 'd1_database'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(d1_database)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$dnsRecord extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$dnsRecord._();
+
+@override String get value => 'dns_record';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$dnsRecord;
+
+@override int get hashCode => 'dns_record'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(dns_record)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$durableObjectNamespace extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$durableObjectNamespace._();
+
+@override String get value => 'durable_object_namespace';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$durableObjectNamespace;
+
+@override int get hashCode => 'durable_object_namespace'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(durable_object_namespace)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$gatewayList extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$gatewayList._();
+
+@override String get value => 'gateway_list';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$gatewayList;
+
+@override int get hashCode => 'gateway_list'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(gateway_list)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$gatewayRule extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$gatewayRule._();
+
+@override String get value => 'gateway_rule';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$gatewayRule;
+
+@override int get hashCode => 'gateway_rule'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(gateway_rule)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$image extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$image._();
+
+@override String get value => 'image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$image;
+
+@override int get hashCode => 'image'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(image)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$kvNamespace extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$kvNamespace._();
+
+@override String get value => 'kv_namespace';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$kvNamespace;
+
+@override int get hashCode => 'kv_namespace'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(kv_namespace)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$managedClientCertificate extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$managedClientCertificate._();
+
+@override String get value => 'managed_client_certificate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$managedClientCertificate;
+
+@override int get hashCode => 'managed_client_certificate'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(managed_client_certificate)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$queue extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$queue._();
+
+@override String get value => 'queue';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$queue;
+
+@override int get hashCode => 'queue'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(queue)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$r2Bucket extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$r2Bucket._();
+
+@override String get value => 'r2_bucket';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$r2Bucket;
+
+@override int get hashCode => 'r2_bucket'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(r2_bucket)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$resourceShare extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$resourceShare._();
+
+@override String get value => 'resource_share';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$resourceShare;
+
+@override int get hashCode => 'resource_share'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(resource_share)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$streamLiveInput extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$streamLiveInput._();
+
+@override String get value => 'stream_live_input';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$streamLiveInput;
+
+@override int get hashCode => 'stream_live_input'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(stream_live_input)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$streamVideo extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$streamVideo._();
+
+@override String get value => 'stream_video';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$streamVideo;
+
+@override int get hashCode => 'stream_video'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(stream_video)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$worker extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$worker._();
+
+@override String get value => 'worker';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$worker;
+
+@override int get hashCode => 'worker'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(worker)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$workerVersion extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$workerVersion._();
+
+@override String get value => 'worker_version';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$workerVersion;
+
+@override int get hashCode => 'worker_version'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(worker_version)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$zone extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$zone._();
+
+@override String get value => 'zone';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$zone;
+
+@override int get hashCode => 'zone'.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType(zone)';
+
+ }
+@immutable final class ResourceTaggingTaggedResourceObjectType$Unknown extends ResourceTaggingTaggedResourceObjectType {const ResourceTaggingTaggedResourceObjectType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResourceTaggingTaggedResourceObjectType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResourceTaggingTaggedResourceObjectType($value)';
+
+ }
+sealed class ResourceTaggingTaggedResourceObject {const ResourceTaggingTaggedResourceObject();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ResourceTaggingTaggedResourceObject.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -117,7 +520,7 @@ factory ResourceTaggingTaggedResourceObject.workerVersion({required ResourceTagg
 factory ResourceTaggingTaggedResourceObject.zone({required ResourceTaggingEtag etag, required ResourceTaggingResourceId id, required ResourceTaggingResourceName name, required Map<String,String> tags, required ResourceTaggingIdentifier zoneId, }) { return ResourceTaggingTaggedResourceObjectZone(ResourceTaggingTaggedResourceObjectZoneLevelBase(etag: etag, id: id, name: name, tags: tags, zoneId: zoneId)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+ResourceTaggingTaggedResourceObjectType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ResourceTaggingTaggedResourceObject$Unknown;
@@ -167,9 +570,9 @@ factory ResourceTaggingTaggedResourceObjectAccessApplication.fromJson(Map<String
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'access_application';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('access_application');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectAccessApplication copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectAccessApplication(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -199,9 +602,9 @@ factory ResourceTaggingTaggedResourceObjectAccessApplicationPolicy.fromJson(Map<
 
 final ResourceTaggingTaggedResourceObjectAccessApplicationPolicyBase resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase;
 
-@override String get type => 'access_application_policy';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('access_application_policy');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectAccessApplicationPolicy copyWith({ResourceTaggingAccessApplicationId? accessApplicationId, ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, ResourceTaggingIdentifier? zoneId, }) { return ResourceTaggingTaggedResourceObjectAccessApplicationPolicy(resourceTaggingTaggedResourceObjectAccessApplicationPolicyBase.copyWith(
   accessApplicationId: accessApplicationId,
@@ -233,9 +636,9 @@ factory ResourceTaggingTaggedResourceObjectAccessGroup.fromJson(Map<String, dyna
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'access_group';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('access_group');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectAccessGroup copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectAccessGroup(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -265,9 +668,9 @@ factory ResourceTaggingTaggedResourceObjectAccount.fromJson(Map<String, dynamic>
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'account';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('account');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectAccount copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectAccount(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -297,9 +700,9 @@ factory ResourceTaggingTaggedResourceObjectAiGateway.fromJson(Map<String, dynami
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'ai_gateway';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('ai_gateway');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectAiGateway copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectAiGateway(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -329,9 +732,9 @@ factory ResourceTaggingTaggedResourceObjectAlertingPolicy.fromJson(Map<String, d
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'alerting_policy';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('alerting_policy');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectAlertingPolicy copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectAlertingPolicy(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -361,9 +764,9 @@ factory ResourceTaggingTaggedResourceObjectAlertingWebhook.fromJson(Map<String, 
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'alerting_webhook';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('alerting_webhook');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectAlertingWebhook copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectAlertingWebhook(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -393,9 +796,9 @@ factory ResourceTaggingTaggedResourceObjectGatewayOperation.fromJson(Map<String,
 
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
-@override String get type => 'api_gateway_operation';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('api_gateway_operation');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectGatewayOperation copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, ResourceTaggingIdentifier? zoneId, }) { return ResourceTaggingTaggedResourceObjectGatewayOperation(resourceTaggingTaggedResourceObjectZoneLevelBase.copyWith(
   etag: etag,
@@ -426,9 +829,9 @@ factory ResourceTaggingTaggedResourceObjectCloudflaredTunnel.fromJson(Map<String
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'cloudflared_tunnel';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('cloudflared_tunnel');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectCloudflaredTunnel copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectCloudflaredTunnel(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -458,9 +861,9 @@ factory ResourceTaggingTaggedResourceObjectCustomCertificate.fromJson(Map<String
 
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
-@override String get type => 'custom_certificate';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('custom_certificate');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectCustomCertificate copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, ResourceTaggingIdentifier? zoneId, }) { return ResourceTaggingTaggedResourceObjectCustomCertificate(resourceTaggingTaggedResourceObjectZoneLevelBase.copyWith(
   etag: etag,
@@ -491,9 +894,9 @@ factory ResourceTaggingTaggedResourceObjectCustomHostname.fromJson(Map<String, d
 
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
-@override String get type => 'custom_hostname';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('custom_hostname');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectCustomHostname copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, ResourceTaggingIdentifier? zoneId, }) { return ResourceTaggingTaggedResourceObjectCustomHostname(resourceTaggingTaggedResourceObjectZoneLevelBase.copyWith(
   etag: etag,
@@ -524,9 +927,9 @@ factory ResourceTaggingTaggedResourceObjectD1Database.fromJson(Map<String, dynam
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'd1_database';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('d1_database');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectD1Database copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectD1Database(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -556,9 +959,9 @@ factory ResourceTaggingTaggedResourceObjectDnsRecord.fromJson(Map<String, dynami
 
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
-@override String get type => 'dns_record';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('dns_record');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectDnsRecord copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, ResourceTaggingIdentifier? zoneId, }) { return ResourceTaggingTaggedResourceObjectDnsRecord(resourceTaggingTaggedResourceObjectZoneLevelBase.copyWith(
   etag: etag,
@@ -589,9 +992,9 @@ factory ResourceTaggingTaggedResourceObjectDurableObjectNamespace.fromJson(Map<S
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'durable_object_namespace';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('durable_object_namespace');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectDurableObjectNamespace copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectDurableObjectNamespace(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -621,9 +1024,9 @@ factory ResourceTaggingTaggedResourceObjectGatewayList.fromJson(Map<String, dyna
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'gateway_list';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('gateway_list');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectGatewayList copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectGatewayList(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -653,9 +1056,9 @@ factory ResourceTaggingTaggedResourceObjectGatewayRule.fromJson(Map<String, dyna
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'gateway_rule';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('gateway_rule');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectGatewayRule copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectGatewayRule(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -685,9 +1088,9 @@ factory ResourceTaggingTaggedResourceObjectImage.fromJson(Map<String, dynamic> j
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'image';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('image');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectImage copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectImage(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -717,9 +1120,9 @@ factory ResourceTaggingTaggedResourceObjectKvNamespace.fromJson(Map<String, dyna
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'kv_namespace';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('kv_namespace');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectKvNamespace copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectKvNamespace(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -749,9 +1152,9 @@ factory ResourceTaggingTaggedResourceObjectManagedClientCertificate.fromJson(Map
 
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
-@override String get type => 'managed_client_certificate';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('managed_client_certificate');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectManagedClientCertificate copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, ResourceTaggingIdentifier? zoneId, }) { return ResourceTaggingTaggedResourceObjectManagedClientCertificate(resourceTaggingTaggedResourceObjectZoneLevelBase.copyWith(
   etag: etag,
@@ -782,9 +1185,9 @@ factory ResourceTaggingTaggedResourceObjectQueue.fromJson(Map<String, dynamic> j
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'queue';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('queue');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectQueue copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectQueue(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -814,9 +1217,9 @@ factory ResourceTaggingTaggedResourceObjectR2Bucket.fromJson(Map<String, dynamic
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'r2_bucket';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('r2_bucket');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectR2Bucket copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectR2Bucket(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -846,9 +1249,9 @@ factory ResourceTaggingTaggedResourceObjectResourceShare.fromJson(Map<String, dy
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'resource_share';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('resource_share');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectResourceShare copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectResourceShare(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -878,9 +1281,9 @@ factory ResourceTaggingTaggedResourceObjectStreamLiveInput.fromJson(Map<String, 
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'stream_live_input';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('stream_live_input');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectStreamLiveInput copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectStreamLiveInput(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -910,9 +1313,9 @@ factory ResourceTaggingTaggedResourceObjectStreamVideo.fromJson(Map<String, dyna
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'stream_video';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('stream_video');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectStreamVideo copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectStreamVideo(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -942,9 +1345,9 @@ factory ResourceTaggingTaggedResourceObjectWorker.fromJson(Map<String, dynamic> 
 
 final ResourceTaggingTaggedResourceObjectAccountLevelBase resourceTaggingTaggedResourceObjectAccountLevelBase;
 
-@override String get type => 'worker';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('worker');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectAccountLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectWorker copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, }) { return ResourceTaggingTaggedResourceObjectWorker(resourceTaggingTaggedResourceObjectAccountLevelBase.copyWith(
   etag: etag,
@@ -974,9 +1377,9 @@ factory ResourceTaggingTaggedResourceObjectWorkerVersion.fromJson(Map<String, dy
 
 final ResourceTaggingTaggedResourceObjectWorkerVersionBase resourceTaggingTaggedResourceObjectWorkerVersionBase;
 
-@override String get type => 'worker_version';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('worker_version');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectWorkerVersionBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectWorkerVersionBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectWorkerVersion copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, ResourceTaggingWorkerId? workerId, }) { return ResourceTaggingTaggedResourceObjectWorkerVersion(resourceTaggingTaggedResourceObjectWorkerVersionBase.copyWith(
   etag: etag,
@@ -1007,9 +1410,9 @@ factory ResourceTaggingTaggedResourceObjectZone.fromJson(Map<String, dynamic> js
 
 final ResourceTaggingTaggedResourceObjectZoneLevelBase resourceTaggingTaggedResourceObjectZoneLevelBase;
 
-@override String get type => 'zone';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson('zone');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...resourceTaggingTaggedResourceObjectZoneLevelBase.toJson(), 'type': type.toJson()};
 
 ResourceTaggingTaggedResourceObjectZone copyWith({ResourceTaggingEtag? etag, ResourceTaggingResourceId? id, ResourceTaggingResourceName? name, Map<String,String>? tags, ResourceTaggingIdentifier? zoneId, }) { return ResourceTaggingTaggedResourceObjectZone(resourceTaggingTaggedResourceObjectZoneLevelBase.copyWith(
   etag: etag,
@@ -1048,7 +1451,7 @@ late final ResourceTaggingResourceName _name = ResourceTaggingResourceName.fromJ
 
 late final Map<String,String> _tags = (json['tags'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
 
-@override String get type => json['type'] as String? ?? '';
+@override ResourceTaggingTaggedResourceObjectType get type => ResourceTaggingTaggedResourceObjectType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

@@ -1,7 +1,74 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/StronglyTypedOneOfDiscriminatedObject
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/tagged_object1.dart';import 'package:pub_speakeasy/models/tagged_object2.dart';import 'package:pub_speakeasy/models/tagged_object3.dart';sealed class StronglyTypedOneOfDiscriminatedObject {const StronglyTypedOneOfDiscriminatedObject();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/tagged_object1.dart';import 'package:pub_speakeasy/models/tagged_object2.dart';import 'package:pub_speakeasy/models/tagged_object3.dart';sealed class StronglyTypedOneOfDiscriminatedObjectTag {const StronglyTypedOneOfDiscriminatedObjectTag();
+
+factory StronglyTypedOneOfDiscriminatedObjectTag.fromJson(String json) { return switch (json) {
+  'tag3' => tag3,
+  'tag1' => tag1,
+  'tag2' => tag2,
+  _ => StronglyTypedOneOfDiscriminatedObjectTag$Unknown(json),
+}; }
+
+static const StronglyTypedOneOfDiscriminatedObjectTag tag3 = StronglyTypedOneOfDiscriminatedObjectTag$tag3._();
+
+static const StronglyTypedOneOfDiscriminatedObjectTag tag1 = StronglyTypedOneOfDiscriminatedObjectTag$tag1._();
+
+static const StronglyTypedOneOfDiscriminatedObjectTag tag2 = StronglyTypedOneOfDiscriminatedObjectTag$tag2._();
+
+static const List<StronglyTypedOneOfDiscriminatedObjectTag> values = [tag3, tag1, tag2];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is StronglyTypedOneOfDiscriminatedObjectTag$Unknown;
+
+ }
+@immutable final class StronglyTypedOneOfDiscriminatedObjectTag$tag3 extends StronglyTypedOneOfDiscriminatedObjectTag {const StronglyTypedOneOfDiscriminatedObjectTag$tag3._();
+
+@override String get value => 'tag3';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StronglyTypedOneOfDiscriminatedObjectTag$tag3;
+
+@override int get hashCode => 'tag3'.hashCode;
+
+@override String toString() => 'StronglyTypedOneOfDiscriminatedObjectTag(tag3)';
+
+ }
+@immutable final class StronglyTypedOneOfDiscriminatedObjectTag$tag1 extends StronglyTypedOneOfDiscriminatedObjectTag {const StronglyTypedOneOfDiscriminatedObjectTag$tag1._();
+
+@override String get value => 'tag1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StronglyTypedOneOfDiscriminatedObjectTag$tag1;
+
+@override int get hashCode => 'tag1'.hashCode;
+
+@override String toString() => 'StronglyTypedOneOfDiscriminatedObjectTag(tag1)';
+
+ }
+@immutable final class StronglyTypedOneOfDiscriminatedObjectTag$tag2 extends StronglyTypedOneOfDiscriminatedObjectTag {const StronglyTypedOneOfDiscriminatedObjectTag$tag2._();
+
+@override String get value => 'tag2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StronglyTypedOneOfDiscriminatedObjectTag$tag2;
+
+@override int get hashCode => 'tag2'.hashCode;
+
+@override String toString() => 'StronglyTypedOneOfDiscriminatedObjectTag(tag2)';
+
+ }
+@immutable final class StronglyTypedOneOfDiscriminatedObjectTag$Unknown extends StronglyTypedOneOfDiscriminatedObjectTag {const StronglyTypedOneOfDiscriminatedObjectTag$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is StronglyTypedOneOfDiscriminatedObjectTag$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StronglyTypedOneOfDiscriminatedObjectTag($value)';
+
+ }
+sealed class StronglyTypedOneOfDiscriminatedObject {const StronglyTypedOneOfDiscriminatedObject();
 
 /// Deserialize from JSON, dispatching on the `tag` discriminator.
 factory StronglyTypedOneOfDiscriminatedObject.fromJson(Map<String, dynamic> json) { return switch (json['tag']) {
@@ -21,7 +88,7 @@ factory StronglyTypedOneOfDiscriminatedObject.tag1({required String imageUrl}) {
 factory StronglyTypedOneOfDiscriminatedObject.tag2({required String profileId}) { return StronglyTypedOneOfDiscriminatedObjectTag2(TaggedObject2(tag: 'tag2', profileId: profileId)); }
 
 /// The discriminator value identifying this variant.
-String get tag;
+StronglyTypedOneOfDiscriminatedObjectTag get tag;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is StronglyTypedOneOfDiscriminatedObject$Unknown;
@@ -39,9 +106,9 @@ factory StronglyTypedOneOfDiscriminatedObjectTag3.fromJson(Map<String, dynamic> 
 
 final TaggedObject3 taggedObject3;
 
-@override String get tag => 'tag3';
+@override StronglyTypedOneOfDiscriminatedObjectTag get tag => StronglyTypedOneOfDiscriminatedObjectTag.fromJson('tag3');
 
-@override Map<String, dynamic> toJson() => {...taggedObject3.toJson(), 'tag': tag};
+@override Map<String, dynamic> toJson() => {...taggedObject3.toJson(), 'tag': tag.toJson()};
 
 StronglyTypedOneOfDiscriminatedObjectTag3 copyWith({String? phone}) { return StronglyTypedOneOfDiscriminatedObjectTag3(taggedObject3.copyWith(
   phone: phone,
@@ -60,9 +127,9 @@ factory StronglyTypedOneOfDiscriminatedObjectTag1.fromJson(Map<String, dynamic> 
 
 final TaggedObject1 taggedObject1;
 
-@override String get tag => 'tag1';
+@override StronglyTypedOneOfDiscriminatedObjectTag get tag => StronglyTypedOneOfDiscriminatedObjectTag.fromJson('tag1');
 
-@override Map<String, dynamic> toJson() => {...taggedObject1.toJson(), 'tag': tag};
+@override Map<String, dynamic> toJson() => {...taggedObject1.toJson(), 'tag': tag.toJson()};
 
 StronglyTypedOneOfDiscriminatedObjectTag1 copyWith({String? imageUrl}) { return StronglyTypedOneOfDiscriminatedObjectTag1(taggedObject1.copyWith(
   imageUrl: imageUrl,
@@ -81,9 +148,9 @@ factory StronglyTypedOneOfDiscriminatedObjectTag2.fromJson(Map<String, dynamic> 
 
 final TaggedObject2 taggedObject2;
 
-@override String get tag => 'tag2';
+@override StronglyTypedOneOfDiscriminatedObjectTag get tag => StronglyTypedOneOfDiscriminatedObjectTag.fromJson('tag2');
 
-@override Map<String, dynamic> toJson() => {...taggedObject2.toJson(), 'tag': tag};
+@override Map<String, dynamic> toJson() => {...taggedObject2.toJson(), 'tag': tag.toJson()};
 
 StronglyTypedOneOfDiscriminatedObjectTag2 copyWith({String? profileId}) { return StronglyTypedOneOfDiscriminatedObjectTag2(taggedObject2.copyWith(
   profileId: profileId,
@@ -102,7 +169,7 @@ StronglyTypedOneOfDiscriminatedObjectTag2 copyWith({String? profileId}) { return
 
 final Map<String, dynamic> json;
 
-@override String get tag => json['tag'] as String? ?? '';
+@override StronglyTypedOneOfDiscriminatedObjectTag get tag => StronglyTypedOneOfDiscriminatedObjectTag.fromJson(json['tag'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

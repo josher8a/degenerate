@@ -1,7 +1,74 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FunctionCallOutputItemParam (inline: Output > Variant2)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_file_content_param.dart';import 'package:pub_openai/models/input_image_content_param_auto_param.dart';import 'package:pub_openai/models/input_text_content_param.dart';/// A piece of message content, such as text, an image, or a file.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/input_file_content_param.dart';import 'package:pub_openai/models/input_image_content_param_auto_param.dart';import 'package:pub_openai/models/input_text_content_param.dart';sealed class OutputVariant2Type {const OutputVariant2Type();
+
+factory OutputVariant2Type.fromJson(String json) { return switch (json) {
+  'input_text' => inputText,
+  'input_image' => inputImage,
+  'input_file' => inputFile,
+  _ => OutputVariant2Type$Unknown(json),
+}; }
+
+static const OutputVariant2Type inputText = OutputVariant2Type$inputText._();
+
+static const OutputVariant2Type inputImage = OutputVariant2Type$inputImage._();
+
+static const OutputVariant2Type inputFile = OutputVariant2Type$inputFile._();
+
+static const List<OutputVariant2Type> values = [inputText, inputImage, inputFile];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is OutputVariant2Type$Unknown;
+
+ }
+@immutable final class OutputVariant2Type$inputText extends OutputVariant2Type {const OutputVariant2Type$inputText._();
+
+@override String get value => 'input_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OutputVariant2Type$inputText;
+
+@override int get hashCode => 'input_text'.hashCode;
+
+@override String toString() => 'OutputVariant2Type(input_text)';
+
+ }
+@immutable final class OutputVariant2Type$inputImage extends OutputVariant2Type {const OutputVariant2Type$inputImage._();
+
+@override String get value => 'input_image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OutputVariant2Type$inputImage;
+
+@override int get hashCode => 'input_image'.hashCode;
+
+@override String toString() => 'OutputVariant2Type(input_image)';
+
+ }
+@immutable final class OutputVariant2Type$inputFile extends OutputVariant2Type {const OutputVariant2Type$inputFile._();
+
+@override String get value => 'input_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is OutputVariant2Type$inputFile;
+
+@override int get hashCode => 'input_file'.hashCode;
+
+@override String toString() => 'OutputVariant2Type(input_file)';
+
+ }
+@immutable final class OutputVariant2Type$Unknown extends OutputVariant2Type {const OutputVariant2Type$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is OutputVariant2Type$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'OutputVariant2Type($value)';
+
+ }
+/// A piece of message content, such as text, an image, or a file.
 sealed class OutputVariant2 {const OutputVariant2();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -22,7 +89,7 @@ factory OutputVariant2.inputImage({String? imageUrl, String? fileId, DetailEnum?
 factory OutputVariant2.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileDetailEnum? detail, }) { return OutputVariant2InputFile(InputFileContentParam(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+OutputVariant2Type get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is OutputVariant2$Unknown;
@@ -40,9 +107,9 @@ factory OutputVariant2InputText.fromJson(Map<String, dynamic> json) { return Out
 
 final InputTextContentParam inputTextContentParam;
 
-@override String get type => 'input_text';
+@override OutputVariant2Type get type => OutputVariant2Type.fromJson('input_text');
 
-@override Map<String, dynamic> toJson() => {...inputTextContentParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...inputTextContentParam.toJson(), 'type': type.toJson()};
 
 OutputVariant2InputText copyWith({String? text}) { return OutputVariant2InputText(inputTextContentParam.copyWith(
   text: text,
@@ -61,9 +128,9 @@ factory OutputVariant2InputImage.fromJson(Map<String, dynamic> json) { return Ou
 
 final InputImageContentParamAutoParam inputImageContentParamAutoParam;
 
-@override String get type => 'input_image';
+@override OutputVariant2Type get type => OutputVariant2Type.fromJson('input_image');
 
-@override Map<String, dynamic> toJson() => {...inputImageContentParamAutoParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...inputImageContentParamAutoParam.toJson(), 'type': type.toJson()};
 
 OutputVariant2InputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, DetailEnum? Function()? detail, }) { return OutputVariant2InputImage(inputImageContentParamAutoParam.copyWith(
   imageUrl: imageUrl,
@@ -84,9 +151,9 @@ factory OutputVariant2InputFile.fromJson(Map<String, dynamic> json) { return Out
 
 final InputFileContentParam inputFileContentParam;
 
-@override String get type => 'input_file';
+@override OutputVariant2Type get type => OutputVariant2Type.fromJson('input_file');
 
-@override Map<String, dynamic> toJson() => {...inputFileContentParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...inputFileContentParam.toJson(), 'type': type.toJson()};
 
 OutputVariant2InputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileDetailEnum? Function()? detail, }) { return OutputVariant2InputFile(inputFileContentParam.copyWith(
   fileId: fileId,
@@ -109,7 +176,7 @@ OutputVariant2InputFile copyWith({String? Function()? fileId, String? Function()
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override OutputVariant2Type get type => OutputVariant2Type.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

@@ -1,7 +1,74 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FunctionAndCustomToolCallOutput
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_detail.dart';import 'package:pub_openai/models/input_file_content.dart';import 'package:pub_openai/models/input_image_content.dart';import 'package:pub_openai/models/input_text_content.dart';sealed class FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutput();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_detail.dart';import 'package:pub_openai/models/input_file_content.dart';import 'package:pub_openai/models/input_image_content.dart';import 'package:pub_openai/models/input_text_content.dart';sealed class FunctionAndCustomToolCallOutputType {const FunctionAndCustomToolCallOutputType();
+
+factory FunctionAndCustomToolCallOutputType.fromJson(String json) { return switch (json) {
+  'input_text' => inputText,
+  'input_image' => inputImage,
+  'input_file' => inputFile,
+  _ => FunctionAndCustomToolCallOutputType$Unknown(json),
+}; }
+
+static const FunctionAndCustomToolCallOutputType inputText = FunctionAndCustomToolCallOutputType$inputText._();
+
+static const FunctionAndCustomToolCallOutputType inputImage = FunctionAndCustomToolCallOutputType$inputImage._();
+
+static const FunctionAndCustomToolCallOutputType inputFile = FunctionAndCustomToolCallOutputType$inputFile._();
+
+static const List<FunctionAndCustomToolCallOutputType> values = [inputText, inputImage, inputFile];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is FunctionAndCustomToolCallOutputType$Unknown;
+
+ }
+@immutable final class FunctionAndCustomToolCallOutputType$inputText extends FunctionAndCustomToolCallOutputType {const FunctionAndCustomToolCallOutputType$inputText._();
+
+@override String get value => 'input_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionAndCustomToolCallOutputType$inputText;
+
+@override int get hashCode => 'input_text'.hashCode;
+
+@override String toString() => 'FunctionAndCustomToolCallOutputType(input_text)';
+
+ }
+@immutable final class FunctionAndCustomToolCallOutputType$inputImage extends FunctionAndCustomToolCallOutputType {const FunctionAndCustomToolCallOutputType$inputImage._();
+
+@override String get value => 'input_image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionAndCustomToolCallOutputType$inputImage;
+
+@override int get hashCode => 'input_image'.hashCode;
+
+@override String toString() => 'FunctionAndCustomToolCallOutputType(input_image)';
+
+ }
+@immutable final class FunctionAndCustomToolCallOutputType$inputFile extends FunctionAndCustomToolCallOutputType {const FunctionAndCustomToolCallOutputType$inputFile._();
+
+@override String get value => 'input_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionAndCustomToolCallOutputType$inputFile;
+
+@override int get hashCode => 'input_file'.hashCode;
+
+@override String toString() => 'FunctionAndCustomToolCallOutputType(input_file)';
+
+ }
+@immutable final class FunctionAndCustomToolCallOutputType$Unknown extends FunctionAndCustomToolCallOutputType {const FunctionAndCustomToolCallOutputType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionAndCustomToolCallOutputType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FunctionAndCustomToolCallOutputType($value)';
+
+ }
+sealed class FunctionAndCustomToolCallOutput {const FunctionAndCustomToolCallOutput();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory FunctionAndCustomToolCallOutput.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -21,7 +88,7 @@ factory FunctionAndCustomToolCallOutput.inputImage({required ImageDetail detail,
 factory FunctionAndCustomToolCallOutput.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return FunctionAndCustomToolCallOutputInputFile(InputFileContent(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+FunctionAndCustomToolCallOutputType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is FunctionAndCustomToolCallOutput$Unknown;
@@ -39,9 +106,9 @@ factory FunctionAndCustomToolCallOutputInputText.fromJson(Map<String, dynamic> j
 
 final InputTextContent inputTextContent;
 
-@override String get type => 'input_text';
+@override FunctionAndCustomToolCallOutputType get type => FunctionAndCustomToolCallOutputType.fromJson('input_text');
 
-@override Map<String, dynamic> toJson() => {...inputTextContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...inputTextContent.toJson(), 'type': type.toJson()};
 
 FunctionAndCustomToolCallOutputInputText copyWith({String? text}) { return FunctionAndCustomToolCallOutputInputText(inputTextContent.copyWith(
   text: text,
@@ -60,9 +127,9 @@ factory FunctionAndCustomToolCallOutputInputImage.fromJson(Map<String, dynamic> 
 
 final InputImageContent inputImageContent;
 
-@override String get type => 'input_image';
+@override FunctionAndCustomToolCallOutputType get type => FunctionAndCustomToolCallOutputType.fromJson('input_image');
 
-@override Map<String, dynamic> toJson() => {...inputImageContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...inputImageContent.toJson(), 'type': type.toJson()};
 
 FunctionAndCustomToolCallOutputInputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return FunctionAndCustomToolCallOutputInputImage(inputImageContent.copyWith(
   imageUrl: imageUrl,
@@ -83,9 +150,9 @@ factory FunctionAndCustomToolCallOutputInputFile.fromJson(Map<String, dynamic> j
 
 final InputFileContent inputFileContent;
 
-@override String get type => 'input_file';
+@override FunctionAndCustomToolCallOutputType get type => FunctionAndCustomToolCallOutputType.fromJson('input_file');
 
-@override Map<String, dynamic> toJson() => {...inputFileContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...inputFileContent.toJson(), 'type': type.toJson()};
 
 FunctionAndCustomToolCallOutputInputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return FunctionAndCustomToolCallOutputInputFile(inputFileContent.copyWith(
   fileId: fileId,
@@ -108,7 +175,7 @@ FunctionAndCustomToolCallOutputInputFile copyWith({String? Function()? fileId, S
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override FunctionAndCustomToolCallOutputType get type => FunctionAndCustomToolCallOutputType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

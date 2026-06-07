@@ -89,7 +89,7 @@ factory RulesetsRequestRule.setConfig({required DateTime lastUpdated, required S
 factory RulesetsRequestRule.skip({required DateTime lastUpdated, required String version, Map<String,dynamic> actionParameters = const {}, List<RulesetsRuleCategory>? categories, String description = '', RulesetsRuleEnabled? enabled, RulesetsRuleExposedCredentialCheck? exposedCredentialCheck, String? expression, RulesetsRuleId? id, RulesetsRuleLogging? logging, RulesetsRuleRatelimit? ratelimit, String? ref, }) { return RulesetsRequestRuleSkip(RulesetsRule(action: RulesetsRuleAction.fromJson('skip'), actionParameters: actionParameters, categories: categories, description: description, enabled: enabled, exposedCredentialCheck: exposedCredentialCheck, expression: expression, id: id, lastUpdated: lastUpdated, logging: logging, ratelimit: ratelimit, ref: ref, version: version)); }
 
 /// The discriminator value identifying this variant.
-String get action;
+RulesetsRuleAction get action;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is RulesetsRequestRule$Unknown;
@@ -148,9 +148,9 @@ factory RulesetsRequestRuleBlock.fromJson(Map<String, dynamic> json) { return Ru
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'block';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('block');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleBlock copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleBlock(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -204,9 +204,9 @@ factory RulesetsRequestRuleChallenge.fromJson(Map<String, dynamic> json) { retur
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'challenge';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('challenge');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleChallenge(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -260,9 +260,9 @@ factory RulesetsRequestRuleCompressResponse.fromJson(Map<String, dynamic> json) 
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'compress_response';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('compress_response');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleCompressResponse copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleCompressResponse(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -316,9 +316,9 @@ factory RulesetsRequestRuleDdosDynamic.fromJson(Map<String, dynamic> json) { ret
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'ddos_dynamic';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('ddos_dynamic');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleDdosDynamic copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleDdosDynamic(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -372,9 +372,9 @@ factory RulesetsRequestRuleExecute.fromJson(Map<String, dynamic> json) { return 
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'execute';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('execute');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleExecute copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleExecute(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -428,9 +428,9 @@ factory RulesetsRequestRuleForceConnectionClose.fromJson(Map<String, dynamic> js
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'force_connection_close';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('force_connection_close');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleForceConnectionClose copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleForceConnectionClose(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -484,9 +484,9 @@ factory RulesetsRequestRuleJsChallenge.fromJson(Map<String, dynamic> json) { ret
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'js_challenge';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('js_challenge');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleJsChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleJsChallenge(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -540,9 +540,9 @@ factory RulesetsRequestRuleLog.fromJson(Map<String, dynamic> json) { return Rule
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'log';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('log');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleLog copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleLog(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -596,9 +596,9 @@ factory RulesetsRequestRuleLogCustomField.fromJson(Map<String, dynamic> json) { 
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'log_custom_field';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('log_custom_field');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleLogCustomField copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleLogCustomField(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -652,9 +652,9 @@ factory RulesetsRequestRuleManagedChallenge.fromJson(Map<String, dynamic> json) 
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'managed_challenge';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('managed_challenge');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleManagedChallenge copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleManagedChallenge(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -708,9 +708,9 @@ factory RulesetsRequestRuleRedirect.fromJson(Map<String, dynamic> json) { return
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'redirect';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('redirect');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleRedirect copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleRedirect(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -764,9 +764,9 @@ factory RulesetsRequestRuleRewrite.fromJson(Map<String, dynamic> json) { return 
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'rewrite';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('rewrite');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleRewrite copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleRewrite(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -820,9 +820,9 @@ factory RulesetsRequestRuleRoute.fromJson(Map<String, dynamic> json) { return Ru
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'route';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('route');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleRoute copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleRoute(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -876,9 +876,9 @@ factory RulesetsRequestRuleScore.fromJson(Map<String, dynamic> json) { return Ru
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'score';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('score');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleScore copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleScore(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -932,9 +932,9 @@ factory RulesetsRequestRuleServeError.fromJson(Map<String, dynamic> json) { retu
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'serve_error';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('serve_error');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleServeError copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleServeError(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -988,9 +988,9 @@ factory RulesetsRequestRuleSetCacheControl.fromJson(Map<String, dynamic> json) {
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'set_cache_control';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('set_cache_control');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleSetCacheControl copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSetCacheControl(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -1044,9 +1044,9 @@ factory RulesetsRequestRuleSetCacheSettings.fromJson(Map<String, dynamic> json) 
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'set_cache_settings';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('set_cache_settings');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleSetCacheSettings copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSetCacheSettings(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -1100,9 +1100,9 @@ factory RulesetsRequestRuleSetCacheTags.fromJson(Map<String, dynamic> json) { re
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'set_cache_tags';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('set_cache_tags');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleSetCacheTags copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSetCacheTags(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -1156,9 +1156,9 @@ factory RulesetsRequestRuleSetConfig.fromJson(Map<String, dynamic> json) { retur
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'set_config';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('set_config');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleSetConfig copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSetConfig(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -1212,9 +1212,9 @@ factory RulesetsRequestRuleSkip.fromJson(Map<String, dynamic> json) { return Rul
 
 final RulesetsRule rulesetsRule;
 
-@override String get action => 'skip';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson('skip');
 
-@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action};
+@override Map<String, dynamic> toJson() => {...rulesetsRule.toJson(), 'action': action.toJson()};
 
 RulesetsRequestRuleSkip copyWith({Map<String, dynamic> Function()? actionParameters, List<RulesetsRuleCategory>? Function()? categories, String Function()? description, RulesetsRuleEnabled? Function()? enabled, RulesetsRuleExposedCredentialCheck? Function()? exposedCredentialCheck, String? Function()? expression, RulesetsRuleId? Function()? id, DateTime? lastUpdated, RulesetsRuleLogging? Function()? logging, RulesetsRuleRatelimit? Function()? ratelimit, String? Function()? ref, String? version, }) { return RulesetsRequestRuleSkip(rulesetsRule.copyWith(
   actionParameters: actionParameters,
@@ -1292,7 +1292,7 @@ late final String? _ref = json['ref'] as String?;
 
 late final String _version = json['version'] as String;
 
-@override String get action => json['action'] as String? ?? '';
+@override RulesetsRuleAction get action => RulesetsRuleAction.fromJson(json['action'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

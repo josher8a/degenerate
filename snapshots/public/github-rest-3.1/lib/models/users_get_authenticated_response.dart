@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UsersGetAuthenticatedResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/private_user.dart';import 'package:pub_github_rest_3_1/models/private_user/private_user_plan.dart';import 'package:pub_github_rest_3_1/models/public_user.dart';sealed class UsersGetAuthenticatedResponse {const UsersGetAuthenticatedResponse();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/private_user.dart';import 'package:pub_github_rest_3_1/models/private_user/private_user_plan.dart';import 'package:pub_github_rest_3_1/models/public_user.dart';sealed class UsersGetAuthenticatedResponseUserViewType {const UsersGetAuthenticatedResponseUserViewType();
+
+factory UsersGetAuthenticatedResponseUserViewType.fromJson(String json) { return switch (json) {
+  'public' => public,
+  'private' => private,
+  _ => UsersGetAuthenticatedResponseUserViewType$Unknown(json),
+}; }
+
+static const UsersGetAuthenticatedResponseUserViewType public = UsersGetAuthenticatedResponseUserViewType$public._();
+
+static const UsersGetAuthenticatedResponseUserViewType private = UsersGetAuthenticatedResponseUserViewType$private._();
+
+static const List<UsersGetAuthenticatedResponseUserViewType> values = [public, private];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is UsersGetAuthenticatedResponseUserViewType$Unknown;
+
+ }
+@immutable final class UsersGetAuthenticatedResponseUserViewType$public extends UsersGetAuthenticatedResponseUserViewType {const UsersGetAuthenticatedResponseUserViewType$public._();
+
+@override String get value => 'public';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsersGetAuthenticatedResponseUserViewType$public;
+
+@override int get hashCode => 'public'.hashCode;
+
+@override String toString() => 'UsersGetAuthenticatedResponseUserViewType(public)';
+
+ }
+@immutable final class UsersGetAuthenticatedResponseUserViewType$private extends UsersGetAuthenticatedResponseUserViewType {const UsersGetAuthenticatedResponseUserViewType$private._();
+
+@override String get value => 'private';
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsersGetAuthenticatedResponseUserViewType$private;
+
+@override int get hashCode => 'private'.hashCode;
+
+@override String toString() => 'UsersGetAuthenticatedResponseUserViewType(private)';
+
+ }
+@immutable final class UsersGetAuthenticatedResponseUserViewType$Unknown extends UsersGetAuthenticatedResponseUserViewType {const UsersGetAuthenticatedResponseUserViewType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is UsersGetAuthenticatedResponseUserViewType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'UsersGetAuthenticatedResponseUserViewType($value)';
+
+ }
+sealed class UsersGetAuthenticatedResponse {const UsersGetAuthenticatedResponse();
 
 /// Deserialize from JSON, dispatching on the `user_view_type` discriminator.
 factory UsersGetAuthenticatedResponse.fromJson(Map<String, dynamic> json) { return switch (json['user_view_type']) {
@@ -17,7 +70,7 @@ factory UsersGetAuthenticatedResponse.public({required Uri reposUrl, required in
 factory UsersGetAuthenticatedResponse.private({required Uri reposUrl, required int id, required String nodeId, required Uri avatarUrl, required String? gravatarId, required Uri url, required Uri htmlUrl, required Uri followersUrl, required String followingUrl, required String gistsUrl, required String starredUrl, required Uri subscriptionsUrl, required Uri organizationsUrl, required String login, required String eventsUrl, required Uri receivedEventsUrl, required String type, required bool siteAdmin, required String? name, required String? company, required String? blog, required String? location, required String? email, required bool twoFactorAuthentication, required bool? hireable, required String? bio, required int collaborators, required int diskUsage, required int publicGists, required int followers, required int following, required DateTime createdAt, required DateTime updatedAt, required int privateGists, required int totalPrivateRepos, required int ownedPrivateRepos, required int publicRepos, String? twitterUsername, String? notificationEmail, PrivateUserPlan? plan, bool? businessPlus, String? ldapDn, }) { return UsersGetAuthenticatedResponsePrivate(PrivateUser(userViewType: 'private', login: login, id: id, nodeId: nodeId, avatarUrl: avatarUrl, gravatarId: gravatarId, url: url, htmlUrl: htmlUrl, followersUrl: followersUrl, followingUrl: followingUrl, gistsUrl: gistsUrl, starredUrl: starredUrl, subscriptionsUrl: subscriptionsUrl, organizationsUrl: organizationsUrl, reposUrl: reposUrl, eventsUrl: eventsUrl, receivedEventsUrl: receivedEventsUrl, type: type, siteAdmin: siteAdmin, name: name, company: company, blog: blog, location: location, email: email, notificationEmail: notificationEmail, hireable: hireable, bio: bio, twitterUsername: twitterUsername, publicRepos: publicRepos, publicGists: publicGists, followers: followers, following: following, createdAt: createdAt, updatedAt: updatedAt, privateGists: privateGists, totalPrivateRepos: totalPrivateRepos, ownedPrivateRepos: ownedPrivateRepos, diskUsage: diskUsage, collaborators: collaborators, twoFactorAuthentication: twoFactorAuthentication, plan: plan, businessPlus: businessPlus, ldapDn: ldapDn)); }
 
 /// The discriminator value identifying this variant.
-String get userViewType;
+UsersGetAuthenticatedResponseUserViewType get userViewType;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is UsersGetAuthenticatedResponse$Unknown;
@@ -112,9 +165,9 @@ factory UsersGetAuthenticatedResponsePublic.fromJson(Map<String, dynamic> json) 
 
 final PublicUser publicUser;
 
-@override String get userViewType => 'public';
+@override UsersGetAuthenticatedResponseUserViewType get userViewType => UsersGetAuthenticatedResponseUserViewType.fromJson('public');
 
-@override Map<String, dynamic> toJson() => {...publicUser.toJson(), 'user_view_type': userViewType};
+@override Map<String, dynamic> toJson() => {...publicUser.toJson(), 'user_view_type': userViewType.toJson()};
 
 UsersGetAuthenticatedResponsePublic copyWith({String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, String? Function()? notificationEmail, bool? Function()? hireable, String? Function()? bio, String? Function()? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, PrivateUserPlan? Function()? plan, int? Function()? privateGists, int? Function()? totalPrivateRepos, int? Function()? ownedPrivateRepos, int? Function()? diskUsage, int? Function()? collaborators, }) { return UsersGetAuthenticatedResponsePublic(publicUser.copyWith(
   login: login,
@@ -249,9 +302,9 @@ factory UsersGetAuthenticatedResponsePrivate.fromJson(Map<String, dynamic> json)
 
 final PrivateUser privateUser;
 
-@override String get userViewType => 'private';
+@override UsersGetAuthenticatedResponseUserViewType get userViewType => UsersGetAuthenticatedResponseUserViewType.fromJson('private');
 
-@override Map<String, dynamic> toJson() => {...privateUser.toJson(), 'user_view_type': userViewType};
+@override Map<String, dynamic> toJson() => {...privateUser.toJson(), 'user_view_type': userViewType.toJson()};
 
 UsersGetAuthenticatedResponsePrivate copyWith({String? login, int? id, String? nodeId, Uri? avatarUrl, String? Function()? gravatarId, Uri? url, Uri? htmlUrl, Uri? followersUrl, String? followingUrl, String? gistsUrl, String? starredUrl, Uri? subscriptionsUrl, Uri? organizationsUrl, Uri? reposUrl, String? eventsUrl, Uri? receivedEventsUrl, String? type, bool? siteAdmin, String? Function()? name, String? Function()? company, String? Function()? blog, String? Function()? location, String? Function()? email, String? Function()? notificationEmail, bool? Function()? hireable, String? Function()? bio, String? Function()? twitterUsername, int? publicRepos, int? publicGists, int? followers, int? following, DateTime? createdAt, DateTime? updatedAt, int? privateGists, int? totalPrivateRepos, int? ownedPrivateRepos, int? diskUsage, int? collaborators, bool? twoFactorAuthentication, PrivateUserPlan? Function()? plan, bool? Function()? businessPlus, String? Function()? ldapDn, }) { return UsersGetAuthenticatedResponsePrivate(privateUser.copyWith(
   login: login,
@@ -467,7 +520,7 @@ late final int? _diskUsage = json['disk_usage'] != null ? (json['disk_usage'] as
 
 late final int? _collaborators = json['collaborators'] != null ? (json['collaborators'] as num).toInt() : null;
 
-@override String get userViewType => json['user_view_type'] as String? ?? '';
+@override UsersGetAuthenticatedResponseUserViewType get userViewType => UsersGetAuthenticatedResponseUserViewType.fromJson(json['user_view_type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

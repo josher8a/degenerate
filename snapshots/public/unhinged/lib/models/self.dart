@@ -9,6 +9,105 @@ import 'package:pub_unhinged/models/proto.dart';
 import 'package:pub_unhinged/models/string_model.dart';
 import 'package:pub_unhinged/models/true.dart';
 
+sealed class SelfTypeDisc {
+  const SelfTypeDisc();
+
+  factory SelfTypeDisc.fromJson(String json) {
+    return switch (json) {
+      'type' => type,
+      '__proto__' => proto,
+      'String' => string,
+      _ => SelfTypeDisc$Unknown(json),
+    };
+  }
+
+  static const SelfTypeDisc type = SelfTypeDisc$type._();
+
+  static const SelfTypeDisc proto = SelfTypeDisc$proto._();
+
+  static const SelfTypeDisc string = SelfTypeDisc$string._();
+
+  static const List<SelfTypeDisc> values = [type, proto, string];
+
+  String get value;
+  String toJson() => value;
+
+  bool get isUnknown => this is SelfTypeDisc$Unknown;
+}
+
+@immutable
+final class SelfTypeDisc$type extends SelfTypeDisc {
+  const SelfTypeDisc$type._();
+
+  @override
+  String get value => 'type';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is SelfTypeDisc$type;
+
+  @override
+  int get hashCode => 'type'.hashCode;
+
+  @override
+  String toString() => 'SelfTypeDisc(type)';
+}
+
+@immutable
+final class SelfTypeDisc$proto extends SelfTypeDisc {
+  const SelfTypeDisc$proto._();
+
+  @override
+  String get value => '__proto__';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is SelfTypeDisc$proto;
+
+  @override
+  int get hashCode => '__proto__'.hashCode;
+
+  @override
+  String toString() => 'SelfTypeDisc(__proto__)';
+}
+
+@immutable
+final class SelfTypeDisc$string extends SelfTypeDisc {
+  const SelfTypeDisc$string._();
+
+  @override
+  String get value => 'String';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is SelfTypeDisc$string;
+
+  @override
+  int get hashCode => 'String'.hashCode;
+
+  @override
+  String toString() => 'SelfTypeDisc(String)';
+}
+
+@immutable
+final class SelfTypeDisc$Unknown extends SelfTypeDisc {
+  const SelfTypeDisc$Unknown(this.value);
+
+  @override
+  final String value;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is SelfTypeDisc$Unknown && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+
+  @override
+  String toString() => 'SelfTypeDisc($value)';
+}
+
 sealed class Self {
   const Self();
 
@@ -84,7 +183,7 @@ sealed class Self {
   }
 
   /// The discriminator value identifying this variant.
-  String get type;
+  SelfTypeDisc get type;
   Map<String, dynamic> toJson();
 
   /// Whether this variant is unknown (not defined in the OpenAPI spec).
@@ -116,10 +215,10 @@ final class SelfType extends Self {
   final True $true;
 
   @override
-  String get type => 'type';
+  SelfTypeDisc get type => SelfTypeDisc.fromJson('type');
 
   @override
-  Map<String, dynamic> toJson() => {...$true.toJson(), 'type': type};
+  Map<String, dynamic> toJson() => {...$true.toJson(), 'type': type.toJson()};
 
   SelfType copyWith({
     bool? $false,
@@ -173,10 +272,10 @@ final class SelfProto extends Self {
   final Proto proto;
 
   @override
-  String get type => '__proto__';
+  SelfTypeDisc get type => SelfTypeDisc.fromJson('__proto__');
 
   @override
-  Map<String, dynamic> toJson() => {...proto.toJson(), 'type': type};
+  Map<String, dynamic> toJson() => {...proto.toJson(), 'type': type.toJson()};
 
   SelfProto copyWith({
     New? Function()? constructor,
@@ -216,10 +315,13 @@ final class SelfString extends Self {
   final StringModel stringModel;
 
   @override
-  String get type => 'String';
+  SelfTypeDisc get type => SelfTypeDisc.fromJson('String');
 
   @override
-  Map<String, dynamic> toJson() => {...stringModel.toJson(), 'type': type};
+  Map<String, dynamic> toJson() => {
+    ...stringModel.toJson(),
+    'type': type.toJson(),
+  };
 
   SelfString copyWith({
     int? Function()? length,
@@ -258,7 +360,7 @@ final class Self$Unknown extends Self {
   final Map<String, dynamic> json;
 
   @override
-  String get type => json['type'] as String? ?? '';
+  SelfTypeDisc get type => SelfTypeDisc.fromJson(json['type'] as String? ?? '');
 
   @override
   Map<String, dynamic> toJson() => json;

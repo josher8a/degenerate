@@ -1,7 +1,74 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/InputContent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_detail.dart';import 'package:pub_openai/models/input_file_content.dart';import 'package:pub_openai/models/input_image_content.dart';import 'package:pub_openai/models/input_text_content.dart';sealed class InputContent {const InputContent();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/image_detail.dart';import 'package:pub_openai/models/input_file_content.dart';import 'package:pub_openai/models/input_image_content.dart';import 'package:pub_openai/models/input_text_content.dart';sealed class InputContentType {const InputContentType();
+
+factory InputContentType.fromJson(String json) { return switch (json) {
+  'input_text' => inputText,
+  'input_image' => inputImage,
+  'input_file' => inputFile,
+  _ => InputContentType$Unknown(json),
+}; }
+
+static const InputContentType inputText = InputContentType$inputText._();
+
+static const InputContentType inputImage = InputContentType$inputImage._();
+
+static const InputContentType inputFile = InputContentType$inputFile._();
+
+static const List<InputContentType> values = [inputText, inputImage, inputFile];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is InputContentType$Unknown;
+
+ }
+@immutable final class InputContentType$inputText extends InputContentType {const InputContentType$inputText._();
+
+@override String get value => 'input_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputContentType$inputText;
+
+@override int get hashCode => 'input_text'.hashCode;
+
+@override String toString() => 'InputContentType(input_text)';
+
+ }
+@immutable final class InputContentType$inputImage extends InputContentType {const InputContentType$inputImage._();
+
+@override String get value => 'input_image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputContentType$inputImage;
+
+@override int get hashCode => 'input_image'.hashCode;
+
+@override String toString() => 'InputContentType(input_image)';
+
+ }
+@immutable final class InputContentType$inputFile extends InputContentType {const InputContentType$inputFile._();
+
+@override String get value => 'input_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputContentType$inputFile;
+
+@override int get hashCode => 'input_file'.hashCode;
+
+@override String toString() => 'InputContentType(input_file)';
+
+ }
+@immutable final class InputContentType$Unknown extends InputContentType {const InputContentType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputContentType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InputContentType($value)';
+
+ }
+sealed class InputContent {const InputContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory InputContent.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -21,7 +88,7 @@ factory InputContent.inputImage({required ImageDetail detail, String? imageUrl, 
 factory InputContent.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return InputContentInputFile(InputFileContent(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+InputContentType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is InputContent$Unknown;
@@ -39,9 +106,9 @@ factory InputContentInputText.fromJson(Map<String, dynamic> json) { return Input
 
 final InputTextContent inputTextContent;
 
-@override String get type => 'input_text';
+@override InputContentType get type => InputContentType.fromJson('input_text');
 
-@override Map<String, dynamic> toJson() => {...inputTextContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...inputTextContent.toJson(), 'type': type.toJson()};
 
 InputContentInputText copyWith({String? text}) { return InputContentInputText(inputTextContent.copyWith(
   text: text,
@@ -60,9 +127,9 @@ factory InputContentInputImage.fromJson(Map<String, dynamic> json) { return Inpu
 
 final InputImageContent inputImageContent;
 
-@override String get type => 'input_image';
+@override InputContentType get type => InputContentType.fromJson('input_image');
 
-@override Map<String, dynamic> toJson() => {...inputImageContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...inputImageContent.toJson(), 'type': type.toJson()};
 
 InputContentInputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return InputContentInputImage(inputImageContent.copyWith(
   imageUrl: imageUrl,
@@ -83,9 +150,9 @@ factory InputContentInputFile.fromJson(Map<String, dynamic> json) { return Input
 
 final InputFileContent inputFileContent;
 
-@override String get type => 'input_file';
+@override InputContentType get type => InputContentType.fromJson('input_file');
 
-@override Map<String, dynamic> toJson() => {...inputFileContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...inputFileContent.toJson(), 'type': type.toJson()};
 
 InputContentInputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return InputContentInputFile(inputFileContent.copyWith(
   fileId: fileId,
@@ -108,7 +175,7 @@ InputContentInputFile copyWith({String? Function()? fileId, String? Function()? 
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override InputContentType get type => InputContentType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

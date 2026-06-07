@@ -1,7 +1,116 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ThreadItem
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_message_item.dart';import 'package:pub_openai/models/assistant_message_item/assistant_message_item_object.dart';import 'package:pub_openai/models/attachment.dart';import 'package:pub_openai/models/client_tool_call_item.dart';import 'package:pub_openai/models/inference_options.dart';import 'package:pub_openai/models/response_output_text.dart';import 'package:pub_openai/models/task_group_item.dart';import 'package:pub_openai/models/task_group_task.dart';import 'package:pub_openai/models/task_item.dart';import 'package:pub_openai/models/task_type.dart';import 'package:pub_openai/models/user_message_item.dart';import 'package:pub_openai/models/user_message_item/user_message_item_content.dart';import 'package:pub_openai/models/widget_message_item.dart';sealed class ThreadItem {const ThreadItem();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/assistant_message_item.dart';import 'package:pub_openai/models/assistant_message_item/assistant_message_item_object.dart';import 'package:pub_openai/models/attachment.dart';import 'package:pub_openai/models/client_tool_call_item.dart';import 'package:pub_openai/models/inference_options.dart';import 'package:pub_openai/models/response_output_text.dart';import 'package:pub_openai/models/task_group_item.dart';import 'package:pub_openai/models/task_group_task.dart';import 'package:pub_openai/models/task_item.dart';import 'package:pub_openai/models/task_type.dart';import 'package:pub_openai/models/user_message_item.dart';import 'package:pub_openai/models/user_message_item/user_message_item_content.dart';import 'package:pub_openai/models/widget_message_item.dart';sealed class ThreadItemType {const ThreadItemType();
+
+factory ThreadItemType.fromJson(String json) { return switch (json) {
+  'chatkit.user_message' => chatkitUserMessage,
+  'chatkit.assistant_message' => chatkitAssistantMessage,
+  'chatkit.widget' => chatkitWidget,
+  'chatkit.client_tool_call' => chatkitClientToolCall,
+  'chatkit.task' => chatkitTask,
+  'chatkit.task_group' => chatkitTaskGroup,
+  _ => ThreadItemType$Unknown(json),
+}; }
+
+static const ThreadItemType chatkitUserMessage = ThreadItemType$chatkitUserMessage._();
+
+static const ThreadItemType chatkitAssistantMessage = ThreadItemType$chatkitAssistantMessage._();
+
+static const ThreadItemType chatkitWidget = ThreadItemType$chatkitWidget._();
+
+static const ThreadItemType chatkitClientToolCall = ThreadItemType$chatkitClientToolCall._();
+
+static const ThreadItemType chatkitTask = ThreadItemType$chatkitTask._();
+
+static const ThreadItemType chatkitTaskGroup = ThreadItemType$chatkitTaskGroup._();
+
+static const List<ThreadItemType> values = [chatkitUserMessage, chatkitAssistantMessage, chatkitWidget, chatkitClientToolCall, chatkitTask, chatkitTaskGroup];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ThreadItemType$Unknown;
+
+ }
+@immutable final class ThreadItemType$chatkitUserMessage extends ThreadItemType {const ThreadItemType$chatkitUserMessage._();
+
+@override String get value => 'chatkit.user_message';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadItemType$chatkitUserMessage;
+
+@override int get hashCode => 'chatkit.user_message'.hashCode;
+
+@override String toString() => 'ThreadItemType(chatkit.user_message)';
+
+ }
+@immutable final class ThreadItemType$chatkitAssistantMessage extends ThreadItemType {const ThreadItemType$chatkitAssistantMessage._();
+
+@override String get value => 'chatkit.assistant_message';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadItemType$chatkitAssistantMessage;
+
+@override int get hashCode => 'chatkit.assistant_message'.hashCode;
+
+@override String toString() => 'ThreadItemType(chatkit.assistant_message)';
+
+ }
+@immutable final class ThreadItemType$chatkitWidget extends ThreadItemType {const ThreadItemType$chatkitWidget._();
+
+@override String get value => 'chatkit.widget';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadItemType$chatkitWidget;
+
+@override int get hashCode => 'chatkit.widget'.hashCode;
+
+@override String toString() => 'ThreadItemType(chatkit.widget)';
+
+ }
+@immutable final class ThreadItemType$chatkitClientToolCall extends ThreadItemType {const ThreadItemType$chatkitClientToolCall._();
+
+@override String get value => 'chatkit.client_tool_call';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadItemType$chatkitClientToolCall;
+
+@override int get hashCode => 'chatkit.client_tool_call'.hashCode;
+
+@override String toString() => 'ThreadItemType(chatkit.client_tool_call)';
+
+ }
+@immutable final class ThreadItemType$chatkitTask extends ThreadItemType {const ThreadItemType$chatkitTask._();
+
+@override String get value => 'chatkit.task';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadItemType$chatkitTask;
+
+@override int get hashCode => 'chatkit.task'.hashCode;
+
+@override String toString() => 'ThreadItemType(chatkit.task)';
+
+ }
+@immutable final class ThreadItemType$chatkitTaskGroup extends ThreadItemType {const ThreadItemType$chatkitTaskGroup._();
+
+@override String get value => 'chatkit.task_group';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadItemType$chatkitTaskGroup;
+
+@override int get hashCode => 'chatkit.task_group'.hashCode;
+
+@override String toString() => 'ThreadItemType(chatkit.task_group)';
+
+ }
+@immutable final class ThreadItemType$Unknown extends ThreadItemType {const ThreadItemType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ThreadItemType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ThreadItemType($value)';
+
+ }
+sealed class ThreadItem {const ThreadItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ThreadItem.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -33,7 +142,7 @@ factory ThreadItem.chatkitTask({required String id, required int createdAt, requ
 factory ThreadItem.chatkitTaskGroup({required String id, required int createdAt, required String threadId, required List<TaskGroupTask> tasks, AssistantMessageItemObject object = AssistantMessageItemObject.chatkitThreadItem, }) { return ThreadItemChatkitTaskGroup(TaskGroupItem(id: id, object: object, createdAt: createdAt, threadId: threadId, tasks: tasks)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+ThreadItemType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ThreadItem$Unknown;
@@ -62,9 +171,9 @@ factory ThreadItemChatkitUserMessage.fromJson(Map<String, dynamic> json) { retur
 
 final UserMessageItem userMessageItem;
 
-@override String get type => 'chatkit.user_message';
+@override ThreadItemType get type => ThreadItemType.fromJson('chatkit.user_message');
 
-@override Map<String, dynamic> toJson() => {...userMessageItem.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...userMessageItem.toJson(), 'type': type.toJson()};
 
 ThreadItemChatkitUserMessage copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, List<UserMessageItemContent>? content, List<Attachment>? attachments, InferenceOptions? Function()? inferenceOptions, }) { return ThreadItemChatkitUserMessage(userMessageItem.copyWith(
   id: id,
@@ -97,9 +206,9 @@ factory ThreadItemChatkitAssistantMessage.fromJson(Map<String, dynamic> json) { 
 
 final AssistantMessageItem assistantMessageItem;
 
-@override String get type => 'chatkit.assistant_message';
+@override ThreadItemType get type => ThreadItemType.fromJson('chatkit.assistant_message');
 
-@override Map<String, dynamic> toJson() => {...assistantMessageItem.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...assistantMessageItem.toJson(), 'type': type.toJson()};
 
 ThreadItemChatkitAssistantMessage copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, List<ResponseOutputText>? content, }) { return ThreadItemChatkitAssistantMessage(assistantMessageItem.copyWith(
   id: id,
@@ -130,9 +239,9 @@ factory ThreadItemChatkitWidget.fromJson(Map<String, dynamic> json) { return Thr
 
 final WidgetMessageItem widgetMessageItem;
 
-@override String get type => 'chatkit.widget';
+@override ThreadItemType get type => ThreadItemType.fromJson('chatkit.widget');
 
-@override Map<String, dynamic> toJson() => {...widgetMessageItem.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...widgetMessageItem.toJson(), 'type': type.toJson()};
 
 ThreadItemChatkitWidget copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, String? widget, }) { return ThreadItemChatkitWidget(widgetMessageItem.copyWith(
   id: id,
@@ -163,9 +272,9 @@ factory ThreadItemChatkitClientToolCall.fromJson(Map<String, dynamic> json) { re
 
 final ClientToolCallItem clientToolCallItem;
 
-@override String get type => 'chatkit.client_tool_call';
+@override ThreadItemType get type => ThreadItemType.fromJson('chatkit.client_tool_call');
 
-@override Map<String, dynamic> toJson() => {...clientToolCallItem.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...clientToolCallItem.toJson(), 'type': type.toJson()};
 
 ThreadItemChatkitClientToolCall copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, ClientToolCallStatus? status, String? callId, String? name, String? arguments, String? Function()? output, }) { return ThreadItemChatkitClientToolCall(clientToolCallItem.copyWith(
   id: id,
@@ -200,9 +309,9 @@ factory ThreadItemChatkitTask.fromJson(Map<String, dynamic> json) { return Threa
 
 final TaskItem taskItem;
 
-@override String get type => 'chatkit.task';
+@override ThreadItemType get type => ThreadItemType.fromJson('chatkit.task');
 
-@override Map<String, dynamic> toJson() => {...taskItem.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...taskItem.toJson(), 'type': type.toJson()};
 
 ThreadItemChatkitTask copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, TaskType? taskType, String? Function()? heading, String? Function()? summary, }) { return ThreadItemChatkitTask(taskItem.copyWith(
   id: id,
@@ -235,9 +344,9 @@ factory ThreadItemChatkitTaskGroup.fromJson(Map<String, dynamic> json) { return 
 
 final TaskGroupItem taskGroupItem;
 
-@override String get type => 'chatkit.task_group';
+@override ThreadItemType get type => ThreadItemType.fromJson('chatkit.task_group');
 
-@override Map<String, dynamic> toJson() => {...taskGroupItem.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...taskGroupItem.toJson(), 'type': type.toJson()};
 
 ThreadItemChatkitTaskGroup copyWith({String? id, AssistantMessageItemObject? object, int? createdAt, String? threadId, List<TaskGroupTask>? tasks, }) { return ThreadItemChatkitTaskGroup(taskGroupItem.copyWith(
   id: id,
@@ -276,7 +385,7 @@ late final int _createdAt = (json['created_at'] as num).toInt();
 
 late final String _threadId = json['thread_id'] as String;
 
-@override String get type => json['type'] as String? ?? '';
+@override ThreadItemType get type => ThreadItemType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

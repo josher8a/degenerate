@@ -637,6 +637,7 @@ All HANDOFF deferred items correctly assessed. `emit_utils.dart` (903 LOC) confi
 | — | Bug | OAS 3.1 list-typed `type` crashed allof_flattener | **Done** (batch 22) |
 | — | Tests | emit_utils field helpers, import_analyzer, error union dedup alias | **Done** (batch 22: 36 tests) |
 | — | Tests | Property: negative fixture synthesis, diverse typed params | **Done** (batch 22: 2 tests) |
+| P2 | Generated | `--emit-typed-params` should propagate branded types to model fields, not just path params | **Resolved via backend spec** — backend now uses `$ref` for all ID/address fields, so the generator resolves them to extension types on model fields automatically. No generator heuristic needed. |
 
 ### Consumer-side DX gaps (generator improvements)
 

@@ -29,7 +29,7 @@ void main() {
     test('round-trips through JSON, re-adding the discriminator', () {
       final json = {'type': 'circle', 'radius': 2.5, 'color': 'red'};
       final shape = Shape.fromJson(json);
-      expect(shape.type, equals('circle'));
+      expect(shape.type, equals(ShapeType.circle));
       expect(shape.isUnknown, isFalse);
       expect(shape.toJson(), equals(json));
     });
@@ -46,7 +46,7 @@ void main() {
       final shape = Shape.fromJson(json);
       expect(shape, isA<Shape$Unknown>());
       expect(shape.isUnknown, isTrue);
-      expect(shape.type, equals('hexagon'));
+      expect(shape.type, equals(ShapeType.hexagon));
       // The raw payload survives a round-trip even though the variant is
       // unknown to this client.
       expect(shape.toJson(), equals(json));
@@ -69,7 +69,7 @@ void main() {
           as ShapeCircle;
       final updated = original.copyWith(radius: 9.0);
       expect(updated.circle.radius, equals(9.0));
-      expect(updated.type, equals('circle'));
+      expect(updated.type, equals(ShapeType.circle));
       expect(updated.toJson(), equals({'type': 'circle', 'radius': 9.0}));
     });
 

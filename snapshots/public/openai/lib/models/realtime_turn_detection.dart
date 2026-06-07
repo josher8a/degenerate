@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeTurnDetection
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/semantic_vad.dart';import 'package:pub_openai/models/server_vad.dart';/// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/semantic_vad.dart';import 'package:pub_openai/models/server_vad.dart';sealed class RealtimeTurnDetectionType {const RealtimeTurnDetectionType();
+
+factory RealtimeTurnDetectionType.fromJson(String json) { return switch (json) {
+  'ServerVad' => serverVad,
+  'SemanticVad' => semanticVad,
+  _ => RealtimeTurnDetectionType$Unknown(json),
+}; }
+
+static const RealtimeTurnDetectionType serverVad = RealtimeTurnDetectionType$serverVad._();
+
+static const RealtimeTurnDetectionType semanticVad = RealtimeTurnDetectionType$semanticVad._();
+
+static const List<RealtimeTurnDetectionType> values = [serverVad, semanticVad];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is RealtimeTurnDetectionType$Unknown;
+
+ }
+@immutable final class RealtimeTurnDetectionType$serverVad extends RealtimeTurnDetectionType {const RealtimeTurnDetectionType$serverVad._();
+
+@override String get value => 'ServerVad';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeTurnDetectionType$serverVad;
+
+@override int get hashCode => 'ServerVad'.hashCode;
+
+@override String toString() => 'RealtimeTurnDetectionType(ServerVad)';
+
+ }
+@immutable final class RealtimeTurnDetectionType$semanticVad extends RealtimeTurnDetectionType {const RealtimeTurnDetectionType$semanticVad._();
+
+@override String get value => 'SemanticVad';
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeTurnDetectionType$semanticVad;
+
+@override int get hashCode => 'SemanticVad'.hashCode;
+
+@override String toString() => 'RealtimeTurnDetectionType(SemanticVad)';
+
+ }
+@immutable final class RealtimeTurnDetectionType$Unknown extends RealtimeTurnDetectionType {const RealtimeTurnDetectionType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is RealtimeTurnDetectionType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'RealtimeTurnDetectionType($value)';
+
+ }
+/// Configuration for turn detection, ether Server VAD or Semantic VAD. This can be set to `null` to turn off, in which case the client must manually trigger model response.
 /// 
 /// Server VAD means that the model will detect the start and end of speech based on audio volume and respond at the end of user speech.
 /// 
@@ -23,7 +76,7 @@ factory RealtimeTurnDetection.serverVad({double? threshold, int? prefixPaddingMs
 factory RealtimeTurnDetection.semanticVad({Eagerness eagerness = Eagerness.auto, bool createResponse = true, bool interruptResponse = true, }) { return RealtimeTurnDetectionSemanticVad(SemanticVad(type: 'SemanticVad', eagerness: eagerness, createResponse: createResponse, interruptResponse: interruptResponse)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+RealtimeTurnDetectionType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is RealtimeTurnDetection$Unknown;
@@ -44,9 +97,9 @@ factory RealtimeTurnDetectionServerVad.fromJson(Map<String, dynamic> json) { ret
 
 final ServerVad serverVad;
 
-@override String get type => 'ServerVad';
+@override RealtimeTurnDetectionType get type => RealtimeTurnDetectionType.fromJson('ServerVad');
 
-@override Map<String, dynamic> toJson() => {...serverVad.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...serverVad.toJson(), 'type': type.toJson()};
 
 RealtimeTurnDetectionServerVad copyWith({double? Function()? threshold, int? Function()? prefixPaddingMs, int? Function()? silenceDurationMs, bool Function()? createResponse, bool Function()? interruptResponse, int? Function()? idleTimeoutMs, }) { return RealtimeTurnDetectionServerVad(serverVad.copyWith(
   threshold: threshold,
@@ -74,9 +127,9 @@ factory RealtimeTurnDetectionSemanticVad.fromJson(Map<String, dynamic> json) { r
 
 final SemanticVad semanticVad;
 
-@override String get type => 'SemanticVad';
+@override RealtimeTurnDetectionType get type => RealtimeTurnDetectionType.fromJson('SemanticVad');
 
-@override Map<String, dynamic> toJson() => {...semanticVad.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...semanticVad.toJson(), 'type': type.toJson()};
 
 RealtimeTurnDetectionSemanticVad copyWith({Eagerness Function()? eagerness, bool Function()? createResponse, bool Function()? interruptResponse, }) { return RealtimeTurnDetectionSemanticVad(semanticVad.copyWith(
   eagerness: eagerness,
@@ -105,7 +158,7 @@ late final bool? _createResponse = json['create_response'] as bool?;
 
 late final bool? _interruptResponse = json['interrupt_response'] as bool?;
 
-@override String get type => json['type'] as String? ?? '';
+@override RealtimeTurnDetectionType get type => RealtimeTurnDetectionType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

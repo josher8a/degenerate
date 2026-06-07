@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MqConsumerRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_http_consumer_request.dart';import 'package:pub_cloudflare/models/mq_http_consumer_request/mq_http_consumer_request_settings.dart';import 'package:pub_cloudflare/models/mq_queue_name.dart';import 'package:pub_cloudflare/models/mq_script_name.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_request.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_request/mq_worker_consumer_request_settings.dart';/// Request body for creating or updating a consumer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_http_consumer_request.dart';import 'package:pub_cloudflare/models/mq_http_consumer_request/mq_http_consumer_request_settings.dart';import 'package:pub_cloudflare/models/mq_queue_name.dart';import 'package:pub_cloudflare/models/mq_script_name.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_request.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_request/mq_worker_consumer_request_settings.dart';sealed class MqConsumerRequestType {const MqConsumerRequestType();
+
+factory MqConsumerRequestType.fromJson(String json) { return switch (json) {
+  'http_pull' => httpPull,
+  'worker' => worker,
+  _ => MqConsumerRequestType$Unknown(json),
+}; }
+
+static const MqConsumerRequestType httpPull = MqConsumerRequestType$httpPull._();
+
+static const MqConsumerRequestType worker = MqConsumerRequestType$worker._();
+
+static const List<MqConsumerRequestType> values = [httpPull, worker];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is MqConsumerRequestType$Unknown;
+
+ }
+@immutable final class MqConsumerRequestType$httpPull extends MqConsumerRequestType {const MqConsumerRequestType$httpPull._();
+
+@override String get value => 'http_pull';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqConsumerRequestType$httpPull;
+
+@override int get hashCode => 'http_pull'.hashCode;
+
+@override String toString() => 'MqConsumerRequestType(http_pull)';
+
+ }
+@immutable final class MqConsumerRequestType$worker extends MqConsumerRequestType {const MqConsumerRequestType$worker._();
+
+@override String get value => 'worker';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqConsumerRequestType$worker;
+
+@override int get hashCode => 'worker'.hashCode;
+
+@override String toString() => 'MqConsumerRequestType(worker)';
+
+ }
+@immutable final class MqConsumerRequestType$Unknown extends MqConsumerRequestType {const MqConsumerRequestType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqConsumerRequestType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MqConsumerRequestType($value)';
+
+ }
+/// Request body for creating or updating a consumer
 sealed class MqConsumerRequest {const MqConsumerRequest();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -18,7 +71,7 @@ factory MqConsumerRequest.httpPull({MqQueueName? deadLetterQueue, MqHttpConsumer
 factory MqConsumerRequest.worker({required MqScriptName scriptName, MqQueueName? deadLetterQueue, MqWorkerConsumerRequestSettings? settings, }) { return MqConsumerRequestWorker(MqWorkerConsumerRequest(type: 'worker', deadLetterQueue: deadLetterQueue, scriptName: scriptName, settings: settings)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+MqConsumerRequestType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is MqConsumerRequest$Unknown;
@@ -37,9 +90,9 @@ factory MqConsumerRequestHttpPull.fromJson(Map<String, dynamic> json) { return M
 
 final MqHttpConsumerRequest mqHttpConsumerRequest;
 
-@override String get type => 'http_pull';
+@override MqConsumerRequestType get type => MqConsumerRequestType.fromJson('http_pull');
 
-@override Map<String, dynamic> toJson() => {...mqHttpConsumerRequest.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...mqHttpConsumerRequest.toJson(), 'type': type.toJson()};
 
 MqConsumerRequestHttpPull copyWith({MqQueueName? Function()? deadLetterQueue, MqHttpConsumerRequestSettings? Function()? settings, }) { return MqConsumerRequestHttpPull(mqHttpConsumerRequest.copyWith(
   deadLetterQueue: deadLetterQueue,
@@ -61,9 +114,9 @@ factory MqConsumerRequestWorker.fromJson(Map<String, dynamic> json) { return MqC
 
 final MqWorkerConsumerRequest mqWorkerConsumerRequest;
 
-@override String get type => 'worker';
+@override MqConsumerRequestType get type => MqConsumerRequestType.fromJson('worker');
 
-@override Map<String, dynamic> toJson() => {...mqWorkerConsumerRequest.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...mqWorkerConsumerRequest.toJson(), 'type': type.toJson()};
 
 MqConsumerRequestWorker copyWith({MqQueueName? Function()? deadLetterQueue, MqScriptName? scriptName, MqWorkerConsumerRequestSettings? Function()? settings, }) { return MqConsumerRequestWorker(mqWorkerConsumerRequest.copyWith(
   deadLetterQueue: deadLetterQueue,
@@ -88,7 +141,7 @@ final Map<String, dynamic> json;
 
 late final MqQueueName? _deadLetterQueue = json['dead_letter_queue'] != null ? MqQueueName.fromJson(json['dead_letter_queue'] as String) : null;
 
-@override String get type => json['type'] as String? ?? '';
+@override MqConsumerRequestType get type => MqConsumerRequestType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

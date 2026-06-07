@@ -1,7 +1,116 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ChatCompletionRequestMessage
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_tool_calls2.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_audio.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_content.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_function_call.dart';import 'package:pub_openai/models/chat_completion_request_developer_message.dart';import 'package:pub_openai/models/chat_completion_request_developer_message/chat_completion_request_developer_message_content.dart';import 'package:pub_openai/models/chat_completion_request_function_message.dart';import 'package:pub_openai/models/chat_completion_request_system_message.dart';import 'package:pub_openai/models/chat_completion_request_system_message/chat_completion_request_system_message_content.dart';import 'package:pub_openai/models/chat_completion_request_tool_message.dart';import 'package:pub_openai/models/chat_completion_request_tool_message/chat_completion_request_tool_message_content.dart';import 'package:pub_openai/models/chat_completion_request_user_message.dart';import 'package:pub_openai/models/chat_completion_request_user_message/chat_completion_request_user_message_content.dart';sealed class ChatCompletionRequestMessage {const ChatCompletionRequestMessage();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_message_tool_calls2.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_audio.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_content.dart';import 'package:pub_openai/models/chat_completion_request_assistant_message/chat_completion_request_assistant_message_function_call.dart';import 'package:pub_openai/models/chat_completion_request_developer_message.dart';import 'package:pub_openai/models/chat_completion_request_developer_message/chat_completion_request_developer_message_content.dart';import 'package:pub_openai/models/chat_completion_request_function_message.dart';import 'package:pub_openai/models/chat_completion_request_system_message.dart';import 'package:pub_openai/models/chat_completion_request_system_message/chat_completion_request_system_message_content.dart';import 'package:pub_openai/models/chat_completion_request_tool_message.dart';import 'package:pub_openai/models/chat_completion_request_tool_message/chat_completion_request_tool_message_content.dart';import 'package:pub_openai/models/chat_completion_request_user_message.dart';import 'package:pub_openai/models/chat_completion_request_user_message/chat_completion_request_user_message_content.dart';sealed class ChatCompletionRequestMessageRole {const ChatCompletionRequestMessageRole();
+
+factory ChatCompletionRequestMessageRole.fromJson(String json) { return switch (json) {
+  'developer' => developer,
+  'system' => system,
+  'user' => user,
+  'assistant' => assistant,
+  'tool' => tool,
+  'function' => function,
+  _ => ChatCompletionRequestMessageRole$Unknown(json),
+}; }
+
+static const ChatCompletionRequestMessageRole developer = ChatCompletionRequestMessageRole$developer._();
+
+static const ChatCompletionRequestMessageRole system = ChatCompletionRequestMessageRole$system._();
+
+static const ChatCompletionRequestMessageRole user = ChatCompletionRequestMessageRole$user._();
+
+static const ChatCompletionRequestMessageRole assistant = ChatCompletionRequestMessageRole$assistant._();
+
+static const ChatCompletionRequestMessageRole tool = ChatCompletionRequestMessageRole$tool._();
+
+static const ChatCompletionRequestMessageRole function = ChatCompletionRequestMessageRole$function._();
+
+static const List<ChatCompletionRequestMessageRole> values = [developer, system, user, assistant, tool, function];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ChatCompletionRequestMessageRole$Unknown;
+
+ }
+@immutable final class ChatCompletionRequestMessageRole$developer extends ChatCompletionRequestMessageRole {const ChatCompletionRequestMessageRole$developer._();
+
+@override String get value => 'developer';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionRequestMessageRole$developer;
+
+@override int get hashCode => 'developer'.hashCode;
+
+@override String toString() => 'ChatCompletionRequestMessageRole(developer)';
+
+ }
+@immutable final class ChatCompletionRequestMessageRole$system extends ChatCompletionRequestMessageRole {const ChatCompletionRequestMessageRole$system._();
+
+@override String get value => 'system';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionRequestMessageRole$system;
+
+@override int get hashCode => 'system'.hashCode;
+
+@override String toString() => 'ChatCompletionRequestMessageRole(system)';
+
+ }
+@immutable final class ChatCompletionRequestMessageRole$user extends ChatCompletionRequestMessageRole {const ChatCompletionRequestMessageRole$user._();
+
+@override String get value => 'user';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionRequestMessageRole$user;
+
+@override int get hashCode => 'user'.hashCode;
+
+@override String toString() => 'ChatCompletionRequestMessageRole(user)';
+
+ }
+@immutable final class ChatCompletionRequestMessageRole$assistant extends ChatCompletionRequestMessageRole {const ChatCompletionRequestMessageRole$assistant._();
+
+@override String get value => 'assistant';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionRequestMessageRole$assistant;
+
+@override int get hashCode => 'assistant'.hashCode;
+
+@override String toString() => 'ChatCompletionRequestMessageRole(assistant)';
+
+ }
+@immutable final class ChatCompletionRequestMessageRole$tool extends ChatCompletionRequestMessageRole {const ChatCompletionRequestMessageRole$tool._();
+
+@override String get value => 'tool';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionRequestMessageRole$tool;
+
+@override int get hashCode => 'tool'.hashCode;
+
+@override String toString() => 'ChatCompletionRequestMessageRole(tool)';
+
+ }
+@immutable final class ChatCompletionRequestMessageRole$function extends ChatCompletionRequestMessageRole {const ChatCompletionRequestMessageRole$function._();
+
+@override String get value => 'function';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionRequestMessageRole$function;
+
+@override int get hashCode => 'function'.hashCode;
+
+@override String toString() => 'ChatCompletionRequestMessageRole(function)';
+
+ }
+@immutable final class ChatCompletionRequestMessageRole$Unknown extends ChatCompletionRequestMessageRole {const ChatCompletionRequestMessageRole$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionRequestMessageRole$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ChatCompletionRequestMessageRole($value)';
+
+ }
+sealed class ChatCompletionRequestMessage {const ChatCompletionRequestMessage();
 
 /// Deserialize from JSON, dispatching on the `role` discriminator.
 factory ChatCompletionRequestMessage.fromJson(Map<String, dynamic> json) { return switch (json['role']) {
@@ -33,7 +142,7 @@ factory ChatCompletionRequestMessage.tool({required ChatCompletionRequestToolMes
 factory ChatCompletionRequestMessage.function({required String? content, required String name, }) { return ChatCompletionRequestMessageFunction(ChatCompletionRequestFunctionMessage(role: 'function', content: content, name: name)); }
 
 /// The discriminator value identifying this variant.
-String get role;
+ChatCompletionRequestMessageRole get role;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ChatCompletionRequestMessage$Unknown;
@@ -54,9 +163,9 @@ factory ChatCompletionRequestMessageDeveloper.fromJson(Map<String, dynamic> json
 
 final ChatCompletionRequestDeveloperMessage chatCompletionRequestDeveloperMessage;
 
-@override String get role => 'developer';
+@override ChatCompletionRequestMessageRole get role => ChatCompletionRequestMessageRole.fromJson('developer');
 
-@override Map<String, dynamic> toJson() => {...chatCompletionRequestDeveloperMessage.toJson(), 'role': role};
+@override Map<String, dynamic> toJson() => {...chatCompletionRequestDeveloperMessage.toJson(), 'role': role.toJson()};
 
 ChatCompletionRequestMessageDeveloper copyWith({ChatCompletionRequestDeveloperMessageContent? content, String? Function()? name, }) { return ChatCompletionRequestMessageDeveloper(chatCompletionRequestDeveloperMessage.copyWith(
   content: content,
@@ -76,9 +185,9 @@ factory ChatCompletionRequestMessageSystem.fromJson(Map<String, dynamic> json) {
 
 final ChatCompletionRequestSystemMessage chatCompletionRequestSystemMessage;
 
-@override String get role => 'system';
+@override ChatCompletionRequestMessageRole get role => ChatCompletionRequestMessageRole.fromJson('system');
 
-@override Map<String, dynamic> toJson() => {...chatCompletionRequestSystemMessage.toJson(), 'role': role};
+@override Map<String, dynamic> toJson() => {...chatCompletionRequestSystemMessage.toJson(), 'role': role.toJson()};
 
 ChatCompletionRequestMessageSystem copyWith({ChatCompletionRequestSystemMessageContent? content, String? Function()? name, }) { return ChatCompletionRequestMessageSystem(chatCompletionRequestSystemMessage.copyWith(
   content: content,
@@ -98,9 +207,9 @@ factory ChatCompletionRequestMessageUser.fromJson(Map<String, dynamic> json) { r
 
 final ChatCompletionRequestUserMessage chatCompletionRequestUserMessage;
 
-@override String get role => 'user';
+@override ChatCompletionRequestMessageRole get role => ChatCompletionRequestMessageRole.fromJson('user');
 
-@override Map<String, dynamic> toJson() => {...chatCompletionRequestUserMessage.toJson(), 'role': role};
+@override Map<String, dynamic> toJson() => {...chatCompletionRequestUserMessage.toJson(), 'role': role.toJson()};
 
 ChatCompletionRequestMessageUser copyWith({ChatCompletionRequestUserMessageContent? content, String? Function()? name, }) { return ChatCompletionRequestMessageUser(chatCompletionRequestUserMessage.copyWith(
   content: content,
@@ -120,9 +229,9 @@ factory ChatCompletionRequestMessageAssistant.fromJson(Map<String, dynamic> json
 
 final ChatCompletionRequestAssistantMessage chatCompletionRequestAssistantMessage;
 
-@override String get role => 'assistant';
+@override ChatCompletionRequestMessageRole get role => ChatCompletionRequestMessageRole.fromJson('assistant');
 
-@override Map<String, dynamic> toJson() => {...chatCompletionRequestAssistantMessage.toJson(), 'role': role};
+@override Map<String, dynamic> toJson() => {...chatCompletionRequestAssistantMessage.toJson(), 'role': role.toJson()};
 
 ChatCompletionRequestMessageAssistant copyWith({ChatCompletionRequestAssistantMessageContent? Function()? content, String? Function()? refusal, String? Function()? name, ChatCompletionRequestAssistantMessageAudio? Function()? audio, List<ChatCompletionMessageToolCalls2>? Function()? toolCalls, ChatCompletionRequestAssistantMessageFunctionCall? Function()? functionCall, }) { return ChatCompletionRequestMessageAssistant(chatCompletionRequestAssistantMessage.copyWith(
   content: content,
@@ -146,9 +255,9 @@ factory ChatCompletionRequestMessageTool.fromJson(Map<String, dynamic> json) { r
 
 final ChatCompletionRequestToolMessage chatCompletionRequestToolMessage;
 
-@override String get role => 'tool';
+@override ChatCompletionRequestMessageRole get role => ChatCompletionRequestMessageRole.fromJson('tool');
 
-@override Map<String, dynamic> toJson() => {...chatCompletionRequestToolMessage.toJson(), 'role': role};
+@override Map<String, dynamic> toJson() => {...chatCompletionRequestToolMessage.toJson(), 'role': role.toJson()};
 
 ChatCompletionRequestMessageTool copyWith({ChatCompletionRequestToolMessageContent? content, String? toolCallId, }) { return ChatCompletionRequestMessageTool(chatCompletionRequestToolMessage.copyWith(
   content: content,
@@ -168,9 +277,9 @@ factory ChatCompletionRequestMessageFunction.fromJson(Map<String, dynamic> json)
 
 final ChatCompletionRequestFunctionMessage chatCompletionRequestFunctionMessage;
 
-@override String get role => 'function';
+@override ChatCompletionRequestMessageRole get role => ChatCompletionRequestMessageRole.fromJson('function');
 
-@override Map<String, dynamic> toJson() => {...chatCompletionRequestFunctionMessage.toJson(), 'role': role};
+@override Map<String, dynamic> toJson() => {...chatCompletionRequestFunctionMessage.toJson(), 'role': role.toJson()};
 
 ChatCompletionRequestMessageFunction copyWith({String? Function()? content, String? name, }) { return ChatCompletionRequestMessageFunction(chatCompletionRequestFunctionMessage.copyWith(
   content: content,
@@ -190,7 +299,7 @@ ChatCompletionRequestMessageFunction copyWith({String? Function()? content, Stri
 
 final Map<String, dynamic> json;
 
-@override String get role => json['role'] as String? ?? '';
+@override ChatCompletionRequestMessageRole get role => ChatCompletionRequestMessageRole.fromJson(json['role'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

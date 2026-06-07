@@ -12,6 +12,219 @@ import 'package:pub_totem_mobile/models/reorder_event.dart';
 import 'package:pub_totem_mobile/models/start_room_event.dart';
 import 'package:pub_totem_mobile/models/unban_participant_event.dart';
 
+sealed class EventType {
+  const EventType();
+
+  factory EventType.fromJson(String json) {
+    return switch (json) {
+      'accept_stick' => acceptStick,
+      'ban_participant' => banParticipant,
+      'end_room' => endRoom,
+      'force_pass_stick' => forcePassStick,
+      'pass_stick' => passStick,
+      'reorder' => reorder,
+      'start_room' => startRoom,
+      'unban_participant' => unbanParticipant,
+      _ => EventType$Unknown(json),
+    };
+  }
+
+  static const EventType acceptStick = EventType$acceptStick._();
+
+  static const EventType banParticipant = EventType$banParticipant._();
+
+  static const EventType endRoom = EventType$endRoom._();
+
+  static const EventType forcePassStick = EventType$forcePassStick._();
+
+  static const EventType passStick = EventType$passStick._();
+
+  static const EventType reorder = EventType$reorder._();
+
+  static const EventType startRoom = EventType$startRoom._();
+
+  static const EventType unbanParticipant = EventType$unbanParticipant._();
+
+  static const List<EventType> values = [
+    acceptStick,
+    banParticipant,
+    endRoom,
+    forcePassStick,
+    passStick,
+    reorder,
+    startRoom,
+    unbanParticipant,
+  ];
+
+  String get value;
+  String toJson() => value;
+
+  bool get isUnknown => this is EventType$Unknown;
+}
+
+@immutable
+final class EventType$acceptStick extends EventType {
+  const EventType$acceptStick._();
+
+  @override
+  String get value => 'accept_stick';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$acceptStick;
+
+  @override
+  int get hashCode => 'accept_stick'.hashCode;
+
+  @override
+  String toString() => 'EventType(accept_stick)';
+}
+
+@immutable
+final class EventType$banParticipant extends EventType {
+  const EventType$banParticipant._();
+
+  @override
+  String get value => 'ban_participant';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$banParticipant;
+
+  @override
+  int get hashCode => 'ban_participant'.hashCode;
+
+  @override
+  String toString() => 'EventType(ban_participant)';
+}
+
+@immutable
+final class EventType$endRoom extends EventType {
+  const EventType$endRoom._();
+
+  @override
+  String get value => 'end_room';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$endRoom;
+
+  @override
+  int get hashCode => 'end_room'.hashCode;
+
+  @override
+  String toString() => 'EventType(end_room)';
+}
+
+@immutable
+final class EventType$forcePassStick extends EventType {
+  const EventType$forcePassStick._();
+
+  @override
+  String get value => 'force_pass_stick';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$forcePassStick;
+
+  @override
+  int get hashCode => 'force_pass_stick'.hashCode;
+
+  @override
+  String toString() => 'EventType(force_pass_stick)';
+}
+
+@immutable
+final class EventType$passStick extends EventType {
+  const EventType$passStick._();
+
+  @override
+  String get value => 'pass_stick';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$passStick;
+
+  @override
+  int get hashCode => 'pass_stick'.hashCode;
+
+  @override
+  String toString() => 'EventType(pass_stick)';
+}
+
+@immutable
+final class EventType$reorder extends EventType {
+  const EventType$reorder._();
+
+  @override
+  String get value => 'reorder';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$reorder;
+
+  @override
+  int get hashCode => 'reorder'.hashCode;
+
+  @override
+  String toString() => 'EventType(reorder)';
+}
+
+@immutable
+final class EventType$startRoom extends EventType {
+  const EventType$startRoom._();
+
+  @override
+  String get value => 'start_room';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$startRoom;
+
+  @override
+  int get hashCode => 'start_room'.hashCode;
+
+  @override
+  String toString() => 'EventType(start_room)';
+}
+
+@immutable
+final class EventType$unbanParticipant extends EventType {
+  const EventType$unbanParticipant._();
+
+  @override
+  String get value => 'unban_participant';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is EventType$unbanParticipant;
+
+  @override
+  int get hashCode => 'unban_participant'.hashCode;
+
+  @override
+  String toString() => 'EventType(unban_participant)';
+}
+
+@immutable
+final class EventType$Unknown extends EventType {
+  const EventType$Unknown(this.value);
+
+  @override
+  final String value;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is EventType$Unknown && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+
+  @override
+  String toString() => 'EventType($value)';
+}
+
 sealed class Event {
   const Event();
 
@@ -55,7 +268,7 @@ sealed class Event {
   }
 
   /// The discriminator value identifying this variant.
-  String get type;
+  EventType get type;
   Map<String, dynamic> toJson();
 
   /// Whether this variant is unknown (not defined in the OpenAPI spec).
@@ -97,10 +310,13 @@ final class EventAcceptStick extends Event {
   final AcceptStickEvent acceptStickEvent;
 
   @override
-  String get type => 'accept_stick';
+  EventType get type => EventType.fromJson('accept_stick');
 
   @override
-  Map<String, dynamic> toJson() => {...acceptStickEvent.toJson(), 'type': type};
+  Map<String, dynamic> toJson() => {
+    ...acceptStickEvent.toJson(),
+    'type': type.toJson(),
+  };
 
   EventAcceptStick copyWith({AcceptStickEvent? acceptStickEvent}) {
     return EventAcceptStick(acceptStickEvent ?? this.acceptStickEvent);
@@ -129,12 +345,12 @@ final class EventBanParticipant extends Event {
   final BanParticipantEvent banParticipantEvent;
 
   @override
-  String get type => 'ban_participant';
+  EventType get type => EventType.fromJson('ban_participant');
 
   @override
   Map<String, dynamic> toJson() => {
     ...banParticipantEvent.toJson(),
-    'type': type,
+    'type': type.toJson(),
   };
 
   EventBanParticipant copyWith({String? participantSlug}) {
@@ -167,10 +383,13 @@ final class EventEndRoom extends Event {
   final EndRoomEvent endRoomEvent;
 
   @override
-  String get type => 'end_room';
+  EventType get type => EventType.fromJson('end_room');
 
   @override
-  Map<String, dynamic> toJson() => {...endRoomEvent.toJson(), 'type': type};
+  Map<String, dynamic> toJson() => {
+    ...endRoomEvent.toJson(),
+    'type': type.toJson(),
+  };
 
   EventEndRoom copyWith({EndReason? reason}) {
     return EventEndRoom(endRoomEvent.copyWith(reason: reason));
@@ -199,12 +418,12 @@ final class EventForcePassStick extends Event {
   final ForcePassStickEvent forcePassStickEvent;
 
   @override
-  String get type => 'force_pass_stick';
+  EventType get type => EventType.fromJson('force_pass_stick');
 
   @override
   Map<String, dynamic> toJson() => {
     ...forcePassStickEvent.toJson(),
-    'type': type,
+    'type': type.toJson(),
   };
 
   EventForcePassStick copyWith({ForcePassStickEvent? forcePassStickEvent}) {
@@ -235,10 +454,13 @@ final class EventPassStick extends Event {
   final PassStickEvent passStickEvent;
 
   @override
-  String get type => 'pass_stick';
+  EventType get type => EventType.fromJson('pass_stick');
 
   @override
-  Map<String, dynamic> toJson() => {...passStickEvent.toJson(), 'type': type};
+  Map<String, dynamic> toJson() => {
+    ...passStickEvent.toJson(),
+    'type': type.toJson(),
+  };
 
   EventPassStick copyWith({PassStickEvent? passStickEvent}) {
     return EventPassStick(passStickEvent ?? this.passStickEvent);
@@ -267,10 +489,13 @@ final class EventReorder extends Event {
   final ReorderEvent reorderEvent;
 
   @override
-  String get type => 'reorder';
+  EventType get type => EventType.fromJson('reorder');
 
   @override
-  Map<String, dynamic> toJson() => {...reorderEvent.toJson(), 'type': type};
+  Map<String, dynamic> toJson() => {
+    ...reorderEvent.toJson(),
+    'type': type.toJson(),
+  };
 
   EventReorder copyWith({List<String>? talkingOrder}) {
     return EventReorder(reorderEvent.copyWith(talkingOrder: talkingOrder));
@@ -299,10 +524,13 @@ final class EventStartRoom extends Event {
   final StartRoomEvent startRoomEvent;
 
   @override
-  String get type => 'start_room';
+  EventType get type => EventType.fromJson('start_room');
 
   @override
-  Map<String, dynamic> toJson() => {...startRoomEvent.toJson(), 'type': type};
+  Map<String, dynamic> toJson() => {
+    ...startRoomEvent.toJson(),
+    'type': type.toJson(),
+  };
 
   EventStartRoom copyWith({StartRoomEvent? startRoomEvent}) {
     return EventStartRoom(startRoomEvent ?? this.startRoomEvent);
@@ -331,12 +559,12 @@ final class EventUnbanParticipant extends Event {
   final UnbanParticipantEvent unbanParticipantEvent;
 
   @override
-  String get type => 'unban_participant';
+  EventType get type => EventType.fromJson('unban_participant');
 
   @override
   Map<String, dynamic> toJson() => {
     ...unbanParticipantEvent.toJson(),
-    'type': type,
+    'type': type.toJson(),
   };
 
   EventUnbanParticipant copyWith({String? participantSlug}) {
@@ -367,7 +595,7 @@ final class Event$Unknown extends Event {
   final Map<String, dynamic> json;
 
   @override
-  String get type => json['type'] as String? ?? '';
+  EventType get type => EventType.fromJson(json['type'] as String? ?? '');
 
   @override
   Map<String, dynamic> toJson() => json;

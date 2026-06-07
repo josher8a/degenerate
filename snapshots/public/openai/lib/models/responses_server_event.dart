@@ -1,7 +1,46 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ResponsesServerEvent
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response_stream_event.dart';/// Server events emitted by the Responses WebSocket server.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/response_stream_event.dart';sealed class ResponsesServerEventType {const ResponsesServerEventType();
+
+factory ResponsesServerEventType.fromJson(String json) { return switch (json) {
+  'ResponseStreamEvent' => responseStreamEvent,
+  _ => ResponsesServerEventType$Unknown(json),
+}; }
+
+static const ResponsesServerEventType responseStreamEvent = ResponsesServerEventType$responseStreamEvent._();
+
+static const List<ResponsesServerEventType> values = [responseStreamEvent];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ResponsesServerEventType$Unknown;
+
+ }
+@immutable final class ResponsesServerEventType$responseStreamEvent extends ResponsesServerEventType {const ResponsesServerEventType$responseStreamEvent._();
+
+@override String get value => 'ResponseStreamEvent';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponsesServerEventType$responseStreamEvent;
+
+@override int get hashCode => 'ResponseStreamEvent'.hashCode;
+
+@override String toString() => 'ResponsesServerEventType(ResponseStreamEvent)';
+
+ }
+@immutable final class ResponsesServerEventType$Unknown extends ResponsesServerEventType {const ResponsesServerEventType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ResponsesServerEventType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ResponsesServerEventType($value)';
+
+ }
+/// Server events emitted by the Responses WebSocket server.
 /// 
 sealed class ResponsesServerEvent {const ResponsesServerEvent();
 
@@ -12,7 +51,7 @@ factory ResponsesServerEvent.fromJson(Map<String, dynamic> json) { return switch
 }; }
 
 /// The discriminator value identifying this variant.
-String get type;
+ResponsesServerEventType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ResponsesServerEvent$Unknown;
@@ -28,9 +67,9 @@ factory ResponsesServerEventResponseStreamEvent.fromJson(Map<String, dynamic> js
 
 final ResponseStreamEvent responseStreamEvent;
 
-@override String get type => 'ResponseStreamEvent';
+@override ResponsesServerEventType get type => ResponsesServerEventType.fromJson('ResponseStreamEvent');
 
-@override Map<String, dynamic> toJson() => {...responseStreamEvent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...responseStreamEvent.toJson(), 'type': type.toJson()};
 
 ResponsesServerEventResponseStreamEvent copyWith({ResponseStreamEvent? responseStreamEvent}) { return ResponsesServerEventResponseStreamEvent(responseStreamEvent ?? this.responseStreamEvent); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -47,7 +86,7 @@ ResponsesServerEventResponseStreamEvent copyWith({ResponseStreamEvent? responseS
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override ResponsesServerEventType get type => ResponsesServerEventType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

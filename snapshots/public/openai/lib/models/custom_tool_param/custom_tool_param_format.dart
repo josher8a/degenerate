@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CustomToolParam (inline: Format)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_grammar_format_param.dart';import 'package:pub_openai/models/custom_text_format_param.dart';/// The input format for the custom tool. Default is unconstrained text.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_grammar_format_param.dart';import 'package:pub_openai/models/custom_text_format_param.dart';sealed class CustomToolParamFormatType {const CustomToolParamFormatType();
+
+factory CustomToolParamFormatType.fromJson(String json) { return switch (json) {
+  'text' => text,
+  'grammar' => grammar,
+  _ => CustomToolParamFormatType$Unknown(json),
+}; }
+
+static const CustomToolParamFormatType text = CustomToolParamFormatType$text._();
+
+static const CustomToolParamFormatType grammar = CustomToolParamFormatType$grammar._();
+
+static const List<CustomToolParamFormatType> values = [text, grammar];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is CustomToolParamFormatType$Unknown;
+
+ }
+@immutable final class CustomToolParamFormatType$text extends CustomToolParamFormatType {const CustomToolParamFormatType$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomToolParamFormatType$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+@override String toString() => 'CustomToolParamFormatType(text)';
+
+ }
+@immutable final class CustomToolParamFormatType$grammar extends CustomToolParamFormatType {const CustomToolParamFormatType$grammar._();
+
+@override String get value => 'grammar';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomToolParamFormatType$grammar;
+
+@override int get hashCode => 'grammar'.hashCode;
+
+@override String toString() => 'CustomToolParamFormatType(grammar)';
+
+ }
+@immutable final class CustomToolParamFormatType$Unknown extends CustomToolParamFormatType {const CustomToolParamFormatType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is CustomToolParamFormatType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CustomToolParamFormatType($value)';
+
+ }
+/// The input format for the custom tool. Default is unconstrained text.
 sealed class CustomToolParamFormat {const CustomToolParamFormat();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -15,7 +68,7 @@ factory CustomToolParamFormat.fromJson(Map<String, dynamic> json) { return switc
 factory CustomToolParamFormat.grammar({required GrammarSyntax1 syntax, required String definition, }) { return CustomToolParamFormatGrammar(CustomGrammarFormatParam(syntax: syntax, definition: definition)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+CustomToolParamFormatType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CustomToolParamFormat$Unknown;
@@ -32,9 +85,9 @@ factory CustomToolParamFormatText.fromJson(Map<String, dynamic> json) { return C
 
 final CustomTextFormatParam customTextFormatParam;
 
-@override String get type => 'text';
+@override CustomToolParamFormatType get type => CustomToolParamFormatType.fromJson('text');
 
-@override Map<String, dynamic> toJson() => {...customTextFormatParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...customTextFormatParam.toJson(), 'type': type.toJson()};
 
 CustomToolParamFormatText copyWith({CustomTextFormatParam? customTextFormatParam}) { return CustomToolParamFormatText(customTextFormatParam ?? this.customTextFormatParam); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -51,9 +104,9 @@ factory CustomToolParamFormatGrammar.fromJson(Map<String, dynamic> json) { retur
 
 final CustomGrammarFormatParam customGrammarFormatParam;
 
-@override String get type => 'grammar';
+@override CustomToolParamFormatType get type => CustomToolParamFormatType.fromJson('grammar');
 
-@override Map<String, dynamic> toJson() => {...customGrammarFormatParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...customGrammarFormatParam.toJson(), 'type': type.toJson()};
 
 CustomToolParamFormatGrammar copyWith({GrammarSyntax1? syntax, String? definition, }) { return CustomToolParamFormatGrammar(customGrammarFormatParam.copyWith(
   syntax: syntax,
@@ -73,7 +126,7 @@ CustomToolParamFormatGrammar copyWith({GrammarSyntax1? syntax, String? definitio
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override CustomToolParamFormatType get type => CustomToolParamFormatType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

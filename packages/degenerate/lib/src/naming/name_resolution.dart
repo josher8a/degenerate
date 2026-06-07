@@ -14,6 +14,8 @@
 /// survivor's final name) plus per-survivor paths for folder placement.
 library;
 
+import 'dart:io' show stderr;
+
 import 'package:degenerate/src/dart_names.dart' show segmentsOf;
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/naming/structural_dedup.dart';
@@ -166,6 +168,18 @@ NameResolution resolveNames({
     final sig = signer.signatureOf(registry[n]!);
     (groups['$sig ${leafOf(n)}'] ??= []).add(n);
   }
+
+  // --- Diagnostic: log structural matches that differ only in leaf name ---
+  _logPossibleDeduplications(
+    inline: inline,
+    reserved: reserved,
+    registry: registry,
+    signer: signer,
+    leafOf: leafOf,
+    mergeable: mergeable,
+  );
+  // --- End diagnostic ---
+
   for (final group in groups.values) {
     final aliasTarget = reservedBySig[signer.signatureOf(registry[group.first]!)];
     if (aliasTarget != null && leafOf(group.first) == aliasTarget) {
@@ -230,4 +244,76 @@ NameResolution resolveNames({
   }
 
   return (memberToSurvivor, survivorReps);
+}
+
+/// Logs groups of types that share a structural signature but have different
+/// leaf concept names — candidates for manual deduplication in the OpenAPI
+/// spec that the conservative dedup filter deliberately skips.
+void _logPossibleDeduplications({
+  required List<String> inline,
+  required Set<String> reserved,
+  required Map<String, IrType> registry,
+  required StructuralSigner signer,
+  required String Function(String) leafOf,
+  required bool Function(String) mergeable,
+}) {
+  // Group ALL types (inline + reserved) by pure structural signature.
+  final bySig = <String, List<String>>{};
+  for (final n in [...reserved, ...inline]) {
+    if (!mergeable(n)) continue;
+    final sig = signer.signatureOf(registry[n]!);
+    (bySig[sig] ??= []).add(n);
+  }
+
+  final candidates = <String>[];
+  for (final MapEntry(key: sig, value: names) in bySig.entries) {
+    final leaves = names.map(leafOf).toSet();
+    if (leaves.length < 2) continue;
+
+    final fieldPreview = _sigFieldPreview(sig);
+    final buf = StringBuffer()
+      ..writeln('  Signature: $fieldPreview')
+      ..writeln('  Leaf names: ${leaves.join(', ')}')
+      ..writeln('  Types (${names.length}):');
+    for (final n in names) {
+      final tag = reserved.contains(n) ? ' [top-level]' : '';
+      buf.writeln('    - $n (leaf: ${leafOf(n)})$tag');
+    }
+    candidates.add(buf.toString());
+  }
+
+  if (candidates.isEmpty) return;
+
+  stderr.writeln(
+    '\n╔══ Possible spec-level deduplications '
+    '═══════════════════════════════════════════',
+  );
+  stderr.writeln(
+    '║ These type groups share the same structural shape but have '
+    'different leaf names.',
+  );
+  stderr.write('║ The conservative dedup skipped them. Consider extracting a ');
+  stderr.writeln(r'shared $ref in the spec.');
+  stderr.writeln(
+    '╚══════════════════════════════════════'
+    '═══════════════════════════════════════════\n',
+  );
+  for (var i = 0; i < candidates.length; i++) {
+    stderr.writeln('${i + 1}. ${candidates[i]}');
+  }
+}
+
+/// Extracts a short human-readable field list from a structural signature.
+/// e.g. `o{amount:1:p:string:;currency:1:p:string:;}` → `{amount, currency}`
+String _sigFieldPreview(String sig) {
+  if (!sig.startsWith('o{')) return sig.length > 80 ? '${sig.substring(0, 77)}...' : sig;
+  final inner = sig.substring(2, sig.length - 1);
+  final fields = <String>[];
+  for (final part in inner.split(';')) {
+    final colon = part.indexOf(':');
+    if (colon > 0) fields.add(part.substring(0, colon));
+  }
+  if (fields.isEmpty) return sig;
+  final preview = fields.join(', ');
+  return '{${preview.length > 80 ? '${preview.substring(0, 77)}...' : preview}}';
 }

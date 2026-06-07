@@ -7,6 +7,105 @@ import 'package:pub_totem_mobile/models/end_reason.dart';
 import 'package:pub_totem_mobile/models/ended_detail.dart';
 import 'package:pub_totem_mobile/models/waiting_room_detail.dart';
 
+sealed class StatusDetailType {
+  const StatusDetailType();
+
+  factory StatusDetailType.fromJson(String json) {
+    return switch (json) {
+      'active' => active,
+      'ended' => ended,
+      'waiting_room' => waitingRoom,
+      _ => StatusDetailType$Unknown(json),
+    };
+  }
+
+  static const StatusDetailType active = StatusDetailType$active._();
+
+  static const StatusDetailType ended = StatusDetailType$ended._();
+
+  static const StatusDetailType waitingRoom = StatusDetailType$waitingRoom._();
+
+  static const List<StatusDetailType> values = [active, ended, waitingRoom];
+
+  String get value;
+  String toJson() => value;
+
+  bool get isUnknown => this is StatusDetailType$Unknown;
+}
+
+@immutable
+final class StatusDetailType$active extends StatusDetailType {
+  const StatusDetailType$active._();
+
+  @override
+  String get value => 'active';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is StatusDetailType$active;
+
+  @override
+  int get hashCode => 'active'.hashCode;
+
+  @override
+  String toString() => 'StatusDetailType(active)';
+}
+
+@immutable
+final class StatusDetailType$ended extends StatusDetailType {
+  const StatusDetailType$ended._();
+
+  @override
+  String get value => 'ended';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is StatusDetailType$ended;
+
+  @override
+  int get hashCode => 'ended'.hashCode;
+
+  @override
+  String toString() => 'StatusDetailType(ended)';
+}
+
+@immutable
+final class StatusDetailType$waitingRoom extends StatusDetailType {
+  const StatusDetailType$waitingRoom._();
+
+  @override
+  String get value => 'waiting_room';
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is StatusDetailType$waitingRoom;
+
+  @override
+  int get hashCode => 'waiting_room'.hashCode;
+
+  @override
+  String toString() => 'StatusDetailType(waiting_room)';
+}
+
+@immutable
+final class StatusDetailType$Unknown extends StatusDetailType {
+  const StatusDetailType$Unknown(this.value);
+
+  @override
+  final String value;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is StatusDetailType$Unknown && other.value == value;
+
+  @override
+  int get hashCode => value.hashCode;
+
+  @override
+  String toString() => 'StatusDetailType($value)';
+}
+
 sealed class StatusDetail {
   const StatusDetail();
 
@@ -26,7 +125,7 @@ sealed class StatusDetail {
   }
 
   /// The discriminator value identifying this variant.
-  String get type;
+  StatusDetailType get type;
   Map<String, dynamic> toJson();
 
   /// Whether this variant is unknown (not defined in the OpenAPI spec).
@@ -58,10 +157,13 @@ final class StatusDetailActive extends StatusDetail {
   final ActiveDetail activeDetail;
 
   @override
-  String get type => 'active';
+  StatusDetailType get type => StatusDetailType.fromJson('active');
 
   @override
-  Map<String, dynamic> toJson() => {...activeDetail.toJson(), 'type': type};
+  Map<String, dynamic> toJson() => {
+    ...activeDetail.toJson(),
+    'type': type.toJson(),
+  };
 
   StatusDetailActive copyWith({ActiveDetail? activeDetail}) {
     return StatusDetailActive(activeDetail ?? this.activeDetail);
@@ -90,10 +192,13 @@ final class StatusDetailEnded extends StatusDetail {
   final EndedDetail endedDetail;
 
   @override
-  String get type => 'ended';
+  StatusDetailType get type => StatusDetailType.fromJson('ended');
 
   @override
-  Map<String, dynamic> toJson() => {...endedDetail.toJson(), 'type': type};
+  Map<String, dynamic> toJson() => {
+    ...endedDetail.toJson(),
+    'type': type.toJson(),
+  };
 
   StatusDetailEnded copyWith({EndReason? reason}) {
     return StatusDetailEnded(endedDetail.copyWith(reason: reason));
@@ -122,12 +227,12 @@ final class StatusDetailWaitingRoom extends StatusDetail {
   final WaitingRoomDetail waitingRoomDetail;
 
   @override
-  String get type => 'waiting_room';
+  StatusDetailType get type => StatusDetailType.fromJson('waiting_room');
 
   @override
   Map<String, dynamic> toJson() => {
     ...waitingRoomDetail.toJson(),
-    'type': type,
+    'type': type.toJson(),
   };
 
   StatusDetailWaitingRoom copyWith({WaitingRoomDetail? waitingRoomDetail}) {
@@ -156,7 +261,8 @@ final class StatusDetail$Unknown extends StatusDetail {
   final Map<String, dynamic> json;
 
   @override
-  String get type => json['type'] as String? ?? '';
+  StatusDetailType get type =>
+      StatusDetailType.fromJson(json['type'] as String? ?? '');
 
   @override
   Map<String, dynamic> toJson() => json;

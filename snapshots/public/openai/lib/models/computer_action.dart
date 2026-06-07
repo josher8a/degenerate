@@ -1,7 +1,158 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ComputerAction
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/click_param.dart';import 'package:pub_openai/models/coord_param.dart';import 'package:pub_openai/models/double_click_action.dart';import 'package:pub_openai/models/drag_param.dart';import 'package:pub_openai/models/key_press_action.dart';import 'package:pub_openai/models/move_param.dart';import 'package:pub_openai/models/screenshot_param.dart';import 'package:pub_openai/models/scroll_param.dart';import 'package:pub_openai/models/type_param.dart';import 'package:pub_openai/models/wait_param.dart';sealed class ComputerAction {const ComputerAction();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/click_param.dart';import 'package:pub_openai/models/coord_param.dart';import 'package:pub_openai/models/double_click_action.dart';import 'package:pub_openai/models/drag_param.dart';import 'package:pub_openai/models/key_press_action.dart';import 'package:pub_openai/models/move_param.dart';import 'package:pub_openai/models/screenshot_param.dart';import 'package:pub_openai/models/scroll_param.dart';import 'package:pub_openai/models/type_param.dart';import 'package:pub_openai/models/wait_param.dart';sealed class ComputerActionTypeDisc {const ComputerActionTypeDisc();
+
+factory ComputerActionTypeDisc.fromJson(String json) { return switch (json) {
+  'click' => click,
+  'double_click' => doubleClick,
+  'drag' => drag,
+  'keypress' => keypress,
+  'move' => move,
+  'screenshot' => screenshot,
+  'scroll' => scroll,
+  'type' => type,
+  'wait' => wait,
+  _ => ComputerActionTypeDisc$Unknown(json),
+}; }
+
+static const ComputerActionTypeDisc click = ComputerActionTypeDisc$click._();
+
+static const ComputerActionTypeDisc doubleClick = ComputerActionTypeDisc$doubleClick._();
+
+static const ComputerActionTypeDisc drag = ComputerActionTypeDisc$drag._();
+
+static const ComputerActionTypeDisc keypress = ComputerActionTypeDisc$keypress._();
+
+static const ComputerActionTypeDisc move = ComputerActionTypeDisc$move._();
+
+static const ComputerActionTypeDisc screenshot = ComputerActionTypeDisc$screenshot._();
+
+static const ComputerActionTypeDisc scroll = ComputerActionTypeDisc$scroll._();
+
+static const ComputerActionTypeDisc type = ComputerActionTypeDisc$type._();
+
+static const ComputerActionTypeDisc wait = ComputerActionTypeDisc$wait._();
+
+static const List<ComputerActionTypeDisc> values = [click, doubleClick, drag, keypress, move, screenshot, scroll, type, wait];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ComputerActionTypeDisc$Unknown;
+
+ }
+@immutable final class ComputerActionTypeDisc$click extends ComputerActionTypeDisc {const ComputerActionTypeDisc$click._();
+
+@override String get value => 'click';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerActionTypeDisc$click;
+
+@override int get hashCode => 'click'.hashCode;
+
+@override String toString() => 'ComputerActionTypeDisc(click)';
+
+ }
+@immutable final class ComputerActionTypeDisc$doubleClick extends ComputerActionTypeDisc {const ComputerActionTypeDisc$doubleClick._();
+
+@override String get value => 'double_click';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerActionTypeDisc$doubleClick;
+
+@override int get hashCode => 'double_click'.hashCode;
+
+@override String toString() => 'ComputerActionTypeDisc(double_click)';
+
+ }
+@immutable final class ComputerActionTypeDisc$drag extends ComputerActionTypeDisc {const ComputerActionTypeDisc$drag._();
+
+@override String get value => 'drag';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerActionTypeDisc$drag;
+
+@override int get hashCode => 'drag'.hashCode;
+
+@override String toString() => 'ComputerActionTypeDisc(drag)';
+
+ }
+@immutable final class ComputerActionTypeDisc$keypress extends ComputerActionTypeDisc {const ComputerActionTypeDisc$keypress._();
+
+@override String get value => 'keypress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerActionTypeDisc$keypress;
+
+@override int get hashCode => 'keypress'.hashCode;
+
+@override String toString() => 'ComputerActionTypeDisc(keypress)';
+
+ }
+@immutable final class ComputerActionTypeDisc$move extends ComputerActionTypeDisc {const ComputerActionTypeDisc$move._();
+
+@override String get value => 'move';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerActionTypeDisc$move;
+
+@override int get hashCode => 'move'.hashCode;
+
+@override String toString() => 'ComputerActionTypeDisc(move)';
+
+ }
+@immutable final class ComputerActionTypeDisc$screenshot extends ComputerActionTypeDisc {const ComputerActionTypeDisc$screenshot._();
+
+@override String get value => 'screenshot';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerActionTypeDisc$screenshot;
+
+@override int get hashCode => 'screenshot'.hashCode;
+
+@override String toString() => 'ComputerActionTypeDisc(screenshot)';
+
+ }
+@immutable final class ComputerActionTypeDisc$scroll extends ComputerActionTypeDisc {const ComputerActionTypeDisc$scroll._();
+
+@override String get value => 'scroll';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerActionTypeDisc$scroll;
+
+@override int get hashCode => 'scroll'.hashCode;
+
+@override String toString() => 'ComputerActionTypeDisc(scroll)';
+
+ }
+@immutable final class ComputerActionTypeDisc$type extends ComputerActionTypeDisc {const ComputerActionTypeDisc$type._();
+
+@override String get value => 'type';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerActionTypeDisc$type;
+
+@override int get hashCode => 'type'.hashCode;
+
+@override String toString() => 'ComputerActionTypeDisc(type)';
+
+ }
+@immutable final class ComputerActionTypeDisc$wait extends ComputerActionTypeDisc {const ComputerActionTypeDisc$wait._();
+
+@override String get value => 'wait';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerActionTypeDisc$wait;
+
+@override int get hashCode => 'wait'.hashCode;
+
+@override String toString() => 'ComputerActionTypeDisc(wait)';
+
+ }
+@immutable final class ComputerActionTypeDisc$Unknown extends ComputerActionTypeDisc {const ComputerActionTypeDisc$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ComputerActionTypeDisc$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ComputerActionTypeDisc($value)';
+
+ }
+sealed class ComputerAction {const ComputerAction();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ComputerAction.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -39,7 +190,7 @@ factory ComputerAction.scroll({required int x, required int y, required int scro
 factory ComputerAction.type({required String text}) { return ComputerActionType(TypeParam(text: text)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+ComputerActionTypeDisc get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ComputerAction$Unknown;
@@ -63,9 +214,9 @@ factory ComputerActionClick.fromJson(Map<String, dynamic> json) { return Compute
 
 final ClickParam clickParam;
 
-@override String get type => 'click';
+@override ComputerActionTypeDisc get type => ComputerActionTypeDisc.fromJson('click');
 
-@override Map<String, dynamic> toJson() => {...clickParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...clickParam.toJson(), 'type': type.toJson()};
 
 ComputerActionClick copyWith({ClickButtonType? button, int? x, int? y, }) { return ComputerActionClick(clickParam.copyWith(
   button: button,
@@ -86,9 +237,9 @@ factory ComputerActionDoubleClick.fromJson(Map<String, dynamic> json) { return C
 
 final DoubleClickAction doubleClickAction;
 
-@override String get type => 'double_click';
+@override ComputerActionTypeDisc get type => ComputerActionTypeDisc.fromJson('double_click');
 
-@override Map<String, dynamic> toJson() => {...doubleClickAction.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...doubleClickAction.toJson(), 'type': type.toJson()};
 
 ComputerActionDoubleClick copyWith({int? x, int? y, }) { return ComputerActionDoubleClick(doubleClickAction.copyWith(
   x: x,
@@ -108,9 +259,9 @@ factory ComputerActionDrag.fromJson(Map<String, dynamic> json) { return Computer
 
 final DragParam dragParam;
 
-@override String get type => 'drag';
+@override ComputerActionTypeDisc get type => ComputerActionTypeDisc.fromJson('drag');
 
-@override Map<String, dynamic> toJson() => {...dragParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...dragParam.toJson(), 'type': type.toJson()};
 
 ComputerActionDrag copyWith({List<CoordParam>? path}) { return ComputerActionDrag(dragParam.copyWith(
   path: path,
@@ -129,9 +280,9 @@ factory ComputerActionKeypress.fromJson(Map<String, dynamic> json) { return Comp
 
 final KeyPressAction keyPressAction;
 
-@override String get type => 'keypress';
+@override ComputerActionTypeDisc get type => ComputerActionTypeDisc.fromJson('keypress');
 
-@override Map<String, dynamic> toJson() => {...keyPressAction.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...keyPressAction.toJson(), 'type': type.toJson()};
 
 ComputerActionKeypress copyWith({List<String>? keys}) { return ComputerActionKeypress(keyPressAction.copyWith(
   keys: keys,
@@ -150,9 +301,9 @@ factory ComputerActionMove.fromJson(Map<String, dynamic> json) { return Computer
 
 final MoveParam moveParam;
 
-@override String get type => 'move';
+@override ComputerActionTypeDisc get type => ComputerActionTypeDisc.fromJson('move');
 
-@override Map<String, dynamic> toJson() => {...moveParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...moveParam.toJson(), 'type': type.toJson()};
 
 ComputerActionMove copyWith({int? x, int? y, }) { return ComputerActionMove(moveParam.copyWith(
   x: x,
@@ -172,9 +323,9 @@ factory ComputerActionScreenshot.fromJson(Map<String, dynamic> json) { return Co
 
 final ScreenshotParam screenshotParam;
 
-@override String get type => 'screenshot';
+@override ComputerActionTypeDisc get type => ComputerActionTypeDisc.fromJson('screenshot');
 
-@override Map<String, dynamic> toJson() => {...screenshotParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...screenshotParam.toJson(), 'type': type.toJson()};
 
 ComputerActionScreenshot copyWith({ScreenshotParam? screenshotParam}) { return ComputerActionScreenshot(screenshotParam ?? this.screenshotParam); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -191,9 +342,9 @@ factory ComputerActionScroll.fromJson(Map<String, dynamic> json) { return Comput
 
 final ScrollParam scrollParam;
 
-@override String get type => 'scroll';
+@override ComputerActionTypeDisc get type => ComputerActionTypeDisc.fromJson('scroll');
 
-@override Map<String, dynamic> toJson() => {...scrollParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...scrollParam.toJson(), 'type': type.toJson()};
 
 ComputerActionScroll copyWith({int? x, int? y, int? scrollX, int? scrollY, }) { return ComputerActionScroll(scrollParam.copyWith(
   x: x,
@@ -215,9 +366,9 @@ factory ComputerActionType.fromJson(Map<String, dynamic> json) { return Computer
 
 final TypeParam typeParam;
 
-@override String get type => 'type';
+@override ComputerActionTypeDisc get type => ComputerActionTypeDisc.fromJson('type');
 
-@override Map<String, dynamic> toJson() => {...typeParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...typeParam.toJson(), 'type': type.toJson()};
 
 ComputerActionType copyWith({String? text}) { return ComputerActionType(typeParam.copyWith(
   text: text,
@@ -236,9 +387,9 @@ factory ComputerActionWait.fromJson(Map<String, dynamic> json) { return Computer
 
 final WaitParam waitParam;
 
-@override String get type => 'wait';
+@override ComputerActionTypeDisc get type => ComputerActionTypeDisc.fromJson('wait');
 
-@override Map<String, dynamic> toJson() => {...waitParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...waitParam.toJson(), 'type': type.toJson()};
 
 ComputerActionWait copyWith({WaitParam? waitParam}) { return ComputerActionWait(waitParam ?? this.waitParam); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -255,7 +406,7 @@ ComputerActionWait copyWith({WaitParam? waitParam}) { return ComputerActionWait(
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override ComputerActionTypeDisc get type => ComputerActionTypeDisc.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

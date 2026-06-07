@@ -1,7 +1,158 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Message (inline: Content)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/annotation.dart';import 'package:pub_openai/models/computer_screenshot_content.dart';import 'package:pub_openai/models/image_detail.dart';import 'package:pub_openai/models/input_file_content.dart';import 'package:pub_openai/models/input_image_content.dart';import 'package:pub_openai/models/input_text_content.dart';import 'package:pub_openai/models/log_prob.dart';import 'package:pub_openai/models/output_text_content.dart';import 'package:pub_openai/models/reasoning_text_content.dart';import 'package:pub_openai/models/refusal_content.dart';import 'package:pub_openai/models/summary_text_content.dart';import 'package:pub_openai/models/text_content.dart';/// A content part that makes up an input or output item.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/annotation.dart';import 'package:pub_openai/models/computer_screenshot_content.dart';import 'package:pub_openai/models/image_detail.dart';import 'package:pub_openai/models/input_file_content.dart';import 'package:pub_openai/models/input_image_content.dart';import 'package:pub_openai/models/input_text_content.dart';import 'package:pub_openai/models/log_prob.dart';import 'package:pub_openai/models/output_text_content.dart';import 'package:pub_openai/models/reasoning_text_content.dart';import 'package:pub_openai/models/refusal_content.dart';import 'package:pub_openai/models/summary_text_content.dart';import 'package:pub_openai/models/text_content.dart';sealed class MessageContentType {const MessageContentType();
+
+factory MessageContentType.fromJson(String json) { return switch (json) {
+  'input_text' => inputText,
+  'output_text' => outputText,
+  'text' => text,
+  'summary_text' => summaryText,
+  'reasoning_text' => reasoningText,
+  'refusal' => refusal,
+  'input_image' => inputImage,
+  'computer_screenshot' => computerScreenshot,
+  'input_file' => inputFile,
+  _ => MessageContentType$Unknown(json),
+}; }
+
+static const MessageContentType inputText = MessageContentType$inputText._();
+
+static const MessageContentType outputText = MessageContentType$outputText._();
+
+static const MessageContentType text = MessageContentType$text._();
+
+static const MessageContentType summaryText = MessageContentType$summaryText._();
+
+static const MessageContentType reasoningText = MessageContentType$reasoningText._();
+
+static const MessageContentType refusal = MessageContentType$refusal._();
+
+static const MessageContentType inputImage = MessageContentType$inputImage._();
+
+static const MessageContentType computerScreenshot = MessageContentType$computerScreenshot._();
+
+static const MessageContentType inputFile = MessageContentType$inputFile._();
+
+static const List<MessageContentType> values = [inputText, outputText, text, summaryText, reasoningText, refusal, inputImage, computerScreenshot, inputFile];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is MessageContentType$Unknown;
+
+ }
+@immutable final class MessageContentType$inputText extends MessageContentType {const MessageContentType$inputText._();
+
+@override String get value => 'input_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageContentType$inputText;
+
+@override int get hashCode => 'input_text'.hashCode;
+
+@override String toString() => 'MessageContentType(input_text)';
+
+ }
+@immutable final class MessageContentType$outputText extends MessageContentType {const MessageContentType$outputText._();
+
+@override String get value => 'output_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageContentType$outputText;
+
+@override int get hashCode => 'output_text'.hashCode;
+
+@override String toString() => 'MessageContentType(output_text)';
+
+ }
+@immutable final class MessageContentType$text extends MessageContentType {const MessageContentType$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageContentType$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+@override String toString() => 'MessageContentType(text)';
+
+ }
+@immutable final class MessageContentType$summaryText extends MessageContentType {const MessageContentType$summaryText._();
+
+@override String get value => 'summary_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageContentType$summaryText;
+
+@override int get hashCode => 'summary_text'.hashCode;
+
+@override String toString() => 'MessageContentType(summary_text)';
+
+ }
+@immutable final class MessageContentType$reasoningText extends MessageContentType {const MessageContentType$reasoningText._();
+
+@override String get value => 'reasoning_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageContentType$reasoningText;
+
+@override int get hashCode => 'reasoning_text'.hashCode;
+
+@override String toString() => 'MessageContentType(reasoning_text)';
+
+ }
+@immutable final class MessageContentType$refusal extends MessageContentType {const MessageContentType$refusal._();
+
+@override String get value => 'refusal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageContentType$refusal;
+
+@override int get hashCode => 'refusal'.hashCode;
+
+@override String toString() => 'MessageContentType(refusal)';
+
+ }
+@immutable final class MessageContentType$inputImage extends MessageContentType {const MessageContentType$inputImage._();
+
+@override String get value => 'input_image';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageContentType$inputImage;
+
+@override int get hashCode => 'input_image'.hashCode;
+
+@override String toString() => 'MessageContentType(input_image)';
+
+ }
+@immutable final class MessageContentType$computerScreenshot extends MessageContentType {const MessageContentType$computerScreenshot._();
+
+@override String get value => 'computer_screenshot';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageContentType$computerScreenshot;
+
+@override int get hashCode => 'computer_screenshot'.hashCode;
+
+@override String toString() => 'MessageContentType(computer_screenshot)';
+
+ }
+@immutable final class MessageContentType$inputFile extends MessageContentType {const MessageContentType$inputFile._();
+
+@override String get value => 'input_file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageContentType$inputFile;
+
+@override int get hashCode => 'input_file'.hashCode;
+
+@override String toString() => 'MessageContentType(input_file)';
+
+ }
+@immutable final class MessageContentType$Unknown extends MessageContentType {const MessageContentType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is MessageContentType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MessageContentType($value)';
+
+ }
+/// A content part that makes up an input or output item.
 sealed class MessageContent {const MessageContent();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -46,7 +197,7 @@ factory MessageContent.computerScreenshot({required String? imageUrl, required S
 factory MessageContent.inputFile({String? fileId, String? filename, String? fileData, String? fileUrl, FileInputDetail? detail, }) { return MessageContentInputFile(InputFileContent(fileId: fileId, filename: filename, fileData: fileData, fileUrl: fileUrl, detail: detail)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+MessageContentType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is MessageContent$Unknown;
@@ -70,9 +221,9 @@ factory MessageContentInputText.fromJson(Map<String, dynamic> json) { return Mes
 
 final InputTextContent inputTextContent;
 
-@override String get type => 'input_text';
+@override MessageContentType get type => MessageContentType.fromJson('input_text');
 
-@override Map<String, dynamic> toJson() => {...inputTextContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...inputTextContent.toJson(), 'type': type.toJson()};
 
 MessageContentInputText copyWith({String? text}) { return MessageContentInputText(inputTextContent.copyWith(
   text: text,
@@ -91,9 +242,9 @@ factory MessageContentOutputText.fromJson(Map<String, dynamic> json) { return Me
 
 final OutputTextContent outputTextContent;
 
-@override String get type => 'output_text';
+@override MessageContentType get type => MessageContentType.fromJson('output_text');
 
-@override Map<String, dynamic> toJson() => {...outputTextContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...outputTextContent.toJson(), 'type': type.toJson()};
 
 MessageContentOutputText copyWith({String? text, List<Annotation>? annotations, List<LogProb>? logprobs, }) { return MessageContentOutputText(outputTextContent.copyWith(
   text: text,
@@ -114,9 +265,9 @@ factory MessageContentText.fromJson(Map<String, dynamic> json) { return MessageC
 
 final TextContent textContent;
 
-@override String get type => 'text';
+@override MessageContentType get type => MessageContentType.fromJson('text');
 
-@override Map<String, dynamic> toJson() => {...textContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...textContent.toJson(), 'type': type.toJson()};
 
 MessageContentText copyWith({String? text}) { return MessageContentText(textContent.copyWith(
   text: text,
@@ -135,9 +286,9 @@ factory MessageContentSummaryText.fromJson(Map<String, dynamic> json) { return M
 
 final SummaryTextContent summaryTextContent;
 
-@override String get type => 'summary_text';
+@override MessageContentType get type => MessageContentType.fromJson('summary_text');
 
-@override Map<String, dynamic> toJson() => {...summaryTextContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...summaryTextContent.toJson(), 'type': type.toJson()};
 
 MessageContentSummaryText copyWith({String? text}) { return MessageContentSummaryText(summaryTextContent.copyWith(
   text: text,
@@ -156,9 +307,9 @@ factory MessageContentReasoningText.fromJson(Map<String, dynamic> json) { return
 
 final ReasoningTextContent reasoningTextContent;
 
-@override String get type => 'reasoning_text';
+@override MessageContentType get type => MessageContentType.fromJson('reasoning_text');
 
-@override Map<String, dynamic> toJson() => {...reasoningTextContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...reasoningTextContent.toJson(), 'type': type.toJson()};
 
 MessageContentReasoningText copyWith({String? text}) { return MessageContentReasoningText(reasoningTextContent.copyWith(
   text: text,
@@ -177,9 +328,9 @@ factory MessageContentRefusal.fromJson(Map<String, dynamic> json) { return Messa
 
 final RefusalContent refusalContent;
 
-@override String get type => 'refusal';
+@override MessageContentType get type => MessageContentType.fromJson('refusal');
 
-@override Map<String, dynamic> toJson() => {...refusalContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...refusalContent.toJson(), 'type': type.toJson()};
 
 MessageContentRefusal copyWith({String? refusal}) { return MessageContentRefusal(refusalContent.copyWith(
   refusal: refusal,
@@ -198,9 +349,9 @@ factory MessageContentInputImage.fromJson(Map<String, dynamic> json) { return Me
 
 final InputImageContent inputImageContent;
 
-@override String get type => 'input_image';
+@override MessageContentType get type => MessageContentType.fromJson('input_image');
 
-@override Map<String, dynamic> toJson() => {...inputImageContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...inputImageContent.toJson(), 'type': type.toJson()};
 
 MessageContentInputImage copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return MessageContentInputImage(inputImageContent.copyWith(
   imageUrl: imageUrl,
@@ -221,9 +372,9 @@ factory MessageContentComputerScreenshot.fromJson(Map<String, dynamic> json) { r
 
 final ComputerScreenshotContent computerScreenshotContent;
 
-@override String get type => 'computer_screenshot';
+@override MessageContentType get type => MessageContentType.fromJson('computer_screenshot');
 
-@override Map<String, dynamic> toJson() => {...computerScreenshotContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...computerScreenshotContent.toJson(), 'type': type.toJson()};
 
 MessageContentComputerScreenshot copyWith({String? Function()? imageUrl, String? Function()? fileId, ImageDetail? detail, }) { return MessageContentComputerScreenshot(computerScreenshotContent.copyWith(
   imageUrl: imageUrl,
@@ -244,9 +395,9 @@ factory MessageContentInputFile.fromJson(Map<String, dynamic> json) { return Mes
 
 final InputFileContent inputFileContent;
 
-@override String get type => 'input_file';
+@override MessageContentType get type => MessageContentType.fromJson('input_file');
 
-@override Map<String, dynamic> toJson() => {...inputFileContent.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...inputFileContent.toJson(), 'type': type.toJson()};
 
 MessageContentInputFile copyWith({String? Function()? fileId, String? Function()? filename, String? Function()? fileData, String? Function()? fileUrl, FileInputDetail? Function()? detail, }) { return MessageContentInputFile(inputFileContent.copyWith(
   fileId: fileId,
@@ -269,7 +420,7 @@ MessageContentInputFile copyWith({String? Function()? fileId, String? Function()
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override MessageContentType get type => MessageContentType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

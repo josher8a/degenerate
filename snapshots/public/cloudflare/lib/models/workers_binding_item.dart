@@ -1,7 +1,452 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersBindingItem
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_kind_ai.dart';import 'package:pub_cloudflare/models/workers_binding_kind_analytics_engine.dart';import 'package:pub_cloudflare/models/workers_binding_kind_assets.dart';import 'package:pub_cloudflare/models/workers_binding_kind_browser.dart';import 'package:pub_cloudflare/models/workers_binding_kind_d1.dart';import 'package:pub_cloudflare/models/workers_binding_kind_data_blob.dart';import 'package:pub_cloudflare/models/workers_binding_kind_dispatch_namespace.dart';import 'package:pub_cloudflare/models/workers_binding_kind_dispatch_namespace/workers_binding_kind_dispatch_namespace_outbound.dart';import 'package:pub_cloudflare/models/workers_binding_kind_durable_object_namespace.dart';import 'package:pub_cloudflare/models/workers_binding_kind_hyperdrive.dart';import 'package:pub_cloudflare/models/workers_binding_kind_images.dart';import 'package:pub_cloudflare/models/workers_binding_kind_inherit.dart';import 'package:pub_cloudflare/models/workers_binding_kind_json.dart';import 'package:pub_cloudflare/models/workers_binding_kind_kv_namespace.dart';import 'package:pub_cloudflare/models/workers_binding_kind_mtls_certificate.dart';import 'package:pub_cloudflare/models/workers_binding_kind_pipelines.dart';import 'package:pub_cloudflare/models/workers_binding_kind_plain_text.dart';import 'package:pub_cloudflare/models/workers_binding_kind_queue.dart';import 'package:pub_cloudflare/models/workers_binding_kind_r2_bucket.dart';import 'package:pub_cloudflare/models/workers_binding_kind_ratelimit.dart';import 'package:pub_cloudflare/models/workers_binding_kind_ratelimit/simple.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secret_key.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secret_text.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secrets_store_secret.dart';import 'package:pub_cloudflare/models/workers_binding_kind_send_email.dart';import 'package:pub_cloudflare/models/workers_binding_kind_service.dart';import 'package:pub_cloudflare/models/workers_binding_kind_text_blob.dart';import 'package:pub_cloudflare/models/workers_binding_kind_vectorize.dart';import 'package:pub_cloudflare/models/workers_binding_kind_version_metadata.dart';import 'package:pub_cloudflare/models/workers_binding_kind_vpc_service.dart';import 'package:pub_cloudflare/models/workers_binding_kind_wasm_module.dart';import 'package:pub_cloudflare/models/workers_binding_kind_workflow.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';import 'package:pub_cloudflare/models/workers_namespace_identifier.dart';/// A binding to allow the Worker to communicate with resources.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_kind_ai.dart';import 'package:pub_cloudflare/models/workers_binding_kind_analytics_engine.dart';import 'package:pub_cloudflare/models/workers_binding_kind_assets.dart';import 'package:pub_cloudflare/models/workers_binding_kind_browser.dart';import 'package:pub_cloudflare/models/workers_binding_kind_d1.dart';import 'package:pub_cloudflare/models/workers_binding_kind_data_blob.dart';import 'package:pub_cloudflare/models/workers_binding_kind_dispatch_namespace.dart';import 'package:pub_cloudflare/models/workers_binding_kind_dispatch_namespace/workers_binding_kind_dispatch_namespace_outbound.dart';import 'package:pub_cloudflare/models/workers_binding_kind_durable_object_namespace.dart';import 'package:pub_cloudflare/models/workers_binding_kind_hyperdrive.dart';import 'package:pub_cloudflare/models/workers_binding_kind_images.dart';import 'package:pub_cloudflare/models/workers_binding_kind_inherit.dart';import 'package:pub_cloudflare/models/workers_binding_kind_json.dart';import 'package:pub_cloudflare/models/workers_binding_kind_kv_namespace.dart';import 'package:pub_cloudflare/models/workers_binding_kind_mtls_certificate.dart';import 'package:pub_cloudflare/models/workers_binding_kind_pipelines.dart';import 'package:pub_cloudflare/models/workers_binding_kind_plain_text.dart';import 'package:pub_cloudflare/models/workers_binding_kind_queue.dart';import 'package:pub_cloudflare/models/workers_binding_kind_r2_bucket.dart';import 'package:pub_cloudflare/models/workers_binding_kind_ratelimit.dart';import 'package:pub_cloudflare/models/workers_binding_kind_ratelimit/simple.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secret_key.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secret_text.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secrets_store_secret.dart';import 'package:pub_cloudflare/models/workers_binding_kind_send_email.dart';import 'package:pub_cloudflare/models/workers_binding_kind_service.dart';import 'package:pub_cloudflare/models/workers_binding_kind_text_blob.dart';import 'package:pub_cloudflare/models/workers_binding_kind_vectorize.dart';import 'package:pub_cloudflare/models/workers_binding_kind_version_metadata.dart';import 'package:pub_cloudflare/models/workers_binding_kind_vpc_service.dart';import 'package:pub_cloudflare/models/workers_binding_kind_wasm_module.dart';import 'package:pub_cloudflare/models/workers_binding_kind_workflow.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';import 'package:pub_cloudflare/models/workers_namespace_identifier.dart';sealed class WorkersBindingItemType {const WorkersBindingItemType();
+
+factory WorkersBindingItemType.fromJson(String json) { return switch (json) {
+  'ai' => ai,
+  'analytics_engine' => analyticsEngine,
+  'assets' => assets,
+  'browser' => browser,
+  'd1' => d1,
+  'data_blob' => dataBlob,
+  'dispatch_namespace' => dispatchNamespace,
+  'durable_object_namespace' => durableObjectNamespace,
+  'hyperdrive' => hyperdrive,
+  'images' => images,
+  'inherit' => inherit,
+  'json' => json,
+  'kv_namespace' => kvNamespace,
+  'mtls_certificate' => mtlsCertificate,
+  'pipelines' => pipelines,
+  'plain_text' => plainText,
+  'queue' => queue,
+  'r2_bucket' => r2Bucket,
+  'ratelimit' => ratelimit,
+  'secret_key' => secretKey,
+  'secret_text' => secretText,
+  'secrets_store_secret' => secretsStoreSecret,
+  'send_email' => sendEmail,
+  'service' => service,
+  'text_blob' => textBlob,
+  'vectorize' => vectorize,
+  'version_metadata' => versionMetadata,
+  'vpc_service' => vpcService,
+  'wasm_module' => wasmModule,
+  'workflow' => workflow,
+  _ => WorkersBindingItemType$Unknown(json),
+}; }
+
+static const WorkersBindingItemType ai = WorkersBindingItemType$ai._();
+
+static const WorkersBindingItemType analyticsEngine = WorkersBindingItemType$analyticsEngine._();
+
+static const WorkersBindingItemType assets = WorkersBindingItemType$assets._();
+
+static const WorkersBindingItemType browser = WorkersBindingItemType$browser._();
+
+static const WorkersBindingItemType d1 = WorkersBindingItemType$d1._();
+
+static const WorkersBindingItemType dataBlob = WorkersBindingItemType$dataBlob._();
+
+static const WorkersBindingItemType dispatchNamespace = WorkersBindingItemType$dispatchNamespace._();
+
+static const WorkersBindingItemType durableObjectNamespace = WorkersBindingItemType$durableObjectNamespace._();
+
+static const WorkersBindingItemType hyperdrive = WorkersBindingItemType$hyperdrive._();
+
+static const WorkersBindingItemType images = WorkersBindingItemType$images._();
+
+static const WorkersBindingItemType inherit = WorkersBindingItemType$inherit._();
+
+static const WorkersBindingItemType json = WorkersBindingItemType$json._();
+
+static const WorkersBindingItemType kvNamespace = WorkersBindingItemType$kvNamespace._();
+
+static const WorkersBindingItemType mtlsCertificate = WorkersBindingItemType$mtlsCertificate._();
+
+static const WorkersBindingItemType pipelines = WorkersBindingItemType$pipelines._();
+
+static const WorkersBindingItemType plainText = WorkersBindingItemType$plainText._();
+
+static const WorkersBindingItemType queue = WorkersBindingItemType$queue._();
+
+static const WorkersBindingItemType r2Bucket = WorkersBindingItemType$r2Bucket._();
+
+static const WorkersBindingItemType ratelimit = WorkersBindingItemType$ratelimit._();
+
+static const WorkersBindingItemType secretKey = WorkersBindingItemType$secretKey._();
+
+static const WorkersBindingItemType secretText = WorkersBindingItemType$secretText._();
+
+static const WorkersBindingItemType secretsStoreSecret = WorkersBindingItemType$secretsStoreSecret._();
+
+static const WorkersBindingItemType sendEmail = WorkersBindingItemType$sendEmail._();
+
+static const WorkersBindingItemType service = WorkersBindingItemType$service._();
+
+static const WorkersBindingItemType textBlob = WorkersBindingItemType$textBlob._();
+
+static const WorkersBindingItemType vectorize = WorkersBindingItemType$vectorize._();
+
+static const WorkersBindingItemType versionMetadata = WorkersBindingItemType$versionMetadata._();
+
+static const WorkersBindingItemType vpcService = WorkersBindingItemType$vpcService._();
+
+static const WorkersBindingItemType wasmModule = WorkersBindingItemType$wasmModule._();
+
+static const WorkersBindingItemType workflow = WorkersBindingItemType$workflow._();
+
+static const List<WorkersBindingItemType> values = [ai, analyticsEngine, assets, browser, d1, dataBlob, dispatchNamespace, durableObjectNamespace, hyperdrive, images, inherit, json, kvNamespace, mtlsCertificate, pipelines, plainText, queue, r2Bucket, ratelimit, secretKey, secretText, secretsStoreSecret, sendEmail, service, textBlob, vectorize, versionMetadata, vpcService, wasmModule, workflow];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is WorkersBindingItemType$Unknown;
+
+ }
+@immutable final class WorkersBindingItemType$ai extends WorkersBindingItemType {const WorkersBindingItemType$ai._();
+
+@override String get value => 'ai';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$ai;
+
+@override int get hashCode => 'ai'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(ai)';
+
+ }
+@immutable final class WorkersBindingItemType$analyticsEngine extends WorkersBindingItemType {const WorkersBindingItemType$analyticsEngine._();
+
+@override String get value => 'analytics_engine';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$analyticsEngine;
+
+@override int get hashCode => 'analytics_engine'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(analytics_engine)';
+
+ }
+@immutable final class WorkersBindingItemType$assets extends WorkersBindingItemType {const WorkersBindingItemType$assets._();
+
+@override String get value => 'assets';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$assets;
+
+@override int get hashCode => 'assets'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(assets)';
+
+ }
+@immutable final class WorkersBindingItemType$browser extends WorkersBindingItemType {const WorkersBindingItemType$browser._();
+
+@override String get value => 'browser';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$browser;
+
+@override int get hashCode => 'browser'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(browser)';
+
+ }
+@immutable final class WorkersBindingItemType$d1 extends WorkersBindingItemType {const WorkersBindingItemType$d1._();
+
+@override String get value => 'd1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$d1;
+
+@override int get hashCode => 'd1'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(d1)';
+
+ }
+@immutable final class WorkersBindingItemType$dataBlob extends WorkersBindingItemType {const WorkersBindingItemType$dataBlob._();
+
+@override String get value => 'data_blob';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$dataBlob;
+
+@override int get hashCode => 'data_blob'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(data_blob)';
+
+ }
+@immutable final class WorkersBindingItemType$dispatchNamespace extends WorkersBindingItemType {const WorkersBindingItemType$dispatchNamespace._();
+
+@override String get value => 'dispatch_namespace';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$dispatchNamespace;
+
+@override int get hashCode => 'dispatch_namespace'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(dispatch_namespace)';
+
+ }
+@immutable final class WorkersBindingItemType$durableObjectNamespace extends WorkersBindingItemType {const WorkersBindingItemType$durableObjectNamespace._();
+
+@override String get value => 'durable_object_namespace';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$durableObjectNamespace;
+
+@override int get hashCode => 'durable_object_namespace'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(durable_object_namespace)';
+
+ }
+@immutable final class WorkersBindingItemType$hyperdrive extends WorkersBindingItemType {const WorkersBindingItemType$hyperdrive._();
+
+@override String get value => 'hyperdrive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$hyperdrive;
+
+@override int get hashCode => 'hyperdrive'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(hyperdrive)';
+
+ }
+@immutable final class WorkersBindingItemType$images extends WorkersBindingItemType {const WorkersBindingItemType$images._();
+
+@override String get value => 'images';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$images;
+
+@override int get hashCode => 'images'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(images)';
+
+ }
+@immutable final class WorkersBindingItemType$inherit extends WorkersBindingItemType {const WorkersBindingItemType$inherit._();
+
+@override String get value => 'inherit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$inherit;
+
+@override int get hashCode => 'inherit'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(inherit)';
+
+ }
+@immutable final class WorkersBindingItemType$json extends WorkersBindingItemType {const WorkersBindingItemType$json._();
+
+@override String get value => 'json';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$json;
+
+@override int get hashCode => 'json'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(json)';
+
+ }
+@immutable final class WorkersBindingItemType$kvNamespace extends WorkersBindingItemType {const WorkersBindingItemType$kvNamespace._();
+
+@override String get value => 'kv_namespace';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$kvNamespace;
+
+@override int get hashCode => 'kv_namespace'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(kv_namespace)';
+
+ }
+@immutable final class WorkersBindingItemType$mtlsCertificate extends WorkersBindingItemType {const WorkersBindingItemType$mtlsCertificate._();
+
+@override String get value => 'mtls_certificate';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$mtlsCertificate;
+
+@override int get hashCode => 'mtls_certificate'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(mtls_certificate)';
+
+ }
+@immutable final class WorkersBindingItemType$pipelines extends WorkersBindingItemType {const WorkersBindingItemType$pipelines._();
+
+@override String get value => 'pipelines';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$pipelines;
+
+@override int get hashCode => 'pipelines'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(pipelines)';
+
+ }
+@immutable final class WorkersBindingItemType$plainText extends WorkersBindingItemType {const WorkersBindingItemType$plainText._();
+
+@override String get value => 'plain_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$plainText;
+
+@override int get hashCode => 'plain_text'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(plain_text)';
+
+ }
+@immutable final class WorkersBindingItemType$queue extends WorkersBindingItemType {const WorkersBindingItemType$queue._();
+
+@override String get value => 'queue';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$queue;
+
+@override int get hashCode => 'queue'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(queue)';
+
+ }
+@immutable final class WorkersBindingItemType$r2Bucket extends WorkersBindingItemType {const WorkersBindingItemType$r2Bucket._();
+
+@override String get value => 'r2_bucket';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$r2Bucket;
+
+@override int get hashCode => 'r2_bucket'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(r2_bucket)';
+
+ }
+@immutable final class WorkersBindingItemType$ratelimit extends WorkersBindingItemType {const WorkersBindingItemType$ratelimit._();
+
+@override String get value => 'ratelimit';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$ratelimit;
+
+@override int get hashCode => 'ratelimit'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(ratelimit)';
+
+ }
+@immutable final class WorkersBindingItemType$secretKey extends WorkersBindingItemType {const WorkersBindingItemType$secretKey._();
+
+@override String get value => 'secret_key';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$secretKey;
+
+@override int get hashCode => 'secret_key'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(secret_key)';
+
+ }
+@immutable final class WorkersBindingItemType$secretText extends WorkersBindingItemType {const WorkersBindingItemType$secretText._();
+
+@override String get value => 'secret_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$secretText;
+
+@override int get hashCode => 'secret_text'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(secret_text)';
+
+ }
+@immutable final class WorkersBindingItemType$secretsStoreSecret extends WorkersBindingItemType {const WorkersBindingItemType$secretsStoreSecret._();
+
+@override String get value => 'secrets_store_secret';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$secretsStoreSecret;
+
+@override int get hashCode => 'secrets_store_secret'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(secrets_store_secret)';
+
+ }
+@immutable final class WorkersBindingItemType$sendEmail extends WorkersBindingItemType {const WorkersBindingItemType$sendEmail._();
+
+@override String get value => 'send_email';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$sendEmail;
+
+@override int get hashCode => 'send_email'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(send_email)';
+
+ }
+@immutable final class WorkersBindingItemType$service extends WorkersBindingItemType {const WorkersBindingItemType$service._();
+
+@override String get value => 'service';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$service;
+
+@override int get hashCode => 'service'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(service)';
+
+ }
+@immutable final class WorkersBindingItemType$textBlob extends WorkersBindingItemType {const WorkersBindingItemType$textBlob._();
+
+@override String get value => 'text_blob';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$textBlob;
+
+@override int get hashCode => 'text_blob'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(text_blob)';
+
+ }
+@immutable final class WorkersBindingItemType$vectorize extends WorkersBindingItemType {const WorkersBindingItemType$vectorize._();
+
+@override String get value => 'vectorize';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$vectorize;
+
+@override int get hashCode => 'vectorize'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(vectorize)';
+
+ }
+@immutable final class WorkersBindingItemType$versionMetadata extends WorkersBindingItemType {const WorkersBindingItemType$versionMetadata._();
+
+@override String get value => 'version_metadata';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$versionMetadata;
+
+@override int get hashCode => 'version_metadata'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(version_metadata)';
+
+ }
+@immutable final class WorkersBindingItemType$vpcService extends WorkersBindingItemType {const WorkersBindingItemType$vpcService._();
+
+@override String get value => 'vpc_service';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$vpcService;
+
+@override int get hashCode => 'vpc_service'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(vpc_service)';
+
+ }
+@immutable final class WorkersBindingItemType$wasmModule extends WorkersBindingItemType {const WorkersBindingItemType$wasmModule._();
+
+@override String get value => 'wasm_module';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$wasmModule;
+
+@override int get hashCode => 'wasm_module'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(wasm_module)';
+
+ }
+@immutable final class WorkersBindingItemType$workflow extends WorkersBindingItemType {const WorkersBindingItemType$workflow._();
+
+@override String get value => 'workflow';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$workflow;
+
+@override int get hashCode => 'workflow'.hashCode;
+
+@override String toString() => 'WorkersBindingItemType(workflow)';
+
+ }
+@immutable final class WorkersBindingItemType$Unknown extends WorkersBindingItemType {const WorkersBindingItemType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersBindingItemType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorkersBindingItemType($value)';
+
+ }
+/// A binding to allow the Worker to communicate with resources.
 sealed class WorkersBindingItem {const WorkersBindingItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -130,7 +575,7 @@ factory WorkersBindingItem.wasmModule({required WorkersBindingName name, require
 factory WorkersBindingItem.workflow({required WorkersBindingName name, required String workflowName, String? className, String? scriptName, }) { return WorkersBindingItemWorkflow(WorkersBindingKindWorkflow(type: 'workflow', className: className, name: name, scriptName: scriptName, workflowName: workflowName)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+WorkersBindingItemType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is WorkersBindingItem$Unknown;
@@ -175,9 +620,9 @@ factory WorkersBindingItemAi.fromJson(Map<String, dynamic> json) { return Worker
 
 final WorkersBindingKindAi workersBindingKindAi;
 
-@override String get type => 'ai';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('ai');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindAi.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindAi.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemAi copyWith({WorkersBindingName? name}) { return WorkersBindingItemAi(workersBindingKindAi.copyWith(
   name: name,
@@ -196,9 +641,9 @@ factory WorkersBindingItemAnalyticsEngine.fromJson(Map<String, dynamic> json) { 
 
 final WorkersBindingKindAnalyticsEngine workersBindingKindAnalyticsEngine;
 
-@override String get type => 'analytics_engine';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('analytics_engine');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindAnalyticsEngine.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindAnalyticsEngine.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemAnalyticsEngine copyWith({String? dataset, WorkersBindingName? name, }) { return WorkersBindingItemAnalyticsEngine(workersBindingKindAnalyticsEngine.copyWith(
   dataset: dataset,
@@ -218,9 +663,9 @@ factory WorkersBindingItemAssets.fromJson(Map<String, dynamic> json) { return Wo
 
 final WorkersBindingKindAssets workersBindingKindAssets;
 
-@override String get type => 'assets';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('assets');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindAssets.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindAssets.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemAssets copyWith({WorkersBindingName? name}) { return WorkersBindingItemAssets(workersBindingKindAssets.copyWith(
   name: name,
@@ -239,9 +684,9 @@ factory WorkersBindingItemBrowser.fromJson(Map<String, dynamic> json) { return W
 
 final WorkersBindingKindBrowser workersBindingKindBrowser;
 
-@override String get type => 'browser';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('browser');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindBrowser.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindBrowser.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemBrowser copyWith({WorkersBindingName? name}) { return WorkersBindingItemBrowser(workersBindingKindBrowser.copyWith(
   name: name,
@@ -260,9 +705,9 @@ factory WorkersBindingItemD1.fromJson(Map<String, dynamic> json) { return Worker
 
 final WorkersBindingKindD1 workersBindingKindD1;
 
-@override String get type => 'd1';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('d1');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindD1.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindD1.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemD1 copyWith({String? id, WorkersBindingName? name, }) { return WorkersBindingItemD1(workersBindingKindD1.copyWith(
   id: id,
@@ -282,9 +727,9 @@ factory WorkersBindingItemDataBlob.fromJson(Map<String, dynamic> json) { return 
 
 final WorkersBindingKindDataBlob workersBindingKindDataBlob;
 
-@override String get type => 'data_blob';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('data_blob');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindDataBlob.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindDataBlob.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemDataBlob copyWith({WorkersBindingName? name, String? $part, }) { return WorkersBindingItemDataBlob(workersBindingKindDataBlob.copyWith(
   name: name,
@@ -304,9 +749,9 @@ factory WorkersBindingItemDispatchNamespace.fromJson(Map<String, dynamic> json) 
 
 final WorkersBindingKindDispatchNamespace workersBindingKindDispatchNamespace;
 
-@override String get type => 'dispatch_namespace';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('dispatch_namespace');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindDispatchNamespace.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindDispatchNamespace.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemDispatchNamespace copyWith({WorkersBindingName? name, String? namespace, WorkersBindingKindDispatchNamespaceOutbound? Function()? outbound, }) { return WorkersBindingItemDispatchNamespace(workersBindingKindDispatchNamespace.copyWith(
   name: name,
@@ -327,9 +772,9 @@ factory WorkersBindingItemDurableObjectNamespace.fromJson(Map<String, dynamic> j
 
 final WorkersBindingKindDurableObjectNamespace workersBindingKindDurableObjectNamespace;
 
-@override String get type => 'durable_object_namespace';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('durable_object_namespace');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindDurableObjectNamespace.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindDurableObjectNamespace.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemDurableObjectNamespace copyWith({String? Function()? className, String? Function()? dispatchNamespace, String? Function()? environment, WorkersBindingName? name, WorkersNamespaceIdentifier? Function()? namespaceId, String? Function()? scriptName, }) { return WorkersBindingItemDurableObjectNamespace(workersBindingKindDurableObjectNamespace.copyWith(
   className: className,
@@ -353,9 +798,9 @@ factory WorkersBindingItemHyperdrive.fromJson(Map<String, dynamic> json) { retur
 
 final WorkersBindingKindHyperdrive workersBindingKindHyperdrive;
 
-@override String get type => 'hyperdrive';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('hyperdrive');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindHyperdrive.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindHyperdrive.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemHyperdrive copyWith({String? id, WorkersBindingName? name, }) { return WorkersBindingItemHyperdrive(workersBindingKindHyperdrive.copyWith(
   id: id,
@@ -375,9 +820,9 @@ factory WorkersBindingItemImages.fromJson(Map<String, dynamic> json) { return Wo
 
 final WorkersBindingKindImages workersBindingKindImages;
 
-@override String get type => 'images';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('images');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindImages.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindImages.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemImages copyWith({WorkersBindingName? name}) { return WorkersBindingItemImages(workersBindingKindImages.copyWith(
   name: name,
@@ -396,9 +841,9 @@ factory WorkersBindingItemInherit.fromJson(Map<String, dynamic> json) { return W
 
 final WorkersBindingKindInherit workersBindingKindInherit;
 
-@override String get type => 'inherit';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('inherit');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindInherit.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindInherit.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemInherit copyWith({String? name, String? Function()? oldName, String Function()? versionId, }) { return WorkersBindingItemInherit(workersBindingKindInherit.copyWith(
   name: name,
@@ -419,9 +864,9 @@ factory WorkersBindingItemJson.fromJson(Map<String, dynamic> json) { return Work
 
 final WorkersBindingKindJson workersBindingKindJson;
 
-@override String get type => 'json';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('json');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindJson.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindJson.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemJson copyWith({Map<String,dynamic>? json, WorkersBindingName? name, }) { return WorkersBindingItemJson(workersBindingKindJson.copyWith(
   json: json,
@@ -441,9 +886,9 @@ factory WorkersBindingItemKvNamespace.fromJson(Map<String, dynamic> json) { retu
 
 final WorkersBindingKindKvNamespace workersBindingKindKvNamespace;
 
-@override String get type => 'kv_namespace';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('kv_namespace');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindKvNamespace.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindKvNamespace.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemKvNamespace copyWith({WorkersBindingName? name, WorkersNamespaceIdentifier? namespaceId, }) { return WorkersBindingItemKvNamespace(workersBindingKindKvNamespace.copyWith(
   name: name,
@@ -463,9 +908,9 @@ factory WorkersBindingItemMtlsCertificate.fromJson(Map<String, dynamic> json) { 
 
 final WorkersBindingKindMtlsCertificate workersBindingKindMtlsCertificate;
 
-@override String get type => 'mtls_certificate';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('mtls_certificate');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindMtlsCertificate.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindMtlsCertificate.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemMtlsCertificate copyWith({String? certificateId, WorkersBindingName? name, }) { return WorkersBindingItemMtlsCertificate(workersBindingKindMtlsCertificate.copyWith(
   certificateId: certificateId,
@@ -485,9 +930,9 @@ factory WorkersBindingItemPipelines.fromJson(Map<String, dynamic> json) { return
 
 final WorkersBindingKindPipelines workersBindingKindPipelines;
 
-@override String get type => 'pipelines';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('pipelines');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindPipelines.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindPipelines.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemPipelines copyWith({WorkersBindingName? name, String? pipeline, }) { return WorkersBindingItemPipelines(workersBindingKindPipelines.copyWith(
   name: name,
@@ -507,9 +952,9 @@ factory WorkersBindingItemPlainText.fromJson(Map<String, dynamic> json) { return
 
 final WorkersBindingKindPlainText workersBindingKindPlainText;
 
-@override String get type => 'plain_text';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('plain_text');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindPlainText.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindPlainText.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemPlainText copyWith({WorkersBindingName? name, String? text, }) { return WorkersBindingItemPlainText(workersBindingKindPlainText.copyWith(
   name: name,
@@ -529,9 +974,9 @@ factory WorkersBindingItemQueue.fromJson(Map<String, dynamic> json) { return Wor
 
 final WorkersBindingKindQueue workersBindingKindQueue;
 
-@override String get type => 'queue';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('queue');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindQueue.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindQueue.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemQueue copyWith({WorkersBindingName? name, String? queueName, }) { return WorkersBindingItemQueue(workersBindingKindQueue.copyWith(
   name: name,
@@ -551,9 +996,9 @@ factory WorkersBindingItemR2Bucket.fromJson(Map<String, dynamic> json) { return 
 
 final WorkersBindingKindR2Bucket workersBindingKindR2Bucket;
 
-@override String get type => 'r2_bucket';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('r2_bucket');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindR2Bucket.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindR2Bucket.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemR2Bucket copyWith({String? bucketName, Jurisdiction? Function()? jurisdiction, WorkersBindingName? name, }) { return WorkersBindingItemR2Bucket(workersBindingKindR2Bucket.copyWith(
   bucketName: bucketName,
@@ -574,9 +1019,9 @@ factory WorkersBindingItemRatelimit.fromJson(Map<String, dynamic> json) { return
 
 final WorkersBindingKindRatelimit workersBindingKindRatelimit;
 
-@override String get type => 'ratelimit';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('ratelimit');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindRatelimit.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindRatelimit.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemRatelimit copyWith({WorkersBindingName? name, String? namespaceId, Simple? simple, }) { return WorkersBindingItemRatelimit(workersBindingKindRatelimit.copyWith(
   name: name,
@@ -597,9 +1042,9 @@ factory WorkersBindingItemSecretKey.fromJson(Map<String, dynamic> json) { return
 
 final WorkersBindingKindSecretKey workersBindingKindSecretKey;
 
-@override String get type => 'secret_key';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('secret_key');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindSecretKey.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindSecretKey.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, String? Function()? keyBase64, Map<String, dynamic>? Function()? keyJwk, WorkersBindingName? name, List<Usages>? usages, }) { return WorkersBindingItemSecretKey(workersBindingKindSecretKey.copyWith(
   algorithm: algorithm,
@@ -623,9 +1068,9 @@ factory WorkersBindingItemSecretText.fromJson(Map<String, dynamic> json) { retur
 
 final WorkersBindingKindSecretText workersBindingKindSecretText;
 
-@override String get type => 'secret_text';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('secret_text');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindSecretText.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindSecretText.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemSecretText copyWith({WorkersBindingName? name, String? text, }) { return WorkersBindingItemSecretText(workersBindingKindSecretText.copyWith(
   name: name,
@@ -645,9 +1090,9 @@ factory WorkersBindingItemSecretsStoreSecret.fromJson(Map<String, dynamic> json)
 
 final WorkersBindingKindSecretsStoreSecret workersBindingKindSecretsStoreSecret;
 
-@override String get type => 'secrets_store_secret';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('secrets_store_secret');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindSecretsStoreSecret.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindSecretsStoreSecret.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemSecretsStoreSecret copyWith({WorkersBindingName? name, String? secretName, String? storeId, }) { return WorkersBindingItemSecretsStoreSecret(workersBindingKindSecretsStoreSecret.copyWith(
   name: name,
@@ -668,9 +1113,9 @@ factory WorkersBindingItemSendEmail.fromJson(Map<String, dynamic> json) { return
 
 final WorkersBindingKindSendEmail workersBindingKindSendEmail;
 
-@override String get type => 'send_email';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('send_email');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindSendEmail.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindSendEmail.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemSendEmail copyWith({List<String>? Function()? allowedDestinationAddresses, List<String>? Function()? allowedSenderAddresses, String? Function()? destinationAddress, WorkersBindingName? name, }) { return WorkersBindingItemSendEmail(workersBindingKindSendEmail.copyWith(
   allowedDestinationAddresses: allowedDestinationAddresses,
@@ -692,9 +1137,9 @@ factory WorkersBindingItemService.fromJson(Map<String, dynamic> json) { return W
 
 final WorkersBindingKindService workersBindingKindService;
 
-@override String get type => 'service';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('service');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindService.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindService.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemService copyWith({String? Function()? entrypoint, String Function()? environment, WorkersBindingName? name, String? service, }) { return WorkersBindingItemService(workersBindingKindService.copyWith(
   entrypoint: entrypoint,
@@ -716,9 +1161,9 @@ factory WorkersBindingItemTextBlob.fromJson(Map<String, dynamic> json) { return 
 
 final WorkersBindingKindTextBlob workersBindingKindTextBlob;
 
-@override String get type => 'text_blob';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('text_blob');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindTextBlob.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindTextBlob.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemTextBlob copyWith({WorkersBindingName? name, String? $part, }) { return WorkersBindingItemTextBlob(workersBindingKindTextBlob.copyWith(
   name: name,
@@ -738,9 +1183,9 @@ factory WorkersBindingItemVectorize.fromJson(Map<String, dynamic> json) { return
 
 final WorkersBindingKindVectorize workersBindingKindVectorize;
 
-@override String get type => 'vectorize';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('vectorize');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindVectorize.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindVectorize.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemVectorize copyWith({String? indexName, WorkersBindingName? name, }) { return WorkersBindingItemVectorize(workersBindingKindVectorize.copyWith(
   indexName: indexName,
@@ -760,9 +1205,9 @@ factory WorkersBindingItemVersionMetadata.fromJson(Map<String, dynamic> json) { 
 
 final WorkersBindingKindVersionMetadata workersBindingKindVersionMetadata;
 
-@override String get type => 'version_metadata';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('version_metadata');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindVersionMetadata.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindVersionMetadata.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemVersionMetadata copyWith({WorkersBindingName? name}) { return WorkersBindingItemVersionMetadata(workersBindingKindVersionMetadata.copyWith(
   name: name,
@@ -781,9 +1226,9 @@ factory WorkersBindingItemVpcService.fromJson(Map<String, dynamic> json) { retur
 
 final WorkersBindingKindVpcService workersBindingKindVpcService;
 
-@override String get type => 'vpc_service';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('vpc_service');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindVpcService.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindVpcService.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemVpcService copyWith({WorkersBindingName? name, String? serviceId, }) { return WorkersBindingItemVpcService(workersBindingKindVpcService.copyWith(
   name: name,
@@ -803,9 +1248,9 @@ factory WorkersBindingItemWasmModule.fromJson(Map<String, dynamic> json) { retur
 
 final WorkersBindingKindWasmModule workersBindingKindWasmModule;
 
-@override String get type => 'wasm_module';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('wasm_module');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindWasmModule.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindWasmModule.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemWasmModule copyWith({WorkersBindingName? name, String? $part, }) { return WorkersBindingItemWasmModule(workersBindingKindWasmModule.copyWith(
   name: name,
@@ -825,9 +1270,9 @@ factory WorkersBindingItemWorkflow.fromJson(Map<String, dynamic> json) { return 
 
 final WorkersBindingKindWorkflow workersBindingKindWorkflow;
 
-@override String get type => 'workflow';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson('workflow');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindWorkflow.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindWorkflow.toJson(), 'type': type.toJson()};
 
 WorkersBindingItemWorkflow copyWith({String? Function()? className, WorkersBindingName? name, String? Function()? scriptName, String? workflowName, }) { return WorkersBindingItemWorkflow(workersBindingKindWorkflow.copyWith(
   className: className,
@@ -849,7 +1294,7 @@ WorkersBindingItemWorkflow copyWith({String? Function()? className, WorkersBindi
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override WorkersBindingItemType get type => WorkersBindingItemType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

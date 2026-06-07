@@ -1,7 +1,74 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CrossRefUnionA
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/cross_ref_union_a/cross_ref_union_a_array.dart';import 'package:pub_speakeasy/models/cross_ref_union_a/cross_ref_union_a_text.dart';import 'package:pub_speakeasy/models/cross_ref_union_a/number.dart';import 'package:pub_speakeasy/models/cross_ref_union_b.dart';/// Union A - array variant references CrossRefUnionB (different union).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/cross_ref_union_a/cross_ref_union_a_array.dart';import 'package:pub_speakeasy/models/cross_ref_union_a/cross_ref_union_a_text.dart';import 'package:pub_speakeasy/models/cross_ref_union_a/number.dart';import 'package:pub_speakeasy/models/cross_ref_union_b.dart';sealed class CrossRefUnionAType {const CrossRefUnionAType();
+
+factory CrossRefUnionAType.fromJson(String json) { return switch (json) {
+  'CrossRefUnionAText' => crossRefUnionAText,
+  'CrossRefUnionANumber' => crossRefUnionANumber,
+  'CrossRefUnionAArray' => crossRefUnionAArray,
+  _ => CrossRefUnionAType$Unknown(json),
+}; }
+
+static const CrossRefUnionAType crossRefUnionAText = CrossRefUnionAType$crossRefUnionAText._();
+
+static const CrossRefUnionAType crossRefUnionANumber = CrossRefUnionAType$crossRefUnionANumber._();
+
+static const CrossRefUnionAType crossRefUnionAArray = CrossRefUnionAType$crossRefUnionAArray._();
+
+static const List<CrossRefUnionAType> values = [crossRefUnionAText, crossRefUnionANumber, crossRefUnionAArray];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is CrossRefUnionAType$Unknown;
+
+ }
+@immutable final class CrossRefUnionAType$crossRefUnionAText extends CrossRefUnionAType {const CrossRefUnionAType$crossRefUnionAText._();
+
+@override String get value => 'CrossRefUnionAText';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CrossRefUnionAType$crossRefUnionAText;
+
+@override int get hashCode => 'CrossRefUnionAText'.hashCode;
+
+@override String toString() => 'CrossRefUnionAType(CrossRefUnionAText)';
+
+ }
+@immutable final class CrossRefUnionAType$crossRefUnionANumber extends CrossRefUnionAType {const CrossRefUnionAType$crossRefUnionANumber._();
+
+@override String get value => 'CrossRefUnionANumber';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CrossRefUnionAType$crossRefUnionANumber;
+
+@override int get hashCode => 'CrossRefUnionANumber'.hashCode;
+
+@override String toString() => 'CrossRefUnionAType(CrossRefUnionANumber)';
+
+ }
+@immutable final class CrossRefUnionAType$crossRefUnionAArray extends CrossRefUnionAType {const CrossRefUnionAType$crossRefUnionAArray._();
+
+@override String get value => 'CrossRefUnionAArray';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CrossRefUnionAType$crossRefUnionAArray;
+
+@override int get hashCode => 'CrossRefUnionAArray'.hashCode;
+
+@override String toString() => 'CrossRefUnionAType(CrossRefUnionAArray)';
+
+ }
+@immutable final class CrossRefUnionAType$Unknown extends CrossRefUnionAType {const CrossRefUnionAType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is CrossRefUnionAType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'CrossRefUnionAType($value)';
+
+ }
+/// Union A - array variant references CrossRefUnionB (different union).
 sealed class CrossRefUnionA {const CrossRefUnionA();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -22,7 +89,7 @@ factory CrossRefUnionA.crossRefUnionANumber({required String label}) { return Cr
 factory CrossRefUnionA.crossRefUnionAArray({required String label, required CrossRefUnionB itemType, }) { return CrossRefUnionACrossRefUnionAArray(CrossRefUnionAArray(type: 'CrossRefUnionAArray', label: label, itemType: itemType)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+CrossRefUnionAType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CrossRefUnionA$Unknown;
@@ -42,9 +109,9 @@ factory CrossRefUnionACrossRefUnionAText.fromJson(Map<String, dynamic> json) { r
 
 final CrossRefUnionAText crossRefUnionAText;
 
-@override String get type => 'CrossRefUnionAText';
+@override CrossRefUnionAType get type => CrossRefUnionAType.fromJson('CrossRefUnionAText');
 
-@override Map<String, dynamic> toJson() => {...crossRefUnionAText.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...crossRefUnionAText.toJson(), 'type': type.toJson()};
 
 CrossRefUnionACrossRefUnionAText copyWith({String? label}) { return CrossRefUnionACrossRefUnionAText(crossRefUnionAText.copyWith(
   label: label,
@@ -65,9 +132,9 @@ factory CrossRefUnionACrossRefUnionANumber.fromJson(Map<String, dynamic> json) {
 
 final Number number;
 
-@override String get type => 'CrossRefUnionANumber';
+@override CrossRefUnionAType get type => CrossRefUnionAType.fromJson('CrossRefUnionANumber');
 
-@override Map<String, dynamic> toJson() => {...number.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...number.toJson(), 'type': type.toJson()};
 
 CrossRefUnionACrossRefUnionANumber copyWith({String? label}) { return CrossRefUnionACrossRefUnionANumber(number.copyWith(
   label: label,
@@ -88,9 +155,9 @@ factory CrossRefUnionACrossRefUnionAArray.fromJson(Map<String, dynamic> json) { 
 
 final CrossRefUnionAArray crossRefUnionAArray;
 
-@override String get type => 'CrossRefUnionAArray';
+@override CrossRefUnionAType get type => CrossRefUnionAType.fromJson('CrossRefUnionAArray');
 
-@override Map<String, dynamic> toJson() => {...crossRefUnionAArray.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...crossRefUnionAArray.toJson(), 'type': type.toJson()};
 
 CrossRefUnionACrossRefUnionAArray copyWith({String? label, CrossRefUnionB? itemType, }) { return CrossRefUnionACrossRefUnionAArray(crossRefUnionAArray.copyWith(
   label: label,
@@ -114,7 +181,7 @@ final Map<String, dynamic> json;
 
 late final String _label = json['label'] as String;
 
-@override String get type => json['type'] as String? ?? '';
+@override CrossRefUnionAType get type => CrossRefUnionAType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

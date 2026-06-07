@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WorkersSecret
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secret_key.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secret_text.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';/// A secret value accessible through a binding.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secret_key.dart';import 'package:pub_cloudflare/models/workers_binding_kind_secret_text.dart';import 'package:pub_cloudflare/models/workers_binding_name.dart';sealed class WorkersSecretType {const WorkersSecretType();
+
+factory WorkersSecretType.fromJson(String json) { return switch (json) {
+  'secret_key' => secretKey,
+  'secret_text' => secretText,
+  _ => WorkersSecretType$Unknown(json),
+}; }
+
+static const WorkersSecretType secretKey = WorkersSecretType$secretKey._();
+
+static const WorkersSecretType secretText = WorkersSecretType$secretText._();
+
+static const List<WorkersSecretType> values = [secretKey, secretText];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is WorkersSecretType$Unknown;
+
+ }
+@immutable final class WorkersSecretType$secretKey extends WorkersSecretType {const WorkersSecretType$secretKey._();
+
+@override String get value => 'secret_key';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersSecretType$secretKey;
+
+@override int get hashCode => 'secret_key'.hashCode;
+
+@override String toString() => 'WorkersSecretType(secret_key)';
+
+ }
+@immutable final class WorkersSecretType$secretText extends WorkersSecretType {const WorkersSecretType$secretText._();
+
+@override String get value => 'secret_text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersSecretType$secretText;
+
+@override int get hashCode => 'secret_text'.hashCode;
+
+@override String toString() => 'WorkersSecretType(secret_text)';
+
+ }
+@immutable final class WorkersSecretType$Unknown extends WorkersSecretType {const WorkersSecretType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is WorkersSecretType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'WorkersSecretType($value)';
+
+ }
+/// A secret value accessible through a binding.
 sealed class WorkersSecret {const WorkersSecret();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -18,7 +71,7 @@ factory WorkersSecret.secretKey({required Map<String,dynamic> algorithm, require
 factory WorkersSecret.secretText({required WorkersBindingName name, required String text, }) { return WorkersSecretSecretText(WorkersBindingKindSecretText(type: 'secret_text', name: name, text: text)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+WorkersSecretType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is WorkersSecret$Unknown;
@@ -37,9 +90,9 @@ factory WorkersSecretSecretKey.fromJson(Map<String, dynamic> json) { return Work
 
 final WorkersBindingKindSecretKey workersBindingKindSecretKey;
 
-@override String get type => 'secret_key';
+@override WorkersSecretType get type => WorkersSecretType.fromJson('secret_key');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindSecretKey.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindSecretKey.toJson(), 'type': type.toJson()};
 
 WorkersSecretSecretKey copyWith({Map<String,dynamic>? algorithm, WorkersBindingKindSecretKeyFormat? format, String? Function()? keyBase64, Map<String, dynamic>? Function()? keyJwk, WorkersBindingName? name, List<Usages>? usages, }) { return WorkersSecretSecretKey(workersBindingKindSecretKey.copyWith(
   algorithm: algorithm,
@@ -65,9 +118,9 @@ factory WorkersSecretSecretText.fromJson(Map<String, dynamic> json) { return Wor
 
 final WorkersBindingKindSecretText workersBindingKindSecretText;
 
-@override String get type => 'secret_text';
+@override WorkersSecretType get type => WorkersSecretType.fromJson('secret_text');
 
-@override Map<String, dynamic> toJson() => {...workersBindingKindSecretText.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...workersBindingKindSecretText.toJson(), 'type': type.toJson()};
 
 WorkersSecretSecretText copyWith({WorkersBindingName? name, String? text, }) { return WorkersSecretSecretText(workersBindingKindSecretText.copyWith(
   name: name,
@@ -91,7 +144,7 @@ final Map<String, dynamic> json;
 
 late final WorkersBindingName _name = WorkersBindingName.fromJson(json['name'] as String);
 
-@override String get type => json['type'] as String? ?? '';
+@override WorkersSecretType get type => WorkersSecretType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

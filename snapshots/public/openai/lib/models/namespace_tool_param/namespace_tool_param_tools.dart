@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/NamespaceToolParam (inline: Tools)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_tool_param.dart';import 'package:pub_openai/models/custom_tool_param/custom_tool_param_format.dart';import 'package:pub_openai/models/empty_model_param.dart';import 'package:pub_openai/models/function_tool_param.dart';/// A function or custom tool that belongs to a namespace.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/custom_tool_param.dart';import 'package:pub_openai/models/custom_tool_param/custom_tool_param_format.dart';import 'package:pub_openai/models/empty_model_param.dart';import 'package:pub_openai/models/function_tool_param.dart';sealed class NamespaceToolParamToolsType {const NamespaceToolParamToolsType();
+
+factory NamespaceToolParamToolsType.fromJson(String json) { return switch (json) {
+  'function' => function,
+  'custom' => custom,
+  _ => NamespaceToolParamToolsType$Unknown(json),
+}; }
+
+static const NamespaceToolParamToolsType function = NamespaceToolParamToolsType$function._();
+
+static const NamespaceToolParamToolsType custom = NamespaceToolParamToolsType$custom._();
+
+static const List<NamespaceToolParamToolsType> values = [function, custom];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is NamespaceToolParamToolsType$Unknown;
+
+ }
+@immutable final class NamespaceToolParamToolsType$function extends NamespaceToolParamToolsType {const NamespaceToolParamToolsType$function._();
+
+@override String get value => 'function';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NamespaceToolParamToolsType$function;
+
+@override int get hashCode => 'function'.hashCode;
+
+@override String toString() => 'NamespaceToolParamToolsType(function)';
+
+ }
+@immutable final class NamespaceToolParamToolsType$custom extends NamespaceToolParamToolsType {const NamespaceToolParamToolsType$custom._();
+
+@override String get value => 'custom';
+
+@override bool operator ==(Object other) => identical(this, other) || other is NamespaceToolParamToolsType$custom;
+
+@override int get hashCode => 'custom'.hashCode;
+
+@override String toString() => 'NamespaceToolParamToolsType(custom)';
+
+ }
+@immutable final class NamespaceToolParamToolsType$Unknown extends NamespaceToolParamToolsType {const NamespaceToolParamToolsType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is NamespaceToolParamToolsType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'NamespaceToolParamToolsType($value)';
+
+ }
+/// A function or custom tool that belongs to a namespace.
 sealed class NamespaceToolParamTools {const NamespaceToolParamTools();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -18,7 +71,7 @@ factory NamespaceToolParamTools.function({required String name, String? descript
 factory NamespaceToolParamTools.custom({required String name, String? description, CustomToolParamFormat? format, bool? deferLoading, }) { return NamespaceToolParamToolsCustom(CustomToolParam(name: name, description: description, format: format, deferLoading: deferLoading)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+NamespaceToolParamToolsType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is NamespaceToolParamTools$Unknown;
@@ -39,9 +92,9 @@ factory NamespaceToolParamToolsFunction.fromJson(Map<String, dynamic> json) { re
 
 final FunctionToolParam functionToolParam;
 
-@override String get type => 'function';
+@override NamespaceToolParamToolsType get type => NamespaceToolParamToolsType.fromJson('function');
 
-@override Map<String, dynamic> toJson() => {...functionToolParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...functionToolParam.toJson(), 'type': type.toJson()};
 
 NamespaceToolParamToolsFunction copyWith({String? name, String? Function()? description, EmptyModelParam? Function()? parameters, bool? Function()? strict, }) { return NamespaceToolParamToolsFunction(functionToolParam.copyWith(
   name: name,
@@ -67,9 +120,9 @@ factory NamespaceToolParamToolsCustom.fromJson(Map<String, dynamic> json) { retu
 
 final CustomToolParam customToolParam;
 
-@override String get type => 'custom';
+@override NamespaceToolParamToolsType get type => NamespaceToolParamToolsType.fromJson('custom');
 
-@override Map<String, dynamic> toJson() => {...customToolParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...customToolParam.toJson(), 'type': type.toJson()};
 
 NamespaceToolParamToolsCustom copyWith({String? name, String? Function()? description, CustomToolParamFormat? Function()? format, bool? Function()? deferLoading, }) { return NamespaceToolParamToolsCustom(customToolParam.copyWith(
   name: name,
@@ -99,7 +152,7 @@ late final String _name = json['name'] as String;
 
 late final String? _description = json['description'] as String?;
 
-@override String get type => json['type'] as String? ?? '';
+@override NamespaceToolParamToolsType get type => NamespaceToolParamToolsType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

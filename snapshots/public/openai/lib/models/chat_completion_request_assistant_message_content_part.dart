@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ChatCompletionRequestAssistantMessageContentPart
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_refusal.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_text.dart';sealed class ChatCompletionRequestAssistantMessageContentPart {const ChatCompletionRequestAssistantMessageContentPart();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_refusal.dart';import 'package:pub_openai/models/chat_completion_request_message_content_part_text.dart';sealed class ChatCompletionRequestAssistantMessageContentPartType {const ChatCompletionRequestAssistantMessageContentPartType();
+
+factory ChatCompletionRequestAssistantMessageContentPartType.fromJson(String json) { return switch (json) {
+  'text' => text,
+  'refusal' => refusal,
+  _ => ChatCompletionRequestAssistantMessageContentPartType$Unknown(json),
+}; }
+
+static const ChatCompletionRequestAssistantMessageContentPartType text = ChatCompletionRequestAssistantMessageContentPartType$text._();
+
+static const ChatCompletionRequestAssistantMessageContentPartType refusal = ChatCompletionRequestAssistantMessageContentPartType$refusal._();
+
+static const List<ChatCompletionRequestAssistantMessageContentPartType> values = [text, refusal];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ChatCompletionRequestAssistantMessageContentPartType$Unknown;
+
+ }
+@immutable final class ChatCompletionRequestAssistantMessageContentPartType$text extends ChatCompletionRequestAssistantMessageContentPartType {const ChatCompletionRequestAssistantMessageContentPartType$text._();
+
+@override String get value => 'text';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionRequestAssistantMessageContentPartType$text;
+
+@override int get hashCode => 'text'.hashCode;
+
+@override String toString() => 'ChatCompletionRequestAssistantMessageContentPartType(text)';
+
+ }
+@immutable final class ChatCompletionRequestAssistantMessageContentPartType$refusal extends ChatCompletionRequestAssistantMessageContentPartType {const ChatCompletionRequestAssistantMessageContentPartType$refusal._();
+
+@override String get value => 'refusal';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionRequestAssistantMessageContentPartType$refusal;
+
+@override int get hashCode => 'refusal'.hashCode;
+
+@override String toString() => 'ChatCompletionRequestAssistantMessageContentPartType(refusal)';
+
+ }
+@immutable final class ChatCompletionRequestAssistantMessageContentPartType$Unknown extends ChatCompletionRequestAssistantMessageContentPartType {const ChatCompletionRequestAssistantMessageContentPartType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ChatCompletionRequestAssistantMessageContentPartType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ChatCompletionRequestAssistantMessageContentPartType($value)';
+
+ }
+sealed class ChatCompletionRequestAssistantMessageContentPart {const ChatCompletionRequestAssistantMessageContentPart();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ChatCompletionRequestAssistantMessageContentPart.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -17,7 +70,7 @@ factory ChatCompletionRequestAssistantMessageContentPart.text({required String t
 factory ChatCompletionRequestAssistantMessageContentPart.refusal({required String refusal}) { return ChatCompletionRequestAssistantMessageContentPartRefusal(ChatCompletionRequestMessageContentPartRefusal(type: 'refusal', refusal: refusal)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+ChatCompletionRequestAssistantMessageContentPartType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ChatCompletionRequestAssistantMessageContentPart$Unknown;
@@ -34,9 +87,9 @@ factory ChatCompletionRequestAssistantMessageContentPartText.fromJson(Map<String
 
 final ChatCompletionRequestMessageContentPartText chatCompletionRequestMessageContentPartText;
 
-@override String get type => 'text';
+@override ChatCompletionRequestAssistantMessageContentPartType get type => ChatCompletionRequestAssistantMessageContentPartType.fromJson('text');
 
-@override Map<String, dynamic> toJson() => {...chatCompletionRequestMessageContentPartText.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...chatCompletionRequestMessageContentPartText.toJson(), 'type': type.toJson()};
 
 ChatCompletionRequestAssistantMessageContentPartText copyWith({String? text}) { return ChatCompletionRequestAssistantMessageContentPartText(chatCompletionRequestMessageContentPartText.copyWith(
   text: text,
@@ -55,9 +108,9 @@ factory ChatCompletionRequestAssistantMessageContentPartRefusal.fromJson(Map<Str
 
 final ChatCompletionRequestMessageContentPartRefusal chatCompletionRequestMessageContentPartRefusal;
 
-@override String get type => 'refusal';
+@override ChatCompletionRequestAssistantMessageContentPartType get type => ChatCompletionRequestAssistantMessageContentPartType.fromJson('refusal');
 
-@override Map<String, dynamic> toJson() => {...chatCompletionRequestMessageContentPartRefusal.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...chatCompletionRequestMessageContentPartRefusal.toJson(), 'type': type.toJson()};
 
 ChatCompletionRequestAssistantMessageContentPartRefusal copyWith({String? refusal}) { return ChatCompletionRequestAssistantMessageContentPartRefusal(chatCompletionRequestMessageContentPartRefusal.copyWith(
   refusal: refusal,
@@ -76,7 +129,7 @@ ChatCompletionRequestAssistantMessageContentPartRefusal copyWith({String? refusa
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override ChatCompletionRequestAssistantMessageContentPartType get type => ChatCompletionRequestAssistantMessageContentPartType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

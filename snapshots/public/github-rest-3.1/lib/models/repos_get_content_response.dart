@@ -1,7 +1,88 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ReposGetContentResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';import 'package:pub_github_rest_3_1/models/content_directory2.dart';import 'package:pub_github_rest_3_1/models/content_file.dart';import 'package:pub_github_rest_3_1/models/content_submodule.dart';import 'package:pub_github_rest_3_1/models/content_symlink.dart';sealed class ReposGetContentResponse {const ReposGetContentResponse();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/content_directory/content_directory_links.dart';import 'package:pub_github_rest_3_1/models/content_directory2.dart';import 'package:pub_github_rest_3_1/models/content_file.dart';import 'package:pub_github_rest_3_1/models/content_submodule.dart';import 'package:pub_github_rest_3_1/models/content_symlink.dart';sealed class ReposGetContentResponseType {const ReposGetContentResponseType();
+
+factory ReposGetContentResponseType.fromJson(String json) { return switch (json) {
+  'array' => array,
+  'file' => file,
+  'symlink' => symlink,
+  'submodule' => submodule,
+  _ => ReposGetContentResponseType$Unknown(json),
+}; }
+
+static const ReposGetContentResponseType array = ReposGetContentResponseType$array._();
+
+static const ReposGetContentResponseType file = ReposGetContentResponseType$file._();
+
+static const ReposGetContentResponseType symlink = ReposGetContentResponseType$symlink._();
+
+static const ReposGetContentResponseType submodule = ReposGetContentResponseType$submodule._();
+
+static const List<ReposGetContentResponseType> values = [array, file, symlink, submodule];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ReposGetContentResponseType$Unknown;
+
+ }
+@immutable final class ReposGetContentResponseType$array extends ReposGetContentResponseType {const ReposGetContentResponseType$array._();
+
+@override String get value => 'array';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposGetContentResponseType$array;
+
+@override int get hashCode => 'array'.hashCode;
+
+@override String toString() => 'ReposGetContentResponseType(array)';
+
+ }
+@immutable final class ReposGetContentResponseType$file extends ReposGetContentResponseType {const ReposGetContentResponseType$file._();
+
+@override String get value => 'file';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposGetContentResponseType$file;
+
+@override int get hashCode => 'file'.hashCode;
+
+@override String toString() => 'ReposGetContentResponseType(file)';
+
+ }
+@immutable final class ReposGetContentResponseType$symlink extends ReposGetContentResponseType {const ReposGetContentResponseType$symlink._();
+
+@override String get value => 'symlink';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposGetContentResponseType$symlink;
+
+@override int get hashCode => 'symlink'.hashCode;
+
+@override String toString() => 'ReposGetContentResponseType(symlink)';
+
+ }
+@immutable final class ReposGetContentResponseType$submodule extends ReposGetContentResponseType {const ReposGetContentResponseType$submodule._();
+
+@override String get value => 'submodule';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposGetContentResponseType$submodule;
+
+@override int get hashCode => 'submodule'.hashCode;
+
+@override String toString() => 'ReposGetContentResponseType(submodule)';
+
+ }
+@immutable final class ReposGetContentResponseType$Unknown extends ReposGetContentResponseType {const ReposGetContentResponseType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ReposGetContentResponseType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ReposGetContentResponseType($value)';
+
+ }
+sealed class ReposGetContentResponse {const ReposGetContentResponse();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory ReposGetContentResponse.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -22,7 +103,7 @@ factory ReposGetContentResponse.symlink({required String target, required int si
 factory ReposGetContentResponse.submodule({required Uri submoduleGitUrl, required int size, required String name, required String path, required String sha, required Uri url, required Uri? gitUrl, required Uri? htmlUrl, required Uri? downloadUrl, required ContentDirectoryLinks links, }) { return ReposGetContentResponseSubmodule(ContentSubmodule(type: ContentSubmoduleType.fromJson('submodule'), submoduleGitUrl: submoduleGitUrl, size: size, name: name, path: path, sha: sha, url: url, gitUrl: gitUrl, htmlUrl: htmlUrl, downloadUrl: downloadUrl, links: links)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+ReposGetContentResponseType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ReposGetContentResponse$Unknown;
@@ -41,9 +122,9 @@ factory ReposGetContentResponseArray.fromJson(Map<String, dynamic> json) { retur
 
 final List<ContentDirectory2> listContentDirectory2;
 
-@override String get type => 'array';
+@override ReposGetContentResponseType get type => ReposGetContentResponseType.fromJson('array');
 
-@override Map<String, dynamic> toJson() => {'type': type, 'data': listContentDirectory2.map((e) => e.toJson()).toList()};
+@override Map<String, dynamic> toJson() => {'type': type.toJson(), 'data': listContentDirectory2.map((e) => e.toJson()).toList()};
 
 ReposGetContentResponseArray copyWith({List<ContentDirectory2>? listContentDirectory2}) { return ReposGetContentResponseArray(listContentDirectory2 ?? this.listContentDirectory2); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -60,9 +141,9 @@ factory ReposGetContentResponseFile.fromJson(Map<String, dynamic> json) { return
 
 final ContentFile contentFile;
 
-@override String get type => 'file';
+@override ReposGetContentResponseType get type => ReposGetContentResponseType.fromJson('file');
 
-@override Map<String, dynamic> toJson() => {...contentFile.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...contentFile.toJson(), 'type': type.toJson()};
 
 ReposGetContentResponseFile copyWith({String? encoding, int? size, String? name, String? path, String? content, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, String? Function()? target, String? Function()? submoduleGitUrl, }) { return ReposGetContentResponseFile(contentFile.copyWith(
   encoding: encoding,
@@ -93,9 +174,9 @@ factory ReposGetContentResponseSymlink.fromJson(Map<String, dynamic> json) { ret
 
 final ContentSymlink contentSymlink;
 
-@override String get type => 'symlink';
+@override ReposGetContentResponseType get type => ReposGetContentResponseType.fromJson('symlink');
 
-@override Map<String, dynamic> toJson() => {...contentSymlink.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...contentSymlink.toJson(), 'type': type.toJson()};
 
 ReposGetContentResponseSymlink copyWith({String? target, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, }) { return ReposGetContentResponseSymlink(contentSymlink.copyWith(
   target: target,
@@ -123,9 +204,9 @@ factory ReposGetContentResponseSubmodule.fromJson(Map<String, dynamic> json) { r
 
 final ContentSubmodule contentSubmodule;
 
-@override String get type => 'submodule';
+@override ReposGetContentResponseType get type => ReposGetContentResponseType.fromJson('submodule');
 
-@override Map<String, dynamic> toJson() => {...contentSubmodule.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...contentSubmodule.toJson(), 'type': type.toJson()};
 
 ReposGetContentResponseSubmodule copyWith({Uri? submoduleGitUrl, int? size, String? name, String? path, String? sha, Uri? url, Uri? Function()? gitUrl, Uri? Function()? htmlUrl, Uri? Function()? downloadUrl, ContentDirectoryLinks? links, }) { return ReposGetContentResponseSubmodule(contentSubmodule.copyWith(
   submoduleGitUrl: submoduleGitUrl,
@@ -153,7 +234,7 @@ ReposGetContentResponseSubmodule copyWith({Uri? submoduleGitUrl, int? size, Stri
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override ReposGetContentResponseType get type => ReposGetContentResponseType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

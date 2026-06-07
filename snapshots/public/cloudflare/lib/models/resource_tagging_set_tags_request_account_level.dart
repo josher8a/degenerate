@@ -90,7 +90,7 @@ factory ResourceTaggingSetTagsRequestAccountLevel.worker({required ResourceTaggi
 factory ResourceTaggingSetTagsRequestAccountLevel.workerVersion({required ResourceTaggingResourceId resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion(ResourceTaggingDeleteTagsRequestAccountLevelBase(resourceType: ResourceTaggingAccountResourceTypeBaseEnum.fromJson('worker_version'), resourceId: resourceId)); }
 
 /// The discriminator value identifying this variant.
-String get resourceType;
+ResourceTaggingAccountResourceTypeBaseEnum get resourceType;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ResourceTaggingSetTagsRequestAccountLevel$Unknown;
@@ -127,9 +127,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelAccessApplication.fromJson(Map<
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'access_application';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('access_application');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelAccessApplication copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAccessApplication(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -150,9 +150,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelAccessGroup.fromJson(Map<String
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'access_group';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('access_group');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelAccessGroup copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAccessGroup(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -173,9 +173,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelAccount.fromJson(Map<String, dy
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'account';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('account');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelAccount copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAccount(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -196,9 +196,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelAiGateway.fromJson(Map<String, 
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'ai_gateway';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('ai_gateway');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelAiGateway copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAiGateway(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -219,9 +219,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy.fromJson(Map<Str
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'alerting_policy';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('alerting_policy');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAlertingPolicy(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -242,9 +242,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook.fromJson(Map<St
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'alerting_webhook';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('alerting_webhook');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelAlertingWebhook(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -265,9 +265,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel.fromJson(Map<
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'cloudflared_tunnel';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('cloudflared_tunnel');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelCloudflaredTunnel(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -288,9 +288,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelD1Database.fromJson(Map<String,
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'd1_database';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('d1_database');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelD1Database copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelD1Database(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -311,9 +311,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace.fromJson
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'durable_object_namespace';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('durable_object_namespace');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelDurableObjectNamespace(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -334,9 +334,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelGatewayList.fromJson(Map<String
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'gateway_list';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('gateway_list');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelGatewayList copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelGatewayList(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -357,9 +357,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelGatewayRule.fromJson(Map<String
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'gateway_rule';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('gateway_rule');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelGatewayRule copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelGatewayRule(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -380,9 +380,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelImage.fromJson(Map<String, dyna
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'image';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('image');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelImage copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelImage(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -403,9 +403,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelKvNamespace.fromJson(Map<String
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'kv_namespace';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('kv_namespace');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelKvNamespace copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelKvNamespace(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -426,9 +426,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelQueue.fromJson(Map<String, dyna
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'queue';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('queue');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelQueue copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelQueue(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -449,9 +449,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelR2Bucket.fromJson(Map<String, d
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'r2_bucket';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('r2_bucket');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelR2Bucket copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelR2Bucket(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -472,9 +472,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelResourceShare.fromJson(Map<Stri
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'resource_share';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('resource_share');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelResourceShare copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelResourceShare(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -495,9 +495,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput.fromJson(Map<St
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'stream_live_input';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('stream_live_input');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelStreamLiveInput(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -518,9 +518,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelStreamVideo.fromJson(Map<String
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'stream_video';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('stream_video');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelStreamVideo copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelStreamVideo(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -541,9 +541,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelWorker.fromJson(Map<String, dyn
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'worker';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('worker');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelWorker copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelWorker(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -564,9 +564,9 @@ factory ResourceTaggingSetTagsRequestAccountLevelWorkerVersion.fromJson(Map<Stri
 
 final ResourceTaggingDeleteTagsRequestAccountLevelBase resourceTaggingDeleteTagsRequestAccountLevelBase;
 
-@override String get resourceType => 'worker_version';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson('worker_version');
 
-@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType};
+@override Map<String, dynamic> toJson() => {...resourceTaggingDeleteTagsRequestAccountLevelBase.toJson(), 'resource_type': resourceType.toJson()};
 
 ResourceTaggingSetTagsRequestAccountLevelWorkerVersion copyWith({ResourceTaggingResourceId? resourceId}) { return ResourceTaggingSetTagsRequestAccountLevelWorkerVersion(resourceTaggingDeleteTagsRequestAccountLevelBase.copyWith(
   resourceId: resourceId,
@@ -589,7 +589,7 @@ final Map<String, dynamic> json;
 
 late final ResourceTaggingResourceId _resourceId = ResourceTaggingResourceId.fromJson(json['resource_id'] as String);
 
-@override String get resourceType => json['resource_type'] as String? ?? '';
+@override ResourceTaggingAccountResourceTypeBaseEnum get resourceType => ResourceTaggingAccountResourceTypeBaseEnum.fromJson(json['resource_type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

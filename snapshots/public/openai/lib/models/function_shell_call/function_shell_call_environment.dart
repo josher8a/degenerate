@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FunctionShellCall (inline: Environment)
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_resource.dart';import 'package:pub_openai/models/local_environment_resource.dart';sealed class FunctionShellCallEnvironment {const FunctionShellCallEnvironment();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/container_reference_resource.dart';import 'package:pub_openai/models/local_environment_resource.dart';sealed class FunctionShellCallEnvironmentType {const FunctionShellCallEnvironmentType();
+
+factory FunctionShellCallEnvironmentType.fromJson(String json) { return switch (json) {
+  'local' => local,
+  'container_reference' => containerReference,
+  _ => FunctionShellCallEnvironmentType$Unknown(json),
+}; }
+
+static const FunctionShellCallEnvironmentType local = FunctionShellCallEnvironmentType$local._();
+
+static const FunctionShellCallEnvironmentType containerReference = FunctionShellCallEnvironmentType$containerReference._();
+
+static const List<FunctionShellCallEnvironmentType> values = [local, containerReference];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is FunctionShellCallEnvironmentType$Unknown;
+
+ }
+@immutable final class FunctionShellCallEnvironmentType$local extends FunctionShellCallEnvironmentType {const FunctionShellCallEnvironmentType$local._();
+
+@override String get value => 'local';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionShellCallEnvironmentType$local;
+
+@override int get hashCode => 'local'.hashCode;
+
+@override String toString() => 'FunctionShellCallEnvironmentType(local)';
+
+ }
+@immutable final class FunctionShellCallEnvironmentType$containerReference extends FunctionShellCallEnvironmentType {const FunctionShellCallEnvironmentType$containerReference._();
+
+@override String get value => 'container_reference';
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionShellCallEnvironmentType$containerReference;
+
+@override int get hashCode => 'container_reference'.hashCode;
+
+@override String toString() => 'FunctionShellCallEnvironmentType(container_reference)';
+
+ }
+@immutable final class FunctionShellCallEnvironmentType$Unknown extends FunctionShellCallEnvironmentType {const FunctionShellCallEnvironmentType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is FunctionShellCallEnvironmentType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'FunctionShellCallEnvironmentType($value)';
+
+ }
+sealed class FunctionShellCallEnvironment {const FunctionShellCallEnvironment();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory FunctionShellCallEnvironment.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -14,7 +67,7 @@ factory FunctionShellCallEnvironment.fromJson(Map<String, dynamic> json) { retur
 factory FunctionShellCallEnvironment.containerReference({required String containerId}) { return FunctionShellCallEnvironmentContainerReference(ContainerReferenceResource(containerId: containerId)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+FunctionShellCallEnvironmentType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is FunctionShellCallEnvironment$Unknown;
@@ -31,9 +84,9 @@ factory FunctionShellCallEnvironmentLocal.fromJson(Map<String, dynamic> json) { 
 
 final LocalEnvironmentResource localEnvironmentResource;
 
-@override String get type => 'local';
+@override FunctionShellCallEnvironmentType get type => FunctionShellCallEnvironmentType.fromJson('local');
 
-@override Map<String, dynamic> toJson() => {...localEnvironmentResource.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...localEnvironmentResource.toJson(), 'type': type.toJson()};
 
 FunctionShellCallEnvironmentLocal copyWith({LocalEnvironmentResource? localEnvironmentResource}) { return FunctionShellCallEnvironmentLocal(localEnvironmentResource ?? this.localEnvironmentResource); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -50,9 +103,9 @@ factory FunctionShellCallEnvironmentContainerReference.fromJson(Map<String, dyna
 
 final ContainerReferenceResource containerReferenceResource;
 
-@override String get type => 'container_reference';
+@override FunctionShellCallEnvironmentType get type => FunctionShellCallEnvironmentType.fromJson('container_reference');
 
-@override Map<String, dynamic> toJson() => {...containerReferenceResource.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...containerReferenceResource.toJson(), 'type': type.toJson()};
 
 FunctionShellCallEnvironmentContainerReference copyWith({String? containerId}) { return FunctionShellCallEnvironmentContainerReference(containerReferenceResource.copyWith(
   containerId: containerId,
@@ -71,7 +124,7 @@ FunctionShellCallEnvironmentContainerReference copyWith({String? containerId}) {
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override FunctionShellCallEnvironmentType get type => FunctionShellCallEnvironmentType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

@@ -13,7 +13,7 @@ factory CompoundFilterFilters.fromJson(Map<String, dynamic> json) { return switc
 factory CompoundFilterFilters.eq({required String key, required ComparisonFilterValue value, }) { return CompoundFilterFiltersEq(ComparisonFilter(key: key, value: value)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+ComparisonFilterType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is CompoundFilterFilters$Unknown;
@@ -29,9 +29,9 @@ factory CompoundFilterFiltersEq.fromJson(Map<String, dynamic> json) { return Com
 
 final ComparisonFilter comparisonFilter;
 
-@override String get type => 'eq';
+@override ComparisonFilterType get type => ComparisonFilterType.fromJson('eq');
 
-@override Map<String, dynamic> toJson() => {...comparisonFilter.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...comparisonFilter.toJson(), 'type': type.toJson()};
 
 CompoundFilterFiltersEq copyWith({String? key, ComparisonFilterValue? value, }) { return CompoundFilterFiltersEq(comparisonFilter.copyWith(
   key: key,
@@ -51,7 +51,7 @@ CompoundFilterFiltersEq copyWith({String? key, ComparisonFilterValue? value, }) 
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override ComparisonFilterType get type => ComparisonFilterType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

@@ -1,7 +1,74 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/InputItem
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/easy_input_message.dart';import 'package:pub_openai/models/easy_input_message/easy_input_message_content.dart';import 'package:pub_openai/models/easy_input_message/easy_input_message_role.dart';import 'package:pub_openai/models/item.dart';import 'package:pub_openai/models/item_reference_param.dart';import 'package:pub_openai/models/message_phase.dart';sealed class InputItem {const InputItem();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/easy_input_message.dart';import 'package:pub_openai/models/easy_input_message/easy_input_message_content.dart';import 'package:pub_openai/models/easy_input_message/easy_input_message_role.dart';import 'package:pub_openai/models/item.dart';import 'package:pub_openai/models/item_reference_param.dart';import 'package:pub_openai/models/message_phase.dart';sealed class InputItemType {const InputItemType();
+
+factory InputItemType.fromJson(String json) { return switch (json) {
+  'message' => message,
+  'Item' => item,
+  'ItemReferenceParam' => itemReferenceParam,
+  _ => InputItemType$Unknown(json),
+}; }
+
+static const InputItemType message = InputItemType$message._();
+
+static const InputItemType item = InputItemType$item._();
+
+static const InputItemType itemReferenceParam = InputItemType$itemReferenceParam._();
+
+static const List<InputItemType> values = [message, item, itemReferenceParam];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is InputItemType$Unknown;
+
+ }
+@immutable final class InputItemType$message extends InputItemType {const InputItemType$message._();
+
+@override String get value => 'message';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputItemType$message;
+
+@override int get hashCode => 'message'.hashCode;
+
+@override String toString() => 'InputItemType(message)';
+
+ }
+@immutable final class InputItemType$item extends InputItemType {const InputItemType$item._();
+
+@override String get value => 'Item';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputItemType$item;
+
+@override int get hashCode => 'Item'.hashCode;
+
+@override String toString() => 'InputItemType(Item)';
+
+ }
+@immutable final class InputItemType$itemReferenceParam extends InputItemType {const InputItemType$itemReferenceParam._();
+
+@override String get value => 'ItemReferenceParam';
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputItemType$itemReferenceParam;
+
+@override int get hashCode => 'ItemReferenceParam'.hashCode;
+
+@override String toString() => 'InputItemType(ItemReferenceParam)';
+
+ }
+@immutable final class InputItemType$Unknown extends InputItemType {const InputItemType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is InputItemType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'InputItemType($value)';
+
+ }
+sealed class InputItem {const InputItem();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory InputItem.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -18,7 +85,7 @@ factory InputItem.message({required EasyInputMessageRole role, required EasyInpu
 factory InputItem.itemReferenceParam({required String id}) { return InputItemItemReferenceParam(ItemReferenceParam(type: ItemReferenceParamType.fromJson('ItemReferenceParam'), id: id)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+InputItemType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is InputItem$Unknown;
@@ -36,9 +103,9 @@ factory InputItemMessage.fromJson(Map<String, dynamic> json) { return InputItemM
 
 final EasyInputMessage easyInputMessage;
 
-@override String get type => 'message';
+@override InputItemType get type => InputItemType.fromJson('message');
 
-@override Map<String, dynamic> toJson() => {...easyInputMessage.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...easyInputMessage.toJson(), 'type': type.toJson()};
 
 InputItemMessage copyWith({EasyInputMessageRole? role, EasyInputMessageContent? content, MessagePhase? Function()? phase, }) { return InputItemMessage(easyInputMessage.copyWith(
   role: role,
@@ -59,9 +126,9 @@ factory InputItemItem.fromJson(Map<String, dynamic> json) { return InputItemItem
 
 final Item item;
 
-@override String get type => 'Item';
+@override InputItemType get type => InputItemType.fromJson('Item');
 
-@override Map<String, dynamic> toJson() => {...item.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...item.toJson(), 'type': type.toJson()};
 
 InputItemItem copyWith({Item? item}) { return InputItemItem(item ?? this.item); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -78,9 +145,9 @@ factory InputItemItemReferenceParam.fromJson(Map<String, dynamic> json) { return
 
 final ItemReferenceParam itemReferenceParam;
 
-@override String get type => 'ItemReferenceParam';
+@override InputItemType get type => InputItemType.fromJson('ItemReferenceParam');
 
-@override Map<String, dynamic> toJson() => {...itemReferenceParam.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...itemReferenceParam.toJson(), 'type': type.toJson()};
 
 InputItemItemReferenceParam copyWith({String? id}) { return InputItemItemReferenceParam(itemReferenceParam.copyWith(
   id: id,
@@ -99,7 +166,7 @@ InputItemItemReferenceParam copyWith({String? id}) { return InputItemItemReferen
 
 final Map<String, dynamic> json;
 
-@override String get type => json['type'] as String? ?? '';
+@override InputItemType get type => InputItemType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

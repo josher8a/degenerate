@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ConstDiscriminatedOneOf
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/const_object1.dart';import 'package:pub_speakeasy/models/const_object2.dart';sealed class ConstDiscriminatedOneOf {const ConstDiscriminatedOneOf();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/const_object1.dart';import 'package:pub_speakeasy/models/const_object2.dart';sealed class ConstDiscriminatedOneOfTag {const ConstDiscriminatedOneOfTag();
+
+factory ConstDiscriminatedOneOfTag.fromJson(String json) { return switch (json) {
+  'tag1' => tag1,
+  'tag2' => tag2,
+  _ => ConstDiscriminatedOneOfTag$Unknown(json),
+}; }
+
+static const ConstDiscriminatedOneOfTag tag1 = ConstDiscriminatedOneOfTag$tag1._();
+
+static const ConstDiscriminatedOneOfTag tag2 = ConstDiscriminatedOneOfTag$tag2._();
+
+static const List<ConstDiscriminatedOneOfTag> values = [tag1, tag2];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is ConstDiscriminatedOneOfTag$Unknown;
+
+ }
+@immutable final class ConstDiscriminatedOneOfTag$tag1 extends ConstDiscriminatedOneOfTag {const ConstDiscriminatedOneOfTag$tag1._();
+
+@override String get value => 'tag1';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConstDiscriminatedOneOfTag$tag1;
+
+@override int get hashCode => 'tag1'.hashCode;
+
+@override String toString() => 'ConstDiscriminatedOneOfTag(tag1)';
+
+ }
+@immutable final class ConstDiscriminatedOneOfTag$tag2 extends ConstDiscriminatedOneOfTag {const ConstDiscriminatedOneOfTag$tag2._();
+
+@override String get value => 'tag2';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConstDiscriminatedOneOfTag$tag2;
+
+@override int get hashCode => 'tag2'.hashCode;
+
+@override String toString() => 'ConstDiscriminatedOneOfTag(tag2)';
+
+ }
+@immutable final class ConstDiscriminatedOneOfTag$Unknown extends ConstDiscriminatedOneOfTag {const ConstDiscriminatedOneOfTag$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is ConstDiscriminatedOneOfTag$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'ConstDiscriminatedOneOfTag($value)';
+
+ }
+sealed class ConstDiscriminatedOneOf {const ConstDiscriminatedOneOf();
 
 /// Deserialize from JSON, dispatching on the `tag` discriminator.
 factory ConstDiscriminatedOneOf.fromJson(Map<String, dynamic> json) { return switch (json['tag']) {
@@ -17,7 +70,7 @@ factory ConstDiscriminatedOneOf.tag1({required String imageUrl}) { return ConstD
 factory ConstDiscriminatedOneOf.tag2({required String profileId}) { return ConstDiscriminatedOneOfTag2(ConstObject2(tag: 'tag2', profileId: profileId)); }
 
 /// The discriminator value identifying this variant.
-String get tag;
+ConstDiscriminatedOneOfTag get tag;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is ConstDiscriminatedOneOf$Unknown;
@@ -34,9 +87,9 @@ factory ConstDiscriminatedOneOfTag1.fromJson(Map<String, dynamic> json) { return
 
 final ConstObject1 constObject1;
 
-@override String get tag => 'tag1';
+@override ConstDiscriminatedOneOfTag get tag => ConstDiscriminatedOneOfTag.fromJson('tag1');
 
-@override Map<String, dynamic> toJson() => {...constObject1.toJson(), 'tag': tag};
+@override Map<String, dynamic> toJson() => {...constObject1.toJson(), 'tag': tag.toJson()};
 
 ConstDiscriminatedOneOfTag1 copyWith({String? imageUrl}) { return ConstDiscriminatedOneOfTag1(constObject1.copyWith(
   imageUrl: imageUrl,
@@ -55,9 +108,9 @@ factory ConstDiscriminatedOneOfTag2.fromJson(Map<String, dynamic> json) { return
 
 final ConstObject2 constObject2;
 
-@override String get tag => 'tag2';
+@override ConstDiscriminatedOneOfTag get tag => ConstDiscriminatedOneOfTag.fromJson('tag2');
 
-@override Map<String, dynamic> toJson() => {...constObject2.toJson(), 'tag': tag};
+@override Map<String, dynamic> toJson() => {...constObject2.toJson(), 'tag': tag.toJson()};
 
 ConstDiscriminatedOneOfTag2 copyWith({String? profileId}) { return ConstDiscriminatedOneOfTag2(constObject2.copyWith(
   profileId: profileId,
@@ -76,7 +129,7 @@ ConstDiscriminatedOneOfTag2 copyWith({String? profileId}) { return ConstDiscrimi
 
 final Map<String, dynamic> json;
 
-@override String get tag => json['tag'] as String? ?? '';
+@override ConstDiscriminatedOneOfTag get tag => ConstDiscriminatedOneOfTag.fromJson(json['tag'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

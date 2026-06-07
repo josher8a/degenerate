@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/MqConsumerResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_http_consumer_request/mq_http_consumer_request_settings.dart';import 'package:pub_cloudflare/models/mq_http_consumer_response.dart';import 'package:pub_cloudflare/models/mq_identifier.dart';import 'package:pub_cloudflare/models/mq_queue_name.dart';import 'package:pub_cloudflare/models/mq_script_name.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_request/mq_worker_consumer_request_settings.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_response.dart';/// Response body representing a consumer
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/mq_http_consumer_request/mq_http_consumer_request_settings.dart';import 'package:pub_cloudflare/models/mq_http_consumer_response.dart';import 'package:pub_cloudflare/models/mq_identifier.dart';import 'package:pub_cloudflare/models/mq_queue_name.dart';import 'package:pub_cloudflare/models/mq_script_name.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_request/mq_worker_consumer_request_settings.dart';import 'package:pub_cloudflare/models/mq_worker_consumer_response.dart';sealed class MqConsumerResponseType {const MqConsumerResponseType();
+
+factory MqConsumerResponseType.fromJson(String json) { return switch (json) {
+  'http_pull' => httpPull,
+  'worker' => worker,
+  _ => MqConsumerResponseType$Unknown(json),
+}; }
+
+static const MqConsumerResponseType httpPull = MqConsumerResponseType$httpPull._();
+
+static const MqConsumerResponseType worker = MqConsumerResponseType$worker._();
+
+static const List<MqConsumerResponseType> values = [httpPull, worker];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is MqConsumerResponseType$Unknown;
+
+ }
+@immutable final class MqConsumerResponseType$httpPull extends MqConsumerResponseType {const MqConsumerResponseType$httpPull._();
+
+@override String get value => 'http_pull';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqConsumerResponseType$httpPull;
+
+@override int get hashCode => 'http_pull'.hashCode;
+
+@override String toString() => 'MqConsumerResponseType(http_pull)';
+
+ }
+@immutable final class MqConsumerResponseType$worker extends MqConsumerResponseType {const MqConsumerResponseType$worker._();
+
+@override String get value => 'worker';
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqConsumerResponseType$worker;
+
+@override int get hashCode => 'worker'.hashCode;
+
+@override String toString() => 'MqConsumerResponseType(worker)';
+
+ }
+@immutable final class MqConsumerResponseType$Unknown extends MqConsumerResponseType {const MqConsumerResponseType$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is MqConsumerResponseType$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'MqConsumerResponseType($value)';
+
+ }
+/// Response body representing a consumer
 sealed class MqConsumerResponse {const MqConsumerResponse();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
@@ -18,7 +71,7 @@ factory MqConsumerResponse.httpPull({MqIdentifier? consumerId, DateTime? created
 factory MqConsumerResponse.worker({MqIdentifier? consumerId, DateTime? createdOn, String? deadLetterQueue, MqQueueName? queueName, MqScriptName? scriptName, MqWorkerConsumerRequestSettings? settings, }) { return MqConsumerResponseWorker(MqWorkerConsumerResponse(type: 'worker', consumerId: consumerId, createdOn: createdOn, deadLetterQueue: deadLetterQueue, queueName: queueName, scriptName: scriptName, settings: settings)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+MqConsumerResponseType get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is MqConsumerResponse$Unknown;
@@ -43,9 +96,9 @@ factory MqConsumerResponseHttpPull.fromJson(Map<String, dynamic> json) { return 
 
 final MqHttpConsumerResponse mqHttpConsumerResponse;
 
-@override String get type => 'http_pull';
+@override MqConsumerResponseType get type => MqConsumerResponseType.fromJson('http_pull');
 
-@override Map<String, dynamic> toJson() => {...mqHttpConsumerResponse.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...mqHttpConsumerResponse.toJson(), 'type': type.toJson()};
 
 MqConsumerResponseHttpPull copyWith({MqIdentifier? Function()? consumerId, DateTime? Function()? createdOn, String? Function()? deadLetterQueue, MqQueueName? Function()? queueName, MqHttpConsumerRequestSettings? Function()? settings, }) { return MqConsumerResponseHttpPull(mqHttpConsumerResponse.copyWith(
   consumerId: consumerId,
@@ -76,9 +129,9 @@ factory MqConsumerResponseWorker.fromJson(Map<String, dynamic> json) { return Mq
 
 final MqWorkerConsumerResponse mqWorkerConsumerResponse;
 
-@override String get type => 'worker';
+@override MqConsumerResponseType get type => MqConsumerResponseType.fromJson('worker');
 
-@override Map<String, dynamic> toJson() => {...mqWorkerConsumerResponse.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...mqWorkerConsumerResponse.toJson(), 'type': type.toJson()};
 
 MqConsumerResponseWorker copyWith({MqIdentifier? Function()? consumerId, DateTime? Function()? createdOn, String? Function()? deadLetterQueue, MqQueueName? Function()? queueName, MqScriptName? Function()? scriptName, MqWorkerConsumerRequestSettings? Function()? settings, }) { return MqConsumerResponseWorker(mqWorkerConsumerResponse.copyWith(
   consumerId: consumerId,
@@ -118,7 +171,7 @@ late final String? _deadLetterQueue = json['dead_letter_queue'] as String?;
 
 late final MqQueueName? _queueName = json['queue_name'] != null ? MqQueueName.fromJson(json['queue_name'] as String) : null;
 
-@override String get type => json['type'] as String? ?? '';
+@override MqConsumerResponseType get type => MqConsumerResponseType.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 

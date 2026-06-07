@@ -1,7 +1,60 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/StronglyTypedOneOfObject2
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/deep_object2.dart';import 'package:pub_speakeasy/models/deep_object2/any.dart';import 'package:pub_speakeasy/models/enum2.dart';import 'package:pub_speakeasy/models/simple_object2.dart';import 'package:pub_speakeasy/models/simple_object2/int32_enum.dart';import 'package:pub_speakeasy/models/simple_object2/int_enum.dart';sealed class StronglyTypedOneOfObject2 {const StronglyTypedOneOfObject2();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/deep_object2.dart';import 'package:pub_speakeasy/models/deep_object2/any.dart';import 'package:pub_speakeasy/models/enum2.dart';import 'package:pub_speakeasy/models/simple_object2.dart';import 'package:pub_speakeasy/models/simple_object2/int32_enum.dart';import 'package:pub_speakeasy/models/simple_object2/int_enum.dart';sealed class StronglyTypedOneOfObject2Type {const StronglyTypedOneOfObject2Type();
+
+factory StronglyTypedOneOfObject2Type.fromJson(String json) { return switch (json) {
+  'simpleObjectWithType' => simpleObjectWithType,
+  'deepObjectWithType' => deepObjectWithType,
+  _ => StronglyTypedOneOfObject2Type$Unknown(json),
+}; }
+
+static const StronglyTypedOneOfObject2Type simpleObjectWithType = StronglyTypedOneOfObject2Type$simpleObjectWithType._();
+
+static const StronglyTypedOneOfObject2Type deepObjectWithType = StronglyTypedOneOfObject2Type$deepObjectWithType._();
+
+static const List<StronglyTypedOneOfObject2Type> values = [simpleObjectWithType, deepObjectWithType];
+
+String get value;
+String toJson() => value;
+
+bool get isUnknown => this is StronglyTypedOneOfObject2Type$Unknown;
+
+ }
+@immutable final class StronglyTypedOneOfObject2Type$simpleObjectWithType extends StronglyTypedOneOfObject2Type {const StronglyTypedOneOfObject2Type$simpleObjectWithType._();
+
+@override String get value => 'simpleObjectWithType';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StronglyTypedOneOfObject2Type$simpleObjectWithType;
+
+@override int get hashCode => 'simpleObjectWithType'.hashCode;
+
+@override String toString() => 'StronglyTypedOneOfObject2Type(simpleObjectWithType)';
+
+ }
+@immutable final class StronglyTypedOneOfObject2Type$deepObjectWithType extends StronglyTypedOneOfObject2Type {const StronglyTypedOneOfObject2Type$deepObjectWithType._();
+
+@override String get value => 'deepObjectWithType';
+
+@override bool operator ==(Object other) => identical(this, other) || other is StronglyTypedOneOfObject2Type$deepObjectWithType;
+
+@override int get hashCode => 'deepObjectWithType'.hashCode;
+
+@override String toString() => 'StronglyTypedOneOfObject2Type(deepObjectWithType)';
+
+ }
+@immutable final class StronglyTypedOneOfObject2Type$Unknown extends StronglyTypedOneOfObject2Type {const StronglyTypedOneOfObject2Type$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) || other is StronglyTypedOneOfObject2Type$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+@override String toString() => 'StronglyTypedOneOfObject2Type($value)';
+
+ }
+sealed class StronglyTypedOneOfObject2 {const StronglyTypedOneOfObject2();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory StronglyTypedOneOfObject2.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -17,7 +70,7 @@ factory StronglyTypedOneOfObject2.simpleObjectWithType({required String str, req
 factory StronglyTypedOneOfObject2.deepObjectWithType({required String str, required bool $bool, required int $int, required double $num, required SimpleObject2 obj, required Map<String,SimpleObject2> map, required List<SimpleObject2> arr, required Any any, }) { return StronglyTypedOneOfObject2DeepObjectWithType(DeepObject2(type: 'deepObjectWithType', str: str, $bool: $bool, $int: $int, $num: $num, obj: obj, map: map, arr: arr, any: any)); }
 
 /// The discriminator value identifying this variant.
-String get type;
+StronglyTypedOneOfObject2Type get type;
 Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is StronglyTypedOneOfObject2$Unknown;
@@ -42,9 +95,9 @@ factory StronglyTypedOneOfObject2SimpleObjectWithType.fromJson(Map<String, dynam
 
 final SimpleObject2 simpleObject2;
 
-@override String get type => 'simpleObjectWithType';
+@override StronglyTypedOneOfObject2Type get type => StronglyTypedOneOfObject2Type.fromJson('simpleObjectWithType');
 
-@override Map<String, dynamic> toJson() => {...simpleObject2.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...simpleObject2.toJson(), 'type': type.toJson()};
 
 StronglyTypedOneOfObject2SimpleObjectWithType copyWith({String? str, bool? $bool, int? $int, int? int32, double? $num, double? float32, Enum2? $enum, String? date, DateTime? dateTime, dynamic Function()? any, String? Function()? strOpt, bool? Function()? boolOpt, int? Function()? intOptNull, double? Function()? numOptNull, IntEnum? intEnum, Int32Enum? int32Enum, int? Function()? bigint, String? Function()? bigintStr, double? Function()? decimal, String? Function()? decimalStr, double? Function()? decimalNullableOpt, String? Function()? int64Str, String? Function()? float64Str, }) { return StronglyTypedOneOfObject2SimpleObjectWithType(simpleObject2.copyWith(
   str: str,
@@ -93,9 +146,9 @@ factory StronglyTypedOneOfObject2DeepObjectWithType.fromJson(Map<String, dynamic
 
 final DeepObject2 deepObject2;
 
-@override String get type => 'deepObjectWithType';
+@override StronglyTypedOneOfObject2Type get type => StronglyTypedOneOfObject2Type.fromJson('deepObjectWithType');
 
-@override Map<String, dynamic> toJson() => {...deepObject2.toJson(), 'type': type};
+@override Map<String, dynamic> toJson() => {...deepObject2.toJson(), 'type': type.toJson()};
 
 StronglyTypedOneOfObject2DeepObjectWithType copyWith({String? str, bool? $bool, int? $int, double? $num, SimpleObject2? obj, Map<String,SimpleObject2>? map, List<SimpleObject2>? arr, Any? any, }) { return StronglyTypedOneOfObject2DeepObjectWithType(deepObject2.copyWith(
   str: str,
@@ -137,7 +190,7 @@ late final int _$int = (json['int'] as num).toInt();
 
 late final double _$num = (json['num'] as num).toDouble();
 
-@override String get type => json['type'] as String? ?? '';
+@override StronglyTypedOneOfObject2Type get type => StronglyTypedOneOfObject2Type.fromJson(json['type'] as String? ?? '');
 
 @override Map<String, dynamic> toJson() => json;
 
