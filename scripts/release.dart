@@ -31,8 +31,8 @@ final _runtimeDepPubspecs = [
   'packages/degenerate_dio/pubspec.yaml',
 ];
 
-final _generatorFile = 'packages/degenerate/lib/src/generator.dart';
-final _changelog = 'CHANGELOG.md';
+const _generatorFile = 'packages/degenerate/lib/src/generator.dart';
+const _changelog = 'CHANGELOG.md';
 
 void main(List<String> args) {
   // 1. Check we're in the repo root.
@@ -113,10 +113,6 @@ void main(List<String> args) {
 // ---------------------------------------------------------------------------
 
 class Version {
-  final int major;
-  final int minor;
-  final int patch;
-
   Version(this.major, this.minor, this.patch);
 
   factory Version.parse(String s) {
@@ -130,6 +126,10 @@ class Version {
       int.parse(parts[2]),
     );
   }
+
+  final int major;
+  final int minor;
+  final int patch;
 
   Version bumpMajor() => Version(major + 1, 0, 0);
   Version bumpMinor() => Version(major, minor + 1, 0);
@@ -193,7 +193,7 @@ void _updateGeneratorVersion(Version version) {
   final file = File(_generatorFile);
   final content = file.readAsStringSync();
   final updated = content.replaceFirst(
-    RegExp(r"const packageVersion = '[^']+';"),
+    RegExp("const packageVersion = '[^']+';"),
     "const packageVersion = '$version';",
   );
   if (updated == content) {
