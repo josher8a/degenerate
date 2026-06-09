@@ -202,13 +202,43 @@ String? _simpleCastFromJson(
       _ => null, // needs null-check wrapper
     },
     IrList(:final items) =>
-      '($accessor as List<dynamic>?)?.map((e) => ${_buildFromJsonNonNull(items, 'e', ctx: ctx, resolving: resolving)}).toList()',
+      '($accessor as List<dynamic>?)?.map((e) => ${_elementFromJson(items, 'e', ctx: ctx, resolving: resolving)}).toList()',
     IrMap(:final values) =>
       _isIdentityMapValue(values)
           ? '$accessor as Map<String, dynamic>?'
-          : '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', ctx: ctx, resolving: resolving)}))',
+          : '($accessor as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, ${_elementFromJson(values, 'v', ctx: ctx, resolving: resolving)}))',
     _ => null,
   };
+}
+
+/// fromJson expression for a collection element of [type], null-guarding
+/// when the element type itself is nullable (`List<String?>`,
+/// `Map<String, Model?>`): the non-null builder's casts would throw on a
+/// null element.
+String _elementFromJson(
+  IrType type,
+  String accessor, {
+  EmitContext ctx = EmitContext.empty,
+  Set<String>? resolving,
+}) {
+  final resolved = _resolveOneOfRef(type, ctx, resolving);
+  if (!type.isNullable && !resolved.isNullable) {
+    return _buildFromJsonNonNull(resolved, accessor, ctx: ctx, resolving: resolving);
+  }
+  final simpleCast = _simpleCastFromJson(
+    resolved,
+    accessor,
+    ctx: ctx,
+    resolving: resolving,
+  );
+  if (simpleCast != null) return simpleCast;
+  final expr = _buildFromJsonNonNull(
+    resolved,
+    accessor,
+    ctx: ctx,
+    resolving: resolving,
+  );
+  return '$accessor == null ? null : $expr';
 }
 
 /// Whether a map value type produces an identity transform in `.map()`.
@@ -245,11 +275,11 @@ String _buildFromJsonNonNull(
       _ => '$name.fromJson($accessor as String)',
     },
     IrList(:final items) =>
-      '($accessor as List<dynamic>).map((e) => ${_buildFromJsonNonNull(items, 'e', ctx: ctx, resolving: resolving)}).toList()',
+      '($accessor as List<dynamic>).map((e) => ${_elementFromJson(items, 'e', ctx: ctx, resolving: resolving)}).toList()',
     IrMap(:final values) =>
       _isIdentityMapValue(values)
           ? '$accessor as Map<String, dynamic>'
-          : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_buildFromJsonNonNull(values, 'v', ctx: ctx, resolving: resolving)}))',
+          : '($accessor as Map<String, dynamic>).map((k, v) => MapEntry(k, ${_elementFromJson(values, 'v', ctx: ctx, resolving: resolving)}))',
     IrUntaggedUnion(:final variants) || IrAnyOf(:final variants)
         when isOneOfEligible(variants) =>
       buildOneOfParseCode(variants, accessor, ctx: ctx, resolving: resolving),

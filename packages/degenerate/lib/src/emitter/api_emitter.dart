@@ -513,9 +513,9 @@ final class ApiEmitter {
     return switch (type) {
       IrList(:final items) =>
         'final json = jsonDecode(response.body) as List<dynamic>;\n'
-            '    return json.map((e) => ${ctx.fromJson(items, 'e')}).toList();',
+            '    return json.map((e) => ${ctx.fromJson(items, 'e', isOptional: items.isNullable)}).toList();',
       IrMap(:final values) => () {
-        final valueExpr = ctx.fromJson(values, 'v');
+        final valueExpr = ctx.fromJson(values, 'v', isOptional: values.isNullable);
         if (valueExpr == 'v') {
           return 'return jsonDecode(response.body) as Map<String, dynamic>;';
         }
