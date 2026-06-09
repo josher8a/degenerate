@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesActions
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';import 'package:pub_cloudflare/models/zones_always_use_https.dart';import 'package:pub_cloudflare/models/zones_automatic_https_rewrites.dart';import 'package:pub_cloudflare/models/zones_automatic_https_rewrites_value.dart';import 'package:pub_cloudflare/models/zones_browser_cache_ttl.dart';import 'package:pub_cloudflare/models/zones_browser_check.dart';import 'package:pub_cloudflare/models/zones_browser_check_value.dart';import 'package:pub_cloudflare/models/zones_bypass_cache_on_cookie.dart';import 'package:pub_cloudflare/models/zones_cache_by_device_type.dart';import 'package:pub_cloudflare/models/zones_cache_deception_armor.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields/zones_cache_key_fields_value.dart';import 'package:pub_cloudflare/models/zones_cache_level.dart';import 'package:pub_cloudflare/models/zones_cache_level_value.dart';import 'package:pub_cloudflare/models/zones_cache_on_cookie.dart';import 'package:pub_cloudflare/models/zones_cache_ttl_by_status.dart';import 'package:pub_cloudflare/models/zones_cache_ttl_by_status/value_value.dart';import 'package:pub_cloudflare/models/zones_disable_apps.dart';import 'package:pub_cloudflare/models/zones_disable_performance.dart';import 'package:pub_cloudflare/models/zones_disable_security.dart';import 'package:pub_cloudflare/models/zones_disable_zaraz.dart';import 'package:pub_cloudflare/models/zones_edge_cache_ttl.dart';import 'package:pub_cloudflare/models/zones_email_obfuscation.dart';import 'package:pub_cloudflare/models/zones_email_obfuscation_value.dart';import 'package:pub_cloudflare/models/zones_explicit_cache_control.dart';import 'package:pub_cloudflare/models/zones_forwarding_url.dart';import 'package:pub_cloudflare/models/zones_forwarding_url/zones_forwarding_url_value.dart';import 'package:pub_cloudflare/models/zones_host_header_override.dart';import 'package:pub_cloudflare/models/zones_ip_geolocation.dart';import 'package:pub_cloudflare/models/zones_ip_geolocation_value.dart';import 'package:pub_cloudflare/models/zones_mirage.dart';import 'package:pub_cloudflare/models/zones_mirage_value.dart';import 'package:pub_cloudflare/models/zones_opportunistic_encryption.dart';import 'package:pub_cloudflare/models/zones_opportunistic_encryption_value.dart';import 'package:pub_cloudflare/models/zones_origin_error_page_pass_thru.dart';import 'package:pub_cloudflare/models/zones_origin_error_page_pass_thru_value.dart';import 'package:pub_cloudflare/models/zones_polish.dart';import 'package:pub_cloudflare/models/zones_polish_value.dart';import 'package:pub_cloudflare/models/zones_resolve_override.dart';import 'package:pub_cloudflare/models/zones_respect_strong_etag.dart';import 'package:pub_cloudflare/models/zones_response_buffering.dart';import 'package:pub_cloudflare/models/zones_response_buffering_value.dart';import 'package:pub_cloudflare/models/zones_rocket_loader.dart';import 'package:pub_cloudflare/models/zones_rocket_loader_value.dart';import 'package:pub_cloudflare/models/zones_security_level.dart';import 'package:pub_cloudflare/models/zones_security_level_value.dart';import 'package:pub_cloudflare/models/zones_sort_query_string_for_cache.dart';import 'package:pub_cloudflare/models/zones_sort_query_string_for_cache_value.dart';import 'package:pub_cloudflare/models/zones_ssl.dart';import 'package:pub_cloudflare/models/zones_ssl_value.dart';import 'package:pub_cloudflare/models/zones_true_client_ip_header.dart';import 'package:pub_cloudflare/models/zones_true_client_ip_header_value.dart';import 'package:pub_cloudflare/models/zones_waf.dart';import 'package:pub_cloudflare/models/zones_waf_value.dart';sealed class ZonesActions2Id {const ZonesActions2Id();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';import 'package:pub_cloudflare/models/zones_always_use_https.dart';import 'package:pub_cloudflare/models/zones_automatic_https_rewrites.dart';import 'package:pub_cloudflare/models/zones_browser_cache_ttl.dart';import 'package:pub_cloudflare/models/zones_browser_check.dart';import 'package:pub_cloudflare/models/zones_bypass_cache_on_cookie.dart';import 'package:pub_cloudflare/models/zones_cache_by_device_type.dart';import 'package:pub_cloudflare/models/zones_cache_deception_armor.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields.dart';import 'package:pub_cloudflare/models/zones_cache_key_fields/zones_cache_key_fields_value.dart';import 'package:pub_cloudflare/models/zones_cache_level.dart';import 'package:pub_cloudflare/models/zones_cache_on_cookie.dart';import 'package:pub_cloudflare/models/zones_cache_ttl_by_status.dart';import 'package:pub_cloudflare/models/zones_cache_ttl_by_status/value_value.dart';import 'package:pub_cloudflare/models/zones_disable_apps.dart';import 'package:pub_cloudflare/models/zones_disable_performance.dart';import 'package:pub_cloudflare/models/zones_disable_security.dart';import 'package:pub_cloudflare/models/zones_disable_zaraz.dart';import 'package:pub_cloudflare/models/zones_edge_cache_ttl.dart';import 'package:pub_cloudflare/models/zones_email_obfuscation.dart';import 'package:pub_cloudflare/models/zones_explicit_cache_control.dart';import 'package:pub_cloudflare/models/zones_forwarding_url.dart';import 'package:pub_cloudflare/models/zones_forwarding_url/zones_forwarding_url_value.dart';import 'package:pub_cloudflare/models/zones_host_header_override.dart';import 'package:pub_cloudflare/models/zones_ip_geolocation.dart';import 'package:pub_cloudflare/models/zones_mirage.dart';import 'package:pub_cloudflare/models/zones_opportunistic_encryption.dart';import 'package:pub_cloudflare/models/zones_origin_error_page_pass_thru.dart';import 'package:pub_cloudflare/models/zones_polish.dart';import 'package:pub_cloudflare/models/zones_resolve_override.dart';import 'package:pub_cloudflare/models/zones_respect_strong_etag.dart';import 'package:pub_cloudflare/models/zones_response_buffering.dart';import 'package:pub_cloudflare/models/zones_rocket_loader.dart';import 'package:pub_cloudflare/models/zones_security_level.dart';import 'package:pub_cloudflare/models/zones_sort_query_string_for_cache.dart';import 'package:pub_cloudflare/models/zones_ssl.dart';import 'package:pub_cloudflare/models/zones_true_client_ip_header.dart';import 'package:pub_cloudflare/models/zones_waf.dart';sealed class ZonesActions2Id {const ZonesActions2Id();
 
 factory ZonesActions2Id.fromJson(String json) { return switch (json) {
   'always_use_https' => alwaysUseHttps,
@@ -544,13 +544,13 @@ factory ZonesActions2.fromJson(Map<String, dynamic> json) { return switch (json[
 }; }
 
 /// Build the `automatic_https_rewrites` variant.
-factory ZonesActions2.automaticHttpsRewrites({ZonesAutomaticHttpsRewritesValue? value}) { return ZonesActions2AutomaticHttpsRewrites(ZonesAutomaticHttpsRewrites(id: ZonesAutomaticHttpsRewritesId.fromJson('automatic_https_rewrites'), value: value)); }
+factory ZonesActions2.automaticHttpsRewrites({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2AutomaticHttpsRewrites(ZonesAutomaticHttpsRewrites(id: ZonesAutomaticHttpsRewritesId.fromJson('automatic_https_rewrites'), value: value)); }
 
 /// Build the `browser_cache_ttl` variant.
 factory ZonesActions2.browserCacheTtl({int? value}) { return ZonesActions2BrowserCacheTtl(ZonesBrowserCacheTtl(id: ZonesBrowserCacheTtlId.fromJson('browser_cache_ttl'), value: value)); }
 
 /// Build the `browser_check` variant.
-factory ZonesActions2.browserCheck({ZonesBrowserCheckValue? value}) { return ZonesActions2BrowserCheck(ZonesBrowserCheck(id: ZonesBrowserCheckId.fromJson('browser_check'), value: value)); }
+factory ZonesActions2.browserCheck({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2BrowserCheck(ZonesBrowserCheck(id: ZonesBrowserCheckId.fromJson('browser_check'), value: value)); }
 
 /// Build the `bypass_cache_on_cookie` variant.
 factory ZonesActions2.bypassCacheOnCookie({String? value}) { return ZonesActions2BypassCacheOnCookie(ZonesBypassCacheOnCookie(id: ZonesBypassCacheOnCookieId.fromJson('bypass_cache_on_cookie'), value: value)); }
@@ -565,7 +565,7 @@ factory ZonesActions2.cacheDeceptionArmor({CacheRulesSmartTieredCachePatchValue?
 factory ZonesActions2.cacheKeyFields({ZonesCacheKeyFieldsValue? value}) { return ZonesActions2CacheKeyFields(ZonesCacheKeyFields(id: ZonesCacheKeyFieldsId.fromJson('cache_key_fields'), value: value)); }
 
 /// Build the `cache_level` variant.
-factory ZonesActions2.cacheLevel({ZonesCacheLevelValue? value}) { return ZonesActions2CacheLevel(ZonesCacheLevel(id: ZonesCacheLevelId.fromJson('cache_level'), value: value)); }
+factory ZonesActions2.cacheLevel({ZonesCacheLevelValue2? value}) { return ZonesActions2CacheLevel(ZonesCacheLevel(id: ZonesCacheLevelId.fromJson('cache_level'), value: value)); }
 
 /// Build the `cache_on_cookie` variant.
 factory ZonesActions2.cacheOnCookie({String? value}) { return ZonesActions2CacheOnCookie(ZonesCacheOnCookie(id: ZonesCacheOnCookieId.fromJson('cache_on_cookie'), value: value)); }
@@ -577,7 +577,7 @@ factory ZonesActions2.cacheTtlByStatus({Map<String,ValueValue>? value}) { return
 factory ZonesActions2.edgeCacheTtl({int? value}) { return ZonesActions2EdgeCacheTtl(ZonesEdgeCacheTtl(id: ZonesEdgeCacheTtlId.fromJson('edge_cache_ttl'), value: value)); }
 
 /// Build the `email_obfuscation` variant.
-factory ZonesActions2.emailObfuscation({ZonesEmailObfuscationValue? value}) { return ZonesActions2EmailObfuscation(ZonesEmailObfuscation(id: ZonesEmailObfuscationId.fromJson('email_obfuscation'), value: value)); }
+factory ZonesActions2.emailObfuscation({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2EmailObfuscation(ZonesEmailObfuscation(id: ZonesEmailObfuscationId.fromJson('email_obfuscation'), value: value)); }
 
 /// Build the `explicit_cache_control` variant.
 factory ZonesActions2.explicitCacheControl({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2ExplicitCacheControl(ZonesExplicitCacheControl(id: ZonesExplicitCacheControlId.fromJson('explicit_cache_control'), value: value)); }
@@ -589,19 +589,19 @@ factory ZonesActions2.forwardingUrl({ZonesForwardingUrlValue? value}) { return Z
 factory ZonesActions2.hostHeaderOverride({String? value}) { return ZonesActions2HostHeaderOverride(ZonesHostHeaderOverride(id: ZonesHostHeaderOverrideId.fromJson('host_header_override'), value: value)); }
 
 /// Build the `ip_geolocation` variant.
-factory ZonesActions2.ipGeolocation({ZonesIpGeolocationValue? value}) { return ZonesActions2IpGeolocation(ZonesIpGeolocation(id: ZonesIpGeolocationId.fromJson('ip_geolocation'), value: value)); }
+factory ZonesActions2.ipGeolocation({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2IpGeolocation(ZonesIpGeolocation(id: ZonesIpGeolocationId.fromJson('ip_geolocation'), value: value)); }
 
 /// Build the `mirage` variant.
-factory ZonesActions2.mirage({ZonesMirageValue? value}) { return ZonesActions2Mirage(ZonesMirage(id: ZonesMirageId.fromJson('mirage'), value: value)); }
+factory ZonesActions2.mirage({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2Mirage(ZonesMirage(id: ZonesMirageId.fromJson('mirage'), value: value)); }
 
 /// Build the `opportunistic_encryption` variant.
-factory ZonesActions2.opportunisticEncryption({ZonesOpportunisticEncryptionValue? value}) { return ZonesActions2OpportunisticEncryption(ZonesOpportunisticEncryption(id: ZonesOpportunisticEncryptionId.fromJson('opportunistic_encryption'), value: value)); }
+factory ZonesActions2.opportunisticEncryption({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2OpportunisticEncryption(ZonesOpportunisticEncryption(id: ZonesOpportunisticEncryptionId.fromJson('opportunistic_encryption'), value: value)); }
 
 /// Build the `origin_error_page_pass_thru` variant.
-factory ZonesActions2.originErrorPagePassThru({ZonesOriginErrorPagePassThruValue? value}) { return ZonesActions2OriginErrorPagePassThru(ZonesOriginErrorPagePassThru(id: ZonesOriginErrorPagePassThruId.fromJson('origin_error_page_pass_thru'), value: value)); }
+factory ZonesActions2.originErrorPagePassThru({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2OriginErrorPagePassThru(ZonesOriginErrorPagePassThru(id: ZonesOriginErrorPagePassThruId.fromJson('origin_error_page_pass_thru'), value: value)); }
 
 /// Build the `polish` variant.
-factory ZonesActions2.polish({ZonesPolishValue? value}) { return ZonesActions2Polish(ZonesPolish(id: ZonesPolishId.fromJson('polish'), value: value)); }
+factory ZonesActions2.polish({ZonesPolishValue2? value}) { return ZonesActions2Polish(ZonesPolish(id: ZonesPolishId.fromJson('polish'), value: value)); }
 
 /// Build the `resolve_override` variant.
 factory ZonesActions2.resolveOverride({String? value}) { return ZonesActions2ResolveOverride(ZonesResolveOverride(id: ZonesResolveOverrideId.fromJson('resolve_override'), value: value)); }
@@ -610,25 +610,25 @@ factory ZonesActions2.resolveOverride({String? value}) { return ZonesActions2Res
 factory ZonesActions2.respectStrongEtag({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2RespectStrongEtag(ZonesRespectStrongEtag(id: ZonesRespectStrongEtagId.fromJson('respect_strong_etag'), value: value)); }
 
 /// Build the `response_buffering` variant.
-factory ZonesActions2.responseBuffering({ZonesResponseBufferingValue? value}) { return ZonesActions2ResponseBuffering(ZonesResponseBuffering(id: ZonesResponseBufferingId.fromJson('response_buffering'), value: value)); }
+factory ZonesActions2.responseBuffering({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2ResponseBuffering(ZonesResponseBuffering(id: ZonesResponseBufferingId.fromJson('response_buffering'), value: value)); }
 
 /// Build the `rocket_loader` variant.
-factory ZonesActions2.rocketLoader({ZonesRocketLoaderValue? value}) { return ZonesActions2RocketLoader(ZonesRocketLoader(id: ZonesRocketLoaderId.fromJson('rocket_loader'), value: value)); }
+factory ZonesActions2.rocketLoader({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2RocketLoader(ZonesRocketLoader(id: ZonesRocketLoaderId.fromJson('rocket_loader'), value: value)); }
 
 /// Build the `security_level` variant.
-factory ZonesActions2.securityLevel({ZonesSecurityLevelValue? value}) { return ZonesActions2SecurityLevel(ZonesSecurityLevel(id: ZonesSecurityLevelId.fromJson('security_level'), value: value)); }
+factory ZonesActions2.securityLevel({ZonesSecurityLevelValue2? value}) { return ZonesActions2SecurityLevel(ZonesSecurityLevel(id: ZonesSecurityLevelId.fromJson('security_level'), value: value)); }
 
 /// Build the `sort_query_string_for_cache` variant.
-factory ZonesActions2.sortQueryStringForCache({ZonesSortQueryStringForCacheValue? value}) { return ZonesActions2SortQueryStringForCache(ZonesSortQueryStringForCache(id: ZonesSortQueryStringForCacheId.fromJson('sort_query_string_for_cache'), value: value)); }
+factory ZonesActions2.sortQueryStringForCache({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2SortQueryStringForCache(ZonesSortQueryStringForCache(id: ZonesSortQueryStringForCacheId.fromJson('sort_query_string_for_cache'), value: value)); }
 
 /// Build the `ssl` variant.
-factory ZonesActions2.ssl({ZonesSslValue? value}) { return ZonesActions2Ssl(ZonesSsl(id: ZonesSslId.fromJson('ssl'), value: value)); }
+factory ZonesActions2.ssl({ZonesSslValue2? value}) { return ZonesActions2Ssl(ZonesSsl(id: ZonesSslId.fromJson('ssl'), value: value)); }
 
 /// Build the `true_client_ip_header` variant.
-factory ZonesActions2.trueClientIpHeader({ZonesTrueClientIpHeaderValue? value}) { return ZonesActions2TrueClientIpHeader(ZonesTrueClientIpHeader(id: ZonesTrueClientIpHeaderId.fromJson('true_client_ip_header'), value: value)); }
+factory ZonesActions2.trueClientIpHeader({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2TrueClientIpHeader(ZonesTrueClientIpHeader(id: ZonesTrueClientIpHeaderId.fromJson('true_client_ip_header'), value: value)); }
 
 /// Build the `waf` variant.
-factory ZonesActions2.waf({ZonesWafValue? value}) { return ZonesActions2Waf(ZonesWaf(id: ZonesWafId.fromJson('waf'), value: value)); }
+factory ZonesActions2.waf({CacheRulesSmartTieredCachePatchValue? value}) { return ZonesActions2Waf(ZonesWaf(id: ZonesWafId.fromJson('waf'), value: value)); }
 
 /// The discriminator value identifying this variant.
 ZonesActions2Id get id;
@@ -703,7 +703,7 @@ final ZonesAutomaticHttpsRewrites zonesAutomaticHttpsRewrites;
 
 @override Map<String, dynamic> toJson() => {...zonesAutomaticHttpsRewrites.toJson(), 'id': id.toJson()};
 
-ZonesActions2AutomaticHttpsRewrites copyWith({ZonesAutomaticHttpsRewritesValue? Function()? value}) { return ZonesActions2AutomaticHttpsRewrites(zonesAutomaticHttpsRewrites.copyWith(
+ZonesActions2AutomaticHttpsRewrites copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2AutomaticHttpsRewrites(zonesAutomaticHttpsRewrites.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -745,7 +745,7 @@ final ZonesBrowserCheck zonesBrowserCheck;
 
 @override Map<String, dynamic> toJson() => {...zonesBrowserCheck.toJson(), 'id': id.toJson()};
 
-ZonesActions2BrowserCheck copyWith({ZonesBrowserCheckValue? Function()? value}) { return ZonesActions2BrowserCheck(zonesBrowserCheck.copyWith(
+ZonesActions2BrowserCheck copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2BrowserCheck(zonesBrowserCheck.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -850,7 +850,7 @@ final ZonesCacheLevel zonesCacheLevel;
 
 @override Map<String, dynamic> toJson() => {...zonesCacheLevel.toJson(), 'id': id.toJson()};
 
-ZonesActions2CacheLevel copyWith({ZonesCacheLevelValue? Function()? value}) { return ZonesActions2CacheLevel(zonesCacheLevel.copyWith(
+ZonesActions2CacheLevel copyWith({ZonesCacheLevelValue2? Function()? value}) { return ZonesActions2CacheLevel(zonesCacheLevel.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1010,7 +1010,7 @@ final ZonesEmailObfuscation zonesEmailObfuscation;
 
 @override Map<String, dynamic> toJson() => {...zonesEmailObfuscation.toJson(), 'id': id.toJson()};
 
-ZonesActions2EmailObfuscation copyWith({ZonesEmailObfuscationValue? Function()? value}) { return ZonesActions2EmailObfuscation(zonesEmailObfuscation.copyWith(
+ZonesActions2EmailObfuscation copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2EmailObfuscation(zonesEmailObfuscation.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1094,7 +1094,7 @@ final ZonesIpGeolocation zonesIpGeolocation;
 
 @override Map<String, dynamic> toJson() => {...zonesIpGeolocation.toJson(), 'id': id.toJson()};
 
-ZonesActions2IpGeolocation copyWith({ZonesIpGeolocationValue? Function()? value}) { return ZonesActions2IpGeolocation(zonesIpGeolocation.copyWith(
+ZonesActions2IpGeolocation copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2IpGeolocation(zonesIpGeolocation.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1115,7 +1115,7 @@ final ZonesMirage zonesMirage;
 
 @override Map<String, dynamic> toJson() => {...zonesMirage.toJson(), 'id': id.toJson()};
 
-ZonesActions2Mirage copyWith({ZonesMirageValue? Function()? value}) { return ZonesActions2Mirage(zonesMirage.copyWith(
+ZonesActions2Mirage copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2Mirage(zonesMirage.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1136,7 +1136,7 @@ final ZonesOpportunisticEncryption zonesOpportunisticEncryption;
 
 @override Map<String, dynamic> toJson() => {...zonesOpportunisticEncryption.toJson(), 'id': id.toJson()};
 
-ZonesActions2OpportunisticEncryption copyWith({ZonesOpportunisticEncryptionValue? Function()? value}) { return ZonesActions2OpportunisticEncryption(zonesOpportunisticEncryption.copyWith(
+ZonesActions2OpportunisticEncryption copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2OpportunisticEncryption(zonesOpportunisticEncryption.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1157,7 +1157,7 @@ final ZonesOriginErrorPagePassThru zonesOriginErrorPagePassThru;
 
 @override Map<String, dynamic> toJson() => {...zonesOriginErrorPagePassThru.toJson(), 'id': id.toJson()};
 
-ZonesActions2OriginErrorPagePassThru copyWith({ZonesOriginErrorPagePassThruValue? Function()? value}) { return ZonesActions2OriginErrorPagePassThru(zonesOriginErrorPagePassThru.copyWith(
+ZonesActions2OriginErrorPagePassThru copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2OriginErrorPagePassThru(zonesOriginErrorPagePassThru.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1178,7 +1178,7 @@ final ZonesPolish zonesPolish;
 
 @override Map<String, dynamic> toJson() => {...zonesPolish.toJson(), 'id': id.toJson()};
 
-ZonesActions2Polish copyWith({ZonesPolishValue? Function()? value}) { return ZonesActions2Polish(zonesPolish.copyWith(
+ZonesActions2Polish copyWith({ZonesPolishValue2? Function()? value}) { return ZonesActions2Polish(zonesPolish.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1241,7 +1241,7 @@ final ZonesResponseBuffering zonesResponseBuffering;
 
 @override Map<String, dynamic> toJson() => {...zonesResponseBuffering.toJson(), 'id': id.toJson()};
 
-ZonesActions2ResponseBuffering copyWith({ZonesResponseBufferingValue? Function()? value}) { return ZonesActions2ResponseBuffering(zonesResponseBuffering.copyWith(
+ZonesActions2ResponseBuffering copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2ResponseBuffering(zonesResponseBuffering.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1262,7 +1262,7 @@ final ZonesRocketLoader zonesRocketLoader;
 
 @override Map<String, dynamic> toJson() => {...zonesRocketLoader.toJson(), 'id': id.toJson()};
 
-ZonesActions2RocketLoader copyWith({ZonesRocketLoaderValue? Function()? value}) { return ZonesActions2RocketLoader(zonesRocketLoader.copyWith(
+ZonesActions2RocketLoader copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2RocketLoader(zonesRocketLoader.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1283,7 +1283,7 @@ final ZonesSecurityLevel zonesSecurityLevel;
 
 @override Map<String, dynamic> toJson() => {...zonesSecurityLevel.toJson(), 'id': id.toJson()};
 
-ZonesActions2SecurityLevel copyWith({ZonesSecurityLevelValue? Function()? value}) { return ZonesActions2SecurityLevel(zonesSecurityLevel.copyWith(
+ZonesActions2SecurityLevel copyWith({ZonesSecurityLevelValue2? Function()? value}) { return ZonesActions2SecurityLevel(zonesSecurityLevel.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1304,7 +1304,7 @@ final ZonesSortQueryStringForCache zonesSortQueryStringForCache;
 
 @override Map<String, dynamic> toJson() => {...zonesSortQueryStringForCache.toJson(), 'id': id.toJson()};
 
-ZonesActions2SortQueryStringForCache copyWith({ZonesSortQueryStringForCacheValue? Function()? value}) { return ZonesActions2SortQueryStringForCache(zonesSortQueryStringForCache.copyWith(
+ZonesActions2SortQueryStringForCache copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2SortQueryStringForCache(zonesSortQueryStringForCache.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1325,7 +1325,7 @@ final ZonesSsl zonesSsl;
 
 @override Map<String, dynamic> toJson() => {...zonesSsl.toJson(), 'id': id.toJson()};
 
-ZonesActions2Ssl copyWith({ZonesSslValue? Function()? value}) { return ZonesActions2Ssl(zonesSsl.copyWith(
+ZonesActions2Ssl copyWith({ZonesSslValue2? Function()? value}) { return ZonesActions2Ssl(zonesSsl.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1346,7 +1346,7 @@ final ZonesTrueClientIpHeader zonesTrueClientIpHeader;
 
 @override Map<String, dynamic> toJson() => {...zonesTrueClientIpHeader.toJson(), 'id': id.toJson()};
 
-ZonesActions2TrueClientIpHeader copyWith({ZonesTrueClientIpHeaderValue? Function()? value}) { return ZonesActions2TrueClientIpHeader(zonesTrueClientIpHeader.copyWith(
+ZonesActions2TrueClientIpHeader copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2TrueClientIpHeader(zonesTrueClientIpHeader.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -1367,7 +1367,7 @@ final ZonesWaf zonesWaf;
 
 @override Map<String, dynamic> toJson() => {...zonesWaf.toJson(), 'id': id.toJson()};
 
-ZonesActions2Waf copyWith({ZonesWafValue? Function()? value}) { return ZonesActions2Waf(zonesWaf.copyWith(
+ZonesActions2Waf copyWith({CacheRulesSmartTieredCachePatchValue? Function()? value}) { return ZonesActions2Waf(zonesWaf.copyWith(
   value: value,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||

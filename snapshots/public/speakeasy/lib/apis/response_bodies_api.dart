@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ResponseBodiesApi" (28 operations)
 
-import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/base_model.dart';import 'package:pub_speakeasy/models/base_model_override_model.dart';import 'package:pub_speakeasy/models/flattened_envelope_pagination_response_response.dart';import 'package:pub_speakeasy/models/flattened_envelope_response_response.dart';import 'package:pub_speakeasy/models/flattened_envelope_union_pagination_response_response.dart';import 'package:pub_speakeasy/models/flattened_envelope_union_response_response.dart';import 'package:pub_speakeasy/models/flattened_union_response_response.dart';import 'package:pub_speakeasy/models/mapping_consumer.dart';import 'package:pub_speakeasy/models/model_config_collision_model.dart';import 'package:pub_speakeasy/models/none_default_model.dart';import 'package:pub_speakeasy/models/obj_with_any_additional_properties.dart';import 'package:pub_speakeasy/models/obj_with_complex_numbers_additional_properties.dart';import 'package:pub_speakeasy/models/obj_with_date_additional_properties.dart';import 'package:pub_speakeasy/models/obj_with_obj_additional_properties.dart';import 'package:pub_speakeasy/models/obj_with_string_additional_properties.dart';import 'package:pub_speakeasy/models/overridden_field_names_post_request.dart';import 'package:pub_speakeasy/models/overridden_field_names_post_response.dart';import 'package:pub_speakeasy/models/read_only_object.dart';import 'package:pub_speakeasy/models/response_body_additional_properties_any_post_response.dart';import 'package:pub_speakeasy/models/response_body_additional_properties_complex_numbers_post_response.dart';import 'package:pub_speakeasy/models/response_body_additional_properties_date_post_response.dart';import 'package:pub_speakeasy/models/response_body_additional_properties_object_post_response.dart';import 'package:pub_speakeasy/models/response_body_additional_properties_post_response.dart';import 'package:pub_speakeasy/models/response_body_default_empty_string_request.dart';import 'package:pub_speakeasy/models/response_body_default_empty_string_response.dart';import 'package:pub_speakeasy/models/response_body_multiline_string_post_request.dart';import 'package:pub_speakeasy/models/response_body_multiline_string_post_response.dart';import 'package:pub_speakeasy/models/typed_object12.dart';/// ResponseBodiesApi operations.
+import 'dart:convert';import 'dart:typed_data';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/base_model.dart';import 'package:pub_speakeasy/models/base_model_override_model.dart';import 'package:pub_speakeasy/models/flattened_envelope_pagination_response_response.dart';import 'package:pub_speakeasy/models/flattened_envelope_response_response.dart';import 'package:pub_speakeasy/models/flattened_envelope_union_pagination_response_response.dart';import 'package:pub_speakeasy/models/flattened_envelope_union_response_response.dart';import 'package:pub_speakeasy/models/flattened_union_response_response.dart';import 'package:pub_speakeasy/models/mapping_consumer.dart';import 'package:pub_speakeasy/models/model_config_collision_model.dart';import 'package:pub_speakeasy/models/none_default_model.dart';import 'package:pub_speakeasy/models/obj_with_any_additional_properties.dart';import 'package:pub_speakeasy/models/obj_with_complex_numbers_additional_properties.dart';import 'package:pub_speakeasy/models/obj_with_date_additional_properties.dart';import 'package:pub_speakeasy/models/obj_with_obj_additional_properties.dart';import 'package:pub_speakeasy/models/obj_with_string_additional_properties.dart';import 'package:pub_speakeasy/models/overridden_field_names_post_request.dart';import 'package:pub_speakeasy/models/overridden_field_names_post_response.dart';import 'package:pub_speakeasy/models/read_only_object.dart';import 'package:pub_speakeasy/models/response_bodies2xx_json_object_all_optional_properties_response2_xx.dart';import 'package:pub_speakeasy/models/response_body_additional_properties_any_post_response.dart';import 'package:pub_speakeasy/models/response_body_additional_properties_complex_numbers_post_response.dart';import 'package:pub_speakeasy/models/response_body_additional_properties_date_post_response.dart';import 'package:pub_speakeasy/models/response_body_additional_properties_object_post_response.dart';import 'package:pub_speakeasy/models/response_body_additional_properties_post_response.dart';import 'package:pub_speakeasy/models/response_body_default_empty_string_request.dart';import 'package:pub_speakeasy/models/response_body_default_empty_string_response.dart';import 'package:pub_speakeasy/models/response_body_multiline_string_post_request.dart';import 'package:pub_speakeasy/models/response_body_multiline_string_post_response.dart';import 'package:pub_speakeasy/models/typed_object1.dart';/// ResponseBodiesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -69,7 +69,7 @@ return execute(
 );
  } 
 /// `GET /optional`
-Future<ApiResult<TypedObject12, Never>> responseBodyOptionalGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TypedObject1, Never>> responseBodyOptionalGet({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -81,7 +81,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    return TypedObject12.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+    return TypedObject1.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
 );
  } 
@@ -277,7 +277,7 @@ return execute(
 );
  } 
 /// `GET /anything/responseBodies/2xxJSONObjectAllOptionalProperties`
-Future<ApiResult<void, Never>> responseBodies2xxJsonObjectAllOptionalProperties({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseBodies2xxJsonObjectAllOptionalPropertiesResponse2Xx, Never>> responseBodies2xxJsonObjectAllOptionalProperties({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -288,7 +288,9 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return ResponseBodies2xxJsonObjectAllOptionalPropertiesResponse2Xx.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// `GET /filenameTooLong`

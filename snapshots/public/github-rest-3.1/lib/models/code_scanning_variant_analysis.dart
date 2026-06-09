@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CodeScanningVariantAnalysis
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis/scanned_repositories.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis/skipped_repositories.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis_status.dart';import 'package:pub_github_rest_3_1/models/simple_repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The language targeted by the CodeQL query
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis/scanned_repositories.dart';import 'package:pub_github_rest_3_1/models/code_scanning_variant_analysis/skipped_repositories.dart';import 'package:pub_github_rest_3_1/models/simple_repository.dart';import 'package:pub_github_rest_3_1/models/simple_user.dart';/// The language targeted by the CodeQL query
 sealed class CodeScanningVariantAnalysisLanguage {const CodeScanningVariantAnalysisLanguage();
 
 factory CodeScanningVariantAnalysisLanguage.fromJson(String json) { return switch (json) {
@@ -189,6 +189,103 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? actions,
 @override int get hashCode => value.hashCode;
 
  }
+sealed class CodeScanningVariantAnalysisStatus2 {const CodeScanningVariantAnalysisStatus2();
+
+factory CodeScanningVariantAnalysisStatus2.fromJson(String json) { return switch (json) {
+  'in_progress' => inProgress,
+  'succeeded' => succeeded,
+  'failed' => failed,
+  'cancelled' => cancelled,
+  _ => CodeScanningVariantAnalysisStatus2$Unknown(json),
+}; }
+
+static const CodeScanningVariantAnalysisStatus2 inProgress = CodeScanningVariantAnalysisStatus2$inProgress._();
+
+static const CodeScanningVariantAnalysisStatus2 succeeded = CodeScanningVariantAnalysisStatus2$succeeded._();
+
+static const CodeScanningVariantAnalysisStatus2 failed = CodeScanningVariantAnalysisStatus2$failed._();
+
+static const CodeScanningVariantAnalysisStatus2 cancelled = CodeScanningVariantAnalysisStatus2$cancelled._();
+
+static const List<CodeScanningVariantAnalysisStatus2> values = [inProgress, succeeded, failed, cancelled];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'in_progress' => 'inProgress',
+  'succeeded' => 'succeeded',
+  'failed' => 'failed',
+  'cancelled' => 'cancelled',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is CodeScanningVariantAnalysisStatus2$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() inProgress, required W Function() succeeded, required W Function() failed, required W Function() cancelled, required W Function(String value) $unknown, }) { return switch (this) {
+      CodeScanningVariantAnalysisStatus2$inProgress() => inProgress(),
+      CodeScanningVariantAnalysisStatus2$succeeded() => succeeded(),
+      CodeScanningVariantAnalysisStatus2$failed() => failed(),
+      CodeScanningVariantAnalysisStatus2$cancelled() => cancelled(),
+      CodeScanningVariantAnalysisStatus2$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? inProgress, W Function()? succeeded, W Function()? failed, W Function()? cancelled, W Function(String value)? $unknown, }) { return switch (this) {
+      CodeScanningVariantAnalysisStatus2$inProgress() => inProgress != null ? inProgress() : orElse(value),
+      CodeScanningVariantAnalysisStatus2$succeeded() => succeeded != null ? succeeded() : orElse(value),
+      CodeScanningVariantAnalysisStatus2$failed() => failed != null ? failed() : orElse(value),
+      CodeScanningVariantAnalysisStatus2$cancelled() => cancelled != null ? cancelled() : orElse(value),
+      CodeScanningVariantAnalysisStatus2$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'CodeScanningVariantAnalysisStatus2($value)';
+
+ }
+@immutable final class CodeScanningVariantAnalysisStatus2$inProgress extends CodeScanningVariantAnalysisStatus2 {const CodeScanningVariantAnalysisStatus2$inProgress._();
+
+@override String get value => 'in_progress';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningVariantAnalysisStatus2$inProgress;
+
+@override int get hashCode => 'in_progress'.hashCode;
+
+ }
+@immutable final class CodeScanningVariantAnalysisStatus2$succeeded extends CodeScanningVariantAnalysisStatus2 {const CodeScanningVariantAnalysisStatus2$succeeded._();
+
+@override String get value => 'succeeded';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningVariantAnalysisStatus2$succeeded;
+
+@override int get hashCode => 'succeeded'.hashCode;
+
+ }
+@immutable final class CodeScanningVariantAnalysisStatus2$failed extends CodeScanningVariantAnalysisStatus2 {const CodeScanningVariantAnalysisStatus2$failed._();
+
+@override String get value => 'failed';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningVariantAnalysisStatus2$failed;
+
+@override int get hashCode => 'failed'.hashCode;
+
+ }
+@immutable final class CodeScanningVariantAnalysisStatus2$cancelled extends CodeScanningVariantAnalysisStatus2 {const CodeScanningVariantAnalysisStatus2$cancelled._();
+
+@override String get value => 'cancelled';
+
+@override bool operator ==(Object other) => identical(this, other) || other is CodeScanningVariantAnalysisStatus2$cancelled;
+
+@override int get hashCode => 'cancelled'.hashCode;
+
+ }
+@immutable final class CodeScanningVariantAnalysisStatus2$Unknown extends CodeScanningVariantAnalysisStatus2 {const CodeScanningVariantAnalysisStatus2$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is CodeScanningVariantAnalysisStatus2$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// The reason for a failure of the variant analysis. This is only available if the variant analysis has failed.
 sealed class FailureReason {const FailureReason();
 
@@ -284,7 +381,7 @@ factory CodeScanningVariantAnalysis.fromJson(Map<String, dynamic> json) { return
   createdAt: json['created_at'] != null ? DateTime.parse(json['created_at'] as String) : null,
   updatedAt: json['updated_at'] != null ? DateTime.parse(json['updated_at'] as String) : null,
   completedAt: json['completed_at'] != null ? DateTime.parse(json['completed_at'] as String) : null,
-  status: CodeScanningVariantAnalysisStatus.fromJson(json['status'] as String),
+  status: CodeScanningVariantAnalysisStatus2.fromJson(json['status'] as String),
   actionsWorkflowRunId: json['actions_workflow_run_id'] != null ? (json['actions_workflow_run_id'] as num).toInt() : null,
   failureReason: json['failure_reason'] != null ? FailureReason.fromJson(json['failure_reason'] as String) : null,
   scannedRepositories: (json['scanned_repositories'] as List<dynamic>?)?.map((e) => ScannedRepositories.fromJson(e as Map<String, dynamic>)).toList(),
@@ -313,7 +410,7 @@ final DateTime? updatedAt;
 /// The date and time at which the variant analysis was completed, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ. Will be null if the variant analysis has not yet completed or this information is not available.
 final DateTime? completedAt;
 
-final CodeScanningVariantAnalysisStatus status;
+final CodeScanningVariantAnalysisStatus2 status;
 
 /// The GitHub Actions workflow run used to execute this variant analysis. This is only available if the workflow run has started.
 final int? actionsWorkflowRunId;
@@ -347,7 +444,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('id') 
       json.containsKey('query_language') &&
       json.containsKey('query_pack_url') && json['query_pack_url'] is String &&
       json.containsKey('status'); } 
-CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? completedAt, CodeScanningVariantAnalysisStatus? status, int? Function()? actionsWorkflowRunId, FailureReason? Function()? failureReason, List<ScannedRepositories>? Function()? scannedRepositories, SkippedRepositories? Function()? skippedRepositories, }) { return CodeScanningVariantAnalysis(
+CodeScanningVariantAnalysis copyWith({int? id, SimpleRepository? controllerRepo, SimpleUser? actor, CodeScanningVariantAnalysisLanguage? queryLanguage, String? queryPackUrl, DateTime? Function()? createdAt, DateTime? Function()? updatedAt, DateTime? Function()? completedAt, CodeScanningVariantAnalysisStatus2? status, int? Function()? actionsWorkflowRunId, FailureReason? Function()? failureReason, List<ScannedRepositories>? Function()? scannedRepositories, SkippedRepositories? Function()? skippedRepositories, }) { return CodeScanningVariantAnalysis(
   id: id ?? this.id,
   controllerRepo: controllerRepo ?? this.controllerRepo,
   actor: actor ?? this.actor,

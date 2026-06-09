@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "PagesBuildCacheApi" (1 operation)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/pages_identifier.dart';import 'package:pub_cloudflare/models/pages_project_name.dart';/// PagesBuildCacheApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/pages_deployment_create_deployment_error.dart';import 'package:pub_cloudflare/models/pages_identifier.dart';import 'package:pub_cloudflare/models/pages_project_name.dart';/// PagesBuildCacheApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class PagesBuildCacheApi with ApiExecutor {const PagesBuildCacheApi(this.a
 /// Purge all cached build artifacts for a Pages project
 ///
 /// `POST /accounts/{account_id}/pages/projects/{project_name}/purge_build_cache`
-Future<ApiResult<Map<String, dynamic>?, Never>> pagesPurgeBuildCache({required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, PagesDeploymentCreateDeploymentError>> pagesPurgeBuildCache({required PagesProjectName projectName, required PagesIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
+  onError: PagesDeploymentCreateDeploymentError.fromResponse,
 );
  } 
  }

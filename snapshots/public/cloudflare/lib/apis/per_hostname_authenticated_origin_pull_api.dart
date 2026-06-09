@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "PerHostnameAuthenticatedOriginPullApi" (6 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/per_hostname_authenticated_origin_pull_enable_or_disable_a_hostname_for_client_authentication_request.dart';import 'package:pub_cloudflare/models/per_hostname_authenticated_origin_pull_upload_a_hostname_client_certificate_request.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_authenticated_origin_pull.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_certid_object.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_certificate_object.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_hostname.dart';/// PerHostnameAuthenticatedOriginPullApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/per_hostname_authenticated_origin_pull_delete_hostname_client_certificate_error.dart';import 'package:pub_cloudflare/models/errors/per_hostname_authenticated_origin_pull_enable_or_disable_a_hostname_for_client_authentication_error.dart';import 'package:pub_cloudflare/models/errors/per_hostname_authenticated_origin_pull_get_the_hostname_client_certificate_error.dart';import 'package:pub_cloudflare/models/errors/per_hostname_authenticated_origin_pull_get_the_hostname_status_for_client_authentication_error.dart';import 'package:pub_cloudflare/models/errors/per_hostname_authenticated_origin_pull_list_certificates_error.dart';import 'package:pub_cloudflare/models/errors/per_hostname_authenticated_origin_pull_upload_a_hostname_client_certificate_error.dart';import 'package:pub_cloudflare/models/per_hostname_authenticated_origin_pull_enable_or_disable_a_hostname_for_client_authentication_request.dart';import 'package:pub_cloudflare/models/per_hostname_authenticated_origin_pull_upload_a_hostname_client_certificate_request.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_authenticated_origin_pull.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_hostname_certid_object.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_certificate_object.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_schemas_hostname.dart';/// PerHostnameAuthenticatedOriginPullApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class PerHostnameAuthenticatedOriginPullApi with ApiExecutor {const PerHos
 /// Associate a hostname to a certificate and enable, disable or invalidate the association. If disabled, client certificate will not be sent to the hostname even if activated at the zone level. 100 maximum associations on a single certificate are allowed. Note: Use a null value for parameter *enabled* to invalidate the association.
 ///
 /// `PUT /zones/{zone_id}/origin_tls_client_auth/hostnames`
-Future<ApiResult<List<TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull>?, Never>> perHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthentication({required TlsCertificatesAndHostnamesIdentifier zoneId, required PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull>?, PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationError>> perHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthentication({required TlsCertificatesAndHostnamesIdentifier zoneId, required PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -31,6 +31,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesHostnameAuthenticatedOriginPull.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: PerHostnameAuthenticatedOriginPullEnableOrDisableAHostnameForClientAuthenticationError.fromResponse,
 );
  } 
 /// Get the Hostname Status for Client Authentication
@@ -38,7 +39,7 @@ return execute(
 /// Retrieves the client certificate authentication status for a specific hostname, showing whether authenticated origin pulls are enabled.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/hostnames/{hostname}`
-Future<ApiResult<TlsCertificatesAndHostnamesHostnameCertidObject?, Never>> perHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthentication({required TlsCertificatesAndHostnamesSchemasHostname hostname, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesHostnameCertidObject?, PerHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthenticationError>> perHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthentication({required TlsCertificatesAndHostnamesSchemasHostname hostname, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -53,6 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? TlsCertificatesAndHostnamesHostnameCertidObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: PerHostnameAuthenticatedOriginPullGetTheHostnameStatusForClientAuthenticationError.fromResponse,
 );
  } 
 /// List Certificates
@@ -60,7 +62,7 @@ return execute(
 /// Lists all client certificates configured for per-hostname authenticated origin pulls on the zone.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates`
-Future<ApiResult<List<TlsCertificatesAndHostnamesSchemasCertificateObject>?, Never>> perHostnameAuthenticatedOriginPullListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<TlsCertificatesAndHostnamesSchemasCertificateObject>?, PerHostnameAuthenticatedOriginPullListCertificatesError>> perHostnameAuthenticatedOriginPullListCertificates({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,6 +77,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesSchemasCertificateObject.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: PerHostnameAuthenticatedOriginPullListCertificatesError.fromResponse,
 );
  } 
 /// Upload a Hostname Client Certificate
@@ -82,7 +85,7 @@ return execute(
 /// Upload a certificate to be used for client authentication on a hostname. 10 hostname certificates per zone are allowed.
 ///
 /// `POST /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates`
-Future<ApiResult<TlsCertificatesAndHostnamesSchemasCertificateObject?, Never>> perHostnameAuthenticatedOriginPullUploadAHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesSchemasCertificateObject?, PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateError>> perHostnameAuthenticatedOriginPullUploadAHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier zoneId, required PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,6 +102,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? TlsCertificatesAndHostnamesSchemasCertificateObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: PerHostnameAuthenticatedOriginPullUploadAHostnameClientCertificateError.fromResponse,
 );
  } 
 /// Get the Hostname Client Certificate
@@ -106,7 +110,7 @@ return execute(
 /// Get the certificate by ID to be used for client authentication on a hostname.
 ///
 /// `GET /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates/{certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesSchemasCertificateObject?, Never>> perHostnameAuthenticatedOriginPullGetTheHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesSchemasCertificateObject?, PerHostnameAuthenticatedOriginPullGetTheHostnameClientCertificateError>> perHostnameAuthenticatedOriginPullGetTheHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -121,6 +125,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? TlsCertificatesAndHostnamesSchemasCertificateObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: PerHostnameAuthenticatedOriginPullGetTheHostnameClientCertificateError.fromResponse,
 );
  } 
 /// Delete Hostname Client Certificate
@@ -130,7 +135,7 @@ return execute(
 /// 
 ///
 /// `DELETE /zones/{zone_id}/origin_tls_client_auth/hostnames/certificates/{certificate_id}`
-Future<ApiResult<TlsCertificatesAndHostnamesSchemasCertificateObject?, Never>> perHostnameAuthenticatedOriginPullDeleteHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesSchemasCertificateObject?, PerHostnameAuthenticatedOriginPullDeleteHostnameClientCertificateError>> perHostnameAuthenticatedOriginPullDeleteHostnameClientCertificate({required TlsCertificatesAndHostnamesIdentifier certificateId, required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -145,6 +150,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? TlsCertificatesAndHostnamesSchemasCertificateObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: PerHostnameAuthenticatedOriginPullDeleteHostnameClientCertificateError.fromResponse,
 );
  } 
  }

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZeroTrustGatewayProxyEndpointsApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_uuid.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints_create_proxy_endpoint_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints_update_proxy_endpoint_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_identifier.dart';/// ZeroTrustGatewayProxyEndpointsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_proxy_endpoints_create_proxy_endpoint_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_proxy_endpoints_delete_proxy_endpoint_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_proxy_endpoints_list_proxy_endpoints_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_proxy_endpoints_proxy_endpoint_details_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_proxy_endpoints_update_proxy_endpoint_error.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_uuid.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints_create_proxy_endpoint_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_proxy_endpoints_update_proxy_endpoint_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_identifier.dart';/// ZeroTrustGatewayProxyEndpointsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ZeroTrustGatewayProxyEndpointsApi with ApiExecutor {const ZeroTrustG
 /// List all Zero Trust Gateway proxy endpoints for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/proxy_endpoints`
-Future<ApiResult<List<ZeroTrustGatewayProxyEndpoints>?, Never>> zeroTrustGatewayProxyEndpointsListProxyEndpoints({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ZeroTrustGatewayProxyEndpoints>?, ZeroTrustGatewayProxyEndpointsListProxyEndpointsError>> zeroTrustGatewayProxyEndpointsListProxyEndpoints({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayProxyEndpoints.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: ZeroTrustGatewayProxyEndpointsListProxyEndpointsError.fromResponse,
 );
  } 
 /// Create a proxy endpoint
@@ -36,7 +37,7 @@ return execute(
 /// Create a new Zero Trust Gateway proxy endpoint.
 ///
 /// `POST /accounts/{account_id}/gateway/proxy_endpoints`
-Future<ApiResult<ZeroTrustGatewayProxyEndpoints?, Never>> zeroTrustGatewayProxyEndpointsCreateProxyEndpoint({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayProxyEndpoints?, ZeroTrustGatewayProxyEndpointsCreateProxyEndpointError>> zeroTrustGatewayProxyEndpointsCreateProxyEndpoint({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayProxyEndpointsCreateProxyEndpointRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,6 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewayProxyEndpoints.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ZeroTrustGatewayProxyEndpointsCreateProxyEndpointError.fromResponse,
 );
  } 
 /// Get a proxy endpoint
@@ -60,7 +62,7 @@ return execute(
 /// Get a single Zero Trust Gateway proxy endpoint.
 ///
 /// `GET /accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}`
-Future<ApiResult<ZeroTrustGatewayProxyEndpoints?, Never>> zeroTrustGatewayProxyEndpointsProxyEndpointDetails({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayProxyEndpoints?, ZeroTrustGatewayProxyEndpointsProxyEndpointDetailsError>> zeroTrustGatewayProxyEndpointsProxyEndpointDetails({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,6 +77,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewayProxyEndpoints.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ZeroTrustGatewayProxyEndpointsProxyEndpointDetailsError.fromResponse,
 );
  } 
 /// Update a proxy endpoint
@@ -82,7 +85,7 @@ return execute(
 /// Update a configured Zero Trust Gateway proxy endpoint.
 ///
 /// `PATCH /accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}`
-Future<ApiResult<ZeroTrustGatewayProxyEndpoints?, Never>> zeroTrustGatewayProxyEndpointsUpdateProxyEndpoint({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayProxyEndpoints?, ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointError>> zeroTrustGatewayProxyEndpointsUpdateProxyEndpoint({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,6 +102,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewayProxyEndpoints.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ZeroTrustGatewayProxyEndpointsUpdateProxyEndpointError.fromResponse,
 );
  } 
 /// Delete a proxy endpoint
@@ -106,7 +110,7 @@ return execute(
 /// Delete a configured Zero Trust Gateway proxy endpoint.
 ///
 /// `DELETE /accounts/{account_id}/gateway/proxy_endpoints/{proxy_endpoint_id}`
-Future<ApiResult<Map<String, dynamic>?, Never>> zeroTrustGatewayProxyEndpointsDeleteProxyEndpoint({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ZeroTrustGatewayProxyEndpointsDeleteProxyEndpointError>> zeroTrustGatewayProxyEndpointsDeleteProxyEndpoint({required ZeroTrustGatewayComponentsSchemasUuid proxyEndpointId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -121,6 +125,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
+  onError: ZeroTrustGatewayProxyEndpointsDeleteProxyEndpointError.fromResponse,
 );
  } 
  }

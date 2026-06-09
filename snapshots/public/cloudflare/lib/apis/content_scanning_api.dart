@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ContentScanningApi" (7 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bundle_custom_scan.dart';import 'package:pub_cloudflare/models/bundle_identifier.dart';import 'package:pub_cloudflare/models/bundle_schemas_status.dart';import 'package:pub_cloudflare/models/response_common75/response_common75_result.dart';import 'package:pub_cloudflare/models/waf_content_scanning_add_custom_scan_expressions_request.dart';import 'package:pub_cloudflare/models/waf_content_scanning_update_settings_request.dart';/// ContentScanningApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/bundle_custom_scan.dart';import 'package:pub_cloudflare/models/bundle_identifier.dart';import 'package:pub_cloudflare/models/bundle_schemas_status.dart';import 'package:pub_cloudflare/models/errors/waf_content_scanning_add_custom_scan_expressions_error.dart';import 'package:pub_cloudflare/models/errors/waf_content_scanning_delete_custom_scan_expressions_error.dart';import 'package:pub_cloudflare/models/errors/waf_content_scanning_disable_error.dart';import 'package:pub_cloudflare/models/errors/waf_content_scanning_list_custom_scan_expressions_error.dart';import 'package:pub_cloudflare/models/response_common75/response_common75_result.dart';import 'package:pub_cloudflare/models/waf_content_scanning_add_custom_scan_expressions_request.dart';import 'package:pub_cloudflare/models/waf_content_scanning_update_settings_request.dart';/// ContentScanningApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ContentScanningApi with ApiExecutor {const ContentScanningApi(this.a
 /// Disable Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/disable`
-Future<ApiResult<ResponseCommon75Result, Never>> wafContentScanningDisable({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon75Result, WafContentScanningDisableError>> wafContentScanningDisable({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String,);
   },
+  onError: WafContentScanningDisableError.fromResponse,
 );
  } 
 /// Enable Content Scanning
@@ -36,7 +37,7 @@ return execute(
 /// Enable Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/enable`
-Future<ApiResult<ResponseCommon75Result, Never>> wafContentScanningEnable({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon75Result, WafContentScanningDisableError>> wafContentScanningEnable({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -51,6 +52,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return OneOf3.parse(json['result'], fromA: (v) => v as Map<String, dynamic>, fromB: (v) => (v as List<dynamic>).map((e) => e as Map<String, dynamic>).toList(), fromC: (v) => v as String,);
   },
+  onError: WafContentScanningDisableError.fromResponse,
 );
  } 
 /// List Existing Custom Scan Expressions
@@ -58,7 +60,7 @@ return execute(
 /// Get a list of existing custom scan expressions for Content Scanning.
 ///
 /// `GET /zones/{zone_id}/content-upload-scan/payloads`
-Future<ApiResult<List<BundleCustomScan>?, Never>> wafContentScanningListCustomScanExpressions({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BundleCustomScan>?, WafContentScanningListCustomScanExpressionsError>> wafContentScanningListCustomScanExpressions({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -73,6 +75,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => BundleCustomScan.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: WafContentScanningListCustomScanExpressionsError.fromResponse,
 );
  } 
 /// Add Custom Scan Expressions
@@ -80,7 +83,7 @@ return execute(
 /// Add custom scan expressions for Content Scanning.
 ///
 /// `POST /zones/{zone_id}/content-upload-scan/payloads`
-Future<ApiResult<List<BundleCustomScan>?, Never>> wafContentScanningAddCustomScanExpressions({required BundleIdentifier zoneId, required List<WafContentScanningAddCustomScanExpressionsRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BundleCustomScan>?, WafContentScanningAddCustomScanExpressionsError>> wafContentScanningAddCustomScanExpressions({required BundleIdentifier zoneId, required List<WafContentScanningAddCustomScanExpressionsRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -97,6 +100,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => BundleCustomScan.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: WafContentScanningAddCustomScanExpressionsError.fromResponse,
 );
  } 
 /// Delete a Custom Scan Expression
@@ -104,7 +108,7 @@ return execute(
 /// Delete a Content Scan Custom Expression.
 ///
 /// `DELETE /zones/{zone_id}/content-upload-scan/payloads/{expression_id}`
-Future<ApiResult<List<BundleCustomScan>?, Never>> wafContentScanningDeleteCustomScanExpressions({required BundleIdentifier zoneId, required BundleIdentifier expressionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<BundleCustomScan>?, WafContentScanningDeleteCustomScanExpressionsError>> wafContentScanningDeleteCustomScanExpressions({required BundleIdentifier zoneId, required BundleIdentifier expressionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -119,6 +123,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => BundleCustomScan.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: WafContentScanningDeleteCustomScanExpressionsError.fromResponse,
 );
  } 
 /// Get Content Scanning Status
@@ -126,7 +131,7 @@ return execute(
 /// Retrieve the current status of Content Scanning.
 ///
 /// `GET /zones/{zone_id}/content-upload-scan/settings`
-Future<ApiResult<BundleSchemasStatus?, Never>> wafContentScanningGetStatus({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleSchemasStatus?, WafContentScanningDisableError>> wafContentScanningGetStatus({required BundleIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -141,6 +146,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? BundleSchemasStatus.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: WafContentScanningDisableError.fromResponse,
 );
  } 
 /// Update Content Scanning Status
@@ -148,7 +154,7 @@ return execute(
 /// Update the Content Scanning status.
 ///
 /// `PUT /zones/{zone_id}/content-upload-scan/settings`
-Future<ApiResult<BundleSchemasStatus?, Never>> wafContentScanningUpdateSettings({required BundleIdentifier zoneId, required WafContentScanningUpdateSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<BundleSchemasStatus?, WafContentScanningDisableError>> wafContentScanningUpdateSettings({required BundleIdentifier zoneId, required WafContentScanningUpdateSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -165,6 +171,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? BundleSchemasStatus.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: WafContentScanningDisableError.fromResponse,
 );
  } 
  }

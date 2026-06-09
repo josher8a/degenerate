@@ -1,13 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadataResponse4Xx
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_custom_nameservers_messages2.dart';@immutable final class AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadataResponse4Xx {const AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadataResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_level_custom_nameservers_delete_account_custom_nameserver_response4_xx/account_level_custom_nameservers_delete_account_custom_nameserver_response4_xx_result_info.dart';import 'package:pub_cloudflare/models/dns_custom_nameservers_messages2.dart';@immutable final class AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadataResponse4Xx {const AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadataResponse4Xx({required this.errors, required this.messages, required this.success, required this.result, this.resultInfo, this.enabled, this.nsSet = 1.0, });
 
 factory AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadataResponse4Xx.fromJson(Map<String, dynamic> json) { return AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadataResponse4Xx(
   errors: (json['errors'] as List<dynamic>).map((e) => DnsCustomNameserversMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DnsCustomNameserversMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
+  resultInfo: json['result_info'] != null ? AccountLevelCustomNameserversDeleteAccountCustomNameserverResponse4XxResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+  enabled: json['enabled'] as bool?,
+  nsSet: json.containsKey('ns_set') ? (json['ns_set'] as num).toDouble() : 1.0,
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 /// Example: `[{code: 7003, message: No route for the URI}]`
@@ -16,38 +19,64 @@ final List<DnsCustomNameserversMessages2> errors;
 /// Example: `[]`
 final List<DnsCustomNameserversMessages2> messages;
 
-final Map<String,dynamic>? result;
-
 /// Whether the API call was successful.
 /// 
 /// Example: `false`
 final bool success;
 
+final AccountLevelCustomNameserversDeleteAccountCustomNameserverResponse4XxResultInfo? resultInfo;
+
+/// Whether zone uses account-level custom nameservers.
+/// 
+/// Example: `true`
+final bool? enabled;
+
+/// The number of the name server set to assign to the zone.
+/// 
+/// Example: `1`
+final double nsSet;
+
+final Map<String,dynamic>? result;
+
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': result,
   'success': success,
+  if (resultInfo != null) 'result_info': resultInfo?.toJson(),
+  'enabled': ?enabled,
+  'ns_set': nsSet,
+  'result': result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadataResponse4Xx copyWith({List<DnsCustomNameserversMessages2>? errors, List<DnsCustomNameserversMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadataResponse4Xx(
+      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('result'); } 
+/// Constraint violations for this value (empty when valid).
+List<String> validate() { final errors$ = <String>[];
+if (nsSet < 1) { errors$.add('nsSet: must be >= 1'); }
+if (nsSet > 5) { errors$.add('nsSet: must be <= 5'); }
+return errors$; } 
+AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadataResponse4Xx copyWith({List<DnsCustomNameserversMessages2>? errors, List<DnsCustomNameserversMessages2>? messages, bool? success, AccountLevelCustomNameserversDeleteAccountCustomNameserverResponse4XxResultInfo? Function()? resultInfo, bool? Function()? enabled, double Function()? nsSet, Map<String, dynamic>? Function()? result, }) { return AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadataResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
-  result: result != null ? result() : this.result,
   success: success ?? this.success,
+  resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
+  enabled: enabled != null ? enabled() : this.enabled,
+  nsSet: nsSet != null ? nsSet() : this.nsSet,
+  result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadataResponse4Xx &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
-          result == other.result &&
-          success == other.success;
+          success == other.success &&
+          resultInfo == other.resultInfo &&
+          enabled == other.enabled &&
+          nsSet == other.nsSet &&
+          result == other.result;
 
-@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, resultInfo, enabled, nsSet, result);
 
-@override String toString() => 'AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadataResponse4Xx(errors: $errors, messages: $messages, result: $result, success: $success)';
+@override String toString() => 'AccountLevelCustomNameserversUsageForAZoneGetAccountCustomNameserverRelatedZoneMetadataResponse4Xx(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, enabled: $enabled, nsSet: $nsSet, result: $result)';
 
  }

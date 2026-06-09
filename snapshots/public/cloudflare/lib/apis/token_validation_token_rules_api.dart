@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "TokenValidationTokenRulesApi" (8 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_action.dart';import 'package:pub_cloudflare/models/shield_edit_single_rule_request.dart';import 'package:pub_cloudflare/models/shield_enabled.dart';import 'package:pub_cloudflare/models/shield_endpoint.dart';import 'package:pub_cloudflare/models/shield_host.dart';import 'package:pub_cloudflare/models/shield_identifier.dart';import 'package:pub_cloudflare/models/shield_method.dart';import 'package:pub_cloudflare/models/shield_rule.dart';import 'package:pub_cloudflare/models/shield_rule_properties.dart';import 'package:pub_cloudflare/models/shield_selector.dart';import 'package:pub_cloudflare/models/shield_selector_operation_state.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';import 'package:pub_cloudflare/models/token_validation_rules_bulk_edit_request.dart';import 'package:pub_cloudflare/models/token_validation_rules_preview_response/token_validation_rules_preview_response_result.dart';/// TokenValidationTokenRulesApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/discovery_retrieve_discovered_operations_on_a_zone_error.dart';import 'package:pub_cloudflare/models/shield_action.dart';import 'package:pub_cloudflare/models/shield_edit_single_rule_request.dart';import 'package:pub_cloudflare/models/shield_enabled.dart';import 'package:pub_cloudflare/models/shield_endpoint.dart';import 'package:pub_cloudflare/models/shield_host.dart';import 'package:pub_cloudflare/models/shield_identifier.dart';import 'package:pub_cloudflare/models/shield_method.dart';import 'package:pub_cloudflare/models/shield_rule.dart';import 'package:pub_cloudflare/models/shield_rule_properties.dart';import 'package:pub_cloudflare/models/shield_selector.dart';import 'package:pub_cloudflare/models/shield_selector_operation_state.dart';import 'package:pub_cloudflare/models/shield_uuid.dart';import 'package:pub_cloudflare/models/token_validation_rules_bulk_edit_request.dart';import 'package:pub_cloudflare/models/token_validation_rules_preview_response/token_validation_rules_preview_response_result.dart';/// TokenValidationTokenRulesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -12,7 +12,7 @@ final class TokenValidationTokenRulesApi with ApiExecutor {const TokenValidation
 /// List token validation rules
 ///
 /// `GET /zones/{zone_id}/token_validation/rules`
-Future<ApiResult<List<ShieldRule>, Never>> tokenValidationRulesList({required ShieldIdentifier zoneId, int? perPage, int? page, List<ShieldUuid>? tokenConfiguration, ShieldAction? action, ShieldEnabled? enabled, ShieldUuid? id, ShieldUuid? ruleId, ShieldHost? host, ShieldHost? hostname, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<ShieldRule>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationRulesList({required ShieldIdentifier zoneId, int? perPage, int? page, List<ShieldUuid>? tokenConfiguration, ShieldAction? action, ShieldEnabled? enabled, ShieldUuid? id, ShieldUuid? ruleId, ShieldHost? host, ShieldHost? hostname, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -61,6 +61,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => ShieldRule.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
  } 
 /// Create a token validation rule
@@ -68,7 +69,7 @@ return execute(
 /// Create a token validation rule.
 ///
 /// `POST /zones/{zone_id}/token_validation/rules`
-Future<ApiResult<ShieldRule, Never>> tokenValidationRulesCreate({required ShieldIdentifier zoneId, required ShieldRuleProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldRule, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationRulesCreate({required ShieldIdentifier zoneId, required ShieldRuleProperties body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -85,6 +86,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return ShieldRule.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
  } 
 /// Get a zone token validation rule
@@ -92,7 +94,7 @@ return execute(
 /// Get a zone token validation rule.
 ///
 /// `GET /zones/{zone_id}/token_validation/rules/{rule_id}`
-Future<ApiResult<ShieldRule, Never>> tokenValidationRulesGet({required ShieldIdentifier zoneId, required ShieldUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldRule, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationRulesGet({required ShieldIdentifier zoneId, required ShieldUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -107,6 +109,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return ShieldRule.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
  } 
 /// Edit a zone token validation rule
@@ -114,7 +117,7 @@ return execute(
 /// Edit a zone token validation rule.
 ///
 /// `PATCH /zones/{zone_id}/token_validation/rules/{rule_id}`
-Future<ApiResult<ShieldRule, Never>> tokenValidationRulesEdit({required ShieldIdentifier zoneId, required ShieldUuid ruleId, required ShieldEditSingleRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldRule, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationRulesEdit({required ShieldIdentifier zoneId, required ShieldUuid ruleId, required ShieldEditSingleRuleRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -131,6 +134,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return ShieldRule.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
  } 
 /// Delete a zone token validation rule
@@ -138,7 +142,7 @@ return execute(
 /// Delete a zone token validation rule.
 ///
 /// `DELETE /zones/{zone_id}/token_validation/rules/{rule_id}`
-Future<ApiResult<Map<String, dynamic>?, Never>> tokenValidationRulesDelete({required ShieldIdentifier zoneId, required ShieldUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationRulesDelete({required ShieldIdentifier zoneId, required ShieldUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -153,6 +157,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
+  onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
  } 
 /// Bulk create token validation rules
@@ -163,7 +168,7 @@ return execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/token_validation/rules/bulk`
-Future<ApiResult<List<ShieldRule>, Never>> tokenValidationRulesBulkCreate({required ShieldIdentifier zoneId, required List<ShieldRuleProperties> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ShieldRule>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationRulesBulkCreate({required ShieldIdentifier zoneId, required List<ShieldRuleProperties> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -180,6 +185,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => ShieldRule.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
  } 
 /// Bulk edit token validation rules
@@ -194,7 +200,7 @@ return execute(
 /// 
 ///
 /// `PATCH /zones/{zone_id}/token_validation/rules/bulk`
-Future<ApiResult<List<ShieldRule>, Never>> tokenValidationRulesBulkEdit({required ShieldIdentifier zoneId, required List<TokenValidationRulesBulkEditRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ShieldRule>, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationRulesBulkEdit({required ShieldIdentifier zoneId, required List<TokenValidationRulesBulkEditRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -211,6 +217,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => ShieldRule.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
  } 
 /// Preview operations covered by a Token Validation rule
@@ -222,7 +229,7 @@ return execute(
 /// 
 ///
 /// `POST /zones/{zone_id}/token_validation/rules/preview`
-Future<ApiResult<TokenValidationRulesPreviewResponseResult, Never>> tokenValidationRulesPreview({required ShieldIdentifier zoneId, required ShieldSelector body, int? perPage, int? page, List<ShieldSelectorOperationState>? state, List<ShieldHost>? host, List<ShieldHost>? hostname, List<ShieldMethod>? method, List<ShieldEndpoint>? endpoint, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<TokenValidationRulesPreviewResponseResult, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> tokenValidationRulesPreview({required ShieldIdentifier zoneId, required ShieldSelector body, int? perPage, int? page, List<ShieldSelectorOperationState>? state, List<ShieldHost>? host, List<ShieldHost>? hostname, List<ShieldMethod>? method, List<ShieldEndpoint>? endpoint, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -275,6 +282,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return TokenValidationRulesPreviewResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
  } 
  }

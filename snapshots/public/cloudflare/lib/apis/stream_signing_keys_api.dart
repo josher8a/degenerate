@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "StreamSigningKeysApi" (3 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/stream_key_response_collection/stream_key_response_collection_result.dart';import 'package:pub_cloudflare/models/stream_keys.dart';import 'package:pub_cloudflare/models/stream_schemas_identifier.dart';/// StreamSigningKeysApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/add_audio_track_error.dart';import 'package:pub_cloudflare/models/stream_key_response_collection/stream_key_response_collection_result.dart';import 'package:pub_cloudflare/models/stream_keys.dart';import 'package:pub_cloudflare/models/stream_schemas_identifier.dart';/// StreamSigningKeysApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class StreamSigningKeysApi with ApiExecutor {const StreamSigningKeysApi(th
 /// Lists the video ID and creation date and time when a signing key was created.
 ///
 /// `GET /accounts/{account_id}/stream/keys`
-Future<ApiResult<List<StreamKeyResponseCollectionResult>?, Never>> streamSigningKeysListSigningKeys({required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<StreamKeyResponseCollectionResult>?, AddAudioTrackError>> streamSigningKeysListSigningKeys({required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => StreamKeyResponseCollectionResult.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: AddAudioTrackError.fromResponse,
 );
  } 
 /// Create signing keys
@@ -36,7 +37,7 @@ return execute(
 /// Creates an RSA private key in PEM and JWK formats. Key files are only displayed once after creation. Keys are created, used, and deleted independently of videos, and every key can sign any video.
 ///
 /// `POST /accounts/{account_id}/stream/keys`
-Future<ApiResult<StreamKeys?, Never>> streamSigningKeysCreateSigningKeys({required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<StreamKeys?, AddAudioTrackError>> streamSigningKeysCreateSigningKeys({required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -51,6 +52,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? StreamKeys.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AddAudioTrackError.fromResponse,
 );
  } 
 /// Delete signing keys
@@ -58,7 +60,7 @@ return execute(
 /// Deletes signing keys and revokes all signed URLs generated with the key.
 ///
 /// `DELETE /accounts/{account_id}/stream/keys/{identifier}`
-Future<ApiResult<String?, Never>> streamSigningKeysDeleteSigningKeys({required StreamSchemasIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<String?, AddAudioTrackError>> streamSigningKeysDeleteSigningKeys({required StreamSchemasIdentifier identifier, required StreamSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -73,6 +75,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as String?;
   },
+  onError: AddAudioTrackError.fromResponse,
 );
  } 
  }

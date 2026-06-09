@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "CategoryApi" (9 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/alexandria_category.dart';import 'package:pub_cloudflare/models/delete_category_delete_response.dart';import 'package:pub_cloudflare/models/errors/delete_category_delete_error.dart';import 'package:pub_cloudflare/models/errors/get_category_list_complete_error.dart';import 'package:pub_cloudflare/models/errors/get_category_list_error.dart';import 'package:pub_cloudflare/models/errors/get_category_read_error.dart';import 'package:pub_cloudflare/models/errors/patch_category_update_error.dart';import 'package:pub_cloudflare/models/errors/post_category_create_error.dart';import 'package:pub_cloudflare/models/errors/post_category_update_error.dart';import 'package:pub_cloudflare/models/get_category_list_complete_response.dart';import 'package:pub_cloudflare/models/get_category_list_response.dart';import 'package:pub_cloudflare/models/get_category_read_response.dart';import 'package:pub_cloudflare/models/patch_category_update_request.dart';import 'package:pub_cloudflare/models/patch_category_update_response.dart';import 'package:pub_cloudflare/models/post_category_create_request.dart';import 'package:pub_cloudflare/models/post_category_create_response.dart';import 'package:pub_cloudflare/models/post_category_update_request.dart';import 'package:pub_cloudflare/models/post_category_update_response.dart';/// CategoryApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/alexandria_category.dart';import 'package:pub_cloudflare/models/delete_category_delete_response.dart';import 'package:pub_cloudflare/models/errors/delete_category_delete_error.dart';import 'package:pub_cloudflare/models/errors/get_categories_error.dart';import 'package:pub_cloudflare/models/errors/get_category_by_id_error.dart';import 'package:pub_cloudflare/models/errors/get_category_list_complete_error.dart';import 'package:pub_cloudflare/models/errors/get_category_list_error.dart';import 'package:pub_cloudflare/models/errors/get_category_read_error.dart';import 'package:pub_cloudflare/models/errors/patch_category_update_error.dart';import 'package:pub_cloudflare/models/errors/post_category_create_error.dart';import 'package:pub_cloudflare/models/errors/post_category_update_error.dart';import 'package:pub_cloudflare/models/get_category_list_complete_response.dart';import 'package:pub_cloudflare/models/get_category_list_response.dart';import 'package:pub_cloudflare/models/get_category_read_response.dart';import 'package:pub_cloudflare/models/patch_category_update_request.dart';import 'package:pub_cloudflare/models/patch_category_update_response.dart';import 'package:pub_cloudflare/models/post_category_create_request.dart';import 'package:pub_cloudflare/models/post_category_create_response.dart';import 'package:pub_cloudflare/models/post_category_update_request.dart';import 'package:pub_cloudflare/models/post_category_update_response.dart';/// CategoryApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -172,7 +172,7 @@ return execute(
 /// Get all application categories.
 ///
 /// `GET /accounts/{accountId}/resource-library/categories`
-Future<ApiResult<List<AlexandriaCategory>?, Never>> getCategories({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AlexandriaCategory>?, GetCategoriesError>> getCategories({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -187,6 +187,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => AlexandriaCategory.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: GetCategoriesError.fromResponse,
 );
  } 
 /// Show application category by ID
@@ -194,7 +195,7 @@ return execute(
 /// Get application category by ID.
 ///
 /// `GET /accounts/{accountId}/resource-library/categories/{id}`
-Future<ApiResult<AlexandriaCategory?, Never>> getCategoryById({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AlexandriaCategory?, GetCategoryByIdError>> getCategoryById({required String accountId, required String id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -209,6 +210,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AlexandriaCategory.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: GetCategoryByIdError.fromResponse,
 );
  } 
  }

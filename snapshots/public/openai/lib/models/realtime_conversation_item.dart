@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/RealtimeConversationItem
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_role.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/mcp_list_tools_tool.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call_output.dart';import 'package:pub_openai/models/realtime_conversation_item_message_assistant.dart';import 'package:pub_openai/models/realtime_conversation_item_message_assistant/realtime_conversation_item_message_assistant_content.dart';import 'package:pub_openai/models/realtime_mcp_approval_request.dart';import 'package:pub_openai/models/realtime_mcp_approval_response.dart';import 'package:pub_openai/models/realtime_mcp_list_tools.dart';import 'package:pub_openai/models/realtime_mcp_tool_call.dart';import 'package:pub_openai/models/realtime_mcp_tool_call/realtime_mcp_tool_call_error.dart';sealed class RealtimeConversationItemType {const RealtimeConversationItemType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/mcp_list_tools_tool.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call/realtime_conversation_item_function_call_object.dart';import 'package:pub_openai/models/realtime_conversation_item_function_call_output.dart';import 'package:pub_openai/models/realtime_conversation_item_message_system.dart';import 'package:pub_openai/models/realtime_conversation_item_message_system/realtime_conversation_item_message_system_content.dart';import 'package:pub_openai/models/realtime_mcp_approval_request.dart';import 'package:pub_openai/models/realtime_mcp_approval_response.dart';import 'package:pub_openai/models/realtime_mcp_list_tools.dart';import 'package:pub_openai/models/realtime_mcp_tool_call.dart';import 'package:pub_openai/models/realtime_mcp_tool_call/realtime_mcp_tool_call_error.dart';sealed class RealtimeConversationItemType {const RealtimeConversationItemType();
 
 factory RealtimeConversationItemType.fromJson(String json) { return switch (json) {
   'message' => message,
@@ -140,7 +140,7 @@ factory RealtimeConversationItem.fromJson(Map<String, dynamic> json) { return sw
 }; }
 
 /// Build the `message` variant.
-factory RealtimeConversationItem.message({required ChatCompletionResponseMessageRole role, required List<RealtimeConversationItemMessageAssistantContent> content, String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputStatus? status, }) { return RealtimeConversationItemMessage(RealtimeConversationItemMessageAssistant(type: 'message', id: id, object: object, status: status, role: role, content: content)); }
+factory RealtimeConversationItem.message({required RealtimeConversationItemMessageSystemRole role, required List<RealtimeConversationItemMessageSystemContent> content, String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputStatus? status, }) { return RealtimeConversationItemMessage(RealtimeConversationItemMessageSystem(type: 'message', id: id, object: object, status: status, role: role, content: content)); }
 
 /// Build the `function_call` variant.
 factory RealtimeConversationItem.functionCall({required String name, required String arguments, String? id, RealtimeConversationItemFunctionCallObject? object, ComputerToolCallOutputStatus? status, String? callId, }) { return RealtimeConversationItemFunctionCall$Variant(RealtimeConversationItemFunctionCall(type: 'function_call', id: id, object: object, status: status, callId: callId, name: name, arguments: arguments)); }
@@ -179,17 +179,17 @@ R when<R>({required R Function(RealtimeConversationItemMessage) message, require
   final RealtimeConversationItem$Unknown v => unknown(v),
 }; } 
  }
-@immutable final class RealtimeConversationItemMessage extends RealtimeConversationItem {const RealtimeConversationItemMessage(this.realtimeConversationItemMessageAssistant);
+@immutable final class RealtimeConversationItemMessage extends RealtimeConversationItem {const RealtimeConversationItemMessage(this.realtimeConversationItemMessageSystem);
 
-factory RealtimeConversationItemMessage.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessage(RealtimeConversationItemMessageAssistant.fromJson(json)); }
+factory RealtimeConversationItemMessage.fromJson(Map<String, dynamic> json) { return RealtimeConversationItemMessage(RealtimeConversationItemMessageSystem.fromJson(json)); }
 
-final RealtimeConversationItemMessageAssistant realtimeConversationItemMessageAssistant;
+final RealtimeConversationItemMessageSystem realtimeConversationItemMessageSystem;
 
 @override RealtimeConversationItemType get type => RealtimeConversationItemType.fromJson('message');
 
-@override Map<String, dynamic> toJson() => {...realtimeConversationItemMessageAssistant.toJson(), 'type': type.toJson()};
+@override Map<String, dynamic> toJson() => {...realtimeConversationItemMessageSystem.toJson(), 'type': type.toJson()};
 
-RealtimeConversationItemMessage copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputStatus? Function()? status, ChatCompletionResponseMessageRole? role, List<RealtimeConversationItemMessageAssistantContent>? content, }) { return RealtimeConversationItemMessage(realtimeConversationItemMessageAssistant.copyWith(
+RealtimeConversationItemMessage copyWith({String? Function()? id, RealtimeConversationItemFunctionCallObject? Function()? object, ComputerToolCallOutputStatus? Function()? status, RealtimeConversationItemMessageSystemRole? role, List<RealtimeConversationItemMessageSystemContent>? content, }) { return RealtimeConversationItemMessage(realtimeConversationItemMessageSystem.copyWith(
   id: id,
   object: object,
   status: status,
@@ -197,13 +197,13 @@ RealtimeConversationItemMessage copyWith({String? Function()? id, RealtimeConver
   content: content,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is RealtimeConversationItemMessage && realtimeConversationItemMessageAssistant == other.realtimeConversationItemMessageAssistant;
+    other is RealtimeConversationItemMessage && realtimeConversationItemMessageSystem == other.realtimeConversationItemMessageSystem;
 
-@override int get hashCode => realtimeConversationItemMessageAssistant.hashCode;
+@override int get hashCode => realtimeConversationItemMessageSystem.hashCode;
 
-@override String toString() => 'RealtimeConversationItem.message($realtimeConversationItemMessageAssistant)';
+@override String toString() => 'RealtimeConversationItem.message($realtimeConversationItemMessageSystem)';
 
-@override String? get id => realtimeConversationItemMessageAssistant.id;
+@override String? get id => realtimeConversationItemMessageSystem.id;
 
  }
 @immutable final class RealtimeConversationItemFunctionCall$Variant extends RealtimeConversationItem {const RealtimeConversationItemFunctionCall$Variant(this.realtimeConversationItemFunctionCall);

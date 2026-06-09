@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AccountRequestTracerApi" (1 operation)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_request_tracer_request_trace_request.dart';import 'package:pub_cloudflare/models/account_request_tracer_request_trace_response/account_request_tracer_request_trace_response_result.dart';import 'package:pub_cloudflare/models/request_tracer_identifier.dart';/// AccountRequestTracerApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_request_tracer_request_trace_request.dart';import 'package:pub_cloudflare/models/account_request_tracer_request_trace_response/account_request_tracer_request_trace_response_result.dart';import 'package:pub_cloudflare/models/errors/account_request_tracer_request_trace_error.dart';import 'package:pub_cloudflare/models/request_tracer_identifier.dart';/// AccountRequestTracerApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -12,7 +12,7 @@ final class AccountRequestTracerApi with ApiExecutor {const AccountRequestTracer
 /// Request Trace
 ///
 /// `POST /accounts/{account_id}/request-tracer/trace`
-Future<ApiResult<AccountRequestTracerRequestTraceResponseResult?, Never>> accountRequestTracerRequestTrace({required RequestTracerIdentifier accountId, required AccountRequestTracerRequestTraceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccountRequestTracerRequestTraceResponseResult?, AccountRequestTracerRequestTraceError>> accountRequestTracerRequestTrace({required RequestTracerIdentifier accountId, required AccountRequestTracerRequestTraceRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccountRequestTracerRequestTraceResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccountRequestTracerRequestTraceError.fromResponse,
 );
  } 
  }

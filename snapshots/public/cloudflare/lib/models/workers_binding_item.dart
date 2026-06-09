@@ -15,7 +15,7 @@ factory WorkersBindingItemType.fromJson(String json) { return switch (json) {
   'hyperdrive' => hyperdrive,
   'images' => images,
   'inherit' => inherit,
-  'json' => json,
+  'json' => $json,
   'kv_namespace' => kvNamespace,
   'mtls_certificate' => mtlsCertificate,
   'pipelines' => pipelines,
@@ -59,7 +59,7 @@ static const WorkersBindingItemType images = WorkersBindingItemType$images._();
 
 static const WorkersBindingItemType inherit = WorkersBindingItemType$inherit._();
 
-static const WorkersBindingItemType json = WorkersBindingItemType$json._();
+static const WorkersBindingItemType $json = WorkersBindingItemType$json._();
 
 static const WorkersBindingItemType kvNamespace = WorkersBindingItemType$kvNamespace._();
 
@@ -97,7 +97,7 @@ static const WorkersBindingItemType wasmModule = WorkersBindingItemType$wasmModu
 
 static const WorkersBindingItemType workflow = WorkersBindingItemType$workflow._();
 
-static const List<WorkersBindingItemType> values = [ai, analyticsEngine, assets, browser, d1, dataBlob, dispatchNamespace, durableObjectNamespace, hyperdrive, images, inherit, json, kvNamespace, mtlsCertificate, pipelines, plainText, queue, r2Bucket, ratelimit, secretKey, secretText, secretsStoreSecret, sendEmail, service, textBlob, vectorize, versionMetadata, vpcService, wasmModule, workflow];
+static const List<WorkersBindingItemType> values = [ai, analyticsEngine, assets, browser, d1, dataBlob, dispatchNamespace, durableObjectNamespace, hyperdrive, images, inherit, $json, kvNamespace, mtlsCertificate, pipelines, plainText, queue, r2Bucket, ratelimit, secretKey, secretText, secretsStoreSecret, sendEmail, service, textBlob, vectorize, versionMetadata, vpcService, wasmModule, workflow];
 
 String get value;
 String toJson() => value;

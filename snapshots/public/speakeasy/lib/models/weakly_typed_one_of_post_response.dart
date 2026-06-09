@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/WeaklyTypedOneOfPostResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/deep_object2.dart';import 'package:pub_speakeasy/models/simple_object2.dart';import 'package:pub_speakeasy/models/weakly_typed_one_of_object.dart';@immutable final class WeaklyTypedOneOfPostResponse {const WeaklyTypedOneOfPostResponse({required this.json});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/deep_object.dart';import 'package:pub_speakeasy/models/simple_object.dart';import 'package:pub_speakeasy/models/weakly_typed_one_of_object.dart';@immutable final class WeaklyTypedOneOfPostResponse {const WeaklyTypedOneOfPostResponse({required this.json});
 
 factory WeaklyTypedOneOfPostResponse.fromJson(Map<String, dynamic> json) { return WeaklyTypedOneOfPostResponse(
-  json: OneOf2.parse(json['json'], fromA: (v) => SimpleObject2.fromJson(v as Map<String, dynamic>), fromB: (v) => DeepObject2.fromJson(v as Map<String, dynamic>),),
+  json: OneOf2.parse(json['json'], fromA: (v) => SimpleObject.fromJson(v as Map<String, dynamic>), fromB: (v) => DeepObject.fromJson(v as Map<String, dynamic>),),
 ); }
 
 final WeaklyTypedOneOfObject json;

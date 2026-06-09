@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ArgoAnalyticsForZoneApi" (1 operation)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/argo_analytics_identifier.dart';/// ArgoAnalyticsForZoneApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/argo_analytics_identifier.dart';import 'package:pub_cloudflare/models/errors/argo_analytics_for_zone_argo_analytics_for_a_zone_error.dart';/// ArgoAnalyticsForZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -12,7 +12,7 @@ final class ArgoAnalyticsForZoneApi with ApiExecutor {const ArgoAnalyticsForZone
 /// Argo Analytics for a zone
 ///
 /// `GET /zones/{zone_id}/analytics/latency`
-Future<ApiResult<Map<String, dynamic>?, Never>> argoAnalyticsForZoneArgoAnalyticsForAZone({required ArgoAnalyticsIdentifier zoneId, String? bins, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, dynamic>?, ArgoAnalyticsForZoneArgoAnalyticsForAZoneError>> argoAnalyticsForZoneArgoAnalyticsForAZone({required ArgoAnalyticsIdentifier zoneId, String? bins, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (bins != null) {
   queryParameters['bins'] = bins;
@@ -35,6 +35,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
+  onError: ArgoAnalyticsForZoneArgoAnalyticsForAZoneError.fromResponse,
 );
  } 
  }

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "WarpChangeEventsApi" (1 operation)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_account_identifier.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_warp_config_change_event.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_warp_events_response2.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_warp_toggle_change_event.dart';import 'package:pub_cloudflare/models/list_warp_change_events_sort_order.dart';import 'package:pub_cloudflare/models/list_warp_change_events_toggle.dart';import 'package:pub_cloudflare/models/list_warp_change_events_type.dart';/// WarpChangeEventsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_account_identifier.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_warp_config_change_event.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_warp_events_response2.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_warp_toggle_change_event.dart';import 'package:pub_cloudflare/models/errors/create_dex_rule_error.dart';import 'package:pub_cloudflare/models/list_warp_change_events_sort_order.dart';import 'package:pub_cloudflare/models/list_warp_change_events_toggle.dart';import 'package:pub_cloudflare/models/list_warp_change_events_type.dart';/// WarpChangeEventsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class WarpChangeEventsApi with ApiExecutor {const WarpChangeEventsApi(this
 /// List WARP configuration and enablement toggle change events by device.
 ///
 /// `GET /accounts/{account_id}/dex/warp-change-events`
-Future<ApiResult<List<DigitalExperienceMonitoringWarpEventsResponse2>?, Never>> listWarpChangeEvents({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, required String from, required String to, ListWarpChangeEventsType? type, ListWarpChangeEventsToggle? toggle, String? configName, String? accountName, ListWarpChangeEventsSortOrder? sortOrder, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DigitalExperienceMonitoringWarpEventsResponse2>?, CreateDexRuleError>> listWarpChangeEvents({required DigitalExperienceMonitoringAccountIdentifier accountId, required double page, required double perPage, required String from, required String to, ListWarpChangeEventsType? type, ListWarpChangeEventsToggle? toggle, String? configName, String? accountName, ListWarpChangeEventsSortOrder? sortOrder, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 queryParameters['page'] = page.toString();
 queryParameters['per_page'] = perPage.toString();
@@ -53,6 +53,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => DigitalExperienceMonitoringWarpToggleChangeEvent.fromJson(v as Map<String, dynamic>), fromB: (v) => DigitalExperienceMonitoringWarpConfigChangeEvent.fromJson(v as Map<String, dynamic>),)).toList();
   },
+  onError: CreateDexRuleError.fromResponse,
 );
  } 
  }

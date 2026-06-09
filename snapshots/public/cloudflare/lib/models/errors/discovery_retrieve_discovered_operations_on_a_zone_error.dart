@@ -1,0 +1,74 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common_failure7.dart';sealed class DiscoveryRetrieveDiscoveredOperationsOnAZoneError {const DiscoveryRetrieveDiscoveredOperationsOnAZoneError();
+
+factory DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse(ApiResponse response) {     try {
+      return switch (response.statusCode) {
+        _ when response.statusCode >= 400 && response.statusCode <= 499 => DiscoveryRetrieveDiscoveredOperationsOnAZoneError$4XX(ResponseCommonFailure7.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
+        _ => DiscoveryRetrieveDiscoveredOperationsOnAZoneError$Unknown(response.statusCode, response.body),
+      };
+    } on Object {
+      return DiscoveryRetrieveDiscoveredOperationsOnAZoneError$Unknown(response.statusCode, response.body);
+    } }
+
+int get statusCode;
+Object? get typedError => null;
+
+ }
+final class DiscoveryRetrieveDiscoveredOperationsOnAZoneError$4XX extends DiscoveryRetrieveDiscoveredOperationsOnAZoneError {const DiscoveryRetrieveDiscoveredOperationsOnAZoneError$4XX(this.error, this.statusCode, );
+
+final ResponseCommonFailure7 error;
+
+@override final int statusCode;
+
+@override Object get typedError => error;
+
+ }
+final class DiscoveryRetrieveDiscoveredOperationsOnAZoneError$Unknown extends DiscoveryRetrieveDiscoveredOperationsOnAZoneError {const DiscoveryRetrieveDiscoveredOperationsOnAZoneError$Unknown(this.statusCode, this.rawBody, );
+
+@override final int statusCode;
+
+final String? rawBody;
+
+ }
+typedef PatchDiscoveredOperationError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef PatchDiscoveredOperationsError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef ShieldEndpointManagementAddOperationToAZoneError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef ShieldEndpointManagementAddOperationsToAZoneError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef ShieldEndpointManagementDeleteAnOperationError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef ShieldEndpointManagementDeleteMultipleOperationsError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef ShieldEndpointManagementRetrieveInformationAboutAllOperationsOnAZoneError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef ShieldEndpointManagementRetrieveInformationAboutAnOperationError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemasError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef ShieldExpressionTemplatesFallthroughError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef ShieldSettingsRetrieveInformationAboutSpecificConfigurationPropertiesError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef ShieldSettingsSetConfigurationPropertiesError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationBulkEditPerOperationSettingsError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationCreateSchemaError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationDeletePerOperationSettingError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationDeleteSchemaError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationEditSchemaError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationEditSettingsError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationExtractOperationsFromSchemaError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationGetPerOperationSettingError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationGetSchemaError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationGetSettingsError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationListPerOperationSettingsError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationListSchemaHostsError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationListSchemasPaginatedError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationUpdatePerOperationSettingError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef SchemaValidationUpdateSettingsError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef TokenValidationConfigCreateError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef TokenValidationConfigCredentialsUpdateError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef TokenValidationConfigDeleteError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef TokenValidationConfigEditError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef TokenValidationConfigGetError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef TokenValidationConfigListError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef TokenValidationRulesBulkCreateError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef TokenValidationRulesBulkEditError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef TokenValidationRulesCreateError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef TokenValidationRulesDeleteError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef TokenValidationRulesEditError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef TokenValidationRulesGetError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef TokenValidationRulesListError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;
+typedef TokenValidationRulesPreviewError = DiscoveryRetrieveDiscoveredOperationsOnAZoneError;

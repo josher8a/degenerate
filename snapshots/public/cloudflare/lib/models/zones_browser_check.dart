@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesBrowserCheck
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_browser_check_value.dart';/// Inspect the visitor's browser for headers commonly associated with
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Inspect the visitor's browser for headers commonly associated with
 /// spammers and certain bots.
 /// 
 sealed class ZonesBrowserCheckId {const ZonesBrowserCheckId();
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? browserC
 
 factory ZonesBrowserCheck.fromJson(Map<String, dynamic> json) { return ZonesBrowserCheck(
   id: json['id'] != null ? ZonesBrowserCheckId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesBrowserCheckValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Inspect the visitor's browser for headers commonly associated with
@@ -72,14 +72,14 @@ final ZonesBrowserCheckId? id;
 /// 
 /// 
 /// Example: `'on'`
-final ZonesBrowserCheckValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesBrowserCheck copyWith({ZonesBrowserCheckId? Function()? id, ZonesBrowserCheckValue? Function()? value, }) { return ZonesBrowserCheck(
+ZonesBrowserCheck copyWith({ZonesBrowserCheckId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesBrowserCheck(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

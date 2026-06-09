@@ -13,6 +13,7 @@ factory ScannedRepositories.fromJson(Map<String, dynamic> json) { return Scanned
 
 final CodeScanningVariantAnalysisRepository repository;
 
+/// The new status of the CodeQL variant analysis repository task.
 final CodeScanningVariantAnalysisStatus analysisStatus;
 
 /// The number of results in the case of a successful analysis. This is only available for successful analyses.

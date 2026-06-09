@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DeepObjectQueryParams
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/deep_object_query_params/oneofnestedobject.dart';import 'package:pub_speakeasy/models/deep_object_query_params/oneofnestedobject_variant2.dart';import 'package:pub_speakeasy/models/simple_object2.dart';/// deepObject style query parameter serialization is undefined for arrays or nested objects by the specification:
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/deep_object_query_params/oneofnestedobject.dart';import 'package:pub_speakeasy/models/deep_object_query_params/oneofnestedobject_variant2.dart';import 'package:pub_speakeasy/models/simple_object.dart';/// deepObject style query parameter serialization is undefined for arrays or nested objects by the specification:
 ///    https://github.com/OAI/OpenAPI-Specification/issues/1706
 /// This schema covers the intended implementation cases rather than the fully complex deepObject schema.
 /// 
@@ -13,7 +13,7 @@ factory DeepObjectQueryParams.fromJson(Map<String, dynamic> json) { return DeepO
   $int: (json['int'] as num).toInt(),
   map: (json['map'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
   $num: (json['num'] as num).toDouble(),
-  obj: SimpleObject2.fromJson(json['obj'] as Map<String, dynamic>),
+  obj: SimpleObject.fromJson(json['obj'] as Map<String, dynamic>),
   oneof: json['oneof'],
   oneofnestedobject: json['oneofnestedobject'] != null ? OneOf2.parse(json['oneofnestedobject'], fromA: (v) => v as String, fromB: (v) => OneofnestedobjectVariant2.fromJson(v as Map<String, dynamic>),) : null,
   str: json['str'] as String,
@@ -34,7 +34,7 @@ final Map<String,String> map;
 /// Example: `1.1`
 final double $num;
 
-final SimpleObject2 obj;
+final SimpleObject obj;
 
 /// One of: String, int
 /// 
@@ -65,7 +65,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('arr')
       json.containsKey('num') && json['num'] is num &&
       json.containsKey('obj') &&
       json.containsKey('str') && json['str'] is String; } 
-DeepObjectQueryParams copyWith({List<String>? arr, bool? $bool, int? $int, Map<String,String>? map, double? $num, SimpleObject2? obj, dynamic Function()? oneof, Oneofnestedobject? Function()? oneofnestedobject, String? str, }) { return DeepObjectQueryParams(
+DeepObjectQueryParams copyWith({List<String>? arr, bool? $bool, int? $int, Map<String,String>? map, double? $num, SimpleObject? obj, dynamic Function()? oneof, Oneofnestedobject? Function()? oneofnestedobject, String? str, }) { return DeepObjectQueryParams(
   arr: arr ?? this.arr,
   $bool: $bool ?? this.$bool,
   $int: $int ?? this.$int,

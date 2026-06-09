@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZoneRatePlanApi" (3 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/available_rate_plan.dart';import 'package:pub_cloudflare/models/identifier.dart';import 'package:pub_cloudflare/models/rate_plan.dart';/// ZoneRatePlanApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/available_rate_plan.dart';import 'package:pub_cloudflare/models/errors/account_subscriptions_delete_subscription_error.dart';import 'package:pub_cloudflare/models/errors/zone_rate_plan_list_available_rate_plans_error.dart';import 'package:pub_cloudflare/models/identifier.dart';import 'package:pub_cloudflare/models/rate_plan.dart';/// ZoneRatePlanApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ZoneRatePlanApi with ApiExecutor {const ZoneRatePlanApi(this.apiConf
 /// Lists available plans the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_plans`
-Future<ApiResult<List<AvailableRatePlan>?, Never>> zoneRatePlanListAvailablePlans({required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AvailableRatePlan>?, AccountSubscriptionsDeleteSubscriptionError>> zoneRatePlanListAvailablePlans({required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => AvailableRatePlan.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: AccountSubscriptionsDeleteSubscriptionError.fromResponse,
 );
  } 
 /// Available Plan Details
@@ -36,7 +37,7 @@ return execute(
 /// Details of the available plan that the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_plans/{plan_identifier}`
-Future<ApiResult<AvailableRatePlan?, Never>> zoneRatePlanAvailablePlanDetails({required Identifier planIdentifier, required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AvailableRatePlan?, AccountSubscriptionsDeleteSubscriptionError>> zoneRatePlanAvailablePlanDetails({required Identifier planIdentifier, required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -51,6 +52,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AvailableRatePlan.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccountSubscriptionsDeleteSubscriptionError.fromResponse,
 );
  } 
 /// List Available Rate Plans
@@ -58,7 +60,7 @@ return execute(
 /// Lists all rate plans the zone can subscribe to.
 ///
 /// `GET /zones/{zone_id}/available_rate_plans`
-Future<ApiResult<List<RatePlan>?, Never>> zoneRatePlanListAvailableRatePlans({required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<RatePlan>?, ZoneRatePlanListAvailableRatePlansError>> zoneRatePlanListAvailableRatePlans({required Identifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -73,6 +75,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => RatePlan.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: ZoneRatePlanListAvailableRatePlansError.fromResponse,
 );
  } 
  }

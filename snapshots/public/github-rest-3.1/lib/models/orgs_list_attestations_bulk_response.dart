@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/orgs_list_attestations_bulk_response/attestations_subject_digests_value.dart';import 'package:pub_github_rest_3_1/models/orgs_list_attestations_bulk_response/page_info.dart';@immutable final class OrgsListAttestationsBulkResponse {const OrgsListAttestationsBulkResponse({this.attestationsSubjectDigests, this.pageInfo, });
 
 factory OrgsListAttestationsBulkResponse.fromJson(Map<String, dynamic> json) { return OrgsListAttestationsBulkResponse(
-  attestationsSubjectDigests: (json['attestations_subject_digests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => AttestationsSubjectDigestsValue.fromJson(e as Map<String, dynamic>)).toList())),
+  attestationsSubjectDigests: (json['attestations_subject_digests'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, (v as List<dynamic>?)?.map((e) => AttestationsSubjectDigestsValue.fromJson(e as Map<String, dynamic>)).toList())),
   pageInfo: json['page_info'] != null ? PageInfo.fromJson(json['page_info'] as Map<String, dynamic>) : null,
 ); }
 
@@ -19,7 +19,7 @@ Map<String, dynamic> toJson() { return {
   if (pageInfo != null) 'page_info': pageInfo?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'attestations_subject_digests', 'page_info'}.contains(key)); } 
-OrgsListAttestationsBulkResponse copyWith({Map<String, List<AttestationsSubjectDigestsValue>>? Function()? attestationsSubjectDigests, PageInfo? Function()? pageInfo, }) { return OrgsListAttestationsBulkResponse(
+OrgsListAttestationsBulkResponse copyWith({Map<String, List<AttestationsSubjectDigestsValue>?>? Function()? attestationsSubjectDigests, PageInfo? Function()? pageInfo, }) { return OrgsListAttestationsBulkResponse(
   attestationsSubjectDigests: attestationsSubjectDigests != null ? attestationsSubjectDigests() : this.attestationsSubjectDigests,
   pageInfo: pageInfo != null ? pageInfo() : this.pageInfo,
 ); } 

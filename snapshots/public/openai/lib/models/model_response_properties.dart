@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ModelResponseProperties
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/model_response_properties/prompt_cache_retention.dart';import 'package:pub_openai/models/service_tier.dart';@immutable final class ModelResponseProperties {const ModelResponseProperties({this.metadata, this.topLogprobs, this.temperature, this.topP, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/create_response/prompt_cache_retention.dart';import 'package:pub_openai/models/service_tier.dart';@immutable final class ModelResponseProperties {const ModelResponseProperties({this.metadata, this.topLogprobs, this.temperature, this.topP, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, });
 
 factory ModelResponseProperties.fromJson(Map<String, dynamic> json) { return ModelResponseProperties(
   metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),

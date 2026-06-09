@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_github_rest_3_1/models/marketplace_listing_plan/price_model.dart';@immutable final class WebhooksMarketplacePurchasePlan {const WebhooksMarketplacePurchasePlan({required this.bullets, required this.description, required this.hasFreeTrial, required this.id, required this.monthlyPriceInCents, required this.name, required this.priceModel, required this.unitName, required this.yearlyPriceInCents, });
 
 factory WebhooksMarketplacePurchasePlan.fromJson(Map<String, dynamic> json) { return WebhooksMarketplacePurchasePlan(
-  bullets: (json['bullets'] as List<dynamic>).map((e) => e as String).toList(),
+  bullets: (json['bullets'] as List<dynamic>).map((e) => e as String?).toList(),
   description: json['description'] as String,
   hasFreeTrial: json['has_free_trial'] as bool,
   id: (json['id'] as num).toInt(),

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SsoApi" (6 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_sso_connector.dart';import 'package:pub_cloudflare/models/init_new_sso_connector_request.dart';import 'package:pub_cloudflare/models/response_common35.dart';import 'package:pub_cloudflare/models/response_single_id4/response_single_id4_result.dart';import 'package:pub_cloudflare/models/update_sso_connector_state_request.dart';/// SsoApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/tokens_create_token_error.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_sso_connector.dart';import 'package:pub_cloudflare/models/init_new_sso_connector_request.dart';import 'package:pub_cloudflare/models/response_common35.dart';import 'package:pub_cloudflare/models/response_single_id4/response_single_id4_result.dart';import 'package:pub_cloudflare/models/update_sso_connector_state_request.dart';/// SsoApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -12,7 +12,7 @@ final class SsoApi with ApiExecutor {const SsoApi(this.apiConfig);
 /// Get all SSO connectors
 ///
 /// `GET /accounts/{account_id}/sso_connectors`
-Future<ApiResult<List<IamSsoConnector>?, Never>> getAllSsoConnectors({required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<IamSsoConnector>?, TokensCreateTokenError>> getAllSsoConnectors({required IamCommonComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,12 +27,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => IamSsoConnector.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// Initialize new SSO connector
 ///
 /// `POST /accounts/{account_id}/sso_connectors`
-Future<ApiResult<IamSsoConnector?, Never>> initNewSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, InitNewSsoConnectorRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSsoConnector?, TokensCreateTokenError>> initNewSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, InitNewSsoConnectorRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,12 +50,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? IamSsoConnector.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// Get single SSO connector
 ///
 /// `GET /accounts/{account_id}/sso_connectors/{sso_connector_id}`
-Future<ApiResult<IamSsoConnector?, Never>> getSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSsoConnector?, TokensCreateTokenError>> getSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -69,12 +71,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? IamSsoConnector.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// Update SSO connector state
 ///
 /// `PATCH /accounts/{account_id}/sso_connectors/{sso_connector_id}`
-Future<ApiResult<IamSsoConnector?, Never>> updateSsoConnectorState({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, UpdateSsoConnectorStateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamSsoConnector?, TokensCreateTokenError>> updateSsoConnectorState({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, UpdateSsoConnectorStateRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -91,12 +94,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? IamSsoConnector.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// Delete SSO connector
 ///
 /// `DELETE /accounts/{account_id}/sso_connectors/{sso_connector_id}`
-Future<ApiResult<ResponseSingleId4Result?, Never>> deleteSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId4Result?, TokensCreateTokenError>> deleteSsoConnector({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -111,12 +115,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ResponseSingleId4Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// Begin SSO connector verification
 ///
 /// `POST /accounts/{account_id}/sso_connectors/{sso_connector_id}/begin_verification`
-Future<ApiResult<ResponseCommon35, Never>> beginSsoConnectorVerification({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon35, TokensCreateTokenError>> beginSsoConnectorVerification({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier ssoConnectorId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -130,6 +135,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon35.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
  }

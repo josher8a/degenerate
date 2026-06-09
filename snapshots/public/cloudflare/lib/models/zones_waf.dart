@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesWaf
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_waf_value.dart';/// Turn on or off [WAF managed rules (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-waf-managed-rules/).
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Turn on or off [WAF managed rules (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-waf-managed-rules/).
 /// You cannot enable or disable individual WAF managed rules via Page Rules.
 /// 
 sealed class ZonesWafId {const ZonesWafId();
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? waf, W F
 
 factory ZonesWaf.fromJson(Map<String, dynamic> json) { return ZonesWaf(
   id: json['id'] != null ? ZonesWafId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesWafValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Turn on or off [WAF managed rules (previous version, deprecated)](https://developers.cloudflare.com/waf/reference/legacy/old-waf-managed-rules/).
@@ -74,14 +74,14 @@ final ZonesWafId? id;
 /// 
 /// 
 /// Example: `'on'`
-final ZonesWafValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesWaf copyWith({ZonesWafId? Function()? id, ZonesWafValue? Function()? value, }) { return ZonesWaf(
+ZonesWaf copyWith({ZonesWafId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesWaf(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

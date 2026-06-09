@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ErrorUnionDiscriminatedPostResponse4Xx
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/error_type22/error_type22_error.dart';import 'package:pub_speakeasy/models/tagged_error1.dart';import 'package:pub_speakeasy/models/tagged_error2.dart';sealed class ErrorUnionDiscriminatedPostResponse4XxTag {const ErrorUnionDiscriminatedPostResponse4XxTag();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/error_type2/error_type2_error.dart';import 'package:pub_speakeasy/models/tagged_error1.dart';import 'package:pub_speakeasy/models/tagged_error2.dart';sealed class ErrorUnionDiscriminatedPostResponse4XxTag {const ErrorUnionDiscriminatedPostResponse4XxTag();
 
 factory ErrorUnionDiscriminatedPostResponse4XxTag.fromJson(String json) { return switch (json) {
   'tag1' => tag1,
@@ -67,7 +67,7 @@ factory ErrorUnionDiscriminatedPostResponse4Xx.fromJson(Map<String, dynamic> jso
 factory ErrorUnionDiscriminatedPostResponse4Xx.tag1({required String error}) { return ErrorUnionDiscriminatedPostResponse4XxTag1(TaggedError1(tag: Tag.fromJson('tag1'), error: error)); }
 
 /// Build the `tag2` variant.
-factory ErrorUnionDiscriminatedPostResponse4Xx.tag2({required ErrorType22Error error}) { return ErrorUnionDiscriminatedPostResponse4XxTag2(TaggedError2(tag: 'tag2', error: error)); }
+factory ErrorUnionDiscriminatedPostResponse4Xx.tag2({required ErrorType2Error error}) { return ErrorUnionDiscriminatedPostResponse4XxTag2(TaggedError2(tag: 'tag2', error: error)); }
 
 /// The discriminator value identifying this variant.
 ErrorUnionDiscriminatedPostResponse4XxTag get tag;
@@ -112,7 +112,7 @@ final TaggedError2 taggedError2;
 
 @override Map<String, dynamic> toJson() => {...taggedError2.toJson(), 'tag': tag.toJson()};
 
-ErrorUnionDiscriminatedPostResponse4XxTag2 copyWith({ErrorType22Error? error}) { return ErrorUnionDiscriminatedPostResponse4XxTag2(taggedError2.copyWith(
+ErrorUnionDiscriminatedPostResponse4XxTag2 copyWith({ErrorType2Error? error}) { return ErrorUnionDiscriminatedPostResponse4XxTag2(taggedError2.copyWith(
   error: error,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||

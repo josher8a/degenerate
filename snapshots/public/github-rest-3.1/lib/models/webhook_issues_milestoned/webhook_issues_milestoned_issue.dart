@@ -7,7 +7,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_
 factory WebhookIssuesMilestonedIssue.fromJson(Map<String, dynamic> json) { return WebhookIssuesMilestonedIssue(
   activeLockReason: json['active_lock_reason'] != null ? ActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
   assignee: json['assignee'] != null ? WebhookIssuesMilestonedIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
-  assignees: (json['assignees'] as List<dynamic>).map((e) => IssueAssignees.fromJson(e as Map<String, dynamic>)).toList(),
+  assignees: (json['assignees'] as List<dynamic>).map((e) => e == null ? null : IssueAssignees.fromJson(e as Map<String, dynamic>)).toList(),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   body: json['body'] as String?,
   closedAt: json['closed_at'] != null ? DateTime.parse(json['closed_at'] as String) : null,
@@ -18,7 +18,7 @@ factory WebhookIssuesMilestonedIssue.fromJson(Map<String, dynamic> json) { retur
   eventsUrl: Uri.parse(json['events_url'] as String),
   htmlUrl: Uri.parse(json['html_url'] as String),
   id: (json['id'] as num).toInt(),
-  labels: (json['labels'] as List<dynamic>?)?.map((e) => WebhookIssuesDemilestonedIssueLabels.fromJson(e as Map<String, dynamic>)).toList(),
+  labels: (json['labels'] as List<dynamic>?)?.map((e) => e == null ? null : WebhookIssuesDemilestonedIssueLabels.fromJson(e as Map<String, dynamic>)).toList(),
   labelsUrl: json['labels_url'] as String,
   locked: json['locked'] as bool?,
   milestone: json['milestone'] != null ? WebhooksIssueMilestone.fromJson(json['milestone'] as Map<String, dynamic>) : null,
@@ -177,7 +177,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('activ
       json.containsKey('updated_at') && json['updated_at'] is String &&
       json.containsKey('url') && json['url'] is String &&
       json.containsKey('user'); } 
-WebhookIssuesMilestonedIssue copyWith({ActiveLockReason? Function()? activeLockReason, WebhookIssuesMilestonedIssueAssignee? Function()? assignee, List<IssueAssignees?>? assignees, AuthorAssociation? authorAssociation, String? Function()? body, DateTime? Function()? closedAt, int? comments, Uri? commentsUrl, DateTime? createdAt, bool? Function()? draft, Uri? eventsUrl, Uri? htmlUrl, int? id, List<WebhookIssuesDemilestonedIssueLabels>? Function()? labels, String? labelsUrl, bool? Function()? locked, WebhooksIssueMilestone? Function()? milestone, String? nodeId, int? number, WebhookIssuesMilestonedIssuePerformedViaGithubApp? Function()? performedViaGithubApp, WebhooksIssue2PullRequest? Function()? pullRequest, DiscussionReactions? reactions, Uri? repositoryUrl, IssueComment? Function()? pinnedComment, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, IssuesCreateMilestoneRequestState? Function()? state, String? Function()? stateReason, Uri? Function()? timelineUrl, String? title, IssueType? Function()? type, DateTime? updatedAt, Uri? url, DiscussionUser? Function()? user, }) { return WebhookIssuesMilestonedIssue(
+WebhookIssuesMilestonedIssue copyWith({ActiveLockReason? Function()? activeLockReason, WebhookIssuesMilestonedIssueAssignee? Function()? assignee, List<IssueAssignees?>? assignees, AuthorAssociation? authorAssociation, String? Function()? body, DateTime? Function()? closedAt, int? comments, Uri? commentsUrl, DateTime? createdAt, bool? Function()? draft, Uri? eventsUrl, Uri? htmlUrl, int? id, List<WebhookIssuesDemilestonedIssueLabels?>? Function()? labels, String? labelsUrl, bool? Function()? locked, WebhooksIssueMilestone? Function()? milestone, String? nodeId, int? number, WebhookIssuesMilestonedIssuePerformedViaGithubApp? Function()? performedViaGithubApp, WebhooksIssue2PullRequest? Function()? pullRequest, DiscussionReactions? reactions, Uri? repositoryUrl, IssueComment? Function()? pinnedComment, SubIssuesSummary? Function()? subIssuesSummary, IssueDependenciesSummary? Function()? issueDependenciesSummary, List<IssueFieldValue>? Function()? issueFieldValues, IssuesCreateMilestoneRequestState? Function()? state, String? Function()? stateReason, Uri? Function()? timelineUrl, String? title, IssueType? Function()? type, DateTime? updatedAt, Uri? url, DiscussionUser? Function()? user, }) { return WebhookIssuesMilestonedIssue(
   activeLockReason: activeLockReason != null ? activeLockReason() : this.activeLockReason,
   assignee: assignee != null ? assignee() : this.assignee,
   assignees: assignees ?? this.assignees,

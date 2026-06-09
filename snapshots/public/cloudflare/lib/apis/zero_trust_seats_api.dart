@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZeroTrustSeatsApi" (1 operation)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_seat.dart';import 'package:pub_cloudflare/models/access_seats.dart';/// ZeroTrustSeatsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_seat.dart';import 'package:pub_cloudflare/models/access_seats.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';/// ZeroTrustSeatsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ZeroTrustSeatsApi with ApiExecutor {const ZeroTrustSeatsApi(this.api
 /// Removes a user from a Zero Trust seat when both `access_seat` and `gateway_seat` are set to false.
 ///
 /// `PATCH /accounts/{account_id}/access/seats`
-Future<ApiResult<List<AccessSeats>?, Never>> zeroTrustSeatsUpdateAUserSeat({required AccessIdentifier accountId, required List<AccessSeat> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<AccessSeats>?, AccessApplicationsAddAnApplicationError>> zeroTrustSeatsUpdateAUserSeat({required AccessIdentifier accountId, required List<AccessSeat> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -31,6 +31,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => AccessSeats.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
  } 
  }

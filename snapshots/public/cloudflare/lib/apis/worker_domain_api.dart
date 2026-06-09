@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "WorkerDomainApi" (4 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/worker_domain_attach_to_domain_request.dart';import 'package:pub_cloudflare/models/workers_account_identifier.dart';import 'package:pub_cloudflare/models/workers_domain.dart';import 'package:pub_cloudflare/models/workers_domain_identifier.dart';import 'package:pub_cloudflare/models/workers_schemas_service.dart';import 'package:pub_cloudflare/models/workers_zone_identifier.dart';import 'package:pub_cloudflare/models/workers_zone_name.dart';/// WorkerDomainApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/worker_domain_attach_to_domain_error.dart';import 'package:pub_cloudflare/models/errors/worker_domain_get_a_domain_error.dart';import 'package:pub_cloudflare/models/errors/worker_domain_list_domains_error.dart';import 'package:pub_cloudflare/models/worker_domain_attach_to_domain_request.dart';import 'package:pub_cloudflare/models/workers_account_identifier.dart';import 'package:pub_cloudflare/models/workers_domain.dart';import 'package:pub_cloudflare/models/workers_domain_identifier.dart';import 'package:pub_cloudflare/models/workers_schemas_service.dart';import 'package:pub_cloudflare/models/workers_zone_identifier.dart';import 'package:pub_cloudflare/models/workers_zone_name.dart';/// WorkerDomainApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class WorkerDomainApi with ApiExecutor {const WorkerDomainApi(this.apiConf
 /// Lists all Worker Domains for an account.
 ///
 /// `GET /accounts/{account_id}/workers/domains`
-Future<ApiResult<List<WorkersDomain>?, Never>> workerDomainListDomains({required WorkersAccountIdentifier accountId, WorkersZoneName? zoneName, WorkersSchemasService? service, WorkersZoneIdentifier? zoneId, String? hostname, String? environment, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<WorkersDomain>?, WorkerDomainListDomainsError>> workerDomainListDomains({required WorkersAccountIdentifier accountId, WorkersZoneName? zoneName, WorkersSchemasService? service, WorkersZoneIdentifier? zoneId, String? hostname, String? environment, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (zoneName != null) {
   queryParameters['zone_name'] = zoneName.toJson();
@@ -49,6 +49,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => WorkersDomain.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: WorkerDomainListDomainsError.fromResponse,
 );
  } 
 /// Attach to Domain
@@ -56,7 +57,7 @@ return execute(
 /// Attaches a Worker to a zone and hostname.
 ///
 /// `PUT /accounts/{account_id}/workers/domains`
-Future<ApiResult<WorkersDomain?, Never>> workerDomainAttachToDomain({required WorkersAccountIdentifier accountId, required WorkerDomainAttachToDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersDomain?, WorkerDomainAttachToDomainError>> workerDomainAttachToDomain({required WorkersAccountIdentifier accountId, required WorkerDomainAttachToDomainRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -73,6 +74,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? WorkersDomain.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: WorkerDomainAttachToDomainError.fromResponse,
 );
  } 
 /// Get a Domain
@@ -80,7 +82,7 @@ return execute(
 /// Gets a Worker domain.
 ///
 /// `GET /accounts/{account_id}/workers/domains/{domain_id}`
-Future<ApiResult<WorkersDomain?, Never>> workerDomainGetADomain({required WorkersAccountIdentifier accountId, required WorkersDomainIdentifier domainId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersDomain?, WorkerDomainGetADomainError>> workerDomainGetADomain({required WorkersAccountIdentifier accountId, required WorkersDomainIdentifier domainId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -95,6 +97,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? WorkersDomain.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: WorkerDomainGetADomainError.fromResponse,
 );
  } 
 /// Detach from Domain

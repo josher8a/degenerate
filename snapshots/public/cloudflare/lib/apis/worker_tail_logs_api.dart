@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "WorkerTailLogsApi" (3 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/response_common80.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_script_name.dart';import 'package:pub_cloudflare/models/workers_tail.dart';/// WorkerTailLogsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/create_worker_version_error.dart';import 'package:pub_cloudflare/models/response_common80.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_script_name.dart';import 'package:pub_cloudflare/models/workers_tail.dart';/// WorkerTailLogsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class WorkerTailLogsApi with ApiExecutor {const WorkerTailLogsApi(this.api
 /// Get list of tails currently deployed on a Worker.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/tails`
-Future<ApiResult<WorkersTail, Never>> getAccountsWorkersScriptsTails({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersTail, CreateWorkerVersionError>> getAccountsWorkersScriptsTails({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersTail.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: CreateWorkerVersionError.fromResponse,
 );
  } 
 /// Start Tail
@@ -36,7 +37,7 @@ return execute(
 /// Starts a tail that receives logs and exception from a Worker.
 ///
 /// `POST /accounts/{account_id}/workers/scripts/{script_name}/tails`
-Future<ApiResult<WorkersTail, Never>> workerTailLogsStartTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersTail, CreateWorkerVersionError>> workerTailLogsStartTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -51,6 +52,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersTail.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: CreateWorkerVersionError.fromResponse,
 );
  } 
 /// Delete Tail
@@ -58,7 +60,7 @@ return execute(
 /// Deletes a tail from a Worker.
 ///
 /// `DELETE /accounts/{account_id}/workers/scripts/{script_name}/tails/{id}`
-Future<ApiResult<ResponseCommon80, Never>> workerTailLogsDeleteTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersIdentifier id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon80, CreateWorkerVersionError>> workerTailLogsDeleteTail({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required WorkersIdentifier id, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -72,6 +74,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon80.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: CreateWorkerVersionError.fromResponse,
 );
  } 
  }

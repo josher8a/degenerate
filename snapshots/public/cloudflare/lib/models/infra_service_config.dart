@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/InfraServiceConfig
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_service_common.dart';import 'package:pub_cloudflare/models/infra_service_host.dart';import 'package:pub_cloudflare/models/infra_service_type.dart';sealed class InfraServiceConfig {const InfraServiceConfig();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_http_service_config.dart';import 'package:pub_cloudflare/models/infra_service_host.dart';import 'package:pub_cloudflare/models/infra_service_type.dart';sealed class InfraServiceConfig {const InfraServiceConfig();
 
 /// Deserialize from JSON, dispatching on the `type` discriminator.
 factory InfraServiceConfig.fromJson(Map<String, dynamic> json) { return switch (json['type']) {
@@ -10,7 +10,7 @@ factory InfraServiceConfig.fromJson(Map<String, dynamic> json) { return switch (
 }; }
 
 /// Build the `http` variant.
-factory InfraServiceConfig.http({required InfraServiceHost host, required String name, DateTime? createdAt, String? serviceId, DateTime? updatedAt, }) { return InfraServiceConfigHttp(InfraServiceCommon(type: InfraServiceType.fromJson('http'), createdAt: createdAt, host: host, name: name, serviceId: serviceId, updatedAt: updatedAt)); }
+factory InfraServiceConfig.http({required InfraServiceHost host, required String name, DateTime? createdAt, String? serviceId, DateTime? updatedAt, int? httpPort, int? httpsPort, }) { return InfraServiceConfigHttp(InfraHttpServiceConfig(type: InfraServiceType.fromJson('http'), createdAt: createdAt, host: host, name: name, serviceId: serviceId, updatedAt: updatedAt, httpPort: httpPort, httpsPort: httpsPort)); }
 
 /// The discriminator value identifying this variant.
 InfraServiceType get type;
@@ -23,29 +23,31 @@ R when<R>({required R Function(InfraServiceConfigHttp) http, required R Function
   final InfraServiceConfig$Unknown v => unknown(v),
 }; } 
  }
-@immutable final class InfraServiceConfigHttp extends InfraServiceConfig {const InfraServiceConfigHttp(this.infraServiceCommon);
+@immutable final class InfraServiceConfigHttp extends InfraServiceConfig {const InfraServiceConfigHttp(this.infraHttpServiceConfig);
 
-factory InfraServiceConfigHttp.fromJson(Map<String, dynamic> json) { return InfraServiceConfigHttp(InfraServiceCommon.fromJson(json)); }
+factory InfraServiceConfigHttp.fromJson(Map<String, dynamic> json) { return InfraServiceConfigHttp(InfraHttpServiceConfig.fromJson(json)); }
 
-final InfraServiceCommon infraServiceCommon;
+final InfraHttpServiceConfig infraHttpServiceConfig;
 
 @override InfraServiceType get type => InfraServiceType.fromJson('http');
 
-@override Map<String, dynamic> toJson() => {...infraServiceCommon.toJson(), 'type': type.toJson()};
+@override Map<String, dynamic> toJson() => {...infraHttpServiceConfig.toJson(), 'type': type.toJson()};
 
-InfraServiceConfigHttp copyWith({DateTime? Function()? createdAt, InfraServiceHost? host, String? name, String? Function()? serviceId, DateTime? Function()? updatedAt, }) { return InfraServiceConfigHttp(infraServiceCommon.copyWith(
+InfraServiceConfigHttp copyWith({DateTime? Function()? createdAt, InfraServiceHost? host, String? name, String? Function()? serviceId, DateTime? Function()? updatedAt, int? Function()? httpPort, int? Function()? httpsPort, }) { return InfraServiceConfigHttp(infraHttpServiceConfig.copyWith(
   createdAt: createdAt,
   host: host,
   name: name,
   serviceId: serviceId,
   updatedAt: updatedAt,
+  httpPort: httpPort,
+  httpsPort: httpsPort,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is InfraServiceConfigHttp && infraServiceCommon == other.infraServiceCommon;
+    other is InfraServiceConfigHttp && infraHttpServiceConfig == other.infraHttpServiceConfig;
 
-@override int get hashCode => infraServiceCommon.hashCode;
+@override int get hashCode => infraHttpServiceConfig.hashCode;
 
-@override String toString() => 'InfraServiceConfig.http($infraServiceCommon)';
+@override String toString() => 'InfraServiceConfig.http($infraHttpServiceConfig)';
 
  }
 /// An unknown variant not defined in the OpenAPI spec.

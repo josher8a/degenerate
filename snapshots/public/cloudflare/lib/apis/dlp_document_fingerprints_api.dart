@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "DlpDocumentFingerprintsApi" (6 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprint.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprint_upload.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprints_create_request.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprints_upload_request.dart';import 'package:pub_cloudflare/models/dlp_update_document_fingerprint.dart';/// DlpDocumentFingerprintsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprint.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprint_upload.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprints_create_request.dart';import 'package:pub_cloudflare/models/dlp_document_fingerprints_upload_request.dart';import 'package:pub_cloudflare/models/dlp_update_document_fingerprint.dart';import 'package:pub_cloudflare/models/errors/dlp_datasets_create_error.dart';/// DlpDocumentFingerprintsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -12,7 +12,7 @@ final class DlpDocumentFingerprintsApi with ApiExecutor {const DlpDocumentFinger
 /// Retrieve data about all document fingerprints.
 ///
 /// `GET /accounts/{account_id}/dlp/document_fingerprints`
-Future<ApiResult<List<DlpDocumentFingerprint>?, Never>> dlpDocumentFingerprintsReadAll({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DlpDocumentFingerprint>?, DlpDatasetsCreateError>> dlpDocumentFingerprintsReadAll({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,12 +27,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => DlpDocumentFingerprint.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: DlpDatasetsCreateError.fromResponse,
 );
  } 
 /// Creates a new document fingerprint.
 ///
 /// `POST /accounts/{account_id}/dlp/document_fingerprints`
-Future<ApiResult<DlpDocumentFingerprint?, Never>> dlpDocumentFingerprintsCreate({required String accountId, required DlpDocumentFingerprintsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDocumentFingerprint?, DlpDatasetsCreateError>> dlpDocumentFingerprintsCreate({required String accountId, required DlpDocumentFingerprintsCreateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -49,12 +50,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DlpDocumentFingerprint.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DlpDatasetsCreateError.fromResponse,
 );
  } 
 /// Retrieve data about a specific document fingerprint.
 ///
 /// `GET /accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}`
-Future<ApiResult<DlpDocumentFingerprint?, Never>> dlpDocumentFingerprintsRead({required String accountId, required String documentFingerprintId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDocumentFingerprint?, DlpDatasetsCreateError>> dlpDocumentFingerprintsRead({required String accountId, required String documentFingerprintId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -69,12 +71,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DlpDocumentFingerprint.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DlpDatasetsCreateError.fromResponse,
 );
  } 
 /// Update the attributes of a single document fingerprint.
 ///
 /// `POST /accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}`
-Future<ApiResult<DlpDocumentFingerprint?, Never>> dlpDocumentFingerprintsUpdate({required String accountId, required String documentFingerprintId, required DlpUpdateDocumentFingerprint body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDocumentFingerprint?, DlpDatasetsCreateError>> dlpDocumentFingerprintsUpdate({required String accountId, required String documentFingerprintId, required DlpUpdateDocumentFingerprint body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -91,12 +94,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DlpDocumentFingerprint.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DlpDatasetsCreateError.fromResponse,
 );
  } 
 /// Uploads a new version for a document fingerprint.
 ///
 /// `PUT /accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}`
-Future<ApiResult<DlpDocumentFingerprintUpload?, Never>> dlpDocumentFingerprintsUpload({required String accountId, required String documentFingerprintId, required DlpDocumentFingerprintsUploadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDocumentFingerprintUpload?, DlpDatasetsCreateError>> dlpDocumentFingerprintsUpload({required String accountId, required String documentFingerprintId, required DlpDocumentFingerprintsUploadRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'PUT',
@@ -115,12 +119,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DlpDocumentFingerprintUpload.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DlpDatasetsCreateError.fromResponse,
 );
  } 
 /// Delete a single document fingerprint.
 ///
 /// `DELETE /accounts/{account_id}/dlp/document_fingerprints/{document_fingerprint_id}`
-Future<ApiResult<void, Never>> dlpDocumentFingerprintsDelete({required String accountId, required String documentFingerprintId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, DlpDatasetsCreateError>> dlpDocumentFingerprintsDelete({required String accountId, required String documentFingerprintId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -132,6 +137,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
+  onError: DlpDatasetsCreateError.fromResponse,
 );
  } 
  }

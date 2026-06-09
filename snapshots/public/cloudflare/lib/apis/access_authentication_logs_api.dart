@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AccessAuthenticationLogsApi" (1 operation)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_access_requests.dart';import 'package:pub_cloudflare/models/access_components_schemas_email.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_user_id.dart';/// AccessAuthenticationLogsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_access_requests.dart';import 'package:pub_cloudflare/models/access_components_schemas_email.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_user_id.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';/// AccessAuthenticationLogsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class AccessAuthenticationLogsApi with ApiExecutor {const AccessAuthentica
 /// Gets a list of Access authentication audit logs for an account.
 ///
 /// `GET /accounts/{account_id}/access/logs/access_requests`
-Future<ApiResult<List<AccessAccessRequests>?, Never>> accessAuthenticationLogsGetAccessAuthenticationLogs({required AccessIdentifier accountId, int? limit, dynamic direction, DateTime? since, DateTime? until, int? page, int? perPage, AccessComponentsSchemasEmail? email, bool? emailExact, AccessUserId? userId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessAccessRequests>?, AccessApplicationsAddAnApplicationError>> accessAuthenticationLogsGetAccessAuthenticationLogs({required AccessIdentifier accountId, int? limit, dynamic direction, DateTime? since, DateTime? until, int? page, int? perPage, AccessComponentsSchemasEmail? email, bool? emailExact, AccessUserId? userId, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toString();
@@ -61,6 +61,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => AccessAccessRequests.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
  } 
  }

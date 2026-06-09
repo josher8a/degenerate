@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "CloudflareIPsApi" (1 operation)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_ips_cloudflare_ip_details_response/cloudflare_ips_cloudflare_ip_details_response_result.dart';import 'package:pub_cloudflare/models/public_ip_ips.dart';import 'package:pub_cloudflare/models/public_ip_ips_jdcloud.dart';/// CloudflareIPsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_ips_cloudflare_ip_details_response/cloudflare_ips_cloudflare_ip_details_response_result.dart';import 'package:pub_cloudflare/models/errors/cloudflare_ips_cloudflare_ip_details_error.dart';import 'package:pub_cloudflare/models/public_ip_ips.dart';import 'package:pub_cloudflare/models/public_ip_ips_jdcloud.dart';/// CloudflareIPsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class CloudflareIPsApi with ApiExecutor {const CloudflareIPsApi(this.apiCo
 /// Get IPs used on the Cloudflare/JD Cloud network, see https://www.cloudflare.com/ips for Cloudflare IPs or https://developers.cloudflare.com/china-network/reference/infrastructure/ for JD Cloud IPs.
 ///
 /// `GET /ips`
-Future<ApiResult<CloudflareIpsCloudflareIpDetailsResponseResult?, Never>> cloudflareIpsCloudflareIpDetails({String? networks, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<CloudflareIpsCloudflareIpDetailsResponseResult?, CloudflareIpsCloudflareIpDetailsError>> cloudflareIpsCloudflareIpDetails({String? networks, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (networks != null) {
   queryParameters['networks'] = networks;
@@ -37,6 +37,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => PublicIpIps.fromJson(v as Map<String, dynamic>), fromB: (v) => PublicIpIpsJdcloud.fromJson(v as Map<String, dynamic>),) : null;
   },
+  onError: CloudflareIpsCloudflareIpDetailsError.fromResponse,
 );
  } 
  }

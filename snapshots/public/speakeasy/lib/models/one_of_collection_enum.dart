@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/OneOfCollectionEnum
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/simple_object2.dart';sealed class OneOfCollectionEnumVariant3 {const OneOfCollectionEnumVariant3();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/simple_object.dart';sealed class OneOfCollectionEnumVariant3 {const OneOfCollectionEnumVariant3();
 
 factory OneOfCollectionEnumVariant3.fromJson(String json) { return switch (json) {
   'abc' => abc,
@@ -70,6 +70,6 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? abc, W F
  }
 /// Variants:
 /// - `.a` → [String]
-/// - `.b` → [SimpleObject2]
+/// - `.b` → [SimpleObject]
 /// - `.c` → [List<OneOfCollectionEnumVariant3>]
-typedef OneOfCollectionEnum = OneOf3<String,SimpleObject2,List<OneOfCollectionEnumVariant3>>;
+typedef OneOfCollectionEnum = OneOf3<String,SimpleObject,List<OneOfCollectionEnumVariant3>>;

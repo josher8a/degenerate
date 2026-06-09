@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesAutomaticHttpsRewrites
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_automatic_https_rewrites_value.dart';/// Turn on or off Automatic HTTPS Rewrites.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Turn on or off Automatic HTTPS Rewrites.
 sealed class ZonesAutomaticHttpsRewritesId {const ZonesAutomaticHttpsRewritesId();
 
 factory ZonesAutomaticHttpsRewritesId.fromJson(String json) { return switch (json) {
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? automati
 
 factory ZonesAutomaticHttpsRewrites.fromJson(Map<String, dynamic> json) { return ZonesAutomaticHttpsRewrites(
   id: json['id'] != null ? ZonesAutomaticHttpsRewritesId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesAutomaticHttpsRewritesValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Turn on or off Automatic HTTPS Rewrites.
@@ -68,14 +68,14 @@ final ZonesAutomaticHttpsRewritesId? id;
 /// 
 /// 
 /// Example: `'on'`
-final ZonesAutomaticHttpsRewritesValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesAutomaticHttpsRewrites copyWith({ZonesAutomaticHttpsRewritesId? Function()? id, ZonesAutomaticHttpsRewritesValue? Function()? value, }) { return ZonesAutomaticHttpsRewrites(
+ZonesAutomaticHttpsRewrites copyWith({ZonesAutomaticHttpsRewritesId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesAutomaticHttpsRewrites(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

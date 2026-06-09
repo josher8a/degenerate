@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/Item
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_call_output_status.dart';import 'package:pub_openai/models/apply_patch_call_status.dart';import 'package:pub_openai/models/apply_patch_operation_param.dart';import 'package:pub_openai/models/apply_patch_tool_call_item_param.dart';import 'package:pub_openai/models/apply_patch_tool_call_output_item_param.dart';import 'package:pub_openai/models/chat_completion_response_message/chat_completion_response_message_role.dart';import 'package:pub_openai/models/code_interpreter_tool_call.dart';import 'package:pub_openai/models/code_interpreter_tool_call/code_interpreter_tool_call_outputs.dart';import 'package:pub_openai/models/compaction_summary_item_param.dart';import 'package:pub_openai/models/computer_action.dart';import 'package:pub_openai/models/computer_call_output_item_param.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_screenshot_image.dart';import 'package:pub_openai/models/computer_tool_call.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/custom_tool_call.dart';import 'package:pub_openai/models/custom_tool_call_output.dart';import 'package:pub_openai/models/custom_tool_call_output/custom_tool_call_output_output.dart';import 'package:pub_openai/models/empty_model_param.dart';import 'package:pub_openai/models/file_search_tool_call.dart';import 'package:pub_openai/models/file_search_tool_call/file_search_tool_call_results.dart';import 'package:pub_openai/models/function_call_item_status.dart';import 'package:pub_openai/models/function_call_output_item_param.dart';import 'package:pub_openai/models/function_call_output_item_param/function_call_output_item_param_output.dart';import 'package:pub_openai/models/function_shell_action_param.dart';import 'package:pub_openai/models/function_shell_call_item_param.dart';import 'package:pub_openai/models/function_shell_call_item_param/function_shell_call_item_param_environment.dart';import 'package:pub_openai/models/function_shell_call_item_status.dart';import 'package:pub_openai/models/function_shell_call_output_content_param.dart';import 'package:pub_openai/models/function_shell_call_output_item_param.dart';import 'package:pub_openai/models/function_tool_call.dart';import 'package:pub_openai/models/image_gen_tool_call.dart';import 'package:pub_openai/models/local_shell_exec_action.dart';import 'package:pub_openai/models/local_shell_tool_call.dart';import 'package:pub_openai/models/local_shell_tool_call_output.dart';import 'package:pub_openai/models/mcp_approval_request.dart';import 'package:pub_openai/models/mcp_approval_response.dart';import 'package:pub_openai/models/mcp_list_tools.dart';import 'package:pub_openai/models/mcp_list_tools_tool.dart';import 'package:pub_openai/models/mcp_tool_call.dart';import 'package:pub_openai/models/message_phase.dart';import 'package:pub_openai/models/output_message.dart';import 'package:pub_openai/models/output_message_content.dart';import 'package:pub_openai/models/reasoning_item.dart';import 'package:pub_openai/models/reasoning_text_content.dart';import 'package:pub_openai/models/summary_text_content.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_search_call_item_param.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';import 'package:pub_openai/models/tool_search_output_item_param.dart';import 'package:pub_openai/models/web_search_tool_call.dart';import 'package:pub_openai/models/web_search_tool_call/web_search_tool_call_action.dart';sealed class ItemType {const ItemType();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/apply_patch_call_output_status.dart';import 'package:pub_openai/models/apply_patch_call_status.dart';import 'package:pub_openai/models/apply_patch_operation_param.dart';import 'package:pub_openai/models/apply_patch_tool_call_item_param.dart';import 'package:pub_openai/models/apply_patch_tool_call_output_item_param.dart';import 'package:pub_openai/models/code_interpreter_tool_call.dart';import 'package:pub_openai/models/code_interpreter_tool_call/code_interpreter_tool_call_outputs.dart';import 'package:pub_openai/models/compaction_summary_item_param.dart';import 'package:pub_openai/models/computer_action.dart';import 'package:pub_openai/models/computer_call_output_item_param.dart';import 'package:pub_openai/models/computer_call_safety_check_param.dart';import 'package:pub_openai/models/computer_screenshot_image.dart';import 'package:pub_openai/models/computer_tool_call.dart';import 'package:pub_openai/models/computer_tool_call_output/computer_tool_call_output_status.dart';import 'package:pub_openai/models/custom_tool_call.dart';import 'package:pub_openai/models/custom_tool_call_output.dart';import 'package:pub_openai/models/custom_tool_call_output/custom_tool_call_output_output.dart';import 'package:pub_openai/models/empty_model_param.dart';import 'package:pub_openai/models/file_search_tool_call.dart';import 'package:pub_openai/models/file_search_tool_call/file_search_tool_call_results.dart';import 'package:pub_openai/models/function_call_item_status.dart';import 'package:pub_openai/models/function_call_output_item_param.dart';import 'package:pub_openai/models/function_call_output_item_param/function_call_output_item_param_output.dart';import 'package:pub_openai/models/function_shell_action_param.dart';import 'package:pub_openai/models/function_shell_call_item_param.dart';import 'package:pub_openai/models/function_shell_call_item_param/function_shell_call_item_param_environment.dart';import 'package:pub_openai/models/function_shell_call_item_status.dart';import 'package:pub_openai/models/function_shell_call_output_content_param.dart';import 'package:pub_openai/models/function_shell_call_output_item_param.dart';import 'package:pub_openai/models/function_tool_call.dart';import 'package:pub_openai/models/image_gen_tool_call.dart';import 'package:pub_openai/models/input_content.dart';import 'package:pub_openai/models/input_message.dart';import 'package:pub_openai/models/input_message_resource/input_message_resource_role.dart';import 'package:pub_openai/models/local_shell_exec_action.dart';import 'package:pub_openai/models/local_shell_tool_call.dart';import 'package:pub_openai/models/local_shell_tool_call_output.dart';import 'package:pub_openai/models/mcp_approval_request.dart';import 'package:pub_openai/models/mcp_approval_response.dart';import 'package:pub_openai/models/mcp_list_tools.dart';import 'package:pub_openai/models/mcp_list_tools_tool.dart';import 'package:pub_openai/models/mcp_tool_call.dart';import 'package:pub_openai/models/reasoning_item.dart';import 'package:pub_openai/models/reasoning_text_content.dart';import 'package:pub_openai/models/summary_text_content.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_search_call_item_param.dart';import 'package:pub_openai/models/tool_search_execution_type.dart';import 'package:pub_openai/models/tool_search_output_item_param.dart';import 'package:pub_openai/models/web_search_tool_call.dart';import 'package:pub_openai/models/web_search_tool_call/web_search_tool_call_action.dart';sealed class ItemType {const ItemType();
 
 factory ItemType.fromJson(String json) { return switch (json) {
   'message' => message,
@@ -411,7 +411,7 @@ factory Item.fromJson(Map<String, dynamic> json) { return switch (json['type']) 
 }; }
 
 /// Build the `message` variant.
-factory Item.message({required String id, required ChatCompletionResponseMessageRole role, required List<OutputMessageContent> content, required ComputerToolCallOutputStatus status, MessagePhase? phase, }) { return ItemMessage(OutputMessage(type: 'message', id: id, role: role, content: content, phase: phase, status: status)); }
+factory Item.message({required InputMessageResourceRole role, required List<InputContent> content, ComputerToolCallOutputStatus? status, }) { return ItemMessage(InputMessage(type: 'message', role: role, status: status, content: content)); }
 
 /// Build the `file_search_call` variant.
 factory Item.fileSearchCall({required String id, required FileSearchToolCallStatus status, required List<String> queries, List<FileSearchToolCallResults>? results, }) { return ItemFileSearchCall(FileSearchToolCall(type: 'file_search_call', id: id, status: status, queries: queries, results: results)); }
@@ -491,8 +491,6 @@ Map<String, dynamic> toJson();
 /// Whether this variant is unknown (not defined in the OpenAPI spec).
 bool get isUnknown => this is Item$Unknown;
 
-/// Shared by all variants of this union.
-String? get id;
 R when<R>({required R Function(ItemMessage) message, required R Function(ItemFileSearchCall) fileSearchCall, required R Function(ItemComputerCall) computerCall, required R Function(ItemComputerCallOutput) computerCallOutput, required R Function(ItemWebSearchCall) webSearchCall, required R Function(ItemFunctionCall) functionCall, required R Function(ItemFunctionCallOutput) functionCallOutput, required R Function(ItemToolSearchCall) toolSearchCall, required R Function(ItemToolSearchOutput) toolSearchOutput, required R Function(ItemReasoning) reasoning, required R Function(ItemCompaction) compaction, required R Function(ItemImageGenerationCall) imageGenerationCall, required R Function(ItemCodeInterpreterCall) codeInterpreterCall, required R Function(ItemLocalShellCall) localShellCall, required R Function(ItemLocalShellCallOutput) localShellCallOutput, required R Function(ItemShellCall) shellCall, required R Function(ItemShellCallOutput) shellCallOutput, required R Function(ItemApplyPatchCall) applyPatchCall, required R Function(ItemApplyPatchCallOutput) applyPatchCallOutput, required R Function(ItemMcpListTools) mcpListTools, required R Function(ItemMcpApprovalRequest) mcpApprovalRequest, required R Function(ItemMcpApprovalResponse) mcpApprovalResponse, required R Function(ItemMcpCall) mcpCall, required R Function(ItemCustomToolCallOutput) customToolCallOutput, required R Function(ItemCustomToolCall) customToolCall, required R Function(Item$Unknown) unknown, }) { return switch (this) {
   final ItemMessage v => message(v),
   final ItemFileSearchCall v => fileSearchCall(v),
@@ -522,31 +520,27 @@ R when<R>({required R Function(ItemMessage) message, required R Function(ItemFil
   final Item$Unknown v => unknown(v),
 }; } 
  }
-@immutable final class ItemMessage extends Item {const ItemMessage(this.outputMessage);
+@immutable final class ItemMessage extends Item {const ItemMessage(this.inputMessage);
 
-factory ItemMessage.fromJson(Map<String, dynamic> json) { return ItemMessage(OutputMessage.fromJson(json)); }
+factory ItemMessage.fromJson(Map<String, dynamic> json) { return ItemMessage(InputMessage.fromJson(json)); }
 
-final OutputMessage outputMessage;
+final InputMessage inputMessage;
 
 @override ItemType get type => ItemType.fromJson('message');
 
-@override Map<String, dynamic> toJson() => {...outputMessage.toJson(), 'type': type.toJson()};
+@override Map<String, dynamic> toJson() => {...inputMessage.toJson(), 'type': type.toJson()};
 
-ItemMessage copyWith({String? id, ChatCompletionResponseMessageRole? role, List<OutputMessageContent>? content, MessagePhase? Function()? phase, ComputerToolCallOutputStatus? status, }) { return ItemMessage(outputMessage.copyWith(
-  id: id,
+ItemMessage copyWith({InputMessageResourceRole? role, ComputerToolCallOutputStatus? Function()? status, List<InputContent>? content, }) { return ItemMessage(inputMessage.copyWith(
   role: role,
-  content: content,
-  phase: phase,
   status: status,
+  content: content,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
-    other is ItemMessage && outputMessage == other.outputMessage;
+    other is ItemMessage && inputMessage == other.inputMessage;
 
-@override int get hashCode => outputMessage.hashCode;
+@override int get hashCode => inputMessage.hashCode;
 
-@override String toString() => 'Item.message($outputMessage)';
-
-@override String? get id => outputMessage.id;
+@override String toString() => 'Item.message($inputMessage)';
 
  }
 @immutable final class ItemFileSearchCall extends Item {const ItemFileSearchCall(this.fileSearchToolCall);
@@ -571,8 +565,6 @@ ItemFileSearchCall copyWith({String? id, FileSearchToolCallStatus? status, List<
 @override int get hashCode => fileSearchToolCall.hashCode;
 
 @override String toString() => 'Item.fileSearchCall($fileSearchToolCall)';
-
-@override String? get id => fileSearchToolCall.id;
 
  }
 @immutable final class ItemComputerCall extends Item {const ItemComputerCall(this.computerToolCall);
@@ -600,8 +592,6 @@ ItemComputerCall copyWith({String? id, String? callId, ComputerAction? Function(
 
 @override String toString() => 'Item.computerCall($computerToolCall)';
 
-@override String? get id => computerToolCall.id;
-
  }
 @immutable final class ItemComputerCallOutput extends Item {const ItemComputerCallOutput(this.computerCallOutputItemParam);
 
@@ -627,8 +617,6 @@ ItemComputerCallOutput copyWith({String? Function()? id, String? callId, Compute
 
 @override String toString() => 'Item.computerCallOutput($computerCallOutputItemParam)';
 
-@override String? get id => computerCallOutputItemParam.id;
-
  }
 @immutable final class ItemWebSearchCall extends Item {const ItemWebSearchCall(this.webSearchToolCall);
 
@@ -651,8 +639,6 @@ ItemWebSearchCall copyWith({String? id, WebSearchToolCallStatus? status, WebSear
 @override int get hashCode => webSearchToolCall.hashCode;
 
 @override String toString() => 'Item.webSearchCall($webSearchToolCall)';
-
-@override String? get id => webSearchToolCall.id;
 
  }
 @immutable final class ItemFunctionCall extends Item {const ItemFunctionCall(this.functionToolCall);
@@ -680,8 +666,6 @@ ItemFunctionCall copyWith({String? Function()? id, String? callId, String? Funct
 
 @override String toString() => 'Item.functionCall($functionToolCall)';
 
-@override String? get id => functionToolCall.id;
-
  }
 @immutable final class ItemFunctionCallOutput extends Item {const ItemFunctionCallOutput(this.functionCallOutputItemParam);
 
@@ -705,8 +689,6 @@ ItemFunctionCallOutput copyWith({String? Function()? id, String? callId, Functio
 @override int get hashCode => functionCallOutputItemParam.hashCode;
 
 @override String toString() => 'Item.functionCallOutput($functionCallOutputItemParam)';
-
-@override String? get id => functionCallOutputItemParam.id;
 
  }
 @immutable final class ItemToolSearchCall extends Item {const ItemToolSearchCall(this.toolSearchCallItemParam);
@@ -733,8 +715,6 @@ ItemToolSearchCall copyWith({String? Function()? id, String? Function()? callId,
 
 @override String toString() => 'Item.toolSearchCall($toolSearchCallItemParam)';
 
-@override String? get id => toolSearchCallItemParam.id;
-
  }
 @immutable final class ItemToolSearchOutput extends Item {const ItemToolSearchOutput(this.toolSearchOutputItemParam);
 
@@ -759,8 +739,6 @@ ItemToolSearchOutput copyWith({String? Function()? id, String? Function()? callI
 @override int get hashCode => toolSearchOutputItemParam.hashCode;
 
 @override String toString() => 'Item.toolSearchOutput($toolSearchOutputItemParam)';
-
-@override String? get id => toolSearchOutputItemParam.id;
 
  }
 @immutable final class ItemReasoning extends Item {const ItemReasoning(this.reasoningItem);
@@ -787,8 +765,6 @@ ItemReasoning copyWith({String? id, String? Function()? encryptedContent, List<S
 
 @override String toString() => 'Item.reasoning($reasoningItem)';
 
-@override String? get id => reasoningItem.id;
-
  }
 @immutable final class ItemCompaction extends Item {const ItemCompaction(this.compactionSummaryItemParam);
 
@@ -810,8 +786,6 @@ ItemCompaction copyWith({String? Function()? id, String? encryptedContent, }) { 
 @override int get hashCode => compactionSummaryItemParam.hashCode;
 
 @override String toString() => 'Item.compaction($compactionSummaryItemParam)';
-
-@override String? get id => compactionSummaryItemParam.id;
 
  }
 @immutable final class ItemImageGenerationCall extends Item {const ItemImageGenerationCall(this.imageGenToolCall);
@@ -835,8 +809,6 @@ ItemImageGenerationCall copyWith({String? id, ImageGenToolCallStatus? status, St
 @override int get hashCode => imageGenToolCall.hashCode;
 
 @override String toString() => 'Item.imageGenerationCall($imageGenToolCall)';
-
-@override String? get id => imageGenToolCall.id;
 
  }
 @immutable final class ItemCodeInterpreterCall extends Item {const ItemCodeInterpreterCall(this.codeInterpreterToolCall);
@@ -863,8 +835,6 @@ ItemCodeInterpreterCall copyWith({String? id, CodeInterpreterToolCallStatus? sta
 
 @override String toString() => 'Item.codeInterpreterCall($codeInterpreterToolCall)';
 
-@override String? get id => codeInterpreterToolCall.id;
-
  }
 @immutable final class ItemLocalShellCall extends Item {const ItemLocalShellCall(this.localShellToolCall);
 
@@ -889,8 +859,6 @@ ItemLocalShellCall copyWith({String? id, String? callId, LocalShellExecAction? a
 
 @override String toString() => 'Item.localShellCall($localShellToolCall)';
 
-@override String? get id => localShellToolCall.id;
-
  }
 @immutable final class ItemLocalShellCallOutput extends Item {const ItemLocalShellCallOutput(this.localShellToolCallOutput);
 
@@ -913,8 +881,6 @@ ItemLocalShellCallOutput copyWith({String? id, String? output, LocalShellToolCal
 @override int get hashCode => localShellToolCallOutput.hashCode;
 
 @override String toString() => 'Item.localShellCallOutput($localShellToolCallOutput)';
-
-@override String? get id => localShellToolCallOutput.id;
 
  }
 @immutable final class ItemShellCall extends Item {const ItemShellCall(this.functionShellCallItemParam);
@@ -941,8 +907,6 @@ ItemShellCall copyWith({String? Function()? id, String? callId, FunctionShellAct
 
 @override String toString() => 'Item.shellCall($functionShellCallItemParam)';
 
-@override String? get id => functionShellCallItemParam.id;
-
  }
 @immutable final class ItemShellCallOutput extends Item {const ItemShellCallOutput(this.functionShellCallOutputItemParam);
 
@@ -968,8 +932,6 @@ ItemShellCallOutput copyWith({String? Function()? id, String? callId, List<Funct
 
 @override String toString() => 'Item.shellCallOutput($functionShellCallOutputItemParam)';
 
-@override String? get id => functionShellCallOutputItemParam.id;
-
  }
 @immutable final class ItemApplyPatchCall extends Item {const ItemApplyPatchCall(this.applyPatchToolCallItemParam);
 
@@ -993,8 +955,6 @@ ItemApplyPatchCall copyWith({String? Function()? id, String? callId, ApplyPatchC
 @override int get hashCode => applyPatchToolCallItemParam.hashCode;
 
 @override String toString() => 'Item.applyPatchCall($applyPatchToolCallItemParam)';
-
-@override String? get id => applyPatchToolCallItemParam.id;
 
  }
 @immutable final class ItemApplyPatchCallOutput extends Item {const ItemApplyPatchCallOutput(this.applyPatchToolCallOutputItemParam);
@@ -1020,8 +980,6 @@ ItemApplyPatchCallOutput copyWith({String? Function()? id, String? callId, Apply
 
 @override String toString() => 'Item.applyPatchCallOutput($applyPatchToolCallOutputItemParam)';
 
-@override String? get id => applyPatchToolCallOutputItemParam.id;
-
  }
 @immutable final class ItemMcpListTools extends Item {const ItemMcpListTools(this.mcpListTools);
 
@@ -1045,8 +1003,6 @@ ItemMcpListTools copyWith({String? id, String? serverLabel, List<McpListToolsToo
 @override int get hashCode => mcpListTools.hashCode;
 
 @override String toString() => 'Item.mcpListTools($mcpListTools)';
-
-@override String? get id => mcpListTools.id;
 
  }
 @immutable final class ItemMcpApprovalRequest extends Item {const ItemMcpApprovalRequest(this.mcpApprovalRequest);
@@ -1072,8 +1028,6 @@ ItemMcpApprovalRequest copyWith({String? id, String? serverLabel, String? name, 
 
 @override String toString() => 'Item.mcpApprovalRequest($mcpApprovalRequest)';
 
-@override String? get id => mcpApprovalRequest.id;
-
  }
 @immutable final class ItemMcpApprovalResponse extends Item {const ItemMcpApprovalResponse(this.mcpApprovalResponse);
 
@@ -1097,8 +1051,6 @@ ItemMcpApprovalResponse copyWith({String? Function()? id, String? approvalReques
 @override int get hashCode => mcpApprovalResponse.hashCode;
 
 @override String toString() => 'Item.mcpApprovalResponse($mcpApprovalResponse)';
-
-@override String? get id => mcpApprovalResponse.id;
 
  }
 @immutable final class ItemMcpCall extends Item {const ItemMcpCall(this.mcpToolCall);
@@ -1128,8 +1080,6 @@ ItemMcpCall copyWith({String? id, String? serverLabel, String? name, String? arg
 
 @override String toString() => 'Item.mcpCall($mcpToolCall)';
 
-@override String? get id => mcpToolCall.id;
-
  }
 @immutable final class ItemCustomToolCallOutput extends Item {const ItemCustomToolCallOutput(this.customToolCallOutput);
 
@@ -1152,8 +1102,6 @@ ItemCustomToolCallOutput copyWith({String? Function()? id, String? callId, Custo
 @override int get hashCode => customToolCallOutput.hashCode;
 
 @override String toString() => 'Item.customToolCallOutput($customToolCallOutput)';
-
-@override String? get id => customToolCallOutput.id;
 
  }
 @immutable final class ItemCustomToolCall extends Item {const ItemCustomToolCall(this.customToolCall);
@@ -1180,16 +1128,12 @@ ItemCustomToolCall copyWith({String? Function()? id, String? callId, String? Fun
 
 @override String toString() => 'Item.customToolCall($customToolCall)';
 
-@override String? get id => customToolCall.id;
-
  }
 /// An unknown variant not defined in the OpenAPI spec.
 /// Returned when the server sends a discriminator value that this client does not recognize.
-@immutable final class Item$Unknown extends Item {Item$Unknown(this.json);
+@immutable final class Item$Unknown extends Item {const Item$Unknown(this.json);
 
 final Map<String, dynamic> json;
-
-late final String? _id = json['id'] as String?;
 
 @override ItemType get type => ItemType.fromJson(json['type'] as String? ?? '');
 
@@ -1201,7 +1145,5 @@ late final String? _id = json['id'] as String?;
 @override int get hashCode => json.hashCode;
 
 @override String toString() => 'Item.unknown($json)';
-
-@override String? get id => _id;
 
  }

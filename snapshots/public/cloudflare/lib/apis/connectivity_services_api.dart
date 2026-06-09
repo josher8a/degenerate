@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ConnectivityServicesApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/infra_account_tag.dart';import 'package:pub_cloudflare/models/infra_service_config.dart';import 'package:pub_cloudflare/models/infra_service_type.dart';/// ConnectivityServicesApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/connectivity_services_delete_error.dart';import 'package:pub_cloudflare/models/infra_account_tag.dart';import 'package:pub_cloudflare/models/infra_service_config.dart';import 'package:pub_cloudflare/models/infra_service_type.dart';/// ConnectivityServicesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -12,7 +12,7 @@ final class ConnectivityServicesApi with ApiExecutor {const ConnectivityServices
 /// List connectivity services
 ///
 /// `GET /accounts/{account_id}/connectivity/directory/services`
-Future<ApiResult<List<InfraServiceConfig>?, Never>> connectivityServicesList({required InfraAccountTag accountId, InfraServiceType? type, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<InfraServiceConfig>?, ConnectivityServicesDeleteError>> connectivityServicesList({required InfraAccountTag accountId, InfraServiceType? type, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (type != null) {
   queryParameters['type'] = type.toJson();
@@ -41,12 +41,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => InfraServiceConfig.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: ConnectivityServicesDeleteError.fromResponse,
 );
  } 
 /// Create connectivity service
 ///
 /// `POST /accounts/{account_id}/connectivity/directory/services`
-Future<ApiResult<InfraServiceConfig?, Never>> connectivityServicesPost({required InfraAccountTag accountId, required InfraServiceConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraServiceConfig?, ConnectivityServicesDeleteError>> connectivityServicesPost({required InfraAccountTag accountId, required InfraServiceConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -63,12 +64,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? InfraServiceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ConnectivityServicesDeleteError.fromResponse,
 );
  } 
 /// Get connectivity service
 ///
 /// `GET /accounts/{account_id}/connectivity/directory/services/{service_id}`
-Future<ApiResult<InfraServiceConfig?, Never>> connectivityServicesGet({required String accountId, required String serviceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraServiceConfig?, ConnectivityServicesDeleteError>> connectivityServicesGet({required String accountId, required String serviceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -83,12 +85,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? InfraServiceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ConnectivityServicesDeleteError.fromResponse,
 );
  } 
 /// Update connectivity service
 ///
 /// `PUT /accounts/{account_id}/connectivity/directory/services/{service_id}`
-Future<ApiResult<InfraServiceConfig?, Never>> connectivityServicesPut({required String accountId, required String serviceId, required InfraServiceConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<InfraServiceConfig?, ConnectivityServicesDeleteError>> connectivityServicesPut({required String accountId, required String serviceId, required InfraServiceConfig body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -105,12 +108,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? InfraServiceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ConnectivityServicesDeleteError.fromResponse,
 );
  } 
 /// Delete connectivity service
 ///
 /// `DELETE /accounts/{account_id}/connectivity/directory/services/{service_id}`
-Future<ApiResult<void, Never>> connectivityServicesDelete({required String accountId, required String serviceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ConnectivityServicesDeleteError>> connectivityServicesDelete({required String accountId, required String serviceId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -122,6 +126,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
+  onError: ConnectivityServicesDeleteError.fromResponse,
 );
  } 
  }

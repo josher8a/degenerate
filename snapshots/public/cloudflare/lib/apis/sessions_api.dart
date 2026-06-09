@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SessionsApi" (9 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_filters.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response.dart';import 'package:pub_cloudflare/models/get_participant_details_filters.dart';import 'package:pub_cloudflare/models/get_participant_details_response.dart';import 'package:pub_cloudflare/models/get_session_chat_response.dart';import 'package:pub_cloudflare/models/get_session_details_response.dart';import 'package:pub_cloudflare/models/get_session_participants_response.dart';import 'package:pub_cloudflare/models/get_session_participants_sort_by.dart';import 'package:pub_cloudflare/models/get_session_participants_sort_order.dart';import 'package:pub_cloudflare/models/get_session_participants_view.dart';import 'package:pub_cloudflare/models/get_session_summary_response.dart';import 'package:pub_cloudflare/models/get_session_transcript_response.dart';import 'package:pub_cloudflare/models/get_sessions_response.dart';import 'package:pub_cloudflare/models/get_sessions_sort_by.dart';import 'package:pub_cloudflare/models/get_sessions_sort_order.dart';import 'package:pub_cloudflare/models/get_sessions_status.dart';import 'package:pub_cloudflare/models/realtimekit_account_identifier.dart';import 'package:pub_cloudflare/models/realtimekit_app_id.dart';/// SessionsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_filters.dart';import 'package:pub_cloudflare/models/get_participant_data_from_peer_id_response.dart';import 'package:pub_cloudflare/models/get_participant_details_filters.dart';import 'package:pub_cloudflare/models/get_participant_details_response.dart';import 'package:pub_cloudflare/models/get_session_chat_response.dart';import 'package:pub_cloudflare/models/get_session_details_response.dart';import 'package:pub_cloudflare/models/get_session_participants_response.dart';import 'package:pub_cloudflare/models/get_session_participants_sort_by.dart';import 'package:pub_cloudflare/models/get_session_participants_sort_order.dart';import 'package:pub_cloudflare/models/get_session_participants_view.dart';import 'package:pub_cloudflare/models/get_session_summary_response.dart';import 'package:pub_cloudflare/models/get_session_transcript_response.dart';import 'package:pub_cloudflare/models/get_sessions_response.dart';import 'package:pub_cloudflare/models/get_sessions_sort_by.dart';import 'package:pub_cloudflare/models/get_sessions_sort_order.dart';import 'package:pub_cloudflare/models/get_sessions_status.dart';import 'package:pub_cloudflare/models/post_sessions_session_id_summary_response2_xx.dart';import 'package:pub_cloudflare/models/realtimekit_account_identifier.dart';import 'package:pub_cloudflare/models/realtimekit_app_id.dart';/// SessionsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -221,7 +221,7 @@ return execute(
 /// Trigger Summary generation of Transcripts for the session ID.
 ///
 /// `POST /accounts/{account_id}/realtime/kit/{app_id}/sessions/{session_id}/summary`
-Future<ApiResult<void, Never>> postSessionsSessionIdSummary({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<PostSessionsSessionIdSummaryResponse2Xx, Never>> postSessionsSessionIdSummary({required RealtimekitAccountIdentifier accountId, required RealtimekitAppId appId, required String sessionId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -232,7 +232,9 @@ final request = ApiRequest(
 
 return execute(
   request,
-  onSuccess: (_) {},
+  onSuccess: (response) {
+    return PostSessionsSessionIdSummaryResponse2Xx.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
+  },
 );
  } 
 /// Fetch the complete transcript for a session

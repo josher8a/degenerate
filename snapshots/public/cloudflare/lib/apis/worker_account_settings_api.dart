@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "WorkerAccountSettingsApi" (2 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/workers_account_settings.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';/// WorkerAccountSettingsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/create_worker_version_error.dart';import 'package:pub_cloudflare/models/workers_account_settings.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';/// WorkerAccountSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class WorkerAccountSettingsApi with ApiExecutor {const WorkerAccountSettin
 /// Fetches Worker account settings for an account.
 ///
 /// `GET /accounts/{account_id}/workers/account-settings`
-Future<ApiResult<WorkersAccountSettings, Never>> workerAccountSettingsFetchWorkerAccountSettings({required WorkersIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAccountSettings, CreateWorkerVersionError>> workerAccountSettingsFetchWorkerAccountSettings({required WorkersIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersAccountSettings.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: CreateWorkerVersionError.fromResponse,
 );
  } 
 /// Create Worker Account Settings
@@ -36,7 +37,7 @@ return execute(
 /// Creates Worker account settings for an account.
 ///
 /// `PUT /accounts/{account_id}/workers/account-settings`
-Future<ApiResult<WorkersAccountSettings, Never>> workerAccountSettingsCreateWorkerAccountSettings({required WorkersIdentifier accountId, required WorkersAccountSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkersAccountSettings, CreateWorkerVersionError>> workerAccountSettingsCreateWorkerAccountSettings({required WorkersIdentifier accountId, required WorkersAccountSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,6 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkersAccountSettings.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: CreateWorkerVersionError.fromResponse,
 );
  } 
  }

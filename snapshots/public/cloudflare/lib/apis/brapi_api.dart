@@ -47,7 +47,7 @@ return execute(
 /// Gets json from a webpage from a provided URL or HTML. Pass `prompt` or `schema` in the body. Control page loading with `gotoOptions` and `waitFor*` options.
 ///
 /// `POST /accounts/{account_id}/browser-rendering/json`
-Future<ApiResult<Map<String, Map<String, dynamic>>, BrapiPostJsonError>> brapiPostJson({required String accountId, required BrapiPostJsonRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<Map<String, Map<String, dynamic>?>, BrapiPostJsonError>> brapiPostJson({required String accountId, required BrapiPostJsonRequest body, double? cacheTtl, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (cacheTtl != null) {
   queryParameters['cacheTTL'] = cacheTtl.toString();
@@ -70,7 +70,7 @@ return execute(
   request,
   onSuccess: (response) {
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Map<String, dynamic>));
+    return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Map<String, dynamic>?));
   },
   onError: BrapiPostJsonError.fromResponse,
 );

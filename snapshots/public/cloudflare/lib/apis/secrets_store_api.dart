@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SecretsStoreApi" (23 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/secrets_store_account_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_account_tag.dart';import 'package:pub_cloudflare/models/secrets_store_create_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_create_store_object.dart';import 'package:pub_cloudflare/models/secrets_store_create_store_object_system.dart';import 'package:pub_cloudflare/models/secrets_store_delete_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_duplicate_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_list_order.dart';import 'package:pub_cloudflare/models/secrets_store_patch_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_secrets_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_secrets_list_order.dart';import 'package:pub_cloudflare/models/secrets_store_secrets_usage_object.dart';import 'package:pub_cloudflare/models/secrets_store_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_store_object.dart';import 'package:pub_cloudflare/models/secrets_store_system_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_system_list_order.dart';import 'package:pub_cloudflare/models/secrets_store_system_secrets_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_system_secrets_list_order.dart';/// SecretsStoreApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/secrets_store_create_error.dart';import 'package:pub_cloudflare/models/secrets_store_account_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_account_tag.dart';import 'package:pub_cloudflare/models/secrets_store_create_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_create_store_object.dart';import 'package:pub_cloudflare/models/secrets_store_create_store_object_system.dart';import 'package:pub_cloudflare/models/secrets_store_delete_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_duplicate_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_list_order.dart';import 'package:pub_cloudflare/models/secrets_store_patch_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_secret_object.dart';import 'package:pub_cloudflare/models/secrets_store_secrets_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_secrets_list_order.dart';import 'package:pub_cloudflare/models/secrets_store_secrets_usage_object.dart';import 'package:pub_cloudflare/models/secrets_store_store_identifier.dart';import 'package:pub_cloudflare/models/secrets_store_store_object.dart';import 'package:pub_cloudflare/models/secrets_store_system_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_system_list_order.dart';import 'package:pub_cloudflare/models/secrets_store_system_secrets_list_direction.dart';import 'package:pub_cloudflare/models/secrets_store_system_secrets_list_order.dart';/// SecretsStoreApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class SecretsStoreApi with ApiExecutor {const SecretsStoreApi(this.apiConf
 /// Lists the number of secrets used in the account.
 ///
 /// `GET /accounts/{account_id}/secrets_store/quota`
-Future<ApiResult<SecretsStoreSecretsUsageObject?, Never>> secretsStoreQuota({required SecretsStoreAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretsUsageObject?, SecretsStoreCreateError>> secretsStoreQuota({required SecretsStoreAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SecretsStoreSecretsUsageObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// List account stores
@@ -36,7 +37,7 @@ return execute(
 /// Lists all the stores in an account
 ///
 /// `GET /accounts/{account_id}/secrets_store/stores`
-Future<ApiResult<List<SecretsStoreStoreObject>?, Never>> secretsStoreList({required SecretsStoreAccountIdentifier accountId, SecretsStoreListDirection? direction, int? page, int? perPage, SecretsStoreListOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SecretsStoreStoreObject>?, SecretsStoreCreateError>> secretsStoreList({required SecretsStoreAccountIdentifier accountId, SecretsStoreListDirection? direction, int? page, int? perPage, SecretsStoreListOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) {
   queryParameters['direction'] = direction.toJson();
@@ -68,6 +69,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => SecretsStoreStoreObject.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Create a store
@@ -75,7 +77,7 @@ return execute(
 /// Creates a store in the account
 ///
 /// `POST /accounts/{account_id}/secrets_store/stores`
-Future<ApiResult<List<SecretsStoreStoreObject>?, Never>> secretsStoreCreate({required SecretsStoreAccountIdentifier accountId, required List<SecretsStoreCreateStoreObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecretsStoreStoreObject>?, SecretsStoreCreateError>> secretsStoreCreate({required SecretsStoreAccountIdentifier accountId, required List<SecretsStoreCreateStoreObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -92,6 +94,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => SecretsStoreStoreObject.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Get a store by ID
@@ -99,7 +102,7 @@ return execute(
 /// Returns details of a single store
 ///
 /// `GET /accounts/{account_id}/secrets_store/stores/{store_id}`
-Future<ApiResult<SecretsStoreStoreObject?, Never>> secretsStoreGetStoreById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreStoreObject?, SecretsStoreCreateError>> secretsStoreGetStoreById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -114,6 +117,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SecretsStoreStoreObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Delete a store
@@ -121,7 +125,7 @@ return execute(
 /// Deletes a single store
 ///
 /// `DELETE /accounts/{account_id}/secrets_store/stores/{store_id}`
-Future<ApiResult<SecretsStoreStoreObject?, Never>> secretsStoreDeleteById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreStoreObject?, SecretsStoreCreateError>> secretsStoreDeleteById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -136,6 +140,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SecretsStoreStoreObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// List store secrets
@@ -143,7 +148,7 @@ return execute(
 /// Lists all store secrets
 ///
 /// `GET /accounts/{account_id}/secrets_store/stores/{store_id}/secrets`
-Future<ApiResult<List<SecretsStoreSecretObject>?, Never>> secretsStoreSecretsList({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, SecretsStoreSecretsListDirection? direction, int? page, int? perPage, String? search, SecretsStoreSecretsListOrder? order, List<List<String>>? scopes, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SecretsStoreSecretObject>?, SecretsStoreCreateError>> secretsStoreSecretsList({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, SecretsStoreSecretsListDirection? direction, int? page, int? perPage, String? search, SecretsStoreSecretsListOrder? order, List<List<String>>? scopes, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) {
   queryParameters['direction'] = direction.toJson();
@@ -181,6 +186,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => SecretsStoreSecretObject.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Create a secret
@@ -188,7 +194,7 @@ return execute(
 /// Creates a secret in the account
 ///
 /// `POST /accounts/{account_id}/secrets_store/stores/{store_id}/secrets`
-Future<ApiResult<List<SecretsStoreSecretObject>?, Never>> secretsStoreSecretCreate({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreCreateSecretObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecretsStoreSecretObject>?, SecretsStoreCreateError>> secretsStoreSecretCreate({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreCreateSecretObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -205,6 +211,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => SecretsStoreSecretObject.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Delete secrets
@@ -212,7 +219,7 @@ return execute(
 /// Deletes one or more secrets
 ///
 /// `DELETE /accounts/{account_id}/secrets_store/stores/{store_id}/secrets`
-Future<ApiResult<List<SecretsStoreSecretObject>?, Never>> secretsStoreDeleteBulk({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreDeleteSecretObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecretsStoreSecretObject>?, SecretsStoreCreateError>> secretsStoreDeleteBulk({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreDeleteSecretObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -229,6 +236,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => SecretsStoreSecretObject.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Get a secret by ID
@@ -236,7 +244,7 @@ return execute(
 /// Returns details of a single secret
 ///
 /// `GET /accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<SecretsStoreSecretObject?, Never>> secretsStoreGetById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, SecretsStoreCreateError>> secretsStoreGetById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -251,6 +259,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SecretsStoreSecretObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Patch a secret
@@ -258,7 +267,7 @@ return execute(
 /// Updates a single secret
 ///
 /// `PATCH /accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<SecretsStoreSecretObject?, Never>> secretsStorePatchById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStorePatchSecretObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, SecretsStoreCreateError>> secretsStorePatchById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStorePatchSecretObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -275,6 +284,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SecretsStoreSecretObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Delete a secret
@@ -282,7 +292,7 @@ return execute(
 /// Deletes a single secret
 ///
 /// `DELETE /accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<SecretsStoreSecretObject?, Never>> secretsStoreSecretDeleteById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, SecretsStoreCreateError>> secretsStoreSecretDeleteById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -297,6 +307,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SecretsStoreSecretObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Duplicate Secret
@@ -304,7 +315,7 @@ return execute(
 /// Duplicates the secret, keeping the value
 ///
 /// `POST /accounts/{account_id}/secrets_store/stores/{store_id}/secrets/{secret_id}/duplicate`
-Future<ApiResult<SecretsStoreSecretObject?, Never>> secretsStoreDuplicateById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStoreDuplicateSecretObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, SecretsStoreCreateError>> secretsStoreDuplicateById({required SecretsStoreAccountIdentifier accountId, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStoreDuplicateSecretObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -321,6 +332,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SecretsStoreSecretObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// List account stores (System)
@@ -330,7 +342,7 @@ return execute(
 /// 
 ///
 /// `GET /system/accounts/{account_tag}/stores`
-Future<ApiResult<List<SecretsStoreStoreObject>?, Never>> secretsStoreSystemList({required SecretsStoreAccountTag accountTag, SecretsStoreSystemListDirection? direction, int? page, int? perPage, SecretsStoreSystemListOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SecretsStoreStoreObject>?, SecretsStoreCreateError>> secretsStoreSystemList({required SecretsStoreAccountTag accountTag, SecretsStoreSystemListDirection? direction, int? page, int? perPage, SecretsStoreSystemListOrder? order, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) {
   queryParameters['direction'] = direction.toJson();
@@ -362,6 +374,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => SecretsStoreStoreObject.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Create a store (System)
@@ -372,7 +385,7 @@ return execute(
 /// 
 ///
 /// `POST /system/accounts/{account_tag}/stores`
-Future<ApiResult<SecretsStoreStoreObject?, Never>> secretsStoreSystemCreate({required SecretsStoreAccountTag accountTag, required SecretsStoreCreateStoreObjectSystem body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreStoreObject?, SecretsStoreCreateError>> secretsStoreSystemCreate({required SecretsStoreAccountTag accountTag, required SecretsStoreCreateStoreObjectSystem body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -389,6 +402,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SecretsStoreStoreObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Get a store by ID (System)
@@ -398,7 +412,7 @@ return execute(
 /// 
 ///
 /// `GET /system/accounts/{account_tag}/stores/{store_id}`
-Future<ApiResult<SecretsStoreStoreObject?, Never>> secretsStoreSystemGetStoreById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreStoreObject?, SecretsStoreCreateError>> secretsStoreSystemGetStoreById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -413,6 +427,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SecretsStoreStoreObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Delete a store (System)
@@ -422,7 +437,7 @@ return execute(
 /// 
 ///
 /// `DELETE /system/accounts/{account_tag}/stores/{store_id}`
-Future<ApiResult<SecretsStoreStoreObject?, Never>> secretsStoreSystemDeleteById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreStoreObject?, SecretsStoreCreateError>> secretsStoreSystemDeleteById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -437,6 +452,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SecretsStoreStoreObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// List store secrets (System)
@@ -446,7 +462,7 @@ return execute(
 /// 
 ///
 /// `GET /system/accounts/{account_tag}/stores/{store_id}/secrets`
-Future<ApiResult<List<SecretsStoreSecretObject>?, Never>> secretsStoreSystemSecretsList({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, SecretsStoreSystemSecretsListDirection? direction, int? page, int? perPage, String? search, SecretsStoreSystemSecretsListOrder? order, List<List<String>>? scopes, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SecretsStoreSecretObject>?, SecretsStoreCreateError>> secretsStoreSystemSecretsList({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, SecretsStoreSystemSecretsListDirection? direction, int? page, int? perPage, String? search, SecretsStoreSystemSecretsListOrder? order, List<List<String>>? scopes, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (direction != null) {
   queryParameters['direction'] = direction.toJson();
@@ -484,6 +500,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => SecretsStoreSecretObject.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Create secrets (System)
@@ -493,7 +510,7 @@ return execute(
 /// 
 ///
 /// `POST /system/accounts/{account_tag}/stores/{store_id}/secrets`
-Future<ApiResult<List<SecretsStoreSecretObject>?, Never>> secretsStoreSystemSecretCreate({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreCreateSecretObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecretsStoreSecretObject>?, SecretsStoreCreateError>> secretsStoreSystemSecretCreate({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreCreateSecretObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -510,6 +527,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => SecretsStoreSecretObject.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Delete secrets (System)
@@ -519,7 +537,7 @@ return execute(
 /// 
 ///
 /// `DELETE /system/accounts/{account_tag}/stores/{store_id}/secrets`
-Future<ApiResult<List<SecretsStoreSecretObject>?, Never>> secretsStoreSystemDeleteBulk({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreDeleteSecretObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<SecretsStoreSecretObject>?, SecretsStoreCreateError>> secretsStoreSystemDeleteBulk({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required List<SecretsStoreDeleteSecretObject> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -536,6 +554,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => SecretsStoreSecretObject.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Get a secret by ID (System)
@@ -545,7 +564,7 @@ return execute(
 /// 
 ///
 /// `GET /system/accounts/{account_tag}/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<SecretsStoreSecretObject?, Never>> secretsStoreSystemGetById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, SecretsStoreCreateError>> secretsStoreSystemGetById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -560,6 +579,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SecretsStoreSecretObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Patch a secret (System)
@@ -569,7 +589,7 @@ return execute(
 /// 
 ///
 /// `PATCH /system/accounts/{account_tag}/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<SecretsStoreSecretObject?, Never>> secretsStoreSystemPatchById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStorePatchSecretObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, SecretsStoreCreateError>> secretsStoreSystemPatchById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStorePatchSecretObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -586,6 +606,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SecretsStoreSecretObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Delete a secret (System)
@@ -595,7 +616,7 @@ return execute(
 /// 
 ///
 /// `DELETE /system/accounts/{account_tag}/stores/{store_id}/secrets/{secret_id}`
-Future<ApiResult<SecretsStoreSecretObject?, Never>> secretsStoreSystemSecretDeleteById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, SecretsStoreCreateError>> secretsStoreSystemSecretDeleteById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -610,6 +631,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SecretsStoreSecretObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
 /// Duplicate secret (System)
@@ -619,7 +641,7 @@ return execute(
 /// 
 ///
 /// `POST /system/accounts/{account_tag}/stores/{store_id}/secrets/{secret_id}/duplicate`
-Future<ApiResult<SecretsStoreSecretObject?, Never>> secretsStoreSystemDuplicateById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStoreDuplicateSecretObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<SecretsStoreSecretObject?, SecretsStoreCreateError>> secretsStoreSystemDuplicateById({required SecretsStoreAccountTag accountTag, required SecretsStoreStoreIdentifier storeId, required SecretsStoreIdentifier secretId, required SecretsStoreDuplicateSecretObject body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -636,6 +658,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SecretsStoreSecretObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SecretsStoreCreateError.fromResponse,
 );
  } 
  }

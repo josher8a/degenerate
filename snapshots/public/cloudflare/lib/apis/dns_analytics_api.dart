@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "DnsAnalyticsApi" (2 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_analytics_dimensions.dart';import 'package:pub_cloudflare/models/dns_analytics_filters.dart';import 'package:pub_cloudflare/models/dns_analytics_identifier.dart';import 'package:pub_cloudflare/models/dns_analytics_limit.dart';import 'package:pub_cloudflare/models/dns_analytics_metrics.dart';import 'package:pub_cloudflare/models/dns_analytics_report_bytime.dart';import 'package:pub_cloudflare/models/dns_analytics_result.dart';import 'package:pub_cloudflare/models/dns_analytics_since.dart';import 'package:pub_cloudflare/models/dns_analytics_sort.dart';import 'package:pub_cloudflare/models/dns_analytics_time_delta.dart';import 'package:pub_cloudflare/models/dns_analytics_until.dart';/// DnsAnalyticsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_analytics_dimensions.dart';import 'package:pub_cloudflare/models/dns_analytics_filters.dart';import 'package:pub_cloudflare/models/dns_analytics_identifier.dart';import 'package:pub_cloudflare/models/dns_analytics_limit.dart';import 'package:pub_cloudflare/models/dns_analytics_metrics.dart';import 'package:pub_cloudflare/models/dns_analytics_report_bytime.dart';import 'package:pub_cloudflare/models/dns_analytics_result.dart';import 'package:pub_cloudflare/models/dns_analytics_since.dart';import 'package:pub_cloudflare/models/dns_analytics_sort.dart';import 'package:pub_cloudflare/models/dns_analytics_time_delta.dart';import 'package:pub_cloudflare/models/dns_analytics_until.dart';import 'package:pub_cloudflare/models/errors/dns_analytics_by_time_error.dart';/// DnsAnalyticsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -16,7 +16,7 @@ final class DnsAnalyticsApi with ApiExecutor {const DnsAnalyticsApi(this.apiConf
 /// See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.
 ///
 /// `GET /zones/{zone_id}/dns_analytics/report`
-Future<ApiResult<DnsAnalyticsResult?, Never>> dnsAnalyticsTable({required DnsAnalyticsIdentifier zoneId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DnsAnalyticsResult?, DnsAnalyticsByTimeError>> dnsAnalyticsTable({required DnsAnalyticsIdentifier zoneId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metrics != null) {
   queryParameters['metrics'] = metrics.toJson();
@@ -57,6 +57,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsAnalyticsResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DnsAnalyticsByTimeError.fromResponse,
 );
  } 
 /// By Time
@@ -66,7 +67,7 @@ return execute(
 /// See [Analytics API properties](https://developers.cloudflare.com/dns/reference/analytics-api-properties/) for detailed information about the available query parameters.
 ///
 /// `GET /zones/{zone_id}/dns_analytics/report/bytime`
-Future<ApiResult<DnsAnalyticsReportBytime?, Never>> dnsAnalyticsByTime({required DnsAnalyticsIdentifier zoneId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, DnsAnalyticsTimeDelta? timeDelta, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<DnsAnalyticsReportBytime?, DnsAnalyticsByTimeError>> dnsAnalyticsByTime({required DnsAnalyticsIdentifier zoneId, DnsAnalyticsMetrics? metrics, DnsAnalyticsDimensions? dimensions, DnsAnalyticsSince? since, DnsAnalyticsUntil? until, DnsAnalyticsLimit? limit, DnsAnalyticsSort? sort, DnsAnalyticsFilters? filters, DnsAnalyticsTimeDelta? timeDelta, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (metrics != null) {
   queryParameters['metrics'] = metrics.toJson();
@@ -110,6 +111,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DnsAnalyticsReportBytime.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DnsAnalyticsByTimeError.fromResponse,
 );
  } 
  }

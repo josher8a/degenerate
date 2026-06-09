@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/StronglyTypedNullableOneOfObject
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/enum2.dart';import 'package:pub_speakeasy/models/nested_enum_array.dart';import 'package:pub_speakeasy/models/nested_enum_map.dart';sealed class StronglyTypedNullableOneOfObjectTags {const StronglyTypedNullableOneOfObjectTags();
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/enum.dart';import 'package:pub_speakeasy/models/nested_enum_array.dart';import 'package:pub_speakeasy/models/nested_enum_map.dart';sealed class StronglyTypedNullableOneOfObjectTags {const StronglyTypedNullableOneOfObjectTags();
 
 factory StronglyTypedNullableOneOfObjectTags.fromJson(String json) { return switch (json) {
   'nestedEnumArray' => nestedEnumArray,
@@ -64,10 +64,10 @@ factory StronglyTypedNullableOneOfObject.fromJson(Map<String, dynamic> json) { r
 }; }
 
 /// Build the `nestedEnumArray` variant.
-factory StronglyTypedNullableOneOfObject.nestedEnumArray({required List<Enum2> enums}) { return StronglyTypedNullableOneOfObjectNestedEnumArray(NestedEnumArray(tags: 'nestedEnumArray', enums: enums)); }
+factory StronglyTypedNullableOneOfObject.nestedEnumArray({required List<Enum> enums}) { return StronglyTypedNullableOneOfObjectNestedEnumArray(NestedEnumArray(tags: 'nestedEnumArray', enums: enums)); }
 
 /// Build the `nestedEnumMap` variant.
-factory StronglyTypedNullableOneOfObject.nestedEnumMap({required Map<String,Enum2> enums}) { return StronglyTypedNullableOneOfObjectNestedEnumMap(NestedEnumMap(tags: 'nestedEnumMap', enums: enums)); }
+factory StronglyTypedNullableOneOfObject.nestedEnumMap({required Map<String,Enum> enums}) { return StronglyTypedNullableOneOfObjectNestedEnumMap(NestedEnumMap(tags: 'nestedEnumMap', enums: enums)); }
 
 /// The discriminator value identifying this variant.
 StronglyTypedNullableOneOfObjectTags get tags;
@@ -91,7 +91,7 @@ final NestedEnumArray nestedEnumArray;
 
 @override Map<String, dynamic> toJson() => {...nestedEnumArray.toJson(), 'tags': tags.toJson()};
 
-StronglyTypedNullableOneOfObjectNestedEnumArray copyWith({List<Enum2>? enums}) { return StronglyTypedNullableOneOfObjectNestedEnumArray(nestedEnumArray.copyWith(
+StronglyTypedNullableOneOfObjectNestedEnumArray copyWith({List<Enum>? enums}) { return StronglyTypedNullableOneOfObjectNestedEnumArray(nestedEnumArray.copyWith(
   enums: enums,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||
@@ -112,7 +112,7 @@ final NestedEnumMap nestedEnumMap;
 
 @override Map<String, dynamic> toJson() => {...nestedEnumMap.toJson(), 'tags': tags.toJson()};
 
-StronglyTypedNullableOneOfObjectNestedEnumMap copyWith({Map<String,Enum2>? enums}) { return StronglyTypedNullableOneOfObjectNestedEnumMap(nestedEnumMap.copyWith(
+StronglyTypedNullableOneOfObjectNestedEnumMap copyWith({Map<String,Enum>? enums}) { return StronglyTypedNullableOneOfObjectNestedEnumMap(nestedEnumMap.copyWith(
   enums: enums,
 )); } 
 @override bool operator ==(Object other) => identical(this, other) ||

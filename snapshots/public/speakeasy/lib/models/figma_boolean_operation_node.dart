@@ -1,11 +1,11 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/FigmaBooleanOperationNode
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/figma_component_node2.dart';import 'package:pub_speakeasy/models/figma_subcanvas_node.dart';@immutable final class FigmaBooleanOperationNode {const FigmaBooleanOperationNode({this.booleanOperation, this.children, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/figma_component_node.dart';import 'package:pub_speakeasy/models/figma_subcanvas_node.dart';@immutable final class FigmaBooleanOperationNode {const FigmaBooleanOperationNode({this.booleanOperation, this.children, });
 
 factory FigmaBooleanOperationNode.fromJson(Map<String, dynamic> json) { return FigmaBooleanOperationNode(
   booleanOperation: json['booleanOperation'] as String?,
-  children: (json['children'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => FigmaBooleanOperationNode.fromJson(v as Map<String, dynamic>), fromB: (v) => FigmaComponentNode2.fromJson(v as Map<String, dynamic>),)).toList(),
+  children: (json['children'] as List<dynamic>?)?.map((e) => OneOf2.parse(e, fromA: (v) => FigmaBooleanOperationNode.fromJson(v as Map<String, dynamic>), fromB: (v) => FigmaComponentNode.fromJson(v as Map<String, dynamic>),)).toList(),
 ); }
 
 final String? booleanOperation;

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesMirage
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_mirage_value.dart';/// Cloudflare Mirage reduces bandwidth used by images in mobile browsers.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Cloudflare Mirage reduces bandwidth used by images in mobile browsers.
 /// It can accelerate loading of image-heavy websites on very slow mobile connections and HTTP/1.
 /// 
 sealed class ZonesMirageId {const ZonesMirageId();
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? mirage, 
 
 factory ZonesMirage.fromJson(Map<String, dynamic> json) { return ZonesMirage(
   id: json['id'] != null ? ZonesMirageId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesMirageValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Cloudflare Mirage reduces bandwidth used by images in mobile browsers.
@@ -74,14 +74,14 @@ final ZonesMirageId? id;
 /// 
 /// 
 /// Example: `'on'`
-final ZonesMirageValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesMirage copyWith({ZonesMirageId? Function()? id, ZonesMirageValue? Function()? value, }) { return ZonesMirage(
+ZonesMirage copyWith({ZonesMirageId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesMirage(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

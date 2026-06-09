@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/UnionNestedEnumsRequest2
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/enum2.dart';import 'package:pub_speakeasy/models/union_nested_enums_request2/enums.dart';@immutable final class UnionNestedEnumsRequest2 {const UnionNestedEnumsRequest2({required this.enums});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/enum.dart';import 'package:pub_speakeasy/models/union_nested_enums_request2/enums.dart';@immutable final class UnionNestedEnumsRequest2 {const UnionNestedEnumsRequest2({required this.enums});
 
 factory UnionNestedEnumsRequest2.fromJson(Map<String, dynamic> json) { return UnionNestedEnumsRequest2(
-  enums: OneOf2.parse(json['enums'], fromA: (v) => (v as List<dynamic>).map((e) => Enum2.fromJson(e as String)).toList(), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, Enum2.fromJson(v as String))),),
+  enums: OneOf2.parse(json['enums'], fromA: (v) => (v as List<dynamic>).map((e) => Enum.fromJson(e as String)).toList(), fromB: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, Enum.fromJson(v as String))),),
 ); }
 
 final Enums enums;

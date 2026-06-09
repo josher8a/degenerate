@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "CloudflareTunnelConfigurationApi" (2 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_tunnel_configuration_put_configuration_request.dart';import 'package:pub_cloudflare/models/tunnel_configuration.dart';import 'package:pub_cloudflare/models/tunnel_identifier.dart';import 'package:pub_cloudflare/models/tunnel_schemas_tunnel_id.dart';/// CloudflareTunnelConfigurationApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_tunnel_configuration_put_configuration_request.dart';import 'package:pub_cloudflare/models/errors/cloudflare_tunnel_configuration_get_configuration_error.dart';import 'package:pub_cloudflare/models/tunnel_configuration.dart';import 'package:pub_cloudflare/models/tunnel_identifier.dart';import 'package:pub_cloudflare/models/tunnel_schemas_tunnel_id.dart';/// CloudflareTunnelConfigurationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class CloudflareTunnelConfigurationApi with ApiExecutor {const CloudflareT
 /// Gets the configuration for a remotely-managed tunnel
 ///
 /// `GET /accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations`
-Future<ApiResult<TunnelConfiguration?, Never>> cloudflareTunnelConfigurationGetConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelConfiguration?, CloudflareTunnelConfigurationGetConfigurationError>> cloudflareTunnelConfigurationGetConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? TunnelConfiguration.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: CloudflareTunnelConfigurationGetConfigurationError.fromResponse,
 );
  } 
 /// Put configuration
@@ -36,7 +37,7 @@ return execute(
 /// Adds or updates the configuration for a remotely-managed tunnel.
 ///
 /// `PUT /accounts/{account_id}/cfd_tunnel/{tunnel_id}/configurations`
-Future<ApiResult<TunnelConfiguration?, Never>> cloudflareTunnelConfigurationPutConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, required CloudflareTunnelConfigurationPutConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TunnelConfiguration?, CloudflareTunnelConfigurationGetConfigurationError>> cloudflareTunnelConfigurationPutConfiguration({required TunnelIdentifier accountId, required TunnelSchemasTunnelId tunnelId, required CloudflareTunnelConfigurationPutConfigurationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,6 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? TunnelConfiguration.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: CloudflareTunnelConfigurationGetConfigurationError.fromResponse,
 );
  } 
  }

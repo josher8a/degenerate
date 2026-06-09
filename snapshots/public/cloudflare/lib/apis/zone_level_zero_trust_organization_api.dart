@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZoneLevelZeroTrustOrganizationApi" (4 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_organizations_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/access_schemas_organizations.dart';import 'package:pub_cloudflare/models/zone_level_zero_trust_organization_create_your_zero_trust_organization_request.dart';import 'package:pub_cloudflare/models/zone_level_zero_trust_organization_revoke_all_access_tokens_for_a_user_request.dart';import 'package:pub_cloudflare/models/zone_level_zero_trust_organization_update_your_zero_trust_organization_request.dart';/// ZoneLevelZeroTrustOrganizationApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_organizations_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/access_schemas_organizations.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';import 'package:pub_cloudflare/models/zone_level_zero_trust_organization_create_your_zero_trust_organization_request.dart';import 'package:pub_cloudflare/models/zone_level_zero_trust_organization_revoke_all_access_tokens_for_a_user_request.dart';import 'package:pub_cloudflare/models/zone_level_zero_trust_organization_update_your_zero_trust_organization_request.dart';/// ZoneLevelZeroTrustOrganizationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ZoneLevelZeroTrustOrganizationApi with ApiExecutor {const ZoneLevelZ
 /// Returns the configuration for your Zero Trust organization.
 ///
 /// `GET /zones/{zone_id}/access/organizations`
-Future<ApiResult<AccessSchemasOrganizations?, Never>> zoneLevelZeroTrustOrganizationGetYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasOrganizations?, AccessApplicationsAddAnApplicationError>> zoneLevelZeroTrustOrganizationGetYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessSchemasOrganizations.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
  } 
 /// Create your Zero Trust organization
@@ -36,7 +37,7 @@ return execute(
 /// Sets up a Zero Trust organization for your account.
 ///
 /// `POST /zones/{zone_id}/access/organizations`
-Future<ApiResult<AccessSchemasOrganizations?, Never>> zoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasOrganizations?, AccessApplicationsAddAnApplicationError>> zoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationCreateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,6 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessSchemasOrganizations.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
  } 
 /// Update your Zero Trust organization
@@ -60,7 +62,7 @@ return execute(
 /// Updates the configuration for your Zero Trust organization.
 ///
 /// `PUT /zones/{zone_id}/access/organizations`
-Future<ApiResult<AccessSchemasOrganizations?, Never>> zoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessSchemasOrganizations?, AccessApplicationsAddAnApplicationError>> zoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganization({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationUpdateYourZeroTrustOrganizationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -77,6 +79,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessSchemasOrganizations.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
  } 
 /// Revoke all Access tokens for a user
@@ -84,7 +87,7 @@ return execute(
 /// Revokes a user's access across all applications.
 ///
 /// `POST /zones/{zone_id}/access/organizations/revoke_user`
-Future<ApiResult<bool?, Never>> zoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUser({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<bool?, AccessApplicationsAddAnApplicationError>> zoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUser({required AccessOrganizationsComponentsSchemasIdentifier zoneId, required ZoneLevelZeroTrustOrganizationRevokeAllAccessTokensForAUserRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -101,6 +104,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as bool?;
   },
+  onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
  } 
  }

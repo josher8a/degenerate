@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesRocketLoader
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_rocket_loader_value.dart';/// Turn on or off Rocket Loader in the Cloudflare Speed app.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Turn on or off Rocket Loader in the Cloudflare Speed app.
 /// 
 sealed class ZonesRocketLoaderId {const ZonesRocketLoaderId();
 
@@ -59,7 +59,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? rocketLo
 
 factory ZonesRocketLoader.fromJson(Map<String, dynamic> json) { return ZonesRocketLoader(
   id: json['id'] != null ? ZonesRocketLoaderId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesRocketLoaderValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Turn on or off Rocket Loader in the Cloudflare Speed app.
@@ -70,14 +70,14 @@ final ZonesRocketLoaderId? id;
 /// 
 /// 
 /// Example: `'on'`
-final ZonesRocketLoaderValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesRocketLoader copyWith({ZonesRocketLoaderId? Function()? id, ZonesRocketLoaderValue? Function()? value, }) { return ZonesRocketLoader(
+ZonesRocketLoader copyWith({ZonesRocketLoaderId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesRocketLoader(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

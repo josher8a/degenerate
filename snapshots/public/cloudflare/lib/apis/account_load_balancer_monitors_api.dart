@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AccountLoadBalancerMonitorsApi" (9 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_id_response/load_balancing_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/load_balancing_identifier.dart';import 'package:pub_cloudflare/models/load_balancing_monitor.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_editable.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group_references_response/load_balancing_monitor_group_references_response_result.dart';import 'package:pub_cloudflare/models/load_balancing_preview_response/load_balancing_preview_response_result.dart';import 'package:pub_cloudflare/models/load_balancing_preview_result/load_balancing_preview_result_value.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_preview_id.dart';/// AccountLoadBalancerMonitorsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_monitors_create_monitor_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_monitors_delete_monitor_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_monitors_list_monitor_references_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_monitors_list_monitors_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_monitors_monitor_details_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_monitors_patch_monitor_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_monitors_preview_monitor_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_monitors_preview_result_error.dart';import 'package:pub_cloudflare/models/errors/account_load_balancer_monitors_update_monitor_error.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_id_response/load_balancing_components_schemas_id_response_result.dart';import 'package:pub_cloudflare/models/load_balancing_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/load_balancing_identifier.dart';import 'package:pub_cloudflare/models/load_balancing_monitor.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_editable.dart';import 'package:pub_cloudflare/models/load_balancing_monitor_group_references_response/load_balancing_monitor_group_references_response_result.dart';import 'package:pub_cloudflare/models/load_balancing_preview_response/load_balancing_preview_response_result.dart';import 'package:pub_cloudflare/models/load_balancing_preview_result/load_balancing_preview_result_value.dart';import 'package:pub_cloudflare/models/load_balancing_schemas_preview_id.dart';/// AccountLoadBalancerMonitorsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class AccountLoadBalancerMonitorsApi with ApiExecutor {const AccountLoadBa
 /// List configured monitors for an account.
 ///
 /// `GET /accounts/{account_id}/load_balancers/monitors`
-Future<ApiResult<List<LoadBalancingMonitor>?, Never>> accountLoadBalancerMonitorsListMonitors({required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<LoadBalancingMonitor>?, AccountLoadBalancerMonitorsListMonitorsError>> accountLoadBalancerMonitorsListMonitors({required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => LoadBalancingMonitor.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: AccountLoadBalancerMonitorsListMonitorsError.fromResponse,
 );
  } 
 /// Create Monitor
@@ -36,7 +37,7 @@ return execute(
 /// Create a configured monitor.
 ///
 /// `POST /accounts/{account_id}/load_balancers/monitors`
-Future<ApiResult<LoadBalancingMonitor?, Never>> accountLoadBalancerMonitorsCreateMonitor({required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitor?, AccountLoadBalancerMonitorsCreateMonitorError>> accountLoadBalancerMonitorsCreateMonitor({required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,6 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? LoadBalancingMonitor.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccountLoadBalancerMonitorsCreateMonitorError.fromResponse,
 );
  } 
 /// Monitor Details
@@ -60,7 +62,7 @@ return execute(
 /// List a single configured monitor for an account.
 ///
 /// `GET /accounts/{account_id}/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<LoadBalancingMonitor?, Never>> accountLoadBalancerMonitorsMonitorDetails({required LoadBalancingIdentifier monitorId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitor?, AccountLoadBalancerMonitorsMonitorDetailsError>> accountLoadBalancerMonitorsMonitorDetails({required LoadBalancingIdentifier monitorId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,6 +77,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? LoadBalancingMonitor.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccountLoadBalancerMonitorsMonitorDetailsError.fromResponse,
 );
  } 
 /// Update Monitor
@@ -82,7 +85,7 @@ return execute(
 /// Modify a configured monitor.
 ///
 /// `PUT /accounts/{account_id}/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<LoadBalancingMonitor?, Never>> accountLoadBalancerMonitorsUpdateMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitor?, AccountLoadBalancerMonitorsUpdateMonitorError>> accountLoadBalancerMonitorsUpdateMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,6 +102,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? LoadBalancingMonitor.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccountLoadBalancerMonitorsUpdateMonitorError.fromResponse,
 );
  } 
 /// Patch Monitor
@@ -106,7 +110,7 @@ return execute(
 /// Apply changes to an existing monitor, overwriting the supplied properties.
 ///
 /// `PATCH /accounts/{account_id}/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<LoadBalancingMonitor?, Never>> accountLoadBalancerMonitorsPatchMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingMonitor?, AccountLoadBalancerMonitorsPatchMonitorError>> accountLoadBalancerMonitorsPatchMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -123,6 +127,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? LoadBalancingMonitor.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccountLoadBalancerMonitorsPatchMonitorError.fromResponse,
 );
  } 
 /// Delete Monitor
@@ -130,7 +135,7 @@ return execute(
 /// Delete a configured monitor.
 ///
 /// `DELETE /accounts/{account_id}/load_balancers/monitors/{monitor_id}`
-Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, Never>> accountLoadBalancerMonitorsDeleteMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingComponentsSchemasIdResponseResult?, AccountLoadBalancerMonitorsDeleteMonitorError>> accountLoadBalancerMonitorsDeleteMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -145,6 +150,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? LoadBalancingComponentsSchemasIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccountLoadBalancerMonitorsDeleteMonitorError.fromResponse,
 );
  } 
 /// Preview Monitor
@@ -152,7 +158,7 @@ return execute(
 /// Preview pools using the specified monitor with provided monitor details. The returned preview_id can be used in the preview endpoint to retrieve the results.
 ///
 /// `POST /accounts/{account_id}/load_balancers/monitors/{monitor_id}/preview`
-Future<ApiResult<LoadBalancingPreviewResponseResult?, Never>> accountLoadBalancerMonitorsPreviewMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LoadBalancingPreviewResponseResult?, AccountLoadBalancerMonitorsPreviewMonitorError>> accountLoadBalancerMonitorsPreviewMonitor({required LoadBalancingIdentifier monitorId, required LoadBalancingComponentsSchemasIdentifier accountId, required LoadBalancingMonitorEditable body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -169,6 +175,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? LoadBalancingPreviewResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccountLoadBalancerMonitorsPreviewMonitorError.fromResponse,
 );
  } 
 /// List Monitor References
@@ -176,7 +183,7 @@ return execute(
 /// Get the list of resources that reference the provided monitor.
 ///
 /// `GET /accounts/{account_id}/load_balancers/monitors/{monitor_id}/references`
-Future<ApiResult<List<LoadBalancingMonitorGroupReferencesResponseResult>, Never>> accountLoadBalancerMonitorsListMonitorReferences({required LoadBalancingIdentifier monitorId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<LoadBalancingMonitorGroupReferencesResponseResult>, AccountLoadBalancerMonitorsListMonitorReferencesError>> accountLoadBalancerMonitorsListMonitorReferences({required LoadBalancingIdentifier monitorId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -191,6 +198,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => LoadBalancingMonitorGroupReferencesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: AccountLoadBalancerMonitorsListMonitorReferencesError.fromResponse,
 );
  } 
 /// Preview Result
@@ -198,7 +206,7 @@ return execute(
 /// Get the result of a previous preview operation using the provided preview_id.
 ///
 /// `GET /accounts/{account_id}/load_balancers/preview/{preview_id}`
-Future<ApiResult<Map<String, LoadBalancingPreviewResultValue>?, Never>> accountLoadBalancerMonitorsPreviewResult({required LoadBalancingSchemasPreviewId previewId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, LoadBalancingPreviewResultValue>?, AccountLoadBalancerMonitorsPreviewResultError>> accountLoadBalancerMonitorsPreviewResult({required LoadBalancingSchemasPreviewId previewId, required LoadBalancingComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -213,6 +221,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, LoadBalancingPreviewResultValue.fromJson(v as Map<String, dynamic>)));
   },
+  onError: AccountLoadBalancerMonitorsPreviewResultError.fromResponse,
 );
  } 
  }

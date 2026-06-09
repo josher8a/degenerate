@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesIpGeolocation
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_ip_geolocation_value.dart';/// Cloudflare adds a CF-IPCountry HTTP header containing the country code that corresponds to the visitor.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Cloudflare adds a CF-IPCountry HTTP header containing the country code that corresponds to the visitor.
 /// 
 sealed class ZonesIpGeolocationId {const ZonesIpGeolocationId();
 
@@ -59,7 +59,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? ipGeoloc
 
 factory ZonesIpGeolocation.fromJson(Map<String, dynamic> json) { return ZonesIpGeolocation(
   id: json['id'] != null ? ZonesIpGeolocationId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesIpGeolocationValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Cloudflare adds a CF-IPCountry HTTP header containing the country code that corresponds to the visitor.
@@ -72,14 +72,14 @@ final ZonesIpGeolocationId? id;
 /// 
 /// 
 /// Example: `'on'`
-final ZonesIpGeolocationValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesIpGeolocation copyWith({ZonesIpGeolocationId? Function()? id, ZonesIpGeolocationValue? Function()? value, }) { return ZonesIpGeolocation(
+ZonesIpGeolocation copyWith({ZonesIpGeolocationId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesIpGeolocation(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

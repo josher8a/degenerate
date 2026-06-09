@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AccessServiceTokensApi" (7 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_create_response/access_create_response_result.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_service_tokens.dart';import 'package:pub_cloudflare/models/access_service_tokens_create_a_service_token_request.dart';import 'package:pub_cloudflare/models/access_service_tokens_rotate_a_service_token_request.dart';import 'package:pub_cloudflare/models/access_service_tokens_update_a_service_token_request.dart';import 'package:pub_cloudflare/models/access_uuid.dart';/// AccessServiceTokensApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_create_response/access_create_response_result.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_service_tokens.dart';import 'package:pub_cloudflare/models/access_service_tokens_create_a_service_token_request.dart';import 'package:pub_cloudflare/models/access_service_tokens_rotate_a_service_token_request.dart';import 'package:pub_cloudflare/models/access_service_tokens_update_a_service_token_request.dart';import 'package:pub_cloudflare/models/access_uuid.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';/// AccessServiceTokensApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class AccessServiceTokensApi with ApiExecutor {const AccessServiceTokensAp
 /// Lists all service tokens.
 ///
 /// `GET /accounts/{account_id}/access/service_tokens`
-Future<ApiResult<List<AccessServiceTokens>?, Never>> accessServiceTokensListServiceTokens({required AccessIdentifier accountId, String? name, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessServiceTokens>?, AccessApplicationsAddAnApplicationError>> accessServiceTokensListServiceTokens({required AccessIdentifier accountId, String? name, String? search, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (name != null) {
   queryParameters['name'] = name;
@@ -46,6 +46,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => AccessServiceTokens.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
  } 
 /// Create a service token
@@ -53,7 +54,7 @@ return execute(
 /// Generates a new service token. **Note:** This is the only time you can get the Client Secret. If you lose the Client Secret, you will have to rotate the Client Secret or create a new service token.
 ///
 /// `POST /accounts/{account_id}/access/service_tokens`
-Future<ApiResult<AccessCreateResponseResult?, Never>> accessServiceTokensCreateAServiceToken({required AccessIdentifier accountId, required AccessServiceTokensCreateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCreateResponseResult?, AccessApplicationsAddAnApplicationError>> accessServiceTokensCreateAServiceToken({required AccessIdentifier accountId, required AccessServiceTokensCreateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -70,6 +71,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
  } 
 /// Get a service token
@@ -77,7 +79,7 @@ return execute(
 /// Fetches a single service token.
 ///
 /// `GET /accounts/{account_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<AccessServiceTokens?, Never>> accessServiceTokensGetAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessServiceTokens?, AccessApplicationsAddAnApplicationError>> accessServiceTokensGetAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -92,6 +94,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessServiceTokens.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
  } 
 /// Update a service token
@@ -99,7 +102,7 @@ return execute(
 /// Updates a configured service token.
 ///
 /// `PUT /accounts/{account_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<AccessServiceTokens?, Never>> accessServiceTokensUpdateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, required AccessServiceTokensUpdateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessServiceTokens?, AccessApplicationsAddAnApplicationError>> accessServiceTokensUpdateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, required AccessServiceTokensUpdateAServiceTokenRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -116,6 +119,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessServiceTokens.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
  } 
 /// Delete a service token
@@ -123,7 +127,7 @@ return execute(
 /// Deletes a service token.
 ///
 /// `DELETE /accounts/{account_id}/access/service_tokens/{service_token_id}`
-Future<ApiResult<AccessServiceTokens?, Never>> accessServiceTokensDeleteAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessServiceTokens?, AccessApplicationsAddAnApplicationError>> accessServiceTokensDeleteAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -138,6 +142,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessServiceTokens.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
  } 
 /// Refresh a service token
@@ -145,7 +150,7 @@ return execute(
 /// Refreshes the expiration of a service token.
 ///
 /// `POST /accounts/{account_id}/access/service_tokens/{service_token_id}/refresh`
-Future<ApiResult<AccessServiceTokens?, Never>> accessServiceTokensRefreshAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessServiceTokens?, AccessApplicationsAddAnApplicationError>> accessServiceTokensRefreshAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -160,6 +165,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessServiceTokens.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
  } 
 /// Rotate a service token
@@ -167,7 +173,7 @@ return execute(
 /// Generates a new Client Secret for a service token and revokes the old one.
 ///
 /// `POST /accounts/{account_id}/access/service_tokens/{service_token_id}/rotate`
-Future<ApiResult<AccessCreateResponseResult?, Never>> accessServiceTokensRotateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, AccessServiceTokensRotateAServiceTokenRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AccessCreateResponseResult?, AccessApplicationsAddAnApplicationError>> accessServiceTokensRotateAServiceToken({required AccessUuid serviceTokenId, required AccessIdentifier accountId, AccessServiceTokensRotateAServiceTokenRequest? body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -184,6 +190,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AccessCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
  } 
  }

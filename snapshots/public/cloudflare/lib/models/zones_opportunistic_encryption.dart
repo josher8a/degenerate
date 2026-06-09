@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesOpportunisticEncryption
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_opportunistic_encryption_value.dart';/// Opportunistic Encryption allows browsers to access HTTP URIs over an encrypted TLS channel.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Opportunistic Encryption allows browsers to access HTTP URIs over an encrypted TLS channel.
 /// It's not a substitute for HTTPS, but provides additional security for otherwise vulnerable requests.
 /// 
 sealed class ZonesOpportunisticEncryptionId {const ZonesOpportunisticEncryptionId();
@@ -60,7 +60,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? opportun
 
 factory ZonesOpportunisticEncryption.fromJson(Map<String, dynamic> json) { return ZonesOpportunisticEncryption(
   id: json['id'] != null ? ZonesOpportunisticEncryptionId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesOpportunisticEncryptionValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Opportunistic Encryption allows browsers to access HTTP URIs over an encrypted TLS channel.
@@ -74,14 +74,14 @@ final ZonesOpportunisticEncryptionId? id;
 /// 
 /// 
 /// Example: `'on'`
-final ZonesOpportunisticEncryptionValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesOpportunisticEncryption copyWith({ZonesOpportunisticEncryptionId? Function()? id, ZonesOpportunisticEncryptionValue? Function()? value, }) { return ZonesOpportunisticEncryption(
+ZonesOpportunisticEncryption copyWith({ZonesOpportunisticEncryptionId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesOpportunisticEncryption(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

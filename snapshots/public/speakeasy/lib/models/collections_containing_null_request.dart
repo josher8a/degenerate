@@ -4,10 +4,10 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class CollectionsContainingNullRequest {const CollectionsContainingNullRequest({required this.requiredArray, required this.requiredMap, this.optionalArray, this.optionalMap, this.arrayOfNullUnion, this.mapOfNullUnion, });
 
 factory CollectionsContainingNullRequest.fromJson(Map<String, dynamic> json) { return CollectionsContainingNullRequest(
-  requiredArray: (json['requiredArray'] as List<dynamic>).map((e) => e as String).toList(),
-  requiredMap: (json['requiredMap'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
-  optionalArray: (json['optionalArray'] as List<dynamic>?)?.map((e) => e as String).toList(),
-  optionalMap: (json['optionalMap'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  requiredArray: (json['requiredArray'] as List<dynamic>).map((e) => e as String?).toList(),
+  requiredMap: (json['requiredMap'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String?)),
+  optionalArray: (json['optionalArray'] as List<dynamic>?)?.map((e) => e as String?).toList(),
+  optionalMap: (json['optionalMap'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String?)),
   arrayOfNullUnion: (json['arrayOfNullUnion'] as List<dynamic>?)?.map((e) => e).toList(),
   mapOfNullUnion: json['mapOfNullUnion'] as Map<String, dynamic>?,
 ); }
@@ -34,7 +34,7 @@ Map<String, dynamic> toJson() { return {
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('requiredArray') &&
       json.containsKey('requiredMap'); } 
-CollectionsContainingNullRequest copyWith({List<String?>? requiredArray, Map<String,String?>? requiredMap, List<String>? Function()? optionalArray, Map<String, String>? Function()? optionalMap, List<dynamic>? Function()? arrayOfNullUnion, Map<String, dynamic>? Function()? mapOfNullUnion, }) { return CollectionsContainingNullRequest(
+CollectionsContainingNullRequest copyWith({List<String?>? requiredArray, Map<String,String?>? requiredMap, List<String?>? Function()? optionalArray, Map<String, String?>? Function()? optionalMap, List<dynamic>? Function()? arrayOfNullUnion, Map<String, dynamic>? Function()? mapOfNullUnion, }) { return CollectionsContainingNullRequest(
   requiredArray: requiredArray ?? this.requiredArray,
   requiredMap: requiredMap ?? this.requiredMap,
   optionalArray: optionalArray != null ? optionalArray() : this.optionalArray,

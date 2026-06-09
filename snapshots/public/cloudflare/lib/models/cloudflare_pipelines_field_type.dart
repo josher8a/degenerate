@@ -12,7 +12,7 @@ factory CloudflarePipelinesFieldTypeType.fromJson(String json) { return switch (
   'string' => string,
   'binary' => binary,
   'Timestamp' => timestamp,
-  'json' => json,
+  'json' => $json,
   'Struct' => struct,
   'List' => list,
   _ => CloudflarePipelinesFieldTypeType$Unknown(json),
@@ -34,13 +34,13 @@ static const CloudflarePipelinesFieldTypeType binary = CloudflarePipelinesFieldT
 
 static const CloudflarePipelinesFieldTypeType timestamp = CloudflarePipelinesFieldTypeType$timestamp._();
 
-static const CloudflarePipelinesFieldTypeType json = CloudflarePipelinesFieldTypeType$json._();
+static const CloudflarePipelinesFieldTypeType $json = CloudflarePipelinesFieldTypeType$json._();
 
 static const CloudflarePipelinesFieldTypeType struct = CloudflarePipelinesFieldTypeType$struct._();
 
 static const CloudflarePipelinesFieldTypeType list = CloudflarePipelinesFieldTypeType$list._();
 
-static const List<CloudflarePipelinesFieldTypeType> values = [int32, int64, float32, float64, $bool, string, binary, timestamp, json, struct, list];
+static const List<CloudflarePipelinesFieldTypeType> values = [int32, int64, float32, float64, $bool, string, binary, timestamp, $json, struct, list];
 
 String get value;
 String toJson() => value;

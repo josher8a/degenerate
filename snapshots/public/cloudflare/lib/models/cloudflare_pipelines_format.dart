@@ -4,16 +4,16 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_json_format.dart';import 'package:pub_cloudflare/models/cloudflare_pipelines_parquet_format.dart';sealed class CloudflarePipelinesFormatType {const CloudflarePipelinesFormatType();
 
 factory CloudflarePipelinesFormatType.fromJson(String json) { return switch (json) {
-  'Json' => json,
+  'Json' => $json,
   'Parquet' => parquet,
   _ => CloudflarePipelinesFormatType$Unknown(json),
 }; }
 
-static const CloudflarePipelinesFormatType json = CloudflarePipelinesFormatType$json._();
+static const CloudflarePipelinesFormatType $json = CloudflarePipelinesFormatType$json._();
 
 static const CloudflarePipelinesFormatType parquet = CloudflarePipelinesFormatType$parquet._();
 
-static const List<CloudflarePipelinesFormatType> values = [json, parquet];
+static const List<CloudflarePipelinesFormatType> values = [$json, parquet];
 
 String get value;
 String toJson() => value;

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "WorkerCronTriggerApi" (2 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/worker_cron_trigger_get_cron_triggers_response/worker_cron_trigger_get_cron_triggers_response_result.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_schedule.dart';import 'package:pub_cloudflare/models/workers_script_name.dart';/// WorkerCronTriggerApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/create_worker_version_error.dart';import 'package:pub_cloudflare/models/worker_cron_trigger_get_cron_triggers_response/worker_cron_trigger_get_cron_triggers_response_result.dart';import 'package:pub_cloudflare/models/workers_identifier.dart';import 'package:pub_cloudflare/models/workers_schedule.dart';import 'package:pub_cloudflare/models/workers_script_name.dart';/// WorkerCronTriggerApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class WorkerCronTriggerApi with ApiExecutor {const WorkerCronTriggerApi(th
 /// Fetches Cron Triggers for a Worker.
 ///
 /// `GET /accounts/{account_id}/workers/scripts/{script_name}/schedules`
-Future<ApiResult<WorkerCronTriggerGetCronTriggersResponseResult, Never>> workerCronTriggerGetCronTriggers({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkerCronTriggerGetCronTriggersResponseResult, CreateWorkerVersionError>> workerCronTriggerGetCronTriggers({required WorkersIdentifier accountId, required WorkersScriptName scriptName, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkerCronTriggerGetCronTriggersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: CreateWorkerVersionError.fromResponse,
 );
  } 
 /// Update Cron Triggers
@@ -36,7 +37,7 @@ return execute(
 /// Updates Cron Triggers for a Worker.
 ///
 /// `PUT /accounts/{account_id}/workers/scripts/{script_name}/schedules`
-Future<ApiResult<WorkerCronTriggerGetCronTriggersResponseResult, Never>> workerCronTriggerUpdateCronTriggers({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required List<WorkersSchedule> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<WorkerCronTriggerGetCronTriggersResponseResult, CreateWorkerVersionError>> workerCronTriggerUpdateCronTriggers({required WorkersIdentifier accountId, required WorkersScriptName scriptName, required List<WorkersSchedule> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,6 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return WorkerCronTriggerGetCronTriggersResponseResult.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: CreateWorkerVersionError.fromResponse,
 );
  } 
  }

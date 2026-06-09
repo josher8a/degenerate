@@ -1,9 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CreateResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/context_management_param.dart';import 'package:pub_openai/models/conversation_param.dart';import 'package:pub_openai/models/conversation_param2.dart';import 'package:pub_openai/models/create_response/truncation.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/input_param.dart';import 'package:pub_openai/models/model_ids_responses.dart';import 'package:pub_openai/models/model_ids_shared.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/reasoning.dart';import 'package:pub_openai/models/response_stream_options.dart';import 'package:pub_openai/models/response_text_param.dart';import 'package:pub_openai/models/specific_apply_patch_param.dart';import 'package:pub_openai/models/specific_function_shell_param.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_choice_allowed.dart';import 'package:pub_openai/models/tool_choice_custom.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/tool_choice_param.dart';import 'package:pub_openai/models/tool_choice_types.dart';@immutable final class CreateResponse {const CreateResponse({this.previousResponseId, this.model, this.reasoning, this.background, this.maxOutputTokens, this.maxToolCalls, this.text, this.tools, this.toolChoice, this.prompt, this.truncation, this.input, this.include, this.parallelToolCalls, this.store, this.instructions, this.stream, this.streamOptions, this.conversation, this.contextManagement, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_openai/models/context_management_param.dart';import 'package:pub_openai/models/conversation_param.dart';import 'package:pub_openai/models/conversation_param2.dart';import 'package:pub_openai/models/create_response/prompt_cache_retention.dart';import 'package:pub_openai/models/create_response/truncation.dart';import 'package:pub_openai/models/include_enum.dart';import 'package:pub_openai/models/input_item.dart';import 'package:pub_openai/models/input_param.dart';import 'package:pub_openai/models/model_ids_responses.dart';import 'package:pub_openai/models/model_ids_shared.dart';import 'package:pub_openai/models/prompt.dart';import 'package:pub_openai/models/reasoning.dart';import 'package:pub_openai/models/response_stream_options.dart';import 'package:pub_openai/models/response_text_param.dart';import 'package:pub_openai/models/service_tier.dart';import 'package:pub_openai/models/specific_apply_patch_param.dart';import 'package:pub_openai/models/specific_function_shell_param.dart';import 'package:pub_openai/models/tool.dart';import 'package:pub_openai/models/tool_choice_allowed.dart';import 'package:pub_openai/models/tool_choice_custom.dart';import 'package:pub_openai/models/tool_choice_function.dart';import 'package:pub_openai/models/tool_choice_mcp.dart';import 'package:pub_openai/models/tool_choice_mode.dart';import 'package:pub_openai/models/tool_choice_param.dart';import 'package:pub_openai/models/tool_choice_types.dart';@immutable final class CreateResponse {const CreateResponse({this.metadata, this.topLogprobs, this.temperature, this.topP, this.user, this.safetyIdentifier, this.promptCacheKey, this.serviceTier, this.promptCacheRetention, this.previousResponseId, this.model, this.reasoning, this.background, this.maxOutputTokens, this.maxToolCalls, this.text, this.tools, this.toolChoice, this.prompt, this.truncation, this.input, this.include, this.parallelToolCalls, this.store, this.instructions, this.stream, this.streamOptions, this.conversation, this.contextManagement, });
 
 factory CreateResponse.fromJson(Map<String, dynamic> json) { return CreateResponse(
+  metadata: (json['metadata'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as String)),
+  topLogprobs: json['top_logprobs'] != null ? (json['top_logprobs'] as num).toInt() : null,
+  temperature: json['temperature'] != null ? (json['temperature'] as num).toDouble() : null,
+  topP: json['top_p'] != null ? (json['top_p'] as num).toDouble() : null,
+  user: json['user'] as String?,
+  safetyIdentifier: json['safety_identifier'] as String?,
+  promptCacheKey: json['prompt_cache_key'] as String?,
+  serviceTier: json['service_tier'] != null ? ServiceTier.fromJson(json['service_tier'] as String) : null,
+  promptCacheRetention: json['prompt_cache_retention'] != null ? PromptCacheRetention.fromJson(json['prompt_cache_retention'] as String) : null,
   previousResponseId: json['previous_response_id'] as String?,
   model: json['model'] != null ? OneOf2.parse(json['model'], fromA: (v) => OneOf2.parse(v, fromA: (v) => v as String, fromB: (v) => ModelIdsSharedVariant2.fromJson(v as String),), fromB: (v) => ResponsesOnlyModel.fromJson(v as String),) : null,
   reasoning: json['reasoning'] != null ? Reasoning.fromJson(json['reasoning'] as Map<String, dynamic>) : null,
@@ -25,6 +34,54 @@ factory CreateResponse.fromJson(Map<String, dynamic> json) { return CreateRespon
   conversation: json['conversation'] != null ? OneOf2.parse(json['conversation'], fromA: (v) => v as String, fromB: (v) => ConversationParam2.fromJson(v as Map<String, dynamic>),) : null,
   contextManagement: (json['context_management'] as List<dynamic>?)?.map((e) => ContextManagementParam.fromJson(e as Map<String, dynamic>)).toList(),
 ); }
+
+final Map<String,String>? metadata;
+
+/// An integer between 0 and 20 specifying the number of most likely tokens to
+/// return at each token position, each with an associated log probability.
+/// 
+final int? topLogprobs;
+
+/// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
+/// We generally recommend altering this or `top_p` but not both.
+/// 
+final double? temperature;
+
+/// An alternative to sampling with temperature, called nucleus sampling,
+/// where the model considers the results of the tokens with top_p probability
+/// mass. So 0.1 means only the tokens comprising the top 10% probability mass
+/// are considered.
+/// 
+/// We generally recommend altering this or `temperature` but not both.
+/// 
+final double? topP;
+
+/// This field is being replaced by `safety_identifier` and `prompt_cache_key`. Use `prompt_cache_key` instead to maintain caching optimizations.
+/// A stable identifier for your end-users.
+/// Used to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).
+/// 
+/// 
+/// Example: `'user-1234'`
+final String? user;
+
+/// A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies.
+/// The IDs should be a string that uniquely identifies each user, with a maximum length of 64 characters. We recommend hashing their username or email address, in order to avoid sending us any identifying information. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).
+/// 
+/// 
+/// Example: `'safety-identifier-1234'`
+final String? safetyIdentifier;
+
+/// Used by OpenAI to cache responses for similar requests to optimize your cache hit rates. Replaces the `user` field. [Learn more](/docs/guides/prompt-caching).
+/// 
+/// 
+/// Example: `'prompt-cache-key-1234'`
+final String? promptCacheKey;
+
+final ServiceTier? serviceTier;
+
+/// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
+/// 
+final PromptCacheRetention? promptCacheRetention;
 
 /// The unique ID of the previous response to the model. Use this to
 /// create multi-turn conversations. Learn more about
@@ -116,6 +173,15 @@ final ConversationParam? conversation;
 final List<ContextManagementParam>? contextManagement;
 
 Map<String, dynamic> toJson() { return {
+  'metadata': ?metadata,
+  'top_logprobs': ?topLogprobs,
+  'temperature': ?temperature,
+  'top_p': ?topP,
+  'user': ?user,
+  'safety_identifier': ?safetyIdentifier,
+  'prompt_cache_key': ?promptCacheKey,
+  if (serviceTier != null) 'service_tier': serviceTier?.toJson(),
+  if (promptCacheRetention != null) 'prompt_cache_retention': promptCacheRetention?.toJson(),
   'previous_response_id': ?previousResponseId,
   if (model != null) 'model': model?.toJson(),
   if (reasoning != null) 'reasoning': reasoning?.toJson(),
@@ -137,15 +203,43 @@ Map<String, dynamic> toJson() { return {
   if (conversation != null) 'conversation': conversation?.toJson(),
   if (contextManagement != null) 'context_management': contextManagement?.map((e) => e.toJson()).toList(),
 }; } 
-static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'previous_response_id', 'model', 'reasoning', 'background', 'max_output_tokens', 'max_tool_calls', 'text', 'tools', 'tool_choice', 'prompt', 'truncation', 'input', 'include', 'parallel_tool_calls', 'store', 'instructions', 'stream', 'stream_options', 'conversation', 'context_management'}.contains(key)); } 
+static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'metadata', 'top_logprobs', 'temperature', 'top_p', 'user', 'safety_identifier', 'prompt_cache_key', 'service_tier', 'prompt_cache_retention', 'previous_response_id', 'model', 'reasoning', 'background', 'max_output_tokens', 'max_tool_calls', 'text', 'tools', 'tool_choice', 'prompt', 'truncation', 'input', 'include', 'parallel_tool_calls', 'store', 'instructions', 'stream', 'stream_options', 'conversation', 'context_management'}.contains(key)); } 
 /// Constraint violations for this value (empty when valid).
 List<String> validate() { final errors = <String>[];
+final topLogprobs$ = topLogprobs;
+if (topLogprobs$ != null) {
+  if (topLogprobs$ < 0) { errors.add('topLogprobs: must be >= 0'); }
+  if (topLogprobs$ > 20) { errors.add('topLogprobs: must be <= 20'); }
+}
+final temperature$ = temperature;
+if (temperature$ != null) {
+  if (temperature$ < 0) { errors.add('temperature: must be >= 0'); }
+  if (temperature$ > 2) { errors.add('temperature: must be <= 2'); }
+}
+final topP$ = topP;
+if (topP$ != null) {
+  if (topP$ < 0) { errors.add('topP: must be >= 0'); }
+  if (topP$ > 1) { errors.add('topP: must be <= 1'); }
+}
+final safetyIdentifier$ = safetyIdentifier;
+if (safetyIdentifier$ != null) {
+  if (safetyIdentifier$.length > 64) { errors.add('safetyIdentifier: length must be <= 64'); }
+}
 final contextManagement$ = contextManagement;
 if (contextManagement$ != null) {
   if (contextManagement$.isEmpty) { errors.add('contextManagement: must have >= 1 items'); }
 }
 return errors; } 
-CreateResponse copyWith({String? Function()? previousResponseId, ModelIdsResponses? Function()? model, Reasoning? Function()? reasoning, bool? Function()? background, int? Function()? maxOutputTokens, int? Function()? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? Function()? tools, ToolChoiceParam? Function()? toolChoice, Prompt? Function()? prompt, Truncation? Function()? truncation, InputParam? Function()? input, List<IncludeEnum>? Function()? include, bool? Function()? parallelToolCalls, bool? Function()? store, String? Function()? instructions, bool? Function()? stream, ResponseStreamOptions? Function()? streamOptions, ConversationParam? Function()? conversation, List<ContextManagementParam>? Function()? contextManagement, }) { return CreateResponse(
+CreateResponse copyWith({Map<String, String>? Function()? metadata, int? Function()? topLogprobs, double? Function()? temperature, double? Function()? topP, String? Function()? user, String? Function()? safetyIdentifier, String? Function()? promptCacheKey, ServiceTier? Function()? serviceTier, PromptCacheRetention? Function()? promptCacheRetention, String? Function()? previousResponseId, ModelIdsResponses? Function()? model, Reasoning? Function()? reasoning, bool? Function()? background, int? Function()? maxOutputTokens, int? Function()? maxToolCalls, ResponseTextParam? Function()? text, List<Tool>? Function()? tools, ToolChoiceParam? Function()? toolChoice, Prompt? Function()? prompt, Truncation? Function()? truncation, InputParam? Function()? input, List<IncludeEnum>? Function()? include, bool? Function()? parallelToolCalls, bool? Function()? store, String? Function()? instructions, bool? Function()? stream, ResponseStreamOptions? Function()? streamOptions, ConversationParam? Function()? conversation, List<ContextManagementParam>? Function()? contextManagement, }) { return CreateResponse(
+  metadata: metadata != null ? metadata() : this.metadata,
+  topLogprobs: topLogprobs != null ? topLogprobs() : this.topLogprobs,
+  temperature: temperature != null ? temperature() : this.temperature,
+  topP: topP != null ? topP() : this.topP,
+  user: user != null ? user() : this.user,
+  safetyIdentifier: safetyIdentifier != null ? safetyIdentifier() : this.safetyIdentifier,
+  promptCacheKey: promptCacheKey != null ? promptCacheKey() : this.promptCacheKey,
+  serviceTier: serviceTier != null ? serviceTier() : this.serviceTier,
+  promptCacheRetention: promptCacheRetention != null ? promptCacheRetention() : this.promptCacheRetention,
   previousResponseId: previousResponseId != null ? previousResponseId() : this.previousResponseId,
   model: model != null ? model() : this.model,
   reasoning: reasoning != null ? reasoning() : this.reasoning,
@@ -169,6 +263,15 @@ CreateResponse copyWith({String? Function()? previousResponseId, ModelIdsRespons
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is CreateResponse &&
+          metadata == other.metadata &&
+          topLogprobs == other.topLogprobs &&
+          temperature == other.temperature &&
+          topP == other.topP &&
+          user == other.user &&
+          safetyIdentifier == other.safetyIdentifier &&
+          promptCacheKey == other.promptCacheKey &&
+          serviceTier == other.serviceTier &&
+          promptCacheRetention == other.promptCacheRetention &&
           previousResponseId == other.previousResponseId &&
           model == other.model &&
           reasoning == other.reasoning &&
@@ -190,8 +293,8 @@ CreateResponse copyWith({String? Function()? previousResponseId, ModelIdsRespons
           conversation == other.conversation &&
           listEquals(contextManagement, other.contextManagement);
 
-@override int get hashCode => Object.hash(previousResponseId, model, reasoning, background, maxOutputTokens, maxToolCalls, text, Object.hashAll(tools ?? const []), toolChoice, prompt, truncation, input, Object.hashAll(include ?? const []), parallelToolCalls, store, instructions, stream, streamOptions, conversation, Object.hashAll(contextManagement ?? const []));
+@override int get hashCode => Object.hashAll([metadata, topLogprobs, temperature, topP, user, safetyIdentifier, promptCacheKey, serviceTier, promptCacheRetention, previousResponseId, model, reasoning, background, maxOutputTokens, maxToolCalls, text, Object.hashAll(tools ?? const []), toolChoice, prompt, truncation, input, Object.hashAll(include ?? const []), parallelToolCalls, store, instructions, stream, streamOptions, conversation, Object.hashAll(contextManagement ?? const [])]);
 
-@override String toString() => 'CreateResponse(\n  previousResponseId: $previousResponseId,\n  model: $model,\n  reasoning: $reasoning,\n  background: $background,\n  maxOutputTokens: $maxOutputTokens,\n  maxToolCalls: $maxToolCalls,\n  text: $text,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  prompt: $prompt,\n  truncation: $truncation,\n  input: $input,\n  include: $include,\n  parallelToolCalls: $parallelToolCalls,\n  store: $store,\n  instructions: $instructions,\n  stream: $stream,\n  streamOptions: $streamOptions,\n  conversation: $conversation,\n  contextManagement: $contextManagement,\n)';
+@override String toString() => 'CreateResponse(\n  metadata: $metadata,\n  topLogprobs: $topLogprobs,\n  temperature: $temperature,\n  topP: $topP,\n  user: $user,\n  safetyIdentifier: $safetyIdentifier,\n  promptCacheKey: $promptCacheKey,\n  serviceTier: $serviceTier,\n  promptCacheRetention: $promptCacheRetention,\n  previousResponseId: $previousResponseId,\n  model: $model,\n  reasoning: $reasoning,\n  background: $background,\n  maxOutputTokens: $maxOutputTokens,\n  maxToolCalls: $maxToolCalls,\n  text: $text,\n  tools: $tools,\n  toolChoice: $toolChoice,\n  prompt: $prompt,\n  truncation: $truncation,\n  input: $input,\n  include: $include,\n  parallelToolCalls: $parallelToolCalls,\n  store: $store,\n  instructions: $instructions,\n  stream: $stream,\n  streamOptions: $streamOptions,\n  conversation: $conversation,\n  contextManagement: $contextManagement,\n)';
 
  }

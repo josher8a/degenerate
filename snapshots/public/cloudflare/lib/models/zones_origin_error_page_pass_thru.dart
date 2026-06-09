@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesOriginErrorPagePassThru
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_origin_error_page_pass_thru_value.dart';/// Turn on or off Cloudflare error pages generated from issues sent from the origin server. If enabled, this setting triggers error pages issued by the origin.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Turn on or off Cloudflare error pages generated from issues sent from the origin server. If enabled, this setting triggers error pages issued by the origin.
 /// 
 sealed class ZonesOriginErrorPagePassThruId {const ZonesOriginErrorPagePassThruId();
 
@@ -59,7 +59,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? originEr
 
 factory ZonesOriginErrorPagePassThru.fromJson(Map<String, dynamic> json) { return ZonesOriginErrorPagePassThru(
   id: json['id'] != null ? ZonesOriginErrorPagePassThruId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesOriginErrorPagePassThruValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Turn on or off Cloudflare error pages generated from issues sent from the origin server. If enabled, this setting triggers error pages issued by the origin.
@@ -72,14 +72,14 @@ final ZonesOriginErrorPagePassThruId? id;
 /// 
 /// 
 /// Example: `'on'`
-final ZonesOriginErrorPagePassThruValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesOriginErrorPagePassThru copyWith({ZonesOriginErrorPagePassThruId? Function()? id, ZonesOriginErrorPagePassThruValue? Function()? value, }) { return ZonesOriginErrorPagePassThru(
+ZonesOriginErrorPagePassThru copyWith({ZonesOriginErrorPagePassThruId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesOriginErrorPagePassThru(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

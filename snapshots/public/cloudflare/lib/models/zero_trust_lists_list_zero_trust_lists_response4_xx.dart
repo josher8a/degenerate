@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZeroTrustListsListZeroTrustListsResponse4Xx
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_messages2.dart';@immutable final class ZeroTrustListsListZeroTrustListsResponse4Xx {const ZeroTrustListsListZeroTrustListsResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_messages2.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_result_info.dart';@immutable final class ZeroTrustListsListZeroTrustListsResponse4Xx {const ZeroTrustListsListZeroTrustListsResponse4Xx({required this.errors, required this.messages, required this.success, required this.result, this.resultInfo, });
 
 factory ZeroTrustListsListZeroTrustListsResponse4Xx.fromJson(Map<String, dynamic> json) { return ZeroTrustListsListZeroTrustListsResponse4Xx(
   errors: (json['errors'] as List<dynamic>).map((e) => ZeroTrustGatewayMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => ZeroTrustGatewayMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
+  resultInfo: json['result_info'] != null ? ZeroTrustGatewayResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 /// Example: `[{code: 7003, message: No route for the URI}]`
@@ -16,38 +17,43 @@ final List<ZeroTrustGatewayMessages2> errors;
 /// Example: `[]`
 final List<ZeroTrustGatewayMessages2> messages;
 
-final Map<String,dynamic>? result;
-
 /// Indicate whether the API call was successful.
 /// 
 /// Example: `false`
 final bool success;
 
+final ZeroTrustGatewayResultInfo? resultInfo;
+
+final Map<String,dynamic>? result;
+
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': result,
   'success': success,
+  if (resultInfo != null) 'result_info': resultInfo?.toJson(),
+  'result': result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-ZeroTrustListsListZeroTrustListsResponse4Xx copyWith({List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return ZeroTrustListsListZeroTrustListsResponse4Xx(
+      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('result'); } 
+ZeroTrustListsListZeroTrustListsResponse4Xx copyWith({List<ZeroTrustGatewayMessages2>? errors, List<ZeroTrustGatewayMessages2>? messages, bool? success, ZeroTrustGatewayResultInfo? Function()? resultInfo, Map<String, dynamic>? Function()? result, }) { return ZeroTrustListsListZeroTrustListsResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
-  result: result != null ? result() : this.result,
   success: success ?? this.success,
+  resultInfo: resultInfo != null ? resultInfo() : this.resultInfo,
+  result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is ZeroTrustListsListZeroTrustListsResponse4Xx &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
-          result == other.result &&
-          success == other.success;
+          success == other.success &&
+          resultInfo == other.resultInfo &&
+          result == other.result;
 
-@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, resultInfo, result);
 
-@override String toString() => 'ZeroTrustListsListZeroTrustListsResponse4Xx(errors: $errors, messages: $messages, result: $result, success: $success)';
+@override String toString() => 'ZeroTrustListsListZeroTrustListsResponse4Xx(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)';
 
  }

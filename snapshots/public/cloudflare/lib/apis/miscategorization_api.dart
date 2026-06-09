@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "MiscategorizationApi" (1 operation)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/intel_identifier.dart';import 'package:pub_cloudflare/models/intel_miscategorization.dart';import 'package:pub_cloudflare/models/response_common40.dart';/// MiscategorizationApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/miscategorization_create_miscategorization_error.dart';import 'package:pub_cloudflare/models/intel_identifier.dart';import 'package:pub_cloudflare/models/intel_miscategorization.dart';import 'package:pub_cloudflare/models/response_common40.dart';/// MiscategorizationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class MiscategorizationApi with ApiExecutor {const MiscategorizationApi(th
 /// Allows you to submit requests to change a domain’s category.
 ///
 /// `POST /accounts/{account_id}/intel/miscategorization`
-Future<ApiResult<ResponseCommon40, Never>> miscategorizationCreateMiscategorization({required IntelIdentifier accountId, required IntelMiscategorization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon40, MiscategorizationCreateMiscategorizationError>> miscategorizationCreateMiscategorization({required IntelIdentifier accountId, required IntelMiscategorization body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -30,6 +30,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon40.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: MiscategorizationCreateMiscategorizationError.fromResponse,
 );
  } 
  }

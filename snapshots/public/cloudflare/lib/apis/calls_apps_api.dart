@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "CallsAppsApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/calls_account_identifier.dart';import 'package:pub_cloudflare/models/calls_app.dart';import 'package:pub_cloudflare/models/calls_app_editable_fields.dart';import 'package:pub_cloudflare/models/calls_app_with_secret.dart';import 'package:pub_cloudflare/models/calls_identifier.dart';/// CallsAppsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/calls_account_identifier.dart';import 'package:pub_cloudflare/models/calls_app.dart';import 'package:pub_cloudflare/models/calls_app_editable_fields.dart';import 'package:pub_cloudflare/models/calls_app_with_secret.dart';import 'package:pub_cloudflare/models/calls_identifier.dart';import 'package:pub_cloudflare/models/errors/calls_apps_list_error.dart';/// CallsAppsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class CallsAppsApi with ApiExecutor {const CallsAppsApi(this.apiConfig);
 /// Lists all apps in the Cloudflare account
 ///
 /// `GET /accounts/{account_id}/calls/apps`
-Future<ApiResult<List<CallsApp>?, Never>> callsAppsList({required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<CallsApp>?, CallsAppsListError>> callsAppsList({required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => CallsApp.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: CallsAppsListError.fromResponse,
 );
  } 
 /// Create a new app
@@ -60,7 +61,7 @@ return execute(
 /// Fetches details for a single Calls app.
 ///
 /// `GET /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<CallsApp?, Never>> callsAppsRetrieveAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsApp?, CallsAppsListError>> callsAppsRetrieveAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,6 +76,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? CallsApp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: CallsAppsListError.fromResponse,
 );
  } 
 /// Edit app details
@@ -82,7 +84,7 @@ return execute(
 /// Edit details for a single app.
 ///
 /// `PUT /accounts/{account_id}/calls/apps/{app_id}`
-Future<ApiResult<CallsApp?, Never>> callsAppsUpdateAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, required CallsAppEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<CallsApp?, CallsAppsListError>> callsAppsUpdateAppDetails({required CallsIdentifier appId, required CallsAccountIdentifier accountId, required CallsAppEditableFields body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,6 +101,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? CallsApp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: CallsAppsListError.fromResponse,
 );
  } 
 /// Delete app

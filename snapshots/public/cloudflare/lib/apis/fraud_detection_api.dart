@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "FraudDetectionApi" (2 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/fraud_fraud_settings.dart';import 'package:pub_cloudflare/models/fraud_identifier.dart';/// FraudDetectionApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/fraud_detection_zone_get_settings_error.dart';import 'package:pub_cloudflare/models/errors/fraud_detection_zone_update_settings_error.dart';import 'package:pub_cloudflare/models/fraud_fraud_settings.dart';import 'package:pub_cloudflare/models/fraud_identifier.dart';/// FraudDetectionApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class FraudDetectionApi with ApiExecutor {const FraudDetectionApi(this.api
 /// Retrieve Fraud Detection settings for a zone.
 ///
 /// `GET /zones/{zone_id}/fraud_detection/settings`
-Future<ApiResult<FraudFraudSettings?, Never>> fraudDetectionZoneGetSettings({required FraudIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FraudFraudSettings?, FraudDetectionZoneGetSettingsError>> fraudDetectionZoneGetSettings({required FraudIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? FraudFraudSettings.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: FraudDetectionZoneGetSettingsError.fromResponse,
 );
  } 
 /// Update Fraud Detection Settings
@@ -41,7 +42,7 @@ return execute(
 /// 
 ///
 /// `PUT /zones/{zone_id}/fraud_detection/settings`
-Future<ApiResult<FraudFraudSettings?, Never>> fraudDetectionZoneUpdateSettings({required FraudIdentifier zoneId, required FraudFraudSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<FraudFraudSettings?, FraudDetectionZoneUpdateSettingsError>> fraudDetectionZoneUpdateSettings({required FraudIdentifier zoneId, required FraudFraudSettings body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -58,6 +59,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? FraudFraudSettings.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: FraudDetectionZoneUpdateSettingsError.fromResponse,
 );
  } 
  }

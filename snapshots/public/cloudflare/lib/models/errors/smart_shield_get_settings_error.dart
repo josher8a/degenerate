@@ -6,6 +6,7 @@ factory SmartShieldGetSettingsError.fromResponse(ApiResponse response) {     try
       return switch (response.statusCode) {
         500 => SmartShieldGetSettingsError$500(ResponseCommonFailure65.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
         502 => SmartShieldGetSettingsError$502(ResponseCommonFailure65.fromJson(jsonDecode(response.body) as Map<String, dynamic>)),
+        _ when response.statusCode >= 400 && response.statusCode <= 499 => SmartShieldGetSettingsError$4XX(ResponseCommonFailure65.fromJson(jsonDecode(response.body) as Map<String, dynamic>), response.statusCode),
         _ => SmartShieldGetSettingsError$Unknown(response.statusCode, response.body),
       };
     } on Object {
@@ -32,6 +33,15 @@ final ResponseCommonFailure65 error;
 @override Object get typedError => error;
 
 @override int get statusCode => 502;
+
+ }
+final class SmartShieldGetSettingsError$4XX extends SmartShieldGetSettingsError {const SmartShieldGetSettingsError$4XX(this.error, this.statusCode, );
+
+final ResponseCommonFailure65 error;
+
+@override final int statusCode;
+
+@override Object get typedError => error;
 
  }
 final class SmartShieldGetSettingsError$Unknown extends SmartShieldGetSettingsError {const SmartShieldGetSettingsError$Unknown(this.statusCode, this.rawBody, );

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZeroTrustGatewayCategoriesApi" (1 operation)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_categories.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_identifier.dart';/// ZeroTrustGatewayCategoriesApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_categories_list_categories_error.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_categories.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_identifier.dart';/// ZeroTrustGatewayCategoriesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ZeroTrustGatewayCategoriesApi with ApiExecutor {const ZeroTrustGatew
 /// List all categories.
 ///
 /// `GET /accounts/{account_id}/gateway/categories`
-Future<ApiResult<List<ZeroTrustGatewayCategories>?, Never>> zeroTrustGatewayCategoriesListCategories({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ZeroTrustGatewayCategories>?, ZeroTrustGatewayCategoriesListCategoriesError>> zeroTrustGatewayCategoriesListCategories({required ZeroTrustGatewayComponentsSchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayCategories.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: ZeroTrustGatewayCategoriesListCategoriesError.fromResponse,
 );
  } 
  }

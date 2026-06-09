@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AccessScimUpdateLogsApi" (1 operation)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_direction.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_limit.dart';import 'package:pub_cloudflare/models/access_request_method2.dart';import 'package:pub_cloudflare/models/access_requests_cf_resource_id.dart';import 'package:pub_cloudflare/models/access_requests_idp_resource_id.dart';import 'package:pub_cloudflare/models/access_requests_status2.dart';import 'package:pub_cloudflare/models/access_resource_group_name.dart';import 'package:pub_cloudflare/models/access_resource_type2.dart';import 'package:pub_cloudflare/models/access_resource_user_email.dart';import 'package:pub_cloudflare/models/access_responses.dart';import 'package:pub_cloudflare/models/access_since.dart';import 'package:pub_cloudflare/models/access_until.dart';/// AccessScimUpdateLogsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/access_direction.dart';import 'package:pub_cloudflare/models/access_identifier.dart';import 'package:pub_cloudflare/models/access_limit.dart';import 'package:pub_cloudflare/models/access_request_method2.dart';import 'package:pub_cloudflare/models/access_requests_cf_resource_id.dart';import 'package:pub_cloudflare/models/access_requests_idp_resource_id.dart';import 'package:pub_cloudflare/models/access_requests_status2.dart';import 'package:pub_cloudflare/models/access_resource_group_name.dart';import 'package:pub_cloudflare/models/access_resource_type2.dart';import 'package:pub_cloudflare/models/access_resource_user_email.dart';import 'package:pub_cloudflare/models/access_responses.dart';import 'package:pub_cloudflare/models/access_since.dart';import 'package:pub_cloudflare/models/access_until.dart';import 'package:pub_cloudflare/models/errors/access_applications_add_an_application_error.dart';/// AccessScimUpdateLogsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class AccessScimUpdateLogsApi with ApiExecutor {const AccessScimUpdateLogs
 /// Lists Access SCIM update logs that maintain a record of updates made to User and Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
 ///
 /// `GET /accounts/{account_id}/access/logs/scim/updates`
-Future<ApiResult<List<AccessResponses>?, Never>> accessScimUpdateLogsListAccessScimUpdateLogs({required AccessIdentifier accountId, required List<String> idpId, AccessLimit? limit, AccessDirection? direction, AccessSince? since, AccessUntil? until, List<AccessRequestsStatus2>? status, List<AccessResourceType2>? resourceType, List<AccessRequestMethod2>? requestMethod, AccessResourceUserEmail? resourceUserEmail, AccessResourceGroupName? resourceGroupName, AccessRequestsCfResourceId? cfResourceId, AccessRequestsIdpResourceId? idpResourceId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<AccessResponses>?, AccessApplicationsAddAnApplicationError>> accessScimUpdateLogsListAccessScimUpdateLogs({required AccessIdentifier accountId, required List<String> idpId, AccessLimit? limit, AccessDirection? direction, AccessSince? since, AccessUntil? until, List<AccessRequestsStatus2>? status, List<AccessResourceType2>? resourceType, List<AccessRequestMethod2>? requestMethod, AccessResourceUserEmail? resourceUserEmail, AccessResourceGroupName? resourceGroupName, AccessRequestsCfResourceId? cfResourceId, AccessRequestsIdpResourceId? idpResourceId, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (limit != null) {
   queryParameters['limit'] = limit.toJson().toString();
@@ -82,6 +82,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => AccessResponses.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: AccessApplicationsAddAnApplicationError.fromResponse,
 );
  } 
  }

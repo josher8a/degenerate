@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "BillableUsageApi" (1 operation)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/identifier2.dart';import 'package:pub_cloudflare/models/usage_record.dart';/// BillableUsageApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/billable_usage_get_paygo_account_usage_error.dart';import 'package:pub_cloudflare/models/identifier2.dart';import 'package:pub_cloudflare/models/usage_record.dart';/// BillableUsageApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -28,7 +28,7 @@ final class BillableUsageApi with ApiExecutor {const BillableUsageApi(this.apiCo
 /// 
 ///
 /// `GET /accounts/{account_id}/billing/usage/paygo`
-Future<ApiResult<List<UsageRecord>, Never>> billableUsageGetPaygoAccountUsage({required Identifier2 accountId, String? from, String? to, int? lastYearPeriodStart, int? lastMonthPeriodStart, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<UsageRecord>, BillableUsageGetPaygoAccountUsageError>> billableUsageGetPaygoAccountUsage({required Identifier2 accountId, String? from, String? to, int? lastYearPeriodStart, int? lastMonthPeriodStart, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (from != null) {
   queryParameters['from'] = from;
@@ -60,6 +60,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>).map((e) => UsageRecord.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: BillableUsageGetPaygoAccountUsageError.fromResponse,
 );
  } 
  }

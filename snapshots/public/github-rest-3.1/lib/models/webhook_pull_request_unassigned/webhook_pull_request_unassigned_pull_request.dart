@@ -8,7 +8,7 @@ factory WebhookPullRequestUnassignedPullRequest.fromJson(Map<String, dynamic> js
   activeLockReason: json['active_lock_reason'] != null ? ActiveLockReason.fromJson(json['active_lock_reason'] as String) : null,
   additions: json['additions'] != null ? (json['additions'] as num).toInt() : null,
   assignee: json['assignee'] != null ? WebhooksIssueAssignee.fromJson(json['assignee'] as Map<String, dynamic>) : null,
-  assignees: (json['assignees'] as List<dynamic>).map((e) => WebhooksPullRequest5Assignees.fromJson(e as Map<String, dynamic>)).toList(),
+  assignees: (json['assignees'] as List<dynamic>).map((e) => e == null ? null : WebhooksPullRequest5Assignees.fromJson(e as Map<String, dynamic>)).toList(),
   authorAssociation: AuthorAssociation.fromJson(json['author_association'] as String),
   autoMerge: json['auto_merge'] != null ? WebhooksPullRequest5AutoMerge.fromJson(json['auto_merge'] as Map<String, dynamic>) : null,
   base: WebhookPullRequestUnassignedPullRequestBase.fromJson(json['base'] as Map<String, dynamic>),

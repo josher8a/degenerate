@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "TotalTlsApi" (2 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_total_tls_settings_response/tls_certificates_and_hostnames_total_tls_settings_response_result.dart';import 'package:pub_cloudflare/models/total_tls_enable_or_disable_total_tls_request.dart';/// TotalTlsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/total_tls_enable_or_disable_total_tls_error.dart';import 'package:pub_cloudflare/models/errors/total_tls_settings_details_error.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_total_tls_settings_response/tls_certificates_and_hostnames_total_tls_settings_response_result.dart';import 'package:pub_cloudflare/models/total_tls_enable_or_disable_total_tls_request.dart';/// TotalTlsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class TotalTlsApi with ApiExecutor {const TotalTlsApi(this.apiConfig);
 /// Get Total TLS Settings for a Zone.
 ///
 /// `GET /zones/{zone_id}/acm/total_tls`
-Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, Never>> totalTlsSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, TotalTlsSettingsDetailsError>> totalTlsSettingsDetails({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TotalTlsSettingsDetailsError.fromResponse,
 );
  } 
 /// Enable or Disable Total TLS
@@ -36,7 +37,7 @@ return execute(
 /// Set Total TLS Settings or disable the feature for a Zone.
 ///
 /// `POST /zones/{zone_id}/acm/total_tls`
-Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, Never>> totalTlsEnableOrDisableTotalTls({required TlsCertificatesAndHostnamesIdentifier zoneId, required TotalTlsEnableOrDisableTotalTlsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult?, TotalTlsEnableOrDisableTotalTlsError>> totalTlsEnableOrDisableTotalTls({required TlsCertificatesAndHostnamesIdentifier zoneId, required TotalTlsEnableOrDisableTotalTlsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,6 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? TlsCertificatesAndHostnamesTotalTlsSettingsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TotalTlsEnableOrDisableTotalTlsError.fromResponse,
 );
  } 
  }

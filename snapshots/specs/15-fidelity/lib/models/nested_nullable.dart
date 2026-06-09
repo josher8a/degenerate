@@ -5,7 +5,7 @@ import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final cla
 
 factory NestedNullable.fromJson(Map<String, dynamic> json) { return NestedNullable(
   tags: (json['tags'] as List<dynamic>).map((e) => e as String).toList(),
-  scores: (json['scores'] as List<dynamic>).map((e) => (e as num).toInt()).toList(),
+  scores: (json['scores'] as List<dynamic>).map((e) => e == null ? null : (e as num).toInt()).toList(),
   nullableList: (json['nullableList'] as List<dynamic>?)?.map((e) => e as String).toList(),
   optionalList: (json['optionalList'] as List<dynamic>?)?.map((e) => e as String).toList(),
 ); }

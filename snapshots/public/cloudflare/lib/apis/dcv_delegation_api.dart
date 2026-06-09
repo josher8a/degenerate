@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "DcvDelegationApi" (1 operation)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_uuid_object.dart';/// DcvDelegationApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/dcv_delegation_uuid_get_error.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_identifier.dart';import 'package:pub_cloudflare/models/tls_certificates_and_hostnames_uuid_object.dart';/// DcvDelegationApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class DcvDelegationApi with ApiExecutor {const DcvDelegationApi(this.apiCo
 /// Retrieve the account and zone specific unique identifier used as part of the CNAME target for DCV Delegation.
 ///
 /// `GET /zones/{zone_id}/dcv_delegation/uuid`
-Future<ApiResult<TlsCertificatesAndHostnamesUuidObject?, Never>> dcvDelegationUuidGet({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<TlsCertificatesAndHostnamesUuidObject?, DcvDelegationUuidGetError>> dcvDelegationUuidGet({required TlsCertificatesAndHostnamesIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? TlsCertificatesAndHostnamesUuidObject.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DcvDelegationUuidGetError.fromResponse,
 );
  } 
  }

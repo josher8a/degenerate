@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "DlpSettingsApi" (8 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dlp_settings.dart';import 'package:pub_cloudflare/models/dlp_dlp_settings_update.dart';import 'package:pub_cloudflare/models/dlp_limits.dart';import 'package:pub_cloudflare/models/dlp_payload_log_setting.dart';import 'package:pub_cloudflare/models/dlp_payload_log_setting_update_legacy.dart';import 'package:pub_cloudflare/models/dlp_regex_validation_query.dart';import 'package:pub_cloudflare/models/dlp_regex_validation_result.dart';/// DlpSettingsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dlp_dlp_settings.dart';import 'package:pub_cloudflare/models/dlp_dlp_settings_update.dart';import 'package:pub_cloudflare/models/dlp_limits.dart';import 'package:pub_cloudflare/models/dlp_payload_log_setting.dart';import 'package:pub_cloudflare/models/dlp_payload_log_setting_update_legacy.dart';import 'package:pub_cloudflare/models/dlp_regex_validation_query.dart';import 'package:pub_cloudflare/models/dlp_regex_validation_result.dart';import 'package:pub_cloudflare/models/errors/dlp_datasets_create_error.dart';/// DlpSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -12,7 +12,7 @@ final class DlpSettingsApi with ApiExecutor {const DlpSettingsApi(this.apiConfig
 /// Fetch limits associated with DLP for account
 ///
 /// `GET /accounts/{account_id}/dlp/limits`
-Future<ApiResult<DlpLimits?, Never>> dlpLimitsGet({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpLimits?, DlpDatasetsCreateError>> dlpLimitsGet({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -27,6 +27,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DlpLimits.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DlpDatasetsCreateError.fromResponse,
 );
  } 
 /// Validate a DLP regex pattern
@@ -37,7 +38,7 @@ return execute(
 /// number of characters that can be matched using a range, e.g. `{1,100}`.
 ///
 /// `POST /accounts/{account_id}/dlp/patterns/validate`
-Future<ApiResult<DlpRegexValidationResult?, Never>> dlpPatternValidate({required String accountId, required DlpRegexValidationQuery body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpRegexValidationResult?, DlpDatasetsCreateError>> dlpPatternValidate({required String accountId, required DlpRegexValidationQuery body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -54,12 +55,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DlpRegexValidationResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DlpDatasetsCreateError.fromResponse,
 );
  } 
 /// Get payload log settings
 ///
 /// `GET /accounts/{account_id}/dlp/payload_log`
-Future<ApiResult<DlpPayloadLogSetting?, Never>> dlpPayloadLogGet({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpPayloadLogSetting?, DlpDatasetsCreateError>> dlpPayloadLogGet({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -74,12 +76,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DlpPayloadLogSetting.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DlpDatasetsCreateError.fromResponse,
 );
  } 
 /// Set payload log settings
 ///
 /// `PUT /accounts/{account_id}/dlp/payload_log`
-Future<ApiResult<DlpPayloadLogSetting?, Never>> dlpPayloadLogPut({required String accountId, required DlpPayloadLogSettingUpdateLegacy body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpPayloadLogSetting?, DlpDatasetsCreateError>> dlpPayloadLogPut({required String accountId, required DlpPayloadLogSettingUpdateLegacy body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -96,12 +99,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DlpPayloadLogSetting.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DlpDatasetsCreateError.fromResponse,
 );
  } 
 /// Get DLP account-level settings.
 ///
 /// `GET /accounts/{account_id}/dlp/settings`
-Future<ApiResult<DlpDlpSettings?, Never>> dlpSettingsGet({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDlpSettings?, DlpDatasetsCreateError>> dlpSettingsGet({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -116,6 +120,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DlpDlpSettings.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DlpDatasetsCreateError.fromResponse,
 );
  } 
 /// Update DLP account-level settings (full replacement).
@@ -123,7 +128,7 @@ return execute(
 /// Missing fields are reset to initial (unconfigured) values.
 ///
 /// `PUT /accounts/{account_id}/dlp/settings`
-Future<ApiResult<DlpDlpSettings?, Never>> dlpSettingsUpdate({required String accountId, required DlpDlpSettingsUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDlpSettings?, DlpDatasetsCreateError>> dlpSettingsUpdate({required String accountId, required DlpDlpSettingsUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -140,6 +145,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DlpDlpSettings.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DlpDatasetsCreateError.fromResponse,
 );
  } 
 /// Partially update DLP account-level settings.
@@ -147,7 +153,7 @@ return execute(
 /// Missing fields keep their existing values.
 ///
 /// `PATCH /accounts/{account_id}/dlp/settings`
-Future<ApiResult<DlpDlpSettings?, Never>> dlpSettingsEdit({required String accountId, required DlpDlpSettingsUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDlpSettings?, DlpDatasetsCreateError>> dlpSettingsEdit({required String accountId, required DlpDlpSettingsUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -164,12 +170,13 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DlpDlpSettings.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DlpDatasetsCreateError.fromResponse,
 );
  } 
 /// Delete (reset) DLP account-level settings to initial values.
 ///
 /// `DELETE /accounts/{account_id}/dlp/settings`
-Future<ApiResult<DlpDlpSettings?, Never>> dlpSettingsDelete({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DlpDlpSettings?, DlpDatasetsCreateError>> dlpSettingsDelete({required String accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -184,6 +191,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DlpDlpSettings.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DlpDatasetsCreateError.fromResponse,
 );
  } 
  }

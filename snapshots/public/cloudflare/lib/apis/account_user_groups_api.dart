@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "AccountUserGroupsApi" (9 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_user_group_member_create_request.dart';import 'package:pub_cloudflare/models/account_user_group_members_update_request.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_create_user_group_body.dart';import 'package:pub_cloudflare/models/iam_update_user_group_body.dart';import 'package:pub_cloudflare/models/iam_user_group.dart';import 'package:pub_cloudflare/models/iam_user_group_member.dart';import 'package:pub_cloudflare/models/response_single_id4/response_single_id4_result.dart';/// AccountUserGroupsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_user_group_member_create_request.dart';import 'package:pub_cloudflare/models/account_user_group_members_update_request.dart';import 'package:pub_cloudflare/models/errors/tokens_create_token_error.dart';import 'package:pub_cloudflare/models/iam_common_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_create_user_group_body.dart';import 'package:pub_cloudflare/models/iam_update_user_group_body.dart';import 'package:pub_cloudflare/models/iam_user_group.dart';import 'package:pub_cloudflare/models/iam_user_group_member.dart';import 'package:pub_cloudflare/models/response_single_id4/response_single_id4_result.dart';/// AccountUserGroupsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class AccountUserGroupsApi with ApiExecutor {const AccountUserGroupsApi(th
 /// List all the user groups for an account.
 ///
 /// `GET /accounts/{account_id}/iam/user_groups`
-Future<ApiResult<List<IamUserGroup>?, Never>> accountUserGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, String? fuzzyName, double? page, double? perPage, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IamUserGroup>?, TokensCreateTokenError>> accountUserGroupList({required IamCommonComponentsSchemasIdentifier accountId, IamCommonComponentsSchemasIdentifier? id, String? name, String? fuzzyName, double? page, double? perPage, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (id != null) {
   queryParameters['id'] = id.toJson();
@@ -52,6 +52,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => IamUserGroup.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// Create User Group
@@ -59,7 +60,7 @@ return execute(
 /// Create a new user group under the specified account.
 ///
 /// `POST /accounts/{account_id}/iam/user_groups`
-Future<ApiResult<IamUserGroup?, Never>> accountUserGroupCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamCreateUserGroupBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamUserGroup?, TokensCreateTokenError>> accountUserGroupCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamCreateUserGroupBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -76,6 +77,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? IamUserGroup.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// User Group Details
@@ -83,7 +85,7 @@ return execute(
 /// Get information about a specific user group in an account.
 ///
 /// `GET /accounts/{account_id}/iam/user_groups/{user_group_id}`
-Future<ApiResult<IamUserGroup?, Never>> accountUserGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamUserGroup?, TokensCreateTokenError>> accountUserGroupDetails({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -98,6 +100,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? IamUserGroup.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// Update User Group
@@ -105,7 +108,7 @@ return execute(
 /// Modify an existing user group.
 ///
 /// `PUT /accounts/{account_id}/iam/user_groups/{user_group_id}`
-Future<ApiResult<IamUserGroup?, Never>> accountUserGroupUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required IamUpdateUserGroupBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamUserGroup?, TokensCreateTokenError>> accountUserGroupUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required IamUpdateUserGroupBody body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -122,6 +125,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? IamUserGroup.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// Remove User Group
@@ -129,7 +133,7 @@ return execute(
 /// Remove a user group from an account.
 ///
 /// `DELETE /accounts/{account_id}/iam/user_groups/{user_group_id}`
-Future<ApiResult<ResponseSingleId4Result?, Never>> accountUserGroupDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseSingleId4Result?, TokensCreateTokenError>> accountUserGroupDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -144,6 +148,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ResponseSingleId4Result.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// List User Group Members
@@ -151,7 +156,7 @@ return execute(
 /// List all the members attached to a user group.
 ///
 /// `GET /accounts/{account_id}/iam/user_groups/{user_group_id}/members`
-Future<ApiResult<List<IamUserGroupMember>?, Never>> accountUserGroupMemberList({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<IamUserGroupMember>?, TokensCreateTokenError>> accountUserGroupMemberList({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, double? page, double? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -177,6 +182,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => IamUserGroupMember.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// Add User Group Members
@@ -184,7 +190,7 @@ return execute(
 /// Add members to a User Group.
 ///
 /// `POST /accounts/{account_id}/iam/user_groups/{user_group_id}/members`
-Future<ApiResult<IamUserGroupMember?, Never>> accountUserGroupMemberCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required List<AccountUserGroupMemberCreateRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamUserGroupMember?, TokensCreateTokenError>> accountUserGroupMemberCreate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required List<AccountUserGroupMemberCreateRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -201,6 +207,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? IamUserGroupMember.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// Update User Group Members
@@ -208,7 +215,7 @@ return execute(
 /// Replace the set of members attached to a User Group.
 ///
 /// `PUT /accounts/{account_id}/iam/user_groups/{user_group_id}/members`
-Future<ApiResult<List<IamUserGroupMember>?, Never>> accountUserGroupMembersUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required List<AccountUserGroupMembersUpdateRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<IamUserGroupMember>?, TokensCreateTokenError>> accountUserGroupMembersUpdate({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required List<AccountUserGroupMembersUpdateRequest> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -225,6 +232,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => IamUserGroupMember.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// Remove User Group Member
@@ -232,7 +240,7 @@ return execute(
 /// Remove a member from User Group
 ///
 /// `DELETE /accounts/{account_id}/iam/user_groups/{user_group_id}/members/{member_id}`
-Future<ApiResult<IamUserGroupMember?, Never>> accountUserGroupMemberDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required IamCommonComponentsSchemasIdentifier memberId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamUserGroupMember?, TokensCreateTokenError>> accountUserGroupMemberDelete({required IamCommonComponentsSchemasIdentifier accountId, required IamCommonComponentsSchemasIdentifier userGroupId, required IamCommonComponentsSchemasIdentifier memberId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -247,6 +255,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? IamUserGroupMember.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
  }

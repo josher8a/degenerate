@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/AccountLoadBalancerPoolsPatchPoolsResponse4Xx
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_messages2.dart';@immutable final class AccountLoadBalancerPoolsPatchPoolsResponse4Xx {const AccountLoadBalancerPoolsPatchPoolsResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/load_balancing_messages2.dart';import 'package:pub_cloudflare/models/load_balancing_result_info.dart';@immutable final class AccountLoadBalancerPoolsPatchPoolsResponse4Xx {const AccountLoadBalancerPoolsPatchPoolsResponse4Xx({required this.errors, required this.messages, required this.success, required this.resultInfo, required this.result, });
 
 factory AccountLoadBalancerPoolsPatchPoolsResponse4Xx.fromJson(Map<String, dynamic> json) { return AccountLoadBalancerPoolsPatchPoolsResponse4Xx(
   errors: (json['errors'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => LoadBalancingMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
+  resultInfo: LoadBalancingResultInfo.fromJson(json['result_info'] as Map<String, dynamic>),
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 /// Example: `[{code: 7003, message: No route for the URI}]`
@@ -16,38 +17,44 @@ final List<LoadBalancingMessages2> errors;
 /// Example: `[]`
 final List<LoadBalancingMessages2> messages;
 
-final Map<String,dynamic>? result;
-
 /// Whether the API call was successful.
 /// 
 /// Example: `false`
 final bool success;
 
+final LoadBalancingResultInfo resultInfo;
+
+final Map<String,dynamic>? result;
+
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': result,
   'success': success,
+  'result_info': resultInfo.toJson(),
+  'result': result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-AccountLoadBalancerPoolsPatchPoolsResponse4Xx copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return AccountLoadBalancerPoolsPatchPoolsResponse4Xx(
+      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('result_info') &&
+      json.containsKey('result'); } 
+AccountLoadBalancerPoolsPatchPoolsResponse4Xx copyWith({List<LoadBalancingMessages2>? errors, List<LoadBalancingMessages2>? messages, bool? success, LoadBalancingResultInfo? resultInfo, Map<String, dynamic>? Function()? result, }) { return AccountLoadBalancerPoolsPatchPoolsResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
-  result: result != null ? result() : this.result,
   success: success ?? this.success,
+  resultInfo: resultInfo ?? this.resultInfo,
+  result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is AccountLoadBalancerPoolsPatchPoolsResponse4Xx &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
-          result == other.result &&
-          success == other.success;
+          success == other.success &&
+          resultInfo == other.resultInfo &&
+          result == other.result;
 
-@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, resultInfo, result);
 
-@override String toString() => 'AccountLoadBalancerPoolsPatchPoolsResponse4Xx(errors: $errors, messages: $messages, result: $result, success: $success)';
+@override String toString() => 'AccountLoadBalancerPoolsPatchPoolsResponse4Xx(errors: $errors, messages: $messages, success: $success, resultInfo: $resultInfo, result: $result)';
 
  }

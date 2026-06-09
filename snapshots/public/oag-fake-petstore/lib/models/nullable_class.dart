@@ -11,11 +11,11 @@ factory NullableClass.fromJson(Map<String, dynamic> json) { return NullableClass
   dateProp: json['date_prop'] as String?,
   datetimeProp: json['datetime_prop'] != null ? DateTime.parse(json['datetime_prop'] as String) : null,
   arrayNullableProp: (json['array_nullable_prop'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
-  arrayAndItemsNullableProp: (json['array_and_items_nullable_prop'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
-  arrayItemsNullable: (json['array_items_nullable'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList(),
+  arrayAndItemsNullableProp: (json['array_and_items_nullable_prop'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>?).toList(),
+  arrayItemsNullable: (json['array_items_nullable'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>?).toList(),
   objectNullableProp: (json['object_nullable_prop'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Map<String, dynamic>)),
-  objectAndItemsNullableProp: (json['object_and_items_nullable_prop'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Map<String, dynamic>)),
-  objectItemsNullable: (json['object_items_nullable'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Map<String, dynamic>)),
+  objectAndItemsNullableProp: (json['object_and_items_nullable_prop'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Map<String, dynamic>?)),
+  objectItemsNullable: (json['object_items_nullable'] as Map<String, dynamic>?)?.map((k, v) => MapEntry(k, v as Map<String, dynamic>?)),
   additionalProperties: Map.fromEntries(json.entries.where((e) => !const {'integer_prop', 'number_prop', 'boolean_prop', 'string_prop', 'date_prop', 'datetime_prop', 'array_nullable_prop', 'array_and_items_nullable_prop', 'array_items_nullable', 'object_nullable_prop', 'object_and_items_nullable_prop', 'object_items_nullable'}.contains(e.key)).map((e) => MapEntry(e.key, e.value as Map<String, dynamic>))),
 ); }
 
@@ -61,7 +61,7 @@ Map<String, dynamic> toJson() { return {
   ...additionalProperties,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'integer_prop', 'number_prop', 'boolean_prop', 'string_prop', 'date_prop', 'datetime_prop', 'array_nullable_prop', 'array_and_items_nullable_prop', 'array_items_nullable', 'object_nullable_prop', 'object_and_items_nullable_prop', 'object_items_nullable'}.contains(key)); } 
-NullableClass copyWith({int? Function()? integerProp, double? Function()? numberProp, bool? Function()? booleanProp, String? Function()? stringProp, String? Function()? dateProp, DateTime? Function()? datetimeProp, List<Map<String, dynamic>>? Function()? arrayNullableProp, List<Map<String, dynamic>>? Function()? arrayAndItemsNullableProp, List<Map<String, dynamic>>? Function()? arrayItemsNullable, Map<String, Map<String, dynamic>>? Function()? objectNullableProp, Map<String, Map<String, dynamic>>? Function()? objectAndItemsNullableProp, Map<String, Map<String, dynamic>>? Function()? objectItemsNullable, Map<String, Map<String, dynamic>>? additionalProperties, }) { return NullableClass(
+NullableClass copyWith({int? Function()? integerProp, double? Function()? numberProp, bool? Function()? booleanProp, String? Function()? stringProp, String? Function()? dateProp, DateTime? Function()? datetimeProp, List<Map<String, dynamic>>? Function()? arrayNullableProp, List<Map<String, dynamic>?>? Function()? arrayAndItemsNullableProp, List<Map<String, dynamic>?>? Function()? arrayItemsNullable, Map<String, Map<String, dynamic>>? Function()? objectNullableProp, Map<String, Map<String, dynamic>?>? Function()? objectAndItemsNullableProp, Map<String, Map<String, dynamic>?>? Function()? objectItemsNullable, Map<String, Map<String, dynamic>>? additionalProperties, }) { return NullableClass(
   integerProp: integerProp != null ? integerProp() : this.integerProp,
   numberProp: numberProp != null ? numberProp() : this.numberProp,
   booleanProp: booleanProp != null ? booleanProp() : this.booleanProp,

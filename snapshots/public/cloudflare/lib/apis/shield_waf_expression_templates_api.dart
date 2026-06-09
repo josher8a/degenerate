@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ShieldWafExpressionTemplatesApi" (1 operation)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/shield_identifier.dart';import 'package:pub_cloudflare/models/shield_request_expression_templates_fallthrough.dart';import 'package:pub_cloudflare/models/shield_response_expression_templates_fallthrough.dart';/// ShieldWafExpressionTemplatesApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/discovery_retrieve_discovered_operations_on_a_zone_error.dart';import 'package:pub_cloudflare/models/shield_identifier.dart';import 'package:pub_cloudflare/models/shield_request_expression_templates_fallthrough.dart';import 'package:pub_cloudflare/models/shield_response_expression_templates_fallthrough.dart';/// ShieldWafExpressionTemplatesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ShieldWafExpressionTemplatesApi with ApiExecutor {const ShieldWafExp
 /// Creates an expression template fallthrough rule for API Shield. Used for configuring default behavior when no other expression templates match.
 ///
 /// `POST /zones/{zone_id}/api_gateway/expression-template/fallthrough`
-Future<ApiResult<ShieldResponseExpressionTemplatesFallthrough, Never>> apiShieldExpressionTemplatesFallthrough({required ShieldIdentifier zoneId, required ShieldRequestExpressionTemplatesFallthrough body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ShieldResponseExpressionTemplatesFallthrough, DiscoveryRetrieveDiscoveredOperationsOnAZoneError>> apiShieldExpressionTemplatesFallthrough({required ShieldIdentifier zoneId, required ShieldRequestExpressionTemplatesFallthrough body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -31,6 +31,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return ShieldResponseExpressionTemplatesFallthrough.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: DiscoveryRetrieveDiscoveredOperationsOnAZoneError.fromResponse,
 );
  } 
  }

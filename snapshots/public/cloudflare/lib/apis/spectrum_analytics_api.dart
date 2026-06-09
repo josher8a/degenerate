@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "SpectrumAnalyticsApi" (3 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/spectrum_analytics_app_id_param.dart';import 'package:pub_cloudflare/models/spectrum_analytics_by_time_get_analytics_by_time_time_delta.dart';import 'package:pub_cloudflare/models/spectrum_analytics_dimensions2.dart';import 'package:pub_cloudflare/models/spectrum_analytics_filters.dart';import 'package:pub_cloudflare/models/spectrum_analytics_identifier.dart';import 'package:pub_cloudflare/models/spectrum_analytics_metrics2.dart';import 'package:pub_cloudflare/models/spectrum_analytics_query_response_aggregate/spectrum_analytics_query_response_aggregate_result.dart';import 'package:pub_cloudflare/models/spectrum_analytics_query_response_single/spectrum_analytics_query_response_single_result.dart';import 'package:pub_cloudflare/models/spectrum_analytics_timestamp.dart';/// SpectrumAnalyticsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/spectrum_aggregate_analytics_get_current_aggregated_analytics_error.dart';import 'package:pub_cloudflare/models/spectrum_analytics_app_id_param.dart';import 'package:pub_cloudflare/models/spectrum_analytics_by_time_get_analytics_by_time_time_delta.dart';import 'package:pub_cloudflare/models/spectrum_analytics_dimensions2.dart';import 'package:pub_cloudflare/models/spectrum_analytics_filters.dart';import 'package:pub_cloudflare/models/spectrum_analytics_identifier.dart';import 'package:pub_cloudflare/models/spectrum_analytics_metrics2.dart';import 'package:pub_cloudflare/models/spectrum_analytics_query_response_aggregate/spectrum_analytics_query_response_aggregate_result.dart';import 'package:pub_cloudflare/models/spectrum_analytics_query_response_single/spectrum_analytics_query_response_single_result.dart';import 'package:pub_cloudflare/models/spectrum_analytics_timestamp.dart';/// SpectrumAnalyticsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class SpectrumAnalyticsApi with ApiExecutor {const SpectrumAnalyticsApi(th
 /// Retrieves analytics aggregated from the last minute of usage on Spectrum applications underneath a given zone.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/aggregate/current`
-Future<ApiResult<List<SpectrumAnalyticsQueryResponseAggregateResult>?, Never>> spectrumAggregateAnalyticsGetCurrentAggregatedAnalytics({required SpectrumAnalyticsIdentifier zoneId, SpectrumAnalyticsAppIdParam? appId, String? coloName, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<SpectrumAnalyticsQueryResponseAggregateResult>?, SpectrumAggregateAnalyticsGetCurrentAggregatedAnalyticsError>> spectrumAggregateAnalyticsGetCurrentAggregatedAnalytics({required SpectrumAnalyticsIdentifier zoneId, SpectrumAnalyticsAppIdParam? appId, String? coloName, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (appId != null) {
   queryParameters['appID'] = appId.toJson();
@@ -40,6 +40,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => SpectrumAnalyticsQueryResponseAggregateResult.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: SpectrumAggregateAnalyticsGetCurrentAggregatedAnalyticsError.fromResponse,
 );
  } 
 /// Get analytics by time
@@ -47,7 +48,7 @@ return execute(
 /// Retrieves a list of aggregate metrics grouped by time interval.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/events/bytime`
-Future<ApiResult<SpectrumAnalyticsQueryResponseSingleResult?, Never>> spectrumAnalyticsByTimeGetAnalyticsByTime({required SpectrumAnalyticsIdentifier zoneId, required SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta timeDelta, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SpectrumAnalyticsQueryResponseSingleResult?, SpectrumAggregateAnalyticsGetCurrentAggregatedAnalyticsError>> spectrumAnalyticsByTimeGetAnalyticsByTime({required SpectrumAnalyticsIdentifier zoneId, required SpectrumAnalyticsByTimeGetAnalyticsByTimeTimeDelta timeDelta, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dimensions != null) {
 for (final item in dimensions) {
@@ -92,6 +93,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SpectrumAnalyticsQueryResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SpectrumAggregateAnalyticsGetCurrentAggregatedAnalyticsError.fromResponse,
 );
  } 
 /// Get analytics summary
@@ -99,7 +101,7 @@ return execute(
 /// Retrieves a list of summarised aggregate metrics over a given time period.
 ///
 /// `GET /zones/{zone_id}/spectrum/analytics/events/summary`
-Future<ApiResult<SpectrumAnalyticsQueryResponseSingleResult?, Never>> spectrumAnalyticsSummaryGetAnalyticsSummary({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<SpectrumAnalyticsQueryResponseSingleResult?, SpectrumAggregateAnalyticsGetCurrentAggregatedAnalyticsError>> spectrumAnalyticsSummaryGetAnalyticsSummary({required SpectrumAnalyticsIdentifier zoneId, List<SpectrumAnalyticsDimensions2>? dimensions, List<String>? sort, SpectrumAnalyticsTimestamp? until, List<SpectrumAnalyticsMetrics2>? metrics, SpectrumAnalyticsFilters? filters, SpectrumAnalyticsTimestamp? since, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dimensions != null) {
 for (final item in dimensions) {
@@ -143,6 +145,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? SpectrumAnalyticsQueryResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: SpectrumAggregateAnalyticsGetCurrentAggregatedAnalyticsError.fromResponse,
 );
  } 
  }

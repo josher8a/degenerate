@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "DnsSettingsForAZoneApi" (2 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_dns_settings_zone_patch.dart';import 'package:pub_cloudflare/models/dns_settings_dns_settings_zone_response.dart';import 'package:pub_cloudflare/models/dns_settings_identifier.dart';/// DnsSettingsForAZoneApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_settings_dns_settings_zone_patch.dart';import 'package:pub_cloudflare/models/dns_settings_dns_settings_zone_response.dart';import 'package:pub_cloudflare/models/dns_settings_identifier.dart';import 'package:pub_cloudflare/models/errors/dns_settings_for_a_zone_list_dns_settings_error.dart';import 'package:pub_cloudflare/models/errors/dns_settings_for_a_zone_update_dns_settings_error.dart';/// DnsSettingsForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class DnsSettingsForAZoneApi with ApiExecutor {const DnsSettingsForAZoneAp
 /// Show DNS settings for a zone
 ///
 /// `GET /zones/{zone_id}/dns_settings`
-Future<ApiResult<DnsSettingsDnsSettingsZoneResponse, Never>> dnsSettingsForAZoneListDnsSettings({required DnsSettingsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsDnsSettingsZoneResponse, DnsSettingsForAZoneListDnsSettingsError>> dnsSettingsForAZoneListDnsSettings({required DnsSettingsIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return DnsSettingsDnsSettingsZoneResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: DnsSettingsForAZoneListDnsSettingsError.fromResponse,
 );
  } 
 /// Update DNS Settings
@@ -36,7 +37,7 @@ return execute(
 /// Update DNS settings for a zone
 ///
 /// `PATCH /zones/{zone_id}/dns_settings`
-Future<ApiResult<DnsSettingsDnsSettingsZoneResponse, Never>> dnsSettingsForAZoneUpdateDnsSettings({required DnsSettingsIdentifier zoneId, required DnsSettingsDnsSettingsZonePatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DnsSettingsDnsSettingsZoneResponse, DnsSettingsForAZoneUpdateDnsSettingsError>> dnsSettingsForAZoneUpdateDnsSettings({required DnsSettingsIdentifier zoneId, required DnsSettingsDnsSettingsZonePatch body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,6 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return DnsSettingsDnsSettingsZoneResponse.fromJson(json['result'] as Map<String, dynamic>);
   },
+  onError: DnsSettingsForAZoneUpdateDnsSettingsError.fromResponse,
 );
  } 
  }

@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/OneOfCircularReferenceObject
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/one_of_circular_reference_object2.dart';import 'package:pub_speakeasy/models/one_of_circular_reference_object2/child.dart';import 'package:pub_speakeasy/models/simple_object2.dart';@immutable final class OneOfCircularReferenceObject {const OneOfCircularReferenceObject({required this.child});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/one_of_circular_reference_object/child.dart';import 'package:pub_speakeasy/models/simple_object.dart';@immutable final class OneOfCircularReferenceObject {const OneOfCircularReferenceObject({required this.child});
 
 factory OneOfCircularReferenceObject.fromJson(Map<String, dynamic> json) { return OneOfCircularReferenceObject(
-  child: OneOf2.parse(json['child'], fromA: (v) => OneOfCircularReferenceObject2.fromJson(v as Map<String, dynamic>), fromB: (v) => SimpleObject2.fromJson(v as Map<String, dynamic>),),
+  child: OneOf2.parse(json['child'], fromA: (v) => OneOfCircularReferenceObject.fromJson(v as Map<String, dynamic>), fromB: (v) => SimpleObject.fromJson(v as Map<String, dynamic>),),
 ); }
 
 final Child child;

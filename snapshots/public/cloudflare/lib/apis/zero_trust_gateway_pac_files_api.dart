@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZeroTrustGatewayPacFilesApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_uuid.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_pacfile.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_pacfiles_components_schemas_response_collection/zero_trust_gateway_pacfiles_components_schemas_response_collection_result.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_pacfiles_create_pacfile_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_pacfiles_update_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_identifier.dart';/// ZeroTrustGatewayPacFilesApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_pacfiles_create_pacfile_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_pacfiles_delete_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_pacfiles_details_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_pacfiles_list_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_pacfiles_update_error.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_uuid.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_pacfile.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_pacfiles_components_schemas_response_collection/zero_trust_gateway_pacfiles_components_schemas_response_collection_result.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_pacfiles_create_pacfile_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_pacfiles_update_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_identifier.dart';/// ZeroTrustGatewayPacFilesApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ZeroTrustGatewayPacFilesApi with ApiExecutor {const ZeroTrustGateway
 /// List all Zero Trust Gateway PAC files for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/pacfiles`
-Future<ApiResult<List<ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult>?, Never>> zeroTrustGatewayPacfilesList({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult>?, ZeroTrustGatewayPacfilesListError>> zeroTrustGatewayPacfilesList({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayPacfilesComponentsSchemasResponseCollectionResult.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: ZeroTrustGatewayPacfilesListError.fromResponse,
 );
  } 
 /// Create a PAC file
@@ -36,7 +37,7 @@ return execute(
 /// Create a new Zero Trust Gateway PAC file.
 ///
 /// `POST /accounts/{account_id}/gateway/pacfiles`
-Future<ApiResult<ZeroTrustGatewayPacfile?, Never>> zeroTrustGatewayPacfilesCreatePacfile({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayPacfilesCreatePacfileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayPacfile?, ZeroTrustGatewayPacfilesCreatePacfileError>> zeroTrustGatewayPacfilesCreatePacfile({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayPacfilesCreatePacfileRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,6 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewayPacfile.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ZeroTrustGatewayPacfilesCreatePacfileError.fromResponse,
 );
  } 
 /// Get a PAC file
@@ -60,7 +62,7 @@ return execute(
 /// Get a single Zero Trust Gateway PAC file.
 ///
 /// `GET /accounts/{account_id}/gateway/pacfiles/{pacfile_id}`
-Future<ApiResult<ZeroTrustGatewayPacfile?, Never>> zeroTrustGatewayPacfilesDetails({required ZeroTrustGatewayComponentsSchemasUuid pacfileId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayPacfile?, ZeroTrustGatewayPacfilesDetailsError>> zeroTrustGatewayPacfilesDetails({required ZeroTrustGatewayComponentsSchemasUuid pacfileId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,6 +77,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewayPacfile.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ZeroTrustGatewayPacfilesDetailsError.fromResponse,
 );
  } 
 /// Update a Zero Trust Gateway PAC file
@@ -82,7 +85,7 @@ return execute(
 /// Update a configured Zero Trust Gateway PAC file.
 ///
 /// `PUT /accounts/{account_id}/gateway/pacfiles/{pacfile_id}`
-Future<ApiResult<ZeroTrustGatewayPacfile?, Never>> zeroTrustGatewayPacfilesUpdate({required ZeroTrustGatewayComponentsSchemasUuid pacfileId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayPacfilesUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayPacfile?, ZeroTrustGatewayPacfilesUpdateError>> zeroTrustGatewayPacfilesUpdate({required ZeroTrustGatewayComponentsSchemasUuid pacfileId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayPacfilesUpdateRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,6 +102,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewayPacfile.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ZeroTrustGatewayPacfilesUpdateError.fromResponse,
 );
  } 
 /// Delete a PAC file
@@ -106,7 +110,7 @@ return execute(
 /// Delete a configured Zero Trust Gateway PAC file.
 ///
 /// `DELETE /accounts/{account_id}/gateway/pacfiles/{pacfile_id}`
-Future<ApiResult<Map<String, dynamic>?, Never>> zeroTrustGatewayPacfilesDelete({required ZeroTrustGatewayComponentsSchemasUuid pacfileId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ZeroTrustGatewayPacfilesDeleteError>> zeroTrustGatewayPacfilesDelete({required ZeroTrustGatewayComponentsSchemasUuid pacfileId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -121,6 +125,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
+  onError: ZeroTrustGatewayPacfilesDeleteError.fromResponse,
 );
  } 
  }

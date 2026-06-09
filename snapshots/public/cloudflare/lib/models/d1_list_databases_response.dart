@@ -1,14 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/D1ListDatabasesResponse
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/d1_database_response.dart';import 'package:pub_cloudflare/models/d1_list_databases_response/d1_list_databases_response_result_info.dart';import 'package:pub_cloudflare/models/d1_messages2.dart';@immutable final class D1ListDatabasesResponse {const D1ListDatabasesResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/account_level_custom_nameservers_delete_account_custom_nameserver_response4_xx/account_level_custom_nameservers_delete_account_custom_nameserver_response4_xx_result_info.dart';import 'package:pub_cloudflare/models/d1_database_response.dart';import 'package:pub_cloudflare/models/d1_messages2.dart';@immutable final class D1ListDatabasesResponse {const D1ListDatabasesResponse({required this.errors, required this.messages, required this.result, required this.success, this.resultInfo, });
 
 factory D1ListDatabasesResponse.fromJson(Map<String, dynamic> json) { return D1ListDatabasesResponse(
   errors: (json['errors'] as List<dynamic>).map((e) => D1Messages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => D1Messages2.fromJson(e as Map<String, dynamic>)).toList(),
   result: (json['result'] as List<dynamic>).map((e) => D1DatabaseResponse.fromJson(e as Map<String, dynamic>)).toList(),
   success: json['success'] as bool,
-  resultInfo: json['result_info'] != null ? D1ListDatabasesResponseResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
+  resultInfo: json['result_info'] != null ? AccountLevelCustomNameserversDeleteAccountCustomNameserverResponse4XxResultInfo.fromJson(json['result_info'] as Map<String, dynamic>) : null,
 ); }
 
 final List<D1Messages2> errors;
@@ -22,7 +22,7 @@ final List<D1DatabaseResponse> result;
 /// Example: `true`
 final bool success;
 
-final D1ListDatabasesResponseResultInfo? resultInfo;
+final AccountLevelCustomNameserversDeleteAccountCustomNameserverResponse4XxResultInfo? resultInfo;
 
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
@@ -35,7 +35,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('error
       json.containsKey('messages') &&
       json.containsKey('result') &&
       json.containsKey('success') && json['success'] is bool; } 
-D1ListDatabasesResponse copyWith({List<D1Messages2>? errors, List<D1Messages2>? messages, List<D1DatabaseResponse>? result, bool? success, D1ListDatabasesResponseResultInfo? Function()? resultInfo, }) { return D1ListDatabasesResponse(
+D1ListDatabasesResponse copyWith({List<D1Messages2>? errors, List<D1Messages2>? messages, List<D1DatabaseResponse>? result, bool? success, AccountLevelCustomNameserversDeleteAccountCustomNameserverResponse4XxResultInfo? Function()? resultInfo, }) { return D1ListDatabasesResponse(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
   result: result ?? this.result,

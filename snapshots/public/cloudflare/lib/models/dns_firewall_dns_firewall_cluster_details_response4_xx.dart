@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DnsFirewallDnsFirewallClusterDetailsResponse4Xx
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_firewall_messages2.dart';@immutable final class DnsFirewallDnsFirewallClusterDetailsResponse4Xx {const DnsFirewallDnsFirewallClusterDetailsResponse4Xx({required this.errors, required this.messages, required this.result, required this.success, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dns_firewall_messages2.dart';@immutable final class DnsFirewallDnsFirewallClusterDetailsResponse4Xx {const DnsFirewallDnsFirewallClusterDetailsResponse4Xx({required this.errors, required this.messages, required this.success, required this.result, });
 
 factory DnsFirewallDnsFirewallClusterDetailsResponse4Xx.fromJson(Map<String, dynamic> json) { return DnsFirewallDnsFirewallClusterDetailsResponse4Xx(
   errors: (json['errors'] as List<dynamic>).map((e) => DnsFirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),
   messages: (json['messages'] as List<dynamic>).map((e) => DnsFirewallMessages2.fromJson(e as Map<String, dynamic>)).toList(),
-  result: json['result'] as Map<String, dynamic>?,
   success: json['success'] as bool,
+  result: json['result'] as Map<String, dynamic>?,
 ); }
 
 /// Example: `[{code: 7003, message: No route for the URI}]`
@@ -16,38 +16,38 @@ final List<DnsFirewallMessages2> errors;
 /// Example: `[]`
 final List<DnsFirewallMessages2> messages;
 
-final Map<String,dynamic>? result;
-
 /// Whether the API call was successful.
 /// 
 /// Example: `false`
 final bool success;
 
+final Map<String,dynamic>? result;
+
 Map<String, dynamic> toJson() { return {
   'errors': errors.map((e) => e.toJson()).toList(),
   'messages': messages.map((e) => e.toJson()).toList(),
-  'result': result,
   'success': success,
+  'result': result,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.containsKey('errors') &&
       json.containsKey('messages') &&
-      json.containsKey('result') &&
-      json.containsKey('success') && json['success'] is bool; } 
-DnsFirewallDnsFirewallClusterDetailsResponse4Xx copyWith({List<DnsFirewallMessages2>? errors, List<DnsFirewallMessages2>? messages, Map<String, dynamic>? Function()? result, bool? success, }) { return DnsFirewallDnsFirewallClusterDetailsResponse4Xx(
+      json.containsKey('success') && json['success'] is bool &&
+      json.containsKey('result'); } 
+DnsFirewallDnsFirewallClusterDetailsResponse4Xx copyWith({List<DnsFirewallMessages2>? errors, List<DnsFirewallMessages2>? messages, bool? success, Map<String, dynamic>? Function()? result, }) { return DnsFirewallDnsFirewallClusterDetailsResponse4Xx(
   errors: errors ?? this.errors,
   messages: messages ?? this.messages,
-  result: result != null ? result() : this.result,
   success: success ?? this.success,
+  result: result != null ? result() : this.result,
 ); } 
 @override bool operator ==(Object other) => identical(this, other) ||
       other is DnsFirewallDnsFirewallClusterDetailsResponse4Xx &&
           listEquals(errors, other.errors) &&
           listEquals(messages, other.messages) &&
-          result == other.result &&
-          success == other.success;
+          success == other.success &&
+          result == other.result;
 
-@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), result, success);
+@override int get hashCode => Object.hash(Object.hashAll(errors), Object.hashAll(messages), success, result);
 
-@override String toString() => 'DnsFirewallDnsFirewallClusterDetailsResponse4Xx(errors: $errors, messages: $messages, result: $result, success: $success)';
+@override String toString() => 'DnsFirewallDnsFirewallClusterDetailsResponse4Xx(errors: $errors, messages: $messages, success: $success, result: $result)';
 
  }

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZeroTrustGatewayLocationsApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_uuid.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_locations.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_locations_create_zero_trust_gateway_location_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_locations_update_zero_trust_gateway_location_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_identifier.dart';/// ZeroTrustGatewayLocationsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_locations_create_zero_trust_gateway_location_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_locations_delete_zero_trust_gateway_location_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_locations_list_zero_trust_gateway_locations_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_locations_update_zero_trust_gateway_location_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_gateway_locations_zero_trust_gateway_location_details_error.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_components_schemas_uuid.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_locations.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_locations_create_zero_trust_gateway_location_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_locations_update_zero_trust_gateway_location_request.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_identifier.dart';/// ZeroTrustGatewayLocationsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ZeroTrustGatewayLocationsApi with ApiExecutor {const ZeroTrustGatewa
 /// List Zero Trust Gateway locations for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/locations`
-Future<ApiResult<List<ZeroTrustGatewayLocations>?, Never>> zeroTrustGatewayLocationsListZeroTrustGatewayLocations({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<ZeroTrustGatewayLocations>?, ZeroTrustGatewayLocationsListZeroTrustGatewayLocationsError>> zeroTrustGatewayLocationsListZeroTrustGatewayLocations({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => ZeroTrustGatewayLocations.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: ZeroTrustGatewayLocationsListZeroTrustGatewayLocationsError.fromResponse,
 );
  } 
 /// Create a Zero Trust Gateway location
@@ -36,7 +37,7 @@ return execute(
 /// Create a new Zero Trust Gateway location.
 ///
 /// `POST /accounts/{account_id}/gateway/locations`
-Future<ApiResult<ZeroTrustGatewayLocations?, Never>> zeroTrustGatewayLocationsCreateZeroTrustGatewayLocation({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayLocations?, ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationError>> zeroTrustGatewayLocationsCreateZeroTrustGatewayLocation({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,6 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewayLocations.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ZeroTrustGatewayLocationsCreateZeroTrustGatewayLocationError.fromResponse,
 );
  } 
 /// Get Zero Trust Gateway location details
@@ -60,7 +62,7 @@ return execute(
 /// Get a single Zero Trust Gateway location.
 ///
 /// `GET /accounts/{account_id}/gateway/locations/{location_id}`
-Future<ApiResult<ZeroTrustGatewayLocations?, Never>> zeroTrustGatewayLocationsZeroTrustGatewayLocationDetails({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayLocations?, ZeroTrustGatewayLocationsZeroTrustGatewayLocationDetailsError>> zeroTrustGatewayLocationsZeroTrustGatewayLocationDetails({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -75,6 +77,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewayLocations.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ZeroTrustGatewayLocationsZeroTrustGatewayLocationDetailsError.fromResponse,
 );
  } 
 /// Update a Zero Trust Gateway location
@@ -82,7 +85,7 @@ return execute(
 /// Update a configured Zero Trust Gateway location.
 ///
 /// `PUT /accounts/{account_id}/gateway/locations/{location_id}`
-Future<ApiResult<ZeroTrustGatewayLocations?, Never>> zeroTrustGatewayLocationsUpdateZeroTrustGatewayLocation({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewayLocations?, ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationError>> zeroTrustGatewayLocationsUpdateZeroTrustGatewayLocation({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -99,6 +102,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewayLocations.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ZeroTrustGatewayLocationsUpdateZeroTrustGatewayLocationError.fromResponse,
 );
  } 
 /// Delete a Zero Trust Gateway location
@@ -106,7 +110,7 @@ return execute(
 /// Delete a configured Zero Trust Gateway location.
 ///
 /// `DELETE /accounts/{account_id}/gateway/locations/{location_id}`
-Future<ApiResult<Map<String, dynamic>?, Never>> zeroTrustGatewayLocationsDeleteZeroTrustGatewayLocation({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<Map<String, dynamic>?, ZeroTrustGatewayLocationsDeleteZeroTrustGatewayLocationError>> zeroTrustGatewayLocationsDeleteZeroTrustGatewayLocation({required ZeroTrustGatewayComponentsSchemasUuid locationId, required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -121,6 +125,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] as Map<String, dynamic>?;
   },
+  onError: ZeroTrustGatewayLocationsDeleteZeroTrustGatewayLocationError.fromResponse,
 );
  } 
  }

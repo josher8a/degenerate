@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "InstantLogsJobsForAZoneApi" (2 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/logpush_identifier.dart';import 'package:pub_cloudflare/models/logpush_instant_logs_job.dart';import 'package:pub_cloudflare/models/post_zones_zone_id_logpush_edge_jobs_request.dart';/// InstantLogsJobsForAZoneApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/get_zones_zone_id_logpush_edge_jobs_error.dart';import 'package:pub_cloudflare/models/errors/post_zones_zone_id_logpush_edge_jobs_error.dart';import 'package:pub_cloudflare/models/logpush_identifier.dart';import 'package:pub_cloudflare/models/logpush_instant_logs_job.dart';import 'package:pub_cloudflare/models/post_zones_zone_id_logpush_edge_jobs_request.dart';/// InstantLogsJobsForAZoneApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class InstantLogsJobsForAZoneApi with ApiExecutor {const InstantLogsJobsFo
 /// Lists Instant Logs jobs for a zone.
 ///
 /// `GET /zones/{zone_id}/logpush/edge/jobs`
-Future<ApiResult<List<LogpushInstantLogsJob>?, Never>> getZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<LogpushInstantLogsJob>?, GetZonesZoneIdLogpushEdgeJobsError>> getZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => LogpushInstantLogsJob.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: GetZonesZoneIdLogpushEdgeJobsError.fromResponse,
 );
  } 
 /// Create Instant Logs job
@@ -36,7 +37,7 @@ return execute(
 /// Creates a new Instant Logs job for a zone.
 ///
 /// `POST /zones/{zone_id}/logpush/edge/jobs`
-Future<ApiResult<LogpushInstantLogsJob?, Never>> postZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushEdgeJobsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<LogpushInstantLogsJob?, PostZonesZoneIdLogpushEdgeJobsError>> postZonesZoneIdLogpushEdgeJobs({required LogpushIdentifier zoneId, required PostZonesZoneIdLogpushEdgeJobsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,6 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? LogpushInstantLogsJob.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: PostZonesZoneIdLogpushEdgeJobsError.fromResponse,
 );
  } 
  }

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesEmailObfuscation
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_email_obfuscation_value.dart';/// Turn on or off **Email Obfuscation**.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Turn on or off **Email Obfuscation**.
 sealed class ZonesEmailObfuscationId {const ZonesEmailObfuscationId();
 
 factory ZonesEmailObfuscationId.fromJson(String json) { return switch (json) {
@@ -58,7 +58,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? emailObf
 
 factory ZonesEmailObfuscation.fromJson(Map<String, dynamic> json) { return ZonesEmailObfuscation(
   id: json['id'] != null ? ZonesEmailObfuscationId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesEmailObfuscationValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Turn on or off **Email Obfuscation**.
@@ -68,14 +68,14 @@ final ZonesEmailObfuscationId? id;
 /// 
 /// 
 /// Example: `'on'`
-final ZonesEmailObfuscationValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesEmailObfuscation copyWith({ZonesEmailObfuscationId? Function()? id, ZonesEmailObfuscationValue? Function()? value, }) { return ZonesEmailObfuscation(
+ZonesEmailObfuscation copyWith({ZonesEmailObfuscationId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesEmailObfuscation(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

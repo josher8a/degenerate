@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/CircularReferenceRecursiveOneOfRequest
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/recursive_one_of_value.dart';import 'package:pub_speakeasy/models/recursive_one_of_value2.dart';@immutable final class CircularReferenceRecursiveOneOfRequest {const CircularReferenceRecursiveOneOfRequest({this.value});
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/recursive_one_of_value.dart';@immutable final class CircularReferenceRecursiveOneOfRequest {const CircularReferenceRecursiveOneOfRequest({this.value});
 
 factory CircularReferenceRecursiveOneOfRequest.fromJson(Map<String, dynamic> json) { return CircularReferenceRecursiveOneOfRequest(
-  value: json['value'] != null ? OneOf3.parse(json['value'], fromA: (v) => v as String, fromB: (v) => (v as List<dynamic>).map((e) => RecursiveOneOfValue2.fromJson(e as Map<String, dynamic>)).toList(), fromC: (v) => (v as Map<String, dynamic>).map((k, v) => MapEntry(k, RecursiveOneOfValue2.fromJson(v as Map<String, dynamic>))),) : null,
+  value: json['value'] != null ? RecursiveOneOfValue.fromJson(json['value'] as Map<String, dynamic>) : null,
 ); }
 
 final RecursiveOneOfValue? value;

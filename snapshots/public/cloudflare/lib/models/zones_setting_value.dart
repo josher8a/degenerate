@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesSettingValue
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_automatic_https_rewrites_value.dart';import 'package:pub_cloudflare/models/zones_automatic_platform_optimization.dart';import 'package:pub_cloudflare/models/zones_browser_check_value.dart';import 'package:pub_cloudflare/models/zones_cache_level_value.dart';import 'package:pub_cloudflare/models/zones_cache_rules_aegis_value.dart';import 'package:pub_cloudflare/models/zones_cache_rules_origin_max_http_version_value.dart';import 'package:pub_cloudflare/models/zones_development_mode_value.dart';import 'package:pub_cloudflare/models/zones_email_obfuscation_value.dart';import 'package:pub_cloudflare/models/zones_ip_geolocation_value.dart';import 'package:pub_cloudflare/models/zones_mirage_value.dart';import 'package:pub_cloudflare/models/zones_nel_value.dart';import 'package:pub_cloudflare/models/zones_opportunistic_encryption_value.dart';import 'package:pub_cloudflare/models/zones_origin_error_page_pass_thru_value.dart';import 'package:pub_cloudflare/models/zones_polish_value.dart';import 'package:pub_cloudflare/models/zones_response_buffering_value.dart';import 'package:pub_cloudflare/models/zones_rocket_loader_value.dart';import 'package:pub_cloudflare/models/zones_security_header_value.dart';import 'package:pub_cloudflare/models/zones_security_level_value.dart';import 'package:pub_cloudflare/models/zones_sort_query_string_for_cache_value.dart';import 'package:pub_cloudflare/models/zones_ssl_value.dart';import 'package:pub_cloudflare/models/zones_true_client_ip_header_value.dart';import 'package:pub_cloudflare/models/zones_waf_value.dart';/// Value of the 0-RTT setting.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_automatic_platform_optimization.dart';import 'package:pub_cloudflare/models/zones_cache_rules_aegis_value.dart';import 'package:pub_cloudflare/models/zones_cache_rules_origin_max_http_version_value.dart';import 'package:pub_cloudflare/models/zones_development_mode_value.dart';import 'package:pub_cloudflare/models/zones_nel_value.dart';import 'package:pub_cloudflare/models/zones_security_header_value.dart';/// Value of the 0-RTT setting.
 sealed class Zones0rttValue {const Zones0rttValue();
 
 factory Zones0rttValue.fromJson(String json) { return switch (json) {
@@ -275,6 +275,75 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
  }
 /// Value of the zone setting.
+/// Notes: Default value depends on the zone's plan level.
+sealed class ZonesAutomaticHttpsRewritesValue {const ZonesAutomaticHttpsRewritesValue();
+
+factory ZonesAutomaticHttpsRewritesValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesAutomaticHttpsRewritesValue$Unknown(json),
+}; }
+
+static const ZonesAutomaticHttpsRewritesValue $on = ZonesAutomaticHttpsRewritesValue$$on._();
+
+static const ZonesAutomaticHttpsRewritesValue off = ZonesAutomaticHttpsRewritesValue$off._();
+
+static const List<ZonesAutomaticHttpsRewritesValue> values = [$on, off];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesAutomaticHttpsRewritesValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesAutomaticHttpsRewritesValue$$on() => $on(),
+      ZonesAutomaticHttpsRewritesValue$off() => off(),
+      ZonesAutomaticHttpsRewritesValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesAutomaticHttpsRewritesValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesAutomaticHttpsRewritesValue$off() => off != null ? off() : orElse(value),
+      ZonesAutomaticHttpsRewritesValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesAutomaticHttpsRewritesValue($value)';
+
+ }
+@immutable final class ZonesAutomaticHttpsRewritesValue$$on extends ZonesAutomaticHttpsRewritesValue {const ZonesAutomaticHttpsRewritesValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesAutomaticHttpsRewritesValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ZonesAutomaticHttpsRewritesValue$off extends ZonesAutomaticHttpsRewritesValue {const ZonesAutomaticHttpsRewritesValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesAutomaticHttpsRewritesValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesAutomaticHttpsRewritesValue$Unknown extends ZonesAutomaticHttpsRewritesValue {const ZonesAutomaticHttpsRewritesValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesAutomaticHttpsRewritesValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
 sealed class ZonesBrotliValue {const ZonesBrotliValue();
 
 factory ZonesBrotliValue.fromJson(String json) { return switch (json) {
@@ -355,6 +424,157 @@ factory ZonesBrowserCacheTtlValue.fromJson(num json) => ZonesBrowserCacheTtlValu
 num toJson() => value;
 
 }
+/// Value of the zone setting.
+sealed class ZonesBrowserCheckValue {const ZonesBrowserCheckValue();
+
+factory ZonesBrowserCheckValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesBrowserCheckValue$Unknown(json),
+}; }
+
+static const ZonesBrowserCheckValue $on = ZonesBrowserCheckValue$$on._();
+
+static const ZonesBrowserCheckValue off = ZonesBrowserCheckValue$off._();
+
+static const List<ZonesBrowserCheckValue> values = [$on, off];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesBrowserCheckValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesBrowserCheckValue$$on() => $on(),
+      ZonesBrowserCheckValue$off() => off(),
+      ZonesBrowserCheckValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesBrowserCheckValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesBrowserCheckValue$off() => off != null ? off() : orElse(value),
+      ZonesBrowserCheckValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesBrowserCheckValue($value)';
+
+ }
+@immutable final class ZonesBrowserCheckValue$$on extends ZonesBrowserCheckValue {const ZonesBrowserCheckValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesBrowserCheckValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ZonesBrowserCheckValue$off extends ZonesBrowserCheckValue {const ZonesBrowserCheckValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesBrowserCheckValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesBrowserCheckValue$Unknown extends ZonesBrowserCheckValue {const ZonesBrowserCheckValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesBrowserCheckValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
+sealed class ZonesCacheLevelValue {const ZonesCacheLevelValue();
+
+factory ZonesCacheLevelValue.fromJson(String json) { return switch (json) {
+  'aggressive' => aggressive,
+  'basic' => basic,
+  'simplified' => simplified,
+  _ => ZonesCacheLevelValue$Unknown(json),
+}; }
+
+static const ZonesCacheLevelValue aggressive = ZonesCacheLevelValue$aggressive._();
+
+static const ZonesCacheLevelValue basic = ZonesCacheLevelValue$basic._();
+
+static const ZonesCacheLevelValue simplified = ZonesCacheLevelValue$simplified._();
+
+static const List<ZonesCacheLevelValue> values = [aggressive, basic, simplified];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'aggressive' => 'aggressive',
+  'basic' => 'basic',
+  'simplified' => 'simplified',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesCacheLevelValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() aggressive, required W Function() basic, required W Function() simplified, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesCacheLevelValue$aggressive() => aggressive(),
+      ZonesCacheLevelValue$basic() => basic(),
+      ZonesCacheLevelValue$simplified() => simplified(),
+      ZonesCacheLevelValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? aggressive, W Function()? basic, W Function()? simplified, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesCacheLevelValue$aggressive() => aggressive != null ? aggressive() : orElse(value),
+      ZonesCacheLevelValue$basic() => basic != null ? basic() : orElse(value),
+      ZonesCacheLevelValue$simplified() => simplified != null ? simplified() : orElse(value),
+      ZonesCacheLevelValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesCacheLevelValue($value)';
+
+ }
+@immutable final class ZonesCacheLevelValue$aggressive extends ZonesCacheLevelValue {const ZonesCacheLevelValue$aggressive._();
+
+@override String get value => 'aggressive';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesCacheLevelValue$aggressive;
+
+@override int get hashCode => 'aggressive'.hashCode;
+
+ }
+@immutable final class ZonesCacheLevelValue$basic extends ZonesCacheLevelValue {const ZonesCacheLevelValue$basic._();
+
+@override String get value => 'basic';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesCacheLevelValue$basic;
+
+@override int get hashCode => 'basic'.hashCode;
+
+ }
+@immutable final class ZonesCacheLevelValue$simplified extends ZonesCacheLevelValue {const ZonesCacheLevelValue$simplified._();
+
+@override String get value => 'simplified';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesCacheLevelValue$simplified;
+
+@override int get hashCode => 'simplified'.hashCode;
+
+ }
+@immutable final class ZonesCacheLevelValue$Unknown extends ZonesCacheLevelValue {const ZonesCacheLevelValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesCacheLevelValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
 /// Value of the zone setting.
 sealed class ZonesChallengeTtlValue {const ZonesChallengeTtlValue();
 
@@ -1230,6 +1450,74 @@ W maybeWhen<W>({required W Function(double value) orElse, W Function()? $30, W F
 
  }
 /// Value of the zone setting.
+sealed class ZonesEmailObfuscationValue {const ZonesEmailObfuscationValue();
+
+factory ZonesEmailObfuscationValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesEmailObfuscationValue$Unknown(json),
+}; }
+
+static const ZonesEmailObfuscationValue $on = ZonesEmailObfuscationValue$$on._();
+
+static const ZonesEmailObfuscationValue off = ZonesEmailObfuscationValue$off._();
+
+static const List<ZonesEmailObfuscationValue> values = [$on, off];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesEmailObfuscationValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesEmailObfuscationValue$$on() => $on(),
+      ZonesEmailObfuscationValue$off() => off(),
+      ZonesEmailObfuscationValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesEmailObfuscationValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesEmailObfuscationValue$off() => off != null ? off() : orElse(value),
+      ZonesEmailObfuscationValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesEmailObfuscationValue($value)';
+
+ }
+@immutable final class ZonesEmailObfuscationValue$$on extends ZonesEmailObfuscationValue {const ZonesEmailObfuscationValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesEmailObfuscationValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ZonesEmailObfuscationValue$off extends ZonesEmailObfuscationValue {const ZonesEmailObfuscationValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesEmailObfuscationValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesEmailObfuscationValue$Unknown extends ZonesEmailObfuscationValue {const ZonesEmailObfuscationValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesEmailObfuscationValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
 sealed class ZonesH2PrioritizationValue {const ZonesH2PrioritizationValue();
 
 factory ZonesH2PrioritizationValue.fromJson(String json) { return switch (json) {
@@ -1595,6 +1883,74 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesImageResizingValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
+sealed class ZonesIpGeolocationValue {const ZonesIpGeolocationValue();
+
+factory ZonesIpGeolocationValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesIpGeolocationValue$Unknown(json),
+}; }
+
+static const ZonesIpGeolocationValue $on = ZonesIpGeolocationValue$$on._();
+
+static const ZonesIpGeolocationValue off = ZonesIpGeolocationValue$off._();
+
+static const List<ZonesIpGeolocationValue> values = [$on, off];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesIpGeolocationValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesIpGeolocationValue$$on() => $on(),
+      ZonesIpGeolocationValue$off() => off(),
+      ZonesIpGeolocationValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesIpGeolocationValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesIpGeolocationValue$off() => off != null ? off() : orElse(value),
+      ZonesIpGeolocationValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesIpGeolocationValue($value)';
+
+ }
+@immutable final class ZonesIpGeolocationValue$$on extends ZonesIpGeolocationValue {const ZonesIpGeolocationValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesIpGeolocationValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ZonesIpGeolocationValue$off extends ZonesIpGeolocationValue {const ZonesIpGeolocationValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesIpGeolocationValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesIpGeolocationValue$Unknown extends ZonesIpGeolocationValue {const ZonesIpGeolocationValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesIpGeolocationValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
 
@@ -2075,6 +2431,143 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $10, W F
 
  }
 /// Value of the zone setting.
+sealed class ZonesMirageValue {const ZonesMirageValue();
+
+factory ZonesMirageValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesMirageValue$Unknown(json),
+}; }
+
+static const ZonesMirageValue $on = ZonesMirageValue$$on._();
+
+static const ZonesMirageValue off = ZonesMirageValue$off._();
+
+static const List<ZonesMirageValue> values = [$on, off];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesMirageValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesMirageValue$$on() => $on(),
+      ZonesMirageValue$off() => off(),
+      ZonesMirageValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesMirageValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesMirageValue$off() => off != null ? off() : orElse(value),
+      ZonesMirageValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesMirageValue($value)';
+
+ }
+@immutable final class ZonesMirageValue$$on extends ZonesMirageValue {const ZonesMirageValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesMirageValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ZonesMirageValue$off extends ZonesMirageValue {const ZonesMirageValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesMirageValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesMirageValue$Unknown extends ZonesMirageValue {const ZonesMirageValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesMirageValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
+/// Notes: Default value depends on the zone's plan level.
+sealed class ZonesOpportunisticEncryptionValue {const ZonesOpportunisticEncryptionValue();
+
+factory ZonesOpportunisticEncryptionValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesOpportunisticEncryptionValue$Unknown(json),
+}; }
+
+static const ZonesOpportunisticEncryptionValue $on = ZonesOpportunisticEncryptionValue$$on._();
+
+static const ZonesOpportunisticEncryptionValue off = ZonesOpportunisticEncryptionValue$off._();
+
+static const List<ZonesOpportunisticEncryptionValue> values = [$on, off];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesOpportunisticEncryptionValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesOpportunisticEncryptionValue$$on() => $on(),
+      ZonesOpportunisticEncryptionValue$off() => off(),
+      ZonesOpportunisticEncryptionValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesOpportunisticEncryptionValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesOpportunisticEncryptionValue$off() => off != null ? off() : orElse(value),
+      ZonesOpportunisticEncryptionValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesOpportunisticEncryptionValue($value)';
+
+ }
+@immutable final class ZonesOpportunisticEncryptionValue$$on extends ZonesOpportunisticEncryptionValue {const ZonesOpportunisticEncryptionValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesOpportunisticEncryptionValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ZonesOpportunisticEncryptionValue$off extends ZonesOpportunisticEncryptionValue {const ZonesOpportunisticEncryptionValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesOpportunisticEncryptionValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesOpportunisticEncryptionValue$Unknown extends ZonesOpportunisticEncryptionValue {const ZonesOpportunisticEncryptionValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesOpportunisticEncryptionValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
 /// Notes: Default value depends on the zone's plan level.
 sealed class ZonesOpportunisticOnionValue {const ZonesOpportunisticOnionValue();
 
@@ -2207,6 +2700,157 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesOrangeToOrangeValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
+sealed class ZonesOriginErrorPagePassThruValue {const ZonesOriginErrorPagePassThruValue();
+
+factory ZonesOriginErrorPagePassThruValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesOriginErrorPagePassThruValue$Unknown(json),
+}; }
+
+static const ZonesOriginErrorPagePassThruValue $on = ZonesOriginErrorPagePassThruValue$$on._();
+
+static const ZonesOriginErrorPagePassThruValue off = ZonesOriginErrorPagePassThruValue$off._();
+
+static const List<ZonesOriginErrorPagePassThruValue> values = [$on, off];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesOriginErrorPagePassThruValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesOriginErrorPagePassThruValue$$on() => $on(),
+      ZonesOriginErrorPagePassThruValue$off() => off(),
+      ZonesOriginErrorPagePassThruValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesOriginErrorPagePassThruValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesOriginErrorPagePassThruValue$off() => off != null ? off() : orElse(value),
+      ZonesOriginErrorPagePassThruValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesOriginErrorPagePassThruValue($value)';
+
+ }
+@immutable final class ZonesOriginErrorPagePassThruValue$$on extends ZonesOriginErrorPagePassThruValue {const ZonesOriginErrorPagePassThruValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesOriginErrorPagePassThruValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ZonesOriginErrorPagePassThruValue$off extends ZonesOriginErrorPagePassThruValue {const ZonesOriginErrorPagePassThruValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesOriginErrorPagePassThruValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesOriginErrorPagePassThruValue$Unknown extends ZonesOriginErrorPagePassThruValue {const ZonesOriginErrorPagePassThruValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesOriginErrorPagePassThruValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
+sealed class ZonesPolishValue {const ZonesPolishValue();
+
+factory ZonesPolishValue.fromJson(String json) { return switch (json) {
+  'off' => off,
+  'lossless' => lossless,
+  'lossy' => lossy,
+  _ => ZonesPolishValue$Unknown(json),
+}; }
+
+static const ZonesPolishValue off = ZonesPolishValue$off._();
+
+static const ZonesPolishValue lossless = ZonesPolishValue$lossless._();
+
+static const ZonesPolishValue lossy = ZonesPolishValue$lossy._();
+
+static const List<ZonesPolishValue> values = [off, lossless, lossy];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'lossless' => 'lossless',
+  'lossy' => 'lossy',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesPolishValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() lossless, required W Function() lossy, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesPolishValue$off() => off(),
+      ZonesPolishValue$lossless() => lossless(),
+      ZonesPolishValue$lossy() => lossy(),
+      ZonesPolishValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? lossless, W Function()? lossy, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesPolishValue$off() => off != null ? off() : orElse(value),
+      ZonesPolishValue$lossless() => lossless != null ? lossless() : orElse(value),
+      ZonesPolishValue$lossy() => lossy != null ? lossy() : orElse(value),
+      ZonesPolishValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesPolishValue($value)';
+
+ }
+@immutable final class ZonesPolishValue$off extends ZonesPolishValue {const ZonesPolishValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesPolishValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesPolishValue$lossless extends ZonesPolishValue {const ZonesPolishValue$lossless._();
+
+@override String get value => 'lossless';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesPolishValue$lossless;
+
+@override int get hashCode => 'lossless'.hashCode;
+
+ }
+@immutable final class ZonesPolishValue$lossy extends ZonesPolishValue {const ZonesPolishValue$lossy._();
+
+@override String get value => 'lossy';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesPolishValue$lossy;
+
+@override int get hashCode => 'lossy'.hashCode;
+
+ }
+@immutable final class ZonesPolishValue$Unknown extends ZonesPolishValue {const ZonesPolishValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesPolishValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
 
@@ -2567,6 +3211,270 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
  }
 /// Value of the zone setting.
+sealed class ZonesResponseBufferingValue {const ZonesResponseBufferingValue();
+
+factory ZonesResponseBufferingValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesResponseBufferingValue$Unknown(json),
+}; }
+
+static const ZonesResponseBufferingValue $on = ZonesResponseBufferingValue$$on._();
+
+static const ZonesResponseBufferingValue off = ZonesResponseBufferingValue$off._();
+
+static const List<ZonesResponseBufferingValue> values = [$on, off];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesResponseBufferingValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesResponseBufferingValue$$on() => $on(),
+      ZonesResponseBufferingValue$off() => off(),
+      ZonesResponseBufferingValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesResponseBufferingValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesResponseBufferingValue$off() => off != null ? off() : orElse(value),
+      ZonesResponseBufferingValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesResponseBufferingValue($value)';
+
+ }
+@immutable final class ZonesResponseBufferingValue$$on extends ZonesResponseBufferingValue {const ZonesResponseBufferingValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesResponseBufferingValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ZonesResponseBufferingValue$off extends ZonesResponseBufferingValue {const ZonesResponseBufferingValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesResponseBufferingValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesResponseBufferingValue$Unknown extends ZonesResponseBufferingValue {const ZonesResponseBufferingValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesResponseBufferingValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
+sealed class ZonesRocketLoaderValue {const ZonesRocketLoaderValue();
+
+factory ZonesRocketLoaderValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesRocketLoaderValue$Unknown(json),
+}; }
+
+static const ZonesRocketLoaderValue $on = ZonesRocketLoaderValue$$on._();
+
+static const ZonesRocketLoaderValue off = ZonesRocketLoaderValue$off._();
+
+static const List<ZonesRocketLoaderValue> values = [$on, off];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesRocketLoaderValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesRocketLoaderValue$$on() => $on(),
+      ZonesRocketLoaderValue$off() => off(),
+      ZonesRocketLoaderValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesRocketLoaderValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesRocketLoaderValue$off() => off != null ? off() : orElse(value),
+      ZonesRocketLoaderValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesRocketLoaderValue($value)';
+
+ }
+@immutable final class ZonesRocketLoaderValue$$on extends ZonesRocketLoaderValue {const ZonesRocketLoaderValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesRocketLoaderValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ZonesRocketLoaderValue$off extends ZonesRocketLoaderValue {const ZonesRocketLoaderValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesRocketLoaderValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesRocketLoaderValue$Unknown extends ZonesRocketLoaderValue {const ZonesRocketLoaderValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesRocketLoaderValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
+sealed class ZonesSecurityLevelValue {const ZonesSecurityLevelValue();
+
+factory ZonesSecurityLevelValue.fromJson(String json) { return switch (json) {
+  'off' => off,
+  'essentially_off' => essentiallyOff,
+  'low' => low,
+  'medium' => medium,
+  'high' => high,
+  'under_attack' => underAttack,
+  _ => ZonesSecurityLevelValue$Unknown(json),
+}; }
+
+static const ZonesSecurityLevelValue off = ZonesSecurityLevelValue$off._();
+
+static const ZonesSecurityLevelValue essentiallyOff = ZonesSecurityLevelValue$essentiallyOff._();
+
+static const ZonesSecurityLevelValue low = ZonesSecurityLevelValue$low._();
+
+static const ZonesSecurityLevelValue medium = ZonesSecurityLevelValue$medium._();
+
+static const ZonesSecurityLevelValue high = ZonesSecurityLevelValue$high._();
+
+static const ZonesSecurityLevelValue underAttack = ZonesSecurityLevelValue$underAttack._();
+
+static const List<ZonesSecurityLevelValue> values = [off, essentiallyOff, low, medium, high, underAttack];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'essentially_off' => 'essentiallyOff',
+  'low' => 'low',
+  'medium' => 'medium',
+  'high' => 'high',
+  'under_attack' => 'underAttack',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesSecurityLevelValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() essentiallyOff, required W Function() low, required W Function() medium, required W Function() high, required W Function() underAttack, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesSecurityLevelValue$off() => off(),
+      ZonesSecurityLevelValue$essentiallyOff() => essentiallyOff(),
+      ZonesSecurityLevelValue$low() => low(),
+      ZonesSecurityLevelValue$medium() => medium(),
+      ZonesSecurityLevelValue$high() => high(),
+      ZonesSecurityLevelValue$underAttack() => underAttack(),
+      ZonesSecurityLevelValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? essentiallyOff, W Function()? low, W Function()? medium, W Function()? high, W Function()? underAttack, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesSecurityLevelValue$off() => off != null ? off() : orElse(value),
+      ZonesSecurityLevelValue$essentiallyOff() => essentiallyOff != null ? essentiallyOff() : orElse(value),
+      ZonesSecurityLevelValue$low() => low != null ? low() : orElse(value),
+      ZonesSecurityLevelValue$medium() => medium != null ? medium() : orElse(value),
+      ZonesSecurityLevelValue$high() => high != null ? high() : orElse(value),
+      ZonesSecurityLevelValue$underAttack() => underAttack != null ? underAttack() : orElse(value),
+      ZonesSecurityLevelValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesSecurityLevelValue($value)';
+
+ }
+@immutable final class ZonesSecurityLevelValue$off extends ZonesSecurityLevelValue {const ZonesSecurityLevelValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesSecurityLevelValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesSecurityLevelValue$essentiallyOff extends ZonesSecurityLevelValue {const ZonesSecurityLevelValue$essentiallyOff._();
+
+@override String get value => 'essentially_off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesSecurityLevelValue$essentiallyOff;
+
+@override int get hashCode => 'essentially_off'.hashCode;
+
+ }
+@immutable final class ZonesSecurityLevelValue$low extends ZonesSecurityLevelValue {const ZonesSecurityLevelValue$low._();
+
+@override String get value => 'low';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesSecurityLevelValue$low;
+
+@override int get hashCode => 'low'.hashCode;
+
+ }
+@immutable final class ZonesSecurityLevelValue$medium extends ZonesSecurityLevelValue {const ZonesSecurityLevelValue$medium._();
+
+@override String get value => 'medium';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesSecurityLevelValue$medium;
+
+@override int get hashCode => 'medium'.hashCode;
+
+ }
+@immutable final class ZonesSecurityLevelValue$high extends ZonesSecurityLevelValue {const ZonesSecurityLevelValue$high._();
+
+@override String get value => 'high';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesSecurityLevelValue$high;
+
+@override int get hashCode => 'high'.hashCode;
+
+ }
+@immutable final class ZonesSecurityLevelValue$underAttack extends ZonesSecurityLevelValue {const ZonesSecurityLevelValue$underAttack._();
+
+@override String get value => 'under_attack';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesSecurityLevelValue$underAttack;
+
+@override int get hashCode => 'under_attack'.hashCode;
+
+ }
+@immutable final class ZonesSecurityLevelValue$Unknown extends ZonesSecurityLevelValue {const ZonesSecurityLevelValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSecurityLevelValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
 sealed class ZonesServerSideExcludeValue {const ZonesServerSideExcludeValue();
 
 factory ZonesServerSideExcludeValue.fromJson(String json) { return switch (json) {
@@ -2698,6 +3606,173 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W F
 
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesSha1SupportValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
+sealed class ZonesSortQueryStringForCacheValue {const ZonesSortQueryStringForCacheValue();
+
+factory ZonesSortQueryStringForCacheValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesSortQueryStringForCacheValue$Unknown(json),
+}; }
+
+static const ZonesSortQueryStringForCacheValue $on = ZonesSortQueryStringForCacheValue$$on._();
+
+static const ZonesSortQueryStringForCacheValue off = ZonesSortQueryStringForCacheValue$off._();
+
+static const List<ZonesSortQueryStringForCacheValue> values = [$on, off];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesSortQueryStringForCacheValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesSortQueryStringForCacheValue$$on() => $on(),
+      ZonesSortQueryStringForCacheValue$off() => off(),
+      ZonesSortQueryStringForCacheValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesSortQueryStringForCacheValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesSortQueryStringForCacheValue$off() => off != null ? off() : orElse(value),
+      ZonesSortQueryStringForCacheValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesSortQueryStringForCacheValue($value)';
+
+ }
+@immutable final class ZonesSortQueryStringForCacheValue$$on extends ZonesSortQueryStringForCacheValue {const ZonesSortQueryStringForCacheValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesSortQueryStringForCacheValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ZonesSortQueryStringForCacheValue$off extends ZonesSortQueryStringForCacheValue {const ZonesSortQueryStringForCacheValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesSortQueryStringForCacheValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesSortQueryStringForCacheValue$Unknown extends ZonesSortQueryStringForCacheValue {const ZonesSortQueryStringForCacheValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSortQueryStringForCacheValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
+/// Notes: Depends on the zone's plan level
+sealed class ZonesSslValue {const ZonesSslValue();
+
+factory ZonesSslValue.fromJson(String json) { return switch (json) {
+  'off' => off,
+  'flexible' => flexible,
+  'full' => full,
+  'strict' => strict,
+  _ => ZonesSslValue$Unknown(json),
+}; }
+
+static const ZonesSslValue off = ZonesSslValue$off._();
+
+static const ZonesSslValue flexible = ZonesSslValue$flexible._();
+
+static const ZonesSslValue full = ZonesSslValue$full._();
+
+static const ZonesSslValue strict = ZonesSslValue$strict._();
+
+static const List<ZonesSslValue> values = [off, flexible, full, strict];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'off' => 'off',
+  'flexible' => 'flexible',
+  'full' => 'full',
+  'strict' => 'strict',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesSslValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() off, required W Function() flexible, required W Function() full, required W Function() strict, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesSslValue$off() => off(),
+      ZonesSslValue$flexible() => flexible(),
+      ZonesSslValue$full() => full(),
+      ZonesSslValue$strict() => strict(),
+      ZonesSslValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? off, W Function()? flexible, W Function()? full, W Function()? strict, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesSslValue$off() => off != null ? off() : orElse(value),
+      ZonesSslValue$flexible() => flexible != null ? flexible() : orElse(value),
+      ZonesSslValue$full() => full != null ? full() : orElse(value),
+      ZonesSslValue$strict() => strict != null ? strict() : orElse(value),
+      ZonesSslValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesSslValue($value)';
+
+ }
+@immutable final class ZonesSslValue$off extends ZonesSslValue {const ZonesSslValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesSslValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesSslValue$flexible extends ZonesSslValue {const ZonesSslValue$flexible._();
+
+@override String get value => 'flexible';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesSslValue$flexible;
+
+@override int get hashCode => 'flexible'.hashCode;
+
+ }
+@immutable final class ZonesSslValue$full extends ZonesSslValue {const ZonesSslValue$full._();
+
+@override String get value => 'full';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesSslValue$full;
+
+@override int get hashCode => 'full'.hashCode;
+
+ }
+@immutable final class ZonesSslValue$strict extends ZonesSslValue {const ZonesSslValue$strict._();
+
+@override String get value => 'strict';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesSslValue$strict;
+
+@override int get hashCode => 'strict'.hashCode;
+
+ }
+@immutable final class ZonesSslValue$Unknown extends ZonesSslValue {const ZonesSslValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesSslValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
 
@@ -2918,6 +3993,142 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W F
 
 @override bool operator ==(Object other) => identical(this, other) ||
     other is ZonesTlsClientAuthValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
+sealed class ZonesTrueClientIpHeaderValue {const ZonesTrueClientIpHeaderValue();
+
+factory ZonesTrueClientIpHeaderValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesTrueClientIpHeaderValue$Unknown(json),
+}; }
+
+static const ZonesTrueClientIpHeaderValue $on = ZonesTrueClientIpHeaderValue$$on._();
+
+static const ZonesTrueClientIpHeaderValue off = ZonesTrueClientIpHeaderValue$off._();
+
+static const List<ZonesTrueClientIpHeaderValue> values = [$on, off];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesTrueClientIpHeaderValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesTrueClientIpHeaderValue$$on() => $on(),
+      ZonesTrueClientIpHeaderValue$off() => off(),
+      ZonesTrueClientIpHeaderValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesTrueClientIpHeaderValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesTrueClientIpHeaderValue$off() => off != null ? off() : orElse(value),
+      ZonesTrueClientIpHeaderValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesTrueClientIpHeaderValue($value)';
+
+ }
+@immutable final class ZonesTrueClientIpHeaderValue$$on extends ZonesTrueClientIpHeaderValue {const ZonesTrueClientIpHeaderValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesTrueClientIpHeaderValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ZonesTrueClientIpHeaderValue$off extends ZonesTrueClientIpHeaderValue {const ZonesTrueClientIpHeaderValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesTrueClientIpHeaderValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesTrueClientIpHeaderValue$Unknown extends ZonesTrueClientIpHeaderValue {const ZonesTrueClientIpHeaderValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesTrueClientIpHeaderValue$Unknown && other.value == value;
+
+@override int get hashCode => value.hashCode;
+
+ }
+/// Value of the zone setting.
+sealed class ZonesWafValue {const ZonesWafValue();
+
+factory ZonesWafValue.fromJson(String json) { return switch (json) {
+  'on' => $on,
+  'off' => off,
+  _ => ZonesWafValue$Unknown(json),
+}; }
+
+static const ZonesWafValue $on = ZonesWafValue$$on._();
+
+static const ZonesWafValue off = ZonesWafValue$off._();
+
+static const List<ZonesWafValue> values = [$on, off];
+
+String get value;
+String toJson() { return value; } 
+/// The Dart identifier name for this value, or the raw value if unknown.
+String get name { return switch (value) {
+  'on' => r'$on',
+  'off' => 'off',
+  _ => value,
+}; } 
+/// Whether this value is unknown (not defined in the OpenAPI spec).
+bool get isUnknown { return this is ZonesWafValue$Unknown; } 
+/// Exhaustive match on the enum value.
+W when<W>({required W Function() $on, required W Function() off, required W Function(String value) $unknown, }) { return switch (this) {
+      ZonesWafValue$$on() => $on(),
+      ZonesWafValue$off() => off(),
+      ZonesWafValue$Unknown(:final value) => $unknown(value),
+    }; } 
+/// Partial match with a required fallback for unhandled variants.
+W maybeWhen<W>({required W Function(String value) orElse, W Function()? $on, W Function()? off, W Function(String value)? $unknown, }) { return switch (this) {
+      ZonesWafValue$$on() => $on != null ? $on() : orElse(value),
+      ZonesWafValue$off() => off != null ? off() : orElse(value),
+      ZonesWafValue$Unknown(:final value) => $unknown != null ? $unknown(value) : orElse(value),
+    }; } 
+@override String toString() => 'ZonesWafValue($value)';
+
+ }
+@immutable final class ZonesWafValue$$on extends ZonesWafValue {const ZonesWafValue$$on._();
+
+@override String get value => 'on';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesWafValue$$on;
+
+@override int get hashCode => 'on'.hashCode;
+
+ }
+@immutable final class ZonesWafValue$off extends ZonesWafValue {const ZonesWafValue$off._();
+
+@override String get value => 'off';
+
+@override bool operator ==(Object other) => identical(this, other) || other is ZonesWafValue$off;
+
+@override int get hashCode => 'off'.hashCode;
+
+ }
+@immutable final class ZonesWafValue$Unknown extends ZonesWafValue {const ZonesWafValue$Unknown(this.value);
+
+@override final String value;
+
+@override bool operator ==(Object other) => identical(this, other) ||
+    other is ZonesWafValue$Unknown && other.value == value;
 
 @override int get hashCode => value.hashCode;
 

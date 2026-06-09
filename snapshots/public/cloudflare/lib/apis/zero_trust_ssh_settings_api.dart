@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ZeroTrustSshSettingsApi" (3 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_identifier.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_settings.dart';import 'package:pub_cloudflare/models/zero_trust_update_audit_ssh_settings_request.dart';/// ZeroTrustSshSettingsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/zero_trust_get_audit_ssh_settings_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_rotate_ssh_account_seed_error.dart';import 'package:pub_cloudflare/models/errors/zero_trust_update_audit_ssh_settings_error.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_schemas_identifier.dart';import 'package:pub_cloudflare/models/zero_trust_gateway_settings.dart';import 'package:pub_cloudflare/models/zero_trust_update_audit_ssh_settings_request.dart';/// ZeroTrustSshSettingsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class ZeroTrustSshSettingsApi with ApiExecutor {const ZeroTrustSshSettings
 /// Retrieve all Zero Trust Audit SSH and SSH with Access for Infrastructure settings for an account.
 ///
 /// `GET /accounts/{account_id}/gateway/audit_ssh_settings`
-Future<ApiResult<ZeroTrustGatewaySettings?, Never>> zeroTrustGetAuditSshSettings({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewaySettings?, ZeroTrustGetAuditSshSettingsError>> zeroTrustGetAuditSshSettings({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -29,6 +29,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewaySettings.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ZeroTrustGetAuditSshSettingsError.fromResponse,
 );
  } 
 /// Update Zero Trust SSH settings
@@ -36,7 +37,7 @@ return execute(
 /// Update Zero Trust Audit SSH and SSH with Access for Infrastructure settings for an account.
 ///
 /// `PUT /accounts/{account_id}/gateway/audit_ssh_settings`
-Future<ApiResult<ZeroTrustGatewaySettings?, Never>> zeroTrustUpdateAuditSshSettings({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustUpdateAuditSshSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewaySettings?, ZeroTrustUpdateAuditSshSettingsError>> zeroTrustUpdateAuditSshSettings({required ZeroTrustGatewaySchemasIdentifier accountId, required ZeroTrustUpdateAuditSshSettingsRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -53,6 +54,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewaySettings.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ZeroTrustUpdateAuditSshSettingsError.fromResponse,
 );
  } 
 /// Rotate Zero Trust SSH account seed
@@ -60,7 +62,7 @@ return execute(
 /// Rotate the SSH account seed that generates the host key identity when connecting through the Cloudflare SSH Proxy.
 ///
 /// `POST /accounts/{account_id}/gateway/audit_ssh_settings/rotate_seed`
-Future<ApiResult<ZeroTrustGatewaySettings?, Never>> zeroTrustRotateSshAccountSeed({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ZeroTrustGatewaySettings?, ZeroTrustRotateSshAccountSeedError>> zeroTrustRotateSshAccountSeed({required ZeroTrustGatewaySchemasIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -75,6 +77,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? ZeroTrustGatewaySettings.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: ZeroTrustRotateSshAccountSeedError.fromResponse,
 );
  } 
  }

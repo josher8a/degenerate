@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesResponseBuffering
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_response_buffering_value.dart';/// Turn on or off whether Cloudflare should wait for an entire file
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Turn on or off whether Cloudflare should wait for an entire file
 /// from the origin server before forwarding it to the site visitor. By
 /// default, Cloudflare sends packets to the client as they arrive from
 /// the origin server.
@@ -62,7 +62,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? response
 
 factory ZonesResponseBuffering.fromJson(Map<String, dynamic> json) { return ZonesResponseBuffering(
   id: json['id'] != null ? ZonesResponseBufferingId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesResponseBufferingValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Turn on or off whether Cloudflare should wait for an entire file
@@ -76,14 +76,14 @@ final ZonesResponseBufferingId? id;
 /// 
 /// 
 /// Example: `'on'`
-final ZonesResponseBufferingValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesResponseBuffering copyWith({ZonesResponseBufferingId? Function()? id, ZonesResponseBufferingValue? Function()? value, }) { return ZonesResponseBuffering(
+ZonesResponseBuffering copyWith({ZonesResponseBufferingId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesResponseBuffering(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

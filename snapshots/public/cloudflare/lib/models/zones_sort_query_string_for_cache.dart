@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/ZonesSortQueryStringForCache
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/zones_sort_query_string_for_cache_value.dart';/// Turn on or off the reordering of query strings. When query strings have the same structure, caching improves.
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/cache_rules_smart_tiered_cache_patch/cache_rules_smart_tiered_cache_patch_value.dart';/// Turn on or off the reordering of query strings. When query strings have the same structure, caching improves.
 /// 
 sealed class ZonesSortQueryStringForCacheId {const ZonesSortQueryStringForCacheId();
 
@@ -59,7 +59,7 @@ W maybeWhen<W>({required W Function(String value) orElse, W Function()? sortQuer
 
 factory ZonesSortQueryStringForCache.fromJson(Map<String, dynamic> json) { return ZonesSortQueryStringForCache(
   id: json['id'] != null ? ZonesSortQueryStringForCacheId.fromJson(json['id'] as String) : null,
-  value: json['value'] != null ? ZonesSortQueryStringForCacheValue.fromJson(json['value'] as String) : null,
+  value: json['value'] != null ? CacheRulesSmartTieredCachePatchValue.fromJson(json['value'] as String) : null,
 ); }
 
 /// Turn on or off the reordering of query strings. When query strings have the same structure, caching improves.
@@ -72,14 +72,14 @@ final ZonesSortQueryStringForCacheId? id;
 /// 
 /// 
 /// Example: `'on'`
-final ZonesSortQueryStringForCacheValue? value;
+final CacheRulesSmartTieredCachePatchValue? value;
 
 Map<String, dynamic> toJson() { return {
   if (id != null) 'id': id?.toJson(),
   if (value != null) 'value': value?.toJson(),
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'id', 'value'}.contains(key)); } 
-ZonesSortQueryStringForCache copyWith({ZonesSortQueryStringForCacheId? Function()? id, ZonesSortQueryStringForCacheValue? Function()? value, }) { return ZonesSortQueryStringForCache(
+ZonesSortQueryStringForCache copyWith({ZonesSortQueryStringForCacheId? Function()? id, CacheRulesSmartTieredCachePatchValue? Function()? value, }) { return ZonesSortQueryStringForCache(
   id: id != null ? id() : this.id,
   value: value != null ? value() : this.value,
 ); } 

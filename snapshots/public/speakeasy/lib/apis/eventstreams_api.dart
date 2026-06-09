@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "EventstreamsApi" (16 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart' hide SseEvent;import 'package:pub_speakeasy/models/chat_completion_event.dart';import 'package:pub_speakeasy/models/chat_completion_event2.dart';import 'package:pub_speakeasy/models/chat_completion_result2.dart';import 'package:pub_speakeasy/models/chat_completion_stream.dart';import 'package:pub_speakeasy/models/chat_request.dart';import 'package:pub_speakeasy/models/chat_skip_sentinel_request.dart';import 'package:pub_speakeasy/models/different_data_schemas.dart';import 'package:pub_speakeasy/models/errors/sse_overload_chat_error.dart';import 'package:pub_speakeasy/models/errors/text_error.dart';import 'package:pub_speakeasy/models/json_event.dart';import 'package:pub_speakeasy/models/mixed_data_event.dart';import 'package:pub_speakeasy/models/nullable_id_event.dart';import 'package:pub_speakeasy/models/optional_data_event.dart';import 'package:pub_speakeasy/models/partial_with_comments_event.dart';import 'package:pub_speakeasy/models/rich_stream.dart';import 'package:pub_speakeasy/models/sentinel_event.dart';import 'package:pub_speakeasy/models/sse_event.dart';import 'package:pub_speakeasy/models/sse_overload_chat_request.dart';import 'package:pub_speakeasy/models/text_event.dart';import 'package:pub_speakeasy/models/union_with_comments_stream.dart';/// EventstreamsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart' hide SseEvent;import 'package:pub_speakeasy/models/chat_completion_event.dart';import 'package:pub_speakeasy/models/chat_completion_result2.dart';import 'package:pub_speakeasy/models/chat_completion_stream.dart';import 'package:pub_speakeasy/models/chat_request.dart';import 'package:pub_speakeasy/models/chat_skip_sentinel_request.dart';import 'package:pub_speakeasy/models/different_data_schemas.dart';import 'package:pub_speakeasy/models/errors/sse_overload_chat_error.dart';import 'package:pub_speakeasy/models/errors/text_error.dart';import 'package:pub_speakeasy/models/json_event.dart';import 'package:pub_speakeasy/models/mixed_data_event.dart';import 'package:pub_speakeasy/models/nullable_id_event.dart';import 'package:pub_speakeasy/models/optional_data_event.dart';import 'package:pub_speakeasy/models/partial_with_comments_event.dart';import 'package:pub_speakeasy/models/rich_stream.dart';import 'package:pub_speakeasy/models/sentinel_event.dart';import 'package:pub_speakeasy/models/sse_event.dart';import 'package:pub_speakeasy/models/sse_overload_chat_request.dart';import 'package:pub_speakeasy/models/text_event.dart';import 'package:pub_speakeasy/models/union_with_comments_stream.dart';/// EventstreamsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -148,7 +148,7 @@ return execute(
 /// SSE chat stream with heartbeat events (no data field) mixed with data events, testing that parsers skip data-less events when data is required
 ///
 /// `POST /eventstreams/chat-heartbeat`
-Future<ApiResult<ChatCompletionEvent2, Never>> chatHeartbeat({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ChatCompletionEvent, Never>> chatHeartbeat({RequestOptions? options}) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -160,13 +160,13 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ChatCompletionEvent2
-throw UnsupportedError('Cannot decode text/event-stream response into ChatCompletionEvent2');
+    // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ChatCompletionEvent
+throw UnsupportedError('Cannot decode text/event-stream response into ChatCompletionEvent');
   },
 );
  } 
 /// `POST /eventstreams/chat-chunked`
-Future<ApiResult<ChatCompletionEvent2, Never>> chatSkipSentinel({required ChatSkipSentinelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ChatCompletionEvent, Never>> chatSkipSentinel({required ChatSkipSentinelRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -180,8 +180,8 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (response) {
-    // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ChatCompletionEvent2
-throw UnsupportedError('Cannot decode text/event-stream response into ChatCompletionEvent2');
+    // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ChatCompletionEvent
+throw UnsupportedError('Cannot decode text/event-stream response into ChatCompletionEvent');
   },
 );
  } 
@@ -463,7 +463,7 @@ return executeStreaming(
 /// Stream response.
 ///
 /// `POST /eventstreams/chat-heartbeat`
-Stream<ChatCompletionEvent2> chatHeartbeatStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<ChatCompletionEvent> chatHeartbeatStream({RequestOptions? options}) { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -475,14 +475,14 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return ChatCompletionEvent2.fromJson(jsonDecode(data) as Map<String, dynamic>);
+    return ChatCompletionEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
  } 
 /// Stream response.
 ///
 /// `POST /eventstreams/chat-chunked`
-Stream<ChatCompletionEvent2> chatSkipSentinelStream({required ChatSkipSentinelRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
+Stream<ChatCompletionEvent> chatSkipSentinelStream({required ChatSkipSentinelRequest body, RequestOptions? options, }) { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -496,7 +496,7 @@ final request = ApiRequest(
 return executeStreaming(
   request,
   onEvent: (data) {
-    return ChatCompletionEvent2.fromJson(jsonDecode(data) as Map<String, dynamic>);
+    return ChatCompletionEvent.fromJson(jsonDecode(data) as Map<String, dynamic>);
   },
 );
  } 

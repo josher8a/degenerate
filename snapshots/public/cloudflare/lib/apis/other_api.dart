@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "OtherApi" (45 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dos_dns_protection_rule.dart';import 'package:pub_cloudflare/models/dos_dns_protection_rule_update.dart';import 'package:pub_cloudflare/models/dos_expression_filter.dart';import 'package:pub_cloudflare/models/dos_expression_filter_update.dart';import 'package:pub_cloudflare/models/dos_identifier.dart';import 'package:pub_cloudflare/models/dos_infra_prefix.dart';import 'package:pub_cloudflare/models/dos_infra_prefix_update.dart';import 'package:pub_cloudflare/models/dos_new_dns_protection_rule.dart';import 'package:pub_cloudflare/models/dos_new_expression_filter.dart';import 'package:pub_cloudflare/models/dos_new_infra_prefix.dart';import 'package:pub_cloudflare/models/dos_new_prefix.dart';import 'package:pub_cloudflare/models/dos_new_syn_protection_rule.dart';import 'package:pub_cloudflare/models/dos_new_tcp_flow_protection_rule.dart';import 'package:pub_cloudflare/models/dos_prefix.dart';import 'package:pub_cloudflare/models/dos_prefix_update.dart';import 'package:pub_cloudflare/models/dos_protection_status.dart';import 'package:pub_cloudflare/models/dos_syn_protection_rule.dart';import 'package:pub_cloudflare/models/dos_syn_protection_rule_update.dart';import 'package:pub_cloudflare/models/dos_tcp_flow_protection_rule.dart';import 'package:pub_cloudflare/models/dos_tcp_flow_protection_rule_update.dart';import 'package:pub_cloudflare/models/dos_update_protection_status.dart';import 'package:pub_cloudflare/models/dos_uuid.dart';import 'package:pub_cloudflare/models/response_common28.dart';/// OtherApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/dos_dns_protection_rule.dart';import 'package:pub_cloudflare/models/dos_dns_protection_rule_update.dart';import 'package:pub_cloudflare/models/dos_expression_filter.dart';import 'package:pub_cloudflare/models/dos_expression_filter_update.dart';import 'package:pub_cloudflare/models/dos_identifier.dart';import 'package:pub_cloudflare/models/dos_infra_prefix.dart';import 'package:pub_cloudflare/models/dos_infra_prefix_update.dart';import 'package:pub_cloudflare/models/dos_new_dns_protection_rule.dart';import 'package:pub_cloudflare/models/dos_new_expression_filter.dart';import 'package:pub_cloudflare/models/dos_new_infra_prefix.dart';import 'package:pub_cloudflare/models/dos_new_prefix.dart';import 'package:pub_cloudflare/models/dos_new_syn_protection_rule.dart';import 'package:pub_cloudflare/models/dos_new_tcp_flow_protection_rule.dart';import 'package:pub_cloudflare/models/dos_prefix.dart';import 'package:pub_cloudflare/models/dos_prefix_update.dart';import 'package:pub_cloudflare/models/dos_protection_status.dart';import 'package:pub_cloudflare/models/dos_syn_protection_rule.dart';import 'package:pub_cloudflare/models/dos_syn_protection_rule_update.dart';import 'package:pub_cloudflare/models/dos_tcp_flow_protection_rule.dart';import 'package:pub_cloudflare/models/dos_tcp_flow_protection_rule_update.dart';import 'package:pub_cloudflare/models/dos_update_protection_status.dart';import 'package:pub_cloudflare/models/dos_uuid.dart';import 'package:pub_cloudflare/models/errors/botnet_threat_feed_delete_asn_error.dart';import 'package:pub_cloudflare/models/response_common28.dart';/// OtherApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class OtherApi with ApiExecutor {const OtherApi(this.apiConfig);
 /// List all DNS Protection rules for an account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules`
-Future<ApiResult<List<DosDnsProtectionRule>?, Never>> listDnsProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DosDnsProtectionRule>?, BotnetThreatFeedDeleteAsnError>> listDnsProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -46,6 +46,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => DosDnsProtectionRule.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Create DNS Protection rule.
@@ -53,7 +54,7 @@ return execute(
 /// Create a DNS Protection rule for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules`
-Future<ApiResult<DosDnsProtectionRule?, Never>> createDnsProtectionRule({required DosIdentifier accountId, required DosNewDnsProtectionRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosDnsProtectionRule?, BotnetThreatFeedDeleteAsnError>> createDnsProtectionRule({required DosIdentifier accountId, required DosNewDnsProtectionRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -70,6 +71,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosDnsProtectionRule.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Delete all DNS Protection rules.
@@ -98,7 +100,7 @@ return execute(
 /// Get a DNS Protection rule specified by the given UUID.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules/{rule_id}`
-Future<ApiResult<DosDnsProtectionRule?, Never>> getDnsProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosDnsProtectionRule?, BotnetThreatFeedDeleteAsnError>> getDnsProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -113,6 +115,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosDnsProtectionRule.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Update DNS Protection rule.
@@ -120,7 +123,7 @@ return execute(
 /// Update a DNS Protection rule specified by the given UUID.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules/{rule_id}`
-Future<ApiResult<DosDnsProtectionRule?, Never>> updateDnsProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, required DosDnsProtectionRuleUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosDnsProtectionRule?, BotnetThreatFeedDeleteAsnError>> updateDnsProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, required DosDnsProtectionRuleUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -137,6 +140,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosDnsProtectionRule.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Delete DNS Protection rule.
@@ -144,7 +148,7 @@ return execute(
 /// Delete a DNS Protection rule specified by the given UUID.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_dns_protection/configs/dns_protection/rules/{rule_id}`
-Future<ApiResult<ResponseCommon28, Never>> deleteDnsProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon28, BotnetThreatFeedDeleteAsnError>> deleteDnsProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -158,6 +162,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon28.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// List all allowlist prefixes.
@@ -165,7 +170,7 @@ return execute(
 /// List all allowlist prefixes for an account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist`
-Future<ApiResult<List<DosInfraPrefix>?, Never>> listAllowlistPrefixesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DosInfraPrefix>?, BotnetThreatFeedDeleteAsnError>> listAllowlistPrefixesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -197,6 +202,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => DosInfraPrefix.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Create allowlist prefix.
@@ -204,7 +210,7 @@ return execute(
 /// Create an allowlist prefix for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist`
-Future<ApiResult<DosInfraPrefix?, Never>> createAllowlistedPrefix({required DosIdentifier accountId, required DosNewInfraPrefix body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosInfraPrefix?, BotnetThreatFeedDeleteAsnError>> createAllowlistedPrefix({required DosIdentifier accountId, required DosNewInfraPrefix body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -221,6 +227,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosInfraPrefix.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Delete all allowlist prefixes.
@@ -228,7 +235,7 @@ return execute(
 /// Delete all allowlist prefixes for an account.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist`
-Future<ApiResult<ResponseCommon28, Never>> deleteAllowlistPrefixesForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon28, BotnetThreatFeedDeleteAsnError>> deleteAllowlistPrefixesForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -242,6 +249,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon28.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Get allowlist prefix.
@@ -249,7 +257,7 @@ return execute(
 /// Get an allowlist prefix specified by the given UUID.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist/{prefix_id}`
-Future<ApiResult<DosInfraPrefix?, Never>> getAllowlistPrefix({required DosIdentifier accountId, required DosUuid prefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosInfraPrefix?, BotnetThreatFeedDeleteAsnError>> getAllowlistPrefix({required DosIdentifier accountId, required DosUuid prefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -264,6 +272,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosInfraPrefix.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Update allowlist prefix.
@@ -271,7 +280,7 @@ return execute(
 /// Update an allowlist prefix specified by the given UUID.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist/{prefix_id}`
-Future<ApiResult<DosInfraPrefix?, Never>> updateAllowlistPrefix({required DosIdentifier accountId, required DosUuid prefixId, required DosInfraPrefixUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosInfraPrefix?, BotnetThreatFeedDeleteAsnError>> updateAllowlistPrefix({required DosIdentifier accountId, required DosUuid prefixId, required DosInfraPrefixUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -288,6 +297,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosInfraPrefix.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Delete allowlist prefix.
@@ -295,7 +305,7 @@ return execute(
 /// Delete the allowlist prefix for an account given a UUID.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/allowlist/{prefix_id}`
-Future<ApiResult<ResponseCommon28, Never>> deleteAllowlistPrefix({required DosIdentifier accountId, required DosUuid prefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon28, BotnetThreatFeedDeleteAsnError>> deleteAllowlistPrefix({required DosIdentifier accountId, required DosUuid prefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -309,6 +319,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon28.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// List all prefixes.
@@ -316,7 +327,7 @@ return execute(
 /// List all prefixes for an account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes`
-Future<ApiResult<List<DosPrefix>?, Never>> listPrefixesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DosPrefix>?, BotnetThreatFeedDeleteAsnError>> listPrefixesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -348,6 +359,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => DosPrefix.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Create prefix.
@@ -355,7 +367,7 @@ return execute(
 /// Create a prefix for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes`
-Future<ApiResult<DosPrefix?, Never>> createPrefix({required DosIdentifier accountId, required DosNewPrefix body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosPrefix?, BotnetThreatFeedDeleteAsnError>> createPrefix({required DosIdentifier accountId, required DosNewPrefix body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -372,6 +384,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosPrefix.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Delete all prefixes.
@@ -379,7 +392,7 @@ return execute(
 /// Delete all prefixes for an account.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes`
-Future<ApiResult<ResponseCommon28, Never>> deletePrefixesForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon28, BotnetThreatFeedDeleteAsnError>> deletePrefixesForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -393,6 +406,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon28.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Get prefix.
@@ -400,7 +414,7 @@ return execute(
 /// Get a prefix specified by the given UUID.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/{prefix_id}`
-Future<ApiResult<DosPrefix?, Never>> getPrefix({required DosIdentifier accountId, required DosUuid prefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosPrefix?, BotnetThreatFeedDeleteAsnError>> getPrefix({required DosIdentifier accountId, required DosUuid prefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -415,6 +429,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosPrefix.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Update prefix.
@@ -422,7 +437,7 @@ return execute(
 /// Update a prefix specified by the given UUID.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/{prefix_id}`
-Future<ApiResult<DosPrefix?, Never>> updatePrefix({required DosIdentifier accountId, required DosUuid prefixId, required DosPrefixUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosPrefix?, BotnetThreatFeedDeleteAsnError>> updatePrefix({required DosIdentifier accountId, required DosUuid prefixId, required DosPrefixUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -439,6 +454,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosPrefix.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Delete prefix.
@@ -446,7 +462,7 @@ return execute(
 /// Delete the prefix for an account given a UUID.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/{prefix_id}`
-Future<ApiResult<ResponseCommon28, Never>> deletePrefix({required DosIdentifier accountId, required DosUuid prefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon28, BotnetThreatFeedDeleteAsnError>> deletePrefix({required DosIdentifier accountId, required DosUuid prefixId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -460,6 +476,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon28.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Create multiple prefixes.
@@ -467,7 +484,7 @@ return execute(
 /// Create multiple prefixes for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_tcp_protection/configs/prefixes/bulk`
-Future<ApiResult<List<DosPrefix>?, Never>> bulkCreatePrefixes({required DosIdentifier accountId, required List<DosNewPrefix> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<List<DosPrefix>?, BotnetThreatFeedDeleteAsnError>> bulkCreatePrefixes({required DosIdentifier accountId, required List<DosNewPrefix> body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -484,6 +501,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => DosPrefix.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// List all SYN Protection filters.
@@ -491,7 +509,7 @@ return execute(
 /// List all SYN Protection filters for an account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters`
-Future<ApiResult<List<DosExpressionFilter>?, Never>> listSynProtectionFiltersForAccount({required DosIdentifier accountId, String? mode, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DosExpressionFilter>?, BotnetThreatFeedDeleteAsnError>> listSynProtectionFiltersForAccount({required DosIdentifier accountId, String? mode, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mode != null) {
   queryParameters['mode'] = mode;
@@ -526,6 +544,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => DosExpressionFilter.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Create a SYN Protection filter.
@@ -533,7 +552,7 @@ return execute(
 /// Create a SYN Protection filter for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters`
-Future<ApiResult<DosExpressionFilter?, Never>> createSynProtectionFilter({required DosIdentifier accountId, required DosNewExpressionFilter body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosExpressionFilter?, BotnetThreatFeedDeleteAsnError>> createSynProtectionFilter({required DosIdentifier accountId, required DosNewExpressionFilter body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -550,6 +569,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosExpressionFilter.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Delete all SYN Protection filters.
@@ -557,7 +577,7 @@ return execute(
 /// Delete all SYN Protection filters for an account.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters`
-Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionFiltersForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon28, BotnetThreatFeedDeleteAsnError>> deleteSynProtectionFiltersForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -571,6 +591,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon28.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Get SYN Protection filter.
@@ -578,7 +599,7 @@ return execute(
 /// Get a SYN Protection filter specified by the given UUID.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters/{filter_id}`
-Future<ApiResult<DosExpressionFilter?, Never>> getSynProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosExpressionFilter?, BotnetThreatFeedDeleteAsnError>> getSynProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -593,6 +614,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosExpressionFilter.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Update SYN Protection filter.
@@ -600,7 +622,7 @@ return execute(
 /// Update a SYN Protection filter specified by the given UUID.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters/{filter_id}`
-Future<ApiResult<DosExpressionFilter?, Never>> updateSynProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, required DosExpressionFilterUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosExpressionFilter?, BotnetThreatFeedDeleteAsnError>> updateSynProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, required DosExpressionFilterUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -617,6 +639,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosExpressionFilter.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Delete SYN Protection filter.
@@ -624,7 +647,7 @@ return execute(
 /// Delete a SYN Protection filter specified by the given UUID.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/filters/{filter_id}`
-Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon28, BotnetThreatFeedDeleteAsnError>> deleteSynProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -638,6 +661,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon28.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// List all SYN Protection rules.
@@ -645,7 +669,7 @@ return execute(
 /// List all SYN Protection rules for an account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules`
-Future<ApiResult<List<DosSynProtectionRule>?, Never>> listSynProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DosSynProtectionRule>?, BotnetThreatFeedDeleteAsnError>> listSynProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -677,6 +701,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => DosSynProtectionRule.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Create SYN Protection rule.
@@ -684,7 +709,7 @@ return execute(
 /// Create a SYN Protection rule for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules`
-Future<ApiResult<DosSynProtectionRule?, Never>> createSynProtectionRule({required DosIdentifier accountId, required DosNewSynProtectionRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosSynProtectionRule?, BotnetThreatFeedDeleteAsnError>> createSynProtectionRule({required DosIdentifier accountId, required DosNewSynProtectionRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -701,6 +726,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosSynProtectionRule.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Delete all SYN Protection rules.
@@ -708,7 +734,7 @@ return execute(
 /// Delete all SYN Protection rules for an account.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules`
-Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionRulesForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon28, BotnetThreatFeedDeleteAsnError>> deleteSynProtectionRulesForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -722,6 +748,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon28.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Get SYN Protection rule.
@@ -729,7 +756,7 @@ return execute(
 /// Get a SYN Protection rule specified by the given UUID.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules/{rule_id}`
-Future<ApiResult<DosSynProtectionRule?, Never>> getSynProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosSynProtectionRule?, BotnetThreatFeedDeleteAsnError>> getSynProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -744,6 +771,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosSynProtectionRule.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Update SYN Protection rule.
@@ -751,7 +779,7 @@ return execute(
 /// Update a SYN Protection rule specified by the given UUID.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules/{rule_id}`
-Future<ApiResult<DosSynProtectionRule?, Never>> updateSynProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, required DosSynProtectionRuleUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosSynProtectionRule?, BotnetThreatFeedDeleteAsnError>> updateSynProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, required DosSynProtectionRuleUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -768,6 +796,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosSynProtectionRule.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Delete SYN Protection rule.
@@ -775,7 +804,7 @@ return execute(
 /// Delete a SYN Protection rule specified by the given UUID.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/syn_protection/rules/{rule_id}`
-Future<ApiResult<ResponseCommon28, Never>> deleteSynProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon28, BotnetThreatFeedDeleteAsnError>> deleteSynProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -789,6 +818,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon28.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// List all TCP Flow Protection filters.
@@ -796,7 +826,7 @@ return execute(
 /// List all TCP Flow Protection filters for an account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters`
-Future<ApiResult<List<DosExpressionFilter>?, Never>> listTcpFlowProtectionFiltersForAccount({required DosIdentifier accountId, String? mode, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DosExpressionFilter>?, BotnetThreatFeedDeleteAsnError>> listTcpFlowProtectionFiltersForAccount({required DosIdentifier accountId, String? mode, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (mode != null) {
   queryParameters['mode'] = mode;
@@ -831,6 +861,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => DosExpressionFilter.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Create a TCP Flow Protection filter.
@@ -838,7 +869,7 @@ return execute(
 /// Create a TCP Flow Protection filter for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters`
-Future<ApiResult<DosExpressionFilter?, Never>> createTcpFlowProtectionFilter({required DosIdentifier accountId, required DosNewExpressionFilter body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosExpressionFilter?, BotnetThreatFeedDeleteAsnError>> createTcpFlowProtectionFilter({required DosIdentifier accountId, required DosNewExpressionFilter body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -855,6 +886,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosExpressionFilter.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Delete all TCP Flow Protection filters.
@@ -862,7 +894,7 @@ return execute(
 /// Delete all TCP Flow Protection filters for an account.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters`
-Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionFiltersForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon28, BotnetThreatFeedDeleteAsnError>> deleteTcpFlowProtectionFiltersForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -876,6 +908,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon28.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Get TCP Flow Protection filter.
@@ -883,7 +916,7 @@ return execute(
 /// Get a TCP Flow Protection filter specified by the given UUID.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/{filter_id}`
-Future<ApiResult<DosExpressionFilter?, Never>> getTcpFlowProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosExpressionFilter?, BotnetThreatFeedDeleteAsnError>> getTcpFlowProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -898,6 +931,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosExpressionFilter.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Update TCP Flow Protection filter.
@@ -905,7 +939,7 @@ return execute(
 /// Update a TCP Flow Protection filter specified by the given UUID.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/{filter_id}`
-Future<ApiResult<DosExpressionFilter?, Never>> updateTcpFlowProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, required DosExpressionFilterUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosExpressionFilter?, BotnetThreatFeedDeleteAsnError>> updateTcpFlowProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, required DosExpressionFilterUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -922,6 +956,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosExpressionFilter.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Delete TCP Flow Protection filter.
@@ -929,7 +964,7 @@ return execute(
 /// Delete a TCP Flow Protection filter specified by the given UUID.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters/{filter_id}`
-Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon28, BotnetThreatFeedDeleteAsnError>> deleteTcpFlowProtectionFilter({required DosIdentifier accountId, required DosUuid filterId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -943,6 +978,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon28.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// List all TCP Flow Protection rules.
@@ -950,7 +986,7 @@ return execute(
 /// List all TCP Flow Protection rules for an account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules`
-Future<ApiResult<List<DosTcpFlowProtectionRule>?, Never>> listTcpFlowProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DosTcpFlowProtectionRule>?, BotnetThreatFeedDeleteAsnError>> listTcpFlowProtectionRulesForAccount({required DosIdentifier accountId, int? page, int? perPage, String? order, String? direction, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -982,6 +1018,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => DosTcpFlowProtectionRule.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Create TCP Flow Protection rule.
@@ -989,7 +1026,7 @@ return execute(
 /// Create a TCP Flow Protection rule for an account.
 ///
 /// `POST /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules`
-Future<ApiResult<DosTcpFlowProtectionRule?, Never>> createTcpFlowProtectionRule({required DosIdentifier accountId, required DosNewTcpFlowProtectionRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosTcpFlowProtectionRule?, BotnetThreatFeedDeleteAsnError>> createTcpFlowProtectionRule({required DosIdentifier accountId, required DosNewTcpFlowProtectionRule body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1006,6 +1043,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosTcpFlowProtectionRule.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Delete all TCP Flow Protection rules.
@@ -1013,7 +1051,7 @@ return execute(
 /// Delete all TCP Flow Protection rules for an account.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules`
-Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionRulesForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon28, BotnetThreatFeedDeleteAsnError>> deleteTcpFlowProtectionRulesForAccount({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1027,6 +1065,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon28.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Get TCP Flow Protection rule.
@@ -1034,7 +1073,7 @@ return execute(
 /// Get a TCP Flow Protection rule specified by the given UUID.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/{rule_id}`
-Future<ApiResult<DosTcpFlowProtectionRule?, Never>> getTcpFlowProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosTcpFlowProtectionRule?, BotnetThreatFeedDeleteAsnError>> getTcpFlowProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1049,6 +1088,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosTcpFlowProtectionRule.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Update TCP Flow Protection rule.
@@ -1056,7 +1096,7 @@ return execute(
 /// Update a TCP Flow Protection rule specified by the given UUID.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/{rule_id}`
-Future<ApiResult<DosTcpFlowProtectionRule?, Never>> updateTcpFlowProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, required DosTcpFlowProtectionRuleUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosTcpFlowProtectionRule?, BotnetThreatFeedDeleteAsnError>> updateTcpFlowProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, required DosTcpFlowProtectionRuleUpdate body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1073,6 +1113,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosTcpFlowProtectionRule.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Delete TCP Flow Protection rule.
@@ -1080,7 +1121,7 @@ return execute(
 /// Delete a TCP Flow Protection rule specified by the given UUID.
 ///
 /// `DELETE /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_flow_protection/rules/{rule_id}`
-Future<ApiResult<ResponseCommon28, Never>> deleteTcpFlowProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<ResponseCommon28, BotnetThreatFeedDeleteAsnError>> deleteTcpFlowProtectionRule({required DosIdentifier accountId, required DosUuid ruleId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -1094,6 +1135,7 @@ return execute(
   onSuccess: (response) {
     return ResponseCommon28.fromJson(jsonDecode(response.body) as Map<String, dynamic>);
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Get protection status.
@@ -1101,7 +1143,7 @@ return execute(
 /// Get the protection status of the account.
 ///
 /// `GET /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_protection_status`
-Future<ApiResult<DosProtectionStatus?, Never>> getProtectionStatus({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosProtectionStatus?, BotnetThreatFeedDeleteAsnError>> getProtectionStatus({required DosIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -1116,6 +1158,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosProtectionStatus.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
 /// Update protection status.
@@ -1123,7 +1166,7 @@ return execute(
 /// Update the protection status of the account.
 ///
 /// `PATCH /accounts/{account_id}/magic/advanced_tcp_protection/configs/tcp_protection_status`
-Future<ApiResult<DosProtectionStatus?, Never>> updateProtectionStatus({required DosIdentifier accountId, required DosUpdateProtectionStatus body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DosProtectionStatus?, BotnetThreatFeedDeleteAsnError>> updateProtectionStatus({required DosIdentifier accountId, required DosUpdateProtectionStatus body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -1140,6 +1183,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DosProtectionStatus.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: BotnetThreatFeedDeleteAsnError.fromResponse,
 );
  } 
  }

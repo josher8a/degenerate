@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "ErrorsApi" (11 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/error_union_discriminated_post_request.dart';import 'package:pub_speakeasy/models/error_union_post_request.dart';import 'package:pub_speakeasy/models/errors/error_union_post_error.dart';import 'package:pub_speakeasy/models/errors/get_duplicate_export_collision_error.dart';import 'package:pub_speakeasy/models/errors/get_error_message_collision_error.dart';import 'package:pub_speakeasy/models/errors/status_get_x_speakeasy_errors_error.dart';import 'package:pub_speakeasy/models/get_duplicate_export_collision_response.dart';import 'package:pub_speakeasy/models/shared_error_union_post1_request.dart';import 'package:pub_speakeasy/models/shared_error_union_post2_request.dart';/// ErrorsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/error_union_discriminated_post_request.dart';import 'package:pub_speakeasy/models/error_union_post_request.dart';import 'package:pub_speakeasy/models/errors/error_union_discriminated_post_error.dart';import 'package:pub_speakeasy/models/errors/error_union_post_error.dart';import 'package:pub_speakeasy/models/errors/get_duplicate_export_collision_error.dart';import 'package:pub_speakeasy/models/errors/get_error_message_collision_error.dart';import 'package:pub_speakeasy/models/errors/shared_error_union_post1_error.dart';import 'package:pub_speakeasy/models/errors/shared_error_union_post2_error.dart';import 'package:pub_speakeasy/models/errors/status_get_x_speakeasy_errors_error.dart';import 'package:pub_speakeasy/models/get_duplicate_export_collision_response.dart';import 'package:pub_speakeasy/models/shared_error_union_post1_request.dart';import 'package:pub_speakeasy/models/shared_error_union_post2_request.dart';/// ErrorsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -156,7 +156,7 @@ return execute(
 );
  } 
 /// `POST /errors/400#errorUnionDiscriminated`
-Future<ApiResult<void, Never>> errorUnionDiscriminatedPost({required ErrorUnionDiscriminatedPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, ErrorUnionDiscriminatedPostError>> errorUnionDiscriminatedPost({required ErrorUnionDiscriminatedPostRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -170,10 +170,11 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
+  onError: ErrorUnionDiscriminatedPostError.fromResponse,
 );
  } 
 /// `POST /errors/400#sharedErrorUnion1`
-Future<ApiResult<void, Never>> sharedErrorUnionPost1({required SharedErrorUnionPost1Request body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, SharedErrorUnionPost1Error>> sharedErrorUnionPost1({required SharedErrorUnionPost1Request body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -187,10 +188,11 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
+  onError: SharedErrorUnionPost1Error.fromResponse,
 );
  } 
 /// `POST /errors/400#sharedErrorUnion2`
-Future<ApiResult<void, Never>> sharedErrorUnionPost2({required SharedErrorUnionPost2Request body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<void, SharedErrorUnionPost2Error>> sharedErrorUnionPost2({required SharedErrorUnionPost2Request body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -204,6 +206,7 @@ final request = ApiRequest(
 return execute(
   request,
   onSuccess: (_) {},
+  onError: SharedErrorUnionPost2Error.fromResponse,
 );
  } 
  }

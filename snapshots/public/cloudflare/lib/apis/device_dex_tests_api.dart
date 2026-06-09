@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "DeviceDexTestsApi" (5 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/device_dex_test_details_kind.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_account_identifier.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_http.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_dex_delete_response_collection/digital_experience_monitoring_dex_delete_response_collection_result.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_schemas_test_id.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';/// DeviceDexTestsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/device_dex_test_details_kind.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_account_identifier.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_device_dex_test_schemas_http.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_dex_delete_response_collection/digital_experience_monitoring_dex_delete_response_collection_result.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_schemas_test_id.dart';import 'package:pub_cloudflare/models/digital_experience_monitoring_uuid.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_create_device_dex_test_error.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_delete_device_dex_test_error.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_details_error.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_get_device_dex_test_error.dart';import 'package:pub_cloudflare/models/errors/device_dex_test_update_device_dex_test_error.dart';/// DeviceDexTestsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class DeviceDexTestsApi with ApiExecutor {const DeviceDexTestsApi(this.api
 /// Fetch all DEX tests
 ///
 /// `GET /accounts/{account_id}/dex/devices/dex_tests`
-Future<ApiResult<List<DigitalExperienceMonitoringDeviceDexTestSchemasHttp>?, Never>> deviceDexTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<List<DigitalExperienceMonitoringDeviceDexTestSchemasHttp>?, DeviceDexTestDetailsError>> deviceDexTestDetails({required DigitalExperienceMonitoringAccountIdentifier accountId, double? page, double? perPage, String? testName, DeviceDexTestDetailsKind? kind, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (page != null) {
   queryParameters['page'] = page.toString();
@@ -46,6 +46,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return (json['result'] as List<dynamic>?)?.map((e) => DigitalExperienceMonitoringDeviceDexTestSchemasHttp.fromJson(e as Map<String, dynamic>)).toList();
   },
+  onError: DeviceDexTestDetailsError.fromResponse,
 );
  } 
 /// Create Device DEX test
@@ -53,7 +54,7 @@ return execute(
 /// Create a DEX test.
 ///
 /// `POST /accounts/{account_id}/dex/devices/dex_tests`
-Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, Never>> deviceDexTestCreateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestCreateDeviceDexTestError>> deviceDexTestCreateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -70,6 +71,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DigitalExperienceMonitoringDeviceDexTestSchemasHttp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DeviceDexTestCreateDeviceDexTestError.fromResponse,
 );
  } 
 /// Get Device DEX test
@@ -77,7 +79,7 @@ return execute(
 /// Fetch a single DEX test.
 ///
 /// `GET /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, Never>> deviceDexTestGetDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSchemasTestId dexTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestGetDeviceDexTestError>> deviceDexTestGetDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringSchemasTestId dexTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -92,6 +94,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DigitalExperienceMonitoringDeviceDexTestSchemasHttp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DeviceDexTestGetDeviceDexTestError.fromResponse,
 );
  } 
 /// Update Device DEX test
@@ -99,7 +102,7 @@ return execute(
 /// Update a DEX test.
 ///
 /// `PUT /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, Never>> deviceDexTestUpdateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDeviceDexTestSchemasHttp?, DeviceDexTestUpdateDeviceDexTestError>> deviceDexTestUpdateDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, required DigitalExperienceMonitoringDeviceDexTestSchemasHttp body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -116,6 +119,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DigitalExperienceMonitoringDeviceDexTestSchemasHttp.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DeviceDexTestUpdateDeviceDexTestError.fromResponse,
 );
  } 
 /// Delete Device DEX test
@@ -123,7 +127,7 @@ return execute(
 /// Delete a Device DEX test. Returns the remaining device dex tests for the account.
 ///
 /// `DELETE /accounts/{account_id}/dex/devices/dex_tests/{dex_test_id}`
-Future<ApiResult<DigitalExperienceMonitoringDexDeleteResponseCollectionResult?, Never>> deviceDexTestDeleteDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<DigitalExperienceMonitoringDexDeleteResponseCollectionResult?, DeviceDexTestDeleteDeviceDexTestError>> deviceDexTestDeleteDeviceDexTest({required DigitalExperienceMonitoringAccountIdentifier accountId, required DigitalExperienceMonitoringUuid dexTestId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -138,6 +142,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? DigitalExperienceMonitoringDexDeleteResponseCollectionResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: DeviceDexTestDeleteDeviceDexTestError.fromResponse,
 );
  } 
  }

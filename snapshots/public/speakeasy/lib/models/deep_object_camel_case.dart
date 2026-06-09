@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: #/components/schemas/DeepObjectCamelCase
 
-import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/deep_object_camel_case/any_val.dart';import 'package:pub_speakeasy/models/simple_object_camel_case2.dart';@immutable final class DeepObjectCamelCase {const DeepObjectCamelCase({required this.strVal, required this.boolVal, required this.intVal, required this.numVal, required this.objVal, required this.mapVal, required this.arrVal, required this.anyVal, this.type, });
+import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_speakeasy/models/deep_object_camel_case/any_val.dart';import 'package:pub_speakeasy/models/simple_object_camel_case.dart';@immutable final class DeepObjectCamelCase {const DeepObjectCamelCase({required this.strVal, required this.boolVal, required this.intVal, required this.numVal, required this.objVal, required this.mapVal, required this.arrVal, required this.anyVal, this.type, });
 
 factory DeepObjectCamelCase.fromJson(Map<String, dynamic> json) { return DeepObjectCamelCase(
   strVal: json['str_val'] as String,
   boolVal: json['bool_val'] as bool,
   intVal: (json['int_val'] as num).toInt(),
   numVal: (json['num_val'] as num).toDouble(),
-  objVal: SimpleObjectCamelCase2.fromJson(json['obj_val'] as Map<String, dynamic>),
-  mapVal: (json['map_val'] as Map<String, dynamic>).map((k, v) => MapEntry(k, SimpleObjectCamelCase2.fromJson(v as Map<String, dynamic>))),
-  arrVal: (json['arr_val'] as List<dynamic>).map((e) => SimpleObjectCamelCase2.fromJson(e as Map<String, dynamic>)).toList(),
-  anyVal: OneOf2.parse(json['any_val'], fromA: (v) => SimpleObjectCamelCase2.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,),
+  objVal: SimpleObjectCamelCase.fromJson(json['obj_val'] as Map<String, dynamic>),
+  mapVal: (json['map_val'] as Map<String, dynamic>).map((k, v) => MapEntry(k, SimpleObjectCamelCase.fromJson(v as Map<String, dynamic>))),
+  arrVal: (json['arr_val'] as List<dynamic>).map((e) => SimpleObjectCamelCase.fromJson(e as Map<String, dynamic>)).toList(),
+  anyVal: OneOf2.parse(json['any_val'], fromA: (v) => SimpleObjectCamelCase.fromJson(v as Map<String, dynamic>), fromB: (v) => v as String,),
   type: json['type'] as String?,
 ); }
 
@@ -27,13 +27,13 @@ final int intVal;
 /// Example: `1.1`
 final double numVal;
 
-final SimpleObjectCamelCase2 objVal;
+final SimpleObjectCamelCase objVal;
 
 /// Example: `{key: ...}`
-final Map<String,SimpleObjectCamelCase2> mapVal;
+final Map<String,SimpleObjectCamelCase> mapVal;
 
 /// Example: `[..., ...]`
-final List<SimpleObjectCamelCase2> arrVal;
+final List<SimpleObjectCamelCase> arrVal;
 
 final AnyVal anyVal;
 
@@ -58,7 +58,7 @@ static bool canParse(Map<String, dynamic> json) { return json.containsKey('str_v
       json.containsKey('map_val') &&
       json.containsKey('arr_val') &&
       json.containsKey('any_val'); } 
-DeepObjectCamelCase copyWith({String? strVal, bool? boolVal, int? intVal, double? numVal, SimpleObjectCamelCase2? objVal, Map<String,SimpleObjectCamelCase2>? mapVal, List<SimpleObjectCamelCase2>? arrVal, AnyVal? anyVal, String? Function()? type, }) { return DeepObjectCamelCase(
+DeepObjectCamelCase copyWith({String? strVal, bool? boolVal, int? intVal, double? numVal, SimpleObjectCamelCase? objVal, Map<String,SimpleObjectCamelCase>? mapVal, List<SimpleObjectCamelCase>? arrVal, AnyVal? anyVal, String? Function()? type, }) { return DeepObjectCamelCase(
   strVal: strVal ?? this.strVal,
   boolVal: boolVal ?? this.boolVal,
   intVal: intVal ?? this.intVal,

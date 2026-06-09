@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "MagicIPsecTunnelsApi" (7 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_ipsec_tunnel.dart';import 'package:pub_cloudflare/models/magic_ipsec_tunnel_add_single_request.dart';import 'package:pub_cloudflare/models/magic_psk_generation_response/magic_psk_generation_response_result.dart';import 'package:pub_cloudflare/models/magic_schemas_modified_tunnels_collection_response/magic_schemas_modified_tunnels_collection_response_result.dart';import 'package:pub_cloudflare/models/magic_schemas_tunnel_deleted_response/magic_schemas_tunnel_deleted_response_result.dart';import 'package:pub_cloudflare/models/magic_schemas_tunnel_modified_response/magic_schemas_tunnel_modified_response_result.dart';import 'package:pub_cloudflare/models/magic_schemas_tunnel_single_response/magic_schemas_tunnel_single_response_result.dart';import 'package:pub_cloudflare/models/magic_schemas_tunnels_collection_response/magic_schemas_tunnels_collection_response_result.dart';/// MagicIPsecTunnelsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/errors/magic_ipsec_tunnels_create_ipsec_tunnels_error.dart';import 'package:pub_cloudflare/models/errors/magic_ipsec_tunnels_delete_ipsec_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/magic_ipsec_tunnels_generate_pre_shared_key_psk_for_ipsec_tunnels_error.dart';import 'package:pub_cloudflare/models/errors/magic_ipsec_tunnels_list_ipsec_tunnel_details_error.dart';import 'package:pub_cloudflare/models/errors/magic_ipsec_tunnels_list_ipsec_tunnels_error.dart';import 'package:pub_cloudflare/models/errors/magic_ipsec_tunnels_update_ipsec_tunnel_error.dart';import 'package:pub_cloudflare/models/errors/magic_ipsec_tunnels_update_multiple_ipsec_tunnels_error.dart';import 'package:pub_cloudflare/models/magic_identifier.dart';import 'package:pub_cloudflare/models/magic_ipsec_tunnel.dart';import 'package:pub_cloudflare/models/magic_ipsec_tunnel_add_single_request.dart';import 'package:pub_cloudflare/models/magic_psk_generation_response/magic_psk_generation_response_result.dart';import 'package:pub_cloudflare/models/magic_schemas_modified_tunnels_collection_response/magic_schemas_modified_tunnels_collection_response_result.dart';import 'package:pub_cloudflare/models/magic_schemas_tunnel_deleted_response/magic_schemas_tunnel_deleted_response_result.dart';import 'package:pub_cloudflare/models/magic_schemas_tunnel_modified_response/magic_schemas_tunnel_modified_response_result.dart';import 'package:pub_cloudflare/models/magic_schemas_tunnel_single_response/magic_schemas_tunnel_single_response_result.dart';import 'package:pub_cloudflare/models/magic_schemas_tunnels_collection_response/magic_schemas_tunnels_collection_response_result.dart';/// MagicIPsecTunnelsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class MagicIPsecTunnelsApi with ApiExecutor {const MagicIPsecTunnelsApi(th
 /// Lists IPsec tunnels associated with an account.
 ///
 /// `GET /accounts/{account_id}/magic/ipsec_tunnels`
-Future<ApiResult<MagicSchemasTunnelsCollectionResponseResult?, Never>> magicIpsecTunnelsListIpsecTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSchemasTunnelsCollectionResponseResult?, MagicIpsecTunnelsListIpsecTunnelsError>> magicIpsecTunnelsListIpsecTunnels({required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -32,6 +32,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MagicSchemasTunnelsCollectionResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: MagicIpsecTunnelsListIpsecTunnelsError.fromResponse,
 );
  } 
 /// Create an IPsec tunnel
@@ -39,7 +40,7 @@ return execute(
 /// Creates a new IPsec tunnel associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `POST /accounts/{account_id}/magic/ipsec_tunnels`
-Future<ApiResult<MagicIpsecTunnel?, Never>> magicIpsecTunnelsCreateIpsecTunnels({required MagicIdentifier accountId, required MagicIpsecTunnelAddSingleRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicIpsecTunnel?, MagicIpsecTunnelsCreateIpsecTunnelsError>> magicIpsecTunnelsCreateIpsecTunnels({required MagicIdentifier accountId, required MagicIpsecTunnelAddSingleRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -59,6 +60,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MagicIpsecTunnel.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: MagicIpsecTunnelsCreateIpsecTunnelsError.fromResponse,
 );
  } 
 /// Update multiple IPsec tunnels
@@ -66,7 +68,7 @@ return execute(
 /// Update multiple IPsec tunnels associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/ipsec_tunnels`
-Future<ApiResult<MagicSchemasModifiedTunnelsCollectionResponseResult?, Never>> magicIpsecTunnelsUpdateMultipleIpsecTunnels({required MagicIdentifier accountId, required dynamic body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSchemasModifiedTunnelsCollectionResponseResult?, MagicIpsecTunnelsUpdateMultipleIpsecTunnelsError>> magicIpsecTunnelsUpdateMultipleIpsecTunnels({required MagicIdentifier accountId, required dynamic body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -86,6 +88,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MagicSchemasModifiedTunnelsCollectionResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: MagicIpsecTunnelsUpdateMultipleIpsecTunnelsError.fromResponse,
 );
  } 
 /// List IPsec tunnel details
@@ -93,7 +96,7 @@ return execute(
 /// Lists details for a specific IPsec tunnel.
 ///
 /// `GET /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}`
-Future<ApiResult<MagicSchemasTunnelSingleResponseResult?, Never>> magicIpsecTunnelsListIpsecTunnelDetails({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSchemasTunnelSingleResponseResult?, MagicIpsecTunnelsListIpsecTunnelDetailsError>> magicIpsecTunnelsListIpsecTunnelDetails({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -111,6 +114,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MagicSchemasTunnelSingleResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: MagicIpsecTunnelsListIpsecTunnelDetailsError.fromResponse,
 );
  } 
 /// Update IPsec Tunnel
@@ -118,7 +122,7 @@ return execute(
 /// Updates a specific IPsec tunnel associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `PUT /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}`
-Future<ApiResult<MagicSchemasTunnelModifiedResponseResult?, Never>> magicIpsecTunnelsUpdateIpsecTunnel({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, required MagicIpsecTunnelAddSingleRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSchemasTunnelModifiedResponseResult?, MagicIpsecTunnelsUpdateIpsecTunnelError>> magicIpsecTunnelsUpdateIpsecTunnel({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, required MagicIpsecTunnelAddSingleRequest body, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
@@ -138,6 +142,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MagicSchemasTunnelModifiedResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: MagicIpsecTunnelsUpdateIpsecTunnelError.fromResponse,
 );
  } 
 /// Delete IPsec Tunnel
@@ -145,7 +150,7 @@ return execute(
 /// Disables and removes a specific static IPsec Tunnel associated with an account. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes.
 ///
 /// `DELETE /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}`
-Future<ApiResult<MagicSchemasTunnelDeletedResponseResult?, Never>> magicIpsecTunnelsDeleteIpsecTunnel({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicSchemasTunnelDeletedResponseResult?, MagicIpsecTunnelsDeleteIpsecTunnelError>> magicIpsecTunnelsDeleteIpsecTunnel({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, bool? xMagicNewHcTarget, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 if (xMagicNewHcTarget != null) {
   headers['x-magic-new-hc-target'] = xMagicNewHcTarget.toString();
 }
@@ -163,6 +168,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MagicSchemasTunnelDeletedResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: MagicIpsecTunnelsDeleteIpsecTunnelError.fromResponse,
 );
  } 
 /// Generate Pre Shared Key (PSK) for IPsec tunnels
@@ -170,7 +176,7 @@ return execute(
 /// Generates a Pre Shared Key for a specific IPsec tunnel used in the IKE session. Use `?validate_only=true` as an optional query parameter to only run validation without persisting changes. After a PSK is generated, the PSK is immediately persisted to Cloudflare's edge and cannot be retrieved later. Note the PSK in a safe place.
 ///
 /// `POST /accounts/{account_id}/magic/ipsec_tunnels/{ipsec_tunnel_id}/psk_generate`
-Future<ApiResult<MagicPskGenerationResponseResult?, Never>> magicIpsecTunnelsGeneratePreSharedKeyPskForIpsecTunnels({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<MagicPskGenerationResponseResult?, MagicIpsecTunnelsGeneratePreSharedKeyPskForIpsecTunnelsError>> magicIpsecTunnelsGeneratePreSharedKeyPskForIpsecTunnels({required MagicIdentifier ipsecTunnelId, required MagicIdentifier accountId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'POST',
@@ -185,6 +191,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? MagicPskGenerationResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: MagicIpsecTunnelsGeneratePreSharedKeyPskForIpsecTunnelsError.fromResponse,
 );
  } 
  }

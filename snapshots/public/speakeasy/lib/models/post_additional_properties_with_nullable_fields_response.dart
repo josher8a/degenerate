@@ -4,7 +4,7 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';@immutable final class PostAdditionalPropertiesWithNullableFieldsResponse {const PostAdditionalPropertiesWithNullableFieldsResponse({required this.json});
 
 factory PostAdditionalPropertiesWithNullableFieldsResponse.fromJson(Map<String, dynamic> json) { return PostAdditionalPropertiesWithNullableFieldsResponse(
-  json: (json['json'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String)),
+  json: (json['json'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String?)),
 ); }
 
 final Map<String,String?> json;

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // Source: tag "UserSAccountMembershipsApi" (4 operations)
 
-import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/iam_collection_membership_response.dart';import 'package:pub_cloudflare/models/iam_collection_membership_response_with_policies.dart';import 'package:pub_cloudflare/models/iam_membership_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_membership_with_policies.dart';import 'package:pub_cloudflare/models/iam_properties_name.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_list_memberships_direction.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_list_memberships_order.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_list_memberships_response.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_list_memberships_status.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_update_membership_request.dart';/// UserSAccountMembershipsApi operations.
+import 'dart:convert';import 'package:degenerate_runtime/degenerate_runtime.dart';import 'package:pub_cloudflare/models/aaa_id_response/aaa_id_response_result.dart';import 'package:pub_cloudflare/models/errors/tokens_create_token_error.dart';import 'package:pub_cloudflare/models/iam_collection_membership_response.dart';import 'package:pub_cloudflare/models/iam_collection_membership_response_with_policies.dart';import 'package:pub_cloudflare/models/iam_membership_components_schemas_identifier.dart';import 'package:pub_cloudflare/models/iam_membership_with_policies.dart';import 'package:pub_cloudflare/models/iam_properties_name.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_list_memberships_direction.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_list_memberships_order.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_list_memberships_response.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_list_memberships_status.dart';import 'package:pub_cloudflare/models/user_s_account_memberships_update_membership_request.dart';/// UserSAccountMembershipsApi operations.
 ///
 /// All operations return [ApiResult] - use pattern matching to handle
 /// success, error, and exception cases.
@@ -14,7 +14,7 @@ final class UserSAccountMembershipsApi with ApiExecutor {const UserSAccountMembe
 /// List memberships of accounts the user can access.
 ///
 /// `GET /memberships`
-Future<ApiResult<UserSAccountMembershipsListMembershipsResponse, Never>> userSAccountMembershipsListMemberships({IamPropertiesName? accountName, double? page, double? perPage, UserSAccountMembershipsListMembershipsOrder? order, UserSAccountMembershipsListMembershipsDirection? direction, IamPropertiesName? name, UserSAccountMembershipsListMembershipsStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
+Future<ApiResult<UserSAccountMembershipsListMembershipsResponse, TokensCreateTokenError>> userSAccountMembershipsListMemberships({IamPropertiesName? accountName, double? page, double? perPage, UserSAccountMembershipsListMembershipsOrder? order, UserSAccountMembershipsListMembershipsDirection? direction, IamPropertiesName? name, UserSAccountMembershipsListMembershipsStatus? status, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (accountName != null) {
   queryParameters['account.name'] = accountName.toJson();
@@ -54,6 +54,7 @@ return execute(
   onSuccess: (response) {
     return OneOf2.parse(jsonDecode(response.body), fromA: (v) => IamCollectionMembershipResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => IamCollectionMembershipResponseWithPolicies.fromJson(v as Map<String, dynamic>),);
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// Membership Details
@@ -61,7 +62,7 @@ return execute(
 /// Get a specific membership.
 ///
 /// `GET /memberships/{membership_id}`
-Future<ApiResult<IamMembershipWithPolicies?, Never>> userSAccountMembershipsMembershipDetails({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamMembershipWithPolicies?, TokensCreateTokenError>> userSAccountMembershipsMembershipDetails({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'GET',
@@ -76,6 +77,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? IamMembershipWithPolicies.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// Update Membership
@@ -83,7 +85,7 @@ return execute(
 /// Accept or reject this account invitation.
 ///
 /// `PUT /memberships/{membership_id}`
-Future<ApiResult<IamMembershipWithPolicies?, Never>> userSAccountMembershipsUpdateMembership({required IamMembershipComponentsSchemasIdentifier membershipId, required UserSAccountMembershipsUpdateMembershipRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<IamMembershipWithPolicies?, TokensCreateTokenError>> userSAccountMembershipsUpdateMembership({required IamMembershipComponentsSchemasIdentifier membershipId, required UserSAccountMembershipsUpdateMembershipRequest body, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 headers['Content-Type'] = 'application/json';
 
 final request = ApiRequest(
@@ -100,6 +102,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? IamMembershipWithPolicies.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
 /// Delete Membership
@@ -107,7 +110,7 @@ return execute(
 /// Remove the associated member from an account.
 ///
 /// `DELETE /memberships/{membership_id}`
-Future<ApiResult<AaaIdResponseResult?, Never>> userSAccountMembershipsDeleteMembership({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
+Future<ApiResult<AaaIdResponseResult?, TokensCreateTokenError>> userSAccountMembershipsDeleteMembership({required IamMembershipComponentsSchemasIdentifier membershipId, RequestOptions? options, }) async  { final headers = <String, String>{...apiConfig.defaultHeaders};
 
 final request = ApiRequest(
   method: 'DELETE',
@@ -122,6 +125,7 @@ return execute(
     final json = jsonDecode(response.body) as Map<String, dynamic>;
     return json['result'] != null ? AaaIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
   },
+  onError: TokensCreateTokenError.fromResponse,
 );
  } 
  }
