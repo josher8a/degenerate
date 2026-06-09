@@ -640,12 +640,21 @@ final _codeFence = RegExp(r'^(`{3,})(\w*)$');
 List<String> docCommentLines(String? description) =>
     description == null ? const [] : formatDocComment(description);
 
+/// Matches any line break Dart's scanner recognizes: `\r\n`, `\r`, or `\n`.
+/// A bare `\r` surviving into a `///` line would terminate the comment and
+/// turn the rest of the spec string into live source code.
+final _lineBreak = RegExp(r'\r\n?|\n');
+
+/// Collapse line breaks so spec-controlled text stays inside a single-line
+/// `//` comment — a raw `\r`/`\n` would end the comment and inject source.
+String sanitizeCommentText(String text) => text.replaceAll(_lineBreak, ' ');
+
 /// Splits on newlines, trims trailing whitespace, and escapes HTML-like tags.
 /// Code fence interiors are passed through verbatim; bare opening fences get
 /// a `text` language hint so dartdoc doesn't treat them as Dart.
 List<String> formatDocComment(String description) {
   var inCodeBlock = false;
-  return description.split('\n').map((l) {
+  return description.split(_lineBreak).map((l) {
     final trimmed = l.trimRight();
     final fenceMatch = _codeFence.firstMatch(trimmed);
     if (fenceMatch != null) {
@@ -804,7 +813,10 @@ String hashCodeExpr(IrField f, {required bool isNullable}) {
 /// The `toString` fragment for [f] (e.g. `name: $name`), escaping a leading
 /// `$` in the field name so it isn't read as interpolation.
 String toStringField(IrField f) {
-  if (f.name.startsWith(r'$')) {
+  // `$` is legal anywhere in a Dart identifier ($-prefixed reserved words,
+  // spec names like `c$d`). The label must escape it, and the interpolation
+  // needs braces so the `$` isn't read as a nested interpolation start.
+  if (f.name.contains(r'$')) {
     final escaped = f.name.replaceAll(r'$', r'\$');
     return '$escaped: \${${f.name}}';
   }

@@ -246,7 +246,7 @@ final class DiscriminatedUnionEmitter {
   /// Always returns the union-level disc type (synthetic or spec-defined).
   String _discValueExpr(String discValue) {
     final typeName = _discTypeName;
-    return "$typeName.fromJson('$discValue')";
+    return '$typeName.fromJson(${dartStringLiteral(discValue)})';
   }
 
   /// The Dart expression for the discriminator value in the payload's native
@@ -254,17 +254,17 @@ final class DiscriminatedUnionEmitter {
   /// may be a plain `String`, an enum, or an extension type.
   String _rawDiscValueExpr(String discValue) {
     final discFieldType = _variantInfo(discValue).discFieldType;
-    if (discFieldType == null) return "'$discValue'";
+    if (discFieldType == null) return dartStringLiteral(discValue);
     final t = ctx.resolve(discFieldType);
     return switch (t) {
       IrEnum(:final name, :final valueKind)
           when valueKind == PrimitiveKind.string =>
-        "$name.fromJson('$discValue')",
+        '$name.fromJson(${dartStringLiteral(discValue)})',
       IrExtensionType(:final name, :final inner)
           when inner.kind == PrimitiveKind.string =>
-        "$name.fromJson('$discValue')",
+        '$name.fromJson(${dartStringLiteral(discValue)})',
       _ when isNonStringPrimitiveDisc(t) => discValue,
-      _ => "'$discValue'",
+      _ => dartStringLiteral(discValue),
     };
   }
 
@@ -376,7 +376,7 @@ final class DiscriminatedUnionEmitter {
     final cases = union.mapping.entries
         .map((e) {
           final className = _variantClassName(e.key);
-          return "  '${e.key}' => $className.fromJson(json),";
+          return '  ${dartStringLiteral(e.key)} => $className.fromJson(json),';
         })
         .join('\n');
 
@@ -731,7 +731,7 @@ final class DiscriminatedUnionEmitter {
         ..methods.add(buildHashCodeOverride('$fieldName.hashCode'))
         ..methods.add(() {
           final String fieldStr;
-          if (fieldName.startsWith(r'$')) {
+          if (fieldName.contains(r'$')) {
             fieldStr = '\${$fieldName}';
           } else {
             fieldStr = '\$$fieldName';
@@ -770,8 +770,14 @@ final class DiscriminatedUnionEmitter {
     final valuesList = <String>[];
 
     for (final dv in discValues) {
-      final subclassName = '${enumName}\$${toCamelCase(dv)}';
-      final fieldName = _variantCtorName(dv);
+      final subclassName = '$enumName\$${toCamelCase(dv)}';
+      // Escape names that collide with the enum's own API surface — a static
+      // const `json` would be shadowed by the `fromJson(String json)`
+      // parameter, and `value`/`values` collide with members.
+      var fieldName = _variantCtorName(dv);
+      if (enumReservedNames.contains(fieldName)) {
+        fieldName = '\$$fieldName';
+      }
       staticFields.add(Field(
         (f) => f
           ..name = fieldName
@@ -780,7 +786,7 @@ final class DiscriminatedUnionEmitter {
           ..type = refer(enumName)
           ..assignment = Code('$subclassName._()'),
       ));
-      fromJsonCases.add("  '$dv' => $fieldName,");
+      fromJsonCases.add('  ${dartStringLiteral(dv)} => $fieldName,');
       valuesList.add(fieldName);
     }
 
@@ -839,7 +845,7 @@ final class DiscriminatedUnionEmitter {
 
     // Known subclasses
     for (final dv in discValues) {
-      final subclassName = '${enumName}\$${toCamelCase(dv)}';
+      final subclassName = '$enumName\$${toCamelCase(dv)}';
       specs.add(Class(
         (b) => b
           ..name = subclassName
@@ -858,14 +864,16 @@ final class DiscriminatedUnionEmitter {
               ..lambda = true
               ..annotations.add(refer('override'))
               ..returns = refer('String')
-              ..body = Code("'$dv'"),
+              ..body = Code(dartStringLiteral(dv)),
           ))
           ..methods.add(buildEqualsOverride(
             'identical(this, other) || other is $subclassName',
           ))
-          ..methods.add(buildHashCodeOverride("'$dv'.hashCode"))
+          ..methods.add(
+            buildHashCodeOverride('${dartStringLiteral(dv)}.hashCode'),
+          )
           ..methods.add(buildToStringOverride(
-            "'${escapeNameForString(enumName)}($dv)'",
+            "'${escapeNameForString(enumName)}(${escapeDartString(dv)})'",
           )),
       ));
     }

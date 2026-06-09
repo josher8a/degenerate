@@ -187,13 +187,15 @@ final class AnyOfEmitter {
   ) {
     final spreads = fields.map((f) {
       final fType = f.type;
+      // Field names may be `$`-prefixed (dart:core collisions like $double);
+      // an unescaped key would interpolate the field value instead.
+      final key = dartStringLiteral(f.name);
       return switch (fType) {
-        IrPrimitive() || IrList() || IrMap() =>
-          "  '${f.name}': ?${f.name},",
+        IrPrimitive() || IrList() || IrMap() => '  $key: ?${f.name},',
         IrEnum() || IrExtensionType() =>
-          "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),",
+          '  if (${f.name} != null) $key: ${f.name}!.toJson(),',
         _ when ctx.isUnionType(fType) =>
-          "  if (${f.name} != null) '${f.name}': ${f.name}!.toJson(),",
+          '  if (${f.name} != null) $key: ${f.name}!.toJson(),',
         _ => '  ...?${f.name}?.toJson(),',
       };
     }).join('\n');
@@ -248,7 +250,7 @@ final class AnyOfEmitter {
     List<({String name, IrType type, String typeName})> fields,
   ) {
     final parts = fields.map((f) {
-      if (f.name.startsWith(r'$')) {
+      if (f.name.contains(r'$')) {
         final escaped = f.name.replaceAll(r'$', r'\$');
         return '$escaped: \${${f.name}}';
       }

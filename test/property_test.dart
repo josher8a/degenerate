@@ -28,6 +28,7 @@ void main() {
     bool roundtrip = false,
     bool typedParams = false,
     bool typedFormats = false,
+    void Function(String outDir)? postCheck,
   }) async {
     final specFile = File(p.join(tempDir.path, 'spec.json'));
     specFile.writeAsStringSync(jsonEncode(spec));
@@ -80,6 +81,8 @@ void main() {
     if (analyze.exitCode != 0) {
       fail('dart analyze failed:\n${analyze.stdout}\n${analyze.stderr}');
     }
+
+    postCheck?.call(outDir);
 
     if (roundtrip) {
       _writeRoundtripTest(outDir, name);
@@ -136,8 +139,7 @@ void main() {
   /// and verify it doesn't crash with an unhandled exception.
   Future<void> verifyDefensiveParsing(
     Map<String, dynamic> spec, {
-    String name = 'def_test',
-    required Map<String, String> schemaPayloads,
+    required Map<String, String> schemaPayloads, String name = 'def_test',
   }) async {
     final specFile = File(p.join(tempDir.path, 'spec.json'));
     specFile.writeAsStringSync(jsonEncode(spec));
@@ -285,6 +287,197 @@ void main() {
     }));
   });
 
+  test('adversarial spec strings cannot inject source code', () async {
+    // Every spec-controlled string that flows into generated source:
+    // descriptions/examples (CR injection), paths, media type keys,
+    // multipart/form field names, security scheme names, discriminator
+    // mapping keys. Quotes and `$` must be escaped; a raw `\r` must never
+    // survive into a generated file (Dart's scanner treats it as a line
+    // terminator, which would end a `///` comment mid-line).
+    final spec = <String, dynamic>{
+      'openapi': '3.1.0',
+      'info': {'title': 'Adversarial', 'version': '1.0.0'},
+      'security': [
+        {"key'] /* pwn */": <String>[]},
+      ],
+      'paths': {
+        "/it's/{id}": {
+          'get': {
+            'operationId': 'getQuoted',
+            'summary': "Line one\rString injected = 'pwned';",
+            'description': 'Desc\rint alsoInjected = 1;',
+            'parameters': [
+              {
+                'name': 'id',
+                'in': 'path',
+                'required': true,
+                'schema': {'type': 'string'},
+              },
+            ],
+            'responses': {
+              '200': {
+                'description': 'OK',
+                'content': {
+                  'application/json': {
+                    'schema': {r'$ref': '#/components/schemas/CrDoc'},
+                  },
+                },
+              },
+            },
+          },
+        },
+        '/weird-media': {
+          'post': {
+            'operationId': 'postWeirdMedia',
+            'requestBody': {
+              'content': {
+                "application/vnd.a'b+json": {
+                  'schema': {r'$ref': '#/components/schemas/CrDoc'},
+                },
+              },
+            },
+            'responses': {
+              '204': {'description': 'No content'},
+            },
+          },
+        },
+        '/multipart': {
+          'post': {
+            'operationId': 'postMultipart',
+            'requestBody': {
+              'content': {
+                'multipart/form-data': {
+                  'schema': {
+                    'type': 'object',
+                    'properties': {
+                      "a'b": {'type': 'string'},
+                      r'c$d': {'type': 'string'},
+                    },
+                  },
+                },
+              },
+            },
+            'responses': {
+              '204': {'description': 'No content'},
+            },
+          },
+        },
+        '/form': {
+          'post': {
+            'operationId': 'postForm',
+            'requestBody': {
+              'content': {
+                'application/x-www-form-urlencoded': {
+                  'schema': {
+                    'type': 'object',
+                    'properties': {
+                      "e'f": {'type': 'string'},
+                    },
+                  },
+                },
+              },
+            },
+            'responses': {
+              '204': {'description': 'No content'},
+            },
+          },
+        },
+      },
+      'components': {
+        'securitySchemes': {
+          "key'] /* pwn */": {
+            'type': 'apiKey',
+            'name': 'X-Api-Key',
+            'in': 'header',
+          },
+        },
+        'schemas': {
+          'CrDoc': {
+            'type': 'object',
+            'description': "Type doc\rString classInjected = 'pwned';",
+            'properties': {
+              'note': {
+                'type': 'string',
+                'description': 'Field doc\rint fieldInjected = 2;',
+                'example': 'ex\rint exampleInjected = 3;',
+              },
+            },
+          },
+          'Tagged': {
+            'oneOf': [
+              {r'$ref': '#/components/schemas/TagA'},
+              {r'$ref': '#/components/schemas/TagB'},
+            ],
+            'discriminator': {
+              'propertyName': 'kind',
+              'mapping': {
+                "it's": '#/components/schemas/TagA',
+                r'a$b': '#/components/schemas/TagB',
+              },
+            },
+          },
+          'TagA': {
+            'type': 'object',
+            'properties': {
+              'kind': {'type': 'string'},
+            },
+            'required': ['kind'],
+          },
+          'TagB': {
+            'type': 'object',
+            'properties': {
+              'kind': {'type': 'string'},
+            },
+            'required': ['kind'],
+          },
+          'KvAny': {
+            'anyOf': [
+              {'type': 'string'},
+              {'type': 'number'},
+              {'type': 'boolean'},
+              {
+                'type': 'object',
+                'properties': {
+                  'x': {'type': 'string'},
+                },
+              },
+            ],
+          },
+        },
+      },
+    };
+
+    await generateAndAnalyze(
+      spec,
+      name: 'adversarial_strings',
+      postCheck: (outDir) {
+        final dartFiles = Directory(p.join(outDir, 'lib'))
+            .listSync(recursive: true)
+            .whereType<File>()
+            .where((f) => f.path.endsWith('.dart'));
+        for (final file in dartFiles) {
+          final content = file.readAsStringSync();
+          expect(
+            content.contains('\r'),
+            isFalse,
+            reason: 'raw carriage return survived into ${file.path}',
+          );
+          // The payload text may appear inside `///` comments (escaped);
+          // it must never appear as actual source.
+          for (final line in content.split('\n')) {
+            if (line.contains('Injected') || line.contains('injected =')) {
+              expect(
+                line.trimLeft(),
+                startsWith('///'),
+                reason: 'injected payload reached ${file.path} as source',
+              );
+            }
+          }
+        }
+      },
+    );
+  });
+
   // ─── Diverse type combinations ──────────────────────────
 
   test('all primitive types compile', () async {
@@ -302,7 +495,7 @@ void main() {
           'dateTime': {'type': 'string', 'format': 'date-time'},
           'uri': {'type': 'string', 'format': 'uri'},
           'bytes': {'type': 'string', 'format': 'byte'},
-          'dynamicField': {},
+          'dynamicField': <String, dynamic>{},
           'withDefault': {'type': 'string', 'default': 'hello'},
           'intWithDefault': {'type': 'integer', 'default': 42},
           'boolWithDefault': {'type': 'boolean', 'default': true},
@@ -676,7 +869,7 @@ void main() {
             'type': 'object',
             'properties': {
               'type': {'type': 'string'},
-              'data': {},
+              'data': <String, dynamic>{},
             },
           },
         },
@@ -787,7 +980,7 @@ void main() {
           },
           'count': {
             'type': 'integer',
-            'description': 'Contains \$pecial chars and <tags>.',
+            'description': r'Contains $pecial chars and <tags>.',
             'example': 42,
           },
         },

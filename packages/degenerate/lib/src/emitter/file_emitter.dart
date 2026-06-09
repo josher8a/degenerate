@@ -984,7 +984,7 @@ final class FileEmitter {
           final entries = requirement.schemes.entries
               .map(
                 (entry) =>
-                    "'${entry.key}': [${entry.value.map((scope) => "'${escapeDartString(scope)}'").join(', ')}]",
+                    "'${escapeDartString(entry.key)}': [${entry.value.map((scope) => "'${escapeDartString(scope)}'").join(', ')}]",
               )
               .join(', ');
           return 'const ApiSecurityRequirement({$entries})';

@@ -252,9 +252,13 @@ final class ApiEmitter {
     ) = reqCtx;
     final httpMethod = _httpMethodString(op);
 
-    // Build path with parameter interpolation (URL-encoded).
+    // Build path with parameter interpolation (URL-encoded). The literal
+    // segments are spec-controlled and must be escaped before the `${...}`
+    // substitutions are spliced in.
     final pathParamsByName = {for (final p in pathParams) p.name: p};
-    final path = op.path.replaceAllMapped(_pathParamPattern, (m) {
+    final path = escapeDartString(op.path).replaceAllMapped(_pathParamPattern, (
+      m,
+    ) {
       final p = pathParamsByName[m[1]];
       if (p == null) return m[0]!;
       return '\${${_pathSegmentEncodeExpr(p)}}';
@@ -316,7 +320,9 @@ final class ApiEmitter {
       final contentType = normalizeMediaType(mediaType) == '*/*'
           ? 'application/json'
           : mediaType;
-      buf.writeln("headers['Content-Type'] = '$contentType';");
+      buf.writeln(
+        "headers['Content-Type'] = ${dartStringLiteral(contentType)};",
+      );
     }
     _writeStringMapEntries(buf, headerParams, 'headers');
     buf.writeln();
@@ -425,7 +431,7 @@ final class ApiEmitter {
     }
     final httpMethod = _httpMethodString(op);
     if (docs.isNotEmpty) docs.add('///');
-    docs.add('/// `$httpMethod ${op.path}`');
+    docs.addAll(formatDocComment('`$httpMethod ${op.path}`'));
 
     return Method(
       (m) => m
@@ -548,7 +554,8 @@ final class ApiEmitter {
       IrExtensionType() =>
         'return ${ctx.fromJson(returnType, 'response.body')};',
       _ =>
-        "// TODO: Unsupported non-JSON response schema $unsupportedMessage\nthrow UnsupportedError('$unsupportedMessage');",
+        '// TODO: Unsupported non-JSON response schema ${sanitizeCommentText(unsupportedMessage)}\n'
+            'throw UnsupportedError(${dartStringLiteral(unsupportedMessage)});',
     };
   }
 
@@ -919,7 +926,7 @@ final class ApiEmitter {
     }
     final httpMethod = _httpMethodString(op);
     if (docs.isNotEmpty) docs.add('///');
-    docs.add('/// `$httpMethod ${op.path}`');
+    docs.addAll(formatDocComment('`$httpMethod ${op.path}`'));
 
     return Method(
       (m) => m
@@ -999,7 +1006,8 @@ final class ApiEmitter {
         'Cannot decode $mediaType error into ${irTypeName(errorType)}';
     final primitive = _nonJsonPrimitiveDeserialize(errorType);
     if (primitive != null) return primitive;
-    return "// TODO: Unsupported non-JSON error schema $unsupportedMessage\nthrow UnsupportedError('$unsupportedMessage');";
+    return '// TODO: Unsupported non-JSON error schema ${sanitizeCommentText(unsupportedMessage)}\n'
+        'throw UnsupportedError(${dartStringLiteral(unsupportedMessage)});';
   }
 
   (String, IrMediaType)? _successResponseContent(IrOperation op) {
@@ -1050,7 +1058,7 @@ final class ApiEmitter {
       },
       IrEnum() => 'body.toJson()',
       IrExtensionType() => 'body.toJson()',
-      _ => "throw UnsupportedError('$unsupportedMessage')",
+      _ => 'throw UnsupportedError(${dartStringLiteral(unsupportedMessage)})',
     };
   }
 
@@ -1146,15 +1154,16 @@ final class ApiEmitter {
       final fieldAccessor = 'body.${f.name}';
       final isNullable =
           fieldIsNullableInDart(f);
+      final keyLiteral = escapeDartString(f.originalName);
       final valueExpr = _formFieldValueExpr(f.type, fieldAccessor);
       final encoded =
-          "'${f.originalName}=\${Uri.encodeQueryComponent($valueExpr)}'";
+          "'$keyLiteral=\${Uri.encodeQueryComponent($valueExpr)}'";
 
       if (isNullable) {
         final localVar = '${f.name}\$';
         final localValueExpr = _formFieldValueExpr(f.type, localVar);
         final localEncoded =
-            "'${f.originalName}=\${Uri.encodeQueryComponent($localValueExpr)}'";
+            "'$keyLiteral=\${Uri.encodeQueryComponent($localValueExpr)}'";
         buf.writeln('    if ($fieldAccessor case final $localVar?)');
         buf.writeln('      $localEncoded,');
       } else {
@@ -1181,12 +1190,12 @@ final class ApiEmitter {
   ) {
     if (isBytes) {
       buf.writeln(
-        "    ApiMultipartField.file('${f.originalName}', $accessor),",
+        '    ApiMultipartField.file(${dartStringLiteral(f.originalName)}, $accessor),',
       );
     } else {
       final valueExpr = _multipartFieldValueExpr(f.type, accessor);
       buf.writeln(
-        "    ApiMultipartField.text('${f.originalName}', $valueExpr),",
+        '    ApiMultipartField.text(${dartStringLiteral(f.originalName)}, $valueExpr),',
       );
     }
   }
