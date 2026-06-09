@@ -354,7 +354,7 @@ final class IrMapper {
         flattened,
         description: description,
         nullable: nullable,
-        isDiscriminatorVariant: discriminatorProperty != null,
+        discriminatorProperty: discriminatorProperty,
       );
       if (resolved != null) return resolved;
     }
@@ -808,7 +808,12 @@ final class IrMapper {
         isNullable: fieldNullable,
       );
     } else if (isEnumCandidate && !isDiscriminatorField) {
-      final inlineEnumName = '$objectName${toPascalCase(fieldOriginalName)}';
+      // Unique-name the synthesized enum like every other inline type — a
+      // same-named schema (Order.status vs an `OrderStatus` schema) would
+      // otherwise silently merge with it.
+      final inlineEnumName = _uniqueTypeName(
+        '$objectName${toPascalCase(fieldOriginalName)}',
+      );
       fieldType = _lowerEnum(
         inlineEnumName,
         fieldSchema,
@@ -877,10 +882,15 @@ final class IrMapper {
       }
     }
 
+    // Raw schema names covered by the explicit mapping. Per OAS, an explicit
+    // mapping only overrides/adds to the implicit one — oneOf variants it
+    // doesn't list still participate, keyed implicitly below.
+    final coveredRefNames = <String>{};
     if (explicitMapping != null) {
       for (final MapEntry(:key, :value) in explicitMapping.entries) {
         if (value is String) {
           final rawRefName = _extractRefName(value);
+          coveredRefNames.add(rawRefName);
           var dartRefName = _nameMapping[rawRefName];
           if (dartRefName == null) {
             // Try to match against oneOf refs by suffix (handles specs where
@@ -890,6 +900,7 @@ final class IrMapper {
               if (oneOfRef.endsWith(rawRefName) &&
                   _nameMapping.containsKey(oneOfRef)) {
                 dartRefName = _nameMapping[oneOfRef];
+                coveredRefNames.add(oneOfRef);
                 break;
               }
             }
@@ -908,46 +919,52 @@ final class IrMapper {
           );
         }
       }
-    } else {
-      // Infer mapping from oneOf entries.
-      for (var i = 0; i < oneOf.length; i++) {
-        final variant = oneOf[i];
-        if (variant is Map<String, dynamic> && variant.containsKey(r'$ref')) {
-          final rawRefName = _extractRefName(variant[r'$ref'] as String);
-          final dartRefName = _dartRefName(rawRefName);
-          // Try to extract the actual discriminator enum value from the
-          // referenced schema (e.g. role: enum: ['system'] → 'system').
-          var key = rawRefName;
-          final refSchema = _rawSchemas[rawRefName];
-          if (refSchema is Map<String, dynamic>) {
-            final flatRef = _flattener.flatten(refSchema);
-            key =
-                _discriminatorEnumValue(
-                  flatRef['properties'] as Map<String, dynamic>?,
-                  propertyName,
-                ) ??
-                key;
-          }
-          mapping[key] = IrTypeRef(dartRefName);
-        } else if (variant is Map<String, dynamic> &&
-            (_looksLikeObject(variant) || _looksLikeNamedType(variant))) {
-          final hint = _variantHint(unionName, variant, i);
-          final lowered = lowerInlineSchema(
-            variant,
-            nameHint: hint,
-            namePath: _variantPath(unionName, unionPath, hint),
-            // Emit the discriminator field as a plain String, matching the
-            // sealed base's `String get <disc>` and ref-variant payloads.
-            discriminatorProperty: propertyName,
-          );
-          // Derive the mapping key from the discriminator enum value if
-          // available, otherwise use the type name.
-          final key =
+    }
+
+    // Infer implicit mapping entries from oneOf variants not covered by the
+    // explicit mapping (all of them when no mapping is present).
+    for (var i = 0; i < oneOf.length; i++) {
+      final variant = oneOf[i];
+      if (variant is Map<String, dynamic> && variant.containsKey(r'$ref')) {
+        final rawRefName = _extractRefName(variant[r'$ref'] as String);
+        if (coveredRefNames.contains(rawRefName)) continue;
+        final dartRefName = _dartRefName(rawRefName);
+        // Try to extract the actual discriminator enum value from the
+        // referenced schema (e.g. role: enum: ['system'] → 'system').
+        var key = rawRefName;
+        final refSchema = _rawSchemas[rawRefName];
+        if (refSchema is Map<String, dynamic>) {
+          final flatRef = _flattener.flatten(refSchema);
+          key =
               _discriminatorEnumValue(
-                variant['properties'] as Map<String, dynamic>?,
+                flatRef['properties'] as Map<String, dynamic>?,
                 propertyName,
               ) ??
-              (lowered is IrObject ? lowered.name : hint);
+              key;
+        }
+        if (!mapping.containsKey(key)) {
+          mapping[key] = IrTypeRef(dartRefName);
+        }
+      } else if (variant is Map<String, dynamic> &&
+          (_looksLikeObject(variant) || _looksLikeNamedType(variant))) {
+        final hint = _variantHint(unionName, variant, i);
+        final lowered = lowerInlineSchema(
+          variant,
+          nameHint: hint,
+          namePath: _variantPath(unionName, unionPath, hint),
+          // Emit the discriminator field as a plain String, matching the
+          // sealed base's `String get <disc>` and ref-variant payloads.
+          discriminatorProperty: propertyName,
+        );
+        // Derive the mapping key from the discriminator enum value if
+        // available, otherwise use the type name.
+        final key =
+            _discriminatorEnumValue(
+              variant['properties'] as Map<String, dynamic>?,
+              propertyName,
+            ) ??
+            (lowered is IrObject ? lowered.name : hint);
+        if (!mapping.containsKey(key)) {
           mapping[key] = lowered is IrObject
               ? IrTypeRef(lowered.name)
               : lowered;
@@ -1077,7 +1094,10 @@ final class IrMapper {
         final rawName = _extractRefName(refPath);
         final target = _rawSchemas[rawName];
         if (target is Map<String, dynamic>) {
-          resolved.add(target);
+          // A target may itself use allOf (multi-level inheritance). Expand
+          // it fully, or the flattener would skip the nested allOf and drop
+          // every property it carries.
+          resolved.add(_expandNestedAllOf(target, {rawName}));
           changed = true;
           continue;
         }
@@ -1088,15 +1108,50 @@ final class IrMapper {
     return {...schema, 'allOf': resolved};
   }
 
+  /// Recursively resolve `$ref` entries inside a schema's `allOf` and
+  /// flatten the result into a plain object schema. [seen] guards against
+  /// circular allOf chains.
+  Map<String, dynamic> _expandNestedAllOf(
+    Map<String, dynamic> schema,
+    Set<String> seen,
+  ) {
+    final allOf = schema['allOf'];
+    if (allOf is! List) return schema;
+    final resolved = <dynamic>[];
+    for (final sub in allOf) {
+      if (sub is Map<String, dynamic> &&
+          sub.containsKey(r'$ref') &&
+          sub.length == 1) {
+        final rawName = _extractRefName(sub[r'$ref'] as String);
+        if (!seen.add(rawName)) continue;
+        final target = _rawSchemas[rawName];
+        if (target is Map<String, dynamic>) {
+          resolved.add(_expandNestedAllOf(target, seen));
+          continue;
+        }
+      }
+      resolved.add(
+        sub is Map<String, dynamic> ? _expandNestedAllOf(sub, seen) : sub,
+      );
+    }
+    return _flattener.flatten({...schema, 'allOf': resolved});
+  }
+
   /// Handle a `$ref` surfaced from allOf flattening. Returns an [IrTypeRef]
   /// if the result is a pure ref alias; returns `null` (and mutates
   /// [flattened] to merge properties) if extra properties need object
   /// lowering.
+  ///
+  /// A discriminator variant whose only extra property is the discriminator
+  /// itself stays a bare ref so the union emitter wraps the base payload.
+  /// Variants with real extra properties (the canonical
+  /// `allOf: [$ref Base, {properties: ...}]` inheritance pattern) merge —
+  /// otherwise their own fields would be silently dropped.
   IrType? _resolveAllOfRef(
     Map<String, dynamic> flattened, {
     required String? description,
     required bool nullable,
-    required bool isDiscriminatorVariant,
+    required String? discriminatorProperty,
   }) {
     final refPath = flattened[r'$ref'] as String;
     final rawRefName = _extractRefName(refPath);
@@ -1108,12 +1163,12 @@ final class IrMapper {
             <String>{}
         : <String>{};
     final flatProps = flattened['properties'] as Map<String, dynamic>? ?? {};
-    final hasExtraProperties =
-        flatProps.keys.toSet().difference(refPropKeys).isNotEmpty;
+    final extraProperties = flatProps.keys.toSet().difference(refPropKeys);
+    if (discriminatorProperty != null) {
+      extraProperties.remove(discriminatorProperty);
+    }
 
-    if (hasExtraProperties &&
-        !isDiscriminatorVariant &&
-        refSchema is Map<String, dynamic>) {
+    if (extraProperties.isNotEmpty && refSchema is Map<String, dynamic>) {
       final refProps = refSchema['properties'] as Map<String, dynamic>? ?? {};
       flattened['properties'] = <String, dynamic>{...refProps, ...flatProps};
       final refReq = (refSchema['required'] as List?)?.cast<String>() ?? [];

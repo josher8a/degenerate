@@ -431,6 +431,84 @@ void main() {
       });
     });
 
+    group('wildcard status code ranges', () {
+      IrOperation lowerWildcardOp(Map<String, dynamic> responses) {
+        final doc = OpenApiDocument({
+          'openapi': '3.1.1',
+          'info': {'title': 'x', 'version': '1'},
+          'paths': {
+            '/jobs': {
+              'post': {
+                'operationId': 'createJob',
+                'responses': responses,
+              },
+            },
+          },
+        });
+        final apis = OperationLowerer(
+          IrMapper(
+            NormalizationContext(
+              nameMapping: {},
+              discriminatorProperties: {},
+              usedNames: {},
+            ),
+          ),
+          doc: doc,
+        ).lowerPaths(doc.paths);
+        return apis.single.operations.single;
+      }
+
+      test('2XX/4XX/5XX responses are lowered, not dropped', () {
+        final op = lowerWildcardOp({
+          '2XX': {
+            'description': 'ok',
+            'content': {
+              'application/json': {
+                'schema': {'type': 'string'},
+              },
+            },
+          },
+          '4XX': {
+            'description': 'client error',
+            'content': {
+              'application/json': {
+                'schema': {'type': 'string'},
+              },
+            },
+          },
+          '5XX': {
+            'description': 'server error',
+            'content': {
+              'application/json': {
+                'schema': {'type': 'string'},
+              },
+            },
+          },
+        });
+        expect(op.responses, contains(kStatusRange2xx));
+        expect(op.responses, contains(kStatusRange4xx));
+        expect(op.responses, contains(kStatusRange5xx));
+      });
+
+      test('lowercase range keys are accepted', () {
+        final op = lowerWildcardOp({
+          '2xx': {'description': 'ok'},
+        });
+        expect(op.responses, contains(kStatusRange2xx));
+      });
+
+      test('explicit codes coexist with ranges', () {
+        final op = lowerWildcardOp({
+          '200': {'description': 'ok'},
+          '4XX': {'description': 'client error'},
+          '404': {'description': 'not found'},
+        });
+        expect(op.responses, contains(200));
+        expect(op.responses, contains(404));
+        expect(op.responses, contains(kStatusRange4xx));
+      });
+    });
+
     group('createPets', () {
       late IrOperation op;
 
@@ -1247,6 +1325,234 @@ void main() {
         expect(cat, isA<IrTypeRef>());
         final dog = mapper.typeRegistry['Dog'];
         expect(dog, isA<IrTypeRef>());
+      },
+    );
+
+    test(
+      'discriminator variant with allOf keeps variant-specific fields',
+      () {
+        // The canonical OpenAPI inheritance pattern: a variant extends the
+        // base schema AND adds its own (required) properties. Those must not
+        // be silently dropped.
+        final schemas = <String, dynamic>{
+          'Animal': {
+            'oneOf': [
+              {r'$ref': '#/components/schemas/Cat'},
+              {r'$ref': '#/components/schemas/Dog'},
+            ],
+            'discriminator': {
+              'propertyName': 'petType',
+            },
+          },
+          'Pet': {
+            'type': 'object',
+            'properties': {
+              'name': {'type': 'string'},
+              'petType': {'type': 'string'},
+            },
+            'required': ['name', 'petType'],
+          },
+          'Cat': {
+            'allOf': [
+              {r'$ref': '#/components/schemas/Pet'},
+              {
+                'type': 'object',
+                'properties': {
+                  'huntingSkill': {'type': 'string'},
+                },
+                'required': ['huntingSkill'],
+              },
+            ],
+          },
+          'Dog': {
+            'allOf': [
+              {r'$ref': '#/components/schemas/Pet'},
+              {
+                'type': 'object',
+                'properties': {
+                  'barkVolume': {'type': 'integer'},
+                },
+                'required': ['barkVolume'],
+              },
+            ],
+          },
+        };
+        final ctx = SchemaNormalizer().normalize(schemas);
+        final mapper = IrMapper(ctx);
+        mapper.lowerSchemas(schemas);
+
+        final dog = mapper.typeRegistry['Dog'];
+        expect(dog, isA<IrObject>());
+        final dogFields = (dog! as IrObject).fields;
+        final dogNames = dogFields.map((f) => f.name).toSet();
+        expect(dogNames, containsAll(['name', 'petType', 'barkVolume']));
+        expect(
+          dogFields.firstWhere((f) => f.name == 'barkVolume').isRequired,
+          isTrue,
+        );
+        expect(
+          dogFields.firstWhere((f) => f.name == 'name').isRequired,
+          isTrue,
+        );
+
+        final cat = mapper.typeRegistry['Cat'];
+        expect(cat, isA<IrObject>());
+        final catNames = (cat! as IrObject).fields.map((f) => f.name).toSet();
+        expect(catNames, containsAll(['name', 'petType', 'huntingSkill']));
+      },
+    );
+
+    test(
+      'inline field enum does not collide with a same-named schema',
+      () {
+        // Order.status synthesizes the enum name "OrderStatus" — which the
+        // spec also defines as an object schema. The enum must be renamed,
+        // not silently merged (Order.fromJson would call the object's
+        // fromJson with a String).
+        final schemas = <String, dynamic>{
+          'Order': {
+            'type': 'object',
+            'properties': {
+              'status': {
+                'type': 'string',
+                'enum': ['open', 'closed'],
+              },
+            },
+          },
+          'OrderStatus': {
+            'type': 'object',
+            'properties': {
+              'label': {'type': 'string'},
+            },
+          },
+        };
+        final ctx = SchemaNormalizer().normalize(schemas);
+        final mapper = IrMapper(ctx);
+        mapper.lowerSchemas(schemas);
+
+        expect(mapper.typeRegistry['OrderStatus'], isA<IrObject>());
+        final order = mapper.typeRegistry['Order']! as IrObject;
+        final statusType = order.fields.single.type;
+        expect(statusType, isA<IrEnum>());
+        expect((statusType as IrEnum).name, isNot(equals('OrderStatus')));
+        // The renamed enum must still be registered under its new name.
+        expect(mapper.typeRegistry[statusType.name], same(statusType));
+      },
+    );
+
+    test(
+      'multi-level allOf inheritance keeps all inherited properties',
+      () {
+        // Combined: allOf [Base1, Base2] where Base1 itself extends Grand.
+        // The pre-resolved Base1 contains a nested allOf that must be
+        // flattened, not skipped.
+        final schemas = <String, dynamic>{
+          'Grand': {
+            'type': 'object',
+            'properties': {
+              'g': {'type': 'string'},
+            },
+            'required': ['g'],
+          },
+          'Base1': {
+            'allOf': [
+              {r'$ref': '#/components/schemas/Grand'},
+              {
+                'type': 'object',
+                'properties': {
+                  'b1': {'type': 'string'},
+                },
+                'required': ['b1'],
+              },
+            ],
+          },
+          'Base2': {
+            'type': 'object',
+            'properties': {
+              'b2': {'type': 'string'},
+            },
+          },
+          'Combined': {
+            'allOf': [
+              {r'$ref': '#/components/schemas/Base1'},
+              {r'$ref': '#/components/schemas/Base2'},
+            ],
+          },
+        };
+        final ctx = SchemaNormalizer().normalize(schemas);
+        final mapper = IrMapper(ctx);
+        mapper.lowerSchemas(schemas);
+
+        final combined = mapper.typeRegistry['Combined'];
+        expect(combined, isA<IrObject>());
+        final names =
+            (combined! as IrObject).fields.map((f) => f.name).toSet();
+        expect(names, containsAll(['g', 'b1', 'b2']));
+      },
+    );
+
+    test(
+      'partial discriminator mapping keeps unmapped oneOf variants',
+      () {
+        // Per OAS, an explicit mapping only overrides/adds to the implicit
+        // mapping — oneOf schemas not listed still participate, keyed by
+        // their discriminator enum value or schema name.
+        final schemas = <String, dynamic>{
+          'Event': {
+            'oneOf': [
+              {r'$ref': '#/components/schemas/Deposit'},
+              {r'$ref': '#/components/schemas/Withdrawal'},
+              {r'$ref': '#/components/schemas/Transfer'},
+            ],
+            'discriminator': {
+              'propertyName': 'kind',
+              'mapping': {
+                'dep': '#/components/schemas/Deposit',
+              },
+            },
+          },
+          'Deposit': {
+            'type': 'object',
+            'properties': {
+              'kind': {'type': 'string'},
+            },
+            'required': ['kind'],
+          },
+          'Withdrawal': {
+            'type': 'object',
+            'properties': {
+              'kind': {
+                'type': 'string',
+                'enum': ['withdrawal'],
+              },
+            },
+            'required': ['kind'],
+          },
+          'Transfer': {
+            'type': 'object',
+            'properties': {
+              'kind': {'type': 'string'},
+            },
+            'required': ['kind'],
+          },
+        };
+        final ctx = SchemaNormalizer().normalize(schemas);
+        final mapper = IrMapper(ctx);
+        mapper.lowerSchemas(schemas);
+
+        final event = mapper.typeRegistry['Event'];
+        expect(event, isA<IrDiscriminatedUnion>());
+        final union = event! as IrDiscriminatedUnion;
+
+        expect(union.mapping, contains('dep'));
+        // Unmapped variants are inferred: enum value when declared,
+        // schema name otherwise.
+        expect(union.mapping, contains('withdrawal'));
+        expect(union.mapping, contains('Transfer'));
+        expect(union.mapping, hasLength(3));
+        // An explicitly mapped schema must not also appear under its
+        // implicit key.
+        expect(union.mapping, isNot(contains('Deposit')));
       },
     );
 
