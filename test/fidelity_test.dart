@@ -4,7 +4,6 @@ import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
-import 'package:degenerate/src/normalizer/allof_flattener.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 import 'package:test/test.dart';
@@ -309,7 +308,7 @@ void main() {
       expect(obj.additionalProperties, isNotNull);
       expect(obj.additionalProperties, isA<IrPrimitive>());
       expect(
-        (obj.additionalProperties as IrPrimitive).kind,
+        (obj.additionalProperties! as IrPrimitive).kind,
         equals(PrimitiveKind.string),
       );
     });
@@ -329,7 +328,7 @@ void main() {
   // ─── Streaming (itemSchema) ─────────────────────────────
 
   group('Streaming', () {
-    IrOperation _findOp(String operationId) {
+    IrOperation findOp(String operationId) {
       for (final api in apis) {
         for (final op in api.operations) {
           if (op.operationId == operationId) return op;
@@ -338,8 +337,8 @@ void main() {
       throw StateError('Operation $operationId not found');
     }
 
-    test('SSE endpoint preserves itemSchema with \$ref', () {
-      final op = _findOp('streamEvents');
+    test(r'SSE endpoint preserves itemSchema with $ref', () {
+      final op = findOp('streamEvents');
       final resp = op.responses[200]!;
       final sse = resp.content['text/event-stream']!;
 
@@ -347,12 +346,12 @@ void main() {
       expect(sse.itemSchema, isNotNull,
           reason: 'itemSchema must survive lowering');
       expect(sse.itemSchema, isA<IrTypeRef>(),
-          reason: 'itemSchema \$ref to emittable type stays as IrTypeRef');
-      expect((sse.itemSchema as IrTypeRef).name, equals('BasicObject'));
+          reason: r'itemSchema $ref to emittable type stays as IrTypeRef');
+      expect((sse.itemSchema! as IrTypeRef).name, equals('BasicObject'));
     });
 
     test('JSONL endpoint preserves inline itemSchema', () {
-      final op = _findOp('streamLines');
+      final op = findOp('streamLines');
       final resp = op.responses[200]!;
       final jsonl = resp.content['application/x-ndjson']!;
 
@@ -367,11 +366,11 @@ void main() {
     });
 
     test('itemSchema survives ref resolution', () {
-      final op = _findOp('streamEvents');
+      final op = findOp('streamEvents');
       final sse = op.responses[200]!.content['text/event-stream']!;
       expect(sse.itemSchema, isNotNull,
           reason: 'itemSchema must not be dropped by TypeRefResolver');
-      expect((sse.itemSchema as IrTypeRef).name, equals('BasicObject'));
+      expect((sse.itemSchema! as IrTypeRef).name, equals('BasicObject'));
     });
   });
 

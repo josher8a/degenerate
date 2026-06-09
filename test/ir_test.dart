@@ -13,7 +13,7 @@ void main() {
     test('collects names from object fields', () {
       const obj = IrObject('Parent', [
         IrField('child', 'child', IrTypeRef('ChildType'), isRequired: true),
-        IrField('other', 'other', IrTypeRef('OtherType'), isRequired: false),
+        IrField('other', 'other', IrTypeRef('OtherType')),
       ]);
       final names = <String>{};
       collectTypeRefs(obj, names);
@@ -101,8 +101,8 @@ void main() {
 
     test('circular refs with registry do not cause infinite loops', () {
       // Node → refs Node itself via IrTypeRef('Node')
-      final node = IrObject('Node', [
-        IrField('child', 'child', IrTypeRef('Node'), isRequired: false),
+      const node = IrObject('Node', [
+        IrField('child', 'child', IrTypeRef('Node')),
       ]);
       final registry = <String, IrType>{'Node': node};
       final names = <String>{};
@@ -127,7 +127,7 @@ void main() {
     test('builds correct adjacency map for a simple object', () {
       const obj = IrObject('Foo', [
         IrField('bar', 'bar', IrTypeRef('Bar'), isRequired: true),
-        IrField('baz', 'baz', IrTypeRef('Baz'), isRequired: false),
+        IrField('baz', 'baz', IrTypeRef('Baz')),
       ]);
       final deps = buildTypeDeps([obj]);
       expect(deps, containsPair('Foo', containsAll(['Bar', 'Baz'])));
@@ -245,7 +245,7 @@ void main() {
   // ---------------------------------------------------------------------------
 
   group('rewriteApiNames', () {
-    IrOperation _makeOp({
+    IrOperation makeOp({
       List<IrParameter> parameters = const [],
       IrRequestBody? requestBody,
       Map<int, IrResponse> responses = const {},
@@ -264,7 +264,7 @@ void main() {
 
     test('renames type refs in operation parameters', () {
       final api = IrApi('MyApi', [
-        _makeOp(
+        makeOp(
           parameters: [
             const IrParameter(
               'param1',
@@ -286,7 +286,7 @@ void main() {
 
     test('renames type refs in request body', () {
       final api = IrApi('MyApi', [
-        _makeOp(
+        makeOp(
           requestBody: const IrRequestBody(
             {
               'application/json':
@@ -306,7 +306,7 @@ void main() {
 
     test('renames type refs in response content', () {
       final api = IrApi('MyApi', [
-        _makeOp(
+        makeOp(
           responses: {
             200: const IrResponse(
               content: {
@@ -327,7 +327,7 @@ void main() {
 
     test('renames type refs in default response', () {
       final api = IrApi('MyApi', [
-        _makeOp(
+        makeOp(
           defaultResponse: const IrResponse(
             content: {
               'application/json': IrMediaType(IrTypeRef('OldDefault')),
@@ -345,7 +345,7 @@ void main() {
 
     test('renames type refs in response headers', () {
       final api = IrApi('MyApi', [
-        _makeOp(
+        makeOp(
           responses: {
             200: const IrResponse(
               headers: [
@@ -365,7 +365,7 @@ void main() {
 
     test('preserves api name', () {
       final api = IrApi('OriginalApi', [
-        _makeOp(responses: {200: const IrResponse()}),
+        makeOp(responses: {200: const IrResponse()}),
       ]);
       final renamed = rewriteApiNames(api, (n) => 'New$n');
       expect(renamed.name, equals('OriginalApi'));
@@ -373,7 +373,7 @@ void main() {
 
     test('renames itemSchema in media type when present', () {
       final api = IrApi('MyApi', [
-        _makeOp(
+        makeOp(
           responses: {
             200: const IrResponse(
               content: {
@@ -392,7 +392,7 @@ void main() {
       );
       final mt =
           renamed.operations.first.responses[200]!.content['application/x-ndjson']!;
-      expect((mt.itemSchema as IrTypeRef).name, equals('RenamedItem'));
+      expect((mt.itemSchema! as IrTypeRef).name, equals('RenamedItem'));
     });
   });
 
@@ -407,7 +407,7 @@ void main() {
       // types (IrObject fields, IrList items, etc.).  Use IrList wrapping an
       // IrTypeRef to an IrEnum to verify the resolver walks into the list.
       final registry = <String, IrType>{
-        'MyEnum': IrEnum('MyEnum', ['a', 'b']),
+        'MyEnum': const IrEnum('MyEnum', ['a', 'b']),
       };
       final resolver = TypeRefResolver(registry);
 
@@ -443,7 +443,7 @@ void main() {
       // Resolver only inlines non-emittable refs; wrap in IrList to trigger
       // the resolution path through _resolveContentMap → resolver.resolve().
       final registry = <String, IrType>{
-        'Alias': IrPrimitive(PrimitiveKind.string),
+        'Alias': const IrPrimitive(PrimitiveKind.string),
       };
       final resolver = TypeRefResolver(registry);
 
@@ -474,7 +474,7 @@ void main() {
 
     test('resolves IrTypeRef inside a list in response content', () {
       final registry = <String, IrType>{
-        'Alias': IrPrimitive(PrimitiveKind.int),
+        'Alias': const IrPrimitive(PrimitiveKind.int),
       };
       final resolver = TypeRefResolver(registry);
 
@@ -508,7 +508,7 @@ void main() {
       final registry = <String, IrType>{};
       final resolver = TypeRefResolver(registry);
 
-      final op = const IrOperation(
+      const op = IrOperation(
         'op',
         'op',
         HttpMethod.get,
@@ -524,7 +524,7 @@ void main() {
         ],
         responses: {200: IrResponse()},
       );
-      final api = IrApi('MyApi', [op]);
+      const api = IrApi('MyApi', [op]);
 
       final result = resolveApiTypeRefs(resolver, [api]);
       // The top-level api is the same instance (no change occurred).
@@ -535,11 +535,11 @@ void main() {
       // Only the first operation has a resolvable ref; the second should be
       // returned as the same instance.
       final registry = <String, IrType>{
-        'Alias': IrPrimitive(PrimitiveKind.bool),
+        'Alias': const IrPrimitive(PrimitiveKind.bool),
       };
       final resolver = TypeRefResolver(registry);
 
-      final unchangedOp = const IrOperation(
+      const unchangedOp = IrOperation(
         'noop',
         'noop',
         HttpMethod.get,
@@ -550,13 +550,12 @@ void main() {
             'x',
             ParameterLocation.query,
             IrPrimitive(PrimitiveKind.string),
-            isRequired: false,
           ),
         ],
         responses: {200: IrResponse()},
       );
-      final api = IrApi('MyApi', [
-        const IrOperation(
+      const api = IrApi('MyApi', [
+        IrOperation(
           'op',
           'op',
           HttpMethod.post,
@@ -588,7 +587,7 @@ void main() {
 
     test('handles api with no operations', () {
       final resolver = TypeRefResolver({});
-      final api = const IrApi('EmptyApi', []);
+      const api = IrApi('EmptyApi', []);
       final result = resolveApiTypeRefs(resolver, [api]);
       expect(result.first.operations, isEmpty);
     });

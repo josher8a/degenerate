@@ -148,7 +148,7 @@ void main() {
 
     test('throws ApiError on error response', () async {
       final stream = offsetPaginate<int, List<int>, String>(
-        fetch: (_, __) async => const ApiError(statusCode: 500, error: 'fail'),
+        fetch: (_, _) async => const ApiError(statusCode: 500, error: 'fail'),
         items: (r) => r,
         limit: 10,
       );

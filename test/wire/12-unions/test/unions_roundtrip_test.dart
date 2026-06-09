@@ -40,13 +40,16 @@ void main() {
       expect(shape.toJson(), equals({'type': 'circle', 'radius': 2.5}));
     });
 
-    test('unknown discriminator falls back to \$Unknown, preserving raw JSON',
+    test(r'unknown discriminator falls back to $Unknown, preserving raw JSON',
         () {
       final json = {'type': 'hexagon', 'sides': 6};
       final shape = Shape.fromJson(json);
       expect(shape, isA<Shape$Unknown>());
       expect(shape.isUnknown, isTrue);
-      expect(shape.type, equals(ShapeType.hexagon));
+      // An unknown discriminator value surfaces as the enum's $Unknown
+      // variant, preserving the raw wire value.
+      expect(shape.type.isUnknown, isTrue);
+      expect(shape.type.value, equals('hexagon'));
       // The raw payload survives a round-trip even though the variant is
       // unknown to this client.
       expect(shape.toJson(), equals(json));
@@ -164,8 +167,8 @@ void main() {
 
   group('untagged union (StringOrInt = OneOf2<String, int>)', () {
     test('wraps and reads either variant', () {
-      const StringOrInt s = OneOf2.a('hello');
-      const StringOrInt i = OneOf2.b(42);
+      const s = OneOf2<String, int>.a('hello');
+      const i = OneOf2<String, int>.b(42);
       expect(s.value, equals('hello'));
       expect(i.value, equals(42));
     });

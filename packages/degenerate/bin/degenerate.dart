@@ -114,7 +114,7 @@ ArgParser buildParser() {
       'barrel-hide',
       help:
           'Type names to exclude from the main barrel export. The model\n'
-          'files are still generated; they just won\'t be re-exported.\n'
+          "files are still generated; they just won't be re-exported.\n"
           'Use when a generated name clashes with a consumer dependency\n'
           '(e.g. --barrel-hide Provider to avoid Riverpod clash).',
     )

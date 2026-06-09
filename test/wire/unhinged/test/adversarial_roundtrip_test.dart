@@ -29,13 +29,13 @@ void main() {
       expect(Self.fromJson(typePayload), isA<SelfType>());
     });
 
-    test('round-trips awkward JSON keys (\$-leading, empty, reserved)', () {
+    test(r'round-trips awkward JSON keys ($-leading, empty, reserved)', () {
       final restored = Self.fromJson(typePayload);
       // Full-map round-trip: every awkward key survives fromJson → toJson.
       expect(restored.toJson(), equals(typePayload));
     });
 
-    test('maps wire keys to the \$-leading Dart fields', () {
+    test(r'maps wire keys to the $-leading Dart fields', () {
       final t = (Self.fromJson(typePayload) as SelfType).$true;
       expect(t.$false, isFalse);
       expect(t.$empty, equals('empty-key-value'));
@@ -46,7 +46,7 @@ void main() {
       expect(t.none, equals('present'));
     });
 
-    test('toString escapes \$ and does not throw', () {
+    test(r'toString escapes $ and does not throw', () {
       final t = (Self.fromJson(typePayload) as SelfType).$true;
       final s = t.toString();
       // The $-leading labels appear literally (escaped in the emitter), not
@@ -55,7 +55,7 @@ void main() {
       expect(s, contains(r'$false:'));
     });
 
-    test('unknown discriminator falls back to \$Unknown, preserving raw JSON',
+    test(r'unknown discriminator falls back to $Unknown, preserving raw JSON',
         () {
       final raw = <String, dynamic>{'type': 'mystery', 'extra': 1};
       final self = Self.fromJson(raw);
