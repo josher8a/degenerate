@@ -40,6 +40,10 @@ final class RefInliner {
     final components = root['components'] as Map<String, dynamic>?;
     final existingSchemas =
         components?['schemas'] as Map<String, dynamic>? ?? <String, dynamic>{};
+    // Seed used names BEFORE any resolution: schemas collected from external
+    // files while resolving early entries must not take (and later
+    // overwrite) the name of a root schema declared further down.
+    _usedNames.addAll(existingSchemas.keys);
 
     // First pass: resolve components/schemas entries that are pure external
     // $ref wrappers in place, so they keep their original names.
@@ -57,8 +61,6 @@ final class RefInliner {
         resolvedSchemas[key] = value;
       }
     }
-    _usedNames.addAll(resolvedSchemas.keys);
-
     // Build a modified root with pre-resolved schemas and paths.
     final modifiedRoot = Map<String, dynamic>.from(root);
     if (components != null) {
@@ -129,7 +131,13 @@ final class RefInliner {
     final fileContent = _loadFile(absolutePath);
     final content = _loadAndResolve(absolutePath, pointer);
     final fileDir = p.dirname(absolutePath);
-    return _walkMap(content, fileDir, {...ancestors, refKey}, fileContent);
+    return _walkMap(
+      content,
+      fileDir,
+      {...ancestors, refKey},
+      fileContent,
+      absolutePath,
+    );
   }
 
   Map<String, dynamic> _walkMap(
@@ -137,6 +145,7 @@ final class RefInliner {
     String currentDir,
     Set<String> ancestors, [
     Map<String, dynamic>? externalRoot,
+    String? externalPath,
   ]) {
     // If this map is a $ref to an external file, resolve it.
     final ref = map[r'$ref'];
@@ -146,20 +155,27 @@ final class RefInliner {
 
     // If this is a local #/ ref and we're inside an external file, the ref
     // may point to a schema in that file rather than the root spec. Resolve
-    // it from the external file and register the schema.
+    // it from the external file and register the schema. The cache key must
+    // be the actual file path — two files in the same directory can each
+    // define their own schema under the same pointer.
     if (ref is String &&
         ref.startsWith('#/') &&
         externalRoot != null) {
       final target = _resolvePointer(externalRoot, ref.substring(1));
       if (target is Map<String, dynamic>) {
         final name = _deriveSchemaName(ref.substring(1), ref);
-        final absolutePath = p.join(currentDir, '_inline_');
-        final refKey = '$absolutePath#${ref.substring(1)}';
+        final keyPath = externalPath ?? p.join(currentDir, '_inline_');
+        final refKey = '$keyPath#${ref.substring(1)}';
         if (!_refToLocalName.containsKey(refKey)) {
           final localName = _uniqueName(name);
           _refToLocalName[refKey] = localName;
-          final inlined =
-              _walkMap(target, currentDir, {...ancestors, refKey}, externalRoot);
+          final inlined = _walkMap(
+            target,
+            currentDir,
+            {...ancestors, refKey},
+            externalRoot,
+            externalPath,
+          );
           _collectedSchemas[localName] = inlined;
         }
         return {r'$ref': '#/components/schemas/${_refToLocalName[refKey]}'};
@@ -170,7 +186,7 @@ final class RefInliner {
     final result = <String, dynamic>{};
     for (final MapEntry(:key, :value) in map.entries) {
       result[key] =
-          _walkValue(value, currentDir, ancestors, externalRoot);
+          _walkValue(value, currentDir, ancestors, externalRoot, externalPath);
     }
     return result;
   }
@@ -180,12 +196,15 @@ final class RefInliner {
     String currentDir,
     Set<String> ancestors, [
     Map<String, dynamic>? externalRoot,
+    String? externalPath,
   ]) {
     if (value is Map<String, dynamic>) {
-      return _walkMap(value, currentDir, ancestors, externalRoot);
+      return _walkMap(value, currentDir, ancestors, externalRoot, externalPath);
     } else if (value is List) {
       return value
-          .map((e) => _walkValue(e, currentDir, ancestors, externalRoot))
+          .map(
+            (e) => _walkValue(e, currentDir, ancestors, externalRoot, externalPath),
+          )
           .toList();
     }
     return value;
@@ -210,7 +229,13 @@ final class RefInliner {
     final fileContent = _loadFile(absolutePath);
     final resolved = _loadAndResolve(absolutePath, pointer);
     final fileDir = p.dirname(absolutePath);
-    return _walkMap(resolved, fileDir, {...ancestors, refKey}, fileContent);
+    return _walkMap(
+      resolved,
+      fileDir,
+      {...ancestors, refKey},
+      fileContent,
+      absolutePath,
+    );
   }
 
   /// Resolve an external `$ref` encountered outside components/schemas.
@@ -250,8 +275,13 @@ final class RefInliner {
 
     // Recursively walk the resolved content.
     final fileDir = p.dirname(absolutePath);
-    final inlined =
-        _walkMap(resolved, fileDir, {...ancestors, refKey}, fileContent);
+    final inlined = _walkMap(
+      resolved,
+      fileDir,
+      {...ancestors, refKey},
+      fileContent,
+      absolutePath,
+    );
 
     // Store the schema.
     _collectedSchemas[localName] = inlined;
