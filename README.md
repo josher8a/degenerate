@@ -347,7 +347,7 @@ Named constructors `.a()`, `.b()`, `.c()` etc. wrap a specific variant. `.from()
 
 ### Discriminated Unions
 
-`oneOf` with `discriminator` generates a `sealed class` hierarchy with an unknown variant:
+`oneOf` (or `anyOf`, when every variant is a `$ref`) with `discriminator` generates a `sealed class` hierarchy with an unknown variant:
 
 ```dart
 sealed class Shape {
