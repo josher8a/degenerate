@@ -203,9 +203,15 @@ final class OperationLowerer {
         if (statusKey == 'default') {
           defaultResponse = irResponse;
         } else {
-          final statusCode = int.tryParse(statusKey);
+          final statusCode =
+              int.tryParse(statusKey) ?? _statusRangeSentinel(statusKey);
           if (statusCode != null) {
             responses[statusCode] = irResponse;
+          } else {
+            _warnings.add(
+              'Operation $operationId: response status "$statusKey" is not '
+              'a status code, "default", or a 2XX/4XX/5XX range — skipped.',
+            );
           }
         }
       }
@@ -228,6 +234,21 @@ final class OperationLowerer {
       isDeprecated: deprecated,
       securityRequirements: securityRequirements,
     );
+  }
+
+  /// Map an OAS wildcard range key (`"2XX"`, case-insensitive) to its
+  /// sentinel response key. 1XX/3XX ranges have no client-side semantics
+  /// here and return null (caller warns).
+  static int? _statusRangeSentinel(String statusKey) {
+    if (statusKey.length != 3) return null;
+    final upper = statusKey.toUpperCase();
+    if (!upper.endsWith('XX')) return null;
+    return switch (upper[0]) {
+      '2' => kStatusRange2xx,
+      '4' => kStatusRange4xx,
+      '5' => kStatusRange5xx,
+      _ => null,
+    };
   }
 
   List<IrSecurityRequirement>? _lowerSecurityRequirements(dynamic value) {

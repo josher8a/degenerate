@@ -981,9 +981,9 @@ final class ApiEmitter {
       final content = preferredContent(op.defaultResponse!.content);
       if (content != null) return content;
     }
-    // Check for specific error status codes
+    // Check for specific error status codes (incl. 4XX/5XX range sentinels)
     for (final MapEntry(:key, :value) in op.responses.entries) {
-      if (key >= 400) {
+      if (key >= 400 || key == kStatusRange4xx || key == kStatusRange5xx) {
         final content = preferredContent(value.content);
         if (content != null) return content;
       }
@@ -1023,13 +1023,18 @@ final class ApiEmitter {
         if (resp.content.isEmpty) return null;
       }
     }
-    // Check remaining 2xx codes (206, 207, etc.)
+    // Check remaining 2xx codes (206, 207, etc.), then the 2XX range
+    // sentinel.
     for (final MapEntry(:key, :value) in op.responses.entries) {
       if (key >= 200 && key < 300 && !priorityCodes.contains(key)) {
         final content = preferredContent(value.content);
         if (content != null) return content;
         if (value.content.isEmpty) return null;
       }
+    }
+    if (op.responses[kStatusRange2xx] case final resp?) {
+      final content = preferredContent(resp.content);
+      if (content != null) return content;
     }
     return null;
   }

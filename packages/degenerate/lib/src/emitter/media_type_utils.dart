@@ -84,7 +84,7 @@ enum StreamKind {
 /// Find any streaming response content (SSE or JSONL) for an operation.
 (String, IrMediaType, StreamKind)? streamingContent(IrOperation op) {
   for (final MapEntry(:key, :value) in op.responses.entries) {
-    if (key >= 200 && key < 300) {
+    if ((key >= 200 && key < 300) || key == kStatusRange2xx) {
       for (final MapEntry(key: contentKey, value: contentValue) in value.content.entries) {
         if (_isEventStreamMediaType(contentKey)) {
           return (contentKey, contentValue, StreamKind.sse);

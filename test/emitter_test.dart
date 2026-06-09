@@ -19,9 +19,9 @@ import 'package:degenerate/src/emitter/variant_overlap.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
 import 'package:degenerate/src/lowering/ir_mapper.dart';
 import 'package:degenerate/src/lowering/ir_validator.dart';
-import 'package:degenerate/src/lowering/union_analyzer.dart';
 import 'package:degenerate/src/lowering/operation_lowerer.dart';
 import 'package:degenerate/src/lowering/type_ref_resolver.dart';
+import 'package:degenerate/src/lowering/union_analyzer.dart';
 import 'package:degenerate/src/normalizer/schema_normalizer.dart';
 import 'package:degenerate/src/parser/openapi_document.dart';
 import 'package:test/test.dart';
@@ -356,7 +356,6 @@ void main() {
               'tag',
               'tag',
               IrPrimitive(PrimitiveKind.string),
-              isRequired: false,
             ),
           ],
           requiredFields: ['id', 'label'],
@@ -371,6 +370,102 @@ void main() {
         expect(source, contains("'label': label"));
         // Optional: uses null-aware element to omit when null
         expect(source, contains("'tag': ?tag"));
+      });
+    });
+
+    group('nullable collection items', () {
+      test('fromJson uses nullable cast for List of nullable strings', () {
+        const model = IrObject(
+          'Bag',
+          [
+            IrField(
+              'tags',
+              'tags',
+              IrList(IrPrimitive(PrimitiveKind.string, isNullable: true)),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['tags'],
+        );
+        final specs = const ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        final source = emitRaw(library);
+
+        expect(source, contains('final List<String?> tags;'));
+        // A null element must survive fromJson: `e as String` would throw.
+        expect(source, contains('e as String?'));
+        expect(source, isNot(contains('e as String)')));
+      });
+
+      test('fromJson null-guards List of nullable model refs', () {
+        const model = IrObject(
+          'Roster',
+          [
+            IrField(
+              'members',
+              'members',
+              IrList(IrTypeRef('Member', isNullable: true)),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['members'],
+        );
+        final specs = const ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        final source = emitRaw(library);
+
+        expect(source, contains('final List<Member?> members;'));
+        // Member.fromJson(e as Map<String, dynamic>) throws on null elements.
+        expect(
+          source,
+          contains(
+            'e == null ? null : Member.fromJson(e as Map<String, dynamic>)',
+          ),
+        );
+      });
+
+      test('fromJson uses nullable cast for Map of nullable string values', () {
+        const model = IrObject(
+          'Lookup',
+          [
+            IrField(
+              'entries',
+              'entries',
+              IrMap(IrPrimitive(PrimitiveKind.string, isNullable: true)),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['entries'],
+        );
+        final specs = const ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        final source = emitRaw(library);
+
+        expect(source, contains('final Map<String,String?> entries;'));
+        expect(source, contains('v as String?'));
+        expect(source, isNot(contains('v as String)')));
+      });
+
+      test('fromJson null-guards List of nullable ints', () {
+        const model = IrObject(
+          'Series',
+          [
+            IrField(
+              'points',
+              'points',
+              IrList(IrPrimitive(PrimitiveKind.int, isNullable: true)),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['points'],
+        );
+        final specs = const ModelEmitter(model).emit();
+        final library = Library((b) => b..body.addAll(specs));
+        final source = emitRaw(library);
+
+        expect(source, contains('final List<int?> points;'));
+        // A bare `(e as num).toInt()` throws on null elements.
+        expect(source, contains('e == null ? null : (e as num).toInt()'));
       });
     });
 
@@ -451,7 +546,7 @@ void main() {
       expect(source, contains('List<String> validate()'));
       // String checks gated to the string field; required → no null guard.
       expect(source, contains('if (name.length < 3) {'));
-      expect(source, contains('RegExp(r\'^[a-z]+\$\').hasMatch(name)'));
+      expect(source, contains(r"RegExp(r'^[a-z]+$').hasMatch(name)"));
       // Numeric checks (not `.length`) on the int field.
       expect(source, contains('if (score < 0) {'));
       expect(source, contains('if (score > 100) {'));
@@ -484,11 +579,11 @@ void main() {
       expect(source, contains('sealed class Status'));
       expect(source, contains('factory Status.fromJson(String json)'));
       expect(source, contains('String toJson()'));
-      expect(source, contains('active = Status\$active._()'));
-      expect(source, contains('inactive = Status\$inactive._()'));
-      expect(source, contains('suspended = Status\$suspended._()'));
-      expect(source, contains('final class Status\$active'));
-      expect(source, contains('final class Status\$Unknown'));
+      expect(source, contains(r'active = Status$active._()'));
+      expect(source, contains(r'inactive = Status$inactive._()'));
+      expect(source, contains(r'suspended = Status$suspended._()'));
+      expect(source, contains(r'final class Status$active'));
+      expect(source, contains(r'final class Status$Unknown'));
     });
 
     test('enum code is valid Dart', () {
@@ -512,7 +607,7 @@ void main() {
       expect(source, contains('int toJson()'));
       expect(source, contains(r'Priority$$0._()'));
       expect(source, contains(r'Priority$$1._()'));
-      expect(source, contains('final class Priority\$Unknown'));
+      expect(source, contains(r'final class Priority$Unknown'));
     });
 
     test('integer enum is valid Dart', () {
@@ -695,7 +790,7 @@ void main() {
       expect(source, contains('return switch (json)'));
       expect(source, contains('final String v => StringOrIntString(v)'));
       expect(source, contains('final int v => StringOrIntInt(v)'));
-      expect(source, contains('_ => StringOrInt\$Unknown(json)'));
+      expect(source, contains(r'_ => StringOrInt$Unknown(json)'));
     });
 
     test('object variant uses canParse dispatch', () {
@@ -717,11 +812,11 @@ void main() {
       expect(source, contains('return CatOrDogCat(Cat.fromJson(json))'));
       expect(source, contains('Dog.canParse(json)'));
       expect(source, contains('return CatOrDogDog(Dog.fromJson(json))'));
-      expect(source, contains('return CatOrDog\$Unknown(json)'));
+      expect(source, contains(r'return CatOrDog$Unknown(json)'));
       expect(() => _formatOrFail(source), returnsNormally);
     });
 
-    test('\$Unknown variant has dynamic value and doc comment', () {
+    test(r'$Unknown variant has dynamic value and doc comment', () {
       const union = IrUntaggedUnion('Val', [
         IrPrimitive(PrimitiveKind.string),
         IrPrimitive(PrimitiveKind.int),
@@ -730,7 +825,7 @@ void main() {
       final specs = const UntaggedUnionEmitter(union).emit();
       final source = emitRaw(Library((b) => b..body.addAll(specs)));
 
-      expect(source, contains('final class Val\$Unknown extends Val'));
+      expect(source, contains(r'final class Val$Unknown extends Val'));
       expect(source, contains('/// An unknown variant'));
       expect(source, contains("_value ?? ''"));
     });
@@ -3228,14 +3323,14 @@ void main() {
           },
         ),
       ]);
-      final ctx = EmitContext(<String, IrType>{
+      const ctx = EmitContext(<String, IrType>{
         'GetZoneResponse': envelopeType,
-        'Zone': const IrObject('Zone', [
+        'Zone': IrObject('Zone', [
           IrField('id', 'id', IrPrimitive(PrimitiveKind.string),
               isRequired: true),
         ]),
       });
-      final specs = ApiEmitter(api,
+      final specs = const ApiEmitter(api,
               ctx: ctx, unwrapFields: ['result'])
           .emit();
       final source = emitRaw(
@@ -3455,7 +3550,7 @@ void main() {
     });
   });
 
-  group('discriminated union \$Unknown late final caching', () {
+  group(r'discriminated union $Unknown late final caching', () {
     // Two variants sharing the 'org' field \u2192 hoisted to base, cached on $Unknown
     const union = IrDiscriminatedUnion('Action', 'type', {
       'create': IrObject('CreateAction', [
@@ -3487,15 +3582,15 @@ void main() {
       source = emitRaw(library);
     });
 
-    test('emits \$Unknown variant class', () {
+    test(r'emits $Unknown variant class', () {
       expect(source, contains(r'final class Action$Unknown extends Action'));
     });
 
-    test('\$Unknown uses late final for shared field "org"', () {
+    test(r'$Unknown uses late final for shared field "org"', () {
       expect(source, contains("late final String _org = json['org']"));
     });
 
-    test('preserves raw JSON in \$Unknown', () {
+    test(r'preserves raw JSON in $Unknown', () {
       expect(source, contains('Map<String, dynamic> json'));
     });
 
@@ -3624,7 +3719,7 @@ void main() {
       if (!file.existsSync()) continue;
       final content = file.readAsStringSync();
       // Skip types defined inside doc comments.
-      final noDocComments = content.replaceAll(RegExp(r'///.*'), '');
+      final noDocComments = content.replaceAll(RegExp('///.*'), '');
       for (final m in typePattern.allMatches(noDocComments)) {
         final name = m.group(1) ?? m.group(2) ?? m.group(3)!;
         actualNames.add(name);
@@ -4206,8 +4301,333 @@ void main() {
 
   // ─── buildErrorUnionMap dedup ─────────────────────────────────
 
+  group('wildcard status code ranges (emitter)', () {
+    const errorBody = IrObject(
+      'RangeError_',
+      [
+        IrField(
+          'message',
+          'message',
+          IrPrimitive(PrimitiveKind.string),
+          isRequired: true,
+        ),
+      ],
+      requiredFields: ['message'],
+    );
+    const errorResponse = IrResponse(
+      content: {'application/json': IrMediaType(errorBody)},
+    );
+
+    test('buildErrorUnionMap includes 4XX/5XX range responses', () {
+      final apis = [
+        const IrApi('TestApi', [
+          IrOperation(
+            'createJob',
+            'createJob',
+            HttpMethod.post,
+            '/jobs',
+            responses: {
+              kStatusRange2xx: IrResponse(),
+              kStatusRange4xx: errorResponse,
+              kStatusRange5xx: errorResponse,
+            },
+          ),
+        ]),
+      ];
+      final result = buildErrorUnionMap(apis, EmitContext.empty);
+      expect(result, contains('createJob'));
+      final statusErrors = result['createJob']!.statusErrors;
+      expect(statusErrors, contains(kStatusRange4xx));
+      expect(statusErrors, contains(kStatusRange5xx));
+    });
+
+    test('fromResponse emits guarded range arms after concrete codes', () {
+      final lib = emitErrorUnionLibrary(
+        className: 'CreateJobError',
+        statusErrors: {
+          kStatusRange4xx: ('RangeError_', errorBody),
+          404: ('RangeError_', errorBody),
+        },
+        ctx: EmitContext.empty,
+        packageName: 'pkg',
+        typeToFile: {'RangeError_': 'range_error_'},
+      );
+      final source = emitRaw(lib);
+
+      expect(
+        source,
+        contains(
+          '_ when response.statusCode >= 400 && response.statusCode <= 499',
+        ),
+      );
+      expect(source, contains(r'CreateJobError$4XX'));
+      // The concrete 404 arm must come before the guarded range arm, or the
+      // range guard would shadow it.
+      expect(
+        source.indexOf('404 =>'),
+        lessThan(source.indexOf('_ when response.statusCode >= 400')),
+      );
+    });
+
+    test('range variant exposes the actual response status code', () {
+      final lib = emitErrorUnionLibrary(
+        className: 'CreateJobError',
+        statusErrors: {
+          kStatusRange5xx: ('RangeError_', errorBody),
+        },
+        ctx: EmitContext.empty,
+        packageName: 'pkg',
+        typeToFile: {'RangeError_': 'range_error_'},
+      );
+      final source = emitRaw(lib);
+      // Range variants carry the real status code as a field, like the
+      // default-response variant — not a hardcoded sentinel.
+      expect(source, isNot(contains('=> -5')));
+      expect(source, contains(r'CreateJobError$5XX('));
+    });
+  });
+
+  group('wildcard 2XX success response (emitter)', () {
+    test('2XX-only operation gets a typed success return', () {
+      const api = IrApi('JobsApi', [
+        IrOperation(
+          'createJob',
+          'createJob',
+          HttpMethod.post,
+          '/jobs',
+          responses: {
+            kStatusRange2xx: IrResponse(
+              content: {
+                'application/json': IrMediaType(
+                  IrPrimitive(PrimitiveKind.string),
+                ),
+              },
+            ),
+          },
+        ),
+      ]);
+      final specs = const ApiEmitter(api).emit();
+      final library = Library(
+        (b) => b
+          ..directives.add(Directive.import('dart:convert'))
+          ..body.addAll(specs),
+      );
+      final source = emitRaw(library);
+      expect(source, contains('ApiResult<String'));
+      expect(source, isNot(contains('ApiResult<void')));
+    });
+  });
+
+  group('irTypeName collection item nullability', () {
+    test('List of nullable items renders the item as nullable', () {
+      expect(
+        irTypeName(const IrList(IrPrimitive(PrimitiveKind.string, isNullable: true))),
+        equals('List<String?>'),
+      );
+    });
+
+    test('Map of nullable values renders the value as nullable', () {
+      expect(
+        irTypeName(const IrMap(IrTypeRef('Widget', isNullable: true))),
+        equals('Map<String, Widget?>'),
+      );
+    });
+  });
+
+  group('synthetic disc enum reserved names', () {
+    test('discriminator value "json" does not shadow the fromJson parameter',
+        () {
+      const union = IrDiscriminatedUnion('FieldType', 'type', {
+        'json': IrObject(
+          'JsonField',
+          [
+            IrField(
+              'type',
+              'type',
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['type'],
+        ),
+        'string': IrObject(
+          'StringField',
+          [
+            IrField(
+              'type',
+              'type',
+              IrPrimitive(PrimitiveKind.string),
+              isRequired: true,
+            ),
+          ],
+          requiredFields: ['type'],
+        ),
+      });
+      final specs = const DiscriminatedUnionEmitter(union).emit();
+      final library = Library((b) => b..body.addAll(specs));
+      final source = emitRaw(library);
+
+      // The static constant for the 'json' value must not be named `json` —
+      // inside `fromJson(String json)` the parameter shadows it and the
+      // switch arm returns the raw string.
+      expect(source, contains(r"'json' => $json,"));
+      expect(source, contains(r'static const FieldTypeType $json ='));
+    });
+  });
+
+  group('error union imports for discriminated union bodies', () {
+    test('imports the union base, not its variants', () {
+      const variantA = IrObject(
+        'TaggedError1',
+        [
+          IrField(
+            'tag',
+            'tag',
+            IrPrimitive(PrimitiveKind.string),
+            isRequired: true,
+          ),
+        ],
+        requiredFields: ['tag'],
+      );
+      const union = IrDiscriminatedUnion('TaggedError', 'tag', {
+        'one': IrTypeRef('TaggedError1'),
+      });
+      final lib = emitErrorUnionLibrary(
+        className: 'PostThingError',
+        statusErrors: {
+          400: ('TaggedError', const IrTypeRef('TaggedError')),
+        },
+        ctx: const EmitContext({
+          'TaggedError': union,
+          'TaggedError1': variantA,
+        }),
+        packageName: 'pkg',
+        typeToFile: {
+          'TaggedError': 'tagged_error',
+          'TaggedError1': 'tagged_error1',
+        },
+      );
+      final source = emitRaw(lib);
+      expect(source, contains('models/tagged_error.dart'));
+      // The deserializer only calls TaggedError.fromJson — importing the
+      // variants trips unused_import.
+      expect(source, isNot(contains('models/tagged_error1.dart')));
+    });
+  });
+
+  group('cross-tag error class name collisions', () {
+    const errorBody = IrObject(
+      'ApiFailure',
+      [
+        IrField(
+          'message',
+          'message',
+          IrPrimitive(PrimitiveKind.string),
+          isRequired: true,
+        ),
+      ],
+      requiredFields: ['message'],
+    );
+    const errorResponse = IrResponse(
+      content: {'application/json': IrMediaType(errorBody)},
+    );
+    const otherErrorBody = IrObject(
+      'OtherFailure',
+      [
+        IrField(
+          'code',
+          'code',
+          IrPrimitive(PrimitiveKind.int),
+          isRequired: true,
+        ),
+      ],
+      requiredFields: ['code'],
+    );
+    const otherErrorResponse = IrResponse(
+      content: {'application/json': IrMediaType(otherErrorBody)},
+    );
+
+    test('same signature + same method name never emits a self-typedef', () {
+      // Method-name dedup is per-tag, so ops in different tags can share a
+      // dartMethodName. Same error signature → the alias name would equal
+      // the primary class name.
+      final apis = [
+        const IrApi('UsersApi', [
+          IrOperation(
+            'get_user',
+            'getUser',
+            HttpMethod.get,
+            '/users/{id}',
+            responses: {400: errorResponse},
+          ),
+        ]),
+        const IrApi('AdminApi', [
+          IrOperation(
+            'getUser',
+            'getUser',
+            HttpMethod.get,
+            '/admin/users/{id}',
+            responses: {400: errorResponse},
+          ),
+        ]),
+      ];
+      final result = buildErrorUnionMap(apis, EmitContext.empty);
+      final alias = result.values.firstWhere((i) => i.isAlias);
+      final primary = result.values.firstWhere((i) => !i.isAlias);
+      // Both resolve to the one concrete class; the alias must not demand a
+      // `typedef X = X;`.
+      expect(alias.resolvedClassName, equals(primary.className));
+
+      final lib = emitErrorUnionLibrary(
+        className: primary.className,
+        statusErrors: primary.statusErrors,
+        ctx: EmitContext.empty,
+        packageName: 'pkg',
+        typeToFile: {'ApiFailure': 'api_failure'},
+        aliases: [
+          for (final i in result.values)
+            if (i.isAlias) i.className,
+        ],
+      );
+      final source = emitRaw(lib);
+      expect(
+        source,
+        isNot(contains('typedef ${primary.className} = ${primary.className}')),
+      );
+    });
+
+    test('different signatures + same method name get distinct class names',
+        () {
+      final apis = [
+        const IrApi('UsersApi', [
+          IrOperation(
+            'get_user',
+            'getUser',
+            HttpMethod.get,
+            '/users/{id}',
+            responses: {400: errorResponse},
+          ),
+        ]),
+        const IrApi('AdminApi', [
+          IrOperation(
+            'getUser',
+            'getUser',
+            HttpMethod.get,
+            '/admin/users/{id}',
+            responses: {403: otherErrorResponse},
+          ),
+        ]),
+      ];
+      final result = buildErrorUnionMap(apis, EmitContext.empty);
+      final names = result.values.map((i) => i.className).toSet();
+      // Two distinct error sets must not silently share one class name —
+      // the second operation's dispatch map would be wrong.
+      expect(names, hasLength(2));
+    });
+  });
+
   group('buildErrorUnionMap', () {
-    EmitContext _emptyCtx() => EmitContext(const {});
+    EmitContext emptyCtx() => EmitContext.empty;
 
     test('single operation with error responses gets a non-alias ErrorUnionInfo', () {
       final apis = [
@@ -4242,7 +4662,7 @@ void main() {
         ]),
       ];
 
-      final result = buildErrorUnionMap(apis, _emptyCtx());
+      final result = buildErrorUnionMap(apis, emptyCtx());
 
       expect(result, contains('createPet'));
       expect(result['createPet']!.isAlias, isFalse);
@@ -4287,7 +4707,7 @@ void main() {
         ]),
       ];
 
-      final result = buildErrorUnionMap(apis, _emptyCtx());
+      final result = buildErrorUnionMap(apis, emptyCtx());
 
       expect(result, contains('alphaOp'));
       expect(result, contains('betaOp'));
@@ -4339,7 +4759,7 @@ void main() {
         ]),
       ];
 
-      final result = buildErrorUnionMap(apis, _emptyCtx());
+      final result = buildErrorUnionMap(apis, emptyCtx());
 
       expect(result, contains('opA'));
       expect(result, contains('opB'));
@@ -4369,7 +4789,7 @@ void main() {
         ]),
       ];
 
-      final result = buildErrorUnionMap(apis, _emptyCtx());
+      final result = buildErrorUnionMap(apis, emptyCtx());
 
       expect(result, isNot(contains('listItems')));
       expect(result, isEmpty);
@@ -4415,7 +4835,7 @@ void main() {
         ]),
       ];
 
-      final result = buildErrorUnionMap(apis, _emptyCtx());
+      final result = buildErrorUnionMap(apis, emptyCtx());
 
       final alias = result.values.firstWhere((info) => info.isAlias);
       final concrete = result.values.firstWhere((info) => !info.isAlias);
@@ -4672,6 +5092,30 @@ void main() {
 
   // ─── emit_utils field helpers ────────────────────────────────
 
+  group('formatDocComment injection hardening', () {
+    test('carriage return cannot escape a doc comment', () {
+      // Dart's scanner treats a bare \r as a line terminator, so a raw \r
+      // surviving inside a `///` line ends the comment and injects source.
+      final lines = formatDocComment(
+        "Safe text\rString injected = 'pwned';",
+      );
+      for (final line in lines) {
+        expect(line, isNot(contains('\r')));
+        expect(line, startsWith('///'));
+      }
+    });
+
+    test('CRLF is treated as a single line break', () {
+      final lines = formatDocComment('first\r\nsecond');
+      expect(lines, ['/// first', '/// second']);
+    });
+
+    test('lone CR is treated as a line break', () {
+      final lines = formatDocComment('first\rsecond');
+      expect(lines, ['/// first', '/// second']);
+    });
+  });
+
   group('emit_utils field helpers', () {
     test('fieldIsRequiredInCtor: required without default → true', () {
       const f = IrField('x', 'x', IrPrimitive(PrimitiveKind.string),
@@ -4904,7 +5348,7 @@ void main() {
 
   group('analyzeApiImports', () {
     test('collects parameter and response type names', () {
-      final api = IrApi('Test', [
+      const api = IrApi('Test', [
         IrOperation(
           'getItem', 'getItem',
           HttpMethod.get, '/items/{id}',
@@ -4927,7 +5371,7 @@ void main() {
     });
 
     test('bytes parameter sets needsTypedData', () {
-      final api = IrApi('Upload', [
+      const api = IrApi('Upload', [
         IrOperation(
           'upload', 'upload',
           HttpMethod.post, '/upload',
@@ -4936,7 +5380,7 @@ void main() {
                 IrPrimitive(PrimitiveKind.bytes), isRequired: true),
           ],
           responses: {
-            204: IrResponse(content: {}),
+            204: IrResponse(),
           },
         ),
       ]);
@@ -4951,7 +5395,7 @@ void main() {
 
   group('buildErrorUnionMap dedup', () {
     test('identical error shapes produce typedef alias', () {
-      final sharedError = IrResponse(
+      const sharedError = IrResponse(
         content: {
           'application/json': IrMediaType(
             IrObject('SharedError', [
@@ -4963,7 +5407,7 @@ void main() {
       );
 
       final apis = [
-        IrApi('TestApi', [
+        const IrApi('TestApi', [
           IrOperation('alphaOp', 'alphaOp', HttpMethod.get, '/alpha', responses: {
             200: IrResponse(content: {
               'application/json': IrMediaType(
@@ -4989,7 +5433,7 @@ void main() {
         ]),
       ];
 
-      final ctx = EmitContext(const {});
+      const ctx = EmitContext.empty;
       final result = buildErrorUnionMap(apis, ctx);
 
       expect(result, contains('alphaOp'));

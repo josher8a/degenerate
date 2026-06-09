@@ -73,7 +73,17 @@ analyzeApiImports(
       _collectTopLevelTypeName(schema, names);
       if (isBytesType(schema)) needsTypedData = true;
     }
-    for (final code in [200, 201, 202, 203, 204]) {
+    // Mirror ApiEmitter._successResponseContent: priority codes, then any
+    // other concrete 2xx (206, 207, ...), then the 2XX range sentinel.
+    const priorityCodes = [200, 201, 202, 203, 204];
+    final successCodes = [
+      ...priorityCodes,
+      ...op.responses.keys.where(
+        (k) => k >= 200 && k < 300 && !priorityCodes.contains(k),
+      ),
+      kStatusRange2xx,
+    ];
+    for (final code in successCodes) {
       if (op.responses[code] case final resp?) {
         if (preferredContent(resp.content) case final content?) {
           if (isJsonLikeMediaType(content.$1)) needsConvert = true;
@@ -99,7 +109,9 @@ analyzeApiImports(
       }
       if (errorContent == null) {
         for (final MapEntry(:key, :value) in op.responses.entries) {
-          if (key >= 400) {
+          if (key >= 400 ||
+              key == kStatusRange4xx ||
+              key == kStatusRange5xx) {
             errorContent = preferredContent(value.content);
             if (errorContent != null) break;
           }

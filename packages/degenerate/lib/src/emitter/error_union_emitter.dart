@@ -39,7 +39,7 @@ Map<String, ErrorUnionInfo> buildErrorUnionMap(
     for (final op in api.operations) {
       final errors = <int, (String, IrType)>{};
       for (final MapEntry(:key, :value) in op.responses.entries) {
-        if (key < 400) continue;
+        if (!_isErrorStatusKey(key)) continue;
         final content = preferredContent(value.content);
         if (content == null) continue;
         errors[key] = (irTypeName(content.$2.schema), content.$2.schema);
@@ -63,11 +63,20 @@ Map<String, ErrorUnionInfo> buildErrorUnionMap(
     (groups[sig] ??= []).add(key);
   }
 
+  // Method-name dedup is per-tag, so operations in different tags can share
+  // a dartMethodName. Class names must be globally unique: a colliding
+  // primary would silently reuse another group's dispatch map, and an alias
+  // named after its own target would emit `typedef X = X;`.
+  final usedClassNames = <String>{};
   final result = <String, ErrorUnionInfo>{};
   for (final group in groups.values) {
     group.sort();
     final primary = group.first;
-    final className = _errorClassName(opDartNames[primary]!);
+    final className = deduplicateName(
+      _errorClassName(opDartNames[primary]!),
+      usedClassNames,
+    );
+    usedClassNames.add(className);
     final errors = opErrors[primary]!;
 
     result[primary] = ErrorUnionInfo(
@@ -77,7 +86,14 @@ Map<String, ErrorUnionInfo> buildErrorUnionMap(
     );
 
     for (var i = 1; i < group.length; i++) {
-      final aliasName = _errorClassName(opDartNames[group[i]]!);
+      var aliasName = _errorClassName(opDartNames[group[i]]!);
+      if (aliasName == className) {
+        // Same name, same error set: the operation simply resolves to the
+        // concrete class — no typedef needed (emission skips self-aliases).
+      } else {
+        aliasName = deduplicateName(aliasName, usedClassNames);
+        usedClassNames.add(aliasName);
+      }
       result[group[i]] = ErrorUnionInfo(
         className: aliasName,
         statusErrors: errors,
@@ -90,9 +106,37 @@ Map<String, ErrorUnionInfo> buildErrorUnionMap(
   return result;
 }
 
+/// Whether a response key participates in error unions: a concrete 4xx/5xx
+/// code or a wildcard error range sentinel.
+bool _isErrorStatusKey(int key) =>
+    key >= 400 || key == kStatusRange4xx || key == kStatusRange5xx;
+
+/// Sort order for fromResponse switch arms: concrete codes first (a guarded
+/// range arm before a concrete case would shadow it), then 4XX/5XX range
+/// guards, then the default-response wildcard last.
+int _statusSortKey(int key) => switch (key) {
+  kStatusRange4xx => 100400,
+  kStatusRange5xx => 100500,
+  -1 => 200000,
+  _ => key,
+};
+
+/// The variant class-name suffix for a status entry.
+String _variantSuffix(int code, String typeName) => switch (code) {
+  -1 => '\$$typeName',
+  kStatusRange4xx => r'$4XX',
+  kStatusRange5xx => r'$5XX',
+  _ => '\$$code',
+};
+
+/// Whether the variant stores the actual response status code (ranges and
+/// the default response) instead of a hardcoded one.
+bool _carriesStatusCode(int code) =>
+    code == -1 || code == kStatusRange4xx || code == kStatusRange5xx;
+
 String _errorSetSignature(Map<int, (String, IrType)> errors) {
   final entries = errors.entries.toList()
-    ..sort((a, b) => a.key.compareTo(b.key));
+    ..sort((a, b) => _statusSortKey(a.key).compareTo(_statusSortKey(b.key)));
   return entries.map((e) => '${e.key}:${e.value.$1}').join('|');
 }
 
@@ -110,13 +154,21 @@ Library emitErrorUnionLibrary({
   List<String> aliases = const [],
 }) {
   final sortedEntries = statusErrors.entries.toList()
-    ..sort((a, b) => a.key.compareTo(b.key));
+    ..sort((a, b) => _statusSortKey(a.key).compareTo(_statusSortKey(b.key)));
   final hasDefaultEntry = sortedEntries.any((e) => e.key == -1);
 
   final importedTypes = <String>{};
   for (final MapEntry(:value) in sortedEntries) {
-    collectTypeRefs(value.$2, importedTypes,
-        typeRegistry: ctx.typeRegistry, walkFields: false);
+    // A discriminated union deserializes via its sealed base alone —
+    // importing its variants trips unused_import. OneOf-eligible unions DO
+    // inline variant parse code, so everything else keeps the full walk.
+    final resolved = value.$2.resolveRef(ctx.typeRegistry);
+    if (resolved is IrDiscriminatedUnion) {
+      importedTypes.add(resolved.name);
+    } else {
+      collectTypeRefs(value.$2, importedTypes,
+          typeRegistry: ctx.typeRegistry, walkFields: false);
+    }
   }
 
   return Library((lib) {
@@ -150,6 +202,9 @@ Library emitErrorUnionLibrary({
     }
 
     for (final alias in aliases) {
+      // An alias sharing the primary's name is the primary — a typedef
+      // would be self-referential.
+      if (alias == className) continue;
       lib.body.add(Code('typedef $alias = $className;\n'));
     }
   });
@@ -193,16 +248,23 @@ Constructor _buildFromResponse(
   for (final MapEntry(:key, :value) in sortedEntries) {
     final code = key;
     final typeName = value.$1;
-    final variantSuffix = code == -1 ? '\$$typeName' : '\$$code';
+    final variantSuffix = _variantSuffix(code, typeName);
     final deserialize = ctx.fromJson(value.$2, 'jsonDecode(response.body)');
-    if (code == -1) {
-      cases.writeln(
-        '        _ => $className$variantSuffix($deserialize, response.statusCode),',
-      );
-    } else {
-      cases.writeln(
-        '        $code => $className$variantSuffix($deserialize),',
-      );
+    switch (code) {
+      case -1:
+        cases.writeln(
+          '        _ => $className$variantSuffix($deserialize, response.statusCode),',
+        );
+      case kStatusRange4xx || kStatusRange5xx:
+        final low = code == kStatusRange4xx ? 400 : 500;
+        cases.writeln(
+          '        _ when response.statusCode >= $low && response.statusCode <= ${low + 99} => '
+          '$className$variantSuffix($deserialize, response.statusCode),',
+        );
+      default:
+        cases.writeln(
+          '        $code => $className$variantSuffix($deserialize),',
+        );
     }
   }
   if (!hasDefaultEntry) {
@@ -239,7 +301,7 @@ Class _buildVariantClass(
 ) {
   final code = entry.key;
   final typeName = entry.value.$1;
-  final variantSuffix = code == -1 ? '\$$typeName' : '\$$code';
+  final variantSuffix = _variantSuffix(code, typeName);
 
   return Class((b) {
     b
@@ -259,7 +321,7 @@ Class _buildVariantClass(
       ..returns = refer('Object')
       ..body = const Code('error')));
 
-    if (code == -1) {
+    if (_carriesStatusCode(code)) {
       b.constructors.add(Constructor((c) => c
         ..constant = true
         ..requiredParameters.addAll([

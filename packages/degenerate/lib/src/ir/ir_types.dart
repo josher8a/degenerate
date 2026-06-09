@@ -3,6 +3,21 @@
 // Every OpenAPI construct maps to exactly one IR node. The IR is fully
 // resolved - no $ref strings, no ambiguity.
 
+// ─── Status code sentinels ─────────────────────────────────
+
+/// Sentinel key in [IrOperation.responses] for the OAS wildcard status range
+/// `"2XX"`. Explicit codes take precedence over a range per the spec;
+/// consumers match ranges with guarded switch arms. The `default` response is
+/// modeled separately ([IrOperation.defaultResponse]; error-union building
+/// uses sentinel `-1` for it).
+const kStatusRange2xx = -2;
+
+/// Sentinel key for the `"4XX"` wildcard range. See [kStatusRange2xx].
+const kStatusRange4xx = -4;
+
+/// Sentinel key for the `"5XX"` wildcard range. See [kStatusRange2xx].
+const kStatusRange5xx = -5;
+
 // ─── Type IR ───────────────────────────────────────────────
 
 /// Root of all type representations in the IR.
