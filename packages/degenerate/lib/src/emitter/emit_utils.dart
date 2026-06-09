@@ -511,7 +511,7 @@ String variantClassName(String baseName, String variantKey) {
 }
 
 final _simpleIdent = RegExp(r'^[a-zA-Z_]\w*$');
-final _typeNameUnsafe = RegExp(r'[<>,\s]');
+final _typeNameUnsafe = RegExp(r'[<>,?\s]');
 final _bareAngleBrackets = RegExp('<([^>]+)>');
 final _bareBrackets = RegExp(r'\[([^\]]+)\](?!\()');
 final _nonIdentChar = RegExp('[^a-zA-Z0-9_]');

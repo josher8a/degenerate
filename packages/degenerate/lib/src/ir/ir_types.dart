@@ -870,11 +870,20 @@ enum PrimitiveKind {
 // ─── IR predicates ────────────────────────────────────────
 
 /// Get the Dart type name string for an [IrType].
+///
+/// Collection item nullability is part of the rendered type
+/// (`List<String?>`); the top-level type's own nullability is the caller's
+/// concern (declaration sites append `?` themselves).
 String irTypeName(IrType type) {
+  String item(IrType t) {
+    final name = irTypeName(t);
+    // `dynamic` is already nullable — `dynamic?` is a lint.
+    return (t.isNullable && name != 'dynamic') ? '$name?' : name;
+  }
   return switch (type) {
     IrPrimitive(:final kind) => kind.dartName,
-    IrList(:final items) => 'List<${irTypeName(items)}>',
-    IrMap(:final values) => 'Map<String, ${irTypeName(values)}>',
+    IrList(:final items) => 'List<${item(items)}>',
+    IrMap(:final values) => 'Map<String, ${item(values)}>',
     _ => type.name!,
   };
 }
