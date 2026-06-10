@@ -448,7 +448,15 @@ String typeToStringExpr(
 }
 
 String _defaultPrimitiveToString(PrimitiveKind kind, String accessor) =>
-    kind == PrimitiveKind.string ? accessor : '$accessor.toString()';
+    switch (kind) {
+      PrimitiveKind.string => accessor,
+      // DateTime.toString() is not RFC 3339 ('2024-01-02 03:04:05.000Z');
+      // Uint8List.toString() is a debug list dump.
+      PrimitiveKind.dateTime => '$accessor.toIso8601String()',
+      PrimitiveKind.bytes => 'base64Encode($accessor)',
+      PrimitiveKind.duration => '$accessor.inMilliseconds.toString()',
+      _ => '$accessor.toString()',
+    };
 
 // ─── OneOf helpers ──────────────────────────────────────
 

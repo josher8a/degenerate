@@ -4906,6 +4906,110 @@ void main() {
     });
   });
 
+  group('DateTime and bytes parameter wire formats', () {
+    test('scalar DateTime params serialize RFC 3339, bytes as base64', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'search',
+          'search',
+          HttpMethod.get,
+          '/search',
+          parameters: [
+            IrParameter(
+              'since',
+              'since',
+              ParameterLocation.query,
+              IrPrimitive(PrimitiveKind.dateTime),
+              isRequired: true,
+            ),
+            IrParameter(
+              'X-Sig',
+              'xSig',
+              ParameterLocation.header,
+              IrPrimitive(PrimitiveKind.bytes),
+              isRequired: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      // DateTime.toString() is '2024-01-02 03:04:05.000Z' — not RFC 3339;
+      // Uint8List.toString() is '[1, 2, 3]' — not base64.
+      expect(source, contains('since.toIso8601String()'));
+      expect(source, isNot(contains('since.toString()')));
+      expect(source, contains('base64Encode(xSig)'));
+      expect(source, isNot(contains('xSig.toString()')));
+    });
+
+    test('import analysis requires dart:convert for bytes params', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'send',
+          'send',
+          HttpMethod.get,
+          '/send',
+          parameters: [
+            IrParameter(
+              'sig',
+              'sig',
+              ParameterLocation.query,
+              IrPrimitive(PrimitiveKind.bytes),
+              isRequired: true,
+            ),
+          ],
+          responses: {204: IrResponse()},
+        ),
+      ]);
+      final result = analyzeApiImports(api);
+      expect(result.needsConvert, isTrue, reason: 'base64Encode needs it');
+      expect(result.needsTypedData, isTrue);
+    });
+  });
+
+  group('required-but-nullable query parameters', () {
+    test('list and allowReserved paths null-guard nullable params', () {
+      const api = IrApi('TestApi', [
+        IrOperation(
+          'search',
+          'search',
+          HttpMethod.get,
+          '/search',
+          parameters: [
+            IrParameter(
+              'tags',
+              'tags',
+              ParameterLocation.query,
+              IrList(IrPrimitive(PrimitiveKind.string), isNullable: true),
+              isRequired: true,
+            ),
+            IrParameter(
+              'ref',
+              'ref',
+              ParameterLocation.query,
+              IrPrimitive(PrimitiveKind.string, isNullable: true),
+              isRequired: true,
+              allowReserved: true,
+            ),
+          ],
+          responses: {200: IrResponse()},
+        ),
+      ]);
+      final source = emitRaw(
+        Library((b) => b..body.addAll(const ApiEmitter(api).emit())),
+      );
+
+      // Required-but-nullable: the value may be null at runtime, so every
+      // non-simple serialization path needs a null guard or the generated
+      // code dereferences a nullable and fails to compile.
+      expect(source, contains('if (tags != null) {'));
+      expect(source, contains('if (ref != null) {'));
+    });
+  });
+
   group('mixed sealed-union fromJson dispatch', () {
     test('dispatches enum, primitive, list, and object variants', () {
       // A self-referencing union (list of self) is not OneOf-eligible, so it

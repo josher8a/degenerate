@@ -64,7 +64,11 @@ analyzeApiImports(
   for (final op in api.operations) {
     for (final param in op.parameters) {
       _collectTopLevelTypeName(param.type, names);
-      if (isBytesType(param.type)) needsTypedData = true;
+      if (isBytesType(param.type)) {
+        needsTypedData = true;
+        // Bytes params serialize via base64Encode.
+        needsConvert = true;
+      }
     }
     if (op.requestBody case final body? when body.content.isNotEmpty) {
       final bodyContent = preferredContent(body.content)!;
