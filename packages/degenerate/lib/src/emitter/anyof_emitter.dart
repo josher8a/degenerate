@@ -133,8 +133,14 @@ final class AnyOfEmitter {
       return switch (fType) {
         IrPrimitive() =>
           '  ${f.name}: ${_primitiveAnyOfExpr(fType, 'json')},',
-        IrEnum() =>
-          '  ${f.name}: json is String ? ${f.typeName}.fromJson(json) : null,',
+        IrEnum(:final valueKind) => switch (valueKind) {
+          PrimitiveKind.int =>
+            '  ${f.name}: json is num ? ${f.typeName}.fromJson(json.toInt()) : null,',
+          PrimitiveKind.double =>
+            '  ${f.name}: json is num ? ${f.typeName}.fromJson(json.toDouble()) : null,',
+          _ =>
+            '  ${f.name}: json is String ? ${f.typeName}.fromJson(json) : null,',
+        },
         IrExtensionType(:final inner) =>
           '  ${f.name}: json is ${primitiveJsonWireType(inner.kind)} ? ${f.typeName}.fromJson(json) : null,',
         IrList() || IrMap() =>
@@ -182,29 +188,58 @@ final class AnyOfEmitter {
     };
   }
 
+  /// toJson mirrors fromJson: scalar variants ARE the wire value (the
+  /// schema says string/number/bool, not object), unions carry the whole
+  /// value, and only object-like variants merge into a map. Wrapping
+  /// scalars under invented field-name keys broke `fromJson(toJson(x))`
+  /// and sent schema-violating payloads.
   Method _buildToJson(
     List<({String name, IrType type, String typeName})> fields,
   ) {
-    final spreads = fields.map((f) {
+    final scalarReturns = <String>[];
+    final dynamicReturns = <String>[];
+    final unionReturns = <String>[];
+    final spreads = <String>[];
+    for (final f in fields) {
       final fType = f.type;
-      // Field names may be `$`-prefixed (dart:core collisions like $double);
-      // an unescaped key would interpolate the field value instead.
-      final key = dartStringLiteral(f.name);
-      return switch (fType) {
-        IrPrimitive() || IrList() || IrMap() => '  $key: ?${f.name},',
-        IrEnum() || IrExtensionType() =>
-          '  if (${f.name} != null) $key: ${f.name}!.toJson(),',
-        _ when ctx.isUnionType(fType) =>
-          '  if (${f.name} != null) $key: ${f.name}!.toJson(),',
-        _ => '  ...?${f.name}?.toJson(),',
-      };
-    }).join('\n');
+      switch (fType) {
+        case IrPrimitive(kind: PrimitiveKind.dynamic_):
+          // Captures any wire value in fromJson — return it verbatim, but
+          // only after the typed scalars (it shadows everything).
+          dynamicReturns.add('  if (${f.name} != null) return ${f.name};');
+        case IrPrimitive():
+          final value = buildToJsonCode(fType, '${f.name}!');
+          scalarReturns.add('  if (${f.name} != null) return $value;');
+        case IrEnum() || IrExtensionType():
+          scalarReturns.add(
+            '  if (${f.name} != null) return ${f.name}!.toJson();',
+          );
+        case IrList() || IrMap():
+          // fromJson cannot populate collection variants (documented gap),
+          // but a consumer-constructed value is still the raw wire value.
+          scalarReturns.add(
+            '  if (${f.name} != null) return ${f.name};',
+          );
+        case _ when ctx.isUnionType(fType) || ctx.isOneOfType(fType):
+          unionReturns.add(
+            '  if (${f.name} != null) return ${f.name}!.toJson();',
+          );
+        default:
+          spreads.add('  ...?${f.name}?.toJson(),');
+      }
+    }
+    final body = [
+      ...scalarReturns,
+      ...dynamicReturns,
+      ...unionReturns,
+      'return <String, dynamic>{\n${spreads.join('\n')}\n};',
+    ].join('\n');
 
     return Method(
       (m) => m
         ..name = 'toJson'
-        ..returns = refer('Map<String, dynamic>')
-        ..body = Code('return {\n$spreads\n};'),
+        ..returns = refer('dynamic')
+        ..body = Code(body),
     );
   }
 
