@@ -540,9 +540,33 @@ String buildOneOfParseCode(
     );
   }
 
-  final call = 'OneOf$n.parse($accessor, ${args.join(', ')},)';
+  // Mark variants that accept any payload (free-form maps, dynamic, models
+  // capturing additionalProperties): the runtime only lets them win when no
+  // typed variant parses, so a backward-compatible server change cannot
+  // flip the parsed variant by sheer key coverage.
+  final greedyIndices = <int>[
+    for (var i = 0; i < variants.length; i++)
+      if (_isGreedyVariant(variants[i], ctx)) i,
+  ];
+  final greedyArg = greedyIndices.isEmpty
+      ? ''
+      : ' greedy: const {${greedyIndices.join(', ')}},';
+
+  final call = 'OneOf$n.parse($accessor, ${args.join(', ')},$greedyArg)';
   if (!isOptional) return call;
   return '$accessor != null ? $call : null';
+}
+
+/// Whether a OneOf variant accepts (and round-trips) any payload: free-form
+/// maps, `dynamic`, and objects capturing `additionalProperties`.
+bool _isGreedyVariant(IrType variant, EmitContext ctx) {
+  final resolved = variant.resolveRef(ctx.typeRegistry);
+  return switch (resolved) {
+    IrMap() => true,
+    IrPrimitive(kind: PrimitiveKind.dynamic_) => true,
+    IrObject(:final additionalProperties) => additionalProperties != null,
+    _ => false,
+  };
 }
 
 /// Get the variant class name for a discriminated union variant.

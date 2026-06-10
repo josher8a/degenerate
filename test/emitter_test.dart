@@ -996,7 +996,77 @@ void main() {
 
   // ─── AnyOf emission ──────────────────────────────────────────
 
+  group('greedy OneOf variant hints', () {
+    test('map-like variants are flagged greedy in the parse call', () {
+      const pet = IrObject('Pet', [
+        IrField('id', 'id', IrPrimitive(PrimitiveKind.string),
+            isRequired: true),
+      ], requiredFields: ['id']);
+      const union = IrUntaggedUnion('PetOrRaw', [
+        IrTypeRef('Pet'),
+        IrMap(IrPrimitive(PrimitiveKind.dynamic_)),
+      ]);
+      const holder = IrObject('Holder', [
+        IrField('value', 'value', union, isRequired: true),
+      ], requiredFields: ['value']);
+
+      final specs = const ModelEmitter(
+        holder,
+        ctx: EmitContext({'Pet': pet, 'PetOrRaw': union}),
+      ).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      // The free-form map variant must only win when Pet fails to parse —
+      // otherwise a new server field flips the variant by key coverage.
+      expect(source, contains('greedy: const {1}'));
+    });
+  });
+
   group('AnyOfEmitter', () {
+    test('toJson is symmetric with fromJson for non-object variants', () {
+      // fromJson reads the raw wire value for scalar variants; toJson must
+      // write it back as the raw value — not wrap it under an invented
+      // field-name key (the schema says string/number, not object).
+      const anyOf = IrAnyOf('KvAny', [
+        IrPrimitive(PrimitiveKind.string),
+        IrPrimitive(PrimitiveKind.double),
+        IrObject('Widget', [
+          IrField('id', 'id', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['id']),
+      ]);
+
+      final specs = const AnyOfEmitter(anyOf).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      expect(source, contains('dynamic toJson()'));
+      expect(source, contains('if (string != null) return string!;'));
+      expect(source, contains(r'if ($double != null) return $double!;'));
+      // No invented object keys for scalar variants.
+      expect(source, isNot(contains(r"r'$double': ")));
+      expect(source, isNot(contains("'string': ?string")));
+      // Object variants still merge into one map.
+      expect(source, contains('...?widget?.toJson()'));
+    });
+
+    test('int-valued enum variants parse from numeric wire values', () {
+      const anyOf = IrAnyOf('CodeOrWidget', [
+        IrEnum('Code', ['1', '2'], valueKind: PrimitiveKind.int),
+        IrObject('Widget', [
+          IrField('id', 'id', IrPrimitive(PrimitiveKind.string),
+              isRequired: true),
+        ], requiredFields: ['id']),
+      ]);
+
+      final specs = const AnyOfEmitter(anyOf).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      // An int enum's fromJson takes an int — `json is String` never
+      // matches and the String-typed argument does not compile.
+      expect(source, contains('json is num'));
+      expect(source, isNot(contains('json is String ? Code.fromJson')));
+    });
+
     test('emits final class with nullable variant fields', () {
       const anyOf = IrAnyOf('PetOrOwner', [
         IrObject('Pet', [
@@ -1158,7 +1228,8 @@ void main() {
       final source = emitRaw(Library((b) => b..body.addAll(specs)));
 
       expect(source, contains('...?pet?.toJson()'));
-      expect(source, contains("'status': status!.toJson()"));
+      // Enums are scalar wire values — returned, not wrapped under a key.
+      expect(source, contains('if (status != null) return status!.toJson();'));
     });
 
     test('equals uses list-aware comparison for list fields', () {
@@ -1185,7 +1256,7 @@ void main() {
 
       expect(source, contains('json is String ? UserId.fromJson(json) : null'));
       expect(source,
-          contains("if (userId != null) 'userId': userId!.toJson()"));
+          contains('if (userId != null) return userId!.toJson();'));
       expect(() => _formatOrFail(source), returnsNormally);
     });
   });
@@ -4068,6 +4139,46 @@ void main() {
 
     test('is valid Dart', () {
       _formatOrFail(source);
+    });
+  });
+
+  group('spec enum owning the natural discriminator-type name', () {
+    test('no duplicate enum class when the spec enum is named Union+Prop',
+        () {
+      // Variants share a spec-defined enum named exactly
+      // `${UnionName}${PascalCase(discProp)}` — the same name the synthetic
+      // enum would use. The getter must reuse the spec enum; emitting the
+      // synthetic one would declare the class twice.
+      const kindEnum = IrEnum('BeneficiaryKind', ['individual', 'business']);
+      const individual = IrObject('Individual', [
+        IrField('kind', 'kind', IrTypeRef('BeneficiaryKind'),
+            isRequired: true),
+      ], requiredFields: ['kind']);
+      const business = IrObject('Business', [
+        IrField('kind', 'kind', IrTypeRef('BeneficiaryKind'),
+            isRequired: true),
+      ], requiredFields: ['kind']);
+      const union = IrDiscriminatedUnion('Beneficiary', 'kind', {
+        'individual': IrTypeRef('Individual'),
+        'business': IrTypeRef('Business'),
+      });
+      final registry = <String, IrType>{
+        'BeneficiaryKind': kindEnum,
+        'Individual': individual,
+        'Business': business,
+      };
+      final meta = analyzeDiscriminatedUnions(
+        [union, individual, business],
+        registry,
+      );
+      final ctx = EmitContext(registry, unionMetadata: meta);
+      final specs = DiscriminatedUnionEmitter(union, ctx: ctx).emit();
+      final source = emitRaw(Library((b) => b..body.addAll(specs)));
+
+      // The union library must not re-declare the enum (EnumEmitter owns it).
+      expect(source, isNot(contains('class BeneficiaryKind')));
+      // The discriminator getter is typed as the spec enum.
+      expect(source, contains('BeneficiaryKind get kind'));
     });
   });
 

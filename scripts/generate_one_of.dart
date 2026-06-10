@@ -144,6 +144,22 @@ void _writeOneOf(StringBuffer buf, int n) {
   // parse() static method
   final parseTypeParams = letters.sublist(0, n).join(', ');
   buf.writeln('  /// Deserializes from JSON using typed parsers.');
+  buf.writeln('  ///');
+  buf.writeln(
+    '  /// [greedy] marks variant indices that accept any payload (free-form',
+  );
+  buf.writeln(
+    '  /// maps, `dynamic`, models capturing `additionalProperties`). They',
+  );
+  buf.writeln(
+    '  /// only compete when no non-greedy variant parses — otherwise a',
+  );
+  buf.writeln(
+    '  /// backward-compatible server change (a new field) would flip the',
+  );
+  buf.writeln(
+    '  /// parsed variant to the greedy one by sheer key coverage.',
+  );
   buf.writeln('  static $cls parse<$parseTypeParams>(');
   buf.writeln('    Object? json, {');
   for (var i = 0; i < n; i++) {
@@ -151,6 +167,7 @@ void _writeOneOf(StringBuffer buf, int n) {
       '    required ${letters[i]} Function(Object) from${letters[i]},',
     );
   }
+  buf.writeln('    Set<int> greedy = const {},');
   buf.writeln('  }) {');
   // Best-match dispatch: try every variant, keep the one whose serialized form
   // covers the most of the input's keys. `oneOf` means exactly one schema
@@ -162,13 +179,20 @@ void _writeOneOf(StringBuffer buf, int n) {
   buf.writeln('    final errors = <(String, Object)>[];');
   buf.writeln('    $cls? best;');
   buf.writeln('    var bestScore = -1;');
+  buf.writeln('    $cls? bestGreedy;');
+  buf.writeln('    var bestGreedyScore = -1;');
   for (var i = 0; i < n; i++) {
     buf.writeln('    try {');
     buf.writeln(
       '      final v = OneOf$n<$parseTypeParams>._(from${letters[i]}(json!), $i);',
     );
     buf.writeln('      final score = _oneOfMatchScore(json, v.value);');
-    buf.writeln('      if (score > bestScore) {');
+    buf.writeln('      if (greedy.contains($i)) {');
+    buf.writeln('        if (score > bestGreedyScore) {');
+    buf.writeln('          bestGreedyScore = score;');
+    buf.writeln('          bestGreedy = v;');
+    buf.writeln('        }');
+    buf.writeln('      } else if (score > bestScore) {');
     buf.writeln('        bestScore = score;');
     buf.writeln('        best = v;');
     buf.writeln('      }');
@@ -182,6 +206,7 @@ void _writeOneOf(StringBuffer buf, int n) {
     buf.writeln('    }');
   }
   buf.writeln('    if (best != null) return best;');
+  buf.writeln('    if (bestGreedy != null) return bestGreedy;');
   buf.writeln('    throw ArgumentError(_oneOfError(json, errors));');
   buf.writeln('  }');
   buf.writeln();

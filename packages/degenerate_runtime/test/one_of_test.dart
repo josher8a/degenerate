@@ -1,7 +1,44 @@
 import 'package:degenerate_runtime/degenerate_runtime.dart';
 import 'package:test/test.dart';
 
+// A minimal typed model for greedy-dispatch tests: declares id/name, ignores
+// unknown keys (like generated fromJson), round-trips only declared keys.
+class _Pet {
+  _Pet(this.id, this.name);
+  factory _Pet.fromJson(Map<String, dynamic> json) =>
+      _Pet(json['id'] as int, json['name'] as String);
+  final int id;
+  final String name;
+  Map<String, dynamic> toJson() => {'id': id, 'name': name};
+}
+
 void main() {
+  group('greedy variant dispatch', () {
+    OneOf2<_Pet, Map<String, Object?>> parse(Object? json) => OneOf2.parse(
+          json,
+          fromA: (j) => _Pet.fromJson(j as Map<String, dynamic>),
+          fromB: (j) => (j as Map).cast<String, Object?>(),
+          greedy: const {1},
+        );
+
+    test('typed variant wins even when the payload gains new fields', () {
+      // A map-capturing variant reproduces every input key, so coverage
+      // scoring alone flips Pet -> Map the moment the server adds a field —
+      // a backward-compatible change must never switch variants.
+      final today = parse({'id': 1, 'name': 'Rex'});
+      expect(today.isA, isTrue);
+
+      final tomorrow = parse({'id': 1, 'name': 'Rex', 'newField': true});
+      expect(tomorrow.isA, isTrue,
+          reason: 'adding a server field must not flip the parsed variant');
+    });
+
+    test('greedy variant still catches payloads no typed variant parses', () {
+      final v = parse({'totally': 'different'});
+      expect(v.isB, isTrue);
+    });
+  });
+
   group('OneOf2', () {
     test('.from() wraps a value matching the first type', () {
       final v = OneOf2<String, int>.from('hello');

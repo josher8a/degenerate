@@ -75,18 +75,32 @@ final class OneOf2<A, B> {
   }
 
   /// Deserializes from JSON using typed parsers.
+  ///
+  /// [greedy] marks variant indices that accept any payload (free-form
+  /// maps, `dynamic`, models capturing `additionalProperties`). They
+  /// only compete when no non-greedy variant parses — otherwise a
+  /// backward-compatible server change (a new field) would flip the
+  /// parsed variant to the greedy one by sheer key coverage.
   static OneOf2<A, B> parse<A, B>(
     Object? json, {
     required A Function(Object) fromA,
     required B Function(Object) fromB,
+    Set<int> greedy = const {},
   }) {
     final errors = <(String, Object)>[];
     OneOf2<A, B>? best;
     var bestScore = -1;
+    OneOf2<A, B>? bestGreedy;
+    var bestGreedyScore = -1;
     try {
       final v = OneOf2<A, B>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(0)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -96,7 +110,12 @@ final class OneOf2<A, B> {
     try {
       final v = OneOf2<A, B>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(1)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -104,6 +123,7 @@ final class OneOf2<A, B> {
       errors.add(('$B', e));
     }
     if (best != null) return best;
+    if (bestGreedy != null) return bestGreedy;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
@@ -173,19 +193,33 @@ final class OneOf3<A, B, C> {
   }
 
   /// Deserializes from JSON using typed parsers.
+  ///
+  /// [greedy] marks variant indices that accept any payload (free-form
+  /// maps, `dynamic`, models capturing `additionalProperties`). They
+  /// only compete when no non-greedy variant parses — otherwise a
+  /// backward-compatible server change (a new field) would flip the
+  /// parsed variant to the greedy one by sheer key coverage.
   static OneOf3<A, B, C> parse<A, B, C>(
     Object? json, {
     required A Function(Object) fromA,
     required B Function(Object) fromB,
     required C Function(Object) fromC,
+    Set<int> greedy = const {},
   }) {
     final errors = <(String, Object)>[];
     OneOf3<A, B, C>? best;
     var bestScore = -1;
+    OneOf3<A, B, C>? bestGreedy;
+    var bestGreedyScore = -1;
     try {
       final v = OneOf3<A, B, C>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(0)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -195,7 +229,12 @@ final class OneOf3<A, B, C> {
     try {
       final v = OneOf3<A, B, C>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(1)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -205,7 +244,12 @@ final class OneOf3<A, B, C> {
     try {
       final v = OneOf3<A, B, C>._(fromC(json!), 2);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(2)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -213,6 +257,7 @@ final class OneOf3<A, B, C> {
       errors.add(('$C', e));
     }
     if (best != null) return best;
+    if (bestGreedy != null) return bestGreedy;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
@@ -290,20 +335,34 @@ final class OneOf4<A, B, C, D> {
   }
 
   /// Deserializes from JSON using typed parsers.
+  ///
+  /// [greedy] marks variant indices that accept any payload (free-form
+  /// maps, `dynamic`, models capturing `additionalProperties`). They
+  /// only compete when no non-greedy variant parses — otherwise a
+  /// backward-compatible server change (a new field) would flip the
+  /// parsed variant to the greedy one by sheer key coverage.
   static OneOf4<A, B, C, D> parse<A, B, C, D>(
     Object? json, {
     required A Function(Object) fromA,
     required B Function(Object) fromB,
     required C Function(Object) fromC,
     required D Function(Object) fromD,
+    Set<int> greedy = const {},
   }) {
     final errors = <(String, Object)>[];
     OneOf4<A, B, C, D>? best;
     var bestScore = -1;
+    OneOf4<A, B, C, D>? bestGreedy;
+    var bestGreedyScore = -1;
     try {
       final v = OneOf4<A, B, C, D>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(0)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -313,7 +372,12 @@ final class OneOf4<A, B, C, D> {
     try {
       final v = OneOf4<A, B, C, D>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(1)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -323,7 +387,12 @@ final class OneOf4<A, B, C, D> {
     try {
       final v = OneOf4<A, B, C, D>._(fromC(json!), 2);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(2)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -333,7 +402,12 @@ final class OneOf4<A, B, C, D> {
     try {
       final v = OneOf4<A, B, C, D>._(fromD(json!), 3);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(3)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -341,6 +415,7 @@ final class OneOf4<A, B, C, D> {
       errors.add(('$D', e));
     }
     if (best != null) return best;
+    if (bestGreedy != null) return bestGreedy;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
@@ -426,6 +501,12 @@ final class OneOf5<A, B, C, D, E> {
   }
 
   /// Deserializes from JSON using typed parsers.
+  ///
+  /// [greedy] marks variant indices that accept any payload (free-form
+  /// maps, `dynamic`, models capturing `additionalProperties`). They
+  /// only compete when no non-greedy variant parses — otherwise a
+  /// backward-compatible server change (a new field) would flip the
+  /// parsed variant to the greedy one by sheer key coverage.
   static OneOf5<A, B, C, D, E> parse<A, B, C, D, E>(
     Object? json, {
     required A Function(Object) fromA,
@@ -433,14 +514,22 @@ final class OneOf5<A, B, C, D, E> {
     required C Function(Object) fromC,
     required D Function(Object) fromD,
     required E Function(Object) fromE,
+    Set<int> greedy = const {},
   }) {
     final errors = <(String, Object)>[];
     OneOf5<A, B, C, D, E>? best;
     var bestScore = -1;
+    OneOf5<A, B, C, D, E>? bestGreedy;
+    var bestGreedyScore = -1;
     try {
       final v = OneOf5<A, B, C, D, E>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(0)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -450,7 +539,12 @@ final class OneOf5<A, B, C, D, E> {
     try {
       final v = OneOf5<A, B, C, D, E>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(1)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -460,7 +554,12 @@ final class OneOf5<A, B, C, D, E> {
     try {
       final v = OneOf5<A, B, C, D, E>._(fromC(json!), 2);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(2)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -470,7 +569,12 @@ final class OneOf5<A, B, C, D, E> {
     try {
       final v = OneOf5<A, B, C, D, E>._(fromD(json!), 3);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(3)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -480,7 +584,12 @@ final class OneOf5<A, B, C, D, E> {
     try {
       final v = OneOf5<A, B, C, D, E>._(fromE(json!), 4);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(4)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -488,6 +597,7 @@ final class OneOf5<A, B, C, D, E> {
       errors.add(('$E', e));
     }
     if (best != null) return best;
+    if (bestGreedy != null) return bestGreedy;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
@@ -581,6 +691,12 @@ final class OneOf6<A, B, C, D, E, F> {
   }
 
   /// Deserializes from JSON using typed parsers.
+  ///
+  /// [greedy] marks variant indices that accept any payload (free-form
+  /// maps, `dynamic`, models capturing `additionalProperties`). They
+  /// only compete when no non-greedy variant parses — otherwise a
+  /// backward-compatible server change (a new field) would flip the
+  /// parsed variant to the greedy one by sheer key coverage.
   static OneOf6<A, B, C, D, E, F> parse<A, B, C, D, E, F>(
     Object? json, {
     required A Function(Object) fromA,
@@ -589,14 +705,22 @@ final class OneOf6<A, B, C, D, E, F> {
     required D Function(Object) fromD,
     required E Function(Object) fromE,
     required F Function(Object) fromF,
+    Set<int> greedy = const {},
   }) {
     final errors = <(String, Object)>[];
     OneOf6<A, B, C, D, E, F>? best;
     var bestScore = -1;
+    OneOf6<A, B, C, D, E, F>? bestGreedy;
+    var bestGreedyScore = -1;
     try {
       final v = OneOf6<A, B, C, D, E, F>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(0)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -606,7 +730,12 @@ final class OneOf6<A, B, C, D, E, F> {
     try {
       final v = OneOf6<A, B, C, D, E, F>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(1)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -616,7 +745,12 @@ final class OneOf6<A, B, C, D, E, F> {
     try {
       final v = OneOf6<A, B, C, D, E, F>._(fromC(json!), 2);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(2)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -626,7 +760,12 @@ final class OneOf6<A, B, C, D, E, F> {
     try {
       final v = OneOf6<A, B, C, D, E, F>._(fromD(json!), 3);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(3)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -636,7 +775,12 @@ final class OneOf6<A, B, C, D, E, F> {
     try {
       final v = OneOf6<A, B, C, D, E, F>._(fromE(json!), 4);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(4)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -646,7 +790,12 @@ final class OneOf6<A, B, C, D, E, F> {
     try {
       final v = OneOf6<A, B, C, D, E, F>._(fromF(json!), 5);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(5)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -654,6 +803,7 @@ final class OneOf6<A, B, C, D, E, F> {
       errors.add(('$F', e));
     }
     if (best != null) return best;
+    if (bestGreedy != null) return bestGreedy;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
@@ -755,6 +905,12 @@ final class OneOf7<A, B, C, D, E, F, G> {
   }
 
   /// Deserializes from JSON using typed parsers.
+  ///
+  /// [greedy] marks variant indices that accept any payload (free-form
+  /// maps, `dynamic`, models capturing `additionalProperties`). They
+  /// only compete when no non-greedy variant parses — otherwise a
+  /// backward-compatible server change (a new field) would flip the
+  /// parsed variant to the greedy one by sheer key coverage.
   static OneOf7<A, B, C, D, E, F, G> parse<A, B, C, D, E, F, G>(
     Object? json, {
     required A Function(Object) fromA,
@@ -764,14 +920,22 @@ final class OneOf7<A, B, C, D, E, F, G> {
     required E Function(Object) fromE,
     required F Function(Object) fromF,
     required G Function(Object) fromG,
+    Set<int> greedy = const {},
   }) {
     final errors = <(String, Object)>[];
     OneOf7<A, B, C, D, E, F, G>? best;
     var bestScore = -1;
+    OneOf7<A, B, C, D, E, F, G>? bestGreedy;
+    var bestGreedyScore = -1;
     try {
       final v = OneOf7<A, B, C, D, E, F, G>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(0)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -781,7 +945,12 @@ final class OneOf7<A, B, C, D, E, F, G> {
     try {
       final v = OneOf7<A, B, C, D, E, F, G>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(1)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -791,7 +960,12 @@ final class OneOf7<A, B, C, D, E, F, G> {
     try {
       final v = OneOf7<A, B, C, D, E, F, G>._(fromC(json!), 2);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(2)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -801,7 +975,12 @@ final class OneOf7<A, B, C, D, E, F, G> {
     try {
       final v = OneOf7<A, B, C, D, E, F, G>._(fromD(json!), 3);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(3)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -811,7 +990,12 @@ final class OneOf7<A, B, C, D, E, F, G> {
     try {
       final v = OneOf7<A, B, C, D, E, F, G>._(fromE(json!), 4);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(4)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -821,7 +1005,12 @@ final class OneOf7<A, B, C, D, E, F, G> {
     try {
       final v = OneOf7<A, B, C, D, E, F, G>._(fromF(json!), 5);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(5)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -831,7 +1020,12 @@ final class OneOf7<A, B, C, D, E, F, G> {
     try {
       final v = OneOf7<A, B, C, D, E, F, G>._(fromG(json!), 6);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(6)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -839,6 +1033,7 @@ final class OneOf7<A, B, C, D, E, F, G> {
       errors.add(('$G', e));
     }
     if (best != null) return best;
+    if (bestGreedy != null) return bestGreedy;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
@@ -950,6 +1145,12 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
   }
 
   /// Deserializes from JSON using typed parsers.
+  ///
+  /// [greedy] marks variant indices that accept any payload (free-form
+  /// maps, `dynamic`, models capturing `additionalProperties`). They
+  /// only compete when no non-greedy variant parses — otherwise a
+  /// backward-compatible server change (a new field) would flip the
+  /// parsed variant to the greedy one by sheer key coverage.
   static OneOf8<A, B, C, D, E, F, G, H> parse<A, B, C, D, E, F, G, H>(
     Object? json, {
     required A Function(Object) fromA,
@@ -960,14 +1161,22 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
     required F Function(Object) fromF,
     required G Function(Object) fromG,
     required H Function(Object) fromH,
+    Set<int> greedy = const {},
   }) {
     final errors = <(String, Object)>[];
     OneOf8<A, B, C, D, E, F, G, H>? best;
     var bestScore = -1;
+    OneOf8<A, B, C, D, E, F, G, H>? bestGreedy;
+    var bestGreedyScore = -1;
     try {
       final v = OneOf8<A, B, C, D, E, F, G, H>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(0)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -977,7 +1186,12 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
     try {
       final v = OneOf8<A, B, C, D, E, F, G, H>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(1)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -987,7 +1201,12 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
     try {
       final v = OneOf8<A, B, C, D, E, F, G, H>._(fromC(json!), 2);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(2)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -997,7 +1216,12 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
     try {
       final v = OneOf8<A, B, C, D, E, F, G, H>._(fromD(json!), 3);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(3)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -1007,7 +1231,12 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
     try {
       final v = OneOf8<A, B, C, D, E, F, G, H>._(fromE(json!), 4);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(4)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -1017,7 +1246,12 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
     try {
       final v = OneOf8<A, B, C, D, E, F, G, H>._(fromF(json!), 5);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(5)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -1027,7 +1261,12 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
     try {
       final v = OneOf8<A, B, C, D, E, F, G, H>._(fromG(json!), 6);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(6)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -1037,7 +1276,12 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
     try {
       final v = OneOf8<A, B, C, D, E, F, G, H>._(fromH(json!), 7);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(7)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -1045,6 +1289,7 @@ final class OneOf8<A, B, C, D, E, F, G, H> {
       errors.add(('$H', e));
     }
     if (best != null) return best;
+    if (bestGreedy != null) return bestGreedy;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
@@ -1164,6 +1409,12 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
   }
 
   /// Deserializes from JSON using typed parsers.
+  ///
+  /// [greedy] marks variant indices that accept any payload (free-form
+  /// maps, `dynamic`, models capturing `additionalProperties`). They
+  /// only compete when no non-greedy variant parses — otherwise a
+  /// backward-compatible server change (a new field) would flip the
+  /// parsed variant to the greedy one by sheer key coverage.
   static OneOf9<A, B, C, D, E, F, G, H, I> parse<A, B, C, D, E, F, G, H, I>(
     Object? json, {
     required A Function(Object) fromA,
@@ -1175,14 +1426,22 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
     required G Function(Object) fromG,
     required H Function(Object) fromH,
     required I Function(Object) fromI,
+    Set<int> greedy = const {},
   }) {
     final errors = <(String, Object)>[];
     OneOf9<A, B, C, D, E, F, G, H, I>? best;
     var bestScore = -1;
+    OneOf9<A, B, C, D, E, F, G, H, I>? bestGreedy;
+    var bestGreedyScore = -1;
     try {
       final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromA(json!), 0);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(0)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -1192,7 +1451,12 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
     try {
       final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromB(json!), 1);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(1)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -1202,7 +1466,12 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
     try {
       final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromC(json!), 2);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(2)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -1212,7 +1481,12 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
     try {
       final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromD(json!), 3);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(3)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -1222,7 +1496,12 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
     try {
       final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromE(json!), 4);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(4)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -1232,7 +1511,12 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
     try {
       final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromF(json!), 5);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(5)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -1242,7 +1526,12 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
     try {
       final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromG(json!), 6);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(6)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -1252,7 +1541,12 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
     try {
       final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromH(json!), 7);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(7)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -1262,7 +1556,12 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
     try {
       final v = OneOf9<A, B, C, D, E, F, G, H, I>._(fromI(json!), 8);
       final score = _oneOfMatchScore(json, v.value);
-      if (score > bestScore) {
+      if (greedy.contains(8)) {
+        if (score > bestGreedyScore) {
+          bestGreedyScore = score;
+          bestGreedy = v;
+        }
+      } else if (score > bestScore) {
         bestScore = score;
         best = v;
       }
@@ -1270,6 +1569,7 @@ final class OneOf9<A, B, C, D, E, F, G, H, I> {
       errors.add(('$I', e));
     }
     if (best != null) return best;
+    if (bestGreedy != null) return bestGreedy;
     throw ArgumentError(_oneOfError(json, errors));
   }
 
