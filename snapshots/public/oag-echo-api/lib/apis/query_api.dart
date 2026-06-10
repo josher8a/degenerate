@@ -45,7 +45,7 @@ return execute(
 Future<ApiResult<String, Never>> testQueryDatetimeDateString({DateTime? datetimeQuery, String? dateQuery, String? stringQuery, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (datetimeQuery != null) {
-  queryParameters['datetime_query'] = datetimeQuery.toString();
+  queryParameters['datetime_query'] = datetimeQuery.toIso8601String();
 }
 if (dateQuery != null) {
   queryParameters['date_query'] = dateQuery;

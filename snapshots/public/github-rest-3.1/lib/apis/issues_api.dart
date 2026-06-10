@@ -44,7 +44,7 @@ if (direction != null) {
   queryParameters['direction'] = direction.toJson();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (collab != null) {
   queryParameters['collab'] = collab.toString();
@@ -121,7 +121,7 @@ if (direction != null) {
   queryParameters['direction'] = direction.toJson();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -253,7 +253,7 @@ if (direction != null) {
   queryParameters['direction'] = direction.toJson();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -339,7 +339,7 @@ if (direction != null) {
   queryParameters['direction'] = direction.toJson();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -707,7 +707,7 @@ return execute(
 Future<ApiResult<List<IssueComment>, IssuesGetError>> issuesListComments({required String owner, required String repo, required int issueNumber, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -1641,7 +1641,7 @@ if (direction != null) {
   queryParameters['direction'] = direction.toJson();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();

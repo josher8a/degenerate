@@ -236,7 +236,7 @@ if (page != null) {
   queryParameters['page'] = page.toString();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (outdated != null) {
   queryParameters['outdated'] = outdated;

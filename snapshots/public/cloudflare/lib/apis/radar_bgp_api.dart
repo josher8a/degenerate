@@ -50,10 +50,10 @@ if (dateRange != null) {
   queryParameters['dateRange'] = dateRange;
 }
 if (dateStart != null) {
-  queryParameters['dateStart'] = dateStart.toString();
+  queryParameters['dateStart'] = dateStart.toIso8601String();
 }
 if (dateEnd != null) {
-  queryParameters['dateEnd'] = dateEnd.toString();
+  queryParameters['dateEnd'] = dateEnd.toIso8601String();
 }
 if (sortBy != null) {
   queryParameters['sortBy'] = sortBy.toJson();
@@ -183,10 +183,10 @@ if (dateRange != null) {
   queryParameters['dateRange'] = dateRange;
 }
 if (dateStart != null) {
-  queryParameters['dateStart'] = dateStart.toString();
+  queryParameters['dateStart'] = dateStart.toIso8601String();
 }
 if (dateEnd != null) {
-  queryParameters['dateEnd'] = dateEnd.toString();
+  queryParameters['dateEnd'] = dateEnd.toIso8601String();
 }
 if (sortBy != null) {
   queryParameters['sortBy'] = sortBy.toJson();
@@ -423,10 +423,10 @@ return execute(
 Future<ApiResult<RadarGetBgpRpkiAspaChangesResponseResult, RadarGetBgpRpkiAspaChangesError>> radarGetBgpRpkiAspaChanges({DateTime? dateStart, DateTime? dateEnd, int? asn, bool? includeAsnInfo, RadarGetBgpRpkiAspaChangesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dateStart != null) {
-  queryParameters['dateStart'] = dateStart.toString();
+  queryParameters['dateStart'] = dateStart.toIso8601String();
 }
 if (dateEnd != null) {
-  queryParameters['dateEnd'] = dateEnd.toString();
+  queryParameters['dateEnd'] = dateEnd.toIso8601String();
 }
 if (asn != null) {
   queryParameters['asn'] = asn.toString();
@@ -472,7 +472,7 @@ if (providerAsn != null) {
   queryParameters['providerAsn'] = providerAsn.toString();
 }
 if (date != null) {
-  queryParameters['date'] = date.toString();
+  queryParameters['date'] = date.toIso8601String();
 }
 if (includeAsnInfo != null) {
   queryParameters['includeAsnInfo'] = includeAsnInfo.toString();
@@ -509,10 +509,10 @@ return execute(
 Future<ApiResult<RadarGetBgpRpkiAspaTimeseriesResponseResult, RadarGetBgpRpkiAspaTimeseriesError>> radarGetBgpRpkiAspaTimeseries({DateTime? dateStart, DateTime? dateEnd, List<String>? name, List<RadarGetBgpRpkiAspaTimeseriesRir>? rir, List<String>? location, RadarGetBgpRpkiAspaTimeseriesFormat? format, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dateStart != null) {
-  queryParameters['dateStart'] = dateStart.toString();
+  queryParameters['dateStart'] = dateStart.toIso8601String();
 }
 if (dateEnd != null) {
-  queryParameters['dateEnd'] = dateEnd.toString();
+  queryParameters['dateEnd'] = dateEnd.toIso8601String();
 }
 if (name != null) {
 for (final item in name) {

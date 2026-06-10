@@ -15,13 +15,13 @@ final class Api20100401MediaApi with ApiExecutor {const Api20100401MediaApi(this
 Future<ApiResult<ListMediaResponse, Never>> listMedia({required String accountSid, required String messageSid, DateTime? dateCreated, DateTime? dateCreatedBefore, DateTime? dateCreatedAfter, int? pageSize, int? page, String? pageToken, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (dateCreated != null) {
-  queryParameters['DateCreated'] = dateCreated.toString();
+  queryParameters['DateCreated'] = dateCreated.toIso8601String();
 }
 if (dateCreatedBefore != null) {
-  queryParameters['DateCreated<'] = dateCreatedBefore.toString();
+  queryParameters['DateCreated<'] = dateCreatedBefore.toIso8601String();
 }
 if (dateCreatedAfter != null) {
-  queryParameters['DateCreated>'] = dateCreatedAfter.toString();
+  queryParameters['DateCreated>'] = dateCreatedAfter.toIso8601String();
 }
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();

@@ -38,10 +38,10 @@ if (sortOrder != null) {
   queryParameters['sort_order'] = sortOrder.toJson();
 }
 if (startTime != null) {
-  queryParameters['start_time'] = startTime.toString();
+  queryParameters['start_time'] = startTime.toIso8601String();
 }
 if (endTime != null) {
-  queryParameters['end_time'] = endTime.toString();
+  queryParameters['end_time'] = endTime.toIso8601String();
 }
 if (status != null) {
 queryParameters['status'] = status.map((item) => item.toJson()).join(',');

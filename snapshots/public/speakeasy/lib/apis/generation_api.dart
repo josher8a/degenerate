@@ -402,8 +402,8 @@ if (decimalStrParameterOptional != null) {
 queryParameters['doubleParameter'] = doubleParameter.toString();
 queryParameters['boolParameter'] = boolParameter.toString();
 queryParameters['dateParameter'] = dateParameter;
-queryParameters['dateTimeParameter'] = dateTimeParameter.toString();
-queryParameters['dateTimeDefaultParameter'] = dateTimeDefaultParameter.toString();
+queryParameters['dateTimeParameter'] = dateTimeParameter.toIso8601String();
+queryParameters['dateTimeDefaultParameter'] = dateTimeDefaultParameter.toIso8601String();
 queryParameters['enumParameter'] = enumParameter.toJson();
 if (optEnumParameter != null) {
   queryParameters['optEnumParameter'] = optEnumParameter.toJson();
@@ -454,7 +454,7 @@ return execute(
 /// `GET /anything/dateTimeParamWithDefault`
 Future<ApiResult<void, Never>> dateTimeParamWithDefault({required DateTime dateTimeInput, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
-queryParameters['dateTimeInput'] = dateTimeInput.toString();
+queryParameters['dateTimeInput'] = dateTimeInput.toIso8601String();
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
 

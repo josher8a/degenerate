@@ -26,7 +26,7 @@ if (page != null) {
   queryParameters['page'] = page.toString();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};

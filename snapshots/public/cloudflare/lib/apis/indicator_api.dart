@@ -226,10 +226,10 @@ for (final item in tags) {
 }
 }
 if (createdAfter != null) {
-  queryParameters['createdAfter'] = createdAfter.toString();
+  queryParameters['createdAfter'] = createdAfter.toIso8601String();
 }
 if (createdBefore != null) {
-  queryParameters['createdBefore'] = createdBefore.toString();
+  queryParameters['createdBefore'] = createdBefore.toIso8601String();
 }
 if (relatedEventsLimit != null) {
   queryParameters['relatedEventsLimit'] = relatedEventsLimit.toString();

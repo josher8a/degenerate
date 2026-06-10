@@ -21,13 +21,13 @@ if (from != null) {
   queryParameters['From'] = from;
 }
 if (dateSent != null) {
-  queryParameters['DateSent'] = dateSent.toString();
+  queryParameters['DateSent'] = dateSent.toIso8601String();
 }
 if (dateSentBefore != null) {
-  queryParameters['DateSent<'] = dateSentBefore.toString();
+  queryParameters['DateSent<'] = dateSentBefore.toIso8601String();
 }
 if (dateSentAfter != null) {
-  queryParameters['DateSent>'] = dateSentAfter.toString();
+  queryParameters['DateSent>'] = dateSentAfter.toIso8601String();
 }
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();

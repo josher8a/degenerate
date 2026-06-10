@@ -128,7 +128,7 @@ if (direction != null) {
   queryParameters['direction'] = direction.toJson();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -334,7 +334,7 @@ if (direction != null) {
   queryParameters['direction'] = direction.toJson();
 }
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();

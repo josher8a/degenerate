@@ -19,10 +19,10 @@ final class EmailSecurityApi with ApiExecutor {const EmailSecurityApi(this.apiCo
 Future<ApiResult<List<EmailSecurityMailsearchMessage>, EmailSecurityInvestigateError>> emailSecurityInvestigate({required EmailSecurityAccountId accountId, DateTime? start, DateTime? end, String? query, bool? detectionsOnly, bool? actionLog, EmailSecurityInvestigateFinalDisposition? finalDisposition, String? metric, EmailSecurityInvestigateMessageAction? messageAction, String? recipient, String? sender, String? alertId, String? domain, String? messageId, String? subject, String? exactSubject, String? cursor, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (start != null) {
-  queryParameters['start'] = start.toString();
+  queryParameters['start'] = start.toIso8601String();
 }
 if (end != null) {
-  queryParameters['end'] = end.toString();
+  queryParameters['end'] = end.toIso8601String();
 }
 if (query != null) {
   queryParameters['query'] = query;
@@ -352,10 +352,10 @@ if (toDate != null) {
   queryParameters['to_date'] = toDate;
 }
 if (start != null) {
-  queryParameters['start'] = start.toString();
+  queryParameters['start'] = start.toIso8601String();
 }
 if (end != null) {
-  queryParameters['end'] = end.toString();
+  queryParameters['end'] = end.toIso8601String();
 }
 
 final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -386,10 +386,10 @@ return execute(
 Future<ApiResult<List<EmailSecuritySubmission>, EmailSecuritySubmissionsError>> emailSecuritySubmissions({required EmailSecurityAccountId accountId, DateTime? start, DateTime? end, EmailSecuritySubmissionsType? type, String? submissionId, EmailSecuritySubmissionsOriginalDisposition? originalDisposition, EmailSecuritySubmissionsRequestedDisposition? requestedDisposition, EmailSecuritySubmissionsOutcomeDisposition? outcomeDisposition, String? status, String? query, EmailSecuritySubmissionsCustomerStatus? customerStatus, int? page, int? perPage, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (start != null) {
-  queryParameters['start'] = start.toString();
+  queryParameters['start'] = start.toIso8601String();
 }
 if (end != null) {
-  queryParameters['end'] = end.toString();
+  queryParameters['end'] = end.toIso8601String();
 }
 if (type != null) {
   queryParameters['type'] = type.toJson();

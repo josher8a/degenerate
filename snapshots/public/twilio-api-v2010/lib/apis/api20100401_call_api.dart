@@ -27,22 +27,22 @@ if (status != null) {
   queryParameters['Status'] = status.toJson();
 }
 if (startTime != null) {
-  queryParameters['StartTime'] = startTime.toString();
+  queryParameters['StartTime'] = startTime.toIso8601String();
 }
 if (startTimeBefore != null) {
-  queryParameters['StartTime<'] = startTimeBefore.toString();
+  queryParameters['StartTime<'] = startTimeBefore.toIso8601String();
 }
 if (startTimeAfter != null) {
-  queryParameters['StartTime>'] = startTimeAfter.toString();
+  queryParameters['StartTime>'] = startTimeAfter.toIso8601String();
 }
 if (endTime != null) {
-  queryParameters['EndTime'] = endTime.toString();
+  queryParameters['EndTime'] = endTime.toIso8601String();
 }
 if (endTimeBefore != null) {
-  queryParameters['EndTime<'] = endTimeBefore.toString();
+  queryParameters['EndTime<'] = endTimeBefore.toIso8601String();
 }
 if (endTimeAfter != null) {
-  queryParameters['EndTime>'] = endTimeAfter.toString();
+  queryParameters['EndTime>'] = endTimeAfter.toIso8601String();
 }
 if (pageSize != null) {
   queryParameters['PageSize'] = pageSize.toString();

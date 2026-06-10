@@ -17,7 +17,7 @@ final class GistsApi with ApiExecutor {const GistsApi(this.apiConfig);
 Future<ApiResult<List<BaseGist>, ActionsReRunJobForWorkflowRunError>> gistsList({DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -83,7 +83,7 @@ return execute(
 Future<ApiResult<List<BaseGist>, GistsListPublicError>> gistsListPublic({DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -120,7 +120,7 @@ return execute(
 Future<ApiResult<List<BaseGist>, ActivityDeleteThreadSubscriptionError>> gistsListStarred({DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
@@ -558,7 +558,7 @@ return execute(
 Future<ApiResult<List<BaseGist>, ActivityListStargazersForRepoError>> gistsListForUser({required String username, DateTime? since, int? perPage, int? page, RequestOptions? options, }) async  { final queryParameters = <String, String>{...apiConfig.defaultQueryParameters};
 final queryParametersList = <ApiQueryParameter>[];
 if (since != null) {
-  queryParameters['since'] = since.toString();
+  queryParameters['since'] = since.toIso8601String();
 }
 if (perPage != null) {
   queryParameters['per_page'] = perPage.toString();
