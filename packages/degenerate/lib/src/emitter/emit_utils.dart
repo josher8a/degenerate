@@ -222,7 +222,7 @@ String _elementFromJson(
   Set<String>? resolving,
 }) {
   final resolved = _resolveOneOfRef(type, ctx, resolving);
-  if (!type.isNullable && !resolved.isNullable) {
+  if (!type.isNullable) {
     return _buildFromJsonNonNull(resolved, accessor, ctx: ctx, resolving: resolving);
   }
   final simpleCast = _simpleCastFromJson(
